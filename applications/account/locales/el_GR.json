@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
+      ],
+      "Activate recovery": [
+        "Ενεργοποίηση ανάκτησης"
       ],
       "Add": [
         "Προσθήκη"
@@ -205,9 +208,6 @@
       "Copy link": [
         "Αντιγραφή συνδέσμου"
       ],
-      "Create": [
-        "Δημιουργία"
-      ],
       "Create a secure ProtonMail address instead": [
         "Δημιουργήστε μια ασφαλή διεύθυνση ProtonMail"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "Εξαγωγή κλειδιού"
       ],
-      "Export private key": [
-        "Εξαγωγή ιδιωτικού κλειδιού"
-      ],
       "Font": [
         "Γραμματοσειρά"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Μεταβείτε στο πίνακα ελέγχου ${ index }"
-      ],
-      "here": [
-        "εδώ"
       ],
       "Hide": [
         "Απόκρυψη"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Ορίστε catch-all"
       ],
+      "Set recovery phrase": [
+        "Ορισμός φράσης ανάκτησης"
+      ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "Αλλαγή λογαριασμού"
       ],
+      "Switch to rich text": [
+        "Μετάβαση σε εμπλουτισμένο κείμενο"
+      ],
       "Top up": [
         "Προσθήκη ποσού"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Ξεκλείδωμα"
       ],
+      "Unlock data": [
+        "Ξεκλείδωμα δεδομένων"
+      ],
       "Unordered list": [
         "Μη ταξινομημένη λίστα"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Ενημέρωση"
+      ],
+      "Update recovery file": [
+        "Ενημέρωση αρχείου ανάκτησης"
+      ],
+      "Update recovery phrase": [
+        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -876,10 +885,10 @@
         "Δημιουργία των κλειδιών που λείπουν"
       ],
       "Make default": [
-        ""
+        "Ορισμός ως προεπιλογή"
       ],
       "Saving": [
-        ""
+        "Αποθήκευση"
       ]
     },
     "Address status": {
@@ -901,7 +910,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "Αφήνοντας τώρα, ορισμένες επαφές ενδέχεται να μην εισαχθούν"
+        "Φεύγοντας τώρα, κάποιες επαφές ενδέχεται να μην εισαχθούν"
       ],
       "By leaving now, some events may not be imported": [
         "Φεύγοντας τώρα, κάποια γεγονότα μπορεί να μην εισαχθούν"
@@ -914,9 +923,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Τα κλειδιά κρυπτογράφησης για τη διεύθυνση σας δημιουργούνται. Αυτό μπορεί να διαρκέσει αρκετά λεπτά και να παγώσει προσωρινά το πρόγραμμα περιήγησης σας."
-      ],
       "The key for your address is now being deleted.": [
         "Το κλειδί για τη διεύθυνση σας διαγράφεται τώρα."
       ]
@@ -1203,9 +1209,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "Έχετε φτάσει τον μέγιστο αριθμό του ${ calendarsLimit } προσωπικού ημερολογίου.",
-        "Έχετε φτάσει τον μέγιστο αριθμό των ${ calendarsLimit } προσωπικών ημερολογίων."
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Έχετε φτάσει τον μέγιστο αριθμό του ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } συνδρομητικού ημερολογίου.",
@@ -1226,7 +1231,7 @@
         "Δεν συγχρονίστηκαν"
       ],
       "Syncing": [
-        "Συχρονισμός"
+        "Συγχρονισμός"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1553,7 +1558,7 @@
         "Έλλειψη χαρακτηριστικών"
       ],
       "My reason isn't listed, please comment": [
-        "Άλλη αιτιολογία, παρακαλώ σχολιάστε"
+        "Άλλη αιτιολογία, παρακαλούμε σχολιάστε"
       ],
       "Streaming service unsupported": [
         "Μη υποστηριζόμενη υπηρεσία μετάδοσης"
@@ -1605,7 +1610,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } έχει ακυρωθεί."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
@@ -1738,6 +1743,10 @@
       "Could not find address ${ email }.": [
         "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
@@ -1809,7 +1818,7 @@
         "Μη έγκυρη ημερομηνία λήξης"
       ],
       "Invalid invitation link": [
-        ""
+        "Μη έγκυρος σύνδεσμος πρόσκλησης"
       ],
       "Invalid name": [
         "Μη έγκυρο όνομα"
@@ -1847,6 +1856,9 @@
       ],
       "No active sessions": [
         "Δεν υπάρχουν ενεργές συνεδρίες"
+      ],
+      "No data to import": [
+        "Κανένα δεδομένο προς εισαγωγή"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -1969,6 +1981,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Το όνομα φακέλου είναι πολύ μεγάλο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Αδυναμία επικύρωσης των κλειδιών στο αρχείο σας επαναφοράς. Παρακαλούμε επικοινωνήστε με την υποστήριξη."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Αδυναμία επικύρωσης των κλειδιών στα αρχεία σας επαναφοράς. Για περισσότερες πληροφορίες, παρακαλούμε ανεβάστε τα μεμονωμένα."
+      ],
       "The label name is too long. Please choose a different name.": [
         "Το όνομα της ετικέτας είναι πολύ μεγάλο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
@@ -2016,9 +2034,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Το ανεβασμένο αρχείο δεν είναι έγκυρο ιδιωτικό κλειδί. Παρακαλούμε βεβαιωθείτε και δοκιμάστε ξανά."
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        "Το ανεβασμένο αρχείο δεν είναι έγκυρο αρχείο ανάκτησης. Παρακαλούμε βεβαιωθείτε και δοκιμάστε ξανά."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Τα ανεβασμένα αρχεία δεν είναι έγκυρα ιδιωτικά κλειδιά. Παρακαλούμε βεβαιωθείτε και δοκιμάστε ξανά."
@@ -2070,9 +2085,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } υποστηρίζει μόνο την εισαγωγή ημερολογίων με την έκδοση 2.0 του iCal."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
       ],
@@ -2197,7 +2209,7 @@
         "Λείπει η ώρα έναρξης"
       ],
       "No UID, title or start time": [
-        ""
+        "Λείπει UID, τίτλος ή ώρα έναρξης"
       ],
       "Non-Gregorian": [
         "Μη-Γρηγοριανό"
@@ -2285,10 +2297,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Αδυναμία αποκρυπτογράφησης προσαρτημένου φακέλου ICS"
+        "Αδυναμία αποκρυπτογράφησης συνημμένου αρχείου ICS"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Αδυναμία ανάγνωσης συνημμένου αρχείου ICS"
       ],
       "Invalid invitation": [
         "Μη έγκυρη πρόσκληση"
@@ -2389,7 +2401,7 @@
         "Διακομιστές Secure Core"
       ],
       "Secure streaming support": [
-        "Υποστήριξη ασφαλούς μετάδοσης"
+        "Υποστήριξη διασφαλισμένης μετάδοσης"
       ],
       "Torrenting support (P2P)": [
         "Υποστήριξη Torrenting (P2P)"
@@ -2933,7 +2945,7 @@
         "Απέτυχε"
       ],
       "In progress": [
-        ""
+        "Σε εξέλιξη"
       ],
       "Paused": [
         "Σε παύση"
@@ -2973,6 +2985,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } χρειάζεται την άδειά σας για να ${ enableDesktopNotifications }."
+      ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        "${ boldWarning } Αν συνεχίσετε, θα χάσετε την πρόσβαση σε όλα τα τωρινά κρυπτογραφημένα δεδομένα εντός του λογαριασμού σας."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
@@ -3093,9 +3108,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Ένα δωρεάν και χωρίς λογοκρισία Internet θα πρέπει να είναι διαθέσιμο σε όλους."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Ένα κλειδί με τον ίδιο αλγόριθμο κρυπτογράφησης είναι ήδη ενεργό για αυτήν τη διεύθυνση.\nΗ δημιουργία ενός άλλου κλειδιού θα προκαλέσει πιο αργή φόρτωση του λογαριασμού και η διαγραφή αυτού του κλειδιού μπορεί να προκαλέσει προβλήματα.\nΑν δημιουργείτε ένα νέο κλειδί επειδή το παλιό σας κλειδί είναι παραβιασμένο/εκτεθειμένο, επισημάνετε το κλειδί ως εκτεθειμένο.\nΕίστε σίγουροι ότι θέλετε να συνεχίσετε;"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "Ένα αρχείο ανάκτησης επιτρέπει το ξεκλείδωμα και άνοιγμα των δεδομένων σας μετά από επαναφορά λογαριασμού. "
       ],
@@ -3201,9 +3213,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Το AOL διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
       ],
-      "Are you sure you want to continue?": [
-        "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
-      ],
       "Are you sure you want to delete this address?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτή τη διεύθυνση;"
       ],
@@ -3305,9 +3314,6 @@
       ],
       "Center": [
         "Κέντρο"
-      ],
-      "Change your default in settings": [
-        "Αλλάξτε την προεπιλογή στις ρυθμίσεις"
       ],
       "Check the status of current and previous imports.": [
         "Ελέγξτε την κατάσταση των τρεχουσών και των προηγούμενων εισαγωγών."
@@ -3420,7 +3426,7 @@
         "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις με πληρωμένους ProtonVPN servers."
+        "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ProtonVPN επί πληρωμή."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
@@ -3455,6 +3461,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα δεν θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Η ενεργοποίηση ξανά της ανάκτησης μέσω φράσης θα παράξει μια νέα φράση ανάκτησης."
+      ],
       "Encryption setting updated": [
         "Η ρύθμιση κρυπτογράφησης ενημερώθηκε"
       ],
@@ -3472,12 +3481,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Καταχωρίστε τον κωδικό οργανισμού για να επαναφέρετε τα προνόμια διαχειριστή. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Εισάγετε την ανάκτηση ${ recoveryMethodText } που σχετίζεται με τον ${ BRAND_NAME } λογαριασμό σας. Θα σας στείλουμε έναν κωδικό για να επιβεβαιώσουμε την επαναφορά του κωδικού πρόσβασης."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Εισαγάγετε τη φράση ανάκτησης που σχετίζεται με το ${ BRAND_NAME } λογαριασμό σας."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
@@ -3588,10 +3591,10 @@
         "Αν έχετε ρυθμίσει και SPF και DKIM, το DMARC σάς επιτρέπει να καθορίσετε τον τρόπο με τον οποίο άλλες υπηρεσίες ηλεκτρονικού ταχυδρομείου πρέπει να παραδίδουν ηλεκτρονικό ταχυδρομείο για τον domain σας, αν και οι δύο έλεγχοι SPF και DKIM απέτυχαν. Αυτό μπορεί να δυσκολέψει την αποστολή ανεπιθύμητων μηνυμάτων που υποτίθεται ότι είστε εσείς, αλλά μπορεί επίσης να προκαλέσει και προβλήματα παράδοσης εάν δεν γίνει σωστά."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        ""
+        "Εάν χάσετε τα στοιχεία σύνδεσής σας και πρέπει να επαναφέρετε το λογαριασμό σας, ${ boldImperative } ότι έχετε $ { boldAccountRecovery } ορισμένα."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        ""
+        "Εάν χάσετε τα στοιχεία σύνδεσής σας και πρέπει να επαναφέρετε το λογαριασμό σας, ${ boldImperative } ότι έχετε ${ boldAccountAndRecovery } ορισμένα, διαφορετικά ενδέχεται να μην μπορέσετε να αποκτήσετε πρόσβαση σε κανένα από τα μηνύματα ηλεκτρονικού ταχυδρομείου, τις επαφές ή τα αρχεία σας."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Εάν χάσετε τη συσκευή σας με δύο παράγοντες, αυτοί οι κωδικοί μπορούν να χρησιμοποιηθούν αντί για τον 6-ψήφιο κωδικό ελέγχου ταυτότητας δύο παραγόντων για να συνδεθείτε στο λογαριασμό σας. Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά."
@@ -3604,12 +3607,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Εάν προχωρήσετε με την υποβάθμιση, θα χάσετε την πρόσβαση σtα επί πληρωμή χαρακτηριστικά του ProtonVPN."
-      ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Εάν συνεχίσετε, θα πρέπει να επαναφέρετε τον κωδικό πρόσβασής σας και θα αποσυνδεθείτε από όλες τις ενεργές περιόδους λειτουργίας."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Εάν συνεχίσετε, θα πρέπει να επαναφέρετε τον κωδικό πρόσβασής σας και θα αποσυνδεθείτε από οποιεσδήποτε άλλες ενεργές περιόδους λειτουργίας."
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Εάν θέλετε να διατηρήσετε μια υπάρχουσα εγγραφή SPF, μπορείτε να προσθέσετε ${ spf } σε αυτήν μετά από το ${ spfValue }. Μην δημιουργείτε πολλαπλές εγγραφές SPF."
@@ -3705,9 +3702,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Το κλειδί με δακτυλικό αποτύπωμα ${ fp } διαγράφηκε."
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Το κλειδί με δακτυλικό αποτύπωμα ${ fp } δημιουργήθηκε."
-      ],
       "Label all imported messages as": [
         "Επισήμανση όλων των εισαγόμενων μηνυμάτων ως"
       ],
@@ -3795,8 +3789,8 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να μας επιτρέψετε να έχουμε πρόσβαση στα δεδομένα σας."
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
-        "Δεν έχει οριστεί μέθοδος ανάκτησης λογαριασμού, διακινδυνεύεται απώλεια πρόσβασης στον λογαριασμό σας"
+      "No account recovery method set; you are at risk of losing access to your account": [
+        "Δεν έχει οριστεί μέθοδος ανάκτησης λογαριασμού. Διακινδυνεύεται απώλεια πρόσβασης στον λογαριασμό σας"
       ],
       "No action selected": [
         "Δεν έχει επιλεγεί καμία ενέργεια"
@@ -3807,8 +3801,8 @@
       "No contact encryption keys exist": [
         "Δεν υπάρχουν κλειδιά κρυπτογράφησης επαφών"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
-        "Δεν έχει οριστεί μέθοδος ανάκτησης δεδομένων, διακινδυνεύεται απώλεια πρόσβασης στα δεδομένα σας"
+      "No data recovery method set; you are at risk of losing access to your data": [
+        "Δεν έχει οριστεί μέθοδος ανάκτησης δεδομένων. Διακινδυνεύεται απώλεια πρόσβασης στα δεδομένα σας"
       ],
       "No folder selected": [
         "Δεν επιλέχθηκε φάκελος"
@@ -3900,8 +3894,11 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Παρακαλώ πληκτρολογήστε έναν κωδικό πρόσβασης για την κρυπτογράφηση του ιδιωτικού κλειδιού σας πριν από την εξαγωγή."
       ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        "Παρακαλούμε εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Παρακαλούμε κρατήστε το ασφαλές. Θα το χρειαστείτε για πρόσβαση στον λογαριασμό σας και αποκρυπτογράφηση των δεδομένων σας, σε περίπτωση επαναφοράς κωδικού πρόσβασης."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Λάβετε υπόψη ότι αν διαγράψετε αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας αυτήν τη διεύθυνση."
@@ -4003,6 +4000,9 @@
       "Recovery phrase has been disabled": [
         "Η φράση ανάκτησης έχει απενεργοποιηθεί"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        "Η φράση ανάκτησης δεν σχετίζεται με κάποιο κλειδί."
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Η φράση ανάκτησης δεν σχετίζεται με κάποιο παρωχημένο κλειδί."
       ],
@@ -4022,7 +4022,7 @@
         "Αποθηκεύστε τον κωδικό πρόσβασής σας σε ασφαλές μέρος."
       ],
       "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Αποθηκεύστε τους κωδικούς σας κάπου με ασφάλεια. Κάντε κλικ στο εικονίδιο για να επιβεβαιώσετε ότι έχετε πληκτρολογήσει τον κωδικό σας σωστά."
+        "Φυλάξτε τον κωδικό πρόσβασής σας σε ασφαλές μέρος. Κάντε κλικ στο εικονίδιο για επιβεβαίωση της ορθής πληκτρολόγησης του κωδικού σας."
       ],
       "Scan QR code instead": [
         "Εναλλακτικά, σαρώστε τον κώδικα QR"
@@ -4036,8 +4036,8 @@
       "Select a service provider to get started": [
         "Επιλογή υπηρεσίας παροχής για να ξεκινήσετε"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Επιλέξτε ποια ημερολόγια θα εισαγάγετε. Ενα νέο ημερολόγιο θα δημιουργηθεί για κάθε εισαγόμενο ημερολόγιο μέχρι το όριο των 20 ημερολογίων. Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
       "Server is currently down": [
         "Ο διακομιστής είναι προσωρινά εκτός"
@@ -4123,6 +4123,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Αυτή η δυνατότητα προορίζεται μόνο για προχωρημένους χρήστες. Μετά τη διαγραφή αυτού του κλειδιού, ΔΕΝ θα είστε σε θέση να αποκρυπτογραφήσετε οποιοδήποτε μήνυμα έχει κρυπτογραφηθεί με αυτό. Μπορεί να οδηγήσει σε απώλεια δεδομένων."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Αυτή είναι μια 12-λεκτη φράση που σας είχε ζητηθεί να ορίσετε."
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Αυτό είναι ένα αρχείο ανάκτησης ή κλειδί κρυπτογράφησης που ίσως αποθηκεύσατε προηγουμένως."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Αυτό είναι ένα κλειδί κρυπτογράφησης που ίσως αποθηκεύσατε προηγουμένως."
+      ],
+      "This is the password you used before the password reset.": [
+        "Αυτός είναι ο κωδικός που χρησιμοποιούσατε πριν την επαναφορά κωδικού πρόσβασης."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από προγράμματα περιήγησης Internet Explorer και Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
       ],
@@ -4138,14 +4150,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Αυτό θα απενεργοποιήσει επίσης οποιαδήποτε μέθοδο ελέγχου ταυτότητας 2 παραγόντων (2FA) που σχετίζεται με αυτόν τον λογαριασμό."
       ],
-      "This will also disable two-factor authentication.": [
-        "Αυτό θα απενεργοποιήσει επίσης τον έλεγχο ταυτότητας δύο παραγόντων."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Αυτή η ενέργεια θα ακυρώσει την τρέχουσα συνδρομή σας επί πληρωμή, και θα χάσετε όποια οφέλη πίστης έχετε συσσωρεύσει. Το υπόλοιπο της εγγραφής σας θα επιστραφεί ως πίστωση στον λογαριασμό σας."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Αυτό θα δημιουργήσει ένα κλειδί κρυπτογράφησης για τον οργανισμό σας. Τα πλήκτρα 4096-bit λειτουργούν μόνο σε υπολογιστές υψηλής απόδοσης, για τους περισσότερους χρήστες συνιστούμε να χρησιμοποιείτε κλειδιά 2048-bit."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Αυτό θα απενεργοποιήσει την τρέχουσα φράση σας ανάκτησης. Δεν θα μπορείτε να τη χρησιμοποιήσετε για πρόσβαση στον λογαριασμό σας ή αποκρυπτογράφηση των δεδομένων σας."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο Proton. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -4159,20 +4171,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Αυτό θα αντικαταστήσει τον προσωρινό κωδικό πρόσβασης σας. Στο εξής θα τον χρησιμοποιείτε για την πρόσβαση στον λογαριασμό σας στο ${ BRAND_NAME }."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "Αυτό θα σας βγάλει εκτός κάθε ενεργής συνεδρίας και θα απενεργοποιήσει την ταυτοποίηση δύο παραγόντων."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Αυτός ο οδηγός θα ενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων (2FA) στον λογαριασμό σας Proton. Ο έλεγχος ταυτότητας δύο παραγόντων (2FA) θα κάνει τον λογαριασμό σας Proton πιο ασφαλή, γι αυτό συνιστούμε να τον ενεργοποιήσετε."
       ],
       "to": [
         "προς"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "Για να αποκτήσετε πρόσβαση στα παλιά σας μηνύματα, θα πρέπει να ενεργοποιήσετε ξανά τα παλιά κλειδιά κρυπτογράφησης χρησιμοποιώντας μία από τις ακόλουθες μεθόδους αποκατάστασης."
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Για επιβεβαίωση, παρακαλώ εισάγετε το όνομα του χρήστη που θέλετε να διαγράψετε."
       ],
       "to continue to ${ toAppName }": [
         "για συνέχιση στο ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
@@ -4182,6 +4197,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Για να προετοιμάσετε τον εξωτερικό λογαριασμό σας για εισαγωγή, ακολουθήστε τις οδηγίες για:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "Για συνέχεια, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Για να ξεκινήσετε να διασφαλίζετε τη σύνδεση σας στο διαδίκτυο, θα πρέπει να εγκαταστήσετε την εφαρμογή ProtonVPN στη συσκευή σας και να συνδεθείτε σε ένα διακομιστή ProtonVPN."
@@ -4209,9 +4227,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για την αποκρυπτογράφηση σύνδεσης και αποκωδικοποίησης. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο συνιστούμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να επιλέξτε τις ρυθμίσεις δύο κωδικών πρόσβασης, εισαγάγετε τον κωδικό σύνδεσης (login password) και έπειτα τον κωδικό θυρίδας (mailbox password)."
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "Αδυναμία αποκρυπτογράφησης. Η φράση ανάκτησης δεν σχετίζεται με κάποιο κλειδί."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Αδυναμία επαλήθευσης υπογραφής αρχείου ανάκτησης. Παρακαλούμε επικοινωνήστε με την υποστήριξη."
@@ -4273,11 +4288,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } πακέτο για οικογένειες και μικρές επιχειρήσεις."
       ],
+      "Warning:": [
+        "Προειδοποίηση:"
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Προειδοποίηση: Η διαγραφή είναι μόνιμη. Αυτό επίσης αφαιρεί την πρόσβαση σε όλες τις συνδεδεμένες υπηρεσίες και διαγράφει όλες τις επαφές σας."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Σας συμβουλεύουμε να χρησιμοποιείτε επίσημες εφαρμογές ProtonVPN όταν είναι δυνατόν."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        "Αντί για αυτό, συνιστούμε χρήση της φράσης σας ανάκτησης."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας."
@@ -4305,6 +4326,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Οι προβολές εβδομάδας και μήνα ισχύουν μόνο για την επιφάνεια εργασίας."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        "Θα στείλουμε έναν κωδικό επαναφοράς στην ηλ. διεύθυνση που καθορίσατε για ανακτήσεις λογαριασμού."
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        "Θα στείλουμε έναν κωδικό επαναφοράς στον αριθμό τηλεφώνου που καθορίσατε για ανακτήσεις λογαριασμού."
       ],
       "What do you want to import from your Google account?": [
         "Τι θέλετε να εισάγετε από τον λογαριασμό σας στο Google;"
@@ -4342,6 +4369,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
@@ -4356,9 +4386,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Μπορείτε να ενεργοποιήσετε την καταγραφή ταυτότητας για να δείτε πότε θα έχει πρόσβαση ο λογαριασμός σας και από ποια διεύθυνση IP. Θα καταγράψουμε τη διεύθυνση IP που έχει πρόσβαση στον λογαριασμό και την ώρα, καθώς και τις αποτυχημένες προσπάθειες."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Μπορείτε να δημιουργήσετε ένα νέο κλειδί κρυπτογράφησης εάν πιστεύετε ότι το προηγούμενο κλειδί σας έχει παραβιαστεί."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Τώρα μπορείτε να λαμβάνετε μηνύματα από τη διεύθυνση @pm.me. Αναβαθμίστε σε πακέτο επί πληρωμή για να στέλνετε επίσης email χρησιμοποιώντας τη διεύθυνση @pm.me και να δημιουργείτε επιπλέον διευθύνσεις @pm.me."
@@ -4377,12 +4404,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Δεν έχετε ορίσει μία μέθοδο ανάκτησης, με αποτέλεσμα η ανάκτηση λογαριασμού να είναι αδύνατη αν ξεχάσετε τον κωδικό πρόσβασής σας. Θέλετε να συνεχίσετε χωρίς μέθοδο ανάκτησης;"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Έχετε απενεργοποιήσει την πρόσβαση Beta. Πατήστε ${ refreshButton } για χρήση της σταθερής έκδοσης του ${ appName }. Η εφαρμογή θα ανανεωθεί."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Έχετε ενεργοποιήσει την πρόσβαση Beta. Πατήστε ${ refreshButton } για χρήση της νέας έκδοσης του ${ appName }. Η εφαρμογή θα ανανεωθεί."
       ],
       "You have no saved payment methods.": [
         "Δεν έχετε αποθηκευμένους τρόπους πληρωμής."
@@ -4453,8 +4474,8 @@
       "Your Block List is empty.": [
         "Η Λίστα Αποκλεισμού είναι κενή."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
-        "Τα δεδομένα σας είναι κρυπτογραφημένα, μπορείτε να ανακτήσετε τα δεδομένα σας ενεργοποιώντας ξανά τα κλειδιά σας."
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
+        "Τα δεδομένα σας είναι κρυπτογραφημένα και κλειδωμένα. Μπορείτε να ανακτήσετε πρόσβαση μέσω μιας μεθόδου ανάκτησης."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
@@ -4639,6 +4660,29 @@
       ],
       "Subscription": [
         "Συνδρομή"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        ""
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        ""
+      ],
+      "Generate key": [
+        ""
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        ""
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        ""
       ]
     },
     "Key state badge": {
@@ -4928,6 +4972,9 @@
       "ALL": [
         "ΟΛΑ"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
@@ -4976,12 +5023,6 @@
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
-      "Backup key": [
-        "Αντίγραφο ασφαλείας κλειδιού"
-      ],
-      "Backup keys": [
-        "Αντίγραφο ασφαλείας κλειδιού"
-      ],
       "Block email tracking": [
         "Φραγή ιχνηλάτησης μηνυμάτων"
       ],
@@ -5001,7 +5042,7 @@
         "Ποσό BTC:"
       ],
       "Calendars": [
-        ""
+        "Ημερολόγια"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -5018,11 +5059,11 @@
       "Category": [
         "Κατηγορία"
       ],
-      "Choose a color": [
-        "Επιλέξτε χρώμα"
-      ],
       "Code": [
         "Κωδικός"
+      ],
+      "Color": [
+        "Χρώμα"
       ],
       "Composer": [
         "Συντάκτης"
@@ -5093,20 +5134,8 @@
       "Days of the week": [
         "Ημέρα της εβδομάδας"
       ],
-      "Default email": [
-        "Προεπιλεγμένη διεύθυνση email"
-      ],
-      "Default event duration": [
-        "Προεπιλεγμένη διάρκεια γεγονότος"
-      ],
-      "Default full day notifications": [
-        "Προεπιλεγμένες ολοήμερες ειδοποιήσεις"
-      ],
       "Default language": [
         "Προεπιλεγμένη γλώσσα"
-      ],
-      "Default notifications": [
-        "Προεπιλεγμένες ειδοποιήσεις"
       ],
       "Default PGP scheme": [
         "Προεπιλεγμένο σχήμα PGP"
@@ -5186,6 +5215,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Εισάγετε τον κωδικό πρόσβασης για το κλειδί με δακτυλικό αποτύπωμα: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        ""
+      ],
+      "Event notifications": [
+        ""
+      ],
       "Expires": [
         "Λήγει"
       ],
@@ -5203,6 +5238,9 @@
       ],
       "Folder location": [
         "Τοποθεσία φακέλου"
+      ],
+      "From: ${ emailFrom }": [
+        "Από: ${ emailFrom }"
       ],
       "From: ${ fromEmailAddress }": [
         "Από: ${ fromEmailAddress }"
@@ -5384,6 +5422,9 @@
       "Phrase": [
         "Φράση"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        "Η φράση αποτελείται από 12 μοναδικές λέξεις σε συγκεκριμένη σειρά"
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Προσθέστε και τις 3 από τις ακόλουθες εγγραφές CNAME. Σημειώστε ότι για την ενημέρωση των εγγραφών DNS ενδέχεται να χρειαστούν αρκετές ώρες."
       ],
@@ -5401,6 +5442,9 @@
       ],
       "Postal code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Previous password": [
+        "Προηγούμενος κωδικός πρόσβασης"
       ],
       "Private User": [
         "Ιδιωτικός Χρήστης"
@@ -5437,9 +5481,6 @@
       ],
       "Recovery phrase": [
         "Φράση αποκατάστασης"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Η φράση ανάκτησης περιέχει 12 λέξεις"
       ],
       "Repeat password": [
         "Επανάληψη κωδικού"
@@ -5519,6 +5560,9 @@
       "To: ${ emailAddress }": [
         "Προς: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Προς: ${ emailTo }"
+      ],
       "To: ${ PMEmailAddress }": [
         "Προς: ${ PMEmailAddress }"
       ],
@@ -5543,17 +5587,11 @@
       "Undo send": [
         "Αναίρεση αποστολής"
       ],
-      "Upload your backup key": [
-        "Ανέβασμα αντιγράφου ασφαλείας του κλειδιού"
+      "Upload 1 or more encryption keys": [
+        "Ανεβάστε 1 ή περισσότερα κλειδιά κρυπτογράφησης"
       ],
-      "Upload your recovery file": [
-        "Ανέβασμα του αρχείου ανάκτησης σας"
-      ],
-      "Uploaded private keys": [
-        "Ανεβασμένα ιδιωτικά κλειδιά"
-      ],
-      "Uploaded recovery file": [
-        "Ανεβασμένο αρχείο ανάκτησης"
+      "Upload 1 or more recovery files or encryption keys": [
+        "Ανεβάστε 1 ή περισσότερα αρχεία ανάκτησης ή κλειδιά κρυπτογράφησης"
       ],
       "URL": [
         "Διεύθυνση URL"
@@ -5630,9 +5668,6 @@
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
       ],
-      "Your recovery phrase": [
-        "Η φράση ανάκτησης σας"
-      ],
       "ZIP": [
         "T.K"
       ]
@@ -5687,6 +5722,9 @@
       ],
       "Proton newsletter": [
         "Ενημερωτικό δελτίο Proton"
+      ],
+      "Proton offers and promotions": [
+        "Προσφορές και προωθήσεις της Proton"
       ],
       "Proton product announcements": [
         "Ανακοινώσεις προϊόντων του Proton"
@@ -6854,17 +6892,11 @@
       "Email": [
         "Email"
       ],
-      "email address": [
-        "διεύθυνση email"
-      ],
-      "phone number": [
-        "αριθμός τηλεφώνου"
-      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
-      "Recovery phrase": [
-        "Φράση αποκατάστασης"
+      "Phrase": [
+        "Φράση"
       ]
     },
     "Remark about a key type option": {
@@ -6904,11 +6936,8 @@
       "Upload": [
         "Ανέβασμα"
       ],
-      "Upload additional private keys": [
-        "Ανέβασμα επιπλέον ιδιωτικών κλειδιών"
-      ],
-      "Upload additional recovery files": [
-        "Ανέβασμα επιπρόσθετων αρχείων ανάκτησης"
+      "Upload additional files": [
+        "Ανέβασμα πρόσθετων αρχείων"
       ]
     },
     "Select search results": {
@@ -7204,7 +7233,7 @@
         "Τα κλειδιά ενημερώθηκαν"
       ],
       "Locale updated": [
-        "Το τοπικό ενημερώθηκε"
+        "Η εντοπιότητα ενημερώθηκε"
       ],
       "Organization activated": [
         "Ο οργανισμός ενεργοποιήθηκε"
@@ -7639,6 +7668,9 @@
       "Dashboard": [
         "Πίνακας Ελέγχου"
       ],
+      "Data locked": [
+        "Τα δεδομένα κλειδώθηκαν"
+      ],
       "Data recovery": [
         "Ανάκτηση δεδομένων"
       ],
@@ -7699,6 +7731,9 @@
       "Edit Block List": [
         "Επεξεργασία λίστας ανεπιθύμητων"
       ],
+      "Edit calendar": [
+        "Επεξεργασία ημερολογίου"
+      ],
       "Edit credit/debit card": [
         "Επεξεργασία πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -7728,9 +7763,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Ενεργοποίηση συντομεύσεων πληκτρολογίου"
-      ],
-      "Encrypted data": [
-        "Κρυπτογραφημένα δεδομένα"
       ],
       "Encryption & keys": [
         "Κρυπτογράφηση & κλειδιά"
@@ -7773,9 +7805,6 @@
       ],
       "General": [
         "Γενικά"
-      ],
-      "Generate key": [
-        "Δημιουργία κλειδιού"
       ],
       "Generate missing keys": [
         "Δημιουργία των κλειδιών που λείπουν"
@@ -7866,7 +7895,7 @@
         "Οι διευθύνσεις μου"
       ],
       "My calendars": [
-        "Τα ημερολόγια μου"
+        "Τα ημερολόγιά μου"
       ],
       "Network error": [
         "Σφάλμα δικτύου"
@@ -7881,7 +7910,7 @@
         "Άνοιγμα αναπτυσσόμενων επιλογών"
       ],
       "Open help menu": [
-        "Έγινε άνοιγμα μενού βοήθειας"
+        "Άνοιγμα μενού βοήθειας"
       ],
       "Open pagination": [
         "Άνοιγμα σελιδοποίησης"
@@ -7970,11 +7999,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "Επανενεργοποίηση κλειδιών"
-      ],
       "Reconnect your account": [
         "Επανασύνδεση του λογαριασμού σας"
+      ],
+      "Recover data": [
+        "Ανάκτηση δεδομένων"
       ],
       "Recovery": [
         "Ανάκτηση"
@@ -8004,7 +8033,7 @@
         "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
       "Security logs": [
-        "Καταγραφές ασφαλείας"
+        "Καταγραφές διασφάλισης"
       ],
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
@@ -8131,9 +8160,6 @@
       ],
       "Unsupported browser": [
         "Μη υποστηριζόμενο πρόγραμμα περιήγησης"
-      ],
-      "Update calendar": [
-        "Ενημέρωση του ημερολογίου"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -8268,7 +8294,7 @@
         "Προσαρμόσετε την εισαγωγή για να μειώσετε τον αριθμό των ετικετών"
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Υπερασπίζεται τις απειλές για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο Διαδίκτυο μέσω πολλών servers."
+        "Αμύνεται κατά των απειλών ενάντια στο απόρρητο του VPN, κατευθύνοντας τη διαδικτυακή σας κίνηση διαμέσου πολλαπλών διακομιστών."
       ],
       "Discount applied for annual billing cycle": [
         "Η έκπτωση ισχύει για τον ετήσιο κύκλο χρέωσης"
@@ -8391,7 +8417,7 @@
         "Ίσως ο εξωτερικός λογαριασμός σας έχει εξαντλήσει το όριό του στη μετάδοση ανά 24ωρο. Το Proton θα δοκιμάσει να συνεχίσει την εισαγωγή το συντομότερο δυνατό."
       ],
       "Your ProtonMail inbox is almost full": [
-        "Το γραμματοκιβώτιό σας στο ProtonMail, είναι σχεδόν γεμάτο"
+        "Η θυρίδα σας στο ProtonMail είναι σχεδόν γεμάτη"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -8412,6 +8438,17 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Υπογράψτε αυτόματα όλα τα εξερχόμενα μηνύματά σας, ώστε οι χρήστες να μπορούν να επαληθεύσουν τη γνησιότητά τους. Αυτό γίνεται σε συνδυασμό με τις προεπιλεγμένες ρυθμίσεις PGP, οι οποίες μπορούν να διαμορφωθούν παρακάτω."
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        "Ενημέρωση προεπιλεγμένης γραμματοσειράς και μεγέθους"
+      ],
+      "Your default font will look like following:": [
+        "Η προεπιλεγμένη γραμματοσειρά θα μοιάζει ως εξής:"
       ]
     },
     "Upgrade": {
@@ -8472,7 +8509,7 @@
         "Δικαιοδοσία"
       ],
       "Kill Switch / Always-on VPN": [
-        "Kill Switch / Always-on VPN"
+        "Ασφάλεια Αποσύνδεσης / VPN Πάντα σε λειτουργία"
       ],
       "Languages supported": [
         "Γλώσσες που υποστηρίζονται"
@@ -8517,7 +8554,7 @@
         "Μετρητής δεδομένων χρήστη"
       ],
       "Volume/bandwidth cap": [
-        "Volume/bandwidth cap"
+        "Όριο όγκου/bandwidth"
       ],
       "VPN Connections": [
         "Συνδέσεις VPN"
@@ -8677,6 +8714,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Δεν θα βλέπετε πλέον αυτήν την καρτέλα εισαγωγής στη λίστα."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        "Το αρχείο ανάκτησης είναι ξεπερασμένη και δεν μπορεί να ανακτήσει νέα δεδομένα στην περιπτωση που θέλετε να επαναφέρετε ξανα το λογαριασμό σας."
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        "Η φράση ανάκτησης είναι ξεπερασμένη και δεν μπορεί να ανακτήσει νέα δεδομένα στην περιπτωση που θέλετε να επαναφέρετε ξανα το λογαριασμό σας."
       ]
     },
     "Warning for domain modal": {

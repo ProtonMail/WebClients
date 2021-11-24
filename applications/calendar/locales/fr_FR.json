@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activer la récupération"
+      ],
       "Add": [
         "Ajouter"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Copier l’adresse électronique dans le presse-papiers"
       ],
-      "Create": [
-        "Créer"
-      ],
       "Create calendar": [
         "Créer un calendrier"
       ],
@@ -140,8 +140,8 @@
       "Decrease": [
         "Diminuer"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Application de messagerie par défaut"
       ],
       "Delete": [
         "Supprimer"
@@ -188,7 +188,7 @@
         "Modifier le numéro de téléphone"
       ],
       "Email settings": [
-        "Paramètres de courriel"
+        "Paramètres d’e-mail"
       ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
@@ -213,9 +213,6 @@
       ],
       "Go to settings": [
         "Accéder aux paramètres"
-      ],
-      "here": [
-        "ici"
       ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
@@ -346,9 +343,6 @@
       "Previous year": [
         "Année précédente"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Quitter"
       ],
@@ -408,6 +402,12 @@
       ],
       "Send": [
         "Envoyer"
+      ],
+      "Set as default": [
+        "Définir par défaut"
+      ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
       ],
       "Share": [
         "Partager"
@@ -480,6 +480,12 @@
       ],
       "Update": [
         "Mettre à jour"
+      ],
+      "Update recovery file": [
+        "Mettre à jour le fichier de récupération"
+      ],
+      "Update recovery phrase": [
+        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
         "Changer d’offre"
@@ -984,7 +990,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        " : "
       ]
     },
     "Composer size": {
@@ -1398,6 +1404,10 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Erreur de déchiffrement : le déchiffrement du contenu de cet événement a échoué."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
+        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
@@ -1501,6 +1511,9 @@
       ],
       "Name required": [
         "Nom requis"
+      ],
+      "No data to import": [
+        "Aucune donnée à importer"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Aucune clé récupérée pour l’utilisateur interne n’est valide pour l’envoi"
@@ -1653,7 +1666,7 @@
         "Statut du jeton de paiement inconnu"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "Vous ne pouvez pas envoyer de courriel à plus de 100 destinataires"
+        "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires"
       ],
       "You can't send vCards of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
@@ -1666,9 +1679,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } prend en charge l'importation de calendriers uniquement avec iCal version 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
       ],
@@ -1898,7 +1908,7 @@
         "Le fichier ICS joint n'a pas pu être déchiffré"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Le fichier ICS joint n'a pas pu être lu"
       ],
       "Invalid invitation": [
         "Invitation non valide"
@@ -2265,10 +2275,10 @@
         "Un message d’annulation sera envoyé aux participants supprimés."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Un courriel d’annulation sera envoyé aux participants de l’événement. Voulez-vous supprimer tous les événements de cette série ?"
+        "Un e-mail d’annulation sera envoyé aux participants de l’événement. Voulez-vous supprimer tous les événements de cette série ?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Un courriel d’annulation sera envoyé aux participants de l’événement. Voulez-vous supprimer cet événement ?"
+        "Un e-mail d’annulation sera envoyé aux participants de l’événement. Voulez-vous supprimer cet événement ?"
       ],
       "A free and uncensored Internet should be available to all.": [
         "Chacun devrait bénéficier d'un Internet libre et non censuré."
@@ -2284,9 +2294,6 @@
       ],
       "Account successfully updated": [
         "Compte correctement mis à jour"
-      ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Ajoutez des adresses supplémentaires à votre compte comme utilisateur2@protonmail.com"
@@ -2315,7 +2322,7 @@
         "Tous (${ totalFoldersCount } labels)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Vous permet d'héberger des courriels pour votre ou vos propres domaines dans ${ mailAppName }, par exemple jean.dupont@exemple.com"
+        "Vous permet d'héberger des e-mails pour votre ou vos propres domaines dans ${ mailAppName }, par exemple jean.dupont@exemple.com"
       ],
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum requis (${ amount })."
@@ -2414,6 +2421,9 @@
       "Daily": [
         "Quotidiennement"
       ],
+      "Default email application": [
+        "Application de messagerie par défaut"
+      ],
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
@@ -2454,7 +2464,7 @@
         "Pour les familles et les équipes réduites ; Mail et VPN inclus."
       ],
       "For getting started with private and secure emailing.": [
-        "Pour commencer avec des courriels privés et sécurisés."
+        "Pour commencer avec des e-mails privés et sécurisés."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
         "Pour les personnes qui ont besoin d'une messagerie complète avec une protection avancée."
@@ -2680,8 +2690,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l’envoi d’un courriel à cette adresse électronique."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
@@ -2689,11 +2699,11 @@
       "Session timed out.": [
         "Session expirée."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Définissez ProtonMail comme application de messagerie par défaut pour ce navigateur. ProtonMail s'ouvrira automatiquement lorsque vous cliquerez sur un lien de courrier électronique."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "La configuration de PGP vous permet d’envoyer des courriels chiffrés de bout en bout à un utilisateur qui n’utilise pas ProtonMail , mais qui se sert d’un service compatible PGP."
+        "La configuration de PGP vous permet d’envoyer des e-mails chiffrés de bout en bout à un utilisateur qui n’utilise pas ProtonMail, mais qui se sert d’un service compatible PGP."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Puisque vous êtes un utilisateur fidèle, votre compte dispose de fonctionnalités supplémentaires activées."
@@ -2753,7 +2763,7 @@
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Cette adresse est désactivée. Pour pouvoir envoyer des courriels à cette adresse, son propriétaire doit d’abord l’activer."
+        "Cette adresse est désactivée. Pour pouvoir envoyer des e-mails à cette adresse, son propriétaire doit d’abord l’activer."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Cet événement a été mis à jour par l’organisateur. Voulez-vous changer votre réponse uniquement pour cet événement dans la série ?"
@@ -2860,6 +2870,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email }) et disposez d’un accès restreint."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
@@ -2868,12 +2881,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes lorsque de nouveaux messages arrivent dans ce dossier."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Vous avez désactivé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la version stable de ${ appName }. L'application sera rechargée."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Vous avez activé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la dernière version de ${ appName }. L'application sera rechargée."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Vous avez réactivé vos clés et les événements liés aux calendriers suivants peuvent désormais être déchiffrés."
@@ -2894,7 +2901,7 @@
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux courriels. ${ freeUpMessage } ${ upgradeLink }"
+        "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Vous serez bientôt redirigé vers votre banque pour vérifier votre paiement."
@@ -2936,10 +2943,10 @@
         "Votre compte sera mis à jour une fois le paiement effectué."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Votre adresse est désactivée. Un courriel d’annulation ne peut donc pas être envoyé aux participants à l’événement. Voulez-vous tout de même supprimer tous les événements de cette série ?"
+        "Votre adresse est désactivée. Un e-mail d’annulation ne peut donc pas être envoyé aux participants à l’événement. Voulez-vous tout de même supprimer tous les événements de cette série ?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Votre adresse est désactivée. Un courriel d’annulation ne peut donc pas être envoyé aux participants à l’événement. Voulez-vous tout de même supprimer cet événement ?"
+        "Votre adresse est désactivée. Un e-mail d’annulation ne peut donc pas être envoyé aux participants à l’événement. Voulez-vous tout de même supprimer cet événement ?"
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Pour des raisons de sécurité, votre banque exige une vérification 3-D Secure."
@@ -3150,10 +3157,10 @@
         "Sélectionner/désélectionner tout"
       ],
       "Send email": [
-        "Envoyer un courriel"
+        "Envoyer un e-mail"
       ],
       "Show all emails": [
-        "Afficher tous les courriels"
+        "Afficher tous les e-mails"
       ],
       "Show original message": [
         "Afficher le message d’origine"
@@ -3217,6 +3224,9 @@
       "All day": [
         "Journée entière"
       ],
+      "All-day event notifications": [
+        "Notifications d'événement sur journée complète"
+      ],
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
@@ -3250,11 +3260,11 @@
       "Category": [
         "Catégorie"
       ],
-      "Choose a color": [
-        "Choisir une couleur"
-      ],
       "City": [
         "Ville"
+      ],
+      "Color": [
+        "Couleur"
       ],
       "Contacts": [
         "Contacts"
@@ -3267,18 +3277,6 @@
       ],
       "CVV code": [
         "Code CVC"
-      ],
-      "Default email": [
-        "Adresse électronique par défaut"
-      ],
-      "Default event duration": [
-        "Durée d'événement par défaut"
-      ],
-      "Default full day notifications": [
-        "Notifications d'une journée complète par défaut"
-      ],
-      "Default notifications": [
-        "Notifications par défaut"
       ],
       "Description": [
         "Description"
@@ -3299,13 +3297,13 @@
         "Format du message"
       ],
       "Emails": [
-        "Courriels"
+        "E-mails"
       ],
       "Enable Beta Access": [
         "Activer l’accès à la version bêta"
       ],
       "Encrypt emails": [
-        "Chiffrer les courriels"
+        "Chiffrer les e-mails"
       ],
       "Ends": [
         "Se termine"
@@ -3315,6 +3313,9 @@
       ],
       "Enter the 6-digit code": [
         "Saisissez le code à 6 chiffres"
+      ],
+      "Event duration": [
+        "Durée de l’événement"
       ],
       "Event frequency": [
         "Fréquence de l’événement"
@@ -3477,7 +3478,7 @@
         "Sélectionnez votre pays"
       ],
       "Sign emails": [
-        "Signer les courriels"
+        "Signer les e-mails"
       ],
       "Street address": [
         "Rue"
@@ -3599,10 +3600,10 @@
         "Ajouter un code cadeau"
       ],
       "All mail": [
-        ""
+        "Tous les messages"
       ],
       "Archive": [
-        ""
+        "Archives"
       ],
       "Calendars": [
         "Calendriers"
@@ -3614,13 +3615,13 @@
         "cliquez ici"
       ],
       "Drafts": [
-        ""
+        "Brouillons"
       ],
       "Go to subscription plans": [
         "Accéder aux abonnements"
       ],
       "Inbox": [
-        ""
+        "Boîte de réception"
       ],
       "Learn more": [
         "En savoir plus"
@@ -3629,7 +3630,7 @@
         "Mes calendriers"
       ],
       "Outbox": [
-        ""
+        "Boîte d'envoi"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -3638,22 +3639,22 @@
         "Demander une invitation"
       ],
       "Scheduled": [
-        ""
+        "Programmés"
       ],
       "Sent": [
-        ""
+        "Envoyés"
       ],
       "Spam": [
-        ""
+        "Indésirables"
       ],
       "Starred": [
-        ""
+        "Favoris"
       ],
       "Subscribed calendars": [
         "Calendriers souscrits"
       ],
       "Trash": [
-        ""
+        "Corbeille"
       ],
       "Upgrade": [
         "Mettre à jour"
@@ -3700,7 +3701,7 @@
         "Réponses automatiques"
       ],
       "Catch-All email": [
-        "Collecteur de courriels (catch-all)"
+        "Collecteur d’e-mails (catch-all)"
       ],
       "Contact groups": [
         "Groupes de contact"
@@ -3985,7 +3986,7 @@
     },
     "Notification suffix": {
       "by email": [
-        "par courriel"
+        "par e-mail"
       ]
     },
     "Notification time input": {
@@ -3995,7 +3996,7 @@
     },
     "Notification type": {
       "email": [
-        "courriel"
+        "e-mail"
       ],
       "notification": [
         "notification"
@@ -4120,7 +4121,7 @@
         "Configurez votre organisation"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "C’est ce que les gens verront quand vous leur enverrez un courriel, les inviterez à un événement ou partagerez un fichier avec eux."
+        "C’est ce que les gens verront quand vous leur enverrez un e-mail, les inviterez à un événement ou partagerez un fichier avec eux."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Utilisez le sélecteur d’application en haut à gauche pour accéder à d’autres services Proton, y compris VPN, Calendar et Drive."
@@ -4233,6 +4234,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Impossible de créer d'autres calendriers. Vous avez atteint le maximum de calendriers personnels dans votre abonnement."
       ]
     },
     "PGP key encryption warning": {
@@ -4545,18 +4551,13 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Vous avez atteint le maximum de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendrier souscrit.",
-        "Vous avez atteint le maximum de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendriers souscrits."
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "Vous avez atteint le maximum de ${ personalCalendarLimit } calendrier personnel.",
-        "Vous avez atteint le maximum de ${ personalCalendarLimit } calendriers personnels."
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le maximum de calendriers souscrits dans votre abonnement."
       ]
     },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "Un courriel d'annulation sera envoyé aux participants supprimés pour tous les événements de cette série."
+        "Un e-mail d'annulation sera envoyé aux participants supprimés pour tous les événements de cette série."
       ],
       "Address copied to clipboard": [
         "Adresse copiée dans le presse-papiers"
@@ -4956,6 +4957,9 @@
       "Downgrade account": [
         "Rétrograder le compte"
       ],
+      "Edit calendar": [
+        "Modifier le calendrier"
+      ],
       "Edit contact": [
         "Modifier le contact"
       ],
@@ -4972,7 +4976,7 @@
         "Adresses électroniques"
       ],
       "Email settings": [
-        "Paramètres de courriel"
+        "Paramètres d’e-mail"
       ],
       "Email settings (${ emailAddress })": [
         "Paramètres d’adresse électronique (${ emailAddress })"
@@ -5206,9 +5210,6 @@
       "Unsupported browser": [
         "Navigateur non pris en charge"
       ],
-      "Update calendar": [
-        "Mettre le calendrier à jour"
-      ],
       "Update event": [
         "Mettre à jour l'événement"
       ],
@@ -5258,7 +5259,7 @@
         "Protège contre les menaces qui pèsent sur la confidentialité du VPN en transmettant votre trafic Internet à travers plusieurs serveurs."
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "La signature numérique des courriels aide à vous authentifier en tant qu’expéditeur des messages"
+        "La signature numérique des e-mails aide à vous authentifier en tant qu’expéditeur des messages"
       ],
       "Discount applied for annual billing cycle": [
         "Remise appliquée pour un cycle de facturation annuel"
@@ -5267,10 +5268,10 @@
         "Remise appliquée pour un cycle de facturation bisannuel"
       ],
       "Each imported email will have this label": [
-        "Chaque courriel importé aura ce label"
+        "Chaque e-mail importé aura ce label"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Le chiffrement de courriel force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
+        "Le chiffrement d’e-mail force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
       ],
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
@@ -5282,7 +5283,7 @@
         "Accédez à toutes les fonctionnalités payantes de ProtonVPN et ProtonMail (le service de messagerie chiffrée que des millions de personnes utilisent pour protéger leurs données) avec une seule offre."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Hébergez des courriels pour votre ou vos propres domaines sur ${ mailAppName }, par exemple jean.dupont@exemple.com"
+        "Hébergez des e-mails pour votre ou vos propres domaines sur ${ mailAppName }, par exemple jean.dupont@exemple.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
         "Hébergez des courriels pour votre ou vos propres domaines sur ProtonMail, par exemple jean.dupont@exemple.com"
@@ -5318,7 +5319,7 @@
         "Utilisez plusieurs adresses/alias liés à votre compte, par exemple utilisateur2@protonmail.com."
       ],
       "Use the personal address username@pm.me to send emails": [
-        "Utilisez l'adresse personnelle nomdutilisateur@pm.me pour envoyer des courriels"
+        "Utilisez l'adresse personnelle nomdutilisateur@pm.me pour envoyer des e-mails"
       ],
       "You do not have any contacts to export": [
         "Vous n’avez aucun contact à exporter"

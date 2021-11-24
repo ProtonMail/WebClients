@@ -20,6 +20,9 @@
       "Activate": [
         "Aktivieren"
       ],
+      "Activate recovery": [
+        "Wiederherstellung aktivieren"
+      ],
       "Add": [
         "Hinzufügen"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "Abbrechen"
       ],
-      "Cancel action": [
-        "Aktion abbrechen"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "Kopie, Blindkopie"
       ],
-      "CC, BCC": [
-        "CC, BCC"
+      "CC BCC": [
+        "CC BCC"
       ],
       "Change page": [
         "Seite wechseln"
@@ -218,8 +218,8 @@
       "Decrease": [
         "Verkleinern"
       ],
-      "Default mail handler": [
-        "Standard-Mail-Anwendung"
+      "Default email application": [
+        "Standard E-Mail-Anwendung"
       ],
       "Delete": [
         "Löschen"
@@ -310,14 +310,14 @@
       "Expand composer": [
         "Verfassen-Fenster vergrößern"
       ],
-      "Expiration time": [
-        "Ablaufzeit"
-      ],
       "Export": [
         "Exportieren"
       ],
       "Export contacts": [
         "Kontakte exportieren"
+      ],
+      "Fewer search options": [
+        "Weniger Suchoptionen"
       ],
       "Filter on...": [
         "Filtern nach …"
@@ -360,9 +360,6 @@
       ],
       "Got it": [
         "Verstanden"
-      ],
-      "here": [
-        "hier"
       ],
       "Hide": [
         "Ausblenden"
@@ -419,6 +416,9 @@
       "Insert contact": [
         "Kontakt einfügen"
       ],
+      "Insert contacts": [
+        "Kontakt einfügen"
+      ],
       "Insert image": [
         "Bild einfügen"
       ],
@@ -445,9 +445,6 @@
       ],
       "Learn more": [
         "Mehr erfahren"
-      ],
-      "Less search options": [
-        "Weniger Sucheinstellungen"
       ],
       "Load": [
         "Laden"
@@ -629,9 +626,6 @@
       "Print": [
         "Drucken"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Beenden"
       ],
@@ -737,6 +731,15 @@
       "Set": [
         "Festgelegen"
       ],
+      "Set as default": [
+        "Als Standard festlegen"
+      ],
+      "Set expiration time": [
+        "Gültigkeitsdatum festlegen"
+      ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase einrichten"
+      ],
       "Share via link": [
         "Als Link teilen"
       ],
@@ -755,6 +758,9 @@
       "Show details": [
         "Details anzeigen"
       ],
+      "Show fewer search options": [
+        "Weniger Suchoptionen anzeigen"
+      ],
       "Show folders": [
         "Ordner anzeigen"
       ],
@@ -766,9 +772,6 @@
       ],
       "Show less": [
         "Weniger anzeigen"
-      ],
-      "Show less search options": [
-        "Weniger Suchoptionen anzeigen"
       ],
       "Show messages": [
         "Nachrichten anzeigen"
@@ -805,6 +808,9 @@
       ],
       "Switch account": [
         "Konto wechseln"
+      ],
+      "Switch to rich text": [
+        "Zu Rich Text wechseln"
       ],
       "Theme": [
         "Farbschema"
@@ -854,6 +860,15 @@
       ],
       "Untrust": [
         "Nicht mehr vertrauen"
+      ],
+      "Update": [
+        "Aktualisieren"
+      ],
+      "Update recovery file": [
+        "Wiederherstellungsdatei aktualisieren"
+      ],
+      "Update recovery phrase": [
+        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Wechseln"
@@ -2026,6 +2041,10 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Entschlüsselungsfehler: Das Entschlüsseln des verschlüsselten Inhalts dieser Nachricht ist fehlgeschlagen."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Mindestens ${ calendarToFixCount } Kalender abwählen",
+        "Mindestens ${ calendarToFixCount } Kalender abwählen"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Mindestens ${ calendarToFixCount } Kalender abwählen oder",
         "Mindestens ${ calendarToFixCount } Kalender abwählen oder"
@@ -2121,9 +2140,6 @@
       "Message needs to be sent first": [
         "Die Nachricht muss zuerst gesendet werden"
       ],
-      "Message passwords do not match": [
-        "Die eingegebenen Passwörter stimmen nicht überein"
-      ],
       "Message processing error.": [
         "Fehler bei der Verarbeitung der Nachricht."
       ],
@@ -2138,6 +2154,9 @@
       ],
       "No address with keys available to compose a message": [
         "Keine Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar"
+      ],
+      "No data to import": [
+        "Keine zu importierenden Daten"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Kein für den internen Benutzer abgerufener Schlüssel ist für den Versand gültig"
@@ -2192,6 +2211,12 @@
       ],
       "Please refresh the page.": [
         "Bitte lade die Seite neu."
+      ],
+      "Please repeat the password": [
+        "Bitte Passwort erneut eingeben"
+      ],
+      "Please set a password": [
+        "Bitte ein Passwort festlegen"
       ],
       "Preferences could not be saved": [
         "Die Einstellungen konnten nicht gespeichert werden"
@@ -2682,19 +2707,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        "Wir haben Ihrem Konto 1 GB zusätzlichen Speicherplatz hinzugefügt. Fahren Sie fort, ${ BRAND_NAME } zu entdecken und teilen Sie Ihre ${ protonMailAppName }-Adresse mit Ihrer Familie, Ihren Freunden und Kollegen."
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
+        "Wir haben den Gesamtspeicher Ihres Kontos auf ${ totalGBStorageAfterCompletion } GB erhöht. Holen Sie sich zusätzlichen Speicherplatz und schalten Sie noch heute Premium-Funktionen frei."
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        "Wir haben Ihrem Konto 1 GB zusätzlichen Speicherplatz hinzugefügt. Wenn Sie noch mehr Speicherplatz und Premium-Funktionen benötigen, wechseln Sie zu einem höheren Tarif."
-      ],
-      "You're a privacy champ!": [
-        "Sie sind ein Meister der Privatsphäre!"
+      "You're all set!": [
+        "Sie können loslegen!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
-        "Schließen Sie alle Schritte ab und Sie erhalten insgesamt 2 GB auf Ihr Konto"
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        "Schließen Sie alle Schritte ab und Sie erhalten insgesamt ${ totalGBStorageAfterCompletion } GB auf Ihrem Konto"
       ],
       "Only ${ days } day left": [
         "Nur noch ${ days } } Tag verbleibend",
@@ -3093,9 +3115,6 @@
       "Account successfully updated": [
         "Konto wurde erfolgreich aktualisiert"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        "Wenn Sie diese Option aktivieren, wird jedes Mal, wenn Sie auf einen mailto: Link klicken, ein neuer Verfassen-Fenster geöffnet."
-      ],
       "Activation in progress": [
         "Aktivierung wird durchgeführt"
       ],
@@ -3224,9 +3243,6 @@
       "Center": [
         "Zentriert"
       ],
-      "Change your default in settings": [
-        "Ändern Sie Ihre Voreinstellung in den Einstellungen"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontakt ${ progress } von ${ max } wird geprüft…"
       ],
@@ -3250,9 +3266,6 @@
       ],
       "Close this screen to exit.": [
         "Zum Beenden schließen Sie das Fenster."
-      ],
-      "Confirm Password": [
-        "Passwort bestätigen"
       ],
       "Confirm phishing report": [
         "Phishing-Bericht bestätigen"
@@ -3303,6 +3316,9 @@
       "Day": [
         "Tag",
         "Tagen"
+      ],
+      "Default email application": [
+        "Standard E-Mail-Anwendung"
       ],
       "Disable message content search": [
         "Suche nach Nachrichteninhalten deaktivieren"
@@ -3392,6 +3408,9 @@
       "Estimating time remaining...": [
         "Verbleibende Zeit wird ermittelt …"
       ],
+      "Expiration time": [
+        "Verfallszeit"
+      ],
       "Expiration Time": [
         "Ablaufzeit"
       ],
@@ -3440,9 +3459,6 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Voll funktionales VPN mit einer Geschwindigkeit von bis zu 10 Gbit/s."
-      ],
-      "Generate recovery phrase": [
-        "Wiederherstellungsphrase erstellen"
       ],
       "Get more storage and premium features.": [
         "Holen Sie sich mehr Speicherplatz und Premium-Funktionen."
@@ -3513,10 +3529,6 @@
       "Insert image": [
         "Bild einfügen"
       ],
-      "Insert image as": [
-        "Grafik einfügen als",
-        "Grafiken einfügen als"
-      ],
       "Insert link": [
         "Link einfügen"
       ],
@@ -3568,6 +3580,9 @@
       "Manage your labels": [
         "Kategorien verwalten"
       ],
+      "members": [
+        "Mitglieder"
+      ],
       "Members": [
         "Mitglieder"
       ],
@@ -3579,9 +3594,6 @@
       ],
       "Message headers": [
         "Kopfzeilen der Nachricht"
-      ],
-      "Message Password": [
-        "Passwort der Nachricht"
       ],
       "Message sent": [
         "Nachricht gesendet"
@@ -3664,14 +3676,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Änder diese Einstellungen nur, wenn du PGP mit Nicht-ProtonMail-Empfängern verwendest."
       ],
-      "or": [
-        "oder"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
-      ],
-      "Password Hint (Optional)": [
-        "Passworthinweis (optional)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Die vollständige Überprüfung der Zahlung kann einige Minuten dauern."
@@ -3691,8 +3697,8 @@
       "Plain text": [
         "Klartext"
       ],
-      "Please add at least one recipient before sending.": [
-        "Bitte vor dem Senden mindestens einen Empfänger hinzufügen."
+      "Please add at least one recipient.": [
+        "Bitte mindestens einen Empfänger angeben."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Bitte bewahren Sie sie sicher auf. Sie benötigen sie, um auf Ihr Konto zuzugreifen und Ihre Daten zu entschlüsseln, falls Sie Ihr Passwort zurücksetzen müssen."
@@ -3812,8 +3818,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist. Sie können importierte Kalender auch mit bestehenden Proton-Kalendern zusammenführen."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Bitte wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
       ],
       "Sending": [
         "Wird gesendet"
@@ -3830,8 +3836,11 @@
       "Session timed out.": [
         "Zeitüberschreitung der Sitzung."
       ],
-      "Set ProtonMail as your default mail handler": [
-        "ProtonMail als Standard-Mail-Anwendung festlegen"
+      "Set a recovery phrase": [
+        "Wiederherstellungsphrase festlegen"
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Legen Sie ProtonMail als Ihre Standard-E-Mail-Anwendung für diesen Browser fest. ProtonMail wird automatisch geöffnet, wenn Sie auf einen E-Mail-Link klicken."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-ProtonMail-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
@@ -3972,11 +3981,11 @@
       "This message will be sent shortly": [
         "Diese Nachricht wird demnächst gesendet"
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        "Diese Nachricht wird am ${ dateString } um ${ formattedTime } verfallen"
+      ],
       "This message will expire ${ formattedDate }": [
         "Diese Nachricht verfällt am ${ formattedDate }"
-      ],
-      "This message will expire in": [
-        "Diese Nachricht verfällt in"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Diese Nachricht verfällt in ${ formattedDelay }"
@@ -4131,6 +4140,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet und hast nur eingeschränkten Zugang."
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "Sie können es als Anhang hinzufügen oder eingebettet in den Text Ihrer Nachricht anzeigen."
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Sie können zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Sie können den Fortschritt hier ${ importProgressLink } überprüfen."
       ],
@@ -4173,12 +4188,6 @@
       "You have **${ count } message** tagged with this label": [
         "Sie haben **${ count } Nachricht** zu dieser Kategorie hinzugefügt",
         "Sie haben **${ count } Nachrichten** zu dieser Kategorie hinzugefügt"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Sie haben den Beta-Zugang deaktiviert. Klicken Sie auf ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Sie haben den Beta-Zugang aktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Sie haben in Ihrer E-Mail keinen Betreff angegeben. Möchten Sie die Nachricht trotzdem versenden?"
@@ -4223,8 +4232,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sie werden in Kürze zur Überprüfung Ihrer Zahlung an PayPal weitergeleitet."
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
-        "Ihre Nachricht enthält das Schlüsselwort „${ keyword }”, es wurde jedoch kein Anhang hinzugefügt. Möchten Sie Ihre Nachricht trotzdem senden?"
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        "Ihre Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }”, es wurde jedoch kein Anhang hinzugefügt. Möchten Sie Ihre Nachricht trotzdem senden?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wurde eingeschränkt. ${ payInvoiceLink }"
@@ -4263,6 +4272,9 @@
     "info": {
       "(beta)": [
         "(beta)"
+      ],
+      "Optional": [
+        "Optional"
       ]
     },
     "Info concerning plan features": {
@@ -4616,6 +4628,9 @@
       "Conditions": [
         "Bedingungen"
       ],
+      "Confirm Password": [
+        "Passwort bestätigen"
+      ],
       "Contacts": [
         "Kontakte"
       ],
@@ -4748,8 +4763,14 @@
       "Manage labels": [
         "Kategorien verwalten"
       ],
+      "Manage my addresses": [
+        "E-Mail-Adressen verwalten"
+      ],
       "Mark as": [
         "Kennzeichnen als"
+      ],
+      "Message Password": [
+        "Passwort der Nachricht"
       ],
       "Move to": [
         "Verschieben nach"
@@ -4783,6 +4804,9 @@
       ],
       "Password": [
         "Passwort"
+      ],
+      "Password Hint": [
+        "Passwort-Hinweis"
       ],
       "Payer": [
         "Zahlungsleistender"
@@ -5504,6 +5528,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
+      ],
+      "Password has been set successfully": [
+        "Das Passwort wurde erfolgreich festgelegt"
       ]
     },
     "Onboarding": {
@@ -6502,9 +6529,6 @@
       "Add contact group name": [
         "Name der Kontaktgruppe hinzufügen"
       ],
-      "Add contacts": [
-        "Kontakte hinzufügen"
-      ],
       "Add filter": [
         "Filter hinzufügen"
       ],
@@ -6721,9 +6745,6 @@
       "Expand content": [
         "Inhalt erweitern"
       ],
-      "Expiration time": [
-        "Verfallszeit"
-      ],
       "Exporting contacts": [
         "Kontakte werden exportiert"
       ],
@@ -6793,9 +6814,6 @@
       "Message list": [
         "Nachrichtenliste"
       ],
-      "Message without subject?": [
-        "Nachricht ohne Betreff?"
-      ],
       "More": [
         "Mehr"
       ],
@@ -6834,9 +6852,6 @@
       ],
       "No attachment found": [
         "Kein Anhang gefunden"
-      ],
-      "No recipient": [
-        "Keine Empfänger"
       ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen” öffnen"
@@ -6891,6 +6906,9 @@
       ],
       "Re-signing contacts": [
         "Kontakte neu signieren"
+      ],
+      "Recipient missing": [
+        "Empfänger fehlt"
       ],
       "Recover data": [
         "Daten wiederherstellen"
@@ -6954,6 +6972,9 @@
       ],
       "Storage capacity warning": [
         "Speicherkapazitäts-Warnung"
+      ],
+      "Subject missing": [
+        "Betreff fehlt"
       ],
       "Subtotal": [
         "Zwischensumme"
@@ -7094,6 +7115,17 @@
       ],
       "You do not have any contacts to export": [
         "Es gibt keine Kontakte, die exportiert werden können"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Heute ist ein guter Tag, um eine E-Mail zu schreiben"
+      ],
+      "Update default font and size": [
+        "Standardschriftart und -größe aktualisieren"
+      ],
+      "Your default font will look like following:": [
+        "Ihre Standardschriftart sieht wie folgt aus:"
       ]
     },
     "Validation": {

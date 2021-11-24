@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Активувати ключ організації"
+      ],
+      "Activate recovery": [
+        "Активувати відновлення"
       ],
       "Add": [
         "Додати"
@@ -205,9 +208,6 @@
       "Copy link": [
         "Копіювати посилання"
       ],
-      "Create": [
-        "Створити"
-      ],
       "Create a secure ProtonMail address instead": [
         "Створити натомість захищену адресу ProtonMail"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "Експортувати ключ"
       ],
-      "Export private key": [
-        "Експортувати приватний ключ"
-      ],
       "Font": [
         "Шрифт"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
-      ],
-      "here": [
-        "тут"
       ],
       "Hide": [
         "Приховати"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Встановити catch-all"
       ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
+      ],
       "Share via link": [
         "Спільний доступ за посиланням"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "Перемкнути обліковий запис"
       ],
+      "Switch to rich text": [
+        "Перемкнути в Rich Text Format (RTF)"
+      ],
       "Top up": [
         "Поповнити"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Розблокувати"
       ],
+      "Unlock data": [
+        "Розблокувати дані"
+      ],
       "Unordered list": [
         "Невпорядкований список"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Оновити"
+      ],
+      "Update recovery file": [
+        "Оновити файл відновлення"
+      ],
+      "Update recovery phrase": [
+        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -894,10 +903,10 @@
         "Генерувати відсутні ключі"
       ],
       "Make default": [
-        ""
+        "Зробити типовим"
       ],
       "Saving": [
-        ""
+        "Збереження"
       ]
     },
     "Address status": {
@@ -932,9 +941,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Триває генерування ключів шифрування для вашої адреси. Це може тривати кілька хвилин та тимчасово блокувати роботу браузера."
-      ],
       "The key for your address is now being deleted.": [
         "Триває видалення ключа для вашої адреси."
       ]
@@ -1317,11 +1323,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "Ви досягли максимальної кількості з ${ calendarsLimit } особистого календаря.",
-        "Ви досягли максимальної кількості з ${ calendarsLimit } особистих календарів.",
-        "Ви досягли максимальної кількості з ${ calendarsLimit } особистих календарів.",
-        "Ви досягли максимальної кількості з ${ calendarsLimit } особистих календарів."
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "Ви досягли максимальної кількості особистих календарів, які можна створити в межах вашого тарифного плану."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписного календаря.",
@@ -1737,7 +1740,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } було скасовано."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } було оновлено.\n${ eventDetailsText }"
@@ -1870,6 +1873,12 @@
       "Could not find address ${ email }.": [
         "Неможливо знайти адресу ${ email }."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Приберіть принаймні ${ calendarToFixCount } календар",
+        "Приберіть принаймні ${ calendarToFixCount } календарі",
+        "Приберіть принаймні ${ calendarToFixCount } календарів",
+        "Приберіть принаймні ${ calendarToFixCount } календаря"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Приберіть принаймні ${ calendarToFixCount } календар або",
         "Приберіть принаймні ${ calendarToFixCount } календарі або",
@@ -1983,6 +1992,9 @@
       ],
       "No active sessions": [
         "Немає активних сеансів"
+      ],
+      "No data to import": [
+        "Немає даних для імпорту"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -2107,6 +2119,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Назва теки надто довга. Будь ласка, скоротіть назву."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Неможливо засвідчити ключі у вашому файлі відновлення. Будь ласка, зв'яжіться зі службою підтримки."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Неможливо засвідчити ключі у ваших файлах відновлення. Будь ласка, вивантажте їх окремо для отримання подробиць."
+      ],
       "The label name is too long. Please choose a different name.": [
         "Назва мітки надто довга. Будь ласка, скоротіть назву."
       ],
@@ -2154,9 +2172,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Завантажений файл не є чинним приватним ключем. Перевірте його та повторіть спробу."
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        "Вивантажений файл не є чинним файлом відновлення. Перевірте його та повторіть спробу."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Вивантажені файли не є чинними приватними ключами. Перевірте його та повторіть спробу."
@@ -2208,9 +2223,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } підтримує імпортування календарів лише з iCal версії 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Виникла помилка при прочитанні вашого файлу ${ formattedFilename }. Файл має неправильний формат."
       ],
@@ -2426,7 +2438,7 @@
         "Не вдається розшифрувати вкладений ICS-файл"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Не вдалося прочитати вкладений файл ICS"
       ],
       "Invalid invitation": [
         "Недійсне запрошення"
@@ -3093,7 +3105,7 @@
         "Не вдалося"
       ],
       "In progress": [
-        ""
+        "Виконується"
       ],
       "Paused": [
         "Зупинено"
@@ -3133,6 +3145,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
+      ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } буде встановлено типовим календарем."
@@ -3287,9 +3302,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Вільний Інтернет без цензури має бути доступним для всіх."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Ключ з таким самим алгоритмом вже активний для цієї адреси. Генерування іншого ключа спричинить повільніше завантаження облікового запису, а видалення цього ключа може призвести до проблем. Якщо ви генеруєте новий ключ, тому що ваш старий ключ скомпрометований, позначте його як скомпрометований. Ви справді хочете продовжити?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "Файл відновлення дає змогу розблокувати і переглянути дані після скидання облікового запису. "
       ],
@@ -3401,9 +3413,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL читає ваші особисті дані, щоб забезпечити доступ для рекламодавців та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
       ],
-      "Are you sure you want to continue?": [
-        "Ви дійсно хочете продовжити?"
-      ],
       "Are you sure you want to delete this address?": [
         "Ви дійсно хочете видалити цю адресу?"
       ],
@@ -3505,9 +3514,6 @@
       ],
       "Center": [
         "По центру"
-      ],
-      "Change your default in settings": [
-        "Змінити типовий шрифт у налаштуваннях"
       ],
       "Check the status of current and previous imports.": [
         "Перевірте стан поточного та попереднього імпорту."
@@ -3659,6 +3665,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Електронні листи, позначені цією міткою, не будуть видалені, і їх все ще можна знайти у відповідній теці."
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Увімкнувши відновлення за фразою знову, буде згенерована нова фраза."
+      ],
       "Encryption setting updated": [
         "Налаштування шифрування оновлено"
       ],
@@ -3676,12 +3685,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введіть пароль організації, щоб відновити права адміністратора. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Введіть код для відновлення ${ recoveryMethodText } пов'язаний з вашим обліковим записом ${ BRAND_NAME }. Ми надішлемо вам код, щоб підтвердити відновлення пароля."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Введіть фразу відновлення, пов'язану з вашим обліковим записом ${ BRAND_NAME }."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
@@ -3809,12 +3812,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ProtonVPN."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Якщо ви продовжите, вам необхідно буде скинути пароль, після чого ви вийдете з системи та всіх інших активних сеансів."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Якщо ви продовжите, вам необхідно скинути пароль, після чого ви вийдете з системи та будь-яких інших активних сеансів."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Якщо ви хочете зберегти наявний запис SPF, ви можете просто додати ${ spf } до нього після ${ spfValue }. Не створюйте додаткових записів SPF."
       ],
@@ -3911,9 +3908,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Ключ з відбитком ${ fp } було видалено."
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Ключ з відбитком ${ fp } успішно створено."
-      ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
       ],
@@ -4001,7 +3995,7 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "Далі вам потрібно буде увійти до свого облікового запису Google і дозволити нам отримати доступ до ваших даних."
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
+      "No account recovery method set; you are at risk of losing access to your account": [
         "Немає налаштованого способу відновлення облікового запису. Ви ризикуєте втратити доступ до свого облікового запису"
       ],
       "No action selected": [
@@ -4013,7 +4007,7 @@
       "No contact encryption keys exist": [
         "Немає ключів шифрування контакту"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
+      "No data recovery method set; you are at risk of losing access to your data": [
         "Немає налаштованого способу відновлення даних. Ви ризикуєте втратити доступ до своїх даних"
       ],
       "No folder selected": [
@@ -4106,8 +4100,11 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Введіть пароль, щоб зашифрувати свій приватний ключ перед експортом."
       ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        "Введіть фразу відновлення з 12 слів, пов'язану з вашим обліковим записом."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Будь ласка, надійно збережіть його. Він знадобиться вам для доступу до облікового запису та розшифрування ваших даних у разі скидання пароля."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Зверніть увагу, якщо ви видалите цю адресу, ви більше не зможете надсилати чи отримувати листи з цією адресою."
@@ -4211,6 +4208,9 @@
       "Recovery phrase has been disabled": [
         "Фразу відновлення вимкнено"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        "Фраза відновлення не пов'язана з жодним ключем."
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Фраза відновлення не пов'язана з жодним застарілим ключем."
       ],
@@ -4244,8 +4244,8 @@
       "Select a service provider to get started": [
         "Виберіть постачальника послуг, щоб розпочати роботу"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Виберіть календарі для імпорту. Новий календар буде створено для кожного імпортованого календаря з обмеженням у 20 календарів. Ви також можете об’єднати імпортовані календарі з наявними календарями Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
       ],
       "Server is currently down": [
         "Наразі сервер не працює"
@@ -4331,6 +4331,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Ця функція призначена лише для досвідчених користувачів. Після видалення цього ключа ви не зможете розшифрувати будь-яке повідомлення, що було ним зашифроване. Це може спричинити втрату даних."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Це фраза з 12 слів, яку ви просили встановити."
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Це файл відновлення чи ключ шифрування, який ви могли раніше зберегти."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Це ключ шифрування, який ви могли раніше зберегти."
+      ],
+      "This is the password you used before the password reset.": [
+        "Це пароль, яким ви користувалися перед скиданням пароля."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Це посилання може бути гомографічною атакою і його не можна відкрити в браузерах Internet Explorer чи Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
       ],
@@ -4346,14 +4358,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Це також вимкне будь-які способи двоетапної перевірки, пов'язані з цим обліковим записом."
       ],
-      "This will also disable two-factor authentication.": [
-        "Це також призведе до вимкнення двоетапної перевірки."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Це скасує вашу поточну передплату і ви втратите будь-які накопичені переваги лояльності. Залишковий баланс вашої передплати буде повернено як кредити облікового запису."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Буде створено новий ключ шифрування для вашої організації. 4096-розрядні ключі працюватимуть тільки на потужному комп'ютері, для більшості користувачів рекомендується використовувати 2048-розрядні ключі."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Це вимкне вашу чинну фразу відновлення. Ви не зможете скористатися нею для доступу до облікового запису чи розшифрування своїх даних."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Це дозволить використовувати PayPal для вашої передплати Proton. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
@@ -4367,20 +4379,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Це замінить ваш тимчасовий пароль. Ви будете використовувати його для доступу до свого облікового запису ${ BRAND_NAME } у майбутньому."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "При цьому виконається вихід з системи в будь-яких активних сеансах та вимкнеться двоетапна перевірка."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Цей майстер активує двоетапну перевірку (2FA) для вашого облікового запису Proton. Це зробить ваш обліковий запис більш захищеним, тому ми рекомендуємо увімкнути її."
       ],
       "to": [
         "до"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "Щоб отримати доступ до давніх повідомлень, вам потрібно знову активувати старі ключі шифрування за допомогою одного з наведених далі способів відновлення."
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Щоб підтвердити, введіть ім'я користувача, якого ви хочете видалити."
       ],
       "to continue to ${ toAppName }": [
         "щоб продовжити в ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Щоб розшифрувати й переглянути свої заблоковані дані після скидання пароля, виберіть спосіб відновлення."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
@@ -4390,6 +4405,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Щоб підготувати ваш зовнішній обліковий запис для імпорту, дотримуйтесь інструкцій для:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Щоб захистити своє з'єднання з Інтернетом, завантажте та встановіть програму ProtonVPN для вашого пристрою і підключіться до сервера ProtonVPN."
@@ -4417,9 +4435,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Двопарольний режим використовує окремі паролі для входу та розшифрування поштової скриньки. Це забезпечує додатковий рівень захисту в деяких ситуаціях. Однак, для більшості користувачів ми рекомендуємо використовувати однопарольний режим. Щоб перемкнутися на двопарольний режим, встановіть спочатку пароль входу, а потім пароль поштової скриньки."
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "Не вдалося розшифрувати. Фраза відновлення не пов'язана з будь-якими ключами."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Неможливо перевірити підпис файлу відновлення. Зверніться до служби підтримки."
@@ -4481,11 +4496,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Комплект VPN + ${ mailAppName } для родин та малого бізнесу."
       ],
+      "Warning:": [
+        "Попередження:"
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Попередження: Видалення є незворотним. Це також вилучить доступ для всіх під'єднаних служб та видалить усі ваші контакти."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Ми рекомендуємо вам використовувати офіційні програми ProtonVPN, якщо це можливо."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        "Рекомендовано натомість користуватися вашою фразою відновлення."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів."
@@ -4513,6 +4534,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Вигляд тижня і місяця застосовуються лише на комп'ютері."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        "Для відновлення облікового запису ми надішлемо код відновлення на вказану електронну пошту."
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        "Для відновлення облікового запису ми надішлемо код відновлення на вказаний номер телефону."
       ],
       "What do you want to import from your Google account?": [
         "Що ви хочете імпортувати зі свого облікового запису Google?"
@@ -4550,6 +4577,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
@@ -4564,9 +4594,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Ви можете увімкнути журнал авторизації, що б побачити хто і з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час, коли було отримано доступ, а також невдалі спроби."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Ви можете генерувати новий ключ шифрування, якщо ви вважаєте, що попередній ключ був скомпрометований."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Тепер ви можете отримувати повідомлення на свою адресу @pm.me. Перейдіть на платний тарифний план, щоб мати можливість надсилати пошту з адреси @pm.me, а також створювати додаткові адреси @pm.me."
@@ -4585,12 +4612,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Ви вимкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати стабільну версію ${ appName }. Програму буде перезавантажено."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Ви увімкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати найновішу версію ${ appName }. Програму буде перезавантажено."
       ],
       "You have no saved payment methods.": [
         "У вас немає збережених способів оплати."
@@ -4661,8 +4682,8 @@
       "Your Block List is empty.": [
         "Ваш список блокувань порожній."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
-        "Ваші дані зашифровано. Ви можете відновити їх, повторно активувавши ключі."
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
+        "Ваші дані зашифровані та заблоковані. Ви можете відновити доступ з вибраним способом відновлення даних."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
@@ -4847,6 +4868,29 @@
       ],
       "Subscription": [
         "Передплата"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "Ключ з таким же алгоритмом шифрування вже існує. Генерація іншого ключа приведе до вповільнення завантаження аккаунта. Ви впевнені, що хочете продовжити?"
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "Для цієї адреси вже активний ключ з тим же алгоритмом шифрування. Генерація іншого ключа приведе до уповільнення завантаження аккаунта, а видалення цього ключа може викликати проблеми. Якщо ви згенеруєте новий ключ, тому що ваш старий ключ був зламаний, будь ласка, відмітьте цей ключ як зламаний. Ви впевнені, що хочете продовжити?"
+      ],
+      "Generate key": [
+        "Згенерувати ключ"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "Ключ із відбитком пальця ${ fp } успішно створений."
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Йде генерація ключів шифрування. Це може зайняти кілька хвилин і тимчасово припинити роботу браузера."
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "У цей час генеруються ключі шифрування для вашої адреси. Це може зайняти кілька хвилин і тимчасово припинити роботу вашого браузера."
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Ви можете згенерувати новий ключ шифрування, якщо вважаєте, що попередній ключ був зламаний."
       ]
     },
     "Key state badge": {
@@ -5144,6 +5188,9 @@
       "ALL": [
         "ВСЕ"
       ],
+      "All-day event notifications": [
+        "Сповіщення події на цілий день"
+      ],
       "Allow recovery by email": [
         "Дозволити відновлення за електронною поштою"
       ],
@@ -5192,12 +5239,6 @@
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
-      "Backup key": [
-        "Ключ відновлення"
-      ],
-      "Backup keys": [
-        "Ключі відновлення"
-      ],
       "Block email tracking": [
         "Блокувати відстеження листів"
       ],
@@ -5234,11 +5275,11 @@
       "Category": [
         "Категорія"
       ],
-      "Choose a color": [
-        "Вибрати колір"
-      ],
       "Code": [
         "Код"
+      ],
+      "Color": [
+        "Колір"
       ],
       "Composer": [
         "Редактор"
@@ -5309,20 +5350,8 @@
       "Days of the week": [
         "Дні тижня"
       ],
-      "Default email": [
-        "Типова електронна пошта"
-      ],
-      "Default event duration": [
-        "Типова тривалість події"
-      ],
-      "Default full day notifications": [
-        "Типові сповіщення на весь день"
-      ],
       "Default language": [
         "Типова мова"
-      ],
-      "Default notifications": [
-        "Типові сповіщення"
       ],
       "Default PGP scheme": [
         "Типова схема PGP"
@@ -5402,6 +5431,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введіть пароль для ключа з відбитком: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        "Тривалість події"
+      ],
+      "Event notifications": [
+        "Сповіщення про події"
+      ],
       "Expires": [
         "Термін дії"
       ],
@@ -5419,6 +5454,9 @@
       ],
       "Folder location": [
         "Розташування теки"
+      ],
+      "From: ${ emailFrom }": [
+        "Від: ${ emailFrom }"
       ],
       "From: ${ fromEmailAddress }": [
         "Від: ${ fromEmailAddress }"
@@ -5600,6 +5638,9 @@
       "Phrase": [
         "Фраза"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        "Фраза складається з 12 унікальних слів у певному порядку"
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Додайте усі 3 вказані записи CNAME. Зверніть увагу, що оновлення DNS-записів може тривати декілька годин."
       ],
@@ -5617,6 +5658,9 @@
       ],
       "Postal code": [
         "Поштовий індекс"
+      ],
+      "Previous password": [
+        "Попередній пароль"
       ],
       "Private User": [
         "Приватний користувач"
@@ -5653,9 +5697,6 @@
       ],
       "Recovery phrase": [
         "Фраза відновлення"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Фраза відновлення містить 12 слів"
       ],
       "Repeat password": [
         "Повторити пароль"
@@ -5735,6 +5776,9 @@
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Кому: ${ emailTo }"
+      ],
       "To: ${ PMEmailAddress }": [
         "Кому: ${ PMEmailAddress }"
       ],
@@ -5759,17 +5803,11 @@
       "Undo send": [
         "Скасувати надсилання"
       ],
-      "Upload your backup key": [
-        "Вивантажити ключ відновлення"
+      "Upload 1 or more encryption keys": [
+        "Вивантажте 1 чи більше ключів шифрування"
       ],
-      "Upload your recovery file": [
-        "Вивантажте свій файл відновлення"
-      ],
-      "Uploaded private keys": [
-        "Вивантажені приватні ключі"
-      ],
-      "Uploaded recovery file": [
-        "Файл відновлення вивантажено"
+      "Upload 1 or more recovery files or encryption keys": [
+        "Вивантажте 1 чи більше файлів відновлення чи ключів шифрування"
       ],
       "URL": [
         "URL"
@@ -5846,9 +5884,6 @@
       "Your password (admin)": [
         "Новий пароль (адмін)"
       ],
-      "Your recovery phrase": [
-        "Ваша фраза відновлення"
-      ],
       "ZIP": [
         "Поштовий індекс"
       ]
@@ -5903,6 +5938,9 @@
       ],
       "Proton newsletter": [
         "Інформаційний бюлетень Proton"
+      ],
+      "Proton offers and promotions": [
+        "Пропозиції і акції Proton"
       ],
       "Proton product announcements": [
         "Оголошення про продукти Proton"
@@ -7094,17 +7132,11 @@
       "Email": [
         "Е-пошта"
       ],
-      "email address": [
-        "адреса е-пошти"
-      ],
-      "phone number": [
-        "номер телефону"
-      ],
       "Phone number": [
         "Номер телефону"
       ],
-      "Recovery phrase": [
-        "Фраза відновлення"
+      "Phrase": [
+        "Фраза"
       ]
     },
     "Remark about a key type option": {
@@ -7144,11 +7176,8 @@
       "Upload": [
         "Вивантажити"
       ],
-      "Upload additional private keys": [
-        "Вивантажити додаткові приватні ключі"
-      ],
-      "Upload additional recovery files": [
-        "Вивантажити додаткові файли відновлення"
+      "Upload additional files": [
+        "Вивантажити додаткові файли"
       ]
     },
     "Select search results": {
@@ -7883,6 +7912,9 @@
       "Dashboard": [
         "Огляд"
       ],
+      "Data locked": [
+        "Дані заблоковано"
+      ],
       "Data recovery": [
         "Відновлення даних"
       ],
@@ -7943,6 +7975,9 @@
       "Edit Block List": [
         "Змінити список блокування"
       ],
+      "Edit calendar": [
+        "Редагувати календар"
+      ],
       "Edit credit/debit card": [
         "Редагувати кредитну/платіжну картку"
       ],
@@ -7972,9 +8007,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Увімкнути комбінації клавіш"
-      ],
-      "Encrypted data": [
-        "Зашифровані дані"
       ],
       "Encryption & keys": [
         "Шифрування та ключі"
@@ -8017,9 +8049,6 @@
       ],
       "General": [
         "Загальні"
-      ],
-      "Generate key": [
-        "Генерувати ключ"
       ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
@@ -8216,11 +8245,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "Повторно активувати ключі"
-      ],
       "Reconnect your account": [
         "Повторно під'єднайте свій обліковий запис"
+      ],
+      "Recover data": [
+        "Відновити дані"
       ],
       "Recovery": [
         "Відновлення"
@@ -8377,9 +8406,6 @@
       ],
       "Unsupported browser": [
         "Непідтримуваний браузер"
-      ],
-      "Update calendar": [
-        "Оновити календар"
       ],
       "Upgrade": [
         "Покращити"
@@ -8660,6 +8686,17 @@
         "Автоматично підписуйте всі вихідні повідомлення, щоб користувачі могли перевірити їх надійність. Це виконується в комбінації з типовою конфігурацією PGP, яку можна налаштувати нижче."
       ]
     },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Сьогодні хороший день, щоб написати електронного листа"
+      ],
+      "Update default font and size": [
+        "Оновити типовий шрифт і розмір"
+      ],
+      "Your default font will look like following:": [
+        "Ваш типовий шрифт виглядатиме так:"
+      ]
+    },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
         "Передплатіть ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] }, щоб мати можливість під'єднати ${ plusVpnConnections } пристрій до VPN",
@@ -8935,6 +8972,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Ви більше не побачите цей запис імпорту в списку."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        "Ваш файл відновлення застарів і неможливо відновити нові дані, якщо ви знову скинете обліковий запис."
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        "Ваша фраза відновлення застаріла і неможливо відновити нові дані, якщо ви знову скинете обліковий запис."
       ]
     },
     "Warning for domain modal": {

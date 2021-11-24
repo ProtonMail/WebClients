@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Activeer mijn coupon"
       ],
+      "Activate recovery": [
+        "Activeer herstel"
+      ],
       "Add credit / debit card": [
         "Creditcard / bankpas toevoegen"
       ],
@@ -187,9 +190,6 @@
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
       ],
-      "here": [
-        "hier"
-      ],
       "Hide": [
         "Verberg"
       ],
@@ -304,6 +304,9 @@
       "Send": [
         "Verzenden"
       ],
+      "Set recovery phrase": [
+        "Stel herstel zin"
+      ],
       "Share via link": [
         "Deel via link"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Update"
+      ],
+      "Update recovery file": [
+        "Herstelbestand bijwerken"
+      ],
+      "Update recovery phrase": [
+        "Herstel zin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1755,12 +1764,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ProtonVPN applicaties of op het ProtonVPN dashboard. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "U hebt Bèta Toegang uitgeschakeld. Klik op ${ refreshButton } om de stabiele versie van ${ appName } te gebruiken. De applicatie wordt herladen."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "U hebt Bèta Toegang aangezet. Klik op ${ refreshButton } om de laatste versie van ${ appName } te gebruiken. De applicatie wordt herladen."
-      ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
       ],
@@ -2262,6 +2265,9 @@
       ],
       "Proton newsletter": [
         "Proton nieuwsbrief"
+      ],
+      "Proton offers and promotions": [
+        "Proton aanbiedingen en promoties"
       ],
       "Proton product announcements": [
         "Proton product aankondigingen"

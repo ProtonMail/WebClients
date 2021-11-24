@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Přidat"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
-      "Create": [
-        "Vytvořit"
-      ],
       "Create calendar": [
         ""
       ],
@@ -140,7 +140,7 @@
       "Decrease": [
         "Snížit"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -217,9 +217,6 @@
       ],
       "Go to settings": [
         "Přejít do nastavení"
-      ],
-      "here": [
-        "zde"
       ],
       "Hide advanced PGP settings": [
         "Skrýt pokročilá nastavení PGP"
@@ -350,9 +347,6 @@
       "Previous year": [
         "Předchozí rok"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -412,6 +406,12 @@
       ],
       "Send": [
         "Odeslat"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "Sdílet"
@@ -484,6 +484,12 @@
       ],
       "Update": [
         "Aktualizovat"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Vylepšit"
@@ -1434,6 +1440,12 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této události selhalo."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         "",
@@ -1541,6 +1553,9 @@
       ],
       "Name required": [
         "Název je povinný"
+      ],
+      "No data to import": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Žádný klíč pro interní uživatele není platný pro odeslání"
@@ -1712,9 +1727,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -2383,9 +2395,6 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Přidejte ke svému účtu další adresy, například user2@protonmail.com"
       ],
@@ -2517,6 +2526,9 @@
       ],
       "Daily": [
         "Denně"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "Zrušit změny?"
@@ -2788,7 +2800,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2797,7 +2809,7 @@
       "Session timed out.": [
         "Relace vypršela."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2968,6 +2980,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -2976,12 +2991,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Zakázali jste Beta Přístup. Klikněte na ${ refreshButton } pro použití stabilní verze ${ appName }. Aplikace bude znovu načtena."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Povolili jste Beta Přístup. Klikněte na ${ refreshButton } pro použití nejnovější verze ${ appName }. Aplikace bude znovu načtena."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Znovu jste aktivovali klíče a události spojené s následujícími kalendáři mohou být nyní dešifrovány."
@@ -3325,6 +3334,9 @@
       "All day": [
         "Celý den"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
@@ -3358,11 +3370,11 @@
       "Category": [
         "Kategorie"
       ],
-      "Choose a color": [
-        "Zvolit barvu"
-      ],
       "City": [
         "Město"
+      ],
+      "Color": [
+        ""
       ],
       "Contacts": [
         ""
@@ -3375,18 +3387,6 @@
       ],
       "CVV code": [
         "Kód CVV"
-      ],
-      "Default email": [
-        "Výchozí e-mail"
-      ],
-      "Default event duration": [
-        "Výchozí doba trvání události"
-      ],
-      "Default full day notifications": [
-        "Výchozí oznámení na celý den"
-      ],
-      "Default notifications": [
-        "Výchozí upozornění"
       ],
       "Description": [
         "Popis"
@@ -3423,6 +3423,9 @@
       ],
       "Enter the 6-digit code": [
         "Zadejte 6-místný kód"
+      ],
+      "Event duration": [
+        ""
       ],
       "Event frequency": [
         "Frekvence události"
@@ -4405,6 +4408,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        ""
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Klíč není možné použít k šifrování"
@@ -4719,16 +4727,7 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "",
-        "",
-        "",
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         ""
       ]
     },
@@ -5150,6 +5149,9 @@
       "Downgrade account": [
         ""
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit contact": [
         "Upravit kontakt"
       ],
@@ -5401,9 +5403,6 @@
       ],
       "Unsupported browser": [
         "Nepodporovaný prohlížeč"
-      ],
-      "Update calendar": [
-        "Aktualizovat kalendář"
       ],
       "Update event": [
         "Aktualizovat událost"

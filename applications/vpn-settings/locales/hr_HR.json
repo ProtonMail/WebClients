@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Aktiviraj moj kupon"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add credit / debit card": [
         "Dodaj kreditnu/debitnu karticu"
       ],
@@ -187,9 +190,6 @@
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
-      "here": [
-        "ovdje"
-      ],
       "Hide": [
         "Sakrij"
       ],
@@ -304,6 +304,9 @@
       "Send": [
         "Pošalji"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Ažuriraj"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -1771,12 +1780,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Ne možete koristiti OpenVPN / IKEv2 vjerodajnice za prijavu u ProtonVPN aplikacijama ili na nadzornoj ploči ProtonVPN. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Onemogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje stabilne verzije ${ appName }. Aplikacija će se ponovno učitati."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Omogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje najnovije verzije ${ appName }. Aplikacija će se ponovno učitati."
-      ],
       "You have no saved payment methods.": [
         "Nemate spremljenih načina plaćanja."
       ],
@@ -2282,6 +2285,9 @@
       ],
       "Proton newsletter": [
         "Proton bilten"
+      ],
+      "Proton offers and promotions": [
+        ""
       ],
       "Proton product announcements": [
         "Proton najave proizvoda"

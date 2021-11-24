@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "添加"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
-      "Create": [
-        "创建"
-      ],
       "Create calendar": [
         "创建日历"
       ],
@@ -140,7 +140,7 @@
       "Decrease": [
         "减少"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -211,9 +211,6 @@
       ],
       "Go to settings": [
         "前往设置"
-      ],
-      "here": [
-        "此处"
       ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
@@ -344,9 +341,6 @@
       "Previous year": [
         "上一年"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "退出"
       ],
@@ -406,6 +400,12 @@
       ],
       "Send": [
         "发送​​"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "分享"
@@ -478,6 +478,12 @@
       ],
       "Update": [
         "更改"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "升级账户"
@@ -1380,6 +1386,9 @@
       "Decryption error: Decryption of this event's content failed.": [
         "解密失败：无法解密此日程的内容。"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
@@ -1481,6 +1490,9 @@
       ],
       "Name required": [
         "姓名 (必填)"
+      ],
+      "No data to import": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "没有为内部用户检索到的密钥用于发送"
@@ -1643,9 +1655,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -2236,9 +2245,6 @@
       "Account successfully updated": [
         "账户已成功更新"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "添加其他邮箱地址，如 username2@protonmail.com"
       ],
@@ -2361,6 +2367,9 @@
       ],
       "Daily": [
         "每天"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "舍弃更改？"
@@ -2626,8 +2635,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "请选择要导入的日历。将会为每个导入的日历创建一个新日历，最多可包含 20 个日历。您也可以将导入的日历与现有的 Proton 日历合并。"
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -2635,7 +2644,7 @@
       "Session timed out.": [
         "会话已超时。"
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2806,6 +2815,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "您目前以${ user.Name }的身份登录。 (${ user.Email })，并且访问权限受限。"
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在 ${ importProgressLink } 查看导入进度。"
       ],
@@ -2814,12 +2826,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便此文件夹有新邮件时收到提醒。"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "您已经关闭了 \"测试版功能\"。请点击 ${ refreshButton } 以使用稳定版的 ${ appName }，应用将重新启动"
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "您已经开启了 \"测试版功能\"。请点击 ${ refreshButton } 以使用测试版的 ${ appName }，应用将重新启动"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新激活密钥，可以解密下列分类中的日程了。"
@@ -3163,6 +3169,9 @@
       "All day": [
         "全天事件"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Automatically save contacts": [
         "自动保存联系人"
       ],
@@ -3196,11 +3205,11 @@
       "Category": [
         "类别"
       ],
-      "Choose a color": [
-        "选择颜色"
-      ],
       "City": [
         "城市"
+      ],
+      "Color": [
+        ""
       ],
       "Contacts": [
         "通讯录"
@@ -3213,18 +3222,6 @@
       ],
       "CVV code": [
         "CVV 码"
-      ],
-      "Default email": [
-        "首选邮箱"
-      ],
-      "Default event duration": [
-        "默认日程时长"
-      ],
-      "Default full day notifications": [
-        "预设全天提醒"
-      ],
-      "Default notifications": [
-        "预设提醒时间"
       ],
       "Description": [
         "说明："
@@ -3261,6 +3258,9 @@
       ],
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
+      ],
+      "Event duration": [
+        ""
       ],
       "Event frequency": [
         "日程频率"
@@ -4150,6 +4150,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        ""
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
@@ -4458,11 +4463,8 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "您已达到最多 ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } 个订阅日历的上限。"
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "您已达到最多 ${ personalCalendarLimit } 个个人日历的上限。"
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        ""
       ]
     },
     "Success": {
@@ -4859,6 +4861,9 @@
       "Downgrade account": [
         "降级账户"
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit contact": [
         "编辑联系人"
       ],
@@ -5107,9 +5112,6 @@
       ],
       "Unsupported browser": [
         "不支持此浏览器"
-      ],
-      "Update calendar": [
-        "更新日历"
       ],
       "Update event": [
         "更新日程"

@@ -20,6 +20,9 @@
       "Activate": [
         "Aktifkan"
       ],
+      "Activate recovery": [
+        "Aktifkan metode pemulihan"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "Batal"
       ],
-      "Cancel action": [
-        "Batalkan tindakan"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "Tembusan, Tembusan Tertutup"
       ],
-      "CC, BCC": [
-        "CC, BCC"
+      "CC BCC": [
+        "CC BCC"
       ],
       "Change page": [
         "Ubah halaman"
@@ -218,8 +218,8 @@
       "Decrease": [
         "Kurangi"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Aplikasi email default"
       ],
       "Delete": [
         "Hapus"
@@ -308,14 +308,14 @@
       "Expand composer": [
         "Lebarkan komposer"
       ],
-      "Expiration time": [
-        "Waktu kedaluwarsa"
-      ],
       "Export": [
         "Ekspor"
       ],
       "Export contacts": [
         "Ekspor kontak"
+      ],
+      "Fewer search options": [
+        "Opsi pencarian lebih sedikit"
       ],
       "Filter on...": [
         "Filter pada..."
@@ -358,9 +358,6 @@
       ],
       "Got it": [
         "Dimengerti"
-      ],
-      "here": [
-        "di sini"
       ],
       "Hide": [
         "Sembunyikan"
@@ -416,6 +413,9 @@
       "Insert contact": [
         "Sisipkan kontak"
       ],
+      "Insert contacts": [
+        "Sisipkan kontak"
+      ],
       "Insert image": [
         "Sisipkan gambar"
       ],
@@ -442,9 +442,6 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
-      ],
-      "Less search options": [
-        "Kurangi c"
       ],
       "Load": [
         "Muat"
@@ -522,10 +519,10 @@
         "Pindah ke arsip"
       ],
       "Move to inbox": [
-        "Pindah ke kotak masuk"
+        "Pindahkan ke kotak masuk"
       ],
       "Move to inbox (not spam)": [
-        "Pindah ke kotak masuk (bukan spam)"
+        "Pindahkan ke kotak masuk (bukan spam)"
       ],
       "Move to spam": [
         "Pindah ke spam"
@@ -626,9 +623,6 @@
       "Print": [
         "Mencetak"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Keluar"
       ],
@@ -645,7 +639,7 @@
         "Perbaiki parameter pencarian Anda"
       ],
       "refresh the page": [
-        "segarkan halaman"
+        "muat ulang halaman"
       ],
       "Refresh the page": [
         "Muat ulang halaman"
@@ -734,6 +728,15 @@
       "Set": [
         "Atur"
       ],
+      "Set as default": [
+        "Atur sebagai default"
+      ],
+      "Set expiration time": [
+        "Tentukan waktu kedaluwarsa"
+      ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
+      ],
       "Share via link": [
         "Bagikan melalui tautan"
       ],
@@ -752,6 +755,9 @@
       "Show details": [
         "Tampilkan rincian"
       ],
+      "Show fewer search options": [
+        "Tampilkan lebih sedikit opsi pencarian"
+      ],
       "Show folders": [
         "Tampilkan folder"
       ],
@@ -763,9 +769,6 @@
       ],
       "Show less": [
         "Tampilkan lebih sedikit"
-      ],
-      "Show less search options": [
-        "Tampilkan lebih sedikit opsi pencarian"
       ],
       "Show messages": [
         "Lihat pesan"
@@ -802,6 +805,9 @@
       ],
       "Switch account": [
         "Ganti akun"
+      ],
+      "Switch to rich text": [
+        "Beralih ke format rich text"
       ],
       "Theme": [
         "Tema"
@@ -850,6 +856,15 @@
       ],
       "Untrust": [
         "Jangan percayai"
+      ],
+      "Update": [
+        "Perbarui"
+      ],
+      "Update recovery file": [
+        "Perbarui berkas pemulihan"
+      ],
+      "Update recovery phrase": [
+        "Perbarui frasa pemulihan"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1728,7 +1743,7 @@
     },
     "Default display name vcard": {
       "Unknown": [
-        "Tidak dikenal"
+        "Tidak diketahui"
       ]
     },
     "Default encryption scheme": {
@@ -1941,7 +1956,7 @@
         "Grup dengan nama ini sudah ada"
       ],
       "A problem occurred, please try again": [
-        "Sebuah masalah terjadi, silakan coba kembali"
+        "Terjadi suatu kesalahan, silakan coba kembali"
       ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
@@ -1956,7 +1971,7 @@
         "Lampiran terbatas hingga 25 MB"
       ],
       "Authentication canceled.": [
-        "Autentikasi dibatalkan."
+        "Otentikasi dibatalkan."
       ],
       "Authentication error.": [
         "Kesalahan otentikasi."
@@ -2009,8 +2024,11 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Kesalahan dekripsi: dekripsi isi pesan terenkripsi gagal."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Kurangi setidaknya ${ calendarToFixCount } kalender dari pilihan Anda atau"
+        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
       ],
       "Draft could not be saved. Try again.": [
         "Draf tidak dapat disimpan. Coba lagi."
@@ -2064,7 +2082,7 @@
         "Kredensial masuk salah. Silakan coba lagi"
       ],
       "Incorrect mailbox password. Please try again": [
-        "Sandi kotak masuk salah. Silakan coba lagi"
+        "Kata sandi kotak masuk salah. Silakan coba lagi"
       ],
       "Invalid ${ name } code": [
         "Kode ${ name } tidak valid"
@@ -2100,10 +2118,7 @@
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
       ],
       "Message needs to be sent first": [
-        "Pesan perlu dikirim lebih dahulu"
-      ],
-      "Message passwords do not match": [
-        "Kata sandi pesan tidak cocok"
+        "Pesan perlu dikirim terlebih dahulu"
       ],
       "Message processing error.": [
         "Kesalahan pemprosesan pesan."
@@ -2119,6 +2134,9 @@
       ],
       "No address with keys available to compose a message": [
         "Tidak ada alamat dengan kunci yang tersedia untuk dapat menulis pesan"
+      ],
+      "No data to import": [
+        "Tidak ada data untuk diimpor"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Tidak ada kunci yang diambil untuk pengguna internal yang valid untuk pengiriman"
@@ -2139,7 +2157,7 @@
         "Bukan nomor yang valid"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
+        "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
@@ -2171,8 +2189,14 @@
       "Please refresh the page.": [
         "Harap muat ulang halaman ini."
       ],
+      "Please repeat the password": [
+        "Harap ulangi kata sandi"
+      ],
+      "Please set a password": [
+        "Harap tentukan kata sandi"
+      ],
       "Preferences could not be saved": [
-        "Preferensi tidak bisa disimpan"
+        "Preferensi tidak dapat disimpan"
       ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
@@ -2223,7 +2247,7 @@
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
+        "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Maaf, Proton tidak dapat mendekripsi pesan Anda. Silakan pastikan semua kunci Anda aktif."
@@ -2235,7 +2259,7 @@
         "Lampiran tidak dapat didekripsi.\nJika Anda memiliki kunci pribadi terkait, Anda akan tetap bisa mendekripsi\nberkas dengan program seperti GnuPG."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
+        "Browser yang Anda gunakan tidak mengizinkan kami untuk dapat mengotorisir pembayaran Anda secara menyeluruh. Silakan gunakan browser lain atau masuk via komputer."
       ],
       "The composer failed to load.": [
         "Komposer gagal termuat."
@@ -2292,7 +2316,7 @@
         "Pesan ini telah terkirim. Draf baru telah tersimpan."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar lewat peramban Anda"
+        "Pesan ini terindikasi memiliki tautan yang tidak dapat dibuka dengan benar oleh browser Anda"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Terlalu banyak filter yang aktif. Mohon tingkatkan jenis akun Anda ke akun berbayar untuk dapat mengaktifkan lebih banyak filter."
@@ -2301,7 +2325,7 @@
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
       "Unknown error": [
-        "Galat tak diketahui"
+        "Kesalahan yang tidak diketahui"
       ],
       "Unknown error.": [
         "Galat tidak diketahui."
@@ -2310,10 +2334,10 @@
         "Status token pembayaran tidak dikenal"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "Anda tidak dapat mengirim surel ke lebih dari 100 penerima"
+        "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Anda tidak dapat mengirim vCard lebih dari 10 kontak"
+        "Anda tidak dapat mengirim vCard ke lebih dari 10 kontak"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } dalam satu waktu"
@@ -2657,19 +2681,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        "Kami telah menghadiahkan Anda kapasitas penyimpanan tambahan sebesar 1GB. Anda kini dapat menjelajahi ${ BRAND_NAME } lebih jauh dan membagikan alamat ${ protonMailAppName } Anda kepada para anggota keluarga, kerabat, dan kolega Anda."
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
+        "Kami telah menambah kuota penyimpanan Anda menjadi ${ totalGBStorageAfterCompletion } GB. Dapatkan kuota penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya sekarang juga."
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        "Kami telah menghadiahkan Anda kapasitas penyimpanan tambahan sebesar 1GB. Untuk dapat memperoleh kapasitas penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya, silakan tingkatkan jenis akun Anda."
-      ],
-      "You're a privacy champ!": [
-        "Anda kini telah menjadi seorang pahlawan privasi!"
+      "You're all set!": [
+        "Anda kini sudah siap!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
-        "Rampungkan seluruh langkah yang ada dan dapatkan kapasitas penyimpanan tambahan hingga 2 GB"
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        "Selesaikan seluruh langkah-langkah yang tertera dan dapatkan total kuota penyimpanan sebesar ${ totalGBStorageAfterCompletion } GB pada akun Anda"
       ],
       "Only ${ days } day left": [
         "Hanya ${ days } hari tersisa"
@@ -2733,7 +2754,7 @@
         "Folder kustom"
       ],
       "Default folders": [
-        "Folder bawaan"
+        "Folder-folder default"
       ],
       "Labels": [
         "Label"
@@ -3032,9 +3053,6 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Activation in progress": [
         "Aktivasi sedang dalam proses"
       ],
@@ -3051,7 +3069,7 @@
         "Alamat"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
+        "Setelah Anda membayar dengan Bitcoin, harap ikuti instruksi-instruksi di bawah ini untuk dapat meningkatkan jenis akun Anda."
       ],
       "Align left": [
         "Rata kiri"
@@ -3075,7 +3093,7 @@
         "Semua kalender Anda dinonaktifkan."
       ],
       "All your changes will be lost.": [
-        "Perubahan akan hilang."
+        "Seluruh perubahan Anda akan hilang."
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Memungkinkan Anda memakai email untuk domain Anda sendiri di ${ mailAppName }, mis. john.smith@example.com"
@@ -3158,9 +3176,6 @@
       "Center": [
         "Tengah"
       ],
-      "Change your default in settings": [
-        "Ubah setelan bawaan di pengaturan"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
       ],
@@ -3184,9 +3199,6 @@
       ],
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
-      ],
-      "Confirm Password": [
-        "Konfirmasi Kata Sandi"
       ],
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
@@ -3236,11 +3248,14 @@
       "Day": [
         "Hari"
       ],
+      "Default email application": [
+        "Aplikasi email default"
+      ],
       "Disable message content search": [
         "Nonaktifkan pencarian konten pesan"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        "Diskon diterapkan untuk langganan anda dengan kupon ${ code }"
+        "Diskon dengan kupon ${ code } telah diterapkan pada biaya berlangganan Anda"
       ],
       "Do you want to download this attachment anyway?": [
         "Ingin mengunduh lampiran ini?"
@@ -3320,6 +3335,9 @@
       "Estimating time remaining...": [
         "Mengestimasi waktu tersisa..."
       ],
+      "Expiration time": [
+        "Waktu kedaluwarsa"
+      ],
       "Expiration Time": [
         "Waktu kedaluwarsa"
       ],
@@ -3368,9 +3386,6 @@
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN berfitur lengkap dengan kecepatan hingga 10 Gbps."
       ],
-      "Generate recovery phrase": [
-        "Buat frasa pemulihan"
-      ],
       "Get more storage and premium features.": [
         "Dapatkan kuota penyimpanan tambahan dan fitur-fitur premium lainnya."
       ],
@@ -3399,7 +3414,7 @@
         "Jika Anda yakin ini adalah kesalahan, harap hubungi kami ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
+        "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "Image URL": [
         "URL gambar"
@@ -3436,9 +3451,6 @@
       ],
       "Insert image": [
         "Memasukkan gambar"
-      ],
-      "Insert image as": [
-        "Sisipkan gambar sebagai"
       ],
       "Insert link": [
         "Sisipkan tautan"
@@ -3491,6 +3503,9 @@
       "Manage your labels": [
         "Kelola label Anda"
       ],
+      "members": [
+        "anggota"
+      ],
       "Members": [
         "Anggota"
       ],
@@ -3502,9 +3517,6 @@
       ],
       "Message headers": [
         "Header pesan"
-      ],
-      "Message Password": [
-        "Kata Sandi Pesan"
       ],
       "Message sent": [
         "Pesan terkirim"
@@ -3587,14 +3599,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ubah pengaturan ini jika Anda menggunakan PGP dengan bukan pengguna ProtonMail."
       ],
-      "or": [
-        "atau"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
-      ],
-      "Password Hint (Optional)": [
-        "Petunjuk Kata Sandi (Opsional)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Pembayaran perlu beberapa menit untuk diverifikasi secara penuh."
@@ -3614,11 +3620,11 @@
       "Plain text": [
         "Teks biasa"
       ],
-      "Please add at least one recipient before sending.": [
-        "Silakan tambahkan setidaknya satu penerima sebelum mengirim."
+      "Please add at least one recipient.": [
+        "Harap tentukan setidaknya satu orang penerima."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Harap simpan frasa keamanan ini sebaik-baiknya. Anda akan memerlukan frasa keamanan ini untuk dapat mengakses akun Anda apabila karena satu dan lain hal Anda harus mengatur ulang kata sandi Anda."
+        "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
@@ -3734,8 +3740,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender personal. Anda juga dapat menggabungkan kalender-kalender yang diimpor dengan kalender-kalender Proton yang telah Anda miliki sebelumnya."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
       ],
       "Sending": [
         "Mengirim"
@@ -3752,8 +3758,11 @@
       "Session timed out.": [
         "Sesi habis."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set a recovery phrase": [
+        "Tentukan frasa pemulihan"
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Tentukan ProtonMail sebagai aplikasi email default untuk browser ini. ProtonMail akan terbuka secara otomatis ketika Anda mengeklik tautan email."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP memungkinkan Anda mengirim surel terenkripsi ke penerima non-ProtonMail yang memiliki fitur PGP."
@@ -3893,11 +3902,11 @@
       "This message will be sent shortly": [
         "Pesan ini akan terkirim dengan segera"
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        "Pesan ini akan kedaluwarsa pada tanggal ${ dateString } pukul ${ formattedTime }"
+      ],
       "This message will expire ${ formattedDate }": [
         "Pesan ini akan kedaluwarsa pada ${ formattedDate }"
-      ],
-      "This message will expire in": [
-        "Pesan ini akan kedaluwarsa pada"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Pesan ini akan kedaluwarsa pada ${ formattedDelay }"
@@ -3945,34 +3954,34 @@
         "Memperbarui pencarian konten pesan..."
       ],
       "Upgrade to add more addresses to your account.": [
-        "Tingkatkan paket agar bisa menambahkan alamat lain ke akun Anda."
+        "Tingkatkan jenis akun Anda untuk dapat menambahkan lebih banyak alamat ke dalam akun Anda."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        "Tingkatkan paket agar bisa menyetel balasan otomatis saat liburan."
+        "Tingkatkan jenis akun Anda agar Anda dapat membalas pesan-pesan yang masuk secara otomatis."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Tingkatkan paket agar bisa membuat lebih banyak folder, filter, dan alamat."
+        "Tingkatkan jenis akun Anda untuk dapat membuat lebih banyak folder, filter, dan alamat."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Tingkatkan paket agar bisa menyimpan email dari domain Anda sendiri."
+        "Tingkatkan jenis akun Anda untuk dapat mengirim email dari domain buatan Anda sendiri."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Tingkatkan paket agar bisa mengirim email dari alamat @pm.me."
+        "Tingkatkan jenis akun Anda untuk dapat mengirim email dari alamat @pm.me."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Tingkatkan paket agar bisa mengirim email ke grup kontak dengan mudah."
+        "Tingkatkan jenis akun Anda untuk dapat mengirim email ke grup-grup kontak dengan mudah."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Tingkatkan paket demi mendukung keutamaan privasi di Internet."
+        "Tingkatkan jenis akun Anda untuk mendukung internet yang mengutamakan privasi."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Tingkatkan paket agar kami bisa menyediakan privasi untuk semua orang."
+        "Tingkatkan jenis akun Anda agar kami dapat menyediakan privasi bagi semua."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Tingkatkan paket demi mendukung privasi dan mendapatkan banyak fitur."
+        "Tingkatkan jenis akun Anda untuk mendukung privasi dan memperoleh lebih banyak fitur."
       ],
       "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "Tingkatkan paket agar bisa memakai ProtonMail dengan klien desktop terpisah."
+        "Tingkatkan jenis akun Anda untuk dapat mengakses ProtonMail melalui klien desktop terpisah."
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -4052,6 +4061,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "Anda dapat menyertakan gambar sebagai lampiran atau sebagai sisipan dalam badan email Anda."
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Anda juga dapat menggabungkan kalender-kalender yang Anda impor dengan kalender-kalender Proton yang telah ada sebelumnya."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
@@ -4090,12 +4105,6 @@
       ],
       "You have **${ count } message** tagged with this label": [
         "Anda memiliki **${ count } pesan** yang ditandai dengan label ini"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Anda telah mengaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi terbaru dari ${ appName }. Aplikasi akan dimuat ulang."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Anda belum menulis subjek email. Apakah Anda yakin untuk tetap mengirim email ini?"
@@ -4136,8 +4145,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
-        "Anda menulis \"${ keyword }\", namun tidak ada lampiran yang ditambah. Apakah Anda akan tetap mengirim pesan?"
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apapun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
@@ -4146,7 +4155,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Akun Anda sedang ditingkatkan, ini perlu waktu hingga 30 detik."
+        "Akun Anda sedang ditingkatkan. Proses ini dapat memakan waktu hingga 30 detik."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun anda akan diperbarui setelah pembayaran sah."
@@ -4170,12 +4179,15 @@
         "Frasa pemulihan Anda"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Kalimat pemulihan Anda berupa 12 kata yang berurutan."
+        "Frasa pemulihan Anda tersusun atas 12 kata yang terangkai dalam urutan yang spesifik."
       ]
     },
     "info": {
       "(beta)": [
         "(beta)"
+      ],
+      "Optional": [
+        "Opsional"
       ]
     },
     "Info concerning plan features": {
@@ -4527,6 +4539,9 @@
       "Conditions": [
         "Syarat"
       ],
+      "Confirm Password": [
+        "Konfirmasi Kata Sandi"
+      ],
       "Contacts": [
         "Kontak"
       ],
@@ -4659,8 +4674,14 @@
       "Manage labels": [
         "Kelola label"
       ],
+      "Manage my addresses": [
+        "Kelola alamat-alamat saya"
+      ],
       "Mark as": [
         "Tandai sebagai"
+      ],
+      "Message Password": [
+        "Kata Sandi Pesan"
       ],
       "Move to": [
         "Pindah ke"
@@ -4694,6 +4715,9 @@
       ],
       "Password": [
         "Kata Sandi"
+      ],
+      "Password Hint": [
+        "Petunjuk Kata Sandi"
       ],
       "Payer": [
         "Pembayar"
@@ -5031,7 +5055,7 @@
         "Sampah"
       ],
       "Upgrade": [
-        "Tingkatkan"
+        "Tingkatkan Akun"
       ],
       "Upgrade account": [
         "Tingkatkan akun"
@@ -5409,6 +5433,9 @@
       ],
       "Contact group updated": [
         "Grup kontak telah diperbarui"
+      ],
+      "Password has been set successfully": [
+        "Kata sandi telah berhasil ditentukan"
       ]
     },
     "Onboarding": {
@@ -5498,7 +5525,7 @@
         "Kustom folder"
       ],
       "Default folders": [
-        "Folder bawaan"
+        "Folder-folder default"
       ],
       "Move to...": [
         "Pindah ke..."
@@ -6046,7 +6073,7 @@
         "Catatan rilis"
       ],
       "Upgrade storage": [
-        "Tingkatkan penyimpanan"
+        "Perbesar kuota penyimpanan"
       ],
       "Your current storage:": [
         "Penyimpanan Anda saat ini:"
@@ -6369,9 +6396,6 @@
       "Add contact group name": [
         "Tambah nama grup kontak"
       ],
-      "Add contacts": [
-        "Tambahkan kontak"
-      ],
       "Add filter": [
         "Tambah filter"
       ],
@@ -6582,9 +6606,6 @@
       "Expand content": [
         "Buka konten"
       ],
-      "Expiration time": [
-        "Waktu kedaluwarsa"
-      ],
       "Exporting contacts": [
         "Mengekspor kontak"
       ],
@@ -6654,9 +6675,6 @@
       "Message list": [
         "Daftar pesan"
       ],
-      "Message without subject?": [
-        "Kirim pesan tanpa subjek?"
-      ],
       "More": [
         "Lainnya"
       ],
@@ -6673,7 +6691,7 @@
         "Pindahkan ke kotak masuk"
       ],
       "Move to inbox (not spam)": [
-        "Pindah ke kotak masuk (bukan spam)"
+        "Pindahkan ke kotak masuk (bukan spam)"
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
@@ -6695,9 +6713,6 @@
       ],
       "No attachment found": [
         "Tidak ada sisipan yang ditemukan"
-      ],
-      "No recipient": [
-        "Tidak ada penerima"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
@@ -6752,6 +6767,9 @@
       ],
       "Re-signing contacts": [
         "Menandatangani ulang kontak"
+      ],
+      "Recipient missing": [
+        "Penerima hilang"
       ],
       "Recover data": [
         "Memulihkan data"
@@ -6815,6 +6833,9 @@
       ],
       "Storage capacity warning": [
         "Peringatan kapasitas penyimpanan"
+      ],
+      "Subject missing": [
+        "Subjek hilang"
       ],
       "Subtotal": [
         "Subtotal"
@@ -6954,6 +6975,17 @@
       ],
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Hari ini adalah hari yang baik untuk menulis email"
+      ],
+      "Update default font and size": [
+        "Perbarui jenis dan ukuran tulisan default"
+      ],
+      "Your default font will look like following:": [
+        "Jenis tulisan default Anda akan tampak sebagai berikut:"
       ]
     },
     "Validation": {
@@ -7131,7 +7163,7 @@
         "Tindakan ini permanen. Silakan masukkan kata ${ boldDanger } di kolom tersebut untuk melanjutkan."
       ],
       "This feature requires a paid Proton account": [
-        "Fitur ini tersedia untuk akun Proton berbayar"
+        "Fitur ini hanya tersedia bagi para pemilik akun Proton berbayar"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, kami saat ini sedang tidak online. Harap jabarkan masalah yang tengah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali online."
