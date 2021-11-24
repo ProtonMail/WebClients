@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
+import { Loader } from '../../../components/loader';
+
 const getIframeUrl = (token: string) => {
     const url = getApiSubdomainUrl('/core/v4/captcha');
     url.searchParams.set('Token', token);
@@ -15,6 +17,7 @@ interface Props {
 
 const Captcha = ({ token, onSubmit }: Props) => {
     const [style, setStyle] = useState<any>();
+    const [loading, setLoading] = useState(true);
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
     const iframeUrl = getIframeUrl(token);
@@ -47,14 +50,18 @@ const Captcha = ({ token, onSubmit }: Props) => {
     }, []);
 
     return (
-        <iframe
-            title="Captcha"
-            ref={iframeRef}
-            className="w100 h-custom"
-            src={src}
-            style={style}
-            sandbox="allow-scripts allow-same-origin allow-popups"
-        />
+        <>
+            {loading && <Loader />}
+            <iframe
+                onLoad={() => setLoading(false)}
+                title="Captcha"
+                ref={iframeRef}
+                className="w100 h-custom"
+                src={src}
+                style={style}
+                sandbox="allow-scripts allow-same-origin allow-popups"
+            />
+        </>
     );
 };
 

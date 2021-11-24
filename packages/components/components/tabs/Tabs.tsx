@@ -10,6 +10,7 @@ interface Props {
     value: number;
     onChange: (index: number) => void;
     stickyTabs?: boolean;
+    fullWidth?: boolean;
     className?: string;
     containerClassName?: string;
     contentClassNane?: string;
@@ -21,6 +22,7 @@ export const Tabs = ({
     tabs,
     children,
     stickyTabs,
+    fullWidth,
     className,
     containerClassName,
     contentClassNane,
@@ -40,7 +42,7 @@ export const Tabs = ({
         <div className={classnames(['tabs', className])}>
             <nav className={classnames(['tabs-container', stickyTabs && 'sticky-top', containerClassName])}>
                 <ul
-                    className="tabs-list"
+                    className={classnames(['tabs-list', fullWidth && 'tabs-list--fullWidth'])}
                     role="tablist"
                     ref={containerRef}
                     style={{ '--translate': translate, '--scale': scale }}
