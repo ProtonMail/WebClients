@@ -33,23 +33,28 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
     const history = useHistory();
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
-    const [tabIndex, setTabIndex] = useState(() => {
-        if (defaultMethod === undefined) {
-            return 0;
-        }
-        const foundMethod = methods.indexOf(defaultMethod);
-        return foundMethod !== -1 ? foundMethod : 0;
-    });
-    const [email, setEmail] = useState(defaultMethod === 'email' ? defaultValue : '');
-    const [phone, setPhone] = useState(defaultMethod === 'sms' ? defaultValue : '');
-    const [mnemonic, setMnemonic] = useState(defaultMethod === 'mnemonic' ? defaultValue : '');
-    const mnemonicValidation = useMnemonicInputValidation(mnemonic);
 
     const recoveryMethods = [
         methods?.includes('mnemonic') ? ('mnemonic' as const) : undefined,
         methods?.includes('email') || methods?.includes('login') ? ('email' as const) : undefined,
         methods?.includes('sms') ? ('sms' as const) : undefined,
     ].filter(isTruthy);
+
+    const [tabIndex, setTabIndex] = useState(() => {
+        if (defaultMethod === undefined) {
+            return 0;
+        }
+        if (defaultMethod === 'login') {
+            defaultMethod = 'email';
+        }
+        const foundMethod = recoveryMethods.indexOf(defaultMethod);
+        return foundMethod !== -1 ? foundMethod : 0;
+    });
+
+    const [email, setEmail] = useState(defaultMethod === 'email' ? defaultValue : '');
+    const [phone, setPhone] = useState(defaultMethod === 'sms' ? defaultValue : '');
+    const [mnemonic, setMnemonic] = useState(defaultMethod === 'mnemonic' ? defaultValue : '');
+    const mnemonicValidation = useMnemonicInputValidation(mnemonic);
 
     const currentMethod = recoveryMethods[tabIndex];
 
