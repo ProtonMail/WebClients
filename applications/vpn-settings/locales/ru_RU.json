@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Активировать мой купон"
       ],
+      "Activate recovery": [
+        "Активировать восстановление"
+      ],
       "Add credit / debit card": [
         "Добавить банковскую карту"
       ],
@@ -187,9 +190,6 @@
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
       ],
-      "here": [
-        "здесь"
-      ],
       "Hide": [
         "Скрыть"
       ],
@@ -304,6 +304,9 @@
       "Send": [
         "Отправить"
       ],
+      "Set recovery phrase": [
+        "Установить фразу для восстановления"
+      ],
       "Share via link": [
         "Доступ по ссылке"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Обновить"
+      ],
+      "Update recovery file": [
+        "Обновить файл восстановления"
+      ],
+      "Update recovery phrase": [
+        "Обновить фразу для восстановления"
       ],
       "Upgrade": [
         "Улучшить"
@@ -711,7 +720,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Невозможно было расшифровать календарь"
+        "Календарь не может быть расшифрован"
       ],
       "Calendar is syncing": [
         "Календарь синхронизируется"
@@ -729,7 +738,7 @@
         "Неверная ссылка календаря"
       ],
       "Failed to sync calendar": [
-        "Сбой синхронизации календаря"
+        "Не удалось синхронизировать календарь"
       ],
       "More than 12 hours passed since last update": [
         "Более 12 часов прошло с момента последнего обновления"
@@ -787,7 +796,7 @@
         "Я использую другой аккаунт Proton"
       ],
       "Missing feature(s)": [
-        "Отсутствующая(ие) функция(и)"
+        "Отсутствующие функции"
       ],
       "My reason isn't listed, please comment": [
         "Моя причина не указана, пожалуйста, прокомментируйте"
@@ -1787,12 +1796,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Не используйте учетные данные OpenVPN и IKEv2 для входа в приложения или в панель ProtonVPN. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Вы выключили доступ к бета-версии. Нажмите ${ refreshButton }, чтобы использовать стабильную версию ${ appName }. Приложение будет перезагружено."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Вы включили доступ к бета-версии. Нажмите ${ refreshButton }, чтобы использовать последнюю версию ${ appName }. Приложение будет перезагружено."
-      ],
       "You have no saved payment methods.": [
         "У вас нет сохраненных способов оплаты."
       ],
@@ -2302,6 +2305,9 @@
       ],
       "Proton newsletter": [
         "Новостная рассылка Proton"
+      ],
+      "Proton offers and promotions": [
+        "Предложения и акции Proton"
       ],
       "Proton product announcements": [
         "Объявления о продукте Proton"
@@ -3204,7 +3210,7 @@
         "Настройте ваш тариф"
       ],
       "Dashboard": [
-        "Панель управления"
+        "Личный кабинет"
       ],
       "Date": [
         "Дата"
@@ -3276,7 +3282,7 @@
         "Счета"
       ],
       "Kill Switch": [
-        "Аварийный Стоп"
+        "Kill Switch"
       ],
       "Language": [
         "Язык"
@@ -3676,13 +3682,13 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } сервер",
+        "${ n }+ сервера",
         "${ n }+ серверов",
-        "${ n } серверов",
         "${ n }+ серверов"
       ],
       "${ n } VPN connection": [
         "${ n } подключение VPN",
-        "${ n } подключений VPN",
+        "${ n } подключения VPN",
         "${ n } подключений VPN",
         "${ n } подключений VPN"
       ],

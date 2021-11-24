@@ -20,6 +20,9 @@
       "Activate": [
         "Aktivér"
       ],
+      "Activate recovery": [
+        "Aktiver gendannelse"
+      ],
       "Add": [
         "Tilføj"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "Annullér"
       ],
-      "Cancel action": [
-        "Annuller handling"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "Karbonkopi, blind karbonkopi"
       ],
-      "CC, BCC": [
-        "CC, BCC"
+      "CC BCC": [
+        "CC BCC"
       ],
       "Change page": [
         "Skift side"
@@ -218,8 +218,8 @@
       "Decrease": [
         "Formindsk"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Standardprogram til mails"
       ],
       "Delete": [
         "Slet"
@@ -310,14 +310,14 @@
       "Expand composer": [
         "Udvid skrivevinduet"
       ],
-      "Expiration time": [
-        "Udløbstid"
-      ],
       "Export": [
         "Exportér"
       ],
       "Export contacts": [
         "Eksportér kontakter"
+      ],
+      "Fewer search options": [
+        "Færre søgemuligheder"
       ],
       "Filter on...": [
         "Filtrer efter..."
@@ -360,9 +360,6 @@
       ],
       "Got it": [
         "Forstået"
-      ],
-      "here": [
-        "her"
       ],
       "Hide": [
         "Skjul"
@@ -419,6 +416,9 @@
       "Insert contact": [
         "Indsæt kontakt"
       ],
+      "Insert contacts": [
+        "Indsæt kontakter"
+      ],
       "Insert image": [
         "Indsæt billede"
       ],
@@ -446,9 +446,6 @@
       "Learn more": [
         "Få mere at vide"
       ],
-      "Less search options": [
-        "Færre søgemuligheder"
-      ],
       "Load": [
         "Indlæs"
       ],
@@ -468,10 +465,10 @@
         "Log ind"
       ],
       "Mailbox density": [
-        "Postkasse tæthed"
+        "Postkasse-tæthed"
       ],
       "Mailbox layout": [
-        "Postkasse layout"
+        "Postkasse-layout"
       ],
       "Mark as read": [
         "Markér som læst"
@@ -573,7 +570,7 @@
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
-        ""
+        "Åbn ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
@@ -628,9 +625,6 @@
       ],
       "Print": [
         "Udskriv"
-      ],
-      "Prompt browser setting": [
-        ""
       ],
       "Quit": [
         "Afslut"
@@ -737,6 +731,15 @@
       "Set": [
         "Indstil"
       ],
+      "Set as default": [
+        "Angiv som standard"
+      ],
+      "Set expiration time": [
+        "Indstil udløbstidspunkt"
+      ],
+      "Set recovery phrase": [
+        "Opsæt gendannelsessætning"
+      ],
       "Share via link": [
         "Del via link"
       ],
@@ -755,6 +758,9 @@
       "Show details": [
         "Vis detaljer"
       ],
+      "Show fewer search options": [
+        "Vis færre søgemuligheder"
+      ],
       "Show folders": [
         "Vis mapper"
       ],
@@ -766,9 +772,6 @@
       ],
       "Show less": [
         "Vis mindre"
-      ],
-      "Show less search options": [
-        "Vis færre søgemuligheder"
       ],
       "Show messages": [
         "Vis beskeder"
@@ -805,6 +808,9 @@
       ],
       "Switch account": [
         "Skift konto"
+      ],
+      "Switch to rich text": [
+        "Skift til rich text format"
       ],
       "Theme": [
         "Tema"
@@ -854,6 +860,15 @@
       ],
       "Untrust": [
         "Ikke-betroet"
+      ],
+      "Update": [
+        "Opdatér"
+      ],
+      "Update recovery file": [
+        "Opdater gendannelsesfil"
+      ],
+      "Update recovery phrase": [
+        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -913,7 +928,7 @@
         "Vis kildekode"
       ],
       "Why not?": [
-        ""
+        "Hvorfor ikke?"
       ],
       "Yes": [
         "Ja"
@@ -1408,10 +1423,10 @@
         "En forekomst er blevet tilføjet begivenheden ${ veventIcsTitle }"
       ],
       "Event already ended": [
-        ""
+        "Begivenhed allerede afsluttet"
       ],
       "Event in progress": [
-        ""
+        "Begivenhed i gang"
       ],
       "Event refreshing is not supported for the moment": [
         "Opdatering af begivenheder understøttes ikke i øjeblikket"
@@ -1426,13 +1441,13 @@
         "Dette svar kan ikke tilføjes til ${ calendarAppName } , da vi i øjeblikket kun understøtter svar på alle begivenheder i en serie"
       ],
       "This event has been canceled.": [
-        ""
+        "Denne begivenhed er blevet annulleret."
       ],
       "This event has been updated.": [
         "Denne begivenhed er blevet opdateret."
       ],
       "This invitation is out of date. The event has been canceled.": [
-        ""
+        "Denne invitation er forældet. Begivenheden er blevet annulleret."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Denne invitation er forældet. Begivenheden er blevet slettet."
@@ -1846,7 +1861,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } er blevet annulleret."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
@@ -1884,44 +1899,44 @@
     },
     "Email reminder banner": {
       "Event already ended": [
-        ""
+        "Begivenhed allerede afsluttet"
       ],
       "Event in progress": [
-        ""
+        "Begivenhed i gang"
       ],
       "Event is tomorrow": [
-        ""
+        "Begivenhed er i morgen"
       ],
       "Event starting now": [
-        ""
+        "Begivenhed starter nu"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "",
-        ""
+        "Begivenhed starter om ${ minutesUntilEvent } minut",
+        "Begivenhed starter om ${ minutesUntilEvent } minutter"
       ],
       "Event starts tomorrow": [
-        ""
+        "Begivenhed starter i morgen"
       ]
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "Begivenhedsdetaljer er krypterede. Log ind igen for at gendanne kalender og dekryptere dine data. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        ""
+        "Begivenhedsdetaljer kan ikke dekrypteres. ${ whyNotLink }"
       ]
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        ""
+        "Begivenhed findes ikke længere i din kalender"
       ]
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        ""
+        "Begivenhed blev annulleret"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        ""
+        "Begivenhed blev opdateret. Denne påmindelse er forældet."
       ]
     },
     "Email subject": {
@@ -2026,6 +2041,10 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Fravælg mindst ${ calendarToFixCount } kalender",
+        "Fravælg mindst ${ calendarToFixCount } kalendere"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Fravælg mindst ${ calendarToFixCount } kalender eller",
         "Fravælg mindst ${ calendarToFixCount } kalendere eller"
@@ -2121,9 +2140,6 @@
       "Message needs to be sent first": [
         "Beskeden skal sendes først"
       ],
-      "Message passwords do not match": [
-        "Beskedadgangskoder stemmer ikke overens"
-      ],
       "Message processing error.": [
         "Fejl i meddelelsesbehandling."
       ],
@@ -2138,6 +2154,9 @@
       ],
       "No address with keys available to compose a message": [
         "Ingen adresse med nøgler er tilgængelig til at komponere en besked"
+      ],
+      "No data to import": [
+        "Ingen data at importere"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Ingen nøgle hentet for intern bruger er gyldig til afsendelse"
@@ -2192,6 +2211,12 @@
       ],
       "Please refresh the page.": [
         "Genindlæs venligst siden."
+      ],
+      "Please repeat the password": [
+        "Gentag adgangskoden"
+      ],
+      "Please set a password": [
+        "Opsæt en adgangskode"
       ],
       "Preferences could not be saved": [
         "Indstillinger kunne ikke gemmes"
@@ -2527,7 +2552,7 @@
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Vedhæftet ICS-fil kunne ikke læses"
       ],
       "Invalid invitation": [
         "Ugyldig invitation"
@@ -2682,19 +2707,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        "Vi har tilføjet 1 GB bonuslagerplads til din konto. Fortsæt med at udforske ${ BRAND_NAME } og del din ${ protonMailAppName }-adresse med din familie, venner og kolleger."
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
+        "Vi har øget den samlede lagerplads for din konto til ${ totalGBStorageAfterCompletion } GB. Få ekstra lagerplads, og lås op for premium-funktioner i dag."
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        "Vi har tilføjet 1 GB bonuslagerplads til din konto. Opgrader dit abonnement for at få endnu mere lagerplads og premium-funktioner."
-      ],
-      "You're a privacy champ!": [
-        "Du er mester i privatliv!"
+      "You're all set!": [
+        "Så er du klar!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
-        "Udfør alle trin, og få i alt 2 GB på din konto"
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        "Gennemfør alle trin og få i alt ${ totalGBStorageAfterCompletion } GB på din konto"
       ],
       "Only ${ days } day left": [
         "Kun ${ days } dag tilbage",
@@ -3093,9 +3115,6 @@
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Activation in progress": [
         "Aktivering i gang"
       ],
@@ -3224,9 +3243,6 @@
       "Center": [
         "Centrér"
       ],
-      "Change your default in settings": [
-        "Ændr din standard i indstillinger"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
       ],
@@ -3250,9 +3266,6 @@
       ],
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
-      ],
-      "Confirm Password": [
-        "Bekræft adgangskode"
       ],
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
@@ -3303,6 +3316,9 @@
       "Day": [
         "Dag",
         "Dage"
+      ],
+      "Default email application": [
+        "Standardprogram til mails"
       ],
       "Disable message content search": [
         "Deaktiver beskedindholdssøgning"
@@ -3392,6 +3408,9 @@
       "Estimating time remaining...": [
         "Estimerer resterende tid..."
       ],
+      "Expiration time": [
+        "Udløbstidspunkt"
+      ],
       "Expiration Time": [
         "Udløbstid"
       ],
@@ -3440,9 +3459,6 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Fuldt udstyret VPN med hastighed på op til 10 Gbps."
-      ],
-      "Generate recovery phrase": [
-        "Opret gendannelsessætning"
       ],
       "Get more storage and premium features.": [
         "Få mere lagerplads og premium-funktioner."
@@ -3513,10 +3529,6 @@
       "Insert image": [
         "Indsæt billede"
       ],
-      "Insert image as": [
-        "Indsæt billede som",
-        "Indsæt billeder som"
-      ],
       "Insert link": [
         "Indsæt link"
       ],
@@ -3568,6 +3580,9 @@
       "Manage your labels": [
         "Administrer dine etiketter"
       ],
+      "members": [
+        "medlemmer"
+      ],
       "Members": [
         "Medlemmer"
       ],
@@ -3579,9 +3594,6 @@
       ],
       "Message headers": [
         "Beskedoverskrfter"
-      ],
-      "Message Password": [
-        "Beskedadgangskode"
       ],
       "Message sent": [
         "Besked afsendt"
@@ -3664,14 +3676,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-ProtonMail-modtagere."
       ],
-      "or": [
-        "eller"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vores system markerede denne besked som et phishing-forsøg. Kontroller, at den er legitim."
-      ],
-      "Password Hint (Optional)": [
-        "Adgangskodetip (valgfrit)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Betalingen kan tage et par minutter at bekræfte helt."
@@ -3691,11 +3697,11 @@
       "Plain text": [
         "Almindelig tekst"
       ],
-      "Please add at least one recipient before sending.": [
-        "Tilføj mindst én modtager før du sender."
+      "Please add at least one recipient.": [
+        "Angiv mindst én modtager."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Sørg for at gemme den sikkert. Du skal bruge den til at få adgang til din konto og dekryptere dine data i tilfælde af en nulstilling af adgangskoden."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
@@ -3812,8 +3818,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
       "Sending": [
         "Afsender"
@@ -3830,8 +3836,11 @@
       "Session timed out.": [
         "Din session er udløbet."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set a recovery phrase": [
+        "Indstil en gendannelsessætning"
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Angiv ProtonMail som standardprogram til mails for denne browser. ProtonMail vil åbne automatisk, når du klikker på et maillink."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail bruger, der benytter en PGP-kompatibel tjeneste."
@@ -3972,11 +3981,11 @@
       "This message will be sent shortly": [
         "Denne besked vil blive sendt om kort tid"
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        "Denne besked udløber ${ dateString } kl. ${ formattedTime }"
+      ],
       "This message will expire ${ formattedDate }": [
         "Denne besked udløber ${ formattedDate }"
-      ],
-      "This message will expire in": [
-        "Denne besked udløber om"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Denne besked udløber om ${ formattedDelay }"
@@ -4131,6 +4140,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "Du kan tilføje den som en vedhæftet fil eller vise den i din mail-tekst."
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
@@ -4173,12 +4188,6 @@
       "You have **${ count } message** tagged with this label": [
         "Du har **${ count } besked** mærket med denne etikette",
         "Du har **${ count } beskeder** mærket med denne etikette"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Du har aktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den seneste version af ${ appName }. Applikationen vil blive genindlæst."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Du har ikke givet din e-mail noget emne. Vil du sende beskeden alligevel?"
@@ -4223,8 +4232,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
-        "Du skrev \"${ keyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        "Du skrev \"${ attachmentsFoundKeyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang er blevet begrænset. ${ payInvoiceLink }"
@@ -4263,6 +4272,9 @@
     "info": {
       "(beta)": [
         "(beta)"
+      ],
+      "Optional": [
+        "Valgfrit"
       ]
     },
     "Info concerning plan features": {
@@ -4616,6 +4628,9 @@
       "Conditions": [
         "Betingelser"
       ],
+      "Confirm Password": [
+        "Bekræft adgangskode"
+      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -4748,8 +4763,14 @@
       "Manage labels": [
         "Administrer etiketter"
       ],
+      "Manage my addresses": [
+        "Administrer mine adresser"
+      ],
       "Mark as": [
         "Markér som"
+      ],
+      "Message Password": [
+        "Beskedadgangskode"
       ],
       "Move to": [
         "Flyt til"
@@ -4783,6 +4804,9 @@
       ],
       "Password": [
         "Adgangskode"
+      ],
+      "Password Hint": [
+        "Adgangskodetip"
       ],
       "Payer": [
         "Betaler"
@@ -4902,7 +4926,7 @@
         "Total (${ countdown })"
       ],
       "Two-factor authentication code": [
-        "To-faktorgodkendelseskode"
+        "To-faktor-godkendelseskode"
       ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
@@ -5152,7 +5176,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        ""
+        "Åbn i ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -5504,6 +5528,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe opdateret"
+      ],
+      "Password has been set successfully": [
+        "Adgangskode er blevet ændret"
       ]
     },
     "Onboarding": {
@@ -6502,9 +6529,6 @@
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
       ],
-      "Add contacts": [
-        "Tilføj kontakter"
-      ],
       "Add filter": [
         "Tilføj filter"
       ],
@@ -6579,7 +6603,7 @@
         "Bekræft modtageradresse?"
       ],
       "Contact details": [
-        ""
+        "Kontaktdetaljer"
       ],
       "Contact Details": [
         "Kundeoplysninger"
@@ -6721,9 +6745,6 @@
       "Expand content": [
         "Udvid indhold"
       ],
-      "Expiration time": [
-        "Udløbstidspunkt"
-      ],
       "Exporting contacts": [
         "Eksporterer kontakter"
       ],
@@ -6773,10 +6794,10 @@
         "Indlæs eksternt indhold"
       ],
       "Mailbox density": [
-        "Postkasse tæthed"
+        "Postkasse-tæthed"
       ],
       "Mailbox layout": [
-        "Postkasse layout"
+        "Postkasse-layout"
       ],
       "Mark as unread": [
         "Markér som ulæst"
@@ -6792,9 +6813,6 @@
       ],
       "Message list": [
         "Beskedliste"
-      ],
-      "Message without subject?": [
-        "Besked uden emne?"
       ],
       "More": [
         "Mere"
@@ -6834,9 +6852,6 @@
       ],
       "No attachment found": [
         "Ingen vedhæftning fundet"
-      ],
-      "No recipient": [
-        "Ingen modtager"
       ],
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
@@ -6891,6 +6906,9 @@
       ],
       "Re-signing contacts": [
         "Gensignering af kontakter"
+      ],
+      "Recipient missing": [
+        "Modtager mangler"
       ],
       "Recover data": [
         "Gendan data"
@@ -6954,6 +6972,9 @@
       ],
       "Storage capacity warning": [
         "Advarsel om lagerkapacitet"
+      ],
+      "Subject missing": [
+        "Emne mangler"
       ],
       "Subtotal": [
         "Subtotal"
@@ -7094,6 +7115,17 @@
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter at eksportere"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "I dag er en god dag til at skrive en e-mail"
+      ],
+      "Update default font and size": [
+        "Opdater standardskrifttype og -størrelse"
+      ],
+      "Your default font will look like following:": [
+        "Din standardskrifttype vil se ud som følger:"
       ]
     },
     "Validation": {

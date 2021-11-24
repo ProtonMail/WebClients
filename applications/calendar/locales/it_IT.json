@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } negozio"
       ],
+      "Activate recovery": [
+        "Attiva il ripristino"
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Copia email negli appunti"
       ],
-      "Create": [
-        "Crea"
-      ],
       "Create calendar": [
         "Crea calendario"
       ],
@@ -140,7 +140,7 @@
       "Decrease": [
         "Riduci"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -213,9 +213,6 @@
       ],
       "Go to settings": [
         "Vai alle impostazioni"
-      ],
-      "here": [
-        "qui"
       ],
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
@@ -346,9 +343,6 @@
       "Previous year": [
         "Anno precedente"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Chiudi"
       ],
@@ -408,6 +402,12 @@
       ],
       "Send": [
         "Invia"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        "Imposta frase di recupero"
       ],
       "Share": [
         "Condividi"
@@ -480,6 +480,12 @@
       ],
       "Update": [
         "Aggiorna"
+      ],
+      "Update recovery file": [
+        "Aggiorna il file di ripristino"
+      ],
+      "Update recovery phrase": [
+        "Aggiorna frase di recupero"
       ],
       "Upgrade": [
         "Esecuzione dell'upgrade"
@@ -984,7 +990,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Composer size": {
@@ -1398,6 +1404,10 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Errore di decriptazione: decriptazione del contenuto di questo evento fallita."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Deseleziona almeno ${ calendarToFixCount } calendario",
+        "Deseleziona almeno ${ calendarToFixCount } calendari"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deseleziona almeno ${ calendarToFixCount } calendario o",
         "Deseleziona almeno ${ calendarToFixCount } calendari o"
@@ -1501,6 +1511,9 @@
       ],
       "Name required": [
         "Nome obbligatorio"
+      ],
+      "No data to import": [
+        "Nessun dato da importare"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nessuna chiave recuperata per l'utente locale è valida per l'invio"
@@ -1666,9 +1679,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } supporta solo l'importazione di calendari con iCal versione 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Il file non ha il formato corretto."
       ],
@@ -2285,9 +2295,6 @@
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Aggiungi indirizzi aggiuntivi al tuo account come utente2@protonmail.com"
       ],
@@ -2413,6 +2420,9 @@
       ],
       "Daily": [
         "Giornalmente"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "Annullare le modifiche?"
@@ -2680,8 +2690,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari. Puoi anche unire i calendari importati con i calendari Proton esistenti."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
@@ -2689,7 +2699,7 @@
       "Session timed out.": [
         "Sessione scaduta."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2860,6 +2870,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Puoi anche unire i calendari importati con i calendari Proton esistenti."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
       ],
@@ -2868,12 +2881,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Hai disabilitato l'Accesso Beta. Clicca ${ refreshButton } per usare la versione stabile di ${ appName }. L'applicazione sarà ricaricata."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Hai abilitato l'Accesso Beta. Clicca ${ refreshButton } per usare l'ultima versione di ${ appName }. L'applicazione sarà ricaricata."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Hai riattivato le tue chiavi e gli eventi collegati ai seguenti calendari possono ora essere decifrati."
@@ -3217,6 +3224,9 @@
       "All day": [
         "Tutto il giorno"
       ],
+      "All-day event notifications": [
+        "Notifiche evento tutto il giorno"
+      ],
       "Automatically save contacts": [
         "Salvataggio automatico dei contatti"
       ],
@@ -3250,11 +3260,11 @@
       "Category": [
         "Categoria"
       ],
-      "Choose a color": [
-        "Scegli un colore"
-      ],
       "City": [
         "Città"
+      ],
+      "Color": [
+        "Colore"
       ],
       "Contacts": [
         "Contatti"
@@ -3267,18 +3277,6 @@
       ],
       "CVV code": [
         "Codice CVV"
-      ],
-      "Default email": [
-        "Email predefinita"
-      ],
-      "Default event duration": [
-        "Durata predefinita dell'evento"
-      ],
-      "Default full day notifications": [
-        "Notifiche predefinite per un giorno intero"
-      ],
-      "Default notifications": [
-        "Notifiche predefinite"
       ],
       "Description": [
         "Descrizione"
@@ -3315,6 +3313,9 @@
       ],
       "Enter the 6-digit code": [
         "Inserisci il codice a 6 cifre"
+      ],
+      "Event duration": [
+        "Durata evento"
       ],
       "Event frequency": [
         "Frequenza evento"
@@ -3599,10 +3600,10 @@
         "Aggiungi un codice regalo"
       ],
       "All mail": [
-        ""
+        "Tutte le mail"
       ],
       "Archive": [
-        ""
+        "Archivio"
       ],
       "Calendars": [
         "Calendari"
@@ -3614,13 +3615,13 @@
         "clicca qui"
       ],
       "Drafts": [
-        ""
+        "Bozze"
       ],
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
       ],
       "Inbox": [
-        ""
+        "Posta in arrivo"
       ],
       "Learn more": [
         "Per saperne di più"
@@ -3629,7 +3630,7 @@
         "Miei calendari"
       ],
       "Outbox": [
-        ""
+        "Posta in uscita"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
@@ -3638,22 +3639,22 @@
         "Richiedi un invito"
       ],
       "Scheduled": [
-        ""
+        "Programmato"
       ],
       "Sent": [
-        ""
+        "Inviata"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Starred": [
-        ""
+        "Preferito"
       ],
       "Subscribed calendars": [
         "Calendari registrati"
       ],
       "Trash": [
-        ""
+        "Cestino"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -4235,6 +4236,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Impossibile creare più calendari. Hai raggiunto il numero massimo di calendari personali all'interno del tuo piano."
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Impossibile usare la chiave per la crittografia"
@@ -4545,13 +4551,8 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Hai raggiunto il massimo di ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendario a cui sei iscritto.",
-        "Hai raggiunto il massimo di ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendari a cui sei iscritto."
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "Hai raggiunto il massimo di ${ personalCalendarLimit } calendario personale.",
-        "Hai raggiunto il massimo di ${ personalCalendarLimit } calendari personali."
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Impossibile aggiungere altri calendari. Hai raggiunto il numero massimo di calendari sottoscritti all'interno del tuo piano."
       ]
     },
     "Success": {
@@ -4956,6 +4957,9 @@
       "Downgrade account": [
         "Effettua il downgrade dell'account"
       ],
+      "Edit calendar": [
+        "Modifica calendario"
+      ],
       "Edit contact": [
         "Modifica contatto"
       ],
@@ -5205,9 +5209,6 @@
       ],
       "Unsupported browser": [
         "Browser non supportato"
-      ],
-      "Update calendar": [
-        "Aggiorna calendario"
       ],
       "Update event": [
         "Aggiorna evento"

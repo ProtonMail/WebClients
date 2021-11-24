@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Activar la clau d'organització"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Afegir"
@@ -53,7 +56,7 @@
         "Afegir adreça"
       ],
       "Add calendar": [
-        ""
+        "Afegir calendari"
       ],
       "Add condition": [
         "Afegir condició"
@@ -146,7 +149,7 @@
         "Xategeu amb nosaltres"
       ],
       "Check import progress": [
-        ""
+        "Comprovar el progrés de la importació"
       ],
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
@@ -204,9 +207,6 @@
       ],
       "Copy link": [
         "Copiar enllaç"
-      ],
-      "Create": [
-        "Crear"
       ],
       "Create a secure ProtonMail address instead": [
         "Crear una adreça de ProtonMail segura"
@@ -296,7 +296,7 @@
         "Descarregar totes les preferències"
       ],
       "Download recovery file": [
-        ""
+        "Descàrregar arxiu de recuperació"
       ],
       "Download the Import-Export app": [
         "Descarregar l'aplicació Import-Export"
@@ -337,23 +337,20 @@
       "Export key": [
         "Exportar clau"
       ],
-      "Export private key": [
-        "Exportar clau privada"
-      ],
       "Font": [
         "Font"
       ],
       "Generate key": [
-        ""
+        "Generar clau"
       ],
       "Generate new recovery phrase": [
-        ""
+        "Generar una frase de recuperació"
       ],
       "Generate new recovery phrase?": [
-        ""
+        "Generar una frase de recuperació?"
       ],
       "Generate recovery phrase": [
-        ""
+        "Generar frase de recuperació"
       ],
       "Get ProtonVPN Plus": [
         "Obtenir ProtonVPN Plus"
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Ir al panell ${ index }"
-      ],
-      "here": [
-        "aquí"
       ],
       "Hide": [
         "Amaga"
@@ -392,10 +386,10 @@
         "Importar contactes"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importar des de .csv o vCard"
       ],
       "Import from .ics": [
-        ""
+        "Importar des de .ics"
       ],
       "Import key": [
         "Importar clau"
@@ -509,7 +503,7 @@
         "Reconnectar"
       ],
       "Recover data": [
-        ""
+        "Recuperar dades"
       ],
       "Refresh status": [
         "Refresca l'estat"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Seleccionar catch-all"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Compartir amb enllaç"
       ],
@@ -671,7 +668,7 @@
         "Sortir de tots els comptes"
       ],
       "Signing in": [
-        ""
+        "Iniciant sessió"
       ],
       "Signing out": [
         "Tancant la sessió"
@@ -689,7 +686,7 @@
         "Ordenar"
       ],
       "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Començar ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Començar importació"
@@ -712,6 +709,9 @@
       "Switch account": [
         "Canviar de compte"
       ],
+      "Switch to rich text": [
+        ""
+      ],
       "Top up": [
         "Recarregar"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Desbloquejar"
       ],
+      "Unlock data": [
+        "Desbloquetjar dades"
+      ],
       "Unordered list": [
         "Llista sense ordenar"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Actualitza"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Actualitzar"
@@ -785,13 +794,13 @@
         "Veure factura"
       ],
       "Void all recovery files": [
-        ""
+        "Buidar tots els arxius de recuperació"
       ],
       "Void all recovery files?": [
-        ""
+        "Buidar tots els arxius de recuperació?"
       ],
       "Void anyway": [
-        ""
+        "Buidar de totes maneres"
       ],
       "Warning": [
         "Atenció"
@@ -914,9 +923,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Les claus de xifratge per la vostra adreça estan sent generades. Això pot trigar alguns minuts i aturar temporalment el vostre navegador."
-      ],
       "The key for your address is now being deleted.": [
         "La clau per la teva adreça es ara esborrada."
       ]
@@ -1299,8 +1305,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "",
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
         ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
@@ -1834,6 +1839,10 @@
       "Could not find address ${ email }.": [
         "No s'ha pogut trobar l'adreça de correu electrònic ${ email }."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         ""
@@ -1943,6 +1952,9 @@
       ],
       "No active sessions": [
         "No hi ha sessions actives"
+      ],
+      "No data to import": [
+        ""
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -2065,6 +2077,12 @@
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Trieu un nom diferent."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        ""
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        ""
+      ],
       "The label name is too long. Please choose a different name.": [
         "El nom de l'etiqueta és massa llarg. Trieu-ne un de diferent."
       ],
@@ -2112,9 +2130,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "El fitxer carregat no és una clau privada vàlida. Verifiqueu-la i torneu-ho a provar."
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Els fitxers carregats no són claus privades vàlides. Verifiqueu-les i torneu-ho a provar."
@@ -2166,9 +2181,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "El ${ CALENDAR_APP_NAME } només admet la importació de calendaris amb iCal versió 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
       ],
@@ -3070,6 +3082,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        ""
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } es definirà com a calendari predeterminat."
       ],
@@ -3189,9 +3204,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Una Internet gratuïta i sense censura hauria d'estar disponible per a tothom."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Una clau amb la mateix algoritme de xifratge ja és activa per a aquesta adreça. Generar una altra clau provocarà una càrrega més lenta i l'eliminació d'aquesta clau pot causar problemes.\nSi està generant una nova clau perquè l'antiga clau està compromesa, marqueu aquesta clau com a compromesa.\nEsteu segur que voleu continuar?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         ""
       ],
@@ -3297,9 +3309,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL llegeix les teves dades personals per donar-hi accés a publicitants o altres terceres parts. Per una millor privadesa crea una adreça de correu electrònic segur."
       ],
-      "Are you sure you want to continue?": [
-        "Està segur que vol continuar?"
-      ],
       "Are you sure you want to delete this address?": [
         "Esteu segur que voleu esborrar aquesta carpeta?"
       ],
@@ -3402,9 +3411,6 @@
       "Center": [
         "Centre"
       ],
-      "Change your default in settings": [
-        "Canviar la predeterminada a la configuració"
-      ],
       "Check the status of current and previous imports.": [
         "Comprovar l'estat de les importacions actuals i anteriors."
       ],
@@ -3452,7 +3458,7 @@
         "Creant el teu compte Proton"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualment tot l'emmagatzematge disponible està assignat al compte d'administrador. Si us plau reduïu l'assignació a aquest compte per fer espai per altres usuaris. Podeu ampliar l'espai total sempre que vulgueu mitjançant l'actualització del compte."
@@ -3537,7 +3543,7 @@
         "Editar etiqueta"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
+        "Mogui els seus correus electrònics del seu proveïdor actual a Proton sense esforç i amb seguretat. Si utilitzeu Google, també admetem la importació de calendaris i contactes."
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -3550,6 +3556,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Els correus electrònics etiquetats amb aquesta etiqueta no s'esborraran i continuaran trobant-se a la carpeta respectiva."
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        ""
       ],
       "Encryption setting updated": [
         "Configuració de xifratge actualitzat"
@@ -3568,12 +3577,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introdueixi la Contrasenya d'organització per a restaurar els privilegis d'administrador. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Introduïu el ${ recoveryMethodText } de recuperació association al vostre compte de ${ BRAND_NAME } . Us enviarem un codi per confirmar el restabliment de la contrasenya."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Introduïu la frase de recuperació associada al vostre compte ${ BRAND_NAME }."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
@@ -3701,12 +3704,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Si fas efectiu la baixada perdràs el accés a les funcions de pagament de ProtonVPN."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Si continueu, se us demanarà que restableixi la vostra contrasenya i es tancarà la sessió de totes les altres sessions actives."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Si continueu, haureu de restablir la vostra contrasenya i es tancarà la sessió de qualsevol altra sessió activa."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Si voleu conservar un registre SPF existent, només podeu afegir-hi ${ spf } després del ${ spfValue }. No creeu diversos registres SPF."
       ],
@@ -3717,7 +3714,7 @@
         "URL de la imatge"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3800,9 +3797,6 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "La clau amb empremta digital ${ fp } s'ha suprimit."
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "La clau amb empremta digital ${ fp } s'ha creat correctament."
       ],
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
@@ -3891,7 +3885,7 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
+      "No account recovery method set; you are at risk of losing access to your account": [
         ""
       ],
       "No action selected": [
@@ -3903,7 +3897,7 @@
       "No contact encryption keys exist": [
         "No existeixen claus de xifratge de contactes"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
+      "No data recovery method set; you are at risk of losing access to your data": [
         ""
       ],
       "No folder selected": [
@@ -3995,6 +3989,9 @@
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
         "Si us plau, introduïu una contrasenya per encriptar la vostra clau privada abans d'exportar."
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -4099,6 +4096,9 @@
       "Recovery phrase has been disabled": [
         "S'ha desactivat la frase de recuperació"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        ""
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
@@ -4130,9 +4130,9 @@
         "Captures de pantalla(s) adjuntes"
       ],
       "Select a service provider to get started": [
-        ""
+        "Seleccioneu un proveïdor de serveis per començar"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Server is currently down": [
@@ -4219,6 +4219,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Aquesta funció està destinada només a usuaris avançats. Després de suprimir aquesta clau, NO podreu desxifrar cap missatge que hi hagi estat xifrat. Pot comportar una pèrdua de dades."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        ""
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Aquest és un fitxer de recuperació o una clau de xifratge que potser heu desat anteriorment."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is the password you used before the password reset.": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
       ],
@@ -4234,14 +4246,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Això també desactivarà qualsevol mètode d'autenticació de dos factors associat amb aquest compte."
       ],
-      "This will also disable two-factor authentication.": [
-        "Això també desactivarà l'autenticació de dos factors."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Es cancel·larà la vostra subscripció de pagament actual i perdreu qualsevol benefici de fidelitat que hagueu acumulat. El balanç restant de la vostra subscripció es retornarà com a crèdits del compte."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Això crearà una nova clau de xifrat per a la vostra organització. Les claus 4096-bit només funcionen en ordinadors d'alt rendiment, per a la majoria d'usuaris recomanem l'ús de claus de 2048-bit."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Això permetrà que PayPal s’utilitzi per pagar la vostra subscripció a Proton. Els redirigirem a PayPal en una pestanya nova del navegador. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
@@ -4255,20 +4267,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        ""
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Aquest assistent habilitarà l'autenticació de dos factors (2FA) al vostre compte de Proton. L’autenticació de dos factors farà que el vostre compte Proton sigui més segur, de manera que us recomanem que l’activeu."
       ],
       "to": [
         "a"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "Per accedir als vostres missatges antics, necessitareu reactivar les vostres claus de xifrat velles utilitzant un dels següents mètodes de recuperació."
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confirmar-ho, introduïu el nom de l'usuari que vulgueu suprimir."
       ],
       "to continue to ${ toAppName }": [
         "per continuar a ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
@@ -4278,6 +4293,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Per preparar el compte extern per a la importació, seguiu les instruccions per:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        ""
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Per protegir la vostra connexió a internet, descarregueu i instal·leu l'aplicació de ProtonVPN per al vostre dispositiu i connecteu a un servidor ProtonVPN."
@@ -4305,9 +4323,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "El mode de doble contrasenya empra contrasenyes separades per accedir i desxifrar la bústia de correu. Això proporciona un petit benefici en seguretat en algunes situacions, però no obstant recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per canviar al mode de doble contrasenya, establiu en primer lloc una contrasenya d'accés i després una per a la bústia de correu."
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "No es pot desxifrar. La frase de recuperació no està associada amb cap clau."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         ""
@@ -4369,11 +4384,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Paquet VPN + ${ mailAppName } per famílies i petites empreses."
       ],
+      "Warning:": [
+        ""
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Advertència: l'eliminació és permanent. Això també suprimeix l'accés a tots els serveis connectats i esborra tots els vostres contactes."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Us recomanem utilitzar les aplicacions ProtonVPN oficials quan sigui possible."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        ""
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilitzem 3-D Secure per protegir els teus pagaments."
@@ -4401,6 +4422,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Les visualitzacions de setmana i mes només s'apliquen a l'escriptori."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        ""
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        ""
       ],
       "What do you want to import from your Google account?": [
         ""
@@ -4438,6 +4465,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Actualment esteu registrat com a ${ user.Name } (${ user.Email }) i té accés restringit."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4452,9 +4482,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Podeu habilitar l'accés amb autenticació per veure quan s'accedeix al vostre compte, i des de quina IP. Enregistrarem l'adreça IP que accedeix al compte, l'hora i els intents fallits."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Podeu generar una clau de xifrat nova si creieu que l'anterior ha estat compromesa."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ara podeu rebre missatges a la vostra adreça @pm.me. Actualitzeu a un pla de pagament per enviar també correus electrònics usant la vostra adreça @pm.me i per crear adreces @pm.me addicionals."
@@ -4473,12 +4500,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Heu desactivat l'accés a la versió Beta. Cliqueu ${ refreshButton } per utilitzar la versió estable de ${ appName }. Es tornarà a carregar l'aplicació."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Heu activat l'accés a la versió Beta. Cliqueu ${ refreshButton } per utilitzar l'última versió de ${ appName }. Es tornarà a carregar l'aplicació."
       ],
       "You have no saved payment methods.": [
         "No té mètodes de pagament guardats."
@@ -4549,7 +4570,7 @@
       "Your Block List is empty.": [
         "La vostra llista de no desitjats està buida."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
         ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
@@ -4735,6 +4756,29 @@
       ],
       "Subscription": [
         "Subscripció"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        ""
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        ""
+      ],
+      "Generate key": [
+        ""
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        ""
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        ""
       ]
     },
     "Key state badge": {
@@ -5024,6 +5068,9 @@
       "ALL": [
         "TOT"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Allow recovery by email": [
         "Permetre recuperació per correu electrònic"
       ],
@@ -5055,7 +5102,7 @@
         "Contrasenya de l'aplicació"
       ],
       "Ask before loading remote content": [
-        ""
+        "Confirmar abans de carregar contingut remot"
       ],
       "Attach public key": [
         "Adjunta la clau pública"
@@ -5072,14 +5119,8 @@
       "Automatically save contacts": [
         "Guardar contactes automàticament"
       ],
-      "Backup key": [
-        "Fer còpia de la clau"
-      ],
-      "Backup keys": [
-        "Copiar les claus"
-      ],
       "Block email tracking": [
-        ""
+        "Bloqueji el seguiment del correu electrònic"
       ],
       "bonus storage": [
         "bonus d’emmagatzematge"
@@ -5097,7 +5138,7 @@
         "Import de BTC:"
       ],
       "Calendars": [
-        ""
+        "Calendaris"
       ],
       "Cancel": [
         "Cancel·lar"
@@ -5114,11 +5155,11 @@
       "Category": [
         "Categoria"
       ],
-      "Choose a color": [
-        "Escull un color"
-      ],
       "Code": [
         "Codi"
+      ],
+      "Color": [
+        ""
       ],
       "Composer": [
         "Editor"
@@ -5151,7 +5192,7 @@
         "Confirma la contrasenya"
       ],
       "Contacts": [
-        ""
+        "Contactes"
       ],
       "Conversation grouping": [
         "Agrupació de conversa"
@@ -5189,23 +5230,11 @@
       "Days of the week": [
         "Dies de la setmana"
       ],
-      "Default email": [
-        "Adreça de correu electrònic per defecte"
-      ],
-      "Default event duration": [
-        "Durada de l'esdeveniment per defecte"
-      ],
-      "Default full day notifications": [
-        "Notificacions de dia complet per defecte"
-      ],
       "Default language": [
         "Idioma per defecte"
       ],
-      "Default notifications": [
-        "Notificacions per defecte"
-      ],
       "Default PGP scheme": [
-        ""
+        "Esquema PGP per defecte"
       ],
       "Default view": [
         "Vista per defecte"
@@ -5256,7 +5285,7 @@
         "Correu electrònic o nom d'usuari"
       ],
       "Emails": [
-        ""
+        "Correus electrònics"
       ],
       "End date": [
         "Data de finalització"
@@ -5271,7 +5300,7 @@
         "Dia de finalització de la setmana"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Introdueixi el nom de l'organització per confirmar"
       ],
       "Enter password": [
         "Introdueix la contrasenya"
@@ -5281,6 +5310,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduïu la contrasenya per la clau amb l'empremta digital ${ fingerprintCode }"
+      ],
+      "Event duration": [
+        ""
+      ],
+      "Event notifications": [
+        ""
       ],
       "Expires": [
         "Venç"
@@ -5292,7 +5327,7 @@
         "emmagatzematge addicional"
       ],
       "File": [
-        ""
+        "Fitxer"
       ],
       "Filter Name": [
         "Nom del filtre"
@@ -5300,14 +5335,17 @@
       "Folder location": [
         "Ubicació de la carpeta"
       ],
+      "From: ${ emailFrom }": [
+        "Des de: ${ emailFrom }"
+      ],
       "From: ${ fromEmailAddress }": [
         "De: ${ fromEmailAddress }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Des de: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "De: ${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
         "De: ${ modalModel.email }"
@@ -5480,6 +5518,9 @@
       "Phrase": [
         "Frase"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        "La frase consta de 12 paraules úniques en un ordre específic"
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Si us plan, afegiu els següents tres registres CNAME. Tingueu en compte que els registres DNS poden trigar diverses hores a actualitzar-se."
       ],
@@ -5497,6 +5538,9 @@
       ],
       "Postal code": [
         "Codi postal"
+      ],
+      "Previous password": [
+        "Contrasenya anterior"
       ],
       "Private User": [
         "Usuari privat"
@@ -5523,19 +5567,16 @@
         "Codi de recuperació"
       ],
       "Recovery email address": [
-        ""
+        "Direcció d'adreça de correu de recuperació"
       ],
       "Recovery file": [
-        ""
+        "Arxiu de recuperació"
       ],
       "Recovery phone number": [
-        ""
+        "Número de telèfon de recuperació"
       ],
       "Recovery phrase": [
         "Frase de recuperació"
-      ],
-      "Recovery phrase contains 12 words": [
-        "La frase de recuperació conté 12 paraules"
       ],
       "Repeat password": [
         "Repetir contrasenya"
@@ -5615,8 +5656,11 @@
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Per a: ${ emailTo }"
+      ],
       "To: ${ PMEmailAddress }": [
-        ""
+        "Per: ${ PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "A: ${ toEmailAddress }"
@@ -5639,17 +5683,11 @@
       "Undo send": [
         "Desfer l'enviament"
       ],
-      "Upload your backup key": [
-        "Carregar la còpia de la clau"
+      "Upload 1 or more encryption keys": [
+        "Pengeu 1 o més claus de xifratge"
       ],
-      "Upload your recovery file": [
-        ""
-      ],
-      "Uploaded private keys": [
-        "Claus privades carregades"
-      ],
-      "Uploaded recovery file": [
-        ""
+      "Upload 1 or more recovery files or encryption keys": [
+        "Pengeu 1 o més fitxers de recuperació o claus de xifratge"
       ],
       "URL": [
         "URL"
@@ -5726,9 +5764,6 @@
       "Your password (admin)": [
         "La seva contrasenya (admin)"
       ],
-      "Your recovery phrase": [
-        "La seva frase de recuperació"
-      ],
       "ZIP": [
         "ZIP"
       ]
@@ -5783,6 +5818,9 @@
       ],
       "Proton newsletter": [
         "Butlletí de Proton"
+      ],
+      "Proton offers and promotions": [
+        ""
       ],
       "Proton product announcements": [
         "Anuncis de productes Proton"
@@ -6950,17 +6988,11 @@
       "Email": [
         "Correu electrònic"
       ],
-      "email address": [
-        "adreça de correu electrònic"
-      ],
-      "phone number": [
-        "número de telèfon"
-      ],
       "Phone number": [
         "Número de telèfon"
       ],
-      "Recovery phrase": [
-        "Frase de recuperació"
+      "Phrase": [
+        ""
       ]
     },
     "Remark about a key type option": {
@@ -7000,10 +7032,7 @@
       "Upload": [
         "Carregar"
       ],
-      "Upload additional private keys": [
-        "Carregar claus privades addicionals"
-      ],
-      "Upload additional recovery files": [
+      "Upload additional files": [
         ""
       ]
     },
@@ -7243,7 +7272,7 @@
         "Calendari actualitzat"
       ],
       "Canceling import": [
-        ""
+        "Cancel·lar importació"
       ],
       "Catch-all address updated": [
         "Adreça de \"Captura tot\" actualitzada"
@@ -7261,7 +7290,7 @@
         "Eliminant missatges originals"
       ],
       "DMARC value copied to clipboard": [
-        ""
+        "Valor DMARC copiat al portaretalls"
       ],
       "Domain verified": [
         "Domini verificat"
@@ -7327,7 +7356,7 @@
         "Adreça Premium creada"
       ],
       "Resuming import": [
-        ""
+        "Reactivant importació"
       ],
       "Session revoked": [
         "Sessió revocada"
@@ -7336,7 +7365,7 @@
         "Sessions revocades"
       ],
       "SPF value copied to clipboard": [
-        ""
+        "Valor SPF copiat al portaretalls"
       ],
       "User created": [
         "S'ha creat l'usuari"
@@ -7345,10 +7374,10 @@
         "S'ha actualitzat l'usuari"
       ],
       "Value copied to clipboard": [
-        ""
+        "Valor copiat al portaretalls"
       ],
       "Verification code copied to clipboard": [
-        ""
+        "Codi de verificació copiat al porta-retalls"
       ],
       "Verification successful": [
         "Èxit de verificació"
@@ -7735,6 +7764,9 @@
       "Dashboard": [
         "Tauler de control"
       ],
+      "Data locked": [
+        ""
+      ],
       "Data recovery": [
         ""
       ],
@@ -7795,6 +7827,9 @@
       "Edit Block List": [
         "Edita la Lista de Bloqueig"
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
       ],
@@ -7824,9 +7859,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Activar les dreceres de teclat"
-      ],
-      "Encrypted data": [
-        ""
       ],
       "Encryption & keys": [
         "Xifratge i claus"
@@ -7869,9 +7901,6 @@
       ],
       "General": [
         "General"
-      ],
-      "Generate key": [
-        ""
       ],
       "Generate missing keys": [
         "Generar claus perdudes"
@@ -8066,11 +8095,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "Reactivar les claus"
-      ],
       "Reconnect your account": [
         "Reconnectar el teu compte"
+      ],
+      "Recover data": [
+        ""
       ],
       "Recovery": [
         ""
@@ -8227,9 +8256,6 @@
       ],
       "Unsupported browser": [
         "Navegador no soportat"
-      ],
-      "Update calendar": [
-        "Actualitzar calendari"
       ],
       "Upgrade": [
         "Actualitzar"
@@ -8510,6 +8536,17 @@
         "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar l'autenticitat dels vostres missatges. Això es fa en combinació amb la configuració PGP per defecte que es pot configurar a continuació."
       ]
     },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
+      ]
+    },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
         "Actualitzeu a ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } per a connectar fins a ${ plusVpnConnections } dispositiu a la vegada a la VPN",
@@ -8773,6 +8810,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Ja no veureu aquest registre d'importació a la llista."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        ""
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        ""
       ]
     },
     "Warning for domain modal": {

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "追加"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "メールをクリップボードにコピー"
       ],
-      "Create": [
-        "作成"
-      ],
       "Create calendar": [
         ""
       ],
@@ -140,8 +140,8 @@
       "Decrease": [
         "減少"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "既定のメールアプリ"
       ],
       "Delete": [
         "削除"
@@ -211,9 +211,6 @@
       ],
       "Go to settings": [
         "設定を開く"
-      ],
-      "here": [
-        "こちら"
       ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
@@ -344,9 +341,6 @@
       "Previous year": [
         "前の年"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -406,6 +400,12 @@
       ],
       "Send": [
         "送信"
+      ],
+      "Set as default": [
+        "既定に設定"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "共有"
@@ -478,6 +478,12 @@
       ],
       "Update": [
         "更新"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "アップグレード"
@@ -1380,6 +1386,9 @@
       "Decryption error: Decryption of this event's content failed.": [
         "復号エラー：この予定の内容の復号に失敗しました。"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         ""
       ],
@@ -1481,6 +1490,9 @@
       ],
       "Name required": [
         "名前が必要です"
+      ],
+      "No data to import": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "内部ユーザーのために取得された鍵は送信には有効ではありません"
@@ -1643,9 +1655,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -2236,9 +2245,6 @@
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "アカウントに user2@protonmail.com のようなさらなるアドレスを追加できます"
       ],
@@ -2361,6 +2367,9 @@
       ],
       "Daily": [
         "毎日"
+      ],
+      "Default email application": [
+        "既定のメールアプリ"
       ],
       "Discard changes?": [
         "変更を破棄してよろしいですか？"
@@ -2626,7 +2635,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2635,8 +2644,8 @@
       "Session timed out.": [
         "セッションがタイムアウトしました。"
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "ProtonMailをブラウザ既定のメールアプリとして設定すると、メールのリンクをクリックした際にProtonMailが自動で起動します。"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -2806,6 +2815,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -2814,12 +2826,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "ベータアクセスは無効になっています。${ appName } の安定バージョンを利用するには、${ refreshButton } をクリックしてください。アプリケーションは再起動されます。"
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "ベータアクセスが有効になりました。${ refreshButton } をクリックして、${ appName } の最新バージョンを入手してください。アプリケーションは再起動されます。"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         ""
@@ -3163,6 +3169,9 @@
       "All day": [
         "終日"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Automatically save contacts": [
         "連絡先への宛先の自動追加"
       ],
@@ -3196,11 +3205,11 @@
       "Category": [
         "カテゴリー"
       ],
-      "Choose a color": [
-        ""
-      ],
       "City": [
         "市町村"
+      ],
+      "Color": [
+        ""
       ],
       "Contacts": [
         ""
@@ -3213,18 +3222,6 @@
       ],
       "CVV code": [
         "CVV コード"
-      ],
-      "Default email": [
-        "既定のメールアドレス"
-      ],
-      "Default event duration": [
-        "既定の予定の長さ"
-      ],
-      "Default full day notifications": [
-        "終日の予定の既定の通知"
-      ],
-      "Default notifications": [
-        "既定の通知"
       ],
       "Description": [
         "詳細"
@@ -3261,6 +3258,9 @@
       ],
       "Enter the 6-digit code": [
         "6 桁のコードを入力"
+      ],
+      "Event duration": [
+        ""
       ],
       "Event frequency": [
         "予定の繰り返し条件"
@@ -4150,6 +4150,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        ""
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         ""
@@ -4458,10 +4463,7 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        ""
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         ""
       ]
     },
@@ -4859,6 +4861,9 @@
       "Downgrade account": [
         ""
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit contact": [
         "連絡先を編集"
       ],
@@ -5107,9 +5112,6 @@
       ],
       "Unsupported browser": [
         "非対応のブラウザ"
-      ],
-      "Update calendar": [
-        "カレンダーの更新"
       ],
       "Update event": [
         "予定の更新"

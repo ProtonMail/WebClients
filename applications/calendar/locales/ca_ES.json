@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Afegir"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
-      "Create": [
-        "Crear"
-      ],
       "Create calendar": [
         ""
       ],
@@ -140,7 +140,7 @@
       "Decrease": [
         "Reduir"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -213,9 +213,6 @@
       ],
       "Go to settings": [
         "Anar a la configuració"
-      ],
-      "here": [
-        "aquí"
       ],
       "Hide advanced PGP settings": [
         "Amagar configuració PGP avançada"
@@ -346,9 +343,6 @@
       "Previous year": [
         "Any anterior"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -408,6 +402,12 @@
       ],
       "Send": [
         "Envia"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "Compartir"
@@ -480,6 +480,12 @@
       ],
       "Update": [
         "Actualitza"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Millorar"
@@ -1398,6 +1404,10 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Error de desxifrat: el desxifrat del contingut d'encriptació d'aquest esdeveniment a fallat."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         ""
@@ -1501,6 +1511,9 @@
       ],
       "Name required": [
         "Nom requerit"
+      ],
+      "No data to import": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Cap enviament de cap clau per a l’usuari intern és vàlid per enviar-la"
@@ -1666,9 +1679,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -2285,9 +2295,6 @@
       "Account successfully updated": [
         "El compte s'ha actualitzat correctament"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Afegiu adreces addicionals al vostre compte com ara usuari2@protonmail.com"
       ],
@@ -2413,6 +2420,9 @@
       ],
       "Daily": [
         "Diàriament"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
@@ -2680,7 +2690,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2689,7 +2699,7 @@
       "Session timed out.": [
         "Temps de sessió esgotat."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2860,6 +2870,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Actualment esteu registrat com a ${ user.Name } (${ user.Email }) i té accés restringit."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
@@ -2868,12 +2881,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous a aquesta carpeta."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Heu desactivat l'accés a la versió Beta. Cliqueu ${ refreshButton } per utilitzar la versió estable de ${ appName }. Es tornarà a carregar l'aplicació."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Heu activat l'accés a la versió Beta. Cliqueu ${ refreshButton } per utilitzar l'última versió de ${ appName }. Es tornarà a carregar l'aplicació."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Heu desactivat les vostres claus i els esdeveniments enllaçats amb els calendaris següents ara es poden desxifrar."
@@ -3217,6 +3224,9 @@
       "All day": [
         "Tot el dia"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Automatically save contacts": [
         "Desar contactes automàticament"
       ],
@@ -3250,11 +3260,11 @@
       "Category": [
         "Categoria"
       ],
-      "Choose a color": [
-        "Trieu un color"
-      ],
       "City": [
         "Ciutat"
+      ],
+      "Color": [
+        ""
       ],
       "Contacts": [
         ""
@@ -3267,18 +3277,6 @@
       ],
       "CVV code": [
         "Codi CVV"
-      ],
-      "Default email": [
-        "Adreça de correu electrònic per defecte"
-      ],
-      "Default event duration": [
-        "Durada de l'esdeveniment per defecte"
-      ],
-      "Default full day notifications": [
-        "Notificacions de dia complet per defecte"
-      ],
-      "Default notifications": [
-        "Notificacions per defecte"
       ],
       "Description": [
         "Descripció"
@@ -3315,6 +3313,9 @@
       ],
       "Enter the 6-digit code": [
         "Introduïu el codi de 6 dígits"
+      ],
+      "Event duration": [
+        ""
       ],
       "Event frequency": [
         "Freqüència de l'esdeveniment"
@@ -4235,6 +4236,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        ""
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clau no es pot utilitzar per al xifratge"
@@ -4545,12 +4551,7 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        ""
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "",
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         ""
       ]
     },
@@ -4956,6 +4957,9 @@
       "Downgrade account": [
         "Degradar compte"
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit contact": [
         "Editar contacte"
       ],
@@ -5205,9 +5209,6 @@
       ],
       "Unsupported browser": [
         "Navegador no suportat"
-      ],
-      "Update calendar": [
-        "Actualitzar calendari"
       ],
       "Update event": [
         "Actualitza l'esdeveniment"

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Tambah"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
-      "Create": [
-        "Buat"
-      ],
       "Create calendar": [
         ""
       ],
@@ -140,7 +140,7 @@
       "Decrease": [
         "Kurangi"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -211,9 +211,6 @@
       ],
       "Go to settings": [
         "Ke pengaturan"
-      ],
-      "here": [
-        "di sini"
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -344,9 +341,6 @@
       "Previous year": [
         "Tahun sebelumnya"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -406,6 +400,12 @@
       ],
       "Send": [
         "Kirim"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "Bagikan"
@@ -478,6 +478,12 @@
       ],
       "Update": [
         "Perbarui"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1380,6 +1386,9 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Kesalahan dekripsi: Dekripsi isi acara gagal."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         ""
       ],
@@ -1481,6 +1490,9 @@
       ],
       "Name required": [
         "Nama diperlukan"
+      ],
+      "No data to import": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Tidak ada kunci yang diambil untuk pengguna internal yang valid untuk pengiriman"
@@ -1643,9 +1655,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -2236,9 +2245,6 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Buat alamat tambahan untuk akun Anda seperti user2@protonmail.com"
       ],
@@ -2361,6 +2367,9 @@
       ],
       "Daily": [
         "Harian"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "Buang perubahan?"
@@ -2626,7 +2635,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2635,7 +2644,7 @@
       "Session timed out.": [
         "Sesi habis."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2806,6 +2815,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -2814,12 +2826,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Anda telah mengaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi terbaru dari ${ appName }. Aplikasi akan dimuat ulang."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Kunci Anda telah diaktivasi ulang. Acara yang tersambung ke kalender-kalender ini dapat didekripsi."
@@ -3163,6 +3169,9 @@
       "All day": [
         "Seharian"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
       ],
@@ -3196,11 +3205,11 @@
       "Category": [
         "Kategori"
       ],
-      "Choose a color": [
-        "Pilih warna"
-      ],
       "City": [
         "Kota"
+      ],
+      "Color": [
+        ""
       ],
       "Contacts": [
         ""
@@ -3213,18 +3222,6 @@
       ],
       "CVV code": [
         "Kode CVV"
-      ],
-      "Default email": [
-        "Surel bawaan"
-      ],
-      "Default event duration": [
-        "Durasi acara bawaan"
-      ],
-      "Default full day notifications": [
-        "Pemberitahuan seharian bawaan"
-      ],
-      "Default notifications": [
-        "Notifikasi bawaan"
       ],
       "Description": [
         "Deskripsi"
@@ -3261,6 +3258,9 @@
       ],
       "Enter the 6-digit code": [
         "Masukkan kode 6 digit"
+      ],
+      "Event duration": [
+        ""
       ],
       "Event frequency": [
         "Frekuensi acara"
@@ -4150,6 +4150,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        ""
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Kunci tidak dapat digunakan untuk enkripsi"
@@ -4458,10 +4463,7 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        ""
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         ""
       ]
     },
@@ -4859,6 +4861,9 @@
       "Downgrade account": [
         ""
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit contact": [
         "Edit kontak"
       ],
@@ -5107,9 +5112,6 @@
       ],
       "Unsupported browser": [
         "Peramban tidak didukung"
-      ],
-      "Update calendar": [
-        "Perbarui kalender"
       ],
       "Update event": [
         "Perbarui acara"

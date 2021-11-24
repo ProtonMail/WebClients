@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "Activate recovery": [
+        "Ενεργοποίηση ανάκτησης"
+      ],
       "Add": [
         "Προσθήκη"
       ],
@@ -146,7 +149,7 @@
       "Decrease": [
         "Μείωση"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -234,9 +237,6 @@
       ],
       "Grid layout": [
         "Διάταξη πλέγματος"
-      ],
-      "here": [
-        "εδώ"
       ],
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
@@ -361,9 +361,6 @@
       "Previous month": [
         "Προηγούμενος μήνας"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Έξοδος"
       ],
@@ -438,6 +435,12 @@
       ],
       "Select plan": [
         "Επιλέξτε πακέτο"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        "Ορισμός φράσης ανάκτησης"
       ],
       "Share": [
         "Κοινοποίηση"
@@ -519,6 +522,12 @@
       ],
       "Untrust": [
         "Μη αξιόπιστο"
+      ],
+      "Update recovery file": [
+        "Ενημέρωση αρχείου ανάκτησης"
+      ],
+      "Update recovery phrase": [
+        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -638,13 +647,13 @@
         "Ετησίως"
       ],
       "Annually SAVE 20%": [
-        "Ετήσια ΕΞΟΙΚΟΝΟΜΗΣΗ 20%"
+        "Ετήσιο ΟΦΕΛΟΣ 20%"
       ],
       "Monthly": [
         "Μηνιαία"
       ],
       "Two years SAVE 33%": [
-        "2 ετής ΕΞΟΙΚΟΝΟΜΗΣΗ 33%"
+        "Διετές ΟΦΕΛΟΣ 33%"
       ],
       "Two-year": [
         "Δύο έτη"
@@ -1097,7 +1106,7 @@
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
       "Contact could not be saved": [
-        "Αποτυχία αποθήκευσης επαφής"
+        "Αδυναμία αποθήκευσης επαφής"
       ],
       "Contact signature not verified": [
         "Μη επαληθευμένη υπογραφή επαφής"
@@ -1107,6 +1116,10 @@
       ],
       "Could not generate file keys": [
         "Αδυναμία δημιουργίας κλειδιών αρχείου"
+      ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
@@ -1187,6 +1200,9 @@
       ],
       "Name on card required": [
         "Απαιτείται το όνομα επί της κάρτας"
+      ],
+      "No data to import": [
+        "Δεν υπάρχουν δεδομένα για εισαγωγή"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -1392,7 +1408,7 @@
         "Σφάλμα: ${ errorMessage }"
       ],
       "Internal server error": [
-        "Εσωτερικό σφάλμα εξυπηρετητή"
+        "Εσωτερικό σφάλμα διακομιστή"
       ],
       "Not found": [
         "Δε βρέθηκε"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Προσθέστε επιπλέον διευθύνσεις στο λογαριασμό σας, όπως user2@protonmail.com"
       ],
@@ -1868,6 +1881,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
+      ],
+      "Default email application": [
+        ""
       ],
       "Delete drive": [
         "Διαγραφή αρχειοθήκης",
@@ -2160,7 +2176,7 @@
         "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που μπορούν να επανσυνδεθούν με το πρωτεύον κλειδί κρυπτογράφησης."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
+        "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
       ],
       "Preparing link to file": [
         "Προετοιμασία συνδέσμου προς το αρχείο"
@@ -2188,10 +2204,10 @@
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "Save 20%": [
-        "Εξοικονομήστε 20%"
+        "Όφελος 20%"
       ],
       "Save extra 20%": [
-        "Εξοικονομήστε επιπλέον 20%"
+        "Όφελος 20% επιπλέον"
       ],
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
@@ -2202,8 +2218,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Ορίστε την προεπιλεγμένη μορφή των μηνυμάτων που αποστέλλονται προς αυτήν την ηλ. διεύθυνση."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Επιλέξτε ποια ημερολόγια θα εισαγάγετε. Ενα νέο ημερολόγιο θα δημιουργηθεί για κάθε εισαγόμενο ημερολόγιο μέχρι το όριο των 20 ημερολογίων. Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -2211,7 +2227,7 @@
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2380,6 +2396,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
@@ -2388,12 +2407,6 @@
       ],
       "You cannot undo this action.": [
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Έχετε απενεργοποιήσει την πρόσβαση Beta. Πατήστε ${ refreshButton } για χρήση της σταθερής έκδοσης του ${ appName }. Η εφαρμογή θα ανανεωθεί."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Έχετε ενεργοποιήσει την πρόσβαση Beta. Πατήστε ${ refreshButton } για χρήση της νέας έκδοσης του ${ appName }. Η εφαρμογή θα ανανεωθεί."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal, έτσι ώστε να την προσθέσετε ως μέθοδο πληρωμής."
@@ -2414,7 +2427,7 @@
         "Θα ανακατευθυνθείτε σύντομα στην τράπεζα σας, για να επαληθεύσετε την πληρωμή σας."
       ],
       "You will lose all unsaved changes.": [
-        "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
+        "Θα χάσετε όλες τις μη αποθηκευμένες αλλαγές."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
@@ -2759,7 +2772,7 @@
         "Ποσό BTC:"
       ],
       "Calendars": [
-        ""
+        "Ημερολόγια"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -3146,10 +3159,10 @@
         "Προσθήκη κωδικού δώρου"
       ],
       "All mail": [
-        ""
+        "Όλα τα μηνύματα"
       ],
       "Archive": [
-        ""
+        "Αρχειοθετημένα"
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του Browser"
@@ -3158,13 +3171,13 @@
         "κάντε κλικ εδώ"
       ],
       "Drafts": [
-        ""
+        "Πρόχειρα"
       ],
       "Go to subscription plans": [
         "Μεταβείτε σε πλάνα συνδρομής"
       ],
       "Inbox": [
-        ""
+        "Εισερχόμενα"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -3173,7 +3186,7 @@
         "Τα αρχεία μου"
       ],
       "Outbox": [
-        ""
+        "Εξερχόμενα"
       ],
       "Pay invoice": [
         "Πληρωμή υπολοίπου"
@@ -3182,19 +3195,19 @@
         "Ζητήστε μια πρόσκληση"
       ],
       "Scheduled": [
-        ""
+        "Προγραμματισμένα"
       ],
       "Sent": [
-        ""
+        "Απεσταλμένα"
       ],
       "Shared": [
         "Κοινοποιημένα"
       ],
       "Spam": [
-        ""
+        "Ανεπιθύμητα"
       ],
       "Starred": [
-        ""
+        "Με αστέρι"
       ],
       "Trash": [
         "Κάδος απορριμμάτων"
@@ -3568,7 +3581,7 @@
         "${ appName } είναι σε Beta"
       ],
       "Meet your new secure file storage": [
-        "Γνωρίστε τον νέο ασφαλή χώρο αποθήκευσης αρχείων"
+        "Υποδεχθείτε τη νέα σας διασφαλισμένη αρχειοθήκη"
       ],
       "Upgrade to access ${ appName }": [
         "Αναβαθμίστε για πρόσβαση στο ${ appName }"
@@ -4049,7 +4062,7 @@
         "${ emailsCount } μέλη"
       ],
       "3-D Secure verification failed": [
-        "Η επαλήθευση ασφαλείας 3-D απέτυχε"
+        "Αποτυχία επαλήθευσης 3-διάστατης διασφάλισης"
       ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
@@ -4110,7 +4123,7 @@
         "Επιβεβαιώστε την απώλεια μπόνους Proton"
       ],
       "Contact details": [
-        ""
+        "Στοιχεία επαφής"
       ],
       "Contact Details": [
         "Λεπτομέρειες Επαφής"
@@ -4773,7 +4786,7 @@
         "Η επαλήθευση της υπογραφής των στοιχείων επαφής απέτυχε."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
+        "Αυτή η ενέργεια είναι μη αναστρέψιμη. Για συνέχεια, παρακαλούμε εισάγετε στο πεδίο τη λέξη ${ boldDanger }."
       ],
       "This feature requires a paid Proton account": [
         "Αυτή η λειτουργία απαιτεί πληρωμένο λογαριασμό Proton"

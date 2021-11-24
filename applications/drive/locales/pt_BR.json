@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Ativar a recuperação"
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -146,7 +149,7 @@
       "Decrease": [
         "Diminuir"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -235,20 +238,17 @@
       "Grid layout": [
         "Exibição em grade"
       ],
-      "here": [
-        "aqui"
-      ],
       "Hide advanced PGP settings": [
         "Ocultar configurações avançadas de PGP"
       ],
       "Hide folders": [
-        ""
+        "Ocultar pastas"
       ],
       "Hide info": [
         "Ocultar informação"
       ],
       "Hide labels": [
-        ""
+        "Ocultar marcadores"
       ],
       "I have a question": [
         "Eu tenho uma dúvida"
@@ -308,7 +308,7 @@
         "Mais informações: ${ safeTitle }"
       ],
       "More options": [
-        ""
+        "Mais opções"
       ],
       "Move": [
         "Mover"
@@ -360,9 +360,6 @@
       ],
       "Previous month": [
         "Mês anterior"
-      ],
-      "Prompt browser setting": [
-        ""
       ],
       "Quit": [
         "Sair"
@@ -439,6 +436,12 @@
       "Select plan": [
         "Selecionar plano"
       ],
+      "Set as default": [
+        "Definir como padrão"
+      ],
+      "Set recovery phrase": [
+        "Definir uma frase de recuperação"
+      ],
       "Share": [
         "Compartilhar"
       ],
@@ -464,7 +467,7 @@
         "Mostrar informação"
       ],
       "Show labels": [
-        ""
+        "Mostrar marcadores"
       ],
       "Show shared link details": [
         "Mostrar detalhes do link compartilhado"
@@ -519,6 +522,12 @@
       ],
       "Untrust": [
         "Não confiar"
+      ],
+      "Update recovery file": [
+        "Atualizar o arquivo de recuperação"
+      ],
+      "Update recovery phrase": [
+        "Atualizar a frase de recuperação"
       ],
       "Upgrade": [
         "Atualizar"
@@ -886,7 +895,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Sair da personalização de importação?"
       ]
     },
     "Contact field label": {
@@ -1108,6 +1117,10 @@
       "Could not generate file keys": [
         "Não foi possível gerar chaves de arquivo"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Desmarque ao menos ${ calendarToFixCount } calendário ou",
         "Desmarque ao menos ${ calendarToFixCount } calendários ou"
@@ -1187,6 +1200,9 @@
       ],
       "Name on card required": [
         "Nome no cartão de crédito obrigatório"
+      ],
+      "No data to import": [
+        "Sem dados para importar"
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -1690,8 +1706,8 @@
         "${ vpnAppName } Gratuito"
       ],
       "(${ memberCount } member)": [
-        "",
-        ""
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
       ],
       "(Mail + VPN)": [
         "(E-mail + VPN)"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Conta atualizada com sucesso"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        "Ativar esta opção abrirá um novo compositor cada vez que você clicar em um link mailto: ."
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Adicione endereços extras à sua conta, como usuario2@protonmail.com"
       ],
@@ -1763,7 +1776,7 @@
         "Valor abaixo do mínimo (${ amount })."
       ],
       "An active recovery file": [
-        ""
+        "Um arquivo de recuperação ativo"
       ],
       "and": [
         "e"
@@ -1868,6 +1881,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim com os formatos vCard 3.1 e 4.0 (encode UTF-8)."
+      ],
+      "Default email application": [
+        ""
       ],
       "Delete drive": [
         "",
@@ -2202,8 +2218,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários. Você também pode mesclar os calendários importados com os calendários Proton existentes."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
@@ -2211,8 +2227,8 @@
       "Session timed out.": [
         "Sessão expirada."
       ],
-      "Set ProtonMail as your default mail handler": [
-        "Defina ProtonMail como seu gerenciador de e-mail padrão"
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "A configuração do PGP permite que você envie e-mails criptografados de ponta a ponta com um usuário que não usa o ProtonMail, mas que usa um serviço compatível com PGP."
@@ -2363,7 +2379,7 @@
         "O que você deseja importar da sua conta do Google?"
       ],
       "What would you like to do?": [
-        ""
+        "O que você gostaria de fazer?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -2380,20 +2396,17 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
       ],
-      "You can check the progress ${ importProgressLink }.": [
+      "You can also merge imported calendars with existing Proton calendars.": [
         ""
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "Você pode verificar o progresso ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens chegarem nesta pasta."
       ],
       "You cannot undo this action.": [
         "Você não pode desfazer está ação."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Você desabilitou o Acesso Antecipado. Clique em ${ refreshButton } para utilizar a versão estável do ${ appName }. O aplicativo será recarregado."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Você habilitou o Acesso Beta. Clique em ${ refreshButton } para usar a última versão de ${ appName }. O aplicativo será recarregado."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal para que possa ser adicionada como método de pagamento."
@@ -2462,7 +2475,7 @@
         "O seu número de telefone será utilizado somente nesta verificação única."
       ],
       "Your previous password": [
-        ""
+        "Sua senha anterior"
       ],
       "Your previous recovery phrase": [
         ""
@@ -3069,7 +3082,7 @@
         "O que aconteceu?"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        ""
+        "Sim, quero excluir permanentemente meus arquivos antigos"
       ],
       "ZIP": [
         "CEP"
@@ -3194,7 +3207,7 @@
         "Spam"
       ],
       "Starred": [
-        ""
+        "Com estrela"
       ],
       "Trash": [
         "Lixo"
@@ -3212,10 +3225,10 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Quase lá"
       ],
       "Creating new calendars": [
-        ""
+        "Criando novos calendários"
       ],
       "Gathering your data": [
         ""
@@ -3348,13 +3361,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Cor"
       ],
       "Folder name": [
-        ""
+        "Nome da pasta"
       ],
       "Label name": [
-        ""
+        "Nome do marcador"
       ]
     },
     "Notification": {
@@ -3374,8 +3387,8 @@
         "\"${ firstItemName }\" restaurado da lixeira"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "",
-        ""
+        "${ deletedCount } link para o seu arquivo foi excluído",
+        "${ deletedCount } links para os seus arquivos foram excluídos"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } arquivo excluído permanentemente da lixeira",
@@ -3494,19 +3507,19 @@
         "Mover ${ movingCount } itens"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        ""
+        "Não há espaço suficiente para fazer upload de ${ formattedTotal }"
       ],
       "The link to your file failed to be deleted": [
         ""
       ],
       "The link to your file was deleted": [
-        ""
+        "O link para seu arquivo foi excluído"
       ],
       "Your old files will be deleted in 72 hours": [
         ""
       ],
       "Your settings have been changed successfully": [
-        ""
+        "Suas configurações foram alteradas com sucesso"
       ]
     },
     "Onboarding Proton": {
@@ -3590,7 +3603,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Criar novo calendário"
       ],
       "Merge with calendar": [
         ""
@@ -3912,7 +3925,7 @@
         ""
       ],
       "The link to your file was successfully copied": [
-        ""
+        "O link para o seu arquivo foi copiado com sucesso"
       ],
       "Verification successful": [
         "Verificado com sucesso"
@@ -4012,7 +4025,7 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "data de criação da conta"
       ],
       "the last 12 months": [
         ""
@@ -4486,7 +4499,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Hoje"
       ]
     },
     "Tooltip": {
@@ -4515,7 +4528,7 @@
         "Desconto aplicado para o ciclo de faturamento bienal"
       ],
       "Each imported email will have this label": [
-        ""
+        "Cada e-mail importado terá este marcador"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "A criptografia de e-mail sempre utiliza a assinatura de e-mail para ajudar a autenticar as mensagens enviadas"
@@ -4560,10 +4573,10 @@
         "Suporte para protocolos de compartilhamento de arquivos como o BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "As subpastas do sistema aparecerão como pastas separadas no ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "A importação começará com as mensagens mais recentes."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
@@ -4749,7 +4762,7 @@
         "Note que, ao escolher este método de pagamento, a sua conta não poderá ser imediatamente atualizada. Atualizaremos a sua conta assim que o pagamento for compensado."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "O Proton mesclará todas as pastas com o mesmo nome. Para evitar isso, altere os nomes antes da importação."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
@@ -4764,7 +4777,7 @@
         "Falha ao carregar o contato."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "As configurações de data e hora em seu dispositivo estão dessincronizadas. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Falha ao descriptografar o conteúdo criptografado."
@@ -4782,7 +4795,7 @@
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos on-line."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Você perderá qualquer personalização que tenha feito até agora."
       ]
     }
   }

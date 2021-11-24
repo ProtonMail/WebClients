@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Aktifkan kupon saya"
       ],
+      "Activate recovery": [
+        "Aktifkan metode pemulihan"
+      ],
       "Add credit / debit card": [
         "Tambah kartu kredit / debit"
       ],
@@ -187,9 +190,6 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
-      "here": [
-        "di sini"
-      ],
       "Hide": [
         "Sembunyikan"
       ],
@@ -304,6 +304,9 @@
       "Send": [
         "Kirim"
       ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
+      ],
       "Share via link": [
         "Bagikan via tautan"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Perbarui"
+      ],
+      "Update recovery file": [
+        "Perbarui berkas pemulihan"
+      ],
+      "Update recovery phrase": [
+        "Perbarui frasa pemulihan"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1739,12 +1748,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Anda tidak dapat menggunakan kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ProtonVPN atau dasbor ProtonVPN. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Anda telah mengaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi terbaru dari ${ appName }. Aplikasi akan dimuat ulang."
-      ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
       ],
@@ -2242,6 +2245,9 @@
       ],
       "Proton newsletter": [
         "Newsletter Proton"
+      ],
+      "Proton offers and promotions": [
+        "Penawaran dan promosi Proton"
       ],
       "Proton product announcements": [
         "Pengumuman produk Proton"
