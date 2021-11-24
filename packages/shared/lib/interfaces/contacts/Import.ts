@@ -71,11 +71,14 @@ export interface ImportContactsModel {
     categories: ImportCategories[];
 }
 
-export interface EncryptedContact {
+export interface SimpleEncryptedContact {
     contact: { Cards: ContactCard[]; error?: Error };
+    contactId: string;
+}
+
+export interface EncryptedContact extends SimpleEncryptedContact {
     contactEmails: { email: string; group?: string }[];
     categories: { name: string; group?: string }[];
-    contactId: string;
 }
 
 export interface ImportedContact {
