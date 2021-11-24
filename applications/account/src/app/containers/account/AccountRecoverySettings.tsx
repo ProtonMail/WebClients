@@ -11,24 +11,22 @@ const ids = {
     data: 'data',
 };
 
-const recoveryPageConfig: SectionConfig = {
-    text: c('Title').t`Recovery`,
-    to: '/recovery',
-    icon: 'key',
+const getSharedConfig = () => {
+    return { text: c('Title').t`Recovery`, to: '/recovery', icon: 'key' };
 };
 
 export const hasRecoverySettings = (user: UserModel) => user.isPrivate;
 
 export const getRecoveryPage = (showNotification: boolean): SectionConfig => {
     return {
-        ...recoveryPageConfig,
+        ...getSharedConfig(),
         notification: showNotification,
     };
 };
 
 const getRecoveryPageWithSubsections = (dataRecoveryMethodAvailable: boolean): SectionConfig => {
     return {
-        ...recoveryPageConfig,
+        ...getSharedConfig(),
         subsections: [
             {
                 id: 'checklist',
