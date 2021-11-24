@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import yahooAppPasswordImg from '@proton/styles/assets/img/import-instructions/yahoo.png';
+import yahooMailScreenshot from '@proton/styles/assets/img/import/instructions/yahoo-mail.png';
 
-const YahooMailImportInstructionsStep = () => {
+const YahooMailInstructions = () => {
     const boldAccountInfo = <strong key="boldAccountInfo">{c('Import instructions emphasis').t`Account info`}</strong>;
     const boldAccountSec = (
         <strong key="boldAccountSec">{c('Import instructions emphasis').t`Account security`}</strong>
@@ -18,13 +18,16 @@ const YahooMailImportInstructionsStep = () => {
     return (
         <>
             <div className="mb1">{yahooAppPasswordMessage}</div>
-            <img
-                className="border--currentColor"
-                src={yahooAppPasswordImg}
-                alt={c('Import instructions image alternative text').t`How to create an app password in Gmail settings`}
-            />
+            <div className="text-center">
+                <img
+                    className="border--currentColor"
+                    src={yahooMailScreenshot}
+                    alt={c('Import instructions image alternative text')
+                        .t`Instructions to create an app password in Yahoo Mail settings`}
+                />
+            </div>
         </>
     );
 };
 
-export default YahooMailImportInstructionsStep;
+export default YahooMailInstructions;

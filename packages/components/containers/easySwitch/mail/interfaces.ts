@@ -9,7 +9,6 @@ export enum MailImportStep {
     START,
     PREPARE,
     STARTED,
-    INSTRUCTIONS,
 }
 
 export interface ImportMailModalModel {
