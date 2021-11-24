@@ -1,7 +1,7 @@
 import { c } from 'ttag';
-import { registerMailToProtocolHandler } from 'proton-mail/src/app/helpers/url';
-import { ConfirmModal } from '../../components/modal';
-import { Href } from '../../components/link';
+import { ConfirmModal } from '@proton/components/components/modal';
+import { Href } from '@proton/components/components/link';
+import { registerMailToProtocolHandler } from '../../helpers/url';
 
 interface Props {
     onClose?: () => void;
