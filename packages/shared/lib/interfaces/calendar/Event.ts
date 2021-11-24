@@ -42,7 +42,7 @@ export interface Attendee {
 }
 
 export interface CalendarEventBlobData {
-    CalendarKeyPacket?: string;
+    CalendarKeyPacket: Nullable<string>;
     CalendarEvents: CalendarEventData[];
     SharedKeyPacket: string;
     SharedEvents: CalendarEventData[];

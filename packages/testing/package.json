@@ -1,0 +1,21 @@
+{
+    "name": "@proton/testing",
+    "description": "",
+    "license": "GPL-3.0",
+    "main": "index.ts",
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint index.ts lib --ext .js,.ts,.tsx --quiet --cache",
+        "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')"
+    },
+    "dependencies": {
+        "@proton/shared": "workspace:packages/shared"
+    },
+    "devDependencies": {
+        "@jackfranklin/test-data-bot": "^1.4.0",
+        "@types/faker": "^5.5.9",
+        "cross-fetch": "^3.1.4",
+        "faker": "5.5.3",
+        "msw": "^0.36.5"
+    }
+}
