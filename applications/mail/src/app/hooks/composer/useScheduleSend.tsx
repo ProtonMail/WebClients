@@ -6,19 +6,18 @@ import { LabelCount } from '@proton/shared/lib/interfaces';
 import { SCHEDULED_MESSAGES_LIMIT } from 'proton-mail/src/app/constants';
 import { c } from 'ttag';
 import { Dispatch, SetStateAction } from 'react';
-import * as React from 'react';
-import { MessageExtended, MessageExtendedWithData } from 'proton-mail/src/app/models/message';
 import { useSendVerifications } from 'proton-mail/src/app/hooks/composer/useSendVerifications';
 import { ConfirmModal } from '@proton/components/components/modal';
 import { Button } from '@proton/components/components/button';
 import { useConversationCounts, useMessageCounts, useModals } from '@proton/components/hooks';
 import { useMailSettings } from '@proton/components/hooks/useMailSettings';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 interface Props {
-    modelMessage: MessageExtendedWithData;
-    setInnerModal: React.Dispatch<React.SetStateAction<any>>;
+    modelMessage: MessageStateWithData;
+    setInnerModal: Dispatch<SetStateAction<any>>;
     ComposerInnerModal: any;
-    setModelMessage: Dispatch<SetStateAction<MessageExtended>>;
+    setModelMessage: Dispatch<SetStateAction<MessageState>>;
     handleSend: () => void;
     handleNoRecipients?: () => void;
     handleNoSubjects?: () => void;
@@ -83,7 +82,10 @@ export const useScheduleSend = ({
     const handleScheduleSend = (scheduledAt: number) => {
         setModelMessage({
             ...modelMessage,
-            scheduledAt,
+            draftFlags: {
+                ...modelMessage.draftFlags,
+                scheduledAt,
+            },
         });
 
         setTimeout(handleSend);

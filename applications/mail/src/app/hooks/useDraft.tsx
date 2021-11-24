@@ -13,13 +13,13 @@ import {
     useMailSettings,
 } from '@proton/components';
 import { isPaid } from '@proton/shared/lib/user/helpers';
-
+import { useDispatch } from 'react-redux';
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
-import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../models/message';
-import { useMessageCache } from '../containers/MessageProvider';
 import { findSender } from '../helpers/addresses';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useGetAttachment } from './useAttachment';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
+import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
 
 const CACHE_KEY = 'Draft';
 
@@ -29,7 +29,7 @@ export const useDraftVerifications = () => {
     const { createModal } = useModals();
 
     return useCallback(
-        async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageExtended) => {
+        async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageState) => {
             const [user, addresses] = await Promise.all([getUser(), getAddresses()]);
 
             if (!isPaid(user) && findSender(addresses, referenceMessage?.data)?.Email.endsWith('@pm.me')) {
@@ -62,7 +62,7 @@ export const useDraft = () => {
     const cache = useCache();
     const getMailSettings = useGetMailSettings();
     const getAddresses = useGetAddresses();
-    const messageCache = useMessageCache();
+    const dispatch = useDispatch();
     const draftVerifications = useDraftVerifications();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
@@ -80,14 +80,14 @@ export const useDraft = () => {
     }, [cache, addresses, mailSettings]);
 
     const createDraft = useCallback(
-        async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageExtended) => {
+        async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageState) => {
             const [mailSettings, addresses] = await Promise.all([getMailSettings(), getAddresses()]);
 
             await draftVerifications(action, referenceMessage);
 
-            let message: MessageExtended;
+            let message: MessageState;
             if (action === MESSAGE_ACTIONS.NEW && cache.has(CACHE_KEY) && referenceMessage === undefined) {
-                message = cloneDraft(cache.get(CACHE_KEY) as MessageExtendedWithData);
+                message = cloneDraft(cache.get(CACHE_KEY) as MessageStateWithData);
             } else {
                 // This cast is quite dangerous but hard to remove
                 message = createNewDraft(
@@ -96,14 +96,14 @@ export const useDraft = () => {
                     mailSettings,
                     addresses,
                     getAttachment
-                ) as MessageExtended;
+                ) as MessageState;
             }
 
             message.localID = generateUID('draft');
-            messageCache.set(message.localID, message);
+            dispatch(createDraftAction(message));
             return message.localID;
         },
-        [cache, getMailSettings, getAddresses, messageCache, draftVerifications]
+        [cache, getMailSettings, getAddresses, draftVerifications]
     );
 
     return createDraft;

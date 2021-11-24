@@ -19,13 +19,10 @@ import {
     LabelChanges,
     UnreadStatus,
 } from '../../helpers/labels';
-import {
-    applyMarkAsChangesOnConversation,
-    applyMarkAsChangesOnMessage,
-    MarkAsChanges,
-} from '../../hooks/optimistic/useOptimisticMarkAs';
+import { applyMarkAsChangesOnConversation, MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
 import { mergeConversations } from '../../helpers/conversation';
 import { parseLabelIDsInEvent } from '../../helpers/elements';
+import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 
 export const globalReset = (state: Draft<ConversationsState>) => {
     Object.keys(state).forEach((key) => delete state[key]);

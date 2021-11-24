@@ -2,24 +2,21 @@ import { useCallback } from 'react';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { getRecipientsAddresses, setFlag } from '@proton/shared/lib/mail/messages';
+import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import { useHistory } from 'react-router';
 import { c } from 'ttag';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { MessageExtendedWithData } from '../../models/message';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { encryptPackages } from '../../helpers/send/sendEncrypt';
-import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import { OnCompose } from './useCompose';
 import useDelaySendSeconds from '../useDelaySendSeconds';
@@ -29,13 +26,16 @@ import { useSendMoficiations } from './useSendModifications';
 import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetMessage } from '../message/useMessage';
+import { endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
 
 const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
 interface UseSendMessageParameters {
-    inputMessage: MessageExtendedWithData;
+    inputMessage: MessageStateWithData;
     mapSendPrefs: SimpleMap<SendPreferences>;
     onCompose: OnCompose;
     alreadySaved?: boolean;
@@ -49,7 +49,7 @@ export const useSendMessage = () => {
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
     const { call } = useEventManager();
-    const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
     const history = useHistory<any>();
     const delaySendSeconds = useDelaySendSeconds();
     const { createNotification, hideNotification } = useNotifications();
@@ -74,7 +74,7 @@ export const useSendMessage = () => {
                 if (sendingMessageNotificationManager) {
                     hideNotification(sendingMessageNotificationManager.ID);
                 }
-                const savedMessage = messageCache.get(localID) as MessageExtendedWithData;
+                const savedMessage = getMessage(localID) as MessageStateWithData;
                 await api(cancelSend(savedMessage.data.ID));
                 createNotification({ text: c('Message notification').t`Sending undone` });
                 await call();
@@ -92,16 +92,14 @@ export const useSendMessage = () => {
                 const messageKeys = await getMessageKeys(inputMessage.data);
 
                 // Last minute modifications on the message before sending
-                const message = (await sendModification(inputMessage)) as MessageExtendedWithData;
-
-                // TODO: handleAttachmentSigs ?
+                const message = (await sendModification(inputMessage)) as MessageStateWithData;
 
                 const emails = unique(getRecipientsAddresses(inputMessage.data));
 
                 const hasHtml = Object.values(mapSendPrefs).some(
                     (sendPref) => sendPref?.mimeType === MIME_TYPES.DEFAULT
                 );
-                if (hasHtml && message.document === undefined) {
+                if (hasHtml && message.messageDocument?.document === undefined) {
                     const errorMessage = 'Sending with missing document error';
                     captureMessage(errorMessage, { extra: { message } });
                     throw new Error(errorMessage);
@@ -119,7 +117,7 @@ export const useSendMessage = () => {
                 packages = await encryptPackages(message, messageKeys, packages);
 
                 // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
-                const { expiresIn, autoSaveContacts, scheduledAt } = inputMessage;
+                const { expiresIn, autoSaveContacts, scheduledAt } = inputMessage.draftFlags || {};
 
                 const payload = sendFormatter({
                     ID: message.data?.ID,
@@ -160,25 +158,13 @@ export const useSendMessage = () => {
                         // It's a bit more complicated in reallity, the server will take a few more seconds to actully send the message
                         // It creates a small window of time during which the UI allow to reply to message in the outbox
                         // This should be handled by the backend
-                        const message = messageCache.get(localID) as MessageExtendedWithData;
-                        updateMessageCache(messageCache, localID, {
-                            data: {
-                                LabelIDs: message.data.LabelIDs.filter((value) => value !== MAILBOX_LABEL_IDS.OUTBOX),
-                                Flags: setFlag(MESSAGE_FLAGS.FLAG_SENT)(message.data),
-                            },
-                        });
+                        dispatch(endUndo(localID));
                     }
                 };
 
                 void endSending();
 
-                updateMessageCache(messageCache, localID, {
-                    data: Sent,
-                    initialized: undefined,
-                    plainText: undefined,
-                    document: undefined,
-                    messageImages: undefined,
-                });
+                dispatch(sent(Sent));
 
                 // Navigation to the sent message
                 const {
@@ -213,6 +199,6 @@ export const useSendMessage = () => {
                 throw error;
             }
         },
-        [delaySendSeconds, messageCache]
+        [delaySendSeconds]
     );
 };

@@ -3,9 +3,9 @@ import { Icon, Href, useModals, Alert } from '@proton/components';
 import { c } from 'ttag';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import ContactResignModal from '../modals/ContactResignModal';
-import { MessageVerification } from '../../../models/message';
 import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';
+import { MessageVerification } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     message: Message | undefined;

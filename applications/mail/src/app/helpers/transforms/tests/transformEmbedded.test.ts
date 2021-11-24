@@ -1,21 +1,21 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MessageExtended, MessageImage, MessageKeys } from '../../../models/message';
 import { transformEmbedded } from '../transformEmbedded';
 import { createDocument } from '../../test/message';
-import { messageCache } from '../../test/cache';
-import { api } from '../../test/api';
-
-const messageKeys = {} as MessageKeys;
+import { MessageImage, MessageState } from '../../../logic/messages/messagesTypes';
 
 const mailSettings = {
     ShowImages: SHOW_IMAGES.EMBEDDED,
 } as MailSettings;
 
 describe('transformEmbedded', () => {
-    const setup = (message: MessageExtended) => {
-        return transformEmbedded(message, messageKeys, messageCache, jest.fn(), jest.fn(), api, mailSettings);
+    const setup = (message: MessageState) => {
+        return transformEmbedded(
+            message,
+            mailSettings,
+            jest.fn(() => Promise.resolve([]))
+        );
     };
 
     it('should detect cid embedded images', async () => {
@@ -29,7 +29,7 @@ describe('transformEmbedded', () => {
                             <img src='${cids[5]}' proton-src='${cids[5]}'/>
                         </div>`;
 
-        const message: MessageExtended = {
+        const message: MessageState = {
             localID: 'messageWithEmbedded',
             data: {
                 ID: 'messageID',
@@ -42,7 +42,7 @@ describe('transformEmbedded', () => {
                     { Headers: { 'content-id': cids[5] } } as Attachment,
                 ],
             } as Message,
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
         };
 
         const { showEmbeddedImages, embeddedImages, hasEmbeddedImages } = await setup(message);
@@ -62,13 +62,13 @@ describe('transformEmbedded', () => {
         const cloc = 'imageCLOC';
         const content = `<div><img src='${cloc}' proton-src='${cloc}'/></div>`;
 
-        const message: MessageExtended = {
+        const message: MessageState = {
             localID: 'messageWithEmbedded',
             data: {
                 ID: 'messageID',
                 Attachments: [{ Headers: { 'content-location': cloc } } as Attachment],
             } as Message,
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
         };
 
         const { showEmbeddedImages, embeddedImages, hasEmbeddedImages } = await setup(message);
@@ -85,13 +85,13 @@ describe('transformEmbedded', () => {
         const cid = 'imageCID';
         const content = `<div><img src='cid:${cid}'/></div>`;
 
-        const message: MessageExtended = {
+        const message: MessageState = {
             localID: 'messageWithEmbedded',
             data: {
                 ID: 'messageID',
                 Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
             } as Message,
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
             messageImages: {
                 hasRemoteImages: false,
                 hasEmbeddedImages: true,
@@ -122,14 +122,14 @@ describe('transformEmbedded', () => {
         const cid = 'imageCID';
         const content = `<div><img src='cid:${cid}'/></div>`;
 
-        const message: MessageExtended = {
+        const message: MessageState = {
             localID: 'messageWithEmbedded',
             data: {
                 ID: 'messageID',
                 Flags: 12, // Flag as draft
                 Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
             } as Message,
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
         };
 
         const { showEmbeddedImages, embeddedImages, hasEmbeddedImages } = await setup(message);

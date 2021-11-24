@@ -1,49 +1,53 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { useApi, useMailSettings } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import {
-    MessageExtended,
-    MessageErrors,
-    MessageExtendedWithData,
-    MessageImage,
-    MessageImages,
-} from '../../models/message';
+import { PayloadAction } from '@reduxjs/toolkit';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
-import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
-import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
+import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { isNetworkError } from '../../helpers/errors';
 import { useBase64Cache } from '../useBase64Cache';
 import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { useKeyVerification } from './useKeyVerification';
-import { updateAttachment } from '../../logic/attachments/attachmentsActions';
+import {
+    MessageErrors,
+    MessageImages,
+    MessageState,
+    MessageStateWithData,
+    LoadEmbeddedResults,
+    MessageRemoteImage,
+    LoadRemoteResults,
+    LoadEmbeddedParams,
+} from '../../logic/messages/messagesTypes';
+import { useGetMessage } from './useMessage';
+import {
+    documentInitializePending,
+    documentInitializeFulfilled,
+    load,
+} from '../../logic/messages/read/messagesReadActions';
+import {
+    loadEmbedded,
+    loadRemoteProxy,
+    loadRemoteDirect,
+    loadFakeProxy,
+} from '../../logic/messages/images/messagesImagesActions';
 import { useGetAttachment } from '../useAttachment';
-
-interface Preparation {
-    plainText?: string;
-    document?: Element;
-    showEmbeddedImages?: boolean;
-    showRemoteImages?: boolean;
-    hasRemoteImages?: boolean;
-    hasEmbeddedImages?: boolean;
-    remoteImages?: MessageImage[];
-    embeddedImages?: MessageImage[];
-}
+import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 
 export const useInitializeMessage = (localID: string, labelID?: string) => {
     const api = useApi();
     const markAs = useMarkAs();
-    const messageCache = useMessageCache();
+    const dispatch = useDispatch();
+    const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
-    const dispatch = useDispatch();
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
     const { verifyKeys } = useKeyVerification();
@@ -55,32 +59,30 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     return useCallback(async () => {
         // Message can change during the whole initilization sequence
         // To have the most up to date version, best is to get back to the cache version each time
-        const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
+        const getData = () => (getMessage(localID) as MessageStateWithData).data;
 
         // Cache entry will be (at least) initialized by the queue system
-        const messageFromCache = messageCache.get(localID) as MessageExtended;
+        const messageFromState = { ...getMessage(localID) } as MessageState;
 
         // If the message is not yet loaded at all, the localID is the message ID
-        if (!messageFromCache || !messageFromCache.data) {
-            messageFromCache.data = { ID: localID } as Message;
+        if (!messageFromState || !messageFromState.data) {
+            messageFromState.data = { ID: localID } as Message;
         }
 
-        updateMessageCache(messageCache, localID, { initialized: false });
+        dispatch(documentInitializePending(localID));
 
         const errors: MessageErrors = {};
-        const { loadRetry = 0 } = messageFromCache;
+        const { loadRetry = 0 } = messageFromState;
         let initialized: boolean | undefined = true;
         let decryption;
         let preparation: Preparation | undefined;
-        let dataChanges;
+        let dataChanges = {} as Partial<Message>;
         let messageImages: MessageImages | undefined;
 
         try {
             // Ensure the message data is loaded
-            const message = await loadMessage(messageFromCache, api);
-            updateMessageCache(messageCache, localID, { data: message.data });
-
-            dataChanges = {} as Partial<Message>;
+            const message = await loadMessage(messageFromState, api);
+            dispatch(load.fulfilled(message.data, load.fulfilled.toString(), { ID: localID, api }));
 
             const messageKeys = await getMessageKeys(message.data);
 
@@ -111,21 +113,51 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
             const MIMEType = dataChanges.MIMEType || getData().MIMEType;
 
+            const handleLoadEmbeddedImages = async (attachments: Attachment[]) => {
+                const dispatchResult = dispatch(
+                    loadEmbedded({
+                        ID: localID,
+                        attachments,
+                        api,
+                        messageKeys,
+                        messageVerification: message.verification,
+                        getAttachment,
+                        onUpdateAttachment,
+                    })
+                ) as any as Promise<PayloadAction<LoadEmbeddedResults, string, { arg: LoadEmbeddedParams }>>;
+                const { payload } = await dispatchResult;
+                return payload;
+            };
+
+            const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
+                const dispatchResult = dispatch(loadRemoteProxy({ ID: localID, imagesToLoad, api }));
+                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+            };
+
+            const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
+                const dispatchResult = dispatch(loadFakeProxy({ ID: localID, imagesToLoad, api }));
+                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+            };
+
+            const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
+                const dispatchResult = dispatch(loadRemoteDirect({ ID: localID, imagesToLoad, api }));
+                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+            };
+
             preparation = isPlainText({ MIMEType })
                 ? await preparePlainText(decryption.decryptedBody, isDraft(message.data))
                 : await prepareHtml(
                       {
                           ...message,
-                          decryptedBody: decryption.decryptedBody,
+                          decryption,
                           data: { ...message.data, Attachments: allAttachments },
                       },
-                      messageKeys,
-                      messageCache,
                       base64Cache,
-                      getAttachment,
-                      onUpdateAttachment,
-                      api,
-                      mailSettings
+                      mailSettings,
+                      handleLoadEmbeddedImages,
+                      handleLoadRemoteImagesProxy,
+                      handleLoadFakeImagesProxy,
+                      handleLoadRemoteImagesDirect
                   );
 
             if (!isPlainText({ MIMEType })) {
@@ -149,19 +181,17 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             }
             console.error('Message initialization error', error);
         } finally {
-            updateMessageCache(messageCache, localID, {
-                data: dataChanges,
-                document: preparation?.document,
-                plainText: preparation?.plainText,
-                decryptedBody: decryption?.decryptedBody,
-                decryptedRawContent: decryption?.decryptedRawContent,
-                signature: decryption?.signature,
-                decryptedSubject: decryption?.decryptedSubject,
-                errors,
-                loadRetry: loadRetry + 1,
-                initialized,
-                messageImages,
-            });
+            dispatch(
+                documentInitializeFulfilled({
+                    ID: localID,
+                    dataChanges,
+                    initialized,
+                    preparation,
+                    decryption,
+                    errors,
+                    messageImages,
+                })
+            );
         }
     }, [localID]);
 };

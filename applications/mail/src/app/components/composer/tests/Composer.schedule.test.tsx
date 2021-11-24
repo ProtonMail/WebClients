@@ -39,7 +39,7 @@ const setupMessage = (subject = '', toList: Recipient[] = []) => {
     prepareMessage({
         localID: ID,
         data: { MIMEType: 'text/plain' as MIME_TYPES, Subject: subject, ToList: toList },
-        plainText: '',
+        messageDocument: { plainText: '' },
     });
 };
 

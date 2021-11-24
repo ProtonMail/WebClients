@@ -1,53 +1,53 @@
 import { useSelector } from 'react-redux';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useFolders } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { MessageExtended } from '../models/message';
 import { hasLabel, getCurrentFolderIDs } from '../helpers/elements';
-import { getLocalID, useMessageCache } from '../containers/MessageProvider';
 import { hasErrorType } from '../helpers/errors';
 import { ConversationState } from '../logic/conversations/conversationsTypes';
 import { useGetConversation } from './conversation/useConversation';
 import { conversationByID } from '../logic/conversations/conversationsSelectors';
 import { RootState } from '../logic/store';
+import { MessageState } from '../logic/messages/messagesTypes';
+import { useGetMessage } from './message/useMessage';
+import { messageByID } from '../logic/messages/messagesSelectors';
 
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 
-const cacheEntryToElement = (cacheEntry: MessageExtended | ConversationState | undefined) =>
-    (cacheEntry as ConversationState)?.Conversation || (cacheEntry as MessageExtended)?.data || {};
+const cacheEntryToElement = (cacheEntry: MessageState | ConversationState | undefined) =>
+    (cacheEntry as ConversationState)?.Conversation || (cacheEntry as MessageState)?.data || {};
 
 const cacheEntryIsFailedLoading = (
     conversationMode: boolean,
-    cacheEntry: MessageExtended | ConversationState | undefined
+    cacheEntry: MessageState | ConversationState | undefined
 ) => {
     if (conversationMode) {
         return hasErrorType(cacheEntry?.errors, 'notExist');
     }
-    const messageExtended = cacheEntry as MessageExtended;
+    const messageExtended = cacheEntry as MessageState;
     return messageExtended?.data?.ID && !messageExtended?.data?.Subject;
 };
 
 export const useShouldMoveOut = (
     conversationMode: boolean,
-    inputID: string | undefined,
+    ID: string | undefined,
     loading: boolean,
     onBack: () => void
 ) => {
-    const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
     const getConversation = useGetConversation();
     const [folders = []] = useFolders();
 
-    const previousVersionRef = useRef<MessageExtended | ConversationState | undefined>();
+    const previousVersionRef = useRef<MessageState | ConversationState | undefined>();
 
-    const ID = useMemo(() => (conversationMode ? inputID : getLocalID(messageCache, inputID || '')), [inputID]);
-
+    const message = useSelector((state: RootState) => messageByID(state, { ID: ID || '' }));
     const conversation = useSelector((state: RootState) => conversationByID(state, { ID: ID || '' }));
 
-    const onChange = (cacheEntry: MessageExtended | ConversationState | undefined) => {
+    const onChange = (cacheEntry: MessageState | ConversationState | undefined) => {
         // Move out of a deleted element
         if (!cacheEntry) {
+            console.log('onBack', cacheEntry);
             onBack();
             return;
         }
@@ -72,27 +72,24 @@ export const useShouldMoveOut = (
             if (conversationMode) {
                 previousVersionRef.current = getConversation(ID);
             } else {
-                previousVersionRef.current = messageCache.get(ID);
+                previousVersionRef.current = getMessage(ID);
             }
         } else {
             previousVersionRef.current = undefined;
         }
-
-        return messageCache.subscribe((changedID: string) => {
-            if (changedID !== ID) {
-                return;
-            }
-
-            const cacheEntry = messageCache.get(ID);
-            onChange(cacheEntry);
-        });
-    }, [messageCache, ID]);
+    }, [ID]);
 
     useEffect(() => {
-        // If the conversation is not in the state yet, it will move out from it without even loading it
-        // We need to check whether it's the first time we click on it to prevent the unwanted move out
-        if (conversationMode && previousVersionRef.current !== undefined) {
-            onChange(conversation);
+        if (!conversationMode) {
+            // Not sure why, but message from the selector can be a render late here
+            onChange(getMessage(ID || ''));
+        }
+    }, [message]);
+
+    useEffect(() => {
+        if (conversationMode) {
+            // Not sure why, but message from the selector can be a render late here
+            onChange(getConversation(ID || ''));
         }
     }, [conversation]);
 
@@ -101,11 +98,11 @@ export const useShouldMoveOut = (
             return;
         }
 
-        const cacheEntry = conversationMode ? getConversation(ID) : messageCache.get(ID);
+        const cacheEntry = conversationMode ? getConversation(ID) : getMessage(ID);
 
         // Move out of a non existing message
         if (!loading && cacheEntryIsFailedLoading(conversationMode, cacheEntry)) {
             onBack();
         }
-    }, [messageCache, ID, loading]);
+    }, [ID, loading]);
 };

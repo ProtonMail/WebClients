@@ -1,16 +1,27 @@
-import { waitFor } from '@testing-library/dom';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MessageExtended } from '../../../models/message';
-import { messageCache } from '../../test/cache';
-import { addApiMock, api } from '../../test/api';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { transformRemote } from '../transformRemote';
 import { createDocument } from '../../test/message';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 describe('transformRemote', () => {
-    const setup = (message: MessageExtended, mailSettings: MailSettings) => {
-        return transformRemote(message, mailSettings, api, messageCache);
+    let onLoadRemoteImagesProxy: jest.Mock;
+    let onLoadFakeImagesProxy: jest.Mock;
+    let onLoadRemoteImagesDirect: jest.Mock;
+
+    const setup = (message: MessageState, mailSettings: MailSettings) => {
+        onLoadRemoteImagesProxy = jest.fn();
+        onLoadFakeImagesProxy = jest.fn();
+        onLoadRemoteImagesDirect = jest.fn();
+        return transformRemote(
+            message,
+            mailSettings,
+            onLoadRemoteImagesProxy,
+            onLoadFakeImagesProxy,
+            onLoadRemoteImagesDirect
+        );
     };
 
     it('should detect remote images', async () => {
@@ -22,19 +33,19 @@ describe('transformRemote', () => {
                         <div style="background: proton-url(${imageBackgroundURL})" />
                     `;
 
-        const message: MessageExtended = {
+        const message: MessageState = {
             localID: 'messageWithRemote',
             data: {
                 ID: 'messageID',
             } as Message,
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
         };
 
         const mailSettings = {
             ShowImages: SHOW_IMAGES.REMOTE,
         } as MailSettings;
 
-        const { showRemoteImages, remoteImages, hasRemoteImages } = await setup(message, mailSettings);
+        const { showRemoteImages, remoteImages, hasRemoteImages } = setup(message, mailSettings);
 
         expect(showRemoteImages).toBeTruthy();
         expect(hasRemoteImages).toBeTruthy();
@@ -45,10 +56,6 @@ describe('transformRemote', () => {
     });
 
     it('should load remote images through proxy', async () => {
-        const proxyCall = jest.fn();
-
-        addApiMock('images', proxyCall, 'get');
-
         const imageURL = 'imageURL';
         const imageBackgroundURL = 'http://domain.com/image.jpg';
         const content = `<div>
@@ -57,12 +64,12 @@ describe('transformRemote', () => {
                         <div style="background: proton-url(${imageBackgroundURL})" />
                     `;
 
-        const message: MessageExtended = {
+        const message: MessageState = {
             localID: 'messageWithRemote',
             data: {
                 ID: 'messageID',
             } as Message,
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
         };
 
         const mailSettings = {
@@ -70,9 +77,7 @@ describe('transformRemote', () => {
             ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
         } as MailSettings;
 
-        const { showRemoteImages, remoteImages, hasRemoteImages } = await setup(message, mailSettings);
-
-        await waitFor(() => expect(proxyCall).toHaveBeenCalledTimes(2));
+        const { showRemoteImages, remoteImages, hasRemoteImages } = setup(message, mailSettings);
 
         expect(showRemoteImages).toBeTruthy();
         expect(hasRemoteImages).toBeTruthy();
@@ -80,5 +85,10 @@ describe('transformRemote', () => {
         expect(remoteImages[0].url).toEqual(imageURL);
         expect(remoteImages[1].type).toEqual('remote');
         expect(remoteImages[1].url).toEqual(imageBackgroundURL);
+
+        // There is a wait 0 inside the loadRemoteImages helper
+        await wait(0);
+
+        expect(onLoadRemoteImagesProxy).toHaveBeenCalled();
     });
 });

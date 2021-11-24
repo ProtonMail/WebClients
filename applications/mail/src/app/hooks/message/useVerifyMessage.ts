@@ -3,19 +3,20 @@ import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences } from '@proton/components';
 import { useDispatch } from 'react-redux';
-import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
-import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useContactCache } from '../../containers/ContactProvider';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { isNetworkError } from '../../helpers/errors';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
+import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetMessage } from './useMessage';
+import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
-    const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
     const getEncryptionPreferences = useGetEncryptionPreferences();
@@ -30,7 +31,7 @@ export const useVerifyMessage = (localID: string) => {
         async (decryptedRawContent: Uint8Array = new Uint8Array(), signature?: OpenPGPSignature) => {
             // Message can change during the whole sequence
             // To have the most up to date version, best is to get back to the cache version each time
-            const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
+            const getData = () => (getMessage(localID) as MessageStateWithData).data;
 
             const errors: MessageErrors = {};
 
@@ -81,17 +82,16 @@ export const useVerifyMessage = (localID: string) => {
                     errors.signature = [error];
                 }
             } finally {
-                updateMessageCache(messageCache, localID, {
-                    verification: {
-                        senderPinnedKeys: encryptionPreferences?.pinnedKeys,
+                dispatch(
+                    verificationComplete({
+                        ID: localID,
+                        encryptionPreferences,
+                        verification,
                         signingPublicKey,
                         attachedPublicKeys,
-                        senderVerified: encryptionPreferences?.isContactSignatureVerified,
-                        verificationStatus: verification?.verified,
-                        verificationErrors: verification?.verificationErrors,
-                    },
-                    errors,
-                });
+                        errors,
+                    })
+                );
             }
         },
         [localID, contactsMap]

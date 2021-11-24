@@ -6,7 +6,6 @@ import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { isMessage as testIsMessage, isUnread } from '../../helpers/elements';
@@ -14,13 +13,15 @@ import { MARK_AS_STATUS } from '../useMarkAs';
 import { CacheEntry } from '../../models/tools';
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { useGetElementByID } from '../mailbox/useElements';
-import { optimisticMarkAs as optimisticMarkAsAction } from '../../logic/elements/elementsActions';
+import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../logic/elements/elementsActions';
 import {
     optimisticMarkAsConversation,
     optimisticMarkAsConversationMessages,
 } from '../../logic/conversations/conversationsActions';
+import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { useGetConversation } from '../conversation/useConversation';
+import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS };
 
@@ -38,10 +39,10 @@ const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes
     };
 };
 
-export const applyMarkAsChangesOnMessage = (message: Message, { status }: MarkAsChanges) => ({
-    ...message,
-    Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0,
-});
+// const applyMarkAsChangesOnMessage = (message: Message, { status }: MarkAsChanges) => ({
+//     ...message,
+//     Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0,
+// });
 
 export const applyMarkAsChangesOnConversation = (
     conversation: Conversation,
@@ -101,7 +102,6 @@ const applyMarkAsChangesOnConversationWithMessages = (
 export const useOptimisticMarkAs = () => {
     const dispatch = useDispatch();
     const getElementByID = useGetElementByID();
-    const messageCache = useMessageCache();
     const globalCache = useCache();
     const [mailSettings] = useMailSettings();
     const history = useHistory();
@@ -118,17 +118,8 @@ export const useOptimisticMarkAs = () => {
 
             if (testIsMessage(element)) {
                 const message = element as Message;
-                const localID = getLocalID(messageCache, message.ID);
 
-                // Update in message cache
-                const messageFromCache = messageCache.get(localID);
-
-                if (messageFromCache && messageFromCache.data) {
-                    messageCache.set(localID, {
-                        ...messageFromCache,
-                        data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
-                    });
-                }
+                dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
 
                 // Update in conversation cache
                 const conversationState = getConversation(message.ConversationID);
@@ -203,16 +194,7 @@ export const useOptimisticMarkAs = () => {
                             return;
                         }
 
-                        const localID = getLocalID(messageCache, message.ID);
-
-                        // Update in message cache
-                        const messageFromCache = messageCache.get(localID);
-                        if (messageFromCache && messageFromCache.data) {
-                            messageCache.set(localID, {
-                                ...messageFromCache,
-                                data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
-                            });
-                        }
+                        dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
                     });
                 }
             }
@@ -224,7 +206,7 @@ export const useOptimisticMarkAs = () => {
             // So we manually update the elements cache to mark these ids to bypass the filter logic
             // This will last as long as the cache is not reset (cf useElements shouldResetCache)
             const conversationMode = isConversationMode(labelID, mailSettings, history.location);
-            dispatch(optimisticMarkAsAction({ elements: updatedElements, bypass: true, conversationMode }));
+            dispatch(optimisticMarkAsElementAction({ elements: updatedElements, bypass: true, conversationMode }));
         }
 
         globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });

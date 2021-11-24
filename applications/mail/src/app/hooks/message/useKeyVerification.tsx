@@ -3,8 +3,8 @@ import { useAddresses, useNotifications } from '@proton/components';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import * as React from 'react';
 import DecryptionErrorNotification from '../../components/notifications/DecryptionErrorNotification';
-import { MessageExtendedWithData } from '../../models/message';
 import { getMessageDecryptionKeyFromAddress } from '../../helpers/message/messageDecrypt';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 export const useKeyVerification = () => {
     const { createNotification, hideNotification } = useNotifications();
@@ -15,7 +15,7 @@ export const useKeyVerification = () => {
      * If we find the key, and there is a decryption error, it means that the key is disabled, and that the password has been reset
      * The notification is displayed once per key and per browser, so that for every password change we display a notification, without spamming the user
      */
-    const verifyKeys = async (message: MessageExtendedWithData) => {
+    const verifyKeys = async (message: MessageStateWithData) => {
         const address = addresses.find((address) => address.ID === message.data.AddressID);
 
         if (!address) {

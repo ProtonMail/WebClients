@@ -1,13 +1,9 @@
 import { unique } from '@proton/shared/lib/helpers/array';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
-import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { DecryptResultPmcrypto } from 'pmcrypto';
 import { ENCRYPTED_STATUS } from '../../constants';
-import { MessageCache } from '../../containers/MessageProvider';
-import { MessageEmbeddedImage, MessageKeys, MessageVerification, PartialMessageExtended } from '../../models/message';
-import { get } from '../attachment/attachmentLoader';
+import { LoadEmbeddedResults, MessageEmbeddedImage, PartialMessageState } from '../../logic/messages/messagesTypes';
 import { UploadResult } from '../attachment/attachmentUploader';
 import { hash, toUnsignedString } from '../string';
 import { querySelectorAll } from './messageContent';
@@ -124,7 +120,7 @@ export const findEmbedded = (cid: string, cloc: string, document: Element) => {
         selector = [...selector, `img[proton-src="${cloc}"]`];
     }
 
-    return querySelectorAll({ document }, selector.join(', '));
+    return querySelectorAll({ messageDocument: { document } }, selector.join(', '));
 };
 
 /**
@@ -141,7 +137,7 @@ export const findCIDsInContent = (content: string) =>
  * Insert actual src="cid:..." into embedded image elements
  */
 export const insertActualEmbeddedImages = (document: Element) => {
-    querySelectorAll({ document }, '[data-embedded-img]').forEach((element) => {
+    querySelectorAll({ messageDocument: { document } }, '[data-embedded-img]').forEach((element) => {
         const cidOrCloc = element.getAttribute('data-embedded-img');
         element.removeAttribute('data-embedded-img');
         element.removeAttribute('proton-src');
@@ -158,7 +154,7 @@ export const insertActualEmbeddedImages = (document: Element) => {
  * Replace attachments in embedded images with new ones
  */
 export const replaceEmbeddedAttachments = (
-    message: PartialMessageExtended,
+    message: PartialMessageState,
     attachments: Attachment[] | undefined = []
 ) => {
     const embeddedImages = getEmbeddedImages(message);
@@ -207,7 +203,7 @@ export const markEmbeddedImagesAsLoaded = (
     loadResults: { attachment: Attachment; blob: string }[]
 ) => {
     return embeddedImages.map((image) => {
-        const result = loadResults.find((loadResult) => loadResult.attachment === image.attachment);
+        const result = loadResults.find((loadResult) => loadResult.attachment.ID === image.attachment.ID);
         if (result) {
             return { ...image, url: result?.blob, status: 'loaded' as 'loaded' };
         }
@@ -220,13 +216,7 @@ export const markEmbeddedImagesAsLoaded = (
  */
 export const decryptEmbeddedImages = (
     images: MessageEmbeddedImage[],
-    localID: string,
-    messageVerification: MessageVerification | undefined,
-    messageKeys: MessageKeys,
-    messageCache: MessageCache,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
-    api: Api
+    onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>
 ) => {
     const attachments = unique(
         images
@@ -242,36 +232,7 @@ export const decryptEmbeddedImages = (
         return image;
     });
 
-    const download = async () => {
-        const results = await Promise.all(
-            attachments.map(async (attachment) => {
-                const buffer = await get(
-                    attachment,
-                    messageVerification,
-                    messageKeys,
-                    getAttachment,
-                    onUpdateAttachment,
-                    api
-                );
-                return {
-                    attachment,
-                    blob: createBlob(attachment, buffer.data as Uint8Array),
-                };
-            })
-        );
-
-        const message = messageCache.get(localID);
-        if (message && message.messageImages) {
-            const embeddedImages = getEmbeddedImages(message);
-            const updatedEmbeddedImages = markEmbeddedImagesAsLoaded(embeddedImages, results);
-            const messageImages = updateImages(message.messageImages, undefined, undefined, updatedEmbeddedImages);
-            messageCache.set(localID, { ...message, messageImages });
-        }
-
-        return results;
-    };
-
-    const downloadPromise = download();
+    const downloadPromise = onLoadEmbeddedImages(attachments);
 
     return { updatedImages, downloadPromise };
 };

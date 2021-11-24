@@ -8,13 +8,13 @@ import { useFolders, useHotkeys, useMailSettings, HotkeyTuple, useEventManager }
 import { isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { Element } from '../../models/element';
-import { MessageExtended } from '../../models/message';
 import { useMoveToFolder, useStar } from '../useApplyLabels';
 import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 import { useFolderNavigationHotkeys } from '../mailbox/useFolderNavigationHotkeys';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { isConversationMode } from '../../helpers/mailSettings';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -26,7 +26,7 @@ enum ARROW_SCROLL_DIRECTIONS {
 export interface MessageHotkeysContext {
     labelID: string;
     conversationIndex: number;
-    message: MessageExtended;
+    message: MessageState;
     messageLoaded: boolean;
     bodyLoaded: boolean;
     expanded: boolean;
@@ -96,7 +96,8 @@ export const useMessageHotkeys = (
     };
 
     const isMessageReady = messageLoaded && bodyLoaded;
-    const hotkeysEnabledAndMessageReady = Shortcuts && isMessageReady && expanded && message.initialized;
+    const hotkeysEnabledAndMessageReady =
+        Shortcuts && isMessageReady && expanded && message.messageDocument?.initialized;
 
     const isScheduledMessage = message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SCHEDULED);
 

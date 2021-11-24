@@ -1,9 +1,9 @@
 import { useHandler } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import { useRef } from 'react';
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
 import { usePromise } from '../usePromise';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 interface AutoSaveArgs {
     onMessageAlreadySent?: () => void;
@@ -13,7 +13,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     const pendingAutoSave = usePromise<void>();
     const pendingSave = usePromise<void>();
     const pauseDebouncer = useRef<boolean>(false);
-    const lastCall = useRef<MessageExtended>();
+    const lastCall = useRef<MessageState>();
 
     const saveDraft = useSaveDraft({ onMessageAlreadySent });
     const deleteDraftSource = useDeleteDraft();
@@ -21,7 +21,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     let pause: () => void;
     let restart: () => void;
 
-    const actualSave = useHandler(async (message: MessageExtended) => {
+    const actualSave = useHandler(async (message: MessageState) => {
         pause();
 
         try {
@@ -33,7 +33,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
         try {
             lastCall.current = undefined;
             pendingSave.renew();
-            await saveDraft(message as MessageExtendedWithData);
+            await saveDraft(message as MessageStateWithData);
         } finally {
             pendingSave.resolver();
             restart();
@@ -41,7 +41,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     });
 
     const debouncedHandler = useHandler(
-        (message: MessageExtended) => {
+        (message: MessageState) => {
             pendingAutoSave.resolver();
             return actualSave(message);
         },
@@ -55,11 +55,11 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     restart = useHandler(() => {
         pauseDebouncer.current = false;
         if (lastCall.current !== undefined) {
-            void debouncedHandler(lastCall.current as MessageExtended);
+            void debouncedHandler(lastCall.current as MessageState);
         }
     });
 
-    const pausableHandler = useHandler((message: MessageExtended) => {
+    const pausableHandler = useHandler((message: MessageState) => {
         if (!pendingAutoSave.isPending) {
             pendingAutoSave.renew();
         }
@@ -77,12 +77,12 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
 
     pausableHandler.abort = abort;
 
-    const saveNow = (message: MessageExtended) => {
+    const saveNow = (message: MessageState) => {
         abort();
         return actualSave(message);
     };
 
-    const deleteDraft = useHandler(async (message: MessageExtended) => {
+    const deleteDraft = useHandler(async (message: MessageState) => {
         abort();
 
         try {
@@ -101,7 +101,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     });
 
     return {
-        autoSave: pausableHandler as ((message: MessageExtended) => Promise<void>) & Abortable,
+        autoSave: pausableHandler as ((message: MessageState) => Promise<void>) & Abortable,
         saveNow,
         deleteDraft,
         pendingSave,

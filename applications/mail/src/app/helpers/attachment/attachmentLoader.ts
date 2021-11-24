@@ -14,7 +14,7 @@ import { decodeBase64 } from '@proton/shared/lib/helpers/base64';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
-import { MessageKeys, MessageVerification } from '../../models/message';
+import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
 

@@ -74,7 +74,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
     const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
         onCompose({
             action: MESSAGE_ACTIONS.NEW,
-            referenceMessage: { data: { ToList: emails }, initialAttachments: attachments },
+            referenceMessage: { data: { ToList: emails }, draftFlags: { initialAttachments: attachments } },
         });
     };
 

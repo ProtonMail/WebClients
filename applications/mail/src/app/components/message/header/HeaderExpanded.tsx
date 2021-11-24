@@ -22,7 +22,6 @@ import { isInternal, isOutbox, isScheduled } from '@proton/shared/lib/mail/messa
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
@@ -36,7 +35,6 @@ import HeaderExtra from './HeaderExtra';
 import RecipientsSimple from '../recipients/RecipientsSimple';
 import RecipientsDetails from '../recipients/RecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import { MessageExtended } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderExpandedDetails from './HeaderExpandedDetails';
@@ -49,13 +47,14 @@ import { isSelfAddress } from '../../../helpers/addresses';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     labelID: string;
     conversationMode: boolean;
     labels?: Label[];
     mailSettings: MailSettings;
-    message: MessageExtended;
+    message: MessageState;
     messageViewIcons: MessageViewIcons;
     isSentMessage: boolean;
     messageLoaded: boolean;
@@ -104,7 +103,7 @@ const HeaderExpanded = ({
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const selectedIDs = [message.data?.ID || ''];
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
-    const isSendingMessage = message.sending;
+    const isSendingMessage = message.draftFlags?.sending;
     const isOutboxMessage = isOutbox(message.data);
     const { feature } = useFeature(FeatureCode.SpyTrackerProtection);
 

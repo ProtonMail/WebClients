@@ -1,10 +1,10 @@
 import { render } from '../../../helpers/test/helper';
-import { MessageErrors, MessageExtended } from '../../../models/message';
+import { MessageErrors, MessageState } from '../../../logic/messages/messagesTypes';
 import ExtraErrors from './ExtraErrors';
 
 describe('Errors banner', () => {
     const setup = async (errors: MessageErrors) => {
-        const message = { localID: 'localID', errors } as MessageExtended;
+        const message = { localID: 'localID', errors } as MessageState;
         const { getByTestId } = await render(<ExtraErrors message={message} />);
         return getByTestId('errors-banner');
     };

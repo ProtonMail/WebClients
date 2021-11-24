@@ -15,7 +15,6 @@ import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
 import { isMessage as testIsMessage } from '../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../helpers/message/messages';
@@ -196,6 +195,8 @@ export const useApplyLabels = () => {
                 return;
             }
 
+            let undoing = false;
+
             const isMessage = testIsMessage(elements[0]);
             const labelAction = isMessage ? labelMessages : labelConversations;
             const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
@@ -222,8 +223,10 @@ export const useApplyLabels = () => {
                         })
                     );
                 } finally {
-                    start();
-                    await call();
+                    if (!undoing) {
+                        start();
+                        await call();
+                    }
                 }
                 return tokens;
             };
@@ -233,10 +236,11 @@ export const useApplyLabels = () => {
 
             const handleUndo = async () => {
                 try {
+                    undoing = true;
+                    const tokens = await promise;
                     // Stop the event manager to prevent race conditions
                     stop();
                     Object.values(rollbacks).forEach((rollback) => rollback());
-                    const tokens = await promise;
                     const filteredTokens = tokens.filter(isTruthy);
                     await Promise.all(filteredTokens.map((token) => api(undoActions(token))));
                 } finally {
@@ -335,6 +339,8 @@ export const useMoveToFolder = () => {
                 return;
             }
 
+            let undoing = false;
+
             const isMessage = testIsMessage(elements[0]);
 
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
@@ -367,8 +373,10 @@ export const useMoveToFolder = () => {
                 } catch (error: any) {
                     rollback();
                 } finally {
-                    start();
-                    await call();
+                    if (!undoing) {
+                        start();
+                        await call();
+                    }
                 }
                 return token;
             };
@@ -388,10 +396,11 @@ export const useMoveToFolder = () => {
 
                 const handleUndo = async () => {
                     try {
+                        undoing = true;
+                        const token = await promise;
                         // Stop the event manager to prevent race conditions
                         stop();
                         rollback();
-                        const token = await promise;
                         await api(undoActions(token));
                     } finally {
                         start();
