@@ -9,9 +9,10 @@ import { render } from '../../../helpers/test/render';
 import { Breakpoints } from '../../../models/utils';
 import MessageView, { MessageViewRef } from '../MessageView';
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
-import { MessageExtended, PartialMessageExtended } from '../../../models/message';
-import { messageCache } from '../../../helpers/test/cache';
 import { mergeMessages } from '../../../helpers/message/messages';
+import { MessageState, PartialMessageState } from '../../../logic/messages/messagesTypes';
+import { store } from '../../../logic/store';
+import { initialize } from '../../../logic/messages/read/messagesReadActions';
 
 loudRejection();
 
@@ -54,8 +55,8 @@ export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMi
             ref.current?.expand();
             // Wait for message initialization to be finished before continuing
             await waitFor(() => {
-                const message = messageCache.get(props.message.ID);
-                expect(message?.initialized).toBe(true);
+                const message = store.getState().messages[props.message.ID];
+                expect(message?.messageDocument?.initialized).toBe(true);
             });
         });
     };
@@ -75,15 +76,15 @@ export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMi
     return { ...renderResult, ref, open, details, rerender };
 };
 
-export const initMessage = (inputMessage: PartialMessageExtended = {}) => {
+export const initMessage = (inputMessage: PartialMessageState = {}) => {
     const defaultMessage = {
         localID: messageID,
         data: { ID: messageID, AddressID: addressID, Subject: 'test' },
-        initialized: true,
+        messageDocument: { initialized: true },
         verification: {},
-    } as MessageExtended;
+    } as MessageState;
 
     const message = mergeMessages(defaultMessage, inputMessage);
 
-    messageCache.set(messageID, message);
+    store.dispatch(initialize(message));
 };

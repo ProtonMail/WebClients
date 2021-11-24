@@ -1,27 +1,25 @@
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences } from '@proton/components';
-import { MessageExtended } from '../../models/message';
+import { useDispatch } from 'react-redux';
 import { loadMessage } from '../../helpers/message/messageRead';
-import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
+import { useGetMessage } from './useMessage';
+import { MessageState } from '../../logic/messages/messagesTypes';
+import { resign } from '../../logic/messages/read/messagesReadActions';
 
 export const useResignContact = (localID: string) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
-    const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
+    const dispatch = useDispatch();
     const api = useApi();
 
     return useCallback(async () => {
-        const messageFromCache = messageCache.get(localID) as MessageExtended;
-        const message = await loadMessage(messageFromCache, api);
+        const messageFromState = getMessage(localID) as MessageState;
+        const message = await loadMessage(messageFromState, api);
         const address = message.data.Sender?.Address;
-        if (!address || !messageFromCache.verification) {
+        if (!address || !messageFromState.verification) {
             return;
         }
         const { isContactSignatureVerified } = await getEncryptionPreferences(address);
-        updateMessageCache(messageCache, localID, {
-            verification: {
-                ...messageFromCache.verification,
-                senderVerified: isContactSignatureVerified,
-            },
-        });
+        dispatch(resign({ ID: localID, isContactSignatureVerified }));
     }, [localID]);
 };

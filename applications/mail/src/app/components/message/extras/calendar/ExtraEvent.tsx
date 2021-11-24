@@ -34,15 +34,13 @@ import {
     UPDATE_ACTION,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
-
-import { MessageExtendedWithData } from '../../../../models/message';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
 import ExtraEventHeader from './ExtraEventHeader';
 import ExtraEventSummary from './ExtraEventSummary';
 import ExtraEventWarning from './ExtraEventWarning';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
-
+import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
 import './CalendarWidget.scss';
 
 const {
@@ -55,7 +53,7 @@ const {
 } = EVENT_INVITATION_ERROR_TYPE;
 
 interface Props {
-    message: MessageExtendedWithData;
+    message: MessageStateWithData;
     invitationOrError: EventInvitation | EventInvitationError;
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;

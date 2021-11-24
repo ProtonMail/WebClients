@@ -15,11 +15,10 @@ import {
 import { c } from 'ttag';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { markAsHam } from '@proton/shared/lib/api/messages';
-
-import { MessageExtended } from '../../../models/message';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
 }
 
 const ExtraSpamScore = ({ message }: Props) => {

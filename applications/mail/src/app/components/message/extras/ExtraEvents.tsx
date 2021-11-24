@@ -30,7 +30,6 @@ import {
     useUserSettings,
 } from '@proton/components';
 import { useDispatch } from 'react-redux';
-import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
 import {
     EventInvitation,
@@ -41,14 +40,15 @@ import {
 import { isNetworkError } from '../../../helpers/errors';
 import { getMessageHasData } from '../../../helpers/message/messages';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { MessageErrors, MessageExtended } from '../../../models/message';
 import ExtraEvent from './calendar/ExtraEvent';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../../../hooks/useAttachment';
 import { getOrCreatePersonalCalendarsAndSettings } from '../../../helpers/calendar/inviteApi';
+import { MessageStateWithData, MessageErrors } from '../../../logic/messages/messagesTypes';
+import { errors as errorsAction } from '../../../logic/messages/read/messagesReadActions';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageStateWithData;
 }
 const ExtraEvents = ({ message }: Props) => {
     const api = useApi();
@@ -56,7 +56,7 @@ const ExtraEvents = ({ message }: Props) => {
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
-    const messageCache = useMessageCache();
+    // const messageCache = useMessageCache();
     const getCalendars = useGetCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails();
     const [addresses = [], loadingAddresses] = useAddresses();
@@ -135,9 +135,9 @@ const ExtraEvents = ({ message }: Props) => {
                         return 0;
                     });
 
-                const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
-                    dispatch(updateAttachment({ ID, attachment }));
-                };
+                    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+                        dispatch(updateAttachment({ ID, attachment }));
+                    };
 
                     const invitations = (
                         await Promise.all(
@@ -219,7 +219,7 @@ const ExtraEvents = ({ message }: Props) => {
             } else {
                 errors.unknown = [error];
             }
-            updateMessageCache(messageCache, message.localID, { errors });
+            dispatch(errorsAction({ ID: message.localID, errors }));
         }
     }, [message.data, message.errors, loadingConfigs, message.data?.ID]);
 

@@ -1,15 +1,11 @@
 import { useApi, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { EventUpdates } from '../../logic/elements/elementsTypes';
 import { ElementEvent, Event, ConversationEvent, MessageEvent } from '../../models/event';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { eventUpdates, invalidate } from '../../logic/elements/elementsActions';
-import {
-    isLive as isLiveSelector,
-    elementIDs as elementIDsSelector,
-    isES as isESSelector,
-} from '../../logic/elements/elementsSelectors';
+import { isLive as isLiveSelector, isES as isESSelector } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { RootState } from '../../logic/store';
 import { SearchParameters } from '../../models/tools';
@@ -19,8 +15,8 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
     const { getESDBStatus } = useEncryptedSearchContext();
     const esDBStatus = getESDBStatus();
 
+    const store = useStore<RootState>();
     const dispatch = useDispatch();
-    const elementIDs = useSelector(elementIDsSelector);
     const isLive = useSelector(isLiveSelector);
     const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
 
@@ -67,6 +63,9 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
             },
             { toCreate: [], toUpdate: [], toDelete: [] }
         );
+
+        // Not the elements ids "in view" but all in the cache
+        const elementIDs = Object.keys(store.getState().elements.elements);
 
         const { toUpdate, toLoad } = toUpdateOrLoad
             .filter(({ ID = '' }) => !toDelete.includes(ID)) // No need to get deleted element

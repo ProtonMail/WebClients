@@ -1,28 +1,30 @@
 import { c } from 'ttag';
 import { useEventManager, useHandler, useMailSettings, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
+import { useDispatch } from 'react-redux';
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
     SendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MapSendInfo } from '../../models/crypto';
-import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { PromiseHandlers } from '../usePromise';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
+import { useGetMessage } from '../message/useMessage';
 
 export interface UseSendHandlerParameters {
-    modelMessage: MessageExtended;
+    modelMessage: MessageState;
     ensureMessageContent: () => void;
     mapSendInfo: MapSendInfo;
     promiseUpload: Promise<void>;
     pendingSave: PromiseHandlers<void>;
     pendingAutoSave: PromiseHandlers<void>;
-    autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
-    saveNow: (message: MessageExtended) => Promise<void>;
+    autoSave: ((message: MessageState) => Promise<void>) & Abortable;
+    saveNow: (message: MessageState) => Promise<void>;
     onClose: () => void;
     onMessageAlreadySent: () => void;
     handleNoRecipients?: () => void;
@@ -47,6 +49,8 @@ export const useSendHandler = ({
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
+    const dispatch = useDispatch();
+    const getMessage = useGetMessage();
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications(
         handleNoRecipients,
@@ -58,8 +62,6 @@ export const useSendHandler = ({
 
     const onCompose = useOnCompose();
 
-    const messageCache = useMessageCache();
-
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
         let verificationResults;
         let inputMessage;
@@ -69,27 +71,27 @@ export const useSendHandler = ({
         try {
             await pendingSave.promise; // Wait for potential ongoing save request
 
-            verificationResults = await extendedVerifications(modelMessage as MessageExtendedWithData, mapSendInfo);
+            verificationResults = await extendedVerifications(modelMessage as MessageStateWithData, mapSendInfo);
             mapSendPrefs = verificationResults.mapSendPrefs;
+            inputMessage = verificationResults.cleanMessage;
 
-            const messageFromCache = messageCache.get(modelMessage.localID);
-            alreadySaved =
-                !!messageFromCache?.data?.ID && !pendingAutoSave.isPending && !verificationResults.hasChanged;
-            autoSave.abort?.(); // Save will take place in the send process
-            inputMessage = alreadySaved
-                ? (messageFromCache as MessageExtendedWithData)
-                : verificationResults.cleanMessage;
+            alreadySaved = !!inputMessage.data.ID && !pendingAutoSave.isPending && !verificationResults.hasChanged;
+            autoSave.abort?.();
 
             // sendMessage expect a saved and up to date message
             // If there is anything new or pending, we have to make a last save
             if (!alreadySaved) {
                 await saveNow(inputMessage);
                 await call();
+
+                if (!inputMessage.data.ID) {
+                    inputMessage.data = (getMessage(inputMessage.localID) as MessageStateWithData).data;
+                }
             }
-        } catch (error) {
+        } catch {
             hideNotification(notifManager.ID);
             onCompose({ existingDraft: modelMessage, fromUndo: true });
-            throw error;
+            return;
         }
 
         try {
@@ -131,13 +133,14 @@ export const useSendHandler = ({
     });
 
     const handleSend = useHandler(async () => {
-        const { localID, scheduledAt } = modelMessage;
+        const { localID, draftFlags } = modelMessage;
+        const { scheduledAt } = draftFlags || {};
         const notifManager = createSendingMessageNotificationManager();
 
         // If scheduledAt is set we already performed the preliminary verifications
         if (!scheduledAt) {
             try {
-                await preliminaryVerifications(modelMessage as MessageExtendedWithData);
+                await preliminaryVerifications(modelMessage as MessageStateWithData);
             } catch (error: any) {
                 if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
                     onMessageAlreadySent();
@@ -152,9 +155,8 @@ export const useSendHandler = ({
                 <SendingMessageNotification
                     scheduledAt={scheduledAt}
                     manager={notifManager}
-                    localID={localID}
-                    messageCache={messageCache}
                     viewMode={mailSettings?.ViewMode || 0}
+                    message={modelMessage.data}
                 />
             ),
             expiration: -1,
@@ -164,7 +166,7 @@ export const useSendHandler = ({
         ensureMessageContent();
 
         try {
-            updateMessageCache(messageCache, localID, { sending: true });
+            dispatch(startSending(localID));
 
             // Closing the composer instantly, all the send process will be in background
             onClose();
@@ -189,7 +191,7 @@ export const useSendHandler = ({
                 // Receive all updates about the current message before "releasing" it to prevent any flickering
                 await call();
                 // Whatever happens once the composer is closed, the sending flag is reset when finished
-                updateMessageCache(messageCache, localID, { sending: false });
+                dispatch(endSending(localID));
             };
             void asyncFinally();
         }

@@ -61,7 +61,7 @@ describe('Composer sending', () => {
         it('text/plain clear', async () => {
             const message = prepareMessage({
                 localID: ID,
-                plainText: 'test',
+                messageDocument: { plainText: 'test' },
                 data: { MIMEType: MIME_TYPES.PLAINTEXT },
             });
 
@@ -81,12 +81,12 @@ describe('Composer sending', () => {
 
             const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
 
-            expect(decryptResult.data).toBe(message.plainText);
+            expect(decryptResult.data).toBe(message.messageDocument?.plainText);
         });
 
         it('text/plain self', async () => {
             const message = prepareMessage({
-                plainText: 'test',
+                messageDocument: { plainText: 'test' },
                 data: { MIMEType: MIME_TYPES.PLAINTEXT, ToList: [{ Name: '', Address: fromAddress }] },
             });
 
@@ -115,11 +115,14 @@ describe('Composer sending', () => {
 
             const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
 
-            expect(decryptResult.data).toBe(message.plainText);
+            expect(decryptResult.data).toBe(message.messageDocument?.plainText);
         });
 
         it('text/plain pgp internal', async () => {
-            const message = prepareMessage({ plainText: 'test', data: { MIMEType: MIME_TYPES.PLAINTEXT } });
+            const message = prepareMessage({
+                messageDocument: { plainText: 'test' },
+                data: { MIMEType: MIME_TYPES.PLAINTEXT },
+            });
 
             addApiKeys(true, toAddress, [toKeys]);
 
@@ -138,11 +141,14 @@ describe('Composer sending', () => {
 
             const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
 
-            expect(decryptResult.data).toBe(message.plainText);
+            expect(decryptResult.data).toBe(message.messageDocument?.plainText);
         });
 
         it('multipart/mixed pgp external', async () => {
-            const message = prepareMessage({ plainText: 'test', data: { MIMEType: MIME_TYPES.PLAINTEXT } });
+            const message = prepareMessage({
+                messageDocument: { plainText: 'test' },
+                data: { MIMEType: MIME_TYPES.PLAINTEXT },
+            });
 
             addApiKeys(false, toAddress, [toKeys]);
 
@@ -161,7 +167,7 @@ describe('Composer sending', () => {
 
             const decryptResult = await decryptMessageMultipart(pack, toKeys.privateKeys, sessionKey);
 
-            expect(decryptResult.data).toBe(message.plainText);
+            expect(decryptResult.data).toBe(message.messageDocument?.plainText);
             expect(decryptResult.mimeType).toBe(message.data.MIMEType);
         });
 
@@ -169,7 +175,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = prepareMessage({
-                document: createDocument(content),
+                messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -199,7 +205,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = prepareMessage({
-                document: createDocument(content),
+                messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -230,7 +236,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = prepareMessage({
-                document: createDocument(content),
+                messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -258,7 +264,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = prepareMessage({
-                document: createDocument(content),
+                messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -288,7 +294,7 @@ describe('Composer sending', () => {
             const content = 'test';
 
             const message = prepareMessage({
-                document: createDocument(content),
+                messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
@@ -319,7 +325,7 @@ describe('Composer sending', () => {
             const document = window.document.createElement('div');
             document.innerHTML = content;
 
-            const message = prepareMessage({ document, data: { MIMEType: MIME_TYPES.DEFAULT } });
+            const message = prepareMessage({ messageDocument: { document }, data: { MIMEType: MIME_TYPES.DEFAULT } });
 
             minimalCache();
             addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
@@ -357,7 +363,7 @@ describe('Composer sending', () => {
                 fromKeys.publicKeys
             );
             const message = prepareMessage({
-                document: createDocument(content),
+                messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
 
@@ -391,7 +397,7 @@ describe('Composer sending', () => {
                 fromKeys.publicKeys
             );
             const message = prepareMessage({
-                document: createDocument(content),
+                messageDocument: { document: createDocument(content) },
                 data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
 
@@ -440,7 +446,7 @@ describe('Composer sending', () => {
             document.innerHTML = content;
 
             const message = prepareMessage({
-                document,
+                messageDocument: { document },
                 messageImages,
                 data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
@@ -469,7 +475,10 @@ describe('Composer sending', () => {
     });
 
     it('should not encrypt message with multiple keys', async () => {
-        const message = prepareMessage({ plainText: 'test', data: { MIMEType: MIME_TYPES.PLAINTEXT } });
+        const message = prepareMessage({
+            messageDocument: { plainText: 'test' },
+            data: { MIMEType: MIME_TYPES.PLAINTEXT },
+        });
 
         addKeysToAddressKeysCache(message.data.AddressID, secondFromKeys);
         addApiKeys(true, toAddress, [toKeys]);
@@ -497,7 +506,7 @@ describe('Composer sending', () => {
         const squireContent = 'squire-test';
 
         const message = prepareMessage({
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
             data: { MIMEType: MIME_TYPES.DEFAULT },
         });
 

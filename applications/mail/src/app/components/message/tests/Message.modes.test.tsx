@@ -38,7 +38,11 @@ describe('Message display modes', () => {
     it('source mode on processing error', async () => {
         const decryptedBody = 'decrypted-test';
 
-        initMessage({ data: { Body: 'test' }, errors: { processing: [new Error('test')] }, decryptedBody });
+        initMessage({
+            data: { Body: 'test' },
+            errors: { processing: [new Error('test')] },
+            decryption: { decryptedBody },
+        });
 
         const { getByTestId } = await setup();
 

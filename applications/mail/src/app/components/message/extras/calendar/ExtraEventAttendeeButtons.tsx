@@ -24,14 +24,14 @@ import {
     UPDATE_ACTION,
 } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
-import { MessageExtended } from '../../../../models/message';
+import { MessageState } from '../../../../logic/messages/messagesTypes';
 
 const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = EVENT_INVITATION_ERROR_TYPE;
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     setModel: Dispatch<SetStateAction<InvitationModel>>;
-    message: MessageExtended;
+    message: MessageState;
 }
 const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     const {

@@ -8,16 +8,16 @@ import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import { MessageExtended } from '../../../models/message';
 import ItemExpiration from '../../list/ItemExpiration';
 import ItemAction from '../../list/ItemAction';
 import { Breakpoints } from '../../../models/utils';
 import RecipientItem from '../recipients/RecipientItem';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     labelID: string;
     labels?: Label[];
-    message: MessageExtended;
+    message: MessageState;
     messageLoaded: boolean;
     isSentMessage: boolean;
     isUnreadMessage: boolean;
@@ -46,8 +46,8 @@ const HeaderCollapsed = ({
         onExpand();
     };
 
-    const isDraftMessage = isDraft(message.data) && !message.sending;
-    const isOutboxMessage = isOutbox(message.data) || message.sending;
+    const isDraftMessage = isDraft(message.data) && !message.draftFlags?.sending;
+    const isOutboxMessage = isOutbox(message.data) || message.draftFlags?.sending;
     const isScheduledMessage = isScheduled(message.data);
 
     return (

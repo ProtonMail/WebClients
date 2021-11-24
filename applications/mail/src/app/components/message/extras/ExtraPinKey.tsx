@@ -23,8 +23,8 @@ import {
 import { c } from 'ttag';
 import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';
-import { MessageVerification } from '../../../models/message';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
+import { MessageVerification } from '../../../logic/messages/messagesTypes';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 
@@ -142,7 +142,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
             return undefined;
         }
         return getPromptKeyPinningType({ messageVerification, mailSettings, addresses, senderAddress });
-    }, [message, mailSettings, addresses, senderAddress]);
+    }, [messageVerification, mailSettings, addresses, senderAddress]);
     const isPinUnseen = promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
     const firstAttachedPublicKey = messageVerification?.attachedPublicKeys?.length
         ? messageVerification.attachedPublicKeys[0]

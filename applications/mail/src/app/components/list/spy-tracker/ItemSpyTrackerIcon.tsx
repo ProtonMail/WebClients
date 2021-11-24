@@ -1,14 +1,12 @@
 import { useRef } from 'react';
 import { c } from 'ttag';
 import { FeatureCode, Spotlight, useSpotlightOnFeature, classnames, Href, Tooltip } from '@proton/components';
-import * as React from 'react';
-import { MessageExtended } from '../../../models/message';
-
+import { MessageState } from '../../../logic/messages/messagesTypes';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import SpyTrackerIcon from './SpyTrackerIcon';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     className?: string;
 }
 

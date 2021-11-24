@@ -2,19 +2,35 @@ import { configureStore } from '@reduxjs/toolkit';
 import elements from './elements/elementsSlice';
 import attachments from './attachments/attachmentsSlice';
 import conversations from './conversations/conversationsSlice';
+import messages from './messages/messagesSlice';
 
 export const store = configureStore({
     reducer: {
         elements,
         conversations,
         attachments,
+        messages,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
+            // Serialization checks have to be restored
+            // But we need some kind of regex ignore capacities
             serializableCheck: {
+                // Ignore these field paths in state
+                // ignoredPaths: [],
+
+                // TODO
                 ignoreState: true,
+
                 // Ignore these field paths in all actions
-                ignoredActionPaths: ['payload.abortController', 'meta.arg.api', 'payload.attachment'],
+                ignoredActionPaths: [
+                    'meta.arg',
+                    'payload.abortController',
+                    'payload.preparation',
+                    'payload.decryption',
+                    'payload',
+                    'payload.attachment',
+                ],
             },
         }),
 });

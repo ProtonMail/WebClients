@@ -6,7 +6,6 @@ import { Alert, ConfirmModal, useApi, useModals } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { useMessageCache } from '../containers/MessageProvider';
 import {
     Download,
     formatDownload,
@@ -14,10 +13,11 @@ import {
     generateDownload,
     generateDownloadAll,
 } from '../helpers/attachment/attachmentDownloader';
-import { MessageExtendedWithData } from '../models/message';
 import { useGetMessageKeys } from './message/useGetMessageKeys';
 import { updateAttachment } from '../logic/attachments/attachmentsActions';
 import { useGetAttachment } from './useAttachment';
+import { MessageStateWithData } from '../logic/messages/messagesTypes';
+import { useGetMessage } from './message/useMessage';
 
 const useShowConfirmModal = () => {
     const { createModal } = useModals();
@@ -82,11 +82,11 @@ const useShowConfirmModal = () => {
  * sender address can be desynchronized from the attachment key packets
  */
 const useSyncedMessageKeys = () => {
-    const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
 
     return (localID: string) => {
-        const messageFromCache = messageCache.get(localID) as MessageExtendedWithData;
+        const messageFromCache = getMessage(localID) as MessageStateWithData;
         return getMessageKeys(messageFromCache.data);
     };
 };
@@ -103,7 +103,7 @@ export const useDownload = () => {
     };
 
     return useCallback(
-        async (message: MessageExtendedWithData, attachment: Attachment) => {
+        async (message: MessageStateWithData, attachment: Attachment) => {
             const messageKeys = await getMessageKeys(message.localID);
             const download = await formatDownload(
                 attachment,
@@ -137,7 +137,7 @@ export const useDownloadAll = () => {
     };
 
     return useCallback(
-        async (message: MessageExtendedWithData) => {
+        async (message: MessageStateWithData) => {
             const messageKeys = await getMessageKeys(message.localID);
             const attachments = getAttachments(message.data);
             const list = await formatDownloadAll(
@@ -175,7 +175,7 @@ export const usePreview = () => {
     };
 
     return useCallback(
-        async (message: MessageExtendedWithData, attachment: Attachment) => {
+        async (message: MessageStateWithData, attachment: Attachment) => {
             const messageKeys = await getMessageKeys(message.localID);
             const download = await formatDownload(
                 attachment,

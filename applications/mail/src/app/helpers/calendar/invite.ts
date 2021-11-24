@@ -63,7 +63,7 @@ import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
 import { getUnixTime } from 'date-fns';
 import { serverTime } from 'pmcrypto';
-import { MessageExtendedWithData } from '../../models/message';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {
@@ -400,7 +400,7 @@ interface ProcessedInvitation<T> {
 }
 export const processEventInvitation = <T>(
     invitation: EventInvitation & T,
-    message: MessageExtendedWithData,
+    message: MessageStateWithData,
     contactEmails: ContactEmail[],
     ownAddresses: Address[]
 ): ProcessedInvitation<T> => {
@@ -478,7 +478,7 @@ export const processEventInvitation = <T>(
 
 interface GetInitialInvitationModelArgs {
     invitationOrError: EventInvitation | EventInvitationError;
-    message: MessageExtendedWithData;
+    message: MessageStateWithData;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     calendar?: Calendar;

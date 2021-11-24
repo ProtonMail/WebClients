@@ -1,10 +1,13 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { addApiMock, messageCache } from '../../../helpers/test/helper';
-import { MessageExtendedWithData } from '../../../models/message';
+import { addApiMock, clearAll } from '../../../helpers/test/helper';
+import { initialize } from '../../../logic/messages/read/messagesReadActions';
+import { store } from '../../../logic/store';
 import { messageID, addressID, setup, initMessage } from './Message.test.helpers';
 
 describe('message state', () => {
+    afterEach(clearAll);
+
     it('should initialize message in cache if not existing', async () => {
         const Message = {
             ID: messageID,
@@ -17,7 +20,7 @@ describe('message state', () => {
 
         await setup();
 
-        const messageFromCache = messageCache.get(messageID);
+        const messageFromCache = store.getState().messages[messageID];
         expect(messageFromCache).toBeDefined();
         expect(messageFromCache?.data).toEqual(Message);
     });
@@ -32,25 +35,24 @@ describe('message state', () => {
 
         expect(apiMock).not.toHaveBeenCalled();
     });
+
     it('should handle switching of message', async () => {
         const ID1 = 'ID1';
         const ID2 = 'ID2';
 
-        messageCache.set(ID1, {
+        const message1 = {
             localID: ID1,
             data: { ID: ID1, Body: 'something', MIMEType: MIME_TYPES.PLAINTEXT } as Message,
-            initialized: true,
-            plainText: 'Body1',
-        });
-        messageCache.set(ID2, {
+            messageDocument: { initialized: true, plainText: 'Body1' },
+        };
+        const message2 = {
             localID: ID2,
             data: { ID: ID2, Body: 'something', MIMEType: MIME_TYPES.PLAINTEXT } as Message,
-            initialized: true,
-            plainText: 'Body2',
-        });
+            messageDocument: { initialized: true, plainText: 'Body2' },
+        };
 
-        const message1 = messageCache.get(ID1) as MessageExtendedWithData;
-        const message2 = messageCache.get(ID2) as MessageExtendedWithData;
+        store.dispatch(initialize(message1));
+        store.dispatch(initialize(message2));
 
         const { rerender, getByText } = await setup({ message: message1.data });
         getByText('Body1');

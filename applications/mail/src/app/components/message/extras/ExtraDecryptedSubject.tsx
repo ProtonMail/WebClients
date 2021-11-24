@@ -1,14 +1,13 @@
 import { Icon, Tooltip } from '@proton/components';
 import { c } from 'ttag';
-
-import { MessageExtended } from '../../../models/message';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
 }
 
 const ExtraDecryptedSubject = ({ message }: Props) => {
-    if (message.data?.Subject !== '...' || !message.decryptedSubject) {
+    if (message.data?.Subject !== '...' || !message.decryption?.decryptedSubject) {
         return null;
     }
 
@@ -26,7 +25,7 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
                     />
                 </Tooltip>
                 <div className="mr0-5">
-                    {c('Info').t`Subject:`} {message.decryptedSubject}
+                    {c('Info').t`Subject:`} {message.decryption?.decryptedSubject}
                 </div>
             </div>
         </div>

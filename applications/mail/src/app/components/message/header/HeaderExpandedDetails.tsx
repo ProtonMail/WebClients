@@ -7,7 +7,6 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { Element } from '../../../models/element';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
-import { MessageExtended } from '../../../models/message';
 import { getCurrentFolders, isCustomLabel } from '../../../helpers/labels';
 import { getAttachmentCounts } from '../../../helpers/message/messages';
 import { getSize } from '../../../helpers/elements';
@@ -17,12 +16,13 @@ import ItemLocation from '../../list/ItemLocation';
 import SpyTrackerIcon from '../../list/spy-tracker/SpyTrackerIcon';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     labelID: string;
     labels?: Label[];
     mailSettings: MailSettings;
-    message: MessageExtended;
+    message: MessageState;
     messageViewIcons: MessageViewIcons;
     onAttachmentIconClick: () => void;
 }

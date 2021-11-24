@@ -2,21 +2,19 @@ import { getSender, hasAttachments } from '@proton/shared/lib/mail/messages';
 import { useEffect } from 'react';
 import { FormModal } from '@proton/components';
 import { c } from 'ttag';
-
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { MessageExtendedWithData } from '../../../models/message';
 import MessageBody from '../MessageBody';
 import RecipientsDetails from '../recipients/RecipientsDetails';
 import ItemDate from '../../list/ItemDate';
 import MessageFooter from '../MessageFooter';
 import RecipientType from '../recipients/RecipientType';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import './MessagePrint.scss';
 
 interface Props {
     labelID: string;
-    message: MessageExtendedWithData;
+    message: MessageStateWithData;
     onClose?: () => void;
 }
 

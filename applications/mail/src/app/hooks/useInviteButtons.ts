@@ -153,7 +153,7 @@ const useInviteButtons = ({
                 return false;
             }
             try {
-                deleteCalendarEventFromInvitation({ calendarEventID: reinviteEventID, calendarData, api });
+                void deleteCalendarEventFromInvitation({ calendarEventID: reinviteEventID, calendarData, api });
                 return true;
             } catch (error: any) {
                 onUnexpectedError();

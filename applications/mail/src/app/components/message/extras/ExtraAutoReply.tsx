@@ -1,11 +1,10 @@
 import { Icon, Href } from '@proton/components';
 import { c } from 'ttag';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';
-
-import { MessageExtended } from '../../../models/message';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
 }
 
 const ExtraAutoReply = ({ message }: Props) => {

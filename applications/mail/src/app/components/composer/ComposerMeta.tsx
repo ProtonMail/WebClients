@@ -2,14 +2,14 @@ import { useState, ChangeEvent, MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { Label, Input, generateUID, classnames } from '@proton/components';
 import ComposerAddresses from './addresses/Addresses';
-import { MessageExtended } from '../../models/message';
 import { MessageChange } from './Composer';
 import { MessageSendInfo } from '../../hooks/useSendInfo';
 import SelectSender from './addresses/SelectSender';
 import ExtraExpirationTime from '../message/extras/ExtraExpirationTime';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
     onChange: MessageChange;

@@ -12,9 +12,9 @@ import {
     MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
-import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import { RequestParams, upload as uploadHelper, Upload } from '../upload';
+import { MessageKeys, MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 
@@ -55,7 +55,7 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], p
  */
 const uploadFile = (
     file: File,
-    message: MessageExtendedWithData,
+    message: MessageStateWithData,
     messageKeys: MessageKeys,
     inline: boolean,
     uid: string,
@@ -109,7 +109,7 @@ const uploadFile = (
  */
 export const upload = (
     files: File[] = [],
-    message: MessageExtendedWithData,
+    message: MessageStateWithData,
     messageKeys: MessageKeys,
     action = ATTACHMENT_ACTION.ATTACHMENT,
     uid: string,
@@ -124,7 +124,7 @@ export const upload = (
 /**
  * Is current attachments plus eventual files to upload will exceed the max size
  */
-export const isSizeExceeded = (message: MessageExtended, files: File[] = []) => {
+export const isSizeExceeded = (message: MessageState, files: File[] = []) => {
     const attachments = getAttachments(message.data);
     const attachmentsSize = attachments.reduce((acc, attachment) => acc + (attachment.Size || 0), 0);
     const filesSize = files.reduce((acc, file) => acc + (file.size || 0), 0);

@@ -2,14 +2,13 @@ import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { fireEvent } from '@testing-library/dom';
 import { createDocument } from '../../../helpers/test/message';
-import { MessageExtended } from '../../../models/message';
 import { defaultProps, initMessage, setup } from './Message.test.helpers';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import MessageView from '../MessageView';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 jest.mock('../../../helpers/dom', () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    return { preloadImage: async (url: string) => {} };
+    return { preloadImage: jest.fn(() => Promise.resolve()) };
 });
 
 describe('Message images', () => {
@@ -50,12 +49,12 @@ describe('Message images', () => {
 
         const document = createDocument(content);
 
-        const message: MessageExtended = {
+        const message: MessageState = {
             localID: 'messageID',
             data: {
                 ID: 'messageID',
             } as Message,
-            document,
+            messageDocument: { document },
             messageImages: {
                 hasEmbeddedImages: false,
                 hasRemoteImages: true,

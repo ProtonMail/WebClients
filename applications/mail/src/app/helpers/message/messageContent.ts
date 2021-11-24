@@ -1,15 +1,14 @@
 import { MailSettings, Address } from '@proton/shared/lib/interfaces';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
-
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';
 import { textToHtml } from '../textToHtml';
 import { parseInDiv } from '../dom';
+import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
 
-export const getPlainTextContent = (message: PartialMessageExtended) => {
-    return message.plainText || '';
+export const getPlainTextContent = (message: PartialMessageState) => {
+    return message.messageDocument?.plainText || '';
 };
 
 export const getDocumentContent = (document: Element | undefined) => {
@@ -20,16 +19,20 @@ export const getDocumentContent = (document: Element | undefined) => {
 /**
  * Get current processed message document html content
  */
-export const getContent = (message: PartialMessageExtended) => {
+export const getContent = (message: PartialMessageState) => {
     if (isPlainText(message.data)) {
         return getPlainTextContent(message);
     }
 
-    return getDocumentContent(message.document);
+    return getDocumentContent(message.messageDocument?.document);
 };
 
-export const setPlainTextContent = (message: MessageExtended, content: string) => {
-    message.plainText = content;
+export const setPlainTextContent = (message: MessageState, content: string) => {
+    if (message.messageDocument) {
+        message.messageDocument.plainText = content;
+    } else {
+        message.messageDocument = { plainText: content };
+    }
 };
 
 export const setDocumentContent = (document: Element | undefined, content: string) => {
@@ -45,11 +48,16 @@ export const setDocumentContent = (document: Element | undefined, content: strin
 /**
  * Set current processed message document html
  */
-export const setContent = (message: MessageExtended, content: string) => {
+export const setContent = (message: MessageState, content: string) => {
     if (isPlainText(message.data)) {
         setPlainTextContent(message, content);
     } else {
-        message.document = setDocumentContent(message.document, content);
+        const document = setDocumentContent(message.messageDocument?.document, content);
+        if (message.messageDocument) {
+            message.messageDocument.document = document;
+        } else {
+            message.messageDocument = { document };
+        }
     }
 };
 
@@ -65,7 +73,7 @@ export const exportPlainText = (content: string) => {
  * Generates/Gets the plaintext body from the message. If the message is not composed in plaintext, it will downconvert
  * the html body to plaintext if downconvert is set. If downconvert is disabled it will return false.
  */
-export const getPlainText = (message: MessageExtended, downconvert: boolean) => {
+export const getPlainText = (message: MessageState, downconvert: boolean) => {
     if (isPlainText(message.data)) {
         return getPlainTextContent(message);
     }
@@ -90,6 +98,6 @@ export const plainTextToHTML = (
     return textToHtml(plainTextContent, sender?.Signature || '', mailSettings);
 };
 
-export const querySelectorAll = (message: Partial<MessageExtended> | undefined, selector: string) => [
-    ...((message?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
+export const querySelectorAll = (message: Partial<MessageState> | undefined, selector: string) => [
+    ...((message?.messageDocument?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
 ];

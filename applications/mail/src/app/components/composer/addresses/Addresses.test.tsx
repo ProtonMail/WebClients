@@ -1,15 +1,14 @@
 import { MutableRefObject } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-
 import { fireEvent, getAllByRole } from '@testing-library/dom';
 import { act, getByText } from '@testing-library/react';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { addApiMock, addToCache, clearAll, getModal, minimalCache, render } from '../../../helpers/test/helper';
 import Addresses from './Addresses';
-import { MessageExtended } from '../../../models/message';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { mergeMessages } from '../../../helpers/message/messages';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 const email1 = 'test@test.com';
 const email2 = 'test2@test.com';
@@ -63,7 +62,7 @@ const contactEmails: ContactEmail[] = [
     },
 ];
 
-const message: MessageExtended = {
+const message: MessageState = {
     localID: 'localId',
     data: {
         AddressID: 'AddressID',

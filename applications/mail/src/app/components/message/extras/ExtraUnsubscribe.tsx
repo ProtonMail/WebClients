@@ -22,15 +22,16 @@ import { c } from 'ttag';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { oneClickUnsubscribe, markAsUnsubscribed } from '@proton/shared/lib/api/messages';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
 import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { findSender } from '../../../helpers/addresses';
 import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
 import { useOnCompose } from '../../../containers/ComposeProvider';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
+import { useGetMessage } from '../../../hooks/message/useMessage';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
 }
 
 const ExtraUnsubscribe = ({ message }: Props) => {
@@ -41,6 +42,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const [addresses] = useAddresses();
     const { extendedVerifications: sendVerification } = useSendVerifications();
     const saveDraft = useSaveDraft();
+    const getMessage = useGetMessage();
     const sendMessage = useSendMessage();
     const [loading, withLoading] = useLoading();
     const onCompose = useOnCompose();
@@ -144,26 +146,29 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 );
             });
 
-            const inputMessage: PartialMessageExtended = {
+            const inputMessage: PartialMessageState = {
                 localID: generateUID('unsubscribe'),
-                autoSaveContacts: 0, // Unsubscribe request should not save "to" address in contact list
-                plainText: Body,
+                draftFlags: { autoSaveContacts: 0 }, // Unsubscribe request should not save "to" address in contact list
+                messageDocument: { plainText: Body },
                 data: {
                     AddressID: from.ID,
                     Subject,
                     Sender: { Address: senderAddress, Name: senderName },
-                    ToList: ToList.map((email) => ({
+                    ToList: ToList.map((email: string) => ({
                         Address: email,
                         Name: email,
                     })),
                     CCList: [],
                     BCCList: [],
                     MIMEType: MIME_TYPES.PLAINTEXT,
+                    Attachments: [],
                 },
             };
 
-            const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData, {});
+            const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageStateWithData, {});
             await saveDraft(cleanMessage);
+            const message = getMessage(cleanMessage.localID) as MessageStateWithData;
+            cleanMessage.data = message.data;
             await sendMessage({ inputMessage: cleanMessage, mapSendPrefs, onCompose });
         } else if (unsubscribeMethods.HttpClient) {
             await new Promise<void>((resolve, reject) => {

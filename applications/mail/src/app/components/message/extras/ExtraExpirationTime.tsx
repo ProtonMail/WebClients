@@ -1,16 +1,15 @@
 import { classnames, Icon } from '@proton/components';
-
-import { MessageExtended } from '../../../models/message';
 import { useExpiration } from '../../../hooks/useExpiration';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     marginBottom?: boolean;
 }
 
 const ExtraExpirationTime = ({ message, marginBottom = true }: Props) => {
     const [isExpiration, delayMessage] = useExpiration(message);
-    const isExpiringDraft = !!message.expiresIn;
+    const isExpiringDraft = !!message.draftFlags?.expiresIn;
 
     if (!isExpiration) {
         return null;

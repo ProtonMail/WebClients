@@ -1,8 +1,8 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { protonizer, sanitizeString } from '@proton/shared/lib/sanitize';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { PartialMessageExtended } from '../models/message';
 import { MAILTO_PROTOCOL_HANDLER_PATH } from '../constants';
+import { PartialMessageState } from '../logic/messages/messagesTypes';
 
 /**
  * Split an addresses string to a list of recipients
@@ -18,7 +18,7 @@ export const toAddresses = (emailsStr: string): Recipient[] => {
  * @param Mailto string to parse
  * @return Partial message formated from mailto string
  */
-export const mailtoParser = (mailto: string): PartialMessageExtended => {
+export const mailtoParser = (mailto: string): PartialMessageState => {
     if (mailto.toLowerCase().indexOf('mailto:') !== 0) {
         return {};
     }
@@ -65,7 +65,7 @@ export const mailtoParser = (mailto: string): PartialMessageExtended => {
         decryptedBody = decodeURIComponent(protonizer(searchObject.body, true).innerHTML);
     }
 
-    return { data: message, decryptedBody };
+    return { data: message, decryption: { decryptedBody } };
 };
 
 export const registerMailToProtocolHandler = () => {

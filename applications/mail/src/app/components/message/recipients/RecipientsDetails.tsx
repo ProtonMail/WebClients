@@ -1,13 +1,12 @@
 import { c } from 'ttag';
-
-import { MessageExtended } from '../../../models/message';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientType from './RecipientType';
 import RecipientItem from './RecipientItem';
 import RecipientsList from './RecipientsList';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
     highlightKeywords?: boolean;

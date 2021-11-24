@@ -10,10 +10,10 @@ import { render } from '../../../helpers/test/render';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { setFeatureFlags } from '../../../helpers/test/api';
-import { MessageExtended } from '../../../models/message';
 import { getModal } from '../../../helpers/test/helper';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
-const messageWithTrackers: MessageExtended = {
+const messageWithTrackers: MessageState = {
     localID: 'messageWithTrackerId',
     messageImages: {
         hasEmbeddedImages: true,
@@ -43,7 +43,7 @@ const messageWithTrackers: MessageExtended = {
     },
 };
 
-const messageWithoutTrackers: MessageExtended = {
+const messageWithoutTrackers: MessageState = {
     localID: 'messageWithoutTrackerId',
     messageImages: {
         hasEmbeddedImages: true,

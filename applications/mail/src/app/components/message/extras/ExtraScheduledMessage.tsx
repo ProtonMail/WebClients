@@ -5,11 +5,11 @@ import { cancelSend } from '@proton/shared/lib/api/messages';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { formatDateToHuman } from '../../../helpers/date';
-import { MessageExtended } from '../../../models/message';
 import { useOnCompose } from '../../../containers/ComposeProvider';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
 }
 const ExtraScheduledMessage = ({ message }: Props) => {
     const api = useApi();

@@ -8,8 +8,8 @@ import {
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { base64ToArray, arrayToBase64 } from '../base64';
 import { generateSessionKey, encryptSessionKey, GeneratedKey } from './crypto';
-import { MessageEmbeddedImage, MessageImage } from '../../models/message';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
+import { MessageEmbeddedImage, MessageImage } from '../../logic/messages/messagesTypes';
 
 export const createDocument = (content: string): Element => {
     const document = window.document.createElement('div');

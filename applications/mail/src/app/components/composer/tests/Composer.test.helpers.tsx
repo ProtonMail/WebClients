@@ -2,14 +2,15 @@ import squire from 'squire-rte';
 import { fireEvent, RenderResult } from '@testing-library/react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mergeMessages } from '../../../helpers/message/messages';
-import { messageCache } from '../../../helpers/test/cache';
 import { addApiKeys, apiKeys } from '../../../helpers/test/crypto';
-import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../../models/message';
 import Composer from '../Composer';
 import { render } from '../../../helpers/test/render';
 import { Breakpoints } from '../../../models/utils';
 import { addApiMock, parseFormData } from '../../../helpers/test/api';
 import { waitForNoNotification, waitForNotification } from '../../../helpers/test/helper';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
+import { store } from '../../../logic/store';
+import { initialize } from '../../../logic/messages/read/messagesReadActions';
 
 // Fake timers fails for the complexe send action
 // These more manual trick is used to skip undo timing
@@ -42,7 +43,7 @@ export const props = {
     isFocused: true,
 };
 
-export const prepareMessage = (message: PartialMessageExtended) => {
+export const prepareMessage = (message: PartialMessageState) => {
     const baseMessage = {
         localID: 'localID',
         data: {
@@ -55,14 +56,16 @@ export const prepareMessage = (message: PartialMessageExtended) => {
             BCCList: [],
             Attachments: [],
         } as Partial<Message>,
-        initialized: true,
-    } as MessageExtendedWithData;
+        messageDocument: {
+            initialized: true,
+        },
+    } as MessageStateWithData;
 
     const resultMessage = mergeMessages(baseMessage, message);
 
-    messageCache.set(resultMessage.localID, resultMessage);
+    store.dispatch(initialize(resultMessage));
 
-    return resultMessage as MessageExtendedWithData;
+    return resultMessage as MessageStateWithData;
 };
 
 export const renderComposer = async (localID: string, useMinimalCache = true) => {
@@ -95,7 +98,7 @@ export const clickSend = async (renderResult: RenderResult) => {
     return sendRequest;
 };
 
-export const send = async (message: MessageExtended, useMinimalCache = true) => {
+export const send = async (message: MessageState, useMinimalCache = true) => {
     try {
         if (!apiKeys.has(toAddress)) {
             addApiKeys(false, toAddress, []);
