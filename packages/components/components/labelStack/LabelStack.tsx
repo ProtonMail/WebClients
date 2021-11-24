@@ -1,5 +1,4 @@
 import { MouseEvent } from 'react';
-import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 import { COLORS } from '@proton/shared/lib/calendar/constants';
 import { classnames } from '../../helpers';
@@ -41,13 +40,8 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
                         label.color
                             ? {
                                   '--background': label.color,
-                                  '--foreground': tinycolor
-                                      .mostReadable(label.color, [COLORS.BLACK, COLORS.WHITE], {
-                                          includeFallbackColors: false,
-                                          level: 'AAA',
-                                          size: 'small',
-                                      })
-                                      .toHexString(),
+                                  // TODO: Use white for now, re-introduce the readability calculation as soon as possible
+                                  '--foreground': COLORS.WHITE,
                               }
                             : undefined
                     }
