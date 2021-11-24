@@ -1,6 +1,5 @@
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
-import { getMessageHasData } from '../../../helpers/message/messages';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
@@ -15,7 +14,7 @@ import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
 import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
 import ExtraDarkStyle from '../extras/ExtraDarkStyle';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;
@@ -74,9 +73,8 @@ const HeaderExtra = ({
                     mailSettings={mailSettings}
                 />
             )}
-            {/* TODO: Add error boundary for the email reminder widget */}
-            {messageLoaded && getMessageHasData(message) && received && <EmailReminderWidget message={message} />}
-            {messageLoaded && getMessageHasData(message) && received ? <ExtraEvents message={message} /> : null}
+            {messageLoaded && received && <EmailReminderWidget message={message.data} errors={message.errors} />}
+            {messageLoaded && received ? <ExtraEvents message={message as MessageStateWithData} /> : null}
             {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
         </section>
     );

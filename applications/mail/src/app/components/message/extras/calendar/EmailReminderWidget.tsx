@@ -36,12 +36,14 @@ import urlify from '@proton/shared/lib/calendar/urlify';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
-import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
+import { MessageErrors } from '../../../../logic/messages/messagesTypes';
 
 import './CalendarWidget.scss';
 
@@ -49,17 +51,18 @@ const EVENT_NOT_FOUND_ERROR = 'EVENT_NOT_FOUND';
 const DECRYPTION_ERROR = 'DECRYPTION_ERROR';
 
 interface EmailReminderWidgetProps {
-    message: MessageStateWithData;
+    message?: Pick<Message, 'ID' | 'ParsedHeaders'>;
+    errors?: MessageErrors;
 }
 
-const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
-    const calendarIdHeader = getParsedHeadersFirstValue(message.data, 'X-Pm-Calendar-Calendarid');
-    const eventIdHeader = getParsedHeadersFirstValue(message.data, 'X-Pm-Calendar-Eventid');
-    const occurrenceHeader = getParsedHeadersFirstValue(message.data, 'X-Pm-Calendar-Occurrence');
-    const sequenceHeader = getParsedHeadersFirstValue(message.data, 'X-Pm-Calendar-Sequence');
-    const eventUIDHeader = getParsedHeadersFirstValue(message.data, 'X-Pm-Calendar-Eventuid');
-    const eventIsRecurringHeader = getParsedHeadersFirstValue(message.data, 'X-Pm-Calendar-Eventisrecurring');
-    const recurrenceIdHeader = getParsedHeadersFirstValue(message.data, 'X-Pm-Calendar-Recurrenceid');
+const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
+    const calendarIdHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Calendarid');
+    const eventIdHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Eventid');
+    const occurrenceHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Occurrence');
+    const sequenceHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Sequence');
+    const eventUIDHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Eventuid');
+    const eventIsRecurringHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Eventisrecurring');
+    const recurrenceIdHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Recurrenceid');
 
     const [vevent, setVevent] = useState<VcalVeventComponent>();
     const [calendar, setCalendar] = useState<Calendar>();
@@ -68,7 +71,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<React.ReactNode>(null);
-    const [loadedWidget, setLoadedWidget] = useState('');
+    const [loadedWidget, setLoadedWidget] = useState<string>();
 
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -79,7 +82,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
 
     const isMounted = useIsMounted();
 
-    const messageHasDecryptionError = !!message.errors?.decryption?.length;
+    const messageHasDecryptionError = !!errors?.decryption?.length;
 
     useEffect(() => {
         void (async () => {
@@ -96,7 +99,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                 setLoadedWidget('');
                 return;
             }
-            if (loadedWidget === message.data.ID) {
+            if (loadedWidget === message?.ID) {
                 return;
             }
             let calendarData;
@@ -272,11 +275,11 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
             } finally {
                 if (isMounted()) {
                     setIsLoading(false);
-                    setLoadedWidget(message.data.ID);
+                    setLoadedWidget(message?.ID);
                 }
             }
         })();
-    }, [calendarIdHeader, eventIdHeader, messageHasDecryptionError, message.data?.ID]);
+    }, [calendarIdHeader, eventIdHeader, messageHasDecryptionError, message?.ID]);
 
     const sanitizedAndUrlifiedLocation = useMemo(() => {
         const trimmedLocation = vevent?.location?.value?.trim();
