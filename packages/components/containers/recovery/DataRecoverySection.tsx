@@ -70,8 +70,23 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
     return (
         <SettingsSection>
             <SettingsParagraph>
-                {c('Info')
-                    .t`After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.`}
+                {c('Info').t`After a password reset your data is locked in encrypted form to keep it safe.`}{' '}
+                {(() => {
+                    if (isMnemonicAvailable && isRecoveryFileAvailable) {
+                        return c('Info')
+                            .t`To decrypt and view your emails and other data, you need a recovery file or recovery phrase.`;
+                    }
+
+                    if (isMnemonicAvailable) {
+                        return c('Info').t`To decrypt and view your emails and other data, you need a recovery phrase.`;
+                    }
+
+                    if (isRecoveryFileAvailable) {
+                        return c('Info').t`To decrypt and view your emails and other data, you need a recovery file.`;
+                    }
+
+                    return '';
+                })()}
             </SettingsParagraph>
 
             {isRecoveryFileAvailable && (
@@ -80,7 +95,7 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
                         <p className="color-danger">
                             <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
                             {c('Warning')
-                                .t`Your recovery file is outdated and can't recover new data should you reset your account again.`}
+                                .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}
                         </p>
                     )}
                     <SettingsLayout>
@@ -110,15 +125,15 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
                 </>
             )}
 
+            {isMnemonicAvailable && isRecoveryFileAvailable && <hr className="mb2 mt2" />}
+
             {isMnemonicAvailable && (
                 <>
-                    <hr className="mb2 mt2" />
-
                     {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
                         <p className="color-danger">
                             <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
                             {c('Warning')
-                                .t`Your recovery phrase is outdated and can't recover new data should you reset your account again.`}
+                                .t`Your recovery phrase is outdated. It can't recover new data if you reset your account again.`}
                         </p>
                     )}
 
