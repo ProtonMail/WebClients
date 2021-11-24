@@ -1,5 +1,31 @@
 @import '~@proton/styles/scss/config';
 
+body.embedded {
+	font-size: 1em;
+	background: none;
+
+	.dropdown {
+		background: none;
+		padding: 10%;
+	}
+
+	.modal-overlay {
+		background: none;
+	}
+}
+
+body.vpn,
+.ui-standard,
+.ui-prominent {
+	--primary: #4da358 !important;
+	--primary-contrast: white !important;
+
+	--interaction-norm: #4da358 !important;
+	--interaction-norm-hover: #3e8447 !important;
+	--interaction-norm-active: #2e7037 !important;
+	--interaction-norm-contrast: white !important;
+}
+
 .hv {
 	background: url(./mountains.svg) 0 0 no-repeat;
 	background-size: cover;

@@ -8,8 +8,10 @@ import { Alert, Button, Href, LearnMore, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
 import useNotifications from '../../../hooks/useNotifications';
 import useLoading from '../../../hooks/useLoading';
+import useModals from '../../../hooks/useModals';
 import { VerificationModel } from './interface';
 import { getRoute } from './helper';
+import RequestNewCodeModal from "./RequestNewCodeModal";
 import Captcha from './Captcha';
 import EmailMethodForm from './EmailMethodForm';
 import PhoneMethodForm from './PhoneMethodForm';
@@ -53,6 +55,7 @@ const HumanVerificationForm = ({
 }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
+    const { createModal } = useModals();
     const [loadingResend, withLoadingResend] = useLoading();
 
     const verificationRef = useRef<VerificationModel | undefined>(undefined);
@@ -182,7 +185,15 @@ const HumanVerificationForm = ({
             <VerifyCodeForm
                 verification={verificationModel}
                 onSubmit={verifyToken}
-                onNoReceive={() => onChangeStep(HumanVerificationSteps.REQUEST_NEW_CODE)}
+                onNoReceive={() => {
+                    createModal(
+                        <RequestNewCodeModal
+                            onEdit={handleEditDestination}
+                            onResend={handleResend}
+                            verificationModel={verificationModel}
+                        />
+                    );
+                }}
             />
         );
     }
@@ -222,60 +233,7 @@ const HumanVerificationForm = ({
         );
     }
 
-    if (step === HumanVerificationSteps.REQUEST_NEW_CODE && verificationModel) {
-        const strong = <strong key="email">{verificationModel.value}</strong>;
-
-        return (
-            <>
-                <p className="mt0">
-                    {verificationModel.method === 'email'
-                        ? c('Info')
-                              .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this email address is incorrect, click "Edit" to correct it.`
-                        : c('Info')
-                              .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this phone number is incorrect, click "Edit" to correct it.`}
-                </p>
-                <Button
-                    size="large"
-                    color="norm"
-                    type="button"
-                    fullWidth
-                    loading={loadingResend}
-                    onClick={async () => {
-                        await withLoadingResend(handleResend());
-                        onChangeStep(HumanVerificationSteps.VERIFY_CODE);
-                    }}
-                >
-                    {c('Action').t`Request new code`}
-                </Button>
-                <Button
-                    className="mt0-5"
-                    size="large"
-                    color="weak"
-                    type="button"
-                    onClick={handleEditDestination}
-                    disabled={loadingResend}
-                    fullWidth
-                >
-                    {verificationModel.method === 'email'
-                        ? c('Action').t`Edit email address`
-                        : c('Action').t`Edit phone number`}
-                </Button>
-                <Button
-                    className="mt0-5"
-                    size="large"
-                    color="weak"
-                    type="button"
-                    onClick={() => onChangeStep(HumanVerificationSteps.VERIFY_CODE)}
-                    disabled={loadingResend}
-                    fullWidth
-                >
-                    {c('Action').t`Cancel`}
-                </Button>
-            </>
-        );
-    }
-
-    return <Tabs tabs={tabs} value={index} onChange={setIndex} />;
+    return <Tabs fullWidth tabs={tabs} value={index} onChange={setIndex} />;
 };
 
 export default HumanVerificationForm;

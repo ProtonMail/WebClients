@@ -11,7 +11,7 @@ import CountrySelectRow from './CountrySelectRow';
 interface Props {
     options: CountryOptionData[];
     value?: CountryOptionData;
-    compact?: boolean;
+    embedded?: boolean;
     onChange: (newValue: CountryOptionData) => void;
     onClosed?: (isFromSelection: boolean) => void;
 }
@@ -22,7 +22,7 @@ const cache = new CellMeasurerCache({
     keyMapper: () => 0,
 });
 
-const CountrySelect = ({ value, options, onChange, compact, onClosed }: Props) => {
+const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) => {
     const anchorRef = useRef<HTMLButtonElement>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState('');
@@ -47,8 +47,7 @@ const CountrySelect = ({ value, options, onChange, compact, onClosed }: Props) =
                 as="button"
                 type="button"
                 isOpen={isOpen}
-                hasCaret={!compact}
-                disabled={compact}
+                hasCaret
                 onClick={() => {
                     pickRef.current = false;
                     setIsOpen(!isOpen);
@@ -74,11 +73,9 @@ const CountrySelect = ({ value, options, onChange, compact, onClosed }: Props) =
                         />
                     )}
                 </span>
-                {!compact && (
-                    <span className="min-w3e inline-flex" dir="ltr">
-                        +{value ? value.countryCallingCode : '00'}
-                    </span>
-                )}
+                <span className="min-w3e inline-flex" dir="ltr">
+                    +{value ? value.countryCallingCode : '00'}
+                </span>
             </DropdownButton>
 
             <Dropdown
@@ -128,7 +125,7 @@ const CountrySelect = ({ value, options, onChange, compact, onClosed }: Props) =
                         id="search-keyword"
                         value={search}
                         onValue={setSearch}
-                        autoFocus
+                        autoFocus={!embedded}
                         placeholder="Country"
                         icon={<Icon name="magnifying-glass" />}
                     />
