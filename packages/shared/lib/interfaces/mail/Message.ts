@@ -1,5 +1,5 @@
-import { MIME_TYPES } from '../../constants';
 import { Recipient } from '../Address';
+import { MIME_TYPES } from '../../constants';
 
 export interface AttachmentInfo {
     inline?: number;
