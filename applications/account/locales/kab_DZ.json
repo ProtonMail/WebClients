@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ Name }@pm.me": [
         "Rmed ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Rmed tasarut n tuddsa"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Rnu"
@@ -205,9 +208,6 @@
       "Copy link": [
         "Nɣel aseɣwen"
       ],
-      "Create": [
-        "Asnulfu"
-      ],
       "Create a secure ProtonMail address instead": [
         "Rnu tansa n ProtonMail taɣellsant deg ubdil"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "Sifeḍ tasarut"
       ],
-      "Export private key": [
-        "Sifeḍ tasarut tusligt"
-      ],
       "Font": [
         "Tasefsit"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Ddu ɣer ufeggag ${ index }"
-      ],
-      "here": [
-        "dagi"
       ],
       "Hide": [
         "Ffer"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Sbadu catch-all"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Bḍu s useɣwen"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "Beddel amiḍan"
       ],
+      "Switch to rich text": [
+        ""
+      ],
       "Top up": [
         "Afellay alamma"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Serreḥ"
       ],
+      "Unlock data": [
+        ""
+      ],
       "Unordered list": [
         "Tabdart war amizzwer"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Mucceḍ"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Lqem"
@@ -914,9 +923,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Tisura n uwgelhen i tansa-ik·im ha-tan la ttusrwent. Aya ad yeṭṭef kra n tesdidin yerna ad ssegres iminig-ik·im i kra n wakud."
-      ],
       "The key for your address is now being deleted.": [
         "Tasarut n tansa-inek·inem ha-tt-an la tettwakkas akka tura."
       ]
@@ -1299,8 +1305,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "",
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
         ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
@@ -1834,6 +1839,10 @@
       "Could not find address ${ email }.": [
         "Ur nezmir ara ad d-naff tansa ${ email }."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         ""
@@ -1943,6 +1952,9 @@
       ],
       "No active sessions": [
         "Ulac tiɣimiyin turmidin"
+      ],
+      "No data to import": [
+        ""
       ],
       "No valid address found": [
         "Ur d-nufi ara tansa yeɣtan"
@@ -2065,6 +2077,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Isem n ukaram ɣezzif aṭas. Ttxil fren isem-nniḍen."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        ""
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        ""
+      ],
       "The label name is too long. Please choose a different name.": [
         "Isem n tebzimt ɣezzif aṭas. Ttxil fren isem-nniḍen."
       ],
@@ -2111,9 +2129,6 @@
         "Addad n ujiṭun n uxelleṣ d arussin"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
         ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
@@ -2166,9 +2181,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } yessefrak akter n yiwitayen s iCal lqem 2.0 kan."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Tella tuccḍa deg tɣuri n ufaylu-inek·inem ${ formattedFilename }. Afaylu ur yesɛi ara amasal i ilaqen."
       ],
@@ -3070,6 +3082,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
       ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        ""
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } ad yettusbadu d awitay amezwer."
       ],
@@ -3189,9 +3204,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Internet baṭel, ur nettwagzam ara ilaq ad tili i meṛṛa imdanen."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Termed yakan tsarut i tansa-a s ulguritm n uwgelhen yecban wa. Asirew n tsarut nniḍen ad yessaẓi asali n umiḍan, ma d tukksa n tsarut-a tezmer ad d-teglu s wuguren. Ma yella tessaraweḍ-d tsarut nniḍen imi tasarut-ik taqburt tettwaker, ma ulac aɣilif creḍ tasarut-nni tettwaker. Tetḥeqqqeḍ belli tebɣiḍ ad tkemmeleḍ?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         ""
       ],
@@ -3297,9 +3309,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yahoo yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin n wumlan n Marikan akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
       ],
-      "Are you sure you want to continue?": [
-        "D tidet tebɣiḍ ad t-tkemmleḍ?"
-      ],
       "Are you sure you want to delete this address?": [
         "Tebɣiḍ ad tekkseḍ tansa-agi?"
       ],
@@ -3401,9 +3410,6 @@
       ],
       "Center": [
         "Slemmes"
-      ],
-      "Change your default in settings": [
-        "Beddel amezwer-ik·im deg yiɣewwaren"
       ],
       "Check the status of current and previous imports.": [
         "Senqed addaden n waktaren imiranen d wid yezrin."
@@ -3551,6 +3557,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Imaylen i icerḍen s tebzimt-a ur ttwakkasen ara, tzemreḍ ad ten-tafeḍ deg yikaramen i asen-ittunefken."
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        ""
+      ],
       "Encryption setting updated": [
         "Iɣewwaren n uwgelhen ttwaleqqmen"
       ],
@@ -3568,12 +3577,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Sekcem awal uffir n tuddsa i tiririt n tseglutin n unedbal. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Sekcem ${ recoveryMethodText } n tririt yeddukklen akked umiḍan ${ BRAND_NAME } inek m. Ad ak·am-nazen tangalt akken ad tsentmeḍ alus n uwennez n wawal uffir."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Sekcem tafyirt-ik·im n tririt i terriḍ i umiḍan-ik·im ${ BRAND_NAME }."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
@@ -3701,12 +3704,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Ma tkemmleḍ deg usader n lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ProtoVPN."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Ma yella tkemmleḍ, ad tettusutreḍ ad twennzeḍ awal-ik·im uffir yerna ad d-tettwasuffɣeḍ seg merra tiɣimiyin iremden."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Ma yella tkemmleḍ, ad twennzeḍ awal-ik·im uffir yerna ad d-tettwasuffɣeḍ seg merra tiɣimiyin iremden."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Ma tebɣiḍ ad teǧǧeḍ akalas SPF i yellan, rnu kan ${ spf } ɣur-s seld ${ spfValue }. Ur rennu ara ikalasen usgiten SPF."
       ],
@@ -3801,9 +3798,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Tasarut s udsil umḍin ${ fp } tettwakkes."
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Tasarut s udsil umḍin ${ fp } tettwarna akken iwata."
-      ],
       "Label all imported messages as": [
         "Creḍ ɣef meṛṛa iznan yettwaketren d"
       ],
@@ -3891,7 +3885,7 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
+      "No account recovery method set; you are at risk of losing access to your account": [
         ""
       ],
       "No action selected": [
@@ -3903,7 +3897,7 @@
       "No contact encryption keys exist": [
         "Ulac tisura n uwgelhen n unermas i yellan"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
+      "No data recovery method set; you are at risk of losing access to your data": [
         ""
       ],
       "No folder selected": [
@@ -3995,6 +3989,9 @@
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
         "Sekcem awal n uɛeddi iwakken ad tewglehneḍ tasarut-ik tusligt send ad tt-tsifḍeḍ."
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -4099,6 +4096,9 @@
       "Recovery phrase has been disabled": [
         "Tafyirt n tririt tettwasens"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        ""
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
@@ -4132,7 +4132,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Server is currently down": [
@@ -4219,6 +4219,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Tamahlt-a tella kan i yiseqdacen n uswir alqayan. Seld tukksa n tsarut-a, UR tettizmireḍ ARA ad tekkseḍ awgelhen i yiznan i icudden ɣur-s. Aya yezmer ad d-yeglu s ṛṛwaḥ n yisefka."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        ""
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is an encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is the password you used before the password reset.": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen akken ad t-teldiḍ."
       ],
@@ -4234,14 +4246,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Aya ad yessens daɣen asesteb s snat n tarraryin i icudden ɣer umiḍan-a."
       ],
-      "This will also disable two-factor authentication.": [
-        "Aya daɣen ad issens asesteb n snat tarrayin."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Aya ad isefsex amulteɣ-inek·inem s lexlaṣ amiran, yerna ad ak·am-ruḥen akk ibaɣuren n tekdit i tjemεeḍ. Ayen i d-yeqqimen seg lexlaṣ n umulteɣ-inek·inem ad yuɣal d isemdan n umiḍan."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Ayagi ad yernu tasarut n uwgelhen i tuddsa-ik. Ala tisura n 4096 n ibiten i yeteddun ɣef iselkimen imlazmaren. Tugett n iseqdacen, yif-it limer ad sqedcen tisura n 2048 n ibiten."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aya ad irmed PayPal akken ad ittwaseqdec i uxelleṣ n utteki-inek.inem Proton. Ad k.kem-nwehhi ɣer PayPal deg yiccer amaynut n yiming. Ma tseqdaceḍ kra n usewḥel n pop-up, ttxil-k.m kkes-iten akken ad tkemmleḍ."
@@ -4255,20 +4267,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Aya ad yili deg wadeg n wawal-ik•im uffir i kra n wakud. Ad t-tesqedceḍ akken ad tkecmeḍ ɣer umiḍan-ik•im ${ BRAND_NAME } deg yimal."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        ""
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Amarag-agi ad yermed asesteb s snat n tarrayin (2FA) ɣef umiḍan-ik Proton. Asesteb s snat n tarrayin ad yer amiḍan-ik Proton d aɣelsan ugar, ihi yelha limer ad yermed."
       ],
       "to": [
         "ɣer"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        ""
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Akken ad tsentmeḍ, ttxil-k m sekcem isem n useqdac i tebɣiḍ ad tekkseḍ."
       ],
       "to continue to ${ toAppName }": [
         "i ukemmel ɣer ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
@@ -4278,6 +4293,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "I uheggi n umiḍan azɣaray i ukter, ttxil ḍfer tinaḍin i:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        ""
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Akken ad terreḍ tuqqna-inek•m ɣer internet d taɣelsant, sader yerna sbedd asnas ProtonVPN i yibenk-inek sakin qqen ɣer uqeddac ProtonVPN."
@@ -4305,9 +4323,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Askar s sin n wawalen uffiren isseqdac awalen uffiren yemgaraden i tuqqna ar umiḍan-ik akked uwgelhen n tnaka-ik n urmas. Askar-agi yettmuddu tagnit fessusen seg idis n tɣellist, acu kan, ad nwelleh ɣef useqdec n uskar s yiwen n wawal uffir i tuget n iseqdacen. Akken ad tremdeḍ askar s sin n wawalen uffiren, fren awal uffir n tuqqna ar umiḍan-ik akked wawal uffir n uwgelhen i tnaka-ik n urmas sakin sit ɣef Sekles."
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        ""
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         ""
@@ -4369,11 +4384,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } ttwamudden i twaculin akked businesses imecṭaḥ."
       ],
+      "Warning:": [
+        ""
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Γur-k·m: tukksa d timezgit. Aya ad yekkes daɣen anekcum ɣer meṛṛa imeẓla yettwaqqnen akked meṛṛa inermisen-ik·im."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Ad k•m-nsemter akken ad tesqedceḍ isnasen unṣiben n ProtonVPN melmi tzemreḍ."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        ""
       ],
       "We use 3-D Secure to protect your payments.": [
         "Nesseqdac 3-D Secure akken ad nesseḥbiber ɣef lexlaṣ-nwen."
@@ -4401,6 +4422,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Tiskanin n yimalas d wayyur teddunt kan ɣef tnarit."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        ""
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        ""
       ],
       "What do you want to import from your Google account?": [
         ""
@@ -4438,6 +4465,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aql-ak.kem teqqneḍ s yisem ${ user.Name } (${ user.Email }) yerna anekcum-ik.im yettwagdel."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4452,9 +4482,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Tzemreḍ ad tremdeḍ asniɣmes n tuqqniwin ar umiḍan-ik akken ad twaliḍ inekcumen ɣur-s akked tansiwin IP yellan deffir tuqqna. Ad nessekles i yal aɛraḍ n tuqqna, tansa IP taɣbalut, azemz d wakud, akked tuqqniwin yeccḍen."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Tzemreḍ ad tessirweḍ tasarut n uwgelhen tamaynut ma tcukkeḍ tasarut-ik n zik tettwaker."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Tzemreḍ tura ad d-tremseḍ iznan ɣer tansa-inek·inem @pm.me. Leqqem ɣer uɣawas n lexlaṣ iwakken daɣen ad tazneḍ imaylen s useqdec n tansa @pm.me syei rnu tansiwin-nniḍen @pm.me."
@@ -4473,12 +4500,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Tsenseḍ anekcum Biṭa. Ssit ɣef ${ refreshButton } akken ad tesqedceḍ lqem urkid n ${ appName }. Asnas ad yales asali."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Tesremdeḍ anekcum Biṭa. Ssit ɣef ${ refreshButton } akken ad tesqedceḍ lqem aneggaru n ${ appName }. Asnas ad yales asali."
       ],
       "You have no saved payment methods.": [
         "Ur tesεiḍ ara tarrayin n uxelleṣ yettwaskelsen."
@@ -4549,7 +4570,7 @@
       "Your Block List is empty.": [
         "Tabdart n usewḥel d tilemt."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
         ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
@@ -4735,6 +4756,29 @@
       ],
       "Subscription": [
         "Ajerred"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        ""
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        ""
+      ],
+      "Generate key": [
+        ""
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        ""
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        ""
       ]
     },
     "Key state badge": {
@@ -5024,6 +5068,9 @@
       "ALL": [
         "AKK"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Allow recovery by email": [
         "Sireg tiririt s imayl"
       ],
@@ -5072,12 +5119,6 @@
       "Automatically save contacts": [
         "Seekles inermisen s wudem awurman"
       ],
-      "Backup key": [
-        "Tasarut n uḥraz"
-      ],
-      "Backup keys": [
-        "Tisura n uḥraz"
-      ],
       "Block email tracking": [
         ""
       ],
@@ -5114,11 +5155,11 @@
       "Category": [
         "Taggayt"
       ],
-      "Choose a color": [
-        "Fren ini"
-      ],
       "Code": [
         "Tangalt"
+      ],
+      "Color": [
+        ""
       ],
       "Composer": [
         "Amaẓrag"
@@ -5189,20 +5230,8 @@
       "Days of the week": [
         "Ussan n dduṛt"
       ],
-      "Default email": [
-        "Imayl amezwer"
-      ],
-      "Default event duration": [
-        "Tanzagt n tedyant tamezwert"
-      ],
-      "Default full day notifications": [
-        "Alɣuten n wass meṛṛa imezwar"
-      ],
       "Default language": [
         "Tutlayt tamezwert"
-      ],
-      "Default notifications": [
-        "Alɣuten imezwar"
       ],
       "Default PGP scheme": [
         ""
@@ -5282,6 +5311,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Sekcem awal uffir i tsarut s udlis umḍin: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        ""
+      ],
+      "Event notifications": [
+        ""
+      ],
       "Expires": [
         "Azmez n tasewti"
       ],
@@ -5299,6 +5334,9 @@
       ],
       "Folder location": [
         "Ideg n ukaram"
+      ],
+      "From: ${ emailFrom }": [
+        ""
       ],
       "From: ${ fromEmailAddress }": [
         "Sɣur: ${ fromEmailAddress }"
@@ -5480,6 +5518,9 @@
       "Phrase": [
         "Tafyirt"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        ""
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Ma ulac aɣilif rnu akk i 3 n ikalasen-agi CNAME. Ẓer d akken, ikalasen DNS zemren ad awin ddeqs n yisragen akken ad ttwaleqmen."
       ],
@@ -5497,6 +5538,9 @@
       ],
       "Postal code": [
         "Tangalt n lpusṭa"
+      ],
+      "Previous password": [
+        ""
       ],
       "Private User": [
         "Aqeddac uslig"
@@ -5533,9 +5577,6 @@
       ],
       "Recovery phrase": [
         "Tafyirt n tririt"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Tafyirt n tririt tegber 12 n wawalen"
       ],
       "Repeat password": [
         "Ales awal uffir"
@@ -5615,6 +5656,9 @@
       "To: ${ emailAddress }": [
         "I: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        ""
+      ],
       "To: ${ PMEmailAddress }": [
         ""
       ],
@@ -5639,16 +5683,10 @@
       "Undo send": [
         "Sefsex tuzna"
       ],
-      "Upload your backup key": [
-        "Asali n tsarut n uḥraz"
-      ],
-      "Upload your recovery file": [
+      "Upload 1 or more encryption keys": [
         ""
       ],
-      "Uploaded private keys": [
-        ""
-      ],
-      "Uploaded recovery file": [
+      "Upload 1 or more recovery files or encryption keys": [
         ""
       ],
       "URL": [
@@ -5726,9 +5764,6 @@
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
       ],
-      "Your recovery phrase": [
-        "Tafyirt-ik·im n tririt"
-      ],
       "ZIP": [
         "Tangalt n lpusṭa"
       ]
@@ -5783,6 +5818,9 @@
       ],
       "Proton newsletter": [
         "Izen n telɣut n Proton"
+      ],
+      "Proton offers and promotions": [
+        ""
       ],
       "Proton product announcements": [
         "Ulɣu n ufaris n Proton"
@@ -6950,17 +6988,11 @@
       "Email": [
         "Imayl"
       ],
-      "email address": [
-        "tansa imayl"
-      ],
-      "phone number": [
-        "uṭṭun n tiliɣri"
-      ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
       ],
-      "Recovery phrase": [
-        "Tafyirt n tririt"
+      "Phrase": [
+        ""
       ]
     },
     "Remark about a key type option": {
@@ -7000,10 +7032,7 @@
       "Upload": [
         "Ali"
       ],
-      "Upload additional private keys": [
-        ""
-      ],
-      "Upload additional recovery files": [
+      "Upload additional files": [
         ""
       ]
     },
@@ -7735,6 +7764,9 @@
       "Dashboard": [
         "Tafelwit n usenqed"
       ],
+      "Data locked": [
+        ""
+      ],
       "Data recovery": [
         ""
       ],
@@ -7795,6 +7827,9 @@
       "Edit Block List": [
         "Ẓreg tabdart n usewḥel"
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit credit/debit card": [
         "Ẓreg takarḍa n usmad/uxelleṣ"
       ],
@@ -7824,9 +7859,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Fren inegzumen n unasiw"
-      ],
-      "Encrypted data": [
-        ""
       ],
       "Encryption & keys": [
         "Awgelhen & Tisura"
@@ -7869,9 +7901,6 @@
       ],
       "General": [
         "Amatu"
-      ],
-      "Generate key": [
-        ""
       ],
       "Generate missing keys": [
         "Sirew tisura ixuṣṣen"
@@ -8066,11 +8095,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "Rmed tikelt-nniḍen tisura"
-      ],
       "Reconnect your account": [
         "Ales tuqqna ɣer umiḍan-ik·im"
+      ],
+      "Recover data": [
+        ""
       ],
       "Recovery": [
         ""
@@ -8227,9 +8256,6 @@
       ],
       "Unsupported browser": [
         "Iminig d aqbuṛ"
-      ],
-      "Update calendar": [
-        "Leqqem awitay"
       ],
       "Upgrade": [
         "Sali aswir"
@@ -8510,6 +8536,17 @@
         "Zmel s wudem awurman akk iznan-inek·inem itteffɣen i wakken iseqdacen-inek·inem ad izmiren ad selknen asesteb n yiznan-inek·inem. Ayagi yettili-d s usdukkel n yiɣewwaren PGP imezwer ara izemren ad ttusewlen ukessar-a."
       ]
     },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
+      ]
+    },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
         "Sali aswir ɣer ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } akken ad teqqneḍ alamma d ${ plusVpnConnections } n yibenk ɣer VPN ɣef tikkelt",
@@ -8773,6 +8810,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Dayen ur tettwaliḍ ara asekles-a n uktar deg tebdart."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        ""
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        ""
       ]
     },
     "Warning for domain modal": {

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Aktifkan metode pemulihan"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -146,8 +149,8 @@
       "Decrease": [
         "Kurangi"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Aplikasi email default"
       ],
       "Delete": [
         "Hapus"
@@ -232,9 +235,6 @@
       ],
       "Grid layout": [
         "Kotak-kotak"
-      ],
-      "here": [
-        "di sini"
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -359,9 +359,6 @@
       "Previous month": [
         "Bulan lalu"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Keluar"
       ],
@@ -436,6 +433,12 @@
       ],
       "Select plan": [
         "Pilih paket"
+      ],
+      "Set as default": [
+        "Atur sebagai default"
+      ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
       ],
       "Share": [
         "Bagikan"
@@ -517,6 +520,12 @@
       ],
       "Untrust": [
         "Jangan percayai"
+      ],
+      "Update recovery file": [
+        "Perbarui berkas pemulihan"
+      ],
+      "Update recovery phrase": [
+        "Perbarui frasa pemulihan"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1099,8 +1108,11 @@
       "Could not generate file keys": [
         "Gagal membuat kunci berkas"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Kurangi setidaknya ${ calendarToFixCount } kalender dari pilihan Anda atau"
+        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
       ],
       "Email address invalid": [
         "Alamat surel tidak valid"
@@ -1176,6 +1188,9 @@
       ],
       "Name on card required": [
         "Wajib isi nama di kartu"
+      ],
+      "No data to import": [
+        "Tidak ada data untuk diimpor"
       ],
       "No valid address found": [
         "Tidak ditemukan alamat valid"
@@ -1313,7 +1328,7 @@
         "Galat tak diketahui"
       ],
       "Unknown payment token status": [
-        "Status token pembayaran tidak dikenal"
+        "Status token pembayaran tidak diketahui"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim surat ke lebih dari 100 penerima"
@@ -1691,9 +1706,6 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Buat alamat tambahan untuk akun Anda seperti user2@protonmail.com"
       ],
@@ -1822,6 +1834,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Anda dapat mengimpor berkas-berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas-berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
+      ],
+      "Default email application": [
+        "Aplikasi email default"
       ],
       "Delete drive": [
         "Hapus drive"
@@ -2153,8 +2168,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender. Anda juga dapat menggabungkan kalender-kalender yang diimpor dengan kalender-kalender Proton yang telah Anda miliki sebelumnya."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
@@ -2162,8 +2177,8 @@
       "Session timed out.": [
         "Sesi habis."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Tentukan ProtonMail sebagai aplikasi email default untuk browser ini. ProtonMail akan terbuka secara otomatis ketika Anda mengeklik tautan email."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Menyetel PGP memungkinkan Anda mengirim surel terenkripsi end-to-end dengan bukan pengguna ProtonMail yang menggunakan layanan yang mendukung PGP."
@@ -2330,6 +2345,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Anda juga dapat menggabungkan kalender-kalender yang Anda impor dengan kalender-kalender Proton yang telah ada sebelumnya."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
@@ -2338,12 +2356,6 @@
       ],
       "You cannot undo this action.": [
         "Anda tidak bisa membatalkannya."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Anda telah mengaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi terbaru dari ${ appName }. Aplikasi akan dimuat ulang."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Akun PayPal Anda harus terhubung ke kartu kredit atau rekening bank agar bisa ditambahkan sebagai metode pembayaran."
@@ -3095,10 +3107,10 @@
         "Tambah kode hadiah"
       ],
       "All mail": [
-        ""
+        "Seluruh email"
       ],
       "Archive": [
-        ""
+        "Arsip"
       ],
       "clearing your browser cache": [
         "membersihkan singgahan peramban Anda"
@@ -3107,13 +3119,13 @@
         "klik di sini"
       ],
       "Drafts": [
-        ""
+        "Draf"
       ],
       "Go to subscription plans": [
         "Ke paket langganan"
       ],
       "Inbox": [
-        ""
+        "Kotak masuk"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -3122,7 +3134,7 @@
         "Berkas-berkas saya"
       ],
       "Outbox": [
-        ""
+        "Kotak keluar"
       ],
       "Pay invoice": [
         "Bayar tagihan"
@@ -3131,19 +3143,19 @@
         "Minta undangan"
       ],
       "Scheduled": [
-        ""
+        "Terjadwalkan"
       ],
       "Sent": [
-        ""
+        "Terkirim"
       ],
       "Shared": [
         "Dibagikan"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Starred": [
-        ""
+        "Dibintangi"
       ],
       "Trash": [
         "Trash"

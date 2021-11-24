@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "کد تخفیفم را فعال کن"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add credit / debit card": [
         "افزودن کارت اعتباری / دبیت"
       ],
@@ -187,9 +190,6 @@
       "Go to panel ${ index }": [
         "برو به صفحهٔ ${ index }"
       ],
-      "here": [
-        "اینجا"
-      ],
       "Hide": [
         "پنهان کردن"
       ],
@@ -304,6 +304,9 @@
       "Send": [
         "ارسال"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "هم‌رسانی با پیوند"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "بروزرسانی"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "ارتقا"
@@ -1755,12 +1764,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "شما نمی‌توانید از اعتبارنامه‌های IKEv2 / OpenVPN برای ورود به برنامه‌های ProtonVPN یا داشبورد ProtonVPN استفاده کنید. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "شما دسترسی بتا را غیرفعال کرده‌اید. برای استفاده از نسخه پایدار ${ appName } صفحه را ${ refreshButton } کنید. برنامه از نو بارگذاری خواهد شد."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "شما دسترسی بتا را فعال کردید. روی ${ refreshButton } کلیک کنید تا از آخرین نسخهٔ ${ appName } استفاده کنید. برنامه از نو بارگذاری خواهد شد."
-      ],
       "You have no saved payment methods.": [
         "شما روش پرداخت ذخیره شده‌ای ندارید."
       ],
@@ -2262,6 +2265,9 @@
       ],
       "Proton newsletter": [
         "خبرنامه پروتون"
+      ],
+      "Proton offers and promotions": [
+        ""
       ],
       "Proton product announcements": [
         "اطلاعیه‌های محصولات پروتون"

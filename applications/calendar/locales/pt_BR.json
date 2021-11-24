@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Ativar recuperação"
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -117,7 +120,7 @@
         "Continuar"
       ],
       "Continue import": [
-        ""
+        "Continuar importação"
       ],
       "Continue with Google": [
         "Continuar com o Google"
@@ -125,11 +128,8 @@
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
       ],
-      "Create": [
-        "Criar"
-      ],
       "Create calendar": [
-        ""
+        "Criar calendário"
       ],
       "Create event": [
         "Criar evento"
@@ -140,7 +140,7 @@
       "Decrease": [
         "Diminuir"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -214,9 +214,6 @@
       "Go to settings": [
         "Ir para configurações"
       ],
-      "here": [
-        "aqui"
-      ],
       "Hide advanced PGP settings": [
         "Ocultar configurações avançadas de PGP"
       ],
@@ -242,10 +239,10 @@
         "Importar"
       ],
       "Import events": [
-        ""
+        "Importar eventos"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importar de .csv ou vCard"
       ],
       "Increase": [
         "Aumentar"
@@ -346,9 +343,6 @@
       "Previous year": [
         "Ano anterior"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Sair"
       ],
@@ -408,6 +402,12 @@
       ],
       "Send": [
         "Enviar"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        "Definir uma frase de recuperação"
       ],
       "Share": [
         "Compartilhar"
@@ -480,6 +480,12 @@
       ],
       "Update": [
         "Atualizar"
+      ],
+      "Update recovery file": [
+        "Atualizar arquivo de recuperação"
+      ],
+      "Update recovery phrase": [
+        "Atualizar frase de recuperação"
       ],
       "Upgrade": [
         "Upgrade"
@@ -647,22 +653,22 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Arquivo ICS vazio"
       ],
       "Invalid event": [
-        ""
+        "Evento inválido"
       ],
       "Invalid ICS file": [
-        ""
+        "Arquivo ICS inválido"
       ],
       "Invalid method": [
-        ""
+        "Método inválido"
       ],
       "Unsupported calendar component": [
         ""
       ],
       "Unsupported event": [
-        ""
+        "Evento não suportado"
       ]
     },
     "Attendee role": {
@@ -1363,13 +1369,13 @@
         "Erro de autenticação."
       ],
       "Calendar limit reached": [
-        ""
+        "Limite de calendários atingido"
       ],
       "Calendar primary private key is not decrypted": [
         "A chave privada primária do calendário não está descriptografada"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Não é possível criar novos calendários para todos os calendários importados devido ao limite do calendário pessoal."
       ],
       "Can't validate email, try again later": [
         "Não é possível validar o e-mail. Tente novamente mais tarde"
@@ -1398,9 +1404,13 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Erro ao descriptografar: A descriptografia deste evento falhou."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Desmarque ao menos ${ calendarToFixCount } calendário",
+        "Desmarque ao menos ${ calendarToFixCount } calendários"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Desmarque ao menos ${ calendarToFixCount } calendário ou",
+        "Desmarque ao menos ${ calendarToFixCount } calendários ou"
       ],
       "Email address disabled": [
         "Endereço de e-mail desativado"
@@ -1433,7 +1443,7 @@
         "Falha em obter a ocorrência original em série"
       ],
       "Folder name cannot be empty": [
-        ""
+        "O nome da pasta não pode ser vazio"
       ],
       "Image upload failed": [
         "Falha no carregamento da imagem"
@@ -1487,11 +1497,11 @@
         "Só é possível mover eventos entre ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        ""
+        "O nome do marcador não pode ser vazio"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Mescle ao menos ${ calendarToFixCount } calendário com calendários Proton existentes",
+        "Mescle ao menos ${ calendarToFixCount } calendários com um calendário Proton existente"
       ],
       "Missing signature": [
         "Assinatura ausente"
@@ -1501,6 +1511,9 @@
       ],
       "Name required": [
         "Nome obrigatório"
+      ],
+      "No data to import": [
+        "Sem dados para importar"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nenhuma chave recuperada para o usuário interno é válida para o envio"
@@ -1532,7 +1545,7 @@
         "Alguns dos grupos não tem contatos: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organização não reconhecida. Tente novamente."
       ],
       "Passwords do not match": [
         "As senhas não conferem"
@@ -1553,8 +1566,8 @@
         "Por favor, primeiro crie um endereço de e-mail."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Por favor, corrija o conflito em destaque para prosseguir.",
+        "Por favor, corrija os conflitos em destaque para prosseguir."
       ],
       "Preferences could not be saved": [
         "As preferências não puderam ser salvas"
@@ -1587,10 +1600,10 @@
         "Alguns grupos não puderam ser excluídos"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Alguns dos nomes dos seus marcadores estão indisponíveis. Por favor, personalize a importação para editar esses nomes."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ProtonMail. Por favor, personalize a importação para editar esses nomes."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo deu errado. Por favor, ${ refresh } a página para tentar novamente. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
@@ -1605,10 +1618,10 @@
         "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "O nome da pasta é muito longo. Por favor, escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "O nome do marcador é muito longo. Por favor, escolha um nome diferente."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "A quantidade mínima de crédito que pode ser adicionada é ${ _price }"
@@ -1623,7 +1636,7 @@
         "A chave de envio não é válida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Existem muitas pastas em sua conta externa. Por favor, personalize a importação para excluir algumas pastas."
       ],
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contatos"
@@ -1635,10 +1648,10 @@
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Este nome para a pasta não está disponível. Por favor, escolha outro nome"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Este nome de marcador não está disponível. Por favor, escolha outro nome"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Esta mensagem pode conter algum link que pode não ser aberto corretamente pelo seu navegador"
@@ -1666,9 +1679,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -1733,100 +1743,100 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        ""
+        "Formato incorreto. O componente não pode ser lido."
       ],
       "Calendar": [
-        ""
+        "Calendário"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Fuso horário do calendário não suportado"
       ],
       "Component with wrong format": [
-        ""
+        "Componente com formato inválido"
       ],
       "Custom timezone": [
-        ""
+        "Fuso horário personalizado"
       ],
       "Edited event not supported": [
-        ""
+        "Evento editado não suportado"
       ],
       "Element": [
-        ""
+        "Elemento"
       ],
       "Encryption failed": [
-        ""
+        "Falha na criptografia"
       ],
       "End time out of bounds": [
-        ""
+        "Hora de término fora dos limites"
       ],
       "Event": [
-        ""
+        "Evento"
       ],
       "Event validation failed": [
-        ""
+        "Falha na validação do evento"
       ],
       "Floating times not supported": [
-        ""
+        "Hora fracionadas não suportadas"
       ],
       "Free-busy time information": [
-        ""
+        "Informações de horários disponíveis"
       ],
       "Invalid event": [
-        ""
+        "Evento inválido"
       ],
       "Journal entry": [
         ""
       ],
       "Malformed all-day event": [
-        ""
+        "Evento de dia inteiro inválido"
       ],
       "Malformed end time": [
-        ""
+        "Hora de término inválida"
       ],
       "Malformed recurring event": [
-        ""
+        "Evento recorrente mal formado"
       ],
       "Malformed start time": [
-        ""
+        "Hora de início inválida"
       ],
       "Missing start time": [
-        ""
+        "Falta o horário de início"
       ],
       "No UID, title or start time": [
-        ""
+        "Sem UID, título ou hora de início"
       ],
       "Non-Gregorian": [
-        ""
+        "Não gregoriano"
       ],
       "Notification out of bounds": [
-        ""
+        "Notificação fora dos limites"
       ],
       "Original recurring event could not be found": [
-        ""
+        "O evento recorrente original não pôde ser encontrado"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Eventos recorrente sem ocorrências"
       ],
       "Recurring rule not supported": [
-        ""
+        "Regra de recorrência não suportada"
       ],
       "Start time out of bounds": [
-        ""
+        "Hora de início fora dos limites"
       ],
       "Timezone": [
-        ""
+        "Fuso horário"
       ],
       "Timezone not supported": [
-        ""
+        "Fuso horário não suportado"
       ],
       "To-do entry": [
         ""
       ],
       "Unknown": [
-        ""
+        "Desconhecido"
       ],
       "Unsupported event": [
-        ""
+        "Evento não suportado"
       ]
     },
     "Error message": {
@@ -1898,22 +1908,22 @@
         ""
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Arquivo ICS anexado não pôde ser lido"
       ],
       "Invalid invitation": [
-        ""
+        "Convite inválido"
       ],
       "Invalid response": [
-        ""
+        "Resposta inválida"
       ],
       "Unexpected error": [
         ""
       ],
       "Unsupported invitation": [
-        ""
+        "Convite não suportado"
       ],
       "Unsupported response": [
-        ""
+        "Resposta não suportada"
       ],
       "We could not cancel the event in your calendar": [
         ""
@@ -2072,18 +2082,18 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "Eventos importados aparecem em ${ CALENDAR_APP_NAME } como eventos simples, sem organizador nem detalhes de participantes. Para receber atualizações e ver participantes, peça aos organizadores que te convidem usando seu endereço de e-mail Proton."
       ],
       "This file contains an event invitation:": [
-        "",
-        ""
+        "Este arquivo contém um convite para um evento:",
+        "Este arquivo contém convites eventos:"
       ],
       "This file contains an invitation response:": [
         "",
         ""
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "Este arquivo contém alguns dados que não pudemos importar:"
       ]
     },
     "Import contact": {
@@ -2285,9 +2295,6 @@
       "Account successfully updated": [
         "Conta atualizada com sucesso"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Adicione endereços adicionais à sua conta, como usuario2@protonmail.com"
       ],
@@ -2413,6 +2420,9 @@
       ],
       "Daily": [
         "Diariamente"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "Descartar alterações?"
@@ -2680,7 +2690,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2689,7 +2699,7 @@
       "Session timed out.": [
         "Sessão expirada."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2860,6 +2870,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
       ],
@@ -2868,12 +2881,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens chegarem nesta pasta."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Você desabilitou o Acesso Antecipado. Clique em ${ refreshButton } para utilizar a versão estável do ${ appName }. O aplicativo será recarregado."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Você ativou o Acesso Antecipado. Clique em ${ refreshButton } para utilizar a versão mais recente de ${ appName }. O aplicativo será recarregado."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Você reativou suas chaves e os eventos vinculados aos seguintes calendários podem ser descriptografados."
@@ -3217,6 +3224,9 @@
       "All day": [
         "Todo o dia"
       ],
+      "All-day event notifications": [
+        "Notificações para evento de dia todo"
+      ],
       "Automatically save contacts": [
         "Salvar contatos automaticamente"
       ],
@@ -3233,7 +3243,7 @@
         "Valor em BTC:"
       ],
       "Calendars": [
-        ""
+        "Calendários"
       ],
       "Cancel": [
         "Cancelar"
@@ -3250,11 +3260,11 @@
       "Category": [
         "Categoria"
       ],
-      "Choose a color": [
-        "Escolha uma cor"
-      ],
       "City": [
         "Cidade"
+      ],
+      "Color": [
+        "Cor"
       ],
       "Contacts": [
         "Contatos"
@@ -3267,18 +3277,6 @@
       ],
       "CVV code": [
         "Código CVV"
-      ],
-      "Default email": [
-        "E-mail padrão"
-      ],
-      "Default event duration": [
-        "Duração padrão do evento"
-      ],
-      "Default full day notifications": [
-        "Notificações padrão para o dia inteiro"
-      ],
-      "Default notifications": [
-        "Notificações padrão"
       ],
       "Description": [
         "Descrição"
@@ -3315,6 +3313,9 @@
       ],
       "Enter the 6-digit code": [
         "Insira o código de 6 dígitos"
+      ],
+      "Event duration": [
+        "Duração do evento"
       ],
       "Event frequency": [
         "Frequência do evento"
@@ -3368,7 +3369,7 @@
         "Importar para o endereço de e-mail"
       ],
       "Import to:": [
-        ""
+        "Importar para:"
       ],
       "Keyboard shortcuts": [
         "Atalhos do teclado"
@@ -3614,13 +3615,13 @@
         "clique aqui"
       ],
       "Drafts": [
-        ""
+        "Rascunhos"
       ],
       "Go to subscription plans": [
         "Ir para Planos de assinatura"
       ],
       "Inbox": [
-        ""
+        "Caixa de entrada"
       ],
       "Learn more": [
         "Saiba mais"
@@ -3641,7 +3642,7 @@
         ""
       ],
       "Sent": [
-        ""
+        "Enviados"
       ],
       "Spam": [
         ""
@@ -3653,7 +3654,7 @@
         "Calendários assinados"
       ],
       "Trash": [
-        ""
+        "Lixeira"
       ],
       "Upgrade": [
         "Upgrade"
@@ -4235,6 +4236,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Impossível criar mais calendários. Você atingiu o limite máximo de calendários pessoais do seu plano."
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "A chave não pode ser usada para criptografar"
@@ -4545,13 +4551,8 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        ""
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "",
-        ""
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Impossível adicionar mais calendários. Você atingiu o limite máximo de inscrições em calendários do seu plano."
       ]
     },
     "Success": {
@@ -4892,7 +4893,7 @@
         "Contatos"
       ],
       "Continue with partial import?": [
-        ""
+        "Continue com uma importação parcial?"
       ],
       "Coupon discount": [
         "Cupom de desconto"
@@ -4922,10 +4923,10 @@
         "Personalize e confirme"
       ],
       "Customize calendar import": [
-        ""
+        "Personalizar importação de calendário"
       ],
       "Customize your mail import": [
-        ""
+        "Personalize sua importação de e-mail"
       ],
       "Customize your plan": [
         "Personalize seu plano"
@@ -4945,7 +4946,7 @@
         "Excluir evento"
       ],
       "Delete organization?": [
-        ""
+        "Excluir organização?"
       ],
       "Delete recurring event": [
         "Excluir evento recorrente"
@@ -4955,6 +4956,9 @@
       ],
       "Downgrade account": [
         ""
+      ],
+      "Edit calendar": [
+        "Editar calendário"
       ],
       "Edit contact": [
         "Editar Contato"
@@ -5014,17 +5018,17 @@
         "Verificação humana"
       ],
       "Import as simple event?": [
-        "",
-        ""
+        "Importar com um evento simples?",
+        "Importar com eventos simples?"
       ],
       "Import contacts": [
         "Importar contatos"
       ],
       "Import events": [
-        ""
+        "Importar eventos"
       ],
       "Import failed": [
-        ""
+        "Falha na importação"
       ],
       "Import groups": [
         "Importar grupos"
@@ -5205,9 +5209,6 @@
       ],
       "Unsupported browser": [
         "Navegador não suportado"
-      ],
-      "Update calendar": [
-        "Atualizar calendário"
       ],
       "Update event": [
         "Atualizar evento"

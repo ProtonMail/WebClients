@@ -20,6 +20,9 @@
       "Activate": [
         "Rmed"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Rnu"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "Sefsex"
       ],
-      "Cancel action": [
-        "Sefsex tigawt"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "Anɣal n Carbon, anɣal n Blind Carbon"
       ],
-      "CC, BCC": [
-        "CC, BCC"
+      "CC BCC": [
+        ""
       ],
       "Change page": [
         "Beddel asebter"
@@ -218,7 +218,7 @@
       "Decrease": [
         "Senqes"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -310,14 +310,14 @@
       "Expand composer": [
         "Snefli amsuddes"
       ],
-      "Expiration time": [
-        "Tanzagt n taggara"
-      ],
       "Export": [
         "Sifeḍ"
       ],
       "Export contacts": [
         "Kter inermisen"
+      ],
+      "Fewer search options": [
+        ""
       ],
       "Filter on...": [
         "Imsizdeg ɣef..."
@@ -360,9 +360,6 @@
       ],
       "Got it": [
         "Gziɣ"
-      ],
-      "here": [
-        "dagi"
       ],
       "Hide": [
         "Ffer"
@@ -419,6 +416,9 @@
       "Insert contact": [
         "Sekcem anermis"
       ],
+      "Insert contacts": [
+        ""
+      ],
       "Insert image": [
         "Ger tugna"
       ],
@@ -445,9 +445,6 @@
       ],
       "Learn more": [
         "Issin ugar"
-      ],
-      "Less search options": [
-        "Drus n textiṛiyin n unadi"
       ],
       "Load": [
         "Sali"
@@ -629,9 +626,6 @@
       "Print": [
         "Siggez"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -737,6 +731,15 @@
       "Set": [
         "Wennez"
       ],
+      "Set as default": [
+        ""
+      ],
+      "Set expiration time": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Bḍu s useɣwen"
       ],
@@ -755,6 +758,9 @@
       "Show details": [
         "Sken ifutas"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         ""
       ],
@@ -765,10 +771,7 @@
         ""
       ],
       "Show less": [
-        ""
-      ],
-      "Show less search options": [
-        "Sken drus n textiṛiyin n unadi"
+        "Sken-d drus"
       ],
       "Show messages": [
         "Sken iznan"
@@ -805,6 +808,9 @@
       ],
       "Switch account": [
         "Beddel amiḍan"
+      ],
+      "Switch to rich text": [
+        ""
       ],
       "Theme": [
         "Asentel"
@@ -855,11 +861,20 @@
       "Untrust": [
         "Ur tettamen ara"
       ],
+      "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
+      ],
       "Upgrade": [
         "Lqem"
       ],
       "Upgrade now": [
-        ""
+        "Sali aswir tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -1050,10 +1065,10 @@
         "Akk"
       ],
       "With": [
-        ""
+        "S"
       ],
       "Without": [
-        ""
+        "War"
       ]
     },
     "Attachment signature verification": {
@@ -1414,13 +1429,13 @@
         ""
       ],
       "Event refreshing is not supported for the moment": [
-        ""
+        "Asmiren n tedyant ur yettwasefrak ara taswiɛt-a"
       ],
       "Event rescheduling is not supported for the moment": [
         ""
       ],
       "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        ""
+        "Amazan n yimayl-a ur yettwanced ara ɣer tedyant-a yerna ulamek ad yettwarnu am umettekki"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
@@ -1459,7 +1474,7 @@
         ""
       ],
       "Your email address is not in the participants list": [
-        ""
+        "Tansa-inek·inem n yimayl ulac-itt deg tebdart n yittekkiyen"
       ]
     },
     "Calendar status": {
@@ -1493,7 +1508,7 @@
         "Tuccḍa deg umtawi n uwitay"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Ugar n 12 n yisragen i yezrin ɣef uleqqem aneggaru"
       ]
     },
     "Collapsible tooltip": {
@@ -1578,7 +1593,7 @@
         "Izen ittwsekles ɣer yirewwayen"
       ],
       "Quit import customization?": [
-        ""
+        "Ffeɣ seg waggan n uktar?"
       ]
     },
     "Contact field label": {
@@ -1831,12 +1846,12 @@
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Yensa"
       ]
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Yermed"
       ]
     },
     "Email body for description (description part)": {
@@ -1969,7 +1984,7 @@
         "Azal ddaw n wadday."
       ],
       "Attachments are limited to 25 MB": [
-        ""
+        "Ifuyla yeddan ɣur-sen talast n 25 MAṬ"
       ],
       "Authentication canceled.": [
         "Yefsex usesteb."
@@ -1993,7 +2008,7 @@
         "Ulamek aseɣbel n tiliɣri, eɛreḍ areḍqal"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Asenqed iɛedda wakud-is, ttxil-k·m ɛreḍ tikkelt-nniḍen"
       ],
       "Choose a date in the future.": [
         "Fren azemz deg yimal."
@@ -2015,16 +2030,20 @@
         "Azmul n unermis ur yettwasenqed ara"
       ],
       "Contact your organization’s administrator to resolve this": [
-        ""
+        "Nermes anedbal n tuddsa-ik akken adtefruḍ aya"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "Anadi n ugbur ur yezmir ara ad yettwarmad deg yiminig-a. Ttxil ffeɣ seg uskar n tunigin tusligin neɣ seqdec iminig-nniḍen."
       ],
       "Could not find address ${ email }.": [
         "Ur nezmir ara ad d-naff tansa ${ email }."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Tuccḍa di tukksa n uwgelhen: tukksa n uwgelhen n yizen-agi terreẓ."
+      ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        ""
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
@@ -2055,13 +2074,13 @@
         "Tella-d tuccḍa deg yiwet gar tiwtilin"
       ],
       "Error while saving draft. Please try again.": [
-        ""
+        "Tella-d tuccḍa deg usekles n urewway. Ttxil ɛreḍ tikkelt-nniḍen."
       ],
       "Error while sending the message. Message is not sent.": [
-        ""
+        "Tuccḍa deg tuzzna n yizen. Izen ur yettwazen ara."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        ""
+        "Tuccḍa deg usali n tceqqufin yeddan. Izen ur yettwazen ara."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Tuccḍa deg uwgelhen n ufaylu yeddan. Ttxil-k eɛreḍ tikkelt-nniḍen."
@@ -2073,7 +2092,7 @@
         "Amsizdeg yesɛan isem-agi yella yakan"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Isem n ukaram ur ilaq ara ad yili d ilem"
       ],
       "Image upload failed": [
         "Asali n tugna yecceḍ"
@@ -2112,7 +2131,7 @@
         "Tangalt n usentem mačči d tameɣtut"
       ],
       "Label name cannot be empty": [
-        ""
+        "Isem n tebzimt ur ilaq ara ad yili d ilem"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -2120,9 +2139,6 @@
       ],
       "Message needs to be sent first": [
         "Izen yesra ad yettwazen qbel"
-      ],
-      "Message passwords do not match": [
-        ""
       ],
       "Message processing error.": [
         "Tuccḍa deg usesfer n yizen."
@@ -2137,6 +2153,9 @@
         "Tuccḍa n uzeṭṭa: Ttxil-k senqed tuqqna-inek sakin ɛreḍ tikkelt-nniḍen."
       ],
       "No address with keys available to compose a message": [
+        "Ulac tansa s tsura yellan i tira n yuzen"
+      ],
+      "No data to import": [
         ""
       ],
       "No key retrieved for internal user is valid for sending": [
@@ -2146,7 +2165,7 @@
         "Ur d-nufi ula d tasarut i useqdac adigan"
       ],
       "No valid address found": [
-        ""
+        "Ur d-nufi ara tansa yeɣtan"
       ],
       "No valid keys retrieved for internal user": [
         "Ur d-nufi tisura yeɣtan i useqdac adigan"
@@ -2193,14 +2212,20 @@
       "Please refresh the page.": [
         "Ttxil smiren asebter."
       ],
+      "Please repeat the password": [
+        ""
+      ],
+      "Please set a password": [
+        ""
+      ],
       "Preferences could not be saved": [
         "Ismenyifen gguman ad ttuskelsen"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "Tasarut n tansa tagejdant ur tettwawgelhen ara"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "Tasarut n tansa tagejdant ur tettwawgelhen ara."
       ],
       "Process aborted": [
         "Yettwanef ukala"
@@ -2240,10 +2265,10 @@
         "Kra n yigrawen ur zmiren ara ad ttwakksen"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Kra n yismawen n tebzimin-inek·inem ulac-iten. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Kra n yismawen n tebzimin ɛeddan talast tafellayt n yisekkilen n ProtonMail. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
@@ -2265,13 +2290,13 @@
         "Asali n umsuddes ur yeddi ara."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Isem n ukaram ɣezif aṭas. Ttxil-k·m fren isem-nniḍen."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Iraten n tsarut i ${ emailAddress } ur zmiren ara ad ttwasufɣen"
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Isem n tebzimt ɣezif aṭas. Ttxil-k·m fren isem-nniḍen."
       ],
       "The maximum expiration is 4 weeks": [
         ""
@@ -2289,10 +2314,10 @@
         "Tasarut n tuzna ur d tameɣtut"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Aṭas n yikaramen i yellan deg umiḍan azɣaray. Ttxil-k·m sagen akatar i wakken ad tekkseḍ kra n yikaramen."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        ""
+        "Tella-d tuccḍa akked unadi n ugbur. Anadi amezwer yettuseqdac deg ubdil-is."
       ],
       "There was an error when exporting the contacts vCards": [
         "Tella-d tuccḍa mi ttwaketrent tkarḍiwin vCards n yinermisen"
@@ -2304,13 +2329,13 @@
         "Urti-a isra ma drus { minimumLength } n yizamulen."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Isem n ukaram-a ulac-it. Ttxil-k·m fren isem-nniḍen"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Isem n tebzimt-a ulac-it. Ttxil-k·m fren isem-nniḍen"
       ],
       "This message has already been sent": [
-        ""
+        "Izen-a dayen yettwazen"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Izen-a dayen yettwazen. Arewway amaynut yettwasekles."
@@ -2340,8 +2365,8 @@
         "Ur tezmireḍ ara ad tazneḍ tikarḍiwin vCards i wugar n 100 n yinermisen"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
-        ""
+        "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n usfaylu n umsuddes ɣef tikkelt",
+        "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n yifuyla n umsuddes ɣef tikkelt"
       ],
       "You did not provide a file.": [
         "Ur d-tefkiḍ ara afaylu."
@@ -2359,7 +2384,7 @@
         "Taktert-inek•inem ur tettwasekkar ara."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        ""
+        "Ddeqs n igmaḍ i d-yerra unadi-ik. Ma ulac aɣilif, err talast i unadi-inek sakin ɛreḍ tikelt- nniḍen."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2453,7 +2478,7 @@
         "Akud n beddu yexxuṣ"
       ],
       "No UID, title or start time": [
-        ""
+        "Ulac UID, azwel neɣ akud n beddu"
       ],
       "Non-Gregorian": [
         "Mačči d agriguryan"
@@ -2682,18 +2707,15 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         ""
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
-      ],
-      "You're a privacy champ!": [
+      "You're all set!": [
         ""
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         ""
       ],
       "Only ${ days } day left": [
@@ -2703,10 +2725,10 @@
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Yewjed di iOS akked Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Awi asnqs aziraz ${ protonMailAppName }"
       ],
       "Import contacts or emails": [
         ""
@@ -2745,7 +2767,7 @@
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "Bdu"
       ]
     },
     "Group": {
@@ -2962,12 +2984,12 @@
         ""
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } n ugraw n unermes",
+        "${ numContactGroups } n yigrawen n unermes"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } n unermis",
+        "${ numContacts } n yinermisen"
       ],
       "${ occurrencesInBody } occurrence found": [
         "${ occurrencesInBody } n temseḍriwt i yettwafen",
@@ -2995,12 +3017,12 @@
         ""
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } d akaram yettwafernen",
+        "${ selectedFoldersCount } d ikaramen yettwafernen"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } n tebzimt yettwafernen",
+        "${ selectedFoldersCount } n tebzimin yettwafernen"
       ],
       "${ total } conversation": [
         "${ total } udiwenni",
@@ -3093,9 +3115,6 @@
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Activation in progress": [
         "Asermed itteddu"
       ],
@@ -3121,12 +3140,12 @@
         "Reyyec s ayeffus"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Akk (akaram ${ totalFoldersCount })",
+        "Akk (${ totalFoldersCount } n yikaramen)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Akk (tabzimt ${ totalFoldersCount })",
+        "Akk (tibzimin ${ totalFoldersCount })"
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Akk iznan i yettwaskelsen deg ukaram-a ad ttwakksen s wudem imezgi."
@@ -3150,7 +3169,7 @@
         "Tasarut tazayezt ur nettwassen ara tettwaf i uɣerwaḍ-agi."
       ],
       "and": [
-        ""
+        "akked"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Tebɣiḍ s tidet ad tekkseḍ akk iznan i yellan deg ukaram?"
@@ -3224,14 +3243,11 @@
       "Center": [
         "Slemmes"
       ],
-      "Change your default in settings": [
-        "Beddel amezwer-ik·im deg yiɣewwaren"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
       ],
       "Clear data": [
-        ""
+        "Sfeḍ isefka"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         ""
@@ -3251,9 +3267,6 @@
       "Close this screen to exit.": [
         ""
       ],
-      "Confirm Password": [
-        "Sentem awal uffir"
-      ],
       "Confirm phishing report": [
         "Sentem aneqqis n ukellex"
       ],
@@ -3268,16 +3281,16 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked tebzimin i tebɣiḍ ad tketreḍ."
       ],
       "Create a new contact group": [
         "Snulfu-d agraw n unermes amaynut"
       ],
       "Create in": [
-        ""
+        "Snulfu-d di"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
@@ -3303,6 +3316,9 @@
       "Day": [
         "Ass",
         "Ussan"
+      ],
+      "Default email application": [
+        ""
       ],
       "Disable message content search": [
         ""
@@ -3392,6 +3408,9 @@
       "Estimating time remaining...": [
         "Akud yettuṛaǧun ad d-yeqqim..."
       ],
+      "Expiration time": [
+        "Tanzagt n taggara"
+      ],
       "Expiration Time": [
         "Tanzagt n tagara"
       ],
@@ -3441,9 +3460,6 @@
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN ummid s urured alamma 10 Gbps."
       ],
-      "Generate recovery phrase": [
-        ""
-      ],
       "Get more storage and premium features.": [
         "Awi ugar n uklas d tmahilin premium."
       ],
@@ -3490,7 +3506,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Kter si"
       ],
       "Import in progress": [
         ""
@@ -3512,10 +3528,6 @@
       ],
       "Insert image": [
         "Ger tugna"
-      ],
-      "Insert image as": [
-        "Ger tugna am",
-        "Ger tugniwn am"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -3568,6 +3580,9 @@
       "Manage your labels": [
         "Sefrek tibzimin-inek/m"
       ],
+      "members": [
+        ""
+      ],
       "Members": [
         "Imedrawen"
       ],
@@ -3580,14 +3595,11 @@
       "Message headers": [
         "Inixfan n yizen"
       ],
-      "Message Password": [
-        "Awal uffir n yizen"
-      ],
       "Message sent": [
         "Izen yettwazen"
       ],
       "Message sent.": [
-        ""
+        "Izen yettwazen."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Izen ad yettwazen deg ${ dateString } ɣef ${ formattedTime }"
@@ -3599,7 +3611,7 @@
         "Semmi akaram-ik·im amaynut syen fren akaram amaraw ideg tebɣiḍ ad t-terreḍ. Ma yella ur tefrneḍ ara akaram amaraw, akaram-a amaynut ad yettwarnu d akaram n uswir afellay."
       ],
       "New": [
-        ""
+        "Amaynut"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -3664,14 +3676,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur nesseqdac ara ProtonMail."
       ],
-      "or": [
-        "neɣ"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Anagraw-nneɣ yecreḍ izen-agi am uneɛruḍ n ukellex. Ttxil-k m senqed belli izen-agi iṣeḥḥa."
-      ],
-      "Password Hint (Optional)": [
-        "Amatar n wawal uffir ( d afrayan)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Axelleṣ yezmer ad yeṭṭef kran n tesdatin akken ad yettwasenqed i meṛṛa."
@@ -3691,8 +3697,8 @@
       "Plain text": [
         "Aḍris aččuran"
       ],
-      "Please add at least one recipient before sending.": [
-        "Ttxil rnu xersum yiwen n uɣerwaḍ send tuzzna."
+      "Please add at least one recipient.": [
+        "Ma ulac aɣilif, rnu xarsum yiwen n unermis."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -3707,7 +3713,7 @@
         "Ttxil ger tamawt dakken s uttekki ɣef tqeffalt n usentem, amiḍan-ik. im ad yesεu $ { creditsRemaining } ismad i d-yeqqimen."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Ttxil-k·m fren ikaramen i tebɣiḍ ad tketreḍ:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Ttxil fren anaw n useɣwen i tebɣiḍ ad teskecmeḍ teččareḍ akk urtan."
@@ -3812,7 +3818,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Sending": [
@@ -3830,7 +3836,10 @@
       "Session timed out.": [
         "Yemmed wakud n tɣimit."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set a recovery phrase": [
+        ""
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -3972,11 +3981,11 @@
       "This message will be sent shortly": [
         "Izen-a ad yettwazen deg kra n wakud"
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "This message will expire ${ formattedDate }": [
         "Izen-agi ad yemmet deg ${ formattedDate }"
-      ],
-      "This message will expire in": [
-        "Izen-agi ad yemmet di"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Izen-a ad yemmet deg ${ formattedDelay }"
@@ -4131,6 +4140,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aql-ak.kem teqqneḍ s yisem ${ user.Name } (${ user.Email }) yerna anekcum-ik.im yettwagdel."
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        ""
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4173,12 +4188,6 @@
       "You have **${ count } message** tagged with this label": [
         "",
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Tsenseḍ anekcum Biṭa. Ssit ɣef ${ refreshButton } akken ad tesqedceḍ lqem urkid n ${ appName }. Asnas ad yales asali."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Tesremdeḍ anekcum Biṭa. Ssit ɣef ${ refreshButton } akken ad tesqedceḍ lqem aneggaru n ${ appName }. Asnas ad yales asali."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Ur as-tmuddeḍ ara akk i yimayl-inek asentel. Tebɣiḍ ad tazneḍ izen ɣas akken?"
@@ -4223,8 +4232,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ad tettuwellheḍ ɣer PyPal i usenqed n uxelleṣ-ik•im."
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
-        "Turiḍ \"${ keyword }\", maca ulac amedday i yettwarnan. Tebɣiḍ ad tazneḍ izen-ik·im akken yebɣu yili?"
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        ""
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ad yesɛu talast. ${ payInvoiceLink }"
@@ -4263,6 +4272,9 @@
     "info": {
       "(beta)": [
         "(beta)"
+      ],
+      "Optional": [
+        "Afrayan"
       ]
     },
     "Info concerning plan features": {
@@ -4514,12 +4526,12 @@
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "Yensa"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "Yermed"
       ]
     },
     "Label": {
@@ -4587,7 +4599,7 @@
         "Azal BTC:"
       ],
       "Calendars": [
-        ""
+        "Iwitayen"
       ],
       "Cancel": [
         "Sesfex"
@@ -4616,8 +4628,11 @@
       "Conditions": [
         "Tiwtilin"
       ],
+      "Confirm Password": [
+        "Sentem awal uffir"
+      ],
       "Contacts": [
-        ""
+        "Inermisen"
       ],
       "Copy": [
         "Nɣel"
@@ -4650,7 +4665,7 @@
         "Amasal n yimayl"
       ],
       "Emails": [
-        ""
+        "Imaylen"
       ],
       "Enable Beta Access": [
         "Sermed anekcum Biṭa"
@@ -4689,7 +4704,7 @@
         "Sɣur:"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Sɣur: ${ importedEmail }"
       ],
       "Group": [
         "Agraw"
@@ -4704,16 +4719,16 @@
         "Ma"
       ],
       "Import all messages": [
-        ""
+        "Kter akk iznan"
       ],
       "Import contacts": [
         "Kter inermisen"
       ],
       "Import interval": [
-        ""
+        "Azilal n uktar"
       ],
       "Import to email address": [
-        ""
+        "Kter ɣer tansa n yimayl"
       ],
       "Keyboard shortcuts": [
         "Inegzumen n unasiw"
@@ -4725,31 +4740,37 @@
         "Tamzim am"
       ],
       "Label messages as": [
-        ""
+        "Semmi i yiznan am"
       ],
       "Labels:": [
         "Tibzimin:"
       ],
       "Last 12 months only": [
-        ""
+        "12 wayyuren-nni kan ineggura"
       ],
       "Last 3 months only": [
-        ""
+        "3 wayyuren-nni kan ineggura"
       ],
       "Last month only": [
-        ""
+        "Ayyure-nni kan ineggura"
       ],
       "Mailbox password": [
         "Awal uffir n tnaka n yimayl"
       ],
       "Manage folders": [
-        ""
+        "Sefrek ikaramen"
       ],
       "Manage labels": [
+        "Sefrek tibzimin"
+      ],
+      "Manage my addresses": [
         ""
       ],
       "Mark as": [
         "Creḍ am"
+      ],
+      "Message Password": [
+        "Awal uffir n yizen"
       ],
       "Move to": [
         "Senkez ɣer"
@@ -4783,6 +4804,9 @@
       ],
       "Password": [
         "Awal uffir"
+      ],
+      "Password Hint": [
+        "Amatar n wawal uffir"
       ],
       "Payer": [
         "Amxellaṣ"
@@ -4893,7 +4917,7 @@
         "Ɣer:"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "I: ${ emailAddress }"
       ],
       "Total": [
         "Amatu"
@@ -5152,7 +5176,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        ""
+        "Ldi deg ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -5269,7 +5293,7 @@
     },
     "Mailbox": {
       "All mail": [
-        ""
+        "Akk Imaylen"
       ],
       "Archive": [
         "Aɣbar"
@@ -5327,7 +5351,7 @@
         ""
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        ""
+        "Tugna ur d-tuli ara iwakken ad tettwaḥrez tbaḍnit-ik•ik."
       ]
     },
     "Message notification": {
@@ -5504,6 +5528,9 @@
       ],
       "Contact group updated": [
         "Agraw n unermes yettwasnifel"
+      ],
+      "Password has been set successfully": [
+        ""
       ]
     },
     "Onboarding": {
@@ -6322,7 +6349,7 @@
         "Izen yettwacreḍ d azerfan"
       ],
       "Message marked as read.": [
-        ""
+        "Izen yettwacreḍ ittwaγra."
       ],
       "Message marked as Starred.": [
         ""
@@ -6444,7 +6471,7 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "azemz n tmerna n umiḍan"
       ],
       "the last 12 months": [
         ""
@@ -6501,9 +6528,6 @@
       ],
       "Add contact group name": [
         "Rnu isem n ugraw n unermes"
-      ],
-      "Add contacts": [
-        "Rnu inermisen"
       ],
       "Add filter": [
         "Rnu imsizdeg"
@@ -6579,7 +6603,7 @@
         "Sentem tansa n uɣerwaḍ?"
       ],
       "Contact details": [
-        ""
+        "Talqayt unermis"
       ],
       "Contact Details": [
         "Talqayt unermis"
@@ -6680,7 +6704,7 @@
         "Tukksa n yinermisen"
       ],
       "Downgrade account": [
-        ""
+        "Sider aswir n umiḍan"
       ],
       "Edit contact": [
         "Ẓreg anermis"
@@ -6720,9 +6744,6 @@
       ],
       "Expand content": [
         "Snerni agbur"
-      ],
-      "Expiration time": [
-        "Tanzagt n taggara"
       ],
       "Exporting contacts": [
         "Kter inermisen"
@@ -6793,9 +6814,6 @@
       "Message list": [
         "Tabdert n yiznan"
       ],
-      "Message without subject?": [
-        "Izen war asentel?"
-      ],
       "More": [
         "Ugar"
       ],
@@ -6834,9 +6852,6 @@
       ],
       "No attachment found": [
         "Ulac amedday i d-yettwafen"
-      ],
-      "No recipient": [
-        "Ulac aɣerwaḍ"
       ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
@@ -6891,6 +6906,9 @@
       ],
       "Re-signing contacts": [
         "Tulsa n uzmel n yinermisen"
+      ],
+      "Recipient missing": [
+        ""
       ],
       "Recover data": [
         "Err-d isefka"
@@ -6954,6 +6972,9 @@
       ],
       "Storage capacity warning": [
         "Alɣu ɣeg tallunt n uḥraz"
+      ],
+      "Subject missing": [
+        ""
       ],
       "Subtotal": [
         "Adasemday"
@@ -7033,7 +7054,7 @@
         "Yettwag usenqes i tallit n tfakturin n sin yiseggasen"
       ],
       "Each imported email will have this label": [
-        ""
+        "Yal imayl i d-yettwaketren ad yesɛu tabzimt-a"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Awgelhen n yimayl yettḥettim azmul n yimayl ad yallel deg usesteb n yiznan-ik·im yettwaznen"
@@ -7072,10 +7093,10 @@
         "Tadhelt i yineggafen n beṭṭu n yifuyla am BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Idukaramen n unagraw ad ttwabeqqeḍen s talɣa n yikaramen iberzen di ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Aktar ad yebdu seg yiznan n melmi kan."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tigawt-a ad d-tsader meṛṛa iznan i wakken ad tzemreḍ ad ten-tnadiḍ s wudem adigan. Asfaḍ n yisefka n yiminig-ik·im neɣ tuffɣa ad tsens taxtiṛt-a."
@@ -7094,6 +7115,17 @@
       ],
       "You do not have any contacts to export": [
         "Ulac akk ɣur-k·m inermisen i usifeḍ"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
       ]
     },
     "Validation": {
@@ -7207,16 +7239,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
+        "Aqeddac ${ n }",
         ""
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } tuqqna VPN",
+        "${ n } n tuqqniwin VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
+        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
       ]
     },
     "Warning": {

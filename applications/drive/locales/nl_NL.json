@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "Activate recovery": [
+        "Activeer herstel"
+      ],
       "Add": [
         "Toevoegen"
       ],
@@ -57,16 +60,16 @@
         "Download annuleren"
       ],
       "Cancel transfers": [
-        ""
+        "Stop overdrachten"
       ],
       "Cancel upload": [
         "Upload annuleren"
       ],
       "Chat with us": [
-        ""
+        "Chat met ons"
       ],
       "Check import progress": [
-        ""
+        "Import-voortgang checken"
       ],
       "Choose a file or drag it here": [
         "Kies een bestand of sleep deze hier"
@@ -108,7 +111,7 @@
         "Opstellen"
       ],
       "Composer size": [
-        ""
+        "Opstelmodusgrootte"
       ],
       "Confirm": [
         "Bevestigen"
@@ -141,13 +144,13 @@
         "Nieuwe map aanmaken"
       ],
       "Customize": [
-        ""
+        "Personaliseer"
       ],
       "Decrease": [
         "Verlaag"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Standaard e-mailapplicatie"
       ],
       "Delete": [
         "Verwijderen"
@@ -185,7 +188,7 @@
         "Downloaden"
       ],
       "Drive Locked": [
-        ""
+        "Drive versleuteld"
       ],
       "Edit": [
         "Bewerken"
@@ -194,7 +197,7 @@
         "Wijzig e-mailadres"
       ],
       "Edit label": [
-        ""
+        "Label bewerken"
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
@@ -218,7 +221,7 @@
         "Doorsturen als bijlage"
       ],
       "Get link": [
-        ""
+        "Link krijgen"
       ],
       "Get started": [
         "Aan de slag"
@@ -235,20 +238,17 @@
       "Grid layout": [
         "Rooster layout"
       ],
-      "here": [
-        "hier"
-      ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
       ],
       "Hide folders": [
-        ""
+        "Mappen verbergen"
       ],
       "Hide info": [
         "Informatie verbergen"
       ],
       "Hide labels": [
-        ""
+        "Labels verbergen"
       ],
       "I have a question": [
         "Ik heb een vraag"
@@ -260,7 +260,7 @@
         "Importeren"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importeer vanuit .csv of vCard"
       ],
       "Increase": [
         "Verhoog"
@@ -287,7 +287,7 @@
         "Mailbox layout"
       ],
       "Manage link": [
-        ""
+        "Beheer link"
       ],
       "Mark for deletion": [
         "Markeren voor verwijderen"
@@ -308,7 +308,7 @@
         "Meer informatie: ${ safeTitle }"
       ],
       "More options": [
-        ""
+        "Meer opties"
       ],
       "Move": [
         "Verplaatsen"
@@ -341,7 +341,7 @@
         "Download pauzeren"
       ],
       "Pause transfers": [
-        ""
+        "Pauzeer overdrachten"
       ],
       "Pause upload": [
         "Uploaden pauzeren"
@@ -361,11 +361,8 @@
       "Previous month": [
         "Vorige maand"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
-        ""
+        "Afsluiten"
       ],
       "Re-sign": [
         "Opnieuw ondertekenen"
@@ -410,7 +407,7 @@
         "Download herstarten"
       ],
       "Restart transfers": [
-        ""
+        "Herstart overdrachten"
       ],
       "Restart upload": [
         "Upload herstarten"
@@ -422,7 +419,7 @@
         "Download hervatten"
       ],
       "Resume transfers": [
-        ""
+        "Hervat overdrachten"
       ],
       "Resume upload": [
         "Upload hervatten"
@@ -439,6 +436,12 @@
       "Select plan": [
         "Selecteer abonnement"
       ],
+      "Set as default": [
+        "Als standaard instellen"
+      ],
+      "Set recovery phrase": [
+        "Stel herstel zin"
+      ],
       "Share": [
         "Delen"
       ],
@@ -446,7 +449,7 @@
         "Deel Bestand"
       ],
       "Share options": [
-        ""
+        "Deelopties"
       ],
       "Share via link": [
         "Deel via link"
@@ -458,16 +461,16 @@
         "Geavanceerde PGP-instellingen tonen"
       ],
       "Show folders": [
-        ""
+        "Mappen weergeven"
       ],
       "Show info": [
         "Informatie tonen"
       ],
       "Show labels": [
-        ""
+        "Toon labels"
       ],
       "Show shared link details": [
-        ""
+        "Toon details gedeelde link"
       ],
       "Sign out": [
         "Uitloggen"
@@ -488,7 +491,7 @@
         "Installatie starten"
       ],
       "Stay": [
-        ""
+        "Blijf"
       ],
       "Stop sharing": [
         "Delen stoppen"
@@ -519,6 +522,12 @@
       ],
       "Untrust": [
         "Niet meer vertrouwen"
+      ],
+      "Update recovery file": [
+        "Herstelbestand bijwerken"
+      ],
+      "Update recovery phrase": [
+        "Herstel zin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -852,7 +861,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "Agenda kon niet ontcijferd worden"
       ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
@@ -861,13 +870,13 @@
         "De agenda is te groot"
       ],
       "Calendar link is not accessible": [
-        ""
+        "Agendalink is niet toegankelijk"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Agendalink is tijdelijk ontoegankelijk"
       ],
       "Calendar link is wrong": [
-        ""
+        "Agenda link is verkeerd"
       ],
       "Failed to sync calendar": [
         "Synchronisatie van de agenda is mislukt"
@@ -886,7 +895,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Persoonlijke instellingen m.b.t. importeren sluiten?"
       ]
     },
     "Contact field label": {
@@ -1057,12 +1066,12 @@
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Uit"
       ]
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Aan"
       ]
     },
     "Error": {
@@ -1082,10 +1091,10 @@
         "Verificatiefout."
       ],
       "Calendar limit reached": [
-        ""
+        "Agendalimiet bereikt"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
       ],
       "Can't validate email, try again later": [
         "Kan e-mail niet valideren, probeer het later opnieuw"
@@ -1094,7 +1103,7 @@
         "Kan telefoonnummer niet valideren, probeer het later opnieuw"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Checkout is verlopen, probeer het opnieuw"
       ],
       "Contact could not be saved": [
         "Contact kon niet worden opgeslagen"
@@ -1106,11 +1115,15 @@
         "Kon adres ${ email } niet vinden."
       ],
       "Could not generate file keys": [
-        ""
+        "Kon geen bestandssleutels genereren"
+      ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Deselecteer tenminste één agenda",
+        "Deselecteer tenminste ${ calendarToFixCount } agenda's"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Ten minste ${ calendarToFixCount } kalender deselecteren of",
+        "Ten minste ${ calendarToFixCount } kalenders deselecteren of"
       ],
       "Email address invalid": [
         "E-mailadres ongeldig"
@@ -1125,19 +1138,19 @@
         "Fout bij het verbinden met de Bitcoin-API."
       ],
       "Failed to load the link": [
-        ""
+        "Kan de link niet laden"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
       ],
       "File cannot be merged with folder": [
-        ""
+        "Bestand kan niet worden samengevoegd met map"
       ],
       "File has no contents to preview": [
         "Bestand heeft geen inhoud om een voorbeeld te bekijken"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Mapnaam kan niet leeg zijn"
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
@@ -1176,17 +1189,20 @@
         "Ongeldige verificatiecode"
       ],
       "Label name cannot be empty": [
-        ""
+        "Label naam mag niet leeg zijn"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
+        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
       "Name on card required": [
         "Naam op kaart vereist"
+      ],
+      "No data to import": [
+        "Geen gegevens om te importeren"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -1203,7 +1219,7 @@
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisatie niet herkend. Probeer opnieuw."
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
@@ -1221,17 +1237,17 @@
         "Betalingsproces niet ondersteund"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Los het gemarkeerde conflict op om verder te gaan.",
+        "Los de gemarkeerde conflicten op om verder te gaan."
       ],
       "Preferences could not be saved": [
         "Voorkeuren konden niet worden opgeslagen"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "Primaire adressleutel is niet gedecodeerd"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "Primaire adressleutel is niet gedecodeerd."
       ],
       "Process aborted": [
         "Proces afgebroken"
@@ -1252,10 +1268,10 @@
         "Sommige groepen konden niet worden verwijderd"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Sommige van uw labelnamen overschrijden de ProtonMail's maximum tekenlimiet. Pas de import aan om deze namen te bewerken."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -1267,10 +1283,10 @@
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "De mapnaam is te lang. Kies een andere naam."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "De naam van het label is te lang. Kies een andere naam."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Het minimum bedrag dat kan worden toegevoegd is ${ _price }"
@@ -1282,28 +1298,28 @@
         "De minimale betaling die we accepteren is ${ _price2 }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        ""
+        "De nieuwe revisie van het originele bestand is nog niet geüpload, probeer het later nog eens"
       ],
       "The original file has missing active revision": [
-        ""
+        "Het originele bestand heeft geen actieve revisie"
       ],
       "The original file has missing hash key": [
-        ""
+        "Het originele bestand heeft geen hash sleutel"
       ],
       "The original file has missing session key": [
-        ""
+        "In het originele bestand ontbreekt de sessiesleutel"
       ],
       "The original file is not uploaded yet, please try again later": [
-        ""
+        "Het originele bestand is nog niet geüpload, probeer het later nog eens"
       ],
       "The original folder not found": [
-        ""
+        "De originele map niet gevonden"
       ],
       "The original folder or file not found": [
-        ""
+        "De originele map of bestand niet gevonden"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
       ],
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
@@ -1315,10 +1331,10 @@
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Deze mapnaam is niet beschikbaar. Gelieve een andere naam te kiezen"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Deze labelnaam is niet beschikbaar. Gelieve een andere naam te kiezen"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
@@ -1439,7 +1455,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } bijgewerkt"
       ]
     },
     "Free price": {
@@ -1472,7 +1488,7 @@
         "Contacten, groepen en instellingen"
       ],
       "Get help": [
-        ""
+        "Krijg hulp"
       ]
     },
     "Hint": {
@@ -1579,16 +1595,16 @@
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nieuwe agenda",
+        "${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "Éen samengevoegde agenda",
+        "${ calendarsToBeMerged } samengevoegde agenda's"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } samengevoegde agenda's",
+        "${ calendarsToBeMergedCount } samengevoegde agenda's"
       ],
       "${ canceledCount } Canceled": [
         "Één geannuleerd",
@@ -1644,12 +1660,12 @@
         "${ namesWithoutLast } en ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "Één contactgroep",
+        "${ numContactGroups } contactgroepen"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "Één contactpersoon",
+        "${ numContacts } contactpersonen"
       ],
       "${ pausedCount } Paused": [
         "Één onderbroken",
@@ -1665,16 +1681,16 @@
         "${ saveExtra20 } op zowel VPN als Mail door een VPN-abonnement toe te voegen."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } map geselecteerd",
+        "${ selectedFoldersCount } mappen geselecteerd"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } label geselecteerd",
+        "${ selectedFoldersCount } labels geselecteerd"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -1684,14 +1700,14 @@
         "${ updated } contacten bijgewerkt."
       ],
       "${ uploadName } already exists in this location.": [
-        ""
+        "${ uploadName } bestaat al op deze plaats."
       ],
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
       "(${ memberCount } member)": [
-        "",
-        ""
+        "(${ memberCount } lid)",
+        "(${ memberCount } leden)"
       ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Extra adressen toevoegen aan uw account, zoals gebruiker2@protonmail.com"
       ],
@@ -1749,12 +1762,12 @@
         "Na het betalen van uw Bitcoin betaling, volg de onderstaande instructies om te upgraden."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Alles (${ totalFoldersCount } map)",
+        "Alle (${ totalFoldersCount } mappen)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Alle (${ totalFoldersCount } label)",
+        "Alle (${ totalFoldersCount } labels)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Biedt u de mogelijkheid om e-mails te hosten voor uw eigen domein(en) op ${ mailAppName }, bijvoorbeeld john.smith@voorbeeld.com"
@@ -1763,10 +1776,10 @@
         "Bedrag onder minimum (${ amount })."
       ],
       "An active recovery file": [
-        ""
+        "Een actief herstelbestand"
       ],
       "and": [
-        ""
+        "en"
       ],
       "Anyone with this link can access your file.": [
         "Iedereen met deze link heeft toegang tot dit bestand."
@@ -1775,14 +1788,14 @@
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete selected item from trash?": [
-        "",
-        ""
+        "Weet u zeker dat u het geselecteerde item permanent uit de prullenbak wilt verwijderen?",
+        "Weet u zeker dat u geselecteerde items permanent wilt verwijderen uit de prullenbak?"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        ""
+        "Omdat ${ appName } end-to-end versleuteld is, kunnen we geen toegang krijgen\nof uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset,\nmoet u een van de volgende dingen hebben:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Gefactureerd als ${ billedPrice } elke 2 jaar"
@@ -1824,7 +1837,7 @@
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "Close this screen to exit.": [
-        ""
+        "Sluit dit scherm om af te sluiten."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Het sluiten van een transfer manager zal alle actieve overboekingen annuleren, weet u het zeker?"
@@ -1836,23 +1849,23 @@
         "Verbindingen"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        ""
+        "Blijf ${ appName } gebruiken en ontgrendel de schijf later"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Maak één nieuwe agenda",
+        "Maak ${ calendarsToBeCreated } nieuwe agenda's"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die je wilt importeren."
       ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
       "Create in": [
-        ""
+        "Maak in"
       ],
       "Create links and share your files with others.": [
         "Maak links en deel uw bestanden met anderen."
@@ -1864,14 +1877,17 @@
         "Link naar bestand maken"
       ],
       "Creating share": [
-        ""
+        "Maak share"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
+      ],
+      "Default email application": [
+        "Standaard e-mailapplicatie"
       ],
       "Delete drive": [
-        "",
-        ""
+        "Verwijder drive",
+        "Verwijder drives"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Korting toegepast op uw abonnement met coupon ${ code }"
@@ -1913,7 +1929,7 @@
         "Genereren van beveiligde koppeling mislukt. Probeer het later opnieuw."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        ""
+        "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
       ],
       "File will not be uploaded": [
         "Bestand zal niet worden geüpload"
@@ -1922,7 +1938,7 @@
         "Afronden"
       ],
       "Folder contents will merge into a single folder": [
-        ""
+        "De inhoud van de mappen wordt samengevoegd tot één enkele map"
       ],
       "Folder will not be uploaded": [
         "Folder zal niet worden ge-upload"
@@ -1940,7 +1956,7 @@
         "Voor professionals die behoefte hebben aan veilige zakelijke communicatie."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
+        "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -1970,29 +1986,29 @@
         "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
       ],
       "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        ""
+        "Als u een van deze heeft, ga dan verder naar Proton account instelling om\nhet deblokkeerproces voort te zetten."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda's"
       ],
       "Import from": [
-        ""
+        "Importeren van"
       ],
       "Import in progress": [
-        ""
+        "Bezig met importeren"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
       "Included": [
         "Inbegrepen"
       ],
       "Inherited from parent folder": [
-        ""
+        "Overgenomen van bovenliggende map"
       ],
       "Initializing": [
         "Initialiseren"
@@ -2007,19 +2023,19 @@
         "Internetverbinding hersteld."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Bevestig uw keuze en wij doen de rest."
       ],
       "Key fingerprint": [
         "Vingerafdruk van sleutel"
       ],
       "Large imports can take several days.": [
-        ""
+        "Grote importen kunnen meerdere dagen duren."
       ],
       "Learn more": [
         "Meer informatie"
       ],
       "Link copied to clipboard": [
-        ""
+        "Link gekopieerd naar klembord"
       ],
       "Link expires: ": [
         "Link verloopt: "
@@ -2037,10 +2053,10 @@
         "Voorbeeld laden"
       ],
       "Loading share": [
-        ""
+        "Share laden"
       ],
       "Merged": [
-        ""
+        "Samengevoegd"
       ],
       "More": [
         "Meer"
@@ -2052,16 +2068,16 @@
         "Mijn linken"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
       "Network issue": [
         "Netwerk probleem"
       ],
       "New": [
-        ""
+        "Nieuw"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
       ],
       "No": [
         "Nee"
@@ -2094,7 +2110,7 @@
         "Niet aanpasbaar"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Opmerking: Gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ appName } hebt geïnstalleerd."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Aantal VPN-verbindingen die aan gebruikers kunnen worden toegewezen. Elk verbonden apparaat verbruikt één VPN-verbinding."
@@ -2103,7 +2119,7 @@
         "van"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        ""
+        "Een van uw versleutelde schijven is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoord reset. ${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-ProtonMail-ontvangers gebruikt."
@@ -2121,7 +2137,7 @@
         "Betalingen worden beschermd met TLS-versleuteling en Zwitserse privacywetten."
       ],
       "Permanently delete all files in your drive": [
-        ""
+        "Verwijder permanent alle bestanden op uw schijf"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ProtonMail altijd versleutelde berichten tekent."
@@ -2139,7 +2155,7 @@
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } tegoed over."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Selecteer de mappen die u wilt importeren:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode of bel uw bank voor hulp."
@@ -2202,17 +2218,17 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
       "Session timed out.": [
         "Sessie verlopen."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Stel ProtonMail in als uw standaard e-mailapplicatie voor deze browser. ProtonMail wordt automatisch geopend wanneer u op een e-maillink klikt."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
@@ -2224,7 +2240,7 @@
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        ""
+        "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
@@ -2269,23 +2285,23 @@
         "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        ""
+        "Deze link is gemaakt in\nin een vorige versie en kan niet worden gewijzigd. Verwijder deze koppeling en maak een\nnieuwe om de instellingen te wijzigen."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw bestand. Om het bestand opnieuw in te stellen heeft u een nieuwe link nodig."
       ],
       "This will delete the link and remove access to your file for anyone with the link.": [
-        "",
-        ""
+        "Dit zal de link verwijderen en de toegang tot uw bestand voor iedereen met de link verwijderen.",
+        "Dit zal de link verwijderen en de toegang tot uw bestanden voor iedereen met de link verwijderen."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browser tabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
       ],
       "This will overwrite the existing file": [
-        ""
+        "Dit zal het bestaande bestand overschrijven"
       ],
       "This will overwrite the existing folder": [
-        ""
+        "Dit zal de bestaande map overschrijven"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -2300,22 +2316,22 @@
         "Om adresverificatie te gebruiken, moet u één of meer beschikbare openbare sleutels vertrouwen, inclusief de openbare sleutel die u wilt gebruiken voor het verzenden. Dit voorkomt dat de versleutelingssleutels worden vervalst."
       ],
       "Transfer canceled for file \"${ name }\"": [
-        ""
+        "Overdracht geannuleerd voor bestand \"${ name }\""
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        ""
+        "Overdracht geannuleerd voor map \"${ name }\""
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        ""
+        "Overdracht overgeslagen voor bestand \"${ file.name }\""
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        ""
+        "Overdracht overgeslagen voor map \"${ folderName }\""
       ],
       "Trash": [
         "Prullenbak"
       ],
       "Unlock drive to recover files": [
-        ""
+        "Ontgrendel schijf om bestanden te herstellen"
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
@@ -2351,7 +2367,7 @@
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "We laten het u weten als de import klaar is."
       ],
       "Week": [
         "Week"
@@ -2360,10 +2376,10 @@
         "Wat wilt u doen?"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Wat wilt u importeren uit uw Google-account?"
       ],
       "What would you like to do?": [
-        ""
+        "Wat zou u willen doen?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
@@ -2380,20 +2396,17 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email }) en heeft beperkte toegang."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "U kunt geïmporteerde kalenders ook samenvoegen met bestaande Proton-agenda's."
+      ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "U kunt de voortgang controleren ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "U hebt Bèta Toegang uitgeschakeld. Klik op ${ refreshButton } om de stabiele versie van ${ appName } te gebruiken. De applicatie wordt herladen."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "U hebt Bèta Toegang aangezet. Klik op ${ refreshButton } om de laatste versie van ${ appName } te gebruiken. De applicatie wordt herladen."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "U moet een kredietkaart of een bankrekening gekoppeld hebben aan uw PayPal-account om deze toe te voegen als betaalmethode."
@@ -2402,7 +2415,7 @@
         "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
@@ -2435,7 +2448,7 @@
         "Uw bank vereist 3-D Secure verificatie voor beveiligingsdoeleinden."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
       ],
       "Your download has been canceled.": [
         "Uw download is geannuleerd."
@@ -2453,7 +2466,7 @@
         "Uw bestand wordt gedownload."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        ""
+        "Uw bestanden zijn niet meer toegankelijk vanwege een wachtwoord-reset. Upload de oude versleutelingssleutel om weer toegang te krijgen. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
@@ -2462,10 +2475,10 @@
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
       "Your previous password": [
-        ""
+        "Uw vorige wachtwoord"
       ],
       "Your previous recovery phrase": [
-        ""
+        "Uw vorige herstelzin"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
@@ -2704,12 +2717,12 @@
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "Uit"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "Aan"
       ]
     },
     "Label": {
@@ -2732,13 +2745,13 @@
         "Alles"
       ],
       "Apply to all duplicated files": [
-        ""
+        "Toepassen op alle gedupliceerde bestanden"
       ],
       "Apply to all duplicated folders": [
-        ""
+        "Toepassen op alle gedupliceerde mappen"
       ],
       "Apply to selection": [
-        ""
+        "Toepassen op selectie"
       ],
       "Audio file": [
         "Geluidsbestand"
@@ -2759,7 +2772,7 @@
         "BTC-bedrag:"
       ],
       "Calendars": [
-        ""
+        "Agenda's"
       ],
       "Cancel": [
         "Annuleer"
@@ -2780,10 +2793,10 @@
         "Plaats"
       ],
       "Completed": [
-        ""
+        "Voltooid"
       ],
       "Contacts": [
-        ""
+        "Contactpersonen"
       ],
       "Copy": [
         "Kopieer"
@@ -2792,14 +2805,14 @@
         "Land"
       ],
       "Created": [
-        ""
+        "Aangemaakt"
       ],
       "CVV code": [
         "CVV code"
       ],
       "Delete Drive?": [
-        "",
-        ""
+        "Verwijder Drive?",
+        "Verwijder Drives?"
       ],
       "Display name": [
         "Weergavenaam"
@@ -2814,7 +2827,7 @@
         "E-mailindeling"
       ],
       "Emails": [
-        ""
+        "E-mails"
       ],
       "Enable Beta Access": [
         "Bèta-toegang inschakelen"
@@ -2823,7 +2836,7 @@
         "E-mails versleutelen"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Voer de naam van de organisatie in om te bevestigen"
       ],
       "Enter the 6-digit code": [
         "Voer de 6-cijferige code in"
@@ -2856,13 +2869,13 @@
         "Map"
       ],
       "Folder location": [
-        ""
+        "Map locatie"
       ],
       "Folder name": [
         "Mapnaam"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Van: { importedEmail }"
       ],
       "Get your own ${ appName }": [
         "Krijg uw eigen ${ appName }"
@@ -2874,46 +2887,46 @@
         "Afbeelding"
       ],
       "Import all messages": [
-        ""
+        "Alle berichten importeren"
       ],
       "Import contacts": [
         "Contacten importeren"
       ],
       "Import interval": [
-        ""
+        "Interval importeren"
       ],
       "Import to email address": [
-        ""
+        "Importeren naar e-mailadres"
       ],
       "Keyboard shortcuts": [
         "Sneltoetsen"
       ],
       "Label messages as": [
-        ""
+        "Berichten labellen als"
       ],
       "Last 12 months only": [
-        ""
+        "Alleen afgelopen 12 maanden"
       ],
       "Last 3 months only": [
-        ""
+        "Alleen de laatste 3 maanden"
       ],
       "Last month only": [
-        ""
+        "Alleen vorige maand"
       ],
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
       "Manage folders": [
-        ""
+        "Mappen beheren"
       ],
       "Manage labels": [
-        ""
+        "Beheer labels"
       ],
       "Merge a folder": [
         "Map samenvoegen"
       ],
       "Name": [
-        ""
+        "Naam"
       ],
       "Name on card": [
         "Naam op de kaart"
@@ -2922,7 +2935,7 @@
         "Nooit"
       ],
       "Notification": [
-        ""
+        "Notificatie"
       ],
       "Operating system": [
         "Besturingssysteem"
@@ -2937,7 +2950,7 @@
         "Betaler"
       ],
       "PGP scheme": [
-        ""
+        "PGP-schema"
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -2964,7 +2977,7 @@
         "Regio"
       ],
       "Replace file": [
-        ""
+        "Bastand verplaatsen"
       ],
       "Replace folder": [
         "Map vervangen"
@@ -2997,10 +3010,10 @@
         "E-mails ondertekenen"
       ],
       "Size": [
-        ""
+        "Grootte"
       ],
       "Skip file": [
-        ""
+        "Bestand overslaan"
       ],
       "Skip folder": [
         "Sla map over"
@@ -3018,10 +3031,10 @@
         "Tekst"
       ],
       "This will permanently delete all files in your locked drive.": [
-        ""
+        "Dit zal alle bestanden op uw vergrendelde schijf permanent verwijderen."
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Naar: ${ emailAddress }"
       ],
       "Total": [
         "Totaal"
@@ -3033,19 +3046,19 @@
         "Tweestapsverificatiecode"
       ],
       "Type": [
-        ""
+        "Type"
       ],
       "Unknown file": [
         "Onbekend bestand"
       ],
       "Unlock Drive": [
-        ""
+        "Drive ontgrendelen"
       ],
       "Unlock drive (recommended)": [
-        ""
+        "Drive ontgrendelen (aanbevolen)"
       ],
       "Unlock later": [
-        ""
+        "Ontgrendel later"
       ],
       "Upload anyway": [
         "Toch uploaden"
@@ -3054,7 +3067,7 @@
         "Afbeelding uploaden"
       ],
       "Uploaded": [
-        ""
+        "Geüpload"
       ],
       "Username or ProtonMail address": [
         "Gebruikersnaam of ProtonMail e-mailadres"
@@ -3069,7 +3082,7 @@
         "Wat is er gebeurd?"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        ""
+        "Ja, ik wil mijn oude bestanden\nmijn oude bestanden"
       ],
       "ZIP": [
         "Postcode"
@@ -3116,21 +3129,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Map maken"
       ],
       "Create label": [
-        ""
+        "Label aanmaken"
       ],
       "Edit folder": [
-        ""
+        "Map bewerken"
       ],
       "Edit label": [
-        ""
+        "Label bewerken"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } aangemaakt"
       ]
     },
     "Layout mode": {
@@ -3146,10 +3159,10 @@
         "Voeg een geschenkcode toe"
       ],
       "All mail": [
-        ""
+        "Alle e-mails"
       ],
       "Archive": [
-        ""
+        "Archiveren"
       ],
       "clearing your browser cache": [
         "uw browser cache wissen"
@@ -3158,13 +3171,13 @@
         "klik hier"
       ],
       "Drafts": [
-        ""
+        "Concepten"
       ],
       "Go to subscription plans": [
         "Ga naar abonnementen"
       ],
       "Inbox": [
-        ""
+        "Postvak in"
       ],
       "Learn more": [
         "Meer informatie"
@@ -3173,7 +3186,7 @@
         "Mijn bestanden"
       ],
       "Outbox": [
-        ""
+        "Postvak uit"
       ],
       "Pay invoice": [
         "Factuur betalen"
@@ -3182,19 +3195,19 @@
         "Uitnodiging aanvragen"
       ],
       "Scheduled": [
-        ""
+        "Gepland"
       ],
       "Sent": [
-        ""
+        "Verzonden"
       ],
       "Shared": [
         "Gedeeld"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Starred": [
-        ""
+        "Met ster"
       ],
       "Trash": [
         "Prullenbak"
@@ -3208,23 +3221,23 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt",
+        "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt"
       ],
       "Almost there": [
-        ""
+        "Bijna daar"
       ],
       "Creating new calendars": [
-        ""
+        "Nieuwe agenda's maken"
       ],
       "Gathering your data": [
-        ""
+        "Verzamelen van uw gegevens"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "We verzamelen uw gegevens van uw provider"
       ],
       "Your import is starting": [
-        ""
+        "Uw import begint"
       ]
     },
     "Mail feature": {
@@ -3310,12 +3323,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importeer alle berichten van ${ selectedLabelsCount } uit ${ totalLabelsCount } label sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ selectedLabelsCount } van de ${ totalLabelsCount } labels sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importeer alle berichten van ${ totalLabelsCount } label sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ totalLabelsCount } labels sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3325,7 +3338,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Hiermee worden alle subgebruikers, accounts en gegevens die aan uw organisatie zijn gekoppeld definitief verwijderd."
       ]
     },
     "Message display when a new app version is available": {
@@ -3348,13 +3361,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Kleur"
       ],
       "Folder name": [
-        ""
+        "Mapnaam"
       ],
       "Label name": [
-        ""
+        "Labelnaam"
       ]
     },
     "Notification": {
@@ -3374,8 +3387,8 @@
         "\"${ firstItemName }\" uit de prullenbak hersteld"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "",
-        ""
+        "${ deletedCount } link naar uw bestand is verwijderd",
+        "${ deletedCount } linken naar uw bestanden zijn verwijderd"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } bestand uit de prullenbak permanent verwijderd",
@@ -3390,8 +3403,8 @@
         "${ deletedItemsCount } items permanent verwijderd uit de prullenbak"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "",
-        ""
+        "${ failedCount } link naar uw bestand kon niet worden verwijderd",
+        "${ failedCount } linken naar uw bestanden konden niet worden verwijderd"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } bestand kon niet worden verplaatst",
@@ -3457,17 +3470,17 @@
         "Verplaatsen mislukt, probeer het opnieuw"
       ],
       "Failed to upload files: ${ err }": [
-        ""
+        "Het uploaden van bestanden is mislukt: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "",
-        ""
+        "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden",
+        "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        ""
+        "Bestand of map \"${ filename }\" is al aan het uploaden"
       ],
       "File or folder is missing a name": [
-        ""
+        "Bestand of map heeft geen naam"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Verplaats ${ itemsToMoveCount } bestand",
@@ -3494,19 +3507,19 @@
         "Verplaats ${ movingCount } items"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        ""
+        "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
       ],
       "The link to your file failed to be deleted": [
-        ""
+        "De link naar uw bestand kon niet worden verwijderd"
       ],
       "The link to your file was deleted": [
-        ""
+        "De link naar uw bestand is verwijderd"
       ],
       "Your old files will be deleted in 72 hours": [
-        ""
+        "Uw oude bestanden worden binnen 72 uur verwijderd"
       ],
       "Your settings have been changed successfully": [
-        ""
+        "Uw instellingen zijn succesvol gewijzigd"
       ]
     },
     "Onboarding Proton": {
@@ -3585,15 +3598,15 @@
         "Groep negeren"
       ],
       "No parent folder": [
-        ""
+        "Geen bovenliggende map"
       ]
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Nieuwe agenda maken"
       ],
       "Merge with calendar": [
-        ""
+        "Samenvoegen met agenda"
       ]
     },
     "Payment method option": {
@@ -3909,10 +3922,10 @@
         "Voorkeuren opgeslagen"
       ],
       "Recovery has started": [
-        ""
+        "Herstel is gestart"
       ],
       "The link to your file was successfully copied": [
-        ""
+        "De link naar uw bestand is succesvol gekopieerd"
       ],
       "Verification successful": [
         "Verificatie gelukt"
@@ -3996,7 +4009,7 @@
         "Grootte"
       ],
       "Uploaded": [
-        ""
+        "Geüpload"
       ],
       "Values": [
         "Waarden"
@@ -4012,16 +4025,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "aanmaakdatum van account"
       ],
       "the last 12 months": [
-        ""
+        "de laatste 12 maanden"
       ],
       "the last 3 months": [
-        ""
+        "de laatste 3 maanden"
       ],
       "the last month": [
-        ""
+        "de laatste maand"
       ]
     },
     "Time unit": {
@@ -4110,7 +4123,7 @@
         "Bevestig verlies van Proton bonussen"
       ],
       "Contact details": [
-        ""
+        "Contactgegevens"
       ],
       "Contact Details": [
         "Contactgegevens"
@@ -4143,13 +4156,13 @@
         "Huidig abonnement"
       ],
       "Customize and confirm": [
-        ""
+        "Aanpassen en bevestigen"
       ],
       "Customize calendar import": [
-        ""
+        "Agenda-import aanpassen"
       ],
       "Customize your mail import": [
-        ""
+        "Uw e-mailimport aanpassen"
       ],
       "Customize your plan": [
         "Abonnement aanpassen"
@@ -4169,7 +4182,7 @@
         "Verwijder ${ Name }"
       ],
       "Delete organization?": [
-        ""
+        "Organisatie verwijderen?"
       ],
       "Delete permanently": [
         "Permanent verwijderen"
@@ -4184,7 +4197,7 @@
         "Wijzigingen annuleren?"
       ],
       "Downgrade account": [
-        ""
+        "Account downgraden"
       ],
       "Download canceled": [
         "Download geannuleerd"
@@ -4205,10 +4218,10 @@
         "Sleep hier om te uploaden"
       ],
       "Duplicate file found": [
-        ""
+        "Duplicaat bestand gevonden"
       ],
       "Duplicate folder found": [
-        ""
+        "Duplicate map gevonden"
       ],
       "Edit contact": [
         "Contactpersoon bewerken"
@@ -4295,7 +4308,7 @@
         "Beveiligde link beheren"
       ],
       "Manage share": [
-        ""
+        "Delen beheren"
       ],
       "Merge contacts": [
         "Contacten samenvoegen"
@@ -4400,7 +4413,7 @@
         "Selecteer vervaltijd link"
       ],
       "Select what to import": [
-        ""
+        "Selecteer wat u wilt importeren"
       ],
       "Settings": [
         "Instellingen"
@@ -4454,7 +4467,7 @@
         "Upgrade vereist"
       ],
       "Uploaded": [
-        ""
+        "Geüpload"
       ],
       "Uploaded by": [
         "Geüpload door"
@@ -4486,7 +4499,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Vandaag"
       ]
     },
     "Tooltip": {
@@ -4515,7 +4528,7 @@
         "Korting toegepast voor tweejaarlijkse factureringscyclus"
       ],
       "Each imported email will have this label": [
-        ""
+        "Elke geïmporteerde e-mail heeft dit label"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mail encryptie dwingt e-mail handtekening om uw verzonden berichten te verifiëren"
@@ -4542,7 +4555,7 @@
         "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
       "Inactive sharing link": [
-        ""
+        "Inactieve link voor delen"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Ondersteuning voor meerdere gebruikers is alleen van toepassing op abonnementen met 2 of meer gebruikers"
@@ -4560,10 +4573,10 @@
         "Ondersteuning voor filesharing protocollen zoals BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Systeemsubmappen worden weergegeven als aparte mappen in ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Het importeren begint met de meest recente berichten."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een publieke sleutel om het verzenden van versleutelde end-to-end e-mails naar dit e-mailadres mogelijk te maken"
@@ -4709,16 +4722,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } server",
+        "${ n }+ servers"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries } landen"
       ]
     },
     "Warning": {
@@ -4749,7 +4762,7 @@
         "Houd er rekening mee dat door deze betaalmethode te kiezen uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -4758,13 +4771,13 @@
         "Sommige van de contacten die moeten worden samengevoegd tonen fouten. Controleer ze individueel"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "De gegevens van de contactpersoon zijn beschadigd en kunnen niet worden weergegeven."
       ],
       "The contact failed to load.": [
         "Het laden van het contactpersoon is mislukt."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "De datum- en tijdinstellingen op uw apparaat zijn niet meer gesynchroniseerd. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Decoderen van de versleutelde inhoud is mislukt."
@@ -4782,7 +4795,7 @@
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
       ]
     }
   }

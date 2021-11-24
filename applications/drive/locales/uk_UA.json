@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Активувати відновлення"
+      ],
       "Add": [
         "Додати"
       ],
@@ -146,8 +149,8 @@
       "Decrease": [
         "Зменшити"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Додаток електронної пошти за замовчуванням"
       ],
       "Delete": [
         "Видалити"
@@ -238,9 +241,6 @@
       ],
       "Grid layout": [
         "Схема сітки"
-      ],
-      "here": [
-        "тут"
       ],
       "Hide advanced PGP settings": [
         "Сховати розширені налаштування PGP"
@@ -365,9 +365,6 @@
       "Previous month": [
         "Попередній місяць"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Вийти"
       ],
@@ -442,6 +439,12 @@
       ],
       "Select plan": [
         "Обрати тарифний план"
+      ],
+      "Set as default": [
+        "Встановити за замовчуванням"
+      ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
       ],
       "Share": [
         "Поділитися"
@@ -523,6 +526,12 @@
       ],
       "Untrust": [
         "Не довіряти"
+      ],
+      "Update recovery file": [
+        "Оновити файл відновлення"
+      ],
+      "Update recovery phrase": [
+        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -1126,6 +1135,12 @@
       "Could not generate file keys": [
         "Не вдається згенерувати ключі файлу"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Приберіть принаймні ${ calendarToFixCount } календар",
+        "Приберіть принаймні ${ calendarToFixCount } календарі",
+        "Приберіть принаймні ${ calendarToFixCount } календарів",
+        "Приберіть принаймні ${ calendarToFixCount } календаря"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Приберіть принаймні ${ calendarToFixCount } календар або",
         "Приберіть принаймні ${ calendarToFixCount } календарі або",
@@ -1209,6 +1224,9 @@
       ],
       "Name on card required": [
         "Необхідно ввести ім'я, вказане на картці"
+      ],
+      "No data to import": [
+        "Немає даних для імпорту"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -1817,9 +1835,6 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Додати інші адреси до свого облікового запису, наприклад user2@protonmail.com"
       ],
@@ -1960,6 +1975,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
+      ],
+      "Default email application": [
+        "Додаток електронної пошти за замовчуванням"
       ],
       "Delete drive": [
         "Видалити сховище",
@@ -2300,8 +2318,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створено новий календар у межах ліміту до 20 календарів. Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -2309,8 +2327,8 @@
       "Session timed out.": [
         "Сеанс завершився."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Встановите ProtonMail як додаток електронної пошти за замовчуванням для цього браузера. ProtonMail відкриється автоматично після натискання на поштове посилання."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
@@ -2480,6 +2498,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
@@ -2488,12 +2509,6 @@
       ],
       "You cannot undo this action.": [
         "Цю дію не можна скасувати."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Ви вимкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати стабільну версію ${ appName }. Програму буде перезавантажено."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Ви увімкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати найновішу версію ${ appName }. Програму буде перезавантажено."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "У вас повинна бути кредитна картка чи банківський рахунок, пов'язаний з вашим обліковим записом PayPal, для можливості його застосування методом оплати."
@@ -3248,10 +3263,10 @@
         "Додати подарунковий код"
       ],
       "All mail": [
-        ""
+        "Уся пошта"
       ],
       "Archive": [
-        ""
+        "Архів"
       ],
       "clearing your browser cache": [
         "очищення кешу браузера"
@@ -3260,13 +3275,13 @@
         "натисніть тут"
       ],
       "Drafts": [
-        ""
+        "Чернетки"
       ],
       "Go to subscription plans": [
         "Перейти до тарифних планів"
       ],
       "Inbox": [
-        ""
+        "Вхідні"
       ],
       "Learn more": [
         "Докладніше"
@@ -3275,7 +3290,7 @@
         "Мої файли"
       ],
       "Outbox": [
-        ""
+        "Вихідні"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -3284,19 +3299,19 @@
         "Запитати запрошення"
       ],
       "Scheduled": [
-        ""
+        "Заплановано"
       ],
       "Sent": [
-        ""
+        "Надіслані"
       ],
       "Shared": [
         "Спільний доступ"
       ],
       "Spam": [
-        ""
+        "Спам"
       ],
       "Starred": [
-        ""
+        "Із зірочкою"
       ],
       "Trash": [
         "Смітник"
@@ -4282,7 +4297,7 @@
         "Підтвердити втрату бонусів Proton"
       ],
       "Contact details": [
-        ""
+        "Подробиці контакту"
       ],
       "Contact Details": [
         "Подробиці контакту"
