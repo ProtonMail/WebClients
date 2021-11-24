@@ -17,12 +17,14 @@ import mailIllu from '@proton/styles/assets/img/import/importTypes/mail.svg';
 import calendarIllu from '@proton/styles/assets/img/import/importTypes/calendar.svg';
 import contactsIllu from '@proton/styles/assets/img/import/importTypes/contacts.svg';
 
+import { Button, ButtonProps, FormModal, Loader, Tooltip } from '../../components';
+import { useCalendars, useCalendarUserSettings, useModals } from '../../hooks';
+
 import ImportMailModal from './mail/modals/ImportMailModal';
 import { ImportModal as ImportCalendarModal } from '../calendar/importModal';
 import ImportContactsModal from '../contacts/import/ImportModal';
 
-import { Button, ButtonProps, FormModal, Loader, Tooltip } from '../../components';
-import { useCalendars, useCalendarUserSettings, useModals } from '../../hooks';
+import EasySwitchInstructionsModal from './EasySwitchInstructionsModal';
 
 import './EasySwitchModal.scss';
 
@@ -30,7 +32,7 @@ interface ImportTypeButtonProps extends ButtonProps {
     importType: ImportType;
 }
 
-const ImportTypeButton = ({ importType, onClick, ...rest }: ImportTypeButtonProps) => {
+const ImportTypeButton = ({ importType, ...rest }: ImportTypeButtonProps) => {
     const typeMap = {
         [ImportType.MAIL]: {
             title: c('Action').t`Import emails`,
@@ -57,7 +59,6 @@ const ImportTypeButton = ({ importType, onClick, ...rest }: ImportTypeButtonProp
             aria-label={typeMap[importType].title}
             title={typeMap[importType].title}
             className="flex flex-align-center flex-justify-center pt1-5 pb1 pl2 pr2"
-            onClick={onClick}
             {...rest}
         >
             <span className="flex flex-nowrap flex-column pl1 pr1">
@@ -109,29 +110,39 @@ const EasySwitchDefaultModal = ({
 
     const isLoading = loadingCalendars || loadingCalendarUserSettings;
 
-    const handleClickMail = () => {
-        createModal(<ImportMailModal addresses={addresses} providerInstructions={provider} />);
-        onClose();
-    };
+    const handleClick = (importType: ImportType) => {
+        if (provider === NON_OAUTH_PROVIDER.DEFAULT) {
+            if (importType === ImportType.MAIL) {
+                createModal(<ImportMailModal addresses={addresses} provider={provider} />);
+            }
 
-    const handleClickCalendar = () => {
-        if (!defaultCalendar) {
-            return null;
+            if (importType === ImportType.CALENDAR && defaultCalendar) {
+                createModal(<ImportCalendarModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />);
+            }
+            if (importType === ImportType.CONTACTS) {
+                createModal(<ImportContactsModal />);
+            }
+            onClose();
+            return;
         }
-        createModal(<ImportCalendarModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />);
-        onClose();
-    };
 
-    const handleClickContacts = () => {
-        createModal(<ImportContactsModal />);
+        createModal(
+            <EasySwitchInstructionsModal
+                importType={importType}
+                addresses={addresses}
+                provider={provider}
+                defaultCalendar={defaultCalendar}
+                activeCalendars={activeCalendars}
+            />
+        );
         onClose();
     };
 
     const calendarButton = (
         <ImportTypeButton
             importType={ImportType.CALENDAR}
-            onClick={handleClickCalendar}
             disabled={!canImportCalendars}
+            onClick={() => handleClick(ImportType.CALENDAR)}
         />
     );
 
@@ -139,7 +150,7 @@ const EasySwitchDefaultModal = ({
         <FormModal
             title={titleRenderer()}
             submit={null}
-            close={<Button shape="outline" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>}
+            close={c('Action').t`Cancel`}
             onClose={handleCancel}
             className="easy-switch-modal"
             {...rest}
@@ -150,7 +161,7 @@ const EasySwitchDefaultModal = ({
                 <>
                     <div className="mb2">{c('Info').t`What do you want to import?`}</div>
                     <div className="import-buttons mb1">
-                        <ImportTypeButton importType={ImportType.MAIL} onClick={handleClickMail} />
+                        <ImportTypeButton importType={ImportType.MAIL} onClick={() => handleClick(ImportType.MAIL)} />
                         {!canImportCalendars ? (
                             <Tooltip
                                 title={c('Info').t`You need to have an active personal calendar to import your events.`}
@@ -160,7 +171,10 @@ const EasySwitchDefaultModal = ({
                         ) : (
                             calendarButton
                         )}
-                        <ImportTypeButton importType={ImportType.CONTACTS} onClick={handleClickContacts} />
+                        <ImportTypeButton
+                            importType={ImportType.CONTACTS}
+                            onClick={() => handleClick(ImportType.CONTACTS)}
+                        />
                     </div>
                 </>
             )}
