@@ -1,17 +1,17 @@
 import { useLocation } from 'react-router-dom';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { isConversationMode } from 'proton-mail/src/app/helpers/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
-import { SCHEDULED_MESSAGES_LIMIT } from 'proton-mail/src/app/constants';
 import { c } from 'ttag';
 import { Dispatch, SetStateAction } from 'react';
-import { useSendVerifications } from 'proton-mail/src/app/hooks/composer/useSendVerifications';
 import { ConfirmModal } from '@proton/components/components/modal';
 import { Button } from '@proton/components/components/button';
 import { useConversationCounts, useMessageCounts, useModals } from '@proton/components/hooks';
 import { useMailSettings } from '@proton/components/hooks/useMailSettings';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useSendVerifications } from './useSendVerifications';
+import { isConversationMode } from '../../helpers/mailSettings';
+import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
 
 interface Props {
     modelMessage: MessageStateWithData;

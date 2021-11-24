@@ -18,6 +18,7 @@ import {
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import AdvancedSearchDropdown from './AdvancedSearchDropdown';
 import { extractSearchParameters, setParamsInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
@@ -25,6 +26,7 @@ import { getLabelName } from '../../helpers/labels';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
+import MailDefaultHandlerModal from './MailDefaultHandlerModal';
 
 interface Props {
     labelID: string;
@@ -111,6 +113,10 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
             </>
         ) : null;
 
+    const handleDefaultMailHandlerClick = () => {
+        createModal(<MailDefaultHandlerModal />);
+    };
+
     return (
         <PrivateHeader
             logo={logo}
@@ -118,6 +124,15 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
             title={labelName}
             settingsButton={
                 <TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT}>
+                    {isFirefox() && (
+                        <DropdownMenuButton
+                            onClick={handleDefaultMailHandlerClick}
+                            className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
+                        >
+                            <span className="flex-item-fluid text-left">{c('Action')
+                                .t`Default email application`}</span>
+                        </DropdownMenuButton>
+                    )}
                     {clearDataButton}
                 </TopNavbarListItemSettingsDropdown>
             }
