@@ -12,6 +12,7 @@ import {
     useConfig,
     useFeature,
     useHasOutdatedRecoveryFile,
+    useIsDataRecoveryAvailable,
     useModals,
     useNotifications,
     useOrganization,
@@ -41,6 +42,7 @@ import { FeatureCode } from '../features';
 interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
 }
+
 const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -58,11 +60,14 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const showRecoveryNotification = useShowRecoveryNotification();
     const { feature: hasVisitedRecoveryPage } = useFeature(FeatureCode.VisitedRecoveryPage);
 
+    const [isDataRecoveryAvailable] = useIsDataRecoveryAvailable();
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
     const hasOutdatedRecoveryMethod = user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED || hasOutdatedRecoveryFile;
 
     const showRecoveryDropdownItem =
-        (showRecoveryNotification && hasVisitedRecoveryPage?.Value === false) || hasOutdatedRecoveryMethod;
+        user.isPrivate &&
+        ((showRecoveryNotification && hasVisitedRecoveryPage?.Value === false) ||
+            (isDataRecoveryAvailable && hasOutdatedRecoveryMethod));
 
     const { createNotification } = useNotifications();
     const handleCopyEmail = () => {
