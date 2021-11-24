@@ -4,7 +4,7 @@
 		inset-block: 0;
 		inset-inline-end: 0;
 		z-index: 10; // same as toolbar, change as soon as possible
-		width: 0;
+		inline-size: 0;
 		overflow: visible;
 	}
 
@@ -15,33 +15,33 @@
 		position: absolute;
 		inset-block: 0;
 		inset-inline-end: calc((var(--scrollbar-width, 0) * 1px) - (var(--grip-size) / 2));
-		width: var(--grip-size);
+		inline-size: var(--grip-size);
 
 		&::before {
 			content: '';
 			position: absolute;
 			inset-block: 0;
 			inset-inline-start: calc((var(--grip-size) - var(--indicator-size)) / 2);
-			width: var(--indicator-size);
-			background-color: var(--interaction-norm-hover);
-			opacity: 0;
-			transition: opacity 0.25s easing(easeOutQuint);
+			inline-size: var(--indicator-size);
+			background-color: transparent;
+			transition: background-color 0.25s easing(easeOutQuint);
 		}
 
-		&:hover,
-		&:active {
-			&::before {
-				opacity: 1;
-				transition-delay: 0.25s;
-			}
+		&:hover::before {
+			background-color: var(--interaction-norm-hover);
+			transition-delay: 0.25s;
 		}
 
 		// Separate this to make the other states working on Safari -_-v
-		&:focus-visible {
-			&::before {
-				opacity: 1;
-				transition-delay: 0.25s;
-			}
+		&:focus-visible::before {
+			background-color: var(--interaction-norm-hover);
+			transition-delay: 0.25s;
+		}
+
+		&:active::before {
+			background-color: var(--interaction-norm-active);
+			transition-delay: 0;
+			transition-duration: 0.1s;
 		}
 	}
 }
