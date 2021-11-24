@@ -210,4 +210,6 @@ $height-for-mobile: 8em !default;
 
 .main-area--row-mode .items-column-list {
 	inline-size: 100%;
+	min-inline-size: initial;
+	max-inline-size: initial;
 }
