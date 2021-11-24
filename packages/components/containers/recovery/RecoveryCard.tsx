@@ -1,10 +1,20 @@
 import { c } from 'ttag';
-import { ButtonLike, Card, Icon, Loader, SettingsLink } from '../../components';
-import { useIsDataRecoveryAvailable, useIsMnemonicAvailable, useRecoveryStatus } from '../../hooks';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Card, Loader } from '../../components';
+import {
+    useHasOutdatedRecoveryFile,
+    useIsDataRecoveryAvailable,
+    useIsMnemonicAvailable,
+    useRecoverySecrets,
+    useRecoveryStatus,
+    useUser,
+    useUserSettings,
+} from '../../hooks';
 import { SettingsSectionTitle } from '../account';
-import RecoveryStatusIcon from './RecoveryStatusIcon';
 import useIsRecoveryFileAvailable from '../../hooks/useIsRecoveryFileAvailable';
-import RecoveryStatusText from './RecoveryStatusText';
+import RecoveryCardStatus, { RecoveryCardStatusProps } from './RecoveryCardStatus';
+import RecoveryStatus from './RecoveryStatus';
 
 interface Props {
     ids: {
@@ -14,11 +24,26 @@ interface Props {
 }
 
 const RecoveryCard = ({ ids }: Props) => {
+    const [user] = useUser();
+    const [userSettings, loadingUserSettings] = useUserSettings();
     const [{ accountRecoveryStatus, dataRecoveryStatus }, loadingRecoveryStatus] = useRecoveryStatus();
 
     const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
     const [isDataRecoveryAvailable, loadingIsDataRecoveryAvailable] = useIsDataRecoveryAvailable();
+
+    const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
+    const recoverySecrets = useRecoverySecrets();
+
+    if (
+        loadingRecoveryStatus ||
+        loadingIsDataRecoveryAvailable ||
+        loadingIsRecoveryFileAvailable ||
+        loadingIsMnemonicAvailable ||
+        loadingUserSettings
+    ) {
+        return <Loader />;
+    }
 
     const boldImperative = (
         <b key="imperative-bold-text">{
@@ -41,24 +66,105 @@ const RecoveryCard = ({ ids }: Props) => {
         }</b>
     );
 
-    const accountRecoveryStatusText =
-        accountRecoveryStatus === 'complete'
-            ? c('Info').t`Your account recovery method is set`
-            : c('Info').t`No account recovery method set; you are at risk of losing access to your account`;
+    const accountStatusProps: RecoveryCardStatusProps = (() => {
+        if (accountRecoveryStatus === 'complete') {
+            return {
+                status: accountRecoveryStatus,
+                statusText: c('Info').t`Your account recovery method is set`,
+                callToActions: [],
+            };
+        }
 
-    const dataRecoveryStatusText =
-        dataRecoveryStatus === 'complete'
-            ? c('Info').t`Your data recovery method is set`
-            : c('Info').t`No data recovery method set; you are at risk of losing access to your data`;
+        return {
+            status: accountRecoveryStatus,
+            statusText: c('Info').t`No account recovery method set; you are at risk of losing access to your account`,
+            callToActions: [
+                {
+                    text:
+                        !!userSettings.Email.Value && !userSettings.Email.Reset
+                            ? c('Info').t`Allow recovery by email`
+                            : c('Info').t`Add a recovery email address`,
+                    path: `/recovery#${ids.account}`,
+                },
+                {
+                    text:
+                        !!userSettings.Phone.Value && !userSettings.Phone.Reset
+                            ? c('Info').t`Allow recovery by phone`
+                            : c('Info').t`Add a recovery phone number`,
+                    path: `/recovery#${ids.account}`,
+                },
+            ],
+        };
+    })();
 
-    if (
-        loadingRecoveryStatus ||
-        loadingIsDataRecoveryAvailable ||
-        loadingIsRecoveryFileAvailable ||
-        loadingIsMnemonicAvailable
-    ) {
-        return <Loader />;
-    }
+    const dataStatusProps: RecoveryCardStatusProps | undefined = (() => {
+        if (!isRecoveryFileAvailable && !isMnemonicAvailable) {
+            return;
+        }
+
+        const recoveryFileCTA = isRecoveryFileAvailable && {
+            text: c('Info').t`Download recovery file`,
+            path: `/recovery#${ids.data}`,
+        };
+
+        const updateRecoveryFileCTA = isRecoveryFileAvailable && {
+            text: c('Info').t`Update recovery file`,
+            path: `/recovery#${ids.data}`,
+        };
+
+        const recoveryPhraseCTA = isMnemonicAvailable && {
+            text: c('Info').t`Set recovery phrase`,
+            path: `/recovery#${ids.data}`,
+        };
+
+        const updateRecoveryPhraseCTA = isMnemonicAvailable && {
+            text: c('Info').t`Update recovery phrase`,
+            path: `/recovery#${ids.data}`,
+        };
+
+        if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && hasOutdatedRecoveryFile) {
+            return {
+                status: 'incomplete' as RecoveryStatus,
+                statusText: c('Info').t`Outdated recovery methods; update to ensure access to your data`,
+                callToActions: [updateRecoveryFileCTA, updateRecoveryPhraseCTA].filter(isTruthy),
+            };
+        }
+
+        if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
+            return {
+                status: 'incomplete' as RecoveryStatus,
+                statusText: c('Info').t`Outdated recovery phrase; update to ensure access to your data`,
+                callToActions: [recoverySecrets.length === 0 && recoveryFileCTA, updateRecoveryPhraseCTA].filter(
+                    isTruthy
+                ),
+            };
+        }
+
+        if (hasOutdatedRecoveryFile) {
+            return {
+                status: 'incomplete' as RecoveryStatus,
+                statusText: c('Info').t`Outdated recovery file; update to ensure access to your data`,
+                callToActions: [
+                    updateRecoveryFileCTA,
+                    user.MnemonicStatus !== MNEMONIC_STATUS.SET && recoveryPhraseCTA,
+                ].filter(isTruthy),
+            };
+        }
+
+        if (dataRecoveryStatus === 'complete') {
+            return {
+                status: dataRecoveryStatus,
+                statusText: c('Info').t`Your data recovery method is set`,
+                callToActions: [],
+            };
+        }
+
+        return {
+            status: dataRecoveryStatus,
+            statusText: c('Info').t`No data recovery method set; you are at risk of losing access to your data`,
+            callToActions: [recoveryFileCTA, recoveryPhraseCTA].filter(isTruthy),
+        };
+    })();
 
     return (
         <Card rounded background={false} className="max-w52e p2">
@@ -78,89 +184,12 @@ const RecoveryCard = ({ ids }: Props) => {
 
             <ul className="unstyled m0">
                 <li>
-                    <span className="flex flex-align-items-center flex-nowrap">
-                        <RecoveryStatusIcon className="flex-item-noshrink" status={accountRecoveryStatus} />
-                        <RecoveryStatusText className="ml1" status={accountRecoveryStatus}>
-                            {accountRecoveryStatusText}
-                        </RecoveryStatusText>
-                    </span>
-
-                    {accountRecoveryStatus !== 'complete' && (
-                        <ul className="unstyled ml4">
-                            <li className="flex flex-align-items-center flex-nowrap">
-                                <span className="mr0-5">{c('Info').t`Add a recovery email address`}</span>
-                                <ButtonLike
-                                    className="flex-item-noshrink"
-                                    as={SettingsLink}
-                                    icon
-                                    path={`/recovery#${ids.account}`}
-                                    shape="ghost"
-                                    color="norm"
-                                    size="small"
-                                >
-                                    <Icon name="arrow-right" />
-                                </ButtonLike>
-                            </li>
-                            <li className="flex flex-align-items-center flex-nowrap">
-                                <span className="mr0-5">{c('Info').t`Add a recovery phone number`}</span>
-                                <ButtonLike
-                                    className="flex-item-noshrink"
-                                    as={SettingsLink}
-                                    icon
-                                    path={`/recovery#${ids.account}`}
-                                    shape="ghost"
-                                    color="norm"
-                                    size="small"
-                                >
-                                    <Icon name="arrow-right" />
-                                </ButtonLike>
-                            </li>
-                        </ul>
-                    )}
+                    <RecoveryCardStatus {...accountStatusProps} />
                 </li>
-                {isDataRecoveryAvailable && (
-                    <li className="mt0-5">
-                        <span className="flex flex-align-items-center flex-nowrap">
-                            <RecoveryStatusIcon className="flex-item-noshrink" status={dataRecoveryStatus} />
-                            <RecoveryStatusText className="ml1" status={dataRecoveryStatus}>
-                                {dataRecoveryStatusText}
-                            </RecoveryStatusText>
-                        </span>
 
-                        {dataRecoveryStatus !== 'complete' && (
-                            <ul className="unstyled ml4">
-                                {isRecoveryFileAvailable && (
-                                    <li className="flex flex-align-items-center flex-nowrap">
-                                        <span className="mr0-5">{c('Info').t`Download your recovery file`}</span>
-                                        <ButtonLike
-                                            as={SettingsLink}
-                                            icon
-                                            path={`/recovery#${ids.data}`}
-                                            shape="ghost"
-                                            color="norm"
-                                            size="small"
-                                        >
-                                            <Icon name="arrow-right" />
-                                        </ButtonLike>
-                                    </li>
-                                )}
-                                {isMnemonicAvailable && (
-                                    <li className="flex flex-align-items-center flex-nowrap">
-                                        <span className="mr0-5">{c('Info').t`Activate your recovery phrase`}</span>
-                                        <ButtonLike
-                                            as={SettingsLink}
-                                            icon
-                                            path={`/recovery#${ids.data}`}
-                                            shape="ghost"
-                                            color="norm"
-                                            size="small"
-                                        >
-                                            <Icon name="arrow-right" />
-                                        </ButtonLike>
-                                    </li>
-                                )}
-                            </ul>
-                        )}
+                {dataStatusProps && (
+                    <li className="mt0-5">
+                        <RecoveryCardStatus {...dataStatusProps} />
                     </li>
                 )}
             </ul>
