@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Ativar meu cupom"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add credit / debit card": [
         "Adicionar cartão de crédito/débito"
       ],
@@ -187,9 +190,6 @@
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
       ],
-      "here": [
-        "aqui"
-      ],
       "Hide": [
         "Ocultar"
       ],
@@ -304,6 +304,9 @@
       "Send": [
         "Enviar"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Compartilhar via link"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Atualizar"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Upgrade"
@@ -1755,12 +1764,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Não é possível utilizar as credenciais do OpenVPN/IKEv2 para fazer login nos aplicativos do ProtonVPN ou no painel do ProtonVPN. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Você desativou o acesso beta. Clique em ${ refreshButton } para usar a versão estável de ${ appName }. O aplicativo será recarregado."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Você habilitou o acesso beta. Clique em ${ refreshButton } para usar a versão mais recente de ${ appName }. O aplicativo será recarregado."
-      ],
       "You have no saved payment methods.": [
         "Você não tem uma opção de pagamento salva."
       ],
@@ -2262,6 +2265,9 @@
       ],
       "Proton newsletter": [
         "Newsletter da Proton"
+      ],
+      "Proton offers and promotions": [
+        ""
       ],
       "Proton product announcements": [
         "Anúncios de produtos da Proton"

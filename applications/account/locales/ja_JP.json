@@ -31,16 +31,19 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "アクティベート"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
       ],
       "Activate organization key": [
+        ""
+      ],
+      "Activate recovery": [
         ""
       ],
       "Add": [
@@ -205,9 +208,6 @@
       "Copy link": [
         "リンクをコピー"
       ],
-      "Create": [
-        "作成"
-      ],
       "Create a secure ProtonMail address instead": [
         ""
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "鍵をエクスポート"
       ],
-      "Export private key": [
-        "秘密鍵をエクスポート"
-      ],
       "Font": [
         "フォント"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } へ移動"
-      ],
-      "here": [
-        "こちら"
       ],
       "Hide": [
         "非表示"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Catch-All の設定"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "リンクで共有"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "アカウントの切り替え"
       ],
+      "Switch to rich text": [
+        ""
+      ],
       "Top up": [
         "チャージ"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "ロック解除"
       ],
+      "Unlock data": [
+        ""
+      ],
       "Unordered list": [
         "箇条書き"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "更新"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "アップグレード"
@@ -905,9 +914,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
-      ],
       "The key for your address is now being deleted.": [
         ""
       ]
@@ -1290,7 +1296,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
         ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
@@ -1816,6 +1822,9 @@
       "Could not find address ${ email }.": [
         "${ email } というメールアドレスが見つかりませんでした。"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         ""
       ],
@@ -1923,6 +1932,9 @@
       ],
       "No active sessions": [
         "アクティブなセッションはありません"
+      ],
+      "No data to import": [
+        ""
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
@@ -2044,6 +2056,12 @@
       "The folder name is too long. Please choose a different name.": [
         "フォルダー名が長すぎます。別の名前を選択してください。"
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        ""
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        ""
+      ],
       "The label name is too long. Please choose a different name.": [
         "ラベル名が長すぎます。別の名前を選択してください。"
       ],
@@ -2090,9 +2108,6 @@
         "支払いトークンの状態が不明です。"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
         ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
@@ -2145,9 +2160,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } は iCal バージョン 2.0 でのカレンダーのインポートのみサポートしています。"
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -3038,6 +3050,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications } 必要があります。"
       ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        ""
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } は既定のカレンダーとして設定されます。"
       ],
@@ -3139,9 +3154,6 @@
       ],
       "A free and uncensored Internet should be available to all.": [
         "すべての人が検閲がなく無制限のインターネットを利用できるべきです。"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "同じ暗号化アルゴリズムを持つ鍵が、このアドレスに対してすでにアクティブです。\n別の鍵を生成すると、アカウントの読み込みが遅くなり、この鍵を削除すると問題が発生する可能性があります。\n古い鍵が侵害されために新しい鍵を生成している場合は、侵害された鍵をマークしてください。\n続行しますか？"
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         ""
@@ -3245,9 +3257,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         ""
       ],
-      "Are you sure you want to continue?": [
-        "本当に続けますか？"
-      ],
       "Are you sure you want to delete this address?": [
         "本当にこのアドレスを削除してよいですか。"
       ],
@@ -3349,9 +3358,6 @@
       ],
       "Center": [
         "中央揃え"
-      ],
-      "Change your default in settings": [
-        ""
       ],
       "Check the status of current and previous imports.": [
         ""
@@ -3497,6 +3503,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         ""
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        ""
+      ],
       "Encryption setting updated": [
         "暗号化の設定が更新されました。"
       ],
@@ -3513,12 +3522,6 @@
         "インポートするメールアカウントの認証情報を入力します。"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
-        ""
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        ""
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
         ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
@@ -3647,12 +3650,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "ダウングレードすると、ProtonVPN の有料機能が使えなくなります。"
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        ""
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        ""
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         ""
       ],
@@ -3746,9 +3743,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "フィンガープリント${ fp } の鍵が削除されました。"
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "フィンガープリント${ fp } の鍵が正常に作成されました。"
-      ],
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
       ],
@@ -3836,7 +3830,7 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
+      "No account recovery method set; you are at risk of losing access to your account": [
         ""
       ],
       "No action selected": [
@@ -3848,7 +3842,7 @@
       "No contact encryption keys exist": [
         ""
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
+      "No data recovery method set; you are at risk of losing access to your data": [
         ""
       ],
       "No folder selected": [
@@ -3940,6 +3934,9 @@
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
         "エクスポートする前に、秘密鍵を暗号化するためのパスワードを入力してください。"
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -4043,6 +4040,9 @@
       "Recovery phrase has been disabled": [
         "リカバリーフレーズは無効化されました"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        ""
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
@@ -4076,7 +4076,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Server is currently down": [
@@ -4163,6 +4163,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         ""
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        ""
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is an encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is the password you used before the password reset.": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
       ],
@@ -4178,14 +4190,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         ""
       ],
-      "This will also disable two-factor authentication.": [
-        "2要素認証が無効化されます。"
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "組織用の暗号鍵を作成します。4096ビット鍵は高性能コンピューターでのみ動作します。ほとんどのユーザーには2048ビット鍵の使用をお勧めします。"
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "これにより、PayPal を使用して Proton のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 使用している場合は ポップアップブロッカーを一旦無効にしてから続行してください。"
@@ -4199,20 +4211,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         ""
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        ""
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "このウィザードは Proton アカウントで２要素認証を有効にします。セキュリティをより高めるため２要素認証の使用をお勧めします。"
       ],
       "to": [
         "から以下のアドレスにインポートしています"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        ""
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         ""
       ],
       "to continue to ${ toAppName }": [
         "サインイン後 ${ toAppName } を開きます"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -4222,6 +4237,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "インポートする外部アカウントを準備するには、以下の手順に従ってください:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        ""
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "インターネット接続を保護するには、ProtonVPN アプリケーションをダウンロード・インストールし、ProtonVPN サーバーに接続します。"
@@ -4249,9 +4267,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "２パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。２パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        ""
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         ""
@@ -4313,11 +4328,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "家族と小さなビジネス向けの VPN と ${ mailAppName } バンドル"
       ],
+      "Warning:": [
+        ""
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "警告: 削除を取り消すことはできません。この操作により接続されているすべてのサービスへのアクセスを削除し、すべての連絡先を削除します。"
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "公式 ProtonVPN アプリケーションの使用をおすすめします。"
+      ],
+      "We recommend using your recovery phrase instead.": [
+        ""
       ],
       "We use 3-D Secure to protect your payments.": [
         "お支払いを保護するために3Dセキュアを用いています。"
@@ -4345,6 +4366,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "週と月のビューはデスクトップにのみ適用されます。"
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        ""
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        ""
       ],
       "What do you want to import from your Google account?": [
         ""
@@ -4382,6 +4409,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4396,9 +4426,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "アカウントにアクセスした IPや時刻を確認するために認証ログを有効にできます。アカウントへのログインの試みの失敗と共に、アクセス元IP アドレスと時刻が記録されます。"
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "現在の鍵が侵害されたと思われる場合は、新しい暗号鍵を生成できます。"
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "@pm.me アドレスを使ってメッセージを受信できるようになりました。 有料プランにアップグレードすると、@pm.me アドレスを使用してメールを送信したり、追加の @pm.me アドレスを作成することもできます。"
@@ -4417,12 +4444,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "ベータ版アクセスは無効です。安定版の ${ appName } を使用するには、${ refreshButton } をクリックしてください。クリックするとアプリケーションは再起動されます。"
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "ベータ版アクセスは有効です。最新版の ${ appName } を使用するには、${ refreshButton } をクリックしてください。クリックするとアプリケーションは再起動されます。"
       ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
@@ -4493,7 +4514,7 @@
       "Your Block List is empty.": [
         "ブロックリストは空です。"
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
         ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
@@ -4679,6 +4700,29 @@
       ],
       "Subscription": [
         "サブスクリプション"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        ""
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        ""
+      ],
+      "Generate key": [
+        ""
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        ""
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        ""
       ]
     },
     "Key state badge": {
@@ -4964,6 +5008,9 @@
       "ALL": [
         "すべて"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Allow recovery by email": [
         "メールアドレスでの回復を許可"
       ],
@@ -5012,12 +5059,6 @@
       "Automatically save contacts": [
         "宛先を連絡先に自動追加"
       ],
-      "Backup key": [
-        ""
-      ],
-      "Backup keys": [
-        ""
-      ],
       "Block email tracking": [
         ""
       ],
@@ -5054,11 +5095,11 @@
       "Category": [
         "カテゴリー"
       ],
-      "Choose a color": [
-        "色の選択"
-      ],
       "Code": [
         "コード"
+      ],
+      "Color": [
+        ""
       ],
       "Composer": [
         "メール作成"
@@ -5129,20 +5170,8 @@
       "Days of the week": [
         "曜日"
       ],
-      "Default email": [
-        "既定のメールアドレス"
-      ],
-      "Default event duration": [
-        "既定の予定の長さ"
-      ],
-      "Default full day notifications": [
-        "終日の予定の既定の通知"
-      ],
       "Default language": [
         "デフォルトの言語"
-      ],
-      "Default notifications": [
-        "既定の通知"
       ],
       "Default PGP scheme": [
         ""
@@ -5222,6 +5251,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         ""
       ],
+      "Event duration": [
+        ""
+      ],
+      "Event notifications": [
+        ""
+      ],
       "Expires": [
         "有効期限"
       ],
@@ -5239,6 +5274,9 @@
       ],
       "Folder location": [
         "フォルダーの場所"
+      ],
+      "From: ${ emailFrom }": [
+        ""
       ],
       "From: ${ fromEmailAddress }": [
         "差出人: ${ fromEmailAddress }"
@@ -5420,6 +5458,9 @@
       "Phrase": [
         ""
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        ""
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "次の3つの CNAME レコードを追加してください。（注: DNS レコードの更新には数時間を要する場合があります。）"
       ],
@@ -5437,6 +5478,9 @@
       ],
       "Postal code": [
         "郵便番号"
+      ],
+      "Previous password": [
+        ""
       ],
       "Private User": [
         ""
@@ -5473,9 +5517,6 @@
       ],
       "Recovery phrase": [
         "リカバリーフレーズ"
-      ],
-      "Recovery phrase contains 12 words": [
-        ""
       ],
       "Repeat password": [
         "パスワードを再度入力"
@@ -5555,6 +5596,9 @@
       "To: ${ emailAddress }": [
         "宛先: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        ""
+      ],
       "To: ${ PMEmailAddress }": [
         ""
       ],
@@ -5579,16 +5623,10 @@
       "Undo send": [
         "送信を取り消し"
       ],
-      "Upload your backup key": [
+      "Upload 1 or more encryption keys": [
         ""
       ],
-      "Upload your recovery file": [
-        ""
-      ],
-      "Uploaded private keys": [
-        ""
-      ],
-      "Uploaded recovery file": [
+      "Upload 1 or more recovery files or encryption keys": [
         ""
       ],
       "URL": [
@@ -5666,9 +5704,6 @@
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
       ],
-      "Your recovery phrase": [
-        "あなたのリカバリーフレーズ"
-      ],
       "ZIP": [
         "郵便番号"
       ]
@@ -5723,6 +5758,9 @@
       ],
       "Proton newsletter": [
         "Proton ニュースレター"
+      ],
+      "Proton offers and promotions": [
+        ""
       ],
       "Proton product announcements": [
         "Proton プロダクトのお知らせ"
@@ -6878,17 +6916,11 @@
       "Email": [
         "メールアドレス"
       ],
-      "email address": [
-        "メールアドレス"
-      ],
-      "phone number": [
-        "電話番号"
-      ],
       "Phone number": [
         "電話番号"
       ],
-      "Recovery phrase": [
-        "リカバリーフレーズ"
+      "Phrase": [
+        ""
       ]
     },
     "Remark about a key type option": {
@@ -6928,10 +6960,7 @@
       "Upload": [
         "アップロード"
       ],
-      "Upload additional private keys": [
-        ""
-      ],
-      "Upload additional recovery files": [
+      "Upload additional files": [
         ""
       ]
     },
@@ -7661,6 +7690,9 @@
       "Dashboard": [
         "ダッシュボード"
       ],
+      "Data locked": [
+        ""
+      ],
       "Data recovery": [
         ""
       ],
@@ -7721,6 +7753,9 @@
       "Edit Block List": [
         "ブロックリストの編集"
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit credit/debit card": [
         "クレジット・デビットカードの編集"
       ],
@@ -7750,9 +7785,6 @@
       ],
       "Enable keyboard shortcuts": [
         "キーボードショートカットを有効にする"
-      ],
-      "Encrypted data": [
-        ""
       ],
       "Encryption & keys": [
         ""
@@ -7795,9 +7827,6 @@
       ],
       "General": [
         "一般"
-      ],
-      "Generate key": [
-        ""
       ],
       "Generate missing keys": [
         "紛失した鍵の生成"
@@ -7991,11 +8020,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        ""
-      ],
       "Reconnect your account": [
         "アカウントに再接続"
+      ],
+      "Recover data": [
+        ""
       ],
       "Recovery": [
         ""
@@ -8152,9 +8181,6 @@
       ],
       "Unsupported browser": [
         "未対応のブラウザー"
-      ],
-      "Update calendar": [
-        "カレンダーの更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -8435,6 +8461,17 @@
         ""
       ]
     },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
+      ]
+    },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
         ""
@@ -8691,6 +8728,12 @@
         "今までに行ったカスタマイズは全て失われます。"
       ],
       "You will not see this import record in the list anymore.": [
+        ""
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        ""
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
         ""
       ]
     },

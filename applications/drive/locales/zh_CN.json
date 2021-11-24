@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "添加"
       ],
@@ -146,7 +149,7 @@
       "Decrease": [
         "减少"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -232,9 +235,6 @@
       ],
       "Grid layout": [
         "网格布局"
-      ],
-      "here": [
-        "此处"
       ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
@@ -359,9 +359,6 @@
       "Previous month": [
         "上个月"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "退出"
       ],
@@ -437,6 +434,12 @@
       "Select plan": [
         "开通"
       ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "分享"
       ],
@@ -498,7 +501,7 @@
         "切换帐户"
       ],
       "Theme": [
-        "主題"
+        "配色"
       ],
       "Trust": [
         "信任"
@@ -518,6 +521,12 @@
       "Untrust": [
         "取消信任"
       ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
+      ],
       "Upgrade": [
         "升级"
       ],
@@ -531,7 +540,7 @@
         "上传图片"
       ],
       "Use ${ label } theme": [
-        "使用 ${ label } 主题"
+        "使用 ${ label } 配色"
       ],
       "Use a different card": [
         "使用其他银行卡"
@@ -1099,6 +1108,9 @@
       "Could not generate file keys": [
         "无法生成文件密钥"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "取消选择至少 ${ calendarToFixCount } 个日历"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
@@ -1177,6 +1189,9 @@
       "Name on card required": [
         "必须填写持卡人姓名"
       ],
+      "No data to import": [
+        "没有要导入的数据"
+      ],
       "No valid address found": [
         "未找到有效地址"
       ],
@@ -1190,7 +1205,7 @@
         "某个/些群组没有联系人: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "无法识别机构，请重试。"
       ],
       "Passwords do not match": [
         "两次输入的密码不一致"
@@ -1691,9 +1706,6 @@
       "Account successfully updated": [
         "账户已成功更新"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "添加其他邮箱地址，如 username2@protonmail.com"
       ],
@@ -1822,6 +1834,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
+      ],
+      "Default email application": [
+        ""
       ],
       "Delete drive": [
         "删除网盘"
@@ -2010,7 +2025,7 @@
         "网络问题"
       ],
       "New": [
-        ""
+        "新建"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "接下来您需要登录 Google 账户并允许我们访问您的数据。"
@@ -2153,7 +2168,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2162,7 +2177,7 @@
       "Session timed out.": [
         "会话已超时。"
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2330,6 +2345,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在 ${ importProgressLink } 查看导入进度。"
       ],
@@ -2338,12 +2356,6 @@
       ],
       "You cannot undo this action.": [
         "您无法撤销此操作。"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "您已经关闭了“测试版功能”。请点击${ refreshButton }以使用稳定版的 ${ appName }，应用将重新启动。"
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "您已经开启了“测试版功能”。请点击${ refreshButton }以使用测试版的 ${ appName }，应用将重新启动。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您的 PayPal 账户需要绑定信用卡或银行账户才能作为支付方式。"
@@ -2468,7 +2480,7 @@
         "已作废"
       ],
       "Trusted": [
-        "受信"
+        "已信任"
       ],
       "Verification only": [
         "仅用于验证"
@@ -3445,7 +3457,7 @@
         "我们的宗旨是建立一个由您来管控您自己的数据和隐私的网络。我们最近更新了 Proton ―― 畅享安全的互联网吧！"
       ],
       "Select a theme": [
-        "选择主题"
+        "选择配色"
       ],
       "Set up your organization": [
         "填写机构信息"
@@ -4297,7 +4309,7 @@
         "选择套餐"
       ],
       "Select a theme": [
-        "选择一个主题"
+        "选择配色"
       ],
       "Select action to take on contact group": [
         "选择针对联系人群组的动作"

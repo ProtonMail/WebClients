@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
+      "Activate recovery": [
+        "Aktiver gendannelse"
+      ],
       "Add": [
         "Tilføj"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
-      "Create": [
-        "Opret"
-      ],
       "Create calendar": [
         "Opret kalender"
       ],
@@ -140,7 +140,7 @@
       "Decrease": [
         "Formindsk"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -213,9 +213,6 @@
       ],
       "Go to settings": [
         "Gå til indstillinger"
-      ],
-      "here": [
-        "her"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -346,9 +343,6 @@
       "Previous year": [
         "Sidste år"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Afslut"
       ],
@@ -408,6 +402,12 @@
       ],
       "Send": [
         "Send"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        "Indstil gendannelsessætning"
       ],
       "Share": [
         "Del"
@@ -480,6 +480,12 @@
       ],
       "Update": [
         "Opdatér"
+      ],
+      "Update recovery file": [
+        "Opdater gendannelsesfil"
+      ],
+      "Update recovery phrase": [
+        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -906,7 +912,7 @@
         "${ name } accepterede foreløbigt invitationen"
       ],
       "This event has been canceled": [
-        ""
+        "Denne begivenhed er blevet annulleret"
       ],
       "You accepted the invitation": [
         "Du accepterede invitationen"
@@ -984,7 +990,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Composer size": {
@@ -1265,7 +1271,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } er blevet annulleret."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
@@ -1398,6 +1404,10 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Fravælg mindst ${ calendarToFixCount } kalender",
+        "Fravælg mindst ${ calendarToFixCount } kalendere"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Fravælg mindst ${ calendarToFixCount } kalender eller",
         "Fravælg mindst ${ calendarToFixCount } kalendere eller"
@@ -1501,6 +1511,9 @@
       ],
       "Name required": [
         "Navn påkrævet"
+      ],
+      "No data to import": [
+        "Ingen data at importere"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Ingen nøgle hentet for intern bruger er gyldig til afsendelse"
@@ -1666,9 +1679,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } understøtter kun import af kalendere med iCal version 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
       ],
@@ -1793,7 +1803,7 @@
         "Manglende starttidspunkt"
       ],
       "No UID, title or start time": [
-        ""
+        "Ingen UID, titel eller starttid"
       ],
       "Non-Gregorian": [
         "Ikke-gregoriansk"
@@ -1869,7 +1879,7 @@
     },
     "Event canceled status badge": {
       "canceled": [
-        ""
+        "annulleret"
       ]
     },
     "Event delete button tooltip": {
@@ -1898,7 +1908,7 @@
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Vedhæftet ICS-fil kunne ikke læses"
       ],
       "Invalid invitation": [
         "Ugyldig invitation"
@@ -2285,9 +2295,6 @@
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Tilføj yderligere adresser til din konto såsom bruger2@protonmail.com"
       ],
@@ -2413,6 +2420,9 @@
       ],
       "Daily": [
         "Daglig"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "Kassér ændringer?"
@@ -2680,8 +2690,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -2689,7 +2699,7 @@
       "Session timed out.": [
         "Session er udløbet."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2860,6 +2870,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
@@ -2868,12 +2881,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at blive underrettet, når nye e-mails ankommer i denne mappe."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Du har aktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den nyeste version af ${ appName }. Applikationen vil blive genindlæst."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Du har genaktiveret dine nøgler, og begivenheder tilknyttet flg. kalendere kan nu dekrypteres."
@@ -3217,6 +3224,9 @@
       "All day": [
         "Hele dagen"
       ],
+      "All-day event notifications": [
+        "Notifikationer for heldagsbegivenheder"
+      ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
       ],
@@ -3233,7 +3243,7 @@
         "BTC-beløb:"
       ],
       "Calendars": [
-        ""
+        "Kalendere"
       ],
       "Cancel": [
         "Afbryd"
@@ -3250,11 +3260,11 @@
       "Category": [
         "Kategori"
       ],
-      "Choose a color": [
-        "Vælg en farve"
-      ],
       "City": [
         "By"
+      ],
+      "Color": [
+        "Farve"
       ],
       "Contacts": [
         "Kontakter"
@@ -3267,18 +3277,6 @@
       ],
       "CVV code": [
         "CVV-kode"
-      ],
-      "Default email": [
-        "Standard e-mail"
-      ],
-      "Default event duration": [
-        "Standardvarighed for begivenheder"
-      ],
-      "Default full day notifications": [
-        "Standard heldagsnotifikationer"
-      ],
-      "Default notifications": [
-        "Standardnotifikationer"
       ],
       "Description": [
         "Beskrivelse"
@@ -3315,6 +3313,9 @@
       ],
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
+      ],
+      "Event duration": [
+        "Begivenhedsvarighed"
       ],
       "Event frequency": [
         "Hyppighed af begivenhed"
@@ -3501,7 +3502,7 @@
         "I alt (${ countdown })"
       ],
       "Two-factor authentication code": [
-        "To-faktorgodkendelseskode"
+        "To-faktor-godkendelseskode"
       ],
       "Upload picture": [
         "Upload billede"
@@ -3599,10 +3600,10 @@
         "Tilføj en gavekode"
       ],
       "All mail": [
-        ""
+        "Alle e-mails"
       ],
       "Archive": [
-        ""
+        "Arkiv"
       ],
       "Calendars": [
         "Kalendere"
@@ -3614,13 +3615,13 @@
         "klik hér"
       ],
       "Drafts": [
-        ""
+        "Kladder"
       ],
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
       "Inbox": [
-        ""
+        "Indbakke"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -3629,7 +3630,7 @@
         "Mine kalendere"
       ],
       "Outbox": [
-        ""
+        "Udbakke"
       ],
       "Pay invoice": [
         "Betal faktura"
@@ -3638,22 +3639,22 @@
         "Anmod om invitation"
       ],
       "Scheduled": [
-        ""
+        "Planlagt"
       ],
       "Sent": [
-        ""
+        "Sendt"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Starred": [
-        ""
+        "Stjernemarkeret"
       ],
       "Subscribed calendars": [
         "Tilmeldte kalendere"
       ],
       "Trash": [
-        ""
+        "Papirkurv"
       ],
       "Upgrade": [
         "Opgradere"
@@ -4134,16 +4135,16 @@
     },
     "Onboarding ProtonCalendar": {
       "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
+        "En kalender er en registrering af dit liv. Hold dit liv sikkert og privat med ${ appName }."
       ],
       "Import events": [
-        ""
+        "Importer begivenheder"
       ],
       "Meet your new encrypted calendar": [
-        ""
+        "Mød din nye krypterede kalender"
       ],
       "Start using ${ appName }": [
-        ""
+        "Begynd at bruge ${ appName }"
       ]
     },
     "Option": {
@@ -4233,6 +4234,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Det er ikke muligt at oprette flere kalendere. Du har nået det maksimale antal personlige kalendere for dit abonnement."
       ]
     },
     "PGP key encryption warning": {
@@ -4545,13 +4551,8 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalenderabonnement.",
-        "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalenderabonnementer."
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "Du har nået det maksimale antal på ${ personalCalendarLimit } personlig kalender.",
-        "Du har nået det maksimale antal på ${ personalCalendarLimit } personlige kalendere."
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Det er ikke muligt at oprette flere kalendere. Du har nået det maksimale antal tilmeldte kalendere for dit abonnement."
       ]
     },
     "Success": {
@@ -4880,7 +4881,7 @@
         "Bekræft tab af Proton-bonusser"
       ],
       "Contact details": [
-        ""
+        "Kontaktdetaljer"
       ],
       "Contact Details": [
         "Kontaktoplysninger"
@@ -4955,6 +4956,9 @@
       ],
       "Downgrade account": [
         "Nedgradér konto"
+      ],
+      "Edit calendar": [
+        "Rediger kalender"
       ],
       "Edit contact": [
         "Rediger kontakt"
@@ -5205,9 +5209,6 @@
       ],
       "Unsupported browser": [
         "Browser understøttes ikke"
-      ],
-      "Update calendar": [
-        "Opdater kalender"
       ],
       "Update event": [
         "Opdater begivenhed"

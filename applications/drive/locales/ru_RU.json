@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Добавить"
       ],
@@ -146,7 +149,7 @@
       "Decrease": [
         "Уменьшить"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -238,9 +241,6 @@
       ],
       "Grid layout": [
         "Отображать в виде сетки"
-      ],
-      "here": [
-        "здесь"
       ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
@@ -365,9 +365,6 @@
       "Previous month": [
         "Предыдущий месяц"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Выйти"
       ],
@@ -442,6 +439,12 @@
       ],
       "Select plan": [
         "Выбрать тарифный план"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "Поделиться"
@@ -523,6 +526,12 @@
       ],
       "Untrust": [
         "Не доверять"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Улучшить"
@@ -1126,6 +1135,12 @@
       "Could not generate file keys": [
         "Невозможно сгенерировать ключи файла"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
@@ -1209,6 +1224,9 @@
       ],
       "Name on card required": [
         "Требуется имя на карте"
+      ],
+      "No data to import": [
+        ""
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -1817,9 +1835,6 @@
       "Account successfully updated": [
         "Учетная запись успешно обновлена"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Добавьте дополнительные адреса в свою учетную запись, например user2@protonmail.com"
       ],
@@ -1960,6 +1975,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
+      ],
+      "Default email application": [
+        ""
       ],
       "Delete drive": [
         "Удалить хранилище",
@@ -2300,7 +2318,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2309,7 +2327,7 @@
       "Session timed out.": [
         "Время сессии истекло."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2480,6 +2498,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить процесс ${ importProgressLink }."
       ],
@@ -2488,12 +2509,6 @@
       ],
       "You cannot undo this action.": [
         "Это действие нельзя отменить."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Вы выключили доступ к бета-версии. Нажмите ${ refreshButton }, чтобы использовать стабильную версию ${ appName }. Приложение будет перезагружено."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Вы включили доступ к бета-версии. Нажмите ${ refreshButton }, чтобы использовать последнюю версию ${ appName }. Приложение будет перезагружено."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Вы должны иметь кредитную карту или банковский счет, привязанный к вашей учетной записи PayPal, чтобы добавить ее как способ оплаты."
@@ -2859,7 +2874,7 @@
         "Сумма в биткоинах:"
       ],
       "Calendars": [
-        ""
+        "Календари"
       ],
       "Cancel": [
         "Отменить"

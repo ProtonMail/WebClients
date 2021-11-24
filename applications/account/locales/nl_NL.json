@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Organisatiesleutel activeren"
+      ],
+      "Activate recovery": [
+        "Activeer herstel"
       ],
       "Add": [
         "Toevoegen"
@@ -205,9 +208,6 @@
       "Copy link": [
         "Link kopiëren"
       ],
-      "Create": [
-        "Aanmaken"
-      ],
       "Create a secure ProtonMail address instead": [
         "Maak in plaats daarvan een veilig ProtonMail e-mailadres"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "Sleutel exporteren"
       ],
-      "Export private key": [
-        "Exporteer geheime sleutel"
-      ],
       "Font": [
         "Lettertype"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
-      ],
-      "here": [
-        "hier"
       ],
       "Hide": [
         "Verbergen"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Stel catch-all in"
       ],
+      "Set recovery phrase": [
+        "Stel herstel zin"
+      ],
       "Share via link": [
         "Deel via link"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "Account wijzigen"
       ],
+      "Switch to rich text": [
+        "Overschakelen naar rich tekst"
+      ],
       "Top up": [
         "Saldo verhogen"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Ontgrendel"
       ],
+      "Unlock data": [
+        "Ontgrendel gegevens"
+      ],
       "Unordered list": [
         "Ongenummerde lijst"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Updaten"
+      ],
+      "Update recovery file": [
+        "Herstelbestand bijwerken"
+      ],
+      "Update recovery phrase": [
+        "Herstel zin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -791,7 +800,7 @@
         "Alle herstelbestanden ongeldig maken?"
       ],
       "Void anyway": [
-        ""
+        "Hoe dan ook leeg"
       ],
       "Warning": [
         "Waarschuwing"
@@ -876,10 +885,10 @@
         "Ontbrekende sleutels genereren"
       ],
       "Make default": [
-        ""
+        "Standaard maken"
       ],
       "Saving": [
-        ""
+        "Bezig met opslaan"
       ]
     },
     "Address status": {
@@ -914,9 +923,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "De verleutelingssleutels van uw e-mailadres worden aangemaakt. Dit kan enkele minuten duren en uw browser kan kort bevriezen."
-      ],
       "The key for your address is now being deleted.": [
         "De sleutel van uw adres wordt nu verwijderd,"
       ]
@@ -1295,13 +1301,12 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
+        "U kunt ICS-bestanden importeren van een andere agenda naar ${ CALENDAR_APP_NAME }. Hiermee kunt u snel een afspraak of een volledige agenda importeren."
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "",
-        ""
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "U hebt het maximale aantal persoonlijke agenda's bereikt dat u binnen uw abonnement kunt aanmaken."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "U hebt het maximum van één geabonneerde agenda bereikt.",
@@ -1327,7 +1332,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "Agenda kon niet ontcijferd worden"
       ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
@@ -1339,7 +1344,7 @@
         "Agneda link is niet toegankelijk"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Agendalink is tijdelijk ontoegankelijk"
       ],
       "Calendar link is wrong": [
         "Agenda link is verkeerd"
@@ -1640,33 +1645,33 @@
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
-        ""
+        "Bugs of kwaliteitsproblemen"
       ],
       "I use a different Proton account": [
-        ""
+        "Ik gebruik een ander Proton account"
       ],
       "Missing feature(s)": [
-        ""
+        "Ontbrekend(e) kenmerk(en)"
       ],
       "My reason isn't listed, please comment": [
-        ""
+        "Mijn reden staat er niet bij, graag commentaar"
       ],
       "Streaming service unsupported": [
-        ""
+        "Streaming service niet ondersteund"
       ],
       "Subscription is too expensive": [
-        ""
+        "Abonnement is te duur"
       ],
       "Switching to a different provider": [
-        ""
+        "Overstappen naar een andere aanbieder"
       ],
       "Temporary need, may come back in the future": [
-        ""
+        "Tijdelijke behoefte, kan in de toekomst terugkomen"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
+        "Help ons verbeteren!"
       ]
     },
     "Drive feature": {
@@ -1701,7 +1706,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } is geannuleerd."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
@@ -1805,7 +1810,7 @@
         "Automatische antwoorden is een betaalde functie. Upgrade naar een betaald account om deze functie te gebruiken."
       ],
       "Calendar limit reached": [
-        ""
+        "Agendalimiet bereikt"
       ],
       "Calendar primary private key is not decrypted": [
         "Primaire kalendersleutel is niet gedecodeerd"
@@ -1814,7 +1819,7 @@
         "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
       ],
       "Can't validate email, try again later": [
         "Kan e-mail niet valideren, probeer het later opnieuw"
@@ -1823,7 +1828,7 @@
         "Kan telefoon niet valideren, probeer het later opnieuw"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Checkout is verlopen, probeer het opnieuw"
       ],
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
@@ -1834,9 +1839,13 @@
       "Could not find address ${ email }.": [
         "Kon adres ${ email } niet vinden."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Deselecteer tenminste één agenda",
+        "Deselecteer tenminste ${ calendarToFixCount } agenda's"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Ten minste ${ calendarToFixCount } kalender deselecteren of",
+        "Ten minste ${ calendarToFixCount } kalenders deselecteren of"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -1905,7 +1914,7 @@
         "Ongeldige vervaldatum"
       ],
       "Invalid invitation link": [
-        ""
+        "Ongeldige uitnodigingskoppeling"
       ],
       "Invalid name": [
         "Ongeldige naam"
@@ -1929,8 +1938,8 @@
         "Label naam mag niet leeg zijn"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
+        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -1944,6 +1953,9 @@
       "No active sessions": [
         "Geen actieve sessies"
       ],
+      "No data to import": [
+        "Geen gegevens om te importeren"
+      ],
       "No valid address found": [
         "Geen geldig adres gevonden"
       ],
@@ -1951,13 +1963,13 @@
         "Ongeldig getal"
       ],
       "Organization key is not decrypted": [
-        ""
+        "Organisatiesleutel is niet gedecodeerd"
       ],
       "Organization key is not decrypted.": [
         "Organisatiesleutel is niet gedecodeerd."
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisatie niet herkend. Probeer opnieuw."
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
@@ -1987,17 +1999,17 @@
         "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Los het gemarkeerde conflict op om verder te gaan.",
+        "Los de gemarkeerde conflicten op om verder te gaan."
       ],
       "Please generate keys before you try to change your password": [
-        ""
+        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ],
       "Please refresh the page.": [
         "Vernieuw de pagina."
       ],
       "Please set a recovery email first": [
-        ""
+        "Stel eerst een herstel-e-mailadres in"
       ],
       "Please set a recovery phone number first": [
         "Stel eerst een hersteltelefoonnummer in"
@@ -2009,7 +2021,7 @@
         "Probeer opnieuw te verifiëren en zorg ervoor dat de machtigingen correct zijn ingesteld."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        ""
+        "Upgrade naar het Professional abonnement dat meer dan 1 gebruiker ondersteunt, of upgrade naar het Visionary abonnement voor ondersteuning van meerdere gebruikers"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Upgrade naar een Professional abonnement met meer dan 1 gebruiker, of een Visionary account, om meerdere gebruikers te beheren."
@@ -2065,6 +2077,12 @@
       "The folder name is too long. Please choose a different name.": [
         "De naam van de map is te lang. Kies een andere naam."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "De sleutels in uw herstelbestand kunnen niet worden gevalideerd. Neem contact op met ondersteuning."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "De sleutels in uw herstelbestanden kunnen niet worden gevalideerd. Upload ze afzonderlijk voor meer informatie."
+      ],
       "The label name is too long. Please choose a different name.": [
         "De labelnaam is te lang. Kies een andere naam."
       ],
@@ -2078,7 +2096,7 @@
         "De minimale betaling die we accepteren is ${ _price2 }"
       ],
       "The organization key must be activated first": [
-        ""
+        "De organisatiesleutel moet eerst geactiveerd worden"
       ],
       "The organization key must be activated first.": [
         "De organisatiesleutel moet eerst geactiveerd worden."
@@ -2112,9 +2130,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Geüploadde file is geen geldige geheime sleutel. Controleer en probeer opnieuw."
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Geüploadde files zijn geen geldige geheime sleutels. Controleer en probeer opnieuw."
@@ -2166,9 +2181,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } ondersteunt alleen het importeren van agenda's met iCal versie 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Er is een fout opgetreden bij het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
       ],
@@ -2188,7 +2200,7 @@
         "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
+        "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Uw bestand ${ formattedFilename } heeft geen afspraken om te importeren."
@@ -2293,7 +2305,7 @@
         "Begintijd ontbreekt"
       ],
       "No UID, title or start time": [
-        ""
+        "Geen UID, titel of starttijd"
       ],
       "Non-Gregorian": [
         "Niet-Gregoriaanse"
@@ -2305,7 +2317,7 @@
         "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Terugkerende gebeurtenis heeft geen voorvallen"
       ],
       "Recurring rule not supported": [
         "Herhalingsvoorwaarde niet ondersteund"
@@ -2384,7 +2396,7 @@
         "Bijgevoegd ICS-bestand kon niet worden gedecodeerd"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Bijgevoegd ICS-bestand kon niet worden gelezen"
       ],
       "Invalid invitation": [
         "Ongeldige uitnodiging"
@@ -2740,7 +2752,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
+        "${ CALENDAR_APP_NAME } ondersteunt momenteel bepaalde evenementtypen, -details en -indelingen niet."
       ],
       "vCard versions < 3.0": [
         "vCard-versies < 3.0"
@@ -2748,18 +2760,18 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "Geïmporteerde uitnodigingen verschijnen in ${ CALENDAR_APP_NAME } als eenvoudige evenementen zonder details over de organisator en deelnemers. Om updates van evenementen te krijgen en deelnemers te zien, vraag je organisatoren om u uit te nodigen met uw Proton e-mailadres."
       ],
       "This file contains an event invitation:": [
-        "",
-        ""
+        "Dit bestand bevat een uitnodiging voor een evenement:",
+        "Dit bestand bevat uitnodigingen voor evenementen:"
       ],
       "This file contains an invitation response:": [
-        "",
-        ""
+        "Dit bestand bevat een antwoord op een uitnodiging:",
+        "Dit bestand bevat antwoorden op uitnodigingen:"
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "Dit bestand bevat enkele gegevens die we niet kunnen importeren:"
       ]
     },
     "Import contact": {
@@ -2933,7 +2945,7 @@
         "Ga in uw ${ boldGmailSettings } naar ${ boldForwarding } en zorg ervoor dat ${ boldIMAPAccess } is ingeschakeld."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        ""
+        "Log in op Yahoo Mail en klik op uw naam in de rechterbovenhoek om ${ boldAccountInfo } te openen. In de ${ boldAccountSec } sectie, scrolt u naar de ${ boldAppPassword } sectie om een app-wachtwoord te genereren. U zult dit wachtwoord nodig hebben tijdens de import."
       ]
     },
     "Import instructions emphasis": {
@@ -2962,7 +2974,7 @@
         "Labels"
       ],
       "Other ways to sign in": [
-        ""
+        "Andere manieren om in te loggen"
       ],
       "Security": [
         "Beveiliging"
@@ -3006,7 +3018,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        ""
+        "Weet u zeker dat u een privésleutel wilt importeren? Het importeren van een onveilig gegenereerde of uitgelekte private seleutel kan de veiligheid van uw e-mails schaden.\n\nHoud er ook rekening mee dat de openbare sleutel die overeenkomt met deze private sleutel publiekelijk beschikbaar zal zijn vanaf onze sleutelserver. Als de sleutel persoonlijke gegevens bevat (zoals uw volledige naam) die u niet wilt publiceren, bewerk de sleutel dan voordat u deze importeert."
       ]
     },
     "Import status": {
@@ -3029,7 +3041,7 @@
         "Mislukt"
       ],
       "In progress": [
-        ""
+        "Bezig"
       ],
       "Paused": [
         "Gepauzeerd"
@@ -3040,13 +3052,13 @@
     },
     "Import type": {
       "Calendar": [
-        ""
+        "Agenda"
       ],
       "Contacts": [
-        ""
+        "Contacten"
       ],
       "Mail": [
-        ""
+        "Mail"
       ]
     },
     "Import warning": {
@@ -3054,21 +3066,24 @@
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        ""
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
       ],
       "No contact can be imported. Click for details": [
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
       ],
       "No event can be imported. Expand for details.": [
-        ""
+        "Er kan geen gebeurtenis worden geïmporteerd. Uitvouwen voor details."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        ""
+        "Een deel van je agendainhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
+      ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } zal worden ingesteld als standaardagenda."
@@ -3078,8 +3093,8 @@
         "${ calendarsToBeCreatedCount } nieuwe kalenders"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "Éen samengevoegde agenda",
+        "${ calendarsToBeMerged } samengevoegde agenda's"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } samengevoegde kalender",
@@ -3111,12 +3126,12 @@
         "${ numberOfNonPrivateKeys } geüploade bestanden zijn geen geldige geheime sleutels. Controleer het en probeer het opnieuw."
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "Één contactgroep",
+        "${ numContactGroups } contactgroepen"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "Één contactpersoon",
+        "${ numContacts } contactpersonen"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } map gevonden",
@@ -3189,11 +3204,8 @@
       "A free and uncensored Internet should be available to all.": [
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Een sleutel met hetzelfde algoritme is al in gebruik voor dit adres. Een andere sleutel genereren kan ervoor zorgen dat het laden van het account langzamer gaat en het verwijderen van oude sleutels kan problemen opleveren. Als u dit doet omdat de oude sleutel uitgelekt is, markeer de oude sleutel dan zodanig. Weet u zeker dat u door wilt gaan?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        ""
+        "Met een herstelbestand kunt u uw gegevens ontgrendelen en bekijken na een accountreset. "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Met een herstelzin kunt u toegang krijgen tot uw account en uw gecodeerde berichten herstellen als u uw wachtwoord bent vergeten."
@@ -3217,16 +3229,16 @@
         "Account succesvol bijgewerkt"
       ],
       "Activate your recovery phrase": [
-        ""
+        "Activeer uw herstel zin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige kortere domein staat voor \"ProtonMail me\" of \"Private Message me.\""
       ],
       "Add a recovery email address": [
-        ""
+        "Voeg een herstel e-mailadres toe"
       ],
       "Add a recovery phone number": [
-        ""
+        "Een telefoonnummer voor herstel toevoegen"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Extra adressen toevoegen aan uw account, zoals gebruiker2@protonmail.com"
@@ -3248,7 +3260,7 @@
         "Adressen"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        ""
+        "Na een wachtwoordreset worden uw gegevens versleuteld vergrendeld om ze veilig te houden. Om uw e-mails en andere gegevens te ontsleutelen en te bekijken, hebt u een herstelbestand of herstelzin nodig."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Na het betalen van uw Bitcoin betaling, volg de onderstaande instructies om te upgraden."
@@ -3296,9 +3308,6 @@
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
-      ],
-      "Are you sure you want to continue?": [
-        "Weet u zeker dat u door wilt gaan?"
       ],
       "Are you sure you want to delete this address?": [
         "Weet u zeker dat u dit adres wil verwijderen?"
@@ -3385,13 +3394,13 @@
         "Black Friday 2020 nieuwkomer korting is toegepast"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "Blokkeert dat afzenders kunnen zien of en wanneer u een bericht hebt geopend."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
       ],
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
@@ -3401,9 +3410,6 @@
       ],
       "Center": [
         "Centreren"
-      ],
-      "Change your default in settings": [
-        "Wijzig uw standaardwaarde in de instellingen"
       ],
       "Check the status of current and previous imports.": [
         "Controleer de status van de huidige en vorige imports."
@@ -3427,8 +3433,8 @@
         "Toch doorgaan?"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Maak één nieuwe agenda",
+        "Maak ${ calendarsToBeCreated } nieuwe agenda's"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
@@ -3446,13 +3452,13 @@
         "Maak e-mailadressen aan voor andere mensen, beheer ProtonMail voor een bedrijf, school of groep. Ga aan de slag met het toevoegen van uw organisatienaam en aangepast domein (bijv. @yourcompany.com). "
       ],
       "Create in": [
-        ""
+        "Maak in"
       ],
       "Creating your Proton account": [
         "Uw Proton account aanmaken"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Alle beschikbare opslagruimte is momenteel toegewezen aan het beheerdersaccount. Beperk de toewijzingshoeveelheid om ruimte te creëren voor extra gebruikers. Door uw account te upgraden kunt u op elk gewenst moment de totale opslagcapaciteit verhogen."
@@ -3513,7 +3519,7 @@
         "Klaar"
       ],
       "Done! We sent a code to ${ destination }.": [
-        ""
+        "Klaar! We hebben een code verzonden naar ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Downgraden zal alle verbindingen naar betaalde ProtonVPN-servers beëindigen."
@@ -3525,7 +3531,7 @@
         "Download uw PGP-sleutels voor gebruik met andere PGP-compatibele diensten."
       ],
       "Download your recovery file": [
-        ""
+        "Download uw herstelbestand"
       ],
       "Drop the file here to upload": [
         "Sleep het bestand om te uploaden"
@@ -3537,7 +3543,7 @@
         "Label bewerken"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
+        "Verplaats moeiteloos en veilig uw e-mails van uw huidige provider naar Proton. Als u Google gebruikt, ondersteunen wij ook de import van agenda's en contactpersonen."
       ],
       "Email address": [
         "E-mailadres"
@@ -3550,6 +3556,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "E-mails met dit label worden niet verwijderd en zijn nog steeds te vinden in de betreffende map."
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Het opnieuw inschakelen van herstel per uitdrukking zal een nieuwe herstelzin genereren."
       ],
       "Encryption setting updated": [
         "Versleutelingsinstelling bijgewerkt"
@@ -3568,12 +3577,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Voer het wachtwoord van de organisatie in om de beheerdersrechten te herstellen. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Voer de recovery ${ recoveryMethodText } in die gekoppeld is aan uw ${ BRAND_NAME } account. We sturen u een code om het wachtwoord opnieuw in te stellen."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Voer de herstelzin in die bij uw ${ BRAND_NAME } Account hoort."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
@@ -3636,7 +3639,7 @@
         "Volledige VPN met snelheid tot 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        ""
+        "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Geef uw publieke sleutel aan uw vrienden, of publiceer deze online, zodat iedereen u end-to-end versleutelde e-mail kan sturen!"
@@ -3648,7 +3651,7 @@
         "hier"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        ""
+        "Verbergt identificeerbare informatie door inhoud op afstand via een proxy te laden. Optie om inhoud als bijlagen op te slaan."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wanneer een andere beheerder dit wachtwoord heeft aangepast, dan moet u hem naar het nieuwe organisatiewachtwoord vragen."
@@ -3684,10 +3687,10 @@
         "Indien u zowel SPF als DKIM ingesteld hebt, geeft het DMARC-record voor andere e-maildiensten aan wat er moet gebeuren als er iets misgaat tijdens het controleren van uw SPF- en DKIM-records. Dit maakt het moeilijker voor spammers om zich voor te doen als u, maar dit kan ook afleverproblemen veroorzaken ten gevolge van een foutieve configuratie."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        ""
+        "Als u uw inloggegevens verliest en uw account opnieuw moet instellen, ${ boldImperative } dan dat u een ${ boldAccountRecovery } hebt."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        ""
+        "Als u uw inloggegevens verliest en uw account moet resetten, zorg er dan voor dat u zowel ${ boldImperative } als ${ boldAccountAndRecovery } hebt, anders hebt u wellicht geen toegang meer tot uw e-mails, contacten of bestanden."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Als u uw tweestapsverificatie-apparaat kwijtraakt, kunnen deze codes worden gebruikt in plaats van de 6-cijferige tweestapsverificatiecode om in te loggen op uw account. Elke code kan slechts één keer worden gebruikt."
@@ -3701,12 +3704,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot de betaalde functies van ProtonVPN."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Als u doorgaat, wordt u gevraagd uw wachtwoord opnieuw in te stellen en wordt u uitgelogd bij alle andere actieve sessies."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Als u doorgaat, moet u uw wachtwoord opnieuw instellen en wordt u uitgelogd bij alle andere actieve sessies."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Als u een bestaande SPF-record wilt behouden, kunt u gewoon ${ spf } eraan toevoegen na de ${ spfValue }. Maak niet meerdere SPF-records."
       ],
@@ -3717,20 +3714,20 @@
         "Afbeeldings-URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda's"
       ],
       "Import from": [
         "Importeren van"
       ],
       "Import in progress": [
-        ""
+        "Bezig met importeren"
       ],
       "Import mailbox": [
         "Mailbox importeren"
@@ -3745,13 +3742,13 @@
         "BELANGRIJK: Sommige registrars accepteren geen CNAME-waarden met een periode aan het einde (terwijl andere gebruikers dit nodig hebben). Als uw registratie uw CNAME-records niet accepteert, verwijder dan de periode aan het einde van elke CNAME-waarde en probeer het opnieuw."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "Als u uw inloggegevens verliest, sturen wij u herstelinstructies via e-mail of sms."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "Als u uw inloggegevens kwijt bent, sturen wij u per e-mail instructies voor het herstel."
       ],
       "Included": [
         "Inbegrepen"
@@ -3790,7 +3787,7 @@
         "het is noodzakelijk"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Bevestig uw keuze en wij doen de rest."
       ],
       "Justify": [
         "Uitvullen"
@@ -3801,9 +3798,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Sleutel met vingerafdruk ${ fp } is verwijderd."
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Sleutel met vingerafdruk ${ fp } succesvol aangemaakt."
-      ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
       ],
@@ -3811,7 +3805,7 @@
         "Grote importen kunnen enkele dagen in beslag nemen."
       ],
       "Large imports can take several days.": [
-        ""
+        "Grote importen kunnen meerdere dagen duren."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
         "Meer informatie over hoe u zich kunt aanmelden bij ProtonVPN met VPN-applicaties via apps van derden."
@@ -3889,10 +3883,10 @@
         "Nieuw bij ${ BRAND_NAME }? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
-        "Geen account herstel methode ingesteld, loopt u het risico de toegang tot uw account te verliezen"
+      "No account recovery method set; you are at risk of losing access to your account": [
+        "Geen account herstel methode ingesteld; loopt u het risico de toegang tot uw account te verliezen"
       ],
       "No action selected": [
         "Geen actie geselecteerd"
@@ -3903,8 +3897,8 @@
       "No contact encryption keys exist": [
         "Er bestaan geen contactcoderingssleutels"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
-        ""
+      "No data recovery method set; you are at risk of losing access to your data": [
+        "Als er geen methode voor gegevensherstel is ingesteld; loopt u het risico de toegang tot uw gegevens te verliezen"
       ],
       "No folder selected": [
         "Geen map geselecteerd"
@@ -3996,8 +3990,11 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Voer een wachtwoord in voor het versleutelen van uw geheime sleutel voordat u deze exporteert."
       ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        "Voer de herstelzin van 12 woorden in die bij uw account hoort."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Bewaar het veilig. U hebt het nodig om toegang te krijgen tot uw account en om uw gegevens te decoderen in geval van een nieuw wachtwoord."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Let op: als u dit adres verwijdert, kunt u geen e-mails meer verzenden of ontvangen met behulp van dit adres."
@@ -4042,7 +4039,7 @@
         "Plus- of Visionary-abonnement vereist"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "Voorkomt dat inhoud van de server van de afzender wordt geladen zonder uw toestemming."
       ],
       "Preview": [
         "Voorbeeld"
@@ -4091,7 +4088,7 @@
         "eerst de instructies over tweestapsverificatie (2FA) te lezen"
       ],
       "Recovery files have been voided": [
-        ""
+        "Herstel bestanden zijn ongeldig gemaakt"
       ],
       "Recovery phrase copied to clipboard": [
         "Herstel zin gekopieerd naar klembord"
@@ -4099,8 +4096,11 @@
       "Recovery phrase has been disabled": [
         "Herstelzin is uitgeschakeld"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        "Recovery phrase is niet gekoppeld aan sleutels."
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
-        ""
+        "Herstelzin is niet geassocieerd met een verouderde sleutel."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
@@ -4130,10 +4130,10 @@
         "Schermafbeelding(en) toegevoegd"
       ],
       "Select a service provider to get started": [
-        ""
+        "Selecteer een dienstverlener om te beginnen"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
       ],
       "Server is currently down": [
         "Server is momenteel offline"
@@ -4142,7 +4142,7 @@
         "Serverbelasting"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
       "Session timed out.": [
         "Sessie verlopen."
@@ -4193,7 +4193,7 @@
         "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        ""
+        "Met de app Import-Export kunt u berichten exporteren voor lokale back-ups en eerdere back-ups terugzetten naar uw account."
       ],
       "The name will be visible to your users while they are logged in.": [
         "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
@@ -4219,6 +4219,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Deze functie is alleen bedoeld voor geavanceerde gebruikers. Na het verwijderen van deze sleutel, kunt u berichten die er versleuteld mee zijn niet decoderen. Dit kan tot dataverlies leiden."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Dit is een zin van 12 woorden die u moest instellen."
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Dit is een herstelbestand of een coderingssleutel die u misschien eerder hebt opgeslagen."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Dit is een coderingssleutel die u misschien eerder hebt opgeslagen."
+      ],
+      "This is the password you used before the password reset.": [
+        "Dit is het wachtwoord dat u gebruikte vóór de wachtwoordreset."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
       ],
@@ -4234,14 +4246,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Dit schakelt ook de tweestapsverificatiemethode uit die gekoppeld is aan dit account."
       ],
-      "This will also disable two-factor authentication.": [
-        "Dit zal ook de twee-factor authenticatie uitschakelen."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Dit maakt een nieuwe versleutelingssleutel aan voor uw organisatie. Sleutels met een lengte van 4096-bits werken alleen op krachtige computers. Voor de meeste gebruikers is het aangeraden de standaardwaarde van 2048-bits te gebruiken."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Dit zal uw huidige herstelzin uitschakelen. U kunt deze dan niet meer gebruiken om toegang te krijgen tot uw account of om uw gegevens te ontsleutelen."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browser tabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
@@ -4255,20 +4267,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dit zal uw tijdelijke wachtwoord vervangen. U zult het gebruiken om in de toekomst toegang te krijgen tot uw ${ BRAND_NAME } -account."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "Dit zal je afmelden van alle actieve sessies en de 2-factor authenticatie uitschakelen."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw Proton account. Tweestapsverificatie zal uw Proton account veiliger maken en daarom raden we aan om het in te schakelen."
       ],
       "to": [
         "naar"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "Om toegang te krijgen tot uw oude berichten, moet u uw oude encryptiesleutels opnieuw activeren met een van de volgende herstelmethoden."
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Om te bevestigen, voer de naam in van de gebruiker die u wilt verwijderen."
       ],
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Om uw vergrendelde gegevens te decoderen en te bekijken na een wachtwoordreset, selecteert u een herstelmethode."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -4278,6 +4293,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Om uw externe account voor te bereiden op de import, volg de instructies voor:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "Om verder te gaan, selecteer een account herstel methode zodat we het verzoek kunnen verifiëren."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Om uw internetverbinding te beveiligen, installeert u de ProtonVPN-applicatie op uw apparaat en maakt u verbinding met een ProtonVPN-server."
@@ -4306,11 +4324,8 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Twee-wachtwoordsmodus maakt gebruik van verschillende wachtwoorden voor het inloggen en de ontsleuteling van de mailbox. Dit biedt in sommige gevallen een klein veiligheidsvoordeel maar wij raden één-wachtwoordsmodus aan voor de meeste gebruikers. Om over te schakel naar twee-wachtwoordsmodus, stelt u eerst een inlogwachtwoord in en daarna een mailboxwachtwoord."
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "Onmogelijk te decoderen. Herstelzin is niet geassocieerd met een sleutel."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
-        ""
+        "Kan de handtekening van het herstelbestand niet verifiëren. Neem contact op met ondersteuning."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
@@ -4369,11 +4384,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName }-bundel voor families en kleine bedrijven."
       ],
+      "Warning:": [
+        "Waarschuwing:"
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Waarschuwing: verwijdering is permanent. Dit verwijdert ook de toegang tot alle verbonden diensten en verwijdert al uw contacten."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "We raden u aan om officiële ProtonVPN-applicaties te gebruiken waar mogelijk."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
       ],
       "We use 3-D Secure to protect your payments.": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen."
@@ -4391,7 +4412,7 @@
         "We zullen u een herstellink naar dit e-mailadres sturen als u uw wachtwoord vergeet of uit uw account wordt verwijderd."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "We laten het u weten als de import klaar is."
       ],
       "Web URL": [
         "Web URL"
@@ -4402,8 +4423,14 @@
       "Week and month views only apply to desktop.": [
         "Week- en maandweergaven zijn alleen van toepassing op desktop."
       ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        "We sturen een resetcode naar het telefoonnummer dat u hebt opgegeven voor het herstel van uw account."
+      ],
       "What do you want to import from your Google account?": [
-        ""
+        "Wat wilt u importeren uit uw Google-account?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder uw informatie."
@@ -4438,8 +4465,11 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email }) en hebt beperkte toegang."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "U kunt geïmporteerde kalenders ook samenvoegen met bestaande Proton-agenda's."
+      ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "U kunt de voortgang controleren ${ importProgressLink }."
       ],
       "You can continue using Proton services as usual.": [
         "U kunt Proton-diensten blijven gebruiken zoals gebruikelijk."
@@ -4452,9 +4482,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "U kunt een nieuwe versleutelingssleutel genereren als u denkt dat uw vorige sleutel uitgelekt is."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "U kunt nu berichten ontvangen op uw @pm.me-adres. Upgrade naar een betaald abonnement om ook e-mails te versturen via uw @pm.me-adres en meerdere @pm.me-adressen te maken."
@@ -4473,12 +4500,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "U hebt Bèta Toegang uitgeschakeld. Klik op ${ refreshButton } om de stabiele versie van ${ appName } te gebruiken. De applicatie wordt herladen."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "U hebt Beta Toegang aangezet. Klik op ${ refreshButton } om de laatste versie van ${ appName } te gebruiken. De applicatie wordt herladen."
       ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
@@ -4511,7 +4532,7 @@
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "U zult ${ loseAllData } in uw ${ BRAND_NAME }-account moeten invoeren. Om dit te herstellen moet u uw oude wachtwoord invoeren."
+        "U zult ${ loseAllData } m.b.t. uw ${ BRAND_NAME } account. Om dit te herstellen moet u uw oude wachtwoord invoeren."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "U wordt doorgestuurd naar uw bank om uw betaling te controleren."
@@ -4520,7 +4541,7 @@
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        ""
+        "U zult niet in staat zijn om versleutelde gegevens te herstellen na een account reset met behulp van uw gedownloade herstelbestanden."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een adres aan om ${ toAppName } te gebruiken."
@@ -4549,11 +4570,11 @@
       "Your Block List is empty.": [
         "Uw Bloklijst is leeg."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
-        "Uw gegevens zijn gecodeerd, u kunt uw gegevens herstellen door uw sleutels opnieuw te activeren."
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
+        "Uw gegevens zijn gecodeerd en vergrendeld. U kunt de toegang herstellen met een methode voor gegevensherstel."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
       ],
       "Your data recovery method is set": [
         "Uw methode voor gegevensherstel is ingesteld"
@@ -4562,7 +4583,7 @@
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        ""
+        "Uw import van ${ delayedImport.Account } is tijdelijk vertraagd."
       ],
       "Your import from ${ delayedImport.Email } is temporarily delayed.": [
         "Uw import van ${ delayedImport.Email } is tijdelijk vertraagd."
@@ -4737,6 +4758,29 @@
         "Abonnement"
       ]
     },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        ""
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        ""
+      ],
+      "Generate key": [
+        ""
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        ""
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        ""
+      ]
+    },
     "Key state badge": {
       "Active": [
         "Actief"
@@ -4759,10 +4803,10 @@
     },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        ""
+        "${ compatibility } RSA 4096-bit (langzamer, maar meer compatibiliteit met oudere software)"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        ""
+        "${ stateOfTheArt } ECC Curve25519 (Snelste, modernste)"
       ]
     },
     "Keyboard shortcut name": {
@@ -5024,6 +5068,9 @@
       "ALL": [
         "ALLES"
       ],
+      "All-day event notifications": [
+        "De hele dag meldingen van evenementen"
+      ],
       "Allow recovery by email": [
         "Herstellen via e-mail toestaan"
       ],
@@ -5072,12 +5119,6 @@
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
       ],
-      "Backup key": [
-        "Back-up sleutel"
-      ],
-      "Backup keys": [
-        "Back-up sleutels"
-      ],
       "Block email tracking": [
         "Blokkeer e-mailtracking"
       ],
@@ -5097,7 +5138,7 @@
         "BTC bedrag:"
       ],
       "Calendars": [
-        ""
+        "Agenda's"
       ],
       "Cancel": [
         "Annuleren"
@@ -5114,11 +5155,11 @@
       "Category": [
         "Categorie"
       ],
-      "Choose a color": [
-        "Kies een kleur"
-      ],
       "Code": [
         "Code"
+      ],
+      "Color": [
+        "Kleur"
       ],
       "Composer": [
         "Opstelvenster"
@@ -5189,20 +5230,8 @@
       "Days of the week": [
         "Dagen van de week"
       ],
-      "Default email": [
-        "Standaard e-mailadres"
-      ],
-      "Default event duration": [
-        "Standaardlengte van afspraken"
-      ],
-      "Default full day notifications": [
-        "Standaardwaarde meldingen voor afspraken die de hele dag duren"
-      ],
       "Default language": [
         "Standaardtaal"
-      ],
-      "Default notifications": [
-        "Standaardinstellingen van meldingen"
       ],
       "Default PGP scheme": [
         "Standaard PGP-schema"
@@ -5271,7 +5300,7 @@
         "Laatste weekdag"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Voer de naam van de organisatie in om te bevestigen"
       ],
       "Enter password": [
         "Vul login wachtwoord in"
@@ -5281,6 +5310,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "Duur van het evenement"
+      ],
+      "Event notifications": [
+        "Gebeurtenismeldingen"
       ],
       "Expires": [
         "Verloopt"
@@ -5292,13 +5327,16 @@
         "extra opslagruimte"
       ],
       "File": [
-        ""
+        "Bestand"
       ],
       "Filter Name": [
         "Filternaam"
       ],
       "Folder location": [
         "Map locatie"
+      ],
+      "From: ${ emailFrom }": [
+        "Van: { emailFrom }"
       ],
       "From: ${ fromEmailAddress }": [
         "Van: ${ fromEmailAddress }"
@@ -5480,6 +5518,9 @@
       "Phrase": [
         "Zin"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        "Zin bestaat uit 12 unieke woorden in een specifieke volgorde"
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Voeg alle 3 van de volgende CNAME records toe. Let op, DNS records kunnen enkele uren duren om te updaten."
       ],
@@ -5498,6 +5539,9 @@
       "Postal code": [
         "Postcode"
       ],
+      "Previous password": [
+        "Vorig wachtwoord"
+      ],
       "Private User": [
         "Privégebruiker"
       ],
@@ -5508,7 +5552,7 @@
         "Verrekening"
       ],
       "Protection mode": [
-        ""
+        "Beschermingsmodus"
       ],
       "Proton username": [
         "Proton-gebruikersnaam"
@@ -5523,19 +5567,16 @@
         "Herstelcode"
       ],
       "Recovery email address": [
-        ""
+        "E-mailadres voor herstel"
       ],
       "Recovery file": [
-        ""
+        "Herstelbestand"
       ],
       "Recovery phone number": [
-        ""
+        "Herstel-telefoonnummer"
       ],
       "Recovery phrase": [
         "Herstelzin"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Herstelzin bevat 12 woorden"
       ],
       "Repeat password": [
         "Wachtwoord herhalen"
@@ -5615,6 +5656,9 @@
       "To: ${ emailAddress }": [
         "Naar: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Naar: ${ emailTo }"
+      ],
       "To: ${ PMEmailAddress }": [
         "Aan: { PMEmailAddress }"
       ],
@@ -5639,17 +5683,11 @@
       "Undo send": [
         "Verzenden ongedaan maken"
       ],
-      "Upload your backup key": [
-        "Upload uw back-up sleutel"
+      "Upload 1 or more encryption keys": [
+        "Upload 1 of meer encryptiesleutels"
       ],
-      "Upload your recovery file": [
-        ""
-      ],
-      "Uploaded private keys": [
-        "Geüploadde geheime sleutels"
-      ],
-      "Uploaded recovery file": [
-        ""
+      "Upload 1 or more recovery files or encryption keys": [
+        "Upload 1 of meer herstelbestanden of encryptiesleutels"
       ],
       "URL": [
         "Website"
@@ -5726,16 +5764,13 @@
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
       ],
-      "Your recovery phrase": [
-        "Uw herstelzin"
-      ],
       "ZIP": [
         "Postcode"
       ]
     },
     "label": {
       "Recovery phone number": [
-        ""
+        "Herstel-telefoonnummer"
       ],
       "Recovery phrase": [
         "Herstelzin"
@@ -5783,6 +5818,9 @@
       ],
       "Proton newsletter": [
         "Proton nieuwsbrief"
+      ],
+      "Proton offers and promotions": [
+        "Proton aanbiedingen en promoties"
       ],
       "Proton product announcements": [
         "Proton productaankondigingen"
@@ -5931,26 +5969,26 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt",
+        "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt"
       ],
       "Almost there": [
-        ""
+        "Bijna daar"
       ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
       ],
       "Creating new calendars": [
-        ""
+        "Nieuwe kalenders maken"
       ],
       "Gathering your data": [
-        ""
+        "Verzamelen van uw gegevens"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "We verzamelen uw gegevens van uw provider"
       ],
       "Your import is starting": [
-        ""
+        "Uw import begint"
       ]
     },
     "Log preference": {
@@ -6044,12 +6082,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importeer alle berichten van ${ selectedLabelsCount } uit ${ totalLabelsCount } label sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ selectedLabelsCount } van de ${ totalLabelsCount } labels sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importeer alle berichten van ${ totalLabelsCount } label sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ totalLabelsCount } labels sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -6090,7 +6128,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Hiermee worden alle subgebruikers, accounts en gegevens die aan uw organisatie zijn gekoppeld definitief verwijderd."
       ]
     },
     "Message": {
@@ -6600,18 +6638,18 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Nieuwe agenda maken"
       ],
       "Merge with calendar": [
-        ""
+        "Samenvoegen met agenda"
       ]
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        ""
+        "Laad inhoud via proxy (aanbevolen)"
       ],
       "Load content via proxy and store as attachments": [
-        ""
+        "Inhoud laden via proxy en opslaan als bijlagen"
       ]
     },
     "OS compatibility": {
@@ -6649,7 +6687,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6747,7 +6785,7 @@
         "Zoek gebruikers"
       ],
       "Select a reason": [
-        ""
+        "Selecteer een reden"
       ],
       "Text": [
         "Tekst"
@@ -6871,8 +6909,8 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        ""
+        "U heeft nog ${ daysRemaining } dag over op uw ${ BRAND_NAME } ${ currentPlanName } account.",
+        "U heeft nog ${ daysRemaining } dagen over op uw ${ BRAND_NAME } ${ currentPlanName } account."
       ]
     },
     "Price": {
@@ -6950,25 +6988,19 @@
       "Email": [
         "E-mailadres"
       ],
-      "email address": [
-        "e-mailadres"
-      ],
-      "phone number": [
-        "telefoonnummer"
-      ],
       "Phone number": [
         "Telefoonnummer"
       ],
-      "Recovery phrase": [
-        "Herstelzin"
+      "Phrase": [
+        "Zin"
       ]
     },
     "Remark about a key type option": {
       "Compatibility": [
-        ""
+        "Compatibiliteit"
       ],
       "State of the art": [
-        ""
+        "State-of-the-art"
       ]
     },
     "Restore administrator panel": {
@@ -7000,11 +7032,8 @@
       "Upload": [
         "Uploaden"
       ],
-      "Upload additional private keys": [
-        "Upload extra geheime sleutels"
-      ],
-      "Upload additional recovery files": [
-        ""
+      "Upload additional files": [
+        "Extra bestanden uploaden"
       ]
     },
     "Select search results": {
@@ -7028,7 +7057,7 @@
         "Automatisch antwoorden"
       ],
       "Backup & Export": [
-        ""
+        "Back-up & Exporteren"
       ],
       "Calendars": [
         "Agenda's"
@@ -7040,7 +7069,7 @@
         "Domeinnamen"
       ],
       "Email privacy": [
-        ""
+        "E-mail privacy"
       ],
       "Encryption & keys": [
         "Versleuteling & sleutels"
@@ -7187,7 +7216,7 @@
         "Agenda-URL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "Om u te abonneren op een externe of openbare agenda en de updates ervan, voert u de URL in. Een alleen-lezen versie van de agenda wordt toegevoegd aan uw geabonneerde agenda's.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7449,16 +7478,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "aanmaakdatum van account"
       ],
       "the last 12 months": [
-        ""
+        "de laatste 12 maanden"
       ],
       "the last 3 months": [
-        ""
+        "de laatste 3 maanden"
       ],
       "the last month": [
-        ""
+        "de laatste maand"
       ]
     },
     "Time unit": {
@@ -7499,7 +7528,7 @@
         "3. Configuratiebestand kiezen en downloaden"
       ],
       "Account recovery": [
-        ""
+        "Account herstel"
       ],
       "Account suspended": [
         "Account opgeschort"
@@ -7604,7 +7633,7 @@
         "Terug"
       ],
       "Backup & Export": [
-        ""
+        "Back-up & Exporteren"
       ],
       "Billing cycle": [
         "Factuurperiode"
@@ -7682,7 +7711,7 @@
         "Contacten"
       ],
       "Continue with partial import?": [
-        ""
+        "Doorgaan met gedeeltelijke invoer?"
       ],
       "Coupon discount": [
         "Kortingscode"
@@ -7718,16 +7747,16 @@
         "Aangepaste filters"
       ],
       "Customize and confirm": [
-        ""
+        "Aanpassen en bevestigen"
       ],
       "Customize calendar import": [
-        ""
+        "Agenda-import aanpassen"
       ],
       "Customize import": [
         "Importeren aanpassen"
       ],
       "Customize your mail import": [
-        ""
+        "Uw e-mailimport aanpassen"
       ],
       "Customize your plan": [
         "Abonnement aanpassen"
@@ -7735,8 +7764,11 @@
       "Dashboard": [
         "Dashboard"
       ],
+      "Data locked": [
+        "Gegevens vergrendeld"
+      ],
       "Data recovery": [
-        ""
+        "Data hersel"
       ],
       "Date": [
         "Datum"
@@ -7772,7 +7804,7 @@
         "Logs wissen"
       ],
       "Delete organization?": [
-        ""
+        "Organisatie verwijderen?"
       ],
       "Delete user": [
         "Gebruiker verwijderen"
@@ -7787,13 +7819,16 @@
         "Domeinnamen"
       ],
       "Downgrade account": [
-        ""
+        "Account downgraden"
       ],
       "Edit Allow List": [
         "Bewerk Toestane Lijst"
       ],
       "Edit Block List": [
         "Bewerk Bloklijst"
+      ],
+      "Edit calendar": [
+        "Agenda bijwerken"
       ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
@@ -7817,16 +7852,13 @@
         "E-mail encryptiesleutels"
       ],
       "Email privacy": [
-        ""
+        "E-mail privacy"
       ],
       "Email subscriptions": [
         "Nieuwsbrieven"
       ],
       "Enable keyboard shortcuts": [
         "Sneltoetsen inschakelen"
-      ],
-      "Encrypted data": [
-        ""
       ],
       "Encryption & keys": [
         "Versleuteling & sleutels"
@@ -7870,9 +7902,6 @@
       "General": [
         "Algemeen"
       ],
-      "Generate key": [
-        ""
-      ],
       "Generate missing keys": [
         "Ontbrekende sleutels genereren"
       ],
@@ -7898,8 +7927,8 @@
         "Importeren & exporteren"
       ],
       "Import as simple event?": [
-        "",
-        ""
+        "Importeren als eenvoudige gebeurtenis?",
+        "Importeren als eenvoudige gebeurtenissen?"
       ],
       "Import Assistant": [
         "Importeer assistent"
@@ -7911,7 +7940,7 @@
         "Afspraken importeren"
       ],
       "Import failed": [
-        ""
+        "Import mislukt"
       ],
       "Import groups": [
         "Importeer groepen"
@@ -7923,7 +7952,7 @@
         "Sleutel importeren"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Importeren via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Import-Export app"
@@ -8004,7 +8033,7 @@
         "Wachtwoord & sleutels"
       ],
       "Password & security": [
-        ""
+        "Wachtwoord & veiligheid"
       ],
       "Passwords": [
         "Wachtwoorden"
@@ -8066,17 +8095,17 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "Sleutels heractiveren"
-      ],
       "Reconnect your account": [
         "Uw account opnieuw verbinden"
       ],
+      "Recover data": [
+        "Gegevens herstellen"
+      ],
       "Recovery": [
-        ""
+        "Herstel"
       ],
       "Recovery file": [
-        ""
+        "Herstelbestand"
       ],
       "Remove calendar": [
         "Agenda verwijderen"
@@ -8121,7 +8150,7 @@
         "Selecteer de manier om deze melding te verzenden"
       ],
       "Select what to import": [
-        ""
+        "Selecteer wat u wilt importeren"
       ],
       "Select when you want this notification to be sent": [
         "Selecteer wanneer u wilt dat deze melding wordt verzonden"
@@ -8172,7 +8201,7 @@
         "Spamfilters"
       ],
       "Spy Tracker Protection": [
-        ""
+        "Spy Tracker Bescherming"
       ],
       "Start a new import": [
         "Start een nieuwe import"
@@ -8181,7 +8210,7 @@
         "Importproces starten"
       ],
       "Start new import": [
-        ""
+        "Nieuwe import starten"
       ],
       "Status": [
         "Status"
@@ -8202,7 +8231,7 @@
         "Overschakelen naar twee-wachtwoorden modus"
       ],
       "Take precautions to avoid data loss!": [
-        ""
+        "Neem voorzorgsmaatregelen om gegevensverlies te voorkomen!"
       ],
       "Theme": [
         "Thema"
@@ -8227,9 +8256,6 @@
       ],
       "Unsupported browser": [
         "Niet-ondersteunde browser"
-      ],
-      "Update calendar": [
-        "Agenda updaten"
       ],
       "Upgrade": [
         "Upgrade"
@@ -8259,7 +8285,7 @@
         "Uw abonnement"
       ],
       "Your recovery status": [
-        ""
+        "Uw herstelstatus"
       ],
       "ZIP / postal code": [
         "Postcode"
@@ -8344,7 +8370,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Vandaag"
       ]
     },
     "Tooltip": {
@@ -8510,6 +8536,17 @@
         "Automatisch al uw uitgaande berichten ondertekenen zodat gebruikers de authenticiteit van uw berichten kunnen verifiëren. Dit wordt gedaan in combinatie met de standaard PGP-instellingen, welke hieronder kunnen worden geconfigureerd."
       ]
     },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Vandaag is een goede dag om een e-mail te schrijven"
+      ],
+      "Update default font and size": [
+        "Standaardlettertype en -grootte bijwerken"
+      ],
+      "Your default font will look like following:": [
+        "Uw standaardlettertype zal er als volgt uitzien:"
+      ]
+    },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
         "Upgrade naar ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } om met ${ plusVpnConnections } apparaat tegelijkertijd te kunnen verbinden",
@@ -8652,16 +8689,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } server",
+        "${ n }+ servers"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries } landen"
       ]
     },
     "VPN upsell feature": {
@@ -8730,7 +8767,7 @@
         "Als u deze import annuleert, zult u niet in staat zijn om deze te hervatten. Proton heeft alle voortgang in uw account opgeslagen. Toch annuleren?"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ProtonVPN abonnementen. Gelieve in plaats daarvan een ticket te openen."
       ],
       "permanently delete all messages on ${ email }": [
         "verwijder permanent alle berichten op ${ email }"
@@ -8748,7 +8785,7 @@
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "De datum- en tijdinstellingen op uw apparaat zijn niet meer gesynchroniseerd. ${ learnMore }"
       ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Deze actie zal ${ boldWarning }. U kunt de berichten niet herstellen op ${ domain }."
@@ -8773,6 +8810,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "U ziet dit importrecord niet meer in de lijst."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        "Uw herstelbestand is verouderd en kan geen nieuwe gegevens herstellen als u uw account opnieuw instelt."
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        "Uw herstelzin is verouderd en kan geen nieuwe gegevens herstellen als u uw account opnieuw instelt."
       ]
     },
     "Warning for domain modal": {
@@ -8785,7 +8828,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        ""
+        "Deze sleutel voldoet niet langer aan onze veiligheidsnormen. Wij stellen voor dat u deze als verouderd markeert en een nieuwe sleutel genereert."
       ]
     },
     "Weekly recurring event, frequency": {

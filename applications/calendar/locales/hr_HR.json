@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
-      "Create": [
-        "Stvori"
-      ],
       "Create calendar": [
         ""
       ],
@@ -140,7 +140,7 @@
       "Decrease": [
         "Smanji"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -215,9 +215,6 @@
       ],
       "Go to settings": [
         "Idi na postavke"
-      ],
-      "here": [
-        "ovdje"
       ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
@@ -348,9 +345,6 @@
       "Previous year": [
         "Prethodna godina"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -410,6 +404,12 @@
       ],
       "Send": [
         "Pošalji"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "Podijeli"
@@ -482,6 +482,12 @@
       ],
       "Update": [
         "Ažuriraj"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -1416,6 +1422,11 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Pogreška pri dešifriranju: Dešifriranje sadržaja ovog događaja nije uspjelo."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         "",
@@ -1521,6 +1532,9 @@
       ],
       "Name required": [
         "Naziv je obavezan"
+      ],
+      "No data to import": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nijedan ključ dohvaćen za unutarnjeg korisnika nije valjan za slanje"
@@ -1689,9 +1703,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -2334,9 +2345,6 @@
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Dodajte dodatne adrese na svoj račun kao što je korisnik2@protonmail.com"
       ],
@@ -2465,6 +2473,9 @@
       ],
       "Daily": [
         "Dnevno"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "Odbaci promjene?"
@@ -2734,7 +2745,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2743,7 +2754,7 @@
       "Session timed out.": [
         "Sesija je istekla."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2914,6 +2925,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -2922,12 +2936,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Onemogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje stabilne verzije ${ appName }. Aplikacija će se ponovno učitati."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Omogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje najnovije verzije ${ appName }. Aplikacija će se ponovno učitati."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Poništili ste lozinku te događaji povezani sa sljedećim kalendarima se sada mogu dešifrirati."
@@ -3271,6 +3279,9 @@
       "All day": [
         "Cijeli dan"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
       ],
@@ -3304,11 +3315,11 @@
       "Category": [
         "Kategorija"
       ],
-      "Choose a color": [
-        "Odaberite boju"
-      ],
       "City": [
         "Grad"
+      ],
+      "Color": [
+        ""
       ],
       "Contacts": [
         ""
@@ -3321,18 +3332,6 @@
       ],
       "CVV code": [
         "CVV kôd"
-      ],
-      "Default email": [
-        "Zadana adresa e-pošte"
-      ],
-      "Default event duration": [
-        "Zadano trajanje događaja"
-      ],
-      "Default full day notifications": [
-        "Zadane cijelodnevne obavijesti"
-      ],
-      "Default notifications": [
-        "Zadane obavijesti"
       ],
       "Description": [
         "Opis"
@@ -3369,6 +3368,9 @@
       ],
       "Enter the 6-digit code": [
         "Unesite 6-znamenkasti kôd"
+      ],
+      "Event duration": [
+        ""
       ],
       "Event frequency": [
         "Učestalost događaja"
@@ -4320,6 +4322,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        ""
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ključ se ne može koristiti za šifriranje"
@@ -4632,14 +4639,7 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        "",
-        ""
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "",
-        "",
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         ""
       ]
     },
@@ -5053,6 +5053,9 @@
       "Downgrade account": [
         ""
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit contact": [
         "Uredi kontakt"
       ],
@@ -5303,9 +5306,6 @@
       ],
       "Unsupported browser": [
         "Preglednik nije podržan"
-      ],
-      "Update calendar": [
-        "Ažuriraj kalendar"
       ],
       "Update event": [
         "Ažuriraj događaj"

@@ -20,6 +20,9 @@
       "Activate": [
         "Aktivovat"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Přidat"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "Zrušit"
       ],
-      "Cancel action": [
-        "Zrušit akci"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "Kopie, Skrytá kopie"
       ],
-      "CC, BCC": [
-        "Kopie, Skrytá kopie"
+      "CC BCC": [
+        ""
       ],
       "Change page": [
         "Změnit stránku"
@@ -218,8 +218,8 @@
       "Decrease": [
         "Snížit"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Výchozí emailová aplikace"
       ],
       "Delete": [
         "Smazat"
@@ -314,14 +314,14 @@
       "Expand composer": [
         "Celá obrazovka"
       ],
-      "Expiration time": [
-        "Platnost do"
-      ],
       "Export": [
         "Exportovat"
       ],
       "Export contacts": [
         "Exportovat kontakty"
+      ],
+      "Fewer search options": [
+        ""
       ],
       "Filter on...": [
         "Filtrovat…"
@@ -364,9 +364,6 @@
       ],
       "Got it": [
         "Rozumím"
-      ],
-      "here": [
-        "zde"
       ],
       "Hide": [
         "Skrýt"
@@ -425,6 +422,9 @@
       "Insert contact": [
         "Vložit kontakt"
       ],
+      "Insert contacts": [
+        "Vložit kontakty"
+      ],
       "Insert image": [
         "Vložit obrázek"
       ],
@@ -451,9 +451,6 @@
       ],
       "Learn more": [
         "Více informací"
-      ],
-      "Less search options": [
-        "Méně možností vyhledávaní"
       ],
       "Load": [
         "Nahrát"
@@ -635,9 +632,6 @@
       "Print": [
         "Vytisknout"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -743,6 +737,15 @@
       "Set": [
         "Nastavit"
       ],
+      "Set as default": [
+        "Nastavit jako výchozí"
+      ],
+      "Set expiration time": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Sdílet odkaz"
       ],
@@ -761,6 +764,9 @@
       "Show details": [
         "Zobrazit detaily"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         ""
       ],
@@ -772,9 +778,6 @@
       ],
       "Show less": [
         ""
-      ],
-      "Show less search options": [
-        "Skrýt možnosti vyhledávání"
       ],
       "Show messages": [
         "Zobrazit zprávy"
@@ -811,6 +814,9 @@
       ],
       "Switch account": [
         "Přepnout účet"
+      ],
+      "Switch to rich text": [
+        ""
       ],
       "Theme": [
         "Motiv"
@@ -862,6 +868,15 @@
       ],
       "Untrust": [
         "Nedůvěřovat"
+      ],
+      "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Přejít na placený tarif"
@@ -2060,6 +2075,12 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této zprávy se nezdařilo."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         "",
@@ -2159,9 +2180,6 @@
       "Message needs to be sent first": [
         "Nejdříve je potřeba zaslat zprávu"
       ],
-      "Message passwords do not match": [
-        ""
-      ],
       "Message processing error.": [
         "Chyba při zpracování zprávy."
       ],
@@ -2175,6 +2193,9 @@
         "Chyba sítě, zkontrolujte přípojení a zkuste to znovu."
       ],
       "No address with keys available to compose a message": [
+        ""
+      ],
+      "No data to import": [
         ""
       ],
       "No key retrieved for internal user is valid for sending": [
@@ -2236,6 +2257,12 @@
       ],
       "Please refresh the page.": [
         "Prosím obnovte stránku."
+      ],
+      "Please repeat the password": [
+        ""
+      ],
+      "Please set a password": [
+        ""
       ],
       "Preferences could not be saved": [
         "Preference se nepovedlo uložit"
@@ -2732,18 +2759,15 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         ""
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
-      ],
-      "You're a privacy champ!": [
+      "You're all set!": [
         ""
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         ""
       ],
       "Only ${ days } day left": [
@@ -3215,9 +3239,6 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Activation in progress": [
         "Aktivace probíhá"
       ],
@@ -3356,9 +3377,6 @@
       "Center": [
         "Zarovnat na střed"
       ],
-      "Change your default in settings": [
-        ""
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhledávání kontaktu ${ progress } o ${ max }..."
       ],
@@ -3382,9 +3400,6 @@
       ],
       "Close this screen to exit.": [
         ""
-      ],
-      "Confirm Password": [
-        "Potvrdit heslo"
       ],
       "Confirm phishing report": [
         "Potvrďte nahlášení phishingu"
@@ -3439,6 +3454,9 @@
         "dny",
         "dny",
         "dny"
+      ],
+      "Default email application": [
+        "Výchozí emailová aplikace"
       ],
       "Disable message content search": [
         ""
@@ -3536,6 +3554,9 @@
       "Estimating time remaining...": [
         "Odhadují zbývající čas..."
       ],
+      "Expiration time": [
+        ""
+      ],
       "Expiration Time": [
         "Čas expirace"
       ],
@@ -3586,9 +3607,6 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Plně vybavená VPN s rychlostí až 10 Gbps."
-      ],
-      "Generate recovery phrase": [
-        ""
       ],
       "Get more storage and premium features.": [
         "Získat větší úložiště a prémiové funkce."
@@ -3665,12 +3683,6 @@
       "Insert image": [
         "Vložit obrázek"
       ],
-      "Insert image as": [
-        "Vložte obrázek jako",
-        "Vložte obrázky jako",
-        "Vložte obrázky jako",
-        "Vložte obrázky jako"
-      ],
       "Insert link": [
         "Vložit odkaz"
       ],
@@ -3722,6 +3734,9 @@
       "Manage your labels": [
         "Spravovat štítky"
       ],
+      "members": [
+        ""
+      ],
       "Members": [
         "Členové"
       ],
@@ -3733,9 +3748,6 @@
       ],
       "Message headers": [
         "Hlavička zprávy"
-      ],
-      "Message Password": [
-        "Heslo zprávy"
       ],
       "Message sent": [
         "Zpráva odeslána"
@@ -3818,14 +3830,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
       ],
-      "or": [
-        "nebo"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Potvrďte prosím, že se jedná o legitimní zprávu."
-      ],
-      "Password Hint (Optional)": [
-        "Nápověda hesla (Dobrovolné)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Než bude platební transakce zcela ověřena, může to trvat i několik minut."
@@ -3845,8 +3851,8 @@
       "Plain text": [
         "Obyčejný text"
       ],
-      "Please add at least one recipient before sending.": [
-        "Zadejte alespoň jednoho příjemce, prosím."
+      "Please add at least one recipient.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -3968,7 +3974,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Sending": [
@@ -3986,8 +3992,11 @@
       "Session timed out.": [
         "Relace vypršela."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set a recovery phrase": [
         ""
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Nastavit ProtonMail jako výchozí emailovou aplikaci pro tento prohlížeč. ProtonMail bude automaticky spuštěn po kliknutí na emailový odkaz."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
@@ -4130,11 +4139,11 @@
       "This message will be sent shortly": [
         "Tato zpráva bude brzy odeslána"
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "This message will expire ${ formattedDate }": [
         "Tato zpráva vyprší ${ formattedDate }"
-      ],
-      "This message will expire in": [
-        "Zpráva vyprší za"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Tato zpráva vyprší za ${ formattedDelay }"
@@ -4289,6 +4298,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        ""
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4339,12 +4354,6 @@
         "",
         "",
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Zakázali jste Beta Přístup. Klikněte na ${ refreshButton } pro použití stabilní verze ${ appName }. Aplikace bude znovu načtena."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Povolili jste Beta Přístup. Klikněte na ${ refreshButton } pro použití nejnovější verze ${ appName }. Aplikace bude znovu načtena."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nedali jste e-mailu žádný předmět. Chcete ho i přesto odeslat?"
@@ -4397,8 +4406,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platební transakce budete přesměrováni na stránky PayPal."
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
-        "Napsali jste \"${ keyword }\", ale nebyla přidána příloha. Chcete přesto zprávu poslat?"
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        ""
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup byl omezen. ${ payInvoiceLink }"
@@ -4437,6 +4446,9 @@
     "info": {
       "(beta)": [
         "(beta)"
+      ],
+      "Optional": [
+        ""
       ]
     },
     "Info concerning plan features": {
@@ -4794,6 +4806,9 @@
       "Conditions": [
         "Podmínky"
       ],
+      "Confirm Password": [
+        ""
+      ],
       "Contacts": [
         ""
       ],
@@ -4926,8 +4941,14 @@
       "Manage labels": [
         ""
       ],
+      "Manage my addresses": [
+        ""
+      ],
       "Mark as": [
         "Označit jako"
+      ],
+      "Message Password": [
+        ""
       ],
       "Move to": [
         "Přesunout do"
@@ -4961,6 +4982,9 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Password Hint": [
+        ""
       ],
       "Payer": [
         "Plátce"
@@ -5694,6 +5718,9 @@
       ],
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
+      ],
+      "Password has been set successfully": [
+        ""
       ]
     },
     "Onboarding": {
@@ -6768,9 +6795,6 @@
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
       ],
-      "Add contacts": [
-        "Přidat kontakty"
-      ],
       "Add filter": [
         "Přidat filtr"
       ],
@@ -6999,9 +7023,6 @@
       "Expand content": [
         "Rozbalit obsah"
       ],
-      "Expiration time": [
-        "Platnost do"
-      ],
       "Exporting contacts": [
         "Exportování kontaktů"
       ],
@@ -7071,9 +7092,6 @@
       "Message list": [
         "Seznam zpráv"
       ],
-      "Message without subject?": [
-        "Zpráva bez předmětu?"
-      ],
       "More": [
         "Více"
       ],
@@ -7112,9 +7130,6 @@
       ],
       "No attachment found": [
         "Žádná příloha nenalezena"
-      ],
-      "No recipient": [
-        "Žádný příjemce"
       ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"
@@ -7169,6 +7184,9 @@
       ],
       "Re-signing contacts": [
         "Znovu podepsat kontakty"
+      ],
+      "Recipient missing": [
+        ""
       ],
       "Recover data": [
         "Obnovit data"
@@ -7232,6 +7250,9 @@
       ],
       "Storage capacity warning": [
         "Upozornění na kapacitu úložiště"
+      ],
+      "Subject missing": [
+        ""
       ],
       "Subtotal": [
         "Mezisoučet"
@@ -7374,6 +7395,17 @@
       ],
       "You do not have any contacts to export": [
         "Nemáte žádné kontakty k exportu"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
       ]
     },
     "Validation": {

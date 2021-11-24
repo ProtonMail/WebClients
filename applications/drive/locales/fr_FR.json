@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activer la récupération"
+      ],
       "Add": [
         "Ajouter"
       ],
@@ -146,8 +149,8 @@
       "Decrease": [
         "Diminuer"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Application de messagerie par défaut"
       ],
       "Delete": [
         "Supprimer"
@@ -200,7 +203,7 @@
         "Modifier le numéro de téléphone"
       ],
       "Email settings": [
-        "Paramètres de courriel"
+        "Paramètres d'e-mail"
       ],
       "Empty trash": [
         "Vider la corbeille"
@@ -234,9 +237,6 @@
       ],
       "Grid layout": [
         "Affichage en grille"
-      ],
-      "here": [
-        "ici"
       ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
@@ -314,13 +314,13 @@
         "Déplacer"
       ],
       "Move to folder": [
-        "Déplacer vers le dossier"
+        "Déplacer vers un dossier"
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
       ],
       "New upload": [
-        "Nouveau téléchargement"
+        "Nouvelle importation"
       ],
       "Next": [
         "Suivant"
@@ -360,9 +360,6 @@
       ],
       "Previous month": [
         "Mois précédent"
-      ],
-      "Prompt browser setting": [
-        ""
       ],
       "Quit": [
         "Quitter"
@@ -438,6 +435,12 @@
       ],
       "Select plan": [
         "Choisissez une offre"
+      ],
+      "Set as default": [
+        "Définir par défaut"
+      ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
       ],
       "Share": [
         "Partager"
@@ -520,6 +523,12 @@
       "Untrust": [
         "Ne plus faire confiance"
       ],
+      "Update recovery file": [
+        "Mettre à jour le fichier de récupération"
+      ],
+      "Update recovery phrase": [
+        "Mettre à jour la phrase de récupération"
+      ],
       "Upgrade": [
         "Changer d'offre"
       ],
@@ -527,7 +536,7 @@
         "Importer un fichier"
       ],
       "Upload folder": [
-        "Télécharger le dossier"
+        "Importer un dossier"
       ],
       "Upload picture": [
         "Télécharger une image"
@@ -1108,6 +1117,10 @@
       "Could not generate file keys": [
         "Impossible de générer les clés de fichier"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
+        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
@@ -1187,6 +1200,9 @@
       ],
       "Name on card required": [
         "Nom du titulaire de la carte requis"
+      ],
+      "No data to import": [
+        "Aucune donnée à importer"
       ],
       "No valid address found": [
         "Aucune adresse valide trouvée"
@@ -1330,7 +1346,7 @@
         "Statut du jeton de paiement inconnu"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "Vous ne pouvez pas envoyer de courriel à plus de 100 destinataires"
+        "Vous ne pouvez pas envoyer d'e-mail à plus de 100 destinataires"
       ],
       "You can't send vCards of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Compte correctement mis à jour"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Ajoutez des adresses supplémentaires à votre compte comme utilisateur2@protonmail.com"
       ],
@@ -1757,7 +1770,7 @@
         "Tous (${ totalFoldersCount } labels)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Vous permet d'héberger des courriels pour votre ou vos propres domaines dans ${ mailAppName }, par exemple jean.dupont@exemple.com"
+        "Vous permet d'héberger des e-mails pour votre ou vos propres domaines dans ${ mailAppName }, par exemple jean.dupont@exemple.com"
       ],
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum requis (${ amount })."
@@ -1869,6 +1882,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
       ],
+      "Default email application": [
+        "Application de messagerie par défaut"
+      ],
       "Delete drive": [
         "Supprimer le disque",
         "Supprimer les disques"
@@ -1931,7 +1947,7 @@
         "Pour les familles et les équipes réduites ; Mail et VPN inclus."
       ],
       "For getting started with private and secure emailing.": [
-        "Pour commencer avec des courriels privés et sécurisés."
+        "Pour commencer avec des e-mails privés et sécurisés."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
         "Pour les personnes qui ont besoin d'une messagerie complète avec une protection avancée."
@@ -2200,10 +2216,10 @@
         "Sélectionnez un fichier téléchargé et créez un lien vers celui-ci."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
+        "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un e-mails à cette adresse électronique."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
@@ -2211,11 +2227,11 @@
       "Session timed out.": [
         "Session expirée."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Définissez ProtonMail comme application de messagerie par défaut pour ce navigateur. ProtonMail s'ouvrira automatiquement lorsque vous cliquerez sur un lien de courrier électronique."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "La configuration de PGP vous permet d'envoyer des courriels chiffrés de bout en bout à un utilisateur qui n'utilise pas ProtonMail et qui utilise un service compatible PGP."
+        "La configuration de PGP vous permet d'envoyer des e-mails chiffrés de bout en bout à un utilisateur qui n'utilise pas ProtonMail et qui utilise un service compatible PGP."
       ],
       "Share files with links": [
         "Partager des fichiers avec des liens"
@@ -2257,7 +2273,7 @@
         "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Cette adresse est désactivée. Pour pouvoir envoyer des courriels à cette adresse, son propriétaire doit d’abord l'activer."
+        "Cette adresse est désactivée. Pour pouvoir envoyer des e-mails à cette adresse, son propriétaire doit d’abord l'activer."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
@@ -2380,6 +2396,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email }) et avez un accès restreint."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
@@ -2388,12 +2407,6 @@
       ],
       "You cannot undo this action.": [
         "Vous ne pouvez pas annuler cette action."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Vous avez désactivé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la version stable de ${ appName }. L'application sera rechargée."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Vous avez activé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la dernière version de ${ appName }. L'application sera rechargée."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Une carte de crédit ou un compte bancaire doit être lié à votre compte PayPal afin de l'ajouter comme mode de paiement."
@@ -2408,7 +2421,7 @@
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux courriels. ${ freeUpMessage } ${ upgradeLink }"
+        "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Vous serez bientôt redirigé vers votre banque pour vérifier votre paiement."
@@ -2664,10 +2677,10 @@
         "Sélectionner/désélectionner tout"
       ],
       "Send email": [
-        "Envoyer un courriel"
+        "Envoyer un e-mail"
       ],
       "Show all emails": [
-        "Afficher tous les courriels"
+        "Afficher tous les e-mails"
       ],
       "Show original message": [
         "Afficher le message d'origine"
@@ -2814,13 +2827,13 @@
         "Format du message"
       ],
       "Emails": [
-        "Courriels"
+        "E-mails"
       ],
       "Enable Beta Access": [
         "Activer l'accès à la version bêta"
       ],
       "Encrypt emails": [
-        "Chiffrer les courriels"
+        "Chiffrer les e-mails"
       ],
       "Enter organization name to confirm": [
         "Saisissez le nom de l'organisation pour confirmer"
@@ -2994,7 +3007,7 @@
         "Définir la date d'expiration"
       ],
       "Sign emails": [
-        "Signer les courriels"
+        "Signer les e-mails"
       ],
       "Size": [
         "Taille"
@@ -3146,10 +3159,10 @@
         "Ajouter un code cadeau"
       ],
       "All mail": [
-        ""
+        "Tous les messages"
       ],
       "Archive": [
-        ""
+        "Archives"
       ],
       "clearing your browser cache": [
         "vider le cache de votre navigateur"
@@ -3158,13 +3171,13 @@
         "cliquez ici"
       ],
       "Drafts": [
-        ""
+        "Brouillons"
       ],
       "Go to subscription plans": [
         "Aller aux abonnements"
       ],
       "Inbox": [
-        ""
+        "Boîte de réception"
       ],
       "Learn more": [
         "En savoir plus"
@@ -3173,7 +3186,7 @@
         "Mes fichiers"
       ],
       "Outbox": [
-        ""
+        "Boîte d'envoi"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -3182,19 +3195,19 @@
         "Demander une invitation"
       ],
       "Scheduled": [
-        ""
+        "Programmés"
       ],
       "Sent": [
-        ""
+        "Envoyés"
       ],
       "Shared": [
         "Partagé"
       ],
       "Spam": [
-        ""
+        "Indésirables"
       ],
       "Starred": [
-        ""
+        "Favoris"
       ],
       "Trash": [
         "Corbeille"
@@ -3244,7 +3257,7 @@
         "Réponses automatiques"
       ],
       "Catch-All email": [
-        "Collecteur de courriels (catch-all)"
+        "Collecteur d'e-mails (catch-all)"
       ],
       "Contact groups": [
         "Groupes de contact"
@@ -3529,7 +3542,7 @@
         "Configurez votre organisation"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "C'est ce que les gens verront quand vous leur enverrez un courriel, les inviterez à un événement ou partagerez un fichier avec eux."
+        "C'est ce que les gens verront quand vous leur enverrez un e-mail, les inviterez à un événement ou partagerez un fichier avec eux."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Utilisez le sélecteur d'application en haut à gauche pour accéder à d'autres services Proton, y compris VPN, Calendar et Drive."
@@ -3614,7 +3627,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresse électronique non trouvée parmi les identifiants utilisateurs définis dans la clé d'envoi (${ keyUserIds })"
+        "Adresse e-mail non trouvée parmi les identifiants utilisateurs définis dans la clé d'envoi (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -4110,7 +4123,7 @@
         "Confirmer la perte des bonus Proton"
       ],
       "Contact details": [
-        ""
+        "Détails du contact"
       ],
       "Contact Details": [
         "Détails du contact"
@@ -4223,7 +4236,7 @@
         "Adresses électroniques"
       ],
       "Email settings": [
-        "Paramètres de courriel"
+        "Paramètres d'e-mail"
       ],
       "Email settings (${ emailAddress })": [
         "Paramètres d'adresse électronique (${ emailAddress })"
@@ -4409,7 +4422,7 @@
         "Partager avec un lien"
       ],
       "Shared": [
-        "Partagés"
+        "Partagé"
       ],
       "Show actions": [
         "Afficher les actions"
@@ -4506,7 +4519,7 @@
         "Protège contre les menaces qui pèsent sur la confidentialité du VPN en transmettant votre trafic Internet à travers plusieurs serveurs."
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "La signature numérique des courriels aide à vous authentifier en tant qu’expéditeur des messages"
+        "La signature numérique des e-mails aide à vous authentifier en tant qu’expéditeur des messages"
       ],
       "Discount applied for annual billing cycle": [
         "Remise appliquée pour un cycle de facturation annuel"
@@ -4515,10 +4528,10 @@
         "Remise appliquée pour un cycle de facturation bisannuel"
       ],
       "Each imported email will have this label": [
-        "Chaque courriel importé aura ce label"
+        "Chaque e-mail importé aura ce label"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Le chiffrement de courriel force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
+        "Le chiffrement d'e-mail force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
       ],
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
@@ -4533,10 +4546,10 @@
         "Accédez à toutes les fonctionnalités payantes de ProtonVPN et ProtonMail (le service de messagerie chiffrée que des millions de personnes utilisent pour protéger leurs données) avec une seule offre."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Hébergez des courriels pour votre ou vos propres domaines sur ${ mailAppName }, par exemple jean.dupont@exemple.com"
+        "Hébergez des e-mails pour votre ou vos propres domaines sur ${ mailAppName }, par exemple jean.dupont@exemple.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hébergez des courriels pour votre ou vos propres domaines sur ProtonMail, par exemple jean.dupont@exemple.com"
+        "Hébergez des e-mails pour votre ou vos propres domaines sur ProtonMail, par exemple jean.dupont@exemple.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code cadeau ou reçu un code de notre équipe d'assistance, vous pouvez le saisir ici."
@@ -4572,7 +4585,7 @@
         "Utilisez plusieurs adresses/alias liés à votre compte, par exemple utilisateur2@protonmail.com"
       ],
       "Use the personal address username@pm.me to send emails": [
-        "Utilisez l'adresse personnelle nomdutilisateur@pm.me pour envoyer des courriels"
+        "Utilisez l'adresse personnelle nomdutilisateur@pm.me pour envoyer des e-mails"
       ],
       "You do not have any contacts to export": [
         "Vous n'avez aucun contact à exporter"

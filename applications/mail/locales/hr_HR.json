@@ -20,6 +20,9 @@
       "Activate": [
         "Aktiviraj"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "Poništi"
       ],
-      "Cancel action": [
-        "Otkaži radnju"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "Indigo kopija, slijepa indigo kopija"
       ],
-      "CC, BCC": [
-        "CC, BCC"
+      "CC BCC": [
+        ""
       ],
       "Change page": [
         "Promjeni stranicu"
@@ -218,7 +218,7 @@
       "Decrease": [
         "Smanji"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -312,14 +312,14 @@
       "Expand composer": [
         "Proširi prozor za novu poruku"
       ],
-      "Expiration time": [
-        "Vrijeme isteka"
-      ],
       "Export": [
         "Izvoz"
       ],
       "Export contacts": [
         "Uvezi kontakte"
+      ],
+      "Fewer search options": [
+        ""
       ],
       "Filter on...": [
         "Filtar za..."
@@ -362,9 +362,6 @@
       ],
       "Got it": [
         "Shvaćam"
-      ],
-      "here": [
-        "ovdje"
       ],
       "Hide": [
         "Sakrij"
@@ -422,6 +419,9 @@
       "Insert contact": [
         "Unesi kontakt"
       ],
+      "Insert contacts": [
+        ""
+      ],
       "Insert image": [
         "Umetni sliku"
       ],
@@ -448,9 +448,6 @@
       ],
       "Learn more": [
         "Saznajte više"
-      ],
-      "Less search options": [
-        "Manje opcija pretraživanja"
       ],
       "Load": [
         "Učitaj"
@@ -632,9 +629,6 @@
       "Print": [
         "Ispis"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -740,6 +734,15 @@
       "Set": [
         "Postavi"
       ],
+      "Set as default": [
+        ""
+      ],
+      "Set expiration time": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -758,6 +761,9 @@
       "Show details": [
         "Prikaži detalje"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         ""
       ],
@@ -769,9 +775,6 @@
       ],
       "Show less": [
         ""
-      ],
-      "Show less search options": [
-        "Prikaži manje opcija pretraživanja"
       ],
       "Show messages": [
         "Prikaži poruke"
@@ -808,6 +811,9 @@
       ],
       "Switch account": [
         "Promijeni račun"
+      ],
+      "Switch to rich text": [
+        ""
       ],
       "Theme": [
         "Tema"
@@ -858,6 +864,15 @@
       ],
       "Untrust": [
         "Označi kao nepouzdano"
+      ],
+      "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -2043,6 +2058,11 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Pogreška pri dešifriranju: dešifriranje sadržaja šifriranja ove poruke nije uspjelo."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         "",
@@ -2140,9 +2160,6 @@
       "Message needs to be sent first": [
         "Poruka mora biti prvo poslana"
       ],
-      "Message passwords do not match": [
-        ""
-      ],
       "Message processing error.": [
         "Pogreška pri obradi poruke."
       ],
@@ -2156,6 +2173,9 @@
         "Mrežna pogreška: Molimo provjerite vašu vezu i pokušajte ponovo."
       ],
       "No address with keys available to compose a message": [
+        ""
+      ],
+      "No data to import": [
         ""
       ],
       "No key retrieved for internal user is valid for sending": [
@@ -2214,6 +2234,12 @@
       ],
       "Please refresh the page.": [
         "Osvježite stranicu."
+      ],
+      "Please repeat the password": [
+        ""
+      ],
+      "Please set a password": [
+        ""
       ],
       "Preferences could not be saved": [
         "Postavke nije moguće spremiti"
@@ -2707,18 +2733,15 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         ""
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
-      ],
-      "You're a privacy champ!": [
+      "You're all set!": [
         ""
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         ""
       ],
       "Only ${ days } day left": [
@@ -3154,9 +3177,6 @@
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Activation in progress": [
         "Aktiviranje u tijeku"
       ],
@@ -3290,9 +3310,6 @@
       "Center": [
         "Sredina"
       ],
-      "Change your default in settings": [
-        ""
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Provjera kontakta ${ progress } od ${ max }..."
       ],
@@ -3316,9 +3333,6 @@
       ],
       "Close this screen to exit.": [
         ""
-      ],
-      "Confirm Password": [
-        "Potvrdi lozinku"
       ],
       "Confirm phishing report": [
         "Potvrdi izvještaj o krađi identiteta"
@@ -3371,6 +3385,9 @@
         "Dan",
         "Dani",
         "Dani"
+      ],
+      "Default email application": [
+        ""
       ],
       "Disable message content search": [
         ""
@@ -3464,6 +3481,9 @@
       "Estimating time remaining...": [
         "Procjena preostalog vremena..."
       ],
+      "Expiration time": [
+        ""
+      ],
       "Expiration Time": [
         "Vrijeme isteka"
       ],
@@ -3513,9 +3533,6 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN s puno značajki i brzinom do 10 Gbps."
-      ],
-      "Generate recovery phrase": [
-        ""
       ],
       "Get more storage and premium features.": [
         ""
@@ -3589,11 +3606,6 @@
       "Insert image": [
         "Umetni sliku"
       ],
-      "Insert image as": [
-        "Umetni sliku kao",
-        "Umetni slike kao",
-        "Umetni slike kao"
-      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -3645,6 +3657,9 @@
       "Manage your labels": [
         "Upravljanje oznakama"
       ],
+      "members": [
+        ""
+      ],
       "Members": [
         "Članovi"
       ],
@@ -3656,9 +3671,6 @@
       ],
       "Message headers": [
         "Zaglavlja poruke"
-      ],
-      "Message Password": [
-        "Lozinka poruke"
       ],
       "Message sent": [
         "Poruka je poslana"
@@ -3741,14 +3753,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
       ],
-      "or": [
-        "ili"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
-      ],
-      "Password Hint (Optional)": [
-        "Podsjetnik za lozinku (neobavezno)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Naplata može potrajati nekoliko minuta dok se potpuno potvrdi."
@@ -3768,8 +3774,8 @@
       "Plain text": [
         "Običan tekst"
       ],
-      "Please add at least one recipient before sending.": [
-        "Dodajte barem jednom primatelja prije slanja."
+      "Please add at least one recipient.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -3890,7 +3896,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Sending": [
@@ -3908,7 +3914,10 @@
       "Session timed out.": [
         "Sesija je istekla."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set a recovery phrase": [
+        ""
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -4051,11 +4060,11 @@
       "This message will be sent shortly": [
         "Poruka će uskoro biti poslana"
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "This message will expire ${ formattedDate }": [
         "Poruka istječe ${ formattedDate }"
-      ],
-      "This message will expire in": [
-        "Ova poruka istječe za"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Poruka istječe za ${ formattedDelay }"
@@ -4210,6 +4219,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Trenutno ste prijavljeni kao${ user.Name } (${ user.Email }) i imate ograničen pristup."
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        ""
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4256,12 +4271,6 @@
         "",
         "",
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Onemogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje stabilne verzije ${ appName }. Aplikacija će se ponovno učitati."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Omogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje najnovije verzije ${ appName }. Aplikacija će se ponovno učitati."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Vaša poruka nema predmet. Želite li svejedno poslati poruku?"
@@ -4310,7 +4319,7 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         ""
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
@@ -4350,6 +4359,9 @@
     "info": {
       "(beta)": [
         "(beta)"
+      ],
+      "Optional": [
+        ""
       ]
     },
     "Info concerning plan features": {
@@ -4705,6 +4717,9 @@
       "Conditions": [
         "Uvjeti"
       ],
+      "Confirm Password": [
+        ""
+      ],
       "Contacts": [
         ""
       ],
@@ -4837,8 +4852,14 @@
       "Manage labels": [
         ""
       ],
+      "Manage my addresses": [
+        ""
+      ],
       "Mark as": [
         "Označi kao"
+      ],
+      "Message Password": [
+        ""
       ],
       "Move to": [
         "Premjesti u"
@@ -4872,6 +4893,9 @@
       ],
       "Password": [
         "Lozinka"
+      ],
+      "Password Hint": [
+        ""
       ],
       "Payer": [
         "Platitelj"
@@ -5599,6 +5623,9 @@
       ],
       "Contact group updated": [
         "Kontaktna grupa je ažurirana"
+      ],
+      "Password has been set successfully": [
+        ""
       ]
     },
     "Onboarding": {
@@ -6635,9 +6662,6 @@
       "Add contact group name": [
         "Dodaj naziv grupi kontakata"
       ],
-      "Add contacts": [
-        "Dodaj kontakte"
-      ],
       "Add filter": [
         "Dodaj filtar"
       ],
@@ -6860,9 +6884,6 @@
       "Expand content": [
         "Proširi sadržaj"
       ],
-      "Expiration time": [
-        "Vrijeme isteka"
-      ],
       "Exporting contacts": [
         "Izvoz kontakata"
       ],
@@ -6932,9 +6953,6 @@
       "Message list": [
         "Popis poruka"
       ],
-      "Message without subject?": [
-        "Poruka bez predmeta?"
-      ],
       "More": [
         "Više"
       ],
@@ -6973,9 +6991,6 @@
       ],
       "No attachment found": [
         "Nije pronađen nijedan privitak"
-      ],
-      "No recipient": [
-        "Nema primatelja"
       ],
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
@@ -7030,6 +7045,9 @@
       ],
       "Re-signing contacts": [
         "Ponovno potpisivanje kontakata"
+      ],
+      "Recipient missing": [
+        ""
       ],
       "Recover data": [
         "Oporavi podatke"
@@ -7093,6 +7111,9 @@
       ],
       "Storage capacity warning": [
         "Upozorenje prostora za pohranu"
+      ],
+      "Subject missing": [
+        ""
       ],
       "Subtotal": [
         "Suma stavki"
@@ -7234,6 +7255,17 @@
       ],
       "You do not have any contacts to export": [
         "Nemate kontakata za izvoz"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
       ]
     },
     "Validation": {

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
+      "Activate recovery": [
+        "Wiederherstellung aktivieren"
+      ],
       "Add": [
         "Hinzufügen"
       ],
@@ -146,8 +149,8 @@
       "Decrease": [
         "Verkleinern"
       ],
-      "Default mail handler": [
-        "Standard-Mail-Anwendung"
+      "Default email application": [
+        "Standard E-Mail-Anwendung"
       ],
       "Delete": [
         "Löschen"
@@ -234,9 +237,6 @@
       ],
       "Grid layout": [
         "Rasteransicht"
-      ],
-      "here": [
-        "hier"
       ],
       "Hide advanced PGP settings": [
         "Erweiterte PNG-Einstellungen ausblenden"
@@ -361,9 +361,6 @@
       "Previous month": [
         "Vorheriger Monat"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Beenden"
       ],
@@ -438,6 +435,12 @@
       ],
       "Select plan": [
         "Abonnement auswählen"
+      ],
+      "Set as default": [
+        "Als Standard festlegen"
+      ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase einrichten"
       ],
       "Share": [
         "Teilen"
@@ -519,6 +522,12 @@
       ],
       "Untrust": [
         "Nicht vertrauen"
+      ],
+      "Update recovery file": [
+        "Wiederherstellungsdatei aktualisieren"
+      ],
+      "Update recovery phrase": [
+        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Aufrüsten"
@@ -1108,6 +1117,10 @@
       "Could not generate file keys": [
         "Dateischlüssel konnten nicht erstellt werden"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Mindestens ${ calendarToFixCount } Kalender abwählen",
+        "Mindestens ${ calendarToFixCount } Kalender abwählen"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Mindestens ${ calendarToFixCount } Kalender abwählen oder",
         "Mindestens ${ calendarToFixCount } Kalender abwählen oder"
@@ -1187,6 +1200,9 @@
       ],
       "Name on card required": [
         "Karteninhaber erforderlich"
+      ],
+      "No data to import": [
+        "Keine zu importierenden Daten"
       ],
       "No valid address found": [
         "Keine gültige Adresse gefunden"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Konto wurde erfolgreich aktualisiert"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        "Wenn Sie diese Option aktivieren, wird jedes Mal, wenn Sie auf einen mailto: Link klicken, ein neuer Verfassen-Fenster geöffnet."
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Fügen Sie zusätzliche E-Mail-Adressen wie nutzer2@protonmail.com zu Ihrem Konto hinzu"
       ],
@@ -1868,6 +1881,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
+      ],
+      "Default email application": [
+        "Standard E-Mail-Anwendung"
       ],
       "Delete drive": [
         "Laufwerk löschen",
@@ -2202,8 +2218,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wählen Sie das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn Sie eine E-Mail an diese E-Mail-Adresse senden."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist. Sie können importierte Kalender auch mit bestehenden Proton-Kalendern zusammenführen."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Bitte wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -2211,8 +2227,8 @@
       "Session timed out.": [
         "Zeitüberschreitung der Sitzung."
       ],
-      "Set ProtonMail as your default mail handler": [
-        "ProtonMail als Standard-Mail-Anwendung festlegen"
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Legen Sie ProtonMail als Ihre Standard-E-Mail-Anwendung für diesen Browser fest. ProtonMail wird automatisch geöffnet, wenn Sie auf einen E-Mail-Link klicken."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Das Einrichten von PGP ermöglicht es Ihnen, Ende-zu-Ende-verschlüsselte E-Mails mit einem Nicht-ProtonMail-Benutzer zu senden, der einen PGP-kompatiblen Dienst verwendet."
@@ -2380,6 +2396,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Sie sind derzeit als „${ user.Name }” (${ user.Email }) angemeldet und haben nur eingeschränkten Zugang."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Sie können zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Sie können den Fortschritt hier ${ importProgressLink } überprüfen."
       ],
@@ -2388,12 +2407,6 @@
       ],
       "You cannot undo this action.": [
         "Diese Aktion kann nicht widerrufen werden."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Sie haben den Beta-Zugang deaktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Sie haben den Beta-Zugang aktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."

@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "激活机构密钥"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "添加"
@@ -205,9 +208,6 @@
       "Copy link": [
         "复制链接"
       ],
-      "Create": [
-        "创建"
-      ],
       "Create a secure ProtonMail address instead": [
         "创建一个安全的ProtonMail 地址"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "导出密钥"
       ],
-      "Export private key": [
-        "导出私钥"
-      ],
       "Font": [
         "字体"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
-      ],
-      "here": [
-        "此处"
       ],
       "Hide": [
         "隱藏"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "设置替补邮箱"
       ],
+      "Set recovery phrase": [
+        "设置恢复密语"
+      ],
       "Share via link": [
         "通过链接分享"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "切换账户"
       ],
+      "Switch to rich text": [
+        "切换为富文本"
+      ],
       "Top up": [
         "充值"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "解锁"
       ],
+      "Unlock data": [
+        "解锁数据"
+      ],
       "Unordered list": [
         "无序列表"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "更新"
+      ],
+      "Update recovery file": [
+        "更新恢复文件"
+      ],
+      "Update recovery phrase": [
+        "更新恢复密语"
       ],
       "Upgrade": [
         "升级"
@@ -752,7 +761,7 @@
         "上传图片"
       ],
       "Use ${ label } theme": [
-        "使用 ${ label } 主题"
+        "使用 ${ label } 配色"
       ],
       "Use a different card": [
         "使用其他银行卡"
@@ -785,13 +794,13 @@
         "查看账单"
       ],
       "Void all recovery files": [
-        ""
+        "作废所有恢复文件"
       ],
       "Void all recovery files?": [
-        ""
+        "作废所有恢复文件？"
       ],
       "Void anyway": [
-        ""
+        "仍然作废"
       ],
       "Warning": [
         "警告"
@@ -905,9 +914,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "正在生成密钥，可能需要几分钟，并且您的浏览器可能会出现卡顿。"
-      ],
       "The key for your address is now being deleted.": [
         "正在删除该地址的密钥。"
       ]
@@ -1290,7 +1296,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
         ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
@@ -1816,6 +1822,9 @@
       "Could not find address ${ email }.": [
         "找不到邮箱 ${ email }。"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
@@ -1923,6 +1932,9 @@
       ],
       "No active sessions": [
         "没有活跃的会话"
+      ],
+      "No data to import": [
+        ""
       ],
       "No valid address found": [
         "未找到有效地址"
@@ -2044,6 +2056,12 @@
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请更改。"
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        ""
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        ""
+      ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请选择一个不同的名字"
       ],
@@ -2091,9 +2109,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "上传的文件不是有效的私钥。请验证并重试。"
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上传的文件不是有效的私钥。请验证并重试。"
@@ -2145,9 +2160,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } 仅支持导入 iCal 2.0 格式的日历。"
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
       ],
@@ -3038,6 +3050,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的权限来${ enableDesktopNotifications }."
       ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        "${ boldWarning }如果继续，您将无法访问您账户中的所有当前加密数据。"
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } 将成为默认分类。"
       ],
@@ -3139,9 +3154,6 @@
       ],
       "A free and uncensored Internet should be available to all.": [
         "每个人都应当享有自由的互联网，免受网络审查。"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "此地址已有采用此算法的密钥，再创建会减慢账户加载速度，以后删除此密钥也可能出现问题。如果您的旧密钥不慎泄露，请将其标记为“已泄露”。确定要继续创建密钥吗？"
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         ""
@@ -3245,9 +3257,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL 读取您的个人数据，以便为广告商和其他第三方提供访问。为了更好地保护您的隐私，请创建一个安全的电子邮件地址。"
       ],
-      "Are you sure you want to continue?": [
-        "确定要继续吗？"
-      ],
       "Are you sure you want to delete this address?": [
         "确定要删除此地址吗？"
       ],
@@ -3349,9 +3358,6 @@
       ],
       "Center": [
         "中央"
-      ],
-      "Change your default in settings": [
-        "在设置中更改默认值"
       ],
       "Check the status of current and previous imports.": [
         "查看当前和先前导入的状态。"
@@ -3497,6 +3503,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "带有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        ""
+      ],
       "Encryption setting updated": [
         "加密设置已更改"
       ],
@@ -3514,12 +3523,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "输入机构密码方可恢复管理员权限。${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "请输入与您 ${ BRAND_NAME } 账户相关联的恢复${ recoveryMethodText }。我们将向您发送验证码以确认此密码重置操作。"
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "请输入与 ${ BRAND_NAME } 账户关联的恢复密语。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -3647,12 +3650,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "降级后您将不能使用 ProtonVPN 的收费功能。"
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "如果继续操作，您就必须重置密码，并且其他已登录的设备将全部下线。"
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "如果继续操作，您就必须重置密码，并且其他已登录的设备将全部下线。"
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "若您需要保留现有的 SPF 记录，可在 ${ spfValue } 之后插入 ${ spf }，但不要创建多个 SPF 记录。"
       ],
@@ -3746,9 +3743,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "密钥 ${ fp } 已删除。"
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "密钥 ${ fp } 已创建。"
-      ],
       "Label all imported messages as": [
         "给导入的所有邮件加标签"
       ],
@@ -3836,8 +3830,8 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "接下来您需要登录 Google 账户并允许我们获取您的数据。"
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
-        "未设置账户恢复方法，您存在失去账户访问权限的风险"
+      "No account recovery method set; you are at risk of losing access to your account": [
+        ""
       ],
       "No action selected": [
         "未选择操作"
@@ -3848,8 +3842,8 @@
       "No contact encryption keys exist": [
         "没有联系人加密密钥"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
-        "未设置数据恢复方法，您存在失去数据访问权限的风险"
+      "No data recovery method set; you are at risk of losing access to your data": [
+        ""
       ],
       "No folder selected": [
         "未选择文件夹"
@@ -3940,6 +3934,9 @@
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
         "导出私钥前请先设置一个密码将其加密。"
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -4043,6 +4040,9 @@
       "Recovery phrase has been disabled": [
         "恢复密语已被禁用"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        "恢复密语与任何密钥不相关。"
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         "恢复密语与任何过时的密钥不相关。"
       ],
@@ -4076,8 +4076,8 @@
       "Select a service provider to get started": [
         "请选择一个服务提供商以开始导入"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "请选择要导入的日历。将会为每个导入的日历创建一个新日历，最多可包含 20 个日历。您也可以将导入的日历与现有的 Proton 日历合并。"
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        ""
       ],
       "Server is currently down": [
         "服务器目前不可用"
@@ -4163,6 +4163,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "此功能只适合专业用户使用。删除此密钥后，您将无法解密由其加密的所有邮件，可能导致数据丢失。"
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        ""
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "这是您之前可能已保存的恢复文件或加密密钥。"
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "这是您之前可能已保存的加密密钥。"
+      ],
+      "This is the password you used before the password reset.": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此链接可能使用了欺骗性域名，IE 和 Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开。"
       ],
@@ -4178,14 +4190,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "这还将禁用所有与此账户关联的两步验证。"
       ],
-      "This will also disable two-factor authentication.": [
-        "这也将禁用双重身份认证。"
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "这将取消您当前的付费订阅，您将失去您累积的任何忠诚福利。 您订阅的剩余部分将作为账户积分退回。"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "该操作将为您的机构创建密钥。4096 位密钥只适用于性能较高的计算机，我们建议大多数用户使用 2048 位密钥。"
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "完成此操作后您就可以使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
@@ -4199,20 +4211,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "这将替换您的临时密码。您今后将使用此密码来访问您的 ${ BRAND_NAME } 账户。"
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        ""
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "接下来您将为 Proton 账户开启双重验证（2FA），这将提高账户安全性，我们建议您立即开启。"
       ],
       "to": [
         "导入至"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "要访问旧邮件，您需要使用以下恢复方式之一重新激活您的旧加密密钥。"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要确认，请输入您想要删除的用户之名称。"
       ],
       "to continue to ${ toAppName }": [
         "即可使用 ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "要在密码重置之后解密并查看锁定的数据，请选择一种恢复方法。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用，请验证您是人类。"
@@ -4222,6 +4237,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "请按下列步骤准备导入您的其他邮箱："
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        ""
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "若想提高上网安全性，请为您的设备安装 ProtonVPN 应用程序并连接到 ProtonVPN 服务器。"
@@ -4249,9 +4267,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "双密码模式下登录和解密邮箱需要两套密码，某些情况下这样能略微提高安全性，但我们建议大部分用户使用单密码。若要开启双密码模式，请先设置一个登录密码，再设置一个邮箱密码。"
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "无法解密，恢复密语与任何密钥不相关。"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         ""
@@ -4313,11 +4328,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } 套装，适合家庭和小企业。"
       ],
+      "Warning:": [
+        "警告："
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "警告：这是永久性删除，同时也会移除所有已连接服务的访问权限并删除您的所有联系人。"
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "我们建议您尽可能使用官方 ProtonVPN 客户端。"
+      ],
+      "We recommend using your recovery phrase instead.": [
+        "我们建议您改为使用恢复密语。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我们使用 3-D Secure 保护您的支付安全。"
@@ -4345,6 +4366,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "只有桌面版能查看周视图和月视图。"
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        ""
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        ""
       ],
       "What do you want to import from your Google account?": [
         "您想从您的 Google 账户中导入哪些内容？"
@@ -4382,6 +4409,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在 ${ importProgressLink } 查看导入进度。"
       ],
@@ -4396,9 +4426,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "如果您认定旧密钥已泄露，可以创建一个新密钥。"
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
@@ -4417,12 +4444,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "你已选择停止使用测试版。请点击 ${ refreshButton } 请点击以使用 ${ appName } 的稳定版本，网页/应用程序将被重新载入。"
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "你可以使用测试版了。请点击 ${ refreshButton } 请点击以使用 ${ appName } 的最新版本，网页/应用程序将被重新载入。"
       ],
       "You have no saved payment methods.": [
         "您尚未添加支付方式。"
@@ -4493,8 +4514,8 @@
       "Your Block List is empty.": [
         "您的黑名单列表为空。"
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
-        "您的数据已加密，您可以通过重新激活密钥来恢复数据。"
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
@@ -4679,6 +4700,29 @@
       ],
       "Subscription": [
         "订阅"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        ""
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        ""
+      ],
+      "Generate key": [
+        ""
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        ""
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        ""
       ]
     },
     "Key state badge": {
@@ -4964,6 +5008,9 @@
       "ALL": [
         "且"
       ],
+      "All-day event notifications": [
+        "全天事件通知"
+      ],
       "Allow recovery by email": [
         "允许通过电子邮件恢复"
       ],
@@ -5012,12 +5059,6 @@
       "Automatically save contacts": [
         "自动保存联系人"
       ],
-      "Backup key": [
-        "备份密钥"
-      ],
-      "Backup keys": [
-        "备份密钥"
-      ],
       "Block email tracking": [
         "阻止电子邮件追踪"
       ],
@@ -5054,11 +5095,11 @@
       "Category": [
         "类别"
       ],
-      "Choose a color": [
-        "选择一个颜色"
-      ],
       "Code": [
         "验证码"
+      ],
+      "Color": [
+        "颜色"
       ],
       "Composer": [
         "编辑窗"
@@ -5129,20 +5170,8 @@
       "Days of the week": [
         "星期"
       ],
-      "Default email": [
-        "首选邮箱"
-      ],
-      "Default event duration": [
-        "默认日程时长"
-      ],
-      "Default full day notifications": [
-        "预设按天提醒时间"
-      ],
       "Default language": [
         "默认语言"
-      ],
-      "Default notifications": [
-        "预设提醒时间"
       ],
       "Default PGP scheme": [
         "默认 PGP 加密方案"
@@ -5222,6 +5251,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "输入以下密钥的密码：${ fingerprintCode }"
       ],
+      "Event duration": [
+        "事件持续时间"
+      ],
+      "Event notifications": [
+        "事件通知"
+      ],
       "Expires": [
         "到期"
       ],
@@ -5239,6 +5274,9 @@
       ],
       "Folder location": [
         "文件夹位置"
+      ],
+      "From: ${ emailFrom }": [
+        ""
       ],
       "From: ${ fromEmailAddress }": [
         "来自: ${ fromEmailAddress }"
@@ -5420,6 +5458,9 @@
       "Phrase": [
         "短语"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        ""
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "请添加下列三条 CNAME 记录。注意：DNS 记录更新可能需要若干小时。"
       ],
@@ -5437,6 +5478,9 @@
       ],
       "Postal code": [
         "邮编"
+      ],
+      "Previous password": [
+        ""
       ],
       "Private User": [
         "私密账户"
@@ -5473,9 +5517,6 @@
       ],
       "Recovery phrase": [
         "恢复密语"
-      ],
-      "Recovery phrase contains 12 words": [
-        "恢复密语包含 12 个字"
       ],
       "Repeat password": [
         "重复密码"
@@ -5555,6 +5596,9 @@
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        ""
+      ],
       "To: ${ PMEmailAddress }": [
         "导入到：${ PMEmailAddress }"
       ],
@@ -5579,16 +5623,10 @@
       "Undo send": [
         "撤消发送时限"
       ],
-      "Upload your backup key": [
-        "上传您的备份密钥"
-      ],
-      "Upload your recovery file": [
+      "Upload 1 or more encryption keys": [
         ""
       ],
-      "Uploaded private keys": [
-        "已上传的私钥"
-      ],
-      "Uploaded recovery file": [
+      "Upload 1 or more recovery files or encryption keys": [
         ""
       ],
       "URL": [
@@ -5666,9 +5704,6 @@
       "Your password (admin)": [
         "您的密码(管理员)"
       ],
-      "Your recovery phrase": [
-        "您的恢复密语"
-      ],
       "ZIP": [
         "邮编"
       ]
@@ -5723,6 +5758,9 @@
       ],
       "Proton newsletter": [
         "Proton 新闻"
+      ],
+      "Proton offers and promotions": [
+        ""
       ],
       "Proton product announcements": [
         "Proton 产品公告"
@@ -6290,7 +6328,7 @@
         "我们的宗旨是建立一个由您来管控您自己的数据和隐私的网络。我们最近更新了 Proton ―― 畅享安全的互联网吧！"
       ],
       "Select a theme": [
-        "选择主题"
+        "选择配色"
       ],
       "Set up your organization": [
         "填写机构信息"
@@ -6878,17 +6916,11 @@
       "Email": [
         "邮件"
       ],
-      "email address": [
-        "电子邮箱地址"
-      ],
-      "phone number": [
-        "电话号码"
-      ],
       "Phone number": [
         "电话号码"
       ],
-      "Recovery phrase": [
-        "恢复密语"
+      "Phrase": [
+        ""
       ]
     },
     "Remark about a key type option": {
@@ -6928,10 +6960,7 @@
       "Upload": [
         "上传"
       ],
-      "Upload additional private keys": [
-        "上传其他私钥"
-      ],
-      "Upload additional recovery files": [
+      "Upload additional files": [
         ""
       ]
     },
@@ -7661,6 +7690,9 @@
       "Dashboard": [
         "总览"
       ],
+      "Data locked": [
+        "数据已锁定"
+      ],
       "Data recovery": [
         "数据恢复"
       ],
@@ -7721,6 +7753,9 @@
       "Edit Block List": [
         "更改黑名单"
       ],
+      "Edit calendar": [
+        "编辑日历"
+      ],
       "Edit credit/debit card": [
         "编辑信用卡/借记卡"
       ],
@@ -7750,9 +7785,6 @@
       ],
       "Enable keyboard shortcuts": [
         "启用快捷键"
-      ],
-      "Encrypted data": [
-        ""
       ],
       "Encryption & keys": [
         "加密与密钥"
@@ -7795,9 +7827,6 @@
       ],
       "General": [
         "常规"
-      ],
-      "Generate key": [
-        "生成密钥"
       ],
       "Generate missing keys": [
         "生成缺失的密钥"
@@ -7991,11 +8020,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "重新激活密钥"
-      ],
       "Reconnect your account": [
         "重新连接账户"
+      ],
+      "Recover data": [
+        "恢复数据"
       ],
       "Recovery": [
         "恢复"
@@ -8127,10 +8156,10 @@
         "切换到双密码模式"
       ],
       "Take precautions to avoid data loss!": [
-        ""
+        "采取预防措施以避免数据丢失！"
       ],
       "Theme": [
-        "主題"
+        "配色"
       ],
       "This address might compromise your privacy.": [
         "此地址可能会损害您的隐私。"
@@ -8152,9 +8181,6 @@
       ],
       "Unsupported browser": [
         "不支持此浏览器"
-      ],
-      "Update calendar": [
-        "更新日历"
       ],
       "Upgrade": [
         "升级"
@@ -8184,7 +8210,7 @@
         "您的套餐"
       ],
       "Your recovery status": [
-        ""
+        "您的恢复状态"
       ],
       "ZIP / postal code": [
         "邮编"
@@ -8427,12 +8453,23 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "当收到不含受信密钥 ProtonMail 联系人的电子邮件时，将会有一个是否要启用受信密钥的横幅请求。"
+        "收到其他 ProtonMail 用户发来的邮件时，若尚未信任其密钥，则询问是否予以信任。"
       ]
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "使用可在下方配置的首选 PGP 格式，自动对所有发往非 ProtonMail 邮箱的邮件予以数字签名，以便他人验证您的邮件真实性。"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
       ]
     },
     "Upgrade": {
@@ -8692,6 +8729,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "此处将不会再出现这条导入记录。"
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        ""
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        ""
       ]
     },
     "Warning for domain modal": {
