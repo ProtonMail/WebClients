@@ -21,7 +21,7 @@ describe('Message banners', () => {
     it('should show the decrypted subject banner', async () => {
         const decryptedSubject = 'decrypted-subject';
 
-        initMessage({ data: { Subject: '...' }, decryptedSubject });
+        initMessage({ data: { Subject: '...' }, decryption: { decryptedSubject } });
 
         const { getByTestId } = await setup();
 

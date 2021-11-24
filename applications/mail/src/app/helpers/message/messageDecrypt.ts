@@ -17,9 +17,9 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { KeyId } from '@proton/shared/lib/contacts/keyVerifications';
 import { Address, AddressKey } from '@proton/shared/lib/interfaces';
 import { utf8ArrayToString } from 'pmcrypto/lib/utils';
-import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { AttachmentMime } from '../../models/attachment';
 import { convert } from '../attachment/attachmentConverter';
+import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
 
@@ -218,7 +218,7 @@ export const verifyMessage = async (
  * keyFound contains the address, the key and keyIds of the key in case we need to display which key is needed to the user
  * matchingKey is the keyID of the key that we need to store in localStorage
  */
-export const getMessageDecryptionKeyFromAddress = async (address: Address, message: MessageExtendedWithData) => {
+export const getMessageDecryptionKeyFromAddress = async (address: Address, message: MessageStateWithData) => {
     const cryptoMessage = await getMessage(message.data.Body);
     const encryptionKeyIDs = cryptoMessage.getEncryptionKeyIds() as KeyId[];
 

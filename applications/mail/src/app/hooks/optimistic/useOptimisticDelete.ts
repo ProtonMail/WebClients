@@ -4,14 +4,12 @@ import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { useDispatch } from 'react-redux';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Element } from '../../models/element';
-import { useMessageCache } from '../../containers/MessageProvider';
-import { MessageExtended } from '../../models/message';
 import { replaceCounter } from '../../helpers/counter';
 import { isConversation, isUnread } from '../../helpers/elements';
 import { CacheEntry } from '../../models/tools';
 import {
     optimisticDelete as optimisticDeleteElementAction,
-    optimisticRestoreDelete,
+    optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
 } from '../../logic/elements/elementsActions';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
@@ -21,32 +19,37 @@ import {
 import { useGetElementByID } from '../mailbox/useElements';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
 import { useGetAllConversations } from '../conversation/useConversation';
+import { MessageState } from '../../logic/messages/messagesTypes';
+import { useGetMessage } from '../message/useMessage';
+import {
+    optimisticDelete as optimisticDeleteMessageAction,
+    optimisticRestore as optimisticRestoreMessageAction,
+} from '../../logic/messages/optimistic/messagesOptimisticActions';
 
 const useOptimisticDelete = () => {
     const dispatch = useDispatch();
     const getElementByID = useGetElementByID();
     const globalCache = useCache();
-    const messageCache = useMessageCache();
     const getAllConversations = useGetAllConversations();
+    const getMessage = useGetMessage();
 
     return useHandler((elements: Element[], labelID: string) => {
         const elementIDs = elements.map(({ ID }) => ID || '');
         const conversationMode = isConversation(elements[0]);
         const total = elementIDs.length;
         const totalUnread = elements.filter((element) => isUnread(element, labelID)).length;
-        const rollbackMessages = [] as MessageExtended[];
+        const rollbackMessages = [] as MessageState[];
         const rollbackConversations = [] as ConversationState[];
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
-        const messageIDs = [...messageCache.keys()];
-        messageIDs.forEach((messageID) => {
-            const message = messageCache.get(messageID) as MessageExtended;
-            if (elementIDs.includes(messageID)) {
-                messageCache.delete(messageID);
+        elementIDs.forEach((elementID) => {
+            const message = getMessage(elementID);
+            if (message) {
                 rollbackMessages.push(message);
             }
         });
+        dispatch(optimisticDeleteMessageAction(elementIDs));
 
         // Conversation cache
         const allConversations = getAllConversations();
@@ -100,13 +103,9 @@ const useOptimisticDelete = () => {
         }
 
         return () => {
-            rollbackMessages.forEach((message) => {
-                messageCache.set(message.localID, message);
-            });
-
+            dispatch(optimisticRestoreMessageAction(rollbackMessages));
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
-
-            dispatch(optimisticRestoreDelete({ elements: rollbackElements }));
+            dispatch(optimisticRestoreDeleteElementAction({ elements: rollbackElements }));
             Object.entries(rollbackCounters).forEach(([key, value]) => {
                 const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
                 globalCache.set(key, {

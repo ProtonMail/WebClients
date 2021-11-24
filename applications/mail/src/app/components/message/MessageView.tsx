@@ -107,7 +107,7 @@ const MessageView = (
     const onCompose = useOnCompose();
 
     const draft = !loading && isDraft(message.data);
-    const outbox = !loading && (isOutbox(message.data) || message.sending);
+    const outbox = !loading && (isOutbox(message.data) || message.draftFlags?.sending);
     const sent = isSent(message.data);
     const unread = isUnread(message.data, labelID);
     // It can be attachments but not yet loaded
@@ -227,7 +227,7 @@ const MessageView = (
 
     // Manage preparing the content of the message
     useEffect(() => {
-        if (!loading && expanded && message.initialized === undefined) {
+        if (!loading && expanded && message.messageDocument?.initialized === undefined) {
             if ((message.loadRetry || 0) > LOAD_RETRY_COUNT) {
                 // Max retries reach, aborting
                 return;
@@ -235,14 +235,20 @@ const MessageView = (
 
             void initialize();
         }
-    }, [loading, expanded, message.initialized]);
+    }, [loading, expanded, message.messageDocument?.initialized]);
 
     // Manage recomputing signature verification (happens when invalidated after initial load)
     useEffect(() => {
-        if (!loading && expanded && message.initialized && message.data && message.verification === undefined) {
-            void verify(message.decryptedRawContent, message.signature);
+        if (
+            !loading &&
+            expanded &&
+            message.messageDocument?.initialized &&
+            message.data &&
+            message.verification === undefined
+        ) {
+            void verify(message.decryption?.decryptedRawContent, message.decryption?.signature);
         }
-    }, [loading, expanded, message.initialized, message.verification]);
+    }, [loading, expanded, message.messageDocument?.initialized, message.verification]);
 
     useEffect(() => {
         if (expanded) {

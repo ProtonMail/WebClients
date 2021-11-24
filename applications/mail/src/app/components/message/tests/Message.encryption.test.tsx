@@ -96,7 +96,7 @@ describe('MessageView encryption', () => {
             addKeysToAddressKeysCache(addressID, toKeys);
 
             const mimeBody = await constructMime(
-                { localID, data: message, document: parseInDiv(body) },
+                { localID, data: message, messageDocument: { document: parseInDiv(body) } },
                 toKeys,
                 jest.fn(),
                 jest.fn(),
@@ -129,7 +129,7 @@ describe('MessageView encryption', () => {
             addKeysToAddressKeysCache(addressID, toKeys);
 
             const mimeBody = await constructMime(
-                { localID, data: { ...message, MIMEType: MIME_TYPES.PLAINTEXT }, plainText: body },
+                { localID, data: { ...message, MIMEType: MIME_TYPES.PLAINTEXT }, messageDocument: { plainText: body } },
                 toKeys,
                 jest.fn(),
                 jest.fn(),
@@ -211,7 +211,7 @@ describe('MessageView encryption', () => {
             } as Message;
 
             const mimeBody = await constructMime(
-                { localID, data: message, document: parseInDiv(body) },
+                { localID, data: message, messageDocument: { document: parseInDiv(body) } },
                 toKeys,
                 jest.fn(),
                 jest.fn(),

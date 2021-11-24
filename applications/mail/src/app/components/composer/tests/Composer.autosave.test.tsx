@@ -60,7 +60,7 @@ describe('Composer autosave', () => {
     const setup = async (resolved = true) => {
         const message = prepareMessage({
             data: { ID: undefined, MIMEType: MIME_TYPES.DEFAULT },
-            document: createDocument('test'),
+            messageDocument: { document: createDocument('test') },
         });
         const renderResult = await renderComposer(message.localID);
         triggerSquireInput(); // Initial dummy Squire input

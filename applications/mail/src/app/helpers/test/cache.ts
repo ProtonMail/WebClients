@@ -2,7 +2,6 @@ import createCache from '@proton/shared/lib/helpers/cache';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { Address, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { MessageExtended } from '../../models/message';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { addKeysToAddressKeysCache } from './crypto';
 
@@ -22,7 +21,6 @@ export const getInstance = () => {
 };
 
 export const cache = createCache();
-export const messageCache = createCache<string, MessageExtended>();
 export const addressKeysCache = createCache<string, { status: number; value: Partial<DecryptedKey>[] }>();
 export const base64Cache = createCache<string, string>() as Base64Cache;
 

@@ -20,16 +20,16 @@ import {
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { formatSimpleDate } from '../../helpers/date';
-import { MessageExtended } from '../../models/message';
 import AttachmentsButton from '../attachment/AttachmentsButton';
 import SendActions from './SendActions';
 import EditorToolbarExtension from './editor/EditorToolbarExtension';
 import { MessageChangeFlag } from './Composer';
 import ComposerMoreOptionsDropdown from './editor/ComposerMoreOptionsDropdown';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 interface Props {
     className?: string;
-    message: MessageExtended;
+    message: MessageState;
     date: Date;
     lock: boolean;
     opening: boolean;
@@ -66,7 +66,7 @@ const ComposerActions = ({
 }: Props) => {
     const isAttachments = getAttachments(message.data).length > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && !!message.data?.Password;
-    const isExpiration = !!message.expiresIn;
+    const isExpiration = !!message.draftFlags?.expiresIn;
     const sendDisabled = lock;
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const [{ hasPaidMail }] = useUser();

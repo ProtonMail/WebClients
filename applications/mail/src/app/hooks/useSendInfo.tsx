@@ -18,18 +18,18 @@ import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPin
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
-import { MessageExtended } from '../models/message';
 import { ContactsMap, useContactCache } from '../containers/ContactProvider';
+import { MessageState } from '../logic/messages/messagesTypes';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;
 
 export interface MessageSendInfo {
-    message: MessageExtended;
+    message: MessageState;
     mapSendInfo: MapSendInfo;
     setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>;
 }
 
-export const useMessageSendInfo = (message: MessageExtended) => {
+export const useMessageSendInfo = (message: MessageState) => {
     const isMounted = useIsMounted();
     // Map of send preferences and send icons for each recipient
     const [mapSendInfo, setMapSendInfo] = useState<MapSendInfo>({});
@@ -362,7 +362,7 @@ export const useUpdateGroupSendInfo = (
 
 const getUpdatedSendInfo = async (
     emailAddress: string,
-    message: MessageExtended,
+    message: MessageState,
     setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>,
     getEncryptionPreferences: GetEncryptionPreferences,
     contactsMap: ContactsMap
@@ -398,7 +398,7 @@ export const useReloadSendInfo = () => {
     const { contactsMap } = useContactCache();
 
     return useCallback(
-        async (messageSendInfo: MessageSendInfo | undefined, message: MessageExtended) => {
+        async (messageSendInfo: MessageSendInfo | undefined, message: MessageState) => {
             const { mapSendInfo, setMapSendInfo } = messageSendInfo || {};
 
             if (mapSendInfo === undefined || !setMapSendInfo || !message.data) {

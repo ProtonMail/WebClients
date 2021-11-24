@@ -1,46 +1,71 @@
 import { useCallback } from 'react';
-import { useApi, useMailSettings } from '@proton/components';
 import { useDispatch } from 'react-redux';
+import { useApi, useMailSettings } from '@proton/components';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
-import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { updateImages } from '../../helpers/message/messageImages';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
+import {
+    loadRemoteProxy,
+    loadRemoteDirect,
+    loadEmbedded,
+    loadFakeProxy,
+} from '../../logic/messages/images/messagesImagesActions';
+import {
+    MessageState,
+    MessageRemoteImage,
+    LoadRemoteResults,
+    LoadEmbeddedResults,
+    MessageStateWithData,
+} from '../../logic/messages/messagesTypes';
+import { useGetMessage } from './useMessage';
 
 export const useLoadRemoteImages = (localID: string) => {
+    const dispatch = useDispatch();
     const api = useApi();
-    const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
     const [mailSettings] = useMailSettings();
 
     return useCallback(async () => {
-        const message = messageCache.get(localID) as MessageExtended;
+        const message = getMessage(localID) as MessageState;
 
-        const { remoteImages } = transformRemote(
+        const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
+            const dispatchResult = dispatch(loadRemoteProxy({ ID: localID, imagesToLoad, api }));
+            return dispatchResult as any as Promise<LoadRemoteResults[]>;
+        };
+
+        const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
+            const dispatchResult = dispatch(loadFakeProxy({ ID: localID, imagesToLoad, api }));
+            return dispatchResult as any as Promise<LoadRemoteResults[]>;
+        };
+
+        const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
+            const dispatchResult = dispatch(loadRemoteDirect({ ID: localID, imagesToLoad, api }));
+            return dispatchResult as any as Promise<LoadRemoteResults[]>;
+        };
+
+        transformRemote(
             {
                 ...message,
                 messageImages: updateImages(message.messageImages, { showRemoteImages: true }, undefined, undefined),
             },
             mailSettings,
-            api,
-            messageCache
+            handleLoadRemoteImagesProxy,
+            handleLoadFakeImagesProxy,
+            handleLoadRemoteImagesDirect
         );
-
-        updateMessageCache(messageCache, localID, {
-            document: message.document,
-            messageImages: updateImages(message.messageImages, { showRemoteImages: true }, remoteImages, undefined),
-        });
     }, [localID]);
 };
 
 export const useLoadEmbeddedImages = (localID: string) => {
-    const api = useApi();
-    const messageCache = useMessageCache();
-    const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
+    const api = useApi();
+    const getAttachment = useGetAttachment();
+    const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
     const [mailSettings] = useMailSettings();
 
@@ -49,25 +74,31 @@ export const useLoadEmbeddedImages = (localID: string) => {
     };
 
     return useCallback(async () => {
-        const message = messageCache.get(localID) as MessageExtendedWithData;
+        const message = getMessage(localID) as MessageStateWithData;
         const messageKeys = await getMessageKeys(message.data);
 
-        const { embeddedImages } = await transformEmbedded(
+        const handleLoadEmbeddedImages = (attachments: Attachment[]) => {
+            const dispatchResult = dispatch(
+                loadEmbedded({
+                    ID: localID,
+                    attachments,
+                    api,
+                    messageKeys,
+                    messageVerification: message.verification,
+                    getAttachment,
+                    onUpdateAttachment,
+                })
+            );
+            return dispatchResult as any as Promise<LoadEmbeddedResults>;
+        };
+
+        await transformEmbedded(
             {
                 ...message,
                 messageImages: updateImages(message.messageImages, { showEmbeddedImages: true }, undefined, undefined),
             },
-            messageKeys,
-            messageCache,
-            getAttachment,
-            onUpdateAttachment,
-            api,
-            mailSettings
+            mailSettings,
+            handleLoadEmbeddedImages
         );
-
-        updateMessageCache(messageCache, localID, {
-            document: message.document,
-            messageImages: updateImages(message.messageImages, { showEmbeddedImages: true }, undefined, embeddedImages),
-        });
     }, [localID]);
 };

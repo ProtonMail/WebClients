@@ -78,8 +78,6 @@ import {
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
-
-import { MessageExtendedWithData } from '../../models/message';
 import {
     EventInvitation,
     getCanCreateSingleEdit,
@@ -92,6 +90,7 @@ import {
     processEventInvitation,
     UPDATE_ACTION,
 } from './invite';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const { CANCELLED } = ICAL_EVENT_STATUS;
 const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, UPDATE_PARTSTAT, CANCEL } = UPDATE_ACTION;
@@ -224,7 +223,7 @@ type FetchEventInvitation = (args: {
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
     calendars: Calendar[];
     defaultCalendar?: Calendar;
-    message: MessageExtendedWithData;
+    message: MessageStateWithData;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
 }) => Promise<{
@@ -425,7 +424,7 @@ interface UpdateEventInvitationArgs {
     pmData?: PmInviteData;
     api: Api;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
-    message: MessageExtendedWithData;
+    message: MessageStateWithData;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     overwrite: boolean;

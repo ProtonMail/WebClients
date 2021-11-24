@@ -1,18 +1,19 @@
 import { useState, ChangeEvent } from 'react';
+import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
 import { Href, generateUID, useNotifications } from '@proton/components';
 import { range } from '@proton/shared/lib/helpers/array';
-
-import { MessageExtended } from '../../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
 import { MAX_EXPIRATION_TIME } from '../../../constants';
 import { MessageChange } from '../Composer';
-import { useMessageCache } from '../../../containers/MessageProvider';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
 
 // expiresIn value is in seconds and default is 7 days
 const ONE_WEEK = 3600 * 24 * 7;
 
-const initValues = ({ expiresIn = ONE_WEEK }: Partial<MessageExtended> = {}) => {
+const initValues = ({ draftFlags = {} }: Partial<MessageState> = {}) => {
+    const { expiresIn = ONE_WEEK } = draftFlags;
     const deltaHours = expiresIn / 3600;
     const deltaDays = Math.floor(deltaHours / 24);
 
@@ -32,14 +33,13 @@ const optionRange = (size: number) =>
     ));
 
 interface Props {
-    message?: MessageExtended;
+    message?: MessageState;
     onClose: () => void;
     onChange: MessageChange;
 }
 
 const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
-    const messageCache = useMessageCache();
-    const messageFromCache = message?.localID ? messageCache.get(message?.localID) : undefined;
+    const dispatch = useDispatch();
 
     const [uid] = useState(generateUID('password-modal'));
 
@@ -61,7 +61,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     };
 
     const handleCancel = () => {
-        onChange({ expiresIn: undefined });
+        onChange({ draftFlags: { expiresIn: undefined } });
         onClose();
     };
 
@@ -87,10 +87,8 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
             return;
         }
 
-        onChange({ expiresIn: valueInHours * 3600 });
-        if (messageFromCache) {
-            messageFromCache.expiresIn = valueInHours * 3600;
-        }
+        onChange({ draftFlags: { expiresIn: valueInHours * 3600 } });
+        dispatch(updateExpires({ ID: message?.localID || '', expiresIn: valueInHours * 3600 }));
         onClose();
     };
 

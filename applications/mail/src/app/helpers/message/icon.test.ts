@@ -7,8 +7,8 @@ import {
 import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { StatusIcon, STATUS_ICONS_FILLS } from '../../models/crypto';
-import { MessageExtended, MessageVerification } from '../../models/message';
 import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo, getStatusIconName } from './icon';
+import { MessageState, MessageVerification } from '../../logic/messages/messagesTypes';
 
 const { NOT_SIGNED, NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 
@@ -274,7 +274,7 @@ describe('icon', () => {
                 data: {
                     ParsedHeaders: headers,
                 },
-            } as unknown as MessageExtended;
+            } as unknown as MessageState;
             const { mapStatusIcon } = getSentStatusIconInfo(message) || {};
             return mapStatusIcon[emailAddress];
         };
@@ -447,7 +447,7 @@ describe('icon', () => {
                 data: {
                     ParsedHeaders: headers,
                 },
-            } as unknown as MessageExtended;
+            } as unknown as MessageState;
             const { globalIcon } = getSentStatusIconInfo(message);
             return globalIcon;
         };

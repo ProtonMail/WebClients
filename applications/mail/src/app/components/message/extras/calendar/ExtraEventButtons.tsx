@@ -2,7 +2,7 @@ import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { Dispatch, SetStateAction } from 'react';
 import { getDoNotDisplayButtons, InvitationModel } from '../../../../helpers/calendar/invite';
 import { getCalendarEventLink } from '../../../../helpers/calendar/inviteLink';
-import { MessageExtended } from '../../../../models/message';
+import { MessageState } from '../../../../logic/messages/messagesTypes';
 import ExtraEventAlert from './ExtraEventAlert';
 import ExtraEventAttendeeButtons from './ExtraEventAttendeeButtons';
 import ExtraEventImportButton from './ExtraEventImportButton';
@@ -11,7 +11,7 @@ import ExtraEventOrganizerButtons from './ExtraEventOrganizerButtons';
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     setModel: Dispatch<SetStateAction<InvitationModel>>;
-    message: MessageExtended;
+    message: MessageState;
 }
 
 const ExtraEventButtons = ({ model, setModel, message }: Props) => {

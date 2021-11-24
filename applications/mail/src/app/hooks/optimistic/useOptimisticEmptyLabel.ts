@@ -2,12 +2,13 @@ import { useHandler, useCache } from '@proton/components';
 import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { useStore, useDispatch } from 'react-redux';
-import { useMessageCache } from '../../containers/MessageProvider';
-import { MessageExtended } from '../../models/message';
 import { hasLabel } from '../../helpers/elements';
 import { replaceCounter } from '../../helpers/counter';
 import { CacheEntry } from '../../models/tools';
-import { optimisticEmptyLabel, optimisticRestoreEmptyLabel } from '../../logic/elements/elementsActions';
+import {
+    optimisticEmptyLabel as optimisticEmptyLabelElements,
+    optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,
+} from '../../logic/elements/elementsActions';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
     optimisticDeleteConversationMessages as optimisticDeleteConversationMessagesAction,
@@ -16,28 +17,25 @@ import {
 import { RootState } from '../../logic/store';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
 import { useGetAllConversations } from '../conversation/useConversation';
+import { MessageState } from '../../logic/messages/messagesTypes';
+import {
+    optimisticEmptyLabel as optimisticEmptyLabelMessage,
+    optimisticRestore as optimisticRestoreMessage,
+} from '../../logic/messages/optimistic/messagesOptimisticActions';
 
 export const useOptimisticEmptyLabel = () => {
     const store = useStore<RootState>();
     const dispatch = useDispatch();
     const globalCache = useCache();
-    const messageCache = useMessageCache();
     const getAllConversations = useGetAllConversations();
 
     return useHandler((labelID: string) => {
-        const rollbackMessages = [] as MessageExtended[];
+        const rollbackMessages = [] as MessageState[];
         const rollbackConversations = [] as ConversationState[];
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
-        const messageIDs = [...messageCache.keys()];
-        messageIDs.forEach((messageID) => {
-            const message = messageCache.get(messageID) as MessageExtended;
-            if (hasLabel(message.data, labelID)) {
-                messageCache.delete(messageID);
-                rollbackMessages.push(message);
-            }
-        });
+        dispatch(optimisticEmptyLabelMessage(labelID));
 
         // Conversation cache
         const allConversations = getAllConversations();
@@ -58,7 +56,7 @@ export const useOptimisticEmptyLabel = () => {
 
         // Elements cache
         const rollbackElements = Object.values(store.getState().elements.elements);
-        dispatch(optimisticEmptyLabel());
+        dispatch(optimisticEmptyLabelElements());
 
         // Message counters
         const messageCounters = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
@@ -81,12 +79,9 @@ export const useOptimisticEmptyLabel = () => {
         });
 
         return () => {
-            rollbackMessages.forEach((message) => {
-                messageCache.set(message.localID, message);
-            });
+            dispatch(optimisticRestoreMessage(rollbackMessages));
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
-
-            dispatch(optimisticRestoreEmptyLabel({ elements: rollbackElements }));
+            dispatch(optimisticRestoreEmptyLabelElements({ elements: rollbackElements }));
             Object.entries(rollbackCounters).forEach(([key, value]) => {
                 const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
                 globalCache.set(key, {

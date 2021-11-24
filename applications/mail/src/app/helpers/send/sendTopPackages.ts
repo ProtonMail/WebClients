@@ -4,9 +4,8 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { Package, Packages, PackageStatus, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { addReceived } from '@proton/shared/lib/mail/messages';
-
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { MessageExtended, MessageKeys } from '../../models/message';
+import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { constructMime } from './sendMimeBuilder';
@@ -21,7 +20,7 @@ const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
  * Build the multipart/alternate MIME entity containing both the HTML and plain text entities.
  */
 const generateMimePackage = async (
-    message: MessageExtended,
+    message: MessageState,
     messageKeys: MessageKeys,
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
@@ -33,14 +32,14 @@ const generateMimePackage = async (
     Body: await constructMime(message, messageKeys, getAttachment, onUpdateAttachment, api),
 });
 
-const generatePlainTextPackage = async (message: MessageExtended): Promise<Package> => ({
+const generatePlainTextPackage = async (message: MessageState): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
     MIMEType: PLAINTEXT,
     Body: getPlainText(message, true),
 });
 
-const generateHTMLPackage = async (message: MessageExtended): Promise<Package> => ({
+const generateHTMLPackage = async (message: MessageState): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
     MIMEType: DEFAULT,
@@ -54,7 +53,7 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
  * Top level packages that are not needed are not generated.
  */
 export const generateTopPackages = async (
-    message: MessageExtended,
+    message: MessageState,
     messageKeys: MessageKeys,
     mapSendPrefs: SimpleMap<SendPreferences>,
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,

@@ -13,21 +13,22 @@ import {
 } from '@proton/components';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 import { forceSend } from '@proton/shared/lib/api/messages';
-
-import { MessageExtended, PartialMessageExtended } from '../../models/message';
+import { useDispatch } from 'react-redux';
 import { useDraft } from '../useDraft';
 import { isDirtyAddress } from '../../helpers/addresses';
-import { useMessageCache, getLocalID, updateMessageCache } from '../../containers/MessageProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { useGetLocalID, useGetMessage } from '../message/useMessage';
+import { openDraft } from '../../logic/messages/draft/messagesDraftActions';
 
 export interface ComposeExisting {
-    existingDraft: MessageExtended;
+    existingDraft: MessageState;
     fromUndo: boolean;
 }
 
 export interface ComposeNew {
     action: MESSAGE_ACTIONS;
-    referenceMessage?: PartialMessageExtended;
+    referenceMessage?: PartialMessageState;
 }
 
 export type ComposeArgs = (ComposeExisting | ComposeNew) & {
@@ -61,11 +62,13 @@ export const useCompose = (
     const [addresses = []] = useAddresses();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+    const dispatch = useDispatch();
     const createDraft = useDraft();
-    const messageCache = useMessageCache();
     const goToSettings = useSettingsLink();
     const api = useApi();
     const { call } = useEventManager();
+    const getLocalID = useGetLocalID();
+    const getMessage = useGetMessage();
 
     return useHandler(async (composeArgs: ComposeArgs) => {
         const user = await getUser();
@@ -126,7 +129,7 @@ export const useCompose = (
 
         if (composeExisting) {
             const { existingDraft, fromUndo } = composeExisting;
-            const localID = getLocalID(messageCache, existingDraft.localID);
+            const localID = getLocalID(existingDraft.localID);
 
             const existingMessageID = openComposers.find((id) => id === localID);
 
@@ -135,29 +138,13 @@ export const useCompose = (
                 return;
             }
 
-            const existingMessage = messageCache.get(localID);
+            const existingMessage = getMessage(localID);
 
-            if (existingMessage?.sending && !fromUndo) {
+            if (existingMessage?.draftFlags?.sending && !fromUndo) {
                 return;
             }
 
-            if (existingMessage) {
-                // Drafts have a different sanitization as mail content
-                // So we have to restart the sanitization process on a cached draft
-                updateMessageCache(messageCache, localID, {
-                    initialized: undefined,
-                    plainText: undefined,
-                    document: undefined,
-                    openDraftFromUndo: fromUndo,
-                    isSentDraft: false,
-                    messageImages: undefined,
-                });
-            } else {
-                messageCache.set(localID, {
-                    localID,
-                    openDraftFromUndo: fromUndo,
-                });
-            }
+            dispatch(openDraft({ ID: localID, fromUndo }));
 
             openComposer(localID, returnFocusTo);
             focusComposer(localID);
