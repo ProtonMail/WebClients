@@ -1,5 +1,6 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { getAttachments } from '@proton/shared/lib/mail/messages';
+import { isPlainText , getAttachments } from '@proton/shared/lib/mail/messages';
+
 import { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
 import { classnames, EllipsisLoader } from '@proton/components';
@@ -84,6 +85,7 @@ const ComposerContent = ({
             className={classnames([
                 'flex-item-fluid mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
                 attachments?.length > 0 && 'composer-content--has-attachments',
+                isPlainText(message.data) ? '' : 'composer-content--rich-edition',
             ])}
             onDragOver={handleDragOver}
         >
