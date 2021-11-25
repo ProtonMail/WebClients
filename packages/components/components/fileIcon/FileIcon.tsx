@@ -1,4 +1,5 @@
 import { isImage, isSupportedText, isPDF, isICS, isVideo, isFont, isExcel } from '../../containers/filePreview/helpers';
+import { classnames } from '../../helpers/component';
 import { IconProps } from '../icon/Icon';
 import MimeIcon from '../icon/MimeIcon';
 
@@ -80,6 +81,7 @@ const getIconName = (mimeType: string) => {
 
 interface Props extends Omit<IconProps, 'name'> {
     mimeType: string;
+    className?: string;
 }
 
 /**
@@ -87,10 +89,10 @@ interface Props extends Omit<IconProps, 'name'> {
  * It's wrapper around MimeIcon component which finds the proper icon
  * name based on the mime type.
  */
-const FileIcon = ({ mimeType, ...rest }: Props) => {
+const FileIcon = ({ mimeType, className, ...rest }: Props) => {
     const name = getIconName(mimeType);
 
-    return <MimeIcon name={name} className="flex-item-noshrink mr0-5" {...rest} />;
+    return <MimeIcon name={name} className={classnames(['flex-item-noshrink', className])} {...rest} />;
 };
 
 export default FileIcon;
