@@ -119,7 +119,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                                 .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}
                             <br />
                             {c('Info')
-                                .t`Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.`}
+                                .t`Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.`}
                         </Alert>
                         <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column">
                             <Label htmlFor="orgPassword">{c('Label').t`Organization password`}</Label>
