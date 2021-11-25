@@ -256,7 +256,9 @@
 	// content
 	.composer-content {
 		min-block-size: 10em;
-		background: white;
+		&--rich-edition {
+			background: white;
+		}
 	}
 
 	.editor {
