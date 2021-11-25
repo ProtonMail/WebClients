@@ -138,7 +138,7 @@ const AttachmentItem = ({
                         {progressionHappening ? (
                             <CircularProgress progress={value} size={20} className="mr0-5" />
                         ) : (
-                            <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={20} />
+                            <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={20} className="mr0-5" />
                         )}
                     </button>
                     <button

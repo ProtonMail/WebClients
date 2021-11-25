@@ -84,7 +84,7 @@ const DownloadSharedInfo = ({ name, size, MIMEType, expirationTime, downloadFile
             <div className="bordered rounded p2 w100">
                 <div className="mb1">
                     {thumbnail === null ? (
-                        <FileIcon size={56} mimeType={MIMEType} alt={name} />
+                        <FileIcon size={56} mimeType={MIMEType} alt={name} className="mr0-5" />
                     ) : (
                         <img src={thumbnail} className="download-shared-info--preview-image" alt={name} />
                     )}
