@@ -18,7 +18,7 @@ import { RecipientGroup } from '../../../models/address';
 import { useUpdateGroupSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { useContactCache } from '../../../containers/ContactProvider';
+import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 
 interface Props {
     recipientGroup: RecipientGroup;
@@ -44,7 +44,7 @@ const AddressesGroupItem = ({
     const { createModal, getModal, hideModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
 
-    const { groupsWithContactsMap } = useContactCache();
+    const groupsWithContactsMap = useGroupsWithContactsMap();
     const { getGroupLabel } = useRecipientLabel();
 
     const [modalID, setModalID] = useState<string | undefined>();

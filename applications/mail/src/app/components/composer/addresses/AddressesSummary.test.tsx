@@ -1,8 +1,11 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { clearAll, contactCache, render } from '../../../helpers/test/helper';
+import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { clearAll, render } from '../../../helpers/test/helper';
 import AddressesSummary from './AddressesSummary';
 import { getRecipientLabel } from '../../../helpers/addresses';
+import { store } from '../../../logic/store';
+import { refresh } from '../../../logic/contacts/contactsActions';
 
 const message = {} as Message;
 const props = {
@@ -17,11 +20,11 @@ const props = {
 const recipient = { Name: 'RecipientName', Address: 'Address' };
 const recipientLabel = getRecipientLabel(recipient, {}) || '';
 const recipientGroup = { Name: 'RecipientName', Address: 'Address', Group: 'GroupPath' };
-const group = { Name: 'GroupName', Path: 'GroupPath' };
+const group = { Name: 'GroupName', Path: 'GroupPath' } as ContactGroup;
 
 describe('AddressesSummary', () => {
     beforeEach(() => {
-        contactCache.contactGroupsMap[group.Path] = group;
+        store.dispatch(refresh({ contacts: [], contactGroups: [group] }));
     });
 
     afterEach(clearAll);

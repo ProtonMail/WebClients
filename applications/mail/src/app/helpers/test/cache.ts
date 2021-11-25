@@ -24,24 +24,6 @@ export const cache = createCache();
 export const addressKeysCache = createCache<string, { status: number; value: Partial<DecryptedKey>[] }>();
 export const base64Cache = createCache<string, string>() as Base64Cache;
 
-export const contactCache = {
-    contactsMap: {} as { [email: string]: any },
-    contactsMapWithDuplicates: {} as { [email: string]: any[] },
-    contactGroupsMap: {} as { [path: string]: any },
-    groupsWithContactsMap: {} as { [groupID: string]: any },
-    recipientsLabelCache: new Map<string, string>(),
-    groupsLabelCache: new Map<string, string>(),
-};
-
-export const clearContactCache = () => {
-    contactCache.contactsMap = {};
-    contactCache.contactsMapWithDuplicates = {};
-    contactCache.contactGroupsMap = {};
-    contactCache.groupsWithContactsMap = {};
-    contactCache.recipientsLabelCache = new Map<string, string>();
-    contactCache.groupsLabelCache = new Map<string, string>();
-};
-
 export const addToCache = (key: string, value: any) => {
     cache.set(key, resolvedRequest(value));
 };

@@ -3,9 +3,9 @@ import { Icon, Href, useModals, Alert } from '@proton/components';
 import { c } from 'ttag';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import ContactResignModal from '../modals/ContactResignModal';
-import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';
 import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import { useContactsMap } from '../../../hooks/contact/useContacts';
 
 interface Props {
     message: Message | undefined;
@@ -17,7 +17,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
     const { senderVerified, senderPinnedKeys } = messageVerification || {};
     const { Address = '' } = message?.Sender || {};
     const { createModal } = useModals();
-    const { contactsMap } = useContactCache();
+    const contactsMap = useContactsMap();
 
     const contactEmail = useMemo(() => getContactEmail(contactsMap, Address), [contactsMap, Address]);
 

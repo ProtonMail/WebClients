@@ -21,10 +21,10 @@ import {
     useNotifications,
 } from '@proton/components';
 import { c } from 'ttag';
-import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import { useContactsMap } from '../../../hooks/contact/useContacts';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 
@@ -121,7 +121,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const { contactsMap } = useContactCache();
+    const contactsMap = useContactsMap();
 
     const senderAddress = message?.SenderAddress;
     const name = message?.SenderName;
