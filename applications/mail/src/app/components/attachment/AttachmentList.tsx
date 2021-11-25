@@ -145,7 +145,7 @@ const AttachmentList = ({
                 message={message}
                 onDownload={handlePreviewDownload}
             />
-            <div className="flex flex-row w100 p0-5" data-testid="attachments-header">
+            <div className="flex flex-row w100 p0-5 flex-justify-space-between" data-testid="attachments-header">
                 <TagButton
                     type="button"
                     title={titleButton}
