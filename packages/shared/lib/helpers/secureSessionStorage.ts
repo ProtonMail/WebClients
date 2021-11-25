@@ -62,24 +62,6 @@ const serializeItem = (value: Uint8Array) => {
     return btoa(uint8ArrayToString(value));
 };
 
-const saveSessionStorage = (keys: string[] = [], data: any) => {
-    keys.forEach((key) => {
-        const value = data[key];
-        if (value === undefined) {
-            return;
-        }
-        window.sessionStorage.setItem(key, value);
-    }, {});
-};
-
-const readSessionStorage = (keys: string[] = []) => {
-    return keys.reduce<{ [key: string]: any }>((acc, key) => {
-        acc[key] = window.sessionStorage.getItem(key);
-        window.sessionStorage.removeItem(key);
-        return acc;
-    }, {});
-};
-
 const mergePart = (serializedA: string | undefined, serializedB: string | undefined) => {
     const a = deserializeItem(serializedA);
     const b = deserializeItem(serializedB);
@@ -139,32 +121,8 @@ export const separateParts = (data: any) =>
         { share1: {}, share2: {} }
     );
 
-export const save = (keys: string[], data: any) => {
-    if (!hasSessionStorage()) {
-        return;
-    }
-
-    const { share1, share2 } = separateParts(data);
-
-    window.name = serialize(share1);
-    saveSessionStorage(keys, share2);
-};
-
-export const load = (keys: string[]) => {
-    if (!hasSessionStorage()) {
-        return {};
-    }
-
-    const nameStorage = deserialize(window.name);
-    window.name = '';
-
-    const sessionData = readSessionStorage(keys);
-
-    return mergeParts(nameStorage, sessionData);
-};
-
 const SESSION_STORAGE_KEY = 'proton:storage';
-export const save2 = (data: any) => {
+export const save = (data: any) => {
     if (!hasSessionStorage()) {
         return;
     }
@@ -173,7 +131,7 @@ export const save2 = (data: any) => {
     window.sessionStorage.setItem(SESSION_STORAGE_KEY, share2);
 };
 
-export const load2 = () => {
+export const load = () => {
     if (!hasSessionStorage()) {
         return {};
     }

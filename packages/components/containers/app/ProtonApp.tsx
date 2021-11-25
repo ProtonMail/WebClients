@@ -7,8 +7,7 @@ import { AddressesModel } from '@proton/shared/lib/models';
 import { formatUser, UserModel } from '@proton/shared/lib/models/userModel';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
-import createSecureSessionStorage2 from '@proton/shared/lib/authentication/createSecureSessionStorage2';
-import { isSSOMode, MAILBOX_PASSWORD_KEY, UID_KEY, SSO_PATHS, APPS } from '@proton/shared/lib/constants';
+import { isSSOMode, SSO_PATHS, APPS } from '@proton/shared/lib/constants';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { noop } from '@proton/shared/lib/helpers/function';
 import createListeners from '@proton/shared/lib/helpers/listeners';
@@ -104,12 +103,7 @@ interface Props {
 }
 
 const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
-    const authentication = useInstance(() => {
-        if (isSSOMode) {
-            return createAuthentication(createSecureSessionStorage2());
-        }
-        return createAuthentication(createSecureSessionStorage([MAILBOX_PASSWORD_KEY, UID_KEY]));
-    });
+    const authentication = useInstance(() => createAuthentication(createSecureSessionStorage()));
     const pathRef = useRef<string | undefined>();
     const cacheRef = useRef<Cache<string, any>>();
     if (!cacheRef.current) {
