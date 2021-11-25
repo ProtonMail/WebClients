@@ -153,7 +153,11 @@ const ItemRow = ({
                             className="file-browser-list-item--thumbnail flex-item-noshrink mr0-5"
                         />
                     ) : (
-                        <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
+                        <FileIcon
+                            mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
+                            alt={iconText}
+                            className="mr0-5"
+                        />
                     )}
                     <NameCell name={item.Name} />
                 </TableCell>
