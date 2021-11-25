@@ -1,5 +1,5 @@
 import React from 'react';
-import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addHours, addSeconds } from 'date-fns';
 import { fireEvent } from '@testing-library/dom';
@@ -34,7 +34,7 @@ describe('Scheduled messages banner', () => {
         const { dateString, formattedTime } = formatDateToHuman(sendingDate);
 
         getByTestId('message:schedule-banner');
-        getByText(`This message will be sent ${dateString} at ${formattedTime}`);
+        getByText(`This message will be sent on ${dateString} at ${formattedTime}`);
         getByText('Edit');
     });
 
@@ -44,10 +44,10 @@ describe('Scheduled messages banner', () => {
 
         const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
 
-        const { dateString, formattedTime } = formatDateToHuman(sendingDate);
+        const { formattedTime } = formatDateToHuman(sendingDate);
 
         getByTestId('message:schedule-banner');
-        const scheduledBannerText = getByText(`This message will be sent ${dateString} at ${formattedTime}`);
+        const scheduledBannerText = getByText(`This message will be sent tomorrow at ${formattedTime}`);
         expect(scheduledBannerText.innerHTML).toContain('tomorrow');
         getByText('Edit');
     });
@@ -60,10 +60,10 @@ describe('Scheduled messages banner', () => {
 
         const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
 
-        const { dateString, formattedTime } = formatDateToHuman(sendingDate);
+        const { formattedTime } = formatDateToHuman(sendingDate);
 
         getByTestId('message:schedule-banner');
-        const scheduledBannerText = getByText(`This message will be sent ${dateString} at ${formattedTime}`);
+        const scheduledBannerText = getByText(`This message will be sent today at ${formattedTime}`);
         expect(scheduledBannerText.innerHTML).toContain('today');
         getByText('Edit');
 
@@ -82,7 +82,7 @@ describe('Scheduled messages banner', () => {
     });
 
     it('should be able to edit the message', async () => {
-        const sendingDate = addMinutes(new Date(), 20);
+        const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
         const unscheduleCall = jest.fn();
@@ -90,10 +90,10 @@ describe('Scheduled messages banner', () => {
 
         const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
 
-        const { dateString, formattedTime } = formatDateToHuman(sendingDate);
+        const { formattedTime } = formatDateToHuman(sendingDate);
 
         getByTestId('message:schedule-banner');
-        getByText(`This message will be sent ${dateString} at ${formattedTime}`);
+        getByText(`This message will be sent tomorrow at ${formattedTime}`);
         const editButton = getByText('Edit');
 
         // Edit the scheduled message
