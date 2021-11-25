@@ -4,7 +4,73 @@ import {
     numericDayToDay,
     getDateTimePropertyInDifferentTimezone,
     getHasModifiedDateTimes,
+    propertyToUTCDate,
+    propertyToLocalDate,
 } from '../../lib/calendar/vcalConverter';
+
+describe('propertyToUTCDate', () => {
+    it('should convert all-day properties to UTC end-of-day times', () => {
+        const property = {
+            value: { year: 2021, month: 7, day: 7 },
+            parameters: { type: 'date' },
+        };
+        expect(+propertyToUTCDate(property)).toEqual(Date.UTC(2021, 6, 7));
+    });
+
+    it('should convert Zulu date-time properties', () => {
+        const property = {
+            value: { year: 2021, month: 7, day: 7, hours: 7, minutes: 7, seconds: 7, isUTC: true },
+        };
+        expect(+propertyToUTCDate(property)).toEqual(Date.UTC(2021, 6, 7, 7, 7, 7));
+    });
+
+    it('should convert floating date-time properties to Zulu time', () => {
+        const property = {
+            value: { year: 2021, month: 7, day: 7, hours: 7, minutes: 7, seconds: 7, isUTC: false },
+        };
+        expect(+propertyToUTCDate(property)).toEqual(Date.UTC(2021, 6, 7, 7, 7, 7));
+    });
+
+    it('should convert localized date-time properties', () => {
+        const property = {
+            value: { year: 2021, month: 7, day: 7, hours: 7, minutes: 7, seconds: 7, isUTC: false },
+            parameters: { tzid: 'Europe/Brussels' },
+        };
+        expect(+propertyToUTCDate(property)).toEqual(Date.UTC(2021, 6, 7, 5, 7, 7));
+    });
+});
+
+describe('propertyToLocalDate', () => {
+    it('should convert all-day properties to local end-of-day times', () => {
+        const property = {
+            value: { year: 2021, month: 7, day: 7 },
+            parameters: { type: 'date' },
+        };
+        expect(+propertyToLocalDate(property)).toEqual(+new Date(2021, 6, 7));
+    });
+
+    it('should convert Zulu date-time properties', () => {
+        const property = {
+            value: { year: 2021, month: 7, day: 7, hours: 7, minutes: 7, seconds: 7, isUTC: true },
+        };
+        expect(+propertyToLocalDate(property)).toEqual(Date.UTC(2021, 6, 7, 7, 7, 7));
+    });
+
+    it('should convert floating date-time properties to Zulu time', () => {
+        const property = {
+            value: { year: 2021, month: 7, day: 7, hours: 7, minutes: 7, seconds: 7, isUTC: false },
+        };
+        expect(+propertyToLocalDate(property)).toEqual(Date.UTC(2021, 6, 7, 7, 7, 7));
+    });
+
+    it('should convert localized date-time properties', () => {
+        const property = {
+            value: { year: 2021, month: 7, day: 7, hours: 7, minutes: 7, seconds: 7, isUTC: false },
+            parameters: { tzid: 'Europe/Brussels' },
+        };
+        expect(+propertyToLocalDate(property)).toEqual(Date.UTC(2021, 6, 7, 5, 7, 7));
+    });
+});
 
 describe('dateTimeToProperty', () => {
     it('should convert a date with a timezone into a property', () => {
