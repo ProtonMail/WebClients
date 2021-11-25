@@ -10,6 +10,7 @@ import {
     IMPORT_GROUPS_ACTION,
     ImportCategories,
     ImportedContact,
+    SimpleEncryptedContact,
 } from '../../interfaces/contacts';
 import {
     ACCEPTED_EXTENSIONS,
@@ -267,8 +268,8 @@ export const splitContacts = (contacts: ContactProperties[] = []) =>
 /**
  * Split encrypted contacts depending on having the CATEGORIES property.
  */
-export const splitEncryptedContacts = (contacts: EncryptedContact[] = []) =>
-    contacts.reduce<{ withCategories: EncryptedContact[]; withoutCategories: EncryptedContact[] }>(
+export const splitEncryptedContacts = (contacts: SimpleEncryptedContact[] = []) =>
+    contacts.reduce<{ withCategories: SimpleEncryptedContact[]; withoutCategories: SimpleEncryptedContact[] }>(
         (acc, contact) => {
             const {
                 contact: { Cards, error },
