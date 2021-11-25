@@ -75,6 +75,7 @@ interface Props {
     onClose?: () => void;
     defaultCheckedTypes?: ImportType[];
     source: EASY_SWITCH_SOURCE;
+    isEasySwitchCalendarEnabled?: boolean;
 }
 
 const {
@@ -99,7 +100,14 @@ const getCheckedProducts = (checkedTypes: CheckedProductMap): ImportType[] =>
         return acc;
     }, []);
 
-const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTypes = [], source, ...rest }: Props) => {
+const ImportAssistantOauthModal = ({
+    addresses,
+    onClose = noop,
+    defaultCheckedTypes = [],
+    source,
+    isEasySwitchCalendarEnabled = false,
+    ...rest
+}: Props) => {
     const activeAddresses = getActiveAddresses(addresses);
     const getAddressKeys = useGetAddressKeys();
     const location = useLocation();
@@ -567,6 +575,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                             labels={labels}
                             folders={folders}
                             updateModalModel={(newModel) => setModalModel(newModel)}
+                            isEasySwitchCalendarEnabled={isEasySwitchCalendarEnabled}
                         />
                     )}
                     {modalModel.step === SUCCESS && (

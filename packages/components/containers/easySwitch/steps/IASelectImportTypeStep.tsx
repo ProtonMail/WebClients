@@ -42,6 +42,7 @@ interface Props {
     calendars: Calendar[];
     labels: Label[];
     folders: Folder[];
+    isEasySwitchCalendarEnabled: boolean;
 }
 
 const {
@@ -78,6 +79,7 @@ const IASelectImportTypeStep = ({
     calendars,
     labels,
     folders,
+    isEasySwitchCalendarEnabled,
 }: Props) => {
     const { oauthProps, payload, tokenScope } = modalModel;
 
@@ -410,20 +412,20 @@ const IASelectImportTypeStep = ({
         return (
             <FormLabel
                 htmlFor="calendar"
-                className={classnames([
-                    'pt1-5 pb1-5 border-bottom flex label w100',
-                    disableCalendar && 'cursor-default color-weak',
-                ])}
+                className={classnames(['pt1-5 pb1-5 flex label w100', disableCalendar && 'cursor-default color-weak'])}
             >
                 <Checkbox
                     id="calendar"
-                    checked={checkedTypes[CALENDAR]}
+                    checked={isEasySwitchCalendarEnabled && checkedTypes[CALENDAR]}
                     onChange={() => toggleCheckedProduct(CALENDAR)}
                     className="mr0-5 flex-align-self-start"
-                    disabled={disableCalendar}
+                    disabled={disableCalendar || !isEasySwitchCalendarEnabled}
                 />
                 <div className="flex flex-column flex-item-fluid">
-                    <div className={classnames([showSummary && 'mb0-5'])}>{c('Label').t`Calendars`}</div>
+                    <div className={classnames([showSummary && 'mb0-5', !isEasySwitchCalendarEnabled && 'color-weak'])}>
+                        {c('Label').t`Calendars`}
+                        {!isEasySwitchCalendarEnabled && <span> {c('Label').t`(Coming soon)`}</span>}
+                    </div>
                     {showSummary && (
                         <>
                             {payloadErrors.includes(CalendarImportPayloadError.MAX_CALENDARS_LIMIT_REACHED) ? (
@@ -489,7 +491,10 @@ const IASelectImportTypeStep = ({
         return (
             <FormLabel
                 htmlFor="contacts"
-                className={classnames(['pt1-5 pb1-5 flex label w100', disableContacts && 'cursor-default color-weak'])}
+                className={classnames([
+                    'pt1-5 pb1-5 border-bottom flex label w100',
+                    disableContacts && 'cursor-default color-weak',
+                ])}
             >
                 <Checkbox
                     id="contacts"
@@ -638,8 +643,8 @@ const IASelectImportTypeStep = ({
 
             <div className="max-w30e">
                 {mailRowRenderer()}
-                {calendarRowRenderer()}
                 {contactsRowRenderer()}
+                {calendarRowRenderer()}
                 {/* driveRowRenderer() */}
             </div>
 
