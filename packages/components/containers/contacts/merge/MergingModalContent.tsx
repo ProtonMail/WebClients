@@ -10,11 +10,14 @@ import { prepareContact as encrypt } from '@proton/shared/lib/contacts/encrypt';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { API_SAFE_INTERVAL, ADD_CONTACTS_MAX_SIZE, OVERWRITE, CATEGORIES } from '@proton/shared/lib/contacts/constants';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { Contact as ContactType, ContactProperties } from '@proton/shared/lib/interfaces/contacts';
+import {
+    Contact as ContactType,
+    ContactProperties,
+    SimpleEncryptedContact,
+} from '@proton/shared/lib/interfaces/contacts';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
 import { splitEncryptedContacts } from '@proton/shared/lib/contacts/helpers/import';
 import { combineProgress } from '@proton/shared/lib/contacts/helpers/progress';
-import { EncryptedContact } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { Alert, DynamicProgress } from '../../../components';
 import { useApi, useLoading } from '../../../hooks';
@@ -65,7 +68,8 @@ const MergingModalContent = ({
     useEffect(() => {
         // Prepare api for allowing cancellation in the middle of the merge
         const abortController = new AbortController();
-        const apiWithAbort = (config: object) => api({ ...config, signal: abortController.signal }) as Promise<any>;
+        const apiWithAbort: <T>(config: object) => Promise<T> = (config) =>
+            api({ ...config, signal: abortController.signal });
 
         /**
          * Get a contact from its ID and decrypt it. Return contact as a list of properties
@@ -74,7 +78,7 @@ const MergingModalContent = ({
             if (signal.aborted) {
                 return [];
             }
-            const { Contact } = (await apiWithAbort(getContact(ID))) as { Contact: ContactType };
+            const { Contact } = await apiWithAbort<{ Contact: ContactType }>(getContact(ID));
             const { properties, errors: contactErrors } = await decrypt(Contact, {
                 privateKeys,
                 publicKeys,
@@ -100,14 +104,17 @@ const MergingModalContent = ({
                 return [];
             }
             // beMergedModel only contains one entry in this case
-            const [groupIDs] = Object.values(beMergedModel);
-            const beSubmittedContacts: EncryptedContact[] = [];
+            const [[beMergedID, groupIDs]] = Object.entries(beMergedModel);
+            const beSubmittedContacts: SimpleEncryptedContact[] = [];
+            if (!alreadyMerged) {
+                throw new Error('Contact already merged is undefined');
+            }
             try {
-                const encryptedMergedContact = await encrypt(alreadyMerged as ContactProperties, {
+                const encryptedMergedContact = await encrypt(alreadyMerged, {
                     privateKey: privateKeys[0],
                     publicKey: publicKeys[0],
                 });
-                beSubmittedContacts.push({ contact: encryptedMergedContact } as EncryptedContact);
+                beSubmittedContacts.push({ contact: encryptedMergedContact, contactId: beMergedID });
 
                 if (!signal.aborted) {
                     setModel((model) => ({ ...model, mergedAndEncrypted: [...model.mergedAndEncrypted, ...groupIDs] }));
@@ -128,8 +135,8 @@ const MergingModalContent = ({
          * to be submitted plus the IDs of the contacts to be deleted after the merge
          */
         const mergeAndEncrypt = async ({ signal }: Signal) => {
-            const beSubmittedContacts: EncryptedContact[] = [];
-            for (const groupIDs of Object.values(beMergedModel)) {
+            const beSubmittedContacts: SimpleEncryptedContact[] = [];
+            for (const [beMergedID, groupIDs] of Object.entries(beMergedModel)) {
                 if (signal.aborted) {
                     return [];
                 }
@@ -139,7 +146,7 @@ const MergingModalContent = ({
                         privateKey: privateKeys[0],
                         publicKey: publicKeys[0],
                     });
-                    beSubmittedContacts.push({ contact: encryptedMergedContact } as EncryptedContact);
+                    beSubmittedContacts.push({ contact: encryptedMergedContact, contactId: beMergedID });
                     if (!signal.aborted) {
                         setModel((model) => ({
                             ...model,
@@ -162,7 +169,7 @@ const MergingModalContent = ({
          * Submit a batch of merged contacts to the API
          */
         const submitBatch = async (
-            { contacts = [], labels }: { contacts: EncryptedContact[]; labels: number },
+            { contacts = [], labels }: { contacts: SimpleEncryptedContact[]; labels: number },
             { signal }: Signal
         ) => {
             if (signal.aborted || !contacts.length) {
@@ -170,7 +177,7 @@ const MergingModalContent = ({
             }
             const beDeletedBatchIDs = [];
             const responses = (
-                await apiWithAbort(
+                await apiWithAbort<{ Responses: { Response: { Code: number; Contact?: ContactType } }[] }>(
                     addContacts({
                         Contacts: contacts.map(({ contact }) => contact),
                         Overwrite: OVERWRITE_CONTACT,
@@ -205,7 +212,7 @@ const MergingModalContent = ({
          * Submit all merged contacts to the API
          */
         const submitContacts = async (
-            { contacts = [], labels }: { contacts: EncryptedContact[]; labels: number },
+            { contacts = [], labels }: { contacts: SimpleEncryptedContact[]; labels: number },
             { signal }: Signal
         ) => {
             if (signal.aborted) {
