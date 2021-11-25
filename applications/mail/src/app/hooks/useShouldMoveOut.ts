@@ -47,7 +47,6 @@ export const useShouldMoveOut = (
     const onChange = (cacheEntry: MessageState | ConversationState | undefined) => {
         // Move out of a deleted element
         if (!cacheEntry) {
-            console.log('onBack', cacheEntry);
             onBack();
             return;
         }
