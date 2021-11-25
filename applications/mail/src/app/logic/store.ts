@@ -3,6 +3,7 @@ import elements from './elements/elementsSlice';
 import attachments from './attachments/attachmentsSlice';
 import conversations from './conversations/conversationsSlice';
 import messages from './messages/messagesSlice';
+import contacts from './contacts/contactsSlice';
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
         conversations,
         attachments,
         messages,
+        contacts,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
@@ -30,7 +32,12 @@ export const store = configureStore({
                     'payload.decryption',
                     'payload',
                     'payload.attachment',
+
+                    'payload.contacts',
+                    'payload.contactGroups',
                 ],
+
+                warnAfter: 100,
             },
         }),
 });

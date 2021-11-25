@@ -22,7 +22,7 @@ import { RecipientGroup } from '../../../models/address';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { useContactCache } from '../../../containers/ContactProvider';
+import { useContactsMap, useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 
 interface Props {
     id: string;
@@ -53,7 +53,9 @@ const AddressesInput = ({
     classname,
     hasLighterFieldDesign = false,
 }: Props) => {
-    const { contactsMap: contactEmailsMap, groupsWithContactsMap } = useContactCache();
+    const contactEmailsMap = useContactsMap();
+    const groupsWithContactsMap = useGroupsWithContactsMap();
+
     const { getRecipientsOrGroups } = useRecipientLabel();
     const [contactEmails] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
     const [contactGroups] = useContactGroups();

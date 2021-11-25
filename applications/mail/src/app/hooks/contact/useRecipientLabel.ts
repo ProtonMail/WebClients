@@ -7,7 +7,13 @@ import {
     getRecipientGroupLabel as computeRecipientGroupLabel,
     recipientsToRecipientOrGroup,
 } from '../../helpers/addresses';
-import { useContactCache } from '../../containers/ContactProvider';
+import {
+    useContactGroupsMap,
+    useContactsMap,
+    useGroupsLabelCache,
+    useGroupsWithContactsMap,
+    useRecipientsLabelCache,
+} from './useContacts';
 
 const getRecipientKey = (recipient: Recipient, detailed = false) =>
     `${recipient.Address}-${recipient.Name}-${detailed}`;
@@ -18,39 +24,42 @@ const getGroupKey = (recipientGroup: RecipientGroup) =>
         .join('-')}`;
 
 export const useRecipientLabel = () => {
-    const { contactsMap, contactGroupsMap, groupsWithContactsMap, recipientsLabelCache, groupsLabelCache } =
-        useContactCache();
+    const contactsMap = useContactsMap();
+    const contactGroupsMap = useContactGroupsMap();
+    const groupsWithContactsMap = useGroupsWithContactsMap();
+    const recipientsLabelCache = useRecipientsLabelCache();
+    const groupsLabelCache = useGroupsLabelCache();
 
-    const getRecipientLabel = (recipient: Recipient | undefined, detailed = false) => {
+    const getRecipientLabel = (recipient: Recipient | undefined, detailed = false): string => {
         if (!recipient) {
             return '';
         }
         const recipientKey = getRecipientKey(recipient, detailed);
-        return recipientsLabelCache.has(recipientKey)
-            ? (recipientsLabelCache.get(recipientKey) as string)
+        return recipientsLabelCache[recipientKey]
+            ? (recipientsLabelCache[recipientKey] as string)
             : (detailed ? computeRecipientLabel : computeRecipientLabelDetailed)(recipient, contactsMap);
     };
 
-    const getGroupLabel = (recipientGroup: RecipientGroup | undefined) => {
+    const getGroupLabel = (recipientGroup: RecipientGroup | undefined): string => {
         if (!recipientGroup) {
             return '';
         }
         const recipientGroupKey = getGroupKey(recipientGroup);
-        return groupsLabelCache.has(recipientGroupKey)
-            ? (groupsLabelCache.get(recipientGroupKey) as string)
+        return groupsLabelCache[recipientGroupKey]
+            ? (groupsLabelCache[recipientGroupKey] as string)
             : computeRecipientGroupLabel(
                   recipientGroup,
                   groupsWithContactsMap[recipientGroup.group?.ID || '']?.contacts.length
               );
     };
 
-    const getRecipientOrGroupLabel = ({ recipient, group }: RecipientOrGroup, detailed = false) =>
+    const getRecipientOrGroupLabel = ({ recipient, group }: RecipientOrGroup, detailed = false): string =>
         recipient ? getRecipientLabel(recipient, detailed) : getGroupLabel(group as RecipientGroup);
 
-    const getRecipientsOrGroupsLabels = (recipientsOrGroups: RecipientOrGroup[], detailed = false) =>
+    const getRecipientsOrGroupsLabels = (recipientsOrGroups: RecipientOrGroup[], detailed = false): string[] =>
         recipientsOrGroups.map((recipientsOrGroups) => getRecipientOrGroupLabel(recipientsOrGroups, detailed));
 
-    const getRecipientsOrGroups = (recipients: Recipient[]) =>
+    const getRecipientsOrGroups = (recipients: Recipient[]): RecipientOrGroup[] =>
         recipientsToRecipientOrGroup(recipients, contactGroupsMap);
 
     return {

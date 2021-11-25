@@ -18,14 +18,13 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/recipient';
-
 import { getContactEmail } from '../../../helpers/addresses';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
-import { useContactCache } from '../../../containers/ContactProvider';
 import { useOnMailTo } from '../../../containers/ComposeProvider';
+import { useContactsMap } from '../../../hooks/contact/useContacts';
 
 interface Props {
     recipient: Recipient;
@@ -52,7 +51,7 @@ const AddressesRecipientItem = ({
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
 
-    const { contactsMap } = useContactCache();
+    const contactsMap = useContactsMap();
 
     const [editableMode, setEditableMode] = useState(false);
 

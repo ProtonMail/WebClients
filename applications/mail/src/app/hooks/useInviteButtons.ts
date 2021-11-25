@@ -26,13 +26,13 @@ import { useApi, useConfig, useCalendarEmailNotificationsFeature } from '@proton
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from 'pmcrypto';
-import { useContactCache } from '../containers/ContactProvider';
 import { getHasFullCalendarData } from '../helpers/calendar/invite';
 import {
     createCalendarEventFromInvitation,
     deleteCalendarEventFromInvitation,
     updatePartstatFromInvitation,
 } from '../helpers/calendar/inviteApi';
+import { useContactsMap } from './contact/useContacts';
 
 interface Args {
     veventApi?: VcalVeventComponent;
@@ -86,7 +86,7 @@ const useInviteButtons = ({
     const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const getVTimezonesMap = useGetVtimezonesMap();
-    const { contactsMap: contactEmailsMap } = useContactCache();
+    const contactEmailsMap = useContactsMap();
 
     // Returns true if the operation is succesful
     const sendReplyEmail = useCallback(
