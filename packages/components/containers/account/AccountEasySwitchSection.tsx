@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { EASY_SWITCH_SOURCE, ImportType, PROVIDER_INSTRUCTIONS } from '@proton/shared/lib/interfaces/EasySwitch';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
-import { useAddresses, useModals, useUser } from '../../hooks';
+import { useAddresses, useFeature, useModals, useUser } from '../../hooks';
 import { ProviderCard } from '../../components';
 
 import SettingsSectionWide from './SettingsSectionWide';
@@ -11,6 +12,7 @@ import SettingsParagraph from './SettingsParagraph';
 import { ImportAssistantOauthModal } from '../easySwitch';
 import ImportMailModal from '../easySwitch/mail/modals/ImportMailModal';
 import { ImportProvider } from '../../components/easySwitch/ProviderCard';
+import { FeatureCode } from '../features';
 
 const { GOOGLE, OUTLOOK, YAHOO, OTHER } = ImportProvider;
 
@@ -19,14 +21,22 @@ const AccountEasySwitchSection = () => {
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
-    const isLoading = loadingUser || loadingAddresses;
+    const easySwitchCalendarFeature = useFeature(FeatureCode.EasySwitchCalendar);
+    const isEasySwitchCalendarEnabled = easySwitchCalendarFeature.feature?.Value;
+
+    const isLoading = loadingUser || loadingAddresses || easySwitchCalendarFeature.loading;
 
     const handleOAuthClick = () => {
         createModal(
             <ImportAssistantOauthModal
                 source={EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS}
                 addresses={addresses}
-                defaultCheckedTypes={[ImportType.MAIL, ImportType.CALENDAR, ImportType.CONTACTS]}
+                defaultCheckedTypes={[
+                    ImportType.MAIL,
+                    isEasySwitchCalendarEnabled && ImportType.CALENDAR,
+                    ImportType.CONTACTS,
+                ].filter(isTruthy)}
+                isEasySwitchCalendarEnabled={isEasySwitchCalendarEnabled}
             />
         );
     };
