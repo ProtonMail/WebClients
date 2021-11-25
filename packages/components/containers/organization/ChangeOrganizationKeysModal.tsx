@@ -178,7 +178,7 @@ const ChangeOrganizationKeysModal = ({
                                 .t`Do NOT forget this password. If you forget it, you will not be able to manage your organization.`}
                             <br />
                             {c('Info')
-                                .t`Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.`}
+                                .t`Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.`}
                         </Alert>
                     </>
                 ),
