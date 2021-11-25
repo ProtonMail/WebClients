@@ -5,7 +5,6 @@ import { useApi, useGetEncryptionPreferences } from '@proton/components';
 import { useDispatch } from 'react-redux';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { useGetMessageKeys } from './useGetMessageKeys';
-import { useContactCache } from '../../containers/ContactProvider';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { isNetworkError } from '../../helpers/errors';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
@@ -13,6 +12,7 @@ import { useGetAttachment } from '../useAttachment';
 import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from './useMessage';
 import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
+import { useContactsMap } from '../contact/useContacts';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
@@ -21,7 +21,7 @@ export const useVerifyMessage = (localID: string) => {
     const dispatch = useDispatch();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getMessageKeys = useGetMessageKeys();
-    const { contactsMap } = useContactCache();
+    const contactsMap = useContactsMap();
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));

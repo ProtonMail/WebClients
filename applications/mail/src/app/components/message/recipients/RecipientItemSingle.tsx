@@ -17,16 +17,15 @@ import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/cont
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { Recipient } from '@proton/shared/lib/interfaces';
-
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientItemLayout from './RecipientItemLayout';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
+import { useContactsMap } from '../../../hooks/contact/useContacts';
 
 interface Props {
     recipient: Recipient;
@@ -51,7 +50,7 @@ const RecipientItemSingle = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const { contactsMap } = useContactCache();
+    const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
 
     const onCompose = useOnCompose();

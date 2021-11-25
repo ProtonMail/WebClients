@@ -6,11 +6,11 @@ import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import { getAddressFromPlusAlias, getByEmail } from '@proton/shared/lib/mail/addresses';
-import { ContactGroupsMap, ContactsMap } from '../containers/ContactProvider';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { isMessage } from './elements';
+import { ContactGroupsMap, ContactsMap } from '../logic/contacts/contactsTypes';
 
 /**
  * Return the matching ContactEmail in the map taking care of email normalization
