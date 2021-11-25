@@ -9,7 +9,7 @@ export type Color = 'norm' | 'weak' | 'danger' | 'warning' | 'success' | 'info';
 
 export type Size = 'small' | 'medium' | 'large';
 
-interface ButtonLikeOwnProps {
+export interface ButtonLikeOwnProps {
     /**
      * Whether the button should render a loader.
      * Button is disabled when this prop is true.
