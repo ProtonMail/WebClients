@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { Icon, classnames, CircleLoader, InlineLinkButton } from '@proton/components';
+import { Icon, classnames, CircleLoader } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
@@ -172,12 +172,12 @@ const AttachmentList = ({
                             </span>
                         </span>
                     )}
+                    {collapsable && (
+                        <span className="link align-baseline text-left mr0-5">
+                            {expanded ? c('Action').t`Hide` : c('Action').t`Show`}
+                        </span>
+                    )}
                 </TagButton>
-                {collapsable && (
-                    <InlineLinkButton title={titleButton} aria-label={titleButton} onClick={handleToggleExpand}>
-                        {expanded ? c('Action').t`Hide` : c('Action').t`Show`}
-                    </InlineLinkButton>
-                )}
                 {showDownloadAll && attachmentsCount > 0 && (
                     <div>
                         <button
