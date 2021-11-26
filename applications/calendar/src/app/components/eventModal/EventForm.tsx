@@ -137,7 +137,7 @@ const EventForm = ({
     );
 
     const frequencyRow = (
-        <IconRow icon="arrows-rotate" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
+        <IconRow icon="arrows-rotate" title={c('Label').t`Frequency`} id={FREQUENCY_INPUT_ID}>
             <FrequencyInput
                 className={classnames([isCustomFrequencySet && 'mb0-5', 'w100'])}
                 id={FREQUENCY_INPUT_ID}
@@ -167,7 +167,7 @@ const EventForm = ({
     );
 
     const locationRow = (
-        <IconRow icon="map-marker" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
+        <IconRow icon="map-marker" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
             <Input
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
@@ -200,7 +200,7 @@ const EventForm = ({
     );
 
     const notificationsRow = (
-        <IconRow id={NOTIFICATION_INPUT_ID} icon="bell" title={c('Label').t`Event notifications`}>
+        <IconRow id={NOTIFICATION_INPUT_ID} icon="bell" title={c('Label').t`Notifications`}>
             {isAllDay ? (
                 <Notifications
                     hasType={emailNotificationsEnabled}
@@ -274,7 +274,7 @@ const EventForm = ({
     const calendarRow = (
         <IconRow
             icon={getCalendarIcon()}
-            title={c('Label').t`Your calendars`}
+            title={c('Label').t`Calendar`}
             id={CALENDAR_INPUT_ID}
             className="flex-item-fluid relative"
         >
