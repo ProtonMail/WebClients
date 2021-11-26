@@ -2,17 +2,20 @@ import { c } from 'ttag';
 import { useEffect, useRef, useState } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import {
-    useLoading,
-    InputFieldTwo,
-    PasswordInputTwo,
     Button,
-    useFormErrors,
-    ChallengeRef,
     captureChallengeMessage,
     Challenge,
     ChallengeError,
+    ChallengeRef,
     ChallengeResult,
+    Checkbox,
+    Info,
+    InputFieldTwo,
+    Label,
     LearnMore,
+    PasswordInputTwo,
+    useFormErrors,
+    useLoading,
 } from '@proton/components';
 import { Link } from 'react-router-dom';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -20,7 +23,12 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import Loader from '../signup/Loader';
 
 interface Props {
-    onSubmit: (username: string, password: string, payload: ChallengeResult) => Promise<void>;
+    onSubmit: (data: {
+        username: string;
+        password: string;
+        persistent: boolean;
+        payload: ChallengeResult;
+    }) => Promise<void>;
     defaultUsername?: string;
 }
 
@@ -28,6 +36,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
+    const [persistent, setPersistent] = useState(true);
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
@@ -52,6 +61,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
     const signupLink = <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>;
     const learnMore = (
         <LearnMore
+            className="color-inherit"
             key="learn-more"
             url="https://protonmail.com/support/knowledge-base/how-to-access-protonmail-in-private-incognito-mode/"
         />
@@ -74,7 +84,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                     }
                     const run = async () => {
                         const payload = await challengeRefLogin.current?.getChallenge();
-                        return onSubmit(username, password, payload);
+                        return onSubmit({ username, password, persistent, payload });
                     };
                     withLoading(run()).catch(noop);
                 }}
@@ -120,9 +130,28 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                     onValue={setPassword}
                     rootClassName="mt0-5"
                 />
-                <div className="mt1 color-weak">
-                    {c('Info').jt`Not your computer? Use a Private Browsing window to sign in. ${learnMore}`}
+
+                <div className="flex flex-row flex-align-items-start">
+                    <Checkbox
+                        id="staySignedIn"
+                        className="mt0-5"
+                        checked={persistent}
+                        onChange={() => setPersistent(!persistent)}
+                    />
+                    <div className="flex-item-fluid">
+                        <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
+                            <span className="pr0-5">{c('Label').t`Keep me signed in`}</span>
+                            <span className="flex">
+                                <Info title={c('Info').t`You'll stay signed in even after you close the browser.`} />
+                            </span>
+                        </Label>
+                        <div className="color-weak">
+                            {c('Info')
+                                .jt`Not your device? Use a private browsing window to sign in and close it when done. ${learnMore}`}
+                        </div>
+                    </div>
                 </div>
+
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                     {
                         // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"

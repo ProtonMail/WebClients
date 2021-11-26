@@ -30,6 +30,7 @@ interface MnemonicData {
 
 export interface ResetCacheResult {
     username: string;
+    persistent: boolean;
     Methods: RecoveryMethod[];
     method?: RecoveryMethod;
     value?: string;

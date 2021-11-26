@@ -115,6 +115,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                 ? undefined
                 : getInitialState(authentication.getUID(), authentication.getLocalID());
         const history = createHistory({ basename: getBasename(state?.localID) });
+
         return {
             ...state,
             history,
@@ -129,10 +130,13 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             User,
             Addresses,
             LocalID: newLocalID,
+            persistent,
             path,
         }: OnLoginCallbackArguments) => {
             authentication.setUID(newUID);
             authentication.setPassword(keyPassword);
+            authentication.setPersistent(persistent);
+
             if (newLocalID !== undefined) {
                 authentication.setLocalID(newLocalID);
             }
@@ -179,6 +183,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
     const handleFinalizeLogout = useCallback(() => {
         authentication.setUID(undefined);
         authentication.setPassword(undefined);
+        authentication.setPersistent(undefined);
 
         const oldCache = cacheRef.current;
         if (oldCache) {
