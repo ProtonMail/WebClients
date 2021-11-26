@@ -13,6 +13,39 @@ interface Tracker {
     urls: string[];
 }
 
+const getTrackers = (message: MessageState) => {
+    const trackersImages = message.messageImages?.images.filter((image) => {
+        return image.tracker;
+    });
+
+    const trackers: Tracker[] = [];
+    trackersImages?.forEach((trackerImage) => {
+        const elExists = trackers.findIndex((tracker) => tracker.name === trackerImage.tracker);
+
+        let url = '';
+        if ('cloc' in trackerImage) {
+            url = trackerImage.cloc;
+        } else if ('originalURL' in trackerImage) {
+            url = trackerImage.originalURL || '';
+        }
+
+        if (elExists < 0) {
+            trackers.push({ name: trackerImage.tracker || '', urls: [url] });
+        } else {
+            const alreadyContainsURL = trackers[elExists].urls.includes(url);
+            if (!alreadyContainsURL) {
+                trackers[elExists] = { ...trackers[elExists], urls: [...trackers[elExists].urls, url] };
+            }
+        }
+    });
+
+    const numberOfTrackers = trackers.reduce((acc, tracker) => {
+        return acc + tracker.urls.length;
+    }, 0);
+
+    return { trackers, numberOfTrackers };
+};
+
 interface Props {
     message: MessageState;
     isDetails?: boolean;
@@ -27,10 +60,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
     const hasProtection = (mailSettings?.ImageProxy ? mailSettings.ImageProxy : 0) > IMAGE_PROXY_FLAGS.NONE;
     const hasShowImage = hasBit(mailSettings?.ShowImages ? mailSettings.ShowImages : 0, SHOW_IMAGES.REMOTE);
 
-    const trackersImages = message.messageImages?.images.filter((image) => {
-        return image.tracker;
-    });
-    const numberOfTrackers = trackersImages?.length || 0;
+    const { trackers, numberOfTrackers } = getTrackers(message);
 
     /*
      * If email protection is OFF and we do not load the image automatically, the user is aware about the need of protection.
@@ -66,28 +96,6 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
         setTitle(title);
         setModalText(modalText);
     }, [numberOfTrackers, needsMoreProtection, hasProtection, isDetails]);
-
-    const getTrackers = () => {
-        const trackers: Tracker[] = [];
-        trackersImages?.forEach((trackerImage) => {
-            const elExists = trackers.findIndex((tracker) => tracker.name === trackerImage.tracker);
-
-            let url = '';
-            if ('cloc' in trackerImage) {
-                url = trackerImage.cloc;
-            } else if ('originalURL' in trackerImage) {
-                url = trackerImage.originalURL || '';
-            }
-
-            if (elExists < 0) {
-                trackers.push({ name: trackerImage.tracker || '', urls: [url] });
-            } else {
-                trackers[elExists] = { ...trackers[elExists], urls: [...trackers[elExists].urls, url] };
-            }
-        });
-
-        return trackers;
-    };
 
     const getHeaderContent = (tracker: Tracker) => {
         return (
@@ -133,8 +141,6 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
                 </ConfirmModal>
             );
         } else {
-            const trackers = getTrackers();
-
             createModal(
                 <ConfirmModal title={title} confirm={c('Action').t`Got it`} cancel={null} small={false}>
                     {modalText}
