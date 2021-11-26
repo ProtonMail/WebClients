@@ -265,7 +265,7 @@ describe('EmailReminderWidget', () => {
             expect(screen.getByText(/DateHeader/)).toBeInTheDocument();
 
             expect(screen.getByText(/summary/)).toBeInTheDocument();
-            expect(screen.getByText(/location/)).toBeInTheDocument();
+            expect(screen.getByText(/^location/)).toBeInTheDocument();
             expect(screen.getByText(/organizer/)).toBeInTheDocument();
             expect(screen.getByText(/EventReminderText/)).toBeInTheDocument();
         });

@@ -67,7 +67,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
     const endDateTime = useMemo(() => getDateTime(end), [end]);
 
     return (
-        <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Time of the event`}>
+        <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div className={classnames([isAllDay && 'w50 on-mobile-w100'])}>
                 <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
