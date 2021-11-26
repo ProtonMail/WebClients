@@ -76,8 +76,11 @@ export const getDateOrDateTimeProperty = (property: VcalDateOrDateTimeProperty, 
 };
 
 export const propertyToLocalDate = (property: VcalDateOrDateTimeProperty) => {
-    if (getIsPropertyAllDay(property) || property.value.isUTC || !property.parameters?.tzid) {
+    if (getIsPropertyAllDay(property)) {
         return toLocalDate(property.value);
+    }
+    if (property.value.isUTC || !property.parameters?.tzid) {
+        return toUTCDate(property.value);
     }
     // For dates with a timezone, convert the relative date time to UTC time
     return toUTCDate(convertZonedDateTimeToUTC(property.value, property.parameters.tzid));
