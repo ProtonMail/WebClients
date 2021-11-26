@@ -1,19 +1,19 @@
 .ellipsis-loader {
 	display: inline-block;
-	inline-size: 1.4em;
+	inline-size: 1.75em;
+	font-family: $font-family-monospace;
 	vertical-align: baseline;
 	text-align: start;
 
 	&::before {
-		content: ' ';
-		font-family: monospace;
-		animation: anime-ellipsis-loading linear 1s infinite;
+		content: '\00a0';
+		animation: anime-ellipsis-loading 1s steps(1, start) infinite;
 	}
 }
 
 @keyframes anime-ellipsis-loading {
 	0% {
-		content: ' ';
+		content: '\00a0';
 	}
 	25% {
 		content: '.';
