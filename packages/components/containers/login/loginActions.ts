@@ -50,7 +50,7 @@ const finalizeLogin = async ({
     user?: tsUser;
     addresses?: tsAddress[];
 }): Promise<AuthActionResponse> => {
-    const { authResult, authVersion, api, authApi } = cache;
+    const { authResult, authVersion, api, authApi, persistent } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
@@ -71,7 +71,7 @@ const finalizeLogin = async ({
         };
     }
 
-    await persistSession({ ...authResult, User, keyPassword, api });
+    await persistSession({ ...authResult, User, keyPassword, api, persistent });
     return {
         to: AuthStep.DONE,
         session: {
@@ -79,6 +79,7 @@ const finalizeLogin = async ({
             User,
             Addresses: maybeAddresess,
             keyPassword,
+            persistent,
         },
     };
 };
@@ -344,6 +345,7 @@ export const handleTotp = async ({
 export const handleLogin = async ({
     username,
     password,
+    persistent,
     api,
     ignoreUnlock,
     hasGenerateKeys,
@@ -352,6 +354,7 @@ export const handleLogin = async ({
 }: {
     username: string;
     password: string;
+    persistent: boolean;
     api: Api;
     ignoreUnlock: boolean;
     hasGenerateKeys: boolean;
@@ -375,6 +378,7 @@ export const handleLogin = async ({
         authApi,
         ...getAuthTypes(authResult),
         username,
+        persistent,
         loginPassword: password,
         ignoreUnlock,
         hasGenerateKeys,

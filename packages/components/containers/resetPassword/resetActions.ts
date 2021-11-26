@@ -35,7 +35,7 @@ export const handleNewPassword = async ({
     api: Api;
     keyMigrationFeatureValue: number;
 }): Promise<ResetActionResponse> => {
-    const { username, token, resetResponse } = cache;
+    const { username, token, resetResponse, persistent } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
@@ -70,12 +70,13 @@ export const handleNewPassword = async ({
     const User = await api<{ User: tsUser }>(
         withAuthHeaders(authResponse.UID, authResponse.AccessToken, getUser())
     ).then(({ User }) => User);
-    await persistSession({ ...authResponse, User, keyPassword: passphrase, api });
+    await persistSession({ ...authResponse, persistent, User, keyPassword: passphrase, api });
 
     return {
         to: STEPS.DONE,
         session: {
             ...authResponse,
+            persistent,
             User,
             keyPassword: passphrase,
             flow: 'reset',
@@ -93,6 +94,7 @@ export const handleNewPasswordMnemonic = async ({
     if (!cache.mnemonicData) {
         throw new Error('Missing data');
     }
+    const { persistent } = cache;
     const { authApi, decryptedUserKeys, authResponse } = cache.mnemonicData;
     const keySalt = generateKeySalt();
     const keyPassword = await computeKeyPassword(password, keySalt);
@@ -115,12 +117,13 @@ export const handleNewPasswordMnemonic = async ({
     });
 
     const User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
-    await persistSession({ ...authResponse, User, keyPassword, api: authApi });
+    await persistSession({ ...authResponse, persistent, User, keyPassword, api: authApi });
 
     return {
         to: STEPS.DONE,
         session: {
             ...authResponse,
+            persistent,
             User,
             keyPassword,
             flow: 'reset',
@@ -258,9 +261,11 @@ export const handleValidateResetToken = async ({
 
 export const handleRequestRecoveryMethods = async ({
     username,
+    persistent,
     api,
 }: {
     username: string;
+    persistent: boolean;
     api: Api;
 }): Promise<ResetActionResponse> => {
     try {
@@ -272,6 +277,7 @@ export const handleRequestRecoveryMethods = async ({
             return {
                 cache: {
                     username,
+                    persistent,
                     value: username,
                     method: 'email',
                     Methods,
@@ -290,6 +296,7 @@ export const handleRequestRecoveryMethods = async ({
         return {
             cache: {
                 username,
+                persistent,
                 Methods,
             },
             to: STEPS.REQUEST_RESET_TOKEN,
