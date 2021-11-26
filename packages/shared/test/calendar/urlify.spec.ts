@@ -1,4 +1,4 @@
-import urlify from './urlify';
+import urlify from '../../lib/calendar/urlify';
 
 describe('urlify', () => {
     it('urlifies', () => {
