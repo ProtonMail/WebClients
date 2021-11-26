@@ -133,11 +133,7 @@ const AttachmentList = ({
 
     return (
         <div
-            className={classnames([
-                'flex flex-column pl1-25 pr1-5 relative w100 flex-nowrap',
-                className,
-                expanded && 'border-top',
-            ])}
+            className={classnames(['flex flex-column relative w100 flex-nowrap', className, expanded && 'border-top'])}
         >
             <AttachmentPreview
                 ref={previewRef}
