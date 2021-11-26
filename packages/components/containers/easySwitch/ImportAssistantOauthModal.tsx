@@ -386,7 +386,11 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                     m.Destination.startsWith(CALENDAR_TO_BE_CREATED_PREFIX)
                 ) || [];
 
-            if (payloads[ImportType.CALENDAR] && calendarsToBeCreated.length) {
+            if (
+                selectedImportTypes.includes(ImportType.CALENDAR) &&
+                payloads[ImportType.CALENDAR] &&
+                calendarsToBeCreated.length
+            ) {
                 setIsLoadingCreateCalendars(true);
                 try {
                     createdCalendarMapping = await createCalendars(calendarsToBeCreated, !calendars.length);
