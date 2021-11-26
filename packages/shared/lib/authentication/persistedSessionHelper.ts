@@ -25,13 +25,19 @@ export type ResumedSessionResult = {
     LocalID: number;
     keyPassword?: string;
     User: tsUser;
+    persistent: boolean;
 };
 export const resumeSession = async (api: Api, localID: number, User?: tsUser): Promise<ResumedSessionResult> => {
     const persistedSession = getPersistedSession(localID);
     if (!persistedSession) {
         throw new InvalidPersistentSessionError('Missing persisted session or UID');
     }
-    const { UID: persistedUID, UserID: persistedUserID, blob: persistedSessionBlobString } = persistedSession;
+    const {
+        UID: persistedUID,
+        UserID: persistedUserID,
+        blob: persistedSessionBlobString,
+        persistent,
+    } = persistedSession;
 
     // User with password
     if (persistedSessionBlobString) {
@@ -46,7 +52,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
             if (persistedUserID !== persistedUser.ID) {
                 throw InactiveSessionError();
             }
-            return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser };
+            return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser, persistent };
         } catch (e: any) {
             if (getIs401Error(e)) {
                 removePersistedSession(localID, persistedUID);
@@ -66,7 +72,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
         if (persistedUserID !== User.ID) {
             throw InactiveSessionError();
         }
-        return { UID: persistedUID, LocalID: localID, User };
+        return { UID: persistedUID, LocalID: localID, User, persistent };
     } catch (e: any) {
         if (getIs401Error(e)) {
             removePersistedSession(localID, persistedUID);
@@ -82,6 +88,7 @@ interface PersistSessionWithPasswordArgs {
     User: tsUser;
     UID: string;
     LocalID: number;
+    persistent: boolean;
 }
 
 export const persistSessionWithPassword = async ({
@@ -90,6 +97,7 @@ export const persistSessionWithPassword = async ({
     User,
     UID,
     LocalID,
+    persistent,
 }: PersistSessionWithPasswordArgs) => {
     const rawKey = getRandomValues(new Uint8Array(32));
     const key = await getKey(rawKey);
@@ -100,6 +108,7 @@ export const persistSessionWithPassword = async ({
         UserID: User.ID,
         keyPassword,
         isSubUser: !!User.OrganizationPrivateKey,
+        persistent,
     });
 };
 
@@ -107,6 +116,7 @@ interface PersistLoginArgs {
     api: Api;
     User: tsUser;
     keyPassword?: string;
+    persistent: boolean;
     AccessToken: string;
     RefreshToken: string;
     UID: string;
@@ -121,18 +131,19 @@ export const persistSession = async ({
     LocalID,
     AccessToken,
     RefreshToken,
+    persistent,
 }: PersistLoginArgs) => {
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
 
     if (isSSOMode) {
         if (keyPassword) {
-            await persistSessionWithPassword({ api: authApi, UID, User, LocalID, keyPassword });
+            await persistSessionWithPassword({ api: authApi, UID, User, LocalID, keyPassword, persistent });
         } else {
-            setPersistedSession(LocalID, { UID, UserID: User.ID });
+            setPersistedSession(LocalID, { UID, UserID: User.ID, persistent });
         }
     }
 
-    await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24) }));
+    await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
 };
 
 export const getActiveSessionByUserID = (UserID: string, isSubUser: boolean) => {

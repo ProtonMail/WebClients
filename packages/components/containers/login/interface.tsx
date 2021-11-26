@@ -21,6 +21,7 @@ export interface AuthCacheResult {
     hasU2F: boolean;
     hasUnlock: boolean;
     username: string;
+    persistent: boolean;
     loginPassword: string;
     hasGenerateKeys: boolean;
     keyMigrationFeatureValue: number;
@@ -38,7 +39,9 @@ export interface AuthSession {
     LocalID?: number;
     path?: string;
     flow?: AuthFlows;
+    persistent: boolean;
 }
+
 export type AuthActionResponse =
     | {
           to: AuthStep.DONE;

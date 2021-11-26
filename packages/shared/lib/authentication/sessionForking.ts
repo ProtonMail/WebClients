@@ -23,6 +23,7 @@ import { getKey } from './cryptoHelper';
 interface ForkState {
     url: string;
 }
+
 export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TYPE) => {
     const state = encodeBase64URL(uint8ArrayToString(getRandomValues(new Uint8Array(32))));
 
@@ -48,9 +49,11 @@ export interface ProduceForkParameters {
     app: APP_NAMES;
     type?: FORK_TYPE;
 }
+
 export interface ProduceForkParametersFull extends ProduceForkParameters {
     localID: number;
 }
+
 export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> => {
     const searchParams = new URLSearchParams(window.location.search);
     const app = searchParams.get('app') || '';
@@ -72,9 +75,11 @@ interface ProduceForkArguments {
     keyPassword?: string;
     app: APP_NAMES;
     state: string;
+    persistent: boolean;
     type?: FORK_TYPE;
 }
-export const produceFork = async ({ api, UID, keyPassword, state, app, type }: ProduceForkArguments) => {
+
+export const produceFork = async ({ api, UID, keyPassword, state, app, type, persistent }: ProduceForkArguments) => {
     const rawKey = getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
     const payload = keyPassword ? await getForkEncryptedBlob(await getKey(rawKey), { keyPassword }) : undefined;
@@ -94,6 +99,9 @@ export const produceFork = async ({ api, UID, keyPassword, state, app, type }: P
     toConsumeParams.append('selector', Selector);
     toConsumeParams.append('state', state);
     toConsumeParams.append('sk', base64StringKey);
+    if (persistent) {
+        toConsumeParams.append('p', '1');
+    }
     if (type !== undefined) {
         toConsumeParams.append('t', type);
     }
@@ -121,12 +129,14 @@ export const getConsumeForkParameters = () => {
     const state = hashParams.get('state') || '';
     const base64StringKey = hashParams.get('sk') || '';
     const type = hashParams.get('t') || '';
+    const persistent = hashParams.get('p') || '';
 
     return {
         state: state.slice(0, 100),
         selector,
         key: base64StringKey.length ? getValidatedRawKey(base64StringKey) : undefined,
         type: getValidatedForkType(type),
+        persistent: persistent === '1',
     };
 };
 
@@ -140,8 +150,10 @@ interface ConsumeForkArguments {
     state: string;
     key: Uint8Array;
     type?: FORK_TYPE;
+    persistent: boolean;
 }
-export const consumeFork = async ({ selector, api, state, key, type }: ConsumeForkArguments) => {
+
+export const consumeFork = async ({ selector, api, state, key, type, persistent }: ConsumeForkArguments) => {
     const stateData = getForkStateData(sessionStorage.getItem(`f${state}`));
     if (!stateData) {
         throw new InvalidForkConsumeError(`Missing state ${state}`);
@@ -194,6 +206,7 @@ export const consumeFork = async ({ selector, api, state, key, type }: ConsumeFo
         UID,
         LocalID,
         keyPassword,
+        persistent,
         AccessToken: newAccessToken,
         RefreshToken: newRefreshToken,
     };
