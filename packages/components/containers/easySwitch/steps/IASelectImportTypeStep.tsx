@@ -588,7 +588,7 @@ const IASelectImportTypeStep = ({
     }, [hasErrors]);
 
     useEffect(() => {
-        if (!oauthProps) {
+        if (!oauthProps || modalModel.isImportError) {
             return;
         }
 
@@ -633,7 +633,7 @@ const IASelectImportTypeStep = ({
         initialModel.current = newModel;
 
         updateModalModel(newModel);
-    }, [oauthProps]);
+    }, [oauthProps, modalModel.isImportError]);
 
     return (
         <>

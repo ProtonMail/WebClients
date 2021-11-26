@@ -474,6 +474,11 @@ const ImportAssistantOauthModal = ({
                     await call();
                 }
 
+                setModalModel({
+                    ...modalModel,
+                    isImportError: true,
+                });
+
                 setIsLoadingStartImportTask(false);
                 errorHandler(error);
             }
