@@ -221,8 +221,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
 
     // Hide sidebar if the user is not on a paid plan, but allow him to see its scheduled messages if he had some before going to free plan
-    const showScheduled =
-        scheduledFeature?.Value && (user.hasPaidMail || (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0);
+    const showScheduled = scheduledFeature?.Value && (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
 
     const getCommonProps = (labelID: string) => ({
         currentLabelID,
@@ -255,16 +254,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="drafts"
                     onFocus={setFocusedItem}
                 />
-                {showScheduled ? (
-                    <SidebarItem
-                        {...getCommonProps(MAILBOX_LABEL_IDS.SCHEDULED)}
-                        icon="clock"
-                        text={c('Link').t`Scheduled`}
-                        isFolder
-                        id="scheduled"
-                        onFocus={setFocusedItem}
-                    />
-                ) : null}
                 <SidebarItem
                     {...getCommonProps(
                         ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT
@@ -276,6 +265,16 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="sent"
                     onFocus={setFocusedItem}
                 />
+                {showScheduled ? (
+                    <SidebarItem
+                        {...getCommonProps(MAILBOX_LABEL_IDS.SCHEDULED)}
+                        icon="clock"
+                        text={c('Link').t`Scheduled`}
+                        isFolder
+                        id="scheduled"
+                        onFocus={setFocusedItem}
+                    />
+                ) : null}
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.STARRED)}
                     icon="star"

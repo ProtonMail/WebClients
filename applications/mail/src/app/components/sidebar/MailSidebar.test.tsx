@@ -44,9 +44,7 @@ const setupTest = (labels: any[] = [], messageCounts: any[] = [], conversationCo
     addToCache('ConversationCounts', conversationCounts);
 };
 
-const setupScheduled = (hasPaidMail: boolean) => {
-    addToCache('User', { Email: 'Email', DisplayName: 'DisplayName', Name: 'Name', hasPaidMail });
-
+const setupScheduled = () => {
     setFeatureFlags('ScheduledSend', true);
 };
 
@@ -195,9 +193,9 @@ describe('MailSidebar', () => {
         expect(queryByTestId(`Scheduled`)).toBeNull();
     });
 
-    it('should show scheduled sidebar item for paying user', async () => {
+    it('should show scheduled sidebar item if scheduled messages', async () => {
         setupTest([], [], [scheduledMessages]);
-        setupScheduled(true);
+        setupScheduled();
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
@@ -210,24 +208,9 @@ describe('MailSidebar', () => {
         expect(scheduledLocationAside[1]?.innerHTML).toBe(`${scheduledMessages.Unread}`);
     });
 
-    it('should show scheduled sidebar item for free user with scheduled messages', async () => {
-        setupTest([], [], [scheduledMessages]);
-        setupScheduled(false);
-
-        const { getByTestId } = await render(<MailSidebar {...props} />, false);
-
-        const scheduledElement = getByTestId(`navigation-link:Scheduled`);
-
-        const scheduledLocationAside = scheduledElement.querySelectorAll('.navigation-counter-item');
-
-        // We have two navigation counters for scheduled messages, one to display the number of scheduled messages and one for unread scheduled messages
-        expect(scheduledLocationAside[0]?.innerHTML).toBe(`${scheduledMessages.Total}`);
-        expect(scheduledLocationAside[1]?.innerHTML).toBe(`${scheduledMessages.Unread}`);
-    });
-
-    it('should not show scheduled sidebar item for free user without scheduled messages', async () => {
+    it('should not show scheduled sidebar item without scheduled messages', async () => {
         setupTest([], [], []);
-        setupScheduled(false);
+        setupScheduled();
 
         const { queryByTestId } = await render(<MailSidebar {...props} />, false);
 
