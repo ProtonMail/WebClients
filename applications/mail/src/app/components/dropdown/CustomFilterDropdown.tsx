@@ -33,29 +33,6 @@ type FilterType = {
     conditionLabel: string;
 };
 
-const FILTER_TYPES: FilterType[] = [
-    {
-        value: ConditionType.SUBJECT,
-        label: c('CustomFilter').t`Subject`,
-        conditionLabel: c('Filter modal type').t`If the subject`,
-    },
-    {
-        value: ConditionType.SENDER,
-        label: c('CustomFilter').t`Sender`,
-        conditionLabel: c('Filter modal type').t`If the sender`,
-    },
-    {
-        value: ConditionType.RECIPIENT,
-        label: c('CustomFilter').t`Recipient`,
-        conditionLabel: c('Filter modal type').t`If the recipient`,
-    },
-    {
-        value: ConditionType.ATTACHMENTS,
-        label: c('CustomFilter').t`Attachments`,
-        conditionLabel: c('Filter modal type').t`If the attachments`,
-    },
-];
-
 interface Props {
     message: Message;
     onClose: () => void;
@@ -73,6 +50,29 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
     const { createNotification } = useNotifications();
     const [user] = useUser();
     const [filters = []] = useFilters() as [Filter[], boolean, Error];
+
+    const FILTER_TYPES: FilterType[] = [
+        {
+            value: ConditionType.SUBJECT,
+            label: c('CustomFilter').t`Subject`,
+            conditionLabel: c('Filter modal type').t`If the subject`,
+        },
+        {
+            value: ConditionType.SENDER,
+            label: c('CustomFilter').t`Sender`,
+            conditionLabel: c('Filter modal type').t`If the sender`,
+        },
+        {
+            value: ConditionType.RECIPIENT,
+            label: c('CustomFilter').t`Recipient`,
+            conditionLabel: c('Filter modal type').t`If the recipient`,
+        },
+        {
+            value: ConditionType.ATTACHMENTS,
+            label: c('CustomFilter').t`Attachments`,
+            conditionLabel: c('Filter modal type').t`If the attachments`,
+        },
+    ];
 
     const toggleFilterType = (filterType: ConditionType) => {
         setFiltersState({
