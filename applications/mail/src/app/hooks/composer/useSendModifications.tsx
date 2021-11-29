@@ -11,7 +11,6 @@ import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { MessageStateWithData, MessageEmbeddedImage } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
 import { sendModifications } from '../../logic/messages/draft/messagesDraftActions';
-import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
 
 export const useSendMoficiations = () => {
     const getMessage = useGetMessage();
@@ -49,14 +48,10 @@ export const useSendMoficiations = () => {
         dispatch(sendModifications({ ID: inputMessage.localID, attachments, images }));
 
         // Applying modifications on the model message to be sent
-        const embeddedImages = getEmbeddedImages(message);
-        embeddedImages.push(...images);
-        const modifiedMessage = {
-            ...inputMessage,
-            data: { ...inputMessage.data, Attachments: [...inputMessage.data.Attachments, ...attachments] },
-            messageImages: updateImages(message.messageImages, undefined, undefined, embeddedImages),
+        // But keeping the document from the model
+        return {
+            ...getMessage(inputMessage.localID),
+            messageDocument: inputMessage.messageDocument,
         };
-
-        return modifiedMessage;
     }, []);
 };
