@@ -120,6 +120,7 @@ export const endUndo = (state: Draft<MessagesState>, { payload: ID }: PayloadAct
     const message = getMessage(state, ID);
 
     if (message && message.data) {
+        message.loadRetry = 0;
         message.data.LabelIDs = message.data.LabelIDs.filter((value) => value !== MAILBOX_LABEL_IDS.OUTBOX);
         message.data.Flags = setFlag(MESSAGE_FLAGS.FLAG_SENT)(message.data);
     }
