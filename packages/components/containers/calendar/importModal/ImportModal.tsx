@@ -14,7 +14,7 @@ import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileEr
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, IMPORT_STEPS, ImportCalendarModel, ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
-import { ChangeEvent, DragEvent, useState } from 'react';
+import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { FormModal, onlyDragFiles, PrimaryButton } from '../../../components';
 
@@ -30,6 +30,7 @@ interface Props {
     defaultCalendar: Calendar;
     calendars: Calendar[];
     onClose?: () => void;
+    files?: File[];
 }
 
 const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
@@ -43,12 +44,38 @@ const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
     loading: false,
 });
 
-const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
+const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
     const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
+
+    const handleFiles = (files: File[]) => {
+        const [file] = files;
+        const filename = file.name;
+        const [, extension] = splitExtension(filename);
+        const fileAttached = extension.toLowerCase() === 'ics' ? file : null;
+        if (!fileAttached) {
+            throw new ImportFileError(IMPORT_ERROR_TYPE.NO_ICS_FILE, filename);
+        }
+        if (fileAttached.size > MAX_IMPORT_FILE_SIZE) {
+            throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_TOO_BIG, filename);
+        }
+        setModel({ ...model, step: IMPORT_STEPS.ATTACHED, fileAttached, failure: undefined });
+    };
+
+    const onAddFiles = (files: File[]) => {
+        try {
+            if (!files) {
+                throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
+            }
+
+            handleFiles(files);
+        } catch (e: any) {
+            setModel({ ...model, failure: e });
+        }
+    };
 
     const { content, ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
@@ -62,37 +89,11 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                 setModel(getInitialState(model.calendar));
             };
 
-            const handleFiles = (files: File[]) => {
-                const [file] = files;
-                const filename = file.name;
-                const [, extension] = splitExtension(filename);
-                const fileAttached = extension.toLowerCase() === 'ics' ? file : null;
-                if (!fileAttached) {
-                    throw new ImportFileError(IMPORT_ERROR_TYPE.NO_ICS_FILE, filename);
-                }
-                if (fileAttached.size > MAX_IMPORT_FILE_SIZE) {
-                    throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_TOO_BIG, filename);
-                }
-                setModel({ ...model, step: IMPORT_STEPS.ATTACHED, fileAttached, failure: undefined });
-            };
-
             const handleHover = (hover: boolean) =>
                 onlyDragFiles((event: DragEvent) => {
                     setIsDropzoneHovered(hover);
                     event.stopPropagation();
                 });
-
-            const onAddFiles = (files: File[]) => {
-                try {
-                    if (!files) {
-                        throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
-                    }
-
-                    handleFiles(files);
-                } catch (e: any) {
-                    setModel({ ...model, failure: e });
-                }
-            };
 
             const handleDrop = onlyDragFiles((event: DragEvent) => {
                 event.preventDefault();
@@ -255,6 +256,12 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             onSubmit: rest.onClose,
         };
     })();
+
+    useEffect(() => {
+        if (files?.length) {
+            onAddFiles(files);
+        }
+    }, []);
 
     return (
         <FormModal title={c('Title').t`Import events`} {...modalProps} {...rest}>
