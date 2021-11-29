@@ -2,7 +2,8 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { Route, Redirect, Switch, useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
+import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 
 import {
     useActiveBreakpoint,
@@ -11,6 +12,7 @@ import {
     PrivateAppContainer,
     Logo,
     useUser,
+    useAddresses,
     useFeatures,
     FeatureCode,
 } from '@proton/components';
@@ -56,6 +58,7 @@ const getDefaultRedirect = (user: UserModel) => {
 
 const MainContainer = () => {
     const [user] = useUser();
+    const [addresses] = useAddresses();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
@@ -74,9 +77,12 @@ const MainContainer = () => {
 
     const app = getAppFromPathnameSafe(location.pathname);
 
-    
     if (!app) {
         return <Redirect to={`/${getSlugFromApp(DEFAULT_APP)}${getDefaultRedirect(user)}`} />;
+    }
+
+    if (REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(app) && getHasOnlyExternalAddresses(addresses || [])) {
+        return <Redirect to={`/setup-internal-address?app=${app}`} />;
     }
 
     const appSlug = getSlugFromApp(app);

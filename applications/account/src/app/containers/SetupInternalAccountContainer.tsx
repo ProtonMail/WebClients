@@ -7,22 +7,22 @@ import {
     LoaderPage,
     StandardLoadErrorPage,
     useApi,
-    useAppLink,
     useAuthentication,
     useErrorHandler,
+    useGetAddresses,
     useModals,
     useTheme,
 } from '@proton/components';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
 import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
-import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getAppHrefBundle, getAppName } from '@proton/shared/lib/apps/helper';
 import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToAppName } from '../public/helper';
 import GenerateInternalAddressStep, { InternalAddressGeneration } from '../login/GenerateInternalAddressStep';
 import Main from '../public/Main';
@@ -53,15 +53,16 @@ const SetupInternalAccountContainer = () => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
-    const goToApp = useAppLink();
     const toAppRef = useRef<APP_NAMES | null>(null);
     const authentication = useAuthentication();
+    const getAddresses = useGetAddresses();
     const [, setTheme] = useTheme();
 
     const generateInternalAddressRef = useRef<InternalAddressGeneration | undefined>(undefined);
 
     const handleBack = () => {
-        goToApp('/');
+        // Always forces a refresh for the theme
+        document.location.assign(getAppHrefBundle(`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`, APPS.PROTONACCOUNT));
     };
 
     useEffect(() => {
@@ -80,7 +81,7 @@ const SetupInternalAccountContainer = () => {
             }
 
             const [addresses, domains] = await Promise.all([
-                getAllAddresses(silentApi),
+                getAddresses(),
                 silentApi<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains),
             ]);
 
