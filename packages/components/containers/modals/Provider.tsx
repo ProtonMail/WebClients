@@ -14,7 +14,7 @@ const ModalsProvider = ({ children }: Props) => {
     const [modals, setModals] = useState<Modal[]>([]);
 
     const manager = useMemo(() => {
-        return createManager(modals, setModals);
+        return { ...createManager(modals, setModals), modals };
     }, [modals, setModals]);
 
     return (
