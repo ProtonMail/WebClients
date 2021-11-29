@@ -333,12 +333,24 @@ export const reformatVcalEnclosing = (vcal = '') => {
 };
 
 /**
+ * Naively extract lines in a vcalendar string
+ */
+const getNaiveLines = (vcal = '', separator = '\r\n') => {
+    const separatedLines = vcal.split(separator);
+    if (separator === '\n') {
+        return separatedLines;
+    }
+    // split possible remaining line breaks
+    return separatedLines.flatMap((line) => line.split('\n'));
+};
+
+/**
  * Naively try to reformat badly formatted line breaks in a vcalendar string
  */
 const reformatLineBreaks = (vcal = '') => {
     // try to guess the line separator of the ics (some providers use '\n' instead of the RFC-compliant '\r\n')
     const separator = vcal.includes('\r\n') ? '\r\n' : '\n';
-    const lines = vcal.split(separator);
+    const lines = getNaiveLines(vcal, separator);
     return lines.reduce((acc, line) => {
         // extract the vcal field in this line through a regex
         const fieldMatch = line.match(/^(\w+-?\w*)(?::|;)/);

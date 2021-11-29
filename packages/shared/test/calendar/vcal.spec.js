@@ -359,6 +359,69 @@ END:VEVENT`);
         });
     });
 
+    it('should parse vevent with mixed bad line breaks', () => {
+        const result = parseWithErrors(`BEGIN:VCALENDAR
+METHOD:REQUEST\r\nPRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VEVENT
+DTSTAMP:20190719T130854Z
+UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTART;TZID=America/New_York:20190719T120000
+DTEND;TZID=Europe/Zurich:20190719T130000
+CATEGORIES:ANNIVERSARY,PERSONAL,SPECIAL OCCASION
+SUMMARY:Our Blissful Anniversary
+
+---
+
+Wonderful!
+LOCATION:A
+
+ secret
+
+
+...
+place
+END:VEVENT
+END:VCALENDAR`);
+
+        expect(result).toEqual({
+            component: 'vcalendar',
+            method: { value: 'REQUEST' },
+            version: { value: '2.0' },
+            prodid: { value: 'Microsoft Exchange Server 2010' },
+            components: [
+                {
+                    component: 'vevent',
+                    uid: {
+                        value: '7E018059-2165-4170-B32F-6936E88E61E5',
+                    },
+                    dtstamp: {
+                        value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 8, seconds: 54, isUTC: true },
+                    },
+                    dtstart: {
+                        value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'America/New_York' },
+                    },
+                    dtend: {
+                        value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Zurich' },
+                    },
+                    categories: [
+                        {
+                            value: ['ANNIVERSARY', 'PERSONAL', 'SPECIAL OCCASION'],
+                        },
+                    ],
+                    summary: {
+                        value: 'Our Blissful Anniversary---Wonderful!',
+                    },
+                    location: {
+                        value: 'A secret...place',
+                    },
+                },
+            ],
+        });
+    });
+
     it('should parse valarm', () => {
         const result = parse(valarm);
 
