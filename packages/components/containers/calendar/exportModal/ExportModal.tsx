@@ -1,4 +1,5 @@
 import { createExportIcs } from '@proton/shared/lib/calendar/export/createExportIcs';
+import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalConfig';
 import { getUniqueVtimezones } from '@proton/shared/lib/calendar/vtimezoneHelper';
 import {
     Calendar,
@@ -12,7 +13,6 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import { useState } from 'react';
 import { c } from 'ttag';
 
-import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalHelper';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { format } from 'date-fns';
 import { getAppHref, getClientID } from '@proton/shared/lib/apps/helper';

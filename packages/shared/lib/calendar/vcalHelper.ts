@@ -1,6 +1,4 @@
-import { APPS_CONFIGURATION } from '../constants';
 import { normalize } from '../helpers/string';
-import { ProtonConfig } from '../interfaces';
 import {
     VcalAttendeeProperty,
     VcalAttendeePropertyWithCn,
@@ -163,16 +161,6 @@ export const getAttendeeHasPartStat = (
 
 export const getAttendeeHasRole = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithRole => {
     return !!attendee.parameters?.role;
-};
-
-export const getProdIdFromNameAndVersion = (id: string, version: string) =>
-    `-//Proton Technologies//${id} ${version}//EN`;
-
-export const getProdId = (config: ProtonConfig) => {
-    const { APP_NAME, APP_VERSION: appVersion } = config;
-    const appName = APPS_CONFIGURATION[APP_NAME].name;
-
-    return getProdIdFromNameAndVersion(appName, appVersion);
 };
 
 export const getIcalMethod = (method?: VcalStringProperty) => {
