@@ -76,6 +76,8 @@ export const useSendHandler = ({
             inputMessage = verificationResults.cleanMessage;
 
             alreadySaved = !!inputMessage.data.ID && !pendingAutoSave.isPending && !verificationResults.hasChanged;
+
+            // Don't abort before pendingAutoSave is checked
             autoSave.abort?.();
 
             // sendMessage expect a saved and up to date message
@@ -83,11 +85,14 @@ export const useSendHandler = ({
             if (!alreadySaved) {
                 await saveNow(inputMessage);
                 await call();
-
-                if (!inputMessage.data.ID) {
-                    inputMessage.data = (getMessage(inputMessage.localID) as MessageStateWithData).data;
-                }
             }
+
+            // Document is frequently reset in the state, keeping the one from the model
+            // Rest is more up to date in the state, several changes could have happen since capturing the model
+            inputMessage = {
+                ...(getMessage(inputMessage.localID) as MessageStateWithData),
+                messageDocument: modelMessage.messageDocument,
+            };
         } catch {
             hideNotification(notifManager.ID);
             onCompose({ existingDraft: modelMessage, fromUndo: true });
