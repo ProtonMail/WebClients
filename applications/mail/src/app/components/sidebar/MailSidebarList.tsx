@@ -254,6 +254,16 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="drafts"
                     onFocus={setFocusedItem}
                 />
+                {showScheduled ? (
+                    <SidebarItem
+                        {...getCommonProps(MAILBOX_LABEL_IDS.SCHEDULED)}
+                        icon="clock"
+                        text={c('Link').t`Scheduled`}
+                        isFolder
+                        id="scheduled"
+                        onFocus={setFocusedItem}
+                    />
+                ) : null}
                 <SidebarItem
                     {...getCommonProps(
                         ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT
@@ -265,16 +275,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="sent"
                     onFocus={setFocusedItem}
                 />
-                {showScheduled ? (
-                    <SidebarItem
-                        {...getCommonProps(MAILBOX_LABEL_IDS.SCHEDULED)}
-                        icon="clock"
-                        text={c('Link').t`Scheduled`}
-                        isFolder
-                        id="scheduled"
-                        onFocus={setFocusedItem}
-                    />
-                ) : null}
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.STARRED)}
                     icon="star"
