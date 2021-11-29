@@ -100,7 +100,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
 
         const call = configureApi({
             ...config,
-            CLIENT_ID: getClientID(config.APP_NAME),
+            clientID: getClientID(config.APP_NAME),
             xhr,
             UID,
         });

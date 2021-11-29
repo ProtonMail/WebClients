@@ -1,5 +1,5 @@
 import { serializeData } from '@proton/shared/lib/fetch/helpers';
-import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { APP_VERSION, API_VERSION, API_URL, APP_NAME } from '../config';
@@ -25,12 +25,13 @@ export interface RequestParams {
     data: { [key: string]: Blob | string | undefined };
 }
 
-const CLIENT_ID = getClientID(APP_NAME);
+const clientID = getClientID(APP_NAME);
+const appVersionHeaders = getAppVersionHeaders(clientID, APP_VERSION);
 
-export const defaultHeaders: HTTPHeaders = {
+const defaultHeaders: HTTPHeaders = {
     'X-Requested-With': 'XMLHttpRequest',
     Accept: 'application/vnd.protonmail.v1+json',
-    'x-pm-appversion': `${CLIENT_ID}_${APP_VERSION}`,
+    ...appVersionHeaders,
     'x-pm-apiversion': API_VERSION,
 };
 
