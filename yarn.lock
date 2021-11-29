@@ -4058,6 +4058,7 @@ __metadata:
     react-sortable-hoc: ^1.9.1
     react-test-renderer: ^17.0.0
     react-virtualized: ^9.21.2
+    resize-observer: ^1.0.3
     squire-rte: "github:ProtonMail/Squire#proton-v4"
     tabbable: ^5.1.3
     tinycolor2: ^1.4.1
@@ -4181,7 +4182,7 @@ __metadata:
     babel-plugin-transform-react-remove-prop-types: ^0.4.24
     commander: ^8.1.0
     copy-webpack-plugin: ^9.0.1
-    core-js: ^3.16.1
+    core-js: ^3.19.1
     cross-env: ^7.0.2
     css-loader: ^6.2.0
     css-minimizer-webpack-plugin: ^3.0.2
@@ -4202,7 +4203,6 @@ __metadata:
     postcss-logical: ^4.0.2
     prettier: ^2.1.2
     react-refresh: ^0.10.0
-    regenerator-runtime: ^0.13.5
     resolve-url-loader: ^4.0.0
     sass: ^1.34.1
     sass-loader: ^12.1.0
@@ -4216,6 +4216,20 @@ __metadata:
     webpack-subresource-integrity: ^5.0.0
   bin:
     proton-pack: ./bin/protonPack.js
+  languageName: unknown
+  linkType: soft
+
+"@proton/polyfill@workspace:packages/polyfill":
+  version: 0.0.0-use.local
+  resolution: "@proton/polyfill@workspace:packages/polyfill"
+  dependencies:
+    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    abortcontroller-polyfill: ^1.7.3
+    core-js: ^3.19.1
+    eslint: ^7.5.0
+    regenerator-runtime: ^0.13.9
+    resize-observer: ^1.0.3
+    yetch: ^1.1.1
   languageName: unknown
   linkType: soft
 
@@ -11871,10 +11885,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.16.1":
-  version: 3.16.1
-  resolution: "core-js@npm:3.16.1"
-  checksum: 7924fa2a7f00e3a33bbe92fe42ba59fbbe7e01557a59824d000976300be3ba224cca20161f61654b3861ea80d244d6adfee6ed3ae6d6d9931210a37510fb7c9b
+"core-js@npm:^3.19.1":
+  version: 3.19.2
+  resolution: "core-js@npm:3.19.2"
+  checksum: a605f7b0448a7aa13731fd9a13525460681e15ce60ec0e1ff45e88b18b71e74f6c625959200f0f8376ec0a1eb94b0f06e3d6807a01c5a46f3871d08a2c4f1d58
   languageName: node
   linkType: hard
 
@@ -24744,6 +24758,7 @@ fsevents@^1.2.7:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@testing-library/jest-dom": ^4.0.0
@@ -24751,9 +24766,7 @@ fsevents@^1.2.7:
     "@types/jest": ^26.0.0
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
-    abortcontroller-polyfill: ^1.7.3
     babel-jest: ^27.0.0
-    core-js: ^3.16.1
     cross-env: ^7.0.3
     eslint: ^7.5.0
     jest: ^27.0.0
@@ -24762,7 +24775,6 @@ fsevents@^1.2.7:
     react-dom: ^17.0.0
     ttag: ^1.7.24
     typescript: ^4.4.3
-    yetch: ^1.1.0
   languageName: unknown
   linkType: soft
 
@@ -24775,12 +24787,12 @@ fsevents@^1.2.7:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@types/jest": ^26.0.0
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
-    abortcontroller-polyfill: ^1.7.3
     babel-jest: ^27.0.0
     cross-env: ^7.0.3
     eslint: ^7.3.1
@@ -24808,6 +24820,7 @@ fsevents@^1.2.7:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@testing-library/jest-dom": ^5.14.1
@@ -24818,7 +24831,6 @@ fsevents@^1.2.7:
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@types/react-helmet": ^6.1.1
-    abortcontroller-polyfill: ^1.7.3
     babel-jest: ^27.0.0
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
@@ -24835,7 +24847,6 @@ fsevents@^1.2.7:
     tinycolor2: ^1.4.1
     ttag: ^1.7.24
     typescript: ^4.4.3
-    yetch: ^1.1.0
   languageName: unknown
   linkType: soft
 
@@ -24848,6 +24859,7 @@ fsevents@^1.2.7:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@testing-library/jest-dom": ^5.1.1
@@ -24858,7 +24870,6 @@ fsevents@^1.2.7:
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     "@types/react-window": ^1.8.2
-    abortcontroller-polyfill: ^1.7.3
     babel-plugin-transform-class-properties: ^6.24.1
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
@@ -24878,7 +24889,6 @@ fsevents@^1.2.7:
     typescript: ^4.4.3
     web-streams-polyfill: ^3.0.3
     webpack: ^5.51.2
-    yetch: ^1.1.0
   languageName: unknown
   linkType: soft
 
@@ -24908,6 +24918,7 @@ fsevents@^1.2.7:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@reduxjs/toolkit": ^1.6.2
@@ -24923,10 +24934,8 @@ fsevents@^1.2.7:
     "@types/turndown": ^5.0.0
     "@typescript-eslint/eslint-plugin": ^4.4.1
     "@typescript-eslint/parser": ^4.4.1
-    abortcontroller-polyfill: ^1.7.3
     babel-jest: ^27.0.0
     babel-plugin-transform-require-context: ^0.1.1
-    core-js: ^3.16.1
     cross-env: ^7.0.3
     date-fns: ^2.4.1
     declassify: ^2.1.0
@@ -24952,7 +24961,6 @@ fsevents@^1.2.7:
     ttag: ^1.7.24
     turndown: ^7.1.1
     typescript: ^4.4.3
-    yetch: ^1.1.0
   languageName: unknown
   linkType: soft
 
@@ -24998,15 +25006,15 @@ fsevents@^1.2.7:
     "@proton/components": "workspace:packages/components"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/polyfill": "workspace:packages/polyfill"
     babel-jest: ^27.0.0
-    core-js: ^3.16.1
     cross-env: ^7.0.3
     eslint: ^7.3.1
     jest: ^27.0.0
     react: ^17.0.0
     react-dom: ^17.0.0
+    resize-observer: ^1.0.3
     typescript: ^4.4.3
-    yetch: ^1.1.0
   languageName: unknown
   linkType: soft
 
@@ -25018,11 +25026,11 @@ fsevents@^1.2.7:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
-    abortcontroller-polyfill: ^1.7.3
     cross-env: ^7.0.3
     eslint: ^7.5.0
     prettier: ^2.0.5
@@ -25030,7 +25038,6 @@ fsevents@^1.2.7:
     react-dom: ^17.0.0
     ttag: ^1.7.24
     typescript: ^4.4.3
-    yetch: ^1.1.0
   languageName: unknown
   linkType: soft
 
@@ -26182,10 +26189,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.3, regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.5, regenerator-runtime@npm:^0.13.7":
+"regenerator-runtime@npm:^0.13.3, regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.7":
   version: 0.13.8
   resolution: "regenerator-runtime@npm:0.13.8"
   checksum: 5f89699ab578301e3f47fe323d2a9e19ed4b7302481b37ce96843602be3a5cb1e5b66a07c1500e69d4710c1dd6fa3b3f3e56d188ef56df4c17a744d853ac36ed
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.13.9":
+  version: 0.13.9
+  resolution: "regenerator-runtime@npm:0.13.9"
+  checksum: 65ed455fe5afd799e2897baf691ca21c2772e1a969d19bb0c4695757c2d96249eb74ee3553ea34a91062b2a676beedf630b4c1551cc6299afb937be1426ec55e
   languageName: node
   linkType: hard
 
@@ -26604,6 +26618,13 @@ fsevents@^1.2.7:
     jpeg-js: ^0.1.1
     parse-png: ^1.1.1
   checksum: 6d02d35a85478edc88aabe2cc50b368b980af3b5af785e545838621f4d654afe0bc8edc0bdba31c9b599965221425ba5d663e5bfa875c9f719b17af09b3368c5
+  languageName: node
+  linkType: hard
+
+"resize-observer@npm:^1.0.3":
+  version: 1.0.4
+  resolution: "resize-observer@npm:1.0.4"
+  checksum: 43e2f45e40507279cad474f6bd2fe62e92de1fd1d67cd5285ece1fec6c1b664c4d3795b094b2be292244bf542b1b5402578670400beadc2cfedac8fb483a0976
   languageName: node
   linkType: hard
 
@@ -31611,10 +31632,10 @@ typescript@^4.4.3:
   languageName: node
   linkType: hard
 
-"yetch@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "yetch@npm:1.1.0"
-  checksum: 5e1e79eca01551a3777bd23d6c3d5f08b17c378267fa32893f6cf313dea688fefd1ed73506e6f81500501973147eccdccb3d98cbc0077a8b62371f5ea03e64fb
+"yetch@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "yetch@npm:1.1.1"
+  checksum: 6d275e9d8787cc31e3d0f73a531b8f93648efe6f78112aa2469242bd60d4d512dc4e48751cb899870c11e966e8564f5568a6f5b19e07b11eae80d71a99fcacd5
   languageName: node
   linkType: hard
 
