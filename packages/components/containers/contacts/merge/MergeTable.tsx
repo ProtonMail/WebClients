@@ -67,6 +67,7 @@ const MergeTable = ({
                             disabled={!beMergedIDs.length}
                             type="button"
                             onClick={() => onClickPreview(beMergedIDs[0], beDeletedIDs)}
+                            data-testid="merge-model:preview-contact-button"
                         >
                             {c('Action').t`Preview contact`}
                         </Button>
