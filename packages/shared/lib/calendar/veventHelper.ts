@@ -24,6 +24,7 @@ import {
     USER_SIGNED_FIELDS,
 } from './constants';
 import { parse, serialize } from './vcal';
+import { prodId } from './vcalConfig';
 import { dateTimeToProperty } from './vcalConverter';
 import { generateProtonCalendarUID, hasMoreThan, wrap } from './helper';
 import { getEventStatus, getIsCalendar, getIsEventComponent } from './vcalHelper';
@@ -143,12 +144,14 @@ export const getAttendeesPart = (
 };
 
 const toResult = (veventProperties: Partial<VcalVeventComponent>, veventComponents: VcalValarmComponent[] = []) => {
+    // Add PRODID to identify the author of the last event modification
     return wrap(
         serialize({
             ...veventProperties,
             component: 'vevent',
             components: veventComponents,
-        })
+        }),
+        prodId
     );
 };
 
