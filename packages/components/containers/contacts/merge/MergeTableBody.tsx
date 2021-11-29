@@ -27,7 +27,7 @@ const MergeTableBody = ({
     ...rest
 }: Props) => {
     return (
-        <OrderableTableBody colSpan={4} {...rest}>
+        <OrderableTableBody colSpan={4} {...rest} data-testid="merge-model:merge-table">
             {contacts.map(({ ID, Name, emails }, j) => {
                 const deleted = beDeleted[ID];
                 const options = [
@@ -62,7 +62,12 @@ const MergeTableBody = ({
                         emails={emails}
                         greyedOut={deleted}
                     />,
-                    <DropdownActions key="options" size="small" list={options} />,
+                    <DropdownActions
+                        key="options"
+                        size="small"
+                        list={options}
+                        data-testid="merge-model:action-button"
+                    />,
                 ];
 
                 return deleted ? (
