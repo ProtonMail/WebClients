@@ -109,6 +109,12 @@
 		&[aria-pressed='true'] {
 			background: var(--interaction-weak);
 			color: var(--text-norm);
+
+			&:hover,
+			&:focus,
+			&:focus-within {
+				background: var(--interaction-weak-hover);
+			}
 		}
 	}
 
@@ -121,7 +127,7 @@
 			position: absolute;
 			inset: 0;
 			z-index: 0;
-			background: var(--primary);
+			background: var(--interaction-norm);
 			border-radius: var(--border-radius-medium);
 			opacity: 0;
 			pointer-events: none;
@@ -137,9 +143,16 @@
 			opacity: 1;
 		}
 
+		&--selected:hover,
+		&--selected:focus-visible {
+			&::before {
+				background: var(--interaction-norm-hover);
+			}
+		}
+
 		&--selected &-number {
 			font-weight: bold;
-			color: var(--primary-contrast);
+			color: var(--interaction-norm-contrast);
 		}
 
 		&[aria-current='date'] {
@@ -150,12 +163,11 @@
 		&--out-of-month {
 			color: var(--text-weak);
 
-			/* Seperate style of days out of month from the other ones when part of a range
+			// Separate style of days out of month from the other ones when part of a range
 			&[aria-pressed='true'] {
 				background: var(--background-weak);
 				color: var(--text-weak);
 			}
-			*/
 		}
 
 		&--range:not(#{&}--range-bound-start) {
