@@ -9,8 +9,9 @@ import {
     useModals,
     useIsMnemonicAvailable,
     useSettingsLink,
+    useUser,
 } from '@proton/components';
-import { GetStartedChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { GetStartedChecklistKey, MailSettings, MNEMONIC_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
 
 import Item from './Item';
@@ -95,14 +96,21 @@ const List = (
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
 
+    const [user] = useUser();
     const onCompose = useOnCompose();
     const { createModal } = useModals();
-    const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const goToSettings = useSettingsLink();
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const { dismissed: getStartedDismissed, handleDismiss } = useContext(GetStartedChecklistContext);
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { page, total } = pagingHandlers;
+
+    const [isMnemonicAvailable] = useIsMnemonicAvailable();
+    const canReactivateMnemonic =
+        user.MnemonicStatus === MNEMONIC_STATUS.PROMPT ||
+        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
+        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED;
+    const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
 
     // Scroll top when changing page
     useEffect(() => {
@@ -210,7 +218,7 @@ const List = (
                                             }
 
                                             case GetStartedChecklistKey.RecoveryMethod: {
-                                                if (isMnemonicAvailable) {
+                                                if (displayMnemonicPrompt) {
                                                     createModal(<MnemonicPromptModal />);
                                                 } else {
                                                     goToSettings('/recovery', undefined, true);
