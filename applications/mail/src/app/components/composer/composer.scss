@@ -257,7 +257,9 @@
 	// content
 	.composer-content {
 		min-block-size: 10em;
-		&--rich-edition {
+		// forced to white because HTML edition and not yet Dark mode supported
+		&--rich-edition,
+		.editor--disabled::after {
 			background: white;
 		}
 	}
