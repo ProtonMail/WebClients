@@ -90,9 +90,20 @@ const ConversationView = ({
     const showConversationError = !loading && !conversationState?.Conversation;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
 
-    const expandMessage = (messageID: string | undefined) => {
+    const { focusIndex, handleFocus, getFocusedId } = useConversationFocus(messagesToShow);
+
+    const expandMessage = (messageID: string | undefined, scrollTo = false) => {
         messageViewsRefs.current[messageID || '']?.expand();
+        const index = messages.findIndex((message) => message.ID === messageID);
+        if (index !== undefined) {
+            handleFocus(index, scrollTo);
+        }
     };
+
+    const { elementRef } = useConversationHotkeys(
+        { messages: messagesToShow, focusIndex },
+        { handleFocus, getFocusedId, expandMessage }
+    );
 
     // Open the first message of a conversation if none selected in URL
     useEffect(() => {
@@ -104,7 +115,7 @@ const ConversationView = ({
     // Open the message in URL
     useEffect(() => {
         if (!loadingMessages && messageID && !isDraft(messageInUrl)) {
-            expandMessage(messageID);
+            expandMessage(messageID, true);
         }
     }, [conversationID, messageID, loadingMessages, messageInUrl]);
 
@@ -115,13 +126,6 @@ const ConversationView = ({
     const handleClickUnread = (messageID: string) => {
         expandMessage(messageID);
     };
-
-    const { focusIndex, handleFocus, getFocusedId } = useConversationFocus(messagesToShow);
-
-    const { elementRef } = useConversationHotkeys(
-        { messages: messagesToShow, focusIndex },
-        { handleFocus, getFocusedId, expandMessage }
-    );
 
     const trashWarningRef = useRef<HTMLDivElement>(null);
     const onlyTrashInConversation = !loadingMessages && !filteredMessages.length;
