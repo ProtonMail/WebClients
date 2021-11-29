@@ -18,14 +18,6 @@ const ICONS: { [key: string]: string } = {
     other: 'circle-info',
 };
 
-const TITLES: { [key: string]: string } = {
-    fn: c('Title').t`Other names`,
-    email: c('Title').t`Email addresses`,
-    tel: c('Title').t`Phone numbers`,
-    adr: c('Title').t`Addresses`,
-    other: c('Title').t`Other information`,
-};
-
 interface Props {
     field?: string;
     properties: ContactProperties;
@@ -52,6 +44,14 @@ const ContactModalProperties = (
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
+    const TITLES: { [key: string]: string } = {
+        fn: c('Title').t`Other names`,
+        email: c('Title').t`Email addresses`,
+        tel: c('Title').t`Phone numbers`,
+        adr: c('Title').t`Addresses`,
+        other: c('Title').t`Other information`,
+    };
+
     const title = field ? TITLES[field] : TITLES.other;
     const iconName = field ? ICONS[field] : ICONS.other;
     const fields = field ? [field] : OTHER_INFORMATION_FIELDS;

@@ -4,6 +4,7 @@ import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
 
+import { c } from 'ttag';
 import { useModals } from '../../hooks';
 import { classnames } from '../../helpers';
 import ContactModal from './modals/ContactModal';
@@ -133,21 +134,21 @@ const ContactView = ({
                 {hasEmail ? null : (
                     <div className="mb0-5">
                         <Button shape="outline" color="norm" onClick={() => handleEdit('email')}>
-                            Add email
+                            {c('Action').t`Add email`}
                         </Button>
                     </div>
                 )}
                 {hasTel ? null : (
                     <div className="mb0-5">
                         <Button shape="outline" color="norm" onClick={() => handleEdit('tel')}>
-                            Add phone number
+                            {c('Action').t`Add phone number`}
                         </Button>
                     </div>
                 )}
                 {hasAdr ? null : (
                     <div className="mb0-5">
                         <Button shape="outline" color="norm" onClick={() => handleEdit('adr')}>
-                            Add address
+                            {c('Action').t`Add address`}
                         </Button>
                     </div>
                 )}
