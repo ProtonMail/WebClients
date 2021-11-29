@@ -17,5 +17,18 @@ export interface SetLocalStorageMessage {
 
 export type SetLocalStorageMessageResponse = undefined;
 
-export type ProtonMessages = GetLocalStorageMessage | SetLocalStorageMessage;
-export type ProtonMessageResponses = GetLocalStorageMessageResponse | SetLocalStorageMessageResponse;
+export interface RemoveLocalStorageMessage {
+    type: 'removeLocalStorage';
+    payload: {
+        key: string;
+    };
+}
+
+export type RemoveLocalStorageMessageResponse = undefined;
+
+export type ProtonMessages = GetLocalStorageMessage | SetLocalStorageMessage | RemoveLocalStorageMessage;
+
+export type ProtonMessageResponses =
+    | GetLocalStorageMessageResponse
+    | SetLocalStorageMessageResponse
+    | RemoveLocalStorageMessageResponse;
