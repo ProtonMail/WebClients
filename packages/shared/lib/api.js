@@ -1,4 +1,4 @@
-import { getUIDHeaders } from './fetch/headers';
+import { getAppVersionHeaders, getUIDHeaders } from './fetch/headers';
 
 const ADD_CLIENT_SECRET = ['auth', 'auth/info'];
 
@@ -12,12 +12,13 @@ const ADD_CLIENT_SECRET = ['auth', 'auth/info'];
  * @param {String} [CLIENT_SECRET] - Optional client secret
  * @return {function}
  */
-export default ({ xhr, UID, API_URL, APP_VERSION, CLIENT_ID, CLIENT_SECRET }) => {
+export default ({ xhr, UID, API_URL, APP_VERSION, clientID, CLIENT_SECRET }) => {
     const authHeaders = UID ? getUIDHeaders(UID) : undefined;
+    const appVersionHeaders = getAppVersionHeaders(clientID, APP_VERSION);
 
     const defaultHeaders = {
         accept: 'application/vnd.protonmail.v1+json',
-        'x-pm-appversion': `${CLIENT_ID}_${APP_VERSION}`,
+        ...appVersionHeaders,
         ...authHeaders,
     };
 

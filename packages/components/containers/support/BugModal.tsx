@@ -5,11 +5,10 @@ import { c } from 'ttag';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { APPS } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { getClientID } from '@proton/shared/lib/apps/helper';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import AttachScreenshot from './AttachScreenshot';
-import { getReportInfo, getClient } from '../../helpers/report';
+import { getReportInfo, getClientName } from '../../helpers/report';
 import {
     Href,
     Info,
@@ -88,8 +87,7 @@ const BugModal = ({ onClose = noop, username: Username = '', email, mode, ...res
     const clearCacheLink = isVpn
         ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
         : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
-    const ClientID = getClientID(APP_NAME);
-    const Client = getClient(ClientID);
+    const Client = getClientName(APP_NAME);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
     const options = titles.reduce<OptionProps[]>(

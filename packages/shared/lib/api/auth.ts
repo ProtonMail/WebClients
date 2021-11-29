@@ -1,5 +1,5 @@
-import { CLIENT_ID_KEYS } from '../constants';
 import { HTTP_ERROR_CODES } from '../errors';
+import { APP_CLIENT_IDS } from '../constants';
 
 export const PASSWORD_WRONG_ERROR = 8002;
 
@@ -34,6 +34,7 @@ interface RefreshArgs {
     RefreshToken: string;
     RedirectURI?: string;
 }
+
 export const setRefreshCookies = (data?: RefreshArgs) => {
     const config = {
         method: 'post',
@@ -60,6 +61,7 @@ interface CookiesArgs {
     RedirectURI?: string;
     Persistent?: boolean;
 }
+
 export const setCookies = ({
     UID,
     RefreshToken,
@@ -93,7 +95,7 @@ export const setLocalKey = (Key: string) => ({
 });
 export const pushForkSession = (data: {
     Payload?: string;
-    ChildClientID: CLIENT_ID_KEYS;
+    ChildClientID: APP_CLIENT_IDS;
     Independent: 0 | 1;
     Selector?: string;
     UserCode?: string;
