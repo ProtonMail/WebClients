@@ -168,16 +168,16 @@ export const useAttachments = ({
                 newUpload();
             }
 
-            const messageFromCache = await ensureMessageIsCreated();
-            const messageKeys = await getMessageKeys(messageFromCache.data);
+            const messageFromState = await ensureMessageIsCreated();
+            const messageKeys = await getMessageKeys(messageFromState.data);
 
             // Message already sent
-            if (messageFromCache.draftFlags?.isSentDraft) {
+            if (messageFromState.draftFlags?.isSentDraft) {
                 onMessageAlreadySent();
                 return;
             }
 
-            const uploads = upload(files, messageFromCache, messageKeys, action, auth.UID);
+            const uploads = upload(files, messageFromState, messageKeys, action, auth.UID);
 
             const pendingUploads = files.map((file, i) => ({ file, upload: uploads[i] }));
             addPendingUploads(pendingUploads);
