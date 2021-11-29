@@ -7,6 +7,7 @@ import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/easySwitch/
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
+import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 
 import * as config from './config';
 import PrivateApp from './PrivateApp';
@@ -23,6 +24,7 @@ const enhancedConfig = {
 
 newVersionUpdater(enhancedConfig);
 sentry(enhancedConfig);
+setVcalProdId(getProdId(enhancedConfig));
 
 // If the browser is Chromium based, register automatically the mailto protocol handler
 if ('chrome' in window) {

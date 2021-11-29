@@ -10,9 +10,9 @@ import {
     SAVE_CONFIRMATION_TYPES,
 } from '@proton/shared/lib/calendar/constants';
 import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
+import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { getProdId } from '@proton/shared/lib/calendar/vcalHelper';
 import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';

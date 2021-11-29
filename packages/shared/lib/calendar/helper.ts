@@ -104,9 +104,11 @@ export const hasMoreThan = (set: Set<string>, properties: { [key: string]: any }
     return Object.keys(properties).some((key) => !set.has(key));
 };
 
-export const wrap = (res: string) => {
+export const wrap = (res: string, prodId?: string) => {
     // Wrap in CRLF according to the rfc
-    return `BEGIN:VCALENDAR\r\nVERSION:2.0\r\n${res}\r\nEND:VCALENDAR`;
+    return prodId
+        ? `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:${prodId}\r\n${res}\r\nEND:VCALENDAR`
+        : `BEGIN:VCALENDAR\r\nVERSION:2.0\r\n${res}\r\nEND:VCALENDAR`;
 };
 
 export const unwrap = (res: string) => {
