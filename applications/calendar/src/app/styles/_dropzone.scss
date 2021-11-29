@@ -1,0 +1,11 @@
+@import '~@proton/styles/scss/config';
+
+.main-dropzone {
+	&-image {
+		margin-block-end: rem(40);
+	}
+
+	&-heading {
+		margin-block-end: rem(8);
+	}
+}

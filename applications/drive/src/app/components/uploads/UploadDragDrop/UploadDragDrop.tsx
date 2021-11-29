@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/hooks';
 import dragdropImageSvg from '@proton/styles/assets/img/placeholders/drag-and-drop.svg';
 
+//
+
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { useUploadProvider } from '../UploadProvider';

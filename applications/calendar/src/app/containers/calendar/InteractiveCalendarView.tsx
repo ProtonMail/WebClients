@@ -1,3 +1,17 @@
+import {
+    DragEvent,
+    MutableRefObject,
+    RefObject,
+    useCallback,
+    useEffect,
+    useImperativeHandle,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
+import { Prompt } from 'react-router';
+import { c } from 'ttag';
+
 import { updateAttendeePartstat, updateCalendar, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
@@ -36,16 +50,6 @@ import {
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import {
-    MutableRefObject,
-    RefObject,
-    useCallback,
-    useEffect,
-    useImperativeHandle,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
-import {
     useApi,
     useBeforeUnload,
     useConfig,
@@ -56,6 +60,9 @@ import {
     useModals,
     useNotifications,
     useCalendarEmailNotificationsFeature,
+    Dropzone,
+    onlyDragFiles,
+    classnames,
 } from '@proton/components';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
@@ -63,9 +70,10 @@ import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonic
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { Prompt } from 'react-router';
-import { c } from 'ttag';
 import { serverTime } from 'pmcrypto';
+import eventImport from '@proton/styles/assets/img/calendar/event-import.svg';
+import { ImportModal } from '@proton/components/containers/calendar/importModal';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import {
@@ -204,7 +212,7 @@ const InteractiveCalendarView = ({
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
-    const { createModal, getModal, hideModal, removeModal } = useModals();
+    const { createModal, getModal, hideModal, removeModal, modals } = useModals();
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
     const sendIcs = useSendIcs();
@@ -1138,8 +1146,57 @@ const InteractiveCalendarView = ({
         return [...eventsSet.keys()].map((eventId) => latestEvents[eventId]).filter(isTruthy);
     }, [targetMoreData?.events, events]);
 
+    const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
+
+    const handleHover = (hover: boolean) =>
+        onlyDragFiles((event: DragEvent) => {
+            setIsDropzoneHovered(hover);
+            event.stopPropagation();
+        });
+
+    const onAddFiles = (files: File[]) => {
+        if (!files) {
+            return;
+        }
+
+        if (!defaultCalendar) {
+            return createNotification({
+                type: 'error',
+                text: c('Error message').t`You need an active personal calendar to import events`,
+            });
+        }
+
+        return createModal(
+            <ImportModal
+                files={files}
+                defaultCalendar={defaultCalendar}
+                calendars={activeCalendars.filter(getIsPersonalCalendar)}
+            />
+        );
+    };
+
+    const handleDrop = onlyDragFiles((event: DragEvent) => {
+        event.preventDefault();
+        setIsDropzoneHovered(false);
+        onAddFiles([...event.dataTransfer.files]);
+    });
+
     return (
-        <>
+        <Dropzone
+            isDisabled={!!modals.length || !!targetEvent}
+            isHovered={isDropzoneHovered}
+            onDrop={handleDrop}
+            onDragEnter={handleHover(true)}
+            onDragLeave={handleHover(false)}
+            className={classnames(['relative h100', isDropzoneHovered && 'no-scroll'])}
+            content={
+                <section className="main-dropzone p4 text-center">
+                    <img className="main-dropzone-image" src={eventImport} alt="" aria-hidden="true" />
+                    <h2 className="main-dropzone-heading h3 text-bold m0">{c('Title').t`Drop to upload`}</h2>
+                    <p className="m0 color-weak">{c('Info').t`Your events will be encrypted and then saved.`}</p>
+                </section>
+            }
+        >
             <CalendarView
                 view={view}
                 isNarrow={isNarrow}
@@ -1165,6 +1222,7 @@ const InteractiveCalendarView = ({
                 weekdaysLong={weekdaysLong}
                 timeGridViewRef={timeGridViewRef}
                 isScrollDisabled={isScrollDisabled}
+                isDropzoneHovered={isDropzoneHovered}
             />
             <Popover
                 containerEl={document.body}
@@ -1370,7 +1428,7 @@ const InteractiveCalendarView = ({
                     {...getModal(eventModalID)}
                 />
             ) : null}
-        </>
+        </Dropzone>
     );
 };
 

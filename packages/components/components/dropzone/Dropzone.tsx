@@ -1,3 +1,4 @@
+import { noop } from '@proton/shared/lib/helpers/function';
 import { HTMLAttributes, ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { classnames } from '../../helpers';
@@ -14,6 +15,7 @@ type Props = (HTMLAttributes<HTMLDivElement> &
      * The content to show when dragging over the dropzone
      */
     content?: ReactNode;
+    isDisabled?: boolean;
 };
 
 const Dropzone = ({
@@ -23,7 +25,8 @@ const Dropzone = ({
     onDragEnter,
     onDragLeave,
     className,
-    content = c('Info').t`Drop the file here to upload`,
+    content,
+    isDisabled = false,
     ...rest
 }: Props) => {
     const [allowHover, setAllowHover] = useState(true);
@@ -49,10 +52,18 @@ const Dropzone = ({
         };
     }, [isHovered]);
 
+    const getContent = () => {
+        if (!content) {
+            return <span className="dropzone-text">{c('Info').t`Drop the file here to upload`}</span>;
+        }
+
+        return content;
+    };
+
     return (
         <div
             className={className}
-            onDrop={onDrop}
+            onDrop={!isDisabled ? onDrop : noop}
             onDragEnter={(event) => {
                 setAllowHover(true);
                 onDragEnter(event);
@@ -63,14 +74,16 @@ const Dropzone = ({
             <div
                 className={classnames([
                     'dropzone covered-absolute flex flex-justify-center flex-align-items-center',
-                    allowHover && isHovered && 'is-hovered',
+                    !isDisabled && allowHover && isHovered && 'is-hovered',
                 ])}
                 onDragLeave={onDragLeave}
             >
-                <span className="dropzone-text no-pointer-events">{content}</span>
+                <div className="no-pointer-events">{getContent()}</div>
             </div>
 
-            <div className="dropzone-content flex flex-align-items-center flex-justify-center w100">{children}</div>
+            <div className="dropzone-content flex flex-align-items-center flex-justify-center w100 h100">
+                {children}
+            </div>
         </div>
     );
 };
