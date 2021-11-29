@@ -1,6 +1,7 @@
 import markdownit from 'markdown-it';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
+import { defaultFontStyle } from '@proton/components/components/editor/squireConfig';
 import { templateBuilder } from './message/messageSignature';
 import { toText } from './parserHtml';
 
@@ -82,7 +83,8 @@ const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
  * if the content is the same.
  */
 const replaceSignature = (input: string, signature: string, mailSettings: Partial<MailSettings> = {}) => {
-    const signatureTemplate = templateBuilder(signature, mailSettings, false, true);
+    const fontStyle = defaultFontStyle(mailSettings);
+    const signatureTemplate = templateBuilder(signature, mailSettings, fontStyle, false, true);
     const signatureText = toText(signatureTemplate)
         .replace(/\u200B/g, '')
         .trim();
@@ -99,9 +101,11 @@ const attachSignature = (
     plaintext: string,
     mailSettings: Partial<MailSettings> = {}
 ) => {
+    const fontStyle = defaultFontStyle(mailSettings);
     const signatureTemplate = templateBuilder(
         signature,
         mailSettings,
+        fontStyle,
         false,
         !plaintext.startsWith(SIGNATURE_PLACEHOLDER)
     );
