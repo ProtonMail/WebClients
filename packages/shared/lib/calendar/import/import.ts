@@ -110,14 +110,17 @@ export const getComponentIdentifier = (
 };
 
 const extractGuessTzid = (components: VcalCalendarComponentOrError[]) => {
-    const vtimezone = components.find((componentOrError): componentOrError is VcalVtimezoneComponent => {
+    const vtimezones = components.filter((componentOrError): componentOrError is VcalVtimezoneComponent => {
         if (getParsedComponentHasError(componentOrError)) {
             return false;
         }
         return getIsTimezoneComponent(componentOrError);
     });
-    const guessTzid = vtimezone?.tzid.value;
-    return guessTzid ? getSupportedTimezone(guessTzid) : undefined;
+    if (vtimezones.length === 1) {
+        // we do not have guarantee that the VcalVtimezoneComponent's in vtimezones are propper, so better use optional chaining
+        const guessTzid = vtimezones[0]?.tzid?.value;
+        return guessTzid ? getSupportedTimezone(guessTzid) : undefined;
+    }
 };
 
 interface GetSupportedEventArgs {
