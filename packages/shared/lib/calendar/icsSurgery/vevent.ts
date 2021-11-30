@@ -259,6 +259,7 @@ export const getSupportedEvent = ({
             hasXWrTimezone,
             calendarTzid,
             isRecurring,
+            isInvite: isEventInvitation,
             guessTzid,
         });
 
@@ -284,6 +285,7 @@ export const getSupportedEvent = ({
                 hasXWrTimezone,
                 calendarTzid,
                 isRecurring,
+                isInvite: isEventInvitation,
                 guessTzid,
             });
             if (!getIsWellFormedDateOrDateTime(supportedDtend)) {
@@ -334,6 +336,7 @@ export const getSupportedEvent = ({
                     hasXWrTimezone,
                     calendarTzid,
                     isRecurring,
+                    isInvite: isEventInvitation,
                     guessTzid,
                 })
             );
@@ -344,6 +347,7 @@ export const getSupportedEvent = ({
                     componentId,
                     isAllDay: isAllDayStart,
                     tzid: startTzid,
+                    isInvite: isEventInvitation,
                 })
             );
         }
@@ -368,6 +372,7 @@ export const getSupportedEvent = ({
                 hasXWrTimezone,
                 calendarTzid,
                 isRecurring,
+                isInvite: isEventInvitation,
                 guessTzid,
             });
         }

@@ -1,12 +1,19 @@
 import { enUS } from 'date-fns/locale';
 import { ICAL_METHOD, MAX_LENGTHS_API } from '../../lib/calendar/constants';
 import { getSupportedEvent } from '../../lib/calendar/icsSurgery/vevent';
-import { extractSupportedEvent, getComponentIdentifier, parseIcs } from '../../lib/calendar/import/import';
+import {
+    extractSupportedEvent,
+    getComponentIdentifier,
+    getSupportedEvents,
+    parseIcs,
+} from '../../lib/calendar/import/import';
 import { parse } from '../../lib/calendar/vcal';
+import { getIcalMethod } from '../../lib/calendar/vcalHelper';
 import { omit } from '../../lib/helpers/object';
 import { truncate } from '../../lib/helpers/string';
 import {
     VcalDateTimeProperty,
+    VcalVcalendar,
     VcalVeventComponent,
     VcalVtimezoneComponent,
 } from '../../lib/interfaces/calendar/VcalModel';
@@ -955,6 +962,96 @@ END:VEVENT`;
             },
             location: { value: '1CP Conference Room 4350' },
             sequence: { value: 0 },
+        });
+    });
+});
+
+describe('getSupportedEvents', () => {
+    describe('should guess a timezone to localize floating dates', () => {
+        const generateVcalSetup = (xWrTimezone = '', vtimezonesTzids: string[] = []) => {
+            const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
+            const vtimezonesString = vtimezonesTzids
+                .map(
+                    (tzid) => `BEGIN:VTIMEZONE
+TZID:${tzid}
+END:VTIMEZONE`
+                )
+                .join('\n');
+            const vcal = `BEGIN:VCALENDAR
+PRODID:Proton Calendar
+VERSION:2.0
+METHOD:PUBLISH
+CALSCALE:GREGORIAN
+${xWrTimezoneString}
+${vtimezonesString}
+BEGIN:VEVENT
+UID:test-uid
+DTSTAMP:19980309T231000Z
+DTSTART:20021231T203000
+DTEND:20030101T003000
+SUMMARY:Floating date-time
+END:VEVENT
+END:VCALENDAR`;
+            const {
+                components = [],
+                calscale: calscaleProperty,
+                'x-wr-timezone': xWrTimezoneProperty,
+                method: methodProperty,
+            } = parse(vcal) as VcalVcalendar;
+            return {
+                components,
+                calscale: calscaleProperty?.value,
+                xWrTimezone: xWrTimezoneProperty?.value,
+                method: getIcalMethod(methodProperty) || ICAL_METHOD.PUBLISH,
+            };
+        };
+        const localizedVevent = (tzid: string) => ({
+            component: 'vevent',
+            uid: { value: 'test-uid' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid },
+            },
+            dtend: {
+                value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid },
+            },
+            summary: { value: 'Floating date-time' },
+            sequence: { value: 0 },
+        });
+
+        it('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
+            const [supportedEvent] = await getSupportedEvents(
+                generateVcalSetup('Europe/Brussels', ['America/New_York'])
+            );
+            expect(supportedEvent).toEqual(localizedVevent('Europe/Brussels'));
+        });
+
+        it('when there is a single vtimezone and no x-wr-timezone', async () => {
+            const [supportedEvent] = await getSupportedEvents(generateVcalSetup('', ['Europe/Vilnius']));
+            expect(supportedEvent).toEqual(localizedVevent('Europe/Vilnius'));
+        });
+
+        it('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
+            const [supportedEvent] = await getSupportedEvents(
+                generateVcalSetup('Moon/Tranquility', ['Europe/Vilnius'])
+            );
+            expect(supportedEvent).toEqual(new Error('Calendar timezone not supported'));
+        });
+
+        it('when there is no vtimezone nor x-wr-timezone (reject unsupported event)', async () => {
+            const [supportedEvent] = await getSupportedEvents(generateVcalSetup());
+            expect(supportedEvent).toEqual(new Error('Floating times not supported'));
+        });
+
+        it('when there is no x-wr-timezone and more than one vtimezone (reject unsupported event)', async () => {
+            const [supportedEvent] = await getSupportedEvents(
+                generateVcalSetup('', ['Europe/Vilnius', 'America/New_York'])
+            );
+            expect(supportedEvent).toEqual(new Error('Floating times not supported'));
         });
     });
 });
