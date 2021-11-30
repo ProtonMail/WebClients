@@ -828,6 +828,10 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             methods={model.humanVerificationMethods}
                             step={humanVerificationStep}
                             onChangeStep={setHumanVerificationStep}
+                            onClose={() => {
+                                humanApi.clearToken();
+                                handleBack();
+                            }}
                             onSubmit={(token: string, tokenType: HumanVerificationMethodType) => {
                                 humanApi.setToken(token, tokenType);
                                 return handleFinalizeSignup();

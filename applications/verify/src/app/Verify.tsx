@@ -90,7 +90,7 @@ const Verify = () => {
     );
 
     const handleSubmit = async (token: string, type: HumanVerificationMethodType) => {
-        if (type !== 'captcha') {
+        if (type !== 'captcha' && type !== 'ownership-sms' && type !== 'ownership-email') {
             try {
                 await api({ ...queryCheckVerificationCode(token, type, 1), silence: true });
 
@@ -122,6 +122,10 @@ const Verify = () => {
                 payload: { token, type },
             });
         }
+    };
+
+    const handleClose = () => {
+        broadcast({ type: MessageType.CLOSE });
     };
 
     const handleLoaded = () => {
@@ -156,6 +160,7 @@ const Verify = () => {
             onChangeStep={setStep}
             onSubmit={handleSubmit}
             onLoaded={handleLoaded}
+            onClose={handleClose}
             methods={methods}
             token={token}
             defaultCountry={defaultCountry}

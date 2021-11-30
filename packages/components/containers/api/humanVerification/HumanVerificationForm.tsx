@@ -1,37 +1,23 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import Text from './Text';
 
-import { Alert, Button, Href, LearnMore, Tabs } from '../../../components';
+import { Alert, Href, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
-import useLoading from '../../../hooks/useLoading';
-import { VerificationModel } from './interface';
-import { getRoute } from './helper';
-import RequestNewCodeModal from './RequestNewCodeModal';
+import { HumanVerificationSteps, OwnershipCache, VerificationModel } from './interface';
+import { getAvailableMethods } from './helper';
 import Captcha from './Captcha';
-import EmailMethodForm from './EmailMethodForm';
-import PhoneMethodForm from './PhoneMethodForm';
-import VerifyCodeForm from './VerifyCodeForm';
 
 import './HumanVerificationModal.scss';
-
-export enum HumanVerificationSteps {
-    ENTER_DESTINATION,
-    VERIFY_CODE,
-    REQUEST_NEW_CODE,
-    INVALID_CODE,
-}
-
-const Text = ({ children }: { children: ReactNode }) => {
-    return <div className="mb2 mt0-5">{children}</div>;
-};
+import OwnershipMethod from './OwnershipMethod';
+import CodeMethod from './CodeMethod';
 
 interface Props {
     onSubmit: (token: string, tokenType: HumanVerificationMethodType) => void;
+    onClose: () => void;
     onLoaded?: () => void;
+    onError?: (error: unknown) => void;
     token: string;
     methods: HumanVerificationMethodType[];
     defaultEmail?: string;
@@ -42,6 +28,8 @@ interface Props {
     onChangeStep: (step: HumanVerificationSteps) => void;
 }
 
+type SupportedHumanVerificationMethodType = keyof ReturnType<typeof getAvailableMethods>;
+
 const HumanVerificationForm = ({
     defaultCountry,
     defaultEmail,
@@ -49,51 +37,77 @@ const HumanVerificationForm = ({
     methods,
     token,
     onSubmit,
+    onClose,
     onLoaded,
+    onError = onClose,
     step,
     isEmbedded,
     onChangeStep,
 }: Props) => {
     const api = useApi();
-    const { createNotification } = useNotifications();
-    const [loadingResend, withLoadingResend] = useLoading();
-    const [newCodeModal, setNewCodeModal] = useState(false);
 
-    const verificationRef = useRef<VerificationModel | undefined>(undefined);
-    const verificationModel = verificationRef.current;
+    const availableMethods = getAvailableMethods(methods);
+    const [selectedMethod, setSelectedMethod] = useState<SupportedHumanVerificationMethodType>(() => {
+        const firstAvailableMethod = Object.entries(availableMethods).find(([, available]) => available)?.[0] as
+            | SupportedHumanVerificationMethodType
+            | undefined;
+        return firstAvailableMethod || 'captcha';
+    });
 
-    const sendCode = async (verificationModel: VerificationModel) => {
-        await api(getRoute(verificationModel));
-        onChangeStep(HumanVerificationSteps.VERIFY_CODE);
-        const methodTo = verificationModel.value;
-        createNotification({ text: c('Success').t`Code sent to ${methodTo}` });
-    };
-
-    const handleEditDestination = () => {
-        onChangeStep(HumanVerificationSteps.ENTER_DESTINATION);
-    };
-
-    const handleResend = async () => {
-        if (!verificationRef.current) {
-            throw new Error('Missing state');
+    const loadedOnceRef = useRef(false);
+    const handleLoaded = () => {
+        if (loadedOnceRef.current) {
+            return;
         }
-        return sendCode(verificationRef.current);
+        onLoaded?.();
+        loadedOnceRef.current = true;
     };
 
-    const verifyToken = async (token: string, tokenType: 'sms' | 'email') => {
-        try {
-            await onSubmit(token, tokenType);
-        } catch (error: any) {
-            const { data: { Code } = { Code: 0 } } = error;
-
-            if (Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
-                onChangeStep(HumanVerificationSteps.INVALID_CODE);
-            }
+    useEffect(() => {
+        // If either the ownership verification method is not selected (captcha or otherwise is selected), or
+        // if it is selected and the verification model is available, the `onLoaded` callback is triggered
+        // This is specifically intended for the verify app so that there's just a single loading spinner.
+        if (selectedMethod === 'captcha' || selectedMethod === 'invite') {
+            handleLoaded();
         }
-    };
+    }, [onLoaded, selectedMethod]);
+
+    const ownershipCacheRef = useRef<OwnershipCache>({ 'ownership-sms': {}, 'ownership-email': {} });
+    const verificationModelCacheRef = useRef<VerificationModel | undefined>(undefined);
+
+    const codeMethod = (
+        <CodeMethod
+            method={selectedMethod === 'sms' ? 'sms' : 'email'}
+            defaultCountry={defaultCountry}
+            defaultPhone={defaultPhone}
+            defaultEmail={defaultEmail}
+            api={api}
+            onLoaded={handleLoaded}
+            step={step}
+            onChangeStep={onChangeStep}
+            onSubmit={onSubmit}
+            isEmbedded={isEmbedded}
+            verificationModelCacheRef={verificationModelCacheRef}
+        />
+    );
+
+    const ownershipMethod = (
+        <OwnershipMethod
+            token={token}
+            method={selectedMethod === 'ownership-sms' ? 'ownership-sms' : 'ownership-email'}
+            onLoaded={handleLoaded}
+            api={api}
+            ownershipCacheRef={ownershipCacheRef}
+            onSubmit={onSubmit}
+            onClose={onClose}
+            step={step}
+            onChangeStep={onChangeStep}
+            onError={onError}
+        />
+    );
 
     const tabs = [
-        methods.includes('captcha') && {
+        {
             method: 'captcha',
             title: c('Human verification method').t`CAPTCHA`,
             content: (
@@ -102,64 +116,28 @@ const HumanVerificationForm = ({
                     <Captcha token={token} onSubmit={(token) => onSubmit(token, 'captcha')} />
                 </>
             ),
-        },
-        methods.includes('email') && {
+        } as const,
+        {
             method: 'email',
             title: c('Human verification method').t`Email`,
-            content: (
-                <>
-                    <Text>
-                        <span>{c('Info').t`Your email will only be used for this one-time verification.`} </span>
-                        <LearnMore url="https://protonmail.com/support/knowledge-base/human-verification/" />
-                    </Text>
-                    <EmailMethodForm
-                        api={api}
-                        defaultEmail={
-                            defaultEmail ||
-                            (verificationModel && verificationModel.method === 'email' ? verificationModel.value : '')
-                        }
-                        onSubmit={async (email) => {
-                            verificationRef.current = {
-                                method: 'email',
-                                value: email,
-                            };
-                            await sendCode(verificationRef.current);
-                            onChangeStep(HumanVerificationSteps.VERIFY_CODE);
-                        }}
-                    />
-                </>
-            ),
-        },
-        methods.includes('sms') && {
+            content: codeMethod,
+        } as const,
+        {
             method: 'sms',
             title: c('Human verification method').t`SMS`,
-            content: (
-                <>
-                    <Text>
-                        <span>{c('Info').t`Your phone number will only be used for this one-time verification.`} </span>
-                        <LearnMore url="https://protonmail.com/support/knowledge-base/human-verification/" />
-                    </Text>
-                    <PhoneMethodForm
-                        isEmbedded={isEmbedded}
-                        defaultCountry={defaultCountry}
-                        onSubmit={async (phone) => {
-                            verificationRef.current = {
-                                method: 'sms',
-                                value: phone,
-                            };
-                            await sendCode(verificationRef.current);
-                            onChangeStep(HumanVerificationSteps.VERIFY_CODE);
-                        }}
-                        defaultPhone={
-                            defaultPhone ||
-                            (verificationModel && verificationModel.method === 'sms' ? verificationModel.value : '')
-                        }
-                        api={api}
-                    />
-                </>
-            ),
-        },
-        methods.includes('invite') && {
+            content: codeMethod,
+        } as const,
+        {
+            method: 'ownership-email',
+            title: c('Human verification method').t`Email`,
+            content: ownershipMethod,
+        } as const,
+        {
+            method: 'ownership-sms',
+            title: c('Human verification method').t`SMS`,
+            content: ownershipMethod,
+        } as const,
+        {
             method: 'invite',
             title: c('Human verification method').t`Manual`,
             content: (
@@ -169,19 +147,10 @@ const HumanVerificationForm = ({
                     <Href url="https://protonmail.com/support-form">{c('Link').t`Request an invite`}</Href>
                 </Text>
             ),
-        },
-    ].filter(isTruthy);
+        } as const,
+    ].filter(({ method }) => availableMethods[method]);
 
-    const [index, setIndex] = useState(0);
-
-    const loadedOnceRef = useRef(false);
-    useEffect(() => {
-        if (loadedOnceRef.current) {
-            return;
-        }
-        onLoaded?.();
-        loadedOnceRef.current = true;
-    }, [onLoaded]);
+    const tabIndex = tabs.findIndex((tab) => tab.method === selectedMethod);
 
     if (tabs.length === 0) {
         return (
@@ -190,63 +159,20 @@ const HumanVerificationForm = ({
         );
     }
 
-    if (step === HumanVerificationSteps.VERIFY_CODE && verificationModel) {
-        return (
-            <>
-                <RequestNewCodeModal
-                    open={newCodeModal}
-                    onEdit={handleEditDestination}
-                    onClose={() => setNewCodeModal(false)}
-                    onResend={handleResend}
-                    verificationModel={verificationModel}
-                />
-                <VerifyCodeForm
-                    verification={verificationModel}
-                    onSubmit={verifyToken}
-                    onNoReceive={() => {
-                        setNewCodeModal(true);
+    return (
+        <>
+            {step === HumanVerificationSteps.ENTER_DESTINATION && (
+                <Tabs
+                    fullWidth
+                    tabs={tabs}
+                    value={tabIndex}
+                    onChange={(idx) => {
+                        setSelectedMethod(tabs[idx].method);
                     }}
                 />
-            </>
-        );
-    }
-
-    if (step === HumanVerificationSteps.INVALID_CODE) {
-        return (
-            <>
-                <h1 className="h6 text-bold">{c('Title').t`Invalid verification code`}</h1>
-                <p>
-                    {c('Info')
-                        .t`Would you like to receive a new verification code or use an alternative verification method?`}
-                </p>
-                <Button
-                    fullWidth
-                    size="large"
-                    color="norm"
-                    type="button"
-                    loading={loadingResend}
-                    onClick={async () => {
-                        await withLoadingResend(handleResend());
-                        onChangeStep(HumanVerificationSteps.VERIFY_CODE);
-                    }}
-                >
-                    {c('Action').t`Request new code`}
-                </Button>
-                <Button
-                    fullWidth
-                    className="mt0-5"
-                    size="large"
-                    color="weak"
-                    type="button"
-                    onClick={handleEditDestination}
-                >
-                    {c('Action').t`Try another method`}
-                </Button>
-            </>
-        );
-    }
-
-    return <Tabs fullWidth tabs={tabs} value={index} onChange={setIndex} />;
+            )}
+            {step !== HumanVerificationSteps.ENTER_DESTINATION && [tabs[tabIndex].content]}
+        </>
+    );
 };
-
 export default HumanVerificationForm;
