@@ -160,6 +160,7 @@ describe('calendar encryption', () => {
             ],
             RemovedAttendeeAddresses: undefined,
         });
+        setVcalProdId('');
     });
 
     it('should roundtrip', async () => {
