@@ -1,5 +1,5 @@
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { CALENDAR_APP_NAME, IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
@@ -23,8 +23,11 @@ const PartialImportModalContent = ({ model }: Props) => {
             ? c('Import warning').t`No event can be imported. Expand for details.`
             : totalEventsDiscarded === 0
             ? c('Import warning').t`Part of your calendar content is not supported and will not be imported.`
-            : c('Import warning')
-                  .t`${totalEventsDiscarded} out of ${totalEvents} events will not be imported. Expand for details.`;
+            : c('Import warning').ngettext(
+                  msgid`${totalEventsDiscarded} out of ${totalEvents} event will not be imported. Expand for details.`,
+                  `${totalEventsDiscarded} out of ${totalEvents} events will not be imported. Expand for details.`,
+                  totalEvents
+              );
 
     return (
         <>
