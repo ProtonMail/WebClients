@@ -54,6 +54,7 @@ export interface IAOauthModalModel {
     payload: LaunchImportPayload;
     data: IAOauthModalModelImportData;
     isPayloadInvalid: boolean;
+    isImportError?: boolean;
 }
 
 export type ImportPayloadType =
