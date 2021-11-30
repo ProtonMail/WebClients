@@ -16,6 +16,12 @@ export const isNotExistError = (error: any) =>
         error.data.Code === 2501 || // message does not exist
         error.data.Code === 20052); // conversation does not exist
 
+/**
+ * It's an error from OpenPGP about decryption
+ * Most of the time decryption errors are user key management pbs we have to ignore
+ */
+export const isDecryptionError = (error: any) => error.message && error.message.startsWith('Error decrypting');
+
 export const hasError = (errors: MessageErrors | ConversationErrors | undefined = {}) =>
     !!Object.values(errors).flat().length;
 

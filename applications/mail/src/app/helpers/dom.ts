@@ -102,10 +102,19 @@ export const setTextAreaCursorStart = (textarea: HTMLTextAreaElement) => {
  */
 export const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
 
+// https://github.com/chimurai/http-proxy-middleware/issues/237#issue-294034608
+export const createErrorHandler = (reject: (error: Error) => void) => {
+    return (event: any) => {
+        const error = new Error(`Failed to load ${event?.target?.src}`);
+        (error as any).event = event;
+        reject(error);
+    };
+};
+
 export const preloadImage = async (url: string) =>
     new Promise((resolve, reject) => {
         const img = document.createElement('img');
         img.src = url;
         img.onload = resolve;
-        img.onerror = reject;
+        img.onerror = createErrorHandler(reject);
     });
