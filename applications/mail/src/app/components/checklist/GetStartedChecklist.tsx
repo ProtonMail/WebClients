@@ -181,13 +181,23 @@ const GetStartedChecklist = ({
             <div>
                 <Countdown
                     end={expires}
-                    render={({ days }) => (
+                    render={({ expired, days }) => (
                         <div className="color-weak">
-                            {c('Get started checklist incentive').ngettext(
-                                msgid`Only ${days} day left`,
-                                `Only ${days} days left`,
-                                days
-                            )}
+                            {(() => {
+                                if (expired) {
+                                    return c('Get started checklist incentive').t`Expires soon`;
+                                }
+
+                                if (days > 0) {
+                                    return c('Get started checklist incentive').ngettext(
+                                        msgid`Only ${days} day left`,
+                                        `Only ${days} days left`,
+                                        days
+                                    );
+                                }
+
+                                return c('Get started checklist incentive').t`Expires today`;
+                            })()}
                         </div>
                     )}
                 />
