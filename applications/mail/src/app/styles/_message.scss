@@ -234,7 +234,7 @@
 	// transition: 0.5s easing(easeOutSine);
 	// transition-property: background-color, color;
 	// force color until real dark mode
-	&:not(.plain) {
+	&:not(.plain):not(.dark-style) {
 		background: white;
 		color: #262a33;
 	}
@@ -255,6 +255,18 @@
 			@extend %item-loading-pseudo;
 			@extend %placeholder-loading;
 			inline-size: 100%;
+		}
+	}
+
+	&.dark-style {
+		&:not(.plain) {
+			filter: invert(1) hue-rotate(180deg) !important;
+			color: var(--optional-email-item-read-background-color);
+			background: var(--optional-email-item-read-background-color-inverted);
+		}
+
+		img {
+			filter: invert(1) hue-rotate(180deg) !important;
 		}
 	}
 }

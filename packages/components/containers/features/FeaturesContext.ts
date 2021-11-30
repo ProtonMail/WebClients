@@ -58,6 +58,7 @@ export enum FeatureCode {
     EasySwitch = 'EasySwitch',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     EasySwitchCalendar = 'EasySwitchCalendar',
+    DarkStylesInBody = 'DarkStylesInBody',
 }
 
 export interface FeaturesContextValue {
