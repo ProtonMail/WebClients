@@ -2,6 +2,14 @@ import Push from 'push.js';
 
 import { noop } from './function';
 
+Push.config({
+    serviceWorker: './assets/serviceWorker.min.js', // Sets a custom service worker script
+    fallback(payload: any) {
+        // eslint-disable-next-line no-console
+        console.log('Fallback notification', payload);
+    },
+});
+
 export enum Status {
     DENIED = 'denied',
     DEFAULT = 'default',
