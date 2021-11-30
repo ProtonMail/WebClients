@@ -97,7 +97,9 @@ export const formatDownloadAll = async (
                 acc.map[name].index++;
                 const [fileName, ext] = splitExtension(name);
                 const newName = `${fileName} (${acc.map[name].index}).${ext}`;
-                att.Name = newName;
+                const updatedAttachment = { ...att, Name: newName };
+                acc.list.push(updatedAttachment);
+                return acc;
             }
             acc.list.push(att);
             return acc;
