@@ -31,6 +31,15 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
                   }),
               ]),
 
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: `${path.dirname(require.resolve('push.js'))}/serviceWorker.min.js`,
+                    to: 'assets/serviceWorker.min.js',
+                },
+            ],
+        }),
+
         new WriteWebpackPlugin(
             [main, compat, elliptic, worker].map(({ filepath, contents }) => ({
                 name: filepath,

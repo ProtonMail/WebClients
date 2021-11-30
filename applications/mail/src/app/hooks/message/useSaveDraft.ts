@@ -9,7 +9,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
-import { isNetworkError } from '../../helpers/errors';
+import { isDecryptionError, isNetworkError } from '../../helpers/errors';
 import { getCurrentFolderID } from '../../helpers/labels';
 import { deleteConversation } from '../../logic/conversations/conversationsActions';
 import { useGetConversation } from '../conversation/useConversation';
@@ -24,11 +24,19 @@ export const useCreateDraft = () => {
     const dispatch = useDispatch();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
+    const { createNotification } = useNotifications();
 
     return useCallback(async (message: MessageStateWithData) => {
-        const newMessage = await createMessage(message, api, getMessageKeys);
-        dispatch(draftSaved({ ID: message.localID, message: newMessage }));
-        await call();
+        try {
+            const newMessage = await createMessage(message, api, getMessageKeys);
+            dispatch(draftSaved({ ID: message.localID, message: newMessage }));
+            await call();
+        } catch (error: any) {
+            if (!error.data) {
+                createNotification({ text: c('Error').t`Error while saving draft. Please try again.`, type: 'error' });
+            }
+            throw error;
+        }
     }, []);
 };
 
@@ -56,7 +64,7 @@ const useUpdateDraft = () => {
             if (!error.data) {
                 const errorMessage = c('Error').t`Error while saving draft. Please try again.`;
                 createNotification({ text: errorMessage, type: 'error' });
-                if (!isNetworkError(error)) {
+                if (!isNetworkError(error) && !isDecryptionError(error)) {
                     captureMessage(errorMessage, { extra: { message, error } });
                 }
                 throw error;
