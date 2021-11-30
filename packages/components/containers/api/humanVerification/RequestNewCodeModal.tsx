@@ -41,20 +41,48 @@ const RequestNewCodeModal = ({ open, verificationModel, onEdit, onResend, onClos
                     }}
                     disabled={loading}
                 >
-                    {verificationModel.method === 'email'
-                        ? c('Action').t`Edit email address`
-                        : c('Action').t`Edit phone number`}
+                    {(() => {
+                        if (verificationModel.method === 'ownership-email') {
+                            if (verificationModel.type === 'external') {
+                                return c('Action').t`Edit email address`;
+                            }
+                            if (verificationModel.type === 'login') {
+                                return c('Action').t`Edit sign-in details`;
+                            }
+                        }
+                        if (verificationModel.method === 'ownership-sms') {
+                            if (verificationModel.type === 'login') {
+                                return c('Action').t`Edit sign-in details`;
+                            }
+                        }
+                        if (verificationModel.method === 'email') {
+                            return c('Action').t`Edit email address`;
+                        }
+                        if (verificationModel.method === 'sms') {
+                            return c('Action').t`Edit phone number`;
+                        }
+                    })()}
                 </Button>,
                 <Button onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>,
             ]}
         >
-            {verificationModel.method === 'email'
-                ? c('Info')
-                      .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this email address is incorrect, click "Edit" to correct it.`
-                : c('Info')
-                      .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this phone number is incorrect, click "Edit" to correct it.`}
+            {(() => {
+                if (verificationModel.method === 'ownership-email' || verificationModel.method === 'ownership-sms') {
+                    if (verificationModel.type === 'login' || verificationModel.type === 'external') {
+                        return c('Info').jt`We'll send a new verification code to ${strong}`;
+                    }
+                }
+                if (verificationModel.method === 'email') {
+                    return c('Info')
+                        .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this email address is incorrect, click "Edit" to correct it.`;
+                }
+                if (verificationModel.method === 'sms') {
+                    return c('Info')
+                        .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this phone number is incorrect, click "Edit" to correct it.`;
+                }
+            })()}
         </AlertModal>
     );
 };

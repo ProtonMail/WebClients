@@ -5,7 +5,8 @@ import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { FormModal } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
-import HumanVerificationForm, { HumanVerificationSteps } from './HumanVerificationForm';
+import HumanVerificationForm from './HumanVerificationForm';
+import { HumanVerificationSteps } from './interface';
 
 interface Props<T> {
     token: string;
@@ -56,6 +57,7 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
                 step={step}
                 onChangeStep={setStep}
                 onSubmit={(...args) => withLoading(handleSubmit(...args))}
+                onClose={rest.onClose}
                 methods={methods}
                 token={token}
             />
