@@ -93,3 +93,22 @@ export const scrollIntoView = (element: HTMLElement | undefined | null, extra?: 
         // eslint-disable-next-line no-empty
     } catch (e: any) {}
 };
+
+export const hasChildren = (node?: HTMLElement) => {
+    return typeof node === 'object' && typeof node.childNodes !== 'undefined' && node.childNodes.length > 0;
+};
+
+export const getAllNodesRecursively = (node: HTMLElement, limit: number, depth: number) => {
+    const nodes = [node];
+    if (depth > limit) {
+        return nodes;
+    }
+    if (hasChildren(node)) {
+        for (const child of node.childNodes) {
+            if (child instanceof HTMLElement) {
+                nodes.push(...getAllNodesRecursively(child, limit, depth + 1));
+            }
+        }
+    }
+    return nodes;
+};

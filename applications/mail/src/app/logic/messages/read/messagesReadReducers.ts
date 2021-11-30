@@ -177,3 +177,25 @@ export const resetVerification = (state: Draft<MessagesState>, { payload: emails
         }
     });
 };
+
+export const applyDarkStyle = (
+    state: Draft<MessagesState>,
+    { payload: { ID, hasDarkStyle } }: PayloadAction<{ ID: string; hasDarkStyle?: boolean }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.messageDocument) {
+        messageState.messageDocument.hasDarkStyle = hasDarkStyle;
+    }
+};
+
+export const removeDarkStyle = (
+    state: Draft<MessagesState>,
+    { payload: { ID, noDarkStyle } }: PayloadAction<{ ID: string; noDarkStyle?: boolean }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.messageDocument) {
+        messageState.messageDocument.noDarkStyle = noDarkStyle;
+    }
+};
