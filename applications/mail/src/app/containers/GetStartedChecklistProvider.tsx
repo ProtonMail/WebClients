@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useEffect, useState } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
-import { useApi, useEventManager, useLoading } from '@proton/components';
+import { useApi, useEventManager, useLoading, useUserSettings } from '@proton/components';
 import { getChecklist } from '@proton/shared/lib/api/checklist';
 import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
@@ -32,6 +32,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         CreatedAt: 0,
     });
 
+    const [userSettings] = useUserSettings();
     const [loading, withLoading] = useLoading();
     const { subscribe } = useEventManager();
     const api = useApi();
@@ -46,11 +47,15 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     };
 
     useEffect(() => {
-        withLoading(
-            api<{ Items: GetStartedChecklistKey[]; CreatedAt: number }>(getChecklist('get-started')).then(setChecklist)
-        );
+        if (userSettings.Checklists?.includes('get-started')) {
+            withLoading(
+                api<{ Items: GetStartedChecklistKey[]; CreatedAt: number }>(getChecklist('get-started')).then(
+                    setChecklist
+                )
+            );
+        }
 
-        subscribe(({ Checklist }: Event) => {
+        const unsubscribe = subscribe(({ Checklist }: Event) => {
             Checklist?.forEach(({ CompletedItem }) => {
                 setChecklist((current) => ({
                     ...current,
@@ -58,7 +63,11 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
                 }));
             });
         });
-    }, []);
+
+        return () => {
+            unsubscribe();
+        };
+    }, [userSettings]);
 
     const context = {
         loading,
