@@ -14,10 +14,10 @@
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
-        "core-js": "^3.16.1",
+        "@proton/polyfill": "workspace:packages/polyfill",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
-        "yetch": "^1.1.0"
+        "resize-observer": "^1.0.3"
     },
     "devDependencies": {
         "@proton/i18n": "workspace:packages/i18n",

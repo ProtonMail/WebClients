@@ -20,16 +20,15 @@
     "dependencies": {
         "@proton/components": "workspace:packages/components",
         "@proton/pack": "workspace:packages/pack",
+        "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
-        "abortcontroller-polyfill": "^1.7.3",
         "cross-env": "^7.0.3",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
-        "ttag": "^1.7.24",
-        "yetch": "^1.1.0"
+        "ttag": "^1.7.24"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",

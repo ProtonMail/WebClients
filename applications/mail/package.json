@@ -23,13 +23,12 @@
         "@babel/plugin-transform-runtime": "^7.13.15",
         "@proton/components": "workspace:packages/components",
         "@proton/pack": "workspace:packages/pack",
+        "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@reduxjs/toolkit": "^1.6.2",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
-        "abortcontroller-polyfill": "^1.7.3",
-        "core-js": "^3.16.1",
         "cross-env": "^7.0.3",
         "date-fns": "^2.4.1",
         "declassify": "^2.1.0",
@@ -44,8 +43,7 @@
         "react-dom": "^17.0.0",
         "react-redux": "^7.2.5",
         "ttag": "^1.7.24",
-        "turndown": "^7.1.1",
-        "yetch": "^1.1.0"
+        "turndown": "^7.1.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",

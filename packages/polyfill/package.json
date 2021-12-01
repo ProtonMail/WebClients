@@ -1,0 +1,19 @@
+{
+    "name": "@proton/polyfill",
+    "main": "index.js",
+    "module": "index.js",
+    "scripts": {
+        "lint": "eslint ."
+    },
+    "dependencies": {
+        "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
+        "abortcontroller-polyfill": "^1.7.3",
+        "core-js": "^3.19.1",
+        "regenerator-runtime": "^0.13.9",
+        "resize-observer": "^1.0.3",
+        "yetch": "^1.1.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.5.0"
+    }
+}
