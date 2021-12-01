@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Ativar a recuperação"
-      ],
       "Add": [
         "Adicionar"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Adicionar contato"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Adicionar grupo"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Adicionar novo grupo"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Adicionar captura(s) de tela"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Diminuir"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Excluir"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Selecionar plano"
       ],
-      "Set as default": [
-        "Definir como padrão"
-      ],
-      "Set recovery phrase": [
-        "Definir uma frase de recuperação"
-      ],
       "Share": [
         "Compartilhar"
       ],
@@ -522,12 +519,6 @@
       ],
       "Untrust": [
         "Não confiar"
-      ],
-      "Update recovery file": [
-        "Atualizar o arquivo de recuperação"
-      ],
-      "Update recovery phrase": [
-        "Atualizar a frase de recuperação"
       ],
       "Upgrade": [
         "Atualizar"
@@ -1455,7 +1446,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } atualizado"
       ]
     },
     "Free price": {
@@ -1595,8 +1586,8 @@
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } novo calendário",
+        "${ calendarsToBeCreatedCount } novos calendários"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "",
@@ -1681,16 +1672,16 @@
         "${ saveExtra20 } tanto em VPN quanto em e-mail adicionando uma assinatura VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } marcador selecionado",
+        "${ selectedFoldersCount } marcadores selecionados"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -1852,8 +1843,8 @@
         ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Criar ${ calendarsToBeCreated } novo calendário",
+        "Criar ${ calendarsToBeCreated } novos calendários"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que você gostaria de importar."
@@ -1881,9 +1872,6 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim com os formatos vCard 3.1 e 4.0 (encode UTF-8)."
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete drive": [
         "",
@@ -1989,11 +1977,11 @@
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendário",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendários"
       ],
       "Import from": [
         "Importar de"
@@ -2002,7 +1990,7 @@
         "Importação em progresso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Included": [
         "Incluso"
@@ -2077,7 +2065,7 @@
         "Novo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "A seguir, será necessário fazer login em sua conta do Google e autorizar nosso acesso aos seus dados."
       ],
       "No": [
         "Não"
@@ -2219,16 +2207,13 @@
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
       ],
       "Session timed out.": [
         "Sessão expirada."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "A configuração do PGP permite que você envie e-mails criptografados de ponta a ponta com um usuário que não usa o ProtonMail, mas que usa um serviço compatível com PGP."
@@ -2240,7 +2225,7 @@
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        ""
+        "Alguns de seus arquivos não estão mais acessíveis. Restaure o acesso aos seus arquivos. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Ocorreu um erro, tente novamente mais tarde."
@@ -2367,7 +2352,7 @@
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Nós te avisaremos quando a importação estiver concluída."
       ],
       "Week": [
         "Semana"
@@ -2466,7 +2451,7 @@
         "Seu arquivo está sendo baixado."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        ""
+        "Seus arquivos não estão mais acessíveis devido a uma redefinição de senha. Envie a chave de criptografia antiga para recuperar o acesso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Seus arquivos serão criptografados e depois salvos."
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "(Expired)": [
         "(Expirado)"
       ],
@@ -2836,7 +2824,7 @@
         "Criptografar e-mails"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Digite o nome da organização para confirmar"
       ],
       "Enter the 6-digit code": [
         "Digite o código de 6 dígitos"
@@ -2926,7 +2914,7 @@
         "Combinar uma pasta"
       ],
       "Name": [
-        ""
+        "Nome"
       ],
       "Name on card": [
         "Nome no cartão"
@@ -3010,7 +2998,7 @@
         "Assinar e-mails"
       ],
       "Size": [
-        ""
+        "Tamanho"
       ],
       "Skip file": [
         "Ignorar arquivo"
@@ -3046,7 +3034,7 @@
         "Autenticação de dois fatores"
       ],
       "Type": [
-        ""
+        "Tipo"
       ],
       "Unknown file": [
         "Arquivo desconhecido"
@@ -3129,21 +3117,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Criar pasta"
       ],
       "Create label": [
-        ""
+        "Criar marcador"
       ],
       "Edit folder": [
-        ""
+        "Editar pasta"
       ],
       "Edit label": [
-        ""
+        "Editar marcador"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } criado"
       ]
     },
     "Layout mode": {
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Adicionar código de vale-presente"
       ],
-      "All mail": [
-        "Todos os e-mails"
-      ],
-      "Archive": [
-        "Arquivo"
-      ],
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
       "click here": [
         "clique aqui"
       ],
-      "Drafts": [
-        "Rascunhos"
-      ],
       "Go to subscription plans": [
         "Ir para Planos de assinatura"
-      ],
-      "Inbox": [
-        "Caixa de entrada"
       ],
       "Learn more": [
         "Saiba mais"
@@ -3185,29 +3161,14 @@
       "My files": [
         "Meus arquivos"
       ],
-      "Outbox": [
-        "Caixa de saída"
-      ],
       "Pay invoice": [
         "Pagar fatura"
       ],
       "Request an invite": [
         "Solicitar um convite"
       ],
-      "Scheduled": [
-        "Agendado"
-      ],
-      "Sent": [
-        "Enviados"
-      ],
       "Shared": [
         "Compartilhado"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Com estrela"
       ],
       "Trash": [
         "Lixo"
@@ -3221,8 +3182,8 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } de ${ calendarsToBeCreated } criado",
+        "${ createdCalendars } de ${ calendarsToBeCreated } criados"
       ],
       "Almost there": [
         "Quase lá"
@@ -3231,13 +3192,13 @@
         "Criando novos calendários"
       ],
       "Gathering your data": [
-        ""
+        "Coletando seus dados"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Estamos coletando seus dados com o seu provedor"
       ],
       "Your import is starting": [
-        ""
+        "Sua importação está começando"
       ]
     },
     "Mail feature": {
@@ -3323,12 +3284,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todas as mensagens de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3403,8 +3364,8 @@
         "${ deletedItemsCount } itens excluídos permanentemente da lixeira"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "",
-        ""
+        "Falha ao excluir ${ failedCount } link de seu arquivo",
+        "Falha ao excluir ${ failedCount } links de seus arquivos"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } arquivo falhou em ser movido",
@@ -3470,7 +3431,7 @@
         "Falha ao mover. Por favor, tente novamente"
       ],
       "Failed to upload files: ${ err }": [
-        ""
+        "Falha ao enviar arquivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "",
@@ -3516,7 +3477,7 @@
         "O link para seu arquivo foi excluído"
       ],
       "Your old files will be deleted in 72 hours": [
-        ""
+        "Seus arquivos antigos serão excluídos em 72 horas"
       ],
       "Your settings have been changed successfully": [
         "Suas configurações foram alteradas com sucesso"
@@ -4028,13 +3989,13 @@
         "data de criação da conta"
       ],
       "the last 12 months": [
-        ""
+        "os últimos 12 meses"
       ],
       "the last 3 months": [
-        ""
+        "os últimos 3 meses"
       ],
       "the last month": [
-        ""
+        "o último mês"
       ]
     },
     "Time unit": {
@@ -4123,7 +4084,7 @@
         "Confirmar perda dos bônus Proton"
       ],
       "Contact details": [
-        ""
+        "Detalhes do contato"
       ],
       "Contact Details": [
         "Detalhes do contato"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Relatar um problema"
+      ],
+      "Request new code": [
+        ""
       ],
       "Restore your files": [
         "Restore your files"

@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "追加"
       ],
+      "Add address": [
+        "住所を追加"
+      ],
       "Add contact": [
         "連絡先を追加"
+      ],
+      "Add email": [
+        "メールアドレスを追加"
       ],
       "Add group": [
         "グループを追加"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "通知を追加"
+      ],
+      "Add phone number": [
+        "電話番号を追加"
       ],
       "Add screenshot(s)": [
         "スクリーンショットを追加"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "減少"
-      ],
-      "Default email application": [
-        "既定のメールアプリ"
       ],
       "Delete": [
         "削除"
@@ -401,12 +404,6 @@
       "Send": [
         "送信"
       ],
-      "Set as default": [
-        "既定に設定"
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "共有"
       ],
@@ -478,12 +475,6 @@
       ],
       "Update": [
         "更新"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "アップグレード"
@@ -2368,9 +2359,6 @@
       "Daily": [
         "毎日"
       ],
-      "Default email application": [
-        "既定のメールアプリ"
-      ],
       "Discard changes?": [
         "変更を破棄してよろしいですか？"
       ],
@@ -2643,9 +2631,6 @@
       ],
       "Session timed out.": [
         "セッションがタイムアウトしました。"
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "ProtonMailをブラウザ既定のメールアプリとして設定すると、メールのリンクをクリックした際にProtonMailが自動で起動します。"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -3151,6 +3136,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "0 - Not likely": [
         ""
       ],
@@ -3543,12 +3531,6 @@
       "Add a gift code": [
         "ギフトコードを追加"
       ],
-      "All mail": [
-        ""
-      ],
-      "Archive": [
-        ""
-      ],
       "Calendars": [
         "カレンダー"
       ],
@@ -3558,14 +3540,8 @@
       "click here": [
         "ここをクリック"
       ],
-      "Drafts": [
-        ""
-      ],
       "Go to subscription plans": [
         "サブスクリプション プランへ移動"
-      ],
-      "Inbox": [
-        ""
       ],
       "Learn more": [
         "より詳しく"
@@ -3573,32 +3549,14 @@
       "My calendars": [
         "マイカレンダー"
       ],
-      "Outbox": [
-        ""
-      ],
       "Pay invoice": [
         "請求の支払い"
       ],
       "Request an invite": [
         "登録を申請する"
       ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        ""
-      ],
-      "Spam": [
-        ""
-      ],
-      "Starred": [
-        ""
-      ],
       "Subscribed calendars": [
         "登録済みカレンダー"
-      ],
-      "Trash": [
-        ""
       ],
       "Upgrade": [
         "アップグレード"
@@ -5022,6 +4980,9 @@
       ],
       "Report a problem": [
         "問題を報告"
+      ],
+      "Request new code": [
+        ""
       ],
       "Reset calendar keys": [
         "カレンダーの鍵のリセット"

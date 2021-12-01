@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } negozio"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Aggiungi"
       ],
+      "Add address": [
+        "Aggiungi indirizzo"
+      ],
       "Add contact": [
         "Aggiungi contatto"
+      ],
+      "Add email": [
+        "Aggiungi email"
       ],
       "Add group": [
         "Aggiungi gruppo"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Aggiungi un nuovo gruppo"
+      ],
+      "Add phone number": [
+        "Aggiungi numero di telefono"
       ],
       "Add screenshot(s)": [
         "Aggiungi screenshot"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Riduci"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Elimina"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Seleziona piano"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "Condividi"
       ],
@@ -522,12 +519,6 @@
       ],
       "Untrust": [
         "Non ritenere attendibile"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "Esecuzione dell'upgrade"
@@ -1118,8 +1109,8 @@
         "Impossibile generare chiavi di file"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
+        "Deseleziona almeno ${ calendarToFixCount } calendario",
+        "Deseleziona almeno ${ calendarToFixCount } calendari"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deseleziona almeno ${ calendarToFixCount } calendario o",
@@ -1141,7 +1132,7 @@
         "Impossibile caricare il collegamento"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "Impossibile caricare il file \"${ item.name }\" a causa dell'errore \"${ error }\""
       ],
       "File cannot be merged with folder": [
         "Il file non può essere unito alla cartella"
@@ -1202,7 +1193,7 @@
         "Nome sulla carta richiesto"
       ],
       "No data to import": [
-        ""
+        "Nessun dato da importare"
       ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
@@ -1795,7 +1786,7 @@
         "La navigazione di base e le azioni rimangono disponibili indipendentemente dal fatto che le scorciatoie da tastiera siano attive o meno nelle impostazioni."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        ""
+        "Poiché ${ appName } è crittografato end-to-end, non possiamo accedere\no decrittografa i tuoi file per te. Per sbloccare l'unità dopo la reimpostazione della password,\ndevi avere uno dei seguenti:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Fatturato come ${ billedPrice } ogni 2 anni"
@@ -1849,7 +1840,7 @@
         "Connessioni"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        ""
+        "Continua a utilizzare ${ appName } e sblocca l'unità in un secondo momento"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crea ${ calendarsToBeCreated } nuovo calendario",
@@ -1881,9 +1872,6 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete drive": [
         "Elimina spazio",
@@ -2110,7 +2098,7 @@
         "Non personalizzabile"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ appName }."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Numero di connessioni VPN assegnabili agli utenti. Ogni dispositivo connesso consuma una connessione VPN."
@@ -2119,7 +2107,7 @@
         "di"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        ""
+        "Una delle tue unità crittografate è bloccata. Ciò è probabilmente dovuto a una recente reimpostazione della password.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Cambia queste impostazioni solo se stai usando PGP con destinatari non-ProtonMail."
@@ -2219,16 +2207,13 @@
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
       "Session timed out.": [
         "Sessione scaduta."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "L'impostazione di PGP consente di inviare email crittografate end-to-end con un utente non ProtonMail che utilizza un servizio compatibile PGP."
@@ -2397,7 +2382,7 @@
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Puoi anche unire i calendari importati con i calendari Proton esistenti."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(In arrivo)"
+      ],
       "(Expired)": [
         "(Scaduto)"
       ],
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
-      "All mail": [
-        "Tutte le mail"
-      ],
-      "Archive": [
-        "Archivio"
-      ],
       "clearing your browser cache": [
         "pulendo la cache del browser"
       ],
       "click here": [
         "clicca qui"
       ],
-      "Drafts": [
-        "Bozze"
-      ],
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
-      ],
-      "Inbox": [
-        "Posta in arrivo"
       ],
       "Learn more": [
         "Per saperne di più"
@@ -3185,29 +3161,14 @@
       "My files": [
         "I miei file"
       ],
-      "Outbox": [
-        "Posta in uscita"
-      ],
       "Pay invoice": [
         "Pagamento della fattura"
       ],
       "Request an invite": [
         "Richiedi un invito"
       ],
-      "Scheduled": [
-        "Programmato"
-      ],
-      "Sent": [
-        "Inviata"
-      ],
       "Shared": [
         "Condivisi"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Preferito"
       ],
       "Trash": [
         "Cestina"
@@ -3323,12 +3284,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importa tutti i messaggi da ${ selectedLabelsCount } di ${ totalLabelsCount } etichetta dal ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ selectedLabelsCount } di ${ totalLabelsCount } etichette da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importa tutti i messaggi da ${ totalLabelsCount } etichetta dal ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ totalLabelsCount } etichette da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3473,11 +3434,11 @@
         "Impossibile caricare i file: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "",
-        ""
+        "Il file o la cartella \"${ filename }\" e ${ count } altro sono già in caricamento",
+        "Il file o la cartella \"${ filename }\" e ${ count } altri sono già in caricamento"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        ""
+        "Il file o la cartella \"${ filename }\" è già in fase di caricamento"
       ],
       "File or folder is missing a name": [
         "Al file o alla cartella manca un nome"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Segnala un problema"
+      ],
+      "Request new code": [
+        "Richiedi nuovo codice"
       ],
       "Restore your files": [
         "Ripristina i file"

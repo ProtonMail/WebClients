@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "添加"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "添加联系人"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "添加群组"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "添加通知"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "添加屏幕截图"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "减少"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "删除"
@@ -401,12 +404,6 @@
       "Send": [
         "发送​​"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "分享"
       ],
@@ -478,12 +475,6 @@
       ],
       "Update": [
         "更改"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "升级账户"
@@ -2368,9 +2359,6 @@
       "Daily": [
         "每天"
       ],
-      "Default email application": [
-        ""
-      ],
       "Discard changes?": [
         "舍弃更改？"
       ],
@@ -2643,9 +2631,6 @@
       ],
       "Session timed out.": [
         "会话已超时。"
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了"
@@ -3151,6 +3136,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "0 - Not likely": [
         "0 - 不可能"
       ],
@@ -3543,12 +3531,6 @@
       "Add a gift code": [
         "使用礼品码"
       ],
-      "All mail": [
-        ""
-      ],
-      "Archive": [
-        ""
-      ],
       "Calendars": [
         "日历"
       ],
@@ -3558,14 +3540,8 @@
       "click here": [
         "请单击此处"
       ],
-      "Drafts": [
-        ""
-      ],
       "Go to subscription plans": [
         "转至订阅计划"
-      ],
-      "Inbox": [
-        ""
       ],
       "Learn more": [
         "了解更多"
@@ -3573,32 +3549,14 @@
       "My calendars": [
         "我的日历"
       ],
-      "Outbox": [
-        ""
-      ],
       "Pay invoice": [
         "支付"
       ],
       "Request an invite": [
         "请求邀请"
       ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        ""
-      ],
-      "Spam": [
-        ""
-      ],
-      "Starred": [
-        ""
-      ],
       "Subscribed calendars": [
         "已订阅日历"
-      ],
-      "Trash": [
-        ""
       ],
       "Upgrade": [
         "升级"
@@ -5022,6 +4980,9 @@
       ],
       "Report a problem": [
         "反馈问题"
+      ],
+      "Request new code": [
+        ""
       ],
       "Reset calendar keys": [
         "重置日历密钥"

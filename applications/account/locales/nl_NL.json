@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Organisatiesleutel activeren"
-      ],
-      "Activate recovery": [
-        "Activeer herstel"
       ],
       "Add": [
         "Toevoegen"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Stel catch-all in"
-      ],
-      "Set recovery phrase": [
-        "Stel herstel zin"
       ],
       "Share via link": [
         "Deel via link"
@@ -1341,7 +1335,7 @@
         "De agenda is te groot"
       ],
       "Calendar link is not accessible": [
-        "Agneda link is niet toegankelijk"
+        "Agendalink is niet toegankelijk"
       ],
       "Calendar link is temporarily inaccessible": [
         "Agendalink is tijdelijk ontoegankelijk"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Bewaar uw wachtwoord ergens veilig."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Bewaar uw wachtwoord op een veilige plaats. Klik op het pictogram om te bevestigen of u het wachtwoord correct hebt ingevoerd."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Bewaar uw wachtwoord op een veilige plaats. Klik op het pictogram om te controleren of u het wachtwoord correct hebt ingevoerd."
       ],
       "Scan QR code instead": [
         "Scan QR-code in plaats daarvan"
@@ -4760,25 +4754,25 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        ""
+        "Een sleutel met hetzelfde encryptie algoritme bestaat al. Het genereren van een andere sleutel zal het laden van de account vertragen. Weet u zeker dat u door wilt gaan?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        ""
+        "Een sleutel met hetzelfde algoritme is al in gebruik voor dit adres. Een andere sleutel genereren kan ervoor zorgen dat het laden van het account langzamer gaat en het verwijderen van oude sleutels kan problemen opleveren. Als u dit doet omdat de oude sleutel uitgelekt is, markeer de oude sleutel dan zodanig. Weet u zeker dat u door wilt gaan?"
       ],
       "Generate key": [
-        ""
+        "Genereer sleutel"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
-        ""
+        "Sleutel met vingerafdruk ${ fp } succesvol aangemaakt."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "De encryptiesleutels worden gegenereerd. Dit kan enkele minuten duren en uw browser tijdelijk bevriezen."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "De encryptiesleutels voor uw adres worden gegenereerd. Dit kan enkele minuten duren en uw browser tijdelijk bevriezen."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        ""
+        "U kunt een nieuwe versleutelingssleutel genereren als u denkt dat uw vorige sleutel uitgelekt is."
       ]
     },
     "Key state badge": {
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers }/${ MaxMembers } actieve gebruiker",
         "${ UsedMembers }/${ MaxMembers } actieve gebruikers"
+      ],
+      "(Coming soon)": [
+        "(Komt binnenkort)"
       ],
       "Account storage": [
         "Opslagruimte account"
