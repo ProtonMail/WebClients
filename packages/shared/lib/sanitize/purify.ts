@@ -10,8 +10,14 @@ const toMap = (list: string[]) =>
 
 const LIST_PROTON_TAG = ['svg'];
 // const MAP_PROTON_TAG = toMap(LIST_PROTON_TAG);
-const LIST_PROTON_ATTR = ['data-src', 'src', 'srcset', 'background', 'poster', 'xlink:href'];
+const LIST_PROTON_ATTR = ['data-src', 'src', 'srcset', 'background', 'poster', 'xlink:href', 'href'];
 const MAP_PROTON_ATTR = toMap(LIST_PROTON_ATTR);
+const PROTON_ATTR_TAG_WHITELIST = ['a', 'base'];
+const MAP_PROTON_ATTR_TAG_WHITELIST = toMap(PROTON_ATTR_TAG_WHITELIST.map((tag) => tag.toUpperCase()));
+
+const shouldPrefix = (tagName: string, attributeName: string) => {
+    return !MAP_PROTON_ATTR_TAG_WHITELIST[tagName] && MAP_PROTON_ATTR[attributeName];
+};
 
 const CONFIG: { [key: string]: any } = {
     default: {
@@ -94,7 +100,7 @@ const beforeSanitizeElements = (node: Node) => {
     Array.from(element.attributes).forEach((type) => {
         const item = type.name;
 
-        if (MAP_PROTON_ATTR[item]) {
+        if (shouldPrefix(element.tagName, item)) {
             element.setAttribute(`proton-${item}`, element.getAttribute(item) || '');
             element.removeAttribute(item);
         }
