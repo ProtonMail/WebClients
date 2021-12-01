@@ -7,7 +7,10 @@ interface Props {
 }
 
 const MergeContactBanner = ({ onMerge }: Props) => {
-    const mergeAction = <InlineLinkButton onClick={onMerge} key="mergeAction">{c('Action').t`Merge`}</InlineLinkButton>;
+    const mergeAction = (
+        <InlineLinkButton onClick={onMerge} key="mergeAction" data-testid="contacts:merge-contacts-button">{c('Action')
+            .t`Merge`}</InlineLinkButton>
+    );
 
     return (
         <div className="pl2 pr2 pt1 pb1 bg-weak flex flex-items-align-center flex-nowrap border-bottom">

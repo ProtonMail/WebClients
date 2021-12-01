@@ -316,6 +316,7 @@ const MergingModalContent = ({
                 max={100}
                 success={successMerge || successDelete}
                 display={loading ? progressMessage : endMessage}
+                data-testid="merge-model:progress-merge-contacts"
             />
         </>
     );
