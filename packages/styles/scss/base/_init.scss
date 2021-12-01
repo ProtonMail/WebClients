@@ -239,7 +239,7 @@ details {
 
 	&[open] > summary {
 		.summary-caret {
-			@extend .mirror;
+			@extend .rotateX-180;
 		}
 	}
 }
