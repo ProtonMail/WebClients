@@ -71,10 +71,10 @@ export const transformRemote = (
 
         const id = generateUID('remote');
         if (match.tagName === 'IMG') {
-            if (draft) {
-                removeProtonPrefix(match);
-            } else {
+            if (!draft) {
                 insertImageAnchor(id, 'remote', match);
+            } else if (showRemoteImages && !useProxy) {
+                removeProtonPrefix(match);
             }
         }
 
