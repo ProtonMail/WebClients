@@ -20,11 +20,11 @@
     "dependencies": {
         "@proton/components": "workspace:packages/components",
         "@proton/pack": "workspace:packages/pack",
+        "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
-        "abortcontroller-polyfill": "^1.7.3",
         "date-fns": "^2.5.0",
         "dompurify": "^2.3.3",
         "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
@@ -32,8 +32,7 @@
         "react-dom": "^17.0.0",
         "react-helmet": "^6.1.0",
         "tinycolor2": "^1.4.1",
-        "ttag": "^1.7.24",
-        "yetch": "^1.1.0"
+        "ttag": "^1.7.24"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.6.0",
