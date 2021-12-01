@@ -22,6 +22,7 @@ const NameTableCell = ({ name, contactID, highlightedID, checked, deleted, greye
                 className={`flex flex-align-items-center flex-item-noshrink mr0-5 ${
                     deleted ? 'visibility-hidden' : ''
                 }`}
+                data-testid="merge-model:name-checkbox"
             />
             <span
                 className={classnames([

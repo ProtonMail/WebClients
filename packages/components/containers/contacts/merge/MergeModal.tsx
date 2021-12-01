@@ -84,7 +84,9 @@ const MergeModal = ({ contacts, userKeysList, onMerged, ...rest }: Props) => {
             const submit = isDeleteOnly ? (
                 <PrimaryButton type="submit">{c('Action').t`Continue`}</PrimaryButton>
             ) : (
-                <PrimaryButton type="submit" disabled={!totalBeMerged}>{c('Action').t`Merge`}</PrimaryButton>
+                <PrimaryButton type="submit" disabled={!totalBeMerged} data-testid="merge-model-merge-button">{c(
+                    'Action'
+                ).t`Merge`}</PrimaryButton>
             );
 
             const handleSubmit = () => setIsMerging(true);
@@ -109,7 +111,7 @@ const MergeModal = ({ contacts, userKeysList, onMerged, ...rest }: Props) => {
         // Display progress bar while merging contacts
         const close = !mergeFinished && <Button type="reset">{c('Action').t`Cancel`}</Button>;
         const submit = (
-            <PrimaryButton type="submit" loading={!mergeFinished}>
+            <PrimaryButton type="submit" loading={!mergeFinished} data-testid="merge-model:close-button">
                 {c('Action').t`Close`}
             </PrimaryButton>
         );
