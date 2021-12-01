@@ -1,7 +1,12 @@
-import { extractContactImportCategories, getContactId, getImportCategories } from '../../lib/contacts/helpers/import';
+import {
+    extractContactImportCategories,
+    getContactId,
+    getImportCategories,
+    getSupportedContact,
+} from '../../lib/contacts/helpers/import';
 import { extractVcards } from '../../lib/contacts/vcard';
 import { toCRLF } from '../../lib/helpers/string';
-import { ContactMetadata, EncryptedContact, ImportedContact } from '../../lib/interfaces/contacts';
+import { ContactMetadata, ContactProperties, EncryptedContact, ImportedContact } from '../../lib/interfaces/contacts';
 
 describe('import', () => {
     describe('extract vcards', () => {
@@ -231,6 +236,136 @@ END:VCARD`)
                 { name: 'pets', contactEmailIDs: ['contactemail3-2'], contactIDs: [], totalContacts: 1 },
             ];
             expect(getImportCategories(contacts)).toEqual(result);
+        });
+    });
+
+    describe('getSupportedContacts', () => {
+        const getExpectedProperties = (withLineBreaks = false) => {
+            return [
+                {
+                    field: 'version',
+                    value: '4.0',
+                    pref: undefined,
+                    group: undefined,
+                    type: undefined,
+                },
+                {
+                    field: 'adr',
+                    value: ['', '', withLineBreaks ? 'street with line breaks' : 'street', 'city', '', '00000', 'FR'],
+                    pref: 1,
+                    group: undefined,
+                    type: undefined,
+                },
+                {
+                    field: 'org',
+                    value: ['company'],
+                    pref: undefined,
+                    group: undefined,
+                    type: undefined,
+                },
+                {
+                    field: 'bday',
+                    value: '1999-01-01',
+                    pref: undefined,
+                    group: undefined,
+                    type: undefined,
+                },
+                {
+                    field: 'note',
+                    value: 'Notes',
+                    pref: undefined,
+                    group: undefined,
+                    type: undefined,
+                },
+                {
+                    field: 'tel',
+                    value: '00 00000000',
+                    pref: 1,
+                    group: undefined,
+                    type: undefined,
+                },
+                {
+                    field: 'title',
+                    value: 'title',
+                    pref: undefined,
+                    group: undefined,
+                    type: undefined,
+                },
+                {
+                    field: 'fn',
+                    value: 'Name',
+                    pref: 1,
+                    group: undefined,
+                    type: undefined,
+                },
+                {
+                    field: 'email',
+                    value: 'email1@protonmail.com',
+                    pref: 1,
+                    group: 'item1',
+                    type: undefined,
+                },
+            ] as ContactProperties;
+        };
+
+        it('should import normal vCard correctly', () => {
+            const vCard = `BEGIN:VCARD
+VERSION:4.0
+ADR:;;street;city;;00000;FR
+ORG:company
+BDAY:19990101
+NOTE:Notes
+TEL;PREF=1:00 00000000
+TITLE:title
+FN;PREF=1:Name
+ITEM1.EMAIL;PREF=1:email1@protonmail.com
+END:VCARD`;
+
+            const expected = getExpectedProperties();
+
+            const contact = getSupportedContact(vCard);
+
+            expect(contact).toEqual(expected);
+        });
+
+        it('should import vCard with address containing \\r\\n correctly', () => {
+            const vCard = `BEGIN:VCARD
+VERSION:4.0
+ADR:;;street\\r\\nwith\\r\\nline\\r\\nbreaks;city;;00000;FR
+ORG:company
+BDAY:19990101
+NOTE:Notes
+TEL;PREF=1:00 00000000
+TITLE:title
+FN;PREF=1:Name
+ITEM1.EMAIL;PREF=1:email1@protonmail.com
+END:VCARD`;
+
+            const expected = getExpectedProperties(true);
+
+            const contact = getSupportedContact(vCard);
+
+            expect(contact).toEqual(expected);
+        });
+
+        it('should import vCard with address containing \\\\n correctly', () => {
+            const vCard = `BEGIN:VCARD
+VERSION:4.0
+ADR:;;street\\nwith\\nline\\nbreaks;city;;00000;FR
+ORG:company
+BDAY:19990101
+NOTE:Notes
+TEL;PREF=1:00 00000000
+TITLE:title
+FN;PREF=1:Name
+ITEM1.EMAIL;PREF=1:email1@protonmail.com
+END:VCARD`;
+
+            const expected = getExpectedProperties(true);
+
+            const contact = getSupportedContact(vCard);
+
+            expect(contact).toEqual(expected);
         });
     });
 });
