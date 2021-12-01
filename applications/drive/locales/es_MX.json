@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Activar recuperación"
-      ],
       "Add": [
         "Añadir"
       ],
+      "Add address": [
+        "Añadir dirección"
+      ],
       "Add contact": [
         "Añadir contacto"
+      ],
+      "Add email": [
+        "Añadir correo"
       ],
       "Add group": [
         "Añadir grupo"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Añadir grupo nuevo"
+      ],
+      "Add phone number": [
+        "Añadir número telefónico"
       ],
       "Add screenshot(s)": [
         "Añadir captura(s)"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Reducir"
-      ],
-      "Default email application": [
-        "Aplicación de correo por defecto"
       ],
       "Delete": [
         "Eliminar"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Seleccionar plan"
       ],
-      "Set as default": [
-        "Establecer por defecto"
-      ],
-      "Set recovery phrase": [
-        "Establecer frase de recuperación"
-      ],
       "Share": [
         "Compartir"
       ],
@@ -522,12 +519,6 @@
       ],
       "Untrust": [
         "Desconfiar"
-      ],
-      "Update recovery file": [
-        "Actualizar archivo de recuperación"
-      ],
-      "Update recovery phrase": [
-        "Actualizar frase de recuperación"
       ],
       "Upgrade": [
         "Actualizar"
@@ -1882,9 +1873,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
-      "Default email application": [
-        "Aplicación de correo por defecto"
-      ],
       "Delete drive": [
         "Eliminar unidad",
         "Eliminar unidades"
@@ -2226,9 +2214,6 @@
       ],
       "Session timed out.": [
         "Sesión agotada."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Configure ProtonMail como su aplicación de correo predeterminada para este navegador. ProtonMail se abrirá automáticamente cuando haga clic en un enlace de correo."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Configurar PGP le permite enviar correos electrónicos cifrados de extremo a extremo a usuarios fuera de ProtonMail que utilizan un servicio compatible con PGP."
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(Próximamente)"
+      ],
       "(Expired)": [
         "(Expirado)"
       ],
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Añadir código de regalo"
       ],
-      "All mail": [
-        "Todos"
-      ],
-      "Archive": [
-        "Archivo"
-      ],
       "clearing your browser cache": [
         "vaciar la caché del navegador"
       ],
       "click here": [
         "haga clic aquí"
       ],
-      "Drafts": [
-        "Borradores"
-      ],
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
-      ],
-      "Inbox": [
-        "Buzón"
       ],
       "Learn more": [
         "Más información"
@@ -3185,29 +3161,14 @@
       "My files": [
         "Mis archivos"
       ],
-      "Outbox": [
-        "Buzón de salida"
-      ],
       "Pay invoice": [
         "Pagar factura"
       ],
       "Request an invite": [
         "Solicitar una invitación"
       ],
-      "Scheduled": [
-        "Programados"
-      ],
-      "Sent": [
-        "Enviados"
-      ],
       "Shared": [
         "Compartido"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Destacados"
       ],
       "Trash": [
         "Papelera"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Reportar un problema"
+      ],
+      "Request new code": [
+        "Solicitar un código nuevo"
       ],
       "Restore your files": [
         "Restaure sus archivos"

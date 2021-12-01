@@ -20,17 +20,20 @@
       "Activate": [
         "Aktivér"
       ],
-      "Activate recovery": [
-        "Aktiver gendannelse"
-      ],
       "Add": [
         "Tilføj"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Tilføj betingelse"
       ],
       "Add contact": [
         "Tilføj kontakt"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Tilføj gruppe"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Tilføj ny gruppe"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Tilføj skærmfoto(s)"
@@ -309,6 +315,9 @@
       ],
       "Expand composer": [
         "Udvid skrivevinduet"
+      ],
+      "Expand URL": [
+        "Udvid URL"
       ],
       "Export": [
         "Exportér"
@@ -737,9 +746,6 @@
       "Set expiration time": [
         "Indstil udløbstidspunkt"
       ],
-      "Set recovery phrase": [
-        "Opsæt gendannelsessætning"
-      ],
       "Share via link": [
         "Del via link"
       ],
@@ -863,12 +869,6 @@
       ],
       "Update": [
         "Opdatér"
-      ],
-      "Update recovery file": [
-        "Opdater gendannelsesfil"
-      ],
-      "Update recovery phrase": [
-        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "på ${ formattedDate }"
-      ],
-      "today": [
-        "i dag"
-      ],
       "Today": [
         "I dag"
-      ],
-      "tomorrow": [
-        "i morgen"
       ],
       "Tomorrow": [
         "I morgen"
@@ -3601,8 +3592,14 @@
       "Message sent.": [
         "Besked afsendt."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Besked vil blive sendt ${ dateString } kl. ${ formattedTime }"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Besked vil blive sendt i dag kl. ${ formattedTime }"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Besked vil blive sendt i morgen kl. ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
@@ -3975,20 +3972,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Denne besked flyttes til Kladder, så du kan redigere den. Du skal igen planlægge, hvornår den skal sendes."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Denne besked vil blive sendt ${ dateString } kl. ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Denne besked vil blive sendt om kort tid"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        "Denne besked udløber ${ dateString } kl. ${ formattedTime }"
+      "This message will be sent today at ${ formattedTime }": [
+        "Denne besked vil blive sendt i dag kl. ${ formattedTime }"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Denne besked vil blive sendt i morgen kl. ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Denne besked udløber ${ formattedDate }"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Denne besked udløber om ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        "Denne besked udløber ${ dateString } kl. ${ formattedTime }"
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        "Denne besked udløber i dag ${ formattedTime }"
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        "Denne besked udløber i morgen ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denne offentlige nøgle vil automatisk blive brugt til kryptering af e-mail, der sendes til denne adresse."
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } og ${ count } andre"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Handlinger"
       ],
@@ -4628,7 +4640,7 @@
       "Conditions": [
         "Betingelser"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         "Bekræft adgangskode"
       ],
       "Contacts": [
@@ -4769,7 +4781,7 @@
       "Mark as": [
         "Markér som"
       ],
-      "Message Password": [
+      "Message password": [
         "Beskedadgangskode"
       ],
       "Move to": [
@@ -4805,7 +4817,7 @@
       "Password": [
         "Adgangskode"
       ],
-      "Password Hint": [
+      "Password hint": [
         "Adgangskodetip"
       ],
       "Payer": [
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Alle e-mails"
-      ],
       "Archive": [
         "Arkiv"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Starred": [
-        "Stjernemarkeret"
       ],
       "Trash": [
         "Papirkurv"
@@ -5670,7 +5676,7 @@
       "Browser version": [
         "Browser-version"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         "Bekræft adgangskode"
       ],
       "e.g. Julia Smith": [
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Anmeld et problem"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
       ],
       "Schedule send": [
         "Planlæg afsendelse"

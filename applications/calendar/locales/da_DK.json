@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "Activate recovery": [
-        "Aktiver gendannelse"
-      ],
       "Add": [
         "Tilføj"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Tilføj kontakt"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Tilføj gruppe"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "Tilføj notifikation"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Tilføj screenshot(s)"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "Formindsk"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Slet"
@@ -403,12 +406,6 @@
       "Send": [
         "Send"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        "Indstil gendannelsessætning"
-      ],
       "Share": [
         "Del"
       ],
@@ -480,12 +477,6 @@
       ],
       "Update": [
         "Opdatér"
-      ],
-      "Update recovery file": [
-        "Opdater gendannelsesfil"
-      ],
-      "Update recovery phrase": [
-        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -2421,9 +2412,6 @@
       "Daily": [
         "Daglig"
       ],
-      "Default email application": [
-        ""
-      ],
       "Discard changes?": [
         "Kassér ændringer?"
       ],
@@ -2698,9 +2686,6 @@
       ],
       "Session timed out.": [
         "Session er udløbet."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail bruger, der benytter en PGP-kompatibel tjeneste."
@@ -3206,6 +3191,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "0 - Not likely": [
         "0 - Ikke sandsynligt"
       ],
@@ -3599,12 +3587,6 @@
       "Add a gift code": [
         "Tilføj en gavekode"
       ],
-      "All mail": [
-        "Alle e-mails"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
       "Calendars": [
         "Kalendere"
       ],
@@ -3614,14 +3596,8 @@
       "click here": [
         "klik hér"
       ],
-      "Drafts": [
-        "Kladder"
-      ],
       "Go to subscription plans": [
         "Gå til abonnementer"
-      ],
-      "Inbox": [
-        "Indbakke"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -3629,32 +3605,14 @@
       "My calendars": [
         "Mine kalendere"
       ],
-      "Outbox": [
-        "Udbakke"
-      ],
       "Pay invoice": [
         "Betal faktura"
       ],
       "Request an invite": [
         "Anmod om invitation"
       ],
-      "Scheduled": [
-        "Planlagt"
-      ],
-      "Sent": [
-        "Sendt"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Stjernemarkeret"
-      ],
       "Subscribed calendars": [
         "Tilmeldte kalendere"
-      ],
-      "Trash": [
-        "Papirkurv"
       ],
       "Upgrade": [
         "Opgradere"
@@ -5119,6 +5077,9 @@
       ],
       "Report a problem": [
         "Anmeld et problem"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
       ],
       "Reset calendar keys": [
         "Nulstil kalendernøgler"

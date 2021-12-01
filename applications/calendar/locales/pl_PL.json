@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Aktywuj odzyskiwanie"
-      ],
       "Add": [
         "Dodaj"
       ],
+      "Add address": [
+        "Dodaj adres"
+      ],
       "Add contact": [
         "Dodaj kontakt"
+      ],
+      "Add email": [
+        "Dodaj adres e-mail"
       ],
       "Add group": [
         "Dodaj grupę"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "Dodaj powiadomienie"
+      ],
+      "Add phone number": [
+        "Dodaj numer telefonu"
       ],
       "Add screenshot(s)": [
         "Dodaj zrzuty ekranu"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "Zmniejsz"
-      ],
-      "Default email application": [
-        "Domyślna aplikacja pocztowa"
       ],
       "Delete": [
         "Usuń"
@@ -407,12 +410,6 @@
       "Send": [
         "Wyślij"
       ],
-      "Set as default": [
-        "Ustaw jako domyślną"
-      ],
-      "Set recovery phrase": [
-        "Ustaw hasło odzyskiwania"
-      ],
       "Share": [
         "Udostępnij"
       ],
@@ -484,12 +481,6 @@
       ],
       "Update": [
         "Zaktualizuj"
-      ],
-      "Update recovery file": [
-        "Zaktualizuj plik odzyskiwania"
-      ],
-      "Update recovery phrase": [
-        "Zaktualizuj hasło odzyskiwania"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -2527,9 +2518,6 @@
       "Daily": [
         "Codziennie"
       ],
-      "Default email application": [
-        "Domyślna aplikacja pocztowa"
-      ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
       ],
@@ -2808,9 +2796,6 @@
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ProtonMaila, używających kompatybilnej usługi PGP."
@@ -3316,6 +3301,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "0 - Not likely": [
         "0 - Zupełnie nieprawdopodobne"
       ],
@@ -3711,12 +3699,6 @@
       "Add a gift code": [
         "Dodaj kod podarunkowy"
       ],
-      "All mail": [
-        "Wszystkie wiadomości"
-      ],
-      "Archive": [
-        "Archiwum"
-      ],
       "Calendars": [
         "Kalendarze"
       ],
@@ -3726,14 +3708,8 @@
       "click here": [
         "kliknij tutaj"
       ],
-      "Drafts": [
-        "Szkice"
-      ],
       "Go to subscription plans": [
         "Przejdź do subskrypcji planów"
-      ],
-      "Inbox": [
-        "Odebrane"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -3741,32 +3717,14 @@
       "My calendars": [
         "Moje kalendarze"
       ],
-      "Outbox": [
-        "Skrzynka nadawcza"
-      ],
       "Pay invoice": [
         "Zapłać fakturę"
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
       ],
-      "Scheduled": [
-        "Zaplanowane"
-      ],
-      "Sent": [
-        "Wysłane"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Wyróżnione"
-      ],
       "Subscribed calendars": [
         "Subskrybowane kalendarze"
-      ],
-      "Trash": [
-        "Kosz"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -5313,6 +5271,9 @@
       ],
       "Report a problem": [
         "Zgłoś problem"
+      ],
+      "Request new code": [
+        "Poproś o nowy kod"
       ],
       "Reset calendar keys": [
         "Resetowanie kluczy kalendarza"

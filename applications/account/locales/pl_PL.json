@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktywuj adres ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Aktywuj klucz organizacji"
-      ],
-      "Activate recovery": [
-        "Aktywuj odzyskiwanie"
       ],
       "Add": [
         "Dodaj"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Ustaw adres catch-all"
-      ],
-      "Set recovery phrase": [
-        "Ustaw hasło odzyskiwania"
       ],
       "Share via link": [
         "Udostępnij przez link"
@@ -4229,8 +4223,8 @@
       "Save your password somewhere safe.": [
         "Zapisz hasło w bezpiecznym miejscu."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Zapisz hasło w bezpiecznym miejscu. Kliknij na ikonę, aby potwierdzić, że poprawnie wpisałeś hasło."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Zamiast tego zeskanuj kod QR"
@@ -4878,10 +4872,10 @@
         ""
       ],
       "Generate key": [
-        ""
+        "Generuj klucz"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
-        ""
+        "Klucz z odciskiem ${ fp } został utworzony."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
         ""
@@ -5169,6 +5163,9 @@
         "Użytkowników ${ UsedMembers }/${ MaxMembers }",
         "Użytkowników ${ UsedMembers }/${ MaxMembers }",
         "Użytkowników ${ UsedMembers }/${ MaxMembers }"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Przestrzeń dyskowa konta"

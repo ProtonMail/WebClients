@@ -20,17 +20,20 @@
       "Activate": [
         "Aktiviraj"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Dodaj"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Dodaj uvjet"
       ],
       "Add contact": [
         "Dodaj kontakt"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Dodaj grupu"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Dodaj novu grupu"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Dodaj snimku(e) zaslona"
@@ -311,6 +317,9 @@
       ],
       "Expand composer": [
         "Proširi prozor za novu poruku"
+      ],
+      "Expand URL": [
+        ""
       ],
       "Export": [
         "Izvoz"
@@ -740,9 +749,6 @@
       "Set expiration time": [
         ""
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -866,12 +872,6 @@
         "Označi kao nepouzdano"
       ],
       "Update": [
-        ""
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -1753,17 +1753,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "${ formattedDate }"
-      ],
-      "today": [
-        "danas"
-      ],
       "Today": [
         "Danas"
-      ],
-      "tomorrow": [
-        "sutra"
       ],
       "Tomorrow": [
         "Sutra"
@@ -3678,7 +3669,13 @@
       "Message sent.": [
         ""
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "Monthly ${ onDayString }": [
@@ -4054,13 +4051,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         ""
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
         ""
       ],
       "This message will be sent shortly": [
         "Poruka će uskoro biti poslana"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -4068,6 +4068,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "Poruka istječe za ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Ovaj će se javni ključ automatski koristiti za šifriranje e-pošte poslane na ovu adresu."
@@ -4633,6 +4642,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } i ${ count } drugih"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Radnje"
       ],
@@ -4717,7 +4729,7 @@
       "Conditions": [
         "Uvjeti"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         ""
       ],
       "Contacts": [
@@ -4858,7 +4870,7 @@
       "Mark as": [
         "Označi kao"
       ],
-      "Message Password": [
+      "Message password": [
         ""
       ],
       "Move to": [
@@ -4894,7 +4906,7 @@
       "Password": [
         "Lozinka"
       ],
-      "Password Hint": [
+      "Password hint": [
         ""
       ],
       "Payer": [
@@ -5384,9 +5396,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        ""
-      ],
       "Archive": [
         "Arhiva"
       ],
@@ -5404,9 +5413,6 @@
       ],
       "Spam": [
         "Neželjena pošta"
-      ],
-      "Starred": [
-        "Sa zvjezdicom"
       ],
       "Trash": [
         "Otpad"
@@ -5765,8 +5771,8 @@
       "Browser version": [
         "Verzija preglednika"
       ],
-      "Confirm Password": [
-        "Potvrdi lozinku"
+      "Confirm password": [
+        ""
       ],
       "e.g. Julia Smith": [
         "npr. Ana Horvat"
@@ -7060,6 +7066,9 @@
       ],
       "Report a problem": [
         "Prijavi problem"
+      ],
+      "Request new code": [
+        ""
       ],
       "Schedule send": [
         "Zakaži slanje"

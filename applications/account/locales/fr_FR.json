@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activer ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
-      ],
-      "Activate recovery": [
-        "Activer la récupération"
       ],
       "Add": [
         "Ajouter"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Configurer catch-all"
-      ],
-      "Set recovery phrase": [
-        "Créer une phrase de récupération"
       ],
       "Share via link": [
         "Partager avec un lien"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Enregistrez votre mot de passe dans un endroit sûr."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Conservez votre mot de passe dans un endroit sûr. Cliquez sur l'icône pour confirmer que vous avez correctement saisi votre mot de passe."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Enregistrez votre mot de passe dans un endroit sûr. Cliquez sur l'icône pour confirmer que vous avez tapé votre mot de passe correctement."
       ],
       "Scan QR code instead": [
         "Scanner plutôt le code QR"
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } sur ${ MaxMembers } utilisateur",
         "${ UsedMembers } sur ${ MaxMembers } utilisateurs"
+      ],
+      "(Coming soon)": [
+        "(bientôt disponible)"
       ],
       "Account storage": [
         "Espace de stockage du compte"
@@ -6800,7 +6797,7 @@
         "Nom d'utilisateur"
       ],
       "yourdomain.com": [
-        "votredomaine.com"
+        "votredomaine.fr"
       ],
       "ZIP": [
         "ZIP"

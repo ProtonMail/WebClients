@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Activar la clau d'organització"
-      ],
-      "Activate recovery": [
-        ""
       ],
       "Add": [
         "Afegir"
@@ -625,9 +622,6 @@
       "Set catch-all": [
         "Seleccionar catch-all"
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "Compartir amb enllaç"
       ],
@@ -710,7 +704,7 @@
         "Canviar de compte"
       ],
       "Switch to rich text": [
-        ""
+        "Canviar a text enriquit"
       ],
       "Top up": [
         "Recarregar"
@@ -740,10 +734,10 @@
         "Actualitza"
       ],
       "Update recovery file": [
-        ""
+        "Actualitzar el fitxer de recuperació"
       ],
       "Update recovery phrase": [
-        ""
+        "Actualitzar la frase de recuperació"
       ],
       "Upgrade": [
         "Actualitzar"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Guardeu la vostra contrasenya a un lloc segur."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Guardeu les seves contrasenyes en un lloc segur. Feu clic a la icona per confirmar que ha escrit la contrasenya correctament."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Escanejar codi QR"
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } de ${ MaxMembers } usuari",
         "${ UsedMembers } de ${ MaxMembers } usuaris"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Emmagatzematge del compte"
@@ -7828,7 +7825,7 @@
         "Edita la Lista de Bloqueig"
       ],
       "Edit calendar": [
-        ""
+        "Editar Calendari"
       ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"

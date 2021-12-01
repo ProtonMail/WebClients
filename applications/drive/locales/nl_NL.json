@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Activate recovery": [
-        "Activeer herstel"
-      ],
       "Add": [
         "Toevoegen"
       ],
+      "Add address": [
+        "Adres toevoegen"
+      ],
       "Add contact": [
         "Contactpersoon toevoegen"
+      ],
+      "Add email": [
+        "E-mailadres toevoegen"
       ],
       "Add group": [
         "Groep toevoegen"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Voeg nieuwe groep toe"
+      ],
+      "Add phone number": [
+        "Telefoonnummer toevoegen"
       ],
       "Add screenshot(s)": [
         "Screenshot(s) toevoegen"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Verlaag"
-      ],
-      "Default email application": [
-        "Standaard e-mailapplicatie"
       ],
       "Delete": [
         "Verwijderen"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Selecteer abonnement"
       ],
-      "Set as default": [
-        "Als standaard instellen"
-      ],
-      "Set recovery phrase": [
-        "Stel herstel zin"
-      ],
       "Share": [
         "Delen"
       ],
@@ -522,12 +519,6 @@
       ],
       "Untrust": [
         "Niet meer vertrouwen"
-      ],
-      "Update recovery file": [
-        "Herstelbestand bijwerken"
-      ],
-      "Update recovery phrase": [
-        "Herstel zin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1882,9 +1873,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
       ],
-      "Default email application": [
-        "Standaard e-mailapplicatie"
-      ],
       "Delete drive": [
         "Verwijder drive",
         "Verwijder drives"
@@ -2226,9 +2214,6 @@
       ],
       "Session timed out.": [
         "Sessie verlopen."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Stel ProtonMail in als uw standaard e-mailapplicatie voor deze browser. ProtonMail wordt automatisch geopend wanneer u op een e-maillink klikt."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(Komt binnenkort)"
+      ],
       "(Expired)": [
         "(Verlopen)"
       ],
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Voeg een geschenkcode toe"
       ],
-      "All mail": [
-        "Alle e-mails"
-      ],
-      "Archive": [
-        "Archiveren"
-      ],
       "clearing your browser cache": [
         "uw browser cache wissen"
       ],
       "click here": [
         "klik hier"
       ],
-      "Drafts": [
-        "Concepten"
-      ],
       "Go to subscription plans": [
         "Ga naar abonnementen"
-      ],
-      "Inbox": [
-        "Postvak in"
       ],
       "Learn more": [
         "Meer informatie"
@@ -3185,29 +3161,14 @@
       "My files": [
         "Mijn bestanden"
       ],
-      "Outbox": [
-        "Postvak uit"
-      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
-      "Scheduled": [
-        "Gepland"
-      ],
-      "Sent": [
-        "Verzonden"
-      ],
       "Shared": [
         "Gedeeld"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Met ster"
       ],
       "Trash": [
         "Prullenbak"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Meld een probleem"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
       ],
       "Restore your files": [
         "Herstel uw bestanden"
