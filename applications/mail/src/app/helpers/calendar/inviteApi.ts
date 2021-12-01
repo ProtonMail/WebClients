@@ -653,6 +653,8 @@ export const updateEventInvitation = async ({
                     : {
                           ...veventApi,
                           dtstamp: veventIcs.dtstamp,
+                          // on cancellation, sequence might be incremented, only the organizer knows
+                          sequence: { value: veventIcs.sequence?.value || 0 },
                           status: { value: CANCELLED },
                       };
                 await updateEventApi({
