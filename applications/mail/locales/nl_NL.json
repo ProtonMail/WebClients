@@ -20,17 +20,20 @@
       "Activate": [
         "Activeren"
       ],
-      "Activate recovery": [
-        "Activeer herstel"
-      ],
       "Add": [
         "Voeg toe"
+      ],
+      "Add address": [
+        "Adres toevoegen"
       ],
       "Add condition": [
         "Voorwaarde toevoegen"
       ],
       "Add contact": [
         "Contactpersoon toevoegen"
+      ],
+      "Add email": [
+        "E-mailadres toevoegen"
       ],
       "Add group": [
         "Groep toevoegen"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Voeg nieuwe groep toe"
+      ],
+      "Add phone number": [
+        "Telefoonnummer toevoegen"
       ],
       "Add screenshot(s)": [
         "Screenshot(s) toevoegen"
@@ -309,6 +315,9 @@
       ],
       "Expand composer": [
         "Opstelvenster vergroten"
+      ],
+      "Expand URL": [
+        "URL uitbreiden"
       ],
       "Export": [
         "Exporteren"
@@ -737,9 +746,6 @@
       "Set expiration time": [
         "Stel vervaltijd in"
       ],
-      "Set recovery phrase": [
-        "Stel herstel zin"
-      ],
       "Share via link": [
         "Deel via link"
       ],
@@ -863,12 +869,6 @@
       ],
       "Update": [
         "Updaten"
-      ],
-      "Update recovery file": [
-        "Herstelbestand bijwerken"
-      ],
-      "Update recovery phrase": [
-        "Herstel zin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "op ${ formattedDate }"
-      ],
-      "today": [
-        "vandaag"
-      ],
       "Today": [
         "Vandaag"
-      ],
-      "tomorrow": [
-        "morgen"
       ],
       "Tomorrow": [
         "Morgen"
@@ -3601,8 +3592,14 @@
       "Message sent.": [
         "Bericht verzonden."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "Bericht zal worden verzonden ${ dateString } op ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Bericht zal worden verzonden op ${ dateString } om ${ formattedTime }"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Bericht zal vandaag worden verzonden om ${ formattedTime }"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Bericht zal morgen worden verzonden om ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
@@ -3975,20 +3972,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Dit bericht zal worden verplaatst naar Concepten, zodat u het kunt bewerken. U zult opnieuw moeten plannen wanneer het verzonden wordt."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Dit bericht zal worden verzonden ${ dateString } om ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Dit bericht zal worden verzonden op ${ dateString } om ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Dit bericht zal binnenkort worden verzonden"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        "Dit bericht zal verlopen ${ dateString } op ${ formattedTime }"
+      "This message will be sent today at ${ formattedTime }": [
+        "Dit bericht zal vandaag worden verzonden om ${ formattedTime }"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Dit bericht zal morgen worden verzonden om ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Dit bericht verloopt op ${ formattedDate }"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Dit bericht verloopt over ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        "Dit bericht zal verlopen op ${ dateString } om ${ formattedTime }"
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        "Dit bericht verloopt vandaag om ${ formattedTime }"
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        "Dit bericht verloopt morgen om ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Deze openbare sleutel wordt automatisch gebruikt voor het versturen van versleutelde e-mailberichten naar dit adres."
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } en ${ count } anderen"
       ],
+      "(Coming soon)": [
+        "(Komt binnenkort)"
+      ],
       "Actions": [
         "Acties"
       ],
@@ -4628,8 +4640,8 @@
       "Conditions": [
         "Voorwaarden"
       ],
-      "Confirm Password": [
-        "Wachtwoord bevestigen"
+      "Confirm password": [
+        "Bevestig wachtwoord"
       ],
       "Contacts": [
         "Contacten"
@@ -4769,7 +4781,7 @@
       "Mark as": [
         "Markeren als"
       ],
-      "Message Password": [
+      "Message password": [
         "Wachtwoord van bericht"
       ],
       "Move to": [
@@ -4805,8 +4817,8 @@
       "Password": [
         "Wachtwoord"
       ],
-      "Password Hint": [
-        "Wachtwoordhint"
+      "Password hint": [
+        "Wachtwoord hint"
       ],
       "Payer": [
         "Betaler"
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Alle e-mails"
-      ],
       "Archive": [
         "Archiveren"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Starred": [
-        "Met ster"
       ],
       "Trash": [
         "Prullenbak"
@@ -5670,8 +5676,8 @@
       "Browser version": [
         "Browserversie"
       ],
-      "Confirm Password": [
-        "Wachtwoord bevestigen"
+      "Confirm password": [
+        "Bevestig wachtwoord"
       ],
       "e.g. Julia Smith": [
         "bijv. Julia Smith"
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Meld een probleem"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
       ],
       "Schedule send": [
         "Ingepland versturen"

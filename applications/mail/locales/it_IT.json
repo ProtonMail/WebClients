@@ -20,17 +20,20 @@
       "Activate": [
         "Attiva"
       ],
-      "Activate recovery": [
-        "Attiva il ripristino"
-      ],
       "Add": [
         "Aggiungi"
+      ],
+      "Add address": [
+        "Aggiungi indirizzo"
       ],
       "Add condition": [
         "Aggiungi condizione"
       ],
       "Add contact": [
         "Aggiungi contatto"
+      ],
+      "Add email": [
+        "Aggiungi email"
       ],
       "Add group": [
         "Aggiungi gruppo"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Aggiungi un nuovo gruppo"
+      ],
+      "Add phone number": [
+        "Aggiungi numero di telefono"
       ],
       "Add screenshot(s)": [
         "Aggiungi screenshot"
@@ -219,7 +225,7 @@
         "Riduci"
       ],
       "Default email application": [
-        ""
+        "Applicazione email predefinita"
       ],
       "Delete": [
         "Elimina"
@@ -310,6 +316,9 @@
       "Expand composer": [
         "Espandi il compositore"
       ],
+      "Expand URL": [
+        "Espandi URL"
+      ],
       "Export": [
         "Esporta"
       ],
@@ -317,7 +326,7 @@
         "Esporta contatti"
       ],
       "Fewer search options": [
-        ""
+        "Meno opzioni di ricerca"
       ],
       "Filter on...": [
         "Filtra per..."
@@ -735,10 +744,7 @@
         "Imposta come predefinito"
       ],
       "Set expiration time": [
-        ""
-      ],
-      "Set recovery phrase": [
-        "Imposta frase di recupero"
+        "Imposta l'ora di scadenza"
       ],
       "Share via link": [
         "Condividi con link"
@@ -759,7 +765,7 @@
         "Mostra i dettagli"
       ],
       "Show fewer search options": [
-        ""
+        "Mostra meno opzioni di ricerca"
       ],
       "Show folders": [
         "Mostra cartelle"
@@ -810,7 +816,7 @@
         "Cambia account"
       ],
       "Switch to rich text": [
-        ""
+        "Passa al testo completo"
       ],
       "Theme": [
         "Tema"
@@ -863,12 +869,6 @@
       ],
       "Update": [
         "Aggiorna"
-      ],
-      "Update recovery file": [
-        "Aggiorna il file di ripristino"
-      ],
-      "Update recovery phrase": [
-        "Aggiorna frase di recupero"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "il ${ formattedDate }"
-      ],
-      "today": [
-        "oggi"
-      ],
       "Today": [
         "Oggi"
-      ],
-      "tomorrow": [
-        "domani"
       ],
       "Tomorrow": [
         "Domani"
@@ -1920,7 +1911,7 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "I dettagli dell'evento sono crittografati. Accedi di nuovo per ripristinare Calendar e decrittografare i tuoi dati. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "I dettagli dell'evento non possono essere decifrati. ${ whyNotLink }"
@@ -2213,7 +2204,7 @@
         "Per favore ricarica la pagina."
       ],
       "Please repeat the password": [
-        ""
+        "Si prega di ripetere la password"
       ],
       "Please set a password": [
         "Si prega di impostare una password"
@@ -2708,15 +2699,15 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Abbiamo aumentato lo spazio di archiviazione totale del tuo account a ${ totalGBStorageAfterCompletion } GB. Ottieni spazio di archiviazione aggiuntivo e sblocca le funzionalità premium oggi stesso."
       ],
       "You're all set!": [
-        ""
+        "Tutto impostato!"
       ]
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        ""
+        "Completa tutti i passaggi e ottieni un totale di ${ totalGBStorageAfterCompletion } GB sul tuo account"
       ],
       "Only ${ days } day left": [
         "Solo ${ days } giorno rimasto",
@@ -3318,7 +3309,7 @@
         "Giorni"
       ],
       "Default email application": [
-        ""
+        "Applicazione email predefinita"
       ],
       "Disable message content search": [
         "Disabilita la ricerca del contenuto del messaggio"
@@ -3379,8 +3370,8 @@
         "I tracker di posta elettronica possono violare la tua privacy. Proton non ha trovato alcun tracker in questo messaggio."
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "",
-        ""
+        "I tracker di posta elettronica possono violare la tua privacy. Proton ha trovato e bloccato il tracker ${ numberOfTrackers }.",
+        "I tracker di posta elettronica possono violare la tua privacy. Proton ha trovato e bloccato ${ numberOfTrackers } tracker."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "I tracker di posta elettronica possono violare la tua privacy. Attiva la protezione tracker per impedire ai mittenti di sapere se e quando hai aperto un messaggio."
@@ -3601,8 +3592,14 @@
       "Message sent.": [
         "Messaggio inviato."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "Il messaggio verrà inviato ${ dateString } alle ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Il messaggio verrà inviato il ${ dateString } alle ${ formattedTime }"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Il messaggio verrà inviato oggi alle ${ formattedTime }"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Il messaggio verrà inviato domani alle ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Mensile ${ onDayString }"
@@ -3837,10 +3834,10 @@
         "Sessione scaduta."
       ],
       "Set a recovery phrase": [
-        ""
+        "Imposta una frase di recupero"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
+        "Imposta ProtonMail come applicazione di posta elettronica predefinita per questo browser. ProtonMail si aprirà automaticamente quando fai clic su un collegamento email."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "L'impostazione di PGP consente di inviare email crittografate end-to-end con un utente non ProtonMail che utilizza un servizio compatibile PGP."
@@ -3975,20 +3972,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Questo messaggio verrà spostato nelle Bozze in questo modo potrai modificarlo. Sarà necessario pianificare nuovamente il suo invio."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Questo messaggio sarà inviato il ${ dateString } alle ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Questo messaggio verrà inviato il ${ dateString } alle ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Questo messaggio sarà inviato a breve"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        ""
+      "This message will be sent today at ${ formattedTime }": [
+        "Questo messaggio verrà inviato oggi alle ${ formattedTime }"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Questo messaggio verrà inviato domani alle ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Questo messaggio scadrà ${ formattedDate }"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Questo messaggio scadrà in ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        "Questo messaggio scadrà il ${ dateString } alle ${ formattedTime }"
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        "Questo messaggio scadrà oggi alle ${ formattedTime }"
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        "Questo messaggio scadrà domani alle ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Questa chiave pubblica sarà automaticamente usata per crittografare l'email inviata a questo indirizzo."
@@ -4141,7 +4150,7 @@
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        ""
+        "Puoi aggiungerlo come allegato o visualizzarlo in linea nel corpo del messaggio."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puoi anche unire i calendari importati con i calendari Proton esistenti."
@@ -4174,20 +4183,20 @@
         "Hai ${ unreadsLabel } nella tua casella di posta."
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "",
-        ""
+        "Hai **${ count } conversazione** memorizzata in questa cartella",
+        "Hai **${ count } conversazioni** memorizzate in questa cartella"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "",
-        ""
+        "Hai **${ count } conversazione** taggata con questa etichetta",
+        "Hai **${ count } conversazioni** taggate con questa etichetta"
       ],
       "You have **${ count } message** stored in this folder": [
-        "",
-        ""
+        "Hai **${ count } messaggio** memorizzato in questa cartella",
+        "Hai **${ count } messaggi** archiviati in questa cartella"
       ],
       "You have **${ count } message** tagged with this label": [
-        "",
-        ""
+        "Hai **${ count } messaggio** taggato con questa etichetta",
+        "Hai **${ count } messaggi** taggati con questa etichetta"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Non hai inserito alcun oggetto nella email. Vuoi comunque inviare il messaggio?"
@@ -4211,20 +4220,20 @@
         "Hai raggiunto il 100% della tua capacità di archiviazione. Non puoi inviare o ricevere nuove email. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
-        "",
-        ""
+        "Hai selezionato **${ count } conversazione** da questa cartella",
+        "Hai selezionato **${ count } conversazioni** da questa cartella"
       ],
       "You selected **${ count } conversation** with this label": [
-        "",
-        ""
+        "Hai selezionato **${ count } conversazione** con questa etichetta",
+        "Hai selezionato **${ count } conversazioni** con questa etichetta"
       ],
       "You selected **${ count } message** from this folder": [
-        "",
-        ""
+        "Hai selezionato **${ count } messaggio** da questa cartella",
+        "Hai selezionato **${ count } messaggi** da questa cartella"
       ],
       "You selected **${ count } message** with this label": [
-        "",
-        ""
+        "Hai selezionato **${ count } messaggio** con questa etichetta",
+        "Hai selezionato **${ count } messaggi** con questa etichetta"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Sarai presto reindirizzato alla tua banca per verificare il tuo pagamento."
@@ -4233,7 +4242,7 @@
         "Sarai presto reindirizzato a PayPal per verificare il tuo pagamento."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        ""
+        "Hai scritto “${ attachmentsFoundKeyword }”, ma nessun allegato è stato aggiunto. Vuoi comunque inviare il tuo messaggio?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Il tuo account ha almeno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
@@ -4274,7 +4283,7 @@
         "(beta)"
       ],
       "Optional": [
-        ""
+        "Facoltativo"
       ]
     },
     "Info concerning plan features": {
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } e ${ count } altri"
       ],
+      "(Coming soon)": [
+        "(In arrivo)"
+      ],
       "Actions": [
         "Azioni"
       ],
@@ -4628,8 +4640,8 @@
       "Conditions": [
         "Condizioni"
       ],
-      "Confirm Password": [
-        "Conferma Password"
+      "Confirm password": [
+        "Conferma password"
       ],
       "Contacts": [
         "Contatti"
@@ -4769,8 +4781,8 @@
       "Mark as": [
         "Segna come"
       ],
-      "Message Password": [
-        "Messaggio Password"
+      "Message password": [
+        "Password messaggio"
       ],
       "Move to": [
         "Sposta in"
@@ -4805,7 +4817,7 @@
       "Password": [
         "Password"
       ],
-      "Password Hint": [
+      "Password hint": [
         "Suggerimento password"
       ],
       "Payer": [
@@ -5283,18 +5295,15 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importa tutti i messaggi da ${ selectedLabelsCount } di ${ totalLabelsCount } etichetta dal ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ selectedLabelsCount } di ${ totalLabelsCount } etichette da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importa tutti i messaggi da ${ totalLabelsCount } etichetta dal ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ totalLabelsCount } etichette da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Tutte le mail"
-      ],
       "Archive": [
         "Archivio"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Starred": [
-        "Preferiti"
       ],
       "Trash": [
         "Cestino"
@@ -5530,7 +5536,7 @@
         "Gruppo di contatto aggiornato"
       ],
       "Password has been set successfully": [
-        ""
+        "La password è stata impostata con successo"
       ]
     },
     "Onboarding": {
@@ -5670,8 +5676,8 @@
       "Browser version": [
         "Versione del browser"
       ],
-      "Confirm Password": [
-        "Conferma password"
+      "Confirm password": [
+        "Confermare password"
       ],
       "e.g. Julia Smith": [
         "es. Julia Smith"
@@ -6908,7 +6914,7 @@
         "Ri-firma contatti"
       ],
       "Recipient missing": [
-        ""
+        "Destinatario mancante"
       ],
       "Recover data": [
         "Recupera dati"
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Segnala un problema"
+      ],
+      "Request new code": [
+        "Richiedi nuovo codice"
       ],
       "Schedule send": [
         "Pianifica invio"
@@ -6974,7 +6983,7 @@
         "Avviso capacità di archiviazione"
       ],
       "Subject missing": [
-        ""
+        "Soggetto mancante"
       ],
       "Subtotal": [
         "Subtotale"
@@ -7119,13 +7128,13 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "Oggi è un buon giorno per scrivere un'email"
       ],
       "Update default font and size": [
-        ""
+        "Aggiorna carattere e dimensione predefiniti"
       ],
       "Your default font will look like following:": [
-        ""
+        "Il tuo carattere predefinito sarà simile al seguente:"
       ]
     },
     "Validation": {

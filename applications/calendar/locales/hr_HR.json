@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Dodaj"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Dodaj kontakt"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Dodaj grupu"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "Dodaj obavijest"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Dodaj snimku(e) zaslona"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "Smanji"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Izbriši"
@@ -405,12 +408,6 @@
       "Send": [
         "Pošalji"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "Podijeli"
       ],
@@ -482,12 +479,6 @@
       ],
       "Update": [
         "Ažuriraj"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -2474,9 +2465,6 @@
       "Daily": [
         "Dnevno"
       ],
-      "Default email application": [
-        ""
-      ],
       "Discard changes?": [
         "Odbaci promjene?"
       ],
@@ -2753,9 +2741,6 @@
       ],
       "Session timed out.": [
         "Sesija je istekla."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ProtonMaila, ali koriste PGP kompatibilne usluge."
@@ -3261,6 +3246,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "0 - Not likely": [
         ""
       ],
@@ -3655,12 +3643,6 @@
       "Add a gift code": [
         "Dodaj darovni kôd"
       ],
-      "All mail": [
-        ""
-      ],
-      "Archive": [
-        ""
-      ],
       "Calendars": [
         "Kalendari"
       ],
@@ -3670,14 +3652,8 @@
       "click here": [
         "kliknite ovdje"
       ],
-      "Drafts": [
-        ""
-      ],
       "Go to subscription plans": [
         "Idi na planove pretplate"
-      ],
-      "Inbox": [
-        ""
       ],
       "Learn more": [
         "Saznajte više"
@@ -3685,32 +3661,14 @@
       "My calendars": [
         "Moji kalendari"
       ],
-      "Outbox": [
-        ""
-      ],
       "Pay invoice": [
         "Plati račun"
       ],
       "Request an invite": [
         "Zatraži pozivnicu"
       ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        ""
-      ],
-      "Spam": [
-        ""
-      ],
-      "Starred": [
-        ""
-      ],
       "Subscribed calendars": [
         "Pretplaćeni kalendari"
-      ],
-      "Trash": [
-        ""
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -5216,6 +5174,9 @@
       ],
       "Report a problem": [
         "Prijavi problem"
+      ],
+      "Request new code": [
+        ""
       ],
       "Reset calendar keys": [
         "Poništi ključeve kalendara"

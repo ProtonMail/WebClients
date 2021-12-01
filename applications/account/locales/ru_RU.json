@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ Name }@pm.me": [
         "Активировать ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Активировать ключ организации"
-      ],
-      "Activate recovery": [
-        "Активировать восстановление"
       ],
       "Add": [
         "Добавить"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Задать ящик-ловушку (получает всю почту для домена)"
-      ],
-      "Set recovery phrase": [
-        "Установить фразу для восстановления"
       ],
       "Share via link": [
         "Поделиться с помощью ссылки"
@@ -4229,8 +4223,8 @@
       "Save your password somewhere safe.": [
         "Сохраните ваш пароль в безопасном месте."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Сохраните пароль в надёжном месте. Нажмите на значок, чтобы проверить правильность ввода пароля."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Сканировать QR-код"
@@ -5169,6 +5163,9 @@
         "${ UsedMembers } из ${ MaxMembers } пользователей",
         "${ UsedMembers } из ${ MaxMembers } пользователей",
         "${ UsedMembers } из ${ MaxMembers } пользователя(ей)"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Хранилище учётной записи"

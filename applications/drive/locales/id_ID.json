@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Aktifkan metode pemulihan"
-      ],
       "Add": [
         "Tambah"
       ],
+      "Add address": [
+        "Tambah alamat"
+      ],
       "Add contact": [
         "Tambah kontak"
+      ],
+      "Add email": [
+        "Tambah email"
       ],
       "Add group": [
         "Tambah grup"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Tambah grup baru"
+      ],
+      "Add phone number": [
+        "Tambah nomor telepon"
       ],
       "Add screenshot(s)": [
         "Tambah tangkapan layar"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Kurangi"
-      ],
-      "Default email application": [
-        "Aplikasi email default"
       ],
       "Delete": [
         "Hapus"
@@ -434,12 +437,6 @@
       "Select plan": [
         "Pilih paket"
       ],
-      "Set as default": [
-        "Atur sebagai default"
-      ],
-      "Set recovery phrase": [
-        "Tentukan frasa pemulihan"
-      ],
       "Share": [
         "Bagikan"
       ],
@@ -520,12 +517,6 @@
       ],
       "Untrust": [
         "Jangan percayai"
-      ],
-      "Update recovery file": [
-        "Perbarui berkas pemulihan"
-      ],
-      "Update recovery phrase": [
-        "Perbarui frasa pemulihan"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -903,7 +894,7 @@
         "Tanggal lahir"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Gender": [
         "Jenis kelamin"
@@ -1115,7 +1106,7 @@
         "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
       ],
       "Email address invalid": [
-        "Alamat surel tidak valid"
+        "Alamat email tidak valid"
       ],
       "Email is not valid": [
         "Email tidak valid"
@@ -1199,7 +1190,7 @@
         "Nomor tidak valid"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
+        "Kontak-kontak berikut tidak memiliki alamat email: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
@@ -1495,7 +1486,7 @@
         "Manual"
       ],
       "No verification method available": [
-        "Metode verifikasi tidak tersedia"
+        "Tidak ada metode verifikasi yang tersedia"
       ],
       "SMS": [
         "SMS"
@@ -1834,9 +1825,6 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Anda dapat mengimpor berkas-berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas-berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
-      ],
-      "Default email application": [
-        "Aplikasi email default"
       ],
       "Delete drive": [
         "Hapus drive"
@@ -2177,11 +2165,8 @@
       "Session timed out.": [
         "Sesi habis."
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Tentukan ProtonMail sebagai aplikasi email default untuk browser ini. ProtonMail akan terbuka secara otomatis ketika Anda mengeklik tautan email."
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Menyetel PGP memungkinkan Anda mengirim surel terenkripsi end-to-end dengan bukan pengguna ProtonMail yang menggunakan layanan yang mendukung PGP."
+        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara end-to-end dengan para pengguna layanan email lainnya yang juga mendukung PGP."
       ],
       "Share files with links": [
         "Berbagi berkas dengan tautan"
@@ -2675,6 +2660,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(Segera hadir)"
+      ],
       "(Expired)": [
         "(Kedaluwarsa)"
       ],
@@ -3106,26 +3094,14 @@
       "Add a gift code": [
         "Tambah kode hadiah"
       ],
-      "All mail": [
-        "Seluruh email"
-      ],
-      "Archive": [
-        "Arsip"
-      ],
       "clearing your browser cache": [
         "membersihkan singgahan peramban Anda"
       ],
       "click here": [
         "klik di sini"
       ],
-      "Drafts": [
-        "Draf"
-      ],
       "Go to subscription plans": [
         "Ke paket langganan"
-      ],
-      "Inbox": [
-        "Kotak masuk"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -3133,29 +3109,14 @@
       "My files": [
         "Berkas-berkas saya"
       ],
-      "Outbox": [
-        "Kotak keluar"
-      ],
       "Pay invoice": [
         "Bayar tagihan"
       ],
       "Request an invite": [
         "Minta undangan"
       ],
-      "Scheduled": [
-        "Terjadwalkan"
-      ],
-      "Sent": [
-        "Terkirim"
-      ],
       "Shared": [
         "Dibagikan"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Dibintangi"
       ],
       "Trash": [
         "Trash"
@@ -3480,7 +3441,7 @@
         "Aktifkan Akses Beta"
       ],
       "Start using ${ appName }": [
-        "Memulai ${ appName }"
+        "Mulai gunakan ${ appName }"
       ],
       "Upgrade account": [
         "Tingkatkan akun"
@@ -3499,13 +3460,13 @@
     },
     "Onboarding Proton Drive Title": {
       "${ appName } is in Beta": [
-        "${ appName } dalam versi Beta"
+        "${ appName } sedang dalam versi Beta"
       ],
       "Meet your new secure file storage": [
         "Sambut penyimpanan berkas aman Anda yang baru"
       ],
       "Upgrade to access ${ appName }": [
-        "Perbarui ke akses ${ appName }"
+        "Tingkatkan akun Anda untuk dapat mengakses ${ appName }"
       ]
     },
     "Option": {
@@ -3744,7 +3705,7 @@
         "Alamat"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Fax": [
         "Faks"
@@ -3902,7 +3863,7 @@
         "Dibuat"
       ],
       "CSV field": [
-        "kolom CSV"
+        "Kolom CSV"
       ],
       "Deleted": [
         "Dihapus"
@@ -3932,7 +3893,7 @@
         "Nilai"
       ],
       "vCard field": [
-        "kolom vCard"
+        "Kolom vCard"
       ]
     },
     "Text": {
@@ -4302,6 +4263,9 @@
       "Report a problem": [
         "Laporkan masalah"
       ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
       "Restore your files": [
         "Pulihkan berkas Anda"
       ],
@@ -4393,7 +4357,7 @@
         "Apa yang baru"
       ],
       "You have inaccessible files": [
-        "Ada berkas yang tidak bisa diakses"
+        "Anda memiliki berkas-berkas yang tidak dapat diakses"
       ],
       "You have no files to share": [
         "Anda tidak memiliki berkas untuk dibagikan"

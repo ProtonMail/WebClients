@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Aktifkan kunci organisasi"
-      ],
-      "Activate recovery": [
-        "Aktifkan metode pemulihan"
       ],
       "Add": [
         "Tambah"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Atur catch-all"
-      ],
-      "Set recovery phrase": [
-        "Tentukan frasa pemulihan"
       ],
       "Share via link": [
         "Bagikan melalui tautan"
@@ -1623,7 +1617,7 @@
     },
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "subdomain 'www' biasanya tidak digunakan untuk email. Yakin ingin menggunakan domain ini?"
+        "Subdomain 'www' pada umumnya tidak digunakan untuk email. Apakah Anda tetap ingin menggunakan domain ini?"
       ]
     },
     "Downgrade account reason": {
@@ -4061,8 +4055,8 @@
       "Save your password somewhere safe.": [
         "Simpan kata sandi Anda di tempat yang aman."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Simpan kata sandi Anda di tempat aman. Klik ikon untuk memastikan kata sandi yang Anda ketik benar."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Simpan kata sandi Anda di tempat yang aman. Klik ikon berikut untuk mengonfirmasi bahwa Anda telah mengetik kata sandi Anda dengan benar."
       ],
       "Scan QR code instead": [
         "Pindai kode QR"
@@ -4890,10 +4884,10 @@
         "Pilih / batal pilih semua"
       ],
       "Send email": [
-        "Kirim surel"
+        "Kirim email"
       ],
       "Show all emails": [
-        "Tampilkan semua surel"
+        "Tampilkan semua email"
       ],
       "Show original message": [
         "Tampilkan pesan orisinal"
@@ -4989,6 +4983,9 @@
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } dari ${ MaxMembers } pengguna"
+      ],
+      "(Coming soon)": [
+        "(Segera hadir)"
       ],
       "Account storage": [
         "Penyimpanan akun"
@@ -5312,7 +5309,7 @@
         "Interval impor"
       ],
       "Import to email address": [
-        "Impor ke alamat surel"
+        "Impor ke alamat email"
       ],
       "Import to:": [
         "Impor ke:"
@@ -6288,7 +6285,7 @@
     },
     "Notification type": {
       "email": [
-        "surel"
+        "email"
       ],
       "notification": [
         "pemberitahuan"
@@ -6914,7 +6911,7 @@
     },
     "Recovery method": {
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Phone number": [
         "Nomor telepon"
@@ -7070,7 +7067,7 @@
     },
     "Signup label": {
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Username": [
         "Nama pengguna"

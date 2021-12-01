@@ -20,17 +20,20 @@
       "Activate": [
         "Activar"
       ],
-      "Activate recovery": [
-        "Activar la recuperació"
-      ],
       "Add": [
         "Afegir"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Afegir condició"
       ],
       "Add contact": [
         "Afegir contacte"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Afegir grup"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Afegir nou grup"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Afegir captura(es) de pantalla"
@@ -309,6 +315,9 @@
       ],
       "Expand composer": [
         "Ampliar l'editor"
+      ],
+      "Expand URL": [
+        ""
       ],
       "Export": [
         "Exporta"
@@ -737,9 +746,6 @@
       "Set expiration time": [
         "Definir el temps d'expiració"
       ],
-      "Set recovery phrase": [
-        "Establir la frase de recuperació"
-      ],
       "Share via link": [
         "Compartir amb enllaç"
       ],
@@ -863,12 +869,6 @@
       ],
       "Update": [
         "Actualitzar"
-      ],
-      "Update recovery file": [
-        "Actualitzar el fitxer de recuperació"
-      ],
-      "Update recovery phrase": [
-        "Actualitzar la frase de recuperació"
       ],
       "Upgrade": [
         "Actualitzar"
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "el ${ formattedDate }"
-      ],
-      "today": [
-        "avui"
-      ],
       "Today": [
         "Avui"
-      ],
-      "tomorrow": [
-        "demà"
       ],
       "Tomorrow": [
         "Demà"
@@ -3601,8 +3592,14 @@
       "Message sent.": [
         ""
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "El missatge s'enviarà el ${ dateString } a les ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        ""
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -3975,13 +3972,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Aquest missatge es mourà als Esborranys perquè pugueu editar-lo. Necessitareu tornar a programar quan s'enviarà."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Aquest missatge s'enviarà ${ dateString } a les ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
       ],
       "This message will be sent shortly": [
         "Aquest missatge s'enviarà en breu"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -3989,6 +3989,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "Aquest missatge expirarà en ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Aquesta clau pública serà utilitzada automàticament per xifrar el correu electrónic enviat a aquenta adreça."
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } i ${ count } altres"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Accions"
       ],
@@ -4628,7 +4640,7 @@
       "Conditions": [
         "Condicions"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         ""
       ],
       "Contacts": [
@@ -4769,7 +4781,7 @@
       "Mark as": [
         "Marca com a"
       ],
-      "Message Password": [
+      "Message password": [
         ""
       ],
       "Move to": [
@@ -4805,7 +4817,7 @@
       "Password": [
         "Contrasenya"
       ],
-      "Password Hint": [
+      "Password hint": [
         ""
       ],
       "Payer": [
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Tot el correu"
-      ],
       "Archive": [
         "Arxiu"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Correu brossa"
-      ],
-      "Starred": [
-        "Destacats"
       ],
       "Trash": [
         "Paperera"
@@ -5670,8 +5676,8 @@
       "Browser version": [
         "Versió del navegador"
       ],
-      "Confirm Password": [
-        "Confirmar contrasenya"
+      "Confirm password": [
+        ""
       ],
       "e.g. Julia Smith": [
         "ex. Julia Smith"
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Avisar d'un problema"
+      ],
+      "Request new code": [
+        ""
       ],
       "Schedule send": [
         "Programar enviament"

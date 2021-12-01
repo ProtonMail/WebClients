@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Активувати ключ організації"
-      ],
-      "Activate recovery": [
-        "Активувати відновлення"
       ],
       "Add": [
         "Додати"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Встановити catch-all"
-      ],
-      "Set recovery phrase": [
-        "Встановити фразу відновлення"
       ],
       "Share via link": [
         "Спільний доступ за посиланням"
@@ -1324,7 +1318,7 @@
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Ви досягли максимальної кількості особистих календарів, які можна створити в межах вашого тарифного плану."
+        "Ви досягли максимальної кількості особистих календарів у межах свого тарифного плану."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписного календаря.",
@@ -4229,8 +4223,8 @@
       "Save your password somewhere safe.": [
         "Збережіть свій пароль у надійному місці."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Збережіть пароль у надійному місці. Натисніть на піктограму, щоб підтвердити правильність введення."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Збережіть пароль у надійному місці. Клацніть на піктограму, щоб підтвердити правильність його введення."
       ],
       "Scan QR code instead": [
         "Cканувати QR-код натомість"
@@ -4872,25 +4866,25 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Ключ з таким же алгоритмом шифрування вже існує. Генерація іншого ключа приведе до вповільнення завантаження аккаунта. Ви впевнені, що хочете продовжити?"
+        "Ключ з таким самим алгоритмом шифрування вже існує. Генерування іншого ключа спричинить повільніше завантаження облікового запису. Ви дійсно хочете продовжити?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Для цієї адреси вже активний ключ з тим же алгоритмом шифрування. Генерація іншого ключа приведе до уповільнення завантаження аккаунта, а видалення цього ключа може викликати проблеми. Якщо ви згенеруєте новий ключ, тому що ваш старий ключ був зламаний, будь ласка, відмітьте цей ключ як зламаний. Ви впевнені, що хочете продовжити?"
+        "Для цієї адреси вже активний ключ з таким самим алгоритмом шифрування. Генерування іншого ключа спричинить повільніше завантаження облікового запису, а видалення цього ключа може викликати проблеми. Якщо ви генеруєте новий ключ, тому що ваш старий ключ був скомпрометований, будь ласка, позначте той ключ як скомпрометований. Ви дійсно хочете продовжити?"
       ],
       "Generate key": [
-        "Згенерувати ключ"
+        "Генерувати ключ"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
-        "Ключ із відбитком пальця ${ fp } успішно створений."
+        "Ключ з відбитком ${ fp } успішно створено."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Йде генерація ключів шифрування. Це може зайняти кілька хвилин і тимчасово припинити роботу браузера."
+        "Триває генерування ключів шифрування. Це може тривати кілька хвилин та тимчасово блокувати роботу браузера."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "У цей час генеруються ключі шифрування для вашої адреси. Це може зайняти кілька хвилин і тимчасово припинити роботу вашого браузера."
+        "Триває генерування ключів шифрування для вашої адреси. Це може тривати кілька хвилин та тимчасово блокувати роботу браузера."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Ви можете згенерувати новий ключ шифрування, якщо вважаєте, що попередній ключ був зламаний."
+        "Ви можете генерувати новий ключ шифрування, якщо ви вважаєте, що попередній ключ був скомпрометований."
       ]
     },
     "Key state badge": {
@@ -5169,6 +5163,9 @@
         "${ UsedMembers } з ${ MaxMembers } користувачів",
         "${ UsedMembers } з ${ MaxMembers } користувачів",
         "${ UsedMembers } з ${ MaxMembers } користувачів"
+      ],
+      "(Coming soon)": [
+        "(Незабаром з'явиться)"
       ],
       "Account storage": [
         "Сховище облікового запису"
@@ -5940,7 +5937,7 @@
         "Інформаційний бюлетень Proton"
       ],
       "Proton offers and promotions": [
-        "Пропозиції і акції Proton"
+        "Пропозиції та акції Proton"
       ],
       "Proton product announcements": [
         "Оголошення про продукти Proton"

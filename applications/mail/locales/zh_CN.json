@@ -20,17 +20,20 @@
       "Activate": [
         "激活"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "添加"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "添加条件"
       ],
       "Add contact": [
         "添加联系人"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "添加群组"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "添加新群组"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "添加屏幕截图"
@@ -307,6 +313,9 @@
       ],
       "Expand composer": [
         "展开编辑窗"
+      ],
+      "Expand URL": [
+        ""
       ],
       "Export": [
         "导出"
@@ -734,9 +743,6 @@
       "Set expiration time": [
         ""
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "通过链接分享"
       ],
@@ -858,12 +864,6 @@
         "取消信任"
       ],
       "Update": [
-        ""
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -1725,17 +1725,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "于 ${ formattedDate }"
-      ],
-      "today": [
-        "今天"
-      ],
       "Today": [
         "今天"
-      ],
-      "tomorrow": [
-        "明天"
       ],
       "Tomorrow": [
         "明天"
@@ -3524,8 +3515,14 @@
       "Message sent.": [
         ""
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "邮件将${ dateString } ${ formattedTime } 发送"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        ""
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
@@ -3896,13 +3893,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "此邮件将移至草稿箱，以便您进行编辑。您需要为其重新安排发送时间。"
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "此邮件将${ dateString } ${ formattedTime } 发送"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
       ],
       "This message will be sent shortly": [
         "此邮件将立即发送"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -3910,6 +3910,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "此消息将于 ${ formattedDelay } 过期"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "该公钥将自动用于加密发送到该地址的电子邮件。"
@@ -4455,6 +4464,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } 及其他 ${ count } 位"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "操作"
       ],
@@ -4539,7 +4551,7 @@
       "Conditions": [
         "条件"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         ""
       ],
       "Contacts": [
@@ -4680,7 +4692,7 @@
       "Mark as": [
         "标为"
       ],
-      "Message Password": [
+      "Message password": [
         ""
       ],
       "Move to": [
@@ -4716,7 +4728,7 @@
       "Password": [
         "密码"
       ],
-      "Password Hint": [
+      "Password hint": [
         ""
       ],
       "Payer": [
@@ -5200,9 +5212,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "所有邮件"
-      ],
       "Archive": [
         "存档"
       ],
@@ -5220,9 +5229,6 @@
       ],
       "Spam": [
         "垃圾邮件"
-      ],
-      "Starred": [
-        "星标邮件"
       ],
       "Trash": [
         "废件箱"
@@ -5575,8 +5581,8 @@
       "Browser version": [
         "浏览器版本"
       ],
-      "Confirm Password": [
-        "确认密码"
+      "Confirm password": [
+        ""
       ],
       "e.g. Julia Smith": [
         "例如：Julia Smith"
@@ -6782,6 +6788,9 @@
       ],
       "Report a problem": [
         "反馈问题"
+      ],
+      "Request new code": [
+        ""
       ],
       "Schedule send": [
         "定时发送"

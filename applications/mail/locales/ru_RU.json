@@ -20,17 +20,20 @@
       "Activate": [
         "Активировать"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Добавить"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Добавить условие"
       ],
       "Add contact": [
         "Добавить контакт"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Добавить группу"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Добавить новую группу"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Добавить снимки экрана"
@@ -313,6 +319,9 @@
       ],
       "Expand composer": [
         "Раскрыть окно редактора сообщений"
+      ],
+      "Expand URL": [
+        ""
       ],
       "Export": [
         "Экспорт"
@@ -702,7 +711,7 @@
         "Запланировать сообщение"
       ],
       "Schedule send": [
-        "Запланированное сообщение отправлено"
+        "Запланированная отправка"
       ],
       "Search": [
         "Поиск"
@@ -741,9 +750,6 @@
         "Установить по умолчанию"
       ],
       "Set expiration time": [
-        ""
-      ],
-      "Set recovery phrase": [
         ""
       ],
       "Share via link": [
@@ -870,12 +876,6 @@
         "Не доверять"
       ],
       "Update": [
-        ""
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -1767,17 +1767,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "${ formattedDate }"
-      ],
-      "today": [
-        "сегодня"
-      ],
       "Today": [
         "Сегодня"
-      ],
-      "tomorrow": [
-        "завтра"
       ],
       "Tomorrow": [
         "Завтра"
@@ -3755,8 +3746,14 @@
       "Message sent.": [
         "Сообщение отправлено."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "Сообщение будет отправлено ${ dateString } в ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        ""
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
@@ -4133,13 +4130,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Это сообщение будет перемещено в Черновики, поэтому вы можете его редактировать. Его нужно будет снова запланировать перед отправкой."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Это сообщение будет отправлено ${ dateString } в ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
       ],
       "This message will be sent shortly": [
         "Это сообщение вскоре будет отправлено"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -4147,6 +4147,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "Срок действия этого письма истекает ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Этот открытый ключ будет автоматически использован для шифрования электронной почты, отправленной на этот адрес."
@@ -4722,6 +4731,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } и ${ count } другие"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Действия"
       ],
@@ -4806,7 +4818,7 @@
       "Conditions": [
         "Условия"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         ""
       ],
       "Contacts": [
@@ -4947,7 +4959,7 @@
       "Mark as": [
         "Отметить как"
       ],
-      "Message Password": [
+      "Message password": [
         ""
       ],
       "Move to": [
@@ -4983,7 +4995,7 @@
       "Password": [
         "Пароль"
       ],
-      "Password Hint": [
+      "Password hint": [
         ""
       ],
       "Payer": [
@@ -5304,7 +5316,7 @@
         "Запросить приглашение"
       ],
       "Scheduled": [
-        "Расписание"
+        "Запланировано"
       ],
       "Sent": [
         "Отправленные"
@@ -5476,9 +5488,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Всех письмах"
-      ],
       "Archive": [
         "Архив"
       ],
@@ -5489,16 +5498,13 @@
         "Входящие"
       ],
       "Scheduled": [
-        "Расписание"
+        "Запланировано"
       ],
       "Sent": [
         "Отправленные"
       ],
       "Spam": [
         "Спам"
-      ],
-      "Starred": [
-        "Со звёздами"
       ],
       "Trash": [
         "Корзина"
@@ -5860,8 +5866,8 @@
       "Browser version": [
         "Версия браузера"
       ],
-      "Confirm Password": [
-        "Подтвердите пароль"
+      "Confirm password": [
+        ""
       ],
       "e.g. Julia Smith": [
         "например, Джулия Смит"
@@ -7200,8 +7206,11 @@
       "Report a problem": [
         "Сообщить о проблеме"
       ],
+      "Request new code": [
+        ""
+      ],
       "Schedule send": [
-        "Запланированное сообщение отправлено"
+        "Запланированная отправка"
       ],
       "Select a plan": [
         "Выберите тариф"

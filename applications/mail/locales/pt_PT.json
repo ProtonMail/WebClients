@@ -20,17 +20,20 @@
       "Activate": [
         "Activar"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Adicionar"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Adicionar condição"
       ],
       "Add contact": [
         "Adicionar contacto"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Adicionar grupo"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Adicionar novo grupo"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Adicionar capturas de ecrã"
@@ -309,6 +315,9 @@
       ],
       "Expand composer": [
         "Expandir compositor"
+      ],
+      "Expand URL": [
+        ""
       ],
       "Export": [
         "Exportar"
@@ -737,9 +746,6 @@
       "Set expiration time": [
         ""
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "Partilhar por ligação"
       ],
@@ -862,12 +868,6 @@
         "Não confiar"
       ],
       "Update": [
-        ""
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        ""
-      ],
-      "today": [
-        "hoje"
-      ],
       "Today": [
         "Hoje"
-      ],
-      "tomorrow": [
-        "amanhã"
       ],
       "Tomorrow": [
         "Amanhã"
@@ -3601,7 +3592,13 @@
       "Message sent.": [
         ""
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "Monthly ${ onDayString }": [
@@ -3975,13 +3972,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         ""
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
         ""
       ],
       "This message will be sent shortly": [
         ""
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -3989,6 +3989,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "Esta mensagem expirará em ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta chave pública será usada automaticamente para encriptar emails enviados para este endereço."
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } e ${ count } outros"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Acções"
       ],
@@ -4628,7 +4640,7 @@
       "Conditions": [
         "Condições"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         ""
       ],
       "Contacts": [
@@ -4769,7 +4781,7 @@
       "Mark as": [
         "Marcar como"
       ],
-      "Message Password": [
+      "Message password": [
         ""
       ],
       "Move to": [
@@ -4805,7 +4817,7 @@
       "Password": [
         "Senha"
       ],
-      "Password Hint": [
+      "Password hint": [
         ""
       ],
       "Payer": [
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        ""
-      ],
       "Archive": [
         "Arquivo"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Starred": [
-        "Com estrela"
       ],
       "Trash": [
         "Lixo"
@@ -5670,8 +5676,8 @@
       "Browser version": [
         "Versão do navegador"
       ],
-      "Confirm Password": [
-        "Confirmar Palavra-passe"
+      "Confirm password": [
+        ""
       ],
       "e.g. Julia Smith": [
         "e.g. Júlia Silva"
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Relatar um problema"
+      ],
+      "Request new code": [
+        ""
       ],
       "Schedule send": [
         ""

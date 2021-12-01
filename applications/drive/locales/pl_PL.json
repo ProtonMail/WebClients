@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Aktywuj odzyskiwanie"
-      ],
       "Add": [
         "Dodaj"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Dodaj kontakt"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Dodaj grupę"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Dodaj nową grupę"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Dodaj zrzuty ekranu"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Zmniejsz"
-      ],
-      "Default email application": [
-        "Domyślna aplikacja pocztowa"
       ],
       "Delete": [
         "Usuń"
@@ -440,12 +443,6 @@
       "Select plan": [
         "Wybierz plan"
       ],
-      "Set as default": [
-        "Ustaw jako domyślną"
-      ],
-      "Set recovery phrase": [
-        "Ustaw hasło odzyskiwania"
-      ],
       "Share": [
         "Udostępnij"
       ],
@@ -526,12 +523,6 @@
       ],
       "Untrust": [
         "Przestań ufać"
-      ],
-      "Update recovery file": [
-        "Zaktualizuj plik odzyskiwania"
-      ],
-      "Update recovery phrase": [
-        "Zaktualizuj hasło odzyskiwania"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -1976,9 +1967,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Pliki vCard w wersji 3.1 i 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych programów są obsługiwane."
       ],
-      "Default email application": [
-        "Domyślna aplikacja pocztowa"
-      ],
       "Delete drive": [
         "Usuń dysk",
         "Usuń dyski",
@@ -2326,9 +2314,6 @@
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ProtonMaila, używających kompatybilnej usługi PGP."
@@ -2828,6 +2813,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "(Expired)": [
         "(wygasł)"
       ],
@@ -3262,26 +3250,14 @@
       "Add a gift code": [
         "Dodaj kod podarunkowy"
       ],
-      "All mail": [
-        "Wszystkie wiadomości"
-      ],
-      "Archive": [
-        "Archiwum"
-      ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
       "click here": [
         "kliknij tutaj"
       ],
-      "Drafts": [
-        "Szkice"
-      ],
       "Go to subscription plans": [
         "Przejdź do subskrypcji planów"
-      ],
-      "Inbox": [
-        "Odebrane"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -3289,29 +3265,14 @@
       "My files": [
         "Moje pliki"
       ],
-      "Outbox": [
-        "Skrzynka nadawcza"
-      ],
       "Pay invoice": [
         "Zapłać fakturę"
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
       ],
-      "Scheduled": [
-        "Zaplanowane"
-      ],
-      "Sent": [
-        "Wysłane"
-      ],
       "Shared": [
         "Udostępnione"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Wyróżnione"
       ],
       "Trash": [
         "Kosz"
@@ -4568,6 +4529,9 @@
       ],
       "Report a problem": [
         "Zgłoś problem"
+      ],
+      "Request new code": [
+        "Poproś o nowy kod"
       ],
       "Restore your files": [
         "Przywróć pliki"

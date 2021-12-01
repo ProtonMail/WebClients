@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktivieren"
       ],
       "Activate organization key": [
         "Organisationsschlüssel aktivieren"
-      ],
-      "Activate recovery": [
-        "Wiederherstellung aktivieren"
       ],
       "Add": [
         "Hinzuf."
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Catch-All festlegen"
-      ],
-      "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
       ],
       "Share via link": [
         "Als Link teilen"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Bewahren Sie Ihr Passwort an einem sicheren Ort auf."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Speichern Sie Ihr Passwort an einem sicheren Ort. Klicken Sie auf das Symbol, um zu bestätigen, dass Sie Ihr Passwort korrekt eingegeben haben."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Speichere dein Passwort an einem sicheren Ort. Klicke auf das Symbol, um zu bestätigen, dass du dein Passwort korrekt eingegeben hast."
       ],
       "Scan QR code instead": [
         "Stattdessen QR-Code scannen"
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers }/${ MaxMembers } Nutzer",
         "${ UsedMembers }/${ MaxMembers } Nutzern"
+      ],
+      "(Coming soon)": [
+        "(Demnächst verfügbar)"
       ],
       "Account storage": [
         "Kontenspeicher"
@@ -7043,7 +7040,7 @@
     },
     "Settings description": {
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Sie können einer einzelnen Nachricht mehrere Kategorien zuordnen, aber die Nachrichten können sich normalerweise nur in einem einzigen Ordner befinden. Durch Ziehen und Ablegen können Sie die Reihenfolge Ihrer Ordner und Kategorien ändern."
+        "Sie können einer einzelnen Nachricht mehreren Kategorien zuordnen, aber die Nachrichten können sich normalerweise nur in einem einzigen Ordner befinden. Durch Ziehen und Ablegen können Sie die Reihenfolge Ihrer Ordner und Kategorien ändern."
       ]
     },
     "Settings section title": {

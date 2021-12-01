@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Activare recuperare"
-      ],
       "Add": [
         "Adăugare"
       ],
+      "Add address": [
+        "Adăugare adresă"
+      ],
       "Add contact": [
         "Adăugare contact"
+      ],
+      "Add email": [
+        "Adăugare e-mail"
       ],
       "Add group": [
         "Adăugare grup"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Adăugare grup"
+      ],
+      "Add phone number": [
+        "Adăugare număr de telefon"
       ],
       "Add screenshot(s)": [
         "Adăugare captură"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Reducere"
-      ],
-      "Default email application": [
-        "Aplicația de e-mail implicită"
       ],
       "Delete": [
         "Ștergere"
@@ -438,12 +441,6 @@
       "Select plan": [
         "Selectare plan"
       ],
-      "Set as default": [
-        "Setare ca implicită"
-      ],
-      "Set recovery phrase": [
-        "Setare frază de recuperare"
-      ],
       "Share": [
         "Partajare"
       ],
@@ -524,12 +521,6 @@
       ],
       "Untrust": [
         "Dezaprobare"
-      ],
-      "Update recovery file": [
-        "Actualizare fișier de recuperare"
-      ],
-      "Update recovery phrase": [
-        "Actualizare frază de recuperare"
       ],
       "Upgrade": [
         "Migrare"
@@ -1929,9 +1920,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
       ],
-      "Default email application": [
-        "Aplicația de e-mail implicită"
-      ],
       "Delete drive": [
         "Ștergere unitate",
         "Ștergere unități",
@@ -2207,16 +2195,16 @@
         "Selectați folderele pe care doriți să le importați:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Mai încercați, folosiți o metodă de plată diferită sau sunați-vă banca pentru asistență."
+        "Mai încercați. Folosiți o metodă de plată diferită sau contactați-vă banca pentru asistență."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Mai încercați, folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
+        "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Verificați efectuarea plății în noua fereastră deschisă."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Verificați cardul în noua filă deschisă."
+        "Verificați cardul în noua pagină deschisă."
       ],
       "Please verify the payment in the new tab.": [
         "Verificați plata în noua filă."
@@ -2276,9 +2264,6 @@
       ],
       "Session timed out.": [
         "Sesiune expirată."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Setare ProtonMail ca aplicație implicită de e-mail pentru acest navigator. ProtonMail se va deschide automat când faceți clic pe o legătură de e-mail."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
@@ -2777,6 +2762,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(În curând)"
+      ],
       "(Expired)": [
         "(Expirat)"
       ],
@@ -3210,26 +3198,14 @@
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
-      "All mail": [
-        "Toate mesajele"
-      ],
-      "Archive": [
-        "Arhivă"
-      ],
       "clearing your browser cache": [
         "golind bufferul navigatorului"
       ],
       "click here": [
         "apăsați aici"
       ],
-      "Drafts": [
-        "Ciorne"
-      ],
       "Go to subscription plans": [
         "Accesare planuri abonamente"
-      ],
-      "Inbox": [
-        "Primite"
       ],
       "Learn more": [
         "Detalii"
@@ -3237,29 +3213,14 @@
       "My files": [
         "Fișierele mele"
       ],
-      "Outbox": [
-        "De trimis"
-      ],
       "Pay invoice": [
         "Plată factură"
       ],
       "Request an invite": [
         "Solicitați o invitație"
       ],
-      "Scheduled": [
-        "Programate"
-      ],
-      "Sent": [
-        "Trimise"
-      ],
       "Shared": [
         "Partajat"
-      ],
-      "Spam": [
-        "Nedorite"
-      ],
-      "Starred": [
-        "Cu stea"
       ],
       "Trash": [
         "Gunoi"
@@ -3621,7 +3582,7 @@
         "Setați organizația"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Aceasta e ceea ce vor vedea oamenii când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
+        "Aceasta e ceea ce vor vedea ceilalți când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
@@ -4480,6 +4441,9 @@
       "Report a problem": [
         "Raportare problemă"
       ],
+      "Request new code": [
+        "Solicitare cod nou"
+      ],
       "Restore your files": [
         "Restaurare fișiere"
       ],
@@ -4712,7 +4676,7 @@
         "${ mailAppName } Visionary"
       ],
       "30-days money-back guarantee": [
-        "Banii înapoi în 30 de zile garantat"
+        "Garanția returnări banilor în 30 de zile"
       ],
       "Access blocked content": [
         "Accesare conținut blocat"

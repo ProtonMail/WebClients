@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Активировать восстановление"
-      ],
       "Add": [
         "Добавить"
       ],
+      "Add address": [
+        "Добавить адрес"
+      ],
       "Add contact": [
         "Добавить контакт"
+      ],
+      "Add email": [
+        "Добавить эл. почту"
       ],
       "Add group": [
         "Добавить группу"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "Добавить уведомление"
+      ],
+      "Add phone number": [
+        "Добавить номер телефона"
       ],
       "Add screenshot(s)": [
         "Добавить снимки экрана"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "Уменьшить"
-      ],
-      "Default email application": [
-        "Приложение электронной почты по умолчанию"
       ],
       "Delete": [
         "Удалить"
@@ -407,12 +410,6 @@
       "Send": [
         "Отправить"
       ],
-      "Set as default": [
-        "Установить по умолчанию"
-      ],
-      "Set recovery phrase": [
-        "Установить фразу для восстановления"
-      ],
       "Share": [
         "Поделиться"
       ],
@@ -484,12 +481,6 @@
       ],
       "Update": [
         "Обновить"
-      ],
-      "Update recovery file": [
-        "Обновить файл восстановления"
-      ],
-      "Update recovery phrase": [
-        "Обновить фразу для восстановления"
       ],
       "Upgrade": [
         "Повысить"
@@ -1555,7 +1546,7 @@
         "Требуется имя"
       ],
       "No data to import": [
-        ""
+        "Нет данных для импорта"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Ни один их полученных ключей внутреннего пользователя не годен для отправки"
@@ -1728,31 +1719,31 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "Произошла ошибка при чтении вашего файла ${ formattedFilename }. Файл имеет неправильный формат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "Произошла ошибка при загрузке файла ${ formattedFilename }. Разрешены только файлы формата . ics."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Произошла ошибка при загрузке файла. Ничего не было выбрано."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "Ваш файл ${ formattedFilename } содержит более ${ MAX_IMPORT_EVENTS_STRING } событий."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         ""
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "Ваш файл ${ formattedFilename } не содержит событий для импорта."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "Файл ${ formattedFilename } пуст."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
         ""
@@ -1976,19 +1967,19 @@
         "Неподдерживаемый ответ"
       ],
       "We could not cancel the event in your calendar": [
-        ""
+        "Мы не смогли отменить событие в вашем календаре"
       ],
       "We could not retrieve the event from your calendar": [
-        ""
+        "Мы не смогли найти событие из вашего календаря"
       ],
       "We could not update the event in your calendar": [
-        ""
+        "Мы не смогли обновить событие в вашем календаре"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
+        "Ваш ответ был отослан, но событие не может быть добавлено в ваш календарь"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "Ваш ответ отправлен, но событие не может быть обновлено в Вашем календаре"
       ]
     },
     "Event popover close button": {
@@ -2527,9 +2518,6 @@
       "Daily": [
         "Ежедневно"
       ],
-      "Default email application": [
-        "Приложение электронной почты по умолчанию"
-      ],
       "Discard changes?": [
         "Отменить изменения?"
       ],
@@ -2808,9 +2796,6 @@
       ],
       "Session timed out.": [
         "Время сессии истекло."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Установить ProtonMail в качестве почтового клиента по умолчанию для этого браузера. ProtonMail будет открываться автоматически после нажатия на почтовую ссылку."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Настройка PGP позволяет вам отправлять зашифрованные письма пользователям вне ProtonMail, которые пользуются совместимыми с PGP сервисами."
@@ -3316,6 +3301,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(Скоро появится)"
+      ],
       "0 - Not likely": [
         "0 - Маловероятно"
       ],
@@ -3711,12 +3699,6 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
-      "All mail": [
-        "Вся почта"
-      ],
-      "Archive": [
-        "Архив"
-      ],
       "Calendars": [
         "Календари"
       ],
@@ -3726,14 +3708,8 @@
       "click here": [
         "нажмите здесь"
       ],
-      "Drafts": [
-        "Черновики"
-      ],
       "Go to subscription plans": [
         "Перейти на страницу подписки"
-      ],
-      "Inbox": [
-        "Входящие"
       ],
       "Learn more": [
         "Подробнее"
@@ -3741,32 +3717,14 @@
       "My calendars": [
         "Мои календари"
       ],
-      "Outbox": [
-        "Исходящие"
-      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
       "Request an invite": [
         "Запросить приглашение"
       ],
-      "Scheduled": [
-        "Запланировано"
-      ],
-      "Sent": [
-        "Отправленные"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "Starred": [
-        ""
-      ],
       "Subscribed calendars": [
         "Подписанные на календари"
-      ],
-      "Trash": [
-        "Корзина"
       ],
       "Upgrade": [
         "Повысить"
@@ -5313,6 +5271,9 @@
       ],
       "Report a problem": [
         "Сообщить о проблеме"
+      ],
+      "Request new code": [
+        "Запросить новый код"
       ],
       "Reset calendar keys": [
         "Сбросить ключи календаря"
