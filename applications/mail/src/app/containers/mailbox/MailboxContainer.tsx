@@ -6,7 +6,6 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
-import { c } from 'ttag';
 import { Sort, Filter, SearchParameters } from '../../models/tools';
 import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
 import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
@@ -36,10 +35,10 @@ import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 import { useOnCompose, useOnMailTo } from '../ComposeProvider';
 import { useEncryptedSearchContext } from '../EncryptedSearchProvider';
-
-import './MailboxContainer.scss';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { useEncryptedSearch } from '../../hooks/mailbox/useEncryptedSearch';
+
+import './MailboxContainer.scss';
 
 interface Props {
     labelID: string;
@@ -74,11 +73,11 @@ const MailboxContainer = ({
 
     const messageContainerRef = useRef<HTMLElement>(null);
     const mainAreaRef = useRef<HTMLDivElement>(null);
-    const resizeAreaRef = useRef<HTMLDivElement>(null);
+    const resizeAreaRef = useRef<HTMLButtonElement>(null);
 
     const onMailTo = useOnMailTo();
 
-    const { enableResize, resetWidth } = useResizeMessageView(mainAreaRef, resizeAreaRef, listRef);
+    const { enableResize, resetWidth, scrollBarWidth } = useResizeMessageView(mainAreaRef, resizeAreaRef, listRef);
 
     const page = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
@@ -279,67 +278,57 @@ const MailboxContainer = ({
                         onSort={handleSort}
                         filter={filter}
                         onFilter={handleFilter}
+                        resizeAreaRef={resizeAreaRef}
+                        enableResize={enableResize}
+                        resetWidth={resetWidth}
+                        showContentPanel={showContentPanel}
+                        scrollBarWidth={scrollBarWidth}
                     />
                 )}
                 {showContentPanel && (
-                    <>
-                        {columnMode && (
-                            <div className="relative w10p resize-area-container" ref={resizeAreaRef}>
-                                <button
-                                    type="button"
-                                    className="cursor-col-resize w100 h100"
-                                    onMouseDown={enableResize}
-                                    onDoubleClick={resetWidth}
-                                >
-                                    <span className="sr-only">{c('Action')
-                                        .t`Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.`}</span>
-                                </button>
-                            </div>
+                    <section
+                        ref={messageContainerRef}
+                        className="view-column-detail flex-no-min-children flex-column flex-item-fluid flex-nowrap scroll-if-needed relative"
+                    >
+                        {showPlaceholder && (
+                            <PlaceholderView
+                                welcomeFlag={welcomeFlag}
+                                labelID={labelID}
+                                checkedIDs={checkedIDs}
+                                onCheckAll={handleCheckAll}
+                            />
                         )}
-                        <section
-                            ref={messageContainerRef}
-                            className="view-column-detail flex-no-min-children flex-column flex-item-fluid flex-nowrap scroll-if-needed relative"
-                        >
-                            {showPlaceholder && (
-                                <PlaceholderView
-                                    welcomeFlag={welcomeFlag}
+                        {showContentView &&
+                            (isConversationContentView ? (
+                                <ConversationView
+                                    hidden={showPlaceholder}
                                     labelID={labelID}
-                                    checkedIDs={checkedIDs}
-                                    onCheckAll={handleCheckAll}
+                                    messageID={messageID}
+                                    mailSettings={mailSettings}
+                                    conversationID={elementID as string}
+                                    onBack={handleBack}
+                                    breakpoints={breakpoints}
+                                    onMessageReady={onMessageReady}
+                                    columnLayout={columnLayout}
+                                    isComposerOpened={isComposerOpened}
+                                    containerRef={messageContainerRef}
+                                    highlightKeywords={shouldHighlight()}
                                 />
-                            )}
-                            {showContentView &&
-                                (isConversationContentView ? (
-                                    <ConversationView
-                                        hidden={showPlaceholder}
-                                        labelID={labelID}
-                                        messageID={messageID}
-                                        mailSettings={mailSettings}
-                                        conversationID={elementID as string}
-                                        onBack={handleBack}
-                                        breakpoints={breakpoints}
-                                        onMessageReady={onMessageReady}
-                                        columnLayout={columnLayout}
-                                        isComposerOpened={isComposerOpened}
-                                        containerRef={messageContainerRef}
-                                        highlightKeywords={shouldHighlight()}
-                                    />
-                                ) : (
-                                    <MessageOnlyView
-                                        hidden={showPlaceholder}
-                                        labelID={labelID}
-                                        mailSettings={mailSettings}
-                                        messageID={elementID as string}
-                                        onBack={handleBack}
-                                        breakpoints={breakpoints}
-                                        onMessageReady={onMessageReady}
-                                        columnLayout={columnLayout}
-                                        isComposerOpened={isComposerOpened}
-                                        highlightKeywords={shouldHighlight()}
-                                    />
-                                ))}
-                        </section>
-                    </>
+                            ) : (
+                                <MessageOnlyView
+                                    hidden={showPlaceholder}
+                                    labelID={labelID}
+                                    mailSettings={mailSettings}
+                                    messageID={elementID as string}
+                                    onBack={handleBack}
+                                    breakpoints={breakpoints}
+                                    onMessageReady={onMessageReady}
+                                    columnLayout={columnLayout}
+                                    isComposerOpened={isComposerOpened}
+                                    highlightKeywords={shouldHighlight()}
+                                />
+                            ))}
+                    </section>
                 )}
             </PrivateMainArea>
         </div>
