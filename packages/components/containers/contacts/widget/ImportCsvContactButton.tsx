@@ -29,6 +29,9 @@ const ImportCsvContactButton = ({
     const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
     const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
 
+    const easySwitchCalendarFeature = useFeature(FeatureCode.EasySwitchCalendar);
+    const isEasySwitchCalendarEnabled = easySwitchCalendarFeature.feature?.Value;
+
     const handleClick = () => {
         createModal(<ImportModal />);
         if (onImportButtonClick !== undefined) {
@@ -36,7 +39,7 @@ const ImportCsvContactButton = ({
         }
     };
 
-    const isLoading = loadingUser || loadingAddresses || easySwitchFeature.loading;
+    const isLoading = loadingUser || loadingAddresses || easySwitchFeature.loading || easySwitchCalendarFeature.loading;
 
     if (isLoading) {
         return <Loader />;
@@ -53,6 +56,7 @@ const ImportCsvContactButton = ({
                             source={easySwitchSource}
                             addresses={addresses}
                             defaultCheckedTypes={[ImportType.CONTACTS]}
+                            isEasySwitchCalendarEnabled={isEasySwitchCalendarEnabled}
                         />
                     );
                 }}
