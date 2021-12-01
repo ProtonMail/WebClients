@@ -40,9 +40,6 @@
       "Activate my coupon": [
         "Activeer mijn coupon"
       ],
-      "Activate recovery": [
-        "Activeer herstel"
-      ],
       "Add credit / debit card": [
         "Creditcard / bankpas toevoegen"
       ],
@@ -304,9 +301,6 @@
       "Send": [
         "Verzenden"
       ],
-      "Set recovery phrase": [
-        "Stel herstel zin"
-      ],
       "Share via link": [
         "Deel via link"
       ],
@@ -351,12 +345,6 @@
       ],
       "Update": [
         "Update"
-      ],
-      "Update recovery file": [
-        "Herstelbestand bijwerken"
-      ],
-      "Update recovery phrase": [
-        "Herstel zin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -711,7 +699,7 @@
         "De agenda is te groot"
       ],
       "Calendar link is not accessible": [
-        "Agneda link is niet toegankelijk"
+        "Agendalink is niet toegankelijk"
       ],
       "Calendar link is temporarily inaccessible": [
         "Agendalink is tijdelijk ontoegankelijk"
@@ -1161,7 +1149,7 @@
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
       "${ mailAppName } Free": [
-        "${ mailAppName } Gratis"
+        "${ mailAppName } Free"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
         "${ mailAppName } Professional begint met één gebruiker en elke gebruiker voegt 5 GB en 5 e-mailadressen toe aan de pool van de organisatie."
@@ -1184,7 +1172,7 @@
         "${ saveExtra20 } op zowel VPN als Mail door een VPN-abonnement toe te voegen."
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } Gratis"
+        "${ vpnAppName } Free"
       ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
@@ -1275,7 +1263,7 @@
         "Door op Account aanmaken te drukken gaat u akkoord met onze ${ termsOfServiceLink } en ${ privacyPolicyLink }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
+        "Door het downgraden naar een Free abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
@@ -1431,7 +1419,7 @@
         "Installeer een Land configuratiebestand om te verbinden met een willekeurige server in het land van uw keuze."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Installeer een gratis serverconfiguratiebestand om verbinding te maken met een specifieke server op een van de drie gratis locaties."
+        "Installeer een Free serverconfiguratiebestand om verbinding te maken met een specifieke server op een van de drie gratis locaties."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Installeer een Secure Core configuratiebestand om te profiteren van een extra bescherming tegen VPN endpoint compromis."
@@ -2711,10 +2699,10 @@
     },
     "Plan": {
       "${ mailAppName } Free": [
-        "${ mailAppName } Gratis"
+        "${ mailAppName } Free"
       ],
       "Free": [
-        "Gratis"
+        "Free"
       ]
     },
     "Plan Action": {
@@ -2921,7 +2909,7 @@
     },
     "Price": {
       "Free": [
-        "Gratis"
+        "Free"
       ],
       "FREE": [
         "GRATIS"
@@ -3340,6 +3328,9 @@
       ],
       "Report a problem": [
         "Meld een probleem"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
       ],
       "Resend code": [
         "Verstuur code opnieuw"

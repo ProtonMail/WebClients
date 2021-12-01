@@ -20,17 +20,20 @@
       "Activate": [
         "Activare"
       ],
-      "Activate recovery": [
-        "Activare recuperare"
-      ],
       "Add": [
         "Adăugare"
+      ],
+      "Add address": [
+        "Adăugare adresă"
       ],
       "Add condition": [
         "Adăugare condiție"
       ],
       "Add contact": [
         "Adăugare contact"
+      ],
+      "Add email": [
+        "Adăugare e-mail"
       ],
       "Add group": [
         "Adăugare grup"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Adăugare grup"
+      ],
+      "Add phone number": [
+        "Adăugare număr de telefon"
       ],
       "Add screenshot(s)": [
         "Adăugare captură"
@@ -311,6 +317,9 @@
       ],
       "Expand composer": [
         "Extindere panou editare"
+      ],
+      "Expand URL": [
+        "Extindere URL"
       ],
       "Export": [
         "Exportare"
@@ -740,9 +749,6 @@
       "Set expiration time": [
         "Setați timpul de expirare"
       ],
-      "Set recovery phrase": [
-        "Setare frază de recuperare"
-      ],
       "Share via link": [
         "Partajare prin legătură"
       ],
@@ -867,12 +873,6 @@
       ],
       "Update": [
         "Actualizare"
-      ],
-      "Update recovery file": [
-        "Actualizare fișier de recuperare"
-      ],
-      "Update recovery phrase": [
-        "Actualizare frază de recuperare"
       ],
       "Upgrade": [
         "Migrare"
@@ -1753,17 +1753,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "${ formattedDate }"
-      ],
-      "today": [
-        "astăzi"
-      ],
       "Today": [
         "Astăzi"
-      ],
-      "tomorrow": [
-        "mâine"
       ],
       "Tomorrow": [
         "Mâine"
@@ -3678,8 +3669,14 @@
       "Message sent.": [
         "Mesajul a fost trimis."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "Mesajul va fi trimis ${ dateString } la ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Mesajul va fi trimis ${ dateString } la ora ${ formattedTime }"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Mesajul va fi trimis astăzi la ora ${ formattedTime }"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Mesajul va fi trimis mâine la ora ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
@@ -3796,16 +3793,16 @@
         "Selectați tipul de legătură pe care doriți să o inserați și completați toate câmpurile."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Reîncercați, folosiți o metodă de plată diferită sau sunați-vă banca pentru asistență."
+        "Mai încercați. Folosiți o metodă de plată diferită sau contactați-vă banca pentru asistență."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Reîncercați, folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
+        "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Verificați efectuarea plății în noua fereastră deschisă."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Verificați cardul în noua filă deschisă."
+        "Verificați cardul în noua pagină deschisă."
       ],
       "Please verify the payment in the new tab.": [
         "Verificați plata în noua filă."
@@ -4054,20 +4051,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Acest mesaj va fi mutat în «Ciorne» pentru a putea fi editat. Va trebui să-l reprogramați când va fi trimis."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Acest mesaj va fi trimis ${ dateString } la ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Acest mesaj va fi trimis ${ dateString } la ora ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Acest mesaj va fi trimis în scurt timp"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        "Acest mesaj va expira ${ dateString } la ${ formattedTime }."
+      "This message will be sent today at ${ formattedTime }": [
+        "Acest mesaj va fi trimis astăzi la ora ${ formattedTime }"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Acest mesaj va fi trimis mâine la ora ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Acest mesaj va expira ${ formattedDate }"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Acest mesaj va expira peste ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        "Acest mesaj va expira ${ dateString } la ora ${ formattedTime }"
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        "Acest mesaj va expira astăzi la ora ${ formattedTime }"
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        "Acest mesaj va expira mâine la ora ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Această cheie publică va fi folosită automat pentru criptarea mesajelor trimise la această adresă."
@@ -4633,6 +4642,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } și alte ${ count }"
       ],
+      "(Coming soon)": [
+        "(În curând)"
+      ],
       "Actions": [
         "Acțiuni"
       ],
@@ -4717,7 +4729,7 @@
       "Conditions": [
         "Condiții"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         "Confirmare parolă"
       ],
       "Contacts": [
@@ -4858,7 +4870,7 @@
       "Mark as": [
         "Marcare"
       ],
-      "Message Password": [
+      "Message password": [
         "Parolă mesaj"
       ],
       "Move to": [
@@ -4894,8 +4906,8 @@
       "Password": [
         "Parola"
       ],
-      "Password Hint": [
-        "Indiciu pentru parolă"
+      "Password hint": [
+        "Indiciu parolă"
       ],
       "Payer": [
         "Payer"
@@ -5384,9 +5396,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Toate mesajele"
-      ],
       "Archive": [
         "Arhivă"
       ],
@@ -5404,9 +5413,6 @@
       ],
       "Spam": [
         "Nedorite"
-      ],
-      "Starred": [
-        "Cu stea"
       ],
       "Trash": [
         "Gunoi"
@@ -5664,7 +5670,7 @@
         "Setați organizația"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Aceasta e ceea ce vor vedea oamenii când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
+        "Aceasta e ceea ce vor vedea ceilalți când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
@@ -5765,7 +5771,7 @@
       "Browser version": [
         "Versiune navigator"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         "Confirmare parolă"
       ],
       "e.g. Julia Smith": [
@@ -5991,8 +5997,8 @@
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "S-a îmbinat un contact.",
-        "S-au îmbinat ${ model.submitted.length } din ${ { totalBeMerged }} contacte.",
-        "S-au îmbinat ${ model.submitted.length } din ${ { totalBeMerged }} de contacte."
+        "S-au îmbinat ${ model.submitted.length } din ${ totalBeMerged } contacte.",
+        "S-au îmbinat ${ model.submitted.length } din ${ totalBeMerged } de contacte."
       ],
       "No contacts exported.": [
         "Nu s-au exportat contacte."
@@ -7061,6 +7067,9 @@
       "Report a problem": [
         "Raportare problemă"
       ],
+      "Request new code": [
+        "Solicitare cod nou"
+      ],
       "Schedule send": [
         "Trimitere programată"
       ],
@@ -7280,7 +7289,7 @@
         "${ mailAppName } Visionary"
       ],
       "30-days money-back guarantee": [
-        "Banii înapoi în 30 de zile garantat"
+        "Garanția returnării banilor în 30 de zile"
       ],
       "Access blocked content": [
         "Accesare conținut blocat"

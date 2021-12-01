@@ -20,17 +20,20 @@
       "Activate": [
         "有効化"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "追加"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "条件を追加"
       ],
       "Add contact": [
         "連絡先を追加"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "グループを追加"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "新しいグループを追加"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "スクリーンショットを追加"
@@ -307,6 +313,9 @@
       ],
       "Expand composer": [
         "広げる"
+      ],
+      "Expand URL": [
+        ""
       ],
       "Export": [
         "エクスポート"
@@ -734,9 +743,6 @@
       "Set expiration time": [
         ""
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "リンクを共有"
       ],
@@ -860,12 +866,6 @@
       "Update": [
         ""
       ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
-      ],
       "Upgrade": [
         "アップグレード"
       ],
@@ -903,7 +903,7 @@
         "連絡先の詳細を表示"
       ],
       "View headers": [
-        "ヘッダを表示する"
+        "ヘッダーを表示"
       ],
       "View invoice": [
         "請求書を参照する"
@@ -1725,17 +1725,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "${ formattedDate }"
-      ],
-      "today": [
-        "今日"
-      ],
       "Today": [
         "今日"
-      ],
-      "tomorrow": [
-        "明日"
       ],
       "Tomorrow": [
         "明日"
@@ -2130,7 +2121,7 @@
         "カードの名義人を入力してください"
       ],
       "Network error: Please check your connection and try again.": [
-        "ネットワークエラー：インターネット接続を確認し、もう一度やり直してください。"
+        "ネットワークエラー: インターネット接続を確認し、もう一度やり直してください。"
       ],
       "No address with keys available to compose a message": [
         ""
@@ -2487,7 +2478,7 @@
         "エラーが解消されるまでお待ちください。"
       ],
       "Error: ${ errorMessage }": [
-        "エラー： ${ errorMessage }"
+        "エラー: ${ errorMessage }"
       ],
       "No results found": [
         "該当する項目がありません"
@@ -3524,7 +3515,13 @@
       "Message sent.": [
         ""
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "Monthly ${ onDayString }": [
@@ -3789,7 +3786,7 @@
         "エンドツーエンド暗号化された件名"
       ],
       "Subject:": [
-        "件名："
+        "件名:"
       ],
       "Subject: ": [
         "件名: "
@@ -3896,13 +3893,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         ""
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
         ""
       ],
       "This message will be sent shortly": [
         ""
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -3910,6 +3910,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "このメッセージの期限は ${ formattedDelay } までです"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         ""
@@ -4056,7 +4065,7 @@
         "毎年"
       ],
       "You are about to open another browser tab and visit:": [
-        "別のタブで下記リンクを開こうとしています："
+        "別のタブで下記リンクを開こうとしています:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
@@ -4455,6 +4464,9 @@
       "${ firstAddress } and ${ count } others": [
         ""
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "動作"
       ],
@@ -4492,7 +4504,7 @@
         "宛先を連絡先に自動追加"
       ],
       "BCC:": [
-        "Bcc："
+        "BCC:"
       ],
       "Blind Carbon Copy": [
         ""
@@ -4531,7 +4543,7 @@
         "カテゴリー"
       ],
       "CC:": [
-        "Cc："
+        "CC:"
       ],
       "City": [
         "市区町村"
@@ -4539,7 +4551,7 @@
       "Conditions": [
         "条件"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         ""
       ],
       "Contacts": [
@@ -4654,7 +4666,7 @@
         ""
       ],
       "Labels:": [
-        "ラベル："
+        "ラベル:"
       ],
       "Last 12 months only": [
         ""
@@ -4680,7 +4692,7 @@
       "Mark as": [
         "印をつける"
       ],
-      "Message Password": [
+      "Message password": [
         ""
       ],
       "Move to": [
@@ -4716,7 +4728,7 @@
       "Password": [
         "パスワード"
       ],
-      "Password Hint": [
+      "Password hint": [
         ""
       ],
       "Payer": [
@@ -4786,7 +4798,7 @@
         "メールに署名"
       ],
       "Size:": [
-        "サイズ："
+        "サイズ:"
       ],
       "Starred": [
         "星印付き"
@@ -4825,7 +4837,7 @@
         "宛先"
       ],
       "To:": [
-        "宛先："
+        "宛先:"
       ],
       "To: ${ emailAddress }": [
         ""
@@ -5200,9 +5212,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        ""
-      ],
       "Archive": [
         "アーカイブ"
       ],
@@ -5220,9 +5229,6 @@
       ],
       "Spam": [
         "迷惑メール"
-      ],
-      "Starred": [
-        "星印付き"
       ],
       "Trash": [
         "ごみ箱"
@@ -5575,8 +5581,8 @@
       "Browser version": [
         "ブラウザのバージョン"
       ],
-      "Confirm Password": [
-        "パスワードの確認"
+      "Confirm password": [
+        ""
       ],
       "e.g. Julia Smith": [
         "例: Julia Smith"
@@ -6782,6 +6788,9 @@
       ],
       "Report a problem": [
         "問題を報告"
+      ],
+      "Request new code": [
+        "新しいコードを発行"
       ],
       "Schedule send": [
         "スケジュールを送信"

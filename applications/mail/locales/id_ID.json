@@ -20,17 +20,20 @@
       "Activate": [
         "Aktifkan"
       ],
-      "Activate recovery": [
-        "Aktifkan metode pemulihan"
-      ],
       "Add": [
         "Tambah"
+      ],
+      "Add address": [
+        "Tambah alamat"
       ],
       "Add condition": [
         "Tambahkan syarat"
       ],
       "Add contact": [
         "Tambah kontak"
+      ],
+      "Add email": [
+        "Tambah surel"
       ],
       "Add group": [
         "Tambah grup"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Tambah grup baru"
+      ],
+      "Add phone number": [
+        "Tambah nomor telepon"
       ],
       "Add screenshot(s)": [
         "Tambah tangkapan layar"
@@ -307,6 +313,9 @@
       ],
       "Expand composer": [
         "Lebarkan komposer"
+      ],
+      "Expand URL": [
+        "Lebarkan URL"
       ],
       "Export": [
         "Ekspor"
@@ -734,9 +743,6 @@
       "Set expiration time": [
         "Tentukan waktu kedaluwarsa"
       ],
-      "Set recovery phrase": [
-        "Tentukan frasa pemulihan"
-      ],
       "Share via link": [
         "Bagikan melalui tautan"
       ],
@@ -859,12 +865,6 @@
       ],
       "Update": [
         "Perbarui"
-      ],
-      "Update recovery file": [
-        "Perbarui berkas pemulihan"
-      ],
-      "Update recovery phrase": [
-        "Perbarui frasa pemulihan"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1599,7 +1599,7 @@
         "Tanggal lahir"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Gender": [
         "Jenis kelamin"
@@ -1725,17 +1725,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "pada ${ formattedDate }"
-      ],
-      "today": [
-        "hari ini"
-      ],
       "Today": [
         "Hari ini"
-      ],
-      "tomorrow": [
-        "besok"
       ],
       "Tomorrow": [
         "Besok"
@@ -2796,7 +2787,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Manual": [
         "Manual"
@@ -3524,8 +3515,14 @@
       "Message sent.": [
         "Pesan terkirim."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "Pesan akan terkirim pada tanggal ${ dateString }, pukul ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Pesan akan terkirim pada ${ dateString } pukul ${ formattedTime }"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Pesan akan terkirim hari ini pada pukul ${ formattedTime }"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Pesan akan terkirim besok pada pukul ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
@@ -3896,20 +3893,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyunting isi pesan ini di kemudian waktu. Anda harus mengatur ulang waktu pengiriman pesan ini."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Pesan ini akan terkirim pada tanggal ${ dateString }, pukul ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Pesan ini akan terkirim pada ${ dateString } pukul ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Pesan ini akan terkirim dengan segera"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        "Pesan ini akan kedaluwarsa pada tanggal ${ dateString } pukul ${ formattedTime }"
+      "This message will be sent today at ${ formattedTime }": [
+        "Pesan ini akan terkirim hari ini pada pukul ${ formattedTime }"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Pesan ini akan terkirim besok pada pukul ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Pesan ini akan kedaluwarsa pada ${ formattedDate }"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Pesan ini akan kedaluwarsa pada ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        "Pesan ini akan kedaluwarsa pada ${ dateString } pukul ${ formattedTime }"
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        "Pesan ini akan kedaluwarsa hari ini pada pukul ${ formattedTime }"
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        "Pesan ini akan kedaluwarsa besok pada pukul ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Kunci publik ini akan dipakai secara otomatis untuk mengenkripsi surel yang dikirim ke alamat ini."
@@ -4397,10 +4406,10 @@
         "Pilih / batal pilih semua"
       ],
       "Send email": [
-        "Kirim surel"
+        "Kirim email"
       ],
       "Show all emails": [
-        "Tampilkan semua surel"
+        "Tampilkan semua email"
       ],
       "Show original message": [
         "Tampilkan pesan orisinal"
@@ -4454,6 +4463,9 @@
       ],
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } dan ${ count } lainnya"
+      ],
+      "(Coming soon)": [
+        "(Segera hadir)"
       ],
       "Actions": [
         "Tindakan"
@@ -4539,8 +4551,8 @@
       "Conditions": [
         "Syarat"
       ],
-      "Confirm Password": [
-        "Konfirmasi Kata Sandi"
+      "Confirm password": [
+        "Konfirmasi kata sandi"
       ],
       "Contacts": [
         "Kontak"
@@ -4567,7 +4579,7 @@
         "Jangan tanyakan lagi"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Email address": [
         "Alamat surel"
@@ -4680,8 +4692,8 @@
       "Mark as": [
         "Tandai sebagai"
       ],
-      "Message Password": [
-        "Kata Sandi Pesan"
+      "Message password": [
+        "Kata sandi pesan"
       ],
       "Move to": [
         "Pindah ke"
@@ -4716,8 +4728,8 @@
       "Password": [
         "Kata Sandi"
       ],
-      "Password Hint": [
-        "Petunjuk Kata Sandi"
+      "Password hint": [
+        "Petunjuk kata sandi"
       ],
       "Payer": [
         "Pembayar"
@@ -4962,7 +4974,7 @@
         "klik di sini"
       ],
       "Create a calendar linked to an active email address.": [
-        "Buat kalender yang ditautkan ke alamat surel aktif."
+        "Buat kalender yang ditautkan pada alamat email yang aktif."
       ],
       "Create a new calendar to add this event": [
         "Buat kalender baru untuk menambahkan acara ini"
@@ -4977,7 +4989,7 @@
         "Draf"
       ],
       "Enable an email address linked to one of your calendars.": [
-        "Aktifkan alamat surel yang ditautkan ke salah satu kalender Anda."
+        "Aktifkan alamat email yang ditautkan pada salah satu kalender Anda."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
         "Aktifkan alamat surel yang ditautkan ke kalender nonaktif untuk membatalkan acara."
@@ -5200,9 +5212,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Seluruh email"
-      ],
       "Archive": [
         "Arsip"
       ],
@@ -5220,9 +5229,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Starred": [
-        "Bintang"
       ],
       "Trash": [
         "Sampah"
@@ -5562,7 +5568,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
+        "Alamat email tidak ditemukan di antara id-id pengguna yang terhubung dengan kunci pengiriman (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -5575,8 +5581,8 @@
       "Browser version": [
         "Versi peramban"
       ],
-      "Confirm Password": [
-        "Konfirmasi Kata Sandi"
+      "Confirm password": [
+        "Konfirmasi kata sandi"
       ],
       "e.g. Julia Smith": [
         "cth. Julia Smith"
@@ -5585,13 +5591,13 @@
         "Misalnya "
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "End date": [
         "Tanggal berakhir"
       ],
       "Fill in the email address and text to test your link": [
-        "Isikan di alamat surel dan teks untuk menguji tautan Anda"
+        "Isikan alamat email dan teks untuk menguji tautan Anda"
       ],
       "Fill in the phone number and text to test your link": [
         "Isikan di nomot telepon dan teks untuk menguji tautan Anda"
@@ -5627,7 +5633,7 @@
         "Nama"
       ],
       "Name or email address": [
-        "Nama atau alamat surel"
+        "Nama atau alamat email"
       ],
       "OS name": [
         "Nama Sistem Operasi"
@@ -5669,7 +5675,7 @@
         "Tanggal mulai"
       ],
       "Start typing an email address": [
-        "Mulai ketik alamat surel"
+        "Mulai ketik alamat email"
       ],
       "Subject": [
         "Subjek"
@@ -5815,7 +5821,7 @@
         "Alamat"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Fax": [
         "Faks"
@@ -5939,7 +5945,7 @@
     },
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
-        "Yakin ingin mengirim surel ini?"
+        "Apakah Anda tetap ingin mengirim email ini?"
       ],
       "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
         "Jika Anda memutuskan untuk mengirim pesan ini, penerima berikut akan menerima surel tanpa waktu kedaluwarsa:"
@@ -6192,7 +6198,7 @@
         "Draf terhapus"
       ],
       "Email address copied to clipboard": [
-        "Alamat surel disalin ke papan klip"
+        "Alamat email disalin ke clipboard"
       ],
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke clipboard"
@@ -6783,6 +6789,9 @@
       "Report a problem": [
         "Laporkan masalah"
       ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
       "Schedule send": [
         "Jadwalkan pengiriman"
       ],
@@ -6802,7 +6811,7 @@
         "Pilih apa-apa saja yang akan diimpor"
       ],
       "Send email": [
-        "Kirim surel"
+        "Kirim email"
       ],
       "Send with changed preferences?": [
         "Kirim dengan preferensi yang berubah?"

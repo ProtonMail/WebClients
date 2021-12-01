@@ -20,17 +20,20 @@
       "Activate": [
         "Ativar"
       ],
-      "Activate recovery": [
-        "Ativar a recuperação"
-      ],
       "Add": [
         "Adicionar"
+      ],
+      "Add address": [
+        "Adicionar endereço"
       ],
       "Add condition": [
         "Adicionar condição"
       ],
       "Add contact": [
         "Adicionar contato"
+      ],
+      "Add email": [
+        "Adicionar e-mail"
       ],
       "Add group": [
         "Adicionar grupo"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Adicionar novo grupo"
+      ],
+      "Add phone number": [
+        "Adicionar número de telefone"
       ],
       "Add screenshot(s)": [
         "Adicionar captura(s) de tela"
@@ -219,7 +225,7 @@
         "Diminuir"
       ],
       "Default email application": [
-        ""
+        "Aplicativo de e-mail padrão"
       ],
       "Delete": [
         "Excluir"
@@ -309,6 +315,9 @@
       ],
       "Expand composer": [
         "Expandir compositor"
+      ],
+      "Expand URL": [
+        "Expandir URL"
       ],
       "Export": [
         "Exportar"
@@ -417,7 +426,7 @@
         "Inserir contato"
       ],
       "Insert contacts": [
-        ""
+        "Inserir contatos"
       ],
       "Insert image": [
         "Inserir imagem"
@@ -570,7 +579,7 @@
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
-        ""
+        "Abrir ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -690,7 +699,7 @@
         "Salvar"
       ],
       "Saving${ _ellipsis }": [
-        "Salvando{ _ellipsis }"
+        "Salvando${ _ellipsis }"
       ],
       "Schedule message": [
         "Agendar mensagem"
@@ -732,13 +741,10 @@
         "Definir"
       ],
       "Set as default": [
-        ""
+        "Definir como padrão"
       ],
       "Set expiration time": [
         "Definir a data de vencimento"
-      ],
-      "Set recovery phrase": [
-        "Definir uma frase de recuperação"
       ],
       "Share via link": [
         "Compartilhar via link"
@@ -864,12 +870,6 @@
       "Update": [
         "Atualizar"
       ],
-      "Update recovery file": [
-        "Atualizar o arquivo de recuperação"
-      ],
-      "Update recovery phrase": [
-        "Atualizar a frase de recuperação"
-      ],
       "Upgrade": [
         "Upgrade"
       ],
@@ -928,7 +928,7 @@
         "Ver código de fonte"
       ],
       "Why not?": [
-        ""
+        "Por que não?"
       ],
       "Yes": [
         "Sim"
@@ -1042,7 +1042,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Arquivo ICS vazio"
       ],
       "Invalid event": [
         "Evento inválido"
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "em ${ formattedDate }"
-      ],
-      "today": [
-        "hoje"
-      ],
       "Today": [
         "Hoje"
-      ],
-      "tomorrow": [
-        "amanhã"
       ],
       "Tomorrow": [
         "Amanhã"
@@ -3290,7 +3281,7 @@
         "Crie um novo grupo de contatos"
       ],
       "Create in": [
-        ""
+        "Criar em"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim com os formatos vCard 3.1 e 4.0 (encode UTF-8)."
@@ -3318,7 +3309,7 @@
         "dias"
       ],
       "Default email application": [
-        ""
+        "Aplicativo de e-mail padrão"
       ],
       "Disable message content search": [
         "Ativar a pesquisa no conteúdo de mensagens"
@@ -3601,8 +3592,14 @@
       "Message sent.": [
         "Mensagem enviada."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "A mensagem será enviada ${ dateString } em ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        ""
       ],
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
@@ -3614,7 +3611,7 @@
         "Novo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "A seguir, será necessário fazer login em sua conta do Google e autorizar nosso acesso aos seus dados."
       ],
       "No action selected": [
         "Nenhuma ação selecionada"
@@ -3975,13 +3972,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Esta mensagem será movida para Rascunhos para que você possa editá-la. Você precisará reagendar quando ela será enviada."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Esta mensagem será enviada ${ dateString } em ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
       ],
       "This message will be sent shortly": [
         "Esta mensagem será enviada em breve"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -3989,6 +3989,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "Esta mensagem irá expirar em ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta chave pública será automaticamente utilizada para criptografar e-mails enviados para este endereço."
@@ -4212,7 +4221,7 @@
       ],
       "You selected **${ count } conversation** from this folder": [
         "Você selecionou **${ count } conversa** desta pasta",
-        ""
+        "Você selecionou **${ count } conversas** desta pasta"
       ],
       "You selected **${ count } conversation** with this label": [
         "",
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } e ${ count } outros"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Ações"
       ],
@@ -4628,8 +4640,8 @@
       "Conditions": [
         "Condições"
       ],
-      "Confirm Password": [
-        "Confirmar senha"
+      "Confirm password": [
+        "Confirme a senha"
       ],
       "Contacts": [
         "Contatos"
@@ -4769,8 +4781,8 @@
       "Mark as": [
         "Marcar como"
       ],
-      "Message Password": [
-        "Senha da mensagem"
+      "Message password": [
+        ""
       ],
       "Move to": [
         "Mover para"
@@ -4805,8 +4817,8 @@
       "Password": [
         "Senha"
       ],
-      "Password Hint": [
-        "Dica de senha"
+      "Password hint": [
+        "Dica da senha"
       ],
       "Payer": [
         "Pagador"
@@ -5176,7 +5188,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        ""
+        "Abrir em ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Todos os e-mails"
-      ],
       "Archive": [
         "Arquivo"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Starred": [
-        "Com estrela"
       ],
       "Trash": [
         "Lixeira"
@@ -5670,8 +5676,8 @@
       "Browser version": [
         "Versão do navegador"
       ],
-      "Confirm Password": [
-        "Confirme a Senha"
+      "Confirm password": [
+        "Confirme a senha"
       ],
       "e.g. Julia Smith": [
         "ex. Jessica Sales"
@@ -6137,7 +6143,7 @@
         "Busca no conteúdo das mensagens"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
+        "Para proteger a sua privacidade, Proton bloqueou rastreadores de e-mail nesta mensagem"
       ],
       "You can now schedule your messages to be sent later": [
         "Agora você pode agendar suas mensagens para serem enviadas depois"
@@ -6511,7 +6517,7 @@
     },
     "Title": {
       "${ appName } customization": [
-        "${ appName } personalizar"
+        "Personalização do ${ appName }"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Teclas de Atalho"
@@ -6603,7 +6609,7 @@
         "Confirmar o endereço do destinatário?"
       ],
       "Contact details": [
-        ""
+        "Detalhes do contato"
       ],
       "Contact Details": [
         "Detalhes do contato"
@@ -6922,6 +6928,9 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Request new code": [
+        ""
+      ],
       "Schedule send": [
         "Agendar envio"
       ],
@@ -7017,7 +7026,7 @@
         "Bem-vindo"
       ],
       "Welcome ${ userName }": [
-        "Bem vindo(a), ${ userName }"
+        "Bem-vindo(a), ${ userName }"
       ],
       "What's new": [
         "O que há de novo"
@@ -7239,8 +7248,8 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } servidor",
+        "Mais do que ${ n } servidores"
       ],
       "${ n } VPN connection": [
         "",

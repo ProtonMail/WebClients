@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
-      "Activate recovery": [
-        "Wiederherstellung aktivieren"
-      ],
       "Add": [
         "Hinzufügen"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Kontakt hinzufügen"
+      ],
+      "Add email": [
+        "E-Mail-Adresse hinzufügen"
       ],
       "Add group": [
         "Gruppe hinzufügen"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "Benachrichtigung hinzufügen"
+      ],
+      "Add phone number": [
+        "Rufnummer hinzufügen"
       ],
       "Add screenshot(s)": [
         "Bildschirmfoto(s) hinzufügen"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "Verkleinern"
-      ],
-      "Default email application": [
-        "Standard E-Mail-Anwendung"
       ],
       "Delete": [
         "Löschen"
@@ -403,12 +406,6 @@
       "Send": [
         "Senden"
       ],
-      "Set as default": [
-        "Als Standard festlegen"
-      ],
-      "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
-      ],
       "Share": [
         "Teilen"
       ],
@@ -480,12 +477,6 @@
       ],
       "Update": [
         "Aktualisieren"
-      ],
-      "Update recovery file": [
-        "Wiederherstellungsdatei aktualisieren"
-      ],
-      "Update recovery phrase": [
-        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Aktualisieren"
@@ -929,7 +920,7 @@
     },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
-        ""
+        "Kalender von URL hinzufügen"
       ],
       "More options": [
         "Weitere Optionen"
@@ -2421,9 +2412,6 @@
       "Daily": [
         "Täglich"
       ],
-      "Default email application": [
-        "Standard E-Mail-Anwendung"
-      ],
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
@@ -2698,9 +2686,6 @@
       ],
       "Session timed out.": [
         "Die Sitzung wurde getrennt."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Legen Sie ProtonMail als Ihre Standard-E-Mail-Anwendung für diesen Browser fest. ProtonMail wird automatisch geöffnet, wenn Sie auf einen E-Mail-Link klicken."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es Ihnen, verschlüsselte Ende-zu-Ende Nachrichten an einen Nicht-ProtonMail-Benutzer zu senden, welcher einen PGP-kompatiblen Dienst verwendet."
@@ -3206,6 +3191,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(Demnächst verfügbar)"
+      ],
       "0 - Not likely": [
         "0 — Unwahrscheinlich"
       ],
@@ -3599,12 +3587,6 @@
       "Add a gift code": [
         "Geschenkgutschein hinzufügen"
       ],
-      "All mail": [
-        "Alle Nachrichten"
-      ],
-      "Archive": [
-        "Archiv"
-      ],
       "Calendars": [
         "Kalender"
       ],
@@ -3614,14 +3596,8 @@
       "click here": [
         "hier klicken"
       ],
-      "Drafts": [
-        "Entwürfe"
-      ],
       "Go to subscription plans": [
         "Zu den Abonnement-Angeboten"
-      ],
-      "Inbox": [
-        "Posteingang"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -3629,32 +3605,14 @@
       "My calendars": [
         "Meine Kalender"
       ],
-      "Outbox": [
-        "Postausgang"
-      ],
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
       "Request an invite": [
         "Einladung anfordern"
       ],
-      "Scheduled": [
-        "Geplant"
-      ],
-      "Sent": [
-        "Gesendet"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Gekennzeichnet"
-      ],
       "Subscribed calendars": [
         "Abonnierte Kalender"
-      ],
-      "Trash": [
-        "Papierkorb"
       ],
       "Upgrade": [
         "Aktualisieren"
@@ -5119,6 +5077,9 @@
       ],
       "Report a problem": [
         "Ein Problem melden"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
       ],
       "Reset calendar keys": [
         "Kalenderschlüssel zurücksetzen"

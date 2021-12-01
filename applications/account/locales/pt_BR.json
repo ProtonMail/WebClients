@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ Name }@pm.me": [
         "Ativar ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Ativar chave da organização"
-      ],
-      "Activate recovery": [
-        "Ativar a recuperação"
       ],
       "Add": [
         "Adicionar"
@@ -625,9 +622,6 @@
       "Set catch-all": [
         "Definir catch-all"
       ],
-      "Set recovery phrase": [
-        "Definir uma frase de recuperação"
-      ],
       "Share via link": [
         "Compartilhar via link"
       ],
@@ -940,7 +934,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Arquivo ICS vazio"
       ],
       "Invalid event": [
         "Evento inválido"
@@ -1301,7 +1295,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
+        "Você pode importar arquivos ICS de outro calendário para ${ CALENDAR_APP_NAME }. Isso permite que você importe rapidamente um evento ou a sua agenda inteira."
       ]
     },
     "Calendar limit warning": {
@@ -1332,7 +1326,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "O calendário não pôde ser descriptografado"
       ],
       "Calendar is syncing": [
         "Calendário está sincronizando"
@@ -1819,7 +1813,7 @@
         "Não foi possível verificar o nome de usuário, tente novamente mais tarde"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Não é possível criar novos calendários para todos os calendários importados devido ao limite do calendário pessoal."
       ],
       "Can't validate email, try again later": [
         "Não foi possível validar o e-mail, tente novamente mais tarde"
@@ -2021,7 +2015,7 @@
         "Por favor, tente reautenticar e certifique-se de que as permissões estão definidas corretamente."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        ""
+        "Atualize para um plano Profissional com mais de 1 usuário, ou uma conta Visionária, para obter suporte para vários usuários"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Por favor, faça o upgrade para um plano Profissional com mais de 1 usuário ou uma conta Visionária para gerenciar múltiplos usuários."
@@ -2760,7 +2754,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "Os convites importados aparecem em ${ CALENDAR_APP_NAME } como eventos simples, sem detalhes do organizador e de participantes. Para obter atualizações sobre os eventos e ver quem são os participantes, peça aos organizadores para convidá-lo através do seu endereço de e-mail Proton."
       ],
       "This file contains an event invitation:": [
         "",
@@ -3052,13 +3046,13 @@
     },
     "Import type": {
       "Calendar": [
-        ""
+        "Calendário"
       ],
       "Contacts": [
-        ""
+        "Contatos"
       ],
       "Mail": [
-        ""
+        "E-mail"
       ]
     },
     "Import warning": {
@@ -3089,8 +3083,8 @@
         "${ calendarName } será definido como calendário padrão."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } novo calendário",
+        "${ calendarsToBeCreatedCount } novos calendários"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "",
@@ -3126,8 +3120,8 @@
         "${ numberOfNonPrivateKeys } os arquivos enviados não são chaves privadas válidas. Por favor verifique e tente novamente."
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } grupo de contatos",
+        "${ numContactGroups } grupos de contatos"
       ],
       "${ numContacts } contact": [
         "${ numContacts } contato",
@@ -3151,8 +3145,8 @@
         "${ saveExtra20 } tanto em VPN quanto em e-mail adicionando uma assinatura VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",
@@ -3717,7 +3711,7 @@
         "As imagens foram removidas porque não são permitidas na resposta automática"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendário",
@@ -3727,7 +3721,7 @@
         "Importar de"
       ],
       "Import in progress": [
-        ""
+        "Importação em progresso"
       ],
       "Import mailbox": [
         "Importar Caixa de Entrada"
@@ -3877,13 +3871,13 @@
         "Nomeie sua nova pasta e selecione a pasta pai que deseja colocá-la. Se você não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
       ],
       "New": [
-        ""
+        "Novo"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "Novo em ${ BRAND_NAME }? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "A seguir, será necessário fazer login em sua conta do Google e autorizar nosso acesso aos seus dados."
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Nenhum método de recuperação de conta definido. Você está correndo risco de perder acesso a sua conta"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Salve sua senha em um lugar seguro."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Salve sua senha em algum lugar seguro. Clique no ícone para confirmar que você digitou sua senha corretamente."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Escaneie o código QR"
@@ -4133,7 +4127,7 @@
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
       ],
       "Server is currently down": [
         "O servidor está indisponível no momento"
@@ -4469,7 +4463,7 @@
         ""
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Você pode acompanhar o progresso em ${ importProgressLink }."
       ],
       "You can continue using Proton services as usual.": [
         "Você pode continuar usando os serviços Proton enquanto isso."
@@ -4763,7 +4757,7 @@
         ""
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        ""
+        "Uma chave com o mesmo algoritmo já esta ativa neste endereço. Se você gerar outra chave poderá causar lentidão no carregamento da sua conta e a exclusão dessa chave pode causar problemas. Se você estiver gerando uma nova chave porque sua chave antiga está comprometida, marque essa chave como comprometida. Você tem certeza que deseja continuar?"
       ],
       "Generate key": [
         ""
@@ -4772,13 +4766,13 @@
         ""
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "As chaves de criptografia estão sendo geradas. Isso pode levar alguns minutos e congelar temporariamente a janela do seu navegador."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "As chaves de criptografia para o seu endereço estão sendo geradas. Isso pode levar alguns minutos e congelar temporariamente a janela do seu navegador."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        ""
+        "Você pode gerar uma nova chave de criptografia se achar que sua chave anterior foi comprometida."
       ]
     },
     "Key state badge": {
@@ -4803,7 +4797,7 @@
     },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        ""
+        "${ compatibility } RSA 4096 bits (mais lento, porém maior compatibilidade com softwares antigos)"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
         ""
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } de ${ MaxMembers } usuário",
         "${ UsedMembers } de ${ MaxMembers } usuários"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Armazenamento da conta"
@@ -5327,7 +5324,7 @@
         "armazenamento extra"
       ],
       "File": [
-        ""
+        "Arquivo"
       ],
       "Filter Name": [
         "Nome do filtro"
@@ -5820,7 +5817,7 @@
         "Boletim Informativo Proton"
       ],
       "Proton offers and promotions": [
-        ""
+        "Ofertas e promoções da Proton"
       ],
       "Proton product announcements": [
         "Anúncios de produtos da Proton"
@@ -5973,13 +5970,13 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Quase lá"
       ],
       "Connecting to your email provider": [
         "Conectando-se ao seu provedor de e-mail"
       ],
       "Creating new calendars": [
-        ""
+        "Criando novos calendários"
       ],
       "Gathering your data": [
         ""
@@ -5988,7 +5985,7 @@
         ""
       ],
       "Your import is starting": [
-        ""
+        "Sua importação está começando"
       ]
     },
     "Log preference": {
@@ -6082,12 +6079,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todas as mensagens de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -6638,7 +6635,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Criar novo calendário"
       ],
       "Merge with calendar": [
         ""
@@ -6909,8 +6906,8 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        ""
+        "Você ainda tem ${ daysRemaining } dia restante em sua conta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Você ainda tem ${ daysRemaining } dias restantes em sua conta ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Price": {
@@ -7478,16 +7475,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "a data de criação da conta"
       ],
       "the last 12 months": [
-        ""
+        "os últimos 12 meses"
       ],
       "the last 3 months": [
-        ""
+        "os últimos 3 meses"
       ],
       "the last month": [
-        ""
+        "o último mês"
       ]
     },
     "Time unit": {
@@ -8370,7 +8367,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Hoje"
       ]
     },
     "Tooltip": {

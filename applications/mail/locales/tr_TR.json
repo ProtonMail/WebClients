@@ -20,17 +20,20 @@
       "Activate": [
         "Etkinleştir"
       ],
-      "Activate recovery": [
-        "Kurtarmayı etkinleştirin"
-      ],
       "Add": [
         "Ekle"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Koşul ekle"
       ],
       "Add contact": [
         "Kişi ekle"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Grup ekle"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Yeni grup ekle"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -309,6 +315,9 @@
       ],
       "Expand composer": [
         "Oluşturucuyu genişlet"
+      ],
+      "Expand URL": [
+        "Bağlantıyı genişlet"
       ],
       "Export": [
         "Dışa aktar"
@@ -737,9 +746,6 @@
       "Set expiration time": [
         "Sonlanma süresi ayarlayın"
       ],
-      "Set recovery phrase": [
-        "Kurtarma anahtar metni oluşturun"
-      ],
       "Share via link": [
         "Bağlantı yoluyla paylaş"
       ],
@@ -863,12 +869,6 @@
       ],
       "Update": [
         "Güncelle"
-      ],
-      "Update recovery file": [
-        "Kurtarma dosyasını güncelleyin"
-      ],
-      "Update recovery phrase": [
-        "Kurtarma anahtar metnini güncelleyin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "${ formattedDate } tarihinde"
-      ],
-      "today": [
-        "bugün"
-      ],
       "Today": [
         "Bugün"
-      ],
-      "tomorrow": [
-        "yarın"
       ],
       "Tomorrow": [
         "Yarın"
@@ -3601,8 +3592,14 @@
       "Message sent.": [
         "İleti gönderildi."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "İleti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "İleti bugün ${ formattedTime } saatinde gönderilecek"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "İleti yarın ${ formattedTime } saatinde gönderilecek"
       ],
       "Monthly ${ onDayString }": [
         "Aylık ${ onDayString }"
@@ -3975,20 +3972,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Bu ileti, Taslaklara taşınacak. Böylece onu düzenleyebilirsin. Ne zaman gönderileceğini yeniden planlamanız gerekecek."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Bu ileti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
       ],
       "This message will be sent shortly": [
         "Bu ileti kısa süre içinde gönderilecek"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        "Bu ileti ${ dateString } ${ formattedTime } tarihinde geçerliliğini yitirecek"
+      "This message will be sent today at ${ formattedTime }": [
+        "Bu ileti bugün ${ formattedTime } saatinde gönderilecek"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Bu ileti yarın ${ formattedTime } saatinde gönderilecek"
       ],
       "This message will expire ${ formattedDate }": [
         "Bu iletinin ${ formattedDate } tarihinde süresi dolacak"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Bu iletinin ${ formattedDelay } içinde süresi dolacak"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        "Bu iletinin süresi ${ dateString } tarihinde, ${ formattedTime } saatinde sona erecek"
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        "Bu iletinin süresi bugün ${ formattedTime } saatinde sona erecek"
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        "Bu iletinin süresi yarın ${ formattedTime } saatinde sona erecek"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Bu ortak anahtar, ilgili adrese gönderilen e-postaların şifrelenmesi için otomatik olarak kullanılacaktır."
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } ve ${ count } diğerleri"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Eylemler"
       ],
@@ -4628,8 +4640,8 @@
       "Conditions": [
         "Koşullar"
       ],
-      "Confirm Password": [
-        "Parolayı Doğrulayın"
+      "Confirm password": [
+        "Şifreyi onayla"
       ],
       "Contacts": [
         ""
@@ -4769,8 +4781,8 @@
       "Mark as": [
         "İşaretle"
       ],
-      "Message Password": [
-        "İleti Parolası"
+      "Message password": [
+        "İleti şifresi"
       ],
       "Move to": [
         "Taşı..."
@@ -4805,8 +4817,8 @@
       "Password": [
         "Parola"
       ],
-      "Password Hint": [
-        "Parola İpucu"
+      "Password hint": [
+        "Şifre ipucu"
       ],
       "Payer": [
         "Ödeyen"
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        ""
-      ],
       "Archive": [
         "Arşiv"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Gereksiz"
-      ],
-      "Starred": [
-        "Yıldızlı"
       ],
       "Trash": [
         "Çöp Kutusu"
@@ -5670,8 +5676,8 @@
       "Browser version": [
         "Tarayıcı sürümü"
       ],
-      "Confirm Password": [
-        "Parolayı Doğrula"
+      "Confirm password": [
+        "Şifreyi onayla"
       ],
       "e.g. Julia Smith": [
         "örn. Ayşe Yılmaz"
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Sorun bildir"
+      ],
+      "Request new code": [
+        "Yeni kod isteyin"
       ],
       "Schedule send": [
         "Gönderilmeye planla"

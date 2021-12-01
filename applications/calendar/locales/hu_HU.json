@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Hozzáadás"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Új névjegy"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Csoport hozzáadása"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "Új emlékeztető"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Képernyőkép hozzáadása"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "Csökkent"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Törlés"
@@ -403,12 +406,6 @@
       "Send": [
         "Küldés"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "Megosztás"
       ],
@@ -480,12 +477,6 @@
       ],
       "Update": [
         "Frissítés"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "Váltás nagyobb csomagra"
@@ -2421,9 +2412,6 @@
       "Daily": [
         "Napi"
       ],
-      "Default email application": [
-        ""
-      ],
       "Discard changes?": [
         "Módosítások elvetése?"
       ],
@@ -2698,9 +2686,6 @@
       ],
       "Session timed out.": [
         "A munkamenet lejárt."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
@@ -3206,6 +3191,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "0 - Not likely": [
         ""
       ],
@@ -3599,12 +3587,6 @@
       "Add a gift code": [
         "Ajándék kód hozzáadása"
       ],
-      "All mail": [
-        ""
-      ],
-      "Archive": [
-        ""
-      ],
       "Calendars": [
         "Naptárak"
       ],
@@ -3614,22 +3596,13 @@
       "click here": [
         "kattints ide"
       ],
-      "Drafts": [
-        ""
-      ],
       "Go to subscription plans": [
         "Előfizetési csomagok megnyitása"
-      ],
-      "Inbox": [
-        ""
       ],
       "Learn more": [
         "Tudjon meg többet"
       ],
       "My calendars": [
-        ""
-      ],
-      "Outbox": [
         ""
       ],
       "Pay invoice": [
@@ -3638,22 +3611,7 @@
       "Request an invite": [
         "Meghívó kérése"
       ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        ""
-      ],
-      "Spam": [
-        ""
-      ],
-      "Starred": [
-        ""
-      ],
       "Subscribed calendars": [
-        ""
-      ],
-      "Trash": [
         ""
       ],
       "Upgrade": [
@@ -5119,6 +5077,9 @@
       ],
       "Report a problem": [
         "Probléma jelentése"
+      ],
+      "Request new code": [
+        ""
       ],
       "Reset calendar keys": [
         "Naptár kulcsok visszaállítása"

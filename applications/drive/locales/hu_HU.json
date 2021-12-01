@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Hozzáadás"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Új névjegy"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Csoport hozzáadása"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Új csoport hozzáadása"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Képernyőkép hozzáadása"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Csökkent"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Törlés"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Csomag kiválasztása"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "Megosztás"
       ],
@@ -522,12 +519,6 @@
       ],
       "Untrust": [
         "Megbízhatóként jelölés törlése"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "Csomagváltás"
@@ -1882,9 +1873,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
-      "Default email application": [
-        ""
-      ],
       "Delete drive": [
         "",
         ""
@@ -2226,9 +2214,6 @@
       ],
       "Session timed out.": [
         "A munkamenet lejárt."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "(Expired)": [
         "(Lejárt)"
       ],
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Ajándék kód hozzáadása"
       ],
-      "All mail": [
-        ""
-      ],
-      "Archive": [
-        ""
-      ],
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
       ],
       "click here": [
         "kattintson ide"
       ],
-      "Drafts": [
-        ""
-      ],
       "Go to subscription plans": [
         "Előfizetési csomagok megnyitása"
-      ],
-      "Inbox": [
-        ""
       ],
       "Learn more": [
         "További információk"
@@ -3185,29 +3161,14 @@
       "My files": [
         "Saját fájlok"
       ],
-      "Outbox": [
-        ""
-      ],
       "Pay invoice": [
         "Számla befizetése"
       ],
       "Request an invite": [
         "Meghívó kérése"
       ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        ""
-      ],
       "Shared": [
         "Megosztott"
-      ],
-      "Spam": [
-        ""
-      ],
-      "Starred": [
-        ""
       ],
       "Trash": [
         "Lomtár"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Probléma jelentése"
+      ],
+      "Request new code": [
+        ""
       ],
       "Restore your files": [
         "Fájlok helyreállítása"

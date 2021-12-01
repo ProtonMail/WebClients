@@ -31,10 +31,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ Name }@pm.me": [
@@ -42,9 +42,6 @@
       ],
       "Activate organization key": [
         "啟用組織金鑰"
-      ],
-      "Activate recovery": [
-        "啟動還原"
       ],
       "Add": [
         "新增"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "設定全部擷取"
-      ],
-      "Set recovery phrase": [
-        "設定還原短語"
       ],
       "Share via link": [
         "透過連結分享"
@@ -2296,7 +2290,7 @@
         "找不到原始的週期性事件"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "重複事件並未發生"
       ],
       "Recurring rule not supported": [
         "週期性規則不受支援"
@@ -4044,7 +4038,7 @@
         "復原短語並未關連到任何金鑰。"
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        ""
+        "復原短語並未關聯到任何過期的金鑰。"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
@@ -4061,8 +4055,8 @@
       "Save your password somewhere safe.": [
         "將您的密碼儲存在其它安全之處。"
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "請妥為保管您的密碼。按一下圖示以確認鍵入的密碼正確無誤。"
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "請將密碼妥善保存到合適的地方。點擊圖示以確認密碼輸入正確。"
       ],
       "Scan QR code instead": [
         "改為掃描 QR 代碼"
@@ -4167,10 +4161,10 @@
         "此一 12字短語是你過去被要求設定的。"
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        ""
+        "這是您先前可能儲存的還原檔案或加密金鑰。"
       ],
       "This is an encryption key you may have previously saved.": [
-        ""
+        "這是您先前可能儲存的加密金鑰。"
       ],
       "This is the password you used before the password reset.": [
         "此密碼是你重設前的舊密碼。"
@@ -4989,6 +4983,9 @@
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "最多可有 ${ MaxMembers } 個使用者，目前已有 ${ UsedMembers } 個"
+      ],
+      "(Coming soon)": [
+        "（即將推出）"
       ],
       "Account storage": [
         "帳號儲存空間"
@@ -6021,10 +6018,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "匯入全部 ${ totalLabelsCount } 個標籤中的 ${ selectedLabelsCount } 個最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "從 ${ totalLabelsCount } 個標籤匯入最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {

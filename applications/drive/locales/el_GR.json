@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate recovery": [
-        "Ενεργοποίηση ανάκτησης"
-      ],
       "Add": [
         "Προσθήκη"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Προσθήκη επαφής"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Προσθήκη ομάδας"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Προσθήκη στιγμιοτύπου/ων οθόνης"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Μείωση"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Διαγραφή"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Επιλέξτε πακέτο"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        "Ορισμός φράσης ανάκτησης"
-      ],
       "Share": [
         "Κοινοποίηση"
       ],
@@ -523,12 +520,6 @@
       "Untrust": [
         "Μη αξιόπιστο"
       ],
-      "Update recovery file": [
-        "Ενημέρωση αρχείου ανάκτησης"
-      ],
-      "Update recovery phrase": [
-        "Ενημέρωση φράσης ανάκτησης"
-      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
@@ -566,7 +557,7 @@
         "Προβολή τιμολογίου"
       ],
       "View more": [
-        "Δείτε περισσότερα"
+        "Προβολή περισσότερων"
       ],
       "Zoom in": [
         "Μεγέθυνση"
@@ -1882,9 +1873,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
-      "Default email application": [
-        ""
-      ],
       "Delete drive": [
         "Διαγραφή αρχειοθήκης",
         "Διαγραφή αρχειοθηκών"
@@ -2227,9 +2215,6 @@
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
       ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
       ],
@@ -2569,7 +2554,7 @@
         "Απόρριψη προχείρου"
       ],
       "Expand / contract composer": [
-        "Επέκταση / συρρίκνωση συντάκτη"
+        "Ανάπτυξη / σύμπτυξη συντάκτη"
       ],
       "Forward": [
         "Προώθηση"
@@ -2626,7 +2611,7 @@
         "Μετακίνηση αριστερά / σύμπτυξη"
       ],
       "Move right / expand": [
-        "Μετακίνηση δεξιά / επέκταση"
+        "Μετακίνηση δεξιά / ανάπτυξη"
       ],
       "Move to Archive": [
         "Μεταφορά στα Αρχειοθετημένα"
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "(Expired)": [
         "(Ληγμένο)"
       ],
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Προσθήκη κωδικού δώρου"
       ],
-      "All mail": [
-        "Όλα τα μηνύματα"
-      ],
-      "Archive": [
-        "Αρχειοθετημένα"
-      ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του Browser"
       ],
       "click here": [
         "κάντε κλικ εδώ"
       ],
-      "Drafts": [
-        "Πρόχειρα"
-      ],
       "Go to subscription plans": [
         "Μεταβείτε σε πλάνα συνδρομής"
-      ],
-      "Inbox": [
-        "Εισερχόμενα"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -3185,29 +3161,14 @@
       "My files": [
         "Τα αρχεία μου"
       ],
-      "Outbox": [
-        "Εξερχόμενα"
-      ],
       "Pay invoice": [
         "Πληρωμή υπολοίπου"
       ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
       ],
-      "Scheduled": [
-        "Προγραμματισμένα"
-      ],
-      "Sent": [
-        "Απεσταλμένα"
-      ],
       "Shared": [
         "Κοινοποιημένα"
-      ],
-      "Spam": [
-        "Ανεπιθύμητα"
-      ],
-      "Starred": [
-        "Με αστέρι"
       ],
       "Trash": [
         "Κάδος απορριμμάτων"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
+      ],
+      "Request new code": [
+        "Αίτηση νέου κωδικού"
       ],
       "Restore your files": [
         "Ανακτήστε τα αρχεία σας"

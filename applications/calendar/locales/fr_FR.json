@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Activer la récupération"
-      ],
       "Add": [
         "Ajouter"
       ],
+      "Add address": [
+        "Ajouter une adresse"
+      ],
       "Add contact": [
         "Ajouter un contact"
+      ],
+      "Add email": [
+        "Ajouter une adresse e-mail"
       ],
       "Add group": [
         "Ajouter un groupe"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "Ajouter une notification"
+      ],
+      "Add phone number": [
+        "Ajouter un numéro de téléphone"
       ],
       "Add screenshot(s)": [
         "Ajouter des captures d'écran"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "Diminuer"
-      ],
-      "Default email application": [
-        "Application de messagerie par défaut"
       ],
       "Delete": [
         "Supprimer"
@@ -403,12 +406,6 @@
       "Send": [
         "Envoyer"
       ],
-      "Set as default": [
-        "Définir par défaut"
-      ],
-      "Set recovery phrase": [
-        "Créer une phrase de récupération"
-      ],
       "Share": [
         "Partager"
       ],
@@ -480,12 +477,6 @@
       ],
       "Update": [
         "Mettre à jour"
-      ],
-      "Update recovery file": [
-        "Mettre à jour le fichier de récupération"
-      ],
-      "Update recovery phrase": [
-        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
         "Changer d’offre"
@@ -2421,9 +2412,6 @@
       "Daily": [
         "Quotidiennement"
       ],
-      "Default email application": [
-        "Application de messagerie par défaut"
-      ],
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
@@ -2698,9 +2686,6 @@
       ],
       "Session timed out.": [
         "Session expirée."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Définissez ProtonMail comme application de messagerie par défaut pour ce navigateur. ProtonMail s'ouvrira automatiquement lorsque vous cliquerez sur un lien de courrier électronique."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "La configuration de PGP vous permet d’envoyer des e-mails chiffrés de bout en bout à un utilisateur qui n’utilise pas ProtonMail, mais qui se sert d’un service compatible PGP."
@@ -3206,6 +3191,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(bientôt disponible)"
+      ],
       "0 - Not likely": [
         "0 - Improbable"
       ],
@@ -3599,12 +3587,6 @@
       "Add a gift code": [
         "Ajouter un code cadeau"
       ],
-      "All mail": [
-        "Tous les messages"
-      ],
-      "Archive": [
-        "Archives"
-      ],
       "Calendars": [
         "Calendriers"
       ],
@@ -3614,14 +3596,8 @@
       "click here": [
         "cliquez ici"
       ],
-      "Drafts": [
-        "Brouillons"
-      ],
       "Go to subscription plans": [
         "Accéder aux abonnements"
-      ],
-      "Inbox": [
-        "Boîte de réception"
       ],
       "Learn more": [
         "En savoir plus"
@@ -3629,32 +3605,14 @@
       "My calendars": [
         "Mes calendriers"
       ],
-      "Outbox": [
-        "Boîte d'envoi"
-      ],
       "Pay invoice": [
         "Payer la facture"
       ],
       "Request an invite": [
         "Demander une invitation"
       ],
-      "Scheduled": [
-        "Programmés"
-      ],
-      "Sent": [
-        "Envoyés"
-      ],
-      "Spam": [
-        "Indésirables"
-      ],
-      "Starred": [
-        "Favoris"
-      ],
       "Subscribed calendars": [
         "Calendriers souscrits"
-      ],
-      "Trash": [
-        "Corbeille"
       ],
       "Upgrade": [
         "Mettre à jour"
@@ -4552,7 +4510,7 @@
     },
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le maximum de calendriers souscrits dans votre abonnement."
+        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le maximum de calendriers autorisés dans votre abonnement."
       ]
     },
     "Success": {
@@ -5119,6 +5077,9 @@
       ],
       "Report a problem": [
         "Signaler un problème"
+      ],
+      "Request new code": [
+        "Demander un nouveau code"
       ],
       "Reset calendar keys": [
         "Réinitialiser les clés du calendrier"

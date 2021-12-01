@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "アクティベート"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "アクティベート"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
       ],
       "Activate organization key": [
-        ""
-      ],
-      "Activate recovery": [
-        ""
+        "オーガナイゼーションキーを有効化する"
       ],
       "Add": [
         "追加"
@@ -56,7 +53,7 @@
         "アドレスを追加"
       ],
       "Add calendar": [
-        ""
+        "カレンダーを追加"
       ],
       "Add condition": [
         "条件を追加"
@@ -149,7 +146,7 @@
         "チャットする"
       ],
       "Check import progress": [
-        ""
+        "インポートの進行を確認"
       ],
       "Choose a file or drag it here": [
         "ファイルを選択するか、ここにドラッグしてください"
@@ -287,7 +284,7 @@
         "アカウントをダウングレード"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "{ BRAND_NAME }{ downgradedPlanName } へダウングレード"
       ],
       "Download": [
         "ダウンロード"
@@ -296,7 +293,7 @@
         "すべての設定ファイルをダウンロード"
       ],
       "Download recovery file": [
-        ""
+        "ファイルをダウンロード"
       ],
       "Download the Import-Export app": [
         "Import-Export アプリをダウンロード"
@@ -341,7 +338,7 @@
         "フォント"
       ],
       "Generate key": [
-        ""
+        "キーを生成"
       ],
       "Generate new recovery phrase": [
         ""
@@ -386,10 +383,10 @@
         "連絡先をインポート"
       ],
       "Import from .csv or vCard": [
-        ""
+        ".csv または vCard からインポートする"
       ],
       "Import from .ics": [
-        ""
+        ".jcs からインポート"
       ],
       "Import key": [
         "鍵をインポート"
@@ -416,7 +413,7 @@
         "保持"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "{ BRAND_NAME }{ currentPlanName } を継続"
       ],
       "label emails as": [
         "電子メールにラベル付け"
@@ -503,7 +500,7 @@
         "再接続"
       ],
       "Recover data": [
-        ""
+        "データを回復"
       ],
       "Refresh status": [
         "ステータスを更新"
@@ -593,7 +590,7 @@
         "保存"
       ],
       "Save address": [
-        ""
+        "アドレスをセーブ"
       ],
       "Save ICS file": [
         "ICS ファイルを保存"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Catch-All の設定"
-      ],
-      "Set recovery phrase": [
-        ""
       ],
       "Share via link": [
         "リンクで共有"
@@ -686,7 +680,7 @@
         "並べ替え"
       ],
       "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "{ PRODUCT_NAMES.EASY_SWITCH } をスタート"
       ],
       "Start import": [
         "インポート開始"
@@ -794,13 +788,13 @@
         "請求書を参照"
       ],
       "Void all recovery files": [
-        ""
+        "全ての回復ファイルを無効にする"
       ],
       "Void all recovery files?": [
-        ""
+        "全ての回復ファイルを無効にしますか？"
       ],
       "Void anyway": [
-        ""
+        "このまま送信"
       ],
       "Warning": [
         "警告"
@@ -2325,7 +2319,7 @@
         "エラーが解消されるまでお待ちください。"
       ],
       "Error: ${ errorMessage }": [
-        "エラー：${ errorMessage }"
+        "エラー: ${ errorMessage }"
       ],
       "Invalid URL": [
         "無効なURLです"
@@ -2799,7 +2793,7 @@
         "${ bold2StepsDisabled } (デフォルトのGmail設定) の場合は、以下を確認してください:"
       ],
       "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Gmailで${ bold2StepsDisabled } （デフォルト設定）の場合は、以下を確認してください："
+        "Gmail で ${ bold2StepsDisabled } （デフォルト設定）の場合は、以下を確認してください:"
       ],
       "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
         "Gmailで ${ bold2StepsEnabled } の場合は、通常のパスワードの代わりにアプリのパスワードを使用していることを確認してください。"
@@ -2838,7 +2832,7 @@
         "ProtonはYahoo Mailアカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
       ],
       "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton はあなたのYahoo Mailアカウントに接続できません。以下をご確認ください："
+        "Proton はあなたの Yahoo Mail アカウントに接続できません。以下をご確認ください:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
@@ -3678,7 +3672,7 @@
         "メールボックスのインポート"
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "重要：ダウンロードした秘密鍵の送信や、安全でないメディアに保存して盗まれる等すると、アカウントのセキュリティが危険にさらされる可能性があります。"
+        "重要: ダウンロードした秘密鍵を送信したり、安全でないメディアに保存したりすると、アカウントが危険にさらされる可能性があります。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントへのアクセスが永久に失われます。"
@@ -3765,7 +3759,7 @@
         "あなたが宛先の方のプライバシーに配慮していることを伝えましょう。"
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "限定ビュー：多忙な場合は他のユーザーが確認できます。フルビュー：名前、場所、参加者を含むすべてのイベント詳細が表示されます。"
+        "限定ビュー: 多忙な場合は他のユーザーが確認できます。フルビュー: 名前、場所、参加者を含むすべてのイベント詳細が表示されます。"
       ],
       "Link copied to clipboard": [
         "リンクをクリップボードにコピーしました。"
@@ -4061,8 +4055,8 @@
       "Save your password somewhere safe.": [
         ""
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "パスワードは安全な場所に保管してください。 パスワードが正しく入力されたか確認するには、アイコンをクリックしてください。"
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "代わりに QR コードをスキャン"
@@ -4404,7 +4398,7 @@
         "すでに FREE アカウントをお持ちですか？"
       ],
       "You are about to open another browser tab and visit:": [
-        "別のタブで下記リンクを開こうとしています："
+        "別のタブで下記リンクを開こうとしています:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
@@ -4989,6 +4983,9 @@
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ MaxMembers } ユーザーのうち ${ UsedMembers } ユーザー"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "アカウントの容量"
@@ -7179,7 +7176,7 @@
         "アドレスが更新されました"
       ],
       "Auto-reply disabled": [
-        ""
+        "自動返答をオフ"
       ],
       "Auto-reply updated": [
         "自動返信が更新されました。"
@@ -7188,7 +7185,7 @@
         "バグの報告が送信されました。"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        ""
+        "カレンダーが追加されました。同期には数分かかることがあります。"
       ],
       "Calendar created": [
         "カレンダーが作成されました。"
@@ -7200,7 +7197,7 @@
         "カレンダーが更新されました。"
       ],
       "Canceling import": [
-        ""
+        "インポートをキャンセル"
       ],
       "Catch-all address updated": [
         "Catch-All アドレスが更新されました"
@@ -7215,10 +7212,10 @@
         "既定のカレンダーが更新されました。"
       ],
       "Deleting original messages": [
-        ""
+        "元のメッセージを削除"
       ],
       "DMARC value copied to clipboard": [
-        ""
+        "DMARC値ががクリップボードにコピーされました"
       ],
       "Domain verified": [
         "ドメインが確認されました"
@@ -7284,7 +7281,7 @@
         "プレミアムアドレスが作成されました"
       ],
       "Resuming import": [
-        ""
+        "インポートを再開"
       ],
       "Session revoked": [
         "セッションが取り消されました"
@@ -7293,7 +7290,7 @@
         "セッションが取り消されました"
       ],
       "SPF value copied to clipboard": [
-        ""
+        "SPF値がクリップボードにコピーされました"
       ],
       "User created": [
         "ユーザーが作成されました。"
@@ -7302,10 +7299,10 @@
         "ユーザが更新されました。"
       ],
       "Value copied to clipboard": [
-        ""
+        "値がクリップボードにコピーされました"
       ],
       "Verification code copied to clipboard": [
-        ""
+        "認証コードがクリップボードにコピーされました"
       ],
       "Verification successful": [
         "検証に成功しました"
