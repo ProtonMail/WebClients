@@ -50,12 +50,25 @@ const getRawValues = (property: any): string[] => {
  */
 export const getValue = (property: any, field: string): string | string[] => {
     const values = getRawValues(property).map((val: string | string[] | Date) => {
+        /*
+            To avoid unintended CRLF sequences inside the values of vCard address fields (those are interpreted as field separators unless followed by a space), we sanitize string values
+            ICAL.parse transforms the first occurence of \\r\\n in \\r\n, so we need to sanitize both \\r\n and \\r\\n
+         */
+        const sanitizeStringValue = (value: string) =>
+            value.replaceAll('\\r\n', ' ').replaceAll('\\r\\n', ' ').replaceAll('\\n', ' ').replaceAll('\n', ' ');
+
         // adr
         if (Array.isArray(val)) {
+            if (property.name === 'adr') {
+                return val.map((value) => sanitizeStringValue(value));
+            }
             return val;
         }
 
         if (typeof val === 'string') {
+            if (property.name === 'adr') {
+                return sanitizeStringValue(val);
+            }
             return val;
         }
 
