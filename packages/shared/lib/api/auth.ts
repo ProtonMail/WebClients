@@ -67,7 +67,7 @@ export const setCookies = ({
     RefreshToken,
     State,
     RedirectURI = 'https://protonmail.com',
-    Persistent,
+    Persistent = false,
 }: CookiesArgs) => ({
     method: 'post',
     url: 'auth/cookies',
