@@ -31,6 +31,7 @@ import {
     startSending,
     updateScheduled,
     updateExpires,
+    cancelScheduled,
 } from './draft/messagesDraftActions';
 import {
     initialize as initializeReducer,
@@ -73,6 +74,7 @@ import {
     deleteDraft as deleteDraftReducer,
     updateScheduled as updateScheduledReducer,
     updateExpires as updateExpiresReducer,
+    cancelScheduled as cancelScheduledReducer,
 } from './draft/messagesDraftReducers';
 import { MessagesState } from './messagesTypes';
 import { globalReset } from '../actions';
@@ -121,6 +123,7 @@ const messagesSlice = createSlice({
         builder.addCase(sent, sentReducer);
         builder.addCase(endSending, endSendingReducer);
         builder.addCase(deleteDraft, deleteDraftReducer);
+        builder.addCase(cancelScheduled, cancelScheduledReducer);
     },
 });
 

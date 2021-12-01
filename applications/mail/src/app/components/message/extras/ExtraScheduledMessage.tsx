@@ -3,11 +3,13 @@ import { Button, ConfirmModal, Icon, useApi, useEventManager, useModals, useNoti
 import { c } from 'ttag';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
+import { useDispatch } from 'react-redux';
 import { isToday, isTomorrow } from 'date-fns';
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { formatDateToHuman } from '../../../helpers/date';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { cancelScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 
 interface Props {
     message: MessageState;
@@ -16,6 +18,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+    const dispatch = useDispatch();
     const [nowDate, setNowDate] = useState(() => Date.now());
 
     const onCompose = useOnCompose();
@@ -41,7 +44,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
            the body of message can be loaded. Without the reset, the message can have a loadRetry > 3, which will block
            the loading of the mail body.
          */
-        message.loadRetry = 0;
+        await dispatch(cancelScheduled(message.localID));
         await api(cancelSend(message.data?.ID));
         await call();
         createNotification({
