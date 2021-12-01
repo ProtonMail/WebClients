@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "$ Loja { BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Activar chave de organização"
-      ],
-      "Activate recovery": [
-        ""
       ],
       "Add": [
         "Adicionar"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Definir captura-tudo"
-      ],
-      "Set recovery phrase": [
-        ""
       ],
       "Share via link": [
         "Partilhar por ligação"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Guarde a senha num lugar seguro."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Guarde a sua senha em lugar seguro. Clique no ícone para confirmar que inseriu a senha correctamente."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } de ${ MaxMembers } utilizador",
         "${ UsedMembers } de ${ MaxMembers } utilizadores"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Armazenamento da conta"

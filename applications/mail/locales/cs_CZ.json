@@ -20,17 +20,20 @@
       "Activate": [
         "Aktivovat"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Přidat"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Přidat podmínku"
       ],
       "Add contact": [
         "Přidat kontakt"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Přidat skupinu"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Přidat novou skupinu"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Přidat snímek(y) obrazovky"
@@ -313,6 +319,9 @@
       ],
       "Expand composer": [
         "Celá obrazovka"
+      ],
+      "Expand URL": [
+        ""
       ],
       "Export": [
         "Exportovat"
@@ -743,9 +752,6 @@
       "Set expiration time": [
         ""
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "Sdílet odkaz"
       ],
@@ -870,12 +876,6 @@
         "Nedůvěřovat"
       ],
       "Update": [
-        ""
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -1767,17 +1767,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "dne ${ formattedDate }"
-      ],
-      "today": [
-        "dnes"
-      ],
       "Today": [
         "Dnes"
-      ],
-      "tomorrow": [
-        "zítra"
       ],
       "Tomorrow": [
         "Zítra"
@@ -3755,8 +3746,14 @@
       "Message sent.": [
         ""
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "Zpráva bude odeslána ${ dateString } v ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        ""
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
@@ -4133,13 +4130,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Tato zpráva bude přesunuta do konceptů, takže ji budete moci měnit. Až ji budete znovu posílat, budete ji muset znovu naplánovat."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Tato zpráva bude odeslána ${ dateString } v ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
       ],
       "This message will be sent shortly": [
         "Tato zpráva bude brzy odeslána"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -4147,6 +4147,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "Tato zpráva vyprší za ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tento veřejný klíč bude automaticky využit pro šifrování zpráv odesílaných na tuto adresu."
@@ -4722,6 +4731,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } a ${ count } dalších"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Akce"
       ],
@@ -4806,7 +4818,7 @@
       "Conditions": [
         "Podmínky"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         ""
       ],
       "Contacts": [
@@ -4947,7 +4959,7 @@
       "Mark as": [
         "Označit jako"
       ],
-      "Message Password": [
+      "Message password": [
         ""
       ],
       "Move to": [
@@ -4983,7 +4995,7 @@
       "Password": [
         "Heslo"
       ],
-      "Password Hint": [
+      "Password hint": [
         ""
       ],
       "Payer": [
@@ -5476,9 +5488,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        ""
-      ],
       "Archive": [
         "Archiv"
       ],
@@ -5496,9 +5505,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Starred": [
-        "S hvězdičkou"
       ],
       "Trash": [
         "Koš"
@@ -5860,8 +5866,8 @@
       "Browser version": [
         "Verze prohlížeče"
       ],
-      "Confirm Password": [
-        "Potvrďte heslo"
+      "Confirm password": [
+        ""
       ],
       "e.g. Julia Smith": [
         "např. Julie Nováková"
@@ -7199,6 +7205,9 @@
       ],
       "Report a problem": [
         "Nahlásit problém"
+      ],
+      "Request new code": [
+        ""
       ],
       "Schedule send": [
         "Naplánovat odeslání"

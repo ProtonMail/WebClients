@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ Name }@pm.me": [
         "Rmed ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Rmed tasarut n tuddsa"
-      ],
-      "Activate recovery": [
-        ""
       ],
       "Add": [
         "Rnu"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Sbadu catch-all"
-      ],
-      "Set recovery phrase": [
-        ""
       ],
       "Share via link": [
         "Bḍu s useɣwen"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Skles awal uffir inek•inem deg umkan ittwaḍemnen."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Ḥrez awale-ik uffir. Tekki ɣef tignit ar d'isentmen d akken turiḍ awal-ik uffir akken iwata."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Mtawi tangalt QR deg umḍiq-is"
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } n useqdac ${ MaxMembers }",
         "${ UsedMembers } n yiseqdacen ${ MaxMembers }"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Amḍiq n usekles n umiḍan"

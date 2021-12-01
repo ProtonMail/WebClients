@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
-      ],
-      "Activate recovery": [
-        "Ενεργοποίηση ανάκτησης"
       ],
       "Add": [
         "Προσθήκη"
@@ -323,7 +320,7 @@
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
       ],
       "Enter password to continue": [
-        "Προσθήκη συνθηματικού για τη συνέχεια"
+        "Για συνέχιση, εισαγωγή κωδικού πρόσβασης"
       ],
       "Export": [
         "Εξαγωγή"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Ορίστε catch-all"
-      ],
-      "Set recovery phrase": [
-        "Ορισμός φράσης ανάκτησης"
       ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
@@ -4021,7 +4015,7 @@
       "Save your password somewhere safe.": [
         "Αποθηκεύστε τον κωδικό πρόσβασής σας σε ασφαλές μέρος."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Φυλάξτε τον κωδικό πρόσβασής σας σε ασφαλές μέρος. Κάντε κλικ στο εικονίδιο για επιβεβαίωση της ορθής πληκτρολόγησης του κωδικού σας."
       ],
       "Scan QR code instead": [
@@ -4670,7 +4664,7 @@
         ""
       ],
       "Generate key": [
-        ""
+        "Παραγωγή κλειδιού"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
         ""
@@ -4742,7 +4736,7 @@
         "Απόρριψη προχείρου"
       ],
       "Expand / contract composer": [
-        "Επέκταση / συρρίκνωση συντάκτη"
+        "Ανάπτυξη / σύμπτυξη συντάκτη"
       ],
       "Forward": [
         "Προώθηση"
@@ -4799,7 +4793,7 @@
         "Μετακίνηση αριστερά / σύμπτυξη"
       ],
       "Move right / expand": [
-        "Μετακίνηση δεξιά / επέκταση"
+        "Μετακίνηση δεξιά / ανάπτυξη"
       ],
       "Move to Archive": [
         "Μεταφορά στα Αρχειοθετημένα"
@@ -4953,6 +4947,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } από ${ MaxMembers } χρήστη",
         "${ UsedMembers } από ${ MaxMembers } χρήστες"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Χωρητικότητα λογαριασμού"

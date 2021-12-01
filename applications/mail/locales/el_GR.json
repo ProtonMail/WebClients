@@ -20,17 +20,20 @@
       "Activate": [
         "Ενεργοποίηση"
       ],
-      "Activate recovery": [
-        "Ενεργοποίηση ανάκτησης"
-      ],
       "Add": [
         "Προσθήκη"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Προσθήκη συνθήκης"
       ],
       "Add contact": [
         "Προσθήκη επαφής"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Προσθήκη ομάδας"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Προσθήκη στιγμιοτύπου/ων οθόνης"
@@ -186,7 +192,7 @@
         "Συνεχίστε με Google"
       ],
       "Contract composer": [
-        "Συρρίκνωση συντάκτη"
+        "Σύμπτυξη συντάκτη"
       ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
@@ -308,7 +314,10 @@
         "Κρυπτογράφηση"
       ],
       "Expand composer": [
-        "Επέκταση συντάκτη"
+        "Ανάπτυξη συντάκτη"
+      ],
+      "Expand URL": [
+        "Ανάπτυξη URL"
       ],
       "Export": [
         "Εξαγωγή"
@@ -737,9 +746,6 @@
       "Set expiration time": [
         "Ορισμός χρόνου λήξης"
       ],
-      "Set recovery phrase": [
-        "Ορισμός φράσης ανάκτησης"
-      ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
       ],
@@ -863,12 +869,6 @@
       ],
       "Update": [
         "Ενημέρωση"
-      ],
-      "Update recovery file": [
-        "Ενημέρωση αρχείου ανάκτησης"
-      ],
-      "Update recovery phrase": [
-        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "την ${ formattedDate }"
-      ],
-      "today": [
-        "σήμερα"
-      ],
       "Today": [
         "Σήμερα"
-      ],
-      "tomorrow": [
-        "αύριο"
       ],
       "Tomorrow": [
         "Αύριο"
@@ -2274,7 +2265,7 @@
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Λυπούμαστε, το Proton δεν μπορεί να αποκρυπτογραφήσει το μήνυμα σας. Παρακαλώ, ελέγξτε ότι όλα τα κλειδιά σας είναι ενεργά."
+        "Λυπούμαστε, το Proton δεν μπορεί να αποκρυπτογραφήσει το μήνυμά σας. Παρακαλούμε ελέγξτε αν είναι ενεργά όλα τα κλειδιά σας."
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
@@ -2314,7 +2305,7 @@
         "Το κλειδί αποστολής δεν είναι έγκυρο"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Υπάρχουν πάρα πολλοί φάκελοι στον εξωτερικό λογαριασμό σας. Προσαρμόστε την εισαγωγή για να διαγράψετε ορισμένους φακέλους."
+        "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Υπήρξε κάποιο ζήτημα με την αναζήτηση περιεχομένων. Χρησιμοποιήθηκε στη θέση της η προεπιλεγμένη αναζήτηση."
@@ -2344,7 +2335,7 @@
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Πάρα πολλά ενεργά φίλτρα. Παρακαλώ αναβαθμίστε σε ένα πληρωμένο πρόγραμμα για να ενεργοποιήσετε περισσότερα φίλτρα."
+        "Υπερβολικός αριθμός ενεργών φίλτρων. Για ενεργοποίηση περισσότερων φίλτρων, παρακαλούμε αναβαθμίστε σε ένα πρόγραμμα επί πληρωμής."
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -3601,8 +3592,14 @@
       "Message sent.": [
         "Το μήνυμα στάλθηκε."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "Το μήνυμα θα αποσταλεί ${ dateString } στις ${ formattedTime }"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        ""
       ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
@@ -3719,22 +3716,22 @@
         "Επιλέξτε τον τύπο σύνδεσμου που θέλετε να εισαγάγετε και συμπληρώστε όλα τα πεδία."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε μια διαφορετική μέθοδο πληρωμής, ή καλέστε την τράπεζα σας για περαιτέρω βοήθεια."
+        "Παρακαλούμε δοκιμάστε ξανά ή επιλέξτε διαφορετικό τρόπο πληρωμής ή καλέστε την τράπεζά σας για βοήθεια."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε ένα διαφορετικό τρόπο πληρωμής, ή επικοινωνήστε με το Paypal για περαιτέρω βοήθεια."
+        "Παρακαλούμε δοκιμάστε ξανά ή επιλέξτε διαφορετικό τρόπο πληρωμής ή απευθυνθείτε στο Paypal για βοήθεια."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Παρακαλώ επαληθεύστε τη πληρωμή που βρίσκεται στη νέα καρτέλα που έχει ανοιχτεί."
+        "Παρακαλούμε επαληθεύστε την πληρωμή στη νέα καρτέλα που ανοίχτηκε."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Παρακαλώ επαληθεύστε τη κάρτα που βρίσκεται στη νέα καρτέλα που έχει ανοιχτεί."
+        "Παρακαλούμε επαληθεύστε την κάρτα στη νέα καρτέλα που ανοίχτηκε."
       ],
       "Please verify the payment in the new tab.": [
-        "Παρακαλώ επαληθεύστε την πληρωμή στην καινούρια καρτέλα."
+        "Παρακαλούμε επαληθεύστε την πληρωμή στη νέα καρτέλα."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που μπορούν να επανσυνδεθούν με το πρωτεύον κλειδί κρυπτογράφησης."
+        "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που μπορούν να επανυπογραφούν με το πρωτεύον κλειδί κρυπτογράφησης."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
@@ -3975,20 +3972,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Αυτό το μήνυμα θα μετακινηθεί στα Πρόχειρα, ώστε να μπορείτε να το επεξεργαστείτε. Θα πρέπει να επαναπρογραμματίσετε πότε θα σταλεί."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
-        "Αυτό το μήνυμα θα αποσταλεί ${ dateString } στις ${ formattedTime }"
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
       ],
       "This message will be sent shortly": [
         "Αυτό το μήνυμα θα σταλεί σύντομα"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        "Αυτό το μήνυμα θα λήξει την ${ dateString } στις ${ formattedTime }"
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This message will expire ${ formattedDate }": [
         "Αυτό το μήνυμα θα λήξει ${ formattedDate }"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Αυτό το μήνυμα θα λήξει σε"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Αυτό το δημόσιο κλειδί θα χρησιμοποιηθεί αυτόματα για την κρυπτογράφηση email που αποστέλλεται σε αυτήν τη διεύθυνση."
@@ -4018,7 +4027,7 @@
         "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Πάρα πολλά μηνύματα περιμένουν να σταλούν. Περιμένετε μέχρι να σταλεί άλλο μήνυμα για να προγραμματίσετε αυτό."
+        "Υπερβολικός αριθμός μηνυμάτων σε αναμονή αποστολής. Για προγραμματισμό αυτού του μηνύματος, παρακαλούμε περιμένετε μέχρι την αποστολή ενός άλλου."
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Απενεργοποιήστε την αναζήτηση περιεχομένου. Η πρόοδος ενεργοποίησης δεν θα χαθεί."
@@ -4087,10 +4096,10 @@
         "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλώ απενεργοποιήστε τον αποκλεισμό αναδυόμενων παραθύρων."
+        "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλούμε απενεργοποιήστε τυχόν φραγή αναδυόμενων."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλώ απενεργοποιήστε τον αποκλεισμό αναδυόμενων παραθύρων. Δεν θα χρεωθείτε. Κάθε ποσό που χρησιμοποιείται για την επαλήθευση της κάρτας θα επιστραφεί αμέσως."
+        "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλούμε απενεργοποιήστε τυχόν φραγή αναδυόμενων. Δεν θα χρεωθείτε. Όποιο ποσό χρησιμοποιηθεί για την επαλήθευση της κάρτας, θα επιστραφεί αμέσως."
       ],
       "Visit our shop to get Proton merchandise.": [
         "Επισκεφθείτε το κατάστημά μας για να αγοράσετε εμπορεύματα Proton."
@@ -4378,7 +4387,7 @@
         "Απόρριψη προχείρου"
       ],
       "Expand / contract composer": [
-        "Επέκταση / συνθέτης συμβολαίου"
+        "Ανάπτυξη / σύμπτυξη συντάκτη"
       ],
       "Forward": [
         "Προώθηση"
@@ -4435,7 +4444,7 @@
         "Μετακίνηση αριστερά / σύμπτυξη"
       ],
       "Move right / expand": [
-        "Μετακίνηση δεξιά / επέκταση"
+        "Μετακίνηση δεξιά / ανάπτυξη"
       ],
       "Move to Archive": [
         "Μεταφορά στα Αρχειοθετημένα"
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } και ${ count } άλλα"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Ενέργειες"
       ],
@@ -4628,8 +4640,8 @@
       "Conditions": [
         "Προϋποθέσεις"
       ],
-      "Confirm Password": [
-        "Επιβεβαίωση Κωδικού Πρόσβασης"
+      "Confirm password": [
+        "Επιβεβαίωση κωδικού πρόσβασης"
       ],
       "Contacts": [
         "Επαφές"
@@ -4769,8 +4781,8 @@
       "Mark as": [
         "Σήμανση ως"
       ],
-      "Message Password": [
-        "Κωδικός Πρόσβασης Μηνύματος"
+      "Message password": [
+        "Κωδικός πρόσβασης μηνύματος"
       ],
       "Move to": [
         "Μετακίνηση σε"
@@ -4805,8 +4817,8 @@
       "Password": [
         "Κωδικός πρόσβασης"
       ],
-      "Password Hint": [
-        "Υπόδειξη Κωδικού Πρόσβασης"
+      "Password hint": [
+        "Υπόδειξη κωδικού πρόσβασης"
       ],
       "Payer": [
         "Πληρωτής"
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Όλα τα μηνύματα"
-      ],
       "Archive": [
         "Αρχειοθετημένα"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Ανεπιθύμητα"
-      ],
-      "Starred": [
-        "Με αστέρι"
       ],
       "Trash": [
         "Κάδος Απορριμμάτων"
@@ -5670,8 +5676,8 @@
       "Browser version": [
         "Έκδοση προγράμματος περιήγησης"
       ],
-      "Confirm Password": [
-        "Επιβεβαίωση Κωδικού Πρόσβασης"
+      "Confirm password": [
+        "Επιβεβαίωση κωδικού πρόσβασης"
       ],
       "e.g. Julia Smith": [
         "π.χ. Julia Smith"
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
+      ],
+      "Request new code": [
+        "Αίτηση νέου κωδικού"
       ],
       "Schedule send": [
         "Προγραμματισμός αποστολής"

@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "添加"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "添加联系人"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "添加群组"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "添加新群组"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "添加截图"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "减少"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "删除"
@@ -434,12 +437,6 @@
       "Select plan": [
         "开通"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "分享"
       ],
@@ -520,12 +517,6 @@
       ],
       "Untrust": [
         "取消信任"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "升级"
@@ -1835,9 +1826,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
-      "Default email application": [
-        ""
-      ],
       "Delete drive": [
         "删除网盘"
       ],
@@ -2176,9 +2164,6 @@
       ],
       "Session timed out.": [
         "会话已超时。"
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
@@ -2675,6 +2660,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "(Expired)": [
         "（已失效）"
       ],
@@ -3106,26 +3094,14 @@
       "Add a gift code": [
         "使用礼品码"
       ],
-      "All mail": [
-        ""
-      ],
-      "Archive": [
-        ""
-      ],
       "clearing your browser cache": [
         "清除浏览器缓存"
       ],
       "click here": [
         "点击此处"
       ],
-      "Drafts": [
-        ""
-      ],
       "Go to subscription plans": [
         "转至订阅计划"
-      ],
-      "Inbox": [
-        ""
       ],
       "Learn more": [
         "了解详情"
@@ -3133,29 +3109,14 @@
       "My files": [
         "我的文件"
       ],
-      "Outbox": [
-        ""
-      ],
       "Pay invoice": [
         "支付"
       ],
       "Request an invite": [
         "请求邀请"
       ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        ""
-      ],
       "Shared": [
         "共享"
-      ],
-      "Spam": [
-        ""
-      ],
-      "Starred": [
-        ""
       ],
       "Trash": [
         "回收站"
@@ -4301,6 +4262,9 @@
       ],
       "Report a problem": [
         "反馈问题"
+      ],
+      "Request new code": [
+        ""
       ],
       "Restore your files": [
         "恢复您的文件"

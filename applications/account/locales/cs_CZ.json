@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktivovat ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Aktivovat klíč organizace"
-      ],
-      "Activate recovery": [
-        ""
       ],
       "Add": [
         "Přidat"
@@ -625,9 +622,6 @@
       "Set catch-all": [
         "Nastavení doménového koše"
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "Sdílet přes odkaz"
       ],
@@ -937,7 +931,7 @@
         "Smazání Vašich klíčů se nedá vrátit zpět. Pro přístup ke zprávám zašifrovaným pomocí tohoto klíče by jste si měli udělat jeho záložní kopii pro případné pozdější použití."
       ],
       "You will face a permanent data loss by not making a backup of your key.": [
-        "Pokud neprovedete zálohu svého klíče, můžete se vystavit trvalou ztrátou dat."
+        ""
       ]
     },
     "alert": {
@@ -1097,10 +1091,10 @@
         "Fakturace (Obnova na ${ formattedEndTime })"
       ],
       "Monthly billing (Renewal on ${ formattedEndTime })": [
-        "Měsíční fakturace (Renewal on ${ formattedEndTime })"
+        ""
       ],
       "Yearly billing (Renewal on ${ formattedEndTime })": [
-        "Roční fakturace (Renewal on ${ formattedEndTime })"
+        ""
       ]
     },
     "Billing cycle option": {
@@ -1344,7 +1338,7 @@
         "Vypnuto"
       ],
       "Not synced": [
-        "Nebylo synchronizováno"
+        "Nesynchronizováno"
       ],
       "Syncing": [
         "Synchronizace"
@@ -1373,7 +1367,7 @@
         "Synchronizace kalendáře selhala"
       ],
       "More than 12 hours passed since last update": [
-        "Od poslední aktualizace uběhlo už více jak 12 hodin"
+        ""
       ]
     },
     "Calendar view": {
@@ -1656,7 +1650,7 @@
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Máme také automaticky přiřazené CSV formáty s vCard formáty. Můžete zkontrolovat a manuálně změnit vhodné."
+        ""
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Zaznamenali jsme následující položky v CSV, které jste nahrály. Zkontrolujte ty, které chcete importovat."
@@ -2045,7 +2039,7 @@
         ""
       ],
       "Please generate keys before you try to change your password": [
-        "Než se pokusíte změnit heslo, vytvořte si prosím klíče"
+        ""
       ],
       "Please refresh the page.": [
         "Prosím obnovte stránku."
@@ -2481,7 +2475,7 @@
         "${ totalProcessed }/${ totalToProcess } událost exportována",
         "${ totalProcessed }/${ totalToProcess } události exportovány",
         "${ totalProcessed }/${ totalToProcess } událostí exportováno",
-        "${ totalProcessed }/${ totalToProcess } události exportovány"
+        ""
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Kalendář úspěšně exportován. Můžete uložit ICS soubor."
@@ -2490,7 +2484,7 @@
         "Šifrování událostí z kalendáře: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Z důvodu obnovy hesla, žádné z událostí nemohly být dešifrovany a exportovány."
+        ""
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "Z důvodu obnovy hesla, některé události nebylo možné šifrovat a exportovat."
@@ -2520,7 +2514,7 @@
         "Některé události nemohly být exportovány."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Internetové připojení bylo přerušeno, selháním procesu exportu. Prosím, zuste to znovu."
+        ""
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Můžete uložit ICS soubor nebo událost, které byly úspěšně exportovány."
@@ -2629,7 +2623,7 @@
         "Přidejte si vlastní filtr, který automaticky provede určité akce, jako je označení nebo archivace zpráv."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Zde můžete nastavit své předvolby pro odesílatele spamu. Zprávy od povolených příjemců se vždy doručují do doručené pošty a zprávy z blokovaných adres se vždy přesunují do spamu. Označení zprávy jako spam přidá adresu na seznam blokovaných adres a označení zprávy jako není spam přidá adresu na seznam povolených adres."
+        ""
       ],
       "Search in Allow List and Block List": [
         "Prohledat v seznamu povolených a seznamu blokovaných"
@@ -2750,7 +2744,7 @@
         "Hodnota / Data"
       ],
       "Value / Data / Points to": [
-        "Hodnota / Data / Body"
+        ""
       ]
     },
     "Human verification method": {
@@ -2775,7 +2769,7 @@
         "${ totalImported }/${ totalToImport } událost zašifrována a přidána do kalendáře",
         "${ totalImported }/${ totalToImport } události zašifrovány a přidány do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
-        "${ totalImported }/${ totalToImport } události zašifrovány a přidány do kalendáře"
+        ""
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Nastal problém při šifrování a editaci události. Událost nemůže být importována.",
@@ -2784,7 +2778,7 @@
         "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány."
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Došlo k problému při šifrování a přidávání událostí. ${ totalImported } mimo ${ totalToImport } události byly úspěšně importovány."
+        ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávaní kontaktů: ${ totalImported }/${ totalToImport }"
@@ -3217,7 +3211,7 @@
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } složka nalezena",
-        "${ providerFoldersNumLocalized } složek nalezeno",
+        "${ providerFoldersNumLocalized } složky nalezeny",
         "${ providerFoldersNumLocalized } složek nalezeno",
         "${ providerFoldersNumLocalized } složek nalezeno"
       ],
@@ -3256,7 +3250,7 @@
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } složka vybrána",
-        "${ selectedFoldersCountLocalized } složka vybrána",
+        "",
         "${ selectedFoldersCountLocalized } složek vybráno",
         "${ selectedFoldersCountLocalized } složek vybráno"
       ],
@@ -3363,7 +3357,7 @@
         "Po obnovení hesla jsou Vaše data uzamčena v zašifrované podobě, aby byla v bezpečí. K dešifrování a zobrazení e-mailů a dalších dat potřebujete soubor pro obnovení nebo frázi pro obnovení."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Po provedení transakce platby nominálu Bitcoin, postupujte podle níže uvedených vylepšených pokynů."
+        ""
       ],
       "Align left": [
         "Zarovnat doleva"
@@ -3555,7 +3549,7 @@
         "Vytvořte a spravujte podúčty a přiřaďte jim e-mailové adresy na vlastní doméně."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Vytvořte e-mailové adresy pro ostatní lidi, spravujte ProtonMail pro podnikání, školu nebo skupinu. Začněte přidáním názvu Vaší organizace a vlastní domény (např. @yourcompany.com). "
+        "Vytvořte e-mailové adresy pro ostatní lidi, spravujte ProtonMail pro podnikání, školu nebo skupinu. Začněte přidáním názvu Vaší organizace a vlastní domény (např. @vasefirma.cz). "
       ],
       "Create in": [
         ""
@@ -3990,7 +3984,7 @@
         "Nové"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
-        "Nováček v ${ BRAND_NAME }? ${ signupLink }"
+        ""
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -4229,8 +4223,8 @@
       "Save your password somewhere safe.": [
         "Heslo uložte na bezpečném místě."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Heslo uložte na bezpečném místě. Klikněte na ikonu a ujistěte se, že jste heslo zadali správně."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Namísto toho naskenujte QR kód"
@@ -4524,7 +4518,7 @@
         "Pokud zapomenete heslo nebo si zablokujete Váš účet, pošleme Vám odkaz k obnovení na tuto e-mailovou adresu."
       ],
       "We'll notify you when the import is done.": [
-        "Řekneme Vám jakmile import bude hotov."
+        ""
       ],
       "Web URL": [
         "Adresa URL"
@@ -4805,7 +4799,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Aby jste se vyvarovali přerušení služeb z důvodu neuhrazených faktur, prosím zajistěte si, že máte alespoň 1 uloženou platební metodu."
+        ""
       ]
     },
     "information": {
@@ -4962,7 +4956,7 @@
         "Přejít do archivu"
       ],
       "Go to Drafts": [
-        "Přejděte do návrhů"
+        ""
       ],
       "Go to Inbox": [
         "Přesunout do složky Doručená pošta"
@@ -4986,7 +4980,7 @@
         "Přejít na poslední"
       ],
       "Label as...": [
-        "Označit jako…"
+        ""
       ],
       "Load embedded images": [
         "Načíst vložené obrázky"
@@ -4998,7 +4992,7 @@
         "Označit jako nepřečtené"
       ],
       "Minimize / maximize composer": [
-        "Minimalizovat / maximalizovat tvorbu"
+        ""
       ],
       "Move down": [
         "Přesunout dolů"
@@ -5022,7 +5016,7 @@
         "Přesunout do koše"
       ],
       "Move to...": [
-        "Přesunout do…"
+        ""
       ],
       "Move up": [
         "Přesunout nahoru"
@@ -5031,7 +5025,7 @@
         "Nová zpráva"
       ],
       "Open next message": [
-        "Otevřít následující zprvcu"
+        ""
       ],
       "Open previous message": [
         "Otevřít předchozí zprávu"
@@ -5101,10 +5095,10 @@
         "Odstranit"
       ],
       "Disables encryption with this key": [
-        "Vypnutí šifrování s tímto klíčem"
+        ""
       ],
       "Disables signature verification and encryption with this key": [
-        "S tímto klíčem zakáže šifrování a ověření podpisu"
+        ""
       ],
       "Enable encryption with this key": [
         "Povolit šifrování tímto klíčem"
@@ -5128,7 +5122,7 @@
         "Zrušit označení jako kompromitovaný"
       ],
       "Mark not obsolete": [
-        "Zrušit označení zastaralého"
+        ""
       ],
       "Mark obsolete": [
         "Označit jako zastaralé"
@@ -5136,7 +5130,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "Zde je jak"
+        ""
       ]
     },
     "Label": {
@@ -5168,6 +5162,9 @@
         "",
         "",
         "",
+        ""
+      ],
+      "(Coming soon)": [
         ""
       ],
       "Account storage": [
@@ -5898,7 +5895,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ProtonMail account.": [
-        "Přidejte doménu, kterou vlastníte k účtu ProtonMail."
+        ""
       ]
     },
     "Label for domain modal": {
@@ -6304,14 +6301,14 @@
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Každý ${ interval } měsíc ${ onDayString }, ${ timesString }",
         "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
-        "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
-        "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Každý ${ interval } měsíc ${ onDayString }, ${ untilString }",
         "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }",
-        "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }",
-        "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }"
+        "",
+        ""
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
@@ -6449,7 +6446,7 @@
         "Zpět do Kontaktů"
       ],
       "Back to Drive": [
-        "Zpět na paměťový disk"
+        ""
       ],
       "Back to Mail": [
         "Zpět na e-mail"
@@ -7324,7 +7321,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Probíhá migrace na nižší plán předplatného, čekejte prosím"
+        "Probíhá přechod na nižší plán předplatného, počkejte prosím"
       ]
     },
     "Step in filter modal": {
@@ -7378,7 +7375,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Přidejte veřejný, externí, nebo sdílený kalendáře použitím URL."
+        ""
       ]
     },
     "Success": {
@@ -7781,7 +7778,7 @@
         "Zpět"
       ],
       "Backup & Export": [
-        "Backup & Export"
+        ""
       ],
       "Billing cycle": [
         "Fakturační cyklus"
@@ -7877,7 +7874,7 @@
         "Vytváření účtu"
       ],
       "Credentials": [
-        "Pověření"
+        ""
       ],
       "Credits": [
         "Kredity"
@@ -7973,7 +7970,7 @@
         "Upravit seznam povolených"
       ],
       "Edit Block List": [
-        "Upravit block list"
+        ""
       ],
       "Edit calendar": [
         "Upravit kalendář"
@@ -8408,7 +8405,7 @@
         "Nepodporovaný prohlížeč"
       ],
       "Upgrade": [
-        "Rozšířit"
+        ""
       ],
       "Users and addresses": [
         "Uživatelé a adresy"
@@ -8729,10 +8726,10 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Heslo musí obsahovat alespoň ${ length } character",
-        "Hesla musí obsahovat alespoň ${ length } character",
-        "Hesla musí obsahovat alespoň ${ length } character",
-        "Hesla musí obsahovat alespoň ${ length } character"
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "VPN feature": {
@@ -9117,8 +9114,8 @@
       "Every ${ interval } week on Thursday, ${ untilString }": [
         "Každý ${ interval } týden ve čtvrtek, ${ untilString }",
         "Každé ${ interval } týdny ve čtvrtek, ${ untilString }",
-        "Každé ${ interval } týdny ve čtvrtek, ${ untilString }",
-        "Každé ${ interval } týdny ve čtvrtek, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Tuesday": [
         "Každý ${ interval } týden v úterý",
@@ -9153,8 +9150,8 @@
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Každý ${ interval } týden ve středu, ${ untilString }",
         "Každé ${ interval } týdny ve středu, ${ untilString }",
-        "Každé ${ interval } týdny ve středu, ${ untilString }",
-        "Každé ${ interval } týdny ve středu, ${ untilString }"
+        "",
+        ""
       ],
       "Weekly on ${ multipleDaysString }": [
         "Týdně v ${ multipleDaysString }"
@@ -9276,20 +9273,20 @@
       "Every ${ interval } year": [
         "Každý ${ interval } rok",
         "Každé ${ interval } roky",
-        "Každé ${ interval } roky",
-        "Každé ${ interval } roky"
+        "",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Každý ${ interval } roční, ${ timesString }",
-        "Každé ${ interval } roční, ${ timesString }",
-        "Každé ${ interval } roční, ${ timesString }",
-        "Každé ${ interval } roční, ${ timesString }"
+        "",
+        "",
+        "",
+        ""
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Každý ${ interval } roční, ${ untilString }",
-        "Každé ${ interval } roční, ${ untilString }",
-        "Každé ${ interval } roční, ${ untilString }",
-        "Každé ${ interval } roční, ${ untilString }"
+        "",
+        "",
+        "",
+        ""
       ],
       "Yearly": [
         "Ročně"

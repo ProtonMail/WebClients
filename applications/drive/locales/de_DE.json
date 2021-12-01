@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
-      "Activate recovery": [
-        "Wiederherstellung aktivieren"
-      ],
       "Add": [
         "Hinzufügen"
       ],
+      "Add address": [
+        "Adresse hinzufügen"
+      ],
       "Add contact": [
         "Kontakt hinzufügen"
+      ],
+      "Add email": [
+        "E-Mail-Adresse hinzufügen"
       ],
       "Add group": [
         "Gruppe hinzufügen"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Neue Gruppe hinzufügen"
+      ],
+      "Add phone number": [
+        "Rufnummer hinzufügen"
       ],
       "Add screenshot(s)": [
         "Bildschirmfoto(s) hinzufügen"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Verkleinern"
-      ],
-      "Default email application": [
-        "Standard E-Mail-Anwendung"
       ],
       "Delete": [
         "Löschen"
@@ -320,7 +323,7 @@
         "In Papierkorb verschieben"
       ],
       "New upload": [
-        "Neu hochgeladen"
+        "Neu hochladen"
       ],
       "Next": [
         "Weiter"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Abonnement auswählen"
       ],
-      "Set as default": [
-        "Als Standard festlegen"
-      ],
-      "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
-      ],
       "Share": [
         "Teilen"
       ],
@@ -522,12 +519,6 @@
       ],
       "Untrust": [
         "Nicht vertrauen"
-      ],
-      "Update recovery file": [
-        "Wiederherstellungsdatei aktualisieren"
-      ],
-      "Update recovery phrase": [
-        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Aufrüsten"
@@ -1882,9 +1873,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
       ],
-      "Default email application": [
-        "Standard E-Mail-Anwendung"
-      ],
       "Delete drive": [
         "Laufwerk löschen",
         "Laufwerke löschen"
@@ -2226,9 +2214,6 @@
       ],
       "Session timed out.": [
         "Zeitüberschreitung der Sitzung."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Legen Sie ProtonMail als Ihre Standard-E-Mail-Anwendung für diesen Browser fest. ProtonMail wird automatisch geöffnet, wenn Sie auf einen E-Mail-Link klicken."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Das Einrichten von PGP ermöglicht es Ihnen, Ende-zu-Ende-verschlüsselte E-Mails mit einem Nicht-ProtonMail-Benutzer zu senden, der einen PGP-kompatiblen Dienst verwendet."
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(Demnächst verfügbar)"
+      ],
       "(Expired)": [
         "(Abgelaufen)"
       ],
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Geschenkgutschein hinzufügen"
       ],
-      "All mail": [
-        "Alle Nachrichten"
-      ],
-      "Archive": [
-        "Archiv"
-      ],
       "clearing your browser cache": [
         "Ihren Browser-Cache leeren"
       ],
       "click here": [
         "hier klicken"
       ],
-      "Drafts": [
-        "Entwürfe"
-      ],
       "Go to subscription plans": [
         "Zu den Abonnement-Plänen"
-      ],
-      "Inbox": [
-        "Posteingang"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -3185,29 +3161,14 @@
       "My files": [
         "Meine Dateien"
       ],
-      "Outbox": [
-        "Postausgang"
-      ],
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
       "Request an invite": [
         "Einladung anfordern"
       ],
-      "Scheduled": [
-        "Geplant"
-      ],
-      "Sent": [
-        "Gesendet"
-      ],
       "Shared": [
         "Geteilt"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Gekennzeichnet"
       ],
       "Trash": [
         "Papierkorb"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Ein Problem melden"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
       ],
       "Restore your files": [
         "Dateien wiederherstellen"
