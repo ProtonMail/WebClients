@@ -69,7 +69,7 @@ const AddressesEditor = ({
                             onClick={toggleExpanded}
                             data-testid="composer:cc-bcc-button"
                             className={classnames([
-                                'ml1 composer-addresses-ccbcc text-left text-cut text-no-decoration text-strong relative rounded-xl',
+                                'ml1 composer-addresses-ccbcc text-left text-cut text-no-decoration text-strong relative',
                                 expanded && 'is-active',
                             ])}
                         >
