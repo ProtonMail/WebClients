@@ -1,3 +1,9 @@
+## Release: 4.0.9 — December 1, 2021
+
+### New features
+
+-   Introducing Easy Switch: Easy Switch is the fastest way to move your personal data to the Proton suite. Easy Switch allows you to import your Emails, Contacts and Calendars with just a few clicks. It is the next generation of our Import Assistant functionality and can be found as part of your account settings.
+
 ## Release: 4.0.8 — November 24, 2021
 
 ### New features
