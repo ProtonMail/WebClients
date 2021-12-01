@@ -53,24 +53,23 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
 
     const init = (conversationID: string): ConversationStateOptional | undefined => {
         if (conversationState) {
-            dispatch(initialize(conversationState as ConversationState));
             return conversationState;
         }
 
         const [conversationFromElementsState] = getElementsFromIDs([conversationID]);
 
-        if (conversationFromElementsState) {
-            dispatch(
-                initialize({
-                    Conversation: conversationFromElementsState,
-                    Messages: undefined,
-                    loadRetry: 0,
-                    errors: {},
-                } as ConversationState)
-            );
+        const newConversationState: ConversationState = {
+            Conversation: { ID: conversationID },
+            Messages: undefined,
+            loadRetry: 0,
+            errors: {},
+        };
 
-            return { Conversation: conversationFromElementsState, Messages: undefined, loadRetry: 0, errors: {} };
+        if (conversationFromElementsState) {
+            newConversationState.Conversation = conversationFromElementsState;
         }
+
+        dispatch(initialize(newConversationState));
 
         return { Conversation: undefined, Messages: undefined, loadRetry: 0, errors: {} };
     };
