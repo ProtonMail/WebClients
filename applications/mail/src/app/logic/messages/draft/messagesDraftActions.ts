@@ -28,3 +28,5 @@ export const sent = createAction<Message>('message/send/sent');
 export const endSending = createAction<string>('messages/send/end');
 
 export const deleteDraft = createAction<string>('messages/deleteDraft');
+
+export const cancelScheduled = createAction<string>('message/scheduled/cancel');

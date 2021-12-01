@@ -24,6 +24,9 @@ export const openDraft = (
         // Drafts have a different sanitization as mail content
         // So we have to restart the sanitization process on a cached draft
         messageState.messageDocument = undefined;
+        if (!messageState.draftFlags) {
+            messageState.draftFlags = {};
+        }
         Object.assign(messageState.draftFlags, {
             openDraftFromUndo: fromUndo,
             isSentDraft: false,
@@ -117,6 +120,7 @@ export const endUndo = (state: Draft<MessagesState>, { payload: ID }: PayloadAct
     const message = getMessage(state, ID);
 
     if (message && message.data) {
+        message.loadRetry = 0;
         message.data.LabelIDs = message.data.LabelIDs.filter((value) => value !== MAILBOX_LABEL_IDS.OUTBOX);
         message.data.Flags = setFlag(MESSAGE_FLAGS.FLAG_SENT)(message.data);
     }
@@ -143,4 +147,12 @@ export const endSending = (state: Draft<MessagesState>, { payload: ID }: Payload
 export const deleteDraft = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
     const localID = getLocalID(state, ID);
     delete state[localID];
+};
+
+export const cancelScheduled = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
+    const message = getMessage(state, ID);
+
+    if (message) {
+        message.loadRetry = 0;
+    }
 };
