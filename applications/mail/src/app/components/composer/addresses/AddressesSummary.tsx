@@ -106,7 +106,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                         onClick={toggleExpanded}
                         onFocus={handleFocuButton}
                         disabled={disabled}
-                        className="composer-addresses-ccbcc text-left text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative rounded-xl"
+                        className="composer-addresses-ccbcc text-left text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative"
                     >
                         {c('Action').t`CC BCC`}
                     </Button>
