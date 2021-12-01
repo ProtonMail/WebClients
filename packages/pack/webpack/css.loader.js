@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 const path = require('path');
 
-const DESIGN_SYSTEM_THEME = /.*theme\.scss$/;
+const RAW_TEXT = /.*theme\.scss|.raw\.scss$/;
 
 const SASS_VARIABLES_FILEPATH = path.resolve('./src/app/variables.scss');
 const SASS_VARIABLES = fs.existsSync(SASS_VARIABLES_FILEPATH) ? fs.readFileSync(SASS_VARIABLES_FILEPATH) : '';
@@ -77,12 +77,12 @@ module.exports = ({ browserslist }) => {
         },
         {
             test: /\.scss$/,
-            exclude: DESIGN_SYSTEM_THEME,
+            exclude: RAW_TEXT,
             use: [miniLoader, ...sassLoaders],
             sideEffects: true,
         },
         {
-            test: DESIGN_SYSTEM_THEME,
+            test: RAW_TEXT,
             // Prevent loading the theme in <style>, we want to load it as a raw string
             use: [...sassLoaders],
         },
