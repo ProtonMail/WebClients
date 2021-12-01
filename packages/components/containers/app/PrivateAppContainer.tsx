@@ -33,7 +33,7 @@ const PrivateAppContainer = ({
             {hasTopBanners ? topBanners || <TopBanners /> : null}
             <div className="content ui-prominent flex-item-fluid-auto flex flex-column flex-nowrap reset4print">
                 <ErrorBoundary small>{header}</ErrorBoundary>
-                <div className="flex flex-item-fluid-auto flex-nowrap">
+                <div className="flex flex-item-fluid flex-nowrap">
                     <ErrorBoundary className="inline-block">{sidebar}</ErrorBoundary>
                     <div className="main ui-standard flex flex-column flex-nowrap flex-item-fluid">{children}</div>
                 </div>

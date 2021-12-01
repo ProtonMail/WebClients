@@ -26,6 +26,7 @@ interface ModalOwnProps {
     open?: boolean;
     size?: ModalSize;
     fullscreenOnMobile?: boolean;
+    fullscreen?: boolean;
     /**
      * Disables closing the modal by pressing the 'Escape' key.
      */
@@ -60,6 +61,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     open,
     size = 'medium',
     fullscreenOnMobile,
+    fullscreen,
     onClose,
     onExit,
     disableCloseOnEscape,
@@ -139,6 +141,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     'modal-two',
                     exiting && 'modal-two--out',
                     fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
+                    fullscreen && 'modal-two--fullscreen',
                     last && 'modal-two--is-last-opened',
                 ])}
                 onAnimationEnd={handleAnimationEnd}
