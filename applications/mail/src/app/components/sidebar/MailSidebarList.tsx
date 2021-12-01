@@ -220,9 +220,8 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         return unreadCounterMap;
     }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
 
-    // Hide sidebar if the user is not on a paid plan, but allow him to see its scheduled messages if he had some before going to free plan
-    const showScheduled =
-        scheduledFeature?.Value && (user.hasPaidMail || (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0);
+    // show scheduled in sidebar if the user has scheduled messages
+    const showScheduled = scheduledFeature?.Value && (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
 
     const getCommonProps = (labelID: string) => ({
         currentLabelID,
