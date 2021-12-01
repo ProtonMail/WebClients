@@ -62,11 +62,11 @@ export interface AbstractMessageImage {
     id: string;
     status: 'not-loaded' | 'loading' | 'loaded';
     tracker: string | undefined;
+    error?: any;
 }
 
 export interface MessageRemoteImage extends AbstractMessageImage {
     type: 'remote';
-    error?: unknown;
     originalURL?: string;
 }
 

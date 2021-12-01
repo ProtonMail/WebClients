@@ -1,4 +1,4 @@
-import { CSSProperties, RefObject, useEffect, useRef, useState } from 'react';
+import { CSSProperties, RefObject, useEffect, useRef } from 'react';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { classnames, Icon, Loader, Tooltip } from '@proton/components';
 import { createPortal } from 'react-dom';
@@ -52,11 +52,10 @@ interface Props {
 
 const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
-    const [isError, setIsError] = useState(false);
 
-    const { type } = image;
+    const { type, status, error } = image;
     const showPlaceholder =
-        isError || image.status !== 'loaded' || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
+        error || status !== 'loaded' || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
     const showImage = !showPlaceholder;
 
     const attributes =
@@ -79,22 +78,22 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
         }
     }, [showImage]);
 
-    const handleError = () => {
-        setIsError(true);
-    };
-
     if (showImage) {
         // eslint-disable-next-line jsx-a11y/alt-text
-        return <img ref={imageRef} src={image.url} onError={handleError} />;
+        return <img ref={imageRef} src={image.url} />;
     }
 
     const showLoader = image.status === 'loading';
 
-    const placeholderTooltip = isError
-        ? c('Message image').t`Image did not load because the remote server’s identity certificate is invalid.`
+    const errorMessage = error?.data?.Error
+        ? error?.data?.Error
+        : c('Message image').t`Image did not load because the remote server’s identity certificate is invalid.`;
+
+    const placeholderTooltip = error
+        ? errorMessage
         : c('Message image').t`Image has not been loaded in order to protect your privacy.`;
 
-    const icon = isError ? 'circle-xmark' : 'file-shapes';
+    const icon = error ? 'circle-xmark' : 'file-shapes';
 
     const style = extractStyle(image.original);
 
@@ -105,7 +104,7 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
                 style={style}
                 className={classnames([
                     'proton-image-placeholder inline-flex bordered rounded flex-justify-center flex-align-items-center',
-                    isError && 'color-danger border--danger',
+                    !!error && 'color-danger border--danger',
                 ])}
             >
                 {!showLoader ? <Icon name={icon} size={20} /> : null}
