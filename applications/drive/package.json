@@ -22,12 +22,12 @@
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@proton/components": "workspace:packages/components",
         "@proton/pack": "workspace:packages/pack",
+        "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@transcend-io/conflux": "^3.2.0",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
-        "abortcontroller-polyfill": "^1.7.3",
         "cross-env": "^7.0.3",
         "mime-types": "^2.1.27",
         "openpgp": "^4.10.7",
@@ -37,8 +37,7 @@
         "react-window": "^1.8.5",
         "ttag": "^1.7.24",
         "web-streams-polyfill": "^3.0.3",
-        "webpack": "^5.51.2",
-        "yetch": "^1.1.0"
+        "webpack": "^5.51.2"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
