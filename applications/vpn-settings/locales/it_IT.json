@@ -40,9 +40,6 @@
       "Activate my coupon": [
         "Attiva il mio coupon"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add credit / debit card": [
         "Aggiungi carta di credito/debito"
       ],
@@ -304,9 +301,6 @@
       "Send": [
         "Invia"
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "Condividi via link"
       ],
@@ -351,12 +345,6 @@
       ],
       "Update": [
         "Aggiorna"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -2267,7 +2255,7 @@
         "Proton newsletter"
       ],
       "Proton offers and promotions": [
-        ""
+        "Offerte e promozioni di Proton"
       ],
       "Proton product announcements": [
         "Annunci prodotti Proton"
@@ -2896,8 +2884,8 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        ""
+        "Hai ancora ${ daysRemaining } giorno rimasto sul tuo ${ BRAND_NAME } ${ currentPlanName } account.",
+        "Hai ancora ${ daysRemaining } giorni rimasti sul tuo ${ BRAND_NAME } ${ currentPlanName } account."
       ]
     },
     "Plan upsell": {
@@ -3340,6 +3328,9 @@
       ],
       "Report a problem": [
         "Segnala un problema"
+      ],
+      "Request new code": [
+        "Richiedi nuovo codice"
       ],
       "Resend code": [
         "Reinvia codice"

@@ -20,17 +20,20 @@
       "Activate": [
         "Активувати"
       ],
-      "Activate recovery": [
-        "Активувати відновлення"
-      ],
       "Add": [
         "Додати"
+      ],
+      "Add address": [
+        "Додати адресу"
       ],
       "Add condition": [
         "Додати умову"
       ],
       "Add contact": [
         "Додати контакт"
+      ],
+      "Add email": [
+        "Додати е-пошту"
       ],
       "Add group": [
         "Додати групу"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Додати нову групу"
+      ],
+      "Add phone number": [
+        "Додати номер телефону"
       ],
       "Add screenshot(s)": [
         "Додати знімки екрана"
@@ -219,7 +225,7 @@
         "Зменшити"
       ],
       "Default email application": [
-        "Додаток електронної пошти за замовчуванням"
+        "Типовий застосунок електронної пошти"
       ],
       "Delete": [
         "Видалити"
@@ -313,6 +319,9 @@
       ],
       "Expand composer": [
         "Розгорнути редактор"
+      ],
+      "Expand URL": [
+        "Розгорнути URL"
       ],
       "Export": [
         "Експорт"
@@ -738,13 +747,10 @@
         "Встановити"
       ],
       "Set as default": [
-        "Встановити за замовчуванням"
+        "Встановити типовим"
       ],
       "Set expiration time": [
         "Вказати термін дії"
-      ],
-      "Set recovery phrase": [
-        "Встановити фразу відновлення"
       ],
       "Share via link": [
         "Спільний доступ за посиланням"
@@ -871,12 +877,6 @@
       ],
       "Update": [
         "Оновити"
-      ],
-      "Update recovery file": [
-        "Оновити файл відновлення"
-      ],
-      "Update recovery phrase": [
-        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -1767,17 +1767,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "${ formattedDate }"
-      ],
-      "today": [
-        "сьогодні"
-      ],
       "Today": [
         "Сьогодні"
-      ],
-      "tomorrow": [
-        "завтра"
       ],
       "Tomorrow": [
         "Завтра"
@@ -3456,7 +3447,7 @@
         "Днів"
       ],
       "Default email application": [
-        "Додаток електронної пошти за замовчуванням"
+        "Типовий застосунок електронної пошти"
       ],
       "Disable message content search": [
         "Вимкнути пошук вмісту повідомлення"
@@ -3755,8 +3746,14 @@
       "Message sent.": [
         "Повідомлення надіслано."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Повідомлення буде надіслано ${ dateString }, ${ formattedTime }"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Повідомлення буде надіслано сьогодні ${ formattedTime }"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Повідомлення буде надіслано завтра ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
@@ -3975,7 +3972,7 @@
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більше 20 календарів."
       ],
       "Sending": [
         "Надсилається"
@@ -3996,7 +3993,7 @@
         "Встановити фразу відновлення"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Встановите ProtonMail як додаток електронної пошти за замовчуванням для цього браузера. ProtonMail відкриється автоматично після натискання на поштове посилання."
+        "Встановіть ProtonMail типовим застосунком електронної пошти для цього браузера. ProtonMail відкриється автоматично після натискання на поштове посилання."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
@@ -4133,20 +4130,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Це повідомлення переміститься до чернеток, щоб ви змогли його редагувати. Після його надсилання вам необхідно повторно запланувати."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Це повідомлення буде надіслано ${ dateString }, ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Це повідомлення невдовзі буде надіслано"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        "Термін дії цього повідомлення завершиться ${ dateString }, ${ formattedTime }"
+      "This message will be sent today at ${ formattedTime }": [
+        "Це повідомлення буде надіслано сьогодні ${ formattedTime }"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Це повідомлення буде надіслано завтра ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Термін дії цього повідомлення завершиться ${ formattedDate }"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Термін дії цього повідомлення завершиться через ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        "Термін дії цього повідомлення завершиться ${ dateString }, ${ formattedTime }"
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        "Термін дії цього повідомлення завершиться сьогодні ${ formattedTime }"
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        "Термін дії цього повідомлення завершиться завтра ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Відкритий ключ автоматично застосовуватиметься для шифрування листів, що надсилаються на цю адресу."
@@ -4722,6 +4731,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } і ${ count } інших"
       ],
+      "(Coming soon)": [
+        "(Незабаром з'явиться)"
+      ],
       "Actions": [
         "Дії"
       ],
@@ -4806,7 +4818,7 @@
       "Conditions": [
         "Умови"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         "Підтвердити пароль"
       ],
       "Contacts": [
@@ -4947,7 +4959,7 @@
       "Mark as": [
         "Позначити як"
       ],
-      "Message Password": [
+      "Message password": [
         "Пароль повідомлення"
       ],
       "Move to": [
@@ -4983,7 +4995,7 @@
       "Password": [
         "Пароль"
       ],
-      "Password Hint": [
+      "Password hint": [
         "Підказка для пароля"
       ],
       "Payer": [
@@ -5476,9 +5488,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Уся пошта"
-      ],
       "Archive": [
         "Архів"
       ],
@@ -5496,9 +5505,6 @@
       ],
       "Spam": [
         "Спам"
-      ],
-      "Starred": [
-        "Із зірочкою"
       ],
       "Trash": [
         "Смітник"
@@ -5860,7 +5866,7 @@
       "Browser version": [
         "Версія браузера"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         "Підтвердити пароль"
       ],
       "e.g. Julia Smith": [
@@ -7199,6 +7205,9 @@
       ],
       "Report a problem": [
         "Повідомити про проблему"
+      ],
+      "Request new code": [
+        "Запитати новий код"
       ],
       "Schedule send": [
         "Запланувати надсилання"

@@ -20,17 +20,20 @@
       "Activate": [
         "Aktiválás"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Hozzáadás"
+      ],
+      "Add address": [
+        ""
       ],
       "Add condition": [
         "Új feltétel"
       ],
       "Add contact": [
         "Új névjegy"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Csoport hozzáadása"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Új csoport hozzáadása"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Képernyőkép hozzáadása"
@@ -309,6 +315,9 @@
       ],
       "Expand composer": [
         "Szerkesztő kinagyítása"
+      ],
+      "Expand URL": [
+        ""
       ],
       "Export": [
         "Exportálás"
@@ -737,9 +746,6 @@
       "Set expiration time": [
         ""
       ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share via link": [
         "Megosztás hivatkozással"
       ],
@@ -862,12 +868,6 @@
         "Nem megbízható"
       ],
       "Update": [
-        ""
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        ""
-      ],
-      "today": [
-        "ma"
-      ],
       "Today": [
         "Ma"
-      ],
-      "tomorrow": [
-        ""
       ],
       "Tomorrow": [
         ""
@@ -3601,7 +3592,13 @@
       "Message sent.": [
         ""
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "Monthly ${ onDayString }": [
@@ -3975,13 +3972,16 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         ""
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
         ""
       ],
       "This message will be sent shortly": [
         ""
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
+      "This message will be sent today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
         ""
       ],
       "This message will expire ${ formattedDate }": [
@@ -3989,6 +3989,15 @@
       ],
       "This message will expire in ${ formattedDelay }": [
         "Ez az üzenet időkorlátos, lejár: ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        ""
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Erre a címre küldéskor automatikusan ez a nyilvános kulcs lesz használva a titkosításhoz."
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } és ${ count } további"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Actions": [
         "Műveletek"
       ],
@@ -4628,7 +4640,7 @@
       "Conditions": [
         "Feltételek"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         ""
       ],
       "Contacts": [
@@ -4769,7 +4781,7 @@
       "Mark as": [
         "Megjelölés mint"
       ],
-      "Message Password": [
+      "Message password": [
         ""
       ],
       "Move to": [
@@ -4805,7 +4817,7 @@
       "Password": [
         "Jelszó"
       ],
-      "Password Hint": [
+      "Password hint": [
         ""
       ],
       "Payer": [
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        ""
-      ],
       "Archive": [
         "Archívum"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Levélszemét"
-      ],
-      "Starred": [
-        "Csillagozott"
       ],
       "Trash": [
         "Lomtár"
@@ -5670,8 +5676,8 @@
       "Browser version": [
         "Böngésző verziója"
       ],
-      "Confirm Password": [
-        "Jelszó megerősítése"
+      "Confirm password": [
+        ""
       ],
       "e.g. Julia Smith": [
         "pl. Kovács János"
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Probléma jelentése"
+      ],
+      "Request new code": [
+        ""
       ],
       "Schedule send": [
         ""

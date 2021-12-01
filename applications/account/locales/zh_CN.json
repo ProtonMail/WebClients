@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "激活机构密钥"
-      ],
-      "Activate recovery": [
-        ""
       ],
       "Add": [
         "添加"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "设置替补邮箱"
-      ],
-      "Set recovery phrase": [
-        "设置恢复密语"
       ],
       "Share via link": [
         "通过链接分享"
@@ -3156,7 +3150,7 @@
         "每个人都应当享有自由的互联网，免受网络审查。"
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        ""
+        "恢复文件可让您在账户重置后解锁并查看数据。 "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "如果您不小心忘记了密码，恢复密语可让您访问您的账户并恢复加密邮件。"
@@ -3180,7 +3174,7 @@
         "账户已成功更新"
       ],
       "Activate your recovery phrase": [
-        ""
+        "激活您的恢复密语"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ProtonMail me 或者 Private Message me。"
@@ -3210,7 +3204,7 @@
         "地址"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        ""
+        "密码重置后，您的数据将被加密锁定以确保其安全。要解密并查看您的电子邮件和其他数据，您需要一个恢复文件或恢复密语。"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "使用比特币支付后，请按下面的说明升级账户。"
@@ -3477,7 +3471,7 @@
         "下载您的 PGP 密钥以用于其他 PGP 兼容服务。"
       ],
       "Download your recovery file": [
-        ""
+        "下载您的恢复文件"
       ],
       "Drop the file here to upload": [
         "将文件拖至此处上传"
@@ -3504,7 +3498,7 @@
         "带有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        ""
+        "再次启用通过密语恢复将生成一个新的恢复密语。"
       ],
       "Encryption setting updated": [
         "加密设置已更改"
@@ -3585,7 +3579,7 @@
         "速度高达 10 Gbps 的全功能 VPN。"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        ""
+        "新生成的恢复密语将取代旧的。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公钥发给亲朋好友，或者挂到网上，这样大家就都能给你发端到端加密的邮件了！"
@@ -3633,10 +3627,10 @@
         "若您同时设定了 SPF 和 DKIM，可以使用 DMARC 来指定其他邮件系统遇到来自您域名的邮件无法通过 SPF 和 DKIM 检查时应采取的措施，这样他人就更难以伪装成您发送垃圾邮件，但如果操作不当也可能导致投递出现问题。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        ""
+        "如果您丢失了登录信息并需要重置账户，${ boldImperative }您必须正好同时拥有${ boldAccountAndRecovery }。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        ""
+        "如果您丢失了登录信息并需要重置账户，${ boldImperative }您必须正好同时拥有${ boldAccountAndRecovery }，否则您可能无法访问您的任何电子邮件、联系人或文件。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "若您丢失了两步验证设备，这些代码可替代验证码来登录您的账户。每个代码仅可使用一次。"
@@ -3690,10 +3684,10 @@
         "正在将您的数据从 ${ importedEmailAddress } 导入到 ${ toEmail }。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "如果您丢失了登录信息，我们将通过电子邮件或短信向您发送恢复说明指南。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "如果您不慎丢失了登录信息，我们将通过电子邮件向您发送恢复说明指南。"
       ],
       "Included": [
         "已包含在内"
@@ -3729,7 +3723,7 @@
         "互联网连接已恢复。"
       ],
       "it’s imperative": [
-        ""
+        "至关重要的是"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交由我们！"
@@ -3831,7 +3825,7 @@
         "接下来您需要登录 Google 账户并允许我们获取您的数据。"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        ""
+        "未设置账户恢复方法，您存在失去账户访问权限的风险"
       ],
       "No action selected": [
         "未选择操作"
@@ -3843,7 +3837,7 @@
         "没有联系人加密密钥"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        ""
+        "未设置数据恢复方法，您存在失去数据访问权限的风险"
       ],
       "No folder selected": [
         "未选择文件夹"
@@ -3939,7 +3933,7 @@
         ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "请妥善保管。如果遇到密码重置，您将需要通过它来访问您的账户以及解密您的数据。"
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "请注意，如果删除此地址，您将无法再用其收发邮件。"
@@ -4032,7 +4026,7 @@
         "请先阅读我们的双重身份验证指南"
       ],
       "Recovery files have been voided": [
-        ""
+        "恢复文件已作废"
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
@@ -4061,8 +4055,8 @@
       "Save your password somewhere safe.": [
         "将您的密码保存到安全的地方。"
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "妥善保管您的密码。点击显示密码图标确认您已正确输入密码。"
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "请务必妥善保管您的密码，点击图标以确认您已输入正确的密码。"
       ],
       "Scan QR code instead": [
         "扫描二维码"
@@ -4077,7 +4071,7 @@
         "请选择一个服务提供商以开始导入"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
       ],
       "Server is currently down": [
         "服务器目前不可用"
@@ -4164,7 +4158,7 @@
         "此功能只适合专业用户使用。删除此密钥后，您将无法解密由其加密的所有邮件，可能导致数据丢失。"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
-        ""
+        "这是之前提示您设置的 12 字短语。"
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "这是您之前可能已保存的恢复文件或加密密钥。"
@@ -4173,7 +4167,7 @@
         "这是您之前可能已保存的加密密钥。"
       ],
       "This is the password you used before the password reset.": [
-        ""
+        "这是您在密码重置之前使用的密码。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此链接可能使用了欺骗性域名，IE 和 Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开。"
@@ -4197,7 +4191,7 @@
         "该操作将为您的机构创建密钥。4096 位密钥只适用于性能较高的计算机，我们建议大多数用户使用 2048 位密钥。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        ""
+        "这将禁用您当前的恢复密语，您将无法使用它来访问账户或解密数据。"
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "完成此操作后您就可以使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
@@ -4212,7 +4206,7 @@
         "这将替换您的临时密码。您今后将使用此密码来访问您的 ${ BRAND_NAME } 账户。"
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
+        "这将退出登录所有设备并禁用双重身份验证。"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "接下来您将为 Proton 账户开启双重验证（2FA），这将提高账户安全性，我们建议您立即开启。"
@@ -4269,7 +4263,7 @@
         "双密码模式下登录和解密邮箱需要两套密码，某些情况下这样能略微提高安全性，但我们建议大部分用户使用单密码。若要开启双密码模式，请先设置一个登录密码，再设置一个邮箱密码。"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        ""
+        "无法验证恢复文件签名，请联系支持人员。"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很不幸，此账户没有设置恢复密码的方式。"
@@ -4410,7 +4404,7 @@
         "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "您也可以将导入日历与现有 Proton 日历合并。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在 ${ importProgressLink } 查看导入进度。"
@@ -4485,7 +4479,7 @@
         "即将为您转至 PayPal 确认支付。"
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        ""
+        "通过下载的恢复文件重置帐账户后，您将无法恢复加密数据。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，请先创建账户。"
@@ -4515,7 +4509,7 @@
         "您的黑名单列表为空。"
       ],
       "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        ""
+        "您的数据已加密并锁定，您可以通过数据恢复方法来恢复对其的访问。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
@@ -4990,6 +4984,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "用户数量：${ UsedMembers } / ${ MaxMembers }"
       ],
+      "(Coming soon)": [
+        ""
+      ],
       "Account storage": [
         "账户存储空间"
       ],
@@ -5078,7 +5075,7 @@
         "比特币金额："
       ],
       "Calendars": [
-        ""
+        "日历"
       ],
       "Cancel": [
         "取消"
@@ -5276,7 +5273,7 @@
         "文件夹位置"
       ],
       "From: ${ emailFrom }": [
-        ""
+        "来自: ${ emailFrom }"
       ],
       "From: ${ fromEmailAddress }": [
         "来自: ${ fromEmailAddress }"
@@ -5480,7 +5477,7 @@
         "邮编"
       ],
       "Previous password": [
-        ""
+        "先前的密码"
       ],
       "Private User": [
         "私密账户"
@@ -5597,7 +5594,7 @@
         "导入到：${ emailAddress }"
       ],
       "To: ${ emailTo }": [
-        ""
+        "导入到：${ emailTo }"
       ],
       "To: ${ PMEmailAddress }": [
         "导入到：${ PMEmailAddress }"

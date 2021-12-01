@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        "Активувати відновлення"
-      ],
       "Add": [
         "Додати"
       ],
+      "Add address": [
+        "Додати адресу"
+      ],
       "Add contact": [
         "Додати контакт"
+      ],
+      "Add email": [
+        "Додати е-пошту"
       ],
       "Add group": [
         "Додати групу"
@@ -34,6 +37,9 @@
       ],
       "Add notification": [
         "Додати сповіщення"
+      ],
+      "Add phone number": [
+        "Додати номер телефону"
       ],
       "Add screenshot(s)": [
         "Додати знімки екрана"
@@ -139,9 +145,6 @@
       ],
       "Decrease": [
         "Зменшити"
-      ],
-      "Default email application": [
-        "Додаток електронної пошти за замовчуванням"
       ],
       "Delete": [
         "Видалити"
@@ -407,12 +410,6 @@
       "Send": [
         "Надіслати"
       ],
-      "Set as default": [
-        "Встановити за замовчуванням"
-      ],
-      "Set recovery phrase": [
-        "Встановити фразу відновлення"
-      ],
       "Share": [
         "Поділитися"
       ],
@@ -484,12 +481,6 @@
       ],
       "Update": [
         "Оновити"
-      ],
-      "Update recovery file": [
-        "Оновити файл відновлення"
-      ],
-      "Update recovery phrase": [
-        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -2527,9 +2518,6 @@
       "Daily": [
         "Щодня"
       ],
-      "Default email application": [
-        "Додаток електронної пошти за замовчуванням"
-      ],
       "Discard changes?": [
         "Відхилити зміни?"
       ],
@@ -2808,9 +2796,6 @@
       ],
       "Session timed out.": [
         "Сеанс завершився."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Встановите ProtonMail як додаток електронної пошти за замовчуванням для цього браузера. ProtonMail відкриється автоматично після натискання на поштове посилання."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
@@ -3316,6 +3301,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        "(Незабаром з'явиться)"
+      ],
       "0 - Not likely": [
         "0 - малоймовірно"
       ],
@@ -3711,12 +3699,6 @@
       "Add a gift code": [
         "Додати подарунковий код"
       ],
-      "All mail": [
-        "Уся пошта"
-      ],
-      "Archive": [
-        "Архів"
-      ],
       "Calendars": [
         "Календарі"
       ],
@@ -3726,14 +3708,8 @@
       "click here": [
         "натисніть тут"
       ],
-      "Drafts": [
-        "Чернетки"
-      ],
       "Go to subscription plans": [
         "Перейти до тарифних планів"
-      ],
-      "Inbox": [
-        "Вхідні"
       ],
       "Learn more": [
         "Докладніше"
@@ -3741,32 +3717,14 @@
       "My calendars": [
         "Мої календарі"
       ],
-      "Outbox": [
-        "Вихідні"
-      ],
       "Pay invoice": [
         "Сплатити рахунок"
       ],
       "Request an invite": [
         "Запитати запрошення"
       ],
-      "Scheduled": [
-        "Заплановано"
-      ],
-      "Sent": [
-        "Надіслані"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "Starred": [
-        "Із зірочкою"
-      ],
       "Subscribed calendars": [
         "Підписки на календарі"
-      ],
-      "Trash": [
-        "Смітник"
       ],
       "Upgrade": [
         "Покращити"
@@ -5313,6 +5271,9 @@
       ],
       "Report a problem": [
         "Повідомити про проблему"
+      ],
+      "Request new code": [
+        "Запитати новий код"
       ],
       "Reset calendar keys": [
         "Скинути ключі календаря"

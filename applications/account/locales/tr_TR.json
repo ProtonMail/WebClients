@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "activate": [
-        "etkinleştir"
-      ],
       "Activate": [
         "Etkinleştir"
+      ],
+      "activate": [
+        "etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
       ],
       "Activate organization key": [
         "Kuruluş anahtarını etkinleştir"
-      ],
-      "Activate recovery": [
-        "Kurtarmayı etkinleştirin"
       ],
       "Add": [
         "Ekle"
@@ -56,7 +53,7 @@
         "Adres ekle"
       ],
       "Add calendar": [
-        ""
+        "Takvim ekle"
       ],
       "Add condition": [
         "Koşul ekle"
@@ -503,7 +500,7 @@
         "Yeniden bağlan"
       ],
       "Recover data": [
-        ""
+        "Veri kurtar"
       ],
       "Refresh status": [
         "Durumu yenile"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Tümünü yakalamayı ayarla"
-      ],
-      "Set recovery phrase": [
-        "Kurtarma anahtar metni oluşturun"
       ],
       "Share via link": [
         "Bağlantı yoluyla paylaş"
@@ -3859,7 +3853,7 @@
         "Hesabınızı kurmak için bu bilgileri iki faktörlü kimlik doğrulama cihazınıza el ile girin. ${ _switchButton }."
       ],
       "Merged": [
-        ""
+        "Birleştirildi"
       ],
       "Monthly ${ onDayString }": [
         "Aylık ${ onDayString }"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Parolanızı güvenli bir yerde saklayın."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Parolanızı güvenli bir yere kaydedin. Parolanızı doğru yazdığınızı onaylamak için simgeye tıklayın."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Bunun yerine QR kodunu tarayın"
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ MaxMembers } kullanıcıdan ${ UsedMembers } tanesi",
         "${ MaxMembers } kullanıcıdan ${ UsedMembers } tanesi"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Hesap depolama alanı"

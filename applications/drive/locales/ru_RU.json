@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Добавить"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Добавить контакт"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Добавить группу"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Добавить новую группу"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Добавить снимки экрана"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Уменьшить"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Удалить"
@@ -440,12 +443,6 @@
       "Select plan": [
         "Выбрать тарифный план"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "Поделиться"
       ],
@@ -526,12 +523,6 @@
       ],
       "Untrust": [
         "Не доверять"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "Улучшить"
@@ -1976,9 +1967,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
       ],
-      "Default email application": [
-        ""
-      ],
       "Delete drive": [
         "Удалить хранилище",
         "Удалить хранилища",
@@ -2326,9 +2314,6 @@
       ],
       "Session timed out.": [
         "Время сессии истекло."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Настройка PGP позволяет вам отправлять зашифрованные письма пользователям вне ProtonMail, которые пользуются совместимыми с PGP сервисами."
@@ -2828,6 +2813,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "(Expired)": [
         "(Истек)"
       ],
@@ -3262,26 +3250,14 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
-      "All mail": [
-        ""
-      ],
-      "Archive": [
-        ""
-      ],
       "clearing your browser cache": [
         "очистка кэша браузера"
       ],
       "click here": [
         "нажмите здесь"
       ],
-      "Drafts": [
-        ""
-      ],
       "Go to subscription plans": [
         "Перейти на страницу подписки"
-      ],
-      "Inbox": [
-        ""
       ],
       "Learn more": [
         "Узнать больше"
@@ -3289,29 +3265,14 @@
       "My files": [
         "Мои файлы"
       ],
-      "Outbox": [
-        ""
-      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
       "Request an invite": [
         "Запросить приглашение"
       ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        ""
-      ],
       "Shared": [
         "В общем доступе"
-      ],
-      "Spam": [
-        ""
-      ],
-      "Starred": [
-        ""
       ],
       "Trash": [
         "Корзина"
@@ -4568,6 +4529,9 @@
       ],
       "Report a problem": [
         "Сообщить о проблеме"
+      ],
+      "Request new code": [
+        ""
       ],
       "Restore your files": [
         "Восстановить файлы"

@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate recovery": [
-        ""
-      ],
       "Add": [
         "Afegir"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Afegir contacte"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Afegir grup"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Afegir nou grup"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Afegir captura(es) de pantalla"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Redueix"
-      ],
-      "Default email application": [
-        ""
       ],
       "Delete": [
         "Eliminar"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Seleccionar pla"
       ],
-      "Set as default": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "Compartir"
       ],
@@ -522,12 +519,6 @@
       ],
       "Untrust": [
         "No confiar"
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
       ],
       "Upgrade": [
         "Actualitzar"
@@ -1882,9 +1873,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
-      "Default email application": [
-        ""
-      ],
       "Delete drive": [
         "",
         ""
@@ -2226,9 +2214,6 @@
       ],
       "Session timed out.": [
         "Temps de sessió esgotat."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ProtonMail i que utilitza un servei compatible amb PGP."
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "(Expired)": [
         "(Caducat)"
       ],
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Afegir un codi regal"
       ],
-      "All mail": [
-        ""
-      ],
-      "Archive": [
-        ""
-      ],
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
       ],
       "click here": [
         "feu clic aquí"
       ],
-      "Drafts": [
-        ""
-      ],
       "Go to subscription plans": [
         "Anar als plans de subscripció"
-      ],
-      "Inbox": [
-        ""
       ],
       "Learn more": [
         "Més informació"
@@ -3185,29 +3161,14 @@
       "My files": [
         "Els meus fitxers"
       ],
-      "Outbox": [
-        ""
-      ],
       "Pay invoice": [
         "Pagar la factura"
       ],
       "Request an invite": [
         "Demana una invitació"
       ],
-      "Scheduled": [
-        ""
-      ],
-      "Sent": [
-        ""
-      ],
       "Shared": [
         "Compartit"
-      ],
-      "Spam": [
-        ""
-      ],
-      "Starred": [
-        ""
       ],
       "Trash": [
         "Paperera"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Avisar d'un problema"
+      ],
+      "Request new code": [
+        ""
       ],
       "Restore your files": [
         "Restaureu els vostres fitxers"

@@ -20,17 +20,20 @@
       "Activate": [
         "Aktivieren"
       ],
-      "Activate recovery": [
-        "Wiederherstellung aktivieren"
-      ],
       "Add": [
         "Hinzufügen"
+      ],
+      "Add address": [
+        "Adresse hinzufügen"
       ],
       "Add condition": [
         "Bedingung hinzufügen"
       ],
       "Add contact": [
         "Kontakt hinzufügen"
+      ],
+      "Add email": [
+        "E-Mail-Adresse hinzufügen"
       ],
       "Add group": [
         "Gruppe hinzufügen"
@@ -40,6 +43,9 @@
       ],
       "Add new group": [
         "Neue Gruppe hinzufügen"
+      ],
+      "Add phone number": [
+        "Rufnummer hinzufügen"
       ],
       "Add screenshot(s)": [
         "Bildschirmfoto(s) hinzufügen"
@@ -309,6 +315,9 @@
       ],
       "Expand composer": [
         "Verfassen-Fenster vergrößern"
+      ],
+      "Expand URL": [
+        "Vollständige URL anzeigen"
       ],
       "Export": [
         "Exportieren"
@@ -737,9 +746,6 @@
       "Set expiration time": [
         "Gültigkeitsdatum festlegen"
       ],
-      "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
-      ],
       "Share via link": [
         "Als Link teilen"
       ],
@@ -863,12 +869,6 @@
       ],
       "Update": [
         "Aktualisieren"
-      ],
-      "Update recovery file": [
-        "Wiederherstellungsdatei aktualisieren"
-      ],
-      "Update recovery phrase": [
-        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Wechseln"
@@ -1739,17 +1739,8 @@
       ]
     },
     "Date label": {
-      "on ${ formattedDate }": [
-        "am ${ formattedDate }"
-      ],
-      "today": [
-        "Heute"
-      ],
       "Today": [
         "Heute"
-      ],
-      "tomorrow": [
-        "Morgen"
       ],
       "Tomorrow": [
         "Morgen"
@@ -3601,8 +3592,14 @@
       "Message sent.": [
         "Nachricht gesendet."
       ],
-      "Message will be sent ${ dateString } at ${ formattedTime }": [
-        "Nachricht wird am ${ dateString } um ${ formattedTime } gesendet"
+      "Message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Die Nachricht wird am ${ dateString } um ${ formattedTime } gesendet"
+      ],
+      "Message will be sent today at ${ formattedTime }": [
+        "Die Nachricht wird heute um ${ formattedTime } gesendet"
+      ],
+      "Message will be sent tomorrow at ${ formattedTime }": [
+        "Die Nachricht wird morgen um ${ formattedTime } gesendet"
       ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
@@ -3975,20 +3972,32 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Diese Nachricht wird in den Ordner „Entwürfe” verschoben, damit Sie diese bearbeiten können. Sie müssen den Zeitpunkt zum Versenden der Nachricht neu festlegen."
       ],
-      "This message will be sent ${ dateString } at ${ formattedTime }": [
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Diese Nachricht wird am ${ dateString } um ${ formattedTime } gesendet"
       ],
       "This message will be sent shortly": [
         "Diese Nachricht wird demnächst gesendet"
       ],
-      "This message will expire ${ dateString } at ${ formattedTime }": [
-        "Diese Nachricht wird am ${ dateString } um ${ formattedTime } verfallen"
+      "This message will be sent today at ${ formattedTime }": [
+        "Diese Nachricht wird heute um ${ formattedTime } gesendet"
+      ],
+      "This message will be sent tomorrow at ${ formattedTime }": [
+        "Diese Nachricht wird morgen um ${ formattedTime } gesendet"
       ],
       "This message will expire ${ formattedDate }": [
         "Diese Nachricht verfällt am ${ formattedDate }"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Diese Nachricht verfällt in ${ formattedDelay }"
+      ],
+      "This message will expire on ${ dateString } at ${ formattedTime }": [
+        "Diese Nachricht verfällt am ${ dateString } um ${ formattedTime }"
+      ],
+      "This message will expire today at ${ formattedTime }": [
+        "Diese Nachricht verfällt heute um ${ formattedTime }"
+      ],
+      "This message will expire tomorrow at ${ formattedTime }": [
+        "Diese Nachricht verfällt morgen um ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Dieser öffentliche Schlüssel wird automatisch für die Verschlüsselung von E-Mails verwendet, die an diese Adresse gesendet werden."
@@ -4544,6 +4553,9 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } und ${ count } weitere"
       ],
+      "(Coming soon)": [
+        "(Demnächst verfügbar)"
+      ],
       "Actions": [
         "Aktionen"
       ],
@@ -4628,7 +4640,7 @@
       "Conditions": [
         "Bedingungen"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         "Passwort bestätigen"
       ],
       "Contacts": [
@@ -4769,8 +4781,8 @@
       "Mark as": [
         "Kennzeichnen als"
       ],
-      "Message Password": [
-        "Passwort der Nachricht"
+      "Message password": [
+        "Nachrichtenpasswort"
       ],
       "Move to": [
         "Verschieben nach"
@@ -4805,7 +4817,7 @@
       "Password": [
         "Passwort"
       ],
-      "Password Hint": [
+      "Password hint": [
         "Passwort-Hinweis"
       ],
       "Payer": [
@@ -5292,9 +5304,6 @@
       ]
     },
     "Mailbox": {
-      "All mail": [
-        "Alle Nachrichten"
-      ],
       "Archive": [
         "Archivieren"
       ],
@@ -5312,9 +5321,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Starred": [
-        "Gekennzeichnet"
       ],
       "Trash": [
         "Papierkorb"
@@ -5670,7 +5676,7 @@
       "Browser version": [
         "Browserversion"
       ],
-      "Confirm Password": [
+      "Confirm password": [
         "Passwort bestätigen"
       ],
       "e.g. Julia Smith": [
@@ -6921,6 +6927,9 @@
       ],
       "Report a problem": [
         "Ein Problem melden"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
       ],
       "Schedule send": [
         "Senden planen"

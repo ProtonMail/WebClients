@@ -31,20 +31,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
-      ],
-      "Activate recovery": [
-        "Aktiver gendannelse"
       ],
       "Add": [
         "Tilføj"
@@ -624,9 +621,6 @@
       ],
       "Set catch-all": [
         "Indstil fang-alle"
-      ],
-      "Set recovery phrase": [
-        "Indstil gendannelsessætning"
       ],
       "Share via link": [
         "Del via link"
@@ -4117,8 +4111,8 @@
       "Save your password somewhere safe.": [
         "Gem din adgangskode et sikkert sted."
       ],
-      "Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.": [
-        "Gem din adgangskode et sikkert sted. Tryk på ikonet for at bekræfte, at du har angivet din adgangskode korrekt."
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        ""
       ],
       "Scan QR code instead": [
         "Skan i stedet QR-kode"
@@ -4760,25 +4754,25 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        ""
+        "Der findes allerede en nøgle med den samme krypteringsalgoritme. Hvis du genererer en ny nøgle, vil det medføre en langsommere indlæsning af kontoen. Er du sikker på, at du vil fortsætte?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        ""
+        "En nøgle med den samme krypteringsalgoritme er allerede aktiv på denne adresse.\nGenerering af en anden nøgle vil medføre langsommere kontoindlæsning, og sletning af denne nøgle kan forårsage problemer. Genererer du en ny nøgle, fordi den gamle er kompromitteret, så markér venligst din gamle nøgle som kompromitteret. Er du sikker på, at du vil fortsætte?"
       ],
       "Generate key": [
-        ""
+        "Generér nøgle"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
-        ""
+        "Nøgle med fingeraftryk ${ fp } er nu oprettet."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "Krypteringsnøglerne genereres. Dette kan tage flere minutter og fastfryse din browser midlertidigt."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "Krypteringsnøglerne til din adresse genereres. Dette kan tage flere minutter og fastfryse din browser midlertidigt."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        ""
+        "Du kan generere en ny krypteringsnøgle, hvis du tror, at din forrige nøgle er blevet kompromitteret."
       ]
     },
     "Key state badge": {
@@ -5049,6 +5043,9 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } af ${ MaxMembers } bruger",
         "${ UsedMembers } af ${ MaxMembers } brugere"
+      ],
+      "(Coming soon)": [
+        ""
       ],
       "Account storage": [
         "Kontolagerplads"

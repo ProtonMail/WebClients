@@ -14,14 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "Activate recovery": [
-        "Aktiver gendannelse"
-      ],
       "Add": [
         "Tilføj"
       ],
+      "Add address": [
+        ""
+      ],
       "Add contact": [
         "Tilføj kontakt"
+      ],
+      "Add email": [
+        ""
       ],
       "Add group": [
         "Tilføj gruppe"
@@ -31,6 +34,9 @@
       ],
       "Add new group": [
         "Tilføj ny gruppe"
+      ],
+      "Add phone number": [
+        ""
       ],
       "Add screenshot(s)": [
         "Tilføj screenshot(s)"
@@ -148,9 +154,6 @@
       ],
       "Decrease": [
         "Formindsk"
-      ],
-      "Default email application": [
-        "Standardprogram til mails"
       ],
       "Delete": [
         "Slet"
@@ -436,12 +439,6 @@
       "Select plan": [
         "Vælg abonnement"
       ],
-      "Set as default": [
-        "Angiv som standard"
-      ],
-      "Set recovery phrase": [
-        "Opsæt gendannelsessætning"
-      ],
       "Share": [
         "Del"
       ],
@@ -522,12 +519,6 @@
       ],
       "Untrust": [
         "Ikke længere betroet"
-      ],
-      "Update recovery file": [
-        "Opdater gendannelsesfil"
-      ],
-      "Update recovery phrase": [
-        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -1882,9 +1873,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
       ],
-      "Default email application": [
-        "Standardprogram til mails"
-      ],
       "Delete drive": [
         "Slet drev",
         "Slet drev"
@@ -2226,9 +2214,6 @@
       ],
       "Session timed out.": [
         "Session er udløbet."
-      ],
-      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Angiv ProtonMail som standardprogram til mails for denne browser. ProtonMail vil åbne automatisk, når du klikker på et maillink."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail-bruger, der benytter en PGP-kompatibel tjeneste."
@@ -2726,6 +2711,9 @@
       ]
     },
     "Label": {
+      "(Coming soon)": [
+        ""
+      ],
       "(Expired)": [
         "(Udløbet)"
       ],
@@ -3158,26 +3146,14 @@
       "Add a gift code": [
         "Tilføj en gavekode"
       ],
-      "All mail": [
-        "Alle e-mails"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
       "clearing your browser cache": [
         "rydder din browser-cache"
       ],
       "click here": [
         "klik hér"
       ],
-      "Drafts": [
-        "Kladder"
-      ],
       "Go to subscription plans": [
         "Gå til abonnementer"
-      ],
-      "Inbox": [
-        "Indbakke"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -3185,29 +3161,14 @@
       "My files": [
         "Mine filer"
       ],
-      "Outbox": [
-        "Udbakke"
-      ],
       "Pay invoice": [
         "Betal faktura"
       ],
       "Request an invite": [
         "Anmod om en invitation"
       ],
-      "Scheduled": [
-        "Planlagt"
-      ],
-      "Sent": [
-        "Sendt"
-      ],
       "Shared": [
         "Delt"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Stjernemarkeret"
       ],
       "Trash": [
         "Papirkurv"
@@ -4390,6 +4351,9 @@
       ],
       "Report a problem": [
         "Anmeld et problem"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
       ],
       "Restore your files": [
         "Gendan dine filer"
