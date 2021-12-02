@@ -147,8 +147,8 @@ function useFileBrowserItem<T extends HTMLElement>({
         )
     );
 
-    const handleContextMenu = useCallback(
-        (e: React.MouseEvent<HTMLButtonElement | HTMLDivElement>) => {
+    const handleContextMenuHelper = useCallback(
+        (e: React.MouseEvent | React.TouchEvent, top: number, left: number) => {
             e.stopPropagation();
 
             if (item.Disabled) {
@@ -164,9 +164,24 @@ function useFileBrowserItem<T extends HTMLElement>({
                 contextMenu.close();
             }
 
-            setContextMenuPosition({ top: e.clientY, left: e.clientX });
+            setContextMenuPosition({ top, left });
         },
         [contextMenu.isOpen, isSelected, item.Disabled, item.LinkID, selectItem]
+    );
+
+    const handleContextMenu = useCallback(
+        (e: React.MouseEvent<HTMLButtonElement | HTMLDivElement>) => {
+            handleContextMenuHelper(e, e.clientY, e.clientX);
+        },
+        [handleContextMenuHelper]
+    );
+
+    const handleTouchContextMenu = useCallback(
+        (e: React.TouchEvent<HTMLButtonElement>) => {
+            const touch = e.touches[0];
+            handleContextMenuHelper(e, touch.clientX, touch.clientY);
+        },
+        [handleContextMenuHelper]
     );
 
     const handleDragEnd = useCallback(
@@ -245,6 +260,10 @@ function useFileBrowserItem<T extends HTMLElement>({
             onTouchStart: stopPropagation,
             onKeyDown: stopPropagation,
             onClick: handleCheckboxWrapperClick,
+        },
+        optionsHandlers: {
+            onClick: handleContextMenu,
+            onTouchStart: handleTouchContextMenu,
         },
         moveText,
         contextMenu,
