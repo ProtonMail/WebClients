@@ -1,6 +1,7 @@
 import { getCanonicalEmails } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
+import { getSharedEventIDAndSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -25,7 +26,6 @@ import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import getChangePartstatActions from './getChangePartstatActions';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { withUpdatedDtstamp } from './dtstamp';
-import { getSharedEventIDAndSessionKey } from '../event/getEventHelper';
 
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT } = INVITE_ACTION_TYPES;
 
@@ -253,6 +253,9 @@ const getSaveSingleEventActions = async ({
             },
         ] = await handleSyncActions(multiSyncIntermediateActions);
         intermediateEvent = Event;
+        if (!intermediateEvent) {
+            throw new Error('Failed to generate intermediate event');
+        }
         const { sharedEventID, sharedSessionKey } = await getSharedEventIDAndSessionKey({
             calendarEvent: intermediateEvent,
             getCalendarKeys,

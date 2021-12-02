@@ -16,7 +16,7 @@ const ExtraEventAlert = ({ model }: Props) => {
         hasMultipleVevents,
         isOutdated,
         isPartyCrasher,
-        invitationIcs: { method },
+        invitationIcs: { method, vevent: veventIcs, attendee: attendeeIcs },
         invitationApi,
         calendarData,
         isAddressActive,
@@ -25,26 +25,24 @@ const ExtraEventAlert = ({ model }: Props) => {
         hasNoCalendars,
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
-    const alertClassName = 'mb0-5';
+    const alertClassName = 'mb1 mt1 text-break';
 
-    if (isOutdated || isPartyCrasher || (isImport && hasMultipleVevents)) {
+    if (isImport && hasMultipleVevents) {
         return null;
     }
 
-    // organizer mode
+    /**
+     * organizer mode
+     */
     if (isOrganizerMode) {
-        if (method !== ICAL_METHOD.REPLY) {
-            return null;
-        }
-        const partstatIcs = model.invitationIcs.attendee?.partstat;
-        const partstatApi = model.invitationApi?.attendee?.partstat;
-        if (!partstatIcs || !partstatApi) {
+        if (method !== ICAL_METHOD.REPLY || !attendeeIcs?.partstat || !invitationApi) {
             return null;
         }
         if (calendarData?.isCalendarDisabled) {
-            const text = isOutdated
-                ? c('Link').t`Re-enable the address linked to this calendar to manage your invitation.`
-                : c('Link').t`Re-enable the address linked to this calendar to update your invitation.`;
+            const text =
+                isOutdated || isPartyCrasher
+                    ? c('Link').t`Re-enable the address linked to this calendar to manage your invitation.`
+                    : c('Link').t`Re-enable the address linked to this calendar to update your invitation.`;
             return (
                 <Alert className={alertClassName} type="warning">
                     <span className="mr0-5">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
@@ -56,10 +54,31 @@ const ExtraEventAlert = ({ model }: Props) => {
                 </Alert>
             );
         }
+        if (isPartyCrasher && !veventIcs['recurrence-id']) {
+            const participantName = attendeeIcs.displayName;
+            return (
+                <Alert className={alertClassName} type="warning">
+                    {c('Calendar invite info').t`${participantName} is not in the participants list.`}
+                </Alert>
+            );
+        }
         return null;
     }
 
-    // attendee mode
+    /**
+     * attendee mode
+     */
+    if (isPartyCrasher) {
+        return (
+            <Alert className={alertClassName} type="warning">
+                {c('Calendar invite info').t`Your email address is not in the participants list`}
+            </Alert>
+        );
+    }
+    // attendee can take no action for outdated invitations
+    if (isOutdated) {
+        return null;
+    }
     // the invitation is unanswered
     if (!invitationApi) {
         if (isCancel) {

@@ -85,7 +85,7 @@ export interface SyncMultipleApiSuccessResponses {
     Index: number;
     Response: {
         Code: API_CODES.SINGLE_SUCCESS;
-        Event: CalendarEvent;
+        Event: CalendarEventWithMetadata;
     };
 }
 
@@ -93,7 +93,7 @@ export interface SyncMultipleApiResponses {
     Index: number;
     Response: {
         Code: number;
-        Event?: CalendarEvent;
+        Event?: CalendarEventWithMetadata;
         Error?: string;
     };
 }
@@ -105,7 +105,7 @@ export interface SyncMultipleApiResponse {
 
 export interface UpdateEventPartApiResponse {
     Code: number;
-    Event: CalendarEvent;
+    Event: CalendarEventWithMetadata;
 }
 
 export interface GetCanonicalAddressesApiResponses {

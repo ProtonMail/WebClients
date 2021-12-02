@@ -30,6 +30,7 @@ export const useGetCalendarInfo = (): GetCalendarInfo => {
 
             return {
                 memberID,
+                addressID,
                 addressKeys,
                 decryptedCalendarKeys,
                 calendarSettings,
