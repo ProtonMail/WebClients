@@ -2,7 +2,7 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { useCallback } from 'react';
-import { Alert, ConfirmModal, useApi, useModals } from '@proton/components';
+import { Alert, ConfirmModal, FeatureCode, useApi, useFeature, useModals } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
@@ -18,6 +18,7 @@ import { updateAttachment } from '../logic/attachments/attachmentsActions';
 import { useGetAttachment } from './useAttachment';
 import { MessageStateWithData } from '../logic/messages/messagesTypes';
 import { useGetMessage } from './message/useMessage';
+import { getAttachmentCounts } from '../helpers/message/messages';
 
 const useShowConfirmModal = () => {
     const { createModal } = useModals();
@@ -131,6 +132,7 @@ export const useDownloadAll = () => {
     const dispatch = useDispatch();
     const showConfirmModal = useShowConfirmModal();
     const getMessageKeys = useSyncedMessageKeys();
+    const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));
@@ -140,8 +142,10 @@ export const useDownloadAll = () => {
         async (message: MessageStateWithData) => {
             const messageKeys = await getMessageKeys(message.localID);
             const attachments = getAttachments(message.data);
+            const { pureAttachments } = getAttachmentCounts(attachments, message.messageImages);
+
             const list = await formatDownloadAll(
-                attachments,
+                isNumAttachmentsWithoutEmbedded ? pureAttachments : attachments,
                 message.verification,
                 messageKeys,
                 getAttachment,

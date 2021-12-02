@@ -1,5 +1,5 @@
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { getAttachments, hasFlag } from '@proton/shared/lib/mail/messages';
+import { hasFlag } from '@proton/shared/lib/mail/messages';
 import { MutableRefObject, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
@@ -10,18 +10,19 @@ import {
     Icon,
     EllipsisLoader,
     useMailSettings,
-    useFeature,
     FeatureCode,
     useUser,
     Spotlight,
     Href,
     useSpotlightOnFeature,
+    useFeatures,
 } from '@proton/components';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { formatSimpleDate } from '../../helpers/date';
 import AttachmentsButton from '../attachment/AttachmentsButton';
 import SendActions from './SendActions';
+import { getAttachmentCounts } from '../../helpers/message/messages';
 import EditorToolbarExtension from './editor/EditorToolbarExtension';
 import { MessageChangeFlag } from './Composer';
 import ComposerMoreOptionsDropdown from './editor/ComposerMoreOptionsDropdown';
@@ -64,7 +65,16 @@ const ComposerActions = ({
     loadingScheduleCount,
     onChangeFlag,
 }: Props) => {
-    const isAttachments = getAttachments(message.data).length > 0;
+    const [
+        { feature: scheduleSendFeature, loading: loadingScheduleSendFeature },
+        { feature: numAttachmentsWithoutEmbeddedFeature },
+    ] = useFeatures([FeatureCode.ScheduledSend, FeatureCode.NumAttachmentsWithoutEmbedded]);
+
+    const { pureAttachmentsCount, attachmentsCount } = message.data?.Attachments
+        ? getAttachmentCounts(message.data?.Attachments, message.messageImages)
+        : { pureAttachmentsCount: 0, attachmentsCount: 0 };
+
+    const isAttachments = numAttachmentsWithoutEmbeddedFeature?.Value ? pureAttachmentsCount > 0 : attachmentsCount > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && !!message.data?.Password;
     const isExpiration = !!message.draftFlags?.expiresIn;
     const sendDisabled = lock;
@@ -130,8 +140,7 @@ const ComposerActions = ({
         </>
     ) : null;
 
-    const { feature, loading: loadingFeature } = useFeature(FeatureCode.ScheduledSend);
-    const hasScheduleSendAccess = !loadingFeature && feature?.Value && hasPaidMail;
+    const hasScheduleSendAccess = !loadingScheduleSendFeature && scheduleSendFeature?.Value && hasPaidMail;
 
     const dropdownRef = useRef(null);
     const {
@@ -176,14 +185,14 @@ const ComposerActions = ({
                     }
                 >
                     <SendActions
-                        disabled={loadingFeature || loadingScheduleCount}
-                        loading={loadingFeature || loadingScheduleCount}
+                        disabled={loadingScheduleSendFeature || loadingScheduleCount}
+                        loading={loadingScheduleSendFeature || loadingScheduleCount}
                         shape="solid"
                         color="norm"
                         mainAction={
                             <Tooltip title={titleSendButton}>
                                 <Button
-                                    loading={loadingFeature}
+                                    loading={loadingScheduleSendFeature}
                                     onClick={onSend}
                                     disabled={sendDisabled}
                                     className="composer-send-button"
