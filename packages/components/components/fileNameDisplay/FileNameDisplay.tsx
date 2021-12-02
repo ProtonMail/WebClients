@@ -15,7 +15,15 @@ const FileNameDisplay = ({ text = '', className, charsToDisplayEnd = 6 }: Props)
     const [, extension] = splitExtension(sanitized);
     const extensionOffset =
         extension.length < charsToDisplayEnd ? extension.length + CHARACTERS_BEFORE_EXTENSION : charsToDisplayEnd;
-    return <MiddleEllipsis charsToDisplayEnd={extensionOffset} className={className} text={sanitized} />;
+    return (
+        <MiddleEllipsis
+            charsToDisplayEnd={extensionOffset}
+            className={className}
+            text={sanitized}
+            displayTitle={false}
+            displayTooltip
+        />
+    );
 };
 
 export default FileNameDisplay;

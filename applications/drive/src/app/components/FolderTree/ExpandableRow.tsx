@@ -107,7 +107,7 @@ const ExpandableRow = ({
                         key="Name"
                         className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100"
                     >
-                        <FileIcon mimeType={type === LinkType.FOLDER ? 'Folder' : mimeType} />
+                        <FileIcon mimeType={type === LinkType.FOLDER ? 'Folder' : mimeType} className="mr0-5" />
                         <FileNameDisplay text={name} />
                     </div>
                     {isSelected && (

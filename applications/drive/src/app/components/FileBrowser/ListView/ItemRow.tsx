@@ -1,6 +1,8 @@
 import { memo, useEffect } from 'react';
 
 import {
+    Button,
+    Icon,
     TableRow,
     Checkbox,
     useActiveBreakpoint,
@@ -52,6 +54,7 @@ const ItemRow = ({
         itemHandlers,
         checkboxHandlers,
         checkboxWrapperHandlers,
+        optionsHandlers,
     } = useFileBrowserItem<HTMLTableRowElement>({
         item,
         onToggleSelect,
@@ -117,7 +120,7 @@ const ItemRow = ({
                 ref={contextMenu.anchorRef}
                 aria-disabled={item.Disabled}
                 className={classnames([
-                    'file-browser-list-item no-outline flex user-select-none',
+                    'file-browser-list-item no-outline flex user-select-none opacity-on-hover-container',
                     (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-strong',
                     (dragging || item.Disabled) && 'opacity-50',
@@ -125,7 +128,14 @@ const ItemRow = ({
                 {...itemHandlers}
             >
                 <TableCell className="m0 flex">
-                    <div role="presentation" className="flex flex-align-items-center" {...checkboxWrapperHandlers}>
+                    <div
+                        role="presentation"
+                        className={classnames([
+                            'flex flex-align-items-center',
+                            selectedItems.length ? null : 'opacity-on-hover-only-desktop',
+                        ])}
+                        {...checkboxWrapperHandlers}
+                    >
                         <Checkbox
                             disabled={item.Disabled}
                             className="increase-click-surface"
@@ -143,7 +153,11 @@ const ItemRow = ({
                             className="file-browser-list-item--thumbnail flex-item-noshrink mr0-5"
                         />
                     ) : (
-                        <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
+                        <FileIcon
+                            mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
+                            alt={iconText}
+                            className="mr0-5"
+                        />
                     )}
                     <NameCell name={item.Name} />
                 </TableCell>
@@ -191,10 +205,22 @@ const ItemRow = ({
                 )}
 
                 {columns.includes('share_options') && (
-                    <TableCell className="m0 file-browser-list--share-column">
+                    <TableCell className="m0 file-browser-list--icon-column">
                         <CopyLinkIcon shareId={shareId} item={item} />
                     </TableCell>
                 )}
+
+                <TableCell className="m0 file-browser-list--icon-column">
+                    <Button
+                        shape="ghost"
+                        size="small"
+                        icon
+                        className={contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop'}
+                        {...optionsHandlers}
+                    >
+                        <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
+                    </Button>
+                </TableCell>
             </TableRow>
             {!isPreview && !item.Disabled && ItemContextMenu && (
                 <ItemContextMenu

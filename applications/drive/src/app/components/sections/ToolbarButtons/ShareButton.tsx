@@ -15,15 +15,14 @@ interface Props {
 const ShareButton = ({ shareId, selectedItems }: Props) => {
     const { openSharing } = useToolbarActions();
 
-    if (!MEMBER_SHARING_ENABLED) {
-        return <></>;
+    if (!MEMBER_SHARING_ENABLED || noSelection(selectedItems) || isMultiSelect(selectedItems)) {
+        return null;
     }
 
     const hasShare = !!selectedItems[0]?.ShareUrlShareID;
 
     return (
         <ToolbarButton
-            disabled={noSelection(selectedItems) || isMultiSelect(selectedItems)}
             title={hasShare ? c('Action').t`Share options` : c('Action').t`Share`}
             icon={<Icon name="user-group" />}
             onClick={() => openSharing(shareId, selectedItems[0])}

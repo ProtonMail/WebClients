@@ -6,7 +6,6 @@ import { Button, Icon, FileIcon, Checkbox, classnames, DragMoveContainer, FileNa
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
 
@@ -41,6 +40,7 @@ function ItemCell({
         itemHandlers,
         checkboxHandlers,
         checkboxWrapperHandlers,
+        optionsHandlers,
     } = useFileBrowserItem<HTMLDivElement>({
         item,
         onToggleSelect,
@@ -66,7 +66,7 @@ function ItemCell({
     }, [item.ModifyTime]); // Reload thumbnail when file changes.
 
     return (
-        <div className={classnames(['flex flex-col', className])} style={style}>
+        <div className={classnames(['flex flex-col opacity-on-hover-container', className])} style={style}>
             {draggable && (
                 <DragMoveContent dragging={dragging} data={dragMoveItems}>
                     <DragMoveContainer>{moveText}</DragMoveContainer>
@@ -90,6 +90,7 @@ function ItemCell({
                 className={classnames([
                     'file-browser-grid-item m0-5 flex flex-column w100 rounded bordered cursor-pointer text-align-left no-outline',
                     (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
+                    isSelected && 'border--primary',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) &&
                         'file-browser-grid-item--highlight',
                     (dragging || item.Disabled) && 'opacity-50',
@@ -105,23 +106,16 @@ function ItemCell({
                         />
                     ) : (
                         <FileIcon
-                            size={56}
+                            size={48}
                             mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
                             alt={iconText}
-                        />
-                    )}
-                    {item.SharedUrl && (
-                        <SharedURLIcon
-                            shareId={shareId}
-                            item={item}
-                            className="flex file-browser-grid-item--share-icon"
                         />
                     )}
                 </div>
                 <div
                     className={classnames([
                         'flex file-browser-grid-item--select',
-                        selectedItems.length ? null : 'file-browser-grid-item--select-hover-only',
+                        selectedItems.length ? null : 'opacity-on-hover-only-desktop',
                     ])}
                     {...checkboxWrapperHandlers}
                 >
@@ -132,14 +126,17 @@ function ItemCell({
                         {...checkboxHandlers}
                     />
                 </div>
-                <div className="w100 pt0-5 pb0-5 pl3 pr3 flex border-top" title={item.Name}>
+                <div className="file-browser-grid-item--file-name flex border-top" title={item.Name}>
                     <FileNameDisplay text={item.Name} className="center" />
                     <Button
                         shape="ghost"
                         size="small"
                         icon
-                        className="file-browser-grid-view--options"
-                        onClick={(e) => itemHandlers.onContextMenu(e)}
+                        className={classnames([
+                            'file-browser-grid-view--options',
+                            contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop',
+                        ])}
+                        {...optionsHandlers}
                     >
                         <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
                     </Button>

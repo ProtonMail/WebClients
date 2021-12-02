@@ -10,7 +10,7 @@ import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import {
     DetailsButton,
     DownloadButton,
-    LayoutDropdown,
+    LayoutButton,
     PreviewButton,
     RenameButton,
     ShareButton,
@@ -93,7 +93,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
         <Toolbar>
             {renderSelectionActions()}
             <span className="mlauto flex flex-nowrap">
-                <LayoutDropdown />
+                <LayoutButton />
             </span>
         </Toolbar>
     );

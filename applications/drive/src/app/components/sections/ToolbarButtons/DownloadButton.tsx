@@ -15,9 +15,12 @@ interface Props {
 const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
     const { download } = useToolbarActions();
 
+    if (noSelection(selectedItems) || (disabledFolders && hasFoldersSelected(selectedItems))) {
+        return null;
+    }
+
     return (
         <ToolbarButton
-            disabled={noSelection(selectedItems) || (disabledFolders && hasFoldersSelected(selectedItems))}
             title={c('Action').t`Download`}
             icon={<Icon name="arrow-down-to-rectangle" />}
             onClick={() => download(shareId, selectedItems)}

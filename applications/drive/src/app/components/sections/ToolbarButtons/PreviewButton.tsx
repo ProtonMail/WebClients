@@ -19,10 +19,12 @@ const PreviewButton = ({ shareId, selectedItems }: Props) => {
         hasFoldersSelected(selectedItems) ||
         !selectedItems[0]?.MIMEType ||
         !isPreviewAvailable(selectedItems[0].MIMEType, selectedItems[0].Size);
+    if (disabled) {
+        return null;
+    }
 
     return (
         <ToolbarButton
-            disabled={disabled}
             title={c('Action').t`Preview`}
             icon={<Icon name="eye" />}
             onClick={() => {
