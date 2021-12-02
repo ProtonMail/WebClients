@@ -2,8 +2,11 @@ import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import GenericError from '../error/GenericError';
+import { classnames } from '../../helpers';
 
 interface Props {
+    className?: string;
+    small?: boolean;
     resetKey?: string;
     component?: ReactNode;
     onError?: (error: Error, info: ErrorInfo) => void;
@@ -49,7 +52,14 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
         if (!state.hasError) {
             return props.children;
         }
-        return props.component || <GenericError className="pt2" />;
+        return (
+            props.component || (
+                <GenericError
+                    className={classnames([props.small ? 'p1' : 'p2', props.className])}
+                    small={props.small}
+                />
+            )
+        );
     }
 }
 
