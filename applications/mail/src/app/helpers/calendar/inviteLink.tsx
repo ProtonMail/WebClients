@@ -20,7 +20,7 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         isOutdated,
         isAddressActive,
         calendarData,
-        invitationIcs: { method, attendee: attendeeIcs },
+        invitationIcs: { method, attendee: attendeeIcs, vevent: veventIcs },
         invitationApi,
         hasNoCalendars,
         canCreateCalendar,
@@ -43,12 +43,13 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
     const canBeManaged =
         isOrganizerMode &&
         (method === ICAL_METHOD.REPLY || (method === ICAL_METHOD.COUNTER && hasAlsoReplied)) &&
-        !isImport;
+        !isImport &&
+        !veventIcs['recurrence-id'];
     const canBeSeenUpdated =
         [ICAL_METHOD.CANCEL, ICAL_METHOD.COUNTER, ICAL_METHOD.REFRESH].includes(method) ||
         (!isOrganizerMode && method === ICAL_METHOD.REQUEST && isOutdated);
 
-    const safeCalendarNeedsUserAction = calendarData?.calendarNeedsUserAction && !isPartyCrasher;
+    const safeCalendarNeedsUserAction = calendarData?.calendarNeedsUserAction && !(isPartyCrasher && !isOrganizerMode);
     // the calendar needs a user action to be active
     if (safeCalendarNeedsUserAction || mustReactivateCalendars) {
         if (isImport) {

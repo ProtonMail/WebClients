@@ -111,6 +111,14 @@ export const getAttendeeEmail = (attendee: VcalAttendeeProperty | VcalOrganizerP
     return emailTo;
 };
 
+export const withPartstat = (attendee: VcalAttendeeProperty, partstat?: ICAL_ATTENDEE_STATUS) => ({
+    ...attendee,
+    parameters: {
+        ...attendee.parameters,
+        partstat,
+    },
+});
+
 export const modifyAttendeesPartstat = (
     attendees: VcalAttendeeProperty[],
     partstatMap: SimpleMap<ICAL_ATTENDEE_STATUS>
@@ -121,13 +129,7 @@ export const modifyAttendeesPartstat = (
         if (!emailsToModify.includes(email)) {
             return attendee;
         }
-        return {
-            ...attendee,
-            parameters: {
-                ...attendee.parameters,
-                partstat: partstatMap[email],
-            },
-        };
+        return withPartstat(attendee, partstatMap[email]);
     });
 };
 

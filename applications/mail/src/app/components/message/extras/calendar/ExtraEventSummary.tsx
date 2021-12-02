@@ -27,11 +27,11 @@ interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
 const ExtraEventSummary = ({ model }: Props) => {
-    const { isImport, hideSummary, isOrganizerMode, isPartyCrasher } = model;
+    const { isImport, hideSummary, isOrganizerMode } = model;
     const summaryText = isOrganizerMode ? getOrganizerSummaryText(model) : getAttendeeSummaryText(model);
     const hasBeenUpdatedText = getHasBeenUpdatedText(model);
 
-    if (isImport || hideSummary || isPartyCrasher || !summaryText) {
+    if (isImport || hideSummary || !summaryText) {
         return null;
     }
 
