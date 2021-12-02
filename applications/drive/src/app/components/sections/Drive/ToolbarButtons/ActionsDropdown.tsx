@@ -92,6 +92,20 @@ const ActionsDropdown = ({ shareId }: Props) => {
             testId: 'actions-dropdown-trash',
             action: () => openMoveToTrash(activeFolder, selectedItems),
         },
+        {
+            hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
+            name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
+            icon: 'user-group',
+            testId: 'actions-dropdown-share',
+            action: () => openSharing(shareId, selectedItems[0]),
+        },
+        {
+            hidden: isMultiSelect,
+            name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
+            icon: 'link',
+            testId: 'actions-dropdown-share-link',
+            action: () => openLinkSharing(shareId, selectedItems[0]),
+        },
     ];
 
     const dropdownMenuButtons = menuItems

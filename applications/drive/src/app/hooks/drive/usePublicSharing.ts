@@ -1,167 +1,298 @@
-import { ReadableStream } from 'web-streams-polyfill';
+import { useRef } from 'react';
+import { c } from 'ttag';
 import { decryptMessage, decryptPrivateKey, getMessage, OpenPGPKey, SessionKey } from 'pmcrypto';
 
 import { computeKeyPassword } from '@proton/srp';
 import { useApi } from '@proton/components';
-import { srpAuth } from '@proton/shared/lib/srp';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { decryptUnsigned, getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
-import { queryInitSRPHandshake, queryGetSharedLinkPayload } from '@proton/shared/lib/api/drive/sharing';
-import { InitHandshake, SharedLinkPayload, SharedLinkInfo, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
-import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
+import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
+import {
+    querySharedURLChildren,
+    querySharedURLFileRevision,
+    querySharedURLInformation,
+} from '@proton/shared/lib/api/drive/sharing';
+import { ThumbnailURLInfo, SharedURLRevision, SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { LinkMeta, LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { FOLDER_PAGE_SIZE } from '@proton/shared/lib/drive/constants';
 
-import { startDownload, StreamTransformer } from '../../components/downloads/download';
-import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
+import usePublicSession from '../../components/DownloadShared/usePublicSession';
+import {
+    DownloadControls,
+    DownloadEventCallbacks,
+    LinkDownload,
+    Pagination,
+} from '../../components/downloads/interface';
+import downloadThumbnailPure from '../../components/downloads/download/downloadThumbnail';
+import initDownloadPure from '../../components/downloads/download/download';
+import retryOnError from '../../utils/retryOnError';
+
+export interface SharedURLInfoDecrypted {
+    expirationTime: SharedURLInfo['ExpirationTime'];
+    linkID: SharedURLInfo['LinkID'];
+    linkType: SharedURLInfo['LinkType'];
+    mimeType: SharedURLInfo['MIMEType'];
+    name: SharedURLInfo['Name'];
+    size: SharedURLInfo['Size'];
+    thumbnailURLInfo: ThumbnailURLInfo;
+}
+
+export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
+const AUTH_RETRY_COUNT = 2;
+
+interface LinkKeys {
+    privateKey: OpenPGPKey;
+    sessionKey?: SessionKey;
+}
+
+const cache: {
+    [linkId: string]: LinkKeys;
+} = {};
 
 function usePublicSharing() {
+    const shareKey = useRef<OpenPGPKey>();
     const api = useApi();
-    const { addToDownloadQueue } = useDownloadProvider();
+    const publicSession = usePublicSession();
 
-    const initSRPHandshake = async (token: string) => {
-        return api<InitHandshake>(queryInitSRPHandshake(token));
+    const decryptLink = async (linkMeta: LinkMeta, privateKey: OpenPGPKey): Promise<LinkMeta> => {
+        const name = await decryptUnsigned({ armoredMessage: linkMeta.Name, privateKey });
+        return { ...linkMeta, Name: name };
     };
 
-    const getSharedLinkPayload = async (
-        token: string,
-        password: string,
-        initHandshake: InitHandshake,
-        pagination?: {
-            FromBlockIndex: number;
-            PageSize: number;
+    const getNodeKey = async (linkMeta: LinkMeta, privateKey: OpenPGPKey) => {
+        const nodePassphrase = await decryptUnsigned({ armoredMessage: linkMeta.NodePassphrase, privateKey });
+        const nodeKey = await decryptPrivateKey(linkMeta.NodeKey, nodePassphrase);
+
+        return nodeKey;
+    };
+
+    const getSessionKey = async (linkMeta: LinkMeta, nodeKey: OpenPGPKey) => {
+        // Folder links are no provided with ContentKeyPacket
+        if (linkMeta.Type !== LinkType.FILE) {
+            return undefined;
         }
-    ): Promise<SharedLinkInfo> => {
-        const { Modulus, ServerEphemeral, UrlPasswordSalt, SRPSession, Version } = initHandshake;
+        const blockKeys = base64StringToUint8Array(linkMeta.FileProperties.ContentKeyPacket);
+        const sessionKey = await getDecryptedSessionKey({ data: blockKeys, privateKeys: nodeKey });
 
-        const { Payload } = await srpAuth<{ Code: number; Payload: SharedLinkPayload }>({
-            api,
-            credentials: { password },
-            info: {
-                Modulus,
-                ServerEphemeral,
-                Version,
-                Salt: UrlPasswordSalt,
-                SRPSession,
-            },
-            config: queryGetSharedLinkPayload(token, pagination),
-        });
+        return sessionKey;
+    };
 
-        const Blocks: DriveFileBlock[] = Payload.BlockURLs.map(({ BareURL, Token }, Index: number) => {
-            return {
-                Index: Index + 1,
-                BareURL,
-                Token,
-            };
-        });
+    const retryValidation = (error: any) => {
+        const apiError = getApiError(error);
+        return apiError.code === ERROR_CODE_INVALID_SRP_PARAMS;
+    };
+
+    const reauth = async (token: string, password: string) => {
+        const handshakeInfo = await publicSession.init(token);
+        await publicSession.fetchSessionInfo(token, password, handshakeInfo);
+    };
+
+    const getSharedURLInfo = async (token: string, password: string): Promise<SharedURLInfoDecrypted> => {
+        const { Token: payload } = await api<{ Token: SharedURLInfo }>(
+            publicSession.queryWithSessionInfo({
+                ...querySharedURLInformation(token),
+                silence: true,
+            })
+        );
 
         const [passphraseAsMessage, computedPassword] = await Promise.all([
-            getMessage(Payload.SharePassphrase),
-            computeKeyPassword(password, Payload.SharePasswordSalt),
+            getMessage(payload.SharePassphrase),
+            computeKeyPassword(password, payload.SharePasswordSalt),
         ]);
         const sharePassphrase = await decryptMessage({
             message: passphraseAsMessage,
             passwords: [computedPassword],
         });
 
-        const shareKey = await decryptPrivateKey(Payload.ShareKey, sharePassphrase.data);
-        const [Name, NodePassphrase] = await Promise.all([
-            decryptUnsigned({ armoredMessage: Payload.Name, privateKey: shareKey }),
-            decryptUnsigned({ armoredMessage: Payload.NodePassphrase, privateKey: shareKey }),
+        const sharePrivateKey = await decryptPrivateKey(payload.ShareKey, sharePassphrase.data);
+        const [name, nodePassphrase] = await Promise.all([
+            decryptUnsigned({ armoredMessage: payload.Name, privateKey: sharePrivateKey }),
+            decryptUnsigned({ armoredMessage: payload.NodePassphrase, privateKey: sharePrivateKey }),
         ]);
-        const NodeKey = await decryptPrivateKey(Payload.NodeKey, NodePassphrase);
-        const blockKeys = base64StringToUint8Array(Payload.ContentKeyPacket);
-        const SessionKey = await getDecryptedSessionKey({ data: blockKeys, privateKeys: NodeKey });
+
+        shareKey.current = sharePrivateKey;
+
+        const nodeKey = await decryptPrivateKey(payload.NodeKey, nodePassphrase);
+        cache[payload.LinkID] = {
+            privateKey: nodeKey,
+        };
+
+        if (payload.LinkType === LinkType.FILE) {
+            const blockKey = base64StringToUint8Array(payload.ContentKeyPacket);
+            const sessionKey = await getDecryptedSessionKey({ data: blockKey, privateKeys: nodeKey });
+
+            cache[payload.LinkID].sessionKey = sessionKey;
+        }
 
         return {
-            Name,
-            MIMEType: Payload.MIMEType,
-            Size: Payload.Size,
-            ExpirationTime: Payload.ExpirationTime,
-            Blocks,
-            NodeKey,
-            SessionKey,
-            ThumbnailURLInfo: {
-                BareURL: Payload.ThumbnailURLInfo.BareURL,
-                Token: Payload.ThumbnailURLInfo.Token,
+            name,
+            mimeType: payload.MIMEType,
+            size: payload.Size,
+            expirationTime: payload.ExpirationTime,
+            linkID: payload.LinkID,
+            linkType: payload.LinkType,
+            thumbnailURLInfo: {
+                BareURL: payload.ThumbnailURLInfo.BareURL,
+                Token: payload.ThumbnailURLInfo.Token,
             },
         };
     };
 
-    const decryptSharedBlockStream =
-        (sessionKey: SessionKey, privateKey: OpenPGPKey): StreamTransformer =>
-        async (stream: ReadableStream<Uint8Array>) => {
-            // TODO: implement root hash validation when file updates are implemented
-
-            const { data } = await decryptMessage({
-                message: await getStreamMessage(stream),
-                sessionKeys: sessionKey,
-                publicKeys: privateKey.toPublic(),
-                streaming: 'web',
-                format: 'binary',
-            });
-
-            return data as ReadableStream<Uint8Array>;
-        };
-
-    const getSharedFileBlocks = async (
+    const getSharedUrlChildren = async (
         token: string,
         password: string,
+        linkID: string,
+        page: number = 0
+    ): Promise<{ Links: LinkMeta[] }> => {
+        const fetchChildren = () =>
+            api<{ Links: LinkMeta[] }>(
+                publicSession.queryWithSessionInfo({
+                    ...querySharedURLChildren(token, linkID, page, FOLDER_PAGE_SIZE),
+                    silence: true,
+                })
+            );
+
+        return retryOnError<{ Links: LinkMeta[] }>({
+            fn: fetchChildren,
+            beforeRetryCallback: reauth.bind(undefined, token, password),
+            shouldRetryBasedOnError: retryValidation,
+            maxRetriesNumber: AUTH_RETRY_COUNT,
+        })().catch(() => {
+            throw new Error(c('Error').t`Failed to download a folder`);
+        });
+    };
+
+    const getAllSharedUrlChildren = async (token: string, password: string, linkID: string): Promise<LinkMeta[]> => {
+        const links: LinkMeta[] = [];
+        let isChildrenListComplete = false;
+        let page = 0;
+
+        while (!isChildrenListComplete) {
+            const { Links } = await getSharedUrlChildren(token, password, linkID, page);
+            Links.forEach((linkMeta) => links.push(linkMeta));
+
+            if (Links.length < FOLDER_PAGE_SIZE) {
+                isChildrenListComplete = true;
+            } else {
+                page += 1;
+            }
+        }
+
+        return links;
+    };
+
+    const getSharedURLPayload = async (
+        token: string,
+        password: string,
+        linkID: string,
         pagination?: {
             FromBlockIndex: number;
             PageSize: number;
         }
-    ) => {
-        const handshakeInfo = await initSRPHandshake(token);
-        const payload = await getSharedLinkPayload(token, password, handshakeInfo, pagination);
-        return payload.Blocks;
+    ): Promise<{ Revision: SharedURLRevision }> => {
+        const fetchRevision = () =>
+            api<{ Revision: SharedURLRevision }>(
+                publicSession.queryWithSessionInfo({
+                    ...querySharedURLFileRevision(token, linkID, pagination),
+                    silence: true,
+                })
+            );
+
+        return retryOnError<{ Revision: SharedURLRevision }>({
+            fn: fetchRevision,
+            beforeRetryCallback: reauth.bind(undefined, token, password),
+            shouldRetryBasedOnError: retryValidation,
+            maxRetriesNumber: AUTH_RETRY_COUNT,
+        })().catch(() => {
+            throw new Error(c('Error').t`Failed to download a file`);
+        });
     };
 
-    const startSharedFileTransfer = (
-        sessionKey: SessionKey,
-        privateKey: OpenPGPKey,
-        meta: TransferMeta,
+    const getSharedURLRevision = async (
         token: string,
         password: string,
-        initailBlocks: DriveFileBlock[]
-    ) => {
-        return addToDownloadQueue(
-            meta,
-            { ShareID: 'SharedFile', LinkID: 'SharedFile' },
-            {
-                transformBlockStream: decryptSharedBlockStream(sessionKey, privateKey),
-                getBlocks: async (
-                    _abortSignal: AbortSignal,
-                    pagination?:
-                        | {
-                              FromBlockIndex: number;
-                              PageSize: number;
-                          }
-                        | undefined
-                ) =>
-                    pagination?.FromBlockIndex === 1 ? initailBlocks : getSharedFileBlocks(token, password, pagination),
-            }
+        linkID: string,
+        pagination?: {
+            FromBlockIndex: number;
+            PageSize: number;
+        }
+    ): Promise<SharedURLRevision> => {
+        const { Revision } = await getSharedURLPayload(token, password, linkID, pagination);
+
+        return Revision;
+    };
+
+    const downloadThumbnail = async (linkID: string, params: ThumbnailURLInfo) => {
+        const { privateKey, sessionKey } = cache[linkID];
+
+        if (!privateKey || !sessionKey) {
+            throw new Error('No keys found to decrypt the thumbnail');
+        }
+
+        const { contents } = await downloadThumbnailPure(params.BareURL, params.Token, async () => ({
+            sessionKeys: sessionKey,
+            privateKey,
+            addressPublicKeys: [],
+        }));
+
+        return contents;
+    };
+
+    const getBlocks = async (token: string, password: string, linkId: string, pagination: Pagination) => {
+        const revision = await getSharedURLRevision(token, password, linkId, pagination);
+        return revision.Blocks;
+    };
+
+    const getChildren = async (token: string, password: string, linkId: string) => {
+        const sharedURLChildren = await getAllSharedUrlChildren(token, password, linkId);
+
+        return Promise.all(
+            sharedURLChildren.map(async (linkMeta: LinkMeta) => {
+                const { privateKey } = cache[linkMeta.ParentLinkID];
+
+                const nodeKey = await getNodeKey(linkMeta, privateKey);
+                const sessionKey = await getSessionKey(linkMeta, nodeKey);
+
+                cache[linkMeta.LinkID] = {
+                    privateKey: nodeKey,
+                    sessionKey,
+                };
+                return decryptLink(linkMeta, privateKey);
+            })
         );
     };
 
-    const downloadThumbnail = (sessionKey: SessionKey, privateKey: OpenPGPKey, params: ThumbnailURLInfo) => {
-        return startDownload(api, {
-            getBlocks: async () => [
-                {
-                    Index: 1,
-                    BareURL: params.BareURL,
-                    Token: params.Token,
-                },
-            ],
-            transformBlockStream: decryptSharedBlockStream(sessionKey, privateKey),
+    const initDownload = (
+        token: string,
+        password: string,
+        name: string,
+        list: LinkDownload[],
+        eventCallbacks: DownloadEventCallbacks
+    ): DownloadControls => {
+        return initDownloadPure(name, list, {
+            getChildren: (abortSignal: AbortSignal, shareId: string, linkId: string) =>
+                getChildren(token, password, linkId),
+            getBlocks: (abortSignal: AbortSignal, shareId: string, linkId: string, pagination: Pagination) =>
+                getBlocks(token, password, linkId, pagination),
+            getKeys: async (shareID, linkID) => {
+                const linkKeys = cache[linkID];
+                return {
+                    privateKey: linkKeys.privateKey,
+                    sessionKeys: linkKeys.sessionKey,
+                    addressPublicKeys: [],
+                };
+            },
+            ...eventCallbacks,
         });
     };
 
     return {
-        initSRPHandshake,
-        getSharedLinkPayload,
-        startSharedFileTransfer,
+        getSharedURLInfo,
+        initDownload,
         downloadThumbnail,
+        initHandshake: publicSession.init,
+        initSession: publicSession.fetchSessionInfo,
     };
 }
 

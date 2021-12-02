@@ -24,6 +24,15 @@ export const streamToBuffer = async (stream: ReadableStream<Uint8Array>) => {
     return chunks;
 };
 
+export const bufferToStream = (buffer: Uint8Array[]): ReadableStream<Uint8Array> => {
+    return new ReadableStream({
+        start(controller) {
+            buffer.forEach((chunk) => controller.enqueue(chunk));
+            controller.close();
+        },
+    });
+};
+
 export class ObserverStream extends TransformStream<Uint8Array, Uint8Array> {
     constructor(fn?: (chunk: Uint8Array) => void) {
         super({

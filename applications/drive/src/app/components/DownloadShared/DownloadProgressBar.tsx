@@ -1,20 +1,11 @@
 import { Progress } from '@proton/components';
+import { TransferStatePublic } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { Download, TransfersStats } from '@proton/shared/lib/interfaces/drive/transfer';
-import { calculateProgress, getProgressBarStatus } from '../../utils/transfer';
-
-interface Props {
-    latestStats: TransfersStats;
-    download: Download;
-}
-
-const DownloadProgressBar = ({ latestStats, download }: Props) => {
-    const percentageDone = calculateProgress(latestStats, [download]);
-    const status = getProgressBarStatus(download.state);
+const DownloadProgressBar = ({ value, status }: { value: number; status: TransferStatePublic }) => {
     return (
         <>
-            <Progress className={`progress-bar--${status}`} value={percentageDone} />
-            <div className="mt1">{percentageDone} %</div>
+            <Progress className={`progress-bar--${status}`} value={value} />
+            <div className="mt1">{value} %</div>
         </>
     );
 };

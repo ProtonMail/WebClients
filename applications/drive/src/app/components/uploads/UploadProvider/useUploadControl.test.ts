@@ -8,7 +8,7 @@ import { UploadFileControls, UploadFolderControls } from '../interface';
 import { UpdateFilter, FileUpload } from './interface';
 import useUploadControl from './useUploadControl';
 
-function testFileUpload(id: string, state: TransferState, filename: string, size = 2 * FILE_CHUNK_SIZE): FileUpload {
+function makeFileUpload(id: string, state: TransferState, filename: string, size = 2 * FILE_CHUNK_SIZE): FileUpload {
     const file = testFile(filename, size);
     return {
         id,
@@ -51,12 +51,12 @@ describe('useUploadControl', () => {
         mockGlobalFile();
 
         const fileUploads: FileUpload[] = [
-            testFileUpload('init', TransferState.Initializing, 'init.txt'),
-            testFileUpload('pending', TransferState.Pending, 'pending.txt'),
-            testFileUpload('progress', TransferState.Progress, 'progress.txt', 2 * FILE_CHUNK_SIZE + 42),
-            testFileUpload('empty', TransferState.Progress, 'empty.txt', 0),
-            testFileUpload('big', TransferState.Progress, 'big.txt', 100 * FILE_CHUNK_SIZE),
-            testFileUpload('done', TransferState.Done, 'done.txt'),
+            makeFileUpload('init', TransferState.Initializing, 'init.txt'),
+            makeFileUpload('pending', TransferState.Pending, 'pending.txt'),
+            makeFileUpload('progress', TransferState.Progress, 'progress.txt', 2 * FILE_CHUNK_SIZE + 42),
+            makeFileUpload('empty', TransferState.Progress, 'empty.txt', 0),
+            makeFileUpload('big', TransferState.Progress, 'big.txt', 100 * FILE_CHUNK_SIZE),
+            makeFileUpload('done', TransferState.Done, 'done.txt'),
         ];
 
         const { result } = renderHook(() =>
