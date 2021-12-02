@@ -34,6 +34,7 @@ export const getAttachmentCounts = (attachments: Attachment[], messageImages: Me
     return {
         size,
         sizeLabel,
+        pureAttachments,
         pureAttachmentsCount,
         embeddedAttachmentsCount,
         attachmentsCount,
