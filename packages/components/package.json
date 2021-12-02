@@ -5,7 +5,7 @@
     "sideEffects": false,
     "main": "index.ts",
     "scripts": {
-        "test": "jest --runInBand --ci",
+        "test": "jest --runInBand --ci --logHeapUsage",
         "test:dev": "jest --watch --coverage=false",
         "export": "./makeExport",
         "i18n:validate": "proton-i18n validate lint-functions {helpers,containers,components,hooks}",
