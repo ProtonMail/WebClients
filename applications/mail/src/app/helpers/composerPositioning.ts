@@ -8,7 +8,7 @@ export const COMPOSER_GUTTER = 15;
 const COMPOSER_HEIGHT = 640;
 const COMPOSER_VERTICAL_GUTTER = 10;
 const COMPOSER_ZINDEX = 300;
-const COMPOSER_SWITCH_MODE = 20;
+const COMPOSER_SWITCH_MODE = 100;
 const HEADER_HEIGHT = 80;
 const APP_BAR_WIDTH = 45;
 
@@ -75,5 +75,4 @@ export const computeComposerStyle = (
     return style;
 };
 
-export const shouldBeMaximized = (windowHeight: number) =>
-    windowHeight - COMPOSER_VERTICAL_GUTTER - HEADER_HEIGHT < COMPOSER_HEIGHT - COMPOSER_SWITCH_MODE;
+export const shouldBeMaximized = (windowHeight: number) => windowHeight < COMPOSER_HEIGHT - COMPOSER_SWITCH_MODE;
