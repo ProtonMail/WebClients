@@ -1,6 +1,8 @@
 import { fireEvent, Matcher } from '@testing-library/dom';
+import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Element } from '../../../models/element';
-import { clearAll, addApiMock, waitForSpyCall } from '../../../helpers/test/helper';
+import { clearAll, addApiMock, waitForSpyCall, getModal } from '../../../helpers/test/helper';
 import { setup, labels, folders, sendEvent } from './Mailbox.test.helpers';
 
 const [label1, label2, label3, label4] = labels;
@@ -234,6 +236,98 @@ describe('Mailbox labels actions', () => {
 
             items = queryAllByTestId('message-item', { exact: false });
             expect(items.length).toBe(0);
+        });
+    });
+
+    describe('delete elements', () => {
+        const deleteFirstTwo = async ({
+            getAllByTestId,
+            getByTestId,
+            deleteRequestSpy,
+        }: {
+            getAllByTestId: (text: Matcher) => HTMLElement[];
+            getByTestId: (text: Matcher) => HTMLElement;
+            deleteRequestSpy: jest.Mock;
+        }) => {
+            const checkboxes = getAllByTestId('item-checkbox');
+            fireEvent.click(checkboxes[0]);
+            fireEvent.click(checkboxes[1]);
+
+            const deleteButton = getByTestId('toolbar:deletepermanently');
+            fireEvent.click(deleteButton);
+
+            const { submit } = getModal();
+            if (submit) {
+                fireEvent.click(submit);
+            }
+
+            await waitForSpyCall(deleteRequestSpy);
+        };
+
+        it('should delete permamently conversations', async () => {
+            const deleteRequestSpy = jest.fn(() => {});
+            addApiMock(`mail/v4/conversations/delete`, deleteRequestSpy, 'put');
+
+            const trashedConversations = conversations.map((conversation) => {
+                return {
+                    ...conversation,
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.TRASH, ContextTime: 0, ContextNumMessages: 0 }],
+                };
+            });
+
+            const { getAllByTestId, getByTestId, getItems } = await setup({
+                conversations: trashedConversations,
+                labelID: MAILBOX_LABEL_IDS.TRASH,
+            });
+
+            await deleteFirstTwo({ getAllByTestId, getByTestId, deleteRequestSpy });
+
+            const items = getItems();
+            expect(items.length).toBe(1);
+        });
+
+        it('should delete permamently messages', async () => {
+            const deleteRequestSpy = jest.fn(() => {});
+            addApiMock(`mail/v4/messages/delete`, deleteRequestSpy, 'put');
+
+            const trashedMessages = conversations.map((conversation) => {
+                return { ...conversation, ConversationID: 'id', LabelIDs: [MAILBOX_LABEL_IDS.TRASH] };
+            });
+
+            const { getByTestId, getAllByTestId, getItems } = await setup({
+                mailSettings: { ViewMode: VIEW_MODE.SINGLE } as MailSettings,
+                messages: trashedMessages,
+                labelID: MAILBOX_LABEL_IDS.TRASH,
+            });
+
+            await deleteFirstTwo({ getAllByTestId, getByTestId, deleteRequestSpy });
+
+            const items = getItems();
+            expect(items.length).toBe(1);
+        });
+
+        it('should delete permamently conversations and rollback', async () => {
+            const deleteRequestSpy = jest.fn(() => {
+                throw new Error('failed');
+            });
+            addApiMock(`mail/v4/conversations/delete`, deleteRequestSpy, 'put');
+
+            const trashedConversations = conversations.map((conversation) => {
+                return {
+                    ...conversation,
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.TRASH, ContextTime: 0, ContextNumMessages: 0 }],
+                };
+            });
+
+            const { getByTestId, getAllByTestId, getItems } = await setup({
+                conversations: trashedConversations,
+                labelID: MAILBOX_LABEL_IDS.TRASH,
+            });
+
+            await deleteFirstTwo({ getAllByTestId, getByTestId, deleteRequestSpy });
+
+            const items = getItems();
+            expect(items.length).toBe(3);
         });
     });
 });
