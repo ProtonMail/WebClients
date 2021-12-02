@@ -194,10 +194,11 @@ export const extractVevent = (vcal?: VcalVcalendar): VcalVeventComponent | undef
     return result ? { ...result } : undefined;
 };
 
-export const extractVTimezone = (vcal?: VcalVcalendar): VcalVtimezoneComponent | undefined => {
-    const result = vcal?.components?.find(getIsTimezoneComponent);
-    // return a copy
-    return result ? { ...result } : undefined;
+export const extractUniqueVTimezone = (vcal?: VcalVcalendar): VcalVtimezoneComponent | undefined => {
+    const vtimezones = vcal?.components?.filter(getIsTimezoneComponent);
+    if (vtimezones?.length === 1) {
+        return vtimezones[0];
+    }
 };
 
 export const extractXOrIanaComponents = (vcal?: VcalVcalendar): VcalXOrIanaComponent[] | undefined => {
@@ -607,7 +608,7 @@ export const getSupportedEventInvitation = async ({
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.NO_COMPONENT, { method: supportedMethod });
     }
     const vevent = extractVevent(vcalComponent);
-    const vtimezone = extractVTimezone(vcalComponent);
+    const vtimezone = extractUniqueVTimezone(vcalComponent);
     if (!vevent) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.NO_VEVENT, { method: supportedMethod });
     }
