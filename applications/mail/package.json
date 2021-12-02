@@ -13,7 +13,7 @@
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "i18n:getlatest": "proton-i18n upgrade",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
-        "test": "jest --runInBand --ci",
+        "test": "jest --runInBand --ci --logHeapUsage",
         "test:dev": "jest --watch --coverage=false",
         "build": "cross-env NODE_ENV=production proton-pack build --appMode=sso",
         "check-types": "tsc",
