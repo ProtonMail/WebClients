@@ -28,6 +28,7 @@ interface PropsArgs {
     sort?: Sort;
     filter?: Filter;
     search?: SearchParameters;
+    mailSettings?: MailSettings;
 }
 
 interface SetupArgs extends PropsArgs {
@@ -43,7 +44,6 @@ interface SetupArgs extends PropsArgs {
 
 export const props = {
     labelID: 'labelID',
-    mailSettings: { ViewMode: VIEW_MODE.GROUP } as MailSettings,
     userSettings: {} as UserSettings,
     breakpoints: { isDesktop: true } as Breakpoints,
     elementID: undefined,
@@ -56,6 +56,7 @@ export const props = {
 const defaultSort = { sort: 'Time', desc: true } as Sort;
 const defaultFilter = {};
 const defaultSearch = {};
+const defaultMailSettings = { ViewMode: VIEW_MODE.GROUP } as MailSettings;
 
 export const labels: Label[] = [
     { ID: 'labelID', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label' },
@@ -87,6 +88,7 @@ export const getProps = ({
     sort = defaultSort,
     filter = defaultFilter,
     search = defaultSearch,
+    mailSettings = defaultMailSettings,
 }: PropsArgs) => {
     const urlSearchParams = new URLSearchParams();
     if (page !== 0) {
@@ -104,7 +106,7 @@ export const getProps = ({
 
     const location = { pathname: '/', hash: `#${urlSearchParams.toString()}` } as Location;
 
-    return { ...props, location, labelID, elementID };
+    return { ...props, location, labelID, elementID, mailSettings };
 };
 
 export const baseApiMocks = () => {
