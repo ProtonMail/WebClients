@@ -67,6 +67,7 @@ const dummyCalendarKeysAndPassphrasePromise = generateCalendarKeysAndPassphrase(
 
 const getSetup = async ({
     userEmailAddress = dummyUserEmailAddress,
+    senderEmailAddress = dummySenderEmailAddress,
     ics,
     filename = 'invite.ics',
     method,
@@ -84,6 +85,7 @@ const getSetup = async ({
     memberID = dummyMemberID,
 }: {
     userEmailAddress?: string;
+    senderEmailAddress?: string;
     ics: string;
     filename?: string;
     method?: ICAL_METHOD;
@@ -185,6 +187,7 @@ const getSetup = async ({
         localID: '1',
         data: {
             ID: '1',
+            SenderAddress: senderEmailAddress,
             AddressID: userPrimaryAddressID,
             Subject: emailSubject,
             Time: new Date().getTime() / 1000,
