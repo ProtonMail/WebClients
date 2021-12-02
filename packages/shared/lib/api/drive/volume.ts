@@ -11,3 +11,10 @@ export const queryRestoreDriveVolume = (encryptedVolumeId: string, data: Restore
     url: `drive/volumes/${encryptedVolumeId}/restore`,
     data,
 });
+
+export const queryDeleteLockedVolumes = (volumeId: string) => {
+    return {
+        method: 'put',
+        url: `drive/volumes/${volumeId}/delete_locked`,
+    };
+};

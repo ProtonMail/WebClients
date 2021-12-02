@@ -23,11 +23,13 @@ import {
     Tooltip,
     FileNameDisplay,
 } from '@proton/components';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
 
 interface Props {
     itemName: string;
+    itemType: LinkType;
     initialExpiration: number | null;
     url: string;
     passwordToggledOn: boolean;
@@ -45,10 +47,23 @@ interface Props {
     onFormStateChange: (state: { isFormDirty: boolean }) => void;
 }
 
+const getSharingInfoMessage = (isFile: boolean) => {
+    return isFile
+        ? c('Info').t`Anyone with this link can access your file.`
+        : c('Info').t`Anyone with this link can access your folder.`;
+};
+
+const getPasswordProtectedSharingInfoMessage = (isFile: boolean) => {
+    return isFile
+        ? c('Info').t`Only the people with the link and the password can access this file.`
+        : c('Info').t`Only the people with the link and the password can access this folder.`;
+};
+
 function GeneratedLinkState({
     modalTitleID,
     onClose,
     itemName,
+    itemType,
     initialExpiration,
     url,
     customPassword,
@@ -84,11 +99,6 @@ function GeneratedLinkState({
 
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
-    };
-
-    const SHARING_INFO_LABEL = {
-        default: c('Info').t`Anyone with this link can access your file.`,
-        withPassword: c('Info').t`Only the people with the link and the password can access this file.`,
     };
 
     const PASSWORD_TOGGLE_DISABLE_REASON = c('Info').t`This link was created in
@@ -144,6 +154,7 @@ function GeneratedLinkState({
     );
 
     const passwordTooltipText = isValidForPasswordRemoval ? PASSWORD_TOGGLE_DISABLE_REASON : null;
+    const isFile = itemType === LinkType.FILE;
 
     return (
         <>
@@ -179,7 +190,7 @@ function GeneratedLinkState({
                             </div>
                         </Row>
                         <Alert className="mb1">
-                            {password ? SHARING_INFO_LABEL.withPassword : SHARING_INFO_LABEL.default}
+                            {password ? getPasswordProtectedSharingInfoMessage(isFile) : getSharingInfoMessage(isFile)}
                         </Alert>
                         <Details
                             open={additionalSettingsExpanded}

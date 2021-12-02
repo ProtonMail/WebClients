@@ -77,14 +77,14 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
         if (!activeCount) {
             if (doneUploadsCount && doneDownloadsCount) {
                 headingElements.push(
-                    c('Info').ngettext(msgid`${doneCount} Finished`, `${doneCount} Finished`, doneCount)
+                    c('Info').ngettext(msgid`${doneCount} finished`, `${doneCount} finished`, doneCount)
                 );
             } else {
                 if (doneUploadsCount) {
                     headingElements.push(
                         c('Info').ngettext(
-                            msgid`${doneUploadsCount} Uploaded`,
-                            `${doneUploadsCount} Uploaded`,
+                            msgid`${doneUploadsCount} uploaded`,
+                            `${doneUploadsCount} uploaded`,
                             doneUploadsCount
                         )
                     );
@@ -92,8 +92,8 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                 if (doneDownloadsCount) {
                     headingElements.push(
                         c('Info').ngettext(
-                            msgid`${doneDownloadsCount} Downloaded`,
-                            `${doneDownloadsCount} Downloaded`,
+                            msgid`${doneDownloadsCount} downloaded`,
+                            `${doneDownloadsCount} downloaded`,
                             doneDownloadsCount
                         )
                     );
@@ -105,37 +105,47 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             const uploadProgress = calculateProgress(latestStats, uploadsInSession);
             headingElements.push(
                 c('Info').ngettext(
-                    msgid`${activeUploadsCount} Uploading (${uploadProgress}%)`,
-                    `${activeUploadsCount} Uploading (${uploadProgress}%)`,
+                    msgid`${activeUploadsCount} uploading (${uploadProgress}%)`,
+                    `${activeUploadsCount} uploading (${uploadProgress}%)`,
                     activeUploadsCount
                 )
             );
         }
         if (activeDownloadsCount) {
-            const downloadProgress = calculateProgress(latestStats, downloadsInSession);
-            headingElements.push(
-                c('Info').ngettext(
-                    msgid`${activeDownloadsCount} Downloading (${downloadProgress}%)`,
-                    `${activeDownloadsCount} Downloading (${downloadProgress}%)`,
-                    activeDownloadsCount
-                )
-            );
+            if (downloadsInSession.some(({ meta: { size } }) => size === undefined)) {
+                headingElements.push(
+                    c('Info').ngettext(
+                        msgid`${activeDownloadsCount} downloading`,
+                        `${activeDownloadsCount} downloading`,
+                        activeDownloadsCount
+                    )
+                );
+            } else {
+                const downloadProgress = calculateProgress(latestStats, downloadsInSession);
+                headingElements.push(
+                    c('Info').ngettext(
+                        msgid`${activeDownloadsCount} downloading (${downloadProgress}%)`,
+                        `${activeDownloadsCount} downloading (${downloadProgress}%)`,
+                        activeDownloadsCount
+                    )
+                );
+            }
         }
 
         if (pausedCount) {
             headingElements.push(
-                c('Info').ngettext(msgid`${pausedCount} Paused`, `${pausedCount} Paused`, pausedCount)
+                c('Info').ngettext(msgid`${pausedCount} paused`, `${pausedCount} paused`, pausedCount)
             );
         }
 
         if (canceledCount) {
             headingElements.push(
-                c('Info').ngettext(msgid`${canceledCount} Canceled`, `${canceledCount} Canceled`, canceledCount)
+                c('Info').ngettext(msgid`${canceledCount} canceled`, `${canceledCount} canceled`, canceledCount)
             );
         }
 
         if (errorCount) {
-            headingElements.push(c('Info').ngettext(msgid`${errorCount} Failed`, `${errorCount} Failed`, errorCount));
+            headingElements.push(c('Info').ngettext(msgid`${errorCount} failed`, `${errorCount} failed`, errorCount));
         }
 
         return headingElements.join(', ');
