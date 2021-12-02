@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { FeatureCode, Icon, useFeature, useFolders } from '@proton/components';
+import { FeatureCode, Icon, useFeatures, useFolders } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -35,7 +35,10 @@ const HeaderExpandedDetails = ({
     mailSettings,
     onAttachmentIconClick,
 }: Props) => {
-    const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
+    const [{ feature: spyTrackerFeature }, { feature: numAttachmentsWithoutEmbeddedFeature }] = useFeatures([
+        FeatureCode.SpyTrackerProtection,
+        FeatureCode.NumAttachmentsWithoutEmbedded,
+    ]);
     const icon = messageViewIcons.globalIcon;
 
     const [customFolders = []] = useFolders();
@@ -65,7 +68,7 @@ const HeaderExpandedDetails = ({
             )
         );
     }
-    if (embeddedAttachmentsCount) {
+    if (embeddedAttachmentsCount && !numAttachmentsWithoutEmbeddedFeature?.Value) {
         attachmentsTexts.push(
             c('Info').ngettext(
                 msgid`${embeddedAttachmentsCount} embedded image`,
@@ -75,6 +78,10 @@ const HeaderExpandedDetails = ({
         );
     }
     const attachmentsText = attachmentsTexts.join(', ');
+
+    const showAttachmentsDetails = numAttachmentsWithoutEmbeddedFeature?.Value
+        ? pureAttachmentsCount > 0
+        : attachmentsText;
 
     const labelIDs = (message.data?.LabelIDs || []).filter((labelID) => isCustomLabel(labelID, labels));
 
@@ -126,7 +133,7 @@ const HeaderExpandedDetails = ({
                     {sizeText}
                 </span>
             </div>
-            {attachmentsText && (
+            {showAttachmentsDetails && (
                 <div className="mb0-5 flex flex-nowrap">
                     <span className="container-to flex flex-justify-center flex-align-items-center">
                         <ItemAttachmentIcon element={message.data} onClick={onAttachmentIconClick} />
