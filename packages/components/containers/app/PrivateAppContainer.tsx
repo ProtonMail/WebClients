@@ -1,7 +1,7 @@
 import { ReactNode, Ref } from 'react';
 import TopBanners from '../topBanners/TopBanners';
 import { classnames } from '../../helpers';
-import { ErrorBoundary } from '.';
+import ErrorBoundary from './ErrorBoundary';
 
 interface Props {
     containerRef?: Ref<HTMLDivElement>;
