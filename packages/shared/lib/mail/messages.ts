@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import { MIME_TYPES, MAILBOX_LABEL_IDS } from '../constants';
 import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
+import { canonizeInternalEmail, getEmailParts } from '../helpers/email';
 import { identity } from '../helpers/function';
 import { Message } from '../interfaces/mail/Message';
 import { MESSAGE_FLAGS, SIGNATURE_START } from './constants';
@@ -72,6 +73,15 @@ export const inSigningPeriod = ({ Time = 0 }: Message) => Time >= Math.max(SIGNA
 export const isPGPInline = (message: Message) => isPGPEncrypted(message) && !isMIME(message);
 export const isEO = (message?: Partial<Message>) => !!message?.Password;
 export const addReceived = (Flags = 0) => setBit(Flags, MESSAGE_FLAGS.FLAG_RECEIVED);
+
+export const isBounced = (message: Message) => {
+    // we don't have a great way of determining when a message is bounced as the BE cannot offer us neither
+    // a specific header nor a specific flag. We hard-code the typical sender (the local part) and subject keywords
+    const { SenderAddress, Subject } = message;
+    const matchesSender = getEmailParts(canonizeInternalEmail(SenderAddress))[0] === 'mailerdaemon';
+    const matchesSubject = [/delivery/i, /undelivered/i, /returned/i, /failure/i].some((regex) => regex.test(Subject));
+    return matchesSender && matchesSubject;
+};
 
 export const getSender = (message?: Message) => message?.Sender;
 export const getRecipients = (message?: Partial<Message>) => {
