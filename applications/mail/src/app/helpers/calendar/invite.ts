@@ -15,6 +15,7 @@ import {
     buildVcalOrganizer,
     dateTimeToProperty,
     getDtendProperty,
+    propertyToLocalDate,
     propertyToUTCDate,
 } from '@proton/shared/lib/calendar/vcalConverter';
 import {
@@ -365,8 +366,8 @@ export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => 
         return EVENT_TIME_STATUS.FUTURE;
     }
     const nowTimestamp = getUnixTime(now);
-    const startTimestamp = getUnixTime(propertyToUTCDate(vevent.dtstart));
-    const endTimestamp = getUnixTime(propertyToUTCDate(getDtendProperty(vevent)));
+    const startTimestamp = getUnixTime(propertyToLocalDate(vevent.dtstart));
+    const endTimestamp = getUnixTime(propertyToLocalDate(getDtendProperty(vevent)));
     if (nowTimestamp >= endTimestamp) {
         return EVENT_TIME_STATUS.PAST;
     }
