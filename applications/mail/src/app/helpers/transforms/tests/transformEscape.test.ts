@@ -13,6 +13,7 @@ describe('transformEscape', () => {
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <image xlink:href="firefox.jpg" x="0" y="0" height="50px" width="50px" />
                 <image xlink:href="chrome.jpg" x="0" y="0" height="50px" width="50px" />
+                <image href="svg-href.jpg" x="0" y="0" height="50px" width="50px" />
             </svg>
             <video src="fichiervideo.webm" autoplay poster="vignette.jpg">
             </video>
@@ -225,9 +226,9 @@ describe('transformEscape', () => {
         };
 
         describe('Add a prefix', () => {
-            it('should not add the prefix before href', () => {
+            it('should not add the prefix before href on a link', () => {
                 const list = getAttribute('proton-href');
-                expect(list.length).toBe(0);
+                expect(list.filter((element) => element.tagName === 'A').length).toBe(0);
             });
 
             it('should add the prefix before src', () => {
@@ -265,6 +266,12 @@ describe('transformEscape', () => {
                 const { document } = setup();
                 const list = document.innerHTML.match(/proton-xlink:href/g);
                 expect(list?.length).toBe(2);
+            });
+
+            it('should add the prefix for svg href', () => {
+                const { querySelector } = setup();
+                const svgHref = querySelector('[proton-href="svg-href.jpg"]');
+                expect(svgHref).not.toBe(null);
             });
         });
 
@@ -401,18 +408,6 @@ describe('transformEscape', () => {
         it('should not escape anything', () => {
             const { document } = setup(BACKGROUND_URL_SAFE);
             expect(document.innerHTML).not.toMatch(/proton-/);
-        });
-    });
-
-    describe('base handling', () => {
-        it('Should preserve <base href> in <head>', () => {
-            const BASE = `<head><base href="https://bugzilla.mozilla.org/"></head>`;
-
-            const { document, querySelector } = setup(BASE);
-            expect(document.innerHTML).toMatch(/<base/);
-            const base = querySelector('base');
-            expect(base).toBeTruthy();
-            expect(base?.getAttribute('href')).toEqual('https://bugzilla.mozilla.org/');
         });
     });
 });
