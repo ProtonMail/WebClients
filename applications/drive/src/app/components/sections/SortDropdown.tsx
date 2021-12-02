@@ -55,14 +55,14 @@ export default function SortDropdown<T extends AllSortKeys>({
                 size="small"
                 icon
             >
-                <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
+                <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" size={16} />
             </Button>
             <Dropdown
                 id={uid}
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
-                originalPlacement="bottom"
+                originalPlacement="bottom-left"
                 className="dropdown--no-max-size"
             >
                 <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>

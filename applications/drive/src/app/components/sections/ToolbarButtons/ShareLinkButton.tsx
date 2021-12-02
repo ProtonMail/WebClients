@@ -14,13 +14,16 @@ interface Props {
 const ShareLinkButton = ({ shareId, selectedItems }: Props) => {
     const { openLinkSharing } = useToolbarActions();
 
+    if (noSelection(selectedItems) || isMultiSelect(selectedItems) || hasFoldersSelected(selectedItems)) {
+        return null;
+    }
+
     const hasSharedLink = !!selectedItems[0]?.SharedUrl;
 
     return (
         <ToolbarButton
-            disabled={noSelection(selectedItems) || isMultiSelect(selectedItems) || hasFoldersSelected(selectedItems)}
             title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
-            icon={<Icon name="link" />}
+            icon={<Icon name={hasSharedLink ? 'link-pen' : 'link'} />}
             onClick={() => openLinkSharing(shareId, selectedItems[0])}
             data-testid="toolbar-share-link"
         />

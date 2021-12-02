@@ -14,9 +14,12 @@ interface Props {
 const RenameButton = ({ shareId, selectedItems }: Props) => {
     const { openRename } = useToolbarActions();
 
+    if (noSelection(selectedItems) || isMultiSelect(selectedItems)) {
+        return null;
+    }
+
     return (
         <ToolbarButton
-            disabled={noSelection(selectedItems) || isMultiSelect(selectedItems)}
             title={c('Action').t`Rename`}
             icon={<Icon name="note-pen" />}
             onClick={() => openRename(shareId, selectedItems[0])}

@@ -10,6 +10,11 @@
 	}
 }
 
+.file-browser--options-focus {
+	background-color: var(--button-hover-background-color);
+	color: var(--button-hover-text-color);
+}
+
 .file-browser-grid-item {
 	position: relative;
 	background-color: var(--background-norm);
@@ -25,18 +30,9 @@
 }
 
 .file-browser-grid-item--thumbnail {
-	max-inline-size: 100%;
-	max-block-size: 100%;
-	object-fit: contain; // To keep original proportion in Safari.
-}
-
-.file-browser-grid-item--share-icon {
-	padding: 0.25em;
-	position: absolute;
-	inset-block-end: 0.25em;
-	inset-inline-end: 0.25em;
-	background-color: var(--background-norm);
-	border-radius: 50%;
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
 }
 
 .file-browser-grid-item--container {
@@ -49,19 +45,24 @@
 	inset-inline-start: 0.2em;
 }
 
-.file-browser-grid-item--select-hover-only {
-	display: none;
+.file-browser-grid-item--file-name {
+	position: relative;
+	inline-size: 100%;
+	block-size: rem(42);
+	line-height: rem(42);
+	// On the side is small options button.
+	padding-block: 0;
+	padding-inline: rem(40);
 }
 
 .file-browser-grid-view--options {
-	display: none;
 	position: absolute;
-	inset-inline-end: 0.25em;
-	inset-block-end: 0.35em;
+	inset-inline-end: rem(4);
+	inset-block-end: rem(8);
 }
 
-.file-browser-list--share-column {
-	inline-size: 50px; // To fit one small icon + spacing around.
+.file-browser-list--icon-column {
+	inline-size: 48px; // To fit one small icon + spacing around.
 	max-block-size: 100%;
 }
 
@@ -70,16 +71,4 @@
 	inline-size: 1rem;
 	border-radius: 25%;
 	object-fit: cover;
-}
-
-// To replace when new hover helper is merged
-@media (hover: hover) and (pointer: fine) {
-	.file-browser-grid-item:hover {
-		.file-browser-grid-item--select-hover-only {
-			display: flex;
-		}
-		.file-browser-grid-view--options {
-			display: block;
-		}
-	}
 }

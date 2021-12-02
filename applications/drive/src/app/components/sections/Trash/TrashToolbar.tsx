@@ -1,6 +1,6 @@
 import { Toolbar, ToolbarSeparator } from '@proton/components';
 
-import { DetailsButton, DownloadButton, LayoutDropdown, PreviewButton } from '../ToolbarButtons';
+import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
 import { useTrashContent } from './TrashContentProvider';
 
@@ -12,19 +12,29 @@ const TrashToolbar = ({ shareId }: Props) => {
     const { fileBrowserControls } = useTrashContent();
     const { selectedItems } = fileBrowserControls;
 
+    const renderSelectionActions = () => {
+        if (!selectedItems.length) {
+            return null;
+        }
+
+        return (
+            <>
+                <PreviewButton shareId={shareId} selectedItems={selectedItems} />
+                <DownloadButton shareId={shareId} selectedItems={selectedItems} disabledFolders />
+                <ToolbarSeparator />
+                <DetailsButton shareId={shareId} selectedItems={selectedItems} />
+                <ToolbarSeparator />
+                <RestoreFromTrashButton shareId={shareId} />
+                <DeletePermanentlyButton shareId={shareId} />
+            </>
+        );
+    };
+
     return (
         <Toolbar>
-            <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-            <DownloadButton shareId={shareId} selectedItems={selectedItems} disabledFolders />
-            <ToolbarSeparator />
-            <DetailsButton shareId={shareId} selectedItems={selectedItems} />
-            <ToolbarSeparator />
-            <RestoreFromTrashButton shareId={shareId} disabled={!selectedItems.length} />
-            <ToolbarSeparator />
-            <DeletePermanentlyButton shareId={shareId} disabled={!selectedItems.length} />
-
+            {renderSelectionActions()}
             <span className="mlauto flex">
-                <LayoutDropdown />
+                <LayoutButton />
             </span>
         </Toolbar>
     );

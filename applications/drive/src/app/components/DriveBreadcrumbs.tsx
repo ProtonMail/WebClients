@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
-import { CollapsingBreadcrumbs, Icon, useNotifications } from '@proton/components';
+import { CollapsingBreadcrumbs, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -47,15 +47,11 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                         text,
                         noShrink: isRoot,
                         highlighted: dropTarget === linkMeta.LinkID,
-                        collapsedText: (
-                            <>
-                                <Icon name="folder" className="mt0-25 mr0-5 mr0-25 flex-item-noshrink color-warning" />
-                                <span title={text} className="text-ellipsis">
-                                    {text}
-                                </span>
-                            </>
-                        ),
-                        onClick: () => navigateToLink(activeFolder.shareId, linkMeta.LinkID, LinkType.FOLDER),
+                        collapsedText: text,
+                        onClick:
+                            linkMeta.LinkID === activeFolder.linkId
+                                ? undefined
+                                : () => navigateToLink(activeFolder.shareId, linkMeta.LinkID, LinkType.FOLDER),
                         onDragLeave: () => {
                             setDropTarget(undefined);
                         },
