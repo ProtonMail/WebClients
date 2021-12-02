@@ -4,15 +4,15 @@ import { mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { streamToBuffer } from '../../utils/stream';
-import { initDownload } from './download';
+import { streamToBuffer } from '../../../utils/stream';
+import initDownloadBlocks from './downloadBlocks';
 
 const createNotFoundError = () => createApiError('Error', { status: 404, statusText: 'Not found.' } as Response, {});
 
 const TIME_TO_RESET_RETRIES_LOCAL = 50;
 
-jest.mock('./constants', () => {
-    const originalModule = jest.requireActual('./constants');
+jest.mock('../constants', () => {
+    const originalModule = jest.requireActual('../constants');
 
     return {
         __esModule: true,
@@ -33,41 +33,46 @@ const createStreamResponse = (chunks: number[][]) =>
         },
     });
 
-const mockApi = jest.fn(({ url }: { url: 'url:1' | 'url:2' | 'url:3' | 'url:4' }) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (url === offlineURL) {
-                reject(createOfflineError({}));
-                return;
-            }
+const mockDownloadBlock = jest.fn(
+    (abortController: AbortController, url: string): Promise<ReadableStream<Uint8Array>> => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (url === offlineURL) {
+                    reject(createOfflineError({}));
+                    return;
+                }
 
-            if (url === expiredURL) {
-                reject(createNotFoundError());
-                return;
-            }
+                if (url === expiredURL) {
+                    reject(createNotFoundError());
+                    return;
+                }
 
-            resolve(
-                {
+                const response = {
                     'url:1': createStreamResponse([[1, 2], [3]]),
                     'url:2': createStreamResponse([[4], [5, 6]]),
                     'url:3': createStreamResponse([[7, 8, 9]]),
                     'url:4': createStreamResponse([[10, 11]]),
-                }[url]
-            );
-        }, responseDelay);
-    });
-});
+                }[url];
+
+                if (!response) {
+                    reject(new Error(`Unexpected url "${url}"`));
+                    return;
+                }
+                resolve(response);
+            }, responseDelay);
+        });
+    }
+);
 
 describe.only('initDownload', () => {
     beforeEach(() => {
-        mockApi.mockClear();
+        mockDownloadBlock.mockClear();
         responseDelay = 0;
     });
 
     it('should download data from remote server using block metadata', async () => {
-        const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
-            const { downloadControls } = initDownload({
-                onStart: resolve,
+        const downloadControls = initDownloadBlocks(
+            {
                 getBlocks: async () => [
                     {
                         Index: 1,
@@ -85,55 +90,53 @@ describe.only('initDownload', () => {
                         Token: '3',
                     },
                 ],
-            });
-            downloadControls.start(mockApi).catch(reject);
-        })
-            .then(streamToBuffer)
-            .then(mergeUint8Arrays);
-
-        await expect(buffer).resolves.toEqual(new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+            },
+            mockDownloadBlock
+        );
+        const stream = downloadControls.start();
+        const buffer = mergeUint8Arrays(await streamToBuffer(stream));
+        expect(buffer).toEqual(new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9]));
     });
 
     it('should discard downloaded data and finish download on cancel', async () => {
-        const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
-            const { downloadControls } = initDownload({
-                onStart: resolve,
-                getBlocks: async () => [
-                    {
-                        Index: 1,
-                        BareURL: 'url:1',
-                        Token: '1',
-                    },
-                ],
-            });
-            downloadControls.start(mockApi).catch(reject);
+        const promise = new Promise<void>((resolve, reject) => {
+            const downloadControls = initDownloadBlocks(
+                {
+                    getBlocks: async () => [
+                        {
+                            Index: 1,
+                            BareURL: 'url:1',
+                            Token: '1',
+                        },
+                    ],
+                    onError: reject,
+                    onFinish: () => resolve(),
+                },
+                mockDownloadBlock
+            );
+            downloadControls.start();
             downloadControls.cancel();
-        })
-            .then(streamToBuffer)
-            .then(mergeUint8Arrays);
-
-        await expect(buffer).rejects.toThrowError(TransferCancel);
+        });
+        await expect(promise).rejects.toThrowError(TransferCancel);
     });
 
     it('should download data from preloaded data buffer if provided', async () => {
         const sendData = [new Uint8Array([1, 2, 3]), new Uint8Array([4, 5, 6]), new Uint8Array([7, 8, 9])];
-
-        const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
-            const { downloadControls } = initDownload({
-                onStart: resolve,
+        const downloadControls = initDownloadBlocks(
+            {
                 getBlocks: async () => sendData,
-            });
-            downloadControls.start(jest.fn()).catch(reject);
-        }).then(streamToBuffer);
-
-        await expect(buffer).resolves.toEqual(sendData);
+            },
+            mockDownloadBlock
+        );
+        const stream = downloadControls.start();
+        const buffer = await streamToBuffer(stream);
+        expect(buffer).toEqual(sendData);
     });
 
     it('should reuse already downloaded data after recovering from network error', async () => {
         offlineURL = 'url:2';
-        const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
-            const { downloadControls } = initDownload({
-                onStart: resolve,
+        const downloadControls = initDownloadBlocks(
+            {
                 getBlocks: async () => [
                     {
                         Index: 1,
@@ -156,31 +159,36 @@ describe.only('initDownload', () => {
                         Token: '4',
                     },
                 ],
-                onNetworkError: (id, err) => {
+                onNetworkError: (err) => {
                     expect(err).toEqual(createOfflineError({}));
                     // Simulate connection is back up and user clicked to resume download.
                     offlineURL = '';
                     downloadControls.resume();
                 },
-            });
-            downloadControls.start(mockApi).catch(reject);
-        })
-            .then(streamToBuffer)
-            .then(mergeUint8Arrays);
+            },
+            mockDownloadBlock
+        );
+        const stream = downloadControls.start();
+        const buffer = mergeUint8Arrays(await streamToBuffer(stream));
 
         // Every block is streamed only once and in proper order even during interruption.
-        await expect(buffer).resolves.toEqual(new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
+        expect(buffer).toEqual(new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
         // Non-failing blocks are downloaded only once.
-        expect(mockApi.mock.calls.map(([{ url }]) => url)).toEqual(['url:1', 'url:2', 'url:3', 'url:4', 'url:2']);
+        expect(mockDownloadBlock.mock.calls.map(([, url]) => url)).toEqual([
+            'url:1',
+            'url:2',
+            'url:3',
+            'url:4',
+            'url:2',
+        ]);
     });
 
     it('should retry on block expiry', async () => {
         expiredURL = 'url:1';
         let shouldValidateBlock = false;
 
-        const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
-            const { downloadControls } = initDownload({
-                onStart: resolve,
+        const downloadControls = initDownloadBlocks(
+            {
                 getBlocks: async () => {
                     if (shouldValidateBlock) {
                         expiredURL = '';
@@ -196,16 +204,16 @@ describe.only('initDownload', () => {
                         },
                     ];
                 },
-            });
-            downloadControls.start(mockApi).catch(reject);
-        })
-            .then(streamToBuffer)
-            .then(mergeUint8Arrays);
+            },
+            mockDownloadBlock
+        );
+        const stream = downloadControls.start();
+        const buffer = mergeUint8Arrays(await streamToBuffer(stream));
 
         // Expired block is streamed once after retry.
-        await expect(buffer).resolves.toEqual(new Uint8Array([1, 2, 3]));
+        expect(buffer).toEqual(new Uint8Array([1, 2, 3]));
         // Expired block gets requested.
-        expect(mockApi.mock.calls.map(([{ url }]) => url)).toEqual(['url:1', 'url:1']);
+        expect(mockDownloadBlock.mock.calls.map(([, url]) => url)).toEqual(['url:1', 'url:1']);
     });
 
     it('should re-request expired blocks', async () => {
@@ -217,9 +225,8 @@ describe.only('initDownload', () => {
         let blockRetryCount = 0;
         expiredURL = 'url:1';
 
-        const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
-            const { downloadControls } = initDownload({
-                onStart: resolve,
+        const downloadControls = initDownloadBlocks(
+            {
                 getBlocks: async () => {
                     if (blockRetryCount === TIME_BLOCK_EXPIRES) {
                         expiredURL = '';
@@ -234,39 +241,39 @@ describe.only('initDownload', () => {
                         },
                     ];
                 },
-            });
-            downloadControls.start(mockApi).catch(reject);
-        })
-            .then(streamToBuffer)
-            .then(mergeUint8Arrays);
+            },
+            mockDownloadBlock
+        );
+        const stream = downloadControls.start();
+        const buffer = mergeUint8Arrays(await streamToBuffer(stream));
 
-        await expect(buffer).resolves.toEqual(new Uint8Array([1, 2, 3]));
-
+        expect(buffer).toEqual(new Uint8Array([1, 2, 3]));
         // initial + TIME_BLOCK_EXPIRES
-        expect(mockApi.mock.calls.map(([{ url }]) => url).length).toBe(1 + TIME_BLOCK_EXPIRES);
+        expect(mockDownloadBlock.mock.calls.length).toBe(1 + TIME_BLOCK_EXPIRES);
     });
 
     it('should request new block exactly three times if request fails consequentially', async () => {
         expiredURL = 'url:1';
 
-        const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
-            const { downloadControls } = initDownload({
-                onStart: resolve,
+        const downloadControls = initDownloadBlocks(
+            {
                 getBlocks: async () => {
                     return [
                         {
                             Index: 1,
-                            BareURL: 'url:1',
+                            BareURL: expiredURL,
                             Token: '1',
                         },
                     ];
                 },
-            });
-            downloadControls.start(mockApi).catch(reject);
-        }).then(streamToBuffer);
+            },
+            mockDownloadBlock
+        );
+        const stream = downloadControls.start();
+        const bufferPromise = streamToBuffer(stream);
 
-        await expect(buffer).rejects.toThrowError();
+        await expect(bufferPromise).rejects.toThrowError();
         // 1 initial request + 3 retries
-        expect(mockApi.mock.calls.map(([{ url }]) => url).length).toBe(4);
+        expect(mockDownloadBlock.mock.calls.length).toBe(4);
     });
 });

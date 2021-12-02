@@ -2,12 +2,12 @@ import { createContext, useContext, useEffect, useRef } from 'react';
 
 import { DownloadInfo, ThumbnailMeta } from '@proton/shared/lib/interfaces/drive/transfer';
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
+
 import useDrive from '../../hooks/drive/useDrive';
-import useFiles from '../../hooks/drive/useFiles';
-import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useAsyncQueue from '../../hooks/util/useAsyncQueue';
-import { DownloadControls } from './download';
 import useNavigate from '../../hooks/drive/useNavigate';
+import { useDriveCache } from '../DriveCache/DriveCacheProvider';
+import useDownload from './useDownload';
 
 interface DownloadProviderState {
     addToDownloadQueue: (meta: ThumbnailMeta, downloadInfo: DownloadInfo) => void;
@@ -39,17 +39,18 @@ const getDownloadIdString = ({
     other requests to get to a queue in between them.
 */
 export const ThumbnailsDownloadProvider = ({ children }: any) => {
-    const { downloadDriveFile } = useFiles();
     const { loadLinkCachedThumbnailURL } = useDrive();
-    const asyncQueue = useAsyncQueue(MAX_THREADS_PER_DOWNLOAD);
-    const queueLinkCache = useRef<Set<string>>(new Set());
-    const controls = useRef<Record<string, DownloadControls>>({});
+    const { downloadThumbnail } = useDownload();
     const cache = useDriveCache();
     const navigation = useNavigate();
 
+    const asyncQueue = useAsyncQueue(MAX_THREADS_PER_DOWNLOAD);
+    const queueLinkCache = useRef<Set<string>>(new Set());
+    const controls = useRef<Record<string, AbortController>>({});
+
     const cancelDownloads = () => {
         queueLinkCache.current.forEach((id) => {
-            controls.current[id]?.cancel();
+            controls.current[id]?.abort();
         });
         queueLinkCache.current = new Set();
 
@@ -69,14 +70,13 @@ export const ThumbnailsDownloadProvider = ({ children }: any) => {
             shareId,
             linkId,
             async (params: { downloadURL: string; downloadToken: string }): Promise<Uint8Array[]> => {
-                const { contents, controls: downloadControls } = await downloadDriveFile(shareId, linkId, [
-                    {
-                        Index: 1,
-                        BareURL: params.downloadURL,
-                        Token: params.downloadToken,
-                    },
-                ]);
-                controls.current[downloadId] = downloadControls;
+                const { contents, abortController } = await downloadThumbnail(
+                    shareId,
+                    linkId,
+                    params.downloadURL,
+                    params.downloadToken
+                );
+                controls.current[downloadId] = abortController;
 
                 contents
                     .catch((e: Error) => {

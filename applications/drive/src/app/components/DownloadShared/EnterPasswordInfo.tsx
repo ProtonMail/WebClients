@@ -13,7 +13,7 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
 
     return (
         <>
-            <h3 className="text-bold mt1 mb2">{c('Title').t`Enter file password to download`}</h3>
+            <h3 className="text-bold mt1 mb2">{c('Title').t`Enter password to download`}</h3>
             <form
                 className="w100"
                 onSubmit={(e) => {

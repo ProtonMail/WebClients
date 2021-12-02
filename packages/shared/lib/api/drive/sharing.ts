@@ -8,18 +8,51 @@ export const queryInitSRPHandshake = (token: string) => {
     };
 };
 
-export const queryGetSharedLinkPayload = (
+export const querySharedURLInformation = (token: string) => {
+    return {
+        method: 'get',
+        url: `drive/urls/${token}`,
+        silence: true,
+    };
+};
+
+export const queryShareURLAuth = (token: string) => {
+    return {
+        method: 'post',
+        url: `drive/urls/${token}/auth`,
+        silence: true,
+    };
+};
+
+export const querySharedURLFileRevision = (
     token: string,
+    linkID: string,
     pagination?: {
         FromBlockIndex: number;
         PageSize: number;
     }
 ) => {
+    const query = {
+        method: 'get',
+        url: `drive/urls/${token}/files/${linkID}`,
+    };
+    if (pagination) {
+        return {
+            ...query,
+            params: pagination,
+        };
+    }
+    return query;
+};
+
+export const querySharedURLChildren = (token: string, linkID: string, Page: number, PageSize: number) => {
     return {
-        method: 'post',
-        url: `drive/urls/${token}/file`,
-        silence: true,
-        data: pagination,
+        method: 'get',
+        url: `drive/urls/${token}/folders/${linkID}/children`,
+        params: {
+            Page,
+            PageSize,
+        },
     };
 };
 

@@ -39,7 +39,7 @@ import {
     FOLDER_PAGE_SIZE,
     MAX_THREADS_PER_REQUEST,
 } from '@proton/shared/lib/drive/constants';
-import { ShareFlags, ShareMeta, UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
+import { ShareFlags, ShareMeta, ShareMetaShort, UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
 import { CreatedDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
 import {
     isFolderLinkMeta,
@@ -60,7 +60,11 @@ import {
 import { queryDeleteChildrenLinks, queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryCreateFolder, queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
-import { queryCreateDriveVolume, queryRestoreDriveVolume } from '@proton/shared/lib/api/drive/volume';
+import {
+    queryCreateDriveVolume,
+    queryRestoreDriveVolume,
+    queryDeleteLockedVolumes,
+} from '@proton/shared/lib/api/drive/volume';
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import { validateLinkName, ValidationError } from '../../utils/validation';
@@ -751,6 +755,19 @@ function useDrive() {
         return Promise.all(restorePromiseList);
     };
 
+    const deleteLockedVolumes = async (sharesToDelete: ShareMetaShort[]) => {
+        const volumeIdsToDelete = sharesToDelete.map((shareMeta) => shareMeta.VolumeID);
+        const res = await Promise.all(volumeIdsToDelete.map((volumeId) => api(queryDeleteLockedVolumes(volumeId))));
+
+        cache.set.mainShareIdList((mainShareIdList) => {
+            return mainShareIdList.filter((mainShareId) => {
+                return !sharesToDelete.map((meta) => meta.ShareID).includes(mainShareId);
+            });
+        });
+
+        return res;
+    };
+
     const createShare = async (shareId: string, volumeId: string, linkId: string) => {
         const linkType = LinkType.FILE;
         const name = 'New Share';
@@ -974,6 +991,7 @@ function useDrive() {
         deleteChildrenLinks,
         getSharesReadyToRestore,
         restoreVolumes,
+        deleteLockedVolumes,
     };
 }
 
