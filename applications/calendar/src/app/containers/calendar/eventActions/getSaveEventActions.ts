@@ -1,6 +1,7 @@
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
+import { getSharedEventIDAndSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
 import withVeventRruleWkst from '@proton/shared/lib/calendar/rruleWkst';
@@ -25,7 +26,6 @@ import {
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
 import getEditEventData from '../event/getEditEventData';
-import { getSharedEventIDAndSessionKey } from '../event/getEventHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';

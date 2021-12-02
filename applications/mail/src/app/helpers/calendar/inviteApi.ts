@@ -230,6 +230,7 @@ type FetchEventInvitation = (args: {
     invitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData?: CalendarWidgetData;
+    calendarEvent?: CalendarEventWithMetadata;
     singleEditData?: CalendarEventWithMetadata[];
     hasDecryptionError?: boolean;
     supportedRecurrenceId?: VcalDateOrDateTimeProperty;
@@ -257,13 +258,16 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     if (!calendar) {
         return {};
     }
-    const { memberID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(calendar.ID);
+    const { memberID, addressID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(
+        calendar.ID
+    );
     const calendarData = {
         calendar,
         calendarSettings,
         isCalendarDisabled: getIsCalendarDisabled(calendar),
         calendarNeedsUserAction: getDoesCalendarNeedUserAction(calendar),
         memberID,
+        addressID,
         addressKeys,
         calendarKeys: decryptedCalendarKeys,
     };
@@ -305,7 +309,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         console.error(e.message);
         // We need to detect if the error is due to a failed decryption of the event.
         // We don't have a great way of doing this as the error comes from openpgp
-        return { calendarData, hasDecryptionError: e.message.includes('decrypt') };
+        return { calendarData, hasDecryptionError: e.message.includes('decrypt'), calendarEvent };
     }
 };
 

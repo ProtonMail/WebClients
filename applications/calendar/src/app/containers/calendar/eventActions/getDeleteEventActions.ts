@@ -1,6 +1,7 @@
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
+import { getSharedEventIDAndSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -17,7 +18,6 @@ import {
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
 import getEditEventData from '../event/getEditEventData';
-import { getSharedEventIDAndSessionKey } from '../event/getEventHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';

@@ -1,4 +1,4 @@
-import { getAttendeeEmail, getDuplicateAttendees } from '@proton/shared/lib/calendar/attendees';
+import { getAttendeeEmail, getDuplicateAttendees, withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     createInviteIcs,
@@ -474,13 +474,7 @@ export const getSendIcsAction =
                 });
 
                 const organizerEmail = getAttendeeEmail(organizer);
-                const selfAttendeeWithPartstat = {
-                    ...selfAttendee,
-                    parameters: {
-                        ...selfAttendee.parameters,
-                        partstat,
-                    },
-                };
+                const selfAttendeeWithPartstat = withPartstat(selfAttendee, partstat);
                 const pmVevent = {
                     ...vevent,
                     'x-pm-shared-event-id': { value: sharedEventID },

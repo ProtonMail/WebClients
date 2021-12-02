@@ -1,4 +1,5 @@
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
+import { withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     createInviteIcs,
@@ -96,13 +97,7 @@ const useInviteButtons = ({
                 return false;
             }
             try {
-                const attendeeWithPartstat = {
-                    ...attendee.vcalComponent,
-                    parameters: {
-                        ...attendee.vcalComponent.parameters,
-                        partstat,
-                    },
-                };
+                const attendeeWithPartstat = withPartstat(attendee.vcalComponent, partstat);
                 const vevent = withDtstamp(omit(veventIcs, ['dtstamp']), timestamp);
                 const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
                 if (pmData?.sharedEventID && pmData?.sharedSessionKey) {
