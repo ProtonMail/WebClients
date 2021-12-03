@@ -19,6 +19,7 @@ import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { getSupportedPlusAlias } from '@proton/shared/lib/mail/addresses';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
+import { withIncrementedSequence } from './sequence';
 
 const {
     SEND_INVITATION,
@@ -425,11 +426,12 @@ export const getSendIcsAction =
                     throw new Error('Cannot build cancel ics without attendees');
                 }
                 const vtimezones = await generateVtimezonesComponents(cancelVevent, getVTimezonesMap);
-                const pmCancelVevent = {
+                // According to the RFC, the sequence must be incremented in this case
+                const pmCancelVevent = withIncrementedSequence({
                     ...cancelVevent,
                     'x-pm-shared-event-id': { value: sharedEventID },
                     'x-pm-session-key': { value: sharedSessionKey },
-                };
+                });
                 const cancelIcs = createInviteIcs({
                     method: ICAL_METHOD.CANCEL,
                     prodId,
