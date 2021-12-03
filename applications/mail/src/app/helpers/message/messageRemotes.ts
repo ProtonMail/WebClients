@@ -1,7 +1,7 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MessageRemoteImage } from '../../logic/messages/messagesTypes';
 
-export const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'];
+export const ATTRIBUTES = ['url', 'xlink:href', 'src', 'srcset', 'svg', 'background', 'poster'];
 
 export const urlCreator = () => window.URL || window.webkitURL;
 
