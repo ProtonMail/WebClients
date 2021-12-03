@@ -4,7 +4,7 @@ import { getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { withUpdatedDtstamp } from './dtstamp';
 
-export const withIncreasedSequence = (vevent: VcalVeventComponent) => {
+export const withIncrementedSequence = (vevent: VcalVeventComponent) => {
     const sequenceValue = vevent.sequence?.value;
     if (sequenceValue === undefined) {
         return { ...vevent, sequence: { value: 0 } };
