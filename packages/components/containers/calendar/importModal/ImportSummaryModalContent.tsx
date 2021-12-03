@@ -21,8 +21,11 @@ const ImportSummaryModalContent = ({ model }: Props) => {
               totalImported
           )
         : isPartialSuccess
-        ? c('Import calendar')
-              .t`An error occurred while encrypting and adding your events. ${totalImported} out of ${totalToImport} events successfully imported.`
+        ? c('Import calendar').ngettext(
+              msgid`An error occurred while encrypting and adding your event. ${totalImported} out of ${totalToImport} event successfully imported.`,
+              `An error occurred while encrypting and adding your events. ${totalImported} out of ${totalToImport} events successfully imported.`,
+              totalToImport
+          )
         : c('Import calendar').ngettext(
               msgid`An error occurred while encrypting and adding your event. No event could be imported.`,
               `An error occurred while encrypting and adding your events. No event could be imported.`,
