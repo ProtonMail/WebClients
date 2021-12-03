@@ -27,7 +27,7 @@ import getChangePartstatActions from './getChangePartstatActions';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
-import { withIncreasedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
+import { withIncrementedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
@@ -187,7 +187,7 @@ const getSaveRecurringEventActions = async ({
             ...newVeventComponent,
             sequence: { value: 0 },
         });
-        const originalVeventWithSequence = withUpdatedDtstamp(withIncreasedSequence(originalVeventComponent));
+        const originalVeventWithSequence = withUpdatedDtstamp(withIncrementedSequence(originalVeventComponent));
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
 
