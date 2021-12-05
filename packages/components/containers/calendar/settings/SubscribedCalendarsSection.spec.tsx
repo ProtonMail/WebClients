@@ -13,6 +13,8 @@ import ModalsProvider from '../../modals/Provider';
 import SubscribedCalendarsSection, { SubscribedCalendarsSectionProps } from './SubscribedCalendarsSection';
 
 jest.mock('../../../hooks/useApi', () => () => jest.fn(() => Promise.resolve({})));
+jest.mock('../../../hooks/useEarlyAccess', () => () => ({}));
+jest.mock('../../../hooks/useFeatures', () => () => ({}));
 jest.mock('../hooks/useGetCalendarsEmails', () => jest.fn(() => ({})));
 jest.mock('../../../hooks/useSubscribedCalendars', () => jest.fn(() => ({ loading: true })));
 jest.mock('../../../hooks/useEventManager', () => jest.fn(() => ({ subscribe: jest.fn() })));

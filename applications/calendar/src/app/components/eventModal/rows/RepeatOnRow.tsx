@@ -36,9 +36,9 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange }: Props) =
     };
 
     return (
-        <div className="flex-item-fluid ml0-5 mb0-5 on-mobile-ml0">
+        <div className="ml0-5 mb0-5 on-mobile-ml0">
             <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat on`}</label>
-            <div className="flex flex-justify-space-between">
+            <div className="flex flex-gap-0-5">
                 {DAYS.map((dayIndex) => {
                     const day = (dayIndex + weekStartsOn) % 7;
                     const dayLong = weekdaysLong[day];

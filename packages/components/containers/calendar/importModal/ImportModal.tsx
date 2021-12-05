@@ -16,7 +16,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, IMPORT_STEPS, ImportCalendarModel, ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
 import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
-import { FormModal, onlyDragFiles, PrimaryButton } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, onlyDragFiles, Button } from '../../../components';
 
 import { useApi, useEventManager, useCalendarEmailNotificationsFeature } from '../../../hooks';
 
@@ -31,6 +31,7 @@ interface Props {
     calendars: Calendar[];
     onClose?: () => void;
     files?: File[];
+    isOpen: boolean;
 }
 
 const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
@@ -44,7 +45,7 @@ const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
     loading: false,
 });
 
-const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
+const ImportModal = ({ calendars, defaultCalendar, files, isOpen, onClose }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
@@ -77,14 +78,12 @@ const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
         }
     };
 
-    const { content, ...modalProps } = (() => {
+    const { content,
+        close = <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+        submit,
+        title = c('Title').t`Import events`,
+        ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
-            const submit = (
-                <PrimaryButton disabled={model.step === IMPORT_STEPS.ATTACHING} loading={model.loading} type="submit">
-                    {c('Action').t`Import`}
-                </PrimaryButton>
-            );
-
             const handleClear = () => {
                 setModel(getInitialState(model.calendar));
             };
@@ -166,6 +165,18 @@ const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
                 }
             };
 
+            const submit = (
+                <Button
+                    color="norm"
+                    disabled={model.step === IMPORT_STEPS.ATTACHING}
+                    loading={model.loading}
+                    type="submit"
+                    onClick={handleSubmit}
+                >
+                    {c('Action').t`Import`}
+                </Button>
+            );
+
             return {
                 content: (
                     <AttachingModalContent
@@ -187,7 +198,6 @@ const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
 
         if (model.step <= IMPORT_STEPS.WARNING_IMPORT_INVITATION) {
             const totalEvents = model.eventsParsed.length + model.visibleErrors.length + model.hiddenErrors.length;
-            const submit = <PrimaryButton type="submit">{c('Action').t`Import`}</PrimaryButton>;
 
             const handleSubmit = () => {
                 setModel({
@@ -195,6 +205,8 @@ const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
                     step: model.visibleErrors.length ? IMPORT_STEPS.WARNING_PARTIAL_IMPORT : IMPORT_STEPS.IMPORTING,
                 });
             };
+
+            const submit = <Button onClick={handleSubmit} color="norm" type="submit">{c('Action').t`Import`}</Button>;
 
             return {
                 title: c('Title').ngettext(msgid`Import as simple event?`, `Import as simple events?`, totalEvents),
@@ -205,27 +217,27 @@ const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
         }
 
         if (model.step <= IMPORT_STEPS.WARNING_PARTIAL_IMPORT) {
-            const { totalToImport } = extractTotals(model);
-            const submit = <PrimaryButton type="submit">{c('Action').t`Continue import`}</PrimaryButton>;
-
             const handleSubmit = () => {
                 setModel({ ...model, step: IMPORT_STEPS.IMPORTING, visibleErrors: [] });
             };
+            const { totalToImport } = extractTotals(model);
+            const submit = (
+                <Button onClick={handleSubmit} color="norm" type="submit">{c('Action').t`Continue import`}</Button>
+            );
 
             return {
                 title: !totalToImport ? c('Title').t`Import failed` : c('Title').t`Continue with partial import?`,
                 content: <PartialImportModalContent model={model} />,
-                submit,
-                hasSubmit: !!totalToImport,
+                submit: totalToImport ? submit : null,
                 onSubmit: handleSubmit,
             };
         }
 
         if (model.step === IMPORT_STEPS.IMPORTING) {
             const submit = (
-                <PrimaryButton disabled type="submit">
+                <Button color="norm" disabled type="submit">
                     {c('Action').t`Continue`}
-                </PrimaryButton>
+                </Button>
             );
 
             const handleFinish = async (importedEvents: ImportedEvent[]) => {
@@ -247,13 +259,15 @@ const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
             };
         }
         // model.step === IMPORT_STEPS.FINISHED at this stage
-        const submit = <PrimaryButton type="submit">{c('Action').t`Close`}</PrimaryButton>;
+        const submit = (
+            <Button className="mlauto" onClick={onClose} color="norm" type="submit">{c('Action').t`Close`}</Button>
+        );
 
         return {
             content: <ImportSummaryModalContent model={model} />,
-            submit,
             close: null,
-            onSubmit: rest.onClose,
+            submit,
+            onSubmit: onClose,
         };
     })();
 
@@ -264,9 +278,14 @@ const ImportModal = ({ calendars, defaultCalendar, files, ...rest }: Props) => {
     }, []);
 
     return (
-        <FormModal title={c('Title').t`Import events`} {...modalProps} {...rest}>
-            {content}
-        </FormModal>
+        <ModalTwo open={isOpen} size="large" className="w100" fullscreenOnMobile onClose={onClose} {...modalProps}>
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>{content}</ModalTwoContent>
+            <ModalTwoFooter>
+                {close}
+                {submit}
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

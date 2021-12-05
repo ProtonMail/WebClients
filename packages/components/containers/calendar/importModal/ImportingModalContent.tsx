@@ -20,7 +20,7 @@ import {
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { Alert, DynamicProgress } from '../../../components';
+import { DynamicProgress } from '../../../components';
 import { useApi, useBeforeUnload, useGetCalendarInfo, useCalendarEmailNotificationsFeature } from '../../../hooks';
 
 interface Props {
@@ -134,9 +134,9 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
     return (
         <>
-            <Alert className="mb1">
+            <div className="mb1">
                 {c('Import calendar').t`Please don't close the tab before the importing process is finished.`}
-            </Alert>
+            </div>
             <DynamicProgress
                 id="progress-import-calendar"
                 value={totalProcessed}
