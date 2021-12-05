@@ -28,7 +28,7 @@ select {
 		padding-block-end: rem(1); // just to compensate the difference of text size
 	}
 
-	&-assist {
+	&-assist:not(:empty) {
 		min-block-size: 1.9em;
 		padding-block-start: $inputform-default-spacing-text;
 	}

@@ -10,9 +10,11 @@ import {
 } from '@proton/shared/lib/calendar/shareUrl/helpers';
 import { createPublicLink, deletePublicLink, editPublicLink } from '@proton/shared/lib/api/calendars';
 import { splitKeys } from '@proton/shared/lib/keys';
-import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { Nullable } from '@proton/shared/lib/interfaces/utils';
+import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { useApi, useGetCalendarInfo, useModals, useNotifications } from '../../../hooks';
+import { useApi, useGetCalendarInfo, useNotifications } from '../../../hooks';
+import { useModalsMap } from '../../../hooks/useModalsMap';
 import { useCalendarModelEventManager } from '../../eventManager';
 
 import LinkTable from './LinkTable';
@@ -24,6 +26,16 @@ import { Alert, Loader } from '../../../components';
 import useCalendarShareUrls from './useCalendarShareUrls';
 import { SettingsParagraph, SettingsSection } from '../../account';
 
+type ModalsMap = {
+    shareLinkSuccessModal: ModalWithProps<{
+        onSubmit: (e: MouseEvent<HTMLButtonElement>) => void;
+        accessLevel: ACCESS_LEVEL;
+        link: string;
+    }>;
+    deleteLinkConfirmationModal: ModalWithProps<{ calendarID: string; urlID: string }>;
+    editLinkModal: ModalWithProps<{ calendarID: string; urlID: string; purpose: Nullable<string> }>;
+};
+
 interface Props extends ComponentPropsWithoutRef<'div'> {
     defaultCalendar?: Calendar;
     calendars: Calendar[];
@@ -33,15 +45,20 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
     const { linksMap, isLoadingLinks } = useCalendarShareUrls(calendars);
     const [isLoadingCreate, setIsLoadingCreate] = useState(false);
-    const [isLoadingMap, setIsLoadingMap] = useState<SimpleMap<boolean>>({});
+    const [isLoadingMap, setIsLoadingMap] = useState<Partial<Record<string, boolean>>>({});
     const api = useApi();
     const { createNotification } = useNotifications();
     const getCalendarInfo = useGetCalendarInfo();
-    const { createModal } = useModals();
     const { call } = useCalendarModelEventManager();
     const notifyLinkCopied = () => {
         createNotification({ type: 'info', text: c('Info').t`Link copied to clipboard` });
     };
+
+    const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
+        shareLinkSuccessModal: { isOpen: false },
+        deleteLinkConfirmationModal: { isOpen: false },
+        editLinkModal: { isOpen: false },
+    });
 
     const handleCreateLink = async ({ accessLevel, calendarID }: { accessLevel: ACCESS_LEVEL; calendarID: string }) => {
         setIsLoadingCreate(true);
@@ -69,16 +86,17 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
         createNotification({ type: 'success', text: c('Info').t`Link created` });
         setIsLoadingCreate(false);
 
-        createModal(
-            <ShareLinkSuccessModal
-                onSubmit={(e: MouseEvent<HTMLButtonElement>) => {
+        updateModal('shareLinkSuccessModal', {
+            isOpen: true,
+            props: {
+                onSubmit: (e: MouseEvent<HTMLButtonElement>) => {
                     textToClipboard(link, e.currentTarget);
                     notifyLinkCopied();
-                }}
-                accessLevel={accessLevel}
-                link={link}
-            />
-        );
+                },
+                accessLevel,
+                link,
+            },
+        });
     };
 
     const toggleLinkLoading = (urlID: string, value: boolean) => {
@@ -110,10 +128,35 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
         urlID: string;
         purpose: Nullable<string>;
     }) => {
-        return new Promise<void>((resolve, reject) => {
-            createModal(
+        updateModal('editLinkModal', {
+            isOpen: true,
+            props: { calendarID, urlID, purpose },
+        });
+    };
+
+    const handleDelete = ({ calendarID, urlID }: { calendarID: string; urlID: string }) => {
+        updateModal('deleteLinkConfirmationModal', {
+            isOpen: true,
+            props: { calendarID, urlID },
+        });
+    };
+
+    const infoParagraph = (
+        <SettingsParagraph>{c('Info')
+            .t`Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.`}</SettingsParagraph>
+    );
+
+    const { editLinkModal, shareLinkSuccessModal, deleteLinkConfirmationModal } = modalsMap;
+    const editLinkModalProps = editLinkModal.props;
+
+    return (
+        <SettingsSection {...rest}>
+            {!!editLinkModalProps && (
                 <EditLinkModal
+                    isOpen={editLinkModal.isOpen}
                     onSubmit={async (untrimmedPurpose) => {
+                        const { calendarID, urlID } = editLinkModalProps;
+
                         return tryLoadingAction(urlID, async () => {
                             const { decryptedCalendarKeys } = await getCalendarInfo(calendarID);
                             const { publicKeys } = splitKeys(decryptedCalendarKeys);
@@ -124,38 +167,39 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
 
                             await api<void>(editPublicLink({ calendarID, urlID, encryptedPurpose }));
                             await call([calendarID]);
+
+                            closeModal('editLinkModal');
                         });
                     }}
-                    decryptedPurpose={purpose}
-                    onClose={reject}
+                    decryptedPurpose={editLinkModalProps.purpose}
+                    onClose={() => {
+                        closeModal('editLinkModal');
+                    }}
                 />
-            );
-        });
-    };
-    const handleDelete = ({ calendarID, urlID }: { calendarID: string; urlID: string }) => {
-        return new Promise((_resolve, reject) => {
-            createModal(
+            )}
+            {!!shareLinkSuccessModal.props && (
+                <ShareLinkSuccessModal
+                    isOpen={shareLinkSuccessModal.isOpen}
+                    onClose={() => closeModal('shareLinkSuccessModal')}
+                    {...shareLinkSuccessModal.props}
+                />
+            )}
+            {!!deleteLinkConfirmationModal.props && (
                 <DeleteLinkConfirmationModal
+                    isOpen={deleteLinkConfirmationModal.isOpen}
                     onConfirm={() => {
+                        const { calendarID, urlID } = deleteLinkConfirmationModal.props!;
+
                         return tryLoadingAction(urlID, async () => {
                             await api<void>(deletePublicLink({ calendarID, urlID }));
                             await call([calendarID]);
+                            closeModal('deleteLinkConfirmationModal');
                             createNotification({ type: 'success', text: c('Info').t`Link deleted` });
                         });
                     }}
-                    onClose={reject}
+                    onClose={() => closeModal('deleteLinkConfirmationModal')}
                 />
-            );
-        });
-    };
-
-    const infoParagraph = (
-        <SettingsParagraph>{c('Info')
-            .t`Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.`}</SettingsParagraph>
-    );
-
-    return (
-        <SettingsSection {...rest}>
+            )}
             {calendars.length ? (
                 <>
                     {infoParagraph}
