@@ -12,8 +12,6 @@ import {
     SidebarListItemHeaderLink,
     SimpleSidebarListItemHeader,
     Icon,
-    useModals,
-    useGetCalendarUserSettings,
     useUser,
     Tooltip,
     SimpleDropdown,
@@ -24,7 +22,7 @@ import {
 } from '@proton/components';
 import { c } from 'ttag';
 import { updateCalendar } from '@proton/shared/lib/api/calendars';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { Calendar, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { partition } from '@proton/shared/lib/helpers/array';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
@@ -32,6 +30,7 @@ import SubscribeCalendarModal from '@proton/components/containers/calendar/subsc
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import { getIsCalendarActive } from '@proton/shared/lib/calendar/calendar';
 import getHasUserReachedCalendarLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarLimit';
+import { Nullable } from '@proton/shared/lib/interfaces';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
 
@@ -43,6 +42,7 @@ export interface CalendarSidebarProps {
     miniCalendar: ReactNode;
     onCreateEvent?: () => void;
     onCreateCalendar?: (id: string) => void;
+    calendarUserSettings: CalendarUserSettings;
 }
 
 const CalendarSidebar = ({
@@ -53,16 +53,19 @@ const CalendarSidebar = ({
     miniCalendar,
     onCreateEvent,
     onCreateCalendar,
+    calendarUserSettings,
 }: CalendarSidebarProps) => {
     const { call } = useEventManager();
-    const { createModal } = useModals();
     const api = useApi();
     const [user] = useUser();
-    const getCalendarUserSettings = useGetCalendarUserSettings();
     const [loadingAction, withLoadingAction] = useLoading();
     const { enabled, unavailable } = useCalendarSubscribeFeature();
 
     const { createNotification } = useNotifications();
+
+    const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false);
+    const [isSubscribeCalendarModalOpen, setIsSubscribeCalendarModalOpen] = useState(false);
+    const [isLimitReachedModalCopy, setIsLimitReachedModalCopy] = useState<Nullable<string>>(null);
 
     const [personalCalendars, otherCalendars] = useMemo(
         () => partition<Calendar>(calendars, getIsPersonalCalendar),
@@ -90,33 +93,26 @@ const CalendarSidebar = ({
     };
 
     const handleCreatePersonalCalendar = async () => {
-        const calendarUserSettings = await getCalendarUserSettings();
-
-        return canAddPersonalCalendars
-            ? createModal(
-                  <CalendarModal
-                      activeCalendars={personalCalendars.filter(getIsCalendarActive)}
-                      defaultCalendarID={calendarUserSettings.DefaultCalendarID}
-                      onCreateCalendar={onCreateCalendar}
-                  />
-              )
-            : createModal(
-                  <CalendarLimitReachedModal>
-                      {c('Personal calendar limit reached modal body')
-                          .t`Unable to create more calendars. You have reached the maximum of personal calendars within your plan.`}
-                  </CalendarLimitReachedModal>
-              );
+        if (canAddPersonalCalendars) {
+            setIsCalendarModalOpen(true);
+        } else {
+            setIsLimitReachedModalCopy(
+                c('Personal calendar limit reached modal body')
+                    .t`Unable to create more calendars. You have reached the maximum of personal calendars within your plan.`
+            );
+        }
     };
 
-    const handleCreateSubscribedCalendar = () =>
-        canAddSubscribedCalendars
-            ? createModal(<SubscribeCalendarModal onCreateCalendar={onCreateCalendar} />)
-            : createModal(
-                  <CalendarLimitReachedModal>
-                      {c('Subscribed calendar limit reached modal body')
-                          .t`Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.`}
-                  </CalendarLimitReachedModal>
-              );
+    const handleCreateSubscribedCalendar = () => {
+        if (canAddSubscribedCalendars) {
+            setIsSubscribeCalendarModalOpen(true);
+        } else {
+            setIsLimitReachedModalCopy(
+                c('Subscribed calendar limit reached modal body')
+                    .t`Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.`
+            );
+        }
+    };
 
     const primaryAction = (
         <SidebarPrimaryButton
@@ -242,6 +238,29 @@ const CalendarSidebar = ({
             primary={primaryAction}
             version={<CalendarSidebarVersion />}
         >
+            {isCalendarModalOpen && (
+                <CalendarModal
+                    isOpen
+                    onClose={() => setIsCalendarModalOpen(false)}
+                    activeCalendars={personalCalendars.filter(getIsCalendarActive)}
+                    defaultCalendarID={calendarUserSettings.DefaultCalendarID}
+                    onCreateCalendar={onCreateCalendar}
+                />
+            )}
+
+            <SubscribeCalendarModal
+                isOpen={isSubscribeCalendarModalOpen}
+                onClose={() => setIsSubscribeCalendarModalOpen(false)}
+                onCreateCalendar={onCreateCalendar}
+            />
+
+            <CalendarLimitReachedModal
+                isOpen={!!isLimitReachedModalCopy}
+                onClose={() => setIsLimitReachedModalCopy(null)}
+            >
+                {isLimitReachedModalCopy}
+            </CalendarLimitReachedModal>
+
             <SidebarNav data-test-id="calendar-sidebar:calendars-list-area">
                 <div className="flex-item-noshrink">{miniCalendar}</div>
                 {personalCalendarsList}

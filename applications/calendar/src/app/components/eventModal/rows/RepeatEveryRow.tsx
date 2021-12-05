@@ -49,7 +49,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                 <label htmlFor="event-custom-frequency-number">{c('Label').t`Repeat every`}</label>
                 <div className="flex on-mobile-flex-column mt0-5 mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid">
-                        <span className="flex-item-fluid">
+                        <span className="w6e">
                             <IntegerInput
                                 id="event-custom-frequency-number"
                                 data-test-id="event-modal/custom-frequency/interval:input"

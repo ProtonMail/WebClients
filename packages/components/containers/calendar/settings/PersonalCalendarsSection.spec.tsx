@@ -12,15 +12,21 @@ import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
 import PersonalCalendarsSection, { PersonalCalendarsSectionProps } from './PersonalCalendarsSection';
 
+jest.mock('../../../hooks/useApi', () => ({
+    __esModule: true,
+    default: jest.fn(() => jest.fn().mockResolvedValue({})),
+}));
+
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
 jest.mock('../hooks/useGetCalendarsEmails', () => jest.fn(() => ({})));
 jest.mock('../../eventManager/calendar/useCalendarsKeysSettingsListener', () => () => ({}));
 jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
-    useCalendarModelEventManager: jest.fn(),
+    useCalendarModelEventManager: jest.fn(() => ({ call: jest.fn() })),
 }));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
+jest.mock('@proton/components/hooks/useEarlyAccess', () => () => ({}));
 
 function renderComponent(props?: Partial<PersonalCalendarsSectionProps>) {
     const defaultProps: PersonalCalendarsSectionProps = {

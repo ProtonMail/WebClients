@@ -15,6 +15,14 @@ import MainContainer from './MainContainer';
 import { useContactEmailsCache } from './ContactEmailsProvider';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 
+window.ResizeObserver =
+    window.ResizeObserver ||
+    jest.fn().mockImplementation(() => ({
+        disconnect: jest.fn(),
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+    }));
+
 jest.mock('./eventActions/getSaveEventActions', () => jest.fn());
 jest.mock('@proton/components/hooks/useAddresses', () => ({
     __esModule: true,
@@ -169,13 +177,14 @@ jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
         },
     ]),
 }));
+jest.mock('@proton/components/containers/calendar/hooks/useGetCalendarActions', () => () => ({}));
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => () => ({}));
 jest.mock('@proton/components/hooks/useContactEmails', () => () => []);
 jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
+jest.mock('@proton/components/hooks/useCalendarSubscribeFeature', () => () => ({ unavailable: false, enabled: true }));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
-jest.mock('@proton/components/hooks/useAppTitle', () => () => 'appTitle');
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => () => [{}]);
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
@@ -390,12 +399,6 @@ describe('MainContainer', () => {
             expect(screen.getByText(/At most 100 participants are allowed per invitation/)).toBeInTheDocument();
             expect(screen.getByText(/101 participants/)).toBeInTheDocument();
             expect(screen.getByText(/Save/)).toBeDisabled();
-
-            userEvent.type(participantsInput, 'invalidEm@@@@.{enter}');
-            const invalidEmailAddressWarning = screen.getByText(/Invalid email address/);
-
-            expect(invalidEmailAddressWarning).toBeVisible();
-            expect(invalidEmailAddressWarning).toBeInTheDocument();
         });
 
         it('validates inputs and submits', async () => {

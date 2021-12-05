@@ -1,16 +1,28 @@
+import { ComponentPropsWithoutRef, useState, useRef } from 'react';
+import { c, msgid } from 'ttag';
+
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-import { ComponentPropsWithoutRef, useState } from 'react';
-import { c, msgid } from 'ttag';
-import { Alert, ConfirmModal, ErrorButton, Href } from '../../../components';
-import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
+
+import { AlertModal, Button, Href } from '../../../components';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { CalendarModal } from '../calendarModal/CalendarModal';
 import useSubscribedCalendars from '../../../hooks/useSubscribedCalendars';
 import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarModal';
 import CalendarsSection from './CalendarsSection';
 import { SettingsParagraph } from '../../account';
+import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import { useModalsMap } from '../../../hooks/useModalsMap';
+
+type ModalsMap = {
+    calendarModal: ModalWithProps<{
+        editCalendar?: Calendar;
+    }>;
+    subscribeCalendarModal: ModalWithProps;
+    deleteCalendarModal: ModalWithProps;
+};
 
 export interface SubscribedCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
     activeAddresses: Address[];
@@ -18,6 +30,7 @@ export interface SubscribedCalendarsSectionProps extends ComponentPropsWithoutRe
     user: UserModel;
     unavailable?: boolean;
 }
+
 const SubscribedCalendarsSection = ({
     activeAddresses,
     calendars = [],
@@ -28,37 +41,31 @@ const SubscribedCalendarsSection = ({
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const [loadingMap, setLoadingMap] = useState({});
     const { subscribedCalendars, loading } = useSubscribedCalendars(calendars);
 
+    const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>();
+
+    const { modalsMap, updateModal, closeModal } = useModalsMap<ModalsMap>({
+        calendarModal: { isOpen: false },
+        subscribeCalendarModal: { isOpen: false },
+        deleteCalendarModal: { isOpen: false },
+    });
+
     const handleCreate = () => {
-        createModal(<SubscribeCalendarModal />);
+        updateModal('subscribeCalendarModal', { isOpen: true });
     };
 
-    const handleEdit = (calendar: Calendar) => {
-        createModal(<CalendarModal calendar={calendar} />);
+    const handleEdit = (editCalendar: Calendar) => {
+        updateModal('calendarModal', { isOpen: true, props: { editCalendar } });
     };
 
     const handleDelete = async (id: string) => {
-        const title = c('Title').t`Remove calendar`;
-        const confirmText = c('Action').t`Remove calendar`;
-        const alertText = c('Info').t`The calendar will be removed from your account.`;
-
         await new Promise<void>((resolve, reject) => {
-            createModal(
-                <ConfirmModal
-                    title={title}
-                    confirm={<ErrorButton type="submit">{confirmText}</ErrorButton>}
-                    onClose={reject}
-                    onConfirm={resolve}
-                >
-                    <Alert className="mb1" type="error">
-                        {alertText}
-                    </Alert>
-                </ConfirmModal>
-            );
+            updateModal('deleteCalendarModal', { isOpen: true });
+            confirm.current = { resolve, reject };
         });
+
         try {
             setLoadingMap((old) => ({
                 ...old,
@@ -77,36 +84,74 @@ const SubscribedCalendarsSection = ({
         activeAddresses.length > 0 &&
         calendars.length < MAX_SUBSCRIBED_CALENDARS_PER_USER;
 
+    const { deleteCalendarModal, calendarModal, subscribeCalendarModal } = modalsMap;
+
     return (
-        <CalendarsSection
-            calendars={loading ? calendars : subscribedCalendars}
-            user={user}
-            loading={loading}
-            loadingMap={loadingMap}
-            canAdd={canAddCalendar}
-            isFeatureUnavailable={unavailable}
-            add={c('Action').t`Add calendar`}
-            calendarLimitReachedText={c('Calendar limit warning').ngettext(
-                msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendar.`,
-                `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendars.`,
-                MAX_SUBSCRIBED_CALENDARS_PER_USER
+        <>
+            <AlertModal
+                open={deleteCalendarModal.isOpen}
+                title={c('Title').t`Remove calendar`}
+                buttons={[
+                    <Button
+                        color="danger"
+                        onClick={() => {
+                            confirm.current?.resolve();
+                            closeModal('deleteCalendarModal');
+                        }}
+                    >{c('Action').t`Remove calendar`}</Button>,
+                    <Button
+                        onClick={() => {
+                            confirm.current?.reject();
+                            closeModal('deleteCalendarModal');
+                        }}
+                    >{c('Action').t`Cancel`}</Button>,
+                ]}
+                onClose={() => confirm.current?.reject()}
+            >
+                {c('Info').t`The calendar will be removed from your account.`}
+            </AlertModal>
+
+            <SubscribeCalendarModal
+                isOpen={subscribeCalendarModal.isOpen}
+                onClose={() => closeModal('subscribeCalendarModal')}
+            />
+            {calendarModal.isOpen && !!calendarModal.props?.editCalendar && (
+                <CalendarModal
+                    isOpen
+                    calendar={calendarModal.props.editCalendar}
+                    onClose={() => closeModal('calendarModal')}
+                />
             )}
-            description={
-                <SettingsParagraph>
-                    {c('Subscribed calendar section description')
-                        .t`Add public, external, or shared calendars using a URL.`}
-                    <br />
-                    <Href url="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c(
-                        'Knowledge base link label'
-                    ).t`Here's how`}</Href>
-                </SettingsParagraph>
-            }
-            onAdd={handleCreate}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-            canUpgradeLimit={false}
-            {...rest}
-        />
+            <CalendarsSection
+                calendars={loading ? calendars : subscribedCalendars}
+                user={user}
+                loading={loading}
+                loadingMap={loadingMap}
+                canAdd={canAddCalendar}
+                isFeatureUnavailable={unavailable}
+                add={c('Action').t`Add calendar`}
+                calendarLimitReachedText={c('Calendar limit warning').ngettext(
+                    msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendar.`,
+                    `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendars.`,
+                    MAX_SUBSCRIBED_CALENDARS_PER_USER
+                )}
+                description={
+                    <SettingsParagraph>
+                        {c('Subscribed calendar section description')
+                            .t`Add public, external, or shared calendars using a URL.`}
+                        <br />
+                        <Href url="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c(
+                            'Knowledge base link label'
+                        ).t`Here's how`}</Href>
+                    </SettingsParagraph>
+                }
+                onAdd={handleCreate}
+                onEdit={handleEdit}
+                onDelete={handleDelete}
+                canUpgradeLimit={false}
+                {...rest}
+            />
+        </>
     );
 };
 

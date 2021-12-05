@@ -95,7 +95,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
 
                 {frequencyModel.ends.type === AFTER_N_TIMES && (
                     <div className="flex flex-nowrap flex-align-items-center flex-item-fluid mt0-5 ml0-5 on-tiny-mobile-ml0">
-                        <div className="flex-item-fluid max-w5e">
+                        <div className="max-w6e">
                             <IntegerInput
                                 id={COUNT_ID}
                                 value={frequencyModel.ends.count}
