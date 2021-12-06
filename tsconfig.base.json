@@ -15,7 +15,7 @@
         "resolveJsonModule": true,
         "strict": true,
         "target": "es2018",
-        "skipLibCheck": false,
+        "skipLibCheck": true,
         "types": ["webpack-env", "jest"]
     },
     "exclude": ["**/node_modules", "**/.*/"]
