@@ -204,7 +204,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
                                         <div className="flex-item-fluid">
                                             <strong className="text-uppercase">{c('Label').t`Email`}</strong>
                                         </div>
-                                        <div className="w25">
+                                        <div className="w33 pr0-5 text-right">
                                             <strong className="text-uppercase">{c('Label').t`Group`}</strong>
                                         </div>
                                     </div>

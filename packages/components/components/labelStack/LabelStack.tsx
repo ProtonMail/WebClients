@@ -28,7 +28,7 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
     return (
         <ul
             className={classnames([
-                'label-stack unstyled m0 inline-flex flew-row flex-align-items-center stop-propagation',
+                'label-stack unstyled m0 inline-flex max-w100 flex-row flex-align-items-center stop-propagation',
                 isStacked && 'is-stacked',
                 className,
             ])}
