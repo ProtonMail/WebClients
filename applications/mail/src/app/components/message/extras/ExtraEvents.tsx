@@ -11,7 +11,7 @@ import { unary } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { getAttachments } from '@proton/shared/lib/mail/messages';
+import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -78,6 +78,7 @@ const ExtraEvents = ({ message }: Props) => {
 
     const loadingConfigs = loadingContactEmails || loadingAddresses || loadingUserSettings || loadingUser;
     const messageHasDecryptionError = !!message.errors?.decryption?.length;
+    const isBouncedEmail = isBounced(message.data);
 
     useEffect(() => {
         try {
@@ -89,6 +90,7 @@ const ExtraEvents = ({ message }: Props) => {
             }
             if (
                 messageHasDecryptionError ||
+                isBouncedEmail ||
                 loadingConfigs ||
                 !getMessageHasData(message) ||
                 loadedWidget === message.data.ID
