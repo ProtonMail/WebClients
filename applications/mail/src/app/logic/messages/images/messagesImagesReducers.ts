@@ -2,12 +2,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
 import { markEmbeddedImagesAsLoaded } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
-import {
-    loadBackgroundImages,
-    loadElementOtherThanImages,
-    removeProtonPrefix,
-    urlCreator,
-} from '../../../helpers/message/messageRemotes';
+import { loadBackgroundImages, loadElementOtherThanImages, urlCreator } from '../../../helpers/message/messageRemotes';
 import { getMessage } from '../helpers/messagesReducer';
 import {
     LoadEmbeddedParams,
@@ -64,12 +59,15 @@ export const loadRemotePending = (
     const messageState = getMessage(state, ID);
 
     if (messageState) {
-        const imagesToLoadIDs = imagesToLoad.map((image) => image.id);
-        getRemoteImages(messageState).forEach((image) => {
-            if (imagesToLoadIDs.includes(image.id)) {
-                image.status = 'loading';
+        const images = imagesToLoad.map((image) => ({ image }));
+        const imagesToLoadState = getStateImages(images, messageState);
+
+        imagesToLoadState.forEach(({ image }) => {
+            image.status = 'loading';
+            if (!image.originalURL) {
                 image.originalURL = image.url;
             }
+            image.error = undefined;
         });
     }
 };
@@ -162,7 +160,12 @@ export const loadRemoteDirectFulFilled = (
 
         imagesLoaded.forEach(({ image, error }) => {
             if (image) {
-                removeProtonPrefix(image.original as HTMLElement);
+                // Could have been removed before
+                image.url = image.originalURL;
+                if (image.original instanceof HTMLElement) {
+                    image.original.setAttribute('src', image.originalURL as string);
+                    image.original.removeAttribute('proton-src');
+                }
                 image.error = error;
                 image.status = 'loaded';
             }
