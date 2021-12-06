@@ -21,6 +21,10 @@ import OutlookMailInstructions from '../../components/easySwitch/instructions/ou
 import OutlookCalendarInstructions from '../../components/easySwitch/instructions/outlook/OutlookCalendarInstructions';
 import OutlookContactsInstructions from '../../components/easySwitch/instructions/outlook/OutlookContactsInstructions';
 
+import DefaultMailInstructions from '../../components/easySwitch/instructions/default/DefaultMailInstructions';
+import DefaultCalendarInstructions from '../../components/easySwitch/instructions/default/DefaultCalendarInstructions';
+import DefaultContactsInstructions from '../../components/easySwitch/instructions/default/DefaultContactsInstructions';
+
 interface Props {
     onClose?: () => void;
     addresses: Address[];
@@ -30,7 +34,7 @@ interface Props {
     activeCalendars: Calendar[];
 }
 
-const { YAHOO, OUTLOOK } = NON_OAUTH_PROVIDER;
+const { DEFAULT, YAHOO, OUTLOOK } = NON_OAUTH_PROVIDER;
 
 const EasySwitchInstructionsModal = ({
     addresses,
@@ -48,26 +52,35 @@ const EasySwitchInstructionsModal = ({
     const titleRenderer = () => {
         if (importType === ImportType.MAIL) {
             if (provider === YAHOO) {
-                return c('Modal title').t`Prepare Yahoo Mail for import`;
+                return c('Modal title').t`How to import emails from Yahoo`;
             }
             if (provider === OUTLOOK) {
-                return c('Modal title').t`Prepare Outlook.com for import`;
+                return c('Modal title').t`How to import emails from Outlook`;
+            }
+            if (provider === DEFAULT) {
+                return c('Modal title').t`How to import emails from another service`;
             }
         }
         if (importType === ImportType.CALENDAR) {
             if (provider === YAHOO) {
-                return c('Modal title').t`Export your calendars from Yahoo`;
+                return c('Modal title').t`How to import calendars from Yahoo`;
             }
             if (provider === OUTLOOK) {
-                return c('Modal title').t`Export your calendars from Outlook`;
+                return c('Modal title').t`How to import calendars from Outlook`;
+            }
+            if (provider === DEFAULT) {
+                return c('Modal title').t`How to import calendars from another service`;
             }
         }
         if (importType === ImportType.CONTACTS) {
             if (provider === YAHOO) {
-                return c('Modal title').t`Export your contacts from Yahoo`;
+                return c('Modal title').t`How to import contacts from Yahoo`;
             }
             if (provider === OUTLOOK) {
-                return c('Modal title').t`Export your contacts from Outlook`;
+                return c('Modal title').t`How to import contacts from Outlook`;
+            }
+            if (provider === DEFAULT) {
+                return c('Modal title').t`How to import contacts from another service`;
             }
         }
 
@@ -97,6 +110,9 @@ const EasySwitchInstructionsModal = ({
             if (provider === OUTLOOK) {
                 return <OutlookMailInstructions />;
             }
+            if (provider === DEFAULT) {
+                return <DefaultMailInstructions />;
+            }
         }
         if (importType === ImportType.CALENDAR) {
             if (provider === YAHOO) {
@@ -105,6 +121,9 @@ const EasySwitchInstructionsModal = ({
             if (provider === OUTLOOK) {
                 return <OutlookCalendarInstructions />;
             }
+            if (provider === DEFAULT) {
+                return <DefaultCalendarInstructions />;
+            }
         }
         if (importType === ImportType.CONTACTS) {
             if (provider === YAHOO) {
@@ -112,6 +131,9 @@ const EasySwitchInstructionsModal = ({
             }
             if (provider === OUTLOOK) {
                 return <OutlookContactsInstructions />;
+            }
+            if (provider === DEFAULT) {
+                return <DefaultContactsInstructions />;
             }
         }
 
@@ -122,10 +144,10 @@ const EasySwitchInstructionsModal = ({
         <FormModal
             title={titleRenderer()}
             onSubmit={handleSubmit}
-            submit={c('Action').t`Continue to import`}
-            close={c('Action').t`Cancel`}
+            submit={c('Action').t`Continue`}
+            close={c('Action').t`Close`}
             onClose={handleCancel}
-            className="import-modal"
+            className="easy-switch-modal"
             {...rest}
         >
             {instructionsRenderer()}

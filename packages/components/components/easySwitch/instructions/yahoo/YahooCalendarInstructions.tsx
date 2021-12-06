@@ -1,31 +1,37 @@
 import { c } from 'ttag';
 
-import yahooCalendarScreenshot from '@proton/styles/assets/img/import/instructions/yahoo-calendar.png';
-
 import { Href } from '../../../link';
 
 const YahooCalendarInstructions = () => {
-    const calendarLink = (
-        <Href url="https://calendar.yahoo.com/" key="calendarLink">
-            {c('Import instructions link').t`Yahoo Mail's calendar view`}
+    const yahooCalendarMessage = c('Import instructions')
+        .t`To import a calendar to Proton, you need the ICS file. Download it from Yahoo in 3 easy steps:`;
+
+    // translator: full sentence: "Go to full calendar view in Yahoo Mail"
+    const calendarViewLink = (
+        <Href url="https://calendar.yahoo.com/" key="calendarViewLink">
+            {c('Import instructions link').t`full calendar view`}
         </Href>
     );
+    // translator: full sentence: "Go to full calendar view in Yahoo Mail"
+    const step1 = c('Import instructions step').jt`Go to ${calendarViewLink} view in Yahoo Mail`;
 
-    // translator: the variable here is a HTML tag, here is the complete sentence: "Visit calendar.yahoo.com to access Yahoo Mail's calendar view. From there click on the down arrow on the right side of the calendar you want to export, then select the Export option to download your ICS file. This is the file you will upload to Proton during the import."
-    const yahooCalendarMessage = c('Import instructions')
-        .jt`Visit ${calendarLink} to access Yahoo Mail's calendar view. From there click on the down arrow on the right side of the calendar you want to export, then select the Export option to download your ICS file. This is the file you will upload to Proton during the import.`;
+    const step2 = c('Import instructions step')
+        .t`Mouse over the calendar you want to import and open the dropdown menu`;
+
+    // translator: full sentence: "Select Export to export the calendar as an ICS file"
+    const boldExport = <strong key="boldExport">{c('Import instructions emphasis').t`Export`}</strong>;
+    // translator: full sentence: "Select Export to export the calendar as an ICS file"
+    const step3 = c('Import instructions step').jt`Select ${boldExport} to export the calendar as an ICS file`;
 
     return (
         <>
             <div className="mb1">{yahooCalendarMessage}</div>
-            <div className="text-center">
-                <img
-                    className="border--currentColor"
-                    src={yahooCalendarScreenshot}
-                    alt={c('Import instructions image alternative text')
-                        .t`Instructions to export your calendars from Yahoo Mail`}
-                />
-            </div>
+
+            <ol className="pl1 ml2 mr2">
+                <li className="mb0-5">{step1}</li>
+                <li className="mb0-5">{step2}</li>
+                <li className="mb0-5">{step3}</li>
+            </ol>
         </>
     );
 };
