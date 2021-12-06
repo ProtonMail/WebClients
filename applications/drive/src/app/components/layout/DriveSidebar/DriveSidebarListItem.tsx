@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { noop } from '@proton/shared/lib/helpers/function';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     SidebarListItem,
@@ -10,7 +9,7 @@ import {
     useLoading,
 } from '@proton/components';
 
-import useDriveEvents from '../../../hooks/drive/useDriveEvents';
+import { useDriveEventManager } from '../../driveEventManager';
 
 interface Props {
     children: React.ReactNode;
@@ -23,7 +22,7 @@ interface Props {
 }
 
 const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon, onDoubleClick }: Props) => {
-    const driveEvents = useDriveEvents();
+    const driveEventManager = useDriveEventManager();
     const [refreshing, withRefreshing] = useLoading(false);
 
     const left = icon ? <SidebarListItemContentIcon name={icon} /> : null;
@@ -31,7 +30,9 @@ const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon
     const handleDoubleClick = () => {
         onDoubleClick?.();
         if (!refreshing && shareId) {
-            withRefreshing(Promise.all([driveEvents.callAll(shareId), wait(1000)])).catch(noop);
+            withRefreshing(Promise.all([driveEventManager.pollAllShareEvents(shareId), wait(1000)])).catch(
+                console.warn
+            );
         }
     };
 

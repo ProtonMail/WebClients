@@ -1,16 +1,55 @@
-import { Route, Switch } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { RouteComponentProps, Route } from 'react-router';
 
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
-import DriveView from '../components/sections/Drive/DriveView';
+import DriveView, { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
+import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
+import useNavigate from '../hooks/drive/useNavigate';
+import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
 import PreviewContainer from './PreviewContainer';
 
-const DriveContainer = () => {
+const DriveContainer = ({ match }: RouteComponentProps<DriveSectionRouteProps>) => {
+    const lastFolderRef = useRef<DriveFolder>();
+    const cache = useDriveCache();
+    const [, setError] = useState();
+    const { navigateToRoot } = useNavigate();
+    const { setFolder } = useActiveShare();
+
+    const folder = useMemo(() => {
+        const { shareId, type, linkId } = match.params;
+
+        if (!shareId && !type && !linkId) {
+            const meta = cache.get.defaultShareMeta();
+
+            if (meta) {
+                return { shareId: meta.ShareID, linkId: meta.LinkID };
+            }
+            setError(() => {
+                throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
+            });
+        } else if (!shareId || !type || !linkId) {
+            console.warn('Missing parameters, should be none or shareId/type/linkId');
+            navigateToRoot();
+        } else if (type === LinkURLType.FOLDER) {
+            return { shareId, linkId };
+        }
+        return lastFolderRef.current;
+    }, [match.params.shareId, match.params.type, match.params.linkId]);
+
+    useEffect(() => {
+        if (folder) {
+            setFolder(folder);
+        }
+    }, [folder]);
+
+    lastFolderRef.current = folder;
+
+    const shouldRenderDriveView = folder?.shareId && folder?.linkId;
+
     return (
         <>
-            <Switch>
-                <Route path="/:shareId?/:type?/:linkId?" component={DriveView} exact />
-            </Switch>
+            {shouldRenderDriveView ? <DriveView /> : null}
             <Route path={`/:shareId?/${LinkURLType.FILE}/:linkId?`} component={PreviewContainer} exact />
         </>
     );
