@@ -1,31 +1,41 @@
 import { c } from 'ttag';
 
-import outlookContactsScreenshot from '@proton/styles/assets/img/import/instructions/outlook-contacts.png';
-
 import { Href } from '../../../link';
 
 const OutlookContactsInstructions = () => {
-    const outlookPeopleLink = (
-        <Href url="https://outlook.live.com/people/" key="outlookPeopleLink">
-            {c('Import instructions link').t`People page on Outlook.com`}
+    const outlookContactsMessage = c('Import instructions')
+        .t`To import contacts to Proton, you need a CSV file. Download it from Outlook in 3 easy steps:`;
+
+    // translator: full sentence: "Open your Outlook contacts"
+    const outlookContactsLink = (
+        <Href url="https://outlook.live.com/people/" key="outlookContactsLink">
+            {c('Import instructions link').t`contacts`}
         </Href>
     );
+    // translator: full sentence: "Open your Outlook contacts"
+    const step1 = c('Import instructions').jt`Open your Outlook ${outlookContactsLink}`;
 
-    // translator: the variable here is a HTML tag, here is the complete sentence: "Visit the People page on Outlook.com. On the far right of the top toolbar, select Manage → Export contacts, choose which contacts you wish to export and click Export to export them as a CSV file. This is the file you will upload to Proton during the import."
-    const outlookContactsMessage = c('Import instructions')
-        .jt`Visit the ${outlookPeopleLink}. On the far right of the top toolbar, select Manage → Export contacts, choose which contacts you wish to export and click Export to export them as a CSV file. This is the file you will upload to Proton during the import.`;
+    // translator: full sentence: "Click Manage to expand the options menu"
+    const boldManage = <strong key="boldManage">{c('Import instructions emphasis').t`Manage`}</strong>;
+    // translator: full sentence: "Click Manage to expand the options menu"
+    const step2 = c('Import instructions').jt`Click ${boldManage} to expand the options menu`;
+
+    // translator: full sentence: "Select Export contacts and choose which contacts to export."
+    const boldExportContacts = (
+        <strong key="boldExportContacts">{c('Import instructions emphasis').t`Export contacts`}</strong>
+    );
+    // translator: full sentence: "Select Export contacts and choose which contacts to export."
+    const step3 = c('Import instructions').jt`Select ${boldExportContacts} and choose which contacts to export`;
 
     return (
         <>
             <div className="mb1">{outlookContactsMessage}</div>
-            <div className="text-center">
-                <img
-                    className="border--currentColor"
-                    src={outlookContactsScreenshot}
-                    alt={c('Import instructions image alternative text')
-                        .t`Instructions to export your contacts from Outlook.com`}
-                />
-            </div>
+
+            <ol className="pl1 ml2 mr2">
+                <li className="mb0-5">{step1}</li>
+                <li className="mb0-5">{step2}</li>
+                <li className="mb0-5">{step3}</li>
+            </ol>
         </>
     );
 };

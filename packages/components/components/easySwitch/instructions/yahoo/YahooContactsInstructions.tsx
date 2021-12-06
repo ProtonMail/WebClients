@@ -1,27 +1,38 @@
 import { c } from 'ttag';
 
-import yahooContactsScreenshot from '@proton/styles/assets/img/import/instructions/yahoo-contacts.png';
+import { Href } from '../../../link';
 
 const YahooContactsInstructions = () => {
+    const yahooCalendarMessage = c('Import instructions')
+        .t`To import contacts to Proton, you need a CSV file. Download it from Yahoo in 3 easy steps: `;
+
+    // translator: full sentence: "Open your Yahoo Mail contacts":
+    const yahooMailLink = (
+        <Href url="https://mail.yahoo.com/" key="yahooMailLink">
+            {c('Import instructions link').t`Yahoo Mail`}
+        </Href>
+    );
+    // translator: full sentence: "Open your Yahoo Mail contacts"
+    const step1 = c('Import instructions').jt`Open your ${yahooMailLink} contacts`;
+
+    const step2 = c('Import instructions').t`Expand the dropdown menu by clicking on the 3 dots (...)`;
+
+    // translator: full sentence: "Select Export to CSV file"
     const boldExportCSV = (
         <strong key="boldExportCSV">{c('Import instructions emphasis').t`Export to CSV file`}</strong>
     );
-
-    // translator: the variable here is a HTML tag, here is the complete sentence: "Log into Yahoo Mail and click on the first icon on the right sidebar to display the contacts panel. Click on the three dots to display the Contacts options and click on Export to CSV file. This is the file you will upload to Proton during the import."
-    const yahooCalendarMessage = c('Import instructions')
-        .jt`Log into Yahoo Mail and click on the first icon on the right sidebar to display the contacts panel. Click on the three dots to display the Contacts options and click on ${boldExportCSV}. This is the file you will upload to Proton during the import.`;
+    // translator: full sentence: "Select Export to CSV file"
+    const step3 = c('Import instructions').jt`Select ${boldExportCSV}`;
 
     return (
         <>
             <div className="mb1">{yahooCalendarMessage}</div>
-            <div className="text-center">
-                <img
-                    className="border--currentColor"
-                    src={yahooContactsScreenshot}
-                    alt={c('Import instructions image alternative text')
-                        .t`Instructions to export your contacts from Yahoo Mail`}
-                />
-            </div>
+
+            <ol className="pl1 ml2 mr2">
+                <li className="mb0-5">{step1}</li>
+                <li className="mb0-5">{step2}</li>
+                <li className="mb0-5">{step3}</li>
+            </ol>
         </>
     );
 };
