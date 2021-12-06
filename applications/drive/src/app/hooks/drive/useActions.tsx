@@ -16,7 +16,6 @@ import useConfirm from '../util/useConfirm';
 import useListNotifications from '../util/useListNotifications';
 import { DriveFolder } from './useActiveShare';
 import useDrive from './useDrive';
-import useDriveEvents from './useDriveEvents';
 import useNavigate from './useNavigate';
 import useQueuedFunction from '../util/useQueuedFunction';
 import useSharing from './useSharing';
@@ -29,7 +28,6 @@ function useActions() {
     const { deleteTrashedLinks, restoreLinks, trashLinks } = useTrash();
     const { deleteMultipleSharedLinks } = useSharing();
     const { deleteShare } = useDrive();
-    const driveEvents = useDriveEvents();
     const { download: downloadLinks } = useDownloadProvider();
 
     const {
@@ -161,8 +159,8 @@ function useActions() {
             const deleteSharePromiseList: Promise<any>[] = [];
             const deleteShareQueued = queuedFunction(
                 'deleteShare',
-                async (shareId: string) => {
-                    return deleteShare(shareId);
+                async (itemShareId: string) => {
+                    return deleteShare(itemShareId);
                 },
                 5
             );
@@ -196,7 +194,7 @@ function useActions() {
             onConfirm: async () => {
                 const deletedCount = await deleteLinks(itemsToStopSharing);
                 const failedCount = itemsToStopSharing.length - deletedCount;
-                await driveEvents.callAll(shareId);
+
                 createDeleteSharedLinksNotifications(deletedCount, failedCount);
             },
         });

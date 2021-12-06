@@ -6,7 +6,6 @@ import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
 import useActiveShare from '../hooks/drive/useActiveShare';
-import useDriveEvents from '../hooks/drive/useDriveEvents';
 
 interface Props {
     onClose?: () => void;
@@ -19,7 +18,6 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
 
     const { activeFolder } = useActiveShare();
     const { createNewFolder } = useDrive();
-    const driveEvents = useDriveEvents();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
 
@@ -45,7 +43,6 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
 
         try {
             const { Folder } = await createNewFolder(shareId, linkId, formattedName);
-            await driveEvents.call(shareId);
             onCreateDone?.(Folder.ID);
         } catch (e: any) {
             if (e.name === 'ValidationError') {
