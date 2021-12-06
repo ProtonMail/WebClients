@@ -110,7 +110,9 @@ const ContactRow = ({
                         )}
                     </div>
                 </div>
-                {hasPaidMail && contactGroups && <ContactGroupLabels contactGroups={contactGroups} className="mr0-5" />}
+                {hasPaidMail && contactGroups && (
+                    <ContactGroupLabels contactGroups={contactGroups} className="mr0-5 flex-justify-end" />
+                )}
                 {emails[0] && (
                     <Copy
                         value={emails[0]}
