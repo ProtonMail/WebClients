@@ -8,13 +8,14 @@ import {
     useLoading,
     useWelcomeFlags,
     useEarlyAccess,
+    useApi,
+    useEventManager,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import useDrive from '../hooks/drive/useDrive';
-import DriveEventManagerProvider from '../components/DriveEventManager/DriveEventManagerProvider';
 import DriveCacheProvider from '../components/DriveCache/DriveCacheProvider';
 import { UploadProvider } from '../components/uploads/UploadProvider';
 import { DownloadProvider } from '../components/downloads/DownloadProvider';
@@ -26,6 +27,8 @@ import NoAccessContainer from './NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
+import { DriveEventManagerProvider } from '../components/driveEventManager/driveEventManager';
+import { useDriveEventManager } from '../components/driveEventManager';
 
 enum ERROR_TYPES {
     STANDARD,
@@ -40,12 +43,13 @@ const DEFAULT_SHARE_VALUE = {
 };
 
 const InitContainer = () => {
-    const { initDrive } = useDrive();
+    const { initDrive, handleDriveEvents } = useDrive();
     const [loading, withLoading] = useLoading(true);
     const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>(DEFAULT_SHARE_VALUE);
     const [errorType, setErrorType] = useState<ERROR_TYPES>(ERROR_TYPES.STANDARD);
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const earlyAccess = useEarlyAccess();
+    const driveEventManager = useDriveEventManager();
 
     useEffect(() => {
         const initPromise = initDrive()
@@ -68,6 +72,23 @@ const InitContainer = () => {
             });
         withLoading(initPromise).catch(noop);
     }, []);
+
+    useEffect(() => {
+        if (
+            defaultShareRoot.linkId === DEFAULT_SHARE_VALUE.linkId ||
+            defaultShareRoot.shareId === DEFAULT_SHARE_VALUE.shareId
+        ) {
+            return;
+        }
+
+        driveEventManager.subscribeToShare(defaultShareRoot.shareId).catch(console.warn);
+        const handlerId = driveEventManager.registerEventHandler(handleDriveEvents(defaultShareRoot.shareId));
+
+        return () => {
+            driveEventManager.unsubscribeFromShare(defaultShareRoot.shareId);
+            driveEventManager.unregisterEventHandler(handlerId);
+        };
+    }, [defaultShareRoot.shareId]);
 
     if (loading) {
         return (
@@ -120,9 +141,11 @@ const InitContainer = () => {
 };
 
 const MainContainer = () => {
+    const api = useApi();
+    const eventManager = useEventManager();
     return (
         <LocationErrorBoundary>
-            <DriveEventManagerProvider>
+            <DriveEventManagerProvider api={api} generalEventManager={eventManager}>
                 <DriveCacheProvider>
                     <UploadProvider>
                         <DownloadProvider>

@@ -154,10 +154,10 @@ const DriveContentProviderInner = ({
  * Stores file browser controls.
  * Exposes functions to (re)load open folder contents.
  */
-const DriveContentProvider = ({ children, folder }: { children: React.ReactNode; folder?: DriveFolder }) => {
+const DriveContentProvider = ({ children }: { children: React.ReactNode }) => {
     const { activeFolder } = useActiveShare();
 
-    const currentFolder = folder || activeFolder;
+    const currentFolder = activeFolder;
 
     return currentFolder ? (
         <DriveContentProviderInner activeFolder={currentFolder}>{children}</DriveContentProviderInner>
