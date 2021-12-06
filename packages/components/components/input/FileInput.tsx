@@ -24,7 +24,7 @@ const FileInput = (
             <input
                 id={id}
                 type="file"
-                className="hidden"
+                className="sr-only"
                 onChange={(e) => {
                     onChange(e);
                     if (inputRef.current) {
