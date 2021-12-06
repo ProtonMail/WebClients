@@ -20,7 +20,7 @@ const getStateImages = <T extends { image: MessageRemoteImage }>(data: T[], mess
 
     return data.map(({ image: inputImage, ...rest }) => {
         const image = remoteImages.find((image) => image.id === inputImage.id) as MessageRemoteImage;
-        return { image, ...rest };
+        return { image, inputImage, ...rest };
     });
 };
 
@@ -62,12 +62,20 @@ export const loadRemotePending = (
         const images = imagesToLoad.map((image) => ({ image }));
         const imagesToLoadState = getStateImages(images, messageState);
 
-        imagesToLoadState.forEach(({ image }) => {
-            image.status = 'loading';
-            if (!image.originalURL) {
-                image.originalURL = image.url;
+        imagesToLoadState.forEach(({ image, inputImage }) => {
+            if (image) {
+                image.status = 'loading';
+                if (!image.originalURL) {
+                    image.originalURL = image.url;
+                }
+                image.error = undefined;
+            } else if (messageState.messageImages && Array.isArray(messageState.messageImages.images)) {
+                messageState.messageImages.images.push({
+                    ...inputImage,
+                    status: 'loading',
+                    originalURL: inputImage.url,
+                });
             }
-            image.error = undefined;
         });
     }
 };

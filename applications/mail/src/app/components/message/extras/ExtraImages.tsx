@@ -28,7 +28,7 @@ const ExtraImages = ({ message, type, onLoadImages }: Props) => {
         return null;
     }
 
-    if (type === 'remote' && hasShowRemote(mailSettings)) {
+    if (type === 'remote' && hasShowRemote(mailSettings) && !couldLoadDirect) {
         return null;
     }
 
@@ -61,7 +61,7 @@ const ExtraImages = ({ message, type, onLoadImages }: Props) => {
                     type="button"
                     onClick={onLoadImages}
                     className="flex flex-item-noshrink text-underline link"
-                    data-testid="remote-content:load1"
+                    data-testid="remote-content:load"
                 >{c('Action').t`Load`}</button>
             </Tooltip>
         </div>
