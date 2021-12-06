@@ -49,11 +49,10 @@ const AccountEasySwitchSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
-                    .t`Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.`}
+                    .t`Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.`}
             </SettingsParagraph>
 
-            <div className="mb1 text-bold">{c('Info')
-                .t`Select a service provider or choose "Other" to get started`}</div>
+            <div className="mb1 text-bold">{c('Info').t`Select a service provider to start`}</div>
 
             <div className="mt0-5">
                 <ProviderCard provider={GOOGLE} onClick={handleOAuthClick} disabled={disabled} className="mb1 mr1" />

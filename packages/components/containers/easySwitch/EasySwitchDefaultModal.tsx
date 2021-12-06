@@ -20,10 +20,6 @@ import contactsIllu from '@proton/styles/assets/img/import/importTypes/contacts.
 import { Button, ButtonProps, FormModal, Loader, Tooltip } from '../../components';
 import { useCalendars, useCalendarUserSettings, useModals } from '../../hooks';
 
-import ImportMailModal from './mail/modals/ImportMailModal';
-import { ImportModal as ImportCalendarModal } from '../calendar/importModal';
-import ImportContactsModal from '../contacts/import/ImportModal';
-
 import EasySwitchInstructionsModal from './EasySwitchInstructionsModal';
 
 import './EasySwitchModal.scss';
@@ -104,28 +100,9 @@ const EasySwitchDefaultModal = ({
 
     const handleCancel = () => onClose();
 
-    const titleRenderer = () => {
-        return c('Title').t`Select what to import`;
-    };
-
     const isLoading = loadingCalendars || loadingCalendarUserSettings;
 
     const handleClick = (importType: ImportType) => {
-        if (provider === NON_OAUTH_PROVIDER.DEFAULT) {
-            if (importType === ImportType.MAIL) {
-                createModal(<ImportMailModal addresses={addresses} provider={provider} />);
-            }
-
-            if (importType === ImportType.CALENDAR && defaultCalendar) {
-                createModal(<ImportCalendarModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />);
-            }
-            if (importType === ImportType.CONTACTS) {
-                createModal(<ImportContactsModal />);
-            }
-            onClose();
-            return;
-        }
-
         createModal(
             <EasySwitchInstructionsModal
                 importType={importType}
@@ -148,9 +125,9 @@ const EasySwitchDefaultModal = ({
 
     return (
         <FormModal
-            title={titleRenderer()}
+            title={c('Title').t`What would you like to import?`}
             submit={null}
-            close={c('Action').t`Cancel`}
+            close={null}
             onClose={handleCancel}
             className="easy-switch-modal"
             {...rest}
@@ -159,7 +136,7 @@ const EasySwitchDefaultModal = ({
                 <Loader />
             ) : (
                 <>
-                    <div className="mb2">{c('Info').t`What do you want to import?`}</div>
+                    <div className="mb2">{c('Info').t`You can import one data type at a time.`}</div>
                     <div className="import-buttons mb1">
                         <ImportTypeButton importType={ImportType.MAIL} onClick={() => handleClick(ImportType.MAIL)} />
                         {!canImportCalendars ? (

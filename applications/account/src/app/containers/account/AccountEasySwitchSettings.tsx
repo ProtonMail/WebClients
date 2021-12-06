@@ -19,6 +19,7 @@ export const getEasySwitchPage = () => {
         text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
         to: '/easy-switch',
         icon: 'arrow-down-to-screen',
+        description: c('Settings description').t`Make the move to privacy. Effortlessly and securely.`,
         subsections: [
             {
                 text: c('Title').t`Start new import`,
