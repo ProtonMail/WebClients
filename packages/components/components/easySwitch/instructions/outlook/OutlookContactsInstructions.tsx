@@ -3,8 +3,18 @@ import { c } from 'ttag';
 import { Href } from '../../../link';
 
 const OutlookContactsInstructions = () => {
+    // translator: full sentence: "To import contacts to Proton, you need a CSV file. Download it from Outlook in 3 easy steps:"
+    const knowledgeBaseLink = (
+        <Href
+            url="https://protonmail.com/support/knowledge-base/exporting-contacts-from-other-mail-providers/"
+            key="knowledgeBaseLink"
+        >
+            {c('Import instructions link').t`CSV file`}
+        </Href>
+    );
+    // translator: full sentence: "To import contacts to Proton, you need a CSV file. Download it from Outlook in 3 easy steps:"
     const outlookContactsMessage = c('Import instructions')
-        .t`To import contacts to Proton, you need a CSV file. Download it from Outlook in 3 easy steps:`;
+        .jt`To import contacts to Proton, you need a ${knowledgeBaseLink}. Download it from Outlook in 3 easy steps:`;
 
     // translator: full sentence: "Open your Outlook contacts"
     const outlookContactsLink = (
