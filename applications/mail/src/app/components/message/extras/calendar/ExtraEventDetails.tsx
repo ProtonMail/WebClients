@@ -10,6 +10,7 @@ import { getFrequencyString } from '@proton/shared/lib/calendar/integration/getF
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 
+import { c } from 'ttag';
 import { getParticipantsList, InvitationModel } from '../../../../helpers/calendar/invite';
 import ExtraEventParticipants from './ExtraEventParticipants';
 
@@ -53,22 +54,26 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     return (
         <div className="p1-5">
             {!!frequencyString && (
-                <IconRow icon="arrows-rotate" labelClassName="inline-flex pt0-25">
+                <IconRow title={c('Label').t`Frequency`} icon="arrows-rotate" labelClassName="inline-flex pt0-25">
                     {frequencyString}
                 </IconRow>
             )}
             {!!calendar && (
-                <IconRow icon={<CalendarSelectIcon color={calendar.Color} />} labelClassName="inline-flex pt0-25">
+                <IconRow
+                    title={c('Label').t`Calendar`}
+                    icon={<CalendarSelectIcon color={calendar.Color} />}
+                    labelClassName="inline-flex pt0-25"
+                >
                     {calendar.Name}
                 </IconRow>
             )}
             {!!trimmedLocation && (
-                <IconRow icon="map-marker" labelClassName="inline-flex pt0-25">
+                <IconRow title={c('Label').t`Location`} icon="map-marker" labelClassName="inline-flex pt0-25">
                     <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                 </IconRow>
             )}
             {!!participantsList.length && (
-                <IconRow icon="user-group" labelClassName="inline-flex pt0-25">
+                <IconRow title={c('Label').t`Participants`} icon="user-group" labelClassName="inline-flex pt0-25">
                     <ExtraEventParticipants list={participantsList} />
                 </IconRow>
             )}

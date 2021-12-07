@@ -27,7 +27,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
     } = useDateTimeFormHandlers({ model, setModel });
 
     return (
-        <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Event time`}>
+        <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div>
                 <div className="flex flex-nowrap mb0-5">
                     <div className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-2">
