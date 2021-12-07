@@ -166,7 +166,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                             onClick(event) {
                                                 textToClipboard(server.Domain, event.currentTarget);
                                                 createNotification({
-                                                    text: c('Success').t`${server.Domain} copied in your clipboard`,
+                                                    text: c('Success').t`${server.Domain} copied to your clipboard`,
                                                 });
                                             },
                                         },

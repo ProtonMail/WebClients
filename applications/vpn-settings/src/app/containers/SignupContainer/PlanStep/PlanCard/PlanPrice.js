@@ -16,7 +16,7 @@ const PlanPrice = ({ plan, cycle, currency }) => {
     );
     const totalBilledText =
         cycle === CYCLE.MONTHLY ? (
-            <Price key="billed-price" currency={currency} suffix={c('Suffix').t`/monthly`}>
+            <Price key="billed-price" currency={currency} suffix={c('Suffix').t`/month`}>
                 {plan.price.totalMonthly}
             </Price>
         ) : (
