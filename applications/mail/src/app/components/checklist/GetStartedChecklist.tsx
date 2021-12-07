@@ -136,8 +136,14 @@ const GetStartedChecklist = ({
                         <span className="no-tablet no-desktop">{c('Get started checklist title').t`Get started`}</span>
                     </span>
                     <span className="flex-justify-end">
-                        {c('Amount of completed get started checklist items')
-                            .t`${numberOfCompletedItems} of ${totalNumberOfChecklistItems} complete`}
+                        {
+                            // Translator: 1/4 complete
+                            c('Amount of completed get started checklist items').ngettext(
+                                msgid`${numberOfCompletedItems}/${totalNumberOfChecklistItems} complete`,
+                                `${numberOfCompletedItems}/${totalNumberOfChecklistItems} complete`,
+                                numberOfCompletedItems
+                            )
+                        }
                     </span>
                 </span>
                 {!hideDismissButton && (
