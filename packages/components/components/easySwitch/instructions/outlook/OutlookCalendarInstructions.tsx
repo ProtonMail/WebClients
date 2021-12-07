@@ -3,8 +3,18 @@ import { c } from 'ttag';
 import { Href } from '../../../link';
 
 const OutlookCalendarInstructions = () => {
+    // translator: full sentence: "To import a calendar to Proton, you need the ICS file. Download it from Outlook in 3 easy steps:"
+    const knowledgeBaseLink = (
+        <Href
+            url="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/"
+            key="knowledgeBaseLink"
+        >
+            {c('Import instructions link').t`ICS file`}
+        </Href>
+    );
+    // translator: full sentence: "To import a calendar to Proton, you need the ICS file. Download it from Outlook in 3 easy steps:"
     const outlookCalendarMessage = c('Import instructions')
-        .t`To import a calendar to Proton, you need the ICS file. Download it from Outlook in 3 easy steps:`;
+        .jt`To import a calendar to Proton, you need the ${knowledgeBaseLink}. Download it from Outlook in 3 easy steps:`;
 
     // translator: full sentence: "Go to shared calendars in your Outlook.com settings."
     const calendarLink = (
@@ -25,7 +35,10 @@ const OutlookCalendarInstructions = () => {
     const step2 = c('Import instructions step')
         .jt`Under ${boldPublish}, select the calendar you want to import. Set the permission to ${boldCanViewAllDetails} and publish it.`;
 
-    const step3 = c('Import instructions step').t`Click on the ICS link and download the file.`;
+    // translator: full sentence: "Click on the ICS link and download the file."
+    const boldICS = <strong key="boldICS">{c('Import instructions emphasis').t`ICS`}</strong>;
+    // translator: full sentence: "Click on the ICS link and download the file."
+    const step3 = c('Import instructions step').jt`Click on the ${boldICS} link and download the file.`;
 
     return (
         <>

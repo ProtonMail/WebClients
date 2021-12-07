@@ -3,8 +3,18 @@ import { c } from 'ttag';
 import { Href } from '../../../link';
 
 const YahooCalendarInstructions = () => {
+    // translator: full sentence: "To import a calendar to Proton, you need the ICS file. Download it from Yahoo in 3 easy steps:"
+    const knowledgeBaseLink = (
+        <Href
+            url="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/"
+            key="knowledgeBaseLink"
+        >
+            {c('Import instructions link').t`ICS file`}
+        </Href>
+    );
+    // translator: full sentence: "To import a calendar to Proton, you need the ICS file. Download it from Yahoo in 3 easy steps:"
     const yahooCalendarMessage = c('Import instructions')
-        .t`To import a calendar to Proton, you need the ICS file. Download it from Yahoo in 3 easy steps:`;
+        .jt`To import a calendar to Proton, you need the ${knowledgeBaseLink}. Download it from Yahoo in 3 easy steps:`;
 
     // translator: full sentence: "Go to full calendar view in Yahoo Mail"
     const calendarViewLink = (
