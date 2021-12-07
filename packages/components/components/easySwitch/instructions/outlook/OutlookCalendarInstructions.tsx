@@ -23,7 +23,7 @@ const OutlookCalendarInstructions = () => {
         </Href>
     );
     // translator: full sentence: "Go to shared calendars in your Outlook.com settings."
-    const step1 = c('Import instructions step').jt`Go to ${calendarLink} in your Outlook.com settings.`;
+    const step1 = c('Import instructions step').jt`Go to ${calendarLink} in your Outlook.com settings`;
 
     // translator: full sentence: "Under Publish a calendar, select the calendar you want to import. Set the permission to Can view all details and publish it."
     const boldPublish = <strong key="boldPublish">{c('Import instructions emphasis').t`Publish a calendar`}</strong>;
@@ -33,12 +33,12 @@ const OutlookCalendarInstructions = () => {
     );
     // translator: full sentence: "Under Publish a calendar, select the calendar you want to import. Set the permission to Can view all details and publish it."
     const step2 = c('Import instructions step')
-        .jt`Under ${boldPublish}, select the calendar you want to import. Set the permission to ${boldCanViewAllDetails} and publish it.`;
+        .jt`Under ${boldPublish}, select the calendar you want to import. Set the permission to ${boldCanViewAllDetails} and publish it`;
 
     // translator: full sentence: "Click on the ICS link and download the file."
     const boldICS = <strong key="boldICS">{c('Import instructions emphasis').t`ICS`}</strong>;
     // translator: full sentence: "Click on the ICS link and download the file."
-    const step3 = c('Import instructions step').jt`Click on the ${boldICS} link and download the file.`;
+    const step3 = c('Import instructions step').jt`Click on the ${boldICS} link and download the file`;
 
     return (
         <>

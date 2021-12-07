@@ -14,7 +14,7 @@ const DefaultContactsInstructions = () => {
     );
     // translator: full sentence: "To import contacts to Proton, you need a CSV file. Download this before you start the import process."
     const defaultContactsMessage = c('Import instructions')
-        .jt`To import contacts to Proton, you need a ${knowledgeBaseLink}. Download this before you start the import process.`;
+        .jt`To import contacts to Proton, you need a ${knowledgeBaseLink}. Download this before you start the import process`;
 
     return <div className="mb1">{defaultContactsMessage}</div>;
 };
