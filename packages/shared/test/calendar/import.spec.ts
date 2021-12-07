@@ -110,7 +110,7 @@ describe('getSupportedEvent', () => {
 DTSTAMP:19980309T231000Z
 UID:test-event
 DTSTART;TZID=America/New_York:19690312T083000
-DTEND;TZID=America/New_York:19690312T093000
+DTEND;TZID=/America/New_York:19690312T093000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
@@ -188,8 +188,8 @@ END:VEVENT`;
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
-DTSTART;TZID=America/New_York:20020312T083000
-DTEND;TZID=America/New_York:20020312T082959
+DTSTART;TZID=/America/New_York:20020312T083000
+DTEND;TZID=/America/New_York:20020312T082959
 LOCATION:1CP Conference Room 4350
 SEQUENCE:-1
 END:VEVENT`;
@@ -213,8 +213,8 @@ END:VEVENT`;
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
-DTSTART;TZID=America/New_York:20020312T083000
-DTEND;TZID=America/New_York:20020312T083000
+DTSTART;TZID=/mozilla.org/20050126_1/America/New_York:20020312T083000
+DTEND;TZID=/mozilla.org/20050126_1/America/New_York:20020312T083000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
