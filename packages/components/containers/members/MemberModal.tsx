@@ -101,7 +101,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
         }
 
         if (model.admin) {
-            await api(updateRole(Member.ID, MEMBER_ROLE.ORGANIZATION_OWNER));
+            await api(updateRole(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
         }
     };
 
