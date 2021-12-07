@@ -325,6 +325,8 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
     const [startDate, endDate] = getEventLocalStartEndDates(calendarEvent, parseInt(occurrenceHeader, 10));
     const isOutdated = (sequence?.value || 0) > parseInt(`${sequenceHeader}`, 10);
 
+    const labelClassName = 'inline-flex pt0-25';
+
     return (
         <div className="calendar-widget">
             <EventReminderBanner
@@ -349,16 +351,24 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                     </div>
                     <hr className="m0" />
                     <div className="p1-5">
-                        <IconRow icon={<CalendarSelectIcon color={Color} />} labelClassName="inline-flex pt0-25">
+                        <IconRow
+                            title={c('Label').t`Calendar`}
+                            icon={<CalendarSelectIcon color={Color} />}
+                            labelClassName={labelClassName}
+                        >
                             {Name}
                         </IconRow>
                         {!!sanitizedAndUrlifiedLocation && (
-                            <IconRow icon="map-marker" labelClassName="inline-flex pt0-25">
+                            <IconRow title={c('Label').t`Location`} icon="map-marker" labelClassName={labelClassName}>
                                 <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                             </IconRow>
                         )}
                         {!!participantsList.length && (
-                            <IconRow icon="user-group" labelClassName="inline-flex pt0-25">
+                            <IconRow
+                                title={c('Label').t`Participants`}
+                                icon="user-group"
+                                labelClassName={labelClassName}
+                            >
                                 <ExtraEventParticipants list={participantsList} />
                             </IconRow>
                         )}

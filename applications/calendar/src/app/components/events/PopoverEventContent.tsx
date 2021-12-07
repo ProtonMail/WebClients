@@ -10,7 +10,7 @@ import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Calendar as tsCalendar, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { Collapsible, Icon, Info } from '@proton/components';
+import { Collapsible, IconRow, Info } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 
@@ -87,9 +87,6 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
             </span>
         );
     }, [calendarName, isCalendarDisabled]);
-
-    const wrapClassName = 'flex flex-nowrap mb0-75 ml0-25 mr0-25';
-    const iconClassName = 'flex-item-noshrink mr1 mt0-25';
 
     const locationWrapRef = useRef<HTMLDivElement>(null);
     const descriptionWrapRef = useRef<HTMLDivElement>(null);
@@ -192,20 +189,22 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
         groupedReplies[organizerPartstat].count += 1;
     }
 
+    const labelClassName = 'inline-flex pt0-25';
+
     const eventDetailsContent = (
         <>
             {sanitizedLocation ? (
-                <div className={wrapClassName} ref={locationWrapRef}>
-                    <Icon name="map-marker" className={iconClassName} />
-                    <span
-                        className="text-hyphens scroll-if-needed"
-                        dangerouslySetInnerHTML={{ __html: sanitizedLocation }}
-                    />
+                <div ref={locationWrapRef}>
+                    <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-marker">
+                        <span
+                            className="text-hyphens scroll-if-needed"
+                            dangerouslySetInnerHTML={{ __html: sanitizedLocation }}
+                        />
+                    </IconRow>
                 </div>
             ) : null}
             {!!numberOfParticipants && (
-                <div className={wrapClassName}>
-                    <Icon name="user" className={iconClassName} />
+                <IconRow labelClassName={labelClassName} icon="user" title={c('Label').t`Participants`}>
                     <div className="w100">
                         <Collapsible
                             openText={c('Participants expand button label').t`Expand participants list`}
@@ -236,17 +235,19 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                             extraText={c('Label').t`Organizer`}
                         />
                     </div>
-                </div>
+                </IconRow>
             )}
             {calendarString ? (
-                <div className={wrapClassName}>
-                    <CalendarSelectIcon color={Color} className={iconClassName} />
+                <IconRow
+                    labelClassName={labelClassName}
+                    title={c('Label').t`Calendar`}
+                    icon={<CalendarSelectIcon color={Color} />}
+                >
                     {calendarString}
-                </div>
+                </IconRow>
             ) : null}
             {model.notifications?.length ? (
-                <div className={wrapClassName}>
-                    <Icon name="bell" className={iconClassName} />
+                <IconRow labelClassName={labelClassName} title={c('Label').t`Notifications`} icon="bell">
                     <div className="flex flex-column">
                         {model.notifications.map((notification) => (
                             <PopoverNotification
@@ -256,16 +257,15 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                             />
                         ))}
                     </div>
-                </div>
+                </IconRow>
             ) : null}
             {htmlString ? (
-                <div className={wrapClassName} ref={descriptionWrapRef}>
-                    <Icon name="align-left" className={iconClassName} />
+                <IconRow labelClassName={labelClassName} title={c('Label').t`Description`} icon="align-left">
                     <div
                         className="text-break mt0 mb0 text-pre-wrap"
                         dangerouslySetInnerHTML={{ __html: htmlString }}
                     />
-                </div>
+                </IconRow>
             ) : null}
         </>
     );
