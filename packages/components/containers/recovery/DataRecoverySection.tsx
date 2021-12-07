@@ -8,6 +8,7 @@ import {
     useEventManager,
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
+    useIsRecoveryFileAvailable,
     useLoading,
     useModals,
     useRecoverySecrets,
@@ -21,7 +22,6 @@ import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { GenerateMnemonicModal, DisableMnemonicModal } from '../mnemonic';
-import useIsRecoveryFileAvailable from '../../hooks/useIsRecoveryFileAvailable';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesButton from './VoidRecoveryFilesButton';
 import { classnames } from '../../helpers/component';
