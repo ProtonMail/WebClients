@@ -39,28 +39,6 @@ export const fromUTCDate = (date: Date) => {
     };
 };
 
-/**
- * Given a timezone id, try to convert it into an iana timezone supported by the API (cf. description of unsupportedTimezoneLinks function)
- * No longer supported timezones are converted into supported ones
- * Alias timezones are converted into canonical-and-supported ones
- * We try to convert other possible strange timezones, like those produced by Outlook calendar
- * If no conversion is possible, return undefined
- */
-export const getSupportedTimezone = (tzid: string): string | undefined => {
-    try {
-        const timezone = findTimeZone(tzid).name;
-        return unsupportedTimezoneLinks[timezone] || timezone;
-    } catch (e: any) {
-        // try manual conversions
-        const offsetRegex = /^\((?:UTC|GMT).*\) (.*)$|^(.*) \((?:UTC|GMT).*\)/i;
-        const match = offsetRegex.exec(tzid);
-        const strippedTzid = match ? match[1] || match[2] : tzid;
-        const normalizedTzid = strippedTzid.toLowerCase().replace(/\./g, '');
-        const timezone = MANUAL_TIMEZONE_LINKS[normalizedTzid];
-        return timezone;
-    }
-};
-
 const guessTimezone = (timezones: string[]) => {
     try {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -135,43 +113,73 @@ type GetTimeZoneOptions = (
     key: string;
 }[];
 
+// The list of all IANA time zones that we support is not dynamic. We can generate it just once
+const SUPPORTED_TIMEZONES_LIST = listTimeZones()
+    // UTC is called Etc/UTC but the API accepts UTC
+    .concat('UTC')
+    .filter((name) => !unsupportedTimezoneLinks[name]);
+
 /**
- * Get a list of all IANA time zones that we support
  * @return {Array<Object>}      [{ text: 'Africa/Nairobi: UTC +03:00', value: 'Africa/Nairobi'}, ...]
  */
 export const getTimeZoneOptions: GetTimeZoneOptions = (
     date = new Date(),
     { formatter = ({ utcOffset, name }: FormatterProps) => `${utcOffset} • ${name}` } = {}
 ) => {
-    return (
-        listTimeZones()
-            // UTC is called Etc/UTC but the API accepts UTC
-            .concat('UTC')
-            .filter((name) => !unsupportedTimezoneLinks[name])
-            .map((name) => {
-                const { abbreviation, offset } = getUTCOffset(date, findTimeZone(name));
+    return SUPPORTED_TIMEZONES_LIST.map((name) => {
+        const { abbreviation, offset } = getUTCOffset(date, findTimeZone(name));
 
-                return {
-                    name,
-                    offset,
-                    abbreviation,
-                };
-            })
-            .sort(({ offset: offsetA, name: nameA }, { offset: offsetB, name: nameB }) => {
-                const diff = offsetA - offsetB;
-                if (diff === 0) {
-                    return nameA.localeCompare(nameB);
-                }
-                return diff;
-            })
-            .map(({ name, offset }) => {
-                return {
-                    text: formatter({ name, utcOffset: `GMT${formatTimezoneOffset(offset)}` }),
-                    value: name,
-                    key: name,
-                };
-            })
-    );
+        return {
+            name,
+            offset,
+            abbreviation,
+        };
+    })
+        .sort(({ offset: offsetA, name: nameA }, { offset: offsetB, name: nameB }) => {
+            const diff = offsetA - offsetB;
+            if (diff === 0) {
+                return nameA.localeCompare(nameB);
+            }
+            return diff;
+        })
+        .map(({ name, offset }) => {
+            return {
+                text: formatter({ name, utcOffset: `GMT${formatTimezoneOffset(offset)}` }),
+                value: name,
+                key: name,
+            };
+        });
+};
+
+/**
+ * Given a timezone id, try to convert it into an iana timezone supported by the API (cf. description of unsupportedTimezoneLinks function)
+ * No longer supported timezones are converted into supported ones
+ * Alias timezones are converted into canonical-and-supported ones
+ * We try to convert other possible strange timezones, like those produced by Outlook calendar
+ * If no conversion is possible, return undefined
+ */
+export const getSupportedTimezone = (tzid: string): string | undefined => {
+    try {
+        const timezone = findTimeZone(tzid).name;
+        return unsupportedTimezoneLinks[timezone] || timezone;
+    } catch (e: any) {
+        // clean tzid of offsets
+        const offsetRegex = /^\((?:UTC|GMT).*\) (.*)$|^(.*) \((?:UTC|GMT).*\)/i;
+        const match = offsetRegex.exec(tzid);
+        const strippedTzid = match ? match[1] || match[2] : tzid;
+        const normalizedTzid = strippedTzid.toLowerCase().replace(/\./g, '');
+        // try manual conversions
+        const timezone = MANUAL_TIMEZONE_LINKS[normalizedTzid];
+        if (!timezone) {
+            // It might be a globally unique timezone identifier, whose specification is not addressed by the RFC.
+            // We try to match it with one of our supported list by brute force. We should fall here rarely
+            const lowerCaseTzid = tzid.toLowerCase();
+            return SUPPORTED_TIMEZONES_LIST.find((supportedTzid) =>
+                lowerCaseTzid.includes(supportedTzid.toLowerCase())
+            );
+        }
+        return timezone;
+    }
 };
 
 const findUTCTransitionIndex = ({ unixTime, untils }: { unixTime: number; untils: number[] }) => {
