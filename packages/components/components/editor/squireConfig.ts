@@ -81,14 +81,17 @@ export const setSquireRef = (ref: Ref<SquireType>, squire: any) => {
 };
 
 export const defaultFontStyle = (fontData: FontData | undefined): string | undefined => {
-    return fontData === undefined || (fontData.FontFace === undefined && fontData.FontSize === undefined)
-        ? undefined
-        : [
-              fontData.FontFace === undefined ? undefined : `font-family: ${fontData.FontFace};`,
-              fontData.FontSize === undefined ? undefined : `font-size: ${fontData.FontSize}px;`,
-          ]
-              .filter(isTruthy)
-              .join(' ');
+    if (!fontData) {
+        return undefined;
+    }
+
+    const { FontFace, FontSize } = fontData;
+    const stylesArray = [
+        FontFace === undefined || FontFace === null ? undefined : `font-family: ${fontData.FontFace};`,
+        FontSize === undefined || FontSize === null ? undefined : `font-size: ${fontData.FontSize}px;`,
+    ].filter(isTruthy);
+
+    return stylesArray.length ? stylesArray.join(' ') : undefined;
 };
 
 export const SQUIRE_CONFIG = (supportImage: boolean, fontData: FontData | undefined) => {
