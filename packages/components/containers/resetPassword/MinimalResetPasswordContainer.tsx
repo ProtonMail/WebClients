@@ -288,12 +288,13 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                         await new Promise<void>((resolve, reject) => {
                             createModal(
                                 <ConfirmModal
-                                    title={c('Title').t`Confirm reset password`}
+                                    title={c('Title').t`Reset password?`}
                                     onConfirm={resolve}
                                     onClose={reject}
+                                    confirm={c('Action').t`Reset`}
                                 >
                                     <Alert className="mb1" type="warning">{c('Info')
-                                        .t`Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?`}</Alert>
+                                        .t`This will void your password, and you won't be able to use it to sign in to your account.`}</Alert>
                                 </ConfirmModal>
                             );
                         });

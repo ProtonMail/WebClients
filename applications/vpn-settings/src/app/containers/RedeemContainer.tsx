@@ -47,7 +47,7 @@ const RedeemContainer = ({ history }: { history: any }) => {
                         },
                         {
                             icon: SecureCoreIcon,
-                            alt: c('Image alt').t`Secure core servers`,
+                            alt: c('Image alt').t`Secure Core servers`,
                             title: c('Title').t`Secure Core Servers`,
                             about: c('About')
                                 .t`Defend yourself against advanced network-based attacks by routing your traffic through hardened servers`,
