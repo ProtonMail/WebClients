@@ -2,14 +2,14 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { MutableRefObject, useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
-import { SquireEditor, useHandler, useMailSettings, useAddresses } from '@proton/components';
+import { SquireEditor, useHandler, useMailSettings, useAddresses, FontData } from '@proton/components';
 import { SquireEditorMetadata } from '@proton/components/components/editor/interface';
 import { SquireEditorRef } from '@proton/components/components/editor/SquireEditor';
 import { RIGHT_TO_LEFT, MIME_TYPES } from '@proton/shared/lib/constants';
 import { diff } from '@proton/shared/lib/helpers/array';
 import { noop } from '@proton/shared/lib/helpers/function';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
-import { pick } from '@proton/shared/lib/helpers/object';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/squireConfig';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
 import {
@@ -83,8 +83,12 @@ const SquireEditorWrapper = ({
 
     const isPlainText = testIsPlainText(message.data);
     const rightToLeft = message.data?.RightToLeft ? RIGHT_TO_LEFT.ON : RIGHT_TO_LEFT.OFF;
-    const defaultFont = useMemo(() => {
-        return mailSettings ? pick(mailSettings, ['FontFace', 'FontSize']) : undefined;
+    const defaultFont = useMemo<FontData>(() => {
+        const fontSettings = {
+            FontFace: mailSettings?.FontFace || DEFAULT_FONT_FACE,
+            FontSize: mailSettings?.FontSize || DEFAULT_FONT_SIZE,
+        };
+        return fontSettings;
     }, [mailSettings]);
 
     const metadata: SquireEditorMetadata = useMemo(
