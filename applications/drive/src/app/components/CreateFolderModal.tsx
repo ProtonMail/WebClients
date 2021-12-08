@@ -1,10 +1,10 @@
 import { useState, ChangeEvent, FocusEvent } from 'react';
-import { FormModal, InputTwo, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
+
+import { FormModal, InputTwo, Row, Label, Field, useLoading } from '@proton/components';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
-import { validateLinkNameField } from '../utils/validation';
-import { formatLinkName } from '../utils/link';
-import useDrive from '../hooks/drive/useDrive';
+
+import { useActions, validateLinkNameField, formatLinkName } from '../store';
 import useActiveShare from '../hooks/drive/useActiveShare';
 
 interface Props {
@@ -14,10 +14,8 @@ interface Props {
 }
 
 const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) => {
-    const { createNotification } = useNotifications();
-
     const { activeFolder } = useActiveShare();
-    const { createNewFolder } = useDrive();
+    const { createFolder } = useActions();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
 
@@ -34,29 +32,17 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
         setFolderName(formattedName);
 
         const parentFolder = folder || activeFolder;
-
         if (!parentFolder) {
             return;
         }
 
-        const { shareId, linkId } = parentFolder;
-
-        try {
-            const { Folder } = await createNewFolder(shareId, linkId, formattedName);
-            onCreateDone?.(Folder.ID);
-        } catch (e: any) {
-            if (e.name === 'ValidationError') {
-                createNotification({ text: e.message, type: 'error' });
-            }
-            throw e;
-        }
-
-        const notificationText = (
-            <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                {c('Success').t`"${formattedName}" created successfully`}
-            </span>
+        const folderId = await createFolder(
+            new AbortController().signal,
+            parentFolder.shareId,
+            parentFolder.linkId,
+            formattedName
         );
-        createNotification({ text: notificationText });
+        onCreateDone?.(folderId);
         onClose?.();
     };
 

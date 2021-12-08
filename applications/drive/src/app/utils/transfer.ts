@@ -76,7 +76,7 @@ export const getProgressBarStatus = (transferState: TransferState): ProgressBarS
     );
 };
 
-export const calculateProgress = (latestStats: TransfersStats, transfers: Transfer[]) => {
+export const calculateProgress = (stats: TransfersStats, transfers: Transfer[]) => {
     /**
      * Returns a transfer summary while compensating for empty files.
      * We consider empty files as 1 byte to avoid constant 0% progress
@@ -92,9 +92,7 @@ export const calculateProgress = (latestStats: TransfersStats, transfers: Transf
         } else {
             acc.size += transfer.meta.size || 0;
             acc.progress +=
-                (transfer.state === TransferState.Done
-                    ? transfer.meta.size
-                    : latestStats.stats[transfer.id]?.progress) || 0;
+                (transfer.state === TransferState.Done ? transfer.meta.size : stats[transfer.id]?.progress) || 0;
         }
 
         return acc;

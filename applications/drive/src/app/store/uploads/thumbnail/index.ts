@@ -1,0 +1,1 @@
+export { makeThumbnail } from './thumbnail';

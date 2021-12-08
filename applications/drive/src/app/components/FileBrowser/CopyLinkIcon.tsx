@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Button, Icon, Tooltip } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useSharing from '../../hooks/drive/useSharing';
+import { useActions } from '../../store';
 
 interface Props {
     shareId: string;
@@ -14,7 +14,7 @@ interface Props {
 
 const CopyLinkIcon = ({ shareId, item, className }: Props) => {
     const [isLoading, setIsLoading] = useState(false);
-    const { copyShareLinkToClipboard } = useSharing();
+    const { copyShareLinkToClipboard } = useActions();
 
     const handleGetLink = useCallback(
         (e) => {
@@ -26,7 +26,7 @@ const CopyLinkIcon = ({ shareId, item, className }: Props) => {
             e.stopPropagation(); // To not show file preview when clicking (to not trigger other click event).
             e.preventDefault(); // To not show file preview when pressing enter (to disable click event).
 
-            copyShareLinkToClipboard(item.ShareUrlShareID as string).finally(() => {
+            copyShareLinkToClipboard(new AbortController().signal, shareId, item.LinkID).finally(() => {
                 setIsLoading(false);
             });
         },

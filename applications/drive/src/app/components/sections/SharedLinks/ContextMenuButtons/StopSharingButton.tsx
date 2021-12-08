@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import useToolbarActions from '../../../../hooks/drive/useActions';
+
+import { useActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
@@ -11,14 +12,20 @@ interface Props {
 }
 
 const StopSharingButton = ({ shareId, items, close }: Props) => {
-    const { openStopSharing } = useToolbarActions();
+    const { stopSharingLinks } = useActions();
 
     return (
         <ContextMenuButton
             name={c('Action').t`Stop sharing`}
             icon="link-broken"
             testId="context-menu-stop-sharing"
-            action={() => openStopSharing(shareId, items)}
+            action={() =>
+                stopSharingLinks(
+                    new AbortController().signal,
+                    shareId,
+                    items.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                )
+            }
             close={close}
         />
     );

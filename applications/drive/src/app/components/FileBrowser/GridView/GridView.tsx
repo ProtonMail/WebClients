@@ -4,8 +4,7 @@ import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 import { classnames, Loader, useElementRect, useRightToLeft, Table } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import { FileBrowserItem, FileBrowserProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import { AllSortKeys } from '@proton/shared/lib/interfaces/drive/link';
+import { FileBrowserItem, FileBrowserProps, SortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useFileBrowserView from '../useFileBrowserView';
 import GridHeader from './GridHeader';
@@ -36,7 +35,7 @@ const calculateCellDimensions = (areaWidth: number) => {
     };
 };
 
-type Props<T extends AllSortKeys> = Omit<FileBrowserProps<T>, 'type' | 'onScrollEnd' | 'isPreview'> & {
+type Props<T extends SortField> = Omit<FileBrowserProps<T>, 'type' | 'onScrollEnd' | 'isPreview' | 'layout'> & {
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 };
 
@@ -83,7 +82,7 @@ const GridItemCell = ({
     );
 };
 
-function GridView<T extends AllSortKeys>({
+function GridView<T extends SortField>({
     caption,
     shareId,
     contents,
@@ -99,7 +98,7 @@ function GridView<T extends AllSortKeys>({
     scrollAreaRef,
     ItemContextMenu,
     FolderContextMenu,
-    SortDropdown,
+    sortFields,
     sortParams,
     setSorting,
 }: Props<T>) {
@@ -156,13 +155,14 @@ function GridView<T extends AllSortKeys>({
             <div>
                 <Table caption={caption} className="file-browser-table m0">
                     <GridHeader
+                        isLoading={loading}
                         contents={contents}
                         onToggleAllSelected={onToggleAllSelected}
                         scrollAreaRef={scrollAreaRef}
                         selectedItems={selectedItems}
+                        sortFields={sortFields}
                         setSorting={setSorting}
                         sortParams={sortParams}
-                        SortDropdown={SortDropdown}
                     />
                 </Table>
             </div>

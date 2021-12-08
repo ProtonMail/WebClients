@@ -4,30 +4,28 @@ import { c } from 'ttag';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
+import { useTrashView } from '../../../store';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { FileBrowser } from '../../FileBrowser';
-import { useTrashContent } from './TrashContentProvider';
+import { mapDecryptedLinksToChildren } from '../helpers';
 import EmptyTrash from './EmptyTrash';
 import TrashItemContextMenu from './TrashItemContextMenu';
 
 interface Props {
     shareId: string;
+    trashView: ReturnType<typeof useTrashView>;
 }
 
-function Trash({ shareId }: Props) {
+function Trash({ shareId, trashView }: Props) {
     const { navigateToLink } = useNavigate();
 
-    const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useTrashContent();
+    const { layout, items, sortParams, setSorting, selectionControls, isLoading } = trashView;
 
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
-        fileBrowserControls;
+        selectionControls;
 
-    const handleScrollEnd = useCallback(() => {
-        // Only load on scroll after initial load from backend
-        if (initialized && !complete) {
-            loadNextPage();
-        }
-    }, [initialized, complete, loadNextPage]);
+    const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
+    const contents = mapDecryptedLinksToChildren(items);
 
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
@@ -41,18 +39,21 @@ function Trash({ shareId }: Props) {
         [navigateToLink, shareId]
     );
 
-    return complete && !contents.length && !loading ? (
+    return !contents.length && !isLoading ? (
         <EmptyTrash />
     ) : (
         <FileBrowser
             type="trash"
+            layout={layout}
             caption={c('Title').t`Trash`}
             shareId={shareId}
-            loading={loading}
+            loading={isLoading}
             contents={contents}
-            selectedItems={selectedItems}
+            selectedItems={selectedItems2}
+            sortFields={['name', 'trashed', 'size']}
+            sortParams={sortParams}
+            setSorting={setSorting}
             onItemClick={handleClick}
-            onScrollEnd={handleScrollEnd}
             onToggleItemSelected={toggleSelectItem}
             clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}

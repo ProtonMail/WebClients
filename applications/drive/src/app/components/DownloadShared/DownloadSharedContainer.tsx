@@ -10,6 +10,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
+import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../store';
 import usePublicSharing, {
     ERROR_CODE_INVALID_SRP_PARAMS,
     SharedURLInfoDecrypted,
@@ -17,7 +18,6 @@ import usePublicSharing, {
 import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
 import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
-import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../utils/link';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;

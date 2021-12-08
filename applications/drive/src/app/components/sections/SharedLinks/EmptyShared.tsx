@@ -1,21 +1,21 @@
 import { c } from 'ttag';
 
-import { PrimaryButton, useModals, EmptyViewContainer } from '@proton/components';
+import { PrimaryButton, EmptyViewContainer } from '@proton/components';
 
 import noLinksSvg from '@proton/styles/assets/img/placeholders/file-share.svg';
 
-import SelectedFileToShareModal from '../../SelectedFileToShareModal/SelectedFileToShareModal';
+import useOpenModal from '../../useOpenModal';
 
 type Props = {
     shareId: string;
 };
 
 const EmptyShared = ({ shareId }: Props) => {
-    const { createModal } = useModals();
+    const { openFileSharing } = useOpenModal();
 
     const onShareFile = () => {
         if (shareId) {
-            createModal(<SelectedFileToShareModal shareId={shareId} />);
+            openFileSharing(shareId);
         }
     };
 

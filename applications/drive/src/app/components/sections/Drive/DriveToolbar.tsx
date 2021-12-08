@@ -1,11 +1,7 @@
-import { useEffect } from 'react';
-
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useDrive from '../../../hooks/drive/useDrive';
-import { useDriveContent } from './DriveContentProvider';
-import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import {
     DetailsButton,
@@ -28,25 +24,14 @@ import {
 
 interface Props {
     activeFolder: DriveFolder;
+    selectedItems: FileBrowserItem[];
 }
 
-const DriveToolbar = ({ activeFolder }: Props) => {
-    const { fileBrowserControls } = useDriveContent();
-    const { getLinkMeta } = useDrive();
-    const cache = useDriveCache();
+const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { isNarrow } = useActiveBreakpoint();
 
-    const { linkId, shareId } = activeFolder;
-
-    const ParentLinkID = cache.get.linkMeta(shareId, linkId)?.ParentLinkID;
-    const { selectedItems } = fileBrowserControls;
-
-    useEffect(() => {
-        if (!ParentLinkID) {
-            getLinkMeta(shareId, linkId).catch(console.error);
-        }
-    }, [shareId, linkId, ParentLinkID]);
+    const { shareId } = activeFolder;
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -72,7 +57,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                 <ToolbarSeparator />
                 <DownloadButton shareId={shareId} selectedItems={selectedItems} />
                 {isNarrow ? (
-                    <ActionsDropdown shareId={shareId} />
+                    <ActionsDropdown shareId={shareId} selectedItems={selectedItems} />
                 ) : (
                     <>
                         <ShareButton shareId={shareId} selectedItems={selectedItems} />

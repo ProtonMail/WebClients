@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { FormModal, Radio, Checkbox, Row } from '@proton/components';
 
-import { TransferConflictStrategy } from './interface';
+import { TransferConflictStrategy } from '../../store/uploads/interface';
 
 export interface ConflictModalProps {
     name: string;

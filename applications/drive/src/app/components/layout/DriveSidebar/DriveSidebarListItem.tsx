@@ -9,7 +9,7 @@ import {
     useLoading,
 } from '@proton/components';
 
-import { useDriveEventManager } from '../../driveEventManager';
+import { useDriveEventManager } from '../../../store';
 
 interface Props {
     children: React.ReactNode;
