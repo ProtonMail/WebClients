@@ -64,8 +64,8 @@ const SquireToolbar = ({
             <UpdateFontModal
                 squireRef={squireRef}
                 onChange={(fontFace: string, fontSize: number) => {
-                    setFontFace(fontFace);
-                    setFontSize(fontSize);
+                    setFontFace(fontFace || DEFAULT_FONT_FACE);
+                    setFontSize(fontSize || DEFAULT_FONT_SIZE);
                 }}
             />
         );
