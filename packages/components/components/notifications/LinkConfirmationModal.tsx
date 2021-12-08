@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
+import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { useApi, useEventManager } from '../../hooks';
 import { ConfirmModal } from '../modal';
 import { Button } from '../button';
@@ -19,6 +20,9 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [dontAskAgain, setDontAskAgain] = useState(false);
+
+    // https://jira.protontech.ch/browse/SEC-574
+    const linkToShow = rtlSanitize(link);
 
     // Both are not able to open the link
     const punyCodeLink = /:\/\/xn--/.test(link);
@@ -53,7 +57,7 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
                     color="norm"
                     type="submit"
                     autoFocus
-                    aria-label={c('Action').t`Confirm opening of link ${link}`}
+                    aria-label={c('Action').t`Confirm opening of link ${linkToShow}`}
                 >
                     {c('Action').t`Confirm`}
                 </Button>
@@ -63,7 +67,7 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
         >
             <Alert className="mb1 text-break" type="warning">
                 {`${c('Info').t`You are about to open another browser tab and visit:`} `}
-                <span className="text-bold">{link}</span>
+                <span className="text-bold">{linkToShow}</span>
             </Alert>
 
             {punyCodeLink && (
