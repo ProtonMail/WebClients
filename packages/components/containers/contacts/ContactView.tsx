@@ -24,6 +24,7 @@ interface Props {
     properties: ContactProperties;
     userKeysList: DecryptedKey[];
     errors?: (CryptoProcessingError | Error)[];
+    isSignatureVerified?: boolean;
     isModal: boolean;
     onDelete: () => void;
     onReload: () => void;
@@ -38,6 +39,7 @@ const ContactView = ({
     ownAddresses,
     userKeysList,
     errors,
+    isSignatureVerified = false,
     isModal,
     onDelete,
     onReload,
@@ -65,6 +67,7 @@ const ContactView = ({
         contactEmails,
         ownAddresses,
         properties,
+        isSignatureVerified,
         contactGroupsMap,
         leftBlockWidth: 'label max-w100p',
         rightBlockWidth: 'w100',
