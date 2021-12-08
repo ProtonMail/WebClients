@@ -1,13 +1,10 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { c } from 'ttag';
 
-import { InlineLinkButton, TopBanner, useModals, useAddressesKeys, useUser, useLoading } from '@proton/components';
-import { Address, DecryptedKey } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { InlineLinkButton, TopBanner, useModals, useUser, useLoading } from '@proton/components';
 
+import { useLockedVolume } from '../../store';
 import FilesRecoveryModal from './FileRecovery/FilesRecoveryModal';
-import { useDriveCache } from '../DriveCache/DriveCacheProvider';
-import useDrive from '../../hooks/drive/useDrive';
 import useResolveLockedSharesFlow from './KeyReactivation/useResolveLockedSharesFlow';
 
 interface Props {
@@ -15,53 +12,27 @@ interface Props {
 }
 
 const LockedVolumesBanner = ({ onClose }: Props) => {
-    const cache = useDriveCache();
     const { createModal } = useModals();
     const [User] = useUser();
-    const [addressesKeys] = useAddressesKeys();
     const [loading, withLoading] = useLoading(true);
-    const { getSharesReadyToRestore } = useDrive();
-
-    const getReadyToRestoreData = useCallback(
-        (
-            addressesKeys: {
-                address: Address;
-                keys: DecryptedKey[];
-            }[]
-        ) => {
-            const possibleKeys = addressesKeys.reduce((result: DecryptedKey[], { address, keys }) => {
-                return [
-                    ...result,
-                    ...address.Keys.map((nonPrimaryKey) => keys.find((key) => key.ID === nonPrimaryKey.ID)).filter(
-                        isTruthy
-                    ),
-                ];
-            }, []);
-
-            const lockedShareIds = cache.get.lockedShares.map(({ ShareID }) => ShareID);
-            return getSharesReadyToRestore(possibleKeys, lockedShareIds).then(cache.setSharesReadyToRestore);
-        },
-        [cache.get.lockedShares]
-    );
+    const { prepareVolumesForRestore, hasLockedVolumes, hasVolumesForRestore } = useLockedVolume();
 
     const { openKeyReactivationModal } = useResolveLockedSharesFlow({
         onSuccess: () => {
-            getReadyToRestoreData(addressesKeys).catch(console.error);
+            prepareVolumesForRestore(new AbortController().signal).catch(console.error);
         },
         onError: onClose,
     });
 
     useEffect(() => {
-        if (addressesKeys) {
-            withLoading(getReadyToRestoreData(addressesKeys)).catch(console.error);
-        }
-    }, [User.Email, addressesKeys, getReadyToRestoreData]);
+        withLoading(prepareVolumesForRestore(new AbortController().signal)).catch(console.error);
+    }, [User.Email, prepareVolumesForRestore]);
 
     const StartRecoveryButton = (
         <InlineLinkButton
             key="file-recovery-more"
             onClick={() => {
-                createModal(<FilesRecoveryModal lockedShareList={cache.sharesReadyToRestore} />);
+                createModal(<FilesRecoveryModal />);
             }}
         >
             {c('Info').t`More`}
@@ -72,7 +43,7 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
         <InlineLinkButton
             key="key-reactivation"
             onClick={openKeyReactivationModal}
-            data-test-id="recovery-banner:key-reactivation-button"
+            data-testid="recovery-banner:key-reactivation-button"
         >
             {c('Info').t`Learn more`}
         </InlineLinkButton>
@@ -83,9 +54,9 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     const recoveryMessage = c('Info')
         .jt`Some of your files are no longer accessible. Restore the access to your files. ${StartRecoveryButton}`;
 
-    return !loading && cache.get.lockedShares.length ? (
+    return !loading && hasLockedVolumes ? (
         <TopBanner className="bg-danger" onClose={onClose}>
-            {cache.sharesReadyToRestore.length ? recoveryMessage : reactivateMessage}
+            {hasVolumesForRestore ? recoveryMessage : reactivateMessage}
         </TopBanner>
     ) : null;
 };

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import useOpenModal from '../../../useOpenModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const ShareLinkButton = ({ shareId, item, close }: Props) => {
-    const { openLinkSharing } = useToolbarActions();
+    const { openLinkSharing } = useOpenModal();
 
     const hasSharedLink = !!item.SharedUrl;
 

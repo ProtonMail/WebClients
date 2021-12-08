@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
+import useOpenModal from '../../../useOpenModal';
 import { ContextMenuButton } from '../../ContextMenu';
-import useToolbarActions from '../../../../hooks/drive/useActions';
 
 interface Props {
     close: () => void;
 }
 
 const CreateNewFolderButton = ({ close }: Props) => {
-    const { openCreateFolder } = useToolbarActions();
+    const { openCreateFolder } = useOpenModal();
 
     return (
         <ContextMenuButton

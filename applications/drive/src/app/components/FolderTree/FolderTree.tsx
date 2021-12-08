@@ -1,55 +1,34 @@
 import { TableRowBusy } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+
+import { DecryptedLink, TreeItem } from '../../store';
 import ExpandableRow from './ExpandableRow';
 
-export interface FolderTreeItem {
-    linkId: string;
-    name: string;
-    type: LinkType;
-    mimeType: string;
-    children: { list: FolderTreeItem[]; complete: boolean };
-}
-
 interface Props {
-    items: FolderTreeItem[];
-    initiallyExpandedFolders: string[];
+    rootFolder: TreeItem;
     selectedItemId?: string;
-    loading?: boolean;
-    onSelect: (LinkID: string) => void;
-    loadChildren: (LinkID: string, loadNextPage?: boolean) => Promise<void>;
-    rowIsDisabled?: (item: FolderTreeItem) => boolean;
+    onSelect: (link: DecryptedLink) => void;
+    rowIsDisabled?: (item: TreeItem) => boolean;
+    toggleExpand: (linkId: string) => void;
 }
 
-const FolderTree = ({
-    items,
-    initiallyExpandedFolders,
-    selectedItemId,
-    loading = false,
-    onSelect,
-    loadChildren,
-    rowIsDisabled,
-}: Props) => {
-    const generateRows = (items: FolderTreeItem[], depth = 0) => {
-        const rows = items.map((item: FolderTreeItem) => {
-            const { linkId, name, type, mimeType, children } = item;
-            const disabled = rowIsDisabled ? rowIsDisabled(item) : false;
-            const childrenRows = children.list.length ? generateRows(children.list, depth + 1) : null;
-            const isExpanded = initiallyExpandedFolders.includes(linkId);
+const FolderTree = ({ rootFolder, selectedItemId, onSelect, rowIsDisabled, toggleExpand }: Props) => {
+    const generateRows = (items: TreeItem[], depth = 0) => {
+        const rows = items.map((item: TreeItem) => {
+            const { link, children, isExpanded, isLoaded } = item;
+            const isDisabled = rowIsDisabled ? rowIsDisabled(item) : false;
+            const childrenRows = children.length ? generateRows(children, depth + 1) : null;
 
             return (
                 <ExpandableRow
-                    key={linkId}
-                    linkId={linkId}
-                    name={name}
-                    type={type}
-                    mimeType={mimeType}
-                    depth={depth}
-                    isSelected={selectedItemId === linkId}
+                    key={link.linkId}
+                    link={link}
+                    isDisabled={isDisabled}
+                    isSelected={selectedItemId === link.linkId}
                     isExpanded={isExpanded}
-                    disabled={disabled}
+                    isLoaded={isLoaded}
+                    depth={depth}
                     onSelect={onSelect}
-                    loadChildren={loadChildren}
-                    childrenComplete={children.complete}
+                    toggleExpand={toggleExpand}
                 >
                     {childrenRows}
                 </ExpandableRow>
@@ -59,12 +38,12 @@ const FolderTree = ({
         return <>{rows}</>;
     };
 
-    const rows = generateRows(items);
+    const rows = generateRows([rootFolder]);
 
     return (
         <div className="folder-tree">
             <table className="folder-tree-table simple-table simple-table--is-hoverable ">
-                <tbody>{loading ? <TableRowBusy /> : rows}</tbody>
+                <tbody>{!rootFolder.isLoaded ? <TableRowBusy /> : rows}</tbody>
             </table>
         </div>
     );

@@ -1,11 +1,12 @@
+import { useEffect, useState } from 'react';
 import * as React from 'react';
 
 import { Sidebar, SidebarNav } from '@proton/components';
 
+import { useDefaultShare, ShareWithKey } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';
-import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 
 interface Props {
     isHeaderExpanded: boolean;
@@ -16,9 +17,13 @@ interface Props {
 
 const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }: Props) => {
     const { activeShareId } = useActiveShare();
-    const cache = useDriveCache();
+    const { getDefaultShare } = useDefaultShare();
 
-    const defaultShare = cache.get.defaultShareMeta();
+    const [defaultShare, setDefaultShare] = useState<ShareWithKey>();
+
+    useEffect(() => {
+        void getDefaultShare().then(setDefaultShare);
+    }, [getDefaultShare]);
 
     /*
      * The sidebar supports multiple shares, but as we currently have

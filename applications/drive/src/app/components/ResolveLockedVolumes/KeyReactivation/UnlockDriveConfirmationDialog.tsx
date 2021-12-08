@@ -55,7 +55,7 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack
                         color="norm"
                         path="/encryption-keys?action=reactivate#addresses"
                         app={APPS.PROTONMAIL}
-                        data-test-id="drive-key-reactivations-options:continue"
+                        data-testid="drive-key-reactivations-options:continue"
                         onClick={onClose}
                     >
                         {c('Action').t`Continue`}

@@ -12,30 +12,24 @@ import {
 } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { MEMBER_SHARING_ENABLED } from '@proton/shared/lib/drive/constants';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { useDriveContent } from '../DriveContentProvider';
+import { useActions } from '../../../../store';
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import useToolbarActions from '../../../useOpenModal';
 
 interface Props {
     shareId: string;
+    selectedItems: FileBrowserItem[];
 }
 
-const ActionsDropdown = ({ shareId }: Props) => {
+const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const {
-        openDetails,
-        openFilesDetails,
-        openMoveToFolder,
-        openMoveToTrash,
-        openRename,
-        openSharing,
-        openLinkSharing,
-    } = useToolbarActions();
+    const { openDetails, openFilesDetails, openMoveToFolder, openRename, openSharing, openLinkSharing } =
+        useToolbarActions();
+    const { trashLinks } = useActions();
     const { activeFolder } = useActiveShare();
-    const { fileBrowserControls } = useDriveContent();
-    const { selectedItems } = fileBrowserControls;
 
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const isMultiSelect = selectedItems.length > 1;
@@ -90,7 +84,13 @@ const ActionsDropdown = ({ shareId }: Props) => {
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
-            action: () => openMoveToTrash(activeFolder, selectedItems),
+            action: () =>
+                trashLinks(
+                    new AbortController().signal,
+                    activeFolder.shareId,
+                    activeFolder.linkId,
+                    selectedItems.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                ),
         },
         {
             hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,

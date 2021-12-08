@@ -3,15 +3,15 @@ import { useRouteMatch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { SidebarList } from '@proton/components';
-import { ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 
+import { ShareWithKey } from '../../../store';
 import { DriveSectionRouteProps } from '../../sections/Drive/DriveView';
 import DriveSidebarListItem from './DriveSidebarListItem';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 
 interface Props {
     shareId?: string;
-    userShares: ShareMetaShort[];
+    userShares: ShareWithKey[];
 }
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
@@ -27,10 +27,10 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
         <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
             {userShares.map((useShare) => (
                 <DriveSidebarFolders
-                    key={useShare.ShareID}
+                    key={useShare.shareId}
                     path={match.url}
-                    shareId={useShare.ShareID}
-                    linkId={useShare.LinkID}
+                    shareId={useShare.shareId}
+                    linkId={useShare.rootLinkId}
                     setSidebarLevel={setSidebarLevel}
                 />
             ))}

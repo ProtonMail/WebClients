@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import { useActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
@@ -11,14 +11,20 @@ interface Props {
 }
 
 const RestoreFromTrashButton = ({ shareId, items, close }: Props) => {
-    const { restoreFromTrash } = useToolbarActions();
+    const { restoreLinks } = useActions();
 
     return (
         <ContextMenuButton
             name={c('Action').t`Restore from trash`}
             icon="arrow-rotate-right"
             testId="context-menu-restore"
-            action={() => restoreFromTrash(shareId, items)}
+            action={() =>
+                restoreLinks(
+                    new AbortController().signal,
+                    shareId,
+                    items.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                )
+            }
             close={close}
         />
     );

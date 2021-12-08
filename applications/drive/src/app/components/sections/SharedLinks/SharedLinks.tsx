@@ -3,31 +3,28 @@ import { c } from 'ttag';
 
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { useSharedLinksView } from '../../../store';
 import { FileBrowser } from '../../FileBrowser';
-import { useSharedLinksContent } from './SharedLinksContentProvider';
+import useNavigate from '../../../hooks/drive/useNavigate';
+import { mapDecryptedLinksToChildren } from '../helpers';
 import EmptyShared from './EmptyShared';
 import SharedLinksItemContextMenu from './SharedLinksItemContextMenu';
-import useNavigate from '../../../hooks/drive/useNavigate';
-import SortDropdown from './SortDropdown';
 
 type Props = {
     shareId: string;
+    sharedLinksView: ReturnType<typeof useSharedLinksView>;
 };
 
-const SharedLinks = ({ shareId }: Props) => {
+const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const { navigateToLink } = useNavigate();
 
-    const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls, sortParams, setSorting } =
-        useSharedLinksContent();
+    const { layout, items, sortParams, setSorting, selectionControls, isLoading } = sharedLinksView;
 
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
-        fileBrowserControls;
+        selectionControls;
 
-    const handleScrollEnd = useCallback(() => {
-        if (initialized && !complete) {
-            loadNextPage();
-        }
-    }, [initialized, complete, loadNextPage]);
+    const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
+    const contents = mapDecryptedLinksToChildren(items);
 
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
@@ -37,16 +34,18 @@ const SharedLinks = ({ shareId }: Props) => {
         [navigateToLink, shareId]
     );
 
-    return complete && !contents.length && !loading ? (
+    return !contents.length && !isLoading ? (
         <EmptyShared shareId={shareId} />
     ) : (
         <FileBrowser
             type="sharing"
+            layout={layout}
             caption={c('Title').t`Shared`}
             shareId={shareId}
-            loading={loading}
+            loading={isLoading}
             contents={contents}
-            selectedItems={selectedItems}
+            selectedItems={selectedItems2}
+            sortFields={['name', 'linkCreateTime', 'linkExpireTime', 'numAccesses']}
             sortParams={sortParams}
             setSorting={setSorting}
             onItemClick={handleClick}
@@ -55,9 +54,7 @@ const SharedLinks = ({ shareId }: Props) => {
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={toggleRange}
             selectItem={selectItem}
-            onScrollEnd={handleScrollEnd}
             ItemContextMenu={SharedLinksItemContextMenu}
-            SortDropdown={SortDropdown}
         />
     );
 };

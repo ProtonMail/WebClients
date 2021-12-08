@@ -1,4 +1,4 @@
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import {
@@ -17,15 +17,13 @@ import {
 } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import FolderTree, { FolderTreeItem } from '../FolderTree/FolderTree';
+import FolderTree from '../FolderTree/FolderTree';
 import { DriveFolder } from '../../hooks/drive/useActiveShare';
 import HasNoFolders from './HasNoFolders';
 import { selectMessageForItemList } from '../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';
-import useDrive from '../../hooks/drive/useDrive';
-import useListNotifications from '../../hooks/util/useListNotifications';
-import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import ModalContentLoader from '../ModalContentLoader';
+import { DecryptedLink, TreeItem, useFolderTree, useActions } from '../../store';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -35,104 +33,27 @@ interface Props {
 
 const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Props) => {
     const { createModal } = useModals();
-    const cache = useDriveCache();
-    const { getShareMetaShort, getLinkMeta, getFoldersOnlyMetas, moveLinks } = useDrive();
-    const { createMoveLinksNotifications } = useListNotifications();
+    const { moveLinks } = useActions();
+    const { rootFolder, expand, toggleExpand } = useFolderTree(activeFolder.shareId, { rootExpanded: true });
+
     const [loading, withLoading] = useLoading();
-    const [initializing, withInitialize] = useLoading(true);
-    const [folders, setFolders] = useState<FolderTreeItem[]>([]);
-    const [initiallyExpandedFolders, setInitiallyExpandedFolders] = useState<string[]>([]);
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const { isNarrow } = useActiveBreakpoint();
 
-    const { shareId, linkId } = activeFolder;
-
-    const isChildrenComplete = (LinkID: string) => !!cache.get.foldersOnlyComplete(shareId, LinkID);
-
-    const fetchChildrenData = async (linkId: string, loadNextPage = false) => {
-        const childrenMetas = await getFoldersOnlyMetas(shareId, linkId, loadNextPage);
-        const list = childrenMetas.map((item) => ({
-            linkId: item.LinkID,
-            name: item.Name,
-            type: item.Type,
-            mimeType: item.MIMEType,
-            children: { list: [], complete: false },
-        }));
-        const complete = isChildrenComplete(linkId);
-
-        return { list, complete };
-    };
-
     const moveLinksToFolder = async (parentFolderId: string) => {
-        const toMove = [...selectedItems];
-        const toMoveIds = toMove.map(({ LinkID }) => LinkID);
-
-        const moveResult = await moveLinks(shareId, parentFolderId, toMoveIds);
-
-        const undoAction = async () => {
-            const toMoveBackIds = moveResult.moved.map(({ LinkID }) => LinkID);
-            const moveBackResult = await moveLinks(shareId, linkId, toMoveBackIds);
-            createMoveLinksNotifications(toMove, moveBackResult);
-        };
-
-        createMoveLinksNotifications(toMove, moveResult, undoAction);
+        await moveLinks(
+            new AbortController().signal,
+            activeFolder.shareId,
+            selectedItems.map(({ LinkID, Name, Type }) => ({ linkId: LinkID, name: Name, type: Type })),
+            parentFolderId,
+            selectedItems[0]?.ParentLinkID
+        );
     };
 
-    useEffect(() => {
-        const initializeData = async () => {
-            const { LinkID } = await getShareMetaShort(shareId);
-            const meta = await getLinkMeta(shareId, LinkID);
-            const children = await fetchChildrenData(LinkID);
-            const rootFolder = {
-                linkId: meta.LinkID,
-                name: c('Title').t`My files`,
-                type: meta.Type,
-                mimeType: meta.MIMEType,
-                children,
-            };
-
-            setInitiallyExpandedFolders([LinkID]);
-            setFolders([rootFolder]);
-        };
-
-        withInitialize(initializeData()).catch(console.error);
-    }, [shareId]);
-
-    const onSelect = (linkId: string) => {
+    const onSelect = (link: DecryptedLink) => {
         if (!loading) {
-            setSelectedFolder(linkId);
+            setSelectedFolder(link.linkId);
         }
-    };
-
-    const loadChildren = async (linkId: string, loadNextPage = false) => {
-        let appended = false;
-
-        const childrenData = await fetchChildrenData(linkId, loadNextPage);
-        const rootFolder = folders[0];
-
-        const appendChildren = (parent: FolderTreeItem) => {
-            const childrenIds = parent.children.list.map(({ linkId }) => linkId);
-            const newChildren = childrenData.list.filter(({ linkId }) => !childrenIds.includes(linkId));
-            parent.children = { list: [...parent.children.list, ...newChildren], complete: childrenData.complete };
-            setFolders([rootFolder]);
-            appended = true;
-        };
-
-        const addSubfolders = (parentId: string, current: FolderTreeItem) => {
-            if (appended) {
-                return;
-            }
-            if (parentId === current.linkId) {
-                appendChildren(current);
-            } else {
-                const childrenList = current.children.list;
-                for (let i = 0; i < childrenList.length; i++) {
-                    addSubfolders(parentId, childrenList[i]);
-                }
-            }
-        };
-
-        addSubfolders(linkId, rootFolder);
     };
 
     const handleSubmit = async () => {
@@ -145,11 +66,10 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     const handleCreateNewFolderClick = (parentFolderId: string) => {
         createModal(
             <CreateFolderModal
-                folder={{ shareId, linkId: parentFolderId }}
+                folder={{ shareId: activeFolder.shareId, linkId: parentFolderId }}
                 onCreateDone={async (newFolderId) => {
-                    await loadChildren(parentFolderId);
-                    setInitiallyExpandedFolders([...initiallyExpandedFolders, parentFolderId]);
-                    onSelect(newFolderId);
+                    expand(parentFolderId);
+                    setSelectedFolder(newFolderId);
                 }}
             />
         );
@@ -175,22 +95,21 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
             itemsToMoveCount
         ),
     };
-    const moveIsDisabled = !selectedFolder || itemsToMove.includes(selectedFolder) || linkId === selectedFolder;
+    const moveIsDisabled =
+        !selectedFolder || itemsToMove.includes(selectedFolder) || activeFolder.linkId === selectedFolder;
 
     let modalContents = {
         title: selectMessageForItemList(
             selectedItems.map((item) => item.Type),
             messages
         ),
-        content: (
+        content: rootFolder && (
             <FolderTree
-                items={folders}
-                initiallyExpandedFolders={initiallyExpandedFolders}
+                rootFolder={rootFolder}
                 selectedItemId={selectedFolder}
-                loading={initializing}
-                rowIsDisabled={(item: FolderTreeItem) => itemsToMove.includes(item.linkId)}
+                rowIsDisabled={(item: TreeItem) => itemsToMove.includes(item.link.linkId)}
                 onSelect={onSelect}
-                loadChildren={loadChildren}
+                toggleExpand={toggleExpand}
             />
         ),
         footer: (
@@ -226,13 +145,13 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         ) as ReactNode,
     };
 
-    if (!initializing && !folders[0]?.children.list.length) {
+    if (rootFolder && rootFolder.isLoaded && rootFolder.children.length === 0) {
         modalContents = {
             content: (
                 <HasNoFolders
                     onCreate={() => {
                         onClose?.();
-                        handleCreateNewFolderClick(folders[0].linkId);
+                        handleCreateNewFolderClick(rootFolder.link.linkId);
                     }}
                 />
             ),
@@ -246,7 +165,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
             <HeaderModal modalTitleID={modalTitleID} hasClose={!loading} onClose={onClose}>
                 {modalContents.title}
             </HeaderModal>
-            {initializing ? (
+            {!rootFolder || !rootFolder.isLoaded ? (
                 <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
             ) : (
                 <ContentModal

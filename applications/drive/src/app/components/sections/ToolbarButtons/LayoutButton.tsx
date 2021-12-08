@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import useUserSettings from '../../../hooks/drive/useUserSettings';
+import { useUserSettings } from '../../../store';
 
 const LayoutButton = () => {
     const { layout, changeLayout } = useUserSettings();

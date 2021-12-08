@@ -9,7 +9,7 @@ import {
 } from '@proton/shared/lib/models';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { openpgpConfig } from './openpgpConfig';
-import useUserSettings from './hooks/drive/useUserSettings';
+import { useUserSettings, SettingsProvider } from './store';
 import UserSettingsProvider from './components/sections/UserSettingsProvider';
 
 const getAppContainer = () => import('./containers/MainContainer');
@@ -41,7 +41,9 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
 const PrivateApp = (props: Props) => {
     return (
         <UserSettingsProvider>
-            <PrivateAppInner {...props} />
+            <SettingsProvider>
+                <PrivateAppInner {...props} />
+            </SettingsProvider>
         </UserSettingsProvider>
     );
 };

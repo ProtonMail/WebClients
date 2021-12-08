@@ -1,42 +1,44 @@
 import { Loader } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
+import { c } from 'ttag';
 
+import { TreeItem } from '../../../../store';
 import FileRecoveryIcon from '../../../ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
 import DriveSidebarListItem from '../DriveSidebarListItem';
-import { Folder } from './useFolders';
-import useSubfolderLoading from './useSubfolderLoading';
 import ExpandButton from './ExpandButton';
 
 interface Props {
     path: string;
-    rootFolder: Folder;
+    shareId: string;
+    linkId: string;
+    rootFolder?: TreeItem;
     toggleExpand: (linkId: string) => void;
 }
 
-export default function DriveSidebarFoldersRoot({ path, rootFolder, toggleExpand }: Props) {
-    const isLoading = useSubfolderLoading(rootFolder, true);
+export default function DriveSidebarFoldersRoot({ path, shareId, linkId, rootFolder, toggleExpand }: Props) {
+    const isLoading = !rootFolder?.isLoaded;
 
-    const url = `/${rootFolder.shareId}/${LinkURLType.FOLDER}/${rootFolder.linkId}`;
+    const url = `/${shareId}/${LinkURLType.FOLDER}/${linkId}`;
     return (
         <DriveSidebarListItem
             key="root"
             to={url}
             icon="inbox"
-            shareId={rootFolder.shareId}
+            shareId={shareId}
             isActive={path === url}
-            onDoubleClick={() => toggleExpand(rootFolder.linkId)}
+            onDoubleClick={() => toggleExpand(linkId)}
         >
-            <span className="text-ellipsis" title={rootFolder.name}>
-                {rootFolder.name}
+            <span className="text-ellipsis" title={c('Title').t`My files`}>
+                {c('Title').t`My files`}
             </span>
             {isLoading ? (
                 <Loader className="ml0-5 drive-sidebar--icon inline" />
             ) : (
-                rootFolder.subfolders && (
+                rootFolder.children && (
                     <ExpandButton
                         className="ml0-5 flex-item-noshrink"
-                        expanded={rootFolder.expanded}
-                        onClick={() => toggleExpand(rootFolder.linkId)}
+                        expanded={rootFolder.isExpanded}
+                        onClick={() => toggleExpand(rootFolder.link.linkId)}
                     />
                 )
             )}

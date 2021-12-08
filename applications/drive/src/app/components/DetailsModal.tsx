@@ -4,6 +4,9 @@ import { c } from 'ttag';
 import { Row, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+
+import { useShareUrl } from '../store';
+import { formatAccessCount } from '../utils/formatters';
 import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
 import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
 import DescriptiveTypeCell from './FileBrowser/ListView/Cells/DescriptiveTypeCell';
@@ -11,9 +14,6 @@ import TimeCell from './FileBrowser/ListView/Cells/TimeCell';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
 import NameCell from './FileBrowser/ListView/Cells/NameCell';
 import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
-
-import useSharing from '../hooks/drive/useSharing';
-import { formatAccessCount } from '../utils/formatters';
 
 interface Props {
     shareId: string;
@@ -43,7 +43,7 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
     const title = isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
     const isShared = item.SharedUrl && !item.UrlsExpired ? c('Info').t`Yes` : c('Info').t`No`;
 
-    const { getSharedURLs } = useSharing();
+    const { loadShareUrlNumberOfAccesses } = useShareUrl();
     const [numberOfAccesses, setNumberOfAccesses] = useState<number>();
     const [loadingNumberOfAccesses, setLoadingNumberOfAccesses] = useState(false);
 
@@ -51,15 +51,17 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
         if (!item.ShareUrlShareID) {
             return;
         }
+        const abortController = new AbortController();
         setLoadingNumberOfAccesses(true);
-        getSharedURLs(item.ShareUrlShareID)
-            .then(({ ShareURLs: [sharedUrl] }) => {
-                setNumberOfAccesses(sharedUrl.NumAccesses);
-            })
+        loadShareUrlNumberOfAccesses(abortController.signal, shareId, item.LinkID)
+            .then(setNumberOfAccesses)
             .catch(console.error)
             .finally(() => {
                 setLoadingNumberOfAccesses(false);
             });
+        return () => {
+            abortController.abort();
+        };
     }, [item.ShareUrlShareID]);
 
     return (

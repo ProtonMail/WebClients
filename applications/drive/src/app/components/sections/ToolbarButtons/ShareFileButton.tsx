@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import useToolbarActions from '../../../hooks/drive/useActions';
+import useOpenModal from '../../useOpenModal';
 
 interface Props {
     shareId: string;
 }
 
 const ShareFileButton = ({ shareId }: Props) => {
-    const { openFileSharing } = useToolbarActions();
+    const { openFileSharing } = useOpenModal();
 
     return (
         <ToolbarButton
