@@ -12,29 +12,31 @@ export const useResizeMessageView = (
     const [scrollBarWidth, setScrollBarWidth] = useState(0);
     const [windowWidth] = useWindowSize();
 
-    // Original width of the messageList
-    const realDefaultWidth = windowWidth * 0.35;
+    // Original ratio of the messageList
+    const realDefaultRatio = 0.35;
 
-    const [defaultWidth] = useState<number>(+(getItem('messageListWidth') || realDefaultWidth));
+    const [defaultRatio, setDefaultRatio] = useState<number>(+(getItem('messageListRatio') || realDefaultRatio));
     const [defaultWindowWidth, setDefaultWindowWidth] = useState(windowWidth);
 
     // Get left of container to have the size of the sidebar
     const sidebarWidth = containerRef.current ? containerRef.current.getBoundingClientRect().left : 0;
 
-    const saveWidth = useHandler(
+    const saveRatio = useHandler(
         (newWidth: number) => {
-            setItem('messageListWidth', newWidth.toString());
+            const newRatio = newWidth / windowWidth;
+            setDefaultRatio(newRatio);
+            setItem('messageListRatio', newRatio.toString());
         },
         { debounce: 2000 }
     );
 
     const resize = (newWidth: number) => {
         document.documentElement.style.setProperty('--width-conversation-column', `${newWidth}px`);
-        saveWidth(newWidth);
     };
 
     const resizeWithAmount = (amount: number) => {
         const newWidth = (listRef.current ? listRef.current.getBoundingClientRect().width : 0) + amount;
+        saveRatio(newWidth);
         resize(newWidth);
     };
 
@@ -42,6 +44,7 @@ export const useResizeMessageView = (
         (e) => {
             if (isResizing) {
                 const newWidth = e.clientX - sidebarWidth + scrollBarWidth;
+                saveRatio(newWidth);
                 resize(newWidth);
             }
         },
@@ -57,7 +60,7 @@ export const useResizeMessageView = (
     }, [setIsResizing]);
 
     const resetWidth = () => {
-        resize(realDefaultWidth);
+        resize(windowWidth * realDefaultRatio);
     };
 
     useHotkeys(resizeAreaRef, [
@@ -80,18 +83,18 @@ export const useResizeMessageView = (
     // If the window is resized, resize the width too
     useEffect(() => {
         if (windowWidth !== defaultWindowWidth) {
-            const currentWidth = listRef.current ? listRef.current.getBoundingClientRect().width : 0;
-            resize(windowWidth * (currentWidth / defaultWindowWidth));
+            resize(windowWidth * defaultRatio);
             setDefaultWindowWidth(windowWidth);
         }
     }, [windowWidth]);
 
     // When launching the app, set the message view size to the default width (localStorage value if found, else the "real" default value)
     useEffect(() => {
-        if (defaultWidth) {
-            document.documentElement.style.setProperty('--width-conversation-column', `${defaultWidth}px`);
+        if (defaultRatio) {
+            const defaultWidth = windowWidth * defaultRatio;
+            resize(defaultWidth);
         }
-    }, [defaultWidth]);
+    }, [defaultRatio]);
 
     useEffect(() => {
         const resizeThrottle = throttle(resizeWithMouse, 20);
