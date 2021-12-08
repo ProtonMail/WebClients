@@ -165,8 +165,30 @@ const Dropdown = ({
             onClose();
         };
 
-        document.addEventListener('dropdownclose', onClose);
-        document.addEventListener('click', handleClickOutside, { capture: true });
+        /*
+         * In iOS Safari 12 (and maybe below), given the following scenario:
+         * Html <input /> nested inside of a <label /> with connecting "for" attributes
+         *
+         * The behaviour on click inside said label seems to be the following:
+         * Emit one click event with the target of the clicked element (imagine an icon inside
+         * an input field for example, e.g. CountrySelect input)
+         * Emit a second click event seemingly coming from and with the target being the input
+         * element which is linked to the label via the "for" attribute OR whichever input
+         * element is the first to appear in the children of the label.
+         *
+         * This behaviour causes the check for a click on the anchor element not to work if the
+         * anchor element is a child of the label but not the input itself. A dropdown is
+         * immediately closed as soon as opened because there are two click events emitted, one
+         * of which claims to not have been emitted from the anchor element.
+         *
+         * I'm assuming that bubbling is a fully synchronous operation here. Given this, delaying
+         * the attachement of this click-outside event-listener to a later call-stack seems to deal
+         * with this issue (as it can't listen to it's own bubbled click event any longer).
+         */
+        setTimeout(() => {
+            document.addEventListener('dropdownclose', onClose);
+            document.addEventListener('click', handleClickOutside, { capture: true });
+        }, 0);
 
         return () => {
             document.removeEventListener('dropdownclose', onClose);
