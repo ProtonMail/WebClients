@@ -32,6 +32,7 @@ interface Props {
     userKeysList: DecryptedKey[];
     leftBlockWidth?: string;
     rightBlockWidth?: string;
+    isSignatureVerified: boolean;
     isPreview: boolean;
 }
 
@@ -45,6 +46,7 @@ const ContactViewProperty = ({
     userKeysList,
     leftBlockWidth = 'w30',
     rightBlockWidth = 'w70',
+    isSignatureVerified,
     isPreview,
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
@@ -226,7 +228,9 @@ const ContactViewProperty = ({
                         <span role="heading" aria-level={3} className="mr0-5">
                             <ContactLabelProperty field={field} type={type} />
                         </span>
-                        {field && ['email', 'fn'].includes(field) ? null : <EncryptedIcon className="flex" />}
+                        {field && ['email', 'fn'].includes(field) ? null : (
+                            <EncryptedIcon className="flex" isSignatureVerified={isSignatureVerified} />
+                        )}
                     </div>
                 </div>
                 <span
