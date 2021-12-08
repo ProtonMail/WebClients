@@ -3,15 +3,15 @@
 ### Improvements
 
 -   Added more technical improvements related to the State Management of the application
--   Updated the wording of the modal appearing when deleting folder to indicate that sub-folders will be deleted as part of the process
+-   Updated the wording of the modal appearing when a deleting folder to indicate that sub-folders will be deleted as part of the process
 -   Improved the look and feel of the composer loading state in dark mode
 
 ### Bug fixes
 
 -   Fixed an issue where in search results, navigating between single messages that belong to the same conversation would not be possible
--   Fixed an issue where the composer would show in expanded mode even though the setting is set to be "Default"
+-   Fixed an issue where the composer would show in expanded mode even though the setting is set to be "Default mode"
 -   Fixed an issue where when pasting external content, only the first row would adhere to the Default font setting
--   Fixed an issue where certain imported contacts could not be loaded through the UI
+-   Fixed an issue where some specific imported contacts could not be loaded through the UI
 -   Fixed an issue where when merging contacts with emails that belong to the same group, unrelated groups appear on the merge preview modal
 -   Fixed various translation issues
 
