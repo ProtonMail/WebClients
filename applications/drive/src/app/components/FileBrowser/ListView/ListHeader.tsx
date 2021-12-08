@@ -3,13 +3,18 @@ import * as React from 'react';
 import { TableRowSticky, TableHeaderCell, Checkbox, useActiveBreakpoint } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { AllSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
-import { FileBrowserItem, FileBrowserLayouts } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import {
+    FileBrowserItem,
+    FileBrowserLayouts,
+    SortParams,
+    SortField,
+} from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useFileBrowserColumns } from '../useFileBrowserColumns';
 
-interface Props<T extends AllSortKeys> {
+interface Props<T extends SortField> {
     type: FileBrowserLayouts;
+    isLoading?: boolean;
     sortParams?: SortParams<T>;
     setSorting?: (sortParams: SortParams<T>) => void;
     selectedItems: FileBrowserItem[];
@@ -18,8 +23,9 @@ interface Props<T extends AllSortKeys> {
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 }
 
-const ListHeader = <T extends AllSortKeys>({
+const ListHeader = <T extends SortField>({
     type,
+    isLoading,
     setSorting,
     sortParams,
     contents,
@@ -32,7 +38,7 @@ const ListHeader = <T extends AllSortKeys>({
 
     const canSort = (fn?: () => void) => (setSorting ? fn : undefined);
 
-    const handleSort = (key: AllSortKeys) => {
+    const handleSort = (key: SortField) => {
         if (!sortParams || !setSorting) {
             return;
         }
@@ -45,7 +51,7 @@ const ListHeader = <T extends AllSortKeys>({
         setSorting({ sortField: key as T, sortOrder: direction });
     };
 
-    const getSortDirectionForKey = (key: AllSortKeys) =>
+    const getSortDirectionForKey = (key: SortField) =>
         sortParams?.sortField === key ? sortParams.sortOrder : undefined;
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;
@@ -63,7 +69,11 @@ const ListHeader = <T extends AllSortKeys>({
                         />
                     </div>
                 </TableHeaderCell>
-                <TableHeaderCell onSort={canSort(() => handleSort('Name'))} direction={getSortDirectionForKey('Name')}>
+                <TableHeaderCell
+                    onSort={canSort(() => handleSort('name'))}
+                    direction={getSortDirectionForKey('name')}
+                    isLoading={isLoading && sortParams?.sortField === 'name'}
+                >
                     {c('TableHeader').t`Name`}
                 </TableHeaderCell>
                 {columns.includes('location') && (
@@ -71,34 +81,34 @@ const ListHeader = <T extends AllSortKeys>({
                         .t`Location`}</TableHeaderCell>
                 )}
                 {columns.includes('uploaded') && (
-                    // On API its called ModifyTime, but its actually time when
-                    // the last revision was uploaded. The real modify time is
-                    // stored in encrypted extended attributes.
-                    <TableHeaderCell
-                        className="w15"
-                        direction={getSortDirectionForKey('ModifyTime')}
-                        onSort={canSort(() => handleSort('ModifyTime'))}
-                    >
-                        {c('TableHeader').t`Uploaded`}
-                    </TableHeaderCell>
+                    <TableHeaderCell className="w15">{c('TableHeader').t`Uploaded`}</TableHeaderCell>
                 )}
                 {columns.includes('modified') && (
-                    <TableHeaderCell className="w15">{c('TableHeader').t`Modified`}</TableHeaderCell>
+                    <TableHeaderCell
+                        className="w15"
+                        direction={getSortDirectionForKey('fileModifyTime')}
+                        onSort={canSort(() => handleSort('fileModifyTime'))}
+                        isLoading={isLoading && sortParams?.sortField === 'fileModifyTime'}
+                    >
+                        {c('TableHeader').t`Modified`}
+                    </TableHeaderCell>
                 )}
                 {columns.includes('trashed') && (
                     <TableHeaderCell
                         className="w25"
-                        direction={getSortDirectionForKey('ModifyTime')}
-                        onSort={canSort(() => handleSort('ModifyTime'))}
+                        direction={getSortDirectionForKey('trashed')}
+                        onSort={canSort(() => handleSort('trashed'))}
+                        isLoading={isLoading && sortParams?.sortField === 'trashed'}
                     >
                         {c('TableHeader').t`Deleted`}
                     </TableHeaderCell>
                 )}
                 {columns.includes('size') && (
                     <TableHeaderCell
-                        direction={getSortDirectionForKey('Size')}
-                        onSort={canSort(() => handleSort('Size'))}
+                        direction={getSortDirectionForKey('size')}
+                        onSort={canSort(() => handleSort('size'))}
                         className={isDesktop ? 'w10' : 'w15'}
+                        isLoading={isLoading && sortParams?.sortField === 'size'}
                     >
                         {c('TableHeader').t`Size`}
                     </TableHeaderCell>
@@ -106,20 +116,29 @@ const ListHeader = <T extends AllSortKeys>({
                 {columns.includes('share_created') && (
                     <TableHeaderCell
                         className="w15"
-                        direction={getSortDirectionForKey('CreateTime')}
-                        onSort={canSort(() => handleSort('CreateTime'))}
+                        direction={getSortDirectionForKey('linkCreateTime')}
+                        onSort={canSort(() => handleSort('linkCreateTime'))}
+                        isLoading={isLoading && sortParams?.sortField === 'linkCreateTime'}
                     >
                         {c('TableHeader').t`Created`}
                     </TableHeaderCell>
                 )}
                 {columns.includes('share_num_access') && (
-                    <TableHeaderCell className="w15">{c('TableHeader').t`# of accesses`}</TableHeaderCell>
+                    <TableHeaderCell
+                        className="w15"
+                        direction={getSortDirectionForKey('numAccesses')}
+                        onSort={canSort(() => handleSort('numAccesses'))}
+                        isLoading={isLoading && sortParams?.sortField === 'numAccesses'}
+                    >
+                        {c('TableHeader').t`# of accesses`}
+                    </TableHeaderCell>
                 )}
                 {columns.includes('share_expires') && (
                     <TableHeaderCell
                         className="w20"
-                        direction={getSortDirectionForKey('ExpireTime')}
-                        onSort={canSort(() => handleSort('ExpireTime'))}
+                        direction={getSortDirectionForKey('linkExpireTime')}
+                        onSort={canSort(() => handleSort('linkExpireTime'))}
+                        isLoading={isLoading && sortParams?.sortField === 'linkExpireTime'}
                     >
                         {c('TableHeader').t`Expires`}
                     </TableHeaderCell>

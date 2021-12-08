@@ -5,12 +5,10 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/hooks';
 import dragdropImageSvg from '@proton/styles/assets/img/placeholders/drag-and-drop.svg';
 
-//
-
+import { useUpload } from '../../../store';
+import { UploadFileList } from '../../../store/uploads/interface';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { isTransferCancelError } from '../../../utils/transfer';
-import { useUploadProvider } from '../UploadProvider';
-import { UploadFileList } from '../interface';
 
 interface UploadDragDropProps {
     children: ReactNode;
@@ -21,7 +19,7 @@ interface UploadDragDropProps {
 const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) => {
     const { createNotification } = useNotifications();
     const { activeFolder } = useActiveShare();
-    const { uploadFiles } = useUploadProvider();
+    const { uploadFiles } = useUpload();
 
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 

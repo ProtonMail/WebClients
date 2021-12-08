@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive//fileBrowser';
 
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import { useActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
@@ -11,14 +11,20 @@ interface Props {
 }
 
 const DeletePermanentlyButton = ({ shareId, items, close }: Props) => {
-    const { openDeletePermanently } = useToolbarActions();
+    const { deletePermanently } = useActions();
 
     return (
         <ContextMenuButton
             name={c('Action').t`Delete permanently`}
             icon="circle-xmark"
             testId="context-menu-delete"
-            action={() => openDeletePermanently(shareId, items)}
+            action={() =>
+                deletePermanently(
+                    new AbortController().signal,
+                    shareId,
+                    items.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                )
+            }
             close={close}
         />
     );

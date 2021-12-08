@@ -72,27 +72,27 @@ export const querySharedLinks = (shareId: string, params: { Page: number; PageSi
     };
 };
 
-export const queryUpdateSharedLink = (shareId: string, token: string, data: Partial<UpdateSharedURL>) => {
+export const queryUpdateSharedLink = (shareId: string, shareUrlId: string, data: Partial<UpdateSharedURL>) => {
     return {
         method: 'put',
-        url: `drive/shares/${shareId}/urls/${token}`,
+        url: `drive/shares/${shareId}/urls/${shareUrlId}`,
         data,
     };
 };
 
-export const queryDeleteSharedLink = (shareId: string, token: string) => {
+export const queryDeleteSharedLink = (shareId: string, shareUrlId: string) => {
     return {
         method: 'delete',
-        url: `drive/shares/${shareId}/urls/${token}`,
+        url: `drive/shares/${shareId}/urls/${shareUrlId}`,
     };
 };
 
-export const queryDeleteMultipleSharedLinks = (shareId: string, shareURLIds: string[]) => {
+export const queryDeleteMultipleSharedLinks = (shareId: string, shareUrlIds: string[]) => {
     return {
         method: 'post',
         url: `drive/shares/${shareId}/urls/delete_multiple`,
         data: {
-            ShareURLIDs: shareURLIds,
+            ShareURLIDs: shareUrlIds,
         },
     };
 };

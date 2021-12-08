@@ -7,17 +7,18 @@ import {
     SidebarListItemLink,
 } from '@proton/components';
 
-import { Folder } from './useFolders';
+import { TreeItem } from '../../../../store';
 import useSubfolderLoading from './useSubfolderLoading';
 import ExpandButton from './ExpandButton';
 
 interface Props {
-    folder: Folder;
+    shareId: string;
+    folder: TreeItem;
     level: number;
     toggleExpand: () => void;
 }
 
-export default function DriveSidebarSubfolder({ folder, level, toggleExpand }: Props) {
+export default function DriveSidebarSubfolder({ shareId, folder, level, toggleExpand }: Props) {
     const isLoading = useSubfolderLoading(folder);
 
     const handleFolderClick = (e: any) => {
@@ -30,20 +31,20 @@ export default function DriveSidebarSubfolder({ folder, level, toggleExpand }: P
     return (
         <SidebarListItem>
             <SidebarListItemLink
-                to={`/${folder.shareId}/folder/${folder.linkId}`}
+                to={`/${shareId}/folder/${folder.link.linkId}`}
                 onClick={handleFolderClick}
                 onDoubleClick={toggleExpand}
-                title={folder.name}
+                title={folder.link.name}
             >
                 <SidebarListItemContent>
                     <div className="flex flex-nowrap" style={{ marginLeft: `${(level * 10) / 16}rem` }}>
-                        <ExpandButton className="mr0-5" expanded={folder.expanded} onClick={toggleExpand} />
+                        <ExpandButton className="mr0-5" expanded={folder.isExpanded} onClick={toggleExpand} />
                         {isLoading ? (
                             <Loader className="mr0-5 flex drive-sidebar--icon" />
                         ) : (
                             <FileIcon className="mr0-5 flex-item-centered-vert drive-sidebar--icon" mimeType="Folder" />
                         )}
-                        <FileNameDisplay text={folder.name} />
+                        <FileNameDisplay text={folder.link.name} />
                     </div>
                 </SidebarListItemContent>
             </SidebarListItemLink>

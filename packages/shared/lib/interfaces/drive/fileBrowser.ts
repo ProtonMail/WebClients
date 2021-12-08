@@ -1,5 +1,7 @@
 import React from 'react';
-import { LinkType, SortParams, SharedUrlInfo, AllSortKeys } from './link';
+import { SORT_DIRECTION } from '../../constants';
+import { LinkType, SharedUrlInfo } from './link';
+import { LayoutSetting } from './userSettings';
 
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
@@ -26,7 +28,9 @@ export interface FileBrowserItem {
     Disabled?: boolean;
     UrlsExpired: boolean;
     ShareUrlShareID?: string;
-    SharedUrl?: SharedUrlInfo;
+    SharedUrl?: SharedUrlInfo & {
+        NumAccesses?: number;
+    };
     HasThumbnail: boolean;
     // CachedThumbnailURL is computed URL to cached image. This is not part
     // of any request and not filled automatically. To get this value, use
@@ -63,7 +67,8 @@ export interface ItemProps {
     FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
 }
 
-export interface FileBrowserProps<T extends AllSortKeys = AllSortKeys> {
+export interface FileBrowserProps<T extends SortField = SortField> {
+    layout: LayoutSetting;
     loading?: boolean;
     shareId: string;
     caption?: string;
@@ -71,8 +76,9 @@ export interface FileBrowserProps<T extends AllSortKeys = AllSortKeys> {
     selectedItems: FileBrowserItem[];
     type: FileBrowserLayouts;
     isPreview?: boolean;
+    sortFields?: T[];
     sortParams?: SortParams<T>;
-    onScrollEnd: () => void;
+    onScrollEnd?: () => void;
     onToggleItemSelected: (item: string) => void;
     onItemClick?: (item: FileBrowserItem) => void;
     onShiftClick?: (item: string) => void;
@@ -83,7 +89,16 @@ export interface FileBrowserProps<T extends AllSortKeys = AllSortKeys> {
     getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
     ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
     FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
-    SortDropdown?: React.FunctionComponent;
+}
+
+export type FolderSortField = 'name' | 'mimeType' | 'fileModifyTime' | 'size';
+export type SharedLinkSortField = 'name' | 'linkCreateTime' | 'linkExpireTime' | 'numAccesses';
+export type TrashedLinksSortField = 'name' | 'size' | 'trashed';
+export type SortField = FolderSortField | SharedLinkSortField | TrashedLinksSortField | 'metaDataModifyTime';
+
+export interface SortParams<T extends SortField = SortField> {
+    sortField: T;
+    sortOrder: SORT_DIRECTION;
 }
 
 export interface FolderContextMenuProps {
