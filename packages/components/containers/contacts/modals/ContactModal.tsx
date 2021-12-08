@@ -355,6 +355,7 @@ const ContactModal = ({
                 ref={nameFieldRef}
                 properties={properties}
                 field="fn"
+                isSignatureVerified
                 isSubmitted={isSubmitted}
                 onChange={handleChange}
                 onRemove={handleRemove}
@@ -362,6 +363,7 @@ const ContactModal = ({
             <ContactModalProperties
                 properties={properties}
                 field="email"
+                isSignatureVerified
                 isSubmitted={isSubmitted}
                 onChange={handleChange}
                 onRemove={handleRemove}
@@ -373,6 +375,7 @@ const ContactModal = ({
             <ContactModalProperties
                 properties={properties}
                 field="tel"
+                isSignatureVerified
                 isSubmitted={isSubmitted}
                 onChange={handleChange}
                 onRemove={handleRemove}
@@ -382,6 +385,7 @@ const ContactModal = ({
             <ContactModalProperties
                 properties={properties}
                 field="adr"
+                isSignatureVerified
                 isSubmitted={isSubmitted}
                 onChange={handleChange}
                 onRemove={handleRemove}
@@ -391,6 +395,7 @@ const ContactModal = ({
             <ContactModalProperties
                 isSubmitted={isSubmitted}
                 properties={properties}
+                isSignatureVerified
                 onChange={handleChange}
                 onRemove={handleRemove}
                 onAdd={handleAdd()}

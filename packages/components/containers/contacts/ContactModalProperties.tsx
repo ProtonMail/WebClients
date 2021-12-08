@@ -21,6 +21,7 @@ const ICONS: { [key: string]: string } = {
 interface Props {
     field?: string;
     properties: ContactProperties;
+    isSignatureVerified: boolean;
     onChange: (payload: ContactPropertyChange) => void;
     onOrderChange?: (field: string, orderedProperties: ContactProperties) => void;
     onAdd?: () => void;
@@ -33,6 +34,7 @@ interface Props {
 const ContactModalProperties = (
     {
         properties: allProperties,
+        isSignatureVerified,
         field,
         onChange,
         onOrderChange,
@@ -107,7 +109,10 @@ const ContactModalProperties = (
                 <Icon className="mr0-25 flex-item-noshrink" name={iconName} />
                 <span className="ml0-1 mr0-5">{title}</span>
                 {((field && !['fn', 'email'].includes(field)) || field === undefined) && (
-                    <EncryptedIcon className="flex flex-item-centered-vert flex-item-noshrink" />
+                    <EncryptedIcon
+                        className="flex flex-item-centered-vert flex-item-noshrink"
+                        isSignatureVerified={isSignatureVerified}
+                    />
                 )}
             </h3>
             {field && ['email'].includes(field) && (
