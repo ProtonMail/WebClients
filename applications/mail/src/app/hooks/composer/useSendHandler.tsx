@@ -90,8 +90,8 @@ export const useSendHandler = ({
             // Document is frequently reset in the state, keeping the one from the model
             // Rest is more up to date in the state, several changes could have happen since capturing the model
             inputMessage = {
-                ...(getMessage(inputMessage.localID) as MessageStateWithData),
-                messageDocument: modelMessage.messageDocument,
+                ...modelMessage,
+                data: (getMessage(inputMessage.localID) as MessageStateWithData).data,
             };
         } catch {
             hideNotification(notifManager.ID);
