@@ -148,7 +148,11 @@ export const verificationComplete = (
             verificationStatus: verification?.verified,
             verificationErrors: verification?.verificationErrors,
         };
-        messageState.errors = errors;
+        if (messageState.errors) {
+            Object.assign(messageState.errors, errors);
+        } else {
+            messageState.errors = errors;
+        }
     }
 };
 
