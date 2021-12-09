@@ -10,9 +10,11 @@ const EncryptedIcon = ({ isSignatureVerified, className = 'flex flex-item-center
     const tooltipText = isSignatureVerified
         ? c('Tooltip').t`Encrypted data with verified digital signature`
         : c('Tooltip').t`Encrypted data`;
+    const iconName = isSignatureVerified ? 'lock-check-filled' : 'lock-filled';
+
     return (
         <Tooltip title={tooltipText}>
-            <Icon name="lock-filled" className={className} />
+            <Icon name={iconName} className={className} />
         </Tooltip>
     );
 };
