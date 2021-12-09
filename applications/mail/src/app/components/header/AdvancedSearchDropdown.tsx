@@ -148,7 +148,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         close();
     };
 
-    const handleReset = (event: FormEvent) => handleSubmit(event, true);
+    const handleReset = () => updateModel(DEFAULT_MODEL);
 
     useEffect(() => {
         if (isOpen) {
