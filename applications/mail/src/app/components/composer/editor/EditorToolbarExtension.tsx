@@ -33,11 +33,11 @@ const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
     return (
         <>
             <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleTogglePublicKey}>
-                <span className="mtauto mbauto flex-item-fluid pl0-25">{c('Info').t`Attach Public Key`}</span>
+                <span className="mtauto mbauto flex-item-fluid pl0-25">{c('Info').t`Attach public key`}</span>
                 <Icon name="check" className={classnames(['mt0-25 ml1', getClassname(isAttachPublicKey)])} />
             </DropdownMenuButton>
             <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleToggleReceiptRequest}>
-                <span className="mtauto mbauto flex-item-fluid pl0-25">{c('Info').t`Request Read Receipt`}</span>
+                <span className="mtauto mbauto flex-item-fluid pl0-25">{c('Info').t`Request read receipt`}</span>
                 <Icon name="check" className={classnames(['mt0-25 ml1', getClassname(isReceiptRequest)])} />
             </DropdownMenuButton>
         </>
