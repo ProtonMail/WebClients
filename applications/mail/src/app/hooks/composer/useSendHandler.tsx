@@ -17,7 +17,8 @@ import { endSending, startSending } from '../../logic/messages/draft/messagesDra
 import { useGetMessage } from '../message/useMessage';
 
 export interface UseSendHandlerParameters {
-    modelMessage: MessageState;
+    // Composer will be unmounted and modelMessage will continue changing after sending start
+    getModelMessage: () => MessageState;
     ensureMessageContent: () => void;
     mapSendInfo: MapSendInfo;
     promiseUpload: Promise<void>;
@@ -33,7 +34,7 @@ export interface UseSendHandlerParameters {
 }
 
 export const useSendHandler = ({
-    modelMessage,
+    getModelMessage,
     ensureMessageContent,
     mapSendInfo,
     promiseUpload,
@@ -71,7 +72,7 @@ export const useSendHandler = ({
         try {
             await pendingSave.promise; // Wait for potential ongoing save request
 
-            verificationResults = await extendedVerifications(modelMessage as MessageStateWithData, mapSendInfo);
+            verificationResults = await extendedVerifications(getModelMessage() as MessageStateWithData, mapSendInfo);
             mapSendPrefs = verificationResults.mapSendPrefs;
             inputMessage = verificationResults.cleanMessage;
 
@@ -90,12 +91,12 @@ export const useSendHandler = ({
             // Document is frequently reset in the state, keeping the one from the model
             // Rest is more up to date in the state, several changes could have happen since capturing the model
             inputMessage = {
-                ...modelMessage,
+                ...getModelMessage(),
                 data: (getMessage(inputMessage.localID) as MessageStateWithData).data,
             };
         } catch {
             hideNotification(notifManager.ID);
-            onCompose({ existingDraft: modelMessage, fromUndo: true });
+            onCompose({ existingDraft: getModelMessage(), fromUndo: true });
             return;
         }
 
@@ -138,14 +139,14 @@ export const useSendHandler = ({
     });
 
     const handleSend = useHandler(async () => {
-        const { localID, draftFlags } = modelMessage;
+        const { localID, draftFlags } = getModelMessage();
         const { scheduledAt } = draftFlags || {};
         const notifManager = createSendingMessageNotificationManager();
 
         // If scheduledAt is set we already performed the preliminary verifications
         if (!scheduledAt) {
             try {
-                await preliminaryVerifications(modelMessage as MessageStateWithData);
+                await preliminaryVerifications(getModelMessage() as MessageStateWithData);
             } catch (error: any) {
                 if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
                     onMessageAlreadySent();
@@ -161,7 +162,7 @@ export const useSendHandler = ({
                     scheduledAt={scheduledAt}
                     manager={notifManager}
                     viewMode={mailSettings?.ViewMode || 0}
-                    message={modelMessage.data}
+                    message={getModelMessage().data}
                 />
             ),
             expiration: -1,
@@ -185,7 +186,7 @@ export const useSendHandler = ({
                     type: 'error',
                 });
                 console.error('Error while uploading attachments.', error);
-                onCompose({ existingDraft: modelMessage, fromUndo: true });
+                onCompose({ existingDraft: getModelMessage(), fromUndo: true });
                 throw error;
             }
 
