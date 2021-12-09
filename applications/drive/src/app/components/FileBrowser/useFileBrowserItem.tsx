@@ -7,7 +7,7 @@ import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { selectMessageForItemList } from '../sections/helpers';
 
-const DOUBLE_CLICK_MS = 250;
+const DOUBLE_CLICK_MS = 500;
 
 interface Options {
     item: FileBrowserItem;
