@@ -2,12 +2,17 @@ import squire from 'squire-rte';
 import { fireEvent, RenderResult } from '@testing-library/react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mergeMessages } from '../../../helpers/message/messages';
-import { addApiKeys, apiKeys } from '../../../helpers/test/crypto';
 import Composer from '../Composer';
-import { render } from '../../../helpers/test/render';
+import {
+    render,
+    addApiMock,
+    parseFormData,
+    waitForNoNotification,
+    waitForNotification,
+    addApiKeys,
+    apiKeys,
+} from '../../../helpers/test/helper';
 import { Breakpoints } from '../../../models/utils';
-import { addApiMock, parseFormData } from '../../../helpers/test/api';
-import { waitForNoNotification, waitForNotification } from '../../../helpers/test/helper';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { store } from '../../../logic/store';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
@@ -32,7 +37,7 @@ export const toAddress = 'someone@somewhere.net';
 
 export const props = {
     messageID: ID,
-    composerFrameRef: { current: document.createElement('div') },
+    composerFrameRef: { current: document.body as HTMLDivElement },
     breakpoints: {} as Breakpoints,
     onFocus: jest.fn(),
     onClose: jest.fn(),
