@@ -185,12 +185,13 @@ const Dropdown = ({
          * the attachement of this click-outside event-listener to a later call-stack seems to deal
          * with this issue (as it can't listen to it's own bubbled click event any longer).
          */
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
             document.addEventListener('dropdownclose', onClose);
             document.addEventListener('click', handleClickOutside, { capture: true });
         }, 0);
 
         return () => {
+            clearTimeout(timeoutId);
             document.removeEventListener('dropdownclose', onClose);
             document.removeEventListener('click', handleClickOutside, { capture: true });
         };
