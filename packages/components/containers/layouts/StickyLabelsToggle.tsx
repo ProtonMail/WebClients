@@ -11,6 +11,7 @@ interface Props {
     stickyLabels: STICKY_LABELS;
     onToggle: (value: STICKY_LABELS) => void;
     loading: boolean;
+    disabled?: boolean;
 }
 
 const StickyLabelsToggle = ({ id, stickyLabels, onToggle, loading, ...rest }: Props) => {
