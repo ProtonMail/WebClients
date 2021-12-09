@@ -105,7 +105,7 @@ const Composer = (
     const [editorReady, setEditorReady] = useState(false);
 
     // Model value of the edited message in the composer
-    const [modelMessage, setModelMessage] = useLongLivingState<MessageState>({
+    const [modelMessage, setModelMessage, getModelMessage] = useLongLivingState<MessageState>({
         localID: messageID,
     });
 
@@ -466,7 +466,7 @@ const Composer = (
     });
 
     const handleSend = useSendHandler({
-        modelMessage,
+        getModelMessage,
         ensureMessageContent,
         mapSendInfo: messageSendInfo.mapSendInfo,
         promiseUpload,
