@@ -89,27 +89,6 @@ const AppearanceOtherSection = () => {
         <>
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="stickyLabelsToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Use sticky labels`}</span>
-                        <Info
-                            title={c('Tooltip')
-                                .t`When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt0-5">
-                    <StickyLabelsToggle
-                        id="stickyLabelsToggle"
-                        stickyLabels={StickyLabels}
-                        loading={loadingStickyLabels}
-                        onToggle={(value) => withLoadingStickyLabels(handleToggleStickyLabels(value))}
-                        data-testid="appearance:sticky-labels-toggle"
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
                     <label htmlFor="viewMode" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Conversation grouping`}</span>
                         <Info
@@ -126,6 +105,28 @@ const AppearanceOtherSection = () => {
                         loading={loadingViewMode}
                         onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
                         data-testid="appearance:conversation-group-toggle"
+                    />
+                </SettingsLayoutRight>
+            </SettingsLayout>
+
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="stickyLabelsToggle" className="text-semibold">
+                        <span className="mr0-5">{c('Label').t`Use sticky labels`}</span>
+                        <Info
+                            title={c('Tooltip')
+                                .t`When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.`}
+                        />
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="pt0-5">
+                    <StickyLabelsToggle
+                        id="stickyLabelsToggle"
+                        stickyLabels={StickyLabels}
+                        loading={loadingStickyLabels}
+                        onToggle={(value) => withLoadingStickyLabels(handleToggleStickyLabels(value))}
+                        data-testid="appearance:sticky-labels-toggle"
+                        disabled={ViewMode !== VIEW_MODE.GROUP}
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
