@@ -9,7 +9,11 @@ import { RIGHT_TO_LEFT, MIME_TYPES } from '@proton/shared/lib/constants';
 import { diff } from '@proton/shared/lib/helpers/array';
 import { noop } from '@proton/shared/lib/helpers/function';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/squireConfig';
+import {
+    defaultFontStyle,
+    DEFAULT_FONT_FACE,
+    DEFAULT_FONT_SIZE,
+} from '@proton/components/components/editor/squireConfig';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
 import {
@@ -224,7 +228,9 @@ const SquireEditorWrapper = ({
     };
     const switchToHTML = () => {
         const MIMEType = MIME_TYPES.DEFAULT;
-        const content = plainTextToHTML(message.data, message.messageDocument?.plainText, mailSettings, addresses);
+        let content = plainTextToHTML(message.data, message.messageDocument?.plainText, mailSettings, addresses);
+        const fontStyle = defaultFontStyle(mailSettings);
+        content = fontStyle ? `<div style="${fontStyle}">${content}</div>` : `<div>${content}</div>`;
         const document = setDocumentContent(message.messageDocument?.document, content);
         onChange({ messageDocument: { document }, data: { MIMEType } });
     };
