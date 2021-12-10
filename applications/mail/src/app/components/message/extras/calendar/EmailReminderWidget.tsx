@@ -40,8 +40,7 @@ import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
-import { getMessageHasData } from '../../../../helpers/message/messages';
-import { MessageState } from '../../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
 
 import './CalendarWidget.scss';
 
@@ -49,7 +48,7 @@ const EVENT_NOT_FOUND_ERROR = 'EVENT_NOT_FOUND';
 const DECRYPTION_ERROR = 'DECRYPTION_ERROR';
 
 interface EmailReminderWidgetProps {
-    message: MessageState;
+    message: MessageStateWithData;
 }
 
 const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
@@ -80,21 +79,22 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
     const messageHasDecryptionError = !!message.errors?.decryption?.length;
 
     useEffect(() => {
-        if (!calendarIdHeader || !eventIdHeader || messageHasDecryptionError) {
-            return;
-        }
-
         void (async () => {
-            let calendarData;
-
-            if (!getMessageHasData(message) || loadedWidget === message.data.ID) {
+            if (!calendarIdHeader || !eventIdHeader || messageHasDecryptionError) {
+                // widget should not be displayed under these circumstances
+                // clear up React states in case this component does not unmount when opening new emails
+                setError(null);
+                setLoadedWidget('');
                 return;
             }
+            if (loadedWidget === message.data.ID) {
+                return;
+            }
+            let calendarData;
 
             try {
-                setIsLoading(true);
-                // React might have not unmounted the widget of a previous email reminder. Clean-up possible previous error states
                 setError(null);
+                setIsLoading(true);
 
                 const occurrence = parseInt(`${occurrenceHeader}`, 10);
 
@@ -153,7 +153,6 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                     return;
                 }
                 setCalendar(calendar);
-                setCalendarEvent(Event);
 
                 const { veventComponent } = await getCalendarEventRaw(Event).catch(() => {
                     throw new Error(DECRYPTION_ERROR);
@@ -177,6 +176,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                     throw new Error(EVENT_NOT_FOUND_ERROR);
                 }
 
+                setCalendarEvent(Event);
                 setVevent(veventComponent);
             } catch (error: any) {
                 if (!(error instanceof Error)) {
