@@ -227,6 +227,10 @@
 }
 
 .message-content {
+	border-start-start-radius: 0;
+	border-start-end-radius: 0;
+	border-end-start-radius: var(--border-radius-medium);
+	border-end-end-radius: var(--border-radius-medium);
 	// transition: 0.5s easing(easeOutSine);
 	// transition-property: background-color, color;
 	// force color until real dark mode

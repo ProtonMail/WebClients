@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useLabels, classnames, useHotkeys } from '@proton/components';
-import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -11,7 +10,6 @@ import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import ConversationHeader from '../conversation/ConversationHeader';
 import { Breakpoints } from '../../models/utils';
-import { useOnMailTo } from '../../containers/ComposeProvider';
 
 interface Props {
     hidden: boolean;
@@ -56,10 +54,6 @@ const MessageOnlyView = ({
     const data = message.data || ({ ID: messageID } as Message);
 
     const messageContainerRef = useRef(null);
-
-    const onMailTo = useOnMailTo();
-
-    useLinkHandler(messageContainerRef, onMailTo);
 
     useHotkeys(messageContainerRef, [
         [
