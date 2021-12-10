@@ -4,15 +4,31 @@ import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import { debounce } from '@proton/shared/lib/helpers/function';
 import { adjustPosition, computedSize, ALL_PLACEMENTS, Position } from './utils';
 
-const getPosition = (
-    anchorEl: HTMLElement,
-    popperEl: HTMLElement,
-    contentAreaEl: HTMLElement,
-    originalPlacement: string,
-    availablePlacements: string[],
-    offset: number,
-    originalPosition?: Position
-): { position: Position; placement: string } => {
+interface GetPositionProps {
+    anchorEl: HTMLElement;
+    popperEl: HTMLElement;
+    contentAreaEl: HTMLElement;
+    originalPlacement: string;
+    availablePlacements: string[];
+    offset: number;
+    originalPosition?: Position;
+    /**
+     * Related to iframe scroll edge cases.
+     * Default to false
+     */
+    skipOutOfBoundsCheck?: boolean;
+}
+
+const getPosition = ({
+    anchorEl,
+    popperEl,
+    contentAreaEl,
+    originalPlacement,
+    availablePlacements,
+    offset,
+    originalPosition,
+    skipOutOfBoundsCheck = false,
+}: GetPositionProps): { position: Position; placement: string } => {
     const anchorRect = anchorEl.getBoundingClientRect();
     const tooltipRect = popperEl.getBoundingClientRect();
     const contentRect = contentAreaEl.getBoundingClientRect();
@@ -37,7 +53,7 @@ const getPosition = (
     const isOutOfBoundsBottom = normalizedAnchorRect.top + normalizedAnchorRect.height - contentRect.top < 0;
     const isOutOfBoundsTop = normalizedAnchorRect.top - (contentRect.top + contentRect.height) > 0;
 
-    if (isOutOfBoundsBottom || isOutOfBoundsTop) {
+    if (!skipOutOfBoundsCheck && (isOutOfBoundsBottom || isOutOfBoundsTop)) {
         return {
             position: {
                 top: -9999,
@@ -67,6 +83,7 @@ interface Props {
     originalPosition?: Position;
     offset?: number;
     updatePositionOnDOMChange?: boolean;
+    anchorOffset?: { x: number; y: number };
 }
 
 const usePopper = ({
@@ -78,6 +95,7 @@ const usePopper = ({
     originalPosition,
     offset = 10,
     updatePositionOnDOMChange = true,
+    anchorOffset,
 }: Props) => {
     const initialPosition: Position = { top: -1000, left: -1000, '--arrow-offset': 0 };
     const [placement, setPlacement] = useState(originalPlacement);
@@ -92,15 +110,16 @@ const usePopper = ({
 
         const updatePosition = () => {
             if (anchorEl && popperEl) {
-                const { placement: adjustedPlacement, position: adjustedPosition } = getPosition(
+                const { placement: adjustedPlacement, position: adjustedPosition } = getPosition({
                     anchorEl,
                     popperEl,
-                    contentArea,
+                    contentAreaEl: contentArea,
                     originalPlacement,
                     availablePlacements,
                     offset,
-                    originalPosition
-                );
+                    originalPosition,
+                    skipOutOfBoundsCheck: !!anchorOffset,
+                });
                 setPlacement(adjustedPlacement);
                 setPosition(adjustedPosition);
                 return;
@@ -128,7 +147,16 @@ const usePopper = ({
         };
     }, [isOpen, anchorEl, popperEl]);
 
-    return { position, placement };
+    let computedPosition = position;
+    if (anchorOffset) {
+        computedPosition = {
+            ...position,
+            top: position.top + anchorOffset.y,
+            left: position.left + anchorOffset.x,
+        };
+    }
+
+    return { position: computedPosition, placement };
 };
 
 export default usePopper;

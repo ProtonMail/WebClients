@@ -12,6 +12,7 @@ interface Props {
     title?: ReactNode;
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
     type?: TooltipType;
+    anchorOffset?: { x: number; y: number };
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
@@ -40,7 +41,7 @@ const mergeCallbacks = (a: any, b: any) => {
     );
 };
 
-const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', ...rest }: Props) => {
+const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', anchorOffset, ...rest }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const [isRTL] = useRightToLeft();
@@ -56,7 +57,9 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', ..
         anchorEl: anchorRef.current,
         isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
+        anchorOffset,
     });
+
     const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
 
     const child = Children.only(children);
