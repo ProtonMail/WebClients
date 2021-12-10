@@ -1,8 +1,8 @@
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { fireEvent } from '@testing-library/dom';
+import { findByTestId, fireEvent } from '@testing-library/dom';
 import { createDocument } from '../../../helpers/test/message';
-import { defaultProps, initMessage, setup } from './Message.test.helpers';
+import { defaultProps, getIframeRootDiv, initMessage, setup } from './Message.test.helpers';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import MessageView from '../MessageView';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -68,39 +68,41 @@ describe('Message images', () => {
 
         initMessage(message);
 
-        const { getByTestId, rerender } = await setup({}, false);
+        const { container, rerender } = await setup({}, false);
+        const iframe = await getIframeRootDiv(container);
 
         // Check that all elements are displayed in their proton attributes before loading them
-        const elementBackground = getByTestId('image-background');
+        const elementBackground = await findByTestId(iframe, 'image-background');
         expect(elementBackground.getAttribute('proton-background')).toEqual(imageURL);
 
-        const elementPoster = getByTestId('image-poster');
+        const elementPoster = await findByTestId(iframe, 'image-poster');
         expect(elementPoster.getAttribute('proton-poster')).toEqual(imageURL);
 
-        const elementSrcset = getByTestId('image-srcset');
+        const elementSrcset = await findByTestId(iframe, 'image-srcset');
         expect(elementSrcset.getAttribute('proton-srcset')).toEqual(imageURL);
 
-        const elementXlinkhref = getByTestId('image-xlinkhref');
+        const elementXlinkhref = await findByTestId(iframe, 'image-xlinkhref');
         expect(elementXlinkhref.getAttribute('proton-xlink:href')).toEqual(imageURL);
 
-        const loadButton = getByTestId('remote-content:load2');
+        const loadButton = await findByTestId(container, 'remote-content:load2');
 
         fireEvent.click(loadButton);
 
         // Rerender the message view to check that images have been loaded
         await rerender(<MessageView {...defaultProps} />);
+        const iframeRerendered = await getIframeRootDiv(container);
 
         // Check that proton attribute has been removed after images loading
-        const updatedElementBackground = getByTestId('image-background');
+        const updatedElementBackground = await findByTestId(iframeRerendered, 'image-background');
         expect(updatedElementBackground.getAttribute('background')).toEqual(imageURL);
 
-        const updatedElementPoster = getByTestId('image-poster');
+        const updatedElementPoster = await findByTestId(iframeRerendered, 'image-poster');
         expect(updatedElementPoster.getAttribute('poster')).toEqual(imageURL);
 
-        const updatedElementSrcset = getByTestId('image-srcset');
+        const updatedElementSrcset = await findByTestId(iframeRerendered, 'image-srcset');
         expect(updatedElementSrcset.getAttribute('srcset')).toEqual(imageURL);
 
-        const updatedElementXlinkhref = getByTestId('image-xlinkhref');
+        const updatedElementXlinkhref = await findByTestId(iframeRerendered, 'image-xlinkhref');
         expect(updatedElementXlinkhref.getAttribute('xlink:href')).toEqual(imageURL);
     });
 });

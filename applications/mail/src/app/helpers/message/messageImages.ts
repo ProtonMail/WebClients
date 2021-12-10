@@ -57,7 +57,7 @@ export const updateImages = (
 
 export const insertImageAnchor = (id: string, type: 'remote' | 'embedded', match: HTMLElement): string => {
     const anchor = document.createElement('span');
-    anchor.classList.add('proton-image-anchor', 'inline-block');
+    anchor.classList.add('proton-image-anchor');
     anchor.setAttribute(`data-proton-${type}`, id);
     match.parentElement?.replaceChild(anchor, match);
     return id;
