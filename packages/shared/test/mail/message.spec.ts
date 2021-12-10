@@ -3,7 +3,7 @@ import { isBounced } from '../../lib/mail/messages';
 
 describe('isBounced helper', () => {
     const generateMessage = (sender: string, subject: string) =>
-        ({ SenderAddress: sender, Subject: subject } as Message);
+        ({ Sender: { Name: 'dummy', Address: sender }, Subject: subject } as Message);
 
     it('should return true for the typical bounced message by Proton', () => {
         expect(

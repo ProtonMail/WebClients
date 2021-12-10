@@ -24,6 +24,7 @@ jest.setTimeout(20000);
 
 describe('MessageView encryption', () => {
     const toAddress = 'me@home.net';
+    const fromName = 'someone';
     const fromAddress = 'someone@somewhere.net';
     const otherAddress = 'other@somewhere.net';
 
@@ -50,6 +51,7 @@ describe('MessageView encryption', () => {
                     ID: messageID,
                     AddressID: addressID,
                     Subject: subject,
+                    Sender: { Name: fromName, Address: fromAddress },
                     Body: encryptedBody,
                     MIMEType: MIME_TYPES.DEFAULT,
                     Attachments: [] as Attachment[],
@@ -74,6 +76,7 @@ describe('MessageView encryption', () => {
                     ID: messageID,
                     AddressID: addressID,
                     Subject: subject,
+                    Sender: { Name: fromName, Address: fromAddress },
                     Body: encryptedBody,
                     MIMEType: MIME_TYPES.PLAINTEXT,
                     Attachments: [] as Attachment[],
@@ -93,6 +96,7 @@ describe('MessageView encryption', () => {
                 ID: messageID,
                 AddressID: addressID,
                 Subject: subject,
+                Sender: { Name: fromName, Address: fromAddress },
                 MIMEType: MIME_TYPES.MIME,
                 Attachments: [] as Attachment[],
             } as Message;
@@ -126,6 +130,7 @@ describe('MessageView encryption', () => {
                 ID: messageID,
                 AddressID: addressID,
                 Subject: subject,
+                Sender: { Name: fromName, Address: fromAddress },
                 MIMEType: MIME_TYPES.MIME,
                 Attachments: [] as Attachment[],
             } as Message;
@@ -169,6 +174,7 @@ describe('MessageView encryption', () => {
                     ID: messageID,
                     AddressID: addressID,
                     Sender: {
+                        Name: fromName,
                         Address: fromAddress,
                     },
                     Subject: subject,
@@ -251,6 +257,7 @@ describe('MessageView encryption', () => {
                     ID: messageID,
                     AddressID: addressID,
                     Sender: {
+                        Name: fromName,
                         Address: fromAddress,
                     },
                     Subject: subject,
