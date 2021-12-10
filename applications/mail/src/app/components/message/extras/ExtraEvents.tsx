@@ -84,17 +84,21 @@ const ExtraEvents = ({ message }: Props) => {
         try {
             const attachments = getAttachments(message.data);
             const eventAttachments = filterAttachmentsForEvents(attachments);
-            if (!eventAttachments.length) {
-                setInvitations([]);
-                return;
-            }
             if (
+                !eventAttachments.length ||
                 messageHasDecryptionError ||
                 isBouncedEmail ||
                 loadingConfigs ||
-                !getMessageHasData(message) ||
-                loadedWidget === message.data.ID
+                !getMessageHasData(message)
             ) {
+                // widget should not be displayed under these circumstances
+                // clear up React states in case this component does not unmount when opening new emails
+                setInvitations([]);
+                setLoadedWidget('');
+                return;
+            }
+            if (loadedWidget === message.data.ID) {
+                // avoid re-loading widget if it has been loaded already
                 return;
             }
             const run = async () => {
