@@ -1,7 +1,6 @@
 import { protonizer as purifyHTML } from '@proton/shared/lib/sanitize';
 import { uniqID } from '../string';
 import { Base64Cache } from '../../hooks/useBase64Cache';
-import { inlineCss } from '../dom';
 
 export const IMG_SRC_BASE_64_PREFIX = 'data-proton-replace-base';
 
@@ -61,6 +60,5 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
 export const transformEscape = (content = '', cache?: Base64Cache) => {
     const value = removeBase64(content, cache);
     const document = purifyHTML(value, true);
-    inlineCss(document);
     return document;
 };

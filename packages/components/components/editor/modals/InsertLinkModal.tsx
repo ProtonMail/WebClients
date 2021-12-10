@@ -27,7 +27,7 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, ...rest }: Pr
     const [type, setType] = useState(linkToType(inputLink.link) || LINK_TYPES.WEB);
     const modalContentRef = useRef<HTMLDivElement>(null);
 
-    useLinkHandler(modalContentRef, onMailTo);
+    useLinkHandler(modalContentRef, { onMailTo });
 
     const typesOptions = [
         { value: LINK_TYPES.WEB, text: c('Info').t`Web URL` },

@@ -25,6 +25,7 @@ import { api, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { ComposeProvider } from '../../containers/ComposeProvider';
+import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
 import NotificationsTestProvider from './notifications';
 import { store } from '../../logic/store';
 
@@ -59,6 +60,11 @@ const mockDomApi = () => {
     // https://github.com/nickcolley/jest-axe/issues/147#issuecomment-758804533
     const { getComputedStyle } = window;
     window.getComputedStyle = (elt) => getComputedStyle(elt);
+    window.ResizeObserver = jest.fn(() => ({
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+    }));
 };
 
 interface Props {
@@ -80,11 +86,17 @@ const TestProvider = ({ children }: Props) => {
                                 <ReduxProvider store={store}>
                                     <FeaturesProvider>
                                         <MailContentRefProvider mailContentRef={contentRef}>
-                                            <ComposeProvider onCompose={jest.fn()}>
-                                                <Router history={history}>
-                                                    <EncryptedSearchProvider>{children}</EncryptedSearchProvider>
-                                                </Router>
-                                            </ComposeProvider>
+                                            <MailboxContainerContextProvider
+                                                isResizing={false}
+                                                containerRef={contentRef}
+                                                elementID={undefined}
+                                            >
+                                                <ComposeProvider onCompose={jest.fn()}>
+                                                    <Router history={history}>
+                                                        <EncryptedSearchProvider>{children}</EncryptedSearchProvider>
+                                                    </Router>
+                                                </ComposeProvider>
+                                            </MailboxContainerContextProvider>
                                         </MailContentRefProvider>
                                     </FeaturesProvider>
                                 </ReduxProvider>

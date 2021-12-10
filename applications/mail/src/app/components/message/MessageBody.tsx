@@ -1,15 +1,16 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { RefObject, useCallback, useEffect, useMemo, useRef } from 'react';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import { classnames, Button, Tooltip } from '@proton/components';
-import { c } from 'ttag';
+
+import { classnames } from '@proton/components';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
+import { locateHead } from '../../helpers/message/messageHead';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import MessageBodyImage from './MessageBodyImage';
 import { MessageState } from '../../logic/messages/messagesTypes';
-import './MessageBody.scss';
+import MessageBodyIframe from './MessageBodyIframe';
 
 interface Props {
+    labelID: string;
     messageLoaded: boolean;
     bodyLoaded: boolean;
     sourceMode: boolean;
@@ -24,6 +25,8 @@ interface Props {
     forceBlockquote?: boolean;
     onMessageReady?: () => void;
     highlightKeywords?: boolean;
+    isPrint?: boolean;
+    onIframeReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
 }
 
 const MessageBody = ({
@@ -36,6 +39,9 @@ const MessageBody = ({
     toggleOriginalMessage,
     onMessageReady,
     highlightKeywords = false,
+    isPrint = false,
+    labelID,
+    onIframeReady,
 }: Props) => {
     const bodyRef = useRef<HTMLDivElement>(null);
     const { highlightString, getESDBStatus } = useEncryptedSearchContext();
@@ -50,8 +56,7 @@ const MessageBody = ({
                 : locateBlockquote(message.messageDocument?.document),
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
-
-    const [, forceRefresh] = useState({});
+    const messageHead = locateHead(message.messageDocument?.document);
 
     const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
@@ -61,10 +66,10 @@ const MessageBody = ({
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
     const showBlockquote = forceBlockquote || originalMessageMode;
-    const htmlContent = !!content && highlightBody ? highlightString(content, true) : content;
-    const htmlBlockquote =
+    const highlightedContent = !!content && highlightBody ? highlightString(content, true) : content;
+    const highlightedBlockquote =
         !!blockquote && highlightBody
-            ? highlightString(blockquote, !htmlContent.includes('data-auto-scroll'))
+            ? highlightString(blockquote, !highlightedContent.includes('data-auto-scroll'))
             : blockquote;
 
     useEffect(() => {
@@ -73,26 +78,20 @@ const MessageBody = ({
         }
     }, [loadingMode, decryptingMode, message.data?.ID]);
 
-    useEffect(() => {
-        // Images need a second render to find the anchors for the portal
-        // This forced refresh create this doubled render when blockquote is toggled
-        setTimeout(() => forceRefresh({}));
-    }, [showBlockquote]);
-
-    useEffect(() => {
-        if (!!content && highlightBody) {
-            const el = bodyRef.current?.querySelector('[data-auto-scroll]') as HTMLElement;
-            scrollIntoView(el, { block: 'center', behavior: 'smooth' });
-        }
-    }, [htmlContent]);
+    const onContentLoadedCallback = useCallback(
+        (iframeRootElement) => {
+            if (!!content && highlightBody) {
+                const el = iframeRootElement.querySelector('[data-auto-scroll]') as HTMLElement;
+                scrollIntoView(el, { block: 'center', behavior: 'smooth' });
+            }
+        },
+        [content, highlightBody]
+    );
 
     return (
         <div
             ref={bodyRef}
-            className={classnames([
-                'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm',
-                plain && 'plain',
-            ])}
+            className={classnames(['message-content relative bg-norm color-norm', plain && 'plain', !isPrint && 'p1'])}
             data-testid="message-content:body"
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
@@ -108,44 +107,23 @@ const MessageBody = ({
                 </>
             )}
             {contentMode && (
-                <>
-                    {/* eslint-disable-next-line react/no-danger */}
-                    <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-                    {message.messageImages?.images.map((image) => (
-                        <MessageBodyImage
-                            key={image.id}
-                            bodyRef={bodyRef}
-                            showRemoteImages={message.messageImages?.showRemoteImages || false}
-                            showEmbeddedImages={message.messageImages?.showEmbeddedImages || false}
-                            image={image}
-                        />
-                    ))}
-                    {isBlockquote && (
-                        <>
-                            {showButton && (
-                                <Tooltip
-                                    title={
-                                        originalMessageMode
-                                            ? c('Info').t`Hide original message`
-                                            : c('Info').t`Show original message`
-                                    }
-                                >
-                                    <Button
-                                        size="small"
-                                        shape="outline"
-                                        className="m0-5 toggle-original-message-button"
-                                        onClick={() => toggleOriginalMessage?.()}
-                                        data-testid="message-view:expand-codeblock"
-                                    >
-                                        ...
-                                    </Button>
-                                </Tooltip>
-                            )}
-                            {/* eslint-disable-next-line react/no-danger */}
-                            {showBlockquote && <div dangerouslySetInnerHTML={{ __html: htmlBlockquote }} />}
-                        </>
-                    )}
-                </>
+                <MessageBodyIframe
+                    messageHead={messageHead}
+                    content={highlightedContent}
+                    blockquoteContent={highlightedBlockquote}
+                    showBlockquoteToggle={showButton}
+                    showBlockquote={showBlockquote}
+                    onBlockquoteToggle={toggleOriginalMessage}
+                    messageImages={message.messageImages}
+                    wrapperRef={bodyRef}
+                    onContentLoaded={onContentLoadedCallback}
+                    isPlainText={plain}
+                    isPrint={isPrint}
+                    message={message}
+                    labelID={labelID}
+                    onReady={onIframeReady}
+                    messageSubject={message.data?.Subject}
+                />
             )}
         </div>
     );

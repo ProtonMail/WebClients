@@ -1,10 +1,11 @@
 import { CSSProperties, RefObject, useEffect, useRef } from 'react';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { classnames, Icon, Loader, Tooltip } from '@proton/components';
+import { classnames, Icon, Tooltip } from '@proton/components';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { getAnchor } from '../../helpers/message/messageImages';
 import { MessageImage } from '../../logic/messages/messagesTypes';
+import { IframeOffsetType } from './interface';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 
@@ -26,7 +27,12 @@ const extractStyle = (original: HTMLElement | undefined): CSSProperties => {
     }
     const style: CSSProperties = {};
     forEachStyle(original.style, (prop, value) => {
-        if (prop !== 'display') {
+        if (
+            prop !== 'display' &&
+            !prop.startsWith('border') &&
+            !prop.startsWith('outline') &&
+            !prop.startsWith('background')
+        ) {
             style[spineToCamelCase(prop)] = value;
         }
     });
@@ -48,9 +54,11 @@ interface Props {
     showEmbeddedImages: boolean;
     image: MessageImage;
     anchor: HTMLElement;
+    iframePosition: IframeOffsetType | undefined;
+    isPrint?: boolean;
 }
 
-const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor }: Props) => {
+const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor, iframePosition, isPrint }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
 
     const { type, status, error } = image;
@@ -97,30 +105,46 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
 
     const style = extractStyle(image.original);
 
-    // showPlaceholder
-    return (
-        <Tooltip title={placeholderTooltip}>
-            <span
-                style={style}
-                className={classnames([
-                    'proton-image-placeholder inline-flex bordered rounded flex-justify-center flex-align-items-center',
-                    !!error && 'color-danger border--danger',
-                ])}
-            >
-                {!showLoader ? <Icon name={icon} size={20} /> : null}
+    const placeholder = (
+        <span
+            style={style}
+            className={classnames([
+                'proton-image-placeholder',
+                !!error && 'proton-image-placeholder--error border--danger',
+            ])}
+        >
+            {!showLoader ? <Icon name={icon} size={20} /> : null}
 
-                {showLoader ? <Loader className="" /> : null}
-            </span>
+            {showLoader ? (
+                <>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" className="proton-circle-loader">
+                        <circle cx="100" cy="100" r="70" className="proton-circle-loader-track" />
+                        <circle cx="100" cy="100" r="70" className="proton-circle-loader-circle" />
+                    </svg>
+                    <span className="proton-sr-only">{c('Info').t`Loading`}</span>
+                </>
+            ) : null}
+        </span>
+    );
+
+    if (isPrint) {
+        return placeholder;
+    }
+
+    return (
+        <Tooltip title={placeholderTooltip} anchorOffset={iframePosition}>
+            {placeholder}
         </Tooltip>
     );
 };
 
 interface PortalProps extends Omit<Props, 'anchor'> {
-    bodyRef: RefObject<HTMLDivElement>;
+    iframeRef: RefObject<HTMLIFrameElement>;
 }
 
-const MessageBodyImagePortal = ({ bodyRef, ...props }: PortalProps) => {
-    const anchor = getAnchor(bodyRef.current, props.image);
+const MessageBodyImagePortal = ({ iframeRef, ...props }: PortalProps) => {
+    const iframeBody = iframeRef.current?.contentWindow?.document.body;
+    const anchor = getAnchor(iframeBody, props.image);
 
     if (!anchor) {
         return null;
