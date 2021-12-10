@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 import {
+    Alert,
+    ConfirmModal,
     useApi,
-    useNotifications,
     useEventManager,
     useLabels,
     useModals,
-    ConfirmModal,
-    Alert,
+    useNotifications,
 } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
@@ -23,7 +23,7 @@ import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels'
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { Conversation } from '../models/conversation';
 
-const { SPAM, TRASH, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
 
 const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
     if (isMessage) {
@@ -352,9 +352,33 @@ export const useMoveToFolder = () => {
                 : elements;
             const elementIDs = authorizedToMove.map((element) => element.ID);
 
+            const getNotificationText = () => {
+                let notificationText = c('Error display when performing invalid move on message')
+                    .t`This action cannot be performed`;
+
+                if (fromLabelID === SENT || fromLabelID === ALL_SENT) {
+                    if (folderID === INBOX) {
+                        notificationText = c('Error display when performing invalid move on message')
+                            .t`Sent messages cannot be moved to Inbox`;
+                    } else if (folderID === SPAM) {
+                        notificationText = c('Error display when performing invalid move on message')
+                            .t`Sent messages cannot be moved to Spam`;
+                    }
+                } else if (fromLabelID === DRAFTS || fromLabelID === ALL_DRAFTS) {
+                    if (folderID === INBOX) {
+                        notificationText = c('Error display when performing invalid move on message')
+                            .t`Drafts cannot be moved to Inbox`;
+                    } else if (folderID === SPAM) {
+                        notificationText = c('Error display when performing invalid move on message')
+                            .t`Drafts cannot be moved to Spam`;
+                    }
+                }
+                return notificationText;
+            };
+
             if (!authorizedToMove.length) {
                 createNotification({
-                    text: c('Error display when performing invalid move on message').t`This action cannot be performed`,
+                    text: getNotificationText(),
                     type: 'error',
                 });
                 return;
