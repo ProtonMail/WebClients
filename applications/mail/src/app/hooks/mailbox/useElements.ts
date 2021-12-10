@@ -166,7 +166,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             dispatch(
                 reset({
                     page,
-                    params: { labelID, sort, filter, esEnabled, search },
+                    params: { labelID, sort, filter, esEnabled, search, conversationMode },
                     beforeFirstLoad: !esEnabled && isSearch(search),
                 })
             );
