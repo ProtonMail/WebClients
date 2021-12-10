@@ -416,7 +416,7 @@ export const processEventInvitation = <T>(
     const attendees = vevent.attendee || [];
     const { organizer } = vevent;
     const originalTo = getOriginalTo(message.data);
-    const originalFrom = message.data.SenderAddress;
+    const originalFrom = message.data.Sender.Address;
     const isOrganizerMode = isImport ? false : getIsOrganizerMode(vevent, originalTo);
     const { selfAddress, selfAttendee } = getSelfAddressData({
         isOrganizer: isOrganizerMode,
@@ -635,7 +635,7 @@ export const getSupportedEventInvitation = async ({
         // The ORGANIZER field is mandatory in an invitation
         const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(supportedMethod)
             ? getOriginalTo(message)
-            : message.SenderAddress;
+            : message.Sender.Address;
         completeVevent.organizer = buildVcalOrganizer(guessOrganizerEmail);
     }
     const hasXWrTimezone = !!xWrTimezone?.value;

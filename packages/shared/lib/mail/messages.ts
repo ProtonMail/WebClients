@@ -77,8 +77,8 @@ export const addReceived = (Flags = 0) => setBit(Flags, MESSAGE_FLAGS.FLAG_RECEI
 export const isBounced = (message: Message) => {
     // we don't have a great way of determining when a message is bounced as the BE cannot offer us neither
     // a specific header nor a specific flag. We hard-code the typical sender (the local part) and subject keywords
-    const { SenderAddress, Subject } = message;
-    const matchesSender = getEmailParts(canonizeInternalEmail(SenderAddress))[0] === 'mailerdaemon';
+    const { Sender, Subject } = message;
+    const matchesSender = getEmailParts(canonizeInternalEmail(Sender.Address))[0] === 'mailerdaemon';
     const matchesSubject = [/delivery/i, /undelivered/i, /returned/i, /failure/i].some((regex) => regex.test(Subject));
     return matchesSender && matchesSubject;
 };

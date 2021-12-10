@@ -31,11 +31,15 @@ export interface Message {
     Subject: string;
     Unread: number;
     Sender: Recipient;
-    SenderAddress: string;
-    SenderName: string;
+    /** @deprecated use Sender.Address instead */
+    SenderAddress?: string;
+    /** @deprecated use Sender.Name instead */
+    SenderName?: string;
     Flags: number;
-    Type: number;
-    IsEncrypted: number;
+    /** @deprecated use Flags instead */
+    Type?: number;
+    /** @deprecated use Flags instead */
+    IsEncrypted?: number;
     IsReplied: number;
     IsRepliedAll: number;
     IsForwarded: number;
