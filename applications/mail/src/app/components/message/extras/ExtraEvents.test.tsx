@@ -187,7 +187,7 @@ const getSetup = async ({
         localID: '1',
         data: {
             ID: '1',
-            SenderAddress: senderEmailAddress,
+            Sender: { Name: senderEmailAddress, Address: senderEmailAddress },
             AddressID: userPrimaryAddressID,
             Subject: emailSubject,
             Time: new Date().getTime() / 1000,
