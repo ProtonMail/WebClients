@@ -1,3 +1,17 @@
+# [4.0.0-beta.23] - 2022-01-05
+
+## Improved
+
+-   Sharing folders via link
+-   Downloading folders via shared link
+-   Improved behaviour of the checkboxes on list view
+-   Removed unavailable actions from the contextual menu
+-   Updated icons in contextual menu
+
+## Fixed
+
+-   Breadcrumb chevrons sizing
+
 # [4.0.0-beta.22] - 2021-11-24
 
 ## Improved
