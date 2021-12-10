@@ -63,7 +63,10 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
                 }
 
                 if (isSentDraft && !isScheduled) {
-                    Object.assign(currentValue.draftFlags, { isSentDraft: true });
+                    currentValue.draftFlags = {
+                        ...currentValue.draftFlags,
+                        isSentDraft: true,
+                    };
                 }
             }
 
@@ -72,7 +75,7 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
                 delete (MessageToUpdate as Partial<Message>).NumAttachments;
             }
 
-            Object.assign(currentValue.data, MessageToUpdate);
+            currentValue.data = { ...currentValue.data, ...MessageToUpdate };
         }
     }
 };
@@ -118,7 +121,10 @@ export const documentInitializeFulfilled = (
     const messageState = getMessage(state, ID);
 
     if (messageState) {
-        Object.assign(messageState.data, dataChanges);
+        messageState.data = {
+            ...(messageState.data as Message),
+            ...dataChanges,
+        };
         if (messageState.messageDocument) {
             messageState.messageDocument.initialized = initialized;
             messageState.messageDocument.document = preparation?.document;
@@ -148,11 +154,7 @@ export const verificationComplete = (
             verificationStatus: verification?.verified,
             verificationErrors: verification?.verificationErrors,
         };
-        if (messageState.errors) {
-            Object.assign(messageState.errors, errors);
-        } else {
-            messageState.errors = errors;
-        }
+        messageState.errors = { ...messageState.errors, ...errors };
     }
 };
 
