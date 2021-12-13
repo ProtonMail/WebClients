@@ -53,6 +53,7 @@ interface Props {
     dateRange: [Date, Date];
     isInteractionEnabled?: boolean;
     isScrollDisabled?: boolean;
+    isDropzoneHovered?: boolean;
     events?: CalendarViewEvent[];
     targetEventRef?: Ref<HTMLDivElement>;
     targetMoreData?: TargetMoreData;
@@ -81,6 +82,7 @@ const TimeGrid = ({
     onMouseDown,
     isInteractionEnabled = false,
     isScrollDisabled = false,
+    isDropzoneHovered = false,
     weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     targetEventRef,
     targetEventData,
@@ -90,7 +92,6 @@ const TimeGrid = ({
 }: Props) => {
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLDivElement>(null);
-    const mainRef = useRef<HTMLDivElement>(null);
     const nowRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -277,13 +278,15 @@ const TimeGrid = ({
             onScroll={handleScroll}
             ref={scrollRef}
         >
-            <div className="relative main-area-content" ref={mainRef}>
+            <div className="relative main-area-content">
                 <div
                     ref={titleRef}
                     className={classnames([
                         'sticky-title sticky-title--no-padding on-mobile-remain-sticky',
                         !scrollTop && 'sticky-title--on-top',
                     ])}
+                    // `position: sticky` makes it appear on top of the dropzone backdrop without this
+                    style={isDropzoneHovered ? { zIndex: 0 } : {}}
                 >
                     <div data-test-id="calendar-day-week-view:week-header" className="flex calendar-first-row-heading">
                         {displaySecondaryTimezone ? (

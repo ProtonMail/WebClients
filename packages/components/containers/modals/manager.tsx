@@ -48,5 +48,6 @@ export default (modals: Modal[], setModals: Dispatch<SetStateAction<Modal[]>>): 
         hideModal,
         removeModal,
         getModal,
+        modals,
     };
 };
