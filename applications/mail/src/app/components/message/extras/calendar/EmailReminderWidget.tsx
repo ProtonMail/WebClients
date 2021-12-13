@@ -1,3 +1,4 @@
+import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import React, { useState, useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
@@ -24,7 +25,7 @@ import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { getParticipant, getSelfAddressData } from '@proton/shared/lib/calendar/integration/invite';
+import { getParticipant } from '@proton/shared/lib/calendar/integration/invite';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { getDoesCalendarNeedUserAction } from '@proton/shared/lib/calendar/calendar';

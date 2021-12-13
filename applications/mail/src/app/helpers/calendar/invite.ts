@@ -1,13 +1,14 @@
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
+import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getSupportedEvent } from '@proton/shared/lib/calendar/icsSurgery/vevent';
-import { findAttendee, getParticipant, getSelfAddressData } from '@proton/shared/lib/calendar/integration/invite';
+import { findAttendee, getParticipant } from '@proton/shared/lib/calendar/integration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 
 import { parseWithErrors, serialize } from '@proton/shared/lib/calendar/vcal';
@@ -45,7 +46,6 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
     Calendar,
-    CalendarEvent,
     CalendarEventWithMetadata,
     CalendarWidgetData,
     Participant,
@@ -79,7 +79,7 @@ export interface EventInvitation {
     fileName?: string;
     vevent: VcalVeventComponent;
     hasMultipleVevents?: boolean;
-    calendarEvent?: CalendarEvent;
+    calendarEvent?: CalendarEventWithMetadata;
     method?: ICAL_METHOD;
     vtimezone?: VcalVtimezoneComponent;
     xOrIanaComponents?: VcalXOrIanaComponent[];
@@ -129,8 +129,11 @@ interface NonRFCCompliantVcalendar extends VcalVcalendar {
     sequence?: VcalNumberProperty;
 }
 
-export const getHasInvitation = (model: InvitationModel): model is RequireSome<InvitationModel, 'invitationIcs'> => {
+export const getHasInvitationIcs = (model: InvitationModel): model is RequireSome<InvitationModel, 'invitationIcs'> => {
     return !!model.invitationIcs;
+};
+export const getHasInvitationApi = (model: InvitationModel): model is RequireSome<InvitationModel, 'invitationApi'> => {
+    return !!model.invitationApi;
 };
 
 export const getInvitationHasMethod = (
@@ -242,7 +245,8 @@ export const getIsInvitationOutdated = ({
     const timestampIcs = veventIcs.dtstamp ? getUnixTime(propertyToUTCDate(veventIcs.dtstamp)) : undefined;
     const timestampApi = veventApi.dtstamp ? getUnixTime(propertyToUTCDate(veventApi.dtstamp)) : undefined;
     const timestampDiff = timestampIcs !== undefined && timestampApi !== undefined ? timestampIcs - timestampApi : 0;
-    const updateTimeDiff = timestampIcs !== undefined && updateTime !== undefined ? timestampIcs - updateTime : 0;
+    const updateTimeDiff =
+        timestampIcs !== undefined && updateTime !== undefined ? timestampIcs - updateTime : timestampDiff;
     const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
 
     if (isOrganizerMode) {
@@ -674,14 +678,17 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
         hasMultipleVevents,
         isOrganizerMode,
         isPartyCrasher,
-        invitationIcs: { method },
+        invitationIcs: { method, vevent: veventIcs },
         invitationApi,
         calendarData,
         isOutdated,
         isAddressActive,
     } = model;
 
-    if (isOrganizerMode || (isImport && (invitationApi || hasMultipleVevents))) {
+    if (isOrganizerMode) {
+        return !isPartyCrasher || !!veventIcs['recurrence-id'];
+    }
+    if (isImport && (invitationApi || hasMultipleVevents)) {
         return true;
     }
     return (
