@@ -1,5 +1,6 @@
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 import { FeatureCode, useFeature } from '@proton/components';
+import { getMessageHasData } from '../../../helpers/message/messages';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
@@ -13,7 +14,7 @@ import ExtraErrors from '../extras/ExtraErrors';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
 import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
-import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;
@@ -34,7 +35,7 @@ const HeaderExtra = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages,
 }: Props) => {
-    const received = message.data && isReceived(message.data);
+    const received = isReceived(message.data);
 
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
     const isScheduledMessage = isScheduled(message.data);
@@ -57,8 +58,8 @@ const HeaderExtra = ({
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
             {/* TODO: Add error boundary for the email reminder widget */}
-            {messageLoaded && received && <EmailReminderWidget message={message} />}
-            {messageLoaded && received ? <ExtraEvents message={message as MessageStateWithData} /> : null}
+            {messageLoaded && getMessageHasData(message) && received && <EmailReminderWidget message={message} />}
+            {messageLoaded && getMessageHasData(message) && received ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
         </section>
     );
