@@ -354,6 +354,7 @@ const MessageView = (
                         parentMessageRef={elementRef}
                     />
                     <MessageBody
+                        labelID={labelID}
                         messageLoaded={messageLoaded}
                         bodyLoaded={bodyLoaded}
                         sourceMode={sourceMode}

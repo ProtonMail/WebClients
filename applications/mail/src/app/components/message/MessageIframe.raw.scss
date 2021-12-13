@@ -1,0 +1,389 @@
+@import '~@proton/styles/scss/config';
+@import '@proton/styles/scss/base/reset';
+@import '@proton/styles/scss/base/custom-properties/optionals';
+
+/*----------------------
+       EMAIL RESET
+------------------------*/
+
+body {
+	/* in case nothing is set, set a default font and size */
+	font-family: var(--font-family);
+	font-size: em($base-font-size, $root-default-font-size);
+	/* this is clearly needed if we want consistency  */
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* override reset.scss */
+body * {
+	line-height: normal;
+}
+
+/* Forbidden property on almost ALL clients IE add a space :) */
+[style*='position:absolute'],
+[style*='position: absolute'] {
+	position: relative !important;
+}
+
+// remove reset margins
+blockquote,
+dl,
+ol,
+p,
+pre,
+td,
+th,
+ul {
+	margin-block: 0;
+}
+
+p {
+	margin-block: 1em;
+}
+
+table {
+	margin-block-end: 0;
+	table-layout: auto;
+}
+
+blockquote {
+	padding-block: 0;
+	padding-inline: rem(16) 0;
+	margin: 0;
+	border-inline-start: 4px solid #e5e5e5;
+
+	&::after,
+	&::before {
+		content: none;
+	}
+}
+
+// fix for some embedded images bugs
+img {
+	max-inline-size: none;
+}
+
+pre,
+code {
+	white-space: pre-wrap;
+	background-color: transparent;
+}
+
+/*---------------------------------
+      CUSTOM STYLES AND HELPERS
+-----------------------------------*/
+
+#proton-root {
+	box-sizing: content-box;
+	max-inline-size: none;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.proton-hidden {
+	display: none;
+}
+
+.proton-sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	block-size: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	inline-size: 1px;
+	inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
+}
+
+/*
+ * 1. do not handle responsivess if there is a width attribute / inline width style
+ * 2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)
+ * 3. set at least a min width or it's possible it won't be shown
+ * 4. remove min-inline-size when image loaded - for tiny images
+ */
+.proton-embedded:not([width]):not([style*='width']) {
+	max-inline-size: 100%;
+	min-inline-size: 38px;
+}
+.proton-embedded:not([width]):not([style*='width'])[src] {
+	min-inline-size: 0;
+}
+.protonmail_quote {
+	padding-block: 0.2em;
+	padding-inline: 1.2em 0;
+	border-color: #657ee4;
+	border-inline-start-width: 3px;
+	border-inline-start-style: solid;
+}
+.protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote {
+	padding-inline: 0;
+	border-inline-start-width: 0;
+}
+
+/*-----------------------
+	PLAIN TEXT
+-------------------------*/
+
+.proton-plain-text {
+	font-family: $font-family-monospace;
+	background: var(--background-norm);
+	color: var(--text-norm);
+	white-space: pre-wrap;
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+	& a {
+		color: var(--interaction-norm);
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	& a:hover,
+	& a:focus {
+		color: var(--interaction-norm-hover);
+		text-decoration: none;
+	}
+
+	& a:active {
+		color: var(--interaction-norm-active);
+		text-decoration: none;
+	}
+}
+
+/*---------------------------------
+      BUTTONS
+-----------------------------------*/
+
+.proton-toggle-button {
+	display: inline-block;
+	padding-block: 2px;
+	padding-inline: 12px;
+	margin: 7px;
+	box-shadow: inset 0 0 0 1px silver;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+	background-color: transparent;
+	color: black;
+	text-align: center;
+	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1), background-position 0s;
+
+	&:hover,
+	&:focus,
+	&:focus-within &.is-hover &:active,
+	&.is-active,
+	&[aria-expanded='true']:not([aria-controls]) {
+		text-decoration: none;
+		box-shadow: inset 0 0 0 2px silver;
+		background-color: transparent;
+		color: black;
+	}
+}
+
+@supports selector(:focus-visible) {
+	.proton-toggle-button {
+		outline: unset;
+	}
+}
+
+/*---------------------------------
+      IMAGE PLACEHOLDER
+-----------------------------------*/
+
+.proton-image-placeholder {
+	background-color: #00000011;
+	box-sizing: border-box;
+	display: inline-flex;
+	border: 1px solid var(--border-norm);
+	border-radius: 3px;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	margin-block-end: 7px;
+	margin-inline-end: 7px;
+}
+
+.proton-image-placeholder--error {
+	color: #d42f34;
+	border-color: #d42f34;
+}
+
+.proton-image-anchor {
+	display: inline-block;
+}
+
+.proton-image-placeholder .icon-20p {
+	inline-size: 1.25rem;
+	block-size: 1.25rem;
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentColor;
+}
+
+@keyframes anime-loader-rotation {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.proton-circle-loader {
+	font-size: 20px;
+	display: inline-block;
+	inline-size: 1em;
+	block-size: 1em;
+	transform-origin: 50%;
+	vertical-align: middle;
+	animation: anime-loader-rotation 2s linear infinite;
+}
+
+.proton-circle-loader-track {
+	stroke: currentColor;
+	opacity: 0.2;
+}
+
+.proton-circle-loader-track,
+.proton-circle-loader-circle {
+	fill: none;
+	stroke-width: 20;
+	stroke-linecap: round;
+}
+
+@keyframes anime-loader-stroke {
+	0% {
+		stroke-dashoffset: 440;
+	}
+	50% {
+		stroke-dashoffset: 0;
+	}
+	50.1% {
+		stroke-dashoffset: 880;
+	}
+}
+
+.proton-circle-loader-circle {
+	stroke: currentColor;
+	stroke-dasharray: 440;
+	stroke-dashoffset: 440;
+	animation: anime-loader-stroke 4s linear infinite;
+}
+
+/*----------------------
+        PRINT
+------------------------*/
+
+.proton-print {
+	@import '~@proton/styles/scss/helpers/flex';
+
+	font-family: var(--font-family);
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--text-norm);
+	background-color: var(--background-norm);
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+	padding-block-end: 1em;
+	overflow: auto;
+
+	.message-print-subject {
+		font-size: 20px;
+		border-block-end: 1px solid var(--border-norm);
+		margin-block-end: 0.5em;
+		padding-block-end: 0.5em;
+	}
+
+	.message-print-header {
+		border-block-end: 1px solid var(--border-weak);
+		padding-block-end: 1em;
+	}
+
+	.message-recipient-item-expanded {
+		margin-block-start: 0.75em;
+	}
+
+	.container-to {
+		min-inline-size: 3em;
+	}
+
+	.item-icon,
+	.container-to.container-to--item {
+		display: none;
+	}
+
+	.item-date {
+		font-size: 1em;
+	}
+
+	.color-weak {
+		color: var(--text-norm);
+	}
+
+	.maxw-100  {
+		max-inline-size: 100%;
+	}
+
+	.text-ellipsis {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.inline-block {
+		display: inline-block;
+	}
+}
+
+@media print {
+	/**
+    * add in this all elements which need to be hardly reseted for print
+    */
+	body,
+	html {
+		background-color: white;
+		background-image: none;
+		border: 0;
+		box-shadow: none;
+		color: black;
+		float: none;
+		block-size: auto;
+		margin: 0;
+		max-inline-size: 100%;
+		min-block-size: 0;
+		padding: 0;
+		position: static;
+		inline-size: auto;
+		opacity: 1;
+		visibility: visible;
+		max-block-size: none;
+		display: block;
+	}
+
+	body {
+		padding: 0.5em;
+		overflow: auto;
+	}
+
+	/**
+    * avoid problematic page break
+    */
+	ul,
+	ol {
+		page-break-inside: avoid;
+	}
+
+	h1,
+	h2,
+	h3,
+	caption {
+		page-break-after: avoid;
+	}
+
+	.proton-print,
+	.proton-plain-text {
+		color: black;
+		background-color: white;
+	}
+}

@@ -1,3 +1,5 @@
+import { findByText } from '@testing-library/dom';
+
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import {
@@ -16,7 +18,7 @@ import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { parseInDiv } from '../../../helpers/dom';
 import { X_PM_HEADERS } from '../../../models/crypto';
 import { addApiContact } from '../../../helpers/test/contact';
-import { localID, addressID, body, messageID, setup, subject } from './Message.test.helpers';
+import { localID, addressID, body, messageID, setup, subject, getIframeRootDiv } from './Message.test.helpers';
 
 jest.setTimeout(20000);
 
@@ -54,11 +56,12 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, findByText } = await setup({ conversationMode: true });
-
+            const { open, container } = await setup({ conversationMode: true });
             await open();
 
-            await findByText(body);
+            const iframeContent = await getIframeRootDiv(container);
+
+            await findByText(iframeContent, body);
         });
 
         it('plaintext', async () => {
@@ -77,11 +80,12 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, findByText } = await setup();
-
+            const { open, container } = await setup();
             await open();
 
-            await findByText(body);
+            const iframeContent = await getIframeRootDiv(container);
+
+            await findByText(iframeContent, body);
         });
 
         it('multipart/mixed html', async () => {
@@ -110,11 +114,11 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, findByText } = await setup();
-
+            const { open, container } = await setup();
             await open();
 
-            await findByText(body);
+            const iframeContent = await getIframeRootDiv(container);
+            await findByText(iframeContent, body);
         });
 
         it('multipart/mixed plaintext', async () => {
@@ -143,11 +147,11 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, findByText } = await setup();
-
+            const { open, container } = await setup();
             await open();
 
-            await findByText(body);
+            const iframeContent = await getIframeRootDiv(container);
+            await findByText(iframeContent, body);
         });
     });
 

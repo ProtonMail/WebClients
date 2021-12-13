@@ -19,7 +19,14 @@ interface LinkSource {
     encoded?: string;
 }
 
-export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?: (src: string) => void) => {
+interface UseLinkHandlerOptions {
+    onMailTo?: (src: string) => void;
+    startListening?: boolean;
+}
+type UseLinkHandler = (wrapperRef: RefObject<HTMLDivElement | undefined>, options?: UseLinkHandlerOptions) => void;
+
+const defaultOptions: UseLinkHandlerOptions = { startListening: true };
+export const useLinkHandler: UseLinkHandler = (wrapperRef, { onMailTo, startListening } = defaultOptions) => {
     const [mailSettings] = useMailSettings() as [MailSettings | undefined, boolean, Error];
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -166,9 +173,15 @@ export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?:
     });
 
     useEffect(() => {
+        if (startListening === false) {
+            return;
+        }
+
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         wrapperRef.current?.addEventListener('click', handleClick, false);
-        // eslint-disable-next-line @typescript-eslint/no-misused-promises
-        return () => wrapperRef.current?.removeEventListener('click', handleClick, false);
-    }, []);
+        return () => {
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            wrapperRef.current?.removeEventListener('click', handleClick, false);
+        };
+    }, [startListening]);
 };
