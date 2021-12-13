@@ -4,7 +4,7 @@ import { Alert } from '@proton/components';
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { EVENT_TIME_STATUS, InvitationModel } from '../../../../helpers/calendar/invite';
+import { InvitationModel } from '../../../../helpers/calendar/invite';
 
 const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
@@ -13,31 +13,16 @@ interface Props {
 }
 const ExtraEventWarning = ({ model }: Props) => {
     const {
-        isImport,
         isOrganizerMode,
         invitationIcs: { method, vevent: veventIcs },
         invitationApi,
         hasDecryptionError,
         isOutdated,
         isFromFuture,
-        timeStatus,
-        isPartyCrasher,
-        hasMultipleVevents,
     } = model;
 
-    const alertClassName = 'mt0-5 mb0-5';
+    const alertClassName = 'mt0-5 mb0-5 text-break';
 
-    if (isPartyCrasher && !isImport) {
-        const text = isOrganizerMode
-            ? c('Calendar invite info')
-                  .t`The sender of this email has not been invited to this event and cannot be added as a participant`
-            : c('Calendar invite info').t`Your email address is not in the participants list`;
-        return (
-            <Alert className={alertClassName} type="warning">
-                {text}
-            </Alert>
-        );
-    }
     if ((isOutdated || isFromFuture) && method !== ICAL_METHOD.REFRESH) {
         return null;
     }
@@ -77,6 +62,7 @@ const ExtraEventWarning = ({ model }: Props) => {
             );
         }
     }
+
     if (method === ICAL_METHOD.ADD && invitationApi) {
         return (
             <Alert className={alertClassName} type="warning">
@@ -84,23 +70,7 @@ const ExtraEventWarning = ({ model }: Props) => {
             </Alert>
         );
     }
-    if (hasMultipleVevents) {
-        return null;
-    }
-    if (timeStatus === EVENT_TIME_STATUS.PAST) {
-        return (
-            <Alert className={alertClassName} type="warning">
-                {c('Calendar invite info').t`Event already ended`}
-            </Alert>
-        );
-    }
-    if (timeStatus === EVENT_TIME_STATUS.HAPPENING) {
-        return (
-            <Alert className={alertClassName} type="warning">
-                {c('Calendar invite info').t`Event in progress`}
-            </Alert>
-        );
-    }
+
     return null;
 };
 

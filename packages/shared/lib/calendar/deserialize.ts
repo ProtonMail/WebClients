@@ -1,22 +1,31 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { AES256 } from '../constants';
+import { getIsAddressDisabled } from '../helpers/address';
+import { canonizeInternalEmail } from '../helpers/email';
+import { base64StringToUint8Array } from '../helpers/encoding';
+import { unary } from '../helpers/function';
 import { Address } from '../interfaces';
+import {
+    CalendarEvent,
+    CalendarEventData,
+    CalendarPersonalEventData,
+    VcalVeventComponent,
+    VcalAttendeeProperty,
+    VcalOrganizerProperty,
+} from '../interfaces/calendar';
 
 import { SimpleMap } from '../interfaces/utils';
+import { getAttendeeEmail, toInternalAttendee } from './attendees';
+import { ICAL_ATTENDEE_STATUS } from './constants';
 import {
     decryptAndVerifyCalendarEvent,
-    getDecryptedSessionKey,
     getAggregatedEventVerificationStatus,
+    getDecryptedSessionKey,
     verifySignedCard,
 } from './decrypt';
-import { getSelfAddressData } from './integration/invite';
-import { parse } from './vcal';
 import { unwrap } from './helper';
-import { toInternalAttendee } from './attendees';
-import { CalendarEventData, CalendarEvent, CalendarPersonalEventData } from '../interfaces/calendar';
-import { VcalAttendeeProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
-import { getIsEventComponent } from './vcalHelper';
-import { base64StringToUint8Array } from '../helpers/encoding';
+import { parse } from './vcal';
+import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
 
 export const readSessionKey = (KeyPacket?: string, privateKeys?: OpenPGPKey | OpenPGPKey[]) => {
     if (!KeyPacket || !privateKeys) {
@@ -55,6 +64,105 @@ interface ReadCalendarEventArguments {
     calendarSessionKey?: SessionKey;
     addresses: Address[];
 }
+
+export const getSelfAddressData = ({
+    isOrganizer,
+    organizer,
+    attendees = [],
+    addresses = [],
+}: {
+    isOrganizer: boolean;
+    organizer?: VcalOrganizerProperty;
+    attendees?: VcalAttendeeProperty[];
+    addresses?: Address[];
+}) => {
+    if (isOrganizer) {
+        if (!organizer) {
+            // old events will not have organizer
+            return {};
+        }
+        const organizerEmail = canonizeInternalEmail(getAttendeeEmail(organizer));
+        return {
+            selfAddress: addresses.find(({ Email }) => canonizeInternalEmail(Email) === organizerEmail),
+        };
+    }
+    const canonicalAttendeeEmails = attendees.map((attendee) => canonizeInternalEmail(getAttendeeEmail(attendee)));
+    // start checking active addresses
+    const activeAddresses = addresses.filter(({ Status }) => Status !== 0);
+    const { selfActiveAttendee, selfActiveAddress, selfActiveAttendeeIndex } = activeAddresses.reduce<{
+        selfActiveAttendee?: VcalAttendeeProperty;
+        selfActiveAttendeeIndex?: number;
+        selfActiveAddress?: Address;
+        answeredAttendeeFound: boolean;
+    }>(
+        (acc, address) => {
+            if (acc.answeredAttendeeFound) {
+                return acc;
+            }
+            const canonicalSelfEmail = canonizeInternalEmail(address.Email);
+            const index = canonicalAttendeeEmails.findIndex((email) => email === canonicalSelfEmail);
+            if (index === -1) {
+                return acc;
+            }
+            const attendee = attendees[index];
+            const partstat = getAttendeePartstat(attendee);
+            const answeredAttendeeFound = partstat !== ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+            if (answeredAttendeeFound || !(acc.selfActiveAttendee && acc.selfActiveAddress)) {
+                return {
+                    selfActiveAttendee: attendee,
+                    selfActiveAddress: address,
+                    selfActiveAttendeeIndex: index,
+                    answeredAttendeeFound,
+                };
+            }
+            return acc;
+        },
+        { answeredAttendeeFound: false }
+    );
+    if (selfActiveAttendee && selfActiveAddress) {
+        return {
+            selfAttendee: selfActiveAttendee,
+            selfAddress: selfActiveAddress,
+            selfAttendeeIndex: selfActiveAttendeeIndex,
+        };
+    }
+    const disabledAddresses = addresses.filter(unary(getIsAddressDisabled));
+    const { selfDisabledAttendee, selfDisabledAddress, selfDisabledAttendeeIndex } = disabledAddresses.reduce<{
+        selfDisabledAttendee?: VcalAttendeeProperty;
+        selfDisabledAttendeeIndex?: number;
+        selfDisabledAddress?: Address;
+        answeredAttendeeFound: boolean;
+    }>(
+        (acc, address) => {
+            if (acc.answeredAttendeeFound) {
+                return acc;
+            }
+            const canonicalSelfEmail = canonizeInternalEmail(address.Email);
+            const index = canonicalAttendeeEmails.findIndex((email) => email === canonicalSelfEmail);
+            if (index === -1) {
+                return acc;
+            }
+            const attendee = attendees[index];
+            const partstat = getAttendeePartstat(attendee);
+            const answeredAttendeeFound = partstat !== ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+            if (answeredAttendeeFound || !(acc.selfDisabledAttendee && acc.selfDisabledAddress)) {
+                return {
+                    selfDisabledAttendee: attendee,
+                    selfDisabledAttendeeIndex: index,
+                    selfDisabledAddress: address,
+                    answeredAttendeeFound,
+                };
+            }
+            return acc;
+        },
+        { answeredAttendeeFound: false }
+    );
+    return {
+        selfAttendee: selfDisabledAttendee,
+        selfAddress: selfDisabledAddress,
+        selfAttendeeIndex: selfDisabledAttendeeIndex,
+    };
+};
 
 export const readCalendarEvent = async ({
     isOrganizer,

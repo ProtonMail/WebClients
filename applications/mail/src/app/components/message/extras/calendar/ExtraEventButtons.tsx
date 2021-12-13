@@ -17,7 +17,7 @@ interface Props {
 const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     const { isImport, isOrganizerMode } = model;
     const inviteButtons = isOrganizerMode ? (
-        <ExtraEventOrganizerButtons model={model} />
+        <ExtraEventOrganizerButtons model={model} setModel={setModel} />
     ) : (
         <ExtraEventAttendeeButtons model={model} setModel={setModel} message={message} />
     );
@@ -28,8 +28,8 @@ const ExtraEventButtons = ({ model, setModel, message }: Props) => {
 
     return (
         <>
-            <ExtraEventAlert model={model} />
             {link && <div className="mb0-5">{link}</div>}
+            <ExtraEventAlert model={model} />
             {displayButtons}
         </>
     );

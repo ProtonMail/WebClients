@@ -1,3 +1,4 @@
+import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -148,7 +149,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             const addressKeys = addressKeysMap[addressID];
 
             const permissionData = {
-                Permissions: 1,
+                Permissions: DEFAULT_ATTENDEE_PERMISSIONS,
             };
 
             if (getIsCreateSyncOperation(operation)) {

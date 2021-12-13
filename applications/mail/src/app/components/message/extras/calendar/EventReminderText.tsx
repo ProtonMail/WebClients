@@ -32,11 +32,11 @@ const EventReminderText = ({ isAllDay, startDate, endDate }: EventReminderTextPr
 
     const getMessageInfo = (): Nullable<[BannerBackgroundColor, string]> => {
         if (hasEnded) {
-            return [BannerBackgroundColor.WARNING, c('Email reminder banner').t`Event already ended`];
+            return [BannerBackgroundColor.WARNING, c('Calendar widget banner').t`Event already ended`];
         }
 
         if (hasStarted) {
-            return [BannerBackgroundColor.WARNING, c('Email reminder banner').t`Event in progress`];
+            return [BannerBackgroundColor.WARNING, c('Calendar widget banner').t`Event in progress`];
         }
 
         if (!isAllDay && msUntilEvent < HOUR) {
