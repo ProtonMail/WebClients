@@ -3,7 +3,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { act } from '@testing-library/react';
-import { fireEvent, waitFor } from '@testing-library/dom';
+import { findByTestId, fireEvent, waitFor } from '@testing-library/dom';
 import loudRejection from 'loud-rejection';
 import { render } from '../../../helpers/test/render';
 import { Breakpoints } from '../../../models/utils';
@@ -13,6 +13,7 @@ import { mergeMessages } from '../../../helpers/message/messages';
 import { MessageState, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { store } from '../../../logic/store';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
+import { MESSAGE_IFRAME_ROOT_ID } from '../constants';
 
 loudRejection();
 
@@ -87,4 +88,11 @@ export const initMessage = (inputMessage: PartialMessageState = {}) => {
     const message = mergeMessages(defaultMessage, inputMessage);
 
     store.dispatch(initialize(message));
+};
+
+export const getIframeRootDiv = async (element: HTMLElement) => {
+    const iframe = (await findByTestId(element, 'content-iframe')) as HTMLIFrameElement;
+    const iframeContent = iframe.contentDocument?.getElementById(MESSAGE_IFRAME_ROOT_ID) as HTMLElement;
+
+    return iframeContent;
 };

@@ -1,15 +1,12 @@
-import { getSender, hasAttachments } from '@proton/shared/lib/mail/messages';
-import { useEffect } from 'react';
+import { hasAttachments } from '@proton/shared/lib/mail/messages';
+import { RefObject, useEffect, useRef } from 'react';
 import { FormModal } from '@proton/components';
 import { c } from 'ttag';
-import { Recipient } from '@proton/shared/lib/interfaces';
 import MessageBody from '../MessageBody';
-import RecipientsDetails from '../recipients/RecipientsDetails';
-import ItemDate from '../../list/ItemDate';
 import MessageFooter from '../MessageFooter';
-import RecipientType from '../recipients/RecipientType';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
+
 import './MessagePrint.scss';
 
 interface Props {
@@ -19,10 +16,11 @@ interface Props {
 }
 
 const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
-    const { getRecipientLabel } = useRecipientLabel();
-    const sender = getSender(message.data);
+    const iframeRef = useRef<HTMLIFrameElement | null>();
 
-    const handlePrint = () => window.print();
+    const handlePrint = () => {
+        iframeRef.current?.contentWindow?.print();
+    };
 
     useEffect(() => {
         document.body.classList.add('is-printed-version');
@@ -33,6 +31,10 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
         onClose?.();
     };
 
+    const handleIframeReady = (iframe: RefObject<HTMLIFrameElement>) => {
+        iframeRef.current = iframe.current;
+    };
+
     return (
         <FormModal
             title={c('Info').t`Print email`}
@@ -40,31 +42,23 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
             onEnter={handlePrint}
             onSubmit={handlePrint}
             onClose={handleClose}
-            className="modal--wider "
+            className="modal--wider"
             {...rest}
         >
-            <div className="message-print">
-                <div className="message-print-header pb1 mb1">
-                    <h2 className="message-print-subject text-bold pb0-5 mb0-5">{message.data?.Subject}</h2>
-                    <RecipientType label={c('Label').t`From:`}>
-                        {getRecipientLabel(sender as Recipient, true)}{' '}
-                        <span className="color-weak">&lt;{sender?.Address}&gt;</span>
-                    </RecipientType>
-                    <RecipientsDetails message={message} isLoading={false} />
-                    <RecipientType label={c('Label').t`Date:`}>
-                        <ItemDate element={message.data} labelID={labelID} mode="full" />
-                    </RecipientType>
-                </div>
+            <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
                 <MessageBody
                     messageLoaded
                     bodyLoaded
                     sourceMode={false}
                     message={message}
+                    labelID={labelID}
                     originalMessageMode={false}
                     forceBlockquote
+                    isPrint
+                    onIframeReady={handleIframeReady}
                 />
-                {hasAttachments(message.data) ? <MessageFooter message={message} showActions={false} /> : null}
-            </div>
+            </MailboxContainerContextProvider>
+            {hasAttachments(message.data) ? <MessageFooter message={message} showActions={false} /> : null}
         </FormModal>
     );
 };
