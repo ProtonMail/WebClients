@@ -1,9 +1,10 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { findByText } from '@testing-library/dom';
 import { addApiMock, clearAll } from '../../../helpers/test/helper';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../logic/store';
-import { messageID, addressID, setup, initMessage } from './Message.test.helpers';
+import { messageID, addressID, setup, initMessage, getIframeRootDiv } from './Message.test.helpers';
 
 describe('message state', () => {
     afterEach(clearAll);
@@ -54,13 +55,20 @@ describe('message state', () => {
         store.dispatch(initialize(message1));
         store.dispatch(initialize(message2));
 
-        const { rerender, getByText } = await setup({ message: message1.data });
-        getByText('Body1');
+        const { container, rerender } = await setup({ message: message1.data });
+        const iframe = await getIframeRootDiv(container);
+        await findByText(iframe, 'Body1');
+
         await rerender({ message: message2.data });
-        getByText('Body2');
+        const iframe2 = await getIframeRootDiv(container);
+        await findByText(iframe2, 'Body2');
+
         await rerender({ message: message1.data });
-        getByText('Body1');
+        const iframe3 = await getIframeRootDiv(container);
+        await findByText(iframe3, 'Body1');
+
         await rerender({ message: message2.data });
-        getByText('Body2');
+        const iframe4 = await getIframeRootDiv(container);
+        await findByText(iframe4, 'Body2');
     });
 });

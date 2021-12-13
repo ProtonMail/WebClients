@@ -120,5 +120,5 @@ export const useResizeMessageView = (
         return () => scrollBarListener.abort?.();
     });
 
-    return { enableResize, resetWidth, scrollBarWidth };
+    return { enableResize, resetWidth, scrollBarWidth, isResizing };
 };

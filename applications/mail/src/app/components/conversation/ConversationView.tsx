@@ -1,7 +1,6 @@
 import { useEffect, memo, useRef } from 'react';
 import * as React from 'react';
 import { useLabels, useToggle, classnames } from '@proton/components';
-import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -20,7 +19,6 @@ import { Breakpoints } from '../../models/utils';
 import UnreadMessages from './UnreadMessages';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
-import { useOnMailTo } from '../../containers/ComposeProvider';
 import ConversationErrorBanner from './ConversationErrorBanner';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
@@ -72,9 +70,6 @@ const ConversationView = ({
     const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
 
     const wrapperRef = useRef<HTMLDivElement>(null);
-    const onMailTo = useOnMailTo();
-
-    useLinkHandler(wrapperRef, onMailTo);
 
     const { Conversation: conversation, Messages: inputMessages = [] } = conversationState || {};
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
