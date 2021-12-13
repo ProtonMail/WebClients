@@ -1,4 +1,5 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { AttachmentInfo } from '@proton/shared/lib/interfaces/mail/Message';
 import { ES_MAX_CACHE } from '../../constants';
 import { ESMessage, ESCache, StoredCiphertext } from '../../models/encryptedSearch';
 import { initialiseQuery, queryNewData } from './esSearch';
@@ -23,6 +24,24 @@ export const sizeOfCachedMessage = (cachedMessage: ESMessage) => {
         }
         return innerBytes;
     };
+
+    const sizeOfAttachmentInfo = (attachmentInfo: AttachmentInfo) => {
+        let innerBytes = 0;
+        let innerKey: keyof typeof attachmentInfo;
+        for (innerKey in attachmentInfo) {
+            if (Object.prototype.hasOwnProperty.call(attachmentInfo, innerKey)) {
+                const innerValue = attachmentInfo[innerKey];
+                if (!innerValue) {
+                    continue;
+                }
+                innerBytes += (innerKey.length + 8) * 2;
+            }
+        }
+        return innerBytes;
+    };
+
+    const isAttachmentInfo = (value: any): value is AttachmentInfo => !!value.attachments;
+    const isRecipient = (value: any): value is Recipient => !!value.Name && !!value.Address;
 
     let bytes = 0;
     let key: keyof typeof cachedMessage;
@@ -51,7 +70,9 @@ export const sizeOfCachedMessage = (cachedMessage: ESMessage) => {
                         bytes += sizeOfRecipient(innerValue);
                     }
                 }
-            } else {
+            } else if (isAttachmentInfo(value)) {
+                bytes += sizeOfAttachmentInfo(value);
+            } else if (isRecipient(value)) {
                 bytes += sizeOfRecipient(value);
             }
         }

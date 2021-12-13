@@ -1,7 +1,8 @@
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 
-import { useLoading, isPreviewAvailable, FilePreview, NavigationControl, useModals } from '@proton/components';
+import { useLoading, FilePreview, NavigationControl, useModals } from '@proton/components';
 import { DriveSectionSortKeys, LinkMeta, LinkType, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 import { STATUS_CODE } from '@proton/shared/lib/drive/constants';
 

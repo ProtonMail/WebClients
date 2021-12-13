@@ -18,7 +18,7 @@ import {
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { isInternal, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
+import { isInternal, isOutbox, isScheduled, getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
@@ -106,6 +106,7 @@ const HeaderExpanded = ({
     const isSendingMessage = message.draftFlags?.sending;
     const isOutboxMessage = isOutbox(message.data);
     const { feature } = useFeature(FeatureCode.SpyTrackerProtection);
+    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data);
 
     const isScheduledMessage = isScheduled(message.data);
 
@@ -326,6 +327,7 @@ const HeaderExpanded = ({
                             />
                             {feature?.Value && <ItemSpyTrackerIcon message={message} className="ml0-5" />}
                             <ItemAttachmentIcon
+                                icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
                                 onClick={handleAttachmentIconClick}
                                 element={message.data}
                                 className="ml0-5"
@@ -353,6 +355,7 @@ const HeaderExpanded = ({
                                     maxNumber={1}
                                 />
                                 <ItemAttachmentIcon
+                                    icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
                                     onClick={handleAttachmentIconClick}
                                     element={message.data}
                                     className="ml0-5"
