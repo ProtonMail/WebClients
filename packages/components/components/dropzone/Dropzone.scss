@@ -1,21 +1,32 @@
 @import '~@proton/styles/scss/config';
 
 .dropzone {
-	border: 5px dashed var(--border-norm);
-	background: var(--background-norm);
+	// TODO: commented out until approved in the design system
+	//border: 1px dashed var(--interaction-norm);
 	opacity: 0;
 	visibility: hidden;
 	transition-property: opacity, visibility;
 	transition-duration: 0.15s;
 	transition-timing-function: easing(easeIn);
+	// 1 less than what modals currently have
+	z-index: calc(665 + var(--z-position, 0));
+
+	&::before {
+		content: '';
+		background: var(--background-norm);
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+	}
 
 	&.is-hovered {
-		opacity: 0.85;
+		opacity: 1;
 		visibility: visible;
 	}
 
 	&-content {
-		min-block-size: 100px; // no need of rem
+		min-block-size: 100px;
+		position: relative;
 	}
 
 	&-text {

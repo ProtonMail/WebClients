@@ -9,4 +9,5 @@ export interface ModalManager {
     hideModal: (id: string) => void;
     removeModal: (id: string) => void;
     getModal: (id: string) => Modal | undefined;
+    modals: Modal[];
 }
