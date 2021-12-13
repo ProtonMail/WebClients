@@ -17,6 +17,7 @@ interface Props extends SharedViewProps {
     targetMoreData?: TargetMoreData;
     targetMoreRef: Ref<HTMLDivElement>;
     isScrollDisabled: boolean;
+    isDropzoneHovered: boolean;
     timeGridViewRef: RefObject<TimeGridRef>;
     weekdaysLong: string[];
     formatTime: (date: Date) => string;
@@ -50,6 +51,7 @@ const CalendarView = ({
     onClickDate,
     timeGridViewRef,
     isScrollDisabled,
+    isDropzoneHovered,
 
     weekdaysLong,
     formatTime,
@@ -79,6 +81,7 @@ const CalendarView = ({
                 onClickDate={onClickDate}
                 actionRef={timeGridViewRef}
                 weekdaysLong={weekdaysLong}
+                isDropzoneHovered={isDropzoneHovered}
             />
         );
     }
