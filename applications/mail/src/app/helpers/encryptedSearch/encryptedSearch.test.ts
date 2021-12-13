@@ -56,6 +56,7 @@ describe('encryptedSearch', () => {
                 ExpirationTime: 0,
                 AddressID: 'AddressID',
                 LabelIDs: [],
+                AttachmentInfo: { 'text/calendar': { attachment: 1 } },
             };
             const message: Message = {
                 ...baseMessage,
@@ -67,6 +68,7 @@ describe('encryptedSearch', () => {
                 ReplyTo: { Name: 'ReplyTo', Address: 'ReplyToAddress' },
                 ReplyTos: [],
                 Attachments: [],
+                AttachmentInfo: { 'text/calendar': { attachment: 1 } },
             };
             expect(prepareMessageMetadata(message)).toStrictEqual(baseMessage);
         });

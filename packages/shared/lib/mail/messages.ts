@@ -3,6 +3,7 @@ import { MIME_TYPES, MAILBOX_LABEL_IDS } from '../constants';
 import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
 import { canonizeInternalEmail, getEmailParts } from '../helpers/email';
 import { identity } from '../helpers/function';
+import { isICS } from '../helpers/mimetype';
 import { Message } from '../interfaces/mail/Message';
 import { MESSAGE_FLAGS, SIGNATURE_START } from './constants';
 
@@ -135,6 +136,15 @@ export const getAttachments = (message?: Message) => message?.Attachments || [];
 export const hasAttachments = (message?: Message) => !!(message?.NumAttachments && message?.NumAttachments > 0);
 export const attachmentsSize = (message?: Message) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
+export const getHasOnlyIcsAttachments = (message?: Message) => {
+    const attachments = getAttachments(message);
+
+    if (attachments.length === 0) {
+        return false;
+    }
+
+    return attachments.every(({ MIMEType = '' }) => isICS(MIMEType));
+};
 
 export const isAutoReply = (message?: Message) => {
     const ParsedHeaders = message?.ParsedHeaders || {};

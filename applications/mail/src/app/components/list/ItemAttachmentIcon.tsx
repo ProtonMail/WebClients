@@ -9,9 +9,10 @@ interface Props {
     element?: Element;
     className?: string;
     onClick?: () => void;
+    icon?: string;
 }
 
-const ItemAttachmentIcon = ({ element, className, onClick }: Props) => {
+const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paperclip' }: Props) => {
     const numAttachments = element ? getNumAttachments(element) : 0;
     const isButton = onClick !== undefined;
 
@@ -19,11 +20,13 @@ const ItemAttachmentIcon = ({ element, className, onClick }: Props) => {
         return null;
     }
 
-    const title = c('Info').ngettext(
-        msgid`Has ${numAttachments} attachment`,
-        `Has ${numAttachments} attachments`,
-        numAttachments
-    );
+    const title = icon.includes('calendar')
+        ? c('Calendar attachment tooltip').t`Has a calendar event`
+        : c('Info').ngettext(
+              msgid`Has ${numAttachments} attachment`,
+              `Has ${numAttachments} attachments`,
+              numAttachments
+          );
 
     const commonProps = {
         className: classnames(['flex', className]),
@@ -39,7 +42,7 @@ const ItemAttachmentIcon = ({ element, className, onClick }: Props) => {
             {React.createElement(
                 isButton ? 'button' : 'div',
                 { ...commonProps, ...(isButton ? buttonProps : {}) },
-                <Icon name="paperclip" size={16} alt={title} />
+                <Icon name={icon} size={16} alt={title} />
             )}
         </Tooltip>
     );

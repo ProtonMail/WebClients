@@ -145,6 +145,7 @@ export const prepareMessageMetadata = (message: Message | ESMessage) => {
         LabelIDs: message.LabelIDs,
         Time: message.Time,
         Order: message.Order,
+        AttachmentInfo: message.AttachmentInfo,
     };
     return messageForSearch;
 };
