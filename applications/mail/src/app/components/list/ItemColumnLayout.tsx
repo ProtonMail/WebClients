@@ -1,3 +1,4 @@
+import { isICS } from '@proton/shared/lib/helpers/mimetype';
 import { c, msgid } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import ItemStar from './ItemStar';
@@ -12,6 +13,7 @@ import ItemAction from './ItemAction';
 import { Breakpoints } from '../../models/utils';
 import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { Conversation } from '../../models/conversation';
 
 interface Props {
     labelID: string;
@@ -65,6 +67,9 @@ const ItemColumnLayout = ({
         `${occurrencesInBody} occurrences found in the mail content`,
         occurrencesInBody
     );
+
+    const attachmentInfo = (element as Conversation)?.AttachmentInfo;
+    const hasOnlyIcsAttachments = attachmentInfo && !Object.keys(attachmentInfo).some((key) => !isICS(key));
 
     return (
         <div
@@ -125,7 +130,11 @@ const ItemColumnLayout = ({
                         labelID={labelID}
                         maxNumber={breakpoints.isNarrow ? 1 : 5}
                     />
-                    <ItemAttachmentIcon element={element} className="ml0-5 flex-align-self-center" />
+                    <ItemAttachmentIcon
+                        icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                        element={element}
+                        className="ml0-5 flex-align-self-center"
+                    />
                 </div>
             </div>
 

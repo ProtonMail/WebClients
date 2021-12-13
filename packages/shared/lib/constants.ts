@@ -340,6 +340,8 @@ export enum MIME_TYPES {
     MIME = 'multipart/mixed',
     PLAINTEXT = 'text/plain',
     DEFAULT = 'text/html',
+    ICS = 'text/calendar',
+    APPLICATION_ICS = 'application/ics', // Google's special one that doesn't have standard newlines
 }
 
 export enum MIME_TYPES_MORE {
