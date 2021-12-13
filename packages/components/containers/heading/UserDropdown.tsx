@@ -69,9 +69,8 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const hasOutdatedRecoveryMethod = user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED || hasOutdatedRecoveryFile;
 
     const hasntVisitedRecoveryPageNotification = hasVisitedRecoveryPage?.Value === false && showRecoveryNotification;
-    const showOutdatedRecoveryNotification = isDataRecoveryAvailable && hasOutdatedRecoveryMethod;
     const showRecoveryDropdownItem =
-        user.isPrivate && (hasntVisitedRecoveryPageNotification || showOutdatedRecoveryNotification);
+        isDataRecoveryAvailable && (hasntVisitedRecoveryPageNotification || hasOutdatedRecoveryMethod);
 
     const { createNotification } = useNotifications();
     const handleCopyEmail = () => {
