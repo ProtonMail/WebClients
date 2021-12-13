@@ -1,3 +1,5 @@
+import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
+import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -24,7 +26,7 @@ import {
     EventInvitation,
     getEventTimeStatus,
     getHasFullCalendarData,
-    getHasInvitation,
+    getHasInvitationIcs,
     getInitialInvitationModel,
     getInvitationHasEventID,
     getIsInvitationFromFuture,
@@ -38,6 +40,7 @@ import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
 import ExtraEventHeader from './ExtraEventHeader';
 import ExtraEventSummary from './ExtraEventSummary';
+import ExtraEventTimeStatus from './ExtraEventTimeStatus';
 import ExtraEventWarning from './ExtraEventWarning';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
@@ -137,6 +140,7 @@ const ExtraEvent = ({
                     invitation,
                     parentInvitation,
                     calendarData: calData,
+                    calendarEvent,
                     singleEditData: singleData,
                     hasDecryptionError: hasDecryptError,
                     supportedRecurrenceId,
@@ -169,8 +173,19 @@ const ExtraEvent = ({
                 if (supportedRecurrenceId) {
                     supportedInvitationIcs.vevent['recurrence-id'] = supportedRecurrenceId;
                 }
-                if (isOrganizerMode && invitation) {
-                    isPartyCrasher = !invitation.attendee;
+                if (isOrganizerMode) {
+                    // after fetching the DB event we can determine party crasher status on organizer mode
+                    if (invitationApi) {
+                        isPartyCrasher = !invitationApi.attendee;
+                    } else if (calendarEvent) {
+                        // if we do not have invitationApi, it means we could not decrypt calendarEvent
+                        // we can resort to checking attendee tokens in this case, since those are clear text
+                        const senderToken = await generateAttendeeToken(
+                            canonizeEmailByGuess(message.data.SenderAddress),
+                            calendarEvent.UID
+                        );
+                        isPartyCrasher = !calendarEvent.Attendees.some(({ Token }) => Token === senderToken);
+                    }
                 }
                 if (!unmounted) {
                     setModel({
@@ -297,20 +312,23 @@ const ExtraEvent = ({
         );
     }
 
-    if (!getHasInvitation(model)) {
+    if (!getHasInvitationIcs(model)) {
         return null;
     }
 
     return (
-        <div className="calendar-widget rounded bordered bg-norm mb0-5 scroll-if-needed">
-            <div className="p1-5">
-                <ExtraEventSummary model={model} />
-                <ExtraEventHeader model={model} />
-                <ExtraEventWarning model={model} />
-                <ExtraEventButtons model={model} setModel={setModel} message={message} />
+        <div className="calendar-widget">
+            <ExtraEventTimeStatus timeStatus={model.timeStatus} />
+            <div className="rounded bordered bg-norm mb0-5 scroll-if-needed">
+                <div className="p1-5">
+                    <ExtraEventSummary model={model} />
+                    <ExtraEventHeader model={model} />
+                    <ExtraEventWarning model={model} />
+                    <ExtraEventButtons model={model} setModel={setModel} message={message} />
+                </div>
+                <hr className="m0" />
+                <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
             </div>
-            <hr className="m0" />
-            <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
         </div>
     );
 };

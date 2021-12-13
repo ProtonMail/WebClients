@@ -1,8 +1,8 @@
 import { c } from 'ttag';
+import { MIME_TYPES } from '../../constants';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
 import { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
-import { getIsAddressDisabled } from '../../helpers/address';
 import { canonizeEmail, canonizeEmailByGuess, canonizeInternalEmail } from '../../helpers/email';
 import { unary } from '../../helpers/function';
 import isTruthy from '../../helpers/isTruthy';
@@ -25,9 +25,12 @@ import {
 import { ContactEmail } from '../../interfaces/contacts';
 import { GetVTimezonesMap } from '../../interfaces/hooks/GetVTimezonesMap';
 import { RequireSome } from '../../interfaces/utils';
+import { getSupportedPlusAlias } from '../../mail/addresses';
+import { MESSAGE_FLAGS } from '../../mail/constants';
 import { formatSubject, RE_PREFIX } from '../../mail/messages';
 import { getAttendeeEmail, toIcsPartstat } from '../attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, SETTINGS_NOTIFICATION_TYPE } from '../constants';
+import { getSelfAddressData } from '../deserialize';
 import { getDisplayTitle } from '../helper';
 import { getIsRruleEqual } from '../rruleEqual';
 import { fromTriggerString, serialize } from '../vcal';
@@ -41,7 +44,6 @@ import {
     getSequence,
 } from '../vcalHelper';
 import { getIsEventCancelled, withDtstamp, withSummary } from '../veventHelper';
-import { getSupportedPlusAlias } from '../../mail/addresses';
 
 export const getParticipantHasAddressID = (
     participant: Participant
@@ -224,105 +226,6 @@ export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = 
     );
     const attendee = index !== -1 ? attendees[index] : undefined;
     return { index, attendee };
-};
-
-export const getSelfAddressData = ({
-    isOrganizer,
-    organizer,
-    attendees = [],
-    addresses = [],
-}: {
-    isOrganizer: boolean;
-    organizer?: VcalOrganizerProperty;
-    attendees?: VcalAttendeeProperty[];
-    addresses?: Address[];
-}) => {
-    if (isOrganizer) {
-        if (!organizer) {
-            // old events will not have organizer
-            return {};
-        }
-        const organizerEmail = canonizeInternalEmail(getAttendeeEmail(organizer));
-        return {
-            selfAddress: addresses.find(({ Email }) => canonizeInternalEmail(Email) === organizerEmail),
-        };
-    }
-    const canonicalAttendeeEmails = attendees.map((attendee) => canonizeInternalEmail(getAttendeeEmail(attendee)));
-    // start checking active addresses
-    const activeAddresses = addresses.filter(({ Status }) => Status !== 0);
-    const { selfActiveAttendee, selfActiveAddress, selfActiveAttendeeIndex } = activeAddresses.reduce<{
-        selfActiveAttendee?: VcalAttendeeProperty;
-        selfActiveAttendeeIndex?: number;
-        selfActiveAddress?: Address;
-        answeredAttendeeFound: boolean;
-    }>(
-        (acc, address) => {
-            if (acc.answeredAttendeeFound) {
-                return acc;
-            }
-            const canonicalSelfEmail = canonizeInternalEmail(address.Email);
-            const index = canonicalAttendeeEmails.findIndex((email) => email === canonicalSelfEmail);
-            if (index === -1) {
-                return acc;
-            }
-            const attendee = attendees[index];
-            const partstat = getAttendeePartstat(attendee);
-            const answeredAttendeeFound = partstat !== ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
-            if (answeredAttendeeFound || !(acc.selfActiveAttendee && acc.selfActiveAddress)) {
-                return {
-                    selfActiveAttendee: attendee,
-                    selfActiveAddress: address,
-                    selfActiveAttendeeIndex: index,
-                    answeredAttendeeFound,
-                };
-            }
-            return acc;
-        },
-        { answeredAttendeeFound: false }
-    );
-    if (selfActiveAttendee && selfActiveAddress) {
-        return {
-            selfAttendee: selfActiveAttendee,
-            selfAddress: selfActiveAddress,
-            selfAttendeeIndex: selfActiveAttendeeIndex,
-        };
-    }
-    const disabledAddresses = addresses.filter(unary(getIsAddressDisabled));
-    const { selfDisabledAttendee, selfDisabledAddress, selfDisabledAttendeeIndex } = disabledAddresses.reduce<{
-        selfDisabledAttendee?: VcalAttendeeProperty;
-        selfDisabledAttendeeIndex?: number;
-        selfDisabledAddress?: Address;
-        answeredAttendeeFound: boolean;
-    }>(
-        (acc, address) => {
-            if (acc.answeredAttendeeFound) {
-                return acc;
-            }
-            const canonicalSelfEmail = canonizeInternalEmail(address.Email);
-            const index = canonicalAttendeeEmails.findIndex((email) => email === canonicalSelfEmail);
-            if (index === -1) {
-                return acc;
-            }
-            const attendee = attendees[index];
-            const partstat = getAttendeePartstat(attendee);
-            const answeredAttendeeFound = partstat !== ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
-            if (answeredAttendeeFound || !(acc.selfDisabledAttendee && acc.selfDisabledAddress)) {
-                return {
-                    selfDisabledAttendee: attendee,
-                    selfDisabledAttendeeIndex: index,
-                    selfDisabledAddress: address,
-                    answeredAttendeeFound,
-                };
-            }
-            return acc;
-        },
-        { answeredAttendeeFound: false }
-    );
-    return {
-        selfAttendee: selfDisabledAttendee,
-        selfAddress: selfDisabledAddress,
-        selfAttendeeIndex: selfDisabledAttendeeIndex,
-    };
 };
 
 export const getEventWithCalendarAlarms = (
@@ -576,6 +479,11 @@ ${eventDetailsText}`;
     }
     throw new Error('Unexpected method');
 };
+
+export const getIcsMessageWithPreferences = (globalSign: number) => ({
+    MIMEType: MIME_TYPES.PLAINTEXT,
+    Flags: globalSign ? MESSAGE_FLAGS.FLAG_SIGN : undefined,
+});
 
 export const getHasUpdatedInviteData = ({
     newVevent,

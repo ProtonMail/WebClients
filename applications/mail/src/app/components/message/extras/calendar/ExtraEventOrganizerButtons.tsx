@@ -1,35 +1,27 @@
-import { getSequence } from '@proton/shared/lib/calendar/vcalHelper';
-import { c } from 'ttag';
-import { Button } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { InvitationModel } from '../../../../helpers/calendar/invite';
+import { Dispatch, SetStateAction } from 'react';
+import { getHasInvitationApi, InvitationModel } from '../../../../helpers/calendar/invite';
+import ExtraEventAddParticipantButton from './ExtraEventAddParticipantButton';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
+    setModel: Dispatch<SetStateAction<InvitationModel>>;
 }
-const ExtraEventOrganizerButtons = ({ model }: Props) => {
+const ExtraEventOrganizerButtons = ({ model, setModel }: Props) => {
     const {
-        invitationIcs,
         invitationIcs: { method },
-        invitationApi,
+        isPartyCrasher
     } = model;
-    if (!invitationApi?.vevent.sequence) {
+
+    if (!getHasInvitationApi(model)) {
         return null;
     }
-    const { vevent: eventIcs } = invitationIcs;
-    const { vevent: eventApi } = invitationApi;
-    const [sequenceApi, sequenceIcs] = [eventApi, eventIcs].map(getSequence);
-    const sequenceDiff = sequenceIcs - sequenceApi;
 
-    if (method === ICAL_METHOD.COUNTER) {
-        if (sequenceDiff === 0) {
-            return <Button size="small">{c('Action').t`Accept`}</Button>;
-        }
-        if (sequenceDiff < 0) {
-            return <Button size="small" disabled>{c('Action').t`Accept`}</Button>;
-        }
+    if (method === ICAL_METHOD.REPLY && isPartyCrasher) {
+        return <ExtraEventAddParticipantButton model={model} setModel={setModel} />;
     }
+
     return null;
 };
 
