@@ -25,7 +25,7 @@ const ContactContainer = ({
     onDelete,
 }: Props) => {
     const [contact, contactLoading] = useContact(contactID) as [Contact, boolean, Error];
-    const [{ properties, errors, ID }, onReload] = useContactProperties({ contact, userKeysList });
+    const [{ properties, errors, ID, isVerified }, onReload] = useContactProperties({ contact, userKeysList });
 
     if (contactLoading || !properties || ID !== contactID) {
         return <Loader />;
@@ -40,6 +40,7 @@ const ContactContainer = ({
             ownAddresses={ownAddresses}
             userKeysList={userKeysList}
             errors={errors}
+            isSignatureVerified={isVerified}
             isModal={isModal}
             onDelete={onDelete}
             onReload={onReload}
