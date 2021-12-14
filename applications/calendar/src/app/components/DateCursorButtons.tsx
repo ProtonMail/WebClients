@@ -5,25 +5,18 @@ import { format } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import getDateRangeText from './getDateRangeText';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;
 
 interface Props {
     view: VIEWS;
-    range: number;
-    currentDate: Date;
     now: Date;
-    dateRange: Date[];
     onToday: () => void;
     onPrev: () => void;
     onNext: () => void;
+    currentRange: string;
 }
-const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, onPrev, onNext }: Props) => {
-    const currentRange = useMemo(() => {
-        return getDateRangeText(view, range, currentDate, dateRange);
-    }, [view, range, currentDate, currentDate, dateRange]);
-
+const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }: Props) => {
     const todayTitle = useMemo(() => {
         return format(now, 'PP', { locale: dateLocale });
     }, [now, dateLocale]);
