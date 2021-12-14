@@ -4,9 +4,9 @@ import { c } from 'ttag';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { classnames, Tooltip } from '@proton/components';
 
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import useObserveWidthChange from '../../hooks/message/useObserveWidthChange';
-import { useOnMailTo } from '../../containers/ComposeProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import useInitIframeContent from './hooks/useInitIframeContent';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
@@ -32,6 +32,8 @@ interface Props {
     message: MessageState;
     labelID: string;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
+    mailSettings: [MailSettings | undefined, boolean, any];
+    onMailTo?: (src: string) => void;
 }
 
 const MessageBodyIframe = ({
@@ -47,6 +49,8 @@ const MessageBodyIframe = ({
     message,
     labelID,
     onReady,
+    mailSettings,
+    onMailTo,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const messageHead = locateHead(message.messageDocument?.document);
@@ -74,10 +78,10 @@ const MessageBodyIframe = ({
     });
     const iframeOffset = useIframeOffset(iframeRef);
 
-    const onMailTo = useOnMailTo();
     useLinkHandler(iframeRootDivRef, {
         onMailTo,
         startListening: initStatus === 'done' && iframeRootDivRef.current !== undefined,
+        mailSettings,
     });
 
     const onImagesLoadedCallback = useCallback(() => {

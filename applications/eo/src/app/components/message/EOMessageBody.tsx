@@ -1,11 +1,12 @@
-import { Button, classnames, Tooltip } from '@proton/components';
-import MessageBodyImage from 'proton-mail/src/app/components/message/MessageBodyImage';
+import { classnames } from '@proton/components';
 import { MessageState } from 'proton-mail/src/app/logic/messages/messagesTypes';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { locateBlockquote } from 'proton-mail/src/app/helpers/message/messageBlockquote';
-import { c } from 'ttag';
-import '../../../../../mail/src/app/components/message/MessageBody.scss';
+import MessageBodyIframe from 'proton-mail/src/app/components/message/MessageBodyIframe';
+import { locateHead } from 'proton-mail/src/app/helpers/message/messageHead';
+import { MailboxContainerContextProvider } from 'proton-mail/src/app/containers/mailbox/MailboxContainerProvider';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 interface Props {
     message: MessageState;
@@ -16,7 +17,15 @@ interface Props {
     toggleOriginalMessage?: () => void;
 }
 
-const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSourceMode, originalMessageMode, toggleOriginalMessage }: Props) => {
+const EOMessageBody = ({
+    message,
+    messageLoaded,
+    bodyLoaded,
+    sourceMode: inputSourceMode,
+    originalMessageMode,
+    toggleOriginalMessage,
+}: Props) => {
+    console.log(toggleOriginalMessage);
     const bodyRef = useRef<HTMLDivElement>(null);
     const plain = isPlainText(message.data);
 
@@ -37,6 +46,8 @@ const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSo
     const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
     const isBlockquote = blockquote !== '';
     const showBlockquote = originalMessageMode;
+
+    const messageHead = locateHead(message.messageDocument?.document);
 
     useEffect(() => {
         // Images need a second render to find the anchors for the portal
@@ -66,44 +77,23 @@ const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSo
                 </>
             )}
             {contentMode && (
-                <>
-                    {/* eslint-disable-next-line react/no-danger */}
-                    <div dangerouslySetInnerHTML={{ __html: content }} />
-                    {message.messageImages?.images.map((image) => (
-                        <MessageBodyImage
-                            key={image.id}
-                            bodyRef={bodyRef}
-                            showRemoteImages={message.messageImages?.showRemoteImages || false}
-                            showEmbeddedImages={message.messageImages?.showEmbeddedImages || false}
-                            image={image}
-                        />
-                    ))}
-                    {isBlockquote && (
-                        <>
-                            {isBlockquote && (
-                                <Tooltip
-                                    title={
-                                        originalMessageMode
-                                            ? c('Info').t`Hide original message`
-                                            : c('Info').t`Show original message`
-                                    }
-                                >
-                                    <Button
-                                        size="small"
-                                        shape="outline"
-                                        className="m0-5 toggle-original-message-button"
-                                        onClick={() => toggleOriginalMessage?.()}
-                                        data-testid="message-view:expand-codeblock"
-                                    >
-                                        ...
-                                    </Button>
-                                </Tooltip>
-                            )}
-                            {/* eslint-disable-next-line react/no-danger */}
-                            {showBlockquote && <div dangerouslySetInnerHTML={{ __html: blockquote }} />}
-                        </>
-                    )}
-                    </>
+                <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
+                    <MessageBodyIframe
+                        messageHead={messageHead}
+                        content={content}
+                        blockquoteContent={blockquote}
+                        showBlockquote={showBlockquote}
+                        showBlockquoteToggle={isBlockquote}
+                        messageImages={message.messageImages}
+                        wrapperRef={bodyRef}
+                        onContentLoaded={() => {}}
+                        isPlainText={plain}
+                        message={message}
+                        labelID=""
+                        messageSubject={message.data?.Subject}
+                        mailSettings={[{ ConfirmLink: 1 } as MailSettings, true, {} as Error]}
+                    />
+                </MailboxContainerContextProvider>
             )}
         </div>
     );
