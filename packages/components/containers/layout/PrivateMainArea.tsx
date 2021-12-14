@@ -14,7 +14,7 @@ const PrivateMainArea = forwardRef(
                 className={classnames([
                     hasToolbar ? 'main-area--with-toolbar' : 'main-area',
                     hasRowMode ? 'main-area--row-mode' : '',
-                    'flex-item-fluid relative',
+                    'flex-item-fluid-auto relative',
                     className,
                 ])}
                 ref={ref}
