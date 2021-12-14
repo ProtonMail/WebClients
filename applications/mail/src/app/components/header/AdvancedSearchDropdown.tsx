@@ -26,6 +26,9 @@ import {
     Href,
     useWelcomeFlags,
     useFeatures,
+    SelectTwo,
+    Option,
+    useAddresses,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -52,6 +55,7 @@ interface SearchModel {
     labelID: string;
     from: Recipient[];
     to: Recipient[];
+    address?: string;
     begin?: Date;
     end?: Date;
     attachments?: number;
@@ -61,6 +65,7 @@ interface SearchModel {
 
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
+const ALL_ADDRESSES = 'all';
 const NO_ATTACHMENTS = 0;
 const WITH_ATTACHMENTS = 1;
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;
@@ -69,6 +74,7 @@ const DEFAULT_MODEL: SearchModel = {
     labelID: ALL_MAIL,
     from: [],
     to: [],
+    address: ALL_ADDRESSES,
     attachments: UNDEFINED,
     wildcard: AUTO_WILDCARD,
     filter: UNDEFINED,
@@ -100,6 +106,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     });
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
+    const [addresses, loadingAddresses] = useAddresses();
     const [model, updateModel] = useState<SearchModel>(DEFAULT_MODEL);
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
     const [user] = useUser();
@@ -128,13 +135,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         event.preventDefault(); // necessary to not run a basic submission
         event.stopPropagation(); // necessary to not submit normal search from header
 
-        const { keyword, begin, end, wildcard, from, to, attachments, filter } = reset ? DEFAULT_MODEL : model;
+        const { keyword, begin, end, wildcard, from, to, address, attachments, filter } = reset ? DEFAULT_MODEL : model;
 
         history.push(
             changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.hash, {
                 keyword: getKeyword(keyword, reset),
                 from: from.length ? formatRecipients(from) : UNDEFINED,
                 to: to.length ? formatRecipients(to) : UNDEFINED,
+                address: address === ALL_ADDRESSES ? UNDEFINED : address,
                 begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
                 end: end ? String(getUnixTime(add(end, { days: 1 }))) : UNDEFINED,
                 attachments: typeof attachments === 'number' ? String(attachments) : UNDEFINED,
@@ -162,7 +170,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 return {
                     ...DEFAULT_MODEL, // labelID re-initialized to ALL_MAIL
                     keyword: keyword || fullInput || '',
-                    address,
+                    address: address || ALL_ADDRESSES,
                     attachments,
                     wildcard,
                     from: getRecipients(from),
@@ -184,7 +192,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     }, [dropdownOpened]);
 
     const loading =
-        loadingLabels || loadingFolders || loadingMailSettings || loadingESFeature || loadingScheduledFeature;
+        loadingLabels ||
+        loadingFolders ||
+        loadingMailSettings ||
+        loadingAddresses ||
+        loadingESFeature ||
+        loadingScheduledFeature;
 
     // Switches
     const showEncryptedSearch = !isMobile() && !!esFeature && !!esFeature.Value && !!isPaid(user);
@@ -356,6 +369,24 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                     onChange={(to) => updateModel({ ...model, to })}
                                     placeholder={c('Placeholder').t`Name or email address`}
                                 />
+                            </div>
+                            <div className="mb0-5">
+                                <Label
+                                    title={c('Label').t`Address`}
+                                    className="advanced-search-label text-semibold"
+                                    htmlFor="address"
+                                >{c('Label').t`Address`}</Label>
+                                <SelectTwo
+                                    id="address"
+                                    value={model.address}
+                                    onChange={({ value }) => updateModel({ ...model, address: value })}
+                                >
+                                    {[{ ID: ALL_ADDRESSES, Email: c('Option').t`All` }, ...addresses].map(
+                                        ({ ID, Email }) => (
+                                            <Option key={ID} value={ID} title={Email} />
+                                        )
+                                    )}
+                                </SelectTwo>
                             </div>
                             <div className="mb1-5">
                                 <Label
