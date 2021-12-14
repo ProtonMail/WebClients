@@ -37,8 +37,10 @@ const ExtraImages = ({ message, type, onLoadImages }: Props) => {
     }
 
     const remoteText = couldLoadDirect
-        ? c('Title').t`Some images could not be loaded with tracking protection [Load unprotected]`
+        ? c('Title').t`Some images could not be loaded with tracking protection`
         : c('Title').t`Load remote content`;
+
+    const actionText = couldLoadDirect ? c('Action').t`Load unprotected` : c('Action').t`Load`;
 
     const embeddedText = c('Action').t`This message contains embedded images.`;
 
@@ -62,7 +64,9 @@ const ExtraImages = ({ message, type, onLoadImages }: Props) => {
                     onClick={onLoadImages}
                     className="flex flex-item-noshrink text-underline link"
                     data-testid="remote-content:load"
-                >{c('Action').t`Load`}</button>
+                >
+                    {actionText}
+                </button>
             </Tooltip>
         </div>
     );
