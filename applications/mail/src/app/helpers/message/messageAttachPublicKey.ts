@@ -1,7 +1,7 @@
 import { keyInfo } from 'pmcrypto/lib/pmcrypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { upload, ATTACHMENT_ACTION } from '../attachment/attachmentUploader';
-import { MessageKeys, MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
 
 // TS Hack waiting for keyInfo to be completely typed
 type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
@@ -33,7 +33,7 @@ const fileFromKeyInfo = (message: MessageState, { publicKeyArmored, fingerprint 
 /**
  * Attaches the senders public key to the message
  */
-export const attachPublicKey = async (message: MessageStateWithData, messageKeys: MessageKeys, uid: string) => {
+export const attachPublicKey = async (message: MessageStateWithData, messageKeys: PublicPrivateKey, uid: string) => {
     const attachments = message.data?.Attachments || [];
 
     const privateKeys = messageKeys.privateKeys?.[0];

@@ -22,7 +22,7 @@ import { OnCompose } from './useCompose';
 import useDelaySendSeconds from '../useDelaySendSeconds';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
-import { useSendMoficiations } from './useSendModifications';
+import { useSendModifications } from './useSendModifications';
 import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
@@ -54,7 +54,7 @@ export const useSendMessage = () => {
     const history = useHistory<any>();
     const delaySendSeconds = useDelaySendSeconds();
     const { createNotification, hideNotification } = useNotifications();
-    const sendModification = useSendMoficiations();
+    const sendModification = useSendModifications();
 
     const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
         dispatch(updateAttachment({ ID, attachment }));

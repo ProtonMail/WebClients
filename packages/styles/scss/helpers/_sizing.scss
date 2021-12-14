@@ -79,7 +79,7 @@
 }
 
 // .mw48r { max-inline-size: 48rem; }
-@each $max-width in (30) {
+@each $max-width in (30, 52) {
 	.mw#{$max-width}r {
 		max-inline-size: #{$max-width}rem;
 	}

@@ -8,7 +8,7 @@ import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { enums } from 'openpgp';
 import { arrayToBase64 } from '../base64';
-import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState, PublicPrivateKey } from '../../logic/messages/messagesTypes';
 
 const MEGABYTE = 1024 * 1024;
 
@@ -101,7 +101,7 @@ const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
  */
 const encryptBodyPackage = async (
     pack: Package,
-    messageKeys: MessageKeys,
+    messageKeys: PublicPrivateKey,
     publicKeys: OpenPGPKey[],
     message: MessageState,
     scheduledTime?: number
@@ -138,7 +138,7 @@ const encryptBodyPackage = async (
  */
 const encryptDraftBodyPackage = async (
     pack: Package,
-    messageKeys: MessageKeys,
+    messageKeys: PublicPrivateKey,
     publicKeys: OpenPGPKey[],
     scheduledTime?: number
 ) => {
@@ -174,7 +174,7 @@ const encryptDraftBodyPackage = async (
  * Encrypts the body of the package and then overwrites the body in the package and adds the encrypted session keys
  * to the subpackages. If we send clear message the unencrypted session key is added to the (top-level) package too.
  */
-const encryptBody = async (pack: Package, messageKeys: MessageKeys, message: MessageState): Promise<void> => {
+const encryptBody = async (pack: Package, messageKeys: PublicPrivateKey, message: MessageState): Promise<void> => {
     const addressKeys = Object.keys(pack.Addresses || {});
     const addresses = Object.values(pack.Addresses || {});
     const publicKeysList = addresses.map(({ PublicKey }) => PublicKey as OpenPGPKey);
@@ -227,7 +227,7 @@ const encryptBody = async (pack: Package, messageKeys: MessageKeys, message: Mes
 const encryptPackage = async (
     pack: Package,
     message: MessageState,
-    messageKeys: MessageKeys,
+    messageKeys: PublicPrivateKey,
     attachmentKeys: AttachmentKeys[]
 ): Promise<Package> => {
     await Promise.all([encryptBody(pack, messageKeys, message), encryptAttachmentKeys(pack, message, attachmentKeys)]);
@@ -237,7 +237,7 @@ const encryptPackage = async (
     return pack;
 };
 
-const getAttachmentKeys = async (message: MessageState, messageKeys: MessageKeys): Promise<AttachmentKeys[]> =>
+const getAttachmentKeys = async (message: MessageState, messageKeys: PublicPrivateKey): Promise<AttachmentKeys[]> =>
     Promise.all(
         getAttachments(message.data).map(async (attachment) => ({
             Attachment: attachment,
@@ -250,7 +250,7 @@ const getAttachmentKeys = async (message: MessageState, messageKeys: MessageKeys
  */
 export const encryptPackages = async (
     message: MessageState,
-    messageKeys: MessageKeys,
+    messageKeys: PublicPrivateKey,
     packages: Packages
 ): Promise<Packages> => {
     const attachmentKeys = await getAttachmentKeys(message, messageKeys);

@@ -33,9 +33,9 @@ export const formatDownload = async (
             verification,
             messageKeys,
             reverify,
+            api,
             getAttachment,
-            onUpdateAttachment,
-            api
+            onUpdateAttachment
         );
         return {
             attachment,
