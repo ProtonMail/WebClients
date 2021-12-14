@@ -2,10 +2,19 @@ import { c } from 'ttag';
 
 import { Icon, Tooltip } from '../../components';
 
-const EncryptedIcon = ({ ...rest }) => {
+interface Props {
+    isSignatureVerified: boolean;
+    className: string;
+}
+const EncryptedIcon = ({ isSignatureVerified, className = 'flex flex-item-centered' }: Props) => {
+    const tooltipText = isSignatureVerified
+        ? c('Tooltip').t`Encrypted data with verified digital signature`
+        : c('Tooltip').t`Encrypted data`;
+    const iconName = isSignatureVerified ? 'lock-check-filled' : 'lock-filled';
+
     return (
-        <Tooltip title={c('Tooltip').t`Encrypted data with verified digital signature`}>
-            <Icon name="lock-filled" className="flex flex-item-centered" {...rest} />
+        <Tooltip title={tooltipText}>
+            <Icon name={iconName} className={className} />
         </Tooltip>
     );
 };
