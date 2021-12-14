@@ -123,7 +123,9 @@ export const textToHtml = (input = '', signature: string, mailSettings: Partial<
     const rendered = md.render(withPlaceholder);
     const html = removeNewLinePlaceholder(rendered, placeholder);
 
-    const result = attachSignature(html, signature, text, mailSettings);
+    const withSignature = attachSignature(html, signature, text, mailSettings);
+
+    const result = /^<p>([\s\S]*)<\/p>$/gm.exec(withSignature)?.[1] || withSignature;
 
     return result;
 };
