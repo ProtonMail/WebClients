@@ -90,7 +90,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
                 organizer,
             };
             setModel({
-                ...omit(model, ['error']),
+                ...omit(model, ['error', 'reinviteEventID']),
                 invitationApi: invitationApiToSave,
                 hideSummary: true,
                 hideLink: false,
