@@ -27,11 +27,12 @@ export const openDraft = (
         if (!messageState.draftFlags) {
             messageState.draftFlags = {};
         }
-        Object.assign(messageState.draftFlags, {
+        messageState.draftFlags = {
+            ...messageState.draftFlags,
             openDraftFromUndo: fromUndo,
             isSentDraft: false,
-            messageImages: undefined,
-        });
+        };
+        messageState.messageImages = undefined;
     } else {
         state[localID] = { localID, draftFlags: { openDraftFromUndo: fromUndo } };
     }
