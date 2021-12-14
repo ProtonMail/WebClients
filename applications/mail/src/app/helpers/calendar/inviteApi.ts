@@ -472,7 +472,6 @@ export const updateEventInvitation = async ({
             invitationIcs,
             invitationApi,
             pmData,
-            xYahooUserStatus: veventIcs['x-yahoo-user-status']?.value,
         })
     ) {
         // do not update
