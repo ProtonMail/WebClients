@@ -92,7 +92,9 @@ export const loadRemoteDirect = createAsyncThunk<LoadRemoteResults[], LoadRemote
         return Promise.all(
             imagesToLoad.map(async (image): Promise<LoadRemoteResults> => {
                 try {
-                    await preloadImage(image.url as string);
+                    // First load, use url, second try, url is blank, use originalURL
+                    const url = image.originalURL || image.url || '';
+                    await preloadImage(url);
                     return { image };
                 } catch (error) {
                     return { image, error };
