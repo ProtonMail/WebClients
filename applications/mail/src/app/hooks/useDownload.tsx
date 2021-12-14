@@ -16,7 +16,7 @@ import {
 import { useGetMessageKeys } from './message/useGetMessageKeys';
 import { updateAttachment } from '../logic/attachments/attachmentsActions';
 import { useGetAttachment } from './useAttachment';
-import { MessageStateWithData } from '../logic/messages/messagesTypes';
+import { MessageStateWithData, OutsideKey } from '../logic/messages/messagesTypes';
 import { useGetMessage } from './message/useMessage';
 import { getAttachmentCounts } from '../helpers/message/messages';
 
@@ -179,16 +179,29 @@ export const usePreview = () => {
     };
 
     return useCallback(
-        async (message: MessageStateWithData, attachment: Attachment) => {
-            const messageKeys = await getMessageKeys(message.localID);
-            const download = await formatDownload(
-                attachment,
-                message.verification,
-                messageKeys,
-                getAttachment,
-                onUpdateAttachment,
-                api
-            );
+        async (message: MessageStateWithData, attachment: Attachment, outsideKey?: OutsideKey) => {
+            let download: Download;
+
+            if (!outsideKey) {
+                const messageKeys = await getMessageKeys(message.localID);
+                download = await formatDownload(
+                    attachment,
+                    message.verification,
+                    messageKeys,
+                    getAttachment,
+                    onUpdateAttachment,
+                    api
+                );
+            } else {
+                download = await formatDownload(
+                    attachment,
+                    message.verification,
+                    outsideKey,
+                    getAttachment,
+                    onUpdateAttachment,
+                    api
+                );
+            }
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 const handleError = async () => {

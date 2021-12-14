@@ -14,9 +14,10 @@ export interface Props {
     children: ReactNode;
     hasLanguageSelect?: boolean;
     toApp: APP_NAMES;
+    customHeaderActions?: ReactNode;
 }
 
-const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
+const Layout = ({ children, toApp, hasLanguageSelect = true, customHeaderActions }: Props) => {
     const { APP_VERSION, APP_VERSION_DISPLAY } = useConfig();
     const termsLink = (
         <Href key="terms" className="signup-footer-link" href="https://protonmail.com/terms-and-conditions">{c('Link')
@@ -45,11 +46,16 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 <span>
                     <Logo appName={toApp} to="/" toApp={toApp} target="_self" />
                 </span>
-                {hasLanguageSelect && (
-                    <span className="text-right">
-                        <LanguageSelect className="support-dropdown-button" locales={locales} />
-                    </span>
-                )}
+                <div className='flex flex-flex-align-items-center'>
+                    {hasLanguageSelect && (
+                        <span className="text-right flex flex-flex-align-items-center">
+                            <LanguageSelect className="support-dropdown-button" locales={locales} />
+                        </span>
+                    )}
+                    <div className='ml1'>
+                        {customHeaderActions}
+                    </div>
+                </div>
             </header>
             <div className="pl2 pr2 sign-layout-container flex-item-fluid flex flex-nowrap flex-column flex-justify-space-between">
                 <div>
