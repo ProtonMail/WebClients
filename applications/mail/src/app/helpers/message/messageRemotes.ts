@@ -1,5 +1,5 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { MessageRemoteImage } from '../../logic/messages/messagesTypes';
+import { MessageImage, MessageRemoteImage } from '../../logic/messages/messagesTypes';
 
 export const ATTRIBUTES = ['url', 'xlink:href', 'src', 'srcset', 'svg', 'background', 'poster'];
 
@@ -84,6 +84,14 @@ export const loadElementOtherThanImages = (images: MessageRemoteImage[], message
     });
 };
 
+// Error Code 2902 means proxy failed to load the image
+const imageFailedWithProxy = (image: MessageRemoteImage) => (image.error as any)?.data?.Code === 2902 && !image.tracker;
+
+export const hasToSkipProxy = (images: MessageImage[] = []) => {
+    const remoteImages = images.filter((image) => image.type === 'remote') as MessageRemoteImage[];
+    return remoteImages.every((image) => image.status === 'loaded') && remoteImages.some(imageFailedWithProxy);
+};
+
 export const loadRemoteImages = async (
     useProxy: boolean,
     images: MessageRemoteImage[],
@@ -111,4 +119,17 @@ export const loadFakeImages = async (
     await wait(0);
 
     return onLoadFakeImagesProxy(images);
+};
+
+export const loadSkipProxyImages = async (
+    images: MessageRemoteImage[],
+    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void
+) => {
+    // Not really happy with this hack but we need to "wait" that the message transform process is finished
+    // And update the message cache before updating image statuses
+    await wait(0);
+
+    const imagesToLoad = images.filter(imageFailedWithProxy);
+
+    return onLoadRemoteImagesDirect(imagesToLoad);
 };

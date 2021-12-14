@@ -6,7 +6,14 @@ import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
-import { ATTRIBUTES, loadFakeImages, loadRemoteImages, removeProtonPrefix } from '../message/messageRemotes';
+import {
+    ATTRIBUTES,
+    hasToSkipProxy,
+    loadFakeImages,
+    loadRemoteImages,
+    loadSkipProxyImages,
+    removeProtonPrefix,
+} from '../message/messageRemotes';
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
 
 const WHITELIST = ['notify@protonmail.com'];
@@ -63,6 +70,8 @@ export const transformRemote = (
     const { matchedElements, hasRemoteImages } = getRemoteImageMatches(message);
     const remoteImages = getRemoteImages(message);
 
+    const skipProxy = hasToSkipProxy(remoteImages);
+
     matchedElements.forEach((match) => {
         // Avoid duplicating images
         if (remoteImages.find(({ original }) => original === match)) {
@@ -105,7 +114,9 @@ export const transformRemote = (
         });
     });
 
-    if (showRemoteImages) {
+    if (skipProxy) {
+        void loadSkipProxyImages(remoteImages, onLoadRemoteImagesDirect);
+    } else if (showRemoteImages) {
         void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesProxy, onLoadRemoteImagesDirect);
     } else if (useProxy) {
         void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
