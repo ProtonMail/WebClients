@@ -9,7 +9,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 
 import { isExternal, isSubDomain, getHostname } from '../helpers/url';
-import { useModals, useNotifications, useMailSettings, useHandler } from './index';
+import { useModals, useNotifications, useHandler } from './index';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
@@ -22,12 +22,19 @@ interface LinkSource {
 interface UseLinkHandlerOptions {
     onMailTo?: (src: string) => void;
     startListening?: boolean;
+    mailSettings: [MailSettings | undefined, boolean, Error];
 }
 type UseLinkHandler = (wrapperRef: RefObject<HTMLDivElement | undefined>, options?: UseLinkHandlerOptions) => void;
 
-const defaultOptions: UseLinkHandlerOptions = { startListening: true };
-export const useLinkHandler: UseLinkHandler = (wrapperRef, { onMailTo, startListening } = defaultOptions) => {
-    const [mailSettings] = useMailSettings() as [MailSettings | undefined, boolean, Error];
+const defaultOptions: UseLinkHandlerOptions = {
+    startListening: true,
+    mailSettings: [{ ConfirmLink: 1 } as MailSettings, true, {} as Error],
+};
+export const useLinkHandler: UseLinkHandler = (
+    wrapperRef,
+    { onMailTo, startListening, mailSettings } = defaultOptions
+) => {
+    const [settings] = mailSettings;
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
 
@@ -124,7 +131,7 @@ export const useLinkHandler: UseLinkHandler = (wrapperRef, { onMailTo, startList
             onMailTo(src.raw);
         }
 
-        const askForConfirmation = mailSettings?.ConfirmLink === undefined ? 1 : mailSettings?.ConfirmLink;
+        const askForConfirmation = settings?.ConfirmLink === undefined ? 1 : settings?.ConfirmLink;
         const hostname = getHostname(src.raw);
         const currentDomain = getSecondLevelDomain(window.location.hostname);
 
