@@ -692,7 +692,7 @@ export const updateEventInvitation = async ({
     return { action: NONE };
 };
 
-export const deleteCalendarEventFromInvitation = async ({
+export const deleteCalendarEventFromInvitation = ({
     calendarEventID,
     calendarData,
     api,
@@ -701,7 +701,7 @@ export const deleteCalendarEventFromInvitation = async ({
     calendarData: Required<CalendarWidgetData>;
     api: Api;
 }) => {
-    void api(
+    void api<SyncMultipleApiResponse>(
         syncMultipleEvents(calendarData.calendar.ID, {
             MemberID: calendarData.memberID,
             Events: [{ ID: calendarEventID }],
