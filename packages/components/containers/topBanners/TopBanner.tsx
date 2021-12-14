@@ -13,7 +13,12 @@ interface Props {
 
 const TopBanner = ({ children, className, onClose }: Props) => {
     return (
-        <div className={classnames(['flex flex-nowrap text-center relative text-bold', className])}>
+        <div
+            className={classnames([
+                'flex flex-item-noshrink flex-nowrap text-center relative text-bold no-print',
+                className,
+            ])}
+        >
             <div className="flex-item-fluid p0-5">{children}</div>
             {onClose ? (
                 <Button

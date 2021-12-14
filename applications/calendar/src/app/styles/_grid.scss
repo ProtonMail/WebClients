@@ -25,19 +25,19 @@
 		}
 
 		&[aria-current='date'] {
-			color: var(--primary);
+			@media not print {
+				color: var(--primary);
+			}
 		}
 
 		@include respond-to($breakpoint-small) {
 			&[aria-pressed='true'] &-number {
-				background-color: var(--primary);
-				color: var(--primary-contrast);
-				font-weight: bold;
+				@media not print {
+					background-color: var(--primary);
+					color: var(--primary-contrast);
+					font-weight: bold;
+				}
 			}
-		}
-
-		&-day-shortname {
-			display: none;
 		}
 
 		&-day-fullname {
