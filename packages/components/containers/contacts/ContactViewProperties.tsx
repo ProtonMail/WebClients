@@ -15,6 +15,7 @@ interface Props {
     userKeysList: DecryptedKey[];
     leftBlockWidth?: string;
     rightBlockWidth?: string;
+    isSignatureVerified?: boolean;
     isPreview?: boolean;
 }
 
@@ -28,6 +29,7 @@ const ContactViewProperties = ({
     userKeysList,
     leftBlockWidth = 'w30',
     rightBlockWidth = 'w70',
+    isSignatureVerified = false,
     isPreview = false,
 }: Props) => {
     const toExclude = ['photo'];
@@ -60,6 +62,7 @@ const ContactViewProperties = ({
                         userKeysList={userKeysList}
                         leftBlockWidth={leftBlockWidth}
                         rightBlockWidth={rightBlockWidth}
+                        isSignatureVerified={isSignatureVerified}
                         isPreview={isPreview}
                     />
                 );

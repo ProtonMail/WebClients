@@ -1,19 +1,19 @@
 import {
-    getMessage,
-    decryptMessage,
-    getSignature,
-    verifyMessage,
     createCleartextMessage,
+    decryptMessage,
+    getMessage,
+    getSignature,
     VERIFICATION_STATUS,
+    verifyMessage,
 } from 'pmcrypto';
 import { c } from 'ttag';
-import { KeysPair } from '../interfaces';
-import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts';
-import { merge, parse } from './vcard';
-import { sanitizeProperties } from './properties';
 
 import { CONTACT_CARD_TYPE } from '../constants';
+import { KeysPair } from '../interfaces';
+import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
+import { sanitizeProperties } from './properties';
+import { merge, parse } from './vcard';
 
 const { SUCCESS, SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 
@@ -24,23 +24,14 @@ export interface CryptoProcessingError {
     error: Error;
 }
 
-interface ContactClearTextData {
+interface ProcessedContactData {
     type: CRYPTO_PROCESSING_TYPES;
     data?: string;
-    error?: Error;
-}
-
-interface ContactSignedData {
-    type: CRYPTO_PROCESSING_TYPES.SUCCESS | CRYPTO_PROCESSING_TYPES.SIGNATURE_NOT_VERIFIED;
-    data: string;
     signatureTimestamp?: Date;
     error?: Error;
 }
 
-export const decrypt = async (
-    { Data }: ContactCard,
-    { privateKeys }: Pick<KeysPair, 'privateKeys'>
-): Promise<ContactClearTextData> => {
+export const decrypt = async ({ Data }: ContactCard, { privateKeys }: Pick<KeysPair, 'privateKeys'>) => {
     let message;
     try {
         message = await getMessage(Data);
@@ -63,7 +54,7 @@ export const decrypt = async (
 export const readSigned = async (
     { Data, Signature = '' }: ContactCard,
     { publicKeys }: Pick<KeysPair, 'publicKeys'>
-): Promise<ContactSignedData> => {
+) => {
     try {
         if (!Signature) {
             throw new Error(c('Error').t`Missing signature`);
@@ -94,10 +85,7 @@ export const readSigned = async (
     }
 };
 
-export const decryptSigned = async (
-    { Data, Signature }: ContactCard,
-    { publicKeys, privateKeys }: KeysPair
-): Promise<ContactClearTextData> => {
+export const decryptSigned = async ({ Data, Signature }: ContactCard, { publicKeys, privateKeys }: KeysPair) => {
     let message;
     let signature;
 
@@ -122,7 +110,7 @@ export const decryptSigned = async (
             throw new Error('Unknown data');
         }
 
-        if (verified !== 1) {
+        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             return { data, type: SIGNATURE_NOT_VERIFIED, error: new Error(c('Error').t`Signature not verified`) };
         }
 
@@ -132,9 +120,9 @@ export const decryptSigned = async (
     }
 };
 
-const clearText = ({ Data }: ContactCard): ContactClearTextData => ({ type: SUCCESS, data: Data });
+const clearText = ({ Data }: ContactCard) => Promise.resolve({ type: SUCCESS, data: Data });
 
-const ACTIONS: { [index: number]: any } = {
+const ACTIONS: { [index: number]: (...params: any) => Promise<ProcessedContactData> } = {
     [ENCRYPTED_AND_SIGNED]: decryptSigned,
     [SIGNED]: readSigned,
     [ENCRYPTED]: decrypt,
@@ -144,13 +132,14 @@ const ACTIONS: { [index: number]: any } = {
 export const prepareContact = async (
     contact: Contact,
     { publicKeys, privateKeys }: KeysPair
-): Promise<{ properties: ContactProperties; errors: (CryptoProcessingError | Error)[] }> => {
+): Promise<{ properties: ContactProperties; errors: (CryptoProcessingError | Error)[]; isVerified: boolean }> => {
     const { Cards } = contact;
+    let isVerified = Cards.some(({ Type }) => [SIGNED, ENCRYPTED_AND_SIGNED].includes(Type));
 
     const decryptedCards = await Promise.all(
         Cards.map(async (card) => {
             if (!ACTIONS[card.Type]) {
-                return { error: FAIL_TO_READ };
+                return { type: FAIL_TO_READ, error: new Error('Unknown card type') };
             }
             return ACTIONS[card.Type](card, { publicKeys, privateKeys });
         })
@@ -164,12 +153,18 @@ export const prepareContact = async (
         return { ...card, data: card.data.replace(/\nUID:.*\n/i, '\n') };
     });
 
-    const { vcards, errors } = sanitizedCards.reduce(
+    const { vcards, errors } = sanitizedCards.reduce<{ vcards: string[]; errors: CryptoProcessingError[] }>(
         (acc, { type, data, error }) => {
             if (data) {
                 acc.vcards.push(data);
             }
             if (error) {
+                if (type === SUCCESS) {
+                    throw new Error('Inconsistency detected during contact card processing');
+                }
+                if (type === SIGNATURE_NOT_VERIFIED) {
+                    isVerified = false;
+                }
                 acc.errors.push({ type, error });
             }
             return acc;
@@ -179,9 +174,9 @@ export const prepareContact = async (
 
     try {
         const properties = sanitizeProperties(merge(vcards.map(parse)));
-        return { properties, errors };
+        return { properties, errors, isVerified };
     } catch (e: any) {
         const error = e instanceof Error ? e : new Error('Corrupted vcard data');
-        return { properties: [], errors: [error] };
+        return { properties: [], errors: [error], isVerified };
     }
 };

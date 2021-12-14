@@ -9,6 +9,7 @@ export type ContactPropertiesModel = {
     ID?: string;
     properties?: ContactProperties;
     errors?: (CryptoProcessingError | Error)[];
+    isVerified?: boolean;
 };
 
 interface Props {
@@ -26,11 +27,11 @@ const useContactProperties = ({ contact, userKeysList }: Props): [ContactPropert
             ref.current = contact.ID;
             const { publicKeys, privateKeys } = splitKeys(userKeysList);
 
-            void prepareContact(contact, { publicKeys, privateKeys }).then(({ properties, errors }) => {
+            void prepareContact(contact, { publicKeys, privateKeys }).then(({ properties, errors, isVerified }) => {
                 if (ref.current !== contact.ID) {
                     return;
                 }
-                setModel({ ID: contact.ID, properties, errors });
+                setModel({ ID: contact.ID, properties, errors, isVerified });
             });
         }
     }, [contact, userKeysList, forceRefresh]);
