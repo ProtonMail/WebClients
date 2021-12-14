@@ -18,7 +18,7 @@ import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { restoreAllPrefixedAttributes } from './messageImages';
 import { insertActualEmbeddedImages } from './messageEmbeddeds';
-import { MessageKeys, MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageKeys, MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,
@@ -49,7 +49,7 @@ export const prepareExport = (message: MessageState) => {
     return content;
 };
 
-const encryptBody = async (content: string, messageKeys: MessageKeys) => {
+const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {
     const publicKeys = messageKeys.publicKeys.slice(0, 1);
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
 
@@ -65,7 +65,7 @@ const encryptBody = async (content: string, messageKeys: MessageKeys) => {
 export const prepareAndEncryptBody = async (message: MessageState, messageKeys: MessageKeys) => {
     const plainText = isPlainText(message.data);
     const content = plainText ? getPlainTextContent(message) : prepareExport(message);
-    return encryptBody(content, messageKeys);
+    return encryptBody(content, messageKeys as PublicPrivateKey);
 };
 
 export const encryptAttachmentKeyPackets = async (

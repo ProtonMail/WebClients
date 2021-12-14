@@ -7,10 +7,20 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { Preparation } from '../../helpers/transforms/transforms';
 import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
 
-export interface MessageKeys {
+export interface OutsideKey {
+    type: 'outside';
+    password: string;
+    id: string;
+    decryptedToken: string;
+}
+
+export interface PublicPrivateKey {
+    type: 'publicPrivate';
     publicKeys: OpenPGPKey[];
     privateKeys: OpenPGPKey[];
 }
+
+export type MessageKeys = PublicPrivateKey | OutsideKey;
 
 export interface MessageErrors {
     network?: Error[];

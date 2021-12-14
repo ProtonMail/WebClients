@@ -64,3 +64,16 @@ export const getSessionKey = async (attachment: Attachment, privateKeys: OpenPGP
 
     return sessionKey;
 };
+
+export const getEOSessionKey = async (attachment: Attachment, password: string): Promise<SessionKey> => {
+    const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets) || '');
+    const options = { message: await getMessage(keyPackets), passwords: [password] };
+
+    const sessionKey = await decryptSessionKey(options);
+
+    if (sessionKey === undefined) {
+        throw new Error('Error while decrypting session keys');
+    }
+
+    return sessionKey;
+};

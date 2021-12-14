@@ -14,7 +14,7 @@ import {
 } from '../../constants';
 import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import { RequestParams, upload as uploadHelper, Upload } from '../upload';
-import { MessageKeys, MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 
@@ -56,7 +56,7 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], p
 const uploadFile = (
     file: File,
     message: MessageStateWithData,
-    messageKeys: MessageKeys,
+    messageKeys: PublicPrivateKey,
     inline: boolean,
     uid: string,
     cid = ''
@@ -110,7 +110,7 @@ const uploadFile = (
 export const upload = (
     files: File[] = [],
     message: MessageStateWithData,
-    messageKeys: MessageKeys,
+    messageKeys: PublicPrivateKey,
     action = ATTACHMENT_ACTION.ATTACHMENT,
     uid: string,
     cid = ''

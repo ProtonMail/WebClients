@@ -6,9 +6,11 @@ import { OpenPGPKey } from 'pmcrypto';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
 
-import RecipientItemLayout from './RecipientItemLayout';
+import MailRecipientItem from './MailRecipientItem';
 import RecipientItemGroup from './RecipientItemGroup';
-import RecipientItemSingle from './RecipientItemSingle';
+import MailRecipientItemSingle from './MailRecipientItemSingle';
+import RecipientItemLayout from './RecipientItemLayout';
+import EORecipientSingle from '../../../../../../eo/src/app/components/message/recipients/EORecipientSingle';
 
 interface Props {
     recipientOrGroup: RecipientOrGroup;
@@ -19,6 +21,7 @@ interface Props {
     isLoading: boolean;
     signingPublicKey?: OpenPGPKey;
     highlightKeywords?: boolean;
+    isOutside?: boolean;
 }
 
 const RecipientItem = ({
@@ -30,14 +33,24 @@ const RecipientItem = ({
     isLoading,
     signingPublicKey,
     highlightKeywords = false,
+    isOutside = false,
 }: Props) => {
     if (isLoading) {
+        if (!isOutside) {
+            return (
+                <MailRecipientItem
+                    isLoading
+                    button={
+                        <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5" />
+                    }
+                    showAddress={showAddress}
+                />
+            );
+        }
         return (
             <RecipientItemLayout
                 isLoading
-                button={
-                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5" />
-                }
+                button={<span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5" />}
                 showAddress={showAddress}
             />
         );
@@ -56,20 +69,43 @@ const RecipientItem = ({
     }
 
     if (recipientOrGroup.recipient) {
+        if(!isOutside){
+            return (
+                <MailRecipientItemSingle
+                    recipient={recipientOrGroup.recipient as Recipient}
+                    mapStatusIcons={mapStatusIcons}
+                    globalIcon={globalIcon}
+                    showAddress={showAddress}
+                    showLockIcon={showLockIcon}
+                    signingPublicKey={signingPublicKey}
+                    highlightKeywords={highlightKeywords}
+                />
+            );
+        }
         return (
-            <RecipientItemSingle
+            <EORecipientSingle
                 recipient={recipientOrGroup.recipient as Recipient}
-                mapStatusIcons={mapStatusIcons}
-                globalIcon={globalIcon}
                 showAddress={showAddress}
-                showLockIcon={showLockIcon}
-                signingPublicKey={signingPublicKey}
-                highlightKeywords={highlightKeywords}
             />
         );
     }
 
     // Undisclosed Recipient
+    if(!isOutside){
+        return (
+            <MailRecipientItem
+                button={
+                    <Tooltip title={c('Title').t`All recipients were added to the BCC field and cannot be disclosed`}>
+                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5 flex flex-justify-center flex-align-items-center">
+                        ?
+                    </span>
+                    </Tooltip>
+                }
+                label={c('Label').t`Undisclosed Recipients`}
+                title={c('Label').t`Undisclosed Recipients`}
+            />
+        );
+    }
     return (
         <RecipientItemLayout
             button={

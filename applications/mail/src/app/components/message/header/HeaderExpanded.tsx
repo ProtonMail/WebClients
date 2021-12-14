@@ -32,7 +32,7 @@ import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { getCurrentFolderID } from '../../../helpers/labels';
 import HeaderExtra from './HeaderExtra';
-import RecipientsSimple from '../recipients/RecipientsSimple';
+import MailRecipientsSimple from '../recipients/MailRecipientsSimple';
 import RecipientsDetails from '../recipients/RecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import HeaderDropdown from './HeaderDropdown';
@@ -286,7 +286,7 @@ const HeaderExpanded = ({
                             highlightKeywords={highlightKeywords}
                         />
                     ) : (
-                        <RecipientsSimple
+                        <MailRecipientsSimple
                             message={message.data}
                             isLoading={!messageLoaded}
                             highlightKeywords={highlightKeywords}

@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
 import { classnames } from '@proton/components';
-import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { highlightNode } from '../../../helpers/encryptedSearch/esHighlight';
 
 interface Props {
     button?: ReactNode;
@@ -11,7 +9,6 @@ interface Props {
     title?: string;
     icon?: ReactNode;
     isLoading?: boolean;
-    highlightKeywords?: boolean;
 }
 
 const RecipientItemLayout = ({
@@ -22,12 +19,7 @@ const RecipientItemLayout = ({
     title,
     icon,
     isLoading = false,
-    highlightKeywords = false,
 }: Props) => {
-    const { highlightMetadata } = useEncryptedSearchContext();
-    const highlightedLabel = !!label && highlightKeywords ? highlightNode(label, highlightMetadata) : label;
-    const highlightedAddress = !!address && highlightKeywords ? highlightNode(address, highlightMetadata) : address;
-
     return (
         <span
             className={classnames([
@@ -48,7 +40,7 @@ const RecipientItemLayout = ({
                     title={title}
                 >
                     <span className={classnames(['message-recipient-item-label', isLoading && 'inline-block'])}>
-                        {highlightedLabel}
+                        {label}
                     </span>
                     {
                         ` ` /** I need a real space in source here, as everything is inline, no margin/padding to have correct ellipsis applied :-| * */
@@ -60,7 +52,7 @@ const RecipientItemLayout = ({
                                 isLoading && 'inline-block',
                             ])}
                         >
-                            {highlightedAddress}
+                            {address}
                         </span>
                     )}
                 </span>

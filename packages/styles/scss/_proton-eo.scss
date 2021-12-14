@@ -1,0 +1,22 @@
+// Variables specific overrides
+$use-height-auto-td: false;
+$use-height-auto-img: false;
+$use-height-auto-table: false;
+
+// Temporary addition
+@import 'themes/default-theme';
+
+// Configuration
+@import 'config/';
+
+// Initialisation
+@import 'base/';
+
+// Layout
+@import 'layout/';
+
+// Components
+@import 'components/';
+
+// Helpers
+@import 'helpers/';

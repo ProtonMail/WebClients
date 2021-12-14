@@ -1,21 +1,16 @@
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientItem from './RecipientItem';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { RecipientOrGroup } from '../../../models/address';
 
 interface Props {
-    list: Recipient[];
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
     highlightKeywords?: boolean;
+    recipientsOrGroup: RecipientOrGroup[];
+    isOutside?: boolean;
 }
 
-const RecipientsList = ({ list, mapStatusIcons, isLoading, highlightKeywords = false }: Props) => {
-    const { getRecipientsOrGroups } = useRecipientLabel();
-
-    const recipientsOrGroup = getRecipientsOrGroups(list);
-
+const RecipientsList = ({ recipientsOrGroup, mapStatusIcons, isLoading, highlightKeywords = false, isOutside= false }: Props) => {
     return (
         <>
             {recipientsOrGroup.map((recipientOrGroup, index) => (
@@ -25,6 +20,7 @@ const RecipientsList = ({ list, mapStatusIcons, isLoading, highlightKeywords = f
                     mapStatusIcons={mapStatusIcons}
                     isLoading={isLoading}
                     highlightKeywords={highlightKeywords}
+                    isOutside={isOutside}
                 />
             ))}
         </>

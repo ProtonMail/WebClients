@@ -12,7 +12,7 @@ import { MessageStateWithData, MessageEmbeddedImage } from '../../logic/messages
 import { useGetMessage } from '../message/useMessage';
 import { sendModifications } from '../../logic/messages/draft/messagesDraftActions';
 
-export const useSendMoficiations = () => {
+export const useSendModifications = () => {
     const getMessage = useGetMessage();
     const dispatch = useDispatch();
     const getMessageKeys = useGetMessageKeys();
