@@ -1,14 +1,6 @@
 import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
-import {
-    Alert,
-    ConfirmModal,
-    useApi,
-    useEventManager,
-    useLabels,
-    useModals,
-    useNotifications,
-} from '@proton/components';
+import { useApi, useNotifications, useEventManager, useLabels, useModals, ConfirmModal } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
@@ -325,7 +317,7 @@ export const useMoveToFolder = () => {
                             confirm={c('Action').t`OK`}
                             cancel={c('Action').t`Cancel`}
                         >
-                            <Alert type="warning">{text}</Alert>
+                            {text}
                         </ConfirmModal>
                     );
                 });

@@ -15,7 +15,7 @@ import {
     endOfToday,
 } from 'date-fns';
 import { c, msgid } from 'ttag';
-import { Alert, DateInput, ErrorZone, generateUID, Label, TimeInput } from '@proton/components';
+import { DateInput, ErrorZone, generateUID, Label, TimeInput, Href } from '@proton/components';
 import ComposerInnerModal from './ComposerInnerModal';
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -151,12 +151,17 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
-            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/schedule-email-send/">
-                {c('Info').t`When do you want your message to be sent?`}
-            </Alert>
+            <div className="mb1 flex">
+                <span>{c('Info').t`When do you want your message to be sent?`}</span>
+                <Href
+                    className="underline inline-block"
+                    url="https://protonmail.com/support/knowledge-base/schedule-email-send/"
+                >{c('Link').t`Learn more`}</Href>
+            </div>
             <div className="flex flex-gap-0-5 flex-row flex">
                 <div className="flex-item-fluid flex flex-column flex-nowrap">
-                    <Label htmlFor={`composer-schedule-date-${uid}`}>{c('Label').t`Date`}</Label>
+                    <Label htmlFor={`composer-schedule-date-${uid}`} className="text-semibold">{c('Label')
+                        .t`Date`}</Label>
                     <DateInput
                         id={`composer-schedule-date-${uid}`}
                         onChange={handleChangeDate}
@@ -172,7 +177,8 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
                     {errorDate && <ErrorZone>{errorDate}</ErrorZone>}
                 </div>
                 <div className="flex-item-fluid flex flex-column flex-nowrap">
-                    <Label htmlFor={`composer-schedule-time-${uid}`}>{c('Label').t`Time`}</Label>
+                    <Label htmlFor={`composer-schedule-time-${uid}`} className="text-semibold">{c('Label')
+                        .t`Time`}</Label>
                     <TimeInput
                         id={`composer-schedule-time-${uid}`}
                         onChange={handleChangeTime}
