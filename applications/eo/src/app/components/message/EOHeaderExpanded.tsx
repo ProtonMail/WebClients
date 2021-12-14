@@ -57,13 +57,13 @@ const EOHeaderExpanded = ({
     return (
         <div
             className={classnames([
-                'message-header message-header-expanded is-outbound',
+                'message-header message-header-expanded is-outbound border-bottom',
                 showDetails && 'message-header--showDetails',
                 !messageLoaded && 'is-loading',
             ])}
             data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
-            <div className="flex flex-nowrap flex-align-items-center">
+            <div className="flex flex-nowrap flex-align-items-center ml0-5 mr0-5 mb0-5">
                 <span className="flex flex-item-fluid flex-nowrap mr0-5">
                     {showDetails ? (
                         <RecipientType
@@ -94,12 +94,7 @@ const EOHeaderExpanded = ({
                     {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex" />}
                 </div>
             </div>
-            <div
-                className={classnames([
-                    'flex flex-nowrap flex-align-items-center mb0-5 on-mobile-flex-wrap',
-                    !showDetails && 'mt0-5',
-                ])}
-            >
+            <div className="flex flex-nowrap flex-align-items-center m0-5 on-mobile-flex-wrap">
                 <div className="flex-item-fluid flex flex-nowrap mr0-5 on-mobile-mr0 message-header-recipients">
                     {showDetails ? (
                         <RecipientsDetails message={message} isLoading={!messageLoaded} isOutside />
@@ -171,12 +166,16 @@ const EOHeaderExpanded = ({
                 />
             )}
 
-            <section className="message-header-extra border-top pt0-5">
-                {messageLoaded && <ExtraExpirationTime message={message} />}
-                {!sourceMode && <ExtraImagesLoader message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
-                {!sourceMode && (
-                    <ExtraImagesLoader message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />
-                )}
+            <section className="message-header-extra border-top pt0-5 ">
+                <div className="ml0-5 mr0-5 mb0-5">
+                    {messageLoaded && <ExtraExpirationTime message={message} />}
+                    {!sourceMode && (
+                        <ExtraImagesLoader message={message} type="remote" onLoadImages={onLoadRemoteImages} />
+                    )}
+                    {!sourceMode && (
+                        <ExtraImagesLoader message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />
+                    )}
+                </div>
             </section>
         </div>
     );

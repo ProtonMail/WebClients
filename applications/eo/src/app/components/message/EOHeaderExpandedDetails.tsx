@@ -44,7 +44,7 @@ const EOHeaderExpandedDetails = ({ message, labelID, onAttachmentIconClick }: Pr
             className="message-detailed-header-extra border-top pt0-5"
             data-testid="message:message-expanded-header-extra"
         >
-            <div className="mb0-5 flex flex-nowrap">
+            <div className="mb0-5 flex flex-nowrap ml0-5 mr0-5">
                 <span className="container-to flex">
                     <Icon name="calendar-days" className="mauto" alt={c('Label').t`Date:`} />
                 </span>
@@ -53,7 +53,7 @@ const EOHeaderExpandedDetails = ({ message, labelID, onAttachmentIconClick }: Pr
                 </span>
             </div>
             {attachmentsText && (
-                <div className="mb0-5 flex flex-nowrap">
+                <div className="mb0-5 flex flex-nowrap ml0-5 mr0-5">
                     <span className="container-to flex flex-justify-center flex-align-items-center">
                         <ItemAttachmentIcon element={message.data} onClick={onAttachmentIconClick} />
                     </span>

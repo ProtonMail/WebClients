@@ -59,7 +59,7 @@ const EOMessageBody = ({
         <div
             ref={bodyRef}
             className={classnames([
-                'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm',
+                'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm p1',
                 plain && 'plain',
             ])}
             data-testid="message-content:body"

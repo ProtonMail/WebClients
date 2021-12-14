@@ -16,10 +16,11 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
 
     return (
         <form onSubmit={(e) => e.preventDefault()}>
-            <div className="mb2 text-center">{c('Info').t`Decrypt message`}</div>
+            <h2 className="h3 text-center">{c('Info').t`Decrypt message`}</h2>
             <InputFieldTwo
                 autoFocus
                 id="password"
+                label={c('Label').t`Password`}
                 bigger
                 value={password}
                 onValue={setPassword}

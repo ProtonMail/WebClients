@@ -5,7 +5,7 @@ import { ButtonLike, ButtonLikeProps, classnames, Icon } from '@proton/component
 interface Props extends ButtonLikeProps<'label'> {
     disabled?: boolean;
     onAddAttachments: (files: File[]) => void;
-    attachmentTriggerRef: React.MutableRefObject<() => void>;
+    attachmentTriggerRef?: React.MutableRefObject<() => void>;
     isAttachments?: boolean;
 }
 
@@ -25,7 +25,9 @@ const AttachmentsButton = (
     const triggerAttachment = () => inputRef?.current?.click();
 
     useEffect(() => {
-        attachmentTriggerRef.current = triggerAttachment;
+        if (attachmentTriggerRef) {
+            attachmentTriggerRef.current = triggerAttachment;
+        }
     }, []);
 
     return (
