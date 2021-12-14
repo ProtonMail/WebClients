@@ -80,10 +80,10 @@ const ViewMessage = () => {
     const toggleOriginalMessage = () => setOriginalMessageMode(!originalMessageMode);
 
     return (
-        <Main larger className="p1 mw52r">
+        <Main larger className="mw52r">
             <div ref={elementRef}>
-                <div className="flex flex-align-items-center border-bottom mb1">
-                    <EOMessageHeader message={messageState} messageLoaded={messageLoaded} />
+                <div className="flex flex-align-items-center border-bottom p1">
+                    <EOMessageHeader message={messageState} messageLoaded={messageLoaded} id={id} />
                 </div>
                 <EOHeaderExpanded
                     labelID="test"
