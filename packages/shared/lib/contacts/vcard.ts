@@ -1,4 +1,5 @@
 import ICAL from 'ical.js';
+import { parseISO } from 'date-fns';
 import { readFileAsString } from '../helpers/file';
 import isTruthy from '../helpers/isTruthy';
 import { ContactProperties, ContactProperty } from '../interfaces/contacts';
@@ -102,6 +103,10 @@ export const parse = (vcard = ''): ContactProperties => {
     return addPref(sortedProperties);
 };
 
+const isValidDate = (date: Date) => {
+    return date instanceof Date && !Number.isNaN(date.getTime());
+};
+
 /**
  * Parse contact properties to create a ICAL vcard component
  */
@@ -117,6 +122,10 @@ export const toICAL = (properties: ContactProperties = []) => {
     return versionLessProperties.reduce((component, { field, type, pref, value, group }) => {
         const fieldWithGroup = [group, field].filter(isTruthy).join('.');
         const property = new ICAL.Property(fieldWithGroup);
+
+        if (['bday', 'anniversary'].includes(field) && !isValidDate(parseISO(value as string))) {
+            property.resetType('text');
+        }
 
         property.setValue(value);
 
