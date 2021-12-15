@@ -369,12 +369,12 @@ END:VCARD`;
         });
     });
 
-    it('should manage BDAY and ANNIVERSARY', () => {
+    it('should import BDAY and ANNIVERSARY', () => {
         const vCard = `BEGIN:VCARD
-            VERSION:4.0
-            BDAY:19990101
-            ANNIVERSARY:19990101
-            END:VCARD`;
+VERSION:4.0
+BDAY:19990101
+ANNIVERSARY:19990101
+END:VCARD`;
 
         const expected = [
             {
@@ -405,12 +405,12 @@ END:VCARD`;
         expect(contact).toEqual(expected);
     });
 
-    it('should manage BDAY and ANNIVERSARY with text format', () => {
+    it('should import BDAY and ANNIVERSARY with text format', () => {
         const vCard = `BEGIN:VCARD
-            VERSION:4.0
-            BDAY:VALUE=text:bidet
-            ANNIVERSARY:VALUE=text:annie
-            END:VCARD`;
+VERSION:4.0
+BDAY:VALUE=text:bidet
+ANNIVERSARY:VALUE=text:annie
+END:VCARD`;
 
         const expected = [
             {
