@@ -10,7 +10,7 @@ import MailRecipientItem from './MailRecipientItem';
 import RecipientItemGroup from './RecipientItemGroup';
 import MailRecipientItemSingle from './MailRecipientItemSingle';
 import RecipientItemLayout from './RecipientItemLayout';
-import EORecipientSingle from '../../../../../../eo/src/app/components/message/recipients/EORecipientSingle';
+import EORecipientSingle from '../../eo/message/recipients/EORecipientSingle';
 
 interface Props {
     recipientOrGroup: RecipientOrGroup;
@@ -50,7 +50,9 @@ const RecipientItem = ({
         return (
             <RecipientItemLayout
                 isLoading
-                button={<span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5" />}
+                button={
+                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5" />
+                }
                 showAddress={showAddress}
             />
         );
@@ -69,7 +71,7 @@ const RecipientItem = ({
     }
 
     if (recipientOrGroup.recipient) {
-        if(!isOutside){
+        if (!isOutside) {
             return (
                 <MailRecipientItemSingle
                     recipient={recipientOrGroup.recipient as Recipient}
@@ -82,23 +84,18 @@ const RecipientItem = ({
                 />
             );
         }
-        return (
-            <EORecipientSingle
-                recipient={recipientOrGroup.recipient as Recipient}
-                showAddress={showAddress}
-            />
-        );
+        return <EORecipientSingle recipient={recipientOrGroup.recipient as Recipient} showAddress={showAddress} />;
     }
 
     // Undisclosed Recipient
-    if(!isOutside){
+    if (!isOutside) {
         return (
             <MailRecipientItem
                 button={
                     <Tooltip title={c('Title').t`All recipients were added to the BCC field and cannot be disclosed`}>
-                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5 flex flex-justify-center flex-align-items-center">
-                        ?
-                    </span>
+                        <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5 flex flex-justify-center flex-align-items-center">
+                            ?
+                        </span>
                     </Tooltip>
                 }
                 label={c('Label').t`Undisclosed Recipients`}

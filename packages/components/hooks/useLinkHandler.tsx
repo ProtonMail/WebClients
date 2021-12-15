@@ -23,6 +23,7 @@ interface UseLinkHandlerOptions {
     onMailTo?: (src: string) => void;
     startListening?: boolean;
     mailSettings: [MailSettings | undefined, boolean, Error];
+    isOutside?: boolean;
 }
 type UseLinkHandler = (wrapperRef: RefObject<HTMLDivElement | undefined>, options?: UseLinkHandlerOptions) => void;
 
@@ -32,7 +33,7 @@ const defaultOptions: UseLinkHandlerOptions = {
 };
 export const useLinkHandler: UseLinkHandler = (
     wrapperRef,
-    { onMailTo, startListening, mailSettings } = defaultOptions
+    { onMailTo, startListening, mailSettings, isOutside } = defaultOptions
 ) => {
     const [settings] = mailSettings;
     const { createModal } = useModals();
@@ -172,7 +173,11 @@ export const useLinkHandler: UseLinkHandler = (
             const link = await encoder(src);
 
             const modalId = createModal(
-                <LinkConfirmationModal link={link} onClose={() => setConfirmationModalID(undefined)} />
+                <LinkConfirmationModal
+                    link={link}
+                    onClose={() => setConfirmationModalID(undefined)}
+                    isOutside={isOutside}
+                />
             );
 
             setConfirmationModalID(modalId);

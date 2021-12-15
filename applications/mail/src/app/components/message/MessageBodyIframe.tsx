@@ -34,6 +34,7 @@ interface Props {
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
     mailSettings: [MailSettings | undefined, boolean, any];
     onMailTo?: (src: string) => void;
+    isOutside?: boolean;
 }
 
 const MessageBodyIframe = ({
@@ -51,6 +52,7 @@ const MessageBodyIframe = ({
     onReady,
     mailSettings,
     onMailTo,
+    isOutside,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const messageHead = locateHead(message.messageDocument?.document);
@@ -82,6 +84,7 @@ const MessageBodyIframe = ({
         onMailTo,
         startListening: initStatus === 'done' && iframeRootDivRef.current !== undefined,
         mailSettings,
+        isOutside,
     });
 
     const onImagesLoadedCallback = useCallback(() => {
