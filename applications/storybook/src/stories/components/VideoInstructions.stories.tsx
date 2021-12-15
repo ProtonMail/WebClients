@@ -20,18 +20,10 @@ export default {
 export const Basic = () => {
     return (
         <div className="max-w50e mauto">
-            <VideoInstructions
-                sources={[
-                    {
-                        src: videoWebm,
-                        format: 'webm',
-                    },
-                    {
-                        src: videoMp4,
-                        format: 'mp4',
-                    },
-                ]}
-            />
+            <VideoInstructions>
+                <source src={videoWebm} type="video/webm" />
+                <source src={videoMp4} type="video/mp4" />
+            </VideoInstructions>
         </div>
     );
 };
