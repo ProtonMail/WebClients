@@ -80,7 +80,12 @@ export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMi
 export const initMessage = (inputMessage: PartialMessageState = {}) => {
     const defaultMessage = {
         localID: messageID,
-        data: { ID: messageID, AddressID: addressID, Subject: 'test' },
+        data: {
+            ID: messageID,
+            AddressID: addressID,
+            Subject: 'test',
+            Sender: { Name: 'testName', Address: 'testAddress' },
+        },
         messageDocument: { initialized: true },
         verification: {},
     } as MessageState;
