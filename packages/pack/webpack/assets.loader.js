@@ -29,7 +29,7 @@ module.exports = () => [
                 exclude: new RegExp(`${DESIGN_SYSTEM_CSS_SVG}`),
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                test: /\.(woff|woff2|eot|ttf|otf|mp4|webm)$/,
                 type: 'asset/resource',
             },
             {
