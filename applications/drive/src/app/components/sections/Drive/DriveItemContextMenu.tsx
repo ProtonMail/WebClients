@@ -31,7 +31,7 @@ const DriveItemContextMenu = ({
     const isOnlyOneItem = selectedItems.length === 1;
     const isOnlyOneFileItem = isOnlyOneItem && item.Type === LinkType.FILE;
     const hasPreviewAvailable = isOnlyOneFileItem && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
-    const hasLink = isOnlyOneFileItem && item.ShareUrlShareID && !item.UrlsExpired && !item.Trashed;
+    const hasLink = isOnlyOneItem && item.ShareUrlShareID && !item.UrlsExpired && !item.Trashed;
 
     useEffect(() => {
         if (position) {
