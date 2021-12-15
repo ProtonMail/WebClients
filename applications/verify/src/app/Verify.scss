@@ -4,13 +4,15 @@ body.embedded {
 	font-size: 1em;
 	background: none;
 
-	.dropdown {
-		background: none;
-		padding: 10%;
-	}
+	@include respond-to($breakpoint-small, 'max') {
+		.dropdown {
+			background: none;
+			padding: 10%;
+		}
 
-	.modal-overlay {
-		background: none;
+		.modal-overlay {
+			background: none;
+		}
 	}
 }
 
