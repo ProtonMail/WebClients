@@ -11,11 +11,7 @@ export interface VideoSource {
     src: string;
 }
 
-interface Props extends React.ComponentPropsWithoutRef<'video'> {
-    sources: VideoSource[];
-}
-
-const VideoInstructions = ({ sources, ...rest }: Props) => {
+const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef<'video'>) => {
     const [videoEnded, setVideoEnded] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -40,9 +36,7 @@ const VideoInstructions = ({ sources, ...rest }: Props) => {
                 onEnded={onEnd}
                 {...rest}
             >
-                {sources.map((source) => (
-                    <source key={source.format} src={source.src} type={`video/${source.format}`} />
-                ))}
+                {children}
             </video>
             <button
                 aria-label={c('Video control').t`Replay video`}
