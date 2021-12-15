@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Accept": [
-        "Aceptar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "Activate recovery": [
+        "Activar recuperación"
       ],
       "Add": [
         "Añadir"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Añadir nuevo grupo"
+      ],
+      "Add participant": [
+        "Añadir participante"
       ],
       "Add phone number": [
         "Agregar número de teléfono"
@@ -111,7 +114,7 @@
         "Con Copia, Con Copia Oculta"
       ],
       "CC BCC": [
-        ""
+        "CC CCO"
       ],
       "Change page": [
         "Cambiar página"
@@ -120,7 +123,7 @@
         "Chatea con nosotros"
       ],
       "Check import progress": [
-        ""
+        "Comprobar el progreso de la importación"
       ],
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
@@ -132,7 +135,7 @@
         "Borrar todo el formato"
       ],
       "Clear browser data": [
-        ""
+        "Borrar datos del navegador"
       ],
       "Clear data": [
         "Limpiar datos"
@@ -179,8 +182,8 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmar apertura del enlace ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -338,7 +341,7 @@
         "Reenviar como adjunto"
       ],
       "Generate recovery phrase": [
-        ""
+        "Generar frase de recuperación"
       ],
       "Get started": [
         "Comenzar"
@@ -426,7 +429,7 @@
         "Insertar contacto"
       ],
       "Insert contacts": [
-        ""
+        "Insertar contactos"
       ],
       "Insert image": [
         "Insertar imagen"
@@ -746,6 +749,9 @@
       "Set expiration time": [
         ""
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Compartir con un enlace"
       ],
@@ -824,9 +830,6 @@
       "This message contains embedded images.": [
         "Este mensaje contiene imágenes incrustadas."
       ],
-      "This message contains remote content.": [
-        "Este mensaje contiene contenido remoto."
-      ],
       "Trust": [
         "Confiar"
       ],
@@ -868,13 +871,19 @@
         "Desconfiar"
       ],
       "Update": [
-        ""
+        "Actualizar"
+      ],
+      "Update recovery file": [
+        "Actualizar archivo de recuperación"
+      ],
+      "Update recovery phrase": [
+        "Actualizar frase de recuperación"
       ],
       "Upgrade": [
         "Mejorar"
       ],
       "Upgrade now": [
-        ""
+        "Mejorar ahora"
       ],
       "Upload picture": [
         "Subir imagen"
@@ -965,6 +974,17 @@
         "No tienes ningún grupo."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } dirección de correo electrónico",
@@ -1025,8 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems } de ${ totalNumberOfChecklistItems } completado"
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completado",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completados"
       ]
     },
     "Apps dropdown": {
@@ -1308,6 +1329,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Esta respuesta no coincide con los detalles de tu invitación. Por favor, verifica los detalles de la invitación en tu calendario."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha aceptado tu invitación y ha propuesto una hora nueva para una ocurrencia de este evento."
       ],
@@ -1329,6 +1362,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } ha solicitado las últimas actualizaciones de un evento que ya no existe en tu calendario."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha rechazado tu invitación y ha propuesto una hora nueva para una ocurrencia de este evento."
       ],
@@ -1341,11 +1386,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } ha rechazado tu invitación."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ya ha aceptado tu invitación y ha propuesto una hora nueva para una ocurrencia de este evento. La respuesta y la propuesta están desactualizadas."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } ya ha aceptado tu invitación y ha propuesto una hora nueva para este evento. La respuesta y la propuesta están desactualizadas."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ya ha rechazado tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento. La respuesta y la propuesta no están actualizadas."
@@ -1389,17 +1458,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } había propuesto una nueva hora para este evento. Esta propuesta no está actualizada. No tienes ningún calendario."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ha aceptado provisionalmente tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento. La respuesta y la propuesta no están actualizadas."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } ha aceptado provisionalmente tu invitación y ha propuesto una nueva hora para este evento. La respuesta y la propuesta no están actualizadas."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } ha propuesto una nueva hora para una ocurrencia de este evento."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } ha propuesto una nueva hora para este evento."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha aceptado provisionalmente tu invitación y ha propuesto una nueva hora para una ocurrencia de este evento."
@@ -1422,19 +1518,10 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Se ha añadido una ocurrencia al evento ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        "Evento en progreso"
-      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
         ""
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
@@ -1509,6 +1596,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        "Evento en progreso"
       ]
     },
     "Collapsible tooltip": {
@@ -1889,12 +1984,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        "Evento en progreso"
-      ],
       "Event is tomorrow": [
         "El evento es mañana"
       ],
@@ -1957,7 +2046,7 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        ""
+        "${ error.message } para <${ email }>. Puedes añadir otra clave o deshabilitar el cifrado para este contacto para resolver el problema."
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -1975,7 +2064,7 @@
         "Cantidad por debajo del mínimo."
       ],
       "Attachments are limited to 25 MB": [
-        ""
+        "Los archivos adjuntos están limitados a 25 MB"
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -1999,10 +2088,10 @@
         "No se ha podido validar el teléfono, inténtalo de nuevo más tarde"
       ],
       "Checkout expired, please try again": [
-        ""
+        "La compra ha caducado, intenta de nuevo"
       ],
       "Choose a date in the future.": [
-        ""
+        "Elija una fecha en el futuro."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "",
@@ -2068,10 +2157,10 @@
         ""
       ],
       "Error while sending the message. Message is not sent.": [
-        ""
+        "Se ha producido un error al enviar el mensaje. El mensaje no se ha enviado."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        ""
+        "Error al subir archivos adjuntos. El mensaje no se ha enviado."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "El cifrado del archivo adjunto ha fallado. Por favor, inténtalo de nuevo."
@@ -2107,7 +2196,7 @@
         "Fecha de expiración no válida"
       ],
       "Invalid expiration time": [
-        ""
+        "Tiempo de caducidad inválido"
       ],
       "Invalid name": [
         "Nombre no válido"
@@ -2144,10 +2233,10 @@
         "Error de red: Por favor, comprueba tu conexión e inténtalo de nuevo."
       ],
       "No address with keys available to compose a message": [
-        ""
+        "No hay una dirección con claves disponibles para redactar un mensaje"
       ],
       "No data to import": [
-        ""
+        "No hay datos para importar"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Ninguna clave recuperada para el usuario interno es válida para el envío"
@@ -2156,7 +2245,7 @@
         "No se ha recuperado ninguna clave para el usuario interno"
       ],
       "No valid address found": [
-        ""
+        "No se encontró una dirección válida"
       ],
       "No valid keys retrieved for internal user": [
         "No se ha recuperado ninguna clave válida para el usuario interno"
@@ -2176,7 +2265,7 @@
         "Algunos grupos no tienen contactos: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organización no reconocida. Vuelve a intentarlo."
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
@@ -2198,7 +2287,7 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "",
-        ""
+        "Por favor, arregle los conflictos resaltados para continuar."
       ],
       "Please refresh the page.": [
         "Por favor, actualiza la página."
@@ -2207,16 +2296,16 @@
         ""
       ],
       "Please set a password": [
-        ""
+        "Por favor, establezca una contraseña"
       ],
       "Preferences could not be saved": [
         "No se han podido guardar las preferencias"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "La clave principal no está descifrada"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "La clave principal no está descifrada."
       ],
       "Process aborted": [
         "El proceso fue anulado"
@@ -2253,13 +2342,13 @@
         "Algunos contactos no se pudieron eliminar"
       ],
       "Some groups could not be deleted": [
-        ""
+        "Algunos grupos no se pueden eliminar"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Algunos de tus nombres de etiquetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Algunos de tus nombres de etiquetas exceden el límite máximo de caracteres de ProtonMail. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ves este mensaje de error, ponte en contacto con nuestro ${ supportTeam }."
@@ -2290,7 +2379,7 @@
         "El nombre de la etiqueta es demasiado largo. Por favor, elija un nombre diferente."
       ],
       "The maximum expiration is 4 weeks": [
-        ""
+        "La expiración máxima es de 4 semanas"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "La cantidad mínima de crédito que se puede agregar es de ${ _price }"
@@ -2305,10 +2394,10 @@
         "La clave de envío no es válida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Hay demasiadas carpetas en tu cuenta externa. Por favor, personaliza la importación para eliminar algunas carpetas."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        ""
+        "Ha habido un problema con la búsqueda de contenido. La búsqueda predeterminada se ha utilizado en su lugar."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hubo un error al exportar los vCards de contactos"
@@ -2335,7 +2424,7 @@
         "Este mensaje puede contener enlaces que no puedan abrirse correctamente en tu navegador actual"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "Demasiados filtros activos. Actualiza a un plan de pago para activar más filtros."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
@@ -2357,7 +2446,7 @@
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "",
-        ""
+        "No puedes abrir más de ${ maxActiveComposer } ventanas de edición a la vez"
       ],
       "You did not provide a file.": [
         "No has proporcionado ningún archivo."
@@ -2375,10 +2464,27 @@
         "Tu importación no será procesada."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
+        "Su búsqueda coincidió con muchos resultados. Por favor limite su búsqueda e inténtelo de nuevo."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
         ""
       ]
     },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Esta acción no puede realizarse"
       ]
@@ -2538,6 +2644,11 @@
         "No se ha seleccionado ninguna imagen"
       ]
     },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         ""
@@ -2684,12 +2795,12 @@
     },
     "Font Face Default": {
       "Default": [
-        ""
+        "Por defecto"
       ]
     },
     "Font Size Default": {
       "Default": [
-        ""
+        "Por defecto"
       ]
     },
     "Free price": {
@@ -2702,11 +2813,17 @@
         ""
       ],
       "You're all set!": [
-        ""
+        "¡Ya está todo listo!"
       ]
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
+      "Expires today": [
         ""
       ],
       "Only ${ days } day left": [
@@ -2745,7 +2862,7 @@
         ""
       ],
       "Send a message": [
-        ""
+        "Enviar un mensaje"
       ],
       "Set up a recovery method": [
         ""
@@ -3131,18 +3248,18 @@
         "Alinear a la derecha"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Todo (${ totalFoldersCount } carpeta)",
+        "Todo (${ totalFoldersCount } carpetas)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Todo (${ totalFoldersCount } etiqueta)",
+        "Todo (${ totalFoldersCount } etiquetas)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
-        ""
+        "Todos los mensajes guardados en esta carpeta se eliminarán permanentemente."
       ],
       "All messages stored with this label will be permanently deleted.": [
-        ""
+        "Todos los mensajes guardados con esta etiqueta se eliminarán permanentemente."
       ],
       "All your calendars are disabled.": [
         "Todos tus calendarios están deshabilitados."
@@ -3192,8 +3309,8 @@
       "Are you sure you want to permanently delete this message?": [
         "¿Estás seguro de que quieres eliminar permanentemente este mensaje?"
       ],
-      "Attach Public Key": [
-        "Adjuntar clave pública"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "Color de fondo"
@@ -3268,14 +3385,14 @@
         "Copiado al portapapeles"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Crear ${ calendarsToBeCreated } calendario nuevo",
+        "Crear ${ calendarsToBeCreated } calendarios nuevos"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que te gustaría importar."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las etiquetas que te gustaría importar."
       ],
       "Create a new contact group": [
         "Crear un nuevo grupo de contactos"
@@ -3490,11 +3607,11 @@
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendarios"
       ],
       "Import from": [
         "Importar desde"
@@ -3572,7 +3689,7 @@
         "Administra tus etiquetas"
       ],
       "members": [
-        ""
+        "miembros"
       ],
       "Members": [
         "Miembros"
@@ -3590,7 +3707,7 @@
         "Mensaje enviado"
       ],
       "Message sent.": [
-        ""
+        "Mensaje enviado."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         ""
@@ -3770,8 +3887,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Reportar un mensaje como intento de suplantación de identidad nos enviará el mensaje a nosotros, para analizarlo y mejorar nuestros filtros. Esto significa que podremos ver todo el contenido del mensaje."
       ],
-      "Request Read Receipt": [
-        "Solicitar confirmación de lectura"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "Derecha a Izquierda"
@@ -4283,7 +4400,7 @@
         "(beta)"
       ],
       "Optional": [
-        ""
+        "Opcional"
       ]
     },
     "Info concerning plan features": {
@@ -4554,7 +4671,7 @@
         "${ firstAddress } y ${ count } más"
       ],
       "(Coming soon)": [
-        ""
+        "(Próximamente)"
       ],
       "Actions": [
         "Acciones"
@@ -4609,6 +4726,9 @@
       ],
       "BTC amount:": [
         "Cantidad de BTC:"
+      ],
+      "Calendar": [
+        "Calendario"
       ],
       "Calendars": [
         "Calendarios"
@@ -4677,7 +4797,7 @@
         "Formato de correo electrónico"
       ],
       "Emails": [
-        ""
+        "Correos electrónicos"
       ],
       "Enable Beta Access": [
         "Habilitar acceso beta"
@@ -4709,6 +4829,9 @@
       "Folder location": [
         "Ubicación de la carpeta"
       ],
+      "Frequency": [
+        "Frecuencia"
+      ],
       "From": [
         "Desde"
       ],
@@ -4731,13 +4854,13 @@
         "Si"
       ],
       "Import all messages": [
-        ""
+        "Importar todos los mensajes"
       ],
       "Import contacts": [
         "Importar contactos"
       ],
       "Import interval": [
-        ""
+        "Intervalo de importación"
       ],
       "Import to email address": [
         ""
@@ -4765,6 +4888,9 @@
       ],
       "Last month only": [
         "Solo el último mes"
+      ],
+      "Location": [
+        "Ubicación"
       ],
       "Mailbox password": [
         "Contraseña del buzón"
@@ -4813,6 +4939,9 @@
       ],
       "Or": [
         "O"
+      ],
+      "Participants": [
+        "Participantes"
       ],
       "Password": [
         "Contraseña"
@@ -4929,7 +5058,7 @@
         "Para:"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Para: ${ emailAddress }"
       ],
       "Total": [
         "Total"
@@ -5066,7 +5195,7 @@
         "Crear un calendario vinculado a una dirección de correo electrónico habilitada."
       ],
       "Create a new calendar to add this event": [
-        ""
+        "Crea un calendario nuevo para añadir este evento"
       ],
       "Create a new calendar to answer this invitation": [
         "Crear un calendario nuevo para responder a esta invitación"
@@ -5200,7 +5329,7 @@
         "Ya casi está"
       ],
       "Creating new calendars": [
-        ""
+        "Creando calendarios nuevos"
       ],
       "Gathering your data": [
         "Recogida de datos"
@@ -5295,12 +5424,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -6373,7 +6502,7 @@
         "Mensaje movido a spam y remitente añadido a la Lista Negra."
       ],
       "Message removed from ${ labelName }.": [
-        ""
+        "Mensaje eliminado de ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Mover ${ selectionCount } conversación",
@@ -6477,7 +6606,7 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "fecha de creación de la cuenta"
       ],
       "the last 12 months": [
         "los últimos 12 meses"
@@ -6704,7 +6833,7 @@
         "Eliminar mensaje"
       ],
       "Delete organization?": [
-        ""
+        "¿Eliminar la organización?"
       ],
       "Deleting contacts": [
         "Eliminando contactos"
@@ -6726,6 +6855,9 @@
       ],
       "Email addresses": [
         "Direcciones de correo electrónico"
+      ],
+      "Email content": [
+        ""
       ],
       "Email settings": [
         "Ajustes del correo electrónico"
@@ -6792,9 +6924,6 @@
       ],
       "Link confirmation": [
         "Confirmación de enlace"
-      ],
-      "Load embedded images": [
-        "Cargar imágenes incrustadas"
       ],
       "Load remote content": [
         "Cargar contenido remoto"
@@ -6972,6 +7101,9 @@
       ],
       "Sign in again to continue": [
         "Inicia sesión otra vez para continuar"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Ordenar conversaciones"

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Afegir"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Anar a la configuració"
       ],
-      "Grid layout": [
-        "Disseny de quadrícula"
-      ],
       "Hide advanced PGP settings": [
         "Amagar configuració PGP avançada"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
-      ],
-      "List layout": [
-        "Disseny de llista"
       ],
       "Load image": [
         "Carregar imatge"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Seleccionar pla"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Compartir"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         ""
-      ],
-      "Show shared link details": [
-        "Mostrar els detalls de l'enllaç compartit"
       ],
       "Sign out": [
         "Tancar la sessió"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "No confiar"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Actualitzar"
@@ -1128,10 +1131,19 @@
       "Error connecting to the Bitcoin API.": [
         "Error en connectar-se a l'API de Bitcoin."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1139,6 +1151,12 @@
       ],
       "File has no contents to preview": [
         "L'arxiu no té contingut per previsualitzar"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         "El nom de la carpeta no pot estar buit"
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Descarregant (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Descarregant (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Carregant (${ uploadProgress }%)",
-        "${ activeUploadsCount } Carregant (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } adreça de correu electrònic",
@@ -1597,9 +1619,9 @@
         "",
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Cancel·lat",
-        "${ canceledCount } Cancel·lat"
+      "${ canceledCount } canceled": [
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membre",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quines adreces de correu electrònic voleu afegir a aquest grup."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Finalitzat",
-        "${ doneCount } Finalitzat"
+      "${ doneCount } finished": [
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } Descarregat",
-        "${ doneDownloadsCount } Descarregat"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Carregat",
-        "${ doneUploadsCount } Carregat"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Fallat",
-        "${ errorCount } Fallat"
+      "${ errorCount } failed": [
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
@@ -1658,9 +1680,9 @@
         "${ numContacts } contacte",
         "${ numContacts } contactes"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Pausat",
-        "${ pausedCount } Pausat"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } en la vostra subscripció canviant a ${ annualBilling }"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Qualsevol que tingui aquest enllaç pot accedir al vostre arxiu."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Esteu segur que voleu buidar la paperera i suprimir permanentment tots els elements?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "Preparant el enllaç al fitxer"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         "Creant la compartició"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest arxiu."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Pausat"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Preparant el enllaç al arxiu"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Vista prèvia"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Aquest enllaç es deshabilitarà permanentment. Ningú podrà accedir al vostre arxiu amb aquest enllaç. Per tornar a compartir l'arxiu necessitareu un nou enllaç."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Això suprimirà l'enllaç i eliminarà l'accés al vostre fitxer per a qualsevol persona que el tingui.",
-        "Això suprimirà els enllaços i eliminarà l'accés als vostres fitxers per a qualsevol persona que els tingui."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "",
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Això permetrà que PayPal s’utilitzi per pagar la vostra subscripció a Proton. Els redirigirem a PayPal en una pestanya nova del navegador. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Els teus arxius serán cifrats i desats."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Grup de contactes actualitzat"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "No s'ha pogut moure, torna-ho a provar"
       ],
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Buidar paperera"
       ],
-      "Enter file password to download": [
-        "Introduïu la contrasenya del fitxer per descarregar-la"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Introdueix la teva contrasenya"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Els meus arxius"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Nom"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "El vostre fitxer està preparat per descarregar"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "Zip/Codi postal"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accedeix al contingut geobloquejat (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) sense importar on sigueu."
-      ],
-      "Active sharing link": [
-        "Enllaç compartit actiu"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "\"Automàtic\" indica que s'està utilitzant el format de l'editor per enviar a aquest usuari. \"Text net\" indica que el missatge es convertirà sempre a text net a l'enviar."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
-      "Expired sharing link": [
-        "Enllaç compartit caducat"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Obteniu accés a totes les funcions de pagament de ${ vpnAppName } i ${ mailAppName } (el servei de correu electrònic xifrat que milions utilitzen per protegir les seves dades) amb un pla."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprat un codi de regal o has regut un des del nostre equip de suport, pots ficar-ho aquí."
-      ],
-      "Inactive sharing link": [
-        "Enllaç de compartició inactiu"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "El suport multiusuari només s'aplica a plans amb 2 o més usuaris"

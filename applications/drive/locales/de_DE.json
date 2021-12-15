@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
+      "Activate recovery": [
+        "Wiederherstellung aktivieren"
+      ],
       "Add": [
         "Hinzufügen"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Zu den Einstellungen"
       ],
-      "Grid layout": [
-        "Rasteransicht"
-      ],
       "Hide advanced PGP settings": [
         "Erweiterte PNG-Einstellungen ausblenden"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Tastaturkürzel"
-      ],
-      "List layout": [
-        "Listenansicht"
       ],
       "Load image": [
         "Bild laden"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Abonnement auswählen"
       ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase festlegen"
+      ],
       "Share": [
         "Teilen"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         "Kategorien anzeigen"
-      ],
-      "Show shared link details": [
-        "Details zum freigegebenen Link anzeigen"
       ],
       "Sign out": [
         "Abmelden"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Nicht vertrauen"
+      ],
+      "Update recovery file": [
+        "Wiederherstellungsdatei aktualisieren"
+      ],
+      "Update recovery phrase": [
+        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Aufrüsten"
@@ -1128,17 +1131,32 @@
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
       ],
+      "Failed to download a file": [
+        "Herunterladen der Datei fehlgeschlagen"
+      ],
+      "Failed to download a folder": [
+        "Herunterladen eines Ordners fehlgeschlagen"
+      ],
       "Failed to load the link": [
         "Link konnte nicht geladen werden"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Datei „${ item.name }” kann aufgrund des Fehlers „${ error }” nicht hochgeladen werden"
       ],
+      "File \"${ name }\" is already downloading": [
+        "Die Datei \"${ name }\" wird bereits heruntergeladen"
+      ],
       "File cannot be merged with folder": [
         "Eine Datei kann nicht mit einem Ordner zusammengeführt werden"
       ],
       "File has no contents to preview": [
         "Datei hat keinen Inhalt für den Vorschau"
+      ],
+      "File selection is already downloading": [
+        "Die ausgewählten Dateien werden bereits heruntergeladen"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "Der Ordner \"${ name }\" wird bereits heruntergeladen"
       ],
       "Folder name cannot be empty": [
         "Bitte Namen des Ordners angeben"
@@ -1570,11 +1588,15 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } wird heruntergeladen",
+        "${ activeDownloadsCount } werden heruntergeladen"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "${ activeDownloadsCount } wird heruntergeladen (${ downloadProgress }%)",
         "${ activeDownloadsCount } werden heruntergeladen (${ downloadProgress }%)"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
         "${ activeUploadsCount } wird hochgeladen (${ uploadProgress }%)",
         "${ activeUploadsCount } werden hochgeladen (${ uploadProgress }%)"
       ],
@@ -1597,9 +1619,9 @@
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
-      "${ canceledCount } Canceled": [
-        "{ canceledCount } $ abgebrochen",
-        "{ canceledCount } $ abgebrochen"
+      "${ canceledCount } canceled": [
+        "${ canceledCount } abgebrochen",
+        "${ canceledCount } abgebrochen"
       ],
       "${ contactEmailsLength } Member": [
         "{ contactEmailsLength } Mitglied",
@@ -1621,19 +1643,19 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "„${ contactsEnumeration }” enthalten mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zu dieser Gruppe hinzufügen möchten."
       ],
-      "${ doneCount } Finished": [
+      "${ doneCount } finished": [
         "${ doneCount } beendet",
         "${ doneCount } beendet"
       ],
-      "${ doneDownloadsCount } Downloaded": [
+      "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } heruntergeladen",
         "${ doneDownloadsCount } heruntergeladen"
       ],
-      "${ doneUploadsCount } Uploaded": [
+      "${ doneUploadsCount } uploaded": [
         "${ doneUploadsCount } hochgeladen",
         "${ doneUploadsCount } hochgeladen"
       ],
-      "${ errorCount } Failed": [
+      "${ errorCount } failed": [
         "${ errorCount } fehlgeschlagen",
         "${ errorCount } fehlgeschlagen"
       ],
@@ -1658,9 +1680,9 @@
         "${ numContacts } Kontakt",
         "${ numContacts } Kontakte"
       ],
-      "${ pausedCount } Paused": [
-        "{ pausedCount } $ anghalten",
-        "{ pausedCount } $ anghalten"
+      "${ pausedCount } paused": [
+        "${ pausedCount } pausiert",
+        "${ pausedCount } pausiert"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } bei Ihrem Abonnement, durch den Wechsel zu ${ annualBilling }"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Jeder mit diesem Link kann auf Ihre Datei zugreifen."
       ],
+      "Anyone with this link can access your folder.": [
+        "Jeder mit diesem Link kann auf deinen Ordner zugreifen."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Möchten Sie den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "Link zur Datei wird erstellt"
+      ],
+      "Creating link to folder": [
+        "Link zum Ordner wird erstellt"
       ],
       "Creating share": [
         "Freigabe wird erstellt"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Nur die Personen mit dem Link und dem Passwort können auf diese Datei zugreifen."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Nur die Personen mit dem Link und dem Passwort können auf diesen Ordner zugreifen."
+      ],
       "Paused": [
         "Angehalten"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Link zur Datei wird vorbereitet"
+      ],
+      "Preparing link to folder": [
+        "Link zum Ordner wird vorbereitet"
       ],
       "Preview": [
         "Vorschau"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Dieser Link wird dauerhaft deaktiviert. Niemand mit diesem Link wird auf Ihre Datei zugreifen können. Um die Datei erneut freizugeben, muss ein neuer Link erstellt werden."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Dadurch wird der Link gelöscht und der Zugriff auf Ihre Datei für all jene, die den Link haben, unterbunden.",
-        "Dadurch wird der Link gelöscht und der Zugriff auf Ihre Dateien für all jene, die den Link haben, unterbunden."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Dieser Link wird dauerhaft deaktiviert. Niemand mit diesem Link wird auf deinen Ordner zugreifen können. Um den Ordner erneut freizugeben, muss ein neuer Link erstellt werden."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, unterbunden.",
+        "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über den Link verfügt, unterbunden."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung Ihres Proton-Abonnements verwendet werden. Sie werden in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, bevor Sie fortfahren."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ihre Dateien werden verschlüsselt und anschließend gespeichert."
+      ],
+      "Your folder failed to download.": [
+        "Dein Ordner konnte nicht heruntergeladen werden."
+      ],
+      "Your folder has finished downloading.": [
+        "Dein Ordner wurde vollständig heruntergeladen."
+      ],
+      "Your folder is being downloaded.": [
+        "Dein Ordner wird derzeit heruntergeladen."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ihre Telefonnummer wird nur für diese einmalige Verfizierung verwendet."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
       ],
+      "Failed to download files: ${ err }": [
+        "Herunterladen der Dateien fehlgeschlagen: ${ err }"
+      ],
       "Failed to move, please try again": [
         "Verschieben fehlgeschlagen, bitte versuchen Sie es erneut"
       ],
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Papierkorb leeren"
       ],
-      "Enter file password to download": [
-        "Datei-Passwort zum Herunterladen eingeben"
+      "Enter password to download": [
+        "Passwort zum Herunterladen eingeben"
       ],
       "Enter your password": [
         "Passwort eingeben"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Meine Dateien"
+      ],
+      "My files ${ date }.zip": [
+        "Meine Dateien ${ date }.zip"
       ],
       "Name": [
         "Name"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "Die angeforderte Datei kann jetzt heruntergeladen werden"
       ],
+      "Your folder is ready to be downloaded": [
+        "Dein Ordner steht zum Herunterladen bereit"
+      ],
       "ZIP / postal code": [
         "PLZ/Postleitzahl"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube usw.), unabhängig davon, wo Sie sich derzeit aufhalten."
-      ],
-      "Active sharing link": [
-        "Aktiver Freigabelink"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "„Automatisch” zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. „Klartext” bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
-      "Expired sharing link": [
-        "Abgelaufener Freigabelink"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Sie erhalten Zugriff auf alle kostenpflichtigen Funktionen sowohl für ${ vpnAppName } als auch für ${ mailAppName } (der verschlüsselte E-Mail-Dienst, den Millionen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
-      ],
-      "Inactive sharing link": [
-        "Inaktiver Freigabelink"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Die Mehrbenutzerunterstützung ist nur für Abonnements mit 2 oder mehr Benutzern verfügbar"

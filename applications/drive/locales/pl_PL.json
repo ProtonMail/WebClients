@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Aktywuj odzyskiwanie"
+      ],
       "Add": [
         "Dodaj"
       ],
       "Add address": [
-        ""
+        "Dodaj adres"
       ],
       "Add contact": [
         "Dodaj kontakt"
       ],
       "Add email": [
-        ""
+        "Dodaj adres e-mail"
       ],
       "Add group": [
         "Dodaj grupę"
@@ -36,7 +39,7 @@
         "Dodaj nową grupę"
       ],
       "Add phone number": [
-        ""
+        "Dodaj numer telefonu"
       ],
       "Add screenshot(s)": [
         "Dodaj zrzuty ekranu"
@@ -242,9 +245,6 @@
       "Go to settings": [
         "Przejdź do ustawień"
       ],
-      "Grid layout": [
-        "Widok siatki"
-      ],
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
       ],
@@ -274,9 +274,6 @@
       ],
       "Keyboard shortcuts": [
         "Skróty klawiszowe"
-      ],
-      "List layout": [
-        "Widok listy"
       ],
       "Load image": [
         "Załaduj obraz"
@@ -443,6 +440,9 @@
       "Select plan": [
         "Wybierz plan"
       ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
+      ],
       "Share": [
         "Udostępnij"
       ],
@@ -469,9 +469,6 @@
       ],
       "Show labels": [
         "Pokaż etykiety"
-      ],
-      "Show shared link details": [
-        "Pokaż szczegóły udostępnionego linku"
       ],
       "Sign out": [
         "Wyloguj"
@@ -523,6 +520,12 @@
       ],
       "Untrust": [
         "Przestań ufać"
+      ],
+      "Update recovery file": [
+        "Zaktualizuj plik odzyskiwania"
+      ],
+      "Update recovery phrase": [
+        "Zaktualizuj hasło odzyskiwania"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -1150,17 +1153,32 @@
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
       ],
+      "Failed to download a file": [
+        "Nie udało się pobrać pliku"
+      ],
+      "Failed to download a folder": [
+        "Nie udało się pobrać folderu"
+      ],
       "Failed to load the link": [
         "Nie udało się załadować linku"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Plik \"${ item.name }\" nie może zostać przesłany z powodu błędu: ${ error }"
       ],
+      "File \"${ name }\" is already downloading": [
+        "Pobieranie pliku \"${ name }\""
+      ],
       "File cannot be merged with folder": [
         "Plik nie może zostać scalony z folderem"
       ],
       "File has no contents to preview": [
         "Plik nie posiada zawartości do podglądu"
+      ],
+      "File selection is already downloading": [
+        "Pobieranie zaznaczonych plików"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "Pobieranie folderu \"${ name }\""
       ],
       "Folder name cannot be empty": [
         "Nazwa folderu nie może być pusta"
@@ -1403,7 +1421,7 @@
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Nie wybrałeś pliku CSV lub VCF"
+        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Nie wybrano pliku CSV lub VCF"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
@@ -1610,17 +1628,23 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "Pobieranie ${ activeDownloadsCount } pliku (${ downloadProgress }%)",
-        "Pobieranie ${ activeDownloadsCount } pliku (${ downloadProgress }%)",
-        "Pobieranie ${ activeDownloadsCount } pliku (${ downloadProgress }%)",
-        "Pobieranie ${ activeDownloadsCount } pliku (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "Pobieranie ${ activeDownloadsCount } pliku",
+        "Pobieranie ${ activeDownloadsCount } plików",
+        "Pobieranie ${ activeDownloadsCount } plików",
+        "Pobieranie ${ activeDownloadsCount } plików"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "Pobieranie ${ activeDownloadsCount } pliku (${ downloadProgress }%)",
+        "Pobieranie ${ activeDownloadsCount } plików (${ downloadProgress }%)",
+        "Pobieranie ${ activeDownloadsCount } plików (${ downloadProgress }%)",
+        "Pobieranie ${ activeDownloadsCount } plików (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
         "Przesyłanie ${ activeUploadsCount } pliku (${ uploadProgress }%)",
-        "Przesyłanie ${ activeUploadsCount } pliku (${ uploadProgress }%)",
-        "Przesyłanie ${ activeUploadsCount } pliku (${ uploadProgress }%)",
-        "Przesyłanie ${ activeUploadsCount } pliku (${ uploadProgress }%)"
+        "Przesyłanie ${ activeUploadsCount } plików (${ uploadProgress }%)",
+        "Przesyłanie ${ activeUploadsCount } plików (${ uploadProgress }%)",
+        "Przesyłanie ${ activeUploadsCount } plików (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } adres e-mail",
@@ -1649,7 +1673,7 @@
         "${ calendarsToBeMergedCount } scalonych kalendarzy",
         "${ calendarsToBeMergedCount } scalonych kalendarzy"
       ],
-      "${ canceledCount } Canceled": [
+      "${ canceledCount } canceled": [
         "Transfer ${ canceledCount } pliku został anulowany",
         "Transfer ${ canceledCount } plików został anulowany",
         "Transfer ${ canceledCount } plików został anulowany",
@@ -1679,25 +1703,25 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "Kontakty ${ contactsEnumeration } posiadają wiele adresów e-mail. Wybierz adresy, które chcesz dodać do grupy."
       ],
-      "${ doneCount } Finished": [
+      "${ doneCount } finished": [
         "Transfer ${ doneCount } pliku został zakończony",
-        "Transfer ${ doneCount } pliku został zakończony",
-        "Transfer ${ doneCount } pliku został zakończony",
-        "Transfer ${ doneCount } pliku został zakończony"
+        "Transfer ${ doneCount } plików został zakończony",
+        "Transfer ${ doneCount } plików został zakończony",
+        "Transfer ${ doneCount } plików został zakończony"
       ],
-      "${ doneDownloadsCount } Downloaded": [
+      "${ doneDownloadsCount } downloaded": [
         "Pobrano ${ doneDownloadsCount } plik",
         "Pobrano ${ doneDownloadsCount } pliki",
         "Pobrano ${ doneDownloadsCount } plików",
         "Pobrano ${ doneDownloadsCount } plików"
       ],
-      "${ doneUploadsCount } Uploaded": [
+      "${ doneUploadsCount } uploaded": [
         "Przesłano ${ doneUploadsCount } plik",
         "Przesłano ${ doneUploadsCount } pliki",
         "Przesłano ${ doneUploadsCount } plików",
         "Przesłano ${ doneUploadsCount } plików"
       ],
-      "${ errorCount } Failed": [
+      "${ errorCount } failed": [
         "Transfer ${ errorCount } pliku zakończył się niepowodzeniem",
         "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
         "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
@@ -1730,7 +1754,7 @@
         "${ numContacts } kontaktów",
         "${ numContacts } kontaktów"
       ],
-      "${ pausedCount } Paused": [
+      "${ pausedCount } paused": [
         "Transfer ${ pausedCount } pliku został wstrzymany",
         "Transfer ${ pausedCount } plików został wstrzymany",
         "Transfer ${ pausedCount } plików został wstrzymany",
@@ -1865,6 +1889,9 @@
       "Anyone with this link can access your file.": [
         "Każdy, kto posiada link, ma dostęp do pliku."
       ],
+      "Anyone with this link can access your folder.": [
+        "Każdy, kto posiada link, ma dostęp do folderu."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Czy na pewno chcesz opróżnić Kosz i trwale usunąć wszystkie elementy?"
       ],
@@ -1959,6 +1986,9 @@
         "Utwórz swój pierwszy folder i zarządzaj plikami."
       ],
       "Creating link to file": [
+        "Tworzenie linku"
+      ],
+      "Creating link to folder": [
         "Tworzenie linku"
       ],
       "Creating share": [
@@ -2196,7 +2226,7 @@
         "Nie można dostosować"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        "Uwaga: Dane mogą być nadal dostępne lokalnie na urządzeniach, na których zainstalowałeś aplikację ${ appName }."
+        "Uwaga: Dane mogą być nadal dostępne lokalnie na urządzeniach, na których zainstalowano aplikację ${ appName }."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Liczba połączeń VPN, która może zostać przypisana do użytkowników. Każde podłączone urządzenie używa jednego połączenia VPN."
@@ -2212,6 +2242,9 @@
       ],
       "Only the people with the link and the password can access this file.": [
         "Tylko posiadacz linku i hasła ma dostęp do pliku."
+      ],
+      "Only the people with the link and the password can access this folder.": [
+        "Tylko posiadacz linku i hasła ma dostęp do folderu."
       ],
       "Paused": [
         "Wstrzymano"
@@ -2265,6 +2298,9 @@
         "Poczekaj na sprawdzenie kontaktów, które zawierają zaszyfrowane dane za pomocą nieaktywnego klucza."
       ],
       "Preparing link to file": [
+        "Przygotowywanie linku"
+      ],
+      "Preparing link to folder": [
         "Przygotowywanie linku"
       ],
       "Preview": [
@@ -2375,11 +2411,14 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, będziesz musiał utworzyć nowy link."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Spowoduje to usunięcie linku i dostępu do pliku dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do plików dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do plików dla każdego, kto posiada link.",
-        "Spowoduje to usunięcie linków i dostępu do plików dla każdego, kto posiada link."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do folderu. Jeśli chcesz ponownie udostępnić folder, będziesz musiał utworzyć nowy link."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Spowoduje to usunięcie linku i dostępu do folderu dla każdego, kto posiada link.",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
+        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję Proton. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
@@ -2505,10 +2544,10 @@
         "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Wkrótce zostaniesz przekierowany na stronę swojego banku w celu zweryfikowania płatności."
@@ -2557,6 +2596,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Twoje pliki przed zapisaniem zostaną zaszyfrowane."
+      ],
+      "Your folder failed to download.": [
+        "Pobieranie folderu nie powiodło się."
+      ],
+      "Your folder has finished downloading.": [
+        "Folder został pobrany."
+      ],
+      "Your folder is being downloaded.": [
+        "Trwa pobieranie folderu."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
@@ -2814,7 +2862,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(wkrótce)"
       ],
       "(Expired)": [
         "(wygasł)"
@@ -3570,6 +3618,9 @@
       ],
       "Contact group updated": [
         "Grupa kontaktów została zaktualizowana"
+      ],
+      "Failed to download files: ${ err }": [
+        "Nie udało się pobrać plików: ${ err }"
       ],
       "Failed to move, please try again": [
         "Przenoszenie nie powiodło się. Spróbuj ponownie"
@@ -4383,8 +4434,8 @@
       "Empty trash": [
         "Opróżnij kosz"
       ],
-      "Enter file password to download": [
-        "Wpisz hasło pliku, aby go pobrać"
+      "Enter password to download": [
+        "Wpisz hasło, aby kontynuować"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -4463,6 +4514,9 @@
       ],
       "My files": [
         "Moje pliki"
+      ],
+      "My files ${ date }.zip": [
+        "Moje pliki ${ date }.zip"
       ],
       "Name": [
         "Nazwa"
@@ -4635,6 +4689,9 @@
       "Your file is ready to be downloaded": [
         "Plik jest gotowy do pobrania"
       ],
+      "Your folder is ready to be downloaded": [
+        "Folder jest gotowy do pobrania"
+      ],
       "ZIP / postal code": [
         "Kod pocztowy"
       ]
@@ -4647,9 +4704,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Uzyskaj dostęp do treści zablokowanych geograficznie (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itp.) gdziekolwiek jesteś."
-      ],
-      "Active sharing link": [
-        "Link udostępniania jest aktywny"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
@@ -4678,9 +4732,6 @@
       "Encrypted data with verified digital signature": [
         "Zaszyfrowane dane ze zweryfikowanym podpisem cyfrowym"
       ],
-      "Expired sharing link": [
-        "Link udostępniania wygasł"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Uzyskaj dostęp do wszystkich płatnych funkcji usług ${ vpnAppName } i ${ mailAppName } (szyfrowanej poczty e-mail, używanej przez miliony użytkowników do ochrony danych) dzięki jednej subskrypcji."
       ],
@@ -4694,10 +4745,7 @@
         "Pozwala na posiadanie adresu e-mail z własnymi domenami, np. jan@nowak.pl"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jeśli kupiłeś kod podarunkowy lub otrzymałeś go od naszej pomocy technicznej, możesz wpisać go tutaj."
-      ],
-      "Inactive sharing link": [
-        "Link udostępniania jest nieaktywny"
+        "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Obsługa wielu użytkowników jest dostępna w planach z co najmniej 2 użytkownikami"

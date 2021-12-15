@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Ativar a recuperação"
+      ],
       "Add": [
         "Adicionar"
       ],
       "Add address": [
-        ""
+        "Adicionar endereço"
       ],
       "Add contact": [
         "Adicionar contato"
       ],
       "Add email": [
-        ""
+        "Adicionar e-mail"
       ],
       "Add group": [
         "Adicionar grupo"
@@ -36,7 +39,7 @@
         "Adicionar novo grupo"
       ],
       "Add phone number": [
-        ""
+        "Adicionar número de telefone"
       ],
       "Add screenshot(s)": [
         "Adicionar captura(s) de tela"
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Ir para configurações"
       ],
-      "Grid layout": [
-        "Exibição em grade"
-      ],
       "Hide advanced PGP settings": [
         "Ocultar configurações avançadas de PGP"
       ],
@@ -263,16 +263,13 @@
         "Importar"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importar de .csv ou vCard"
       ],
       "Increase": [
         "Aumentar"
       ],
       "Keyboard shortcuts": [
         "Atalhos do teclado"
-      ],
-      "List layout": [
-        "Exibição em lista"
       ],
       "Load image": [
         "Carregar imagem"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Selecionar plano"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Compartilhar"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         "Mostrar marcadores"
-      ],
-      "Show shared link details": [
-        "Mostrar detalhes do link compartilhado"
       ],
       "Sign out": [
         "Encerrar Sessão"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Não confiar"
+      ],
+      "Update recovery file": [
+        "Atualizar o arquivo de recuperação"
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Atualizar"
@@ -852,7 +855,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "O calendário não pôde ser descriptografado"
       ],
       "Calendar is syncing": [
         "Calendário está sincronizando"
@@ -1109,8 +1112,8 @@
         "Não foi possível gerar chaves de arquivo"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
+        "Desmarque ao menos ${ calendarToFixCount } calendário",
+        "Desmarque ao menos ${ calendarToFixCount } calendários"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Desmarque ao menos ${ calendarToFixCount } calendário ou",
@@ -1128,17 +1131,32 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
       ],
+      "Failed to download a file": [
+        "Falha ao baixar um arquivo"
+      ],
+      "Failed to download a folder": [
+        "Falha ao baixar uma pasta"
+      ],
       "Failed to load the link": [
         "Falha ao carregar o link"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "O arquivo \"${ item.name }\" não pôde ser enviado devido ao erro \"${ error }\""
+      ],
+      "File \"${ name }\" is already downloading": [
+        "O arquivo \"${ name }\" já está sendo baixado"
       ],
       "File cannot be merged with folder": [
         "Arquivo não pode ser mesclado com a pasta"
       ],
       "File has no contents to preview": [
         "O arquivo não tem conteúdo para visualização"
+      ],
+      "File selection is already downloading": [
+        "Os arquivos selecionados já estão sendo baixados"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "A pasta \"${ name }\" já está sendo baixada"
       ],
       "Folder name cannot be empty": [
         "O nome da pasta não pode estar vazio"
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Baixando (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Baixando (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "Baixando ${ activeDownloadsCount }",
+        "Baixando ${ activeDownloadsCount }"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Enviando (${ uploadProgress }%)",
-        "${ activeUploadsCount } Enviando (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "Baixando ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "Baixando ${ activeDownloadsCount } (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "Enviando ${ activeUploadsCount } (${ uploadProgress }%)",
+        "Enviando ${ activeUploadsCount } (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
@@ -1590,16 +1612,16 @@
         "${ calendarsToBeCreatedCount } novos calendários"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendário mesclado",
+        "${ calendarsToBeMerged } calendários mesclados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendário mesclado",
+        "${ calendarsToBeMergedCount } calendários mesclados"
+      ],
+      "${ canceledCount } canceled": [
         "",
         ""
-      ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Cancelado",
-        "${ canceledCount } Cancelado"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a este grupo."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Concluído",
-        "${ doneCount } Concluído"
+      "${ doneCount } finished": [
+        "${ doneCount } concluído",
+        "${ doneCount } concluídos"
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } Baixado",
-        "${ doneDownloadsCount } Baixado"
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } baixado",
+        "${ doneDownloadsCount } baixados"
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Enviado",
-        "${ doneUploadsCount } Enviado"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Falhou",
-        "${ errorCount } Falhou"
+      "${ errorCount } failed": [
+        "${ errorCount } falhou",
+        "${ errorCount } falharam"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
@@ -1658,9 +1680,9 @@
         "${ numContacts } contato",
         "${ numContacts } contatos"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Em pausa",
-        "${ pausedCount } Em pausa"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na sua assinatura mudando para o ${ annualBilling }"
@@ -1753,12 +1775,12 @@
         "Depois de fazer seu pagamento em Bitcoin, siga as instruções abaixo para atualizar."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Tudo (${ totalFoldersCount } pasta)",
+        "Todas (${ totalFoldersCount } pastas)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Tudo (${ totalFoldersCount } marcador)",
+        "Todos (${ totalFoldersCount } marcadores)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Permite hospedar e-mails para seu(s) próprio(s) domínio(s) em ${ mailAppName }, por exemplo john.smith@example.com"
@@ -1773,7 +1795,10 @@
         "e"
       ],
       "Anyone with this link can access your file.": [
-        "Qualquer um com este link pode acessar seu arquivo."
+        "Qualquer pessoa com este link pode acessar seu arquivo."
+      ],
+      "Anyone with this link can access your folder.": [
+        "Qualquer pessoa com este link pode acessar sua pasta."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Você tem certeza que deseja esvaziar a Lixeira e excluir permanentemente todos os itens?"
@@ -1786,7 +1811,7 @@
         "Navegação básica e ações permanecem disponíveis, independentemente dos atalhos de teclado estarem ativos ou não nas configurações."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        ""
+        "Devido ao ${ appName } ser criptografado de ponta a ponta, não podemos acessar ou descriptografar os seus arquivos por você. Para desbloquear o seu drive após uma redefinição de senha, você deve ter um dos seguintes:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Cobrado como ${ billedPrice } a cada 2 anos"
@@ -1867,11 +1892,14 @@
       "Creating link to file": [
         "Criando link para o arquivo"
       ],
+      "Creating link to folder": [
+        "Criando link para a pasta"
+      ],
       "Creating share": [
         "Criando compartilhamento"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim com os formatos vCard 3.1 e 4.0 (encode UTF-8)."
+        "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim como os formatos vCard 3.1 e 4.0 (encode UTF-8)."
       ],
       "Delete drive": [
         "",
@@ -1974,7 +2002,7 @@
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
       ],
       "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        ""
+        "Se você tiver um desses, prossiga para as configurações da sua conta Proton, de modo a continuar o processo de desbloqueio."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Apenas as pessoas com o link e a senha podem acessar este arquivo."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Apenas as pessoas com o link e a senha podem acessar esta pasta."
+      ],
       "Paused": [
         "Em pausa"
       ],
@@ -2125,7 +2156,7 @@
         "Pagamentos são protegidos com criptografia TLS e pelas leis suiças de privacidade."
       ],
       "Permanently delete all files in your drive": [
-        ""
+        "Excluir permanentemente todos os arquivos no seu drive"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "O PGP/Incorporado só é compatível com o formato texto sem formatação. Observe que o ProtonMail sempre assina mensagens criptografadas."
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Preparando link para o arquivo"
+      ],
+      "Preparing link to folder": [
+        "Preparando link para a pasta"
       ],
       "Preview": [
         "Visualizar"
@@ -2270,14 +2304,17 @@
         "Este link pode ser um ataque homógrafo. Por favor, verifique se este é o link que deseja visitar ou não o abra."
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        ""
+        "Este link foi criado em\numa versão anterior e não pode ser modificado. Exclua\neste link e crie um novo para alterar as configurações."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Este link será desativado permanentemente. Ninguém com este link será capaz de acessar o seu arquivo. Para recompartilhar o arquivo, você precisará de um novo link."
+        "Este link será desativado permanentemente. Ninguém com este link será capaz de acessar o seu arquivo. Para compartilhar novamente o arquivo, você precisará de um novo link."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Isto excluirá o link e removerá o acesso ao seu arquivo para qualquer pessoa com o link.",
-        "Isto excluirá os links e removerá os acessos aos seus arquivos para qualquer pessoa com os links."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Este link será desativado permanentemente. Ninguém com este link será capaz de acessar a sua pasta. Para compartilhar novamente a pasta, você precisará de um novo link."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Este link será excluído e removeremos o acesso ao seu arquivo ou pasta para qualquer pessoa com o link.",
+        "Estes links serão excluídos e removeremos o acesso aos seus arquivos ou pastas para qualquer pessoa com os links."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura do Proton. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
@@ -2301,16 +2338,16 @@
         "Para poder utilizar a verificação de endereço, você deve confiar em uma ou mais chaves públicas disponíveis, incluindo aquela que você deseja usar para o envio. Isso evita que as chaves de criptografia possam ser falsificadas."
       ],
       "Transfer canceled for file \"${ name }\"": [
-        ""
+        "A transferência do arquivo \"${ name }\" foi cancelado"
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        ""
+        "A transferência da pasta \"${ name }\" foi cancelada"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        ""
+        "A transferência do arquivo \"${ file.name }\" foi ignorada"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        ""
+        "A transferência da pasta \"${ folderName }\" foi ignorada"
       ],
       "Trash": [
         "Lixeira"
@@ -2382,7 +2419,7 @@
         "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Você pode mesclar calendários importados com calendários Proton existentes."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
@@ -2456,6 +2493,15 @@
       "Your files will be encrypted and then saved.": [
         "Seus arquivos serão criptografados e depois salvos."
       ],
+      "Your folder failed to download.": [
+        "Falha ao baixar a sua pasta."
+      ],
+      "Your folder has finished downloading.": [
+        "Sua pasta foi baixada."
+      ],
+      "Your folder is being downloaded.": [
+        "Sua pasta está sendo baixada."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu número de telefone será utilizado somente nesta verificação única."
       ],
@@ -2463,7 +2509,7 @@
         "Sua senha anterior"
       ],
       "Your previous recovery phrase": [
-        ""
+        "Sua frase de recuperação anterior"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Sua conta Proton está atualmente suspensa. Para continuar usando sua conta, pague as faturas pendentes."
@@ -2712,7 +2758,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Em breve)"
       ],
       "(Expired)": [
         "(Expirado)"
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Grupo de contato atualizado"
       ],
+      "Failed to download files: ${ err }": [
+        "Falha ao baixar arquivos: ${ err }"
+      ],
       "Failed to move, please try again": [
         "Falha ao mover. Por favor, tente novamente"
       ],
@@ -3434,11 +3483,11 @@
         "Falha ao enviar arquivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "",
-        ""
+        "\"${ filename }\" e ${ count } outro arquivo ou pasta já estão sendo enviados",
+        "\"${ filename }\" e ${ count } outros arquivos ou pastas já estão sendo enviados"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        ""
+        "O arquivo ou pasta \"${ filename }\" já está sendo enviado"
       ],
       "File or folder is missing a name": [
         ""
@@ -3471,7 +3520,7 @@
         "Não há espaço suficiente para fazer upload de ${ formattedTotal }"
       ],
       "The link to your file failed to be deleted": [
-        ""
+        "Falha ao excluir o link do seu arquivo"
       ],
       "The link to your file was deleted": [
         "O link para seu arquivo foi excluído"
@@ -3559,7 +3608,7 @@
         "Ignorar grupo"
       ],
       "No parent folder": [
-        ""
+        "Nenhuma pasta acima"
       ]
     },
     "Option group label": {
@@ -3567,7 +3616,7 @@
         "Criar novo calendário"
       ],
       "Merge with calendar": [
-        ""
+        "Mesclar com o calendário"
       ]
     },
     "Payment method option": {
@@ -3883,7 +3932,7 @@
         "Preferências salvas"
       ],
       "Recovery has started": [
-        ""
+        "Recuperação iniciada"
       ],
       "The link to your file was successfully copied": [
         "O link para o seu arquivo foi copiado com sucesso"
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Esvaziar lixeira"
       ],
-      "Enter file password to download": [
-        "Digite a senha do arquivo para fazer o download"
+      "Enter password to download": [
+        "Digite a senha para baixar"
       ],
       "Enter your password": [
         "Digite sua senha"
@@ -4286,6 +4335,9 @@
       "My files": [
         "Meus arquivos"
       ],
+      "My files ${ date }.zip": [
+        "Meus arquivos ${ date }.zip"
+      ],
       "Name": [
         "Nome"
       ],
@@ -4353,7 +4405,7 @@
         "Relatar um problema"
       ],
       "Request new code": [
-        ""
+        "Solicitar um novo código"
       ],
       "Restore your files": [
         "Restore your files"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "Seu arquivo está pronto para ser baixado"
       ],
+      "Your folder is ready to be downloaded": [
+        "Sua pasta está pronta para ser baixada"
+      ],
       "ZIP / postal code": [
         "CEP / código postal"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Acesso ao conteúdo bloqueado geograficamente (Netflix, Amazon Prime Video, BBC iPlayer, Wikipédia, Facebook, YouTube, etc.), não quer que você esteja."
-      ],
-      "Active sharing link": [
-        "Link de compartilhamento ativo"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indica automaticamente o formato no compositor a ser usado para enviar para este usuário. Texto sem formatação indica que a mensagem será sempre convertida em texto sem formatação no envio."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Dados criptografados com assinatura digital verificada"
       ],
-      "Expired sharing link": [
-        "Link de compartilhamento expirado"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Tenha acesso a todos os recursos pagos para o ${ vpnAppName } e ${ mailAppName } (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um vale-presente ou recebeu um de nossa equipe de suporte, você pode inserir o código aqui."
-      ],
-      "Inactive sharing link": [
-        "Link de compartilhamento inativo"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "O suporte a múltiplos usuários só está disponível para planos com dois ou mais usuários"

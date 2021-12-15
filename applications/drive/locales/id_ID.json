@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Aktifkan metode pemulihan"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -236,9 +239,6 @@
       "Go to settings": [
         "Ke pengaturan"
       ],
-      "Grid layout": [
-        "Kotak-kotak"
-      ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
       ],
@@ -268,9 +268,6 @@
       ],
       "Keyboard shortcuts": [
         "Pintasan papan ketik"
-      ],
-      "List layout": [
-        "Senarai"
       ],
       "Load image": [
         "Muat gambar"
@@ -437,6 +434,9 @@
       "Select plan": [
         "Pilih paket"
       ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
+      ],
       "Share": [
         "Bagikan"
       ],
@@ -463,9 +463,6 @@
       ],
       "Show labels": [
         "Tampilkan label"
-      ],
-      "Show shared link details": [
-        "Tampilkan info tautan bersama"
       ],
       "Sign out": [
         "Keluar"
@@ -517,6 +514,12 @@
       ],
       "Untrust": [
         "Jangan percayai"
+      ],
+      "Update recovery file": [
+        "Perbarui berkas pemulihan"
+      ],
+      "Update recovery phrase": [
+        "Perbarui frasa pemulihan"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1117,17 +1120,32 @@
       "Error connecting to the Bitcoin API.": [
         "Gagal sambung ke API Bitcoin."
       ],
+      "Failed to download a file": [
+        "Gagal mengunduh berkas"
+      ],
+      "Failed to download a folder": [
+        "Gagal mengunduh folder"
+      ],
       "Failed to load the link": [
         "Tautan gagal dimuat"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Berkas \"${ item.name }\" tidak dapat diunggah karena terdapat kesalahan \"${ error }\""
       ],
+      "File \"${ name }\" is already downloading": [
+        "Proses unduhan berkas \"${ name }\" sedang berlangsung"
+      ],
       "File cannot be merged with folder": [
         "Berkas tidak dapat digabungkan dengan folder"
       ],
       "File has no contents to preview": [
         "Berkas ini kosong"
+      ],
+      "File selection is already downloading": [
+        "Proses unduhan berkas-berkas yang dipilih sedang berlangsung"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "Proses unduhan folder \"${ name }\" sedang berlangsung"
       ],
       "Folder name cannot be empty": [
         "Nama folder tidak boleh kosong"
@@ -1550,11 +1568,14 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Mengunduh (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } sedang diunduh"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Mengunggah (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } sedang diunduh (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } sedang diunggah (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } alamat surel"
@@ -1571,8 +1592,8 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Dibatalkan"
+      "${ canceledCount } canceled": [
+        "${ canceledCount } dibatalkan"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Anggota"
@@ -1592,17 +1613,17 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Selesai"
+      "${ doneCount } finished": [
+        "${ doneCount } telah selesai terproses"
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } Diunduh"
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } telah terunduh"
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Diunggah"
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } telah terunggah"
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Gagal"
+      "${ errorCount } failed": [
+        "${ errorCount } gagal terproses"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
@@ -1622,8 +1643,8 @@
       "${ numContacts } contact": [
         "${ numContacts } kontak"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Dihentikan Sementara"
+      "${ pausedCount } paused": [
+        "${ pausedCount } dijeda"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } pada langganan Anda dengan beralih ke ${ annualBilling }"
@@ -1730,6 +1751,9 @@
       "Anyone with this link can access your file.": [
         "Siapapun dengan tautan ini bisa mengakses berkas Anda."
       ],
+      "Anyone with this link can access your folder.": [
+        "Siapapun yang memiliki tautan ini akan dapat mengakses folder Anda."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Anda yakin ingin mengosongkan kotak sampah dan menghapus semua berkas secara permanen?"
       ],
@@ -1743,13 +1767,13 @@
         "Karena ${ appName } terenkripsi secara end-to-end, kami tidak dapat mengakses atau mendekripsi data-data Anda. Untuk dapat kembali masuk ke dalam drive milik Anda yang kata sandinya telah diatur ulang, Anda harus memiliki setidaknya salah satu hal berikut:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
-        "Ditagih ${ billedPrice } setiap 2 tahun"
+        "Tertagih dengan harga ${ billedPrice } per 2 tahunnya"
       ],
       "Billed as ${ billedPrice } per year": [
-        "Ditagih ${ billedPrice } per tahun"
+        "Tertagih dengan harga ${ billedPrice } per tahunnya"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Ditagihkan pada akhir siklus penagihan Anda saat ini (diperbarui pada ${ renewalDate })"
+        "Tertagih pada akhir siklus penagihan Anda saat ini (diperbarui pada ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Transaksi bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
@@ -1820,6 +1844,9 @@
       "Creating link to file": [
         "Membuat tautan untuk berkas"
       ],
+      "Creating link to folder": [
+        "Membuat tautan untuk folder"
+      ],
       "Creating share": [
         "Membuat konten bersama"
       ],
@@ -1884,16 +1911,16 @@
         "Folder tidak akan diunggah"
       ],
       "For families and small teams; includes both Mail and VPN.": [
-        "Untuk keluarga dan tim kecil; termasuk Mail dan VPN."
+        "Untuk keluarga dan tim kecil; dengan Mail dan VPN yang terbundel di dalamnya."
       ],
       "For getting started with private and secure emailing.": [
         "Untuk memulai pengiriman surel dengan privat dan aman."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Untuk individu yang membutuhkan sebuah kotak surat berfitur lengkap dengan perlindungan tingkat lanjut."
+        "Untuk para individu yang membutuhkan sebuah kotak surat berfitur lengkap dengan perlindungan keamanan mutakhir."
       ],
       "For professionals that need secure business communications.": [
-        "Untuk profesional yang membutuhkan komunikasi bisnis yang aman."
+        "Untuk para profesional yang membutuhkan komunikasi bisnis yang aman."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Untuk Visa dan MasterCard, 3 digit di belakang kartu Anda. Untuk American Express, 4 digit di depan kartu Anda."
@@ -2066,6 +2093,9 @@
       "Only the people with the link and the password can access this file.": [
         "Hanya orang yang memiliki tautan dan kata sandi yang dapat mengakses berkas ini."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Hanya orang-orang yang memiliki tautan dan kata sandi yang dapat mengakses folder ini."
+      ],
       "Paused": [
         "Dijeda"
       ],
@@ -2119,6 +2149,9 @@
       ],
       "Preparing link to file": [
         "Menyiapkan tautan untuk berkas"
+      ],
+      "Preparing link to folder": [
+        "Menyiapkan tautan untuk folder"
       ],
       "Preview": [
         "Pratinjau"
@@ -2225,8 +2258,11 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Tautan ini akan dinonaktifkan secara permanen. Tidak ada yang bisa mengakses berkas Anda dengan tautan ini. Untuk membagikan ulang, Anda akan perlu tautan baru."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Tautan akan dihapus dan siapapun yang mengkliknya tidak akan bisa mengakses berkas Anda."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Tautan ini akan dinonaktifkan secara permanen. Ke depannya, folder Anda tidak akan lagi dapat diakses dengan tautan ini. Untuk dapat membagikan ulang folder ini, Anda perlu membuat tautan baru."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Tindakan ini akan menonaktifkan tautan ini dan membuat berkas atau folder Anda tidak lagi dapat diakses melalui tautan yang bersangkutan."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dengan ini, PayPal dapat dipakai untuk membayar langganan Proton Anda. Kami akan membuka PayPal di tab baru. Jika Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
@@ -2289,7 +2325,7 @@
         "Verifikasi akan berjalan di tab baru. Mohon nonaktifkan pemblokir popup."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verifikasi akan berjalan di tab baru. Mohon nonaktifkan pemblokir popup. Anda tidak akan ditagih. Jumlah yang ditarik untuk verifikasi kartu langsung dikembalikan."
+        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup Anda. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Bundel VPN + ${ mailAppName } untuk keluarga dan usaha kecil."
@@ -2404,6 +2440,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan disimpan."
+      ],
+      "Your folder failed to download.": [
+        "Folder Anda gagal diunduh."
+      ],
+      "Your folder has finished downloading.": [
+        "Folder Anda telah selesai diunduh."
+      ],
+      "Your folder is being downloaded.": [
+        "Folder Anda sedang diunduh."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
@@ -3150,7 +3195,7 @@
     },
     "Mail feature": {
       "0.5 GB": [
-        "0,5 GB"
+        "0.5 GB"
       ],
       "20 GB": [
         "20 GB"
@@ -3354,6 +3399,9 @@
       ],
       "Contact group updated": [
         "Grup kontak telah diperbarui"
+      ],
+      "Failed to download files: ${ err }": [
+        "Gagal mengunduh berkas-berkas berikut: ${ err }"
       ],
       "Failed to move, please try again": [
         "Pemindahan gagal, silakan coba lagi"
@@ -3584,7 +3632,7 @@
     },
     "Plan feature": {
       "0.5 GB storage": [
-        "Kapasitas 0,5 GB"
+        "Kuota penyimpanan 0.5 GB"
       ],
       "1 - 5000 users *": [
         "1 - 5000 pengguna *"
@@ -3611,7 +3659,7 @@
         "5 alamat / pengguna"
       ],
       "5 GB storage *": [
-        "Kapasitas 5 GB *"
+        "Kuota penyimpanan 5 GB *"
       ],
       "5 GB storage / user": [
         "Kapasitas 5 GB / pengguna"
@@ -4116,8 +4164,8 @@
       "Empty trash": [
         "Sampah kosong"
       ],
-      "Enter file password to download": [
-        "Masukkan sandi berkas untuk mengunduh"
+      "Enter password to download": [
+        "Masukkan kata sandi untuk mengunduh"
       ],
       "Enter your password": [
         "Masukkan sandi Anda"
@@ -4196,6 +4244,9 @@
       ],
       "My files": [
         "Berkas-berkas saya"
+      ],
+      "My files ${ date }.zip": [
+        "Berkas-berkas saya ${ date }.zip"
       ],
       "Name": [
         "Nama"
@@ -4368,6 +4419,9 @@
       "Your file is ready to be downloaded": [
         "Berkas Anda siap diunduh"
       ],
+      "Your folder is ready to be downloaded": [
+        "Berkas Anda telah siap untuk diunduh"
+      ],
       "ZIP / postal code": [
         "Kode pos"
       ]
@@ -4380,9 +4434,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Akses konten yang diblokir per negara (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, dll) di mana saja."
-      ],
-      "Active sharing link": [
-        "Tautan berbagi aktif"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
@@ -4411,9 +4462,6 @@
       "Encrypted data with verified digital signature": [
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
       ],
-      "Expired sharing link": [
-        "Tautan berbagi usang"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Dapatkan akses ke semua fitur berbayar untuk ${ vpnAppName } dan ${ mailAppName } (layanan surel terenkripsi yang digunakan jutaan orang untuk melindungi data mereka) hanya dengan satu paket."
       ],
@@ -4428,9 +4476,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
-      ],
-      "Inactive sharing link": [
-        "Tautan berbagi tidak aktif"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Dukungan multi-pengguna hanya dapat diterapkan ke paket dengan 2 pengguna atau lebih"
@@ -4448,7 +4493,7 @@
         "Mendukung untuk protokol berbagi fnerkas seperti BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        "Subfolder-subfolder milik sistem akan muncul sebagai folder terpisah di ProtonMail"
+        "Sub-folder milik sistem akan muncul sebagai folder terpisah di ProtonMail"
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan-pesan Anda yang paling baru."

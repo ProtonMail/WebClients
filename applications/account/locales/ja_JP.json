@@ -43,6 +43,9 @@
       "Activate organization key": [
         "オーガナイゼーションキーを有効化する"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "追加"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Catch-All の設定"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "リンクで共有"
@@ -2143,8 +2149,8 @@
       "You must set a name": [
         "名前を設定してください"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "あなたのアカウントあるいは組織には支払い期限の過ぎた請求があります。全ての未払いの請求をお支払いください。"
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -2699,11 +2705,11 @@
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } イベントが暗号化され、カレンダーに追加されました"
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "イベントの暗号化と追加中にエラーが発生しました。${ totalToImport } のうち{ totalImported } のイベントのインポートに成功しました。"
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
@@ -3027,7 +3033,7 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         ""
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -3173,9 +3179,6 @@
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
-      "Activate your recovery phrase": [
-        ""
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "あなたのアカウントに@pm.meメールアドレスを追加します。このシンプルな短縮ドメインは「ProtonMail」または「Private Message me」の略です。"
       ],
@@ -3203,7 +3206,7 @@
       "Addresses": [
         "アドレス"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
         ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
@@ -3226,6 +3229,12 @@
       ],
       "All your changes will be lost.": [
         "変更内容は全て失われます。"
+      ],
+      "Allow recovery by email": [
+        ""
+      ],
+      "Allow recovery by phone": [
+        ""
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "john.smith@example.com のような自分のドメインを ${ mailAppName } でホストできます。"
@@ -3263,8 +3272,8 @@
       "Are you sure you want to delete this filter?": [
         "このフィルターを削除してよろしいですか？"
       ],
-      "Are you sure you want to delete this folder?": [
-        "このフォルダーを削除してよろしいですか?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        ""
       ],
       "Are you sure you want to delete this label?": [
         "このラベルを削除してよろしいですか?"
@@ -3464,13 +3473,13 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "ダウングレードすると有料の ProtonVPN サーバーとの接続が終了します。"
       ],
+      "Download recovery file": [
+        ""
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        ""
-      ],
-      "Download your recovery file": [
         ""
       ],
       "Drop the file here to upload": [
@@ -3822,7 +3831,7 @@
         "${ BRAND_NAME } を初めて利用する場合: ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "次のステップで Google アカウントにログインし、データへのアクセスを許可してください。"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         ""
@@ -3904,6 +3913,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "組織に他に管理者がいる場合、その人に新しいパスワードを伝えるのはあなたの責任です。"
+      ],
+      "Outdated recovery file; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        ""
       ],
       "P2P": [
         "P2P"
@@ -4085,6 +4103,9 @@
       "Session timed out.": [
         "セッションがタイムアウトしました。"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
@@ -4220,6 +4241,15 @@
       "to continue to ${ toAppName }": [
         "サインイン後 ${ toAppName } を開きます"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        ""
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         ""
       ],
@@ -4273,6 +4303,12 @@
       ],
       "Unsupported file": [
         "非対応のファイル"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "${ PLAN_NAMES[PLANS.VISIONARY] } または ${ PLAN_NAMES[PLANS.PROFESSIONAL] } プランにアップグレードすることで不在の場合に自動リプライを有効にすることができます。"
@@ -4368,7 +4404,7 @@
         ""
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Google アカウントから何をインポートしますか？"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         ""
@@ -5075,7 +5111,7 @@
         "BTC 金額:"
       ],
       "Calendars": [
-        ""
+        "カレンダー"
       ],
       "Cancel": [
         "キャンセル"
@@ -5129,7 +5165,7 @@
         "パスワードの確認"
       ],
       "Contacts": [
-        ""
+        "連絡先"
       ],
       "Conversation grouping": [
         "会話のグループ化"
@@ -5222,7 +5258,7 @@
         "メールアドレスまたはユーザー名"
       ],
       "Emails": [
-        ""
+        "電子メール"
       ],
       "End date": [
         "終了日"
@@ -7163,8 +7199,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain }がクリップボードにコピーされました"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "アカウントは削除されました。ログアウト中..."
@@ -7955,7 +7991,7 @@
         ""
       ],
       "Password & security": [
-        ""
+        "パスワードとセキュリティ"
       ],
       "Passwords": [
         "パスワード"
@@ -8072,7 +8108,7 @@
         ""
       ],
       "Select what to import": [
-        ""
+        "インポートするものを選択"
       ],
       "Select when you want this notification to be sent": [
         ""
@@ -8727,10 +8763,10 @@
       "You will not see this import record in the list anymore.": [
         ""
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         ""
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         ""
       ]
     },

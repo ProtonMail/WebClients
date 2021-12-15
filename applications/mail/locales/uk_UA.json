@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Accept": [
-        "Схвалити"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "Activate recovery": [
+        "Активувати відновлення"
       ],
       "Add": [
         "Додати"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Додати нову групу"
+      ],
+      "Add participant": [
+        "Додати учасника"
       ],
       "Add phone number": [
         "Додати номер телефону"
@@ -179,8 +182,8 @@
       "Confirm": [
         "Підтвердити"
       ],
-      "Confirm opening of link ${ link }": [
-        "Підтвердити відкриття посилання ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Підтвердити відкриття посилання ${ linkToShow }"
       ],
       "Contact group": [
         "Група контактів"
@@ -549,7 +552,7 @@
         "Перемістити до смітника"
       ],
       "Move to...": [
-        "Перемістити до..."
+        "Перемістити..."
       ],
       "Never show": [
         "Ніколи не показувати"
@@ -752,6 +755,9 @@
       "Set expiration time": [
         "Вказати термін дії"
       ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
+      ],
       "Share via link": [
         "Спільний доступ за посиланням"
       ],
@@ -830,9 +836,6 @@
       "This message contains embedded images.": [
         "Це повідомлення містить вбудовані зображення."
       ],
-      "This message contains remote content.": [
-        "Це повідомлення містить зовнішній вміст."
-      ],
       "Trust": [
         "Довіряти"
       ],
@@ -877,6 +880,12 @@
       ],
       "Update": [
         "Оновити"
+      ],
+      "Update recovery file": [
+        "Оновити файл відновлення"
+      ],
+      "Update recovery phrase": [
+        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -973,6 +982,17 @@
         "У вас немає жодної групи."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } адреса електронної пошти",
@@ -1041,8 +1061,11 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems } з ${ totalNumberOfChecklistItems } виконано"
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано",
+        "${ numberOfCompletedItems }/{ totalNumberOfChecklistItems } виконано",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано"
       ]
     },
     "Apps dropdown": {
@@ -1324,6 +1347,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Ця відповідь не збігається з подробицями вашого запрошення. Перевірте подробиці запрошення у своєму календарі."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } приймає ваше запрошення і пропонує новий час для одного повторення цієї події."
       ],
@@ -1345,6 +1380,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } запитує про оновлення для події, якої більше не існує у вашому календарі."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } відхиляє ваше запрошення і пропонує новий час для одного повторення цієї події."
       ],
@@ -1357,11 +1404,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } відхиляє ваше запрошення."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } приймає ваше запрошення і пропонує новий час для одного повторення цієї події. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } приймає ваше запрошення і пропонує новий час для цієї події. Відповідь і пропозиція застарілі."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } відхиляє ваше запрошення і пропонує новий час для одного повторення цієї події. Відповідь і пропозиція застарілі."
@@ -1405,17 +1476,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } пропонує новий час для цієї події. Ця пропозиція застаріла. У вас немає календарів."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } приймає ваше запрошення і пропонує новий час для одного повторення цієї події, але сумнівається, що відвідає. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } приймає ваше запрошення і пропонує новий час для цієї події, але сумнівається, що відвідає. Відповідь і пропозиція застарілі."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } пропонує новий час для одного повторення цієї події."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } пропонує новий час для цієї події."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } приймає із сумнівом ваше запрошення і пропонує новий час для одного повторення цієї події."
@@ -1438,20 +1536,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Додано повторення для події ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        "Подія вже завершилася"
-      ],
-      "Event in progress": [
-        "Подія триває"
-      ],
       "Event refreshing is not supported for the moment": [
         "Оновлення події наразі не підтримується"
       ],
       "Event rescheduling is not supported for the moment": [
         "Повторне планування події наразі не підтримується"
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "Відправника цього листа не запрошено на цю подію, тому його неможливо додати учасником"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Цю відповідь не можна додати до ${ calendarAppName }, тому що наразі підтримуються лише відповіді на всі події в серії"
@@ -1525,6 +1614,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Понад 12 годин минуло після попередньої синхронізації"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "Подія вже завершилася"
+      ],
+      "Event in progress": [
+        "Подія триває"
       ]
     },
     "Collapsible tooltip": {
@@ -1791,10 +1888,10 @@
     },
     "Density mode": {
       "Comfortable": [
-        "Комфортний"
+        "Комфортно"
       ],
       "Compact": [
-        "Компактний"
+        "Компактно"
       ]
     },
     "Description": {
@@ -1919,12 +2016,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        "Подія вже завершилася"
-      ],
-      "Event in progress": [
-        "Подія триває"
-      ],
       "Event is tomorrow": [
         "Подія на завтра"
       ],
@@ -2430,7 +2521,24 @@
         "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        "Для одного запрошення дозволяється не більше 100 учасників"
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Цю дію неможливо виконати"
       ]
@@ -2588,6 +2696,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Жодного зображення не вибрано"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2760,6 +2873,12 @@
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         "Завершіть усі кроки та отримайте всього ${ totalGBStorageAfterCompletion } ГБ для свого облікового запису"
+      ],
+      "Expires soon": [
+        "Скоро завершується"
+      ],
+      "Expires today": [
+        "Завершується сьогодні"
       ],
       "Only ${ days } day left": [
         "Лишився всього ${ days } день",
@@ -3326,7 +3445,7 @@
       "Are you sure you want to permanently delete this message?": [
         "Ви дійсно бажаєте остаточно видалити це повідомлення?"
       ],
-      "Attach Public Key": [
+      "Attach public key": [
         "Приєднати відкритий ключ"
       ],
       "Background color": [
@@ -3926,8 +4045,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Звітуючи про спробу шахрайства, ви надішлете це повідомлення нам, щоб ми змогли його проаналізувати та вдосконалити наші фільтри. Це означає, що ми матимемо змогу переглянути весь вміст цього повідомлення."
       ],
-      "Request Read Receipt": [
-        "Запит підтвердження прочитання"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "Справа наліво"
@@ -4335,16 +4454,16 @@
         "Тут порожньо"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "У вашій поштовіій скриньці ${ totalLabel }."
+        "У вашій поштовій скриньці ${ totalLabel }."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "У вашій поштовіій скриньці ${ unreadsLabel }."
+        "У вашій поштовій скриньці ${ unreadsLabel }."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "У цій теці розміщена **${ count } розмова**",
-        "У цій теці розміщено **${ count } розмови**",
+        "У цій теці розміщені **${ count } розмови**",
         "У цій теці розміщено **${ count } розмов**",
-        "У цій теці розміщено **${ count } розмов**"
+        "У цій теці розміщені **${ count } розмови**"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "**${ count } розмова** позначена цією міткою",
@@ -4353,10 +4472,10 @@
         "**${ count } розмов** позначені цією міткою"
       ],
       "You have **${ count } message** stored in this folder": [
-        "У цій теці міститься **${ count } повідомлення**",
-        "У цій теці міститься **${ count } повідомлення**",
-        "У цій теці міститься **${ count } повідомлень**",
-        "У цій теці міститься **${ count } повідомлень**"
+        "У цій теці розміщено **${ count } повідомлення**",
+        "У цій теці розміщено **${ count } повідомлення**",
+        "У цій теці розміщено **${ count } повідомлень**",
+        "У цій теці розміщено **${ count } повідомлення**"
       ],
       "You have **${ count } message** tagged with this label": [
         "**${ count } повідомлення** позначене цією міткою",
@@ -4625,16 +4744,16 @@
         "Перемістити вправо / розгорнути"
       ],
       "Move to Archive": [
-        "Перемістити до Архіву"
+        "Перемістити до архіву"
       ],
       "Move to Inbox": [
-        "Перемістити до Вхідних"
+        "Перемістити до вхідних"
       ],
       "Move to Spam": [
-        "Перемістити до Спаму"
+        "Перемістити до спаму"
       ],
       "Move to Trash": [
-        "Перемістити до Смітника"
+        "Перемістити до смітника"
       ],
       "Move to...": [
         "Перемістити..."
@@ -4788,6 +4907,9 @@
       "BTC amount:": [
         "Сума в BTC:"
       ],
+      "Calendar": [
+        "Календар"
+      ],
       "Calendars": [
         "Календарі"
       ],
@@ -4887,6 +5009,9 @@
       "Folder location": [
         "Розташування теки"
       ],
+      "Frequency": [
+        "Частота"
+      ],
       "From": [
         "Від"
       ],
@@ -4944,6 +5069,9 @@
       "Last month only": [
         "Лише останній місяць"
       ],
+      "Location": [
+        "Розташування"
+      ],
       "Mailbox password": [
         "Пароль поштової скриньки"
       ],
@@ -4963,7 +5091,7 @@
         "Пароль повідомлення"
       ],
       "Move to": [
-        "Перемістити до"
+        "Перемістити"
       ],
       "Name": [
         "Назва"
@@ -4991,6 +5119,9 @@
       ],
       "Or": [
         "Або"
+      ],
+      "Participants": [
+        "Учасники"
       ],
       "Password": [
         "Пароль"
@@ -5172,10 +5303,10 @@
     },
     "Label to change density": {
       "Comfortable": [
-        "Комфортний"
+        "Комфортно"
       ],
       "Compact": [
-        "Компактний"
+        "Компактно"
       ]
     },
     "Label to change view layout": {
@@ -5918,7 +6049,7 @@
         "Назва"
       ],
       "Name or email address": [
-        "Назва чи адреса е-пошти"
+        "Ім'я чи адреса е-пошти"
       ],
       "OS name": [
         "Назва ОС"
@@ -7005,6 +7136,9 @@
       "Email addresses": [
         "Адреси е-пошти"
       ],
+      "Email content": [
+        "Вміст листа"
+      ],
       "Email settings": [
         "Налаштування е-пошти"
       ],
@@ -7070,9 +7204,6 @@
       ],
       "Link confirmation": [
         "Підтвердження посилання"
-      ],
-      "Load embedded images": [
-        "Завантажити вбудовані зображення"
       ],
       "Load remote content": [
         "Завантажити зовнішній вміст"
@@ -7250,6 +7381,9 @@
       ],
       "Sign in again to continue": [
         "Увійдіть знову для продовження"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Впорядкувати розмови"

@@ -14,17 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "Accept": [
-        "Acceptér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "Activate recovery": [
+        "Aktiver gendannelse"
       ],
       "Add": [
         "Tilføj"
       ],
       "Add address": [
-        ""
+        "Tilføj adresse"
       ],
       "Add condition": [
         "Tilføj betingelse"
@@ -33,7 +33,7 @@
         "Tilføj kontakt"
       ],
       "Add email": [
-        ""
+        "Tilføj e-mail"
       ],
       "Add group": [
         "Tilføj gruppe"
@@ -44,8 +44,11 @@
       "Add new group": [
         "Tilføj ny gruppe"
       ],
-      "Add phone number": [
+      "Add participant": [
         ""
+      ],
+      "Add phone number": [
+        "Tilføj telefonnummer"
       ],
       "Add screenshot(s)": [
         "Tilføj skærmfoto(s)"
@@ -179,8 +182,8 @@
       "Confirm": [
         "Bekræft"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bekræft åbning af link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -746,6 +749,9 @@
       "Set expiration time": [
         "Indstil udløbstidspunkt"
       ],
+      "Set recovery phrase": [
+        "Opsæt gendannelsessætning"
+      ],
       "Share via link": [
         "Del via link"
       ],
@@ -824,9 +830,6 @@
       "This message contains embedded images.": [
         "Denne besked indeholder indlejrede billeder."
       ],
-      "This message contains remote content.": [
-        "Denne besked indeholder eksternt indhold."
-      ],
       "Trust": [
         "Hav tillid til"
       ],
@@ -869,6 +872,12 @@
       ],
       "Update": [
         "Opdatér"
+      ],
+      "Update recovery file": [
+        "Opdater gendannelsesfil"
+      ],
+      "Update recovery phrase": [
+        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -965,6 +974,17 @@
         "Du har ikke nogen grupper."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } e-mailadresse",
@@ -1025,8 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems } af ${ totalNumberOfChecklistItems } udført"
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } udført",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } udført"
       ]
     },
     "Apps dropdown": {
@@ -1308,6 +1329,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Dette svar matcher ikke dine invitationsdetaljer. Kontroller invitationsoplysningerne i din kalender."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } accepterede din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed."
       ],
@@ -1329,6 +1362,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } bad om de seneste opdateringer til en begivenhed, der ikke findes i din kalender længere."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } afslog din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed."
       ],
@@ -1341,11 +1386,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } afslog din invitation."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } accepterede din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } accepterede din invitation og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } afslog din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
@@ -1389,17 +1458,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } havde foreslået en ny tid til denne begivenhed. Dette forslag er forældet. Du har ingen kalendere."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } accepterede din invitation med forbehold og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } accepterede din invitation med forbehold og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } foreslog et nyt tidspunkt for én forekomst af denne begivenhed."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } foreslog et nyt tidspunkt for denne begivenhed."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } accepterede din invitation med forbehold og foreslog et nyt tidspunkt for én forekomst af denne begivenhed."
@@ -1422,20 +1518,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "En forekomst er blevet tilføjet begivenheden ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        "Begivenhed allerede afsluttet"
-      ],
-      "Event in progress": [
-        "Begivenhed i gang"
-      ],
       "Event refreshing is not supported for the moment": [
         "Opdatering af begivenheder understøttes ikke i øjeblikket"
       ],
       "Event rescheduling is not supported for the moment": [
         "Flytning af begivenheder understøttes ikke i øjeblikket"
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "Afsenderen af denne e-mail er ikke blevet inviteret til denne begivenhed og kan ikke tilføjes som deltager"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Dette svar kan ikke tilføjes til ${ calendarAppName } , da vi i øjeblikket kun understøtter svar på alle begivenheder i en serie"
@@ -1509,6 +1596,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Der er gået mere end 12 timer siden den seneste opdatering"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
       ]
     },
     "Collapsible tooltip": {
@@ -1889,12 +1984,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        "Begivenhed allerede afsluttet"
-      ],
-      "Event in progress": [
-        "Begivenhed i gang"
-      ],
       "Event is tomorrow": [
         "Begivenhed er i morgen"
       ],
@@ -2378,7 +2467,24 @@
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Denne handling kan ikke udføres"
       ]
@@ -2536,6 +2642,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2708,6 +2819,12 @@
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         "Gennemfør alle trin og få i alt ${ totalGBStorageAfterCompletion } GB på din konto"
+      ],
+      "Expires soon": [
+        "Udløber snart"
+      ],
+      "Expires today": [
+        "Udløber i dag"
       ],
       "Only ${ days } day left": [
         "Kun ${ days } dag tilbage",
@@ -3192,7 +3309,7 @@
       "Are you sure you want to permanently delete this message?": [
         "Er du sikker på, at du vil slette denne besked permanent?"
       ],
-      "Attach Public Key": [
+      "Attach public key": [
         "Vedhæft offentlig nøgle"
       ],
       "Background color": [
@@ -3770,8 +3887,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Rapporteres en besked som et phishing-forsøg videresendes beskeden til os, så vi kan analysere den og forbedre vores filtre. Det betyder, at vi vil kunne se hele beskedindholdet."
       ],
-      "Request Read Receipt": [
-        "Anmod om læsekvittering"
+      "Request read receipt": [
+        "Anmod om kvittering for læsning"
       ],
       "Right to Left": [
         "Højre mod venstre"
@@ -4554,7 +4671,7 @@
         "${ firstAddress } og ${ count } andre"
       ],
       "(Coming soon)": [
-        ""
+        "(Kommer snart)"
       ],
       "Actions": [
         "Handlinger"
@@ -4609,6 +4726,9 @@
       ],
       "BTC amount:": [
         "BTC-beløb:"
+      ],
+      "Calendar": [
+        "Kalender"
       ],
       "Calendars": [
         "Kalendere"
@@ -4709,6 +4829,9 @@
       "Folder location": [
         "Mappeplacering"
       ],
+      "Frequency": [
+        "Frekvens"
+      ],
       "From": [
         "Fra"
       ],
@@ -4766,6 +4889,9 @@
       "Last month only": [
         "Kun seneste måned"
       ],
+      "Location": [
+        "Placering"
+      ],
       "Mailbox password": [
         "Postkasseadgangskode"
       ],
@@ -4813,6 +4939,9 @@
       ],
       "Or": [
         "Eller"
+      ],
+      "Participants": [
+        "Deltagere"
       ],
       "Password": [
         "Adgangskode"
@@ -6727,6 +6856,9 @@
       "Email addresses": [
         "E-mailadresser"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "E-mail indstillinger"
       ],
@@ -6792,9 +6924,6 @@
       ],
       "Link confirmation": [
         "Linkbekræftelse"
-      ],
-      "Load embedded images": [
-        "Indlæs indlejrede billeder"
       ],
       "Load remote content": [
         "Indlæs eksternt indhold"
@@ -6972,6 +7101,9 @@
       ],
       "Sign in again to continue": [
         "Log ind igen for at fortsætte"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Sorter samtaler"

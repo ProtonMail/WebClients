@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Aktivovat klíč organizace"
       ],
+      "Activate recovery": [
+        "Aktivovat obnovení"
+      ],
       "Add": [
         "Přidat"
       ],
@@ -341,7 +344,7 @@
         "Vygenerovat klíč"
       ],
       "Generate new recovery phrase": [
-        ""
+        "Vygenerovat novou obnovovací frázi"
       ],
       "Generate new recovery phrase?": [
         ""
@@ -383,7 +386,7 @@
         "Importovat kontakty"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importovat z .csv nebo vCard"
       ],
       "Import from .ics": [
         "Importovat z .ics"
@@ -622,6 +625,9 @@
       "Set catch-all": [
         "Nastavení doménového koše"
       ],
+      "Set recovery phrase": [
+        "Nastavit obnovovací frázi"
+      ],
       "Share via link": [
         "Sdílet přes odkaz"
       ],
@@ -734,10 +740,10 @@
         "Aktualizovat"
       ],
       "Update recovery file": [
-        ""
+        "Aktualizovat soubor pro obnovení"
       ],
       "Update recovery phrase": [
-        ""
+        "Aktualizovat obnovovací frázi"
       ],
       "Upgrade": [
         "Vylepšit"
@@ -826,7 +832,7 @@
       "+ ${ addresses } email address": [
         "+ ${ addresses } e-mailová adresa",
         "+ ${ addresses } e-mailové adresy",
-        "+ ${ addresses } emailových adres",
+        "+ ${ addresses } e-mailových adres",
         "+ ${ addresses } e-mailových adres"
       ],
       "+ ${ domains } custom domain": [
@@ -931,7 +937,7 @@
         "Smazání Vašich klíčů se nedá vrátit zpět. Pro přístup ke zprávám zašifrovaným pomocí tohoto klíče by jste si měli udělat jeho záložní kopii pro případné pozdější použití."
       ],
       "You will face a permanent data loss by not making a backup of your key.": [
-        ""
+        "Pokud nebudete svůj klíč zálohovat, může to mít za následek trvalou ztrátu dat."
       ]
     },
     "alert": {
@@ -1313,7 +1319,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
+        "Soubory ICS můžete importovat z jiného kalendáře do ${ CALENDAR_APP_NAME }. To vám umožní rychle importovat jednu událost nebo celý váš program."
       ]
     },
     "Calendar limit warning": {
@@ -1650,7 +1656,7 @@
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        ""
+        "Také jsme automaticky porovnali pole CSV s poli vCard. Toto přiřazování můžete zkontrolovat a změnit ručně."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Zaznamenali jsme následující položky v CSV, které jste nahrály. Zkontrolujte ty, které chcete importovat."
@@ -1792,13 +1798,13 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from Proton?": [
-        "Který emaily chcete dostávat od služeb Proton?"
+        "Který e-maily chcete dostávat od služeb Proton?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
-        "Znovu přihlášení k ${ categoriesJsx } emailům."
+        "Znovu přihlášení k ${ categoriesJsx } e-mailům."
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Přihlásili jste se znovu k ${ categoriesJsx } emailům."
+        "Přihlásili jste se znovu k ${ categoriesJsx } e-mailům."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -1856,7 +1862,7 @@
         "Nelze ověřit telefon, opakujte akci později"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Objednávka vypršela, zkuste to prosím znovu"
       ],
       "Condition incomplete": [
         "Neúplná podmínka"
@@ -1886,7 +1892,7 @@
         "E-mailová adresa je neplatná"
       ],
       "Email is not valid": [
-        "Emailová adresa není platná"
+        "E-mailová adresa není platná"
       ],
       "Empty condition": [
         "Prázdná podmínka"
@@ -1946,7 +1952,7 @@
         "Neplatné datum expirace"
       ],
       "Invalid invitation link": [
-        ""
+        "Neplatný odkaz pozvánky"
       ],
       "Invalid name": [
         "Neplatné jméno"
@@ -2039,7 +2045,7 @@
         ""
       ],
       "Please generate keys before you try to change your password": [
-        ""
+        "Než se pokusíte změnit heslo, vytvořte si prosím klíče"
       ],
       "Please refresh the page.": [
         "Prosím obnovte stránku."
@@ -2051,7 +2057,7 @@
         "Nejprve prosím zadejte telefonní číslo pro obnovení"
       ],
       "Please set a recovery/notification email first": [
-        "Nejprve prosím zadejte emailovou adresu pro obnovení a zasílání upozornění"
+        "Nejprve prosím zadejte e-mailovou adresu pro obnovení a zasílání upozornění"
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Zkuste se znovu ověřit a zkontrolujte, zda jsou oprávnění nastavena správně."
@@ -2206,7 +2212,7 @@
       "You must set a name": [
         "Musíte zadat jméno"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "U Vašeho účtu nebo organizaci jsou vedeny faktury po splatnosti. Zaplaťte prosím všechny neuhrazené faktury."
       ],
       "Your import will not be processed.": [
@@ -2341,7 +2347,7 @@
         "Chybějící počáteční čas"
       ],
       "No UID, title or start time": [
-        ""
+        "Žádný UID, název nebo čas zahájení"
       ],
       "Non-Gregorian": [
         "Ne-Gregoriánský"
@@ -2394,7 +2400,7 @@
         "Prosím ${ refresh } nebo zkontrolujte své připojení."
       ],
       "Please ${ signIn } to update your email subscription preferences.": [
-        "Prosím ${ signIn } proveďte akualizaci předvolby předplatného emailu."
+        "Prosím ${ signIn } proveďte akualizaci předvolby předplatného e-mailu."
       ],
       "There was a problem connecting to Proton.": [
         "Při připojování k Proton došlo k chybě."
@@ -2484,7 +2490,7 @@
         "Šifrování událostí z kalendáře: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        ""
+        "Z důvodu obnovy hesla, žádné z událostí nemohly být dešifrovány a exportovány."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "Z důvodu obnovy hesla, některé události nebylo možné šifrovat a exportovat."
@@ -2514,7 +2520,7 @@
         "Některé události nemohly být exportovány."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        ""
+        "Internetové připojení bylo přerušeno, selháním procesu exportu. Prosím, zkuste to znovu."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Můžete uložit ICS soubor nebo událost, které byly úspěšně exportovány."
@@ -2649,10 +2655,10 @@
         "(1 e-mail měsíčně)"
       ],
       "(1 email per quarter)": [
-        "(1 email čtvrtletně)"
+        "(1 e-mail čtvrtletně)"
       ],
       "(1-2 emails per month)": [
-        "(1-2 emaily měsíčně)"
+        "(1-2 e-maily měsíčně)"
       ]
     },
     "Group": {
@@ -2771,14 +2777,17 @@
         "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
         ""
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Nastal problém při šifrování a editaci události. Událost nemůže být importována.",
         "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány.",
         "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány.",
         "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávaní kontaktů: ${ totalImported }/${ totalToImport }"
@@ -2895,7 +2904,7 @@
         "Pokud ${ bold2StepsEnabled } v Gmailu, ujistěte se, že používáte Vaše heslo pro aplikaci namísto svého běžného hesla."
       ],
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Pokud ${ bold2StepsEnabled }, ujistěte se prosím, že Vaše adresa emailu a heslo aplikace jsou správné. Proveďte ${ boldNot } použijte běžné heslo."
+        "Pokud ${ bold2StepsEnabled }, ujistěte se prosím, že Vaše adresa e-mailu a heslo aplikace jsou správné. Proveďte ${ boldNot } použijte běžné heslo."
       ],
       "IMAP access is enabled in your external account": [
         ""
@@ -2916,7 +2925,7 @@
         "Proton se nemůže připojit k vašemu účtu. Ujistěte se, že:"
       ],
       "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton se nemůže připojit k Vašemu externímu účtu. Ujistěte se prosím, že adresa emailu a číslo portu jsou správná."
+        "Proton se nemůže připojit k Vašemu externímu účtu. Ujistěte se prosím, že adresa e-mailu a číslo portu jsou správná."
       ],
       "Proton can't connect to your external account. Please make sure that:": [
         "Proton se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se, že:"
@@ -3123,7 +3132,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } mimo ${ totalContacts } kontakty nebudou nahrané. Klikněte pro detaily"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
+        "",
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -3133,7 +3145,7 @@
         ""
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        ""
+        "Část obsahu kalendáře není podporován a nebude naimportován."
       ]
     },
     "Info": {
@@ -3320,9 +3332,6 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
-      "Activate your recovery phrase": [
-        ""
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"ProtonMail me\" nebo \"Private Message me.\""
       ],
@@ -3353,8 +3362,8 @@
       "Addresses": [
         "Adresy"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Po obnovení hesla jsou Vaše data uzamčena v zašifrované podobě, aby byla v bezpečí. K dešifrování a zobrazení e-mailů a dalších dat potřebujete soubor pro obnovení nebo frázi pro obnovení."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         ""
@@ -3382,6 +3391,12 @@
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
+      ],
+      "Allow recovery by email": [
+        "Povolit obnovení e-mailem"
+      ],
+      "Allow recovery by phone": [
+        "Povolit obnovení telefonem"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Umožňuje hostovat e-maily pro Vaši(e) vlastní doménu(y) na ${ mailAppName }, např. jan.smith@example.com"
@@ -3419,8 +3434,8 @@
       "Are you sure you want to delete this filter?": [
         "Opravdu chcete odstranit tento filtr?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Opravdu chcete smazat tuto složku?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        ""
       ],
       "Are you sure you want to delete this label?": [
         "Jste si jisti, že chcete odstranit tento štítek?"
@@ -3552,7 +3567,7 @@
         "Vytvořte e-mailové adresy pro ostatní lidi, spravujte ProtonMail pro podnikání, školu nebo skupinu. Začněte přidáním názvu Vaší organizace a vlastní domény (např. @vasefirma.cz). "
       ],
       "Create in": [
-        ""
+        "Vytvořit v"
       ],
       "Creating your Proton account": [
         "Vytváření Vašeho Proton účtu"
@@ -3570,19 +3585,19 @@
         "Vlastní"
       ],
       "Custom daily": [
-        ""
+        "Denní zvyk"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
         "Vlastní filtry fungují na všech nových e-mailech, včetně příchozích i odchozích e-mailů. Filtry mohou být editovány a vytvořeny přímo prostřednictvím programovacího jazyka Sieve."
       ],
       "Custom monthly": [
-        ""
+        "Měsíční zvyk"
       ],
       "Custom weekly": [
-        ""
+        "Týdenní zvyk"
       ],
       "Custom yearly": [
-        ""
+        "Roční zvyk"
       ],
       "Daily": [
         "Denně"
@@ -3626,14 +3641,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Změnou plánu ukončíte všechna spojení s placenými ProtonVPN servery."
       ],
+      "Download recovery file": [
+        "Stáhnout soubor pro obnovení"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Stáhněte si Vaše PGP klíče pro použití v jiných službách kompatibilních s PGP."
-      ],
-      "Download your recovery file": [
-        "Stáhněte si Váš soubor pro obnovení"
       ],
       "Drop the file here to upload": [
         "Přetažením sem nahrajte soubor"
@@ -3654,10 +3669,10 @@
         "Nastavení e-mailu uloženo"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Emaily uložené v tomto souboru nebudou vymazány a je možné je stále nalézt v souboru Všechna Pošta."
+        "E-maily uložené v tomto souboru nebudou vymazány a je možné je stále nalézt v souboru Všechna Pošta."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Označený email s touto složkou nebude vymazán a je možné jej nalézt v příslušném souboru."
+        "Označený e-mail s touto složkou nebude vymazán a je možné jej nalézt v příslušném souboru."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         ""
@@ -3741,7 +3756,7 @@
         "Plně vybavená VPN s rychlostí až 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        ""
+        "Vygenerováním nové obnovovací fráze bude deaktivovaná stará."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dejte svůj veřejný klíč svým přátelům nebo jej publikujte online, aby vám každý mohl poslat end-to-end šifrovaný e-mail!"
@@ -3819,7 +3834,7 @@
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "",
@@ -3828,7 +3843,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importovat z"
       ],
       "Import in progress": [
         "Import probíhá"
@@ -3984,13 +3999,13 @@
         "Nové"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
-        ""
+        "Nováček v ${ BRAND_NAME }? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        ""
+        "Není nastavena žádná metoda obnovení účtu; riskujete ztrátu přístupu k Vašemu účtu"
       ],
       "No action selected": [
         "Není vybrána žádná akce"
@@ -4069,6 +4084,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Ve vaší organizaci existují ostatní správci, vaší povinností je sdělit jim nové heslo."
+      ],
+      "Outdated recovery file; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        ""
       ],
       "P2P": [
         "P2P"
@@ -4203,7 +4227,7 @@
         "Obnovovací fráze bude deaktivována"
       ],
       "Recovery phrase is not associated with any keys.": [
-        ""
+        "Fráze pro obnovení není spojena s žádnými klíči."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fráze pro obnovení není spojena s žádnými zastaralými klíči."
@@ -4248,10 +4272,13 @@
         "Vytížení serveru"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Servery nejsou dostupné. Prosím zkuste to znovu za pár minut"
       ],
       "Session timed out.": [
         "Relace vypršela."
+      ],
+      "Set recovery phrase": [
+        "Nastavit obnovovací frázi"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -4388,6 +4415,15 @@
       "to continue to ${ toAppName }": [
         "pokračovat do ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        ""
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         ""
       ],
@@ -4441,6 +4477,12 @@
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
+      ],
+      "Update recovery file": [
+        "Aktualizovat soubor pro obnovení"
+      ],
+      "Update recovery phrase": [
+        "Aktualizovat obnovovací frázi"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         ""
@@ -4575,7 +4617,7 @@
         ""
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Můžete zkontrolovat průběh ${ importProgressLink }."
       ],
       "You can continue using Proton services as usual.": [
         "Můžete pokračovat v používání Protonu jako obvykle."
@@ -4593,7 +4635,7 @@
         ""
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový email."
+        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
       "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
         "ProtonMail můžete použít s jakýmkoliv desktopovým e-mailovým klientem, který podporuje IMAP/SMTP, včetně Outlook, Apple Mail a Thunderbird."
@@ -4779,7 +4821,7 @@
     },
     "Info for members section": {
       "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Přidejte, odstraňte a spravujte uživatelé své organizace. Zde můžete upravit jejich přidělené místo úložiště, udělení práva správce a další. Vyberte uživatele ke správě jejich emailových adres. Emailová adresa uvedená v seznamu nahoře bude automaticky vybrána jako hlavní emailová adresa."
+        "Přidejte, odstraňte a spravujte uživatelé své organizace. Zde můžete upravit jejich přidělené místo úložiště, udělení práva správce a další. Vyberte uživatele ke správě jejich e-mailových adres. E-mailová adresa uvedená v seznamu nahoře bude automaticky vybrána jako hlavní e-mailová adresa."
       ]
     },
     "Info for payment methods": {
@@ -4799,7 +4841,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        ""
+        "Abyste se vyvarovali přerušení služeb z důvodu neuhrazených faktur, prosím zajistěte si, že máte alespoň 1 uloženou platební metodu."
       ]
     },
     "information": {
@@ -5052,16 +5094,16 @@
         "Vybrat vše/zrušit výběr všeho"
       ],
       "Send email": [
-        "Odeslat email"
+        "Odeslat e-mail"
       ],
       "Show all emails": [
-        "Zobrazit všechny emaily"
+        "Zobrazit všechny e-maily"
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
       ],
       "Show unread emails": [
-        "Zobrazit nepřečtené emaily"
+        "Zobrazit nepřečtené e-maily"
       ],
       "Star": [
         "Hvězdička"
@@ -5148,9 +5190,9 @@
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "",
-        "${ UsedAddresses } o ${ MaxAddresses } adres emailů",
-        "${ UsedAddresses } o ${ MaxAddresses } adres emailů",
-        "${ UsedAddresses } o ${ MaxAddresses } adres emailů"
+        "${ UsedAddresses } o ${ MaxAddresses } adres e-mailů",
+        "${ UsedAddresses } o ${ MaxAddresses } adres e-mailů",
+        "${ UsedAddresses } o ${ MaxAddresses } adres e-mailů"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "",
@@ -5690,7 +5732,7 @@
         "Soubor pro obnovení"
       ],
       "Recovery phone number": [
-        ""
+        "Telefonní číslo pro obnovení"
       ],
       "Recovery phrase": [
         "Obnovovací fráze"
@@ -6221,7 +6263,7 @@
         "Získejte podporu pro více uživatelů"
       ],
       "Host emails for your organization": [
-        "Spousta šifrovaných emailů pro Vaši organizaci"
+        "Spousta šifrovaných e-mailů pro Vaši organizaci"
       ]
     },
     "Many Others": {
@@ -7011,7 +7053,7 @@
         "Vestavěný Adblocker (NetShield)"
       ],
       "Custom email addresses": [
-        "Vlastní emailové adresy"
+        "Vlastní e-mailové adresy"
       ],
       "Early access to new products": [
         "Předběžný přístup k novým produktům"
@@ -7379,8 +7421,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } zkopírováno do Vaší schránky"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Účet byl smazán. Odhlašování..."
@@ -7446,7 +7488,7 @@
         "Kód kupónu byl použit"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Pokud jste zadali platný obnovovací email, email s Vaším uživatelským jménem zašleme v dalším okamžiku."
+        "Pokud jste zadali platný obnovovací e-mail, e-mail s Vaším uživatelským jménem zašleme v dalším okamžiku."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Pokud jste zadali pro obnovení platný telefonní číslo, zašleme Vám sms s Vaším uživatelským jménem v dalším momentě."
@@ -7994,7 +8036,7 @@
         "E-mail"
       ],
       "Email encryption keys": [
-        "Šifrovací klíče emailu"
+        "Šifrovací klíče e-mailu"
       ],
       "Email privacy": [
         ""
@@ -8573,7 +8615,7 @@
         "Umožňuje hosting e-mailů pro Vaši vlastní doménu(y) na ${ mailAppName }, např. jan.smith@example.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hostovat emaily pro Vaši(e) vlastní doménu(y) v ProtonMailu, např. john.smith@example.com"
+        "Hostovat e-maily pro Vaši(e) vlastní doménu(y) v ProtonMailu, např. john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Pokud jste zakoupil dárkový kód nebo jste je obdržel od naší podpory, můžete ho vložit sem."
@@ -8615,7 +8657,7 @@
         "Tato adresa byla zakázána"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        ""
+        "Tato funkce zpožďuje posílání Vašich e-mailů, dává možnost přerušit zasílání zprávy, která už byla na cestě a vrátit ji zpět."
       ],
       "This feature is only available for paid users": [
         "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
@@ -8645,7 +8687,7 @@
         "Když přidáte štítek ke zprávě v konverzaci, bude automaticky aplikován na všechny budoucí zprávy, které v této konverzaci odešlete nebo obdržíte."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        ""
+        "Jakmile kliknete odkaz, funkce anti-phishing Vás vyzve k odsouhlasení URL webové stránky."
       ],
       "You do not have any contacts to export": [
         "Nemáte žádné kontakty k exportu"
@@ -8675,7 +8717,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "V momentě kdy obdržíte email od dalšího uživatele ProtonMail, který nemá důvěrné klíče ve Vašich kontaktech, oznamovací okno se Vás zeptá, zda chcete povolit důvěrné klíče."
+        "V momentě kdy obdržíte e-mail od dalšího uživatele ProtonMail, který nemá důvěrné klíče ve Vašich kontaktech, oznamovací okno se Vás zeptá, zda chcete povolit důvěrné klíče."
       ]
     },
     "Tooltip sign external messages": {
@@ -8908,7 +8950,7 @@
         ""
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Vymazáním adresy, nebudete mít už nikdy více možnost obnovit svůj účet nebo obdržet každodenní emailové notifikace."
+        "Vymazáním adresy, nebudete mít už nikdy více možnost obnovit svůj účet nebo obdržet každodenní e-mailové notifikace."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         ""
@@ -8962,7 +9004,7 @@
         "Zjistili jsme problém konfigurace DNS. Prosím ujistěte se, že se Vaše záznamy shodují s níže uvedenými instrukcemi. Jestliže problém přetrvává, budeme muset vypnout DKIM."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Musíte ${ activateLink } klíče organize předtím, než přidáte emailovou adresu veřejnému členovi."
+        "Musíte ${ activateLink } klíče organize předtím, než přidáte e-mailovou adresu veřejnému členovi."
       ],
       "You will lose any customization you made so far.": [
         "Stávající přizpůsobení importu bude ztraceno."
@@ -8970,10 +9012,10 @@
       "You will not see this import record in the list anymore.": [
         "Tento záznam o importu již v seznamu neuvidíte."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         ""
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         ""
       ]
     },

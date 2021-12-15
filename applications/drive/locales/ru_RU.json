@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Добавить"
       ],
@@ -242,9 +245,6 @@
       "Go to settings": [
         "Открыть настройки"
       ],
-      "Grid layout": [
-        "Отображать в виде сетки"
-      ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
       ],
@@ -274,9 +274,6 @@
       ],
       "Keyboard shortcuts": [
         "Сочетания клавиш"
-      ],
-      "List layout": [
-        "Отображение списком"
       ],
       "Load image": [
         "Загрузить изображение"
@@ -443,6 +440,9 @@
       "Select plan": [
         "Выбрать тарифный план"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Поделиться"
       ],
@@ -469,9 +469,6 @@
       ],
       "Show labels": [
         "Показать ярлыки"
-      ],
-      "Show shared link details": [
-        "Показать подробности ссылки, которой вы поделились"
       ],
       "Sign out": [
         "Выйти из учетной записи"
@@ -523,6 +520,12 @@
       ],
       "Untrust": [
         "Не доверять"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Улучшить"
@@ -1150,17 +1153,32 @@
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к Bitcoin API."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         "Не удалось загрузить ссылку"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" не может быть загружен из-за \"${ error }\" ошибки"
       ],
+      "File \"${ name }\" is already downloading": [
+        ""
+      ],
       "File cannot be merged with folder": [
         "Файл не может быть объединен с папкой"
       ],
       "File has no contents to preview": [
         "В файле нет содержимого для предпросмотра"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         "Название папки не может быть пустым"
@@ -1610,17 +1628,23 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } скачивается (${ downloadProgress }%)",
-        "${ activeDownloadsCount } скачивается (${ downloadProgress }%)",
-        "${ activeDownloadsCount } скачивается (${ downloadProgress }%)",
-        "${ activeDownloadsCount } скачивается (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } загружается (${ uploadProgress }%)",
-        "${ activeUploadsCount } загружается (${ uploadProgress }%)",
-        "${ activeUploadsCount } загружается (${ uploadProgress }%)",
-        "${ activeUploadsCount } загружается (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } адрес электронной почты",
@@ -1649,11 +1673,11 @@
         "${ calendarsToBeMergedCount } объединенных календарей",
         "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } отменён",
-        "${ canceledCount } отменён",
-        "${ canceledCount } отменён",
-        "${ canceledCount } отменён"
+      "${ canceledCount } canceled": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } участник",
@@ -1679,29 +1703,29 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "У контактов ${ contactsEnumeration } несколько адресов электронной почты. Выберите, какие адреса нужно добавить в эту группу."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } завершён",
-        "${ doneCount } завершён",
-        "${ doneCount } завершён",
-        "${ doneCount } завершён"
+      "${ doneCount } finished": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } скачан",
-        "${ doneDownloadsCount } скачан",
-        "${ doneDownloadsCount } скачан",
-        "${ doneDownloadsCount } скачан"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } загружен",
-        "${ doneUploadsCount } загружен",
-        "${ doneUploadsCount } загружен",
-        "${ doneUploadsCount } загружен"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } со сбоем",
-        "${ errorCount } со сбоем",
-        "${ errorCount } со сбоем",
-        "${ errorCount } со сбоем"
+      "${ errorCount } failed": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "Найдена ${ groupCounts } группа",
@@ -1730,11 +1754,11 @@
         "${ numContacts } контактов",
         "${ numContacts } контакт(а,ов)"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } на паузе",
-        "${ pausedCount } на паузе",
-        "${ pausedCount } на паузе",
-        "${ pausedCount } на паузе"
+      "${ pausedCount } paused": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } на вашей подписке, переключившись на ${ annualBilling }"
@@ -1865,6 +1889,9 @@
       "Anyone with this link can access your file.": [
         "Доступ к файлу разрешен всем, у кого есть ссылка."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы уверены, что хотите очистить корзину и безвозвратно удалить все элементы?"
       ],
@@ -1960,6 +1987,9 @@
       ],
       "Creating link to file": [
         "Создание ссылки на файл"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         "Создается совместное содержимое"
@@ -2213,6 +2243,9 @@
       "Only the people with the link and the password can access this file.": [
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Приостановлено"
       ],
@@ -2266,6 +2299,9 @@
       ],
       "Preparing link to file": [
         "Подготовка ссылки на файл"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Предпросмотр"
@@ -2375,11 +2411,14 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Доступ к файлу по этой ссылке будет закрыт. Чтобы поделиться файлом, нужно будет создать новую ссылку."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Это удалит ссылку и закроет доступ к вашему файлу для всех, у кого есть эта ссылка.",
-        "Это удалит ссылку и закроет доступ к вашему файлу для всех, у кого есть эта ссылка.",
-        "Это удалит ссылку и закроет доступ к вашему файлу для всех, у кого есть эта ссылка.",
-        "Это удалит ссылку и закроет доступ к вашему файлу для всех, у кого есть эта ссылка."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "",
+        "",
+        "",
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-то блокировщиками всплывающих окон, пожалуйста, отключите их перед тем, как продолжить."
@@ -2557,6 +2596,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ваши файлы будут зашифрованы, а затем сохранены."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использован только для этой разовой проверки."
@@ -3571,6 +3619,9 @@
       "Contact group updated": [
         "Группа контактов обновлена"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "Не удалось переместить, попробуйте еще раз"
       ],
@@ -4383,8 +4434,8 @@
       "Empty trash": [
         "Очистить корзину"
       ],
-      "Enter file password to download": [
-        "Введите пароль к файлу для скачивания"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Введите свой пароль"
@@ -4463,6 +4514,9 @@
       ],
       "My files": [
         "Мои файлы"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Имя"
@@ -4635,6 +4689,9 @@
       "Your file is ready to be downloaded": [
         "Ваш файл готов к загрузке"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "ZIP-код / почтовый индекс"
       ]
@@ -4647,9 +4704,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ к содержимому, заблокированному по географическому признаку (Netflix, Amazon Prime Video, BBC iPlayer, Википедии, Facebook, YouTube и т. д.), независимо от того, где вы находитесь."
-      ],
-      "Active sharing link": [
-        "Активная ссылка"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
@@ -4678,9 +4732,6 @@
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтверждённой цифровой подписью"
       ],
-      "Expired sharing link": [
-        "Просроченная ссылка"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Получите доступ ко всем платным функциям как ${ vpnAppName }, так и ${ mailAppName } (служба зашифрованной электронной почты, которую миллионы людей используют для защиты своих данных) по одному тарифному плану."
       ],
@@ -4695,9 +4746,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, то вы можете ввести его здесь."
-      ],
-      "Inactive sharing link": [
-        "Ссылка, которой вы делитесь, неактивна"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Многопользовательская поддержка распространяется только на тарифные планы с двумя и более пользователями"

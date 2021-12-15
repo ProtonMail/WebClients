@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
+      "Activate recovery": [
+        "Aktiver gendannelse"
+      ],
       "Add": [
         "Tilføj"
       ],
       "Add address": [
-        ""
+        "Tilføj adresse"
       ],
       "Add contact": [
         "Tilføj kontakt"
       ],
       "Add email": [
-        ""
+        "Tilføj e-mail"
       ],
       "Add group": [
         "Tilføj gruppe"
@@ -36,7 +39,7 @@
         "Tilføj ny gruppe"
       ],
       "Add phone number": [
-        ""
+        "Tilføj telefonnummer"
       ],
       "Add screenshot(s)": [
         "Tilføj screenshot(s)"
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Gå til indstillinger"
       ],
-      "Grid layout": [
-        "Gitter-layout"
-      ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Tastaturgenveje"
-      ],
-      "List layout": [
-        "Liste-layout"
       ],
       "Load image": [
         "Indlæs billede"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Vælg abonnement"
       ],
+      "Set recovery phrase": [
+        "Opsæt gendannelsessætning"
+      ],
       "Share": [
         "Del"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         "Vis etiketter"
-      ],
-      "Show shared link details": [
-        "Vis detaljer om delt link"
       ],
       "Sign out": [
         "Log ud"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Ikke længere betroet"
+      ],
+      "Update recovery file": [
+        "Opdater gendannelsesfil"
+      ],
+      "Update recovery phrase": [
+        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -1128,17 +1131,32 @@
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
       ],
+      "Failed to download a file": [
+        "Kunne ikke downloade en fil"
+      ],
+      "Failed to download a folder": [
+        "Kunne ikke downloade en mappe"
+      ],
       "Failed to load the link": [
         "Linket kunne ikke indlæses"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen \"${ item.name }\" kan ikke uploades på grund af \"${ error }\" fejl"
       ],
+      "File \"${ name }\" is already downloading": [
+        "Filen \"${ name }\" er allerede ved at blive hentet"
+      ],
       "File cannot be merged with folder": [
         "Fil kan ikke flettes med mappe"
       ],
       "File has no contents to preview": [
         "Fil har intet indhold at forhåndsvise"
+      ],
+      "File selection is already downloading": [
+        "Valgte filer er allerede ved at blive hentet"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "Mappen \"${ name }\" er allerede ved at blive hentet"
       ],
       "Folder name cannot be empty": [
         "Mappenavn må ikke være tomt"
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } downloader (${ downloadProgress }%)",
-        "${ activeDownloadsCount } downloader (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } uploader (${ uploadProgress }%)",
-        "${ activeUploadsCount } uploader (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadresse",
@@ -1597,9 +1619,9 @@
         "${ calendarsToBeMergedCount } flettet kalender",
         "${ calendarsToBeMergedCount } flettede kalendere"
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } annulleret",
-        "${ canceledCount } annulleret"
+      "${ canceledCount } canceled": [
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } medlem",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Færdige",
-        "${ doneCount } Færdige"
+      "${ doneCount } finished": [
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } downloadet",
-        "${ doneDownloadsCount } downloadet"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } uploadet",
-        "${ doneUploadsCount } uploadet"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } mislykkedes",
-        "${ errorCount } mislykkedes"
+      "${ errorCount } failed": [
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
@@ -1658,9 +1680,9 @@
         "${ numContacts } kontakt",
         "${ numContacts } kontakter"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } sat på pause",
-        "${ pausedCount } sat på pause"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } på dit abonnement ved at skifte til ${ annualBilling }"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Alle med dette link kan få adgang til din fil."
       ],
+      "Anyone with this link can access your folder.": [
+        "Alle med dette link kan få adgang til din mappe."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "Opretter link til fil"
+      ],
+      "Creating link to folder": [
+        "Opretter link til mappe"
       ],
       "Creating share": [
         "Opretter deling"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne fil."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Kun personer med linket og adgangskoden kan få adgang til denne mappe."
+      ],
       "Paused": [
         "Sat på pause"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Forbereder link til fil"
+      ],
+      "Preparing link to folder": [
+        "Forbereder link til mappe"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din fil. For at gendele filen, skal du bruge et nyt link."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Dette vil slette linket og fjerne adgangen til din fil for alle, der har linket.",
-        "Dette vil slette linkene og fjerne adgangen til dine file for alle, der har linkene."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din mappe. For at gendele mappen, skal du bruge et nyt link."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
+        "Dette vil slette linkene og fjerne adgangen til dine file eller mapper for alle, der har linkene."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit Proton-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Dine filer vil blive krypteret og derefter gemt."
+      ],
+      "Your folder failed to download.": [
+        "Din mappe kunne ikke downloades."
+      ],
+      "Your folder has finished downloading.": [
+        "Din mappe er færdig med at downloade."
+      ],
+      "Your folder is being downloaded.": [
+        "Din mappe bliver downloadet."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
@@ -2712,7 +2758,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Kommer snart)"
       ],
       "(Expired)": [
         "(Udløbet)"
@@ -3426,6 +3472,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe opdateret"
+      ],
+      "Failed to download files: ${ err }": [
+        "Kunne ikke uploade filer: ${ err }"
       ],
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg venligst igen"
@@ -4205,7 +4254,7 @@
       "Empty trash": [
         "Tøm Papirkurv"
       ],
-      "Enter file password to download": [
+      "Enter password to download": [
         "Indtast adgangskode for at downloade"
       ],
       "Enter your password": [
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Mine filer"
+      ],
+      "My files ${ date }.zip": [
+        "Mine filer ${ date }.zip"
       ],
       "Name": [
         "Navn"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "Din fil er klar til download"
       ],
+      "Your folder is ready to be downloaded": [
+        "Din mappe er klar til download"
+      ],
       "ZIP / postal code": [
         "Postnummer"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Få adgang til geo-blokeret indhold (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc) uanset hvor du er."
-      ],
-      "Active sharing link": [
-        "Aktivt delingslink"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivevinduet benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelsen."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Krypterede data med bekræftet digital underskrift"
       ],
-      "Expired sharing link": [
-        "Udløbet delingslink"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Få adgang til alle de betalte funktioner i ${ vpnAppName } og ${ mailAppName } (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Har du købt en gavekode eller modtaget en fra vores supportteam, kan du angive den hér."
-      ],
-      "Inactive sharing link": [
-        "Inaktivt delingslink"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Flerbruger-support gælder kun for abonnementer med 2 eller flere brugere"

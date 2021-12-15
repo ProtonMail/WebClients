@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activare recuperare"
+      ],
       "Add": [
         "Adăugare"
       ],
@@ -240,9 +243,6 @@
       "Go to settings": [
         "Accesare setări"
       ],
-      "Grid layout": [
-        "Aspect grilă"
-      ],
       "Hide advanced PGP settings": [
         "Ascundere setări PGP avansate"
       ],
@@ -272,9 +272,6 @@
       ],
       "Keyboard shortcuts": [
         "Combinații de taste listă mesaje"
-      ],
-      "List layout": [
-        "Aspect listă"
       ],
       "Load image": [
         "Încărcare imagine"
@@ -441,6 +438,9 @@
       "Select plan": [
         "Selectare plan"
       ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
+      ],
       "Share": [
         "Partajare"
       ],
@@ -467,9 +467,6 @@
       ],
       "Show labels": [
         "Afişare etichete"
-      ],
-      "Show shared link details": [
-        "Afișați detaliile legăturii partajate"
       ],
       "Sign out": [
         "Deconectare"
@@ -521,6 +518,12 @@
       ],
       "Untrust": [
         "Dezaprobare"
+      ],
+      "Update recovery file": [
+        "Actualizare fișier de recuperare"
+      ],
+      "Update recovery phrase": [
+        "Actualizare frază de recuperare"
       ],
       "Upgrade": [
         "Migrare"
@@ -1139,17 +1142,32 @@
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
       ],
+      "Failed to download a file": [
+        "Nu s-a reușit descărcarea unui fișier"
+      ],
+      "Failed to download a folder": [
+        "Nu s-a reușit descărcarea unui folder"
+      ],
       "Failed to load the link": [
         "Nu s-a reușit încărcarea conținutului legăturii."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
       ],
+      "File \"${ name }\" is already downloading": [
+        "Fișierul „${ name }” se descarcă deja"
+      ],
       "File cannot be merged with folder": [
         "Fișierul nu poate fi îmbinat cu folderul."
       ],
       "File has no contents to preview": [
         "Fișierul nu are conținut de afișat"
+      ],
+      "File selection is already downloading": [
+        "Fișierele selectate sunt deja în curs de descărcare"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "Folderul „${ name }” se descarcă deja"
       ],
       "Folder name cannot be empty": [
         "Numele folderului nu poate fi gol."
@@ -1590,12 +1608,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+      "${ activeDownloadsCount } downloading": [
+        "Se descarcă ${ activeDownloadsCount }",
+        "Se descarcă ${ activeDownloadsCount }",
+        "Se descarcă ${ activeDownloadsCount }"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
         "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
         "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
         "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
         "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
         "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)"
@@ -1623,8 +1646,8 @@
         "${ calendarsToBeMergedCount } calendare îmbinate",
         "${ calendarsToBeMergedCount } de calendare îmbinate"
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } anulat",
+      "${ canceledCount } canceled": [
+        "Unul anulat",
         "${ canceledCount } anulate",
         "${ canceledCount } anulate"
       ],
@@ -1650,25 +1673,25 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în acest grup."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } finalizat",
-        "${ doneCount } finalizate",
-        "${ doneCount } finalizate"
+      "${ doneCount } finished": [
+        "S-a transferat unul",
+        "S-au transferat ${ doneCount }",
+        "S-au transferat ${ doneCount }"
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } descărcat",
-        "${ doneDownloadsCount } descărcate",
-        "${ doneDownloadsCount } descărcate"
+      "${ doneDownloadsCount } downloaded": [
+        "S-a descărcat unul",
+        "S-au descărcat ${ doneDownloadsCount }",
+        "S-au descărcat ${ doneDownloadsCount }"
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } încărcat",
-        "${ doneUploadsCount } încărcate",
-        "${ doneUploadsCount } încărcate"
+      "${ doneUploadsCount } uploaded": [
+        "S-a încărcat unul",
+        "S-au încărcat ${ doneUploadsCount }",
+        "S-au încărcat ${ doneUploadsCount }"
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } eșuat",
-        "${ errorCount } eșuate",
-        "${ errorCount } eșuate"
+      "${ errorCount } failed": [
+        "Unul a eșuat",
+        "${ errorCount } au eșuat",
+        "${ errorCount } au eșuat"
       ],
       "${ groupCounts } group found": [
         "S-a găsit un grup",
@@ -1694,8 +1717,8 @@
         "${ numContacts } contacte",
         "${ numContacts } de contacte"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } suspendat",
+      "${ pausedCount } paused": [
+        "Unul suspendat",
         "${ pausedCount } suspendate",
         "${ pausedCount } suspendate"
       ],
@@ -1820,6 +1843,9 @@
       "Anyone with this link can access your file.": [
         "Oricine are această legătură vă poate accesa fișierul."
       ],
+      "Anyone with this link can access your folder.": [
+        "Oricine are această legătură vă poate accesa folderul."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sigur doriți să goliți folderul «Gunoi» și să ștergeți definitiv tot din el?"
       ],
@@ -1913,6 +1939,9 @@
       ],
       "Creating link to file": [
         "Se creează legătura către fișier."
+      ],
+      "Creating link to folder": [
+        "Se creează legătura către folder"
       ],
       "Creating share": [
         "Creare partajare"
@@ -2164,6 +2193,9 @@
       "Only the people with the link and the password can access this file.": [
         "Numai persoanele care au legătura și parola pot accesa acest fișier."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Numai persoanele care au legătura și parola pot accesa acest folder."
+      ],
       "Paused": [
         "Suspendat"
       ],
@@ -2217,6 +2249,9 @@
       ],
       "Preparing link to file": [
         "Se pregătește legătura către fișier."
+      ],
+      "Preparing link to folder": [
+        "Se pregătește legătura către folder"
       ],
       "Preview": [
         "Examinare"
@@ -2325,10 +2360,13 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Această legătură va fi dezactivată definitiv. Oricine are această legătură nu va mai putea accesa fişierul. Pentru a repartaja fișierul, veți avea nevoie de o legătură nouă."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Această operație va șterge și elimina accesul la fișier pentru oricine are legătura.",
-        "Această operație va șterge și elimina accesul la fișiere pentru oricine are legăturile.",
-        "Această operație va șterge și elimina accesul la fișiere pentru oricine are legăturile."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Această legătură va fi dezactivată definitiv. Oricine are această legătură nu va mai putea accesa folderul. Pentru a repartaja folderul, veți avea nevoie de o legătură nouă."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Această operație va șterge și elimina accesul la fișier sau folder pentru oricine are legătura.",
+        "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura.",
+        "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aceasta va activa PayPal ca metodă de plată pentru abonamentul la Proton. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
@@ -2506,6 +2544,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
+      ],
+      "Your folder failed to download.": [
+        "Folderul nu s-a putut descărca."
+      ],
+      "Your folder has finished downloading.": [
+        "Descărcarea folderului s-a finalizat."
+      ],
+      "Your folder is being downloaded.": [
+        "Folderul se descarcă."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -3499,6 +3546,9 @@
       "Contact group updated": [
         "Grup de contacte actualizat"
       ],
+      "Failed to download files: ${ err }": [
+        "Nu s-a reușit descărcarea fișierelor: ${ err }"
+      ],
       "Failed to move, please try again": [
         "Mutarea a eșuat, mai reîncercați."
       ],
@@ -3573,7 +3623,7 @@
         "Descoperiți toate serviciile Proton"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misiunea noastră este să construim un internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un internet securizat."
+        "Misiunea noastră este să construim un Internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un Internet securizat."
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -4294,8 +4344,8 @@
       "Empty trash": [
         "Golire gunoi"
       ],
-      "Enter file password to download": [
-        "Introduceți parola fișierului pentru a-l descărca"
+      "Enter password to download": [
+        "Introduceți parola pentru a descărca"
       ],
       "Enter your password": [
         "Introduceţi parola"
@@ -4374,6 +4424,9 @@
       ],
       "My files": [
         "Fișierele mele"
+      ],
+      "My files ${ date }.zip": [
+        "Fișierele mele ${ date }.zip"
       ],
       "Name": [
         "Nume"
@@ -4546,6 +4599,9 @@
       "Your file is ready to be downloaded": [
         "Fișierul este gata de descărcare"
       ],
+      "Your folder is ready to be downloaded": [
+        "Fișierul este gata de descărcare"
+      ],
       "ZIP / postal code": [
         "ZIP/Cod poștal"
       ]
@@ -4558,9 +4614,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
-      ],
-      "Active sharing link": [
-        "Legătură de partajare activă"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
@@ -4589,9 +4642,6 @@
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
-      "Expired sharing link": [
-        "Legătură de partajare expirată"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Obțineți acces la toate funcțiile cu plată, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
       ],
@@ -4606,9 +4656,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
-      ],
-      "Inactive sharing link": [
-        "Legătură de partajare inactivă"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Suportul pentru utilizatori multipli se aplică doar planurilor cu doi sau mai mulți utilizatori."
