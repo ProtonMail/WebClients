@@ -89,7 +89,7 @@ const MessageBody = ({
         [content, highlightBody]
     );
 
-    const hasDarkStyles = useMessageDarkStyles(message, bodyRef);
+    const hasDarkStyles = useMessageDarkStyles(message, bodyLoaded, bodyRef);
 
     return (
         <div

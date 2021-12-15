@@ -7,24 +7,30 @@ import { canSupportDarkStyle } from '../../../helpers/message/messageContent';
 import { applyDarkStyle } from '../../../logic/messages/read/messagesReadActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
-const useMessageDarkStyles = (message: MessageState, bodyRef: RefObject<HTMLDivElement>) => {
+const useMessageDarkStyles = (message: MessageState, isBodyLoaded: boolean, bodyRef: RefObject<HTMLDivElement>) => {
     const darkStylesFeature = useFeature(FeatureCode.DarkStylesInBody);
     const [theme] = useTheme();
     const dispatch = useDispatch();
     const isDarkTheme = DARK_THEMES.includes(theme);
-    const plain = isPlainText(message.data);
 
     // canSupportDarkStyle is costly, so we only call it when needed
     const injectDarkStyle = useMemo(() => {
         return (
             darkStylesFeature.feature?.Value &&
-            !plain &&
             !message.messageDocument?.noDarkStyle &&
+            isBodyLoaded &&
             isDarkTheme &&
             !isNewsLetter(message.data) &&
+            !isPlainText(message.data) &&
             canSupportDarkStyle(bodyRef.current)
         );
-    }, [darkStylesFeature.feature?.Value, message.messageDocument?.noDarkStyle, isDarkTheme, bodyRef.current]);
+    }, [
+        darkStylesFeature.feature?.Value,
+        message.data,
+        message.messageDocument?.noDarkStyle,
+        isDarkTheme,
+        bodyRef.current,
+    ]);
 
     useEffect(() => {
         if (injectDarkStyle) {
