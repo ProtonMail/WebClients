@@ -37,18 +37,20 @@ const ExtraImages = ({ message, type, onLoadImages }: Props) => {
     }
 
     const remoteText = couldLoadDirect
-        ? c('Title').t`Some images could not be loaded with tracking protection`
-        : c('Title').t`Load remote content`;
-
-    const actionText = couldLoadDirect ? c('Action').t`Load unprotected` : c('Action').t`Load`;
+        ? c('Action').t`Some images could not be loaded with tracking protection`
+        : c('Action').t`This message contains remote content.`;
 
     const embeddedText = c('Action').t`This message contains embedded images.`;
 
     const text = type === 'remote' ? remoteText : embeddedText;
 
+    const actionText = couldLoadDirect ? c('Action').t`Load unprotected` : c('Action').t`Load`;
+
+    const tooltipText = type === 'remote' ? c('Title').t`Load remote content` : c('Title').t`Load embedded images`;
+
     const tooltip = Shortcuts ? (
         <>
-            {text}
+            {tooltipText}
             <br />
             <kbd className="no-border">{shiftKey}</kbd> + <kbd className="no-border">C</kbd>
         </>
