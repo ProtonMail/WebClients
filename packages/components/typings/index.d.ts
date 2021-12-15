@@ -3,6 +3,9 @@ declare module '*.svg';
 declare module '*.jpg';
 declare module '*.png';
 
+declare module '*.webm';
+declare module '*.mp4';
+
 declare module '*.md';
 
 // TODO: Import from @proton/shared

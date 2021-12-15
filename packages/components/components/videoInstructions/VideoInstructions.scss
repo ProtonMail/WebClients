@@ -1,0 +1,12 @@
+.video-player-replay-button {
+	background: var(--backdrop-norm);
+	opacity: 0;
+	transition: opacity 0.6s ease;
+	appearance: none;
+	pointer-events: none;
+
+	&.video-ended {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
