@@ -146,7 +146,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
             onClick: () => {
                 if (isAuthError) {
                     return withLoadingSecondaryAction(
-                        Sasl === AuthenticationMethod.OAUTH ? handleReconnectOAuth(ID) : handleReconnect()
+                        !Sasl || Sasl === AuthenticationMethod.OAUTH ? handleReconnectOAuth(ID) : handleReconnect()
                     );
                 }
 
