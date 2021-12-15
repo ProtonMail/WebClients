@@ -1,17 +1,8 @@
-import { useEffect } from 'react';
 import { c } from 'ttag';
 
-import {
-    ImportListSection,
-    AccountEasySwitchSection,
-    SettingsPropsShared,
-    useFeature,
-    FeatureCode,
-    useSettingsLink,
-} from '@proton/components';
-import { APPS, PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { ImportListSection, AccountEasySwitchSection, SettingsPropsShared } from '@proton/components';
+import { PRODUCT_NAMES } from '@proton/shared/lib/constants';
 
-import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getEasySwitchPage = () => {
@@ -34,21 +25,7 @@ export const getEasySwitchPage = () => {
 };
 
 const AccountEasySwitchSettings = ({ setActiveSection, location }: SettingsPropsShared) => {
-    const goToSettings = useSettingsLink();
-    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
-    const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
-
-    useEffect(() => {
-        if (!isEasySwitchEnabled && !easySwitchFeature.loading) {
-            goToSettings('/import-export', APPS.PROTONMAIL);
-        }
-    }, [easySwitchFeature, isEasySwitchEnabled]);
-
-    if (easySwitchFeature.loading) {
-        return <PrivateMainAreaLoading />;
-    }
-
-    return isEasySwitchEnabled ? (
+    return (
         <PrivateMainSettingsAreaWithPermissions
             config={getEasySwitchPage()}
             setActiveSection={setActiveSection}
@@ -57,7 +34,7 @@ const AccountEasySwitchSettings = ({ setActiveSection, location }: SettingsProps
             <AccountEasySwitchSection />
             <ImportListSection />
         </PrivateMainSettingsAreaWithPermissions>
-    ) : null;
+    );
 };
 
 export default AccountEasySwitchSettings;

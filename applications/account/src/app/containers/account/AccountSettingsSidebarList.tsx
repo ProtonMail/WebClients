@@ -1,12 +1,10 @@
 import {
-    FeatureCode,
     SectionConfig,
     SidebarList,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-    useFeature,
     useShowRecoveryNotification,
     useUser,
 } from '@proton/components';
@@ -22,14 +20,13 @@ import { getRecoveryPage, hasRecoverySettings } from './AccountRecoverySettings'
 const AccountSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
     const [user] = useUser();
     const showRecoveryNotification = useShowRecoveryNotification();
-    const isEasySwitchEnabled = useFeature(FeatureCode.EasySwitch).feature?.Value;
 
     const pages: SectionConfig[] = [
         getDashboardPage({ user }),
         hasRecoverySettings(user) && getRecoveryPage(showRecoveryNotification),
         user.canPay && getPaymentPage(),
         getPasswordAndSecurityPage({ user }),
-        isEasySwitchEnabled && getEasySwitchPage(),
+        getEasySwitchPage(),
     ].filter(isTruthy);
 
     return (

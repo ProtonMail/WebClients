@@ -47,8 +47,6 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const { feature: featureUsedMailMobileApp, loading: loadingUsedMailMobileApp } = useFeature(
         FeatureCode.UsedMailMobileApp
     );
-    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
-    const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
 
     const [user, loadingUser] = useUser();
     const [plans = [], loadingPlans] = usePlans();
@@ -149,7 +147,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                                 as={SettingsLink}
                                 color="weak"
                                 shape="outline"
-                                path={isEasySwitchEnabled ? '/easy-switch' : '/import-export'}
+                                path="/easy-switch"
                                 app={APPS.PROTONMAIL}
                                 target="_self"
                                 className="inline-block mtauto"
