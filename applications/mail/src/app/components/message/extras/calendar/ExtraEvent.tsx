@@ -181,7 +181,7 @@ const ExtraEvent = ({
                         // if we do not have invitationApi, it means we could not decrypt calendarEvent
                         // we can resort to checking attendee tokens in this case, since those are clear text
                         const senderToken = await generateAttendeeToken(
-                            canonizeEmailByGuess(message.data.SenderAddress),
+                            canonizeEmailByGuess(message.data.Sender.Address),
                             calendarEvent.UID
                         );
                         isPartyCrasher = !calendarEvent.Attendees.some(({ Token }) => Token === senderToken);

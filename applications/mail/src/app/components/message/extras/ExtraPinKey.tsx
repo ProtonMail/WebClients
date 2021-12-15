@@ -123,10 +123,10 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const { call } = useEventManager();
     const contactsMap = useContactsMap();
 
-    const senderAddress = message?.SenderAddress;
-    const name = message?.SenderName;
+    const senderAddress = message?.Sender.Address;
+    const name = message?.Sender.Name;
     const isSenderInternal = isInternal(message);
-    const messageContactID = message?.Sender?.ContactID;
+    const messageContactID = message?.Sender.ContactID;
     const contactID = useMemo<string | undefined>(() => {
         if (messageContactID) {
             return messageContactID;
