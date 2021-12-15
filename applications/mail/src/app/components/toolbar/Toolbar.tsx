@@ -90,7 +90,7 @@ const Toolbar = ({
     );
 
     return (
-        <nav className="toolbar toolbar--heavy flex no-print flex-justify-space-between">
+        <nav className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between">
             <div className="flex">
                 {listInView ? (
                     <SelectAll
