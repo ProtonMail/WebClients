@@ -16,7 +16,7 @@ import RecipientsDetails from '../../message/recipients/RecipientsDetails';
 import RecipientSimple from '../../message/recipients/RecipientSimple';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ExtraExpirationTime from '../../message/extras/ExtraExpirationTime';
-import ExtraImagesLoader from '../../message/extras/ExtraImagesLoader';
+import ExtraImages from '../../message/extras/ExtraImages';
 
 interface Props {
     labelID: string;
@@ -172,10 +172,10 @@ const EOHeaderExpanded = ({
                 <div className="ml0-5 mr0-5 mb0-5">
                     {messageLoaded && <ExtraExpirationTime message={message} />}
                     {!sourceMode && (
-                        <ExtraImagesLoader message={message} type="remote" onLoadImages={onLoadRemoteImages} />
+                        <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} isOutside />
                     )}
                     {!sourceMode && (
-                        <ExtraImagesLoader message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />
+                        <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} isOutside />
                     )}
                 </div>
             </section>

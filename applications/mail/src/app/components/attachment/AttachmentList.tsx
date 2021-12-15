@@ -171,7 +171,10 @@ const AttachmentList = ({
                 onDownload={handlePreviewDownload}
                 outsideKey={outsideKey}
             />
-            <div className="flex flex-row w100 p0-5 flex-justify-space-between" data-testid="attachments-header">
+            <div
+                className="flex flex-row w100 p0-5 flex-justify-space-between composer-attachment-list-wrapper"
+                data-testid="attachments-header"
+            >
                 <TagButton
                     type="button"
                     title={titleButton}

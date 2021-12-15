@@ -9,11 +9,12 @@ interface Props {
     message: MessageState;
     type: string;
     onLoadImages: () => void;
+    isOutside?: boolean;
 }
 
-const ExtraImages = ({ message, type, onLoadImages }: Props) => {
-    const [mailSettings] = useMailSettings();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+const ExtraImages = ({ message, type, onLoadImages, isOutside }: Props) => {
+    const [mailSettings] = useMailSettings(isOutside);
+    const [{ Shortcuts = 0 } = {}] = useMailSettings(isOutside);
 
     const { showRemoteImages = true, showEmbeddedImages = true } = message.messageImages || {};
 

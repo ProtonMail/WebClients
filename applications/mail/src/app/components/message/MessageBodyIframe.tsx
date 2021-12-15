@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { classnames, Tooltip } from '@proton/components';
 
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import useObserveWidthChange from '../../hooks/message/useObserveWidthChange';
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -32,7 +31,6 @@ interface Props {
     message: MessageState;
     labelID: string;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
-    mailSettings: [MailSettings | undefined, boolean, any];
     onMailTo?: (src: string) => void;
     isOutside?: boolean;
 }
@@ -50,7 +48,6 @@ const MessageBodyIframe = ({
     message,
     labelID,
     onReady,
-    mailSettings,
     onMailTo,
     isOutside,
 }: Props) => {
@@ -83,7 +80,6 @@ const MessageBodyIframe = ({
     useLinkHandler(iframeRootDivRef, {
         onMailTo,
         startListening: initStatus === 'done' && iframeRootDivRef.current !== undefined,
-        mailSettings,
         isOutside,
     });
 

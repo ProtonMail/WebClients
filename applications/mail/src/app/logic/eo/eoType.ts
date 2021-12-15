@@ -1,3 +1,4 @@
+import { OpenPGPKey } from 'pmcrypto';
 import { Api, Recipient } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -77,7 +78,6 @@ export interface EODocumentInitializeParams {
 export type EOMessage = {
     Attachments: Attachment[];
     Body: any;
-    DecryptedBody?: any;
     ToList: Recipient[];
     CCList: Recipient[];
     ExpirationTime: number;
@@ -90,6 +90,7 @@ export type EOMessage = {
     SenderName: string;
     SenderAddress: string;
     MIMEType: MIME_TYPES;
+    PublicKey?: OpenPGPKey[];
 };
 
 export type EOState = {

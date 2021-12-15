@@ -6,6 +6,7 @@ import { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
+import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { c } from 'ttag';
 import {
     ATTACHMENT_MAX_SIZE,
@@ -38,7 +39,7 @@ export interface UploadResult {
 /**
  * Read the file locally, and encrypt it. return the encrypted file.
  */
-const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], privKey: OpenPGPKey[]) => {
+const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], privKey?: OpenPGPKey[]) => {
     if (!file) {
         throw new TypeError(c('Error').t`You did not provide a file.`);
     }
@@ -104,6 +105,50 @@ const uploadFile = (
     };
 };
 
+const buildHeaders = ({ Inline }: Packets, message: MessageStateWithData) => {
+    if (!Inline) {
+        return {};
+    }
+    // TODO Recipient here ? Because EO sender is the PM Address ?
+    const cid = generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '');
+    return {
+        'content-disposition': 'inline',
+        'content-id': cid,
+    };
+};
+
+const packetToAttachment = (packet: Packets, message: MessageStateWithData) => {
+    return {
+        ID: generateUID('att'),
+        Name: packet.Filename,
+        Size: packet.FileSize,
+        Filename: packet.Filename,
+        MIMEType: packet.MIMEType,
+        KeyPackets: new Blob([packet.keys]),
+        DataPacket: new Blob([packet.data]),
+        Preview: packet.Preview,
+        Headers: buildHeaders(packet, message),
+    };
+};
+
+/**
+ * Add a new EO attachment
+ */
+const uploadEOFile = (
+    file: File,
+    message: MessageStateWithData,
+    publicKeys: OpenPGPKey[],
+    inline: boolean
+): Promise<Attachment> => {
+    const getAttachment = async () => {
+        const packets = await encryptFile(file, inline, publicKeys);
+
+        return packetToAttachment(packets, message) as Attachment;
+    };
+
+    return getAttachment();
+};
+
 /**
  * Upload a list of attachments [...File]
  */
@@ -119,6 +164,16 @@ export const upload = (
         const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
         return uploadFile(file, message, messageKeys, inline, uid, cid);
     });
+};
+
+export const uploadEO = (
+    file: File,
+    message: MessageStateWithData,
+    publicKey: OpenPGPKey[],
+    action = ATTACHMENT_ACTION.ATTACHMENT
+) => {
+    const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
+    return uploadEOFile(file, message, publicKey, inline);
 };
 
 /**

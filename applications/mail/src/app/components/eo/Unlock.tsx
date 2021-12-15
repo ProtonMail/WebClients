@@ -13,7 +13,7 @@ import { useDispatch } from 'react-redux';
 import MessageDecryptForm from './MessageDecryptForm';
 import { EOUrlParams } from '../../helpers/eo/eoUrl';
 import { useOutsideMessage } from '../../hooks/eo/useOutsideMessage';
-import { decrypt } from '../../helpers/eo/message';
+import { eoDecrypt } from '../../helpers/eo/message';
 import { loadEOMessage } from '../../logic/eo/eoActions';
 
 interface Props {
@@ -41,7 +41,7 @@ const Unlock = ({ setSessionStorage }: Props) => {
         if (password.length > 0 && id) {
             try {
                 // Decrypt the message token
-                const token = await decrypt(encryptedToken, password);
+                const token = await eoDecrypt(encryptedToken, password);
 
                 await dispatch(loadEOMessage({ api, token, id, password, set: setSessionStorage }));
 

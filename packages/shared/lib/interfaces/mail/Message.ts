@@ -70,4 +70,5 @@ export interface Message {
     RightToLeft?: number;
     UnsubscribeMethods?: UnsubscribeMethods;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
+    EORecipient?: Recipient;
 }
