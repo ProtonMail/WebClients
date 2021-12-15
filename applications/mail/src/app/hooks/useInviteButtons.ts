@@ -22,8 +22,15 @@ import {
     SavedInviteData,
 } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { getInviteLocale } from 'proton-calendar/src/app/containers/calendar/getSettings';
 import { useCallback } from 'react';
-import { useApi, useConfig, useCalendarEmailNotificationsFeature } from '@proton/components';
+import {
+    useApi,
+    useConfig,
+    useCalendarEmailNotificationsFeature,
+    useRelocalizeText,
+    useGetCalendarUserSettings,
+} from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from 'pmcrypto';
@@ -82,7 +89,9 @@ const useInviteButtons = ({
     disabled = false,
 }: Args): PartstatActions => {
     const api = useApi();
+    const getCalendarUserSettings = useGetCalendarUserSettings();
     const sendIcs = useSendIcs();
+    const relocalizeText = useRelocalizeText();
     const config = useConfig();
     const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
@@ -113,6 +122,14 @@ const useInviteButtons = ({
                     attendeesTo: [attendeeWithPartstat],
                     keepDtstamp: true,
                 });
+                const inviteLocale = getInviteLocale(await getCalendarUserSettings());
+                const getEmailBody = () =>
+                    generateEmailBody({
+                        method: ICAL_METHOD.REPLY,
+                        vevent,
+                        emailAddress: attendee.emailAddress,
+                        partstat,
+                    });
                 await sendIcs({
                     method: ICAL_METHOD.REPLY,
                     ics,
@@ -121,11 +138,10 @@ const useInviteButtons = ({
                     from: { Address: attendee.emailAddress, Name: attendee.name || attendee.emailAddress },
                     to: [{ Address: organizer.emailAddress, Name: organizer.name }],
                     subject,
-                    plainTextBody: generateEmailBody({
-                        method: ICAL_METHOD.REPLY,
-                        vevent,
-                        emailAddress: attendee.emailAddress,
-                        partstat,
+                    plainTextBody: await relocalizeText({
+                        getLocalizedText: getEmailBody,
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
                     }),
                     contactEmailsMap,
                 });

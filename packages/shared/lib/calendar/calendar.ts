@@ -69,4 +69,5 @@ export const DEFAULT_CALENDAR_USER_SETTINGS: CalendarUserSettings = {
     DisplaySecondaryTimezone: 0,
     SecondaryTimezone: undefined,
     ViewPreference: SETTINGS_VIEW.WEEK,
+    InviteLocale: null,
 };

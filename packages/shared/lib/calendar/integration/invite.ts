@@ -355,14 +355,14 @@ export const generateEmailSubject = ({
     method,
     vevent,
     isCreateEvent,
-    options,
+    dateFormatOptions,
 }: {
     method: ICAL_METHOD;
     vevent: VcalVeventComponent;
     isCreateEvent?: boolean;
-    options?: Options;
+    dateFormatOptions?: Options;
 }) => {
-    const { formattedStart, isSingleAllDay } = getFormattedDateInfo(vevent, options);
+    const { formattedStart, isSingleAllDay } = getFormattedDateInfo(vevent, dateFormatOptions);
     const { REQUEST, CANCEL, REPLY } = ICAL_METHOD;
 
     if (method === REQUEST) {
@@ -392,8 +392,8 @@ export const generateEmailSubject = ({
     throw new Error('Unexpected method');
 };
 
-const getWhenText = (vevent: VcalVeventComponent, options?: Options) => {
-    const { formattedStart, formattedEnd, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent, options);
+const getWhenText = (vevent: VcalVeventComponent, dateFormatOptions?: Options) => {
+    const { formattedStart, formattedEnd, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent, dateFormatOptions);
     if (isAllDay) {
         return isSingleAllDay || !formattedEnd
             ? c('Email body for invitation (date part)').t`When: ${formattedStart} (all day)`
@@ -404,13 +404,13 @@ const getWhenText = (vevent: VcalVeventComponent, options?: Options) => {
         : c('Email body for invitation (date part)').t`When: ${formattedStart}`;
 };
 
-const getEmailBodyTexts = (vevent: VcalVeventComponent, options?: Options) => {
+const getEmailBodyTexts = (vevent: VcalVeventComponent, dateFormatOptions?: Options) => {
     const { summary, location, description } = vevent;
     const eventTitle = getDisplayTitle(summary?.value);
     const eventLocation = location?.value;
     const eventDescription = description?.value;
 
-    const whenText = getWhenText(vevent, options);
+    const whenText = getWhenText(vevent, dateFormatOptions);
     const locationText = eventLocation
         ? c('Email body for invitation (location part)').t`Where: ${eventLocation}`
         : undefined;
