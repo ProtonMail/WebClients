@@ -42,7 +42,7 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack
                     </ul>
                     <p>
                         {c('Info').t`If you have one of these, continue to Proton account setting to
-                            continue the unblock process.`}
+                            start the unblock process.`}
                     </p>
                 </InnerModal>
                 <FooterModal>
