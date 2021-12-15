@@ -1,21 +1,19 @@
 import { useEffect } from 'react';
-import { useHistory } from 'react-router';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { c } from 'ttag';
 
-import { Button, classnames, useApi } from '@proton/components';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import { useApi } from '@proton/components';
 import Main from 'proton-account/src/app/public/Main';
 import { EOUrlParams } from '../../helpers/eo/eoUrl';
 import { useOutsideMessage } from '../../hooks/eo/useOutsideMessage';
 import { loadEOMessage } from '../../logic/eo/eoActions';
-import RecipientItem from '../message/recipients/RecipientItem';
-import RecipientType from '../message/recipients/RecipientType';
-import AttachmentsButton from '../attachment/AttachmentsButton';
+import EOReplyHeader from './reply/EOReplyHeader';
+import EOComposer from './reply/EOComposer';
+import { OutsideKey } from '../../logic/messages/messagesTypes';
+
+import './EOreply.scss';
 
 const Reply = () => {
-    const history = useHistory();
     const api = useApi();
     const dispatch = useDispatch();
 
@@ -32,7 +30,7 @@ const Reply = () => {
         };
 
         if (id && decryptedToken && password && isStoreInitialized && messageState === undefined) {
-            loadMessage(id);
+            void loadMessage(id);
         }
     }, [decryptedToken, password, id, messageState, isStoreInitialized]);
 
@@ -48,58 +46,23 @@ const Reply = () => {
         return <>Loading</>;
     }
 
-    const eoRecipient = { Name: message.Recipient, Address: message.Recipient } as Recipient;
-
-    const from = <RecipientItem recipientOrGroup={{ recipient: eoRecipient }} isLoading={false} isOutside />;
-
-    const to = (
-        <RecipientItem recipientOrGroup={{ recipient: messageState.data?.Sender }} isLoading={false} isOutside />
-    );
-
-    const handleCancel = () => {
-        history.push(`/eo/message/${id}`);
-    };
+    const outsideKey = {
+        type: 'outside',
+        password,
+        id,
+        decryptedToken,
+    } as OutsideKey;
 
     return (
         <Main larger className="p1 mw52r">
-            <div>
-                <div className="flex flex-align-items-center mb1">
-                    <h1 className="text-ellipsis m0" title={messageState.data?.Subject}>
-                        {messageState.data?.Subject}
-                    </h1>
-                </div>
-                <RecipientType
-                    label={c('Label').t`From:`}
-                    className={classnames([
-                        'flex flex-align-items-start flex-nowrap mb0-5',
-                        //! messageLoaded && 'flex-item-fluid',
-                    ])}
-                >
-                    {from}
-                </RecipientType>
-                <RecipientType
-                    label={c('Label').t`To:`}
-                    className={classnames([
-                        'flex flex-align-items-start flex-nowrap',
-                        //! messageLoaded && 'flex-item-fluid',
-                    ])}
-                >
-                    {to}
-                </RecipientType>
-            </div>
-            <>COMPOSER</>
-            <div>
-                <Button size="large" color="weak" type="button" onClick={handleCancel}>
-                    {c('Action').t`Cancel`}
-                </Button>
-                <AttachmentsButton
-                    onAddAttachments={() => console.log('Add attachments')}
-                    data-testid="eo-composer:attachment-button"
-                />
-                <Button size="large" color="norm" type="button" onClick={() => console.log('SEND')}>
-                    {c('Action').t`Send`}
-                </Button>
-            </div>
+            <EOReplyHeader message={messageState} />
+            <EOComposer
+                referenceMessage={messageState}
+                isFocused
+                id={id}
+                publicKey={message.PublicKey}
+                outsideKey={outsideKey}
+            />
         </Main>
     );
 };

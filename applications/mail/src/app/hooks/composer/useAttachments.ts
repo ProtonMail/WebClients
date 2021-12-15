@@ -120,7 +120,7 @@ export const useAttachments = ({
                 const embeddedImages = getEmbeddedImages(message);
 
                 if (action === ATTACHMENT_ACTION.INLINE) {
-                    embeddedImages.push(createEmbeddedImageFromUpload(upload));
+                    embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
                 }
 
                 const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);

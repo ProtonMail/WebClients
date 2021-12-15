@@ -1,0 +1,17 @@
+@import '~@proton/styles/scss/config';
+@import '../composer/composer.scss';
+
+.eo {
+	&-composer {
+		// need to min-size it, because EO does not have dimensions like the composer container
+		min-block-size: em(300);
+	}
+
+	&-composer-attachments-list {
+		padding-inline: 0;
+		border-top: 0;
+		.composer-attachment-list-wrapper {
+			padding-inline: 0;
+		}
+	}
+}

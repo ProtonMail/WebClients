@@ -48,12 +48,13 @@ interface Props {
     onReady: () => void;
     onChange: MessageChange;
     onChangeContent: (content: string, refreshEditor?: boolean, silent?: boolean) => void;
-    onFocus: () => void;
+    onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     contentFocusRef: MutableRefObject<() => void>;
     editorActionsRef: EditorActionsRef;
     keydownHandler?: (e: KeyboardEvent) => void;
+    isOutside?: boolean;
 }
 
 const SquireEditorWrapper = ({
@@ -69,9 +70,10 @@ const SquireEditorWrapper = ({
     contentFocusRef,
     editorActionsRef,
     keydownHandler = noop,
+    isOutside = false,
 }: Props) => {
-    const [mailSettings] = useMailSettings();
-    const [addresses] = useAddresses();
+    const [mailSettings] = useMailSettings(isOutside);
+    const [addresses] = useAddresses(isOutside);
     const isMounted = useIsMounted();
 
     const [editorReady, setEditorReady] = useState(false);
@@ -304,6 +306,7 @@ const SquireEditorWrapper = ({
             onAddImages={onAddAttachments}
             keydownHandler={keydownHandler}
             defaultFont={defaultFont}
+            isOutside={isOutside}
         />
     );
 };

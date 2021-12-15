@@ -17,7 +17,7 @@ export const encryptAttachment = async (
     { name, type, size }: File = {} as File,
     inline: boolean,
     publicKeys: OpenPGPKey[],
-    privateKeys: OpenPGPKey[]
+    privateKeys?: OpenPGPKey[]
 ): Promise<Packets> => {
     const { message, signature } = await encryptMessage({
         // filename: name,
