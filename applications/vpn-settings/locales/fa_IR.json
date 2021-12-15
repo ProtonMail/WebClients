@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "کد تخفیفم را فعال کن"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add credit / debit card": [
         "افزودن کارت اعتباری / دبیت"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "ارسال مجدد"
       ],
+      "Reset": [
+        ""
+      ],
       "Reset credentials": [
         "تنظیم مجدد مجوزها"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "ارسال"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "هم‌رسانی با پیوند"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "بروزرسانی"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "ارتقا"
@@ -952,8 +967,8 @@
       "You have no invoices.": [
         "هیچ صورت‌حسابی ندارید."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "حساب یا سازمان شما در حال حاضر دارای یک صورت‌حساب به تعویق افتاده است. لطفاً تمام صورتحساب‌های پرداخت نشده را پرداخت کنید."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ]
     },
     "Error message": {
@@ -1134,8 +1149,8 @@
       "No logs": [
         "عدم رکورد"
       ],
-      "Secure core servers": [
-        "سرورهای Secure core"
+      "Secure Core servers": [
+        "سرور های Secure Core"
       ],
       "Strong encryption": [
         "رمزنگاری قوی"
@@ -1554,9 +1569,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "بازیابی صفحه یا ${ link } بطور خودکار بیشتر مسايل را حل خواهد کرد."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "بازنشانی گذرواژه به معنی رمز عبور قدیمی شما است و مکانهایی که ذخیره می شوند دیگر کار نمی کنند. آیا مطمئن هستید که می خواهید رمزعبور خود را دوباره تنظیم کنید?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "بازنشانی رمز عبورتان، کلیدهای رمزنگاری‌تان برای تمام سرویس‌های مربوط به پروتن (ایمیل و VPN) را بازنشانی خواهد کرد. شما قادر نخواهید بود که پیام‌های فعلی خود را بخوانید. اگر رمز عبور ProtonMail خود را میدانید، رمز عبورتان را باز نشانی نکنید. شما می‌توانید با آن‌ها وارد شوید ${ hereLink }."
       ],
@@ -1640,6 +1652,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "این گزینه به طور دائم حساب کاربری شما و تمام داده‌های آن را حذف می‌کند. شما قادر به فعال‌سازی دوبارهٔ این حساب کاربری نخواهید بود."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        ""
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "این پرسشنامه تایید هویت دو-مرحله ای (2FA) را در حساب پروتن شما فعال می‌کند. تایید هویت دو-مرحله ای حساب پروتن شما را امن‌تر خواهد کرد بنابراین ما فعال کردن آن را توصیه می‌کنیم."
@@ -2937,8 +2952,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } در کلیپ‌بورد شما کپی شد"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "حساب کاربری حذف شد. در حال خروج..."
@@ -3002,8 +3017,8 @@
       "/2-year": [
         "/ برای 2 سال"
       ],
-      "/monthly": [
-        "/ماهیانه"
+      "/month": [
+        ""
       ],
       "/year": [
         "/ سال"
@@ -3133,9 +3148,6 @@
       ],
       "Confirm phone number": [
         "تأیید شماره تلفن"
-      ],
-      "Confirm reset password": [
-        "تایید بازنشانی رمز عبور"
       ],
       "Coupon discount": [
         "کوپن تخفیف"
@@ -3337,6 +3349,9 @@
       ],
       "Reset password": [
         "بازنشانی رمز عبور"
+      ],
+      "Reset password?": [
+        ""
       ],
       "Secure Core Servers": [
         "سرور های Secure Core"

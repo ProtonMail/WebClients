@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Aktywuj klucz organizacji"
       ],
+      "Activate recovery": [
+        "Aktywuj odzyskiwanie"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -622,6 +625,9 @@
       "Set catch-all": [
         "Ustaw adres catch-all"
       ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
+      ],
       "Share via link": [
         "Udostępnij przez link"
       ],
@@ -704,7 +710,7 @@
         "Przełącz konto"
       ],
       "Switch to rich text": [
-        ""
+        "Zmień na standardowy tekst"
       ],
       "Top up": [
         "Doładuj"
@@ -1318,7 +1324,7 @@
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        ""
+        "Osiągnięto maksymalną liczbę osobistych kalendarzy."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Osiągnięto maksymalną liczbę subskrybowanych kalendarzy (${ MAX_SUBSCRIBED_CALENDARS_PER_USER }).",
@@ -2183,7 +2189,7 @@
         "Hasło odzyskiwania jest nieprawidłowe. Spróbuj ponownie lub użyj innej metody odzyskiwania."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Kod weryfikacyjny jest nieprawidłowy. Upewnij się, że prawidłowo skopiowałeś kod i spróbuj ponownie. Wprowadzenie zmian może potrwać do 24 godzin."
+        "Kod weryfikacyjny jest nieprawidłowy. Upewnij się, że skopiowany kod jest prawidłowy i spróbuj ponownie. Wprowadzenie zmian może potrwać do 24 godzin."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Utraciłeś dostęp do kluczy organizacji. Bez ich odzyskania nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
@@ -2192,10 +2198,10 @@
         "Nie posiadasz faktur."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Wykorzystałeś wszystkie dostępne adresy w swoim planie. Ulepsz plan, aby dodać nowy adres."
+        "Wykorzystano wszystkie dostępne adresy w obecnym planie. Ulepsz plan, aby dodać nowy adres."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Wykorzystałeś limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
+        "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Musisz aktywować klucze organizacji. Bez aktywacji nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
@@ -2206,7 +2212,7 @@
       "You must set a name": [
         "Musisz wpisać nazwę"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Twoje konto lub organizacja posiada obecnie zaległe faktury. Ureguluj wszystkie zobowiązania."
       ],
       "Your import will not be processed.": [
@@ -2264,7 +2270,7 @@
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Nie wybrałeś pliku CSV lub VCF"
+        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Nie wybrano pliku CSV lub VCF"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
@@ -2771,14 +2777,17 @@
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie zostało zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie może zostać zaimportowane.",
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Szyfrowanie i dodawanie kontaktów: ${ totalImported }/${ totalToImport }"
@@ -3123,7 +3132,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "Wydarzenie nie mogło zostać zaimportowane. Rozwiń szczegóły.",
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły.",
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły.",
         "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły."
       ],
       "No contact can be imported. Click for details": [
@@ -3141,7 +3153,7 @@
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        ""
+        "${ boldWarning } Jeśli to zrobisz, stracisz dostęp do wszystkich obecnie zaszyfrowanych danych."
       ],
       "${ calendarName } will be set as default calendar.": [
         "Kalendarz ${ calendarName } zostanie ustawiony jako domyślny kalendarz."
@@ -3320,9 +3332,6 @@
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
-      "Activate your recovery phrase": [
-        "Aktywuj hasło odzyskiwania"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"ProtonMail me\" lub \"Private Message me\"."
       ],
@@ -3353,8 +3362,8 @@
       "Addresses": [
         "Adresy"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Po zresetowaniu hasła, dla bezpieczeństwa, dane zostaną zablokowane w zaszyfrowanym formacie. Aby odszyfrować wiadomości i inne dane, będziesz potrzebować pliku odzyskiwania lub hasła odzyskiwania."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        "Po zresetowaniu hasła, dla bezpieczeństwa, dane zostaną zablokowane w zaszyfrowanym formacie."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Po dokonaniu płatności w Bitcoinach wykonaj tę instrukcję, aby ulepszyć konto."
@@ -3382,6 +3391,12 @@
       ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
+      ],
+      "Allow recovery by email": [
+        "Zezwalaj na odzyskiwanie przez e-mail"
+      ],
+      "Allow recovery by phone": [
+        "Zezwalaj na odzyskiwanie przez telefon"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Pozwala na posiadanie adresu ${ mailAppName } z własnymi domenami, np. jan@nowak.pl"
@@ -3419,8 +3434,8 @@
       "Are you sure you want to delete this filter?": [
         "Czy na pewno chcesz usunąć ten filtr?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Czy na pewno chcesz usunąć ten folder?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Czy na pewno chcesz usunąć ten folder? Wszystkie foldery podrzędne również zostaną usunięte."
       ],
       "Are you sure you want to delete this label?": [
         "Czy na pewno chcesz usunąć tę etykietę?"
@@ -3492,7 +3507,7 @@
         "Zniżka dla nowych użytkowników z okazji Czarnego Piątku 2020 została naliczona"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        "Blokuje nadawcom możliwość sprawdzenia, czy i kiedy otworzyłeś wiadomość."
+        "Blokuje nadawcom możliwość sprawdzenia, czy i kiedy otwierasz wiadomość."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
@@ -3626,14 +3641,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ProtonVPN."
       ],
+      "Download recovery file": [
+        "Pobierz plik odzyskiwania"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Pobierz swoje klucze PGP, aby korzystać z nich w innych aplikacjach."
-      ],
-      "Download your recovery file": [
-        "Pobierz plik odzyskiwania"
       ],
       "Drop the file here to upload": [
         "Upuść plik tutaj, aby przesłać"
@@ -3660,7 +3675,7 @@
         "Wiadomości oznaczone tą etykietą nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        ""
+        "Włączenie odzyskiwania za pomocą hasła wygeneruje nowe hasło odzyskiwania."
       ],
       "Encryption setting updated": [
         "Ustawienia szyfrowania zostały zaktualizowane"
@@ -3672,7 +3687,7 @@
         "Wpisz kod wysłany na numer telefonu ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Wpisz kod wysłany na ${ email }. Jeśli nie znalazłeś wiadomości w swojej skrzynce odbiorczej, sprawdź folder Spam."
+        "Wpisz kod wysłany na ${ email }. Jeśli nie znajdziesz wiadomości w swojej skrzynce odbiorczej, sprawdź folder Spam."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
@@ -3993,7 +4008,7 @@
         "Nie włączyłeś metody odzyskiwania konta i możesz stracić dostęp do swojego konta"
       ],
       "No action selected": [
-        "Nie wybrałeś akcji"
+        "Nie wybrano akcji"
       ],
       "No addresses exist": [
         "Brak adresów e-mail"
@@ -4005,13 +4020,13 @@
         "Nie włączyłeś metody odzyskiwania danych i możesz stracić dostęp do swoich danych"
       ],
       "No folder selected": [
-        "Nie wybrałeś folderu"
+        "Nie wybrano folderu"
       ],
       "No imports to display.": [
         "Brak importów do wyświetlenia."
       ],
       "No label selected": [
-        "Nie wybrałeś etykiety"
+        "Nie wybrano etykiety"
       ],
       "No logs yet.": [
         "Logi są puste."
@@ -4069,6 +4084,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organizacja posiada jeszcze innych administratorów. Jesteś odpowiedzialny za przekazanie im nowego hasła."
+      ],
+      "Outdated recovery file; update to ensure access to your data": [
+        "Plik odzyskiwania jest nieaktualny. Zaktualizuj go, aby uzyskać dostęp do danych"
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        "Metoda odzyskiwania jest nieaktualna. Zaktualizuj ja, aby uzyskać dostęp do danych"
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        "Hasło odzyskiwania jest nieaktualne. Zaktualizuj je, aby uzyskać dostęp do danych"
       ],
       "P2P": [
         "P2P"
@@ -4224,7 +4248,7 @@
         "Zapisz hasło w bezpiecznym miejscu."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
-        ""
+        "Zapisz hasło w bezpiecznym miejscu. Kliknij na ikonę, aby potwierdzić, że poprawnie wpisano hasło."
       ],
       "Scan QR code instead": [
         "Zamiast tego zeskanuj kod QR"
@@ -4252,6 +4276,9 @@
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
+      ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
@@ -4326,16 +4353,16 @@
         "Ta funkcja jest przeznaczona tylko dla zaawansowanych użytkowników. Po usunięciu tego klucza NIE będziesz w stanie odszyfrować żadnej wiadomości, zaszyfrowanej za jego pomocą. Może to spowodować utratę danych."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
-        ""
+        "To jest hasło odzyskiwania składające się z 12 słów, które ustawiano."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        ""
+        "To jest plik odzyskiwania lub klucz szyfrowania, który mógł zostać wcześniej zapisany."
       ],
       "This is an encryption key you may have previously saved.": [
-        ""
+        "To jest klucz szyfrowania, który mógł zostać wcześniej zapisany."
       ],
       "This is the password you used before the password reset.": [
-        ""
+        "To jest hasło używane przed zrestartowaniem hasła."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Internet Explorer lub Edge. Upewnij się, że link, który chcesz odwiedzić jest wiarygodny i otwórz go za pomocą innej przeglądarki."
@@ -4359,7 +4386,7 @@
         "Spowoduje to utworzenie nowego klucza szyfrowania dla Twojej organizacji. 4096-bitowe klucze działają jedynie na komputerach wysokiej wydajności. Dla większości użytkowników zaleca się użycie kluczy 2048-bitowych."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        ""
+        "Ta opcja wyłączy obecne hasło odzyskiwania. Nie będziesz mógł użyć tego hasła, aby uzyska dostęp do konta lub odszyfrowywać dane."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję Proton. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
@@ -4374,7 +4401,7 @@
         "To hasło zastąpi tymczasowe hasło i pozwoli Ci uzyskać dostęp do konta ${ BRAND_NAME }."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
+        "Ta czynność spowoduje wylogowanie z każdej aktywnej sesji i wyłączenie uwierzytelniania dwustopniowego."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie Proton. Ta funkcja poprawi bezpieczeństwo Twojego konta, dlatego zalecamy włączenie tej opcji."
@@ -4388,8 +4415,17 @@
       "to continue to ${ toAppName }": [
         "i przejdź do aplikacji ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        "Aby odszyfrować wiadomości i inne dane, będziesz potrzebować pliku odzyskiwania lub hasła odzyskiwania."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        "Aby odszyfrować wiadomości i inne dane, będziesz potrzebować pliku odzyskiwania."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        "Aby odszyfrować wiadomości i inne dane, będziesz potrzebować hasła odzyskiwania."
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        ""
+        "Wybierz metodę odzyskiwania, aby odszyfrować dane zablokowane przed zresetowaniem hasła."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
@@ -4401,7 +4437,7 @@
         "Postępuj zgodnie z instrukcją, aby przygotować konto zewnętrzne do importu:"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        ""
+        "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ProtonVPN i połącz się z serwerem."
@@ -4441,6 +4477,12 @@
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
+      ],
+      "Update recovery file": [
+        "Zaktualizuj plik odzyskiwania"
+      ],
+      "Update recovery phrase": [
+        "Zaktualizuj hasło odzyskiwania"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Ulepsz do planu ${ PLAN_NAMES[PLANS.VISIONARY] } lub ${ PLAN_NAMES[PLANS.PROFESSIONAL] }, aby włączyć autoresponder, kiedy jesteś poza biurem."
@@ -4500,7 +4542,7 @@
         "Zalecamy używanie oficjalnych aplikacji ProtonVPN."
       ],
       "We recommend using your recovery phrase instead.": [
-        ""
+        "Zamiast tego zalecamy użycie hasła odzyskiwania."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności."
@@ -4530,10 +4572,10 @@
         "Widoki tygodnia oraz miesiąca dostępne są tylko na komputerze."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        ""
+        "Wyślemy kod resetowania na adres pomocniczy."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        ""
+        "Wyślemy kod resetowania na numer pomocniczy."
       ],
       "What do you want to import from your Google account?": [
         "Co chcesz zaimportować z konta Google?"
@@ -4605,7 +4647,7 @@
         "Nie możesz używać danych logowania OpenVPN / IKEv2 do logowania się w aplikacjach lub panelu ProtonVPN. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Nie dodałeś metody odzyskiwania. Jeśli zapomnisz hasła, to nie odzyskasz już swojego konta. Czy chcesz przejść dalej bez dodawania metody odzyskiwania?"
+        "Nie dodano metody odzyskiwania. Jeśli zapomnisz hasła, to nie odzyskasz już swojego konta. Czy chcesz przejść dalej bez dodawania metody odzyskiwania?"
       ],
       "You have no saved payment methods.": [
         "Nie posiadasz zapisanych metod płatności."
@@ -4632,10 +4674,10 @@
         "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ loseAllData } na koncie ${ BRAND_NAME }. Aby je przywrócić, wpisz stare hasło."
@@ -4677,7 +4719,7 @@
         "Lista odrzuconych jest pusta."
       ],
       "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        ""
+        "Twoje dane są zaszyfrowane i zablokowane. Możesz odzyskać do nich dostęp metodą odzyskiwania danych."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
@@ -4866,10 +4908,10 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        ""
+        "Klucz z tym samym algorytmem szyfrowania już istnieje. Wygenerowanie kolejnego klucza spowoduje wolniejsze ładowanie konta. Czy na pewno chcesz kontynuować?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        ""
+        "Klucz z tym samym algorytmem szyfrowania jest już aktywny dla tego adresu. Wygenerowanie kolejnego klucza spowoduje wolniejsze ładowanie konta, a jego usunięcie może spowodować problemy. Jeśli chcesz wygenerować nowy klucz, ponieważ bezpieczeństwo poprzedniego zostało naruszone, najpierw oznacz stary klucz jako zagrożony. Czy na pewno chcesz kontynuować?"
       ],
       "Generate key": [
         "Generuj klucz"
@@ -4878,13 +4920,13 @@
         "Klucz z odciskiem ${ fp } został utworzony."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "Generujemy klucze szyfrowania. Może to potrwać kilka minut i chwilowo zawiesić przeglądarkę."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "Generujemy klucze szyfrowania dla Twojego adresu e-mail. Może to potrwać kilka minut i chwilowo zawiesić przeglądarkę."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        ""
+        "Możesz wygenerować nowy klucz szyfrowania, jeśli uważasz, że poprzedni został naruszony."
       ]
     },
     "Key state badge": {
@@ -5165,7 +5207,7 @@
         "Użytkowników ${ UsedMembers }/${ MaxMembers }"
       ],
       "(Coming soon)": [
-        ""
+        "(wkrótce)"
       ],
       "Account storage": [
         "Przestrzeń dyskowa konta"
@@ -7379,7 +7421,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "Domena serwera ${ server.Domain } została skopiowana do schowka"
       ],
       "Account deleted. Logging out...": [
@@ -7446,10 +7488,10 @@
         "Kod podarunkowy został zastosowany"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Jeśli podałeś prawidłowy adres e-mail odzyskiwania, w ciągu minuty wyślemy Ci wiadomość e-mail z Twoimi nazwami użytkownika."
+        "Jeśli wpisany adres pomocniczy jest prawidłowy, w ciągu minuty wyślemy Ci wiadomość z Twoimi nazwami użytkowników."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Jeśli podałeś prawidłowy numer telefonu odzyskiwania, w ciągu minuty wyślemy Ci smsa z Twoimi nazwami użytkownika."
+        "Jeśli wpisany numer pomocniczy jest prawidłowy, w ciągu minuty wyślemy Ci wiadomość SMS z Twoimi nazwami użytkowników."
       ],
       "Import record deleted": [
         "Rekord importu został usunięty"
@@ -8576,7 +8618,7 @@
         "Pozwala na posiadanie adresu e-mail z własnymi domenami, np. jan@nowak.pl"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jeśli kupiłeś kod podarunkowy lub otrzymałeś go od naszej pomocy technicznej, możesz wpisać go tutaj."
+        "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Wiadomości w folderze Wysłane lub Szkice będą nadal wyświetlane w tym folderze, nawet jeśli przeniesiesz je do innego folderu."
@@ -8651,7 +8693,7 @@
         "Nie posiadasz żadnych kontaktów do wyeksportowania"
       ],
       "You have locally decrypted this key": [
-        "Odszyfrowałeś ten klucz lokalnie"
+        "Odszyfrowano ten klucz lokalnie"
       ],
       "Your DKIM signing is working.": [
         "Podpisywanie z użyciem DKIM działa prawidłowo."
@@ -8685,7 +8727,7 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "To jest dobry dzień na napisanie wiadomości"
       ],
       "Update default font and size": [
         "Zaktualizuj domyślną czcionkę i jej rozmiar"
@@ -8970,11 +9012,11 @@
       "You will not see this import record in the list anymore.": [
         "Ten import nie będzie już widoczny na liście."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
-        ""
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
+        "Plik odzyskiwania jest nieaktualny. Nie można odzyskać nowych danych, jeśli ponownie zresetujesz konto."
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
-        ""
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        "Hasło odzyskiwania jest nieaktualne. Nie można odzyskać nowych danych, jeśli ponownie zresetujesz konto."
       ]
     },
     "Warning for domain modal": {

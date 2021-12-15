@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "添加"
       ],
@@ -404,6 +407,9 @@
       "Send": [
         "发送​​"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "分享"
       ],
@@ -475,6 +481,12 @@
       ],
       "Update": [
         "更改"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "升级账户"
@@ -1827,6 +1839,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "您也可以${ refresh }页面或稍后再试"
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2015,10 +2030,10 @@
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -2099,7 +2114,7 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } 联系人将不会被导入，点击查看详情"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -2887,6 +2902,9 @@
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将只会用于此一次性验证"
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证"
       ],
@@ -3175,6 +3193,9 @@
       "BTC amount:": [
         "比特币金额："
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -3210,6 +3231,9 @@
       ],
       "CVV code": [
         "CVV 码"
+      ],
+      "Date and time": [
+        ""
       ],
       "Description": [
         "说明："
@@ -3250,17 +3274,8 @@
       "Event duration": [
         ""
       ],
-      "Event frequency": [
-        "日程频率"
-      ],
-      "Event location": [
-        "日程地点"
-      ],
       "Event notifications": [
         "日程通知"
-      ],
-      "Event time": [
-        "日程时间"
       ],
       "Event title": [
         "日程名称"
@@ -3279,6 +3294,9 @@
       ],
       "Folder location": [
         "文件夹位置"
+      ],
+      "Frequency": [
+        ""
       ],
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
@@ -3319,6 +3337,9 @@
       "Last month only": [
         "仅上个月"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "邮箱密码"
       ],
@@ -3336,6 +3357,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "Notifications": [
+        ""
       ],
       "Operating system": [
         "操作系统"
@@ -3421,9 +3445,6 @@
       "System information": [
         "系统信息"
       ],
-      "Time of the event": [
-        "日程时间"
-      ],
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
       ],
@@ -3453,9 +3474,6 @@
       ],
       "What is the primary reason for this rating?": [
         "该评分的主要原因是什么"
-      ],
-      "Your calendars": [
-        "您的日历"
       ],
       "ZIP": [
         "邮编"
@@ -4818,6 +4836,9 @@
       ],
       "Downgrade account": [
         "降级账户"
+      ],
+      "Drop to upload": [
+        ""
       ],
       "Edit calendar": [
         ""

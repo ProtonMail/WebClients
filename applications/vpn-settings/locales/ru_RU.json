@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Активировать мой купон"
       ],
+      "Activate recovery": [
+        "Активировать восстановление"
+      ],
       "Add credit / debit card": [
         "Добавить банковскую карту"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Отправить заново"
       ],
+      "Reset": [
+        ""
+      ],
       "Reset credentials": [
         "Сбросить учётные данные"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Отправить"
+      ],
+      "Set recovery phrase": [
+        "Установить фразу для восстановления"
       ],
       "Share via link": [
         "Доступ по ссылке"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Обновить"
+      ],
+      "Update recovery file": [
+        "Обновить файл восстановления"
+      ],
+      "Update recovery phrase": [
+        "Обновить фразу для восстановления"
       ],
       "Upgrade": [
         "Улучшить"
@@ -974,8 +989,8 @@
       "You have no invoices.": [
         "У вас нет счетов."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Для вашей учётной записи или организации есть просроченный счёт. Пожалуйста, оплатите все неоплаченные счета."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ]
     },
     "Error message": {
@@ -1158,8 +1173,8 @@
       "No logs": [
         "Нет журналов активности"
       ],
-      "Secure core servers": [
-        "Сервера Secure Core"
+      "Secure Core servers": [
+        "Серверы Secure Core"
       ],
       "Strong encryption": [
         "Сильное шифрование"
@@ -1586,9 +1601,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решает большинство проблем."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Сброс вашего пароля означает, что ваш старый пароль перестанет работать на всех устройствах, где он используется. Вы действительно уверены, что хотите сбросить свой пароль?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "При сбросе вашего пароля также будут сброшены ваши ключи шифрования для всех связанных сервисов Proton (Mail и VPN). Вы больше не сможете прочитать хранящиеся там сообщения. Если знаете свои учётные данные ProtonMail, то НЕ делайте сброс. Используя их, вы можете войти ${ hereLink }."
       ],
@@ -1672,6 +1684,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Это навсегда удалит ваш аккаунт и все его данные. Вы не сможете восстановить эту учетную запись."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        ""
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем включать двухфакторную аутентификацию, т. к. она повышает безопасность учётной записи."
@@ -2979,8 +2994,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "Скопировано в буфер обмена: ${ server.Domain }"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Аккаунт удален. Выход из системы..."
@@ -3044,8 +3059,8 @@
       "/2-year": [
         "/2 года"
       ],
-      "/monthly": [
-        "/месяц"
+      "/month": [
+        ""
       ],
       "/year": [
         "/год"
@@ -3175,9 +3190,6 @@
       ],
       "Confirm phone number": [
         "Подтвердите номер телефона"
-      ],
-      "Confirm reset password": [
-        "Подтвердите пароль сброса"
       ],
       "Coupon discount": [
         "Скидка по купону"
@@ -3379,6 +3391,9 @@
       ],
       "Reset password": [
         "Сбросить пароль"
+      ],
+      "Reset password?": [
+        ""
       ],
       "Secure Core Servers": [
         "Сервера Secure Core"

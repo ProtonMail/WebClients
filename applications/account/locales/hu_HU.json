@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Hozzáadás"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Gyűjtő e-mail beállítása"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "Megosztás hivatkozással"
@@ -2164,8 +2170,8 @@
       "You must set a name": [
         "Meg kell adnia egy nevet"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Az ön fiókja vagy a szervezet késedelmes számlát tartalmaz. Kérjük, egyenlítse ki valamennyi számláját."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
@@ -2723,12 +2729,13 @@
         "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a névjegyekhez",
         "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a névjegyekhez"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "",
+        ""
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Hiba történt az esemény titkosításakor és tárolásakor. Az esemény nem került importálásra.",
         "Hiba történt az események titkosításakor és tárolásakor. Az események nem kerültek importálásra."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Névjegyek titkosítása és tárolása: ${ totalImported }/${ totalToImport }"
@@ -3059,8 +3066,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Nem került importálásra névjegy. Kattintson a részletekért"
@@ -3222,9 +3230,6 @@
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
-      "Activate your recovery phrase": [
-        "Helyreállító jelmondat aktiválása"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"ProtonMail nekem\" (ProtonMail me), vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal."
       ],
@@ -3253,8 +3258,8 @@
       "Addresses": [
         "Címek"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Jelszó visszaállítása után az adatai titkosítva és zárolva vannak a biztonság érdekében. A visszafejtéshez és az e-mailek és egyéb adatok megjelenítéséhez, helyreállító fájlra vagy helyreállító jelmondatra lesz szüksége."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "A Bitcoin fizetés után, kövesse a lenti utasításokat a nagyobb csomagra váltáshoz."
@@ -3278,6 +3283,12 @@
       ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
+      ],
+      "Allow recovery by email": [
+        ""
+      ],
+      "Allow recovery by phone": [
+        ""
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Lehetővé teszi, hogy a ${ mailAppName } címén saját domain névvel fogadjon e-maileket, pl. john.smith@example.com"
@@ -3315,8 +3326,8 @@
       "Are you sure you want to delete this filter?": [
         "Biztosan törölni akarja ezt a szűrőt?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Biztosan törli ezt a mappát?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        ""
       ],
       "Are you sure you want to delete this label?": [
         "Biztosan törli ezt a címkét?"
@@ -3518,14 +3529,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "A lemondás megszünteti a fizetett ProtonVPN szerverekkel való összes kapcsolatot."
       ],
+      "Download recovery file": [
+        ""
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Letöltheti a PGP kulcsát más PGP kompatibilis szolgáltatásokban való használathoz."
-      ],
-      "Download your recovery file": [
-        "Helyreállító fájl letöltése"
       ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
@@ -3960,6 +3971,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "A szervezetben más adminisztrátorok is vannak. Az ön feladata eljuttatni hozzájuk az új jelszót."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        ""
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4141,6 +4161,9 @@
       "Session timed out.": [
         "A munkamenet lejárt."
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
@@ -4276,6 +4299,15 @@
       "to continue to ${ toAppName }": [
         "alkalmazás: ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        ""
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "A jelszó visszaállítás után zárolt adatainak visszafejtéséhez és megjelenítéséhez, válasszon egy helyreállítási módszert."
       ],
@@ -4329,6 +4361,12 @@
       ],
       "Unsupported file": [
         "Ismeretlen file"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Váltson ${ PLAN_NAMES[PLANS.VISIONARY] } vagy ${ PLAN_NAMES[PLANS.PROFESSIONAL] } csomagra, hogy távolléte esetén a automatikus válaszokat küldhessen a feladóknak."
@@ -7235,8 +7273,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } vágólapra másolva"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Fiók törölve. Kijelentkezés..."
@@ -8808,10 +8846,10 @@
       "You will not see this import record in the list anymore.": [
         "Az importálási elem a továbbiakban nem fog szerepelni a listán."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         ""
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         ""
       ]
     },

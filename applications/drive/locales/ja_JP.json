@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "追加"
       ],
@@ -236,9 +239,6 @@
       "Go to settings": [
         "設定を開く"
       ],
-      "Grid layout": [
-        "グリッド表示"
-      ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
       ],
@@ -268,9 +268,6 @@
       ],
       "Keyboard shortcuts": [
         "キーボードショートカット"
-      ],
-      "List layout": [
-        "一覧表示"
       ],
       "Load image": [
         "画像を読み込む"
@@ -437,6 +434,9 @@
       "Select plan": [
         "プランを選択"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "共有"
       ],
@@ -463,9 +463,6 @@
       ],
       "Show labels": [
         ""
-      ],
-      "Show shared link details": [
-        "共有されたリンクの詳細を表示"
       ],
       "Sign out": [
         "サインアウト"
@@ -517,6 +514,12 @@
       ],
       "Untrust": [
         "信頼しない"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "アップグレード"
@@ -1117,10 +1120,19 @@
       "Error connecting to the Bitcoin API.": [
         "ビットコインAPIへの接続中にエラーが発生しました。"
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1128,6 +1140,12 @@
       ],
       "File has no contents to preview": [
         "ファイルにプレビューするコンテンツがありません"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         ""
@@ -1550,11 +1568,14 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } 件ダウンロード中 (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } 件アップロード中 (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } 件のメールアドレス"
@@ -1571,8 +1592,8 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } 件キャンセル"
+      "${ canceledCount } canceled": [
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } メンバー"
@@ -1592,17 +1613,17 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス (複数可) を選択してください。"
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } 件完了"
+      "${ doneCount } finished": [
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } 件ダウンロード完了"
+      "${ doneDownloadsCount } downloaded": [
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } 件のアップロード完了"
+      "${ doneUploadsCount } uploaded": [
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } 件失敗"
+      "${ errorCount } failed": [
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
@@ -1622,8 +1643,8 @@
       "${ numContacts } contact": [
         ""
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } 件一時停止"
+      "${ pausedCount } paused": [
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ annualBilling } に切り替えることで ${ save20 } になります"
@@ -1730,6 +1751,9 @@
       "Anyone with this link can access your file.": [
         "このリンクを知っていれば、誰でもこのファイルにアクセスできます。"
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "全てのアイテムを完全に削除し、ごみ箱を空にしてよろしいですか？"
       ],
@@ -1819,6 +1843,9 @@
       ],
       "Creating link to file": [
         "ファイルへのリンクを作成中"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         "共有を作成しています"
@@ -2066,6 +2093,9 @@
       "Only the people with the link and the password can access this file.": [
         "リンクとパスワードを知っている人のみがファイルにアクセスすることができます。"
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "一時停止"
       ],
@@ -2119,6 +2149,9 @@
       ],
       "Preparing link to file": [
         "ファイルへのリンクを準備中"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "プレビュー"
@@ -2225,7 +2258,10 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "このリンクは永久に無効化され、このリンクを知っている人は今後あなたのファイルにアクセスできません。ファイルを再度共有した場合、新しいリンクが作成されます。"
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
         ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
@@ -2404,6 +2440,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "あなたのファイルは暗号化して保存されます。"
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
@@ -3355,6 +3400,9 @@
       "Contact group updated": [
         "連絡先グループが更新されました。"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "移動に失敗しました。再度お試しください。"
       ],
@@ -4116,8 +4164,8 @@
       "Empty trash": [
         "ごみ箱を空にする"
       ],
-      "Enter file password to download": [
-        "ファイルのパスワードを入力してください"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "パスワードを入力してください"
@@ -4196,6 +4244,9 @@
       ],
       "My files": [
         "マイファイル"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "名前"
@@ -4368,6 +4419,9 @@
       "Your file is ready to be downloaded": [
         "ファイルのダウンロード準備完了"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "郵便番号"
       ]
@@ -4380,9 +4434,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "どこにいてもアクセス制限があるコンテンツ (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube など) にアクセスできます。"
-      ],
-      "Active sharing link": [
-        "有効な共有リンク"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
@@ -4411,9 +4462,6 @@
       "Encrypted data with verified digital signature": [
         "検証済みデジタル署名付きの暗号化データ"
       ],
-      "Expired sharing link": [
-        "有効期限切れの共有リンク"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "1つのプランで ${ vpnAppName } と ${ mailAppName } (数百万人が自分たちのデータを保護するために使用してる暗号化電子メールサービス) 両サービスの全有料機能を利用できます。"
       ],
@@ -4428,9 +4476,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
-      ],
-      "Inactive sharing link": [
-        "アクティブではない共有リンク"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "マルチユーザーサポートは 2 人以上のユーザーがいる場合のみ適用されます"

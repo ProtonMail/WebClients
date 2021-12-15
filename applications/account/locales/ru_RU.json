@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Активировать ключ организации"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Добавить"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Задать ящик-ловушку (получает всю почту для домена)"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "Поделиться с помощью ссылки"
@@ -2206,8 +2212,8 @@
       "You must set a name": [
         "Вы должны задать имя"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ваша учётная запись или организация имеет просроченный счёт. Пожалуйста, оплатите все неоплаченные счета."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ],
       "Your import will not be processed.": [
         "Ваш импорт не будет обработан."
@@ -2771,14 +2777,17 @@
         "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь",
         "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано.",
         "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы.",
         "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы.",
         "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Произошла ошибка при шифровании и добавлении событий. ${ totalImported } из ${ totalToImport } событий успешно импортированы."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифруем и добавляем контакты: ${ totalImported }/${ totalToImport }"
@@ -3123,8 +3132,11 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } из ${ totalEvents } событий не будут импортированы. Разверните для получения подробной информации."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
+        "",
+        "",
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Не можем импортировать контакты. Нажмите, чтобы узнать подробности"
@@ -3320,9 +3332,6 @@
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
-      "Activate your recovery phrase": [
-        "Активируйте вашу фразу восстановления"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в вашу учетную запись. Этот простой и короткий домен означает \"ProtonMail меня\" или \"Личное сообщение мне\""
       ],
@@ -3353,8 +3362,8 @@
       "Addresses": [
         "Адреса"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "После сброса пароля ваши данные блокируются в зашифрованном виде для обеспечения их сохранности. Для расшифровки и просмотра писем и других данных необходим файл восстановления или фраза восстановления."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
@@ -3382,6 +3391,12 @@
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
+      ],
+      "Allow recovery by email": [
+        ""
+      ],
+      "Allow recovery by phone": [
+        ""
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Позволяет использовать почту с вашим доменным именем на ${ mailAppName }, например john.smith@example.com"
@@ -3419,8 +3434,8 @@
       "Are you sure you want to delete this filter?": [
         "Вы уверены, что хотите удалить этот фильтр?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Вы уверены, что хотите удалить эту папку?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        ""
       ],
       "Are you sure you want to delete this label?": [
         "Вы уверены, что хотите удалить этот ярлык?"
@@ -3626,14 +3641,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Снижение тарифа разорвет все действующие подключения к платным серверам ProtonVPN."
       ],
+      "Download recovery file": [
+        ""
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Загрузите ключи PGP для использования в других PGP-совместимых сервисах."
-      ],
-      "Download your recovery file": [
-        "Загрузить ваш файл восстановления"
       ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
@@ -4070,6 +4085,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "В вашей организации есть другие администраторы, ответственность сообщить им новый пароль лежит на вас."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        ""
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4253,6 +4277,9 @@
       "Session timed out.": [
         "Время сессии истекло."
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
@@ -4388,6 +4415,15 @@
       "to continue to ${ toAppName }": [
         "чтобы продолжить в ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        ""
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         ""
       ],
@@ -4441,6 +4477,12 @@
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Переходите на план ${ PLAN_NAMES[PLANS.VISIONARY] } или ${ PLAN_NAMES[PLANS.PROFESSIONAL] } чтобы включить автоматические ответы в то время, когда ват нет в офисе."
@@ -7379,8 +7421,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "Скопировано в буфер обмена: ${ server.Domain }"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Учётная запись удалена. Производится выход..."
@@ -8970,10 +9012,10 @@
       "You will not see this import record in the list anymore.": [
         "Вы больше не увидите в списке эту запись об импорте."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         ""
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         ""
       ]
     },

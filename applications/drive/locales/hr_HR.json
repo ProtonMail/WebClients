@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -240,9 +243,6 @@
       "Go to settings": [
         "Idi na postavke"
       ],
-      "Grid layout": [
-        "Izgled mreže"
-      ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
       ],
@@ -272,9 +272,6 @@
       ],
       "Keyboard shortcuts": [
         "Tipkovni prečaci"
-      ],
-      "List layout": [
-        "Izgled popisa"
       ],
       "Load image": [
         "Učitaj sliku"
@@ -441,6 +438,9 @@
       "Select plan": [
         "Odaberi plan"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Podijeli"
       ],
@@ -467,9 +467,6 @@
       ],
       "Show labels": [
         ""
-      ],
-      "Show shared link details": [
-        "Prikaži detalje poveznice za dijeljenje"
       ],
       "Sign out": [
         "Odjava"
@@ -521,6 +518,12 @@
       ],
       "Untrust": [
         "Označi kao nepouzdano"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -1139,10 +1142,19 @@
       "Error connecting to the Bitcoin API.": [
         "Pogreška prilikom spajanja na Bitcoin API."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1150,6 +1162,12 @@
       ],
       "File has no contents to preview": [
         "Datoteka nema sadržaja za pregled"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         ""
@@ -1590,15 +1608,20 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } preuzimanje (${ downloadProgress }%)",
-        "${ activeDownloadsCount } preuzimanje (${ downloadProgress }%)",
-        "${ activeDownloadsCount } preuzimanje (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } učitavanje (${ uploadProgress }%)",
-        "${ activeUploadsCount } učitavanje (${ uploadProgress }%)",
-        "${ activeUploadsCount } učitavanje (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } adresa e-pošte",
@@ -1623,10 +1646,10 @@
         "",
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Otkazan",
-        "${ canceledCount } Otkazan",
-        "${ canceledCount } Otkazan"
+      "${ canceledCount } canceled": [
+        "",
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } član",
@@ -1650,25 +1673,25 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Dovršeno",
-        "${ doneCount } Dovršeno",
-        "${ doneCount } Dovršeno"
+      "${ doneCount } finished": [
+        "",
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } preuzeto",
-        "${ doneDownloadsCount } preuzeto",
-        "${ doneDownloadsCount } preuzeto"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } učitano",
-        "${ doneUploadsCount } učitano",
-        "${ doneUploadsCount } učitano"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Neuspješno",
-        "${ errorCount } Neuspješno",
-        "${ errorCount } Neuspješno"
+      "${ errorCount } failed": [
+        "",
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupa pronađena",
@@ -1694,10 +1717,10 @@
         "",
         ""
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Zaustavljeno",
-        "${ pausedCount } Zaustavljeno",
-        "${ pausedCount } Zaustavljeno"
+      "${ pausedCount } paused": [
+        "",
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na vašu pretplatu prebacivanjem na ${ annualBilling }"
@@ -1820,6 +1843,9 @@
       "Anyone with this link can access your file.": [
         "Svatko s ovom poveznicom može pristupiti vašoj datoteci."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Jeste li sigurni da želite isprazniti otpad i trajno izbrisati sve stavke?"
       ],
@@ -1913,6 +1939,9 @@
       ],
       "Creating link to file": [
         "Stvaranje poveznice za datoteku"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         ""
@@ -2164,6 +2193,9 @@
       "Only the people with the link and the password can access this file.": [
         "Samo osobe s poveznicom i lozinkom mogu pristupiti ovoj datoteci."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Pauzirano"
       ],
@@ -2217,6 +2249,9 @@
       ],
       "Preparing link to file": [
         "Pripremanje poveznice za datoteku"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Pregled"
@@ -2325,7 +2360,10 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Ova poveznica će biti trajno onemogućena. Nitko s ovom poveznicom neće moći pristupiti vašoj datoteci. Da biste datoteku ponovno podijelili, trebat će vam nova poveznica."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "",
         "",
         ""
@@ -2506,6 +2544,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše datoteke će biti šifrirane i spremljene."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
@@ -3499,6 +3546,9 @@
       "Contact group updated": [
         "Kontaktna grupa je ažurirana"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "Neuspješno premještanje, pokušajte ponovo"
       ],
@@ -4294,8 +4344,8 @@
       "Empty trash": [
         "Isprazni otpad"
       ],
-      "Enter file password to download": [
-        "Unesite lozinku datoteke za preuzimanje"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Unesite vašu lozinku"
@@ -4374,6 +4424,9 @@
       ],
       "My files": [
         "Moje datoteke"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Naziv"
@@ -4546,6 +4599,9 @@
       "Your file is ready to be downloaded": [
         "Vaša datoteka je spremna za preuzimanje"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "Poštanski broj"
       ]
@@ -4558,9 +4614,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Pristupite geo-blokiranom sadržaju (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itd.) bez obzira gdje se nalazite."
-      ],
-      "Active sharing link": [
-        "Aktivna poveznica za dijeljenje"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatski - označava da se format teksta koji je u prozoru za novu poruku, koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
@@ -4589,9 +4642,6 @@
       "Encrypted data with verified digital signature": [
         "Šifrirani podaci sa potvrđenim digitalnim potpisom"
       ],
-      "Expired sharing link": [
-        "Istekla poveznica za dijeljenje"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Pristup svim plaćenim značajkama za ${ vpnAppName } i ${ mailAppName } (šifriranu uslugu e-pošte koji milijuni koriste za zaštitu svojih podataka) s jednim planom."
       ],
@@ -4606,9 +4656,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
-      ],
-      "Inactive sharing link": [
-        "Neaktivna poveznica za dijeljenje"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Višekorisnička podrška je primjenjiva na planove s 2 ili više korisnika"

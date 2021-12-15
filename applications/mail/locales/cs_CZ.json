@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Accept": [
-        "Přijmout"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Přidat"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Přidat novou skupinu"
+      ],
+      "Add participant": [
+        ""
       ],
       "Add phone number": [
         ""
@@ -179,8 +182,8 @@
       "Confirm": [
         "Potvrdit"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrďte otevření odkazu ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Skupina kontaktů"
@@ -225,7 +228,7 @@
         "Snížit"
       ],
       "Default email application": [
-        "Výchozí emailová aplikace"
+        "Výchozí e-mailová aplikace"
       ],
       "Delete": [
         "Smazat"
@@ -306,7 +309,7 @@
         "Upravit telefonní číslo"
       ],
       "Email settings": [
-        "Nastavení emailu"
+        "Nastavení e-mailu"
       ],
       "Enable": [
         "Zapnout"
@@ -752,6 +755,9 @@
       "Set expiration time": [
         ""
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Sdílet odkaz"
       ],
@@ -830,9 +836,6 @@
       "This message contains embedded images.": [
         "Tato zpráva obsahuje vložené obrázky."
       ],
-      "This message contains remote content.": [
-        "Tato zpráva obsahuje vzdálený obsah."
-      ],
       "Trust": [
         "Důvěřovat"
       ],
@@ -876,6 +879,12 @@
         "Nedůvěřovat"
       ],
       "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -973,6 +982,17 @@
         "Nemáte žádné skupiny."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } e-mailová adresa",
@@ -1041,7 +1061,10 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "",
+        "",
+        "",
         ""
       ]
     },
@@ -1324,6 +1347,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Tato odpověď neodpovídá Vašim údajům o pozvánce. Zkontrolujte prosím detaily pozvánky ve Vašem kalendáři."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } pozvánka přijata a navržen nový čas pro tuto událost."
       ],
@@ -1345,6 +1380,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } požádal o nejnovější aktualizaci k události, která už neexistuje ve Vašem kalendáři."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } pozvánka zamítnuta a navržen nový čas pro tuto událost."
       ],
@@ -1357,11 +1404,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } byla odmítnuta Vaše pozvánka."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } přijatá pozvánka a navržen nový čas pro výskyt této události. Odpověď a návrhy jsou zastaralé."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } přijatá pozvánka a navržen nový čas této události. Odpověď a návrhy jsou zastaralé."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } zamítnuta pozvánka a navržen nový čas pro výskyt této události. Odpověď a návrhy jsou zastaralé."
@@ -1405,17 +1476,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } navržen nový čas pro tuto událost. Tento návrh je už zastaralý. Nemáte žádné kalendáře."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } předběžně přijatá pozvánka a navržen nový čas pro výskyt této události. Odpověď a návrhy jsou zastaralé."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } předběžně přijatá pozvánka a navržen nový čas této události. Odpověď a návrhy jsou zastaralé."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } navržen nový čas pro výskyt této události."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } navržen nový čas pro tuto událost."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } pozvánka předběžně přijata a navržen nový čas pro výskyt této události."
@@ -1438,19 +1536,10 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Výskyt byl přidán k události ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
         ""
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
@@ -1525,6 +1614,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Od poslední aktualizace uběhlo už více jak 12 hodin"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
       ]
     },
     "Collapsible tooltip": {
@@ -1623,7 +1720,7 @@
         "Narození"
       ],
       "Email": [
-        "Email"
+        "E-mail"
       ],
       "Gender": [
         "Pohlaví"
@@ -1919,12 +2016,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event is tomorrow": [
         ""
       ],
@@ -2088,7 +2179,7 @@
         "E-mailová adresa je neplatná"
       ],
       "Email is not valid": [
-        "Emailová adresa není platná"
+        "E-mailová adresa není platná"
       ],
       "Empty condition": [
         "Prázdná podmínka"
@@ -2208,7 +2299,7 @@
         "Neplatné číslo"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Jeden z kontaktů nemá emailovou adresu: ${ noEmailsContactNamesList }",
+        "Jeden z kontaktů nemá e-mailovou adresu: ${ noEmailsContactNamesList }",
         "Některé kontakty nemají žádnou e-mailovou adresu: ${ noEmailsContactNamesList } ",
         "Některých kontaktů nemá žádné e-mailové adresy: ${ noEmailsContactNamesList } ",
         "Některé kontakty nemají žádnou e-mailovou adresu: ${ noEmailsContactNamesList } "
@@ -2430,7 +2521,24 @@
         ""
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Tuto akci nelze provést"
       ]
@@ -2588,6 +2696,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Není vybrán žádný obrázek"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2759,6 +2872,12 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
+      "Expires today": [
         ""
       ],
       "Only ${ days } day left": [
@@ -2973,9 +3092,9 @@
     },
     "Info": {
       "${ addressCount } email address": [
-        "${ addressCount } email adresa",
-        "${ addressCount } email adresy",
-        "${ addressCount } emailových adres",
+        "${ addressCount } e-mail adresa",
+        "${ addressCount } e-mail adresy",
+        "${ addressCount } e-mailových adres",
         ""
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -3006,10 +3125,10 @@
         "${ contactEmailsLength } členů"
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } obsahuje soubor adres emailů. Prosím vyberte která emailová adresa nebo adresy přidat do ${ groupsEnumeration }."
+        "${ contactName } obsahuje soubor adres e-mailů. Prosím vyberte která e-mailová adresa nebo adresy přidat do ${ groupsEnumeration }."
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } obsahuje soubor adres emailů. Prosím vyberte emailovou adresu nebo adresy, které přidat do skupiny."
+        "${ contactName } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidat do skupiny."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt nalezen",
@@ -3018,10 +3137,10 @@
         "${ contactsCount } kontaktů nalezeno"
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } obsahuje soubor adres emailů. Prosím vyberte která emailová adresa nebo adresy přidat do ${ groupsEnumeration }."
+        "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte která e-mailová adresa nebo adresy přidat do ${ groupsEnumeration }."
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } obsahuje soubor adres emailů. Prosím vyberte emailovou adresu nebo adresy, které přidat do skupiny."
+        "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidat do skupiny."
       ],
       "${ count } unread message": [
         "${ count } nepřečtená zpráva",
@@ -3326,8 +3445,8 @@
       "Are you sure you want to permanently delete this message?": [
         "Opravdu chcete nevratně smazat tuto zprávu?"
       ],
-      "Attach Public Key": [
-        "Připojit veřejný klíč"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "Barva pozadí"
@@ -3447,7 +3566,7 @@
         "dny"
       ],
       "Default email application": [
-        "Výchozí emailová aplikace"
+        "Výchozí e-mailová aplikace"
       ],
       "Disable message content search": [
         ""
@@ -3570,7 +3689,7 @@
         "Pro rodiny a malé týmy; zahrnuje jak poštu tak i VPN."
       ],
       "For getting started with private and secure emailing.": [
-        "Začínáme se soukromým a zabezpečeným účtem emailu."
+        "Začínáme se soukromým a zabezpečeným účtem e-mailu."
       ],
       "For increased security, activate 2FA.": [
         "Pro zvýšení zabezpečení, aktivujte 2FA."
@@ -3735,7 +3854,7 @@
         ""
       ],
       "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Expirace zprávy funguje mimo schránku když jsou zasílané další emailové zprávy uživatelům služby ProtonMail. Pro zaslání expirovaných emailů pro uživatelé, kteří nepoužívají službu ProtonMail, prosím přerušte a přidejte heslo ochrany k Vašemu emailu."
+        "Expirace zprávy funguje mimo schránku když jsou zasílané další e-mailové zprávy uživatelům služby ProtonMail. Pro zaslání expirovaných e-mailů pro uživatelé, kteří nepoužívají službu ProtonMail, prosím přerušte a přidejte heslo ochrany k Vašemu e-mailu."
       ],
       "Message headers": [
         "Hlavička zprávy"
@@ -3897,7 +4016,7 @@
         "Hlavní"
       ],
       "Print email": [
-        "Vytisknout email"
+        "Vytisknout e-mail"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nevydělává peníze zneužitím soukromí."
@@ -3926,8 +4045,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlášení této zprávy jako pokusu o phishing odešle tuto zprávu Nám, abychom ji mohli analyzovat a zlepšit tím Naše filtry. To znamená, že uvidíme kompletně celý obsah této zprávy."
       ],
-      "Request Read Receipt": [
-        "Požádat o potvrzení o přečtení"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "Zprava doleva"
@@ -3969,7 +4088,7 @@
         "Vypadá to jako když máte vše vychytáno"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
+        "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -3993,10 +4112,10 @@
         ""
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Nastavit ProtonMail jako výchozí emailovou aplikaci pro tento prohlížeč. ProtonMail bude automaticky spuštěn po kliknutí na emailový odkaz."
+        "Nastavit ProtonMail jako výchozí e-mailovou aplikaci pro tento prohlížeč. ProtonMail bude automaticky spuštěn po kliknutí na e-mailový odkaz."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
+        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované e-mailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
@@ -4074,7 +4193,7 @@
         "Ověření ${ contactNames } se nepovedlo: kontaktů není správně přihlášeno. Můžete to být důvod resetování hesla.\nMusíte znovu přihlásit kontakty, aby bylo možné poslat zprávu k ${ contactAddresses } nebo upravit kontakty."
       ],
       "Themes can give your inbox a new look.": [
-        "Motivy mohou dát Vaší emailové schránce novou podobu."
+        "Motivy mohou dát Vaší e-mailové schránce novou podobu."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Je tam chyba v podpisu používaní pro ověření detailu kontaktu, kdy je to možná důvod pro resetování hesla."
@@ -4176,7 +4295,7 @@
         "Pro nahrazení Vašich dat, potřebujete re-aktivovat kontaktní šifrovací klíč od doby, kdy byla data vytvořena. Tato akce požaduje, aby jste si pamatovali heslo, kdy byl klíč generován."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Pro odhlášení z příjmu zpráv z emailového seznamu, email bude zaslán z ${ boldFrom } s následujícím detaily jak je definováno odesílatelem novinek:"
+        "Pro odhlášení z příjmu zpráv z e-mailového seznamu, e-mail bude zaslán z ${ boldFrom } s následujícím detaily jak je definováno odesílatelem novinek:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "Pro odhlášení z tohoto seznamu budete přesměrováni na následující stránku odesilatele, kde vám budou poskytnuty další instrukce:"
@@ -4200,7 +4319,7 @@
         "Aktualizuji vyhledávání ve zprávách..."
       ],
       "Upgrade to add more addresses to your account.": [
-        "Vylepšete pro přidání více emailových adres k Vašemu účtu."
+        "Vylepšete pro přidání více e-mailových adres k Vašemu účtu."
       ],
       "Upgrade to configure a vacation auto-responder.": [
         "Vylepšete pro vytváření automatické odpovědi v době nepřítomnosti."
@@ -4209,13 +4328,13 @@
         "Vylepšete pro vytváření více složek, filtrů a adres."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Vylepšete pro hostování emailů z Vašeho vlastního názvu domény."
+        "Vylepšete pro hostování e-mailů z Vašeho vlastního názvu domény."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Vylepšete pro posílání emailu z adres @pm.me."
+        "Vylepšete pro posílání e-mailu z adres @pm.me."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Vylepšete pro snadné odesílání emailů skupinám kontaktů."
+        "Vylepšete pro snadné odesílání e-mailů skupinám kontaktů."
       ],
       "Upgrade to support a privacy-first internet.": [
         "Vylepšete hlavně pro podporu soukromí na internetu."
@@ -4239,7 +4358,7 @@
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        "Použijte klávesové zkratky pro rychlejší správu Vašeho emailu."
+        "Použijte klávesové zkratky pro rychlejší správu Vašeho e-mailu."
       ],
       "Use Proton Calendar to keep your agenda private.": [
         "Používejte Proton Kalendář, aby jste udrželi svá data v soukromí."
@@ -4266,7 +4385,7 @@
         "VPN + ${ mailAppName } pro rodiny a malé podniky."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Omlouváme se. Toto mohla být chyba na Naší straně. Jste si jistí, že chcete tento email označit jako legitimní?"
+        "Omlouváme se. Toto mohla být chyba na Naší straně. Jste si jistí, že chcete tento e-mail označit jako legitimní?"
       ],
       "We could not verify the sender's trusted keys.": [
         "Nemohli jsme ověřit důvěrné klíče odesílatele."
@@ -4323,7 +4442,7 @@
         "Můžete buď aktualizovat hledaný dotaz nebo jej smazat"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový email."
+        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
       "You can use ProtonVPN for free today.": [
         "Dnes můžete používat ProtonVPN zcela zdarma."
@@ -4525,10 +4644,10 @@
         "Chcete důvěřovat hlavním veřejném klíčům s následujícím otiskem prstu?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Povolili jste ověření adresy pomocí důvěryhodných klíčů pro tuto emailovou adresu, ale aktivní šifrovací klíče nejsou označeny jako důvěryhodné.\nPro odeslání zprávy na tuto adresu musí být primární klíč označen jako důvěryhodný.",
-        "Povolili jste ověření adresy pomocí důvěryhodných klíčů pro tyto emailové adresy, ale aktivní šifrovací klíče nejsou označeny jako důvěryhodné.\nPro odeslání zprávy na tyto adresy musí být primární klíč označen jako důvěryhodný.",
-        "Povolili jste ověření adresy pomocí důvěryhodných klíčů pro tyto emailové adresy, ale aktivní šifrovací klíče nejsou označeny jako důvěryhodné.\nPro odeslání zprávy na tyto adresy musí být primární klíč označen jako důvěryhodný.",
-        "Povolili jste ověření adresy pomocí důvěryhodných klíčů pro tyto emailové adresy, ale aktivní šifrovací klíče nejsou označeny jako důvěryhodné.\nPro odeslání zprávy na tyto adresy musí být primární klíč označen jako důvěryhodný."
+        "Povolili jste ověření adresy pomocí důvěryhodných klíčů pro tuto e-mailovou adresu, ale aktivní šifrovací klíče nejsou označeny jako důvěryhodné.\nPro odeslání zprávy na tuto adresu musí být primární klíč označen jako důvěryhodný.",
+        "Povolili jste ověření adresy pomocí důvěryhodných klíčů pro tyto e-mailové adresy, ale aktivní šifrovací klíče nejsou označeny jako důvěryhodné.\nPro odeslání zprávy na tyto adresy musí být primární klíč označen jako důvěryhodný.",
+        "Povolili jste ověření adresy pomocí důvěryhodných klíčů pro tyto e-mailové adresy, ale aktivní šifrovací klíče nejsou označeny jako důvěryhodné.\nPro odeslání zprávy na tyto adresy musí být primární klíč označen jako důvěryhodný.",
+        "Povolili jste ověření adresy pomocí důvěryhodných klíčů pro tyto e-mailové adresy, ale aktivní šifrovací klíče nejsou označeny jako důvěryhodné.\nPro odeslání zprávy na tyto adresy musí být primární klíč označen jako důvěryhodný."
       ]
     },
     "Key validation warning": {
@@ -4673,16 +4792,16 @@
         "Vybrat vše/zrušit výběr všeho"
       ],
       "Send email": [
-        "Odeslat email"
+        "Odeslat e-mail"
       ],
       "Show all emails": [
-        "Zobrazit všechny emaily"
+        "Zobrazit všechny e-maily"
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
       ],
       "Show unread emails": [
-        "Zobrazit nepřečtené emaily"
+        "Zobrazit nepřečtené e-maily"
       ],
       "Star": [
         "Hvězdička"
@@ -4738,7 +4857,7 @@
         "Akce"
       ],
       "Add email address": [
-        "Přidat emailovou adresu"
+        "Přidat e-mailovou adresu"
       ],
       "Add image URL": [
         "Přidat odkaz obrázku"
@@ -4787,6 +4906,9 @@
       ],
       "BTC amount:": [
         "Částka BTC:"
+      ],
+      "Calendar": [
+        ""
       ],
       "Calendars": [
         ""
@@ -4887,6 +5009,9 @@
       "Folder location": [
         "Umístění složky"
       ],
+      "Frequency": [
+        ""
+      ],
       "From": [
         "Od"
       ],
@@ -4944,6 +5069,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Heslo k poštovní schránce"
       ],
@@ -4991,6 +5119,9 @@
       ],
       "Or": [
         "Nebo"
+      ],
+      "Participants": [
+        ""
       ],
       "Password": [
         "Heslo"
@@ -5241,7 +5372,7 @@
         "klikněte zde"
       ],
       "Create a calendar linked to an active email address.": [
-        "Vytvořte kalendář propojený k aktivní emailové adrese."
+        "Vytvořte kalendář propojený k aktivní e-mailové adrese."
       ],
       "Create a new calendar to add this event": [
         "Vytvořte nový kalendář pro přidání této události"
@@ -5256,13 +5387,13 @@
         "Koncepty"
       ],
       "Enable an email address linked to one of your calendars.": [
-        "Vytvořte emailové adresy propojené k jednomu z Vašich kalendářů."
+        "Vytvořte e-mailové adresy propojené k jednomu z Vašich kalendářů."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Povolte emailovou adresu propojenou do zakázaného kalendáře pro zrušení události."
+        "Povolte e-mailovou adresu propojenou do zakázaného kalendáře pro zrušení události."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Povolte emailovou adresu propojenou do zakázaného kalendáře pro úpravu své odpovědi."
+        "Povolte e-mailovou adresu propojenou do zakázaného kalendáře pro úpravu své odpovědi."
       ],
       "Enable your address again to modify your answer.": [
         "Povolte znovu svou adresu, aby jste mohli upravit svou odpověď."
@@ -5298,7 +5429,7 @@
         "Otevřete upravenou událost v ${ calendarAppName }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Nebo můžete vymazat jeden z Vašich kalendářů a vytvořit nový propojený do aktivní emailové adresy."
+        "Nebo můžete vymazat jeden z Vašich kalendářů a vytvořit nový propojený do aktivní e-mailové adresy."
       ],
       "Outbox": [
         "K odeslání"
@@ -6112,7 +6243,7 @@
         "Adresa"
       ],
       "Email": [
-        "Email"
+        "E-mail"
       ],
       "Fax": [
         "Fax"
@@ -6228,13 +6359,13 @@
         "Chcete přesto e-mail odeslat?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Zaznamenali jsem chyby. Váš email nemůže být poslán na adresy emailů zadány během a to z následujích důvodů:",
-        "Zaznamenali jsem chyby. Vaše emaily nemůžou být poslány na adresy emailů zadány během a to z následujích důvodů:",
-        "Zaznamenali jsem chyby. Vaše emaily nemůžou být poslány na adresy emailů zadány během a to z následujích důvodů:",
-        "Zaznamenali jsem chyby. Vaše emaily nemůžou být poslány na adresy emailů zadány během a to z následujích důvodů:"
+        "Zaznamenali jsem chyby. Váš e-mail nemůže být poslán na adresy e-mailů zadány během a to z následujích důvodů:",
+        "Zaznamenali jsem chyby. Vaše e-maily nemůžou být poslány na adresy e-mailů zadány během a to z následujích důvodů:",
+        "Zaznamenali jsem chyby. Vaše e-maily nemůžou být poslány na adresy e-mailů zadány během a to z následujích důvodů:",
+        "Zaznamenali jsem chyby. Vaše e-maily nemůžou být poslány na adresy e-mailů zadány během a to z následujích důvodů:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Zaznamenali jsme nějaké chyby. Váš email nemůže být poslán na jednu nebo více adres emailů zadány během a to z následujích důvodů:"
+        "Zaznamenali jsme nějaké chyby. Váš e-mail nemůže být poslán na jednu nebo více adres e-mailů zadány během a to z následujích důvodů:"
       ]
     },
     "Send email with warnings": {
@@ -6242,10 +6373,10 @@
         "Chcete přesto e-mail odeslat?"
       ],
       "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemce obdrží email bez expirace:",
-        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží email bez expirace:",
-        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží email bez expirace:",
-        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží email bez expirace:"
+        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemce obdrží e-mail bez expirace:",
+        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží e-mail bez expirace:",
+        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží e-mail bez expirace:",
+        "Jestliže se stejně rozhodnete zprávu odeslat, následující příjemci obdrží e-mail bez expirace:"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Následující adresa není platná: ${ invalidAddresses }",
@@ -7005,6 +7136,9 @@
       "Email addresses": [
         ""
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "Nastavení e-mailu"
       ],
@@ -7071,9 +7205,6 @@
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
       ],
-      "Load embedded images": [
-        "Načíst vložené obrázky"
-      ],
       "Load remote content": [
         "Načíst vzdálený obsah"
       ],
@@ -7087,7 +7218,7 @@
         "Označit jako nepřečtené"
       ],
       "Mark email as legitimate": [
-        "Označit emaily jako legitimní"
+        "Označit e-maily jako legitimní"
       ],
       "Merge contacts": [
         "Sloučit kontakty"
@@ -7228,7 +7359,7 @@
         ""
       ],
       "Send email": [
-        "Odeslat email"
+        "Odeslat e-mail"
       ],
       "Send with changed preferences?": [
         "Poslat s provedenými změnami?"
@@ -7250,6 +7381,9 @@
       ],
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Seřadit konverzace"
@@ -7334,7 +7468,7 @@
         "Chrání před hrozbami soukromí VPN obcházení Vašeho internetového provozu přes více serverů."
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Digitální podpis emailů pomáhá ověřit, že jsou zprávy zaslány od Vás"
+        "Digitální podpis e-mailů pomáhá ověřit, že jsou zprávy zaslány od Vás"
       ],
       "Discount applied for annual billing cycle": [
         "Byla uplatněna sleva pro roční vyúčtování"
@@ -7346,7 +7480,7 @@
         ""
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Šifrování emailů posiluje emailový podpis, aby Vaše zprávy byly ověřeny"
+        "Šifrování e-mailů posiluje e-mailový podpis, aby Vaše zprávy byly ověřeny"
       ],
       "Encrypted data with verified digital signature": [
         "Zašifrovaná data s ověřeným digitálním podpisem"
@@ -7361,7 +7495,7 @@
         "Umožňuje hosting e-mailů pro Vaši vlastní doménu(y) na ${ mailAppName }, např. jan.smith@example.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Můžete zařizovat Hosting pro emaily na Vaší vlastní doméně(y) ve službě ProtonMail, např. john.smith@example.com"
+        "Můžete zařizovat Hosting pro e-maily na Vaší vlastní doméně(y) ve službě ProtonMail, např. john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Pokud jste zakoupil dárkový kód nebo jste je obdržel od naší podpory, můžete ho vložit sem."
@@ -7394,7 +7528,7 @@
         "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Nahrajte veřejný klíč, pro umožnění zasílání end-to-end šifrování emailů k tomuto emailu"
+        "Nahrajte veřejný klíč, pro umožnění zasílání end-to-end šifrování e-mailů k tomuto e-mailu"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Použijte více adres / aliasy propojené s vaším účtem, např. username2@protonmail.com"

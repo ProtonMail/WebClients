@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
+      "Activate recovery": [
+        "Aktiver gendannelse"
+      ],
       "Add": [
         "Tilføj"
       ],
       "Add address": [
-        ""
+        "Tilføj adresse"
       ],
       "Add contact": [
         "Tilføj kontakt"
       ],
       "Add email": [
-        ""
+        "Tilføj e-mail"
       ],
       "Add group": [
         "Tilføj gruppe"
@@ -39,7 +42,7 @@
         "Tilføj notifikation"
       ],
       "Add phone number": [
-        ""
+        "Tilføj telefonnummer"
       ],
       "Add screenshot(s)": [
         "Tilføj screenshot(s)"
@@ -406,6 +409,9 @@
       "Send": [
         "Send"
       ],
+      "Set recovery phrase": [
+        "Opsæt gendannelsessætning"
+      ],
       "Share": [
         "Del"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Opdatér"
+      ],
+      "Update recovery file": [
+        "Opdater gendannelsesfil"
+      ],
+      "Update recovery phrase": [
+        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Du kan også ${ refresh }, eller forsøge igen senere."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2042,12 +2057,13 @@
         "${ totalImported }/${ totalToImport } begivenhed krypteret og føjet til din kalender",
         "${ totalImported }/${ totalToImport } begivenheder krypteret og føjet til din kalender"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret.",
+        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. Ingen begivenhed kunne importeres.",
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kryptering og tilføjelse af kontakter: ${ totalImported }/${ totalToImport }"
@@ -2134,7 +2150,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } ud af ${ totalEvents } begivenhed vil ikke blive importeret. Udvid for detaljer.",
         "${ totalEventsDiscarded } ud af ${ totalEvents } begivenheder vil ikke blive importeret. Udvid for detajler."
       ],
       "No contact can be imported. Click for details": [
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
@@ -3192,7 +3212,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Kommer snart)"
       ],
       "0 - Not likely": [
         "0 - Ikke sandsynligt"
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "BTC-beløb:"
       ],
+      "Calendar": [
+        "Kalender"
+      ],
       "Calendars": [
         "Kalendere"
       ],
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "CVV-kode"
+      ],
+      "Date and time": [
+        "Dato og tid"
       ],
       "Description": [
         "Beskrivelse"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         "Begivenhedsvarighed"
       ],
-      "Event frequency": [
-        "Hyppighed af begivenhed"
-      ],
-      "Event location": [
-        "Begivenhedsplacering"
-      ],
       "Event notifications": [
         "Begivenhedsnotifikationer"
-      ],
-      "Event time": [
-        "Tidspunkt for begivenhed"
       ],
       "Event title": [
         "Begivenhedstitel"
@@ -3334,6 +3351,9 @@
       ],
       "Folder location": [
         "Mappeplacering"
+      ],
+      "Frequency": [
+        "Frekvens"
       ],
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
@@ -3374,6 +3394,9 @@
       "Last month only": [
         "Kun seneste måned"
       ],
+      "Location": [
+        "Placering"
+      ],
       "Mailbox password": [
         "Postkasseadgangskode"
       ],
@@ -3391,6 +3414,9 @@
       ],
       "Notification": [
         "Notifikation"
+      ],
+      "Notifications": [
+        "Notifikationer"
       ],
       "Operating system": [
         "Operativsystem"
@@ -3477,9 +3503,6 @@
       "System information": [
         "Systemoplysninger"
       ],
-      "Time of the event": [
-        "Tidspunkt for begivenheden"
-      ],
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Hvad er den primære årsag til denne bedømmelse?"
-      ],
-      "Your calendars": [
-        "Din kalendere"
       ],
       "ZIP": [
         "Postnummer"
@@ -4914,6 +4934,9 @@
       ],
       "Downgrade account": [
         "Nedgradér konto"
+      ],
+      "Drop to upload": [
+        ""
       ],
       "Edit calendar": [
         "Rediger kalender"

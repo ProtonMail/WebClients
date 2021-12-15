@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "Activate recovery": [
+        "Ενεργοποίηση ανάκτησης"
+      ],
       "Add": [
         "Προσθήκη"
       ],
       "Add address": [
-        ""
+        "Προσθήκη διεύθυνσης"
       ],
       "Add contact": [
         "Προσθήκη επαφής"
       ],
       "Add email": [
-        ""
+        "Προσθήκη email"
       ],
       "Add group": [
         "Προσθήκη ομάδας"
@@ -36,7 +39,7 @@
         "Προσθήκη νέας ομάδας"
       ],
       "Add phone number": [
-        ""
+        "Προσθήκη αριθμού τηλεφώνου"
       ],
       "Add screenshot(s)": [
         "Προσθήκη στιγμιοτύπου/ων οθόνης"
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
       ],
-      "Grid layout": [
-        "Διάταξη πλέγματος"
-      ],
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Συντομεύσεις πληκτρολογίου"
-      ],
-      "List layout": [
-        "Διάταξη λίστας"
       ],
       "Load image": [
         "Φόρτωση εικόνας"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Επιλέξτε πακέτο"
       ],
+      "Set recovery phrase": [
+        "Ορισμός φράσης ανάκτησης"
+      ],
       "Share": [
         "Κοινοποίηση"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         "Εμφάνιση ετικετών"
-      ],
-      "Show shared link details": [
-        "Εμφάνιση λεπτομερειών κοινόχρηστων συνδέσεων"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Μη αξιόπιστο"
+      ],
+      "Update recovery file": [
+        "Ενημέρωση αρχείου ανάκτησης"
+      ],
+      "Update recovery phrase": [
+        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -1128,17 +1131,32 @@
       "Error connecting to the Bitcoin API.": [
         "Σφάλμα σύνδεσης στο Bitcoin API."
       ],
+      "Failed to download a file": [
+        "Αποτυχία λήψης ενός αρχείου"
+      ],
+      "Failed to download a folder": [
+        "Αποτυχία λήψης ενός φακέλου"
+      ],
       "Failed to load the link": [
         "Αποτυχία φόρτωσης συνδέσμου"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
       ],
+      "File \"${ name }\" is already downloading": [
+        ""
+      ],
       "File cannot be merged with folder": [
         "Ένα αρχείο δεν γίνεται να συγχωνευθεί με φάκελο"
       ],
       "File has no contents to preview": [
         "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό"
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Γίνεται λήψη (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Γίνεται λήψη (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } κατεβαίνει",
+        "${ activeDownloadsCount } κατεβαίνουν"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Μεταφόρτωση (${ uploadProgress }%)",
-        "${ activeUploadsCount } Μεταφόρτωση (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
@@ -1597,9 +1619,9 @@
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Ακυρώθηκε",
-        "${ canceledCount } Ακυρώθηκε"
+      "${ canceledCount } canceled": [
+        "${ canceledCount } ακυρώθηκε",
+        "${ canceledCount } ακυρώθηκαν"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Τελείωσε",
-        "${ doneCount } Τελείωσε"
+      "${ doneCount } finished": [
+        "${ doneCount } τελείωσε",
+        "${ doneCount } τελείωσαν"
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } Κατέβηκε",
-        "${ doneDownloadsCount } Κατέβηκε"
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } κατέβηκε",
+        "${ doneDownloadsCount } κατέβηκαν"
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Ανέβηκε",
-        "${ doneUploadsCount } Ανέβηκαν"
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } φορτώθηκε",
+        "${ doneUploadsCount } φορτώθηκαν"
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Απέτυχε",
-        "${ errorCount } Απέτυχε"
+      "${ errorCount } failed": [
+        "${ errorCount } απέτυχε",
+        "${ errorCount } απέτυχαν"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } ομάδα βρέθηκε",
@@ -1658,9 +1680,9 @@
         "${ numContacts } επαφή",
         "${ numContacts } επαφές"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Παύση",
-        "${ pausedCount } Παύση"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } στη συνδρομή σας με αλλαγή σε ${ annualBilling }"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Οποιοσδήποτε έχει αυτόν τον σύνδεσμο μπορεί να προσπελάσει το αρχείο σας."
       ],
+      "Anyone with this link can access your folder.": [
+        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στο φάκελο."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Είστε βέβαιοι ότι θέλετε να αδειάσετε τον κάδο απορριμμάτων και να διαγράψετε οριστικά όλα τα στοιχεία;"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "Δημιουργία συνδέσμου προς το αρχείο"
+      ],
+      "Creating link to folder": [
+        "Δημιουργία συνδέσμου προς το φάκελο"
       ],
       "Creating share": [
         "Δημιουργία κοινοποίησης"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Μόνο άτομα που κατέχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση σε αυτό το φάκελο."
+      ],
       "Paused": [
         "Σε παύση"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Προετοιμασία συνδέσμου προς το αρχείο"
+      ],
+      "Preparing link to folder": [
+        "Προετοιμασία συνδέσμου προς το φάκελο"
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο αρχείο. Για επαναδιαμοιρασμό του αρχείου, θα χρειαστείτε έναν νέο σύνδεσμο."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο σας για οποιονδήποτε με τον σύνδεσμο.",
-        "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία σας για οποιονδήποτε με τους συνδέσμους."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο φάκελο. Για επαναδιαμοιρασμό του φακέλου, θα χρειαστείτε έναν νέο σύνδεσμο."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
+        "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε με τους συνδέσμους."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο Proton. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
+      ],
+      "Your folder failed to download.": [
+        "Ο φάκελος σας απέτυχε να ληφθεί."
+      ],
+      "Your folder has finished downloading.": [
+        "Η λήψη του φακέλου σας ολοκληρώθηκε."
+      ],
+      "Your folder is being downloaded.": [
+        "Γίνεται λήψη του φακέλου σας."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
@@ -2712,7 +2758,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Ερχεται σύντομα)"
       ],
       "(Expired)": [
         "(Ληγμένο)"
@@ -3426,6 +3472,9 @@
       ],
       "Contact group updated": [
         "Η ομάδα επαφών ενημερώθηκε"
+      ],
+      "Failed to download files: ${ err }": [
+        "Αποτυχία λήψης αρχείων: ${ err }"
       ],
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλώ δοκιμάστε ξανά"
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Άδειασμα κάδου απορριμμάτων"
       ],
-      "Enter file password to download": [
-        "Εισάγετε τον κωδικό του αρχείου για λήψη"
+      "Enter password to download": [
+        "Εισάγετε τον κωδικό για λήψη"
       ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Τα αρχεία μου"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Όνομα"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "Το φάκελος σας είναι έτοιμος για λήψη"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "Τ.Κ / Ταχυδρομικός κώδικας"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ. λπ.) όπου κι αν βρίσκεστε."
-      ],
-      "Active sharing link": [
-        "Ενεργός σύνδεσμος κοινής χρήσης"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
       ],
-      "Expired sharing link": [
-        "Ληγμένος σύνδεσμος κοινής χρήσης"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Αποκτήστε πρόσβαση σε όλες τις επί πληρωμή δυνατότητες, τόσο για το ${ vpnAppName } όσο και για το ${ mailAppName } (την κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πακέτο."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
-      ],
-      "Inactive sharing link": [
-        "Ανενεργός σύνδεσμος κοινοποίησης"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Η υποστήριξη πολλαπλών χρηστών ισχύει μόνο για πρόγραμμα με 2 ή περισσότερους χρήστες"

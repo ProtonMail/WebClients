@@ -14,11 +14,14 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
+      "Activate recovery": [
+        "Wiederherstellung aktivieren"
+      ],
       "Add": [
         "Hinzufügen"
       ],
       "Add address": [
-        ""
+        "Adresse hinzufügen"
       ],
       "Add contact": [
         "Kontakt hinzufügen"
@@ -406,6 +409,9 @@
       "Send": [
         "Senden"
       ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase einrichten"
+      ],
       "Share": [
         "Teilen"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Aktualisieren"
+      ],
+      "Update recovery file": [
+        "Wiederherstellungsdatei aktualisieren"
+      ],
+      "Update recovery phrase": [
+        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Aktualisieren"
@@ -1127,8 +1139,8 @@
         "Aller ${ interval } Tage, um ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Täglich, bis ${ untilString }",
-        "Aller ${ interval } Tage, bis ${ untilString }"
+        "Täglich, ${ untilString }",
+        "Aller ${ interval } Tage, ${ untilString }"
       ],
       "until ${ dateString }": [
         "bis ${ dateString }"
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Sie können auch ${ refresh } oder es später noch einmal versuchen."
+      ],
+      "You need an active personal calendar to import events": [
+        "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine importieren zu können"
       ]
     },
     "Error notification": {
@@ -2042,12 +2057,13 @@
         "${ totalImported }/${ totalToImport } Ereignis wurde verschlüsselt und Ihrem Kalender hinzugefügt",
         "${ totalImported }/${ totalToImport } Ereignisse wurden verschlüsselt und Ihrem Kalender hinzugefügt"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. Es wurde kein Termin importiert.",
+        "Beim Verschlüsseln und Hinzufügen deiner Termine ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Terminen wurden erfolgreich importiert."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Das Verschlüsseln und Hinzufügen Ihres Ereignisses ist fehlgeschlagen. Es wurde kein Ereignis importiert.",
         "Das Verschlüsseln und Hinzufügen Ihrer Ereignisse ist fehlgeschlagen. Es wurde kein Ereignis importiert."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Beim Verschlüsseln und Hinzufügen Ihrer Ereignisse ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Ereignissen wurden erfolgreich importiert."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kontakte werden verschlüsselt und hinzugefügt: ${ totalImported }/${ totalToImport }"
@@ -2134,8 +2150,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakt(en) werden nicht importiert. Anklicken, um Details anzuzeigen"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded }/${ totalEvents } Ereignisse werden nicht importiert. Erweitern für Details."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "Termin wird nicht importiert. Erweitern für Details.",
+        "${ totalEventsDiscarded }/${ totalEvents } Termine werden nicht importiert. Erweitern für Details."
       ],
       "No contact can be imported. Click for details": [
         "Kontakt(e) konnten nicht importiert werden. Anklicken, um Details anzuzeigen"
@@ -2751,7 +2768,7 @@
         "Diese E-Mail-Adresse ist deaktiviert. Um an diese E-Mail-Adresse senden zu können, muss diese der Besitzer zuerst aktivieren."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Dieses Ereignis wurde vom Organisator aktualisiert. Möchten Sie Ihre Antwort nur für diesen Termin in dieser Serie ändern?"
+        "Dieses Ereignis wurde vom Organisator aktualisiert. Möchten Sie Ihre Antwort nur für dieser Terminserie ändern?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
         "Dieses Ereignis wurde vom Organisator aktualisiert. Möchten Sie das Ereignis aus Ihrem Kalender entfernen?"
@@ -2941,6 +2958,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your events will be encrypted and then saved.": [
+        "Deine Ereignisse werden verschlüsselt und anschließend gespeichert."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "Betrag in Bitcoin:"
       ],
+      "Calendar": [
+        "Kalender"
+      ],
       "Calendars": [
         "Kalender"
       ],
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "CVV-Code (Sicherheitsnummer)"
+      ],
+      "Date and time": [
+        "Datum und Zeit"
       ],
       "Description": [
         "Beschreibung"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         "Dauer des Ereignisses"
       ],
-      "Event frequency": [
-        "Häufigkeit des Ereignisses"
-      ],
-      "Event location": [
-        "Veranstaltungsort"
-      ],
       "Event notifications": [
         "Ereignisbenachrichtigungen"
-      ],
-      "Event time": [
-        "Zeit des Ereignisses"
       ],
       "Event title": [
         "Titel des Ereignisses"
@@ -3334,6 +3351,9 @@
       ],
       "Folder location": [
         "Pfad des Ordners"
+      ],
+      "Frequency": [
+        "Häufigkeit"
       ],
       "From: ${ importedEmail }": [
         "Von: ${ importedEmail }"
@@ -3374,6 +3394,9 @@
       "Last month only": [
         "Nur den letzten Monat"
       ],
+      "Location": [
+        "Standort"
+      ],
       "Mailbox password": [
         "Postfach-Passwort"
       ],
@@ -3390,6 +3413,9 @@
         "Karteninhaber"
       ],
       "Notification": [
+        "Benachrichtigungen"
+      ],
+      "Notifications": [
         "Benachrichtigungen"
       ],
       "Operating system": [
@@ -3477,9 +3503,6 @@
       "System information": [
         "Systeminformationen"
       ],
-      "Time of the event": [
-        "Zeitpunkt des Ereignisses"
-      ],
       "To: ${ emailAddress }": [
         "An: ${ emailAddress }"
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Was ist der vorrangige Grund für diese Bewertung?"
-      ],
-      "Your calendars": [
-        "Meine Kalender"
       ],
       "ZIP": [
         "PLZ"
@@ -3795,8 +3815,8 @@
         "Aller ${ interval } Monate am ${ onDayString }, um ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Monatlich am ${ onDayString }, bis ${ untilString }",
-        "Aller ${ interval } Monate am ${ onDayString }, bis ${ untilString }"
+        "Monatlich am ${ onDayString }, ${ untilString }",
+        "Aller ${ interval } Monate am ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
@@ -3805,7 +3825,7 @@
         "Monatlich am ${ onDayString }, um ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Monatlich am ${ onDayString }, bis ${ untilString }"
+        "Monatlich am ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -4915,6 +4935,9 @@
       "Downgrade account": [
         "Konto herabstufen"
       ],
+      "Drop to upload": [
+        "Datei zum Hochladen in dieses Feld ziehen"
+      ],
       "Edit calendar": [
         "Kalender bearbeiten"
       ],
@@ -5483,8 +5506,8 @@
         "Aller ${ interval } Wochen am ${ multipleDaysString }, um ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Wöchentlich am ${ multipleDaysString }, bis ${ untilString }",
-        "Aller ${ interval } Wochen am ${ multipleDaysString }, bis ${ untilString }"
+        "Wöchentlich am ${ multipleDaysString }, ${ untilString }",
+        "Aller ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Wöchentlich an allen Tagen",
@@ -5495,8 +5518,8 @@
         "Aller ${ interval } Wochen an allen Tagen, um { timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Wöchentlich an allen Tagen, bis { untilString }",
-        "Aller ${ interval } Wochen an allen Tagen, bis { untilString }"
+        "Wöchentlich an allen Tagen, { untilString }",
+        "Aller ${ interval } Wochen an allen Tagen, { untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Wöchentlich am Freitag",
@@ -5507,8 +5530,8 @@
         "Aller ${ interval } Wochen am Freitag, um ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Wöchentlich am Freitag, bis ${ untilString }",
-        "Aller ${ interval } Wochen am Freitag, bis ${ untilString }"
+        "Wöchentlich am Freitag, ${ untilString }",
+        "Aller ${ interval } Wochen am Freitag, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Wöchentlich am Montag",
@@ -5519,8 +5542,8 @@
         "Aller ${ interval } Wochen am Montag, um ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Wöchentlich am Montag, bis ${ untilString }",
-        "Aller ${ interval } Wochen am Montag, bis ${ untilString }"
+        "Wöchentlich am Montag, { untilString }",
+        "Aller ${ interval } Wochen am Montag, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Wöchentlich am Samstag",
@@ -5531,8 +5554,8 @@
         "Aller ${ interval } Wochen am Samstag, um ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Wöchentlich am Samstag, bis ${ untilString }",
-        "Aller ${ interval } Wochen am Samstag, bis ${ untilString }"
+        "Wöchentlich am Samstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Samstag, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Wöchentlich am Sonntag",
@@ -5543,8 +5566,8 @@
         "Aller ${ interval } Wochen am Sonntag, um ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Wöchentlich am Sonntag, bis ${ untilString }",
-        "Aller ${ interval } Wochen am Sonntag, bis ${ untilString }"
+        "Wöchentlich am Sonntag, ${ untilString }",
+        "Aller ${ interval } Wochen am Sonntag, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Wöchentlich am Donnerstag",
@@ -5555,8 +5578,8 @@
         "Aller ${ interval } Wochen am Donnerstag, um ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Wöchentlich am Donnerstag, bis ${ untilString }",
-        "Aller ${ interval } Wochen am Donnerstag, bis ${ untilString }"
+        "Wöchentlich am Donnerstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Donnerstag, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Wöchentlich am Dienstag",
@@ -5567,8 +5590,8 @@
         "Aller ${ interval } Wochen am Dienstag, um ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Wöchentlich am Dienstag, bis ${ untilString }",
-        "Aller ${ interval } Wochen am Dienstag, bis ${ untilString }"
+        "Wöchentlich am Dienstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Dienstag, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Wöchentlich am Mittwoch",
@@ -5579,8 +5602,8 @@
         "Aller ${ interval } Wochen am Mittwoch, um ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Wöchentlich am Mittwoch, bis ${ untilString }",
-        "Aller ${ interval } Wochen am Mittwoch, bis ${ untilString }"
+        "Wöchentlich am Mittwoch, ${ untilString }",
+        "Aller ${ interval } Wochen am Mittwoch, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Wöchentlich am ${ multipleDaysString }"
@@ -5589,7 +5612,7 @@
         "Wöchentlich am ${ multipleDaysString }, bis §{ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Wöchentlich am ${ multipleDaysString }, bis ${ untilString }"
+        "Wöchentlich am ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Wöchentlich an allen Tagen"
@@ -5598,7 +5621,7 @@
         "Wöchentlich an allen Tagen, bis ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Wöchentlich an allen Tagen, bis ${ untilString }"
+        "Wöchentlich an allen Tagen, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Wöchentlich am Freitag"
@@ -5607,7 +5630,7 @@
         "Wöchentlich am Freitag bis ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Wöchentlich am Freitag, bis ${ untilString }"
+        "Wöchentlich am Freitag, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Wöchentlich am Montag"
@@ -5616,7 +5639,7 @@
         "Wöchentlich am Montag bis ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Wöchentlich am Montag bis ${ untilString }"
+        "Wöchentlich am Montag ${ untilString }"
       ],
       "Weekly on Saturday": [
         "Wöchentlich am Samstag"
@@ -5625,7 +5648,7 @@
         "Wöchentlich am Samstag bis ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Wöchentlich am Samstag, bis ${ untilString }"
+        "Wöchentlich am Samstag, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Wöchentlich am Sonntag"
@@ -5634,7 +5657,7 @@
         "Wöchentlich am Sonntag bis ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Wöchentlich am Sonntag bis ${ untilString }"
+        "Wöchentlich am Sonntag ${ untilString }"
       ],
       "Weekly on Thursday": [
         "Wöchentlich am Donnerstag"
@@ -5652,7 +5675,7 @@
         "Wöchentlich am Dienstag bis ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Wöchentlich am Dienstag, bis ${ untilString }"
+        "Wöchentlich am Dienstag, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Wöchentlich am Mittwoch"
@@ -5661,7 +5684,7 @@
         "Wöchentlich am Mittwoch bis ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Wöchentlich am Mittwoch, bis ${ untilString }"
+        "Wöchentlich am Mittwoch, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -5697,8 +5720,8 @@
         "Aller ${ interval } Jahre, um ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Jährlich, bis ${ untilString }",
-        "Aller ${ interval } Jahre, bis ${ untilString }"
+        "Jährlich, ${ untilString }",
+        "Aller ${ interval } Jahre, ${ untilString }"
       ],
       "Yearly": [
         "Jährlich"
