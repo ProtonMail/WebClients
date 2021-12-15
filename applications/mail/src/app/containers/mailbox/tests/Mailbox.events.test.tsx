@@ -170,7 +170,7 @@ describe('Mailbox elements list reacting to events', () => {
 
         addToCache('ConversationCounts', []);
         addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
-        const resolve = addApiResolver('mail/v4/messages');
+        let resolve = addApiResolver('mail/v4/messages');
 
         const { rerender, getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />);
         const getItems = () => getAllByTestId('message-item', { exact: false });
@@ -185,10 +185,11 @@ describe('Mailbox elements list reacting to events', () => {
         // First load finished
         expectElements(getItems, total, false);
 
-        // hook.rerender({ search: { keyword: 'changed' } as SearchParameters });
+        resolve = addApiResolver('mail/v4/messages');
+
         await rerender(<MailboxContainer {...getProps({ search: { keyword: 'changed' } })} />);
 
-        // Params has changed, cache is reseted
+        // Params has changed, cache is reset
         expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);
 
         await act(async () => {

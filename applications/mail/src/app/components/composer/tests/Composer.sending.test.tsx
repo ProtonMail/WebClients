@@ -54,7 +54,6 @@ describe('Composer sending', () => {
 
     afterEach(() => {
         clearAll();
-        jest.useRealTimers();
     });
 
     describe('send plaintext', () => {

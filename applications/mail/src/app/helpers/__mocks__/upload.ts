@@ -1,9 +1,10 @@
 import { RequestParams, Upload } from '../upload';
+import { api } from '../test/api';
 
 export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<RequestParams>): Upload<T> => {
     const asyncResolution = async () => {
-        await paramsPromise;
-        return {};
+        const params = await paramsPromise;
+        return api(params);
     };
 
     return {
