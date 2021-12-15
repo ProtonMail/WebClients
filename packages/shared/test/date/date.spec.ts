@@ -1,4 +1,4 @@
-import { enUS, fr, it } from 'date-fns/locale';
+import { enUS, fr } from 'date-fns/locale';
 import { getFormattedWeekdays, getFormattedMonths, getWeekStartsOn, isValidDate } from '../../lib/date/date';
 
 describe('getFormattedWeekdays', () => {
