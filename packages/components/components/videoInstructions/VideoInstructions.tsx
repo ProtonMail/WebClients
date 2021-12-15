@@ -39,7 +39,6 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
                 {children}
             </video>
             <button
-                aria-label={c('Video control').t`Replay video`}
                 title={c('Video control').t`Click to replay the video`}
                 type="button"
                 className={classnames([
@@ -49,7 +48,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
                 ])}
                 onClick={replayVideo}
             >
-                <Icon name="arrow-rotate-right" size={56} color="white" />
+                <Icon name="arrow-rotate-right" size={56} color="white" alt={c('Video control').t`Replay video`} />
             </button>
         </div>
     );
