@@ -42,14 +42,10 @@ export const addApiMock = (url: string, handler: ApiMockHandler, method?: HttpMe
 export const addApiResolver = (url: string, method?: HttpMethod) => {
     let resolveLastPromise: (result: any) => void = noop;
     const resolve = (value: any) => resolveLastPromise(value);
-    addApiMock(
-        url,
-        () =>
-            new Promise((resolve) => {
-                resolveLastPromise = resolve;
-            }),
-        method
-    );
+    const promise = new Promise((resolve) => {
+        resolveLastPromise = resolve;
+    });
+    addApiMock(url, () => promise, method);
     return resolve;
 };
 
