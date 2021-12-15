@@ -25,11 +25,10 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
     const { createModal } = useModals();
     const [addresses, loadingAddresses] = useAddresses();
 
-    const isEasySwitchEnabled = useFeature(FeatureCode.EasySwitch).feature?.Value;
-    const isEasySwitchCalendarEnabled = useFeature(FeatureCode.EasySwitchCalendar).feature?.Value;
+    const easySwitchCalendarFeature = useFeature(FeatureCode.EasySwitchCalendar);
+    const isEasySwitchCalendarEnabled = easySwitchCalendarFeature.feature?.Value;
 
     const showAlert = !activeCalendars.length && hasNonDelinquentScope;
-
     const canManualImport = !!activeCalendars.length && hasNonDelinquentScope;
 
     const handleManualImport = () =>
@@ -63,7 +62,7 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
                 ).t`Here's how`}</Href>
             </SettingsParagraph>
 
-            {isEasySwitchEnabled && isEasySwitchCalendarEnabled ? (
+            {isEasySwitchCalendarEnabled ? (
                 <>
                     <GoogleButton
                         onClick={handleOAuthClick}

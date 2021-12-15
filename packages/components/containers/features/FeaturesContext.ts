@@ -54,7 +54,6 @@ export enum FeatureCode {
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
     SpotlightGetStartedChecklist = 'SpotlightGetStartedChecklist',
-    EasySwitch = 'EasySwitch',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     EasySwitchCalendar = 'EasySwitchCalendar',
     DarkStylesInBody = 'DarkStylesInBody',
