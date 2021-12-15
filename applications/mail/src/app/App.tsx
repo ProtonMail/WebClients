@@ -14,6 +14,8 @@ import PrivateApp from './PrivateApp';
 
 import './app.scss';
 import { registerMailToProtocolHandler } from './helpers/url';
+import { EO_REDIRECT_PATH } from './constants';
+import EOContainer from './containers/eo/EOContainer';
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
@@ -41,6 +43,9 @@ const App = () => {
             <Switch>
                 <Route path={G_OAUTH_REDIRECT_PATH}>
                     <LoaderPage />
+                </Route>
+                <Route path={EO_REDIRECT_PATH}>
+                    <EOContainer locales={locales} />
                 </Route>
                 <Route path="*">
                     <StandardSetup PrivateApp={PrivateApp} locales={locales} />

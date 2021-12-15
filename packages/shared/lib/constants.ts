@@ -34,7 +34,6 @@ export const APPS = {
     PROTONVPN_SETTINGS: 'proton-vpn-settings',
     PROTONADMIN: 'proton-admin',
     PROTONVERIFICATION: 'proton-verify',
-    PROTONENCRYPTEDOUTSIDE: 'proton-eo',
 } as const;
 export const APPS_CONFIGURATION = {
     [APPS.PROTONACCOUNT]: {
@@ -106,15 +105,6 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonVerify',
         bareName: 'Verify',
         clientID: 'WebVerify',
-        icon: '',
-        settingsSlug: '',
-    },
-    [APPS.PROTONENCRYPTEDOUTSIDE]: {
-        publicPath: '',
-        subdomain: 'eo',
-        name: 'ProtonEO',
-        bareName: 'Encrypted Outside',
-        clientID: 'WebMail',
         icon: '',
         settingsSlug: '',
     },
@@ -709,7 +699,6 @@ export enum CLIENT_IDS {
     WebDrive = 'Web Drive',
     WebAdmin = 'Web Admin',
     WebVerify = 'Web Verify',
-    WebEO = 'Web EO',
     // Android
     AndroidTvVPN = 'AndroidTvVPN',
 }
