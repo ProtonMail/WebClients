@@ -14,9 +14,10 @@ import { Label } from '../label';
 interface Props {
     onClose: () => void;
     link?: string;
+    isOutside?: boolean;
 }
 
-const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
+const LinkConfirmationModal = ({ onClose, link = '', isOutside = false, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [dontAskAgain, setDontAskAgain] = useState(false);
@@ -37,7 +38,7 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
     const handleConfirm = async () => {
         openNewTab(link);
 
-        if (dontAskAgain) {
+        if (dontAskAgain && !isOutside) {
             await api(updateConfirmLink(0));
             await call();
         }
@@ -82,10 +83,12 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
                 </Alert>
             )}
 
-            <Label className="flex">
-                <Checkbox checked={dontAskAgain} onChange={() => setDontAskAgain(!dontAskAgain)} />
-                {c('Label').t`Do not ask again`}
-            </Label>
+            {!isOutside && (
+                <Label className="flex">
+                    <Checkbox checked={dontAskAgain} onChange={() => setDontAskAgain(!dontAskAgain)} />
+                    {c('Label').t`Do not ask again`}
+                </Label>
+            )}
         </ConfirmModal>
     );
 };
