@@ -54,6 +54,7 @@ const dummyCalendarUserSettings = {
     DisplaySecondaryTimezone: 0,
     SecondaryTimezone: undefined,
     ViewPreference: SETTINGS_VIEW.WEEK,
+    InviteLocale: null,
 };
 const dummyMemberID = 'member-id';
 const dummyAttachmentID = 'attachment-id';
