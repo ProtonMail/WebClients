@@ -16,13 +16,13 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
     }
 
     // Assumes SENTRY_DSN is: https://111b3eeaaec34cae8e812df705690a36@sentry/11
-    // To get https://111b3eeaaec34cae8e812df705690a36@mail.protonmail.com/api/reports/sentry/11
-    const dsn = SENTRY_DSN.replace('sentry', `${host}/api/reports/sentry`);
+    // To get https://111b3eeaaec34cae8e812df705690a36@protonmail.com/api/core/v4/reports/sentry/11
+    const dsn = SENTRY_DSN.replace('sentry', `${host}/api/core/v4/reports/sentry`);
 
     Sentry.init({
         dsn,
         release: isProduction(host) ? APP_VERSION : COMMIT,
-        environment: host,
+        environment: host.split('.').splice(1).join('.'),
         normalizeDepth: 5,
         beforeSend(event, hint) {
             const error = hint?.originalException;
