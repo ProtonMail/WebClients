@@ -120,7 +120,7 @@ export const toICAL = (properties: ContactProperties = []) => {
         const fieldWithGroup = [group, field].filter(isTruthy).join('.');
         const property = new ICAL.Property(fieldWithGroup);
 
-        if (['bday', 'anniversary'].includes(field) && !isValidDate(parseISO(value))) {
+        if (['bday', 'anniversary'].includes(field) && !isValidDate(parseISO(value as string))) {
             property.resetType('text');
         }
 
