@@ -106,7 +106,7 @@ $toggle-width-button: em(24) !default;
 			transform: translateX(#{$toggle-width - $toggle-width-button});
 			@at-root {
 				[dir='rtl'] & {
-					transform: translateX(-#{$toggle-width - $toggle-width-button});
+					transform: translateX(#{$toggle-width - $toggle-width-button});
 				}
 			}
 			background-color: var(--interaction-norm);
