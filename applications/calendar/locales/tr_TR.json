@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "Activate recovery": [
+        "Kurtarmayı etkinleştir"
+      ],
       "Add": [
         "Ekle"
       ],
@@ -406,6 +409,9 @@
       "Send": [
         "Gönder"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Paylaş"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Güncelle"
+      ],
+      "Update recovery file": [
+        "Kurtarma dosyasını güncelle"
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Yükselt"
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Ayrıca sayfayı ${ refresh } veya daha sonra tekrar deneyin."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2042,11 +2057,12 @@
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -2134,7 +2150,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Daha fazla bilgi için tıklayın"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "E-postanız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
       ],
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "BTC tutarı:"
       ],
+      "Calendar": [
+        "Takvim"
+      ],
       "Calendars": [
         ""
       ],
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "CVV kodu"
+      ],
+      "Date and time": [
+        "Tarih ve zaman"
       ],
       "Description": [
         "Açıklama"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         ""
       ],
-      "Event frequency": [
-        "Etkinlik sıklığı"
-      ],
-      "Event location": [
-        "Etkinlik yeri"
-      ],
       "Event notifications": [
         "Etkinlik bildirimleri"
-      ],
-      "Event time": [
-        "Etkinlik zamanı"
       ],
       "Event title": [
         "Etkinlik başlığı"
@@ -3334,6 +3351,9 @@
       ],
       "Folder location": [
         ""
+      ],
+      "Frequency": [
+        "Sıklık"
       ],
       "From: ${ importedEmail }": [
         ""
@@ -3374,6 +3394,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        "Konum"
+      ],
       "Mailbox password": [
         "Posta kutusu şifresi"
       ],
@@ -3391,6 +3414,9 @@
       ],
       "Notification": [
         ""
+      ],
+      "Notifications": [
+        "Bildirimler"
       ],
       "Operating system": [
         "İşletim istemi"
@@ -3477,9 +3503,6 @@
       "System information": [
         "Sistem bilgisi"
       ],
-      "Time of the event": [
-        "Etkinlik zamanı"
-      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Your calendars": [
-        "Takvimin"
       ],
       "ZIP": [
         "ZIP"
@@ -4913,6 +4933,9 @@
         "Kişiler siliniyor"
       ],
       "Downgrade account": [
+        ""
+      ],
+      "Drop to upload": [
         ""
       ],
       "Edit calendar": [

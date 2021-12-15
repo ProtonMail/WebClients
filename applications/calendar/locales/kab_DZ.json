@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Rnu"
       ],
@@ -406,6 +409,9 @@
       "Send": [
         "Azen"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Bḍu"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Mucceḍ"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Leqqem"
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Ahat ilaq daɣen ${ refresh } εreḍ ticki."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2042,11 +2057,12 @@
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -2134,7 +2150,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Inermisen ${ totalContactsDiscarded } ɣef ${ totalContacts } ur d-ttwaktaren ara. Sit ad teẓreḍ telqayt"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
       ],
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "Azal BTC:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "Tangalt CVC"
+      ],
+      "Date and time": [
+        ""
       ],
       "Description": [
         "Aglam"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         ""
       ],
-      "Event frequency": [
-        "Asnigar n tedyant"
-      ],
-      "Event location": [
-        "Amkan n tedyant"
-      ],
       "Event notifications": [
         "Ilɣa n uneḍru"
-      ],
-      "Event time": [
-        "Akud n uneḍru"
       ],
       "Event title": [
         "Azwel n uneḍru"
@@ -3333,6 +3350,9 @@
         "Asiɣzef n tansa"
       ],
       "Folder location": [
+        ""
+      ],
+      "Frequency": [
         ""
       ],
       "From: ${ importedEmail }": [
@@ -3374,6 +3394,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Awal n uɛeddi n tenkult imayl"
       ],
@@ -3390,6 +3413,9 @@
         "Isem ɣef takarḍa"
       ],
       "Notification": [
+        ""
+      ],
+      "Notifications": [
         ""
       ],
       "Operating system": [
@@ -3477,9 +3503,6 @@
       "System information": [
         "Talɣut n unagraw"
       ],
-      "Time of the event": [
-        "Akud n uneḍru"
-      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         "D acu-tt ssebba tagejdant n tezmilt-a yettwamudden?"
-      ],
-      "Your calendars": [
-        "Iwitayen-inek·inem"
       ],
       "ZIP": [
         "ZIP"
@@ -4913,6 +4933,9 @@
         "Tukksa n yinermisen"
       ],
       "Downgrade account": [
+        ""
+      ],
+      "Drop to upload": [
         ""
       ],
       "Edit calendar": [

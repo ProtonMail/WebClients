@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Activate recovery": [
+        "啟動還原"
+      ],
       "Add": [
         "新增"
       ],
       "Add address": [
-        ""
+        "新增地址"
       ],
       "Add contact": [
         "新增聯絡人"
       ],
       "Add email": [
-        ""
+        "新增電子郵件"
       ],
       "Add group": [
         "新增群組"
@@ -39,7 +42,7 @@
         "新增通知"
       ],
       "Add phone number": [
-        ""
+        "新增電話號碼"
       ],
       "Add screenshot(s)": [
         "新增螢幕截圖"
@@ -126,7 +129,7 @@
         "繼續"
       ],
       "Continue import": [
-        ""
+        "繼續匯入"
       ],
       "Continue with Google": [
         "以 Google 繼續"
@@ -135,7 +138,7 @@
         "複製電子郵件至剪貼簿"
       ],
       "Create calendar": [
-        ""
+        "建立行事曆"
       ],
       "Create event": [
         "建立事件"
@@ -240,7 +243,7 @@
         "匯入"
       ],
       "Import events": [
-        ""
+        "匯入事件"
       ],
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
@@ -404,6 +407,9 @@
       "Send": [
         "送出"
       ],
+      "Set recovery phrase": [
+        "設定還原短語"
+      ],
       "Share": [
         "分享"
       ],
@@ -475,6 +481,12 @@
       ],
       "Update": [
         "更新"
+      ],
+      "Update recovery file": [
+        "更新還原檔案"
+      ],
+      "Update recovery phrase": [
+        "更新還原短語"
       ],
       "Upgrade": [
         "升級"
@@ -619,7 +631,7 @@
         "若您現在離開，有一些聯絡人或會無法匯入"
       ],
       "By leaving now, some events may not be imported": [
-        ""
+        "若您現在離開，有一些事件或會無法匯入"
       ],
       "By leaving now, you will lose your event.": [
         "若您現在離開，將不儲存您的事件。"
@@ -638,27 +650,27 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "ICS 檔案空白"
       ],
       "Invalid event": [
-        ""
+        "無效的事件"
       ],
       "Invalid ICS file": [
-        ""
+        "無效的 ICS 檔案"
       ],
       "Invalid method": [
-        ""
+        "無效的方法"
       ],
       "Unsupported calendar component": [
-        ""
+        "不支援的行事曆元件"
       ],
       "Unsupported event": [
-        ""
+        "不支援的事件"
       ]
     },
     "Attendee role": {
       "Optional": [
-        ""
+        "自由列席"
       ]
     },
     "Beta access description": {
@@ -897,7 +909,7 @@
         "${ name } 暫訂已接受邀請"
       ],
       "This event has been canceled": [
-        ""
+        "此事件已取消"
       ],
       "You accepted the invitation": [
         "您已接受此邀請"
@@ -914,10 +926,10 @@
     },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
-        ""
+        "從 URL 新增行事曆"
       ],
       "More options": [
-        ""
+        "更多選項"
       ]
     },
     "Calendar status": {
@@ -930,25 +942,25 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "行事曆無法解密"
       ],
       "Calendar is syncing": [
-        "日曆正在同步"
+        "行事曆正在同步"
       ],
       "Calendar is too big": [
-        "日曆太大了"
+        "行事曆太大"
       ],
       "Calendar link is not accessible": [
-        "日曆無法存取"
+        "行事曆連結無法存取"
       ],
       "Calendar link is temporarily inaccessible": [
-        "日曆連結暫時無法存取"
+        "行事曆連結暫時無法存取"
       ],
       "Calendar link is wrong": [
-        "日曆連結錯誤"
+        "行事曆連結有誤"
       ],
       "Failed to sync calendar": [
-        "同步日曆失敗"
+        "同步行事曆失敗"
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
@@ -975,7 +987,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        "："
       ]
     },
     "Composer size": {
@@ -988,7 +1000,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "要結束匯入自訂嗎？"
       ]
     },
     "Contact field label": {
@@ -1167,7 +1179,7 @@
         "拖放各聯絡人以排行合併優次。取消勾選您不欲合併的聯絡人。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        ""
+        "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把您不欲合併、又不欲保留的聯絡人標記作刪除。只有在按下「合併」按鈕時，才會執行刪除"
@@ -1188,12 +1200,12 @@
     },
     "Disabled calendar name suffix": {
       "Disabled": [
-        ""
+        "已停用"
       ]
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        "該事件屬於已停用的日曆。"
+        "此事件屬於已停用的行事曆。"
       ]
     },
     "Disney": {
@@ -1214,7 +1226,7 @@
     },
     "Dropwdown action icon tooltip": {
       "Add calendar": [
-        ""
+        "新增行事曆"
       ]
     },
     "Duration": {
@@ -1248,7 +1260,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } 已告取消，特此通知。"
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
@@ -1378,7 +1390,7 @@
         "解密失敗：此事件內容解密失敗。"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        ""
+        "請取消選取至少 ${ calendarToFixCount } 個行事曆"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
@@ -1483,7 +1495,7 @@
         "名稱為必填"
       ],
       "No data to import": [
-        ""
+        "無資料可匯入"
       ],
       "No key retrieved for internal user is valid for sending": [
         "內部使用者沒有提取到任何用於寄送的有效金鑰"
@@ -1513,7 +1525,7 @@
         "部份群組無聯絡人：${ noContactGroupList }"
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "組織未能辨識。請再試一次。"
       ],
       "Passwords do not match": [
         "密碼不相符"
@@ -1647,34 +1659,34 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。僅允許 ICS 檔案格式。"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "上載您的檔案時發生錯誤。未選取任何檔案。"
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。匯入必須重新啟動。"
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_EVENTS_STRING } 個事件。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
+        "您的檔案 ${ formattedFilename } 有一個無效的方法，因此無法匯入。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "您的檔案 ${ formattedFilename } 無任何事件可供匯入。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "您的檔案 ${ formattedFilename } 是空的。"
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "您的檔案 ${ formattedFilename } 不是一個行事曆。"
       ]
     },
     "Error importing contact": {
@@ -1710,100 +1722,100 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        ""
+        "格式有誤。元件無法讀取。"
       ],
       "Calendar": [
-        ""
+        "行事曆"
       ],
       "Calendar timezone not supported": [
-        ""
+        "行事曆時區不受支援"
       ],
       "Component with wrong format": [
-        ""
+        "元件的格式有誤"
       ],
       "Custom timezone": [
-        ""
+        "自訂時區"
       ],
       "Edited event not supported": [
-        ""
+        "已編輯事件不受支援"
       ],
       "Element": [
-        ""
+        "元素"
       ],
       "Encryption failed": [
-        ""
+        "加密失敗"
       ],
       "End time out of bounds": [
-        ""
+        "結束時間超出界限"
       ],
       "Event": [
-        ""
+        "事件"
       ],
       "Event validation failed": [
-        ""
+        "事件驗證失敗"
       ],
       "Floating times not supported": [
-        ""
+        "浮動時間不受支援"
       ],
       "Free-busy time information": [
-        ""
+        "空閒/忙碌時間資訊"
       ],
       "Invalid event": [
-        ""
+        "無效的事件"
       ],
       "Journal entry": [
-        ""
+        "日誌項目"
       ],
       "Malformed all-day event": [
-        ""
+        "全日事件格式有誤"
       ],
       "Malformed end time": [
-        ""
+        "結束時間格式有誤"
       ],
       "Malformed recurring event": [
-        ""
+        "週期事件格式有誤"
       ],
       "Malformed start time": [
-        ""
+        "開始時間格式有誤"
       ],
       "Missing start time": [
-        ""
+        "遺漏開始時間"
       ],
       "No UID, title or start time": [
-        ""
+        "無 UID、標題或開始時間"
       ],
       "Non-Gregorian": [
-        ""
+        "非西曆"
       ],
       "Notification out of bounds": [
-        ""
+        "通知超出界限"
       ],
       "Original recurring event could not be found": [
-        ""
+        "找不到原始的週期事件"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "週期事件未有發生次數"
       ],
       "Recurring rule not supported": [
-        ""
+        "週期規則不受支援"
       ],
       "Start time out of bounds": [
-        ""
+        "開始時間超出界限"
       ],
       "Timezone": [
-        ""
+        "時區"
       ],
       "Timezone not supported": [
-        ""
+        "時區不受支援"
       ],
       "To-do entry": [
-        ""
+        "待辦事項"
       ],
       "Unknown": [
-        ""
+        "未知"
       ],
       "Unsupported event": [
-        ""
+        "不支援的事件"
       ]
     },
     "Error message": {
@@ -1814,7 +1826,7 @@
         "錯誤：${ errorMessage }"
       ],
       "Invalid URL": [
-        ""
+        "URL 無效"
       ],
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
@@ -1827,6 +1839,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "您亦可${ refresh }或稍後再試一次。"
+      ],
+      "You need an active personal calendar to import events": [
+        "您需要一個使用中的個人行事曆以便匯入事件"
       ]
     },
     "Error notification": {
@@ -1846,7 +1861,7 @@
     },
     "Event canceled status badge": {
       "canceled": [
-        ""
+        "已取消"
       ]
     },
     "Event delete button tooltip": {
@@ -1871,40 +1886,40 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        ""
+        "附件中的 ICS 檔案無法解密"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "附件中的 ICS 檔案無法讀取"
       ],
       "Invalid invitation": [
-        ""
+        "邀請無效"
       ],
       "Invalid response": [
-        ""
+        "無效的回應"
       ],
       "Unexpected error": [
-        ""
+        "未預期的錯誤"
       ],
       "Unsupported invitation": [
-        ""
+        "邀請不受支援"
       ],
       "Unsupported response": [
-        ""
+        "不支援的回應"
       ],
       "We could not cancel the event in your calendar": [
-        ""
+        "我們無法在您的行事曆取消此事件"
       ],
       "We could not retrieve the event from your calendar": [
-        ""
+        "我們無法從您的行事曆提取此事件"
       ],
       "We could not update the event in your calendar": [
-        ""
+        "我們無法在您的行事曆更新此事件"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
+        "您的回答已傳送，惟此事件無法新增到您的行事曆中"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "您的回答已傳送，惟此事件無法在您的行事曆中更新"
       ]
     },
     "Event popover close button": {
@@ -1947,7 +1962,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } 已更新"
       ]
     },
     "Free price": {
@@ -2013,30 +2028,30 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        ""
+        "${ totalImported }/${ totalToImport } 個事件已加密並新增到您的行事曆中"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "加密及新增您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        ""
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        ""
+        "加密及新增您的事件時發生錯誤。無法匯入任何事件。"
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密並新增聯絡人：${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        ""
+        "正在加密並新增事件到您的行事曆中：${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        ""
+        "事件已成功匯入。已匯入的事件現將顯示於行事曆中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
-        ""
+        "在匯入過程完成之前，請勿關閉此索引標籤。"
       ]
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
+        "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
       ],
       "vCard versions < 3.0": [
         "vCard 版本 < 3.0"
@@ -2044,16 +2059,16 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，不帶召集人和參與者詳細資料。若要取得事件更新並顯示參與者，請著召集人以您的 Proton 電子郵件地址向您發出邀請。"
       ],
       "This file contains an event invitation:": [
-        ""
+        "此檔案包含事件邀請："
       ],
       "This file contains an invitation response:": [
-        ""
+        "此檔案包含邀請回覆："
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "此檔案包含部分無法匯入的內容："
       ]
     },
     "Import contact": {
@@ -2099,17 +2114,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 個聯絡人之中，有 ${ totalContactsDiscarded } 個將不會匯入。按一下以取得詳細資料"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        ""
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } 個事件之中，有 ${ totalEventsDiscarded } 個將不會匯入。展開以取得詳細資料。"
       ],
       "No contact can be imported. Click for details": [
         "無聯絡人可供匯入。按一下以取得詳細資料"
       ],
       "No event can be imported. Expand for details.": [
-        ""
+        "無事件可供匯入。展開以取得詳細資料。"
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        ""
+        "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
     "Info": {
@@ -2318,7 +2333,7 @@
         "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
       ],
       "Close this screen to exit.": [
-        ""
+        "關閉此畫面以離開。"
       ],
       "Connections": [
         "連線"
@@ -2339,7 +2354,7 @@
         "建立在"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "支援源自 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 及別的一些軟體的 CSV 檔案，以及 vCard 3.1 和 4.0 格式 (UTF-8 編碼)。"
       ],
       "Custom": [
         "自訂"
@@ -2447,10 +2462,10 @@
         "匯入自"
       ],
       "Import in progress": [
-        ""
+        "匯入進行中"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "正在從 ${ importedEmailAddress } 匯入您的資料到 ${ toEmail }。"
       ],
       "Included": [
         "已包含"
@@ -2474,7 +2489,7 @@
         "金鑰指紋"
       ],
       "Large imports can take several days.": [
-        ""
+        "大型匯入或需時數天。"
       ],
       "Learn more": [
         "瞭解更多"
@@ -2507,7 +2522,7 @@
         "新增"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "接下來，您將需要登入您的 Google 帳戶並允許我們存取您的資料。"
       ],
       "No contacts added yet": [
         "未新增任何聯絡人"
@@ -2624,10 +2639,10 @@
         "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新的行事曆，上限為 20 個行事曆。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "無法連線至伺服器。請過幾分鐘後再試一次"
       ],
       "Session timed out.": [
         "工作階段已逾時。"
@@ -2669,10 +2684,10 @@
         "召集人無法知悉您拒絕了此邀請："
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        ""
+        "召集人無法知悉您欲更改您的回答："
       ],
       "The organizer could not be notified that you changed your answer:": [
-        ""
+        "召集人無法知悉您已更改您的回答："
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "召集人已更新此一系列事件中的一些事件。可惜，此類型的週期性事件暫時未支援在行事曆變更。"
@@ -2753,7 +2768,7 @@
         "我們將會把您在新瀏覽器分頁中重新導向至 PayPal 以完成此交易。如果您使用了任何彈出式視窗攔截程式，請停用以繼續。"
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "匯入完成時，我們便會通知您。"
       ],
       "Week": [
         "週"
@@ -2801,10 +2816,10 @@
         "您目前已登入為 ${ user.Name } (${ user.Email })，帳號的存取受限。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "您亦可將匯入的行事曆與現有的 Proton 行事曆合併。"
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "您可在${ importProgressLink }查看進度。"
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "您僅可以修改個人事件屬性，因為您無法以召集人電子郵件地址傳送電子郵件。"
@@ -2816,7 +2831,7 @@
         "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "您已重設密碼，無法解密連結到以下日曆的事件連結。\n任何您先前建立的分享日曆連結都將無法運作。\n任何作用中的已訂閱日曆將會於數分鐘後再次同步。"
+        "您已重設您的密碼，因此與下列行事曆連結的事件無法解密。\n任何您先前建立的已分享行事曆連結將不再運作。\n任何使用中已訂閱的行事曆將於數分鐘後再次同步。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您必須有信用卡或連結到您的 PayPal 帳號的銀行帳戶，才能將其新增為付款方式。"
@@ -2886,6 +2901,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電子郵件只會用於此一次驗證。"
+      ],
+      "Your events will be encrypted and then saved.": [
+        "您的事件將經加密後儲存。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的電話號碼只會用於此一次驗證。"
@@ -3137,7 +3155,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(敬請期待)"
       ],
       "0 - Not likely": [
         "0 - 不太可能"
@@ -3158,7 +3176,7 @@
         "整天"
       ],
       "All-day event notifications": [
-        ""
+        "全日事件通知"
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
@@ -3175,8 +3193,11 @@
       "BTC amount:": [
         "BTC 數量："
       ],
+      "Calendar": [
+        "行事曆"
+      ],
       "Calendars": [
-        ""
+        "行事曆"
       ],
       "Cancel": [
         "取消"
@@ -3197,10 +3218,10 @@
         "城市"
       ],
       "Color": [
-        ""
+        "色彩"
       ],
       "Contacts": [
-        ""
+        "聯絡人"
       ],
       "Copy": [
         "複製"
@@ -3210,6 +3231,9 @@
       ],
       "CVV code": [
         "信用卡安全碼"
+      ],
+      "Date and time": [
+        "日期與時間"
       ],
       "Description": [
         "描述"
@@ -3230,7 +3254,7 @@
         "電子郵件格式"
       ],
       "Emails": [
-        ""
+        "電子郵件"
       ],
       "Enable Beta Access": [
         "啟用測試版體驗"
@@ -3242,25 +3266,16 @@
         "結束"
       ],
       "Enter organization name to confirm": [
-        ""
+        "請輸入組織名稱作確認"
       ],
       "Enter the 6-digit code": [
         "請輸入 6 位數代碼"
       ],
       "Event duration": [
-        ""
-      ],
-      "Event frequency": [
-        "事件頻率"
-      ],
-      "Event location": [
-        "事件地點"
+        "事件持續時間"
       ],
       "Event notifications": [
         "事件通知"
-      ],
-      "Event time": [
-        "事件時間"
       ],
       "Event title": [
         "事件標題"
@@ -3278,10 +3293,13 @@
         "詳細地址"
       ],
       "Folder location": [
-        ""
+        "資料夾位置"
+      ],
+      "Frequency": [
+        "頻率"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "寄件人：${ importedEmail }"
       ],
       "Hide password": [
         "隱藏密碼"
@@ -3290,43 +3308,46 @@
         "您向朋友或同事推薦 ${ calendarAppName } 的可能性有多大？"
       ],
       "Import all messages": [
-        ""
+        "匯入全部郵件"
       ],
       "Import contacts": [
         "匯入聯絡人"
       ],
       "Import interval": [
-        ""
+        "匯入間距"
       ],
       "Import to email address": [
-        ""
+        "匯入到電子郵件地址"
       ],
       "Import to:": [
-        ""
+        "匯入到："
       ],
       "Keyboard shortcuts": [
         "鍵盤快捷鍵"
       ],
       "Label messages as": [
-        ""
+        "為郵件加上標籤："
       ],
       "Last 12 months only": [
-        ""
+        "僅過去 12 個月"
       ],
       "Last 3 months only": [
-        ""
+        "僅過去 3 個月"
       ],
       "Last month only": [
-        ""
+        "僅過去一個月"
+      ],
+      "Location": [
+        "位置"
       ],
       "Mailbox password": [
         "郵箱密碼"
       ],
       "Manage folders": [
-        ""
+        "管理資料夾"
       ],
       "Manage labels": [
-        ""
+        "管理標籤"
       ],
       "Name": [
         "名稱"
@@ -3335,7 +3356,10 @@
         "持卡人姓名"
       ],
       "Notification": [
-        ""
+        "通知"
+      ],
+      "Notifications": [
+        "通知"
       ],
       "Operating system": [
         "操作系统"
@@ -3350,7 +3374,7 @@
         "召集人"
       ],
       "participant": [
-        ""
+        "位參與者"
       ],
       "Participants": [
         "參與者"
@@ -3362,7 +3386,7 @@
         "付款人"
       ],
       "PGP scheme": [
-        ""
+        "PGP 配置"
       ],
       "Phone number": [
         "電話號碼"
@@ -3421,11 +3445,8 @@
       "System information": [
         "系統資訊"
       ],
-      "Time of the event": [
-        "事件時間"
-      ],
       "To: ${ emailAddress }": [
-        ""
+        "收件人：${ emailAddress }"
       ],
       "Total": [
         "總計"
@@ -3453,9 +3474,6 @@
       ],
       "What is the primary reason for this rating?": [
         "這個評分的主要原因是什麼？"
-      ],
-      "Your calendars": [
-        "您的行事曆"
       ],
       "ZIP": [
         "美國郵區編號"
@@ -3502,21 +3520,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "建立資料夾"
       ],
       "Create label": [
-        ""
+        "建立標籤"
       ],
       "Edit folder": [
-        ""
+        "編輯資料夾"
       ],
       "Edit label": [
-        ""
+        "編輯標籤"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } 已建立"
       ]
     },
     "Layout mode": {
@@ -3556,7 +3574,7 @@
         "請求一個邀請"
       ],
       "Subscribed calendars": [
-        "已訂閱日曆"
+        "已訂閱的行事曆"
       ],
       "Upgrade": [
         "升級"
@@ -3567,22 +3585,22 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        ""
+        "${ createdCalendars } / ${ calendarsToBeCreated } 已建立"
       ],
       "Almost there": [
-        ""
+        "快完成了"
       ],
       "Creating new calendars": [
-        ""
+        "正在建立新的行事曆"
       ],
       "Gathering your data": [
-        ""
+        "正在蒐集您的資料"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "我們正從您的提供者蒐集您的資料"
       ],
       "Your import is starting": [
-        ""
+        "您的匯入正在開始"
       ]
     },
     "Mail feature": {
@@ -3668,10 +3686,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "匯入${ periodFragment }迄今帶有 ${ totalLabelsCount } 中之 ${ selectedLabelsCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "匯入${ periodFragment }迄今帶有 ${ totalLabelsCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3681,7 +3699,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "這將會永久刪除所有與您的組織關聯的子使用者、帳號與資料。"
       ]
     },
     "Message": {
@@ -3707,10 +3725,10 @@
     },
     "Modal action": {
       "Close": [
-        ""
+        "關閉"
       ],
       "Manage calendars": [
-        ""
+        "管理行事曆"
       ]
     },
     "Modal title": {
@@ -3718,12 +3736,12 @@
         "時區已變更"
       ],
       "Unable to add more calendars": [
-        ""
+        "無法新增更多行事曆"
       ]
     },
     "Modal title and action": {
       "Add calendar": [
-        ""
+        "新增行事曆"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -3863,13 +3881,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "色彩"
       ],
       "Folder name": [
-        ""
+        "資料夾名稱"
       ],
       "Label name": [
-        ""
+        "標籤名稱"
       ]
     },
     "Notification": {
@@ -4011,16 +4029,16 @@
     },
     "Onboarding ProtonCalendar": {
       "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
+        "行事曆是您活著的印記。使用 ${ appName } 保持您的生活保密與私密。"
       ],
       "Import events": [
-        ""
+        "匯入事件"
       ],
       "Meet your new encrypted calendar": [
-        ""
+        "迎接您全新的加密行事曆"
       ],
       "Start using ${ appName }": [
-        ""
+        "開始使用 ${ appName }"
       ]
     },
     "Option": {
@@ -4061,7 +4079,7 @@
         "月"
       ],
       "No parent folder": [
-        ""
+        "無上層資料夾"
       ],
       "This and future events": [
         "目前及未來事件"
@@ -4078,10 +4096,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "建立新的行事曆"
       ],
       "Merge with calendar": [
-        ""
+        "與行事曆合併"
       ]
     },
     "Participant name": {
@@ -4110,7 +4128,7 @@
     },
     "Personal calendar limit reached modal body": {
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        ""
+        "無法建立更多行事曆。您已達到您的方案中的個人行事曆上限。"
       ]
     },
     "PGP key encryption warning": {
@@ -4396,33 +4414,33 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        ""
+        "行事曆 URL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "請輸入 URL 以訂閱外部或公開的行事曆及其後的更新。該行事曆的唯讀版本將會新增到您「已訂閱的行事曆」中。${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "瞭解如何取得私密行事曆連結。"
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "使用此連結的話，Google 將會把您正在訂閱的行事曆設為公開"
       ],
       "This link might be wrong": [
-        ""
+        "此連結或有誤"
       ]
     },
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
-        ""
+        "訂閱行事曆目前無法使用"
       ]
     },
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        ""
+        "無法新增更多行事曆。您已達到您的方案中的已訂閱行事曆上限。"
       ]
     },
     "Success": {
@@ -4451,7 +4469,7 @@
         "錯誤回報"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "日曆已新增。同步可能需要幾分鐘的時間。"
+        "行事曆已新增。同步或需時幾分鐘。"
       ],
       "Calendar created": [
         "行事曆已建立"
@@ -4628,16 +4646,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "帳號一開始建立時"
       ],
       "the last 12 months": [
-        ""
+        "過去 12 個月"
       ],
       "the last 3 months": [
-        ""
+        "過去 3 個月"
       ],
       "the last month": [
-        ""
+        "過去一個月"
       ]
     },
     "Time unit": {
@@ -4745,7 +4763,7 @@
         "確認失去 Proton 獎勵"
       ],
       "Contact details": [
-        ""
+        "聯絡人詳細資料"
       ],
       "Contact Details": [
         "聯絡人詳細資料"
@@ -4757,7 +4775,7 @@
         "聯絡人"
       ],
       "Continue with partial import?": [
-        ""
+        "要繼續部分匯入嗎？"
       ],
       "Coupon discount": [
         "優惠券折扣"
@@ -4808,7 +4826,7 @@
         "刪除事件"
       ],
       "Delete organization?": [
-        ""
+        "要刪除組織嗎？"
       ],
       "Delete recurring event": [
         "刪除週期性事件"
@@ -4819,8 +4837,11 @@
       "Downgrade account": [
         "降級帳號"
       ],
+      "Drop to upload": [
+        "拖放到此處以上載"
+      ],
       "Edit calendar": [
-        ""
+        "編輯行事曆"
       ],
       "Edit contact": [
         "編輯聯絡人"
@@ -4880,16 +4901,16 @@
         "真人驗證"
       ],
       "Import as simple event?": [
-        ""
+        "要匯入為簡單事件嗎？"
       ],
       "Import contacts": [
         "匯入聯絡人"
       ],
       "Import events": [
-        ""
+        "匯入事件"
       ],
       "Import failed": [
-        ""
+        "匯入失敗"
       ],
       "Import groups": [
         "匯入群組"
@@ -4937,7 +4958,7 @@
         "其他名稱"
       ],
       "Participants cannot be notified": [
-        "參與者無法通知"
+        "無法知會參與者"
       ],
       "Payment details": [
         "付款詳情"
@@ -4982,7 +5003,7 @@
         "回報問題"
       ],
       "Request new code": [
-        ""
+        "要求新代碼"
       ],
       "Reset calendar keys": [
         "重設行事曆金鑰"
@@ -5106,7 +5127,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "今天"
       ]
     },
     "Tooltip": {
@@ -5132,7 +5153,7 @@
         "折扣算入兩年帳單週期"
       ],
       "Each imported email will have this label": [
-        ""
+        "每一封匯入的電子郵件都將加上此標籤"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "電子郵件加密強制電子郵件簽章，以助驗證您已寄送郵件的真確性"
@@ -5171,10 +5192,10 @@
         "支援檔案分享協定，例如 BitTorrent。"
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "系統子資料夾將在 ProtonMail 中顯示成獨立資料夾"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "匯入將自近期的郵件開始。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用寄送端對端加密電子郵件到此電子郵件地址"
@@ -5299,13 +5320,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        ""
+        "${ n }+ 個伺服器"
       ],
       "${ n } VPN connection": [
-        ""
+        "${ n } 個 VPN 連線"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        ""
+        "${ numberOfServers } 個伺服器，分布於 ${ numberOfCountries } 個國家"
       ]
     },
     "Warning": {
@@ -5334,7 +5355,7 @@
         "請注意：選取此支付方法時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton 將會合併同一名稱的所有資料夾。若這非您所想，請先更改名稱，然後才匯入。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告並非端對端加密，請勿傳送任何敏感資訊。"
@@ -5343,13 +5364,13 @@
         "一些欲合併的聯絡人發現錯誤，請逐一複閱"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "此聯絡人資料已損毀，無法顯示。"
       ],
       "The contact failed to load.": [
         "聯絡人載入失敗。"
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "您的裝置上的日期與時間設定有欠同步。${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "已加密內容的解密失敗。"
@@ -5367,7 +5388,7 @@
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "您到目前為止所作的任何自訂都將會消失。"
       ]
     },
     "Weekly recurring event, frequency": {

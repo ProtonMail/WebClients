@@ -90,16 +90,16 @@
         "Prepareu-vos fins que no es resolgui l’error."
       ],
       "Error: ${ errorMessage }": [
-        ""
+        "Error: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
       ],
       "Please ${ refresh } or check your connection.": [
-        ""
+        "Si us plau, ${ refresh } o comproveu la vostra connexió."
       ],
       "There was a problem connecting to Proton.": [
-        ""
+        "S'ha produït un problema en connectar amb Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "També podeu ${ refresh } o tornar-ho a intentar més tard."
@@ -222,7 +222,7 @@
         "Codi de verificació invàlid"
       ],
       "Request new code": [
-        ""
+        "Demanar un codi nou"
       ],
       "Sign in again to continue": [
         "Torneu a iniciar per continuar"

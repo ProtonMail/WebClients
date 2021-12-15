@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Adicionar"
       ],
       "Add address": [
-        ""
+        "Adicionar endereço"
       ],
       "Add contact": [
         "Adicionar contato"
       ],
       "Add email": [
-        ""
+        "Adicionar e-mail"
       ],
       "Add group": [
         "Adicionar grupo"
@@ -39,7 +42,7 @@
         "Adicionar notificação"
       ],
       "Add phone number": [
-        ""
+        "Adicionar número de telefone"
       ],
       "Add screenshot(s)": [
         "Adicionar captura(s) de tela"
@@ -406,6 +409,9 @@
       "Send": [
         "Enviar"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Compartilhar"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Atualizar"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Upgrade"
@@ -886,7 +898,7 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        ""
+        "Participará?"
       ]
     },
     "Calendar invite info": {
@@ -903,7 +915,7 @@
         "${ name } aceitou provisoriamente seu convite"
       ],
       "This event has been canceled": [
-        ""
+        "Este evento foi cancelado"
       ],
       "You accepted the invitation": [
         "Você aceitou o convite"
@@ -923,7 +935,7 @@
         ""
       ],
       "More options": [
-        ""
+        "Mais opções"
       ]
     },
     "Calendar status": {
@@ -981,7 +993,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Composer size": {
@@ -1181,7 +1193,7 @@
         "Arraste e solte para classificar a prioridade de mesclagem dos contatos. Desmarque os contatos que você não deseja mesclar."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        ""
+        "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, por favor divida-o em arquivos menores."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Você pode marcar para exclusão os contatos que não quer mesclar nem manter. A exclusão somente ocorrerá após o botão de mesclagem ser clicado"
@@ -1228,7 +1240,7 @@
     },
     "Dropwdown action icon tooltip": {
       "Add calendar": [
-        ""
+        "Adicionar calendário"
       ]
     },
     "Duration": {
@@ -1262,7 +1274,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } foi cancelado."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } foi atualizado.\n${ eventDetailsText }"
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Você pode ${ refresh } ou tentar novamente mais tarde."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -1870,17 +1885,17 @@
     },
     "Event canceled status badge": {
       "canceled": [
-        ""
+        "cancelado"
       ]
     },
     "Event delete button tooltip": {
       "Delete event": [
-        ""
+        "Excluir evento"
       ]
     },
     "Event edit button tooltip": {
       "Edit event": [
-        ""
+        "Editar evento"
       ]
     },
     "Event form": {
@@ -1908,7 +1923,7 @@
         "Resposta inválida"
       ],
       "Unexpected error": [
-        ""
+        "Erro inesperado"
       ],
       "Unsupported invitation": [
         "Convite não suportado"
@@ -1917,7 +1932,7 @@
         "Resposta não suportada"
       ],
       "We could not cancel the event in your calendar": [
-        ""
+        "Não foi possível cancelar o evento no seu calendário"
       ],
       "We could not retrieve the event from your calendar": [
         ""
@@ -1939,10 +1954,10 @@
     },
     "Event reply": {
       "maybe": [
-        ""
+        "talvez"
       ],
       "no": [
-        ""
+        "não"
       ],
       "unanswered": [
         ""
@@ -2042,30 +2057,31 @@
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptografando e adicionando contatos: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        ""
+        "Criptografando e adicionando eventos ao seu calendário: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "",
         ""
       ],
       "Please don't close the tab before the importing process is finished.": [
-        ""
+        "Por favor, não feche a aba antes que o processo de importação termine."
       ]
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
+        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
         "versões vCard < 3.0"
@@ -2134,7 +2150,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para ver detalhes"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail será utilizado somente nesta verificação única."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será utilizado nessa verificação única."
       ],
@@ -3192,7 +3212,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Em breve)"
       ],
       "0 - Not likely": [
         "0 - Acho que não"
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "Valor em BTC:"
       ],
+      "Calendar": [
+        "Calendário"
+      ],
       "Calendars": [
         "Calendários"
       ],
@@ -3266,6 +3289,9 @@
       "CVV code": [
         "Código CVV"
       ],
+      "Date and time": [
+        "Data e hora"
+      ],
       "Description": [
         "Descrição"
       ],
@@ -3297,7 +3323,7 @@
         "Termina"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Digite o nome da organização para confirmar"
       ],
       "Enter the 6-digit code": [
         "Insira o código de 6 dígitos"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         "Duração do evento"
       ],
-      "Event frequency": [
-        "Frequência do evento"
-      ],
-      "Event location": [
-        "Local do evento"
-      ],
       "Event notifications": [
         "Notificações de eventos"
-      ],
-      "Event time": [
-        "Hora do evento"
       ],
       "Event title": [
         "Titulo do evento"
@@ -3334,6 +3351,9 @@
       ],
       "Folder location": [
         "Localização da pasta"
+      ],
+      "Frequency": [
+        "Frequência"
       ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
@@ -3374,6 +3394,9 @@
       "Last month only": [
         "Apenas no mês passado"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
@@ -3391,6 +3414,9 @@
       ],
       "Notification": [
         "Notificação"
+      ],
+      "Notifications": [
+        "Notificações"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -3477,9 +3503,6 @@
       "System information": [
         "Informações do sistema"
       ],
-      "Time of the event": [
-        "Horário do evento"
-      ],
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Qual é a principal razão para essa classificação?"
-      ],
-      "Your calendars": [
-        "Seus calendários"
       ],
       "ZIP": [
         "CEP"
@@ -3766,7 +3786,7 @@
     },
     "Modal action": {
       "Close": [
-        ""
+        "Fechar"
       ],
       "Manage calendars": [
         ""
@@ -3782,7 +3802,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        ""
+        "Adicionar calendário"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4164,10 +4184,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Criar novo calendário"
       ],
       "Merge with calendar": [
-        ""
+        "Mesclar com o calendário"
       ]
     },
     "Participant name": {
@@ -4484,7 +4504,7 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        ""
+        "URL do calendário"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
@@ -4492,7 +4512,7 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "Aprenda como obter um link para um calendário privado."
       ]
     },
     "Subscribed calendar extension warning": {
@@ -4500,7 +4520,7 @@
         ""
       ],
       "This link might be wrong": [
-        ""
+        "Este link pode estar errado"
       ]
     },
     "Subscribed calendar feature unavailable error": {
@@ -4913,6 +4933,9 @@
         "Excluindo contatos"
       ],
       "Downgrade account": [
+        ""
+      ],
+      "Drop to upload": [
         ""
       ],
       "Edit calendar": [
@@ -5446,7 +5469,7 @@
         "Alguns dos contatos a serem mesclados apresentam erro. Verifique-os individualmente"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "Os dados do contato estão corrompidos e não podem ser exibidos."
       ],
       "The contact failed to load.": [
         "O contato falhou ao carregar."

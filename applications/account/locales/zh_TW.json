@@ -43,6 +43,9 @@
       "Activate organization key": [
         "啟用組織金鑰"
       ],
+      "Activate recovery": [
+        "啟動還原"
+      ],
       "Add": [
         "新增"
       ],
@@ -59,10 +62,10 @@
         "新增條件"
       ],
       "Add credit / debit card": [
-        "新增信用卡 / 扣帳卡"
+        "新增信用卡 / 簽帳金融卡"
       ],
       "Add credits": [
-        "增值"
+        "儲值"
       ],
       "Add domain": [
         "新增網域"
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "設定全部擷取"
+      ],
+      "Set recovery phrase": [
+        "設定還原短語"
       ],
       "Share via link": [
         "透過連結分享"
@@ -2060,7 +2066,7 @@
         "標籤名稱太長。請換另一個名稱。"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "增值的最低金額為 ${ _price }"
+        "每次儲值的最低金額為 ${ _price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "捐款的最低金額為 ${ price }"
@@ -2143,8 +2149,8 @@
       "You must set a name": [
         "您必須設定名稱"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "您的帳號或組織目前有逾期的帳單。請支付所有未付帳單。"
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "您的帳號或組織有逾期的帳單。請支付所有未付帳單。"
       ],
       "Your import will not be processed.": [
         "您的匯入將不會處理。"
@@ -2699,11 +2705,11 @@
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported } 個 (共 ${ totalToImport } 個) 事件已加密並新增到您的行事曆中"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "加密及新增您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "加密及新增您的事件時發生錯誤。無法匯入任何事件。"
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "加密及新增您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密並新增聯絡人：${ totalImported }/${ totalToImport }"
@@ -3027,7 +3033,7 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 個聯絡人之中，有 ${ totalContactsDiscarded } 個將不會匯入。按一下以取得詳細資料"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEvents } 個活動之中，有 ${ totalEventsDiscarded } 個將不會匯入。按一下以取得詳細資料."
       ],
       "No contact can be imported. Click for details": [
@@ -3173,9 +3179,6 @@
       "Account successfully updated": [
         "帳號已成功更新"
       ],
-      "Activate your recovery phrase": [
-        "啟用您的復原短語"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "新增一個 @pm.me 的電子郵件地址到您的帳號。此較為簡短的網域代表「ProtonMail me」或「私訊我」。"
       ],
@@ -3203,8 +3206,8 @@
       "Addresses": [
         "電子郵件地址"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "在重設密碼後，你的資料將會保持加密以確保安全。若要解密並存取電子郵件等資料，你需要復原檔案或是復原短語。"
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        "在重設密碼之後，您的資料將上鎖以確保安全。"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "進行比特幣付款後，請依照下列指示來升級。"
@@ -3226,6 +3229,12 @@
       ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
+      ],
+      "Allow recovery by email": [
+        "允許透過電子郵件復原"
+      ],
+      "Allow recovery by phone": [
+        "允許透過電話復原"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "讓您在 ${ mailAppName } 上為自己的網域託管電子郵件，例如 john.smith@example.com"
@@ -3263,8 +3272,8 @@
       "Are you sure you want to delete this filter?": [
         "您確定要刪除此篩選器嗎？"
       ],
-      "Are you sure you want to delete this folder?": [
-        "您確定要刪除此資料夾嗎？"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "您確定您要刪除此資料夾嗎？所有下層資料夾也都將會被刪除。"
       ],
       "Are you sure you want to delete this label?": [
         "您確定要刪除此標籤嗎？"
@@ -3464,14 +3473,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "降級將中斷任何與付費 ProtonVPN 伺服器的連線。"
       ],
+      "Download recovery file": [
+        "下載還原檔案"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "下載您的 PGP 金鑰以用於其他與 PGP 相容的服務。"
-      ],
-      "Download your recovery file": [
-        "下載還原檔案"
       ],
       "Drop the file here to upload": [
         "拖放檔案到此處上載"
@@ -3627,7 +3636,7 @@
         "如果您已同時設定 SPF 和 DKIM，DMARC 允許您指定一旦 SPF 和 DKIM 檢查皆失敗時，其他電子郵件服務該如何遞送屬於您的網域的電子郵件。這可以增加別人假扮您寄送垃圾郵件的難度，但若設定不當亦可能導致遞送問題。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "若你遺失您的登入資訊且需要重設您的帳戶， ${ boldImperative } 後你將會有 ${ boldAccountRecovery } 可用。"
+        "若你遺失您的登入資訊且需要重設您的帳戶， ${ boldImperative } 擁有一個 ${ boldAccountRecovery } 可供使用。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
         "若你遺失登入帳戶所需的資訊且需要重設你的帳戶， ${ boldImperative } 後你將會有 ${ boldAccountAndRecovery } 可用，不然你將可能會無法存取你的任何郵件、聯絡人或檔案。"
@@ -3684,7 +3693,7 @@
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "如果您遺失了您的登入資訊，我們將會透過電子郵件或簡訊傳送還原簡介給您。"
+        "如果您遺失了您的登入資訊，我們將會透過電子郵件或簡訊傳送救援資訊給您。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
         "如果您遺失了您的登入資訊，我們將會透過電子郵件傳送還原簡介給您。"
@@ -3723,7 +3732,7 @@
         "網際網路連線已恢復。"
       ],
       "it’s imperative": [
-        "此為至關重要的"
+        "您需要有"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選取，我們就會處理餘下一切。"
@@ -3905,6 +3914,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        "救援檔案已過時，更新以確保您可以存取您的資料"
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        "救援手段已過時，更新以確保您可以存取您的資料"
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        "密碼短語已過時，更新以確保您可以存取您的資料"
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4085,6 +4103,9 @@
       "Session timed out.": [
         "工作階段已逾時。"
       ],
+      "Set recovery phrase": [
+        "設定還原短語"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支持，您的帳號已啟用額外的功能。"
       ],
@@ -4220,6 +4241,15 @@
       "to continue to ${ toAppName }": [
         "繼續使用 ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        "為解密您的郵件與其他資料，需要救援檔案或是短語"
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        "為解密您的郵件與其他資料，需要救援檔案"
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        "為解密您的郵件與其他資料，需要救援短語"
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "為了能在密碼重設後存取加密的資料，選擇帳戶復原方法。"
       ],
@@ -4239,7 +4269,7 @@
         "若要保護您的網際網路連線安全，請為您的裝置下載並安裝 ProtonVPN 應用程式並連接到 ProtonVPN 伺服器。"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "為您的帳號充值，以便訂閱新方案或為您目前的方案續期。每增值一${ i18nCurrency }，儲值餘額同等充值一元。"
+        "為您的帳號儲值，以便訂閱新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳戶餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
       ],
       "Tor": [
         "Tor"
@@ -4273,6 +4303,12 @@
       ],
       "Unsupported file": [
         "不支援的檔案"
+      ],
+      "Update recovery file": [
+        "更新還原檔案"
+      ],
+      "Update recovery phrase": [
+        "更新還原短語"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "升級至 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 方案以於您不在辦公室時啟用自動回覆。"
@@ -4595,7 +4631,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "請寄送電子郵件到 ${ email } 聯絡我們，以索取以現金支付給我們的相關指示。"
+        "請寄送電子郵件到 ${ email } 聯絡我們，以獲得如何將現金支付給我們的相關指引。"
       ]
     },
     "Info for domain modal": {
@@ -6026,7 +6062,7 @@
     },
     "Mail upsell feature": {
       "Create separate logins for each user": [
-        "為每個使用者建立獨立登入"
+        "每位使用者都能獨立登入"
       ],
       "Get Multi-user support": [
         "取得多使用者支援"
@@ -7163,7 +7199,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } 已複製到剪貼簿"
       ],
       "Account deleted. Logging out...": [
@@ -7206,7 +7242,7 @@
         "代碼已發送到 ${ methodTo }"
       ],
       "Credits added": [
-        "已增值"
+        "餘額已增加"
       ],
       "Default calendar updated": [
         "預設行事曆已更新"
@@ -7481,7 +7517,7 @@
         "新增信用卡/扣帳卡"
       ],
       "Add credits": [
-        "增值"
+        "儲值"
       ],
       "Add domain": [
         "新增網域"
@@ -8727,10 +8763,10 @@
       "You will not see this import record in the list anymore.": [
         "您在清單中將再也看不見此匯入記錄。"
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "您的復原檔案已過時，若您再次重置您的帳戶，該復原檔案將無法還原新的資料。"
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         "您的復原短語已過時，若您再次重置您的帳戶，該短語將無法還原新的資料。"
       ]
     },

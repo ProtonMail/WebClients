@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Aktywuj mój kupon"
       ],
+      "Activate recovery": [
+        "Aktywuj odzyskiwanie"
+      ],
       "Add credit / debit card": [
         "Dodaj kartę płatniczą"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Wyślij ponownie"
       ],
+      "Reset": [
+        "Zresetuj"
+      ],
       "Reset credentials": [
         "Zresetuj dane logowania"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Wyślij"
+      ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
       ],
       "Share via link": [
         "Udostępnij przez link"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Zaktualizuj"
+      ],
+      "Update recovery file": [
+        "Zaktualizuj plik odzyskiwania"
+      ],
+      "Update recovery phrase": [
+        "Zaktualizuj hasło odzyskiwania"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -831,7 +846,7 @@
         "Kwota poniżej minimum."
       ],
       "Can't check username, try again later": [
-        "Nie można sprawdzić nazwy użytkownika, spróbuj później"
+        "Nie można sprawdzić nazwy użytkownika. Spróbuj ponownie później"
       ],
       "Can't validate email, try again later": [
         "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
@@ -882,7 +897,7 @@
         "Termin ważności jest nieprawidłowy"
       ],
       "Invalid invitation link": [
-        "Nieprawidłowy link zaproszenia"
+        "Link zaproszenia jest nieprawidłowy"
       ],
       "Invalid postal code": [
         "Kod pocztowy jest nieprawidłowy"
@@ -974,7 +989,7 @@
       "You have no invoices.": [
         "Nie posiadasz faktur."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Twoje konto lub organizacja posiada obecnie zaległe faktury. Ureguluj wszystkie zobowiązania."
       ]
     },
@@ -1150,7 +1165,7 @@
         "Zabezpieczenie przed wyciekiem zapytań DNS"
       ],
       "Kill switch to prevent IP exposure": [
-        "Kill switch zapobiega ujawnieniu adresu IP"
+        "Funkcja Kill Switch zapobiega ujawnieniu adresu IP"
       ],
       "Laptop & smartphone shown connected to ProtonVPN network.": [
         "Laptop i telefon podłączone do sieci ProtonVPN."
@@ -1158,7 +1173,7 @@
       "No logs": [
         "Brak przechowywania logów"
       ],
-      "Secure core servers": [
+      "Secure Core servers": [
         "Serwery Secure Core"
       ],
       "Strong encryption": [
@@ -1586,9 +1601,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Zresetowanie hasła sprawi, że Twoje stare hasło i miejsca, w których zostało zapisane, przestaną działać. Czy na pewno chcesz zresetować hasło?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Zresetowanie hasła zresetuje także wszystkie klucze szyfrowania dla wszystkich usług Proton (poczta i VPN). Tym samym nie będziesz w stanie odczytać swoich wiadomości. Jeśli znasz swoje dane logowania do usługi ProtonMail, NIE resetuj hasła. Zaloguj się za jego pomocą ${ hereLink }."
       ],
@@ -1672,6 +1684,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ta czynność spowoduje trwałe usunięcie konta. Nie będziesz mógł reaktywować tego konta."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        "Ta opcja unieważni hasło i nie będziesz mógł go użyć do zalogowania się na konto."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie Proton. Ta funkcja poprawi bezpieczeństwo Twojego konta, dlatego zalecamy włączenie tej opcji."
@@ -1800,10 +1815,10 @@
         "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Wkrótce zostaniesz przekierowany na stronę swojego banku w celu zweryfikowania płatności."
@@ -2979,7 +2994,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "Domena serwera ${ server.Domain } została skopiowana do schowka"
       ],
       "Account deleted. Logging out...": [
@@ -3004,7 +3019,7 @@
         "Kod podarunkowy został zastosowany"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute": [
-        "Jeśli wpisałeś prawidłowy adres pomocniczy, w ciągu minuty wyślemy Ci wiadomość z Twoimi nazwami użytkowników"
+        "Jeśli wpisany adres pomocniczy jest prawidłowy, w ciągu minuty wyślemy Ci wiadomość z Twoimi nazwami użytkowników"
       ],
       "Invoice customized": [
         "Faktura została dostosowana"
@@ -3044,7 +3059,7 @@
       "/2-year": [
         "/ 2 lata"
       ],
-      "/monthly": [
+      "/month": [
         "/ miesiąc"
       ],
       "/year": [
@@ -3176,9 +3191,6 @@
       "Confirm phone number": [
         "Potwierdź numer telefonu"
       ],
-      "Confirm reset password": [
-        "Potwierdź resetowanie hasła"
-      ],
       "Coupon discount": [
         "Kupon zniżkowy"
       ],
@@ -3231,7 +3243,7 @@
         "Edytuj kartę płatniczą"
       ],
       "Email subscriptions": [
-        "Moje subskrypcje"
+        "Listy mailingowe"
       ],
       "Enter verification code": [
         "Wpisz kod weryfikacyjny"
@@ -3380,6 +3392,9 @@
       "Reset password": [
         "Zresetuj hasło"
       ],
+      "Reset password?": [
+        "Zresetować hasło?"
+      ],
       "Secure Core Servers": [
         "Serwery Secure Core"
       ],
@@ -3510,7 +3525,7 @@
         "Jeśli zapomnisz hasła, nie będziesz mieć dostępu do swojego konta i danych. Zapisz je w bezpiecznym miejscu."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jeśli kupiłeś kod podarunkowy lub otrzymałeś go od naszej pomocy technicznej, możesz wpisać go tutaj."
+        "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
       "Includes ProtonMail encrypted email with all features": [
         "Zawiera szyfrowaną pocztę ProtonMail ze wszystkimi funkcjami"

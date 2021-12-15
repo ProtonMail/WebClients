@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "新增"
       ],
@@ -236,9 +239,6 @@
       "Go to settings": [
         "前往設定"
       ],
-      "Grid layout": [
-        "格線版面佈置"
-      ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
       ],
@@ -268,9 +268,6 @@
       ],
       "Keyboard shortcuts": [
         "鍵盤快捷鍵"
-      ],
-      "List layout": [
-        "清單版面佈置"
       ],
       "Load image": [
         "載入圖片"
@@ -321,7 +318,7 @@
         "移至垃圾桶"
       ],
       "New upload": [
-        "新增上載"
+        "上傳"
       ],
       "Next": [
         "下一個"
@@ -437,6 +434,9 @@
       "Select plan": [
         "選擇方案"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "分享"
       ],
@@ -463,9 +463,6 @@
       ],
       "Show labels": [
         "顯示標籤"
-      ],
-      "Show shared link details": [
-        "顯示共享鏈結詳細說明"
       ],
       "Sign out": [
         "登出"
@@ -517,6 +514,12 @@
       ],
       "Untrust": [
         "取消信任"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "升級"
@@ -1076,7 +1079,7 @@
         "行事曆數量達到上限"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
       ],
       "Can't validate email, try again later": [
         "無法驗證電子郵件，請稍後再試"
@@ -1117,17 +1120,32 @@
       "Error connecting to the Bitcoin API.": [
         "連接比特幣 API 時出錯。"
       ],
+      "Failed to download a file": [
+        "檔案下載失敗"
+      ],
+      "Failed to download a folder": [
+        "資料夾下載失敗"
+      ],
       "Failed to load the link": [
         "連結載入失敗"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "檔案「${ item.name }」因為錯誤 ${ error } 無法上傳"
       ],
+      "File \"${ name }\" is already downloading": [
+        "檔案 「${ name } 」已可供下載"
+      ],
       "File cannot be merged with folder": [
         "檔案無法與資料夾合併"
       ],
       "File has no contents to preview": [
         "預覽的檔案無內容"
+      ],
+      "File selection is already downloading": [
+        "選中的檔案已可供下載"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "資料夾「${ name } 」已可供下載"
       ],
       "Folder name cannot be empty": [
         "資料夾名稱不能留空"
@@ -1550,11 +1568,14 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } 個正在下載 (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } 個下載任務執行中"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } 個正在上傳 (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } 個下載任務執行中(${ downloadProgress } ％)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } 個任務上傳中（${ uploadProgress } ％）"
       ],
       "${ addressCount } email address": [
         "${ addressCount } 個電子郵件地址"
@@ -1571,8 +1592,8 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併的行事曆"
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } 個已取消"
+      "${ canceledCount } canceled": [
+        "${ canceledCount } 個任務已取消"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 個成員"
@@ -1592,17 +1613,17 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } 個已完成"
+      "${ doneCount } finished": [
+        "${ doneCount } 任務已完成"
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } 個已下載"
+      "${ doneDownloadsCount } downloaded": [
+        "已完成 ${ doneDownloadsCount } 個下載任務"
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } 個已上載"
+      "${ doneUploadsCount } uploaded": [
+        "已完成 ${ doneUploadsCount } 個上傳任務"
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } 個失敗"
+      "${ errorCount } failed": [
+        "${ errorCount } 個任務失敗"
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
@@ -1622,8 +1643,8 @@
       "${ numContacts } contact": [
         "${ numContacts } 位聯絡人"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } 個已暫停"
+      "${ pausedCount } paused": [
+        "${ pausedCount } 個任務已暫停"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "改用${ annualBilling }，您的訂閱即可${ save20 }"
@@ -1730,6 +1751,9 @@
       "Anyone with this link can access your file.": [
         "任何人憑此連結均可存取您的檔案。"
       ],
+      "Anyone with this link can access your folder.": [
+        "任何人憑此連結均可存取您的資料夾。"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
       ],
@@ -1819,6 +1843,9 @@
       ],
       "Creating link to file": [
         "建立檔案的連結"
+      ],
+      "Creating link to folder": [
+        "資料夾的連結建立中"
       ],
       "Creating share": [
         "正在建立分享"
@@ -2066,6 +2093,9 @@
       "Only the people with the link and the password can access this file.": [
         "僅有知道連結與密碼的人才能存取此檔案。"
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "僅有知道連結與密碼的人才能存取此資料夾。"
+      ],
       "Paused": [
         "已暫停"
       ],
@@ -2119,6 +2149,9 @@
       ],
       "Preparing link to file": [
         "準備檔案的連結"
+      ],
+      "Preparing link to folder": [
+        "資料夾連結準備中"
       ],
       "Preview": [
         "預覽"
@@ -2225,8 +2258,11 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此連結將會永久停用。無人將可憑此連結存取您的檔案。若要重新分享此檔案，您將需要一個新的連結。"
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "這將會刪除連結並移除任何知道此連結的人對您檔案的存取權。"
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "此連結將會永久停用。無人將可憑此連結存取您的資料夾。若要重新分享此資料夾，您將需要一個新的連結。"
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "此操作將會刪除此連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "這將會啟用 PayPal 以支付您的 Proton 訂閱。我們將會把您在新瀏覽器分頁中重新導向至 PayPal。如果您使用了任何彈出式視窗攔截程式，請停用以繼續。"
@@ -2404,6 +2440,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "您的檔案將經加密後儲存。"
+      ],
+      "Your folder failed to download.": [
+        "您的資料夾下載失敗。"
+      ],
+      "Your folder has finished downloading.": [
+        "您的資料夾已完成下載。"
+      ],
+      "Your folder is being downloaded.": [
+        "您的資料夾已下載。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的電話號碼只會用於此一次驗證。"
@@ -2862,7 +2907,7 @@
         "合併資料夾"
       ],
       "Name": [
-        ""
+        "名稱"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -3354,6 +3399,9 @@
       ],
       "Contact group updated": [
         "聯絡人群組已更新"
+      ],
+      "Failed to download files: ${ err }": [
+        "無法下載檔案： ${ err }"
       ],
       "Failed to move, please try again": [
         "移動失敗，請再試一次"
@@ -4116,8 +4164,8 @@
       "Empty trash": [
         "清空垃圾桶"
       ],
-      "Enter file password to download": [
-        "輸入檔案密碼以下載"
+      "Enter password to download": [
+        "輸入密碼以下載"
       ],
       "Enter your password": [
         "請輸入您的密碼"
@@ -4196,6 +4244,9 @@
       ],
       "My files": [
         "我的檔案"
+      ],
+      "My files ${ date }.zip": [
+        "我的檔案 ${ date }.zip"
       ],
       "Name": [
         "名稱"
@@ -4368,6 +4419,9 @@
       "Your file is ready to be downloaded": [
         "已準備好您的檔案，可供下載"
       ],
+      "Your folder is ready to be downloaded": [
+        "您的文件夾已可被下載"
+      ],
       "ZIP / postal code": [
         "郵編 / 郵政代碼"
       ]
@@ -4380,9 +4434,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "無論您身在何處，都可以存取有地域限制的內容 (Netflix、Amazon Prime Video、BBC iPlayer、維基百科、Facebook、YouTube 等)。"
-      ],
-      "Active sharing link": [
-        "作用中的分享連結"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示寄送給此使用者時將使用撰寫器中的格式。「純文字」表示將一律轉換成純文字才寄送郵件。"
@@ -4411,9 +4462,6 @@
       "Encrypted data with verified digital signature": [
         "經加密資料，已驗證數碼簽章"
       ],
-      "Expired sharing link": [
-        "過期的分享連結"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "一個方案即可同時存取 ${ vpnAppName } 和 ${ mailAppName } (數百萬人用來保護他們資料的加密電子郵件服務) 的所有付費功能。"
       ],
@@ -4428,9 +4476,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊獲取一個禮品代碼，您可在此輸入。"
-      ],
-      "Inactive sharing link": [
-        "待用中的共享鏈結"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "多使用者支援僅適用於選用 2 個或以上使用者的方案"

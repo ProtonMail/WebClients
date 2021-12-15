@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Añadir"
       ],
       "Add address": [
-        ""
+        "Añadir dirección"
       ],
       "Add contact": [
         "Agregar contacto"
       ],
       "Add email": [
-        ""
+        "Añadir correo electrónico"
       ],
       "Add group": [
         "Agregar grupo"
@@ -39,7 +42,7 @@
         "Añadir notificación"
       ],
       "Add phone number": [
-        ""
+        "Añadir número de teléfono"
       ],
       "Add screenshot(s)": [
         "Añadir captura de pantalla"
@@ -126,7 +129,7 @@
         "Continuar"
       ],
       "Continue import": [
-        ""
+        "Continuar importación"
       ],
       "Continue with Google": [
         "Continuar con Google"
@@ -135,7 +138,7 @@
         "Copiar correo al portapapeles"
       ],
       "Create calendar": [
-        ""
+        "Crear calendario"
       ],
       "Create event": [
         "Crear evento"
@@ -242,7 +245,7 @@
         "Importar"
       ],
       "Import events": [
-        ""
+        "Importar eventos"
       ],
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
@@ -406,6 +409,9 @@
       "Send": [
         "Enviar"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Compartir"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Actualizar"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Actualizar"
@@ -644,13 +656,13 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Archivo ICS vacío"
       ],
       "Invalid event": [
-        ""
+        "Evento no válido"
       ],
       "Invalid ICS file": [
-        ""
+        "Archivo ICS no válido"
       ],
       "Invalid method": [
         ""
@@ -659,7 +671,7 @@
         ""
       ],
       "Unsupported event": [
-        ""
+        "Evento no soportado"
       ]
     },
     "Attendee role": {
@@ -923,7 +935,7 @@
         ""
       ],
       "More options": [
-        ""
+        "Más opciones"
       ]
     },
     "Calendar status": {
@@ -981,7 +993,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Composer size": {
@@ -1228,7 +1240,7 @@
     },
     "Dropwdown action icon tooltip": {
       "Add calendar": [
-        ""
+        "Añadir calendario"
       ]
     },
     "Duration": {
@@ -1360,7 +1372,7 @@
         "Error de autenticación."
       ],
       "Calendar limit reached": [
-        ""
+        "Se ha alcanzado el límite del calendario"
       ],
       "Calendar primary private key is not decrypted": [
         "La clave privada principal del calendario no está descifrada"
@@ -1434,7 +1446,7 @@
         "No se ha podido obtener la ocurrencia original de la serie"
       ],
       "Folder name cannot be empty": [
-        ""
+        "El nombre de la carpeta no puede estar vacío"
       ],
       "Image upload failed": [
         "La subida de la imagen ha fallado"
@@ -1488,7 +1500,7 @@
         "Solo es posible mover eventos entre ${ minDateString } y ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        ""
+        "El nombre de la etiqueta no puede estar vacío"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -1734,10 +1746,10 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        ""
+        "Formato incorrecto. No se puede leer el componente."
       ],
       "Calendar": [
-        ""
+        "Calendario"
       ],
       "Calendar timezone not supported": [
         ""
@@ -1752,7 +1764,7 @@
         ""
       ],
       "Element": [
-        ""
+        "Elemento"
       ],
       "Encryption failed": [
         ""
@@ -1761,7 +1773,7 @@
         ""
       ],
       "Event": [
-        ""
+        "Evento"
       ],
       "Event validation failed": [
         ""
@@ -1815,7 +1827,7 @@
         ""
       ],
       "Timezone": [
-        ""
+        "Zona horaria"
       ],
       "Timezone not supported": [
         ""
@@ -1824,7 +1836,7 @@
         ""
       ],
       "Unknown": [
-        ""
+        "Desconocido"
       ],
       "Unsupported event": [
         ""
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "También puedes ${ refresh } o intentarlo de nuevo más tarde."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -1870,7 +1885,7 @@
     },
     "Event canceled status badge": {
       "canceled": [
-        ""
+        "cancelado"
       ]
     },
     "Event delete button tooltip": {
@@ -2042,11 +2057,12 @@
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -2134,7 +2150,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no serán importados. Haz clic para obtener más detalles"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono sólo se utilizará para esta verificación única."
       ],
@@ -3192,7 +3212,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Próximamente)"
       ],
       "0 - Not likely": [
         ""
@@ -3230,8 +3250,11 @@
       "BTC amount:": [
         "Cantidad BTC:"
       ],
+      "Calendar": [
+        "Calendario"
+      ],
       "Calendars": [
-        ""
+        "Calendarios"
       ],
       "Cancel": [
         "Cancelar"
@@ -3252,7 +3275,7 @@
         "Ciudad"
       ],
       "Color": [
-        ""
+        "Color"
       ],
       "Contacts": [
         "Contactos"
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "Código CVV"
+      ],
+      "Date and time": [
+        "Fecha y hora"
       ],
       "Description": [
         "Descripción"
@@ -3303,19 +3329,10 @@
         "Introduce el código de 6 dígitos"
       ],
       "Event duration": [
-        ""
-      ],
-      "Event frequency": [
-        "Frecuencia del evento"
-      ],
-      "Event location": [
-        "Ubicación del evento"
+        "Duración del evento"
       ],
       "Event notifications": [
         "Notificaciones del evento"
-      ],
-      "Event time": [
-        "Hora del evento"
       ],
       "Event title": [
         "Título del evento"
@@ -3334,6 +3351,9 @@
       ],
       "Folder location": [
         "Ubicación de la carpeta"
+      ],
+      "Frequency": [
+        "Frecuencia"
       ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
@@ -3374,6 +3394,9 @@
       "Last month only": [
         "Solo el último mes"
       ],
+      "Location": [
+        "Ubicación"
+      ],
       "Mailbox password": [
         "Contraseña del buzón"
       ],
@@ -3391,6 +3414,9 @@
       ],
       "Notification": [
         "Notificación"
+      ],
+      "Notifications": [
+        "Notificaciones"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3477,9 +3503,6 @@
       "System information": [
         "Información del sistema"
       ],
-      "Time of the event": [
-        "Hora del evento"
-      ],
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Your calendars": [
-        "Tus calendarios"
       ],
       "ZIP": [
         "CP"
@@ -3766,7 +3786,7 @@
     },
     "Modal action": {
       "Close": [
-        ""
+        "Cerrar"
       ],
       "Manage calendars": [
         ""
@@ -3782,7 +3802,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        ""
+        "Añadir calendario"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4096,7 +4116,7 @@
         ""
       ],
       "Import events": [
-        ""
+        "Importar eventos"
       ],
       "Meet your new encrypted calendar": [
         ""
@@ -4484,7 +4504,7 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        ""
+        "URL del calendario"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
@@ -4915,8 +4935,11 @@
       "Downgrade account": [
         "Degradar cuenta"
       ],
-      "Edit calendar": [
+      "Drop to upload": [
         ""
+      ],
+      "Edit calendar": [
+        "Editar calendario"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -4983,7 +5006,7 @@
         "Importar contactos"
       ],
       "Import events": [
-        ""
+        "Importar eventos"
       ],
       "Import failed": [
         ""
@@ -5397,12 +5420,12 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } servidor",
+        "${ n } servidores"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } conexión VPN",
+        "${ n } conexiones VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "",

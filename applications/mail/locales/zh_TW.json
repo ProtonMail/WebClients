@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Accept": [
-        "接受"
-      ],
       "Activate": [
         "啟用"
+      ],
+      "Activate recovery": [
+        "啟動還原"
       ],
       "Add": [
         "新增"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "建立新的群組"
+      ],
+      "Add participant": [
+        "新增參與者"
       ],
       "Add phone number": [
         "新增電話號碼"
@@ -179,8 +182,8 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm opening of link ${ link }": [
-        "確認開啟連結 ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "確認開啟連結 ${ linkToShow }"
       ],
       "Contact group": [
         "聯絡人群組"
@@ -585,7 +588,7 @@
         "開啟行事曆"
       ],
       "Open get started checklist modal": [
-        "開啟入門清單模式"
+        "開啟新手教學清單視窗"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -743,6 +746,9 @@
       "Set expiration time": [
         "設定到期時間"
       ],
+      "Set recovery phrase": [
+        "設定還原短語"
+      ],
       "Share via link": [
         "透過連結分享"
       ],
@@ -821,9 +827,6 @@
       "This message contains embedded images.": [
         "此郵件包含內嵌圖片。"
       ],
-      "This message contains remote content.": [
-        "此郵件包含遠端內容。"
-      ],
       "Trust": [
         "信任"
       ],
@@ -865,6 +868,12 @@
       ],
       "Update": [
         "更新"
+      ],
+      "Update recovery file": [
+        "更新還原檔案"
+      ],
+      "Update recovery phrase": [
+        "更新還原短語"
       ],
       "Upgrade": [
         "升級"
@@ -961,6 +970,17 @@
         "您沒有任何群組。"
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        "無法新增參與者"
+      ],
+      "Invitation sent and participant added": [
+        "邀請已送出，並且已新增參與者"
+      ],
+      "Participant added": [
+        "已新增參與者"
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } 個電子郵件地址"
@@ -1017,8 +1037,8 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        "${ totalNumberOfChecklistItems } 中的 ${ numberOfCompletedItems } 個已完成"
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } 完成"
       ]
     },
     "Apps dropdown": {
@@ -1300,6 +1320,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "此回答與您的邀請詳情不符。請驗證在您行事曆中的邀請詳情。"
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        "${ participantName } 已同意出席此活動。"
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 已接受您的邀請，並就此事件其中一次提議新的時間。"
       ],
@@ -1321,6 +1353,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } 詢問某個事件的最新消息，惟該事件已不再存在於您的行事曆中。"
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } 已拒絕出席此活動。"
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 已謝絕您的邀請，並就此事件其中一次提議新的時間。"
       ],
@@ -1333,11 +1377,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } 已拒絕您的邀請。"
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已接受您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } 已接受您的邀請，並就此事件提議新的時間。回答與提議均已過時。"
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已謝絕您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
@@ -1381,17 +1449,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } 就此事件已提議新的時間。此提議已過時。您並無任何行事曆。"
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } 已暫訂接受一則邀請，並就此事件中的其中一次提議新的時間。回答與提議均已過時。"
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } 已暫時接受一則邀請，並就此事件提議新的時間。回答與提議均已過時。"
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已暫訂接受您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } 已暫訂接受您的邀請，並就此事件提議新的時間。回答與提議均已過時。"
       ],
+      "${ participantName } is not in the participants list.": [
+        "${ participantName } 不在與會者名單中。"
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } 就此事件其中一次已提議新的時間。"
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } 就此事件已提議新的時間。"
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        "${ participantName } 已暫訂出席此活動。"
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 已暫訂接受您的邀請，並就此事件其中一次提議新的時間。"
@@ -1414,20 +1509,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "事件 ${ veventIcsTitle } 已新增一次"
       ],
-      "Event already ended": [
-        "活動已結束"
-      ],
-      "Event in progress": [
-        "活動進行中"
-      ],
       "Event refreshing is not supported for the moment": [
         "暫未支援事件重新整理"
       ],
       "Event rescheduling is not supported for the moment": [
         "暫未支援事件重新排程"
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "此電子郵件的寄件人未獲邀出席此事件，因此無法新增為參與者。"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "此回答未能新增至 ${ calendarAppName }，因為我們暫時僅支援回答一系列中的全部事件"
@@ -1501,6 +1587,14 @@
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "活動已結束"
+      ],
+      "Event in progress": [
+        "活動進行中"
       ]
     },
     "Collapsible tooltip": {
@@ -1874,12 +1968,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        "活動已結束"
-      ],
-      "Event in progress": [
-        "活動進行中"
-      ],
       "Event is tomorrow": [
         "活動為明天"
       ],
@@ -2352,7 +2440,24 @@
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        "您最多可以一次邀請100位參與者"
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "此動作無法執行"
       ]
@@ -2510,6 +2615,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "未選取任何影像"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        "無法將邀請函寄送至 ${ email } 。 ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -2682,6 +2792,12 @@
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         "完成所有步驟並在您的帳號中取得一共 ${ totalGBStorageAfterCompletion } GB"
+      ],
+      "Expires soon": [
+        "即將到期"
+      ],
+      "Expires today": [
+        "今日過期"
       ],
       "Only ${ days } day left": [
         "只剩下 ${ days } 天了"
@@ -3125,7 +3241,7 @@
       "Are you sure you want to permanently delete this message?": [
         "您確定要永久刪除此郵件嗎？"
       ],
-      "Attach Public Key": [
+      "Attach public key": [
         "附上公開金鑰"
       ],
       "Background color": [
@@ -3692,7 +3808,7 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "檢舉一封郵件帶有網路釣魚的企圖，將會把郵件傳送給我們，讓我們可以分析郵件並改進我們的篩選。這意味我們將能夠完全飽覽郵件的內容。"
       ],
-      "Request Read Receipt": [
+      "Request read receipt": [
         "要求讀取回條"
       ],
       "Right to Left": [
@@ -4521,6 +4637,9 @@
       "BTC amount:": [
         "BTC 數量："
       ],
+      "Calendar": [
+        "行事曆"
+      ],
       "Calendars": [
         "行事曆"
       ],
@@ -4620,6 +4739,9 @@
       "Folder location": [
         "資料夾位置"
       ],
+      "Frequency": [
+        "頻率"
+      ],
       "From": [
         "寄件人"
       ],
@@ -4677,6 +4799,9 @@
       "Last month only": [
         "僅過去一個月"
       ],
+      "Location": [
+        "位置"
+      ],
       "Mailbox password": [
         "郵箱密碼"
       ],
@@ -4724,6 +4849,9 @@
       ],
       "Or": [
         "或"
+      ],
+      "Participants": [
+        "參與者"
       ],
       "Password": [
         "密碼"
@@ -6588,6 +6716,9 @@
       "Email addresses": [
         "電子郵件地址"
       ],
+      "Email content": [
+        "電子郵件內容"
+      ],
       "Email settings": [
         "電子郵件設定"
       ],
@@ -6653,9 +6784,6 @@
       ],
       "Link confirmation": [
         "連結確認"
-      ],
-      "Load embedded images": [
-        "載入嵌入的圖片"
       ],
       "Load remote content": [
         "載入遠端內容"
@@ -6833,6 +6961,9 @@
       ],
       "Sign in again to continue": [
         "請再次登入以繼續"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "會話排序"

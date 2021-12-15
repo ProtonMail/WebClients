@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Aktywuj odzyskiwanie"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -410,6 +413,9 @@
       "Send": [
         "Wyślij"
       ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
+      ],
       "Share": [
         "Udostępnij"
       ],
@@ -481,6 +487,12 @@
       ],
       "Update": [
         "Zaktualizuj"
+      ],
+      "Update recovery file": [
+        "Zaktualizuj plik odzyskiwania"
+      ],
+      "Update recovery phrase": [
+        "Zaktualizuj hasło odzyskiwania"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -918,16 +930,16 @@
         "Wydarzenie zostało anulowane"
       ],
       "You accepted the invitation": [
-        "Zaakceptowałeś zaproszenie"
+        "Zaakceptowano zaproszenie"
       ],
       "You declined the invitation": [
-        "Odrzuciłeś zaproszenie"
+        "Odrzucono zaproszenie"
       ],
       "You haven't answered the invitation yet": [
-        "Nie odpowiedziałeś na zaproszenie"
+        "Nie odpowiedziano na zaproszenie"
       ],
       "You tentatively accepted the invitation": [
-        "Wstępnie zaakceptowałeś zaproszenie"
+        "Wstępnie zaakceptowano zaproszenie"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1765,7 +1777,7 @@
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Nie wybrałeś pliku CSV lub VCF"
+        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Nie wybrano pliku CSV lub VCF"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
@@ -1899,6 +1911,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } lub spróbuj ponownie później."
+      ],
+      "You need an active personal calendar to import events": [
+        "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia"
       ]
     },
     "Error notification": {
@@ -2096,14 +2111,17 @@
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie zostało zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie może zostać zaimportowane.",
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Szyfrowanie i dodawanie kontaktów: ${ totalImported }/${ totalToImport }"
@@ -2204,7 +2222,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "Wydarzenie nie mogło zostać zaimportowane. Rozwiń szczegóły.",
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły.",
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły.",
         "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły."
       ],
       "No contact can be imported. Click for details": [
@@ -2837,7 +2858,7 @@
         "Organizator nie mógł zostać powiadomiony, że chcesz zmienić swoją odpowiedź:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        "Organizator nie mógł zostać powiadomiony, że zmieniłeś swoją odpowiedź:"
+        "Organizator nie mógł zostać powiadomiony o zmianie odpowiedzi:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "Organizator zaktualizował niektóre wydarzenia w tej serii. Zmiana kalendarza nie jest obsługiwana dla tego typu wydarzeń cyklicznych."
@@ -2978,10 +2999,10 @@
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Reaktywowałeś klucze, więc wydarzenia z kalendarzy mogą zostać odszyfrowane."
+        "Reaktywowano klucze, więc wydarzenia z kalendarzy mogą zostać odszyfrowane."
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Zresetowałeś hasło, więc wydarzenia z kalendarzy nie mogły zostać odszyfrowane.\nWszystkie udostępnione linki kalendarzy przestaną działać.\nZa kilka minut wszystkie subskrybowane kalendarze zostaną ponownie zsynchronizowane."
+        "Zresetowano hasło, więc wydarzenia z kalendarzy nie mogły zostać odszyfrowane.\nWszystkie udostępnione linki kalendarzy przestaną działać.\nZa kilka minut wszystkie subskrybowane kalendarze zostaną ponownie zsynchronizowane."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Twoje konto PayPal musi być powiązane z kartą płatniczą lub kontem bankowym, aby dodać je jako metodę płatności."
@@ -2993,10 +3014,10 @@
         "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Wkrótce zostaniesz przekierowany na stronę swojego banku w celu zweryfikowania płatności."
@@ -3051,6 +3072,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your events will be encrypted and then saved.": [
+        "Twoje wydarzenia przed zapisaniem zostaną zaszyfrowane."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
@@ -3302,7 +3326,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(wkrótce)"
       ],
       "0 - Not likely": [
         "0 - Zupełnie nieprawdopodobne"
@@ -3340,6 +3364,9 @@
       "BTC amount:": [
         "Kwota BTC:"
       ],
+      "Calendar": [
+        "Kalendarz"
+      ],
       "Calendars": [
         "Kalendarze"
       ],
@@ -3375,6 +3402,9 @@
       ],
       "CVV code": [
         "Kod CVV"
+      ],
+      "Date and time": [
+        "Data i czas"
       ],
       "Description": [
         "Opis"
@@ -3415,17 +3445,8 @@
       "Event duration": [
         "Czas trwania wydarzenia"
       ],
-      "Event frequency": [
-        "Częstotliwość wydarzenia"
-      ],
-      "Event location": [
-        "Lokalizacja wydarzenia"
-      ],
       "Event notifications": [
         "Powiadomienia wydarzenia"
-      ],
-      "Event time": [
-        "Czas wydarzenia"
       ],
       "Event title": [
         "Tytuł wydarzenia"
@@ -3444,6 +3465,9 @@
       ],
       "Folder location": [
         "Lokalizacja folderu"
+      ],
+      "Frequency": [
+        "Częstotliwość"
       ],
       "From: ${ importedEmail }": [
         "Od: ${ importedEmail }"
@@ -3484,6 +3508,9 @@
       "Last month only": [
         "Tylko ostatni miesiąc"
       ],
+      "Location": [
+        "Lokalizacja"
+      ],
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
       ],
@@ -3501,6 +3528,9 @@
       ],
       "Notification": [
         "Powiadomienie"
+      ],
+      "Notifications": [
+        "Powiadomienia"
       ],
       "Operating system": [
         "System operacyjny"
@@ -3589,9 +3619,6 @@
       "System information": [
         "Informacje o systemie"
       ],
-      "Time of the event": [
-        "Godzina wydarzenia"
-      ],
       "To: ${ emailAddress }": [
         "Do: ${ emailAddress }"
       ],
@@ -3621,9 +3648,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Jaki jest główny powód tej oceny?"
-      ],
-      "Your calendars": [
-        "Twoje kalendarze"
       ],
       "ZIP": [
         "Kod pocztowy"
@@ -5107,6 +5131,9 @@
       "Downgrade account": [
         "Obniż plan"
       ],
+      "Drop to upload": [
+        "Upuść, aby przesłać"
+      ],
       "Edit calendar": [
         "Edytuj kalendarz"
       ],
@@ -5384,7 +5411,7 @@
         "Co nowego"
       ],
       "You have invited participants with equivalent emails": [
-        "Zaprosiłeś tych samych uczestników"
+        "Zaproszono tych samych uczestników"
       ],
       "ZIP / postal code": [
         "Kod pocztowy"
@@ -5444,7 +5471,7 @@
         "Pozwala na posiadanie adresu e-mail z własnymi domenami, np. jan@nowak.pl"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jeśli kupiłeś kod podarunkowy lub otrzymałeś go od naszej pomocy technicznej, możesz wpisać go tutaj."
+        "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Obsługa wielu użytkowników jest dostępna w planach z co najmniej 2 użytkownikami"
