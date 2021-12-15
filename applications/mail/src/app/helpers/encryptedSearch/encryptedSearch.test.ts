@@ -59,10 +59,6 @@ describe('encryptedSearch', () => {
             };
             const message: Message = {
                 ...baseMessage,
-                SenderAddress: 'SenderAddress',
-                SenderName: 'SenderName',
-                Type: 0,
-                IsEncrypted: 0,
                 ExternalID: 'ExternalID',
                 Body: '',
                 MIMEType: MIME_TYPES.DEFAULT,
