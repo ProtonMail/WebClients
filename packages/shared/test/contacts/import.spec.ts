@@ -408,8 +408,8 @@ END:VCARD`;
     it('should import BDAY and ANNIVERSARY with text format', () => {
         const vCard = `BEGIN:VCARD
 VERSION:4.0
-BDAY:VALUE=text:bidet
-ANNIVERSARY:VALUE=text:annie
+BDAY;VALUE=text:bidet
+ANNIVERSARY;VALUE=text:annie
 END:VCARD`;
 
         const expected = [
