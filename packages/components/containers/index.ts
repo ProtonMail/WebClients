@@ -23,7 +23,6 @@ export * from './filters';
 export * from './general';
 export * from './heading';
 export * from './illustration';
-export * from './importAssistant';
 export * from './invoices';
 export * from './items';
 export * from './keys';

@@ -22,14 +22,6 @@ const MailSettingsSidebarList = () => {
     const hasOrganization = organization?.HasKeys;
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
 
-    const isEasySwitchEnabled = useFeature(FeatureCode.EasySwitch).feature?.Value;
-
-    const easySwitchSidebarListItem = !user.isFree ? (
-        <SettingsListItem to={`${path}/import-export`} icon="arrow-up-from-screen">
-            {c('Settings section title').t`Backup & Export`}
-        </SettingsListItem>
-    ) : null;
-
     return (
         <SidebarList>
             <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
@@ -69,11 +61,9 @@ const MailSettingsSidebarList = () => {
             <SettingsListItem to={`${path}/imap-smtp`} icon="servers">
                 {c('Settings section title').t`IMAP/SMTP`}
             </SettingsListItem>
-            {isEasySwitchEnabled ? (
-                easySwitchSidebarListItem
-            ) : (
-                <SettingsListItem to={`${path}/import-export`} icon="arrow-up-from-screen">
-                    {user.isFree ? c('Title').t`Import Assistant` : c('Settings section title').t`Import & export`}
+            {!user.isFree && (
+                <SettingsListItem to={`${path}/backup-export`} icon="arrow-up-from-screen">
+                    {c('Settings section title').t`Backup & Export`}
                 </SettingsListItem>
             )}
         </SidebarList>
