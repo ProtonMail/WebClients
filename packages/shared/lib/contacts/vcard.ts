@@ -1,5 +1,6 @@
 import ICAL from 'ical.js';
 import { parseISO } from 'date-fns';
+import { isValidDate } from '../date/date';
 import { readFileAsString } from '../helpers/file';
 import isTruthy from '../helpers/isTruthy';
 import { ContactProperties, ContactProperty } from '../interfaces/contacts';
@@ -101,10 +102,6 @@ export const parse = (vcard = ''): ContactProperties => {
         .sort(sortByPref);
     // make sure properties that require a pref have a pref
     return addPref(sortedProperties);
-};
-
-const isValidDate = (date: Date) => {
-    return date instanceof Date && !Number.isNaN(date.getTime());
 };
 
 /**
