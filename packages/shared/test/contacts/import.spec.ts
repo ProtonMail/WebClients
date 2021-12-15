@@ -368,4 +368,76 @@ END:VCARD`;
             expect(contact).toEqual(expected);
         });
     });
+
+    it('should manage BDAY and ANNIVERSARY', () => {
+        const vCard = `BEGIN:VCARD
+            VERSION:4.0
+            BDAY:19990101
+            ANNIVERSARY:19990101
+            END:VCARD`;
+
+        const expected = [
+            {
+                field: 'version',
+                value: '4.0',
+                pref: undefined,
+                group: undefined,
+                type: undefined,
+            },
+            {
+                field: 'bday',
+                value: '1999-01-01',
+                pref: undefined,
+                group: undefined,
+                type: undefined,
+            },
+            {
+                field: 'anniversary',
+                value: '1999-01-01',
+                pref: undefined,
+                group: undefined,
+                type: undefined,
+            },
+        ] as ContactProperties;
+
+        const contact = getSupportedContact(vCard);
+
+        expect(contact).toEqual(expected);
+    });
+
+    it('should manage BDAY and ANNIVERSARY with text format', () => {
+        const vCard = `BEGIN:VCARD
+            VERSION:4.0
+            BDAY:VALUE=text:bidet
+            ANNIVERSARY:VALUE=text:annie
+            END:VCARD`;
+
+        const expected = [
+            {
+                field: 'version',
+                value: '4.0',
+                pref: undefined,
+                group: undefined,
+                type: undefined,
+            },
+            {
+                field: 'bday',
+                value: 'bidet',
+                pref: undefined,
+                group: undefined,
+                type: undefined,
+            },
+            {
+                field: 'anniversary',
+                value: 'annie',
+                pref: undefined,
+                group: undefined,
+                type: undefined,
+            },
+        ] as ContactProperties;
+
+        const contact = getSupportedContact(vCard);
+
+        expect(contact).toEqual(expected);
+    });
 });
