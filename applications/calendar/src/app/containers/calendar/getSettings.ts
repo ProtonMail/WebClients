@@ -22,6 +22,11 @@ export const getDefaultCalendarID = (calendarUserSettings: CalendarUserSettings)
     return calendarUserSettings.DefaultCalendarID || undefined;
 };
 
+export const getInviteLocale = (calendarUserSettings: CalendarUserSettings) => {
+    // InviteLocale is either null or a string
+    return calendarUserSettings.InviteLocale || undefined;
+};
+
 export const getDefaultTzid = (calendarUserSettings: CalendarUserSettings, defaultTimezone: string) => {
     const primaryTimezone = calendarUserSettings.PrimaryTimezone;
     return primaryTimezone || defaultTimezone;
