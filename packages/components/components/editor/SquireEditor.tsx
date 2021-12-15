@@ -44,6 +44,7 @@ interface Props {
     onAddImages?: (files: File[]) => void;
     keydownHandler?: (e: KeyboardEvent) => void;
     defaultFont?: FontData;
+    isOutside?: boolean;
 }
 
 /**
@@ -70,6 +71,7 @@ const SquireEditor = (
         onAddImages = noop,
         keydownHandler,
         defaultFont,
+        isOutside,
     }: Props,
     ref: Ref<SquireEditorRef>
 ) => {
@@ -184,6 +186,7 @@ const SquireEditor = (
                 editorReady={editorReady}
                 onAddImages={onAddImages}
                 defaultFont={defaultFont}
+                isOutside={isOutside}
             />
         </div>
     );

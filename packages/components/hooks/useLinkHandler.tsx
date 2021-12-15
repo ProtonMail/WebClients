@@ -9,7 +9,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 
 import { isExternal, isSubDomain, getHostname } from '../helpers/url';
-import { useModals, useNotifications, useHandler } from './index';
+import { useModals, useNotifications, useHandler, useMailSettings } from './index';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
@@ -22,20 +22,18 @@ interface LinkSource {
 interface UseLinkHandlerOptions {
     onMailTo?: (src: string) => void;
     startListening?: boolean;
-    mailSettings: [MailSettings | undefined, boolean, Error];
     isOutside?: boolean;
 }
 type UseLinkHandler = (wrapperRef: RefObject<HTMLDivElement | undefined>, options?: UseLinkHandlerOptions) => void;
 
 const defaultOptions: UseLinkHandlerOptions = {
     startListening: true,
-    mailSettings: [{ ConfirmLink: 1 } as MailSettings, true, {} as Error],
 };
 export const useLinkHandler: UseLinkHandler = (
     wrapperRef,
-    { onMailTo, startListening, mailSettings, isOutside } = defaultOptions
+    { onMailTo, startListening, isOutside } = defaultOptions
 ) => {
-    const [settings] = mailSettings;
+    const [settings] = useMailSettings(isOutside) as [MailSettings | undefined, boolean, Error];
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
 

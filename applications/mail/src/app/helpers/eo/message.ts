@@ -2,10 +2,11 @@ import { decryptMessage, getMessage } from 'pmcrypto';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+
 import { EOMessage } from '../../logic/eo/eoType';
 import { MessageState } from '../../logic/messages/messagesTypes';
 
-export const decrypt = async (encryptedValue: string, password: string) => {
+export const eoDecrypt = async (encryptedValue: string, password: string) => {
     const message = await getMessage(encryptedValue);
     const { data } = await decryptMessage({ message, passwords: [password] });
 
@@ -13,7 +14,7 @@ export const decrypt = async (encryptedValue: string, password: string) => {
 };
 
 export const convertEOtoMessageState = (eoMessage: EOMessage, localID: string): MessageState => {
-    const messageState = {
+    return {
         localID,
         data: {
             ConversationID: 'eoConversation',
@@ -32,8 +33,7 @@ export const convertEOtoMessageState = (eoMessage: EOMessage, localID: string): 
             // SenderName: eoMessage.SenderName,
             // SenderAddress: eoMessage.SenderAddress,
             MIMEType: eoMessage.MIMEType,
+            EORecipient: { Name: eoMessage.Recipient, Address: eoMessage.Recipient } as Recipient,
         } as Message,
     } as MessageState;
-
-    return messageState;
 };

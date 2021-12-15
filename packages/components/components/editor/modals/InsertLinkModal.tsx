@@ -13,7 +13,6 @@ import Href from '../../link/Href';
 import { Select } from '../../select';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import { LinkData } from '../interface';
-import { useMailSettings } from '../../../hooks';
 
 interface Props {
     inputLink: LinkData;
@@ -28,9 +27,7 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, ...rest }: Pr
     const [type, setType] = useState(linkToType(inputLink.link) || LINK_TYPES.WEB);
     const modalContentRef = useRef<HTMLDivElement>(null);
 
-    const mailSettings = useMailSettings();
-
-    useLinkHandler(modalContentRef, { onMailTo, mailSettings });
+    useLinkHandler(modalContentRef, { onMailTo });
 
     const typesOptions = [
         { value: LINK_TYPES.WEB, text: c('Info').t`Web URL` },

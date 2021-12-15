@@ -6,6 +6,10 @@ interface Props {
     children: ReactNode;
 }
 
+/**
+    This Provider is used in EO. In some components (e.g. LinkConfirmationModal) we are using the Event Manager,
+    But we do not have any session in EO, meaning that we need to "Fake" calls to this Provider
+ */
 const FakeEventManagerProvider = ({ children }: Props) => {
     const fakeEventManager = {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars

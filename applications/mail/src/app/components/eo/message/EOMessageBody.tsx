@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { classnames } from '@proton/components';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { locateHead } from '../../../helpers/message/messageHead';
@@ -91,7 +90,6 @@ const EOMessageBody = ({
                         message={message}
                         labelID=""
                         messageSubject={message.data?.Subject}
-                        mailSettings={[{ ConfirmLink: 1 } as MailSettings, true, {} as Error]}
                         isOutside
                     />
                 </MailboxContainerContextProvider>

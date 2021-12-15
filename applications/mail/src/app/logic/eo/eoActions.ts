@@ -1,5 +1,5 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { decodeUtf8Base64, encodeUtf8Base64 } from 'pmcrypto';
+import { decodeUtf8Base64, encodeUtf8Base64, getKeys } from 'pmcrypto';
 
 import { getEOMessage, getEOToken } from '@proton/shared/lib/api/eo';
 import {
@@ -16,7 +16,7 @@ import {
 } from './eoType';
 import { EO_DECRYPTED_TOKEN_KEY, EO_PASSWORD_KEY, EO_TOKEN_KEY } from '../../constants';
 import { MessageState, OutsideKey } from '../messages/messagesTypes';
-import { convertEOtoMessageState, decrypt } from '../../helpers/eo/message';
+import { convertEOtoMessageState, eoDecrypt } from '../../helpers/eo/message';
 import { createBlob } from '../../helpers/message/messageEmbeddeds';
 import { preloadImage } from '../../helpers/dom';
 import { get } from '../../helpers/attachment/attachmentLoader';
@@ -55,11 +55,12 @@ export const loadEOMessage = createAsyncThunk<{ eoMessage: EOMessage; messageSta
     'eo/message/load',
     async ({ api, token, id, password, set }) => {
         try {
-            // Get the actual message
-            const { Message } = await api(getEOMessage(token, id));
+            const { Message, PublicKey } = await api(getEOMessage(token, id));
 
-            // Decrypt message bodies (body + replies bodies)
-            await decrypt(Message?.Body, password).then((body) => {
+            Message.PublicKey = await getKeys(PublicKey);
+
+            // Decrypt replies bodies (Useless for now, but might be needed if we want to display replies)
+            await eoDecrypt(Message?.Body, password).then((body) => {
                 Message.DecryptedBody = body;
             });
 

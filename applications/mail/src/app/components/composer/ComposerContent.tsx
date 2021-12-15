@@ -10,7 +10,7 @@ import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';
 import { Breakpoints } from '../../models/utils';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 
 interface Props {
@@ -20,14 +20,16 @@ interface Props {
     onEditorReady: () => void;
     onChange: MessageChange;
     onChangeContent: (content: string) => void;
-    onFocus: () => void;
+    onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
-    onRemoveUpload: (pendingUpload: PendingUpload) => Promise<void>;
+    onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     pendingUploads?: PendingUpload[];
     contentFocusRef: MutableRefObject<() => void>;
     editorActionsRef: EditorActionsRef;
-    squireKeydownHandler: (e: KeyboardEvent) => void;
+    squireKeydownHandler?: (e: KeyboardEvent) => void;
+    isOutside?: boolean;
+    outsideKey?: OutsideKey;
 }
 
 const ComposerContent = ({
@@ -45,6 +47,8 @@ const ComposerContent = ({
     contentFocusRef,
     editorActionsRef,
     squireKeydownHandler,
+    isOutside = false,
+    outsideKey,
 }: Props) => {
     const [fileHover, setFileHover] = useState(false);
 
@@ -83,7 +87,7 @@ const ComposerContent = ({
     return (
         <section
             className={classnames([
-                'flex-item-fluid mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
+                'flex-item-fluid-auto mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
                 attachments?.length > 0 && 'composer-content--has-attachments',
                 isPlainText(message.data) ? '' : 'composer-content--rich-edition',
             ])}
@@ -99,7 +103,10 @@ const ComposerContent = ({
                 </>
             )}
             <div
-                className="flex-item-fluid mb0-5 pl1-75 pr1-75 w100 flex flex-column flex-nowrap relative"
+                className={classnames([
+                    'flex-item-fluid mb0-5 w100 flex flex-column flex-nowrap relative',
+                    !isOutside && 'pl1-75 pr1-75',
+                ])}
                 data-testid="composer-content"
             >
                 <SquireEditorWrapper
@@ -115,6 +122,7 @@ const ComposerContent = ({
                     contentFocusRef={contentFocusRef}
                     editorActionsRef={editorActionsRef}
                     keydownHandler={squireKeydownHandler}
+                    isOutside={isOutside}
                 />
                 {fileHover && (
                     <div
@@ -148,7 +156,11 @@ const ComposerContent = ({
                         showDownloadAll={false}
                         onRemoveAttachment={onRemoveAttachment}
                         onRemoveUpload={onRemoveUpload}
-                        className="composer-attachments-list"
+                        className={classnames([
+                            'composer-attachments-list',
+                            isOutside && 'eo-composer-attachments-list',
+                        ])}
+                        outsideKey={outsideKey}
                     />
                 </div>
             )}

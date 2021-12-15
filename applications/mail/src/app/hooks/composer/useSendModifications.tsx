@@ -39,7 +39,7 @@ export const useSendModifications = () => {
                 const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_ACTION.INLINE, auth.UID, cid);
                 const uploadResult = await uploadInfo.resultPromise;
                 attachments.push(uploadResult.attachment);
-                images.push(createEmbeddedImageFromUpload(uploadResult));
+                images.push(createEmbeddedImageFromUpload(uploadResult.attachment));
             }
         }
 
