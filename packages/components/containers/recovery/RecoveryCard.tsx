@@ -126,7 +126,7 @@ const RecoveryCard = ({ ids }: Props) => {
             return {
                 status: 'incomplete' as RecoveryStatus,
                 statusText: c('Info').t`Outdated recovery methods; update to ensure access to your data`,
-                callToActions: [updateRecoveryFileCTA, updateRecoveryPhraseCTA].filter(isTruthy),
+                callToActions: [updateRecoveryPhraseCTA, updateRecoveryFileCTA].filter(isTruthy),
             };
         }
 
@@ -134,7 +134,7 @@ const RecoveryCard = ({ ids }: Props) => {
             return {
                 status: 'incomplete' as RecoveryStatus,
                 statusText: c('Info').t`Outdated recovery phrase; update to ensure access to your data`,
-                callToActions: [recoverySecrets.length === 0 && recoveryFileCTA, updateRecoveryPhraseCTA].filter(
+                callToActions: [updateRecoveryPhraseCTA, recoverySecrets.length === 0 && recoveryFileCTA].filter(
                     isTruthy
                 ),
             };
@@ -145,8 +145,8 @@ const RecoveryCard = ({ ids }: Props) => {
                 status: 'incomplete' as RecoveryStatus,
                 statusText: c('Info').t`Outdated recovery file; update to ensure access to your data`,
                 callToActions: [
-                    updateRecoveryFileCTA,
                     user.MnemonicStatus !== MNEMONIC_STATUS.SET && recoveryPhraseCTA,
+                    updateRecoveryFileCTA,
                 ].filter(isTruthy),
             };
         }
@@ -162,7 +162,7 @@ const RecoveryCard = ({ ids }: Props) => {
         return {
             status: dataRecoveryStatus,
             statusText: c('Info').t`No data recovery method set; you are at risk of losing access to your data`,
-            callToActions: [recoveryFileCTA, recoveryPhraseCTA].filter(isTruthy),
+            callToActions: [recoveryPhraseCTA, recoveryFileCTA].filter(isTruthy),
         };
     })();
 
