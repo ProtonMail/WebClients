@@ -89,44 +89,6 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
                 })()}
             </SettingsParagraph>
 
-            {isRecoveryFileAvailable && (
-                <>
-                    {hasOutdatedRecoveryFile && (
-                        <p className="color-danger">
-                            <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
-                            {c('Warning')
-                                .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}
-                        </p>
-                    )}
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recoveryFile">
-                                <span className="mr0-5">{c('Title').t`Recovery file`}</span>
-                                <Info
-                                    title={c('Info')
-                                        .t`A recovery file lets you unlock and view your data after an account reset. `}
-                                />
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight>
-                            <ExportRecoveryFileButton
-                                className={classnames(['mr1-5', canRevokeRecoveryFiles && 'mb1'])}
-                                color="norm"
-                            >
-                                {hasOutdatedRecoveryFile
-                                    ? c('Action').t`Update recovery file`
-                                    : c('Action').t`Download recovery file`}
-                            </ExportRecoveryFileButton>
-                            {canRevokeRecoveryFiles && (
-                                <VoidRecoveryFilesButton className="mb1" color="danger" shape="link" />
-                            )}
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                </>
-            )}
-
-            {isMnemonicAvailable && isRecoveryFileAvailable && <hr className="mb2 mt2" />}
-
             {isMnemonicAvailable && (
                 <>
                     {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
@@ -196,6 +158,44 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
                                         </Button>
                                     )}
                                 </>
+                            )}
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
+                </>
+            )}
+
+            {isMnemonicAvailable && isRecoveryFileAvailable && <hr className="mb2 mt2" />}
+
+            {isRecoveryFileAvailable && (
+                <>
+                    {hasOutdatedRecoveryFile && (
+                        <p className="color-danger">
+                            <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
+                            {c('Warning')
+                                .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}
+                        </p>
+                    )}
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recoveryFile">
+                                <span className="mr0-5">{c('Title').t`Recovery file`}</span>
+                                <Info
+                                    title={c('Info')
+                                        .t`A recovery file lets you unlock and view your data after an account reset. `}
+                                />
+                            </label>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight>
+                            <ExportRecoveryFileButton
+                                className={classnames(['mr1-5', canRevokeRecoveryFiles && 'mb1'])}
+                                color="norm"
+                            >
+                                {hasOutdatedRecoveryFile
+                                    ? c('Action').t`Update recovery file`
+                                    : c('Action').t`Download recovery file`}
+                            </ExportRecoveryFileButton>
+                            {canRevokeRecoveryFiles && (
+                                <VoidRecoveryFilesButton className="mb1" color="danger" shape="link" />
                             )}
                         </SettingsLayoutRight>
                     </SettingsLayout>
