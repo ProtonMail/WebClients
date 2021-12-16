@@ -177,7 +177,7 @@ export const insertCustomStyle = (document: Document) => {
 
         [id="squire"] {
             outline: none;
-            padding: .5rem .5rem .5rem 0; // TODO: check other integrations
+            padding: .5rem .5rem .5rem 0;
         }
 
         [id="ellipsis"] {
