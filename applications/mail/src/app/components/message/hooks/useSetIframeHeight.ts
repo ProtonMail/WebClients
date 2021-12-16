@@ -9,7 +9,7 @@ const useSetIframeHeight = (iframeRef: RefObject<HTMLIFrameElement>) => {
             const { current: iframe } = iframeRef;
             const emailContentRoot = iframeRef.current?.contentWindow?.document.getElementById(MESSAGE_IFRAME_ROOT_ID);
 
-            const emailContentRootHeight = emailContentRoot?.getBoundingClientRect().height;
+            const emailContentRootHeight = emailContentRoot?.scrollHeight;
 
             if (!iframe || emailContentRootHeight === undefined) {
                 return;
