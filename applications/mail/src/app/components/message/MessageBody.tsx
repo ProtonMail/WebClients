@@ -4,7 +4,6 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 
 import { classnames } from '@proton/components';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
-import { locateHead } from '../../helpers/message/messageHead';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import MessageBodyIframe from './MessageBodyIframe';
@@ -57,7 +56,6 @@ const MessageBody = ({
                 : locateBlockquote(message.messageDocument?.document),
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
-    const messageHead = locateHead(message.messageDocument?.document);
 
     const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
@@ -116,13 +114,11 @@ const MessageBody = ({
             )}
             {contentMode && (
                 <MessageBodyIframe
-                    messageHead={messageHead}
                     content={highlightedContent}
                     blockquoteContent={highlightedBlockquote}
                     showBlockquoteToggle={showButton}
                     showBlockquote={showBlockquote}
                     onBlockquoteToggle={toggleOriginalMessage}
-                    messageImages={message.messageImages}
                     wrapperRef={bodyRef}
                     onContentLoaded={onContentLoadedCallback}
                     isPlainText={plain}
@@ -130,7 +126,6 @@ const MessageBody = ({
                     message={message}
                     labelID={labelID}
                     onReady={onIframeReady}
-                    messageSubject={message.data?.Subject}
                 />
             )}
         </div>
