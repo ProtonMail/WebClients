@@ -6,6 +6,8 @@
 
 .editor {
 	border: 1px solid var(--border-norm);
+	padding-block: 0.5em;
+	padding-inline: 1em;
 
 	textarea {
 		color: currentColor;
