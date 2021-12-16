@@ -3,7 +3,7 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { fireEvent } from '@testing-library/dom';
 import { Element } from '../../../models/element';
 import { Sort } from '../../../models/tools';
-import { clearAll, api, addApiMock, apiMocks, waitForSpyCall, tick } from '../../../helpers/test/helper';
+import { clearAll, api, addApiMock, apiMocks, waitForSpyCall, tick, getHistory } from '../../../helpers/test/helper';
 import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
@@ -215,16 +215,20 @@ describe('Mailbox element list', () => {
                         if (page === 10) {
                             return { Total: conversations.length, Conversations: [] };
                         }
-                        if (page === 1) {
+                        if (page <= 1) {
                             return { Total: conversations.length, Conversations: conversations.slice(PAGE_SIZE) };
                         }
                     },
                 },
             ];
 
-            const { rerender, getItems } = await setup({ conversations, page: 10, mockConversations: false });
+            // Initialize on page 1
+            const { rerender, getItems } = await setup({ conversations, page: 0, mockConversations: false });
 
-            expect(props.history.push).toHaveBeenCalledWith(`${props.history.location.pathname}#page=2`);
+            // Then ask for page 11
+            await rerender({ page: 10 });
+
+            expect(getHistory().location.hash).toBe('#page=2');
 
             await rerender({ page: 1 });
 
@@ -263,7 +267,7 @@ describe('Mailbox element list', () => {
 
             await waitForSpyCall(labelRequestSpy);
 
-            expect(props.history.push).toHaveBeenCalledWith(props.history.location.pathname);
+            expect(getHistory().location.hash).toBe('');
         });
 
         it('should show correct number of placeholder navigating on last page', async () => {

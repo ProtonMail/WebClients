@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
-import { History, Location } from 'history';
+import { useLocation, useHistory } from 'react-router-dom';
 import {
     ErrorBoundary,
     PrivateMainArea,
@@ -54,8 +54,6 @@ interface Props {
     breakpoints: Breakpoints;
     elementID?: string;
     messageID?: string;
-    location: Location;
-    history: History;
     isComposerOpened: boolean;
 }
 
@@ -66,10 +64,11 @@ const MailboxContainer = ({
     breakpoints,
     elementID,
     messageID,
-    location,
-    history,
     isComposerOpened,
 }: Props) => {
+    const location = useLocation();
+    const history = useHistory();
+
     const getElementsFromIDs = useGetElementsFromIDs();
     const { shouldHighlight } = useEncryptedSearchContext();
     const listRef = useRef<HTMLDivElement>(null);
@@ -243,7 +242,12 @@ const MailboxContainer = ({
             containerRef={messageContainerRef}
             elementID={elementID}
         >
-            <div ref={elementRef} tabIndex={-1} className="flex-item-fluid flex flex-column flex-nowrap no-outline">
+            <div
+                ref={elementRef}
+                tabIndex={-1}
+                className="flex-item-fluid flex flex-column flex-nowrap no-outline"
+                data-testid="mailbox"
+            >
                 {showToolbar && (
                     <ErrorBoundary small>
                         <Toolbar
