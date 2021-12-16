@@ -1,14 +1,13 @@
 import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Href, Button, Loader } from '../../components';
-import { useModals, useUser, useSubscription, useAddresses, useConfig } from '../../hooks';
+import { useModals, useSubscription, useAddresses, useConfig } from '../../hooks';
 
 import MozillaInfoPanel from './MozillaInfoPanel';
 import DeleteAccountModal from './DeleteAccountModal';
 import SettingsParagraph from './SettingsParagraph';
 
 const DeleteSection = () => {
-    const [{ isMember }] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
@@ -31,10 +30,6 @@ const DeleteSection = () => {
                     .jt`Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${loginLink} and delete your account there.`}
             </SettingsParagraph>
         );
-    }
-
-    if (isMember) {
-        return null;
     }
 
     if (subscription?.isManagedByMozilla) {
