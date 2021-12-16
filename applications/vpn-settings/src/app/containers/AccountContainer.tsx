@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { c } from 'ttag';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import {
     AccountRecoverySection,
     UsernameSection,
@@ -7,12 +10,13 @@ import {
     DeleteSection,
     OpenVPNCredentialsSection,
     SettingsPropsShared,
+    useUser,
 } from '@proton/components';
-import { c } from 'ttag';
-
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 
-export const getAccountPage = () => {
+const canDeleteAccount = (user: UserModel) => user.canPay && !user.isMember;
+
+export const getAccountPage = (user: UserModel) => {
     return {
         text: c('Title').t`Account`,
         to: '/account',
@@ -34,15 +38,15 @@ export const getAccountPage = () => {
                 text: c('Title').t`Recovery`,
                 id: 'email',
             },
-            {
+            !user.isMember && {
                 text: c('Title').t`Email subscriptions`,
                 id: 'news',
             },
-            {
+            canDeleteAccount(user) && {
                 text: c('Title').t`Delete`,
                 id: 'delete',
             },
-        ],
+        ].filter(isTruthy),
     };
 };
 
@@ -50,19 +54,20 @@ const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) =
     const [action] = useState(() => {
         return new URLSearchParams(location.search).get('action');
     });
+    const [user] = useUser();
 
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
-            config={getAccountPage()}
+            config={getAccountPage(user)}
             setActiveSection={setActiveSection}
         >
             <UsernameSection />
             <PasswordsSection open={action === 'change-password'} />
             <OpenVPNCredentialsSection />
             <AccountRecoverySection />
-            <EmailSubscriptionSection />
-            <DeleteSection />
+            {!user.isMember && <EmailSubscriptionSection />}
+            {canDeleteAccount(user) && <DeleteSection />}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };

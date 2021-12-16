@@ -10,7 +10,7 @@ import { getPaymentsPage } from './containers/PaymentsContainer';
 export const getPages = (user: UserModel): SectionConfig[] => [
     getDashboardPage(user),
     getGeneralPage(),
-    getAccountPage(),
+    getAccountPage(user),
     getDownloadsPage(),
     getPaymentsPage(),
 ];
