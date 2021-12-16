@@ -90,12 +90,12 @@ const ImportListSection = () => {
             TokenID,
             Account,
             Provider,
-            Product,
             ImapHost,
             ImapPort,
             Sasl,
             AllowSelfSigned,
             Email,
+            tokenScope: Product,
         };
 
         if (!Active) {
