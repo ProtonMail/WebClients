@@ -39,7 +39,7 @@ interface Props {
 }
 
 const ActiveImportRowActions = ({ activeImport }: Props) => {
-    const { ID, Active, Product, Account, Sasl } = activeImport;
+    const { ID, Active, Product, Account, Sasl, tokenScope } = activeImport;
     const { State, ErrorCode } = Active || {};
 
     const { triggerOAuthPopup } = useOAuthPopup();
@@ -57,10 +57,10 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = [
             ...G_OAUTH_SCOPE_DEFAULT,
-            Product === ImportType.MAIL && G_OAUTH_SCOPE_MAIL,
-            Product === ImportType.CALENDAR && G_OAUTH_SCOPE_CALENDAR,
-            Product === ImportType.CONTACTS && G_OAUTH_SCOPE_CONTACTS,
-            // checkedTypes[DRIVE] && G_OAUTH_SCOPE_DRIVE,
+            tokenScope?.includes(ImportType.MAIL) && G_OAUTH_SCOPE_MAIL,
+            tokenScope?.includes(ImportType.CALENDAR) && G_OAUTH_SCOPE_CALENDAR,
+            tokenScope?.includes(ImportType.CONTACTS) && G_OAUTH_SCOPE_CONTACTS,
+            // tokenScope?.includes(ImportType.DRIVE) && G_OAUTH_SCOPE_DRIVE,
         ]
             .filter(isTruthy)
             .flat(1);
@@ -77,7 +77,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
                         Code,
                         RedirectUri,
                         Source: EASY_SWITCH_SOURCE.RECONNECT_IMPORT,
-                        Products: [Product],
+                        Products: tokenScope || [Product],
                     })
                 );
 
