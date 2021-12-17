@@ -1,11 +1,31 @@
 @keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 .location-refresh-rotate {
-    animation: rotating 0.5s linear infinite;
+	animation: rotating 0.5s linear infinite;
+}
+
+.drive-sidebar--extra-wide {
+	width: 200%;
+	max-width: 200%;
+}
+
+.drive-sidebar--icon {
+	width: 16px;
+}
+
+.drive-sidebar--icon-expand {
+	&:focus {
+		background-color: initial;
+	}
+
+	&:hover {
+		background-color: var(--interaction-weak-hover);
+		color: var(--button-hover-text-color);
+	}
 }
