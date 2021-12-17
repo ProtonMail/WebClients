@@ -85,7 +85,7 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
     }
 
     if (Status === INVALID_ICS) {
-        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar link is wrong`);
+        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Unsupported calendar format`);
     }
 
     if (Status === ICS_SIZE_EXCEED_LIMIT) {
