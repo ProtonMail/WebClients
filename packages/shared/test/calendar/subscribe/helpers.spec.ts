@@ -127,7 +127,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
             })
         ).toBeUndefined();
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(INVALID_ICS))).toEqual(
-            getNotSyncedInfo('Calendar link is wrong')
+            getNotSyncedInfo('Unsupported calendar format')
         );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(ICS_SIZE_EXCEED_LIMIT))).toEqual(
             getNotSyncedInfo('Calendar is too big')
