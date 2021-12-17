@@ -264,6 +264,7 @@ export interface Importer {
 export interface NormalizedImporter extends Pick<Importer, Exclude<keyof Importer, 'Active' | 'Product'>> {
     Active: ImporterActiveProps;
     Product: ImportType;
+    tokenScope?: ImportType[];
 }
 
 enum ImportReportStatus {
