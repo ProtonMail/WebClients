@@ -7,11 +7,11 @@ import { Button, Icon, Tooltip, useApi } from '@proton/components';
 import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { removeDarkStyle } from '../../../logic/messages/read/messagesReadActions';
 
 interface Props {
-    message: MessageState;
+    message: MessageStateWithData;
 }
 
 const ExtraDarkStyle = ({ message }: Props) => {

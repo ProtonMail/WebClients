@@ -4,10 +4,10 @@ import { Button, Icon, Tooltip, useApi, useEventManager, useLoading, useNotifica
 import { readReceipt } from '@proton/shared/lib/api/messages';
 import { isReadReceiptSent, requireReadReceipt } from '@proton/shared/lib/mail/messages';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageState;
+    message: MessageWithOptionalBody;
 }
 
 const ExtraReadReceipt = ({ message }: Props) => {
@@ -15,17 +15,14 @@ const ExtraReadReceipt = ({ message }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const { ID } = message.data || {};
-    const receiptSent = isReadReceiptSent(message.data);
+    const { ID } = message;
+    const receiptSent = isReadReceiptSent(message);
 
-    if (!requireReadReceipt(message.data)) {
+    if (!requireReadReceipt(message)) {
         return null;
     }
 
     const handleClick = async () => {
-        if (!ID) {
-            return;
-        }
         await api(readReceipt(ID));
         await call();
         createNotification({ text: c('Success').t`Read receipt sent` });

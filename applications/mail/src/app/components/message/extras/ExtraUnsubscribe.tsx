@@ -41,11 +41,11 @@ import { useGetMessage } from '../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
 import { useSimpleLoginExtension } from '../../../hooks/simpleLogin/useSimpleLoginExtension';
 import { useSimpleLoginTelemetry } from '../../../hooks/simpleLogin/useSimpleLoginTelemetry';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
+import { MessageWithOptionalBody, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import SimpleLoginModal from '../../simpleLogin/SimpleLoginModal';
 
 interface Props {
-    message: MessageState;
+    message: MessageWithOptionalBody;
 }
 
 const ExtraUnsubscribe = ({ message }: Props) => {
@@ -65,9 +65,9 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const sendMessage = useSendMessage();
     const [loading, withLoading] = useLoading();
     const onCompose = useOnCompose();
-    const toAddress = getOriginalTo(message.data);
+    const toAddress = getOriginalTo(message);
     const address = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(toAddress));
-    const unsubscribeMethods = message?.data?.UnsubscribeMethods || {};
+    const unsubscribeMethods = message.UnsubscribeMethods || {};
 
     const needsSimpleLoginPresentation = simpleLoginIntegrationFeature?.Value && !hasSimpleLogin;
 
@@ -79,7 +79,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         return null;
     }
 
-    const messageID = message?.data?.ID;
+    const messageID = message.ID;
 
     let modalContent;
     let submit: () => void;
@@ -95,10 +95,6 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         );
 
         submit = async () => {
-            // TS guard - To impprove
-            if (!messageID) {
-                return;
-            }
             await api(oneClickUnsubscribe(messageID));
         };
     } else if (unsubscribeMethods.Mailto) {
@@ -200,10 +196,6 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     }
 
     const handleSubmit = async () => {
-        if (!messageID) {
-            return;
-        }
-
         unsubscribeModalProps.onClose();
         if (needsSimpleLoginPresentation) {
             // We need to send a telemetry request when the user sees the SL unsubscribe modal
@@ -263,10 +255,10 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         fullWidth
                         className="rounded-sm"
                         data-testid="unsubscribe-banner"
-                        disabled={loading || isUnsubscribed(message.data)}
+                        disabled={loading || isUnsubscribed(message)}
                     >
                         <span className="ml0-5">
-                            {isUnsubscribed(message.data)
+                            {isUnsubscribed(message)
                                 ? c('Status').t`Unsubscribed`
                                 : loading
                                 ? c('Action').t`Unsubscribing`

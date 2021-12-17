@@ -7,9 +7,9 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN, getLabelIDsToI18N } from '../constants';
+import { MessageWithOptionalBody } from '../logic/messages/messagesTypes';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { getLabelIDs } from './elements';
@@ -188,11 +188,11 @@ export interface UnreadStatus {
     unread: number;
 }
 
-export const applyLabelChangesOnMessage = (
-    message: Message,
+export const applyLabelChangesOnMessage = <T>(
+    message: MessageWithOptionalBody & T,
     changes: LabelChanges,
     unreadStatuses?: UnreadStatus[]
-): Message => {
+): MessageWithOptionalBody & T => {
     const { LabelIDs: inputLabelIDs } = message;
     const LabelIDs = [...inputLabelIDs];
 

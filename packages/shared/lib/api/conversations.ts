@@ -2,13 +2,13 @@ import { SpamAction } from '../interfaces';
 
 interface QueryConversationProps {
     Location: any;
-    Sort: any;
     To: any;
     Starred: any;
     Page: number;
     PageSize: number;
     Limit: Number;
     LabelID: string;
+    Sort?: string;
     Desc: number;
     Begin: string;
     End: string;
@@ -30,7 +30,7 @@ export const queryConversations = ({
     PageSize = 50,
     Limit = 50,
     LabelID,
-    Sort,
+    Sort = 'Time',
     Desc = 1,
     Begin,
     End,

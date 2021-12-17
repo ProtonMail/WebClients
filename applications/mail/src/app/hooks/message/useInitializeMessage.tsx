@@ -31,7 +31,7 @@ import {
     MessageImages,
     MessageRemoteImage,
     MessageState,
-    MessageStateWithData,
+    MessageStateWithDataFull,
 } from '../../logic/messages/messagesTypes';
 import {
     documentInitializeFulfilled,
@@ -63,7 +63,7 @@ export const useInitializeMessage = () => {
     return useCallback(async (localID: string, labelID?: string) => {
         // Message can change during the whole initialization sequence
         // To have the most up to date version, best is to get back to the cache version each time
-        const getData = () => (getMessage(localID) as MessageStateWithData).data;
+        const getData = () => (getMessage(localID) as MessageStateWithDataFull).data;
 
         // Cache entry will be (at least) initialized by the queue system
         const messageFromState = { ...getMessage(localID) } as MessageState;
@@ -122,7 +122,7 @@ export const useInitializeMessage = () => {
                 Object.assign(errors, decryption.errors);
 
                 // Get message decryption key to display a notification to the user that its password may have been reset recently
-                await verifyKeys(message);
+                await verifyKeys(message.data);
             }
 
             if (isUnreadMessage(getData())) {

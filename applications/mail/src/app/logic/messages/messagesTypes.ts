@@ -31,6 +31,10 @@ export interface MessageErrors {
     unknown?: Error[];
 }
 
+export interface MessageWithOptionalBody extends Omit<Message, 'Body'> {
+    Body?: string;
+}
+
 /**
  * Data structure containing all the needed informations about the signature verification of a message
  */
@@ -228,7 +232,7 @@ export interface MessageState {
     /**
      * Message object from the server
      */
-    data?: Message;
+    data?: MessageWithOptionalBody;
 
     /**
      * All decryption data
@@ -266,6 +270,10 @@ export interface MessageState {
     errors?: MessageErrors;
 }
 
+export interface MessageStateWithFullMessage extends Omit<MessageState, 'data'> {
+    data?: Message;
+}
+
 export type MessagesState = SimpleMap<MessageState>;
 
 /**
@@ -273,10 +281,12 @@ export type MessagesState = SimpleMap<MessageState>;
  */
 export type MessageStateWithData = RequireSome<MessageState, 'data'>;
 
+export type MessageStateWithDataFull = RequireSome<MessageStateWithFullMessage, 'data'>;
+
 /**
  * Common helper to have a partial MessageExtended including a Partial Message
  */
-export type PartialMessageState = Partial<Omit<MessageState, 'data'> & { data: Partial<Message> }>;
+export type PartialMessageState = Partial<Omit<MessageState, 'data'> & { data: Partial<MessageWithOptionalBody> }>;
 
 export interface LoadParams {
     ID: string;
@@ -285,7 +295,7 @@ export interface LoadParams {
 
 export interface DocumentInitializeParams {
     ID: string;
-    dataChanges: Partial<Message>;
+    dataChanges: Partial<MessageWithOptionalBody>;
     initialized?: boolean;
     preparation?: Preparation;
     decryption?: DecryptMessageResult;

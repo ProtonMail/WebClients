@@ -59,7 +59,7 @@ export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);
 export const isReadReceiptSent = hasFlag(FLAG_RECEIPT_SENT);
 export const isImported = hasFlag(FLAG_IMPORTED);
 export const isInternal = hasFlag(FLAG_INTERNAL);
-export const isExternal = (message: Message) => !isInternal(message);
+export const isExternal = (message?: Partial<Message>) => !isInternal(message);
 export const isAuto = hasFlag(FLAG_AUTO);
 export const isReceived = hasFlag(FLAG_RECEIVED);
 export const isSent = hasFlag(FLAG_SENT);
@@ -86,12 +86,13 @@ export const isUnsubscribable = (message?: Partial<Message>) => {
 
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
 export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);
-export const inSigningPeriod = ({ Time = 0 }: Message) => Time >= Math.max(SIGNATURE_START.USER, SIGNATURE_START.BULK);
+export const inSigningPeriod = ({ Time = 0 }: Pick<Message, 'Time'>) =>
+    Time >= Math.max(SIGNATURE_START.USER, SIGNATURE_START.BULK);
 export const isPGPInline = (message: Message) => isPGPEncrypted(message) && !isMIME(message);
 export const isEO = (message?: Partial<Message>) => !!message?.Password;
 export const addReceived = (Flags = 0) => setBit(Flags, MESSAGE_FLAGS.FLAG_RECEIVED);
 
-export const isBounced = (message: Message) => {
+export const isBounced = (message: Pick<Message, 'Sender' | 'Subject'>) => {
     // we don't have a great way of determining when a message is bounced as the BE cannot offer us neither
     // a specific header nor a specific flag. We hard-code the typical sender (the local part) and subject keywords
     const { Sender, Subject } = message;
@@ -100,12 +101,12 @@ export const isBounced = (message: Message) => {
     return matchesSender && matchesSubject;
 };
 
-export const getSender = (message?: Message) => message?.Sender;
+export const getSender = (message?: Pick<Message, 'Sender'>) => message?.Sender;
 export const getRecipients = (message?: Partial<Message>) => {
     const { ToList = [], CCList = [], BCCList = [] } = message || {};
     return [...ToList, ...CCList, ...BCCList];
 };
-export const getRecipientsAddresses = (message: Message) =>
+export const getRecipientsAddresses = (message: Partial<Message>) =>
     getRecipients(message)
         .map(({ Address }) => Address || '')
         .filter(identity);
@@ -128,7 +129,7 @@ export const getParsedHeadersAsArray = (message: Partial<Message> | undefined, p
 export const getOriginalTo = (message?: Partial<Message>) => {
     return getParsedHeadersFirstValue(message, 'X-Original-To') || '';
 };
-export const requireReadReceipt = (message?: Message) => {
+export const requireReadReceipt = (message?: Partial<Message>) => {
     const dispositionNotificationTo = getParsedHeaders(message, 'Disposition-Notification-To') || ''; // ex: Andy <andy@pm.me>
 
     if (!dispositionNotificationTo || isSent(message)) {
@@ -139,9 +140,9 @@ export const requireReadReceipt = (message?: Message) => {
 };
 export const getListUnsubscribe = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe');
 export const getListUnsubscribePost = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe-Post');
-export const getAttachments = (message?: Message) => message?.Attachments || [];
-export const hasAttachments = (message?: Message) => !!(message?.NumAttachments && message?.NumAttachments > 0);
-export const attachmentsSize = (message?: Message) =>
+export const getAttachments = (message?: Partial<Message>) => message?.Attachments || [];
+export const hasAttachments = (message?: Partial<Message>) => !!(message?.NumAttachments && message.NumAttachments > 0);
+export const attachmentsSize = (message?: Partial<Message>) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
 export const getHasOnlyIcsAttachments = (attachmentInfo?: Partial<Record<MIME_TYPES, AttachmentInfo>>) => {
     if (!!attachmentInfo) {
@@ -151,7 +152,7 @@ export const getHasOnlyIcsAttachments = (attachmentInfo?: Partial<Record<MIME_TY
     return false;
 };
 
-export const isAutoReply = (message?: Message) => {
+export const isAutoReply = (message?: Partial<Message>) => {
     const ParsedHeaders = message?.ParsedHeaders || {};
     return AUTOREPLY_HEADERS.some((h) => h in ParsedHeaders);
 };
@@ -193,7 +194,7 @@ export const ORIGINAL_MESSAGE = `------- Original Message -------`;
 export const RE_PREFIX = c('Message').t`Re:`;
 export const FW_PREFIX = c('Message').t`Fw:`;
 
-export const isNewsLetter = (message?: Message) => {
+export const isNewsLetter = (message?: Pick<Message, 'ParsedHeaders'>) => {
     const ParsedHeaders = message?.ParsedHeaders || {};
     return LIST_HEADERS.some((h) => h in ParsedHeaders);
 };
