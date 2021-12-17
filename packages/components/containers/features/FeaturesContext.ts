@@ -98,6 +98,7 @@ export enum FeatureCode {
     DriveMyDevices = 'DriveWebMyDevices',
     ConversationHeaderInScroll = 'ConversationHeaderInScroll',
     MigrationModalLastShown = 'MigrationModalLastShown',
+    LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
 }
 
 export interface FeaturesContextValue {

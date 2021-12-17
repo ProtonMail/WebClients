@@ -166,6 +166,17 @@ export const updateDraft = (messageID: string, { Message, AttachmentKeyPackets }
     data: { Message, AttachmentKeyPackets },
 });
 
+export const updateBody = (messageID: string, data: { Body: string }) => ({
+    method: 'post',
+    url: `mail/v4/messages/${messageID}/body`,
+    data,
+});
+
+export const markAsBroken = (messageID: string) => ({
+    method: 'put',
+    url: `mail/v4/messages/${messageID}/mark/broken`,
+});
+
 export const readReceipt = (messageID: string) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}/receipt`,
