@@ -21,13 +21,12 @@ import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { isInternal } from '@proton/shared/lib/mail/messages';
 
 import { getContactEmail } from '../../../helpers/addresses';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import { MessageVerification, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -118,7 +117,7 @@ const getBannerMessage = (promptKeyPinningType: PROMPT_KEY_PINNING_TYPE) => {
 };
 
 interface Props {
-    message: Message;
+    message: MessageWithOptionalBody;
     messageVerification: MessageVerification;
 }
 

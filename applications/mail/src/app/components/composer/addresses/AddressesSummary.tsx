@@ -4,16 +4,16 @@ import { c } from 'ttag';
 
 import { Button, Icon, Label, Tooltip, classnames } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import { RecipientType, recipientTypes } from '../../../models/address';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 
 interface Props {
-    message: Message | undefined;
+    message?: MessageWithOptionalBody;
     disabled: boolean;
     mapSendInfo?: MapSendInfo;
     onFocus: () => void;

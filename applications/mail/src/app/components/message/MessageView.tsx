@@ -16,7 +16,6 @@ import { classnames } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasAttachments, isDraft, isOutbox, isSent } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
@@ -32,6 +31,7 @@ import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
+import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 import MessageBody from './MessageBody';
@@ -46,7 +46,7 @@ interface Props {
     conversationMode: boolean;
     loading: boolean;
     labels: Label[];
-    message: Message;
+    message: MessageWithOptionalBody;
     mailSettings: MailSettings;
     conversationIndex?: number;
     conversationID?: string;

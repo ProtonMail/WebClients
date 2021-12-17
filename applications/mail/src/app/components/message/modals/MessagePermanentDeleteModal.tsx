@@ -12,10 +12,10 @@ import {
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 
 import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/usePermanentDelete';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 
 interface Props extends ModalProps {
-    message: MessageState;
+    message: MessageWithOptionalBody;
 }
 
 const MessagePermanentDeleteModal = ({ message, ...rest }: Props) => {
@@ -26,12 +26,8 @@ const MessagePermanentDeleteModal = ({ message, ...rest }: Props) => {
     const { onClose } = rest;
 
     const handleDelete = async () => {
-        const messageID = message.data?.ID;
-        if (!messageID) {
-            return;
-        }
         onClose?.();
-        await api(deleteMessages([messageID]));
+        await api(deleteMessages([message.ID]));
         await call();
         createNotification({ text: getNotificationText(false, false, 1) });
     };

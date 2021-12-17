@@ -16,7 +16,7 @@ import {
     waitForEventManagerCall,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 
 loudRejection();
@@ -38,7 +38,7 @@ describe('Unsubscribe banner', () => {
         data: { ID: messageID, Subject: 'test', ParsedHeaders: { 'X-Original-To': toAddress }, Attachments: [] } as any,
         messageDocument: { initialized: true },
         verification: {},
-    } as MessageState;
+    } as MessageStateWithData;
 
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
@@ -63,9 +63,9 @@ describe('Unsubscribe banner', () => {
             data: {
                 UnsubscribeMethods: { OneClick: 'OneClick' },
             },
-        });
+        }) as MessageStateWithData;
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
+        const { getByTestId } = await render(<ExtraUnsubscribe message={message.data} />, false);
 
         const button = getByTestId('unsubscribe-banner');
 
@@ -106,9 +106,9 @@ describe('Unsubscribe banner', () => {
             data: {
                 UnsubscribeMethods: { Mailto: { ToList: [mailto], Body: 'body', Subject: 'subject' } },
             },
-        });
+        }) as MessageStateWithData;
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
+        const { getByTestId } = await render(<ExtraUnsubscribe message={message.data} />, false);
 
         const button = getByTestId('unsubscribe-banner');
 
@@ -142,9 +142,9 @@ describe('Unsubscribe banner', () => {
             data: {
                 UnsubscribeMethods: { HttpClient: 'url' },
             },
-        });
+        }) as MessageStateWithData;
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
+        const { getByTestId } = await render(<ExtraUnsubscribe message={message.data} />, false);
 
         const button = getByTestId('unsubscribe-banner');
 

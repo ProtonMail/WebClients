@@ -10,12 +10,13 @@ import {
     ModalTwoHeader,
 } from '@proton/components';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 
 import './MessageHeadersModal.scss';
 
 interface Props extends ModalProps {
-    message?: Message;
+    message?: MessageWithOptionalBody;
 }
 
 const MessageHeadersModal = ({ message, ...rest }: Props) => {

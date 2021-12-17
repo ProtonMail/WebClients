@@ -26,7 +26,7 @@ import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { cancelScheduled, endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageStateWithData, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useGetAttachment } from '../useAttachment';
@@ -131,7 +131,7 @@ export const useSendMessage = () => {
                 const messageKeys = await getMessageKeys(inputMessage.data);
 
                 // Last minute modifications on the message before sending
-                const message = (await sendModification(inputMessage)) as MessageStateWithData;
+                const message = (await sendModification(inputMessage)) as MessageStateWithDataFull;
 
                 const emails = unique(getRecipientsAddresses(inputMessage.data));
 
@@ -152,7 +152,7 @@ export const useSendMessage = () => {
                     onUpdateAttachment,
                     api
                 );
-                packages = await attachSubPackages(packages, message, emails, mapSendPrefs, api);
+                packages = await attachSubPackages(packages, message.data, emails, mapSendPrefs, api);
                 packages = await encryptPackages(message, messageKeys, packages);
 
                 // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
