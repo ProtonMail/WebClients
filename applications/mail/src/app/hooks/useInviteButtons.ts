@@ -147,7 +147,7 @@ const useInviteButtons = ({
                 return false;
             }
             try {
-                void deleteCalendarEventFromInvitation({ calendarEventID: reinviteEventID, calendarData, api });
+                await deleteCalendarEventFromInvitation({ calendarEventID: reinviteEventID, calendarData, api });
                 return true;
             } catch (error: any) {
                 onUnexpectedError();

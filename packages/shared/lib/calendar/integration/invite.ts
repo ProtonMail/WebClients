@@ -138,9 +138,10 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
             'rrule',
             'location',
             'summary',
-            'x-pm-shared-event-id',
-            'x-pm-session-key',
         ];
+        if (method === ICAL_METHOD.CANCEL) {
+            propertiesToKeep.push('x-pm-shared-event-id');
+        }
         if (method === ICAL_METHOD.REPLY) {
             propertiesToKeep.push('x-pm-proton-reply');
         }
