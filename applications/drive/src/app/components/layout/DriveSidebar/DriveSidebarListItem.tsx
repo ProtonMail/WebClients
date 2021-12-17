@@ -10,8 +10,6 @@ import {
     useLoading,
 } from '@proton/components';
 
-import LocationAside from './ReloadSpinner';
-
 import useDriveEvents from '../../../hooks/drive/useDriveEvents';
 
 interface Props {
@@ -20,15 +18,15 @@ interface Props {
     isActive: boolean;
     shareId?: string;
     to: string;
+    rightIcon?: React.ReactNode;
 }
-const DriveSidebarListItem = ({ to, children, icon, shareId, isActive }: Props) => {
+const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon }: Props) => {
     const driveEvents = useDriveEvents();
     const [refreshing, withRefreshing] = useLoading(false);
 
     const left = icon ? <SidebarListItemContentIcon name={icon} /> : null;
-    const right = isActive && shareId && <LocationAside refreshing={refreshing} />;
 
-    const handleClick = () => {
+    const handleRefresh = () => {
         if (!refreshing && shareId) {
             withRefreshing(Promise.all([driveEvents.callAll(shareId), wait(1000)])).catch(noop);
         }
@@ -38,9 +36,9 @@ const DriveSidebarListItem = ({ to, children, icon, shareId, isActive }: Props) 
         <SidebarListItem>
             <SidebarListItemLink to={to} isActive={() => isActive}>
                 <SidebarListItemContent
-                    onClick={handleClick}
+                    onDoubleClick={handleRefresh}
                     left={left}
-                    right={right}
+                    right={rightIcon}
                     title={typeof children === 'string' ? children : undefined}
                 >
                     {children}
