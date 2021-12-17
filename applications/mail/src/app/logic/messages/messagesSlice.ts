@@ -9,6 +9,8 @@ import {
     verificationComplete,
     resign,
     resetVerification,
+    applyDarkStyle,
+    removeDarkStyle,
 } from './read/messagesReadActions';
 import { loadEmbedded, loadFakeProxy, loadRemoteDirect, loadRemoteProxy } from './images/messagesImagesActions';
 import {
@@ -45,6 +47,8 @@ import {
     resign as resignReducer,
     resetVerification as resetVerificationReducer,
     reset as globalResetReducer,
+    applyDarkStyle as applyDarkStyleReducer,
+    removeDarkStyle as removeDarkStyleReducer,
 } from './read/messagesReadReducers';
 import {
     loadEmbeddedFulfilled,
@@ -94,6 +98,8 @@ const messagesSlice = createSlice({
         builder.addCase(verificationComplete, verificationCompleteReducer);
         builder.addCase(resign, resignReducer);
         builder.addCase(resetVerification, resetVerificationReducer);
+        builder.addCase(applyDarkStyle, applyDarkStyleReducer);
+        builder.addCase(removeDarkStyle, removeDarkStyleReducer);
 
         builder.addCase(documentInitializePending, documentInitializePendingReducer);
         builder.addCase(documentInitializeFulfilled, documentInitializeFulfilledReducer);

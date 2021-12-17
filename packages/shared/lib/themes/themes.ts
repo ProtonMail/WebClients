@@ -69,6 +69,8 @@ export const PROTON_THEMES_MAP = {
     },
 } as const;
 
+export const DARK_THEMES = [ThemeTypes.Dark, ThemeTypes.Monokai];
+
 export const PROTON_THEMES = [
     ThemeTypes.Default,
     ThemeTypes.Dark,

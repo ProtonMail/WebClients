@@ -1,6 +1,9 @@
+import tinycolor from 'tinycolor2';
 import { MailSettings, Address } from '@proton/shared/lib/interfaces';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAllNodesRecursively } from '@proton/shared/lib/helpers/dom';
+
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';
 import { textToHtml } from '../textToHtml';
@@ -101,3 +104,25 @@ export const plainTextToHTML = (
 export const querySelectorAll = (message: Partial<MessageState> | undefined, selector: string) => [
     ...((message?.messageDocument?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
 ];
+
+export const canSupportDarkStyle = (element: HTMLElement | null) => {
+    if (!element) {
+        return false;
+    }
+
+    const STARTING_DEPTH = 0;
+    const MAX_DEPTH = 5;
+    const nodes = getAllNodesRecursively(element, MAX_DEPTH, STARTING_DEPTH);
+
+    return nodes.every((node) => {
+        const style = window.getComputedStyle(node);
+        const backgroundColor = style.getPropertyValue('background-color') || '#ffffff';
+        const fontColor = style.getPropertyValue('color') || '#000000';
+
+        // rgba(0, 0, 0, 0) is the default value for background-color and is transparent
+        return (
+            (tinycolor(backgroundColor)?.toHexString() === '#ffffff' || tinycolor(backgroundColor)?.getAlpha() === 0) &&
+            tinycolor(fontColor)?.isDark()
+        );
+    });
+};

@@ -49,3 +49,7 @@ export const verificationComplete = createAction<VerificationParams>('messages/v
 export const resign = createAction<{ ID: string; isContactSignatureVerified?: boolean }>('messages/resign');
 
 export const resetVerification = createAction<string[]>('messages/verification/reset');
+
+export const applyDarkStyle = createAction<{ ID: string; hasDarkStyle: boolean }>('messages/applyDarkStyle');
+
+export const removeDarkStyle = createAction<{ ID: string; noDarkStyle: boolean }>('messages/removeDarkStyle');
