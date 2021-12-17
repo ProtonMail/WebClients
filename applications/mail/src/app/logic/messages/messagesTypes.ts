@@ -131,6 +131,16 @@ export interface MessageDocument {
      * true: done
      */
     initialized?: boolean;
+
+    /**
+     * True if dark style injected in message content
+     */
+    hasDarkStyle?: boolean;
+
+    /**
+     * User choice to not apply dark style
+     */
+    noDarkStyle?: boolean;
 }
 
 export interface MessageDraftFlags {

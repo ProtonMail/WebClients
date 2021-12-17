@@ -14,6 +14,7 @@ import ExtraErrors from '../extras/ExtraErrors';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
 import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
+import ExtraDarkStyle from '../extras/ExtraDarkStyle';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
@@ -49,6 +50,7 @@ const HeaderExtra = ({
             <ExtraUnsubscribe message={message} />
             <ExtraReadReceipt message={message} />
             <ExtraAutoReply message={message} />
+            <ExtraDarkStyle message={message} />
             {messageLoaded && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
             <ExtraAskResign
                 message={message.data}
