@@ -8,6 +8,7 @@ import { locateHead } from '../../helpers/message/messageHead';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import MessageBodyIframe from './MessageBodyIframe';
+import useMessageDarkStyles from './hooks/useMessageDarkStyles';
 
 interface Props {
     labelID: string;
@@ -88,10 +89,17 @@ const MessageBody = ({
         [content, highlightBody]
     );
 
+    const hasDarkStyles = useMessageDarkStyles(message, bodyLoaded, bodyRef);
+
     return (
         <div
             ref={bodyRef}
-            className={classnames(['message-content relative bg-norm color-norm', plain && 'plain', !isPrint && 'p1'])}
+            className={classnames([
+                'message-content relative bg-norm color-norm',
+                plain && 'plain',
+                !isPrint && 'p1',
+                hasDarkStyles && 'dark-style',
+            ])}
             data-testid="message-content:body"
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}

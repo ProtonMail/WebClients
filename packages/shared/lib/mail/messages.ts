@@ -25,6 +25,15 @@ const {
     FLAG_SCHEDULED_SEND,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
+const LIST_HEADERS = [
+    'List-Id',
+    'List-Unsubscribe',
+    'List-Subscribe',
+    'List-Post',
+    'List-Help',
+    'List-Owner',
+    'List-Archive',
+];
 
 /**
  * Check if a message has a mime type
@@ -168,3 +177,8 @@ export const DRAFT_ID_PREFIX = 'draft';
 export const ORIGINAL_MESSAGE = `‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐`;
 export const RE_PREFIX = c('Message').t`Re:`;
 export const FW_PREFIX = c('Message').t`Fw:`;
+
+export const isNewsLetter = (message?: Message) => {
+    const ParsedHeaders = message?.ParsedHeaders || {};
+    return LIST_HEADERS.some((h) => h in ParsedHeaders);
+};
