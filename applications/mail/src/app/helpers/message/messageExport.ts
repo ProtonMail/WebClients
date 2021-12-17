@@ -21,7 +21,10 @@ const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     PasswordHint: undefined,
 };
 
-const restorePasswordFromResults = (resultMessage: Message, originalMessage: Message): Message => ({
+const restorePasswordFromResults = (
+    resultMessage: Message,
+    originalMessage: Pick<Message, 'Password' | 'PasswordHint'>
+): Message => ({
     ...resultMessage,
     Password: originalMessage.Password,
     PasswordHint: originalMessage.PasswordHint,
@@ -154,11 +157,10 @@ export const updateMessage = async (
         );
     }
     const { Message: updatedMessage } = await api({
-        ...updateDraft(
-            message.data?.ID,
-            { ...message.data, Body, ...removePasswordFromRequests },
-            AttachmentKeyPackets
-        ),
+        ...updateDraft(message.data?.ID, {
+            Message: { ...message.data, Body, ...removePasswordFromRequests },
+            AttachmentKeyPackets,
+        }),
         silence: true,
     });
 

@@ -122,10 +122,12 @@ export const useDeleteDraft = () => {
 
     return useCallback(
         async (message: MessageState) => {
-            const messageID = message.data?.ID || '';
-
             const showMoved = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS);
             const currentLabelID = showMoved ? ALL_DRAFTS : getCurrentFolderID(message.data?.LabelIDs, folders);
+            const messageID = message.data?.ID;
+            if (!messageID) {
+                return;
+            }
             const response: any = await api(deleteMessages([messageID], currentLabelID));
 
             // For the "Please refresh your page, the message has moved."

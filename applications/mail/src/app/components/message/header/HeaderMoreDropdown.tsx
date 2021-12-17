@@ -36,7 +36,7 @@ import { useMoveToFolder, useStar } from '../../../hooks/useApplyLabels';
 import { useGetAttachment } from '../../../hooks/useAttachment';
 import { MARK_AS_STATUS, useMarkAs } from '../../../hooks/useMarkAs';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
-import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import { Element } from '../../../models/element';
 import { Breakpoints } from '../../../models/utils';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
@@ -434,7 +434,10 @@ const HeaderMoreDropdown = ({
                 />
             )}
             <MessagePhishingModal message={message} onBack={onBack} {...messagePhishingModalProps} />
-            <MessagePermanentDeleteModal message={message} {...messagePermanentDeleteModalProps} />
+            <MessagePermanentDeleteModal
+                message={message.data as MessageWithOptionalBody}
+                {...messagePermanentDeleteModalProps}
+            />
             {moveScheduledModal}
             {moveAllModal}
             {moveToSpamModal}

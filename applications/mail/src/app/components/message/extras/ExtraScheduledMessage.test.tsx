@@ -10,7 +10,7 @@ import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { formatDateToHuman } from '../../../helpers/date';
 import { addApiMock, clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import ExtraScheduledMessage from './ExtraScheduledMessage';
 
 const getMessage = (sendingDate: Date) => {
@@ -22,7 +22,7 @@ const getMessage = (sendingDate: Date) => {
             Time: sendingDate.getTime() / 1000,
             LabelIDs: [MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.SCHEDULED],
         },
-    } as MessageState;
+    } as MessageStateWithData;
 };
 
 describe('Scheduled messages banner', () => {

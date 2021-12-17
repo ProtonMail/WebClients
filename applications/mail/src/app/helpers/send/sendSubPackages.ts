@@ -8,8 +8,6 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getAttachments, isEO } from '@proton/shared/lib/mail/messages';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
-
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
 const { SEND_PM, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME, SEND_EO, SEND_CLEAR_MIME } = PACKAGE_TYPE;
 const { SIGNATURES_NONE, SIGNATURES_ATTACHMENTS } = PACKAGE_SIGNATURES_MODE;
@@ -106,7 +104,7 @@ const sendClear = async () => ({ Type: SEND_CLEAR, Signature: 0 });
  */
 export const attachSubPackages = async (
     packages: Packages,
-    message: MessageStateWithData,
+    message: Message,
     emails: string[],
     mapSendPrefs: SimpleMap<SendPreferences>,
     api: Api
@@ -136,20 +134,20 @@ export const attachSubPackages = async (
 
         switch (pgpScheme) {
             case SEND_PM:
-                return bindPackageSet(sendPM(sendPrefs, message.data), email, packageType);
+                return bindPackageSet(sendPM(sendPrefs, message), email, packageType);
             case SEND_PGP_MIME:
                 if (!sign && !encrypt) {
                     return bindPackageSet(sendClear(), email, DEFAULT);
                 }
                 return bindPackageSet(sendPGPMime(sendPrefs), email, MIME);
             case SEND_PGP_INLINE:
-                return bindPackageSet(sendPGPInline(sendPrefs, message.data), email, PLAINTEXT);
+                return bindPackageSet(sendPGPInline(sendPrefs, message), email, PLAINTEXT);
             case SEND_EO:
             case SEND_CLEAR:
             default:
                 // Encrypted for outside (EO)
-                if (isEO(message.data)) {
-                    return bindPackageSet(sendPMEncryptedOutside(message.data, api), email, packageType);
+                if (isEO(message)) {
+                    return bindPackageSet(sendPMEncryptedOutside(message, api), email, packageType);
                 }
                 return bindPackageSet(sendClear(), email, packageType);
         }

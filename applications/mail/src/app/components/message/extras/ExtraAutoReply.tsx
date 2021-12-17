@@ -4,14 +4,14 @@ import { Href, Icon } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageState;
+    message: MessageWithOptionalBody;
 }
 
 const ExtraAutoReply = ({ message }: Props) => {
-    if (!isAutoReply(message.data)) {
+    if (!isAutoReply(message)) {
         return null;
     }
 

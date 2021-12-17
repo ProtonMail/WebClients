@@ -40,17 +40,20 @@ const HeaderExtra = ({
 
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
     const isScheduledMessage = isScheduled(message.data);
+    const showCalendarWidget = messageLoaded && received;
+
+    if (!getMessageHasData(message)) {
+        return null;
+    }
 
     return (
         <section className="message-header-extra pt0-5 hidden-empty">
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
             <ExtraErrors message={message} />
-            <ExtraAutoReply message={message} />
-            <ExtraUnsubscribe message={message} />
-            {message.data && message.verification && (
-                <ExtraPinKey message={message.data} messageVerification={message.verification} />
-            )}
+            <ExtraAutoReply message={message.data} />
+            <ExtraUnsubscribe message={message.data} />
+            {message.verification && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
             <ExtraAskResign
                 message={message.data}
                 messageVerification={message.verification}
@@ -58,25 +61,23 @@ const HeaderExtra = ({
             />
             {!sourceMode && (
                 <ExtraImages
-                    message={message}
+                    messageImages={message.messageImages}
                     type="remote"
                     onLoadImages={onLoadRemoteImages}
                     mailSettings={mailSettings}
                 />
             )}
 
-            {messageLoaded && received && getMessageHasData(message) && (
-                <EmailReminderWidget message={message.data} errors={message.errors} />
-            )}
-            {messageLoaded && received && getMessageHasData(message) ? <ExtraEvents message={message} /> : null}
+            {showCalendarWidget ? <EmailReminderWidget message={message.data} errors={message.errors} /> : null}
+            {showCalendarWidget ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
 
             <span className="inline-flex flex-row on-mobile-w100 hidden-empty">
                 <ExtraExpirationTime displayAsButton message={message} />
-                <ExtraReadReceipt message={message} />
+                <ExtraReadReceipt message={message.data} />
                 {!sourceMode && (
                     <ExtraImages
-                        message={message}
+                        messageImages={message.messageImages}
                         type="embedded"
                         onLoadImages={onLoadEmbeddedImages}
                         mailSettings={mailSettings}
