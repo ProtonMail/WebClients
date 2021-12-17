@@ -282,33 +282,22 @@ export const getIsProtonInvite = ({
     invitationIcs,
     invitationApi,
     pmData,
-    xYahooUserStatus,
 }: {
     invitationIcs: RequireSome<EventInvitation, 'method'>;
     invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     pmData?: PmInviteData;
-    xYahooUserStatus?: string;
 }) => {
     const { method } = invitationIcs;
     const { sharedEventID, isProtonReply } = pmData || {};
-    /*
-        If a custom Yahoo property is present, we can be sure that it's not a Proton invite.
-        If we do not include the condition, we will be tricked into thinking it's a Proton invite
-        given that Yahoo sends back the X-PM-SHARED-EVENT-ID in the REPLY. Once we transition to
-        the full-fledged Proton-Proton invite flow (via the X-PM-PROTON-REPLY property), the Yahoo check can be dropped
-     */
-    const isLinked = xYahooUserStatus ? false : sharedEventID === invitationApi?.calendarEvent.SharedEventID;
+
     if ([ICAL_METHOD.REQUEST, ICAL_METHOD.CANCEL].includes(method)) {
         if (!invitationApi) {
             return !!sharedEventID;
         }
-        return isLinked;
+        return sharedEventID === invitationApi.calendarEvent.SharedEventID;
     }
     if (method === ICAL_METHOD.REPLY) {
-        if (isProtonReply !== undefined) {
-            return isProtonReply;
-        }
-        return isLinked;
+        return !!isProtonReply;
     }
     return false;
 };
