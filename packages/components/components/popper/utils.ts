@@ -157,6 +157,16 @@ const isOutOfScreen = (tooltip: ElementRect, position: Position) => {
     );
 };
 
+const howMuchIsOutOfScreen = (tooltip: ElementRect, position: Position) => {
+    const offsets = [
+        position.top + tooltip.height - window.innerHeight,
+        position.left + tooltip.width - window.innerWidth,
+        0 - position.top,
+        0 - position.left,
+    ];
+    return offsets.filter((number) => number > 0).reduce((acc, number) => acc + number, 0);
+};
+
 const optimisePositionAndPlacement = (
     target: ElementRect,
     tooltip: ElementRect,
@@ -171,8 +181,15 @@ const optimisePositionAndPlacement = (
     const [placement, ...rest] = availablePlacements;
     const position = calculatePosition(target, tooltip, placement, offset, originalPosition);
 
-    return isOutOfScreen(tooltip, position)
-        ? optimisePositionAndPlacement(target, tooltip, offset, rest, originalPosition)
+    if (!isOutOfScreen(tooltip, position)) {
+        return { position, placement };
+    }
+
+    // Return the position which can fit the most content on the screen.
+    const otherPosition = optimisePositionAndPlacement(target, tooltip, offset, rest, originalPosition);
+    return otherPosition &&
+        howMuchIsOutOfScreen(tooltip, position) > howMuchIsOutOfScreen(tooltip, otherPosition.position)
+        ? otherPosition
         : { position, placement };
 };
 
