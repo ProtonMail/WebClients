@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activer la récupération"
+      ],
       "Add": [
         "Ajouter"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Aller aux paramètres"
       ],
-      "Grid layout": [
-        "Affichage en grille"
-      ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Raccourcis clavier"
-      ],
-      "List layout": [
-        "Affichage en liste"
       ],
       "Load image": [
         "Charger l'image"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Choisissez une offre"
       ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
+      ],
       "Share": [
         "Partager"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         "Afficher les labels"
-      ],
-      "Show shared link details": [
-        "Afficher les détails du lien partagé"
       ],
       "Sign out": [
         "Se déconnecter"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Ne plus faire confiance"
+      ],
+      "Update recovery file": [
+        "Mettre à jour le fichier de récupération"
+      ],
+      "Update recovery phrase": [
+        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
         "Changer d'offre"
@@ -1128,17 +1131,32 @@
       "Error connecting to the Bitcoin API.": [
         "Erreur de connexion à l’API Bitcoin."
       ],
+      "Failed to download a file": [
+        "Échec du téléchargement du fichier"
+      ],
+      "Failed to download a folder": [
+        "Échec du téléchargement du dossier"
+      ],
       "Failed to load the link": [
         "Échec du chargement du lien"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Le fichier « ${ item.name } » ne peut pas être téléversé à cause d'une erreur « ${ error } »"
       ],
+      "File \"${ name }\" is already downloading": [
+        "Le fichier « ${ name } » est déjà en cours de téléchargement"
+      ],
       "File cannot be merged with folder": [
         "Le fichier ne peut pas être fusionné avec le dossier"
       ],
       "File has no contents to preview": [
         "Ce fichier n'a pas de contenu à prévisualiser"
+      ],
+      "File selection is already downloading": [
+        "La sélection de fichiers est déjà en cours de téléchargement"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "Le dossier « ${ name } » est déjà en cours de téléchargement"
       ],
       "Folder name cannot be empty": [
         "Le nom de dossier ne peut être vide"
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } en cours de téléchargement",
+        "${ activeDownloadsCount } en cours de téléchargement"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "${ activeDownloadsCount } téléchargement en cours (${ downloadProgress } %)",
         "${ activeDownloadsCount } téléchargements en cours (${ downloadProgress } %)"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
         "${ activeUploadsCount } téléversement en cours (${ uploadProgress } %)",
-        "${ activeUploadsCount } téléversements en cours (${ uploadProgress } %)"
+        "${ activeUploadsCount } téléversement en cours (${ uploadProgress } %)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } adresse courriel",
@@ -1597,7 +1619,7 @@
         "${ calendarsToBeMergedCount } calendrier fusionné",
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
-      "${ canceledCount } Canceled": [
+      "${ canceledCount } canceled": [
         "${ canceledCount } annulé",
         "${ canceledCount } annulés"
       ],
@@ -1621,19 +1643,19 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } contient des adresses électroniques multiples. Veuillez sélectionner la ou les adresses à ajouter à ce groupe."
       ],
-      "${ doneCount } Finished": [
+      "${ doneCount } finished": [
         "${ doneCount } terminé",
         "${ doneCount } terminés"
       ],
-      "${ doneDownloadsCount } Downloaded": [
+      "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } téléchargé",
         "${ doneDownloadsCount } téléchargés"
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } téléversé",
-        "${ doneUploadsCount } téléversés"
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } importé",
+        "${ doneUploadsCount } importés"
       ],
-      "${ errorCount } Failed": [
+      "${ errorCount } failed": [
         "${ errorCount } échoué",
         "${ errorCount } échoués"
       ],
@@ -1658,7 +1680,7 @@
         "${ numContacts } contact",
         "${ numContacts } contacts"
       ],
-      "${ pausedCount } Paused": [
+      "${ pausedCount } paused": [
         "${ pausedCount } en pause",
         "${ pausedCount } en pause"
       ],
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Toute personne ayant ce lien peut accéder à votre fichier."
       ],
+      "Anyone with this link can access your folder.": [
+        "Toute personne ayant ce lien peut accéder à votre dossier."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Êtes-vous sûr·e de vouloir vider la corbeille et supprimer définitivement tous les éléments?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "Création du lien vers le fichier"
+      ],
+      "Creating link to folder": [
+        "Création du lien vers le dossier"
       ],
       "Creating share": [
         "Création du partage"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce fichier."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
+      ],
       "Paused": [
         "En pause"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Préparation du lien vers le fichier"
+      ],
+      "Preparing link to folder": [
+        "Préparation du lien vers le dossier"
       ],
       "Preview": [
         "Aperçu"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Ce lien sera définitivement désactivé. Personne avec ce lien ne pourra accéder à votre fichier. Pour repartager le fichier, vous aurez besoin d'un nouveau lien."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Ceci supprimera le lien et supprimera l'accès à votre fichier pour toute personne ayant le lien.",
-        "Ceci supprimera les liens et supprimera l'accès à vos fichiers pour toute personne ayant les liens."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Ce lien sera définitivement désactivé. Personne avec ce lien ne pourra accéder à votre dossier. Pour repartager le dossier, vous aurez besoin d'un nouveau lien."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Ceci supprimera le lien et supprimera l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
+        "Ceci supprimera les liens et supprimera l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci permettra à PayPal d'être utilisé pour payer votre abonnement Proton. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de fenêtres surgissantes, veuillez les désactiver pour continuer."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Vos fichiers seront chiffrés puis sauvegardés."
+      ],
+      "Your folder failed to download.": [
+        "Le téléchargement de votre dossier a échoué."
+      ],
+      "Your folder has finished downloading.": [
+        "Le téléchargement de votre dossier est terminé."
+      ],
+      "Your folder is being downloaded.": [
+        "Votre dossier est en cours de téléchargement."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Groupe de contacts mis à jour"
       ],
+      "Failed to download files: ${ err }": [
+        "Échec du téléchargement des fichiers: ${ err }"
+      ],
       "Failed to move, please try again": [
         "Échec du déplacement, veuillez réessayer"
       ],
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Vider la corbeille"
       ],
-      "Enter file password to download": [
-        "Saisissez le mot de passe du fichier à télécharger"
+      "Enter password to download": [
+        "Saisissez le mot de passe pour télécharger"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Mes fichiers"
+      ],
+      "My files ${ date }.zip": [
+        "Mes fichiers ${ date }.zip"
       ],
       "Name": [
         "Nom"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "Votre fichier est prêt à être téléchargé"
       ],
+      "Your folder is ready to be downloaded": [
+        "Votre dossier est prêt à être téléchargé"
+      ],
       "ZIP / postal code": [
         "Code postal"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accédez au contenu géobloqué (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) quelle que soit votre localisation."
-      ],
-      "Active sharing link": [
-        "Lien de partage actif"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatique indique que le format utilisé dans le composeur est celui utilisé pour l'envoi à cet utilisateur. Texte brut indique que le message sera toujours converti en texte brut lors de l'envoi."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
       ],
-      "Expired sharing link": [
-        "Lien de partage expiré"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Accédez à toutes les fonctionnalités payantes de ${ vpnAppName } et ${ mailAppName } (le service de messagerie chiffrée que des millions de personnes utilisent pour protéger leurs données) avec une seule offre."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code cadeau ou reçu un code de notre équipe d'assistance, vous pouvez le saisir ici."
-      ],
-      "Inactive sharing link": [
-        "Lien de partage inactif"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "La prise en charge du multiutilisateur n'est applicable qu'aux forfaits avec 2 utilisateur·rice·s ou plus"

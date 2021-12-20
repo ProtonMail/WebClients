@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Активувати відновлення"
+      ],
       "Add": [
         "Додати"
       ],
@@ -242,9 +245,6 @@
       "Go to settings": [
         "Перейти до налаштувань"
       ],
-      "Grid layout": [
-        "Схема сітки"
-      ],
       "Hide advanced PGP settings": [
         "Сховати розширені налаштування PGP"
       ],
@@ -274,9 +274,6 @@
       ],
       "Keyboard shortcuts": [
         "Комбінації клавіш"
-      ],
-      "List layout": [
-        "Стиль списку"
       ],
       "Load image": [
         "Завантажити зображення"
@@ -443,6 +440,9 @@
       "Select plan": [
         "Обрати тарифний план"
       ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
+      ],
       "Share": [
         "Поділитися"
       ],
@@ -469,9 +469,6 @@
       ],
       "Show labels": [
         "Показати мітки"
-      ],
-      "Show shared link details": [
-        "Показати подробиці посилання для спільного доступу"
       ],
       "Sign out": [
         "Вийти"
@@ -523,6 +520,12 @@
       ],
       "Untrust": [
         "Не довіряти"
+      ],
+      "Update recovery file": [
+        "Оновити файл відновлення"
+      ],
+      "Update recovery phrase": [
+        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -1014,10 +1017,10 @@
     },
     "Density mode": {
       "Comfortable": [
-        "Комфортний"
+        "Комфортно"
       ],
       "Compact": [
-        "Компактний"
+        "Компактно"
       ]
     },
     "Description": {
@@ -1150,17 +1153,32 @@
       "Error connecting to the Bitcoin API.": [
         "Помилка підключення до Bitcoin API."
       ],
+      "Failed to download a file": [
+        "Не вдалося завантажити файл"
+      ],
+      "Failed to download a folder": [
+        "Не вдалося завантажити теку"
+      ],
       "Failed to load the link": [
         "Не вдалося завантажити посилання"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Не вдалося вивантажити файл \"${ item.name }\" через помилку \"${ error }\""
       ],
+      "File \"${ name }\" is already downloading": [
+        "Файл \"${ name }\" уже завантажується"
+      ],
       "File cannot be merged with folder": [
         "Не можна об'єднувати файл з текою"
       ],
       "File has no contents to preview": [
         "Файл не має вмісту для перегляду"
+      ],
+      "File selection is already downloading": [
+        "Вибрані файли уже завантажуються"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "Тека \"${ name }\" уже завантажується"
       ],
       "Folder name cannot be empty": [
         "Тека не може бути без назви"
@@ -1610,17 +1628,23 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } завантаження",
+        "${ activeDownloadsCount } завантаження",
+        "${ activeDownloadsCount } завантажень",
+        "${ activeDownloadsCount } завантаження"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "${ activeDownloadsCount } завантаження (${ downloadProgress }%)",
         "${ activeDownloadsCount } завантаження (${ downloadProgress }%)",
         "${ activeDownloadsCount } завантажень (${ downloadProgress }%)",
-        "${ activeDownloadsCount } завантажень (${ downloadProgress }%)"
+        "${ activeDownloadsCount } завантаження (${ downloadProgress }%)"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
         "${ activeUploadsCount } вивантаження (${ uploadProgress }%)",
         "${ activeUploadsCount } вивантаження (${ uploadProgress }%)",
         "${ activeUploadsCount } вивантажень (${ uploadProgress }%)",
-        "${ activeUploadsCount } вивантажень (${ uploadProgress }%)"
+        "${ activeUploadsCount } вивантаження (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } адреса е-пошти",
@@ -1649,7 +1673,7 @@
         "${ calendarsToBeMergedCount } об'єднаних календарів",
         "${ calendarsToBeMergedCount } об'єднані календарі"
       ],
-      "${ canceledCount } Canceled": [
+      "${ canceledCount } canceled": [
         "${ canceledCount } скасовано",
         "${ canceledCount } скасовано",
         "${ canceledCount } скасовано",
@@ -1679,25 +1703,25 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до цієї групи."
       ],
-      "${ doneCount } Finished": [
+      "${ doneCount } finished": [
         "${ doneCount } завершено",
         "${ doneCount } завершено",
         "${ doneCount } завершено",
         "${ doneCount } завершено"
       ],
-      "${ doneDownloadsCount } Downloaded": [
+      "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } завантажено",
         "${ doneDownloadsCount } завантажено",
         "${ doneDownloadsCount } завантажено",
         "${ doneDownloadsCount } завантажено"
       ],
-      "${ doneUploadsCount } Uploaded": [
+      "${ doneUploadsCount } uploaded": [
         "${ doneUploadsCount } вивантажено",
         "${ doneUploadsCount } вивантажено",
         "${ doneUploadsCount } вивантажено",
         "${ doneUploadsCount } вивантажено"
       ],
-      "${ errorCount } Failed": [
+      "${ errorCount } failed": [
         "${ errorCount } не вдалося",
         "${ errorCount } не вдалося",
         "${ errorCount } не вдалося",
@@ -1730,7 +1754,7 @@
         "${ numContacts } контактів",
         "${ numContacts } контакта"
       ],
-      "${ pausedCount } Paused": [
+      "${ pausedCount } paused": [
         "${ pausedCount } призупинено",
         "${ pausedCount } призупинено",
         "${ pausedCount } призупинено",
@@ -1865,6 +1889,9 @@
       "Anyone with this link can access your file.": [
         "Будь-хто за цим посиланням може отримати доступ до вашого файлу."
       ],
+      "Anyone with this link can access your folder.": [
+        "Будь-хто за цим посиланням може отримати доступ до вашої теки."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
       ],
@@ -1960,6 +1987,9 @@
       ],
       "Creating link to file": [
         "Створення посилання на файл"
+      ],
+      "Creating link to folder": [
+        "Створення посилання на теку"
       ],
       "Creating share": [
         "Створення спільного доступу"
@@ -2213,6 +2243,9 @@
       "Only the people with the link and the password can access this file.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цього файлу."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Лише люди з посиланням та паролем можуть отримати доступ до цієї теки."
+      ],
       "Paused": [
         "Зупинено"
       ],
@@ -2266,6 +2299,9 @@
       ],
       "Preparing link to file": [
         "Підготовка посилання на файл"
+      ],
+      "Preparing link to folder": [
+        "Підготовка посилання на теку"
       ],
       "Preview": [
         "Попередній перегляд"
@@ -2375,11 +2411,14 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Це посилання буде вимкнено назавжди. Ніхто не матиме доступ до вашого файлу за цим посиланням. Щоб поділитися файлом, вам знадобиться нове посилання."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Це видалить посилання та вилучить доступ до вашого файла для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших файлів для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших файлів для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших файлів для всіх, хто має посилання."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Це посилання буде вимкнено назавжди. Ніхто не матиме доступ до вашої теки за цим посиланням. Щоб поділитися текою, вам знадобиться нове посилання."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Це видалить посилання та вилучить доступ до вашої теки для всіх, хто має посилання.",
+        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
+        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
+        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Це дозволить використовувати PayPal для вашої передплати Proton. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
@@ -2557,6 +2596,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ваші файли буде зашифровано, а потім збережено."
+      ],
+      "Your folder failed to download.": [
+        "Не вдалося завантажити теку."
+      ],
+      "Your folder has finished downloading.": [
+        "Вашу теку завантажено."
+      ],
+      "Your folder is being downloaded.": [
+        "Ваша тека завантажується."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
@@ -3200,10 +3248,10 @@
     },
     "Label to change density": {
       "Comfortable": [
-        "Комфортний"
+        "Комфортно"
       ],
       "Compact": [
-        "Компактний"
+        "Компактно"
       ]
     },
     "Label to change view layout": {
@@ -3570,6 +3618,9 @@
       ],
       "Contact group updated": [
         "Групу контактів оновлено"
+      ],
+      "Failed to download files: ${ err }": [
+        "Не вдалося завантажити файли: ${ err }"
       ],
       "Failed to move, please try again": [
         "Не вдалося перемістити, повторіть спробу"
@@ -4383,8 +4434,8 @@
       "Empty trash": [
         "Спорожнити смітник"
       ],
-      "Enter file password to download": [
-        "Введіть пароль файлу для завантаження"
+      "Enter password to download": [
+        "Введіть пароль для завантаження"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -4463,6 +4514,9 @@
       ],
       "My files": [
         "Мої файли"
+      ],
+      "My files ${ date }.zip": [
+        "Мої файли ${ date }.zip"
       ],
       "Name": [
         "Назва"
@@ -4635,6 +4689,9 @@
       "Your file is ready to be downloaded": [
         "Файл готовий до завантаження"
       ],
+      "Your folder is ready to be downloaded": [
+        "Ваша тека готова до завантаження"
+      ],
       "ZIP / postal code": [
         "Поштовий індекс"
       ]
@@ -4647,9 +4704,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ до вмісту, обмеженого розташуванням (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
-      ],
-      "Active sharing link": [
-        "Активне посилання спільного доступу"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Автоматично означає, що для надсилання цьому користувачу використовується формат редактора. Звичайний текст означає, що повідомлення завжди перетворюватиметься у звичайний текст під час надсилання."
@@ -4678,9 +4732,6 @@
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
-      "Expired sharing link": [
-        "Застаріле посилання спільного доступу"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Отримайте доступ до всіх платних функцій для ${ vpnAppName } та ${ mailAppName } (служба зашифрованої електронної пошти, якою користуються мільйони для захисту своїх даних) з єдиним тарифним планом."
       ],
@@ -4695,9 +4746,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
-      ],
-      "Inactive sharing link": [
-        "Неактивне посилання для спільного доступу"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Підтримка декількох користувачів доступна лише для тарифів з 2 чи більше користувачами"

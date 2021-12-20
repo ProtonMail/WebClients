@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activare recuperare"
+      ],
       "Add": [
         "Adăugare"
       ],
@@ -408,6 +411,9 @@
       "Send": [
         "Trimitere"
       ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
+      ],
       "Share": [
         "Partajare"
       ],
@@ -479,6 +485,12 @@
       ],
       "Update": [
         "Actualizare"
+      ],
+      "Update recovery file": [
+        "Actualizare fișier de recuperare"
+      ],
+      "Update recovery phrase": [
+        "Actualizare frază de recuperare"
       ],
       "Upgrade": [
         "Migrare"
@@ -1875,6 +1887,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Puteți ${ refresh } sau reîncerca mai târziu."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2069,13 +2084,15 @@
         "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar.",
         "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar."
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare contacte: ${ totalImported }}/${ totalToImport }"
@@ -2169,7 +2186,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } eveniment din ${ totalEvents } nu va fi importat. Extindeți pentru detalii.",
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii.",
         "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii."
       ],
       "No contact can be imported. Click for details": [
@@ -2997,6 +3016,9 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
@@ -3285,6 +3307,9 @@
       "BTC amount:": [
         "Suma BTC:"
       ],
+      "Calendar": [
+        "Calendar"
+      ],
       "Calendars": [
         "Calendare"
       ],
@@ -3320,6 +3345,9 @@
       ],
       "CVV code": [
         "Cod CVV"
+      ],
+      "Date and time": [
+        "Data și ora"
       ],
       "Description": [
         "Descriere"
@@ -3360,17 +3388,8 @@
       "Event duration": [
         "Durată eveniment"
       ],
-      "Event frequency": [
-        "Frecvență eveniment"
-      ],
-      "Event location": [
-        "Loc eveniment"
-      ],
       "Event notifications": [
         "Notificări eveniment"
-      ],
-      "Event time": [
-        "Oră eveniment"
       ],
       "Event title": [
         "Titlu eveniment"
@@ -3389,6 +3408,9 @@
       ],
       "Folder location": [
         "Folder"
+      ],
+      "Frequency": [
+        "Frecvența"
       ],
       "From: ${ importedEmail }": [
         "De la: ${ importedEmail }"
@@ -3429,6 +3451,9 @@
       "Last month only": [
         "Doar luna trecută"
       ],
+      "Location": [
+        "Loc"
+      ],
       "Mailbox password": [
         "Parolă mesaje"
       ],
@@ -3446,6 +3471,9 @@
       ],
       "Notification": [
         "Notificare"
+      ],
+      "Notifications": [
+        "Notificări"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -3533,9 +3561,6 @@
       "System information": [
         "Informații sistem"
       ],
-      "Time of the event": [
-        "Dată eveniment"
-      ],
       "To: ${ emailAddress }": [
         "Către: ${ emailAddress }"
       ],
@@ -3565,9 +3590,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Care este motivul principal pentru această evaluare?"
-      ],
-      "Your calendars": [
-        "Calendare"
       ],
       "ZIP": [
         "ZIP"
@@ -5010,6 +5032,9 @@
       ],
       "Downgrade account": [
         "Retrogradare cont"
+      ],
+      "Drop to upload": [
+        ""
       ],
       "Edit calendar": [
         "Editare calendar"

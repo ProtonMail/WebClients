@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Προσθήκη"
       ],
       "Add address": [
-        ""
+        "Προσθήκη διεύθυνσης"
       ],
       "Add contact": [
         "Προσθήκη επαφής"
       ],
       "Add email": [
-        ""
+        "Προσθήκη email"
       ],
       "Add group": [
         "Προσθήκη ομάδας"
@@ -39,7 +42,7 @@
         "Προσθήκη ειδοποίησης"
       ],
       "Add phone number": [
-        ""
+        "Προσθήκη αριθμού τηλεφώνου"
       ],
       "Add screenshot(s)": [
         "Προσθήκη στιγμιοτύπου/ων οθόνης"
@@ -406,6 +409,9 @@
       "Send": [
         "Αποστολή"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Κοινοποίηση"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Αναβάθμιση"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2042,12 +2057,13 @@
         "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
         "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "",
+        ""
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος.",
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και προσθήκη των συμβάντων σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη των συμβάντων σας. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη επαφών: ${ totalImported }/${ totalToImport }"
@@ -2134,8 +2150,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } από ${ totalEvents } συμβάντα δεν θα εισαχθούν. Αναπτύξτε το για λεπτομέρειες."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } από ${ totalEvents } διοργάνωση δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } διοργανώσεις δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
       ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
@@ -3192,7 +3212,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Ερχεται σύντομα)"
       ],
       "0 - Not likely": [
         "0 - Δεν είναι πιθανό"
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "Ποσό BTC:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         "Ημερολόγια"
       ],
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "Κωδικός CVV"
+      ],
+      "Date and time": [
+        ""
       ],
       "Description": [
         "Περιγραφή"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         "Διάρκεια εκδήλωσης"
       ],
-      "Event frequency": [
-        "Συχνότητα συμβάντος"
-      ],
-      "Event location": [
-        "Τοποθεσία συμβάντος"
-      ],
       "Event notifications": [
         "Ειδοποιήσεις συμβάντων"
-      ],
-      "Event time": [
-        "Ώρα Συμβάντος"
       ],
       "Event title": [
         "Τίτλος εκδήλωσης"
@@ -3334,6 +3351,9 @@
       ],
       "Folder location": [
         "Τοποθεσία φακέλου"
+      ],
+      "Frequency": [
+        ""
       ],
       "From: ${ importedEmail }": [
         "Από: ${ importedEmail }"
@@ -3374,6 +3394,9 @@
       "Last month only": [
         "Τελευταίο μήνα μόνο"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
       ],
@@ -3391,6 +3414,9 @@
       ],
       "Notification": [
         "Ειδοποίηση"
+      ],
+      "Notifications": [
+        ""
       ],
       "Operating system": [
         "Λειτουργικό σύστημα"
@@ -3477,9 +3503,6 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
-      "Time of the event": [
-        "Ώρα του συμβάντος"
-      ],
       "To: ${ emailAddress }": [
         "Προς: ${ emailAddress }"
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Ποιος είναι ο κύριος λόγος αυτής της αξιολόγησης;"
-      ],
-      "Your calendars": [
-        "Τα ημερολόγια σας"
       ],
       "ZIP": [
         "T.K"
@@ -4914,6 +4934,9 @@
       ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
+      ],
+      "Drop to upload": [
+        ""
       ],
       "Edit calendar": [
         "Επεξεργασία ημερολογίου"

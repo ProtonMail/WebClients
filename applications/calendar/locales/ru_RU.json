@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Добавить"
       ],
@@ -410,6 +413,9 @@
       "Send": [
         "Отправить"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Поделиться"
       ],
@@ -481,6 +487,12 @@
       ],
       "Update": [
         "Обновить"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Повысить"
@@ -1899,6 +1911,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Вы также можете ${ refresh } или повторить попытку позже."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2096,14 +2111,17 @@
         "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь",
         "${ totalImported }/${ totalToImport } событий зашифрованы и импортированы в ваш календарь"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } событий из ${ totalToImport } были успешно импортированы.",
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } событий из ${ totalToImport } были успешно импортированы.",
+        "",
+        ""
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано.",
         "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы.",
         "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы.",
         "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } событий из ${ totalToImport } были успешно импортированы."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифрование и добавление контактов: ${ totalImported }/${ totalToImport }"
@@ -2204,8 +2222,11 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } из ${ totalEvents } событий не будут импортированы. Разверните для получения подробной информации."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
+        "",
+        "",
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Не удалось импортировать контакты. Нажмите, чтобы узнать подробности."
@@ -3052,6 +3073,9 @@
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использован только для этой разовой проверки."
       ],
@@ -3340,6 +3364,9 @@
       "BTC amount:": [
         "Сумма BTC:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         "Календари"
       ],
@@ -3375,6 +3402,9 @@
       ],
       "CVV code": [
         "CVV-код"
+      ],
+      "Date and time": [
+        ""
       ],
       "Description": [
         "Описание"
@@ -3415,17 +3445,8 @@
       "Event duration": [
         "Длительность события"
       ],
-      "Event frequency": [
-        "Частота события"
-      ],
-      "Event location": [
-        "Место события"
-      ],
       "Event notifications": [
         "Уведомления о событии"
-      ],
-      "Event time": [
-        "Время события"
       ],
       "Event title": [
         "Название события"
@@ -3444,6 +3465,9 @@
       ],
       "Folder location": [
         "Размещение папки"
+      ],
+      "Frequency": [
+        ""
       ],
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
@@ -3484,6 +3508,9 @@
       "Last month only": [
         "Только за последний месяц"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
@@ -3501,6 +3528,9 @@
       ],
       "Notification": [
         "Уведомление"
+      ],
+      "Notifications": [
+        ""
       ],
       "Operating system": [
         "Операционная система"
@@ -3589,9 +3619,6 @@
       "System information": [
         "Сведения о системе"
       ],
-      "Time of the event": [
-        "Время события"
-      ],
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
       ],
@@ -3621,9 +3648,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Какова основная причина этой оценки?"
-      ],
-      "Your calendars": [
-        "Ваши календари"
       ],
       "ZIP": [
         "Почтовый индекс"
@@ -5107,6 +5131,9 @@
       "Downgrade account": [
         "Понизить учетную запись"
       ],
+      "Drop to upload": [
+        ""
+      ],
       "Edit calendar": [
         "Редактировать календарь"
       ],
@@ -5894,7 +5921,7 @@
         "Еженедельно в воскресенье в ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Еженедельно по воскресеньям до ${ untilString }"
+        "Еженедельно по воскресеньям, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "Еженедельно в четверг"
@@ -5973,7 +6000,7 @@
         "Ежегодно, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Ежегодно до ${ untilString }"
+        "Ежегодно ${ untilString }"
       ]
     }
   }

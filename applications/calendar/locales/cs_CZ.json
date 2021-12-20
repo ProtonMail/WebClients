@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Přidat"
       ],
@@ -410,6 +413,9 @@
       "Send": [
         "Odeslat"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Sdílet"
       ],
@@ -481,6 +487,12 @@
       ],
       "Update": [
         "Aktualizovat"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Vylepšit"
@@ -1899,6 +1911,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Můžete také ${ refresh } nebo to zkusit později."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2096,13 +2111,16 @@
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "",
         "",
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
+        "",
+        "",
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -2204,7 +2222,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } mimo ${ totalContacts } kontakty nebudou nahrané. Klikněte pro detaily"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
+        "",
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -3052,6 +3073,9 @@
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
       ],
@@ -3340,6 +3364,9 @@
       "BTC amount:": [
         "Částka BTC:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -3375,6 +3402,9 @@
       ],
       "CVV code": [
         "Kód CVV"
+      ],
+      "Date and time": [
+        ""
       ],
       "Description": [
         "Popis"
@@ -3415,17 +3445,8 @@
       "Event duration": [
         ""
       ],
-      "Event frequency": [
-        "Frekvence události"
-      ],
-      "Event location": [
-        "Místo konání události"
-      ],
       "Event notifications": [
         "Oznámení události"
-      ],
-      "Event time": [
-        "Čas"
       ],
       "Event title": [
         "Název události"
@@ -3443,6 +3464,9 @@
         "Rozšířená adresa"
       ],
       "Folder location": [
+        ""
+      ],
+      "Frequency": [
         ""
       ],
       "From: ${ importedEmail }": [
@@ -3484,6 +3508,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Heslo k e-mailové schránce"
       ],
@@ -3500,6 +3527,9 @@
         "Jméno na kartě"
       ],
       "Notification": [
+        ""
+      ],
+      "Notifications": [
         ""
       ],
       "Operating system": [
@@ -3589,9 +3619,6 @@
       "System information": [
         "Systémové informace"
       ],
-      "Time of the event": [
-        "Čas události"
-      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -3621,9 +3648,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Jaký je hlavní důvod tohoto hodnocení?"
-      ],
-      "Your calendars": [
-        ""
       ],
       "ZIP": [
         "PSČ"
@@ -5105,6 +5129,9 @@
         "Mazání kontaktů"
       ],
       "Downgrade account": [
+        ""
+      ],
+      "Drop to upload": [
         ""
       ],
       "Edit calendar": [

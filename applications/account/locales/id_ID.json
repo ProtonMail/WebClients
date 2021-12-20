@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Aktifkan kunci organisasi"
       ],
+      "Activate recovery": [
+        "Aktifkan metode pemulihan"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Atur catch-all"
+      ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
       ],
       "Share via link": [
         "Bagikan melalui tautan"
@@ -2143,8 +2149,8 @@
       "You must set a name": [
         "Anda harus menyetel nama"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ada tagihan yang lewat jatuh tempo. Mohon lunasi semua tagihan."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi semua tagihan yang belum dibayar."
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
@@ -2699,11 +2705,11 @@
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } acara dienkripsi dan ditambahkan ke kalender"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Ada kesalahan saat mengenkripsi dan menambah acara. Acara tidak dapat diimpor."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Ada kesalahan saat mengenkripsi dan menambah acara. ${ totalImported } dari ${ totalToImport } acara berhasil diimpor."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambah kontak: ${ totalImported }/${ totalToImport }"
@@ -3027,8 +3033,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } dari ${ totalEvents } acara tidak akan diimpor. Klik untuk melihat rincian lebih lanjut."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } acara dari total ${ totalEvents } acara tidak akan terimpor. Klik untuk keterangan lebih lanjut."
       ],
       "No contact can be imported. Click for details": [
         "Tidak ada kontak yang dapat diimpor. Klik untuk melihat rincian"
@@ -3173,11 +3179,8 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
-      "Activate your recovery phrase": [
-        "Aktifkan frasa pemulihan Anda"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Buat alamat surel @pm.me untuk akun Anda. Ini sederhana, kependekan dari \"ProtonMail me\" atau \"Private Message me.\""
+        "Buat alamat email khusus dengan akhiran @pm.me untuk akun Anda. Alamat email yang simpel dan sederhana ini merupakan kependekan dari \"ProtonMail me\" atau \"Private Message me.\""
       ],
       "Add a recovery email address": [
         "Tambahkan alamat email pemulihan"
@@ -3203,8 +3206,8 @@
       "Addresses": [
         "Alamat"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Setelah kata sandi Anda diatur ulang, data-data Anda akan secara otomatis dienkripsi agar keamanannya tetap terjaga. Untuk dapat kembali mengakses dan mendekripsi data-data tersebut, Anda perlu untuk mengatur suatu berkas atau frasa pemulihan."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        "Setelah kata sandi Anda diatur ulang, data-data Anda akan dikunci dan dienkripsi secara otomatis agar tetap aman."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
@@ -3226,6 +3229,12 @@
       ],
       "All your changes will be lost.": [
         "Perubahan akan hilang."
+      ],
+      "Allow recovery by email": [
+        "Izinkan pemulihan akun melalui email"
+      ],
+      "Allow recovery by phone": [
+        "Izinkan pemulihan akun melalui nomor ponsel"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Memungkinkan Anda menghosting email untuk domain Anda sendiri di ${ mailAppName }, misalnya john.smith@example.com"
@@ -3263,8 +3272,8 @@
       "Are you sure you want to delete this filter?": [
         "Yakin ingin menghapus filter ini?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Apakah Anda yakin ingin menghapus folder ini?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Apakah Anda yakin untuk menghapus folder ini? Seluruh sub-folder yang terkandung di dalam folder ini juga akan ikut terhapus."
       ],
       "Are you sure you want to delete this label?": [
         "Apakah Anda yakin ingin menghapus label ini?"
@@ -3315,13 +3324,13 @@
         "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
       ],
       "Billed as ${ billedPrice } every 2 years": [
-        "Ditagih ${ billedPrice } setiap 2 tahun"
+        "Tertagih dengan harga ${ billedPrice } per 2 tahunnya"
       ],
       "Billed as ${ billedPrice } per year": [
-        "Ditagih ${ billedPrice } per tahun"
+        "Tertagih dengan harga ${ billedPrice } per tahunnya"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Ditagih pada akhir siklus penagihan Anda saat ini (diperbarui pada ${ renewalDate })"
+        "Tertagih pada akhir siklus penagihan Anda saat ini (diperbarui pada ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
@@ -3464,14 +3473,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Proses penurunan akun akan mematikan koneksi apapun ke server ProtonVPN berbayar."
       ],
+      "Download recovery file": [
+        "Unduh berkas pemulihan"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit anda hari ini dan bawa privasi kemana pun anda pergi."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Unduh kunci PGP Anda untuk menggunakannya dengan layanan PGP lain."
-      ],
-      "Download your recovery file": [
-        "Unggah berkas pemulihan Anda"
       ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
@@ -3549,16 +3558,16 @@
         "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
       ],
       "For families and small teams; includes both Mail and VPN.": [
-        "Untuk keluarga dan tim kecil; termasuk Mail dan VPN."
+        "Untuk keluarga dan tim kecil; dengan Mail dan VPN yang terbundel di dalamnya."
       ],
       "For getting started with private and secure emailing.": [
         "Untuk memulai pengiriman surel dengan privat dan aman."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Untuk individu yang membutuhkan sebuah kotak surat berfitur lengkap dengan perlindungan tingkat lanjut."
+        "Untuk para individu yang membutuhkan sebuah kotak surat berfitur lengkap dengan perlindungan keamanan mutakhir."
       ],
       "For professionals that need secure business communications.": [
-        "Untuk profesional yang membutuhkan komunikasi bisnis yang aman."
+        "Untuk para profesional yang membutuhkan komunikasi bisnis yang aman."
       ],
       "For security reasons, please verify that you are not a robot.": [
         "Demi alasan keamanan, harap verifikasi bahwa Anda bukan robot."
@@ -3576,7 +3585,7 @@
         "kosongkan ruang dengan menghapus pesan lama atau data lainnya"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
-        "VPN berfitur penuh dengan kecepatan hingga 10 Gbps."
+        "VPN berfitur lengkap dengan kecepatan koneksi hingga 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
@@ -3905,6 +3914,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Administrator lain ada di organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru kepada mereka."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        "Berkas pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        "Metode pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        "Frasa pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4085,6 +4103,9 @@
       "Session timed out.": [
         "Sesi habis."
       ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda adalah pengguna yang loyal, akun Anda memiliki fitur-fitur tambahan yang diaktifkan."
       ],
@@ -4220,6 +4241,15 @@
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh berkas atau frasa keamanan."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh berkas keamanan."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh frasa keamanan."
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Untuk dapat mendekripsi dan mengakses data-data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
       ],
@@ -4274,6 +4304,12 @@
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
+      "Update recovery file": [
+        "Perbarui berkas pemulihan"
+      ],
+      "Update recovery phrase": [
+        "Perbarui frasa pemulihan"
+      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Tingkatkan akun Anda ke ${ PLAN_NAMES[PLANS.VISIONARY] } atau ${ PLAN_NAMES[PLANS.PROFESSIONAL] } agar Anda dapat membalas email-email yang masuk secara otomatis di kala Anda sedang tidak berada di kantor."
       ],
@@ -4314,7 +4350,7 @@
         "Verifikasi akan berjalan di tab baru. Mohon nonaktifkan pemblokir popup."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verifikasi akan berjalan di tab baru. Mohon nonaktifkan pemblokir popup. Anda tidak akan ditagih. Jumlah yang ditarik untuk verifikasi kartu langsung dikembalikan."
+        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup Anda. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
       ],
       "Version ${ appVersion }": [
         "Versi ${ appVersion }"
@@ -5937,7 +5973,7 @@
     },
     "Mail feature": {
       "0.5 GB": [
-        "0,5 GB"
+        "0.5 GB"
       ],
       "20 GB": [
         "20 GB"
@@ -6316,7 +6352,7 @@
         "Pilih nama tampilan"
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
+        "Kelola organisasi Anda, tautkan nama domain Anda, dan buat akun-akun bagi para karyawan Anda agar seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all Proton services": [
         "Temukan semua layanan Proton"
@@ -6747,7 +6783,7 @@
     },
     "Plan feature": {
       "0.5 GB storage": [
-        "Penyimpanan 0.5 GB"
+        "Kuota penyimpanan 0.5 GB"
       ],
       "1 - 5000 users *": [
         "1 - 5000 pengguna *"
@@ -6774,10 +6810,10 @@
         "5 alamat / pengguna"
       ],
       "5 GB storage *": [
-        "Penyimpanan 5 GB *"
+        "Kuota penyimpanan 5 GB *"
       ],
       "5 GB storage / user": [
-        "Penyimpanan 5 GB / pengguna"
+        "Kuota penyimpanan 5 GB / pengguna"
       ],
       "50 addresses": [
         "50 alamat"
@@ -6807,7 +6843,7 @@
         "Kecepatan tinggi"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "Kecepatan tertinggi (sampai 10 Gbps)"
+        "Kecepatan tertinggi (hingga 10 Gbps)"
       ],
       "Includes 6 user accounts": [
         "Termasuk 6 akun pengguna"
@@ -7163,8 +7199,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } tersalin di papan klip Anda"
+      "${ server.Domain } copied to your clipboard": [
+        "${ server.Domain } disalin ke clipboard Anda"
       ],
       "Account deleted. Logging out...": [
         "Akun dihapus. Keluar akun..."
@@ -8381,7 +8417,7 @@
         "Mendukung protokol berbagi berkas seperti BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        "Subfolder sistem akan muncul di folder terpisah di ProtonMail"
+        "Sub-folder milik sistem akan muncul sebagai folder terpisah di ProtonMail"
       ],
       "The import will start with the most recent messages.": [
         "Import akan dimulai dengan pesan terbaru."
@@ -8622,7 +8658,7 @@
         "Akses konten yang diblokir secara geografis (Netflix, Youtube, dll.)"
       ],
       "Higher speed servers (up to 10Gbps)": [
-        "Kecepatan server lebih tinggi (hingga 10Gbps)"
+        "Server-server berkecepatan lebih tinggi (hingga 10Gbps)"
       ],
       "Unlock advanced VPN features": [
         "Buka kunci fitur VPN lanjutan"
@@ -8727,11 +8763,11 @@
       "You will not see this import record in the list anymore.": [
         "Anda tidak akan lagi melihat rekaman impor ini di daftar."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
-        "Berkas pemulihan Anda telah kedaluwarsa dan sudah tidak lagi dapat digunakan untuk memulihkan data-data baru apabila akun Anda kembali diatur ulang ke depannya."
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
+        "Berkas pemulihan Anda telah kedaluwarsa. Berkas ini sudah tidak lagi dapat digunakan untuk memulihkan data-data baru apabila akun Anda kembali diatur ulang ke depannya."
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
-        "Frasa pemulihan Anda telah kedaluwarsa dan sudah tidak lagi dapat digunakan untuk memulihkan data-data baru apabila akun Anda kembali diatur ulang ke depannya."
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        "Frasa pemulihan Anda telah kedaluwarsa. Frasa ini sudah tidak lagi dapat digunakan untuk memulihkan data-data baru apabila akun Anda kembali diatur ulang ke depannya."
       ]
     },
     "Warning for domain modal": {

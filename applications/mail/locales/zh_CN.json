@@ -14,17 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Accept": [
-        "接受"
-      ],
       "Activate": [
         "激活"
+      ],
+      "Activate recovery": [
+        "激活恢复"
       ],
       "Add": [
         "添加"
       ],
       "Add address": [
-        ""
+        "添加地址"
       ],
       "Add condition": [
         "添加条件"
@@ -33,7 +33,7 @@
         "添加联系人"
       ],
       "Add email": [
-        ""
+        "添加电子邮箱"
       ],
       "Add group": [
         "添加群组"
@@ -44,8 +44,11 @@
       "Add new group": [
         "添加新群组"
       ],
-      "Add phone number": [
+      "Add participant": [
         ""
+      ],
+      "Add phone number": [
+        "添加电话号码"
       ],
       "Add screenshot(s)": [
         "添加屏幕截图"
@@ -111,7 +114,7 @@
         "抄送、密送"
       ],
       "CC BCC": [
-        ""
+        "抄送／密送"
       ],
       "Change page": [
         "页面跳转"
@@ -179,8 +182,8 @@
       "Confirm": [
         "确定"
       ],
-      "Confirm opening of link ${ link }": [
-        "确认打开链接 ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "联系人群组"
@@ -225,7 +228,7 @@
         "减少"
       ],
       "Default email application": [
-        ""
+        "设为默认邮件应用"
       ],
       "Delete": [
         "删除"
@@ -270,7 +273,7 @@
         "放弃"
       ],
       "Dismiss get started checklist": [
-        ""
+        "忽略开始入门清单"
       ],
       "Done": [
         "完成"
@@ -315,7 +318,7 @@
         "展开编辑窗"
       ],
       "Expand URL": [
-        ""
+        "展开"
       ],
       "Export": [
         "导出"
@@ -324,7 +327,7 @@
         "导出联系人"
       ],
       "Fewer search options": [
-        ""
+        "较少搜索选项"
       ],
       "Filter on...": [
         "筛选依据..."
@@ -423,7 +426,7 @@
         "插入联系人"
       ],
       "Insert contacts": [
-        ""
+        "插入联系人"
       ],
       "Insert image": [
         "插入图片"
@@ -738,10 +741,13 @@
         "设置"
       ],
       "Set as default": [
-        ""
+        "设为默认"
       ],
       "Set expiration time": [
-        ""
+        "设置有效期"
+      ],
+      "Set recovery phrase": [
+        "设置恢复密语"
       ],
       "Share via link": [
         "通过链接分享"
@@ -762,7 +768,7 @@
         "显示详情"
       ],
       "Show fewer search options": [
-        ""
+        "显示较少搜索选项"
       ],
       "Show folders": [
         "显示文件夹"
@@ -813,16 +819,13 @@
         "切换账户"
       ],
       "Switch to rich text": [
-        ""
+        "切换为富文本"
       ],
       "Theme": [
         "配色"
       ],
       "This message contains embedded images.": [
         "此邮件含有嵌入图像。"
-      ],
-      "This message contains remote content.": [
-        "此邮件含有外链内容。"
       ],
       "Trust": [
         "信任"
@@ -840,7 +843,7 @@
         "更换验证方式"
       ],
       "Turn on tracker protection": [
-        ""
+        "开启追踪保护"
       ],
       "Underline": [
         "下划线"
@@ -864,7 +867,13 @@
         "取消信任"
       ],
       "Update": [
-        ""
+        "更改"
+      ],
+      "Update recovery file": [
+        "更新恢复文件"
+      ],
+      "Update recovery phrase": [
+        "更新恢复密语"
       ],
       "Upgrade": [
         "升级"
@@ -961,6 +970,17 @@
         "您没有任何群组"
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } 个邮箱地址"
@@ -1017,7 +1037,7 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
         ""
       ]
     },
@@ -1300,6 +1320,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " 此回复与您的邀请详细信息不符，请验证您日历中的邀请详情。"
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 接受了您参加一次该活动的邀请，并为其提议了一个新时间。"
       ],
@@ -1321,6 +1353,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } 请求对您日历中已不存在的活动进行最新更新。"
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 拒绝了您参加一次该活动的邀请，并为其提议了一个新时间。"
       ],
@@ -1333,11 +1377,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } 拒绝了邀请。"
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已接受了您参加一次该活动的邀请，并为其提议了一个新时间。回复和提议已过期。"
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } 已接受了您参加该活动的邀请，并为其提议了一个新时间。回复和提议已过期。"
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已拒绝了您参加一次该活动的邀请，并为其提议了一个新时间。回复和提议已过期。"
@@ -1381,17 +1449,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } 已为该活动提议了一个新时间。该提议已过期，您没有日历。"
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已暂时接受了您参加一次该活动的邀请，并为其提议了一个新时间。回复和提议已过期。"
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } 已暂时接受了您参加该活动的邀请，并为其提议了一个新时间。回复和提议已过期。"
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } 为一次该活动提议了一个新时间。"
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } 为此事件提议了一个新的时间。"
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 暂时接受了您参加一次该活动的邀请，并为其提议了一个新时间。"
@@ -1409,37 +1504,28 @@
         "（出席可选）"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        ""
+        "暂不支持增加事件的重复次数"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "一次活动已添加到活动 ${ veventIcsTitle }"
-      ],
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
+        "事件 ${ veventIcsTitle } 已新增一次"
       ],
       "Event refreshing is not supported for the moment": [
-        ""
+        "暂不支持活动刷新"
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        ""
+        "暂不支持重新安排活动"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        ""
+        "此回复无法添加到 ${ calendarAppName } 中，因为目前仅支持对全系列事件的回复"
       ],
       "This event has been canceled.": [
-        ""
+        "此活动已被取消。"
       ],
       "This event has been updated.": [
         "此事项已被更新。"
       ],
       "This invitation is out of date. The event has been canceled.": [
-        ""
+        "此邀请已过期，活动已被取消。"
       ],
       "This invitation is out of date. The event has been deleted.": [
         "此邀请已过期，活动已被删除。"
@@ -1466,7 +1552,7 @@
         "您已暂时接受了此邀请。"
       ],
       "Your email address is not in the participants list": [
-        ""
+        "您的邮箱地址不在参与者列表中"
       ]
     },
     "Calendar status": {
@@ -1479,19 +1565,19 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "未能解密日历"
       ],
       "Calendar is syncing": [
         "日历正在同步中"
       ],
       "Calendar is too big": [
-        ""
+        "日历文件太大"
       ],
       "Calendar link is not accessible": [
         "日历链接不能被访问"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "日历链接暂时无法访问"
       ],
       "Calendar link is wrong": [
         "日历链接错误"
@@ -1503,12 +1589,20 @@
         "离上一个更新已经超过了12小时"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
+    "Calendar widget banner": {
+      "Event already ended": [
         ""
       ],
-      "Open": [
+      "Event in progress": [
         ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "关闭"
+      ],
+      "Open": [
+        "打开"
       ]
     },
     "Composer email icon": {
@@ -1837,7 +1931,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } 已被取消。"
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已更新。\n{ eventDetailsText }"
@@ -1874,23 +1968,17 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event is tomorrow": [
-        ""
+        "明天的活动"
       ],
       "Event starting now": [
-        ""
+        "活动现在开始"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        ""
+        "活动将在 ${ minutesUntilEvent } 分钟后开始"
       ],
       "Event starts tomorrow": [
-        ""
+        "活动将于明天进行"
       ]
     },
     "Email reminder decryption error": {
@@ -1908,10 +1996,10 @@
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        ""
+        "活动已取消"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        ""
+        "活动已更新，此提醒已过期。"
       ]
     },
     "Email subject": {
@@ -2127,7 +2215,7 @@
         ""
       ],
       "No data to import": [
-        ""
+        "没有要导入的数据"
       ],
       "No key retrieved for internal user is valid for sending": [
         "没有为内部用户检索到的密钥用于发送"
@@ -2181,10 +2269,10 @@
         "请刷新页面。"
       ],
       "Please repeat the password": [
-        ""
+        "请重新输入密码"
       ],
       "Please set a password": [
-        ""
+        "请设置密码"
       ],
       "Preferences could not be saved": [
         "设置保存失败"
@@ -2352,7 +2440,24 @@
         "搜索结果过多，请缩小搜索范围后再试。"
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "无法执行此操作"
       ]
@@ -2443,7 +2548,7 @@
         "缺少启动时间"
       ],
       "No UID, title or start time": [
-        ""
+        "没有 UID、标题或开始时间"
       ],
       "Non-Gregorian": [
         "非格里历"
@@ -2455,7 +2560,7 @@
         "找不到原始重复事件"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "重复事件没有发生"
       ],
       "Recurring rule not supported": [
         "不支持重复规则"
@@ -2512,12 +2617,17 @@
         "没有选择图像"
       ]
     },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "无法解密附加的 ICS 文件"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "无法读取 ICS 附件"
       ],
       "Invalid invitation": [
         "邀请无效"
@@ -2676,15 +2786,21 @@
         ""
       ],
       "You're all set!": [
-        ""
+        "一切就绪！"
       ]
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         ""
       ],
+      "Expires soon": [
+        "即将到期"
+      ],
+      "Expires today": [
+        "今天到期"
+      ],
       "Only ${ days } day left": [
-        ""
+        "仅剩 ${ days } 天"
       ]
     },
     "Get started checklist instructions": {
@@ -2692,7 +2808,7 @@
         ""
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "下载 ${ protonMailAppName } 移动应用"
       ],
       "Import contacts or emails": [
         ""
@@ -2731,7 +2847,7 @@
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "开始入门"
       ]
     },
     "Group": {
@@ -2801,7 +2917,7 @@
     },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
-        ""
+        "${ totalAttendees } 个参与者"
       ],
       "Organizer:": [
         "组织者："
@@ -3125,8 +3241,8 @@
       "Are you sure you want to permanently delete this message?": [
         "确定要永久删除此邮件吗？"
       ],
-      "Attach Public Key": [
-        "附上公钥"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "背景颜色"
@@ -3171,7 +3287,7 @@
         "正在检查联系人 ${ progress } / ${ max }..."
       ],
       "Clear data": [
-        ""
+        "清除数据"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "清除浏览器数据还会停用此设备的邮件内容搜索，需要重新下载所有邮件后才能进行搜索。"
@@ -3294,7 +3410,7 @@
         "邮箱地址"
       ],
       "Email tracker protection is disabled": [
-        ""
+        "已禁用电子邮件跟踪保护"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
         ""
@@ -3495,7 +3611,7 @@
         "管理您的标签"
       ],
       "members": [
-        ""
+        "成员"
       ],
       "Members": [
         "成员"
@@ -3692,8 +3808,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "您举报的邮件会被上传，以便我们分析并改进过滤机制。这意味着我们将得知此邮件的所有内容。"
       ],
-      "Request Read Receipt": [
-        "请求回执"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "从右到左"
@@ -4196,7 +4312,7 @@
         "（测试版）"
       ],
       "Optional": [
-        ""
+        "可选"
       ]
     },
     "Info concerning plan features": {
@@ -4465,7 +4581,7 @@
         "${ firstAddress } 及其他 ${ count } 位"
       ],
       "(Coming soon)": [
-        ""
+        "（即将推出）"
       ],
       "Actions": [
         "操作"
@@ -4521,8 +4637,11 @@
       "BTC amount:": [
         "比特币金额："
       ],
+      "Calendar": [
+        "日历"
+      ],
       "Calendars": [
-        ""
+        "日历"
       ],
       "Cancel": [
         "取消"
@@ -4552,10 +4671,10 @@
         "条件"
       ],
       "Confirm password": [
-        ""
+        "确认密码"
       ],
       "Contacts": [
-        ""
+        "通信录"
       ],
       "Copy": [
         "复制"
@@ -4597,7 +4716,7 @@
         "加密电子邮件"
       ],
       "Enter organization name to confirm": [
-        ""
+        "请输入机构名称进行确认"
       ],
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
@@ -4620,6 +4739,9 @@
       "Folder location": [
         "文件夹位置"
       ],
+      "Frequency": [
+        "重复频率"
+      ],
       "From": [
         "发件人"
       ],
@@ -4627,7 +4749,7 @@
         "发件人："
       ],
       "From: ${ importedEmail }": [
-        ""
+        "来自：${ importedEmail }"
       ],
       "Group": [
         "群组"
@@ -4642,16 +4764,16 @@
         "如果"
       ],
       "Import all messages": [
-        ""
+        "导入所有邮件"
       ],
       "Import contacts": [
         "导入联系人"
       ],
       "Import interval": [
-        ""
+        "导入间隔"
       ],
       "Import to email address": [
-        ""
+        "导入到邮箱地址"
       ],
       "Keyboard shortcuts": [
         "快捷键"
@@ -4663,37 +4785,40 @@
         "加标签"
       ],
       "Label messages as": [
-        ""
+        "给导入的邮件加标签"
       ],
       "Labels:": [
         "标记："
       ],
       "Last 12 months only": [
-        ""
+        "仅过去 12 个月"
       ],
       "Last 3 months only": [
-        ""
+        "仅过去 3 个月"
       ],
       "Last month only": [
-        ""
+        "仅上个月"
+      ],
+      "Location": [
+        "位置"
       ],
       "Mailbox password": [
         "邮箱密码"
       ],
       "Manage folders": [
-        ""
+        "管理文件夹"
       ],
       "Manage labels": [
-        ""
+        "管理标签"
       ],
       "Manage my addresses": [
-        ""
+        "管理邮箱地址"
       ],
       "Mark as": [
         "标为"
       ],
       "Message password": [
-        ""
+        "邮件密码"
       ],
       "Move to": [
         "移至"
@@ -4725,17 +4850,20 @@
       "Or": [
         "或"
       ],
+      "Participants": [
+        "参与者"
+      ],
       "Password": [
         "密码"
       ],
       "Password hint": [
-        ""
+        "密码提示"
       ],
       "Payer": [
         "付款人"
       ],
       "PGP scheme": [
-        ""
+        "PGP 方案"
       ],
       "Phone number": [
         "电话号码"
@@ -4840,7 +4968,7 @@
         "收件人："
       ],
       "To: ${ emailAddress }": [
-        ""
+        "导入到：${ emailAddress }"
       ],
       "Total": [
         "合计"
@@ -4849,7 +4977,7 @@
         "合计（${ countdown }）"
       ],
       "Two-factor authentication code": [
-        "双重认证验证码"
+        "双重验证码"
       ],
       "Undisclosed Recipients": [
         "非公开收件人"
@@ -5099,24 +5227,24 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        ""
+        "在 ${ CALENDAR_APP_NAME } 中打开"
       ]
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        ""
+        "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
       ],
       "Almost there": [
-        ""
+        "就快好了"
       ],
       "Creating new calendars": [
-        ""
+        "正在创建新日历"
       ],
       "Gathering your data": [
-        ""
+        "正在收集您的数据"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "我们正在加紧从您的提供商那里收集您的数据"
       ],
       "Your import is starting": [
         "您的导入已开始"
@@ -5241,7 +5369,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "这将永久删除与您的组织相关的所有子用户、账户和数据。"
       ]
     },
     "Message": {
@@ -5539,10 +5667,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "创建新日历"
       ],
       "Merge with calendar": [
-        ""
+        "与日历合并"
       ]
     },
     "Participant name": {
@@ -5582,7 +5710,7 @@
         "浏览器版本"
       ],
       "Confirm password": [
-        ""
+        "确认密码"
       ],
       "e.g. Julia Smith": [
         "例如：Julia Smith"
@@ -5916,7 +6044,7 @@
         "没有找到邮件"
       ],
       "No messages scheduled": [
-        ""
+        "无定时发送的邮件"
       ],
       "No results found": [
         "搜索无结果"
@@ -6037,7 +6165,7 @@
     },
     "Spotlight": {
       "Message Content Search": [
-        ""
+        "邮件内容搜索"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         ""
@@ -6073,7 +6201,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "免费获取额外的存储空间"
       ],
       "Release notes": [
         "版本说明"
@@ -6099,13 +6227,13 @@
         "${ elementsCount } 条会话已添加 ${ labelName } 标签。"
       ],
       "${ elementsCount } conversation marked as read.": [
-        ""
+        "${ elementsCount } 条会话已标记为已读。"
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } 条会话已加星标。"
       ],
       "${ elementsCount } conversation marked as unread.": [
-        ""
+        "${ elementsCount } 条会话已标记为未读。"
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
         "${ elementsCount } 条会话已移至${ folderName }，其发件人已添加至白名单。"
@@ -6123,13 +6251,13 @@
         "${ elementsCount } 封邮件已添加 ${ labelName } 标签。"
       ],
       "${ elementsCount } message marked as read.": [
-        ""
+        "${ elementsCount } 封邮件已标记为已读。"
       ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } 封邮件已加星标。"
       ],
       "${ elementsCount } message marked as unread.": [
-        ""
+        "${ elementsCount } 封邮件已标记为未读。"
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
         "${ elementsCount } 封邮件已移至${ folderName }，其发件人已添加至白名单。"
@@ -6174,13 +6302,13 @@
         "会话已删除"
       ],
       "Conversation marked as read.": [
-        ""
+        "会话已标记为已读。"
       ],
       "Conversation marked as Starred.": [
-        ""
+        "会话已加星标。"
       ],
       "Conversation marked as unread.": [
-        ""
+        "会话已标记为未读。"
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
         "会话已移至${ folderName }，其发件人已添加至白名单。"
@@ -6231,13 +6359,13 @@
         "邮件已标为非垃圾邮件"
       ],
       "Message marked as read.": [
-        ""
+        "邮件已标记为已读。"
       ],
       "Message marked as Starred.": [
-        ""
+        "邮件已加星标。"
       ],
       "Message marked as unread.": [
-        ""
+        "邮件已标记为未读。"
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
         "邮件已移至${ folderName }，其发件人已添加至白名单。"
@@ -6354,13 +6482,13 @@
         ""
       ],
       "the last 12 months": [
-        ""
+        "最近 12 个月"
       ],
       "the last 3 months": [
-        ""
+        "最近 3 个月"
       ],
       "the last month": [
-        ""
+        "上个月"
       ]
     },
     "Time unit": {
@@ -6588,6 +6716,9 @@
       "Email addresses": [
         "邮箱地址"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "邮件设置"
       ],
@@ -6654,9 +6785,6 @@
       "Link confirmation": [
         "确认打开链接"
       ],
-      "Load embedded images": [
-        "加载嵌入图像"
-      ],
       "Load remote content": [
         "加载外链内容"
       ],
@@ -6703,7 +6831,7 @@
         "移至废件箱"
       ],
       "Moving a scheduled message": [
-        ""
+        "正在移动定时发送邮件"
       ],
       "Network error": [
         "网络错误"
@@ -6775,7 +6903,7 @@
         "重新签署联系人"
       ],
       "Recipient missing": [
-        ""
+        "未填写收件人"
       ],
       "Recover data": [
         "恢复数据"
@@ -6790,7 +6918,7 @@
         "反馈问题"
       ],
       "Request new code": [
-        ""
+        "请求新验证码"
       ],
       "Schedule send": [
         "定时发送"
@@ -6834,6 +6962,9 @@
       "Sign in again to continue": [
         "此操作需要重新登录"
       ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
+      ],
       "Sort conversations": [
         "会话排序"
       ],
@@ -6844,7 +6975,7 @@
         "存储容量警告"
       ],
       "Subject missing": [
-        ""
+        "未填写主题"
       ],
       "Subtotal": [
         "小计"
@@ -6897,7 +7028,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "今天"
       ]
     },
     "Tooltip": {
@@ -7107,13 +7238,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        ""
+        "${ n } 台服务器"
       ],
       "${ n } VPN connection": [
         ""
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        ""
+        "${ numberOfCountries } 个国家的 ${ numberOfServers }"
       ]
     },
     "Warning": {
@@ -7142,7 +7273,7 @@
         "请注意，使用此方式支付不能立即完成账户升级，支付确认过后我们会马上为您升级账户。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
@@ -7154,7 +7285,7 @@
         "该附件的签名验证失败。\n你仍然可以下载这个附件，但它可能被篡改了。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "联系人数据损坏，无法显示。"
       ],
       "The contact failed to load.": [
         "联系人加载失败"

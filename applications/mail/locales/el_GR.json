@@ -14,17 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Accept": [
-        "Αποδοχή"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Προσθήκη"
       ],
       "Add address": [
-        ""
+        "Προσθήκη διεύθυνσης"
       ],
       "Add condition": [
         "Προσθήκη συνθήκης"
@@ -33,7 +33,7 @@
         "Προσθήκη επαφής"
       ],
       "Add email": [
-        ""
+        "Προσθήκη email"
       ],
       "Add group": [
         "Προσθήκη ομάδας"
@@ -44,8 +44,11 @@
       "Add new group": [
         "Προσθήκη νέας ομάδας"
       ],
-      "Add phone number": [
+      "Add participant": [
         ""
+      ],
+      "Add phone number": [
+        "Προσθήκη αριθμού τηλεφώνου"
       ],
       "Add screenshot(s)": [
         "Προσθήκη στιγμιοτύπου/ων οθόνης"
@@ -179,8 +182,8 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
-      "Confirm opening of link ${ link }": [
-        "Επιβεβαίωση ανοίγματος συνδέσμου ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Ομάδα Επαφών"
@@ -746,6 +749,9 @@
       "Set expiration time": [
         "Ορισμός χρόνου λήξης"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
       ],
@@ -824,9 +830,6 @@
       "This message contains embedded images.": [
         "Αυτό το μήνυμα περιέχει ενσωματωμένες εικόνες."
       ],
-      "This message contains remote content.": [
-        "Αυτό το μήνυμα περιέχει απομακρυσμένο περιεχόμενο."
-      ],
       "Trust": [
         "Αξιόπιστο"
       ],
@@ -869,6 +872,12 @@
       ],
       "Update": [
         "Ενημέρωση"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -965,6 +974,17 @@
         "Δεν έχετε καμία ομάδα."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } διεύθυνση email",
@@ -1025,8 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems } από ${ totalNumberOfChecklistItems } ολοκληρώθηκαν"
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "",
+        ""
       ]
     },
     "Apps dropdown": {
@@ -1308,6 +1329,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Αυτή η απάντηση δεν ταιριάζει με τα στοιχεία πρόσκλησής σας. Παρακαλώ επιβεβαιώστε τα στοιχεία πρόσκλησης στο ημερολόγιό σας."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αποδέχθηκε την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
@@ -1329,6 +1362,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "Ο/Η ${ participantName } ζήτησε τις τελευταίες ενημερώσεις για μια εκδήλωση που δεν υπάρχει πλέον στο ημερολόγιό σας."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αρνήθηκε την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
@@ -1341,11 +1386,35 @@
       "${ participantName } declined your invitation.": [
         "Ο/Η ${ participantName } αρνήθηκε την πρόσκλησή σας."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για αυτήν την εκδήλωση. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αρνηθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
@@ -1389,17 +1458,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "Ο/Η ${ participantName } είχε προτείνει μια νέα ώρα για αυτήν την εκδήλωση. Η ημ/νία αυτής της πρότασης έχει παρέλθει. Δεν έχετε ημερολόγια."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί με επιφύλαξη την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί με επιφύλαξη την πρόσκλησή σας και πρότεινε μια νέα ώρα για αυτήν την εκδήλωση. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
       "${ participantName } proposed a new time for this event.": [
         "Ο/Η ${ participantName } πρότεινε μια νέα ώρα για αυτήν την εκδήλωση."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αποδέχθηκε με επιφύλαξη την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
@@ -1422,20 +1518,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Προστέθηκε μια διοργάνωση στην εκδήλωση ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        "Η εκδήλωση ήδη τελείωσε"
-      ],
-      "Event in progress": [
-        "Εκδήλωση σε εξέλιξη"
-      ],
       "Event refreshing is not supported for the moment": [
         "Για την ώρα δεν υποστηρίζεται ανανέωση εκδήλωσης"
       ],
       "Event rescheduling is not supported for the moment": [
         "Για την ώρα δεν υποστηρίζεται επαναπρογραμματισμός εκδήλωσης"
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "Ο αποστολέας αυτού του μηνύματος δεν έχει προσκληθεί σε αυτήν την εκδήλωση και δεν μπορεί να προστεθεί ως συμμετέχων"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Αυτή η απάντηση δεν μπορεί να προστεθεί στο ${ calendarAppName }, καθώς για την ώρα υποστηρίζουμε απαντήσεις μόνο σε όλες τις εκδηλώσεις μιας σειράς"
@@ -1509,6 +1596,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
       ]
     },
     "Collapsible tooltip": {
@@ -1889,12 +1984,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        "Η εκδήλωση ήδη τελείωσε"
-      ],
-      "Event in progress": [
-        "Εκδήλωση σε εξέλιξη"
-      ],
       "Event is tomorrow": [
         "Η εκδήλωση είναι αύριο"
       ],
@@ -2378,7 +2467,24 @@
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Αυτή η ενέργεια δεν μπορεί να εκτελεστεί"
       ]
@@ -2536,6 +2642,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Δεν επιλέχθηκε εικόνα"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2708,6 +2819,12 @@
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         "Κάντε όλα τα βήματα και αποκτήστε συνολικά ${ totalGBStorageAfterCompletion } GB στον λογαριασμό σας"
+      ],
+      "Expires soon": [
+        "Λήγει σύντομα"
+      ],
+      "Expires today": [
+        "Λήγει σήμερα"
       ],
       "Only ${ days } day left": [
         "Απομένει μόνο ${ days } ημέρα",
@@ -3192,8 +3309,8 @@
       "Are you sure you want to permanently delete this message?": [
         "Είστε σίγουροι πως θέλετε να διαγράψετε αυτό το μήνυμα για πάντα;"
       ],
-      "Attach Public Key": [
-        "Επισύναψη Δημόσιου Κλειδιού"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "Χρώμα φόντου"
@@ -3770,8 +3887,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Η αναφορά ενός μηνύματος ως προσπάθεια ηλεκτρονικού \"ψαρέματος\" (phising) θα το αποστείλει σε εμάς, ώστε να το αναλύσουμε και να βελτιώσουμε τα φίλτρα μας. Αυτό σημαίνει ότι θα μπορέσουμε να δούμε το περιεχόμενο ολόκληρου του μηνύματος."
       ],
-      "Request Read Receipt": [
-        "Αίτημα Απόδειξης Ανοίγματος"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "Δεξιά προς τα αριστερά"
@@ -4554,7 +4671,7 @@
         "${ firstAddress } και ${ count } άλλα"
       ],
       "(Coming soon)": [
-        ""
+        "(Ερχεται σύντομα)"
       ],
       "Actions": [
         "Ενέργειες"
@@ -4609,6 +4726,9 @@
       ],
       "BTC amount:": [
         "Ποσό BTC:"
+      ],
+      "Calendar": [
+        ""
       ],
       "Calendars": [
         "Ημερολόγια"
@@ -4709,6 +4829,9 @@
       "Folder location": [
         "Τοποθεσία φακέλου"
       ],
+      "Frequency": [
+        ""
+      ],
       "From": [
         "Από"
       ],
@@ -4766,6 +4889,9 @@
       "Last month only": [
         "Τελευταίο μήνα μόνο"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
       ],
@@ -4813,6 +4939,9 @@
       ],
       "Or": [
         "Ή"
+      ],
+      "Participants": [
+        ""
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -6727,6 +6856,9 @@
       "Email addresses": [
         "Διευθύνσεις Email"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
@@ -6792,9 +6924,6 @@
       ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
-      ],
-      "Load embedded images": [
-        "Φόρτωση ενσωματωμένων εικόνων"
       ],
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
@@ -6972,6 +7101,9 @@
       ],
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Ταξινόμηση συνομιλιών"

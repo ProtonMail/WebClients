@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Ir para as definições"
       ],
-      "Grid layout": [
-        "Grelha"
-      ],
       "Hide advanced PGP settings": [
         "Ocultar definições de PGP avançadas"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Atalhos de teclado"
-      ],
-      "List layout": [
-        "Lista"
       ],
       "Load image": [
         "Carregar imagem"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Seleccionar plano"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Partilhar"
       ],
@@ -464,9 +464,6 @@
         "Mostrar informação"
       ],
       "Show labels": [
-        ""
-      ],
-      "Show shared link details": [
         ""
       ],
       "Sign out": [
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Não confiar"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Actualizar"
@@ -1128,10 +1131,19 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1139,6 +1151,12 @@
       ],
       "File has no contents to preview": [
         "O ficheiro não tem conteúdo para antever"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         ""
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "a transferir ${ activeDownloadsCount }, ${ downloadProgress }%",
-        "a transferir ${ activeDownloadsCount }, ${ downloadProgress }%"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "a enviar ${ activeUploadsCount }, ${ uploadProgress }%",
-        "a enviar ${ activeUploadsCount }, ${ uploadProgress }%"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de email",
@@ -1597,9 +1619,9 @@
         "",
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } cancelado",
-        "${ canceledCount } cancelado"
+      "${ canceledCount } canceled": [
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } contém vários endereços de email. Por favor, seleccione qual ou quais os endereços a adicionar a este grupo."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } terminado",
-        "${ doneCount } terminado"
+      "${ doneCount } finished": [
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } transferido",
-        "${ doneDownloadsCount } transferido"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } enviado",
-        "${ doneUploadsCount } enviado"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } falhado",
-        "${ errorCount } falhado"
+      "${ errorCount } failed": [
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
@@ -1658,9 +1680,9 @@
         "",
         ""
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } pausado",
-        "${ pausedCount } pausado"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na sua subscrição mudando para ${ annualBilling }"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Qualquer pessoa com esta ligação terá acesso ao ficheiro."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tem a certeza de que deseja esvaziar o lixo e eliminar permanentemente todos os itens?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "A criar ligação ao ficheiro"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         ""
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Só as pessoas com a ligação e a senha podem aceder ao ficheiro."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Em pausa"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "A preparar ligação ao ficheiro"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Antever"
@@ -2275,7 +2309,10 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "A ligação será permanentemente desactivada. Ninguém poderá aceder ao ficheiro com ela. Para voltar a partilhá-lo, precisará de uma nova ligação."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "",
         ""
       ],
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Os seus ficheiros serão encriptados e gravados."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Grupo de contactos actualizado"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "Falha ao mover, por favor tente novamente"
       ],
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Esvaziar lixo"
       ],
-      "Enter file password to download": [
-        "Insira a senha do ficheiro para a transferência"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Insira a sua senha"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Os meus ficheiros"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Nome"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "O seu ficheiro está pronto para ser transferido"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "Código postal"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Aceda a conteúdo geo-bloqueado (Netflix, Amazon Prime Vídeo, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) não importa onde esteja."
-      ],
-      "Active sharing link": [
-        "Ligação de partilha activa"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é usado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Dados encriptados com assinatura digital verificada"
       ],
-      "Expired sharing link": [
-        "Ligação de partilha expirada"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Obtenha acesso a todas as funcionalidades do ${ vpnAppName } e ${ mailAppName } (o serviço de correio encriptado utilizado por milhões para protecção de dados) com um só plano."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, insira-o aqui."
-      ],
-      "Inactive sharing link": [
-        ""
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "O suporte a múltiplos utilizadores só é aplicável a planos com 2 ou mais utilizadores"

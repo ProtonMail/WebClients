@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "Accept": [
-        "Qbel"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Rnu"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Rnu agraw amaynut"
+      ],
+      "Add participant": [
+        ""
       ],
       "Add phone number": [
         ""
@@ -179,8 +182,8 @@
       "Confirm": [
         "Sentem"
       ],
-      "Confirm opening of link ${ link }": [
-        "Sentem tawaledyawt n useɣwen ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Agraw n unermes"
@@ -746,6 +749,9 @@
       "Set expiration time": [
         ""
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Bḍu s useɣwen"
       ],
@@ -824,9 +830,6 @@
       "This message contains embedded images.": [
         "Izen-a yegber tugniwin yeddan."
       ],
-      "This message contains remote content.": [
-        "Izen-a yegber agbur anmeggag."
-      ],
       "Trust": [
         "Amen"
       ],
@@ -868,6 +871,12 @@
         "Ur tettamen ara"
       ],
       "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -965,6 +974,17 @@
         "Ulac ɣur-k·m ula d yiwet n ugraw."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } tansa imayl",
@@ -1025,7 +1045,8 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "",
         ""
       ]
     },
@@ -1308,6 +1329,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Tiririt-a ur temsaḍa ara d yifutas n tinubga-inek·inem. Ttxil senqed ifutas n tinubga deg uwtay-inek·inem."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } yeqbel tinubga-inek·inem yerna isumer-d akud amaynut i tmeḍriwt n tedyant-a."
       ],
@@ -1329,6 +1362,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } yessuter-d ileqman ineggura i tedyant ur nelli ara dayen deg uwitay-inek-inem."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } yugi tinubga-inek·inem yerna isumer-d akud amaynut i tmeḍriwt n tedyant-a."
       ],
@@ -1341,11 +1386,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } yugi tinubga-inek·inem."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } yeqbel tinubga-inek·inem yerna isumer-d akud amaynut i tmeḍriwt n tedyant-a. Tiririt d usumer iɛedda-ten wakud."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } yeqbel tinubga-inek·inem yerna isumer-d akud amaynut i tedyant-a. Tiririt d usumer iɛedda-ten wakud."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } yugi tinubga-inek·inem yerna isumer-d akud amaynut i tmeḍriwt n tedyant-a. Tiririt d usumer iɛedda-ten wakud."
@@ -1389,17 +1458,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } isumer-d akud amaynut i tedyant-a. Asumer-a d aqbur. Ur tesεiḍ ara iwitayen."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } yeqbel bizmant tinubga-inek·inem yerna isumer-d akud amaynut i yiwet n tikkelt kan n tedyant-a. Tiririt d usumer iɛedda-ten wakud."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } yeqbel bizmant tinubga-inek·inem yerna isumer-d akud amaynut i tedyant-a. Tiririt d usumer iɛedda-ten wakud."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } isumer-d akud amaynut i yiwet n tikkelt kan n tedyant-a."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } isumer-d akud amaynut i tedyant-a."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } yeqbel bizmant tinubga-inek·inem yerna isumer-d akud amaynut i tmeḍriwt n tedyant-a."
@@ -1422,20 +1518,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Terna-d tmeḍriwt ɣer tedyant ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event refreshing is not supported for the moment": [
         "Asmiren n tedyant ur yettwasefrak ara taswiɛt-a"
       ],
       "Event rescheduling is not supported for the moment": [
         ""
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "Amazan n yimayl-a ur yettwanced ara ɣer tedyant-a yerna ulamek ad yettwarnu am umettekki"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
@@ -1509,6 +1596,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Ugar n 12 n yisragen i yezrin ɣef uleqqem aneggaru"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
       ]
     },
     "Collapsible tooltip": {
@@ -1889,12 +1984,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event is tomorrow": [
         ""
       ],
@@ -2378,7 +2467,24 @@
         "Ddeqs n igmaḍ i d-yerra unadi-ik. Ma ulac aɣilif, err talast i unadi-inek sakin ɛreḍ tikelt- nniḍen."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Tigawt-agi ulamek ara teddu"
       ]
@@ -2536,6 +2642,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ulac tugna yettwafernen"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2707,6 +2818,12 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
+      "Expires today": [
         ""
       ],
       "Only ${ days } day left": [
@@ -3192,8 +3309,8 @@
       "Are you sure you want to permanently delete this message?": [
         "Tebɣiḍ s tidet ad tekkseḍ s wudem imezgi izen-a?"
       ],
-      "Attach Public Key": [
-        "Arez tasarut tazayezt"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "Ini n ugilal"
@@ -3770,8 +3887,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Ma temmeleḍ izen d aneɛruḍ n ukellex ad yettwazen\tyizen-nni ɣur-nneɣ, swakka ad nizmir ad t-nesleḍ yerna ad nwenneɛ tistayin-nneɣ. Ayag yebɣa ad d-yinin belli ad nizmir ad nwali akk agbur n yizen."
       ],
-      "Request Read Receipt": [
-        "Suter talɣut ɣef tɣuṛi"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "Seg uyeffus s azelmaḍ"
@@ -4610,6 +4727,9 @@
       "BTC amount:": [
         "Azal BTC:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         "Iwitayen"
       ],
@@ -4709,6 +4829,9 @@
       "Folder location": [
         "Ideg n ukaram"
       ],
+      "Frequency": [
+        ""
+      ],
       "From": [
         "Seg"
       ],
@@ -4766,6 +4889,9 @@
       "Last month only": [
         "Ayyure-nni kan ineggura"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Awal uffir n tnaka n yimayl"
       ],
@@ -4813,6 +4939,9 @@
       ],
       "Or": [
         "Neɣ"
+      ],
+      "Participants": [
+        ""
       ],
       "Password": [
         "Awal uffir"
@@ -6727,6 +6856,9 @@
       "Email addresses": [
         "Tansiwin imayl"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "Iɣewwaren n yimayl"
       ],
@@ -6792,9 +6924,6 @@
       ],
       "Link confirmation": [
         "Aseɣwen n usentem"
-      ],
-      "Load embedded images": [
-        "Sali tugniwin tusliɣin"
       ],
       "Load remote content": [
         "Sali-d agbur anmeggag"
@@ -6972,6 +7101,9 @@
       ],
       "Sign in again to continue": [
         "Qqen tikelt-nniḍen akken ad tkemmled"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Smizzwer idiwenniyen"

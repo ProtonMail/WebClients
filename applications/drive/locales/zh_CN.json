@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "添加"
       ],
@@ -236,9 +239,6 @@
       "Go to settings": [
         "前往设置"
       ],
-      "Grid layout": [
-        "网格布局"
-      ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
       ],
@@ -268,9 +268,6 @@
       ],
       "Keyboard shortcuts": [
         "键盘快捷键"
-      ],
-      "List layout": [
-        "列表布局"
       ],
       "Load image": [
         "加载图片"
@@ -437,6 +434,9 @@
       "Select plan": [
         "开通"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "分享"
       ],
@@ -463,9 +463,6 @@
       ],
       "Show labels": [
         "显示标签"
-      ],
-      "Show shared link details": [
-        "显示共享链接详细信息"
       ],
       "Sign out": [
         "退出"
@@ -517,6 +514,12 @@
       ],
       "Untrust": [
         "取消信任"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "升级"
@@ -1117,17 +1120,32 @@
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         "加载链接失败"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由于“${ error }”错误，文件“${ item.name }”无法上传"
       ],
+      "File \"${ name }\" is already downloading": [
+        ""
+      ],
       "File cannot be merged with folder": [
         "文件无法与文件夹合并"
       ],
       "File has no contents to preview": [
         "文件没有内容可预览"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         "文件夹名称不能为空"
@@ -1550,11 +1568,14 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } 项在下载中 (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } 项在上传中 (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } 个电子邮件地址"
@@ -1571,8 +1592,8 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } 已取消"
+      "${ canceledCount } canceled": [
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成员"
@@ -1592,17 +1613,17 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组。"
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } 已完成"
+      "${ doneCount } finished": [
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } 已下载"
+      "${ doneDownloadsCount } downloaded": [
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } 已上传"
+      "${ doneUploadsCount } uploaded": [
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } 失败"
+      "${ errorCount } failed": [
+        ""
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
@@ -1622,8 +1643,8 @@
       "${ numContacts } contact": [
         "${ numContacts } 名联系人"
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } 已暂停"
+      "${ pausedCount } paused": [
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "{ save20 } 订阅，切换到{ annualBilling }"
@@ -1730,6 +1751,9 @@
       "Anyone with this link can access your file.": [
         "任何知道此链接的人都能访问您的文件。"
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您确定要清空回收站并永久删除所有项目吗？"
       ],
@@ -1819,6 +1843,9 @@
       ],
       "Creating link to file": [
         "正在创建文件链接"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         "正在创建分享"
@@ -2066,6 +2093,9 @@
       "Only the people with the link and the password can access this file.": [
         "只有同时知道链接和密码的人才能访问此文件。"
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "已暂停"
       ],
@@ -2119,6 +2149,9 @@
       ],
       "Preparing link to file": [
         "文件链接预备中"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "预览"
@@ -2225,7 +2258,10 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此链接将被永久禁用，无人再能通过此链接访问您的文件。您需要新建一个链接才能重新共享该文件。"
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
         ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
@@ -2404,6 +2440,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "您的文件将被加密并保存。"
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证"
@@ -3133,7 +3178,7 @@
         ""
       ],
       "Almost there": [
-        ""
+        "即将完成"
       ],
       "Creating new calendars": [
         ""
@@ -3354,6 +3399,9 @@
       ],
       "Contact group updated": [
         "群组已更改"
+      ],
+      "Failed to download files: ${ err }": [
+        ""
       ],
       "Failed to move, please try again": [
         "无法移动，请重试"
@@ -4116,8 +4164,8 @@
       "Empty trash": [
         "清空回收站"
       ],
-      "Enter file password to download": [
-        "请输入文件密码进行下载"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "输入您的密码"
@@ -4196,6 +4244,9 @@
       ],
       "My files": [
         "我的文件"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "姓名"
@@ -4368,6 +4419,9 @@
       "Your file is ready to be downloaded": [
         "您的文件已准备就绪"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "邮政编码"
       ]
@@ -4380,9 +4434,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "无论身在何方，Netflix、Amazon Prime、BBC iPlayer、Wikipedia、Facebook、YouTube 均触手可及。"
-      ],
-      "Active sharing link": [
-        "活动的分享链接"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
@@ -4411,9 +4462,6 @@
       "Encrypted data with verified digital signature": [
         "经过已验证的数字签名加密过的数据"
       ],
-      "Expired sharing link": [
-        "失效的共享链接"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"
       ],
@@ -4428,9 +4476,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
-      ],
-      "Inactive sharing link": [
-        "非活动的分享链接"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "仅对两名以上用户的账户等级适用"

@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Activer la clé de l'organisation"
       ],
+      "Activate recovery": [
+        "Activer la récupération"
+      ],
       "Add": [
         "Ajouter"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Configurer catch-all"
+      ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
       ],
       "Share via link": [
         "Partager avec un lien"
@@ -1545,7 +1551,7 @@
         "Quotidiennement, à ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Quotidiennement, jusqu'au ${ untilString }"
+        "Quotidiennement, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Chaque ${ interval } jour",
@@ -1556,8 +1562,8 @@
         "Tous les ${ interval } jours, à ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Chaque ${ interval } jour, jusqu'au ${ untilString }",
-        "Tous les ${ interval } jours, jusqu'au ${ untilString }"
+        "Chaque ${ interval } jour, ${ untilString }",
+        "Tous les ${ interval } jours, ${ untilString }"
       ],
       "until ${ dateString }": [
         "jusqu'au ${ dateString }"
@@ -2164,8 +2170,8 @@
       "You must set a name": [
         "Vous devez définir un nom"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Votre compte ou organisation a actuellement une facture en retard. Veuillez régler les factures impayées."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "Votre compte ou organisation a une facture en retard. Veuillez régler les factures impayées."
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
@@ -2723,12 +2729,13 @@
         "${ totalImported }/${ totalToImport } événement chiffré et ajouté à votre calendrier",
         "${ totalImported }/${ totalToImport } événements chiffrés et ajoutés à votre calendrier"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } sur ${ totalToImport } événement correctement importé.",
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements correctement importés."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements importés avec succès."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout des contacts : ${ totalImported }/${ totalToImport }"
@@ -3059,7 +3066,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } contacts sur ${ totalContacts } ne seront pas importés. Cliquez pour en savoir plus"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } sur ${ totalEvents } événement ne sera pas importé. Cliquez pour obtenir plus de détails.",
         "${ totalEventsDiscarded } sur ${ totalEvents } événements ne seront pas importés. Cliquez pour obtenir plus de détails."
       ],
       "No contact can be imported. Click for details": [
@@ -3222,9 +3230,6 @@
       "Account successfully updated": [
         "Compte correctement mis à jour"
       ],
-      "Activate your recovery phrase": [
-        "Activez votre phrase de récupération"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Ajoutez une adresse électronique @pm.me à votre compte. Ce domaine simple et court signifie « ProtonMail me » ou « Private Message me »."
       ],
@@ -3253,8 +3258,8 @@
       "Addresses": [
         "Adresses"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Après une réinitialisation de mot de passe, vos données sont verrouillées sous forme chiffrée pour les protéger. Pour déchiffrer et afficher vos messages et autres données, vous avez besoin d'un fichier ou d'une phrase de récupération."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        "Après une réinitialisation de mot de passe, vos données sont verrouillées sous forme chiffrée pour les protéger."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Après avoir effectué votre paiement Bitcoin, veuillez suivre les instructions ci-dessous afin d'effectuer votre changement d'offre."
@@ -3278,6 +3283,12 @@
       ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
+      ],
+      "Allow recovery by email": [
+        "Autoriser la récupération par e-mail"
+      ],
+      "Allow recovery by phone": [
+        "Autoriser la récupération par téléphone"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Vous permet d'héberger des e-mails pour votre/vos propre(s) domaine(s) dans ${ mailAppName }, par exemple jean.dupont@exemple.fr"
@@ -3315,8 +3326,8 @@
       "Are you sure you want to delete this filter?": [
         "Êtes-vous sûr de vouloir supprimer ce filtre ?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Êtes-vous sûr de vouloir supprimer ce dossier ?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Êtes-vous sûr de vouloir supprimer ce dossier ? Tous les dossiers enfants seront également supprimés."
       ],
       "Are you sure you want to delete this label?": [
         "Êtes-vous sûr de vouloir supprimer ce label ?"
@@ -3518,14 +3529,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "La rétrogradation mettra fin à toutes les connexions vers les serveurs payants ProtonVPN."
       ],
+      "Download recovery file": [
+        "Télécharger le fichier de récupération"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Téléchargez votre application préférée dès aujourd'hui et préservez votre vie privée avec vous partout où vous allez."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Téléchargez vos clés PGP pour les utiliser avec d'autres services compatibles PGP."
-      ],
-      "Download your recovery file": [
-        "Téléchargez votre fichier de récupération"
       ],
       "Drop the file here to upload": [
         "Déposez un fichier ici pour l'importer"
@@ -3960,6 +3971,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Il existe d'autres administrateurs dans votre organisation. Il est de votre responsabilité de leur communiquer le nouveau mot de passe."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        "Fichier de récupération obsolète ; mettez à jour pour garantir l'accès à vos données"
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        "Méthodes de récupération obsolètes ; mettez à jour pour garantir l'accès à vos données"
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        "Phrase de récupération obsolète ; mettez à jour pour garantir l'accès à vos données"
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4141,6 +4161,9 @@
       "Session timed out.": [
         "Session expirée."
       ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Puisque vous êtes un utilisateur fidèle, votre compte dispose de fonctionnalités supplémentaires activées."
       ],
@@ -4276,6 +4299,15 @@
       "to continue to ${ toAppName }": [
         "pour continuer vers ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'un fichier ou d'une phrase de récupération."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'un fichier de récupération."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'une phrase de récupération."
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation de mot de passe, sélectionnez une méthode de récupération."
       ],
@@ -4329,6 +4361,12 @@
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
+      ],
+      "Update recovery file": [
+        "Mettre à jour le fichier de récupération"
+      ],
+      "Update recovery phrase": [
+        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Passez à l'offre ${ PLAN_NAMES[PLANS.VISIONARY] } ou ${ PLAN_NAMES[PLANS.PROFESSIONAL] } pour activer les réponses automatiques quand vous n'êtes pas au bureau."
@@ -6173,8 +6211,8 @@
         "Tous les ${ interval } mois, le ${ onDayString }, à ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Chaque ${ interval } mois, ${ onDayString }, jusqu'au ${ untilString }",
-        "Chaque ${ interval } mois, ${ onDayString }, jusqu'au ${ untilString }"
+        "Chaque ${ interval } mois, ${ onDayString }, ${ untilString }",
+        "Chaque ${ interval } mois, ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Mensuellement, le ${ onDayString }"
@@ -6183,7 +6221,7 @@
         "Mensuellement, le ${ onDayString }, à ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensuellement, le ${ onDayString }, jusqu'au ${ untilString }"
+        "Mensuellement, le ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7235,7 +7273,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } copié dans votre presse-papiers"
       ],
       "Account deleted. Logging out...": [
@@ -8808,11 +8846,11 @@
       "You will not see this import record in the list anymore.": [
         "Vous ne verrez plus l'enregistrement de cette importation dans la liste."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
-        "Votre fichier de récupération est obsolète et ne peut pas récupérer de nouvelles données si vous réinitialisez votre compte à nouveau."
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
+        "Votre fichier de récupération est obsolète. Il ne permettra pas de récupérer de nouvelles données si vous réinitialisez votre compte à nouveau."
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
-        "Votre phrase de récupération est obsolète et ne peut pas récupérer de nouvelles données si vous réinitialisez votre compte à nouveau."
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        "Votre phrase de récupération est obsolète. Elle ne permettra pas de récupérer de nouvelles données si vous réinitialisez votre compte à nouveau."
       ]
     },
     "Warning for domain modal": {
@@ -8838,8 +8876,8 @@
         "Toutes les ${ interval } semaines, les ${ multipleDaysString }, à ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Chaque ${ interval } semaine, les ${ multipleDaysString }, jusqu'au ${ untilString }",
-        "Toutes les ${ interval } semaines, les ${ multipleDaysString }, jusqu'au ${ untilString }"
+        "Chaque ${ interval } semaine, les ${ multipleDaysString }, ${ untilString }",
+        "Toutes les ${ interval } semaines, les ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Chaque ${ interval } semaine, tous les jours",
@@ -8850,8 +8888,8 @@
         "Toutes les ${ interval } semaines, tous les jours, à ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Chaque ${ interval } semaine, tous les jours, jusqu'au ${ untilString }",
-        "Toutes les ${ interval } semaines, tous les jours, jusqu'au ${ untilString }"
+        "Chaque ${ interval } semaine, tous les jours, ${ untilString }",
+        "Toutes les ${ interval } semaines, tous les jours, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Chaque ${ interval } semaine, le vendredi",
@@ -8862,8 +8900,8 @@
         "Toutes les ${ interval } semaines, le vendredi, à ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le vendredi, jusqu'au ${ untilString }",
-        "Toutes les ${ interval } semaines, le vendredi, jusqu'au ${ untilString }"
+        "Chaque ${ interval } semaine, le vendredi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le vendredi, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Chaque ${ interval } semaine, le lundi",
@@ -8874,8 +8912,8 @@
         "Toutes les ${ interval } semaines, le lundi, à ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le lundi, jusqu'au ${ untilString }",
-        "Toutes les ${ interval } semaines, le lundi, jusqu'au ${ untilString }"
+        "Chaque ${ interval } semaine, le lundi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le lundi, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Chaque ${ interval } semaine, le samedi",
@@ -8886,8 +8924,8 @@
         "Toutes les ${ interval } semaines, le samedi, à ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le samedi, jusqu'au ${ untilString }",
-        "Toutes les ${ interval } semaines, le samedi, jusqu'au ${ untilString }"
+        "Chaque ${ interval } semaine, le samedi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le samedi, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Chaque ${ interval } semaine, le dimanche",
@@ -8898,8 +8936,8 @@
         "Toutes les ${ interval } semaines, le dimanche, à ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le dimanche, jusqu'au ${ untilString }",
-        "Toutes les ${ interval } semaines, le dimanche, jusqu'au ${ untilString }"
+        "Chaque ${ interval } semaine, le dimanche, ${ untilString }",
+        "Toutes les ${ interval } semaines, le dimanche, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Chaque ${ interval } semaine, le jeudi",
@@ -8910,8 +8948,8 @@
         "Toutes les ${ interval } semaines, le jeudi, à ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le jeudi, jusqu'au ${ untilString }",
-        "Toutes les ${ interval } semaines, le jeudi, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, le jeudi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le jeudi, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Chaque ${ interval } semaine, le mardi",
@@ -8922,8 +8960,8 @@
         "Toutes les ${ interval } semaines, le mardi, à ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le mardi, jusqu'au ${ untilString }",
-        "Toutes les ${ interval } semaines, le mardi, jusqu'au ${ untilString }"
+        "Chaque ${ interval } semaine, le mardi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le mardi, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Chaque ${ interval } semaine, le mercredi",
@@ -8934,8 +8972,8 @@
         "Toutes les ${ interval } semaines, le mercredi, à ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le mercredi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le mercredi, jusqu'au ${ untilString }"
+        "Chaque ${ interval } semaine, le mercredi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le mercredi, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Hebdomadairement, les ${ multipleDaysString }"
@@ -8944,7 +8982,7 @@
         "Hebdomadairement, les ${ multipleDaysString }, à ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Hebdomadairement, les ${ multipleDaysString }, jusqu'au ${ untilString }"
+        "Hebdomadairement, les ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Hebdomadairement, tous les jours de la semaine"
@@ -8953,7 +8991,7 @@
         "Hebdomadairement, tous les jours, à ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Hebdomadairement, tous les jours, jusqu'au ${ untilString }"
+        "Hebdomadairement, tous les jours, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Tous les vendredis"
@@ -8962,7 +9000,7 @@
         "Tous les vendredis, à ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Tous les vendredis, jusqu'au ${ untilString }"
+        "Tous les vendredis, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Tous les lundis"
@@ -8971,7 +9009,7 @@
         "Tous les lundis, à ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Tous les lundis, jusqu'au ${ untilString }"
+        "Tous les lundis, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "Hebdomadairement, le samedi"
@@ -8989,7 +9027,7 @@
         "Tous les dimanches, à ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Tous les dimanches, jusqu'au ${ untilString }"
+        "Tous les dimanches, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "Tous les jeudis"
@@ -8998,7 +9036,7 @@
         "Tous les jeudis, à ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Tous les jeudis, jusqu'au ${ untilString }"
+        "Tous les jeudis, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Tous les mardis"
@@ -9007,7 +9045,7 @@
         "Tous les mardis, à ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Tous les mardis, jusqu'au ${ untilString }"
+        "Tous les mardis, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Tous les mercredis"
@@ -9016,7 +9054,7 @@
         "Tous les mercredis, à ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Tous les mercredis, jusqu'au ${ untilString }"
+        "Tous les mercredis, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -9063,8 +9101,8 @@
         "Tous les ${ interval } ans, à ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Chaque ${ interval } année, jusqu'au ${ untilString }",
-        "Tous les ${ interval } ans, jusqu'au ${ untilString }"
+        "Chaque ${ interval } année, ${ untilString }",
+        "Tous les ${ interval } ans, ${ untilString }"
       ],
       "Yearly": [
         "Annuellement"
@@ -9073,7 +9111,7 @@
         "Annuellement, à ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Annuellement, jusqu'au ${ untilString }"
+        "Annuellement, ${ untilString }"
       ]
     }
   }

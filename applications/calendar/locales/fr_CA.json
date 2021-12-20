@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activer la récupération"
+      ],
       "Add": [
         "Ajouter"
       ],
@@ -406,6 +409,9 @@
       "Send": [
         "Envoyer"
       ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
+      ],
       "Share": [
         "Partager"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Mettre à jour"
+      ],
+      "Update recovery file": [
+        "Mettre à jour le fichier de récupération"
+      ],
+      "Update recovery phrase": [
+        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
         "Changer d'offre"
@@ -1116,7 +1128,7 @@
         "Quotidiennement, à ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Quotidiennement, jusqu’au ${ untilString }"
+        "Quotidiennement, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Chaque ${ interval } jour",
@@ -1127,8 +1139,8 @@
         "Tous les ${ interval } jours, à ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Chaque ${ interval } jour, jusqu’au ${ untilString }",
-        "Tous les ${ interval } jours, jusqu’au ${ untilString }"
+        "Chaque ${ interval } jour, ${ untilString }",
+        "Tous les ${ interval } jours, ${ untilString }"
       ],
       "until ${ dateString }": [
         "jusqu'au ${ dateString }"
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Vous pouvez également ${ refresh } ou réessayer plus tard."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2042,12 +2057,13 @@
         "${ totalImported }/${ totalToImport } événement chiffré et ajouté à votre calendrier",
         "${ totalImported }/${ totalToImport } événements chiffrés et ajoutés à votre calendrier"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } sur ${ totalToImport } événement correctement importé.",
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements correctement importés."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements correctement importés."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout des contacts: ${ totalImported }/${ totalToImport }"
@@ -2134,7 +2150,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } contacts sur ${ totalContacts } ne seront pas importés. Cliquez pour plus de détails"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } sur ${ totalEvents } événement ne sera pas importé. Cliquez pour obtenir plus de détails.",
         "${ totalEventsDiscarded } sur ${ totalEvents } événements ne seront pas importés. Cliquez pour obtenir plus de détails."
       ],
       "No contact can be imported. Click for details": [
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
       ],
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "Montant en BTC:"
       ],
+      "Calendar": [
+        "Calendrier"
+      ],
       "Calendars": [
         "Calendriers"
       ],
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "Code CVC"
+      ],
+      "Date and time": [
+        "Date et heure"
       ],
       "Description": [
         "Description"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         "Durée de l’événement"
       ],
-      "Event frequency": [
-        "Fréquence de l'événement"
-      ],
-      "Event location": [
-        "Lieu de l'événement"
-      ],
       "Event notifications": [
         "Notifications de l'événement"
-      ],
-      "Event time": [
-        "Heure de l'événement"
       ],
       "Event title": [
         "Titre de l'événement"
@@ -3334,6 +3351,9 @@
       ],
       "Folder location": [
         "Emplacement du dossier"
+      ],
+      "Frequency": [
+        "Fréquence"
       ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
@@ -3374,6 +3394,9 @@
       "Last month only": [
         "Le mois dernier seulement"
       ],
+      "Location": [
+        "Lieu"
+      ],
       "Mailbox password": [
         "Mot de passe de messagerie"
       ],
@@ -3391,6 +3414,9 @@
       ],
       "Notification": [
         "Notification"
+      ],
+      "Notifications": [
+        "Notifications"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -3477,9 +3503,6 @@
       "System information": [
         "Informations système"
       ],
-      "Time of the event": [
-        "Heure de l'événement"
-      ],
       "To: ${ emailAddress }": [
         "À: ${ emailAddress }"
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Quelle est la principale raison pour laquelle cette note est attribuée?"
-      ],
-      "Your calendars": [
-        "Vos calendriers"
       ],
       "ZIP": [
         "Code postal"
@@ -3795,8 +3815,8 @@
         "Tous les ${ interval } mois, le ${ onDayString }, à ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Chaque ${ interval } mois, le ${ onDayString }, jusqu’au ${ untilString }",
-        "Tous les ${ interval } mois, le ${ onDayString }, jusqu’au ${ untilString }"
+        "Chaque ${ interval } mois, le ${ onDayString }, ${ untilString }",
+        "Tous les ${ interval } mois, le ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Mensuellement, le ${ onDayString }"
@@ -3805,7 +3825,7 @@
         "Mensuellement, le ${ onDayString }, à ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensuellement, le ${ onDayString }, jusqu’au ${ untilString }"
+        "Mensuellement, le ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -4915,6 +4935,9 @@
       "Downgrade account": [
         "Rétrograder le compte"
       ],
+      "Drop to upload": [
+        ""
+      ],
       "Edit calendar": [
         "Modifier le calendrier"
       ],
@@ -5483,8 +5506,8 @@
         "Toutes les ${ interval } semaines, les ${ multipleDaysString }, à ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Chaque ${ interval } semaine, les ${ multipleDaysString }, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, les ${ multipleDaysString }, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, les ${ multipleDaysString }, ${ untilString }",
+        "Toutes les ${ interval } semaines, les ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Chaque semaine, tous les jours ${ interval }",
@@ -5495,8 +5518,8 @@
         "Toutes les ${ interval } semaines, tous les jours, à ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Chaque ${ interval } semaine, tous les jours, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, tous les jours, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, tous les jours, ${ untilString }",
+        "Toutes les ${ interval } semaines, tous les jours, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Chaque ${ interval } semaine, le vendredi",
@@ -5507,8 +5530,8 @@
         "Toutes les ${ interval } semaines, le vendredi, à ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le vendredi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le vendredi, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, le vendredi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le vendredi, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Chaque ${ interval } semaine, le lundi",
@@ -5519,8 +5542,8 @@
         "Toutes les ${ interval } semaines, le lundi, à ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le lundi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le lundi, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, le lundi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le lundi, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Chaque ${ interval } semaine, le samedi",
@@ -5531,8 +5554,8 @@
         "Toutes les ${ interval } semaines, le samedi, à ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le samedi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le samedi, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, le samedi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le samedi, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Chaque semaine, le dimanche ${ interval }",
@@ -5543,8 +5566,8 @@
         "Toutes les ${ interval } semaines, le dimanche, à ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le dimanche, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le dimanche, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, le dimanche, ${ untilString }",
+        "Toutes les ${ interval } semaines, le dimanche, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Chaque ${ interval } semaine, le jeudi",
@@ -5555,8 +5578,8 @@
         "Toutes les ${ interval } semaines, le jeudi, à ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le jeudi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le jeudi, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, le jeudi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le jeudi, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Chaque ${ interval } semaine, le mardi",
@@ -5567,8 +5590,8 @@
         "Toutes les ${ interval } semaines, le mardi, à ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le mardi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le mardi, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, le mardi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le mardi, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Chaque ${ interval } semaine, le mercredi",
@@ -5579,8 +5602,8 @@
         "Toutes les ${ interval } semaines, le mercredi, à ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le mercredi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le mercredi, jusqu’au ${ untilString }"
+        "Chaque ${ interval } semaine, le mercredi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le mercredi, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Hebdomadairement, les ${ multipleDaysString }"
@@ -5589,7 +5612,7 @@
         "Hebdomadairement, les ${ multipleDaysString }, à ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Hebdomadairement, les ${ multipleDaysString }, jusqu’au ${ untilString }"
+        "Hebdomadairement, les ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Hebdomadairement, tous les jours de la semaine"
@@ -5598,7 +5621,7 @@
         "Hebdomadairement, tous les jours de la semaine, à ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Hebdomadairement, tous les jours de la semaine, jusqu’au ${ untilString }"
+        "Hebdomadairement, tous les jours de la semaine, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Hebdomadairement, le vendredi"
@@ -5607,7 +5630,7 @@
         "Hebdomadairement, chaque vendredi, à ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Hebdomadairement, chaque vendredi, jusqu’au ${ untilString }"
+        "Hebdomadairement, chaque vendredi, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Hebdomadairement, le lundi"
@@ -5616,7 +5639,7 @@
         "Hebdomadairement, chaque lundi, à ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Hebdomadairement, chaque lundi, jusqu’au ${ untilString }"
+        "Hebdomadairement, chaque lundi, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "Hebdomadairement, le samedi"
@@ -5625,7 +5648,7 @@
         "Hebdomadairement, chaque samedi, à ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Hebdomadairement, chaque samedi, jusqu’au ${ untilString }"
+        "Hebdomadairement, chaque samedi, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Hebdomadairement, le dimanche"
@@ -5634,7 +5657,7 @@
         "Hebdomadairement, chaque dimanche, à ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Hebdomadairement, chaque dimanche, jusqu’au ${ untilString }"
+        "Hebdomadairement, chaque dimanche, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "Hebdomadairement, le jeudi"
@@ -5643,7 +5666,7 @@
         "Hebdomadairement, chaque jeudi, à ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Hebdomadairement, chaque jeudi, jusqu’au ${ untilString }"
+        "Hebdomadairement, chaque jeudi, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Hebdomadairement, le mardi"
@@ -5652,7 +5675,7 @@
         "Hebdomadairement, chaque mardi, à ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Hebdomadairement, chaque mardi, jusqu’au ${ untilString }"
+        "Hebdomadairement, chaque mardi, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Hebdomadairement, le mercredi"
@@ -5661,7 +5684,7 @@
         "Hebdomadairement, chaque mercredi, à ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Hebdomadairement, chaque mercredi, jusqu’au ${ untilString }"
+        "Hebdomadairement, chaque mercredi, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -5697,8 +5720,8 @@
         "Tous les ${ interval } ans, à ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Chaque ${ interval } année, jusqu’au ${ untilString }",
-        "Tous les ${ interval } ans, jusqu’au ${ untilString }"
+        "Chaque ${ interval } année, ${ untilString }",
+        "Tous les ${ interval } ans, ${ untilString }"
       ],
       "Yearly": [
         "Annuellement"
@@ -5707,7 +5730,7 @@
         "Annuellement, à ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Annuellement, jusqu’au ${ untilString }"
+        "Annuellement, ${ untilString }"
       ]
     }
   }

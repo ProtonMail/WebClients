@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Kuponumu etkinleştir"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add credit / debit card": [
         "Kredi / banka kartı ekle"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Yeniden gönder"
       ],
+      "Reset": [
+        ""
+      ],
       "Reset credentials": [
         "Bilgileri sıfırla"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Gönder"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "Bağlantı yoluyla paylaş"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Güncelle"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Yükselt"
@@ -952,8 +967,8 @@
       "You have no invoices.": [
         "Faturalarınız yok."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Hesabınızın veya kuruluşunuzun şu anda gecikmiş bir faturası var. Lütfen ödenmemiş tüm faturalarınızı ödeyin."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ]
     },
     "Error message": {
@@ -1134,8 +1149,8 @@
       "No logs": [
         "Kayıt tutmaz"
       ],
-      "Secure core servers": [
-        "Secure core sunucuları"
+      "Secure Core servers": [
+        "Secure Core sunucuları"
       ],
       "Strong encryption": [
         "Güçlü şifreleme"
@@ -1554,9 +1569,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek veya ${ link } çoğu sorunu otomatik olarak çözecektir."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Şifrenizi sıfırlamak, eski şifrenizin ve şifrenin kaydedildiği yerlerin artık çalışmayacağı anlamına gelir. Şifrenizi sıfırlamak istediğinizden emin misiniz?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Şifrenizi sıfırlamak, tüm Proton ile ilgili hizmetler (Posta ve VPN) için şifreleme anahtarlarınızı sıfırlayacaktır. Mevcut mesajlarınızı okuyamayacaksınız. ProtonMail kimlik bilgilerinizi biliyorsanız, SIFIRLAMAYIN. Onunla giriş yapabilirsin ${ hereLink }."
       ],
@@ -1640,6 +1652,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Bu, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden etkinleştiremezsiniz."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        ""
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Bu sihirbaz, Proton hesabınızda İki Aşamalı Kimlik Doğrulamayı (2FA) etkinleştirir. İki aşamalı kimlik doğrulama, Proton hesabınızı daha güvenli hale getirecek, bu nedenle etkinleştirmenizi öneririz."
@@ -2937,8 +2952,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } panonuza kopyalandı"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Hesap silindi. Çıkış yapılıyor..."
@@ -3002,8 +3017,8 @@
       "/2-year": [
         "/2 yıl"
       ],
-      "/monthly": [
-        "/aylık"
+      "/month": [
+        ""
       ],
       "/year": [
         "/yıl"
@@ -3133,9 +3148,6 @@
       ],
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
-      ],
-      "Confirm reset password": [
-        "Şifre sıfırlamayı onaylayın"
       ],
       "Coupon discount": [
         "Kupon indirimi"
@@ -3337,6 +3349,9 @@
       ],
       "Reset password": [
         "Şifreyi sıfırla"
+      ],
+      "Reset password?": [
+        ""
       ],
       "Secure Core Servers": [
         "Secure Core Sunucuları"

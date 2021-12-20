@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -408,6 +411,9 @@
       "Send": [
         "Pošalji"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Podijeli"
       ],
@@ -479,6 +485,12 @@
       ],
       "Update": [
         "Ažuriraj"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -1875,6 +1887,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Možete ${ refresh } ili pokušati ponovo kasnije."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2069,12 +2084,14 @@
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "",
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
+        "",
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -2169,7 +2186,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -2997,6 +3016,9 @@
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
       ],
@@ -3285,6 +3307,9 @@
       "BTC amount:": [
         "BTC iznos:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -3320,6 +3345,9 @@
       ],
       "CVV code": [
         "CVV kôd"
+      ],
+      "Date and time": [
+        ""
       ],
       "Description": [
         "Opis"
@@ -3360,17 +3388,8 @@
       "Event duration": [
         ""
       ],
-      "Event frequency": [
-        "Učestalost događaja"
-      ],
-      "Event location": [
-        "Lokacija događaja"
-      ],
       "Event notifications": [
         "Obavijest o događaju"
-      ],
-      "Event time": [
-        "Vrijeme događaja"
       ],
       "Event title": [
         "Naziv događaja"
@@ -3388,6 +3407,9 @@
         "Produžena adresa"
       ],
       "Folder location": [
+        ""
+      ],
+      "Frequency": [
         ""
       ],
       "From: ${ importedEmail }": [
@@ -3429,6 +3451,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
@@ -3445,6 +3470,9 @@
         "Ime na kartici"
       ],
       "Notification": [
+        ""
+      ],
+      "Notifications": [
         ""
       ],
       "Operating system": [
@@ -3533,9 +3561,6 @@
       "System information": [
         "Informacije o sustavu"
       ],
-      "Time of the event": [
-        "Vrijeme događaja"
-      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -3565,9 +3590,6 @@
       ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Your calendars": [
-        "Vaši kalendari"
       ],
       "ZIP": [
         "Poštanski broj"
@@ -5009,6 +5031,9 @@
         "Brisanje kontakata"
       ],
       "Downgrade account": [
+        ""
+      ],
+      "Drop to upload": [
         ""
       ],
       "Edit calendar": [

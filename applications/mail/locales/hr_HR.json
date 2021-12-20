@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Accept": [
-        "Prihvati"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Dodaj"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Dodaj novu grupu"
+      ],
+      "Add participant": [
+        ""
       ],
       "Add phone number": [
         ""
@@ -179,8 +182,8 @@
       "Confirm": [
         "Potvrdi"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrdite otvaranje poveznice ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grupa kontakta"
@@ -749,6 +752,9 @@
       "Set expiration time": [
         ""
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -827,9 +833,6 @@
       "This message contains embedded images.": [
         "Ova poruka sadrži ugrađene slike."
       ],
-      "This message contains remote content.": [
-        "Ova poruka sadrži udaljeni sadržaj."
-      ],
       "Trust": [
         "Vjeruj"
       ],
@@ -872,6 +875,12 @@
         "Označi kao nepouzdano"
       ],
       "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -969,6 +978,17 @@
         "Nemate grupa."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } adresa e-pošte",
@@ -1033,7 +1053,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "",
+        "",
         ""
       ]
     },
@@ -1316,6 +1338,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Ovaj se odgovor ne podudara s detaljima vaše pozivnice. Provjerite detalje pozivnice u kalendaru."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja."
       ],
@@ -1337,6 +1371,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } je zatražio najnovija ažuriranja događaja koji više ne postoji u vašem kalendaru."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je odbio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja."
       ],
@@ -1349,11 +1395,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } je odbio vašu pozivnicu."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } je prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja. Odgovor i prijedlog su zastarjeli."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } je prihvatio vašu pozivnicu i predložio novo vrijeme za ovaj događaj. Odgovor i prijedlog su zastarjeli."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } je odbio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja. Odgovor i prijedlog su zastarjeli."
@@ -1397,17 +1467,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } je predložio novo vrijeme za ovaj događaj. Ovaj je prijedlog zastario. Nemate kalendara."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } je uvjetno prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja. Odgovor i prijedlog su zastarjeli."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } je uvjetno prihvatio vašu pozivnicu i predložio novo vrijeme za ovaj događaj. Odgovor i prijedlog su zastarjeli."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } je predložio novo vrijeme za jedno ponavljanje ovog događaja."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } je predložio novo vrijeme za ovaj događaj."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je uvjetno prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja."
@@ -1430,19 +1527,10 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Ponavljanje je dodano događaju ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
         ""
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
@@ -1516,6 +1604,14 @@
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
         ""
       ]
     },
@@ -1904,12 +2000,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event is tomorrow": [
         ""
       ],
@@ -2404,7 +2494,24 @@
         ""
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Ova radnja se ne može izvršiti"
       ]
@@ -2562,6 +2669,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2733,6 +2845,12 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
+      "Expires today": [
         ""
       ],
       "Only ${ days } day left": [
@@ -3259,8 +3377,8 @@
       "Are you sure you want to permanently delete this message?": [
         "Jeste li sigurni da želite trajno izbrisati ovu poruku?"
       ],
-      "Attach Public Key": [
-        "Pridodajte javni ključ"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "Pozadinska boja"
@@ -3848,8 +3966,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Prijavljivanje poruke kao pokušaja krađe identiteta će nam poslati poruku kako bismo je mogli analizirati i poboljšati filtre. To znači da ćemo moći vidjeti sadržaj poruke u cijelosti."
       ],
-      "Request Read Receipt": [
-        "Zatražite potvrdu o čitanju"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "S desna na lijevo"
@@ -4699,6 +4817,9 @@
       "BTC amount:": [
         "BTC iznos:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -4798,6 +4919,9 @@
       "Folder location": [
         "Lokacija mape"
       ],
+      "Frequency": [
+        ""
+      ],
       "From": [
         "Od"
       ],
@@ -4855,6 +4979,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
@@ -4902,6 +5029,9 @@
       ],
       "Or": [
         "Ili"
+      ],
+      "Participants": [
+        ""
       ],
       "Password": [
         "Lozinka"
@@ -6866,6 +6996,9 @@
       "Email addresses": [
         "Adrese e-pošte"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "Postavke e-pošte"
       ],
@@ -6931,9 +7064,6 @@
       ],
       "Link confirmation": [
         "Potvrda poveznice"
-      ],
-      "Load embedded images": [
-        "Učitaj ugrađene slike"
       ],
       "Load remote content": [
         "Učitaj udaljeni sadržaj"
@@ -7111,6 +7241,9 @@
       ],
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Poredaj razgovore"
