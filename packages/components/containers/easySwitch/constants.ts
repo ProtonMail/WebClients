@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { OAUTH_PROVIDER, TIME_PERIOD } from '@proton/shared/lib/interfaces/EasySwitch';
+import { NON_OAUTH_PROVIDER, OAUTH_PROVIDER, TIME_PERIOD } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
 
@@ -26,7 +27,13 @@ export const MAX_FOLDER_LIMIT = 20000;
 
 export const IMAPS = {
     [OAUTH_PROVIDER.GOOGLE]: 'imap.gmail.com',
-    YAHOO: 'imap.mail.yahoo.com',
+    [NON_OAUTH_PROVIDER.YAHOO]: 'imap.mail.yahoo.com',
+};
+
+export const EASY_SWITCH_EMAIL_PLACEHOLDER = {
+    [NON_OAUTH_PROVIDER.YAHOO]: `${USERNAME_PLACEHOLDER}@yahoo.com`,
+    [NON_OAUTH_PROVIDER.OUTLOOK]: `${USERNAME_PLACEHOLDER}@outlook.com`,
+    [NON_OAUTH_PROVIDER.DEFAULT]: EMAIL_PLACEHOLDER,
 };
 
 /* Calendar specific */

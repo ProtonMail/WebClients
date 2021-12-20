@@ -4,8 +4,10 @@ export enum OAUTH_PROVIDER {
     GOOGLE = 1,
 }
 
-export enum PROVIDER_INSTRUCTIONS {
+export enum NON_OAUTH_PROVIDER {
     YAHOO = 'yahoo',
+    OUTLOOK = 'outlook',
+    DEFAULT = 'default',
 }
 
 export interface OAuthProps {

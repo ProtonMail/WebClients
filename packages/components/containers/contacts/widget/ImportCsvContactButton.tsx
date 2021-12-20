@@ -1,24 +1,15 @@
 import { c } from 'ttag';
 import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
-import {
-    Button,
-    GoogleButton,
-    PrimaryButton,
-    FeatureCode,
-    ImportAssistantOauthModal,
-    Loader,
-} from '@proton/components';
+import { Button, GoogleButton, PrimaryButton, FeatureCode, Loader, EasySwitchOauthModal } from '@proton/components';
 import { useAddresses, useFeature, useModals, useUser } from '@proton/components/hooks';
 import ImportModal from '@proton/components/containers/contacts/import/ImportModal';
 
 interface Props {
-    hideEasySwitch?: boolean;
     onImportButtonClick?: () => void;
     easySwitchSource?: EASY_SWITCH_SOURCE;
 }
 
 const ImportCsvContactButton = ({
-    hideEasySwitch = false,
     easySwitchSource = EASY_SWITCH_SOURCE.IMPORT_CONTACTS_BUTTON,
     onImportButtonClick,
 }: Props) => {
@@ -47,12 +38,12 @@ const ImportCsvContactButton = ({
 
     const disabled = isLoading || !user.hasNonDelinquentScope;
 
-    return isEasySwitchEnabled && !hideEasySwitch ? (
+    return isEasySwitchEnabled ? (
         <>
             <GoogleButton
                 onClick={() => {
                     createModal(
-                        <ImportAssistantOauthModal
+                        <EasySwitchOauthModal
                             source={easySwitchSource}
                             addresses={addresses}
                             defaultCheckedTypes={[ImportType.CONTACTS]}
