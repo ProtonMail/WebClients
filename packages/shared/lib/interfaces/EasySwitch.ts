@@ -15,10 +15,10 @@ export interface OAuthProps {
 }
 
 export enum IAOauthModalModelStep {
-    INSTRUCTIONS = 3,
     AUTHENTICATION = 0,
     SELECT_IMPORT_TYPE = 1,
     SUCCESS = 2,
+    OAUTH_INSTRUCTIONS = 3,
 }
 
 export enum ImportType {

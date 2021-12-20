@@ -57,6 +57,7 @@ import {
 import IASelectImportTypeStep from './steps/IASelectImportTypeStep';
 import useOAuthPopup from '../../hooks/useOAuthPopup';
 import ImportStartedStep from './steps/IAImportStartedStep';
+import IAOauthInstructionsStep from './steps/IAOauthInstructionsStep';
 import {
     useApi,
     useCalendars,
@@ -85,7 +86,7 @@ const {
     // DRIVE,
 } = ImportType;
 
-const { AUTHENTICATION, SELECT_IMPORT_TYPE, SUCCESS } = IAOauthModalModelStep;
+const { AUTHENTICATION, SELECT_IMPORT_TYPE, SUCCESS, OAUTH_INSTRUCTIONS } = IAOauthModalModelStep;
 
 const DEFAULT_IMAP_PORT = 993;
 
@@ -240,6 +241,13 @@ const ImportAssistantOauthModal = ({
 
     const handleSubmit = async () => {
         if (modalModel.step === AUTHENTICATION) {
+            setModalModel({
+                ...modalModel,
+                step: OAUTH_INSTRUCTIONS,
+            });
+        }
+
+        if (modalModel.step === OAUTH_INSTRUCTIONS) {
             const scopes = [
                 ...G_OAUTH_SCOPE_DEFAULT,
                 checkedTypes[MAIL] && G_OAUTH_SCOPE_MAIL,
@@ -379,6 +387,7 @@ const ImportAssistantOauthModal = ({
                     }
                 },
             });
+
             return;
         }
 
@@ -492,6 +501,10 @@ const ImportAssistantOauthModal = ({
             return null;
         }
 
+        if (modalModel.step === OAUTH_INSTRUCTIONS) {
+            return <PrimaryButton type="submit">{c('Action').t`Continue`}</PrimaryButton>;
+        }
+
         if ([SELECT_IMPORT_TYPE, AUTHENTICATION].includes(modalModel.step)) {
             if (modalModel.oauthProps) {
                 return (
@@ -524,14 +537,41 @@ const ImportAssistantOauthModal = ({
         return null;
     };
 
-    const handleCancel = () => onClose();
+    const handleCancel = () => {
+        if (modalModel.step === OAUTH_INSTRUCTIONS) {
+            setModalModel({
+                ...modalModel,
+                step: AUTHENTICATION,
+            });
 
-    const cancelRenderer = () =>
-        showLoadingState ? null : (
+            return;
+        }
+
+        onClose();
+    };
+
+    const cancelRenderer = () => {
+        let copy = '';
+
+        switch (modalModel.step) {
+            case SUCCESS:
+                copy = c('Action').t`Close`;
+                break;
+            case OAUTH_INSTRUCTIONS:
+                copy = c('Action').t`Back`;
+                break;
+
+            default:
+                copy = c('Action').t`Cancel`;
+                break;
+        }
+
+        return !showLoadingState ? (
             <Button shape="outline" onClick={handleCancel}>
-                {modalModel.step === SUCCESS ? c('Action').t`Close` : c('Action').t`Cancel`}
+                {copy}
             </Button>
-        );
+        ) : null;
+    };
 
     const titleRenderer = () => {
         if (showLoadingState) {
@@ -543,6 +583,7 @@ const ImportAssistantOauthModal = ({
                 return c('Title').t`Select what to import`;
             case SELECT_IMPORT_TYPE:
                 return c('Title').t`Customize and confirm`;
+            case OAUTH_INSTRUCTIONS:
             case SUCCESS:
                 return null;
             default:
@@ -557,6 +598,7 @@ const ImportAssistantOauthModal = ({
             close={cancelRenderer()}
             onSubmit={handleSubmit}
             onClose={handleCancel}
+            intermediate={modalModel.step === OAUTH_INSTRUCTIONS}
             {...rest}
         >
             {showLoadingState ? (
@@ -569,6 +611,7 @@ const ImportAssistantOauthModal = ({
                 />
             ) : (
                 <>
+                    {modalModel.step === OAUTH_INSTRUCTIONS && <IAOauthInstructionsStep />}
                     {[SELECT_IMPORT_TYPE, AUTHENTICATION].includes(modalModel.step) && (
                         <IASelectImportTypeStep
                             checkedTypes={checkedTypes}
