@@ -155,5 +155,8 @@ export const cancelScheduled = (state: Draft<MessagesState>, { payload: ID }: Pa
 
     if (message) {
         message.loadRetry = 0;
+        if (message.draftFlags) {
+            message.draftFlags.scheduledAt = undefined;
+        }
     }
 };
