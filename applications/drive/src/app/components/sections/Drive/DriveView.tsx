@@ -15,6 +15,8 @@ import Drive from './Drive';
 import useDriveEvents from '../../../hooks/drive/useDriveEvents';
 import useDrive from '../../../hooks/drive/useDrive';
 
+import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
+
 export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 
 function DriveView({ match }: RouteComponentProps<DriveSectionRouteProps>) {
@@ -71,15 +73,17 @@ function DriveView({ match }: RouteComponentProps<DriveSectionRouteProps>) {
     useAppTitle(c('Title').t`My files`);
 
     return (
-        <DriveContentProvider folder={folder}>
-            {folder ? <DriveToolbar activeFolder={folder} /> : <Toolbar />}
-            <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom section--header">
-                    {folder && <DriveBreadcrumbs activeFolder={folder} />}
-                </div>
-                {folder && <Drive activeFolder={folder} />}
-            </PrivateMainArea>
-        </DriveContentProvider>
+        <UploadDragDrop className="flex flex-column flex-item-fluid">
+            <DriveContentProvider folder={folder}>
+                {folder ? <DriveToolbar activeFolder={folder} /> : <Toolbar />}
+                <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
+                    <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom section--header">
+                        {folder && <DriveBreadcrumbs activeFolder={folder} />}
+                    </div>
+                    {folder && <Drive activeFolder={folder} />}
+                </PrivateMainArea>
+            </DriveContentProvider>
+        </UploadDragDrop>
     );
 }
 
