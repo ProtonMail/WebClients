@@ -21,8 +21,6 @@ import {
 
 import { escapeSlashes, getFolderRelationshipsMap, getLevel, splitEscaped } from '../helpers';
 
-import { Alert } from '../../../../components';
-
 import ImportManageFoldersRow from './ImportManageFoldersRow';
 
 interface Props {
@@ -228,7 +226,7 @@ const ImportManageFolders = ({
 
     return (
         <>
-            <Alert className="mb1 mt2">{c('Info').t`Please select the folders you would like to import:`}</Alert>
+            <div className="mb1 mt2">{c('Info').t`Please select the folders you would like to import:`}</div>
 
             <div className="flex pt1">
                 <div className="flex-item-fluid text-ellipsis pr0-5" title={fromLabel}>

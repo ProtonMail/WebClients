@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { EASY_SWITCH_SOURCE, ImportType, PROVIDER_INSTRUCTIONS } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EASY_SWITCH_SOURCE, ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { useAddresses, useFeature, useModals, useUser } from '../../hooks';
@@ -9,8 +9,7 @@ import { ProviderCard } from '../../components';
 import SettingsSectionWide from './SettingsSectionWide';
 import SettingsParagraph from './SettingsParagraph';
 
-import { ImportAssistantOauthModal } from '../easySwitch';
-import ImportMailModal from '../easySwitch/mail/modals/ImportMailModal';
+import { EasySwitchOauthModal, EasySwitchDefaultModal } from '../easySwitch';
 import { ImportProvider } from '../../components/easySwitch/ProviderCard';
 import { FeatureCode } from '../features';
 
@@ -28,7 +27,7 @@ const AccountEasySwitchSection = () => {
 
     const handleOAuthClick = () => {
         createModal(
-            <ImportAssistantOauthModal
+            <EasySwitchOauthModal
                 source={EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS}
                 addresses={addresses}
                 defaultCheckedTypes={[
@@ -41,8 +40,8 @@ const AccountEasySwitchSection = () => {
         );
     };
 
-    const handleIMAPClick = (instructions?: PROVIDER_INSTRUCTIONS) =>
-        createModal(<ImportMailModal addresses={addresses} providerInstructions={instructions} />);
+    const handleIMAPClick = (provider?: NON_OAUTH_PROVIDER) =>
+        createModal(<EasySwitchDefaultModal addresses={addresses} provider={provider} />);
 
     const disabled = isLoading || !user.hasNonDelinquentScope;
 
@@ -50,24 +49,24 @@ const AccountEasySwitchSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
-                    .t`Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.`}
+                    .t`Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.`}
             </SettingsParagraph>
 
-            <div className="mb1 text-bold">{c('Info').t`Select a service provider to get started`}</div>
+            <div className="mb1 text-bold">{c('Info').t`Select a service provider to start`}</div>
 
             <div className="mt0-5">
                 <ProviderCard provider={GOOGLE} onClick={handleOAuthClick} disabled={disabled} className="mb1 mr1" />
 
                 <ProviderCard
                     provider={YAHOO}
-                    onClick={() => handleIMAPClick(PROVIDER_INSTRUCTIONS.YAHOO)}
+                    onClick={() => handleIMAPClick(NON_OAUTH_PROVIDER.YAHOO)}
                     disabled={disabled}
                     className="mb1 mr1"
                 />
 
                 <ProviderCard
                     provider={OUTLOOK}
-                    onClick={() => handleIMAPClick()}
+                    onClick={() => handleIMAPClick(NON_OAUTH_PROVIDER.OUTLOOK)}
                     disabled={disabled}
                     className="mb1 mr1"
                 />
