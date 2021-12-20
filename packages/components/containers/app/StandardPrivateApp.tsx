@@ -79,6 +79,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const appRef = useRef<FunctionComponent | null>(null);
     const hasDelinquentBlockRef = useRef(false);
     const appLink = useAppLink();
+    const refreshingRef = useRef(false);
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -106,7 +107,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         const models = unique([UserSettingsModel, UserModel, ...preloadModels]);
         const filteredModels = addressesPromise ? models.filter((model) => model !== AddressesModel) : models;
 
-        const modelsPromise = loadModels(filteredModels, loadModelsArgs).then((result: any) => {
+        const setupPromise = loadModels(filteredModels, loadModelsArgs).then((result: any) => {
             const [userSettings, user] = result as [UserSettings, User];
 
             const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
@@ -119,8 +120,11 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 featuresPromise.then(async ({ Features }) => {
                     const [earlyAccessScope] = Features;
 
-                    // The await prevents setLoading being set to false if page is about to reload
-                    await handleEarlyAccessDesynchronization({ userSettings, earlyAccessScope, appName: APP_NAME });
+                    if (handleEarlyAccessDesynchronization({ userSettings, earlyAccessScope, appName: APP_NAME })) {
+                        // Firefox cancels requests upon location.reload. Setting this prevents the error screen from being displayed since the reload is not instant.
+                        refreshingRef.current = true;
+                        window.location.reload();
+                    }
                 }),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale, userSettings),
@@ -134,7 +138,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         Promise.all([
             hasOnlyExternalAddressesPromise,
             eventManagerPromise,
-            modelsPromise,
+            setupPromise,
             addressesPromise,
             onInit?.(),
             loadOpenPGP(openpgpConfig),
@@ -162,13 +166,13 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         };
     }, []);
 
-    if (error) {
+    if (!refreshingRef.current && error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
     const LoadedApp = appRef.current;
 
-    if (loading || !eventManagerRef.current || LoadedApp === null) {
+    if (refreshingRef.current || loading || !eventManagerRef.current || LoadedApp === null) {
         return (
             <>
                 <ModalsChildren />
