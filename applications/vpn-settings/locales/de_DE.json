@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Gutschein aktivieren"
       ],
+      "Activate recovery": [
+        "Wiederherstellung aktivieren"
+      ],
       "Add credit / debit card": [
         "Kredit‐/Debitkarte hinzufügen"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Erneut senden"
       ],
+      "Reset": [
+        "Zurücksetzen"
+      ],
       "Reset credentials": [
         "Anmeldedaten zurücksetzen"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Senden"
+      ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase festlegen"
       ],
       "Share via link": [
         "Als Link teilen"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Aktualisieren"
+      ],
+      "Update recovery file": [
+        "Wiederherstellungsdatei aktualisieren"
+      ],
+      "Update recovery phrase": [
+        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Umsteigen"
@@ -952,8 +967,8 @@
       "You have no invoices.": [
         "Sie haben keine Rechnungen."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ihr Konto oder Ihre Organisation enthält derzeit eine überfällige Rechnung. Bitte begleichen Sie alle unbezahlten Rechnungen."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
       ]
     },
     "Error message": {
@@ -1134,8 +1149,8 @@
       "No logs": [
         "Keine Protokollierung"
       ],
-      "Secure core servers": [
-        "„Secure Core”‐Server"
+      "Secure Core servers": [
+        "Secure‐Core‐Server"
       ],
       "Strong encryption": [
         "Starke Verschlüsselung"
@@ -1554,9 +1569,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder des ${ link } werden die meisten Probleme automatisch gelöst."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Das Zurücksetzen Ihres Passworts bedeutet, dass Ihr altes Passwort nicht mehr funktionieren wird. Möchten Sie Ihr Passwort wirklich zurücksetzen?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Das Zurücksetzen Ihres Passworts setzt Ihre Verschlüsselungscodes für alle Proton-bezogenen Dienste (Mail und VPN) zurück. Sie werden Ihre bestehenden Nachrichten nicht mehr lesen können. Wenn Sie Ihre ProtonMail-Anmeldeinformationen kennen, setzen Sie diese NICHT zurück. Sie können sich hiermit ${ hereLink } anmelden."
       ],
@@ -1640,6 +1652,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dadurch wird Ihr Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        "Dadurch wird dein Passwort ungültig, und du kannst dich damit nicht mehr bei deinem Konto anmelden."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf Ihrem Proton-Konto. Zwei-Faktor-Authentifizierung wird Ihr Proton-Konto sicherer machen, daher empfehlen wir Ihnen, diese zu aktivieren."
@@ -2937,7 +2952,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } in die Zwischenablage kopiert"
       ],
       "Account deleted. Logging out...": [
@@ -3002,7 +3017,7 @@
       "/2-year": [
         "/2 Jahre"
       ],
-      "/monthly": [
+      "/month": [
         "/Monat"
       ],
       "/year": [
@@ -3133,9 +3148,6 @@
       ],
       "Confirm phone number": [
         "Rufnummer bestätigen"
-      ],
-      "Confirm reset password": [
-        "Passwortzurücksetzung bestätigen"
       ],
       "Coupon discount": [
         "Gutscheinrabatt"
@@ -3337,6 +3349,9 @@
       ],
       "Reset password": [
         "Passwort zurücksetzen"
+      ],
+      "Reset password?": [
+        "Passwort zurücksetzen?"
       ],
       "Secure Core Servers": [
         "„Secure Core”‐Server"

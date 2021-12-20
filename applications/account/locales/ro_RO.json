@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Activare chei organizație"
       ],
+      "Activate recovery": [
+        "Activare recuperare"
+      ],
       "Add": [
         "Adăugare"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Setare adresă colectoare"
+      ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
       ],
       "Share via link": [
         "Partajare prin legătură"
@@ -2185,8 +2191,8 @@
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Contul sau organizația are în prezent o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
@@ -2747,13 +2753,15 @@
         "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar",
         "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare contacte: ${ totalImported }}/${ totalToImport }"
@@ -3091,8 +3099,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } din ${ totalEvents } nu va fi importat. Extindeți pentru detalii.",
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii.",
+        "${ totalEventsDiscarded } din ${ totalEvents } de evenimente nu vor fi importate. Extindeți pentru detalii."
       ],
       "No contact can be imported. Click for details": [
         "Nu se pot importa contacte. Faceți clic pentru detalii."
@@ -3271,9 +3281,6 @@
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
-      "Activate your recovery phrase": [
-        "Activați fraza de recuperare"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"ProtonMail me\" sau \"Private Message me\"."
       ],
@@ -3303,8 +3310,8 @@
       "Addresses": [
         "Adrese"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "După resetarea parolei, datele vă sunt blocate în formă criptată pentru a fi păstrate în siguranță. Pentru a decripta și a vizualiza e-mailurile și alte date, aveți nevoie de un fișier de recuperare sau de o frază de recuperare."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        "După resetarea parolei datele sunt blocate într-o formă criptată pentru a le păstra sigure."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru migrare."
@@ -3330,6 +3337,12 @@
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
+      ],
+      "Allow recovery by email": [
+        "Permitere recuperare prin e-mail"
+      ],
+      "Allow recovery by phone": [
+        "Permitere recuperare prin telefon"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Vă permite să găzduiți e-mailuri pe domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@examplu.com"
@@ -3367,8 +3380,8 @@
       "Are you sure you want to delete this filter?": [
         "Sigur doriți ștergerea acestui filtru?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Sigur doriți să ștergeți acest folder?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Sigur doriți să ștergeți acest dosar? Toate subfolderele vor fi și ele șterse."
       ],
       "Are you sure you want to delete this label?": [
         "Sigur doriţi să ştergeţi această etichetă?"
@@ -3572,14 +3585,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Retrogradarea va opri orice conexiune către serverele ProtonVPN cu plată."
       ],
+      "Download recovery file": [
+        "Descărcare fișier de recuperare"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descărcați cheile PGP pentru a le folosi cu alte servicii compatibile cu PGP."
-      ],
-      "Download your recovery file": [
-        "Descărcați fișierul de recuperare"
       ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat."
@@ -4015,6 +4028,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Mai există și alți administratori în cadrul organizației și va trebui să le comunicați noua parolă."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        "Fișier de recuperare învechit. Actualizați-l pentru a vă asigura accesul la date."
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        "Metode de recuperare învechite. Actualizați-le pentru a vă asigura accesul la date."
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        "Frază de recuperare învechită. Actualizați-o pentru a vă asigura accesul la date."
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4197,6 +4219,9 @@
       "Session timed out.": [
         "Sesiune expirată."
       ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
@@ -4332,6 +4357,15 @@
       "to continue to ${ toAppName }": [
         "pentru a continua cu ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        "Pentru a decripta și vedea mesajele și alte date aveți nevoie de un fișier sau frază de recuperare."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        "Pentru a decripta și vedea mesajele și alte date aveți nevoie de un fișier de recuperare."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        "Pentru a decripta și vedea mesajele și alte date aveți nevoie de o frază de recuperare."
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
       ],
@@ -4348,7 +4382,7 @@
         "Pentru a continua, selectați o metodă de recuperare a contului pentru a putea verifica solicitarea."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ProtonVPN pentru propriul dispozitiv și conectați-vă la un server ProtonVPN."
+        "Pentru a vă securiza conexiunea la Internet, descărcați și instalați aplicația ProtonVPN pentru propriul dispozitiv și conectați-vă la un server ProtonVPN."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Alimentați-vă contul cu credite pe care le puteți folosi pentru a vă cumpăra un plan nou sau pentru a-l reînnoi pe cel existent. Veți obține câte un credit pentru fiecare ${ i18nCurrency } cheltuit."
@@ -4385,6 +4419,12 @@
       ],
       "Unsupported file": [
         "Fişier nesuportat"
+      ],
+      "Update recovery file": [
+        "Actualizare fișier de recuperare"
+      ],
+      "Update recovery phrase": [
+        "Actualizare frază de recuperare"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Treceți la un plan ${ PLAN_NAMES[PLANS.VISIONARY] } sau ${ PLAN_NAMES[PLANS.PROFESSIONAL] } pentru a activa răspunsurile automate atunci când nu aveţi acces la e-mail."
@@ -6464,7 +6504,7 @@
         "Descoperiți toate serviciile Proton"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misiunea noastră este să construim un internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un internet securizat."
+        "Misiunea noastră este să construim un Internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un Internet securizat."
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -7307,7 +7347,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } a fost copiat în memorie"
       ],
       "Account deleted. Logging out...": [
@@ -8889,11 +8929,11 @@
       "You will not see this import record in the list anymore.": [
         "Nu veți mai vedea această înregistrare importată în listă."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
-        "Fișierul de recuperare este expirat și nu vă poate recupera datele dacă vă veți reseta contul."
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
+        "Fișierul de recuperare este vechi. Nu vă poate recupera datele dacă vă veți reseta contul."
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
-        "Fraza de recuperare este expirată și nu vă poate recupera datele dacă vă veți reseta contul."
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        "Fraza de recuperare este veche. Nu vă poate recupera datele dacă vă veți reseta contul."
       ]
     },
     "Warning for domain modal": {

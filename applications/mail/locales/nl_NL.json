@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Accept": [
-        "Accepteren"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Voeg toe"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Voeg nieuwe groep toe"
+      ],
+      "Add participant": [
+        ""
       ],
       "Add phone number": [
         "Telefoonnummer toevoegen"
@@ -179,8 +182,8 @@
       "Confirm": [
         "Bevestigen"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bevestig het openen van link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Contactgroep"
@@ -746,6 +749,9 @@
       "Set expiration time": [
         "Stel vervaltijd in"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Deel via link"
       ],
@@ -824,9 +830,6 @@
       "This message contains embedded images.": [
         "Dit bericht bevat ingebedde afbeeldingen."
       ],
-      "This message contains remote content.": [
-        "Dit bericht bevat externe inhoud."
-      ],
       "Trust": [
         "Vertrouwen"
       ],
@@ -869,6 +872,12 @@
       ],
       "Update": [
         "Updaten"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Upgraden"
@@ -965,6 +974,17 @@
         "U heeft geen groepen."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } e-mailadres",
@@ -1025,8 +1045,9 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        "${ numberOfCompletedItems } van de ${ totalNumberOfChecklistItems } voltooid"
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "",
+        ""
       ]
     },
     "Apps dropdown": {
@@ -1308,6 +1329,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Deze reactie komt niet overeen met uw uitnodigingsgegevens. Controleer de uitnodigingsgegevens in uw agenda."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft uw uitnodiging geaccepteerd en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
       ],
@@ -1329,6 +1362,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } vroeg om de laatste updates voor een afspraak die niet meer bestaat in uw kalender."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft uw uitnodiging geweigerd en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
       ],
@@ -1341,11 +1386,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } heeft uw uitnodiging geweigerd."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } had uw uitnodiging geaccepteerd en een nieuwe tijd voorgesteld voor één herhaling van deze afspraak. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } had uw uitnodiging geaccepteerd en een nieuwe tijd voorgesteld voor deze afspraak. Antwoord en voorstel zijn verouderd."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } had uw uitnodiging geweigerd en een nieuwe tijd voorgesteld voor één herhaling van deze afspraak. Antwoord en voorstel zijn verouderd."
@@ -1389,17 +1458,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } had een nieuwe tijd voorgesteld voor deze afspraak. Dit voorstel is verouderd. U heeft geen agenda's."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } had uw uitnodiging voorzichtig geaccepteerd en een nieuwe tijd voorgesteld voor één herhaling van deze afspraak. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } had uw uitnodiging voorzichtig geaccepteerd en een nieuwe tijd voorgesteld voor deze afspraak. Antwoord en voorstel zijn verouderd."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft een nieuwe tijd voorgesteld voor één herhaling van deze afspraak."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } heeft een nieuwe tijd voorgesteld voor deze afspraak."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft voorzichtig uw uitnodiging geaccepteerd en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
@@ -1422,20 +1518,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Een herhaling is toegevoegd aan de afspraak ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        "Het evenement is al afgelopen"
-      ],
-      "Event in progress": [
-        "Gebeurtenis in uitvoering"
-      ],
       "Event refreshing is not supported for the moment": [
         "Afspraak verversen wordt momenteel niet ondersteund"
       ],
       "Event rescheduling is not supported for the moment": [
         "Afspraakherplanning wordt momenteel niet ondersteund"
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "De afzender van deze e-mail is niet uitgenodigd voor deze afspraak en kan niet worden toegevoegd als deelnemer"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Dit antwoord kan niet worden toegevoegd aan ${ calendarAppName } , omdat we alleen antwoorden op alle gebeurtenissen van een serie ondersteunen op dit moment"
@@ -1509,6 +1596,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Er zijn meer dan 12 uur verstreken sinds de laatste update"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
       ]
     },
     "Collapsible tooltip": {
@@ -1889,12 +1984,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        "Het evenement is al afgelopen"
-      ],
-      "Event in progress": [
-        "Gebeurtenis in uitvoering"
-      ],
       "Event is tomorrow": [
         "Het evenement is morgen"
       ],
@@ -2378,7 +2467,24 @@
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Deze actie kan niet worden uitgevoerd"
       ]
@@ -2536,6 +2642,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Geen afbeelding geselecteerd"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2708,6 +2819,12 @@
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         "Voltooi alle stappen en krijg een totaal van ${ totalGBStorageAfterCompletion } GB op uw account"
+      ],
+      "Expires soon": [
+        "Verloopt binnenkort"
+      ],
+      "Expires today": [
+        "Verloopt vandaag"
       ],
       "Only ${ days } day left": [
         "Nog maar één",
@@ -3192,8 +3309,8 @@
       "Are you sure you want to permanently delete this message?": [
         "Weet u zeker dat u dit bericht permanent wilt wissen?"
       ],
-      "Attach Public Key": [
-        "Publieke sleutel bijvoegen"
+      "Attach public key": [
+        "Openbare sleutel bijvoegen"
       ],
       "Background color": [
         "Achtergrondkleur"
@@ -3770,8 +3887,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Door een bericht als phishing aan te merken, wordt het naar ProtonMail verzonden, zodat het mogelijk is de inhoud te analyseren en de spamfilters te verbeteren. Dit betekent dat we alle inhoud van dit betreffende bericht kunnen zien."
       ],
-      "Request Read Receipt": [
-        "Vraag leesbevestiging"
+      "Request read receipt": [
+        "Leesbevestiging vragen"
       ],
       "Right to Left": [
         "Van rechts naar links"
@@ -4610,6 +4727,9 @@
       "BTC amount:": [
         "BTC-bedrag:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         "Agenda's"
       ],
@@ -4709,6 +4829,9 @@
       "Folder location": [
         "Map locatie"
       ],
+      "Frequency": [
+        ""
+      ],
       "From": [
         "Van"
       ],
@@ -4766,6 +4889,9 @@
       "Last month only": [
         "Alleen vorige maand"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
@@ -4813,6 +4939,9 @@
       ],
       "Or": [
         "Of"
+      ],
+      "Participants": [
+        ""
       ],
       "Password": [
         "Wachtwoord"
@@ -6727,6 +6856,9 @@
       "Email addresses": [
         "E-mailadressen"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "E-mailinstellingen"
       ],
@@ -6792,9 +6924,6 @@
       ],
       "Link confirmation": [
         "Link bevestigen"
-      ],
-      "Load embedded images": [
-        "Ingesloten afbeeldingen laden"
       ],
       "Load remote content": [
         "Externe inhoud laden"
@@ -6972,6 +7101,9 @@
       ],
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Gesprekken sorteren"

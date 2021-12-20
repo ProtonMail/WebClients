@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Afegir"
       ],
@@ -406,6 +409,9 @@
       "Send": [
         "Envia"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Compartir"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Actualitza"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Millorar"
@@ -936,7 +948,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "El calendari no es pot desxifrar"
+        "El calendari no s'ha pogut desxifrar"
       ],
       "Calendar is syncing": [
         "El calendari s'està sincronitzant"
@@ -1564,7 +1576,7 @@
         "No s'han pogut desar les preferències"
       ],
       "Primary address key is not decrypted": [
-        "La clau de la adreça primària no està desxifrada"
+        "La clau de l'adreça primària no està desxifrada"
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "També podeu ${ refresh } o tornar-ho a intentar més tard."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2042,11 +2057,12 @@
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "",
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -2134,7 +2150,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -2528,7 +2545,7 @@
         "Empremta digital de la clau"
       ],
       "Large imports can take several days.": [
-        "Imports grans poden trigar diversos dies."
+        "Les importacions grans poden trigar diversos dies."
       ],
       "Learn more": [
         "Saber-ne més"
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "Import de BTC:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "Codi CVV"
+      ],
+      "Date and time": [
+        ""
       ],
       "Description": [
         "Descripció"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         ""
       ],
-      "Event frequency": [
-        "Freqüència de l'esdeveniment"
-      ],
-      "Event location": [
-        "Ubicació de l'esdeveniment"
-      ],
       "Event notifications": [
         "Notificacions d'esdeveniment"
-      ],
-      "Event time": [
-        "Hora de l'esdeveniment"
       ],
       "Event title": [
         "Títol de l'esdeveniment"
@@ -3333,6 +3350,9 @@
         "Adreça ampliada"
       ],
       "Folder location": [
+        ""
+      ],
+      "Frequency": [
         ""
       ],
       "From: ${ importedEmail }": [
@@ -3374,6 +3394,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
@@ -3390,6 +3413,9 @@
         "Titular de la targeta"
       ],
       "Notification": [
+        ""
+      ],
+      "Notifications": [
         ""
       ],
       "Operating system": [
@@ -3477,9 +3503,6 @@
       "System information": [
         "Informació del sistema"
       ],
-      "Time of the event": [
-        "Hora de l'esdeveniment"
-      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Quina és la raó principal per aquesta valoració?"
-      ],
-      "Your calendars": [
-        "El vostre calendari"
       ],
       "ZIP": [
         "ZIP"
@@ -4914,6 +4934,9 @@
       ],
       "Downgrade account": [
         "Degradar compte"
+      ],
+      "Drop to upload": [
+        ""
       ],
       "Edit calendar": [
         ""

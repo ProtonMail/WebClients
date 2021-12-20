@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Активувати відновлення"
+      ],
       "Add": [
         "Додати"
       ],
@@ -410,6 +413,9 @@
       "Send": [
         "Надіслати"
       ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
+      ],
       "Share": [
         "Поділитися"
       ],
@@ -481,6 +487,12 @@
       ],
       "Update": [
         "Оновити"
+      ],
+      "Update recovery file": [
+        "Оновити файл відновлення"
+      ],
+      "Update recovery phrase": [
+        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -1899,6 +1911,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Ви можете також ${ refresh }, або спробувати знову пізніше."
+      ],
+      "You need an active personal calendar to import events": [
+        "Вам необхідний активний особистий календар для імпортування подій"
       ]
     },
     "Error notification": {
@@ -2096,14 +2111,17 @@
         "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
         "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "При шифруванні та додаванні вашої події сталася помилка. ${ totalImported } із ${ totalToImport } події успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "При шифруванні та додаванні вашої події сталася помилка. Неможливо імпортувати подію.",
         "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події.",
         "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події.",
         "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифрування та додавання контактів: ${ totalImported }/${ totalToImport }"
@@ -2204,7 +2222,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } із ${ totalEvents } події не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
         "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць."
       ],
       "No contact can be imported. Click for details": [
@@ -3052,6 +3073,9 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
       ],
+      "Your events will be encrypted and then saved.": [
+        "Ваші події буде зашифровано, а потім збережено."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
       ],
@@ -3340,6 +3364,9 @@
       "BTC amount:": [
         "Сума в BTC:"
       ],
+      "Calendar": [
+        "Календар"
+      ],
       "Calendars": [
         "Календарі"
       ],
@@ -3375,6 +3402,9 @@
       ],
       "CVV code": [
         "Код CVV"
+      ],
+      "Date and time": [
+        "Дата й час"
       ],
       "Description": [
         "Опис"
@@ -3415,17 +3445,8 @@
       "Event duration": [
         "Тривалість події"
       ],
-      "Event frequency": [
-        "Повторюваність події"
-      ],
-      "Event location": [
-        "Місце події"
-      ],
       "Event notifications": [
         "Сповіщення про події"
-      ],
-      "Event time": [
-        "Час події"
       ],
       "Event title": [
         "Назва події"
@@ -3444,6 +3465,9 @@
       ],
       "Folder location": [
         "Розташування теки"
+      ],
+      "Frequency": [
+        "Частота"
       ],
       "From: ${ importedEmail }": [
         "Від: ${ importedEmail }"
@@ -3484,6 +3508,9 @@
       "Last month only": [
         "Лише останній місяць"
       ],
+      "Location": [
+        "Розташування"
+      ],
       "Mailbox password": [
         "Пароль поштової скриньки"
       ],
@@ -3500,6 +3527,9 @@
         "Ім'я на картці"
       ],
       "Notification": [
+        "Сповіщення"
+      ],
+      "Notifications": [
         "Сповіщення"
       ],
       "Operating system": [
@@ -3589,9 +3619,6 @@
       "System information": [
         "Відомості про систему"
       ],
-      "Time of the event": [
-        "Час події"
-      ],
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
       ],
@@ -3621,9 +3648,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Яка основна причина такої оцінки?"
-      ],
-      "Your calendars": [
-        "Ваші календарі"
       ],
       "ZIP": [
         "Поштовий індекс"
@@ -5106,6 +5130,9 @@
       ],
       "Downgrade account": [
         "Понизити тарифний план"
+      ],
+      "Drop to upload": [
+        "Перетягніть для вивантаження"
       ],
       "Edit calendar": [
         "Редагувати календар"

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activar recuperación"
+      ],
       "Add": [
         "Añadir"
       ],
@@ -406,6 +409,9 @@
       "Send": [
         "Enviar"
       ],
+      "Set recovery phrase": [
+        "Establecer frase de recuperación"
+      ],
       "Share": [
         "Compartir"
       ],
@@ -477,6 +483,12 @@
       ],
       "Update": [
         "Actualizar"
+      ],
+      "Update recovery file": [
+        "Actualizar archivo de recuperación"
+      ],
+      "Update recovery phrase": [
+        "Actualizar frase de recuperación"
       ],
       "Upgrade": [
         "Actualizar"
@@ -1851,6 +1863,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "También puede ${ refresh } o intentarlo más tarde."
+      ],
+      "You need an active personal calendar to import events": [
+        "Necesita un calendario personal activo para importar eventos"
       ]
     },
     "Error notification": {
@@ -2042,12 +2057,13 @@
         "${ totalImported }/${ totalToImport } evento cifrado y añadido a su calendario",
         "${ totalImported }/${ totalToImport } eventos cifrados y añadidos a su calendario"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ocurrió un error al cifrar y añadir su evento. ${ totalImported } de { totalToImport } evento fue importado con éxito.",
+        "Ocurrió un error al cifrar y añadir sus eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados con éxito."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Ocurrió un error al cifrar y añadir el evento. El evento no fue importado.",
         "Ocurrió un error al cifrar y añadir los eventos. Ningún evento fue importado."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Ocurrió un error al cifrar y añadir sus eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados con éxito."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Cifrando y añadiendo contactos: ${ totalImported }/${ totalToImport }"
@@ -2134,8 +2150,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Amplíe para más detalles."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Haga clic para más detalles.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Haga clic para más detalles."
       ],
       "No contact can be imported. Click for details": [
         "No se puede importar ningún contacto. Haga clic para más detalles"
@@ -2942,6 +2959,9 @@
       "Your email will only be used for this one-time verification.": [
         "Su correo electrónico sólo se usará para esta verificación única."
       ],
+      "Your events will be encrypted and then saved.": [
+        "Sus eventos serán cifrados y luego guardados."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Su número de teléfono sólo se usará para esta verificación única."
       ],
@@ -3230,6 +3250,9 @@
       "BTC amount:": [
         "Cantidad BTC:"
       ],
+      "Calendar": [
+        "Calendario"
+      ],
       "Calendars": [
         "Calendarios"
       ],
@@ -3265,6 +3288,9 @@
       ],
       "CVV code": [
         "Código CVV"
+      ],
+      "Date and time": [
+        "Fecha y hora"
       ],
       "Description": [
         "Descripción"
@@ -3305,17 +3331,8 @@
       "Event duration": [
         "Duración del evento"
       ],
-      "Event frequency": [
-        "Frecuencia del evento"
-      ],
-      "Event location": [
-        "Lugar del evento"
-      ],
       "Event notifications": [
         "Notificaciones del evento"
-      ],
-      "Event time": [
-        "Hora del evento"
       ],
       "Event title": [
         "Título del evento"
@@ -3334,6 +3351,9 @@
       ],
       "Folder location": [
         "Ubicación de la carpeta"
+      ],
+      "Frequency": [
+        "Frecuencia"
       ],
       "From: ${ importedEmail }": [
         "Desde: ${ importedEmail }"
@@ -3374,6 +3394,9 @@
       "Last month only": [
         "Solo el último mes"
       ],
+      "Location": [
+        "Ubicación"
+      ],
       "Mailbox password": [
         "Contraseña del buzón"
       ],
@@ -3391,6 +3414,9 @@
       ],
       "Notification": [
         "Notificación"
+      ],
+      "Notifications": [
+        "Notificaciones"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3477,9 +3503,6 @@
       "System information": [
         "Información del sistema"
       ],
-      "Time of the event": [
-        "Hora del evento"
-      ],
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
       ],
@@ -3509,9 +3532,6 @@
       ],
       "What is the primary reason for this rating?": [
         "¿Cuál es la razón principal de esta calificación?"
-      ],
-      "Your calendars": [
-        "Sus calendarios"
       ],
       "ZIP": [
         "ZIP"
@@ -4914,6 +4934,9 @@
       ],
       "Downgrade account": [
         "Degradar cuenta"
+      ],
+      "Drop to upload": [
+        "Soltar para cargar"
       ],
       "Edit calendar": [
         "Editar calendario"

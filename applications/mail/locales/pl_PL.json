@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Accept": [
-        "Akceptuj"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "Activate recovery": [
+        "Aktywuj odzyskiwanie"
       ],
       "Add": [
         "Dodaj"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Dodaj nową grupę"
+      ],
+      "Add participant": [
+        "Dodaj uczestnika"
       ],
       "Add phone number": [
         "Dodaj numer telefonu"
@@ -179,8 +182,8 @@
       "Confirm": [
         "Potwierdź"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potwierdź otwieranie linku ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Potwierdź otwieranie linku ${ linkToShow }"
       ],
       "Contact group": [
         "Grupa kontaktów"
@@ -321,7 +324,7 @@
         "Pełny ekran"
       ],
       "Expand URL": [
-        ""
+        "Rozwiń adres URL"
       ],
       "Export": [
         "Eksportuj"
@@ -752,6 +755,9 @@
       "Set expiration time": [
         "Ustaw czas wygaśnięcia"
       ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
+      ],
       "Share via link": [
         "Udostępnij przez link"
       ],
@@ -822,16 +828,13 @@
         "Przełącz konto"
       ],
       "Switch to rich text": [
-        ""
+        "Zmień na standardowy tekst"
       ],
       "Theme": [
         "Motyw"
       ],
       "This message contains embedded images.": [
         "Ta wiadomość zawiera osadzone obrazy."
-      ],
-      "This message contains remote content.": [
-        "Ta wiadomość zawiera zawartość zdalną."
       ],
       "Trust": [
         "Zaufaj"
@@ -877,6 +880,12 @@
       ],
       "Update": [
         "Zaktualizuj"
+      ],
+      "Update recovery file": [
+        "Zaktualizuj plik odzyskiwania"
+      ],
+      "Update recovery phrase": [
+        "Zaktualizuj hasło odzyskiwania"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -973,6 +982,17 @@
         "Nie posiadasz żadnych grup."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        "Nie udało się dodać uczestnika"
+      ],
+      "Invitation sent and participant added": [
+        "Zaproszenie zostało wysłane. Uczestnik został dodany"
+      ],
+      "Participant added": [
+        "Uczestnik został dodany"
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } adres e-mail",
@@ -1041,7 +1061,10 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "Ukończono ${ numberOfCompletedItems } z ${ totalNumberOfChecklistItems } kroków",
+        "Ukończono ${ numberOfCompletedItems } z ${ totalNumberOfChecklistItems } kroków",
+        "Ukończono ${ numberOfCompletedItems } z ${ totalNumberOfChecklistItems } kroków",
         "Ukończono ${ numberOfCompletedItems } z ${ totalNumberOfChecklistItems } kroków"
       ]
     },
@@ -1324,6 +1347,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Ta odpowiedź nie pasuje do szczegółów Twojego zaproszenia. Zweryfikuj je w kalendarzu."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii."
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia."
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
       ],
@@ -1345,6 +1380,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "Uczestnik ${ participantName } poprosił o najnowsze szczegóły wydarzenia, które nie istnieje w Twoim kalendarzu."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia i zaproponował nową godzinę."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii."
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia."
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
       ],
@@ -1357,11 +1404,35 @@
       "${ participantName } declined your invitation.": [
         "Uczestnik ${ participantName } odrzucił zaproszenie."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia."
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii."
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
@@ -1405,17 +1476,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia, ale propozycja jest nieaktualna. Nie posiadasz kalendarzy."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia."
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
+      "${ participantName } is not in the participants list.": [
+        "${ participantName } nie znajduje się na liście uczestników."
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia w tej serii."
       ],
       "${ participantName } proposed a new time for this event.": [
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę."
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii."
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
@@ -1438,20 +1536,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Do wydarzenia ${ veventIcsTitle } zostało dodane powtórzenie"
       ],
-      "Event already ended": [
-        "Wydarzenie zakończyło się"
-      ],
-      "Event in progress": [
-        "Wydarzenie jest w toku"
-      ],
       "Event refreshing is not supported for the moment": [
         "Odświeżanie wydarzenia nie jest obecnie obsługiwane"
       ],
       "Event rescheduling is not supported for the moment": [
         "Planowanie wydarzenia nie jest obecnie obsługiwane"
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "Nadawca wiadomości nie został zaproszony do wydarzenia i nie może zostać dodany jako uczestnik"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Ta odpowiedź nie może zostać dodana do usługi ${ calendarAppName }, ponieważ obecnie obsługiwane są tylko odpowiedzi na wszystkie wydarzenia w tej samej serii"
@@ -1481,13 +1570,13 @@
         "Odpowiedź jest nieaktualna. Nie posiadasz kalendarzy."
       ],
       "You already accepted this invitation.": [
-        "Zaakceptowałeś zaproszenie."
+        "Zaakceptowano zaproszenie."
       ],
       "You already declined this invitation.": [
-        "Odrzuciłeś zaproszenie."
+        "Odrzucono zaproszenie."
       ],
       "You already tentatively accepted this invitation.": [
-        "Wstępnie zaakceptowałeś zaproszenie."
+        "Wstępnie zaakceptowano zaproszenie."
       ],
       "Your email address is not in the participants list": [
         "Twój adres e-mail nie znajduje się na liście uczestników"
@@ -1525,6 +1614,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Od ostatniej aktualizacji minęło ponad 12 godzin"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "Wydarzenie zakończyło się"
+      ],
+      "Event in progress": [
+        "Wydarzenie jest w toku"
       ]
     },
     "Collapsible tooltip": {
@@ -1841,7 +1938,7 @@
     },
     "Desktop notification title": {
       "New email received": [
-        "Otrzymałeś nową wiadomość"
+        "Otrzymano nową wiadomość"
       ]
     },
     "Disney": {
@@ -1919,12 +2016,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        "Wydarzenie zakończyło się"
-      ],
-      "Event in progress": [
-        "Wydarzenie jest w toku"
-      ],
       "Event is tomorrow": [
         "Wydarzenie rozpocznie się jutro"
       ],
@@ -1951,7 +2042,7 @@
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        ""
+        "Wydarzenie nie istnieje już w Twoim kalendarzu"
       ]
     },
     "Email reminder out of date alert": {
@@ -2430,7 +2521,24 @@
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        "Zaproszenie może posiadać maksymalnie 100 uczestników"
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Nie możesz wykonać tej akcji"
       ]
@@ -2456,7 +2564,7 @@
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Nie wybrałeś pliku CSV lub VCF"
+        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Nie wybrano pliku CSV lub VCF"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
@@ -2588,6 +2696,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nie wybrano obrazu"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        "Nie można wysłać zaproszenia na adres ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -2760,6 +2873,12 @@
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         "Ukończ wszystkie kroki, aby otrzymać ${ totalGBStorageAfterCompletion } GB przestrzeni dyskowej"
+      ],
+      "Expires soon": [
+        "Wygasa wkrótce"
+      ],
+      "Expires today": [
+        "Wygasa dzisiaj"
       ],
       "Only ${ days } day left": [
         "Pozostał ${ days } dzień",
@@ -3326,7 +3445,7 @@
       "Are you sure you want to permanently delete this message?": [
         "Czy na pewno chcesz trwale usunąć tę wiadomość?"
       ],
-      "Attach Public Key": [
+      "Attach public key": [
         "Dołącz klucz publiczny"
       ],
       "Background color": [
@@ -3516,7 +3635,7 @@
         "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował ${ numberOfTrackers } elementów śledzących."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Włącz ochronę przed śledzeniem, aby nadawca nie wiedział, czy i kiedy otworzyłeś wiadomość."
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Włącz ochronę przed śledzeniem, aby nadawca nie wiedział, czy i kiedy otwierasz wiadomość."
       ],
       "embedded image": [
         "osadzony obraz",
@@ -3747,13 +3866,13 @@
         "Wiadomość została wysłana."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie wysłana w dniu: ${ dateString } o godzinie ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie wysłana o godzinie ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie wysłana jutro o godzinie ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Co miesiąc ${ onDayString }"
@@ -3768,7 +3887,7 @@
         "Następnie będziesz musiał zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
       ],
       "No action selected": [
-        "Nie wybrałeś akcji"
+        "Nie wybrano akcji"
       ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
@@ -3783,7 +3902,7 @@
         "Nie znaleziono folderu"
       ],
       "No folder selected": [
-        "Nie wybrałeś folderu"
+        "Nie wybrano folderu"
       ],
       "No group found": [
         "Nie znaleziono grupy"
@@ -3792,7 +3911,7 @@
         "Nie znaleziono etykiety"
       ],
       "No label selected": [
-        "Nie wybrałeś etykiety"
+        "Nie wybrano etykiety"
       ],
       "No more results found": [
         "Nie znaleziono więcej wyników"
@@ -3926,7 +4045,7 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Zgłoszenie wiadomości jako próby wyłudzenia informacji, prześle ją do nas w celu dalszej analizy i ulepszania filtrów antyspamowych. Oznacza to, że będziemy mogli zobaczyć jej pełną treść."
       ],
-      "Request Read Receipt": [
+      "Request read receipt": [
         "Poproś o potwierdzenie odczytu"
       ],
       "Right to Left": [
@@ -3993,7 +4112,7 @@
         "Ustaw hasło odzyskiwania"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
+        "Ustaw ProtonMail jako domyślną aplikację pocztową dla tej przeglądarki. Aplikacja ProtonMail będzie automatycznie otwierać linki wiadomości."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ProtonMaila, używających kompatybilnej usługi PGP."
@@ -4131,16 +4250,16 @@
         "Wiadomość zostanie przeniesiona do Szkiców i będzie możliwa do edycji. Musisz zaplanować ponownie wysłanie wiadomości."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie wysłana w dniu: ${ dateString } o godzinie ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Wiadomość zostanie wkrótce wysłana"
       ],
       "This message will be sent today at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie wysłana o godzinie ${ formattedTime }"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie wysłana jutro o godzinie ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Wiadomość wygaśnie za ${ formattedDate }"
@@ -4149,13 +4268,13 @@
         "Wiadomość wygaśnie za ${ formattedDelay }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Wiadomość wygaśnie w dniu: ${ dateString } o godzinie ${ formattedTime }"
       ],
       "This message will expire today at ${ formattedTime }": [
-        ""
+        "Wiadomość wygaśnie o godzinie ${ formattedTime }"
       ],
       "This message will expire tomorrow at ${ formattedTime }": [
-        ""
+        "Wiadomość wygaśnie jutro o godzinie ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Klucz publiczny zostanie automatycznie użyty do zaszyfrowania wiadomości wysłanej na ten adres."
@@ -4308,7 +4427,7 @@
         "Jesteś obecnie zalogowany jako ${ user.Name } (${ user.Email }) i posiadasz ograniczony dostęp."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        ""
+        "Możesz dodać plik jako załącznik lub obraz osadzony w treści wiadomości."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
@@ -4365,10 +4484,10 @@
         "Posiadasz **${ count } wiadomości** oznaczonych tą etykietą"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Nie wpisałeś żadnego tematu wiadomości. Czy chcesz wysłać tę wiadomość mimo to?"
+        "Nie wpisano żadnego tematu wiadomości. Czy chcesz wysłać tę wiadomość mimo to?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Wykorzystałeś 100% dostępnej przestrzeni dyskowej. Rozważ zwolnienie części miejsca lub ulepszenie konta z dodatkową przestrzenią dyskową, aby wysyłać kolejne wiadomości."
+        "Wykorzystano 100% dostępnej przestrzeni dyskowej. Rozważ zwolnienie części miejsca lub ulepszenie konta z dodatkową przestrzenią dyskową, aby wysyłać kolejne wiadomości."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Twoje konto PayPal musi być powiązane z kartą płatniczą lub kontem bankowym, aby dodać je jako metodę płatności."
@@ -4380,34 +4499,34 @@
         "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystałeś 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
-        "Zaznaczyłeś **${ count } wątek** z tego folderu",
-        "Zaznaczyłeś **${ count } wątki** z tego folderu",
-        "Zaznaczyłeś **${ count } wątków** z tego folderu",
-        "Zaznaczyłeś **${ count } wątków** z tego folderu"
+        "Zaznaczono **${ count } wątek** z tego folderu",
+        "Zaznaczono **${ count } wątki** z tego folderu",
+        "Zaznaczono **${ count } wątków** z tego folderu",
+        "Zaznaczono **${ count } wątków** z tego folderu"
       ],
       "You selected **${ count } conversation** with this label": [
-        "Zaznaczyłeś **${ count } wątek** z tą etykietą",
-        "Zaznaczyłeś **${ count } wątki** z tą etykietą",
-        "Zaznaczyłeś **${ count } wątków** z tą etykietą",
-        "Zaznaczyłeś **${ count } wątków** z tą etykietą"
+        "Zaznaczono **${ count } wątek** z tą etykietą",
+        "Zaznaczono **${ count } wątki** z tą etykietą",
+        "Zaznaczono **${ count } wątków** z tą etykietą",
+        "Zaznaczono **${ count } wątków** z tą etykietą"
       ],
       "You selected **${ count } message** from this folder": [
-        "Zaznaczyłeś **${ count } wiadomość** z tego folderu",
-        "Zaznaczyłeś **${ count } wiadomości** z tego folderu",
-        "Zaznaczyłeś **${ count } wiadomości** z tego folderu",
-        "Zaznaczyłeś **${ count } wiadomości** z tego folderu"
+        "Zaznaczono **${ count } wiadomość** z tego folderu",
+        "Zaznaczono **${ count } wiadomości** z tego folderu",
+        "Zaznaczono **${ count } wiadomości** z tego folderu",
+        "Zaznaczono **${ count } wiadomości** z tego folderu"
       ],
       "You selected **${ count } message** with this label": [
-        "Zaznaczyłeś **${ count } wiadomość** z tą etykietą",
-        "Zaznaczyłeś **${ count } wiadomości** z tą etykietą",
-        "Zaznaczyłeś **${ count } wiadomości** z tą etykietą",
-        "Zaznaczyłeś **${ count } wiadomości** z tą etykietą"
+        "Zaznaczono **${ count } wiadomość** z tą etykietą",
+        "Zaznaczono **${ count } wiadomości** z tą etykietą",
+        "Zaznaczono **${ count } wiadomości** z tą etykietą",
+        "Zaznaczono **${ count } wiadomości** z tą etykietą"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Wkrótce zostaniesz przekierowany na stronę swojego banku w celu zweryfikowania płatności."
@@ -4416,7 +4535,7 @@
         "W celu zweryfikowania płatności, wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        ""
+        "Wiadomość zawiera wyrażenie \"${ attachmentsFoundKeyword }\", ale załącznik nie został dodany. Czy chcesz wysłać wiadomość mimo to?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta został ograniczony. ${ payInvoiceLink }"
@@ -4732,7 +4851,7 @@
         "${ firstAddress } i ${ count } innych odbiorców"
       ],
       "(Coming soon)": [
-        ""
+        "(wkrótce)"
       ],
       "Actions": [
         "Akcje"
@@ -4788,6 +4907,9 @@
       "BTC amount:": [
         "Kwota BTC:"
       ],
+      "Calendar": [
+        "Kalendarz"
+      ],
       "Calendars": [
         "Kalendarze"
       ],
@@ -4819,7 +4941,7 @@
         "Warunki"
       ],
       "Confirm password": [
-        ""
+        "Potwierdź hasło"
       ],
       "Contacts": [
         "Kontakty"
@@ -4887,6 +5009,9 @@
       "Folder location": [
         "Lokalizacja folderu"
       ],
+      "Frequency": [
+        "Częstotliwość"
+      ],
       "From": [
         "Od"
       ],
@@ -4944,6 +5069,9 @@
       "Last month only": [
         "Tylko ostatni miesiąc"
       ],
+      "Location": [
+        "Lokalizacja"
+      ],
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
       ],
@@ -4960,7 +5088,7 @@
         "Oznacz jako"
       ],
       "Message password": [
-        ""
+        "Hasło wiadomości"
       ],
       "Move to": [
         "Przenieś do"
@@ -4992,11 +5120,14 @@
       "Or": [
         "Lub"
       ],
+      "Participants": [
+        "Uczestnicy"
+      ],
       "Password": [
         "Hasło"
       ],
       "Password hint": [
-        ""
+        "Podpowiedź do hasła"
       ],
       "Payer": [
         "Płatnik"
@@ -5867,7 +5998,7 @@
         "Wersja przeglądarki"
       ],
       "Confirm password": [
-        ""
+        "Potwierdź hasło"
       ],
       "e.g. Julia Smith": [
         "np. Julia Nowak"
@@ -7005,6 +7136,9 @@
       "Email addresses": [
         "Adresy e-mail"
       ],
+      "Email content": [
+        "Zawartość wiadomości"
+      ],
       "Email settings": [
         "Ustawienia poczty e-mail"
       ],
@@ -7070,9 +7204,6 @@
       ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
-      ],
-      "Load embedded images": [
-        "Załaduj osadzone obrazy"
       ],
       "Load remote content": [
         "Załaduj zawartość zdalną"
@@ -7251,6 +7382,9 @@
       "Sign in again to continue": [
         "Zaloguj się ponownie, aby kontynuować"
       ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        "Niektóre obrazy nie nie mogły zostać załadowane z ochroną przed śledzeniem [Załaduj bez ochrony]"
+      ],
       "Sort conversations": [
         "Sortuj wątki"
       ],
@@ -7364,7 +7498,7 @@
         "Pozwala na posiadanie adresu e-mail z własnymi domenami, np. jan@nowak.pl"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jeśli kupiłeś kod podarunkowy lub otrzymałeś go od naszej pomocy technicznej, możesz wpisać go tutaj."
+        "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Obsługa wielu użytkowników jest dostępna w planach z co najmniej 2 użytkownikami"
@@ -7408,7 +7542,7 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "To jest dobry dzień na napisanie wiadomości"
       ],
       "Update default font and size": [
         "Zaktualizuj domyślną czcionkę i jej rozmiar"

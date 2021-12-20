@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Attiva il mio coupon"
       ],
+      "Activate recovery": [
+        "Attiva il ripristino"
+      ],
       "Add credit / debit card": [
         "Aggiungi carta di credito/debito"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Reinvia"
       ],
+      "Reset": [
+        "Ripristina"
+      ],
       "Reset credentials": [
         "Ripristina credenziali"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Invia"
+      ],
+      "Set recovery phrase": [
+        "Imposta frase di recupero"
       ],
       "Share via link": [
         "Condividi via link"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Aggiorna"
+      ],
+      "Update recovery file": [
+        "Aggiorna il file di ripristino"
+      ],
+      "Update recovery phrase": [
+        "Aggiorna frase di recupero"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -952,8 +967,8 @@
       "You have no invoices.": [
         "Non hai nessuna fattura."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Il tuo account o organizzazione attualmente ha una fattura scaduta. Si prega di pagare tutte le fatture non pagate."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "Il tuo account o organizzazione ha una fattura scaduta. Si prega di pagare tutte le fatture non pagate."
       ]
     },
     "Error message": {
@@ -1134,8 +1149,8 @@
       "No logs": [
         "Nessun log"
       ],
-      "Secure core servers": [
-        "Server Secure core"
+      "Secure Core servers": [
+        "Server Secure Core"
       ],
       "Strong encryption": [
         "Crittografia potente"
@@ -1554,9 +1569,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Reimpostare la tua password significa che la vecchia password e i luoghi dove è salvata non funzioneranno più. Sei sicuro di voler reimpostare la password?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Ripristinando la password verranno ripristinate anche le chiavi di crittografia per tutti i servizi correlati a Proton (Mail e VPN). Non sarai più in grado di leggere i messaggi esistenti. Se non conosci le credenziali di ProtonMail, NON ripristinare. Puoi usarle per accedere ${ hereLink }."
       ],
@@ -1640,6 +1652,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Questo eliminerà definitivamente il tuo account e tutti i suoi dati. Non sarai in grado di riattivare questo account."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        "Questo annullerà la tua password e non potrai utilizzarla per accedere al tuo account."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Questa procedura guidata abiliterà l'Autenticazione a due fattori (2FA) sul tuo account Proton. L'autenticazione a 2 fattori renderà il tuo account Proton molto più sicuro e per questo ti raccomandiamo di attivarla."
@@ -2937,7 +2952,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } copiato negli appunti"
       ],
       "Account deleted. Logging out...": [
@@ -3002,8 +3017,8 @@
       "/2-year": [
         "/2-anni"
       ],
-      "/monthly": [
-        "/al mese"
+      "/month": [
+        "/mese"
       ],
       "/year": [
         "/anno"
@@ -3133,9 +3148,6 @@
       ],
       "Confirm phone number": [
         "Conferma numero di telefono"
-      ],
-      "Confirm reset password": [
-        "Conferma password di reset"
       ],
       "Coupon discount": [
         "Sconto coupon"
@@ -3337,6 +3349,9 @@
       ],
       "Reset password": [
         "Reimposta la password"
+      ],
+      "Reset password?": [
+        "Reimpostare la password?"
       ],
       "Secure Core Servers": [
         "Server Secure Core"

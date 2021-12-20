@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Activar o meu cupão"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add credit / debit card": [
         "Adicionar cartão de débito/crédito"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Reenviar"
       ],
+      "Reset": [
+        ""
+      ],
       "Reset credentials": [
         "Repor credenciais"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Enviar"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "Partilhar por ligação"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Actualizar"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Actualizar"
@@ -952,8 +967,8 @@
       "You have no invoices.": [
         "Não tem facturas."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "A sua conta ou organização tem actualmente uma factura em dívida. Por favor, regularize a situação."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ]
     },
     "Error message": {
@@ -1134,7 +1149,7 @@
       "No logs": [
         "Sem diários"
       ],
-      "Secure core servers": [
+      "Secure Core servers": [
         "Servidores Secure Core"
       ],
       "Strong encryption": [
@@ -1554,9 +1569,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Repor a sua senha significa que a sua senha antiga e os locais onde estava gravada já não funcionarão. Tem a certeza de que deseja prosseguir?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Repor a sua senha repõe todas as chaves de encriptação para todos os serviços Proton associados (correio e VPN). Não poderá ler as mensagens existentes. Se sabe as suas credenciais do ProtonMail, NÃO o faça. Pode iniciar sessão com elas em ${ hereLink }."
       ],
@@ -1640,6 +1652,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reactivar esta conta."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        ""
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Este assistente vai activar a autenticação em dois passos (2FA) na sua conta Proton. O 2FA tornará a sua conta Proton mais segura, recomendamos a sua activação."
@@ -2937,8 +2952,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } copiado para a área de transferência"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Conta eliminada. A terminar sessão..."
@@ -3002,8 +3017,8 @@
       "/2-year": [
         "/2 anos"
       ],
-      "/monthly": [
-        "/mensalmente"
+      "/month": [
+        ""
       ],
       "/year": [
         "/ano"
@@ -3133,9 +3148,6 @@
       ],
       "Confirm phone number": [
         "Confirmar número de telefone"
-      ],
-      "Confirm reset password": [
-        "Confirmar reposição da senha"
       ],
       "Coupon discount": [
         "Cupão de desconto"
@@ -3337,6 +3349,9 @@
       ],
       "Reset password": [
         "Repor senha"
+      ],
+      "Reset password?": [
+        ""
       ],
       "Secure Core Servers": [
         "Servidores Secure Core"

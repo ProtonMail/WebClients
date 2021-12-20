@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Aktiviraj moj kupon"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add credit / debit card": [
         "Dodaj kreditnu/debitnu karticu"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Ponovno pošalji"
       ],
+      "Reset": [
+        ""
+      ],
       "Reset credentials": [
         "Poništi vjerodajnice"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Pošalji"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "Podijeli putem poveznice"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Ažuriraj"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -963,8 +978,8 @@
       "You have no invoices.": [
         "Nemate faktura."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Vaš račun ili organizacija trenutačno ima neplaćenu fakturu. Molimo platite sve neplaćene fakture."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ]
     },
     "Error message": {
@@ -1146,7 +1161,7 @@
       "No logs": [
         "Bez zapisa"
       ],
-      "Secure core servers": [
+      "Secure Core servers": [
         "Secure Core poslužitelji"
       ],
       "Strong encryption": [
@@ -1570,9 +1585,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Poništavanje lozinke znači da stara lozinka i svi uređaji koji je koriste više neće raditi. Sigurno želite resetirati lozinku?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Poništavanje lozinke resetirati će vaše šifrirane ključeve za sve usluge povezane s Protonom (Mail i VPN). Nećete moći čitati postojeće poruke. Ako znate svoje ProtonMail vjerodajnice, NE resetirajte. Ovdje se možete prijaviti s njima ${ hereLink }."
       ],
@@ -1656,6 +1668,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ovim će te trajno izbrisati vaš račun i sve podatke povezane s njim. Nećete moći ponovno aktivirati ovaj račun."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        ""
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Ovaj čarobnjak omogućiti će dvofaktorsku autentikaciju na Proton računu. Dvofaktorska autentikacija će vaš Proton račun učiniti sigurnijim pa vam preporučujemo da opciju omogućite."
@@ -2958,8 +2973,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } kopirano u vaš međuspremnik"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Račun je izbrisan. Odjava..."
@@ -3023,8 +3038,8 @@
       "/2-year": [
         "/2 godine"
       ],
-      "/monthly": [
-        "/mjesečno"
+      "/month": [
+        ""
       ],
       "/year": [
         "/godišnje"
@@ -3154,9 +3169,6 @@
       ],
       "Confirm phone number": [
         "Potvrdite broj telefona"
-      ],
-      "Confirm reset password": [
-        "Potvrdi lozinku za ponovno postavljanje"
       ],
       "Coupon discount": [
         "Kupon s popustom"
@@ -3358,6 +3370,9 @@
       ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
+      ],
+      "Reset password?": [
+        ""
       ],
       "Secure Core Servers": [
         "Secure Core poslužitelji"

@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Afegir"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Seleccionar catch-all"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "Compartir amb enllaç"
@@ -2164,8 +2170,8 @@
       "You must set a name": [
         "Heu d'establir un nom"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "El seu compte o organització actualment té una factura vencida. Por favor pagui totes les factures pendents."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
@@ -2723,12 +2729,13 @@
         "${ totalImported }/${ totalToImport } esdeveniment xifrat i afegit al teu calendari",
         "${ totalImported }/${ totalToImport } esdeveniments xifrats i afegits al teu calendari"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "",
+        ""
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "S'ha produït un error xifrant i afegint el teu esdeveniment. No s´ha pogut importar cap esdeveniment.",
         "S'ha produït un error xifrant i afegint els teus esdeveniments. No s´ha pogut importar cap esdeveniment."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint esdeveniments al calendari: ${ totalImported }/${ totalToImport }"
@@ -3059,7 +3066,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no poden ser importats. Fes clic per detalls"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -3222,9 +3230,6 @@
       "Account successfully updated": [
         "El compte s'ha actualitzat correctament"
       ],
-      "Activate your recovery phrase": [
-        ""
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa \"ProtonMail me\" o \"Private Message me\""
       ],
@@ -3253,7 +3258,7 @@
       "Addresses": [
         "Adreces"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
         ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
@@ -3278,6 +3283,12 @@
       ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
+      ],
+      "Allow recovery by email": [
+        ""
+      ],
+      "Allow recovery by phone": [
+        ""
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Us permet allotjar correus electrònics pels vostres propis dominis a ${ mailAppName }, p. ex. usuari@exemple.cat"
@@ -3315,8 +3326,8 @@
       "Are you sure you want to delete this filter?": [
         "Estàs segur que vols esborrar aquest filtre?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Esteu segur de voler eliminar aquesta carpeta?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        ""
       ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
@@ -3518,14 +3529,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Baixant acabarà amb cualsevol connexió als servidors de pagament de ProtonVPN."
       ],
+      "Download recovery file": [
+        ""
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarrega la teva aplicació favorita avui i porta la privadesa amb tú allà on vagis."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descarregueu les vostres claus PGP per utilitzar amb altres serveis compatibles amb PGP."
-      ],
-      "Download your recovery file": [
-        ""
       ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
@@ -3960,6 +3971,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        ""
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4141,6 +4161,9 @@
       "Session timed out.": [
         "Temps de sessió esgotat."
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
@@ -4276,6 +4299,15 @@
       "to continue to ${ toAppName }": [
         "per continuar a ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        ""
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         ""
       ],
@@ -4329,6 +4361,12 @@
       ],
       "Unsupported file": [
         "Fitxer no compatible"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Actualitzeu a un pla ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per activar les respostes automàtiques per quan esteu fora de l'oficina."
@@ -7235,8 +7273,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } copiat al vostre porta-retalls"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Compte esborrat. Sortint..."
@@ -7630,7 +7668,7 @@
         "Torna"
       ],
       "Backup & Export": [
-        ""
+        "Copia de Seguritat i Exportar"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -7753,7 +7791,7 @@
         "Personalitza importació"
       ],
       "Customize your mail import": [
-        ""
+        "Personalitza la importació del correu"
       ],
       "Customize your plan": [
         "Personalitzar el vostre pla"
@@ -7762,7 +7800,7 @@
         "Tauler de control"
       ],
       "Data locked": [
-        ""
+        "Dades bloquejades"
       ],
       "Data recovery": [
         ""
@@ -7924,8 +7962,8 @@
         "Importació i exportació"
       ],
       "Import as simple event?": [
-        "",
-        ""
+        "Importar com un element simple?",
+        "Importar com elements simples?"
       ],
       "Import Assistant": [
         "Assistent d'importació"
@@ -7937,7 +7975,7 @@
         "Importa esdeveniments"
       ],
       "Import failed": [
-        ""
+        "Error en la importació"
       ],
       "Import groups": [
         "Importar grups"
@@ -8099,7 +8137,7 @@
         ""
       ],
       "Recovery": [
-        ""
+        "Recuperació"
       ],
       "Recovery file": [
         ""
@@ -8808,10 +8846,10 @@
       "You will not see this import record in the list anymore.": [
         "Ja no veureu aquest registre d'importació a la llista."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         ""
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         ""
       ]
     },

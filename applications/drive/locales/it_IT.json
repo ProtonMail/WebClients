@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } negozio"
       ],
+      "Activate recovery": [
+        "Attiva il ripristino"
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Vai alle impostazioni"
       ],
-      "Grid layout": [
-        "Layout a griglia"
-      ],
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Scorciatoie da tastiera"
-      ],
-      "List layout": [
-        "Layout a lista"
       ],
       "Load image": [
         "Carica immagine"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Seleziona piano"
       ],
+      "Set recovery phrase": [
+        "Imposta frase di recupero"
+      ],
       "Share": [
         "Condividi"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         "Mostra etichette"
-      ],
-      "Show shared link details": [
-        "Mostra i dettagli del link condiviso"
       ],
       "Sign out": [
         "Esci"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Non ritenere attendibile"
+      ],
+      "Update recovery file": [
+        "Aggiorna il file di ripristino"
+      ],
+      "Update recovery phrase": [
+        "Aggiorna frase di recupero"
       ],
       "Upgrade": [
         "Esecuzione dell'upgrade"
@@ -1128,17 +1131,32 @@
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
+      "Failed to download a file": [
+        "Impossibile scaricare un file"
+      ],
+      "Failed to download a folder": [
+        "Impossibile scaricare una cartella"
+      ],
       "Failed to load the link": [
         "Impossibile caricare il collegamento"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Impossibile caricare il file \"${ item.name }\" a causa dell'errore \"${ error }\""
       ],
+      "File \"${ name }\" is already downloading": [
+        "Il file \"${ name }\" è già in fase di download"
+      ],
       "File cannot be merged with folder": [
         "Il file non può essere unito alla cartella"
       ],
       "File has no contents to preview": [
         "Il file non ha contenuti da visualizzare in anteprima"
+      ],
+      "File selection is already downloading": [
+        "La selezione del file è già in fase di download"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "La cartella \"${ name }\" è già in fase di download"
       ],
       "Folder name cannot be empty": [
         "Il nome della cartella non può essere vuoto"
@@ -1570,11 +1588,15 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } in download",
+        "${ activeDownloadsCount } in download"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "${ activeDownloadsCount } in download (${ downloadProgress }%)",
         "${ activeDownloadsCount } in download (${ downloadProgress }%)"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
         "${ activeUploadsCount } in caricamento (${ uploadProgress }%)",
         "${ activeUploadsCount } in caricamento (${ uploadProgress }%)"
       ],
@@ -1597,9 +1619,9 @@
         "${ calendarsToBeMergedCount } calendario unito",
         "${ calendarsToBeMergedCount } calendari uniti"
       ],
-      "${ canceledCount } Canceled": [
+      "${ canceledCount } canceled": [
         "${ canceledCount } annullato",
-        "${ canceledCount } annullato"
+        "${ canceledCount } annullati"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membro",
@@ -1621,19 +1643,19 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } contiene indirizzi email multipli. Si prega di selezionare l'indirizzo email o gli indirizzi da aggiungere a questo gruppo."
       ],
-      "${ doneCount } Finished": [
+      "${ doneCount } finished": [
         "${ doneCount } completato",
         "${ doneCount } completato"
       ],
-      "${ doneDownloadsCount } Downloaded": [
+      "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } scaricato",
-        "${ doneDownloadsCount } scaricato"
+        "${ doneDownloadsCount } scaricati"
       ],
-      "${ doneUploadsCount } Uploaded": [
+      "${ doneUploadsCount } uploaded": [
         "${ doneUploadsCount } caricato",
-        "${ doneUploadsCount } caricato"
+        "${ doneUploadsCount } caricati"
       ],
-      "${ errorCount } Failed": [
+      "${ errorCount } failed": [
         "${ errorCount } non riuscito",
         "${ errorCount } non riusciti"
       ],
@@ -1658,7 +1680,7 @@
         "${ numContacts } contatto",
         "${ numContacts } contatti"
       ],
-      "${ pausedCount } Paused": [
+      "${ pausedCount } paused": [
         "${ pausedCount } in pausa",
         "${ pausedCount } in pausa"
       ],
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Chiunque con questo link può accedere al tuo file."
       ],
+      "Anyone with this link can access your folder.": [
+        "Chiunque abbia questo link può accedere alla tua cartella."
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sei sicuro di voler svuotare il cestino ed eliminare definitivamente tutti gli elementi?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "Creazione collegamento al file"
+      ],
+      "Creating link to folder": [
+        "Creazione del collegamento alla cartella"
       ],
       "Creating share": [
         "Creazione condivisione"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Solo le persone con il link e la password possono accedere a questo file."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        "Solo le persone con il collegamento e la password possono accedere a questa cartella."
+      ],
       "Paused": [
         "In pausa"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Preparazione del collegamento al file"
+      ],
+      "Preparing link to folder": [
+        "Preparazione del collegamento alla cartella"
       ],
       "Preview": [
         "Anteprima"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Questo link sarà permanentemente disabilitato. Nessuno con questo link sarà in grado di accedere al file. Per ricondividere il file, avrai bisogno di un nuovo link."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Questo eliminerà il collegamento e rimuoverà l'accesso al file per chiunque abbia il link.",
-        "Questo eliminerà i collegamenti e rimuoverà l'accesso ai file per chiunque abbia il link."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Questo collegamento verrà disattivato in modo permanente. Nessuno con questo link potrà accedere alla tua cartella. Per ricondividere la cartella, avrai bisogno di un nuovo collegamento."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Questo eliminerà il collegamento e rimuoverà l'accesso al file o alla cartella per chiunque abbia il collegamento.",
+        "Questo eliminerà i collegamenti e rimuoverà l'accesso ai tuoi file o cartelle per chiunque abbia i collegamenti."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Questo ti consentirà di utilizzare PayPal per pagare il tuo abbonamento Proton. Ti reindirizzeremo su PayPal in una nuova scheda del browser. Se utilizzi un blocco pop-up, disattivalo per continuare."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "I tuoi file verranno crittografati e poi salvati."
+      ],
+      "Your folder failed to download.": [
+        "Impossibile scaricare la cartella."
+      ],
+      "Your folder has finished downloading.": [
+        "La tua cartella ha terminato il download."
+      ],
+      "Your folder is being downloaded.": [
+        "La tua cartella è in fase di download."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Gruppo di contatto aggiornato"
       ],
+      "Failed to download files: ${ err }": [
+        "Impossibile scaricare i file: ${ err }"
+      ],
       "Failed to move, please try again": [
         "Impossibile rimuovere, riprova"
       ],
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Svuota il cestino"
       ],
-      "Enter file password to download": [
-        "Inserisci la password del file da scaricare"
+      "Enter password to download": [
+        "Inserisci la password per scaricare"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "I miei file"
+      ],
+      "My files ${ date }.zip": [
+        "I miei file ${ date }.zip"
       ],
       "Name": [
         "Nome"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "Il tuo file è pronto per essere scaricato"
       ],
+      "Your folder is ready to be downloaded": [
+        "La tua cartella è pronta per essere scaricata"
+      ],
       "ZIP / postal code": [
         "CAP / codice postale"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accedi ai contenuti bloccati geograficamente (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) non importa dove ti trovi."
-      ],
-      "Active sharing link": [
-        "Link di condivisione attivo"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatico indica che il formato nel compositore è usato per inviare a questo utente. Testo semplice indica che il messaggio sarà sempre convertito in testo semplice all'invio."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
-      "Expired sharing link": [
-        "Link di condivisione scaduto"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Ottieni accesso a tutte le funzionalità a pagamento per ${ vpnAppName } e ${ mailAppName } (il servizio d'email crittografate usato da milioni di persone per proteggere i propri dati) con un piano unico."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se hai acquistato un codice regalo o ne hai ricevuto uno dal nostro team di supporto, puoi inserirlo qui."
-      ],
-      "Inactive sharing link": [
-        "Link di condivisione inattivo"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Il supporto multi-utente è applicabile solo ai piani con 2 o più utenti"

@@ -14,17 +14,20 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activar recuperación"
+      ],
       "Add": [
         "Agregar"
       ],
       "Add address": [
-        ""
+        "Añadir dirección"
       ],
       "Add contact": [
         "Agregar contacto"
       ],
       "Add email": [
-        ""
+        "Añadir correo electrónico"
       ],
       "Add group": [
         "Agregar grupo"
@@ -36,7 +39,7 @@
         "Agregar nuevo grupo"
       ],
       "Add phone number": [
-        ""
+        "Añadir número de teléfono"
       ],
       "Add screenshot(s)": [
         "Añadir captura(s) de pantalla"
@@ -75,7 +78,7 @@
         "Chatea con nosotros"
       ],
       "Check import progress": [
-        ""
+        "Comprobar el progreso de la importación"
       ],
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
@@ -117,7 +120,7 @@
         "Redactar"
       ],
       "Composer size": [
-        ""
+        "Tamaño del editor"
       ],
       "Confirm": [
         "Confirmar"
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Ir a la configuración"
       ],
-      "Grid layout": [
-        "Diseño de cuadrícula"
-      ],
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Atajos de teclado"
-      ],
-      "List layout": [
-        "Diseño de lista"
       ],
       "Load image": [
         "Cargar imagen"
@@ -311,7 +308,7 @@
         "Más información: ${ safeTitle }"
       ],
       "More options": [
-        ""
+        "Más opciones"
       ],
       "Move": [
         "Mover"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Seleccionar plan"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Compartir"
       ],
@@ -466,9 +466,6 @@
       "Show labels": [
         "Mostrar etiquetas"
       ],
-      "Show shared link details": [
-        ""
-      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -488,7 +485,7 @@
         "Iniciar la configuración"
       ],
       "Stay": [
-        ""
+        "Permanecer"
       ],
       "Stop sharing": [
         "Dejar de compartir"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Desconfiar"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Actualizar"
@@ -873,7 +876,7 @@
         ""
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Han pasado más de 12 horas desde la última actualización"
       ]
     },
     "Composer size": {
@@ -1009,7 +1012,7 @@
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, podrás descargar el archivo con todos tus contactos exportados."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Eliminando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puedes cerrar esta ventana."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se haya completado, puedes cerrar esta ventana."
@@ -1085,7 +1088,7 @@
         "Se ha alcanzado el límite del calendario"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "No se pueden crear nuevos calendarios para todos los calendarios importados debido al límite de calendarios personales."
       ],
       "Can't validate email, try again later": [
         "No se ha podido validar el correo electrónico, inténtalo de nuevo más tarde"
@@ -1094,7 +1097,7 @@
         "No se ha podido validar el teléfono, inténtalo de nuevo más tarde"
       ],
       "Checkout expired, please try again": [
-        ""
+        "La compra ha caducado, intenta de nuevo"
       ],
       "Contact could not be saved": [
         "No se ha podido guardar el contacto"
@@ -1109,12 +1112,12 @@
         ""
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
+        "Deselecciona al menos ${ calendarToFixCount } calendario",
+        "Deselecciona al menos ${ calendarToFixCount } calendarios"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Deselecciona al menos ${ calendarToFixCount } calendario o",
+        "Deselecciona al menos ${ calendarToFixCount } calendarios o"
       ],
       "Email address invalid": [
         "Dirección de correo electrónico no válida"
@@ -1128,10 +1131,19 @@
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1139,6 +1151,12 @@
       ],
       "File has no contents to preview": [
         "El archivo no tiene contenido para previsualizar"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         "El nombre de la carpeta no puede estar vacío"
@@ -1193,7 +1211,7 @@
         "El titular de la tarjeta es obligatorio"
       ],
       "No data to import": [
-        ""
+        "No hay datos para importar"
       ],
       "No valid address found": [
         "No se encontró una dirección válida"
@@ -1210,7 +1228,7 @@
         "Algunos grupos no tienen contactos: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organización no reconocida. Vuelve a intentarlo."
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
@@ -1228,17 +1246,17 @@
         "No se ofrece soporte para este metodo de pago"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Por favor, arregle el conflicto resaltado para proceder.",
+        "Por favor, arregle los conflictos resaltados para proceder."
       ],
       "Preferences could not be saved": [
         "No se han podido guardar las preferencias"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "La clave principal no está descifrada"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "La clave principal no está descifrada."
       ],
       "Process aborted": [
         "El proceso fue anulado"
@@ -1256,7 +1274,7 @@
         "Algunos contactos no se han podido eliminar"
       ],
       "Some groups could not be deleted": [
-        ""
+        "Algunos grupos no se pueden eliminar"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         ""
@@ -1274,10 +1292,10 @@
         "El navegador que está utilizando no permite que el pago sea autorizado. Por favor utilice un navegador diferente o inicie sesión a través de un ordenador."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "El nombre de la carpeta es demasiado largo. Por favor, elija un nombre diferente."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "El nombre de la etiqueta es demasiado largo. Por favor, elija un nombre diferente."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "La cantidad mínima de crédito que se puede agregar es de ${ _price }"
@@ -1310,7 +1328,7 @@
         ""
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Hay demasiadas carpetas en tu cuenta externa. Por favor, personaliza la importación para eliminar algunas carpetas."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hubo un error al exportar los vCards de contactos"
@@ -1322,10 +1340,10 @@
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Este nombre de carpeta no está disponible. Por favor, elija otro nombre"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Este nombre de etiqueta no está disponible. Por favor, elija otro nombre"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Este mensaje puede contener enlaces que no puedan abrirse correctamente en tu navegador actual"
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "Descargando ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Descargando ${ activeDownloadsCount } (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } descargando",
+        "${ activeDownloadsCount } descargando"
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "Subiendo ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Subiendo ${ activeUploadsCount } (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } descargando (${ downloadProgress }%)",
+        "${ activeDownloadsCount } descargando (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } cargando (${ uploadProgress }%)",
+        "${ activeUploadsCount } cargando (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } dirección de correo electrónico",
@@ -1597,7 +1619,7 @@
         "${ calendarsToBeMergedCount } calendario combinado",
         "${ calendarsToBeMergedCount } calendarios combinados"
       ],
-      "${ canceledCount } Canceled": [
+      "${ canceledCount } canceled": [
         "${ canceledCount } cancelado",
         "${ canceledCount } cancelados"
       ],
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } contiene múltiples direcciones de correo electrónico. Selecciona qué dirección de correo electrónico o direcciones añadir a este grupo."
       ],
-      "${ doneCount } Finished": [
+      "${ doneCount } finished": [
         "${ doneCount } finalizado",
         "${ doneCount } finalizados"
       ],
-      "${ doneDownloadsCount } Downloaded": [
+      "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } descargado",
         "${ doneDownloadsCount } descargados"
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } subido",
-        "${ doneUploadsCount } subidos"
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } cargado",
+        "${ doneUploadsCount } cargados"
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } fallido",
-        "${ errorCount } fallidos"
+      "${ errorCount } failed": [
+        "${ errorCount } fallida",
+        "${ errorCount } fallidas"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
@@ -1658,7 +1680,7 @@
         "${ numContacts } contacto",
         "${ numContacts } contactos"
       ],
-      "${ pausedCount } Paused": [
+      "${ pausedCount } paused": [
         "${ pausedCount } pausado",
         "${ pausedCount } pausados"
       ],
@@ -1753,12 +1775,12 @@
         "Después de realizar el pago con Bitcoin, sigue las instrucciones."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Todo (${ totalFoldersCount } carpeta)",
+        "Todo (${ totalFoldersCount } carpetas)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Todo (${ totalFoldersCount } etiqueta)",
+        "Todo (${ totalFoldersCount } etiquetas)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., severo.ochoa@ejemplo.com"
@@ -1770,10 +1792,13 @@
         "Un archivo de recuperación activo"
       ],
       "and": [
-        ""
+        "y"
       ],
       "Anyone with this link can access your file.": [
         "Cualquiera que tenga este enlace puede acceder a tu archivo."
+      ],
+      "Anyone with this link can access your folder.": [
+        ""
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "¿Estás seguro de que quieres vaciar la papelera y eliminar permanentemente todos los elementos?"
@@ -1834,7 +1859,7 @@
         "Cerrar el administrador de transferencias cancelará todas las transferencias activas. ¿Estás seguro?"
       ],
       "Conflict": [
-        ""
+        "Conflicto"
       ],
       "Connections": [
         "Conexiones"
@@ -1843,20 +1868,20 @@
         "Continúa usando ${ appName } y desbloquea la unidad más tarde"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Crear ${ calendarsToBeCreated } calendario nuevo",
+        "Crear ${ calendarsToBeCreated } calendarios nuevos"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que te gustaría importar."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las etiquetas que te gustaría importar."
       ],
       "Create a new contact group": [
         "Crear un nuevo grupo de contactos"
       ],
       "Create in": [
-        ""
+        "Crear en"
       ],
       "Create links and share your files with others.": [
         "Crea enlaces y comparte tus archivos con otros."
@@ -1867,8 +1892,11 @@
       "Creating link to file": [
         "Creando enlace al archivo"
       ],
+      "Creating link to folder": [
+        "Creando enlace a la carpeta"
+      ],
       "Creating share": [
-        ""
+        "Creando recurso compartido"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
@@ -1977,17 +2005,17 @@
         "Si tiene uno de estos, continúe con la configuración de la cuenta de Proton para continuar con el proceso de desbloqueo."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importar ${ selectedCalendarsCount } del calendario ${ totalCalendarsCount }",
+        "Importar ${ selectedCalendarsCount } del calendario ${ totalCalendarsCount }"
       ],
       "Import from": [
         "Importar desde"
       ],
       "Import in progress": [
-        ""
+        "Importación en progreso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         ""
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Pausado"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Preparando enlace al archivo"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Previsualizar"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a tu archivo. Para volver a compartir el archivo, necesitarás un nuevo enlace."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Esto borrará el enlace y eliminará el acceso a su archivo para cualquier persona con el enlace.",
-        "Esto borrará los enlaces y eliminará el acceso a sus archivos para cualquier persona con los enlaces."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "",
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá a PayPal ser usado para pagar su suscripción a Proton. Le redirigiremos a PayPal en una pestaña nueva del navegador. Si utiliza cualquier bloqueador emergente, desactívelo para continuar."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Tus archivos serán cifrados y posteriormente guardados."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono sólo se utilizará para esta verificación única."
@@ -2712,7 +2758,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Próximamente)"
       ],
       "(Expired)": [
         "(Expirado)"
@@ -2793,7 +2839,7 @@
         "País"
       ],
       "Created": [
-        ""
+        "Creado"
       ],
       "CVV code": [
         "Código CVV"
@@ -2914,7 +2960,7 @@
         ""
       ],
       "Name": [
-        ""
+        "Nombre"
       ],
       "Name on card": [
         "Titular de la tarjeta"
@@ -2998,7 +3044,7 @@
         "Firmar correos electrónicos"
       ],
       "Size": [
-        ""
+        "Tamaño"
       ],
       "Skip file": [
         ""
@@ -3034,7 +3080,7 @@
         "Código de autenticación de doble factor"
       ],
       "Type": [
-        ""
+        "Tipo"
       ],
       "Unknown file": [
         "Archivo desconocido"
@@ -3055,7 +3101,7 @@
         "Cargar imagen"
       ],
       "Uploaded": [
-        ""
+        "Subido"
       ],
       "Username or ProtonMail address": [
         "Nombre de usuario o dirección de ProtonMail"
@@ -3117,10 +3163,10 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Crear carpeta"
       ],
       "Create label": [
-        ""
+        "Crear etiqueta"
       ],
       "Edit folder": [
         "Editar carpeta"
@@ -3182,14 +3228,14 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } de ${ calendarsToBeCreated } creado",
+        "${ createdCalendars } de ${ calendarsToBeCreated } creados"
       ],
       "Almost there": [
-        ""
+        "Ya casi está"
       ],
       "Creating new calendars": [
-        ""
+        "Creando calendarios nuevos"
       ],
       "Gathering your data": [
         "Obteniendo tus datos"
@@ -3198,7 +3244,7 @@
         ""
       ],
       "Your import is starting": [
-        ""
+        "Tu importación está comenzando"
       ]
     },
     "Mail feature": {
@@ -3284,12 +3330,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3348,8 +3394,8 @@
         "\"${ firstItemName }\" restaurado de la papelera"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "",
-        ""
+        "${ deletedCount } enlace a tu archivo fue eliminado",
+        "${ deletedCount } enlaces a tus archivos fueron eliminados"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } archivo eliminado permanentemente de la papelera",
@@ -3364,8 +3410,8 @@
         "${ deletedItemsCount } elementos eliminados permanentemente de la papelera"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "",
-        ""
+        "No se pudo eliminar ${ failedCount } enlace a tu archivo",
+        "No se pudieron eliminar ${ failedCount } enlaces a tus archivos"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } archivo no se pudo mover",
@@ -3426,6 +3472,9 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
+      ],
+      "Failed to download files: ${ err }": [
+        ""
       ],
       "Failed to move, please try again": [
         "Se ha producido un error al mover. Por favor, inténtalo de nuevo"
@@ -3764,8 +3813,8 @@
         "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        ""
+        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito.",
@@ -3986,7 +4035,7 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "fecha de creación de la cuenta"
       ],
       "the last 12 months": [
         "los últimos 12 meses"
@@ -4099,7 +4148,7 @@
         "Cupón de descuento"
       ],
       "Create a new folder": [
-        ""
+        "Crear una carpeta nueva"
       ],
       "Create contact": [
         "Crear contacto"
@@ -4143,7 +4192,7 @@
         "Eliminar ${ Name }"
       ],
       "Delete organization?": [
-        ""
+        "¿Eliminar la organización?"
       ],
       "Delete permanently": [
         "Eliminar permanentemente"
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Vaciar papelera"
       ],
-      "Enter file password to download": [
-        "Introduce la contraseña del archivo para descargarlo"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Introduce tu contraseña"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Mis archivos"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Nombre"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "El archivo está listo para ser descargado"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "CP / código postal"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accede al contenido geobloqueado (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) sin importar dónde te encuentres."
-      ],
-      "Active sharing link": [
-        "Enlace compartido activo"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que el formato en el compositor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
       ],
-      "Expired sharing link": [
-        "Enlace compartido expirado"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Obtén acceso a todas las funciones de pago de ${ vpnAppName } y ${ mailAppName } (el servicio de correo electrónico cifrado que millones utilizan para proteger sus datos) con un plan."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compraste un código de regalo o recibiste uno de nuestro equipo de soporte, puedes agregarlo aquí."
-      ],
-      "Inactive sharing link": [
-        ""
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "El soporte multiusuario solo se aplica a planes con 2 o más usuarios"

@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
       ],
+      "Activate recovery": [
+        "Attiva il ripristino"
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Imposta catch-all"
+      ],
+      "Set recovery phrase": [
+        "Imposta frase di recupero"
       ],
       "Share via link": [
         "Condividi con link"
@@ -2164,8 +2170,8 @@
       "You must set a name": [
         "È necessario impostare un nome"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Il tuo account o organizzazione attualmente ha una fattura scaduta. Si prega di pagare tutte le fatture non pagate."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "Il tuo account o organizzazione ha una fattura scaduta. Si prega di pagare tutte le fatture non pagate."
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
@@ -2723,12 +2729,13 @@
         "${ totalImported }/${ totalToImport } evento cifrato e aggiunto al tuo calendario",
         "${ totalImported }/${ totalToImport } eventi cifrati e aggiunti al tuo calendario"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Si è verificato un errore durante la crittografia e l'aggiunta del tuo evento. ${ totalImported } su ${ totalToImport } evento importato con successo.",
+        "Si è verificato un errore durante la crittografia e l'aggiunta dei tuoi eventi. ${ totalImported } su ${ totalToImport } eventi importati con successo."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Si è verificato un errore durante la crittografia e l'aggiunta dell'evento. Non è stato possibile importare alcun evento.",
         "Si è verificato un errore durante la crittografia e l'aggiunta degli eventi. Non è stato possibile importare alcun evento."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Si è verificato un errore durante la crittografia e l'aggiunta dei tuoi eventi. ${ totalImported } su ${ totalToImport } eventi importati con successo."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Cifratura ed aggiunta dei contatti: ${ totalImported }/${ totalToImport }"
@@ -3059,7 +3066,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } su ${ totalEvents } evento non sarà importato. Espandi per i dettagli.",
         "${ totalEventsDiscarded } su ${ totalEvents } eventi non saranno importati. Espandi per i dettagli."
       ],
       "No contact can be imported. Click for details": [
@@ -3222,9 +3230,6 @@
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
-      "Activate your recovery phrase": [
-        "Attiva la tua frase di recupero"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Aggiungi un indirizzo email @pm.me al tuo account. Questo dominio semplice e più breve sta per \"ProtonMail me\" o \"Private Message me.\""
       ],
@@ -3253,8 +3258,8 @@
       "Addresses": [
         "Indirizzi"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Dopo la reimpostazione della password, i tuoi dati vengono bloccati in forma crittografata per tenerli al sicuro. Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di un file di ripristino o di una frase di ripristino."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        "Dopo la reimpostazione della password, i tuoi dati vengono bloccati in forma crittografata per tenerli al sicuro."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Dopo aver effettuato il pagamento in Bitcoin, segui le istruzioni qui sotto per effettuare l'upgrade."
@@ -3278,6 +3283,12 @@
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
+      ],
+      "Allow recovery by email": [
+        "Consenti il recupero via email"
+      ],
+      "Allow recovery by phone": [
+        "Consenti il recupero via telefono"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Consente di ospitare gli indirizzi di posta elettronica per i tuoi domini su ${ mailAppName }, ad esempio john.smith@example.com"
@@ -3315,8 +3326,8 @@
       "Are you sure you want to delete this filter?": [
         "Sei sicuro di voler eliminare questo filtro?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Sei sicuro di voler eliminare questa cartella?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Sei sicuro di voler eliminare questa cartella? Verranno eliminate anche tutte le cartelle figlie."
       ],
       "Are you sure you want to delete this label?": [
         "Sei sicuro di voler eliminare quest'etichetta?"
@@ -3518,14 +3529,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Il downgrading terminerà qualsiasi connessione ai server ProtonVPN a pagamento."
       ],
+      "Download recovery file": [
+        "Scarica il file di ripristino"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Scarica oggi stesso la tua app preferita e porta la privacy con te ovunque tu vada."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Scarica le chiavi PGP da usare con altri servizi compatibili con PGP."
-      ],
-      "Download your recovery file": [
-        "Scarica il tuo file di ripristino"
       ],
       "Drop the file here to upload": [
         "Trascina il file qui per caricarlo"
@@ -3960,6 +3971,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Esistono altri amministratori nella tua organizzazione, sei responsabile di comunicare loro la nuova password."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        "File di ripristino obsoleto; aggiornare per garantire l'accesso ai tuoi dati"
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        "Metodi di recupero obsoleti; aggiornare per garantire l'accesso ai tuoi dati"
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        "Frase di recupero obsoleta; aggiornare per garantire l'accesso ai tuoi dati"
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4141,6 +4161,9 @@
       "Session timed out.": [
         "Disconnesso."
       ],
+      "Set recovery phrase": [
+        "Imposta frase di recupero"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
@@ -4276,6 +4299,15 @@
       "to continue to ${ toAppName }": [
         "continua su ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        "Per decrittografare e visualizzare le tue e-mail e altri dati, è necessario un file di ripristino o una frase di ripristino."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        "Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di un file di ripristino."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        "Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di una frase di ripristino."
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per decrittografare e visualizzare i dati bloccati dopo la reimpostazione della password, seleziona un metodo di ripristino."
       ],
@@ -4329,6 +4361,12 @@
       ],
       "Unsupported file": [
         "File non supportato"
+      ],
+      "Update recovery file": [
+        "Aggiorna il file di ripristino"
+      ],
+      "Update recovery phrase": [
+        "Aggiorna frase di recupero"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Passa a un piano ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per abilitare le risposte automatiche quando non sei in ufficio."
@@ -7235,7 +7273,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } copiato negli appunti"
       ],
       "Account deleted. Logging out...": [
@@ -8808,11 +8846,11 @@
       "You will not see this import record in the list anymore.": [
         "Non vedrai più questo record di importazione nella lista."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
-        "Il tuo file di ripristino è obsoleto e non può recuperare nuovi dati se dovessi reimpostare il tuo account."
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
+        "Il tuo file di ripristino è obsoleto. Non è possibile recuperare nuovi dati se reimposti nuovamente il tuo account."
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
-        "La tua frase di recupero è obsoleta e non può recuperare nuovi dati se dovessi reimpostare il tuo account."
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        "La tua frase di recupero è obsoleta. Non è possibile recuperare nuovi dati se reimposti nuovamente il tuo account."
       ]
     },
     "Warning for domain modal": {

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } obchod"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Přidat"
       ],
@@ -242,9 +245,6 @@
       "Go to settings": [
         "Přejít do nastavení"
       ],
-      "Grid layout": [
-        "Rozložení mřížky"
-      ],
       "Hide advanced PGP settings": [
         "Skrýt pokročilé nastavení PGP"
       ],
@@ -274,9 +274,6 @@
       ],
       "Keyboard shortcuts": [
         "Klávesové zkratky"
-      ],
-      "List layout": [
-        "Rozložení seznamu"
       ],
       "Load image": [
         "Načíst obrázek"
@@ -443,6 +440,9 @@
       "Select plan": [
         "Vybrat plán"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Sdílet"
       ],
@@ -469,9 +469,6 @@
       ],
       "Show labels": [
         ""
-      ],
-      "Show shared link details": [
-        "Zobrazit detaily sdíleného odkazu"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -523,6 +520,12 @@
       ],
       "Untrust": [
         "Nedůvěřovat"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Rozšířit"
@@ -1142,7 +1145,7 @@
         "E-mailová adresa je neplatná"
       ],
       "Email is not valid": [
-        "Emailová adresa není platná"
+        "E-mailová adresa není platná"
       ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
@@ -1150,10 +1153,19 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         "Nepodařilo se načíst odkaz"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1161,6 +1173,12 @@
       ],
       "File has no contents to preview": [
         "Soubor nemá žádný obsah k náhledu"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         "Název složky nemůže být prázdné"
@@ -1226,7 +1244,7 @@
         "Neplatné číslo"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Jeden z kontaktů nemá emailovou adresu: ${ noEmailsContactNamesList }",
+        "Jeden z kontaktů nemá e-mailovou adresu: ${ noEmailsContactNamesList }",
         "Některých kontaktů nemá žádné e-mailové adresy: ${ noEmailsContactNamesList } ",
         "Některých kontaktů nemá žádné e-mailové adresy: ${ noEmailsContactNamesList } ",
         "Některé kontakty nemají e-mailovou adresu: ${ noEmailsContactNamesList } "
@@ -1610,23 +1628,29 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Stahování (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Stahování (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Stahování (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Stahování (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Nahrávání (${ uploadProgress }%)",
-        "${ activeUploadsCount } Nahrávání (${ uploadProgress }%)",
-        "${ activeUploadsCount } Nahrávání (${ uploadProgress }%)",
-        "${ activeUploadsCount } Nahrávání (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ addressCount } email address": [
-        "${ addressCount } email adresa",
-        "${ addressCount } email adresy",
-        "${ addressCount } emailových adres",
-        "${ addressCount } emailové adresy"
+        "${ addressCount } e-mail adresa",
+        "${ addressCount } e-mail adresy",
+        "${ addressCount } e-mailových adres",
+        "${ addressCount } e-mailové adresy"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -1649,11 +1673,11 @@
         "",
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Zrušených",
-        "${ canceledCount } Zrušených",
-        "${ canceledCount } Zrušených",
-        "${ canceledCount } Zrušených"
+      "${ canceledCount } canceled": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } člen",
@@ -1662,10 +1686,10 @@
         "${ contactEmailsLength } členů"
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } obsahuje soubor adres emailů. Prosím vyberte která emailová adresa nebo adresy přidat do ${ groupsEnumeration }."
+        "${ contactName } obsahuje soubor adres e-mailů. Prosím vyberte která e-mailová adresa nebo adresy přidat do ${ groupsEnumeration }."
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } obsahuje soubor adres emailů. Prosím vyberte emailovou adresu nebo adresy, které přidáte do skupiny."
+        "${ contactName } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidáte do skupiny."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt nalezen",
@@ -1674,34 +1698,34 @@
         "${ contactsCount } kontaktů nalezeno"
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } obsahuje soubor adres emailů. Prosím vyberte která emailová adresa nebo adresy přidat do ${ groupsEnumeration }."
+        "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte která e-mailová adresa nebo adresy přidat do ${ groupsEnumeration }."
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } obsahuje soubor adres emailů. Prosím vyberte emailovou adresu nebo adresy, které přidáte do skupiny."
+        "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidáte do skupiny."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Ukončených",
-        "${ doneCount } Ukončené",
-        "${ doneCount } Ukončených",
-        "${ doneCount } Ukončených"
+      "${ doneCount } finished": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } Stažených",
-        "${ doneDownloadsCount } Stažených",
-        "${ doneDownloadsCount } Stažených",
-        "${ doneDownloadsCount } Stažených"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Nahraných",
-        "${ doneUploadsCount } Nahrané",
-        "${ doneUploadsCount } Nahraných",
-        "${ doneUploadsCount } Nahraných"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Nezdařených",
-        "${ errorCount } Nezdařených",
-        "${ errorCount } Nezdařených",
-        "${ errorCount } Nezdařených"
+      "${ errorCount } failed": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } skupina nalezena",
@@ -1730,11 +1754,11 @@
         "",
         ""
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Zastavených",
-        "${ pausedCount } Zastavené",
-        "${ pausedCount } Zastavených",
-        "${ pausedCount } Zastavených"
+      "${ pausedCount } paused": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na vašem předplatném přepnutím na ${ annualBilling }"
@@ -1865,6 +1889,9 @@
       "Anyone with this link can access your file.": [
         "Kdokoliv s tímto odkazovým řádkem může mít přístup k Vašim souborům."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
       ],
@@ -1960,6 +1987,9 @@
       ],
       "Creating link to file": [
         "Vytvářím odkazový řádek k souboru"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         "Vytvářím sdílení"
@@ -2213,6 +2243,9 @@
       "Only the people with the link and the password can access this file.": [
         "Jenom lidé s tímto odkazovým řádkem a heslem, můžou mít přístup k tomuto souboru."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Pozastaveno"
       ],
@@ -2267,6 +2300,9 @@
       "Preparing link to file": [
         "Připravuji odkazový řádek k souboru"
       ],
+      "Preparing link to folder": [
+        ""
+      ],
       "Preview": [
         "Náhled"
       ],
@@ -2304,7 +2340,7 @@
         "Vyberte nahraný soubor a vytvořte k němu odkazový řádek."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
+        "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -2316,7 +2352,7 @@
         "Relace vypršela."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
+        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované e-mailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
       ],
       "Share files with links": [
         "Sdílejte soubory přes s odkazovými řádky"
@@ -2375,7 +2411,10 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Tento odkazový řádek bude permanentně deaktivován. Nikdo s tímto odkazovým řádkem nebude mít přístup k tvému souboru. Pro opětné sdílení souboru, budete potřebovat nový odkazový řádek."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "",
         "",
         "",
@@ -2490,7 +2529,7 @@
         ""
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový email."
+        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
       "You cannot undo this action.": [
         "Nemůžete vrátit zpět tuto akci."
@@ -2557,6 +2596,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
@@ -2764,16 +2812,16 @@
         "Vybrat vše/zrušit výběr všeho"
       ],
       "Send email": [
-        "Odeslat email"
+        "Odeslat e-mail"
       ],
       "Show all emails": [
-        "Zobrazit všechny emaily"
+        "Zobrazit všechny e-maily"
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
       ],
       "Show unread emails": [
-        "Zobrazit nepřečtené emaily"
+        "Zobrazit nepřečtené e-maily"
       ],
       "Star": [
         "Hvězdička"
@@ -3570,6 +3618,9 @@
       ],
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
+      ],
+      "Failed to download files: ${ err }": [
+        ""
       ],
       "Failed to move, please try again": [
         "Nepodařilo se přesunout, zkuste to prosím znovu"
@@ -4383,8 +4434,8 @@
       "Empty trash": [
         "Vysypat koš"
       ],
-      "Enter file password to download": [
-        "Zadejte heslo pro stažení souboru"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Zadejte Vaše heslo"
@@ -4463,6 +4514,9 @@
       ],
       "My files": [
         "Moje soubory"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Jméno"
@@ -4635,6 +4689,9 @@
       "Your file is ready to be downloaded": [
         "Soubor je připraven ke stažení"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "ZIP / PSČ"
       ]
@@ -4648,14 +4705,11 @@
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Přístup k geograficky blokovanému obsahu (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, atd.) Nezáleží na tom, kde se nacházíte."
       ],
-      "Active sharing link": [
-        "Aktivní sdílený odkaz"
-      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automaticky označuje, že pro odeslání tomuto uživateli se použije formát uvedený ve složce. Prostý text označuje, že zpráva bude při odeslání vždy převedena na prostý text."
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Vytvořte si více emailových adres, propojených s Vaším účtem, např. username2@protonmail.com"
+        "Vytvořte si více e-mailových adres, propojených s Vaším účtem, např. username2@protonmail.com"
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "Chrání před hrozbami pro ochranu soukromí VPN předáváním vašeho internetového provozu přes více serverů."
@@ -4673,13 +4727,10 @@
         ""
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Šifrování emailů posiluje emailový podpis, aby Vaše zprávy byly ověřeny"
+        "Šifrování e-mailů posiluje e-mailový podpis, aby Vaše zprávy byly ověřeny"
       ],
       "Encrypted data with verified digital signature": [
         "Šifrovaná data s ověřeným digitálním podpisem"
-      ],
-      "Expired sharing link": [
-        "Vypršela platnost odkazu pro sdílení"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Získejte přístup ke všem placeným funkcím pro ${ vpnAppName } a ${ mailAppName } (šifrovaná e-mailová služba, kterou miliony uživatelů používají k ochraně svých dat) v jednom plánu."
@@ -4691,13 +4742,10 @@
         "Umožňuje hostovat e-maily pro Vaši(e) vlastní doménu(y) na ${ mailAppName }, např. jan.smith@example.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hostovat emaily pro Vaši(e) vlastní doménu(y) v ProtonMailu, např. john.smith@example.com"
+        "Hostovat e-maily pro Vaši(e) vlastní doménu(y) v ProtonMailu, např. john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Pokud jste zakoupil dárkový kód nebo jste obdržel jeden od naší podpory, můžete ho vložit sem."
-      ],
-      "Inactive sharing link": [
-        "Neaktivní sdílený odkaz"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Podpora více uživatelů je použitelná pouze pro plány se 2 nebo více uživateli"

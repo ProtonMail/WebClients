@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Toevoegen"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Ga naar instellingen"
       ],
-      "Grid layout": [
-        "Rooster layout"
-      ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Sneltoetsen"
-      ],
-      "List layout": [
-        "Lijst lay-out"
       ],
       "Load image": [
         "Afbeelding laden"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Selecteer abonnement"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Delen"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         "Toon labels"
-      ],
-      "Show shared link details": [
-        "Toon details gedeelde link"
       ],
       "Sign out": [
         "Uitloggen"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Niet meer vertrouwen"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Upgraden"
@@ -1128,17 +1131,32 @@
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin-API."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         "Kan de link niet laden"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
       ],
+      "File \"${ name }\" is already downloading": [
+        ""
+      ],
       "File cannot be merged with folder": [
         "Bestand kan niet worden samengevoegd met map"
       ],
       "File has no contents to preview": [
         "Bestand heeft geen inhoud om een voorbeeld te bekijken"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         "Mapnaam kan niet leeg zijn"
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Downloaden (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Downloaden (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Uploaden (${ uploadProgress }%)",
-        "${ activeUploadsCount } Uploaden (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadres",
@@ -1597,9 +1619,9 @@
         "${ calendarsToBeMergedCount } samengevoegde agenda's",
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
       ],
-      "${ canceledCount } Canceled": [
-        "Één geannuleerd",
-        "${ canceledCount } Geannuleerd"
+      "${ canceledCount } canceled": [
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Lid",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } bevat meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan deze groep."
       ],
-      "${ doneCount } Finished": [
-        "Één voltooid",
-        "${ doneCount } Voltooid"
+      "${ doneCount } finished": [
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "Één gedownload",
-        "${ doneDownloadsCount } Gedownload"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "Één geüpload",
-        "${ doneUploadsCount } Geüpload"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "Één mislukt",
-        "${ errorCount } Mislukt"
+      "${ errorCount } failed": [
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
@@ -1658,9 +1680,9 @@
         "Één contactpersoon",
         "${ numContacts } contactpersonen"
       ],
-      "${ pausedCount } Paused": [
-        "Één onderbroken",
-        "${ pausedCount } Onderbroken"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } op uw abonnement door over te schakelen naar ${ annualBilling }"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Iedereen met deze link heeft toegang tot dit bestand."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "Link naar bestand maken"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         "Maak share"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Gepauzeerd"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Link naar bestand wordt voorbereid"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Voorbeeld"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw bestand. Om het bestand opnieuw in te stellen heeft u een nieuwe link nodig."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Dit zal de link verwijderen en de toegang tot uw bestand voor iedereen met de link verwijderen.",
-        "Dit zal de link verwijderen en de toegang tot uw bestanden voor iedereen met de link verwijderen."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "",
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browser tabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Contactgroep bijgewerkt"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "Verplaatsen mislukt, probeer het opnieuw"
       ],
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Prullenbak leegmaken"
       ],
-      "Enter file password to download": [
-        "Voer bestandswachtwoord in om te downloaden"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Mijn bestanden"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Naam"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "Uw bestand is klaar om te worden gedownload"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "Postcode"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Toegang tot geografisch beperkte inhoud (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) waar u ook bent."
-      ],
-      "Active sharing link": [
-        "Actieve link voor het delen"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
-      "Expired sharing link": [
-        "Verlopen link voor het delen"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Krijg toegang tot alle betaalde functies voor zowel ${ vpnAppName } als ${ mailAppName } (de versleutelde e-maildienst die miljoenen mensen gebruiken om hun gegevens te beschermen) met één abonnement."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
-      ],
-      "Inactive sharing link": [
-        "Inactieve link voor delen"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Ondersteuning voor meerdere gebruikers is alleen van toepassing op abonnementen met 2 of meer gebruikers"

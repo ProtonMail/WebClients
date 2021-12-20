@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Activeer mijn coupon"
       ],
+      "Activate recovery": [
+        "Herstel activeren"
+      ],
       "Add credit / debit card": [
         "Creditcard / bankpas toevoegen"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Opnieuw versturen"
       ],
+      "Reset": [
+        ""
+      ],
       "Reset credentials": [
         "Inloggegevens resetten"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Verzenden"
+      ],
+      "Set recovery phrase": [
+        "Herstelzin instellen"
       ],
       "Share via link": [
         "Deel via link"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Update"
+      ],
+      "Update recovery file": [
+        "Herstelbestand bijwerken"
+      ],
+      "Update recovery phrase": [
+        "Herstelzin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -952,8 +967,8 @@
       "You have no invoices.": [
         "U heeft geen facturen."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ]
     },
     "Error message": {
@@ -1134,7 +1149,7 @@
       "No logs": [
         "Geen logboeken"
       ],
-      "Secure core servers": [
+      "Secure Core servers": [
         "Secure Core servers"
       ],
       "Strong encryption": [
@@ -1554,9 +1569,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Het resetten van uw wachtwoord betekent dat uw oude wachtwoord en de plaatsten waar deze opgeslagen is, niet meer zal werken. Weet u zeker dat u uw wachtwoord wilt resetten?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Het resetten van uw wachtwoord zal uw encryptiesleutels resetten voor alle Proton gerelateerde diensten (Mail en VPN). U kunt uw bestaande berichten niet lezen. Als u uw ProtonMail inloggegevens kent, reset dan NIET. U kunt zich aanmelden met hen ${ hereLink }."
       ],
@@ -1640,6 +1652,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dit zal uw account en alle bijbehorende gegevens permanent verwijderen. U kunt deze account niet reactiveren."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        ""
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw Proton account. Tweestapsverificatie zal uw Proton account veiliger maken en daarom raden we aan om het in te schakelen."
@@ -2937,8 +2952,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } gekopieerd naar uw klembord"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Account verwijderd. Uitloggen..."
@@ -3002,8 +3017,8 @@
       "/2-year": [
         "/2-jaar"
       ],
-      "/monthly": [
-        "/maandelijks"
+      "/month": [
+        ""
       ],
       "/year": [
         "/jaar"
@@ -3133,9 +3148,6 @@
       ],
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
-      ],
-      "Confirm reset password": [
-        "Herstelwachtwoord bevestigen"
       ],
       "Coupon discount": [
         "Couponkorting"
@@ -3337,6 +3349,9 @@
       ],
       "Reset password": [
         "Wachtwoord resetten"
+      ],
+      "Reset password?": [
+        ""
       ],
       "Secure Core Servers": [
         "Secure Core Servers"

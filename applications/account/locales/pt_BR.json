@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Ativar chave da organização"
       ],
+      "Activate recovery": [
+        "Ativar a recuperação"
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -437,10 +440,10 @@
         "mover e-mails para"
       ],
       "Move to Allow List": [
-        "Mover para lista de permitidos"
+        "Mover para Lista de Permitidos"
       ],
       "Move to Block List": [
-        "Mover para a lista de bloqueio"
+        "Mover para a Lista de Bloqueados"
       ],
       "Need help?": [
         "Precisa de ajuda?"
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Definir catch-all"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "Compartilhar via link"
@@ -1804,7 +1810,7 @@
         "Respostas automáticas é um recurso pago. Por favor, atualize para uma conta paga para usar este recurso."
       ],
       "Calendar limit reached": [
-        ""
+        "Limite de calendários atingido"
       ],
       "Calendar primary private key is not decrypted": [
         "A chave privada primária do calendário não está descriptografada"
@@ -1834,12 +1840,12 @@
         "Não foi possível encontrar o endereço ${ email }."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
+        "Desmarque ao menos ${ calendarToFixCount } calendário",
+        "Desmarque ao menos ${ calendarToFixCount } calendários"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Desmarque ao menos ${ calendarToFixCount } calendário ou",
+        "Desmarque ao menos ${ calendarToFixCount } calendários ou"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
@@ -1932,8 +1938,8 @@
         "O nome do marcador não pode ser vazio"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Mescle ao menos ${ calendarToFixCount } calendário com um calendário Proton existente",
+        "Mescle ao menos ${ calendarToFixCount } calendários com calendários Proton existentes"
       ],
       "Missing signature": [
         "Assinatura ausente"
@@ -1993,8 +1999,8 @@
         "Ative o suporte a múltiplos usuários antes de adicionar usuários à sua organização."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Por favor, corrija o conflito em destaque para prosseguir.",
+        "Por favor, corrija os conflitos em destaque para prosseguir."
       ],
       "Please generate keys before you try to change your password": [
         "Por favor, crie novas chaves antes de tentar alterar sua senha"
@@ -2090,7 +2096,7 @@
         "O pagamento mínimo que aceitamos é ${ _price2 }"
       ],
       "The organization key must be activated first": [
-        ""
+        "A chave da organização deve ser ativada primeiro"
       ],
       "The organization key must be activated first.": [
         "A chave da organização deve ser ativada primeiro."
@@ -2164,8 +2170,8 @@
       "You must set a name": [
         "Você deve especificar um nome"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "A sua conta ou organização atualmente tem uma fatura em atraso. Por favor, pague todas as faturas pendentes."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
@@ -2194,7 +2200,7 @@
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
+        "Seu arquivo ${ formattedFilename } tem um método inválido e não pode ser importado."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O arquivo ${ formattedFilename } não tem eventos para serem importados."
@@ -2311,7 +2317,7 @@
         "O evento recorrente original não pôde ser encontrado"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Evento recorrente sem datas"
       ],
       "Recurring rule not supported": [
         "Regra recorrente não suportada"
@@ -2577,10 +2583,10 @@
         "Adicione um filtro personalizado para executar ações automaticamente, como rotular ou arquivar mensagens."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "As regras específicas de spam dos remetentes podem ser aplicadas aqui. Mensagens de endereços ou domínios na Lista de Permitidos sempre vão para sua caixa de entrada enquanto mensagens de endereços ou domínios na lista de Bloqueios sempre vão para a caixa Spam. Marcar a mensagem como spam adiciona o endereço para a Lista de Bloqueio. Marcar a mensagem como \"não é spam\" adiciona para a Lista de Permitidos."
+        "Crie regras específicas de spam para remetentes. Mensagens de endereços ou domínios na Lista de Permitidos sempre vão para sua caixa de entrada, enquanto que mensagens de endereços ou domínios na Lista de Bloqueados sempre vão para a caixa Spam. Marcar a mensagem como spam adiciona o endereço na Lista de Bloqueados. Marcar a mensagem como \"não é spam\" adiciona na Lista de Permitidos."
       ],
       "Search in Allow List and Block List": [
-        "Pesquisar na lista de permitidos e lista de bloqueio"
+        "Pesquisar na Lista de Permitidos e na Lista de Bloqueados"
       ]
     },
     "Font Face Default": {
@@ -2723,12 +2729,13 @@
         "${ totalImported }/${ totalToImport } evento criptografado e adicionado ao seu calendário",
         "${ totalImported }/${ totalToImport } eventos criptografados e adicionados ao seu calendário"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ocorreu um erro ao criptografar e adicionar seus eventos. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
+        "Ocorreu um erro ao criptografar e adicionar seus eventos. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado.",
         "Ocorreu um erro ao criptografar e adicionar seus eventos. Nenhum evento pôde ser importado."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Ocorreu um erro ao criptografar e adicionar seus eventos. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptografando e adicionando contatos: ${ totalImported }/${ totalToImport }"
@@ -2746,7 +2753,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
+        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
         "versões vCard < 3.0"
@@ -2757,15 +2764,15 @@
         "Os convites importados aparecem em ${ CALENDAR_APP_NAME } como eventos simples, sem detalhes do organizador e de participantes. Para obter atualizações sobre os eventos e ver quem são os participantes, peça aos organizadores para convidá-lo através do seu endereço de e-mail Proton."
       ],
       "This file contains an event invitation:": [
-        "",
-        ""
+        "Este arquivo contém um convite para um evento:",
+        "Este arquivo contém convites para eventos:"
       ],
       "This file contains an invitation response:": [
-        "",
-        ""
+        "Este arquivo contém uma resposta a um convite:",
+        "Este arquivo contém respostas a um convite:"
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "Este arquivo contém alguns dados que não pudemos importar:"
       ]
     },
     "Import contact": {
@@ -3059,8 +3066,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para detalhes"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Expanda para detalhes."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Nenhum contato pôde ser importado. Clique para maiores detalhes"
@@ -3069,7 +3077,7 @@
         ""
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        ""
+        "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
     "Info": {
@@ -3087,12 +3095,12 @@
         "${ calendarsToBeCreatedCount } novos calendários"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendário mesclado",
+        "${ calendarsToBeMerged } calendários mesclados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendário mesclado",
+        "${ calendarsToBeMergedCount } calendários mesclados"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratuito"
@@ -3222,9 +3230,6 @@
       "Account successfully updated": [
         "Conta atualizada com sucesso"
       ],
-      "Activate your recovery phrase": [
-        ""
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"ProtonMail me\" ou \"Private Message me\""
       ],
@@ -3232,7 +3237,7 @@
         "Adicionar um e-mail de recuperação"
       ],
       "Add a recovery phone number": [
-        ""
+        "Adicionar um número de telefone de recuperação"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Adicione endereços adicionais à sua conta, como usuario2@protonmail.com"
@@ -3253,7 +3258,7 @@
       "Addresses": [
         "Endereços"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
         ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
@@ -3278,6 +3283,12 @@
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
+      ],
+      "Allow recovery by email": [
+        ""
+      ],
+      "Allow recovery by phone": [
+        ""
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Permite que você hospede e-mails do seu(s) próprio(s) domínio(s) no ProtonMail, por exemplo, alex.silva@exemplo.com"
@@ -3315,8 +3326,8 @@
       "Are you sure you want to delete this filter?": [
         "Você tem certeza de que deseja excluir esse filtro?"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Você tem certeza que deseja excluir esta pasta?"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        ""
       ],
       "Are you sure you want to delete this label?": [
         "Você tem certeza que deseja excluir este marcador?"
@@ -3418,7 +3429,7 @@
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se este número de telefone estiver incorreto, clique em \"Editar\" para corrigi-lo."
       ],
       "Close this screen to exit.": [
-        ""
+        "Feche esta tela para sair."
       ],
       "Connections": [
         "Conexões"
@@ -3452,7 +3463,7 @@
         "Criando sua conta Proton"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim com os formatos vCard 3.1 e 4.0 (encode UTF-8)."
+        "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim como os formatos vCard 3.1 e 4.0 (encode UTF-8)."
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Atualmente, todo o armazenamento disponível está alocado na conta do administrador. Por favor, reduza a alocação da conta do administrador para liberar espaço para os usuários adicionais. Você pode aumentar o armazenamento total a qualquer momento alterando a sua conta para um plano superior."
@@ -3513,19 +3524,19 @@
         "Concluído"
       ],
       "Done! We sent a code to ${ destination }.": [
-        ""
+        "Pronto! Enviamos um código para ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ProtonVPN."
+      ],
+      "Download recovery file": [
+        "Baixar o arquivo de recuperação"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Baixe suas chaves PGP para usar com outros serviços compatíveis com PGP."
-      ],
-      "Download your recovery file": [
-        ""
       ],
       "Drop the file here to upload": [
         "Arraste o arquivo aqui para enviá-lo"
@@ -3681,10 +3692,10 @@
         "Se você configurou SPF e DKIM, DMARC permite que você especifique como outros serviços de e-mail devem entregar e-mail para seu domínio se as verificações de SPF e DKIM falharem. Isso pode tornar mais difícil para os remetentes de spam fingirem ser você, mas também pode causar problemas de entrega se não for feito corretamente."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        ""
+        "Se você perder seu acesso e precisar redefinir a senha de sua conta, ${ boldImperative } que você tenha um ${ boldAccountRecovery } definido."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        ""
+        "Se você perder seu acesso e precisar redefinir a senha de sua conta, ${ boldImperative } que você tenha um $ { boldAccountAndRecovery } definidos. Caso contrário, você pode ficar se acesso aos seus e-mails, contatos ou arquivos."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Se você perder seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser utilizados no lugar do código de 6 dígitos para entrar em sua conta. Cada código poderá ser utilizado apenas uma vez."
@@ -3736,13 +3747,13 @@
         "IMPORTANTE: Alguns registradores não aceitam valores CNAME com um ponto no final (enquanto outros o exigem). Se seu registrador não aceitar seus registros CNAME, apague o ponto no final de cada valor CNAME e tente novamente."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "Caso você perca acesso, enviaremos instruções de recuperação por e-mail ou SMS."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "Caso você perca acesso, enviaremos instruções de recuperação por e-mail."
       ],
       "Included": [
         "Incluído"
@@ -3781,7 +3792,7 @@
         ""
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Apenas confirme sua seleção e faremos o restante."
       ],
       "Justify": [
         "Justificar"
@@ -3799,7 +3810,7 @@
         "As importações grandes podem levar vários dias a serem concluídas."
       ],
       "Large imports can take several days.": [
-        ""
+        "Importações grandes podem demorar vários dias."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
         "Aprenda a fazer login no ProtonVPN com aplicativos de VPN de terceiros."
@@ -3853,7 +3864,7 @@
         "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ _switchButton }."
       ],
       "Merged": [
-        ""
+        "Mesclado"
       ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
@@ -3960,6 +3971,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existem outros administradores na sua organização. Você é responsável por informar a nova senha."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        ""
+      ],
       "P2P": [
         "P2P"
       ],
@@ -3985,7 +4005,7 @@
         "Por favor, digite uma senha para criptografar sua chave privada antes de exportar."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        ""
+        "Digite a frase de recuperação de 12 palavras associada à sua conta."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Por favor, mantenha-o seguro. Você precisará dele para acessar sua conta e descriptografar seus dados em caso de redefinição de senha."
@@ -4112,7 +4132,7 @@
         "Salve sua senha em um lugar seguro."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
-        ""
+        "Guarde sua senha em um lugar seguro. Clique no ícone para confirmar que digitou sua senha corretamente."
       ],
       "Scan QR code instead": [
         "Escaneie o código QR"
@@ -4140,6 +4160,9 @@
       ],
       "Session timed out.": [
         "Sessão expirada."
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
@@ -4247,7 +4270,7 @@
         "Isso criará uma nova chave criptográfica para sua organização. Chaves de 4096 bits funcionam apenas em computadores de alta performance, para a maioria dos usuários recomendamos chaves de 2048 bits."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        ""
+        "Isso desativará a sua frase de recuperação atual. Você não poderá usá-la para acessar sua conta ou descriptografar seus dados."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura Proton. Vamos redirecioná-lo para o PayPal em uma nova guia do navegador. Desative qualquer bloqueador de pop-ups que estiver usando."
@@ -4276,6 +4299,15 @@
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        ""
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descriptografar e ver seus dados bloqueados depois de uma redefinição de senha, selecione um método de recuperação."
       ],
@@ -4289,7 +4321,7 @@
         "Para preparar sua conta externa para importação, siga as instruções abaixo:"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        ""
+        "Para prosseguir, selecione um método de recuperação de conta para que possamos verificar a sua solicitação."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Para proteger a sua conexão de internet, baixe e instale o aplicativo ProtonVPN no seu dispositivo e conecte a um servidor ProtonVPN."
@@ -4329,6 +4361,12 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
+      ],
+      "Update recovery file": [
+        "Atualizar o arquivo de recuperação"
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Faça upgrade para um plano ${ PLAN_NAMES[PLANS.VISIONARY] } ou ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para habilitar respostas automáticas quando você estiver fora do escritório."
@@ -4406,7 +4444,7 @@
         "Enviaremos a você um link de recuperação para este endereço de e-mail se você esquecer sua senha ou ficar bloqueado fora de sua conta."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Nós te avisaremos quando a importação estiver concluída."
       ],
       "Web URL": [
         "URL da Web"
@@ -4418,10 +4456,10 @@
         "As visualizações da semana e do mês só se aplicam ao desktop."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        ""
+        "Enviaremos um código de redefinição para o endereço de e-mail que você forneceu para a recuperação da conta."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        ""
+        "Enviaremos um código de redefinição para o número de telefone que você forneceu para a recuperação da conta."
       ],
       "What do you want to import from your Google account?": [
         "O que você deseja importar da sua conta do Google?"
@@ -4460,7 +4498,7 @@
         "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Você pode mesclar calendários importados com calendários Proton existentes."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode acompanhar o progresso em ${ importProgressLink }."
@@ -4562,7 +4600,7 @@
         "Seu banco requer a verificação 3-D Secure para fins de segurança."
       ],
       "Your Block List is empty.": [
-        "Sua lista de bloqueios está vazia."
+        "Sua Lista de Bloqueados está vazia."
       ],
       "Your data is encrypted and locked. You can recover access with a data recovery method.": [
         "Seus dados estão criptografados e bloqueados. Você pode recuperar o acesso com um método de recuperação de dados."
@@ -4577,7 +4615,7 @@
         "O seu e-mail será utilizado somente nesta verificação única."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        ""
+        "Sua importação de ${ delayedImport.Account } está temporariamente atrasada."
       ],
       "Your import from ${ delayedImport.Email } is temporarily delayed.": [
         "Sua importação de ${ delayedImport.Email } está temporariamente atrasada."
@@ -4754,16 +4792,16 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        ""
+        "Já existe uma chave com o mesmo algoritmo de criptografia. Gerar outra chave retardará o carregamento da sua conta. Você tem certeza que deseja continuar?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Uma chave com o mesmo algoritmo já esta ativa neste endereço. Se você gerar outra chave poderá causar lentidão no carregamento da sua conta e a exclusão dessa chave pode causar problemas. Se você estiver gerando uma nova chave porque sua chave antiga está comprometida, marque essa chave como comprometida. Você tem certeza que deseja continuar?"
       ],
       "Generate key": [
-        ""
+        "Gerar chave"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
-        ""
+        "A chave com impressão digital ${ fp } foi criada com sucesso."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
         "As chaves de criptografia estão sendo geradas. Isso pode levar alguns minutos e congelar temporariamente a janela do seu navegador."
@@ -4800,7 +4838,7 @@
         "${ compatibility } RSA 4096 bits (mais lento, porém maior compatibilidade com softwares antigos)"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        ""
+        "${ stateOfTheArt } X25519 (mais rápido, mais moderno)"
       ]
     },
     "Keyboard shortcut name": {
@@ -5045,7 +5083,7 @@
         "${ UsedMembers } de ${ MaxMembers } usuários"
       ],
       "(Coming soon)": [
-        ""
+        "(Em breve)"
       ],
       "Account storage": [
         "Armazenamento da conta"
@@ -5066,7 +5104,7 @@
         "TODOS"
       ],
       "All-day event notifications": [
-        ""
+        "Notificações para eventos de dia inteiro"
       ],
       "Allow recovery by email": [
         "Permitir recuperação por e-mail"
@@ -5099,7 +5137,7 @@
         "Senha do aplicativo"
       ],
       "Ask before loading remote content": [
-        ""
+        "Confirme antes de carregar conteúdo remoto"
       ],
       "Attach public key": [
         "Anexar chave pública"
@@ -5543,7 +5581,7 @@
         "Usuário privado"
       ],
       "Prompt to trust keys": [
-        "Solicitar confiança nas chaves"
+        "Solicitar chaves confiáveis"
       ],
       "Proration": [
         "Cálculo proporcional"
@@ -5564,7 +5602,7 @@
         "Código de recuperação"
       ],
       "Recovery email address": [
-        ""
+        "Endereço de e-mail de recuperação"
       ],
       "Recovery file": [
         "Arquivo de recuperação"
@@ -5966,8 +6004,8 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } de ${ calendarsToBeCreated } criado",
+        "${ createdCalendars } de ${ calendarsToBeCreated } criados"
       ],
       "Almost there": [
         "Quase lá"
@@ -5979,10 +6017,10 @@
         "Criando novos calendários"
       ],
       "Gathering your data": [
-        ""
+        "Coletando seus dados"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Estamos coletando seus dados com o seu provedor"
       ],
       "Your import is starting": [
         "Sua importação está começando"
@@ -6638,7 +6676,7 @@
         "Criar novo calendário"
       ],
       "Merge with calendar": [
-        ""
+        "Mesclar com o calendário"
       ]
     },
     "Option protection mode": {
@@ -6684,7 +6722,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+        "Endereço de e-mail não encontrado entre as identidades de usuário definidas na chave de envio (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6989,7 +7027,7 @@
         "Número do telefone"
       ],
       "Phrase": [
-        ""
+        "Frase"
       ]
     },
     "Remark about a key type option": {
@@ -7030,7 +7068,7 @@
         "Enviar"
       ],
       "Upload additional files": [
-        ""
+        "Enviar arquivos adicionais"
       ]
     },
     "Select search results": {
@@ -7040,7 +7078,7 @@
     },
     "Settings description": {
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Você pode adicionar múltiplas etiquetas em uma única mensagem, mas mensagens geralmente só podem estar em uma única pasta. Arraste e solte para reorganizar a ordem de suas partas e etiquetas."
+        "Você pode adicionar múltiplas etiquetas a uma mesma mensagem, mas mensagens geralmente só podem estar em uma única pasta. Arraste e solte para reorganizar a ordem de suas pastas e etiquetas."
       ]
     },
     "Settings section title": {
@@ -7054,7 +7092,7 @@
         "Resposta automática"
       ],
       "Backup & Export": [
-        ""
+        "Backup & Exportação"
       ],
       "Calendars": [
         "Calendários"
@@ -7147,18 +7185,18 @@
     },
     "Spam filter moved to blacklist": {
       "${ Domain } moved to Block List": [
-        "${ Domain } movido para a lista de bloqueio"
+        "${ Domain } movido para a Lista de Bloqueados"
       ],
       "${ Email } moved to Block List": [
-        "${ Email } movido para a lista de bloqueio"
+        "${ Email } movido para a Lista de Bloqueados"
       ]
     },
     "Spam filter moved to whitelist": {
       "${ Domain } moved to Allow List": [
-        "${ Domain } movido para a lista de permitidos"
+        "${ Domain } movido para a Lista de Permitidos"
       ],
       "${ Email } moved to Allow List": [
-        "${ Email } movido para a lista de permitidos"
+        "${ Email } movido para a Lista de Permitidos"
       ]
     },
     "Spam notification": {
@@ -7235,7 +7273,7 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
+      "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } copiado para a área de transferência"
       ],
       "Account deleted. Logging out...": [
@@ -7573,10 +7611,10 @@
         "Adicionar filtro Sieve"
       ],
       "Add to Allow List": [
-        "Adicionar na lista de permitidos"
+        "Adicionar na Lista de Permitidos"
       ],
       "Add to Block List": [
-        "Adicionar na lista de bloqueio"
+        "Adicionar na Lista de Bloqueados"
       ],
       "Add user": [
         "Adicionar usuário"
@@ -7597,7 +7635,7 @@
         "Alocar conexões VPN"
       ],
       "Allow List": [
-        "Lista de permitidos"
+        "Lista de Permitidos"
       ],
       "Amount": [
         "Valor"
@@ -7630,7 +7668,7 @@
         "Voltar"
       ],
       "Backup & Export": [
-        "Backup e exportação"
+        "Backup & Exportação"
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
@@ -7639,7 +7677,7 @@
         "Detalhes de faturamento"
       ],
       "Block List": [
-        "Lista de bloqueio"
+        "Lista de Bloqueados"
       ],
       "Bridge for ${ platform }": [
         "Ponte para ${ platform }"
@@ -7819,10 +7857,10 @@
         ""
       ],
       "Edit Allow List": [
-        "Editar lista de permitidos"
+        "Editar Lista de Permitidos"
       ],
       "Edit Block List": [
-        "Editar lista de bloqueio"
+        "Editar Lista de Bloqueados"
       ],
       "Edit calendar": [
         "Editar calendário"
@@ -7949,7 +7987,7 @@
         "Importar chave"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Importar via { PRODUCT_NAMES.EASY_SWITCH }"
+        "Importar via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Aplicativo de Importação-Exportação"
@@ -8282,7 +8320,7 @@
         "O seu plano"
       ],
       "Your recovery status": [
-        ""
+        "Estado da sua recuperação"
       ],
       "ZIP / postal code": [
         "CEP / código postal"
@@ -8782,7 +8820,7 @@
         "Os relatórios não são criptografados de ponta a ponta, por favor não envie nenhuma informação sensível."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "As configurações de data e hora em seu dispositivo não estão sincronizadas. ${ learnMore }"
       ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Esta ação irá ${ boldWarning }. Você não poderá recuperar as mensagens em ${ domain }."
@@ -8808,10 +8846,10 @@
       "You will not see this import record in the list anymore.": [
         "Você não verá mais este registro de importação na lista."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         ""
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         ""
       ]
     },
@@ -8825,7 +8863,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        ""
+        "Esta chave não atende mais aos nossos padrões de segurança. Sugerimos que você a marque como obsoleta e gere uma nova chave."
       ]
     },
     "Weekly recurring event, frequency": {

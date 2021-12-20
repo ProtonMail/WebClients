@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Tambah"
       ],
@@ -404,6 +407,9 @@
       "Send": [
         "Kirim"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Bagikan"
       ],
@@ -475,6 +481,12 @@
       ],
       "Update": [
         "Perbarui"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -1827,6 +1839,9 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
+      ],
+      "You need an active personal calendar to import events": [
+        ""
       ]
     },
     "Error notification": {
@@ -2015,10 +2030,10 @@
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         ""
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         ""
       ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
         ""
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -2099,7 +2114,7 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         ""
       ],
       "No contact can be imported. Click for details": [
@@ -2887,6 +2902,9 @@
       "Your email will only be used for this one-time verification.": [
         "Surel Anda hanya dipakai untuk verifikasi sekali saja."
       ],
+      "Your events will be encrypted and then saved.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saat ini."
       ],
@@ -3175,6 +3193,9 @@
       "BTC amount:": [
         "Jumlah BTC:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -3210,6 +3231,9 @@
       ],
       "CVV code": [
         "Kode CVV"
+      ],
+      "Date and time": [
+        ""
       ],
       "Description": [
         "Deskripsi"
@@ -3250,17 +3274,8 @@
       "Event duration": [
         ""
       ],
-      "Event frequency": [
-        "Frekuensi acara"
-      ],
-      "Event location": [
-        "Lokasi acara"
-      ],
       "Event notifications": [
         "Notifikasi acara"
-      ],
-      "Event time": [
-        "Waktu acara"
       ],
       "Event title": [
         "Judul acara"
@@ -3278,6 +3293,9 @@
         "Alamat lengkap"
       ],
       "Folder location": [
+        ""
+      ],
+      "Frequency": [
         ""
       ],
       "From: ${ importedEmail }": [
@@ -3319,6 +3337,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Sandi kotak pesan"
       ],
@@ -3335,6 +3356,9 @@
         "Nama di kartu"
       ],
       "Notification": [
+        ""
+      ],
+      "Notifications": [
         ""
       ],
       "Operating system": [
@@ -3421,9 +3445,6 @@
       "System information": [
         "Informasi sistem"
       ],
-      "Time of the event": [
-        "Waktu acara"
-      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -3453,9 +3474,6 @@
       ],
       "What is the primary reason for this rating?": [
         "Apa alasan utama penilaian ini?"
-      ],
-      "Your calendars": [
-        "Kalender Anda"
       ],
       "ZIP": [
         "Kode pos"
@@ -4817,6 +4835,9 @@
         "Menghapus kontak"
       ],
       "Downgrade account": [
+        ""
+      ],
+      "Drop to upload": [
         ""
       ],
       "Edit calendar": [
