@@ -33,7 +33,7 @@ const removeCurrentRetries = () => {
     removeItem(EARLY_ACCESS_DESYNCHRONIZATION_RETRIES_STORAGE_KEY);
 };
 
-export const handleEarlyAccessDesynchronization = async ({
+export const handleEarlyAccessDesynchronization = ({
     userSettings,
     earlyAccessScope,
     appName,
@@ -62,12 +62,7 @@ export const handleEarlyAccessDesynchronization = async ({
     if (shouldUpdateToEarlyAccessVersion) {
         setCurrentRetries(currentRetries + 1);
         updateVersionCookie(targetEnvironment, earlyAccessScope);
-
-        // Allow awaiting on handleEarlyAccessDesynchronization to prevent
-        // further code executing before the page has chance to reload
-        return new Promise<void>(() => {
-            window.location.reload();
-        });
+        return true;
     }
 
     removeCurrentRetries();
