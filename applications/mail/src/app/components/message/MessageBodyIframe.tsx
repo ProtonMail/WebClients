@@ -7,10 +7,11 @@ import { classnames, Tooltip } from '@proton/components';
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import useObserveWidthChange from '../../hooks/message/useObserveWidthChange';
 import { useOnMailTo } from '../../containers/ComposeProvider';
-import { MessageImages, MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../logic/messages/messagesTypes';
 import useInitIframeContent from './hooks/useInitIframeContent';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
 
+import { locateHead } from '../../helpers/message/messageHead';
 import useSetIframeHeight from './hooks/useSetIframeHeight';
 import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
 import { MESSAGE_IFRAME_PRINT_ID } from './constants';
@@ -19,13 +20,11 @@ import MessageBodyImages from './MessageBodyImages';
 import useIframeOffset from './hooks/useIframeOffset';
 
 interface Props {
-    messageHead: string | undefined;
     content: string;
     showBlockquote: boolean;
     showBlockquoteToggle: boolean;
     blockquoteContent: string;
     isPlainText: boolean;
-    messageImages: MessageImages | undefined;
     wrapperRef: RefObject<HTMLDivElement>;
     onBlockquoteToggle?: () => void;
     onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
@@ -33,13 +32,10 @@ interface Props {
     message: MessageState;
     labelID: string;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
-    messageSubject: string | undefined;
 }
 
 const MessageBodyIframe = ({
-    messageHead,
     content,
-    messageImages,
     wrapperRef,
     blockquoteContent,
     showBlockquote: showBlockquoteProp,
@@ -51,9 +47,9 @@ const MessageBodyIframe = ({
     message,
     labelID,
     onReady,
-    messageSubject,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
+    const messageHead = locateHead(message.messageDocument?.document);
 
     const { isResizing } = useMailboxContainerContext();
 
@@ -92,10 +88,10 @@ const MessageBodyIframe = ({
     useIframeDispatchEvents(initStatus, iframeRef);
 
     useEffect(() => {
-        if (messageImages?.showRemoteImages || messageImages?.showEmbeddedImages) {
+        if (message.messageImages?.showRemoteImages || message.messageImages?.showEmbeddedImages) {
             setIframeHeight();
         }
-    }, [messageImages?.showRemoteImages, messageImages?.showEmbeddedImages]);
+    }, [message.messageImages?.showRemoteImages, message.messageImages?.showEmbeddedImages]);
 
     const iframePrintDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_ID);
 
@@ -109,7 +105,7 @@ const MessageBodyIframe = ({
                 ref={iframeRef}
                 className={classnames([initStatus !== 'start' ? 'w100' : 'w0 h0', isResizing && 'no-pointer-events'])}
                 data-testid="content-iframe"
-                data-subject={messageSubject}
+                data-subject={message.data?.Subject}
                 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox
                 sandbox="allow-same-origin allow-popups allow-modals"
                 allowFullScreen={false}
@@ -119,7 +115,7 @@ const MessageBodyIframe = ({
                     iframeOffset={iframeOffset}
                     iframeRef={iframeRef}
                     isPrint={isPrint}
-                    messageImages={messageImages}
+                    messageImages={message.messageImages}
                     onImagesLoaded={onImagesLoadedCallback}
                 />
             )}
