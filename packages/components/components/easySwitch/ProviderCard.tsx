@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo.svg';
 import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
@@ -42,7 +44,8 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
             height: 22,
         },
         [OTHER]: {
-            name: 'Other',
+            // translator: here 'Other' stand for "other provider"
+            name: c('Import provider').t`Other`,
             logo: otherIllu,
             width: 48,
             height: 46,
