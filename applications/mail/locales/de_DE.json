@@ -14,17 +14,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "Accept": [
-        "Annehmen"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "Activate recovery": [
+        "Wiederherstellung aktivieren"
       ],
       "Add": [
         "Hinzufügen"
       ],
       "Add address": [
-        "Adresse hinzufügen"
+        "Anschrift hinzufügen"
       ],
       "Add condition": [
         "Bedingung hinzufügen"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Neue Gruppe hinzufügen"
+      ],
+      "Add participant": [
+        "Teilnehmer hinzufügen"
       ],
       "Add phone number": [
         "Rufnummer hinzufügen"
@@ -179,8 +182,8 @@
       "Confirm": [
         "Bestätigen"
       ],
-      "Confirm opening of link ${ link }": [
-        "Öffnen des Links ${ link } bestätigen"
+      "Confirm opening of link ${ linkToShow }": [
+        "Öffnen des Links ${ linkToShow } bestätigen"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -746,6 +749,9 @@
       "Set expiration time": [
         "Gültigkeitsdatum festlegen"
       ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase einrichten"
+      ],
       "Share via link": [
         "Als Link teilen"
       ],
@@ -824,9 +830,6 @@
       "This message contains embedded images.": [
         "Diese Nachricht enthält eingebettete Grafiken."
       ],
-      "This message contains remote content.": [
-        "Diese Nachricht enthält Inhalte aus externen Quellen."
-      ],
       "Trust": [
         "Vertrauen"
       ],
@@ -869,6 +872,12 @@
       ],
       "Update": [
         "Aktualisieren"
+      ],
+      "Update recovery file": [
+        "Wiederherstellungsdatei aktualisieren"
+      ],
+      "Update recovery phrase": [
+        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Wechseln"
@@ -965,6 +974,17 @@
         "Es wurden noch keine Gruppen angelegt."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        "Teilnehmer konnte nicht hinzugefügt werden"
+      ],
+      "Invitation sent and participant added": [
+        "Einladung gesendet und Teilnehmer hinzugefügt"
+      ],
+      "Participant added": [
+        "Teilnehmer hinzugefügt"
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "${ addresses } zusätzliche E-Mail-Adresse",
@@ -1025,7 +1045,8 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } abgeschlossen",
         "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } abgeschlossen"
       ]
     },
@@ -1308,6 +1329,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Diese Antwort stimmt nicht mit Ihren Details der Einladung überein. Bitte überprüfen Sie die Einladungsdetails in Ihrem Kalender."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat eine Einladung angenommen und eine neue Zeit für einen der Termine vorgeschlagen."
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } hat eine Einladung angenommen und eine neue Zeit für den Termin vorgeschlagen."
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hat eine Einladung zu einem der Termine angenommen."
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin angenommen."
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } hat Ihre Einladung angenommen und eine alternative Zeit für dieses Ereignisses vorgeschlagen."
       ],
@@ -1329,6 +1362,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } fragte nach den letzten Aktualisierungen für ein Ereignis, welches nicht mehr in Ihrem Kalender existiert."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat eine Einladung abgelehnt und eine neue Zeit für einen der Termine vorgeschlagen."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "${ participantName } hat eine Einladung abgelehnt und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } hat eine Einladung zu einem der Termine abgelehnt."
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin abgelehnt."
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } hat Ihre Einladung abgelehnt und eine alternative Zeit für dieses Ereignis vorgeschlagen."
       ],
@@ -1341,11 +1386,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } hat Ihre Einladung abgelehnt."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hat eine Einladung angenommen und eine andere Zeit für einen der Termine vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte eine Einladung angenommen und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hatte eine Einladung zu einem der Termine angenommen."
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin angenommen."
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } hatte Ihre Einladung bestätigt und eine alternative Zeit für dieses Ereignisses vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } hatte Ihre Einladung angenommen und eine alternative Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hat eine Einladung abgelehnt und eine neue Zeit für einen der Termine vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hatte eine Einladung abgelehnt und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "${ participantName } hatte eine Einladung zu einem der Termine abgelehnt."
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin abgelehnt."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } hatte Ihre Einladung angenommen und eine alternative Zeit für dieses Ereignisses vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
@@ -1389,17 +1458,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } hatte eine alternative Zeit für dieses Ereignis vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Sie verfügen über keine Kalender."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } hat eine Einladung unter Vorbehalt angenommen und eine neue Zeit für einen der Termine vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } hat eine Einladung unter Vorbehalt angenommen und eine neue Zeit für diesen Termin vorgeschlagen. Antwort und Vorschlag sind nicht mehr aktuell."
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hat eine Einladung zu einem der Termine unter Vorbehalt angenommen."
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin unter Vorbehalt angenommen."
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } hatte Ihre Einladung unter Vorbehalt angenommen und eine alternative Zeit für dieses Ereignisses vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } hatte Ihre Einladung unter Vorbehalt angenommen und eine alternative Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
+      "${ participantName } is not in the participants list.": [
+        "${ participantName } ist nicht in der Teilnehmerliste enthalten."
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } hat eine alternative Zeit für dieses Ereignis vorgeschlagen."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } schlug eine alternative Zeit für dieses Ereignis vor."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } hat eine Einladung unter Vorbehalt angenommen und eine neue Zeit für einen der Termine vorgeschlagen."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } hat eine Einladung unter Vorbehalt angenommen und eine neue Zeit für diesen Termin vorgeschlagen."
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } hat eine Einladung zu einem der Termine unter Vorbehalt angenommen."
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        "${ participantName } hat eine Einladung zu diesem Termin unter Vorbehalt angenommen."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } hat Ihre Einladung unter Vorbehalt angenommen und eine alternative Zeit für dieses Ereignisses vorgeschlagen."
@@ -1422,20 +1518,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Dem Ereignis „${ veventIcsTitle }” wurde ein Termin hinzugefügt"
       ],
-      "Event already ended": [
-        "Ereignis bereits beendet"
-      ],
-      "Event in progress": [
-        "Ereignis hat bereits begonnen"
-      ],
       "Event refreshing is not supported for the moment": [
         "Das Aktualisieren von Ereignissen wird derzeit nicht unterstützt"
       ],
       "Event rescheduling is not supported for the moment": [
         "Das Umplanen von Ereignissen wird derzeit nicht unterstützt"
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "Der Absender dieser E-Mail wurde nicht zu dieser Veranstaltung eingeladen und kann nicht als Teilnehmer hinzugefügt werden"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Diese Antwort konnte nicht zu „${ calendarAppName }” hinzugefügt werden, da derzeit nur Antworten auf alle Ereignisse einer Serie unterstützt werden"
@@ -1509,6 +1596,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "Termin bereits zu Ende"
+      ],
+      "Event in progress": [
+        "Termin hat begonnen"
       ]
     },
     "Collapsible tooltip": {
@@ -1731,8 +1826,8 @@
         "Alle ${ interval } Tage, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Alle ${ interval } Tage, ${ untilString }",
-        "Alle ${ interval } Tage, ${ untilString }"
+        "Täglich, ${ untilString }",
+        "Aller ${ interval } Tage, ${ untilString }"
       ],
       "until ${ dateString }": [
         "bis ${ dateString }"
@@ -1889,12 +1984,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        "Ereignis bereits beendet"
-      ],
-      "Event in progress": [
-        "Ereignis hat bereits begonnen"
-      ],
       "Event is tomorrow": [
         "Ereignis ist morgen"
       ],
@@ -2378,7 +2467,24 @@
         "Ihre Suche ergab zu viele Treffer. Schränken Sie Ihre Suche ein und versuchen Sie es erneut."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        "Maximal 100 Teilnehmer sind pro Einladung erlaubt"
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        "Entwürfe können nicht in den Posteingang verschoben werden"
+      ],
+      "Drafts cannot be moved to Spam": [
+        "Entwürfe können nicht in den Spam-Ordner verschoben werden"
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        "Gesendete Nachrichten können nicht in den Posteingang verschoben werden"
+      ],
+      "Sent messages cannot be moved to Spam": [
+        "Gesendete Nachrichten können nicht in den Spam-Ordner verschoben werden"
+      ],
       "This action cannot be performed": [
         "Diese Aktion kann nicht ausgeführt werden"
       ]
@@ -2536,6 +2642,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Kein Bild ausgewählt"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        "Einladung konnte nicht an ${ email } gesendet werden. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -2708,6 +2819,12 @@
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         "Schließen Sie alle Schritte ab und Sie erhalten insgesamt ${ totalGBStorageAfterCompletion } GB auf Ihrem Konto"
+      ],
+      "Expires soon": [
+        "Verfällt demnächst"
+      ],
+      "Expires today": [
+        "Verfällt heute"
       ],
       "Only ${ days } day left": [
         "Nur noch ${ days } } Tag verbleibend",
@@ -3192,7 +3309,7 @@
       "Are you sure you want to permanently delete this message?": [
         "Möchten Sie diese Nachricht wirklich dauerhaft löschen?"
       ],
-      "Attach Public Key": [
+      "Attach public key": [
         "Öffentlichen Schlüssel anhängen"
       ],
       "Background color": [
@@ -3770,7 +3887,7 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Das Melden einer Nachricht als Phishing-Versuch wird die Nachricht an uns senden, damit wir diese analysieren und unsere Filter verbessern können. Das bedeutet, dass wir den Inhalt der Nachricht vollständig einsehen können."
       ],
-      "Request Read Receipt": [
+      "Request read receipt": [
         "Lesebestätigung anfordern"
       ],
       "Right to Left": [
@@ -4610,6 +4727,9 @@
       "BTC amount:": [
         "Betrag in Bitcoin:"
       ],
+      "Calendar": [
+        "Kalender"
+      ],
       "Calendars": [
         "Kalender"
       ],
@@ -4709,6 +4829,9 @@
       "Folder location": [
         "Pfad des Ordners"
       ],
+      "Frequency": [
+        "Häufigkeit"
+      ],
       "From": [
         "Von"
       ],
@@ -4766,6 +4889,9 @@
       "Last month only": [
         "Nur den letzten Monat"
       ],
+      "Location": [
+        "Ort"
+      ],
       "Mailbox password": [
         "Postfach-Passwort"
       ],
@@ -4813,6 +4939,9 @@
       ],
       "Or": [
         "Oder"
+      ],
+      "Participants": [
+        "Teilnehmer"
       ],
       "Password": [
         "Passwort"
@@ -5054,7 +5183,7 @@
         "Alle Nachrichten"
       ],
       "Archive": [
-        "Archivieren"
+        "Archiv"
       ],
       "clearing your browser cache": [
         "Leeren des Browser-Cache"
@@ -5386,8 +5515,8 @@
         "Alle ${ interval } Monate ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Alle ${ interval } Monate ${ onDayString }, ${ untilString }",
-        "Alle ${ interval } Monate ${ onDayString }, ${ untilString }"
+        "Monatlich am ${ onDayString }, ${ untilString }",
+        "Aller ${ interval } Monate am ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
@@ -6727,6 +6856,9 @@
       "Email addresses": [
         "E‐Mail‐Adressen"
       ],
+      "Email content": [
+        "Nachrichtentext"
+      ],
       "Email settings": [
         "E-Mail-Einstellungen"
       ],
@@ -6792,9 +6924,6 @@
       ],
       "Link confirmation": [
         "Linkbestätigung"
-      ],
-      "Load embedded images": [
-        "Eingebettete Grafiken laden"
       ],
       "Load remote content": [
         "Inhalte aus externen Quellen laden"
@@ -6972,6 +7101,9 @@
       ],
       "Sign in again to continue": [
         "Erneut anmelden, um fortzufahren"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        "Einige Grafiken konnten nicht mit Tracking-Schutz geladen werden [Ungeschützt laden]"
       ],
       "Sort conversations": [
         "Themen sortieren"
@@ -7338,8 +7470,8 @@
         "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }",
-        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }"
+        "Wöchentlich am ${ multipleDaysString }, ${ untilString }",
+        "Aller ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Alle ${ interval } Wochen an allen Tagen",
@@ -7350,8 +7482,8 @@
         "Alle ${ interval } Wochen an allen Tagen, { timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Alle ${ interval } Wochen an allen Tagen, { untilString }",
-        "Alle ${ interval } Wochen an allen Tagen, ${ untilString }"
+        "Wöchentlich an allen Tagen, ${ untilString }",
+        "Aller ${ interval } Wochen an allen Tagen, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Alle ${ interval } Wochen am Freitag",
@@ -7362,8 +7494,8 @@
         "Alle ${ interval } Wochen am Freitag, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Alle ${ interval } Wochen am Freitag, ${ untilString }",
-        "Alle ${ interval } Wochen am Freitag, ${ untilString }"
+        "Wöchentlich am Freitag, ${ untilString }",
+        "Aller ${ interval } Wochen am Freitag, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Alle ${ interval } Wochen am Montag",
@@ -7374,8 +7506,8 @@
         "Alle ${ interval } Wochen am Montag, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Alle ${ interval } Wochen am Montag, ${ untilString }",
-        "Alle ${ interval } Wochen am Montag, ${ untilString }"
+        "Wöchentlich am Montag, ${ untilString }",
+        "Aller ${ interval } Wochen am Montag, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Alle ${ interval } Wochen am Samstag",
@@ -7386,8 +7518,8 @@
         "Alle ${ interval } Wochen am Samstag, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Alle ${ interval } Wochen am Samstag, ${ untilString }",
-        "Alle ${ interval } Wochen am Samstag, ${ untilString }"
+        "Wöchentlich am Samstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Samstag, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Alle ${ interval } Wochen am Sonntag",
@@ -7398,8 +7530,8 @@
         "Alle ${ interval } Wochen am Sonntag, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Alle ${ interval } Wochen am Sonntag, ${ untilString }",
-        "Alle ${ interval } Wochen am Sonntag, ${ untilString }"
+        "Wöchentlich am Sonntag, ${ untilString }",
+        "Aller ${ interval } Wochen am Sonntag, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Alle ${ interval } Wochen am Donnerstag",
@@ -7410,8 +7542,8 @@
         "Alle ${ interval } Wochen am Donnerstag, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Alle ${ interval } Wochen am Donnerstag, ${ untilString }",
-        "Alle ${ interval } Wochen am Donnerstag, ${ untilString }"
+        "Wöchentlich am Donnerstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Donnerstag, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Alle ${ interval } Wochen am Dienstag",
@@ -7422,8 +7554,8 @@
         "Alle ${ interval } Wochen am Dienstag, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Alle ${ interval } Wochen am Dienstag, ${ untilString }",
-        "Alle ${ interval } Wochen am Dienstag, ${ untilString }"
+        "Wöchentlich am Dienstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Dienstag, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Alle ${ interval } Wochen am Mittwoch",
@@ -7434,8 +7566,8 @@
         "Alle ${ interval } Wochen am Mittwoch, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Alle ${ interval } Wochen am Mittwoch, ${ untilString }",
-        "Alle ${ interval } Wochen am Mittwoch, ${ untilString }"
+        "Wöchentlich am Mittwoch, ${ untilString }",
+        "Aller ${ interval } Wochen am Mittwoch, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Wöchentlich am ${ multipleDaysString }"
@@ -7552,8 +7684,8 @@
         "Alle ${ interval } Jahre, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Alle ${ interval } Jahre, ${ untilString }",
-        "Alle ${ interval } Jahre, ${ untilString }"
+        "Jährlich, ${ untilString }",
+        "Aller ${ interval } Jahre, ${ untilString }"
       ],
       "Yearly": [
         "Jährlich"

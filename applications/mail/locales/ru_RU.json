@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "Accept": [
-        "Принять"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Добавить"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Добавить новую группу"
+      ],
+      "Add participant": [
+        "Добавить участника"
       ],
       "Add phone number": [
         ""
@@ -179,8 +182,8 @@
       "Confirm": [
         "Подтвердить"
       ],
-      "Confirm opening of link ${ link }": [
-        "Подтвердить открытие ссылки ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Группа контактов"
@@ -752,6 +755,9 @@
       "Set expiration time": [
         ""
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Доступ по ссылке"
       ],
@@ -830,9 +836,6 @@
       "This message contains embedded images.": [
         "В этом сообщении есть встроенные изображения."
       ],
-      "This message contains remote content.": [
-        "Это сообщение содержит удаленное содержимое."
-      ],
       "Trust": [
         "Доверять"
       ],
@@ -876,6 +879,12 @@
         "Не доверять"
       ],
       "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -973,6 +982,17 @@
         "У вас нет групп."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        "Не удалось добавить участника"
+      ],
+      "Invitation sent and participant added": [
+        "Приглашение отправлено, и участник добавлен"
+      ],
+      "Participant added": [
+        "Участник добавлен"
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } адрес электронной почты",
@@ -1041,7 +1061,10 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "",
+        "",
+        "",
         ""
       ]
     },
@@ -1324,6 +1347,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Этот ответ не соответствует вашим сведениям о приглашении. Проверьте сведения о приглашении в календаре."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } принимает приглашение и предлагает новое время для одного повтора события."
       ],
@@ -1345,6 +1380,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } запросил последние обновления события, которое больше не существует в вашем календаре."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } отклоняет приглашение и предлагает новое время для одного повтора события."
       ],
@@ -1357,11 +1404,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } отклонил ваше приглашение."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } принял ваше приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } принял ваше приглашение и предложил новое время для этого события. Ответ и предложение устарели."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } отклонил ваше приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
@@ -1405,17 +1476,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } предложил новое время для этого события. Это предложение устарело. У вас нет календарей."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } предварительно принял ваше приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } предварительно принял ваше приглашение и предложил новое время для этого события. Ответ и предложение устарели."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } предлагает новое время для одного повтора этого события."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } предлагает новое время для этого события."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } предварительно принимает приглашение и предлагает новое время для одного повтора события."
@@ -1438,20 +1536,11 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "К событию «${ veventIcsTitle }» был добавлен повтор"
       ],
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event refreshing is not supported for the moment": [
         "Обновление события в настоящее время не поддерживается"
       ],
       "Event rescheduling is not supported for the moment": [
         ""
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
-        "Отправитель этого письма не был приглашен на это мероприятие и не может быть добавлен в качестве участника"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
@@ -1525,6 +1614,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Более 12 часов прошло с момента последнего обновления"
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "Событие уже закончилось"
+      ],
+      "Event in progress": [
+        "Происходит сейчас"
       ]
     },
     "Collapsible tooltip": {
@@ -1919,12 +2016,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event is tomorrow": [
         ""
       ],
@@ -2430,7 +2521,24 @@
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        "В одном приглашении можно указать не более 100 участников"
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Невозможно выполнить это действие"
       ]
@@ -2588,6 +2696,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Изображение не выбрано"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        "Не могу отправить уведомление ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -2759,6 +2872,12 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
+      "Expires today": [
         ""
       ],
       "Only ${ days } day left": [
@@ -3326,8 +3445,8 @@
       "Are you sure you want to permanently delete this message?": [
         "Вы уверены, что хотите безвозвратно удалить это сообщение?"
       ],
-      "Attach Public Key": [
-        "Присоединить публичный ключ"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "Цвет фона"
@@ -3926,8 +4045,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Сообщение о попытке фишинга отправит сообщение нам, чтобы мы смогли проанализировать его и улучшить наши фильтры. Это означает, что мы будем способны увидеть содержимое сообщения полностью."
       ],
-      "Request Read Receipt": [
-        "Запрашивать уведомление о прочтении"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "Справа налево"
@@ -4788,6 +4907,9 @@
       "BTC amount:": [
         "Сумма в биткоинах:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         "Календари"
       ],
@@ -4887,6 +5009,9 @@
       "Folder location": [
         "Размещение папки"
       ],
+      "Frequency": [
+        ""
+      ],
       "From": [
         "От"
       ],
@@ -4944,6 +5069,9 @@
       "Last month only": [
         "Только за последний месяц"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
@@ -4991,6 +5119,9 @@
       ],
       "Or": [
         "Или"
+      ],
+      "Participants": [
+        ""
       ],
       "Password": [
         "Пароль"
@@ -7005,6 +7136,9 @@
       "Email addresses": [
         "Адреса электронной почты"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "Настройки эл. почты"
       ],
@@ -7070,9 +7204,6 @@
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
-      ],
-      "Load embedded images": [
-        "Показывать встроенные изображения"
       ],
       "Load remote content": [
         "Загрузить внешнее содержимое"
@@ -7250,6 +7381,9 @@
       ],
       "Sign in again to continue": [
         "Чтобы продолжить, повторно войдите ещё раз"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Сортировка цепочек писем"

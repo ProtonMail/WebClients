@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Rnu"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Ddu s iɣewwaren"
       ],
-      "Grid layout": [
-        "Tissi n uferrug"
-      ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Inegzumen n unasiw"
-      ],
-      "List layout": [
-        "Tabdart n tissa"
       ],
       "Load image": [
         "Sali-d tugna"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Fren aɣawas"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Bḍu"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         ""
-      ],
-      "Show shared link details": [
-        "Sken-d ifutas n useɣwen yettwabḍan"
       ],
       "Sign out": [
         "Ffeɣ"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Ur tettamen ara"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Leqqem"
@@ -1128,10 +1131,19 @@
       "Error connecting to the Bitcoin API.": [
         "Tuccḍa di tuqqna ar API Bitcoin."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1139,6 +1151,12 @@
       ],
       "File has no contents to preview": [
         "Afaylu ur isεi ara agbur i teskant"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         "Isem n ukaram ur ilaq ara ad yili d ilem"
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Asader (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Asader (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Asali (${ uploadProgress }%)",
-        "${ activeUploadsCount } Asali (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } n tansa n yimayl",
@@ -1597,9 +1619,9 @@
         "",
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Yettwasefsex",
-        "${ canceledCount } Yettwasefsex"
+      "${ canceledCount } canceled": [
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } n uɛeggal",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer ugraw-a."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } yekfa",
-        "${ doneCount } yekfa"
+      "${ doneCount } finished": [
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } yettusader",
-        "${ doneDownloadsCount } yettusader"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } yuli",
-        "${ doneUploadsCount } yuli"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Yecceḍ",
-        "${ errorCount } Yecceḍ"
+      "${ errorCount } failed": [
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } n ugraw yettwafen",
@@ -1658,9 +1680,9 @@
         "",
         ""
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Yettwaḥbes",
-        "${ pausedCount } Yettwaḥbes"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } deg ujerred-inek·inem s ubeddel ɣer ${ annualBilling }"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Kra n win i yesɛan aseɣwen-a yezmer ad yekcem ɣer ufaylu-ik•im."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "Asnulfu n useɣwen ɣer ufaylu"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         "Timerna n beṭṭu"
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Anagar imdanen i yesɛan aseɣwen d wawal uffir i izemren ad kecmen ɣer ufaylu-a."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Tarist"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Aheyyi n useɣwen ɣer ufaylu"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Taskant"
@@ -2275,7 +2309,10 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Aseɣwen-a dayen ad yens. Yiwen ur izemmer ad yekcem ɣer ufaylu-inek•inem s useɣwen-a. Akken ad tebḍuḍ afaylu tikkelt-nniḍen, ilaq-ak•am aseɣwen amaynut."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "",
         ""
       ],
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Agraw n unermes yettwasnifel"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"
       ],
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Silem iḍumman"
       ],
-      "Enter file password to download": [
-        "Sekcem awal uffir i usider"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Sekcem awal-ik.im uffir"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Ifuyla-inu"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Isem"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "Afaylu-inek•inem yewjed i usader"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "ZIP / tangalt n lpusṭa"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Kcem ɣer ugbur yettwagedlen sɣur timura (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, You Tube, atg) anda tebɣuḍ tiliḍ."
-      ],
-      "Active sharing link": [
-        "Aseɣwen n beṭṭu yermed"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Awurman yemmal belli amasal deg umsuddes yettwaseqdec i tuzzna ɣer useqdac-agi. Amasal aḍris yemmal belli izen ad ittuselket ɣer umasal aḍris di tuzzna."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Isefka iwgelhanen s uzmul umḍin yettwasenqden"
       ],
-      "Expired sharing link": [
-        "Aseɣwen n beṭṭu ifut"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Kcem ɣer tmahilin akk s lexlaṣ n ${ vpnAppName } d ${ mailAppName } i sin (ameẓlu n yimayl awgelhan i seqdacen yimelyan n yiseqdacen akken ad ḥerzen isefka-nsen) s yiwen n uɣawas."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ma yella tuɣeḍ-d tangalt n warraz neɣ tremseḍ-d yiwet seg terbaɛt-nneɣ n tallalt, tzemreḍ ad tt-taruḍ dagi."
-      ],
-      "Inactive sharing link": [
-        "Aseɣwen n beṭṭu yensa"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Tallalt n waṭas n yiseqdacen tettusnas kan i yiɣawasen s 2 neɣ ugar n yiseqdacen"

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Ekle"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Ayarlara git"
       ],
-      "Grid layout": [
-        "Izgara düzeni"
-      ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Klavye kısayolları"
-      ],
-      "List layout": [
-        "Liste düzeni"
       ],
       "Load image": [
         "Resim yükle"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Plan seçin"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Paylaş"
       ],
@@ -465,9 +465,6 @@
       ],
       "Show labels": [
         ""
-      ],
-      "Show shared link details": [
-        "Paylaşılan bağlantının ayrıntılarını göster"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Güvenme"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Yükselt"
@@ -1128,10 +1131,19 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API'sine bağlanırken hata meydana geldi."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1139,6 +1151,12 @@
       ],
       "File has no contents to preview": [
         "Dosyanın önizlenecek içeriği yok"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         ""
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+      "${ activeDownloadsCount } downloading": [
         "",
         ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Yükleniyor (%${ uploadProgress })",
-        "${ activeUploadsCount } Yükleniyor (%${ uploadProgress })"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-posta adresi",
@@ -1597,9 +1619,9 @@
         "",
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } İptal Edildi",
-        "${ canceledCount } İptal Edildi"
+      "${ canceledCount } canceled": [
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Üye",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } birden fazla e-posta adresi içeriyor. Bu gruba hangi adres veya adreslerin ekleneceğini seçin."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Tamamlandı",
-        "${ doneCount } Tamamlandı"
+      "${ doneCount } finished": [
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } İndirildi",
-        "${ doneDownloadsCount } İndirildi"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Yüklendi",
-        "${ doneUploadsCount } Yüklendi"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Başarısız Oldu",
-        "${ errorCount } Başarısız Oldu"
+      "${ errorCount } failed": [
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
@@ -1658,9 +1680,9 @@
         "",
         ""
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Duraklatıldı",
-        "${ pausedCount } Duraklatıldı"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ annualBilling } hesabına geçerek aboneliğinizde ${ save20 } tasarruf edin"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "Bu bağlantıya sahip olan herkes dosyanıza erişebilir."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Çöp kutusunu boşaltmak ve tüm öğeleri kalıcı olarak silmek istediğinizden emin misiniz?"
       ],
@@ -1865,6 +1890,9 @@
         "İlk klasörünüzü oluşturun ve dosyalarınızı taşımaya başlayın."
       ],
       "Creating link to file": [
+        ""
+      ],
+      "Creating link to folder": [
         ""
       ],
       "Creating share": [
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         "Bu dosyaya yalnızca bağlantıya ve şifreye sahip kişiler erişebilir."
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Duraklatıldı"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "Dosya bağlantısı hazırlanıyor"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Önizle"
@@ -2275,9 +2309,12 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Bu bağlantı kalıcı olarak devre dışı bırakılacak. Bu bağlantıya sahip hiç kimse dosyanıza erişemez. Dosyayı yeniden paylaşmak için yeni bir bağlantıya ihtiyacınız olacak."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
-        "Bu, bağlantıyı siler ve bağlantıya sahip olan herkesin dosyanıza erişimini kaldırır.",
-        "Bu, bağlantıları siler ve bağlantılara sahip olan herkesin dosyalarınıza erişimini kaldırır."
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "",
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu, PayPal'i Proton aboneliğinizi ödeme yapmasını sağlayacaktır. Sizi yeni bir tarayıcı sekmesindeki PayPal'a yönlendireceğiz. Eğer herhangi bir açılır pencere engelleyici kullanıyorsanız, lütfen onları devam etmek için devre dışı bırakınız."
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelenecek ve ardından kaydedilecektir."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Kişi grubu güncellendi"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "Taşınamadı, lütfen tekrar deneyin"
       ],
@@ -4205,7 +4254,7 @@
       "Empty trash": [
         "Çöp kutusunu boşalt"
       ],
-      "Enter file password to download": [
+      "Enter password to download": [
         ""
       ],
       "Enter your password": [
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Dosyalarım"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "İsim"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         ""
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "ZIP / posta kodu"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Nerede olduğunuz fark etmeksizin coğrafi olarak engellenen içeriğe (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.) erişin."
-      ],
-      "Active sharing link": [
-        "Aktif paylaşım bağlantısı"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, mesaj oluşturucudaki formatın bu kullanıcıya göndermek için kullanıldığını gösterir. Düz metin, mesajın her zaman gönderim sırasında düz metne dönüştürüleceğini belirtir."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
-      "Expired sharing link": [
-        "Süresi dolmuş paylaşım bağlantısı"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Tek bir planla hem ${ vpnAppName } hem de ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere erişin sağlayın."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Eğer bir hediye kodu aldıysanız ya da bir tanesini destek ekibimizden aldıysan, buraya yazabilirsiniz."
-      ],
-      "Inactive sharing link": [
-        "Aktif olmayan paylaşım bağlantısı"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Çok kullanıcı desteği yalnızca 2 ya da daha fazla kullanıcılı planlar için uygulanabilir"

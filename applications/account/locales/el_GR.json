@@ -43,6 +43,9 @@
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Προσθήκη"
       ],
@@ -621,6 +624,9 @@
       ],
       "Set catch-all": [
         "Ορίστε catch-all"
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
@@ -2068,8 +2074,8 @@
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ο λογαριασμός ή ο οργανισμός σας έχει αυτή τη στιγμή απλήρωτο υπόλοιπο. Παρακαλώ καταβάλλετε όλα τα μη καταβληθέντα ποσά."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        ""
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
@@ -2627,12 +2633,13 @@
         "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
         "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "",
+        ""
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος.",
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και προσθήκη των συμβάντων σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη των συμβάντων σας. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη επαφών: ${ totalImported }/${ totalToImport }"
@@ -2963,8 +2970,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } από ${ totalEvents } συμβάντα δεν θα εισαχθούν. Αναπτύξτε το για λεπτομέρειες."
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "",
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
@@ -3126,9 +3134,6 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
-      "Activate your recovery phrase": [
-        "Ενεργοποίηση της φράσης σας ανάκτησης"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me στο λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"ProtonMail me\" ή \"Private Message me\"."
       ],
@@ -3157,8 +3162,8 @@
       "Addresses": [
         "Διευθύνσεις"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Μετά από επαναφορά κωδικού πρόσβασης, τα δεδομένα σας είναι κλειδωμένα σε κρυπτογραφημένη μορφή, για να μείνουν ασφαλή. Για αποκρυπτογράφηση και άνοιγμα των μηνυμάτων σας και άλλων δεδομένων, χρειάζεστε ένα αρχείο ή φράση ανάκτησης."
+      "After a password reset your data is locked in encrypted form to keep it safe.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Αφού κάνετε την πληρωμή Bitcoin, ακολουθήστε τις παρακάτω οδηγίες για αναβάθμιση."
@@ -3182,6 +3187,12 @@
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
+      ],
+      "Allow recovery by email": [
+        ""
+      ],
+      "Allow recovery by phone": [
+        ""
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Σας επιτρέπει να φιλοξενήσετε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα στο ${ mailAppName }, π.χ. john.smith@example.com"
@@ -3219,8 +3230,8 @@
       "Are you sure you want to delete this filter?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το φίλτρο;"
       ],
-      "Are you sure you want to delete this folder?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον φάκελο;"
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον φάκελο; Θα διαγραφούν επίσης όλοι οι υποφάκελοι."
       ],
       "Are you sure you want to delete this label?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτή την ετικέτα;"
@@ -3422,14 +3433,14 @@
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ProtonVPN επί πληρωμή."
       ],
+      "Download recovery file": [
+        ""
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Κατεβάστε τα κλειδιά PGP σας για χρήση με άλλες υπηρεσίες συμβατές με PGP."
-      ],
-      "Download your recovery file": [
-        "Κατέβασμα του αρχείου σας ανάκτησης"
       ],
       "Drop the file here to upload": [
         "Αφήστε το αρχείο εδώ για μεταφόρτωση"
@@ -3864,6 +3875,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
       ],
+      "Outdated recovery file; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery methods; update to ensure access to your data": [
+        ""
+      ],
+      "Outdated recovery phrase; update to ensure access to your data": [
+        ""
+      ],
       "P2P": [
         "P2P"
       ],
@@ -4045,6 +4065,9 @@
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
@@ -4180,6 +4203,15 @@
       "to continue to ${ toAppName }": [
         "για συνέχιση στο ${ toAppName }"
       ],
+      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery file.": [
+        ""
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase.": [
+        ""
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
@@ -4233,6 +4265,12 @@
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Αναβαθμίστε σε ένα ${ PLAN_NAMES[PLANS.VISIONARY] } ή ένα ${ PLAN_NAMES[PLANS.PROFESSIONAL] } πλάνο ώστε να ενεργοποιήσετε αυτόματες απαντήσεις για όταν βρίσκεστε εκτός γραφείου."
@@ -4661,22 +4699,22 @@
         ""
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        ""
+        "Ένα κλειδί με τον ίδιο αλγόριθμο κρυπτογράφησης είναι ήδη ενεργό για αυτήν τη διεύθυνση. Η δημιουργία ενός άλλου κλειδιού θα προκαλέσει πιο αργή φόρτωση του λογαριασμού και η διαγραφή αυτού του κλειδιού μπορεί να προκαλέσει προβλήματα. Αν δημιουργείτε ένα νέο κλειδί επειδή το παλιό σας κλειδί είναι παραβιασμένο/εκτεθειμένο, επισημάνετε το κλειδί ως εκτεθειμένο. Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
       ],
       "Generate key": [
         "Παραγωγή κλειδιού"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
-        ""
+        "Το κλειδί με δακτυλικό αποτύπωμα ${ fp } δημιουργήθηκε."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "Τα κλειδιά κρυπτογράφησης δημιουργούνται. Αυτό μπορεί να διαρκέσει αρκετά λεπτά και να παγώσει προσωρινά το πρόγραμμα περιήγησης σας."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "Τα κλειδιά κρυπτογράφησης για τη διεύθυνσή σας παράγονται.. Αυτό μπορεί να διαρκέσει αρκετά λεπτά και να παγώσει προσωρινά το πρόγραμμα περιήγησης σας."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        ""
+        "Μπορείτε να δημιουργήσετε ένα νέο κλειδί κρυπτογράφησης εάν πιστεύετε ότι το προηγούμενο κλειδί σας έχει παραβιαστεί."
       ]
     },
     "Key state badge": {
@@ -4949,7 +4987,7 @@
         "${ UsedMembers } από ${ MaxMembers } χρήστες"
       ],
       "(Coming soon)": [
-        ""
+        "(Ερχεται σύντομα)"
       ],
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
@@ -4970,7 +5008,7 @@
         "ΟΛΑ"
       ],
       "All-day event notifications": [
-        ""
+        "Ολοήμερες ειδοποιήσεις εκδήλωσης"
       ],
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
@@ -5213,10 +5251,10 @@
         "Εισάγετε τον κωδικό πρόσβασης για το κλειδί με δακτυλικό αποτύπωμα: ${ fingerprintCode }"
       ],
       "Event duration": [
-        ""
+        "Διάρκεια εκδήλωσης"
       ],
       "Event notifications": [
-        ""
+        "Ειδοποιήσεις συμβάντων"
       ],
       "Expires": [
         "Λήγει"
@@ -7139,8 +7177,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } αντιγράφηκε στο πρόχειρο σας"
+      "${ server.Domain } copied to your clipboard": [
+        ""
       ],
       "Account deleted. Logging out...": [
         "Ο λογαριασμός διαγράφηκε. Αποσύνδεση..."
@@ -8712,11 +8750,11 @@
       "You will not see this import record in the list anymore.": [
         "Δεν θα βλέπετε πλέον αυτήν την καρτέλα εισαγωγής στη λίστα."
       ],
-      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
-        "Το αρχείο ανάκτησης είναι ξεπερασμένη και δεν μπορεί να ανακτήσει νέα δεδομένα στην περιπτωση που θέλετε να επαναφέρετε ξανα το λογαριασμό σας."
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
+        ""
       ],
-      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
-        "Η φράση ανάκτησης είναι ξεπερασμένη και δεν μπορεί να ανακτήσει νέα δεδομένα στην περιπτωση που θέλετε να επαναφέρετε ξανα το λογαριασμό σας."
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        ""
       ]
     },
     "Warning for domain modal": {

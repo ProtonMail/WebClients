@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Accept": [
-        "Kabul et"
-      ],
       "Activate": [
         "Etkinleştir"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Ekle"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Yeni grup ekle"
+      ],
+      "Add participant": [
+        ""
       ],
       "Add phone number": [
         ""
@@ -179,8 +182,8 @@
       "Confirm": [
         "Onayla"
       ],
-      "Confirm opening of link ${ link }": [
-        "${ link } bağlantısını açmak için onaylayın"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Kişi grubu"
@@ -746,6 +749,9 @@
       "Set expiration time": [
         "Sonlanma süresi ayarlayın"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Bağlantı yoluyla paylaş"
       ],
@@ -824,9 +830,6 @@
       "This message contains embedded images.": [
         "Bu ileti gömülü resimler içeriyor."
       ],
-      "This message contains remote content.": [
-        "Bu ileti uzaktan içerik içeriyor."
-      ],
       "Trust": [
         "Güven"
       ],
@@ -869,6 +872,12 @@
       ],
       "Update": [
         "Güncelle"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Yükselt"
@@ -965,6 +974,17 @@
         "Hiç grubunuz yok."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } e-posta adresi",
@@ -1025,7 +1045,8 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "",
         ""
       ]
     },
@@ -1308,6 +1329,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Bu yanıt, davet ayrıntılarınızla eşleşmiyor. Lütfen takviminizdeki davet ayrıntılarını doğrulayın."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } adlı kişi, davetinizi kabul etti ve etkinliğin olacağı yeni bir saat önerisinde bulundu."
       ],
@@ -1329,6 +1362,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName }, artık takviminizde bulunmayan bir etkinliğin güncel bilgilerini istedi."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } adlı kişi, davetinizi reddetti ve etkinliğin olacağı yeni bir saat önerisinde bulundu."
       ],
@@ -1341,11 +1386,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } davetinizi reddetti."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } adlı kişi, davetinizi kabul etmiş ve etkinliğin olacağı yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } adlı kişi, davetinizi kabul etmiş ve yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } adlı kişi, davetinizi reddetmiş ve etkinliğin olacağı yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
@@ -1389,17 +1458,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } adlı kişi, bu etkinlik için yeni saat önerisinde bulundu. Bu öneri güncel değil. Takviminiz yok."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } adlı kişi, davetinizi çekinerek kabul etmiş ve etkinliğin olacağı yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } adlı kişi, davetinizi çekinerek kabul etmiş ve yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } adlı kişi, etkinliğin olacağı yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } adlı kişi, yeni bir saat önerisinde bulundu."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } adlı kişi, davetinizi çekinerek kabul etti ve etkinliğin olacağı yeni bir saat önerisinde bulundu."
@@ -1422,19 +1518,10 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "${ veventIcsTitle } etkinliğine bir olay eklendi"
       ],
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
         ""
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
@@ -1508,6 +1595,14 @@
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
         ""
       ]
     },
@@ -1889,12 +1984,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event is tomorrow": [
         ""
       ],
@@ -2378,7 +2467,24 @@
         "Aramanız çok fazla sonuçla eşleşti. Lütfen aramanızı sınırlandırın ve tekrar deneyin."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Bu işlem gerçekleştirilemez"
       ]
@@ -2536,6 +2642,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Resim seçilmedi"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2707,6 +2818,12 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
+      "Expires today": [
         ""
       ],
       "Only ${ days } day left": [
@@ -3192,8 +3309,8 @@
       "Are you sure you want to permanently delete this message?": [
         "Bu iletiyi kalıcı olarak silmek istediğinizden emin misiniz?"
       ],
-      "Attach Public Key": [
-        "Genel Anahtar Ekle"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "Arka plan rengi"
@@ -3770,8 +3887,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Bir iletiyi oltalama girişimi olarak bildirmek bize iletiyi gönderir, böylece onu analiz edebilir ve filtrelerimizi geliştirebiliriz. Bu, iletinin içeriğini tam olarak görebileceğimiz anlamına gelir."
       ],
-      "Request Read Receipt": [
-        "Okundu Bilgisi İste"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "Sağdan sola"
@@ -4610,6 +4727,9 @@
       "BTC amount:": [
         "BTC miktarı:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -4709,6 +4829,9 @@
       "Folder location": [
         "Klasör konumu"
       ],
+      "Frequency": [
+        ""
+      ],
       "From": [
         "Gönderen"
       ],
@@ -4766,6 +4889,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "Posta kutusu parolası"
       ],
@@ -4813,6 +4939,9 @@
       ],
       "Or": [
         "Veya"
+      ],
+      "Participants": [
+        ""
       ],
       "Password": [
         "Parola"
@@ -6727,6 +6856,9 @@
       "Email addresses": [
         "E-posta adresleri"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "E-posta ayarları"
       ],
@@ -6792,9 +6924,6 @@
       ],
       "Link confirmation": [
         "Bağlantı onayı"
-      ],
-      "Load embedded images": [
-        "Gömülü resimleri yükle"
       ],
       "Load remote content": [
         "Uzak içeriği yükle"
@@ -6972,6 +7101,9 @@
       ],
       "Sign in again to continue": [
         "Devam etmek için tekrar giriş yapın"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Sohbetleri sırala"

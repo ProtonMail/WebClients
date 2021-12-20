@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Aktifkan kupon saya"
       ],
+      "Activate recovery": [
+        "Aktifkan metode pemulihan"
+      ],
       "Add credit / debit card": [
         "Tambah kartu kredit / debit"
       ],
@@ -274,6 +277,9 @@
       "Resend": [
         "Kirim ulang"
       ],
+      "Reset": [
+        "Atur ulang"
+      ],
       "Reset credentials": [
         "Atur ulang kredensial"
       ],
@@ -300,6 +306,9 @@
       ],
       "Send": [
         "Kirim"
+      ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
       ],
       "Share via link": [
         "Bagikan via tautan"
@@ -345,6 +354,12 @@
       ],
       "Update": [
         "Perbarui"
+      ],
+      "Update recovery file": [
+        "Perbarui berkas pemulihan"
+      ],
+      "Update recovery phrase": [
+        "Perbarui frasa pemulihan"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -941,8 +956,8 @@
       "You have no invoices.": [
         "Tidak ada tagihan."
       ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ada tagihan yang lewat jatuh tempo. Mohon lunasi semua tagihan."
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi semua tagihan yang belum dibayar."
       ]
     },
     "Error message": {
@@ -1122,8 +1137,8 @@
       "No logs": [
         "Tanpa log"
       ],
-      "Secure core servers": [
-        "Server Secure Core"
+      "Secure Core servers": [
+        "Server-server Secure Core"
       ],
       "Strong encryption": [
         "Enkripsi kuat"
@@ -1269,7 +1284,7 @@
         "Sambungan"
       ],
       "Creating your account": [
-        "Membuat akun anda"
+        "Membuat akun Anda"
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "Bertahan terhadap serangan ke privasi VPN dengan melewatkan lalu lintas Internet Anda melalui beberapa server."
@@ -1538,9 +1553,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Menyegarkan halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Mengatur ulang kata sandi Anda berarti kata sandi lama Anda dan tempat ia disimpan tidak lagi bisa digunakan. Apakah yakin ingin mengatur ulang kata sandi Anda?"
-      ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
         "Mengatur ulang kata sandi Anda akan mengatur ulang kunci enkripsi Anda pada semua layanan Proton yang terkait (Mail dan VPN). Anda tidak akan dapat membaca pesan Anda. Jika Anda tahu kredensial ProtonMail Anda, JANGAN atur ulang. Anda dapat masuk dengannya ${ hereLink }."
       ],
@@ -1624,6 +1636,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ini akan menghapus semua akun Anda dengan semua datanya secara permanen. Anda tidak akan dapat mengaktifkan ulang akun ini."
+      ],
+      "This will void your password, and you won't be able to use it to sign in to your account.": [
+        "Tindakan ini akan menganulir kata sandi Anda, di mana kata sandi tersebut tidak akan lagi dapat digunakan untuk masuk ke dalam akun Anda."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun Proton Anda. Kami sangat menyarankan Anda untuk mengaktifkan otentikasi dua faktor karena metode otentikasi ini akan membuat akun Proton Anda lebih aman."
@@ -2916,8 +2931,8 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } tersalin di papan klip Anda"
+      "${ server.Domain } copied to your clipboard": [
+        "${ server.Domain } disalin ke clipboard Anda"
       ],
       "Account deleted. Logging out...": [
         "Akun dihapus. Keluar akun..."
@@ -2981,8 +2996,8 @@
       "/2-year": [
         "/2 tahun"
       ],
-      "/monthly": [
-        "bulanan"
+      "/month": [
+        "/bulan"
       ],
       "/year": [
         "/tahun"
@@ -3112,9 +3127,6 @@
       ],
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
-      ],
-      "Confirm reset password": [
-        "Konfirmasikan penyetelan ulang kata sandi"
       ],
       "Coupon discount": [
         "Kupon diskon"
@@ -3316,6 +3328,9 @@
       ],
       "Reset password": [
         "Atur ulang kata sandi"
+      ],
+      "Reset password?": [
+        "Atur ulang kata sandi?"
       ],
       "Secure Core Servers": [
         "Server Secure Core"

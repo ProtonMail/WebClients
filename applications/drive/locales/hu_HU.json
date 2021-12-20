@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Hozzáadás"
       ],
@@ -238,9 +241,6 @@
       "Go to settings": [
         "Beállítások megnyitása"
       ],
-      "Grid layout": [
-        "Rács elrendezés"
-      ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
       ],
@@ -270,9 +270,6 @@
       ],
       "Keyboard shortcuts": [
         "Gyorsbillentyűk"
-      ],
-      "List layout": [
-        "Lista elrendezés"
       ],
       "Load image": [
         "Kép betöltése"
@@ -439,6 +436,9 @@
       "Select plan": [
         "Csomag kiválasztása"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share": [
         "Megosztás"
       ],
@@ -464,9 +464,6 @@
         "Információ megjelenítése"
       ],
       "Show labels": [
-        ""
-      ],
-      "Show shared link details": [
         ""
       ],
       "Sign out": [
@@ -519,6 +516,12 @@
       ],
       "Untrust": [
         "Megbízhatóként jelölés törlése"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Csomagváltás"
@@ -1128,10 +1131,19 @@
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
       ],
+      "Failed to download a file": [
+        ""
+      ],
+      "Failed to download a folder": [
+        ""
+      ],
       "Failed to load the link": [
         ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        ""
+      ],
+      "File \"${ name }\" is already downloading": [
         ""
       ],
       "File cannot be merged with folder": [
@@ -1139,6 +1151,12 @@
       ],
       "File has no contents to preview": [
         "Nincs előnézeti tartalom"
+      ],
+      "File selection is already downloading": [
+        ""
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        ""
       ],
       "Folder name cannot be empty": [
         ""
@@ -1570,13 +1588,17 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Letöltés (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Letöltés (${ downloadProgress }%)"
+      "${ activeDownloadsCount } downloading": [
+        "",
+        ""
       ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Feltöltés (${ uploadProgress }%)",
-        "${ activeUploadsCount } Feltöltés (${ uploadProgress }%)"
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "",
+        ""
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "",
+        ""
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mail cím",
@@ -1597,9 +1619,9 @@
         "",
         ""
       ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Megszakítva",
-        "${ canceledCount } Megszakítva"
+      "${ canceledCount } canceled": [
+        "",
+        ""
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } tag",
@@ -1621,21 +1643,21 @@
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
       ],
-      "${ doneCount } Finished": [
-        "${ doneCount } kész",
-        "${ doneCount } kész"
+      "${ doneCount } finished": [
+        "",
+        ""
       ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } Letöltve",
-        "${ doneDownloadsCount } Letöltve"
+      "${ doneDownloadsCount } downloaded": [
+        "",
+        ""
       ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Feltöltve",
-        "${ doneUploadsCount } Feltöltve"
+      "${ doneUploadsCount } uploaded": [
+        "",
+        ""
       ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Sikertelen",
-        "${ errorCount } Sikertelen"
+      "${ errorCount } failed": [
+        "",
+        ""
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } csoport található",
@@ -1658,9 +1680,9 @@
         "",
         ""
       ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Felfüggesztve",
-        "${ pausedCount } Felfüggesztve"
+      "${ pausedCount } paused": [
+        "",
+        ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } az ${ annualBilling } váltással"
@@ -1775,6 +1797,9 @@
       "Anyone with this link can access your file.": [
         "A hivatkozás birtokában bárki hozzáférhet a fájlhoz."
       ],
+      "Anyone with this link can access your folder.": [
+        ""
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Biztos benne, hogy kiüríti a lomtárat és véglegesen törli az összes benne lévő elemet?"
       ],
@@ -1866,6 +1891,9 @@
       ],
       "Creating link to file": [
         "A fájl linkjének létrehozása"
+      ],
+      "Creating link to folder": [
+        ""
       ],
       "Creating share": [
         ""
@@ -2115,6 +2143,9 @@
       "Only the people with the link and the password can access this file.": [
         ""
       ],
+      "Only the people with the link and the password can access this folder.": [
+        ""
+      ],
       "Paused": [
         "Felfüggesztve"
       ],
@@ -2168,6 +2199,9 @@
       ],
       "Preparing link to file": [
         "A fájl linkjének előkészítése"
+      ],
+      "Preparing link to folder": [
+        ""
       ],
       "Preview": [
         "Előnézet"
@@ -2275,7 +2309,10 @@
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "A hivatkozás véglegesen letiltásra kerül. Azok, akikkel korábban megosztotta, nem fognak hozzáférni a fájlhoz. A fájl újbóli megosztásához egy új hivatkozásra lesz szükség."
       ],
-      "This will delete the link and remove access to your file for anyone with the link.": [
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        ""
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "",
         ""
       ],
@@ -2455,6 +2492,15 @@
       ],
       "Your files will be encrypted and then saved.": [
         "A fájlok titkosításra majd pedig feltöltésre kerülnek."
+      ],
+      "Your folder failed to download.": [
+        ""
+      ],
+      "Your folder has finished downloading.": [
+        ""
+      ],
+      "Your folder is being downloaded.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -3427,6 +3473,9 @@
       "Contact group updated": [
         "Névjegy csoport frissítve"
       ],
+      "Failed to download files: ${ err }": [
+        ""
+      ],
       "Failed to move, please try again": [
         "Nem sikerült áthelyezni, próbálja meg újra"
       ],
@@ -4205,8 +4254,8 @@
       "Empty trash": [
         "Lomtár kiürítése"
       ],
-      "Enter file password to download": [
-        "A letöltéshez adja meg a fájl jelszavát"
+      "Enter password to download": [
+        ""
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -4285,6 +4334,9 @@
       ],
       "My files": [
         "Saját fájlok"
+      ],
+      "My files ${ date }.zip": [
+        ""
       ],
       "Name": [
         "Név"
@@ -4457,6 +4509,9 @@
       "Your file is ready to be downloaded": [
         "A fájl készen áll a letöltésre"
       ],
+      "Your folder is ready to be downloaded": [
+        ""
+      ],
       "ZIP / postal code": [
         "Irányítószám"
       ]
@@ -4469,9 +4524,6 @@
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Hozzáférés a földrajzilag blokkolt tartalmakhoz (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube stb.), bárhol is tartózkodik."
-      ],
-      "Active sharing link": [
-        "Aktív megosztási hivatkozás"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatikus beállítás esetén, a szerkesztőben használt módban kerülnek elküldésre a levelek. Egyszerű szöveg esetén, ennek a partnernek, az összes üzenet egyszerű szöveggé alakul az elküldéskor."
@@ -4500,9 +4552,6 @@
       "Encrypted data with verified digital signature": [
         "Titkosított adat, ellenőrzött digitális aláírással"
       ],
-      "Expired sharing link": [
-        "Lejárt megosztási hivatkozás"
-      ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Szerezzen elérést mind a ${ vpnAppName }, mind a ${ mailAppName } (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
       ],
@@ -4517,9 +4566,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
-      ],
-      "Inactive sharing link": [
-        ""
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "A több-felhasználós lehetőség csak a legalább 2 felhasználót tartalmazó csomagokban érhető el"

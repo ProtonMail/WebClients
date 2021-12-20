@@ -14,11 +14,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "Accept": [
-        "Elfogadás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Hozzáadás"
@@ -43,6 +43,9 @@
       ],
       "Add new group": [
         "Új csoport hozzáadása"
+      ],
+      "Add participant": [
+        ""
       ],
       "Add phone number": [
         ""
@@ -179,8 +182,8 @@
       "Confirm": [
         "Jóváhagyás"
       ],
-      "Confirm opening of link ${ link }": [
-        "Link megnyitásának jóváhagyása: ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Névjegy csoport"
@@ -746,6 +749,9 @@
       "Set expiration time": [
         ""
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Megosztás hivatkozással"
       ],
@@ -824,9 +830,6 @@
       "This message contains embedded images.": [
         "Ez az üzenet beágyazott képet tartalmaz."
       ],
-      "This message contains remote content.": [
-        "Ez az üzenet \"Távoli tartalmat\" tartalmaz."
-      ],
       "Trust": [
         "Megbízható"
       ],
@@ -868,6 +871,12 @@
         "Nem megbízható"
       ],
       "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
         ""
       ],
       "Upgrade": [
@@ -965,6 +974,17 @@
         "Még nincsenek csoportok."
       ]
     },
+    "Add participant to calendar event": {
+      "Failed to add participant": [
+        ""
+      ],
+      "Invitation sent and participant added": [
+        ""
+      ],
+      "Participant added": [
+        ""
+      ]
+    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } email cím",
@@ -1025,7 +1045,8 @@
       ]
     },
     "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+      "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
+        "",
         ""
       ]
     },
@@ -1308,6 +1329,18 @@
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Ez a válasz nem fedi a meghívó adatait. Ellenőrizze a meghívó részleteit a naptárában."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára."
       ],
@@ -1329,6 +1362,18 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } friss információkat kért egy eseményről amely már nem is létezik az ön naptárában."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } declined an invitation to this event.": [
+        ""
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } elutasította a meghívását és új időpontot javasolt az esemény egy alkalmára."
       ],
@@ -1341,11 +1386,35 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } elutasította a meghívását."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } elfogadta a meghívását és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had declined an invitation to this event.": [
+        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } elutasította a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
@@ -1389,17 +1458,44 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } új időpontot javasolt az eseményhez. A javaslat elavult. Önnek nincs is naptára."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        ""
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
       ],
+      "${ participantName } is not in the participants list.": [
+        ""
+      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } új időpontot javasolt az esemény egy alkalmára."
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } új időpontot javasolt ehhez az eseményhez."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        ""
+      ],
+      "${ participantName } tentatively accepted an invitation to this event.": [
+        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára."
@@ -1422,19 +1518,10 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Egy alkalom került hozzáadásra az eseményéhez: ${ veventIcsTitle }"
       ],
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
-      ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant": [
         ""
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
@@ -1508,6 +1595,14 @@
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ]
+    },
+    "Calendar widget banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
         ""
       ]
     },
@@ -1889,12 +1984,6 @@
       ]
     },
     "Email reminder banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ],
       "Event is tomorrow": [
         ""
       ],
@@ -2378,7 +2467,24 @@
         ""
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        ""
+      ]
+    },
     "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Inbox": [
+        ""
+      ],
+      "Drafts cannot be moved to Spam": [
+        ""
+      ],
+      "Sent messages cannot be moved to Inbox": [
+        ""
+      ],
+      "Sent messages cannot be moved to Spam": [
+        ""
+      ],
       "This action cannot be performed": [
         "Ez a művelet nem hajtható végre"
       ]
@@ -2536,6 +2642,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nincs kép kiválasztva"
+      ]
+    },
+    "Error sending calendar invitation": {
+      "Cannot send invitation to ${ email }. ${ errorMessage }": [
+        ""
       ]
     },
     "Event invitation error": {
@@ -2707,6 +2818,12 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        ""
+      ],
+      "Expires soon": [
+        ""
+      ],
+      "Expires today": [
         ""
       ],
       "Only ${ days } day left": [
@@ -3192,8 +3309,8 @@
       "Are you sure you want to permanently delete this message?": [
         "Biztos, hogy véglegesen törli ezt az üzenetet?"
       ],
-      "Attach Public Key": [
-        "Nyilvános kulcs csatolása"
+      "Attach public key": [
+        ""
       ],
       "Background color": [
         "Háttérszín"
@@ -3770,8 +3887,8 @@
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Az adathalász kísérletként megjelölt üzeneteket a rendszer hozzánk továbbítja, hogy kiértékelhessük és fejleszthessük a szűrőinket. Ebben az esetben az üzenet teljes szövegéhez hozzáférhetünk."
       ],
-      "Request Read Receipt": [
-        "Olvasási visszaigazolás igénylése"
+      "Request read receipt": [
+        ""
       ],
       "Right to Left": [
         "Jobbról balra"
@@ -4610,6 +4727,9 @@
       "BTC amount:": [
         "BTC összeg:"
       ],
+      "Calendar": [
+        ""
+      ],
       "Calendars": [
         ""
       ],
@@ -4709,6 +4829,9 @@
       "Folder location": [
         "Mappa helye"
       ],
+      "Frequency": [
+        ""
+      ],
       "From": [
         "Feladó"
       ],
@@ -4766,6 +4889,9 @@
       "Last month only": [
         ""
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "E-mail titkosítási jelszó"
       ],
@@ -4813,6 +4939,9 @@
       ],
       "Or": [
         "Vagy"
+      ],
+      "Participants": [
+        ""
       ],
       "Password": [
         "Jelszó"
@@ -6727,6 +6856,9 @@
       "Email addresses": [
         "E-mail cím"
       ],
+      "Email content": [
+        ""
+      ],
       "Email settings": [
         "E-mail beállítások"
       ],
@@ -6792,9 +6924,6 @@
       ],
       "Link confirmation": [
         "Link jóváhagyása"
-      ],
-      "Load embedded images": [
-        "Beágyazott képek betöltése"
       ],
       "Load remote content": [
         "Távoli tartalom betöltése"
@@ -6972,6 +7101,9 @@
       ],
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
+      ],
+      "Some images could not be loaded with tracking protection [Load unprotected]": [
+        ""
       ],
       "Sort conversations": [
         "Beszélgetések rendezése"
