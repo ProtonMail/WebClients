@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { SettingsPropsShared, PasswordsSection, DeleteSection, useUser } from '@proton/components';
+import { SettingsPropsShared, PasswordsSection, DeleteSection, useUser, UsernameSection } from '@proton/components';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
@@ -44,6 +44,7 @@ const AccountAccountAndPasswordSettings = ({ location, setActiveSection }: Setti
             config={getAccountAndPasswordPage({ user })}
             setActiveSection={setActiveSection}
         >
+            <UsernameSection />
             <PasswordsSection open={action === 'change-password'} />
             {canDeleteAccount(user) && <DeleteSection />}
         </PrivateMainSettingsAreaWithPermissions>
