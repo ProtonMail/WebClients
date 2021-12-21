@@ -16,6 +16,7 @@ const getIframeHtml = (emailContent: string, messageHead = '', isPlainText: bool
       <html>
         <head>
           <style>${themeCSSVariables}</style>
+          <meta name="viewport" content="width=device-width">
           <style>${cssStyles}</style>
           ${messageHead}
         </head>
