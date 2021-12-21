@@ -47,6 +47,6 @@ export interface MailSettings {
     DelaySendSeconds: number;
     EnableFolderColor: number;
     InheritParentFolderColor: number;
-    FontFace: string | undefined;
-    FontSize: number | undefined;
+    FontFace: string | null;
+    FontSize: number | null;
 }

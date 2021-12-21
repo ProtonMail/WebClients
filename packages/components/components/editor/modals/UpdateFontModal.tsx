@@ -17,9 +17,9 @@ interface Props {
 
 const UpdateFontModal = ({ onChange, squireRef, onClose, ...rest }: Props) => {
     const api = useApi();
-    const [{ FontFace = DEFAULT_FONT_FACE, FontSize = DEFAULT_FONT_SIZE } = {}] = useMailSettings();
-    const [fontFace, setFontFace] = useState(FontFace);
-    const [fontSize, setFontSize] = useState(FontSize);
+    const [{ FontFace, FontSize } = { FontFace: undefined, FontSize: undefined }] = useMailSettings();
+    const [fontFace, setFontFace] = useState(FontFace || DEFAULT_FONT_FACE);
+    const [fontSize, setFontSize] = useState(FontSize || DEFAULT_FONT_SIZE);
     const [loading, setLoading] = useState(false);
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -29,10 +29,10 @@ const UpdateFontModal = ({ onChange, squireRef, onClose, ...rest }: Props) => {
     const somethingChanged = changedFontFace || changedFontSize;
 
     useEffect(() => {
-        setFontFace(FontFace);
+        setFontFace(FontFace || DEFAULT_FONT_FACE);
     }, [FontFace]);
     useEffect(() => {
-        setFontSize(FontSize);
+        setFontSize(FontSize || DEFAULT_FONT_SIZE);
     }, [FontSize]);
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });

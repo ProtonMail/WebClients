@@ -94,7 +94,7 @@ export const getPlainText = (message: MessageState, downconvert: boolean) => {
 export const plainTextToHTML = (
     message: Message | undefined,
     plainTextContent: string | undefined,
-    mailSettings: Partial<MailSettings> = {},
+    mailSettings: MailSettings | undefined,
     addresses: Address[]
 ) => {
     const sender = findSender(addresses, message);
