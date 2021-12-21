@@ -21,22 +21,23 @@ interface Props {
 }
 
 const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props) => {
-    const canImport = !!activeCalendars.length && user.hasNonDelinquentScope;
-    const showAlert = !activeCalendars.length && user.hasNonDelinquentScope;
+    const { hasNonDelinquentScope } = user;
     const { createModal } = useModals();
     const [addresses, loadingAddresses] = useAddresses();
 
     const isEasySwitchEnabled = useFeature(FeatureCode.EasySwitch).feature?.Value;
+    const isEasySwitchCalendarEnabled = useFeature(FeatureCode.EasySwitchCalendar).feature?.Value;
 
-    const easySwitchCalendarFeature = useFeature(FeatureCode.EasySwitchCalendar);
-    const isEasySwitchCalendarEnabled = easySwitchCalendarFeature.feature?.Value;
+    const showAlert = !activeCalendars.length && hasNonDelinquentScope;
 
-    const handleImport = () =>
-        canImport && defaultCalendar
+    const canManualImport = !!activeCalendars.length && hasNonDelinquentScope;
+
+    const handleManualImport = () =>
+        canManualImport && defaultCalendar
             ? createModal(<ImportModal defaultCalendar={defaultCalendar} calendars={activeCalendars} />)
             : undefined;
 
-    const handleOAuthClick = () => {
+    const handleOAuthClick = () =>
         createModal(
             <EasySwitchOauthModal
                 source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
@@ -45,13 +46,12 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
                 isEasySwitchCalendarEnabled={isEasySwitchCalendarEnabled}
             />
         );
-    };
 
     return (
         <SettingsSection>
             {showAlert ? (
                 <Alert className="mb1" type="warning">{c('Info')
-                    .t`You need to have an active personal calendar to import your events.`}</Alert>
+                    .t`You need to have an active personal calendar to import your events from .ics.`}</Alert>
             ) : null}
 
             <SettingsParagraph>
@@ -67,16 +67,16 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
                 <>
                     <GoogleButton
                         onClick={handleOAuthClick}
-                        disabled={loadingAddresses || !canImport}
+                        disabled={loadingAddresses || !hasNonDelinquentScope}
                         className="mr1"
                     />
 
-                    <PrimaryButton onClick={handleImport} disabled={!canImport}>
+                    <PrimaryButton onClick={handleManualImport} disabled={!canManualImport}>
                         {c('Action').t`Import from .ics`}
                     </PrimaryButton>
                 </>
             ) : (
-                <PrimaryButton onClick={handleImport} disabled={!canImport}>
+                <PrimaryButton onClick={handleManualImport} disabled={!canManualImport}>
                     {c('Action').t`Import from .ics`}
                 </PrimaryButton>
             )}
