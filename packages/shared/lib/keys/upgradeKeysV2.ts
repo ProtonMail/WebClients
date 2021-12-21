@@ -130,7 +130,7 @@ export const upgradeV2KeysLegacy = async ({
     api,
 }: UpgradeV2KeysLegacyArgs) => {
     const keySalt = generateKeySalt();
-    const newKeyPassword: string = await computeKeyPassword(clearKeyPassword, keySalt);
+    const newKeyPassword = await computeKeyPassword(clearKeyPassword, keySalt);
 
     const [reformattedUserKeys, reformattedAddressesKeys, reformattedOrganizationKey] = await Promise.all([
         getReEncryptedKeys(userKeys, user.Keys, USER_KEY_USERID, newKeyPassword),

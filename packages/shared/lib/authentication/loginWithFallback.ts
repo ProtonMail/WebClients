@@ -25,11 +25,7 @@ const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload }:
     do {
         const { authInfo = await api<InfoResponse>(getInfo(username)), lastAuthVersion } = state;
 
-        const { version, done }: { version: AuthVersion; done: boolean } = getAuthVersionWithFallback(
-            authInfo,
-            username,
-            lastAuthVersion
-        );
+        const { version, done } = getAuthVersionWithFallback(authInfo, username, lastAuthVersion);
 
         try {
             // If it's not the last fallback attempt, suppress the wrong password notification from the API.
