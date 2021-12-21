@@ -40,12 +40,12 @@ const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale }, lo
                 <SettingsLayoutLeft>
                     <label className="text-semibold" htmlFor="invite-locale">
                         {
-                            // translator: the full sentence will be "Send and reply to invites in [LANGUAGE]", where [LANGUAGE] is a dropdown with language options. E.g. "Send and reply to invites in [ENGLISH]"
-                            c('Label').t`Send and reply to invites in`
+                            // translator: the full sentence will be "Send invites in [LANGUAGE]", where [LANGUAGE] is a dropdown with language options. E.g. "Send invites in [ENGLISH]"
+                            c('Label').t`Send invites in`
                         }{' '}
                         <Info
                             buttonClass="ml0-5 inline-flex"
-                            title={c('Info').t`Language in which your invitation-related emails will be sent.`}
+                            title={c('Info').t`Event invites and RSVPs will be sent in this language.`}
                         />
                     </label>
                 </SettingsLayoutLeft>
