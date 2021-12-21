@@ -1,4 +1,5 @@
-import { hasPDFSupport, getBrowser } from '@proton/shared/lib/helpers/browser';
+import { getBrowser } from '@proton/shared/lib/helpers/browser';
+import { MIME_TYPES } from '../constants';
 
 const isWebpSupported = () => {
     const { name, version } = getBrowser();
@@ -19,7 +20,7 @@ export const isImage = (mimeType: string) => mimeType.startsWith('image/');
 
 export const isExcel = (mimeType: string) => mimeType.startsWith('application/vnd.ms-excel');
 
-export const isFont = (MimeType: string) => MimeType.startsWith('font/');
+export const isFont = (mimeType: string) => mimeType.startsWith('font/');
 
 export const isSupportedImage = (mimeType: string) =>
     [
@@ -38,10 +39,12 @@ export const isSupportedImage = (mimeType: string) =>
 
 export const isSVG = (mimeType: string) => mimeType === 'image/svg+xml';
 
+export const isICS = (mimeType: string) =>
+    mimeType.startsWith(MIME_TYPES.ICS) || mimeType.includes(MIME_TYPES.APPLICATION_ICS);
+
 export const isSupportedText = (mimeType: string) =>
     mimeType.startsWith('text/') || ['application/javascript', 'application/typescript'].includes(mimeType);
 export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
-export const isICS = (mimeType: string) => mimeType.startsWith('text/calendar');
 export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
 
 /**
@@ -51,10 +54,3 @@ export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mim
  */
 export const isSupportedVideo = (mimeType: string, fileSize?: number) =>
     isVideo(mimeType) && fileSize && fileSize < 1024 * 1024 * 100;
-
-// Will include more rules in the future
-export const isPreviewAvailable = (mimeType: string, fileSize?: number) =>
-    isSupportedImage(mimeType) ||
-    isSupportedVideo(mimeType, fileSize) ||
-    isSupportedText(mimeType) ||
-    (hasPDFSupport() && isPDF(mimeType));

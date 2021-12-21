@@ -1,4 +1,6 @@
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { AttachmentInfo } from '@proton/shared/lib/interfaces/mail/Message';
 
 export interface Conversation {
     ID: string;
@@ -17,6 +19,7 @@ export interface Conversation {
     NumAttachments?: number;
     ContextNumAttachments?: number;
     ExpirationTime?: number;
+    AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
 }
 
 export interface ConversationLabel {

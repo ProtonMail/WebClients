@@ -164,7 +164,7 @@ function GeneratedLinkState({
             <ContentModal
                 onSubmit={(e) => {
                     e.preventDefault();
-                    handleSubmit();
+                    void handleSubmit();
                 }}
                 onReset={(e) => {
                     e.preventDefault();
