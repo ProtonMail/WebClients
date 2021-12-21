@@ -23,7 +23,7 @@ const YahooCalendarInstructions = () => {
         </Href>
     );
     // translator: full sentence: "Go to full calendar view in Yahoo Mail"
-    const step1 = c('Import instructions step').jt`Go to ${calendarViewLink} view in Yahoo Mail`;
+    const step1 = c('Import instructions step').jt`Go to ${calendarViewLink} in Yahoo Mail`;
 
     const step2 = c('Import instructions step')
         .t`Mouse over the calendar you want to import and open the dropdown menu`;
