@@ -39,7 +39,7 @@ describe('Mailbox performance loss check', () => {
         });
         getHistory().push('/elsewhere');
 
-        // We expect init calls + 1 because useStar is used also in the hotkeys management
-        expect(useStar.mock.calls.length).toBe(callsAfterInitialization + 1);
+        // We expect init calls + 2 because useStar is used also in the hotkeys management
+        expect(useStar.mock.calls.length).toBe(callsAfterInitialization + 2);
     });
 });

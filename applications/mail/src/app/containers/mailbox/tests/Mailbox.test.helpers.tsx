@@ -1,5 +1,4 @@
 import { act } from '@testing-library/react';
-import { History, Location } from 'history';
 import loudRejection from 'loud-rejection';
 import { range } from '@proton/shared/lib/helpers/array';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -8,10 +7,7 @@ import { LABEL_TYPE, VIEW_MODE } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
-import { addApiMock } from '../../../helpers/test/api';
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
-import { triggerEvent } from '../../../helpers/test/helper';
-import { render } from '../../../helpers/test/render';
+import { triggerEvent, getHistory, render, addToCache, minimalCache, addApiMock } from '../../../helpers/test/helper';
 import { ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
 import { Event } from '../../../models/event';
@@ -31,7 +27,7 @@ interface PropsArgs {
     mailSettings?: MailSettings;
 }
 
-interface SetupArgs extends PropsArgs {
+export interface SetupArgs extends PropsArgs {
     messages?: Element[];
     conversations?: Element[];
     inputLabelID?: string;
@@ -40,6 +36,8 @@ interface SetupArgs extends PropsArgs {
     totalConversations?: number;
     mockMessages?: boolean;
     mockConversations?: boolean;
+    Component?: typeof MailboxContainer;
+    mailSettings?: MailSettings;
 }
 
 export const props = {
@@ -47,8 +45,6 @@ export const props = {
     userSettings: {} as UserSettings,
     breakpoints: { isDesktop: true } as Breakpoints,
     elementID: undefined,
-    location: {} as Location,
-    history: { push: jest.fn(), location: { pathname: 'pathname', search: 'search' } } as any as History,
     onCompose: jest.fn(),
     isComposerOpened: false,
 };
@@ -56,7 +52,7 @@ export const props = {
 const defaultSort = { sort: 'Time', desc: true } as Sort;
 const defaultFilter = {};
 const defaultSearch = {};
-const defaultMailSettings = { ViewMode: VIEW_MODE.GROUP } as MailSettings;
+const defaultMailSettings = { ViewMode: VIEW_MODE.GROUP, Shortcuts: 1 } as MailSettings;
 
 export const labels: Label[] = [
     { ID: 'labelID', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label' },
@@ -104,9 +100,9 @@ export const getProps = ({
         urlSearchParams.set('keyword', keywordToString(search.keyword || '') || '');
     }
 
-    const location = { pathname: '/', hash: `#${urlSearchParams.toString()}` } as Location;
+    getHistory().push(`#${urlSearchParams.toString()}`);
 
-    return { ...props, location, labelID, elementID, mailSettings };
+    return { ...props, labelID, elementID, mailSettings };
 };
 
 export const baseApiMocks = () => {
@@ -123,6 +119,7 @@ export const setup = async ({
     totalConversations = conversations.length,
     mockMessages = true,
     mockConversations = true,
+    Component = MailboxContainer,
     ...propsArgs
 }: SetupArgs = {}) => {
     minimalCache();
@@ -142,9 +139,10 @@ export const setup = async ({
     addToCache('ConversationCounts', [
         { LabelID: props.labelID, Total: totalConversations, Unread: totalConversations },
     ]);
+    addToCache('MailSettings', props.mailSettings);
 
-    const result = await render(<MailboxContainer {...props} />, false);
-    const rerender = (propsArgs: PropsArgs) => result.rerender(<MailboxContainer {...getProps(propsArgs)} />);
+    const result = await render(<Component {...props} />, false);
+    const rerender = (propsArgs: PropsArgs) => result.rerender(<Component {...getProps(propsArgs)} />);
     const getItems = () => result.getAllByTestId('message-item', { exact: false });
 
     return { ...result, rerender, getItems };
