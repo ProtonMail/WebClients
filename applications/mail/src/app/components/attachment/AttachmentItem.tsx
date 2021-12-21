@@ -148,10 +148,8 @@ const AttachmentItem = ({
                         onClick={handleAction(true)}
                     >
                         <span className="mtauto mbauto flex flex-align-items-baseline flex-nowrap">
-                            <span className="text-ellipsis pr0-25 align-baseline inline-block">
-                                <FileNameDisplay text={name} />
-                            </span>
-                            <span className="message-attachmentSize align-baseline inline-block flex-item-noshrink">
+                            <FileNameDisplay text={name} />
+                            <span className="message-attachmentSize align-baseline inline-block flex-item-noshrink ml0-25">
                                 {humanAttachmentSize}
                             </span>
                         </span>

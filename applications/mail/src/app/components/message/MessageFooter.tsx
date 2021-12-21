@@ -19,7 +19,7 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
 
     return (
         <div
-            className={classnames(['message-attachments border-top m0-5', !showActions && 'no-pointer-events'])}
+            className={classnames(['message-attachments m0-5', !showActions && 'no-pointer-events'])}
             data-testid="message-attachments"
         >
             <AttachmentList
