@@ -76,11 +76,13 @@ const SquireIframe = (
                 setSquireReady(true);
                 onReady();
             } catch (error: any) {
+                const text = c('Error').t`The composer failed to load.`;
+                console.error(text, error);
                 createNotification({
                     type: 'error',
                     text: (
                         <>
-                            {`${c('Error').t`The composer failed to load.`} `}
+                            {text}
                             <InlineLinkButton
                                 className="text-bold"
                                 onClick={() => {

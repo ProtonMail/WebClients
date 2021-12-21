@@ -64,6 +64,6 @@ export interface LinkData {
 }
 
 export interface FontData {
-    FontFace?: string;
-    FontSize?: number;
+    FontFace: string | null;
+    FontSize: number | null;
 }
