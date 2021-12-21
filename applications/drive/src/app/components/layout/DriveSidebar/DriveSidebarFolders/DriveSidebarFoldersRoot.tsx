@@ -1,4 +1,5 @@
 import { Loader } from '@proton/components';
+import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
 import FileRecoveryIcon from '../../../ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
 import DriveSidebarListItem from '../DriveSidebarListItem';
@@ -15,7 +16,7 @@ interface Props {
 export default function DriveSidebarFoldersRoot({ path, rootFolder, toggleExpand }: Props) {
     const isLoading = useSubfolderLoading(rootFolder, true);
 
-    const url = `/${rootFolder.shareId}/folder/${rootFolder.linkId}`;
+    const url = `/${rootFolder.shareId}/${LinkURLType.FOLDER}/${rootFolder.linkId}`;
     return (
         <DriveSidebarListItem
             key="root"
@@ -23,17 +24,20 @@ export default function DriveSidebarFoldersRoot({ path, rootFolder, toggleExpand
             icon="inbox"
             shareId={rootFolder.shareId}
             isActive={path === url}
-            rightIcon={
-                isLoading ? (
-                    <Loader className="flex flex-align-items-center" />
-                ) : (
-                    rootFolder.subfolders && (
-                        <ExpandButton expanded={rootFolder.expanded} onClick={() => toggleExpand(rootFolder.linkId)} />
-                    )
-                )
-            }
+            onDoubleClick={() => toggleExpand(rootFolder.linkId)}
         >
             {rootFolder.name}
+            {isLoading ? (
+                <Loader className="ml0-5 drive-sidebar--icon inline" />
+            ) : (
+                rootFolder.subfolders && (
+                    <ExpandButton
+                        className="ml0-5"
+                        expanded={rootFolder.expanded}
+                        onClick={() => toggleExpand(rootFolder.linkId)}
+                    />
+                )
+            )}
             <FileRecoveryIcon className="ml0-5" />
         </DriveSidebarListItem>
     );

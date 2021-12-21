@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import {
     LoaderPage,
@@ -21,9 +21,6 @@ import { DownloadProvider } from '../components/downloads/DownloadProvider';
 import { ThumbnailsDownloadProvider } from '../components/downloads/ThumbnailDownloadProvider';
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
-import UploadSidebarButton from '../components/sections/Drive/UploadButton';
-import ShareFileSidebarButton from '../components/sections/SharedLinks/ShareFileSidebarButton';
-import EmptyTrashSidebarButton from '../components/sections/Trash/EmptyTrashSidebarButton';
 import DriveContainer from './DriveContainer';
 import NoAccessContainer from './NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
@@ -43,7 +40,6 @@ const DEFAULT_SHARE_VALUE = {
 };
 
 const InitContainer = () => {
-    const location = useLocation();
     const { initDrive } = useDrive();
     const [loading, withLoading] = useLoading(true);
     const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>(DEFAULT_SHARE_VALUE);
@@ -107,18 +103,11 @@ const InitContainer = () => {
         );
     }
 
-    let PrimaryButton = UploadSidebarButton;
-    if (location.pathname === '/trash') {
-        PrimaryButton = EmptyTrashSidebarButton;
-    } else if (location.pathname === '/shared-urls') {
-        PrimaryButton = ShareFileSidebarButton;
-    }
-
     return (
         <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
             <ModalsChildren />
             <TransferManager />
-            <DriveWindow PrimaryButton={PrimaryButton}>
+            <DriveWindow>
                 <Switch>
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
