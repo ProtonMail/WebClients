@@ -14,7 +14,7 @@ import { MessageChange } from '../../composer/Composer';
 import { setContent } from '../../../helpers/message/messageContent';
 import { mergeMessages } from '../../../helpers/message/messages';
 import EOReplyFooter from './EOReplyFooter';
-import { useEOAttachments } from '../../../hooks/composer/useEOAttachments';
+import { useEOAttachments } from '../../../hooks/eo/useEOAttachments';
 import ComposerInsertImageModal from '../../composer/modals/ComposerInsertImageModal';
 
 interface Props {
@@ -47,8 +47,6 @@ const EOComposer = ({ referenceMessage, isFocused, id, publicKey, outsideKey }: 
             }
         ) as MessageState
     );
-
-    console.log('MODEL MESSG', { modelMessage, doc: modelMessage.messageDocument?.document?.innerHTML });
 
     // Get a ref on the editor to trigger insertion of embedded images
     const editorActionsRef: EditorActionsRef = useRef();

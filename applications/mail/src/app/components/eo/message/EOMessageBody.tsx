@@ -3,7 +3,6 @@ import { classnames } from '@proton/components';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
-import { locateHead } from '../../../helpers/message/messageHead';
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import MessageBodyIframe from '../../message/MessageBodyIframe';
 
@@ -46,8 +45,6 @@ const EOMessageBody = ({
     const isBlockquote = blockquote !== '';
     const showBlockquote = originalMessageMode;
 
-    const messageHead = locateHead(message.messageDocument?.document);
-
     useEffect(() => {
         // Images need a second render to find the anchors for the portal
         // This forced refresh create this doubled render when blockquote is toggled
@@ -78,18 +75,15 @@ const EOMessageBody = ({
             {contentMode && (
                 <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
                     <MessageBodyIframe
-                        messageHead={messageHead}
                         content={content}
                         blockquoteContent={blockquote}
                         showBlockquote={showBlockquote}
                         showBlockquoteToggle={isBlockquote}
-                        messageImages={message.messageImages}
                         wrapperRef={bodyRef}
                         onContentLoaded={() => {}}
                         isPlainText={plain}
                         message={message}
                         labelID=""
-                        messageSubject={message.data?.Subject}
                         isOutside
                     />
                 </MailboxContainerContextProvider>

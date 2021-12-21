@@ -139,11 +139,11 @@ const uploadEOFile = (
     message: MessageStateWithData,
     publicKeys: OpenPGPKey[],
     inline: boolean
-): Promise<Attachment> => {
+): Promise<{ attachment: Attachment; packets: Packets }> => {
     const getAttachment = async () => {
-        const packets = await encryptFile(file, inline, publicKeys);
+        const packets = (await encryptFile(file, inline, publicKeys)) as Packets;
 
-        return packetToAttachment(packets, message) as Attachment;
+        return { attachment: packetToAttachment(packets, message) as Attachment, packets };
     };
 
     return getAttachment();
