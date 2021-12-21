@@ -20,14 +20,18 @@ import {
     useOrganization,
     useLoad,
 } from '@proton/components';
+import {
+    hasPaidPermission,
+    hasUpgraderPermission,
+    hasNotSubUserPermission,
+} from '@proton/components/hooks/usePermissions';
 import { UserModel, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES , PERMISSIONS } from '@proton/shared/lib/constants';
+import { DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES, PERMISSIONS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
@@ -38,7 +42,13 @@ const hasYourPlan = (user: UserModel) => user.canPay;
 const hasEmailSubscriptions = (user: UserModel) => !user.isMember;
 const hasDowngradeAccount = (user: UserModel) => user.isPaid && user.canPay;
 export const hasAccountDashboardPage = (user: UserModel) =>
-    hasSelectPlan(user) || hasYourPlan(user) || hasEmailSubscriptions(user) || hasDowngradeAccount(user);
+    hasSelectPlan(user) ||
+    hasYourPlan(user) ||
+    hasEmailSubscriptions(user) ||
+    hasDowngradeAccount(user) ||
+    hasPaidPermission(user) ||
+    hasUpgraderPermission(user) ||
+    hasNotSubUserPermission(user);
 
 export const getDashboardPage = ({ user }: { user: UserModel }) => {
     return {
