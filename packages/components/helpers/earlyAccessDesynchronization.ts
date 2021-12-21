@@ -60,9 +60,11 @@ export const handleEarlyAccessDesynchronization = ({
 
     const shouldUpdateToEarlyAccessVersion = !isVpnSettings && environmentIsDesynchronized;
     if (shouldUpdateToEarlyAccessVersion) {
-        setCurrentRetries(currentRetries + 1);
-        updateVersionCookie(targetEnvironment, earlyAccessScope);
-        return true;
+        return () => {
+            setCurrentRetries(currentRetries + 1);
+            updateVersionCookie(targetEnvironment, earlyAccessScope);
+            window.location.reload();
+        }
     }
 
     removeCurrentRetries();
