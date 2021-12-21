@@ -131,8 +131,6 @@ const PageContainer = (
                     breakpoints={breakpoints}
                     elementID={elementID}
                     messageID={messageID}
-                    location={location}
-                    history={history}
                     isComposerOpened={isComposerOpened}
                 />
             </LocationErrorBoundary>
