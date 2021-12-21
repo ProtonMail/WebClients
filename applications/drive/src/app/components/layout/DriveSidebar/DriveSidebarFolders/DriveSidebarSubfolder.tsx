@@ -20,12 +20,6 @@ interface Props {
 export default function DriveSidebarSubfolder({ folder, level, toggleExpand }: Props) {
     const isLoading = useSubfolderLoading(folder);
 
-    const handleExpandClick = (e: any) => {
-        e.stopPropagation();
-        e.preventDefault();
-        toggleExpand();
-    };
-
     const handleFolderClick = (e: any) => {
         if (e.detail !== 1) {
             e.stopPropagation();
@@ -38,7 +32,7 @@ export default function DriveSidebarSubfolder({ folder, level, toggleExpand }: P
             <SidebarListItemLink
                 to={`/${folder.shareId}/folder/${folder.linkId}`}
                 onClick={handleFolderClick}
-                onDoubleClick={handleExpandClick}
+                onDoubleClick={toggleExpand}
                 title={folder.name}
             >
                 <SidebarListItemContent>

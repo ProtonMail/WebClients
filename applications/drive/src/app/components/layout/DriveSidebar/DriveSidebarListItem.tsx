@@ -19,14 +19,17 @@ interface Props {
     shareId?: string;
     to: string;
     rightIcon?: React.ReactNode;
+    onDoubleClick?: () => void;
 }
-const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon }: Props) => {
+
+const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon, onDoubleClick }: Props) => {
     const driveEvents = useDriveEvents();
     const [refreshing, withRefreshing] = useLoading(false);
 
     const left = icon ? <SidebarListItemContentIcon name={icon} /> : null;
 
-    const handleRefresh = () => {
+    const handleDoubleClick = () => {
+        onDoubleClick?.();
         if (!refreshing && shareId) {
             withRefreshing(Promise.all([driveEvents.callAll(shareId), wait(1000)])).catch(noop);
         }
@@ -36,7 +39,7 @@ const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon
         <SidebarListItem>
             <SidebarListItemLink to={to} isActive={() => isActive}>
                 <SidebarListItemContent
-                    onDoubleClick={handleRefresh}
+                    onDoubleClick={handleDoubleClick}
                     left={left}
                     right={rightIcon}
                     title={typeof children === 'string' ? children : undefined}
