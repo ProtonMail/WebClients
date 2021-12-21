@@ -36,7 +36,7 @@ export default function DriveSidebarSubfolder({ folder, level, toggleExpand }: P
                 title={folder.name}
             >
                 <SidebarListItemContent>
-                    <div className="flex flex-nowrap" style={{ marginLeft: `${level * 10}px` }}>
+                    <div className="flex flex-nowrap" style={{ marginLeft: `${(level * 10) / 16}rem` }}>
                         <ExpandButton className="mr0-5" expanded={folder.expanded} onClick={toggleExpand} />
                         {isLoading ? (
                             <Loader className="mr0-5 flex drive-sidebar--icon" />

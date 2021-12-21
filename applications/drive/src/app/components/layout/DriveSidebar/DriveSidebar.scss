@@ -20,20 +20,22 @@
 }
 
 .drive-sidebar--button-expand {
-	// !imporant is used to override the global effect.
-	// In this case we want to have background change only on hover.
+	&#{&} {
+		// Specificity -_-v
+		// In this case we want to have background change only on hover.
 
-	height: 1.3rem;
+		padding-block: rem(2); // to avoid increasing the size of item
 
-	&:focus,
-	&[aria-expanded='true'] {
-		background-color: initial !important;
-	}
+		&:focus,
+		&[aria-expanded='true'] {
+			background-color: initial;
+		}
 
-	&:hover,
-	&[aria-expanded='true']:hover,
-	&:focus-visible {
-		background-color: var(--interaction-weak-hover) !important;
-		color: var(--button-hover-text-color);
+		&:hover,
+		&[aria-expanded='true']:hover,
+		&:focus-visible {
+			background-color: var(--interaction-weak-hover);
+			color: var(--button-hover-text-color);
+		}
 	}
 }

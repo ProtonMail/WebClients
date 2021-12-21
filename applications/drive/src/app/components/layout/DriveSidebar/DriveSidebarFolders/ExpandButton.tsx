@@ -20,7 +20,10 @@ export default function ExpandButton({ className, expanded, onClick }: Props) {
             shape="ghost"
             size="small"
             icon
-            className={classnames(['flex-item-noshrink drive-sidebar--button-expand', className])}
+            className={classnames([
+                'flex-item-noshrink flex flex-align-items-center drive-sidebar--button-expand',
+                className,
+            ])}
             onClick={handleClick}
             aria-expanded={expanded}
             title={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
