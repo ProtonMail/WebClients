@@ -106,7 +106,9 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         const models = unique([UserSettingsModel, UserModel, ...preloadModels]);
         const filteredModels = addressesPromise ? models.filter((model) => model !== AddressesModel) : models;
 
-        const modelsPromise = loadModels(filteredModels, loadModelsArgs).then((result: any) => {
+        let earlyAccessRefresher: undefined | (() => void);
+
+        const setupPromise = loadModels(filteredModels, loadModelsArgs).then((result: any) => {
             const [userSettings, user] = result as [UserSettings, User];
 
             const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
@@ -118,9 +120,11 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             return Promise.all([
                 featuresPromise.then(async ({ Features }) => {
                     const [earlyAccessScope] = Features;
-
-                    // The await prevents setLoading being set to false if page is about to reload
-                    await handleEarlyAccessDesynchronization({ userSettings, earlyAccessScope, appName: APP_NAME });
+                    earlyAccessRefresher = handleEarlyAccessDesynchronization({
+                        userSettings,
+                        earlyAccessScope,
+                        appName: APP_NAME,
+                    });
                 }),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale, userSettings),
@@ -134,13 +138,21 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         Promise.all([
             hasOnlyExternalAddressesPromise,
             eventManagerPromise,
-            modelsPromise,
+            setupPromise,
             addressesPromise,
             onInit?.(),
             loadOpenPGP(openpgpConfig),
             appPromise,
         ])
             .then(([hasOnlyExternalAddresses]) => {
+                // The Version cookie is set on each request. This causes race-conditions between with what the client
+                // has set it to and what the API is replying with. Old API requests with old cookies may finish after
+                // the refresh has happened which resets the Version cookie, causing assets to fail loading.
+                // Here we explicitly wait for all requests to finish loading before triggering the refresh.
+                if (earlyAccessRefresher) {
+                    earlyAccessRefresher();
+                    return;
+                }
                 if (hasOnlyExternalAddresses) {
                     appLink(`/setup-internal-address?app=${APP_NAME}`, APPS.PROTONACCOUNT);
                 } else {
