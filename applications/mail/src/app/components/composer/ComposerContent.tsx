@@ -1,5 +1,5 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { isPlainText , getAttachments } from '@proton/shared/lib/mail/messages';
+import { isPlainText, getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';

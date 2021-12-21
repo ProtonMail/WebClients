@@ -1,6 +1,11 @@
 import { MIME_TYPES } from '../../constants';
 import { Recipient } from '../Address';
 
+export interface AttachmentInfo {
+    inline?: number;
+    attachment: number;
+}
+
 export interface Attachment {
     ID?: string;
     Name?: string;
@@ -64,4 +69,5 @@ export interface Message {
     PasswordHint?: string;
     RightToLeft?: number;
     UnsubscribeMethods?: UnsubscribeMethods;
+    AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
 }
