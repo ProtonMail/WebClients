@@ -273,7 +273,7 @@ describe('generateEmailSubject', () => {
                 vevent,
                 method: ICAL_METHOD.REQUEST,
                 isCreateEvent: true,
-                options: { locale: enUS },
+                dateFormatOptions: { locale: enUS },
             })
         ).toEqual(expected);
     });
@@ -296,7 +296,7 @@ describe('generateEmailSubject', () => {
                 vevent,
                 method: ICAL_METHOD.REQUEST,
                 isCreateEvent: false,
-                options: { locale: enUS },
+                dateFormatOptions: { locale: enUS },
             })
         ).toEqual(expected);
     });
@@ -308,7 +308,7 @@ describe('generateEmailSubject', () => {
                 vevent: exampleVevent,
                 method: ICAL_METHOD.CANCEL,
                 isCreateEvent: false,
-                options: { locale: enUS },
+                dateFormatOptions: { locale: enUS },
             })
         ).toEqual(expected);
     });
@@ -331,7 +331,7 @@ describe('generateEmailSubject', () => {
                 },
                 method: ICAL_METHOD.REPLY,
                 isCreateEvent: false,
-                options: { locale: enUS },
+                dateFormatOptions: { locale: enUS },
             })
         ).toEqual(expected);
         expect(
@@ -349,7 +349,7 @@ describe('generateEmailSubject', () => {
                 },
                 method: ICAL_METHOD.REPLY,
                 isCreateEvent: false,
-                options: { locale: enUS },
+                dateFormatOptions: { locale: enUS },
             })
         ).toEqual(expectedSingleFullDay);
     });
