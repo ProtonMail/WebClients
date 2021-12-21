@@ -17,16 +17,17 @@ import {
 
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
-import AccountPasswordAndSecuritySettings from '../containers/account/AccountPasswordAndSecuritySettings';
-import AccountPaymentSettings from '../containers/account/AccountPaymentSettings';
-import AccountDashboardSettings from '../containers/account/AccountDashboardSettings';
-import OrganizationMultiUserSupportSettings from '../containers/organization/OrganizationMultiUserSupportSettings';
 import AccountSidebar from './AccountSidebar';
-import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings';
+import AccountDashboardSettings from '../containers/account/AccountDashboardSettings';
+import AccountSecuritySettings from '../containers/account/AccountSecuritySettings';
+import AccountRecoverySettings, { hasRecoverySettings } from '../containers/account/AccountRecoverySettings';
+import AccountAccountAndPasswordSettings from '../containers/account/AccountAccountAndPasswordSettings';
+import AccountLanguageAndTimeSettings from '../containers/account/AccountLanguageAndTimeSettings';
+import AccountEasySwitchSettings from '../containers/account/AccountEasySwitchSettings';
+import OrganizationMultiUserSupportSettings from '../containers/organization/OrganizationMultiUserSupportSettings';
 import OrganizationUsersAndAddressesSettings from '../containers/organization/OrganizationUsersAndAddressesSettings';
 import OrganizationKeysSettings from '../containers/organization/OrganizationKeysSettings';
-import AccountEasySwitchSettings from '../containers/account/AccountEasySwitchSettings';
-import AccountRecoverySettings, { hasRecoverySettings } from '../containers/account/AccountRecoverySettings';
+import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings';
 
 const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
 const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
@@ -104,14 +105,17 @@ const MainContainer = () => {
                         <AccountRecoverySettings location={location} setActiveSection={() => {}} />
                     </Route>
                 )}
-                <Route path={`/${appSlug}/payment`}>
-                    <AccountPaymentSettings location={location} setActiveSection={() => {}} />
+                <Route path={`/${appSlug}/account-password`}>
+                    <AccountAccountAndPasswordSettings location={location} setActiveSection={() => {}} />
+                </Route>
+                <Route path={`/${appSlug}/language-time`}>
+                    <AccountLanguageAndTimeSettings location={location} setActiveSection={() => {}} />
                 </Route>
                 <Route path={`/${appSlug}/easy-switch`}>
                     <AccountEasySwitchSettings location={location} setActiveSection={() => {}} />
                 </Route>
                 <Route path={`/${appSlug}/security`}>
-                    <AccountPasswordAndSecuritySettings location={location} setActiveSection={() => {}} user={user} />
+                    <AccountSecuritySettings location={location} setActiveSection={() => {}} />
                 </Route>
                 <Route path={`/${appSlug}/multi-user-support`}>
                     <OrganizationMultiUserSupportSettings location={location} />
