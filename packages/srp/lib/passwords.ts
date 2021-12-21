@@ -15,10 +15,8 @@ import { BCRYPT_PREFIX } from './constants';
 
 /**
  * Expand a hash
- * @param {Uint8Array} input
- * @returns {Promise<Uint8Array>}
  */
-export const expandHash = async (input) => {
+export const expandHash = async (input: Uint8Array) => {
     const promises = [];
     const arr = concatArrays([input, new Uint8Array([0])]);
     for (let i = 1; i <= 4; i++) {
@@ -30,36 +28,24 @@ export const expandHash = async (input) => {
 
 /**
  * Format a hash
- * @param {String} password
- * @param {String} salt
- * @param {Uint8Array} modulus
- * @returns {Promise<Uint8Array>}
  */
-const formatHash = async (password, salt, modulus) => {
+const formatHash = async (password: string, salt: string, modulus: Uint8Array) => {
     const unexpandedHash = await bcrypt.hash(password, BCRYPT_PREFIX + salt);
     return expandHash(concatArrays([binaryStringToArray(unexpandedHash), modulus]));
 };
 
 /**
  * Hash password in version 3.
- * @param {String} password
- * @param {String} salt
- * @param {Uint8Array} modulus
- * @returns {Promise<Uint8Array>}
  */
-const hashPassword3 = (password, salt, modulus) => {
-    const saltBinary = binaryStringToArray(salt + 'proton');
+const hashPassword3 = (password: string, salt: string, modulus: Uint8Array) => {
+    const saltBinary = binaryStringToArray(`${salt}proton`);
     return formatHash(password, bcrypt.encodeBase64(saltBinary, 16), modulus);
 };
 
 /**
  * Hash password in version 1.
- * @param {String} password
- * @param {String} username
- * @param {Uint8Array} modulus
- * @returns {Promise<Uint8Array>}
  */
-const hashPassword1 = async (password, username, modulus) => {
+const hashPassword1 = async (password: string, username: string, modulus: Uint8Array) => {
     const value = binaryStringToArray(encodeUtf8(username.toLowerCase()));
     const salt = arrayToHexString(await unsafeMD5(value));
     return formatHash(password, salt, modulus);
@@ -67,12 +53,8 @@ const hashPassword1 = async (password, username, modulus) => {
 
 /**
  * Hash password in version 0.
- * @param {String} password
- * @param {String} username
- * @param {Uint8Array} modulus
- * @returns {Promise<Uint8Array>}
  */
-const hashPassword0 = async (password, username, modulus) => {
+const hashPassword0 = async (password: string, username: string, modulus: Uint8Array) => {
     const value = await SHA512(binaryStringToArray(username.toLowerCase() + encodeUtf8(password)));
     const prehashed = encodeBase64(arrayToBinaryString(value));
     return hashPassword1(prehashed, username, modulus);
@@ -80,15 +62,24 @@ const hashPassword0 = async (password, username, modulus) => {
 
 /**
  * Hash a password.
- * @param {String} password
- * @param {String} salt
- * @param {String} username
- * @param {Uint8Array} modulus
- * @param {Number} version
- * @returns {Promise<Uint8Array>}
  */
-export const hashPassword = ({ password, salt, username, modulus, version }) => {
+export const hashPassword = ({
+    password,
+    salt,
+    username,
+    modulus,
+    version,
+}: {
+    password: string;
+    salt?: string;
+    username?: string;
+    modulus: Uint8Array;
+    version: number;
+}) => {
     if (version === 4 || version === 3) {
+        if (!salt) {
+            throw new Error('Missing salt');
+        }
         return hashPassword3(password, salt, modulus);
     }
 
@@ -97,10 +88,16 @@ export const hashPassword = ({ password, salt, username, modulus, version }) => 
     }
 
     if (version === 1) {
+        if (!username) {
+            throw new Error('Missing username');
+        }
         return hashPassword1(password, username, modulus);
     }
 
     if (version === 0) {
+        if (!username) {
+            throw new Error('Missing username');
+        }
         return hashPassword0(password, username, modulus);
     }
 

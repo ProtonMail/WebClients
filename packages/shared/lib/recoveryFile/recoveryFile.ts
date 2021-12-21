@@ -9,10 +9,10 @@ import {
     OpenPGPKey,
     signMessage,
     verifyMessage,
+    VERIFICATION_STATUS,
 } from 'pmcrypto';
 import getRandomValues from '@proton/get-random-values';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 import isTruthy from '../helpers/isTruthy';
 import { DecryptedKey, KeyWithRecoverySecret } from '../interfaces';
 import downloadFile from '../helpers/downloadFile';

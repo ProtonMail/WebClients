@@ -1,4 +1,13 @@
-import { getKeys, getCleartextMessage, binaryStringToArray, decodeBase64, verifyMessage } from 'pmcrypto';
+import {
+    getKeys,
+    // @ts-expect-error getCleartextMessage is not exported
+    getCleartextMessage,
+    createCleartextMessage,
+    binaryStringToArray,
+    decodeBase64,
+    verifyMessage,
+    OpenPGPKey,
+} from 'pmcrypto';
 
 import { VERIFICATION_STATUS, SRP_MODULUS_KEY } from '../constants';
 
@@ -9,7 +18,7 @@ const { NOT_SIGNED, SIGNED_AND_VALID } = VERIFICATION_STATUS;
  * @return {Promise}
  */
 export const getModulusKeys = (() => {
-    let cachedPromise;
+    let cachedPromise: Promise<OpenPGPKey[]> | undefined;
 
     const get = async () => {
         try {
@@ -31,11 +40,8 @@ export const getModulusKeys = (() => {
 
 /**
  * Verify the modulus signature with the SRP public key
- * @param {Object} keys
- * @param {Object} modulus
- * @return {Promise}
  */
-export const verifyModulus = async (keys, modulus) => {
+export const verifyModulus = async (keys: OpenPGPKey[], modulus: ReturnType<typeof createCleartextMessage>) => {
     try {
         const { verified = NOT_SIGNED } = await verifyMessage({
             message: modulus,
@@ -52,10 +58,8 @@ export const verifyModulus = async (keys, modulus) => {
 
 /**
  * Verify modulus from the API and get the value.
- * @param {String} modulus - Armored modulus string
- * @returns {Promise<Uint8Array>}
  */
-export const verifyAndGetModulus = async (modulus) => {
+export const verifyAndGetModulus = async (modulus: string) => {
     const [publicKeys, modulusParsed] = await Promise.all([getModulusKeys(), getCleartextMessage(modulus)]);
     await verifyModulus(publicKeys, modulusParsed);
     return binaryStringToArray(decodeBase64(modulusParsed.getText()));
