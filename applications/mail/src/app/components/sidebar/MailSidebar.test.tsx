@@ -5,6 +5,7 @@ import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import loudRejection from 'loud-rejection';
+import { range } from '@proton/shared/lib/helpers/array';
 import {
     render,
     clearAll,
@@ -13,6 +14,7 @@ import {
     config,
     getHistory,
     setFeatureFlags,
+    assertFocus,
 } from '../../helpers/test/helper';
 import MailSidebar from './MailSidebar';
 
@@ -215,5 +217,79 @@ describe('MailSidebar', () => {
         const { queryByTestId } = await render(<MailSidebar {...props} />, false);
 
         expect(queryByTestId(`Scheduled`)).toBeNull();
+    });
+
+    describe('Sidebar hotkeys', () => {
+        it('should navigate with the arrow keys', async () => {
+            setupTest([label, folder]);
+
+            const { getByTestId, getByTitle, container } = await render(<MailSidebar {...props} />, false);
+
+            const sidebar = container.querySelector('nav > div') as HTMLDivElement;
+            const Folders = getByTitle('Folders');
+            const Labels = getByTitle('Labels');
+
+            const Inbox = getByTestId('navigation-link:Inbox');
+            const Drafts = getByTestId('navigation-link:Drafts');
+            const Folder = getByTestId(`navigation-link:${folder.Name}`);
+            const Label = getByTestId(`navigation-link:${label.Name}`);
+
+            const down = () => fireEvent.keyDown(sidebar, { key: 'ArrowDown' });
+            const up = () => fireEvent.keyDown(sidebar, { key: 'ArrowUp' });
+            const ctrlDown = () => fireEvent.keyDown(sidebar, { key: 'ArrowDown', ctrlKey: true });
+            const ctrlUp = () => fireEvent.keyDown(sidebar, { key: 'ArrowUp', ctrlKey: true });
+
+            down();
+            assertFocus(Inbox);
+            down();
+            assertFocus(Drafts);
+            range(0, 8).forEach(down);
+            assertFocus(Folders);
+            down();
+            assertFocus(Folder);
+            down();
+            assertFocus(Labels);
+            down();
+            assertFocus(Label);
+
+            up();
+            assertFocus(Labels);
+            up();
+            assertFocus(Folder);
+            up();
+            assertFocus(Folders);
+            range(0, 9).forEach(up);
+            assertFocus(Inbox);
+
+            ctrlDown();
+            assertFocus(Label);
+            ctrlUp();
+            assertFocus(Inbox);
+        });
+
+        it('should navigate to list with right key', async () => {
+            setupTest([label, folder]);
+
+            const TestComponent = () => {
+                return (
+                    <>
+                        <MailSidebar {...props} />
+                        <div data-shortcut-target="item-container" tabIndex={-1}>
+                            test
+                        </div>
+                    </>
+                );
+            };
+
+            const { container } = await render(<TestComponent />, false);
+
+            const sidebar = container.querySelector('nav > div') as HTMLDivElement;
+
+            fireEvent.keyDown(sidebar, { key: 'ArrowRight' });
+
+            const target = document.querySelector('[data-shortcut-target="item-container"]');
+
+            assertFocus(target);
+        });
     });
 });
