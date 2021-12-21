@@ -79,7 +79,6 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const appRef = useRef<FunctionComponent | null>(null);
     const hasDelinquentBlockRef = useRef(false);
     const appLink = useAppLink();
-    const refreshingRef = useRef(false);
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -107,6 +106,8 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         const models = unique([UserSettingsModel, UserModel, ...preloadModels]);
         const filteredModels = addressesPromise ? models.filter((model) => model !== AddressesModel) : models;
 
+        let earlyAccessRefresher: undefined | (() => void);
+
         const setupPromise = loadModels(filteredModels, loadModelsArgs).then((result: any) => {
             const [userSettings, user] = result as [UserSettings, User];
 
@@ -119,12 +120,11 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             return Promise.all([
                 featuresPromise.then(async ({ Features }) => {
                     const [earlyAccessScope] = Features;
-
-                    if (handleEarlyAccessDesynchronization({ userSettings, earlyAccessScope, appName: APP_NAME })) {
-                        // Firefox cancels requests upon location.reload. Setting this prevents the error screen from being displayed since the reload is not instant.
-                        refreshingRef.current = true;
-                        window.location.reload();
-                    }
+                    earlyAccessRefresher = handleEarlyAccessDesynchronization({
+                        userSettings,
+                        earlyAccessScope,
+                        appName: APP_NAME,
+                    });
                 }),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale, userSettings),
@@ -145,6 +145,14 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             appPromise,
         ])
             .then(([hasOnlyExternalAddresses]) => {
+                // The Version cookie is set on each request. This causes race-conditions between with what the client
+                // has set it to and what the API is replying with. Old API requests with old cookies may finish after
+                // the refresh has happened which resets the Version cookie, causing assets to fail loading.
+                // Here we explicitly wait for all requests to finish loading before triggering the refresh.
+                if (earlyAccessRefresher) {
+                    earlyAccessRefresher();
+                    return;
+                }
                 if (hasOnlyExternalAddresses) {
                     appLink(`/setup-internal-address?app=${APP_NAME}`, APPS.PROTONACCOUNT);
                 } else {
@@ -166,13 +174,13 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         };
     }, []);
 
-    if (!refreshingRef.current && error) {
+    if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
     const LoadedApp = appRef.current;
 
-    if (refreshingRef.current || loading || !eventManagerRef.current || LoadedApp === null) {
+    if (loading || !eventManagerRef.current || LoadedApp === null) {
         return (
             <>
                 <ModalsChildren />
