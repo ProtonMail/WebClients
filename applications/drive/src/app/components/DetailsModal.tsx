@@ -95,13 +95,13 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
                             <DetailsRow label={c('Title').t`Size`}>
                                 <SizeCell size={item.Size} />
                             </DetailsRow>
-                            <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
-                            {(numberOfAccesses !== undefined || loadingNumberOfAccesses) && (
-                                <DetailsRow label={c('Title').t`# of accesses`}>
-                                    {formatAccessCount(numberOfAccesses)}
-                                </DetailsRow>
-                            )}
                         </>
+                    )}
+                    <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
+                    {(numberOfAccesses !== undefined || loadingNumberOfAccesses) && (
+                        <DetailsRow label={c('Title').t`# of accesses`}>
+                            {formatAccessCount(numberOfAccesses)}
+                        </DetailsRow>
                     )}
                 </InnerModal>
                 <FooterModal>
