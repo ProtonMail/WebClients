@@ -432,7 +432,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             return {
                 title: c('Title').t`Change mailbox password`,
                 labels: {
-                    oldPassword: isSubUser ? c('Label').t`Your password (admin)` : c('Label').t`Old login password`,
+                    oldPassword: isSubUser ? c('Label').t`Your password (admin)` : c('Label').t`Current login password`,
                     newPassword: c('Label').t`New mailbox password`,
                     confirmPassword: c('Label').t`Confirm mailbox password`,
                 },
