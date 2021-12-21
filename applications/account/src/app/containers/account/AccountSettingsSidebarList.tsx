@@ -11,21 +11,23 @@ import {
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import NotificationDot from '@proton/components/components/notificationDot/NotificationDot';
 
-import { getDashboardPage } from './AccountDashboardSettings';
-import { getPaymentPage } from './AccountPaymentSettings';
+import { getDashboardPage, hasAccountDashboardPage } from './AccountDashboardSettings';
 import { getEasySwitchPage } from './AccountEasySwitchSettings';
-import { getPasswordAndSecurityPage } from './AccountPasswordAndSecuritySettings';
+import { getSecurityPage } from './AccountSecuritySettings';
 import { getRecoveryPage, hasRecoverySettings } from './AccountRecoverySettings';
+import { getLanguageAndTimePage } from './AccountLanguageAndTimeSettings';
+import { getAccountAndPasswordPage } from './AccountAccountAndPasswordSettings';
 
 const AccountSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
     const [user] = useUser();
     const showRecoveryNotification = useShowRecoveryNotification();
 
     const pages: SectionConfig[] = [
-        getDashboardPage({ user }),
+        hasAccountDashboardPage(user) && getDashboardPage({ user }),
         hasRecoverySettings(user) && getRecoveryPage(showRecoveryNotification),
-        user.canPay && getPaymentPage(),
-        getPasswordAndSecurityPage({ user }),
+        getAccountAndPasswordPage({ user }),
+        getLanguageAndTimePage(),
+        getSecurityPage(),
         getEasySwitchPage(),
     ].filter(isTruthy);
 
