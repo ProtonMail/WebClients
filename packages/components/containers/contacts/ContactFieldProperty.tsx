@@ -1,9 +1,10 @@
+import { getStringContactValue } from '@proton/shared/lib/contacts/properties';
 import { ChangeEvent, forwardRef, Ref } from 'react';
 import { parseISO, formatISO, isValid } from 'date-fns';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
-import { ContactPropertyChange } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { ContactPropertyChange, ContactValue } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import { EmailInput, TelInput, TextArea, DateInput, Input } from '../../components';
+import { EmailInput, TelInput, DateInput, InputTwo, TextAreaTwo, Input } from '../../components';
 import { useModals } from '../../hooks';
 import ContactImageModal from './modals/ContactImageModal';
 import ContactImageField from './ContactImageField';
@@ -12,7 +13,7 @@ import ContactAdrField from './ContactAdrField';
 interface Props {
     field: string;
     uid?: string;
-    value: string | string[];
+    value: ContactValue;
     onChange: (payload: ContactPropertyChange) => void;
     isSubmitted?: boolean;
 }
@@ -31,7 +32,7 @@ const ContactFieldProperty = (
     if (field === 'email') {
         return (
             <EmailInput
-                value={value as string}
+                value={getStringContactValue(value)}
                 placeholder={labels.email}
                 onChange={handleChange}
                 data-testid={label}
@@ -53,7 +54,13 @@ const ContactFieldProperty = (
 
     if (field === 'note') {
         return (
-            <TextArea value={value} placeholder={labels.note} onChange={handleChange} data-testid={label} {...rest} />
+            <TextAreaTwo
+                value={getStringContactValue(value)}
+                placeholder={labels.note}
+                onChange={handleChange}
+                data-testid={label}
+                {...rest}
+            />
         );
     }
 
@@ -75,16 +82,23 @@ const ContactFieldProperty = (
     if (field === 'photo' || field === 'logo') {
         const handleChangeImage = () => {
             const handleSubmit = (value: string) => onChange({ uid, value });
-            createModal(<ContactImageModal url={value as string} onSubmit={handleSubmit} />);
+            createModal(<ContactImageModal url={getStringContactValue(value)} onSubmit={handleSubmit} />);
         };
-        return <ContactImageField value={value as string} onChange={handleChangeImage} data-testid={label} {...rest} />;
+        return (
+            <ContactImageField
+                value={getStringContactValue(value)}
+                onChange={handleChangeImage}
+                data-testid={label}
+                {...rest}
+            />
+        );
     }
 
     if (field === 'fn') {
         return (
             <Input
                 ref={ref}
-                value={value}
+                value={getStringContactValue(value)}
                 placeholder={label}
                 onChange={handleChange}
                 isSubmitted={isSubmitted}
@@ -95,7 +109,15 @@ const ContactFieldProperty = (
         );
     }
 
-    return <Input value={value} placeholder={label} onChange={handleChange} data-testid={label} {...rest} />;
+    return (
+        <InputTwo
+            value={getStringContactValue(value)}
+            placeholder={label}
+            onChange={handleChange}
+            data-testid={label}
+            {...rest}
+        />
+    );
 };
 
 export default forwardRef(ContactFieldProperty);
