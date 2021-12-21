@@ -12,7 +12,7 @@ import './app.scss';
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.6',
+    APP_VERSION_DISPLAY: '4.0.7',
     ...config,
 };
 
