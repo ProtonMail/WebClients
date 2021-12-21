@@ -73,7 +73,7 @@ function DriveView({ match }: RouteComponentProps<DriveSectionRouteProps>) {
     useAppTitle(c('Title').t`My files`);
 
     return (
-        <UploadDragDrop className="flex flex-column flex-item-fluid">
+        <UploadDragDrop className="flex flex-column flex-nowrap flex-item-fluid">
             <DriveContentProvider folder={folder}>
                 {folder ? <DriveToolbar activeFolder={folder} /> : <Toolbar />}
                 <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">

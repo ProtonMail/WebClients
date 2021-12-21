@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { classnames, Button, Icon } from '@proton/components';
 
 interface Props {
@@ -18,10 +20,16 @@ export default function ExpandButton({ className, expanded, onClick }: Props) {
             shape="ghost"
             size="small"
             icon
-            className={classnames(['flex-item-noshrink drive-sidebar--icon-expand', className])}
+            className={classnames(['flex-item-noshrink drive-sidebar--button-expand', className])}
             onClick={handleClick}
+            aria-expanded={expanded}
+            title={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
         >
-            <Icon name="angle-down" className={classnames([!expanded && 'rotateZ-270'])} />
+            <Icon
+                name="angle-down"
+                className={classnames([!expanded && 'rotateZ-270'])}
+                alt={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
+            />
         </Button>
     );
 }

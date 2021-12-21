@@ -20,8 +20,8 @@ export default function DriveSidebarFolders({ shareId, linkId, path, setSidebarE
 
     return (
         <>
-            <DriveSidebarFoldersRoot key="root" path={path} rootFolder={rootFolder} toggleExpand={toggleExpand} />
-            <DriveSidebarSubfolders key="folders" rootFolder={rootFolder} toggleExpand={toggleExpand} />
+            <DriveSidebarFoldersRoot path={path} rootFolder={rootFolder} toggleExpand={toggleExpand} />
+            <DriveSidebarSubfolders rootFolder={rootFolder} toggleExpand={toggleExpand} />
         </>
     );
 }
