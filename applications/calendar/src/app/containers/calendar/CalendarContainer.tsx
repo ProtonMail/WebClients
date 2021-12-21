@@ -34,6 +34,7 @@ import {
     getDefaultView,
     getDisplaySecondaryTimezone,
     getDisplayWeekNumbers,
+    getInviteLocale,
     getSecondaryTimezone,
 } from './getSettings';
 import getTitleDateString from './getTitleDateString';
@@ -164,7 +165,7 @@ const CalendarContainer = ({
                 createModal(<AskUpdateTimezoneModal localTzid={localTzid} />);
             }
         };
-        run();
+        void run();
     }, []);
 
     const utcNowDateInTimezone = useMemo(() => {
@@ -202,6 +203,7 @@ const CalendarContainer = ({
     const displayWeekNumbers = getDisplayWeekNumbers(calendarUserSettings);
     const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarUserSettings);
     const secondaryTzid = getSecondaryTimezone(calendarUserSettings);
+    const inviteLocale = getInviteLocale(calendarUserSettings);
 
     const utcDateRange = useMemo(() => {
         return getDateRange(utcDate, range, view, weekStartsOn);
@@ -347,6 +349,7 @@ const CalendarContainer = ({
                     displayWeekNumbers={displayWeekNumbers}
                     displaySecondaryTimezone={displaySecondaryTimezone}
                     weekStartsOn={weekStartsOn}
+                    inviteLocale={inviteLocale}
                     now={utcNowDateInTimezone}
                     date={utcDate}
                     dateRange={utcDateRange}

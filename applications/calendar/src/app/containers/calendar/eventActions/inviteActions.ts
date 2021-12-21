@@ -14,6 +14,7 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
+import { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
@@ -182,7 +183,9 @@ export const getSendIcsAction =
         sendPreferencesMap,
         contactEmailsMap,
         prodId,
+        inviteLocale,
         getVTimezonesMap,
+        relocalizeText,
         onRequestError,
         onReplyError,
         onCancelError,
@@ -194,6 +197,8 @@ export const getSendIcsAction =
         sendPreferencesMap: SimpleMap<SendPreferences>;
         contactEmailsMap: SimpleMap<ContactEmail>;
         getVTimezonesMap: GetVTimezonesMap;
+        relocalizeText: RelocalizeText;
+        inviteLocale?: string;
         prodId: string;
         onRequestError: (e: Error) => void;
         onReplyError: (e: Error) => void;
@@ -253,8 +258,16 @@ export const getSendIcsAction =
                         addressID,
                         from,
                         to: getSafeSendTo(attendees, sendPreferencesMap),
-                        subject: generateEmailSubject(params),
-                        plainTextBody: generateEmailBody(params),
+                        subject: await relocalizeText({
+                            getLocalizedText: () => generateEmailSubject(params),
+                            newLocaleCode: inviteLocale,
+                            relocalizeDateFormat: true,
+                        }),
+                        plainTextBody: await relocalizeText({
+                            getLocalizedText: () => generateEmailBody(params),
+                            newLocaleCode: inviteLocale,
+                            relocalizeDateFormat: true,
+                        }),
                         sendPreferencesMap,
                         contactEmailsMap,
                     });
@@ -270,8 +283,16 @@ export const getSendIcsAction =
                                 addressID,
                                 from,
                                 to: getSafeSendTo(addedAttendees, sendPreferencesMap),
-                                subject: generateEmailSubject(params),
-                                plainTextBody: generateEmailBody(params),
+                                subject: await relocalizeText({
+                                    getLocalizedText: () => generateEmailSubject(params),
+                                    newLocaleCode: inviteLocale,
+                                    relocalizeDateFormat: true,
+                                }),
+                                plainTextBody: await relocalizeText({
+                                    getLocalizedText: () => generateEmailBody(params),
+                                    newLocaleCode: inviteLocale,
+                                    relocalizeDateFormat: true,
+                                }),
                                 sendPreferencesMap,
                                 contactEmailsMap,
                             })
@@ -302,8 +323,16 @@ export const getSendIcsAction =
                                 addressID,
                                 from,
                                 to: getSafeSendTo(removedAttendees, sendPreferencesMap),
-                                subject: generateEmailSubject(params),
-                                plainTextBody: generateEmailBody(params),
+                                subject: await relocalizeText({
+                                    getLocalizedText: () => generateEmailSubject(params),
+                                    newLocaleCode: inviteLocale,
+                                    relocalizeDateFormat: true,
+                                }),
+                                plainTextBody: await relocalizeText({
+                                    getLocalizedText: () => generateEmailBody(params),
+                                    newLocaleCode: inviteLocale,
+                                    relocalizeDateFormat: true,
+                                }),
                                 sendPreferencesMap,
                                 contactEmailsMap,
                             })
@@ -355,8 +384,16 @@ export const getSendIcsAction =
                             addressID,
                             from,
                             to: getSafeSendTo(remainingAttendees, sendPreferencesMap),
-                            subject: generateEmailSubject(params),
-                            plainTextBody: generateEmailBody(params),
+                            subject: await relocalizeText({
+                                getLocalizedText: () => generateEmailSubject(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            plainTextBody: await relocalizeText({
+                                getLocalizedText: () => generateEmailBody(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
                             sendPreferencesMap,
                             contactEmailsMap,
                         })
@@ -371,8 +408,16 @@ export const getSendIcsAction =
                             addressID,
                             from,
                             to: getSafeSendTo(addedAttendees, sendPreferencesMap),
-                            subject: generateEmailSubject(params),
-                            plainTextBody: generateEmailBody(params),
+                            subject: await relocalizeText({
+                                getLocalizedText: () => generateEmailSubject(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            plainTextBody: await relocalizeText({
+                                getLocalizedText: () => generateEmailBody(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
                             sendPreferencesMap,
                             contactEmailsMap,
                         })
@@ -403,8 +448,16 @@ export const getSendIcsAction =
                             addressID,
                             from,
                             to: getSafeSendTo(removedAttendees, sendPreferencesMap),
-                            subject: generateEmailSubject(params),
-                            plainTextBody: generateEmailBody(params),
+                            subject: await relocalizeText({
+                                getLocalizedText: () => generateEmailSubject(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
+                            plainTextBody: await relocalizeText({
+                                getLocalizedText: () => generateEmailBody(params),
+                                newLocaleCode: inviteLocale,
+                                relocalizeDateFormat: true,
+                            }),
                             sendPreferencesMap,
                             contactEmailsMap,
                         })
@@ -447,8 +500,16 @@ export const getSendIcsAction =
                     addressID,
                     from,
                     to: getSafeSendTo(attendees, sendPreferencesMap),
-                    subject: generateEmailSubject(params),
-                    plainTextBody: generateEmailBody(params),
+                    subject: await relocalizeText({
+                        getLocalizedText: () => generateEmailSubject(params),
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
+                    }),
+                    plainTextBody: await relocalizeText({
+                        getLocalizedText: () => generateEmailBody(params),
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
+                    }),
                     sendPreferencesMap,
                     contactEmailsMap,
                 });
@@ -507,8 +568,16 @@ export const getSendIcsAction =
                         Name: displayName,
                     },
                     to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],
-                    subject: generateEmailSubject(params),
-                    plainTextBody: generateEmailBody(params),
+                    subject: await relocalizeText({
+                        getLocalizedText: () => generateEmailSubject(params),
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
+                    }),
+                    plainTextBody: await relocalizeText({
+                        getLocalizedText: () => generateEmailBody(params),
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
+                    }),
                     sendPreferencesMap,
                     contactEmailsMap,
                 });

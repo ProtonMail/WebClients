@@ -6,6 +6,7 @@ import { getClosestLocaleMatch, getLanguageCode } from '../../lib/i18n/helper';
 import { getDateFnLocaleWithTimeFormat } from '../../lib/i18n/dateFnLocale';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
 import { SETTINGS_TIME_FORMAT } from '../../lib/interfaces';
+import { DEFAULT_LOCALE } from '../../lib/constants';
 
 describe('helper', () => {
     it('should get the closest locale', () => {
@@ -44,6 +45,10 @@ const getTranslation = (data) => {
 };
 
 describe('Load the locale', () => {
+    afterEach(() => {
+        void loadLocale(DEFAULT_LOCALE, {});
+    });
+
     it('should load a fr_FR translation', async () => {
         await loadLocale('fr_FR', { fr_FR: async () => getTranslation('Salut monique') });
         expect(c('Action').t`Hey monique`).toBe('Salut monique');
@@ -51,6 +56,10 @@ describe('Load the locale', () => {
 });
 
 describe('Load date locales', () => {
+    afterEach(() => {
+        void loadDateLocale(DEFAULT_LOCALE);
+    });
+
     const zero = new Date(2000, 0, 1, 0, 0, 0);
 
     it('should load a fr_FR date locale if the translation exists', async () => {

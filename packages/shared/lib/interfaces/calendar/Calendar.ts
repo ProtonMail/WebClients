@@ -1,4 +1,5 @@
 import { SETTINGS_NOTIFICATION_TYPE } from '../../calendar/constants';
+import { Nullable } from '../utils';
 import { CalendarKey } from './CalendarKey';
 import { Member } from './Member';
 import { NotificationModel } from './Notification';
@@ -33,7 +34,7 @@ export enum SETTINGS_VIEW {
 }
 
 export interface CalendarUserSettings {
-    DefaultCalendarID: string | null;
+    DefaultCalendarID: Nullable<string>;
     WeekLength: number;
     DisplayWeekNumber: number;
     AutoDetectPrimaryTimezone: number;
@@ -41,6 +42,7 @@ export interface CalendarUserSettings {
     DisplaySecondaryTimezone: number;
     SecondaryTimezone?: string;
     ViewPreference: SETTINGS_VIEW;
+    InviteLocale: Nullable<string>;
 }
 
 export interface CalendarNotificationSettings {
