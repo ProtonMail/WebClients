@@ -584,6 +584,7 @@ const EasySwitchOauthModal = ({
             case SELECT_IMPORT_TYPE:
                 return c('Title').t`Customize and confirm`;
             case OAUTH_INSTRUCTIONS:
+                return c('Title').t`Select permissions`;
             case SUCCESS:
                 return null;
             default:
