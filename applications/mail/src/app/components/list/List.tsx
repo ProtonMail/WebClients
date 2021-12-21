@@ -39,6 +39,7 @@ const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
 
 interface Props {
+    show: boolean;
     labelID: string;
     loading: boolean;
     placeholderCount: number;
@@ -71,6 +72,7 @@ interface Props {
 
 const List = (
     {
+        show,
         labelID,
         loading,
         placeholderCount,
@@ -159,7 +161,7 @@ const List = (
     );
 
     return (
-        <div className="relative items-column-list relative">
+        <div className={classnames(['relative items-column-list relative', !show && 'hidden'])}>
             <div
                 ref={ref}
                 className={classnames(['h100 scroll-if-needed scroll-smooth-touch', isCompactView && 'list-compact'])}

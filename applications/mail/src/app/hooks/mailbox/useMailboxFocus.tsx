@@ -30,12 +30,6 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
         element?.focus();
     };
 
-    const focusOnFirstListItem = () => {
-        if (elementIDs.length) {
-            setFocusIndex(0);
-        }
-    };
-
     const focusOnLastMessage = useCallback(() => {
         const messages = document.querySelectorAll('[data-shortcut-target="message-container"]');
         if (messages.length) {
@@ -91,7 +85,11 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
 
     useEffect(() => {
         if (showList) {
-            focusOnFirstListItem();
+            if (focusIndex !== undefined) {
+                focusOnElementByIndex(focusIndex);
+            } else if (elementIDs.length) {
+                setFocusIndex(0);
+            }
         }
     }, [showList]);
 
