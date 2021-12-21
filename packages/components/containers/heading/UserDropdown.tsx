@@ -183,7 +183,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                 originalPlacement="bottom-right"
             >
                 <DropdownMenu>
-                    <div className="pr1 pl1 pt0-25 pb0-25">
+                    <div className="px1 py0-5">
                         {organizationName && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                             <div
                                 className="text-ellipsis-two-lines text-bold"
@@ -263,12 +263,11 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
 
                     {APP_NAME !== APPS.PROTONVPN_SETTINGS && (
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                            className="text-left"
                             onClick={handleTourClick}
                             data-testid="userdropdown:button:introduction"
                         >
                             {c('Action').t`${BRAND_NAME} introduction`}
-                            <Icon className="ml1" name="presentation-screen" />
                         </DropdownMenuButton>
                     )}
 
@@ -281,7 +280,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         content={
                             <span className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
                                 {c('Header').t`Get help`}
-                                <span className="on-rtl-mirror ml1">
+                                <span className="flex on-rtl-mirror ml1">
                                     <Icon className="rotateZ-270" name="angle-down" />
                                 </span>
                             </span>
@@ -291,7 +290,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         <DropdownMenu>
                             {onOpenChat && (
                                 <DropdownMenuButton
-                                    className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                                    className="text-left"
                                     onClick={() => {
                                         close();
                                         onOpenChat();
@@ -301,7 +300,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 </DropdownMenuButton>
                             )}
                             <DropdownMenuLink
-                                className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                                className="text-left"
                                 href={
                                     APP_NAME === PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/'
@@ -312,17 +311,15 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 data-testid="userdropdown:help:link:question"
                             >
                                 {c('Action').t`I have a question`}
-                                <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
                             </DropdownMenuLink>
 
                             <DropdownMenuLink
-                                className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                                className="text-left"
                                 href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
                                 target="_blank"
                                 data-testid="userdropdown:help:link:request-feature"
                             >
                                 {c('Action').t`Request a feature`}
-                                <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
                             </DropdownMenuLink>
 
                             <DropdownMenuButton
@@ -336,40 +333,41 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                     </SimpleDropdown>
 
                     <DropdownMenuLink
-                        className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                        className="text-left "
                         href="https://shop.protonmail.com"
                         target="_blank"
                         data-testid="userdropdown:link:shop"
                     >
                         {c('Action').t`${BRAND_NAME} shop`}
-                        <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
                     </DropdownMenuLink>
 
-                    <hr className="mt0-5 mb0-5" />
+                    <hr className="my0-5" />
 
-                    {isSSOMode ? (
-                        <DropdownMenuButton
-                            className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                            onClick={handleSwitchAccount}
-                            data-testid="userdropdown:button:switch-account"
-                        >
-                            {c('Action').t`Switch account`}
-                            <Icon className="ml1 on-rtl-mirror" name="switch" />
-                        </DropdownMenuButton>
-                    ) : null}
-
-                    <div className="pr1 pl1 pt0-25 pb0-75">
+                    <div className="px1 pt0-5 pb0-75">
                         <Button
                             shape="solid"
                             color="norm"
-                            className="w100 flex flex-justify-center flex-align-items-center"
+                            className="w100"
                             onClick={handleLogout}
                             data-testid="userdropdown:button:logout"
                         >
-                            <span className="mr0-5">{c('Action').t`Sign out`}</span>
-                            <Icon name="arrow-right-from-rectangle" className="on-rtl-mirror" />
+                            {c('Action').t`Sign out`}
                         </Button>
                     </div>
+
+                    {isSSOMode ? (
+                        <div className="px1 pb0-75">
+                            <Button
+                                shape="outline"
+                                color="weak"
+                                className="w100"
+                                onClick={handleSwitchAccount}
+                                data-testid="userdropdown:button:switch-account"
+                            >
+                                {c('Action').t`Switch account`}
+                            </Button>
+                        </div>
+                    ) : null}
                 </DropdownMenu>
             </Dropdown>
         </>
