@@ -25,13 +25,16 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { serverTime } from 'pmcrypto';
+import { getInviteLocale } from 'proton-calendar/src/app/containers/calendar/getSettings';
 import { useCallback } from 'react';
 import {
     useAddresses,
     useApi,
     useGetCalendarInfo,
+    useGetCalendarUserSettings,
     useGetEncryptionPreferences,
     useGetMailSettings,
+    useRelocalizeText,
 } from '../../../hooks';
 import { useGetCanonicalEmailsMap } from '../../../hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
@@ -41,9 +44,11 @@ const useAddAttendees = () => {
     const api = useApi();
     const [addresses] = useAddresses();
     const getMailSettings = useGetMailSettings();
+    const getCalendarUserSettings = useGetCalendarUserSettings();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getCalendarInfo = useGetCalendarInfo();
     const sendIcs = useSendIcs();
+    const relocalizeText = useRelocalizeText();
     const getVTimezonesMap = useGetVtimezonesMap();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
 
@@ -120,6 +125,7 @@ const useAddAttendees = () => {
                     vtimezones,
                     keepDtstamp: true,
                 });
+                const inviteLocale = getInviteLocale(await getCalendarUserSettings());
                 const params = { method: ICAL_METHOD.REQUEST, vevent: inviteVevent, isCreateEvent: true };
                 // send email with ICS attached
                 await sendIcs({
@@ -128,8 +134,16 @@ const useAddAttendees = () => {
                     addressID: selfAddress.ID,
                     from: { Address: selfAddress.Email, Name: selfAddress.DisplayName || selfAddress.Email },
                     to: formattedAddedAttendees.map(({ email, cn }) => ({ Address: email, Name: cn || email })),
-                    subject: generateEmailSubject(params),
-                    plainTextBody: generateEmailBody(params),
+                    subject: await relocalizeText({
+                        getLocalizedText: () => generateEmailSubject(params),
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
+                    }),
+                    plainTextBody: await relocalizeText({
+                        getLocalizedText: () => generateEmailBody(params),
+                        newLocaleCode: inviteLocale,
+                        relocalizeDateFormat: true,
+                    }),
                     sendPreferencesMap,
                     contactEmailsMap,
                 });

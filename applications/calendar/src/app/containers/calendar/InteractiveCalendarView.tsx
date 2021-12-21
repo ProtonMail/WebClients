@@ -63,6 +63,7 @@ import {
     Dropzone,
     onlyDragFiles,
     classnames,
+    useRelocalizeText,
 } from '@proton/components';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
@@ -161,6 +162,7 @@ const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCa
 interface Props extends SharedViewProps {
     isLoading: boolean;
     weekStartsOn: WeekStartsOn;
+    inviteLocale?: string;
     onChangeDate: (date: Date) => void;
     onInteraction: (active: boolean) => void;
     activeCalendars: Calendar[];
@@ -187,6 +189,7 @@ const InteractiveCalendarView = ({
     displayWeekNumbers,
     displaySecondaryTimezone,
     weekStartsOn,
+    inviteLocale,
 
     now,
     date,
@@ -217,6 +220,7 @@ const InteractiveCalendarView = ({
     const { contactEmailsMap } = useContactEmailsCache();
     const sendIcs = useSendIcs();
     const getVTimezonesMap = useGetVtimezonesMap();
+    const relocalizeText = useRelocalizeText();
     const config = useConfig();
     const isSavingEvent = useRef(false);
 
@@ -720,6 +724,8 @@ const InteractiveCalendarView = ({
             sendPreferencesMap,
             contactEmailsMap,
             getVTimezonesMap,
+            relocalizeText,
+            inviteLocale,
             prodId,
             onRequestError,
             onReplyError,
