@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useRouteMatch, useHistory } from 'react-router';
-import Main from 'proton-account/src/app/public/Main';
 import { c } from 'ttag';
 
 import { Href, useApi, useNotifications } from '@proton/components';
 
+import Main from 'proton-account/src/app/public/Main';
 import Header from 'proton-account/src/app/public/Header';
 import Content from 'proton-account/src/app/public/Content';
 import Footer from 'proton-account/src/app/public/Footer';
