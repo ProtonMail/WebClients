@@ -184,8 +184,8 @@
       "Confirm": [
         "Bekræft"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bekræft åbning af link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Bekræft åbning af link ${ linkToShow }"
       ],
       "Contact support": [
         "Kontakt support"
@@ -382,8 +382,14 @@
       "Import": [
         "Importér"
       ],
+      "Import calendars": [
+        ""
+      ],
       "Import contacts": [
         "Importér kontakter"
+      ],
+      "Import emails": [
+        ""
       ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Vælg filer"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Vælg abonnement"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Sortér"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Start ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Start importering"
@@ -1346,14 +1352,14 @@
       "Calendar link is temporarily inaccessible": [
         "Kalenderlink er midlertidig ikke tilgængeligt"
       ],
-      "Calendar link is wrong": [
-        "Kalenderlink er forkert"
-      ],
       "Failed to sync calendar": [
         "Kunne ikke synkronisere kalender"
       ],
       "More than 12 hours passed since last update": [
         "Der er gået mere end 12 timer siden den seneste opdatering"
+      ],
+      "Unsupported calendar format": [
+        "Ikke-understøttet kalenderformat"
       ]
     },
     "Calendar view": {
@@ -2930,14 +2936,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Tillad ProtonMail adgang til din Gmail-konto: Vælg om ${ bold2Steps } er aktiveret og følg nedenstående trin."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Som det sidste, ${ googleMailLink } med den konto, du gerne vil importere, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Gå til ${ googleAccountLink }. I ${ boldSecurity } sektionen, ${ boldAccess } for mindre sikre apps. Hvis du ikke ser denne indstilling, har du måske totrinsbekræftelse aktiveret."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Gå til ${ googleAccountLink }. I ${ boldSecurity } sektionen, opret et ${ boldAppPassword } , hvis du ikke har et allerede. Du skal bruge denne adgangskode under importen."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "I ${ boldLabels } sektionen skal du vælge de mapper, som det er tilladt at importere ind i ProtonMail."
@@ -2947,6 +2980,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "Log ind på Yahoo Mail, og klik på dit navn i øverste højre hjørne for at få adgang til ${ boldAccountInfo }. I afsnittet ${ boldAccountSec } skal du scrolle til afsnittet ${ boldAppPassword } for at generere en app-adgangskode. Du skal bruge denne adgangskode under importen."
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        ""
       ]
     },
     "Import instructions emphasis": {
@@ -2962,20 +3031,44 @@
       "app password": [
         "app-adgangskode"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Export to CSV file": [
+        ""
+      ],
       "Forwarding and POP/IMAP": [
         "Videresendelse og POP/IMAP"
       ],
       "Gmail Settings": [
         "Gmail-indstillinger"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "IMAP adgang"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Etiketter"
       ],
+      "Manage": [
+        ""
+      ],
       "Other ways to sign in": [
         "Andre måder at logge ind på"
+      ],
+      "Publish a calendar": [
+        ""
       ],
       "Security": [
         "Sikkerhed"
@@ -3009,6 +3102,55 @@
         "Sådan aktiveres adgang til mindre sikre apps i Gmail-indstillinger"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        ""
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        ""
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        ""
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Totrinsbekræftelse deaktiveret (standardindstillinger)"
@@ -3020,6 +3162,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Er du sikker på, at du vil importere en privat nøgle? Hvis du importerer en usikkert genereret eller lækket privat nøgle, kan det skade dine e-mailes sikkerhed.\n\nBemærk også, at den offentlige nøgle, der svarer til denne private nøgle, vil være offentligt tilgængelig fra vores nøgleserver. Hvis nøglen indeholder personlige oplysninger (f.eks. dit fulde navn), som du ikke ønsker at offentliggøre, skal du redigere nøglen, før du importerer den."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        ""
       ]
     },
     "Import status": {
@@ -3547,9 +3694,6 @@
       "Edit label": [
         "Redigér etiket"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Flyt nemt og sikkert dine e-mails fra din nuværende udbyder til Proton. Hvis du bruger Google, understøtter vi også import af kalendere og kontakter."
-      ],
       "Email address": [
         "E-mailadresse"
       ],
@@ -3737,6 +3881,9 @@
       "Import mailbox": [
         "Importér postkasse"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "VIGTIGT: Download af dine private nøgler og afsendelse eller lagring af dem på/via usikre medier kan kompromittere din kontosikkerhed!"
       ],
@@ -3788,6 +3935,9 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        "Det ser ud til, at nogle af dine data er krypteret og låst. Dette skyldes sandsynligvis en nylig eller tidligere nulstilling af adgangskoden. Vi foreslår, at du bruger en datagendannelsesmetode til at låse dine data op."
+      ],
       "it’s imperative": [
         "er det afgørende"
       ],
@@ -3805,6 +3955,9 @@
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "Det kan tage flere dage at gennemføre store importeringer."
@@ -4143,8 +4296,8 @@
       "Screenshot(s) attached": [
         "Screenshot(s) vedhæftet"
       ],
-      "Select a service provider to get started": [
-        "Vælg en tjenesteudbyder for at komme i gang"
+      "Select a service provider to start": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -4515,6 +4668,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Godkendelseslogning kan aktiveres for at se, hvornår din konto bliver tilgået. Følgende realtidstilgangsdata logges: IP-adresse, der tilgår kontoen, klokkeslæt samt mislykkede forsøg."
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Du kan nu modtage beskeder til din @pm.me-adresse. Opgrader til et betalt abonnement for også at kunne sende e-mails ved hjælp af din @pm.me-adresse og oprette yderligere @pm.me-adresser."
       ],
@@ -4553,6 +4709,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Du skal have en personlig kalender for at oprette et link."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
@@ -4601,9 +4760,6 @@
       ],
       "Your Block List is empty.": [
         "Din blokeringsliste er tom."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "Dine data er krypteret og låst. Du kan genoprette adgang med en datagendannelsesmetode."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
@@ -5250,6 +5406,9 @@
       "Credits used": [
         "Kredit forbrugt"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Tilpas fakturaer"
       ],
@@ -5267,6 +5426,9 @@
       ],
       "Default language": [
         "Standardsporg"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         "Standard PGP-metode"
@@ -5624,6 +5786,9 @@
       ],
       "Select your country": [
         "Vælg dit land"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Send auto-svar"
@@ -6185,6 +6350,35 @@
         "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        ""
+      ],
+      "How to import calendars from Outlook": [
+        ""
+      ],
+      "How to import calendars from Yahoo": [
+        ""
+      ],
+      "How to import contacts from another service": [
+        ""
+      ],
+      "How to import contacts from Outlook": [
+        ""
+      ],
+      "How to import contacts from Yahoo": [
+        ""
+      ],
+      "How to import emails from another service": [
+        ""
+      ],
+      "How to import emails from Outlook": [
+        ""
+      ],
+      "How to import emails from Yahoo": [
+        ""
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Tilføj kalender"
@@ -6418,6 +6612,11 @@
       "week before": [
         "uge før",
         "uger før"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7077,6 +7276,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Du kan anvende flere etiketter på en enkelt besked, men beskeder kan normalt kun være i én enkelt mappe. Træk og slip for at omarrangere rækkefølgen af dine mapper og etiketter."
       ]
@@ -7995,6 +8197,9 @@
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "Fakturaer"
       ],
@@ -8175,6 +8380,9 @@
       "Select contact group": [
         "Vælg kontaktgruppe"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "Vælg abonnement"
       ],
@@ -8306,6 +8514,9 @@
       ],
       "Warning!": [
         "Advarsel!"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Nyheder"
@@ -8612,6 +8823,14 @@
       "Password must contain at least ${ length } character": [
         "Adgangskode skal indeholde mindst ${ length } tegn",
         "Adgangskode skal indeholde mindst ${ length } tegn"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

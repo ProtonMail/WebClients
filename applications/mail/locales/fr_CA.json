@@ -45,7 +45,7 @@
         "Ajouter un nouveau groupe"
       ],
       "Add participant": [
-        ""
+        "Ajouter des participant·e·s"
       ],
       "Add phone number": [
         "Ajouter un numéro de téléphone"
@@ -183,7 +183,7 @@
         "Confirmer"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Confirmer l'ouverture du lien ${ linkToShow }"
       ],
       "Contact group": [
         "Groupe de contacts"
@@ -467,6 +467,9 @@
       "Load more": [
         "Charger plus"
       ],
+      "Load unprotected": [
+        "Chargement non protégé"
+      ],
       "Loading verification": [
         "Chargement de la vérification"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Réessayer"
       ],
+      "Revert to original display": [
+        "Revenir à l'affichage d'origine"
+      ],
       "Save": [
         "Enregister"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Ignorer"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Certaines images n'ont pas pu être chargées à cause de la protection antipistage"
+      ],
       "Start import": [
         "Démarrer l'importation"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Ce message contient des images intégrées."
+      ],
+      "This message contains remote content.": [
+        "Ce message comporte du contenu distant."
       ],
       "Trust": [
         "Approuver"
@@ -976,13 +988,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        ""
+        "Échec de l'ajout d'un·e participant·e"
       ],
       "Invitation sent and participant added": [
-        ""
+        "Invitation envoyée et participants ajoutés"
       ],
       "Participant added": [
-        ""
+        "Participant·e ajouté·e"
       ]
     },
     "Addon": {
@@ -1330,16 +1342,16 @@
         " Cette réponse ne correspond pas aux détails de votre invitation. Veuillez vérifier les détails de l'invitation dans votre calendrier."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } a accepté une invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } a accepté une invitation et a proposé un nouvel horaire pour cet événement."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } a accepté une invitation à une occurrence de l'événement."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } a accepté une invitation à cet événement."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } a accepté votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
@@ -1363,16 +1375,16 @@
         "${ participantName } a demandé les dernières mises à jour d'un événement qui n'existe plus dans votre calendrier."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } a refusé votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } a refusé une invitation et a proposé un nouvel horaire pour cet événement."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } a refusé une invitation à une occurrence de l'événement."
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } a refusé une invitation à cet événement."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } a refusé votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
@@ -1387,16 +1399,16 @@
         "${ participantName } a décliné votre invitation."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } avait accepté une invitation et avait proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition sont obsolètes."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } avait accepté une invitation et avait proposé un nouvel horaire pour cet événement. La réponse et la proposition sont obsolètes."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } avait accepté une invitation à une occurrence de l'événement."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "${ participantName } avait accepté une invitation à cet événement."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } a accepté votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition sont obsolètes."
@@ -1405,16 +1417,16 @@
         "${ participantName } a accepté votre invitation et a proposé un nouvel horaire pour cet événement. La réponse et la proposition sont obsolètes."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } avait refusé votre invitation et avait proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition sont obsolètes."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } avait refusé votre invitation et avait proposé un nouvel horaire pour cet événement. La réponse et la proposition sont obsolètes."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } avait refusé une invitation à une occurrence de l'événement."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } avait refusé une invitation à cet événement."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } a refusé votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition sont obsolètes."
@@ -1459,16 +1471,16 @@
         "${ participantName } a proposé un nouvel horaire pour cet événement. Cette proposition est obsolète. Vous n'avez pas de rendez-vous."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } avait provisoirement accepté votre invitation et avait proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition sont obsolètes."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } avait provisoirement accepté une invitation et avait proposé un nouvel horaire pour cet événement. La réponse et la proposition sont obsolètes."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } avait provisoirement accepté votre invitation à une occurrence de l'événement."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } avait provisoirement accepté une invitation à cet événement."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } a provisoirement accepté votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition sont obsolètes."
@@ -1477,7 +1489,7 @@
         "${ participantName } a provisoirement accepté votre invitation et a proposé un nouvel horaire pour cet événement. La réponse et la proposition sont obsolètes."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } n'est pas dans la liste des participants."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } a proposé un nouvel horaire pour une occurrence de cet événement."
@@ -1486,16 +1498,16 @@
         "${ participantName } a proposé un nouvel horaire pour cet événement."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } a provisoirement accepté votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } a provisoirement accepté une invitation et a proposé un nouvel horaire pour cet événement."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } a provisoirement accepté une invitation à une occurrence de l'événement."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } a provisoirement accepté une invitation à cet événement."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } a provisoirement accepté votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
@@ -1588,22 +1600,22 @@
       "Calendar link is temporarily inaccessible": [
         "Le lien du calendrier est temporairement inaccessible"
       ],
-      "Calendar link is wrong": [
-        "Le lien du calendrier est incorrect"
-      ],
       "Failed to sync calendar": [
         "Échec de la synchronisation du calendrier"
       ],
       "More than 12 hours passed since last update": [
         "Plus de 12 heures se sont écoulées depuis la dernière mise à jour"
+      ],
+      "Unsupported calendar format": [
+        "Format de calendrier non pris en charge"
       ]
     },
     "Calendar widget banner": {
       "Event already ended": [
-        ""
+        "Événement déjà terminé"
       ],
       "Event in progress": [
-        ""
+        "Événement en cours"
       ]
     },
     "Collapsible tooltip": {
@@ -2469,21 +2481,21 @@
     },
     "Error adding participants to a calendar event": {
       "At most 100 participants are allowed per invitation": [
-        ""
+        "Un maximum de 100 participant·e·s est autorisé par invitation"
       ]
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Les brouillons ne peuvent pas être déplacés vers la boîte de réception"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Les brouillons ne peuvent pas être déplacés vers les indésirables"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Les messages envoyés ne peuvent pas être déplacés vers la boîte de réception"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables"
       ],
       "This action cannot be performed": [
         "Impossible d'effectuer cette action"
@@ -2646,7 +2658,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "Impossible d'envoyer l'invitation à ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -3012,6 +3024,11 @@
       ],
       "Creating calendar event failed": [
         "Échec de la création de l'événement dans le calendrier"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "à l'étape suivante, vous devez sélectionner toutes les autorisations"
       ]
     },
     "Import warning": {
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Ce message a été ajusté pour être adapté à un fond sombre."
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Ce message a été généré automatiquement en réponse à un message précédent."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Ajouter au groupe"
+      ],
+      "Address": [
+        "Adresse"
       ],
       "ALL": [
         "TOUT"
@@ -5668,6 +5691,11 @@
         "Le mot de passe a été correctement défini"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Veuillez noter qu'${ boldNextStep } vous devez sélectionner toutes les autorisations demandées par l'application pour commencer votre importation."
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Suivant"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Ajouter à un groupe existant"
+      ],
+      "All": [
+        "Toutes"
       ],
       "Create new group": [
         "Créer un nouveau groupe"
@@ -6857,7 +6888,7 @@
         "Adresses courriel"
       ],
       "Email content": [
-        ""
+        "Contenu du message"
       ],
       "Email settings": [
         "Paramètres des courriels"
@@ -6924,6 +6955,9 @@
       ],
       "Link confirmation": [
         "Confirmation du lien"
+      ],
+      "Load embedded images": [
+        "Charger les images intégrées"
       ],
       "Load remote content": [
         "Charger le contenu distant"
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Sélectionner le groupe de contacts"
       ],
+      "Select permissions": [
+        "Sélectionnez les autorisations"
+      ],
       "Select what to import": [
         "Sélectionnez ce qu'il faut importer"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Connectez-vous à nouveau pour continuer"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Trier les conversations"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Le chiffrement de courriel force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
       ],
+      "Encrypted data": [
+        "Données chiffrées"
+      ],
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "Le mot de passe doit comporter au moins ${ length } caractère",
         "Le mot de passe doit comporter au moins ${ length } caractères"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Cliquez pour rejouer la vidéo"
+      ],
+      "Replay video": [
+        "Rejouer la vidéo"
       ]
     },
     "VPN feature": {

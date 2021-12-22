@@ -45,7 +45,7 @@
         "Adăugare grup"
       ],
       "Add participant": [
-        "Adăugați un participant"
+        "Adăugare participant"
       ],
       "Add phone number": [
         "Adăugare număr de telefon"
@@ -183,7 +183,7 @@
         "Confirmare"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Confirmați deschiderea legăturii ${ linkToShow }"
       ],
       "Contact group": [
         "Grup contacte"
@@ -470,6 +470,9 @@
       "Load more": [
         "Încărcare mai multe"
       ],
+      "Load unprotected": [
+        "Încărcare neprotejată"
+      ],
       "Loading verification": [
         "În curs de verificare"
       ],
@@ -701,6 +704,9 @@
       "Retry": [
         "Reîncercare"
       ],
+      "Revert to original display": [
+        "Revenire la afișarea inițială"
+      ],
       "Save": [
         "Salvare"
       ],
@@ -806,6 +812,9 @@
       "Skip": [
         "Omitere"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Unele imagini nu au putut fi încărcate cu protecția de urmărire"
+      ],
       "Start import": [
         "Pornire importare"
       ],
@@ -832,6 +841,9 @@
       ],
       "This message contains embedded images.": [
         "Acest mesaj conține imagini încorporate."
+      ],
+      "This message contains remote content.": [
+        "Acest mesaj conține conținut de la distanță."
       ],
       "Trust": [
         "Aprobare"
@@ -980,10 +992,10 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        "Nu s-a reușit adăugarea unui participant"
+        "Nu s-a reușit adăugarea participantului"
       ],
       "Invitation sent and participant added": [
-        "Invitație trimisă și participant adăugat"
+        "Invitația a fost trimisă și participantul adăugat"
       ],
       "Participant added": [
         "Participant adăugat"
@@ -1339,13 +1351,13 @@
         " Acest răspuns nu se potrivește cu detaliile invitației. Verificați detaliile invitației în calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } a acceptat o invitație și a propus o nouă dată pentru o singură apariție a acestui eveniment."
+        "${ participantName } a acceptat o invitație și a propus o nouă dată pentru o singură manifestare a acestui eveniment."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
         "${ participantName } a acceptat o invitație și a propus o nouă dată pentru acest eveniment."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "${ participantName } a acceptat o invitație la o singură ediție a evenimentului."
+        "${ participantName } a acceptat o invitație la o singură manifestare a evenimentului."
       ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } a acceptat o invitație la acest eveniment."
@@ -1372,13 +1384,13 @@
         "${ participantName } a solicitat cele mai recente actualizări pentru un eveniment pe care nu-l mai aveți în calendar."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } a refuzat o invitație și a propus o nouă dată pentru o singură apariție a acestui eveniment."
+        "${ participantName } a refuzat o invitație și a propus o nouă dată pentru o singură manifestare a acestui eveniment."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
         "${ participantName } a refuzat o invitație și a propus o nouă dată pentru acest eveniment."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } a refuzat o invitație la o singură ediție a evenimentului."
+        "${ participantName } a refuzat o invitație la o singură manifestare a evenimentului."
       ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } a refuzat o invitație la acest eveniment."
@@ -1396,16 +1408,16 @@
         "${ participantName } v-a refuzat invitația."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } a acceptat o invitație și a propus o nouă dată pentru o singură apariție a acestui eveniment. Răspunsul și propunerea sunt depășite."
+        "${ participantName } a acceptat o invitație și a propus o nouă dată pentru o manifestare a acestui eveniment. Răspunsul și propunerea sunt vechi."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } a acceptat o invitație și a propus o nouă dată pentru acest eveniment. Răspunsul și propunerea sunt depășite."
+        "${ participantName } a acceptat o invitație și a propus o nouă dată pentru acest eveniment. Răspunsul și propunerea sunt vechi."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } acceptase o invitație la o singură ediție a evenimentului."
+        "${ participantName } acceptase o invitație la o singură manifestare a evenimentului."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "${ participantName } a acceptat o invitație la acest eveniment."
+        "${ participantName } acceptase o invitație la acest eveniment."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } v-a acceptat invitația și a propus o nouă dată pentru una din manifestările acestui eveniment. Răspunsul și propunerea sunt depășite."
@@ -1414,16 +1426,16 @@
         "${ participantName } v-a acceptat invitația și a propus o nouă dată pentru acest eveniment. Răspunsul și propunerea sunt depășite."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } a refuzat o invitație și a propus o nouă dată pentru o singură apariție a acestui eveniment. Răspunsul și propunerea sunt depășite."
+        "${ participantName } a refuzat o invitație și a propus o nouă dată pentru o singură manifestare a acestui eveniment. Răspunsul și propunerea sunt vechi."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } a refuzat o invitație și a propus o nouă dată pentru acest eveniment. Răspunsul și propunerea sunt depășite."
+        "${ participantName } a refuzat o invitație și a propus o nouă dată pentru acest eveniment. Răspunsul și propunerea sunt vechi."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } a refuzat o invitație la o singură ediție a evenimentului."
+        "${ participantName } refuzase o invitație la o singură manifestare a evenimentului."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        "${ participantName } a refuzat o invitație la acest eveniment."
+        "${ participantName } refuzase o invitație la acest eveniment."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } v-a refuzat invitația și a propus un nou termen pentru una din manifestările acestui eveniment. Răspunsul și propunerea sunt depășite."
@@ -1468,16 +1480,16 @@
         "${ participantName } a propus o dată nouă pentru acest eveniment. Această propunere este expirată. Nu aveți calendare."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } a acceptat provizoriu o invitație și a propus o nouă dată pentru o singură ediție a acestui eveniment. Răspunsul și propunerea sunt depășite."
+        "${ participantName } a acceptat provizoriu o invitație și a propus o nouă dată pentru o singură manifestare a acestui eveniment. Răspunsul și propunerea sunt vechi."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } a acceptat provizoriu o invitație și a propus o nouă dată pentru acest eveniment. Răspunsul și propunerea sunt depășite."
+        "${ participantName } a acceptat provizoriu o invitație și a propus o nouă dată pentru acest eveniment. Răspunsul și propunerea sunt vechi."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } acceptase provizoriu o invitație la o singură ediție a evenimentului."
+        "${ participantName } acceptase provizoriu o invitație la o singură manifestare a evenimentului."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } a acceptat provizoriu o invitație la acest eveniment."
+        "${ participantName } acceptase provizoriu o invitație la acest eveniment."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } v-a acceptat provizoriu invitația și a propus o nouă dată pentru una din manifestările acestui eveniment. Răspunsul și propunerea sunt depășite."
@@ -1495,7 +1507,7 @@
         "${ participantName } a propus o dată nouă pentru acest eveniment."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } a acceptat, cu titlu provizoriu, o invitație și a propus o nouă dată pentru o singură ediție a acestui eveniment."
+        "${ participantName } a acceptat provizoriu invitația și a propus o dată nouă pentru o manifestare a acestui eveniment."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
         "${ participantName } a acceptat provizoriu o invitație și a propus o nouă dată pentru acest eveniment."
@@ -1597,14 +1609,14 @@
       "Calendar link is temporarily inaccessible": [
         "Legătura calendarului nu este disponibilă momentan."
       ],
-      "Calendar link is wrong": [
-        "Legătura calendarului este greșită."
-      ],
       "Failed to sync calendar": [
         "Eșuare sincronizare calendar."
       ],
       "More than 12 hours passed since last update": [
         "Au trecut mai mult de 12 ore de la ultima actualizare."
+      ],
+      "Unsupported calendar format": [
+        "Format de calendar neacceptat."
       ]
     },
     "Calendar widget banner": {
@@ -2496,21 +2508,21 @@
     },
     "Error adding participants to a calendar event": {
       "At most 100 participants are allowed per invitation": [
-        "Sunt permise cel mult 100 de participanți pe invitație"
+        "Sunt permiși cel mult 100 de participanți per invitație"
       ]
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Ciornele nu pot fi mutate în „Primite”."
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Ciornele nu pot fi mutate în „Nedorite”."
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Mesajele trimise nu pot fi mutate în „Primite”."
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Mesajele trimise nu pot fi mutate în „Nedorite”."
       ],
       "This action cannot be performed": [
         "Această acțiune nu poate fi efectuată"
@@ -3046,6 +3058,11 @@
       ],
       "Creating calendar event failed": [
         "Crearea evenimentului din calendar a eșuat"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "în pasul următor trebuie să selectați toate permisiunile"
       ]
     },
     "Import warning": {
@@ -4151,6 +4168,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Acest mesaj a fost adaptat pentru a se potrivi la fundalul întunecat."
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Acest mesaj este generat automat ca răspuns la un mesaj anterior."
       ],
@@ -4774,6 +4794,9 @@
       ],
       "Add to group": [
         "Adăugare la grup"
+      ],
+      "Address": [
+        "Adresa"
       ],
       "ALL": [
         "TOATE"
@@ -5764,6 +5787,11 @@
         "Parola a fost setată cu succes."
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Vă rugăm să rețineți că ${ boldNextStep } solicitat de aplicație pentru a începe importul."
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Înainte"
@@ -5835,6 +5863,9 @@
     "Option": {
       "Add to existing group": [
         "Adăugare la grup existent"
+      ],
+      "All": [
+        "Toate"
       ],
       "Create new group": [
         "Creare grup"
@@ -6997,7 +7028,7 @@
         "Adrese de e-mail"
       ],
       "Email content": [
-        ""
+        "Conținut e-mail"
       ],
       "Email settings": [
         "Setări e-mail"
@@ -7064,6 +7095,9 @@
       ],
       "Link confirmation": [
         "Legătură de confirmare"
+      ],
+      "Load embedded images": [
+        "Încărcare imagini încorporate"
       ],
       "Load remote content": [
         "Încărcare conținut extern"
@@ -7215,6 +7249,9 @@
       "Select contact group": [
         "Selectare grup contacte"
       ],
+      "Select permissions": [
+        "Selectați permisiunile"
+      ],
       "Select what to import": [
         "Selectare date de importat"
       ],
@@ -7241,9 +7278,6 @@
       ],
       "Sign in again to continue": [
         "Reconectați-vă pentru a continua"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Sortare conversații"
@@ -7341,6 +7375,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise"
       ],
+      "Encrypted data": [
+        "Date criptate"
+      ],
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
@@ -7415,6 +7452,14 @@
         "Parola trebuie să conțină cel puțin un caracter",
         "Parola trebuie să conțină cel puțin ${ length } caractere.",
         "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Faceți clic pentru redarea clipului"
+      ],
+      "Replay video": [
+        "Redare video"
       ]
     },
     "VPN feature": {

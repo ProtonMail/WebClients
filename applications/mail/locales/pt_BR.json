@@ -183,7 +183,7 @@
         "Confirmar"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Confirmar a abertura do link ${ linkToShow }"
       ],
       "Contact group": [
         "Grupo de contatos"
@@ -467,6 +467,9 @@
       "Load more": [
         "Carregar mais"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "Carregando verificação"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Tentar novamente"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Salvar"
       ],
@@ -750,7 +756,7 @@
         "Definir a data de vencimento"
       ],
       "Set recovery phrase": [
-        ""
+        "Definir frase de recuperação"
       ],
       "Share via link": [
         "Compartilhar via link"
@@ -803,6 +809,9 @@
       "Skip": [
         "Ignorar"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Algumas imagens não puderam ser carregadas com proteção contra rastreamento"
+      ],
       "Start import": [
         "Iniciar importação"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Esta mensagem contém imagens incorporadas."
+      ],
+      "This message contains remote content.": [
+        "Esta mensagem contém conteúdo remoto."
       ],
       "Trust": [
         "Confiar"
@@ -877,7 +889,7 @@
         "Atualizar o arquivo de recuperação"
       ],
       "Update recovery phrase": [
-        ""
+        "Atualizar frase de recuperação"
       ],
       "Upgrade": [
         "Upgrade"
@@ -1330,16 +1342,16 @@
         " Esta resposta não coincide com seus detalhes do convite. Verifique os detalhes do convite no seu calendário."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } aceitou um convite e propôs um novo horário para uma ocorrência deste evento."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } aceitou um convite e propôs um novo horário para este evento."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } aceitou um convite para uma ocorrência do evento."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } aceitou um convite para este evento."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } aceitou seu convite e propôs um novo horário para uma ocorrência deste evento."
@@ -1363,16 +1375,16 @@
         "${ participantName } solicitou as últimas atualizações de um evento que não existe mais no seu calendário."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } recusou um convite e propôs um novo horário para uma ocorrência deste evento."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } recusou um convite e propôs um novo horário para este evento."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } recusou um convite para uma ocorrência do evento."
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } recusou um convite para este evento."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } recusou seu convite e propôs um novo horário para uma ocorrência deste evento."
@@ -1387,16 +1399,16 @@
         "${ participantName } recusou o seu convite."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } havia aceito um convite e proposto um novo horário para uma ocorrências deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } havia aceito um convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } havia aceito um convite para uma ocorrência do evento."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "${ participantName } havia aceito um convite para este evento."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } havia aceitado seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
@@ -1405,16 +1417,16 @@
         "${ participantName } havia aceitado seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } havia recusado um convite e proposto um novo horário para uma ocorrências deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } havia recusado um convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } havia recusado um convite para uma ocorrência do evento."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } havia recusado um convite para este evento."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } havia recusado seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
@@ -1459,16 +1471,16 @@
         "${ participantName } havia proposto um novo horário para este evento. Esta proposta está desatualizada. Você não tem calendários."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } havia aceito provisoriamente um convite e proposto um novo horário para uma ocorrências deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } havia aceito provisoriamente um convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } havia aceito provisoriamente um convite para uma ocorrência do evento."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } havia aceito provisoriamente um convite para este evento."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } havia aceitado provisoriamente seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
@@ -1477,7 +1489,7 @@
         "${ participantName } havia aceitado provisoriamente seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } não está na lista de participantes."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } propôs um novo horário para uma ocorrência deste evento."
@@ -1486,16 +1498,16 @@
         "${ participantName } propôs um novo horário para este evento."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } aceitou provisoriamente um convite e propôs um novo horário para uma ocorrências deste evento."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } aceitou provisoriamente um convite e propôs um novo horário para este evento."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } aceitou provisoriamente um convite para uma ocorrência do evento."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } aceitou provisoriamente um convite para este evento."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } aceitou provisoriamente seu convite e propôs um novo horário para uma ocorrência deste evento."
@@ -1588,14 +1600,14 @@
       "Calendar link is temporarily inaccessible": [
         "O link do calendário está temporariamente inacessível"
       ],
-      "Calendar link is wrong": [
-        "Link do calendário está incorreto"
-      ],
       "Failed to sync calendar": [
         "Falha ao sincronizar calendário"
       ],
       "More than 12 hours passed since last update": [
         "Mais de 12 horas se passaram desde a última atualização"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar widget banner": {
@@ -2474,16 +2486,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Rascunhos não podem ser movidos para a caixa de entrada"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Rascunhos não podem ser movidos para Spam"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Mensagens enviadas não podem ser movidas para a caixa de entrada"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Mensagens enviadas não podem ser movidas para Spam"
       ],
       "This action cannot be performed": [
         "Essa ação não pode ser executada"
@@ -2646,7 +2658,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "Impossível enviar convite para ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -2821,10 +2833,10 @@
         "Complete todos os passos para obter um total de ${ totalGBStorageAfterCompletion } GB na sua conta"
       ],
       "Expires soon": [
-        ""
+        "Expira em breve"
       ],
       "Expires today": [
-        ""
+        "Expira hoje"
       ],
       "Only ${ days } day left": [
         "Resta apenas ${ days } dia",
@@ -3012,6 +3024,11 @@
       ],
       "Creating calendar event failed": [
         "Falha ao criar evento no calendário"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Esta mensagem é automaticamente gerada como uma resposta a uma mensagem anterior."
       ],
@@ -4685,6 +4705,9 @@
       "Add to group": [
         "Adicionar ao grupo"
       ],
+      "Address": [
+        "Endereço"
+      ],
       "ALL": [
         "TODOS"
       ],
@@ -4890,7 +4913,7 @@
         "Apenas no mês passado"
       ],
       "Location": [
-        ""
+        "Localização"
       ],
       "Mailbox password": [
         "Senha da caixa de correio"
@@ -5668,6 +5691,11 @@
         "A senha foi definida com sucesso"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Próximo"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Adicionar a um grupo existente"
+      ],
+      "All": [
+        "Todos"
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -6857,7 +6888,7 @@
         "Endereços de e-mail"
       ],
       "Email content": [
-        ""
+        "Conteúdo de e-mail"
       ],
       "Email settings": [
         "Configurações de e-mail"
@@ -6924,6 +6955,9 @@
       ],
       "Link confirmation": [
         "Confirmar redirecionamento"
+      ],
+      "Load embedded images": [
+        "Carregar imagens incorporadas"
       ],
       "Load remote content": [
         "Carregar conteúdo remoto"
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Selecionar grupo de contato"
       ],
+      "Select permissions": [
+        "Selecionar permissões"
+      ],
       "Select what to import": [
         "Selecione o que importar"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Inicie a sessão novamente para continuar"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Ordenar conversas"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "A criptografia de e-mail sempre utiliza a assinatura de e-mail para ajudar a autenticar as mensagens enviadas"
       ],
+      "Encrypted data": [
+        "Dados criptografados"
+      ],
       "Encrypted data with verified digital signature": [
         "Dados criptografados com assinatura digital verificada"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "A senha deve conter ao menos ${ length } caractere",
         "A senha deve conter ao menos ${ length } caracteres"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Clique para reproduzir o vídeo"
+      ],
+      "Replay video": [
+        "Reproduzir vídeo"
       ]
     },
     "VPN feature": {

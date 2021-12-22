@@ -44,7 +44,7 @@
         "Активировать ключ организации"
       ],
       "Activate recovery": [
-        ""
+        "Активировать восстановление"
       ],
       "Add": [
         "Добавить"
@@ -184,8 +184,8 @@
       "Confirm": [
         "Подтвердить"
       ],
-      "Confirm opening of link ${ link }": [
-        "Подтвердить открытие ссылки ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Подтвердите открытие ссылки ${ linkToShow }"
       ],
       "Contact support": [
         "Связаться с поддержкой"
@@ -382,8 +382,14 @@
       "Import": [
         "Импортировать"
       ],
+      "Import calendars": [
+        "Импортировать календари"
+      ],
       "Import contacts": [
         "Импортировать контакты"
+      ],
+      "Import emails": [
+        "Импортировать электронную почту"
       ],
       "Import from .csv or vCard": [
         "Импорт из .csv или vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Выбрать файлы"
       ],
+      "Select language for invitation emails": [
+        "Выберите язык для писем с приглашениями"
+      ],
       "Select plan": [
         "Выбрать тарифный план"
       ],
@@ -626,7 +635,7 @@
         "Задать ящик-ловушку (получает всю почту для домена)"
       ],
       "Set recovery phrase": [
-        ""
+        "Установить фразу для восстановления"
       ],
       "Share via link": [
         "Поделиться с помощью ссылки"
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Сортировать"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Начало ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Начать импорт"
@@ -1324,7 +1330,7 @@
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        ""
+        "Вы достигли максимального количества личных календарей, которые можно создать в рамках вашего тарифа."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Вы достигли максимума из ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } подписанного календаря.",
@@ -1366,14 +1372,14 @@
       "Calendar link is temporarily inaccessible": [
         "Ссылка на календарь временно недоступна"
       ],
-      "Calendar link is wrong": [
-        "Неверная ссылка календаря"
-      ],
       "Failed to sync calendar": [
         "Не удалось синхронизировать календарь"
       ],
       "More than 12 hours passed since last update": [
         "Более 12 часов прошло с момента последнего обновления"
+      ],
+      "Unsupported calendar format": [
+        "Неподдерживаемый формат календаря"
       ]
     },
     "Calendar view": {
@@ -1740,7 +1746,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "Событие «${ eventTitle }» было отменено."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } обновлено.\n${ eventDetailsText }"
@@ -1874,10 +1880,10 @@
         "Не могу найти адрес ${ email }."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Отмените выбор по крайней мере ${ calendarToFixCount } календаря или",
@@ -2120,10 +2126,10 @@
         "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        ""
+        "Ключи в вашем файле восстановления не могут быть проверены. Пожалуйста, обратитесь в службу поддержки."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        ""
+        "Ключи в ваших файлах восстановления не могут быть проверены. Пожалуйста, загрузите по отдельности для получения дополнительной информации."
       ],
       "The label name is too long. Please choose a different name.": [
         "Название ярлыка слишком длинное. Пожалуйста, выберите другое название."
@@ -2213,7 +2219,7 @@
         "Вы должны задать имя"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
+        "Ваш аккаунт или организация имеет просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
       ],
       "Your import will not be processed.": [
         "Ваш импорт не будет обработан."
@@ -2438,7 +2444,7 @@
         "Вложенный файл ICS невозможно расшифровать"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Невозможно прочитать вложенный файл ICS"
       ],
       "Invalid invitation": [
         "Недопустимое приглашение"
@@ -2778,10 +2784,10 @@
         "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "",
-        "",
-        "",
-        ""
+        "Произошла ошибка при шифровании и добавлении вашего события. ${ totalImported } из ${ totalToImport } событие успешно импортировано.",
+        "Произошла ошибка при шифровании и добавлении ваших событий. ${ totalImported } из ${ totalToImport } событий успешно импортировано.",
+        "Произошла ошибка при шифровании и добавлении ваших событий. ${ totalImported } из ${ totalToImport } событий успешно импортировано.",
+        "Произошла ошибка при шифровании и добавлении ваших событий. ${ totalImported } из ${ totalToImport } событий успешно импортировано."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано.",
@@ -2996,14 +3002,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Разрешите ProtonMail доступ к вашей учетной записи Gmail: выберите, включено ли ${ bold2Steps } и следуйте инструкциям ниже."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        "Нажмите ${ boldManage }, чтобы развернуть меню параметров"
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        "В зависимости от поставщика услуг электронной почты, вам может потребоваться сначала сгенерировать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать в Proton"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        "Разверните выпадающее меню, нажав на 3 точки (...)"
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Наконец, ${ googleMailLink } с аккаунтом, который вы бы хотели импортировать, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        "Перейдите в ${ boldAccountInfo } в своем профиле в ${ yahooMailLink }"
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        "Перейдите в ${ boldAccountSecurity }"
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Перейдите в ${ googleAccountLink }. В разделе ${ boldSecurity } для менее безопасных приложений, ${ boldAccess } . Если эта опция не отображается, то возможно двухэтапная проверка включена."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Перейдите к ${ googleAccountLink }. В разделе ${ boldSecurity } создайте ${ boldAppPassword } , если у вас его еще нет. Вам понадобится этот пароль во время импорта."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        "Перейдите в ${ securitySettingsLink } Outlook.com"
+      ],
+      "If 2-step verification is off, turn it on": [
+        "Если двухэтапная аутентификация выключена, включите ее"
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "В разделе ${ boldLabels } выберите папки, разрешенные для импорта в ProtonMail."
@@ -3013,6 +3046,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "Войдите в Yahoo Mail и нажмите на свое имя в правом верхнем углу, чтобы получить доступ к ${ boldAccountInfo }. В разделе ${ boldAccountSec } прокрутите страницу до раздела ${ boldAppPassword }, чтобы сгенерировать пароль приложения. Этот пароль понадобится вам во время импорта."
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        "Откройте контакты ${ yahooMailLink }"
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        "Откройте свои ${ outlookContactsLink } Outlook"
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        "Выберите ${ boldExportContacts } и определите, какие контакты нужно экспортировать"
+      ],
+      "Select ${ boldExportCSV }": [
+        "Выберите ${ boldExportCSV }"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Чтобы импортировать календарь в Proton, вам необходим ${ knowledgeBaseLink }. Загрузите его с Outlook в 3 простых шага:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Загрузите его с Yahoo в 3 простых шага:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Загрузите его перед началом процесса импорта"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Для импорта контактов в Proton вам необходим ${ knowledgeBaseLink }. Загрузите его с Outlook в 3 простых шага:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Для импорта контактов в Proton необходим ${ knowledgeBaseLink }. Загрузите его с Yahoo в 3 простых шага:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Чтобы импортировать контакты в Proton, вам понадобится ${ knowledgeBaseLink }. Загрузите его перед началом процесса импорта"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Для импорта электронной почты в Proton вам понадобится ${ appPasswordLink } из Outlook. Получите его, выполнив следующие действия:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Для импорта электронной почты в Proton вам понадобится ${ appPasswordLink } от Yahoo. Получите его, выполнив следующие действия:"
       ]
     },
     "Import instructions emphasis": {
@@ -3028,20 +3097,44 @@
       "app password": [
         "пароль приложения"
       ],
+      "Can view all details": [
+        "Можно просмотреть всю информацию"
+      ],
+      "Export": [
+        "Экспортировать"
+      ],
+      "Export contacts": [
+        "Экспортировать контакты"
+      ],
+      "Export to CSV file": [
+        "Экспорт в файл CSV"
+      ],
       "Forwarding and POP/IMAP": [
         "Перенаправление и POP/IMAP"
       ],
       "Gmail Settings": [
         "Настройки google mail"
       ],
+      "ICS": [
+        "ICS"
+      ],
       "IMAP access": [
         "Доступ по протоколу IMAP"
+      ],
+      "in the next step you need to select all the permissions": [
+        "на следующем шаге необходимо выбрать все разрешения"
       ],
       "Labels": [
         "Ярлыки"
       ],
+      "Manage": [
+        "Управлять"
+      ],
       "Other ways to sign in": [
         "Другие способы войти"
+      ],
+      "Publish a calendar": [
+        "Опубликовать календарь"
       ],
       "Security": [
         "Безопасность"
@@ -3075,6 +3168,55 @@
         "Как включить доступ для менее безопасных приложений в настройках Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        "пароль приложения"
+      ],
+      "app password or enable IMAP": [
+        "пароль приложения или включить IMAP"
+      ],
+      "contacts": [
+        "контакты"
+      ],
+      "CSV file": [
+        "файл CSV"
+      ],
+      "full calendar view": [
+        "полный вид календаря"
+      ],
+      "ICS file": [
+        "файл ICS"
+      ],
+      "security settings": [
+        "настройки безопасности"
+      ],
+      "shared calendars": [
+        "подписанные календари"
+      ],
+      "Yahoo Mail": [
+        "Yahoo Mail"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        "Нажмите на ссылку ${ boldICS } и скачайте файл"
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        "Перейдите к ${ calendarLink } в настройках Outlook.com"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        "Перейти в ${ calendarViewLink } в Yahoo Mail"
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        "Наведите курсор мыши на календарь, который вы хотите импортировать, и откройте выпадающее меню"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        "Выберите ${ boldExport } для экспорта календаря в формате файла ICS"
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        "В разделе ${ boldPublish } выберите календарь, который вы хотите импортировать. Установите разрешение на ${ boldCanViewAllDetails } и опубликуйте его"
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Двухэтапная проверка отключена (настройки по умолчанию)"
@@ -3086,6 +3228,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Вы уверены, что хотите импортировать закрытый ключ? Импорт небезопасно сгенерированного или утечка закрытого ключа может нанести вред безопасности вашей электронной почты.\n\nТакже обратите внимание, что открытый ключ, соответствующий этому закрытому ключу, будет находиться в открытом доступе на нашем сервере ключей. Если ключ содержит личные данные (например, ваше полное имя), которые вы не хотите публиковать, пожалуйста, отредактируйте ключ перед его импортом."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Другой"
       ]
     },
     "Import status": {
@@ -3133,10 +3280,10 @@
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "",
-        "",
-        "",
-        ""
+        "${ totalEventsDiscarded } из ${ totalEvents } событие не будет импортировано. Раскройте для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будут импортированы. Разверните для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будут импортированы. Разверните для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будут импортированы. Разверните для получения подробной информации."
       ],
       "No contact can be imported. Click for details": [
         "Не можем импортировать контакты. Нажмите, чтобы узнать подробности"
@@ -3153,7 +3300,7 @@
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        ""
+        "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } будет установлен как календарь по умолчанию."
@@ -3363,7 +3510,7 @@
         "Адреса"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
-        ""
+        "После сброса пароля ваши данные блокируются в зашифрованном виде для обеспечения их сохранности."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
@@ -3393,10 +3540,10 @@
         "Все ваши изменения будут потеряны."
       ],
       "Allow recovery by email": [
-        ""
+        "Разрешить восстановление по электронной почте"
       ],
       "Allow recovery by phone": [
-        ""
+        "Разрешить восстановление по номеру телефона"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Позволяет использовать почту с вашим доменным именем на ${ mailAppName }, например john.smith@example.com"
@@ -3435,7 +3582,7 @@
         "Вы уверены, что хотите удалить этот фильтр?"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        ""
+        "Вы уверены, что хотите удалить эту папку? Все дочерние папки также будут удалены."
       ],
       "Are you sure you want to delete this label?": [
         "Вы уверены, что хотите удалить этот ярлык?"
@@ -3642,7 +3789,7 @@
         "Снижение тарифа разорвет все действующие подключения к платным серверам ProtonVPN."
       ],
       "Download recovery file": [
-        ""
+        "Скачать файл восстановления"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
@@ -3659,9 +3806,6 @@
       "Edit label": [
         "Изменить ярлык"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Легко и безопасно перенесите свою электронную почту от текущего провайдера в Proton. Если вы пользуетесь Google, мы также поддерживаем импорт календаря и контактов."
-      ],
       "Email address": [
         "Адрес электронной почты"
       ],
@@ -3675,7 +3819,7 @@
         "Письма, помеченные этим ярлыком, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        ""
+        "Повторное включение восстановления по фразе приведет к созданию новой фразы восстановления."
       ],
       "Encryption setting updated": [
         "Настройка шифрования обновлена"
@@ -3851,6 +3995,9 @@
       "Import mailbox": [
         "Импорт почтового ящика"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Импортируйте свою электронную почту, календари и контакты из другой службы в Proton. Мы будем помогать вам на каждом шагу и шифровать ваши данные по мере их переноса. Добро пожаловать в мир конфиденциальности."
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "ВАЖНО: Скачивание ваших закрытых ключей и их рассылка или хранение их на незащищённых носителях может подвергнуть опасности защиту вашей учётной записи!"
       ],
@@ -3902,6 +4049,9 @@
       "Internet connection restored.": [
         "Соединение с интернет восстановлено."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        "Похоже, что некоторые из ваших данных зашифрованы и заблокированы. Вероятно, это связано с недавним или предыдущим сбросом пароля. Мы рекомендуем вам воспользоваться методом восстановления данных, чтобы разблокировать их."
+      ],
       "it’s imperative": [
         "это обязательно"
       ],
@@ -3919,6 +4069,9 @@
       ],
       "Label all imported messages as": [
         "Назначить всем импортированным сообщениям ярлык"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        "Язык, на котором будут отправляться ваши электронные письма, связанные с приглашениями."
       ],
       "Large imports can take several days to complete.": [
         "Большой импорт может занять несколько дней."
@@ -4086,13 +4239,13 @@
         "В вашей организации есть другие администраторы, ответственность сообщить им новый пароль лежит на вас."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        ""
+        "Устаревший файл восстановления; обновите его, чтобы обеспечить доступ к данным"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        ""
+        "Устаревшие методы восстановления; обновите их, чтобы обеспечить доступ к данным"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        ""
+        "Устаревшая фраза восстановления; обновите ее, чтобы обеспечить доступ к данным"
       ],
       "P2P": [
         "P2P"
@@ -4119,10 +4272,10 @@
         "Пожалуйста, введите пароль, которым будет зашифрован ваш закрытый ключ перед экспортом."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        ""
+        "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Пожалуйста, храните его в безопасности. Он понадобится вам для доступа к вашей учетной записи и расшифровки данных в случае сброса пароля."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Обратите внимание, что если вы удалите этот адрес, вы больше не сможете отправлять или получать письма, используя этот адрес."
@@ -4248,7 +4401,7 @@
         "Сохраните ваш пароль в безопасном месте."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
-        ""
+        "Сохраните свой пароль в безопасном месте. Нажмите на значок, чтобы подтвердить правильность ввода пароля."
       ],
       "Scan QR code instead": [
         "Сканировать QR-код"
@@ -4259,11 +4412,11 @@
       "Screenshot(s) attached": [
         "Снимки экрана прикреплены"
       ],
-      "Select a service provider to get started": [
-        "Выберите поставщика услуг, чтобы начать"
+      "Select a service provider to start": [
+        "Выберите поставщика услуг для начала работы"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
       ],
       "Server is currently down": [
         "Сервер сейчас не работает"
@@ -4278,7 +4431,7 @@
         "Время сессии истекло."
       ],
       "Set recovery phrase": [
-        ""
+        "Установить фразу для восстановления"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
@@ -4353,16 +4506,16 @@
         "Эта функция предназначена только для опытных пользователей! После удаления этого ключа вы не сможете расшифровать зашифрованные им сообщения. Это может привести к потере данных."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
-        ""
+        "Это фраза из 12 слов, которую вам было предложено задать."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Это файл восстановления или ключ шифрования, который вы могли сохранить ранее."
       ],
       "This is an encryption key you may have previously saved.": [
-        ""
+        "Это ключ шифрования, который вы могли сохранить ранее."
       ],
       "This is the password you used before the password reset.": [
-        ""
+        "Это пароль, который вы использовали до сброса пароля."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого, и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
@@ -4386,7 +4539,7 @@
         "Это действие создаст ключ шифрования для вашей организации. 4096-битные ключи работают только на высокопроизводительных компьютерах. Большинству пользователей мы рекомендуем использовать 2048-битные ключи."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        ""
+        "Это отключит вашу текущую фразу восстановления. Вы не сможете использовать ее для доступа к своему аккаунту или для расшифровки данных."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед тем, как продолжить."
@@ -4401,7 +4554,7 @@
         "Это заменит ваш временный пароль. Вы будете использовать это для доступа к вашей учетной записи в ${ BRAND_NAME } в будущем."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
+        "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем сделать это, так как двухфакторная аутентификация повышает безопасность учётной записи."
@@ -4416,16 +4569,16 @@
         "чтобы продолжить в ${ toAppName }"
       ],
       "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        ""
+        "Для расшифровки и просмотра писем и других данных необходим файл восстановления или фраза восстановления."
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        ""
+        "Для расшифровки и просмотра писем и других данных необходим файл восстановления."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        ""
+        "Для расшифровки и просмотра писем и других данных необходима фраза восстановления."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        ""
+        "Чтобы расшифровать и просмотреть заблокированные данные после сброса пароля, выберите метод восстановления."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -4437,7 +4590,7 @@
         "Чтобы подготовить свою внешнюю учетную запись для импорта, следуйте инструкциям:"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        ""
+        "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Чтобы защитить ваше интернет-соединение, скачайте и установите приложение ProtonVPN для вашего устройства и подключитесь к серверу ProtonVPN."
@@ -4479,10 +4632,10 @@
         "Неподдерживаемый файл"
       ],
       "Update recovery file": [
-        ""
+        "Обновить файл восстановления"
       ],
       "Update recovery phrase": [
-        ""
+        "Обновить фразу для восстановления"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Переходите на план ${ PLAN_NAMES[PLANS.VISIONARY] } или ${ PLAN_NAMES[PLANS.PROFESSIONAL] } чтобы включить автоматические ответы в то время, когда ват нет в офисе."
@@ -4542,7 +4695,7 @@
         "Мы советуем вам по возможности использовать официальные приложения ProtonVPN."
       ],
       "We recommend using your recovery phrase instead.": [
-        ""
+        "Мы рекомендуем использовать вместо этого вашу фразу восстановления."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Мы используем 3-D Secure для защиты ваших платежей."
@@ -4572,10 +4725,10 @@
         "Отображение недели и месяца применяются только к рабочему столу."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        ""
+        "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        ""
+        "Мы отправим код сброса на номер телефона, который вы указали для восстановления аккаунта."
       ],
       "What do you want to import from your Google account?": [
         "Что вы хотите импортировать из своего аккаунта Google?"
@@ -4614,7 +4767,7 @@
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Вы также можете объединить импортированные календари с существующими календарями Proton."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить процесс ${ importProgressLink }."
@@ -4630,6 +4783,9 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Вы можете включить логи аутентификации, чтобы видеть в какое время и с какого IP-адреса производился доступ к учётной записи. Мы будем записывать IP-адреса, которые имели доступ к учётной записи, а также время посещения и неудачные попытки входа."
+      ],
+      "You can import one data type at a time.": [
+        "Вы можете импортировать один тип данных за один раз."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Теперь вы можете получать сообщения с Вашего адреса @pm.me. Перейдите на платный план, чтобы отправлять письма по адресу @pm.me и создавать дополнительные адреса @pm.me."
@@ -4669,6 +4825,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "У вас должен быть календарь, чтобы создать ссылку."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        "Для импорта событий из .ics необходимо иметь активный личный календарь."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Вам нужен активный календарь, чтобы начать импорт событий."
@@ -4717,9 +4876,6 @@
       ],
       "Your Block List is empty.": [
         "Список блокируемых пуст."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
@@ -5207,7 +5363,7 @@
         "${ UsedMembers } из ${ MaxMembers } пользователя(ей)"
       ],
       "(Coming soon)": [
-        ""
+        "(Скоро появится)"
       ],
       "Account storage": [
         "Хранилище учётной записи"
@@ -5374,6 +5530,9 @@
       "Credits used": [
         "Кредитов использовано"
       ],
+      "Current login password": [
+        "Текущий пароль для входа"
+      ],
       "Customize invoices": [
         "Настройка счетов"
       ],
@@ -5391,6 +5550,9 @@
       ],
       "Default language": [
         "Язык по умолчанию"
+      ],
+      "Default language (${ defaultLanguage })": [
+        "Язык по умолчанию (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Схема PGP по умолчанию"
@@ -5678,7 +5840,7 @@
         "Фраза"
       ],
       "Phrase consists of 12 unique words in a specific order": [
-        ""
+        "Фраза состоит из 12 уникальных слов, расположенных в определенном порядке"
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Пожалуйста, добавьте все три указанные CNAME-записи. Заметьте, что обновление DNS-записей может занять несколько часов."
@@ -5748,6 +5910,9 @@
       ],
       "Select your country": [
         "Выберите вашу страну"
+      ],
+      "Send and reply to invites in": [
+        "Отправлять приглашения и отвечать на них в"
       ],
       "Send auto-reply": [
         "Отправить автоответ"
@@ -5843,10 +6008,10 @@
         "Отмена отправки"
       ],
       "Upload 1 or more encryption keys": [
-        ""
+        "Загрузите 1 или несколько ключей шифрования"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        ""
+        "Загрузите 1 или несколько файлов восстановления или ключей шифрования"
       ],
       "URL": [
         "Адрес"
@@ -6317,6 +6482,35 @@
         "Доступна новая версия ${ appName } . ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Как импортировать календари из другой службы"
+      ],
+      "How to import calendars from Outlook": [
+        "Как импортировать календари из Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Как импортировать календари из Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Как импортировать контакты из другого сервиса"
+      ],
+      "How to import contacts from Outlook": [
+        "Как импортировать контакты из Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Как импортировать контакты из Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Как импортировать электронную почту из другой службы"
+      ],
+      "How to import emails from Outlook": [
+        "Как импортировать электронную почту из Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Как импортировать электронную почту из Yahoo"
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Добавить календарь"
@@ -6347,10 +6541,10 @@
         "Каждые ${ interval } месяца ${ onDayString } в ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Каждый ${ interval } месяц ${ onDayString } до ${ untilString }",
-        "Каждые ${ interval } месяца ${ onDayString } до ${ untilString }",
-        "Каждые ${ interval } месяцев ${ onDayString } до ${ untilString }",
-        "Каждые ${ interval } месяцев ${ onDayString } до ${ untilString }"
+        "Каждый ${ interval } месяц ${ onDayString } ${ untilString }",
+        "Каждые ${ interval } месяца ${ onDayString } ${ untilString }",
+        "Каждые ${ interval } месяцев ${ onDayString } ${ untilString }",
+        "Каждые ${ interval } месяца ${ onDayString } ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
@@ -6359,7 +6553,7 @@
         "Ежемесячно ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Ежемесячно ${ onDayString }, ${ untilString }"
+        "Ежемесячно ${ onDayString } ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -6564,6 +6758,11 @@
         "недели до",
         "недель до",
         "недель до"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Обратите внимание, что ${ boldNextStep } запрашивается приложением для начала импорта."
       ]
     },
     "Onboarding Proton": {
@@ -7225,6 +7424,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        "Перейдите к конфиденциальности. Легко и надежно."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Вы можете применить несколько меток к одному сообщению, но сообщения, как правило, могут быть только в одной папке. Перетащите и перемещайте, чтобы изменить порядок ваших папок и меток."
       ]
@@ -7422,7 +7624,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } скопировано в ваш буфер обмена"
       ],
       "Account deleted. Logging out...": [
         "Учётная запись удалена. Производится выход..."
@@ -8149,6 +8351,9 @@
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
+      "Invitations": [
+        "Приглашения"
+      ],
       "Invoices": [
         "Счета"
       ],
@@ -8329,6 +8534,9 @@
       "Select contact group": [
         "Выбор группы контактов"
       ],
+      "Select permissions": [
+        "Выберите разрешения"
+      ],
       "Select plan": [
         "Выберите тарифный план"
       ],
@@ -8460,6 +8668,9 @@
       ],
       "Warning!": [
         "Предупреждение!"
+      ],
+      "What would you like to import?": [
+        "Что бы вы хотели импортировать?"
       ],
       "What's new": [
         "Что нового"
@@ -8727,13 +8938,13 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "Сегодня хороший день, чтобы написать письмо"
       ],
       "Update default font and size": [
         "Шрифт и размер шрифта по умолчанию"
       ],
       "Your default font will look like following:": [
-        ""
+        "Ваш шрифт по умолчанию будет выглядеть следующим образом:"
       ]
     },
     "Upgrade": {
@@ -8772,6 +8983,14 @@
         "Пароль должен включать по меньшей мере ${ length } символа",
         "Пароль должен включать по меньшей мере ${ length } символов",
         "Пароль должен включать по меньшей мере ${ length } символов"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Нажмите, чтобы воспроизвести видео"
+      ],
+      "Replay video": [
+        "Воспроизвести видео"
       ]
     },
     "VPN feature": {
@@ -9013,10 +9232,10 @@
         "Вы больше не увидите в списке эту запись об импорте."
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Ваш файл восстановления устарел. Он не сможет восстановить новые данные, если вы снова сбросите учетную запись."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Ваша фраза восстановления устарела. Она не сможет восстановить новые данные, если вы снова сбросите учетную запись."
       ]
     },
     "Warning for domain modal": {
@@ -9046,10 +9265,10 @@
         "Каждые ${ interval } недель ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Каждую ${ interval } неделю по ${ multipleDaysString } до ${ untilString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString } до ${ untilString }",
-        "Каждые ${ interval } недель по ${ multipleDaysString } до ${ untilString }",
-        "Каждые ${ interval } недель по ${ multipleDaysString } до ${ untilString }"
+        "Каждую ${ interval } неделю по ${ multipleDaysString } ${ untilString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString } ${ untilString }",
+        "Каждые ${ interval } недель по ${ multipleDaysString } ${ untilString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString } ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Каждую ${ interval } неделю, каждый день",
@@ -9064,10 +9283,10 @@
         "Каждые ${ interval } недели во все дни, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Каждую ${ interval } неделю каждый день до ${ untilString }",
-        "Каждые ${ interval } недели каждый день до ${ untilString }",
-        "Каждые ${ interval } недель каждый день до ${ untilString }",
-        "Каждые ${ interval } недель каждый день до ${ untilString }"
+        "Каждую ${ interval } неделю каждый день ${ untilString }",
+        "Каждые ${ interval } недели каждый день ${ untilString }",
+        "Каждые ${ interval } недель каждый день ${ untilString }",
+        "Каждые ${ interval } недели каждый день ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Каждую ${ interval } неделю по пятницам",
@@ -9082,10 +9301,10 @@
         "Каждые ${ interval } недель в пятницу, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Каждую ${ interval } неделю в пятницу до ${ untilString }",
-        "Каждые ${ interval } недели в пятницу до ${ untilString }",
-        "Каждые ${ interval } недель в пятницу до ${ untilString }",
-        "Каждые ${ interval } недель в пятницу до ${ untilString }"
+        "Каждую ${ interval } неделю в пятницу ${ untilString }",
+        "Каждые ${ interval } недели в пятницу ${ untilString }",
+        "Каждые ${ interval } недель в пятницу ${ untilString }",
+        "Каждые ${ interval } недели в пятницу ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Каждую ${ interval } неделю по понедельникам",
@@ -9100,10 +9319,10 @@
         "Каждые ${ interval } недель по понедельникам в ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Каждую ${ interval } неделю в понедельник до ${ untilString }",
-        "Каждые ${ interval } недели в понедельник до ${ untilString }",
-        "Каждые ${ interval } недель в понедельник до ${ untilString }",
-        "Каждые ${ interval } недель в понедельник до ${ untilString }"
+        "Каждую ${ interval } неделю в понедельник ${ untilString }",
+        "Каждые ${ interval } недели в понедельник ${ untilString }",
+        "Каждые ${ interval } недель в понедельник ${ untilString }",
+        "Каждые ${ interval } недели в понедельник ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Каждую ${ interval } неделю по субботам",
@@ -9118,10 +9337,10 @@
         "Каждые ${ interval } недель в субботу, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Каждую ${ interval } неделю в субботу до ${ untilString }",
-        "Каждые ${ interval } недели в субботу до ${ untilString }",
-        "Каждые ${ interval } недель в субботу до ${ untilString }",
-        "Каждые ${ interval } недель в субботу до ${ untilString }"
+        "Каждую ${ interval } неделю в субботу ${ untilString }",
+        "Каждые ${ interval } недели в субботу ${ untilString }",
+        "Каждые ${ interval } недель в субботу ${ untilString }",
+        "Каждые ${ interval } недели в субботу ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Каждую ${ interval } неделю по воскресеньям",
@@ -9136,10 +9355,10 @@
         "Каждые ${ interval } недели по воскресеньям, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Каждую ${ interval } неделю в воскресенье до ${ untilString }",
-        "Каждые ${ interval } недели в воскресенье до ${ untilString }",
-        "Каждые ${ interval } недель в воскресенье до ${ untilString }",
-        "Каждые ${ interval } неделиь в воскресенье до ${ untilString }"
+        "Каждую ${ interval } неделю в воскресенье ${ untilString }",
+        "Каждые ${ interval } недели в воскресенье ${ untilString }",
+        "Каждые ${ interval } недель в воскресенье ${ untilString }",
+        "Каждые ${ interval } недели в воскресенье ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Каждую ${ interval } неделю по четвергам",
@@ -9154,10 +9373,10 @@
         "Каждые ${ interval } недель в четверг, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Каждую ${ interval } неделю в четверг до ${ untilString }",
-        "Каждые ${ interval } недели в четверг до ${ untilString }",
-        "Каждые ${ interval } недель в четверг до ${ untilString }",
-        "Каждые ${ interval } недель в четверг до ${ untilString }"
+        "Каждую ${ interval } неделю в четверг ${ untilString }",
+        "Каждые ${ interval } недели в четверг ${ untilString }",
+        "Каждые ${ interval } недель в четверг ${ untilString }",
+        "Каждые ${ interval } недели в четверг ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Каждую ${ interval } неделю по вторникам",
@@ -9172,10 +9391,10 @@
         "Каждые ${ interval } недель в вторник, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Каждую ${ interval } неделю во вторник до ${ untilString }",
-        "Каждые ${ interval } недели во вторник до ${ untilString }",
-        "Каждые ${ interval } недель во вторник до ${ untilString }",
-        "Каждые ${ interval } недель во вторник до ${ untilString }"
+        "Каждую ${ interval } неделю во вторник ${ untilString }",
+        "Каждые ${ interval } недели во вторник ${ untilString }",
+        "Каждые ${ interval } недель во вторник ${ untilString }",
+        "Каждые ${ interval } недель во вторник ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Каждую ${ interval } неделю по средам",
@@ -9190,10 +9409,10 @@
         "Каждые ${ interval } недель в среду, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Каждую ${ interval } неделю а среду до ${ untilString }",
-        "Каждые ${ interval } недели а среду до ${ untilString }",
-        "Каждые ${ interval } недель а среду до ${ untilString }",
-        "Каждые ${ interval } недель а среду до ${ untilString }"
+        "Каждую ${ interval } неделю в среду ${ untilString }",
+        "Каждые ${ interval } недели в среду ${ untilString }",
+        "Каждые ${ interval } недель в среду ${ untilString }",
+        "Каждые ${ interval } недели в среду ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Еженедельно по следующим дням: ${ multipleDaysString }"
@@ -9202,7 +9421,7 @@
         "Еженедельно по следующим дням: ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Еженедельно по следующим дням: ${ multipleDaysString }, ${ untilString }"
+        "Еженедельно в ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Еженедельно каждый день"
@@ -9220,7 +9439,7 @@
         "Еженедельно по пятницам, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Еженедельно по пятницам, ${ untilString }"
+        "Еженедельно по пятницам ${ untilString }"
       ],
       "Weekly on Monday": [
         "Еженедельно в понедельник"
@@ -9229,7 +9448,7 @@
         "Еженедельно по понедельникам, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Еженедельно по понедельникам, ${ untilString }"
+        "Еженедельно по понедельникам ${ untilString }"
       ],
       "Weekly on Saturday": [
         "Еженедельно в субботу"
@@ -9238,7 +9457,7 @@
         "Еженедельно по субботам, ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Еженедельно по субботам, ${ untilString }"
+        "Еженедельно по субботам ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Еженедельно в воскресенье"
@@ -9247,7 +9466,7 @@
         "Еженедельно по воскресеньям, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Еженедельно по воскресеньям, ${ untilString }"
+        "Еженедельно по воскресеньям ${ untilString }"
       ],
       "Weekly on Thursday": [
         "Еженедельно в четверг"
@@ -9256,7 +9475,7 @@
         "Еженедельно по четвергам, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Еженедельно по четвергам, ${ untilString }"
+        "Еженедельно по четвергам ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Еженедельно по вторникам"
@@ -9265,7 +9484,7 @@
         "Еженедельно по вторникам, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Еженедельно по вторникам, ${ untilString }"
+        "Еженедельно по вторникам ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Еженедельно по средам"
@@ -9274,7 +9493,7 @@
         "Еженедельно по средам, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Еженедельно по средам, ${ untilString }"
+        "Еженедельно по средам ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -9327,8 +9546,8 @@
       "Every ${ interval } year, ${ untilString }": [
         "Каждый ${ interval } год, ${ untilString }",
         "Каждые ${ interval } года, ${ untilString }",
-        "Каждые ${ interval } лет, ${ untilString }",
-        "Каждые ${ interval } года, ${ untilString }"
+        "Каждые ${ interval } лет ${ untilString }",
+        "Каждые ${ interval } года ${ untilString }"
       ],
       "Yearly": [
         "Ежегодно"
@@ -9337,7 +9556,7 @@
         "Ежегодно, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Ежегодно, ${ untilString }"
+        "Ежегодно ${ untilString }"
       ]
     }
   }

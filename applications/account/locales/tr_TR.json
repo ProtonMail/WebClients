@@ -184,8 +184,8 @@
       "Confirm": [
         "Onayla"
       ],
-      "Confirm opening of link ${ link }": [
-        "${ link } bağlantısını açmayı onaylayın"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact support": [
         "İletişim desteği"
@@ -382,8 +382,14 @@
       "Import": [
         "İçe aktar"
       ],
+      "Import calendars": [
+        ""
+      ],
       "Import contacts": [
         "Kişileri içe aktar"
+      ],
+      "Import emails": [
+        ""
       ],
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından iç aktar"
@@ -604,6 +610,9 @@
       "Select files": [
         "Dosyaları seç"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Plan seçin"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Sırala"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
       ],
       "Start import": [
         "İçe aktarmayı başlat"
@@ -794,10 +800,10 @@
         "Faturayı görüntüle"
       ],
       "Void all recovery files": [
-        ""
+        "Tüm kurtarma dosyalarını geçersiz kıl"
       ],
       "Void all recovery files?": [
-        ""
+        "Tüm kurtarma dosyaları geçersiz kılınsın mı?"
       ],
       "Void anyway": [
         ""
@@ -1346,14 +1352,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "Takvim bağlantısı yanlış"
-      ],
       "Failed to sync calendar": [
         "Takvim senkronize edilemedi"
       ],
       "More than 12 hours passed since last update": [
         "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2930,14 +2936,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Protonmail'in Gmail hesabınıza erişmesine izin verin: { bold2Steps } seçeneğinin etkin olup olmadığını seçin ve aşağıdaki adımları izleyin."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Son olarak, içe aktarmak istediğiniz hesapla ${ googleMailLink }, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "${ googleAccountLink } adresine gidin. ${ boldSecurity } bölümünde, daha az güvenli uygulamalar için ${ boldAccess }. Bu seçeneği görmüyorsanız, 2 adımlı doğrulamayı etkinleştirmiş olabilirsiniz."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "${ googleAccountLink } adresine gidin. ${ boldSecurity } bölümünde, zaten bir tane yoksa bir ${ boldAppPassword } oluşturun. İçe aktarma sırasında bu parolaya ihtiyacınız olacak."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "${ boldLabels } bölümünde, ProtonMail'e aktarılmasına izin verilen klasörleri seçin."
@@ -2946,6 +2979,42 @@
         "${ boldGmailSettings } altında bulunan ${ boldForwarding } ayarına gidip ${ boldIMAPAccess } seçeneğinin etkin olduğundan emin olun."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
+        ""
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         ""
       ]
     },
@@ -2962,19 +3031,43 @@
       "app password": [
         "uygulama parolası"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Export to CSV file": [
+        ""
+      ],
       "Forwarding and POP/IMAP": [
         "Yönlendirme ve POP/IMAP"
       ],
       "Gmail Settings": [
         "Gmail Ayarları"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "IMAP erişimi"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Etiketler"
       ],
+      "Manage": [
+        ""
+      ],
       "Other ways to sign in": [
+        ""
+      ],
+      "Publish a calendar": [
         ""
       ],
       "Security": [
@@ -3009,6 +3102,55 @@
         "Gmail ayarlarında Daha Az Güvenli Uygulamalar için erişim nasıl açılır"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        ""
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        ""
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        ""
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "2 adımlı doğrulama devre dışı bırakıldı (varsayılan ayarlar)"
@@ -3020,6 +3162,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Özel bir anahtarı içe aktarmak istediğinize emin misiniz? Güvensizce üretilmiş ya da sızdırılmış özel anahtarı içe aktarmak e-postalarınızın güvenliğine zarar verebilir.\n\nAyrıca bu özel anahtara karşılık gelen genel anahtarın, anahtar sunucularımızda genel erişimli olacağını da lütfen dikkate alın. Anahtar, paylaşmak istemediğiniz kişisel ayrıntıları içeriyorsa (tam adınız gibi) içe aktarmadan önce lütfen düzenleyiniz."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        ""
       ]
     },
     "Import status": {
@@ -3429,7 +3576,7 @@
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" seçeneğine tıklayın."
       ],
       "Close this screen to exit.": [
-        ""
+        "Çıkmak için bu ekranı kapatın."
       ],
       "Connections": [
         "Bağlantı"
@@ -3546,9 +3693,6 @@
       ],
       "Edit label": [
         "Etiketi düzenle"
-      ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
       ],
       "Email address": [
         "E-posta Adresi"
@@ -3732,10 +3876,13 @@
         ""
       ],
       "Import in progress": [
-        ""
+        "İçe aktarma devam ediyor"
       ],
       "Import mailbox": [
         "Posta kutusunu içe aktar"
+      ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "ÖNEMLİ: Özel anahtarlarınızı indirmek ve onları göndermek ya da güvenli olmayan bir ortamda saklamak, hesabınızın güvenliğini tehlikeye atabilir!"
@@ -3788,6 +3935,9 @@
       "Internet connection restored.": [
         "İnternet bağlantısı tekrar sağlandı."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        ""
+      ],
       "it’s imperative": [
         ""
       ],
@@ -3805,6 +3955,9 @@
       ],
       "Label all imported messages as": [
         "İçe aktarılan tüm iletileri şu şekilde etiketle"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "Büyük boyutlu içe aktarmalar bir kaç gün sürebilir."
@@ -4005,7 +4158,7 @@
         "Lütfen dışa aktarmadan önce özel anahtarınızı şifrelemek için bir parola girin."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        ""
+        "Lütfen hesabınızla ilişkili 12 kelimelik kurtarma ifadesini girin."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -4143,7 +4296,7 @@
       "Screenshot(s) attached": [
         "Ekran görüntüsü eklendi"
       ],
-      "Select a service provider to get started": [
+      "Select a service provider to start": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -4417,7 +4570,7 @@
         "VPN + ${ mailAppName } aileler ve küçük işletmeler için paket."
       ],
       "Warning:": [
-        ""
+        "Uyarı:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Uyarı: Silme işlemi kalıcıdır. Bu işlem ayrıca, tüm bağlı hizmetlere erişimi keser ve tüm kişilerinizi siler."
@@ -4456,7 +4609,7 @@
         "Hafta ve ay görünümleri yalnızca masaüstü için geçerlidir."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        ""
+        "Hesap kurtarma için verdiğiniz e-posta adresine bir sıfırlama kodu göndereceğiz."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         ""
@@ -4515,6 +4668,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Hesabınıza ne zaman ve hangi IP'den erişildiğini görmek için kimlik doğrulama günlüğünü etkinleştirebilirsiniz. Başarısız denemelerin yanı sıra hesaba erişen IP adresini ve saati de kaydedeceğiz."
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Artık, @pm.me adresine iletilerinizi alabilirsiniz. @pm.me adresinizi kullanarak e-postalar göndermek ve ek olarak @pm.me adresleri oluşturmak için paralı bir plana yükseltin."
       ],
@@ -4553,6 +4709,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Bağlantı oluşturmak için kişisel bir takviminizin olması gerekir."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "Etkinliklerinizi içeri aktarmak için aktif bir takviminizin olması gerekir."
@@ -4601,9 +4760,6 @@
       ],
       "Your Block List is empty.": [
         "Engel listeniz boş."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5083,7 +5239,7 @@
         "${ MaxMembers } kullanıcıdan ${ UsedMembers } tanesi"
       ],
       "(Coming soon)": [
-        ""
+        "(Çok yakında)"
       ],
       "Account storage": [
         "Hesap depolama alanı"
@@ -5104,7 +5260,7 @@
         "TÜMÜ"
       ],
       "All-day event notifications": [
-        ""
+        "Tüm gün etkinlik bildirimleri"
       ],
       "Allow recovery by email": [
         "E-posta ile kurtarmaya izin ver"
@@ -5155,7 +5311,7 @@
         "Kişileri otomatik olarak kaydet"
       ],
       "Block email tracking": [
-        ""
+        "E-posta takibini engelle"
       ],
       "bonus storage": [
         "fazladan depolama"
@@ -5194,7 +5350,7 @@
         "Kod"
       ],
       "Color": [
-        ""
+        "Renk"
       ],
       "Composer": [
         "Oluşturucu"
@@ -5250,6 +5406,9 @@
       "Credits used": [
         "Krediler kullanıldı"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Faturaları özelleştirin"
       ],
@@ -5267,6 +5426,9 @@
       ],
       "Default language": [
         "Varsayılan dil"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         ""
@@ -5347,10 +5509,10 @@
         "Anahtar için parmak iziyle parolayı girin: ${ fingerprintCode }"
       ],
       "Event duration": [
-        ""
+        "Etkinlik süresi"
       ],
       "Event notifications": [
-        ""
+        "Etkinlik bildirimleri"
       ],
       "Expires": [
         "Bitiş tarihi"
@@ -5518,7 +5680,7 @@
         "İşletim sistemi sürümü"
       ],
       "Optional": [
-        ""
+        "İsteğe bağlı"
       ],
       "OR": [
         "VEYA"
@@ -5587,7 +5749,7 @@
         "Orantı"
       ],
       "Protection mode": [
-        ""
+        "Koruma modu"
       ],
       "Proton username": [
         "Proton kullanıcı adı"
@@ -5605,7 +5767,7 @@
         ""
       ],
       "Recovery file": [
-        ""
+        "Kurtarma dosyası"
       ],
       "Recovery phone number": [
         ""
@@ -5624,6 +5786,9 @@
       ],
       "Select your country": [
         "Ülkenizi seçin"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Otomatik yanıt gönder"
@@ -5719,7 +5884,7 @@
         "Göndermeyi geri al"
       ],
       "Upload 1 or more encryption keys": [
-        ""
+        "1 veya daha fazla şifreleme anahtarı yükleyin"
       ],
       "Upload 1 or more recovery files or encryption keys": [
         ""
@@ -6185,6 +6350,35 @@
         "${ appName } uygulamasının yeni sürümü mevcut. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        ""
+      ],
+      "How to import calendars from Outlook": [
+        ""
+      ],
+      "How to import calendars from Yahoo": [
+        ""
+      ],
+      "How to import contacts from another service": [
+        ""
+      ],
+      "How to import contacts from Outlook": [
+        ""
+      ],
+      "How to import contacts from Yahoo": [
+        ""
+      ],
+      "How to import emails from another service": [
+        ""
+      ],
+      "How to import emails from Outlook": [
+        ""
+      ],
+      "How to import emails from Yahoo": [
+        ""
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Takvim ekle"
@@ -6418,6 +6612,11 @@
       "week before": [
         "hafta önceden",
         "hafta önceden"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7077,6 +7276,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Tek bir iletiye birden çok etiket uygulayabilirsiniz, ancak iletiler genellikle yalnızca tek bir klasörde olabilir. Klasörlerinizin ve etiketlerinizin sırasını yeniden düzenlemek için sürükleyip bırakın."
       ]
@@ -7782,7 +7984,7 @@
         "Özel filtreler"
       ],
       "Customize and confirm": [
-        ""
+        "Özelleştir ve onayla"
       ],
       "Customize calendar import": [
         ""
@@ -7863,7 +8065,7 @@
         "Engellenen listesini düzenle"
       ],
       "Edit calendar": [
-        ""
+        "Takvimi düzenle"
       ],
       "Edit credit/debit card": [
         "Kredi/banka kartını düzenleyin"
@@ -7994,6 +8196,9 @@
       ],
       "Invalid verification code": [
         "Geçersiz doğrulama kodu"
+      ],
+      "Invitations": [
+        ""
       ],
       "Invoices": [
         "Faturalar"
@@ -8175,6 +8380,9 @@
       "Select contact group": [
         "Kişi grubunu seç"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "Tarife seçin"
       ],
@@ -8236,7 +8444,7 @@
         "İstenmeyen filtreleri"
       ],
       "Spy Tracker Protection": [
-        ""
+        "Casus İzleyici Koruması"
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
@@ -8306,6 +8514,9 @@
       ],
       "Warning!": [
         "Uyarı!"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Yenilikler"
@@ -8612,6 +8823,14 @@
       "Password must contain at least ${ length } character": [
         "Parola en az ${ length } karakter barındırmalıdır",
         "Parola en az ${ length } karakter içermelidir"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

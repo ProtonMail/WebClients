@@ -44,7 +44,7 @@
         "Ενεργοποιήστε το κλειδί οργανισμού"
       ],
       "Activate recovery": [
-        ""
+        "Ενεργοποίηση ανάκτησης"
       ],
       "Add": [
         "Προσθήκη"
@@ -184,8 +184,8 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
-      "Confirm opening of link ${ link }": [
-        "Επιβεβαίωση ανοίγματος συνδέσμου ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact support": [
         "Επικοινωνήστε με την υποστήριξη πελατών"
@@ -382,8 +382,14 @@
       "Import": [
         "Εισαγωγή"
       ],
+      "Import calendars": [
+        ""
+      ],
       "Import contacts": [
         "Εισαγωγή επαφών"
+      ],
+      "Import emails": [
+        ""
       ],
       "Import from .csv or vCard": [
         "Εισαγωγή από αρχείο .csv ή vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Επιλέξτε αρχεία"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Επιλέξτε πλάνο"
       ],
@@ -626,7 +635,7 @@
         "Ορίστε catch-all"
       ],
       "Set recovery phrase": [
-        ""
+        "Ορισμός φράσης ανάκτησης"
       ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Ταξινόμηση"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Εκκίνηση ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
@@ -1250,14 +1256,14 @@
       "Calendar link is temporarily inaccessible": [
         "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος"
       ],
-      "Calendar link is wrong": [
-        "Λανθασμένος σύνδεσμος ημερολογίου"
-      ],
       "Failed to sync calendar": [
         "Αποτυχία συγχρονισμού ημερολογίου"
       ],
       "More than 12 hours passed since last update": [
         "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2435,7 +2441,7 @@
         "Επιλέξτε ένα φάκελο"
       ],
       "Spam": [
-        "Ανεπιθύμητα"
+        "Ενοχλητικά"
       ],
       "Trash": [
         "Κάδος Απορριμμάτων"
@@ -2834,14 +2840,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Παραχωρήστε στο ProtonMail πρόσβαση στον λογαριασμό σας στο Gmail: επιλέξτε εάν το ${ bold2Steps } είναι ενεργοποιημένο και ακολουθήστε τα παρακάτω βήματα."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Τελικά, ${ googleMailLink } με το λογαριασμό που θέλετε να εισαγάγετε, $ { googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Μεταβείτε στο { googleAccountLink }. Στην ενότητα { boldSecurity }, ${ boldAccess } για λιγότερο ασφαλείς εφαρμογές. Εάν δεν βλέπετε αυτήν την επιλογή, ενδέχεται να έχετε ενεργοποιήσει την επαλήθευση σε 2 βήματα."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Πηγαίνετε στο ${ googleAccountLink }. Στην κατηγορία ${ boldSecurity }, δημιουργείστε ένα ${ boldAppPassword } αν δεν έχετε ήδη. Θα χρειαστείτε αυτόν τον κωδικό πρόσβασης κατά την εισαγωγή."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "Στην ενότητα ${ boldLabels }, επιλέξτε τους φακέλους που επιτρέπονται για εισαγωγή στο ProtonMail."
@@ -2851,6 +2884,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "Συνδεθείτε στο Yahoo Mail και κάντε κλικ στο όνομα σας στην επάνω δεξιά γωνία για πρόσβαση στο ${ boldAccountInfo }. Στην ενότητα ${ boldAccountSec }, μεταβείτε στην περιοχή ${ boldAppPassword } για να δημιουργήσετε έναν κωδικό πρόσβασης. Θα χρειαστείτε αυτόν τον κωδικό πρόσβασης κατά την εισαγωγή."
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        ""
       ]
     },
     "Import instructions emphasis": {
@@ -2866,20 +2935,44 @@
       "app password": [
         "κωδικός εφαρμογής"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Export to CSV file": [
+        ""
+      ],
       "Forwarding and POP/IMAP": [
         "Προώθηση και POP / IMAP"
       ],
       "Gmail Settings": [
         "Ρυθμίσεις Gmail"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "Πρόσβαση στο IMAP"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Ετικέτες"
       ],
+      "Manage": [
+        ""
+      ],
       "Other ways to sign in": [
         "Άλλοι τρόποι σύνδεσης"
+      ],
+      "Publish a calendar": [
+        ""
       ],
       "Security": [
         "Ασφάλεια"
@@ -2913,6 +3006,55 @@
         "Πώς να ενεργοποιήσετε την πρόσβαση για λιγότερο ασφαλείς εφαρμογές στις ρυθμίσεις του Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        ""
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        ""
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        ""
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Η επαλήθευση σε 2 βήματα απενεργοποιήθηκε (προεπιλεγμένες ρυθμίσεις)"
@@ -2924,6 +3066,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Είστε σίγουροι ότι θέλετε να εισαγάγετε ένα ιδιωτικό κλειδί; Η εισαγωγή ενός μη ανασφαλώς δημιουργημένου ή ιδιωτικού κλειδιού που έχει διαρρεύσει μπορεί να βλάψει την ασφάλεια των μηνυμάτων ηλεκτρονικού ταχυδρομείου σας.\n\nΛάβετε επίσης υπόψη ότι το δημόσιο κλειδί που αντιστοιχεί σε αυτό το ιδιωτικό κλειδί θα είναι διαθέσιμο στο κοινό από τον βασικό διακομιστή μας. Εάν το κλειδί περιέχει προσωπικά στοιχεία (όπως το ονοματεπώνυμο) τα οποία δεν θέλετε να δημοσιεύσετε, επεξεργαστείτε το κλειδί πριν το εισαγάγετε."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        ""
       ]
     },
     "Import status": {
@@ -3192,7 +3339,7 @@
         ""
       ],
       "Allow recovery by phone": [
-        ""
+        "Άδεια ανάκτησης μέσω τηλεφώνου"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Σας επιτρέπει να φιλοξενήσετε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα στο ${ mailAppName }, π.χ. john.smith@example.com"
@@ -3434,7 +3581,7 @@
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ProtonVPN επί πληρωμή."
       ],
       "Download recovery file": [
-        ""
+        "Κατέβασμα αρχείου ανάκτησης"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
@@ -3450,9 +3597,6 @@
       ],
       "Edit label": [
         "Επεξεργασία ετικέτας"
-      ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Ασφαλή και ξεκούραστη μετακίνηση των μηνυμάτων σας από τον τρέχοντα πάροχό σας στο Proton. Αν χρησιμοποιείτε το Google, υποστηρίζουμε επίσης εισαγωγή ημερολογίου και επαφών."
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -3641,6 +3785,9 @@
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "ΣΗΜΑΝΤΙΚΟ: η λήψη των ιδιωτικών σας κλειδιών και η αποστολή τους ή η αποθήκευσή τους σε μη ασφαλή πολυμέσα μπορεί να θέσουν σε κίνδυνο την ασφάλεια του λογαριασμού σας!"
       ],
@@ -3692,6 +3839,9 @@
       "Internet connection restored.": [
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        ""
+      ],
       "it’s imperative": [
         "είναι υποχρεωτικό"
       ],
@@ -3709,6 +3859,9 @@
       ],
       "Label all imported messages as": [
         "Επισήμανση όλων των εισαγόμενων μηνυμάτων ως"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "Οι μεγάλες εισαγωγές μπορεί να χρειαστούν αρκετές ημέρες για να ολοκληρωθούν."
@@ -4047,8 +4200,8 @@
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
-      "Select a service provider to get started": [
-        "Επιλογή υπηρεσίας παροχής για να ξεκινήσετε"
+      "Select a service provider to start": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
@@ -4066,7 +4219,7 @@
         "Η χρονική περίοδος σύνδεσης έληξε."
       ],
       "Set recovery phrase": [
-        ""
+        "Ορισμός φράσης ανάκτησης"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
@@ -4216,7 +4369,7 @@
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
+        "Για την καταπολέμηση των ενοχλήσεων και των καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Για να ακολουθείτε την τελευταία εξέλιξη στα προϊόντα Proton, μπορείτε να εγγραφείτε στα διάφορα email μας και να επισκέπτεστε το blog μας κατά διαστήματα."
@@ -4267,10 +4420,10 @@
         "Μη υποστηριζόμενο αρχείο"
       ],
       "Update recovery file": [
-        ""
+        "Ενημέρωση αρχείου ανάκτησης"
       ],
       "Update recovery phrase": [
-        ""
+        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Αναβαθμίστε σε ένα ${ PLAN_NAMES[PLANS.VISIONARY] } ή ένα ${ PLAN_NAMES[PLANS.PROFESSIONAL] } πλάνο ώστε να ενεργοποιήσετε αυτόματες απαντήσεις για όταν βρίσκεστε εκτός γραφείου."
@@ -4419,6 +4572,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Μπορείτε να ενεργοποιήσετε την καταγραφή ταυτότητας για να δείτε πότε θα έχει πρόσβαση ο λογαριασμός σας και από ποια διεύθυνση IP. Θα καταγράψουμε τη διεύθυνση IP που έχει πρόσβαση στον λογαριασμό και την ώρα, καθώς και τις αποτυχημένες προσπάθειες."
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Τώρα μπορείτε να λαμβάνετε μηνύματα από τη διεύθυνση @pm.me. Αναβαθμίστε σε πακέτο επί πληρωμή για να στέλνετε επίσης email χρησιμοποιώντας τη διεύθυνση @pm.me και να δημιουργείτε επιπλέον διευθύνσεις @pm.me."
       ],
@@ -4457,6 +4613,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Πρέπει να έχετε ένα προσωπικό ημερολόγιο για να δημιουργήσετε μια σύνδεση."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
@@ -4505,9 +4664,6 @@
       ],
       "Your Block List is empty.": [
         "Η Λίστα Αποκλεισμού είναι κενή."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "Τα δεδομένα σας είναι κρυπτογραφημένα και κλειδωμένα. Μπορείτε να ανακτήσετε πρόσβαση μέσω μιας μεθόδου ανάκτησης."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
@@ -4795,7 +4951,7 @@
         "Μετάβαση στα Απεσταλμένα"
       ],
       "Go to Spam": [
-        "Μετάβαση στα Ανεπιθύμητα"
+        "Μετάβαση στα Ενοχλητικά"
       ],
       "Go to Starred": [
         "Μετάβαση στα Αγαπημένα"
@@ -4840,7 +4996,7 @@
         "Μετακίνηση στα Εισερχόμενα"
       ],
       "Move to Spam": [
-        "Μετακίνηση στα Ανεπιθύμητα"
+        "Μετακίνηση στα Ενοχλητικά"
       ],
       "Move to Trash": [
         "Μετακίνηση στον Κάδο Απορριμμάτων"
@@ -5154,6 +5310,9 @@
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Προσαρμόστε τα τιμολόγια σας"
       ],
@@ -5171,6 +5330,9 @@
       ],
       "Default language": [
         "Προεπιλεγμένη γλώσσα"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         "Προεπιλεγμένο σχήμα PGP"
@@ -5528,6 +5690,9 @@
       ],
       "Select your country": [
         "Επιλέξτε τη χώρα σας"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
@@ -6089,6 +6254,35 @@
         "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        ""
+      ],
+      "How to import calendars from Outlook": [
+        ""
+      ],
+      "How to import calendars from Yahoo": [
+        ""
+      ],
+      "How to import contacts from another service": [
+        ""
+      ],
+      "How to import contacts from Outlook": [
+        ""
+      ],
+      "How to import contacts from Yahoo": [
+        ""
+      ],
+      "How to import emails from another service": [
+        ""
+      ],
+      "How to import emails from Outlook": [
+        ""
+      ],
+      "How to import emails from Yahoo": [
+        ""
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Προσθήκη ημερολογίου"
@@ -6322,6 +6516,11 @@
       "week before": [
         "εβδομάδα πριν",
         "εβδομάδες πριν"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -6981,6 +7180,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Μπορείτε να εφαρμόσετε πολλαπλές ετικέτες σε ένα μήνυμα, αλλά τα μηνύματα μπορούν συνήθως να βρίσκονται μόνο σε έναν φάκελο. Σύρετε και αφήστε για να αναδιατάξετε τη σειρά των φακέλων και των ετικετών σας."
       ]
@@ -7899,6 +8101,9 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "Υπόλοιπα"
       ],
@@ -8079,6 +8284,9 @@
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "Επιλέξτε πακέτο"
       ],
@@ -8210,6 +8418,9 @@
       ],
       "Warning!": [
         "Προσοχή!"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Τι νέο υπάρχει"
@@ -8516,6 +8727,14 @@
       "Password must contain at least ${ length } character": [
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {
