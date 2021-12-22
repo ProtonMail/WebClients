@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import * as History from 'history';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
@@ -13,6 +14,8 @@ import {
     PLANS,
     TOKEN_TYPES,
     ADDON_NAMES,
+    COUPON_CODES,
+    APPS,
 } from '@proton/shared/lib/constants';
 import { checkSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { c } from 'ttag';
@@ -54,6 +57,7 @@ import {
     useVPNCountriesCount,
     useLocalState,
     useFeature,
+    ReferralFeaturesList,
 } from '@proton/components';
 import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
@@ -61,6 +65,7 @@ import PlanCustomization from '@proton/components/containers/payments/subscripti
 import { getHasPlanType, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import BackButton from '../public/BackButton';
 import CreateAccountForm from './CreateAccountForm';
 import RecoveryForm from './RecoveryForm';
@@ -95,6 +100,7 @@ const {
     RECOVERY_PHONE,
     VERIFICATION_CODE,
     PLANS: PLANS_STEP,
+    TRIAL_PLAN,
     CUSTOMISATION,
     PAYMENT,
     HUMAN_VERIFICATION,
@@ -127,7 +133,10 @@ export const getSearchParams = (search: History.Search) => {
     // static sites use 'business' for pro plan
     const preSelectedPlan = maybePreSelectedPlan === 'business' ? 'professional' : maybePreSelectedPlan;
 
-    return { currency, cycle, preSelectedPlan, service, users, domains };
+    const referrer = searchParams.get('referrer') || undefined; // referral ID
+    const invite = searchParams.get('invite') || undefined;
+
+    return { currency, cycle, preSelectedPlan, service, users, domains, referrer, invite };
 };
 
 const getPlanIDsFromParams = (plans: Plan[], signupParameters: ReturnType<typeof getSearchParams>) => {
@@ -214,6 +223,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
+    const mailAppName = getAppName(APPS.PROTONMAIL);
 
     const [persistent] = useLocalState(true, defaultPersistentKey);
 
@@ -289,6 +299,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             email,
             recoveryEmail,
             recoveryPhone,
+            isReferred,
             domains,
             currency,
             cycle,
@@ -324,9 +335,13 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             if (!isInternalSignup) {
                 return handleCreateExternalUser({ ...sharedCreationProps, email });
             }
+            const referralProps = isReferred
+                ? { invite: signupParameters?.invite, referrer: signupParameters?.referrer }
+                : {};
             try {
                 return await handleCreateUser({
                     ...sharedCreationProps,
+                    ...referralProps,
                     username,
                     recoveryEmail,
                     recoveryPhone,
@@ -373,14 +388,16 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             });
 
             if (hasPlanIDs(planIDs)) {
+                const paymentProps = isReferred
+                    ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
+                    : { Payment: actualPayment };
                 await authApi.api(
                     subscribe({
-                        PlanIDs: planIDs,
                         Amount: checkResult.AmountDue,
+                        PlanIDs: planIDs,
                         Currency: currency,
                         Cycle: cycle,
-                        Payment: actualPayment,
-                        // TODO add coupon code
+                        ...paymentProps, // Overriding Amount
                     })
                 );
             }
@@ -470,6 +487,20 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         }
     }, [model.step]);
 
+    useEffect(() => {
+        const check = async (referrer: string) => {
+            try {
+                await api({ ...checkReferrer(referrer), silence: true });
+                setModelDiff({ isReferred: true });
+            } catch (error) {
+                // Do nothing
+            }
+        };
+        if (signupParameters?.referrer) {
+            void withLoading(check(signupParameters.referrer));
+        }
+    }, []);
+
     const { step } = model;
 
     if (step === NO_SIGNUP) {
@@ -497,6 +528,12 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         }
 
         if (hasPlanIDs(model.planIDs)) {
+            if (model.isReferred) {
+                // Previous step was recovery method
+                // Subscribing to plus plan with referrer token
+                return handleFinalizeSignup().catch(noop);
+            }
+
             if (getHasCustomisationStep(model.planIDs)) {
                 setModelDiff({
                     ...diff,
@@ -517,6 +554,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             checkResult: getFreeCheckResult(model.currency, model.cycle),
             step: CREATING_ACCOUNT,
         });
+
         return handleFinalizeSignup().catch(noop);
     };
 
@@ -560,6 +598,29 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             planIDs,
             checkResult: await getSubscriptionPrices(planIDs, model.currency, model.cycle),
             step,
+        });
+    };
+
+    const selectTrialPlan = () => {
+        const { ID = '' } = plans.find((plan) => plan.Name === PLANS.PLUS) || {};
+        const planIDs = { [ID]: 1 };
+        const cycle = CYCLE.MONTHLY;
+        setModelDiff({
+            planIDs,
+            cycle,
+            checkResult: getFreeCheckResult(model.currency, model.cycle),
+            step: RECOVERY_EMAIL,
+            skipPlanStep: true,
+        });
+    };
+
+    const selectFreePlan = () => {
+        const planIDs = {};
+        setModelDiff({
+            planIDs,
+            checkResult: getFreeCheckResult(model.currency, model.cycle),
+            step: RECOVERY_EMAIL,
+            skipPlanStep: true,
         });
     };
 
@@ -620,14 +681,34 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         setModelDiff(getBackDiff());
     };
 
+    const getCreateAccountTitle = () => {
+        if (model.isReferred) {
+            return c('Title').t`You’ve been invited to try ${mailAppName}`;
+        }
+
+        return c('Title').t`Create your Proton Account`;
+    };
+
+    const getCreateAccountSubtitle = () => {
+        if (model.isReferred) {
+            return c('Title').t`Secure email based in Switzerland`;
+        }
+
+        if (toAppName) {
+            return c('Info').t`to continue to ${toAppName}`;
+        }
+
+        return undefined;
+    };
+
     return (
         <Main larger={[PLANS_STEP, CUSTOMISATION, PAYMENT].includes(step)}>
             {step === ACCOUNT_CREATION_USERNAME && (
                 <>
                     <Header
-                        title={c('Title').t`Create your Proton Account`}
-                        subTitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
-                        left={onBack && <BackButton onClick={onBack} />}
+                        title={getCreateAccountTitle()}
+                        subTitle={getCreateAccountSubtitle()}
+                        left={onBack && !model.isReferred ? <BackButton onClick={onBack} /> : null}
                     />
                     <Content>
                         <CreateAccountForm
@@ -641,6 +722,10 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                                 }
                                 if (model.signupType === 'email') {
                                     return handlePrePlanStep();
+                                }
+                                if (model.isReferred) {
+                                    setModelDiff({ step: TRIAL_PLAN });
+                                    return;
                                 }
                                 setModelDiff({ step: RECOVERY_EMAIL });
                             }}
@@ -724,6 +809,29 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             onChangeCurrency={handleChangeCurrency}
                             onChangeCycle={handleChangeCycle}
                         />
+                    </Content>
+                </>
+            )}
+            {step === TRIAL_PLAN && (
+                <>
+                    <Header
+                        title={c('Title').t`Try the best of ProtonMail for free`}
+                        left={<BackButton onClick={handleBack} />}
+                    />
+                    <Content>
+                        <h1>Mail Plus</h1>
+                        <p>{c('Subtitle for trial plan')
+                            .t`The privacy-first Mail and Calendar solution for your everyday communications needs.`}</p>
+                        <ReferralFeaturesList />
+
+                        <Button color="norm" shape="solid" className="mb0-5" onClick={selectTrialPlan} fullWidth>{c(
+                            'Action in trial plan'
+                        ).t`Try free for 30 days`}</Button>
+                        <p className="text-center mt0 mb0-5">
+                            <small className="color-weak">{c('Info').t`No credit card required`}</small>
+                        </p>
+                        <Button color="norm" shape="ghost" onClick={selectFreePlan} fullWidth>{c('Action in trial plan')
+                            .t`No, thanks`}</Button>
                     </Content>
                 </>
             )}

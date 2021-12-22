@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 import { c } from 'ttag';
 import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -6,16 +7,6 @@ import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import {
-    useAuthentication,
-    useConfig,
-    useModals,
-    useNotifications,
-    useOrganization,
-    useRecoveryNotification,
-    useSubscription,
-    useUser,
-} from '../../hooks';
 import {
     usePopperAnchor,
     Dropdown,
@@ -28,7 +19,21 @@ import {
     DropdownMenuLink,
     NotificationDot,
     Copy,
-} from '../../components';
+    useAuthentication,
+    useConfig,
+    useModals,
+    useNotifications,
+    useOrganization,
+    useRecoveryNotification,
+    useSubscription,
+    useUser,
+    useUserSettings,
+    useFeature,
+    useSpotlightOnFeature,
+    FeatureCode,
+    ReferralSpotlight,
+} from '@proton/components';
+
 import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import { OnboardingModal } from '../onboarding';
@@ -45,6 +50,9 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
+    const location = useLocation();
+    const [userSettings] = useUserSettings();
+    const [redDotReferral, setRedDotReferral] = useState(false);
     const { Email, DisplayName, Name } = user;
     const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
     const { logout } = useAuthentication();
@@ -52,7 +60,15 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { createModal } = useModals();
     const recoveryNotification = useRecoveryNotification(true);
-
+    const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
+    const {
+        show: showSpotlight,
+        onDisplayed: onDisplayedSpotlight,
+        onClose: onCloseSpotlight,
+    } = useSpotlightOnFeature(
+        FeatureCode.ReferralProgramSpotlight,
+        !!referralProgramFeature?.Value && !!userSettings?.Referral?.Eligible
+    );
     const { createNotification } = useNotifications();
     const handleCopyEmail = () => {
         createNotification({
@@ -110,17 +126,41 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
         [APPS.PROTONVPN_SETTINGS]: 'https://protonmail.uservoice.com/forums/932836-protonvpn',
     };
 
+    // Show referral dot if the spotlight has been displayed
+    useEffect(() => {
+        if (showSpotlight) {
+            setRedDotReferral(true);
+        }
+    }, [showSpotlight, location]);
+
+    // Hide red dot referral if user has already seen referral page
+    useEffect(() => {
+        if (location.pathname.includes('/referral')) {
+            setRedDotReferral(false);
+        }
+    }, [location.pathname]);
+
     return (
         <>
-            <UserDropdownButton
-                data-testid="heading:userdropdown"
-                {...rest}
-                user={user}
-                ref={anchorRef}
-                isOpen={isOpen}
-                onClick={toggle}
-                notification={recoveryNotification?.color}
-            />
+            <ReferralSpotlight
+                show={showSpotlight}
+                anchorRef={anchorRef}
+                onDisplayed={onDisplayedSpotlight}
+                onClose={onCloseSpotlight}
+            >
+                <UserDropdownButton
+                    data-testid="heading:userdropdown"
+                    {...rest}
+                    user={user}
+                    ref={anchorRef}
+                    isOpen={isOpen}
+                    onClick={() => {
+                        onCloseSpotlight();
+                        toggle();
+                    }}
+                    notification={recoveryNotification?.color}
+                />
+            </ReferralSpotlight>
             <Dropdown
                 id={uid}
                 className="userDropdown"
@@ -220,6 +260,21 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                             {c('Action').t`${BRAND_NAME} introduction`}
                         </DropdownMenuButton>
                     )}
+
+                    {APP_NAME !== APPS.PROTONVPN_SETTINGS &&
+                        referralProgramFeature?.Value &&
+                        userSettings?.Referral?.Eligible && (
+                            <DropdownMenuLink
+                                as={SettingsLink}
+                                className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                                path="/referral"
+                                onClick={close}
+                                data-testid="userdropdown:button:referral"
+                            >
+                                {c('Action').t`Refer a friend`}
+                                {redDotReferral ? <NotificationDot color="danger" /> : <span />}
+                            </DropdownMenuLink>
+                        )}
 
                     <SimpleDropdown
                         as={DropdownMenuButton}

@@ -50,6 +50,10 @@ const dummyUserSettings: UserSettings = {
     Welcome: 0,
     EarlyAccess: 1,
     Flags: { Welcomed: 0 },
+    Referral: {
+        Eligible: false,
+        Link: '',
+    },
 };
 
 const getTranslation = (data: string) => {

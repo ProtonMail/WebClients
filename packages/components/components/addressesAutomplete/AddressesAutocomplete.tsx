@@ -244,5 +244,6 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
         );
     }
 );
+AddressesAutocomplete.displayName = 'AddressesAutocomplete';
 
 export default AddressesAutocomplete;

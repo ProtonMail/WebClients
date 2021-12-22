@@ -1,4 +1,5 @@
-import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES } from '../constants';
+import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
+import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, COUPON_CODES } from '../constants';
 import { Subscription, Plan, PlanIDs } from '../interfaces';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -85,4 +86,21 @@ export const getPlanIDs = (subscription: Subscription) => {
         acc[ID] += Quantity;
         return acc;
     }, {});
+};
+
+export const isTrial = (subscription: Subscription) => {
+    const { CouponCode = '' } = subscription;
+    return CouponCode === COUPON_CODES.REFERRAL;
+};
+
+export const isTrialExpired = (subscription: Subscription) => {
+    const { PeriodEnd } = subscription;
+    const now = new Date();
+    return now > fromUnixTime(PeriodEnd);
+};
+
+export const willTrialExpire = (subscription: Subscription) => {
+    const { PeriodEnd } = subscription;
+    const now = new Date();
+    return isBefore(fromUnixTime(PeriodEnd), addWeeks(now, 1));
 };

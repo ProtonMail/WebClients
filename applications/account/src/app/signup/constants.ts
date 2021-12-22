@@ -107,4 +107,6 @@ export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     humanVerificationMethods: [],
     humanVerificationToken: '',
     checkResult: getFreeCheckResult(),
+    isReferred: false,
+    referrerID: '',
 };

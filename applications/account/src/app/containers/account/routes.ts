@@ -1,19 +1,23 @@
 import { c } from 'ttag';
 import { NotificationDotColor, SectionConfig } from '@proton/components';
-import { PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { APPS, PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { recoveryIds } from './recoveryIds';
 
 export const getAccountAppRoutes = ({
     user,
     isDataRecoveryAvailable,
+    isReferralProgramEnabled,
     recoveryNotification,
 }: {
     user: UserModel;
     isDataRecoveryAvailable: boolean;
+    isReferralProgramEnabled: boolean;
     recoveryNotification?: NotificationDotColor;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember } = user;
+    const mailAppName = getAppName(APPS.PROTONMAIL);
     return <const>{
         header: c('Settings section title').t`Account`,
         routes: {
@@ -134,6 +138,23 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Security logs`,
                         id: 'logs',
+                    },
+                ],
+            },
+            referral: <SectionConfig>{
+                text: c('Title').t`Refer a friend`,
+                description: c('Description')
+                    .t`Get 3 months of Mail Plus for free for every friend who subscribes to ${mailAppName}.`,
+                to: '/referral',
+                icon: 'gift-card',
+                available: !!isReferralProgramEnabled,
+                subsections: [
+                    {
+                        id: 'referral-invite-section',
+                    },
+                    {
+                        text: c('Title').t`Referral tracker`,
+                        id: 'referral-reward-section',
                     },
                 ],
             },

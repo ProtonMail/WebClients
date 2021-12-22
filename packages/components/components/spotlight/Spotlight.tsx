@@ -1,4 +1,14 @@
-import { AnimationEvent, Children, cloneElement, ReactElement, ReactNode, RefObject, useEffect, useState } from 'react';
+import {
+    AnimationEvent,
+    Children,
+    cloneElement,
+    CSSProperties,
+    ReactElement,
+    ReactNode,
+    RefObject,
+    useEffect,
+    useState,
+} from 'react';
 import { c } from 'ttag';
 
 import discoverIllustration from '@proton/styles/assets/img/shared/discover.svg';
@@ -26,6 +36,7 @@ export interface SpotlightProps {
      * Setting the anchor is optionnal, it will default on the root child
      */
     anchorRef?: RefObject<HTMLElement>;
+    style?: CSSProperties;
 }
 
 const Spotlight = ({
@@ -37,6 +48,7 @@ const Spotlight = ({
     originalPlacement = 'top',
     hasClose = true,
     anchorRef: inputAnchorRef,
+    style = {},
 }: SpotlightProps) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -98,7 +110,7 @@ const Spotlight = ({
                 <div
                     ref={setPopperEl}
                     id={uid}
-                    style={position}
+                    style={{ ...position, ...style }}
                     className={classnames([
                         'spotlight',
                         `spotlight--${placement}`,

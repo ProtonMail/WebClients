@@ -5,7 +5,7 @@ import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from '@proton/shared/li
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { Select, Loader, Info } from '../../components';
-import { useAddresses, useMailSettings } from '../../hooks';
+import { useAddresses, useMailSettings, useUserSettings } from '../../hooks';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
@@ -18,6 +18,8 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
     const [mailSettings] = useMailSettings();
+    const [userSettings] = useUserSettings();
+
     const [address, setAddress] = useState<Address>();
 
     const filtered = useMemo<Address[]>(() => {
@@ -85,7 +87,11 @@ const IdentitySection = () => {
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight>
-                            <PMSignature id="pmSignatureToggle" mailSettings={mailSettings} />
+                            <PMSignature
+                                id="pmSignatureToggle"
+                                mailSettings={mailSettings}
+                                userSettings={userSettings}
+                            />
                         </SettingsLayoutRight>
                     </SettingsLayout>
                 </>

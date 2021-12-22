@@ -1,0 +1,23 @@
+@import '~@proton/styles/scss/config';
+
+.invite-section {
+	@include respond-to(1200) {
+		flex-direction: column;
+
+		& > * {
+			inline-size: 100%;
+			flex-basis: auto;
+		}
+	}
+
+	&-share-link {
+		@include respond-to(800) {
+			flex-direction: column;
+
+			& > * {
+				inline-size: 100%;
+				flex-basis: auto;
+			}
+		}
+	}
+}
