@@ -1,13 +1,15 @@
 import { cleanUsername } from './utils/username';
 import { AUTH_FALLBACK_VERSION } from './constants';
+import { AuthVersion } from './interface';
 
 /**
  * Get the next auth version to use and if it's the last attempt.
- * @param {Object} authInfo
- * @param {String} username - The entered username
- * @param {number} [lastAuthVersion] - The previously attempted auth version
  */
-export default ({ Version }, username, lastAuthVersion) => {
+export default (
+    { Version }: { Version: AuthVersion },
+    username: string,
+    lastAuthVersion?: AuthVersion
+): { version: AuthVersion; done: boolean } => {
     if (Version !== 0) {
         return {
             version: Version,

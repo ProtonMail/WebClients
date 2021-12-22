@@ -2,9 +2,9 @@ import { describe, it } from 'mocha';
 import { binaryStringToArray } from 'pmcrypto';
 import assert from 'assert';
 
-import './setup';
-import { hashPassword, expandHash } from '../lib/passwords';
-import { hashedResult4, hashedResult0, hashedResult2, watResult } from './passwords.data';
+import '../test/setup';
+import { hashPassword, expandHash } from './passwords';
+import { hashedResult4, hashedResult0, hashedResult2, watResult } from '../test/passwords.data';
 
 describe('passwords', () => {
     it('should expand a hash', async () => {
@@ -18,7 +18,7 @@ describe('passwords', () => {
             username: 'user1',
             salt: '»¢põó<±Ò&',
             modulus: new Uint8Array(256),
-            version: 4
+            version: 4,
         });
         assert.deepStrictEqual(hashed, hashedResult4);
     });
@@ -29,7 +29,7 @@ describe('passwords', () => {
             username: 'user1',
             salt: '»¢põó<±Ò&',
             modulus: new Uint8Array(256),
-            version: 3
+            version: 3,
         });
         assert.deepStrictEqual(hashed, hashedResult4);
     });
@@ -40,7 +40,7 @@ describe('passwords', () => {
             username: 'user1',
             salt: '»¢põó<±Ò&',
             modulus: new Uint8Array(256),
-            version: 2
+            version: 2,
         });
         assert.deepStrictEqual(hashed, hashedResult2);
     });
@@ -51,7 +51,7 @@ describe('passwords', () => {
             username: 'user1',
             salt: '»¢põó<±Ò&',
             modulus: new Uint8Array(256),
-            version: 1
+            version: 1,
         });
         assert.deepStrictEqual(hashed, hashedResult2);
     });
@@ -62,7 +62,7 @@ describe('passwords', () => {
             username: 'user1',
             salt: '»¢põó<±Ò&',
             modulus: new Uint8Array(256),
-            version: 0
+            version: 0,
         });
         assert.deepStrictEqual(hashed, hashedResult0);
     });

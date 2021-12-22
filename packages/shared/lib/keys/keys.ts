@@ -3,7 +3,7 @@ import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
 import { Key, KeyPair, KeySalt as tsKeySalt } from '../interfaces';
 
-export const generateKeySaltAndPassphrase = async (password: string): Promise<{ salt: string; passphrase: string }> => {
+export const generateKeySaltAndPassphrase = async (password: string) => {
     const salt = generateKeySalt();
     return {
         salt,
