@@ -48,7 +48,7 @@ describe('Composer switch plaintext <-> html', () => {
 
         await findByTestId('squire-iframe');
 
-        expect(setHTML).toHaveBeenCalledWith(`<div>${content}</div>`);
+        expect(setHTML).toHaveBeenCalledWith(`<div style="font-family: arial; font-size: 14px;">${content}</div>`);
 
         // Wait for auto save
         await waitForSpyCall(saveSpy);

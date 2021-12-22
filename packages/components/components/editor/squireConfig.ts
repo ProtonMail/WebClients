@@ -2,7 +2,6 @@ import { Ref, RefObject, MutableRefObject } from 'react';
 import { content } from '@proton/shared/lib/sanitize';
 import { c } from 'ttag';
 import { contentWithoutImage } from '@proton/shared/lib/sanitize/purify';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SquireType, FontData } from './interface';
 
 export enum FONT_FACE {
@@ -80,18 +79,12 @@ export const setSquireRef = (ref: Ref<SquireType>, squire: any) => {
     (ref as any as MutableRefObject<any>).current = squire;
 };
 
-export const defaultFontStyle = (fontData: FontData | undefined): string | undefined => {
-    if (!fontData) {
-        return undefined;
-    }
-
-    const { FontFace, FontSize } = fontData;
-    const stylesArray = [
-        FontFace === undefined || FontFace === null ? undefined : `font-family: ${fontData.FontFace};`,
-        FontSize === undefined || FontSize === null ? undefined : `font-size: ${fontData.FontSize}px;`,
-    ].filter(isTruthy);
-
-    return stylesArray.length ? stylesArray.join(' ') : undefined;
+export const defaultFontStyle = (fontData: FontData | undefined): string => {
+    let { FontFace, FontSize } = fontData || {};
+    FontFace = !FontFace ? DEFAULT_FONT_FACE : FontFace;
+    FontSize = !FontSize ? DEFAULT_FONT_SIZE : FontSize;
+    const stylesArray = [`font-family: ${FontFace};`, `font-size: ${FontSize}px;`];
+    return stylesArray.join(' ');
 };
 
 export const SQUIRE_CONFIG = (supportImage: boolean, fontData: FontData | undefined) => {
@@ -105,7 +98,7 @@ export const SQUIRE_CONFIG = (supportImage: boolean, fontData: FontData | undefi
             const frag = html ? (!supportImage ? contentWithoutImage(html) : content(html)) : null;
             return frag ? doc.importNode(frag, true) : doc.createDocumentFragment();
         },
-        blockAttributes: style ? { style } : undefined,
+        blockAttributes: { style },
     };
 };
 

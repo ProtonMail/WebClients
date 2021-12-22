@@ -82,7 +82,7 @@ const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
  * Replace the signature by a temp hash, we replace it only
  * if the content is the same.
  */
-const replaceSignature = (input: string, signature: string, mailSettings: Partial<MailSettings> = {}) => {
+const replaceSignature = (input: string, signature: string, mailSettings: MailSettings | undefined) => {
     const fontStyle = defaultFontStyle(mailSettings);
     const signatureTemplate = templateBuilder(signature, mailSettings, fontStyle, false, true);
     const signatureText = toText(signatureTemplate)
@@ -99,7 +99,7 @@ const attachSignature = (
     input: string,
     signature: string,
     plaintext: string,
-    mailSettings: Partial<MailSettings> = {}
+    mailSettings: MailSettings | undefined
 ) => {
     const fontStyle = defaultFontStyle(mailSettings);
     const signatureTemplate = templateBuilder(
@@ -112,7 +112,7 @@ const attachSignature = (
     return input.replace(SIGNATURE_PLACEHOLDER, signatureTemplate);
 };
 
-export const textToHtml = (input = '', signature: string, mailSettings: Partial<MailSettings> = {}) => {
+export const textToHtml = (input = '', signature: string, mailSettings: MailSettings | undefined) => {
     const text = replaceSignature(input, signature, mailSettings);
 
     // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
