@@ -7,7 +7,7 @@ import {
     ModalsChildren,
     EventModelListener,
 } from '@proton/components';
-import { Router } from 'react-router';
+import { Router, Route } from 'react-router';
 import { createMemoryHistory, MemoryHistory } from 'history';
 import { render as originalRender, RenderResult as OriginalRenderResult, act } from '@testing-library/react';
 import { renderHook as originalRenderHook, act as actHook } from '@testing-library/react-hooks';
@@ -28,6 +28,7 @@ import { ComposeProvider } from '../../containers/ComposeProvider';
 import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
 import NotificationsTestProvider from './notifications';
 import { store } from '../../logic/store';
+import { MAIN_ROUTE_PATH } from '../../constants';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
@@ -67,6 +68,8 @@ const mockDomApi = () => {
     }));
 };
 
+export const onCompose = jest.fn();
+
 interface Props {
     children: ReactNode;
 }
@@ -91,9 +94,13 @@ const TestProvider = ({ children }: Props) => {
                                                 containerRef={contentRef}
                                                 elementID={undefined}
                                             >
-                                                <ComposeProvider onCompose={jest.fn()}>
+                                                <ComposeProvider onCompose={onCompose}>
                                                     <Router history={history}>
-                                                        <EncryptedSearchProvider>{children}</EncryptedSearchProvider>
+                                                        <Route path={MAIN_ROUTE_PATH}>
+                                                            <EncryptedSearchProvider>
+                                                                {children}
+                                                            </EncryptedSearchProvider>
+                                                        </Route>
                                                     </Router>
                                                 </ComposeProvider>
                                             </MailboxContainerContextProvider>
