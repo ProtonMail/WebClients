@@ -20,6 +20,7 @@ import {
     useRecoveryNotification,
     useToggle,
     useUser,
+    useUserSettings,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
@@ -57,6 +58,7 @@ const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account
 
 const MainContainer = () => {
     const [user] = useUser();
+    const [userSettings] = useUserSettings();
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const location = useLocation();
@@ -67,10 +69,11 @@ const MainContainer = () => {
     const features = useFeatures([
         FeatureCode.SpyTrackerProtection,
         FeatureCode.CalendarInviteLocale,
+        FeatureCode.ReferralProgram,
         FeatureCode.CalendarEmailNotification,
         FeatureCode.CalendarSubscription,
     ]);
-    const [spyTrackerFeature, calendarInviteLocaleFeature] = features;
+    const [spyTrackerFeature, calendarInviteLocaleFeature, referralProgramFeature] = features;
     const { enabled, unavailable } = useCalendarSubscribeFeature();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = features.some(({ loading }) => loading) || loadingDataRecovery;
@@ -83,6 +86,7 @@ const MainContainer = () => {
         isUnsubscribeCalendarEnabled: enabled,
         isSpyTrackerEnabled: spyTrackerFeature.feature?.Value === true,
         isInviteSettingEnabled: calendarInviteLocaleFeature.feature?.Value === true,
+        isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isDataRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
     });
