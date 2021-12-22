@@ -11,6 +11,8 @@ interface CreateUserArgs {
     password: string;
     recoveryEmail: string;
     recoveryPhone: string;
+    invite?: string;
+    referrer?: string;
 }
 
 const handleCreateUser = async ({
@@ -21,6 +23,8 @@ const handleCreateUser = async ({
     recoveryPhone,
     clientType,
     payload,
+    invite,
+    referrer,
 }: CreateUserArgs) => {
     if (!username) {
         throw new Error('Missing username');
@@ -35,6 +39,8 @@ const handleCreateUser = async ({
                 ...(recoveryPhone ? { Phone: recoveryPhone } : undefined),
                 Username: username,
                 Payload: payload,
+                ReferralID: invite,
+                ReferralIdentifier: referrer,
             }),
             silence: [
                 API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED,

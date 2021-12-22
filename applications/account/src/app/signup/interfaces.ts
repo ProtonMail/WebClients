@@ -14,6 +14,7 @@ export enum SIGNUP_STEPS {
     HUMAN_VERIFICATION = 'human-verification',
     CREATING_ACCOUNT = 'creating-account',
     COMPLETE = 'complete',
+    TRIAL_PLAN = 'trial-plan',
 }
 
 export const SERVICES = {
@@ -46,6 +47,8 @@ export interface SignupModel {
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
     checkResult: SubscriptionCheckResponse;
+    isReferred: boolean;
+    referrerID: string;
 }
 
 export type SignupPayPal = PayPalHook;

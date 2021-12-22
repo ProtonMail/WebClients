@@ -17,6 +17,8 @@ export enum CANONIZE_SCHEME {
     PROTON,
 }
 
+export const PROTONMAIL_DOMAINS = ['protonmail.com', 'protonmail.ch', 'pm.me'];
+
 export const validateLocalPart = (localPart: string) => {
     // remove comments first
     const match = localPart.match(/(^\(.+?\))?([^()]*)(\(.+?\)$)?/);
@@ -151,7 +153,7 @@ export const canonizeInternalEmail = (email: string) => canonizeEmail(email, CAN
 export const canonizeEmailByGuess = (email: string) => {
     const [, domain] = getEmailParts(email);
     const normalizedDomain = domain.toLowerCase();
-    if (['protonmail.com', 'protonmail.ch', 'pm.me'].includes(normalizedDomain)) {
+    if (PROTONMAIL_DOMAINS.includes(normalizedDomain)) {
         return canonizeEmail(email, CANONIZE_SCHEME.PROTON);
     }
     if (['gmail.com', 'googlemail.com', 'google.com'].includes(normalizedDomain)) {

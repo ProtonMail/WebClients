@@ -29,6 +29,14 @@
 	.bg-#{$color} {
 		background-color: var(--background-#{$color});
 	}
+
+	.bg-#{$color}-odd > *:nth-child(odd) {
+		background-color: var(--background-#{$color});
+	}
+
+	.bg-#{$color}-even > *:nth-child(even) {
+		background-color: var(--background-#{$color});
+	}
 }
 
 @each $color in (norm, weak, hint, disabled, invert) {
