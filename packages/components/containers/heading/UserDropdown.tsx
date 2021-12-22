@@ -333,30 +333,19 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                     </SimpleDropdown>
 
                     <DropdownMenuLink
-                        className="text-left "
+                        className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
                         href="https://shop.protonmail.com"
                         target="_blank"
                         data-testid="userdropdown:link:shop"
                     >
                         {c('Action').t`${BRAND_NAME} shop`}
+                        <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
                     </DropdownMenuLink>
 
                     <hr className="my0-5" />
 
-                    <div className="px1 pt0-5 pb0-75">
-                        <Button
-                            shape="solid"
-                            color="norm"
-                            className="w100"
-                            onClick={handleLogout}
-                            data-testid="userdropdown:button:logout"
-                        >
-                            {c('Action').t`Sign out`}
-                        </Button>
-                    </div>
-
                     {isSSOMode ? (
-                        <div className="px1 pb0-75">
+                        <div className="px1 pt0-5 pb0-75">
                             <Button
                                 shape="outline"
                                 color="weak"
@@ -368,6 +357,18 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                             </Button>
                         </div>
                     ) : null}
+
+                    <div className="px1 pb0-75">
+                        <Button
+                            shape="solid"
+                            color="norm"
+                            className="w100"
+                            onClick={handleLogout}
+                            data-testid="userdropdown:button:logout"
+                        >
+                            {c('Action').t`Sign out`}
+                        </Button>
+                    </div>
                 </DropdownMenu>
             </Dropdown>
         </>
