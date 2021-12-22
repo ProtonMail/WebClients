@@ -149,6 +149,7 @@ const PageParamsParser = (props: PageParamsParserProps, ref: Ref<HTMLDivElement>
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const match = useRouteMatch<MailUrlParams>();
+
     const params = useDeepMemo(() => {
         const labelIDs = [...labels, ...folders].map(({ ID }: Label) => ID);
         const { elementID, labelID: currentLabelID = '', messageID } = (match || {}).params || {};
