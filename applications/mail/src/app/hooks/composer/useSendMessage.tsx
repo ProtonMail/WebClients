@@ -28,7 +28,7 @@ import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
-import { endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
+import { cancelScheduled, endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
 
 const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
@@ -75,8 +75,15 @@ export const useSendMessage = () => {
                     hideNotification(sendingMessageNotificationManager.ID);
                 }
                 const savedMessage = getMessage(localID) as MessageStateWithData;
-                await api(cancelSend(savedMessage.data.ID));
-                createNotification({ text: c('Message notification').t`Sending undone` });
+                const isScheduledMessage = savedMessage.draftFlags?.scheduledAt;
+                if (isScheduledMessage) {
+                    await dispatch(cancelScheduled(savedMessage.localID));
+                    await api(cancelSend(savedMessage.data.ID));
+                    createNotification({ text: c('Message notification').t`Scheduled sending undone` });
+                } else {
+                    await api(cancelSend(savedMessage.data.ID));
+                    createNotification({ text: c('Message notification').t`Sending undone` });
+                }
                 await call();
                 // Re-open draft
                 onCompose({
