@@ -11,7 +11,7 @@ import MailFoldersAndLabelsSettings from './MailFoldersAndLabelsSettings';
 import MailGeneralSettings from './MailGeneralSettings';
 import MailIdentityAndAddressesSettings from './MailIdentityAndAddressesSettings';
 import MailImapSmtpSettings from './MailImapSmtpSettings';
-import MailImportAndExportSettings from './MailImportAndExportSettings';
+import MailBackupAndExportSettings from './MailBackupAndExportSettings';
 import MailEmailPrivacySettings from './MailEmailPrivacySettings';
 
 const MailSettingsRouter = () => {
@@ -49,7 +49,10 @@ const MailSettingsRouter = () => {
                 <MailEncryptionKeysSettings location={location} />
             </Route>
             <Route path={`${path}/import-export`}>
-                <MailImportAndExportSettings location={location} />
+                <Redirect to={`${path}/easy-switch`} />
+            </Route>
+            <Route path={`${path}/backup-export`}>
+                <MailBackupAndExportSettings location={location} />
             </Route>
             <Route path={`${path}/imap-smtp`}>
                 <MailImapSmtpSettings location={location} />

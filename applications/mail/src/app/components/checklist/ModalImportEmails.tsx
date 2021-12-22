@@ -6,16 +6,11 @@ import {
     SettingsLink,
     ModalPropsInjection,
     ModalCloseButton,
-    useFeature,
-    FeatureCode,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import onboardingImportAssistant from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 
 const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => {
-    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
-    const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
-
     return (
         <DialogModal intermediate onClose {...rest}>
             <ModalCloseButton onClose={onClose} />
@@ -38,7 +33,7 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
                     color="norm"
                     as={SettingsLink}
                     app={APPS.PROTONMAIL}
-                    path={isEasySwitchEnabled ? '/easy-switch' : '/import-export'}
+                    path="/easy-switch"
                     rel="noopener noreferrer"
                     target="_blank"
                 >

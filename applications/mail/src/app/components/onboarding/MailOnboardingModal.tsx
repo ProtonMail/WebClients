@@ -23,8 +23,6 @@ const MailOnboardingModal = (props: any) => {
     const link = <strong key="link">pm.me/app</strong>;
     const [imports, importsLoading] = useImporters();
     const hasAlreadyImported = !importsLoading && imports.length;
-    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
-    const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
     const { feature: usedMailMobileAppFeature } = useFeature(FeatureCode.UsedMailMobileApp);
 
     return (
@@ -66,11 +64,7 @@ const MailOnboardingModal = (props: any) => {
                         <OnboardingStep
                             submit={c('Action').t`Import messages`}
                             onSubmit={() => {
-                                goToSettings(
-                                    isEasySwitchEnabled ? '/easy-switch' : '/import-export',
-                                    APPS.PROTONMAIL,
-                                    true
-                                );
+                                goToSettings('/easy-switch', APPS.PROTONMAIL, true);
                                 onNext();
                             }}
                             onClose={onNext}
