@@ -119,8 +119,8 @@
       "Confirm": [
         "Confirmer"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmer l'ouverture du lien ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Confirmer l'ouverture du lien ${ linkToShow }"
       ],
       "Contact group": [
         "Groupe de contacts"
@@ -962,14 +962,14 @@
       "Calendar link is temporarily inaccessible": [
         "Le lien du calendrier est temporairement inaccessible"
       ],
-      "Calendar link is wrong": [
-        "Le lien du calendrier est incorrect"
-      ],
       "Failed to sync calendar": [
         "Échec de la synchronisation du calendrier"
       ],
       "More than 12 hours passed since last update": [
         "Plus de 12 heures se sont écoulées depuis la dernière mise à jour"
+      ],
+      "Unsupported calendar format": [
+        "Format de calendrier non pris en charge"
       ]
     },
     "Calendar view": {
@@ -1865,7 +1865,7 @@
         "Vous pouvez également ${ refresh } ou réessayer plus tard."
       ],
       "You need an active personal calendar to import events": [
-        ""
+        "Vous devez avoir un calendrier personnel actif pour importer vos événements"
       ]
     },
     "Error notification": {
@@ -2144,6 +2144,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts ne prend pas en charge ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "à l'étape suivante, vous devez sélectionner toutes les autorisations"
       ]
     },
     "Import warning": {
@@ -2960,7 +2965,7 @@
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
       "Your events will be encrypted and then saved.": [
-        ""
+        "Vos événements seront chiffrés puis sauvegardés."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
@@ -4079,6 +4084,11 @@
         "Inconnu"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Veuillez noter qu'${ boldNextStep } demandées par l'application pour commencer votre importation."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Choisissez un nom d'affichage"
@@ -4936,7 +4946,7 @@
         "Rétrograder le compte"
       ],
       "Drop to upload": [
-        ""
+        "Déposer pour téléverser"
       ],
       "Edit calendar": [
         "Modifier le calendrier"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Sélectionnez la dernière date de l'événement"
       ],
+      "Select permissions": [
+        "Sélectionnez les autorisations"
+      ],
       "Select the time to send this notification": [
         "Sélectionnez l'heure d'envoi de cette notification"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Le chiffrement de courriel force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
       ],
+      "Encrypted data": [
+        "Données chiffrées"
+      ],
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "Le mot de passe doit comporter au moins ${ length } caractère",
         "Le mot de passe doit comporter au moins ${ length } caractères"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Cliquez pour rejouer la vidéo"
+      ],
+      "Replay video": [
+        "Rejouer la vidéo"
       ]
     },
     "VPN feature": {

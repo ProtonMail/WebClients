@@ -125,8 +125,8 @@
       "Confirm": [
         "Potvrdit"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrďte otevření odkazu ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Potvrďte otevření odkazu ${ linkToShow }"
       ],
       "Contact group": [
         "Skupina kontaktů"
@@ -881,14 +881,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "Odkaz na kalendář je chybný"
-      ],
       "Failed to sync calendar": [
         "Synchronizace kalendáře selhala"
       ],
       "More than 12 hours passed since last update": [
         "Od poslední aktualizace uběhlo už více jak 12 hodin"
+      ],
+      "Unsupported calendar format": [
+        "Nepodporovaný formát kalendáře"
       ]
     },
     "Composer size": {
@@ -2099,7 +2099,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3692,6 +3692,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "Upozorňujeme, že abyste mohli zahájit import, musíte přijmout všechna oprávnění požadovaná aplikací."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Vyberte jméno, které chcete zobrazovat"
@@ -4729,6 +4734,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifrování e-mailů posiluje e-mailový podpis, aby Vaše zprávy byly ověřeny"
       ],
+      "Encrypted data": [
+        "Zašifrovaná data"
+      ],
       "Encrypted data with verified digital signature": [
         "Šifrovaná data s ověřeným digitálním podpisem"
       ],
@@ -4807,6 +4815,14 @@
       ],
       "Name must not end with a space": [
         "Název nesmí končit mezerou"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Kliknutím přehrát video"
+      ],
+      "Replay video": [
+        "Přehrát video"
       ]
     },
     "VPN feature": {

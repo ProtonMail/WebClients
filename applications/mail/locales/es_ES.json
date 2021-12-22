@@ -467,6 +467,9 @@
       "Load more": [
         "Cargar más"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "Cargando verificación"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Reintentar"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Guardar"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Omitir"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "Iniciar importación"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Este mensaje contiene imágenes incrustadas."
+      ],
+      "This message contains remote content.": [
+        ""
       ],
       "Trust": [
         "Confiar"
@@ -1588,14 +1600,14 @@
       "Calendar link is temporarily inaccessible": [
         "El enlace del calendario no está accesible temporalmente"
       ],
-      "Calendar link is wrong": [
-        "El enlace del calendario es erróneo"
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar widget banner": {
@@ -3014,6 +3026,11 @@
         "Ha fallado la creación del evento del calendario"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no serán importados. Haz clic para obtener más detalles"
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Este mensaje es generado automáticamente como respuesta a un mensaje anterior."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Añadir al grupo"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "TODO"
@@ -5668,6 +5691,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Siguiente"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Agregar al grupo existente"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "Crear nuevo grupo"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Confirmación de enlace"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load remote content": [
         "Cargar contenido remoto"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Seleccionar grupo de contactos"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         "Selecciona qué importar"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Inicia sesión otra vez para continuar"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Ordenar conversaciones"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El cifrado del correo electrónico obliga a la firma del correo electrónico a ayudar a autenticar tus mensajes enviados"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "La contraseña debe contener al menos ${ length } caracter",
         "La contraseña debe contener al menos ${ length } caracteres"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

@@ -125,8 +125,8 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
-      "Confirm opening of link ${ link }": [
-        "Επιβεβαίωση ανοίγματος συνδέσμου ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Ομάδα Επαφών"
@@ -869,14 +869,14 @@
       "Calendar link is temporarily inaccessible": [
         "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος"
       ],
-      "Calendar link is wrong": [
-        "Λανθασμένος σύνδεσμος ημερολογίου"
-      ],
       "Failed to sync calendar": [
         "Αποτυχία συγχρονισμού ημερολογίου"
       ],
       "More than 12 hours passed since last update": [
         "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Composer size": {
@@ -1681,8 +1681,8 @@
         "${ numContacts } επαφές"
       ],
       "${ pausedCount } paused": [
-        "",
-        ""
+        "${ pausedCount } σε παύση",
+        "${ pausedCount } σε παύση"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } στη συνδρομή σας με αλλαγή σε ${ annualBilling }"
@@ -2001,8 +2001,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Εάν έχετε ένα από αυτά, συνεχίστε στη ρύθμιση λογαριασμού Proton σε\nσυνεχίστε τη διαδικασία ξεμπλοκαρίσματος."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
@@ -2621,7 +2621,7 @@
         "Μετάβαση στα Απεσταλμένα"
       ],
       "Go to Spam": [
-        "Μετάβαση στα Ανεπιθύμητα"
+        "Μετάβαση στα Ενοχλητικά"
       ],
       "Go to Starred": [
         "Μετάβαση στα Αγαπημένα"
@@ -2666,7 +2666,7 @@
         "Μετακίνηση στα Εισερχόμενα"
       ],
       "Move to Spam": [
-        "Μετακίνηση στα Ανεπιθύμητα"
+        "Μετακίνηση στα Ενοχλητικά"
       ],
       "Move to Trash": [
         "Μετακίνηση στον κάδο"
@@ -3530,6 +3530,11 @@
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -4510,7 +4515,7 @@
         "Το φάκελος σας είναι έτοιμος για λήψη"
       ],
       "Your folder is ready to be downloaded": [
-        ""
+        "Ο φάκελός σας είναι έτοιμος για λήψη"
       ],
       "ZIP / postal code": [
         "Τ.Κ / Ταχυδρομικός κώδικας"
@@ -4548,6 +4553,9 @@
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Η κρυπτογράφηση μέσω ηλεκτρονικού ταχυδρομείου υποχρεώνει την ύπαρξη υπογραφής ηλεκτρονικού ταχυδρομείου για να σας βοηθήσει να πιστοποιήσετε τα απεσταλμένα μηνύματα"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encrypted data with verified digital signature": [
         "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
@@ -4625,6 +4633,14 @@
       ],
       "Name must not end with a space": [
         "Το όνομα δεν μπορεί να τελειώνει με κενό διάστημα"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

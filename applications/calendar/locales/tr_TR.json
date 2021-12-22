@@ -119,8 +119,8 @@
       "Confirm": [
         "Onayla"
       ],
-      "Confirm opening of link ${ link }": [
-        "${ link } bağlantısını açmayı onaylayın"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Kişi grubu"
@@ -962,14 +962,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "Takvim bağlantısı yanlış"
-      ],
       "Failed to sync calendar": [
         "Takvim senkronize edilemedi"
       ],
       "More than 12 hours passed since last update": [
         "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2144,6 +2144,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts ${ forNow }: desteklemiyor:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4079,6 +4084,11 @@
         "Bilinmiyor"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Görünecek isim seçin"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Etkinlik için son bir gün seçin"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Bu bildirimin gönderileceği zamanı seçin"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-posta şifreleme, gönderilen iletilerinizin kimliğini doğrulamaya yardımcı olmak için e-posta imzasını zorunlu kılar"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "Şifre en az ${ length } karakter içermelidir",
         "Şifre en az ${ length } karakter içermelidir"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

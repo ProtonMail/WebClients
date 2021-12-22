@@ -184,8 +184,8 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm opening of link ${ link }": [
-        "リンク ${ link } を確認"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact support": [
         "サポートへ連絡"
@@ -382,8 +382,14 @@
       "Import": [
         "インポート"
       ],
+      "Import calendars": [
+        ""
+      ],
       "Import contacts": [
         "連絡先をインポート"
+      ],
+      "Import emails": [
+        ""
       ],
       "Import from .csv or vCard": [
         ".csv または vCard からインポートする"
@@ -604,6 +610,9 @@
       "Select files": [
         "ファイルを選択"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "プランを選択"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "並べ替え"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "{ PRODUCT_NAMES.EASY_SWITCH } をスタート"
       ],
       "Start import": [
         "インポート開始"
@@ -1336,14 +1342,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "カレンダーのリンクが間違っています"
-      ],
       "Failed to sync calendar": [
         "カレンダーの同期に失敗しました"
       ],
       "More than 12 hours passed since last update": [
         "最後のアップデートから12時間以上経過しています"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2897,14 +2903,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "ProtonMail による Gmail アカウントへのアクセスを許可する: ${ bold2Steps } が有効かどうかを選択し、以下の手順に従ってください。"
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "最後に、${ googleMailLink } に、インポートしたいアカウントの${ googleCaptchaLink } を入力します。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "${ googleAccountLink } に移動します。${ boldSecurity } セクションでは、${ boldAccess } 安全性の低いアプリを表示します。 このオプションが表示されない場合は、2 段階認証が有効になっている可能性があります。"
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "${ googleAccountLink } に移動します。${ boldSecurity } セクションでは、${ boldAppPassword } を作成します。 インポート中にこのパスワードが必要です。"
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "${ boldLabels } セクションで、ProtonMail にインポートするフォルダを選択します。"
@@ -2913,6 +2946,42 @@
         "${ boldGmailSettings } で、${ boldForwarding } に行き、${ boldIMAPAccess } が有効になっていることを確認します。"
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
+        ""
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         ""
       ]
     },
@@ -2929,19 +2998,43 @@
       "app password": [
         "アプリのパスワード"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Export to CSV file": [
+        ""
+      ],
       "Forwarding and POP/IMAP": [
         "転送とPOP/IMAP"
       ],
       "Gmail Settings": [
         "Gmailの設定"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "IMAP アクセス"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "ラベル"
       ],
+      "Manage": [
+        ""
+      ],
       "Other ways to sign in": [
+        ""
+      ],
+      "Publish a calendar": [
         ""
       ],
       "Security": [
@@ -2976,6 +3069,55 @@
         "Gmailの設定でセキュアでないアプリへのアクセスを有効にする方法"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        ""
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        ""
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        ""
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "2 段階認証が無効（デフォルト設定）"
@@ -2986,6 +3128,11 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
+    "Import provider": {
+      "Other": [
         ""
       ]
     },
@@ -3491,9 +3638,6 @@
       "Edit label": [
         "ラベルを編集"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
-      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -3680,6 +3824,9 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "重要: ダウンロードした秘密鍵を送信したり、安全でないメディアに保存したりすると、アカウントが危険にさらされる可能性があります。"
       ],
@@ -3731,6 +3878,9 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        ""
+      ],
       "it’s imperative": [
         ""
       ],
@@ -3748,6 +3898,9 @@
       ],
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "インポートするメッセージが大量にある場合は、完了までに数日かかる場合もあります。"
@@ -4085,7 +4238,7 @@
       "Screenshot(s) attached": [
         "スクリーンショットが添付されました"
       ],
-      "Select a service provider to get started": [
+      "Select a service provider to start": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -4457,6 +4610,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "アカウントにアクセスした IPや時刻を確認するために認証ログを有効にできます。アカウントへのログインの試みの失敗と共に、アクセス元IP アドレスと時刻が記録されます。"
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "@pm.me アドレスを使ってメッセージを受信できるようになりました。 有料プランにアップグレードすると、@pm.me アドレスを使用してメールを送信したり、追加の @pm.me アドレスを作成することもできます。"
       ],
@@ -4494,6 +4650,9 @@
         "サブスクリプションをキャンセルするには、追加のカレンダーと共有中のカレンダーのリンクを削除する必要があります。${ linkButton }"
       ],
       "You need to have a personal calendar to create a link.": [
+        ""
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
         ""
       ],
       "You need to have an active personal calendar to import your events.": [
@@ -4543,9 +4702,6 @@
       ],
       "Your Block List is empty.": [
         "ブロックリストは空です。"
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5188,6 +5344,9 @@
       "Credits used": [
         "使用クレジット"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "請求書のカスタマイズ"
       ],
@@ -5205,6 +5364,9 @@
       ],
       "Default language": [
         "デフォルトの言語"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         ""
@@ -5562,6 +5724,9 @@
       ],
       "Select your country": [
         "国を選択してください"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "自動返信を送信"
@@ -6119,6 +6284,35 @@
         "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        ""
+      ],
+      "How to import calendars from Outlook": [
+        ""
+      ],
+      "How to import calendars from Yahoo": [
+        ""
+      ],
+      "How to import contacts from another service": [
+        ""
+      ],
+      "How to import contacts from Outlook": [
+        ""
+      ],
+      "How to import contacts from Yahoo": [
+        ""
+      ],
+      "How to import emails from another service": [
+        ""
+      ],
+      "How to import emails from Outlook": [
+        ""
+      ],
+      "How to import emails from Yahoo": [
+        ""
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "カレンダーを追加"
@@ -6345,6 +6539,11 @@
       ],
       "week before": [
         "週間前"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7003,6 +7202,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         ""
       ]
@@ -7918,6 +8120,9 @@
       "Invalid verification code": [
         "無効な検証コードです"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "請求書"
       ],
@@ -8098,6 +8303,9 @@
       "Select contact group": [
         "連絡先グループを選択"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "プランを選択"
       ],
@@ -8229,6 +8437,9 @@
       ],
       "Warning!": [
         "警告!"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "更新情報"
@@ -8532,6 +8743,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "パスワードは ${ length } 文字以上必要です"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

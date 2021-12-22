@@ -464,6 +464,9 @@
       "Load more": [
         "載入更多"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "載入驗證中"
       ],
@@ -695,6 +698,9 @@
       "Retry": [
         "重試"
       ],
+      "Revert to original display": [
+        "不要用暗黑模式顯示郵件"
+      ],
       "Save": [
         "儲存"
       ],
@@ -800,6 +806,9 @@
       "Skip": [
         "略過"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "開始匯入"
       ],
@@ -826,6 +835,9 @@
       ],
       "This message contains embedded images.": [
         "此郵件包含內嵌圖片。"
+      ],
+      "This message contains remote content.": [
+        "此郵件包含遠端內容。"
       ],
       "Trust": [
         "信任"
@@ -1579,14 +1591,14 @@
       "Calendar link is temporarily inaccessible": [
         "日曆連結暫時無法存取"
       ],
-      "Calendar link is wrong": [
-        "日曆連結錯誤"
-      ],
       "Failed to sync calendar": [
         "同步日曆失敗"
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
+      ],
+      "Unsupported calendar format": [
+        "不支援的行事曆格式"
       ]
     },
     "Calendar widget banner": {
@@ -2980,6 +2992,11 @@
         "建立行事曆事件失敗"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "在下一個步驟中，你需要選取所有的權限"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 個聯絡人之中，有 ${ totalContactsDiscarded } 個將不會匯入。按一下以取得詳細資料"
@@ -3991,6 +4008,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "此郵件已針對適合暗黑模式進行調整"
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "此郵件乃是回應先前一封郵件的自動回覆。"
       ],
@@ -4594,6 +4614,9 @@
       ],
       "Add to group": [
         "新增到群組"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "全部"
@@ -5572,6 +5595,11 @@
         "密碼已成功設定。"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "需要注意的是 ${ boldNextStep } 以開始您的匯入程序。"
+      ]
+    },
     "Onboarding": {
       "Next": [
         "下一個"
@@ -5643,6 +5671,9 @@
     "Option": {
       "Add to existing group": [
         "新增至現有群組"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "建立新群組"
@@ -6785,6 +6816,9 @@
       "Link confirmation": [
         "連結確認"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load remote content": [
         "載入遠端內容"
       ],
@@ -6935,6 +6969,9 @@
       "Select contact group": [
         "選擇聯絡人群組"
       ],
+      "Select permissions": [
+        "選擇權限"
+      ],
       "Select what to import": [
         "選取要匯入內容"
       ],
@@ -6961,9 +6998,6 @@
       ],
       "Sign in again to continue": [
         "請再次登入以繼續"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "會話排序"
@@ -7059,6 +7093,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "電子郵件加密強制電子郵件簽章，以助驗證您已寄送郵件的真確性"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "經加密資料，已驗證數碼簽章"
       ],
@@ -7131,6 +7168,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "密碼至少必須包含 ${ length } 個字元"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

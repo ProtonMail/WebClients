@@ -467,6 +467,9 @@
       "Load more": [
         "Cargar más"
       ],
+      "Load unprotected": [
+        "Carga desprotegida"
+      ],
       "Loading verification": [
         "Cargando verificación"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Reintentar"
       ],
+      "Revert to original display": [
+        "Revertir a la vista original"
+      ],
       "Save": [
         "Guardar"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Omitir"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Algunas imágenes no se pudieron cargar con la protección de rastreo"
+      ],
       "Start import": [
         "Iniciar importación"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Este mensaje contiene imágenes incrustadas."
+      ],
+      "This message contains remote content.": [
+        "Este mensaje incluye contenido remoto."
       ],
       "Trust": [
         "Confiar"
@@ -1588,14 +1600,14 @@
       "Calendar link is temporarily inaccessible": [
         "El enlace del calendario está inaccesible temporalmente"
       ],
-      "Calendar link is wrong": [
-        "El enlace del calendario es erróneo"
-      ],
       "Failed to sync calendar": [
         "Error al sincronizar el calendario"
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
+      ],
+      "Unsupported calendar format": [
+        "Formato de calendario no soportado"
       ]
     },
     "Calendar widget banner": {
@@ -2474,7 +2486,7 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Los mensajes no enviados no se pueden mover a la bandeja de entrada"
+        "Los borradores no se pueden mover a la bandeja de entrada"
       ],
       "Drafts cannot be moved to Spam": [
         "Los borradores no se pueden mover a spam"
@@ -3012,6 +3024,11 @@
       ],
       "Creating calendar event failed": [
         "Error al crear el evento del calendario"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que desea visitar o no lo abra."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Este mensaje se ha ajustado para cumplir con un fondo oscuro."
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Este mensaje es generado automáticamente como respuesta a un mensaje anterior."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Añadir al grupo"
+      ],
+      "Address": [
+        "Dirección"
       ],
       "ALL": [
         "TODO"
@@ -5668,6 +5691,11 @@
         "La contraseña se ha cambiado con éxito"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Siguiente"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Añadir al grupo existente"
+      ],
+      "All": [
+        "Todo"
       ],
       "Create new group": [
         "Crear grupo nuevo"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Confirmación de enlace"
       ],
+      "Load embedded images": [
+        "Cargar imágenes incrustadas"
+      ],
       "Load remote content": [
         "Cargar contenido remoto"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Seleccionar grupo de contactos"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         "Seleccione qué importar"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Inicie sesión otra vez para continuar"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        "Algunas imágenes no se pudieron cargar con protección de rastreo [Carga desprotegida]"
       ],
       "Sort conversations": [
         "Ordenar conversaciones"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El cifrado de correo electrónico obliga a la firma de correo electrónico a ayudar a autenticar sus mensajes enviados"
       ],
+      "Encrypted data": [
+        "Datos cifrados"
+      ],
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "La contraseña debe tener al menos ${ length } caracter",
         "La contraseña debe tener al menos ${ length } caracteres"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Clic para repetir el video"
+      ],
+      "Replay video": [
+        "Repetir video"
       ]
     },
     "VPN feature": {

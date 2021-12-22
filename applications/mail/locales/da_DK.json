@@ -45,7 +45,7 @@
         "Tilføj ny gruppe"
       ],
       "Add participant": [
-        ""
+        "Tilføj deltager"
       ],
       "Add phone number": [
         "Tilføj telefonnummer"
@@ -183,7 +183,7 @@
         "Bekræft"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Bekræft åbning af link ${ linkToShow }"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -467,6 +467,9 @@
       "Load more": [
         "Indlæs flere"
       ],
+      "Load unprotected": [
+        "Indlæs ubeskyttet"
+      ],
       "Loading verification": [
         "Indlæser verifikation"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Prøv igen"
       ],
+      "Revert to original display": [
+        "Vend tilbage til oprindelig visning"
+      ],
       "Save": [
         "Gem"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Spring over"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Nogle billeder kunne ikke indlæses med sporingsbeskyttelse"
+      ],
       "Start import": [
         "Start importering"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Denne besked indeholder indlejrede billeder."
+      ],
+      "This message contains remote content.": [
+        "Denne besked indeholder eksternt indhold."
       ],
       "Trust": [
         "Hav tillid til"
@@ -976,13 +988,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        ""
+        "Tilføjelse af deltager mislykkedes"
       ],
       "Invitation sent and participant added": [
-        ""
+        "Invitation sendt og deltager tilføjet"
       ],
       "Participant added": [
-        ""
+        "Deltager tilføjet"
       ]
     },
     "Addon": {
@@ -1336,10 +1348,10 @@
         ""
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } accepterede en invitation til én forekomst af begivenheden."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } accepterede en invitation til denne begivenhed."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } accepterede din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed."
@@ -1369,10 +1381,10 @@
         ""
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } afslog en invitation til én forekomst af begivenheden."
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } afslog en invitation til denne begivenhed."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } afslog din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed."
@@ -1393,10 +1405,10 @@
         ""
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } havde accepteret din invitation til én forekomst af begivenheden."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "${ participantName } havde accepteret en invitation til denne begivenhed."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } accepterede din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
@@ -1411,10 +1423,10 @@
         ""
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } havde afslået en invitation til én forekomst af begivenheden."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } havde afslået en invitation til denne begivenhed."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } afslog din invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
@@ -1465,10 +1477,10 @@
         ""
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } havde foreløbig accepteret en invitation til én forekomst af begivenheden."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } havde foreløbig accepteret en invitation til denne begivenhed."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } accepterede din invitation med forbehold og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
@@ -1495,7 +1507,7 @@
         ""
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } accepterede foreløbig en invitation til denne begivenhed."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } accepterede din invitation med forbehold og foreslog et nyt tidspunkt for én forekomst af denne begivenhed."
@@ -1588,22 +1600,22 @@
       "Calendar link is temporarily inaccessible": [
         "Kalenderlink er midlertidig ikke tilgængeligt"
       ],
-      "Calendar link is wrong": [
-        "Kalenderlink er forkert"
-      ],
       "Failed to sync calendar": [
         "Kunne ikke synkronisere kalender"
       ],
       "More than 12 hours passed since last update": [
         "Der er gået mere end 12 timer siden den seneste opdatering"
+      ],
+      "Unsupported calendar format": [
+        "Ikke-understøttet kalenderformat"
       ]
     },
     "Calendar widget banner": {
       "Event already ended": [
-        ""
+        "Begivenhed allerede afsluttet"
       ],
       "Event in progress": [
-        ""
+        "Begivenhed i gang"
       ]
     },
     "Collapsible tooltip": {
@@ -2469,21 +2481,21 @@
     },
     "Error adding participants to a calendar event": {
       "At most 100 participants are allowed per invitation": [
-        ""
+        "Højst 100 deltagere er tilladt pr. invitation"
       ]
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Kladder kan ikke flyttes til indbakke"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Kladder kan ikke flyttes til spam"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Sendte beskeder kan ikke flyttes til indbakke"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Sendte beskeder kan ikke flyttes til spam"
       ],
       "This action cannot be performed": [
         "Denne handling kan ikke udføres"
@@ -2646,7 +2658,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "Kan ikke sende invitation til ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -3012,6 +3024,11 @@
       ],
       "Creating calendar event failed": [
         "Oprettelse af kalenderbegivenhed mislykkedes"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Denne besked er blevet tilpasset, så den er i overensstemmelse med en mørk baggrund."
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Denne besked er automatisk genereret som svar på en tidligere besked."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Føj til gruppe"
+      ],
+      "Address": [
+        "Adresse"
       ],
       "ALL": [
         "ALL"
@@ -5668,6 +5691,11 @@
         "Adgangskode er blevet ændret"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Næste"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Føj til eksisterende gruppe"
+      ],
+      "All": [
+        "Alle"
       ],
       "Create new group": [
         "Opret ny gruppe"
@@ -6857,7 +6888,7 @@
         "E-mailadresser"
       ],
       "Email content": [
-        ""
+        "E-mailindhold"
       ],
       "Email settings": [
         "E-mail indstillinger"
@@ -6924,6 +6955,9 @@
       ],
       "Link confirmation": [
         "Linkbekræftelse"
+      ],
+      "Load embedded images": [
+        "Indlæs indlejrede billeder"
       ],
       "Load remote content": [
         "Indlæs eksternt indhold"
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Vælg kontaktgruppe"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         "Vælg, hvad der skal importeres"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Log ind igen for at fortsætte"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Sorter samtaler"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailkryptering gennemtvinger e-mailsignatur som hjælp til godkendelse af dine sendte beskeder"
       ],
+      "Encrypted data": [
+        "Krypterede data"
+      ],
       "Encrypted data with verified digital signature": [
         "Krypterede data med verificeret digital signatur"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "Adgangskode skal indeholde mindst ${ length } tegn",
         "Adgangskode skal indeholde mindst ${ length } tegn"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

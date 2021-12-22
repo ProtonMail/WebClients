@@ -467,6 +467,9 @@
       "Load more": [
         "Carregar mais"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "A carregar verificação"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Repetir"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Gravar"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Ignorar"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "Iniciar a importação"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Esta mensagem contém imagens incorporadas."
+      ],
+      "This message contains remote content.": [
+        ""
       ],
       "Trust": [
         "Confiar"
@@ -1588,13 +1600,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -3014,6 +3026,11 @@
         "Falha ao criar evento de calendário"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Por favor, verifique se esta é a ligação que deseja visitar, ou não a abra."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Esta mensagem é gerada automaticamente como resposta a uma mensagem anterior."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "TUDO"
@@ -5668,6 +5691,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Seguinte"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Adicionar a um grupo existente"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Confirmação de hiperligação"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load remote content": [
         "Carregar conteúdo remoto"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Seleccionar grupo de contactos"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         ""
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Reinicie sessão para continuar"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Ordenar conversas"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "A encriptação do email força a assinatura para ajudar a autenticar as suas mensagens enviadas"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Dados encriptados com assinatura digital verificada"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "A senha deve conter pelo menos ${ length } carácter",
         "A senha deve conter pelo menos $ ${ length } caracteres"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

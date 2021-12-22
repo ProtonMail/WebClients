@@ -45,7 +45,7 @@
         "添加新群组"
       ],
       "Add participant": [
-        ""
+        "添加参与者"
       ],
       "Add phone number": [
         "添加电话号码"
@@ -464,6 +464,9 @@
       "Load more": [
         "加载更多"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "正在准备验证"
       ],
@@ -648,7 +651,7 @@
         "恢复数据"
       ],
       "Refine your search": [
-        ""
+        "细化您的搜索"
       ],
       "refresh the page": [
         "刷新页面"
@@ -694,6 +697,9 @@
       ],
       "Retry": [
         "重试"
+      ],
+      "Revert to original display": [
+        ""
       ],
       "Save": [
         "保存"
@@ -800,6 +806,9 @@
       "Skip": [
         "跳过"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "开始导入"
       ],
@@ -826,6 +835,9 @@
       ],
       "This message contains embedded images.": [
         "此邮件含有嵌入图像。"
+      ],
+      "This message contains remote content.": [
+        "此邮件含有外链内容"
       ],
       "Trust": [
         "信任"
@@ -933,7 +945,7 @@
         "查看源代码"
       ],
       "Why not?": [
-        ""
+        "为什么不呢？"
       ],
       "Yes": [
         "是"
@@ -1579,14 +1591,14 @@
       "Calendar link is temporarily inaccessible": [
         "日历链接暂时无法访问"
       ],
-      "Calendar link is wrong": [
-        "日历链接错误"
-      ],
       "Failed to sync calendar": [
         "同步日历失败"
       ],
       "More than 12 hours passed since last update": [
         "离上一个更新已经超过了12小时"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar widget banner": {
@@ -2980,6 +2992,11 @@
         "创建日历事项失败"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
@@ -3242,7 +3259,7 @@
         "确定要永久删除此邮件吗？"
       ],
       "Attach public key": [
-        ""
+        "附上公钥"
       ],
       "Background color": [
         "背景颜色"
@@ -3329,7 +3346,7 @@
         "创建联系人群组"
       ],
       "Create in": [
-        ""
+        "创建于"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
@@ -3356,7 +3373,7 @@
         "天"
       ],
       "Default email application": [
-        ""
+        "设为默认邮件应用"
       ],
       "Disable message content search": [
         ""
@@ -3422,7 +3439,7 @@
         ""
       ],
       "embedded image": [
-        "嵌入的图像"
+        "张嵌入图像"
       ],
       "Encrypt for non-ProtonMail users": [
         "为非 ProtonMail 用户加密"
@@ -3629,16 +3646,16 @@
         "邮件已发送"
       ],
       "Message sent.": [
-        ""
+        "邮件已发送。"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "邮件将于${ dateString } ${ formattedTime } 发送"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        ""
+        "邮件将于今天 ${ formattedTime } 发送"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "邮件将于明天 ${ formattedTime } 发送"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
@@ -3809,7 +3826,7 @@
         "您举报的邮件会被上传，以便我们分析并改进过滤机制。这意味着我们将得知此邮件的所有内容。"
       ],
       "Request read receipt": [
-        ""
+        "请求已读回执"
       ],
       "Right to Left": [
         "从右到左"
@@ -3875,7 +3892,7 @@
         "设置恢复密语"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
+        "将 ProtonMail 设为此浏览器的默认电子邮件应用程序。这样当您下次点击邮件链接时，ProtonMail 将会自动打开。"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
@@ -3991,6 +4008,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "此邮件已调整为适配深色背景。"
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "这是一封自动回复邮件。"
       ],
@@ -4010,16 +4030,16 @@
         "此邮件将移至草稿箱，以便您进行编辑。您需要为其重新安排发送时间。"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "此邮件将于${ dateString } ${ formattedTime } 发送"
       ],
       "This message will be sent shortly": [
         "此邮件将立即发送"
       ],
       "This message will be sent today at ${ formattedTime }": [
-        ""
+        "此邮件将于今天 ${ formattedTime } 发送"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "此邮件将于明天 ${ formattedTime } 发送"
       ],
       "This message will expire ${ formattedDate }": [
         "此邮件将于 ${ formattedDate } 过期"
@@ -4070,7 +4090,7 @@
         "关闭全文搜索，现有进度不会丢失。"
       ],
       "Turn on to search the content of your messages": [
-        ""
+        "开启以搜索您的邮件内容"
       ],
       "Unsupported file": [
         "不支持文件"
@@ -4594,6 +4614,9 @@
       ],
       "Add to group": [
         "添加至群组"
+      ],
+      "Address": [
+        "地址"
       ],
       "ALL": [
         "且"
@@ -5572,6 +5595,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "下一步"
@@ -5643,6 +5671,9 @@
     "Option": {
       "Add to existing group": [
         "添加到已有队列"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "创建群组"
@@ -6717,7 +6748,7 @@
         "邮箱地址"
       ],
       "Email content": [
-        ""
+        "邮件内容"
       ],
       "Email settings": [
         "邮件设置"
@@ -6784,6 +6815,9 @@
       ],
       "Link confirmation": [
         "确认打开链接"
+      ],
+      "Load embedded images": [
+        "加载嵌入图像"
       ],
       "Load remote content": [
         "加载外链内容"
@@ -6935,6 +6969,9 @@
       "Select contact group": [
         "选择联系人群组"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         "选择要导入的内容"
       ],
@@ -6961,9 +6998,6 @@
       ],
       "Sign in again to continue": [
         "此操作需要重新登录"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "会话排序"
@@ -7059,6 +7093,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "电子邮件加密迫使电子邮件签名，以帮助验证您发送的信息。"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "经过已验证的数字签名加密过的数据"
       ],
@@ -7131,6 +7168,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "密码必须至少包含 ${ length } 个字符"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

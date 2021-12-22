@@ -44,7 +44,7 @@
         "Activar la clau d'organització"
       ],
       "Activate recovery": [
-        ""
+        "Activar la recuperació"
       ],
       "Add": [
         "Afegir"
@@ -184,8 +184,8 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmeu obrir l'enllaç ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Confirmeu obrir l'enllaç ${ linkToShow }"
       ],
       "Contact support": [
         "Contactar amb el suport"
@@ -382,8 +382,14 @@
       "Import": [
         "Importar"
       ],
+      "Import calendars": [
+        "Importar calendaris"
+      ],
       "Import contacts": [
         "Importar contactes"
+      ],
+      "Import emails": [
+        "Importar correus"
       ],
       "Import from .csv or vCard": [
         "Importar des de .csv o vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Seleccioneu fitxers"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Seleccionar pla"
       ],
@@ -626,7 +635,7 @@
         "Seleccionar catch-all"
       ],
       "Set recovery phrase": [
-        ""
+        "Establir la frase de recuperació"
       ],
       "Share via link": [
         "Compartir amb enllaç"
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Ordenar"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Començar ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Començar importació"
@@ -1346,14 +1352,14 @@
       "Calendar link is temporarily inaccessible": [
         "L'enllaç del calendari no és accessible temporalment"
       ],
-      "Calendar link is wrong": [
-        "L'enllaç del calendari és erroni"
-      ],
       "Failed to sync calendar": [
         "Error sincronitzant el calendari"
       ],
       "More than 12 hours passed since last update": [
         "Han passat més de 12 hores des de la darrera actualització"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2930,14 +2936,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Permetre l'accés a ProtonMail al vostre compte de Gmail: trieu si ${ bold2Steps } està activat i seguiu els següents passos."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Finalment, ${ googleMailLink } amb el compte que vulgueu importar ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Aneu a ${ googleAccountLink }. A la secció ${ boldSecurity }, ${ boldAccess } per a aplicacions menys segures. Si no veieu aquesta opció, és possible que tingueu activada la verificació en dos passos."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Aneu a ${ googleAccountLink }. A la secció ${ boldSecurity }, creeu un ${ boldAppPassword } si encara no en teniu cap. Necessitareu aquesta contrasenya durant la importació."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "A la secció ${ boldLabels }, trieu les carpetes que es poden importar a ProtonMail."
@@ -2946,6 +2979,42 @@
         "Al vostre ${ boldGmailSettings }, aneu a ${ boldForwarding } i assegureu-vos que ${ boldIMAPAccess } estigui habilitat."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
+        ""
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         ""
       ]
     },
@@ -2962,19 +3031,43 @@
       "app password": [
         "contrasenya de l'aplicació"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Export to CSV file": [
+        ""
+      ],
       "Forwarding and POP/IMAP": [
         "Redirecció i POP/IMAP"
       ],
       "Gmail Settings": [
         "Configuració de Gmail"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "Accés IMAP"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Etiquetes"
       ],
+      "Manage": [
+        ""
+      ],
       "Other ways to sign in": [
+        ""
+      ],
+      "Publish a calendar": [
         ""
       ],
       "Security": [
@@ -3009,6 +3102,55 @@
         "Com s'activa l'accés a les aplicacions menys segures a la configuració de Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        ""
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        ""
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        ""
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Verificació de 2 passos deshabilitada (paràmetres per defecte)"
@@ -3019,6 +3161,11 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
+    "Import provider": {
+      "Other": [
         ""
       ]
     },
@@ -3547,9 +3694,6 @@
       "Edit label": [
         "Editar etiqueta"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Mogui els seus correus electrònics del seu proveïdor actual a Proton sense esforç i amb seguretat. Si utilitzeu Google, també admetem la importació de calendaris i contactes."
-      ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
@@ -3737,6 +3881,9 @@
       "Import mailbox": [
         "Importar bústia de correu"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "IMPORTANT: La descarrega de les vostres claus privades i el posterior enviament o emmagatzematge en mitjans insegurs pot comprometre la seguretat del vostre compte!"
       ],
@@ -3788,6 +3935,9 @@
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        ""
+      ],
       "it’s imperative": [
         ""
       ],
@@ -3805,6 +3955,9 @@
       ],
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "Les grans importacions poden trigar diversos dies a completar-se."
@@ -4143,8 +4296,8 @@
       "Screenshot(s) attached": [
         "Captures de pantalla(s) adjuntes"
       ],
-      "Select a service provider to get started": [
-        "Seleccioneu un proveïdor de serveis per començar"
+      "Select a service provider to start": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -4515,6 +4668,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Podeu habilitar l'accés amb autenticació per veure quan s'accedeix al vostre compte, i des de quina IP. Enregistrarem l'adreça IP que accedeix al compte, l'hora i els intents fallits."
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ara podeu rebre missatges a la vostra adreça @pm.me. Actualitzeu a un pla de pagament per enviar també correus electrònics usant la vostra adreça @pm.me i per crear adreces @pm.me addicionals."
       ],
@@ -4553,6 +4709,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Necessiteu tenir un calendari personal per crear un enllaç."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
@@ -4601,9 +4760,6 @@
       ],
       "Your Block List is empty.": [
         "La vostra llista de no desitjats està buida."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5250,6 +5406,9 @@
       "Credits used": [
         "Crèdits utilitzats"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Personalitzar factures"
       ],
@@ -5267,6 +5426,9 @@
       ],
       "Default language": [
         "Idioma per defecte"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         "Esquema PGP per defecte"
@@ -5624,6 +5786,9 @@
       ],
       "Select your country": [
         "Seleccioni el seu país"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
@@ -6185,6 +6350,35 @@
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        ""
+      ],
+      "How to import calendars from Outlook": [
+        ""
+      ],
+      "How to import calendars from Yahoo": [
+        ""
+      ],
+      "How to import contacts from another service": [
+        ""
+      ],
+      "How to import contacts from Outlook": [
+        ""
+      ],
+      "How to import contacts from Yahoo": [
+        ""
+      ],
+      "How to import emails from another service": [
+        ""
+      ],
+      "How to import emails from Outlook": [
+        ""
+      ],
+      "How to import emails from Yahoo": [
+        ""
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Afegir calendari"
@@ -6418,6 +6612,11 @@
       "week before": [
         "setmana abans",
         "setmanes abans"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7077,6 +7276,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Podeu aplicar múltiples etiquetes a un mateix missatge, però els missatges normalment només poden estar a una sola carpeta. Arrossegueu i deixeu anar per canviar l'ordre de les vostres carpetes i etiquetes."
       ]
@@ -7563,7 +7765,7 @@
         "3. Seleccionar arxiu de configuració i descarregar"
       ],
       "Account recovery": [
-        ""
+        "Recuperació de compte"
       ],
       "Account suspended": [
         "Compte suspès"
@@ -7746,7 +7948,7 @@
         "Contactes"
       ],
       "Continue with partial import?": [
-        ""
+        "Continuar amb la importació parcial?"
       ],
       "Coupon discount": [
         "Cupó de descompte"
@@ -7782,10 +7984,10 @@
         "Filtres personalitzats"
       ],
       "Customize and confirm": [
-        ""
+        "Personalitzeu i confirmeu"
       ],
       "Customize calendar import": [
-        ""
+        "Personalitzeu la importació del calendari"
       ],
       "Customize import": [
         "Personalitza importació"
@@ -7803,7 +8005,7 @@
         "Dades bloquejades"
       ],
       "Data recovery": [
-        ""
+        "Recuperació de dades"
       ],
       "Date": [
         "Data"
@@ -7839,7 +8041,7 @@
         "Eliminar registres"
       ],
       "Delete organization?": [
-        ""
+        "Eliminar l'organització?"
       ],
       "Delete user": [
         "Eliminar usuari"
@@ -7987,13 +8189,16 @@
         "Importar clau"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Importar via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Aplicació d'importació-exportació"
       ],
       "Invalid verification code": [
         "Codi de verificació no vàlid"
+      ],
+      "Invitations": [
+        ""
       ],
       "Invoices": [
         "Factures"
@@ -8068,7 +8273,7 @@
         "Contrasenya i claus"
       ],
       "Password & security": [
-        ""
+        "Paraula de pas I seguretat"
       ],
       "Passwords": [
         "Contrasenyes"
@@ -8134,13 +8339,13 @@
         "Reconnectar el teu compte"
       ],
       "Recover data": [
-        ""
+        "Recuperar dades"
       ],
       "Recovery": [
         "Recuperació"
       ],
       "Recovery file": [
-        ""
+        "Arxiu de recuperació"
       ],
       "Remove calendar": [
         "Eliminar calendari"
@@ -8175,6 +8380,9 @@
       "Select contact group": [
         "Seleccionar grup de contactes"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "Selecció del pla"
       ],
@@ -8185,7 +8393,7 @@
         "Seleccioneu la manera d’enviar aquesta notificació"
       ],
       "Select what to import": [
-        ""
+        "Seleccioneu què voleu importar"
       ],
       "Select when you want this notification to be sent": [
         "Selecciona quan vols que s'enviï aquesta notificació"
@@ -8245,7 +8453,7 @@
         "Iniciar el procés d'importació"
       ],
       "Start new import": [
-        ""
+        "Iniciar una nova importació"
       ],
       "Status": [
         "Estat"
@@ -8266,7 +8474,7 @@
         "Canviar al mode de dues contrasenyes"
       ],
       "Take precautions to avoid data loss!": [
-        ""
+        "Preneu precaucions per evitar la pèrdua de dades!"
       ],
       "Theme": [
         "Tema"
@@ -8307,6 +8515,9 @@
       "Warning!": [
         "Atenció!"
       ],
+      "What would you like to import?": [
+        "Què li agradaria importar?"
+      ],
       "What's new": [
         "Novetats"
       ],
@@ -8320,7 +8531,7 @@
         "El vostre pla"
       ],
       "Your recovery status": [
-        ""
+        "El seu estat de recuperació"
       ],
       "ZIP / postal code": [
         "Zip/Codi postal"
@@ -8612,6 +8823,14 @@
       "Password must contain at least ${ length } character": [
         "La contrasenya ha de tenir com a mínim ${ length } caràcter",
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

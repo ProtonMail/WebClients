@@ -184,8 +184,8 @@
       "Confirm": [
         "Potwierdź"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potwierdź otwieranie linku ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Potwierdź otwieranie linku ${ linkToShow }"
       ],
       "Contact support": [
         "Pomoc techniczna"
@@ -382,8 +382,14 @@
       "Import": [
         "Importuj"
       ],
+      "Import calendars": [
+        "Importuj kalendarze"
+      ],
       "Import contacts": [
         "Importuj kontakty"
+      ],
+      "Import emails": [
+        "Importuj wiadomości"
       ],
       "Import from .csv or vCard": [
         "Importuj z pliku CSV lub vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Wybierz pliki"
       ],
+      "Select language for invitation emails": [
+        "Wybierz język zaproszenia"
+      ],
       "Select plan": [
         "Wybierz plan"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Sortuj"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Zacznij korzystać z aplikacji ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Rozpocznij importowanie"
@@ -1319,7 +1325,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Możesz zaimportować pliki ICS z innego kalendarza ${ CALENDAR_APP_NAME }. Pozwala to na szybkie zaimportowanie pojedynczego wydarzenia lub całego harmonogramu."
+        "Możesz importować pliki ICS z innego kalendarza do ${ CALENDAR_APP_NAME }. Pozwala to na szybkie zaimportowanie pojedynczego wydarzenia lub całego harmonogramu."
       ]
     },
     "Calendar limit warning": {
@@ -1366,14 +1372,14 @@
       "Calendar link is temporarily inaccessible": [
         "Link kalendarza jest tymczasowo niedostępny"
       ],
-      "Calendar link is wrong": [
-        "Link kalendarza jest nieprawidłowy"
-      ],
       "Failed to sync calendar": [
         "Nie udało się zsynchronizować kalendarza"
       ],
       "More than 12 hours passed since last update": [
         "Od ostatniej aktualizacji minęło ponad 12 godzin"
+      ],
+      "Unsupported calendar format": [
+        "Format kalendarza jest nieobsługiwany"
       ]
     },
     "Calendar view": {
@@ -2996,14 +3002,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Zezwalaj usłudze ProtonMail na dostęp do konta Google: wybierz, czy ${ bold2Steps } jest włączona i wykonaj następujące czynności."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        "Kliknij ${ boldManage }, aby rozwinąć menu"
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        "W zależności od dostawcy poczty e-mail, musisz wygenerować ${ knowledgeBaseLink } przed rozpoczęciem procesu importowania"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        "Rozwiń menu, klikając na 3 kropki (...)"
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "${ googleMailLink } za pomocą konta, z którego chcesz zaimportować wiadomości, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Wygeneruj ${ boldAppPassword } i użyj go zamiast swojego zwykłego hasła"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Wygeneruj ${ boldAppPassword } i użyj go zamiast zwykłego hasła, gdy zostaniesz o to poproszony przez Proton"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        "Przejdź do sekcji ${ boldAccountInfo } na koncie ${ yahooMailLink }"
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        "Przejdź do ${ boldAccountSecurity }"
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Przejdź do ${ googleAccountLink }. W sekcji ${ boldSecurity } ${ boldAccess } do mniej bezpiecznych aplikacji. Jeśli nie widzisz tej opcji, możesz mieć włączoną weryfikację dwuetapową."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Przejdź do ${ googleAccountLink }. W sekcji ${ boldSecurity } utwórz ${ boldAppPassword }, jeśli go jeszcze nie posiadasz. Będziesz potrzebować tego hasła podczas procesu importowania."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        "Przejdź do ${ securitySettingsLink } na stronie outlook.com"
+      ],
+      "If 2-step verification is off, turn it on": [
+        "Włącz weryfikację dwuetapową, jeśli jest wyłączona"
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "W sekcji ${ boldLabels } wybierz foldery, które mogą zostać zaimportowane do poczty ProtonMail."
@@ -3013,6 +3046,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "Zaloguj się do poczty Yahoo Mail i kliknij w swoją nazwę użytkownika w prawym górnym rogu, aby uzyskać dostęp do sekcji ${ boldAccountInfo }. W sekcji ${ boldAccountSec } przewiń do sekcji ${ boldAppPassword }, aby wygenerować hasło aplikacji. Będziesz potrzebować tego hasła podczas procesu importowania."
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        "Otwórz kontakty usługi ${ yahooMailLink }"
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        "Otwórz ${ outlookContactsLink } usługi Outlook"
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        "Kliknij ${ boldExportContacts } i wybierz jakie kontakty chcesz wyeksportować"
+      ],
+      "Select ${ boldExportCSV }": [
+        "Wybierz ${ boldExportCSV }"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Aby zaimportować kalendarz do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Outlook w 3 prostych krokach:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Aby zaimportować kalendarz do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Yahoo w 3 prostych krokach:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Aby zaimportować kalendarz do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi przed rozpoczęciem procesu importowania"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Aby zaimportować kontakty do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Outlook w 3 prostych krokach:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Aby zaimportować kontakty do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Yahoo w 3 prostych krokach:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Aby zaimportować kontakty do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi przed rozpoczęciem procesu importowania"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Aby zaimportować wiadomości do serwisu Proton, potrzebujesz ${ appPasswordLink } z usługi Outlook. Zdobądź je wykonując następuje kroki:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Aby zaimportować wiadomości do serwisu Proton, potrzebujesz ${ appPasswordLink } z usługi Yahoo. Zdobądź je wykonując następuje kroki:"
       ]
     },
     "Import instructions emphasis": {
@@ -3028,20 +3097,44 @@
       "app password": [
         "hasło aplikacji"
       ],
+      "Can view all details": [
+        "Może zobaczyć wszystkie szczegóły"
+      ],
+      "Export": [
+        "Eksportuj"
+      ],
+      "Export contacts": [
+        "Eksportuj kontakty"
+      ],
+      "Export to CSV file": [
+        "Eksportuj plik CSV"
+      ],
       "Forwarding and POP/IMAP": [
         "Przekazywanie i POP/IMAP"
       ],
       "Gmail Settings": [
         "ustawieniach poczty Gmail"
       ],
+      "ICS": [
+        "ICS"
+      ],
       "IMAP access": [
         "dostęp IMAP"
+      ],
+      "in the next step you need to select all the permissions": [
+        "w kolejnym kroku musisz wybrać wszystkie uprawnienia"
       ],
       "Labels": [
         "Etykiety"
       ],
+      "Manage": [
+        "Zarządzaj"
+      ],
       "Other ways to sign in": [
         "Inne metody logowania"
+      ],
+      "Publish a calendar": [
+        "Publikowanie kalendarza"
       ],
       "Security": [
         "Bezpieczeństwo"
@@ -3075,6 +3168,55 @@
         "Jak włączyć dostęp do mniej bezpiecznych aplikacji w ustawieniach poczty Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        "hasła aplikacji"
+      ],
+      "app password or enable IMAP": [
+        "hasło aplikacji lub włączyć dostęp IMAP"
+      ],
+      "contacts": [
+        "kontakty"
+      ],
+      "CSV file": [
+        "pliku CSV"
+      ],
+      "full calendar view": [
+        "widoku kalendarza"
+      ],
+      "ICS file": [
+        "pliku ICS"
+      ],
+      "security settings": [
+        "ustawień bezpieczeństwa"
+      ],
+      "shared calendars": [
+        "kalendarzy udostępnionych"
+      ],
+      "Yahoo Mail": [
+        "Yahoo Mail"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        "Kliknij link ${ boldICS } i pobierz plik"
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        "Przejdź do ${ calendarLink } w ustawianiach usługi Outlook"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        "Przejdź do ${ calendarViewLink } na koncie Yahoo Mail"
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        "Najedź myszą na kalendarz, który chcesz zaimportować i otwórz menu rozwijane"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        "Kliknij ${ boldExport }, aby wyeksportować plik ICS"
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        "W sekcji ${ boldPublish } wybierz kalendarz, który chcesz zaimportować. Ustaw uprawnienie na ${ boldCanViewAllDetails } i opublikuj go"
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Weryfikacja dwuetapowa jest wyłączona (domyślne ustawienie)"
@@ -3086,6 +3228,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Czy na pewno chcesz zaimportować klucz prywatny? Importowanie ujawnionych lub nieostrożnie wygenerowanych kluczy prywatnych może naruszyć bezpieczeństwo wiadomości e-mail.\n\nPamiętaj, że klucz publiczny odpowiadający temu kluczowi prywatnemu będzie publicznie dostępny na naszym serwerze kluczy. Jeśli klucz zawiera dane osobowe (takie jak imię i nazwisko), których nie chcesz publikować, edytuj klucz przed jego zaimportowaniem."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Inny"
       ]
     },
     "Import status": {
@@ -3659,9 +3806,6 @@
       "Edit label": [
         "Edytuj etykietę"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Przenieś do Proton bezpiecznie i bezproblemowo swoje wiadomości od obecnego dostawy. Jeśli używasz konta Google, obsługujemy również importowanie kalendarza i kontaktów."
-      ],
       "Email address": [
         "Adres e-mail"
       ],
@@ -3851,6 +3995,9 @@
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importuj wiadomości, kalendarze i kontakty z innej usługi do serwisu Proton. Poprowadzimy Cię na każdym kroku i zaszyfrujemy dane podczas ich przenoszenia. Witaj w świecie prywatności."
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "WAŻNE: Pobieranie, wysyłanie i przechowywanie kluczy prywatnych na niezabezpieczonych nośnikach może narazić Twoje konto na niebezpieczeństwo!"
       ],
@@ -3902,6 +4049,9 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        "Niektóre dane są zaszyfrowane i zablokowane. To może być spowodowane zresetowaniem hasła. Użyj metody odzyskiwania danych, aby odblokować dane."
+      ],
       "it’s imperative": [
         "jest konieczna"
       ],
@@ -3919,6 +4069,9 @@
       ],
       "Label all imported messages as": [
         "Oznacz wszystkie zaimportowane wiadomości etykietą"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        "Język, w którym będą wysyłane e-maile związane z zaproszeniami."
       ],
       "Large imports can take several days to complete.": [
         "Importowanie dużej ilości danych może potrwać kilka dni."
@@ -4259,7 +4412,7 @@
       "Screenshot(s) attached": [
         "Zrzuty ekranu zostały dołączone"
       ],
-      "Select a service provider to get started": [
+      "Select a service provider to start": [
         "Aby rozpocząć, wybierz dostawcę usługi"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -4631,6 +4784,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Możesz włączyć logi logowania, aby widzieć udane i nieudane próby logowania oraz adresy IP, z których te próby nastąpiły."
       ],
+      "You can import one data type at a time.": [
+        "Możesz importować jeden typ danych jednocześnie."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Możesz odbierać wiadomości przy użyciu adresu @pm.me. Ulepsz do płatnego planu, aby wysyłać wiadomości z adresu @pm.me oraz tworzyć dodatkowe adresy."
       ],
@@ -4669,6 +4825,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Musisz posiadać osobisty kalendarz, aby utworzyć link."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        "Aby zaimportować wydarzenia z .ics, musisz mieć aktywny kalendarz osobisty."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia."
@@ -4717,9 +4876,6 @@
       ],
       "Your Block List is empty.": [
         "Lista odrzuconych jest pusta."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "Twoje dane są zaszyfrowane i zablokowane. Możesz odzyskać do nich dostęp metodą odzyskiwania danych."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
@@ -5374,6 +5530,9 @@
       "Credits used": [
         "Użyte środki"
       ],
+      "Current login password": [
+        "Obecne hasło logowania"
+      ],
       "Customize invoices": [
         "Dostosuj faktury"
       ],
@@ -5391,6 +5550,9 @@
       ],
       "Default language": [
         "Domyślny język"
+      ],
+      "Default language (${ defaultLanguage })": [
+        "Język domyślny (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Domyślny schemat PGP"
@@ -5748,6 +5910,9 @@
       ],
       "Select your country": [
         "Wybierz kraj"
+      ],
+      "Send and reply to invites in": [
+        "Wysyłaj i odpowiadaj na zaproszenia w"
       ],
       "Send auto-reply": [
         "Wyślij automatyczną odpowiedź"
@@ -6317,6 +6482,35 @@
         "Dostępna jest nowa wersja aplikacji ${ appName }. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Jak zaimportować kalendarze z innej usługi"
+      ],
+      "How to import calendars from Outlook": [
+        "Jak zaimportować kalendarze z usługi Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Jak zaimportować kalendarze z usługi Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Jak zaimportować kontakty z innej usługi"
+      ],
+      "How to import contacts from Outlook": [
+        "Jak zaimportować kontakty z usługi Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Jak zaimportować kontakty z usługi Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Jak zaimportować wiadomości z innej usługi"
+      ],
+      "How to import emails from Outlook": [
+        "Jak zaimportować wiadomości z poczty Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Jak zaimportować wiadomości z poczty Yahoo"
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Dodaj kalendarz"
@@ -6564,6 +6758,11 @@
         "tygodnie wcześniej",
         "tygodni wcześniej",
         "tygodnia wcześniej"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Pamiętaj, że ${ boldNextStep } wymagane przez aplikację, aby rozpocząć proces importowania."
       ]
     },
     "Onboarding Proton": {
@@ -7225,6 +7424,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        "Zadbaj o prywatność. Bezproblemowo i bezpiecznie."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Możesz przypisać wiele etykiet do jednej wiadomości, ale wiadomości mogą być umieszczone tylko w jednym folderze. Przeciągnij i upuść etykiety oraz foldery, aby je posortować."
       ]
@@ -8149,6 +8351,9 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
+      "Invitations": [
+        "Zaproszenia"
+      ],
       "Invoices": [
         "Faktury"
       ],
@@ -8329,6 +8534,9 @@
       "Select contact group": [
         "Wybierz grupę kontaktów"
       ],
+      "Select permissions": [
+        "Wybierz uprawnienia"
+      ],
       "Select plan": [
         "Wybierz plan"
       ],
@@ -8460,6 +8668,9 @@
       ],
       "Warning!": [
         "Ostrzeżenie!"
+      ],
+      "What would you like to import?": [
+        "Jakie dane chcesz zaimportować?"
       ],
       "What's new": [
         "Co nowego"
@@ -8772,6 +8983,14 @@
         "Hasło musi zawierać co najmniej ${ length } znaki",
         "Hasło musi zawierać co najmniej ${ length } znaków",
         "Hasło musi zawierać co najmniej ${ length } znaków"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Kliknij, aby powtórzyć wideo"
+      ],
+      "Replay video": [
+        "Powtórz wideo"
       ]
     },
     "VPN feature": {

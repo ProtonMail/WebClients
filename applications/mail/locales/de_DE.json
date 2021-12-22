@@ -467,6 +467,9 @@
       "Load more": [
         "Weitere laden"
       ],
+      "Load unprotected": [
+        "Ungeschützt laden"
+      ],
       "Loading verification": [
         "Bestätigung wird geladen"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Wiederholen"
       ],
+      "Revert to original display": [
+        "Zurück zur ursprünglichen Darstellung"
+      ],
       "Save": [
         "Speichern"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Überspringen"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Einige Grafiken konnten nicht mit Tracking-Schutz geladen werden"
+      ],
       "Start import": [
         "Importvorgang starten"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Diese Nachricht enthält eingebettete Grafiken."
+      ],
+      "This message contains remote content.": [
+        "Diese Nachricht enthält Inhalte aus externen Quellen."
       ],
       "Trust": [
         "Vertrauen"
@@ -1191,13 +1203,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von { amount } $"
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von ${ amount }"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von ${ amount } (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von { amount } $ (33 % Rabatt)"
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von ${ amount } (33 % Rabatt)"
       ],
       "1 month": [
         "1 Monat"
@@ -1209,13 +1221,13 @@
         "24 Monate"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Zum Preis von { amount } $ in den ersten zwei Jahren.${ supNotice }"
+        "Zum Preis von ${ amount } in den ersten zwei Jahren.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Zum Preis von { amount } $ im ersten Monat.${ supNotice }"
+        "Zum Preis von ${ amount } im ersten Monat.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Zum Preis von { amount } $ im ersten Jahr.${ supNotice }"
+        "Zum Preis von ${ amount } im ersten Jahr.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
         "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
@@ -1588,14 +1600,14 @@
       "Calendar link is temporarily inaccessible": [
         "Der Link zum Kalender ist vorübergehend unzugänglich"
       ],
-      "Calendar link is wrong": [
-        "Ungültiger Kalender-Link"
-      ],
       "Failed to sync calendar": [
         "Kalender konnte nicht synchronisiert werden"
       ],
       "More than 12 hours passed since last update": [
         "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
+      ],
+      "Unsupported calendar format": [
+        "Nicht unterstütztes Kalender-Format"
       ]
     },
     "Calendar widget banner": {
@@ -3014,6 +3026,11 @@
         "Erstellen eines Kalendereintrags fehlgeschlagen"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "im nächsten Schritt alle von der Anwendung geforderten Berechtigungen"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakten werden nicht importiert. Für Details klicken"
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Diese Nachricht wurde so angepasst, dass sie einem dunklen Hintergrund entspricht."
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Diese Nachricht wurde automatisch als Antwort auf eine vorherige Nachricht erzeugt."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
+      ],
+      "Address": [
+        "Anschrift"
       ],
       "ALL": [
         "ALLE"
@@ -5668,6 +5691,11 @@
         "Das Passwort wurde erfolgreich festgelegt"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Bitte beachte, dass ${ boldNextStep } ausgewählt werden müssen, um den Import zu starten."
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Weiter"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Zu bestehender Gruppe hinzufügen"
+      ],
+      "All": [
+        "Alle"
       ],
       "Create new group": [
         "Neue Gruppe erstellen"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Linkbestätigung"
       ],
+      "Load embedded images": [
+        "Eingebettete Grafiken laden"
+      ],
       "Load remote content": [
         "Inhalte aus externen Quellen laden"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Kontaktgruppe auswählen"
       ],
+      "Select permissions": [
+        "Berechtigungen auswählen"
+      ],
       "Select what to import": [
         "Auswählen, welche Daten importiert werden sollen"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Erneut anmelden, um fortzufahren"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        "Einige Grafiken konnten nicht mit Tracking-Schutz geladen werden [Ungeschützt laden]"
       ],
       "Sort conversations": [
         "Themen sortieren"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Mit der E-Mail-Verschlüsselung werden E-Mail-Signaturen erzwungen, um die von dir gesendeten Nachrichten zu authentifizieren"
       ],
+      "Encrypted data": [
+        "Verschlüsselte Daten"
+      ],
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "Das Passwort muss mindestens ${ length } Zeichen enthalten",
         "Das Passwort muss mindestens ${ length } Zeichen enthalten"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Klicken um das Video wiedergeben"
+      ],
+      "Replay video": [
+        "Video erneut wiedergeben"
       ]
     },
     "VPN feature": {

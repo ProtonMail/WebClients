@@ -464,6 +464,9 @@
       "Load more": [
         ""
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "認証を読み込み中"
       ],
@@ -695,6 +698,9 @@
       "Retry": [
         "再試行"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "保存"
       ],
@@ -800,6 +806,9 @@
       "Skip": [
         "スキップ"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "インポート開始"
       ],
@@ -826,6 +835,9 @@
       ],
       "This message contains embedded images.": [
         "このメッセージには埋め込み画像が含まれています。"
+      ],
+      "This message contains remote content.": [
+        ""
       ],
       "Trust": [
         "信頼する"
@@ -1579,14 +1591,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "カレンダーのリンクが間違っています"
-      ],
       "Failed to sync calendar": [
         "カレンダーの同期に失敗しました"
       ],
       "More than 12 hours passed since last update": [
         "最後のアップデートから12時間以上経過しています"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar widget banner": {
@@ -2344,13 +2356,13 @@
         "Composerが読み込みに失敗しました。"
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "フォルダー名が長すぎます。別の名前を選択してください。"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "${ emailAddress } の鍵情報が抽出できませんでした"
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "ラベル名が長すぎます。別の名前を選択してください。"
       ],
       "The maximum expiration is 4 weeks": [
         ""
@@ -2980,6 +2992,11 @@
         ""
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         ""
@@ -3539,7 +3556,7 @@
         ""
       ],
       "Import in progress": [
-        ""
+        "インポートは進行しています"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -3611,7 +3628,7 @@
         "ラベルを管理"
       ],
       "members": [
-        ""
+        "メンバー"
       ],
       "Members": [
         "メンバー"
@@ -3990,6 +4007,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
       ],
       "This message is automatically generated as a response to a previous message.": [
         "このメッセージは以前のメッセージに対する自動応答です。"
@@ -4594,6 +4614,9 @@
       ],
       "Add to group": [
         "グループに追加"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "すべて"
@@ -5572,6 +5595,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "次へ"
@@ -5643,6 +5671,9 @@
     "Option": {
       "Add to existing group": [
         "既存のグループに追加"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "新しいグループを作成"
@@ -6681,7 +6712,7 @@
         "${ Name } を削除"
       ],
       "Delete all messages": [
-        ""
+        "すべてのメッセージを削除"
       ],
       "Delete conversation": [
         "会話を削除"
@@ -6693,7 +6724,7 @@
         "メッセージを削除"
       ],
       "Delete organization?": [
-        ""
+        "組織を削除しますか?"
       ],
       "Deleting contacts": [
         "連絡先を削除しています"
@@ -6784,6 +6815,9 @@
       ],
       "Link confirmation": [
         "リンクの確認"
+      ],
+      "Load embedded images": [
+        ""
       ],
       "Load remote content": [
         "外部コンテンツの読み込み"
@@ -6935,6 +6969,9 @@
       "Select contact group": [
         "連絡先グループの選択"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         ""
       ],
@@ -6962,14 +6999,11 @@
       "Sign in again to continue": [
         "続行するには再度ログインしてください"
       ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
-      ],
       "Sort conversations": [
-        ""
+        "会話をソート"
       ],
       "Sort messages": [
-        ""
+        "メッセージをソート"
       ],
       "Storage capacity warning": [
         "ストレージ容量の警告"
@@ -7059,6 +7093,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         ""
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "検証済みデジタル署名付きの暗号化データ"
       ],
@@ -7131,6 +7168,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "パスワードは ${ length } 文字以上必要です"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

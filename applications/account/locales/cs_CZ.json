@@ -184,8 +184,8 @@
       "Confirm": [
         "Potvrdit"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrďte otevření odkazu ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Potvrďte otevření odkazu ${ linkToShow }"
       ],
       "Contact support": [
         "Kontaktovat podporu"
@@ -382,8 +382,14 @@
       "Import": [
         "Import"
       ],
+      "Import calendars": [
+        "Importovat kalendáře"
+      ],
       "Import contacts": [
         "Importovat kontakty"
+      ],
+      "Import emails": [
+        "Importovat e-maily"
       ],
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Vybrat soubory"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Vybrat plán"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Třídit"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
       ],
       "Start import": [
         "Spustit import"
@@ -1366,13 +1372,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "Odkaz na kalendář je chybný"
-      ],
       "Failed to sync calendar": [
         "Synchronizace kalendáře selhala"
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -2996,14 +3002,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         ""
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Konečně, ${ googleMailLink } s účtem který chcete naimportovat, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Přejděte na ${ googleAccountLink }. V sekci ${ boldSecurity }, ${ boldAccess } pro méně zabezpečené aplikace. Pokud tuto možnost nevidíte, možná máte aktivní dvoufázové ověření."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Přejděte na ${ googleAccountLink }. V sekci ${ boldSecurity } vytvořte ${ boldAppPassword }, ​​pokud ho ještě nemáte. Toto heslo budete potřebovat během importu."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "V sekci ${ boldLabels } vyberte složky, které je možné importovat do ProtonMail."
@@ -3012,6 +3045,42 @@
         "Ve svém ${ boldGmailSettings } přejděte na ${ boldForwarding } a ujistěte se, že ${ boldIMAPAccess } je povoleno."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
+        ""
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         ""
       ]
     },
@@ -3028,20 +3097,44 @@
       "app password": [
         "heslo aplikace"
       ],
+      "Can view all details": [
+        "Lze zobrazit všechny podrobnosti"
+      ],
+      "Export": [
+        "Exportovat"
+      ],
+      "Export contacts": [
+        "Exportovat kontakty"
+      ],
+      "Export to CSV file": [
+        "Exportovat do CSV souboru"
+      ],
       "Forwarding and POP/IMAP": [
         "Přeposílání a POP/IMAP"
       ],
       "Gmail Settings": [
         "Nastavení Gmailu"
       ],
+      "ICS": [
+        "ICS"
+      ],
       "IMAP access": [
         "IMAP přístup"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Štítky"
       ],
+      "Manage": [
+        "Spravovat"
+      ],
       "Other ways to sign in": [
         ""
+      ],
+      "Publish a calendar": [
+        "Zveřejnit kalendář"
       ],
       "Security": [
         "Zabezpečení"
@@ -3075,6 +3168,55 @@
         "Jak zapnout přístup pro méně bezpečné aplikace v nastavení Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        "Soubor CSV"
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        "Soubor ICS"
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        "Yahoo Mail"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Dvoufázové ověření vypnuto (výchozí nastavení)"
@@ -3085,6 +3227,11 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
+    "Import provider": {
+      "Other": [
         ""
       ]
     },
@@ -3659,9 +3806,6 @@
       "Edit label": [
         "Upravit štítek"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
-      ],
       "Email address": [
         "E-mailová adresa"
       ],
@@ -3851,6 +3995,9 @@
       "Import mailbox": [
         "Importovat poštovní schránku"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importujte e-maily, kalendáře a kontakty z jiné služby do služby Proton. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "DŮLEŽITÉ: Stažení Vašich privátních klíčů a jejich odeslání nebo uložení na nezabezpečeném uložišti ohrožuje bezpečnost vašeho účtu!"
       ],
@@ -3902,6 +4049,9 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        "Zdá se, že některá vaše data jsou zašifrovaná a uzamčená. Důvodem je pravděpodobně nedávné nebo předchozí resetování hesla. K odblokování dat doporučujeme použít metodu obnovy dat."
+      ],
       "it’s imperative": [
         "je to nezbytně nutné"
       ],
@@ -3919,6 +4069,9 @@
       ],
       "Label all imported messages as": [
         "Označit všechny importované zprávy jako"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "Dokončení importu velkého objemu dat může trvat několik dní."
@@ -4259,8 +4412,8 @@
       "Screenshot(s) attached": [
         "Snímek/snímky byly připojeny"
       ],
-      "Select a service provider to get started": [
-        ""
+      "Select a service provider to start": [
+        "Vyberte poskytovatele služeb a začněte"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -4631,6 +4784,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Můžete zapnout zaznamenávání přihlášení, aby jste měli přehled kdy a ze které IP adresy bylo přistoupeno k Vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k Vašemu účtu, stejně jako nepovedená přihlášení."
       ],
+      "You can import one data type at a time.": [
+        "Importovat můžete vždy jeden typ dat."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         ""
       ],
@@ -4669,6 +4825,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Musíte mít osobní kalendář pro vytvoření odkazu."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "Před importováním vašich událostí musíte mít aktivní osobní kalendář."
@@ -4716,9 +4875,6 @@
         "Z důvodu bezpečnosti Vaše banka vyžaduje ověření pomocí 3-D Secure."
       ],
       "Your Block List is empty.": [
-        ""
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
         ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
@@ -5374,6 +5530,9 @@
       "Credits used": [
         "Použité kredity"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Přizpůsobení faktur"
       ],
@@ -5391,6 +5550,9 @@
       ],
       "Default language": [
         "Výchozí jazyk"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         "Výchozí schéma PGP"
@@ -5748,6 +5910,9 @@
       ],
       "Select your country": [
         "Vyberte svou zemi"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
@@ -6317,6 +6482,35 @@
         "K dispozici je nová verze aplikace ${ appName }. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Jak importovat kalendáře z jiné služby"
+      ],
+      "How to import calendars from Outlook": [
+        "Jak importovat kalendáře z Outlooku"
+      ],
+      "How to import calendars from Yahoo": [
+        "Jak importovat kalendáře z Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Jak importovat kontakty z jiné služby"
+      ],
+      "How to import contacts from Outlook": [
+        "Jak importovat kontakty z Outlooku"
+      ],
+      "How to import contacts from Yahoo": [
+        "Jak importovat kontakty z Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Jak importovat e-maily z jiné služby"
+      ],
+      "How to import emails from Outlook": [
+        "Jak importovat e-maily z Outlooku"
+      ],
+      "How to import emails from Yahoo": [
+        "Jak importovat e-maily z Yahoo"
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Přidat kalendář"
@@ -6564,6 +6758,11 @@
         "před týdny",
         "před týdny",
         "před týdny"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7225,6 +7424,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Na jednu zprávu můžete použít více štítků, ale zprávy mohou být obvykle pouze v jedné složce. Přetažením změníte pořadí složek a štítků."
       ]
@@ -8149,6 +8351,9 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "Faktury"
       ],
@@ -8329,6 +8534,9 @@
       "Select contact group": [
         "Vybrat skupinu kontaktů"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "Zvolte plán"
       ],
@@ -8460,6 +8668,9 @@
       ],
       "Warning!": [
         "Pozor!"
+      ],
+      "What would you like to import?": [
+        "Co byste chtěli importovat?"
       ],
       "What's new": [
         "Co je nového"
@@ -8772,6 +8983,14 @@
         "",
         "",
         ""
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Kliknutím přehrát video"
+      ],
+      "Replay video": [
+        "Přehrát video"
       ]
     },
     "VPN feature": {

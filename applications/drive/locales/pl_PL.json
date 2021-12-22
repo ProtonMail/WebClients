@@ -125,8 +125,8 @@
       "Confirm": [
         "Potwierdź"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potwierdź otwieranie linku ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Potwierdź otwieranie linku ${ linkToShow }"
       ],
       "Contact group": [
         "Grupa kontaktów"
@@ -881,14 +881,14 @@
       "Calendar link is temporarily inaccessible": [
         "Link kalendarza jest tymczasowo niedostępny"
       ],
-      "Calendar link is wrong": [
-        "Link kalendarza jest nieprawidłowy"
-      ],
       "Failed to sync calendar": [
         "Nie udało się zsynchronizować kalendarza"
       ],
       "More than 12 hours passed since last update": [
         "Od ostatniej aktualizacji minęło ponad 12 godzin"
+      ],
+      "Unsupported calendar format": [
+        "Format kalendarza jest nieobsługiwany"
       ]
     },
     "Composer size": {
@@ -2099,7 +2099,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Jeśli posiadasz jeden z tych elementów, przejdź do ustawień konta Proton,\naby odblokować dysk."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3692,6 +3692,11 @@
         "Ustawienia zostały zmienione"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "Pamiętaj, że musisz zaakceptować wszystkie uprawnienia wymagane przez aplikację, aby rozpocząć proces importowania."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Wpisz nazwę wyświetlaną"
@@ -4729,6 +4734,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Szyfrowanie wiadomości wymusza ich podpisywanie w celu uwierzytelnienia wysłanych wiadomości"
       ],
+      "Encrypted data": [
+        "Zaszyfrowane dane"
+      ],
       "Encrypted data with verified digital signature": [
         "Zaszyfrowane dane ze zweryfikowanym podpisem cyfrowym"
       ],
@@ -4807,6 +4815,14 @@
       ],
       "Name must not end with a space": [
         "Nazwa nie może kończyć się znakiem spacji"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Kliknij, aby powtórzyć wideo"
+      ],
+      "Replay video": [
+        "Powtórz wideo"
       ]
     },
     "VPN feature": {
