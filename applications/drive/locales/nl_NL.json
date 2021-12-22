@@ -125,8 +125,8 @@
       "Confirm": [
         "Bevestigen"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bevestig het openen van link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Contactgroep"
@@ -869,14 +869,14 @@
       "Calendar link is temporarily inaccessible": [
         "Agendalink is tijdelijk ontoegankelijk"
       ],
-      "Calendar link is wrong": [
-        "Agenda link is verkeerd"
-      ],
       "Failed to sync calendar": [
         "Synchronisatie van de agenda is mislukt"
       ],
       "More than 12 hours passed since last update": [
         "Er is meer dan 12 uur verstreken sinds de laatste update"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Composer size": {
@@ -2001,8 +2001,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Als u een van deze heeft, ga dan verder naar Proton account instelling om\nhet deblokkeerproces voort te zetten."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
@@ -3532,6 +3532,11 @@
         "Uw instellingen zijn succesvol gewijzigd"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Kies een weergavenaam"
@@ -4549,6 +4554,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mail encryptie dwingt e-mail handtekening om uw verzonden berichten te verifiëren"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
@@ -4625,6 +4633,14 @@
       ],
       "Name must not end with a space": [
         "Naam mag niet eindigen met een spatie"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

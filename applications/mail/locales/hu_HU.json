@@ -467,6 +467,9 @@
       "Load more": [
         ""
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "Ellenőrzés folyamatban"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Újrapróbálás"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Mentés"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Kihagyás"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "Importálás indítása"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Ez az üzenet beágyazott képet tartalmaz."
+      ],
+      "This message contains remote content.": [
+        ""
       ],
       "Trust": [
         "Megbízható"
@@ -1588,13 +1600,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -3014,6 +3026,11 @@
         "Esemény létrehozása nem sikerült"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Ez egy automatikusan generált üzenet, válaszként egy korábbi üzenetre."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Hozzáadás csoporthoz"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "MIND"
@@ -5668,6 +5691,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Következő"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "Új csoport létrehozása"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Link jóváhagyása"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load remote content": [
         "Távoli tartalom betöltése"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Névjegy csoport kiválasztása"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         ""
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Beszélgetések rendezése"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Az e-mail titkosítása aláírást is von magával, az elküldött üzenetek pontosabb ellenőrizhetősége érdekében"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Titkosított adat, ellenőrzött digitális aláírással"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "A jelszónak legalább ${ length } karakterből kell állnia",
         "A jelszónak legalább ${ length } karakterből kell állnia"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

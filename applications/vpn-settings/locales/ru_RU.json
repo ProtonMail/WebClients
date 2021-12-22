@@ -278,7 +278,7 @@
         "Отправить заново"
       ],
       "Reset": [
-        ""
+        "Сброс"
       ],
       "Reset credentials": [
         "Сбросить учётные данные"
@@ -737,14 +737,14 @@
       "Calendar link is temporarily inaccessible": [
         "Ссылка на календарь временно недоступна"
       ],
-      "Calendar link is wrong": [
-        "Неверная ссылка календаря"
-      ],
       "Failed to sync calendar": [
         "Не удалось синхронизировать календарь"
       ],
       "More than 12 hours passed since last update": [
         "Более 12 часов прошло с момента последнего обновления"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Confirmation message to delete payment method": {
@@ -990,7 +990,7 @@
         "У вас нет счетов."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
+        "Ваш аккаунт или организация имеет просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
       ]
     },
     "Error message": {
@@ -1686,7 +1686,7 @@
         "Это навсегда удалит ваш аккаунт и все его данные. Вы не сможете восстановить эту учетную запись."
       ],
       "This will void your password, and you won't be able to use it to sign in to your account.": [
-        ""
+        "Это приведет к аннулированию пароля, и вы не сможете использовать его для входа в свой аккаунт."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем включать двухфакторную аутентификацию, т. к. она повышает безопасность учётной записи."
@@ -2995,7 +2995,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } скопировано в ваш буфер обмена"
       ],
       "Account deleted. Logging out...": [
         "Аккаунт удален. Выход из системы..."
@@ -3060,7 +3060,7 @@
         "/2 года"
       ],
       "/month": [
-        ""
+        "/месяц"
       ],
       "/year": [
         "/год"
@@ -3393,7 +3393,7 @@
         "Сбросить пароль"
       ],
       "Reset password?": [
-        ""
+        "Сбросить пароль?"
       ],
       "Secure Core Servers": [
         "Сервера Secure Core"

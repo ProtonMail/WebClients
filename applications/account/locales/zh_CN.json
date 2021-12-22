@@ -184,8 +184,8 @@
       "Confirm": [
         "确认"
       ],
-      "Confirm opening of link ${ link }": [
-        "确认打开链接 ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact support": [
         "联系客服"
@@ -382,8 +382,14 @@
       "Import": [
         "导入"
       ],
+      "Import calendars": [
+        ""
+      ],
       "Import contacts": [
         "导入联系人"
+      ],
+      "Import emails": [
+        ""
       ],
       "Import from .csv or vCard": [
         "从 .csv 或 vCard 导入"
@@ -604,6 +610,9 @@
       "Select files": [
         "选择文件"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "选择套餐"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "排序"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "启动 ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "开始导入"
@@ -1336,14 +1342,14 @@
       "Calendar link is temporarily inaccessible": [
         "日历链接暂时无法访问"
       ],
-      "Calendar link is wrong": [
-        "日历链接错误"
-      ],
       "Failed to sync calendar": [
         "同步日历失败"
       ],
       "More than 12 hours passed since last update": [
         "离上一个更新已经超过了12小时"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2897,14 +2903,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "允许 ProtonMail 访问您的 Gmail 账户：根据您是否已开启${ bold2Steps }按相应步骤操作。"
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "最后，使用您要导入的账户${ googleMailLink }，${ googleCaptchaLink }。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "前往 ${ googleAccountLink }，在${ boldSecurity }设置中，对安全性较低的应用${ boldAccess }。如果找不到此选项，您可能已经开启了两步验证。"
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "前往 ${ googleAccountLink }，在${ boldSecurity }设置中，创建一个${ boldAppPassword }，导入过程中需要用到这个密码。"
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "在${ boldLabels }设置中，选择您要导入到 ProtonMail 的文件夹。"
@@ -2914,6 +2947,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "登录雅虎邮箱，点击右上角您的用户名打开${ boldAccountInfo }。在${ boldAccountSec }中，滑至${ boldAppPassword }并创建一个密码，导入过程中需要用到这个密码。"
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        ""
       ]
     },
     "Import instructions emphasis": {
@@ -2929,20 +2998,44 @@
       "app password": [
         "应用专用密码"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Export to CSV file": [
+        ""
+      ],
       "Forwarding and POP/IMAP": [
         "转发和 POP/IMAP"
       ],
       "Gmail Settings": [
         "Gmail 设置"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "IMAP 访问"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "标签"
       ],
+      "Manage": [
+        ""
+      ],
       "Other ways to sign in": [
         "其他登录方式"
+      ],
+      "Publish a calendar": [
+        ""
       ],
       "Security": [
         "安全"
@@ -2976,6 +3069,55 @@
         "如何在 Gmail 设置中开启对安全性较低的应用的访问权限"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        ""
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        ""
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        ""
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "两步验证已关闭（默认设置）"
@@ -2987,6 +3129,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "您确定要导入私钥吗？导入非安全生成或泄露的私钥可能会危害您的电子邮件安全。\n\n另请注意，与此私钥对应的公钥将公开发布到我们的密钥服务器。如果该密钥包含您不想发布的个人信息（例如您的全名），请在导入之前对其进行编辑。"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        ""
       ]
     },
     "Import status": {
@@ -3491,9 +3638,6 @@
       "Edit label": [
         "编辑标签"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "轻松又安全地将您的电子邮件从您当前的提供商迁移到 Proton。如果您使用 Google，我们还支持日历和联系人导入。"
-      ],
       "Email address": [
         "邮箱地址"
       ],
@@ -3680,6 +3824,9 @@
       "Import mailbox": [
         "导入收件箱"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "注意：下载私钥并采用不安全的媒介传输或存储会严重威胁您的账户安全！"
       ],
@@ -3731,6 +3878,9 @@
       "Internet connection restored.": [
         "互联网连接已恢复。"
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        ""
+      ],
       "it’s imperative": [
         "至关重要的是"
       ],
@@ -3748,6 +3898,9 @@
       ],
       "Label all imported messages as": [
         "给导入的所有邮件加标签"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "大批量的导入可能需要几天才能完成。"
@@ -4085,8 +4238,8 @@
       "Screenshot(s) attached": [
         "已添加截图"
       ],
-      "Select a service provider to get started": [
-        "请选择一个服务提供商以开始导入"
+      "Select a service provider to start": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -4457,6 +4610,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
       ],
@@ -4495,6 +4651,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "您需要有个人日历才能创建链接。"
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "导入您的日程之前您需要有一个启用的个人日历。"
@@ -4543,9 +4702,6 @@
       ],
       "Your Block List is empty.": [
         "您的黑名单列表为空。"
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "您的数据已加密并锁定，您可以通过数据恢复方法来恢复对其的访问。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
@@ -5188,6 +5344,9 @@
       "Credits used": [
         "扣除余额"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "自定义账单"
       ],
@@ -5205,6 +5364,9 @@
       ],
       "Default language": [
         "默认语言"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         "默认 PGP 加密方案"
@@ -5562,6 +5724,9 @@
       ],
       "Select your country": [
         "选择国家"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "自动回复"
@@ -6119,6 +6284,35 @@
         "${ appName } 有新版本，请${ reloadButton }。"
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        ""
+      ],
+      "How to import calendars from Outlook": [
+        ""
+      ],
+      "How to import calendars from Yahoo": [
+        ""
+      ],
+      "How to import contacts from another service": [
+        ""
+      ],
+      "How to import contacts from Outlook": [
+        ""
+      ],
+      "How to import contacts from Yahoo": [
+        ""
+      ],
+      "How to import emails from another service": [
+        ""
+      ],
+      "How to import emails from Outlook": [
+        ""
+      ],
+      "How to import emails from Yahoo": [
+        ""
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "新建日历"
@@ -6345,6 +6539,11 @@
       ],
       "week before": [
         "周前"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7003,6 +7202,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "您可以为单个邮件添加多个标签，但其通常只能位于一个文件夹中。拖放以重新排序文件夹和标签。"
       ]
@@ -7918,6 +8120,9 @@
       "Invalid verification code": [
         "无效的验证码"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "账单"
       ],
@@ -8098,6 +8303,9 @@
       "Select contact group": [
         "选择联系人群组"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "开通"
       ],
@@ -8229,6 +8437,9 @@
       ],
       "Warning!": [
         "警告！"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "更新内容"
@@ -8532,6 +8743,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "密码必须至少包含 ${ length } 个字符"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

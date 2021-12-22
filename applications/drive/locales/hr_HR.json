@@ -125,8 +125,8 @@
       "Confirm": [
         "Potvrdi"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrdite otvaranje poveznice ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grupa kontakta"
@@ -875,13 +875,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -2050,7 +2050,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3612,6 +3612,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Odaberite zaslonsko ime"
@@ -4639,6 +4644,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifriranje e-pošte automatski primjenjuje potpis e-pošte kako bi pomogao pri autentikaciji vaših poslanih poruka"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Šifrirani podaci sa potvrđenim digitalnim potpisom"
       ],
@@ -4716,6 +4724,14 @@
       ],
       "Name must not end with a space": [
         "Naziv ne smije završiti s razmakom"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

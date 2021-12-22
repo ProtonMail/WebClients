@@ -44,7 +44,7 @@
         "Rmed tasarut n tuddsa"
       ],
       "Activate recovery": [
-        ""
+        "Sermed tiririt"
       ],
       "Add": [
         "Rnu"
@@ -184,8 +184,8 @@
       "Confirm": [
         "Sentem"
       ],
-      "Confirm opening of link ${ link }": [
-        "Sentem alday n useɣwen ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Sentem alday n useɣwen ${ linkToShow }"
       ],
       "Contact support": [
         "Nermes tallelt"
@@ -382,8 +382,14 @@
       "Import": [
         "Kter"
       ],
+      "Import calendars": [
+        "Kter iwitayen"
+      ],
       "Import contacts": [
         "Sgaǧ-d tansiwin"
+      ],
+      "Import emails": [
+        "Kter imaylen"
       ],
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Fren ifuyla"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Fren aɣawas"
       ],
@@ -626,7 +635,7 @@
         "Sbadu catch-all"
       ],
       "Set recovery phrase": [
-        ""
+        "Sbadu tafyirt n tririt"
       ],
       "Share via link": [
         "Bḍu s useɣwen"
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Smizzwer"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Sekker ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Bdu akter"
@@ -885,10 +891,10 @@
         "Sirew tisura ixuṣṣen"
       ],
       "Make default": [
-        ""
+        "Err-it d amezwer"
       ],
       "Saving": [
-        ""
+        "Asekles"
       ]
     },
     "Address status": {
@@ -940,7 +946,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Afaylu ICS ilem"
       ],
       "Invalid event": [
         "Tadyant d tarameɣtut"
@@ -1346,14 +1352,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "Aseɣwen n uwitay yeɣleḍ"
-      ],
       "Failed to sync calendar": [
         "Tuccḍa deg umtawi n uwitay"
       ],
       "More than 12 hours passed since last update": [
         "Ugar n 12 n yisragen i yezrin ɣef uleqqem aneggaru"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -1648,7 +1654,7 @@
         ""
       ],
       "I use a different Proton account": [
-        ""
+        "Seqdaceɣ amiḍan-nniḍen Proton"
       ],
       "Missing feature(s)": [
         ""
@@ -1706,7 +1712,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } yettwasefsex."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } yettwaleqqem.\n${ eventDetailsText }"
@@ -1914,7 +1920,7 @@
         "Yir azemz n taggara"
       ],
       "Invalid invitation link": [
-        ""
+        "Yir aseɣwen n tinubga"
       ],
       "Invalid name": [
         "Isem arameɣtu"
@@ -1954,7 +1960,7 @@
         "Ulac tiɣimiyin turmidin"
       ],
       "No data to import": [
-        ""
+        "Ulac isefka ara ittwaketren"
       ],
       "No valid address found": [
         "Ur d-nufi ara tansa yeɣtan"
@@ -1969,7 +1975,7 @@
         "Tasarut n tuddsa ur tettwazmek ara."
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Tuddsa ur tettwaɛqal ara. Eɛreḍ tikkelt-nniḍen."
       ],
       "Passwords do not match": [
         "Awalen n uɛeddi mgraden"
@@ -2009,7 +2015,7 @@
         "Ttxil smiren asebter."
       ],
       "Please set a recovery email first": [
-        ""
+        "Ttxil-k•m sbadu qbel uṭṭun n usawal n tiririt"
       ],
       "Please set a recovery phone number first": [
         "Ttxil sbadu qbel uṭṭun n tiliɣri n tiririt"
@@ -2772,7 +2778,7 @@
         ""
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "Afaylu-agi yesɛa kra n yisefka ur nezmir ara ad nekter:"
       ]
     },
     "Import contact": {
@@ -2930,14 +2936,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Sireg anekcum ɣer umiḍan-ik·im Gmail: fren ma ${ bold2Steps } yermed syen ḍfer iwellihen ddaw."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Di tagara, ${ googleMailLink } akked umiḍan i tebɣiḍ ad tketreḍ, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Rzu ɣer ${ googleAccountLink }. Deg tegzemt ${ boldSecurity }, ${ boldAccess } i yisnasen i ixuṣṣen cwiṭ deg tɣellist. Ma yella ur twalaḍ ara taxtirit-a, ahat asenqed s sin yeḥricen yermed."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Rzu ɣer ${ googleAccountLink }. Deg tegzemt ${ boldSecurity }, rnu ${ boldAppPassword } ma yella ur tesɛiḍ ara yakan yiwen. Ad teḥwiǧeḍ awal-a uffir mi ara d-tketreḍ."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "Deg tegzemt ${ boldLabels }, fren ifuyla yettusirgen i telɣut n uktar deg ProtonMail."
@@ -2946,6 +2979,42 @@
         "Deg ${ boldGmailSettings }, rzu ɣer ${ boldForwarding } syen ḍmen belli ${ boldIMAPAccess } yermed."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
+        ""
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        "Fren ${ boldExportCSV }"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         ""
       ]
     },
@@ -2962,20 +3031,44 @@
       "app password": [
         "awal uffir n usnas"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        "Sifeḍ"
+      ],
+      "Export contacts": [
+        "Sifeḍ inermisen"
+      ],
+      "Export to CSV file": [
+        "Sifeḍ s afaylu CSV"
+      ],
       "Forwarding and POP/IMAP": [
         "Asiweḍ akked POP/IMAP"
       ],
       "Gmail Settings": [
         "Iɣewwaṛen n Gmail"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "Anekcum IMAP"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Tibzimin"
       ],
+      "Manage": [
+        "Sefrek"
+      ],
       "Other ways to sign in": [
         ""
+      ],
+      "Publish a calendar": [
+        "Suffeɣ-d awitay"
       ],
       "Security": [
         "Taɣellist"
@@ -3009,6 +3102,55 @@
         "Amek ara tremdeḍ anekcum i yisnasen i ixuṣṣen deg tɣellist deg yiɣewwaren n Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        "awal uffir n usnas"
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        "inermisen"
+      ],
+      "CSV file": [
+        "Afaylu CSV"
+      ],
+      "full calendar view": [
+        "tamuɣli taččurant n uwitay"
+      ],
+      "ICS file": [
+        "Afaylu ICS"
+      ],
+      "security settings": [
+        "iɣewwaren n tɣellist"
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        "Yahoo Mail"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Asenqed s sin yiḥricen (iɣewwaren imezwer)"
@@ -3019,6 +3161,11 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
+    "Import provider": {
+      "Other": [
         ""
       ]
     },
@@ -3053,13 +3200,13 @@
     },
     "Import type": {
       "Calendar": [
-        ""
+        "Awitay"
       ],
       "Contacts": [
-        ""
+        "Inermisen"
       ],
       "Mail": [
-        ""
+        "Imayl"
       ]
     },
     "Import warning": {
@@ -3222,10 +3369,10 @@
         "Tella talast n unekcum acku llant tfaturin ur nettaxelles ara. Ttxil-k nermes anedbal-ik."
       ],
       "account recovery and data recovery method": [
-        ""
+        "tarayt n tririt n umiḍan akked yisefka"
       ],
       "account recovery method": [
-        ""
+        "tarayt n tririt n umiḍan"
       ],
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
@@ -3234,10 +3381,10 @@
         "Rnu tansa n yimayl @pm.me ɣer umiḍan-ik·im. Taɣult-a fessusen, meẓẓiyen anamek-is d \"ProtonMail me\" neɣ \"Private Message me.\""
       ],
       "Add a recovery email address": [
-        ""
+        "Rnu tansa imayl n tririt"
       ],
       "Add a recovery phone number": [
-        ""
+        "Leqqem uṭṭun n tilifun n tririt"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Rnu tansiwin-nniḍen n wanaw am useqdac2@protonmail.com ar umiḍan-ik"
@@ -3285,10 +3432,10 @@
         "Ad ruḥen akk ibeddilen-inek/m."
       ],
       "Allow recovery by email": [
-        ""
+        "Sireg tiririt s imayl"
       ],
       "Allow recovery by phone": [
-        ""
+        "Sireg tiririt s usawal"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Ad ak·akem-yeǧǧ ad tmuddeḍ tanezduɣt deg ${ mailAppName } i yimaylen s yismawen-ik·im n taɣult(tiqula), m.d. muhend.belqasem@amedya.com"
@@ -3429,7 +3576,7 @@
         "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
       ],
       "Close this screen to exit.": [
-        ""
+        "Mdel agdil-agi akken ad teffɣeḍ."
       ],
       "Connections": [
         "Tuqqniwin"
@@ -3530,7 +3677,7 @@
         "Asader deg lqem ad iseḥbes akk tuqqniwin ɣer yiqeddacen s lexlaṣ n ProtonVPN."
       ],
       "Download recovery file": [
-        ""
+        "Sader afaylu n tririt"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Sader asnas i tḥemmleḍ ass-a tawiḍ tabaḍnit anda tebɣuḍ tiliḍ."
@@ -3546,9 +3693,6 @@
       ],
       "Edit label": [
         "Ẓreg tabzimt"
-      ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
       ],
       "Email address": [
         "Tansa imayl"
@@ -3737,6 +3881,9 @@
       "Import mailbox": [
         "Kter tabewwaḍt n yimayl"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "AXATAR: Asider n tsura tusligin akked tuzzna-nnsent neɣ aḥraz-nsent deg wallal war taɣellist yezmer ad iḍur taɣellist n umiḍan-inek!"
       ],
@@ -3788,6 +3935,9 @@
       "Internet connection restored.": [
         "Tuqqna internet tuɣal-d."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        ""
+      ],
       "it’s imperative": [
         ""
       ],
@@ -3805,6 +3955,9 @@
       ],
       "Label all imported messages as": [
         "Creḍ ɣef meṛṛa iznan yettwaketren d"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "D ikataren meqqren, zemren ad ṭṭfen aṭas n wussan i wakken ad mmden."
@@ -3891,7 +4044,7 @@
         ""
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        ""
+        "Ulac tarayt n tririt n umiḍan yettusbadun; tzemreḍ ad tesruḥeḍ adduf ɣer umiḍan-inek•inem"
       ],
       "No action selected": [
         "Ulac tigawt yettwafernen"
@@ -3903,7 +4056,7 @@
         "Ulac tisura n uwgelhen n unermas i yellan"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        ""
+        "Ulac tarayt n tririt n yisefka tettusbadu; tzemreḍ ad tesruḥeḍ adduf ɣer yisefka-inek•inem"
       ],
       "No folder selected": [
         "Ulac akaram yettwafranen"
@@ -4143,7 +4296,7 @@
       "Screenshot(s) attached": [
         "Tuṭṭfa n ugdil tedda (ddant)"
       ],
-      "Select a service provider to get started": [
+      "Select a service provider to start": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -4162,7 +4315,7 @@
         "Yemmed wakud n tɣimit."
       ],
       "Set recovery phrase": [
-        ""
+        "Sbadu tafyirt n tririt"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
@@ -4363,10 +4516,10 @@
         "Afaylu ur yettwadhel ara"
       ],
       "Update recovery file": [
-        ""
+        "Leqqem afaylu n tririt"
       ],
       "Update recovery phrase": [
-        ""
+        "Leqqem tafyirt n tririt"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Leqqem ɣer uɣawas ${ PLAN_NAMES[PLANS.VISIONARY] } neɣ ${ PLAN_NAMES[PLANS.PROFESSIONAL] } akken ad tremdeḍ tiririyin tiwurmanin i mi ara tiliḍ berra i tnarit."
@@ -4515,6 +4668,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Tzemreḍ ad tremdeḍ asniɣmes n tuqqniwin ar umiḍan-ik akken ad twaliḍ inekcumen ɣur-s akked tansiwin IP yellan deffir tuqqna. Ad nessekles i yal aɛraḍ n tuqqna, tansa IP taɣbalut, azemz d wakud, akked tuqqniwin yeccḍen."
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Tzemreḍ tura ad d-tremseḍ iznan ɣer tansa-inek·inem @pm.me. Leqqem ɣer uɣawas n lexlaṣ iwakken daɣen ad tazneḍ imaylen s useqdec n tansa @pm.me syei rnu tansiwin-nniḍen @pm.me."
       ],
@@ -4554,6 +4710,9 @@
       "You need to have a personal calendar to create a link.": [
         "Ilaq ad tesɛuḍ awitay udmawen akken ad ternuḍ aseɣwen."
       ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
+      ],
       "You need to have an active personal calendar to import your events.": [
         "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im."
       ],
@@ -4588,7 +4747,7 @@
         "Amiḍan-ik la yettwaleqqam akka tura, ayagi yezmer ad yeṭṭef alamma d 30 n tasinin."
       ],
       "Your account recovery method is set": [
-        ""
+        "Tarayt-inek•inem n tririt n umiḍan tettusbadu"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ad yettwaleqqem umiḍan-ik•im mi ara txellseḍ."
@@ -4602,14 +4761,11 @@
       "Your Block List is empty.": [
         "Tabdart n usewḥel d tilemt."
       ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        ""
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
       "Your data recovery method is set": [
-        ""
+        "Tarayt-inek•inem n tririt n yisefka"
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -4798,7 +4954,7 @@
         ""
       ],
       "Generate key": [
-        ""
+        "Sirew tasarut"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
         ""
@@ -5083,7 +5239,7 @@
         "${ UsedMembers } n yiseqdacen ${ MaxMembers }"
       ],
       "(Coming soon)": [
-        ""
+        "(qrib ad iwjed)"
       ],
       "Account storage": [
         "Amḍiq n usekles n umiḍan"
@@ -5155,7 +5311,7 @@
         "Seekles inermisen s wudem awurman"
       ],
       "Block email tracking": [
-        ""
+        "Sewḥel aḍfar n yimaylen"
       ],
       "bonus storage": [
         "aklas n ubunus"
@@ -5173,7 +5329,7 @@
         "Azal BTC:"
       ],
       "Calendars": [
-        ""
+        "Iwitayen"
       ],
       "Cancel": [
         "Sefsex"
@@ -5194,7 +5350,7 @@
         "Tangalt"
       ],
       "Color": [
-        ""
+        "Ini"
       ],
       "Composer": [
         "Amaẓrag"
@@ -5250,6 +5406,9 @@
       "Credits used": [
         "Asmad yettwasqedcen"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Tifaturin tudmawanin"
       ],
@@ -5267,6 +5426,9 @@
       ],
       "Default language": [
         "Tutlayt tamezwert"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         ""
@@ -5347,10 +5509,10 @@
         "Sekcem awal uffir i tsarut s udlis umḍin: ${ fingerprintCode }"
       ],
       "Event duration": [
-        ""
+        "Tanzagt n uneḍru"
       ],
       "Event notifications": [
-        ""
+        "Ilɣa n uneḍru"
       ],
       "Expires": [
         "Azmez n tasewti"
@@ -5371,16 +5533,16 @@
         "Ideg n ukaram"
       ],
       "From: ${ emailFrom }": [
-        ""
+        "Sɣur: ${ emailFrom }"
       ],
       "From: ${ fromEmailAddress }": [
         "Sɣur: ${ fromEmailAddress }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Sɣur: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "Seg: ${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
         "Seg: ${ modalModel.email }"
@@ -5575,7 +5737,7 @@
         "Tangalt n lpusṭa"
       ],
       "Previous password": [
-        ""
+        "Awal uffir uzwir"
       ],
       "Private User": [
         "Aqeddac uslig"
@@ -5587,7 +5749,7 @@
         "Asiḍen aktassaɣan"
       ],
       "Protection mode": [
-        ""
+        "Askar n umesten"
       ],
       "Proton username": [
         "Isem n useqdac Proton"
@@ -5602,13 +5764,13 @@
         "Tangalt n tririt"
       ],
       "Recovery email address": [
-        ""
+        "Tansa imayl n tririt"
       ],
       "Recovery file": [
-        ""
+        "Afaylu n tririt"
       ],
       "Recovery phone number": [
-        ""
+        "Uṭṭun n usawal n tririt"
       ],
       "Recovery phrase": [
         "Tafyirt n tririt"
@@ -5624,6 +5786,9 @@
       ],
       "Select your country": [
         "Fren tamurt-ik/m"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Azen tiririt tawurmant"
@@ -5692,10 +5857,10 @@
         "I: ${ emailAddress }"
       ],
       "To: ${ emailTo }": [
-        ""
+        "I: ${ emailTo }"
       ],
       "To: ${ PMEmailAddress }": [
-        ""
+        "I: ${ PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "I: ${ toEmailAddress }"
@@ -5805,7 +5970,7 @@
     },
     "label": {
       "Recovery phone number": [
-        ""
+        "Uṭṭun n usawal n tririt"
       ],
       "Recovery phrase": [
         "Tafyirt n tririt"
@@ -6185,6 +6350,35 @@
         "Lqem amaynut ${ appName } yella. ${ reloadButton }. "
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Amek ara tketreḍ iwitayen seg yimeẓluyen-nniḍen"
+      ],
+      "How to import calendars from Outlook": [
+        "Amek ara tketreḍ iwitayen si Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Amek ara tketreḍ iwitayen si Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Amek ara tketreḍ inermisen seg yimeẓluyen-nniḍen"
+      ],
+      "How to import contacts from Outlook": [
+        "Amek ara tketreḍ inermisen si Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Amek ara tketreḍ inermisen si Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Amek ara tketreḍ imaylen seg yimeẓluyen-nniḍen"
+      ],
+      "How to import emails from Outlook": [
+        "Amek ara tketreḍ imaylen si Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Amek ara tketreḍ imaylen si Yahoo"
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Rnu awitay"
@@ -6418,6 +6612,11 @@
       "week before": [
         "dduṛt send",
         "dduṛtat send"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -6673,10 +6872,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Snulfu-d awitay amaynut"
       ],
       "Merge with calendar": [
-        ""
+        "Smezdi akked uwitay"
       ]
     },
     "Option protection mode": {
@@ -7027,15 +7226,15 @@
         "Uṭṭun n tiliɣri"
       ],
       "Phrase": [
-        ""
+        "Tafyirt"
       ]
     },
     "Remark about a key type option": {
       "Compatibility": [
-        ""
+        "Amṣada"
       ],
       "State of the art": [
-        ""
+        "Addad n tẓuri"
       ]
     },
     "Restore administrator panel": {
@@ -7068,7 +7267,7 @@
         "Ali"
       ],
       "Upload additional files": [
-        ""
+        "Sali ifuyla imernan"
       ]
     },
     "Select search results": {
@@ -7077,6 +7276,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Tzemreḍ ad tesqedceḍ aṭas n tebzimin i yiwen yizen, maca iznan zemren deg tuget ad ilin kan deg yiwen ukaram. Zuɣer syen sres i wakken ad talseḍ aṣeggem n yikaramen d tebzimin-inek·inem."
       ]
@@ -7092,7 +7294,7 @@
         "Tiririt tawurmant"
       ],
       "Backup & Export": [
-        ""
+        "Aḥraz & asifeḍ"
       ],
       "Calendars": [
         "Iwitayen"
@@ -7104,7 +7306,7 @@
         "Ismawen n taɣult"
       ],
       "Email privacy": [
-        ""
+        "Tabaḍnit n imayl"
       ],
       "Encryption & keys": [
         "Awgelhen d tsura"
@@ -7274,7 +7476,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } yettwanɣel deg tecfawit-inek·inem"
       ],
       "Account deleted. Logging out...": [
         "Amiḍan yekkes. Tuffɣa..."
@@ -7391,7 +7593,7 @@
         "Tansa Premium tettwasnulfa-d"
       ],
       "Resuming import": [
-        ""
+        "Kemmel taktert"
       ],
       "Session revoked": [
         "Tiɣimit tettwaḥwi"
@@ -7513,16 +7715,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "azemz n tmerna n umiḍan"
       ],
       "the last 12 months": [
-        ""
+        "12 n wagguren ineggura"
       ],
       "the last 3 months": [
-        ""
+        "3 n wagguren ineggura"
       ],
       "the last month": [
-        ""
+        "aggur aneggaru"
       ]
     },
     "Time unit": {
@@ -7563,7 +7765,7 @@
         "3. Fren afaylu n twila yerna sader"
       ],
       "Account recovery": [
-        ""
+        "Tiririt n umiḍan"
       ],
       "Account suspended": [
         "Amiḍan yettwaḥebsen"
@@ -7800,10 +8002,10 @@
         "Tafelwit n usenqed"
       ],
       "Data locked": [
-        ""
+        "Isefka sekkeṛen"
       ],
       "Data recovery": [
-        ""
+        "Tiririt n yisefka"
       ],
       "Date": [
         "Azemz"
@@ -7887,7 +8089,7 @@
         "Tisura n uwgelhen n imayl"
       ],
       "Email privacy": [
-        ""
+        "Tabaḍnit n imayl"
       ],
       "Email subscriptions": [
         "Ijerriden s yimayl"
@@ -7987,13 +8189,16 @@
         "Kter tasarut"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Kter s ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Asnas Kter-Sifeḍ"
       ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "Invitations": [
+        ""
       ],
       "Invoices": [
         "Tifaṭurin"
@@ -8068,7 +8273,7 @@
         "Awal uffir d tsura"
       ],
       "Password & security": [
-        ""
+        "Awal uffir & taɣellist"
       ],
       "Passwords": [
         "Awalen uffiren"
@@ -8137,7 +8342,7 @@
         "Err-d isefka"
       ],
       "Recovery": [
-        ""
+        "Tiririt"
       ],
       "Recovery file": [
         "Afaylu n tririt"
@@ -8174,6 +8379,9 @@
       ],
       "Select contact group": [
         "Fren agraw n unermes"
+      ],
+      "Select permissions": [
+        ""
       ],
       "Select plan": [
         "Fren aɣawas"
@@ -8245,7 +8453,7 @@
         "Bdu akala n uktar"
       ],
       "Start new import": [
-        ""
+        "Bdu taktert tamaynutt"
       ],
       "Status": [
         "Aẓayer"
@@ -8307,6 +8515,9 @@
       "Warning!": [
         "Alɣu!"
       ],
+      "What would you like to import?": [
+        "Acu tebɣiḍ ad tketreḍ?"
+      ],
       "What's new": [
         "Acu d amaynut"
       ],
@@ -8320,7 +8531,7 @@
         "Aɣawas-ik·im"
       ],
       "Your recovery status": [
-        ""
+        "Addad n tririt-inek•inem"
       ],
       "ZIP / postal code": [
         "ZIP / tangalt n lbuṣṭa"
@@ -8405,7 +8616,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Ass-a"
       ]
     },
     "Tooltip": {
@@ -8509,7 +8720,7 @@
         "Tamahilt-agi tella kan i yiseqdacen s lexlaṣ"
       ],
       "This feature is unavailable for the moment": [
-        ""
+        "Tawuri-agi ur tewjid ara akka tura"
       ],
       "This key cannot be used for encryption": [
         "Tasarut-agi ulamek ara tettwaseqdec i uwgelhen"
@@ -8573,7 +8784,7 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "Ass-a d ass ilhan akken ad taruḍ imayl"
       ],
       "Update default font and size": [
         ""
@@ -8612,6 +8823,14 @@
       "Password must contain at least ${ length } character": [
         "Awal uffir ilaq ad isɛu ma drus ${ length } n usekkil",
         "Awal uffir ilaq ad isɛu ma drus ${ length } n yisekkilen"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Ssit akken ad turareḍ tikkelt-nniḍen tabidyut"
+      ],
+      "Replay video": [
+        "Urar tikkelt-nniḍen tavidyut"
       ]
     },
     "VPN feature": {

@@ -125,8 +125,8 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm opening of link ${ link }": [
-        "確認開啟連結 ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "確認開啟連結 ${ linkToShow }"
       ],
       "Contact group": [
         "聯絡人群組"
@@ -863,14 +863,14 @@
       "Calendar link is temporarily inaccessible": [
         "日曆連結暫時無法存取"
       ],
-      "Calendar link is wrong": [
-        "日曆連結錯誤"
-      ],
       "Failed to sync calendar": [
         "同步日曆失敗"
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
+      ],
+      "Unsupported calendar format": [
+        "不支援的行事曆格式"
       ]
     },
     "Composer size": {
@@ -1232,7 +1232,7 @@
         "付款程序不支援"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        ""
+        "請先修正反白的衝突再繼續。"
       ],
       "Preferences could not be saved": [
         "無法儲存喜好設定"
@@ -1764,7 +1764,7 @@
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        ""
+        "因為 ${ appName } 是端到端加密的，所以我們沒有辦法為您解密或存取您的資料。為了在密碼重設後仍能解鎖您的雲端硬碟，您需要至少一個手段如下："
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "以每 2 年 ${ billedPrice } 扣帳"
@@ -1854,7 +1854,7 @@
         "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其他軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
       "Delete drive": [
-        ""
+        "刪除雲端硬碟"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用折扣"
@@ -1952,8 +1952,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        ""
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        "如下列方案中有一個可用，請到 Proton 帳號設定開始您的解鎖程序。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -1968,7 +1968,7 @@
         "匯入進行中"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
       "Included": [
         "已包含"
@@ -2043,7 +2043,7 @@
         "新增"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "接下來，您將需要登入您的 Google 帳戶並允許我們存取您的資料。"
       ],
       "No": [
         "否"
@@ -2076,7 +2076,7 @@
         "不能自訂"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "備註：資料將會持續在安裝 ${ appName } 的裝置上保持可用狀態。"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "可指派給使用者的 VPN 連線數目。每一台連線的裝置將算作一個 VPN 連線。"
@@ -2106,7 +2106,7 @@
         "支付受 TLS 加密及瑞士隱私法律保護。"
       ],
       "Permanently delete all files in your drive": [
-        ""
+        "自雲端硬碟永久刪除所有檔案"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署加密的郵件。"
@@ -2337,7 +2337,7 @@
         "我們將會把您在新瀏覽器分頁中重新導向至 PayPal 以完成此交易。如果您使用了任何彈出式視窗攔截程式，請停用以繼續。"
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "我們將會在匯入完成後通知你。"
       ],
       "Week": [
         "週"
@@ -2454,7 +2454,7 @@
         "您的電話號碼只會用於此一次驗證。"
       ],
       "Your previous password": [
-        ""
+        "您先前的密碼"
       ],
       "Your previous recovery phrase": [
         ""
@@ -2754,7 +2754,7 @@
         "BTC 數量："
       ],
       "Calendars": [
-        ""
+        "行事曆"
       ],
       "Cancel": [
         "取消"
@@ -3450,6 +3450,11 @@
       ],
       "Your settings have been changed successfully": [
         "您已成功變更設置"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -4459,6 +4464,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "電子郵件加密強制電子郵件簽章，以助驗證您已寄送郵件的真確性"
       ],
+      "Encrypted data": [
+        "已加密的資料"
+      ],
       "Encrypted data with verified digital signature": [
         "經加密資料，已驗證數碼簽章"
       ],
@@ -4534,6 +4542,14 @@
       ],
       "Name must not end with a space": [
         "名稱不得以空格結尾"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "點擊以重播影片"
+      ],
+      "Replay video": [
+        "重播影片"
       ]
     },
     "VPN feature": {
@@ -4641,10 +4657,10 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        ""
+        "${ n } 台伺服器"
       ],
       "${ n } VPN connection": [
-        ""
+        "${ n } 條VPN連線"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         ""

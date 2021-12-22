@@ -470,6 +470,9 @@
       "Load more": [
         "Učitaj više"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "Učitavanje potvrde"
       ],
@@ -701,6 +704,9 @@
       "Retry": [
         "Pokušaj ponovno"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Spremi"
       ],
@@ -806,6 +812,9 @@
       "Skip": [
         "Preskoči"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "Započni uvoz"
       ],
@@ -832,6 +841,9 @@
       ],
       "This message contains embedded images.": [
         "Ova poruka sadrži ugrađene slike."
+      ],
+      "This message contains remote content.": [
+        ""
       ],
       "Trust": [
         "Vjeruj"
@@ -1597,13 +1609,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -3048,6 +3060,11 @@
         "Stvaranje kalendarskog događaja nije uspjelo"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -4151,6 +4168,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Ova poruka se automatski stvara kao odgovor na prethodnu poruku."
       ],
@@ -4774,6 +4794,9 @@
       ],
       "Add to group": [
         "Dodaj u grupu"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "SVE"
@@ -5764,6 +5787,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Sljedeće"
@@ -5835,6 +5863,9 @@
     "Option": {
       "Add to existing group": [
         "Dodaj u postojeću grupu"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "Stvori novu grupu"
@@ -7065,6 +7096,9 @@
       "Link confirmation": [
         "Potvrda poveznice"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load remote content": [
         "Učitaj udaljeni sadržaj"
       ],
@@ -7215,6 +7249,9 @@
       "Select contact group": [
         "Odaberi grupu kontakta"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         ""
       ],
@@ -7241,9 +7278,6 @@
       ],
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Poredaj razgovore"
@@ -7341,6 +7375,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifriranje e-pošte automatski primjenjuje potpis e-pošte kako bi pomogao pri autentikaciji vaših poslanih poruka"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Šifrirani podaci sa potvrđenim digitalnim potpisom"
       ],
@@ -7415,6 +7452,14 @@
         "Lozinka mora sadržavati najmanje ${ length } znak",
         "Lozinka mora sadržavati najmanje ${ length } znaka",
         "Lozinka mora sadržavati najmanje ${ length } znakova"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

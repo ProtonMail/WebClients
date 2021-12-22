@@ -15,7 +15,7 @@
         "${ BRAND_NAME } 商店"
       ],
       "Activate recovery": [
-        ""
+        "激活恢复"
       ],
       "Add": [
         "添加"
@@ -27,7 +27,7 @@
         "添加联系人"
       ],
       "Add email": [
-        ""
+        "添加电子邮箱"
       ],
       "Add group": [
         "添加群组"
@@ -39,7 +39,7 @@
         "添加新群组"
       ],
       "Add phone number": [
-        ""
+        "添加电话号码"
       ],
       "Add screenshot(s)": [
         "添加截图"
@@ -125,8 +125,8 @@
       "Confirm": [
         "确认"
       ],
-      "Confirm opening of link ${ link }": [
-        "确认打开链接 ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "确认打开链接 ${ linkToShow }"
       ],
       "Contact group": [
         "联系人群组"
@@ -306,7 +306,7 @@
         "更多信息：${ safeTitle }"
       ],
       "More options": [
-        ""
+        "更多选项"
       ],
       "Move": [
         "移动"
@@ -435,7 +435,7 @@
         "开通"
       ],
       "Set recovery phrase": [
-        ""
+        "设置恢复密语"
       ],
       "Share": [
         "分享"
@@ -483,7 +483,7 @@
         "开始设置"
       ],
       "Stay": [
-        ""
+        "留在此页"
       ],
       "Stop sharing": [
         "停止分享"
@@ -516,10 +516,10 @@
         "取消信任"
       ],
       "Update recovery file": [
-        ""
+        "更新恢复文件"
       ],
       "Update recovery phrase": [
-        ""
+        "更新恢复密语"
       ],
       "Upgrade": [
         "升级"
@@ -849,28 +849,28 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "未能解密日历"
       ],
       "Calendar is syncing": [
         "日历正在同步中"
       ],
       "Calendar is too big": [
-        ""
+        "日历文件太大"
       ],
       "Calendar link is not accessible": [
         "日历链接不能被访问"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
-      ],
-      "Calendar link is wrong": [
-        "日历链接错误"
+        "日历链接暂时无法访问"
       ],
       "Failed to sync calendar": [
         "同步日历失败"
       ],
       "More than 12 hours passed since last update": [
         "离上一个更新已经超过了12小时"
+      ],
+      "Unsupported calendar format": [
+        "不受支持的日历格式"
       ]
     },
     "Composer size": {
@@ -1121,10 +1121,10 @@
         "连接比特币 API 失败。"
       ],
       "Failed to download a file": [
-        ""
+        "下载文件失败"
       ],
       "Failed to download a folder": [
-        ""
+        "下载文件夹失败"
       ],
       "Failed to load the link": [
         "加载链接失败"
@@ -1133,7 +1133,7 @@
         "由于“${ error }”错误，文件“${ item.name }”无法上传"
       ],
       "File \"${ name }\" is already downloading": [
-        ""
+        "文件“${ name }”已在下载中"
       ],
       "File cannot be merged with folder": [
         "文件无法与文件夹合并"
@@ -1142,10 +1142,10 @@
         "文件没有内容可预览"
       ],
       "File selection is already downloading": [
-        ""
+        "所选文件已在下载中"
       ],
       "Folder \"${ name }\" is already downloading": [
-        ""
+        "文件夹“${ name }”已在下载中"
       ],
       "Folder name cannot be empty": [
         "文件夹名称不能为空"
@@ -1569,13 +1569,13 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        ""
+        "${ activeDownloadsCount } 项正在下载"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        ""
+        "${ activeDownloadsCount } 项正在下载 (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        ""
+        "${ activeUploadsCount } 项正在上传 (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } 个电子邮件地址"
@@ -1587,13 +1587,13 @@
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        ""
+        "${ calendarsToBeMerged } 个合并日历"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        ""
+        "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ canceledCount } canceled": [
-        ""
+        "${ canceledCount } 项已取消"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成员"
@@ -1614,16 +1614,16 @@
         "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组。"
       ],
       "${ doneCount } finished": [
-        ""
+        "${ doneCount } 项已完成"
       ],
       "${ doneDownloadsCount } downloaded": [
-        ""
+        "${ doneDownloadsCount } 项已下载"
       ],
       "${ doneUploadsCount } uploaded": [
-        ""
+        "${ doneUploadsCount } 项已上传"
       ],
       "${ errorCount } failed": [
-        ""
+        "${ errorCount } 项传输失败"
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
@@ -1644,7 +1644,7 @@
         "${ numContacts } 名联系人"
       ],
       "${ pausedCount } paused": [
-        ""
+        "${ pausedCount } 项已暂停"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "{ save20 } 订阅，切换到{ annualBilling }"
@@ -1746,19 +1746,19 @@
         "一个激活的恢复文件"
       ],
       "and": [
-        ""
+        "和"
       ],
       "Anyone with this link can access your file.": [
         "任何知道此链接的人都能访问您的文件。"
       ],
       "Anyone with this link can access your folder.": [
-        ""
+        "任何知道此链接的人都能访问您的文件夹。"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您确定要清空回收站并永久删除所有项目吗？"
       ],
       "Are you sure you want to permanently delete selected item from trash?": [
-        ""
+        "您确定要从回收站永久删除所选项目吗？"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
@@ -1818,10 +1818,10 @@
         "连接"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        ""
+        "继续使用 ${ appName } 并稍后解锁网盘"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        ""
+        "新建 ${ calendarsToBeCreated } 个日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -1833,7 +1833,7 @@
         "创建联系人群组"
       ],
       "Create in": [
-        ""
+        "创建于"
       ],
       "Create links and share your files with others.": [
         "创建链接然后与他人共享您的文件。"
@@ -1845,7 +1845,7 @@
         "正在创建文件链接"
       ],
       "Creating link to folder": [
-        ""
+        "正在创建文件夹链接"
       ],
       "Creating share": [
         "正在创建分享"
@@ -1952,8 +1952,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        ""
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        "如果您有其中之一，请前往 Proton 账户设置以\n启动解锁进程。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -2085,7 +2085,7 @@
         "/"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        ""
+        "您的加密网盘之一被锁定了，这很可能是由于最近重置了密码所导致的。${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项。"
@@ -2094,7 +2094,7 @@
         "只有同时知道链接和密码的人才能访问此文件。"
       ],
       "Only the people with the link and the password can access this folder.": [
-        ""
+        "只有同时知道链接和密码的人才能访问此文件夹。"
       ],
       "Paused": [
         "已暂停"
@@ -2106,7 +2106,7 @@
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
       ],
       "Permanently delete all files in your drive": [
-        ""
+        "永久删除网盘中的所有文件"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline 只能用于纯文本邮件。请注意 ProtonMail 会对所有加密邮件予以数字签名。"
@@ -2151,7 +2151,7 @@
         "文件链接预备中"
       ],
       "Preparing link to folder": [
-        ""
+        "正在准备文件夹链接"
       ],
       "Preview": [
         "预览"
@@ -2190,7 +2190,7 @@
         "选择向该地址发送邮件的首选格式。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -2208,7 +2208,7 @@
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        ""
+        "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
@@ -2253,16 +2253,16 @@
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        ""
+        "此链接是通过先前版本创建的，\n且无法修改。请删除此链接\n并创建一个新链接以更改设置。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此链接将被永久禁用，无人再能通过此链接访问您的文件。您需要新建一个链接才能重新共享该文件。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        ""
+        "此链接将被永久禁用，无人再能通过此链接访问您的文件夹。您需要新建一个链接才能重新共享该文件夹。"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        ""
+        "这将删除链接并移除任何拥有该链接的人对您文件（夹）的访问权限。"
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "完成此操作后您就可以使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
@@ -2301,7 +2301,7 @@
         "回收站"
       ],
       "Unlock drive to recover files": [
-        ""
+        "解锁网盘以恢复文件"
       ],
       "Unsupported file": [
         "不支持文件"
@@ -2367,7 +2367,7 @@
         "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "您也可以将导入日历与现有 Proton 日历合并。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在 ${ importProgressLink } 查看导入进度。"
@@ -2436,19 +2436,19 @@
         "正在下载您的文件。"
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        ""
+        "由于密码重置，无法再访问您的文件。请重新上传旧的加密密钥以重新获得访问权限。${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "您的文件将被加密并保存。"
       ],
       "Your folder failed to download.": [
-        ""
+        "您的文件夹下载失败。"
       ],
       "Your folder has finished downloading.": [
-        ""
+        "您的文件夹已完成下载。"
       ],
       "Your folder is being downloaded.": [
-        ""
+        "正在下载您的文件夹。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证"
@@ -2696,17 +2696,17 @@
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "关"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "开"
       ]
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "（即将推出）"
       ],
       "(Expired)": [
         "（已失效）"
@@ -2733,7 +2733,7 @@
         "应用于所有重复的文件夹"
       ],
       "Apply to selection": [
-        ""
+        "应用于所选项"
       ],
       "Audio file": [
         "音频文件"
@@ -2754,7 +2754,7 @@
         "比特币金额："
       ],
       "Calendars": [
-        ""
+        "日历"
       ],
       "Cancel": [
         "取消"
@@ -2778,7 +2778,7 @@
         "完成"
       ],
       "Contacts": [
-        ""
+        "通信录"
       ],
       "Copy": [
         "复制"
@@ -2787,7 +2787,7 @@
         "国家"
       ],
       "Created": [
-        ""
+        "创建时间"
       ],
       "CVV code": [
         "CVV 码"
@@ -2808,7 +2808,7 @@
         "电子邮件格式"
       ],
       "Emails": [
-        ""
+        "电子邮件"
       ],
       "Enable Beta Access": [
         "启用测试版功能"
@@ -2874,16 +2874,16 @@
         "导入联系人"
       ],
       "Import interval": [
-        ""
+        "导入间隔"
       ],
       "Import to email address": [
-        ""
+        "导入到邮箱地址"
       ],
       "Keyboard shortcuts": [
         "键盘快捷键"
       ],
       "Label messages as": [
-        ""
+        "给导入的邮件加标签"
       ],
       "Last 12 months only": [
         "仅过去 12 个月"
@@ -2907,7 +2907,7 @@
         "合并文件夹"
       ],
       "Name": [
-        ""
+        "名称"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -2991,7 +2991,7 @@
         "发信附带数字签名"
       ],
       "Size": [
-        ""
+        "大小"
       ],
       "Skip file": [
         "跳过文件"
@@ -3027,7 +3027,7 @@
         "双重验证码"
       ],
       "Type": [
-        ""
+        "类型"
       ],
       "Unknown file": [
         "未知文件格式"
@@ -3048,7 +3048,7 @@
         "上传图片"
       ],
       "Uploaded": [
-        ""
+        "最近上传时间"
       ],
       "Username or ProtonMail address": [
         "用户名或 ProtonMail 地址"
@@ -3175,19 +3175,19 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        ""
+        "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
       ],
       "Almost there": [
         "即将完成"
       ],
       "Creating new calendars": [
-        ""
+        "正在创建新日历"
       ],
       "Gathering your data": [
-        ""
+        "正在收集您的数据"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "我们正在加紧从您的提供商那里收集您的数据"
       ],
       "Your import is starting": [
         "您的导入已开始"
@@ -3276,10 +3276,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签中 ${ selectedLabelsCount } 个的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3289,7 +3289,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "这将永久删除与您的组织相关的所有子用户、账户和数据。"
       ]
     },
     "Message display when a new app version is available": {
@@ -3338,7 +3338,7 @@
         "\"${ firstItemName }\" 已从回收站恢复"
       ],
       "${ deletedCount } link to your file was deleted": [
-        ""
+        "${ deletedCount } 个文件链接已删除"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } 个文件已从回收站永久删除"
@@ -3350,7 +3350,7 @@
         "${ deletedItemsCount } 个项目已从回收站永久删除"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        ""
+        "${ failedCount } 个文件链接无法删除"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } 个文件移动失败"
@@ -3401,22 +3401,22 @@
         "群组已更改"
       ],
       "Failed to download files: ${ err }": [
-        ""
+        "下载文件失败：${ err }"
       ],
       "Failed to move, please try again": [
         "无法移动，请重试"
       ],
       "Failed to upload files: ${ err }": [
-        ""
+        "上传文件失败：${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        ""
+        "文件或文件夹“${ filename }”以及其他 ${ count } 项正在上传中"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        ""
+        "文件或文件夹“${ filename }”正在上传中"
       ],
       "File or folder is missing a name": [
-        ""
+        "文件或文件夹缺少名称"
       ],
       "Move ${ itemsToMoveCount } file": [
         "移动 ${ itemsToMoveCount } 个文件"
@@ -3437,19 +3437,24 @@
         "移动 ${ movingCount } 个项目"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        ""
+        "没有足够的空间来上传这 ${ formattedTotal }"
       ],
       "The link to your file failed to be deleted": [
-        ""
+        "无法删除文件链接"
       ],
       "The link to your file was deleted": [
-        ""
+        "文件链接已删除"
       ],
       "Your old files will be deleted in 72 hours": [
-        ""
+        "您的旧文件将在 72 小时内删除"
       ],
       "Your settings have been changed successfully": [
-        ""
+        "已成功更改您的设置"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "请注意，您需要接受应用程序请求的所有权限才能开始导入。"
       ]
     },
     "Onboarding Proton": {
@@ -3528,7 +3533,7 @@
         "忽略分组"
       ],
       "No parent folder": [
-        ""
+        "无父文件夹"
       ]
     },
     "Option group label": {
@@ -3848,10 +3853,10 @@
         "设置已保存"
       ],
       "Recovery has started": [
-        ""
+        "恢复已开始。"
       ],
       "The link to your file was successfully copied": [
-        ""
+        "已成功复制文件链接"
       ],
       "Verification successful": [
         "验证成功"
@@ -3860,7 +3865,7 @@
         "您已成功降级"
       ],
       "Your files were successfully recovered to \"My files\".": [
-        ""
+        "您的文件已成功恢复到“我的文件”。"
       ]
     },
     "Suffix for price": {
@@ -3951,7 +3956,7 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "账户创建日期"
       ],
       "the last 12 months": [
         "最近 12 个月"
@@ -4045,7 +4050,7 @@
         "确定放弃 Proton 特权"
       ],
       "Contact details": [
-        ""
+        "联系人详情"
       ],
       "Contact Details": [
         "联系人详情"
@@ -4165,7 +4170,7 @@
         "清空回收站"
       ],
       "Enter password to download": [
-        ""
+        "请输入密码进行下载"
       ],
       "Enter your password": [
         "输入您的密码"
@@ -4246,7 +4251,7 @@
         "我的文件"
       ],
       "My files ${ date }.zip": [
-        ""
+        "我的文件 ${ date }.zip"
       ],
       "Name": [
         "姓名"
@@ -4315,7 +4320,7 @@
         "反馈问题"
       ],
       "Request new code": [
-        ""
+        "请求新验证码"
       ],
       "Restore your files": [
         "恢复您的文件"
@@ -4420,7 +4425,7 @@
         "您的文件已准备就绪"
       ],
       "Your folder is ready to be downloaded": [
-        ""
+        "您的文件夹已准备就绪"
       ],
       "ZIP / postal code": [
         "邮政编码"
@@ -4454,10 +4459,13 @@
         "两年折扣已计入"
       ],
       "Each imported email will have this label": [
-        ""
+        "每一封导入的邮件都会有这个标签"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "加密邮件必须予以数字签名以表明您的邮件真实性"
+      ],
+      "Encrypted data": [
+        "加密数据"
       ],
       "Encrypted data with verified digital signature": [
         "经过已验证的数字签名加密过的数据"
@@ -4493,7 +4501,7 @@
         "支持诸如 BitTorrent 的文件共享协议。"
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "系统子文件夹将在 ProtonMail 中显示为单独的文件夹"
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
@@ -4536,6 +4544,14 @@
         "名称不能以空格结尾"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "点击回放视频"
+      ],
+      "Replay video": [
+        "回放视频"
+      ]
+    },
     "VPN feature": {
       "${ mailAppName } Visionary": [
         "${ mailAppName } 尊享版"
@@ -4550,7 +4566,7 @@
         "广告拦截 (NetShield)"
       ],
       "Custom connection profiles": [
-        ""
+        "自定义连接配置"
       ],
       "DNS leak prevention": [
         "DNS 泄露防护"
@@ -4647,7 +4663,7 @@
         ""
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        ""
+        "${ numberOfCountries } 个国家的 ${ numberOfServers }"
       ]
     },
     "Warning": {
@@ -4676,7 +4692,7 @@
         "请注意，使用此方式支付不能立即完成账户升级，支付确认过后我们会马上为您升级账户。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
@@ -4685,13 +4701,13 @@
         "部分需合并的联系人无法显示，请单独查看。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "联系人数据损坏，无法显示。"
       ],
       "The contact failed to load.": [
         "联系人加载失败"
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "您设备上的日期和时间设置未同步。${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "解密失败"
@@ -4709,7 +4725,7 @@
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "当前的导入设置将无法恢复。"
       ]
     }
   }

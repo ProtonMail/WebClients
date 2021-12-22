@@ -119,8 +119,8 @@
       "Confirm": [
         "Bekræft"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bekræft åbning af link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -962,14 +962,14 @@
       "Calendar link is temporarily inaccessible": [
         "Kalenderlink er midlertidig ikke tilgængeligt"
       ],
-      "Calendar link is wrong": [
-        "Kalenderlink er forkert"
-      ],
       "Failed to sync calendar": [
         "Kunne ikke synkronisere kalender"
       ],
       "More than 12 hours passed since last update": [
         "Der er gået mere end 12 timer siden seneste opdatering"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2144,6 +2144,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonKontakter understøtter ikke ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4079,6 +4084,11 @@
         "Ukendt"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Vælg et visningsnavn"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Vælg begivenhedens sidste dato"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Vælg tid for afsendelse af denne notifikation"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailkryptering gennemtvinger e-mailsignatur som hjælp til godkendelse af dine sendte beskeder"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Krypterede data med bekræftet digital underskrift"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "Adgangskode skal indeholde mindst ${ length } tegn",
         "Adgangskode skal indeholde mindst ${ length } tegn"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

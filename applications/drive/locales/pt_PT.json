@@ -125,8 +125,8 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmar a abertura da ligação ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -869,13 +869,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -2001,7 +2001,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o email na sua caixa de entrada, verifique a pasta de spam."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3532,6 +3532,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Escolha um nome a mostrar"
@@ -4549,6 +4554,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "A encriptação do email força a assinatura para ajudar a autenticar as suas mensagens enviadas"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Dados encriptados com assinatura digital verificada"
       ],
@@ -4625,6 +4633,14 @@
       ],
       "Name must not end with a space": [
         "O nome não pode terminar com um espaço"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

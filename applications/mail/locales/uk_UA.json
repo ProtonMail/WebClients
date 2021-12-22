@@ -473,6 +473,9 @@
       "Load more": [
         "Завантажити ще"
       ],
+      "Load unprotected": [
+        "Завантаження незахищене"
+      ],
       "Loading verification": [
         "Завантаження підтвердження"
       ],
@@ -704,6 +707,9 @@
       "Retry": [
         "Повторити"
       ],
+      "Revert to original display": [
+        "Повернути оригінальний вигляд"
+      ],
       "Save": [
         "Зберегти"
       ],
@@ -809,6 +815,9 @@
       "Skip": [
         "Пропустити"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Деякі зображення неможливо завантажити з активним захистом від стеження"
+      ],
       "Start import": [
         "Розпочати імпорт"
       ],
@@ -835,6 +844,9 @@
       ],
       "This message contains embedded images.": [
         "Це повідомлення містить вбудовані зображення."
+      ],
+      "This message contains remote content.": [
+        "Це повідомлення містить зовнішній вміст."
       ],
       "Trust": [
         "Довіряти"
@@ -984,13 +996,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        ""
+        "Не вдалося додати учасника"
       ],
       "Invitation sent and participant added": [
-        ""
+        "Запрошення надіслано та додано учасників"
       ],
       "Participant added": [
-        ""
+        "Учасника додано"
       ]
     },
     "Addon": {
@@ -1064,7 +1076,7 @@
       "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано",
         "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано",
-        "${ numberOfCompletedItems }/{ totalNumberOfChecklistItems } виконано",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано",
         "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } виконано"
       ]
     },
@@ -1348,16 +1360,16 @@
         " Ця відповідь не збігається з подробицями вашого запрошення. Перевірте подробиці запрошення у своєму календарі."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } приймає запрошення і пропонує новий час для одного повторення цієї події."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } приймає запрошення і пропонує новий час для цієї події."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } приймає запрошення на одне повторення цієї події."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } приймає запрошення на цю подію."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } приймає ваше запрошення і пропонує новий час для одного повторення цієї події."
@@ -1381,16 +1393,16 @@
         "${ participantName } запитує про оновлення для події, якої більше не існує у вашому календарі."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } відхиляє запрошення і пропонує новий час для одного повторення цієї події."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } відхиляє запрошення і пропонує новий час для цієї події."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } відхиляє запрошення на одне повторення цієї події."
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } відхиляє запрошення на цю подію."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } відхиляє ваше запрошення і пропонує новий час для одного повторення цієї події."
@@ -1405,16 +1417,16 @@
         "${ participantName } відхиляє ваше запрошення."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } приймає запрошення і пропонує новий час для одного повторення цієї події. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } приймає запрошення і пропонує новий час для цієї події. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } приймає запрошення на одне повторення цієї події."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "${ participantName } приймає запрошення на цю подію."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } приймає ваше запрошення і пропонує новий час для одного повторення цієї події. Відповідь і пропозиція застарілі."
@@ -1423,16 +1435,16 @@
         "${ participantName } приймає ваше запрошення і пропонує новий час для цієї події. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } відхиляє запрошення і пропонує новий час для одного повторення цієї події. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } відхиляє запрошення і пропонує новий час для цієї події. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } відхиляє запрошення на одне повторення цієї події."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } відхиляє запрошення на цю подію."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } відхиляє ваше запрошення і пропонує новий час для одного повторення цієї події. Відповідь і пропозиція застарілі."
@@ -1477,16 +1489,16 @@
         "${ participantName } пропонує новий час для цієї події. Ця пропозиція застаріла. У вас немає календарів."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } приймає із сумнівом запрошення і пропонує новий час для одного повторення цієї події. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } приймає із сумнівом запрошення і пропонує новий час для цієї події. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } приймає із сумнівом запрошення на одне повторення цієї події."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } приймає із сумніовм запрошення на цю подію."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } приймає ваше запрошення і пропонує новий час для одного повторення цієї події, але сумнівається, що відвідає. Відповідь і пропозиція застарілі."
@@ -1495,7 +1507,7 @@
         "${ participantName } приймає ваше запрошення і пропонує новий час для цієї події, але сумнівається, що відвідає. Відповідь і пропозиція застарілі."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } не перебуває у списку учасників."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } пропонує новий час для одного повторення цієї події."
@@ -1504,16 +1516,16 @@
         "${ participantName } пропонує новий час для цієї події."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } приймає із сумнівом запрошення і пропонує новий час для одного повторення цієї події."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } приймає із сумнівом запрошення і пропонує новий час для цієї події."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } приймає із сумнівом запрошення на одне повторення цієї події."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } приймає із сумнівом запрошення на цю подію."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } приймає із сумнівом ваше запрошення і пропонує новий час для одного повторення цієї події."
@@ -1606,14 +1618,14 @@
       "Calendar link is temporarily inaccessible": [
         "Посилання календаря тимчасово недоступне"
       ],
-      "Calendar link is wrong": [
-        "Хибне посилання календаря"
-      ],
       "Failed to sync calendar": [
         "Не вдалося синхронізувати календар"
       ],
       "More than 12 hours passed since last update": [
         "Понад 12 годин минуло після попередньої синхронізації"
+      ],
+      "Unsupported calendar format": [
+        "Непідтримуваний формат календаря"
       ]
     },
     "Calendar widget banner": {
@@ -2528,16 +2540,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Чернетки не можна перемістити до вхідних"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Чернетки не можна перемістити до спаму"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Надіслане повідомлення не можна перемістити до вхідних"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Надіслане повідомлення не можна перемістити до спаму"
       ],
       "This action cannot be performed": [
         "Цю дію неможливо виконати"
@@ -2700,7 +2712,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "Неможливо надіслати запрошення на ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -3080,6 +3092,11 @@
       ],
       "Creating calendar event failed": [
         "Не вдалося створити подію календаря"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "в наступному кроці вам необхідно вибрати усі дозволи"
       ]
     },
     "Import warning": {
@@ -4046,7 +4063,7 @@
         "Звітуючи про спробу шахрайства, ви надішлете це повідомлення нам, щоб ми змогли його проаналізувати та вдосконалити наші фільтри. Це означає, що ми матимемо змогу переглянути весь вміст цього повідомлення."
       ],
       "Request read receipt": [
-        ""
+        "Запит підтвердження прочитання"
       ],
       "Right to Left": [
         "Справа наліво"
@@ -4230,6 +4247,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Це повідомлення було модифіковано для правильного вигляду на темному тлі."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Це повідомлення автоматично створюється у відповідь на попереднє повідомлення."
@@ -4864,6 +4884,9 @@
       ],
       "Add to group": [
         "Додати до групи"
+      ],
+      "Address": [
+        "Адреса"
       ],
       "ALL": [
         "ВСЕ"
@@ -5860,6 +5883,11 @@
         "Пароль успішно встановлено"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Зауважте, що ${ boldNextStep }, запитані програмою, щоб почати імпортування."
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Далі"
@@ -5931,6 +5959,9 @@
     "Option": {
       "Add to existing group": [
         "Додати до наявної групи"
+      ],
+      "All": [
+        "Усі"
       ],
       "Create new group": [
         "Створити нову групу"
@@ -7205,6 +7236,9 @@
       "Link confirmation": [
         "Підтвердження посилання"
       ],
+      "Load embedded images": [
+        "Завантажити вбудовані зображення"
+      ],
       "Load remote content": [
         "Завантажити зовнішній вміст"
       ],
@@ -7355,6 +7389,9 @@
       "Select contact group": [
         "Вибрати групу контактів"
       ],
+      "Select permissions": [
+        "Виберіть дозволи"
+      ],
       "Select what to import": [
         "Вибрати елементи для імпорту"
       ],
@@ -7381,9 +7418,6 @@
       ],
       "Sign in again to continue": [
         "Увійдіть знову для продовження"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Впорядкувати розмови"
@@ -7482,6 +7516,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрування пошти примусово застосовує цифровий підпис, щоб допомогти засвідчити справжність ваших надісланих повідомлень"
       ],
+      "Encrypted data": [
+        "Зашифровані дані"
+      ],
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
@@ -7557,6 +7594,14 @@
         "Пароль повинен містити принаймні ${ length } символи",
         "Пароль повинен містити принаймні ${ length } символів",
         "Пароль повинен містити принаймні ${ length } символів"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Натисніть для повторного відтворення відео"
+      ],
+      "Replay video": [
+        "Повторно відтворити відео"
       ]
     },
     "VPN feature": {

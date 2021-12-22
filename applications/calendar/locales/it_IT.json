@@ -119,8 +119,8 @@
       "Confirm": [
         "Conferma"
       ],
-      "Confirm opening of link ${ link }": [
-        "Conferma l'apertura del link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Conferma l'apertura del link ${ linkToShow }"
       ],
       "Contact group": [
         "Gruppo di contatto"
@@ -962,14 +962,14 @@
       "Calendar link is temporarily inaccessible": [
         "Il link al calendario è temporaneamente inaccessibile"
       ],
-      "Calendar link is wrong": [
-        "Il link del calendario è sbagliato"
-      ],
       "Failed to sync calendar": [
         "Impossibile sincronizzare il calendario"
       ],
       "More than 12 hours passed since last update": [
         "Sono passate più di 12 ore dall'ultimo aggiornamento"
+      ],
+      "Unsupported calendar format": [
+        "Formato calendario non supportato"
       ]
     },
     "Calendar view": {
@@ -2144,6 +2144,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts non supporta ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "nel passaggio successivo è necessario selezionare tutti i permessi"
       ]
     },
     "Import warning": {
@@ -4079,6 +4084,11 @@
         "Sconosciuto"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Tieni presente che ${ boldNextStep } richiesto dall'applicazione per avviare l'importazione."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Scegli un nome da mostrare"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Seleziona l'ultima data dell'evento"
       ],
+      "Select permissions": [
+        "Seleziona permessi"
+      ],
       "Select the time to send this notification": [
         "Seleziona l'ora per inviare questa notifica"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "La crittografia email impone la firma email per autenticare i messaggi inviati"
       ],
+      "Encrypted data": [
+        "Dati criptati"
+      ],
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "La password deve contenere almeno ${ length } carattere",
         "La password deve contenere almeno ${ length } caratteri"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Clicca per riprodurre il video"
+      ],
+      "Replay video": [
+        "Riproduci video"
       ]
     },
     "VPN feature": {

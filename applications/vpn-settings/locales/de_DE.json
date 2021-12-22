@@ -569,13 +569,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von { amount } $"
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von ${ amount }"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von ${ amount } (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von { amount } $ (33 % Rabatt)"
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von ${ amount } (33 % Rabatt)"
       ],
       "1 month": [
         "1 Monat"
@@ -587,13 +587,13 @@
         "24 Monate"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Zum Preis von { amount } $ in den ersten zwei Jahren.${ supNotice }"
+        "Zum Preis von ${ amount } in den ersten zwei Jahren.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Zum Preis von { amount } $ im ersten Monat.${ supNotice }"
+        "Zum Preis von ${ amount } im ersten Monat.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Zum Preis von { amount } $ im ersten Jahr.${ supNotice }"
+        "Zum Preis von ${ amount } im ersten Jahr.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
         "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
@@ -719,14 +719,14 @@
       "Calendar link is temporarily inaccessible": [
         "Der Link zum Kalender ist vorübergehend unzugänglich"
       ],
-      "Calendar link is wrong": [
-        "Ungültiger Kalender-Link"
-      ],
       "Failed to sync calendar": [
         "Kalender konnte nicht synchronisiert werden"
       ],
       "More than 12 hours passed since last update": [
         "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
+      ],
+      "Unsupported calendar format": [
+        "Nicht unterstütztes Kalender-Format"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1098,7 +1098,7 @@
         "Keine Datenbeschränkungen"
       ],
       "No logs policy": [
-        "Richtlininie, dass keine Protokollierung stattfindet"
+        "Richtlinie, dass keine Protokollierung stattfindet"
       ],
       "P2P filesharing/BitTorrent support": [
         "P2P-Dateifreigabe/BitTorrent-Unterstützung"
