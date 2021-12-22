@@ -6,7 +6,7 @@ import { SettingsSection, SettingsParagraph } from '../../account';
 
 const DOWNLOAD_URL = 'https://protonmail.com/import-export';
 
-const ImportExportSection = () => {
+const ImportExportAppSection = () => {
     const handleClick = () => {
         window.open(DOWNLOAD_URL);
     };
@@ -27,4 +27,4 @@ const ImportExportSection = () => {
     );
 };
 
-export default ImportExportSection;
+export default ImportExportAppSection;
