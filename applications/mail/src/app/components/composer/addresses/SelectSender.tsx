@@ -27,7 +27,7 @@ interface Props {
 }
 
 const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesBlurRef }: Props) => {
-    const [mailSettings = {}] = useMailSettings();
+    const [mailSettings] = useMailSettings();
     const [addresses = []] = useAddresses();
     const [user] = useUser();
 
