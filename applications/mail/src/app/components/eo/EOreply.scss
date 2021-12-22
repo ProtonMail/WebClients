@@ -3,15 +3,30 @@
 
 .eo {
 	&-composer {
-		// need to min-size it, because EO does not have dimensions like the composer container
-		min-block-size: em(300);
+		// need to size it, because EO does not have dimensions like the composer container
+		block-size: em(300);
+
+		.composer-content {
+			margin-block-end: 0;
+		}
+		.editor {
+			border-block-start: 0;
+			border-inline: 0;
+			border-radius: 0;
+			padding-inline: 0.5em;
+		}
+
+		&-attachments-list {
+			padding-inline: 1em;
+			border-top: 0;
+			.composer-attachment-list-wrapper,
+			.message-attachmentList {
+				padding-inline: 0;
+			}
+		}
 	}
 
-	&-composer-attachments-list {
-		padding-inline: 0;
-		border-top: 0;
-		.composer-attachment-list-wrapper {
-			padding-inline: 0;
-		}
+	&-message-header {
+		border-radius: 0;
 	}
 }

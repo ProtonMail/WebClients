@@ -59,7 +59,7 @@ const EOHeaderExpanded = ({
     return (
         <div
             className={classnames([
-                'message-header message-header-expanded is-outbound border-bottom',
+                'message-header eo-message-header message-header-expanded is-outbound border-bottom',
                 showDetails && 'message-header--showDetails',
                 !messageLoaded && 'is-loading',
             ])}

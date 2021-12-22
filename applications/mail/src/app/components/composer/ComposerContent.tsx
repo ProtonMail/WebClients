@@ -104,8 +104,8 @@ const ComposerContent = ({
             )}
             <div
                 className={classnames([
-                    'flex-item-fluid mb0-5 w100 flex flex-column flex-nowrap relative',
-                    !isOutside && 'pl1-75 pr1-75',
+                    'flex-item-fluid flex flex-column flex-nowrap relative',
+                    isOutside ? 'mx0-5' : 'w100 pl1-75 pr1-75 mb0-5',
                 ])}
                 data-testid="composer-content"
             >
