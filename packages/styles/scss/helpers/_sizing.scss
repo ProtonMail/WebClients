@@ -29,7 +29,7 @@
 }
 
 // .w500p { inline-size: 500px; }
-@each $width in (10, 40, 50, 70, 90, 150, 200, 500) {
+@each $width in (10, 40, 50, 70, 90, 150, 200, 250, 300, 500) {
 	.w#{$width}p {
 		inline-size: #{$width}px;
 	}
