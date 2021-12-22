@@ -34,10 +34,10 @@
         "react-dom": "^17.0.0",
         "ts-loader": "^9.2.5",
         "typescript": "^4.4.3",
-        "webpack": "^5.51.2"
+        "webpack": "^5.65.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.12.10",
+        "@babel/core": "^7.16.5",
         "@storybook/addon-actions": "^6.3.7",
         "@storybook/addon-essentials": "^6.3.7",
         "@storybook/addon-links": "^6.3.7",
@@ -46,7 +46,7 @@
         "@storybook/manager-webpack5": "^6.3.7",
         "@storybook/react": "^6.3.7",
         "@storybook/source-loader": "^6.3.7",
-        "babel-loader": "^8.2.2",
+        "babel-loader": "^8.2.3",
         "netlify-cli": "^2.67.4"
     }
 }
