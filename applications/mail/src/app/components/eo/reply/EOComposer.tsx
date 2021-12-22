@@ -120,7 +120,7 @@ const EOComposer = ({ referenceMessage, isFocused, id, publicKey, outsideKey }: 
                     onSelect={handleUploadImage}
                 />
             )}
-            <div className="composer-body-container eo-composer flex flex-column flex-nowrap flex-item-fluid-auto max-w100 mt0-5">
+            <div className="composer-body-container eo-composer flex flex-column flex-nowrap flex-item-fluid-auto max-w100">
                 <ComposerContent
                     message={modelMessage}
                     disabled={lock}

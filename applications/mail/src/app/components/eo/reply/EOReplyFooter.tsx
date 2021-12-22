@@ -16,15 +16,12 @@ const EOReplyFooter = ({ id, onAddAttachments }: Props) => {
     };
 
     return (
-        <div className="flex flex-justify-space-between">
+        <div className="flex flex-justify-space-between border-top p1">
             <Button size="large" color="weak" type="button" onClick={handleCancel}>
                 {c('Action').t`Cancel`}
             </Button>
             <div className="flex">
-                <AttachmentsButton
-                    onAddAttachments={onAddAttachments}
-                    data-testid="eo-composer:attachment-button"
-                />
+                <AttachmentsButton onAddAttachments={onAddAttachments} data-testid="eo-composer:attachment-button" />
                 <Button className="ml1" size="large" color="norm" type="button" onClick={() => console.log('SEND')}>
                     {c('Action').t`Send`}
                 </Button>
