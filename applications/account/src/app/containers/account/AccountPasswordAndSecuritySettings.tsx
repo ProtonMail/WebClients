@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
-const canDeleteAccount = (user: UserModel) => user.canPay;
+const canDeleteAccount = (user: UserModel) => user.canPay && !user.isMember;
 
 export const getPasswordAndSecurityPage = ({ user }: { user: UserModel }) => {
     return {

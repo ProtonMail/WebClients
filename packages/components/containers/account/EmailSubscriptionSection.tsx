@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useSubscription, useUser } from '../../hooks';
+import { useSubscription } from '../../hooks';
 
 import MozillaInfoPanel from './MozillaInfoPanel';
 import EditEmailSubscription from './EditEmailSubscription';
@@ -9,11 +9,6 @@ import SettingsParagraph from './SettingsParagraph';
 
 const EmailSubscriptionSection = () => {
     const [subscription] = useSubscription();
-    const [user] = useUser();
-
-    if (user?.isMember) {
-        return null;
-    }
 
     if (subscription?.isManagedByMozilla) {
         return <MozillaInfoPanel />;
