@@ -1,8 +1,11 @@
-import { getCanonicalEmails } from '@proton/shared/lib/calendar/attendees';
+import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getResetPartstatActions, getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
-import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import { unary } from '@proton/shared/lib/helpers/function';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { OpenPGPKey } from 'pmcrypto';
 
 import {
     INVITE_ACTION_TYPES,
@@ -26,6 +29,7 @@ import { withUpdatedDtstamp } from './dtstamp';
 import getChangePartstatActions from './getChangePartstatActions';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
+import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncrementedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
@@ -34,7 +38,6 @@ import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;
     recurrences: CalendarEvent[];
-    getCanonicalEmailsMap: GetCanonicalEmailsMap;
     originalEditEventData: EventOldData;
     oldEditEventData: EventOldData;
     newEditEventData: EventNewData;
@@ -44,14 +47,18 @@ interface SaveRecurringArguments {
     inviteActions: InviteActions;
     sendIcs: (
         data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
+    ) => Promise<{
+        veventComponent?: VcalVeventComponent;
+        inviteActions: InviteActions;
+        timestamp: number;
+        sendPreferencesMap: SimpleMap<SendPreferences>;
+    }>;
     selfAttendeeToken?: string;
 }
 
 const getSaveRecurringEventActions = async ({
     type,
     recurrences,
-    getCanonicalEmailsMap,
     oldEditEventData: { eventData: oldEvent, veventComponent: oldVeventComponent },
     originalEditEventData: {
         eventData: originalEvent,
@@ -97,7 +104,7 @@ const getSaveRecurringEventActions = async ({
             sequence: { value: originalSequence ? originalSequence.value : 0 },
         };
         const maybeUpdateParentOperations = !originalSequence
-            ? [getUpdateSyncOperation(originalVeventWithSequence, originalEvent)]
+            ? [getUpdateSyncOperation({ veventComponent: originalVeventWithSequence, calendarEvent: originalEvent })]
             : [];
         if (isSingleEdit) {
             if (inviteType === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
@@ -140,11 +147,10 @@ const getSaveRecurringEventActions = async ({
                 updateSingleRecurrence(newVeventComponent),
                 oldVeventWithSequence
             );
-            const removedAttendeeEmails = await getCanonicalEmails(
-                inviteActions.removedAttendees,
-                getCanonicalEmailsMap
-            );
-            const updateOperation = getUpdateSyncOperation(newVeventWithSequence, oldEvent, removedAttendeeEmails);
+            const updateOperation = getUpdateSyncOperation({
+                veventComponent: newVeventWithSequence,
+                calendarEvent: oldEvent,
+            });
 
             return {
                 multiSyncActions: [
@@ -165,9 +171,9 @@ const getSaveRecurringEventActions = async ({
             originalVeventComponent,
             recurrence.localStart
         );
-        const createOperation = getCreateSyncOperation(
-            withUpdatedDtstampAndSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent)
-        );
+        const createOperation = getCreateSyncOperation({
+            veventComponent: withUpdatedDtstampAndSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent),
+        });
 
         return {
             multiSyncActions: [
@@ -197,13 +203,17 @@ const getSaveRecurringEventActions = async ({
         // These occurrences have to be deleted, even if the time was not changed, because a new chain with a new UID is created
         // So potentially instead of deleting, we could update all the events to be linked to the new UID but this is easier
         const deleteOperations = singleEditRecurrencesAfter.map(getDeleteSyncOperation);
-        const updateOperation = getUpdateSyncOperation(
-            deleteFutureRecurrence(originalVeventWithSequence, recurrence.localStart, recurrence.occurrenceNumber),
-            originalEvent
-        );
-        const createOperation = getCreateSyncOperation(
-            createFutureRecurrence(newVeventWithSequence, originalVeventWithSequence, recurrence)
-        );
+        const updateOperation = getUpdateSyncOperation({
+            veventComponent: deleteFutureRecurrence(
+                originalVeventWithSequence,
+                recurrence.localStart,
+                recurrence.occurrenceNumber
+            ),
+            calendarEvent: originalEvent,
+        });
+        const createOperation = getCreateSyncOperation({
+            veventComponent: createFutureRecurrence(newVeventWithSequence, originalVeventWithSequence, recurrence),
+        });
 
         return {
             multiSyncActions: [
@@ -296,6 +306,7 @@ const getSaveRecurringEventActions = async ({
             method
         );
         let updatedInviteActions = inviteActions;
+        let addedAttendeesPublicKeysMap: SimpleMap<OpenPGPKey> | undefined;
         if (isSendInviteType) {
             if (isSwitchCalendar) {
                 // Temporary hotfix to an API issue
@@ -303,7 +314,11 @@ const getSaveRecurringEventActions = async ({
                     'Cannot add participants and change calendar simultaneously. Please change the calendar first'
                 );
             }
-            const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
+            const {
+                veventComponent: cleanVeventComponent,
+                inviteActions: cleanInviteActions,
+                sendPreferencesMap,
+            } = await sendIcs({
                 inviteActions,
                 vevent: updatedVeventComponent,
                 cancelVevent: originalVeventComponent,
@@ -311,13 +326,19 @@ const getSaveRecurringEventActions = async ({
             if (cleanVeventComponent) {
                 updatedVeventComponent = cleanVeventComponent;
                 updatedInviteActions = cleanInviteActions;
+                addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
+                    veventComponent: updatedVeventComponent,
+                    inviteActions: updatedInviteActions,
+                    sendPreferencesMap,
+                });
             }
         }
-        const removedAttendeeEmails = await getCanonicalEmails(
-            updatedInviteActions.removedAttendees,
-            getCanonicalEmailsMap
-        );
-        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent, removedAttendeeEmails);
+        const updateOperation = getUpdateSyncOperation({
+            veventComponent: updatedVeventComponent,
+            calendarEvent: originalEvent,
+            removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
+            addedAttendeesPublicKeysMap,
+        });
 
         if (isSwitchCalendar) {
             const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);

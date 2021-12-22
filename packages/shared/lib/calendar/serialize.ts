@@ -1,10 +1,10 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { CalendarCreateEventBlobData } from '../interfaces/calendar/Api';
-import { RequireSome } from '../interfaces/utils';
+import { RequireSome, SimpleMap } from '../interfaces/utils';
 
 import { CALENDAR_CARD_TYPE } from './constants';
 import { getVeventParts } from './veventHelper';
-import { createSessionKey, encryptPart, getEncryptedSessionKey, signPart } from './encrypt';
+import { createSessionKey, encryptPart, getEncryptedSessionKey, getEncryptedSessionKeysMap, signPart } from './encrypt';
 import { SignPartResult, VcalVeventComponent } from '../interfaces/calendar';
 import { getIsEventComponent } from './vcalHelper';
 import { formatData, getArmoredSignatureString } from './formatData';
@@ -42,7 +42,8 @@ interface CreateCalendarEventArguments {
     isCreateEvent: boolean;
     isSwitchCalendar: boolean;
     isInvitation?: boolean;
-    removedAttendees?: string[];
+    removedAttendeesEmails?: string[];
+    addedAttendeesPublicKeysMap?: SimpleMap<OpenPGPKey>;
 }
 export const createCalendarEvent = async ({
     eventComponent,
@@ -54,7 +55,8 @@ export const createCalendarEvent = async ({
     isCreateEvent,
     isSwitchCalendar,
     isInvitation,
-    removedAttendees = [],
+    removedAttendeesEmails = [],
+    addedAttendeesPublicKeysMap,
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, personalPart, attendeesPart } = getParts(eventComponent);
 
@@ -77,6 +79,7 @@ export const createCalendarEvent = async ({
         calendarEncryptedPart,
         personalSignedPart,
         attendeesEncryptedPart,
+        attendeesEncryptedSessionKeysMap,
     ] = await Promise.all([
         // If we're updating an event (but not switching calendar), no need to encrypt again the session keys
         isCreateOrSwitchCalendar && calendarSessionKey
@@ -95,6 +98,7 @@ export const createCalendarEvent = async ({
         isSwitchCalendarOfInvitation
             ? undefined
             : encryptPart(attendeesPart[ENCRYPTED_AND_SIGNED], signingKey, sharedSessionKey),
+        getEncryptedSessionKeysMap(sharedSessionKey, addedAttendeesPublicKeysMap),
     ]);
 
     return formatData({
@@ -107,7 +111,8 @@ export const createCalendarEvent = async ({
         personalSignedPart,
         attendeesEncryptedPart,
         attendeesClearPart: isSwitchCalendarOfInvitation ? undefined : attendeesPart[CLEAR_TEXT],
-        removedAttendees,
+        removedAttendeesEmails,
+        attendeesEncryptedSessionKeysMap,
     });
 };
 

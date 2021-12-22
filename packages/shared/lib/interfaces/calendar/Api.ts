@@ -69,6 +69,10 @@ export interface CreateCalendarEventData
     Permissions: number;
     IsOrganizer?: 0 | 1;
     RemovedAttendeeAddresses?: string[];
+    AddedProtonAttendees?: {
+        Email: string;
+        AddressKeyPacket: string;
+    }[];
 }
 
 export interface CreateSingleCalendarEventData extends CreateCalendarEventData {

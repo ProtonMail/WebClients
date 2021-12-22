@@ -159,6 +159,7 @@ describe('calendar encryption', () => {
                 { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
             ],
             RemovedAttendeeAddresses: undefined,
+            AddedProtonAttendees: undefined,
         });
         setVcalProdId('');
     });
