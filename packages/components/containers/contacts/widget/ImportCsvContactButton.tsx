@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
-import { Button, GoogleButton, PrimaryButton, FeatureCode, Loader, EasySwitchOauthModal } from '@proton/components';
+import { GoogleButton, PrimaryButton, FeatureCode, Loader, EasySwitchOauthModal } from '@proton/components';
 import { useAddresses, useFeature, useModals, useUser } from '@proton/components/hooks';
 import ImportModal from '@proton/components/containers/contacts/import/ImportModal';
 
@@ -17,9 +17,6 @@ const ImportCsvContactButton = ({
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
-    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
-    const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
-
     const easySwitchCalendarFeature = useFeature(FeatureCode.EasySwitchCalendar);
     const isEasySwitchCalendarEnabled = easySwitchCalendarFeature.feature?.Value;
 
@@ -30,7 +27,7 @@ const ImportCsvContactButton = ({
         }
     };
 
-    const isLoading = loadingUser || loadingAddresses || easySwitchFeature.loading || easySwitchCalendarFeature.loading;
+    const isLoading = loadingUser || loadingAddresses || easySwitchCalendarFeature.loading;
 
     if (isLoading) {
         return <Loader />;
@@ -38,7 +35,7 @@ const ImportCsvContactButton = ({
 
     const disabled = isLoading || !user.hasNonDelinquentScope;
 
-    return isEasySwitchEnabled ? (
+    return (
         <>
             <GoogleButton
                 onClick={() => {
@@ -54,14 +51,10 @@ const ImportCsvContactButton = ({
                 disabled={disabled}
                 className="mr1"
             />
-            <Button id="import-contacts-button" disabled={disabled} onClick={handleClick}>
+            <PrimaryButton id="import-contacts-button" disabled={disabled} onClick={handleClick}>
                 {c('Action').t`Import from .csv or vCard`}
-            </Button>
+            </PrimaryButton>
         </>
-    ) : (
-        <PrimaryButton id="import-contacts-button" disabled={disabled} onClick={handleClick}>
-            {c('Action').t`Import from .csv or vCard`}
-        </PrimaryButton>
     );
 };
 
