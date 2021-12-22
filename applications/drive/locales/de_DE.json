@@ -125,8 +125,8 @@
       "Confirm": [
         "Bestätigen"
       ],
-      "Confirm opening of link ${ link }": [
-        "Öffnen des Links ${ link } bestätigen"
+      "Confirm opening of link ${ linkToShow }": [
+        "Öffnen des Links ${ linkToShow } bestätigen"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -719,13 +719,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von { amount } $"
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von ${ amount }"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von ${ amount } (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von { amount } $ (33 % Rabatt)"
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von ${ amount } (33 % Rabatt)"
       ],
       "1 month": [
         "1 Monat"
@@ -737,13 +737,13 @@
         "24 Monate"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Zum Preis von { amount } $ in den ersten zwei Jahren.${ supNotice }"
+        "Zum Preis von ${ amount } in den ersten zwei Jahren.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Zum Preis von { amount } $ im ersten Monat.${ supNotice }"
+        "Zum Preis von ${ amount } im ersten Monat.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Zum Preis von { amount } $ im ersten Jahr.${ supNotice }"
+        "Zum Preis von ${ amount } im ersten Jahr.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
         "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
@@ -869,14 +869,14 @@
       "Calendar link is temporarily inaccessible": [
         "Der Link zum Kalender ist vorübergehend unzugänglich"
       ],
-      "Calendar link is wrong": [
-        "Ungültiger Kalender-Link"
-      ],
       "Failed to sync calendar": [
         "Kalender konnte nicht synchronisiert werden"
       ],
       "More than 12 hours passed since last update": [
         "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
+      ],
+      "Unsupported calendar format": [
+        "Nicht unterstütztes Kalender-Format"
       ]
     },
     "Composer size": {
@@ -2001,8 +2001,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden, überprüfen Sie bitte Ihren Spam-Ordner."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Wenn eines davon auf Sie zutrifft, fahren Sie mit den Proton-Kontoeinstellungen fort, um den Entsperrungsprozess fortzusetzen."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        "Wenn eines davon auf dich zutrifft, fahre mit den Proton-Kontoeinstellungen fort,\num den Entsperrungsprozess zu starten."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
@@ -3532,6 +3532,11 @@
         "Ihre Einstellungen wurden erfolgreich geändert"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "Bitte beachte, dass alle von der Anwendung geforderten Berechtigungen akzeptiert werden müssen, um den Import zu starten."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Anzeigenamen wählen"
@@ -4549,6 +4554,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-Mail-Verschlüsselung erzwingt eine E-Mail-Signatur zur Authentifizierung Ihrer gesendeten Nachrichten"
       ],
+      "Encrypted data": [
+        "Verschlüsselte Daten"
+      ],
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
@@ -4625,6 +4633,14 @@
       ],
       "Name must not end with a space": [
         "Name darf nicht mit einem Leerzeichen beginnen"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Klicken um das Video wiederzugeben"
+      ],
+      "Replay video": [
+        "Video erneut wiedergeben"
       ]
     },
     "VPN feature": {

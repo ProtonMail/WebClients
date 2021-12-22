@@ -44,7 +44,7 @@
         "Organisatiesleutel activeren"
       ],
       "Activate recovery": [
-        ""
+        "Herstel activeren"
       ],
       "Add": [
         "Toevoegen"
@@ -56,7 +56,7 @@
         "E-mailadres toevoegen"
       ],
       "Add calendar": [
-        "Kalender toevoegen"
+        "Agenda toevoegen"
       ],
       "Add condition": [
         "Voorwaarde toevoegen"
@@ -184,8 +184,8 @@
       "Confirm": [
         "Bevestigen"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bevestig het openen van link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Bevestig het openen van link ${ linkToShow }"
       ],
       "Contact support": [
         "Neem contact op met ondersteuning"
@@ -382,8 +382,14 @@
       "Import": [
         "Importeren"
       ],
+      "Import calendars": [
+        ""
+      ],
       "Import contacts": [
         "Contactpersonen importeren"
+      ],
+      "Import emails": [
+        ""
       ],
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Selecteer bestanden"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Selecteer abonnement"
       ],
@@ -626,7 +635,7 @@
         "Stel catch-all in"
       ],
       "Set recovery phrase": [
-        ""
+        "Herstelzin instellen"
       ],
       "Share via link": [
         "Deel via link"
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Sorteer"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "{ PRODUCT_NAMES.EASY_SWITCH } downgraden"
       ],
       "Start import": [
         "Begin met importeren"
@@ -1346,14 +1352,14 @@
       "Calendar link is temporarily inaccessible": [
         "Agendalink is tijdelijk ontoegankelijk"
       ],
-      "Calendar link is wrong": [
-        "Agenda link is verkeerd"
-      ],
       "Failed to sync calendar": [
         "Synchronisatie van de agenda is mislukt"
       ],
       "More than 12 hours passed since last update": [
         "Er is meer dan 12 uur verstreken sinds de laatste update"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2171,7 +2177,7 @@
         "U moet een naam instellen"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
+        "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
@@ -2730,8 +2736,8 @@
         "${ totalImported }/${ totalToImport } afspraken versleuteld en toegevoegd aan uw agenda"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "",
-        ""
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd.",
@@ -2930,14 +2936,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Geef ProtonMail toegang tot uw Gmail account: kies voor ${ bold2Steps } en volg de onderstaande stappen."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Ten slotte, ${ googleMailLink } met het account dat u wilt importeren, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Ga naar ${ googleAccountLink }. In de ${ boldSecurity } sectie, ${ boldAccess } voor minder beveiligde apps. Als u deze optie niet ziet, is het mogelijk dat 2-staps verificatie ingeschakeld is."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Ga naar ${ googleAccountLink }. In het ${ boldSecurity } gedeelte, maak een ${ boldAppPassword } als u er nog geen hebt. U heeft dit wachtwoord nodig tijdens het importeren."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "In de ${ boldLabels } sectie kiest u de mappen die mogen worden geïmporteerd in ProtonMail."
@@ -2947,6 +2980,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "Log in op Yahoo Mail en klik op uw naam in de rechterbovenhoek om ${ boldAccountInfo } te openen. In de ${ boldAccountSec } sectie, scrolt u naar de ${ boldAppPassword } sectie om een app-wachtwoord te genereren. U zult dit wachtwoord nodig hebben tijdens de import."
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        ""
       ]
     },
     "Import instructions emphasis": {
@@ -2962,20 +3031,44 @@
       "app password": [
         "app-wachtwoord"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Export to CSV file": [
+        ""
+      ],
       "Forwarding and POP/IMAP": [
         "Doorsturen en POP/IMAP"
       ],
       "Gmail Settings": [
         "Gmail-instellingen"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "IMAP toegang"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Labels"
       ],
+      "Manage": [
+        ""
+      ],
       "Other ways to sign in": [
         "Andere manieren om in te loggen"
+      ],
+      "Publish a calendar": [
+        ""
       ],
       "Security": [
         "Beveiliging"
@@ -3009,6 +3102,55 @@
         "Het inschakelen van toegang voor minder beveiligde apps in Gmail instellingen"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        ""
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        ""
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        ""
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "tweestapsverificatie (2FA) uitgeschakeld (standaard instellingen)"
@@ -3020,6 +3162,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Weet u zeker dat u een privésleutel wilt importeren? Het importeren van een onveilig gegenereerde of uitgelekte private seleutel kan de veiligheid van uw e-mails schaden.\n\nHoud er ook rekening mee dat de openbare sleutel die overeenkomt met deze private sleutel publiekelijk beschikbaar zal zijn vanaf onze sleutelserver. Als de sleutel persoonlijke gegevens bevat (zoals uw volledige naam) die u niet wilt publiceren, bewerk de sleutel dan voordat u deze importeert."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        ""
       ]
     },
     "Import status": {
@@ -3067,8 +3214,8 @@
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "",
-        ""
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraak wordt niet geïmporteerd. Uitvouwen voor details.",
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
       ],
       "No contact can be imported. Click for details": [
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
@@ -3259,7 +3406,7 @@
         "Adressen"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
-        ""
+        "Na een wachtwoordherstel worden uw gegevens opgesloten op een versleutelde manier om ze veilig te houden."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Na het betalen van uw Bitcoin betaling, volg de onderstaande instructies om te upgraden."
@@ -3285,10 +3432,10 @@
         "Alle wijzigingen gaan verloren."
       ],
       "Allow recovery by email": [
-        ""
+        "Herstellen via e-mail toestaan"
       ],
       "Allow recovery by phone": [
-        ""
+        "Herstellen via telefoon toestaan"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Biedt u de mogelijkheid om e-mails te hosten voor uw eigen domein(en) op ${ mailAppName }, bijvoorbeeld john.smith@voorbeeld.com"
@@ -3327,7 +3474,7 @@
         "Weet u zeker dat u dit filter wil verwijderen?"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        ""
+        "Weet u zeker dat u deze map wilt verwijderen? Alle onderliggende mappen zullen ook worden verwijderd."
       ],
       "Are you sure you want to delete this label?": [
         "Weet u zeker dat u dit label wilt verwijderen?"
@@ -3530,7 +3677,7 @@
         "Downgraden zal alle verbindingen naar betaalde ProtonVPN-servers beëindigen."
       ],
       "Download recovery file": [
-        ""
+        "Herstelbestand downloaden"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
@@ -3546,9 +3693,6 @@
       ],
       "Edit label": [
         "Label bewerken"
-      ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Verplaats moeiteloos en veilig uw e-mails van uw huidige provider naar Proton. Als u Google gebruikt, ondersteunen wij ook de import van agenda's en contactpersonen."
       ],
       "Email address": [
         "E-mailadres"
@@ -3737,6 +3881,9 @@
       "Import mailbox": [
         "Mailbox importeren"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "BELANGRIJK: Het downloaden van uw geheime sleutels en ze verzenden via of opslaan op onveilige media kan de veiligheid van uw account in gevaar brengen!"
       ],
@@ -3788,6 +3935,9 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        ""
+      ],
       "it’s imperative": [
         "het is noodzakelijk"
       ],
@@ -3805,6 +3955,9 @@
       ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "Grote importen kunnen enkele dagen in beslag nemen."
@@ -3972,13 +4125,13 @@
         "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        ""
+        "Verouderd herstelbestand; werk het bij om toegang tot uw gegevens te garanderen"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        ""
+        "Verouderde herstelmethodes; werk het bij om toegang tot uw gegevens te garanderen"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        ""
+        "Verouderde herstelzin; werk het bij om toegang tot uw gegevens te garanderen"
       ],
       "P2P": [
         "P2P"
@@ -4143,8 +4296,8 @@
       "Screenshot(s) attached": [
         "Schermafbeelding(en) toegevoegd"
       ],
-      "Select a service provider to get started": [
-        "Selecteer een dienstverlener om te beginnen"
+      "Select a service provider to start": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
@@ -4162,7 +4315,7 @@
         "Sessie verlopen."
       ],
       "Set recovery phrase": [
-        ""
+        "Herstelzin instellen"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
@@ -4300,13 +4453,13 @@
         "om door te gaan naar ${ toAppName }"
       ],
       "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        ""
+        "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelbestand of herstelzin nodig."
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        ""
+        "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelbestand nodig."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        ""
+        "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelzin nodig."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Om uw vergrendelde gegevens te decoderen en te bekijken na een wachtwoordreset, selecteert u een herstelmethode."
@@ -4363,10 +4516,10 @@
         "Niet-ondersteund bestand"
       ],
       "Update recovery file": [
-        ""
+        "Herstelbestand bijwerken"
       ],
       "Update recovery phrase": [
-        ""
+        "Herstelzin bijwerken"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "UPGRADE naar een ${ PLAN_NAMES[PLANS.VISIONARY] } of ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement om automatisch antwoord in te schakelen voor als u niet in kantoor bent."
@@ -4515,6 +4668,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "U kunt nu berichten ontvangen op uw @pm.me-adres. Upgrade naar een betaald abonnement om ook e-mails te versturen via uw @pm.me-adres en meerdere @pm.me-adressen te maken."
       ],
@@ -4553,6 +4709,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "U moet een persoonlijke agenda hebben om een koppeling aan te maken."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren."
@@ -4601,9 +4760,6 @@
       ],
       "Your Block List is empty.": [
         "Uw Bloklijst is leeg."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "Uw gegevens zijn gecodeerd en vergrendeld. U kunt de toegang herstellen met een methode voor gegevensherstel."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
@@ -5250,6 +5406,9 @@
       "Credits used": [
         "Verbruikt tegoed"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Facturen aanpassen"
       ],
@@ -5267,6 +5426,9 @@
       ],
       "Default language": [
         "Standaardtaal"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         "Standaard PGP-schema"
@@ -5624,6 +5786,9 @@
       ],
       "Select your country": [
         "Selecteer uw land"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
@@ -6185,6 +6350,35 @@
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        ""
+      ],
+      "How to import calendars from Outlook": [
+        ""
+      ],
+      "How to import calendars from Yahoo": [
+        ""
+      ],
+      "How to import contacts from another service": [
+        ""
+      ],
+      "How to import contacts from Outlook": [
+        ""
+      ],
+      "How to import contacts from Yahoo": [
+        ""
+      ],
+      "How to import emails from another service": [
+        ""
+      ],
+      "How to import emails from Outlook": [
+        ""
+      ],
+      "How to import emails from Yahoo": [
+        ""
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Agenda toevoegen"
@@ -6418,6 +6612,11 @@
       "week before": [
         "week ervoor",
         "weken ervoor"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7077,6 +7276,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "U kunt meerdere labels toepassen op één bericht, maar berichten kunnen meestal slechts in één map voorkomen. Slepen en neerzetten om de volgorde van uw mappen en labels te wijzigen."
       ]
@@ -7274,7 +7476,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } gekopieerd naar uw klembord"
       ],
       "Account deleted. Logging out...": [
         "Account verwijderd. Uitloggen..."
@@ -7995,6 +8197,9 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "Facturen"
       ],
@@ -8175,6 +8380,9 @@
       "Select contact group": [
         "Contactgroep selecteren"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "Selecteer abonnement"
       ],
@@ -8306,6 +8514,9 @@
       ],
       "Warning!": [
         "Let op!"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Wat is er nieuw"
@@ -8614,6 +8825,14 @@
         "Wachtwoord moet ten minste ${ length } tekens bevatten"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
+      ]
+    },
     "VPN feature": {
       "${ mailAppName } Visionary": [
         "${ mailAppName } Visionary"
@@ -8847,10 +9066,10 @@
         "U ziet dit importrecord niet meer in de lijst."
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Uw herstelbestand is verouderd. Het kan geen nieuwe gegevens herstellen als u uw account opnieuw instelt."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Uw herstelzin is verouderd. Het kan geen nieuwe gegevens herstellen als u uw account opnieuw instelt."
       ]
     },
     "Warning for domain modal": {

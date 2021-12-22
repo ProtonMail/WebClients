@@ -183,7 +183,7 @@
         "Konfirmasi"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Konfirmasi untuk membuka tautan ${ linkToShow }"
       ],
       "Contact group": [
         "Grup kontak"
@@ -464,6 +464,9 @@
       "Load more": [
         "Muat lebih banyak"
       ],
+      "Load unprotected": [
+        "Muat pesan asli"
+      ],
       "Loading verification": [
         "Memuat verifikasi"
       ],
@@ -695,6 +698,9 @@
       "Retry": [
         "Coba lagi"
       ],
+      "Revert to original display": [
+        "Kembalikan ke mode tampilan semula"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -800,6 +806,9 @@
       "Skip": [
         "Lewati"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Gambar-gambar tertentu tidak dapat dimuat pada saat perlindungan pelacak sedang aktif"
+      ],
       "Start import": [
         "Mulai impor"
       ],
@@ -826,6 +835,9 @@
       ],
       "This message contains embedded images.": [
         "Pesan ini mengandung gambar yang disematkan."
+      ],
+      "This message contains remote content.": [
+        "Pesan ini mengandung remote content."
       ],
       "Trust": [
         "Percaya"
@@ -1579,14 +1591,14 @@
       "Calendar link is temporarily inaccessible": [
         "Tautan kalender untuk sementara tidak dapat diakses"
       ],
-      "Calendar link is wrong": [
-        "Tautan kalender tidak tepat"
-      ],
       "Failed to sync calendar": [
         "Gagal menyinkronkan kalender"
       ],
       "More than 12 hours passed since last update": [
         "Lebih dari 12 jam telah berlalu sejak pembaharuan terakhir"
+      ],
+      "Unsupported calendar format": [
+        "Format kalender tidak didukung"
       ]
     },
     "Calendar widget banner": {
@@ -2447,16 +2459,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Draf tidak dapat dipindahkan ke Kotak masuk"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Draf tidak dapat dipindahkan ke Spam"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Pesan-pesan yang terkirim tidak dapat dipindahkan ke Kotak masuk"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Pesan-pesan yang terkirim tidak dapat dipindahkan ke Spam"
       ],
       "This action cannot be performed": [
         "Tindak ini tidak dapat dilakukan"
@@ -2464,7 +2476,7 @@
     },
     "Error importing calendar": {
       "An unexpected error occurred. Import must be restarted.": [
-        "Ada kesalahan tidak terduga. Proses impor harus diulang."
+        "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
       ]
     },
     "Error importing contact": {
@@ -2980,6 +2992,11 @@
         "Gagal membuat kalender acara"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "terlebih dahulu menyetujui akses-akses izin yang diminta oleh aplikasi kami"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -3260,7 +3277,7 @@
         "Tertagih pada akhir siklus penagihan Anda saat ini (diperbarui pada ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Transaksi bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
+        "Transaksi Bitcoin pada umumnya membutuhkan waktu untuk dapat terkonfirmasi (hingga maksimal 24 jam). Apabila sudah terkonfirmasi, kami akan segera menambahkan saldo yang telah Anda beli ke dalam akun Anda. Setelahnya, Anda akan dapat membayar tagihan Anda dengan saldo tersebut."
       ],
       "Black Friday 2018 applied to your subscription": [
         "Diskon Black Friday 2018 telah diterapkan pada biaya berlangganan Anda"
@@ -3506,7 +3523,7 @@
         "di sini"
       ],
       "Hide original message": [
-        "Sembunyikan pesan orisinal"
+        "Sembunyikan pesan asli"
       ],
       "Hour": [
         "Jam"
@@ -3881,7 +3898,7 @@
         "PGP memungkinkan Anda mengirim surel terenkripsi ke penerima non-ProtonMail yang memiliki fitur PGP."
       ],
       "Show original message": [
-        "Tampilkan pesan orisinal"
+        "Tampilkan pesan asli"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda adalah pengguna yang loyal, akun Anda memiliki fitur-fitur tambahan yang diaktifkan."
@@ -3990,6 +4007,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Pesan ini telah disesuaikan agar dapat nyaman dibaca dengan tema gelap."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Pesan ini dibuat secara otomatis sebagai respon terhadap pesan sebelumnya."
@@ -4595,6 +4615,9 @@
       "Add to group": [
         "Tambah ke grup"
       ],
+      "Address": [
+        "Alamat"
+      ],
       "ALL": [
         "SEMUA"
       ],
@@ -4914,7 +4937,7 @@
         "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
       ],
       "Select your country": [
-        "Pilih negara anda"
+        "Pilih negara Anda"
       ],
       "Send auto-reply": [
         "Kirim balasan otomatis"
@@ -5572,6 +5595,11 @@
         "Kata sandi telah berhasil ditentukan"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Harap diingat bahwa Anda harus ${ boldNextStep } untuk dapat memulai proses impor."
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Selanjutnya"
@@ -5643,6 +5671,9 @@
     "Option": {
       "Add to existing group": [
         "Tambah ke grup yang sudah ada"
+      ],
+      "All": [
+        "Semua"
       ],
       "Create new group": [
         "Buat grup baru"
@@ -6669,19 +6700,19 @@
         "Hapus ${ count } grup kontak"
       ],
       "Delete ${ count } conversation": [
-        "Hapus percakapan\n\nHapus ${ count } percakapan"
+        "Hapus ${ count } percakapan"
       ],
       "Delete ${ count } draft": [
         "Hapus ${ count } draf"
       ],
       "Delete ${ count } message": [
-        "Hapus pesan\n\nHapus ${ count } pesan"
+        "Hapus ${ count } pesan"
       ],
       "Delete ${ Name }": [
         "Hapus ${ Name }"
       ],
       "Delete all messages": [
-        "Hapus semua pesan"
+        "Hapus seluruh pesan"
       ],
       "Delete conversation": [
         "Hapus percakapan"
@@ -6717,7 +6748,7 @@
         "Alamat email"
       ],
       "Email content": [
-        ""
+        "Konten email"
       ],
       "Email settings": [
         "Pengaturan surel"
@@ -6780,10 +6811,13 @@
         "Pintasan Papan Ketik"
       ],
       "Label as": [
-        "Label sebagai"
+        "Labeli sebagai"
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
+      ],
+      "Load embedded images": [
+        "Muat gambar-gambar yang tersemat"
       ],
       "Load remote content": [
         "Muat remote content"
@@ -6819,7 +6853,7 @@
         "Pilihan lainnya"
       ],
       "Move to": [
-        "Pindah ke"
+        "Pindahkan ke"
       ],
       "Move to inbox": [
         "Pindahkan ke kotak masuk"
@@ -6935,6 +6969,9 @@
       "Select contact group": [
         "Pilih grup kontak"
       ],
+      "Select permissions": [
+        "Tentukan akses izin"
+      ],
       "Select what to import": [
         "Pilih apa-apa saja yang akan diimpor"
       ],
@@ -6945,7 +6982,7 @@
         "Kirim dengan preferensi yang telah diubah?"
       ],
       "Send without expiration?": [
-        "Kirim tanpa kedaluwarsa?"
+        "Kirim tanpa waktu kedaluwarsa?"
       ],
       "Sending error": [
         "Kesalahan saat mengirim"
@@ -6961,9 +6998,6 @@
       ],
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Urutkan percakapan"
@@ -7059,6 +7093,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Enkripsi surel mewajibkan tanda tangan surel untuk mengautentikasi pesan yang Anda kirim"
       ],
+      "Encrypted data": [
+        "Data-data terenkripsi"
+      ],
       "Encrypted data with verified digital signature": [
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
       ],
@@ -7131,6 +7168,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Kata sandi minimal ${ length } karakter"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Klik untuk memutar ulang video"
+      ],
+      "Replay video": [
+        "Putar ulang video"
       ]
     },
     "VPN feature": {

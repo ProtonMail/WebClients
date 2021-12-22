@@ -473,6 +473,9 @@
       "Load more": [
         "Załaduj więcej"
       ],
+      "Load unprotected": [
+        "Załaduj bez ochrony"
+      ],
       "Loading verification": [
         "Ładowanie weryfikacji"
       ],
@@ -704,6 +707,9 @@
       "Retry": [
         "Spróbuj ponownie"
       ],
+      "Revert to original display": [
+        "Przywróć oryginalny widok"
+      ],
       "Save": [
         "Zapisz"
       ],
@@ -809,6 +815,9 @@
       "Skip": [
         "Pomiń"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem"
+      ],
       "Start import": [
         "Rozpocznij importowanie"
       ],
@@ -835,6 +844,9 @@
       ],
       "This message contains embedded images.": [
         "Ta wiadomość zawiera osadzone obrazy."
+      ],
+      "This message contains remote content.": [
+        "Ta wiadomość zawiera zawartość zdalną."
       ],
       "Trust": [
         "Zaufaj"
@@ -1606,14 +1618,14 @@
       "Calendar link is temporarily inaccessible": [
         "Link kalendarza jest tymczasowo niedostępny"
       ],
-      "Calendar link is wrong": [
-        "Link kalendarza jest nieprawidłowy"
-      ],
       "Failed to sync calendar": [
         "Nie udało się zsynchronizować kalendarza"
       ],
       "More than 12 hours passed since last update": [
         "Od ostatniej aktualizacji minęło ponad 12 godzin"
+      ],
+      "Unsupported calendar format": [
+        "Format kalendarza jest nieobsługiwany"
       ]
     },
     "Calendar widget banner": {
@@ -2528,16 +2540,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Szkice nie mogły zostać przeniesione do Odebranych"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Szkice nie mogły zostać przeniesione do Spamu"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Wysłane wiadomości nie mogły zostać przeniesione do Odebranych"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Wysłane wiadomości nie mogły zostać przeniesione do Spamu"
       ],
       "This action cannot be performed": [
         "Nie możesz wykonać tej akcji"
@@ -3080,6 +3092,11 @@
       ],
       "Creating calendar event failed": [
         "Utworzenie wydarzenia nie powiodło się"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "w następnym kroku musisz zaakceptować wszystkie uprawnienia"
       ]
     },
     "Import warning": {
@@ -3737,7 +3754,7 @@
         "Ukryj oryginalną wiadomość"
       ],
       "Hour": [
-        "godzinę",
+        "godzina",
         "godziny",
         "godzin",
         "godziny"
@@ -3845,7 +3862,7 @@
         "Zarządzaj etykietami"
       ],
       "members": [
-        ""
+        "użytkownicy"
       ],
       "Members": [
         "Członkowie"
@@ -4230,6 +4247,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Ta wiadomość została dostosowana do ciemnego tła."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Ta wiadomość została wygenerowana automatycznie, jako odpowiedź na poprzednią wiadomość."
@@ -4864,6 +4884,9 @@
       ],
       "Add to group": [
         "Dodaj do grupy"
+      ],
+      "Address": [
+        "Adres"
       ],
       "ALL": [
         "WSZYSTKIE"
@@ -5860,6 +5883,11 @@
         "Hasło zostało ustawione"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Pamiętaj, że ${ boldNextStep } wymagane przez aplikację, aby rozpocząć proces importowania."
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Dalej"
@@ -5931,6 +5959,9 @@
     "Option": {
       "Add to existing group": [
         "Dodaj do istniejącej grupy"
+      ],
+      "All": [
+        "Wszystkie"
       ],
       "Create new group": [
         "Utwórz nową grupę"
@@ -7205,6 +7236,9 @@
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
+      "Load embedded images": [
+        "Załaduj osadzone obrazy"
+      ],
       "Load remote content": [
         "Załaduj zawartość zdalną"
       ],
@@ -7355,6 +7389,9 @@
       "Select contact group": [
         "Wybierz grupę kontaktów"
       ],
+      "Select permissions": [
+        "Zaakceptuj uprawnienia"
+      ],
       "Select what to import": [
         "Wybierz co chcesz zaimportować"
       ],
@@ -7381,9 +7418,6 @@
       ],
       "Sign in again to continue": [
         "Zaloguj się ponownie, aby kontynuować"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        "Niektóre obrazy nie nie mogły zostać załadowane z ochroną przed śledzeniem [Załaduj bez ochrony]"
       ],
       "Sort conversations": [
         "Sortuj wątki"
@@ -7482,6 +7516,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Szyfrowanie wiadomości wymusza ich podpisywanie w celu uwierzytelnienia wysłanych wiadomości"
       ],
+      "Encrypted data": [
+        "Zaszyfrowane dane"
+      ],
       "Encrypted data with verified digital signature": [
         "Zaszyfrowane dane ze zweryfikowanym podpisem cyfrowym"
       ],
@@ -7557,6 +7594,14 @@
         "Hasło musi zawierać co najmniej ${ length } znaki",
         "Hasło musi zawierać co najmniej ${ length } znaków",
         "Hasło musi zawierać co najmniej ${ length } znaków"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Kliknij, aby powtórzyć wideo"
+      ],
+      "Replay video": [
+        "Powtórz wideo"
       ]
     },
     "VPN feature": {

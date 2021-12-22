@@ -184,8 +184,8 @@
       "Confirm": [
         "Confirmare"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmați deschiderea legăturii ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Confirmați deschiderea legăturii ${ linkToShow }"
       ],
       "Contact support": [
         "Contactați asistența"
@@ -382,8 +382,14 @@
       "Import": [
         "Importare"
       ],
+      "Import calendars": [
+        "Importare calendare"
+      ],
       "Import contacts": [
         "Importare contacte"
+      ],
+      "Import emails": [
+        "Importare mesaje"
       ],
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Selectare fișiere"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Selectare plan"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Sortare"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Pornire ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Pornire importare"
@@ -1356,14 +1362,14 @@
       "Calendar link is temporarily inaccessible": [
         "Legătura calendarului nu este disponibilă momentan."
       ],
-      "Calendar link is wrong": [
-        "Legătura calendarului este greșită."
-      ],
       "Failed to sync calendar": [
         "Eșuare sincronizare calendar."
       ],
       "More than 12 hours passed since last update": [
         "Au trecut mai mult de 12 ore de la ultima actualizare."
+      ],
+      "Unsupported calendar format": [
+        "Format de calendar neacceptat."
       ]
     },
     "Calendar view": {
@@ -2963,14 +2969,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Permiteți accesul ProtonMail în contul Gmail: alegeți dacă ${ bold2Steps } este activată și urmați pașii de mai jos."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        "Faceți clic pe ${ boldManage } pentru a extinde meniul de opțiuni."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        "Extindeți meniul derulant făcând clic pe cele 3 puncte (...)."
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "În final, ${ googleMailLink } cu contul pe care doriți sa îl importați ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        "Accesați ${ boldAccountInfo } din profilul personal în ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        "Accesați ${ boldAccountSecurity }."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Accesați ${ googleAccountLink }. În secțiunea ${ boldSecurity }, ${ boldAccess } pentru aplicații mai puțin sigure. Dacă nu vedeți această opțiune, este posibil să aveți activată verificarea în doi pași."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Accesați ${ googleAccountLink }. În secțiunea ${ boldSecurity }, creați ${ boldAppPassword } dacă nu aveți deja una. Veţi avea nevoie de această parolă în timpul importării."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        "Accesați ${ securitySettingsLink } din Outlook.com."
+      ],
+      "If 2-step verification is off, turn it on": [
+        "Dacă verificarea în doi pași este dezactivată, activați-o."
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "În secțiunea ${ boldLabels }, selectați folderele permise pentru importare în ProtonMail."
@@ -2980,6 +3013,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "Conectați-vă la Yahoo Mail și faceți clic pe numele personal în colțul din dreapta sus pentru a accesa ${ boldAccountInfo }. În secțiunea ${ boldAccountSec }, derulați până la secțiunea ${ boldAppPassword } pentru a genera o parolă pentru aplicație. Veți avea nevoie de această parolă în timpul importării."
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        "Deschideți contactele din ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        "Deschideți ${ outlookContactsLink } din Outlook."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        "Selectați ${ boldExportContacts } și alegeți contactele ce trebuie exportate."
+      ],
+      "Select ${ boldExportCSV }": [
+        "Selectați ${ boldExportCSV }"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Pentru a importa contacte în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Outlook. Obțineți-o urmând acești pași:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Yahoo. Obțineți-o urmând acești pași:"
       ]
     },
     "Import instructions emphasis": {
@@ -2995,20 +3064,44 @@
       "app password": [
         "parola aplicației"
       ],
+      "Can view all details": [
+        "Poate vedea toate detaliile"
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "Export contacts": [
+        "Exportare contacte"
+      ],
+      "Export to CSV file": [
+        "Exportare în fișier CSV"
+      ],
       "Forwarding and POP/IMAP": [
         "Redirecționare și POP/IMAP"
       ],
       "Gmail Settings": [
         "Setări Gmail"
       ],
+      "ICS": [
+        "ICS"
+      ],
       "IMAP access": [
         "Acces IMAP"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Etichete"
       ],
+      "Manage": [
+        "Gestionare"
+      ],
       "Other ways to sign in": [
         "Alte moduri de autentificare"
+      ],
+      "Publish a calendar": [
+        "Publicare calendar"
       ],
       "Security": [
         "Securitate"
@@ -3042,6 +3135,55 @@
         "Cum să activați accesul pentru aplicațiile mai puțin sigure în setările Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        "parola aplicației"
+      ],
+      "app password or enable IMAP": [
+        "parola aplicației sau să activați IMAP"
+      ],
+      "contacts": [
+        "contacte"
+      ],
+      "CSV file": [
+        "fișier CSV"
+      ],
+      "full calendar view": [
+        "vedere completă calendar"
+      ],
+      "ICS file": [
+        "fișier ICS"
+      ],
+      "security settings": [
+        "setări securitate"
+      ],
+      "shared calendars": [
+        "calendare partajate"
+      ],
+      "Yahoo Mail": [
+        "Yahoo Mail"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        "Faceți clic pe ${ boldICS } și descărcați fișierul."
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        "Accesați ${ calendarLink } din setările Outlook.com."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        "Mutați cursorul peste calendarul de importat și deschideți meniul derulant."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        "Selectați ${ boldExport } pentru a exporta calendarul ca fișier ICS."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        "În ${ boldPublish }, selectați calendarul pe care doriți să-l importați. Setați permisiunea la ${ boldCanViewAllDetails } și să le publice."
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Verificare în doi pași este dezactivată (setare implicită)"
@@ -3053,6 +3195,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Sigur doriți să importați o cheie privată? Importarea unei chei private generate în mod nesigur sau care a fost compromisă poate afecta securitatea mesajelor.\n\nÎn plus, cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele complet) pe care nu doriți să le publicați, vă recomandăm să editați cheia înainte de a o importa."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        ""
       ]
     },
     "Import status": {
@@ -3603,9 +3750,6 @@
       "Edit label": [
         "Editare etichetă"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Mutați fără efort și în siguranță e-mailurile de la furnizorul actual la Proton. Dacă folosiți Google, puteţi importa calendarul și contactele."
-      ],
       "Email address": [
         "Adresă e-mail"
       ],
@@ -3794,6 +3938,9 @@
       "Import mailbox": [
         "Importare mesaje"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importați e-mailurile, calendarele și contactele de la un alt serviciu la Proton. Vă vom ghida la fiecare pas și vă vom cripta datele pe măsură ce acestea sunt mutate. Bine ați venit în lumea vieții private."
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "IMPORTANT: Descărcându-vă cheile private și trimiterea sau stocarea lor într-un loc nesigur vă poate pune în pericol securitatea contului!"
       ],
@@ -3845,6 +3992,9 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        "Se pare că unele dintre date sunt criptate și blocate. Acest lucru se datorează probabil unei resetări recente sau anterioare a parolei. Vă sugerăm să utilizați o metodă de recuperare a datelor pentru a vă debloca datele."
+      ],
       "it’s imperative": [
         "este imperativ"
       ],
@@ -3862,6 +4012,9 @@
       ],
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "Finalizarea importărilor mari poate dura câteva zile."
@@ -4201,11 +4354,11 @@
       "Screenshot(s) attached": [
         "Capturi de ecran adăugate"
       ],
-      "Select a service provider to get started": [
+      "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selectați care calendar să fie importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
+        "Selectați calendarul dorit pentru importare. Va fi creat un calendar nou pentru fiecare calendar importat până la limita de 20 de calendare."
       ],
       "Server is currently down": [
         "Serverul este în prezent inactiv"
@@ -4322,7 +4475,7 @@
         "Aceasta va dezactiva și orice metodă de autentificare cu doi factori asociată acestui cont."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Acesta vă va anula abonamentul plătit și veți pierde orice beneficii de loialitate acumulate. Soldul rămas din abonament va fi returnat ca și credit în cont."
+        "Aceasta vă va anula abonamentul plătit și veți pierde orice beneficii de loialitate acumulate. Soldul rămas din abonament va fi returnat ca și credit în cont."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Aceasta va crea o cheie de criptare pentru organizație. Cheile de 4096 de biți funcționează doar pe calculatoare foarte performante. Pentru majoritatea utilizatorilor recomandăm utilizarea cheilor de 2048 de biți."
@@ -4573,6 +4726,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puteți activa înregistrarea conectărilor pentru a vedea când a fost accesat contul și de la care IP. Vom înregistra adresa IP care accesează contul, ora și încercările eșuate de accesare."
       ],
+      "You can import one data type at a time.": [
+        "Puteți importa un singur tip de date la un moment dat."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Acum puteți primi mesaje la adresa @pm.me. Treceți la un plan cu plată pentru a trimite, de asemenea, e-mailuri folosind adresa dvs. @pm.me și pentru a crea adrese @pm.me suplimentare."
       ],
@@ -4611,6 +4767,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Trebuie să aveți un calendar personal pentru a crea o legătură."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
@@ -4659,9 +4818,6 @@
       ],
       "Your Block List is empty.": [
         "Lista de adrese blocate este goală."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "Datele vă sunt criptate și blocate. Puteți obține accesul cu o metodă de recuperare a datelor."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
@@ -5312,6 +5468,9 @@
       "Credits used": [
         "Credite folosite"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Personalizare facturi"
       ],
@@ -5329,6 +5488,9 @@
       ],
       "Default language": [
         "Limba implicită"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         "Schema PGP implicită"
@@ -5686,6 +5848,9 @@
       ],
       "Select your country": [
         "Selectaţi ţara"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
@@ -6251,6 +6416,35 @@
         "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Cum se importă calendarele din alt serviciu"
+      ],
+      "How to import calendars from Outlook": [
+        "Cum se importă calendarele din Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Cum se importă calendarele din Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Cum se importă contactele din alt serviciu"
+      ],
+      "How to import contacts from Outlook": [
+        "Cum se importă contactele din Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Cum se importă contactele din Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Cum se importă e-mailurile din alt serviciu"
+      ],
+      "How to import emails from Outlook": [
+        "Cum se importă e-mailurile din Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Cum se importă e-mailurile din Yahoo"
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Adăugare calendar"
@@ -6491,6 +6685,11 @@
         "O săptămână înainte",
         "săptămâni înainte",
         "de săptămâni înainte"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7151,6 +7350,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        "Faceți trecerea la confidențialitate. Fără efort și sigur."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Puteți aplica mai multe etichete unui singur mesaj, dar mesajele pot fi doar într-un singur folder. Trageți și plasați pentru a rearanja folderele și etichetele."
       ]
@@ -8072,6 +8274,9 @@
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "Facturi"
       ],
@@ -8252,6 +8457,9 @@
       "Select contact group": [
         "Selectare grup contacte"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "Selectare plan"
       ],
@@ -8383,6 +8591,9 @@
       ],
       "Warning!": [
         "Avertizare!"
+      ],
+      "What would you like to import?": [
+        "Ce ați dori să importați?"
       ],
       "What's new": [
         "Ce este nou"
@@ -8692,6 +8903,14 @@
         "Parola trebuie să conțină cel puțin un caracter",
         "Parola trebuie să conțină cel puțin ${ length } caractere.",
         "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Faceți clic pentru redarea clipului"
+      ],
+      "Replay video": [
+        "Redare video"
       ]
     },
     "VPN feature": {

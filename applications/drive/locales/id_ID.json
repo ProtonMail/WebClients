@@ -125,8 +125,8 @@
       "Confirm": [
         "Konfirmasi"
       ],
-      "Confirm opening of link ${ link }": [
-        "Konfirmasi membuka tautan ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Konfirmasi untuk membuka tautan ${ linkToShow }"
       ],
       "Contact group": [
         "Grup kontak"
@@ -863,14 +863,14 @@
       "Calendar link is temporarily inaccessible": [
         "Tautan kalender untuk sementara tidak dapat diakses"
       ],
-      "Calendar link is wrong": [
-        "Tautan kalender tidak tepat"
-      ],
       "Failed to sync calendar": [
         "Gagal menyinkronkan kalender"
       ],
       "More than 12 hours passed since last update": [
         "Lebih dari 12 jam telah berlalu sejak pembaharuan terakhir"
+      ],
+      "Unsupported calendar format": [
+        "Format kalender tidak didukung"
       ]
     },
     "Composer size": {
@@ -1357,7 +1357,7 @@
     },
     "Error importing calendar": {
       "An unexpected error occurred. Import must be restarted.": [
-        "Terjadi kesalahan tidak terduga. Impor harus diulang."
+        "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
       ]
     },
     "Error importing contact": {
@@ -1952,8 +1952,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Apabila Anda memiliki setidaknya salah satu hal di atas, tuju menu pengaturan akun Proton untuk dapat mencabut blokir yang ada."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        "Apabila Anda memiliki setidaknya salah satunya, tuju menu pengaturan akun Proton\nuntuk dapat mencabut pemblokiran yang ada."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -3452,6 +3452,11 @@
         "Pengaturan Anda telah disimpan"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "Harap diingat bahwa Anda harus terlebih dahulu menyetujui akses-akses izin yang diminta oleh aplikasi kami untuk dapat memulai proses impor."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Pilih nama tampilan"
@@ -4459,6 +4464,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Enkripsi surel mewajibkan tanda tangan surel untuk memastikan pesan yang Anda kirim"
       ],
+      "Encrypted data": [
+        "Data-data yang terenkripsi"
+      ],
       "Encrypted data with verified digital signature": [
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
       ],
@@ -4534,6 +4542,14 @@
       ],
       "Name must not end with a space": [
         "Nama tidak boleh diakhiri spasi"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Klik untuk memutar ulang video"
+      ],
+      "Replay video": [
+        "Putar ulang video"
       ]
     },
     "VPN feature": {
