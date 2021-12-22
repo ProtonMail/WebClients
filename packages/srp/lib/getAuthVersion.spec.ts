@@ -1,16 +1,16 @@
 import { describe, it } from 'mocha';
 import assert from 'assert';
 
-import './setup';
-import getAuthVersionWithFallback from '../lib/getAuthVersionWithFallback';
+import '../test/setup';
+import getAuthVersionWithFallback from './getAuthVersionWithFallback';
 
 describe('auth version fallback', () => {
     for (let i = 1; i <= 4; ++i) {
         it(`should get specified auth version ${i}`, () => {
-            const result = getAuthVersionWithFallback({ Version: 4 });
+            const result = getAuthVersionWithFallback({ Version: 4 }, '');
             assert.deepStrictEqual(result, {
                 version: 4,
-                done: true
+                done: true,
             });
         });
     }
@@ -19,15 +19,15 @@ describe('auth version fallback', () => {
         const result = getAuthVersionWithFallback({ Version: 4 }, '', 2);
         assert.deepStrictEqual(result, {
             version: 4,
-            done: true
+            done: true,
         });
     });
 
     it('should fall back to auth version 2 when it is unknown', () => {
-        const result = getAuthVersionWithFallback({ Version: 0 });
+        const result = getAuthVersionWithFallback({ Version: 0 }, '');
         assert.deepStrictEqual(result, {
             version: 2,
-            done: false
+            done: false,
         });
     });
 
@@ -35,7 +35,7 @@ describe('auth version fallback', () => {
         const result = getAuthVersionWithFallback({ Version: 0 }, 'test_100', 2);
         assert.deepStrictEqual(result, {
             version: 1,
-            done: false
+            done: false,
         });
     });
 
@@ -43,7 +43,7 @@ describe('auth version fallback', () => {
         const result = getAuthVersionWithFallback({ Version: 0 }, '', 2);
         assert.deepStrictEqual(result, {
             version: 0,
-            done: true
+            done: true,
         });
     });
 
@@ -54,7 +54,7 @@ describe('auth version fallback', () => {
             },
             {
                 name: 'Error',
-                message: 'Can not provide any other auth version'
+                message: 'Can not provide any other auth version',
             }
         );
     });

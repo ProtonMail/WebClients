@@ -206,7 +206,7 @@ function useSharing() {
                 Auth: { Salt: UrlPasswordSalt, Verifier: SRPVerifier, ModulusID: SRPModulusID },
             },
         ] = await Promise.all([
-            computeKeyPassword(newPassword, sharePasswordSalt).then((sharedLinkPassword: string) =>
+            computeKeyPassword(newPassword, sharePasswordSalt).then((sharedLinkPassword) =>
                 encryptSymmetricSessionKey(shareSessionKey, sharedLinkPassword)
             ),
             encryptSharedURLPassword(newPassword),

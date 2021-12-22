@@ -1,8 +1,8 @@
 import { describe, it } from 'mocha';
 import assert from 'assert';
 
-import './setup';
-import { generateKeySalt, computeKeyPassword } from '../lib/keys';
+import '../test/setup';
+import { generateKeySalt, computeKeyPassword } from './keys';
 
 describe('passwords', () => {
     it('should generate key salt', () => {
@@ -16,18 +16,20 @@ describe('passwords', () => {
     });
 
     it('should throw without a salt', async () => {
+        // @ts-expect-error
         const promise = computeKeyPassword('hello');
         await assert.rejects(promise, {
             name: 'Error',
-            message: 'Password and salt required.'
+            message: 'Password and salt required.',
         });
     });
 
     it('should throw without a password', async () => {
+        // @ts-expect-error
         const promise = computeKeyPassword(undefined, 'ajHO5Xshwb9h9DcAExIkbg==');
         await assert.rejects(promise, {
             name: 'Error',
-            message: 'Password and salt required.'
+            message: 'Password and salt required.',
         });
     });
 });
