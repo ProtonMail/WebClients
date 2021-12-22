@@ -69,9 +69,8 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const hasOutdatedRecoveryMethod = user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED || hasOutdatedRecoveryFile;
 
     const hasntVisitedRecoveryPageNotification = hasVisitedRecoveryPage?.Value === false && showRecoveryNotification;
-    const showOutdatedRecoveryNotification = isDataRecoveryAvailable && hasOutdatedRecoveryMethod;
     const showRecoveryDropdownItem =
-        user.isPrivate && (hasntVisitedRecoveryPageNotification || showOutdatedRecoveryNotification);
+        isDataRecoveryAvailable && (hasntVisitedRecoveryPageNotification || hasOutdatedRecoveryMethod);
 
     const { createNotification } = useNotifications();
     const handleCopyEmail = () => {
@@ -131,26 +130,27 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     };
 
     const recoveryDropdownItem = (() => {
-        if (isMnemonicAvailable) {
-            if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
-                return {
-                    path: '/recovery#data',
-                    text: c('Action').t`Update recovery phrase`,
-                };
-            }
-
-            if (user.MnemonicStatus === MNEMONIC_STATUS.ENABLED || user.MnemonicStatus === MNEMONIC_STATUS.PROMPT) {
-                return {
-                    path: '/recovery?action=generate-recovery-phrase',
-                    text: c('Action').t`Set recovery phrase`,
-                };
-            }
+        const hasOutdatedMnemonic = user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED;
+        if (isMnemonicAvailable && hasOutdatedMnemonic) {
+            return {
+                path: '/recovery#data',
+                text: c('Action').t`Update recovery phrase`,
+            };
         }
 
         if (isRecoveryFileAvailable && hasOutdatedRecoveryFile) {
             return {
                 path: '/recovery#data',
                 text: c('Action').t`Update recovery file`,
+            };
+        }
+
+        const mnemonicCanBeSet =
+            user.MnemonicStatus === MNEMONIC_STATUS.ENABLED || user.MnemonicStatus === MNEMONIC_STATUS.PROMPT;
+        if (isMnemonicAvailable && mnemonicCanBeSet) {
+            return {
+                path: '/recovery?action=generate-recovery-phrase',
+                text: c('Action').t`Set recovery phrase`,
             };
         }
 

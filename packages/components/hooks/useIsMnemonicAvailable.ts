@@ -12,6 +12,7 @@ const useIsMnemonicAvailable = () => {
     const { APP_NAME } = useConfig();
     const [user, loadingUser] = useUser();
     const mnemonicFeature = useFeature(FeatureCode.Mnemonic);
+
     const [addresses = [], loadingAddresses] = useAddresses();
     const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
 
