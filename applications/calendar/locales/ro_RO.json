@@ -119,8 +119,8 @@
       "Confirm": [
         "Confirmare"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmați deschiderea legăturii ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Confirmați deschiderea legăturii ${ linkToShow }"
       ],
       "Contact group": [
         "Grup contacte"
@@ -968,14 +968,14 @@
       "Calendar link is temporarily inaccessible": [
         "Legătura calendarului nu este disponibilă momentan."
       ],
-      "Calendar link is wrong": [
-        "Legătura calendarului este greșită."
-      ],
       "Failed to sync calendar": [
         "Eșuare sincronizare calendar."
       ],
       "More than 12 hours passed since last update": [
         "Au trecut mai mult de 12 ore de la ultima actualizare."
+      ],
+      "Unsupported calendar format": [
+        "Format de calendar neacceptat."
       ]
     },
     "Calendar view": {
@@ -1889,7 +1889,7 @@
         "Puteți ${ refresh } sau reîncerca mai târziu."
       ],
       "You need an active personal calendar to import events": [
-        ""
+        "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele"
       ]
     },
     "Error notification": {
@@ -2180,6 +2180,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts nu acceptă ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -3017,7 +3022,7 @@
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your events will be encrypted and then saved.": [
-        ""
+        "Evenimentele vor fi criptate și apoi salvate."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -4163,6 +4168,11 @@
         "Necunoscut"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Alegeți un nume de afișat"
@@ -5034,7 +5044,7 @@
         "Retrogradare cont"
       ],
       "Drop to upload": [
-        ""
+        "Plasați aici pentru încărcare"
       ],
       "Edit calendar": [
         "Editare calendar"
@@ -5245,6 +5255,9 @@
       "Select event's last date": [
         "Selectați ultima dată a evenimentului"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Selectați timpul când să fie trimisă această notificare"
       ],
@@ -5356,6 +5369,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise"
       ],
+      "Encrypted data": [
+        "Date criptate"
+      ],
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
@@ -5413,6 +5429,14 @@
         "Parola trebuie să conțină cel puțin un caracter.",
         "Parola trebuie să conțină cel puțin ${ length } caractere.",
         "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Faceți clic pentru redarea clipului"
+      ],
+      "Replay video": [
+        "Redare video"
       ]
     },
     "VPN feature": {

@@ -125,8 +125,8 @@
       "Confirm": [
         "Onayla"
       ],
-      "Confirm opening of link ${ link }": [
-        "${ link } bağlantısını açmayı onaylayın"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Kişi grubu"
@@ -869,13 +869,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -2001,8 +2001,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı gelen kutunuzda bulamazsanız, lütfen spam klasörünüzü kontrol edin."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Bunlardan birine sahipseniz, blok kaldırma işlemini sürdürmek için Proton hesabı ayarıyla devam edin."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3532,6 +3532,11 @@
         "Ayarlarınız başarıyla değiştirildi"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Görünen adı seçin"
@@ -4549,6 +4554,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-posta şifreleme, gönderilen mesajlarınızın kimliğini doğrulamaya yardımcı olmak için e-posta imzasını zorunlu kılar"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
@@ -4624,6 +4632,14 @@
         "İsim boşlukla başlamamalıdır"
       ],
       "Name must not end with a space": [
+        ""
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
         ""
       ]
     },

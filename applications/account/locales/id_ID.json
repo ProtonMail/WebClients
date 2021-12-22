@@ -184,8 +184,8 @@
       "Confirm": [
         "Konfirmasi"
       ],
-      "Confirm opening of link ${ link }": [
-        "Konfirmasi membuka tautan ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Konfirmasi untuk membuka tautan ${ linkToShow }"
       ],
       "Contact support": [
         "Hubungi dukungan"
@@ -293,7 +293,7 @@
         "Unduh"
       ],
       "Download all configurations": [
-        "Unduh semua konfigurasi"
+        "Unduh seluruh konfigurasi"
       ],
       "Download recovery file": [
         "Unduh berkas pemulihan"
@@ -382,8 +382,14 @@
       "Import": [
         "Import"
       ],
+      "Import calendars": [
+        "Impor kalender"
+      ],
       "Import contacts": [
         "Impor kontak"
+      ],
+      "Import emails": [
+        "Impor email"
       ],
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Pilih berkas"
       ],
+      "Select language for invitation emails": [
+        "Tentukan bahasa email-email undangan"
+      ],
       "Select plan": [
         "Pilih paket"
       ],
@@ -665,7 +674,7 @@
         "Keluar"
       ],
       "Sign out all accounts": [
-        "Keluar semua akun"
+        "Keluar dari seluruh akun"
       ],
       "Signing in": [
         "Masuk"
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Urut"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Mulai ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Mulai impor"
@@ -1336,14 +1342,14 @@
       "Calendar link is temporarily inaccessible": [
         "Tautan kalender untuk sementara tidak dapat diakses"
       ],
-      "Calendar link is wrong": [
-        "Tautan kalender tidak tepat"
-      ],
       "Failed to sync calendar": [
         "Gagal menyinkronkan kalender"
       ],
       "More than 12 hours passed since last update": [
         "Lebih dari 12 jam telah berlalu sejak pembaharuan terakhir"
+      ],
+      "Unsupported calendar format": [
+        "Format kalender tidak didukung"
       ]
     },
     "Calendar view": {
@@ -1524,7 +1530,7 @@
     },
     "Credits": {
       "Unused credits": [
-        "Kredit yang tidak digunakan"
+        "Saldo yang tidak digunakan"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2173,7 +2179,7 @@
         "Ada kesalahan saat mengunggah berkas. Tidak ada berkas yang dipilih."
       ],
       "An unexpected error occurred. Import must be restarted.": [
-        "Ada kesalahan tidak terduga. Proses impor harus diulang."
+        "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Berkas ${ formattedFilename } berisi lebih dari ${ MAX_IMPORT_EVENTS_STRING } acara."
@@ -2897,14 +2903,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Izinkan akses ProtonMail ke akun Gmail Anda: atur ${ bold2Steps } aktif dan ikuti langkah di bawah."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        "Klik ${ boldManage } untuk menampilkan menu pengaturan selengkapnya"
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        "Tergantung dari layanan email yang Anda gunakan sebelumnya, Anda mungkin akan butuh untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat memulai proses impor"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        "Perlebar menu dropdown dengan mengeklik tombol 3 titik (...)"
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Akhirnya, ${ googleMailLink } dengan akun yang mau Anda impor, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Hasilkan ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Hasilkan ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        "Tuju ${ boldAccountInfo } yang ada di bawah profil ${ yahooMailLink } Anda"
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        "Tuju ${ boldAccountSecurity }"
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Ke ${ googleAccountLink }. Di bagian ${ boldSecurity }, ${ boldAccess } untuk aplikasi yang kurang aman. Jika Anda tidak memiliki opsi ini, Anda mungkin perlu mengaktifkan verifikasi 2 langkah."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Tuju ${ googleAccountLink }. Pada bagian ${ boldSecurity }, buat ${ boldAppPassword } apabila Anda belum memilikinya. Anda akan butuh kata sandi ini dalam proses impor."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        "Tuju ${ securitySettingsLink } yang ada pada situs Outlook.com"
+      ],
+      "If 2-step verification is off, turn it on": [
+        "Apabila verifikasi 2 langkah sedang tidak aktif, aktifkan terlebih dahulu"
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "Di bagian ${ boldLabels }, pilih folder yang diizinkan untuk diimpor ke ProtonMail."
@@ -2914,6 +2947,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "Masuk ke dalam akun Yahoo Mail milik Anda, lalu klik nama Anda pada pojok kanan atas layar untuk dapat mengakses ${ boldAccountInfo }. Pada bagian ${ boldAccountSec }, tuju ${ boldAppPassword } untuk membuat kata sandi aplikasi. Anda akan membutuhkan kata sandi ini dalam proses impor yang ada ke depannya."
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        "Buka kontak ${ yahooMailLink } Anda"
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        "Buka ${ outlookContactsLink } Outlook Anda"
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        "Pilih ${ boldExportContacts } dan tentukan kontak-kontak mana saja yang hendak Anda ekspor"
+      ],
+      "Select ${ boldExportCSV }": [
+        "Pilih ${ boldExportCSV }"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Outlook. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
       ]
     },
     "Import instructions emphasis": {
@@ -2929,20 +2998,44 @@
       "app password": [
         "kata sandi aplikasi"
       ],
+      "Can view all details": [
+        "Dapat melihat seluruh rincian"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Export contacts": [
+        "Ekspor kontak"
+      ],
+      "Export to CSV file": [
+        "Ekspor ke berkas CSV"
+      ],
       "Forwarding and POP/IMAP": [
         "Penerusan dan POP/IMAP"
       ],
       "Gmail Settings": [
         "Pengaturan Gmail"
       ],
+      "ICS": [
+        "ICS"
+      ],
       "IMAP access": [
         "Akses IMAP"
+      ],
+      "in the next step you need to select all the permissions": [
+        "terlebih dahulu menyetujui akses-akses izin yang diminta oleh aplikasi kami"
       ],
       "Labels": [
         "Label"
       ],
+      "Manage": [
+        "Kelola"
+      ],
       "Other ways to sign in": [
         "Cara-cara lain untuk masuk"
+      ],
+      "Publish a calendar": [
+        "Terbitkan kalender"
       ],
       "Security": [
         "Keamanan"
@@ -2976,6 +3069,55 @@
         "Bagaimana cara mengaktifkan akses ke Aplikasi Kurang Aman di pengaturan Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        "kata sandi aplikasi"
+      ],
+      "app password or enable IMAP": [
+        "kata sandi aplikasi atau mengaktifkan IMAP"
+      ],
+      "contacts": [
+        "kontak"
+      ],
+      "CSV file": [
+        "Berkas CSV"
+      ],
+      "full calendar view": [
+        "tampilan kalender seutuhnya"
+      ],
+      "ICS file": [
+        "Berkas ICS"
+      ],
+      "security settings": [
+        "pengaturan keamanan"
+      ],
+      "shared calendars": [
+        "kalender yang dibagikan"
+      ],
+      "Yahoo Mail": [
+        "Yahoo Mail"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        "Klik tautan ${ boldICS } dan unduh berkas tersebut"
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        "Tuju ${ calendarLink } pada menu pengaturan Outlook.com Anda"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        "Tuju ${ calendarViewLink } pada Yahoo Mail"
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        "Arahkan kursor Anda ke kalender-kalender yang hendak Anda impor dan buka menu dropdown"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        "Pilih ${ boldExport } untuk mengekspor kalender yang bersangkutan dalam bentuk berkas ICS"
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        "Pada ${ boldPublish }, pilih kalender-kalender mana saja yang hendak Anda impor. Apabila sudah, berikan kalender-kalender tersebut izin ${ boldCanViewAllDetails } dan kemudian terbitkan"
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Verifikasi 2 langkah nonaktif (pengaturan baku)"
@@ -2987,6 +3129,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Apakah Anda yakin untuk mengimpor kunci privat ini? Mengimpor kunci privat yang tidak dihasilkan secara aman atau yang telah bocor ke tangan pihak-pihak yang tidak bertanggung jawab dapat menempatkan email-email Anda dalam bahaya.\n\nHarap diingat bahwa kunci publik yang terhubung dengan kunci privat ini akan dapat dilihat oleh semua orang melalui server kunci kami. Apabila kunci ini mengandung data-data personal yang tidak ingin Anda publikasikan (semisal nama lengkap Anda), harap sunting isi kunci yang bersangkutan terlebih dahulu."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Lainnya"
       ]
     },
     "Import status": {
@@ -3491,9 +3638,6 @@
       "Edit label": [
         "Edit label"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Pindahkan email-email Anda dari layanan penyedia email yang Anda gunakan sebelumnya ke Proton secara mudah dan aman. Apabila Anda menggunakan Google, Anda juga dapat mengimpor kalender-kalender dan kontak-kontak yang Anda miliki."
-      ],
       "Email address": [
         "Alamat email"
       ],
@@ -3522,7 +3666,7 @@
         "Masukkan kode yang terkirim ke ${ email }. Apabila Anda tidak menemukannya di kotak masuk, cek folder spam Anda."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Masukkan kredensial akun surel Anda yang ingin Anda impor."
+        "Masukkan kredensial akun email yang berkas-berkasnya ingin Anda impor."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Masukkan Kata sandi Organisasi untuk memulihkan hak administrator. ${ learnMore }"
@@ -3582,7 +3726,7 @@
         "Kosongkan beberapa ruang atau hubungi administrator Anda."
       ],
       "free up space by deleting older messages or other data": [
-        "kosongkan ruang dengan menghapus pesan lama atau data lainnya"
+        "menghapus pesan-pesan lama atau data-data lainnya yang sudah tidak diperlukan"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN berfitur lengkap dengan kecepatan koneksi hingga 10 Gbps."
@@ -3680,6 +3824,9 @@
       "Import mailbox": [
         "Impor kotak surat"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Pindahkan email-email, kalender-kalender, dan kontak-kontak Anda dari layanan email Anda terdahulu ke Proton. Kami akan menuntun Anda untuk dapat memindahkan dan mengenkripsi data-data Anda selangkah demi selangkah. Selamat datang di dunia privasi."
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "PENTING: Mengunduh kunci pribadi Anda dan mengirim atau menyimpannya di media yang tidak aman akan mengurangi keamanan akun Anda!"
       ],
@@ -3690,7 +3837,7 @@
         "PENTING: Beberapa registrar tidak menerima nilai CNAME dengan titik di belakang (sementara yang lain menerima). Jika registrar Anda tidak menerima data CNAME Anda, mohon hapus titik di belakang pada setiap nilai CNAME dan coba lagi."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
+        "Mengimpor data-data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
         "Apabila Anda kehilangan rincian login Anda, kami akan memberikan Anda arahan untuk memulihkan akses menuju akun Anda melalui email atau SMS."
@@ -3731,6 +3878,9 @@
       "Internet connection restored.": [
         "Koneksi internet telah pulih."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        "Tampaknya sebagian data-data Anda terenkripsi dan terkunci. Hal ini pada umumnya dipicu oleh pergantian kata sandi yang dilakukan baru-baru ini. Kami menyarankan Anda untuk melakukan proses pemulihan data agar Anda dapat kembali mengakses data-data Anda."
+      ],
       "it’s imperative": [
         "sangat penting"
       ],
@@ -3748,6 +3898,9 @@
       ],
       "Label all imported messages as": [
         "Labeli semua pesan terimpor sebagai"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        "Bahasa pengiriman email-email undangan Anda."
       ],
       "Large imports can take several days to complete.": [
         "Ukuran impor yang besar memerlukan waktu berhari-hari untuk selesai."
@@ -3912,7 +4065,7 @@
         "Kunci organisasi dipulihkan"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
-        "Administrator lain ada di organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru kepada mereka."
+        "Berhubung terdapat admin-admin lain pada organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru ini kepada mereka."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Berkas pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
@@ -4005,10 +4158,10 @@
         "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Proton menjeda impor karena terputus sambungan dengan penyedia surel Anda. Mohon sambung ulang."
+        "Proton menjeda proses impor karena sambungan dengan layanan email Anda terputus. Mohon sambungkan ulang."
       ],
       "Proton paused an import because your account is running low on space. You can:": [
-        "Proton menjeda impor karena akun Anda kekurangan ruang peyimpanan. Anda dapat:"
+        "Proton menjeda proses impor karena kuota penyimpanan Anda tidak mencukupi. Anda dapat:"
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton akan mencoba melanjutkan impor sesegera mungkin saat layanan surel Anda mengatur ulang ${ bandwithLimitLink } akun. Anda tidak perlu melakukan apapun. Jika Anda membatalkan impor, Anda tidak akan dapat melanjutkannya dan Anda harus mengulanginya dari awal."
@@ -4035,7 +4188,7 @@
         "Diperlukan paket ProtonVPN Plus atau Visionary untuk fitur Secure Core."
       ],
       "purchase additional storage": [
-        "beli penyimpanan tambahan"
+        "membeli kuota penyimpanan tambahan"
       ],
       "Queued": [
         "Diantrikan"
@@ -4085,8 +4238,8 @@
       "Screenshot(s) attached": [
         "Tangkapan layar terlampir"
       ],
-      "Select a service provider to get started": [
-        "Pilih penyedia layanan email yang Anda gunakan untuk memulai"
+      "Select a service provider to start": [
+        "Pilih layanan email yang Anda gunakan untuk memulai"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
@@ -4413,7 +4566,7 @@
         "Saat pemberitahuan diaktifkan, kami akan mengirimkan peringatan ke alamat pemulihan/pemberitahuan Anda jika Anda memiliki pesan baru di akun ProtonMail Anda."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Saat langganan Anda diperbarui, kami akan menerapkan kredit apaun yang tersedia sebelum kami menagih metode pembayaran di atas."
+        "Pada saat masa langganan Anda telah jatuh tempo, kami akan terlebih dahulu memperbaharui langganan Anda dengan saldo yang tersedia sebelum kami menagih Anda melalui metode-metode pembayaran di atas."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
@@ -4457,6 +4610,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Anda dapat mengaktifkan pencatatan autentikasi untuk melihat kapan akun Anda diakses dan IP mana yang mengakses. Kami akan mencatat alamat IP yang mengakses akun Anda dan waktunya, berikut saat usaha akses yang gagal."
       ],
+      "You can import one data type at a time.": [
+        "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Kini Anda dapat menerima pesan melalui alamat @pm.me. Aktifkan paket berbayar supaya bisa mengirim email dari alamat @pm.me dan membuat alamat @pm.me tambahan."
       ],
@@ -4495,6 +4651,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Anda harus punya kalender pribadi supaya bisa membuat tautan."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara-acara Anda dari berkas .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Anda harus punya kalender pribadi aktif supaya bisa mengimpor acara."
@@ -4544,9 +4703,6 @@
       "Your Block List is empty.": [
         "Daftar Blokir Anda kosong."
       ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "Data-data Anda saat ini terenkripsi dan terkunci. Anda dapat mengaksesnya kembali dengan memanfaatkan metode-metode pemulihan data yang tersedia."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
       ],
@@ -4569,7 +4725,7 @@
         "Impor Anda tidak akan diproses."
       ],
       "Your login information will not be saved after the import is completed.": [
-        "Informasi masuk Anda tidak akan disimpan setelah impor selesai."
+        "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
       ],
       "Your messages are being imported from": [
         "Pesan-pesan Anda sedang diimpor dari"
@@ -5188,6 +5344,9 @@
       "Credits used": [
         "Kredit terpakai"
       ],
+      "Current login password": [
+        "Kata sandi saat ini"
+      ],
       "Customize invoices": [
         "Sesuaikan tagihan"
       ],
@@ -5205,6 +5364,9 @@
       ],
       "Default language": [
         "Bahasa bawaan"
+      ],
+      "Default language (${ defaultLanguage })": [
+        "Bahasa default (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Skema PGP default"
@@ -5562,6 +5724,9 @@
       ],
       "Select your country": [
         "Pilih negara Anda"
+      ],
+      "Send and reply to invites in": [
+        "Kirim dan balas undangan-undangan pada"
       ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
@@ -6119,6 +6284,35 @@
         "Versi baru ${ appName } tersedia. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Cara untuk mengimpor kalender-kalender dari layanan email lainnya"
+      ],
+      "How to import calendars from Outlook": [
+        "Cara untuk mengimpor kalender-kalender dari Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Cara untuk mengimpor kalender-kalender dari Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Cara untuk mengimpor kontak-kontak dari layanan email lainnya"
+      ],
+      "How to import contacts from Outlook": [
+        "Cara untuk mengimpor kontak-kontak dari Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Cara untuk mengimpor kontak-kontak dari Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Cara untuk mengimpor email-email dari layanan email lainnya"
+      ],
+      "How to import emails from Outlook": [
+        "Cara untuk mengimpor email-email dari Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Cara untuk mengimpor email-email dari Yahoo"
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Tambah kalender"
@@ -6345,6 +6539,11 @@
       ],
       "week before": [
         "pekan sebelumnya"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Harap diingat bahwa Anda harus ${ boldNextStep } untuk dapat memulai proses impor."
       ]
     },
     "Onboarding Proton": {
@@ -6699,7 +6898,7 @@
         "Alamat email"
       ],
       "Feedback": [
-        "Umpan balik"
+        "Kritik dan Saran"
       ],
       "Fill in the email address and text to test your link": [
         "Isi alamat email dan teks untuk menguji tautan Anda"
@@ -7003,6 +7202,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        "Berpindahlah ke layanan yang mengedepankan privasi. Aman dan bebas repot."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Anda dapat menerapkan beberapa label ke sebuah pesan, tetapi pesan biasanya hanya dapat berada dalam satu folder saja. Tarik dan lepas untuk mengatur ulang urutan folder dan label Anda."
       ]
@@ -7242,7 +7444,7 @@
         "Kode dikirim ke ${ methodTo }"
       ],
       "Credits added": [
-        "Kredit ditambahkan"
+        "Saldo ditambahkan"
       ],
       "Default calendar updated": [
         "Kalendar bawaan diperbarui"
@@ -7918,6 +8120,9 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
+      "Invitations": [
+        "Undangan"
+      ],
       "Invoices": [
         "Tagihan"
       ],
@@ -8098,6 +8303,9 @@
       "Select contact group": [
         "Pilih grup kontak"
       ],
+      "Select permissions": [
+        "Tentukan akses izin"
+      ],
       "Select plan": [
         "Pilih paket"
       ],
@@ -8229,6 +8437,9 @@
       ],
       "Warning!": [
         "Peringatan!"
+      ],
+      "What would you like to import?": [
+        "Hal-hal apa saja yang hendak Anda impor?"
       ],
       "What's new": [
         "Apa yang baru"
@@ -8532,6 +8743,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Kata sandi minimal ${ length } karakter"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Klik untuk memutar ulang video"
+      ],
+      "Replay video": [
+        "Putar ulang video"
       ]
     },
     "VPN feature": {

@@ -125,8 +125,8 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm opening of link ${ link }": [
-        "リンク ${ link } を確認"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "連絡先グループ"
@@ -863,14 +863,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "カレンダーのリンクが間違っています"
-      ],
       "Failed to sync calendar": [
         "カレンダーの同期に失敗しました"
       ],
       "More than 12 hours passed since last update": [
         "最後のアップデートから12時間以上経過しています"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Composer size": {
@@ -1952,7 +1952,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダを確認してください。"
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3452,6 +3452,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "表示名を選択"
@@ -4459,6 +4464,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         ""
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "検証済みデジタル署名付きの暗号化データ"
       ],
@@ -4534,6 +4542,14 @@
       ],
       "Name must not end with a space": [
         "名前は最後が空白で終わることができません"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

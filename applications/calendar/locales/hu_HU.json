@@ -119,8 +119,8 @@
       "Confirm": [
         "Jóváhagyás"
       ],
-      "Confirm opening of link ${ link }": [
-        "Link megnyitásának jóváhagyása: ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Névjegy csoport"
@@ -656,22 +656,22 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Üres ICS fájl"
       ],
       "Invalid event": [
-        ""
+        "Érvénytelen esemény"
       ],
       "Invalid ICS file": [
-        ""
+        "Érvénytelen ICS fájl"
       ],
       "Invalid method": [
-        ""
+        "Érvénytelen metódus"
       ],
       "Unsupported calendar component": [
-        ""
+        "Nem támogatott naptár komponens"
       ],
       "Unsupported event": [
-        ""
+        "Nem támogatott esemény"
       ]
     },
     "Attendee role": {
@@ -940,36 +940,36 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "Nincs szinkronizálva"
       ],
       "Syncing": [
-        ""
+        "Szinkronizálás"
       ]
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "A naptár visszafejtése nem sikerült"
       ],
       "Calendar is syncing": [
-        ""
+        "A naptár szinkronizál"
       ],
       "Calendar is too big": [
-        ""
+        "A naptár túl nagy"
       ],
       "Calendar link is not accessible": [
-        ""
+        "A naptár hivatkozás nem érhető el"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
-      ],
-      "Calendar link is wrong": [
-        ""
+        "A naptár hivatkozás átmenetileg nem érhető el"
       ],
       "Failed to sync calendar": [
-        ""
+        "A naptár szinkronizálása nem sikerült"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Több mint 12 óra telt el a legutóbbi frissítés óta"
+      ],
+      "Unsupported calendar format": [
+        "Nem támogatott naptár formátum"
       ]
     },
     "Calendar view": {
@@ -1332,20 +1332,20 @@
     },
     "Error": {
       "${ _list } doesn't have an email address": [
-        "",
-        ""
+        "${ _list } nem tartalmaz e-mail címet",
+        "Néhány névjegyhez nincs e-mail cím: ${ _list }"
       ],
       "${ _list2 } has no contacts": [
         "",
         "Néhány csoportban nincsenek névjegyek: ${ _list2 }"
       ],
       "${ list } doesn't have a valid email address": [
-        "",
-        ""
+        "${ list } nem tartalmaz egy érvényes e-mail címet",
+        "Néhány névjegy nem tartalmaz egy érvényes e-mail címet: ${ list }"
       ],
       "${ list } has invalid emails": [
-        "",
-        ""
+        "${ list } érvénytelen e-mail címet tartalmaz",
+        "Némelyik csoport érvénytelen e-mail címet tartalmaz: ${ list }"
       ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -1372,13 +1372,13 @@
         "Hitelesítési hiba."
       ],
       "Calendar limit reached": [
-        ""
+        "Elérte a naptárak maximális számát"
       ],
       "Calendar primary private key is not decrypted": [
         "A naptár elsődleges titkosító kulcsa nincs visszafejtve"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
       ],
       "Can't validate email, try again later": [
         "E-mail ellenőrzése nem sikerült, próbálja meg később"
@@ -1390,7 +1390,7 @@
         "A lemondó értesítés elküldése nem sikerült"
       ],
       "Checkout expired, please try again": [
-        ""
+        "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
       ],
       "Contact could not be saved": [
         "A névjegy mentése nem sikerült"
@@ -1408,12 +1408,12 @@
         "Hiba: Az esemény tartalmának visszafejtése sikertelen."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
+        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál",
+        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy",
+        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy"
       ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
@@ -1446,7 +1446,7 @@
         "Az eredeti előfordulás nem található a szériában"
       ],
       "Folder name cannot be empty": [
-        ""
+        "A mappa nevének megadása szükséges"
       ],
       "Image upload failed": [
         "Képfeltöltés sikertelen"
@@ -1500,11 +1500,11 @@
         "Az esemény csak a következő két dátum között mozgatható:  ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        ""
+        "A címke nevének megadása szükséges"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal"
       ],
       "Missing signature": [
         "Hiányzó aláírás"
@@ -1516,7 +1516,7 @@
         "Név megadása kötelező"
       ],
       "No data to import": [
-        ""
+        "Nincs importálandó adat"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nem található a küldéshez érvényes kulcs a belső felhasználóhoz"
@@ -1548,7 +1548,7 @@
         "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Nem felismerhető szervezet. Próbálja meg újra."
       ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek meg"
@@ -1569,8 +1569,8 @@
         "Először létre kell hozni egy címet."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Javítsa ki a megjelölt hibát a folytatáshoz.",
+        "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
       "Preferences could not be saved": [
         "Beállítások mentése nem sikerült"
@@ -1600,13 +1600,13 @@
         "Néhány névjegy törlése nem sikerült"
       ],
       "Some groups could not be deleted": [
-        ""
+        "Néhány csoport törlése nem sikerült"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Bizonyos címkék neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Bizonyos címkék neve túl hosszú a ProtonMailbe importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
@@ -1621,10 +1621,10 @@
         "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Ez a címkenév túl hosszú. Adjon meg egy másik nevet."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Legalább ${ _price } kredit feltöltése szükséges"
@@ -1639,7 +1639,7 @@
         "A küldő kulcs érvénytelen"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hiba történt a névjegyek vCard formátumra exportálásakor"
@@ -1651,10 +1651,10 @@
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Ez a mappanév nem érhető el. Adjon meg egy másik nevet"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Ez a címkenév nem érhető el. Adjon meg egy másik nevet"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
@@ -1746,100 +1746,100 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        ""
+        "Hibás formátum. A komponens nem olvasható."
       ],
       "Calendar": [
-        ""
+        "Naptár"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Naptár időzóna nem támogatott"
       ],
       "Component with wrong format": [
-        ""
+        "A komponens formátuma hibás"
       ],
       "Custom timezone": [
-        ""
+        "Egyéni időzóna"
       ],
       "Edited event not supported": [
-        ""
+        "Szerkesztett esemény nem támogatott"
       ],
       "Element": [
-        ""
+        "Elem"
       ],
       "Encryption failed": [
-        ""
+        "Titkosítás nem sikerült"
       ],
       "End time out of bounds": [
-        ""
+        "Záró időpont a korlátokon kívül"
       ],
       "Event": [
-        ""
+        "Esemény"
       ],
       "Event validation failed": [
-        ""
+        "Esemény ellenőrzése nem sikerült"
       ],
       "Floating times not supported": [
-        ""
+        "Lebegő idők nem támogatottak"
       ],
       "Free-busy time information": [
-        ""
+        "Szabad-elfoglalt információ"
       ],
       "Invalid event": [
-        ""
+        "Érvénytelen esemény"
       ],
       "Journal entry": [
-        ""
+        "Napló elem"
       ],
       "Malformed all-day event": [
-        ""
+        "Hibás egésznapos esemény"
       ],
       "Malformed end time": [
-        ""
+        "Hibás záró időpont"
       ],
       "Malformed recurring event": [
-        ""
+        "Hibás ismétlődő esemény"
       ],
       "Malformed start time": [
-        ""
+        "Hibás kezdő időpont"
       ],
       "Missing start time": [
-        ""
+        "Hiányzó kezdő időpont"
       ],
       "No UID, title or start time": [
-        ""
+        "Nincs UID, cím vagy kezdési időpont"
       ],
       "Non-Gregorian": [
-        ""
+        "Nem gergely-naptár"
       ],
       "Notification out of bounds": [
-        ""
+        "Az értesítés határokon kívül esik"
       ],
       "Original recurring event could not be found": [
-        ""
+        "Az ismétlődő esemény eredetije nem található"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Az ismétlődő eseménynek nincs előfordulása"
       ],
       "Recurring rule not supported": [
-        ""
+        "Ismétlődési szabály nem támogatott"
       ],
       "Start time out of bounds": [
-        ""
+        "Kezdő időpont a korlátokon kívül"
       ],
       "Timezone": [
-        ""
+        "Időzóna"
       ],
       "Timezone not supported": [
-        ""
+        "Időzóna nem támogatott"
       ],
       "To-do entry": [
-        ""
+        "Tennivaló elem"
       ],
       "Unknown": [
-        ""
+        "Ismeretlen"
       ],
       "Unsupported event": [
-        ""
+        "Nem támogatott esemény"
       ]
     },
     "Error message": {
@@ -1917,10 +1917,10 @@
         ""
       ],
       "Invalid invitation": [
-        ""
+        "Érvénytelen meghívó"
       ],
       "Invalid response": [
-        ""
+        "Érvénytelen válasz"
       ],
       "Unexpected error": [
         ""
@@ -2146,6 +2146,11 @@
         "ProtonContacts ${ forNow } nem támogatja:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
@@ -2173,7 +2178,7 @@
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
       "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
+        "${ calendarAppName } bekerült a Proton csomagba. Kíváncsian várjuk, hogy mit gondol róla!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "",
@@ -2387,7 +2392,7 @@
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
       "Close this screen to exit.": [
-        ""
+        "A kilépéshez zárja be ezt a képernyőt."
       ],
       "Connections": [
         "Kapcsolódás"
@@ -2508,7 +2513,7 @@
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "",
@@ -2518,16 +2523,16 @@
         ""
       ],
       "Import in progress": [
-        ""
+        "Importálás folyamatban"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
       "Included": [
         "Tartalmazza"
       ],
       "Inherited from parent folder": [
-        ""
+        "Örökölve a felsőbb szintű mappából"
       ],
       "Internet connection lost.": [
         "Az internetkapcsolat megszakadt."
@@ -2545,7 +2550,7 @@
         "Kulcs ujjlenyomat"
       ],
       "Large imports can take several days.": [
-        ""
+        "Egy nagyobb importálás akár napokig is eltarthat."
       ],
       "Learn more": [
         "Tudjon meg többet"
@@ -2572,13 +2577,13 @@
         "Havonta: ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Adjon nevet a mappának és válassza ki a szülő mappát, amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
       "New": [
         ""
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze az adatokhoz való hozzáférést."
       ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
@@ -2741,10 +2746,10 @@
         "A szervező nem értesíthető, hogy elutasította a meghívót:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        ""
+        "A szervező nem értesíthető arról, hogy meg kívánja változtatni a válaszát:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        ""
+        "A szervezőt nem sikerült értesíteni arról, hogy megváltoztatta a válaszát:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "A szervező módosította a sorozat néhány eseményét. A naptár megváltoztatása még nem támogatott ilyen típusú ismétlődő eseménynél."
@@ -2825,7 +2830,7 @@
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Értesítést fog kapni az importálás végeztével."
       ],
       "Week": [
         "Hét"
@@ -2876,13 +2881,13 @@
         ""
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Kizárólag a személyes események tulajdonságait módosíthatja mivel a szervező nevében nem tud leveleket küldeni."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Újraaktiválta a titkosítási kulcsait, így a következő naptárakban lévő események ismét visszafejthetőek."
@@ -2960,7 +2965,7 @@
         "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
       "Your events will be encrypted and then saved.": [
-        ""
+        "Az eseményei titkosításra majd pedig mentésre kerülnek."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -4079,6 +4084,11 @@
         "Ismeretlen"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Válasszon egy megjelenített nevet"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Válassza ki az esemény utolsó dátumát"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Válassza ki az emlékeztető elküldésének időpontját"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Az e-mail titkosítása aláírást is von magával, az elküldött üzenetek pontosabb ellenőrizhetősége érdekében"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Titkosított adat, ellenőrzött digitális aláírással"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "A jelszónak legalább ${ length } karakterből kell állnia",
         "A jelszónak legalább ${ length } karakterből kell állnia"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

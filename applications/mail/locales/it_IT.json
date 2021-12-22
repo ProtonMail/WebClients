@@ -467,6 +467,9 @@
       "Load more": [
         "Carica di più"
       ],
+      "Load unprotected": [
+        "Carica senza protezione"
+      ],
       "Loading verification": [
         "Caricamento verifica"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Riprova"
       ],
+      "Revert to original display": [
+        "Torna alla visualizzazione originale"
+      ],
       "Save": [
         "Salva"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Salta"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Non è stato possibile caricare alcune immagini con la protezione da tracciamento"
+      ],
       "Start import": [
         "Avvia importazione"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Questo messaggio contiene immagini incorporate."
+      ],
+      "This message contains remote content.": [
+        "Questo messaggio contiene contenuto remoto."
       ],
       "Trust": [
         "Attendibile"
@@ -1588,14 +1600,14 @@
       "Calendar link is temporarily inaccessible": [
         "Il link al calendario è temporaneamente inaccessibile"
       ],
-      "Calendar link is wrong": [
-        "Il link del calendario è sbagliato"
-      ],
       "Failed to sync calendar": [
         "Impossibile sincronizzare il calendario"
       ],
       "More than 12 hours passed since last update": [
         "Sono passate più di 12 ore dall'ultimo aggiornamento"
+      ],
+      "Unsupported calendar format": [
+        "Formato calendario non supportato"
       ]
     },
     "Calendar widget banner": {
@@ -3014,6 +3026,11 @@
         "Creazione dell'evento sul calendario non riuscita"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "nel passaggio successivo è necessario selezionare tutti i permessi"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Questo messaggio è stato modificato per essere conforme a uno sfondo scuro."
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Questo messaggio è generato automaticamente come una risposta a un messaggio precedente."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Aggiungi ad un gruppo"
+      ],
+      "Address": [
+        "Indirizzo"
       ],
       "ALL": [
         "TUTTI"
@@ -5668,6 +5691,11 @@
         "La password è stata impostata con successo"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Tieni presente che ${ boldNextStep } richiesto dall'applicazione per avviare l'importazione."
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Successiva"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Aggiungi al gruppo esistente"
+      ],
+      "All": [
+        "Tutti"
       ],
       "Create new group": [
         "Crea nuovo gruppo"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Conferma link"
       ],
+      "Load embedded images": [
+        "Carica le immagini incorporate"
+      ],
       "Load remote content": [
         "Carica contenuto remoto"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Seleziona gruppo di contatti"
       ],
+      "Select permissions": [
+        "Seleziona permessi"
+      ],
       "Select what to import": [
         "Seleziona cosa importare"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Accedi di nuovo per continuare"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        "Non è stato possibile caricare alcune immagini con la protezione da tracciamento [Carica senza protezione]"
       ],
       "Sort conversations": [
         "Ordina conversazioni"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "La crittografia email impone la firma email per autenticare i messaggi inviati"
       ],
+      "Encrypted data": [
+        "Dati criptati"
+      ],
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "La password deve contenere almeno ${ length } carattere",
         "La password deve contenere almeno ${ length } caratteri"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Clicca per riprodurre il video"
+      ],
+      "Replay video": [
+        "Riproduci video"
       ]
     },
     "VPN feature": {

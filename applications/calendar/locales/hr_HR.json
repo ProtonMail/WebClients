@@ -119,8 +119,8 @@
       "Confirm": [
         "Potvrdi"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrdite otvaranje poveznice ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grupa kontakta"
@@ -968,13 +968,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -2180,6 +2180,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts ne podržava ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4163,6 +4168,11 @@
         "Nepoznato"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Odaberite zaslonsko ime"
@@ -5245,6 +5255,9 @@
       "Select event's last date": [
         "Odaberite zadnji datum događaja"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Odaberite vrijeme slanja ove obavijesti"
       ],
@@ -5356,6 +5369,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifriranje e-pošte automatski primjenjuje potpis e-pošte kako bi pomogao pri autentikaciji vaših poslanih poruka"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Šifrirani podaci sa potvrđenim digitalnim potpisom"
       ],
@@ -5413,6 +5429,14 @@
         "Lozinka mora sadržavati najmanje ${ length } znak",
         "Lozinka mora sadržavati najmanje ${ length } znaka",
         "Lozinka mora sadržavati najmanje ${ length } znakova"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

@@ -125,8 +125,8 @@
       "Confirm": [
         "Conferma"
       ],
-      "Confirm opening of link ${ link }": [
-        "Conferma l'apertura del link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Conferma l'apertura del link ${ linkToShow }"
       ],
       "Contact group": [
         "Gruppo di contatto"
@@ -869,14 +869,14 @@
       "Calendar link is temporarily inaccessible": [
         "Il link al calendario è temporaneamente inaccessibile"
       ],
-      "Calendar link is wrong": [
-        "Il link del calendario è sbagliato"
-      ],
       "Failed to sync calendar": [
         "Impossibile sincronizzare il calendario"
       ],
       "More than 12 hours passed since last update": [
         "Sono passate più di 12 ore dall'ultimo aggiornamento"
+      ],
+      "Unsupported calendar format": [
+        "Formato calendario non supportato"
       ]
     },
     "Composer size": {
@@ -2001,8 +2001,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Se disponi di uno di questi, passa alle impostazioni dell'account Proton per\ncontinuare il processo di sblocco."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importa ${ contactsFragment } e ${ contactsGroupsFragment }"
@@ -3532,6 +3532,11 @@
         "Le impostazioni sono state modificate con successo"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "Tieni presente che devi accettare tutti i permessi richiesti dall'applicazione per poter avviare l'importazione."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Scegli un nome da mostrare"
@@ -4549,6 +4554,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "La crittografia email impone la firma email per autenticare i messaggi inviati"
       ],
+      "Encrypted data": [
+        "Dati criptati"
+      ],
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
@@ -4625,6 +4633,14 @@
       ],
       "Name must not end with a space": [
         "Il nome non può finire con uno spazio"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Clicca per riprodurre il video"
+      ],
+      "Replay video": [
+        "Riproduci video"
       ]
     },
     "VPN feature": {

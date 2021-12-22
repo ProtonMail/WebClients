@@ -125,8 +125,8 @@
       "Confirm": [
         "Confirmare"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmați deschiderea legăturii ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Confirmați deschiderea legăturii ${ linkToShow }"
       ],
       "Contact group": [
         "Grup contacte"
@@ -875,14 +875,14 @@
       "Calendar link is temporarily inaccessible": [
         "Legătura calendarului nu este disponibilă momentan."
       ],
-      "Calendar link is wrong": [
-        "Legătura calendarului este greșită."
-      ],
       "Failed to sync calendar": [
         "Eșuare sincronizare calendar."
       ],
       "More than 12 hours passed since last update": [
         "Au trecut mai mult de 12 ore de la ultima actualizare."
+      ],
+      "Unsupported calendar format": [
+        "Format de calendar neacceptat."
       ]
     },
     "Composer size": {
@@ -2050,8 +2050,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Dacă aveți una dintre acestea, accesați setările contului Proton pentru a\ncontinua procesul de deblocare."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        "Dacă aveți unul dintre acestea, continuați la setările contului Proton pentru a\nîncepeți procesul de deblocare."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
@@ -3612,6 +3612,11 @@
         "Setările au fost modificate cu succes."
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "Rețineți că trebuie să acceptați toate permisiunile solicitate de către aplicație pentru a putea începe importarea."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Alegere nume afișat"
@@ -4639,6 +4644,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise."
       ],
+      "Encrypted data": [
+        "Date criptate"
+      ],
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
@@ -4716,6 +4724,14 @@
       ],
       "Name must not end with a space": [
         "Numele nu trebuie să se termine cu un spațiu."
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Faceți clic pentru redarea clipului"
+      ],
+      "Replay video": [
+        "Redare video"
       ]
     },
     "VPN feature": {

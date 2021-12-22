@@ -467,6 +467,9 @@
       "Load more": [
         "Carregar-ne més"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "Carregant verificació"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Tornar a provar"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Desa"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Ometre"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "Començar importació"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Aquest missatge conté imatges incrustades."
+      ],
+      "This message contains remote content.": [
+        ""
       ],
       "Trust": [
         "De confiança"
@@ -1588,14 +1600,14 @@
       "Calendar link is temporarily inaccessible": [
         "L'enllaç del calendari no és accessible temporalment"
       ],
-      "Calendar link is wrong": [
-        "L'enllaç del calendari és erroni"
-      ],
       "Failed to sync calendar": [
         "Error sincronitzant el calendari"
       ],
       "More than 12 hours passed since last update": [
         "Han passat més de 12 hores des de la darrera actualització"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar widget banner": {
@@ -3014,6 +3026,11 @@
         "Ha fallat la creació de l'esdeveniment del calendari"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Aquest missatge es genera automàticament com a resposta a un missatge previ."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Afegeix al grup"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "TOT"
@@ -5668,6 +5691,11 @@
         "La contrasenya s'ha establert correctament"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Següent"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Afegir a grup existent"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "Crear nou grup"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load remote content": [
         "Carrega el contingut remot"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Seleccionar grup de contactes"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         "Seleccioneu què voleu importar"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Inicia sessió per continuar"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Ordenar converses"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El xifratge de correu electrònic obliga la signatura de correu electrònic a ajudar a autenticar els missatges enviats"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "La contrasenya ha de tenir com a mínim ${ length } caràcter",
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

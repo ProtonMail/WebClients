@@ -119,8 +119,8 @@
       "Confirm": [
         "Підтвердити"
       ],
-      "Confirm opening of link ${ link }": [
-        "Підтвердити відкриття посилання ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Підтвердити відкриття посилання ${ linkToShow }"
       ],
       "Contact group": [
         "Група контактів"
@@ -974,14 +974,14 @@
       "Calendar link is temporarily inaccessible": [
         "Посилання календаря тимчасово недоступне"
       ],
-      "Calendar link is wrong": [
-        "Хибне посилання календаря"
-      ],
       "Failed to sync calendar": [
         "Не вдалося синхронізувати календар"
       ],
       "More than 12 hours passed since last update": [
         "Понад 12 годин минуло після попередньої синхронізації"
+      ],
+      "Unsupported calendar format": [
+        "Непідтримуваний формат календаря"
       ]
     },
     "Calendar view": {
@@ -2216,6 +2216,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts не підтримує ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4247,6 +4252,11 @@
         "Невідомо"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Виберіть ім'я для показу"
@@ -5344,6 +5354,9 @@
       "Select event's last date": [
         "Виберіть кінцеву дату події"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Виберіть час, щоб надіслати це сповіщення"
       ],
@@ -5455,6 +5468,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрування пошти примусово застосовує цифровий підпис, щоб допомогти засвідчити справжність ваших надісланих повідомлень"
       ],
+      "Encrypted data": [
+        "Зашифровані дані"
+      ],
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
@@ -5513,6 +5529,14 @@
         "Пароль повинен містити принаймні ${ length } символи",
         "Пароль повинен містити принаймні ${ length } символів",
         "Пароль повинен містити принаймні ${ length } символів"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Натисніть для повторного відтворення відео"
+      ],
+      "Replay video": [
+        "Повторно відтворити відео"
       ]
     },
     "VPN feature": {
