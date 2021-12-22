@@ -1,4 +1,4 @@
-export type SimpleMap<T> = { [key: string]: T | undefined };
+export type SimpleMap<T> = Partial<Record<string, T>>;
 
 export type LoadingMap = { [key: string]: boolean | undefined };
 

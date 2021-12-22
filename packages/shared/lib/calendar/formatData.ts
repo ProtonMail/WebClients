@@ -1,4 +1,5 @@
 import { OpenPGPSignature } from 'pmcrypto';
+import { SimpleMap } from '../interfaces';
 import { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
 import { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
@@ -23,7 +24,8 @@ interface FormatDataArguments {
     personalSignedPart?: SignPartResult;
     attendeesEncryptedPart?: EncryptPartResult;
     attendeesClearPart?: AttendeeClearPartResult[];
-    removedAttendees?: string[];
+    removedAttendeesEmails?: string[];
+    attendeesEncryptedSessionKeysMap?: SimpleMap<Uint8Array>;
 }
 export const formatData = ({
     sharedSignedPart,
@@ -35,7 +37,8 @@ export const formatData = ({
     personalSignedPart,
     attendeesEncryptedPart,
     attendeesClearPart,
-    removedAttendees,
+    removedAttendeesEmails,
+    attendeesEncryptedSessionKeysMap,
 }: FormatDataArguments) => {
     return {
         SharedKeyPacket: sharedSessionKey ? uint8ArrayToBase64String(sharedSessionKey) : undefined,
@@ -95,6 +98,17 @@ export const formatData = ({
                   Status: status,
               }))
             : undefined,
-        RemovedAttendeeAddresses: removedAttendees?.length ? removedAttendees : undefined,
+        RemovedAttendeeAddresses: removedAttendeesEmails?.length ? removedAttendeesEmails : undefined,
+        AddedProtonAttendees: attendeesEncryptedSessionKeysMap
+            ? Object.keys(attendeesEncryptedSessionKeysMap)
+                  .map((email) => {
+                      const sharedSessionKey = attendeesEncryptedSessionKeysMap[email];
+                      if (!sharedSessionKey) {
+                          return;
+                      }
+                      return { Email: email, AddressKeyPacket: uint8ArrayToBase64String(sharedSessionKey) };
+                  })
+                  .filter(isTruthy)
+            : undefined,
     };
 };

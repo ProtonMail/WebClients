@@ -36,7 +36,7 @@ export const upsertSyncMultiActionsResponses = (
 
             if (getIsDeleteSyncOperation(operation)) {
                 if (!matchingResponse || matchingResponse.Response.Code === API_CODES.SINGLE_SUCCESS) {
-                    removeCalendarEventStoreRecord(operation.data.Event.ID, calendarEventsCache);
+                    removeCalendarEventStoreRecord(operation.data.calendarEvent.ID, calendarEventsCache);
                 }
                 continue;
             }
