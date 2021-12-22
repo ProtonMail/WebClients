@@ -14,7 +14,7 @@
         "test": "./test/test-linter.sh* && ./test/test-validator.sh"
     },
     "dependencies": {
-        "execa": "^5.0.0",
+        "execa": "^5.1.1",
         "gettext-parser": "^4.0.4",
         "ttag-cli": "^1.9.3"
     },
