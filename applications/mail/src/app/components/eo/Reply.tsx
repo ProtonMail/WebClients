@@ -54,7 +54,7 @@ const Reply = () => {
     } as OutsideKey;
 
     return (
-        <Main larger className="p1 mw52r">
+        <Main larger className="mw52r">
             <EOReplyHeader message={messageState} />
             <EOComposer
                 referenceMessage={messageState}
