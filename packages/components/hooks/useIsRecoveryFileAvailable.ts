@@ -1,11 +1,16 @@
 import { getHasMigratedAddressKeys, getPrimaryKey } from '@proton/shared/lib/keys';
+import { APPS } from '@proton/shared/lib/constants';
+import useConfig from './useConfig';
 import useAddresses from './useAddresses';
 import useUser from './useUser';
 import { useUserKeys } from './useUserKeys';
 import useFeature from './useFeature';
 import { FeatureCode } from '../containers/features';
 
+const { PROTONVPN_SETTINGS } = APPS;
+
 const useIsRecoveryFileAvailable = () => {
+    const { APP_NAME } = useConfig();
     const [user, loadingUser] = useUser();
     const recoveryFileFeature = useFeature(FeatureCode.RecoveryFile);
 
@@ -17,7 +22,11 @@ const useIsRecoveryFileAvailable = () => {
 
     const isNonPrivateSubUser = !user?.isPrivate && user?.isMember;
     const isRecoveryFileAvailable =
-        !!recoveryFileFeature.feature?.Value && !!primaryKey?.privateKey && hasMigratedKeys && !isNonPrivateSubUser;
+        !!recoveryFileFeature.feature?.Value &&
+        !!primaryKey?.privateKey &&
+        hasMigratedKeys &&
+        !isNonPrivateSubUser &&
+        APP_NAME !== PROTONVPN_SETTINGS;
 
     return [isRecoveryFileAvailable, loadingUserKeys || loadingAddresses || loadingUser] as const;
 };
