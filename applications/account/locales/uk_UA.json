@@ -184,8 +184,8 @@
       "Confirm": [
         "Підтвердити"
       ],
-      "Confirm opening of link ${ link }": [
-        "Підтвердити відкриття посилання ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Підтвердити відкриття посилання ${ linkToShow }"
       ],
       "Contact support": [
         "Зв'язатися з підтримкою"
@@ -382,8 +382,14 @@
       "Import": [
         "Імпорт"
       ],
+      "Import calendars": [
+        "Імпортувати календарі"
+      ],
       "Import contacts": [
         "Імпортувати контакти"
+      ],
+      "Import emails": [
+        "Імпортувати електронну пошту"
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
@@ -604,6 +610,9 @@
       "Select files": [
         "Вибрати файли"
       ],
+      "Select language for invitation emails": [
+        "Виберіть мову для листів із запрошеннями"
+      ],
       "Select plan": [
         "Обрати тарифний план"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Сортувати"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Почати ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Запустити імпорт"
@@ -1366,14 +1372,14 @@
       "Calendar link is temporarily inaccessible": [
         "Посилання календаря тимчасово недоступне"
       ],
-      "Calendar link is wrong": [
-        "Хибне посилання календаря"
-      ],
       "Failed to sync calendar": [
         "Не вдалося синхронізувати календар"
       ],
       "More than 12 hours passed since last update": [
         "Понад 12 годин минуло після попередньої синхронізації"
+      ],
+      "Unsupported calendar format": [
+        "Непідтримуваний формат календаря"
       ]
     },
     "Calendar view": {
@@ -2213,7 +2219,7 @@
         "Ви повинні вказати назву"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "У вашому обліковому записі чи вашій організації є прострочений рахунок-фактура. Будь ласка, сплатіть всі неоплачені рахунки-фактури."
+        "У вашому обліковому записі чи вашій організації є прострочений рахунок. Будь ласка, сплатіть усі рахунки."
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
@@ -2996,14 +3002,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Дозвольте ProtonMail доступ до свого облікового запису Gmail: оберіть чи увімкнено ${ bold2Steps } та дотримуйтесь вказаних нижче кроків."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        "Натисніть ${ boldManage }, щоб розгорнути меню налаштувань"
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        "Залежно від вашого постачальника послуг, вам, можливо, доведеться згенерувати ${ knowledgeBaseLink }, перш ніж ви зможете імпортувати дані до Proton"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        "Розгорніть випадне меню, натиснувши на 3 крапки (...)"
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Нарешті, ${ googleMailLink } з обліковим записом, який ви бажаєте імпортувати, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Згенеруйте ${ boldAppPassword } та скористайтеся ним замість свого звичайного пароля під час запиту від Proton"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "Згенеруйте ${ boldAppPassword } та скористайтеся ним замість свого звичайного пароля під час запиту від Proton"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        "Перейдіть до ${ boldAccountInfo } у своєму профілі ${ yahooMailLink }"
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        "Відкрийте ${ boldAccountSecurity }"
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Перейдіть на ${ googleAccountLink }. В розділі ${ boldSecurity } ${ boldAccess } для менш захищених програм. Якщо ви не бачите цього параметра, ймовірно, у вас увімкнено двоетапну перевірку."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Перейдіть на ${ googleAccountLink }. В розділі ${ boldSecurity } створіть ${ boldAppPassword }, якщо ви досі цього не зробили. Вам знадобиться цей пароль під час імпорту."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        "Перейдіть до Outlook.com ${ securitySettingsLink }"
+      ],
+      "If 2-step verification is off, turn it on": [
+        "Якщо двоетапна перевірка вимкнена, увімкніть її"
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "У розділі ${ boldLabels } виберіть теки для імпортування в ProtonMail."
@@ -3013,6 +3046,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "Увійдіть у пошту Yahoo й натисніть на своє ім'я у правому верхньому кутку, щоб відкрити ${ boldAccountInfo }. У розділі ${ boldAccountSec } прогортайте до розділу ${ boldAppPassword }, щоб згенерувати пароль застосунку. Вам знадобиться цей пароль під час імпорту."
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        "Відкрийте свої контакти ${ yahooMailLink }"
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        "Відкрийте свої Outlook ${ outlookContactsLink }"
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        "Оберіть ${ boldExportContacts } та вкажіть контакти для експорту"
+      ],
+      "Select ${ boldExportCSV }": [
+        "Оберіть ${ boldExportCSV }"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його перед початком процесу імпортування"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його перед початком процесу імпортування"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Щоб імпортувати листи до Proton, вам необхідний ${ appPasswordLink } від Outlook. Отримайте його, дотримуючись цих кроків:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Щоб імпортувати листи до Proton, вам необхідний ${ appPasswordLink } від Yahoo. Отримайте його, дотримуючись цих кроків:"
       ]
     },
     "Import instructions emphasis": {
@@ -3028,20 +3097,44 @@
       "app password": [
         "пароль програми"
       ],
+      "Can view all details": [
+        "Може переглядати всі подробиці"
+      ],
+      "Export": [
+        "Експорт"
+      ],
+      "Export contacts": [
+        "Експортувати контакти"
+      ],
+      "Export to CSV file": [
+        "Експортувати у файл CSV"
+      ],
       "Forwarding and POP/IMAP": [
         "Пересилання та POP/IMAP"
       ],
       "Gmail Settings": [
         "Налаштування Gmail"
       ],
+      "ICS": [
+        "ICS"
+      ],
       "IMAP access": [
         "IMAP доступ"
+      ],
+      "in the next step you need to select all the permissions": [
+        "в наступному кроці вам необхідно вибрати усі дозволи"
       ],
       "Labels": [
         "Мітки"
       ],
+      "Manage": [
+        "Керувати"
+      ],
       "Other ways to sign in": [
         "Інші способи входу"
+      ],
+      "Publish a calendar": [
+        "Оприлюднити календар"
       ],
       "Security": [
         "Безпека"
@@ -3075,6 +3168,55 @@
         "Як увімкнути доступ до менш захищених програм у налаштуваннях Gmail"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        "пароль програм"
+      ],
+      "app password or enable IMAP": [
+        "пароль програм чи увімкніть IMAP"
+      ],
+      "contacts": [
+        "контакти"
+      ],
+      "CSV file": [
+        "файл CSV"
+      ],
+      "full calendar view": [
+        "повний вигляд календаря"
+      ],
+      "ICS file": [
+        "файл ICS"
+      ],
+      "security settings": [
+        "налаштування безпеки"
+      ],
+      "shared calendars": [
+        "спільні календарі"
+      ],
+      "Yahoo Mail": [
+        "Пошта Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        "Натисніть посилання ${ boldICS } та завантажте файл"
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        "Перейдіть до ${ calendarLink } в налаштуваннях Outlook.com"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        "Перейдіть до ${ calendarViewLink } в Пошті Yahoo"
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        "Наведіть курсор миші на календар для імпорту й відкрийте випадне меню"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS"
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        "Під ${ boldPublish } виберіть календар для імпортування. Встановіть дозвіл ${ boldCanViewAllDetails } та оприлюдніть його"
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Двоетапна перевірка вимкнена (типове налаштування)"
@@ -3086,6 +3228,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Ви дійсно хочете імпортувати приватний ключ? Імпортування ненадійно згенерованого чи скомпрометованого приватного ключа може порушити безпеку вашої пошти.\n\nЗауважте, що відкритий ключ, пов'язаний з цим приватним ключем, буде загальнодоступним на нашому сервері ключів. Якщо ключ містить особисті дані (наприклад, ваше повне ім'я), які ви не хочете оприлюднювати, відредагуйте ключ перед імпортуванням."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Інший"
       ]
     },
     "Import status": {
@@ -3363,7 +3510,7 @@
         "Адрес"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
-        ""
+        "Після скидання пароля, з міркувань безпеки, ваші дані блокуються в зашифрованому вигляді."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Після здійснення платежу в Bitcoin, дотримуйтесь наведених далі настанов для оновлення."
@@ -3659,9 +3806,6 @@
       "Edit label": [
         "Змінити мітку"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Легко і безпечно перемістіть свої електронні листи від поточного постачальника до Proton. Якщо ви користуєтеся Google, ми також підтримуємо імпорт календаря та контактів."
-      ],
       "Email address": [
         "Адреса електронної пошти"
       ],
@@ -3851,6 +3995,9 @@
       "Import mailbox": [
         "Імпортувати поштову скриньку"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Імпортуйте свої листи, календарі та контакти з іншого сервісу на Proton. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "ВАЖЛИВО: Завантаження ваших приватних ключів та надсилання чи збереження їх на незахищених носіях може зашкодити безпеці вашого облікового запису!"
       ],
@@ -3902,6 +4049,9 @@
       "Internet connection restored.": [
         "З'єднання з Інтернетом відновлено."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        "Схоже, що деякі з ваших даних зашифровано та заблоковано. Можливо через недавнє або попереднє скидання пароля. Ми пропонуємо вам скористатися відновленням даних, щоб розблокувати ваші дані."
+      ],
       "it’s imperative": [
         "це обов'язково"
       ],
@@ -3919,6 +4069,9 @@
       ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        "Мова, на якій будуть відправлятися ваші електронні листи, пов'язані з запрошеннями."
       ],
       "Large imports can take several days to complete.": [
         "Великий обсяг імпортування може тривати декілька днів."
@@ -4086,13 +4239,13 @@
         "У вашій організації є інші адміністратори. Ви відповідальні за передачу їм нового пароля."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        ""
+        "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        ""
+        "Застарілі способи відновлення; оновіть для гарантії доступу до своїх даних"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        ""
+        "Застаріла фраза відновлення; оновіть для гарантії доступу до своїх даних"
       ],
       "P2P": [
         "P2P"
@@ -4259,8 +4412,8 @@
       "Screenshot(s) attached": [
         "Знімки екрана додано"
       ],
-      "Select a service provider to get started": [
-        "Виберіть постачальника послуг, щоб розпочати роботу"
+      "Select a service provider to start": [
+        "Виберіть постачальника послуг, щоб розпочати"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
@@ -4416,13 +4569,13 @@
         "щоб продовжити в ${ toAppName }"
       ],
       "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        ""
+        "Щоб розшифрувати й переглядати свої дані, вам необхідний файл або фраза відновлення."
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        ""
+        "Щоб розшифрувати й переглядати свої дані, вам необхідний файл відновлення."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        ""
+        "Щоб розшифрувати й переглядати свої дані, вам необхідна фраза відновлення."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Щоб розшифрувати й переглянути свої заблоковані дані після скидання пароля, виберіть спосіб відновлення."
@@ -4631,6 +4784,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Ви можете увімкнути журнал авторизації, що б побачити хто і з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час, коли було отримано доступ, а також невдалі спроби."
       ],
+      "You can import one data type at a time.": [
+        "Ви можете імпортувати один тип даних за один раз."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Тепер ви можете отримувати повідомлення на свою адресу @pm.me. Перейдіть на платний тарифний план, щоб мати можливість надсилати пошту з адреси @pm.me, а також створювати додаткові адреси @pm.me."
       ],
@@ -4669,6 +4825,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Щоб створити посилання, вам необхідно мати особистий календар."
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        "Вам необхідно мати активний особистий календар для імпорту ваших подій з .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Вам необхідно мати активний особистий календар для імпорту ваших подій."
@@ -4717,9 +4876,6 @@
       ],
       "Your Block List is empty.": [
         "Ваш список блокувань порожній."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "Ваші дані зашифровані та заблоковані. Ви можете відновити доступ з вибраним способом відновлення даних."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
@@ -5374,6 +5530,9 @@
       "Credits used": [
         "Витрата кредитів"
       ],
+      "Current login password": [
+        "Поточний пароль для входу"
+      ],
       "Customize invoices": [
         "Налаштування рахунків"
       ],
@@ -5391,6 +5550,9 @@
       ],
       "Default language": [
         "Типова мова"
+      ],
+      "Default language (${ defaultLanguage })": [
+        "Мова за замовчуванням (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Типова схема PGP"
@@ -5748,6 +5910,9 @@
       ],
       "Select your country": [
         "Виберіть вашу країну"
+      ],
+      "Send and reply to invites in": [
+        "Відправляйте запрошення і відповідайте на них в"
       ],
       "Send auto-reply": [
         "Надіслати автовідповідь"
@@ -6317,6 +6482,35 @@
         "Доступна нова версія ${ appName }. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Як імпортувати календарі з іншого сервісу"
+      ],
+      "How to import calendars from Outlook": [
+        "Як імпортувати календарі з Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Як імпортувати календарі з Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Як імпортувати контакти з іншого сервісу"
+      ],
+      "How to import contacts from Outlook": [
+        "Як імпортувати контакти з Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Як імпортувати контакти з Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Як імпортувати листи з іншого сервісу"
+      ],
+      "How to import emails from Outlook": [
+        "Як імпортувати листи з Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Як імпортувати листи з Yahoo"
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Додати календар"
@@ -6564,6 +6758,11 @@
         "тижні до",
         "тижнів до",
         "тижнів до"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Зауважте, що ${ boldNextStep }, запитані програмою, щоб почати імпортування."
       ]
     },
     "Onboarding Proton": {
@@ -7225,6 +7424,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        "Зробіть крок назустріч приватності. Безпечно та без зусиль."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Ви можете застосувати кілька міток до одного повідомлення, але одне повідомлення може зберігатися лише в одній теці. Пересовуйте теки й мітки, щоб змінити їх порядок."
       ]
@@ -8149,6 +8351,9 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
+      "Invitations": [
+        "Запрошення"
+      ],
       "Invoices": [
         "Рахунки"
       ],
@@ -8329,6 +8534,9 @@
       "Select contact group": [
         "Вибрати групу контактів"
       ],
+      "Select permissions": [
+        "Виберіть дозволи"
+      ],
       "Select plan": [
         "Обрати тарифний план"
       ],
@@ -8460,6 +8668,9 @@
       ],
       "Warning!": [
         "Попередження!"
+      ],
+      "What would you like to import?": [
+        "Що ви бажаєте імпортувати?"
       ],
       "What's new": [
         "Що нового"
@@ -8774,6 +8985,14 @@
         "Пароль повинен містити принаймні ${ length } символів"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "Натисніть для повторного відтворення відео"
+      ],
+      "Replay video": [
+        "Повторно відтворити відео"
+      ]
+    },
     "VPN feature": {
       "${ mailAppName } Visionary": [
         "${ mailAppName } Visionary"
@@ -9013,10 +9232,10 @@
         "Ви більше не побачите цей запис імпорту в списку."
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Ваш файл відновлення застарів. З його допомогою неможливо відновити нові дані за повторного скидання облікового запису."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Ваша фраза відновлення застаріла. З її допомогою неможливо відновити нові дані за повторного скидання облікового запису."
       ]
     },
     "Warning for domain modal": {

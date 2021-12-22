@@ -15,7 +15,7 @@
         "${ BRAND_NAME } κατάστημα"
       ],
       "Activate recovery": [
-        ""
+        "Ενεργοποίηση ανάκτησης"
       ],
       "Add": [
         "Προσθήκη"
@@ -119,8 +119,8 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
-      "Confirm opening of link ${ link }": [
-        "Επιβεβαίωση ανοίγματος συνδέσμου ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Ομάδα Επαφών"
@@ -410,7 +410,7 @@
         "Αποστολή"
       ],
       "Set recovery phrase": [
-        ""
+        "Ορισμός φράσης ανάκτησης"
       ],
       "Share": [
         "Κοινοποίηση"
@@ -485,10 +485,10 @@
         "Αναβάθμιση"
       ],
       "Update recovery file": [
-        ""
+        "Ενημέρωση αρχείου ανάκτησης"
       ],
       "Update recovery phrase": [
-        ""
+        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -962,14 +962,14 @@
       "Calendar link is temporarily inaccessible": [
         "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος"
       ],
-      "Calendar link is wrong": [
-        "Λανθασμένος σύνδεσμος ημερολογίου"
-      ],
       "Failed to sync calendar": [
         "Αποτυχία συγχρονισμού ημερολογίου"
       ],
       "More than 12 hours passed since last update": [
         "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -1006,7 +1006,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        "Ακύρωση προσαρμογής εισαγωγής;"
+        "Έξοδος από την προσαρμογή εισαγωγής;"
       ]
     },
     "Contact field label": {
@@ -2146,6 +2146,11 @@
         "Το ProtonContacts δεν υποστηρίζει ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
@@ -3251,7 +3256,7 @@
         "Ποσό BTC:"
       ],
       "Calendar": [
-        ""
+        "Ημερολόγιο"
       ],
       "Calendars": [
         "Ημερολόγια"
@@ -3290,7 +3295,7 @@
         "Κωδικός CVV"
       ],
       "Date and time": [
-        ""
+        "Ημερομηνία και ώρα"
       ],
       "Description": [
         "Περιγραφή"
@@ -3353,7 +3358,7 @@
         "Τοποθεσία φακέλου"
       ],
       "Frequency": [
-        ""
+        "Συχνότητα"
       ],
       "From: ${ importedEmail }": [
         "Από: ${ importedEmail }"
@@ -3395,7 +3400,7 @@
         "Τελευταίο μήνα μόνο"
       ],
       "Location": [
-        ""
+        "Τοποθεσία"
       ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
@@ -3416,7 +3421,7 @@
         "Ειδοποίηση"
       ],
       "Notifications": [
-        ""
+        "Ειδοποιήσεις"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα"
@@ -4079,6 +4084,11 @@
         "Άγνωστο"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Επιλέξτε ένα εμφανιζόμενο όνομα"
@@ -4654,7 +4664,7 @@
         "Η κατάσταση συμμετοχής ενημερώθηκε για όλες τις εκδηλώσεις"
       ],
       "Phone number copied to clipboard": [
-        "Το τηλέφωνο αντιγράφηκε στο πρόχειρο"
+        "Ο αριθμός τηλεφώνου αντιγράφηκε στο πρόχειρο"
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Επιλέξτε την τελευταία ημερομηνία του συμβάντος"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Επιλέξτε την ώρα αποστολής αυτής της ειδοποίησης"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Η κρυπτογράφηση μέσω ηλεκτρονικού ταχυδρομείου υποχρεώνει την ύπαρξη υπογραφής ηλεκτρονικού ταχυδρομείου για να σας βοηθήσει να πιστοποιήσετε τα απεσταλμένα μηνύματα"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

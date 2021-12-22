@@ -125,8 +125,8 @@
       "Confirm": [
         "Підтвердити"
       ],
-      "Confirm opening of link ${ link }": [
-        "Підтвердити відкриття посилання ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Підтвердити відкриття посилання ${ linkToShow }"
       ],
       "Contact group": [
         "Група контактів"
@@ -881,14 +881,14 @@
       "Calendar link is temporarily inaccessible": [
         "Посилання календаря тимчасово недоступне"
       ],
-      "Calendar link is wrong": [
-        "Хибне посилання календаря"
-      ],
       "Failed to sync calendar": [
         "Не вдалося синхронізувати календар"
       ],
       "More than 12 hours passed since last update": [
         "Понад 12 годин минуло після попередньої синхронізації"
+      ],
+      "Unsupported calendar format": [
+        "Непідтримуваний формат календаря"
       ]
     },
     "Composer size": {
@@ -1166,7 +1166,7 @@
         "Не вдалося вивантажити файл \"${ item.name }\" через помилку \"${ error }\""
       ],
       "File \"${ name }\" is already downloading": [
-        "Файл \"${ name }\" уже завантажується"
+        "Файл \"${ name }\" вже завантажується"
       ],
       "File cannot be merged with folder": [
         "Не можна об'єднувати файл з текою"
@@ -1175,10 +1175,10 @@
         "Файл не має вмісту для перегляду"
       ],
       "File selection is already downloading": [
-        "Вибрані файли уже завантажуються"
+        "Вибрані файли вже завантажуються"
       ],
       "Folder \"${ name }\" is already downloading": [
-        "Тека \"${ name }\" уже завантажується"
+        "Тека \"${ name }\" вже завантажується"
       ],
       "Folder name cannot be empty": [
         "Тека не може бути без назви"
@@ -2099,8 +2099,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Якщо у вас є будь-що з вказаного, перейдіть до налаштувань облікового запису Proton,\nщоб продовжити процес розблокування."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        "Якщо у вас є будь-що з вказаного, перейдіть до налаштувань облікового запису Proton,\nщоб розпочати процес розблокування."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
@@ -3692,6 +3692,11 @@
         "Ваші налаштування успішно змінено"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "Зауважте, що для можливості початку імпортування, вам необхідно схвалити усі запитані застосунком дозволи."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Виберіть ім'я для показу"
@@ -4729,6 +4734,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрування пошти примусово застосовує цифровий підпис, щоб допомогти засвідчити справжність ваших надісланих повідомлень"
       ],
+      "Encrypted data": [
+        "Зашифровані дані"
+      ],
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
@@ -4807,6 +4815,14 @@
       ],
       "Name must not end with a space": [
         "Назва не повинна закінчуватися пробілом"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Натисніть для повторного відтворення відео"
+      ],
+      "Replay video": [
+        "Повторно відтворити відео"
       ]
     },
     "VPN feature": {

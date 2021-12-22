@@ -184,8 +184,8 @@
       "Confirm": [
         "Potvrdi"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrdite otvaranje poveznice ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact support": [
         "Kontaktiraj podršku"
@@ -382,8 +382,14 @@
       "Import": [
         "Uvoz"
       ],
+      "Import calendars": [
+        ""
+      ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Import emails": [
+        ""
       ],
       "Import from .csv or vCard": [
         ""
@@ -604,6 +610,9 @@
       "Select files": [
         "Odabir datoteka"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "Odaberi plan"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "Sortiranje"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
       ],
       "Start import": [
         "Započni uvoz"
@@ -1356,13 +1362,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -2963,14 +2969,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "Omogućite ProtonMailu pristup vašem Gmail računu: odaberite je li ${ bold2Steps } omogućen i slijedite korake u nastavku."
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        ""
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        ""
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        ""
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "Konačno, ${ googleMailLink } s računom koji želite uvoziti, ${ googleCaptchaLink }."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        ""
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        ""
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        ""
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "Idite na ${ googleAccountLink }. U odjeljku ${ boldSecurity }, ${ boldAccess } za manje sigurne aplikacije. Ako ne vidite ovu opciju, možda je omogućena potvrda u dva koraka."
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "Idite na ${ googleAccountLink }. U odjeljku ${ boldSecurity }, stvorite ${ boldAppPassword } ako je već nemate. Ova lozinka trebati će vam tijekom uvoza."
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        ""
+      ],
+      "If 2-step verification is off, turn it on": [
+        ""
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "U odjeljku ${ boldLabels }, odaberite mape dopuštene za uvoz u ProtonMail."
@@ -2979,6 +3012,42 @@
         "U vašim ${ boldGmailSettings }, idite na ${ boldForwarding } i provjerite da je ${ boldIMAPAccess } omogućen."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
+        ""
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        ""
+      ],
+      "Select ${ boldExportCSV }": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        ""
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        ""
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         ""
       ]
     },
@@ -2995,19 +3064,43 @@
       "app password": [
         "lozinka aplikacije"
       ],
+      "Can view all details": [
+        ""
+      ],
+      "Export": [
+        ""
+      ],
+      "Export contacts": [
+        ""
+      ],
+      "Export to CSV file": [
+        ""
+      ],
       "Forwarding and POP/IMAP": [
         "Prosljeđivanje i POP/IMAP"
       ],
       "Gmail Settings": [
         "Gmail postavke"
       ],
+      "ICS": [
+        ""
+      ],
       "IMAP access": [
         "IMAP pristup"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "Oznake"
       ],
+      "Manage": [
+        ""
+      ],
       "Other ways to sign in": [
+        ""
+      ],
+      "Publish a calendar": [
         ""
       ],
       "Security": [
@@ -3042,6 +3135,55 @@
         "Kako uključiti pristup za manje sigurne aplikacije u postavkama Gmaila"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        ""
+      ],
+      "app password or enable IMAP": [
+        ""
+      ],
+      "contacts": [
+        ""
+      ],
+      "CSV file": [
+        ""
+      ],
+      "full calendar view": [
+        ""
+      ],
+      "ICS file": [
+        ""
+      ],
+      "security settings": [
+        ""
+      ],
+      "shared calendars": [
+        ""
+      ],
+      "Yahoo Mail": [
+        ""
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        ""
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        ""
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        ""
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "Dvofaktorska autentikacija je onemogućena (zadano)"
@@ -3052,6 +3194,11 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
+    "Import provider": {
+      "Other": [
         ""
       ]
     },
@@ -3603,9 +3750,6 @@
       "Edit label": [
         "Uredi oznaku"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
-      ],
       "Email address": [
         "Adresa e-pošte"
       ],
@@ -3794,6 +3938,9 @@
       "Import mailbox": [
         "Uvezi poštanski sandučić"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        ""
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "VAŽNO: Preuzimanje privatnih ključeva i slanje istih ili pohranjivanje istih na nesigurne medije može ugroziti sigurnost vašeg računa!"
       ],
@@ -3845,6 +3992,9 @@
       "Internet connection restored.": [
         "Uspostavljena je internetska veza."
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        ""
+      ],
       "it’s imperative": [
         ""
       ],
@@ -3862,6 +4012,9 @@
       ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "Veći uvozi mogu potrajati i do nekoliko dana."
@@ -4201,7 +4354,7 @@
       "Screenshot(s) attached": [
         "Snimka(e) zaslona su pridodane"
       ],
-      "Select a service provider to get started": [
+      "Select a service provider to start": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -4573,6 +4726,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Možete omogućiti zapisivanje pokušaja autentikacije da biste vidjeli kada se pristupa vašem računu i s koje je IP adrese. Snimit ćemo IP adresu koja je pristupila računu i vrijeme, kao i neuspješne pokušaje."
       ],
+      "You can import one data type at a time.": [
+        ""
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         ""
       ],
@@ -4610,6 +4766,9 @@
         ""
       ],
       "You need to have a personal calendar to create a link.": [
+        ""
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
         ""
       ],
       "You need to have an active personal calendar to import your events.": [
@@ -4659,9 +4818,6 @@
       ],
       "Your Block List is empty.": [
         "Vaš popis nedopuštenih je prazan."
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5312,6 +5468,9 @@
       "Credits used": [
         "Iskorišteni kredit"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "Prilagodite fakture"
       ],
@@ -5329,6 +5488,9 @@
       ],
       "Default language": [
         "Zadani jezik"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         ""
@@ -5686,6 +5848,9 @@
       ],
       "Select your country": [
         "Odaberite vašu državu"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "Pošalji automatski odgovor"
@@ -6251,6 +6416,35 @@
         "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        ""
+      ],
+      "How to import calendars from Outlook": [
+        ""
+      ],
+      "How to import calendars from Yahoo": [
+        ""
+      ],
+      "How to import contacts from another service": [
+        ""
+      ],
+      "How to import contacts from Outlook": [
+        ""
+      ],
+      "How to import contacts from Yahoo": [
+        ""
+      ],
+      "How to import emails from another service": [
+        ""
+      ],
+      "How to import emails from Outlook": [
+        ""
+      ],
+      "How to import emails from Yahoo": [
+        ""
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "Dodaj kalendar"
@@ -6491,6 +6685,11 @@
         "tjedan prije",
         "tjedna prije",
         "tjedana prije"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7151,6 +7350,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        ""
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Na jednu poruku možete primijeniti više oznaka, ali poruke obično mogu biti samo u jednoj mapi. Povucite i ispustite da biste prilagodili redoslijed mapa i oznaka."
       ]
@@ -8072,6 +8274,9 @@
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "Fakture"
       ],
@@ -8252,6 +8457,9 @@
       "Select contact group": [
         "Odaberi grupu kontakta"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "Odaberi plan"
       ],
@@ -8383,6 +8591,9 @@
       ],
       "Warning!": [
         "Upozorenje!"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Što je novo"
@@ -8692,6 +8903,14 @@
         "Lozinka mora sadržavati najmanje ${ length } znak",
         "Lozinka mora sadržavati najmanje ${ length } znaka",
         "Lozinka mora sadržavati najmanje ${ length } znakova"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

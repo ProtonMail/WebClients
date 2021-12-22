@@ -119,8 +119,8 @@
       "Confirm": [
         "Potvrdit"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrďte otevření odkazu ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Potvrďte otevření odkazu ${ linkToShow }"
       ],
       "Contact group": [
         "Skupina kontaktů"
@@ -974,14 +974,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "Odkaz na kalendář je chybný"
-      ],
       "Failed to sync calendar": [
         "Synchronizace kalendáře selhala"
       ],
       "More than 12 hours passed since last update": [
         "Od poslední aktualizace uplynulo více než 12 hodin"
+      ],
+      "Unsupported calendar format": [
+        "Nepodporovaný formát kalendáře"
       ]
     },
     "Calendar view": {
@@ -2216,6 +2216,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts nepodporuje ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4247,6 +4252,11 @@
         "Není známo"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Vyber zobrazení jména"
@@ -5344,6 +5354,9 @@
       "Select event's last date": [
         ""
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Vyberte čas pro odeslání tohoto oznámení"
       ],
@@ -5455,6 +5468,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifrování emailů posiluje emailový podpis, aby Vaše zprávy byly ověřeny"
       ],
+      "Encrypted data": [
+        "Zašifrovaná data"
+      ],
       "Encrypted data with verified digital signature": [
         "Zašifrovaná data s ověřeným digitálním podpisem"
       ],
@@ -5513,6 +5529,14 @@
         "Hesla musí obsahovat alespoň ${ length } znaků",
         "Hesla musí obsahovat alespoň ${ length } znaků",
         "Hesla musí obsahovat alespoň ${ length } znaků"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Kliknutím přehrát video"
+      ],
+      "Replay video": [
+        "Přehrát video"
       ]
     },
     "VPN feature": {

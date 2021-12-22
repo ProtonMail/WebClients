@@ -467,6 +467,9 @@
       "Load more": [
         "Laad meer"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "Verificatie laden"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Opnieuw proberen"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Overslaan"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "Begin met importeren"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Dit bericht bevat ingebedde afbeeldingen."
+      ],
+      "This message contains remote content.": [
+        ""
       ],
       "Trust": [
         "Vertrouwen"
@@ -1588,14 +1600,14 @@
       "Calendar link is temporarily inaccessible": [
         "Agendalink is tijdelijk ontoegankelijk"
       ],
-      "Calendar link is wrong": [
-        "Agenda link is verkeerd"
-      ],
       "Failed to sync calendar": [
         "Synchronisatie van de agenda is mislukt"
       ],
       "More than 12 hours passed since last update": [
         "Er zijn meer dan 12 uur verstreken sinds de laatste update"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar widget banner": {
@@ -3014,6 +3026,11 @@
         "Aanmaken agenda-afspraak mislukt"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Dit bericht is automatisch aangemaakt als reactie op een voorgaand bericht."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Toevoegen aan groep"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "ALLES"
@@ -5668,6 +5691,11 @@
         "Wachtwoord is succesvol ingesteld"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Volgende"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "Nieuwe groep maken"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Link bevestigen"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load remote content": [
         "Externe inhoud laden"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Contactgroep selecteren"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         "Selecteer wat u wilt importeren"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Gesprekken sorteren"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailberichten versleutelen zorgt dat ze ook ondertekend worden, om anderen te helpen om uw verzonden berichten te verifiëren"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "Wachtwoord moet ten minste ${ length } teken bevatten",
         "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

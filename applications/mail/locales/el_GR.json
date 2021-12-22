@@ -18,7 +18,7 @@
         "Ενεργοποίηση"
       ],
       "Activate recovery": [
-        ""
+        "Ενεργοποίηση ανάκτησης"
       ],
       "Add": [
         "Προσθήκη"
@@ -183,7 +183,7 @@
         "Επιβεβαίωση"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Επιβεβαίωση ανοίγματος συνδέσμου ${ linkToShow }"
       ],
       "Contact group": [
         "Ομάδα Επαφών"
@@ -467,6 +467,9 @@
       "Load more": [
         "Φόρτωση περισσοτέρων"
       ],
+      "Load unprotected": [
+        "Φόρτωση μη προστατευμένων"
+      ],
       "Loading verification": [
         "Αναμονή για επαλήθευση"
       ],
@@ -540,7 +543,7 @@
         "Μετακίνηση στα εισερχόμενα (μη ενοχλητικό)"
       ],
       "Move to spam": [
-        "Μετακίνηση στα ανεπιθύμητα"
+        "Μετακίνηση στα ενοχλητικά"
       ],
       "Move to trash": [
         "Μετακίνηση στον κάδο απορριμμάτων"
@@ -698,6 +701,9 @@
       "Retry": [
         "Επανάληψη"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Αποθήκευση"
       ],
@@ -738,7 +744,7 @@
         "αποστολή μηνύματος αυτόματης απάντησης"
       ],
       "Send receipt": [
-        "Αποστολή απόδειξης"
+        "Αποστολή αποδεικτικού"
       ],
       "Set": [
         "Ορισμός"
@@ -750,7 +756,7 @@
         "Ορισμός χρόνου λήξης"
       ],
       "Set recovery phrase": [
-        ""
+        "Ορισμός φράσης ανάκτησης"
       ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
@@ -803,6 +809,9 @@
       "Skip": [
         "Παράλειψη"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "Έναρξη εισαγωγής"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Αυτό το μήνυμα περιέχει ενσωματωμένες εικόνες."
+      ],
+      "This message contains remote content.": [
+        "Αυτό το μήνυμα περιέχει απομακρυσμένο περιεχόμενο."
       ],
       "Trust": [
         "Αξιόπιστο"
@@ -874,10 +886,10 @@
         "Ενημέρωση"
       ],
       "Update recovery file": [
-        ""
+        "Ενημέρωση αρχείου ανάκτησης"
       ],
       "Update recovery phrase": [
-        ""
+        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -1588,14 +1600,14 @@
       "Calendar link is temporarily inaccessible": [
         "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος"
       ],
-      "Calendar link is wrong": [
-        "Λανθασμένος σύνδεσμος ημερολογίου"
-      ],
       "Failed to sync calendar": [
         "Αποτυχία συγχρονισμού ημερολογίου"
       ],
       "More than 12 hours passed since last update": [
         "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar widget banner": {
@@ -2474,16 +2486,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Αδυναμία μετακίνησης προχείρων στα Εισερχόμενα"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Τα πρόχειρα μηνύματα δεν γίνεται να μετακινηθούν στα Ενοχλητικά"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Αδυναμία μετακίνησης απεσταλμένων μηνυμάτων στα Εισερχόμενα"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Τα απεσταλμένα μηνύματα δεν γίνεται να μετακινηθούν στα Ενοχλητικά"
       ],
       "This action cannot be performed": [
         "Αυτή η ενέργεια δεν μπορεί να εκτελεστεί"
@@ -3014,6 +3026,11 @@
         "Αποτυχία δημιουργίας εκδήλωσης ημερολογίου"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
@@ -3310,7 +3327,7 @@
         "Είστε σίγουροι πως θέλετε να διαγράψετε αυτό το μήνυμα για πάντα;"
       ],
       "Attach public key": [
-        ""
+        "Επισύναψη δημοσίου κλειδιού"
       ],
       "Background color": [
         "Χρώμα φόντου"
@@ -3888,7 +3905,7 @@
         "Η αναφορά ενός μηνύματος ως προσπάθεια ηλεκτρονικού \"ψαρέματος\" (phising) θα το αποστείλει σε εμάς, ώστε να το αναλύσουμε και να βελτιώσουμε τα φίλτρα μας. Αυτό σημαίνει ότι θα μπορέσουμε να δούμε το περιεχόμενο ολόκληρου του μηνύματος."
       ],
       "Request read receipt": [
-        ""
+        "Αίτημα αποδεικτικού ανάγνωσης"
       ],
       "Right to Left": [
         "Δεξιά προς τα αριστερά"
@@ -4023,7 +4040,7 @@
         "Το αρχικό μήνυμα στο οποίο προσπαθείτε να προωθήσετε / απαντήσετε βρίσκεται στη διαδικασία αποστολής. Εάν συνεχίσετε, δεν θα μπορείτε πλέον να αναιρέσετε την αποστολή του αρχικού μηνύματος."
       ],
       "The sender has requested a read receipt.": [
-        "Ο αποστολέας έχει ζητήσει ένα αποδεικτικό ανάγνωσης."
+        "Ο αποστολέας έχει ζητήσει αποδεικτικό ανάγνωσης."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Η επαλήθευση του ${ contactName } απέτυχε: η επαφή δεν έχει υπογραφεί σωστά.\nΑυτό μπορεί να είναι αποτέλεσμα επαναφοράς κωδικού πρόσβασης.\nΠρέπει να υπογράψετε ξανά την επαφή για να στείλετε ένα μήνυμα ${ contactAddress } ή επεξεργαστείτε την επαφή."
@@ -4070,6 +4087,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
+      ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Αυτό το μήνυμα δημιουργείται αυτόματα ως απόκριση σε ένα προηγούμενο μήνυμα."
@@ -4685,6 +4705,9 @@
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
+      "Address": [
+        "Διεύθυνση"
+      ],
       "ALL": [
         "ΟΛΑ"
       ],
@@ -4728,7 +4751,7 @@
         "Ποσό BTC:"
       ],
       "Calendar": [
-        ""
+        "Ημερολόγιο"
       ],
       "Calendars": [
         "Ημερολόγια"
@@ -4830,7 +4853,7 @@
         "Τοποθεσία φακέλου"
       ],
       "Frequency": [
-        ""
+        "Συχνότητα"
       ],
       "From": [
         "Από"
@@ -4890,7 +4913,7 @@
         "Τελευταίο μήνα μόνο"
       ],
       "Location": [
-        ""
+        "Τοποθεσία"
       ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
@@ -4941,7 +4964,7 @@
         "Ή"
       ],
       "Participants": [
-        ""
+        "Συμμετέχοντες"
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -5273,7 +5296,7 @@
         "Απεσταλμένα"
       ],
       "Spam": [
-        "Ανεπιθύμητα"
+        "Ενοχλητικά"
       ],
       "Starred": [
         "Με αστέρι"
@@ -5449,7 +5472,7 @@
         "Απεσταλμένα"
       ],
       "Spam": [
-        "Ανεπιθύμητα"
+        "Ενοχλητικά"
       ],
       "Trash": [
         "Κάδος Απορριμμάτων"
@@ -5668,6 +5691,11 @@
         "Ο κωδικός πρόσβασης ορίστηκε επιτυχώς"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Επόμενο"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Προσθήκη σε υπάρχουσα ομάδα"
+      ],
+      "All": [
+        "Όλα"
       ],
       "Create new group": [
         "Δημιουργία νέας ομάδας"
@@ -6355,8 +6386,8 @@
         "${ elementsCount } συνομιλίες μεταφέρθηκαν σε ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } συνομιλία μετακινήθηκε στο spam και ο αποστολέας προστέθηκε στη λίστα αποκλεισμού.",
-        "${ elementsCount } συνομιλίες μετακινήθηκαν στο spam και ο αποστολέας προστέθηκε στη λίστα αποκλεισμού."
+        "${ elementsCount } συνομιλία μετακινήθηκε στα ενοχλητικά και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού.",
+        "${ elementsCount } συνομιλίες μετακινήθηκαν στα ενοχλητικά και οι αποστολείς προστέθηκαν στη Λίστα Αποκλεισμού."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } συνομιλία αφαιρέθηκε από ${ labelName }.",
@@ -6387,8 +6418,8 @@
         "${ elementsCount } μηνύματα μεταφέρθηκαν σε ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } το μήνυμα μετακινήθηκε στο spam και ο αποστολέας προστέθηκε στη λίστα αποκλεισμού.",
-        "${ elementsCount } μηνύματα μεταφέρθηκαν στο spam και ο αποστολέας προστέθηκε στη λίστα αποκλεισμού."
+        "${ elementsCount } μήνυμα μετακινήθηκε στα ενοχλητικά και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού.",
+        "${ elementsCount } μηνύματα μετακινήθηκαν στα ενοχλητικά και οι αποστολείς προστέθηκαν στη Λίστα Αποκλεισμού."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } μήνυμα αφαιρέθηκε από ${ labelName }.",
@@ -6442,7 +6473,7 @@
         "Η συνομιλία μετακινήθηκε σε ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Η συνομιλία μετακινήθηκε στο spam και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού."
+        "Η συνομιλία μετακινήθηκε στα ενοχλητικά και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού."
       ],
       "Conversation removed from ${ labelName }.": [
         "Η συνομιλία αφαιρέθηκε από ${ labelName }."
@@ -6499,7 +6530,7 @@
         "Το μήνυμα μετακινήθηκε στο ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Το μήνυμα μετακινήθηκε στο spam και ο αποστολέας προστέθηκε στη λίστα αποκλεισμού."
+        "Το μήνυμα μετακινήθηκε στα ενοχλητικά και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού."
       ],
       "Message removed from ${ labelName }.": [
         "Το μήνυμα αφαιρέθηκε από ${ labelName }."
@@ -6528,7 +6559,7 @@
         "Το δημόσιο κλειδί είναι αξιόπιστο"
       ],
       "Read receipt sent": [
-        "Έγινε αποστολή ανάγνωσης"
+        "Έγινε αποστολή αποδεικτικού ανάγνωσης"
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
+      "Load embedded images": [
+        "Φόρτωση ενσωματωμένων εικόνων"
+      ],
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         "Επιλογή στοιχείων προς εισαγωγή"
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Ταξινόμηση συνομιλιών"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Η κρυπτογράφηση μέσω ηλεκτρονικού ταχυδρομείου υποχρεώνει την ύπαρξη υπογραφής ηλεκτρονικού ταχυδρομείου για να σας βοηθήσει να πιστοποιήσετε τα απεσταλμένα μηνύματα"
       ],
+      "Encrypted data": [
+        "Κρυπτογραφημένα δεδομένα"
+      ],
       "Encrypted data with verified digital signature": [
         "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

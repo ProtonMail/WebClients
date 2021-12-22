@@ -184,8 +184,8 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm opening of link ${ link }": [
-        "確認開啟連結 ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "確認開啟連結 ${ linkToShow }"
       ],
       "Contact support": [
         "聯絡支援"
@@ -382,8 +382,14 @@
       "Import": [
         "匯入"
       ],
+      "Import calendars": [
+        "匯入行事曆"
+      ],
       "Import contacts": [
         "匯入聯絡人"
+      ],
+      "Import emails": [
+        "匯入電子郵件"
       ],
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
@@ -604,6 +610,9 @@
       "Select files": [
         "選取檔案"
       ],
+      "Select language for invitation emails": [
+        ""
+      ],
       "Select plan": [
         "選擇方案"
       ],
@@ -684,9 +693,6 @@
       ],
       "Sort": [
         "排序"
-      ],
-      "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "開始 ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "開始匯入"
@@ -1336,14 +1342,14 @@
       "Calendar link is temporarily inaccessible": [
         "日曆連結暫時無法存取"
       ],
-      "Calendar link is wrong": [
-        "日曆連結錯誤"
-      ],
       "Failed to sync calendar": [
         "同步日曆失敗"
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
+      ],
+      "Unsupported calendar format": [
+        "不支援的行事曆格式"
       ]
     },
     "Calendar view": {
@@ -2897,14 +2903,41 @@
       "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
         "允許 ProtonMail 存取您的 Gmail 帳號：選擇是否啟用「${ bold2Steps }」，然後遵循以下步驟。"
       ],
+      "Click ${ boldManage } to expand the options menu": [
+        "點擊 ${ boldManage } 以展開您的選項選單"
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+        "取決於您的電子郵件服務提供者，您可能需要在您匯入到 Proton 前先產生 ${ knowledgeBaseLink }"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+        "點擊三個點 (...) 展開下拉式選單"
+      ],
       "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
         "最後，使用您要匯入的帳號${ googleMailLink }，${ googleCaptchaLink }。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "產生 ${ boldAppPassword } 並在 Proton 提示您使用其來取代您一般的密碼"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+        "產生 ${ boldAppPassword } 並在 Proton 提示您使用其來取代您一般的密碼"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+        "前往 ${ yahooMailLink } 中您個人資料底下的 ${ boldAccountInfo }"
+      ],
+      "Go to ${ boldAccountSecurity }": [
+        "前往 ${ boldAccountSecurity }"
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
         "前往「${ googleAccountLink }」，在「${ boldSecurity }」部分中，${ boldAccess }。如果您沒見到此選項，即代表您可能已啟用兩步驟驗證。"
       ],
       "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
         "前往「${ googleAccountLink }」，在「${ boldSecurity }」部分中，如果未有則建立一個${ boldAppPassword }。匯入時將需要用到此密碼。"
+      ],
+      "Go to Outlook.com ${ securitySettingsLink }": [
+        "前往 Outlook.com ${ securitySettingsLink }"
+      ],
+      "If 2-step verification is off, turn it on": [
+        "若兩步驟驗證已關閉，請將其開啟"
       ],
       "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
         "在「${ boldLabels }」部分中，請選取要允許匯入 ProtonMail 的資料夾。"
@@ -2914,6 +2947,42 @@
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         "登入 Yahoo 信箱並在右上方典選您的名乘以讓我們有正確的權限存取「${ boldAccountInfo }」。在 ${ boldAccountSec } 區域，滑到 ${ boldAppPassword } 區域以產生新的密碼，您將會在稍候的匯入程序中用到它。"
+      ],
+      "Open your ${ yahooMailLink } contacts": [
+        "開啟您的 ${ yahooMailLink } 聯絡人"
+      ],
+      "Open your Outlook ${ outlookContactsLink }": [
+        "開啟您的 Outlook ${ outlookContactsLink }"
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export": [
+        "選取 ${ boldExportContacts } 並選擇您要匯出的聯絡人"
+      ],
+      "Select ${ boldExportCSV }": [
+        "選取 ${ boldExportCSV }"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "要匯入電子郵件到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "要匯入電子郵件到 Proton，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
       ]
     },
     "Import instructions emphasis": {
@@ -2929,20 +2998,44 @@
       "app password": [
         "應用程式密碼"
       ],
+      "Can view all details": [
+        "可以檢視所有詳細資訊"
+      ],
+      "Export": [
+        "匯出"
+      ],
+      "Export contacts": [
+        "匯出聯絡人"
+      ],
+      "Export to CSV file": [
+        "匯出為 CSV 檔案"
+      ],
       "Forwarding and POP/IMAP": [
         "轉寄與 POP/IMAP"
       ],
       "Gmail Settings": [
         "Gmail 設定"
       ],
+      "ICS": [
+        "ICS"
+      ],
       "IMAP access": [
         "IMAP 存取"
+      ],
+      "in the next step you need to select all the permissions": [
+        ""
       ],
       "Labels": [
         "標籤"
       ],
+      "Manage": [
+        "管理"
+      ],
       "Other ways to sign in": [
         "其他登入方法"
+      ],
+      "Publish a calendar": [
+        "發佈行事曆"
       ],
       "Security": [
         "安全"
@@ -2976,6 +3069,55 @@
         "如何在 Gmail 設定中開啟「低安全性應用程式存取權」"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        "應用程式密碼"
+      ],
+      "app password or enable IMAP": [
+        "應用程式密碼或啟用 IMAP"
+      ],
+      "contacts": [
+        "聯絡人"
+      ],
+      "CSV file": [
+        "CSV 檔案"
+      ],
+      "full calendar view": [
+        "完整行事曆檢視方式"
+      ],
+      "ICS file": [
+        "ICS 檔案"
+      ],
+      "security settings": [
+        "安全性設定"
+      ],
+      "shared calendars": [
+        "已分享的行事曆"
+      ],
+      "Yahoo Mail": [
+        "Yahoo 電子郵件"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file": [
+        "點擊 ${ boldICS } 連結並下載檔案"
+      ],
+      "Go to ${ calendarLink } in your Outlook.com settings": [
+        "前往您 Outlook.com 設定中的 ${ calendarLink }"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo Mail": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu": [
+        "將滑鼠游標停在您要匯入的行事曆上並開啟下拉式選單"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file": [
+        "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案"
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+        "在 ${ boldPublish } 下，選取您要匯入的行事曆。設定權限給 ${ boldCanViewAllDetails } 並發佈它。"
+      ]
+    },
     "Import instructions tab title": {
       "2-step verification disabled (default settings)": [
         "兩步驟驗證已停用（預設設定）"
@@ -2987,6 +3129,11 @@
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "你確定你要匯入一把私鑰嗎？匯入不安全或是已洩漏的私鑰將危及您的電子郵件安全。\n\n請知悉，與此私鑰對應的公鑰將被發布到我們的金鑰伺服器。若此金鑰包含您的個人資訊(例如您的全名) 或任何您不想要公開的資訊，請在匯入前修改這些資訊。"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        ""
       ]
     },
     "Import status": {
@@ -3491,9 +3638,6 @@
       "Edit label": [
         "編輯標籤"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "自你目前的電子郵件提供者轉移既存的郵件，安全且毫不費力。如果你使用Google，我們也可以將您的行事曆與聯絡人一併轉移。"
-      ],
       "Email address": [
         "電子郵件地址"
       ],
@@ -3680,6 +3824,9 @@
       "Import mailbox": [
         "匯入郵箱"
       ],
+      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "從其他服務匯入您的電子郵件、行事曆或聯絡人到 Proton。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+      ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "注意：下載您的私密金鑰並以不安全的媒體傳送或儲存它們將會危害您帳號的安全性！"
       ],
@@ -3731,6 +3878,9 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
+        "您的部份資料似乎已被加密並鎖定。這可能是因為最近或先前的密碼重設。我們建議您使用資料還原方法來解鎖您的資料。"
+      ],
       "it’s imperative": [
         "您需要有"
       ],
@@ -3748,6 +3898,9 @@
       ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
+      ],
+      "Language in which your invitation-related emails will be sent.": [
+        ""
       ],
       "Large imports can take several days to complete.": [
         "大型匯入可能要數天才能完成。"
@@ -4085,8 +4238,8 @@
       "Screenshot(s) attached": [
         "已附加的螢幕截圖"
       ],
-      "Select a service provider to get started": [
-        "選取你的電子郵件提供者以開始轉移"
+      "Select a service provider to start": [
+        "選取您的服務提供者以開始"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
@@ -4457,6 +4610,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可以啟用認證記錄，以查看您的帳號何時被存取以及來自哪個 IP。我們將記錄存取帳號所使用的 IP 位址及時間，以及失敗的登入嘗試。"
       ],
+      "You can import one data type at a time.": [
+        "您可以一次匯入一種資料類型。"
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "現可使用您的 @pm.me 電子郵件地址接收郵件。升級至付費方案後，更可使用您的 @pm.me 電子郵件地址傳送電子郵件並建立額外的 @pm.me 電子郵件地址。"
       ],
@@ -4495,6 +4651,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "建立連結需要有個人行事曆。"
+      ],
+      "You need to have an active personal calendar to import your events from .ics.": [
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "您需要有使用中的個人行事曆才可匯入您的事件。"
@@ -4543,9 +4702,6 @@
       ],
       "Your Block List is empty.": [
         "您的封鎖清單是空的。"
-      ],
-      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
-        "你的資料已被加密且上鎖。您可以使用資料復原選項來恢復您的帳戶。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "你的資料已經準備好從 ${ importedEmailAddressStrong } 匯入你的 Proton 帳戶。"
@@ -5188,6 +5344,9 @@
       "Credits used": [
         "已使用儲值"
       ],
+      "Current login password": [
+        ""
+      ],
       "Customize invoices": [
         "自訂帳單"
       ],
@@ -5205,6 +5364,9 @@
       ],
       "Default language": [
         "預設語言"
+      ],
+      "Default language (${ defaultLanguage })": [
+        ""
       ],
       "Default PGP scheme": [
         "預設 PGP 格式"
@@ -5562,6 +5724,9 @@
       ],
       "Select your country": [
         "請選擇您的國家"
+      ],
+      "Send and reply to invites in": [
+        ""
       ],
       "Send auto-reply": [
         "發送自動回覆"
@@ -6119,6 +6284,35 @@
         "${ appName } 的新版本可供使用。${ reloadButton }。"
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "如何從其他服務匯入行事曆"
+      ],
+      "How to import calendars from Outlook": [
+        "如何從 Outlook 匯入行事曆"
+      ],
+      "How to import calendars from Yahoo": [
+        "如何從 Yahoo 匯入行事曆"
+      ],
+      "How to import contacts from another service": [
+        "如何從其他服務匯入聯絡人"
+      ],
+      "How to import contacts from Outlook": [
+        "如何從 Outlook 匯入聯絡人"
+      ],
+      "How to import contacts from Yahoo": [
+        "如何從 Yahoo 匯入聯絡人"
+      ],
+      "How to import emails from another service": [
+        "如何從其他服務匯入電子郵件"
+      ],
+      "How to import emails from Outlook": [
+        "如何從 Outlook 匯入電子郵件"
+      ],
+      "How to import emails from Yahoo": [
+        "如何從 Yahoo 匯入電子郵件"
+      ]
+    },
     "Modal title and action": {
       "Add calendar": [
         "新增行事曆"
@@ -6345,6 +6539,11 @@
       ],
       "week before": [
         "週前"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -7003,6 +7202,9 @@
       ]
     },
     "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        "轉向隱私。輕鬆且安全。"
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "您可以為單一郵件套用多個標籤，但一般而言，郵件只能歸於單一資料夾中。拖放以重新排序您的資料夾和標籤。"
       ]
@@ -7918,6 +8120,9 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Invitations": [
+        ""
+      ],
       "Invoices": [
         "帳單"
       ],
@@ -8098,6 +8303,9 @@
       "Select contact group": [
         "選擇聯絡人群組"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select plan": [
         "選擇方案"
       ],
@@ -8229,6 +8437,9 @@
       ],
       "Warning!": [
         "警告！"
+      ],
+      "What would you like to import?": [
+        "您想匯入什麼？"
       ],
       "What's new": [
         "最近更新"
@@ -8532,6 +8743,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "密碼至少必須包含 ${ length } 個字元"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "點擊以重播影片"
+      ],
+      "Replay video": [
+        "重播影片"
       ]
     },
     "VPN feature": {

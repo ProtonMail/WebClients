@@ -119,8 +119,8 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmar a abertura da ligação ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -962,13 +962,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -2144,6 +2144,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "O ProtonContacts não suporta ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4079,6 +4084,11 @@
         "Desconhecido"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Escolha um nome a mostrar"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Seleccione a última data do evento"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Seleccione a hora para enviar esta notificação"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "A encriptação do correio força a assinatura para ajudar a autenticar as suas mensagens enviadas"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Dados encriptados com assinatura digital verificada"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "A senha deve conter pelo menos ${ length } carácter",
         "A senha deve conter pelo menos $ ${ length } caracteres"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

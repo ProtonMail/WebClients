@@ -119,8 +119,8 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmeu obrir l'enllaç ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grup de contactes"
@@ -962,14 +962,14 @@
       "Calendar link is temporarily inaccessible": [
         "L'enllaç del calendari no és accessible temporalment"
       ],
-      "Calendar link is wrong": [
-        "L'enllaç del calendari és erroni"
-      ],
       "Failed to sync calendar": [
         "Error sincronitzant el calendari"
       ],
       "More than 12 hours passed since last update": [
         "Han passat més de 12 hores des de la darrera actualització"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2144,6 +2144,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts ${ forNow } no és compatible amb:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4079,6 +4084,11 @@
         "Desconegut"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Trieu un nom de visualització"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Seleccioneu l'última data de l'esdeveniment"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Seleccioneu l'hora per enviar aquesta notificació"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El xifratge de correu electrònic força la signatura del correu a ajudar a autenticar els vostres missatges enviats"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "La contrasenya ha de contenir com a mínim ${ length } caràcter",
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

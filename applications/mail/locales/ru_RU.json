@@ -18,13 +18,13 @@
         "Активировать"
       ],
       "Activate recovery": [
-        ""
+        "Активировать восстановление"
       ],
       "Add": [
         "Добавить"
       ],
       "Add address": [
-        ""
+        "Добавить адрес"
       ],
       "Add condition": [
         "Добавить условие"
@@ -33,7 +33,7 @@
         "Добавить контакт"
       ],
       "Add email": [
-        ""
+        "Добавить эл. почту"
       ],
       "Add group": [
         "Добавить группу"
@@ -48,7 +48,7 @@
         "Добавить участника"
       ],
       "Add phone number": [
-        ""
+        "Добавить номер телефона"
       ],
       "Add screenshot(s)": [
         "Добавить снимки экрана"
@@ -114,7 +114,7 @@
         "Копия, скрытая копия"
       ],
       "CC BCC": [
-        ""
+        "Копия Скрытая копия"
       ],
       "Change page": [
         "Изменить страницу"
@@ -183,7 +183,7 @@
         "Подтвердить"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Подтвердите открытие ссылки ${ linkToShow }"
       ],
       "Contact group": [
         "Группа контактов"
@@ -279,7 +279,7 @@
         "Отказаться"
       ],
       "Dismiss get started checklist": [
-        ""
+        "Отклонить контрольный список начала работы"
       ],
       "Done": [
         "Готово"
@@ -324,7 +324,7 @@
         "Раскрыть окно редактора сообщений"
       ],
       "Expand URL": [
-        ""
+        "Развернуть URL"
       ],
       "Export": [
         "Экспорт"
@@ -333,7 +333,7 @@
         "Экспортировать контакты"
       ],
       "Fewer search options": [
-        ""
+        "Меньше настроек поиска"
       ],
       "Filter on...": [
         "Фильтр по..."
@@ -473,6 +473,9 @@
       "Load more": [
         "Загрузить ещё"
       ],
+      "Load unprotected": [
+        "Загрузить без защиты"
+      ],
       "Loading verification": [
         "Загружается проверка"
       ],
@@ -588,7 +591,7 @@
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
-        ""
+        "Открыть ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
@@ -597,7 +600,7 @@
         "Открыть календарь"
       ],
       "Open get started checklist modal": [
-        ""
+        "Открыть модальное окно с контрольным списком для начала работы"
       ],
       "Open navigation": [
         "Открыть навигацию"
@@ -704,6 +707,9 @@
       "Retry": [
         "Повторить"
       ],
+      "Revert to original display": [
+        "Возврат к исходному отображению"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -753,10 +759,10 @@
         "Установить по умолчанию"
       ],
       "Set expiration time": [
-        ""
+        "Установите время истечения срока действия"
       ],
       "Set recovery phrase": [
-        ""
+        "Установить фразу для восстановления"
       ],
       "Share via link": [
         "Доступ по ссылке"
@@ -777,7 +783,7 @@
         "Показать подробности"
       ],
       "Show fewer search options": [
-        ""
+        "Показать меньше настроек поиска"
       ],
       "Show folders": [
         "Показать папки"
@@ -809,6 +815,9 @@
       "Skip": [
         "Пропустить"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Некоторые изображения не могут быть загружены с защитой от отслеживания"
+      ],
       "Start import": [
         "Начать импорт"
       ],
@@ -828,13 +837,16 @@
         "Переключить аккаунт"
       ],
       "Switch to rich text": [
-        ""
+        "Переключиться на обогащенный текст"
       ],
       "Theme": [
         "Тема"
       ],
       "This message contains embedded images.": [
         "В этом сообщении есть встроенные изображения."
+      ],
+      "This message contains remote content.": [
+        "Это сообщение содержит удаленное содержимое."
       ],
       "Trust": [
         "Доверять"
@@ -879,13 +891,13 @@
         "Не доверять"
       ],
       "Update": [
-        ""
+        "Обновить"
       ],
       "Update recovery file": [
-        ""
+        "Обновить файл восстановления"
       ],
       "Update recovery phrase": [
-        ""
+        "Обновить фразу для восстановления"
       ],
       "Upgrade": [
         "Повысить"
@@ -945,7 +957,7 @@
         "Показать исходный код"
       ],
       "Why not?": [
-        ""
+        "Why not?"
       ],
       "Yes": [
         "Да"
@@ -1357,7 +1369,7 @@
         ""
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } принял приглашение на это событие."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } принимает приглашение и предлагает новое время для одного повтора события."
@@ -1390,7 +1402,7 @@
         ""
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } отклонил приглашение на это событие."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } отклоняет приглашение и предлагает новое время для одного повтора события."
@@ -1432,7 +1444,7 @@
         ""
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } отклонил приглашение на это событие."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } отклонил ваше приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
@@ -1495,7 +1507,7 @@
         "${ participantName } предварительно принял ваше приглашение и предложил новое время для этого события. Ответ и предложение устарели."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } не в списке участников."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } предлагает новое время для одного повтора этого события."
@@ -1513,7 +1525,7 @@
         ""
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } предварительно принял приглашение на это событие."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } предварительно принимает приглашение и предлагает новое время для одного повтора события."
@@ -1531,7 +1543,7 @@
         "(Посещение необязательно)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        ""
+        "Добавление повторов к событию в настоящее время не поддерживается"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "К событию «${ veventIcsTitle }» был добавлен повтор"
@@ -1540,19 +1552,19 @@
         "Обновление события в настоящее время не поддерживается"
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
+        "Изменение расписания события в настоящее время не поддерживается"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        ""
+        "Этот ответ не может быть добавлен в ${ calendarAppName }, поскольку на данный момент мы поддерживаем ответы только на все события серии"
       ],
       "This event has been canceled.": [
-        ""
+        "Это событие было отменено."
       ],
       "This event has been updated.": [
         "Это событие было обновлено."
       ],
       "This invitation is out of date. The event has been canceled.": [
-        ""
+        "Это приглашение устарело. Событие было отменено."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Приглашение устарело. Событие было удалено."
@@ -1606,14 +1618,14 @@
       "Calendar link is temporarily inaccessible": [
         "Ссылка на календарь временно недоступна"
       ],
-      "Calendar link is wrong": [
-        "Неверная ссылка календаря"
-      ],
       "Failed to sync calendar": [
         "Не удалось синхронизировать календарь"
       ],
       "More than 12 hours passed since last update": [
         "Более 12 часов прошло с момента последнего обновления"
+      ],
+      "Unsupported calendar format": [
+        "Неподдерживаемый формат календаря"
       ]
     },
     "Calendar widget banner": {
@@ -1839,7 +1851,7 @@
         "Ежедневно в ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Ежедневно до ${ untilString }"
+        "Ежедневно ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Каждый ${ interval } день",
@@ -1857,7 +1869,7 @@
         "Каждый ${ interval } день, ${ untilString }",
         "Каждые ${ interval } дня, ${ untilString }",
         "Каждые ${ interval } дней, ${ untilString }",
-        "Каждые ${ interval } дня, ${ untilString }"
+        "Каждые ${ interval } дней, ${ untilString }"
       ],
       "until ${ dateString }": [
         "до ${ dateString }"
@@ -1979,7 +1991,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "Событие «${ eventTitle }» было отменено."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
@@ -2017,40 +2029,40 @@
     },
     "Email reminder banner": {
       "Event is tomorrow": [
-        ""
+        "Событие состоится завтра"
       ],
       "Event starting now": [
-        ""
+        "Событие начинается сейчас"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "",
-        "",
-        "",
-        ""
+        "Событие начнется через ${ minutesUntilEvent } минуту",
+        "Событие начнется через ${ minutesUntilEvent } минуты",
+        "Событие начнется через ${ minutesUntilEvent } минут",
+        "Событие начнется через ${ minutesUntilEvent } минуты"
       ],
       "Event starts tomorrow": [
-        ""
+        "Событие начинается завтра"
       ]
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "Данные о событиях зашифрованы. Войдите в систему снова, чтобы восстановить Календарь и расшифровать данные. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        ""
+        "Детали события не могут быть расшифрованы. ${ whyNotLink }"
       ]
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        ""
+        "Событие больше не находится в вашем календаре"
       ]
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        ""
+        "Событие было отменено"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        ""
+        "Событие было обновлено. Это напоминание устарело."
       ]
     },
     "Email subject": {
@@ -2158,10 +2170,10 @@
         "Ошибка расшифровки: при расшифровке зашифрованного содержимого этого сообщения произошёл сбой."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
@@ -2278,7 +2290,7 @@
         "Нет адреса с ключами для создания сообщения"
       ],
       "No data to import": [
-        ""
+        "Нет данных для импорта"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Ни один их полученных ключей внутреннего пользователя не годен для отправки"
@@ -2341,10 +2353,10 @@
         "Пожалуйста, обновите страницу."
       ],
       "Please repeat the password": [
-        ""
+        "Пожалуйста, повторите пароль"
       ],
       "Please set a password": [
-        ""
+        "Пожалуйста, задайте пароль"
       ],
       "Preferences could not be saved": [
         "Настройки не могут быть сохранены"
@@ -2528,16 +2540,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Черновики нельзя переместить в папку Входящие"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Черновики нельзя переместить в папку Спам"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Отправленные сообщения нельзя переместить в папку Входящие"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Отправленные сообщения нельзя переместить в папку Спам"
       ],
       "This action cannot be performed": [
         "Невозможно выполнить это действие"
@@ -2708,7 +2720,7 @@
         "Вложенный файл ICS невозможно расшифровать"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Невозможно прочитать вложенный файл ICS"
       ],
       "Invalid invitation": [
         "Приглашение недействительно"
@@ -2867,7 +2879,7 @@
         ""
       ],
       "You're all set!": [
-        ""
+        "Все готово!"
       ]
     },
     "Get started checklist incentive": {
@@ -2875,10 +2887,10 @@
         ""
       ],
       "Expires soon": [
-        ""
+        "Скоро истекает"
       ],
       "Expires today": [
-        ""
+        "Истекает сегодня"
       ],
       "Only ${ days } day left": [
         "",
@@ -2889,19 +2901,19 @@
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Доступно для iOS и Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
         ""
       ],
       "Import contacts or emails": [
-        ""
+        "Импортируйте контакты или электронные письма"
       ],
       "Import your contacts or messages": [
-        ""
+        "Импортируйте свои контакты или сообщения"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Быстро перенесите контакты или электронную почту от любого провайдера с помощью нашего помощника по импорту Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
         ""
@@ -2912,10 +2924,10 @@
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "Получить мобильное приложение"
       ],
       "Import contacts or emails": [
-        ""
+        "Импортируйте контакты или электронные письма"
       ],
       "Send a message": [
         "Отправить сообщение"
@@ -2926,7 +2938,7 @@
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "Вы можете получить доступ к контрольному списку в любое время отсюда"
       ]
     },
     "Get started checklist title": {
@@ -3080,6 +3092,11 @@
       ],
       "Creating calendar event failed": [
         "Не удалось создать событие календаря"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -3446,7 +3463,7 @@
         "Вы уверены, что хотите безвозвратно удалить это сообщение?"
       ],
       "Attach public key": [
-        ""
+        "Присоединить публичный ключ"
       ],
       "Background color": [
         "Цвет фона"
@@ -3665,7 +3682,7 @@
         "Оценка оставшегося времени..."
       ],
       "Expiration time": [
-        ""
+        "Срок действия"
       ],
       "Expiration Time": [
         "Срок действия"
@@ -3845,7 +3862,7 @@
         "Управлять Вашими ярлыками"
       ],
       "members": [
-        ""
+        "участники"
       ],
       "Members": [
         "Участники"
@@ -3968,10 +3985,10 @@
         "Простой текст"
       ],
       "Please add at least one recipient.": [
-        ""
+        "Пожалуйста, добавьте хотя бы одного получателя."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Пожалуйста, храните ее в безопасности. Он понадобится вам для доступа к вашей учетной записи и расшифровки данных в случае сброса пароля."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
@@ -4091,7 +4108,7 @@
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений этим адресатам."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
       ],
       "Sending": [
         "Отправка"
@@ -4109,7 +4126,7 @@
         "Время сессии истекло."
       ],
       "Set a recovery phrase": [
-        ""
+        "Установите фразу для восстановления"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         "Установить ProtonMail в качестве почтового клиента по умолчанию для этого браузера. ProtonMail будет открываться автоматически после нажатия на почтовую ссылку."
@@ -4231,6 +4248,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        "Это сообщение было скорректировано для соответствия темному фону."
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Это сообщение автоматически создано в ответ на предыдущее сообщение."
       ],
@@ -4268,13 +4288,13 @@
         "Срок действия этого письма истекает ${ formattedDelay }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Срок действия этого сообщения истечет ${ dateString } в ${ formattedTime }"
       ],
       "This message will expire today at ${ formattedTime }": [
-        ""
+        "Срок действия этого сообщения истекает сегодня в ${ formattedTime }"
       ],
       "This message will expire tomorrow at ${ formattedTime }": [
-        ""
+        "Срок действия этого сообщения истечет завтра в ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Этот открытый ключ будет автоматически использован для шифрования электронной почты, отправленной на этот адрес."
@@ -4427,10 +4447,10 @@
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        ""
+        "Вы можете добавить его в качестве вложения или встроить в тело письма."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Вы также можете объединить импортированные календари с существующими календарями Proton."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить процесс ${ importProgressLink }."
@@ -4576,7 +4596,7 @@
         "(бета)"
       ],
       "Optional": [
-        ""
+        "Необязательно"
       ]
     },
     "Info concerning plan features": {
@@ -4851,7 +4871,7 @@
         "${ firstAddress } и ${ count } другие"
       ],
       "(Coming soon)": [
-        ""
+        "(Скоро появится)"
       ],
       "Actions": [
         "Действия"
@@ -4864,6 +4884,9 @@
       ],
       "Add to group": [
         "Добавить в группу"
+      ],
+      "Address": [
+        "Адрес"
       ],
       "ALL": [
         "ВСЁ"
@@ -4908,7 +4931,7 @@
         "Сумма в биткоинах:"
       ],
       "Calendar": [
-        ""
+        "Календарь"
       ],
       "Calendars": [
         "Календари"
@@ -4941,7 +4964,7 @@
         "Условия"
       ],
       "Confirm password": [
-        ""
+        "Подтвердить пароль"
       ],
       "Contacts": [
         "Контакты"
@@ -5010,7 +5033,7 @@
         "Размещение папки"
       ],
       "Frequency": [
-        ""
+        "Частота"
       ],
       "From": [
         "От"
@@ -5070,7 +5093,7 @@
         "Только за последний месяц"
       ],
       "Location": [
-        ""
+        "Место"
       ],
       "Mailbox password": [
         "Пароль почтового ящика"
@@ -5088,7 +5111,7 @@
         "Отметить как"
       ],
       "Message password": [
-        ""
+        "Пароль сообщения"
       ],
       "Move to": [
         "Переместить в"
@@ -5121,13 +5144,13 @@
         "Или"
       ],
       "Participants": [
-        ""
+        "Участники"
       ],
       "Password": [
         "Пароль"
       ],
       "Password hint": [
-        ""
+        "Подсказка к паролю"
       ],
       "Payer": [
         "Плательщик"
@@ -5497,7 +5520,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        ""
+        "Открыть в ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -5717,7 +5740,7 @@
         "Ежемесячно по ${ onDayString } в ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Ежемесячно ${ onDayString } числа, до ${ untilString }"
+        "Ежемесячно ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -5857,6 +5880,11 @@
         "Группа контактов обновлена"
       ],
       "Password has been set successfully": [
+        "Пароль был успешно установлен"
+      ]
+    },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
         ""
       ]
     },
@@ -5932,6 +5960,9 @@
       "Add to existing group": [
         "Добавить в существующую группу"
       ],
+      "All": [
+        "Все"
+      ],
       "Create new group": [
         "Создать новую группу"
       ],
@@ -5998,7 +6029,7 @@
         "Версия браузера"
       ],
       "Confirm password": [
-        ""
+        "Подтвердите пароль"
       ],
       "e.g. Julia Smith": [
         "например, Джулия Смит"
@@ -6513,7 +6544,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "Получите дополнительное хранилище бесплатно"
       ],
       "Release notes": [
         "Примечания к выпуску"
@@ -7008,7 +7039,7 @@
         "Подтвердить адрес получателя?"
       ],
       "Contact details": [
-        ""
+        "Информация контакта"
       ],
       "Contact Details": [
         "Контактные данные"
@@ -7137,7 +7168,7 @@
         "Адреса электронной почты"
       ],
       "Email content": [
-        ""
+        "Содержимое письма"
       ],
       "Email settings": [
         "Настройки эл. почты"
@@ -7204,6 +7235,9 @@
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
+      ],
+      "Load embedded images": [
+        "Показывать встроенные изображения"
       ],
       "Load remote content": [
         "Загрузить внешнее содержимое"
@@ -7323,7 +7357,7 @@
         "Переподписание контактов"
       ],
       "Recipient missing": [
-        ""
+        "Получатель отсутствует"
       ],
       "Recover data": [
         "Восстановление данных"
@@ -7338,7 +7372,7 @@
         "Сообщить о проблеме"
       ],
       "Request new code": [
-        ""
+        "Запросить новый код"
       ],
       "Schedule send": [
         "Запланированная отправка"
@@ -7354,6 +7388,9 @@
       ],
       "Select contact group": [
         "Выбор группы контактов"
+      ],
+      "Select permissions": [
+        "Выберите разрешения"
       ],
       "Select what to import": [
         "Виберете что импортировать"
@@ -7382,9 +7419,6 @@
       "Sign in again to continue": [
         "Чтобы продолжить, повторно войдите ещё раз"
       ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
-      ],
       "Sort conversations": [
         "Сортировка цепочек писем"
       ],
@@ -7395,7 +7429,7 @@
         "Предупреждение об объёме хранилища"
       ],
       "Subject missing": [
-        ""
+        "Тема отсутствует"
       ],
       "Subtotal": [
         "Подитог"
@@ -7482,6 +7516,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрование почты всегда подразумевает применение цифровой подписи, что позволяет подтверждать подлинность отправленных сообщений"
       ],
+      "Encrypted data": [
+        "Зашифрованные данные"
+      ],
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтверждённой цифровой подписью"
       ],
@@ -7542,13 +7579,13 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "Сегодня хороший день, чтобы написать письмо"
       ],
       "Update default font and size": [
-        ""
+        "Шрифт и размер шрифта по умолчанию"
       ],
       "Your default font will look like following:": [
-        ""
+        "Ваш шрифт по умолчанию будет выглядеть следующим образом:"
       ]
     },
     "Validation": {
@@ -7557,6 +7594,14 @@
         "Пароль должен включать по меньшей мере ${ length } символа",
         "Пароль должен включать по меньшей мере ${ length } символов",
         "Пароль должен включать по меньшей мере ${ length } символа"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Нажмите, чтобы воспроизвести видео"
+      ],
+      "Replay video": [
+        "Воспроизвести видео"
       ]
     },
     "VPN feature": {
@@ -7926,7 +7971,7 @@
         "Еженедельно по следующим дням: ${ multipleDaysString } в ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Еженедельно по следующим дням ${ multipleDaysString } до ${ untilString }"
+        "Еженедельно по ${ multipleDaysString } ${ untilString }"
       ],
       "Weekly on all days": [
         "Еженедельно каждый день"
@@ -7935,7 +7980,7 @@
         "Еженедельно во все дни в ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Еженедельно, каждый день до ${ untilString }"
+        "Еженедельно, каждый день ${ untilString }"
       ],
       "Weekly on Friday": [
         "Еженедельно в пятницу"
@@ -7944,7 +7989,7 @@
         "Еженедельно по пятницам в ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Еженедельно по пятницам до ${ untilString }"
+        "Еженедельно по пятницам ${ untilString }"
       ],
       "Weekly on Monday": [
         "Еженедельно в понедельник"
@@ -7953,7 +7998,7 @@
         "Еженедельно в понедельник в ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Еженедельно в понедельник до ${ untilString }"
+        "Еженедельно в понедельник ${ untilString }"
       ],
       "Weekly on Saturday": [
         "Еженедельно в субботу"
@@ -7962,7 +8007,7 @@
         "Еженедельно по субботам в ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Еженедельно по субботам до ${ untilString }"
+        "Еженедельно по субботам ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Еженедельно в воскресенье"
@@ -7971,7 +8016,7 @@
         "Еженедельно в воскресенье в ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Еженедельно по воскресеньям до ${ untilString }"
+        "Еженедельно по воскресеньям ${ untilString }"
       ],
       "Weekly on Thursday": [
         "Еженедельно в четверг"
@@ -7980,7 +8025,7 @@
         "Еженедельно по четвергам в ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Еженедельно по четвергам до ${ untilString }"
+        "Еженедельно по четвергам ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Еженедельно во вторник"
@@ -7989,7 +8034,7 @@
         "Еженедельно по вторникам в ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Еженедельно по вторникам до ${ untilString }"
+        "Еженедельно по вторникам ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Еженедельно в среду"
@@ -7998,7 +8043,7 @@
         "Еженедельно по средам в ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Еженедельно по средам до ${ untilString }"
+        "Еженедельно по средам ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -8039,9 +8084,9 @@
       ],
       "Every ${ interval } year, ${ untilString }": [
         "Каждый ${ interval } год ${ untilString }",
-        "Каждый ${ interval } год ${ untilString }",
-        "Каждый ${ interval } год ${ untilString }",
-        "Каждый ${ interval } год ${ untilString }"
+        "Каждые ${ interval } года ${ untilString }",
+        "Каждый ${ interval } лет ${ untilString }",
+        "Каждый ${ interval } года ${ untilString }"
       ],
       "Yearly": [
         "Ежегодно"
@@ -8050,7 +8095,7 @@
         "Ежегодно в ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Ежегодно до ${ untilString }"
+        "Ежегодно ${ untilString }"
       ]
     }
   }

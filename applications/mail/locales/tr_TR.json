@@ -467,6 +467,9 @@
       "Load more": [
         "Daha fazla yükle"
       ],
+      "Load unprotected": [
+        ""
+      ],
       "Loading verification": [
         "Doğrulama yükleniyor"
       ],
@@ -698,6 +701,9 @@
       "Retry": [
         "Yeniden dene"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -803,6 +809,9 @@
       "Skip": [
         "Atla"
       ],
+      "Some images could not be loaded with tracking protection": [
+        ""
+      ],
       "Start import": [
         "İçe aktarmayı başlat"
       ],
@@ -829,6 +838,9 @@
       ],
       "This message contains embedded images.": [
         "Bu ileti gömülü resimler içeriyor."
+      ],
+      "This message contains remote content.": [
+        ""
       ],
       "Trust": [
         "Güven"
@@ -1588,13 +1600,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -3014,6 +3026,11 @@
         "Takvim etkinliği oluşturulamadı"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Detaylar için tıklayın"
@@ -4071,6 +4088,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı bir homograf saldırısı olabilir. Lütfen ziyaret etmek istediğiniz bağlantının bu olduğunu doğrulayın veya bağlantıyı açmayın."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Bu ileti, önceki bir iletiye yanıt olarak otomatik olarak oluşturulur."
       ],
@@ -4684,6 +4704,9 @@
       ],
       "Add to group": [
         "Gruba ekle"
+      ],
+      "Address": [
+        ""
       ],
       "ALL": [
         "TÜMÜ"
@@ -5668,6 +5691,11 @@
         "Parola başarılı şekilde oluşturuldu"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Sonraki"
@@ -5739,6 +5767,9 @@
     "Option": {
       "Add to existing group": [
         "Mevcut gruba ekle"
+      ],
+      "All": [
+        ""
       ],
       "Create new group": [
         "Yeni grup oluştur"
@@ -6925,6 +6956,9 @@
       "Link confirmation": [
         "Bağlantı onayı"
       ],
+      "Load embedded images": [
+        ""
+      ],
       "Load remote content": [
         "Uzak içeriği yükle"
       ],
@@ -7075,6 +7109,9 @@
       "Select contact group": [
         "Kişi grubunu seç"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         ""
       ],
@@ -7101,9 +7138,6 @@
       ],
       "Sign in again to continue": [
         "Devam etmek için tekrar giriş yapın"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Sohbetleri sırala"
@@ -7200,6 +7234,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-posta şifreleme, gönderilen iletilerinizin kimliğini doğrulamaya yardımcı olmak için e-posta imzasını zorunlu kılar"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
@@ -7273,6 +7310,14 @@
       "Password must contain at least ${ length } character": [
         "Şifre en az ${ length } karakter içermelidir",
         "Şifre en az ${ length } karakter içermelidir"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

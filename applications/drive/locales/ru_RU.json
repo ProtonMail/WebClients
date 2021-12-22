@@ -125,8 +125,8 @@
       "Confirm": [
         "Подтвердить"
       ],
-      "Confirm opening of link ${ link }": [
-        "Подтвердить открытие ссылки ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "Подтвердите открытие ссылки ${ linkToShow }"
       ],
       "Contact group": [
         "Группа контактов"
@@ -881,14 +881,14 @@
       "Calendar link is temporarily inaccessible": [
         "Ссылка на календарь временно недоступна"
       ],
-      "Calendar link is wrong": [
-        "Неверная ссылка календаря"
-      ],
       "Failed to sync calendar": [
         "Не удалось синхронизировать календарь"
       ],
       "More than 12 hours passed since last update": [
         "Более 12 часов прошло с момента последнего обновления"
+      ],
+      "Unsupported calendar format": [
+        "Неподдерживаемый формат календаря"
       ]
     },
     "Composer size": {
@@ -2099,8 +2099,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Если у вас есть один из них, перейдите к настройкам аккаунта Proton, чтобы\nпродолжить процесс разблокировки."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
@@ -3692,6 +3692,11 @@
         "Ваши настройки были успешно изменены"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        "Обратите внимание, что вам необходимо согласиться со всеми разрешениями, запрашиваемыми приложением, чтобы иметь возможность начать импорт."
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Задайте отображаемое имя"
@@ -4729,6 +4734,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрование почты всегда подразумевает применение цифровой подписи, что позволяет подтверждать подлинность отправленных сообщений."
       ],
+      "Encrypted data": [
+        "Зашифрованные данные"
+      ],
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтверждённой цифровой подписью"
       ],
@@ -4807,6 +4815,14 @@
       ],
       "Name must not end with a space": [
         "Имя не может заканчиваться пробелом"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Нажмите, чтобы воспроизвести видео"
+      ],
+      "Replay video": [
+        "Воспроизвести видео"
       ]
     },
     "VPN feature": {

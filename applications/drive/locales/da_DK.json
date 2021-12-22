@@ -125,8 +125,8 @@
       "Confirm": [
         "Bekræft"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bekræft åbning af link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -869,14 +869,14 @@
       "Calendar link is temporarily inaccessible": [
         "Kalenderlink er midlertidig ikke tilgængeligt"
       ],
-      "Calendar link is wrong": [
-        "Kalenderlink er forkert"
-      ],
       "Failed to sync calendar": [
         "Kunne ikke synkronisere kalender"
       ],
       "More than 12 hours passed since last update": [
         "Der er gået mere end 12 timer siden seneste opdatering"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Composer size": {
@@ -2001,8 +2001,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se e-mailen i din indbakke, bedes du tjekke din spammappe."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        "Hvis du har en af disse, skal du fortsætte til Proton-kontoindstillingerne for at\nfortsætte processen med at fjerne spærringen."
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
@@ -3532,6 +3532,11 @@
         "Dine indstillinger er blevet ændret"
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Vælg et visningsnavn"
@@ -4549,6 +4554,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailkryptering gennemtvinger e-mailsignatur som hjælp til godkendelse af dine sendte beskeder"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Krypterede data med bekræftet digital underskrift"
       ],
@@ -4625,6 +4633,14 @@
       ],
       "Name must not end with a space": [
         "Navn må ikke slutte med et mellemrum"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

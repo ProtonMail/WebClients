@@ -125,8 +125,8 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmeu obrir l'enllaç ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grups de contactes"
@@ -869,14 +869,14 @@
       "Calendar link is temporarily inaccessible": [
         "L'enllaç del calendari no és accessible temporalment"
       ],
-      "Calendar link is wrong": [
-        "L'enllaç del calendari és erroni"
-      ],
       "Failed to sync calendar": [
         "Error sincronitzant el calendari"
       ],
       "More than 12 hours passed since last update": [
         "Han passat més de 12 hores des de la darrera actualització"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Composer size": {
@@ -2001,7 +2001,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
-      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3532,6 +3532,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Trieu un nom de visualització"
@@ -4549,6 +4554,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El xifratge de correu electrònic força la signatura del correu a ajudar a autenticar els vostres missatges enviats"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
@@ -4625,6 +4633,14 @@
       ],
       "Name must not end with a space": [
         "El nom no ha de finalitzar amb un espai"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

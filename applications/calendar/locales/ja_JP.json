@@ -119,8 +119,8 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm opening of link ${ link }": [
-        "リンク ${ link } を確認"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "連絡先グループ"
@@ -956,14 +956,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "カレンダーのリンクが間違っています"
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
         "最後のアップデートから 12 時間以上経過しています"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2108,6 +2108,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContactsは${ forNow } をサポートしていません"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -3995,6 +4000,11 @@
         "不明"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "表示名を選択"
@@ -5047,6 +5057,9 @@
       "Select event's last date": [
         ""
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         ""
       ],
@@ -5158,6 +5171,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         ""
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "検証済みデジタル署名付きの暗号化データ"
       ],
@@ -5213,6 +5229,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "パスワードは ${ length } 文字以上必要です"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

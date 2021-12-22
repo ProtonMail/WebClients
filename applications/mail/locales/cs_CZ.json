@@ -473,6 +473,9 @@
       "Load more": [
         "Načíst více"
       ],
+      "Load unprotected": [
+        "Načíst nechráněné"
+      ],
       "Loading verification": [
         "Načítání ověření"
       ],
@@ -704,6 +707,9 @@
       "Retry": [
         "Obnovit"
       ],
+      "Revert to original display": [
+        ""
+      ],
       "Save": [
         "Uložit"
       ],
@@ -809,6 +815,9 @@
       "Skip": [
         "Přeskočit"
       ],
+      "Some images could not be loaded with tracking protection": [
+        "Některé obrázky nebylo možné načíst s ochranou sledování"
+      ],
       "Start import": [
         "Spustit import"
       ],
@@ -835,6 +844,9 @@
       ],
       "This message contains embedded images.": [
         "Tato zpráva obsahuje vložené obrázky."
+      ],
+      "This message contains remote content.": [
+        "Tato zpráva obsahuje vzdálený obsah."
       ],
       "Trust": [
         "Důvěřovat"
@@ -1606,14 +1618,14 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        "Odkaz na kalendář je chybný"
-      ],
       "Failed to sync calendar": [
         "Synchronizace kalendáře selhala"
       ],
       "More than 12 hours passed since last update": [
         "Od poslední aktualizace uběhlo už více jak 12 hodin"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar widget banner": {
@@ -3082,6 +3094,11 @@
         "Selhalo vytvoření události v kalendáři"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } mimo ${ totalContacts } kontakty nebudou nahrané. Klikněte pro detaily"
@@ -4231,6 +4248,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
       ],
+      "This message has been adjusted to comply with a dark background.": [
+        ""
+      ],
       "This message is automatically generated as a response to a previous message.": [
         "Tato zpráva byla automaticky vygenerována jako odpověď na předchozí zprávu."
       ],
@@ -4864,6 +4884,9 @@
       ],
       "Add to group": [
         "Přidat do skupiny"
+      ],
+      "Address": [
+        "Adresa"
       ],
       "ALL": [
         "VŠE"
@@ -5860,6 +5883,11 @@
         ""
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding": {
       "Next": [
         "Další"
@@ -5931,6 +5959,9 @@
     "Option": {
       "Add to existing group": [
         "Přidat do existující skupiny"
+      ],
+      "All": [
+        "Vše"
       ],
       "Create new group": [
         "Vytvořit novou skupinu"
@@ -7205,6 +7236,9 @@
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
       ],
+      "Load embedded images": [
+        "Načíst vložené obrázky"
+      ],
       "Load remote content": [
         "Načíst vzdálený obsah"
       ],
@@ -7355,6 +7389,9 @@
       "Select contact group": [
         "Vybrat skupinu kontaktů"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         ""
       ],
@@ -7381,9 +7418,6 @@
       ],
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
-      ],
-      "Some images could not be loaded with tracking protection [Load unprotected]": [
-        ""
       ],
       "Sort conversations": [
         "Seřadit konverzace"
@@ -7482,6 +7516,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifrování e-mailů posiluje e-mailový podpis, aby Vaše zprávy byly ověřeny"
       ],
+      "Encrypted data": [
+        "Zašifrovaná data"
+      ],
       "Encrypted data with verified digital signature": [
         "Zašifrovaná data s ověřeným digitálním podpisem"
       ],
@@ -7557,6 +7594,14 @@
         "Heslo musí obsahovat alespoň ${ length } znaky",
         "Heslo musí obsahovat alespoň ${ length } znaků",
         "Heslo musí obsahovat alespoň ${ length } znaků"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "Kliknutím přehrát video"
+      ],
+      "Replay video": [
+        "Přehrát video"
       ]
     },
     "VPN feature": {

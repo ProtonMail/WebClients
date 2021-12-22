@@ -119,8 +119,8 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmar apertura del enlace ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -962,14 +962,14 @@
       "Calendar link is temporarily inaccessible": [
         "El enlace del calendario no está accesible temporalmente"
       ],
-      "Calendar link is wrong": [
-        "El enlace del calendario es erróneo"
-      ],
       "Failed to sync calendar": [
         "Error al sincronizar el calendario"
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2144,6 +2144,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonCalendar no soporta ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4079,6 +4084,11 @@
         "Desconocido"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Introduce el nombre a mostrar"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Selecciona la última fecha del evento"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Selecciona la hora de envío de esta notificación"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El cifrado del correo electrónico obliga a la firma del correo electrónico a ayudar a autenticar tus mensajes enviados"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "La contraseña debe contener al menos ${ length } caracter",
         "La contraseña debe contener al menos ${ length } caracteres"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

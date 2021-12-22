@@ -119,8 +119,8 @@
       "Confirm": [
         "Konfirmasi"
       ],
-      "Confirm opening of link ${ link }": [
-        "Konfirmasi membuka tautan ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Grup kontak"
@@ -956,13 +956,13 @@
       "Calendar link is temporarily inaccessible": [
         ""
       ],
-      "Calendar link is wrong": [
-        ""
-      ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ],
+      "Unsupported calendar format": [
         ""
       ]
     },
@@ -2108,6 +2108,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts tidak mendukung ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -3995,6 +4000,11 @@
         "Tidak dikenal"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Pilih nama tampilan"
@@ -5047,6 +5057,9 @@
       "Select event's last date": [
         "Pilih tanggal akhir acara"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Pilih waktu pengiriman notifikasi"
       ],
@@ -5158,6 +5171,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Enkripsi surel mewajibkan tanda tangan surel untuk mengautentikasi pesan yang Anda kirim"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
       ],
@@ -5213,6 +5229,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Kata sandi minimal ${ length } karakter"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {

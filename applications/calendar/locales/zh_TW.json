@@ -119,8 +119,8 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm opening of link ${ link }": [
-        "確認開啟連結 ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        "確認開啟連結 ${ linkToShow }"
       ],
       "Contact group": [
         "聯絡人群組"
@@ -956,14 +956,14 @@
       "Calendar link is temporarily inaccessible": [
         "行事曆連結暫時無法存取"
       ],
-      "Calendar link is wrong": [
-        "行事曆連結有誤"
-      ],
       "Failed to sync calendar": [
         "同步行事曆失敗"
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
+      ],
+      "Unsupported calendar format": [
+        "不支援的行事曆格式"
       ]
     },
     "Calendar view": {
@@ -2108,6 +2108,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts ${ forNow }不支援："
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -3995,6 +4000,11 @@
         "未知"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "選擇一個顯示名稱"
@@ -5047,6 +5057,9 @@
       "Select event's last date": [
         "請選擇事件的最後一日"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "請選擇此通知發送的時間"
       ],
@@ -5158,6 +5171,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "電子郵件加密強制電子郵件簽章，以助驗證您已寄送郵件的真確性"
       ],
+      "Encrypted data": [
+        "已加密資料"
+      ],
       "Encrypted data with verified digital signature": [
         "經加密資料，已驗證數碼簽章"
       ],
@@ -5213,6 +5229,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "密碼至少必須包含 ${ length } 個字元"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "點擊以重播影片"
+      ],
+      "Replay video": [
+        "重播影片"
       ]
     },
     "VPN feature": {

@@ -119,8 +119,8 @@
       "Confirm": [
         "Bevestigen"
       ],
-      "Confirm opening of link ${ link }": [
-        "Bevestig het openen van link ${ link }"
+      "Confirm opening of link ${ linkToShow }": [
+        ""
       ],
       "Contact group": [
         "Contactgroep"
@@ -962,14 +962,14 @@
       "Calendar link is temporarily inaccessible": [
         "Agendalink is tijdelijk ontoegankelijk"
       ],
-      "Calendar link is wrong": [
-        "Agenda link is verkeerd"
-      ],
       "Failed to sync calendar": [
         "Synchronisatie van de agenda is mislukt"
       ],
       "More than 12 hours passed since last update": [
         "Er is meer dan 12 uur verstreken sinds de laatste update"
+      ],
+      "Unsupported calendar format": [
+        ""
       ]
     },
     "Calendar view": {
@@ -2144,6 +2144,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts ondersteunt ${ forNow } nog geen:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -4079,6 +4084,11 @@
         "Onbekend"
       ]
     },
+    "Oauth instructions": {
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "Choose a display name": [
         "Kies een weergavenaam"
@@ -5146,6 +5156,9 @@
       "Select event's last date": [
         "Selecteer laatste datum van afspraak"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select the time to send this notification": [
         "Selecteer de tijd om deze melding te verzenden"
       ],
@@ -5257,6 +5270,9 @@
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailversleuteling vereist dat u de e-mails ook ondertekent, zodat anderen uw berichten kunnen verifiëren"
       ],
+      "Encrypted data": [
+        ""
+      ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
@@ -5313,6 +5329,14 @@
       "Password must contain at least ${ length } character": [
         "Wachtwoord moet ten minste ${ length } teken bevatten",
         "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        ""
+      ],
+      "Replay video": [
+        ""
       ]
     },
     "VPN feature": {
