@@ -44,7 +44,7 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], p
     }
     try {
         const result = await readFileAsBuffer(file);
-        return encryptAttachment(new Uint8Array(result), file, inline, pubKeys, privKey);
+        return await encryptAttachment(new Uint8Array(result), file, inline, pubKeys, privKey);
     } catch (e: any) {
         throw new Error(c('Error').t`Failed to encrypt attachment. Please try again.`);
     }
