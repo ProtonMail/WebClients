@@ -3,7 +3,7 @@ import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-route
 import ContactsGeneralSettings from './ContactsGeneralSettings';
 import ContactsImportSettings from './ContactsImportSettings';
 
-const ContactsSettingsRouter = () => {
+const ContactsSettingsRouter = ({ redirect }: { redirect: string }) => {
     const { path } = useRouteMatch();
     const location = useLocation();
 
@@ -15,7 +15,7 @@ const ContactsSettingsRouter = () => {
             <Route path={`${path}/import-export`}>
                 <ContactsImportSettings location={location} />
             </Route>
-            <Redirect to={`${path}/dashboard`} />
+            <Redirect to={redirect} />
         </Switch>
     );
 };
