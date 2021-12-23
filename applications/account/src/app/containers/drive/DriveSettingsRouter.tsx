@@ -2,7 +2,7 @@ import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-route
 
 import DriveGeneralSettings from './DriveGeneralSettings';
 
-const DriveSettingsRouter = () => {
+const DriveSettingsRouter = ({ redirect }: { redirect: string }) => {
     const { path } = useRouteMatch();
     const location = useLocation();
 
@@ -11,7 +11,7 @@ const DriveSettingsRouter = () => {
             <Route path={`${path}/general`}>
                 <DriveGeneralSettings location={location} />
             </Route>
-            <Redirect to={`${path}/dashboard`} />
+            <Redirect to={redirect} />
         </Switch>
     );
 };

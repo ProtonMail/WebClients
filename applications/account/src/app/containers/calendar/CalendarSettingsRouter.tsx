@@ -23,9 +23,10 @@ import CalendarGeneralSettings from './CalendarGeneralSettings';
 interface Props {
     user: UserModel;
     loadingFeatures: boolean;
+    redirect: string;
 }
 
-const CalendarSettingsRouter = ({ user, loadingFeatures }: Props) => {
+const CalendarSettingsRouter = ({ user, loadingFeatures, redirect }: Props) => {
     const { path } = useRouteMatch();
     const location = useLocation();
 
@@ -72,7 +73,7 @@ const CalendarSettingsRouter = ({ user, loadingFeatures }: Props) => {
                     user={user}
                 />
             </Route>
-            <Redirect to={`${path}/dashboard`} />
+            <Redirect to={redirect} />
         </Switch>
     );
 };

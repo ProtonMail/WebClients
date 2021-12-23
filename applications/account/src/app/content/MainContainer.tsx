@@ -15,10 +15,11 @@ import {
     FeatureCode,
 } from '@proton/components';
 
+import { UserModel } from '@proton/shared/lib/interfaces';
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
 import AccountSidebar from './AccountSidebar';
-import AccountDashboardSettings from '../containers/account/AccountDashboardSettings';
+import AccountDashboardSettings, { hasAccountDashboardPage } from '../containers/account/AccountDashboardSettings';
 import AccountSecuritySettings from '../containers/account/AccountSecuritySettings';
 import AccountRecoverySettings, { hasRecoverySettings } from '../containers/account/AccountRecoverySettings';
 import AccountAccountAndPasswordSettings from '../containers/account/AccountAccountAndPasswordSettings';
@@ -35,13 +36,23 @@ const ContactsSettingsRouter = lazy(() => import('../containers/contacts/Contact
 const VpnSettingsRouter = lazy(() => import('../containers/vpn/VpnSettingsRouter'));
 const DriveSettingsRouter = lazy(() => import('../containers/drive/DriveSettingsRouter'));
 
-const DEFAULT_REDIRECT = `/${getSlugFromApp(DEFAULT_APP)}/dashboard`;
-
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
 const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
 const contactsSlug = getSlugFromApp(APPS.PROTONCONTACTS);
+
+const getDefaultRedirect = (user: UserModel) => {
+    if (hasAccountDashboardPage(user)) {
+        return '/dashboard';
+    }
+
+    if (hasRecoverySettings(user)) {
+        return '/recovery';
+    }
+
+    return '/account-password';
+};
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -63,11 +74,14 @@ const MainContainer = () => {
 
     const app = getAppFromPathnameSafe(location.pathname);
 
+    
     if (!app) {
-        return <Redirect to={DEFAULT_REDIRECT} />;
+        return <Redirect to={`/${getSlugFromApp(DEFAULT_APP)}${getDefaultRedirect(user)}`} />;
     }
 
     const appSlug = getSlugFromApp(app);
+
+    const redirect = `/${appSlug}${getDefaultRedirect(user)}`;
 
     /*
      * There's no logical app to return/go to from VPN settings since the
@@ -97,9 +111,11 @@ const MainContainer = () => {
     return (
         <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
             <Switch>
-                <Route path={`/${appSlug}/dashboard`}>
-                    <AccountDashboardSettings location={location} setActiveSection={() => {}} />
-                </Route>
+                {hasAccountDashboardPage(user) && (
+                    <Route path={`/${appSlug}/dashboard`}>
+                        <AccountDashboardSettings location={location} setActiveSection={() => {}} />
+                    </Route>
+                )}
                 {hasRecoverySettings(user) && (
                     <Route path={`/${appSlug}/recovery`}>
                         <AccountRecoverySettings location={location} setActiveSection={() => {}} />
@@ -131,30 +147,30 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <MailSettingsRouter />
+                        <MailSettingsRouter redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <CalendarSettingsRouter user={user} loadingFeatures={loadingFeatures} />
+                        <CalendarSettingsRouter redirect={redirect} user={user} loadingFeatures={loadingFeatures} />
                     </Suspense>
                 </Route>
                 <Route path={`/${contactsSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <ContactsSettingsRouter />
+                        <ContactsSettingsRouter redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${vpnSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <VpnSettingsRouter />
+                        <VpnSettingsRouter redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${driveSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <DriveSettingsRouter />
+                        <DriveSettingsRouter redirect={redirect} />
                     </Suspense>
                 </Route>
-                <Redirect to={DEFAULT_REDIRECT} />
+                <Redirect to={redirect} />
             </Switch>
         </PrivateAppContainer>
     );
