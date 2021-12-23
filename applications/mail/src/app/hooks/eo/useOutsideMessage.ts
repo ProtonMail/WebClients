@@ -54,6 +54,8 @@ export const useOutsideMessage = ({ id, setSessionStorage }: Props) => {
     const password = useSelector((state: RootState) => passwordSelector(state));
     const messageState = useSelector((state: RootState) => eoMessageStateSelector(state));
 
+    // When opening the app, we try to get the session from the secureSessionStorage.
+    // If session has not been found, we try to load the EO token from the ID in the URL
     useEffect(() => {
         const fetchToken = async (id: string) => {
             if (setSessionStorage) {

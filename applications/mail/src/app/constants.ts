@@ -20,6 +20,8 @@ export const UNDO_SEND_DELAY = 5000;
 export const SCHEDULED_MESSAGES_LIMIT = 100;
 export const SCHEDULED_MAX_DATE_DAYS = 30;
 
+export const MIN_DELAY_SENT_NOTIFICATION = 2500;
+
 export const ELEMENT_TYPES = {
     MESSAGE: 'message',
     CONVERSATION: 'conversation',
@@ -208,6 +210,10 @@ export const emailTrackerProtectionURL = 'https://protonmail.com/support/email-t
 export const SUCCESS_NOTIFICATION_EXPIRATION = 7500;
 
 export const EO_REDIRECT_PATH = '/eo';
+export const EO_MESSAGE_REDIRECT_PATH = `${EO_REDIRECT_PATH}/message`;
+export const EO_REPLY_REDIRECT_PATH = `${EO_REDIRECT_PATH}/reply`;
+
+export const EO_MAX_REPLIES_NUMBER = 5;
 
 // Keys used for secure session storage
 export const EO_TOKEN_KEY = 'proton:eo_token';

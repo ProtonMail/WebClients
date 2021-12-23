@@ -23,15 +23,13 @@ import useDelaySendSeconds from '../useDelaySendSeconds';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
 import { useSendModifications } from './useSendModifications';
-import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
+import { MIN_DELAY_SENT_NOTIFICATION, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
 import { cancelScheduled, endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
 import LoadingNotificationContent from '../../components/notifications/LoadingNotificationContent';
-
-const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
@@ -193,7 +191,7 @@ export const useSendMessage = () => {
                     }
                     if (hasUndo) {
                         // When we close the notification, we consider the message as sent
-                        // It's a bit more complicated in reallity, the server will take a few more seconds to actully send the message
+                        // It's a bit more complicated in reality, the server will take a few more seconds to actually send the message
                         // It creates a small window of time during which the UI allow to reply to message in the outbox
                         // This should be handled by the backend
                         dispatch(endUndo(localID));

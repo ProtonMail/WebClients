@@ -48,7 +48,11 @@ export const getDateHeader = (headers: Headers) => {
 export const serializeFormData = (data: { [key: string]: any }) => {
     const formData = new FormData();
     Object.keys(data).forEach((key) => {
-        formData.append(key, data[key]);
+        if (Array.isArray(data[key])) {
+            data[key].forEach((val: any) => formData.append(key, val));
+        } else {
+            formData.append(key, data[key]);
+        }
     });
     return formData;
 };
