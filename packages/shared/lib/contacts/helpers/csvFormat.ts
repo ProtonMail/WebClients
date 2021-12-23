@@ -8,6 +8,7 @@ import {
     PreVcardProperty,
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
+import { getStringContactValue } from '../properties';
 
 // See './csv.ts' for the definition of pre-vCard and pre-vCards contact
 
@@ -581,7 +582,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
  * When there is only one pre-vCard property in a pre-vCards property, get the property
  */
 const getFirstValue = (preVcards: PreVcardProperty[]): string =>
-    (preVcards[0].checked ? preVcards[0].value : '') as string;
+    getStringContactValue(preVcards[0].checked ? preVcards[0].value : '');
 
 /**
  * This object contains the functions that must be used when combining pre-vCard properties into
@@ -602,7 +603,7 @@ export const combine: Combine = {
                 if (typeof value === 'string') {
                     value = sanitizeStringValue(value);
                 } else {
-                    value = value.map((val) => sanitizeStringValue(val));
+                    value = value.map((val) => sanitizeStringValue(getStringContactValue(val)));
                 }
 
                 propertyADR[combineIndex || 0] = value;
@@ -614,7 +615,7 @@ export const combine: Combine = {
         const propertyORG: string[] = new Array(2).fill('');
         preVcards.forEach(({ value, checked, combineIndex }) => {
             if (checked) {
-                propertyORG[combineIndex || 0] = value as string;
+                propertyORG[combineIndex || 0] = getStringContactValue(value);
             }
         });
         return propertyORG.filter(Boolean).join(';');
