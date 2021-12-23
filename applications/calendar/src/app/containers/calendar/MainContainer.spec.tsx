@@ -169,16 +169,6 @@ jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
         },
     ]),
 }));
-jest.mock('@proton/components/helpers/appVersion', () => ({
-    getAppVersion: () => 'appVersion',
-}));
-jest.mock('@proton/shared/lib/apps/slugHelper', () => ({
-    getSlugFromApp: () => 'slugFromApp',
-}));
-jest.mock('@proton/shared/lib/apps/helper', () => ({
-    getAppName: () => 'appName',
-    getAppHrefBundle: () => 'appHrefBundle',
-}));
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => () => ({}));
