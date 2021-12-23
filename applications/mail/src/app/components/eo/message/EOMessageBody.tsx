@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef } from 'react';
 import { classnames } from '@proton/components';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -11,19 +11,9 @@ interface Props {
     messageLoaded: boolean;
     bodyLoaded: boolean;
     sourceMode: boolean;
-    originalMessageMode: boolean;
-    toggleOriginalMessage?: () => void;
 }
 
-const EOMessageBody = ({
-    message,
-    messageLoaded,
-    bodyLoaded,
-    sourceMode: inputSourceMode,
-    originalMessageMode,
-    toggleOriginalMessage,
-}: Props) => {
-    console.log(toggleOriginalMessage);
+const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSourceMode }: Props) => {
     const bodyRef = useRef<HTMLDivElement>(null);
     const plain = isPlainText(message.data);
 
@@ -35,21 +25,12 @@ const EOMessageBody = ({
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
 
-    const [, forceRefresh] = useState({});
-
     const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
     const decryptingMode = !encryptedMode && !sourceMode && !bodyLoaded && messageLoaded;
     const loadingMode = !messageLoaded;
     const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
     const isBlockquote = blockquote !== '';
-    const showBlockquote = originalMessageMode;
-
-    useEffect(() => {
-        // Images need a second render to find the anchors for the portal
-        // This forced refresh create this doubled render when blockquote is toggled
-        setTimeout(() => forceRefresh({}));
-    }, [showBlockquote]);
 
     return (
         <div
@@ -77,7 +58,7 @@ const EOMessageBody = ({
                     <MessageBodyIframe
                         content={content}
                         blockquoteContent={blockquote}
-                        showBlockquote={showBlockquote}
+                        showBlockquote={false}
                         showBlockquoteToggle={isBlockquote}
                         wrapperRef={bodyRef}
                         onContentLoaded={() => {}}

@@ -22,10 +22,8 @@ interface Props {
     labelID: string;
     message: MessageState;
     messageLoaded: boolean;
-    sourceMode: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
-    onSourceMode: (sourceMode: boolean) => void;
     breakpoints: Breakpoints;
     parentMessageRef: React.RefObject<HTMLElement>;
 }
@@ -34,17 +32,14 @@ const EOHeaderExpanded = ({
     labelID,
     message,
     messageLoaded,
-    sourceMode,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
-    onSourceMode,
     breakpoints,
     parentMessageRef,
 }: Props) => {
     const { state: showDetails, toggle: toggleDetails } = useToggle();
 
     const { isNarrow } = breakpoints;
-    console.log(onSourceMode);
     const recipients = getRecipients(message.data);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients);
 
@@ -171,12 +166,8 @@ const EOHeaderExpanded = ({
             <section className="message-header-extra border-top pt0-5 ">
                 <div className="ml0-5 mr0-5 mb0-5">
                     {messageLoaded && <ExtraExpirationTime message={message} />}
-                    {!sourceMode && (
-                        <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} isOutside />
-                    )}
-                    {!sourceMode && (
-                        <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} isOutside />
-                    )}
+                    <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} isOutside />
+                    <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} isOutside />
                 </div>
             </section>
         </div>

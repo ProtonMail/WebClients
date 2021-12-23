@@ -21,3 +21,26 @@ export const getEOAttachment = (attachmentId: string, decryptedToken: string, id
     },
     output: 'arrayBuffer',
 });
+
+export const EOReply = (
+    decryptedToken: string,
+    id: string,
+    data: {
+        Body: string;
+        ReplyBody: string;
+        'Filename[]': string[];
+        'MIMEType[]': string[];
+        'ContentID[]': string[];
+        'KeyPackets[]': Blob[];
+        'DataPacket[]': Blob[];
+    }
+) => ({
+    method: 'post',
+    url: 'mail/v4/eo/reply',
+    input: 'form',
+    headers: {
+        Authorization: decryptedToken,
+        'x-eo-uid': id,
+    },
+    data,
+});

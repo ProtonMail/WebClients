@@ -1,33 +1,33 @@
+import { useCallback, useState } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
-import { c } from 'ttag';
 
 import { APPS } from '@proton/shared/lib/constants';
-import { FeaturesProvider, Href, ModalsChildren } from '@proton/components';
+import { FeaturesProvider, ModalsChildren } from '@proton/components';
+import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 
-import Layout from 'proton-account/src/app/public/Layout';
 import { store } from '../../logic/eo/eoStore';
 import EOPageContainer from './EOPageContainer';
 import FakeEventManagerProvider from './FakeEventManagerProvider';
+import EOLayout from './layout/EOLayout';
 
-const MainContainer = () => {
-    const signUpButton = (
-        <Href key="terms" className="button button-solid-norm" href="https://protonmail.com/signup">
-            {c('Link').t`Sign up for free`}
-        </Href>
-    );
+const EOContainer = () => {
+    const [, setState] = useState(1);
+    const refresh = useCallback(() => setState((i) => i + 1), []);
 
     return (
         <FakeEventManagerProvider>
             <FeaturesProvider>
-                <Layout toApp={APPS.PROTONMAIL} customHeaderActions={signUpButton}>
-                    <ReduxProvider store={store}>
-                        <EOPageContainer />
-                    </ReduxProvider>
-                </Layout>
-                <ModalsChildren />
+                <ForceRefreshContext.Provider value={refresh}>
+                    <EOLayout toApp={APPS.PROTONMAIL}>
+                        <ReduxProvider store={store}>
+                            <EOPageContainer />
+                        </ReduxProvider>
+                    </EOLayout>
+                    <ModalsChildren />
+                </ForceRefreshContext.Provider>
             </FeaturesProvider>
         </FakeEventManagerProvider>
     );
 };
 
-export default MainContainer;
+export default EOContainer;

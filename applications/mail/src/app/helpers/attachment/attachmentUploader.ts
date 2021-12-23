@@ -39,7 +39,7 @@ export interface UploadResult {
 /**
  * Read the file locally, and encrypt it. return the encrypted file.
  */
-const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], privKey?: OpenPGPKey[]) => {
+export const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], privKey?: OpenPGPKey[]) => {
     if (!file) {
         throw new TypeError(c('Error').t`You did not provide a file.`);
     }
@@ -109,7 +109,7 @@ const buildHeaders = ({ Inline }: Packets, message: MessageStateWithData) => {
     if (!Inline) {
         return {};
     }
-    // TODO Recipient here ? Because EO sender is the PM Address ?
+
     const cid = generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '');
     return {
         'content-disposition': 'inline',
@@ -122,7 +122,6 @@ const packetToAttachment = (packet: Packets, message: MessageStateWithData) => {
         ID: generateUID('att'),
         Name: packet.Filename,
         Size: packet.FileSize,
-        Filename: packet.Filename,
         MIMEType: packet.MIMEType,
         KeyPackets: new Blob([packet.keys]),
         DataPacket: new Blob([packet.data]),
@@ -184,4 +183,20 @@ export const isSizeExceeded = (message: MessageState, files: File[] = []) => {
     const attachmentsSize = attachments.reduce((acc, attachment) => acc + (attachment.Size || 0), 0);
     const filesSize = files.reduce((acc, file) => acc + (file.size || 0), 0);
     return attachmentsSize + filesSize > ATTACHMENT_MAX_SIZE;
+};
+
+export const checkSize = (
+    createNotification: any,
+    message: MessageState,
+    files: File[],
+    pendingUploadFiles: File[] = []
+) => {
+    const sizeExcedeed = isSizeExceeded(message, [...files, ...pendingUploadFiles]);
+    if (sizeExcedeed) {
+        createNotification({
+            type: 'error',
+            text: c('Error').t`Attachments are limited to 25 MB`,
+        });
+    }
+    return sizeExcedeed;
 };

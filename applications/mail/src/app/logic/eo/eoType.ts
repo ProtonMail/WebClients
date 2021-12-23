@@ -27,7 +27,7 @@ export interface EOMessageParams {
     token: string;
     id: string;
     password: string;
-    set?: (key: string, data: any) => void;
+    set: (key: string, data: any) => void;
 }
 
 export interface EOTokenParams {

@@ -22,7 +22,7 @@
 	border-radius: var(--border-radius-large);
 
 	// fix for plans, same as in subscription flow
-	&:not(.mw30r) {
+	&:not([class*='mw']) {
 		max-inline-size: rem(1500);
 	}
 

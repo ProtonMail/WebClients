@@ -46,8 +46,8 @@ export const eoDefaultMailSettings = {
     DelaySendSeconds: 10,
     EnableFolderColor: 0,
     InheritParentFolderColor: 1,
-    FontFace: undefined,
-    FontSize: undefined,
+    FontFace: null,
+    FontSize: null,
 } as MailSettings;
 
 export const eoDefaultAddress = {} as Address;

@@ -1,14 +1,13 @@
 import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { getAppVersion, useConfig, PublicTopBanners, Href, Icon, ProminentContainer, Logo } from '@proton/components';
+import { getAppVersion, useConfig, PublicTopBanners, Href, ProminentContainer, Logo } from '@proton/components';
 
-import LanguageSelect from './LanguageSelect';
+import LanguageSelect from './EOLanguageSelect';
 
-import './Layout.scss';
+import './EOLayout.scss';
 
 export interface Props {
     children: ReactNode;
@@ -16,7 +15,7 @@ export interface Props {
     toApp: APP_NAMES;
 }
 
-const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
+const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     const { APP_VERSION, APP_VERSION_DISPLAY } = useConfig();
     const termsLink = (
         <Href key="terms" className="signup-footer-link" href="https://protonmail.com/terms-and-conditions">{c('Link')
@@ -33,11 +32,6 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
 
     const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
 
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
-    const driveAppName = getAppName(APPS.PROTONDRIVE);
-    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
-
     return (
         <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed">
             <PublicTopBanners />
@@ -45,49 +39,21 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 <span>
                     <Logo appName={toApp} to="/" toApp={toApp} target="_self" />
                 </span>
-                {hasLanguageSelect && (
-                    <span className="text-right">
-                        <LanguageSelect className="support-dropdown-button" locales={locales} />
-                    </span>
-                )}
-            </header>
-            <div className="pl2 pr2 sign-layout-container flex-item-fluid flex flex-nowrap flex-column flex-justify-space-between">
-                <div>
-                    {children}
-                    <div className="flex-item-noshrink text-center p1">
-                        <span className="text-sm">{c('Info').t`One account for all Proton services`}</span>
-                        <div className="p0-5">
-                            <Icon
-                                name="brand-proton-mail"
-                                className="ml0-5 mr0-5"
-                                alt={mailAppName}
-                                title={mailAppName}
-                                size={20}
-                            />
-                            <Icon
-                                name="brand-proton-calendar"
-                                className="ml0-5 mr0-5"
-                                alt={calendarAppName}
-                                title={calendarAppName}
-                                size={20}
-                            />
-                            <Icon
-                                name="brand-proton-vpn"
-                                className="ml0-5 mr0-5"
-                                alt={vpnAppName}
-                                title={vpnAppName}
-                                size={20}
-                            />
-                            <Icon
-                                name="brand-proton-drive"
-                                className="ml0-5 mr0-5"
-                                alt={driveAppName}
-                                title={driveAppName}
-                                size={20}
-                            />
-                        </div>
+                <div className="flex flex-flex-align-items-center">
+                    {hasLanguageSelect && (
+                        <span className="text-right flex flex-flex-align-items-center">
+                            <LanguageSelect className="support-dropdown-button" locales={locales} />
+                        </span>
+                    )}
+                    <div className="ml1">
+                        <Href key="terms" className="button button-solid-norm" href="https://protonmail.com/signup">
+                            {c('Link').t`Sign up for free`}
+                        </Href>
                     </div>
                 </div>
+            </header>
+            <div className="pl2 pr2 sign-layout-container flex-item-fluid flex flex-nowrap flex-column flex-justify-space-between">
+                <div>{children}</div>
             </div>
             <footer className="flex-item-noshrink text-center p1">
                 <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
@@ -114,4 +80,4 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     );
 };
 
-export default Layout;
+export default EOLayout;

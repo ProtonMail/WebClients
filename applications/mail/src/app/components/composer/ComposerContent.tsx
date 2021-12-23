@@ -128,7 +128,10 @@ const ComposerContent = ({
                     <div
                         onDragLeave={handleDragLeave}
                         onDropCapture={handleDrop}
-                        className="composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center rounded-xl"
+                        className={classnames([
+                            'composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center rounded-xl',
+                            !isOutside && 'mr1-75 ml1-75',
+                        ])}
                     >
                         <span className="composer-editor-dropzone-text no-pointer-events text-center color-weak">
                             <img src={dragAndDrop} alt="" className="mb1" />

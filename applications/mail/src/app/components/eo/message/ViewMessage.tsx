@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
-import { useActiveBreakpoint, useApi } from '@proton/components';
+import { Loader, useActiveBreakpoint, useApi } from '@proton/components';
 import Main from 'proton-account/src/app/public/Main';
 
 import EOMessageHeader from './EOMessageHeader';
@@ -17,7 +17,11 @@ import { LOAD_RETRY_COUNT } from '../../../constants';
 import { loadEOMessage } from '../../../logic/eo/eoActions';
 import MessageFooter from '../../message/MessageFooter';
 
-const ViewMessage = () => {
+interface Props {
+    setSessionStorage: (key: string, data: any) => void;
+}
+
+const ViewMessage = ({ setSessionStorage }: Props) => {
     const breakpoints = useActiveBreakpoint();
     const elementRef = useRef<HTMLDivElement>(null);
     const api = useApi();
@@ -26,8 +30,7 @@ const ViewMessage = () => {
     const match = useRouteMatch<EOUrlParams>();
     const { id } = match.params;
 
-    const { isStoreInitialized, decryptedToken, password, messageState } = useOutsideMessage({ id });
-    const [originalMessageMode, setOriginalMessageMode] = useState(false);
+    const { isStoreInitialized, decryptedToken, password, messageState, message } = useOutsideMessage({ id });
 
     const loadRemoteImages = useLoadEORemoteImages();
     const loadEmbeddedImages = useLoadEOEmbeddedImages(id || '');
@@ -59,11 +62,11 @@ const ViewMessage = () => {
 
     useEffect(() => {
         const loadMessage = async (id: string) => {
-            await dispatch(loadEOMessage({ api, token: decryptedToken, id, password }));
+            await dispatch(loadEOMessage({ api, token: decryptedToken, id, password, set: setSessionStorage }));
         };
 
         if (id && decryptedToken && password && isStoreInitialized && messageState === undefined) {
-            loadMessage(id);
+            void loadMessage(id);
         }
     }, [decryptedToken, password, id, messageState, isStoreInitialized]);
 
@@ -75,26 +78,27 @@ const ViewMessage = () => {
         return <Redirect to={`/eo/${id}`} />;
     }
 
-    if (!isStoreInitialized || !messageState) {
-        return <>Loading</>;
+    if (!isStoreInitialized || !messageState || !messageState?.messageDocument?.initialized) {
+        return <Loader />;
     }
-
-    const toggleOriginalMessage = () => setOriginalMessageMode(!originalMessageMode);
 
     return (
         <Main larger className="mw52r">
             <div ref={elementRef}>
                 <div className="flex flex-align-items-center border-bottom p1">
-                    <EOMessageHeader message={messageState} messageLoaded={messageLoaded} id={id} />
+                    <EOMessageHeader
+                        message={messageState}
+                        messageLoaded={messageLoaded}
+                        id={id}
+                        numberOfReplies={message.Replies.length}
+                    />
                 </div>
                 <EOHeaderExpanded
                     labelID="test"
                     message={messageState}
                     messageLoaded={messageLoaded}
-                    sourceMode={false}
                     onLoadRemoteImages={loadRemoteImages}
                     onLoadEmbeddedImages={loadEmbeddedImages}
-                    onSourceMode={() => console.log('TODO')}
                     breakpoints={breakpoints}
                     parentMessageRef={elementRef}
                 />
@@ -103,8 +107,6 @@ const ViewMessage = () => {
                     messageLoaded={messageLoaded}
                     bodyLoaded={bodyLoaded}
                     sourceMode={false}
-                    originalMessageMode={originalMessageMode}
-                    toggleOriginalMessage={toggleOriginalMessage}
                 />
                 <MessageFooter message={messageState} outsideKey={outsideKey} />
             </div>

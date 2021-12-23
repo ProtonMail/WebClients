@@ -16,13 +16,26 @@ interface Props {
     isOpen: boolean;
     toggle: () => void;
     close: () => void;
+    actualLabel?: string;
     isOutside?: boolean;
 }
 
-const RecipientItemSingle = ({recipient, dropdownActions, showAddress, icon, highlightKeywords, anchorRef, isOpen, toggle, close, isOutside}:Props) => {
+const RecipientItemSingle = ({
+    recipient,
+    dropdownActions,
+    showAddress,
+    icon,
+    highlightKeywords,
+    anchorRef,
+    isOpen,
+    toggle,
+    close,
+    actualLabel,
+    isOutside,
+}: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
 
-    const label = recipient.Name || recipient.Address;
+    const label = actualLabel || recipient.Name || recipient.Address;
     const initial = getInitials(label);
 
     const address = <>&lt;{recipient.Address}&gt;</>;
@@ -38,23 +51,21 @@ const RecipientItemSingle = ({recipient, dropdownActions, showAddress, icon, hig
                 className="item-icon flex-item-noshrink rounded inline-flex stop-propagation mr0-5"
                 data-testid="message:recipient-button"
             >
-                        <span className="mauto item-abbr" aria-hidden="true">
-                            {initial}
-                        </span>
+                <span className="mauto item-abbr" aria-hidden="true">
+                    {initial}
+                </span>
                 <span className="mauto item-caret hidden" aria-hidden="true">
-                            <Icon name="angle-down" />
-                        </span>
+                    <Icon name="angle-down" />
+                </span>
                 <span className="sr-only">{c('Action').t`Address options`}</span>
             </button>
             <Dropdown id={uid} originalPlacement="bottom" isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                <DropdownMenu>
-                    {dropdownActions}
-                </DropdownMenu>
+                <DropdownMenu>{dropdownActions}</DropdownMenu>
             </Dropdown>
         </>
     );
 
-    if(!isOutside){
+    if (!isOutside) {
         return (
             <MailRecipientItem
                 button={button}

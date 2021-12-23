@@ -30,8 +30,6 @@ export const convertEOtoMessageState = (eoMessage: EOMessage, localID: string): 
             Body: eoMessage.Body,
             Attachments: eoMessage.Attachments,
             LabelIDs: ['0'],
-            // SenderName: eoMessage.SenderName,
-            // SenderAddress: eoMessage.SenderAddress,
             MIMEType: eoMessage.MIMEType,
             EORecipient: { Name: eoMessage.Recipient, Address: eoMessage.Recipient } as Recipient,
         } as Message,

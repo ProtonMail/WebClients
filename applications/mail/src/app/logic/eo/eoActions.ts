@@ -66,10 +66,8 @@ export const loadEOMessage = createAsyncThunk<{ eoMessage: EOMessage; messageSta
 
             const messageState = convertEOtoMessageState(Message, token) as any;
 
-            if (set) {
-                set(EO_DECRYPTED_TOKEN_KEY, encodeUtf8Base64(token));
-                set(EO_PASSWORD_KEY, encodeUtf8Base64(password));
-            }
+            set(EO_DECRYPTED_TOKEN_KEY, encodeUtf8Base64(token));
+            set(EO_PASSWORD_KEY, encodeUtf8Base64(password));
 
             return { eoMessage: Message, messageState };
         } catch (error: any | undefined) {

@@ -112,7 +112,7 @@ export const getAndVerify = async (
             attachmentdata = attachmentInState;
         } else {
             const isMIMEAttachment = !attachment.KeyPackets;
-            // TODO: implement reverification of MIME attachment
+
             attachmentdata = isMIMEAttachment
                 ? (attachmentInState as DecryptResultPmcrypto)
                 : await getDecryptedAttachment(attachment, verification, messageKeys, api);
