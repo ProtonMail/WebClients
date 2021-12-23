@@ -2,8 +2,14 @@ import { HTMLAttributes } from 'react';
 import { classnames } from '../../helpers/component';
 import './NotificationDot.scss';
 
-const NotificationDot = ({ className, ...rest }: HTMLAttributes<HTMLElement>) => {
-    return <span className={classnames([className, 'notification-dot bg-danger rounded50'])} {...rest} />;
+export type NotificationDotColor = 'warning' | 'danger';
+
+interface Props extends HTMLAttributes<HTMLElement> {
+    color: NotificationDotColor;
+}
+
+const NotificationDot = ({ color, className, ...rest }: Props) => {
+    return <span className={classnames([className, `notification-dot bg-${color} rounded50`])} {...rest} />;
 };
 
 export default NotificationDot;

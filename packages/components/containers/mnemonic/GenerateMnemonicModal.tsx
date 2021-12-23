@@ -91,7 +91,6 @@ const GenerateMnemonicModal = ({ confirmStep = false, onClose = () => {}, onSucc
         if (step === STEPS.CONFIRM) {
             return {
                 title: c('Action').t`Generate new recovery phrase?`,
-                tiny: true,
                 hasClose: false,
                 section: (
                     <p className="m0">{c('Info').t`Generating a new recovery phrase will deactivate your old one.`}</p>
