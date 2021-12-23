@@ -28,7 +28,7 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} small {...rest}>
             <HeaderModal hasClose displayTitle noEllipsis modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Label').t`Unlock Drive`}
+                {c('Label').t`Unlock drive`}
             </HeaderModal>
             <ContentModal onReset={onClose} onSubmit={() => onSubmit()}>
                 <InnerModal className="mb1">
