@@ -2,16 +2,13 @@ import { ADDRESS_TYPE } from '../constants';
 import { Key } from './Key';
 import { SignedKeyList } from './SignedKeyList';
 
-export interface AddressKey extends Key {
-    Active: 0 | 1;
-}
 export interface Address {
     DisplayName: string;
     DomainID: string;
     Email: string;
     HasKeys: number;
     ID: string;
-    Keys: AddressKey[];
+    Keys: Key[];
     SignedKeyList: SignedKeyList | null;
     Order: number;
     Priority: number;

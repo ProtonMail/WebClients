@@ -8,6 +8,7 @@ export interface KeyWithRecoverySecret extends Key {
 export interface Key {
     ID: string;
     Primary: 1 | 0;
+    Active: 1 | 0;
     Flags?: number; // undefined for user keys
     Fingerprint: string;
     Fingerprints: string[];
