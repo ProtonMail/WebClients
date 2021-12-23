@@ -1,4 +1,6 @@
 import { range } from '../helpers/array';
+import { ContactValue } from '../interfaces/contacts';
+import { getStringContactValue } from './properties';
 
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
 const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
@@ -123,11 +125,11 @@ export const getType = (types: string | string[] = []): string => {
 /**
  * Sanitize a string or string-array value for the field 'adr' into an array of strings to be displayed on different lines
  */
-export const formatAdr = (adr: string | string[]): string[] => {
+export const formatAdr = (adr: ContactValue): string[] => {
     let value: string[] = [];
     try {
         // Input sanitization
-        value = Array.isArray(adr) ? adr : [adr];
+        value = (Array.isArray(adr) ? adr : [adr]).map((entry) => getStringContactValue(entry));
         if (value.length < 7) {
             value.push(...range(0, 7 - value.length).map(() => ''));
         }
@@ -136,7 +138,7 @@ export const formatAdr = (adr: string | string[]): string[] => {
 
         // According to vCard RFC https://datatracker.ietf.org/doc/html/rfc6350#section-6.3.1
         // Address is split into 7 strings with different meaning at each position
-        const [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country] = adr;
+        const [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country] = value;
         const lines = filterEmpty([
             streetAddress,
             extendedAddress,

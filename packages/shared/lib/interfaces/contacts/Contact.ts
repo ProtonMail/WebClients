@@ -64,7 +64,7 @@ export interface ContactOrGroup {
     major?: string;
 }
 
-export type ContactValue = string | string[];
+export type ContactValue = string | string[] | string[][];
 
 export interface ContactProperty {
     uid?: string;
@@ -79,7 +79,7 @@ export type ContactProperties = ContactProperty[];
 
 export type ContactPropertyChange = {
     uid?: string;
-    value: string | string[];
+    value: ContactValue;
     key?: string;
 };
 

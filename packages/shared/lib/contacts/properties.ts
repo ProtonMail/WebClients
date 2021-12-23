@@ -1,9 +1,26 @@
 // Vcard fields for which we keep track of PREF parameter
 import isTruthy from '../helpers/isTruthy';
 import { PublicKeyWithPref } from '../interfaces';
-import { ContactProperties, ContactProperty } from '../interfaces/contacts/Contact';
+import { ContactProperties, ContactProperty, ContactValue } from '../interfaces/contacts/Contact';
 
 const FIELDS_WITH_PREF = ['fn', 'email', 'tel', 'adr', 'key'];
+
+// Clean values starting by "=" to prevent any arbitrary execution if that value ends up in an Excel file
+// https://jira.protontech.ch/browse/SEC-451
+const getSafeContactValue = (value: ContactValue): ContactValue => {
+    if (!Array.isArray(value)) {
+        return value.replace(/^=+/, '');
+    }
+    // TS not smart enough to infer the following makes sense, even with conditional types
+    return value.map((val) => getSafeContactValue(val)) as ContactValue;
+};
+
+export const getStringContactValue = (value: ContactValue): string => {
+    if (Array.isArray(value)) {
+        return getStringContactValue(value[0]);
+    }
+    return value;
+};
 
 /**
  * Given a vCard field, return true if we take into consideration its PREF parameters
@@ -33,8 +50,8 @@ export const getContactCategories = (properties: ContactProperties) => {
         .map(({ value, group }) => {
             if (Array.isArray(value)) {
                 return group
-                    ? value.map((singleValue) => ({ name: singleValue, group }))
-                    : value.map((singleValue) => ({ name: singleValue }));
+                    ? value.map((singleValue) => ({ name: getStringContactValue(singleValue), group }))
+                    : value.map((singleValue) => ({ name: getStringContactValue(singleValue) }));
             }
             return group ? { name: value, group } : { name: value };
         })
@@ -61,19 +78,7 @@ export const sanitizeProperties = (properties: ContactProperties = []): ContactP
             const { field } = property;
             let { value } = property;
 
-            // Remove values starting by "=" to prevent any arbitraty execution if that value ends up in an Excel file
-            // https://jira.protontech.ch/browse/SEC-451
-            if (!Array.isArray(value) && value.startsWith('=')) {
-                value = value.replace(/^=+/, '');
-            }
-            if (Array.isArray(value) && value.some((value) => value.startsWith('='))) {
-                value = value.map((value) => {
-                    if (value.startsWith('=')) {
-                        return value.slice(1);
-                    }
-                    return value;
-                });
-            }
+            value = getSafeContactValue(value);
 
             if ((field === 'adr' || field === 'org') && !Array.isArray(value)) {
                 // assume the bad formatting used commas instead of semicolons
@@ -210,7 +215,7 @@ export const getContactEmails = (properties: ContactProperties) => {
                 throw new Error('Email properties should have a group');
             }
             return {
-                email: Array.isArray(value) ? value[0] : value,
+                email: getStringContactValue(value),
                 group,
             };
         });
