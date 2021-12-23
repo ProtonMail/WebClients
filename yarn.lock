@@ -3515,7 +3515,6 @@ __metadata:
     react-virtualized: ^9.22.3
     resize-observer: ^1.0.4
     roosterjs: ^8.11.3
-    squire-rte: "github:ProtonMail/Squire#proton-v4"
     tabbable: ^5.2.1
     tinycolor2: ^1.4.2
     ttag: ^1.7.24
@@ -26663,13 +26662,6 @@ fsevents@^1.2.7:
   version: 1.0.3
   resolution: "sprintf-js@npm:1.0.3"
   checksum: 19d79aec211f09b99ec3099b5b2ae2f6e9cdefe50bc91ac4c69144b6d3928a640bb6ae5b3def70c2e85a2c3d9f5ec2719921e3a59d3ca3ef4b2fd1a4656a0df3
-  languageName: node
-  linkType: hard
-
-"squire-rte@github:ProtonMail/Squire#proton-v4":
-  version: 1.10.2
-  resolution: "squire-rte@https://github.com/ProtonMail/Squire.git#commit=5b08185f5c52ccdd7c526708bcfd7246c3745ca3"
-  checksum: 495d4dc417f6c50386a5432f1bec07db5cfb2a3f298510fb286d93ce9ee97fd8c21a7bd31f36792e3bac65fe040b550fcb0e4a008ea1fbe53202bba2bef21e74
   languageName: node
   linkType: hard
 

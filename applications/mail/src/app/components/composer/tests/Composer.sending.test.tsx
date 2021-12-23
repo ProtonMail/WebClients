@@ -1,5 +1,7 @@
 import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES, PGP_SIGN } from '@proton/shared/lib/constants';
+import { fireEvent, getByTestId } from '@testing-library/dom';
+import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import loudRejection from 'loud-rejection';
 import { arrayToBase64 } from '../../../helpers/base64';
@@ -25,7 +27,7 @@ import {
     createEmbeddedImage,
     createMessageImages,
 } from '../../../helpers/test/helper';
-import { clickSend, ID, prepareMessage, renderComposer, send, setHTML } from './Composer.test.helpers';
+import { clickSend, ID, prepareMessage, renderComposer, send } from './Composer.test.helpers';
 import { addAttachment } from '../../../logic/attachments/attachmentsActions';
 import { store } from '../../../logic/store';
 
@@ -500,9 +502,19 @@ describe('Composer sending', () => {
         expect(decryptResult.signatures.length).toBe(1);
     });
 
-    it('should ensure squire content before sending', async () => {
+    it('should ensure rooster content before sending', async () => {
+        const triggerEditorInput = (container: HTMLElement, content: string) => {
+            const iframe = getByTestId(container, 'rooster-iframe') as HTMLIFrameElement;
+            const editor = iframe.contentDocument?.getElementById(ROOSTER_EDITOR_ID);
+
+            if (editor) {
+                editor.innerHTML = content;
+                fireEvent.input(editor);
+            }
+        };
+
         const content = 'test';
-        const squireContent = 'squire-test';
+        const editorContent = 'editor-test';
 
         const message = prepareMessage({
             messageDocument: { document: createDocument(content) },
@@ -515,7 +527,7 @@ describe('Composer sending', () => {
 
         const renderResult = await renderComposer(message.localID, false);
 
-        setHTML(squireContent);
+        triggerEditorInput(renderResult.container, editorContent);
         addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');
 
         const sendRequest = await clickSend(renderResult);
@@ -525,6 +537,6 @@ describe('Composer sending', () => {
         const sessionKey = readSessionKey(pack.BodyKey);
         const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
 
-        expect(decryptResult.data).toBe(squireContent);
+        expect(decryptResult.data).toBe(editorContent);
     });
 });

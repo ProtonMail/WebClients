@@ -1,21 +1,14 @@
+import { useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
+import { c } from 'ttag';
+
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { MutableRefObject, useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
-import { c } from 'ttag';
-import { SquireEditor, useHandler, FontData } from '@proton/components';
-import { SquireEditorMetadata } from '@proton/components/components/editor/interface';
-import { SquireEditorRef } from '@proton/components/components/editor/SquireEditor';
-import { RIGHT_TO_LEFT, MIME_TYPES } from '@proton/shared/lib/constants';
+import { useHandler, Editor, EditorMetadata, EditorTextDirection, EditorActions } from '@proton/components';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { diff } from '@proton/shared/lib/helpers/array';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
 import { Address, MailSettings } from '@proton/shared/lib/interfaces';
-import {
-    defaultFontStyle,
-    DEFAULT_FONT_FACE,
-    DEFAULT_FONT_SIZE,
-} from '@proton/components/components/editor/squireConfig';
-import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
 import {
     getContent,
@@ -33,80 +26,70 @@ import {
 } from '../../../helpers/message/messageEmbeddeds';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
-interface ExternalEditorActions {
+export interface ExternalEditorActions {
     getContent: () => string;
     setContent: (message: MessageState) => void;
+    focus: () => void;
     insertEmbedded: (attachment: Attachment, data: string | Uint8Array) => void;
     removeEmbedded: (attachment: Attachment) => void;
+    /** Is editor unmounted */
+    isDisposed: () => boolean | undefined;
 }
-
-export type EditorActionsRef = MutableRefObject<ExternalEditorActions | undefined>;
-
 interface Props {
     message: MessageState;
     disabled: boolean;
-    breakpoints: Breakpoints;
-    onReady: () => void;
+    onReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
     onChangeContent: (content: string, refreshEditor?: boolean, silent?: boolean) => void;
     onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
-    contentFocusRef: MutableRefObject<() => void>;
-    editorActionsRef: EditorActionsRef;
-    keydownHandler?: (e: KeyboardEvent) => void;
     isOutside?: boolean;
     mailSettings?: MailSettings;
     addresses: Address[];
 }
 
-const SquireEditorWrapper = ({
+const EditorWrapper = ({
     message,
     disabled,
-    breakpoints,
     onReady,
     onChange,
     onChangeContent,
     onAddAttachments,
     onRemoveAttachment,
     onFocus,
-    contentFocusRef,
-    editorActionsRef,
-    keydownHandler = noop,
     isOutside = false,
     mailSettings,
     addresses,
 }: Props) => {
     const isMounted = useIsMounted();
+    const skipNextInputRef = useRef(false); // Had trouble by using a state here
 
     const [editorReady, setEditorReady] = useState(false);
     const [documentReady, setDocumentReady] = useState(false);
     const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
     const [blockquoteSaved, setBlockquoteSaved] = useState<string>();
-    const skipNextInputRef = useRef(false); // Had trouble by using a state here
 
     // Keep track of the containing CIDs to detect deletion
     const [cids, setCIDs] = useState<string[]>([]);
 
-    const squireEditorRef = useRef<SquireEditorRef>(null);
+    const editorActionsRef = useRef<EditorActions>();
+    const handleEditorReady = useCallback((editorActions: EditorActions) => {
+        setEditorReady(true);
+        editorActionsRef.current = editorActions;
+    }, []);
 
+    const canRenderEditor = !!message.data?.MIMEType;
     const isPlainText = testIsPlainText(message.data);
-    const rightToLeft = message.data?.RightToLeft ? RIGHT_TO_LEFT.ON : RIGHT_TO_LEFT.OFF;
-    const defaultFont = useMemo<FontData>(() => {
-        const fontSettings = {
-            FontFace: mailSettings?.FontFace || DEFAULT_FONT_FACE,
-            FontSize: mailSettings?.FontSize || DEFAULT_FONT_SIZE,
-        };
-        return fontSettings;
-    }, [mailSettings]);
-
-    const metadata: SquireEditorMetadata = useMemo(
+    const rightToLeft = message.data?.RightToLeft ? EditorTextDirection.RightToLeft : EditorTextDirection.LeftToRight;
+    const metadata: EditorMetadata = useMemo(
         () => ({
             supportPlainText: !isOutside,
             isPlainText,
             supportRightToLeft: true,
             rightToLeft,
             supportImages: true,
+            supportDefaultFontSelector: !isOutside,
         }),
         [isPlainText, rightToLeft]
     );
@@ -122,7 +105,7 @@ const SquireEditorWrapper = ({
     }, [isPlainText, message.messageDocument?.plainText, message.messageDocument?.document?.innerHTML]);
 
     const handleGetContent = useHandler(() => {
-        const editorContent = squireEditorRef.current?.value || '';
+        const editorContent = editorActionsRef.current?.getContent() || '';
 
         if (!blockquoteExpanded && blockquoteSaved !== '') {
             return editorContent + blockquoteSaved;
@@ -143,15 +126,18 @@ const SquireEditorWrapper = ({
             const removedCIDs = diff(cids, newCIDs);
 
             if (removedCIDs.length) {
+                let hasDeletedCid = false;
                 removedCIDs.forEach((cid) => {
-                    // const info = message.embeddeds?.get(cid);
                     const embeddedImages = getEmbeddedImages(message);
                     const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
                     if (attachment) {
+                        hasDeletedCid = true;
                         void onRemoveAttachment(attachment);
                     }
                 });
-                squireEditorRef.current?.clearUndoHistory();
+                if (hasDeletedCid) {
+                    editorActionsRef.current?.clearUndoHistory?.();
+                }
             }
 
             setCIDs(newCIDs);
@@ -178,21 +164,71 @@ const SquireEditorWrapper = ({
         }
 
         skipNextInputRef.current = true;
-        if (squireEditorRef.current) {
-            squireEditorRef.current.value = content;
+        if (editorActionsRef.current) {
+            editorActionsRef.current.setContent(content);
         }
 
         checkImageDeletion();
     };
 
-    // Initialize Squire (or textarea) content at (and only) startup
+    // Editors actions ref to add and remove embedded image
+    const handleInsertEmbedded = useCallback((attachment: Attachment, data: string | Uint8Array) => {
+        const { cid } = readContentIDandLocation(attachment);
+        const url = createBlob(attachment, data);
+
+        editorActionsRef.current?.insertImage?.(url, {
+            'data-embedded-img': `cid:${cid}`,
+            ...(attachment.Name ? { alt: attachment.Name } : {}),
+        });
+
+        setCIDs([...cids, cid]);
+    }, []);
+
+    const handleRemoveEmbedded = useCallback(async (attachment: Attachment) => {
+        if (!editorActionsRef.current) {
+            return;
+        }
+        const content = editorActionsRef.current.getContent();
+        const contentDocument = document.createElement('div');
+        contentDocument.innerHTML = content;
+
+        if (contentDocument) {
+            removeEmbeddedHTML(contentDocument, attachment);
+            editorActionsRef.current.setContent(contentDocument.innerHTML);
+        }
+    }, []);
+
+    /**
+     * Initialize Rooster (or textarea) content at (and only) startup
+     * Set content and RTL behavior
+     */
     useEffect(() => {
         if (isPlainText) {
             setEditorReady(false);
         }
         if (documentReady && (isPlainText || editorReady)) {
             handleSetContent(message);
-            onReady();
+
+            if (rightToLeft === EditorTextDirection.RightToLeft) {
+                editorActionsRef.current?.setTextDirection?.(EditorTextDirection.RightToLeft);
+            }
+
+            const isInitialContentSetInEditor = editorReady && !isPlainText;
+            if (isInitialContentSetInEditor) {
+                editorActionsRef.current?.clearUndoHistory?.();
+            }
+
+            const externalActions: ExternalEditorActions = {
+                getContent: handleGetContent,
+                setContent: handleSetContent,
+                focus: () => {
+                    editorActionsRef.current?.focus();
+                },
+                insertEmbedded: handleInsertEmbedded,
+                removeEmbedded: handleRemoveEmbedded,
+                isDisposed: () => editorActionsRef.current?.isDisposed(),
+            };
+            onReady(externalActions);
         }
     }, [editorReady, documentReady, isPlainText]);
 
@@ -204,10 +240,10 @@ const SquireEditorWrapper = ({
     }, [documentReady, isPlainText, editorReady, blockquoteSaved !== undefined]);
 
     // Handle input considering blockquote
-    const handleInput = useCallback(
+    const onChangeContentCallback = useCallback(
         (content: string) => {
+            // Rooster (but not plaintext) triggers an onContentChange event when the initial content is inserted
             if (!isPlainText) {
-                // Squire (but not plaintext) trigger an input event when the initial content is inserted
                 if (skipNextInputRef.current) {
                     skipNextInputRef.current = false;
                     return;
@@ -216,103 +252,83 @@ const SquireEditorWrapper = ({
                 checkImageDeletion();
             }
 
-            if (!blockquoteExpanded) {
-                onChangeContent(content + blockquoteSaved);
-            } else {
-                onChangeContent(content);
-            }
+            const nextContent = blockquoteExpanded ? content : `${content}${blockquoteExpanded}`;
+
+            onChangeContent(nextContent);
         },
         [onChangeContent, isPlainText, blockquoteExpanded]
     );
 
-    const switchToPlainText = () => {
-        const MIMEType = MIME_TYPES.PLAINTEXT;
-        const plainText = exportPlainText(handleGetContent());
-        const messageImages = message.messageImages ? { ...message.messageImages, images: [] } : undefined;
-        onChange({ messageDocument: { plainText }, data: { MIMEType }, messageImages });
-    };
-    const switchToHTML = () => {
-        const MIMEType = MIME_TYPES.DEFAULT;
-        let content = plainTextToHTML(message.data, message.messageDocument?.plainText, mailSettings, addresses);
-        const fontStyle = defaultFontStyle(mailSettings);
-        content = fontStyle ? `<div style="${fontStyle}">${content}</div>` : `<div>${content}</div>`;
-        const document = setDocumentContent(message.messageDocument?.document, content);
-        onChange({ messageDocument: { document }, data: { MIMEType } });
-    };
+    const handleChangeMetadata = useCallback(
+        (change: Partial<EditorMetadata>) => {
+            const switchToPlainText = () => {
+                const plainText = exportPlainText(handleGetContent());
 
-    const handleChangeMetadata = useHandler((change: Partial<SquireEditorMetadata>) => {
-        if (change.isPlainText !== undefined) {
-            if (change.isPlainText) {
-                switchToPlainText();
-                setBlockquoteExpanded(true);
-            } else {
-                switchToHTML();
+                const messageImages = message.messageImages ? { ...message.messageImages, images: [] } : undefined;
+                onChange({ messageDocument: { plainText }, data: { MIMEType: MIME_TYPES.PLAINTEXT }, messageImages });
+            };
+
+            const switchToHTML = () => {
+                const MIMEType = MIME_TYPES.DEFAULT;
+                const content = plainTextToHTML(
+                    message.data,
+                    message.messageDocument?.plainText,
+                    mailSettings,
+                    addresses
+                );
+
+                const fontStyles = defaultFontStyle(mailSettings);
+                const wrappedContent = `<div style="${fontStyles}">${content}</div>`;
+
+                const document = setDocumentContent(message.messageDocument?.document, wrappedContent);
+                onChange({ messageDocument: { document }, data: { MIMEType } });
+            };
+
+            if (change.isPlainText !== undefined) {
+                if (change.isPlainText) {
+                    switchToPlainText();
+                    setBlockquoteExpanded(true);
+                } else {
+                    switchToHTML();
+                }
             }
-        }
-        if (change.rightToLeft !== undefined) {
-            onChange({ data: { RightToLeft: change.rightToLeft } });
-        }
-    });
+            if (change.rightToLeft !== undefined) {
+                onChange({ data: { RightToLeft: change.rightToLeft } });
+            }
+        },
+        [onChange, message]
+    );
 
-    // Editors actions ref to add and remove embedded image
-    const handleInsertEmbedded = useHandler((attachment: Attachment, data: string | Uint8Array) => {
-        const { cid } = readContentIDandLocation(attachment);
-        const url = createBlob(attachment, data);
+    const handleBlocquoteToggleClick = useCallback(() => {
+        setBlockquoteExpanded(true);
 
-        squireEditorRef.current?.insertImage(url, {
-            'data-embedded-img': `cid:${cid}`,
-            alt: attachment.Name,
-        });
-    });
-    const handleRemoveEmbedded = useHandler(async (attachment: Attachment) => {
-        const document = squireEditorRef.current?.document;
-        if (document) {
-            removeEmbeddedHTML(document, attachment);
+        skipNextInputRef.current = true;
+        if (editorActionsRef.current) {
+            const content = editorActionsRef.current.getContent();
+            editorActionsRef.current.setContent(content + blockquoteSaved);
         }
-    });
+    }, [blockquoteSaved]);
 
     useEffect(() => {
-        editorActionsRef.current = {
-            getContent: handleGetContent,
-            setContent: handleSetContent,
-            insertEmbedded: handleInsertEmbedded,
-            removeEmbedded: handleRemoveEmbedded,
-        };
-        contentFocusRef.current = () => {
-            squireEditorRef.current?.focus();
-        };
+        editorActionsRef.current?.focus();
     }, [blockquoteExpanded, blockquoteSaved, isPlainText]);
 
-    const handleEllipseClick = useHandler(() => {
-        setBlockquoteExpanded(true);
-        skipNextInputRef.current = true;
-        if (squireEditorRef.current) {
-            const content = squireEditorRef.current.value;
-            squireEditorRef.current.value = content + blockquoteSaved;
-        }
-    });
-    const handleSquireReady = useCallback(() => setEditorReady(true), []);
-
-    return (
-        <SquireEditor
-            ref={squireEditorRef}
+    return canRenderEditor ? (
+        <Editor
             placeholder={c('Placeholder').t`Write your message`}
             metadata={metadata}
             disabled={disabled}
-            isNarrow={breakpoints.isNarrow}
-            onChange={handleInput}
+            onChange={onChangeContentCallback}
             onChangeMetadata={handleChangeMetadata}
             onFocus={onFocus}
-            showEllipseButton={!blockquoteExpanded}
-            onEllipseClick={handleEllipseClick}
-            onReady={handleSquireReady}
-            onAddImages={onAddAttachments}
-            keydownHandler={keydownHandler}
-            defaultFont={defaultFont}
+            showBlockquoteToggle={!blockquoteExpanded}
+            onBlockquoteToggleClick={handleBlocquoteToggleClick}
+            onReady={handleEditorReady}
             isOutside={isOutside}
             mailSettings={mailSettings}
+            onAddAttachments={onAddAttachments}
         />
-    );
+    ) : null;
 };
 
-export default memo(SquireEditorWrapper);
+export default memo(EditorWrapper);

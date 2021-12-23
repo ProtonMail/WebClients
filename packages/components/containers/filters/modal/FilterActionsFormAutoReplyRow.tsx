@@ -1,13 +1,11 @@
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { noop } from '@proton/shared/lib/helpers/function';
-import { Toggle, Tooltip, SimpleSquireEditor } from '../../../components';
+
+import { Toggle, Tooltip, Editor, EditorActions } from '../../../components';
 import { useUser } from '../../../hooks';
 import { classnames } from '../../../helpers';
-
-import { SquireEditorRef } from '../../../components/editor/SquireEditor';
-
 import { Actions } from '../interfaces';
 
 interface Props {
@@ -19,18 +17,15 @@ interface Props {
 
 const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdateActions }: Props) => {
     const [user] = useUser();
-    const editorRef = useRef<SquireEditorRef>(null);
     const { autoReply } = actions;
     const [editorVisible, setEditorVisible] = useState(!!autoReply);
     const [editorValue, setEditorValue] = useState(autoReply || '');
 
-    const handleReady = () => {
-        if (editorRef.current) {
-            editorRef.current.value = editorValue;
+    const handleReady = (editorActions: EditorActions) => {
+        editorActions.setContent(editorValue);
 
-            if (!isEdit) {
-                editorRef.current.focus();
-            }
+        if (!isEdit) {
+            editorActions.focus();
         }
     };
 
@@ -55,14 +50,14 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                         />
                         {editorVisible && (
                             <div className="w100 mt1">
-                                <SimpleSquireEditor
-                                    ref={editorRef}
+                                <Editor
                                     onReady={handleReady}
-                                    supportImages={false}
+                                    metadata={{ supportImages: false }}
                                     onChange={(value: string) => {
                                         setEditorValue(value);
                                         handleUpdateActions({ autoReply: value });
                                     }}
+                                    simple
                                 />
                             </div>
                         )}

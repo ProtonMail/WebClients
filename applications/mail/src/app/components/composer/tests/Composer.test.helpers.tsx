@@ -1,6 +1,7 @@
-import squire from 'squire-rte';
-import { act, fireEvent, RenderResult } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
+import { fireEvent, RenderResult } from '@testing-library/react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { mergeMessages } from '../../../helpers/message/messages';
 import Composer from '../Composer';
 import {
@@ -17,7 +18,6 @@ import { Breakpoints } from '../../../models/utils';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { store } from '../../../logic/store';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
 // Fake timers fails for the complexe send action
 // These more manual trick is used to skip undo timing
@@ -28,9 +28,6 @@ jest.mock('@proton/shared/lib/helpers/promise', () => {
         }),
     };
 });
-
-export const getHTML = squire().getHTML as jest.Mock;
-export const setHTML = squire().setHTML as jest.Mock;
 
 export const ID = 'ID';
 export const AddressID = 'AddressID';
@@ -88,6 +85,7 @@ export const clickSend = async (renderResult: RenderResult) => {
     const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
     addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
     addApiMock(`mail/v4/messages/${ID}`, () => {}, 'get');
+    addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');
 
     const sendButton = await renderResult.findByTestId('composer:send-button');
     fireEvent.click(sendButton);

@@ -13,20 +13,28 @@ import Input from '../../input/Input';
 import Href from '../../link/Href';
 import { Select } from '../../select';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
-import { LinkData } from '../interface';
 
 interface Props {
-    inputLink: LinkData;
-    onSubmit: (link: LinkData) => void;
+    linkLabel: string | undefined;
+    linkUrl: string | undefined;
+    onSubmit: (title: string, url: string) => void;
     onClose?: () => void;
     onMailTo?: (src: string) => void;
     mailSettings?: MailSettings;
 }
 
-const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, mailSettings, ...rest }: Props) => {
-    const [url, setUrl] = useState(inputLink.link);
-    const [label, setLabel] = useState(inputLink.title);
-    const [type, setType] = useState(linkToType(inputLink.link) || LINK_TYPES.WEB);
+const EditorLinkModal = ({
+    linkLabel = '',
+    linkUrl = '',
+    onSubmit,
+    onClose,
+    onMailTo,
+    mailSettings,
+    ...rest
+}: Props) => {
+    const [url, setUrl] = useState(linkUrl);
+    const [label, setLabel] = useState(linkLabel);
+    const [type, setType] = useState(linkToType(linkUrl) || LINK_TYPES.WEB);
     const modalContentRef = useRef<HTMLDivElement>(null);
 
     useLinkHandler(modalContentRef, mailSettings, { onMailTo });
@@ -67,7 +75,7 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, mailSettings,
     };
 
     const handleSubmit = () => {
-        onSubmit({ link: addLinkPrefix(url, type), title: label });
+        onSubmit(label, addLinkPrefix(url, type));
         onClose?.();
     };
 

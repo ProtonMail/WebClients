@@ -20,7 +20,7 @@ import {
 import { generateUID } from '@proton/components';
 import { c } from 'ttag';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { defaultFontStyle } from '@proton/components/components/editor/squireConfig';
+import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { getFromAddress } from '../addresses';
 import { formatFullDate } from '../date';
@@ -241,9 +241,6 @@ export const createNewDraft = (
         action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryption?.decryptedBody
             ? insertSignature(content, senderAddress?.Signature, action, mailSettings, fontStyle, true)
             : insertSignature(content, senderAddress?.Signature, action, mailSettings, fontStyle);
-
-    // Adding a surrounding div helps Squire dealing with HTML pasting
-    content = fontStyle ? `<div style="${fontStyle}">${content}</div>` : `<div>${content}</div>`;
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);

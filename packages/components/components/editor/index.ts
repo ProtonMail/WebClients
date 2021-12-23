@@ -1,3 +1,2 @@
-export { default as SquireEditor } from './SquireEditor';
-export { default as SimpleSquireEditor } from './SimpleSquireEditor';
+export { default as Editor } from './Editor';
 export * from './interface';

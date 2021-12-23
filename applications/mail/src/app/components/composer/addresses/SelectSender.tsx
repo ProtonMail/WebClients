@@ -12,7 +12,7 @@ import {
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { defaultFontStyle } from '@proton/components/components/editor/squireConfig';
+import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
 import { changeSignature } from '../../../helpers/message/messageSignature';
 import { MessageState } from '../../../logic/messages/messagesTypes';
