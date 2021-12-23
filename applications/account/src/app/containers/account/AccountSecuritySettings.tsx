@@ -5,7 +5,7 @@ import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMain
 
 export const getSecurityPage = () => {
     return {
-        text: c('Title').t`Password & security`,
+        text: c('Title').t`Security`,
         to: '/security',
         icon: 'shield',
         subsections: [
