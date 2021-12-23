@@ -22,7 +22,10 @@ const ANIMATIONS = {
     MODAL_OUT: 'anime-modal-out',
 };
 
-/** @type any */
+/**
+ * @deprecated Please use ModalTwo instead
+ * @type any
+ */
 const Dialog = ({
     onClose,
     onEnter,
