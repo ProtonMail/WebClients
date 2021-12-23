@@ -224,6 +224,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 resetSort(history);
             }
             setES.Enabled(userID);
+            // Remove the temporary switch-off of ES
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    temporaryToggleOff: false,
+                };
+            });
         }
 
         // If IDB was evicted by the browser in the meantime, we erase everything else too
@@ -232,6 +239,20 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 void dbCorruptError();
             }
         });
+    };
+
+    /**
+     * Temporarily disable ES for times when search is too slow and a server-side
+     * search is needed. The toggle is set automatically back on upon exiting search mode
+     */
+    const setTemporaryToggleOff = () => {
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                temporaryToggleOff: true,
+            };
+        });
+        toggleEncryptedSearch();
     };
 
     /**
@@ -1041,6 +1062,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // Remove previous search data from the status when no longer in search mode
     useEffect(() => {
         if (!isSearch) {
+            const { temporaryToggleOff } = esStatus;
+
             abortSearchingRef.current.abort();
             setESStatus((esStatus) => {
                 return {
@@ -1052,8 +1075,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     previousNormSearchParams: defaultESStatus.previousNormSearchParams,
                     isSearchPartial: defaultESStatus.isSearchPartial,
                     isSearching: defaultESStatus.isSearching,
+                    temporaryToggleOff: false,
                 };
             });
+
+            // Re-enable ES in case it was disabled because of a slow search
+            if (temporaryToggleOff) {
+                toggleEncryptedSearch();
+            }
         }
     }, [isSearch]);
 
@@ -1160,6 +1189,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             esDelete,
             openDropdown,
             closeDropdown,
+            setTemporaryToggleOff,
         }),
         [userID, esStatus]
     );
