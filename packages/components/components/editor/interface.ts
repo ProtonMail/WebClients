@@ -1,69 +1,31 @@
-import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
+import { Direction, IEditor, PluginEvent } from 'roosterjs-editor-types';
 
-export enum ALIGNMENT {
-    Left = 'left',
-    Center = 'center',
-    Justify = 'justify',
-    Right = 'right',
-}
+export { Direction as EditorTextDirection } from 'roosterjs-editor-types';
 
-export interface SquireEditorMetadata {
+export interface EditorMetadata {
     supportImages: boolean;
     supportPlainText: boolean;
+    supportDefaultFontSelector: boolean;
     isPlainText: boolean;
     supportRightToLeft: boolean;
-    rightToLeft: RIGHT_TO_LEFT;
+    rightToLeft: Direction;
 }
 
-export interface SquireType {
-    getDocument: () => Document;
-    getHTML: () => string;
-    setHTML: (content: string) => void;
-    getPath: () => string;
-    getSelection: () => Range;
-    setSelection: (range: Range) => void;
-    hasFormat: (tag: string, attributes?: { [key: string]: string }) => boolean;
-    getFontInfo: () => {
-        color: string | undefined;
-        backgroundColor: string | undefined;
-        family: string | undefined;
-        size: string | undefined;
-    };
-    setFontFace: (fontFace: string) => void;
-    setFontSize: (fontSize: string) => void;
-    setTextColour: (color: string) => void;
-    setHighlightColour: (color: string) => void;
-    setTextAlignment: (alignment: string) => void;
-    setTextDirection: (direction?: string) => void;
-    forEachBlock: (callback: (block: Element) => void, mutates: boolean) => void;
+/**
+ * External editor actions returned to parent component
+ */
+export interface EditorActions {
     focus: () => void;
-    bold: () => void;
-    removeBold: () => void;
-    italic: () => void;
-    removeItalic: () => void;
-    underline: () => void;
-    removeUnderline: () => void;
-    makeOrderedList: () => void;
-    makeUnorderedList: () => void;
-    removeList: () => void;
-    increaseQuoteLevel: () => void;
-    decreaseQuoteLevel: () => void;
-    makeLink: (link: string, attributes?: { [key: string]: string | undefined }) => void;
-    insertImage: (url: string, attributes?: { [key: string]: string | undefined }) => void;
-    insertHTML: (html: string) => void;
-    removeAllFormatting: () => void;
-    addEventListener: <E extends Event>(type: string, handler: (event: E) => void) => void;
-    removeEventListener: <E extends Event>(type: string, handler: (event: E) => void) => void;
-    fireEvent: (type: string, event?: Event) => void;
-    getCursorPosition: () => DOMRect;
+    setContent: (content: string, triggerAutoSave?: boolean) => void;
+    getContent: () => string;
+    insertImage?: (url: string, attrs?: { [key: string]: string }) => void;
+    clearUndoHistory?: () => void;
+    /** Meant to be used at startup */
+    setTextDirection?: (direction: Direction) => void;
+    /** Tells if Editor is unmounted */
+    isDisposed: () => boolean;
 }
 
-export interface LinkData {
-    link: string;
-    title: string;
-}
+export type OnEditorEventListened = (editorEvent: PluginEvent, editor: IEditor) => void;
 
-export interface FontData {
-    FontFace: string | null;
-    FontSize: number | null;
-}
+export type SetEditorToolbarConfig = (editorInstance: IEditor | undefined) => void;

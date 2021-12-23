@@ -1,7 +1,7 @@
 import markdownit from 'markdown-it';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
-import { defaultFontStyle } from '@proton/components/components/editor/squireConfig';
+import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { templateBuilder } from './message/messageSignature';
 import { toText } from './parserHtml';
 

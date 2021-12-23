@@ -1,13 +1,12 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
-import { useState } from 'react';
+import { MutableRefObject, useState } from 'react';
 import { useApi, useNotifications, useAuthentication, useHandler } from '@proton/components';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { useDispatch } from 'react-redux';
 import { Upload } from '../../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, upload, checkSize } from '../../helpers/attachment/attachmentUploader';
-import { EditorActionsRef } from '../../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../../components/composer/Composer';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useLongLivingState } from '../useLongLivingState';
@@ -23,6 +22,7 @@ import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { addAttachment } from '../../logic/attachments/attachmentsActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
+import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 
 export interface PendingUpload {
     file: File;
@@ -33,7 +33,7 @@ interface UseAttachmentsParameters {
     message: MessageState;
     onChange: MessageChange;
     onSaveNow: () => Promise<void>;
-    editorActionsRef: EditorActionsRef;
+    editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
     onMessageAlreadySent: () => void;
 }
 

@@ -3,7 +3,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { clearAll, createDocument, waitForSpyCall } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import Composer from '../Composer';
-import { ID, prepareMessage, props, setHTML } from './Composer.test.helpers';
+import { ID, prepareMessage, props } from './Composer.test.helpers';
 import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
 
 jest.setTimeout(20000);
@@ -21,6 +21,23 @@ jest.mock('../../../hooks/message/useSaveDraft', () => {
 });
 
 const saveSpy = (useSaveDraft as any).saveSpy as jest.Mock;
+
+const mockSetContent = jest.fn();
+jest.mock('@proton/components/components/editor/rooster/helpers/getRoosterEditorActions', () => {
+    let content = '';
+    return function () {
+        return {
+            getContent: () => {
+                return content;
+            },
+            setContent: (nextContent: string) => {
+                content = nextContent;
+                mockSetContent(nextContent);
+            },
+            focus: () => {},
+        };
+    };
+});
 
 describe('Composer switch plaintext <-> html', () => {
     afterEach(clearAll);
@@ -41,14 +58,16 @@ describe('Composer switch plaintext <-> html', () => {
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
 
-        const toHtmlButton = await findByTestId('squire-to-html');
+        const toHtmlButton = await findByTestId('editor-to-html');
         fireEvent.click(toHtmlButton);
 
-        await waitForSpyCall(setHTML);
+        await findByTestId('rooster-iframe');
 
-        await findByTestId('squire-iframe');
+        await waitForSpyCall(mockSetContent);
 
-        expect(setHTML).toHaveBeenCalledWith(`<div style="font-family: arial; font-size: 14px;">${content}</div>`);
+        expect(mockSetContent).toHaveBeenCalledWith(
+            `<div style="font-family: arial; font-size: 14px;">${content}</div>`
+        );
 
         // Wait for auto save
         await waitForSpyCall(saveSpy);
@@ -73,13 +92,13 @@ describe('Composer switch plaintext <-> html', () => {
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
 
-        const moreDropdown = await findByTestId('squire-more');
+        const moreDropdown = await findByTestId('editor-toolbar-more');
         fireEvent.click(moreDropdown);
 
-        const toHtmlButton = await findByTestId('squire-to-plaintext');
+        const toHtmlButton = await findByTestId('editor-to-plaintext');
         fireEvent.click(toHtmlButton);
 
-        const textarea = (await findByTestId('squire-textarea')) as HTMLTextAreaElement;
+        const textarea = (await findByTestId('editor-textarea')) as HTMLTextAreaElement;
 
         expect(textarea.value).toBe('content line 1\n\ncontent line 2');
 

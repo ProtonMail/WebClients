@@ -19,7 +19,7 @@ interface Props {
     [rest: string]: any;
 }
 
-const SquireToolbarDropdown = ({
+const ToolbarDropdown = ({
     title,
     content,
     className,
@@ -82,4 +82,4 @@ const SquireToolbarDropdown = ({
     );
 };
 
-export default SquireToolbarDropdown;
+export default ToolbarDropdown;

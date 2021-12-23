@@ -1,58 +1,66 @@
-import { MutableRefObject, useEffect } from 'react';
 import { c } from 'ttag';
+import { useEffect, useState } from 'react';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
-import { FONT_FACE } from '../squireConfig';
-import SquireToolbarDropdown from './SquireToolbarDropdown';
-import { listenToCursor, getFontFaceAtCursor, getFontLabel } from '../squireActions';
-import { SquireType } from '../interface';
+import { FONT_FACE } from '../constants';
+import ToolbarDropdown from './ToolbarDropdown';
 import { Badge } from '../../badge';
 import { Button } from '../../button';
 import { classnames } from '../../../helpers';
 
 interface Props {
-    squireRef: MutableRefObject<SquireType>;
-    editorReady: boolean;
+    value?: string;
+    setValue: (font: string) => void;
     defaultValue: string;
-    value: string;
-    update: (nextFontSize: string) => void;
-    onDefaultClick: () => void;
-    isOutside?: boolean;
+    onClickDefault: () => void;
+    showDefaultFontSelector?: boolean;
 }
 
-const SquireToolbarFontFaceDropdown = ({
-    squireRef,
-    editorReady,
-    defaultValue,
-    value,
-    update,
-    onDefaultClick,
-    isOutside,
-}: Props) => {
-    useEffect(
-        () =>
-            listenToCursor(squireRef.current, () => {
-                const fontAtCursor = getFontFaceAtCursor(squireRef.current);
-                update(fontAtCursor || defaultValue);
-            }),
-        [editorReady]
-    );
+const getFontLabel = (font: string) =>
+    Object.entries(FONT_FACE).find(([, value]) => {
+        return value === font;
+    })?.[0];
 
-    const handleClick = (font: FONT_FACE) => () => {
-        update(font);
-        squireRef.current.setFontFace(font.toString());
+const hasFont = (font: string | undefined) =>
+    font &&
+    Object.entries(FONT_FACE).find(([, fontValue]) => {
+        return fontValue === font;
+    });
+
+const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault, showDefaultFontSelector }: Props) => {
+    const [computedValue, setComputedValue] = useState(value || defaultValue);
+
+    const onChange = (nextFont: string) => {
+        setComputedValue(nextFont);
+        setValue(nextFont);
     };
 
+    useEffect(() => {
+        if (!hasFont(value) || value === computedValue) {
+            return;
+        }
+
+        if (value) {
+            setComputedValue(value);
+        }
+    }, [value]);
+
+    useEffect(() => {
+        if (defaultValue) {
+            setComputedValue(defaultValue);
+        }
+    }, [defaultValue]);
+
     return (
-        <SquireToolbarDropdown
+        <ToolbarDropdown
             originalPlacement="bottom-left"
             className="composer-toolbar-fontDropDown flex-item-fluid text-right flex no-scroll"
             title={c('Action').t`Font`}
             content={
                 <span
                     className="text-ellipsis text-left max-w100"
-                    style={{ display: 'inline-block', fontFamily: value.toString() }}
+                    style={{ display: 'inline-block', fontFamily: computedValue.toString() }}
                 >
-                    {getFontLabel(value as FONT_FACE)}
+                    {getFontLabel(computedValue)}
                 </span>
             }
         >
@@ -64,17 +72,17 @@ const SquireToolbarFontFaceDropdown = ({
                         buttonClassName="text-left"
                         aria-pressed={font === value}
                         isSelected={font === value}
-                        onClick={handleClick(font)}
+                        onClick={() => onChange(font)}
                         style={{ fontFamily: font.toString() }}
                         buttonContent={<span className="pr0-5">{getFontLabel(font)}</span>}
                         extraContent={
-                            font === defaultValue && !isOutside ? (
+                            font === defaultValue && showDefaultFontSelector ? (
                                 <div className="flex pl0-5 pr0-5 flex-item-noshrink">
                                     <Button
                                         color="weak"
                                         shape="ghost"
                                         className="inline-flex flex-align-self-center text-no-decoration relative"
-                                        onClick={onDefaultClick}
+                                        onClick={onClickDefault}
                                     >
                                         <Badge className="color-info">{c('Font Face Default').t`Default`}</Badge>
                                     </Button>
@@ -84,8 +92,8 @@ const SquireToolbarFontFaceDropdown = ({
                     />
                 ))}
             </DropdownMenu>
-        </SquireToolbarDropdown>
+        </ToolbarDropdown>
     );
 };
 
-export default SquireToolbarFontFaceDropdown;
+export default ToolbarFontFaceDropdown;
