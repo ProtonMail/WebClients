@@ -6,7 +6,8 @@ import {
     DropdownMenuButton,
     Icon,
     useNotifications,
-    useModals, usePopperAnchor
+    useModals,
+    usePopperAnchor,
 } from '@proton/components';
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
@@ -33,14 +34,14 @@ interface Props {
 }
 
 const MailRecipientItemSingle = ({
-                                     recipient,
-                                     mapStatusIcons,
-                                     globalIcon,
-                                     showAddress = true,
-                                     showLockIcon = true,
-                                     signingPublicKey,
-                                     highlightKeywords = false
-                                 }: Props) => {
+    recipient,
+    mapStatusIcons,
+    globalIcon,
+    showAddress = true,
+    showLockIcon = true,
+    signingPublicKey,
+    highlightKeywords = false,
+}: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const { createNotification } = useNotifications();
@@ -76,7 +77,7 @@ const MailRecipientItemSingle = ({
         event.stopPropagation();
 
         if (ContactID) {
-            createModal(<ContactDetailsModal contactID={ContactID} onMailTo={onMailTo}/>);
+            createModal(<ContactDetailsModal contactID={ContactID} onMailTo={onMailTo} />);
             return;
         }
 
@@ -101,37 +102,34 @@ const MailRecipientItemSingle = ({
             bePinnedPublicKey: signingPublicKey as OpenPGPKey,
         };
 
-        createModal(<TrustPublicKeyModal contact={contact}/>);
+        createModal(<TrustPublicKeyModal contact={contact} />);
     };
 
     const dropdownActions = (
         <>
             <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCompose}>
-                <Icon name="envelope" className="mr0-5 mt0-25"/>
+                <Icon name="envelope" className="mr0-5 mt0-25" />
                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`New message`}</span>
             </DropdownMenuButton>
             <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCopy}>
-                <Icon name="copy" className="mr0-5 mt0-25"/>
+                <Icon name="copy" className="mr0-5 mt0-25" />
                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy address`}</span>
             </DropdownMenuButton>
             {ContactID ? (
                 <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
-                    <Icon name="user" className="mr0-5 mt0-25"/>
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                        .t`View contact details`}</span>
+                    <Icon name="user" className="mr0-5 mt0-25" />
+                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View contact details`}</span>
                 </DropdownMenuButton>
             ) : (
                 <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
-                    <Icon name="user-plus" className="mr0-5 mt0-25"/>
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                        .t`Create new contact`}</span>
+                    <Icon name="user-plus" className="mr0-5 mt0-25" />
+                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
             {showTrustPublicKey && (
                 <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickTrust}>
-                    <Icon name="user" className="mr0-5 mt0-25"/>
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                        .t`Trust Public Key`}</span>
+                    <Icon name="user" className="mr0-5 mt0-25" />
+                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Trust Public Key`}</span>
                 </DropdownMenuButton>
             )}
         </>
@@ -141,7 +139,7 @@ const MailRecipientItemSingle = ({
         <>
             {showLockIcon && icon && (
                 <span className="flex ml0-25 flex-item-noshrink message-recipient-item-lockIcon">
-                        <EncryptionStatusIcon {...icon} />
+                    <EncryptionStatusIcon {...icon} />
                 </span>
             )}
         </>
@@ -158,6 +156,7 @@ const MailRecipientItemSingle = ({
             isOpen={isOpen}
             toggle={toggle}
             close={close}
+            actualLabel={label}
         />
     );
 };

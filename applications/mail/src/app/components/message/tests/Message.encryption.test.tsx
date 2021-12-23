@@ -19,6 +19,7 @@ import { parseInDiv } from '../../../helpers/dom';
 import { X_PM_HEADERS } from '../../../models/crypto';
 import { addApiContact } from '../../../helpers/test/contact';
 import { localID, addressID, body, messageID, setup, subject, getIframeRootDiv } from './Message.test.helpers';
+import { MessageKeys } from '../../../logic/messages/messagesTypes';
 
 jest.setTimeout(20000);
 
@@ -31,11 +32,18 @@ describe('MessageView encryption', () => {
     let toKeys: GeneratedKey;
     let fromKeys: GeneratedKey;
     let otherKeys: GeneratedKey;
+    let publicPrivateKey: MessageKeys;
 
     beforeAll(async () => {
         toKeys = await generateKeys('me', toAddress);
         fromKeys = await generateKeys('someone', fromAddress);
         otherKeys = await generateKeys('other', otherAddress);
+
+        publicPrivateKey = {
+            type: 'publicPrivate',
+            publicKeys: toKeys.publicKeys,
+            privateKeys: toKeys.privateKeys,
+        };
     });
 
     afterEach(clearAll);
@@ -105,7 +113,7 @@ describe('MessageView encryption', () => {
 
             const mimeBody = await constructMime(
                 { localID, data: message, messageDocument: { document: parseInDiv(body) } },
-                toKeys,
+                publicPrivateKey,
                 jest.fn(),
                 jest.fn(),
                 api,
@@ -139,7 +147,7 @@ describe('MessageView encryption', () => {
 
             const mimeBody = await constructMime(
                 { localID, data: { ...message, MIMEType: MIME_TYPES.PLAINTEXT }, messageDocument: { plainText: body } },
-                toKeys,
+                publicPrivateKey,
                 jest.fn(),
                 jest.fn(),
                 api,
@@ -222,7 +230,7 @@ describe('MessageView encryption', () => {
 
             const mimeBody = await constructMime(
                 { localID, data: message, messageDocument: { document: parseInDiv(body) } },
-                toKeys,
+                publicPrivateKey,
                 jest.fn(),
                 jest.fn(),
                 api,

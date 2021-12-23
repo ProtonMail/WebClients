@@ -5,9 +5,10 @@ import { Route, Switch } from 'react-router-dom';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 
 import ViewMessage from '../../components/eo/message/ViewMessage';
-import Reply from '../../components/eo/Reply';
-import Unlock from '../../components/eo/Unlock';
+import Reply from '../../components/eo/reply/Reply';
+import Unlock from '../../components/eo/unlock/Unlock';
 import { init } from '../../logic/eo/eoActions';
+import { EO_MESSAGE_REDIRECT_PATH, EO_REDIRECT_PATH, EO_REPLY_REDIRECT_PATH } from '../../constants';
 
 const PageContainer = () => {
     const { set, get } = createSecureSessionStorage();
@@ -23,13 +24,13 @@ const PageContainer = () => {
 
     return (
         <Switch>
-            <Route path="/eo/message/:id?">
-                <ViewMessage />
+            <Route path={`${EO_MESSAGE_REDIRECT_PATH}/:id?`}>
+                <ViewMessage setSessionStorage={set} />
             </Route>
-            <Route path="/eo/reply/:id?">
-                <Reply />
+            <Route path={`${EO_REPLY_REDIRECT_PATH}/:id?`}>
+                <Reply setSessionStorage={set} />
             </Route>
-            <Route path="/eo/:id?">
+            <Route path={`${EO_REDIRECT_PATH}/:id?`}>
                 <Unlock setSessionStorage={set} />
             </Route>
             <Route path="*">

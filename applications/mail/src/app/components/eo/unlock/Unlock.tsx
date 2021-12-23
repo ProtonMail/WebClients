@@ -2,19 +2,15 @@ import { useEffect, useState } from 'react';
 import { useRouteMatch, useHistory } from 'react-router';
 import { c } from 'ttag';
 
-import { Href, useApi, useNotifications } from '@proton/components';
-
-import Main from 'proton-account/src/app/public/Main';
-import Header from 'proton-account/src/app/public/Header';
-import Content from 'proton-account/src/app/public/Content';
-import Footer from 'proton-account/src/app/public/Footer';
+import { Href, Loader, useApi, useNotifications } from '@proton/components';
 
 import { useDispatch } from 'react-redux';
 import MessageDecryptForm from './MessageDecryptForm';
-import { EOUrlParams } from '../../helpers/eo/eoUrl';
-import { useOutsideMessage } from '../../hooks/eo/useOutsideMessage';
-import { eoDecrypt } from '../../helpers/eo/message';
-import { loadEOMessage } from '../../logic/eo/eoActions';
+import { EOUrlParams } from '../../../helpers/eo/eoUrl';
+import { useOutsideMessage } from '../../../hooks/eo/useOutsideMessage';
+import { eoDecrypt } from '../../../helpers/eo/message';
+import { loadEOMessage } from '../../../logic/eo/eoActions';
+import { EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 
 interface Props {
     setSessionStorage: (key: string, data: any) => void;
@@ -25,7 +21,7 @@ const Unlock = ({ setSessionStorage }: Props) => {
     const { id } = match.params;
     const history = useHistory();
     const dispatch = useDispatch();
-    const { encryptedToken } = useOutsideMessage({ id, setSessionStorage });
+    const { encryptedToken, isStoreInitialized } = useOutsideMessage({ id, setSessionStorage });
     const api = useApi();
     const { createNotification } = useNotifications();
 
@@ -40,13 +36,12 @@ const Unlock = ({ setSessionStorage }: Props) => {
     const handleTryUnlock = async (password: string) => {
         if (password.length > 0 && id) {
             try {
-                // Decrypt the message token
                 const token = await eoDecrypt(encryptedToken, password);
 
                 await dispatch(loadEOMessage({ api, token, id, password, set: setSessionStorage }));
 
-                history.push(`/eo/message/${id}`);
-            } catch (e) {
+                history.push(`${EO_MESSAGE_REDIRECT_PATH}/${id}`);
+            } catch (e: any) {
                 console.error(e);
                 createNotification({ text: c('Error').t`Wrong mailbox password`, type: 'error' });
             }
@@ -55,25 +50,28 @@ const Unlock = ({ setSessionStorage }: Props) => {
         }
     };
 
-    if (isError) {
-        return (
-            <Main>
-                <Header title={c('Title').t`Error`} />
-                <Content>{c('Info').t`Sorry, this message does not exist or has already expired`}</Content>
-            </Main>
-        );
+    if (!isStoreInitialized) {
+        return <Loader />;
     }
 
     return (
-        <Main>
-            <Header title={c('Title').t`ProtonMail`} />
-            <Content>
-                <MessageDecryptForm onSubmit={handleTryUnlock} />
-            </Content>
-            <Footer className="mlauto">
+        <main className="ui-standard color-norm bg-norm relative no-scroll w100 max-w100 center sign-layout mw30r">
+            <div className="sign-layout-header">
+                <h1 className="sign-layout-title text-center mt1 mb0-5">
+                    <strong>{isError ? c('Title').t`Error` : c('Title').t`ProtonMail`}</strong>
+                </h1>
+            </div>
+            <div className="sign-layout-main-content">
+                {isError ? (
+                    c('Info').t`Sorry, this message does not exist or has already expired`
+                ) : (
+                    <MessageDecryptForm onSubmit={handleTryUnlock} />
+                )}
+            </div>
+            <div className="border-top flex p1 mlauto">
                 <Href className="mlauto mrauto" href="https://protonmail.com/support">{c('Action').t`Need help?`}</Href>
-            </Footer>
-        </Main>
+            </div>
+        </main>
     );
 };
 

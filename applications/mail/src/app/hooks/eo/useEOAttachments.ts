@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 
 import { useHandler, useNotifications } from '@proton/components';
@@ -16,7 +15,7 @@ import {
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
 import { MessageChange } from '../../components/composer/Composer';
 import { EditorActionsRef } from '../../components/composer/editor/SquireEditorWrapper';
-import { ATTACHMENT_ACTION, isSizeExceeded, uploadEO } from '../../helpers/attachment/attachmentUploader';
+import { ATTACHMENT_ACTION, checkSize, uploadEO } from '../../helpers/attachment/attachmentUploader';
 
 interface Props {
     message: MessageState;
@@ -29,17 +28,6 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
     const { createNotification } = useNotifications();
 
     const [imagesToInsert, setImagesToInsert] = useState<File[]>([]);
-
-    const checkSize = (files: File[]) => {
-        const sizeExcedeed = isSizeExceeded(message, [...files]);
-        if (sizeExcedeed) {
-            createNotification({
-                type: 'error',
-                text: c('Error').t`Attachments are limited to 25 MB`,
-            });
-        }
-        return sizeExcedeed;
-    };
 
     /**
      * Start uploading a file, the choice between attachment or inline is done.
@@ -72,24 +60,13 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
     });
 
     /**
-     * Trigger an directly an embedded upload.
-     */
-    const handleAddEmbeddedImages = async (files: File[]) => {
-        if (checkSize(files)) {
-            return;
-        }
-
-        void handleAddAttachmentsUpload(ATTACHMENT_ACTION.INLINE, files);
-    };
-
-    /**
      * Entry point for upload, will check and ask for attachment action if possible
      */
     const handleAddAttachments = useHandler(async (files: File[]) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
         const plainText = isPlainText(message.data);
 
-        if (checkSize(files)) {
+        if (checkSize(createNotification, message, files)) {
             return;
         }
 
@@ -133,7 +110,6 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
         imagesToInsert,
         setImagesToInsert,
         handleAddAttachments,
-        handleAddEmbeddedImages,
         handleAddAttachmentsUpload,
         handleRemoveAttachment,
         handleUploadImage,
