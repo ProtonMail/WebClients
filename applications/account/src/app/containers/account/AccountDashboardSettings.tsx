@@ -53,31 +53,33 @@ export const getDashboardPage = ({ user }: { user: UserModel }) => {
                 text: user.isFree ? c('Title').t`Your current plan` : c('Title').t`Your plan`,
                 id: 'your-plan',
             },
-            {
-                text: c('Title').t`Billing details`,
-                id: 'billing',
-                permissions: [PAID, UPGRADER, NOT_SUB_USER],
-            },
-            {
-                text: c('Title').t`Payment methods`,
-                id: 'payment-methods',
-                permissions: [UPGRADER, NOT_SUB_USER],
-            },
-            {
-                text: c('Title').t`Credits`,
-                id: 'credits',
-                permissions: [UPGRADER, NOT_SUB_USER],
-            },
-            {
-                text: c('Title').t`Gift code`,
-                id: 'gift-code',
-                permissions: [UPGRADER, NOT_SUB_USER],
-            },
-            {
-                text: c('Title').t`Invoices`,
-                id: 'invoices',
-                permissions: [UPGRADER, NOT_SUB_USER],
-            },
+            user.canPay && [
+                {
+                    text: c('Title').t`Billing details`,
+                    id: 'billing',
+                    permissions: [PAID, UPGRADER, NOT_SUB_USER],
+                },
+                {
+                    text: c('Title').t`Payment methods`,
+                    id: 'payment-methods',
+                    permissions: [UPGRADER, NOT_SUB_USER],
+                },
+                {
+                    text: c('Title').t`Credits`,
+                    id: 'credits',
+                    permissions: [UPGRADER, NOT_SUB_USER],
+                },
+                {
+                    text: c('Title').t`Gift code`,
+                    id: 'gift-code',
+                    permissions: [UPGRADER, NOT_SUB_USER],
+                },
+                {
+                    text: c('Title').t`Invoices`,
+                    id: 'invoices',
+                    permissions: [UPGRADER, NOT_SUB_USER],
+                },
+            ],
             hasEmailSubscriptions(user) && {
                 text: c('Title').t`Email subscriptions`,
                 id: 'email-subscription',
@@ -86,7 +88,9 @@ export const getDashboardPage = ({ user }: { user: UserModel }) => {
                 text: c('Title').t`Downgrade account`,
                 id: 'cancel-subscription',
             },
-        ].filter(isTruthy),
+        ]
+            .filter(isTruthy)
+            .flat(),
     };
 };
 
@@ -176,11 +180,13 @@ const AccountDashboardSettings = ({ location, setActiveSection }: SettingsPropsS
         >
             {hasSelectPlan(user) && <PlansSection />}
             {hasYourPlan(user) && <YourPlanSection />}
-            <BillingSection />
-            <PaymentMethodsSection />
-            <CreditsSection />
-            <GiftCodeSection />
-            <InvoicesSection />
+            {user.canPay && [
+                <BillingSection key="0" />,
+                <PaymentMethodsSection key="1" />,
+                <CreditsSection key="2" />,
+                <GiftCodeSection key="3" />,
+                <InvoicesSection key="4" />,
+            ]}
             {hasEmailSubscriptions(user) && <EmailSubscriptionSection />}
             {hasDowngradeAccount(user) && <CancelSubscriptionSection />}
         </PrivateMainSettingsAreaWithPermissions>
