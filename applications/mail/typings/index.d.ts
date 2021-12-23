@@ -13,7 +13,4 @@ declare module 'ical.js' {
     export default value;
 }
 
-declare module '*.raw.scss' {
-    const src: string;
-    export default src;
-}
+declare module '*.raw.scss';
