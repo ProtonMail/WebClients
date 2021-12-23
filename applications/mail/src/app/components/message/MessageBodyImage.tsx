@@ -87,7 +87,6 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor,
     }, [showImage]);
 
     if (showImage) {
-        // eslint-disable-next-line jsx-a11y/alt-text
         return <img ref={imageRef} src={image.url} />;
     }
 

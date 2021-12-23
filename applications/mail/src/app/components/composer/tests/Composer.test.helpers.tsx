@@ -111,7 +111,7 @@ export const send = async (message: MessageState, useMinimalCache = true) => {
 
         const renderResult = await renderComposer(message.localID, useMinimalCache);
 
-        return clickSend(renderResult);
+        return await clickSend(renderResult);
     } catch (error: any) {
         console.log('Error in sending helper', error);
         throw error;

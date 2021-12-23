@@ -826,7 +826,7 @@ const InteractiveCalendarView = ({
                 return Promise.reject(new Error('Keep event'));
             }
             try {
-                return handleCloseConfirmation();
+                return await handleCloseConfirmation();
             } catch (e) {
                 return Promise.reject(new Error('Keep event'));
             }
@@ -931,7 +931,7 @@ const InteractiveCalendarView = ({
         try {
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s
-            return processApiRequestsSafe(requests, 25000, 900 * SECOND);
+            return await processApiRequestsSafe(requests, 25000, 900 * SECOND);
         } catch (e: any) {
             return [];
         }
@@ -962,7 +962,7 @@ const InteractiveCalendarView = ({
         try {
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s
-            return processApiRequestsSafe(requests, 25000, 900 * SECOND);
+            return await processApiRequestsSafe(requests, 25000, 900 * SECOND);
         } catch (e: any) {
             return [];
         }

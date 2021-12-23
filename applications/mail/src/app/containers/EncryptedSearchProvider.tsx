@@ -1099,7 +1099,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 ) {
                     // Start indexing for new users and prevent showing the spotlight on ES to them
                     await updateSpotlightES(false);
-                    return resumeIndexing({ notify: false });
+                    return await resumeIndexing({ notify: false });
                 }
 
                 // Check all keys that decrypt under the current user's key
@@ -1117,7 +1117,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                             await esDelete(userID);
                         })
                     );
-                    return restartIndexing();
+                    return await restartIndexing();
                 }
 
                 // At this point there is only one key blob. If the stored user ID does not coincide with the
@@ -1125,12 +1125,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 const { userID: storedUserID, indexKey } = indexKeys[0];
                 if (storedUserID !== userID) {
                     await esDelete(storedUserID);
-                    return restartIndexing();
+                    return await restartIndexing();
                 }
 
                 const isIDBIntact = await canUseES(userID);
                 if (!indexKey || !isIDBIntact) {
-                    return dbCorruptError();
+                    return await dbCorruptError();
                 }
 
                 setESStatus((esStatus) => {
@@ -1156,11 +1156,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 const currentEvent = await getEventFromLS(userID, api);
 
                 if (!currentEvent) {
-                    return dbCorruptError();
+                    return await dbCorruptError();
                 }
 
                 if (hasBit(currentEvent.Refresh, EVENT_ERRORS.MAIL)) {
-                    return restartIndexing();
+                    return await restartIndexing();
                 }
 
                 void addSyncing(() => catchUpFromLS(indexKey, currentEvent));
