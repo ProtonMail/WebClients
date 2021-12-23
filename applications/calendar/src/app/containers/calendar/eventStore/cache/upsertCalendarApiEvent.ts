@@ -20,7 +20,7 @@ const FIELDS_TO_KEEP = [
     'CalendarEvents',
     'SharedKeyPacket',
     'SharedEvents',
-    'PersonalEvent',
+    'PersonalEvents',
     'AttendeesEvents',
     'Attendees',
 ] as const;
