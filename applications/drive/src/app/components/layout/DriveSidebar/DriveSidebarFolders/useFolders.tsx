@@ -49,7 +49,15 @@ export default function useFolders(shareId: string, rootLinkId: string) {
             } else {
                 const newIds = children.map(({ LinkID }) => LinkID);
                 const prevItems = folder.loaded
-                    ? folder.subfolders.filter(({ linkId }) => newIds.includes(linkId))
+                    ? folder.subfolders
+                          .filter(({ linkId }) => newIds.includes(linkId))
+                          .map((subfolder) => {
+                              const item = children.find((item) => item.LinkID === subfolder.linkId);
+                              if (item && item.Name !== subfolder.name) {
+                                  return { ...subfolder, name: item.Name };
+                              }
+                              return subfolder;
+                          })
                     : folder.subfolders;
 
                 const currentIds = folder.subfolders.map(({ linkId }) => linkId);
