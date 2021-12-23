@@ -1,24 +1,21 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText, getAttachments } from '@proton/shared/lib/mail/messages';
-
-import { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
+import { DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
 import { classnames, EllipsisLoader } from '@proton/components';
 import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/placeholders/drag-and-drop-img.svg';
-import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';
-import { Breakpoints } from '../../models/utils';
 import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
+import EditorWrapper, { ExternalEditorActions } from './editor/EditorWrapper';
 
 interface Props {
     message: MessageState;
     disabled: boolean;
-    breakpoints: Breakpoints;
-    onEditorReady: () => void;
+    onEditorReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
     onChangeContent: (content: string) => void;
     onFocus?: () => void;
@@ -26,9 +23,6 @@ interface Props {
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     pendingUploads?: PendingUpload[];
-    contentFocusRef: MutableRefObject<() => void>;
-    editorActionsRef: EditorActionsRef;
-    squireKeydownHandler?: (e: KeyboardEvent) => void;
     isOutside?: boolean;
     outsideKey?: OutsideKey;
     mailSettings?: MailSettings;
@@ -38,7 +32,6 @@ interface Props {
 const ComposerContent = ({
     message,
     disabled,
-    breakpoints,
     onEditorReady,
     onChange,
     onChangeContent,
@@ -47,9 +40,6 @@ const ComposerContent = ({
     onRemoveAttachment,
     onRemoveUpload,
     pendingUploads,
-    contentFocusRef,
-    editorActionsRef,
-    squireKeydownHandler,
     isOutside = false,
     outsideKey,
     mailSettings,
@@ -114,19 +104,15 @@ const ComposerContent = ({
                 ])}
                 data-testid="composer-content"
             >
-                <SquireEditorWrapper
+                <EditorWrapper
                     message={message}
                     disabled={disabled}
-                    breakpoints={breakpoints}
                     onReady={onEditorReady}
                     onChange={onChange}
                     onChangeContent={onChangeContent}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     onRemoveAttachment={onRemoveAttachment}
-                    contentFocusRef={contentFocusRef}
-                    editorActionsRef={editorActionsRef}
-                    keydownHandler={squireKeydownHandler}
                     isOutside={isOutside}
                     mailSettings={mailSettings}
                     addresses={addresses}

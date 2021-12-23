@@ -89,7 +89,7 @@ describe('Composer reply and forward', () => {
 
         const renderResult = await renderComposer(message.localID, false);
 
-        const iframe = (await renderResult.findByTestId('squire-iframe')) as HTMLIFrameElement;
+        const iframe = (await renderResult.findByTestId('rooster-iframe')) as HTMLIFrameElement;
         const button = iframe.contentWindow?.document.getElementById('ellipsis') as HTMLButtonElement;
 
         await act(async () => {

@@ -1,22 +1,12 @@
 import { ChangeEvent, useState, useRef, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { isMac } from '@proton/shared/lib/helpers/browser';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
-import { Input, SimpleSquireEditor, Button } from '../../components';
-import {
-    useApi,
-    useLoading,
-    useNotifications,
-    useEventManager,
-    useMailSettings,
-    useHotkeys,
-    useHandler,
-} from '../../hooks';
+import { Input, Button, Editor, EditorActions } from '../../components';
+import { useApi, useLoading, useNotifications, useEventManager, useMailSettings, useHotkeys } from '../../hooks';
 
-import { SquireEditorRef } from '../../components/editor/SquireEditor';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -33,79 +23,55 @@ const EditAddressesSection = ({ address }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
-    const [model, updateModel] = useState({
-        displayName: address.DisplayName,
-        signature: address.Signature,
-    });
-    const [squireReady, setSquireReady] = useState(false);
+    const [editorReady, setEditorReady] = useState(false);
+    const [displayName, setDisplayName] = useState(address.DisplayName);
+    const [signatureUpdated, setSignatureUpdated] = useState(false);
     const { createNotification } = useNotifications();
 
-    const editorRef = useRef<SquireEditorRef>(null);
-    const composerRef = useRef<HTMLDivElement>(null);
+    const editorWrapperRef = useRef<HTMLDivElement>(null);
+    const editorRef = useRef<EditorActions>();
 
-    const handleReady = () => {
-        if (editorRef.current) {
-            editorRef.current.value = model.signature;
-        }
-        setSquireReady(true);
+    const handleReady = (actions: EditorActions) => {
+        actions.setContent(address.Signature);
+        editorRef.current = actions;
+        setEditorReady(true);
     };
 
     const handleDisplayName = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        updateModel({ ...model, displayName: target.value });
-    };
-
-    const handleSignature = (value: string) => {
-        updateModel({ ...model, signature: value });
+        setDisplayName(target.value);
     };
 
     const handleSubmit = async () => {
+        const signature = signatureUpdated ? (editorRef.current?.getContent() as string) : address.Signature;
+
         await api(
             updateAddress(address.ID, {
-                DisplayName: model.displayName,
-                Signature: formatSignature(model.signature),
+                DisplayName: displayName,
+                Signature: formatSignature(signature),
             })
         );
         await call();
         createNotification({ text: c('Success').t`Address updated` });
     };
 
-    const squireKeydownHandler = useHandler((e: KeyboardEvent) => {
-        const ctrlOrMetaKey = (e: KeyboardEvent) => (isMac() ? e.metaKey : e.ctrlKey);
-
-        if (!e.key) {
-            return;
-        }
-
-        switch (e.key.toLowerCase()) {
-            case 'enter':
-                if (Shortcuts && ctrlOrMetaKey(e)) {
-                    void withLoading(handleSubmit());
-                }
-                break;
-            default:
-                break;
-        }
-    });
-
-    useHotkeys(composerRef, [
+    useHotkeys(editorWrapperRef, [
         [
             ['Meta', 'Enter'],
-            async () => {
+            () => {
                 if (Shortcuts) {
-                    await withLoading(handleSubmit());
+                    void withLoading(handleSubmit());
                 }
             },
         ],
     ]);
 
+    // On address change
     useEffect(() => {
-        updateModel({
-            displayName: address.DisplayName,
-            signature: address.Signature,
-        });
+        setDisplayName(address.DisplayName);
         setTimeout(() => {
-            if (editorRef?.current && squireReady) {
-                editorRef.current.value = address.Signature;
+            if (editorRef?.current && editorReady) {
+                setSignatureUpdated(false);
+                editorRef.current.setContent(address.Signature);
             }
         }, 100);
     }, [address]);
@@ -126,7 +92,7 @@ const EditAddressesSection = ({ address }: Props) => {
                 <SettingsLayoutRight>
                     <Input
                         id="displayName"
-                        value={model.displayName}
+                        value={displayName}
                         placeholder={c('Placeholder').t`Choose display name`}
                         onChange={handleDisplayName}
                         data-testid="settings:identity-section:display-name"
@@ -141,13 +107,13 @@ const EditAddressesSection = ({ address }: Props) => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
-                    <div ref={composerRef} tabIndex={-1}>
-                        <SimpleSquireEditor
-                            id="editor"
-                            ref={editorRef}
+                    <div ref={editorWrapperRef} tabIndex={-1}>
+                        <Editor
                             onReady={handleReady}
-                            onChange={handleSignature}
-                            keydownHandler={squireKeydownHandler}
+                            onChange={() => {
+                                setSignatureUpdated(true);
+                            }}
+                            simple
                         />
                     </div>
 

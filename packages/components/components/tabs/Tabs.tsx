@@ -54,6 +54,7 @@ export const Tabs = ({
                             <li key={key} className="tabs-list-item" role="presentation">
                                 <button
                                     onClick={(event) => {
+                                        event.stopPropagation();
                                         event.preventDefault();
                                         onChange(index);
                                     }}

@@ -128,6 +128,7 @@ export const findEmbedded = (cid: string, cloc: string, document: Element) => {
 export const findCIDsInContent = (content: string) =>
     (content.match(/(rel=("([^"]|"")*"))|(data-embedded-img=("([^"]|"")*"))/g) || [])
         .filter((key) => key !== 'rel="noreferrer nofollow noopener"') // we don't care about links
+        .filter((key) => key !== 'rel="noopener noreferrer"') // we don't care about links
         .map((key) => key.replace(/rel="|data-embedded-img="/, ''))
         .map((key) => key.slice(4, -1)); // Assume it's starts by "cid:"
 

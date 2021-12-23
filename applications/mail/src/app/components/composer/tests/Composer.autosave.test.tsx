@@ -1,9 +1,9 @@
 import { noop } from '@proton/shared/lib/helpers/function';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { act } from '@testing-library/react';
-import { fireEvent } from '@testing-library/dom';
-import Squire from 'squire-rte';
+import { fireEvent, getByTestId } from '@testing-library/dom';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import {
     clearAll,
     GeneratedKey,
@@ -51,10 +51,13 @@ describe('Composer autosave', () => {
         return { spy, resolve: (value: unknown) => resolve(value), reject: (value: unknown) => reject(value) };
     };
 
-    const triggerSquireInput = () => {
-        const squire = Squire();
-        const [, handler] = squire.addEventListener.mock.calls.find(([name]: [string]) => name === 'input');
-        handler();
+    const triggerRoosterInput = (container: HTMLElement) => {
+        const iframe = getByTestId(container, 'rooster-iframe') as HTMLIFrameElement;
+        const editor = iframe.contentDocument?.getElementById(ROOSTER_EDITOR_ID);
+
+        if (editor) {
+            fireEvent.input(editor, 'hello');
+        }
     };
 
     const setup = async (resolved = true) => {
@@ -63,7 +66,7 @@ describe('Composer autosave', () => {
             messageDocument: { document: createDocument('test') },
         });
         const renderResult = await renderComposer(message.localID);
-        triggerSquireInput(); // Initial dummy Squire input
+        triggerRoosterInput(renderResult.container); // Initial dummy Squire input
         const { spy: createSpy, resolve: createResolve } = asyncSpy(resolved);
         const { spy: updateSpy, resolve: updateResolve } = asyncSpy(resolved);
         const { spy: sendSpy, resolve: sendResolve } = asyncSpy(resolved);
@@ -74,10 +77,10 @@ describe('Composer autosave', () => {
     };
 
     it('should wait 2s before saving a change', async () => {
-        const { createSpy } = await setup();
+        const { createSpy, container } = await setup();
 
         await act(async () => {
-            triggerSquireInput();
+            triggerRoosterInput(container);
             await wait(1500);
             expect(createSpy).not.toHaveBeenCalled();
             await wait(1500);
@@ -86,12 +89,12 @@ describe('Composer autosave', () => {
     });
 
     it('should wait 2s after the last change before saving a change', async () => {
-        const { createSpy } = await setup();
+        const { createSpy, container } = await setup();
 
         await act(async () => {
-            triggerSquireInput();
+            triggerRoosterInput(container);
             await wait(1500);
-            triggerSquireInput();
+            triggerRoosterInput(container);
             await wait(1500);
             expect(createSpy).not.toHaveBeenCalled();
             await wait(1500);
@@ -100,15 +103,15 @@ describe('Composer autosave', () => {
     });
 
     it('should wait 2s after previous save resolved before saving a change', async () => {
-        const { createSpy, createResolve, updateSpy } = await setup(false);
+        const { createSpy, createResolve, updateSpy, container } = await setup(false);
 
         await act(async () => {
-            triggerSquireInput();
+            triggerRoosterInput(container);
             await wait(1500);
             expect(createSpy).not.toHaveBeenCalled();
             await wait(1500);
             expect(createSpy).toHaveBeenCalled();
-            triggerSquireInput();
+            triggerRoosterInput(container);
             await wait(1500);
             expect(updateSpy).not.toHaveBeenCalled();
             await wait(1500);
@@ -122,10 +125,10 @@ describe('Composer autosave', () => {
     });
 
     it('should wait previous save before sending', async () => {
-        const { createSpy, createResolve, sendSpy, ...renderResult } = await setup(false);
+        const { createSpy, createResolve, sendSpy, container, ...renderResult } = await setup(false);
 
         await act(async () => {
-            triggerSquireInput();
+            triggerRoosterInput(container);
             await wait(1500);
             const sendButton = await renderResult.findByTestId('composer:send-button');
             fireEvent.click(sendButton);
