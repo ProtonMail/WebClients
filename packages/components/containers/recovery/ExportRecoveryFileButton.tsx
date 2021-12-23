@@ -32,6 +32,11 @@ const ExportRecoveryFileButton = ({
 
     const [loading, withLoading] = useLoading();
 
+    const exportRecoveryFileWithNotification: typeof exportRecoveryFile = async (args) => {
+        await exportRecoveryFile(args);
+        createNotification({ text: c('Info').t`Recovery file downloaded` });
+    };
+
     const handleClick = async () => {
         const primaryUserKey = userKeys[0];
         if (!primaryUserKey) {
@@ -46,7 +51,7 @@ const ExportRecoveryFileButton = ({
                     Signature: signature,
                 })
             );
-            await exportRecoveryFile({ recoverySecret, userKeys });
+            await exportRecoveryFileWithNotification({ recoverySecret, userKeys });
             await call();
             return;
         }
@@ -60,7 +65,10 @@ const ExportRecoveryFileButton = ({
             return;
         }
 
-        await exportRecoveryFile({ recoverySecret: primaryRecoverySecret.RecoverySecret, userKeys });
+        await exportRecoveryFileWithNotification({
+            recoverySecret: primaryRecoverySecret.RecoverySecret,
+            userKeys,
+        });
     };
 
     return (

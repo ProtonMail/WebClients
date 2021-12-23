@@ -19,7 +19,7 @@ const VoidRecoveryFilesModal = ({ onClose, onSuccess, ...rest }: Props) => {
         await api(deleteRecoverySecrets());
         onSuccess();
         onClose?.();
-        createNotification({ text: c('Info').t`Recovery files have been voided` });
+        createNotification({ type: 'info', text: c('Info').t`Recovery files have been voided` });
     };
 
     return (

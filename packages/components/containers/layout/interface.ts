@@ -1,5 +1,6 @@
 import * as H from 'history';
 import { PERMISSIONS } from '@proton/shared/lib/constants';
+import { NotificationDotColor } from '../../components';
 
 export interface SettingsPropsShared {
     location: H.Location;
@@ -20,5 +21,5 @@ export interface SectionConfig {
     description?: string;
     subsections?: SubSectionConfig[];
     permissions?: PERMISSIONS[];
-    notification?: boolean;
+    notification?: NotificationDotColor;
 }
