@@ -81,7 +81,7 @@ export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: st
  */
 export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
     try {
-        return decryptIndexKey(getUserKeys, getES.Key(userID));
+        return await decryptIndexKey(getUserKeys, getES.Key(userID));
     } catch (error: any) {
         esSentryReport('getIndexKey', { error });
     }
