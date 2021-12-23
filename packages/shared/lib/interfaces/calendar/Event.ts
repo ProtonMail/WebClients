@@ -46,7 +46,7 @@ export interface CalendarEventBlobData {
     CalendarEvents: CalendarEventData[];
     SharedKeyPacket: string;
     SharedEvents: CalendarEventData[];
-    PersonalEvent: CalendarPersonalEventData[];
+    PersonalEvents: CalendarPersonalEventData[];
     AttendeesEvents: CalendarEventData[];
     Attendees: Attendee[];
 }
