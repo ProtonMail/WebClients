@@ -19,7 +19,7 @@ const ExtraDarkStyle = ({ message }: Props) => {
 
     useEffect(() => {
         if (showBanner) {
-            void api(sendMetricsReport({ Log: LOG_ID, Title: 'Apply dark styles', Data: [] }));
+            void api(sendMetricsReport({ Log: LOG_ID, Title: 'Apply dark styles', Data: {} }));
         }
     }, [showBanner]);
 
@@ -29,7 +29,7 @@ const ExtraDarkStyle = ({ message }: Props) => {
 
     const handleClick = () => {
         dispatch(removeDarkStyle({ ID: message.localID, noDarkStyle: true }));
-        void api(sendMetricsReport({ Log: LOG_ID, Title: 'Remove dark styles', Data: [] }));
+        void api(sendMetricsReport({ Log: LOG_ID, Title: 'Remove dark styles', Data: {} }));
     };
 
     return (
