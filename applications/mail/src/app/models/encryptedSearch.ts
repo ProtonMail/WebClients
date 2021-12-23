@@ -106,6 +106,7 @@ export interface ESStatus {
     isCaching: boolean;
     isFirstSearch: boolean;
     dropdownOpened: boolean;
+    temporaryToggleOff: boolean;
 }
 
 export interface ESCache {
@@ -196,4 +197,5 @@ export interface EncryptedSearchFunctions {
     esDelete: () => Promise<void>;
     openDropdown: () => void;
     closeDropdown: () => void;
+    setTemporaryToggleOff: () => void;
 }

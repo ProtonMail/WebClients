@@ -170,6 +170,7 @@ export const defaultESStatus: ESStatus = {
     isCaching: false,
     isFirstSearch: true,
     dropdownOpened: false,
+    temporaryToggleOff: false,
 };
 export const defaultESCache: ESCache = {
     esCache: [],
