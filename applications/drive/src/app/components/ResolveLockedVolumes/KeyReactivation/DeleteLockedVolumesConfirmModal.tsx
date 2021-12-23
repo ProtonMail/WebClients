@@ -29,7 +29,7 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
     const [isChecked, setIsChecked] = useState(false);
     const [isLoading, withLoading] = useLoading();
 
-    const modalTitle = c('Label').ngettext(msgid`Delete Drive?`, `Delete Drives?`, volumeCount);
+    const modalTitle = c('Label').ngettext(msgid`Delete drive?`, `Delete drives?`, volumeCount);
 
     const warningTitle = c('Label').t`This will permanently delete all files in your locked drive.`;
     const warningInfo = c('Info')
