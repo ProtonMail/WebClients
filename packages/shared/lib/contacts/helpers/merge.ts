@@ -4,7 +4,7 @@ import { ContactProperties, ContactValue } from '../../interfaces/contacts';
 import { FormattedContact } from '../../interfaces/contacts/FormattedContact';
 
 import { ONE_OR_MORE_MUST_BE_PRESENT, ONE_OR_MORE_MAY_BE_PRESENT, PROPERTIES, isCustomField } from '../vcard';
-import { hasPref, generateNewGroupName } from '../properties';
+import { hasPref, generateNewGroupName, getStringContactValue } from '../properties';
 
 /**
  * Given an array of keys and an object storing an index for each key,
@@ -127,10 +127,10 @@ export const extractMergeable = (contacts: FormattedContact[] = []) => {
  */
 
 export const extractNewValue = (
-    value: ContactValue | ContactValue[],
+    value: ContactValue,
     field: string,
-    mergedValues: (ContactValue | ContactValue[])[] = []
-): { isNewValue: boolean; newValue: ContactValue | ContactValue[] | undefined } => {
+    mergedValues: ContactValue[] = []
+): { isNewValue: boolean; newValue: ContactValue | undefined } => {
     //  the fields n and adr have to be treated separately since they are array-valued
     if (['adr', 'n', 'org'].includes(field)) {
         // value is an array in this case, whose elements can be strings or arrays of strings
@@ -138,23 +138,22 @@ export const extractNewValue = (
         // compare with merged values. Normalize all strings
         const isNotRepeatedValue = mergedValues
             .map((mergedValue) => {
-                const components = (Array.isArray(mergedValue) ? mergedValue : [mergedValue]) as ContactValue[];
+                const components = Array.isArray(mergedValue) ? mergedValue : [mergedValue];
 
                 // check element by element to see if there are new values
                 const newComponents = components
                     .map((component, index) => {
                         // each of the components inside be an array itself
-                        const componentIsArray = Array.isArray(component);
-                        const valueIsArray = Array.isArray(value[index]);
-                        if (componentIsArray && valueIsArray) {
-                            return (value as string[][])[index].some(
-                                (str) => !(component as string[]).map((c) => normalize(c)).includes(normalize(str))
+                        const valueAtIndex = value[index];
+                        if (Array.isArray(component) && Array.isArray(valueAtIndex)) {
+                            return valueAtIndex.some(
+                                (str) => !component.map((c) => normalize(c)).includes(normalize(str))
                             );
                         }
-                        if (!componentIsArray && !valueIsArray) {
-                            return normalize(component as string) !== normalize(value[index] as string);
+                        if (!Array.isArray(component) && !Array.isArray(valueAtIndex)) {
+                            return normalize(component) !== normalize(valueAtIndex);
                         }
-                        return componentIsArray ? component.includes(value as string) : true;
+                        return Array.isArray(component) ? component.includes(getStringContactValue(value)) : true;
                     })
                     .filter(Boolean);
 
@@ -170,11 +169,15 @@ export const extractNewValue = (
     // for the other fields, value is a string, and mergedValues an array of strings
     // for EMAIL field, do not normalize, only trim
     if (field === 'email') {
-        const isNew = !(mergedValues as string[]).map((value) => value.trim()).includes((value as string).trim());
+        const isNew = !mergedValues
+            .map((val) => getStringContactValue(val).trim())
+            .includes(getStringContactValue(value).trim());
         return { isNewValue: isNew, newValue: isNew ? value : undefined };
     }
     // for the rest of the fields, normalize strings
-    const isNew = !mergedValues.map((c) => normalize(c as string)).includes(normalize(value as string));
+    const isNew = !mergedValues
+        .map((c) => normalize(getStringContactValue(c)))
+        .includes(normalize(getStringContactValue(value)));
     return { isNewValue: isNew, newValue: isNew ? value : undefined };
 };
 
