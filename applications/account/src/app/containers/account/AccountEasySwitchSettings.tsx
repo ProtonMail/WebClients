@@ -17,7 +17,7 @@ export const getEasySwitchPage = () => {
                 id: 'start-import',
             },
             {
-                text: c('Title').t`Current & past imports`,
+                text: c('Title').t`Current and past imports`,
                 id: 'import-list',
             },
         ],
