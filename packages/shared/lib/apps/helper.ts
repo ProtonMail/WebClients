@@ -66,5 +66,5 @@ export const getAppName = (appName: APP_NAMES) => {
 };
 
 export const getInvoicesPathname = (app: APP_NAMES) => {
-    return app === APPS.PROTONVPN_SETTINGS ? '/payments#invoices' : '/payment#invoices';
+    return app === APPS.PROTONVPN_SETTINGS ? '/payments#invoices' : '/dashboard#invoices';
 };
