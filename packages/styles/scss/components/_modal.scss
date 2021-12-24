@@ -22,7 +22,7 @@ $modal-tiny-width: em(288) !default;
 	position: fixed;
 	inset: 0;
 	background: var(--backdrop-norm);
-	z-index: 666;
+	z-index: $layer-modals;
 	animation: anime-modal-overlay-in ease 0.5s 1 normal;
 }
 
@@ -32,7 +32,7 @@ $modal-tiny-width: em(288) !default;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	z-index: calc(666 + var(--z-position, 0));
+	z-index: calc(#{$layer-modals} + var(--z-position, 0));
 	// -webkit-tap-highlight-color: rgb(255 255 255 / 0);
 
 	/* for very large inputs in modals, like rich text editor */

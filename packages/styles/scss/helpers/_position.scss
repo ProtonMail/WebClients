@@ -74,9 +74,6 @@
 	}
 }
 
-
-
-
 .right-icon,
 .right-text,
 .left-icon {
@@ -120,9 +117,6 @@
 	}
 }
 
-.z10 {
-	z-index: 10; // Factorize later
-}
-.z667 {
-	z-index: 667; // Factorize this!
+.upper-layer {
+	z-index: $layer-upper;
 }
