@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
-import { useModals, useConfig } from '../../hooks';
+import { useModals, useConfig, useEarlyAccess } from '../../hooks';
 import ChangelogModal from './ChangelogModal';
 import { getAppVersion } from '../../helpers';
 import { Tooltip } from '../tooltip';
@@ -13,9 +13,15 @@ interface Props {
     changelog?: string;
 }
 
+const envMap = {
+    alpha: 'α',
+    beta: 'β',
+};
+
 const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, changelog }: Props) => {
     const { APP_NAME, APP_VERSION, APP_VERSION_DISPLAY, DATE_VERSION } = useConfig();
     const { createModal } = useModals();
+    const { currentEnvironment } = useEarlyAccess();
 
     const handleModal = () => {
         createModal(<ChangelogModal changelog={changelog} />);
@@ -28,7 +34,10 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, change
     const children = (
         <>
             <span className="app-infos-name mr0-25">{appName}</span>
-            <span className="app-infos-number">{appVersion}</span>
+            <span className="app-infos-number">
+                {appVersion}
+                {currentEnvironment && envMap[currentEnvironment] && ` ${envMap[currentEnvironment]}`}
+            </span>
         </>
     );
 
