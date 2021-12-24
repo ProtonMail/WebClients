@@ -36,13 +36,13 @@ const MailSettingsSidebarList = () => {
                 </SettingsListItem>
             )}
             <SettingsListItem to={`${path}/identity-addresses`} icon="address-card">
-                {c('Settings section title').t`Identity & addresses`}
+                {c('Settings section title').t`Identity and addresses`}
             </SettingsListItem>
             <SettingsListItem to={`${path}/appearance`} icon="paint-roller">
                 {c('Settings section title').t`Appearance`}
             </SettingsListItem>
             <SettingsListItem to={`${path}/folders-labels`} icon="tags">
-                {c('Settings section title').t`Folders & labels`}
+                {c('Settings section title').t`Folders and labels`}
             </SettingsListItem>
             <SettingsListItem to={`${path}/filters`} icon="filter">
                 {c('Settings section title').t`Filters`}
@@ -56,14 +56,14 @@ const MailSettingsSidebarList = () => {
                 </SettingsListItem>
             ) : null}
             <SettingsListItem to={`${path}/encryption-keys`} icon="lock-filled">
-                {c('Settings section title').t`Encryption & keys`}
+                {c('Settings section title').t`Encryption and keys`}
             </SettingsListItem>
             <SettingsListItem to={`${path}/imap-smtp`} icon="servers">
                 {c('Settings section title').t`IMAP/SMTP`}
             </SettingsListItem>
             {!user.isFree && (
                 <SettingsListItem to={`${path}/backup-export`} icon="arrow-up-from-screen">
-                    {c('Settings section title').t`Backup & Export`}
+                    {c('Settings section title').t`Backup and Export`}
                 </SettingsListItem>
             )}
         </SidebarList>

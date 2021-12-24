@@ -21,7 +21,7 @@ const OrganizationSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
                         <SidebarListItem>
                             <SidebarListItemLink to={`/${appSlug}/users-addresses`}>
                                 <SidebarListItemContent left={<SidebarListItemContentIcon name="people" />}>
-                                    {c('Settings section title').t`Users & addresses`}
+                                    {c('Settings section title').t`Users and addresses`}
                                 </SidebarListItemContent>
                             </SidebarListItemLink>
                         </SidebarListItem>
@@ -35,7 +35,7 @@ const OrganizationSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
                         <SidebarListItem>
                             <SidebarListItemLink to={`/${appSlug}/organization-keys`}>
                                 <SidebarListItemContent left={<SidebarListItemContentIcon name="shield" />}>
-                                    {c('Settings section title').t`Organization & keys`}
+                                    {c('Settings section title').t`Organization and keys`}
                                 </SidebarListItemContent>
                             </SidebarListItemLink>
                         </SidebarListItem>

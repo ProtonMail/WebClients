@@ -5,7 +5,7 @@ import { ImportExportAppSection, SettingsPropsShared } from '@proton/components'
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getBackupAndExportPage = () => ({
-    text: c('Title').t`Backup & Export`,
+    text: c('Title').t`Backup and Export`,
     to: '/mail/backup-export',
     icon: 'arrow-down-to-screen',
     subsections: [
