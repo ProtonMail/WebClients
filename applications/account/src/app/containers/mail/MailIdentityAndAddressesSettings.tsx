@@ -5,12 +5,12 @@ import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMain
 
 export const getAddressesPage = () => {
     return {
-        text: c('Title').t`Identity & addresses`,
+        text: c('Title').t`Identity and addresses`,
         to: '/mail/identity-addresses',
         icon: 'addresses',
         subsections: [
             {
-                text: c('Title').t`Display name & signature`,
+                text: c('Title').t`Display name and signature`,
                 id: 'name-signature',
             },
             {
