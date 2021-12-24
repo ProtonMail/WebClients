@@ -9,7 +9,9 @@ const FIELDS_WITH_PREF = ['fn', 'email', 'tel', 'adr', 'key'];
 // https://jira.protontech.ch/browse/SEC-451
 const getSafeContactValue = (value: ContactValue): ContactValue => {
     if (!Array.isArray(value)) {
-        return value.replace(/^=+/, '');
+        // We add a guard in case value is undefined. This should not be necessary if we could fully trust
+        // the types, but unfortunately that's currently not the case for the Contacts code
+        return (value || '').replace(/^=+/, '');
     }
     // TS not smart enough to infer the following makes sense, even with conditional types
     return value.map((val) => getSafeContactValue(val)) as ContactValue;
