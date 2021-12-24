@@ -41,9 +41,8 @@ export const getCreationKeys = async ({
     });
 
     return {
-        privateKey: primaryPrivateCalendarKey,
         publicKey: primaryPublicCalendarKey,
-        signingKey: primaryPrivateAddressKey,
+        privateKey: primaryPrivateAddressKey,
         sharedSessionKey,
         calendarSessionKey,
     };

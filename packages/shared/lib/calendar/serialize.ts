@@ -34,9 +34,8 @@ const getParts = (eventComponent: VcalVeventComponent) => {
  */
 interface CreateCalendarEventArguments {
     eventComponent: VcalVeventComponent;
-    privateKey: OpenPGPKey;
     publicKey: OpenPGPKey;
-    signingKey: OpenPGPKey;
+    privateKey: OpenPGPKey;
     sharedSessionKey?: SessionKey;
     calendarSessionKey?: SessionKey;
     isCreateEvent: boolean;
@@ -47,9 +46,8 @@ interface CreateCalendarEventArguments {
 }
 export const createCalendarEvent = async ({
     eventComponent,
-    privateKey,
     publicKey,
-    signingKey,
+    privateKey,
     sharedSessionKey: oldSharedSessionKey,
     calendarSessionKey: oldCalendarSessionKey,
     isCreateEvent,
@@ -83,21 +81,21 @@ export const createCalendarEvent = async ({
     ] = await Promise.all([
         // If we're updating an event (but not switching calendar), no need to encrypt again the session keys
         isCreateOrSwitchCalendar && calendarSessionKey
-            ? getEncryptedSessionKey(calendarSessionKey, privateKey)
+            ? getEncryptedSessionKey(calendarSessionKey, publicKey)
             : undefined,
-        isCreateOrSwitchCalendar ? getEncryptedSessionKey(sharedSessionKey, privateKey) : undefined,
+        isCreateOrSwitchCalendar ? getEncryptedSessionKey(sharedSessionKey, publicKey) : undefined,
         // attendees are not allowed to change the SharedEventContent, so they shouldn't send it (API will complain otherwise)
-        isSwitchCalendarOfInvitation ? undefined : signPart(sharedPart[SIGNED], signingKey),
+        isSwitchCalendarOfInvitation ? undefined : signPart(sharedPart[SIGNED], privateKey),
         isSwitchCalendarOfInvitation
             ? undefined
-            : encryptPart(sharedPart[ENCRYPTED_AND_SIGNED], signingKey, sharedSessionKey),
-        signPart(calendarPart[SIGNED], signingKey),
-        calendarSessionKey && encryptPart(calendarPart[ENCRYPTED_AND_SIGNED], signingKey, calendarSessionKey),
-        signPart(personalPart[SIGNED], signingKey),
+            : encryptPart(sharedPart[ENCRYPTED_AND_SIGNED], privateKey, sharedSessionKey),
+        signPart(calendarPart[SIGNED], privateKey),
+        calendarSessionKey && encryptPart(calendarPart[ENCRYPTED_AND_SIGNED], privateKey, calendarSessionKey),
+        signPart(personalPart[SIGNED], privateKey),
         // attendees are not allowed to change the SharedEventContent, so they shouldn't send it (API will complain otherwise)
         isSwitchCalendarOfInvitation
             ? undefined
-            : encryptPart(attendeesPart[ENCRYPTED_AND_SIGNED], signingKey, sharedSessionKey),
+            : encryptPart(attendeesPart[ENCRYPTED_AND_SIGNED], privateKey, sharedSessionKey),
         getEncryptedSessionKeysMap(sharedSessionKey, addedAttendeesPublicKeysMap),
     ]);
 
