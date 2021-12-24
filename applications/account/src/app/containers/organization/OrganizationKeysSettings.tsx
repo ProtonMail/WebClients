@@ -14,7 +14,7 @@ const { ADMIN, MULTI_USERS, NOT_SUB_USER } = PERMISSIONS;
 
 export const getOrganizationPage = () => {
     return {
-        text: c('Title').t`Organization & keys`,
+        text: c('Title').t`Organization and keys`,
         to: '/organization-keys',
         icon: 'buildings',
         permissions: [ADMIN, NOT_SUB_USER],
@@ -25,7 +25,7 @@ export const getOrganizationPage = () => {
                 permissions: [MULTI_USERS],
             },
             {
-                text: c('Title').t`Password & keys`,
+                text: c('Title').t`Password and keys`,
                 id: 'password-keys',
                 permissions: [MULTI_USERS],
             },
