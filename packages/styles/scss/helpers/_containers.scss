@@ -60,7 +60,7 @@
 }
 
 .row--orderable {
-	z-index: 666;
+	z-index: $layer-modals;
 	/* In case the modal is open */
 	background: var(--background-norm);
 	color: var(--text-norm);
