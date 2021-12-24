@@ -46,6 +46,8 @@ jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
     useGetCalendarUserSettings: jest.fn(() => jest.fn(() => ({}))),
 }));
 
+jest.mock('@proton/components/hooks/useUserSettings', () => () => [{}, jest.fn()]);
+
 jest.mock('@proton/components/hooks/useApi', () => ({
     __esModule: true,
     default: jest.fn(),
