@@ -13,13 +13,13 @@
     "author": "Proton Technologies AG",
     "main": "index.js",
     "scripts": {
-        "lint:scss": "stylelint --syntax=scss '**/*.scss'",
         "build:reset": "sass --no-source-map --style=compressed scss/specifics/android-reset.scss assets/css/android-reset.css; sass --no-source-map --style=compressed scss/specifics/android-dark-mode.scss assets/css/android-dark-mode.css",
-        "lint:svg": "./tasks/lint-svg.sh",
-        "lint": "yarn run lint:scss && yarn run lint:svg"
+        "lint": "yarn run lint:scss && yarn run lint:svg",
+        "lint:scss": "stylelint --syntax=scss '**/*.scss'",
+        "lint:svg": "./tasks/lint-svg.sh"
     },
     "devDependencies": {
-        "prettier": "^2.2.1",
+        "prettier": "^2.5.1",
         "sass": "^1.45.1",
         "stylelint": "^13.8.0",
         "stylelint-config-prettier": "^8.0.2",
