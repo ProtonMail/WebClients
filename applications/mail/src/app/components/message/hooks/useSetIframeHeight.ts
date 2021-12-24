@@ -15,7 +15,7 @@ const useSetIframeHeight = (iframeRef: RefObject<HTMLIFrameElement>) => {
                 return;
             }
 
-            iframe.style.height = `${emailContentRootHeight}px`;
+            iframe.style.height = `${emailContentRootHeight + 16}px`;
         }, 50),
         []
     );
