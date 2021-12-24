@@ -5,13 +5,13 @@
     "author": "ProtonMail",
     "sideEffects": false,
     "scripts": {
-        "test": "NODE_ENV=test karma start test/karma.conf.js",
-        "testwatch": "npm test -- --auto-watch --no-single-run",
+        "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions lib",
         "i18n:validate:context": "proton-i18n extract shared && proton-i18n validate",
         "lint": "eslint lib test --ext .js,.ts,tsx --quiet --cache",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "check-types": "tsc"
+        "test": "NODE_ENV=test karma start test/karma.conf.js",
+        "testwatch": "npm test -- --auto-watch --no-single-run"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
@@ -54,7 +54,7 @@
         "karma-chrome-launcher": "^3.1.0",
         "karma-jasmine": "^4.0.1",
         "karma-webpack": "^5.0.0",
-        "prettier": "^2.0.5",
+        "prettier": "^2.5.1",
         "puppeteer": "^10.1.0",
         "require-inject": "^1.4.4",
         "ts-loader": "^9.2.5",

@@ -5,18 +5,18 @@
     "author": "",
     "main": "index.ts",
     "scripts": {
-        "start": "proton-pack dev-server --appMode=standalone",
-        "lint": "eslint src --ext .js,.ts,.tsx --cache",
-        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "i18n:validate": "proton-i18n validate lint-functions",
-        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
-        "i18n:getlatest": "proton-i18n upgrade",
-        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
         "build": "cross-env NODE_ENV=production proton-pack build --appMode=sso",
         "check-types": "tsc",
+        "i18n:getlatest": "proton-i18n upgrade",
+        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "postinstall": "proton-pack config",
+        "lint": "eslint src --ext .js,.ts,.tsx --cache",
+        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "start": "proton-pack dev-server --appMode=standalone",
         "test": "jest --runInBand --ci --coverage=false --detectOpenHandles",
-        "test:dev": "jest --watch --coverage=false",
-        "postinstall": "proton-pack config"
+        "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
@@ -52,7 +52,7 @@
         "cross-var": "^1.1.0",
         "eslint": "^8.5.0",
         "jest": "^27.0.0",
-        "prettier": "^2.0.5",
+        "prettier": "^2.5.1",
         "pretty-format": "^27.2.0",
         "react-test-renderer": "^17.0.0",
         "typescript": "^4.4.3"
