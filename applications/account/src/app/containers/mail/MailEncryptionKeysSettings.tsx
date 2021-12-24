@@ -12,7 +12,7 @@ import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMain
 
 export const getEncryptionKeysPage = () => {
     return {
-        text: c('Title').t`Encryption & keys`,
+        text: c('Title').t`Encryption and keys`,
         to: '/mail/encryption-keys',
         icon: 'lock-filled',
         subsections: [
