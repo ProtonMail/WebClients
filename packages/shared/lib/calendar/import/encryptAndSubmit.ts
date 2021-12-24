@@ -245,7 +245,7 @@ export const processWithJails = async ({
                         }
                     })
                     // it should be safe to change the value of paused in this loop because it can only be changed to true
-                    // eslint-disable-next-line no-loop-func
+                    // eslint-disable-next-line @typescript-eslint/no-loop-func
                     .catch((error: any) => {
                         // the only error we can get here is the TOO_MANY_REQUESTS one. All others are caught by submitEvents
                         paused = true;
