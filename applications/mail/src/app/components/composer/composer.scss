@@ -4,7 +4,7 @@
 .composer {
 	position: absolute;
 	inset-block-end: 0;
-	z-index: 300;
+	z-index: calc(#{$layer-floating-frames} + var(--z-position, 0));
 
 	block-size: rem(640);
 	inline-size: rem(640);
@@ -147,7 +147,7 @@
 			position: absolute;
 			inset-inline-start: 0;
 			inset-block-start: calc(100% + 5px);
-			z-index: 10;
+			z-index: 1;
 			list-style: none;
 			box-shadow: var(--shadow-lifted);
 			background: var(--background-norm);
@@ -271,37 +271,6 @@
 	}
 	.editor-toolbar {
 		max-width: em(640);
-	}
-
-	.composer-editor-embedded {
-		overflow: hidden;
-		z-index: 1500; // ask Embedding should always be on top of the toolbar!
-		color: var(--text-norm);
-		text-align: center;
-
-		&::before {
-			content: '';
-			position: absolute;
-			z-index: 3;
-			inset: 0;
-			background-color: var(--background-norm);
-			opacity: 0.5;
-			backdrop-filter: blur(3px);
-		}
-
-		.modal {
-			z-index: 667;
-			footer {
-				padding-block-end: 0.5em;
-			}
-		}
-		.modal-header {
-			padding-block-start: 0.5em;
-		}
-
-		.modal-title {
-			padding-inline-end: 0;
-		}
 	}
 
 	&-editor-dropzone {

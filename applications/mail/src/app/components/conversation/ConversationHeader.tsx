@@ -30,7 +30,7 @@ const ConversationHeader = ({ className, loading, element, labelID, highlightKey
     return (
         <header
             className={classnames([
-                'border-bottom max-w100 message-conversation-summary sticky-top z10 pt1 pb0-5 pr0-5 pl0-5 ml1 mr1 flex-item-noshrink',
+                'border-bottom max-w100 message-conversation-summary sticky-top upper-layer pt1 pb0-5 pr0-5 pl0-5 ml1 mr1 flex-item-noshrink',
                 loading && 'message-conversation-summary-is-loading',
                 className,
             ])}

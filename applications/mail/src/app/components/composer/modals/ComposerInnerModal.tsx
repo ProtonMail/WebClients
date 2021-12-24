@@ -49,7 +49,7 @@ const ComposerInnerModal = ({
 
     return (
         <div
-            className="composer-inner-modal absolute z10 w100 h100 flex flex-justify-center flex-align-items-center"
+            className="composer-inner-modal absolute upper-layer w100 h100 flex flex-justify-center flex-align-items-center"
             ref={rootRef}
             {...focusTrapProps}
         >

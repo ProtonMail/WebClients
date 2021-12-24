@@ -2,7 +2,7 @@
 	position: fixed;
 	inset-block-start: 1em;
 	inset-inline-start: 50%;
-	z-index: 100;
+	z-index: $layer-notifications;
 	max-inline-size: 100%;
 	padding: 1em;
 	transform: translateX(-50%);

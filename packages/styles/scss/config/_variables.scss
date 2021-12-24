@@ -89,3 +89,14 @@ $conversations-column-width: 35% !default; // used also to align search bar on t
 
 $label-width: 18em !default;
 $conversation-icon-size: 32 !default;
+
+// Z-indexes for stacking management
+$layer-upper: 10;
+$layer-floating-action-buttons: 100;
+$layer-floating-frames: 200;
+$layer-previewer: 300;
+$layer-mobile-navigation: 400;
+$layer-dropzone: 500;
+$layer-modals: 600;
+$layer-notifications: 700;
+$layer-tooltips: 800;

@@ -3,7 +3,7 @@
 .modal-two {
 	position: fixed;
 	inset: 0;
-	z-index: calc(666 + var(--z-position, 0));
+	z-index: calc(#{$layer-modals} + var(--z-position, 0));
 	display: flex;
 	padding: 3.5em;
 	overflow: hidden;
