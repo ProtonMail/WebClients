@@ -13,7 +13,6 @@ const OSIcon = ({ os }) => {
         android: androidSvg,
         macos: macosSvg,
     };
-    // eslint-disable-next-line jsx-a11y/alt-text
     return <img src={src[os]} width={20} className="ml0-25" />;
 };
 

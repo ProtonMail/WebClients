@@ -38,7 +38,6 @@ const ItemCheckbox = ({ ID = '', name = '', compactClassName, normalClassName, c
             data-testid="item-checkbox"
         />
     ) : (
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control
         <label className={classnames(['item-checkbox-label relative', normalClassName])} onClick={handleClick}>
             <input
                 type="checkbox"

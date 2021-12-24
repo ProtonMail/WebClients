@@ -50,7 +50,7 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
                     history.replace('/');
                 };
 
-                const handleGotoRange = async (date: Date) => {
+                const handleGotoRange = (date: Date) => {
                     history.replace(
                         `/week/${[date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()].join('/')}`
                     );

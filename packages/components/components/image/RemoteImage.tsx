@@ -42,7 +42,6 @@ const RemoteImage = ({ src, text = c('Action').t`Load image`, ...rest }: Props) 
     }
 
     if (ShowImages & SHOW_IMAGES.REMOTE || showAnyways) {
-        // eslint-disable-next-line jsx-a11y/alt-text
         return <img src={image?.src} referrerPolicy="no-referrer" {...rest} />;
     }
 
