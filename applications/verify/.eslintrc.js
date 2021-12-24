@@ -6,7 +6,6 @@ module.exports = {
         project: './tsconfig.json',
     },
     rules: {
-        'import/no-cycle': 'off',
         'no-console': [
             'error',
             {

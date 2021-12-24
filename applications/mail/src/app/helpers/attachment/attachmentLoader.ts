@@ -27,7 +27,7 @@ export const decrypt = async (
     const encryptedBinary = new Uint8Array(encryptedBinaryBuffer);
 
     try {
-        return decryptMessage({
+        return await decryptMessage({
             message: await getMessage(encryptedBinary),
             sessionKeys: [sessionKey],
             signature: signature ? await getSignature(signature) : undefined,
