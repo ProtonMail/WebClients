@@ -5,7 +5,7 @@ import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMain
 
 export const getLanguageAndTimePage = () => {
     return {
-        text: c('Title').t`Language & Time`,
+        text: c('Title').t`Language and time`,
         to: '/language-time',
         icon: 'language',
         subsections: [
