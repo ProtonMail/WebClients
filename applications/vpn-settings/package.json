@@ -6,16 +6,16 @@
     "author": "",
     "main": "index.js",
     "scripts": {
-        "start": "proton-pack dev-server",
-        "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
-        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "i18n:validate": "proton-i18n validate lint-functions",
-        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
-        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
         "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone",
         "check-types": "tsc",
-        "test": "echo 123",
-        "postinstall": "proton-pack config"
+        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "postinstall": "proton-pack config",
+        "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
+        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "start": "proton-pack dev-server",
+        "test": "echo 123"
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
@@ -34,7 +34,7 @@
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "eslint": "^8.5.0",
-        "prettier": "^2.0.5",
+        "prettier": "^2.5.1",
         "typescript": "^4.4.3"
     }
 }
