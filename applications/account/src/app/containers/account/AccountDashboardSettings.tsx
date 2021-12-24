@@ -5,8 +5,12 @@ import {
     SettingsPropsShared,
     YourPlanSection,
     EmailSubscriptionSection,
-    LanguageAndTimeSection,
     CancelSubscriptionSection,
+    PaymentMethodsSection,
+    InvoicesSection,
+    BillingSection,
+    GiftCodeSection,
+    CreditsSection,
     useUser,
     PlansSection,
     SubscriptionModal,
@@ -17,44 +21,76 @@ import {
     useLoad,
 } from '@proton/components';
 import { UserModel, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
+import { DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES, PERMISSIONS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
-export const getDashboardPage = ({ user }: { user: UserModel }) => {
-    const { isFree, isPaid, isMember, canPay } = user;
+const { UPGRADER, NOT_SUB_USER, PAID } = PERMISSIONS;
 
+const hasSelectPlan = (user: UserModel) => user.isFree;
+const hasYourPlan = (user: UserModel) => user.canPay;
+const hasEmailSubscriptions = (user: UserModel) => !user.isMember;
+const hasDowngradeAccount = (user: UserModel) => user.isPaid && user.canPay;
+export const hasAccountDashboardPage = (user: UserModel) =>
+    hasSelectPlan(user) || hasYourPlan(user) || hasEmailSubscriptions(user) || hasDowngradeAccount(user);
+
+export const getDashboardPage = ({ user }: { user: UserModel }) => {
     return {
         text: c('Title').t`Dashboard`,
         to: '/dashboard',
         icon: 'grid',
         subsections: [
-            isFree && {
+            hasSelectPlan(user) && {
                 text: c('Title').t`Select plan`,
                 id: 'select-plan',
             },
-            canPay && {
-                text: isFree ? c('Title').t`Your current plan` : c('Title').t`Your plan`,
+            hasYourPlan(user) && {
+                text: user.isFree ? c('Title').t`Your current plan` : c('Title').t`Your plan`,
                 id: 'your-plan',
             },
-            {
-                text: c('Title').t`Language & time`,
-                id: 'language-and-time',
-            },
-            !isMember && {
+            user.canPay && [
+                {
+                    text: c('Title').t`Billing details`,
+                    id: 'billing',
+                    permissions: [PAID, UPGRADER, NOT_SUB_USER],
+                },
+                {
+                    text: c('Title').t`Payment methods`,
+                    id: 'payment-methods',
+                    permissions: [UPGRADER, NOT_SUB_USER],
+                },
+                {
+                    text: c('Title').t`Credits`,
+                    id: 'credits',
+                    permissions: [UPGRADER, NOT_SUB_USER],
+                },
+                {
+                    text: c('Title').t`Gift code`,
+                    id: 'gift-code',
+                    permissions: [UPGRADER, NOT_SUB_USER],
+                },
+                {
+                    text: c('Title').t`Invoices`,
+                    id: 'invoices',
+                    permissions: [UPGRADER, NOT_SUB_USER],
+                },
+            ],
+            hasEmailSubscriptions(user) && {
                 text: c('Title').t`Email subscriptions`,
                 id: 'email-subscription',
             },
-            isPaid &&
-                canPay && {
-                    text: c('Title').t`Downgrade account`,
-                    id: 'cancel-subscription',
-                },
-        ].filter(isTruthy),
+            hasDowngradeAccount(user) && {
+                text: c('Title').t`Downgrade account`,
+                id: 'cancel-subscription',
+            },
+        ]
+            .filter(isTruthy)
+            .flat(),
     };
 };
 
@@ -64,8 +100,6 @@ interface PlansMap {
 
 const AccountDashboardSettings = ({ location, setActiveSection }: SettingsPropsShared) => {
     const [user] = useUser();
-
-    const { isFree, isPaid, isMember, canPay } = user;
 
     const { createModal } = useModals();
     const [plans, loadingPlans] = usePlans();
@@ -144,11 +178,17 @@ const AccountDashboardSettings = ({ location, setActiveSection }: SettingsPropsS
             config={getDashboardPage({ user })}
             setActiveSection={setActiveSection}
         >
-            {Boolean(isFree) && <PlansSection />}
-            {Boolean(canPay) && <YourPlanSection />}
-            <LanguageAndTimeSection />
-            {!isMember && <EmailSubscriptionSection />}
-            {isPaid && canPay && <CancelSubscriptionSection />}
+            {hasSelectPlan(user) && <PlansSection />}
+            {hasYourPlan(user) && <YourPlanSection />}
+            {user.canPay && [
+                <BillingSection key="0" />,
+                <PaymentMethodsSection key="1" />,
+                <CreditsSection key="2" />,
+                <GiftCodeSection key="3" />,
+                <InvoicesSection key="4" />,
+            ]}
+            {hasEmailSubscriptions(user) && <EmailSubscriptionSection />}
+            {hasDowngradeAccount(user) && <CancelSubscriptionSection />}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };

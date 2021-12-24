@@ -1,4 +1,6 @@
 import { USER_ROLES, PERMISSIONS } from '@proton/shared/lib/constants';
+import { Organization, UserModel } from '@proton/shared/lib/interfaces';
+
 import { useUser } from './useUser';
 import { useOrganization } from './useOrganization';
 
@@ -11,35 +13,42 @@ const ROLES = {
     [FREE_ROLE]: FREE,
 };
 
+export const hasUpgraderPermission = (user: UserModel) => user.canPay;
+export const hasNotSubUserPermission = (user: UserModel) => !user.isSubUser;
+export const hasMultiUsersPermission = (organization: Organization) => (organization.MaxMembers || 0) > 1;
+export const hasPaidPermission = (user: UserModel) => user.isPaid;
+export const hasPaidMailPemission = (user: UserModel) => hasPaidPermission(user) && user.hasPaidMail;
+export const hasPaidVpnPermission = (user: UserModel) => hasPaidPermission(user) && user.hasPaidVpn;
+
 const usePermissions = () => {
     const permissions: PERMISSIONS[] = [];
-    const [{ Role, isPaid, hasPaidMail, hasPaidVpn, canPay, isSubUser }] = useUser();
-    const [{ MaxMembers = 0 } = {}] = useOrganization();
+    const [user] = useUser();
+    const [organization] = useOrganization();
 
-    permissions.push(ROLES[Role]);
+    permissions.push(ROLES[user.Role]);
 
-    if (canPay) {
+    if (hasUpgraderPermission(user)) {
         permissions.push(UPGRADER);
     }
 
-    if (!isSubUser) {
+    if (hasNotSubUserPermission(user)) {
         permissions.push(NOT_SUB_USER);
     }
 
-    if (MaxMembers > 1) {
+    if (hasMultiUsersPermission(organization || {})) {
         permissions.push(MULTI_USERS);
     }
 
-    if (isPaid) {
+    if (hasPaidPermission(user)) {
         permissions.push(PAID);
+    }
 
-        if (hasPaidMail) {
-            permissions.push(PAID_MAIL);
-        }
+    if (hasPaidMailPemission(user)) {
+        permissions.push(PAID_MAIL);
+    }
 
-        if (hasPaidVpn) {
-            permissions.push(PAID_VPN);
-        }
+    if (hasPaidVpnPermission(user)) {
+        permissions.push(PAID_VPN);
     }
 
     return permissions;
