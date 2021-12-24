@@ -15,18 +15,20 @@ import {
     FeatureCode,
 } from '@proton/components';
 
+import { UserModel } from '@proton/shared/lib/interfaces';
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
-import AccountPasswordAndSecuritySettings from '../containers/account/AccountPasswordAndSecuritySettings';
-import AccountPaymentSettings from '../containers/account/AccountPaymentSettings';
-import AccountDashboardSettings from '../containers/account/AccountDashboardSettings';
-import OrganizationMultiUserSupportSettings from '../containers/organization/OrganizationMultiUserSupportSettings';
 import AccountSidebar from './AccountSidebar';
-import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings';
+import AccountDashboardSettings, { hasAccountDashboardPage } from '../containers/account/AccountDashboardSettings';
+import AccountSecuritySettings from '../containers/account/AccountSecuritySettings';
+import AccountRecoverySettings, { hasRecoverySettings } from '../containers/account/AccountRecoverySettings';
+import AccountAccountAndPasswordSettings from '../containers/account/AccountAccountAndPasswordSettings';
+import AccountLanguageAndTimeSettings from '../containers/account/AccountLanguageAndTimeSettings';
+import AccountEasySwitchSettings from '../containers/account/AccountEasySwitchSettings';
+import OrganizationMultiUserSupportSettings from '../containers/organization/OrganizationMultiUserSupportSettings';
 import OrganizationUsersAndAddressesSettings from '../containers/organization/OrganizationUsersAndAddressesSettings';
 import OrganizationKeysSettings from '../containers/organization/OrganizationKeysSettings';
-import AccountEasySwitchSettings from '../containers/account/AccountEasySwitchSettings';
-import AccountRecoverySettings, { hasRecoverySettings } from '../containers/account/AccountRecoverySettings';
+import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings';
 
 const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
 const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
@@ -34,13 +36,23 @@ const ContactsSettingsRouter = lazy(() => import('../containers/contacts/Contact
 const VpnSettingsRouter = lazy(() => import('../containers/vpn/VpnSettingsRouter'));
 const DriveSettingsRouter = lazy(() => import('../containers/drive/DriveSettingsRouter'));
 
-const DEFAULT_REDIRECT = `/${getSlugFromApp(DEFAULT_APP)}/dashboard`;
-
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
 const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
 const contactsSlug = getSlugFromApp(APPS.PROTONCONTACTS);
+
+const getDefaultRedirect = (user: UserModel) => {
+    if (hasAccountDashboardPage(user)) {
+        return '/dashboard';
+    }
+
+    if (hasRecoverySettings(user)) {
+        return '/recovery';
+    }
+
+    return '/account-password';
+};
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -62,11 +74,14 @@ const MainContainer = () => {
 
     const app = getAppFromPathnameSafe(location.pathname);
 
+    
     if (!app) {
-        return <Redirect to={DEFAULT_REDIRECT} />;
+        return <Redirect to={`/${getSlugFromApp(DEFAULT_APP)}${getDefaultRedirect(user)}`} />;
     }
 
     const appSlug = getSlugFromApp(app);
+
+    const redirect = `/${appSlug}${getDefaultRedirect(user)}`;
 
     /*
      * There's no logical app to return/go to from VPN settings since the
@@ -96,22 +111,27 @@ const MainContainer = () => {
     return (
         <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
             <Switch>
-                <Route path={`/${appSlug}/dashboard`}>
-                    <AccountDashboardSettings location={location} setActiveSection={() => {}} />
-                </Route>
+                {hasAccountDashboardPage(user) && (
+                    <Route path={`/${appSlug}/dashboard`}>
+                        <AccountDashboardSettings location={location} setActiveSection={() => {}} />
+                    </Route>
+                )}
                 {hasRecoverySettings(user) && (
                     <Route path={`/${appSlug}/recovery`}>
                         <AccountRecoverySettings location={location} setActiveSection={() => {}} />
                     </Route>
                 )}
-                <Route path={`/${appSlug}/payment`}>
-                    <AccountPaymentSettings location={location} setActiveSection={() => {}} />
+                <Route path={`/${appSlug}/account-password`}>
+                    <AccountAccountAndPasswordSettings location={location} setActiveSection={() => {}} />
+                </Route>
+                <Route path={`/${appSlug}/language-time`}>
+                    <AccountLanguageAndTimeSettings location={location} setActiveSection={() => {}} />
                 </Route>
                 <Route path={`/${appSlug}/easy-switch`}>
                     <AccountEasySwitchSettings location={location} setActiveSection={() => {}} />
                 </Route>
                 <Route path={`/${appSlug}/security`}>
-                    <AccountPasswordAndSecuritySettings location={location} setActiveSection={() => {}} user={user} />
+                    <AccountSecuritySettings location={location} setActiveSection={() => {}} />
                 </Route>
                 <Route path={`/${appSlug}/multi-user-support`}>
                     <OrganizationMultiUserSupportSettings location={location} />
@@ -127,30 +147,30 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <MailSettingsRouter />
+                        <MailSettingsRouter redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <CalendarSettingsRouter user={user} loadingFeatures={loadingFeatures} />
+                        <CalendarSettingsRouter redirect={redirect} user={user} loadingFeatures={loadingFeatures} />
                     </Suspense>
                 </Route>
                 <Route path={`/${contactsSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <ContactsSettingsRouter />
+                        <ContactsSettingsRouter redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${vpnSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <VpnSettingsRouter />
+                        <VpnSettingsRouter redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${driveSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <DriveSettingsRouter />
+                        <DriveSettingsRouter redirect={redirect} />
                     </Suspense>
                 </Route>
-                <Redirect to={DEFAULT_REDIRECT} />
+                <Redirect to={redirect} />
             </Switch>
         </PrivateAppContainer>
     );

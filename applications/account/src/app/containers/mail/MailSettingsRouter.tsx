@@ -14,7 +14,7 @@ import MailImapSmtpSettings from './MailImapSmtpSettings';
 import MailBackupAndExportSettings from './MailBackupAndExportSettings';
 import MailEmailPrivacySettings from './MailEmailPrivacySettings';
 
-const MailSettingsRouter = () => {
+const MailSettingsRouter = ({ redirect }: { redirect: string }) => {
     const { path } = useRouteMatch();
     const [user] = useUser();
     const location = useLocation();
@@ -57,7 +57,7 @@ const MailSettingsRouter = () => {
             <Route path={`${path}/imap-smtp`}>
                 <MailImapSmtpSettings location={location} />
             </Route>
-            <Redirect to={`${path}/dashboard`} />
+            <Redirect to={redirect} />
         </Switch>
     );
 };
