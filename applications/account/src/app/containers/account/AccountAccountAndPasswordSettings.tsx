@@ -10,7 +10,7 @@ const canDeleteAccount = (user: UserModel) => user.canPay && !user.isMember;
 
 export const getAccountAndPasswordPage = ({ user }: { user: UserModel }) => {
     return {
-        text: c('Title').t`Account and Password`,
+        text: c('Title').t`Account and password`,
         to: '/account-password',
         icon: 'user',
         permissions: [],
