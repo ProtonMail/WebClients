@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { c } from 'ttag';
 import { useHistory } from 'react-router-dom';
-import { Button, Icon, Label } from '@proton/components';
+import { Button, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useLocationFieldOptions } from './useLocationFieldOptions';
@@ -39,7 +39,7 @@ const LocationField = ({ value, onChange }: Props) => {
 
     return (
         <>
-            <Label className="block text-semibold mb0-5">{c('Label').t`Search in`}</Label>
+            <span className="block text-semibold mb0-5">{c('Label').t`Search in`}</span>
             <div className="flex flex-wrap flex-align-items-start mb0-5 flex-gap-0-5">
                 {firstOptions.map((option) => (
                     <Button
@@ -53,6 +53,10 @@ const LocationField = ({ value, onChange }: Props) => {
                         shape="solid"
                         size="small"
                         type="button"
+                        aria-label={
+                            // translator: The full sentence is "Search in All mail/Inbox/Drafts/etc." (only for blind users)
+                            c('Action').t`Search in ${option.text}`
+                        }
                     >
                         {option.text}
                     </Button>
