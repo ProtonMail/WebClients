@@ -52,7 +52,7 @@ const MailSettingsSidebarList = () => {
             </SettingsListItem>
             {!hasOrganization ? (
                 <SettingsListItem to={`${path}/domain-names`} icon="globe">
-                    {c('Settings section title').t`Domain Names`}
+                    {c('Settings section title').t`Domain names`}
                 </SettingsListItem>
             ) : null}
             <SettingsListItem to={`${path}/encryption-keys`} icon="lock-filled">
@@ -63,7 +63,7 @@ const MailSettingsSidebarList = () => {
             </SettingsListItem>
             {!user.isFree && (
                 <SettingsListItem to={`${path}/backup-export`} icon="arrow-up-from-screen">
-                    {c('Settings section title').t`Backup and Export`}
+                    {c('Settings section title').t`Backup and export`}
                 </SettingsListItem>
             )}
         </SidebarList>
