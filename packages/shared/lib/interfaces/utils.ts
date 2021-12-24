@@ -1,6 +1,6 @@
-export type SimpleMap<T> = Partial<Record<string, T>>;
+export type SimpleMap<T> = { [key: string]: T | undefined };
 
-export type LoadingMap = { [key: string]: boolean | undefined };
+export type LoadingMap = SimpleMap<boolean>;
 
 export type RequireOnly<T, Keys extends keyof T> = Partial<T> & Required<Pick<T, Keys>>;
 
