@@ -14,17 +14,5 @@ module.exports = (...env) => {
                 Buffer: [require.resolve('buffer'), 'Buffer'],
             })
         );
-        // Temporary exclude redux-toolkit sourcemap while it's producing a warning
-        const sourceMapRule = config.module.rules.find((rule) => rule.use[0].includes('source-map-loader'));
-        if (sourceMapRule) {
-            sourceMapRule.use[0] = {
-                loader: sourceMapRule.use[0],
-                options: {
-                    filterSourceMappingUrl(url) {
-                        return !url.includes('redux-toolkit.esm.js');
-                    },
-                },
-            };
-        }
     });
 };

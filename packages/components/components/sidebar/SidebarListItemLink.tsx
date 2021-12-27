@@ -2,9 +2,10 @@ import { forwardRef, ReactNode, Ref } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import { classnames } from '../../helpers';
 
-export interface Props extends NavLinkProps {
+export interface Props extends Omit<NavLinkProps, 'className'> {
     children: ReactNode;
     itemClassName?: string;
+    className?: string;
 }
 
 const SidebarListItemLink = forwardRef<HTMLAnchorElement, Props>(
