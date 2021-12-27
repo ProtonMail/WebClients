@@ -16,13 +16,7 @@ import { useCallback, Dispatch, SetStateAction } from 'react';
 import { InlineLinkButton, Loader, useLoading, useNotifications, CalendarInviteButtons } from '@proton/components';
 import { c } from 'ttag';
 import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
-import {
-    getDisableButtons,
-    getIsProtonInvite,
-    getIsReinvite,
-    InvitationModel,
-    UPDATE_ACTION,
-} from '../../../../helpers/calendar/invite';
+import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageState } from '../../../../logic/messages/messagesTypes';
 
@@ -35,13 +29,14 @@ interface Props {
 }
 const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     const {
-        isOrganizerMode,
         invitationIcs,
         invitationIcs: { method },
         invitationApi,
         calendarData,
         pmData,
         singleEditData,
+        isProtonInvite,
+        isReinvite,
         error,
         hasDecryptionError,
         reinviteEventID,
@@ -152,9 +147,6 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     };
 
     const buttonsDisabled = getDisableButtons(model);
-    const isProtonInvite =
-        getIsProtonInvite({ invitationIcs, invitationApi, pmData }) ||
-        (pmData && getIsReinvite({ invitationIcs, invitationApi, isOrganizerMode }));
 
     const actions = useInviteButtons({
         veventIcs: invitationIcs.vevent,
@@ -165,7 +157,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         subject: formatSubject(message.data?.Subject, RE_PREFIX),
         messageID: message.data?.ID,
         calendarData,
-        pmData: isProtonInvite ? pmData : undefined,
+        pmData: isProtonInvite || (pmData && isReinvite) ? pmData : undefined,
         singleEditData,
         onEmailSuccess: handleEmailSuccess,
         onCreateEventSuccess: handleCreateEventSuccess,

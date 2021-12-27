@@ -3,24 +3,19 @@ import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { GetCalendarEventPersonal } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventPersonal';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
+import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { useEffect, useState } from 'react';
-import {
-    Banner,
-    InlineLinkButton,
-    useApi,
-    useGetCalendarEventRaw,
-    useGetCalendarInfo,
-    useLoading,
-    useCalendarEmailNotificationsFeature,
-} from '@proton/components';
-import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
+import { Banner, InlineLinkButton, useApi, useLoading } from '@proton/components';
 import { c } from 'ttag';
-import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import {
     EventInvitation,
@@ -34,6 +29,7 @@ import {
     getIsInvitationOutdated,
     InvitationModel,
     UPDATE_ACTION,
+    getIsProtonInvite,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
 import ExtraEventButtons from './ExtraEventButtons';
@@ -60,12 +56,17 @@ interface Props {
     invitationOrError: EventInvitation | EventInvitationError;
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;
-    mustReactivateCalendars: boolean;
     calendars: Calendar[];
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     userSettings: UserSettings;
+    enabledEmailNotifications: boolean;
+    getAddressKeys: GetAddressKeys;
+    getCalendarInfo: GetCalendarInfo;
+    getCalendarEventRaw: GetCalendarEventRaw;
+    getCalendarEventPersonal: GetCalendarEventPersonal;
+    getCanonicalEmailsMap: GetCanonicalEmailsMap;
 }
 const ExtraEvent = ({
     invitationOrError,
@@ -74,10 +75,15 @@ const ExtraEvent = ({
     defaultCalendar,
     canCreateCalendar,
     maxUserCalendarsDisabled,
-    mustReactivateCalendars,
     contactEmails,
     ownAddresses,
     userSettings,
+    enabledEmailNotifications,
+    getAddressKeys,
+    getCalendarInfo,
+    getCalendarEventRaw,
+    getCalendarEventPersonal,
+    getCanonicalEmailsMap,
 }: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
         getInitialInvitationModel({
@@ -89,17 +95,11 @@ const ExtraEvent = ({
             hasNoCalendars: calendars.length === 0,
             canCreateCalendar,
             maxUserCalendarsDisabled,
-            mustReactivateCalendars,
         })
     );
     const [loading, withLoading] = useLoading(true);
     const [retryCount, setRetryCount] = useState<number>(0);
     const api = useApi();
-    const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
-    const getCalendarInfo = useGetCalendarInfo();
-    const getCalendarEventRaw = useGetCalendarEventRaw();
-    const getCalendarEventPersonal = useGetCalendarEventPersonal();
-    const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
 
     const handleRetry = () => {
         setRetryCount((count) => count + 1);
@@ -113,7 +113,6 @@ const ExtraEvent = ({
                 hasNoCalendars: calendars.length === 0,
                 canCreateCalendar,
                 maxUserCalendarsDisabled,
-                mustReactivateCalendars,
             })
         );
     };
@@ -147,6 +146,7 @@ const ExtraEvent = ({
                 } = await fetchEventInvitation({
                     veventComponent: invitationIcs.vevent,
                     api,
+                    getAddressKeys,
                     getCalendarInfo,
                     getCalendarEventRaw,
                     getCalendarEventPersonal,
@@ -160,13 +160,15 @@ const ExtraEvent = ({
                 calendarData = calData;
                 singleEditData = singleData;
                 hasDecryptionError = hasDecryptError;
-                if (getIsReinvite({ invitationIcs, invitationApi, isOrganizerMode })) {
-                    reinviteEventID = invitationApi?.calendarEvent.ID;
+                const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
+                const isFromFuture = getIsInvitationFromFuture({ invitationIcs, invitationApi, isOrganizerMode });
+                const isProtonInvite = getIsProtonInvite({ invitationIcs, calendarEvent, pmData });
+                const isReinvite = getIsReinvite({ invitationIcs, calendarEvent, isOrganizerMode, isOutdated });
+                if (isReinvite) {
+                    reinviteEventID = calendarEvent?.ID;
                     // ignore existing partstat
                     delete invitationApi?.attendee?.partstat;
                 }
-                const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
-                const isFromFuture = getIsInvitationFromFuture({ invitationIcs, invitationApi, isOrganizerMode });
                 if (parentInvitation) {
                     parentInvitationApi = parentInvitation;
                 }
@@ -195,6 +197,8 @@ const ExtraEvent = ({
                         parentInvitationApi,
                         isOutdated,
                         isFromFuture,
+                        isProtonInvite,
+                        isReinvite,
                         reinviteEventID,
                         calendarData,
                         singleEditData,
@@ -210,7 +214,7 @@ const ExtraEvent = ({
                 !invitationApi ||
                 !getInvitationHasEventID(invitationApi) ||
                 !getHasFullCalendarData(calendarData) ||
-                calendarData.calendarNeedsUserAction ||
+                calendarData?.calendarNeedsUserAction ||
                 unmounted
             ) {
                 // treat as a new invitation
@@ -247,6 +251,17 @@ const ExtraEvent = ({
                     invitationApi: newInvitationApi,
                     isOrganizerMode,
                 });
+                const isProtonInvite = getIsProtonInvite({
+                    invitationIcs: supportedInvitationIcs,
+                    calendarEvent: newInvitationApi.calendarEvent,
+                    pmData,
+                });
+                const isReinvite = getIsReinvite({
+                    invitationIcs: supportedInvitationIcs,
+                    calendarEvent: newInvitationApi.calendarEvent,
+                    isOrganizerMode,
+                    isOutdated,
+                });
                 if (!unmounted) {
                     setModel({
                         ...model,
@@ -258,6 +273,8 @@ const ExtraEvent = ({
                         timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
                         isOutdated,
                         isFromFuture,
+                        isProtonInvite,
+                        isReinvite,
                         reinviteEventID,
                         updateAction,
                         hasDecryptionError,

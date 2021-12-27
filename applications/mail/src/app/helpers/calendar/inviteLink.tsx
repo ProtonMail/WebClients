@@ -24,7 +24,6 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         invitationApi,
         hasNoCalendars,
         canCreateCalendar,
-        mustReactivateCalendars,
         hasDecryptionError,
     } = model;
 
@@ -51,7 +50,7 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
 
     const safeCalendarNeedsUserAction = calendarData?.calendarNeedsUserAction && !(isPartyCrasher && !isOrganizerMode);
     // the calendar needs a user action to be active
-    if (safeCalendarNeedsUserAction || mustReactivateCalendars) {
+    if (safeCalendarNeedsUserAction) {
         if (isImport) {
             return (
                 <AppLink to="/" toApp={APPS.PROTONCALENDAR}>{c('Link')

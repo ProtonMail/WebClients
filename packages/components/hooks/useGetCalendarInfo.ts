@@ -15,9 +15,9 @@ export const useGetCalendarInfo = (): GetCalendarInfo => {
     const getAddressKeys = useGetAddressKeys();
 
     return useCallback(
-        async (calendarID: string) => {
+        async (calendarID: string, noBootstrapCache?: boolean) => {
             const [{ Members, CalendarSettings: calendarSettings }, Addresses] = await Promise.all([
-                getCalendarBootstrap(calendarID),
+                getCalendarBootstrap(calendarID, noBootstrapCache),
                 getAddresses(),
             ]);
 

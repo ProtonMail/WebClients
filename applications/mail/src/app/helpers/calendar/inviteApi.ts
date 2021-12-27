@@ -1,5 +1,7 @@
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
+import { reactivateCalendarsKeys } from '@proton/shared/lib/calendar/keys/reactivateCalendarKeys';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { toggleBit } from '@proton/shared/lib/helpers/bitset';
 import { getUnixTime } from 'date-fns';
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -9,8 +11,17 @@ import {
     toApiPartstat,
     withPmAttendees,
 } from '@proton/shared/lib/calendar/attendees';
-import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import {
+    getDoesCalendarHaveInactiveKeys,
+    getDoesCalendarNeedUserAction,
+    getIsCalendarDisabled,
+} from '@proton/shared/lib/calendar/calendar';
+import {
+    CALENDAR_FLAGS,
+    ICAL_ATTENDEE_STATUS,
+    ICAL_EVENT_STATUS,
+    ICAL_METHOD,
+} from '@proton/shared/lib/calendar/constants';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -218,6 +229,7 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recur
 type FetchEventInvitation = (args: {
     veventComponent: VcalVeventComponent;
     api: Api;
+    getAddressKeys: GetAddressKeys;
     getCalendarInfo: GetCalendarInfo;
     getCalendarEventRaw: (event: CalendarEvent) => Promise<DecryptedVeventResult>;
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
@@ -238,6 +250,7 @@ type FetchEventInvitation = (args: {
 export const fetchEventInvitation: FetchEventInvitation = async ({
     veventComponent,
     api,
+    getAddressKeys,
     getCalendarInfo,
     getCalendarEventRaw,
     getCalendarEventPersonal,
@@ -258,8 +271,28 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     if (!calendar) {
         return {};
     }
+    let hasReactivatedCalendar = false;
+    if (getDoesCalendarHaveInactiveKeys(calendar)) {
+        try {
+            const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
+            await reactivateCalendarsKeys({
+                calendars: [calendar],
+                api: silentApi,
+                addresses: ownAddresses,
+                getAddressKeys,
+            });
+            // we need to update the calendar data manually. We update the flags here,
+            // while the calendar keys will be updated in the step after the catch
+            calendar.Flags = toggleBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
+            hasReactivatedCalendar = true;
+        } catch (e) {
+            // fail silently, proceed with the calendar in a passphrase-needs-update state
+            noop();
+        }
+    }
     const { memberID, addressID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(
-        calendar.ID
+        calendar.ID,
+        hasReactivatedCalendar
     );
     const calendarData = {
         calendar,
@@ -271,6 +304,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         addressKeys,
         calendarKeys: decryptedCalendarKeys,
     };
+
     // if we retrieved a single edit when not looking for one, or looking for another one, do not return it
     if (!calendarEvent || getIsNonSoughtEvent(calendarEvent, veventComponent, supportedRecurrenceId)) {
         return { calendarData };
@@ -470,7 +504,7 @@ export const updateEventInvitation = async ({
         !attendeeApi ||
         getIsProtonInvite({
             invitationIcs,
-            invitationApi,
+            calendarEvent,
             pmData,
         })
     ) {

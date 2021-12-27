@@ -1,3 +1,5 @@
+import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
+import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { arrayToBinaryString, decodeUtf8, DecryptResultPmcrypto } from 'pmcrypto';
 import {
     getCanCreateCalendar,
@@ -28,6 +30,9 @@ import {
     useLoading,
     useUser,
     useUserSettings,
+    useCalendarEmailNotificationsFeature,
+    useGetCalendarInfo,
+    useGetCalendarEventRaw,
 } from '@proton/components';
 import { useDispatch } from 'react-redux';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
@@ -64,6 +69,11 @@ const ExtraEvents = ({ message }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const getCalendarUserSettings = useGetCalendarUserSettings();
+    const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
+    const getCalendarInfo = useGetCalendarInfo();
+    const getCalendarEventRaw = useGetCalendarEventRaw();
+    const getCalendarEventPersonal = useGetCalendarEventPersonal();
+    const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
 
     const [loadingWidget, withLoadingWidget] = useLoading();
     const [loadedWidget, setLoadedWidget] = useState('');
@@ -73,8 +83,7 @@ const ExtraEvents = ({ message }: Props) => {
         defaultCalendar?: Calendar;
         canCreateCalendar: boolean;
         maxUserCalendarsDisabled: boolean;
-        mustReactivateCalendars: boolean;
-    }>({ calendars: [], canCreateCalendar: true, maxUserCalendarsDisabled: false, mustReactivateCalendars: false });
+    }>({ calendars: [], canCreateCalendar: true, maxUserCalendarsDisabled: false });
 
     const loadingConfigs = loadingContactEmails || loadingAddresses || loadingUserSettings || loadingUser;
     const messageHasDecryptionError = !!message.errors?.decryption?.length;
@@ -120,13 +129,12 @@ const ExtraEvents = ({ message }: Props) => {
                         user.isFree
                     );
                     const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, user.isFree);
-                    const mustReactivateCalendars = !defaultCalendar && !canCreateCalendar && !maxUserCalendarsDisabled;
+
                     return {
                         calendars,
                         defaultCalendar,
                         canCreateCalendar,
                         maxUserCalendarsDisabled,
-                        mustReactivateCalendars,
                     };
                 };
                 const getInvitations = async () => {
@@ -245,10 +253,15 @@ const ExtraEvents = ({ message }: Props) => {
                         defaultCalendar={calData.defaultCalendar}
                         canCreateCalendar={calData.canCreateCalendar}
                         maxUserCalendarsDisabled={calData.maxUserCalendarsDisabled}
-                        mustReactivateCalendars={calData.mustReactivateCalendars}
                         contactEmails={contactEmails}
                         ownAddresses={addresses}
                         userSettings={userSettings}
+                        enabledEmailNotifications={enabledEmailNotifications}
+                        getAddressKeys={getAddressKeys}
+                        getCalendarInfo={getCalendarInfo}
+                        getCalendarEventRaw={getCalendarEventRaw}
+                        getCalendarEventPersonal={getCalendarEventPersonal}
+                        getCanonicalEmailsMap={getCanonicalEmailsMap}
                     />
                 );
             })}
