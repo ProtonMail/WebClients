@@ -13,7 +13,6 @@ import { getEvent } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import {
     getDefaultCalendar,
-    getCanCreateCalendar,
     getMaxUserCalendarsDisabled,
     getDoesCalendarNeedUserAction,
 } from '@proton/shared/lib/calendar/calendar';
@@ -99,7 +98,6 @@ const mockedGetParsedHeadersFirstValue = getParsedHeadersFirstValue as jest.Mock
     ReturnType<typeof getParsedHeadersFirstValue>
 >;
 const mockedGetDefaultCalendar = getDefaultCalendar as jest.Mock<any>;
-const mockedGetCanCreateCalendar = getCanCreateCalendar as jest.Mock<ReturnType<typeof getCanCreateCalendar>>;
 const mockedGetDoesCalendarNeedUserAction = getDoesCalendarNeedUserAction as jest.Mock<
     ReturnType<typeof getDoesCalendarNeedUserAction>
 >;
@@ -362,7 +360,6 @@ describe('EmailReminderWidget', () => {
 
             it('displays an error instead of the widget when calendars must be reactivated', async () => {
                 mockedGetDefaultCalendar.mockImplementation(() => false);
-                mockedGetCanCreateCalendar.mockImplementation(() => false);
                 mockedGetMaxUserCalendarsDisabled.mockImplementation(() => false);
 
                 render(renderComponent());

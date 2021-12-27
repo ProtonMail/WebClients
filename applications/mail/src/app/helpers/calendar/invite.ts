@@ -106,10 +106,11 @@ export interface InvitationModel {
     isAddressDisabled: boolean;
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;
-    mustReactivateCalendars: boolean;
     hasNoCalendars: boolean;
     isOutdated?: boolean;
     isFromFuture?: boolean;
+    isProtonInvite?: boolean;
+    isReinvite?: boolean;
     reinviteEventID?: string;
     updateAction?: UPDATE_ACTION;
     hideSummary?: boolean;
@@ -280,21 +281,21 @@ export const getIsInvitationFromFuture = ({
  */
 export const getIsProtonInvite = ({
     invitationIcs,
-    invitationApi,
+    calendarEvent,
     pmData,
 }: {
     invitationIcs: RequireSome<EventInvitation, 'method'>;
-    invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
+    calendarEvent?: CalendarEventWithMetadata;
     pmData?: PmInviteData;
 }) => {
     const { method } = invitationIcs;
     const { sharedEventID, isProtonReply } = pmData || {};
 
     if ([ICAL_METHOD.REQUEST, ICAL_METHOD.CANCEL].includes(method)) {
-        if (!invitationApi) {
+        if (!calendarEvent) {
             return !!sharedEventID;
         }
-        return sharedEventID === invitationApi.calendarEvent.SharedEventID;
+        return sharedEventID === calendarEvent.SharedEventID;
     }
     if (method === ICAL_METHOD.REPLY) {
         return !!isProtonReply;
@@ -307,19 +308,19 @@ export const getIsProtonInvite = ({
  */
 export const getIsReinvite = ({
     invitationIcs,
-    invitationApi,
+    calendarEvent,
     isOrganizerMode,
+    isOutdated,
 }: {
     invitationIcs: EventInvitation;
-    invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
+    calendarEvent?: CalendarEventWithMetadata;
     isOrganizerMode: boolean;
+    isOutdated: boolean;
 }) => {
     const { method } = invitationIcs;
-    const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
-    if (isOrganizerMode || method !== ICAL_METHOD.REQUEST || !invitationApi || isOutdated) {
+    if (isOrganizerMode || method !== ICAL_METHOD.REQUEST || !calendarEvent || isOutdated) {
         return false;
     }
-    const { calendarEvent } = invitationApi;
     return getIsEventCancelled(calendarEvent);
 };
 
@@ -480,7 +481,6 @@ interface GetInitialInvitationModelArgs {
     hasNoCalendars: boolean;
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;
-    mustReactivateCalendars: boolean;
 }
 export const getInitialInvitationModel = ({
     invitationOrError,
@@ -491,7 +491,6 @@ export const getInitialInvitationModel = ({
     hasNoCalendars,
     canCreateCalendar,
     maxUserCalendarsDisabled,
-    mustReactivateCalendars,
 }: GetInitialInvitationModelArgs) => {
     const errorModel = {
         isImport: false,
@@ -501,7 +500,6 @@ export const getInitialInvitationModel = ({
         isAddressActive: true,
         canCreateCalendar,
         maxUserCalendarsDisabled,
-        mustReactivateCalendars,
         hasNoCalendars,
         timeStatus: EVENT_TIME_STATUS.FUTURE,
     };
@@ -536,7 +534,6 @@ export const getInitialInvitationModel = ({
         isAddressDisabled,
         canCreateCalendar,
         maxUserCalendarsDisabled,
-        mustReactivateCalendars,
         hasNoCalendars,
         invitationIcs: invitation,
         isPartyCrasher: isOrganizerMode || isImport ? false : !invitation.attendee,
