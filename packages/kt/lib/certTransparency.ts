@@ -103,6 +103,7 @@ export async function verifyLEcert(certChain: Certificate[]) {
     }
     let verified = true;
     for (let i = certChain.length - 2; i >= 0; i--) {
+        // @ts-expect-error pkijs has a lack of typings
         verified = verified && (await certChain[i].verify(verificationCert));
         verificationCert = certChain[i];
     }
