@@ -3567,7 +3567,7 @@ __metadata:
     tabbable: ^5.1.3
     tinycolor2: ^1.4.1
     ttag: ^1.7.24
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   peerDependencies:
     "@proton/shared": "*"
     "@proton/srp": "*"
@@ -3645,7 +3645,7 @@ __metadata:
     pkijs: ^2.1.90
     pmcrypto: "github:ProtonMail/pmcrypto.git#semver:~6.6.0"
     ts-loader: ^9.2.5
-    typescript: ^4.4.3
+    typescript: ^4.5.4
     webpack: ^5.65.0
   languageName: unknown
   linkType: soft
@@ -3769,7 +3769,7 @@ __metadata:
     timezone-support: "github:ProtonMail/timezone-support#bundle"
     ts-loader: ^9.2.5
     ttag: ^1.7.24
-    typescript: ^4.4.3
+    typescript: ^4.5.4
     ua-parser-js: ^0.7.20
     web-streams-polyfill: ^3.0.3
     webpack: ^5.65.0
@@ -3795,7 +3795,7 @@ __metadata:
     pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.6.0"
     prettier: ^2.5.1
     require-inject: ^1.4.4
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   peerDependencies:
     pmcrypto: "*"
   languageName: unknown
@@ -23863,7 +23863,7 @@ fsevents@^1.2.7:
     react: ^17.0.0
     react-dom: ^17.0.0
     ttag: ^1.7.24
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   languageName: unknown
   linkType: soft
 
@@ -23896,7 +23896,7 @@ fsevents@^1.2.7:
     react-test-renderer: ^17.0.0
     react-testing-library: ^7.0.1
     ttag: ^1.7.24
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   languageName: unknown
   linkType: soft
 
@@ -23935,7 +23935,7 @@ fsevents@^1.2.7:
     react-helmet: ^6.1.0
     tinycolor2: ^1.4.1
     ttag: ^1.7.24
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   languageName: unknown
   linkType: soft
 
@@ -23975,7 +23975,7 @@ fsevents@^1.2.7:
     react-test-renderer: ^17.0.0
     react-window: ^1.8.5
     ttag: ^1.7.24
-    typescript: ^4.4.3
+    typescript: ^4.5.4
     web-streams-polyfill: ^3.0.3
     webpack: ^5.65.0
   languageName: unknown
@@ -24049,7 +24049,7 @@ fsevents@^1.2.7:
     redux-logger: ^3.0.6
     ttag: ^1.7.24
     turndown: ^7.1.1
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   languageName: unknown
   linkType: soft
 
@@ -24084,7 +24084,7 @@ fsevents@^1.2.7:
     react: ^17.0.0
     react-dom: ^17.0.0
     ts-loader: ^9.2.5
-    typescript: ^4.4.3
+    typescript: ^4.5.4
     webpack: ^5.65.0
   languageName: unknown
   linkType: soft
@@ -24104,7 +24104,7 @@ fsevents@^1.2.7:
     react: ^17.0.0
     react-dom: ^17.0.0
     resize-observer: ^1.0.3
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   languageName: unknown
   linkType: soft
 
@@ -24127,7 +24127,7 @@ fsevents@^1.2.7:
     react: ^17.0.0
     react-dom: ^17.0.0
     ttag: ^1.7.24
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   languageName: unknown
   linkType: soft
 
@@ -26001,7 +26001,7 @@ fsevents@^1.2.7:
     lint-staged: ^12.1.4
     prettier: ^2.5.1
     sort-package-json: ^1.53.1
-    typescript: ^4.4.3
+    typescript: ^4.5.4
   languageName: unknown
   linkType: soft
 
@@ -28922,6 +28922,16 @@ typescript@^3.9.7:
   languageName: node
   linkType: hard
 
+"typescript@npm:^4.5.4":
+  version: 4.5.4
+  resolution: "typescript@npm:4.5.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 59f3243f9cd6fe3161e6150ff6bf795fc843b4234a655dbd938a310515e0d61afd1ac942799e7415e4334255e41c2c49b7dd5d9fd38a17acd25a6779ca7e0961
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@^3.9.7#~builtin<compat/typescript>":
   version: 3.9.10
   resolution: "typescript@patch:typescript@npm%3A3.9.10#~builtin<compat/typescript>::version=3.9.10&hash=493e53"
@@ -28939,6 +28949,16 @@ typescript@^3.9.7:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 79f5c13d21c9dea3eb44d2b7002ff25a0569fefc432e083d65a360e3aca990aca25fc733e14aa6883b5e9a68e3e2f0330a34123e048806f91d701732ece00e6f
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>":
+  version: 4.5.4
+  resolution: "typescript@patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 2e488dde7d2c4a2fa2e79cf2470600f8ce81bc0563c276b72df8ff412d74456ae532ba824650ae936ce207440c79720ddcfaa25e3cb4477572b8534fa4e34d49
   languageName: node
   linkType: hard
 
