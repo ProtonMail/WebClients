@@ -3744,7 +3744,7 @@ __metadata:
     "@sentry/browser": ^5.30.0
     "@types/dompurify": ^2.3.2
     "@types/jasmine": ^3.10.2
-    "@types/node": ^14.18.3
+    "@types/node": ^16.11.17
     "@types/papaparse": ^5.3.1
     "@types/ua-parser-js": ^0.7.36
     "@types/webpack-env": ^1.16.3
@@ -6176,7 +6176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^16.0.0":
+"@types/node@npm:*, @types/node@npm:^16.0.0, @types/node@npm:^16.11.17":
   version: 16.11.17
   resolution: "@types/node@npm:16.11.17"
   checksum: 86ed84f79450f6aba1a6ef09f8407c10076966c3cc7cc4eb3d35b8ae4f47817e525641396ef0a667fa0a88fcdf484f6182812c074601403083bdf3b5e1ac0313
@@ -6190,7 +6190,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.0.10, @types/node@npm:^14.18.3":
+"@types/node@npm:^14.0.10":
   version: 14.18.3
   resolution: "@types/node@npm:14.18.3"
   checksum: 72275674a25b0e9d4fe213449d874fd3e8280a84d911a359d298d68b84550b6a3210d484dc2662b8eb6e0b1829f4dac5e60cb7c01ce78878b316305c798d1cbb
