@@ -11,6 +11,7 @@ import {
     Icon,
     RadioGroup,
     Tooltip,
+    InputFieldTwo,
 } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
@@ -212,6 +213,59 @@ export const ALotOfContent = () => {
                 <ModalTwoFooter>
                     <Button>Secondary action</Button>
                     <Button color="norm">Primary action</Button>
+                </ModalTwoFooter>
+            </ModalTwo>
+        </div>
+    );
+};
+
+export const WithFormRoot = () => {
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState('');
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        window.alert(`Form submitted, value: ${value}.`);
+    };
+
+    return (
+        <div className="text-center">
+            <Button
+                className="mr0-5"
+                onClick={() => {
+                    setOpen(true);
+                }}
+            >
+                Open modal with form root
+            </Button>
+            <ModalTwo open={open} onClose={() => setOpen(false)} as="form" onSubmit={handleSubmit}>
+                <ModalTwoHeader title="Size" />
+                <ModalTwoContent>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
+                        accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
+                        qui vero, blanditiis quos?
+                    </p>
+                    <div className="mt1">
+                        <InputFieldTwo
+                            label="Name"
+                            value={value}
+                            onValue={setValue}
+                            placeholder="e.g. John Fitzgerald"
+                        />
+                    </div>
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <Button
+                        onClick={() => {
+                            setOpen(false);
+                        }}
+                    >
+                        Cancel
+                    </Button>
+                    <Button type="submit" color="norm">
+                        Submit
+                    </Button>
                 </ModalTwoFooter>
             </ModalTwo>
         </div>
