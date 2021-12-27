@@ -89,11 +89,6 @@ const getJsLoader = (options) => {
 const getJsLoaders = (options) => {
     return [
         {
-            use: [require.resolve('source-map-loader')],
-            enforce: 'pre',
-            test: /\.(js|mjs|jsx|ts|tsx|css)$/,
-        },
-        {
             test: /unsupported\.(js|tsx?)$/,
             use: UNSUPPORTED_JS_LOADER,
         },
