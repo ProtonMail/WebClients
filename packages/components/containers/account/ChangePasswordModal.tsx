@@ -198,7 +198,11 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         throw new Error('mode not supported');
     };
 
-    const { labels, extraAlert, ...modalProps } = (() => {
+    const {
+        labels,
+        extraAlert = null,
+        ...modalProps
+    } = (() => {
         if (mode === MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE) {
             return {
                 ...getModalProperties(mode),

@@ -3,14 +3,14 @@
     "description": "Human Verification",
     "license": "GPL-3.0",
     "scripts": {
-        "start": "proton-pack dev-server --appMode=standalone",
-        "test": "jest --runInBand --ci",
+        "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone",
+        "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "postinstall": "proton-pack config",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
-        "check-types": "tsc",
-        "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone",
-        "postinstall": "proton-pack config"
+        "start": "proton-pack dev-server --appMode=standalone",
+        "test": "jest --runInBand --ci"
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
@@ -26,6 +26,6 @@
         "cross-env": "^7.0.3",
         "eslint": "^8.5.0",
         "jest": "^27.0.0",
-        "typescript": "^4.4.3"
+        "typescript": "^4.5.4"
     }
 }
