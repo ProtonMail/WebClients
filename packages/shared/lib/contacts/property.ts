@@ -1,4 +1,5 @@
 import { range } from '../helpers/array';
+import isTruthy from '../helpers/isTruthy';
 import { ContactValue } from '../interfaces/contacts';
 import { getStringContactValue } from './properties';
 
@@ -134,18 +135,16 @@ export const formatAdr = (adr: ContactValue): string[] => {
             value.push(...range(0, 7 - value.length).map(() => ''));
         }
 
-        const filterEmpty = (source: string[]) => source.filter((line) => line !== undefined && line !== '');
-
         // According to vCard RFC https://datatracker.ietf.org/doc/html/rfc6350#section-6.3.1
         // Address is split into 7 strings with different meaning at each position
         const [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country] = value;
-        const lines = filterEmpty([
+        const lines = [
             streetAddress,
             extendedAddress,
-            filterEmpty([postalCode, locality]).join(', '),
+            [postalCode, locality].filter(isTruthy).join(', '),
             postOfficeBox,
-            filterEmpty([region, country]).join(', '),
-        ]);
+            [region, country].filter(isTruthy).join(', '),
+        ].filter(isTruthy);
         return lines;
     } catch {
         // Some addresses, especially imported can be strangely formated
