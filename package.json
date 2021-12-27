@@ -32,5 +32,8 @@
         "prettier": "^2.5.1",
         "sort-package-json": "^1.53.1"
     },
+    "engines": {
+        "node": ">= v16"
+    },
     "packageManager": "yarn@3.1.1"
 }
