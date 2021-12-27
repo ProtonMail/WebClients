@@ -1,6 +1,7 @@
-import { AnimationEvent, ComponentPropsWithoutRef, createContext, useLayoutEffect, useState, useRef } from 'react';
+import { AnimationEvent, ElementType, createContext, useLayoutEffect, useState, useRef } from 'react';
 
 import { useChanged, useHotkeys, useInstance } from '../../hooks';
+import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { classnames, generateUID } from '../../helpers';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
@@ -47,11 +48,11 @@ interface ModalOwnProps {
     onExit?: () => void;
 }
 
-type DivProps = ComponentPropsWithoutRef<'div'>;
+const defaultElement = 'dialog';
 
-export type ModalProps = ModalOwnProps & Omit<DivProps, 'id'>;
+export type ModalProps<E extends ElementType = typeof defaultElement> = PolymorphicComponentProps<E, ModalOwnProps>;
 
-const Modal = ({
+const Modal = <E extends ElementType = typeof defaultElement>({
     open,
     size = 'medium',
     fullscreenOnMobile,
@@ -61,7 +62,7 @@ const Modal = ({
     className,
     children,
     ...rest
-}: ModalProps) => {
+}: PolymorphicComponentProps<E, ModalOwnProps>) => {
     const last = useModalPosition(open || false);
     const [exiting, setExiting] = useState(false);
     const id = useInstance(() => generateUID('modal'));
@@ -136,6 +137,29 @@ const Modal = ({
         size === 'full' && 'modal-two-dialog--full',
     ]);
 
+    const rootElementProps = { ...rest };
+
+    const dialogProps = {
+        ref: dialogRef,
+        className: dialogClassName,
+        'aria-labelledby': id,
+        'aria-describedby': `${id}-description`,
+        ...(rest.as ? {} : rootElementProps),
+        ...focusTrapProps,
+    };
+
+    const child = rest.as ? (
+        <Box as={defaultElement} {...rootElementProps}>
+            <dialog {...dialogProps}>
+                <ModalContext.Provider value={modalContextValue}>{children}</ModalContext.Provider>
+            </dialog>
+        </Box>
+    ) : (
+        <dialog {...dialogProps}>
+            <ModalContext.Provider value={modalContextValue}>{children}</ModalContext.Provider>
+        </dialog>
+    );
+
     return (
         <Portal>
             <div
@@ -143,16 +167,7 @@ const Modal = ({
                 onAnimationEnd={handleAnimationEnd}
                 style={!last ? { '--z-position': -1 } : undefined}
             >
-                <dialog
-                    ref={dialogRef}
-                    className={dialogClassName}
-                    aria-labelledby={id}
-                    aria-describedby={`${id}-description`}
-                    {...rest}
-                    {...focusTrapProps}
-                >
-                    <ModalContext.Provider value={modalContextValue}>{children}</ModalContext.Provider>
-                </dialog>
+                {child}
             </div>
         </Portal>
     );
