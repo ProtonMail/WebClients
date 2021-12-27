@@ -134,7 +134,7 @@ describe('PhoneInput', () => {
     it('should get a country from a number', () => {
         expect(getCountryFromNumber('+')).toEqual('');
         expect(getCountryFromNumber('+1')).toEqual('US');
-        expect(getCountryFromNumber('+11')).toEqual('US');
+        expect(getCountryFromNumber('+11')).toEqual('');
         expect(getCountryFromNumber('3')).toEqual('');
         expect(getCountryFromNumber('2')).toEqual('');
         expect(getCountryFromNumber('1')).toEqual('');

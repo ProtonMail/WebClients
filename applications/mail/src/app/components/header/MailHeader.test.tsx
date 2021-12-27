@@ -79,7 +79,7 @@ describe('MailHeader', () => {
             fireEvent.click(logo);
 
             const history = getHistory();
-            expect(history.length).toBe(2);
+            expect(history.length).toBe(1);
             expect(history.location.pathname).toBe('/inbox');
         });
 
