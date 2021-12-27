@@ -322,3 +322,14 @@ export enum EASY_SWITCH_SOURCE {
     RECONNECT_IMPORT = 'reconnect-import',
     IMPORT_CONTACTS_BUTTON = 'import-contacts-button', // fallback for Import Contacts button
 }
+
+export interface EasySwitchFeatureFlag {
+    GoogleMail: boolean;
+    GoogleCalendar: boolean;
+    GoogleContacts: boolean;
+    GoogleDrive: boolean;
+    OtherMail: boolean;
+    OtherCalendar: boolean;
+    OtherContacts: boolean;
+    OtherDrive: boolean;
+}

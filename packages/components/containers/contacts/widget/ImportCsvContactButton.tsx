@@ -1,8 +1,11 @@
 import { c } from 'ttag';
-import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
-import { GoogleButton, PrimaryButton, FeatureCode, Loader, EasySwitchOauthModal } from '@proton/components';
-import { useAddresses, useFeature, useModals, useUser } from '@proton/components/hooks';
-import ImportModal from '@proton/components/containers/contacts/import/ImportModal';
+import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+
+import { useAddresses, useFeature, useModals, useUser } from '../../../hooks';
+import { FeatureCode } from '../../features';
+import { GoogleButton, Loader, PrimaryButton } from '../../../components';
+import { EasySwitchOauthModal } from '../../easySwitch';
+import ImportModal from '../import/ImportModal';
 
 interface Props {
     onImportButtonClick?: () => void;
@@ -17,8 +20,9 @@ const ImportCsvContactButton = ({
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
-    const easySwitchCalendarFeature = useFeature(FeatureCode.EasySwitchCalendar);
-    const isEasySwitchCalendarEnabled = easySwitchCalendarFeature.feature?.Value;
+    const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
+    const easySwitchFeatureLoading = easySwitchFeature.loading;
+    const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
 
     const handleClick = () => {
         createModal(<ImportModal />);
@@ -27,7 +31,7 @@ const ImportCsvContactButton = ({
         }
     };
 
-    const isLoading = loadingUser || loadingAddresses || easySwitchCalendarFeature.loading;
+    const isLoading = loadingUser || loadingAddresses || easySwitchFeatureLoading;
 
     if (isLoading) {
         return <Loader />;
@@ -37,20 +41,22 @@ const ImportCsvContactButton = ({
 
     return (
         <>
-            <GoogleButton
-                onClick={() => {
-                    createModal(
-                        <EasySwitchOauthModal
-                            source={easySwitchSource}
-                            addresses={addresses}
-                            defaultCheckedTypes={[ImportType.CONTACTS]}
-                            isEasySwitchCalendarEnabled={isEasySwitchCalendarEnabled}
-                        />
-                    );
-                }}
-                disabled={disabled}
-                className="mr1"
-            />
+            {!easySwitchFeatureLoading && easySwitchFeatureValue?.GoogleContacts && (
+                <GoogleButton
+                    onClick={() => {
+                        createModal(
+                            <EasySwitchOauthModal
+                                source={easySwitchSource}
+                                addresses={addresses}
+                                defaultCheckedTypes={[ImportType.CONTACTS]}
+                                featureMap={easySwitchFeatureValue}
+                            />
+                        );
+                    }}
+                    disabled={disabled}
+                    className="mr1"
+                />
+            )}
             <PrimaryButton id="import-contacts-button" disabled={disabled} onClick={handleClick}>
                 {c('Action').t`Import from .csv or vCard`}
             </PrimaryButton>

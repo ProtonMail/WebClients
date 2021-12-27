@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 
-import { Alert, GoogleButton, Href, PrimaryButton } from '../../../components';
+import { Alert, GoogleButton, Href, Loader, PrimaryButton } from '../../../components';
 
 import { useAddresses, useFeature, useModals } from '../../../hooks';
 
@@ -25,8 +25,9 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
     const { createModal } = useModals();
     const [addresses, loadingAddresses] = useAddresses();
 
-    const easySwitchCalendarFeature = useFeature(FeatureCode.EasySwitchCalendar);
-    const isEasySwitchCalendarEnabled = easySwitchCalendarFeature.feature?.Value;
+    const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
+    const easySwitchFeatureLoading = easySwitchFeature.loading;
+    const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
 
     const showAlert = !activeCalendars.length && hasNonDelinquentScope;
     const canManualImport = !!activeCalendars.length && hasNonDelinquentScope;
@@ -42,11 +43,15 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
                 source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
                 addresses={addresses}
                 defaultCheckedTypes={[ImportType.CALENDAR]}
-                isEasySwitchCalendarEnabled={isEasySwitchCalendarEnabled}
+                featureMap={easySwitchFeatureValue}
             />
         );
 
-    return (
+    const isLoading = easySwitchFeatureLoading || loadingAddresses;
+
+    return isLoading ? (
+        <Loader />
+    ) : (
         <SettingsSection>
             {showAlert ? (
                 <Alert className="mb1" type="warning">{c('Info')
@@ -62,23 +67,17 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
                 ).t`Here's how`}</Href>
             </SettingsParagraph>
 
-            {isEasySwitchCalendarEnabled ? (
-                <>
-                    <GoogleButton
-                        onClick={handleOAuthClick}
-                        disabled={loadingAddresses || !hasNonDelinquentScope}
-                        className="mr1"
-                    />
-
-                    <PrimaryButton onClick={handleManualImport} disabled={!canManualImport}>
-                        {c('Action').t`Import from .ics`}
-                    </PrimaryButton>
-                </>
-            ) : (
-                <PrimaryButton onClick={handleManualImport} disabled={!canManualImport}>
-                    {c('Action').t`Import from .ics`}
-                </PrimaryButton>
+            {!easySwitchFeatureLoading && easySwitchFeatureValue?.GoogleCalendar && (
+                <GoogleButton
+                    onClick={handleOAuthClick}
+                    disabled={isLoading || !hasNonDelinquentScope}
+                    className="mr1"
+                />
             )}
+
+            <PrimaryButton onClick={handleManualImport} disabled={!canManualImport}>
+                {c('Action').t`Import from .ics`}
+            </PrimaryButton>
         </SettingsSection>
     );
 };
