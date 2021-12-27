@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Address } from '@proton/shared/lib/interfaces';
-import { ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EasySwitchFeatureFlag, ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
 import { noop } from '@proton/shared/lib/helpers/function';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
@@ -69,14 +69,21 @@ interface Props {
     onClose?: () => void;
     addresses: Address[];
     provider?: NON_OAUTH_PROVIDER;
+    featureMap?: EasySwitchFeatureFlag;
 }
 
 const EasySwitchDefaultModal = ({
     addresses,
     onClose = noop,
     provider = NON_OAUTH_PROVIDER.DEFAULT,
+
+    featureMap,
     ...rest
 }: Props) => {
+    const isEasySwitchMailEnabled = featureMap?.OtherMail;
+    const isEasySwitchContactsEnabled = featureMap?.OtherCalendar;
+    const isEasySwitchCalendarEnabled = featureMap?.OtherContacts;
+
     const { createModal } = useModals();
 
     const [calendars, loadingCalendars] = useCalendars();
@@ -115,13 +122,39 @@ const EasySwitchDefaultModal = ({
         onClose();
     };
 
-    const calendarButton = (
-        <ImportTypeButton
-            importType={ImportType.CALENDAR}
-            disabled={!canImportCalendars}
-            onClick={() => handleClick(ImportType.CALENDAR)}
-        />
-    );
+    const buttonRenderer = (importType: ImportType) => {
+        let isDisabled = false;
+        let title = c('Info').t`Temporarily unavailable. Please check back later.`;
+
+        switch (importType) {
+            case ImportType.MAIL:
+                isDisabled = !isEasySwitchMailEnabled;
+                break;
+            case ImportType.CALENDAR:
+                isDisabled = !isEasySwitchCalendarEnabled || !canImportCalendars;
+                if (isEasySwitchCalendarEnabled) {
+                    title = c('Info').t`You need to have an active personal calendar to import your events.`;
+                }
+                break;
+            case ImportType.CONTACTS:
+                isDisabled = !isEasySwitchContactsEnabled;
+                break;
+            default:
+                break;
+        }
+
+        const button = (
+            <ImportTypeButton importType={importType} onClick={() => handleClick(importType)} disabled={isDisabled} />
+        );
+
+        return isDisabled ? (
+            <Tooltip title={title}>
+                <span>{button}</span>
+            </Tooltip>
+        ) : (
+            button
+        );
+    };
 
     return (
         <FormModal
@@ -138,20 +171,9 @@ const EasySwitchDefaultModal = ({
                 <>
                     <div className="mb2">{c('Info').t`You can import one data type at a time.`}</div>
                     <div className="import-buttons mb1">
-                        <ImportTypeButton importType={ImportType.MAIL} onClick={() => handleClick(ImportType.MAIL)} />
-                        {!canImportCalendars ? (
-                            <Tooltip
-                                title={c('Info').t`You need to have an active personal calendar to import your events.`}
-                            >
-                                <span>{calendarButton}</span>
-                            </Tooltip>
-                        ) : (
-                            calendarButton
-                        )}
-                        <ImportTypeButton
-                            importType={ImportType.CONTACTS}
-                            onClick={() => handleClick(ImportType.CONTACTS)}
-                        />
+                        {buttonRenderer(ImportType.MAIL)}
+                        {buttonRenderer(ImportType.CALENDAR)}
+                        {buttonRenderer(ImportType.CONTACTS)}
                     </div>
                 </>
             )}
