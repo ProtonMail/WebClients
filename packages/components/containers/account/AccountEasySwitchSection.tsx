@@ -1,6 +1,11 @@
 import { c } from 'ttag';
 
-import { EASY_SWITCH_SOURCE, ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
+import {
+    EASY_SWITCH_SOURCE,
+    EasySwitchFeatureFlag,
+    ImportType,
+    NON_OAUTH_PROVIDER,
+} from '@proton/shared/lib/interfaces/EasySwitch';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { useAddresses, useFeature, useModals, useUser } from '../../hooks';
@@ -20,28 +25,35 @@ const AccountEasySwitchSection = () => {
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
-    const easySwitchCalendarFeature = useFeature(FeatureCode.EasySwitchCalendar);
-    const isEasySwitchCalendarEnabled = easySwitchCalendarFeature.feature?.Value;
+    const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
+    const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
+    const easySwitchFeatureLoading = easySwitchFeature.loading;
 
-    const isLoading = loadingUser || loadingAddresses || easySwitchCalendarFeature.loading;
+    const isLoading = loadingUser || loadingAddresses || easySwitchFeatureLoading;
 
     const handleOAuthClick = () => {
+        if (easySwitchFeatureLoading) {
+            return;
+        }
+
         createModal(
             <EasySwitchOauthModal
                 source={EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS}
                 addresses={addresses}
                 defaultCheckedTypes={[
-                    ImportType.MAIL,
-                    isEasySwitchCalendarEnabled && ImportType.CALENDAR,
-                    ImportType.CONTACTS,
+                    easySwitchFeatureValue?.GoogleMail && ImportType.MAIL,
+                    easySwitchFeatureValue?.GoogleCalendar && ImportType.CALENDAR,
+                    easySwitchFeatureValue?.GoogleContacts && ImportType.CONTACTS,
                 ].filter(isTruthy)}
-                isEasySwitchCalendarEnabled={isEasySwitchCalendarEnabled}
+                featureMap={easySwitchFeatureValue}
             />
         );
     };
 
     const handleIMAPClick = (provider?: NON_OAUTH_PROVIDER) =>
-        createModal(<EasySwitchDefaultModal addresses={addresses} provider={provider} />);
+        createModal(
+            <EasySwitchDefaultModal addresses={addresses} provider={provider} featureMap={easySwitchFeatureValue} />
+        );
 
     const disabled = isLoading || !user.hasNonDelinquentScope;
 

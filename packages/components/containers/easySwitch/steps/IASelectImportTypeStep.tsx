@@ -16,6 +16,7 @@ import {
     CalendarImportPayloadError,
     CustomFieldsBitmap,
     IsCustomCalendarMapping,
+    EasySwitchFeatureFlag,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -42,7 +43,7 @@ interface Props {
     calendars: Calendar[];
     labels: Label[];
     folders: Folder[];
-    isEasySwitchCalendarEnabled: boolean;
+    featureMap?: EasySwitchFeatureFlag;
 }
 
 const {
@@ -79,8 +80,12 @@ const IASelectImportTypeStep = ({
     calendars,
     labels,
     folders,
-    isEasySwitchCalendarEnabled,
+    featureMap,
 }: Props) => {
+    const isEasySwitchMailEnabled = featureMap?.GoogleMail;
+    const isEasySwitchContactsEnabled = featureMap?.GoogleContacts;
+    const isEasySwitchCalendarEnabled = featureMap?.GoogleCalendar;
+
     const { oauthProps, payload, tokenScope } = modalModel;
 
     const initialModel = useRef<IAOauthModalModel>();
@@ -284,13 +289,20 @@ const IASelectImportTypeStep = ({
             >
                 <Checkbox
                     id="mail"
-                    checked={checkedTypes[MAIL]}
+                    checked={isEasySwitchMailEnabled && checkedTypes[MAIL]}
                     onChange={() => toggleCheckedProduct(MAIL)}
                     className="mr0-5 flex-align-self-start"
-                    disabled={disableMail}
+                    disabled={disableMail || !isEasySwitchMailEnabled}
                 />
                 <div className="flex flex-column flex-item-fluid">
-                    <div className={classnames([showSummary && 'mb0-5'])}>{c('Label').t`Emails`}</div>
+                    <div className={classnames([showSummary && 'mb0-5', !isEasySwitchMailEnabled && 'color-weak'])}>
+                        {c('Label').t`Emails`}
+                        {!isEasySwitchMailEnabled && (
+                            <span className="block">
+                                {c('Label').t`(Temporarily unavailable. Please check back later)`}
+                            </span>
+                        )}
+                    </div>
                     {showSummary && (
                         <>
                             {mailErrors.length > 0 ? (
@@ -424,7 +436,11 @@ const IASelectImportTypeStep = ({
                 <div className="flex flex-column flex-item-fluid">
                     <div className={classnames([showSummary && 'mb0-5', !isEasySwitchCalendarEnabled && 'color-weak'])}>
                         {c('Label').t`Calendars`}
-                        {!isEasySwitchCalendarEnabled && <span> {c('Label').t`(Coming soon)`}</span>}
+                        {!isEasySwitchCalendarEnabled && (
+                            <span className="block">
+                                {c('Label').t`(Temporarily unavailable. Please check back later)`}
+                            </span>
+                        )}
                     </div>
                     {showSummary && (
                         <>
@@ -498,14 +514,21 @@ const IASelectImportTypeStep = ({
             >
                 <Checkbox
                     id="contacts"
-                    checked={checkedTypes[CONTACTS]}
+                    checked={isEasySwitchContactsEnabled && checkedTypes[CONTACTS]}
                     onChange={() => toggleCheckedProduct(CONTACTS)}
-                    className="mr0-5"
-                    disabled={disableContacts}
+                    className="mr0-5 flex-align-self-start"
+                    disabled={disableContacts || !isEasySwitchContactsEnabled}
                 />
 
                 <div className="flex flex-column flex-item-fluid">
-                    <div className={classnames([showSummary && 'mb0-5'])}>{c('Label').t`Contacts`}</div>
+                    <div className={classnames([showSummary && 'mb0-5', !isEasySwitchContactsEnabled && 'color-weak'])}>
+                        {c('Label').t`Contacts`}
+                        {!isEasySwitchContactsEnabled && (
+                            <span className="block">
+                                {c('Label').t`(Temporarily unavailable. Please check back later)`}
+                            </span>
+                        )}
+                    </div>
                     {showSummary && <div className="color-weak">{getContactsSummary()}</div>}
                 </div>
             </FormLabel>

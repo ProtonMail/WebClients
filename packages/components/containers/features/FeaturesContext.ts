@@ -55,8 +55,8 @@ export enum FeatureCode {
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
     SpotlightGetStartedChecklist = 'SpotlightGetStartedChecklist',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
-    EasySwitchCalendar = 'EasySwitchCalendar',
     DarkStylesInBody = 'DarkStylesInBody',
+    EasySwitch = 'EasySwitch',
 }
 
 export interface FeaturesContextValue {
