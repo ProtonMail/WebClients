@@ -22,7 +22,6 @@ import {
 } from '../../../components';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
 import { useLoading, useCalendarEmailNotificationsFeature } from '../../../hooks';
-import { GenericError } from '../../error';
 import Notifications from '../notifications/Notifications';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
@@ -102,13 +101,12 @@ export const CalendarModal = ({
         );
     };
 
-    const { section, ...modalProps } = (() => {
+    const modalProps = (() => {
         if (error || setupError) {
             return {
                 title: c('Title').t`Error`,
                 submit: c('Action').t`Close`,
                 hasClose: false,
-                section: <GenericError />,
                 onSubmit() {
                     window.location.reload();
                 },
