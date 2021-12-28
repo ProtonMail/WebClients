@@ -9,7 +9,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
-import { useGetEODecryptedToken, useGetMessageState, useGetPassword } from './useOutsideMessage';
+import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 import { useBase64Cache } from '../useBase64Cache';
 import {
     LoadEmbeddedResults,
@@ -34,8 +34,8 @@ import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 export const useInitializeEOMessage = () => {
     const api = useApi();
     const dispatch = useDispatch();
-    const getMessage = useGetMessageState();
-    const getPassword = useGetPassword();
+    const getMessage = useGetEOMessageState();
+    const getPassword = useGetEOPassword();
     const getEODecryptedToken = useGetEODecryptedToken();
     const base64Cache = useBase64Cache();
 
