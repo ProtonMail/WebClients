@@ -3623,6 +3623,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/i18n@workspace:packages/i18n"
   dependencies:
+    chalk: ^4.1.2
     cross-env: ^7.0.3
     eslint: ^8.5.0
     execa: ^5.1.1
