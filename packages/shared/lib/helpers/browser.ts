@@ -33,6 +33,16 @@ export const isIE11 = () => ua.browser.name === 'IE' && ua.browser.major === '11
 export const isEdge = () => ua.browser.name === 'Edge';
 export const isEdgeChromium = () => isEdge() && ua.engine.name === 'Blink';
 export const isFirefox = () => ua.browser.name === 'Firefox';
+export const isMaybeTorLessThan11 = () => {
+    const isMaybeTor =
+        isFirefox() &&
+        /\.0$/.test(ua.browser.version || '') && // The Firefox minor revision is omitted.
+        Intl.DateTimeFormat().resolvedOptions().timeZone === 'UTC' && // The timezone is set to UTC
+        !Object.prototype.hasOwnProperty.call(window, 'Components') && // It strips out Components
+        navigator.plugins.length === 0; // 0 plugins are returned
+    // Starting from tor browser 11, tor is based on firefox 91
+    return isMaybeTor && !!ua.browser.major && +ua.browser.major < 91;
+};
 export const isChrome = () => ua.browser.name === 'Chrome';
 export const isMac = () => ua.os.name === 'Mac OS';
 export const isWindows = () => ua.os.name === 'Windows';
