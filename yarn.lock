@@ -5481,19 +5481,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react-hooks@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "@testing-library/react-hooks@npm:3.7.0"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@types/testing-library__react-hooks": ^3.4.0
-  peerDependencies:
-    react: ">=16.9.0"
-    react-test-renderer: ">=16.9.0"
-  checksum: 7ada35cb4114056908990250033527ffd554d055eced797083aca752fb9789b3bc70291077f1d57b8cf64ab5eb7b3827f9de3bcaa38655f2b975c65a33a418d6
-  languageName: node
-  linkType: hard
-
 "@testing-library/react-hooks@npm:^7.0.2":
   version: 7.0.2
   resolution: "@testing-library/react-hooks@npm:7.0.2"
@@ -6383,7 +6370,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-test-renderer@npm:*, @types/react-test-renderer@npm:>=16.9.0":
+"@types/react-test-renderer@npm:>=16.9.0":
   version: 17.0.1
   resolution: "@types/react-test-renderer@npm:17.0.1"
   dependencies:
@@ -6534,15 +6521,6 @@ __metadata:
   dependencies:
     "@types/jest": "*"
   checksum: dc42909d5afb907f82a2ad29d77bb8ed8bff17ad3090586cec18742dd94d7ce533ac0a4571ffd93ccfa6f54a02d991a3ba561361cb72107df754b8ed7a8b04ae
-  languageName: node
-  linkType: hard
-
-"@types/testing-library__react-hooks@npm:^3.4.0":
-  version: 3.4.1
-  resolution: "@types/testing-library__react-hooks@npm:3.4.1"
-  dependencies:
-    "@types/react-test-renderer": "*"
-  checksum: f32a5659330a7c2e555bffa74807f7331b1d2fcdd5fe4c08cc9130a0a12826f5f1c5bdf3210e7b2b4c9b774bddecc283171a347f78dc98d28836b0f773583a03
   languageName: node
   linkType: hard
 
@@ -23897,7 +23875,7 @@ fsevents@^1.2.7:
     "@proton/styles": "workspace:packages/styles"
     "@testing-library/jest-dom": ^5.16.1
     "@testing-library/react": ^10.4.9
-    "@testing-library/react-hooks": ^3.7.0
+    "@testing-library/react-hooks": ^7.0.2
     "@transcend-io/conflux": ^3.2.0
     "@types/mime-types": ^2.1.1
     "@types/react": ^17.0.38
