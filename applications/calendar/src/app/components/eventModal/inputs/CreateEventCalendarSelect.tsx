@@ -12,6 +12,7 @@ export interface Props extends Omit<SelectProps<string>, 'children'> {
     isCreateEvent: boolean;
     emailNotificationsEnabled: boolean;
     frozen?: boolean;
+    isDuplicating: boolean;
 }
 
 const CreateEventCalendarSelect = ({
@@ -20,6 +21,7 @@ const CreateEventCalendarSelect = ({
     isCreateEvent,
     frozen = false,
     emailNotificationsEnabled,
+    isDuplicating,
     ...rest
 }: Props) => {
     const [loading, withLoading] = useLoading();
@@ -66,12 +68,12 @@ const CreateEventCalendarSelect = ({
         const newDefaultFullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
 
         const partDayNotifications =
-            model.hasTouchedNotifications.partDay || (!isCreateEvent && !model.isAllDay)
+            model.hasTouchedNotifications.partDay || ((!isCreateEvent || isDuplicating) && !model.isAllDay)
                 ? model.partDayNotifications
                 : newDefaultPartDayNotifications;
 
         const fullDayNotifications =
-            model.hasTouchedNotifications.fullDay || (!isCreateEvent && model.isAllDay)
+            model.hasTouchedNotifications.fullDay || ((!isCreateEvent || isDuplicating) && model.isAllDay)
                 ? model.fullDayNotifications
                 : newDefaultFullDayNotifications;
 

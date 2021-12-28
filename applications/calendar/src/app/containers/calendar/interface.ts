@@ -59,6 +59,9 @@ export interface TimeGridRef {
     scrollToNow: () => void;
     scrollToTime: (date: Date) => void;
 }
+
+export type OnCreateEventProps = { attendees?: AttendeeModel[]; startModel?: EventModel };
+
 export interface InteractiveRef {
     createEvent: (attendees: AttendeeModel[]) => void;
 }

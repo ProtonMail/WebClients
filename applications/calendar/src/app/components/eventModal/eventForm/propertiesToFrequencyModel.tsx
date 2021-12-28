@@ -44,8 +44,7 @@ const getFrequency = (freq: VcalRruleFreqValue) => {
  */
 export const propertiesToFrequencyModel = (
     rrule: VcalRruleProperty | undefined,
-    { date: startDate, tzid: startTzid }: DateTimeModel,
-    isInvitation = false
+    { date: startDate, tzid: startTzid }: DateTimeModel
 ): FrequencyModel => {
     const rruleValue = rrule?.value;
     const { freq, count, interval, until, bysetpos, byday } = rruleValue || {};
@@ -59,7 +58,7 @@ export const propertiesToFrequencyModel = (
     const untilDate = utcUntilDate ? toLocalDate(fromUTCDate(utcUntilDate)) : undefined;
     const weeklyDays = getSafeWeeklyDays(startDate, byday);
 
-    const result = {
+    return {
         type,
         frequency,
         interval: interval || 1, // INTERVAL=1 is ignored when parsing a recurring rule
@@ -81,7 +80,6 @@ export const propertiesToFrequencyModel = (
             count: count || 2,
             until: untilDate,
         },
+        vcalRruleValue: rruleValue,
     };
-
-    return isInvitation ? { ...result, rruleValue } : result;
 };
