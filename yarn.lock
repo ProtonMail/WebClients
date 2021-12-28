@@ -18115,15 +18115,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest-junit@npm:^12.3.0":
-  version: 12.3.0
-  resolution: "jest-junit@npm:12.3.0"
+"jest-junit@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "jest-junit@npm:13.0.0"
   dependencies:
     mkdirp: ^1.0.4
-    strip-ansi: ^5.2.0
+    strip-ansi: ^6.0.1
     uuid: ^8.3.2
     xml: ^1.0.1
-  checksum: b1527eecba967b5f4f021117a14cb5c7cf6b5d99cd0efb50078198ec22a751afde0559db3fd9ff5485959d238787109277fdc8c591d566e270ae742748443407
+  checksum: d3a1bf6e98250837d1a9939cd54f29a7bd4fb835af30e92d0d544300fbe634eb86d2b018c79a7a35b123d933bf3e6c96ba13c0161cdefbf66fc3ab771707572e
   languageName: node
   linkType: hard
 
@@ -23781,6 +23781,7 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     eslint: ^8.5.0
     jest: ^27.4.5
+    jest-junit: ^13.0.0
     prettier: ^2.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -23850,7 +23851,7 @@ fsevents@^1.2.7:
     eslint: ^8.5.0
     interval-tree: "github:ProtonMail/interval-tree#semver:^1.0.0"
     jest: ^27.4.5
-    jest-junit: ^12.3.0
+    jest-junit: ^13.0.0
     prettier: ^2.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -23887,6 +23888,7 @@ fsevents@^1.2.7:
     cross-var: ^1.1.0
     eslint: ^8.5.0
     jest: ^27.4.5
+    jest-junit: ^13.0.0
     mime-types: ^2.1.34
     openpgp: ^4.10.10
     path-browserify: ^1.0.1
@@ -23956,7 +23958,7 @@ fsevents@^1.2.7:
     eslint-config-prettier: ^8.3.0
     idb: ^6.1.5
     jest: ^27.4.5
-    jest-junit: ^12.3.0
+    jest-junit: ^13.0.0
     jszip: ^3.7.1
     juice: ^8.0.0
     linkify-it: ^3.0.3
@@ -24023,6 +24025,7 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     eslint: ^8.5.0
     jest: ^27.4.5
+    jest-junit: ^13.0.0
     react: ^17.0.2
     react-dom: ^17.0.2
     resize-observer: ^1.0.4
@@ -27405,7 +27408,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"strip-ansi@npm:^5.1.0, strip-ansi@npm:^5.2.0":
+"strip-ansi@npm:^5.1.0":
   version: 5.2.0
   resolution: "strip-ansi@npm:5.2.0"
   dependencies:
