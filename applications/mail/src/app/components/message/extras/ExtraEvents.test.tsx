@@ -212,7 +212,7 @@ describe('ICS widget', () => {
         const anotherEmailAddress = 'another@protonmail.ch';
 
         const ics = `BEGIN:VCALENDAR
-PRODID:-//Proton Technologies//ProtonCalendar 4.6.1//EN
+PRODID:-//Proton AG//WebCalendar 4.6.1//EN
 VERSION:2.0
 METHOD:REQUEST
 CALSCALE:GREGORIAN
@@ -331,7 +331,7 @@ END:VCALENDAR`;
         const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
 
         const ics = `BEGIN:VCALENDAR
-PRODID:-//Proton Technologies//ProtonCalendar 4.5.0//EN
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
 VERSION:2.0
 METHOD:REQUEST
 CALSCALE:GREGORIAN
