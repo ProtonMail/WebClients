@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useRouteMatch, useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { Href, Loader, useApi, useNotifications } from '@proton/components';
 
-import { useDispatch } from 'react-redux';
 import MessageDecryptForm from './MessageDecryptForm';
 import { EOUrlParams } from '../../../helpers/eo/eoUrl';
-import { useOutsideMessage } from '../../../hooks/eo/useOutsideMessage';
+import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
 import { eoDecrypt } from '../../../helpers/eo/message';
 import { loadEOMessage } from '../../../logic/eo/eoActions';
 import { EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
@@ -16,14 +16,15 @@ interface Props {
     setSessionStorage: (key: string, data: any) => void;
 }
 
-const Unlock = ({ setSessionStorage }: Props) => {
-    const match = useRouteMatch<EOUrlParams>();
-    const { id } = match.params;
+const EOUnlock = ({ setSessionStorage }: Props) => {
+    const api = useApi();
     const history = useHistory();
     const dispatch = useDispatch();
-    const { encryptedToken, isStoreInitialized } = useOutsideMessage({ id, setSessionStorage });
-    const api = useApi();
     const { createNotification } = useNotifications();
+
+    const match = useRouteMatch<EOUrlParams>();
+    const { id } = match.params;
+    const { encryptedToken, isStoreInitialized } = useLoadEOMessage({ id, setSessionStorage });
 
     const [isError, setIsError] = useState(true);
 
@@ -75,4 +76,4 @@ const Unlock = ({ setSessionStorage }: Props) => {
     );
 };
 
-export default Unlock;
+export default EOUnlock;

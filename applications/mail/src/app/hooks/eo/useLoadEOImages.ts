@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import { useApi } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { useGetEODecryptedToken, useGetMessageState, useGetPassword } from './useOutsideMessage';
+import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
 import { EOLoadEmbedded, EOLoadRemote } from '../../logic/eo/eoActions';
 import { EOLoadEmbeddedResults, EOLoadRemoteResults } from '../../logic/eo/eoType';
@@ -15,7 +15,7 @@ import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 export const useLoadEORemoteImages = () => {
     const dispatch = useDispatch();
     const api = useApi();
-    const getMessage = useGetMessageState();
+    const getMessage = useGetEOMessageState();
 
     return useCallback(async () => {
         const message = getMessage() as MessageState;
@@ -45,9 +45,9 @@ export const useLoadEORemoteImages = () => {
 export const useLoadEOEmbeddedImages = (id: string) => {
     const dispatch = useDispatch();
     const api = useApi();
-    const getMessage = useGetMessageState();
+    const getMessage = useGetEOMessageState();
     const getDecryptedToken = useGetEODecryptedToken();
-    const getPassword = useGetPassword();
+    const getPassword = useGetEOPassword();
 
     return useCallback(async () => {
         const message = getMessage() as MessageState;
