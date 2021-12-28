@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+
 import { Button, useFormErrors, InputFieldTwo } from '../../../components';
 import { useLoading } from '../../../hooks';
 import { VerificationModel } from './interface';
@@ -32,7 +33,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification }: Props) => {
 
     return (
         <>
-            <div className="mb2">
+            <div className="mb2 text-break">
                 {c('Info').jt`Enter the verification code that was sent to ${destinationText}.`}{' '}
                 {verification.method === 'email'
                     ? c('Info').t`If you don't find the email in your inbox, please check your spam folder.`
