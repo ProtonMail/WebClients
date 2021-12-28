@@ -143,7 +143,7 @@ export interface FrequencyModel {
         count?: number;
         until?: Date;
     };
-    rruleValue?: VcalRrulePropertyValue;
+    vcalRruleValue?: VcalRrulePropertyValue;
 }
 
 export interface DateTimeModel {

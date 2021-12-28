@@ -2,6 +2,7 @@ import { MAXIMUM_DATE, MINIMUM_DATE, DATE_INPUT_ID } from '@proton/shared/lib/ca
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { useMemo, useState } from 'react';
+
 import {
     DateInput,
     LinkButton,
@@ -166,7 +167,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                             : c('Title').t`Event is happening all day`
                     }
                     checked={isAllDay}
-                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
+                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck({ oldModel: model, isAllDay }) })}
                 />
 
                 {!isAllDay &&
