@@ -3758,7 +3758,7 @@ __metadata:
     is-valid-domain: 0.1.5
     jasmine: ^3.10.0
     jasmine-core: ^3.10.1
-    jsbi: ^3.2.5
+    jsbi: ^4.1.0
     karma: ^4.4.1
     karma-chrome-launcher: ^3.1.0
     karma-jasmine: ^4.0.1
@@ -18685,10 +18685,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jsbi@npm:^3.1.2, jsbi@npm:^3.2.5":
+"jsbi@npm:^3.1.2":
   version: 3.2.5
   resolution: "jsbi@npm:3.2.5"
   checksum: 642d1bb139ad1c1e96c4907eb159565e980a0d168487626b493d0d0b7b341da0e43001089d3b21703fe17b18a7a6c0f42c92026f71d54471ed0a0d1b3015ec0f
+  languageName: node
+  linkType: hard
+
+"jsbi@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "jsbi@npm:4.1.0"
+  checksum: 3d7e86956482e0e3c31e796af40accfb246c64e246e4d69a8b6aef182a02fdbae8c53b09bb476b4936cd47e4d95b60b8b0f8d1e9a69070c9a118f32f2c9584b6
   languageName: node
   linkType: hard
 
