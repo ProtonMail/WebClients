@@ -28,27 +28,29 @@ describe('retryOnError', () => {
     });
 
     it('retries run function n times', () => {
-        void retryOnError<unknown>({
+        const promise = retryOnError<unknown>({
             fn: throwingFunction,
             shouldRetryBasedOnError: () => true,
             maxRetriesNumber: 1,
         })();
 
+        expect(promise).rejects.toThrow();
         expect(throwingFunction).toBeCalledTimes(2);
         expect(retryOnError).toThrow();
     });
 
     it('validates incoming error', () => {
-        void retryOnError<unknown>({
+        const promise = retryOnError<unknown>({
             fn: throwingFunction,
             shouldRetryBasedOnError: (error: unknown) => {
                 return (error as Error).message === errorMessage;
             },
             maxRetriesNumber: 1,
         })();
+        expect(promise).rejects.toThrow();
         expect(throwingFunction).toBeCalledTimes(2);
 
-        void retryOnError<unknown>({
+        const promise2 = retryOnError<unknown>({
             fn: throwingFunction2,
             shouldRetryBasedOnError: (error: unknown) => {
                 return (error as Error).message === 'another string';
@@ -56,11 +58,12 @@ describe('retryOnError', () => {
             maxRetriesNumber: 1,
         })();
         expect(throwingFunction2).toBeCalledTimes(1);
+        expect(promise2).rejects.toThrow();
     });
 
     it('executes preparation function on retry', () => {
         const preparationFunction = jest.fn();
-        void retryOnError<unknown>({
+        const promise = retryOnError<unknown>({
             fn: throwingFunction,
             shouldRetryBasedOnError: (error: unknown) => {
                 return (error as Error).message === errorMessage;
@@ -69,6 +72,7 @@ describe('retryOnError', () => {
             maxRetriesNumber: 1,
         })();
         expect(preparationFunction).toBeCalledTimes(1);
+        expect(promise).rejects.toThrow();
     });
 
     it('returns value on successful retry attempt', async () => {
