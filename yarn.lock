@@ -10216,7 +10216,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:2.4.2, chalk@npm:^2.0.0, chalk@npm:^2.0.1, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
+"chalk@npm:2.4.2, chalk@npm:^2.0.0, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -11698,18 +11698,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css@npm:^2.2.3":
-  version: 2.2.4
-  resolution: "css@npm:2.2.4"
-  dependencies:
-    inherits: ^2.0.3
-    source-map: ^0.6.1
-    source-map-resolve: ^0.5.2
-    urix: ^0.1.0
-  checksum: a35d483c5ccc04bcde3b1e7393d58ad3eee1dd6956df0f152de38e46a17c0ee193c30eec6b1e59831ad0e74599385732000e95987fcc9cb2b16c6d951bae49e1
-  languageName: node
-  linkType: hard
-
 "css@npm:^3.0.0":
   version: 3.0.0
   resolution: "css@npm:3.0.0"
@@ -12547,13 +12535,6 @@ __metadata:
   version: 0.0.1
   resolution: "di@npm:0.0.1"
   checksum: 3f09a99534d33e49264585db7f863ea8bc76c25c4d5a60df387c946018ecf1e1516b2c05a2092e5ca51fcdc08cefe609a6adc5253fa831626cb78cad4746505e
-  languageName: node
-  linkType: hard
-
-"diff-sequences@npm:^24.9.0":
-  version: 24.9.0
-  resolution: "diff-sequences@npm:24.9.0"
-  checksum: b81f906ff1737e0a65e8f7ee3ad1d27b426dcc25498731365aeaccc32333da3bf3a7100c963c7104f12c8e64e545114d4fe4c0b90daf2565b0b00b79f0df45c4
   languageName: node
   linkType: hard
 
@@ -17909,18 +17890,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^24.0.0, jest-diff@npm:^24.9.0":
-  version: 24.9.0
-  resolution: "jest-diff@npm:24.9.0"
-  dependencies:
-    chalk: ^2.0.1
-    diff-sequences: ^24.9.0
-    jest-get-type: ^24.9.0
-    pretty-format: ^24.9.0
-  checksum: 462ccb128cb1b64eb285d28245d0c5bfc230cb063624bd117550d6dbc94332f606828a5de86938611d1e6a78489e576c496737ae139084f6049a56b768ad6402
-  languageName: node
-  linkType: hard
-
 "jest-diff@npm:^26.0.0":
   version: 26.6.2
   resolution: "jest-diff@npm:26.6.2"
@@ -17951,13 +17920,6 @@ fsevents@^1.2.7:
   dependencies:
     detect-newline: ^3.0.0
   checksum: 4b7639ceb7808280562166c87c49746d9e9cc13f8315ea05a0a400d2f7b11f4491b4ad50935e5976db6509f26004fa2b187dc19eea5e09c445eed2648eb1e927
-  languageName: node
-  linkType: hard
-
-"jest-dom@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "jest-dom@npm:4.0.0"
-  checksum: d65b87a1973c0cec83179d60b755784a5215ff221fdb508486545ed739ba26c1d5bf51f00d73ca4791482a30d96e962396b170f0a4fa7176074159ec2317c946
   languageName: node
   linkType: hard
 
@@ -18000,13 +17962,6 @@ fsevents@^1.2.7:
     jest-mock: ^27.4.2
     jest-util: ^27.4.2
   checksum: 12de67100d35dcdab012220d5c9663e3ad6ac0b164b0a89e998a30c41b71c96abd77256f4fbfcd0ec48f8acb1dbb084050a5d17fe0ad4b4a81e311e05b54a89d
-  languageName: node
-  linkType: hard
-
-"jest-get-type@npm:^24.9.0":
-  version: 24.9.0
-  resolution: "jest-get-type@npm:24.9.0"
-  checksum: 821e6cd46434c917370cd362fbc4ce564c6e22780351f3ca468b230fbbc657ae19905ed5cdcc5e112d81a2c79cbd3fbcbe0dd44dc62860414b60ea223009958c
   languageName: node
   linkType: hard
 
@@ -18137,18 +18092,6 @@ fsevents@^1.2.7:
     jest-get-type: ^27.0.6
     pretty-format: ^27.2.5
   checksum: 92f285c8e2a50f2b6761a1d81db98858416b6ccb6559c9ce954ef9cad6b76729ac18b8c1e98e2e81e1a55fca4dc9d8571d5dfbc2161583ed5716119e35b2a089
-  languageName: node
-  linkType: hard
-
-"jest-matcher-utils@npm:^24.0.0":
-  version: 24.9.0
-  resolution: "jest-matcher-utils@npm:24.9.0"
-  dependencies:
-    chalk: ^2.0.1
-    jest-diff: ^24.9.0
-    jest-get-type: ^24.9.0
-    pretty-format: ^24.9.0
-  checksum: e9dcd4c7a0bf52dccb4890de7ac2da3e857af067e71633b730fdc865dd271b8a2c3d68a2761d5ca6060ea4a455be42176f58462006468b8eb7c216921251e2ee
   languageName: node
   linkType: hard
 
@@ -19666,7 +19609,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.12, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
+"lodash@npm:^4.17.10, lodash@npm:^4.17.12, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -23522,7 +23465,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^24.0.0, pretty-format@npm:^24.7.0, pretty-format@npm:^24.8.0, pretty-format@npm:^24.9.0":
+"pretty-format@npm:^24.7.0, pretty-format@npm:^24.8.0":
   version: 24.9.0
   resolution: "pretty-format@npm:24.9.0"
   dependencies:
@@ -23793,6 +23736,9 @@ fsevents@^1.2.7:
     "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
+    "@testing-library/dom": ^8.11.1
+    "@testing-library/jest-dom": ^5.16.1
+    "@testing-library/react": ^12.1.2
     "@types/jest": ^26.0.24
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -23800,7 +23746,7 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     eslint: ^8.5.0
     jest: ^27.4.5
-    jest-dom: ^4.0.0
+    jest-junit: ^13.0.0
     moment: ^2.29.1
     prettier: ^2.5.1
     react: ^17.0.2
@@ -26792,7 +26738,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"source-map-resolve@npm:^0.5.0, source-map-resolve@npm:^0.5.2":
+"source-map-resolve@npm:^0.5.0":
   version: 0.5.3
   resolution: "source-map-resolve@npm:0.5.3"
   dependencies:
