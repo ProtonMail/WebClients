@@ -53,6 +53,7 @@ export interface EventFormProps {
     setParticipantError?: (value: boolean) => void;
     textareaMaxHeight?: number;
     isSubscribedCalendar?: boolean;
+    isDuplicating?: boolean;
 }
 
 const EventForm = ({
@@ -69,6 +70,7 @@ const EventForm = ({
     setParticipantError,
     textareaMaxHeight,
     isSubscribedCalendar,
+    isDuplicating = false,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const {
@@ -287,6 +289,7 @@ const EventForm = ({
                 setModel={setModel}
                 isCreateEvent={isCreateEvent}
                 emailNotificationsEnabled={emailNotificationsEnabled}
+                isDuplicating={isDuplicating}
             />
         </IconRow>
     );

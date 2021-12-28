@@ -311,6 +311,8 @@ const CalendarContainer = ({
     const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);
 
     const isLoading = loadingCalendarBootstrap || loadingEvents;
+    const isEventCreationDisabled =
+        disableCreate || !defaultCalendarBootstrap || !activeCalendars.find(unary(getIsPersonalCalendar));
 
     return (
         <CalendarContainerView
@@ -330,7 +332,7 @@ const CalendarContainer = ({
             utcDate={utcDate}
             utcDateRange={utcDateRange}
             onCreateEvent={
-                disableCreate || !defaultCalendarBootstrap || !activeCalendars.find(unary(getIsPersonalCalendar))
+                isEventCreationDisabled
                     ? undefined
                     : (attendees: AttendeeModel[] = []) => interactiveRef.current?.createEvent(attendees)
             }
@@ -366,6 +368,7 @@ const CalendarContainer = ({
                     events={calendarsEvents}
                     onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
                     onChangeDate={handleChangeDate}
+                    isEventCreationDisabled={isEventCreationDisabled}
                     onInteraction={(active: boolean) => setDisableCreate(active)}
                     addresses={addresses}
                     activeAddresses={activeAddresses}
