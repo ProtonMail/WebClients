@@ -10302,6 +10302,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "chalk@npm:5.0.0"
+  checksum: 6eba7c518b9aa5fe882ae6d14a1ffa58c418d72a3faa7f72af56641f1bbef51b645fca1d6e05d42357b7d3c846cd504c0b7b64d12309cdd07867e3b4411e0d01
+  languageName: node
+  linkType: hard
+
 "chance@npm:^1.1.8":
   version: 1.1.8
   resolution: "chance@npm:1.1.8"
@@ -26272,7 +26279,7 @@ fsevents@^1.2.7:
   dependencies:
     "@manypkg/find-root": ^1.1.0
     "@manypkg/get-packages": ^1.1.3
-    chalk: ^4.1.2
+    chalk: ^5.0.0
     commander: ^8.3.0
     execa: ^5.1.1
     prompts: ^2.4.2
