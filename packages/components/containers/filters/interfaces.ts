@@ -1,4 +1,4 @@
-import { Annotation } from 'codemirror';
+import { Annotation } from 'codemirror/addon/lint/lint';
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from '@proton/shared/lib/constants';
 
 export enum FilterStatement {
