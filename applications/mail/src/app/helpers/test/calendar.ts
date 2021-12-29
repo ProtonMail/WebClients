@@ -105,7 +105,7 @@ export const generateApiCalendarEvent = async ({
         CalendarEvents: CalendarEventContent.map((card) => withAuthorCard(card, author)),
         SharedKeyPacket,
         SharedEvents: SharedEventContent.map((card) => withAuthorCard(card, author)),
-        PersonalEvent: PersonalEventContent ? [toApiPersonalEvent(PersonalEventContent, author, memberID)] : undefined,
+        PersonalEvents: PersonalEventContent ? [toApiPersonalEvent(PersonalEventContent, author, memberID)] : undefined,
         AttendeesEvents: AttendeesEventContent.map((card) => withAuthorCard(card, author)),
         Attendees: toApiAttendees(Attendees),
     } as CalendarEventWithMetadata;

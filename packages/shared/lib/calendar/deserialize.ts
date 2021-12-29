@@ -225,8 +225,8 @@ export const readPersonalPart = async (
     return { veventComponent: parse(unwrap(data)) as VcalVeventComponent, verificationStatus };
 };
 
-export const getPersonalPartMap = ({ PersonalEvent = [] }: CalendarEvent) => {
-    return PersonalEvent.reduce<{ [key: string]: CalendarPersonalEventData }>((acc, result) => {
+export const getPersonalPartMap = ({ PersonalEvents = [] }: CalendarEvent) => {
+    return PersonalEvents.reduce<{ [key: string]: CalendarPersonalEventData }>((acc, result) => {
         const { MemberID } = result;
         acc[MemberID] = result;
         return acc;
