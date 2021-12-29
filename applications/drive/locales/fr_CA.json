@@ -1579,6 +1579,11 @@
         "ProtonContacts ne prend pas en charge ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "à l'étape suivante, vous devez sélectionner toutes les autorisations"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } contacts sur ${ totalContacts } ne seront pas importés. Cliquez pour plus de détails"
@@ -3533,8 +3538,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Veuillez noter que vous devez accepter toutes les autorisations demandées par l'application pour pouvoir démarrer votre importation."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Veuillez noter qu'${ boldNextStep } demandées par l'application pour commencer votre importation."
       ]
     },
     "Onboarding Proton": {
@@ -4433,6 +4438,9 @@
       "Select link expiration time": [
         "Sélectionner le délai d'expiration du lien"
       ],
+      "Select permissions": [
+        "Sélectionnez les autorisations"
+      ],
       "Select what to import": [
         "Sélectionnez ce qu'il faut importer"
       ],
@@ -4623,7 +4631,7 @@
         "Le nom ne peut pas inclure de caractères invisibles, / ou \\."
       ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Le nom doit comporter { MAX_NAME_LENGTH } caractères au plus"
+        "Le nom doit comporter ${ MAX_NAME_LENGTH } caractères au plus"
       ],
       "Name must not be empty": [
         "Le nom ne doit pas être vide"

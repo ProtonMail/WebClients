@@ -698,7 +698,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
       ],
       "Save ${ percentage }%": [
         "${ percentage } %"
@@ -1579,6 +1579,11 @@
         "ProtonContacts unterstützt ${ forNow } nicht:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "im nächsten Schritt alle von der Anwendung geforderten Berechtigungen"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakt(en) werden nicht importiert. Klicken, um Details anzuzeigen"
@@ -1775,7 +1780,7 @@
         "Nachdem Sie Ihre Bitcoin-Zahlung getätigt haben, folgen Sie bitte den nachfolgenden Anweisungen zum Wechsel."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Alle ({ totalFoldersCount } $ Ordner)",
+        "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
       ],
       "All (${ totalFoldersCount } label)": [
@@ -3533,8 +3538,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Bitte beachte, dass alle von der Anwendung geforderten Berechtigungen akzeptiert werden müssen, um den Import zu starten."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Bitte beachte, dass ${ boldNextStep } ausgewählt werden müssen, um den Import zu starten."
       ]
     },
     "Onboarding Proton": {
@@ -4432,6 +4437,9 @@
       ],
       "Select link expiration time": [
         "Ablaufzeit der Verknüpfung wählen"
+      ],
+      "Select permissions": [
+        "Berechtigungen auswählen"
       ],
       "Select what to import": [
         "Auswählen, welche Daten importiert werden sollen"

@@ -316,6 +316,9 @@
       "Encryption": [
         "Chiffrement"
       ],
+      "exclude message content": [
+        "excluez le contenu des messages"
+      ],
       "Expand composer": [
         "Développer le composeur"
       ],
@@ -653,8 +656,8 @@
       "Recover data": [
         "Récupérer les données"
       ],
-      "Refine your search": [
-        "Affinez votre recherche"
+      "Refine it": [
+        "Affinez-la"
       ],
       "refresh the page": [
         "actualiser la page"
@@ -1302,6 +1305,11 @@
       ],
       "Website access problem": [
         "Problème d'accès au site web"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Possède un événement de calendrier"
       ]
     },
     "Calendar feature": {
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Capture(s) d’écran jointe(s)"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "La recherche prend trop de temps? ${ dropdownButton } ou ${ toggleOffButton } de cette session de recherche."
+      ],
       "Seems like you are all caught up for now": [
         "Il semblerait que vous ayez fait tout ce qu’il y avait à faire pour aujourd’hui"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Passez à ${ professionalPlan } pour ajouter plus d'utilisateurs."
-      ],
-      "Taking too long?": [
-        "Cela prend trop de temps?"
       ],
       "Test link": [
         "Lien test"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Envoi programmé annulé"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Programmation annulée. Le message a été déplacé dans les brouillons."
       ],

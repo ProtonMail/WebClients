@@ -2131,7 +2131,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Kişilerinizi şifrelerken ve eklerken bir hata oluştu. ${ totalImported } /${{ totalToImport } kişi başarıyla içe aktarıldı."
+        "Kişilerinizi şifrelerken ve eklerken bir hata oluştu. ${ totalImported } /${ totalToImport } kişi başarıyla içe aktarıldı."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kişi başarıyla içe aktarıldı. İçe aktarılan kişi artık kişi listenizde görünecektir.",
@@ -4123,16 +4123,16 @@
     },
     "Onboarding ProtonCalendar": {
       "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
+        "Bir takvim hayatınızın bir kaydıdır. ${ appName } ile hayatınızı güvende ve gizli tutun."
       ],
       "Import events": [
         ""
       ],
       "Meet your new encrypted calendar": [
-        ""
+        "Yeni şifreli takviminizle tanışın"
       ],
       "Start using ${ appName }": [
-        ""
+        "${ appName } kullanmaya başlayın"
       ]
     },
     "Option": {

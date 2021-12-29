@@ -316,6 +316,9 @@
       "Encryption": [
         "Cifrar"
       ],
+      "exclude message content": [
+        "excluya el contenido del mensaje"
+      ],
       "Expand composer": [
         "Expandir compositor"
       ],
@@ -468,7 +471,7 @@
         "Cargar más"
       ],
       "Load unprotected": [
-        "Carga desprotegida"
+        "Cargar sin protección"
       ],
       "Loading verification": [
         "Cargando verificación"
@@ -653,8 +656,8 @@
       "Recover data": [
         "Recuperar datos"
       ],
-      "Refine your search": [
-        "Refine su búsqueda"
+      "Refine it": [
+        "Refínela"
       ],
       "refresh the page": [
         "refresque la página"
@@ -1302,6 +1305,11 @@
       ],
       "Website access problem": [
         "Problema de acceso web"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Tiene un evento de calendario"
       ]
     },
     "Calendar feature": {
@@ -3028,7 +3036,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "en el siguiente paso necesita seleccionar todos los permisos"
       ]
     },
     "Import warning": {
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Captura(s) añadidas(s)"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "¿La búsqueda tarda demasiado? ${ dropdownButton } o ${ toggleOffButton } de esta sesión de búsqueda."
+      ],
       "Seems like you are all caught up for now": [
         "Parece que está al corriente por ahora"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Cambiar a ${ professionalPlan } para añadir más usuarios."
-      ],
-      "Taking too long?": [
-        "¿Tarda demasiado?"
       ],
       "Test link": [
         "Prueba de enlace"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Envío programado deshecho"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Programación cancelada. El mensaje se ha movido a Borradores."
       ],
@@ -5693,7 +5704,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Tome en cuenta que ${ boldNextStep } requeridos por la aplicación para comenzar la importación."
       ]
     },
     "Onboarding": {
@@ -6849,7 +6860,7 @@
         "Eliminar ${ count } mensajes"
       ],
       "Delete ${ Name }": [
-        "Eliminar { Name }"
+        "Eliminar ${ Name }"
       ],
       "Delete all messages": [
         "Eliminar todos los mensajes"
@@ -7110,7 +7121,7 @@
         "Seleccionar grupo de contactos"
       ],
       "Select permissions": [
-        ""
+        "Seleccionar permisos"
       ],
       "Select what to import": [
         "Seleccione qué importar"

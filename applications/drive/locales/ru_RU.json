@@ -15,19 +15,19 @@
         "Магазин «${ BRAND_NAME }»"
       ],
       "Activate recovery": [
-        ""
+        "Активировать восстановление"
       ],
       "Add": [
         "Добавить"
       ],
       "Add address": [
-        ""
+        "Добавить адрес"
       ],
       "Add contact": [
         "Добавить контакт"
       ],
       "Add email": [
-        ""
+        "Добавить эл. почту"
       ],
       "Add group": [
         "Добавить группу"
@@ -39,7 +39,7 @@
         "Добавить новую группу"
       ],
       "Add phone number": [
-        ""
+        "Добавить номер телефона"
       ],
       "Add screenshot(s)": [
         "Добавить снимки экрана"
@@ -441,7 +441,7 @@
         "Выбрать тарифный план"
       ],
       "Set recovery phrase": [
-        ""
+        "Установить фразу для восстановления"
       ],
       "Share": [
         "Поделиться"
@@ -522,10 +522,10 @@
         "Не доверять"
       ],
       "Update recovery file": [
-        ""
+        "Обновить файл восстановления"
       ],
       "Update recovery phrase": [
-        ""
+        "Обновить фразу для восстановления"
       ],
       "Upgrade": [
         "Улучшить"
@@ -1130,10 +1130,10 @@
         "Невозможно сгенерировать ключи файла"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
@@ -1154,10 +1154,10 @@
         "Ошибка при подключении к Bitcoin API."
       ],
       "Failed to download a file": [
-        ""
+        "Не удалось скачать файл"
       ],
       "Failed to download a folder": [
-        ""
+        "Не удалось скачать папку"
       ],
       "Failed to load the link": [
         "Не удалось загрузить ссылку"
@@ -1166,7 +1166,7 @@
         "Файл \"${ item.name }\" не может быть загружен из-за \"${ error }\" ошибки"
       ],
       "File \"${ name }\" is already downloading": [
-        ""
+        "Файл \"${ name }\" уже скачивается"
       ],
       "File cannot be merged with folder": [
         "Файл не может быть объединен с папкой"
@@ -1175,10 +1175,10 @@
         "В файле нет содержимого для предпросмотра"
       ],
       "File selection is already downloading": [
-        ""
+        "Выбранные файлы уже скачиваются"
       ],
       "Folder \"${ name }\" is already downloading": [
-        ""
+        "Папка \"${ name }\" уже скачивается"
       ],
       "Folder name cannot be empty": [
         "Название папки не может быть пустым"
@@ -1235,7 +1235,7 @@
         "Требуется имя на карте"
       ],
       "No data to import": [
-        ""
+        "Нет данных для импорта"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -1619,6 +1619,11 @@
         "ProtonContacts не поддерживает ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "на следующем шаге необходимо выбрать все разрешения"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности"
@@ -1629,22 +1634,22 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "",
-        "",
-        "",
-        ""
+        "${ activeDownloadsCount } скачивается",
+        "${ activeDownloadsCount } скачиваются",
+        "${ activeDownloadsCount } скачиваются",
+        "${ activeDownloadsCount } скачиваются"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "",
-        "",
-        "",
-        ""
+        "${ activeDownloadsCount } скачивается (${ downloadProgress }%)",
+        "${ activeDownloadsCount } скачиваются (${ downloadProgress }%)",
+        "${ activeDownloadsCount } скачиваются (${ downloadProgress }%)",
+        "${ activeDownloadsCount } скачиваются (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "",
-        "",
-        "",
-        ""
+        "${ activeUploadsCount } загружается (${ uploadProgress }%)",
+        "${ activeUploadsCount } загружаются (${ uploadProgress }%)",
+        "${ activeUploadsCount } загружаются (${ uploadProgress }%)",
+        "${ activeUploadsCount } загружаются (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } адрес электронной почты",
@@ -1674,10 +1679,10 @@
         "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
       ],
       "${ canceledCount } canceled": [
-        "",
-        "",
-        "",
-        ""
+        "${ canceledCount } отменен",
+        "${ canceledCount } отменены",
+        "${ canceledCount } отменены",
+        "${ canceledCount } отменены"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } участник",
@@ -1704,28 +1709,28 @@
         "У контактов ${ contactsEnumeration } несколько адресов электронной почты. Выберите, какие адреса нужно добавить в эту группу."
       ],
       "${ doneCount } finished": [
-        "",
-        "",
-        "",
-        ""
+        "${ doneCount } завершён",
+        "${ doneCount } завершены",
+        "${ doneCount } завершены",
+        "${ doneCount } завершены"
       ],
       "${ doneDownloadsCount } downloaded": [
-        "",
-        "",
-        "",
-        ""
+        "${ doneDownloadsCount } скачан",
+        "${ doneDownloadsCount } скачаны",
+        "${ doneDownloadsCount } скачано",
+        "${ doneDownloadsCount } скачано"
       ],
       "${ doneUploadsCount } uploaded": [
-        "",
-        "",
-        "",
-        ""
+        "${ doneUploadsCount } загружен",
+        "${ doneUploadsCount } загружены",
+        "${ doneUploadsCount } загружены",
+        "${ doneUploadsCount } загружены"
       ],
       "${ errorCount } failed": [
-        "",
-        "",
-        "",
-        ""
+        "${ errorCount } не удался",
+        "${ errorCount } не удались",
+        "${ errorCount } не удались",
+        "${ errorCount } не удались"
       ],
       "${ groupCounts } group found": [
         "Найдена ${ groupCounts } группа",
@@ -1755,10 +1760,10 @@
         "${ numContacts } контакт(а,ов)"
       ],
       "${ pausedCount } paused": [
-        "",
-        "",
-        "",
-        ""
+        "${ pausedCount } приостановлен",
+        "${ pausedCount } приостановлены",
+        "${ pausedCount } приостановлены",
+        "${ pausedCount } приостановлены"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } на вашей подписке, переключившись на ${ annualBilling }"
@@ -1890,7 +1895,7 @@
         "Доступ к файлу разрешен всем, у кого есть ссылка."
       ],
       "Anyone with this link can access your folder.": [
-        ""
+        "Доступ к вашей папке разрешен всем, у кого есть эта ссылка."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы уверены, что хотите очистить корзину и безвозвратно удалить все элементы?"
@@ -1989,7 +1994,7 @@
         "Создание ссылки на файл"
       ],
       "Creating link to folder": [
-        ""
+        "Создание ссылки на папку"
       ],
       "Creating share": [
         "Создается совместное содержимое"
@@ -2100,7 +2105,7 @@
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        ""
+        "Если у вас есть один из них, перейдите к настройкам учетной записи Proton, чтобы\nначать процесс разблокировки."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
@@ -2244,7 +2249,7 @@
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
       ],
       "Only the people with the link and the password can access this folder.": [
-        ""
+        "Только люди со ссылкой и паролем могут получить доступ к этой папке."
       ],
       "Paused": [
         "Приостановлено"
@@ -2301,7 +2306,7 @@
         "Подготовка ссылки на файл"
       ],
       "Preparing link to folder": [
-        ""
+        "Подготовка ссылки на папку"
       ],
       "Preview": [
         "Предпросмотр"
@@ -2343,7 +2348,7 @@
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -2412,13 +2417,13 @@
         "Доступ к файлу по этой ссылке будет закрыт. Чтобы поделиться файлом, нужно будет создать новую ссылку."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        ""
+        "Эта ссылка будет навсегда отключена. Никто с этой ссылкой не сможет получить доступ к вашей папке. Чтобы повторно поделиться папкой, вам потребуется новая ссылка."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "",
-        "",
-        "",
-        ""
+        "Это удалит ссылку и лишит доступа к вашему файлу или папке всех, у кого есть ссылка.",
+        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылка.",
+        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылка.",
+        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылка."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-то блокировщиками всплывающих окон, пожалуйста, отключите их перед тем, как продолжить."
@@ -2523,7 +2528,7 @@
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Вы также можете объединить импортированные календари с существующими календарями Proton."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить процесс ${ importProgressLink }."
@@ -2598,13 +2603,13 @@
         "Ваши файлы будут зашифрованы, а затем сохранены."
       ],
       "Your folder failed to download.": [
-        ""
+        "Не удалось скачать вашу папку."
       ],
       "Your folder has finished downloading.": [
-        ""
+        "Скачивание вашей папки завершено."
       ],
       "Your folder is being downloaded.": [
-        ""
+        "Ваша папка скачивается."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использован только для этой разовой проверки."
@@ -2862,7 +2867,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Скоро появится)"
       ],
       "(Expired)": [
         "(Истек)"
@@ -3438,16 +3443,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Импортируйте все сообщения из ярлыка ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3620,7 +3625,7 @@
         "Группа контактов обновлена"
       ],
       "Failed to download files: ${ err }": [
-        ""
+        "Не удалось скачать файлы: ${ err }"
       ],
       "Failed to move, please try again": [
         "Не удалось переместить, попробуйте еще раз"
@@ -3693,8 +3698,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Обратите внимание, что вам необходимо согласиться со всеми разрешениями, запрашиваемыми приложением, чтобы иметь возможность начать импорт."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Обратите внимание, что ${ boldNextStep } запрашивается приложением для начала импорта."
       ]
     },
     "Onboarding Proton": {
@@ -4314,7 +4319,7 @@
         "Подтвердите потерю бонусов Proton"
       ],
       "Contact details": [
-        ""
+        "Информация контакта"
       ],
       "Contact Details": [
         "Контактные данные"
@@ -4395,16 +4400,16 @@
         "Понизить учетную запись"
       ],
       "Download canceled": [
-        "Загрузка отменена"
+        "Скачивание отменено"
       ],
       "Download completed": [
         "Скачивание завершено"
       ],
       "Download failed": [
-        "Сбой загрузки"
+        "Сбой скачивания"
       ],
       "Downloading": [
-        "Загрузка"
+        "Скачивание"
       ],
       "Drive": [
         "Диск"
@@ -4440,7 +4445,7 @@
         "Очистить корзину"
       ],
       "Enter password to download": [
-        ""
+        "Введите пароль для скачивания"
       ],
       "Enter your password": [
         "Введите свой пароль"
@@ -4521,7 +4526,7 @@
         "Мои файлы"
       ],
       "My files ${ date }.zip": [
-        ""
+        "Мои файлы ${ date }.zip"
       ],
       "Name": [
         "Имя"
@@ -4590,7 +4595,7 @@
         "Сообщить о проблеме"
       ],
       "Request new code": [
-        ""
+        "Запросить новый код"
       ],
       "Restore your files": [
         "Восстановить файлы"
@@ -4612,6 +4617,9 @@
       ],
       "Select link expiration time": [
         "Выберите время окончания действия ссылки"
+      ],
+      "Select permissions": [
+        "Выберите разрешения"
       ],
       "Select what to import": [
         "Виберете что импортировать"
@@ -4692,10 +4700,10 @@
         "У вас пока что нет папок"
       ],
       "Your file is ready to be downloaded": [
-        "Ваш файл готов к загрузке"
+        "Ваш файл готов к скачиванию"
       ],
       "Your folder is ready to be downloaded": [
-        ""
+        "Ваша папка готова к скачиванию"
       ],
       "ZIP / postal code": [
         "ZIP-код / почтовый индекс"

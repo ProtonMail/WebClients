@@ -244,14 +244,8 @@
       "Delete": [
         "Удалить"
       ],
-      "Delete all messages": [
-        "Удалить все сообщения"
-      ],
       "Delete link": [
         "Удалить ссылку"
-      ],
-      "Delete original messages": [
-        "Удалить исходные сообщения"
       ],
       "Delete record": [
         "Удалить запись"
@@ -390,9 +384,6 @@
       ],
       "Import emails": [
         "Импортировать электронную почту"
-      ],
-      "Import from .csv or vCard": [
-        "Импорт из .csv или vCard"
       ],
       "Import from .ics": [
         "Импорт из .ics"
@@ -688,17 +679,11 @@
       "Skip": [
         "Пропустить"
       ],
-      "Skip to import": [
-        "Перейти к импорту"
-      ],
       "Sort": [
         "Сортировать"
       ],
       "Start import": [
         "Начать импорт"
-      ],
-      "Start Import Assistant": [
-        "Запустить Import Assistant"
       ],
       "Start setup": [
         "Приступить к настройкам"
@@ -1437,9 +1422,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "Удалить все сообщения"
-      ],
       "Import is incomplete!": [
         "Импорт не завершён!"
       ],
@@ -1722,7 +1704,7 @@
         "Поделиться файлами с помощью ссылки"
       ],
       "Upload / download files": [
-        "Отправка / загрузка файлов"
+        "Загрузить / скачать файлы"
       ]
     },
     "Duration": {
@@ -2999,9 +2981,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Разрешите ProtonMail доступ к вашей учетной записи Gmail: выберите, включено ли ${ bold2Steps } и следуйте инструкциям ниже."
-      ],
       "Click ${ boldManage } to expand the options menu": [
         "Нажмите ${ boldManage }, чтобы развернуть меню параметров"
       ],
@@ -3010,9 +2989,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         "Разверните выпадающее меню, нажав на 3 точки (...)"
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "Наконец, ${ googleMailLink } с аккаунтом, который вы бы хотели импортировать, ${ googleCaptchaLink }."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton"
@@ -3026,26 +3002,11 @@
       "Go to ${ boldAccountSecurity }": [
         "Перейдите в ${ boldAccountSecurity }"
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "Перейдите в ${ googleAccountLink }. В разделе ${ boldSecurity } для менее безопасных приложений, ${ boldAccess } . Если эта опция не отображается, то возможно двухэтапная проверка включена."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "Перейдите к ${ googleAccountLink }. В разделе ${ boldSecurity } создайте ${ boldAppPassword } , если у вас его еще нет. Вам понадобится этот пароль во время импорта."
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         "Перейдите в ${ securitySettingsLink } Outlook.com"
       ],
       "If 2-step verification is off, turn it on": [
         "Если двухэтапная аутентификация выключена, включите ее"
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "В разделе ${ boldLabels } выберите папки, разрешенные для импорта в ProtonMail."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "В вашем ${ boldGmailSettings }, перейдите к ${ boldForwarding } и убедитесь, что ${ boldIMAPAccess } включен."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        "Войдите в Yahoo Mail и нажмите на свое имя в правом верхнем углу, чтобы получить доступ к ${ boldAccountInfo }. В разделе ${ boldAccountSec } прокрутите страницу до раздела ${ boldAppPassword }, чтобы сгенерировать пароль приложения. Этот пароль понадобится вам во время импорта."
       ],
       "Open your ${ yahooMailLink } contacts": [
         "Откройте контакты ${ yahooMailLink }"
@@ -3060,22 +3021,22 @@
         "Выберите ${ boldExportCSV }"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Чтобы импортировать календарь в Proton, вам необходим ${ knowledgeBaseLink }. Загрузите его с Outlook в 3 простых шага:"
+        "Чтобы импортировать календарь в Proton, вам необходим ${ knowledgeBaseLink }. Скачайте его с Outlook в 3 простых шага:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Загрузите его с Yahoo в 3 простых шага:"
+        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его с Yahoo в 3 простых шага:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Загрузите его перед началом процесса импорта"
+        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Для импорта контактов в Proton вам необходим ${ knowledgeBaseLink }. Загрузите его с Outlook в 3 простых шага:"
+        "Для импорта контактов в Proton вам необходим ${ knowledgeBaseLink }. Скачайте его с Outlook в 3 простых шага:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Для импорта контактов в Proton необходим ${ knowledgeBaseLink }. Загрузите его с Yahoo в 3 простых шага:"
+        "Для импорта контактов в Proton необходим ${ knowledgeBaseLink }. Скачайте его с Yahoo в 3 простых шага:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Чтобы импортировать контакты в Proton, вам понадобится ${ knowledgeBaseLink }. Загрузите его перед началом процесса импорта"
+        "Чтобы импортировать контакты в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Для импорта электронной почты в Proton вам понадобится ${ appPasswordLink } из Outlook. Получите его, выполнив следующие действия:"
@@ -3085,9 +3046,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "Двухэтапная аутентификация"
-      ],
       "Account info": [
         "Информация об учётной записи"
       ],
@@ -3109,63 +3067,17 @@
       "Export to CSV file": [
         "Экспорт в файл CSV"
       ],
-      "Forwarding and POP/IMAP": [
-        "Перенаправление и POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Настройки google mail"
-      ],
       "ICS": [
         "ICS"
-      ],
-      "IMAP access": [
-        "Доступ по протоколу IMAP"
       ],
       "in the next step you need to select all the permissions": [
         "на следующем шаге необходимо выбрать все разрешения"
       ],
-      "Labels": [
-        "Ярлыки"
-      ],
       "Manage": [
         "Управлять"
       ],
-      "Other ways to sign in": [
-        "Другие способы войти"
-      ],
       "Publish a calendar": [
         "Опубликовать календарь"
-      ],
-      "Security": [
-        "Безопасность"
-      ],
-      "turn on access": [
-        "включить доступ"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "войдите в Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "затем откройте эту страницу для разблокировки captcha"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "Как создать пароль приложения в настройках Gmail"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Как отключить CAPTCHA в Gmail"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Как включить переадресацию IMAP в настройках Gmail"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Как показывать папки в IMAP в настройках Gmail"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Как включить доступ для менее безопасных приложений в настройках Gmail"
       ]
     },
     "Import instructions link": {
@@ -3215,14 +3127,6 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
         "В разделе ${ boldPublish } выберите календарь, который вы хотите импортировать. Установите разрешение на ${ boldCanViewAllDetails } и опубликуйте его"
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "Двухэтапная проверка отключена (настройки по умолчанию)"
-      ],
-      "2-step verification enabled": [
-        "Двухэтапная авторизация включена"
       ]
     },
     "Import key": {
@@ -3795,7 +3699,7 @@
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "Загрузите ключи PGP для использования в других PGP-совместимых сервисах."
+        "Скачайте свои ключи PGP для использования с другими PGP-совместимыми сервисами."
       ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
@@ -3856,6 +3760,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Введите свой резервный номер телефона для восстановления, и мы отправим вам имя вашего пользователя или адрес электронной почты."
+      ],
+      "Event invites and RSVPs will be sent in this language.": [
+        "Приглашения на мероприятие и RSVP будут отправлены на этом языке."
       ],
       "Expired": [
         "Истёк"
@@ -3925,9 +3832,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Если вы используете услуги другого поставщика электронной почты или ваша учетная запись уже подготовлена, вы можете перейти к импорту."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
@@ -4069,12 +3973,6 @@
       ],
       "Label all imported messages as": [
         "Назначить всем импортированным сообщениям ярлык"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        "Язык, на котором будут отправляться ваши электронные письма, связанные с приглашениями."
-      ],
-      "Large imports can take several days to complete.": [
-        "Большой импорт может занять несколько дней."
       ],
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
@@ -4320,7 +4218,7 @@
         "Требуется подписка Plus или Visionary"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        "Предотвращает загрузку содержимого с сервера отправителя без вашего разрешения."
+        "Предотвращает скачивание содержимого с сервера отправителя без вашего разрешения."
       ],
       "Preview": [
         "Предпросмотр"
@@ -4559,9 +4457,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем сделать это, так как двухфакторная аутентификация повышает безопасность учётной записи."
       ],
-      "to": [
-        "в"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для подтверждения введите имя пользователя, которого вы хотите удалить."
       ],
@@ -4586,9 +4481,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Чтобы быть в курсе последних разработок продуктов Proton, вы можете подписаться на наши различные рассылки и время от времени посещать наш блог."
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Чтобы подготовить свою внешнюю учетную запись для импорта, следуйте инструкциям:"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
       ],
@@ -4600,9 +4492,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Безопасно переместите свои данные в Proton. Import Assistant подключается к внешнему поставщику электронной почты и импортирует выбранные вами сообщения и папки."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Двухфакторная аутентификация добавляет дополнительный уровень безопасности для вашей учётной записи на случай, если ваш пароль скомпрометирован."
@@ -4683,7 +4572,7 @@
         "Версия ${ appVersion }"
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "Набор VPN + ${ mailAppName } для семей и малых предприятий."
+        "Пакет VPN + ${ mailAppName } для семей и малых предприятий."
       ],
       "Warning:": [
         "Предупреждение:"
@@ -4699,9 +4588,6 @@
       ],
       "We use 3-D Secure to protect your payments.": [
         "Мы используем 3-D Secure для защиты ваших платежей."
-      ],
-      "We will notify you once your import is finished.": [
-        "Мы уведомим вас о завершении импорта."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то, пожалуйста, отключите их."
@@ -4771,9 +4657,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить процесс ${ importProgressLink }."
-      ],
-      "You can continue using Proton services as usual.": [
-        "Можно продолжать использовать службы Proton как обычно."
       ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на календарь. Чтобы создать новую ссылку на этот календарь, удалите одну ссылку из списка ниже."
@@ -4889,20 +4772,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Ваш импорт из ${ delayedImport.Account } временно отложен."
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "Ваш импорт из ${ delayedImport.Email } временно отложен."
-      ],
-      "Your import has started!": [
-        "Импорт начат!"
-      ],
       "Your import will not be processed.": [
         "Ваш импорт не будет обработан."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
-      ],
-      "Your messages are being imported from": [
-        "Ваши сообщения импортируются из"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Пароль вашей организации может быть предоставлен другим пользователям, которым вы захотите предоставить права администратора. Он также является кодом аварийного восстановления доступа к вашей организации в случае, если вы вдруг потеряете доступ к своей учётной записи. Пожалуйста, сохраните данный пароль и храните его в безопасности."
@@ -5003,14 +4877,6 @@
     "information": {
       "Included": [
         "Включено"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "Введите фразу для подтверждения"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "Чтобы подтвердить это действие, введите следующий текст в поле ниже."
       ]
     },
     "Invoice state display as badge": {
@@ -5659,17 +5525,11 @@
       "From: ${ emailFrom }": [
         "От: ${ emailFrom }"
       ],
-      "From: ${ fromEmailAddress }": [
-        "От: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "Из: ${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "Из: ${ modalModel.email }"
       ],
       "Gift code": [
         "Подарочный код"
@@ -5911,11 +5771,11 @@
       "Select your country": [
         "Выберите вашу страну"
       ],
-      "Send and reply to invites in": [
-        "Отправлять приглашения и отвечать на них в"
-      ],
       "Send auto-reply": [
         "Отправить автоответ"
+      ],
+      "Send invites in": [
+        "Отправить приглашение на"
       ],
       "Show secondary time zone": [
         "Отображать дополнительный часовой пояс"
@@ -5985,9 +5845,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Кому: ${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Кому: ${ toEmailAddress }"
       ],
       "Total": [
         "Итого"
@@ -7358,14 +7215,6 @@
         "Рабочий"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo! Почта"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "Эл. почта"
@@ -7400,11 +7249,6 @@
       ],
       "Reading emails of non-private users": [
         "Чтение писем неконфиденциальных пользователей"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "Окончательно удалить сообщения в ${ email }"
       ]
     },
     "Select files": {
@@ -7671,9 +7515,6 @@
       "Default calendar updated": [
         "Основной календарь обновлен"
       ],
-      "Deleting original messages": [
-        "Удалить исходные сообщения"
-      ],
       "DMARC value copied to clipboard": [
         "Значение DMARC скопировано в буфер обмена"
       ],
@@ -7697,9 +7538,6 @@
       ],
       "Import record deleted": [
         "Запись об импорте удалена"
-      ],
-      "Import resumed": [
-        "Импорт возобновлён"
       ],
       "Invoice customized": [
         "Счёт настроен"
@@ -8141,9 +7979,6 @@
       "Customize calendar import": [
         "Настройка импорта календаря"
       ],
-      "Customize import": [
-        "Настройка импорта"
-      ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
       ],
@@ -8321,9 +8156,6 @@
         "Импортировать как простые события?",
         "Импортировать как простые события?"
       ],
-      "Import Assistant": [
-        "Помощник по импорту"
-      ],
       "Import contacts": [
         "Импортировать контакты"
       ],
@@ -8335,9 +8167,6 @@
       ],
       "Import groups": [
         "Импортировать группы"
-      ],
-      "Import in progress": [
-        "Выполняется импорт"
       ],
       "Import key": [
         "Импорт ключа"
@@ -8461,15 +8290,6 @@
       ],
       "Plan summary": [
         "Сводка по тарифу"
-      ],
-      "Prepare for import": [
-        "Подготовка к импорту"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "Подготовка Gmail к импорту ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Подготовка Yahoo Mail к импорту"
       ],
       "Previous": [
         "Назад"
@@ -9189,9 +9009,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
-      "permanently delete all messages on ${ email }": [
-        "полностью удалить все сообщения для ${ email }"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Пожалуйста, обратите внимание, что при выборе этого способа оплаты тип вашей учётной записи не может быть изменен сразу. Мы обновим вашу учётную запись после подтверждения оплаты."
       ],
@@ -9206,9 +9023,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "Это действие будет ${ boldWarning }. Вы не сможете восстановить сообщения на ${ domain }."
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Эта возможность доступна только в тарифах ProtonMail уровня \"Professional\" или выше"
@@ -9517,17 +9331,6 @@
       ],
       "Wednesday": [
         "Среда"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Проверка подлинности"
-      ],
-      "Configure Import": [
-        "Настроить импорт"
-      ],
-      "Import": [
-        "Импорт"
       ]
     },
     "Yearly recurring event, frequency": {

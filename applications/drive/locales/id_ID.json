@@ -1559,6 +1559,11 @@
         "ProtonContacts tidak mendukung ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "terlebih dahulu menyetujui akses-akses izin yang diminta oleh aplikasi kami"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -3453,8 +3458,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Harap diingat bahwa Anda harus terlebih dahulu menyetujui akses-akses izin yang diminta oleh aplikasi kami untuk dapat memulai proses impor."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Harap diingat bahwa Anda harus ${ boldNextStep } untuk dapat memulai proses impor."
       ]
     },
     "Onboarding Proton": {
@@ -3981,7 +3986,7 @@
         "# akses"
       ],
       "${ appName } customization": [
-        "Penyesuaian { appName }"
+        "Penyesuaian ${ appName }"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Pintasan Papan Ketik"
@@ -4342,6 +4347,9 @@
       ],
       "Select link expiration time": [
         "Pilih jangka kedaluwarsa tautan"
+      ],
+      "Select permissions": [
+        "Tentukan akses izin"
       ],
       "Select what to import": [
         "Pilih apa-apa saja yang akan diimpor"
