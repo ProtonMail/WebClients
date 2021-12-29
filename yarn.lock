@@ -3537,7 +3537,7 @@ __metadata:
     "@types/react-virtualized": ^9.21.16
     babel-jest: ^27.4.5
     babel-plugin-transform-require-context: ^0.1.1
-    card-validator: ^6.2.0
+    card-validator: ^8.1.1
     codemirror: ^5.65.0
     date-fns: ^2.27.0
     dompurify: ^2.3.4
@@ -10076,12 +10076,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"card-validator@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "card-validator@npm:6.2.0"
+"card-validator@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "card-validator@npm:8.1.1"
   dependencies:
-    credit-card-type: ^8.0.0
-  checksum: 48b8a7f9a1fbae61c208febc48e5a0bc6905f3d6f891d2277aa69e40bcec5e533d59ce67942c30525a93981327a6be2b5b5696dfe31fc75a1bc47ba7e1ea545a
+    credit-card-type: ^9.1.0
+  checksum: 8bb1c8f00821028fa29703f39d2c39791cfa409358282db84a9a479f34c1c8867fb914761a5fe529b25de626692de53935a39a5bd912a45d31a910bf8f3549f1
   languageName: node
   linkType: hard
 
@@ -11310,10 +11310,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"credit-card-type@npm:^8.0.0":
-  version: 8.3.0
-  resolution: "credit-card-type@npm:8.3.0"
-  checksum: 760e91bf390bb0fd8ab3426afb437dacdd190051050c30b74891a04c045944dc3da15d71c1eb7ace90edf6808782937fd9993bc4e598aabca9e698970ba29d7b
+"credit-card-type@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "credit-card-type@npm:9.1.0"
+  checksum: 2bdadf3a0b93cd740447020fea8d397c633ee2b292fcc498971c540e7ca97473c4decf23604f93a1aedd59bb8d9249da8cf0b8fbfb1a464bd63610ae814c77aa
   languageName: node
   linkType: hard
 
