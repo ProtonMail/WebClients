@@ -275,7 +275,7 @@
         "Descartar"
       ],
       "Dismiss get started checklist": [
-        ""
+        "Descartar lista de primeros pasos"
       ],
       "Done": [
         "Hecho"
@@ -315,6 +315,9 @@
       ],
       "Encryption": [
         "Cifrado"
+      ],
+      "exclude message content": [
+        "excluir contenido del mensaje"
       ],
       "Expand composer": [
         "Expandir el editor"
@@ -653,8 +656,8 @@
       "Recover data": [
         "Recuperar datos"
       ],
-      "Refine your search": [
-        "Afine su búsqueda"
+      "Refine it": [
+        "Refinar"
       ],
       "refresh the page": [
         "actualizar la página"
@@ -1304,6 +1307,11 @@
         "Problema de acceso al sitio web"
       ]
     },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Importar calendario"
@@ -1831,7 +1839,7 @@
       ],
       "Every ${ interval } day": [
         "Cada ${ interval } día",
-        "Cada { interval } días"
+        "Cada ${ interval } días"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Cada ${ interval } día, ${ timesString }",
@@ -2822,7 +2830,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Hemos incrementado la capacidad de almacenamiento total de tu cuenta a ${ totalGBStorageAfterCompletion } GB. Consigue aún más espacio y desbloquea ya las características prémium."
       ],
       "You're all set!": [
         "¡Ya está todo listo!"
@@ -2830,54 +2838,54 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        ""
+        "Completa todos los pasos y consigue un total de ${ totalGBStorageAfterCompletion } GB en tu cuenta."
       ],
       "Expires soon": [
-        ""
+        "Expira pronto"
       ],
       "Expires today": [
-        ""
+        "Expira hoy"
       ],
       "Only ${ days } day left": [
-        "",
-        ""
+        "Solo queda ${ days } día",
+        "Solo quedan ${ days } días"
       ]
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Disponible en iOS y Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Descarga la aplicación móvil de ${ protonMailAppName }"
       ],
       "Import contacts or emails": [
-        ""
+        "Importar contactos o correos electrónicos"
       ],
       "Import your contacts or messages": [
-        ""
+        "Importar tus contactos o mensajes"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Transfiere rápidamente tus contactos o correos electrónicos de cualquier proveedor usando el asistente de importación Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Inicia sesión en la aplicación móvil para completar la acción"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "Con tu dispositivo móvil, escanea este código QR o visita"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "Descargar la aplicación móvil"
       ],
       "Import contacts or emails": [
-        ""
+        "Importar contactos o correos electrónicos"
       ],
       "Send a message": [
         "Enviar un mensaje"
       ],
       "Set up a recovery method": [
-        ""
+        "Establecer un método de recuperación"
       ]
     },
     "Get started checklist spotlight": {
@@ -2887,7 +2895,7 @@
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "Comenzar"
       ]
     },
     "Group": {
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Capturas de pantalla adjuntadas"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "La busqueda está tardando demasiado? ${ dropdownButton } o ${ toggleOffButton } de esta sesión de busqueda."
+      ],
       "Seems like you are all caught up for now": [
         "Parece que estás al corriente por ahora"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Cambia a ${ professionalPlan } para añadir más usuarios."
-      ],
-      "Taking too long?": [
-        "¿Demasiado tiempo?"
       ],
       "Test link": [
         "Enlace de prueba"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Envío programado anulado"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Programación cancelada. El mensaje se ha movido a Borradores."
       ],

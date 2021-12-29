@@ -1579,6 +1579,11 @@
         "ProtonKontakter understøtter ikke ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -3533,7 +3538,7 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
         ""
       ]
     },
@@ -4432,6 +4437,9 @@
       ],
       "Select link expiration time": [
         "Vælg link-udløbstid"
+      ],
+      "Select permissions": [
+        ""
       ],
       "Select what to import": [
         "Vælg, hvad der skal importeres"

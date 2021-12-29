@@ -244,14 +244,8 @@
       "Delete": [
         "Ștergere"
       ],
-      "Delete all messages": [
-        "Ștergere toate mesajele"
-      ],
       "Delete link": [
         "Ștergere legătură"
-      ],
-      "Delete original messages": [
-        "Ștergere mesaje originale"
       ],
       "Delete record": [
         "Ștergere înregistrare"
@@ -390,9 +384,6 @@
       ],
       "Import emails": [
         "Importare mesaje"
-      ],
-      "Import from .csv or vCard": [
-        "Importare din .csv sau vCard"
       ],
       "Import from .ics": [
         "Importare din .ics"
@@ -611,7 +602,7 @@
         "Selectare fișiere"
       ],
       "Select language for invitation emails": [
-        ""
+        "Selectați limba pentru e-mailurile de invitație"
       ],
       "Select plan": [
         "Selectare plan"
@@ -688,17 +679,11 @@
       "Skip": [
         "Omitere"
       ],
-      "Skip to import": [
-        "Salt la importare"
-      ],
       "Sort": [
         "Sortare"
       ],
       "Start import": [
         "Pornire importare"
-      ],
-      "Start Import Assistant": [
-        "Pornire „Import Assistant”"
       ],
       "Start setup": [
         "Pornire configurare"
@@ -1427,9 +1412,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "Ștergere toate mesajele"
-      ],
       "Import is incomplete!": [
         "Importarea nu este completă!"
       ],
@@ -2966,9 +2948,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Permiteți accesul ProtonMail în contul Gmail: alegeți dacă ${ bold2Steps } este activată și urmați pașii de mai jos."
-      ],
       "Click ${ boldManage } to expand the options menu": [
         "Faceți clic pe ${ boldManage } pentru a extinde meniul de opțiuni."
       ],
@@ -2977,9 +2956,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         "Extindeți meniul derulant făcând clic pe cele 3 puncte (...)."
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "În final, ${ googleMailLink } cu contul pe care doriți sa îl importați ${ googleCaptchaLink }."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
@@ -2993,26 +2969,11 @@
       "Go to ${ boldAccountSecurity }": [
         "Accesați ${ boldAccountSecurity }."
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "Accesați ${ googleAccountLink }. În secțiunea ${ boldSecurity }, ${ boldAccess } pentru aplicații mai puțin sigure. Dacă nu vedeți această opțiune, este posibil să aveți activată verificarea în doi pași."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "Accesați ${ googleAccountLink }. În secțiunea ${ boldSecurity }, creați ${ boldAppPassword } dacă nu aveți deja una. Veţi avea nevoie de această parolă în timpul importării."
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         "Accesați ${ securitySettingsLink } din Outlook.com."
       ],
       "If 2-step verification is off, turn it on": [
         "Dacă verificarea în doi pași este dezactivată, activați-o."
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "În secțiunea ${ boldLabels }, selectați folderele permise pentru importare în ProtonMail."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "În ${ boldGmailSettings }, accesați ${ boldForwarding } și asigurați-vă că ${ boldIMAPAccess } este activat."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        "Conectați-vă la Yahoo Mail și faceți clic pe numele personal în colțul din dreapta sus pentru a accesa ${ boldAccountInfo }. În secțiunea ${ boldAccountSec }, derulați până la secțiunea ${ boldAppPassword } pentru a genera o parolă pentru aplicație. Veți avea nevoie de această parolă în timpul importării."
       ],
       "Open your ${ yahooMailLink } contacts": [
         "Deschideți contactele din ${ yahooMailLink }."
@@ -3052,9 +3013,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "verificarea în doi pași"
-      ],
       "Account info": [
         "Informații cont"
       ],
@@ -3076,63 +3034,17 @@
       "Export to CSV file": [
         "Exportare în fișier CSV"
       ],
-      "Forwarding and POP/IMAP": [
-        "Redirecționare și POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Setări Gmail"
-      ],
       "ICS": [
         "ICS"
       ],
-      "IMAP access": [
-        "Acces IMAP"
-      ],
       "in the next step you need to select all the permissions": [
-        ""
-      ],
-      "Labels": [
-        "Etichete"
+        "în pasul următor trebuie să selectați toate permisiunile"
       ],
       "Manage": [
         "Gestionare"
       ],
-      "Other ways to sign in": [
-        "Alte moduri de autentificare"
-      ],
       "Publish a calendar": [
         "Publicare calendar"
-      ],
-      "Security": [
-        "Securitate"
-      ],
-      "turn on access": [
-        "activare acces"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "autentificați-vă în Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "apoi accesați această pagină pentru a debloca CAPTCHA"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "Cum să creați o parolă a aplicației în setările Gmail"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Cum se dezactivează CAPTCHA în Gmail"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Cum să activați Redirecționarea IMAP în setările Gmail"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Cum să afișați foldere în IMAP în setările Gmail"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Cum să activați accesul pentru aplicațiile mai puțin sigure în setările Gmail"
       ]
     },
     "Import instructions link": {
@@ -3172,7 +3084,7 @@
         "Accesați ${ calendarLink } din setările Outlook.com."
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
-        ""
+        "Mergeți la ${ calendarViewLink } în Yahoo Mail"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Mutați cursorul peste calendarul de importat și deschideți meniul derulant."
@@ -3184,14 +3096,6 @@
         "În ${ boldPublish }, selectați calendarul pe care doriți să-l importați. Setați permisiunea la ${ boldCanViewAllDetails } și să le publice."
       ]
     },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "Verificare în doi pași este dezactivată (setare implicită)"
-      ],
-      "2-step verification enabled": [
-        "Verificarea în doi pași este activată"
-      ]
-    },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "Sigur doriți să importați o cheie privată? Importarea unei chei private generate în mod nesigur sau care a fost compromisă poate afecta securitatea mesajelor.\n\nÎn plus, cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele complet) pe care nu doriți să le publicați, vă recomandăm să editați cheia înainte de a o importa."
@@ -3199,7 +3103,7 @@
     },
     "Import provider": {
       "Other": [
-        ""
+        "Altele"
       ]
     },
     "Import status": {
@@ -3627,7 +3531,7 @@
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la $ { strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
+        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
@@ -3801,6 +3705,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Introduceți num[rul de telefon de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        "Invitațiile la evenimente și RSVP vor fi trimise în această limbă."
+      ],
       "Expired": [
         "Expirat"
       ],
@@ -3869,9 +3776,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Dacă utilizați un alt furnizor de e-mail sau dacă contul este deja pregătit, puteți trece la importare."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
@@ -4012,12 +3916,6 @@
       ],
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        "Finalizarea importărilor mari poate dura câteva zile."
       ],
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
@@ -4501,9 +4399,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont ProtonMail. A2F va face contul ProtonMail mai sigur astfel încât vă recomandăm s-o activați."
       ],
-      "to": [
-        "la"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pentru a confirma, introduceţi numele utilizatorului pe care doriţi să-l ştergeţi."
       ],
@@ -4528,9 +4423,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Pentru a fi la curent cu ultimele actualizări ale produselor Proton, puteți să vă abonați la diferitele noastre adrese de e-mail sau să ne vizitați periodic blogul."
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Pentru a pregăti contul extern pentru importare, urmați instrucțiunile pentru:"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pentru a continua, selectați o metodă de recuperare a contului pentru a putea verifica solicitarea."
       ],
@@ -4542,9 +4434,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Transferați-vă datele în siguranță la Proton. Asistentul de importare „Import Assistant” se conectează la furnizorul de e-mail extern şi importă mesajele şi folderele selectate."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Autentificarea cu doi factori vă adaugă securitate suplimentară contului în cazul în care parola vă este compromisă."
@@ -4642,9 +4531,6 @@
       "We use 3-D Secure to protect your payments.": [
         "Folosim 3-D Secure pentru a proteja plățile."
       ],
-      "We will notify you once your import is finished.": [
-        "Veți primi o notificare la finalizarea importării."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
@@ -4714,9 +4600,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
-      "You can continue using Proton services as usual.": [
-        "Puteți folosi în continuare serviciile Proton ca de obicei."
-      ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos."
       ],
@@ -4769,7 +4652,7 @@
         "Trebuie să aveți un calendar personal pentru a crea o legătură."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele din .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
@@ -4831,20 +4714,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Importarea din ${ delayedImport.Account } este temporar întârziată."
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "Importarea din ${ delayedImport.Email } este amânată temporar."
-      ],
-      "Your import has started!": [
-        "Importarea a început!"
-      ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
-      ],
-      "Your messages are being imported from": [
-        "Mesajele sunt importate din"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Parola organizației poate fi partajată și altor utilizatori cărora doriți să le dați drepturi de administrator. Este de altfel și un cod de recuperare de urgență pentru a avea acces la organizație în cazul în care vă pierdeți accesul la cont. Salvați această parolă și păstrați-o în siguranță."
@@ -4945,14 +4819,6 @@
     "information": {
       "Included": [
         "Inclus"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "Introduceți fraza pentru a confirma"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "Pentru a confirma această acțiune, introduceți următorul text în caseta de mai jos."
       ]
     },
     "Invoice state display as badge": {
@@ -5469,7 +5335,7 @@
         "Credite folosite"
       ],
       "Current login password": [
-        ""
+        "Parola actuală de conectare"
       ],
       "Customize invoices": [
         "Personalizare facturi"
@@ -5490,7 +5356,7 @@
         "Limba implicită"
       ],
       "Default language (${ defaultLanguage })": [
-        ""
+        "Limba implicită (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Schema PGP implicită"
@@ -5597,17 +5463,11 @@
       "From: ${ emailFrom }": [
         "De la: ${ emailFrom }"
       ],
-      "From: ${ fromEmailAddress }": [
-        "De la: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         "De la: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "De la: ${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "De la: ${ modalModel.email }"
       ],
       "Gift code": [
         "Cod cadou"
@@ -5849,11 +5709,11 @@
       "Select your country": [
         "Selectaţi ţara"
       ],
-      "Send and reply to invites in": [
-        ""
-      ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
+      ],
+      "Send invites in": [
+        "Trimiteți invitații în"
       ],
       "Show secondary time zone": [
         "Afișare fus orar secundar"
@@ -5923,9 +5783,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Către: ${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Către: ${ toEmailAddress }"
       ],
       "Total": [
         "Total"
@@ -6689,7 +6546,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Vă rugăm să rețineți că ${ boldNextStep } solicitat de aplicație pentru a începe importul."
       ]
     },
     "Onboarding Proton": {
@@ -7284,14 +7141,6 @@
         "Serviciu"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "E-mail"
@@ -7326,11 +7175,6 @@
       ],
       "Reading emails of non-private users": [
         "Citirea mesajelor utilizatorilor non-privați"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "Șterge permanentă mesaje din ${ email }"
       ]
     },
     "Select files": {
@@ -7597,9 +7441,6 @@
       "Default calendar updated": [
         "Calendar implicit actualizat"
       ],
-      "Deleting original messages": [
-        "Se șterg mesajele originale"
-      ],
       "DMARC value copied to clipboard": [
         "Valoarea DMARC a fost copiată în memorie"
       ],
@@ -7623,9 +7464,6 @@
       ],
       "Import record deleted": [
         "Înregistrare importare ștearsă"
-      ],
-      "Import resumed": [
-        "Importare reluată"
       ],
       "Invoice customized": [
         "Factură personalizată"
@@ -8065,9 +7903,6 @@
       "Customize calendar import": [
         "Personalizare importare calendar"
       ],
-      "Customize import": [
-        "Personalizare importare"
-      ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
       ],
@@ -8244,9 +8079,6 @@
         "Importați ca evenimente simple?",
         "Importați ca evenimente simple?"
       ],
-      "Import Assistant": [
-        "Asistent importare"
-      ],
       "Import contacts": [
         "Importare contacte"
       ],
@@ -8258,9 +8090,6 @@
       ],
       "Import groups": [
         "Import grupuri"
-      ],
-      "Import in progress": [
-        "Importare în derulare"
       ],
       "Import key": [
         "Importare cheie"
@@ -8275,7 +8104,7 @@
         "Cod de verificare nevalid"
       ],
       "Invitations": [
-        ""
+        "Invitații"
       ],
       "Invoices": [
         "Facturi"
@@ -8385,15 +8214,6 @@
       "Plan summary": [
         "Sumar planuri"
       ],
-      "Prepare for import": [
-        "Pregătire pentru importare"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "Pregătire Gmail pentru importare ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Pregătire Yahoo Mail pentru importare"
-      ],
       "Previous": [
         "Anterioară"
       ],
@@ -8458,7 +8278,7 @@
         "Selectare grup contacte"
       ],
       "Select permissions": [
-        ""
+        "Selectați permisiunile"
       ],
       "Select plan": [
         "Selectare plan"
@@ -8737,7 +8557,7 @@
         "Activarea jurnalelor detaliate înregistrează adresa IP pentru fiecare eveniment în jurnalul de securitate."
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Acces la toate funcțiile plătite, pentru ${ vpnAppName } și { mailAppName } (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
+        "Acces la toate funcțiile plătite, pentru ${ vpnAppName } și ${ mailAppName } (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
         "Obțineți acces la toate funcțiile plătite, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
@@ -9106,9 +8926,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "Discuția live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN cu plată. În schimb, vă rugăm să deschideți un tichet."
       ],
-      "permanently delete all messages on ${ email }": [
-        "șterge toate mesajele din ${ email }"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
       ],
@@ -9123,9 +8940,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Setările de dată și oră de pe dispozitiv nu sunt sincronizate. ${ learnMore }"
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "Această acțiune va ${ boldWarning } . Nu veți putea recupera mesajele de pe ${ domain }."
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Această funcție este disponibilă doar pentru planul „ProtonMail Professional” sau superior"
@@ -9407,17 +9221,6 @@
       ],
       "Wednesday": [
         "Miercuri"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Autentificare"
-      ],
-      "Configure Import": [
-        "Configurare importare"
-      ],
-      "Import": [
-        "Importare"
       ]
     },
     "Yearly recurring event, frequency": {

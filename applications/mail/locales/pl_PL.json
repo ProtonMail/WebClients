@@ -320,6 +320,9 @@
       "Encryption": [
         "Szyfrowanie"
       ],
+      "exclude message content": [
+        "wyklucz wyszukiwanie zawartości wiadomości"
+      ],
       "Expand composer": [
         "Pełny ekran"
       ],
@@ -659,8 +662,8 @@
       "Recover data": [
         "Odzyskaj dane"
       ],
-      "Refine your search": [
-        "Popraw wyszukiwanie"
+      "Refine it": [
+        "Popraw je"
       ],
       "refresh the page": [
         "Odśwież stronę"
@@ -1320,6 +1323,11 @@
       ],
       "Website access problem": [
         "Problem z dostępem do strony"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Posiada wydarzenie"
       ]
     },
     "Calendar feature": {
@@ -4101,6 +4109,9 @@
       "Screenshot(s) attached": [
         "Zrzuty ekranu zostały dołączone"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Wyszukiwanie trwa zbyt długo? ${ dropdownButton } lub ${ toggleOffButton }."
+      ],
       "Seems like you are all caught up for now": [
         "Wygląda na to, że jesteś już na bieżąco z wiadomościami"
       ],
@@ -4172,9 +4183,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Zmień na plan ${ professionalPlan }, aby dodać więcej użytkowników."
-      ],
-      "Taking too long?": [
-        "Trwa to zbyt długo?"
       ],
       "Test link": [
         "Podgląd linku"
@@ -5699,6 +5707,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Zaplanowane wysyłanie zostało anulowane"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Planowanie zostało anulowane. Wiadomość została przeniesiona do Szkiców."
       ],

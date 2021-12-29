@@ -316,6 +316,9 @@
       "Encryption": [
         "Κρυπτογράφηση"
       ],
+      "exclude message content": [
+        ""
+      ],
       "Expand composer": [
         "Ανάπτυξη συντάκτη"
       ],
@@ -653,8 +656,8 @@
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
-      "Refine your search": [
-        "Παραμετροποίηση αναζήτησης"
+      "Refine it": [
+        ""
       ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
@@ -702,7 +705,7 @@
         "Επανάληψη"
       ],
       "Revert to original display": [
-        ""
+        "Επαναφορά αρχικής εμφάνισης"
       ],
       "Save": [
         "Αποθήκευση"
@@ -1304,6 +1307,11 @@
         "Πρόβλημα πρόσβασης ιστοσελίδας"
       ]
     },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Εισαγωγή ημερολόγιου"
@@ -1607,7 +1615,7 @@
         "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
       ],
       "Unsupported calendar format": [
-        ""
+        "Μη υποστηριζόμενη μορφή ημερολογίου"
       ]
     },
     "Calendar widget banner": {
@@ -3339,7 +3347,7 @@
         "Χρεώνεται ως ${ billedPrice } κάθε 2 χρόνια"
       ],
       "Billed as ${ billedPrice } per year": [
-        "Χρεώθηκε ως{ billedPrice } $ το χρόνο"
+        "Χρεώθηκε ως ${ billedPrice } το χρόνο"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Χρέωση στο τέλος του τρέχοντος κύκλου χρέωσης (ανανεώνεται την ${ renewalDate })"
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        ""
+      ],
       "Seems like you are all caught up for now": [
         "Φαίνεται ότι όλοι είστε παγιδευμένοι για τώρα"
       ],
@@ -4015,9 +4026,6 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Μετάβαση σε ${ professionalPlan } για να προσθέσετε περισσότερους χρήστες."
       ],
-      "Taking too long?": [
-        "Παίρνει πολύ ώρα;"
-      ],
       "Test link": [
         "Δοκ. σύνδεσμος"
       ],
@@ -4089,7 +4097,7 @@
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
       "This message has been adjusted to comply with a dark background.": [
-        ""
+        "Αυτό το μήνυμα έχει ρυθμιστεί για εμφάνιση σε σκούρο φόντο."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Αυτό το μήνυμα δημιουργείται αυτόματα ως απόκριση σε ένα προηγούμενο μήνυμα."
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        ""
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Ο προγραμματισμός ακυρώθηκε. Το μήνυμα έχει μεταφερθεί στα Πρόχειρα."
       ],
@@ -7314,10 +7325,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Κάντε κλικ για αναπαραγωγή του βίντεο ξανά"
       ],
       "Replay video": [
-        ""
+        "Ξαναπαίξιμο βίντεο"
       ]
     },
     "VPN feature": {

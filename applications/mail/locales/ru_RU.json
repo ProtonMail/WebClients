@@ -320,6 +320,9 @@
       "Encryption": [
         "Шифрование"
       ],
+      "exclude message content": [
+        "исключить содержимое сообщения"
+      ],
       "Expand composer": [
         "Раскрыть окно редактора сообщений"
       ],
@@ -659,8 +662,8 @@
       "Recover data": [
         "Восстановить данные"
       ],
-      "Refine your search": [
-        "Уточните свой поиск"
+      "Refine it": [
+        "Усовершенствовать его"
       ],
       "refresh the page": [
         "обновить страницу"
@@ -846,7 +849,7 @@
         "В этом сообщении есть встроенные изображения."
       ],
       "This message contains remote content.": [
-        "Это сообщение содержит удаленное содержимое."
+        "В этом сообщении есть внешнее содержимое."
       ],
       "Trust": [
         "Доверять"
@@ -1074,10 +1077,10 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "",
-        "",
-        "",
-        ""
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } закончено",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } закончены",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } закончены",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } закончены"
       ]
     },
     "Apps dropdown": {
@@ -1322,6 +1325,11 @@
         "Проблема с доступом к сайту"
       ]
     },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Имеет событие в календаре"
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Импорт календаря"
@@ -1360,13 +1368,13 @@
         " Этот ответ не соответствует вашим сведениям о приглашении. Проверьте сведения о приглашении в календаре."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } принял приглашение и предложил новое время для одного повтора события."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } принял приглашение и предложил новое время для этого события."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } принял приглашение на один повтор события."
       ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } принял приглашение на это событие."
@@ -1393,13 +1401,13 @@
         "${ participantName } запросил последние обновления события, которое больше не существует в вашем календаре."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } отклонил приглашение и предложил новое время для одного повтора этого события."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } отклонил приглашение и предложил новое время для этого события."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } отклонил приглашение на один повтор события."
       ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } отклонил приглашение на это событие."
@@ -1417,16 +1425,16 @@
         "${ participantName } отклонил ваше приглашение."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } принял приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } принял приглашение и предложил новое время для этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } принял приглашение на один повтор события."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "${ participantName } принял приглашение на это событие."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } принял ваше приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
@@ -1435,13 +1443,13 @@
         "${ participantName } принял ваше приглашение и предложил новое время для этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } отклонил ваше приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } отклонил приглашение и предложил новое время для этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } отклонил приглашение на один повтор этого события."
       ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } отклонил приглашение на это событие."
@@ -1489,16 +1497,16 @@
         "${ participantName } предложил новое время для этого события. Это предложение устарело. У вас нет календарей."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } предварительно принял приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } предварительно принял приглашение и предложил новое время для этого события. Ответ и предложение устарели."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } предварительно принял приглашение на один повтор события."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } предварительно принял приглашение на это событие."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } предварительно принял ваше приглашение и предложил новое время для одного повтора этого события. Ответ и предложение устарели."
@@ -1516,13 +1524,13 @@
         "${ participantName } предлагает новое время для этого события."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } предварительно принял приглашение и предложил новое время для одного повтора этого события."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } предварительно принял приглашение и предложил новое время для этого этого события."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } предварительно принял приглашение на один повтор события."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
         "${ participantName } предварительно принял приглашение на это событие."
@@ -2876,7 +2884,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Мы увеличили общее хранилище вашего аккаунта до ${ totalGBStorageAfterCompletion } ГБ. Получите дополнительное хранилище и разблокируйте премиум-функции уже сегодня."
       ],
       "You're all set!": [
         "Все готово!"
@@ -2884,7 +2892,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        ""
+        "Выполните все шаги и получите в общей сложности ${ totalGBStorageAfterCompletion } ГБ на вашем аккаунте"
       ],
       "Expires soon": [
         "Скоро истекает"
@@ -2893,10 +2901,10 @@
         "Истекает сегодня"
       ],
       "Only ${ days } day left": [
-        "",
-        "",
-        "",
-        ""
+        "Остался только ${ days } день",
+        "Осталось только ${ days } дня",
+        "Осталось только ${ days } дней",
+        "Осталось только ${ days } дня"
       ]
     },
     "Get started checklist instructions": {
@@ -2904,7 +2912,7 @@
         "Доступно для iOS и Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Скачайте мобильное приложение ${ protonMailAppName }"
       ],
       "Import contacts or emails": [
         "Импортируйте контакты или электронные письма"
@@ -2916,10 +2924,10 @@
         "Быстро перенесите контакты или электронную почту от любого провайдера с помощью нашего помощника по импорту Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Войдите в мобильное приложение и закончите действие"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "Используя мобильное устройство, отсканируйте этот QR-код или посетите"
       ]
     },
     "Get started checklist item": {
@@ -2933,7 +2941,7 @@
         "Отправить сообщение"
       ],
       "Set up a recovery method": [
-        ""
+        "Настроить метод восстановления"
       ]
     },
     "Get started checklist spotlight": {
@@ -3096,7 +3104,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "на следующем шаге необходимо выбрать все разрешения"
       ]
     },
     "Import warning": {
@@ -3184,10 +3192,10 @@
         "${ mailAppName } Professional начинается с одного пользователя, и каждый пользователь добавляет 5 ГБ и 5 адресов электронной почты в пул организации."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "Не удалось переместить { messagesNotAuthorizedToMove } сообщение.",
-        "Не удалось переместить { messagesNotAuthorizedToMove } сообщения.",
-        "Не удалось переместить { messagesNotAuthorizedToMove } сообщений.",
-        "Не удалось переместить { messagesNotAuthorizedToMove } сообщений."
+        "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщение.",
+        "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщения.",
+        "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщений.",
+        "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщений."
       ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } и ${ nameOfLast }"
@@ -3511,7 +3519,7 @@
         "Очистить данные"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Очистка данных браузера также отключает поиск содержимого сообщений на этом устройстве. Для поиска в сообщениях необходимо будет снова загрузить все сообщения."
+        "Очистка данных браузера также отключает поиск содержимого сообщений на этом устройстве. Для поиска в сообщениях необходимо будет снова скачать все сообщения."
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Очищает данные браузера, связанные с поиском содержимого сообщений, включая загруженные сообщения"
@@ -3613,7 +3621,7 @@
         "Скачайте ваше любимое приложение сегодня и берите конфиденциальность с собой, куда бы вы ни пошли."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Загрузка сообщения ${ esProgress } из ${ totalProgressToShow }"
+        "Скачивание сообщения ${ esProgress } из ${ totalProgressToShow }"
       ],
       "Draft": [
         "Черновик"
@@ -3850,7 +3858,7 @@
         "Загрузка ${ appName }"
       ],
       "Loading message": [
-        "Загрузка сообщения"
+        "Скачивание сообщения"
       ],
       "Loading preview": [
         "Загрузка предпросмотра"
@@ -3883,13 +3891,13 @@
         "Сообщение отправлено."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Сообщение будет отправлено ${ dateString } в ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        ""
+        "Сообщение будет отправлено сегодня в ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Сообщение будет отправлено завтра в ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
@@ -4063,7 +4071,7 @@
         "Сообщение о попытке фишинга отправит сообщение нам, чтобы мы смогли проанализировать его и улучшить наши фильтры. Это означает, что мы будем способны увидеть содержимое сообщения полностью."
       ],
       "Request read receipt": [
-        ""
+        "Запросить уведомление о прочтении"
       ],
       "Right to Left": [
         "Справа налево"
@@ -4100,6 +4108,9 @@
       ],
       "Screenshot(s) attached": [
         "Снимки экрана прикреплены"
+      ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Поиск занимает слишком много времени? ${ dropdownButton } или ${ toggleOffButton } из этой поисковой сессии."
       ],
       "Seems like you are all caught up for now": [
         "Похоже, делать тут пока нечего."
@@ -4173,9 +4184,6 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Переключиться на ${ professionalPlan } , чтобы добавить больше пользователей."
       ],
-      "Taking too long?": [
-        "Слишком долго?"
-      ],
       "Test link": [
         "Тестовая ссылка"
       ],
@@ -4219,7 +4227,7 @@
         "Этот аккаунт был приостановлен из-за потенциального нарушения политики."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Это действие загрузит все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
+        "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы иметь возможность отправки на этот адрес, сначала он должен быть включён его владельцем."
@@ -4270,16 +4278,16 @@
         "Это сообщение будет перемещено в Черновики, поэтому вы можете его редактировать. Его нужно будет снова запланировать перед отправкой."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Это сообщение будет отправлено ${ dateString } в ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Это сообщение вскоре будет отправлено"
       ],
       "This message will be sent today at ${ formattedTime }": [
-        ""
+        "Это сообщение будет отправлено сегодня в ${ formattedTime }"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Это сообщение будет отправлено завтра в ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Это сообщение истекает ${ formattedDate }"
@@ -4555,7 +4563,7 @@
         "Скоро вы будете перенаправлены на PayPal для подтверждения своего платежа."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        ""
+        "Вы написали \"${ attachmentsFoundKeyword }\", но ни одно вложение не было добавлено. Хотите ли вы все равно отправить свое сообщение?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Для вашего аккаунту есть по крайней мере один просроченный счет. Ваш доступ был ограничен. ${ payInvoiceLink }"
@@ -5105,7 +5113,7 @@
         "Управление метками"
       ],
       "Manage my addresses": [
-        ""
+        "Управление моими адресами"
       ],
       "Mark as": [
         "Отметить как"
@@ -5482,7 +5490,7 @@
         "Со звёздами"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Этот ICS файл календаря содержит более, чем одно событие. Пожалуйста, загрузите его и импортируйте события в ${ calendarAppName }"
+        "Этот ICS файл календаря содержит более, чем одно событие. Пожалуйста, скачайте его и импортируйте события в ${ calendarAppName }"
       ],
       "Trash": [
         "Корзина"
@@ -5629,16 +5637,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Импортируйте все сообщения из ярлыка ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -5699,6 +5707,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Запланированная отправка отменена"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Планирование отменено. Сообщение перемещено в Черновики."
       ],
@@ -5885,7 +5896,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Обратите внимание, что ${ boldNextStep } запрашивается приложением для начала импорта."
       ]
     },
     "Onboarding": {
@@ -7237,7 +7248,7 @@
         "Подтверждение ссылки"
       ],
       "Load embedded images": [
-        "Показывать встроенные изображения"
+        "Загрузить встроенные изображения"
       ],
       "Load remote content": [
         "Загрузить внешнее содержимое"
@@ -7559,7 +7570,7 @@
         "Импорт начнется с самых последних сообщений."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Это действие загрузит все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
+        "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
       ],
       "This feature is only available for paid users": [
         "Эта функция доступна только пользователям с платными тарифами"
@@ -7768,7 +7779,7 @@
         "Некоторые из планируемых к объединению контактов отображают ошибки. Пожалуйста, рассмотрите каждый из них по отдельности"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Не удалось проверить подпись вложения.\nВы можете загрузить это вложение, но оно могло быть изменено.",
+        "Не удалось проверить подпись вложения.\nВы можете скачать это вложение, но оно могло быть изменено.",
         "Не удалось проверить подпись некоторых вложений.\nТем не менее вы можете скачать эти вложения, но оно могли быть подменены.",
         "Не удалось проверить подпись некоторых вложений.\nТем не менее вы можете скачать эти вложения, но оно могли быть подменены.",
         "Не удалось проверить подпись некоторых вложений.\nТем не менее вы можете скачать эти вложения, но оно могли быть подменены."

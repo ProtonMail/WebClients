@@ -244,14 +244,8 @@
       "Delete": [
         "刪除"
       ],
-      "Delete all messages": [
-        "刪除所有郵件"
-      ],
       "Delete link": [
         "刪除連結"
-      ],
-      "Delete original messages": [
-        "刪除原始郵件"
       ],
       "Delete record": [
         "刪除記錄"
@@ -390,9 +384,6 @@
       ],
       "Import emails": [
         "匯入電子郵件"
-      ],
-      "Import from .csv or vCard": [
-        "從 .csv 或 vCard 匯入"
       ],
       "Import from .ics": [
         "從 .ics 匯入"
@@ -611,7 +602,7 @@
         "選取檔案"
       ],
       "Select language for invitation emails": [
-        ""
+        "選取邀請電子郵件的語言"
       ],
       "Select plan": [
         "選擇方案"
@@ -688,17 +679,11 @@
       "Skip": [
         "略過"
       ],
-      "Skip to import": [
-        "直接匯入"
-      ],
       "Sort": [
         "排序"
       ],
       "Start import": [
         "開始匯入"
-      ],
-      "Start Import Assistant": [
-        "開啟 Import Assistant"
       ],
       "Start setup": [
         "開始設置"
@@ -1407,9 +1392,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "刪除所有訊息"
-      ],
       "Import is incomplete!": [
         "匯入未完成！"
       ],
@@ -2900,9 +2882,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "允許 ProtonMail 存取您的 Gmail 帳號：選擇是否啟用「${ bold2Steps }」，然後遵循以下步驟。"
-      ],
       "Click ${ boldManage } to expand the options menu": [
         "點擊 ${ boldManage } 以展開您的選項選單"
       ],
@@ -2911,9 +2890,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         "點擊三個點 (...) 展開下拉式選單"
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "最後，使用您要匯入的帳號${ googleMailLink }，${ googleCaptchaLink }。"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         "產生 ${ boldAppPassword } 並在 Proton 提示您使用其來取代您一般的密碼"
@@ -2927,26 +2903,11 @@
       "Go to ${ boldAccountSecurity }": [
         "前往 ${ boldAccountSecurity }"
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "前往「${ googleAccountLink }」，在「${ boldSecurity }」部分中，${ boldAccess }。如果您沒見到此選項，即代表您可能已啟用兩步驟驗證。"
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "前往「${ googleAccountLink }」，在「${ boldSecurity }」部分中，如果未有則建立一個${ boldAppPassword }。匯入時將需要用到此密碼。"
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         "前往 Outlook.com ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "若兩步驟驗證已關閉，請將其開啟"
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "在「${ boldLabels }」部分中，請選取要允許匯入 ProtonMail 的資料夾。"
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "在您的「${ boldGmailSettings }」，請前往「${ boldForwarding }」並確保「${ boldIMAPAccess }」已啟用。"
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        "登入 Yahoo 信箱並在右上方典選您的名乘以讓我們有正確的權限存取「${ boldAccountInfo }」。在 ${ boldAccountSec } 區域，滑到 ${ boldAppPassword } 區域以產生新的密碼，您將會在稍候的匯入程序中用到它。"
       ],
       "Open your ${ yahooMailLink } contacts": [
         "開啟您的 ${ yahooMailLink } 聯絡人"
@@ -2986,9 +2947,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "兩步驟驗證"
-      ],
       "Account info": [
         "帳號資料"
       ],
@@ -3010,63 +2968,17 @@
       "Export to CSV file": [
         "匯出為 CSV 檔案"
       ],
-      "Forwarding and POP/IMAP": [
-        "轉寄與 POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Gmail 設定"
-      ],
       "ICS": [
         "ICS"
       ],
-      "IMAP access": [
-        "IMAP 存取"
-      ],
       "in the next step you need to select all the permissions": [
-        ""
-      ],
-      "Labels": [
-        "標籤"
+        "在下一個步驟中，您必須選取所有的權限"
       ],
       "Manage": [
         "管理"
       ],
-      "Other ways to sign in": [
-        "其他登入方法"
-      ],
       "Publish a calendar": [
         "發佈行事曆"
-      ],
-      "Security": [
-        "安全"
-      ],
-      "turn on access": [
-        "開啟存取"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "登入 Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "然後開啟此頁以解鎖 Captcha"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "如何在 Gmail 設定中建立應用程式密碼"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "如何在 Gmail 中停用 CAPTCHA"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "如何在 Gmail 設定中啟用 IMAP 轉寄"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "如何在 Gmail 設定中設定在 IMAP 顯示資料夾"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "如何在 Gmail 設定中開啟「低安全性應用程式存取權」"
       ]
     },
     "Import instructions link": {
@@ -3106,7 +3018,7 @@
         "前往您 Outlook.com 設定中的 ${ calendarLink }"
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
-        ""
+        "前往 Yahoo 郵件中的 ${ calendarViewLink }"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "將滑鼠游標停在您要匯入的行事曆上並開啟下拉式選單"
@@ -3118,14 +3030,6 @@
         "在 ${ boldPublish } 下，選取您要匯入的行事曆。設定權限給 ${ boldCanViewAllDetails } 並發佈它。"
       ]
     },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "兩步驟驗證已停用（預設設定）"
-      ],
-      "2-step verification enabled": [
-        "兩步驟驗證已啟用"
-      ]
-    },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
         "你確定你要匯入一把私鑰嗎？匯入不安全或是已洩漏的私鑰將危及您的電子郵件安全。\n\n請知悉，與此私鑰對應的公鑰將被發布到我們的金鑰伺服器。若此金鑰包含您的個人資訊(例如您的全名) 或任何您不想要公開的資訊，請在匯入前修改這些資訊。"
@@ -3133,7 +3037,7 @@
     },
     "Import provider": {
       "Other": [
-        ""
+        "其他"
       ]
     },
     "Import status": {
@@ -3689,6 +3593,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "請輸入您的備援電話號碼，我們將向您發送您的使用者名稱或電子郵件地址。"
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        "活動邀請與回覆函將會以此設定語言寄送。"
+      ],
       "Expired": [
         "已過期"
       ],
@@ -3757,9 +3664,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "若您使用不同的電子郵件提供者，或者您的帳號已準備就緒，您可以跳過此步，直接匯入。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您相信箇中有誤，請聯絡我們：{ contactLink }。"
@@ -3898,12 +3802,6 @@
       ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        "大型匯入可能要數天才能完成。"
       ],
       "Large imports can take several days.": [
         "大量的匯入可能要數天才能完成。"
@@ -4385,9 +4283,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "本精靈將會在您的 Proton 帳號上啟用兩步驟驗證 (2FA)。兩步驟驗證讓您的 Proton 帳號更安全，所以我們建議啟用它。"
       ],
-      "to": [
-        "到"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
       ],
@@ -4412,9 +4307,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "為了解 Proton 產品的最新開發動態，您可訂閱我們的各份電子通訊，或不時造訪我們的部落格。"
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "要將您的外部帳號準備好匯入，請遵循以下指示："
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "為繼續此程序，選擇帳戶復原手段，然後我們將能驗證您的請求。"
       ],
@@ -4426,9 +4318,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "將您的資料安全地轉移到 Proton。Import Assistant 會連線到您的外部電子郵件提供者，並匯入您所選取的郵件和資料夾。"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "兩步驟驗證為您的帳號增添一重保安，以防您的密碼萬一被洩露。"
@@ -4526,9 +4415,6 @@
       "We use 3-D Secure to protect your payments.": [
         "我們使用 3-D Secure 保障您的付款。"
       ],
-      "We will notify you once your import is finished.": [
-        "您的匯入一完成，我們會馬上通知您。"
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
       ],
@@ -4598,9 +4484,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
-      "You can continue using Proton services as usual.": [
-        "您仍可以如常使用 Proton 服務。"
-      ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "您可以為每個行事曆建立最多 ${ MAX_LINKS_PER_CALENDAR } 個連結。若要為此行事曆建立新連結，請先從下列清單中刪除一個。"
       ],
@@ -4653,7 +4536,7 @@
         "建立連結需要有個人行事曆。"
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "您需要有使用中的個人行事曆才可以從 .ics 匯入您的事件。"
       ],
       "You need to have an active personal calendar to import your events.": [
         "您需要有使用中的個人行事曆才可匯入您的事件。"
@@ -4715,20 +4598,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "您從匯入 ${ delayedImport.Account } 的操作被暫時推遲。"
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "您從 ${ delayedImport.Email } 的匯入被暫時延遲。"
-      ],
-      "Your import has started!": [
-        "您的匯入已開始！"
-      ],
       "Your import will not be processed.": [
         "您的匯入將不會處理。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
-      ],
-      "Your messages are being imported from": [
-        "您的郵件正在匯入，從"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "您的組織密碼可分享予您欲給予系統管理員權限的其他使用者。萬一您失去您帳號的存取，這亦可憑此作為緊急備援代碼，以取得您組織的存取。請好好儲存並妥為保管此密碼。"
@@ -4829,14 +4703,6 @@
     "information": {
       "Included": [
         "已包含"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "輸入文字以進行確認"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "請在下面方塊輸入以下文字，以確認此動作。"
       ]
     },
     "Invoice state display as badge": {
@@ -5345,7 +5211,7 @@
         "已使用儲值"
       ],
       "Current login password": [
-        ""
+        "目前的登入密碼"
       ],
       "Customize invoices": [
         "自訂帳單"
@@ -5366,7 +5232,7 @@
         "預設語言"
       ],
       "Default language (${ defaultLanguage })": [
-        ""
+        "預設語言 (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "預設 PGP 格式"
@@ -5473,17 +5339,11 @@
       "From: ${ emailFrom }": [
         "寄件者：${ emailFrom }"
       ],
-      "From: ${ fromEmailAddress }": [
-        "寄件者：${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         "寄件者：${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "寄件者： ${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "寄件人：${ modalModel.email }"
       ],
       "Gift code": [
         "禮品代碼"
@@ -5725,11 +5585,11 @@
       "Select your country": [
         "請選擇您的國家"
       ],
-      "Send and reply to invites in": [
-        ""
-      ],
       "Send auto-reply": [
         "發送自動回覆"
+      ],
+      "Send invites in": [
+        "發送邀請函的設定語言為"
       ],
       "Show secondary time zone": [
         "顯示次要時區"
@@ -5799,9 +5659,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "收件者：${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "收件者：${ toEmailAddress }"
       ],
       "Total": [
         "合計"
@@ -6543,7 +6400,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "需要注意的是 ${ boldNextStep } 以開始您的匯入程序。"
       ]
     },
     "Onboarding Proton": {
@@ -7136,14 +6993,6 @@
         "工作"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo 電子郵件"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "電子郵件地址"
@@ -7178,11 +7027,6 @@
       ],
       "Reading emails of non-private users": [
         "讀取非私密使用者的電子郵件"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "永久刪除 ${ email } 中的郵件"
       ]
     },
     "Select files": {
@@ -7449,9 +7293,6 @@
       "Default calendar updated": [
         "預設行事曆已更新"
       ],
-      "Deleting original messages": [
-        "正在刪除原始郵件"
-      ],
       "DMARC value copied to clipboard": [
         "DMARC 字串已經複製到剪貼簿"
       ],
@@ -7475,9 +7316,6 @@
       ],
       "Import record deleted": [
         "匯入記錄已刪除"
-      ],
-      "Import resumed": [
-        "匯入已繼續"
       ],
       "Invoice customized": [
         "帳單已自訂"
@@ -7913,9 +7751,6 @@
       "Customize calendar import": [
         "自訂行事曆匯入"
       ],
-      "Customize import": [
-        "自訂匯入"
-      ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
       ],
@@ -8090,9 +7925,6 @@
       "Import as simple event?": [
         "匯入為基本活動？"
       ],
-      "Import Assistant": [
-        "Import Assistant"
-      ],
       "Import contacts": [
         "匯入聯絡人"
       ],
@@ -8104,9 +7936,6 @@
       ],
       "Import groups": [
         "匯入群組"
-      ],
-      "Import in progress": [
-        "匯入進行中"
       ],
       "Import key": [
         "匯入金鑰"
@@ -8121,7 +7950,7 @@
         "驗證碼無效"
       ],
       "Invitations": [
-        ""
+        "邀請"
       ],
       "Invoices": [
         "帳單"
@@ -8231,15 +8060,6 @@
       "Plan summary": [
         "方案概覽"
       ],
-      "Prepare for import": [
-        "準備匯入"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "預備 Gmail 以便匯入：${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "準備匯入 Yahoo 電子郵件"
-      ],
       "Previous": [
         "上一頁"
       ],
@@ -8304,7 +8124,7 @@
         "選擇聯絡人群組"
       ],
       "Select permissions": [
-        ""
+        "選取權限"
       ],
       "Select plan": [
         "選擇方案"
@@ -8940,9 +8760,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "即時聊天是一項進階功能，僅適用於付費的 ProtonVPN 方案。請改為開啟議題回報。"
       ],
-      "permanently delete all messages on ${ email }": [
-        "永久刪除 ${ email } 中的全部郵件"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "請注意：選取此付款方法時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
       ],
@@ -8957,9 +8774,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您裝置上的日期與時間設置未同步。 ${ learnMore }"
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "此動作將${ boldWarning }。您將無法恢復在 ${ domain } 上的郵件。"
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "此功能只適用於 ProtonMail Professional 或以上方案"
@@ -9187,17 +9001,6 @@
       ],
       "Wednesday": [
         "週三"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "驗證"
-      ],
-      "Configure Import": [
-        "組態設定匯入"
-      ],
-      "Import": [
-        "匯入"
       ]
     },
     "Yearly recurring event, frequency": {

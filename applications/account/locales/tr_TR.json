@@ -244,14 +244,8 @@
       "Delete": [
         "Sil"
       ],
-      "Delete all messages": [
-        "Tüm iletileri sil"
-      ],
       "Delete link": [
         "Bağlantıyı sil"
-      ],
-      "Delete original messages": [
-        "İletilerin aslını sil"
       ],
       "Delete record": [
         "Kaydı sil"
@@ -390,9 +384,6 @@
       ],
       "Import emails": [
         ""
-      ],
-      "Import from .csv or vCard": [
-        ".csv ya da vCard dosyasından iç aktar"
       ],
       "Import from .ics": [
         ".ics'ten içe aktar"
@@ -688,17 +679,11 @@
       "Skip": [
         "Atla"
       ],
-      "Skip to import": [
-        "İçe aktarmayı atla"
-      ],
       "Sort": [
         "Sırala"
       ],
       "Start import": [
         "İçe aktarmayı başlat"
-      ],
-      "Start Import Assistant": [
-        "Import Assistant Başlat"
       ],
       "Start setup": [
         "Kurulumu başlat"
@@ -1417,9 +1402,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "Tüm iletileri sil"
-      ],
       "Import is incomplete!": [
         "İçe aktarma tamamlanamadı!"
       ],
@@ -1786,7 +1768,7 @@
     },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } kullanıcı adınızdır. ${ Local } @ $ { Domain } oluşturmak için lütfen Ayarlar > Adresler > Kısa etki alanı (pm.me)"
+        "${ Local } kullanıcı adınızdır. ${ Local } @ ${ Domain } oluşturmak için lütfen Ayarlar > Adresler > Kısa etki alanı (pm.me)"
       ],
       "A group with this name already exists": [
         "Bu ada sahip bir grup zaten var"
@@ -2117,7 +2099,7 @@
         "Bu alan gerekli"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bu alan en az $ { minimumLength } karakter gerektirir."
+        "Bu alan en az ${ minimumLength } karakter gerektirir."
       ],
       "This folder name is not available. Please choose a different name": [
         "Bu klasör adı kullanılamaz. Lütfen farklı bir isim seçin"
@@ -2809,7 +2791,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Kişilerinizi şifrelerken ve eklerken bir hata oluştu. ${ totalImported } /${{ totalToImport } kişi başarıyla içe aktarıldı."
+        "Kişilerinizi şifrelerken ve eklerken bir hata oluştu. ${ totalImported } /${ totalToImport } kişi başarıyla içe aktarıldı."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kişi başarıyla içe aktarıldı. İçe aktarılan kişi artık kişi listenizde görünecektir.",
@@ -2933,9 +2915,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Protonmail'in Gmail hesabınıza erişmesine izin verin: { bold2Steps } seçeneğinin etkin olup olmadığını seçin ve aşağıdaki adımları izleyin."
-      ],
       "Click ${ boldManage } to expand the options menu": [
         ""
       ],
@@ -2944,9 +2923,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         ""
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "Son olarak, içe aktarmak istediğiniz hesapla ${ googleMailLink }, ${ googleCaptchaLink }."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         ""
@@ -2960,25 +2936,10 @@
       "Go to ${ boldAccountSecurity }": [
         ""
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "${ googleAccountLink } adresine gidin. ${ boldSecurity } bölümünde, daha az güvenli uygulamalar için ${ boldAccess }. Bu seçeneği görmüyorsanız, 2 adımlı doğrulamayı etkinleştirmiş olabilirsiniz."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "${ googleAccountLink } adresine gidin. ${ boldSecurity } bölümünde, zaten bir tane yoksa bir ${ boldAppPassword } oluşturun. İçe aktarma sırasında bu parolaya ihtiyacınız olacak."
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         ""
       ],
       "If 2-step verification is off, turn it on": [
-        ""
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "${ boldLabels } bölümünde, ProtonMail'e aktarılmasına izin verilen klasörleri seçin."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "${ boldGmailSettings } altında bulunan ${ boldForwarding } ayarına gidip ${ boldIMAPAccess } seçeneğinin etkin olduğundan emin olun."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         ""
       ],
       "Open your ${ yahooMailLink } contacts": [
@@ -3019,9 +2980,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "2 adımlı doğrulama"
-      ],
       "Account info": [
         "Hesap bilgisi"
       ],
@@ -3043,63 +3001,17 @@
       "Export to CSV file": [
         ""
       ],
-      "Forwarding and POP/IMAP": [
-        "Yönlendirme ve POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Gmail Ayarları"
-      ],
       "ICS": [
         ""
-      ],
-      "IMAP access": [
-        "IMAP erişimi"
       ],
       "in the next step you need to select all the permissions": [
         ""
       ],
-      "Labels": [
-        "Etiketler"
-      ],
       "Manage": [
-        ""
-      ],
-      "Other ways to sign in": [
         ""
       ],
       "Publish a calendar": [
         ""
-      ],
-      "Security": [
-        "Güvenlik"
-      ],
-      "turn on access": [
-        "erişimi aç"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "Gmail'e giriş yapın"
-      ],
-      "then open this page to unlock captcha": [
-        "sonrasında captcha kilidini açmak için bu sayfayı açın"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "Gmail ayarlarında uygulama şifresi nasıl oluşturulur"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Gmail'de CAPTCHA nasıl devre dışı bırakılır"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Gmail ayarlarında IMAP Yönlendirme nasıl etkinleştirilir"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Gmail ayarlarında IMAP klasörleri nasıl gösterilir"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Gmail ayarlarında Daha Az Güvenli Uygulamalar için erişim nasıl açılır"
       ]
     },
     "Import instructions link": {
@@ -3149,14 +3061,6 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
         ""
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "2 adımlı doğrulama devre dışı bırakıldı (varsayılan ayarlar)"
-      ],
-      "2-step verification enabled": [
-        "2 adımlı doğrulama etkinleştirildi"
       ]
     },
     "Import key": {
@@ -3745,6 +3649,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Kurtarma telefon numaranızı girin, size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        ""
+      ],
       "Expired": [
         "Süresi doldu"
       ],
@@ -3813,9 +3720,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesabınızı oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde yanıt vereceğiz."
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Farklı bir e-posta sağlayıcısı kullanıyorsanız veya hesabınız önceden hazırlanmışsa, içe aktarmayı atlayabilirsiniz."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bunun bir hata olduğunu düşünüyorsanız, lütfen bize ${ contactLink } ulaşın."
@@ -3955,12 +3859,6 @@
       ],
       "Label all imported messages as": [
         "İçe aktarılan tüm iletileri şu şekilde etiketle"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        "Büyük boyutlu içe aktarmalar bir kaç gün sürebilir."
       ],
       "Large imports can take several days.": [
         ""
@@ -4443,9 +4341,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Bu sihirbaz, Proton hesabınızda İki Adımlı Kimlik Doğrulamayı (2FA) etkinleştirir. İki adımlı kimlik doğrulama, Proton hesabınızı daha güvenli duruma getireceğinden, etkinleştirmenizi öneririz."
       ],
-      "to": [
-        "kime"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Onaylayın, lütfen silmek istediğiniz kullanıncın adını giriniz."
       ],
@@ -4470,9 +4365,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Proton ürünlerindeki en son gelişmeleri takip etmek için çeşitli e-postalarımıza abone olabilir ve zaman zaman blogumuzu ziyaret edebilirsiniz."
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Harici hesabınızı içe aktarmaya hazırlamak için lütfen aşağıdaki talimatları izleyin:"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         ""
       ],
@@ -4484,9 +4376,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Verilerinizi Proton'a güvenli aktarın. Import Assistant, harici e-posta sağlayıcınıza bağlanır ve seçili mesajlarınızı ve klasörlerinizi içe aktarır."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "İki faktörlü kimlik doğrulama, şifrenizin tehlikeye girmesi durumunda hesabınıza fazladan bir güvenlik katmanı ekler."
@@ -4584,9 +4473,6 @@
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenli Ödeme kullanıyoruz."
       ],
-      "We will notify you once your import is finished.": [
-        "İçe aktarma bittiğinde sana haber vereceğiz."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamak için sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyicisi kullanıyorsanız, lütfen devam etmek için bunları devre dışı bırakın."
       ],
@@ -4655,9 +4541,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         ""
-      ],
-      "You can continue using Proton services as usual.": [
-        "Herzamanki gibi Proton servislerini kullanmaya devam edebilirsiniz."
       ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Takvim başına en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı oluşturabilirsiniz. Bu takvime yeni bir bağlantı oluşturmak için aşağıdaki listeden birini silin."
@@ -4773,20 +4656,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         ""
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "${ delayedImport.Email }'dan içe aktarmanız geçici olarak duraklatıldı."
-      ],
-      "Your import has started!": [
-        "İçe aktarma işlemin başladı!"
-      ],
       "Your import will not be processed.": [
         "İçe aktarımınız gerçekleştirilemedi."
       ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma tamamlandıktan sonra giriş bilgileriniz kaydedilmeyecektir."
-      ],
-      "Your messages are being imported from": [
-        "Tüm iletilerin şuradan aktarılıyor"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Kuruluş parolanızı, yönetici ayrıcalıkları vermek istediğiniz diğer kullanıcılarla paylaşılabilirsiniz. Ayrıca, bu hesabınıza erişiminizi kaybetmeniz durumunda kuruluşunuza erişim sağlamak için bir acil durum kurtarma kodudur. Lütfen bu parolayı kaydedin ve güvenli bir yerde saklayın."
@@ -4887,14 +4761,6 @@
     "information": {
       "Included": [
         "Dahil"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "Onaylamak için girin"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "Bu eylemi onaylamak için aşağıdaki kutuya şu yazıyı girin."
       ]
     },
     "Invoice state display as badge": {
@@ -5535,17 +5401,11 @@
       "From: ${ emailFrom }": [
         ""
       ],
-      "From: ${ fromEmailAddress }": [
-        "Kimden: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         ""
       ],
       "From: ${ importedEmailAddress }": [
         "Gönderen: ${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "Kimden: ${ modalModel.email }"
       ],
       "Gift code": [
         "Hediye kodu"
@@ -5787,11 +5647,11 @@
       "Select your country": [
         "Ülkenizi seçin"
       ],
-      "Send and reply to invites in": [
-        ""
-      ],
       "Send auto-reply": [
         "Otomatik yanıt gönder"
+      ],
+      "Send invites in": [
+        ""
       ],
       "Show secondary time zone": [
         "İkincil saat dilimini göster"
@@ -5861,9 +5721,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Alıcı: ${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Alıcı: ${ toEmailAddress }"
       ],
       "Total": [
         "Toplam"
@@ -7210,14 +7067,6 @@
         "İş"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "E-posta"
@@ -7252,11 +7101,6 @@
       ],
       "Reading emails of non-private users": [
         "Özel olmayan kullanıcıların e-postalarını okuma"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "${ email } adresindeki tüm iletileri kalıcı olarak sil"
       ]
     },
     "Select files": {
@@ -7523,9 +7367,6 @@
       "Default calendar updated": [
         "Varsayılan takvim güncellendi"
       ],
-      "Deleting original messages": [
-        "İletilerin aslı siliniyor"
-      ],
       "DMARC value copied to clipboard": [
         "DMARC değeri panoya kopyalandı"
       ],
@@ -7549,9 +7390,6 @@
       ],
       "Import record deleted": [
         "İçe aktarma kaydı silindi"
-      ],
-      "Import resumed": [
-        "İçe aktarmaya devam et"
       ],
       "Invoice customized": [
         "Fatura özelleştirildi"
@@ -7989,9 +7827,6 @@
       "Customize calendar import": [
         ""
       ],
-      "Customize import": [
-        "İçe aktarmayı özelleştir"
-      ],
       "Customize your mail import": [
         ""
       ],
@@ -8167,9 +8002,6 @@
         "Sıradan etkinlik olarak içe aktarılsın mı?",
         "Sıradan etkinlikler olarak içe aktarılsın mı?"
       ],
-      "Import Assistant": [
-        "Import Assistant"
-      ],
       "Import contacts": [
         "Kişileri içe aktar"
       ],
@@ -8181,9 +8013,6 @@
       ],
       "Import groups": [
         "Grupları içeri aktar"
-      ],
-      "Import in progress": [
-        "İçe aktarma sürüyor"
       ],
       "Import key": [
         "Anahtarı içeri aktar"
@@ -8307,15 +8136,6 @@
       ],
       "Plan summary": [
         "Plan özeti"
-      ],
-      "Prepare for import": [
-        "İçe aktarma için hazırla"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "Gmail'i içe aktarmaya hazırlama ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Yahoo Mail'i içe aktarma için hazırlayın"
       ],
       "Previous": [
         "Önceki"
@@ -9023,9 +8843,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
-      "permanently delete all messages on ${ email }": [
-        "${ email } adresindeki tüm iletileri kalıcı olarak silecektir"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bu ödeme yöntemini seçerek hesabınızın hemen yükseltilemeyeceğini lütfen unutmayın. Ödeme temizlendikten sonra hesabınızı güncelleyeceğiz."
       ],
@@ -9040,9 +8857,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         ""
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "Bu işlem ${ boldWarning }. ${ domain } alanındaki iletileri kurtaramayacaksınız."
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Bu özellik yalnızca ProtonMail Profesyonel planları veya üstü için kullanılabilir"
@@ -9100,7 +8914,7 @@
       ],
       "Every ${ interval } week on all days": [
         "Haftanın her ${ interval } günü",
-        "Her { interval } haftada her gün"
+        "Her ${ interval } haftada her gün"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Her ${ interval } haftanın her günü, ${ timesString }",
@@ -9297,17 +9111,6 @@
       ],
       "Wednesday": [
         "Çarşamba"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Kimlik Doğrulaması"
-      ],
-      "Configure Import": [
-        "İçe aktarmayı yapılandır"
-      ],
-      "Import": [
-        "İçe aktar"
       ]
     },
     "Yearly recurring event, frequency": {

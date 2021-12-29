@@ -1004,7 +1004,7 @@
         "Confortable"
       ],
       "Compact": [
-        "Compact"
+        "Compacte"
       ]
     },
     "Description": {
@@ -1577,6 +1577,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts ne prend pas en charge ${ forNow } :"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "à l'étape suivante, vous devez sélectionner toutes les autorisations"
       ]
     },
     "Import warning": {
@@ -3145,7 +3150,7 @@
         "Confortable"
       ],
       "Compact": [
-        "Compact"
+        "Compacte"
       ]
     },
     "Label to change view layout": {
@@ -3270,7 +3275,7 @@
         "Groupes de contact"
       ],
       "Custom email addresses": [
-        "Adresses électroniques personnalisées"
+        "Adresses e-mail personnalisées"
       ],
       "Custom filters": [
         "Filtres personnalisés"
@@ -3533,8 +3538,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Veuillez noter que vous devez accepter toutes les autorisations demandées par l'application pour pouvoir démarrer votre importation."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Veuillez noter qu'${ boldNextStep } demandées par l'application pour commencer votre importation."
       ]
     },
     "Onboarding Proton": {
@@ -3768,7 +3773,7 @@
         "Bloqueur de publicités intégré (NetShield)"
       ],
       "Custom email addresses": [
-        "Adresses électroniques personnalisées"
+        "Adresses e-mail personnalisées"
       ],
       "Early access to new products": [
         "Accès anticipé aux nouveaux produits"
@@ -3777,7 +3782,7 @@
         "Haute vitesse"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "Vitesse maximale (jusqu’à 10 Gbit/s)"
+        "Vitesse maximale (jusqu’à 10 Gbit/s)"
       ],
       "Includes 6 user accounts": [
         "Comprend 6 comptes utilisateur"
@@ -4432,6 +4437,9 @@
       ],
       "Select link expiration time": [
         "Sélectionner le délai d'expiration du lien"
+      ],
+      "Select permissions": [
+        "Sélectionnez les autorisations"
       ],
       "Select what to import": [
         "Sélectionnez ce qu'il faut importer"

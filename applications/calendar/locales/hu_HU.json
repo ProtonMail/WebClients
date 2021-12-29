@@ -1630,7 +1630,7 @@
         "Legalább ${ _price } kredit feltöltése szükséges"
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "Az adományozható minimális összeg { price }"
+        "Az adományozható minimális összeg ${ price }"
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Legalacsonyabb elfogadható összeg: ${ _price2 }"
@@ -2974,7 +2974,7 @@
         "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Úgy tűnik, hogy a rendszer időzónája $ {timezone} -re változott. Szeretne erre az időzónára frissíteni?"
+        "Úgy tűnik, hogy a rendszer időzónája ${ timezone } -re változott. Szeretne erre az időzónára frissíteni?"
       ]
     },
     "info": {
@@ -5740,8 +5740,8 @@
         "Minden ${ interval }. évben"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Minden ${ interval }. évben, { timesString }",
-        "Minden ${ interval }. évben, { timesString }"
+        "Minden ${ interval }. évben, ${ timesString }",
+        "Minden ${ interval }. évben, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
         "Minden ${ interval }. évben, ${ untilString }",

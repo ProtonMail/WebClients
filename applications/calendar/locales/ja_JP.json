@@ -138,13 +138,13 @@
         "メールをクリップボードにコピー"
       ],
       "Create calendar": [
-        ""
+        "カレンダーを作成"
       ],
       "Create event": [
         "予定を作成"
       ],
       "Customize": [
-        ""
+        "カスタマイズ"
       ],
       "Decrease": [
         "減少"
@@ -186,7 +186,7 @@
         "メールアドレスを編集"
       ],
       "Edit label": [
-        ""
+        "ラベルを編集"
       ],
       "Edit phone number": [
         "電話番号を編集"
@@ -246,7 +246,7 @@
         ""
       ],
       "Import from .csv or vCard": [
-        ""
+        ".csv または vCard からインポート"
       ],
       "Increase": [
         "増加"
@@ -348,7 +348,7 @@
         "前の年"
       ],
       "Quit": [
-        ""
+        "終了"
       ],
       "Re-sign": [
         "再署名"
@@ -378,7 +378,7 @@
         "この参加者を削除"
       ],
       "Rename": [
-        ""
+        "名前を変更"
       ],
       "Report a problem": [
         "問題を報告"
@@ -417,13 +417,13 @@
         "拡張 PGP 設定を表示"
       ],
       "Show folders": [
-        ""
+        "フォルダーを表示"
       ],
       "Show info": [
         "情報を表示"
       ],
       "Show labels": [
-        ""
+        "ラベルを表示"
       ],
       "Show less": [
         "詳細を非表示"
@@ -670,7 +670,7 @@
     },
     "Attendee role": {
       "Optional": [
-        ""
+        "任意"
       ]
     },
     "Beta access description": {
@@ -968,10 +968,10 @@
     },
     "Calendar view": {
       "Day": [
-        "日表示"
+        "日"
       ],
       "Month": [
-        "月表示"
+        "月"
       ],
       "Week": [
         "週"
@@ -987,7 +987,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Composer size": {
@@ -1725,7 +1725,7 @@
         ""
       ],
       "Calendar": [
-        ""
+        "カレンダー"
       ],
       "Calendar timezone not supported": [
         ""
@@ -1826,7 +1826,7 @@
         "エラー: ${ errorMessage }"
       ],
       "Invalid URL": [
-        ""
+        "無効な URL です"
       ],
       "Oops, something went wrong": [
         "エラーが発生しました"
@@ -1929,16 +1929,16 @@
     },
     "Event reply": {
       "maybe": [
-        ""
+        "予定"
       ],
       "no": [
-        ""
+        "いいえ"
       ],
       "unanswered": [
-        ""
+        "未回答"
       ],
       "yes": [
-        ""
+        "はい"
       ]
     },
     "Event title": {
@@ -2200,10 +2200,10 @@
         ""
       ],
       "${ selectedFoldersCount } folder selected": [
-        ""
+        "${ selectedFoldersCount } 件のフォルダーを選択済み"
       ],
       "${ selectedFoldersCount } label selected": [
-        ""
+        "${ selectedFoldersCount } 件のラベルが選択済み"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
@@ -2275,10 +2275,10 @@
         "ビットコイン でのお支払い後は、以下の指示に従ってアップグレードしてください。"
       ],
       "All (${ totalFoldersCount } folder)": [
-        ""
+        "すべて (${ totalFoldersCount } フォルダー)"
       ],
       "All (${ totalFoldersCount } label)": [
-        ""
+        "すべて (${ totalFoldersCount } 件のラベル)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "John.smith@example.com のような自分のドメインを ${ mailAppName } でホストできます。"
@@ -2512,7 +2512,7 @@
         "予定を読み込み中"
       ],
       "Manage your calendars": [
-        ""
+        "カレンダーを管理"
       ],
       "Merged": [
         ""
@@ -3202,7 +3202,7 @@
         "カレンダー"
       ],
       "Calendars": [
-        ""
+        "カレンダー"
       ],
       "Cancel": [
         "キャンセル"
@@ -3223,7 +3223,7 @@
         "市町村"
       ],
       "Color": [
-        ""
+        "色"
       ],
       "Contacts": [
         ""
@@ -3596,7 +3596,7 @@
         ""
       ],
       "Creating new calendars": [
-        ""
+        "新しいカレンダーを作成しています"
       ],
       "Gathering your data": [
         ""
@@ -3746,7 +3746,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        ""
+        "カレンダーを追加"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -3886,7 +3886,7 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "色"
       ],
       "Folder name": [
         ""
@@ -4042,13 +4042,13 @@
         ""
       ],
       "Import events": [
-        ""
+        "予定をインポート"
       ],
       "Meet your new encrypted calendar": [
         ""
       ],
       "Start using ${ appName }": [
-        ""
+        "${ appName } を使ってみる"
       ]
     },
     "Option": {
@@ -4106,10 +4106,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "新しいカレンダーを作成"
       ],
       "Merge with calendar": [
-        ""
+        "カレンダーと結合"
       ]
     },
     "Participant name": {
@@ -4408,7 +4408,7 @@
     },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
-        ""
+        "カレンダーを管理"
       ]
     },
     "Storage": {
@@ -4424,7 +4424,7 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        ""
+        "カレンダーの URL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
@@ -4773,7 +4773,7 @@
         "Protonボーナスの損失を確認"
       ],
       "Contact details": [
-        ""
+        "連絡先の詳細"
       ],
       "Contact Details": [
         "連絡先の詳細"
@@ -4836,7 +4836,7 @@
         "予定の削除"
       ],
       "Delete organization?": [
-        ""
+        "組織を削除しますか?"
       ],
       "Delete recurring event": [
         "定期的な予定の削除"
@@ -4845,13 +4845,13 @@
         ""
       ],
       "Downgrade account": [
-        ""
+        "アカウントのダウングレード"
       ],
       "Drop to upload": [
         ""
       ],
       "Edit calendar": [
-        ""
+        "カレンダーを編集"
       ],
       "Edit contact": [
         "連絡先を編集"
@@ -4917,7 +4917,7 @@
         "連絡先のインポート"
       ],
       "Import events": [
-        ""
+        "予定をインポート"
       ],
       "Import failed": [
         ""
@@ -4935,10 +4935,10 @@
         "リンクの確認"
       ],
       "Mailbox density": [
-        ""
+        "受信箱の密度"
       ],
       "Mailbox layout": [
-        ""
+        "受信箱のレイアウト"
       ],
       "Merge contacts": [
         "連絡先の統合"
@@ -5019,7 +5019,7 @@
         "カレンダーの鍵のリセット"
       ],
       "Save changes": [
-        ""
+        "変更を保存"
       ],
       "Select a day in the month": [
         ""
@@ -5073,7 +5073,7 @@
         ""
       ],
       "Select what to import": [
-        ""
+        "インポートするものを選択"
       ],
       "Select when this event will stop happening": [
         ""
