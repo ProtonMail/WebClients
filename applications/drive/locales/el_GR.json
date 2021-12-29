@@ -126,7 +126,7 @@
         "Επιβεβαίωση"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Επιβεβαίωση ανοίγματος συνδέσμου ${ linkToShow }"
       ],
       "Contact group": [
         "Ομάδα Επαφών"
@@ -876,7 +876,7 @@
         "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
       ],
       "Unsupported calendar format": [
-        ""
+        "Μη υποστηριζόμενη μορφή ημερολογίου"
       ]
     },
     "Composer size": {
@@ -1577,6 +1577,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "Το ProtonContacts δεν υποστηρίζει ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -3533,7 +3538,7 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
         ""
       ]
     },
@@ -4433,6 +4438,9 @@
       "Select link expiration time": [
         "Επιλέξτε το χρόνο λήξης του συνδέσμου"
       ],
+      "Select permissions": [
+        ""
+      ],
       "Select what to import": [
         "Επιλογή στοιχείων προς εισαγωγή"
       ],
@@ -4555,7 +4563,7 @@
         "Η κρυπτογράφηση μέσω ηλεκτρονικού ταχυδρομείου υποχρεώνει την ύπαρξη υπογραφής ηλεκτρονικού ταχυδρομείου για να σας βοηθήσει να πιστοποιήσετε τα απεσταλμένα μηνύματα"
       ],
       "Encrypted data": [
-        ""
+        "Κρυπτογραφημένα δεδομένα"
       ],
       "Encrypted data with verified digital signature": [
         "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
@@ -4637,10 +4645,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Κάντε κλικ για αναπαραγωγή του βίντεο ξανά"
       ],
       "Replay video": [
-        ""
+        "Ξαναπαίξιμο βίντεο"
       ]
     },
     "VPN feature": {

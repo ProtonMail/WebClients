@@ -1599,6 +1599,11 @@
         "ProtonContacts ne podržava ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -3613,7 +3618,7 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
         ""
       ]
     },
@@ -4522,6 +4527,9 @@
       ],
       "Select link expiration time": [
         "Odaberite vrijeme isteka poveznice"
+      ],
+      "Select permissions": [
+        ""
       ],
       "Select what to import": [
         ""

@@ -244,14 +244,8 @@
       "Delete": [
         "Törlés"
       ],
-      "Delete all messages": [
-        "Összes üzenet törlése"
-      ],
       "Delete link": [
         "Hivatkozás törlése"
-      ],
-      "Delete original messages": [
-        "Eredeti üzenetek törlése"
       ],
       "Delete record": [
         "Elem törlése"
@@ -383,16 +377,13 @@
         "Importálás"
       ],
       "Import calendars": [
-        ""
+        "Naptárak importálása"
       ],
       "Import contacts": [
         "Névjegyek importálása"
       ],
       "Import emails": [
-        ""
-      ],
-      "Import from .csv or vCard": [
-        "Importálás .csv vagy vCard fájlból"
+        "E-mailek importálása"
       ],
       "Import from .ics": [
         "Importálás .ics fájlból"
@@ -611,7 +602,7 @@
         "Fájlok kiválasztása"
       ],
       "Select language for invitation emails": [
-        ""
+        "A meghívók nyelvének kiválasztása"
       ],
       "Select plan": [
         "Csomag kiválasztása"
@@ -688,17 +679,11 @@
       "Skip": [
         "Kihagyás"
       ],
-      "Skip to import": [
-        "Tovább az importáláshoz"
-      ],
       "Sort": [
         "Rendezés"
       ],
       "Start import": [
         "Importálás indítása"
-      ],
-      "Start Import Assistant": [
-        "Import Assistant indítása"
       ],
       "Start setup": [
         "Beállítás megkezdése"
@@ -891,10 +876,10 @@
         "Hiányzó kulcsok generálása"
       ],
       "Make default": [
-        ""
+        "Legyen alapértelmezett"
       ],
       "Saving": [
-        ""
+        "Mentés"
       ]
     },
     "Address status": {
@@ -1312,7 +1297,7 @@
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        ""
+        "Elérte a csomagjában maximálisan létrehozható személyes naptárak számát."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } feliratkozott naptárat.",
@@ -1359,7 +1344,7 @@
         "Több mint 12 óra telt el a legutóbbi frissítés óta"
       ],
       "Unsupported calendar format": [
-        ""
+        "Nem támogatott naptár formátum"
       ]
     },
     "Calendar view": {
@@ -1417,9 +1402,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "Összes üzenet törlése"
-      ],
       "Import is incomplete!": [
         "Az importálás elkészült!"
       ],
@@ -1712,7 +1694,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } törlésre került."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } frissítve.\n${ eventDetailsText }"
@@ -2206,7 +2188,7 @@
         "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
+        "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "A fájlban nem találhatók importálandó események: ${ formattedFilename }."
@@ -2311,7 +2293,7 @@
         "Hiányzó kezdő időpont"
       ],
       "No UID, title or start time": [
-        ""
+        "Nincs UID, cím vagy kezdési időpont"
       ],
       "Non-Gregorian": [
         "Nem gergely-naptár"
@@ -2323,7 +2305,7 @@
         "Az ismétlődő esemény eredetije nem található"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Az ismétlődő eseménynek nincs előfordulása"
       ],
       "Recurring rule not supported": [
         "Ismétlődési szabály nem támogatott"
@@ -2402,7 +2384,7 @@
         "Nem sikerült a csatolt ICS fájl visszafejtése"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Nem sikerült a csatolt ICS fájl olvasása"
       ],
       "Invalid invitation": [
         "Érvénytelen meghívó"
@@ -2759,7 +2741,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
+        "A ${ CALENDAR_APP_NAME } jelenleg nem támogat bizonyos esemény típusokat, részleteket és formátumokat."
       ],
       "vCard versions < 3.0": [
         "vCard verzió < 3.0"
@@ -2767,18 +2749,18 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "Az importált meghívók egyszerű eseményként jelennek meg a ${ CALENDAR_APP_NAME } eseményei közt, szervező és résztvevők nélkül. Hogy értesüljön az esemény változásairól és lássa a résztvevőket, kérje meg a szervezőket, hogy a Proton e-mail címével hívják meg."
       ],
       "This file contains an event invitation:": [
-        "",
-        ""
+        "Ez a fájl egy esemény meghívót tartalmaz:",
+        "Ez a fájl esemény meghívókat tartalmaz:"
       ],
       "This file contains an invitation response:": [
-        "",
-        ""
+        "Ez a fájl egy meghívó választ tartalmaz:",
+        "Ez a fájl meghívó válaszokat tartalmaz:"
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "Ez a fájl olyan adatokat is tartalmaz, amit nem lehet importálni:"
       ]
     },
     "Import contact": {
@@ -2844,7 +2826,7 @@
         "Ha ${ bold2StepsEnabled } a Gmail-ben, kérjük ellenőrizze hogy az alkalmazásjelszavát használja a rendes jelszava helyett."
       ],
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ha { bold2StepsEnabled }, kérjük ellenőrizze hogy az e-mail cím és az alkalmazásjelszó helyes.\n{ boldNot } használja az alapértelmezett jelszavát."
+        "Ha ${ bold2StepsEnabled }, kérjük ellenőrizze hogy az e-mail cím és az alkalmazásjelszó helyes.\n${ boldNot } használja az alapértelmezett jelszavát."
       ],
       "IMAP access is enabled in your external account": [
         "Az IMAP elérés engedélyezve van a külső fiókon"
@@ -2889,7 +2871,7 @@
         "Az alkalmazásjelszót használja a belépési jelszava helyett, ha:"
       ],
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Megpróbálhat kijelentkezni ${ boldGoogleAccounts }-ból a böngészőjében, és utána feloldani { linkCAPTCHA }-t."
+        "Megpróbálhat kijelentkezni ${ boldGoogleAccounts }-ból a böngészőjében, és utána feloldani ${ linkCAPTCHA }-t."
       ],
       "your app password is correct. Do ${ boldNot } use your regular password": [
         "az alkalmazásjelszó megfelelő. ${ boldNot } a belépési jelszavát használja"
@@ -2933,95 +2915,71 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Engedélyezze a ProtonMail-nek a hozzáférést a Gmail fiókhoz: engedélyezze a ${ bold2Steps }-t és kövesse az alábbi lépéseket."
-      ],
       "Click ${ boldManage } to expand the options menu": [
-        ""
+        "Kattintson a ${ boldManage } elemre a lehetőségek megnyitásához"
       ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        ""
+        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a Protonba importál"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        ""
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "Végül, ${ googleMailLink } fiókkal amelyet importálni szeretne, ${ googleCaptchaLink }."
+        "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a Proton kéri"
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a Proton kéri"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        ""
+        "Nyissa meg a ${ boldAccountInfo } részt a személyes adatainál, a ${ yahooMailLink } fiókjában"
       ],
       "Go to ${ boldAccountSecurity }": [
-        ""
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "Menjen a ${ googleAccountLink } címre. A ${ boldSecurity } szekcióban ${ boldAccess } a kevésbé megbízható alkalmazásokat. Ha nem látható ez a lehetőség, valószínűleg be van kapcsolva a kétlépcsős hitelesítés."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "Menjen a ${ googleAccountLink } címre. A ${ boldSecurity } szekcióban hozzon létre egy ${ boldAppPassword } ha még nincsen. Erre a jelszóra lesz szüksége az importáláshoz."
+        "Nyissa meg a ${ boldAccountSecurity } részt"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
-        ""
+        "Nyissa meg az Outlook.com ${ securitySettingsLink } részt"
       ],
       "If 2-step verification is off, turn it on": [
-        ""
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "A ${ boldLabels } szekcióban válassza ki a ProtonMail-be importálható mappákat."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "A ${ boldGmailSettings }-ben, válassza a ${ boldForwarding }-ot és engedélyezze az ${ boldIMAPAccess }-t."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        "Jelentkezzen be a Yahoo Mailbe és kattintson a nevére a jobb felső sarokban a ${ boldAccountInfo } eléréséhez. A ${ boldAccountSec } szekcióban a ${ boldAppPassword } résznél hozzon létre egy alkalmazásjelszót. Erre a jelszóra szüksége lesz az importálás alatt."
+        "Ha a kétlépéses hitelesítés ki van kapcsolva, kapcsolja be"
       ],
       "Open your ${ yahooMailLink } contacts": [
-        ""
+        "Nyissa meg a ${ yahooMailLink } névjegyeket"
       ],
       "Open your Outlook ${ outlookContactsLink }": [
-        ""
+        "Nyissa meg az Outlook ${ outlookContactsLink } részt"
       ],
       "Select ${ boldExportContacts } and choose which contacts to export": [
-        ""
+        "Válassza ki a ${ boldExportContacts } elemet és adja meg, hogy mely névjegyeket exportálja"
       ],
       "Select ${ boldExportCSV }": [
-        ""
+        "Válassza az ${ boldExportCSV } elemet"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "Naptár importálásához szükséges az ${ knowledgeBaseLink }. Az Outlookból a következő 3 lépéssel töltheti le:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "Naptár importálásához szükséges az ${ knowledgeBaseLink }. A Yahoo-tól a következő 3 lépéssel töltheti le:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "Naptár importálásához szükséges az ${ knowledgeBaseLink }. Töltse le az importálás megkezdése előtt"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. Az Outlookból a következő 3 lépéssel töltheti le:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. A Yahoo-tól a következő 3 lépéssel töltheti le:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. Töltse le az importálás megkezdése előtt"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        ""
+        "Az e-mailek Protonba való importálásához egy ${ appPasswordLink } szükséges a Outlookhoz. A következő módon juthat hozzá:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        ""
+        "Az e-mailek Protonba való importálásához egy ${ appPasswordLink } szükséges a Yahoo-tól. A következő módon juthat hozzá:"
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "Kétlépcsős hitelesítés"
-      ],
       "Account info": [
         "Fiók adatok"
       ],
@@ -3032,141 +2990,87 @@
         "alkalmazásjelszót"
       ],
       "Can view all details": [
-        ""
+        "Megjeleníthet minden részletet"
       ],
       "Export": [
-        ""
+        "Exportálás"
       ],
       "Export contacts": [
-        ""
+        "Névjegyek exportálása"
       ],
       "Export to CSV file": [
-        ""
-      ],
-      "Forwarding and POP/IMAP": [
-        "Továbbítás és POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Gmail beállítások"
+        "Exportálás CSV fájlba"
       ],
       "ICS": [
-        ""
-      ],
-      "IMAP access": [
-        "IMAP elérés"
+        "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        ""
-      ],
-      "Labels": [
-        "Címkék"
+        "a következő lépésben ki kell választania az összes jogosultságot"
       ],
       "Manage": [
-        ""
-      ],
-      "Other ways to sign in": [
-        "További bejelentkezési lehetőségek"
+        "Kezelés"
       ],
       "Publish a calendar": [
-        ""
-      ],
-      "Security": [
-        "Biztonság"
-      ],
-      "turn on access": [
-        "kapcsolja be"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "lépjen be a Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "majd nyissa meg ezt az oldalt a CAPTCHA megoldásához"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "Hogyan kell a Gmail beállításainál alkalmazásjelszót létrehozni"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Hogyan lehet letiltani a CAPTCHA-t a Gmailben"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Hogyan kell a Gmail beállításainál az IMAP továbbítást engedélyezni"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Hogyan kell a Gmail beállításainál az IMAP mappákat megjeleníteni"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Hogyan engedélyezheti a Kevésbé Megbízható Alkalmazásokat a Gmail beállításoknál"
+        "Naptár publikálása"
       ]
     },
     "Import instructions link": {
       "app password": [
-        ""
+        "alkalmazásjelszó"
       ],
       "app password or enable IMAP": [
-        ""
+        "alkalmazásjelszavat vagy engedélyezni az IMAP elérést"
       ],
       "contacts": [
-        ""
+        "névjegyek"
       ],
       "CSV file": [
-        ""
+        "CSV fájl"
       ],
       "full calendar view": [
-        ""
+        "teljes naptár nézetet"
       ],
       "ICS file": [
-        ""
+        "ICS fájl"
       ],
       "security settings": [
-        ""
+        "biztonsági beállítások"
       ],
       "shared calendars": [
-        ""
+        "megosztott naptárak"
       ],
       "Yahoo Mail": [
-        ""
+        "Yahoo Mail"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
-        ""
+        "Kattintson az ${ boldICS } hivatkozásra és töltse le a fájlt"
       ],
       "Go to ${ calendarLink } in your Outlook.com settings": [
-        ""
+        "Nyissa meg a ${ calendarLink } részt az Outlook.com beállításaiban"
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
-        ""
+        "Nyissa meg a ${ calendarViewLink } a Yahoo Mailben"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
-        ""
+        "Mozgassa az egeret az importálni kívánt naptár fölé és nyissa le a lenyíló menüt"
       ],
       "Select ${ boldExport } to export the calendar as an ICS file": [
-        ""
+        "Válassza az ${ boldExport } elemet a naptár ICS fájlként való exportálásához"
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        ""
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "Kétlépcsős hitelesítés kikapcsolva (alapértelmezett)"
-      ],
-      "2-step verification enabled": [
-        "Kétlépcsős hitelesítés bekapcsolva"
+        "A ${ boldPublish } alatt, válassza ki a naptárat amelyet importálni szeretne. Állítsa a jogosultságokat ${ boldCanViewAllDetails } típusúra és publikálja"
       ]
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        ""
+        "Biztos benne, hogy importálni kíván egy privát kulcsot? Egy nem biztonságosan generált, vagy kiszivárgott privát kulcs árthat az üzenetei biztonságának.\n\nA privát kulcshoz tartozó nyilvános kulcs nyilvánosan elérhető lesz a kulcsszervereinken. Ha a kulcs tartalmaz személyes adatot (pl. az ön nevét) és ezt nem szeretné nyilvánosságra hozni, importálás előtt szerkessze át a kulcsot."
       ]
     },
     "Import provider": {
       "Other": [
-        ""
+        "Egyéb"
       ]
     },
     "Import status": {
@@ -3189,7 +3093,7 @@
         "Sikertelen"
       ],
       "In progress": [
-        ""
+        "Folyamatban"
       ],
       "Paused": [
         "Felfüggesztve"
@@ -3745,6 +3649,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Írja be a helyreállítási telefonszámát és elküldjük a felhasználónevét vagy e-mail címét."
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        "Esemény meghívók és jelentkezések ezen a nyelven kerülnek elküldésre."
+      ],
       "Expired": [
         "Lejárt"
       ],
@@ -3814,9 +3721,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Ha más e-mail szolgáltatót használ vagy már előkészítette a fiókját, ezt a lépést átugorhatja."
-      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
       ],
@@ -3882,7 +3786,7 @@
         "E-mail fiók importálása"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        ""
+        "Importálja e-mailjeit, naptárait és névjegyeit más szolgáltatóktól a Protonhoz. Lépésről-lépésre követheti az útmutatót az adatok átköltöztetéséhez és titkosításához. Üdvözöljük a biztonságos magánszféra világában."
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "FONTOS: A privát kulcsok letöltése és továbbítása, illetve nem biztonságos adathordozón való tárolása veszélyeztetheti fiókja biztonságát!"
@@ -3955,12 +3859,6 @@
       ],
       "Label all imported messages as": [
         "Az importált üzenetek megjelölése mint"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        "Egy nagyobb importálás akár napokig is eltarthat."
       ],
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
@@ -4297,7 +4195,7 @@
         "Képernyőkép(ek) csatolva"
       ],
       "Select a service provider to start": [
-        ""
+        "Válaszon ki egy szolgáltatót a kezdéshez"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
@@ -4443,9 +4341,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Ezzel a funkcióval bekapcsolhatja a kétlépcsős hitelesítést (2FA). A kétlépcsős hitelesítés biztonságosabbá teszi a Proton fiókját, ezért javasolt engedélyezni."
       ],
-      "to": [
-        "ide:"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
       ],
@@ -4470,9 +4365,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Hogy mindig értesüljön a legfrissebb Proton hírekről, iratkozzon fel hírleveleinkre és időnként nézze meg a blogunkat."
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Az importáláshoz készítse elő a külső e-mail fiókját, az alábbiak szerint:"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "A folytatáshoz válasszon egy fiók helyreállítási módszert, hogy ellenőrizhessük a kérést."
       ],
@@ -4484,9 +4376,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Hozza át biztonságosan az adatait a Protonhoz. Az Import Assistant csatlakozik a külső e-mail szolgáltatójához és importálja a kiválasztott üzeneteket és mappákat."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "A kétlépcsős hitelesítés további biztonságot nyújt abban az esetben, ha a jelszava illetéktelen kezekbe kerülne."
@@ -4584,9 +4473,6 @@
       "We use 3-D Secure to protect your payments.": [
         "3D Secure kódot használunk a kifizetések védelme érdekében."
       ],
-      "We will notify you once your import is finished.": [
-        "Értesítést kap az importálás befejezésekor."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
       ],
@@ -4656,9 +4542,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
-      "You can continue using Proton services as usual.": [
-        "A Proton szolgáltatásait tovább használhatja közben."
-      ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Egy naptárhoz maximum ${ MAX_LINKS_PER_CALENDAR } linket hozhat létre. Újabb link létrehozásához töröljön egyet az alábbi listáról."
       ],
@@ -4669,7 +4552,7 @@
         "Bekapcsolhatja a bejelentkezési naplót, hogy lássa a fiókba való belépéseket. Tároljuk a fiókba belépéshez használt IP címet, az időpontot és a sikertelen bejelentkezéseket is."
       ],
       "You can import one data type at a time.": [
-        ""
+        "Egyszerre egyféle adat importálható."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Már fogadhat üzeneteket a @pm.me címére. Váltson előfizetéses csomagra, hogy küldhessen is @pm.me címzéssel és további @pm.me címeket hozhasson létre."
@@ -4711,7 +4594,7 @@
         "Link létrehozásához rendelkeznie kell egy személyes naptárral."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "A .ics fájlból való importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Az importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
@@ -4773,20 +4656,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Az importálás a(z) ${ delayedImport.Account } címről átmenetileg késik."
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "Az importálásod a ${ delayedImport.Email } címről átmenetileg késik."
-      ],
-      "Your import has started!": [
-        "Az importálás elindult!"
-      ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
       ],
       "Your login information will not be saved after the import is completed.": [
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
-      ],
-      "Your messages are being imported from": [
-        "Az üzenetek innen kerülnek importálásra:"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "A szervezeti jelszó más felhasználókkal való megosztásával, számukra is adminisztrátori jogköröket biztosíthat. Ez egy vészhelyzeti visszaállító kódként is használható, abban az esetben is elérje a szervezetét, ha saját a fiókja elérését elvesztené. Tárolja ezt a jelszót biztonságban."
@@ -4889,14 +4763,6 @@
         "Tartalmazza"
       ]
     },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "Adja meg a szöveget, hogy megerősítse"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "A művelet jóváhagyásához írja be a mezőbe az alábbi szöveget."
-      ]
-    },
     "Invoice state display as badge": {
       "Billed": [
         "Számlázva"
@@ -4948,10 +4814,10 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        ""
+        "Már létezik kulcs ugyanezzel a titkosítási algoritmussal. Újabb kulcs létrehozása lassítani fogja a fiók betöltését. Biztos benne, hogy folytatja?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        ""
+        "Ehhez a címhez már vagy egy aktív kulcs ugyanilyen titkosítási algoritmussal. Újabb kulcs létrehozása le fogja lassítani a fiók betöltését és a kulcs törlése problémákat okozhat. Amennyiben azért hoz létre új kulcsot, mert a korábbi kompromittált, akkor jelölje meg azt a kulcsot kompromittáltként. Biztos, hogy folytatja?"
       ],
       "Generate key": [
         "Kulcs generálása"
@@ -4960,13 +4826,13 @@
         "Új kulcs sikeresen létrehozva. Ujjlenyomat: ${ fp }."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        ""
+        "A titkosítási kulcsok létrehozása folyamatban. Ez több percig is eltarthat és átmenetileg megállíthatja a böngészőt."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
         "A címéhez tartozó titkosítási kulcsok létrehozása folyamatban. Ez több percig is eltarthat és átmenetileg megállíthatja a böngészőt."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        ""
+        "Új titkosítási kulcsot generálhat, ha úgy gondolja, hogy az előző kulcs kompromittálódott."
       ]
     },
     "Key state badge": {
@@ -5407,7 +5273,7 @@
         "Felhasznált kredit"
       ],
       "Current login password": [
-        ""
+        "Jelenlegi bejelentkezési jelszó"
       ],
       "Customize invoices": [
         "Számlák személyre szabása"
@@ -5428,7 +5294,7 @@
         "Alapértelmezett nyelv"
       ],
       "Default language (${ defaultLanguage })": [
-        ""
+        "Alapértelmezett nyelv (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Alapértelmezett PGP séma"
@@ -5535,17 +5401,11 @@
       "From: ${ emailFrom }": [
         "Forrás: ${ emailFrom }"
       ],
-      "From: ${ fromEmailAddress }": [
-        "Forrás: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         "Forrás: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "Forrás: ${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "Forrás: ${ modalModel.email }"
       ],
       "Gift code": [
         "Ajándék kód"
@@ -5787,11 +5647,11 @@
       "Select your country": [
         "Válassza ki az országot"
       ],
-      "Send and reply to invites in": [
-        ""
-      ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
+      ],
+      "Send invites in": [
+        "Meghívók nyelve"
       ],
       "Show secondary time zone": [
         "Másodlagos időzóna megjelenítése"
@@ -5861,9 +5721,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Cél: ${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Cél: ${ toEmailAddress }"
       ],
       "Total": [
         "Összesen"
@@ -6020,7 +5877,7 @@
         "Proton hírlevél"
       ],
       "Proton offers and promotions": [
-        ""
+        "Proton ajánlatok és promóciók"
       ],
       "Proton product announcements": [
         "Proton termékekkel kapcsolatos hírek"
@@ -6169,8 +6026,8 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } / ${ calendarsToBeCreated } létrehozva",
+        "${ createdCalendars } / ${ calendarsToBeCreated } létrehozva"
       ],
       "Almost there": [
         "Majdnem kész"
@@ -6182,10 +6039,10 @@
         "Új naptárak lérehozása"
       ],
       "Gathering your data": [
-        ""
+        "Adatok összegyűjtése"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Összegyűjtjük az adatait a szolgáltatótól"
       ],
       "Your import is starting": [
         "Az importálás indul"
@@ -6282,12 +6139,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -6328,7 +6185,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Ez véglegesen törli a szervezetéhez tartozó összes al-felhasználót, fiókot és adatot."
       ]
     },
     "Message": {
@@ -6352,31 +6209,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        ""
+        "Naptárak importálása más szolgáltatótól"
       ],
       "How to import calendars from Outlook": [
-        ""
+        "Naptárak importálása az Outlookból"
       ],
       "How to import calendars from Yahoo": [
-        ""
+        "Naptárak importálása a Yahoo-tól"
       ],
       "How to import contacts from another service": [
-        ""
+        "Névjegyek importálása más szolgáltatótól"
       ],
       "How to import contacts from Outlook": [
-        ""
+        "Névjegyek importálása az Outlookból"
       ],
       "How to import contacts from Yahoo": [
-        ""
+        "Névjegyek importálása a Yahoo-tól"
       ],
       "How to import emails from another service": [
-        ""
+        "E-mailek importálása más szolgáltatótól"
       ],
       "How to import emails from Outlook": [
-        ""
+        "E-mailek importálása az Outlookból"
       ],
       "How to import emails from Yahoo": [
-        ""
+        "E-mailek importálása a Yahoo-tól"
       ]
     },
     "Modal title and action": {
@@ -6616,7 +6473,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Az importlás elindításához ${ boldNextStep } melyet az alkalmazás kér."
       ]
     },
     "Onboarding Proton": {
@@ -6880,10 +6737,10 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        ""
+        "Tartalmak betöltése proxy szerveren keresztül (javasolt)"
       ],
       "Load content via proxy and store as attachments": [
-        ""
+        "Tartalmak betöltése proxy szerveren keresztül és tárolás mellékletként"
       ]
     },
     "OS compatibility": {
@@ -7210,14 +7067,6 @@
         "Munkahelyi"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "E-mail"
@@ -7254,11 +7103,6 @@
         "Olvashatja a nem-privát felhasználók leveleit"
       ]
     },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "Üzenetek végeleges törlése a(z) ${ email } címen"
-      ]
-    },
     "Select files": {
       "Browse": [
         "Tallózás"
@@ -7267,7 +7111,7 @@
         "Feltöltés"
       ],
       "Upload additional files": [
-        ""
+        "További fájlok feltöltése"
       ]
     },
     "Select search results": {
@@ -7277,7 +7121,7 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        ""
+        "Tegye bizalmassá a magánszféráját. Könnyedén és biztonságosan."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Egy üzenetre több címkét is alkalmazhat, de egy üzenet általában egy mappában lehet. Húzza arrébb a címkéket és a mappákat a sorrendjük megváltoztatásához."
@@ -7453,17 +7297,17 @@
         "Naptár URL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "Egy külső vagy nyilvános naptárra és annak eseményeire való feliratkozáshoz, írja be annak URL címét. Egy csak olvasható naptárként fog megjelenni a feliratkozott naptárainál. ${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "Olvassa el hogyan kaphat személyes naptár hivatkozást."
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "Ezzel a hivatkozással, a Google nyilvánossá fogja tenni azt a naptárat amelyre fel van iratkozva"
       ],
       "This link might be wrong": [
         "Ez a hivatkozás valószínűleg hibás"
@@ -7523,9 +7367,6 @@
       "Default calendar updated": [
         "Alapértelmezett naptár frissítve"
       ],
-      "Deleting original messages": [
-        "Eredeti üzenetek törlése"
-      ],
       "DMARC value copied to clipboard": [
         "A DMARC érték a vágólapra másolva"
       ],
@@ -7549,9 +7390,6 @@
       ],
       "Import record deleted": [
         "Importálási elem törölve"
-      ],
-      "Import resumed": [
-        "Importálás folytatva"
       ],
       "Invoice customized": [
         "Számlabeállítások mentve"
@@ -7989,9 +7827,6 @@
       "Customize calendar import": [
         "A naptár importálás testreszabása"
       ],
-      "Customize import": [
-        "Importálás beállításai"
-      ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
       ],
@@ -8167,9 +8002,6 @@
         "Importálás egyszerű eseményként?",
         "Importálás egyszerű eseményekként?"
       ],
-      "Import Assistant": [
-        "Import Assistant"
-      ],
       "Import contacts": [
         "Névjegyek importálása"
       ],
@@ -8181,9 +8013,6 @@
       ],
       "Import groups": [
         "Csoportok importálása"
-      ],
-      "Import in progress": [
-        "Importálás folyamatban"
       ],
       "Import key": [
         "Kulcs importálása"
@@ -8198,7 +8027,7 @@
         "Érvénytelen ellenőrző kód"
       ],
       "Invitations": [
-        ""
+        "Meghívók"
       ],
       "Invoices": [
         "Számlák"
@@ -8308,15 +8137,6 @@
       "Plan summary": [
         "Csomag összefoglaló"
       ],
-      "Prepare for import": [
-        "Importálás előkészítése"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "A Gmail felkészítése az importálásra: ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Yahoo Mail előkészítése az importáláshoz"
-      ],
       "Previous": [
         "Előző"
       ],
@@ -8381,7 +8201,7 @@
         "Névjegy csoport kiválasztása"
       ],
       "Select permissions": [
-        ""
+        "Válasszon jogosultságokat"
       ],
       "Select plan": [
         "Csomag kiválasztása"
@@ -8516,7 +8336,7 @@
         "Figyelem!"
       ],
       "What would you like to import?": [
-        ""
+        "Mit szeretne importálni?"
       ],
       "What's new": [
         "Újdonságok"
@@ -8784,13 +8604,13 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "Jó nap ez egy e-mail írására"
       ],
       "Update default font and size": [
-        ""
+        "Alapértelmezett betűtípus és méret frissítése"
       ],
       "Your default font will look like following:": [
-        ""
+        "Így fog kinézni az alapértelmezett betűtípus:"
       ]
     },
     "Upgrade": {
@@ -8827,10 +8647,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Kattintson a videó újrajátszásához"
       ],
       "Replay video": [
-        ""
+        "Videó újrajátszása"
       ]
     },
     "VPN feature": {
@@ -8947,12 +8767,12 @@
         "${ n }+ kiszolgáló"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } VPN kapcsolódás",
+        "${ n } VPN kapcsolódás"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } ${ numberOfCountries } országban",
+        "${ numberOfServers } ${ numberOfCountries } országban"
       ]
     },
     "VPN upsell feature": {
@@ -9023,9 +8843,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
-      "permanently delete all messages on ${ email }": [
-        "véglegesen törli az összes üzenetet a(z) ${ email } címen"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ha ezt a fizetési módot választja, akkor a csomagját nem tudjuk azonnal frissíteni. A frissítést akkor végezzük, amint a befizetés megérkezik."
       ],
@@ -9039,10 +8856,7 @@
         "A hibajelentések nem végpontok közt titkosítottak, kérünk ne küldjön semmilyen érzékeny információt."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "Ez a művelet ${ boldWarning }. Nem lesz lehetősége az üzenetek visszaállítására a ${ domain } címen."
+        "Az eszközén a dátum és idő beállítása pontatlan. ${ learnMore }"
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Ez a lehetőség csak ProtonMail Professional vagy magasabb csomagban érhető el"
@@ -9066,10 +8880,10 @@
         "Az importálási elem a továbbiakban nem fog szerepelni a listán."
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "A helyreállító fájlja elavult. Nem alkalmas az új adatok helyreállítására, ha ismét visszaállítaná a fiókja jelszavát."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "A helyreállító jelmondata elavult. Nem alkalmas az új adatok helyreállítására, ha ismét visszaállítaná a fiókja jelszavát."
       ]
     },
     "Warning for domain modal": {
@@ -9299,25 +9113,14 @@
         "Szerda"
       ]
     },
-    "Wizard step": {
-      "Authenticate": [
-        "Azonosítás"
-      ],
-      "Configure Import": [
-        "Importálás beállítása"
-      ],
-      "Import": [
-        "Importálás"
-      ]
-    },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Minden ${ interval }. évben",
         "Minden ${ interval }. évben"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Minden ${ interval }. évben, { timesString }",
-        "Minden ${ interval }. évben, { timesString }"
+        "Minden ${ interval }. évben, ${ timesString }",
+        "Minden ${ interval }. évben, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
         "Minden ${ interval }. évben, ${ untilString }",

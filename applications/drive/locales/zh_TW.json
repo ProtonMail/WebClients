@@ -1559,6 +1559,11 @@
         "ProtonContacts ${ forNow }不支援："
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "在下一個步驟中，您必須選取所有的權限"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 個聯絡人之中，有 ${ totalContactsDiscarded } 個將不會匯入。按一下以取得詳細資料"
@@ -3453,8 +3458,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        ""
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "需要注意的是 ${ boldNextStep } ，以讓應用程式開始匯入。"
       ]
     },
     "Onboarding Proton": {
@@ -4342,6 +4347,9 @@
       ],
       "Select link expiration time": [
         "選取連結過期時間"
+      ],
+      "Select permissions": [
+        "選取權限"
       ],
       "Select what to import": [
         ""

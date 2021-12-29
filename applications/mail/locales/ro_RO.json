@@ -318,6 +318,9 @@
       "Encryption": [
         "Criptare"
       ],
+      "exclude message content": [
+        "exclude conținutul mesajului"
+      ],
       "Expand composer": [
         "Extindere panou editare"
       ],
@@ -656,8 +659,8 @@
       "Recover data": [
         "Recuperare date"
       ],
-      "Refine your search": [
-        "Rafinați căutarea"
+      "Refine it": [
+        "Rafinați-l"
       ],
       "refresh the page": [
         "împrospătați pagina"
@@ -1311,6 +1314,11 @@
       ],
       "Website access problem": [
         "Problemă accesare site web"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Are un eveniment în calendar"
       ]
     },
     "Calendar feature": {
@@ -3452,7 +3460,7 @@
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la $ { strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
+        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
       "Click to view group details": [
         "Faceți clic pentru detalii grup"
@@ -4022,6 +4030,9 @@
       "Screenshot(s) attached": [
         "Capturi de ecran adăugate"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Căutarea durează prea mult? ${ dropdownButton } sau ${ toggleOffButton } din această sesiune de căutare."
+      ],
       "Seems like you are all caught up for now": [
         "Se pare că deocamdată sunteți ocupat(ă)"
       ],
@@ -4093,9 +4104,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Treceţi la ${ professionalPlan } pentru a adăuga mai mulți utilizatori."
-      ],
-      "Taking too long?": [
-        "Durează prea mult?"
       ],
       "Test link": [
         "Testare legătură"
@@ -4376,7 +4384,7 @@
         "Puteți verifica progresul ${ importProgressLink }."
       ],
       "You can either update your search query or ${ button }": [
-        "Puteți să actualizați căutarea sau să ${ { button }}"
+        "Puteți să actualizați căutarea sau să ${ button }"
       ],
       "You can either update your search query or clear it": [
         "Puteți actualiza interogarea de căutare sau să o goliți"
@@ -5606,6 +5614,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Trimitere programată anulată"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Programarea a fost anulată. Mesajul a fost mutat în «Ciorne»."
       ],
@@ -7382,7 +7393,7 @@
         "Date criptate cu semnătură digitală verificată"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Acces la toate funcțiile plătite, pentru ${ vpnAppName } și { mailAppName } (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
+        "Acces la toate funcțiile plătite, pentru ${ vpnAppName } și ${ mailAppName } (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
         "Obțineți acces la toate funcțiile cu plată, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."

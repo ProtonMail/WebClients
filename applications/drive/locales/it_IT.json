@@ -163,7 +163,7 @@
       ],
       "Delete ${ selectedCount } contact": [
         "Elimina ${ selectedCount } contatto",
-        "Elimina { selectedCount } contatti"
+        "Elimina ${ selectedCount } contatti"
       ],
       "Delete ${ selectedCount } contact group": [
         "Elimina ${ selectedCount } gruppo di contatto",
@@ -1577,6 +1577,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts non supporta ${ forNow }:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "nel passaggio successivo è necessario selezionare tutti i permessi"
       ]
     },
     "Import warning": {
@@ -3533,8 +3538,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Tieni presente che devi accettare tutti i permessi richiesti dall'applicazione per poter avviare l'importazione."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Tieni presente che ${ boldNextStep } richiesto dall'applicazione per avviare l'importazione."
       ]
     },
     "Onboarding Proton": {
@@ -4432,6 +4437,9 @@
       ],
       "Select link expiration time": [
         "Seleziona ora di scadenza del link"
+      ],
+      "Select permissions": [
+        "Seleziona permessi"
       ],
       "Select what to import": [
         "Seleziona cosa importare"

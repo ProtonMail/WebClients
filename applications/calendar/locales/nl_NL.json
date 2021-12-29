@@ -3361,7 +3361,7 @@
         "Frequentie"
       ],
       "From: ${ importedEmail }": [
-        "Van: { importedEmail }"
+        "Van: ${ importedEmail }"
       ],
       "Hide password": [
         "Wachtwoord verbergen"

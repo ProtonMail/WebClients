@@ -235,7 +235,7 @@
       ],
       "Delete ${ selectedCount } contact": [
         "Elimina ${ selectedCount } contatto",
-        "Elimina { selectedCount } contatti"
+        "Elimina ${ selectedCount } contatti"
       ],
       "Delete ${ selectedCount } contact group": [
         "Elimina ${ selectedCount } gruppo di contatto",
@@ -315,6 +315,9 @@
       ],
       "Encryption": [
         "Crittografia"
+      ],
+      "exclude message content": [
+        ""
       ],
       "Expand composer": [
         "Espandi il compositore"
@@ -653,8 +656,8 @@
       "Recover data": [
         "Recupera dati"
       ],
-      "Refine your search": [
-        "Perfeziona la tua ricerca"
+      "Refine it": [
+        ""
       ],
       "refresh the page": [
         "aggiorna la pagina"
@@ -1302,6 +1305,11 @@
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Screenshot allegato/i"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        ""
+      ],
       "Seems like you are all caught up for now": [
         "Sembra che sia tutto a posto al momento"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Passa a ${ professionalPlan } per aggiungere altri utenti."
-      ],
-      "Taking too long?": [
-        "In attesa da troppo tempo?"
       ],
       "Test link": [
         "Test link"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        ""
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Pianificazione annullata. Il messaggio è stato spostato nelle Bozze."
       ],
