@@ -1,18 +1,18 @@
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { createHost } from '../lib';
-import { ProtonMessageResponses, ProtonMessages } from './interface';
+import { Action, ProtonMessageResponses, ProtonMessages } from './interface';
 
 const handler = async (message: ProtonMessages): Promise<ProtonMessageResponses | undefined> => {
-    if (message.type === 'getLocalStorage') {
+    if (message.type === Action.getLocalStorage) {
         return getItem(message.payload.key);
     }
 
-    if (message.type === 'setLocalStorage') {
+    if (message.type === Action.setLocalStorage) {
         setItem(message.payload.key, message.payload.value);
         return;
     }
 
-    if (message.type === 'removeLocalStorage') {
+    if (message.type === Action.removeLocalStorage) {
         removeItem(message.payload.key);
         return;
     }
