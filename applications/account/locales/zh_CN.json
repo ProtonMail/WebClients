@@ -244,14 +244,8 @@
       "Delete": [
         "删除"
       ],
-      "Delete all messages": [
-        "刪除所有邮件"
-      ],
       "Delete link": [
         "删除链接"
-      ],
-      "Delete original messages": [
-        "删除原始邮件"
       ],
       "Delete record": [
         "删除记录"
@@ -390,9 +384,6 @@
       ],
       "Import emails": [
         ""
-      ],
-      "Import from .csv or vCard": [
-        "从 .csv 或 vCard 导入"
       ],
       "Import from .ics": [
         "从 .ics 文件导入"
@@ -688,17 +679,11 @@
       "Skip": [
         "跳过"
       ],
-      "Skip to import": [
-        "前往导入"
-      ],
       "Sort": [
         "排序"
       ],
       "Start import": [
         "开始导入"
-      ],
-      "Start Import Assistant": [
-        "启动导入助手"
       ],
       "Start setup": [
         "开始设置"
@@ -1407,9 +1392,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "刪除所有邮件"
-      ],
       "Import is incomplete!": [
         "导入未完成！"
       ],
@@ -1525,7 +1507,7 @@
     },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
-        "(通过 { entryCountryName })"
+        "(通过 ${ entryCountryName })"
       ]
     },
     "Credits": {
@@ -1742,7 +1724,7 @@
         "${ formattedStart } 的活动邀请函"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "开始于 { formattedStart } 的活动邀请函"
+        "开始于 ${ formattedStart } 的活动邀请函"
       ],
       "Update for an event on ${ formattedStart }": [
         "更新 ${ formattedStart } 的活动"
@@ -2900,9 +2882,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "允许 ProtonMail 访问您的 Gmail 账户：根据您是否已开启${ bold2Steps }按相应步骤操作。"
-      ],
       "Click ${ boldManage } to expand the options menu": [
         ""
       ],
@@ -2911,9 +2890,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         ""
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "最后，使用您要导入的账户${ googleMailLink }，${ googleCaptchaLink }。"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         ""
@@ -2927,26 +2903,11 @@
       "Go to ${ boldAccountSecurity }": [
         ""
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "前往 ${ googleAccountLink }，在${ boldSecurity }设置中，对安全性较低的应用${ boldAccess }。如果找不到此选项，您可能已经开启了两步验证。"
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "前往 ${ googleAccountLink }，在${ boldSecurity }设置中，创建一个${ boldAppPassword }，导入过程中需要用到这个密码。"
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         ""
       ],
       "If 2-step verification is off, turn it on": [
         ""
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "在${ boldLabels }设置中，选择您要导入到 ProtonMail 的文件夹。"
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "在 ${ boldGmailSettings }中，确保${ boldForwarding } 中的 ${ boldIMAPAccess }选项已开启。"
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        "登录雅虎邮箱，点击右上角您的用户名打开${ boldAccountInfo }。在${ boldAccountSec }中，滑至${ boldAppPassword }并创建一个密码，导入过程中需要用到这个密码。"
       ],
       "Open your ${ yahooMailLink } contacts": [
         ""
@@ -2986,9 +2947,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "两步验证"
-      ],
       "Account info": [
         "账户信息"
       ],
@@ -3010,63 +2968,17 @@
       "Export to CSV file": [
         ""
       ],
-      "Forwarding and POP/IMAP": [
-        "转发和 POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Gmail 设置"
-      ],
       "ICS": [
         ""
-      ],
-      "IMAP access": [
-        "IMAP 访问"
       ],
       "in the next step you need to select all the permissions": [
         ""
       ],
-      "Labels": [
-        "标签"
-      ],
       "Manage": [
         ""
       ],
-      "Other ways to sign in": [
-        "其他登录方式"
-      ],
       "Publish a calendar": [
         ""
-      ],
-      "Security": [
-        "安全"
-      ],
-      "turn on access": [
-        "打开访问权限"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "登录到 Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "然后打开此页面以解锁人机验证"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "如何在 Gmail 设置中创建应用专用密码"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "如何禁用 Gmail 中的人机验证"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "如何在 Gmail 设置中开启 IMAP 转发"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "如何在 Gmail 设置中显示 IMAP 文件夹"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "如何在 Gmail 设置中开启对安全性较低的应用的访问权限"
       ]
     },
     "Import instructions link": {
@@ -3116,14 +3028,6 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
         ""
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "两步验证已关闭（默认设置）"
-      ],
-      "2-step verification enabled": [
-        "两步验证已开启"
       ]
     },
     "Import key": {
@@ -3243,7 +3147,7 @@
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
-        "已在 Gmail 中找到 { providerFoldersNumLocalized } 个标签"
+        "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "{ save20 } 订阅，切换到{ annualBilling }"
@@ -3689,6 +3593,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "请输入您的恢复电话号码，我们将发送您的用户名或电子邮件地址信息。"
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        ""
+      ],
       "Expired": [
         "已过期"
       ],
@@ -3757,9 +3664,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "若您使用的是其他邮箱或已经完成准备工作，就可以开始导入了。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如果您认为这是一个错误，请联系${ contactLink } 。"
@@ -3898,12 +3802,6 @@
       ],
       "Label all imported messages as": [
         "给导入的所有邮件加标签"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        "大批量的导入可能需要几天才能完成。"
       ],
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
@@ -4385,9 +4283,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "接下来您将为 Proton 账户开启双重验证（2FA），这将提高账户安全性，我们建议您立即开启。"
       ],
-      "to": [
-        "导入至"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要确认，请输入您想要删除的用户之名称。"
       ],
@@ -4412,9 +4307,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "您可以订阅我们的各类邮件或阅读我们的博客了解 Proton 产品的动态。"
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "请按下列步骤准备导入您的其他邮箱："
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "要想继续，请选择一种账户恢复方法用于验证请求。"
       ],
@@ -4426,9 +4318,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "将您的数据安全地转移至 Proton。导入助手能够连接您的其他邮箱，并导入您所需邮件和文件夹。"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "如果您的密码不慎泄露，双重验证可以作为另一道防线保护账户安全。"
@@ -4526,9 +4415,6 @@
       "We use 3-D Secure to protect your payments.": [
         "我们使用 3-D Secure 保护您的支付安全。"
       ],
-      "We will notify you once your import is finished.": [
-        "导入完成后，我们会通知您。"
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
@@ -4597,9 +4483,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在 ${ importProgressLink } 查看导入进度。"
-      ],
-      "You can continue using Proton services as usual.": [
-        "您可以正常使用 Proton 服务。"
       ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "每个日历最多可以创建 ${ MAX_LINKS_PER_CALENDAR } 个链接，要新建链接请先从下方列表中删除一个。"
@@ -4715,20 +4598,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "您的 ${ delayedImport.Account } 导入被暂时推迟。"
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "您从 ${ delayedImport.Email } 导入被暂时推迟。"
-      ],
-      "Your import has started!": [
-        "导入已开始！"
-      ],
       "Your import will not be processed.": [
         "您的导入将不会被处理。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后将不会被保存您的登录信息。"
-      ],
-      "Your messages are being imported from": [
-        "您的邮件将从"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "若您希望给予他人管理员权限，可以告诉他们这个机构密码。假如您无法登录自己的账户，这个密码也能起到取回机构账户控制权的作用。请妥善保管此密码。"
@@ -4829,14 +4703,6 @@
     "information": {
       "Included": [
         "已包含"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "输入以进行确认"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "要确认此操作，请在下方的框中输入以下文本："
       ]
     },
     "Invoice state display as badge": {
@@ -5321,7 +5187,7 @@
         "确认密码"
       ],
       "Contacts": [
-        "通信录"
+        "通讯录"
       ],
       "Conversation grouping": [
         "会话分组"
@@ -5473,17 +5339,11 @@
       "From: ${ emailFrom }": [
         "来自: ${ emailFrom }"
       ],
-      "From: ${ fromEmailAddress }": [
-        "来自: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "来自：${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "来自：${ modalModel.email }"
       ],
       "Gift code": [
         "礼品码"
@@ -5725,11 +5585,11 @@
       "Select your country": [
         "选择国家"
       ],
-      "Send and reply to invites in": [
-        ""
-      ],
       "Send auto-reply": [
         "自动回复"
+      ],
+      "Send invites in": [
+        ""
       ],
       "Show secondary time zone": [
         "显示次要时区"
@@ -5799,9 +5659,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "导入到：${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "导入到：${ toEmailAddress }"
       ],
       "Total": [
         "合计"
@@ -7136,14 +6993,6 @@
         "工作"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "谷歌邮箱"
-      ],
-      "Yahoo Mail": [
-        "雅虎邮件"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "邮件"
@@ -7178,11 +7027,6 @@
       ],
       "Reading emails of non-private users": [
         "读取非私密用户的邮件"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "永久删除 ${ email } 的信息"
       ]
     },
     "Select files": {
@@ -7449,9 +7293,6 @@
       "Default calendar updated": [
         "默认日历已更新"
       ],
-      "Deleting original messages": [
-        "正在删除原始邮件"
-      ],
       "DMARC value copied to clipboard": [
         "DMARC 内容已复制到剪贴板"
       ],
@@ -7475,9 +7316,6 @@
       ],
       "Import record deleted": [
         "导入记录已删除"
-      ],
-      "Import resumed": [
-        "导入已继续"
       ],
       "Invoice customized": [
         "账单信息已更改"
@@ -7913,9 +7751,6 @@
       "Customize calendar import": [
         "自定义日历导入"
       ],
-      "Customize import": [
-        "自定义导入"
-      ],
       "Customize your mail import": [
         "自定义您的邮件导入"
       ],
@@ -8090,9 +7925,6 @@
       "Import as simple event?": [
         "导入为简单活动？"
       ],
-      "Import Assistant": [
-        "导入助手"
-      ],
       "Import contacts": [
         "导入联系人"
       ],
@@ -8104,9 +7936,6 @@
       ],
       "Import groups": [
         "导入群组"
-      ],
-      "Import in progress": [
-        "导入进行中"
       ],
       "Import key": [
         "导入密钥"
@@ -8230,15 +8059,6 @@
       ],
       "Plan summary": [
         "计划摘要"
-      ],
-      "Prepare for import": [
-        "准备导入"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "准备Gmail导入 ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "准备从Yahoo Mail导入"
       ],
       "Previous": [
         "前一页"
@@ -8940,9 +8760,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
-      "permanently delete all messages on ${ email }": [
-        "永久删除 ${ email } 的所有信息"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
@@ -8957,9 +8774,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您设备上的日期和时间设置未同步。${ learnMore }"
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "此操作将${ boldWarning }，您将无法恢复 ${ domain } 上的信息。"
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "此功能仅限 ProtonMail 专业版及以上套餐使用"
@@ -9187,17 +9001,6 @@
       ],
       "Wednesday": [
         "星期三"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "验证账户"
-      ],
-      "Configure Import": [
-        "导入配置"
-      ],
-      "Import": [
-        "导入"
       ]
     },
     "Yearly recurring event, frequency": {

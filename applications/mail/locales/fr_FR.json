@@ -316,6 +316,9 @@
       "Encryption": [
         "Chiffrement"
       ],
+      "exclude message content": [
+        "excluez le contenu des messages"
+      ],
       "Expand composer": [
         "Développer le composeur"
       ],
@@ -653,8 +656,8 @@
       "Recover data": [
         "Récupérer les données"
       ],
-      "Refine your search": [
-        "Affinez votre recherche"
+      "Refine it": [
+        "Affinez-la"
       ],
       "refresh the page": [
         "actualiser la page"
@@ -1304,6 +1307,11 @@
         "Problème d'accès au site web"
       ]
     },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Possède un événement de calendrier"
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Importation de calendrier"
@@ -1873,7 +1881,7 @@
         "Confortable"
       ],
       "Compact": [
-        "Compact"
+        "Compacte"
       ]
     },
     "Description": {
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Capture(s) d’écran jointe(s)"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "La recherche prend trop de temps ? ${ dropdownButton } ou ${ toggleOffButton } de cette session de recherche."
+      ],
       "Seems like you are all caught up for now": [
         "Il semblerait que vous ayez fait tout ce qu’il y avait à faire pour aujourd’hui"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Passez à ${ professionalPlan } pour ajouter plus d'utilisateurs."
-      ],
-      "Taking too long?": [
-        "Cela prend trop de temps ?"
       ],
       "Test link": [
         "Lien test"
@@ -5149,7 +5157,7 @@
         "Confortable"
       ],
       "Compact": [
-        "Compact"
+        "Compacte"
       ]
     },
     "Label to change view layout": {
@@ -5387,7 +5395,7 @@
         "Groupes de contact"
       ],
       "Custom email addresses": [
-        "Adresses électroniques personnalisées"
+        "Adresses e-mail personnalisées"
       ],
       "Custom filters": [
         "Filtres personnalisés"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Envoi programmé annulé"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Programmation annulée. Le message a été déplacé dans les brouillons."
       ],
@@ -6006,7 +6017,7 @@
         "Bloqueur de publicités intégré (NetShield)"
       ],
       "Custom email addresses": [
-        "Adresses électroniques personnalisées"
+        "Adresses e-mail personnalisées"
       ],
       "Early access to new products": [
         "Accès anticipé aux nouveaux produits"
@@ -6015,7 +6026,7 @@
         "Haute vitesse"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "Vitesse maximale (jusqu’à 10 Gbit/s)"
+        "Vitesse maximale (jusqu’à 10 Gbit/s)"
       ],
       "Includes 6 user accounts": [
         "Comprend 6 comptes utilisateur"

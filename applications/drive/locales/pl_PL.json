@@ -1619,6 +1619,11 @@
         "ProtonContacts nie obsługuje ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "w następnym kroku musisz zaakceptować wszystkie uprawnienia"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
@@ -3531,9 +3536,9 @@
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "Nie udało się usunąć linku do pliku",
-        "Nie udało się usunąć { failedCount } linków do plików",
-        "Nie udało się usunąć { failedCount } linków do plików",
-        "Nie udało się usunąć { failedCount } linków do plików"
+        "Nie udało się usunąć ${ failedCount } linków do plików",
+        "Nie udało się usunąć ${ failedCount } linków do plików",
+        "Nie udało się usunąć ${ failedCount } linków do plików"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "Przenoszenie ${ failedMovesCount } pliku nie powiodło się",
@@ -3693,8 +3698,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Pamiętaj, że musisz zaakceptować wszystkie uprawnienia wymagane przez aplikację, aby rozpocząć proces importowania."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Pamiętaj, że ${ boldNextStep } wymagane przez aplikację, aby rozpocząć proces importowania."
       ]
     },
     "Onboarding Proton": {
@@ -4612,6 +4617,9 @@
       ],
       "Select link expiration time": [
         "Wybierz czas wygaśnięcia linku"
+      ],
+      "Select permissions": [
+        "Zaakceptuj uprawnienia"
       ],
       "Select what to import": [
         "Wybierz co chcesz zaimportować"

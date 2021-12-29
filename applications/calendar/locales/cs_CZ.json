@@ -1349,7 +1349,7 @@
         "Pozvání na událost ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Pozvání na událost začínající v { formattedStart }"
+        "Pozvání na událost začínající v ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Doplnění k události ${ formattedStart }"
@@ -2467,7 +2467,7 @@
         "Účtováno jako ${ billedPrice } každé 2 roky"
       ],
       "Billed as ${ billedPrice } per year": [
-        "Účtováno jako { billedPrice } ročně"
+        "Účtováno jako ${ billedPrice } ročně"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Vyúčtováno na konci aktuálního účtovacího období (obnovuje se ${ renewalDate })"
@@ -2548,7 +2548,7 @@
         "Zrušit změny?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        "Sleva na Vaše předplatné s kupónem { code }$"
+        "Sleva na Vaše předplatné s kupónem ${ code }"
       ],
       "Domains": [
         "Domény"

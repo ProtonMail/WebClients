@@ -244,14 +244,8 @@
       "Delete": [
         "Elimina"
       ],
-      "Delete all messages": [
-        "Elimina tutti i messaggi"
-      ],
       "Delete link": [
         "Elimina collegamento"
-      ],
-      "Delete original messages": [
-        "Elimina i messaggi originali"
       ],
       "Delete record": [
         "Elimina record"
@@ -390,9 +384,6 @@
       ],
       "Import emails": [
         "Importa le email"
-      ],
-      "Import from .csv or vCard": [
-        "Importa da .csv o vCard"
       ],
       "Import from .ics": [
         "Importa da .ics"
@@ -688,17 +679,11 @@
       "Skip": [
         "Salta"
       ],
-      "Skip to import": [
-        "Salta per importare"
-      ],
       "Sort": [
         "Ordina"
       ],
       "Start import": [
         "Avvia importazione"
-      ],
-      "Start Import Assistant": [
-        "Avvia Import Assistant"
       ],
       "Start setup": [
         "Avvia configurazione"
@@ -1417,9 +1402,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "Elimina tutti i messaggi"
-      ],
       "Import is incomplete!": [
         "Importazione incompleta!"
       ],
@@ -2933,9 +2915,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Consenti l'accesso a ProtonMail nel tuo account Gmail: scegli se ${ bold2Steps } è abilitato e segui i passaggi qui sotto."
-      ],
       "Click ${ boldManage } to expand the options menu": [
         ""
       ],
@@ -2944,9 +2923,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         ""
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "Infine, ${ googleMailLink } con l'account che vuoi importare, ${ googleCaptchaLink }."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         ""
@@ -2960,26 +2936,11 @@
       "Go to ${ boldAccountSecurity }": [
         "Vai a ${ boldAccountSecurity }"
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "Vai a ${ googleAccountLink }. Nella sezione ${ boldSecurity } , ${ boldAccess } per applicazioni meno sicure. Se non vedi questa opzione, potresti aver abilitato la verifica in 2 passaggi."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "Vai a ${ googleAccountLink }. Nella sezione ${ boldSecurity } , crea un ${ boldAppPassword } se non ne hai già uno. Hai bisogno di questa password durante l'importazione."
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         ""
       ],
       "If 2-step verification is off, turn it on": [
         ""
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "Nella sezione ${ boldLabels } , scegliere le cartelle consentite per l'importazione in ProtonMail."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "Nel tuo ${ boldGmailSettings }, vai a ${ boldForwarding } e assicurati che ${ boldIMAPAccess } sia abilitato."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        "Accedi a Yahoo Mail e fai clic sul tuo nome nell'angolo in alto a destra per accedere a ${ boldAccountInfo }. Nella sezione ${ boldAccountSec }, scorri fino alla sezione ${ boldAppPassword } per generare una password per l'app. Avrai bisogno di questa password durante l'importazione."
       ],
       "Open your ${ yahooMailLink } contacts": [
         ""
@@ -3019,9 +2980,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "Verifica in 2 passaggi"
-      ],
       "Account info": [
         "Informazioni sull'account"
       ],
@@ -3043,63 +3001,17 @@
       "Export to CSV file": [
         "Esporta in file CSV"
       ],
-      "Forwarding and POP/IMAP": [
-        "Inoltro e POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Impostazioni Gmail"
-      ],
       "ICS": [
         "ICS"
-      ],
-      "IMAP access": [
-        "Accesso IMAP"
       ],
       "in the next step you need to select all the permissions": [
         "nel passaggio successivo è necessario selezionare tutti i permessi"
       ],
-      "Labels": [
-        "Etichette"
-      ],
       "Manage": [
         "Gestisci"
       ],
-      "Other ways to sign in": [
-        "Altri metodi per accedere"
-      ],
       "Publish a calendar": [
         "Pubblica un calendario"
-      ],
-      "Security": [
-        "Sicurezza"
-      ],
-      "turn on access": [
-        "attiva l'accesso"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "accedi a Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "apri questa pagina per sbloccare il captcha"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "Come creare una password app nelle impostazioni di Gmail"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Come disabilitare CAPTCHA su Gmail"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Come abilitare l'inoltro IMAP nelle impostazioni di Gmail"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Come mostrare le cartelle in IMAP nelle impostazioni di Gmail"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Come attivare l'accesso per le applicazioni meno sicure nelle impostazioni di Gmail"
       ]
     },
     "Import instructions link": {
@@ -3149,14 +3061,6 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
         "In ${ boldPublish }, seleziona il calendario che desideri importare. Imposta il permesso su ${ boldCanViewAllDetails } e pubblicalo"
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "Verifica a 2 passaggi disabilitata (impostazioni predefinite)"
-      ],
-      "2-step verification enabled": [
-        "Verifica in 2 passaggi abilitata"
       ]
     },
     "Import key": {
@@ -3745,6 +3649,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Inserisci il tuo numero di telefono di recupero e ti invieremo il tuo nome utente o indirizzo email."
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        ""
+      ],
       "Expired": [
         "Scaduto"
       ],
@@ -3813,9 +3720,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, per favore invia una richiesta. Ti risponderemo nell'arco di una giornata lavorativa."
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Se stai utilizzando un altro provider di posta elettronica o il tuo account è già preparato, puoi passare all'importazione."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se credi che questo sia un errore, contattaci ${ contactLink }."
@@ -3955,12 +3859,6 @@
       ],
       "Label all imported messages as": [
         "Etichetta tutti i messaggi importati come"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        "Importazioni di grandi dimensioni possono richiedere diversi giorni per essere completate."
       ],
       "Large imports can take several days.": [
         "Importazioni di grandi dimensioni possono richiedere diversi giorni."
@@ -4443,9 +4341,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Questa procedura guidata abiliterà l'Autenticazione a due fattori (2FA) sul tuo account Proton. L'autenticazione a 2 fattori renderà il tuo account Proton molto più sicuro e per questo ti raccomandiamo di attivarla."
       ],
-      "to": [
-        "a"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confermare, inserisci il nome dell'utente che desideri eliminare."
       ],
@@ -4470,9 +4365,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Per tenersi al passo con gli ultimi sviluppi dei prodotti Proton, è possibile iscriversi alle nostre varie email e visitare il nostro blog di tanto in tanto."
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Per preparare il tuo account esterno per l'importazione, segui le istruzioni per:"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
       ],
@@ -4484,9 +4376,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Trasferisci i tuoi dati su Proton in modo sicuro. Import Assistant si connette al tuo provider di posta elettronica esterno e consente di importare i messaggi e le cartelle selezionate."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "L'autenticazione a due fattori aggiunge un ulteriore livello di sicurezza al tuo account nel caso in cui la password venga compromessa."
@@ -4584,9 +4473,6 @@
       "We use 3-D Secure to protect your payments.": [
         "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti."
       ],
-      "We will notify you once your import is finished.": [
-        "Ti avviseremo una volta terminata l'importazione."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
       ],
@@ -4656,9 +4542,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
       ],
-      "You can continue using Proton services as usual.": [
-        "È possibile continuare a utilizzare i servizi Proton come al solito."
-      ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Puoi creare fino a ${ MAX_LINKS_PER_CALENDAR } link per calendario. Per creare un nuovo link a questo calendario, eliminane uno dalla lista qui sotto."
       ],
@@ -4711,7 +4594,7 @@
         "Devi avere un calendario personale per creare un collegamento."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "Devi avere un calendario personale attivo per importare i tuoi eventi da .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Devi avere un calendario personale attivo per importare i tuoi eventi."
@@ -4773,20 +4656,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Il tuo importo da ${ delayedImport.Account } è temporaneamente ritardato."
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "Il tuo importo da ${ delayedImport.Email } è temporaneamente ritardato."
-      ],
-      "Your import has started!": [
-        "L'importazione è iniziata!"
-      ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
-      ],
-      "Your messages are being imported from": [
-        "I tuoi messaggi sono stati importati da"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "La password dell'organizzazione può essere condivisa con altri utenti a cui si desidera fornire i privilegi di amministrazione. È anche un codice di ripristino di emergenza per ottenere l'accesso alla sua organizzazione nel caso in cui perda l'accesso al suo utente. Si prega di salvare la password e tenerla al sicuro."
@@ -4887,14 +4761,6 @@
     "information": {
       "Included": [
         "Incluso"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "Inserisci la frase per confermare"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "Per confermare questa azione, inserisci il seguente testo nella casella sottostante."
       ]
     },
     "Invoice state display as badge": {
@@ -5535,17 +5401,11 @@
       "From: ${ emailFrom }": [
         "Da: ${ emailFrom }"
       ],
-      "From: ${ fromEmailAddress }": [
-        "Da: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         "Da: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "Da: ${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "Da: ${ modalModel.email }"
       ],
       "Gift code": [
         "Codice regalo"
@@ -5787,11 +5647,11 @@
       "Select your country": [
         "Seleziona il tuo paese"
       ],
-      "Send and reply to invites in": [
-        ""
-      ],
       "Send auto-reply": [
         "Invia risposta automatica"
+      ],
+      "Send invites in": [
+        "Invia invito in"
       ],
       "Show secondary time zone": [
         "Mostra fuso orario secondario"
@@ -5861,9 +5721,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "A: ${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "A: ${ toEmailAddress }"
       ],
       "Total": [
         "Totale"
@@ -7210,14 +7067,6 @@
         "Lavoro"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "Email"
@@ -7252,11 +7101,6 @@
       ],
       "Reading emails of non-private users": [
         "Leggendo le email degli utenti non privati"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "Elimina definitivamente i messaggi in ${ email }"
       ]
     },
     "Select files": {
@@ -7523,9 +7367,6 @@
       "Default calendar updated": [
         "Calendario predefinito aggiornato"
       ],
-      "Deleting original messages": [
-        "Eliminazione dei messaggi originali"
-      ],
       "DMARC value copied to clipboard": [
         "Valore DMARC copiato negli appunti"
       ],
@@ -7549,9 +7390,6 @@
       ],
       "Import record deleted": [
         "Record dell'importazione eliminato"
-      ],
-      "Import resumed": [
-        "Importazione ripresa"
       ],
       "Invoice customized": [
         "Fattura personalizzata"
@@ -7989,9 +7827,6 @@
       "Customize calendar import": [
         "Personalizza l'importazione del calendario"
       ],
-      "Customize import": [
-        "Personalizza importazione"
-      ],
       "Customize your mail import": [
         "Personalizza l'importazione della tua mail"
       ],
@@ -8167,9 +8002,6 @@
         "Importa come semplice evento?",
         "Importare come semplici eventi?"
       ],
-      "Import Assistant": [
-        "Assistente di importazione"
-      ],
       "Import contacts": [
         "Importa i contatti"
       ],
@@ -8181,9 +8013,6 @@
       ],
       "Import groups": [
         "Importa gruppi"
-      ],
-      "Import in progress": [
-        "Importazione in corso"
       ],
       "Import key": [
         "Importa chiave"
@@ -8307,15 +8136,6 @@
       ],
       "Plan summary": [
         "Riepilogo piano"
-      ],
-      "Prepare for import": [
-        "Preparazione per l'importazione"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "Prepara Gmail per l'importazione ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Prepara Yahoo Mail per l'importazione"
       ],
       "Previous": [
         "Precedente"
@@ -9023,9 +8843,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ProtonVPN a pagamento. Si prega di aprire un ticket."
       ],
-      "permanently delete all messages on ${ email }": [
-        "elimina definitivamente tutti i messaggi su ${ email }"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà stato completato."
       ],
@@ -9040,9 +8857,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "Questa azione sarà ${ boldWarning }. Non sarai in grado di recuperare i messaggi su ${ domain }."
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Questa funzione è disponibile solo per i piani Professional o superiori"
@@ -9297,17 +9111,6 @@
       ],
       "Wednesday": [
         "Mercoledì"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Autentica"
-      ],
-      "Configure Import": [
-        "Configura Importazione"
-      ],
-      "Import": [
-        "Importa"
       ]
     },
     "Yearly recurring event, frequency": {

@@ -316,6 +316,9 @@
       "Encryption": [
         "Verschlüsselung"
       ],
+      "exclude message content": [
+        "schließe den Inhalt der Nachricht aus"
+      ],
       "Expand composer": [
         "Verfassen-Fenster vergrößern"
       ],
@@ -653,8 +656,8 @@
       "Recover data": [
         "Daten wiederherstellen"
       ],
-      "Refine your search": [
-        "Suche verfeinern"
+      "Refine it": [
+        "Verfeinere sie"
       ],
       "refresh the page": [
         "Seite aktualisieren"
@@ -1182,7 +1185,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
       ],
       "Save ${ percentage }%": [
         "${ percentage } %"
@@ -1302,6 +1305,11 @@
       ],
       "Website access problem": [
         "Zugriffsproblem auf eine Website"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Enthält einen Kalender-Termin"
       ]
     },
     "Calendar feature": {
@@ -3265,7 +3273,7 @@
         "Rechtsbündig"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Alle ({ totalFoldersCount } $ Ordner)",
+        "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
       ],
       "All (${ totalFoldersCount } label)": [
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Bildschirmfoto(s) hinzugefügt"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Die Suche dauert zu lange? ${ dropdownButton } oder ${ toggleOffButton } diesem Suchlauf aus."
+      ],
       "Seems like you are all caught up for now": [
         "Es scheint, als wären alle Aufgaben erledigt"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Wechseln Sie zu ${ professionalPlan }, um weitere Benutzer hinzufügen zu können."
-      ],
-      "Taking too long?": [
-        "Dauert es zu lange?"
       ],
       "Test link": [
         "Link testen"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Geplantes Senden wurde rückgängig gemacht"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Das Versenden der geplanten Nachricht wurde widerrufen. Die Nachricht wurde in Entwürfe verschoben."
       ],
@@ -7523,8 +7534,8 @@
         "Alle ${ interval } Wochen an allen Tagen"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Alle ${ interval } Wochen an allen Tagen, { timesString }",
-        "Alle ${ interval } Wochen an allen Tagen, { timesString }"
+        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }",
+        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Wöchentlich an allen Tagen, ${ untilString }",

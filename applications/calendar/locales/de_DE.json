@@ -749,7 +749,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
       ],
       "Save ${ percentage }%": [
         "Spare ${ percentage } %"
@@ -773,7 +773,7 @@
         "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von ${ amount }"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von ${ amount } (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von ${ amount } (33 % Rabatt)"
@@ -1803,7 +1803,7 @@
         "Fehlerhafte Startzeit"
       ],
       "Missing start time": [
-        "Startzeit fehl"
+        "Startzeit fehlt"
       ],
       "No UID, title or start time": [
         "UID, Titel oder Startzeit fehlt"
@@ -2327,7 +2327,7 @@
         "Nachdem Sie Ihre Bitcoin-Zahlung getätigt haben, folgen Sie bitte den nachfolgenden Anweisungen zum Wechsel."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Alle ({ totalFoldersCount } $ Ordner)",
+        "Alle (${ totalFoldersCount } $ Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
       ],
       "All (${ totalFoldersCount } label)": [
@@ -5538,12 +5538,12 @@
         "Aller ${ interval } Wochen an allen Tagen"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Wöchentlich an allen Tagen, um { timesString }",
-        "Aller ${ interval } Wochen an allen Tagen, um { timesString }"
+        "Wöchentlich an allen Tagen, um ${ timesString }",
+        "Aller ${ interval } Wochen an allen Tagen, um ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Wöchentlich an allen Tagen, { untilString }",
-        "Aller ${ interval } Wochen an allen Tagen, { untilString }"
+        "Wöchentlich an allen Tagen, ${ untilString }",
+        "Aller ${ interval } Wochen an allen Tagen, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Wöchentlich am Freitag",
@@ -5566,7 +5566,7 @@
         "Aller ${ interval } Wochen am Montag, um ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Wöchentlich am Montag, { untilString }",
+        "Wöchentlich am Montag, ${ untilString }",
         "Aller ${ interval } Wochen am Montag, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
