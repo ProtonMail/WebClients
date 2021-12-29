@@ -1,5 +1,11 @@
+export enum Action {
+    getLocalStorage = 'getLocalStorage',
+    setLocalStorage = 'setLocalStorage',
+    removeLocalStorage = 'removeLocalStorage',
+}
+
 export interface GetLocalStorageMessage {
-    type: 'getLocalStorage';
+    type: Action.getLocalStorage;
     payload: {
         key: string;
     };
@@ -8,7 +14,7 @@ export interface GetLocalStorageMessage {
 export type GetLocalStorageMessageResponse = string | null | undefined;
 
 export interface SetLocalStorageMessage {
-    type: 'setLocalStorage';
+    type: Action.setLocalStorage;
     payload: {
         key: string;
         value: string;
@@ -18,7 +24,7 @@ export interface SetLocalStorageMessage {
 export type SetLocalStorageMessageResponse = undefined;
 
 export interface RemoveLocalStorageMessage {
-    type: 'removeLocalStorage';
+    type: Action.removeLocalStorage;
     payload: {
         key: string;
     };

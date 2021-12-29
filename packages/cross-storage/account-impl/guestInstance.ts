@@ -2,6 +2,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, isSSOMode } from '@proton/shared/lib/constants';
 import create from '../lib/guest';
 import {
+    Action,
     GetLocalStorageMessageResponse,
     ProtonMessages,
     RemoveLocalStorageMessageResponse,
@@ -17,7 +18,7 @@ export let instance: ReturnType<typeof createHandlers>;
 const createHandlers = ({ postAndGetMessage }: CrossStorageInstance) => {
     const getLocalStorage = (key: string) => {
         return postAndGetMessage<GetLocalStorageMessageResponse>({
-            type: 'getLocalStorage',
+            type: Action.getLocalStorage,
             payload: {
                 key,
             },
@@ -26,7 +27,7 @@ const createHandlers = ({ postAndGetMessage }: CrossStorageInstance) => {
 
     const setLocalStorage = (key: string, value: string): Promise<void | undefined> => {
         return postAndGetMessage<SetLocalStorageMessageResponse>({
-            type: 'setLocalStorage',
+            type: Action.setLocalStorage,
             payload: {
                 key,
                 value,
@@ -36,7 +37,7 @@ const createHandlers = ({ postAndGetMessage }: CrossStorageInstance) => {
 
     const removeLocalStorage = (key: string): Promise<void | undefined> => {
         return postAndGetMessage<RemoveLocalStorageMessageResponse>({
-            type: 'removeLocalStorage',
+            type: Action.removeLocalStorage,
             payload: {
                 key,
             },
