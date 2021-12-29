@@ -3552,7 +3552,7 @@ __metadata:
     push.js: ^1.0.12
     qrcode.react: ^1.0.1
     react: ^17.0.2
-    react-codemirror2: ^6.0.1
+    react-codemirror2: ^7.2.1
     react-dom: ^17.0.2
     react-router: ^5.2.1
     react-router-dom: ^5.3.0
@@ -24228,13 +24228,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-codemirror2@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "react-codemirror2@npm:6.0.1"
+"react-codemirror2@npm:^7.2.1":
+  version: 7.2.1
+  resolution: "react-codemirror2@npm:7.2.1"
   peerDependencies:
     codemirror: 5.x
     react: ">=15.5 <=16.x"
-  checksum: 95e11604c5dddeadbd94d79019845086921e27187ff00d6159116a94cfdc3aaf888e78f047760fc98707ef1d69ae640add33c856153f89b3a48a7db52997d07f
+  checksum: 5c524a073167fbd89429a32f6ccbda83b78890231dd743219fb95335c2fd4c90fecc906fe9410a26b42c3baea62e00800d0e4e85c67965ab05234b6f7d4dd82d
   languageName: node
   linkType: hard
 
