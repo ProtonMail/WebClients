@@ -31,9 +31,9 @@ const check = (card: CardModel, key: KeyOfCardModel): string | undefined => {
             }
             break;
         case 'cvc': {
-            const { number = '' } = card || {};
-            const [{ code = {} } = {}] = creditCardType(number) || [];
-            const { name = 'CVC', size = 3 } = code;
+            const number = card?.number || '';
+            const firstCreditCardType = creditCardType(number)?.[0];
+            const { name, size } = firstCreditCardType?.code || { name: 'CVV', size: 3 };
 
             if (!isCVV(value, size)) {
                 return c('Error').t`Invalid ${name} code`;
