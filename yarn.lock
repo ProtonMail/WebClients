@@ -3525,7 +3525,7 @@ __metadata:
     "@testing-library/user-event": ^13.5.0
     "@types/blueimp-load-image": ^2.23.8
     "@types/card-validator": ^4.1.0
-    "@types/codemirror": 0.0.109
+    "@types/codemirror": 5.60.5
     "@types/credit-card-type": ^7.0.0
     "@types/jest": ^27.0.3
     "@types/markdown-it": ^10.0.3
@@ -5663,12 +5663,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/codemirror@npm:0.0.109":
-  version: 0.0.109
-  resolution: "@types/codemirror@npm:0.0.109"
+"@types/codemirror@npm:5.60.5":
+  version: 5.60.5
+  resolution: "@types/codemirror@npm:5.60.5"
   dependencies:
     "@types/tern": "*"
-  checksum: e76251c07a686346b902b3605e79849da03d654d312fe7d2c406822f9157dd77d0c69af6701da424dcdeb669efb27165661ac7d027f42a3c64a4d07838ec9eb0
+  checksum: 423b6378b6415b626d9f54d37d69477f96940b30a695d4ec36402feb59a96f7ab42d1c17b8472fbb222a0966f6061deee234e37bcd3e34c75836e989dc95929d
   languageName: node
   linkType: hard
 
