@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import codemirror, { Annotation, Linter } from 'codemirror';
+import { Editor, EditorChange, EditorConfiguration } from 'codemirror';
+import { Annotation, Linter } from 'codemirror/addon/lint/lint';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import { normalize } from '../../utils';
 
@@ -15,7 +16,7 @@ import './SieveEditor.scss';
 interface Props {
     value: string;
     issues?: Annotation[];
-    onChange: (editor: codemirror.Editor, data: codemirror.EditorChange, value: string) => void;
+    onChange: (editor: Editor, data: EditorChange, value: string) => void;
     theme?: string;
 }
 
@@ -23,15 +24,15 @@ let uglyGlobalLintRef: ((content: string) => Annotation[]) | undefined;
 
 const clean = normalize();
 
-const customLint: Linter = (content = '') => {
+const customLint: Linter<{}> = (content = '') => {
     const lint = uglyGlobalLintRef;
 
     return lint ? lint(clean(content)) : [];
 };
 
 const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
-    const editorRef = useRef<codemirror.Editor>();
-    const options: codemirror.EditorConfiguration = {
+    const editorRef = useRef<Editor>();
+    const options: EditorConfiguration = {
         mode: 'sieve',
         lineNumbers: true,
         lineWrapping: true,
