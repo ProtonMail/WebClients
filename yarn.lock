@@ -3523,8 +3523,6 @@ __metadata:
     "@testing-library/react": ^12.1.2
     "@testing-library/react-hooks": ^7.0.2
     "@testing-library/user-event": ^13.5.0
-    "@types/blueimp-load-image": ^2.23.8
-    "@types/card-validator": ^4.1.0
     "@types/codemirror": 5.60.5
     "@types/credit-card-type": ^7.0.0
     "@types/jest": ^27.0.3
@@ -5602,13 +5600,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/blueimp-load-image@npm:^2.23.8":
-  version: 2.23.8
-  resolution: "@types/blueimp-load-image@npm:2.23.8"
-  checksum: d6506bf82a70e57bec97033d7188a0ebd2a096e81f743791eef2a3b9e84b17ebc88784ed3cf00c56896b3aa9529bbafe43bc968a267c11a826d811699726d2de
-  languageName: node
-  linkType: hard
-
 "@types/bn.js@npm:*":
   version: 5.1.0
   resolution: "@types/bn.js@npm:5.1.0"
@@ -5646,13 +5637,6 @@ __metadata:
     "@types/node": "*"
     "@types/responselike": "*"
   checksum: 667d25808dbf46fe104d6f029e0281ff56058d50c7c1b9182774b3e38bb9c1124f56e4c367ba54f92dbde2d1cc573f26eb0e9748710b2822bc0fd1e5498859c6
-  languageName: node
-  linkType: hard
-
-"@types/card-validator@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@types/card-validator@npm:4.1.0"
-  checksum: 12af35ca43651cfa0a5e9628e4a31cc124b6f255d6bc62e5d06fe661e0cdb050a7ec087420d3730980f61d96d6f13d83328213d9285ca67ec34c5131fcc4c16c
   languageName: node
   linkType: hard
 
