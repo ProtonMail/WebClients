@@ -15,7 +15,7 @@
         "Loja ${ BRAND_NAME }"
       ],
       "Activate recovery": [
-        ""
+        "Ativar a recuperação"
       ],
       "Add": [
         "Adicionar"
@@ -120,7 +120,7 @@
         "Confirmar"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Confirmar a abertura do link ${ linkToShow }"
       ],
       "Contact group": [
         "Grupo de contatos"
@@ -410,7 +410,7 @@
         "Enviar"
       ],
       "Set recovery phrase": [
-        ""
+        "Definir frase de recuperação"
       ],
       "Share": [
         "Compartilhar"
@@ -485,10 +485,10 @@
         "Atualizar"
       ],
       "Update recovery file": [
-        ""
+        "Atualizar o arquivo de recuperação"
       ],
       "Update recovery phrase": [
-        ""
+        "Atualizar frase de recuperação"
       ],
       "Upgrade": [
         "Upgrade"
@@ -637,7 +637,7 @@
         "Ao sair agora, alguns contatos podem não ser importados"
       ],
       "By leaving now, some events may not be imported": [
-        ""
+        "Ao sair agora, alguns eventos podem não ser importados"
       ],
       "By leaving now, you will lose your event.": [
         "Ao sair agora, você perderá o seu evento."
@@ -668,7 +668,7 @@
         "Método inválido"
       ],
       "Unsupported calendar component": [
-        ""
+        "Componente de calendário não suportado"
       ],
       "Unsupported event": [
         "Evento não suportado"
@@ -932,7 +932,7 @@
     },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
-        ""
+        "Adicionar calendário de uma URL"
       ],
       "More options": [
         "Mais opções"
@@ -969,7 +969,7 @@
         "Mais de 12 horas se passaram desde a última atualização"
       ],
       "Unsupported calendar format": [
-        ""
+        "Formato de calendário não suportado"
       ]
     },
     "Calendar view": {
@@ -1006,7 +1006,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Sair da personalização de importação?"
       ]
     },
     "Contact field label": {
@@ -1390,7 +1390,7 @@
         "O cancelamento não foi enviado"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Pedido expirado. Por favor, tente novamente"
       ],
       "Contact could not be saved": [
         "O contato não pôde ser salvo"
@@ -1683,34 +1683,34 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não está no formato correto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. Somente formatos de arquivo ICS são permitidos."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Ocorreu um erro ao carregar o seu arquivo. Nenhum arquivo foi selecionado."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação deve ser reiniciada."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
+        "Seu arquivo ${ formattedFilename } tem um método inválido e não pode ser importado."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "O arquivo ${ formattedFilename } não tem eventos a serem importados."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "O seu arquivo ${ formattedFilename } está vazio."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "O arquivo ${ formattedFilename } não é um calendário."
       ]
     },
     "Error importing contact": {
@@ -1833,7 +1833,7 @@
         "Fuso horário não suportado"
       ],
       "To-do entry": [
-        ""
+        "Entrada de tarefas"
       ],
       "Unknown": [
         "Desconhecido"
@@ -1850,7 +1850,7 @@
         "Erro: ${ errorMessage }"
       ],
       "Invalid URL": [
-        ""
+        "URL inválida"
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
@@ -1865,7 +1865,7 @@
         "Você pode ${ refresh } ou tentar novamente mais tarde."
       ],
       "You need an active personal calendar to import events": [
-        ""
+        "Você precisa ter um calendário pessoal ativo para importar seus eventos"
       ]
     },
     "Error notification": {
@@ -1911,7 +1911,7 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        ""
+        "Arquivo ICS anexado não pôde ser descriptografado"
       ],
       "Attached ICS file could not be read": [
         "Arquivo ICS anexado não pôde ser lido"
@@ -1935,16 +1935,16 @@
         "Não foi possível cancelar o evento no seu calendário"
       ],
       "We could not retrieve the event from your calendar": [
-        ""
+        "Não foi possível recuperar o evento de seu calendário"
       ],
       "We could not update the event in your calendar": [
-        ""
+        "Não foi possível atualizar o evento em seu calendário"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
+        "Sua resposta foi enviada, mas o evento não pôde ser adicionado ao seu calendário"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "Sua resposta foi enviada, mas o evento não pôde ser atualizado em seu calendário"
       ]
     },
     "Event popover close button": {
@@ -1960,7 +1960,7 @@
         "não"
       ],
       "unanswered": [
-        ""
+        "sem resposta"
       ],
       "yes": [
         "sim"
@@ -2058,8 +2058,8 @@
         ""
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "",
-        ""
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "",
@@ -2148,7 +2148,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "no próximo passo você precisa selecionar todas as permissões"
       ]
     },
     "Import warning": {
@@ -2156,17 +2156,17 @@
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para ver detalhes"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "",
-        ""
+        "${ totalEventsDiscarded } de ${ totalEvents } evento não será importado. Expanda para mais detalhes.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Expanda para mais detalhes."
       ],
       "No contact can be imported. Click for details": [
         "Nenhum contato pôde ser importado. Clique para ver detalhes"
       ],
       "No event can be imported. Expand for details.": [
-        ""
+        "Nenhum evento pôde ser importado. Clique para detalhes."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        ""
+        "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
     "Info": {
@@ -2577,7 +2577,7 @@
         "Mensalmente, ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Nomeie sua nova pasta e selecione a pasta pai na qual deseja colocá-la. Se você não selecionar uma pasta pai, esta nova pasta será criada como uma pasta de nível superior."
       ],
       "New": [
         "Novo"
@@ -2701,7 +2701,7 @@
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
@@ -2746,10 +2746,10 @@
         "O organizador não pode ser notificado de que você recusou o convite:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        ""
+        "O organizador não pode ser notificado de que você deseja alterar sua resposta:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        ""
+        "O organizador não pôde ser notificado de que você alterou sua resposta:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "O organizador atualizou alguns dos eventos desta série. A alteração do calendário ainda não é compatível com este tipo de eventos recorrentes."
@@ -2878,7 +2878,7 @@
         "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Você pode mesclar calendários importados com calendários Proton existentes."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
@@ -2893,7 +2893,7 @@
         "Você reativou suas chaves e os eventos vinculados aos seguintes calendários podem ser descriptografados."
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        ""
+        "Você redefiniu sua senha e os eventos vinculados aos seguintes calendários não puderam ser descriptografados.\nTodos os links de caléndários compartilhados que você criou anteriormente não funcionarão mais.\nTodos os calendários inscritos ativos serão sincronizados novamente após alguns minutos."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal para que possa ser adicionada como método de pagamento."
@@ -2965,7 +2965,7 @@
         "O seu e-mail será utilizado somente nesta verificação única."
       ],
       "Your events will be encrypted and then saved.": [
-        ""
+        "Seus eventos serão criptografados e depois salvos."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será utilizado nessa verificação única."
@@ -3400,7 +3400,7 @@
         "Apenas no mês passado"
       ],
       "Location": [
-        ""
+        "Localização"
       ],
       "Mailbox password": [
         "Senha da caixa de correio"
@@ -3765,7 +3765,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Isso excluirá permanentemente todos os subusuários, contas e dados associados à sua organização."
       ]
     },
     "Message": {
@@ -3794,7 +3794,7 @@
         "Fechar"
       ],
       "Manage calendars": [
-        ""
+        "Gerenciar calendários"
       ]
     },
     "Modal title": {
@@ -3802,7 +3802,7 @@
         "Fuso horário alterado"
       ],
       "Unable to add more calendars": [
-        ""
+        "Incapaz de adicionar mais calendários"
       ]
     },
     "Modal title and action": {
@@ -4086,7 +4086,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Por favor, repare que ${ boldNextStep } foi solicitado pela aplicação para iniciar sua importação."
       ]
     },
     "Onboarding Proton": {
@@ -4175,7 +4175,7 @@
         "Meses"
       ],
       "No parent folder": [
-        ""
+        "Nenhuma pasta acima"
       ],
       "This and future events": [
         "Este e futuros eventos"
@@ -4207,10 +4207,10 @@
     },
     "Participants expand button label": {
       "Collapse participants list": [
-        ""
+        "Recolher lista de participantes"
       ],
       "Expand participants list": [
-        ""
+        "Expanda a lista de participantes"
       ]
     },
     "Payment method option": {
@@ -4517,7 +4517,7 @@
         "URL do calendário"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "Para se inscrever em uma agenda externa ou pública e suas atualizações, digite a URL. Uma versão de somente leitura do calendário será adicionada aos calendários assinados.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -4527,7 +4527,7 @@
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "Ao usar este link, Google tornará público o calendário ao qual você está se inscrevendo"
       ],
       "This link might be wrong": [
         "Este link pode estar errado"
@@ -4535,7 +4535,7 @@
     },
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
-        ""
+        "Inscrever-se em um caledário está indisponível no momento"
       ]
     },
     "Subscribed calendar limit reached modal body": {
@@ -4943,10 +4943,10 @@
         "Excluindo contatos"
       ],
       "Downgrade account": [
-        ""
+        "Fazer downgrade da conta"
       ],
       "Drop to upload": [
-        ""
+        "Solte para enviar"
       ],
       "Edit calendar": [
         "Editar calendário"
@@ -5157,7 +5157,7 @@
         "Selecione a última data do evento"
       ],
       "Select permissions": [
-        ""
+        "Selecionar permissões"
       ],
       "Select the time to send this notification": [
         "Selecione o horário para enviar esta notificação"
@@ -5271,7 +5271,7 @@
         "A criptografia de e-mail sempre utiliza a assinatura de e-mail para ajudar a autenticar as mensagens enviadas"
       ],
       "Encrypted data": [
-        ""
+        "Dados criptografados"
       ],
       "Encrypted data with verified digital signature": [
         "Dados criptografados com assinatura digital verificada"
@@ -5333,10 +5333,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Clique para reproduzir o vídeo"
       ],
       "Replay video": [
-        ""
+        "Reproduzir vídeo"
       ]
     },
     "VPN feature": {

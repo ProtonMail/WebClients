@@ -548,7 +548,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
       ],
       "Save ${ percentage }%": [
         "Spare ${ percentage } %"
@@ -2030,6 +2030,9 @@
       ],
       "Credits used": [
         "Guthaben verwendet"
+      ],
+      "Current login password": [
+        "Aktuelles Passwort"
       ],
       "Customize invoices": [
         "Rechnungen anpassen"

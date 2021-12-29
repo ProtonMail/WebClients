@@ -316,6 +316,9 @@
       "Encryption": [
         "Encriptação"
       ],
+      "exclude message content": [
+        "exclua o conteúdo das mensagens"
+      ],
       "Expand composer": [
         "Expandir compositor"
       ],
@@ -653,8 +656,8 @@
       "Recover data": [
         "Recuperar dados"
       ],
-      "Refine your search": [
-        "Refinar sua busca"
+      "Refine it": [
+        "Refine-a"
       ],
       "refresh the page": [
         "atualizar a página"
@@ -702,7 +705,7 @@
         "Tentar novamente"
       ],
       "Revert to original display": [
-        ""
+        "Retornar à exibição original"
       ],
       "Save": [
         "Salvar"
@@ -1304,6 +1307,11 @@
         "Problema de acesso ao site"
       ]
     },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Tem um evento no calendário"
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Importação de calendário"
@@ -1607,7 +1615,7 @@
         "Mais de 12 horas se passaram desde a última atualização"
       ],
       "Unsupported calendar format": [
-        ""
+        "Formato de calendário não suportado"
       ]
     },
     "Calendar widget banner": {
@@ -3028,7 +3036,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "no próximo passo você precisa selecionar todas as permissões"
       ]
     },
     "Import warning": {
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Captura(s) de tela anexada"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "A pesquisa está demorando demais? ${ dropdownButton } ou ${ toggleOffButton } nesta pesquisa."
+      ],
       "Seems like you are all caught up for now": [
         "Parece que você está a par de tudo agora"
       ],
@@ -4015,9 +4026,6 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Mude para o ${ professionalPlan } para adicionar mais usuários."
       ],
-      "Taking too long?": [
-        "Demorando demais?"
-      ],
       "Test link": [
         "Link de teste"
       ],
@@ -4089,7 +4097,7 @@
         "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
       ],
       "This message has been adjusted to comply with a dark background.": [
-        ""
+        "Esta mensagem foi adequada para se adequar ao fundo escuro."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Esta mensagem é automaticamente gerada como uma resposta a uma mensagem anterior."
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Agendamento de envio desfeito"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Agendamento cancelado. A mensagem foi movida para Rascunhos."
       ],
@@ -5693,7 +5704,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Por favor, repare que ${ boldNextStep } foi solicitado pela aplicação para iniciar sua importação."
       ]
     },
     "Onboarding": {

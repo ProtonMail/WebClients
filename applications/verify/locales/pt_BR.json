@@ -90,7 +90,7 @@
         "Fique tranquilo, logo iremos corrigir este erro."
       ],
       "Error: ${ errorMessage }": [
-        ""
+        "Erro: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
@@ -99,7 +99,7 @@
         ""
       ],
       "There was a problem connecting to Proton.": [
-        ""
+        "Ocorreu um problema ao conectar à Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Você pode ${ refresh } ou tentar novamente mais tarde."
@@ -222,7 +222,7 @@
         "Código de verificação inválido"
       ],
       "Request new code": [
-        ""
+        "Solicitar um novo código"
       ],
       "Sign in again to continue": [
         "Inicie a sessão novamente para continuar"

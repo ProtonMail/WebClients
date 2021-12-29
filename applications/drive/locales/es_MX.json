@@ -1579,6 +1579,11 @@
         "ProtonContacts no soporta ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "en el siguiente paso necesita seleccionar todos los permisos"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
@@ -2002,7 +2007,7 @@
         "Si no encuentra el correo electrónico en su buzón, revise en la carpeta de spam."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        ""
+        "Si tiene uno de estos, continúe con la configuración de la cuenta de Proton para\ncomenzar con el proceso de desbloqueo."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
@@ -3533,8 +3538,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Tome en cuenta que necesita aceptar todos los permisos requeridos por la aplicación para iniciar la importación."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Tome en cuenta que ${ boldNextStep } requeridos por la aplicación para comenzar la importación."
       ]
     },
     "Onboarding Proton": {
@@ -4432,6 +4437,9 @@
       ],
       "Select link expiration time": [
         "Seleccione la hora de expiración del enlace"
+      ],
+      "Select permissions": [
+        "Seleccionar permisos"
       ],
       "Select what to import": [
         "Seleccione qué importar"

@@ -1186,8 +1186,8 @@
         "Asmezdi n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt { MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n { MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt { MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n { MAX_IMPORT_CONTACTS_STRING } n yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
+        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
+        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seqdec tawuri Zuɣer Sers iwakken ad tesmizzwireḍ tazwart n usmezdi gar yinermisen. Kkes afran i yinermisen ur tebɣiḍ ara ad tesmezdiḍ."
@@ -1648,7 +1648,7 @@
         "Urti-agi ilaq"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Urti-a isra ma drus { minimumLength } n yizamulen."
+        "Urti-a isra ma drus ${ minimumLength } n yizamulen."
       ],
       "This folder name is not available. Please choose a different name": [
         ""
@@ -2028,8 +2028,8 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Af asumer n { items.length }, seqdec anasiw i tunigin.",
-        "Af isumar { items.length }, seqdec anasiw i tunigin."
+        "Af asumer n ${ items.length }, seqdec anasiw i tunigin.",
+        "Af isumar ${ items.length }, seqdec anasiw i tunigin."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Seqdec tiqeffalin Asawen d Akessar i wakken ad tkecmeḍ ɣer yisumar syen asenqed-nsen seld anekcum. Sit ɣef Enter i wakken ad tesnetmeḍ afran-inek·inem, neɣ Escape i wakken ad tmedleḍ tabewwaḍt n yisumar."
@@ -2640,7 +2640,7 @@
         "Ttxil-k•m ẓer belli ayagi yezmer ad yeṭṭef kra n wakud i lmend n tiddi n udlis n tansiwin."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Ttxil ger tamawt dakken s uttekki ɣef tqeffalt n usentem, amiḍan-ik. im ad yesεu $ { creditsRemaining } ismad i d-yeqqimen."
+        "Ttxil ger tamawt dakken s uttekki ɣef tqeffalt n usentem, amiḍan-ik. im ad yesεu ${ creditsRemaining } ismad i d-yeqqimen."
       ],
       "Please remove the duplicates and try again.": [
         "Ttxil kkes usligen tɛerḍeḍ tikkelt-nniḍen."

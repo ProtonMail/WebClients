@@ -314,6 +314,9 @@
       "Encryption": [
         "Enkripsi"
       ],
+      "exclude message content": [
+        "tidak mengikutsertakan isi pesan"
+      ],
       "Expand composer": [
         "Lebarkan komposer"
       ],
@@ -650,8 +653,8 @@
       "Recover data": [
         "Pulihkan data"
       ],
-      "Refine your search": [
-        "Perbaiki parameter pencarian Anda"
+      "Refine it": [
+        "Cobalah untuk mempersempit kata kunci pencarian"
       ],
       "refresh the page": [
         "muat ulang halaman"
@@ -1293,6 +1296,11 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Memiliki acara yang tertaut pada kalender"
       ]
     },
     "Calendar feature": {
@@ -3046,7 +3054,7 @@
         "${ embeddedAttachmentsCount } gambar tertanam"
       ],
       "${ groupCounts } group found": [
-        "ditemukan { groupCounts } grup"
+        "ditemukan ${ groupCounts } grup"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratis"
@@ -3864,6 +3872,9 @@
       "Screenshot(s) attached": [
         "Tangkapan layar terlampir"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dalam pencarian Anda."
+      ],
       "Seems like you are all caught up for now": [
         "Untuk saat ini sepertinya semuanya sudah terbaca"
       ],
@@ -3935,9 +3946,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Beralih ke ${ professionalPlan } untuk menambah lebih banyak pengguna."
-      ],
-      "Taking too long?": [
-        "Memakan waktu terlalu lama?"
       ],
       "Test link": [
         "Tes tautan"
@@ -5420,6 +5428,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Pengiriman-pengiriman yang terjadwal dibatalkan"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Penjadwalan dibatalkan. Pesan telah dipindahkan ke Draf."
       ],
@@ -6544,7 +6555,7 @@
     },
     "Title": {
       "${ appName } customization": [
-        "Penyesuaian { appName }"
+        "Penyesuaian ${ appName }"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Pintasan Papan Ketik"

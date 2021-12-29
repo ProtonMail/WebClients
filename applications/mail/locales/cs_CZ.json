@@ -320,6 +320,9 @@
       "Encryption": [
         "Šifrování"
       ],
+      "exclude message content": [
+        "vyloučit obsah zprávy"
+      ],
       "Expand composer": [
         "Celá obrazovka"
       ],
@@ -659,8 +662,8 @@
       "Recover data": [
         "Obnovit data"
       ],
-      "Refine your search": [
-        ""
+      "Refine it": [
+        "Vylepšit"
       ],
       "refresh the page": [
         "obnovit stránku"
@@ -1320,6 +1323,11 @@
       ],
       "Website access problem": [
         "Problém s přístupem k webové stránce"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Má událost v kalendáři"
       ]
     },
     "Calendar feature": {
@@ -2076,7 +2084,7 @@
         "Pozvání na událost ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Pozvání na událost začínající v { formattedStart }"
+        "Pozvání na událost začínající v ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Doplnění k události ${ formattedStart }"
@@ -2446,7 +2454,7 @@
         ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "Minimální objem kreditu, který lze přidat, je { _price }"
+        "Minimální objem kreditu, který lze přidat, je ${ _price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Minimální částka, kterou lze darovat, je{ price }"
@@ -4101,6 +4109,9 @@
       "Screenshot(s) attached": [
         "Snímek/snímky byly připojeny"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Trvá hledání příliš dlouho? ${ dropdownButton } nebo ${ toggleOffButton } z této relace hledání."
+      ],
       "Seems like you are all caught up for now": [
         "Vypadá to jako když máte vše vychytáno"
       ],
@@ -4172,9 +4183,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Chcete-li přidat více uživatelů, přepněte na ${ professionalPlan }."
-      ],
-      "Taking too long?": [
-        ""
       ],
       "Test link": [
         "Testovací odkaz"
@@ -5699,6 +5707,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Plánované odeslání zrušeno"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Plánování zrušeno. Zpráva byla přesunuta do Konceptů."
       ],

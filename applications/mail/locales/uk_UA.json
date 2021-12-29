@@ -320,6 +320,9 @@
       "Encryption": [
         "Шифрування"
       ],
+      "exclude message content": [
+        "виключити вміст повідомлення"
+      ],
       "Expand composer": [
         "Розгорнути редактор"
       ],
@@ -659,8 +662,8 @@
       "Recover data": [
         "Відновити дані"
       ],
-      "Refine your search": [
-        "Вдоскональте свій пошук"
+      "Refine it": [
+        "Вдосконалити його"
       ],
       "refresh the page": [
         "оновити сторінку"
@@ -1320,6 +1323,11 @@
       ],
       "Website access problem": [
         "Проблема доступу до вебсайту"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Містить подію календаря"
       ]
     },
     "Calendar feature": {
@@ -4101,6 +4109,9 @@
       "Screenshot(s) attached": [
         "Знімки додано"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Пошук триває надто довго? ${ dropdownButton } або ${ toggleOffButton } з цього пошукового сеансу."
+      ],
       "Seems like you are all caught up for now": [
         "У вас немає листів"
       ],
@@ -4172,9 +4183,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Перейдіть на ${ professionalPlan }, щоб додати більше користувачів."
-      ],
-      "Taking too long?": [
-        "Триває надто довго?"
       ],
       "Test link": [
         "Тестове посилання"
@@ -5699,6 +5707,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        "Заплановане надсилання скасовано"
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Планування скасовано. Повідомлення переміщено до чернеток."
       ],

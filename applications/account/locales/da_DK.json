@@ -244,14 +244,8 @@
       "Delete": [
         "Slet"
       ],
-      "Delete all messages": [
-        "Slet alle beskeder"
-      ],
       "Delete link": [
         "Slet link"
-      ],
-      "Delete original messages": [
-        "Slet oprindelige beskeder"
       ],
       "Delete record": [
         "Slet post"
@@ -383,16 +377,13 @@
         "Importér"
       ],
       "Import calendars": [
-        ""
+        "Importer kalendere"
       ],
       "Import contacts": [
         "Importér kontakter"
       ],
       "Import emails": [
-        ""
-      ],
-      "Import from .csv or vCard": [
-        "Importer fra .csv eller vCard"
+        "Importer e-mails"
       ],
       "Import from .ics": [
         "Import fra .ics"
@@ -611,7 +602,7 @@
         "Vælg filer"
       ],
       "Select language for invitation emails": [
-        ""
+        "Vælg sprog for invitationsmails"
       ],
       "Select plan": [
         "Vælg abonnement"
@@ -688,17 +679,11 @@
       "Skip": [
         "Spring over"
       ],
-      "Skip to import": [
-        "Spring til import"
-      ],
       "Sort": [
         "Sortér"
       ],
       "Start import": [
         "Start importering"
-      ],
-      "Start Import Assistant": [
-        "Start Importassistent"
       ],
       "Start setup": [
         "Start opsætning"
@@ -1417,9 +1402,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "Slet alle beskeder"
-      ],
       "Import is incomplete!": [
         "Importen er ufuldstændig!"
       ],
@@ -2933,9 +2915,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Tillad ProtonMail adgang til din Gmail-konto: Vælg om ${ bold2Steps } er aktiveret og følg nedenstående trin."
-      ],
       "Click ${ boldManage } to expand the options menu": [
         ""
       ],
@@ -2944,9 +2923,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         ""
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "Som det sidste, ${ googleMailLink } med den konto, du gerne vil importere, ${ googleCaptchaLink }."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         ""
@@ -2960,26 +2936,11 @@
       "Go to ${ boldAccountSecurity }": [
         ""
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "Gå til ${ googleAccountLink }. I ${ boldSecurity } sektionen, ${ boldAccess } for mindre sikre apps. Hvis du ikke ser denne indstilling, har du måske totrinsbekræftelse aktiveret."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "Gå til ${ googleAccountLink }. I ${ boldSecurity } sektionen, opret et ${ boldAppPassword } , hvis du ikke har et allerede. Du skal bruge denne adgangskode under importen."
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         ""
       ],
       "If 2-step verification is off, turn it on": [
         ""
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "I ${ boldLabels } sektionen skal du vælge de mapper, som det er tilladt at importere ind i ProtonMail."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "I dine ${ boldGmailSettings }, gå til ${ boldForwarding } og sikr dig at ${ boldIMAPAccess } er aktiveret."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        "Log ind på Yahoo Mail, og klik på dit navn i øverste højre hjørne for at få adgang til ${ boldAccountInfo }. I afsnittet ${ boldAccountSec } skal du scrolle til afsnittet ${ boldAppPassword } for at generere en app-adgangskode. Du skal bruge denne adgangskode under importen."
       ],
       "Open your ${ yahooMailLink } contacts": [
         ""
@@ -3019,9 +2980,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "Totrinsbekræftelse"
-      ],
       "Account info": [
         "Kontooplysninger"
       ],
@@ -3043,63 +3001,17 @@
       "Export to CSV file": [
         ""
       ],
-      "Forwarding and POP/IMAP": [
-        "Videresendelse og POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Gmail-indstillinger"
-      ],
       "ICS": [
         ""
-      ],
-      "IMAP access": [
-        "IMAP adgang"
       ],
       "in the next step you need to select all the permissions": [
         ""
       ],
-      "Labels": [
-        "Etiketter"
-      ],
       "Manage": [
         ""
       ],
-      "Other ways to sign in": [
-        "Andre måder at logge ind på"
-      ],
       "Publish a calendar": [
         ""
-      ],
-      "Security": [
-        "Sikkerhed"
-      ],
-      "turn on access": [
-        "slå adgang til"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "log ind på Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "åbn derefter denne side for at låse op for CAPTCHA"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "Sådan oprettes en app-adgangskode i Gmail-indstillinger"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Sådan deaktiveres CAPTCHA i Gmail"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Sådan aktiveres IMAP-videresendelse i Gmail-indstillinger"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Sådan vises mapper i IMAP i Gmail-indstillinger"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Sådan aktiveres adgang til mindre sikre apps i Gmail-indstillinger"
       ]
     },
     "Import instructions link": {
@@ -3149,14 +3061,6 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
         ""
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "Totrinsbekræftelse deaktiveret (standardindstillinger)"
-      ],
-      "2-step verification enabled": [
-        "Totrinsbekræftelse aktiveret"
       ]
     },
     "Import key": {
@@ -3745,6 +3649,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Indtast dit telefonnummer til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        "Invitationer til begivenheder og anmodninger om svar vil blive sendt på dette sprog."
+      ],
       "Expired": [
         "Udløbet"
       ],
@@ -3814,9 +3721,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Hvis du bruger en anden e-mail-udbyder, eller hvis din konto allerede er forberedt, kan du gå til import."
-      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
       ],
@@ -3882,7 +3786,7 @@
         "Importér postkasse"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        ""
+        "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til Proton. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "VIGTIGT: Download af dine private nøgler og afsendelse eller lagring af dem på/via usikre medier kan kompromittere din kontosikkerhed!"
@@ -3955,12 +3859,6 @@
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        "Det kan tage flere dage at gennemføre store importeringer."
       ],
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
@@ -4297,7 +4195,7 @@
         "Screenshot(s) vedhæftet"
       ],
       "Select a service provider to start": [
-        ""
+        "Vælg en tjenesteudbyder for at starte"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -4443,9 +4341,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Denne hjælper aktiverer to-faktor-godkendelse (2FA) på din ProtonMail-konto. 2FA vil gøre din ProtonMail-konto mere sikker, så du anbefales at aktivere det."
       ],
-      "to": [
-        "til"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "For at bekræfte, skal du indtaste navnet på den bruger, du ønsker at slette."
       ],
@@ -4470,9 +4365,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "For at holde dig ajour med den seneste udvikling hos Protonmail, kan du abonnere på vores forskellige nyhedsbreve og fra tid til anden besøge vores blog."
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Følg instruktionerne for at forberede importen af din eksterne konto:"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "For at fortsætte skal du vælge en metode til kontogenoprettelse, så vi kan bekræfte anmodningen."
       ],
@@ -4484,9 +4376,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Overfør dine data sikkert til Proton. Importassistenten forbinder til din eksterne e-mail-udbyder og importerer dine valgte beskeder og mapper."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "To-faktor-godkendelse tilføjer et ekstra lag af sikkerhed til din konto, hvis din adgangskode er kompromitteret."
@@ -4584,9 +4473,6 @@
       "We use 3-D Secure to protect your payments.": [
         "Vi bruger 3-D Secure til at beskytte dine betalinger."
       ],
-      "We will notify you once your import is finished.": [
-        "Vi giver dig besked, når din import er færdig."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
@@ -4656,9 +4542,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
-      "You can continue using Proton services as usual.": [
-        "Du kan fortsætte med at bruge Proton-tjenester som sædvanligt."
-      ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } links pr. kalender. For at oprette et nyt link til denne kalender, skal du slette et fra listen nedenfor."
       ],
@@ -4669,7 +4552,7 @@
         "Godkendelseslogning kan aktiveres for at se, hvornår din konto bliver tilgået. Følgende realtidstilgangsdata logges: IP-adresse, der tilgår kontoen, klokkeslæt samt mislykkede forsøg."
       ],
       "You can import one data type at a time.": [
-        ""
+        "Du kan importere én datatype ad gangen."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Du kan nu modtage beskeder til din @pm.me-adresse. Opgrader til et betalt abonnement for også at kunne sende e-mails ved hjælp af din @pm.me-adresse og oprette yderligere @pm.me-adresser."
@@ -4711,7 +4594,7 @@
         "Du skal have en personlig kalender for at oprette et link."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "Du skal have en aktiv personlig kalender for at importere dine begivenheder fra .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
@@ -4773,20 +4656,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Din import fra ${ delayedImport.Account } er midlertidigt forsinket."
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "Din import fra ${ delayedImport.Email } er midlertidigt forsinket."
-      ],
-      "Your import has started!": [
-        "Din import er begyndt!"
-      ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
-      ],
-      "Your messages are being imported from": [
-        "Dine beskeder bliver importeret fra"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Dit organisationsadgangskode kan deles med andre brugere, som du ønsker at give administrative privilegier. Det er også en nød-gendannelseskode til at få adgang til din organisation, såfremt du mister adgangen til din konto. Gem og opbevar denne adgangskode sikkert."
@@ -4887,14 +4761,6 @@
     "information": {
       "Included": [
         "Inkluderet"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "Indtast sætning for at bekræfte"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "For at bekræfte denne handling skal du indtaste følgende tekst i feltet nedenfor."
       ]
     },
     "Invoice state display as badge": {
@@ -5407,7 +5273,7 @@
         "Kredit forbrugt"
       ],
       "Current login password": [
-        ""
+        "Aktuel login-adgangskode"
       ],
       "Customize invoices": [
         "Tilpas fakturaer"
@@ -5428,7 +5294,7 @@
         "Standardsporg"
       ],
       "Default language (${ defaultLanguage })": [
-        ""
+        "Standardsprog (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Standard PGP-metode"
@@ -5535,17 +5401,11 @@
       "From: ${ emailFrom }": [
         "Fra: ${ emailFrom }"
       ],
-      "From: ${ fromEmailAddress }": [
-        "Fra: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "Fra: ${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "Fra: ${ modalModel.email }"
       ],
       "Gift code": [
         "Gavekode"
@@ -5787,11 +5647,11 @@
       "Select your country": [
         "Vælg dit land"
       ],
-      "Send and reply to invites in": [
-        ""
-      ],
       "Send auto-reply": [
         "Send auto-svar"
+      ],
+      "Send invites in": [
+        "Send invitationer på"
       ],
       "Show secondary time zone": [
         "Vis sekundær tidszone"
@@ -5861,9 +5721,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Til: ${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Til: ${ toEmailAddress }"
       ],
       "Total": [
         "I alt"
@@ -7210,14 +7067,6 @@
         "Arbejde"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "E-mail"
@@ -7252,11 +7101,6 @@
       ],
       "Reading emails of non-private users": [
         "Læse e-mails af ikke-private brugere"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "Slet beskeder i ${ email } permanent"
       ]
     },
     "Select files": {
@@ -7523,9 +7367,6 @@
       "Default calendar updated": [
         "Standardkalender opdateret"
       ],
-      "Deleting original messages": [
-        "Slet oprindelige beskeder"
-      ],
       "DMARC value copied to clipboard": [
         "DMARC-værdi kopieret til udklipsholder"
       ],
@@ -7549,9 +7390,6 @@
       ],
       "Import record deleted": [
         "Importpost slettet"
-      ],
-      "Import resumed": [
-        "Import genoptaget"
       ],
       "Invoice customized": [
         "Faktura tilrettet"
@@ -7989,9 +7827,6 @@
       "Customize calendar import": [
         "Tilpas kalender-import"
       ],
-      "Customize import": [
-        "Tilpas import"
-      ],
       "Customize your mail import": [
         "Tilpas din mail-import"
       ],
@@ -8167,9 +8002,6 @@
         "Importer som simpel begivenhed?",
         "Importer som simple begivenheder?"
       ],
-      "Import Assistant": [
-        "Importassistent"
-      ],
       "Import contacts": [
         "Importer kontakter"
       ],
@@ -8181,9 +8013,6 @@
       ],
       "Import groups": [
         "Importer grupper"
-      ],
-      "Import in progress": [
-        "Import i gang"
       ],
       "Import key": [
         "Importer nøgle"
@@ -8198,7 +8027,7 @@
         "Ugyldig bekræftelseskode"
       ],
       "Invitations": [
-        ""
+        "Invitationer"
       ],
       "Invoices": [
         "Fakturaer"
@@ -8308,15 +8137,6 @@
       "Plan summary": [
         "Abonnementoversigt"
       ],
-      "Prepare for import": [
-        "Forbered til import"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "Forbered Gmail til import ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Forbered Yahoo Mail til import"
-      ],
       "Previous": [
         "Forrige"
       ],
@@ -8381,7 +8201,7 @@
         "Vælg kontaktgruppe"
       ],
       "Select permissions": [
-        ""
+        "Vælg tilladelser"
       ],
       "Select plan": [
         "Vælg abonnement"
@@ -8516,7 +8336,7 @@
         "Advarsel!"
       ],
       "What would you like to import?": [
-        ""
+        "Hvad vil du gerne importere?"
       ],
       "What's new": [
         "Nyheder"
@@ -9023,9 +8843,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
-      "permanently delete all messages on ${ email }": [
-        "slette alle beskeder permanent på ${ email }"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
@@ -9040,9 +8857,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Dato- og tidsindstillingerne på din enhed er ikke synkroniseret. ${ learnMore }"
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "Denne handling vil ${ boldWarning }. Du vil ikke kunne gendanne beskederne på ${ domain }."
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Denne funktion er kun tilgængelig med et ProtonMail Professional abonnement eller højere"
@@ -9297,17 +9111,6 @@
       ],
       "Wednesday": [
         "Onsdag"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Godkend"
-      ],
-      "Configure Import": [
-        "Konfigurer import"
-      ],
-      "Import": [
-        "Importér"
       ]
     },
     "Yearly recurring event, frequency": {

@@ -316,6 +316,9 @@
       "Encryption": [
         "Şifreleme"
       ],
+      "exclude message content": [
+        ""
+      ],
       "Expand composer": [
         "Oluşturucuyu genişlet"
       ],
@@ -653,7 +656,7 @@
       "Recover data": [
         "Veriyi kurtar"
       ],
-      "Refine your search": [
+      "Refine it": [
         ""
       ],
       "refresh the page": [
@@ -1304,6 +1307,11 @@
         "İnternet sitesi erişim sorunu"
       ]
     },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Takvimi içe aktarma"
@@ -1893,8 +1901,8 @@
         "Kişiler birleştiriliyor... Bu birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Dosyanın boyutu en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } olmalı ve en fazla $ ${ MAX_IMPORT_CONTACTS_STRING } kişi içermelidir. Dosyanız daha büyükse, lütfen daha küçük dosyalara bölün.",
-        "Dosyanın maksimum boyutu ${ MAX_IMPORT_FILE_SIZE_STRING } olmalı ve en fazla $ ${ MAX_IMPORT_CONTACTS_STRING } kişi içermelidir. Dosyanız daha büyükse, lütfen daha küçük dosyalara bölün."
+        "Dosyanın boyutu en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi içermelidir. Dosyanız daha büyükse, lütfen daha küçük dosyalara bölün.",
+        "Dosyanın maksimum boyutu ${ MAX_IMPORT_FILE_SIZE_STRING } olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi içermelidir. Dosyanız daha büyükse, lütfen daha küçük dosyalara bölün."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Kişiler arasında birleştirme önceliğini sıralamak için Sürükle ve Bırak özelliğini kullanın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Ekran görüntüsü eklendi"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        ""
+      ],
       "Seems like you are all caught up for now": [
         "Şimdilik herşeyi gördünüz gibi görünüyor"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Daha fazla kullanıcı eklemek için ${ professionalPlan }'a geçin."
-      ],
-      "Taking too long?": [
-        ""
       ],
       "Test link": [
         "Deneme bağlantısı"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        ""
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Planlama iptal edildi. İleti, Taslaklara taşındı."
       ],
