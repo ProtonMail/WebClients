@@ -316,6 +316,9 @@
       "Encryption": [
         "Criptografia"
       ],
+      "exclude message content": [
+        ""
+      ],
       "Expand composer": [
         "Expandir compositor"
       ],
@@ -653,7 +656,7 @@
       "Recover data": [
         "Recuperar dados"
       ],
-      "Refine your search": [
+      "Refine it": [
         ""
       ],
       "refresh the page": [
@@ -1302,6 +1305,11 @@
       ],
       "Website access problem": [
         "Problema de acesso à página web"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Capturas de ecrã anexadas"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        ""
+      ],
       "Seems like you are all caught up for now": [
         "Parece que está ocupado de momento"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Mude para ${ professionalPlan } para adicionar mais utilizadores."
-      ],
-      "Taking too long?": [
-        ""
       ],
       "Test link": [
         "Testar ligação"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        ""
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         ""
       ],
@@ -7309,7 +7320,7 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos $ ${ length } caracteres"
+        "A senha deve conter pelo menos ${ length } caracteres"
       ]
     },
     "Video control": {

@@ -1619,6 +1619,11 @@
         "Proton kontakty nepodporuje ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "v dalším kroku je potřeba vybrat všechna oprávnění"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontakty nebudou importovány. Klikněte pro podrobnosti"
@@ -3693,8 +3698,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Upozorňujeme, že abyste mohli zahájit import, musíte přijmout všechna oprávnění požadovaná aplikací."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Vezměte prosím na vědomí, že aplikace ${ boldNextStep } požadovala zahájení importu."
       ]
     },
     "Onboarding Proton": {
@@ -4612,6 +4617,9 @@
       ],
       "Select link expiration time": [
         "Vyberte časovou dobu pro vypršení odkazu"
+      ],
+      "Select permissions": [
+        "Výběr oprávnění"
       ],
       "Select what to import": [
         ""

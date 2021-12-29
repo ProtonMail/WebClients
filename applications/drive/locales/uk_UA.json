@@ -1619,6 +1619,11 @@
         "ProtonContacts не підтримує ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        "в наступному кроці вам необхідно вибрати усі дозволи"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
@@ -3693,8 +3698,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "Зауважте, що для можливості початку імпортування, вам необхідно схвалити усі запитані застосунком дозволи."
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        "Зауважте, що ${ boldNextStep }, запитані програмою, щоб почати імпортування."
       ]
     },
     "Onboarding Proton": {
@@ -4612,6 +4617,9 @@
       ],
       "Select link expiration time": [
         "Оберіть час завершення дії посилання"
+      ],
+      "Select permissions": [
+        "Виберіть дозволи"
       ],
       "Select what to import": [
         "Вибрати елементи для імпорту"

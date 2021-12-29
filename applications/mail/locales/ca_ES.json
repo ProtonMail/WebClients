@@ -316,6 +316,9 @@
       "Encryption": [
         "Xifratge"
       ],
+      "exclude message content": [
+        ""
+      ],
       "Expand composer": [
         "Ampliar l'editor"
       ],
@@ -653,8 +656,8 @@
       "Recover data": [
         "Recuperar dades"
       ],
-      "Refine your search": [
-        "Afinar la cerca"
+      "Refine it": [
+        ""
       ],
       "refresh the page": [
         "refresqueu la pàgina"
@@ -1304,6 +1307,11 @@
         "Problema d'acces a la web"
       ]
     },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
+      ]
+    },
     "Calendar feature": {
       "Calendar import": [
         "Importació de calendari"
@@ -1513,7 +1521,7 @@
         "${ participantName } va acceptar provisionalment la vostra invitació i va proposar una nova hora per a una ocurrència d'aquest esdeveniment."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        "$ { participantName } va acceptar provisionalment la vostra invitació i va proposar una nova hora per aquest esdeveniment."
+        "${ participantName } va acceptar provisionalment la vostra invitació i va proposar una nova hora per aquest esdeveniment."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
         "${ participantName } va acceptar provisionalment la vostra invitació a una ocurrència de l'esdeveniment."
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Captures de pantalla(s) adjuntes"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        ""
+      ],
       "Seems like you are all caught up for now": [
         "Sembla que ara mateix esteu al dia"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Canvia a ${ professionalPlan } per afegir més usuaris."
-      ],
-      "Taking too long?": [
-        "Està trigant massa?"
       ],
       "Test link": [
         "Enllaç de prova"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        ""
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Programació cancel·lada. El missatge s'ha mogut a Esborranys."
       ],

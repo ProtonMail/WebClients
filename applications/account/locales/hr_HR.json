@@ -244,14 +244,8 @@
       "Delete": [
         "Izbriši"
       ],
-      "Delete all messages": [
-        "Izbriši sve poruke"
-      ],
       "Delete link": [
         "Izbriši poveznicu"
-      ],
-      "Delete original messages": [
-        "Izbriši originalne poruke"
       ],
       "Delete record": [
         "Izbriši zapis"
@@ -389,9 +383,6 @@
         "Uvezi kontakte"
       ],
       "Import emails": [
-        ""
-      ],
-      "Import from .csv or vCard": [
         ""
       ],
       "Import from .ics": [
@@ -688,17 +679,11 @@
       "Skip": [
         "Preskoči"
       ],
-      "Skip to import": [
-        "Preskoči na uvoz"
-      ],
       "Sort": [
         "Sortiranje"
       ],
       "Start import": [
         "Započni uvoz"
-      ],
-      "Start Import Assistant": [
-        "Pokreni Import Assistant"
       ],
       "Start setup": [
         "Započni postavljanje"
@@ -1427,9 +1412,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "Izbriši sve poruke"
-      ],
       "Import is incomplete!": [
         "Uvoz nije dovršen!"
       ],
@@ -2966,9 +2948,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Omogućite ProtonMailu pristup vašem Gmail računu: odaberite je li ${ bold2Steps } omogućen i slijedite korake u nastavku."
-      ],
       "Click ${ boldManage } to expand the options menu": [
         ""
       ],
@@ -2977,9 +2956,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         ""
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "Konačno, ${ googleMailLink } s računom koji želite uvoziti, ${ googleCaptchaLink }."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         ""
@@ -2993,25 +2969,10 @@
       "Go to ${ boldAccountSecurity }": [
         ""
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "Idite na ${ googleAccountLink }. U odjeljku ${ boldSecurity }, ${ boldAccess } za manje sigurne aplikacije. Ako ne vidite ovu opciju, možda je omogućena potvrda u dva koraka."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "Idite na ${ googleAccountLink }. U odjeljku ${ boldSecurity }, stvorite ${ boldAppPassword } ako je već nemate. Ova lozinka trebati će vam tijekom uvoza."
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         ""
       ],
       "If 2-step verification is off, turn it on": [
-        ""
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "U odjeljku ${ boldLabels }, odaberite mape dopuštene za uvoz u ProtonMail."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "U vašim ${ boldGmailSettings }, idite na ${ boldForwarding } i provjerite da je ${ boldIMAPAccess } omogućen."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
         ""
       ],
       "Open your ${ yahooMailLink } contacts": [
@@ -3052,9 +3013,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "Dvofaktorska autentikacija"
-      ],
       "Account info": [
         "Informacije o računu"
       ],
@@ -3076,63 +3034,17 @@
       "Export to CSV file": [
         ""
       ],
-      "Forwarding and POP/IMAP": [
-        "Prosljeđivanje i POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Gmail postavke"
-      ],
       "ICS": [
         ""
-      ],
-      "IMAP access": [
-        "IMAP pristup"
       ],
       "in the next step you need to select all the permissions": [
         ""
       ],
-      "Labels": [
-        "Oznake"
-      ],
       "Manage": [
-        ""
-      ],
-      "Other ways to sign in": [
         ""
       ],
       "Publish a calendar": [
         ""
-      ],
-      "Security": [
-        "Sigurnost"
-      ],
-      "turn on access": [
-        "omogući pristup"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "prijavite se na Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "zatim otvorite stranicu za rješavanje CAPTCHA-e"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "Kako stvoriti lozinku za aplikaciju u postavkama Gmaila"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Kako onemogućiti CAPTCHA-u na Gmailu"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Kako omogućiti prosljeđivanje IMAP-a u postavkama Gmaila"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Kako prikazati mape u IMAP-u u postavkama Gmaila"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Kako uključiti pristup za manje sigurne aplikacije u postavkama Gmaila"
       ]
     },
     "Import instructions link": {
@@ -3182,14 +3094,6 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
         ""
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "Dvofaktorska autentikacija je onemogućena (zadano)"
-      ],
-      "2-step verification enabled": [
-        "Dvofaktorska autentikacija je omogućena"
       ]
     },
     "Import key": {
@@ -3801,6 +3705,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Unesite svoj telefonski broj za oporavak i poslat ćemo vam vaše korisničko ime ili adresu e-pošte."
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        ""
+      ],
       "Expired": [
         "Isteklo"
       ],
@@ -3869,9 +3776,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Ako koristite drugog davatelja usluga e-pošte ili je vaš račun već pripremljen, možete preskočiti uvoz."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
@@ -4012,12 +3916,6 @@
       ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
-      ],
-      "Language in which your invitation-related emails will be sent.": [
-        ""
-      ],
-      "Large imports can take several days to complete.": [
-        "Veći uvozi mogu potrajati i do nekoliko dana."
       ],
       "Large imports can take several days.": [
         ""
@@ -4501,9 +4399,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Ovaj čarobnjak omogućiti će dvofaktorsku autentikaciju na Proton računu. Dvofaktorska autentikacija će vaš Proton račun učiniti sigurnijim pa vam preporučujemo da opciju omogućite."
       ],
-      "to": [
-        "za"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potvrdu unesite ime korisnika kojeg želite izbrisati."
       ],
@@ -4528,9 +4423,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Da biste bili u tijeku s najnovijim razvojima u Proton proizvodima, možete se pretplatiti na naše različite e-poruke i povremeno posjetiti naš blog."
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Da biste pripremili svoj vanjski račun za uvoz, slijedite upute za:"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         ""
       ],
@@ -4542,9 +4434,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Sigurno prenesite svoje podatke u Proton. Import Assistant se povezuje s vašim vanjskim davateljem usluga e-pošte i uvozi odabrane poruke i mape."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Dvofaktorska autentikacija dodaje dodatnu razinu sigurnosti vašem računu u slučaju da je lozinka ugrožena."
@@ -4642,9 +4531,6 @@
       "We use 3-D Secure to protect your payments.": [
         "Za zaštitu vaših plaćanja koristimo 3-D Secure."
       ],
-      "We will notify you once your import is finished.": [
-        "Obavijestiti ćemo vas nakon završetka uvoza."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Preusmjerit ćemo vas na PayPal u novoj kartici preglednika da biste dovršili ovu transakciju. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
       ],
@@ -4713,9 +4599,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         ""
-      ],
-      "You can continue using Proton services as usual.": [
-        "Možete nastaviti koristiti Proton usluge kao i obično."
       ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Možete stvoriti do ${ MAX_LINKS_PER_CALENDAR } poveznica po kalendaru. Da biste stvorili novu poveznicu do ovog kalendara, izbrišite jednu s popisa ispod."
@@ -4831,20 +4714,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         ""
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "Vaš uvoz iz ${ delayedImport.Email } je privremeno odgođen."
-      ],
-      "Your import has started!": [
-        "Vaš uvoz je započeo!"
-      ],
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
-      ],
-      "Your messages are being imported from": [
-        "Vaše poruke se uvoze iz"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Lozinka vaše organizacije može se dijeliti s drugim korisnicima kojima želite dati administratorske privilegije. To je i kôd za hitnu obnovu kako biste dobili pristup nad vašoj organizaciji u slučaju da izgubite pristup svom računu. Spremite ovu lozinku i čuvajte je na sigurnom."
@@ -4862,7 +4736,7 @@
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Vaši ProtonVPN i ProtonMail računi su povezani. Da biste ih izbrisali, prijavite se u $ { loginLink } i tamo Izbrišite svoj račun."
+        "Vaši ProtonVPN i ProtonMail računi su povezani. Da biste ih izbrisali, prijavite se u ${ loginLink } i tamo Izbrišite svoj račun."
       ],
       "Your recovery email address:": [
         "Vaša adresa e-pošte za oporavak:"
@@ -4945,14 +4819,6 @@
     "information": {
       "Included": [
         "Uključeno"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "Unesite izraz za potvrdu"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "Za potvrdu ove radnje, unesite sljedeći tekst u donji okvir."
       ]
     },
     "Invoice state display as badge": {
@@ -5597,17 +5463,11 @@
       "From: ${ emailFrom }": [
         ""
       ],
-      "From: ${ fromEmailAddress }": [
-        "Od: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         ""
       ],
       "From: ${ importedEmailAddress }": [
         ""
-      ],
-      "From: ${ modalModel.email }": [
-        "Od: ${ modalModel.email }"
       ],
       "Gift code": [
         "Darovni kôd"
@@ -5849,11 +5709,11 @@
       "Select your country": [
         "Odaberite vašu državu"
       ],
-      "Send and reply to invites in": [
-        ""
-      ],
       "Send auto-reply": [
         "Pošalji automatski odgovor"
+      ],
+      "Send invites in": [
+        ""
       ],
       "Show secondary time zone": [
         "Prikaži sekundarnu vremensku zonu"
@@ -5923,9 +5783,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         ""
-      ],
-      "To: ${ toEmailAddress }": [
-        "Za: ${ toEmailAddress }"
       ],
       "Total": [
         "Ukupno"
@@ -7284,14 +7141,6 @@
         "Posao"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "E-pošta"
@@ -7326,11 +7175,6 @@
       ],
       "Reading emails of non-private users": [
         "Čitanje e-pošte od korisnika koji nisu privatni"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "Trajno izbriši e-poruke od ${ email }"
       ]
     },
     "Select files": {
@@ -7597,9 +7441,6 @@
       "Default calendar updated": [
         "Zadani kalendar je ažuriran"
       ],
-      "Deleting original messages": [
-        "Brisanje originalnih poruka"
-      ],
       "DMARC value copied to clipboard": [
         ""
       ],
@@ -7623,9 +7464,6 @@
       ],
       "Import record deleted": [
         "Zapis uvoza je izbrisan"
-      ],
-      "Import resumed": [
-        "Uvoz nastavljen"
       ],
       "Invoice customized": [
         "Prilagođena je faktura"
@@ -8065,9 +7903,6 @@
       "Customize calendar import": [
         ""
       ],
-      "Customize import": [
-        "Prilagodi uvoz"
-      ],
       "Customize your mail import": [
         ""
       ],
@@ -8244,9 +8079,6 @@
         "",
         ""
       ],
-      "Import Assistant": [
-        "Import Assistant"
-      ],
       "Import contacts": [
         "Uvezi kontakte"
       ],
@@ -8258,9 +8090,6 @@
       ],
       "Import groups": [
         "Uvezi grupe"
-      ],
-      "Import in progress": [
-        "Uvoz u tijeku"
       ],
       "Import key": [
         "Uvezi ključ"
@@ -8384,15 +8213,6 @@
       ],
       "Plan summary": [
         "Sažetak plana"
-      ],
-      "Prepare for import": [
-        "Priprema za uvoz"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "Priprema Gmaila za izvoz ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Priprema Yahoo Maila za uvoz"
       ],
       "Previous": [
         "Prethodno"
@@ -9106,9 +8926,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
-      "permanently delete all messages on ${ email }": [
-        "trajno izbriši sve e-poruke od ${ email }"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Imajte na umu da odabirom ovog načina plaćanja vaš račun se ne može odmah nadograditi. Ažurirati ćemo vaš račun nakon plaćanja."
       ],
@@ -9123,9 +8940,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         ""
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "Ova radnja će ${ boldWarning }. Nećete moći vratiti e-poruke od ${ domain }."
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Ova je značajka dostupna samo za ProtonMail Professional planove ili više"
@@ -9407,17 +9221,6 @@
       ],
       "Wednesday": [
         "Srijeda"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Autenticiraj"
-      ],
-      "Configure Import": [
-        "Prilagodite uvoz"
-      ],
-      "Import": [
-        "Uvoz"
       ]
     },
     "Yearly recurring event, frequency": {

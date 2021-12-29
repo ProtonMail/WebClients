@@ -1564,7 +1564,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Kişilerinizi şifrelerken ve eklerken bir hata oluştu. ${ totalImported } /${{ totalToImport } kişi başarıyla içe aktarıldı."
+        "Kişilerinizi şifrelerken ve eklerken bir hata oluştu. ${ totalImported } /${ totalToImport } kişi başarıyla içe aktarıldı."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kişi başarıyla içe aktarıldı. İçe aktarılan kişi artık kişi listenizde görünecektir.",
@@ -1577,6 +1577,11 @@
       ],
       "ProtonContacts does not support ${ forNow }:": [
         "ProtonContacts ${ forNow }: desteklemiyor:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
       ]
     },
     "Import warning": {
@@ -3533,7 +3538,7 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
         ""
       ]
     },
@@ -4431,6 +4436,9 @@
         ""
       ],
       "Select link expiration time": [
+        ""
+      ],
+      "Select permissions": [
         ""
       ],
       "Select what to import": [

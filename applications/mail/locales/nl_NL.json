@@ -316,6 +316,9 @@
       "Encryption": [
         "Versleuteling"
       ],
+      "exclude message content": [
+        ""
+      ],
       "Expand composer": [
         "Opstelvenster vergroten"
       ],
@@ -653,8 +656,8 @@
       "Recover data": [
         "Gegevens herstellen"
       ],
-      "Refine your search": [
-        "Verfijn uw zoekopdracht"
+      "Refine it": [
+        ""
       ],
       "refresh the page": [
         "pagina vernieuwen"
@@ -1302,6 +1305,11 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -3943,6 +3951,9 @@
       "Screenshot(s) attached": [
         "Schermafdruk(ken) bijgevoegd"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        ""
+      ],
       "Seems like you are all caught up for now": [
         "Het lijkt dat u helemaal mee bent voor nu"
       ],
@@ -4014,9 +4025,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Schakel over naar ${ professionalPlan } om meer gebruikers toe te voegen."
-      ],
-      "Taking too long?": [
-        "Duurt het te lang?"
       ],
       "Test link": [
         "Link testen"
@@ -4862,7 +4870,7 @@
         "Van:"
       ],
       "From: ${ importedEmail }": [
-        "Van: { importedEmail }"
+        "Van: ${ importedEmail }"
       ],
       "Group": [
         "Groep"
@@ -5513,6 +5521,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        ""
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Planning geannuleerd. Bericht is verplaatst naar Concepten."
       ],

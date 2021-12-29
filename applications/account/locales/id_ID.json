@@ -244,14 +244,8 @@
       "Delete": [
         "Hapus"
       ],
-      "Delete all messages": [
-        "Hapus semua pesan"
-      ],
       "Delete link": [
         "Hapus tautan"
-      ],
-      "Delete original messages": [
-        "Hapus pesan semula"
       ],
       "Delete record": [
         "Hapus rekaman"
@@ -390,9 +384,6 @@
       ],
       "Import emails": [
         "Impor email"
-      ],
-      "Import from .csv or vCard": [
-        "Impor dari .csv atau vCard"
       ],
       "Import from .ics": [
         "Impor dari .ics"
@@ -688,17 +679,11 @@
       "Skip": [
         "Lewati"
       ],
-      "Skip to import": [
-        "Lewati ke impor"
-      ],
       "Sort": [
         "Urut"
       ],
       "Start import": [
         "Mulai impor"
-      ],
-      "Start Import Assistant": [
-        "Mulai Import Assistant"
       ],
       "Start setup": [
         "Mulai penyetelan"
@@ -1407,9 +1392,6 @@
       ]
     },
     "Confirm modal title": {
-      "Delete all messages": [
-        "Hapus seluruh pesan"
-      ],
       "Import is incomplete!": [
         "Impor tidak lengkap!"
       ],
@@ -2900,9 +2882,6 @@
       ]
     },
     "Import instructions": {
-      "Allow ProtonMail access into your Gmail account: choose whether ${ bold2Steps } is enabled and follow the steps below.": [
-        "Izinkan akses ProtonMail ke akun Gmail Anda: atur ${ bold2Steps } aktif dan ikuti langkah di bawah."
-      ],
       "Click ${ boldManage } to expand the options menu": [
         "Klik ${ boldManage } untuk menampilkan menu pengaturan selengkapnya"
       ],
@@ -2911,9 +2890,6 @@
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
         "Perlebar menu dropdown dengan mengeklik tombol 3 titik (...)"
-      ],
-      "Finally, ${ googleMailLink } with the account you would like to import, ${ googleCaptchaLink }.": [
-        "Akhirnya, ${ googleMailLink } dengan akun yang mau Anda impor, ${ googleCaptchaLink }."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         "Hasilkan ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton"
@@ -2927,26 +2903,11 @@
       "Go to ${ boldAccountSecurity }": [
         "Tuju ${ boldAccountSecurity }"
       ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, ${ boldAccess } for less secure apps. If you don't see this option, you might have 2-step verification enabled.": [
-        "Ke ${ googleAccountLink }. Di bagian ${ boldSecurity }, ${ boldAccess } untuk aplikasi yang kurang aman. Jika Anda tidak memiliki opsi ini, Anda mungkin perlu mengaktifkan verifikasi 2 langkah."
-      ],
-      "Go to ${ googleAccountLink }. In the ${ boldSecurity } section, create an ${ boldAppPassword } if you don't have one already. You will need this password during the import.": [
-        "Tuju ${ googleAccountLink }. Pada bagian ${ boldSecurity }, buat ${ boldAppPassword } apabila Anda belum memilikinya. Anda akan butuh kata sandi ini dalam proses impor."
-      ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         "Tuju ${ securitySettingsLink } yang ada pada situs Outlook.com"
       ],
       "If 2-step verification is off, turn it on": [
         "Apabila verifikasi 2 langkah sedang tidak aktif, aktifkan terlebih dahulu"
-      ],
-      "In the ${ boldLabels } section, choose the folders allowed for import into ProtonMail.": [
-        "Di bagian ${ boldLabels }, pilih folder yang diizinkan untuk diimpor ke ProtonMail."
-      ],
-      "In your ${ boldGmailSettings }, go to ${ boldForwarding } and make sure that ${ boldIMAPAccess } is enabled.": [
-        "Di ${ boldGmailSettings }, kunjungi ${ boldForwarding } dan pastikan ${ boldIMAPAccess } aktif."
-      ],
-      "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        "Masuk ke dalam akun Yahoo Mail milik Anda, lalu klik nama Anda pada pojok kanan atas layar untuk dapat mengakses ${ boldAccountInfo }. Pada bagian ${ boldAccountSec }, tuju ${ boldAppPassword } untuk membuat kata sandi aplikasi. Anda akan membutuhkan kata sandi ini dalam proses impor yang ada ke depannya."
       ],
       "Open your ${ yahooMailLink } contacts": [
         "Buka kontak ${ yahooMailLink } Anda"
@@ -2986,9 +2947,6 @@
       ]
     },
     "Import instructions emphasis": {
-      "2-step verification": [
-        "Verifikasi 2 langkah"
-      ],
       "Account info": [
         "Info akun"
       ],
@@ -3010,63 +2968,17 @@
       "Export to CSV file": [
         "Ekspor ke berkas CSV"
       ],
-      "Forwarding and POP/IMAP": [
-        "Penerusan dan POP/IMAP"
-      ],
-      "Gmail Settings": [
-        "Pengaturan Gmail"
-      ],
       "ICS": [
         "ICS"
-      ],
-      "IMAP access": [
-        "Akses IMAP"
       ],
       "in the next step you need to select all the permissions": [
         "terlebih dahulu menyetujui akses-akses izin yang diminta oleh aplikasi kami"
       ],
-      "Labels": [
-        "Label"
-      ],
       "Manage": [
         "Kelola"
       ],
-      "Other ways to sign in": [
-        "Cara-cara lain untuk masuk"
-      ],
       "Publish a calendar": [
         "Terbitkan kalender"
-      ],
-      "Security": [
-        "Keamanan"
-      ],
-      "turn on access": [
-        "aktifkan akses"
-      ]
-    },
-    "Import instructions external link": {
-      "login to Gmail": [
-        "masuk ke Gmail"
-      ],
-      "then open this page to unlock captcha": [
-        "kemudian buka laman ini untuk membuka kunci captcha"
-      ]
-    },
-    "Import instructions image alternative text": {
-      "How to create an app password in Gmail settings": [
-        "Bagaimana cara membuat kata sandi aplikasi di pengaturan Gmail"
-      ],
-      "How to disable CAPTCHA in Gmail": [
-        "Cara menonaktifkan CAPTCHA di Gmail"
-      ],
-      "How to enable IMAP Forwarding in Gmail settings": [
-        "Bagaimana cara mengaktifkan Penerusan IMAP di pengaturan Gmail"
-      ],
-      "How to show folders in IMAP in Gmail settings": [
-        "Bagaimana menampilkan folder IMAP di pengaturan Gmail"
-      ],
-      "How to turn on access for Less Secure Apps in Gmail settings": [
-        "Bagaimana cara mengaktifkan akses ke Aplikasi Kurang Aman di pengaturan Gmail"
       ]
     },
     "Import instructions link": {
@@ -3116,14 +3028,6 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
         "Pada ${ boldPublish }, pilih kalender-kalender mana saja yang hendak Anda impor. Apabila sudah, berikan kalender-kalender tersebut izin ${ boldCanViewAllDetails } dan kemudian terbitkan"
-      ]
-    },
-    "Import instructions tab title": {
-      "2-step verification disabled (default settings)": [
-        "Verifikasi 2 langkah nonaktif (pengaturan baku)"
-      ],
-      "2-step verification enabled": [
-        "Verifikasi 2 langkah aktif"
       ]
     },
     "Import key": {
@@ -3689,6 +3593,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
+      "Event invites and RSVPs will be sent in this language.": [
+        "Undangan acara dan permintaan konfirmasi kehadiran acara (RSVP) akan terkirim dalam bahasa ini."
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
@@ -3757,9 +3664,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
-      ],
-      "If you are using a different email provider or your account is already prepared, you can skip to import.": [
-        "Jika Anda menggunakan layanan surel berbeda atau akun Anda sudah disiapkan, Anda dapat melewati menuju impor."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jika Anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
@@ -3899,12 +3803,6 @@
       "Label all imported messages as": [
         "Labeli semua pesan terimpor sebagai"
       ],
-      "Language in which your invitation-related emails will be sent.": [
-        "Bahasa pengiriman email-email undangan Anda."
-      ],
-      "Large imports can take several days to complete.": [
-        "Ukuran impor yang besar memerlukan waktu berhari-hari untuk selesai."
-      ],
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
       ],
@@ -3954,7 +3852,7 @@
         "Mail.ru membaca data pribadi Anda untuk memberikan akses bagi pengiklan, lembaga pemerintah Rusia, dan pihak ketiga lainnya. Untuk privasi yang lebih baik, buat alamat email yang aman."
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Pastikan Anda mengingat kata sandi untuk masuk dan mendekripsi email. { boldAlert }. Sebaiknya tambahkan email pemulihan terlebih dahulu."
+        "Pastikan Anda mengingat kata sandi untuk masuk dan mendekripsi email. ${ boldAlert }. Sebaiknya tambahkan email pemulihan terlebih dahulu."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ _switchButton }."
@@ -4385,9 +4283,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Proses ini akan mengaktifkan Otentikasi Dua Faktor (2FA) di akun Proton Anda. Otentikasi Dua Faktor akan membuat akun Proton Anda lebih aman sehingga kami sarankan untuk mengaktifkannya."
       ],
-      "to": [
-        "ke"
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Untuk mengonfirmasi, harap masukkan nama pengguna yang ingin Anda hapus."
       ],
@@ -4412,9 +4307,6 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Untuk mengikuti perkembangan terbaru produk Proton, Anda dapat berlangganan berbagai email kami dan mengunjungi blog kami dari waktu ke waktu."
       ],
-      "To prepare your external account for import, please follow the instructions for:": [
-        "Demi menyiapkan akun eksternal untuk mengimpor, harap mengikuti petunjuk:"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
       ],
@@ -4426,9 +4318,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.": [
-        "Transfer data Anda secara aman ke Proton. Import Assistant menyambung ke layanan surel eksternal dan mengimpor folder dan pesan yang Anda pilih."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Otentikasi dua faktor menambahkan lapisan keamanan ekstra ke akun Anda jika kata sandi Anda dipakai secara tidak benar."
@@ -4526,9 +4415,6 @@
       "We use 3-D Secure to protect your payments.": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
       ],
-      "We will notify you once your import is finished.": [
-        "Kami akan memberitahukan Anda ketika proses impor telah selesai."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
       ],
@@ -4597,9 +4483,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
-      ],
-      "You can continue using Proton services as usual.": [
-        "Anda dapat terus menggunakan layanan Proton seperti biasa."
       ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Anda dapat membuat tautan sampai ke ${ MAX_LINKS_PER_CALENDAR } per kalender. Untuk membuat sebuah tautan baru untuk kalender ini, hapus satu dari daftar dibawah ini."
@@ -4715,20 +4598,11 @@
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Proses impor Anda dari ${ delayedImport.Account } ditunda sementara."
       ],
-      "Your import from ${ delayedImport.Email } is temporarily delayed.": [
-        "Impor Anda dari ${ delayedImport.Email } ditunda sementara."
-      ],
-      "Your import has started!": [
-        "Proses impor dimulai!"
-      ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
-      ],
-      "Your messages are being imported from": [
-        "Pesan-pesan Anda sedang diimpor dari"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Kata sandi organisasi Anda dapat dibagikan dengan pengguna yang ingin Anda beri hak istimewa. Ini juga sebagai kode pemulihan darurat untuk mendapatkan akses ke organisasi ketika Anda kehilangan akses akun. Silakan simpan kata sandi ini di tempat yang aman."
@@ -4829,14 +4703,6 @@
     "information": {
       "Included": [
         "Termasuk"
-      ]
-    },
-    "Instructions": {
-      "Enter phrase to confirm": [
-        "Masukkan frasa untuk mengonfirmasi"
-      ],
-      "To confirm this action enter the following text in the box below.": [
-        "Untuk mengonfirmasi tindakan ini masukkan teks di bawah ini."
       ]
     },
     "Invoice state display as badge": {
@@ -5473,17 +5339,11 @@
       "From: ${ emailFrom }": [
         "Dari: ${ emailFrom }"
       ],
-      "From: ${ fromEmailAddress }": [
-        "Dari: ${ fromEmailAddress }"
-      ],
       "From: ${ importedEmail }": [
         "Dari: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "Dari: ${ importedEmailAddress }"
-      ],
-      "From: ${ modalModel.email }": [
-        "Dari: ${ modalModel.email }"
       ],
       "Gift code": [
         "Kode hadiah"
@@ -5725,11 +5585,11 @@
       "Select your country": [
         "Pilih negara Anda"
       ],
-      "Send and reply to invites in": [
-        "Kirim dan balas undangan-undangan pada"
-      ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
+      ],
+      "Send invites in": [
+        "Kirim undangan pada"
       ],
       "Show secondary time zone": [
         "Tampilkan zona waktu sekunder"
@@ -5799,9 +5659,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Ke: ${ PMEmailAddress }"
-      ],
-      "To: ${ toEmailAddress }": [
-        "Ke: ${ toEmailAddress }"
       ],
       "Total": [
         "Total"
@@ -7136,14 +6993,6 @@
         "Kantor"
       ]
     },
-    "Provider": {
-      "Gmail": [
-        "Gmail"
-      ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
-      ]
-    },
     "Recovery method": {
       "Email": [
         "Email"
@@ -7178,11 +7027,6 @@
       ],
       "Reading emails of non-private users": [
         "Membaca email pengguna non-privat"
-      ]
-    },
-    "Security phrase": {
-      "Permanently delete messages in ${ email }": [
-        "Hapus pesan-pesan yang ada di ${ email } secara permanen"
       ]
     },
     "Select files": {
@@ -7449,9 +7293,6 @@
       "Default calendar updated": [
         "Kalendar bawaan diperbarui"
       ],
-      "Deleting original messages": [
-        "Menghapus pesan-pesan asli"
-      ],
       "DMARC value copied to clipboard": [
         "Nilai DMARC disalin ke clipboard"
       ],
@@ -7475,9 +7316,6 @@
       ],
       "Import record deleted": [
         "Rekaman impor dihapus"
-      ],
-      "Import resumed": [
-        "Proses impor dilanjutkan"
       ],
       "Invoice customized": [
         "Tagihan berhasil disesuaikan"
@@ -7913,9 +7751,6 @@
       "Customize calendar import": [
         "Sesuaikan proses impor kalender"
       ],
-      "Customize import": [
-        "Sesuaikan impor"
-      ],
       "Customize your mail import": [
         "Sesuaikan proses impor email"
       ],
@@ -8090,9 +7925,6 @@
       "Import as simple event?": [
         "Impor sebagai acara sederhana?"
       ],
-      "Import Assistant": [
-        "Asisten Impor"
-      ],
       "Import contacts": [
         "Impor kontak"
       ],
@@ -8104,9 +7936,6 @@
       ],
       "Import groups": [
         "Impor grup"
-      ],
-      "Import in progress": [
-        "Impor sedang berjalan"
       ],
       "Import key": [
         "Impor kunci"
@@ -8230,15 +8059,6 @@
       ],
       "Plan summary": [
         "Ringkasan paket"
-      ],
-      "Prepare for import": [
-        "Menyiapkan impor"
-      ],
-      "Prepare Gmail for import ${ gmailInstructionsStep }/${ totalSteps }": [
-        "Meyiapkan Gmail untuk impor ${ gmailInstructionsStep }/${ totalSteps }"
-      ],
-      "Prepare Yahoo Mail for import": [
-        "Mempersiapkan Yahoo Mail untuk mengimpor"
       ],
       "Previous": [
         "Sebelumnya"
@@ -8940,9 +8760,6 @@
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
-      "permanently delete all messages on ${ email }": [
-        "hapus pesan-pesan yang ada di ${ email } secara permanen"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan dengan memilih metode pembayaran ini, akun anda tidak dapat segera ditingkatkan. Kami akan memperbarui akun anda setelah pembayaran sah."
       ],
@@ -8957,9 +8774,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan tanggal dan waktu saat ini. ${ learnMore }"
-      ],
-      "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
-        "Tindakan ini akan ${ boldWarning }. Anda tidak akan lagi dapat memulihkan pesan-pesan yang ada di ${ domain }."
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Fitur ini hanya tersedia untuk ProtonMail Professional atau lebih tinggi"
@@ -9187,17 +9001,6 @@
       ],
       "Wednesday": [
         "Rabu"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Otentikasi"
-      ],
-      "Configure Import": [
-        "Konfigurasi Impor"
-      ],
-      "Import": [
-        "Impor"
       ]
     },
     "Yearly recurring event, frequency": {

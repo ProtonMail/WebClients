@@ -21,7 +21,7 @@
         "添加"
       ],
       "Add address": [
-        ""
+        "添加地址"
       ],
       "Add contact": [
         "添加联系人"
@@ -1559,6 +1559,11 @@
         "ProtonContacts 不支持 ${ forNow }:"
       ]
     },
+    "Import instructions emphasis": {
+      "in the next step you need to select all the permissions": [
+        ""
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
@@ -2253,7 +2258,7 @@
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "此链接是通过先前版本创建的，\n且无法修改。请删除此链接\n并创建一个新链接以更改设置。"
+        "此链接是通过先前版本创建的，且无法修改。请删除此链接并创建一个新链接以更改设置。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此链接将被永久禁用，无人再能通过此链接访问您的文件。您需要新建一个链接才能重新共享该文件。"
@@ -2778,7 +2783,7 @@
         "完成"
       ],
       "Contacts": [
-        "通信录"
+        "通讯录"
       ],
       "Copy": [
         "复制"
@@ -3453,8 +3458,8 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that you need to accept all the permissions requested by the application to be able to start your import.": [
-        "请注意，您需要接受应用程序请求的所有权限才能开始导入。"
+      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3679,7 +3684,7 @@
         "突破网络封锁"
       ],
       "Access to ${ driveAppName } (beta)": [
-        "抢鲜体验 { driveAppName } (测试版)"
+        "抢鲜体验 ${ driveAppName } (测试版)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
         "所有 ${ PLAN_NAMES[PLANS.VPNPLUS] } 套餐功能"
@@ -4342,6 +4347,9 @@
       ],
       "Select link expiration time": [
         "选择链接失效时间"
+      ],
+      "Select permissions": [
+        ""
       ],
       "Select what to import": [
         "选择要导入的内容"

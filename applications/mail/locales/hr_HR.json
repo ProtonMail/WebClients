@@ -318,6 +318,9 @@
       "Encryption": [
         "Šifriranje"
       ],
+      "exclude message content": [
+        ""
+      ],
       "Expand composer": [
         "Proširi prozor za novu poruku"
       ],
@@ -656,7 +659,7 @@
       "Recover data": [
         "Oporavi podatke"
       ],
-      "Refine your search": [
+      "Refine it": [
         ""
       ],
       "refresh the page": [
@@ -1311,6 +1314,11 @@
       ],
       "Website access problem": [
         "Problem s pristupom web stanici"
+      ]
+    },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        ""
       ]
     },
     "Calendar feature": {
@@ -3597,9 +3605,9 @@
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Procijenjeno preostalo vrijeme: { estimatedMinutes } minuta",
-        "Procijenjeno preostalo vrijeme: { estimatedMinutes } minute",
-        "Procijenjeno preostalo vrijeme: { estimatedMinutes } minuta"
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minuta",
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minute",
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minuta"
       ],
       "Estimated time remaining: Less than a minute": [
         "Procijenjeno preostalo vrijeme: manje od minute"
@@ -4022,6 +4030,9 @@
       "Screenshot(s) attached": [
         "Snimka(e) zaslona su pridodane"
       ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        ""
+      ],
       "Seems like you are all caught up for now": [
         "Izgleda da ste zasad upoznati s svim"
       ],
@@ -4093,9 +4104,6 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Prebacite se na ${ professionalPlan } za dodavanje još korisnika."
-      ],
-      "Taking too long?": [
-        ""
       ],
       "Test link": [
         "Testiraj poveznicu"
@@ -5606,6 +5614,9 @@
       ]
     },
     "Message notification": {
+      "Scheduled sending undone": [
+        ""
+      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         ""
       ],
