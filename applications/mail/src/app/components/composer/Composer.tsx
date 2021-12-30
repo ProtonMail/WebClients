@@ -12,7 +12,14 @@ import {
 import { c } from 'ttag';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
-import { classnames, useNotifications, useHandler, useSubscribeEventManager } from '@proton/components';
+import {
+    classnames,
+    useNotifications,
+    useHandler,
+    useSubscribeEventManager,
+    useMailSettings,
+    useAddresses,
+} from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -93,6 +100,8 @@ const Composer = (
     const dispatch = useDispatch();
     const getMessage = useGetMessage();
     const { createNotification } = useNotifications();
+    const [mailSettings] = useMailSettings();
+    const [addresses] = useAddresses();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -589,6 +598,8 @@ const Composer = (
                         contentFocusRef={contentFocusRef}
                         editorActionsRef={editorActionsRef}
                         squireKeydownHandler={squireKeydownHandler}
+                        mailSettings={mailSettings}
+                        addresses={addresses}
                     />
                 </div>
                 <ComposerActions

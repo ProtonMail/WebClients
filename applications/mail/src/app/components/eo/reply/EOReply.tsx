@@ -25,10 +25,9 @@ const EOReply = ({ setSessionStorage }: Props) => {
             setSessionStorage={setSessionStorage}
         >
             {id && messageState && (
-                <main className="ui-standard color-norm bg-norm relative no-scroll w100 max-w100 center sign-layout mw52r">
+                <main className="ui-standard color-norm bg-norm relative no-scroll w100 max-w100 center eo-layout mw52r">
                     <EOComposer
                         referenceMessage={messageState}
-                        isFocused
                         id={id}
                         publicKey={message.PublicKey}
                         outsideKey={outsideKey}

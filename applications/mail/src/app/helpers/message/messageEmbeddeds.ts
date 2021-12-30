@@ -82,7 +82,6 @@ export const createBlob = (attachment: Attachment, data: Uint8Array | string) =>
  */
 export const createEmbeddedImageFromUpload = (attachment: Attachment): MessageEmbeddedImage => {
     const { cid, cloc } = readContentIDandLocation(attachment);
-    console.log({ cid, cloc });
     return {
         type: 'embedded',
         id: generateUID('embedded'),

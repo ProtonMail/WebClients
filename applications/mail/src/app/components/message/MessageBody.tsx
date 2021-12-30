@@ -2,7 +2,7 @@ import { RefObject, useCallback, useEffect, useMemo, useRef } from 'react';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 
-import { classnames } from '@proton/components';
+import { classnames, useMailSettings } from '@proton/components';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -47,6 +47,7 @@ const MessageBody = ({
     const bodyRef = useRef<HTMLDivElement>(null);
     const { highlightString, getESDBStatus } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
+    const [mailSettings] = useMailSettings();
     const { dbExists, esEnabled } = getESDBStatus();
     const highlightBody = highlightKeywords && dbExists && esEnabled;
     const plain = isPlainText(message.data);
@@ -129,6 +130,7 @@ const MessageBody = ({
                     labelID={labelID}
                     onReady={onIframeReady}
                     onMailTo={onMailTo}
+                    mailSettings={mailSettings}
                 />
             )}
         </div>

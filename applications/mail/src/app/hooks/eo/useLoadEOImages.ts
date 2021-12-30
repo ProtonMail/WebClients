@@ -31,12 +31,6 @@ export const useLoadEORemoteImages = () => {
                 messageImages: updateImages(message.messageImages, { showRemoteImages: true }, undefined, undefined),
             },
             undefined,
-            (imagesToLoad) => {
-                console.log(imagesToLoad);
-            },
-            (imagesToLoad) => {
-                console.log(imagesToLoad);
-            },
             handleLoadEORemoteImages
         );
     }, []);

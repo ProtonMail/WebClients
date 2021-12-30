@@ -1,5 +1,5 @@
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
-import { FeatureCode, useFeature } from '@proton/components';
+import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
 import { getMessageHasData } from '../../../helpers/message/messages';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
@@ -36,6 +36,7 @@ const HeaderExtra = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages,
 }: Props) => {
+    const [mailSettings] = useMailSettings();
     const received = isReceived(message.data);
 
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
@@ -57,8 +58,22 @@ const HeaderExtra = ({
                 messageVerification={message.verification}
                 onResignContact={onResignContact}
             />
-            {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
-            {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
+            {!sourceMode && (
+                <ExtraImages
+                    message={message}
+                    type="remote"
+                    onLoadImages={onLoadRemoteImages}
+                    mailSettings={mailSettings}
+                />
+            )}
+            {!sourceMode && (
+                <ExtraImages
+                    message={message}
+                    type="embedded"
+                    onLoadImages={onLoadEmbeddedImages}
+                    mailSettings={mailSettings}
+                />
+            )}
             {/* TODO: Add error boundary for the email reminder widget */}
             {messageLoaded && getMessageHasData(message) && received && <EmailReminderWidget message={message} />}
             {messageLoaded && getMessageHasData(message) && received ? <ExtraEvents message={message} /> : null}

@@ -2,13 +2,14 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { MutableRefObject, useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
-import { SquireEditor, useHandler, useMailSettings, useAddresses, FontData } from '@proton/components';
+import { SquireEditor, useHandler, FontData } from '@proton/components';
 import { SquireEditorMetadata } from '@proton/components/components/editor/interface';
 import { SquireEditorRef } from '@proton/components/components/editor/SquireEditor';
 import { RIGHT_TO_LEFT, MIME_TYPES } from '@proton/shared/lib/constants';
 import { diff } from '@proton/shared/lib/helpers/array';
 import { noop } from '@proton/shared/lib/helpers/function';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
+import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import {
     defaultFontStyle,
     DEFAULT_FONT_FACE,
@@ -55,6 +56,8 @@ interface Props {
     editorActionsRef: EditorActionsRef;
     keydownHandler?: (e: KeyboardEvent) => void;
     isOutside?: boolean;
+    mailSettings?: MailSettings;
+    addresses: Address[];
 }
 
 const SquireEditorWrapper = ({
@@ -71,9 +74,9 @@ const SquireEditorWrapper = ({
     editorActionsRef,
     keydownHandler = noop,
     isOutside = false,
+    mailSettings,
+    addresses,
 }: Props) => {
-    const [mailSettings] = useMailSettings(isOutside);
-    const [addresses] = useAddresses(isOutside);
     const isMounted = useIsMounted();
 
     const [editorReady, setEditorReady] = useState(false);
@@ -307,6 +310,7 @@ const SquireEditorWrapper = ({
             keydownHandler={keydownHandler}
             defaultFont={defaultFont}
             isOutside={isOutside}
+            mailSettings={mailSettings}
         />
     );
 };

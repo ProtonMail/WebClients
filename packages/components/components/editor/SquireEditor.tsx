@@ -1,5 +1,6 @@
 import { MutableRefObject, useRef, useEffect, useState, ChangeEvent, forwardRef, Ref, useMemo, memo } from 'react';
 import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { classnames } from '../../helpers';
 import EditorToolbar from './toolbar/SquireToolbar';
@@ -45,6 +46,7 @@ interface Props {
     keydownHandler?: (e: KeyboardEvent) => void;
     defaultFont?: FontData;
     isOutside?: boolean;
+    mailSettings?: MailSettings;
 }
 
 /**
@@ -72,6 +74,7 @@ const SquireEditor = (
         keydownHandler,
         defaultFont,
         isOutside,
+        mailSettings,
     }: Props,
     ref: Ref<SquireEditorRef>
 ) => {
@@ -175,6 +178,7 @@ const SquireEditor = (
                         data-test-id="composer:body"
                         keydownHandler={keydownHandler}
                         defaultFont={defaultFont}
+                        mailSettings={mailSettings}
                     />
                 )}
             </div>
