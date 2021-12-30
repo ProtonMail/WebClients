@@ -430,8 +430,8 @@ const CalendarContainerView = ({
                 {tzid} <br />
                 {calendars
                     .filter((calendar) => calendar.Display)
-                    .map(({ Color, Name }) => (
-                        <span className="flex flex-align-items-center">
+                    .map(({ Color, Name, ID }) => (
+                        <span className="flex flex-align-items-center" key={ID}>
                             <CalendarSelectIcon color={Color} className="keep-color mr0-75" /> {Name}
                         </span>
                     ))}
