@@ -54,9 +54,9 @@ export const useLoadRemoteImages = (localID: string) => {
                 messageImages: updateImages(message.messageImages, { showRemoteImages: true }, undefined, undefined),
             },
             mailSettings,
+            handleLoadRemoteImagesDirect,
             handleLoadRemoteImagesProxy,
-            handleLoadFakeImagesProxy,
-            handleLoadRemoteImagesDirect
+            handleLoadFakeImagesProxy
         );
     }, [localID]);
 };

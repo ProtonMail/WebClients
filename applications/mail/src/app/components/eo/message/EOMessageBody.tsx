@@ -1,6 +1,7 @@
 import { useMemo, useRef } from 'react';
 import { classnames } from '@proton/components';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
@@ -66,6 +67,7 @@ const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSo
                         message={message}
                         labelID=""
                         isOutside
+                        mailSettings={eoDefaultMailSettings}
                     />
                 </MailboxContainerContextProvider>
             )}

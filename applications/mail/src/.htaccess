@@ -6,10 +6,10 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect all EO requests to the EO bundle
-RewriteRule ^eo /eo.html [NC,L]
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
+# Redirect all EO requests to the EO bundle
+RewriteRule ^eo/.* /eo.html [NC,L]
 
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]

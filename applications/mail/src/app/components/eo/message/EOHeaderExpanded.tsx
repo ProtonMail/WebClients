@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
+import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 
 import EOHeaderExpandedDetails from './EOHeaderExpandedDetails';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -166,8 +167,18 @@ const EOHeaderExpanded = ({
             <section className="message-header-extra border-top pt0-5 ">
                 <div className="ml0-5 mr0-5 mb0-5">
                     {messageLoaded && <ExtraExpirationTime message={message} />}
-                    <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} isOutside />
-                    <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} isOutside />
+                    <ExtraImages
+                        message={message}
+                        type="remote"
+                        onLoadImages={onLoadRemoteImages}
+                        mailSettings={eoDefaultMailSettings}
+                    />
+                    <ExtraImages
+                        message={message}
+                        type="embedded"
+                        onLoadImages={onLoadEmbeddedImages}
+                        mailSettings={eoDefaultMailSettings}
+                    />
                 </div>
             </section>
         </div>

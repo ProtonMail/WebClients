@@ -3,7 +3,7 @@ import { OpenPGPKey } from 'pmcrypto';
 
 import { noop } from '@proton/shared/lib/helpers/function';
 import { useActiveBreakpoint, useHandler } from '@proton/components';
-import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
+import { eoDefaultAddress, eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 
 import ComposerContent from '../../composer/ComposerContent';
 import { MessageState, OutsideKey } from '../../../logic/messages/messagesTypes';
@@ -20,13 +20,12 @@ import EOReplyHeader from './EOReplyHeader';
 
 interface Props {
     referenceMessage: MessageState;
-    isFocused: boolean;
     id: string;
     publicKey?: OpenPGPKey[];
     outsideKey?: OutsideKey;
 }
 
-const EOComposer = ({ referenceMessage, isFocused, id, publicKey, outsideKey }: Props) => {
+const EOComposer = ({ referenceMessage, id, publicKey, outsideKey }: Props) => {
     const breakpoints = useActiveBreakpoint();
     // Indicates that the composer is in its initial opening
     // Needed to be able to force focus only at first time
@@ -64,22 +63,12 @@ const EOComposer = ({ referenceMessage, isFocused, id, publicKey, outsideKey }: 
         }
     }, [editorReady]);
 
-    const timeoutRef = useRef(0);
-
     // Manage focus at opening
     useEffect(() => {
-        if (!opening && isFocused) {
-            timeoutRef.current = window.setTimeout(() => {
-                contentFocusRef.current();
-            });
+        if (!opening) {
+            contentFocusRef.current();
         }
-
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
-        };
-    }, [opening, isFocused]);
+    }, [opening]);
 
     const handleChange: MessageChange = useHandler((update) => {
         setModelMessage((modelMessage) => {
@@ -137,6 +126,8 @@ const EOComposer = ({ referenceMessage, isFocused, id, publicKey, outsideKey }: 
                     editorActionsRef={editorActionsRef}
                     isOutside
                     outsideKey={outsideKey}
+                    mailSettings={eoDefaultMailSettings}
+                    addresses={eoDefaultAddress}
                 />
             </div>
             <EOReplyFooter
