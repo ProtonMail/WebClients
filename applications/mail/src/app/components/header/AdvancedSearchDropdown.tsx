@@ -29,6 +29,7 @@ import {
     SelectTwo,
     Option,
     useAddresses,
+    useSpotlightShow,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -218,11 +219,13 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         showEncryptedSearch && !welcomeFlags.isWelcomeFlow && !isOpen
     );
 
+    const shouldShowSpotlight = useSpotlightShow(showSpotlight);
+
     return (
         <>
             <Spotlight
                 originalPlacement="bottom-left"
-                show={showSpotlight}
+                show={shouldShowSpotlight}
                 onDisplayed={onDisplayed}
                 anchorRef={anchorRef}
                 content={

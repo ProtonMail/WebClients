@@ -14,6 +14,7 @@ interface OwnProps {
     dropdownClassName?: string;
     dropdownStyle?: CSSProperties;
     disableDefaultArrowNavigation?: boolean;
+    onClick?: () => void;
 }
 
 export type Props<T extends ElementType> = OwnProps & DropdownButtonProps<T>;
@@ -29,6 +30,7 @@ const SimpleDropdown = forwardRef(
             dropdownClassName,
             dropdownStyle,
             disableDefaultArrowNavigation = false,
+            onClick,
             ...rest
         }: Props<E>,
         ref: typeof rest.ref
@@ -37,13 +39,20 @@ const SimpleDropdown = forwardRef(
 
         const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
+        const handleClick = !!onClick
+            ? () => {
+                  onClick();
+                  toggle();
+              }
+            : toggle;
+
         return (
             <>
                 <DropdownButton
                     {...rest}
                     ref={useCombinedRefs(ref, anchorRef)}
                     isOpen={isOpen}
-                    onClick={toggle}
+                    onClick={handleClick}
                     hasCaret={hasCaret}
                 >
                     {content}

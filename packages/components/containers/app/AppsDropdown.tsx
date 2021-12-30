@@ -1,11 +1,15 @@
-import { Fragment } from 'react';
+import { ForwardedRef, forwardRef, Fragment } from 'react';
 import { c } from 'ttag';
 import { APPS_CONFIGURATION, BRAND_NAME, APPS } from '@proton/shared/lib/constants';
 
 import { AppLink, Icon, SimpleDropdown, SettingsLink } from '../../components';
 import { useApps } from '../../hooks';
 
-const AppsDropdown = () => {
+interface AppsDropdownProps {
+    onDropdownClick?: () => void;
+}
+
+const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
     const applications = useApps();
     const apps = applications.map((app) => ({
         id: app,
@@ -25,7 +29,10 @@ const AppsDropdown = () => {
             dropdownClassName="apps-dropdown"
             originalPlacement="bottom-left"
             title={c('Apps dropdown').t`Proton applications`}
+            onClick={onDropdownClick}
             disableDefaultArrowNavigation
+            ref={ref}
+            {...rest}
         >
             <ul className="apps-dropdown-list unstyled m1 scroll-if-needed">
                 {apps.map(({ id, icon, title }, index) => (
@@ -67,4 +74,4 @@ const AppsDropdown = () => {
     );
 };
 
-export default AppsDropdown;
+export default forwardRef<HTMLButtonElement, AppsDropdownProps>(AppsDropdown);

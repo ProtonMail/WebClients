@@ -57,6 +57,7 @@ export enum FeatureCode {
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     DarkStylesInBody = 'DarkStylesInBody',
     EasySwitch = 'EasySwitch',
+    SpotlightDiscoverProtonServices = 'SpotlightDiscoverProtonServices',
 }
 
 export interface FeaturesContextValue {

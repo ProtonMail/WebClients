@@ -24,7 +24,7 @@ interface Props extends HeaderProps {
     floatingButton?: ReactNode;
     searchBox?: ReactNode;
     searchDropdown?: ReactNode;
-    hasAppsDropdown?: boolean;
+    appsDropdown?: ReactNode;
     title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
@@ -34,7 +34,7 @@ interface Props extends HeaderProps {
 
 const PrivateHeader = ({
     isNarrow,
-    hasAppsDropdown = true,
+    appsDropdown: AppsDropdownComponent = <AppsDropdown />,
     logo,
     settingsButton,
     contactsButton,
@@ -79,7 +79,7 @@ const PrivateHeader = ({
         <Header>
             <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
                 {logo}
-                {hasAppsDropdown ? <AppsDropdown /> : null}
+                {AppsDropdownComponent}
             </div>
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             {title && isNarrow ? <span className="text-xl lh-rg mtauto mbauto text-ellipsis">{title}</span> : null}

@@ -12,6 +12,7 @@ import {
     Spotlight,
     useSpotlightOnFeature,
     FeatureCode,
+    useSpotlightShow,
 } from '@proton/components';
 import giftSvg from '@proton/styles/assets/img/get-started/gift.svg';
 
@@ -71,6 +72,8 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
         </SidebarPrimaryButton>
     );
 
+    const shouldShowSpotlight = useSpotlightShow(getStartedChecklistDismissed && show);
+
     return (
         <Sidebar
             expanded={expanded}
@@ -82,7 +85,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
                 userSettings.Checklists?.includes('get-started') && (
                     <Spotlight
                         content={c('Get started checklist spotlight').t`You can access the checklist anytime from here`}
-                        show={getStartedChecklistDismissed && show}
+                        show={shouldShowSpotlight}
                         onDisplayed={onDisplayed}
                         originalPlacement="top"
                     >
