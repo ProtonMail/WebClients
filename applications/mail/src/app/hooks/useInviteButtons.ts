@@ -57,8 +57,13 @@ interface Args {
     onEmailError: (error: Error) => void;
     onCreateEventSuccess: () => void;
     onUpdateEventSuccess: () => void;
-    onCreateEventError: (partstat: ICAL_ATTENDEE_STATUS, error?: Error) => void;
-    onUpdateEventError: (partstat: ICAL_ATTENDEE_STATUS, timestamp: number, error?: Error) => void;
+    onCreateEventError: (partstat: ICAL_ATTENDEE_STATUS, isProtonInvite: boolean, error?: any) => void;
+    onUpdateEventError: (
+        partstat: ICAL_ATTENDEE_STATUS,
+        timestamp: number,
+        isProtonInvite: boolean,
+        error?: any
+    ) => void;
     onSuccess: (savedData: SavedInviteData) => void;
     onUnexpectedError: () => void;
     overwrite: boolean;
@@ -174,7 +179,7 @@ const useInviteButtons = ({
     );
 
     const createCalendarEvent = useCallback(
-        async (partstat: ICAL_ATTENDEE_STATUS) => {
+        async (partstat: ICAL_ATTENDEE_STATUS, isProtonInvite: boolean) => {
             if (!attendee || !veventIcs) {
                 onUnexpectedError();
                 return;
@@ -193,15 +198,15 @@ const useInviteButtons = ({
                 });
                 onCreateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };
-            } catch (error: any) {
-                onCreateEventError(partstat, error);
+            } catch (error) {
+                onCreateEventError(partstat, isProtonInvite, error);
             }
         },
         [veventIcs, attendee, api, getCanonicalEmailsMap, calendarData, pmData, overwrite]
     );
 
     const updateCalendarEvent = useCallback(
-        async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => {
+        async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number, isProtonInvite: boolean) => {
             if (!attendee || !veventApi || !calendarEvent) {
                 onUnexpectedError();
                 return;
@@ -224,7 +229,7 @@ const useInviteButtons = ({
                 onUpdateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };
             } catch (error: any) {
-                onUpdateEventError(partstat, error);
+                onUpdateEventError(partstat, timestamp, isProtonInvite, error);
             }
         },
         [veventApi, veventIcs, attendee, api, calendarData, calendarEvent, singleEditData]
@@ -244,8 +249,8 @@ const useInviteButtons = ({
                 // does not happen via email for Proton-Proton invites
                 const result =
                     !veventApi || reinviteEventID
-                        ? await createCalendarEvent(partstat)
-                        : await updateCalendarEvent(partstat, currentTimestamp);
+                        ? await createCalendarEvent(partstat, true)
+                        : await updateCalendarEvent(partstat, currentTimestamp, true);
                 if (!result) {
                     return;
                 }
@@ -265,8 +270,8 @@ const useInviteButtons = ({
             }
             const result =
                 !veventApi || reinviteEventID
-                    ? await createCalendarEvent(partstat)
-                    : await updateCalendarEvent(partstat, currentTimestamp);
+                    ? await createCalendarEvent(partstat, false)
+                    : await updateCalendarEvent(partstat, currentTimestamp, false);
             if (result) {
                 onSuccess(result);
             }
@@ -290,14 +295,14 @@ const useInviteButtons = ({
         accept: () => answerInvitation(ICAL_ATTENDEE_STATUS.ACCEPTED),
         acceptTentatively: () => answerInvitation(ICAL_ATTENDEE_STATUS.TENTATIVE),
         decline: () => answerInvitation(ICAL_ATTENDEE_STATUS.DECLINED),
-        retryCreateEvent: async (partstat: ICAL_ATTENDEE_STATUS) => {
-            const result = await createCalendarEvent(partstat);
+        retryCreateEvent: async (partstat: ICAL_ATTENDEE_STATUS, isProtonInvite: boolean) => {
+            const result = await createCalendarEvent(partstat, isProtonInvite);
             if (result) {
                 onSuccess(result);
             }
         },
-        retryUpdateEvent: async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => {
-            const result = await updateCalendarEvent(partstat, timestamp);
+        retryUpdateEvent: async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number, isProtonInvite: boolean) => {
+            const result = await updateCalendarEvent(partstat, timestamp, isProtonInvite);
             if (result) {
                 onSuccess(result);
             }

@@ -9,8 +9,8 @@ export interface PartstatActions {
     accept: () => Promise<void>;
     acceptTentatively: () => Promise<void>;
     decline: () => Promise<void>;
-    retryCreateEvent: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
-    retryUpdateEvent: (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => Promise<void>;
+    retryCreateEvent: (partstat: ICAL_ATTENDEE_STATUS, isProtonInvite: boolean) => Promise<void>;
+    retryUpdateEvent: (partstat: ICAL_ATTENDEE_STATUS, timestamp: number, isProtonInvite: boolean) => Promise<void>;
 }
 
 export interface CalendarWidgetData {
