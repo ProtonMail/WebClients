@@ -247,6 +247,7 @@ const getSaveRecurringEventActions = async ({
                             attendeeID,
                             partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
                         },
+                        silence: true,
                     };
                 })
             );

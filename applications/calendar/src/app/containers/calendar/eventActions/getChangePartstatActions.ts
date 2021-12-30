@@ -22,12 +22,14 @@ export const getUpdatePartstatOperation = ({
     inviteActions,
     memberID,
     timestamp,
+    silence,
 }: {
     eventComponent: VcalVeventComponent;
     event: CalendarEvent;
     inviteActions: InviteActions;
     memberID: string;
     timestamp: number;
+    silence: boolean;
 }) => {
     const { partstat, selfAttendeeIndex } = inviteActions;
     if (selfAttendeeIndex === undefined || !partstat || !getHasAttendees(eventComponent)) {
@@ -47,6 +49,7 @@ export const getUpdatePartstatOperation = ({
             partstat,
             updateTime: getUnixTime(timestamp),
         },
+        silence,
     };
 };
 
@@ -129,6 +132,7 @@ const getChangePartstatActions = async ({
         inviteActions,
         memberID,
         timestamp,
+        silence: false,
     });
     if (!partstatOperation) {
         throw new Error('Failed to generate change partstat operation');

@@ -101,10 +101,11 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
             error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR),
         });
     };
-    const handleCreateEventError = (partstat: ICAL_ATTENDEE_STATUS) => {
+    const handleCreateEventError = (partstat: ICAL_ATTENDEE_STATUS, isProtonInvite: boolean, error?: any) => {
+        const errorMessage = error?.data?.Error || error?.message || 'Creating calendar event failed';
         createNotification({
             type: 'error',
-            text: c('Reply to calendar invitation').t`Creating calendar event failed`,
+            text: errorMessage,
         });
         if (error instanceof EventInvitationError && error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
             handleUnexpectedError();
@@ -113,13 +114,22 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         setModel({
             ...model,
             hideLink: true,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, { partstat }),
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, {
+                partstat,
+                isProtonInvite,
+            }),
         });
     };
-    const handleUpdateEventError = (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => {
+    const handleUpdateEventError = (
+        partstat: ICAL_ATTENDEE_STATUS,
+        timestamp: number,
+        isProtonInvite: boolean,
+        error?: any
+    ) => {
+        const errorMessage = error?.data?.Error || error?.message || 'Updating calendar event failed';
         createNotification({
             type: 'error',
-            text: c('Reply to calendar invitation').t`Updating calendar event failed`,
+            text: errorMessage,
         });
         if (error instanceof EventInvitationError && error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
             handleUnexpectedError();
@@ -128,7 +138,11 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         setModel({
             ...model,
             hideLink: true,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, { partstat, timestamp }),
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, {
+                partstat,
+                timestamp,
+                isProtonInvite,
+            }),
         });
     };
     const handleEmailError = (error: Error) => {
@@ -173,20 +187,20 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     });
 
     if (error && [EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(error.type)) {
-        const { partstat, timestamp } = error;
+        const { partstat, timestamp, isProtonInvite } = error;
         const { retryCreateEvent, retryUpdateEvent } = actions;
         const isUpdate = error.type === EVENT_UPDATE_ERROR;
-        const message = getErrorMessage(error.type);
+        const message = getErrorMessage(error.type, { ...error });
 
         const handleRetry = () => {
             if (!partstat) {
                 return withLoadingRetry(wait(0));
             }
             if (!isUpdate) {
-                return retryCreateEvent(partstat);
+                return retryCreateEvent(partstat, !!isProtonInvite);
             }
             if (timestamp !== undefined) {
-                return retryUpdateEvent(partstat, timestamp);
+                return retryUpdateEvent(partstat, timestamp, !!isProtonInvite);
             }
             return withLoadingRetry(wait(0));
         };
