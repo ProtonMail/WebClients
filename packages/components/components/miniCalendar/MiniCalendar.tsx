@@ -3,7 +3,7 @@ import { addMonths, endOfMonth, startOfMonth, isSameMonth } from 'date-fns';
 import { c } from 'ttag';
 
 import { useElementRect } from '../../hooks';
-import { getDaysInMonth, getDateTupleFromWeekNumber } from './helper';
+import { getDaysInMonth, getDateTupleFromMonday } from './helper';
 import { classnames } from '../../helpers';
 import MonthDays from './MonthDays';
 import WeekDays from './WeekDays';
@@ -106,15 +106,15 @@ const MiniCalendar = ({
 
     const handleClickWeekNumber =
         onSelectDateRange &&
-        ((weekNumber: number) => {
-            onSelectDateRange(getDateTupleFromWeekNumber(activeDate, weekNumber, weekStartsOn), true);
+        ((monday: Date) => {
+            onSelectDateRange(getDateTupleFromMonday(monday, weekStartsOn), true);
         });
 
     const handleSelectWeekRange =
         onSelectDateRange &&
-        (([startWeekNumber, endWeekNumber]: [number, number]) => {
-            const [start] = getDateTupleFromWeekNumber(activeDate, startWeekNumber, weekStartsOn);
-            const [, end] = getDateTupleFromWeekNumber(activeDate, endWeekNumber, weekStartsOn);
+        (([startWeekMonday, endWeekMonday]: [Date, Date]) => {
+            const [start] = getDateTupleFromMonday(startWeekMonday, weekStartsOn);
+            const [, end] = getDateTupleFromMonday(endWeekMonday, weekStartsOn);
             onSelectDateRange([start, end]);
         });
 
