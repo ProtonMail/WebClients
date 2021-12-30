@@ -55,9 +55,9 @@ export const prepareHtml = async (
     const { showRemoteImages, hasRemoteImages, remoteImages } = transformRemote(
         { ...message, messageDocument: { document } },
         mailSettings,
+        onLoadRemoteImagesDirect,
         onLoadRemoteImagesProxy,
-        onLoadFakeImagesProxy,
-        onLoadRemoteImagesDirect
+        onLoadFakeImagesProxy
     );
 
     attachBase64(document, base64Cache);

@@ -9,7 +9,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 
 import { isExternal, isSubDomain, getHostname } from '../helpers/url';
-import { useModals, useNotifications, useHandler, useMailSettings } from './index';
+import { useModals, useNotifications, useHandler } from './index';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
@@ -24,16 +24,20 @@ interface UseLinkHandlerOptions {
     startListening?: boolean;
     isOutside?: boolean;
 }
-type UseLinkHandler = (wrapperRef: RefObject<HTMLDivElement | undefined>, options?: UseLinkHandlerOptions) => void;
+type UseLinkHandler = (
+    wrapperRef: RefObject<HTMLDivElement | undefined>,
+    mailSettings?: MailSettings,
+    options?: UseLinkHandlerOptions
+) => void;
 
 const defaultOptions: UseLinkHandlerOptions = {
     startListening: true,
 };
 export const useLinkHandler: UseLinkHandler = (
     wrapperRef,
+    mailSettings,
     { onMailTo, startListening, isOutside } = defaultOptions
 ) => {
-    const [settings] = useMailSettings(isOutside) as [MailSettings | undefined, boolean, Error];
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
 
@@ -130,7 +134,7 @@ export const useLinkHandler: UseLinkHandler = (
             onMailTo(src.raw);
         }
 
-        const askForConfirmation = settings?.ConfirmLink === undefined ? 1 : settings?.ConfirmLink;
+        const askForConfirmation = mailSettings?.ConfirmLink === undefined ? 1 : mailSettings?.ConfirmLink;
         const hostname = getHostname(src.raw);
         const currentDomain = getSecondLevelDomain(window.location.hostname);
 

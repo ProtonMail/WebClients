@@ -18,22 +18,22 @@ export interface Props {
 const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     const { APP_VERSION, APP_VERSION_DISPLAY } = useConfig();
     const termsLink = (
-        <Href key="terms" className="signup-footer-link" href="https://protonmail.com/terms-and-conditions">{c('Link')
+        <Href key="terms" className="eo-footer-link" href="https://protonmail.com/terms-and-conditions">{c('Link')
             .t`Terms`}</Href>
     );
     const privacyLink = (
-        <Href key="privacy" className="signup-footer-link" href="https://protonmail.com/privacy-policy">{c('Link')
+        <Href key="privacy" className="eo-footer-link" href="https://protonmail.com/privacy-policy">{c('Link')
             .t`Privacy policy`}</Href>
     );
     const OldVersionLink = (
-        <Href key="oldVersion" className="signup-footer-link old-link" href="https://old.protonmail.com/">{c('Link')
+        <Href key="oldVersion" className="eo-footer-link" href="https://old.protonmail.com/">{c('Link')
             .t`Previous version`}</Href>
     );
 
     const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
 
     return (
-        <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed">
+        <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 eo-layout-bg scroll-if-needed">
             <PublicTopBanners />
             <header className="flex flex-justify-space-between flex-align-items-center flex-item-noshrink p2">
                 <span>
@@ -52,7 +52,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     </div>
                 </div>
             </header>
-            <div className="pl2 pr2 sign-layout-container flex-item-fluid flex flex-nowrap flex-column flex-justify-space-between">
+            <div className="pl2 pr2 eo-layout-container flex-item-fluid flex flex-nowrap flex-column flex-justify-space-between">
                 <div>{children}</div>
             </div>
             <footer className="flex-item-noshrink text-center p1">

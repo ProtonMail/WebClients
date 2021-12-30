@@ -54,9 +54,9 @@ const getRemoteImageMatches = (message: MessageState) => {
 export const transformRemote = (
     message: MessageState,
     mailSettings: Partial<MailSettings> | undefined,
-    onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
-    onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
-    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void
+    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadRemoteImagesProxy?: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadFakeImagesProxy?: (imagesToLoad: MessageRemoteImage[]) => void
 ) => {
     const showRemoteImages =
         message.messageImages?.showRemoteImages ||
@@ -116,9 +116,9 @@ export const transformRemote = (
 
     if (skipProxy) {
         void loadSkipProxyImages(remoteImages, onLoadRemoteImagesDirect);
-    } else if (showRemoteImages) {
+    } else if (showRemoteImages && onLoadRemoteImagesProxy) {
         void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesProxy, onLoadRemoteImagesDirect);
-    } else if (useProxy) {
+    } else if (useProxy && onLoadFakeImagesProxy) {
         void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
     }
 

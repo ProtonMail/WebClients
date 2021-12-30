@@ -16,6 +16,7 @@ import SendingMessageNotification, {
     createSendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
 import { EO_MESSAGE_REDIRECT_PATH, MIN_DELAY_SENT_NOTIFICATION } from '../../constants';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 interface EOAttachment {
     Filename: string[];
@@ -47,6 +48,26 @@ export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
         id = outsideKey.id;
     }
 
+    /** To get Data and Key packets, we need to :
+     *  - Get attachments data from BE to build the blob URL
+     *  - Create the actual blob from the blob URL
+     *  - Encrypt the blob to get the packets which contains Data and Key packets
+     */
+    const handleOriginalMessageEmbedded = async (packages: EOAttachment, attachment: Attachment) => {
+        if (outsideKey && publicKeys) {
+            const decryptedAttachment = await getDecryptedAttachment(attachment, undefined, outsideKey, api);
+
+            const blobURL = createBlob(attachment, decryptedAttachment.data as Uint8Array);
+
+            const blob = await blobURLtoBlob(blobURL);
+
+            const packet = await encryptFile(blob as File, true, publicKeys);
+
+            packages.DataPacket.push(new Blob([packet.data]));
+            packages.KeyPackets.push(new Blob([packet.keys]));
+        }
+    };
+
     const send = async () => {
         notifManager.ID = createNotification({
             text: <SendingMessageNotification manager={notifManager} />,
@@ -72,10 +93,7 @@ export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
             for (const attachment of message.data?.Attachments || []) {
                 const { cid } = readContentIDandLocation(attachment);
 
-                if (cid !== '') {
-                    Packages.ContentID.push(cid);
-                }
-
+                Packages.ContentID.push(cid);
                 Packages.Filename.push(attachment.Name || '');
                 Packages.MIMEType.push(attachment.MIMEType || '');
 
@@ -83,30 +101,9 @@ export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
                  *  However, we do not have these data for embedded images in the original message, which are in the reply blockquotes
                  *  We need to get original message embedded images data in order to build KeyPackets and DataPacket before sending
                  */
-                if (!attachment.DataPacket && publicKeys && outsideKey) {
-                    // Inline images from original message
-                    try {
-                        /** To get Data and Key packets, we need to :
-                         *  - Get attachments data from BE to build the blob URL
-                         *  - Create the actual blob from the blob URL
-                         *  - Encrypt the blob to get the packets which contains Data and Key packets
-                         */
-                        await getDecryptedAttachment(attachment, undefined, outsideKey, api)
-                            .then((decryptedAttachment) => {
-                                const blobURL = createBlob(attachment, decryptedAttachment.data as Uint8Array);
-                                return blobURLtoBlob(blobURL) as Promise<Blob>;
-                            })
-                            .then((blob: Blob) => {
-                                return encryptFile(blob as File, true, publicKeys);
-                            })
-                            .then((packet) => {
-                                Packages.DataPacket.push(new Blob([packet.data]));
-                                Packages.KeyPackets.push(new Blob([packet.keys]));
-                            });
-                    } catch (e: any) {
-                        console.error(e);
-                    }
-                } else if (attachment.DataPacket) {
+                if (!attachment.DataPacket) {
+                    await handleOriginalMessageEmbedded(Packages, attachment);
+                } else {
                     // Attachments from EO message to send
                     Packages.DataPacket.push(attachment.DataPacket);
                     Packages.KeyPackets.push(attachment.KeyPackets);

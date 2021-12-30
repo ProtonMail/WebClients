@@ -4,6 +4,7 @@ import { isPlainText, getAttachments } from '@proton/shared/lib/mail/messages';
 import { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
 import { classnames, EllipsisLoader } from '@proton/components';
+import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/placeholders/drag-and-drop-img.svg';
 import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { isDragFile } from '../../helpers/dom';
@@ -30,6 +31,8 @@ interface Props {
     squireKeydownHandler?: (e: KeyboardEvent) => void;
     isOutside?: boolean;
     outsideKey?: OutsideKey;
+    mailSettings?: MailSettings;
+    addresses: Address[];
 }
 
 const ComposerContent = ({
@@ -49,6 +52,8 @@ const ComposerContent = ({
     squireKeydownHandler,
     isOutside = false,
     outsideKey,
+    mailSettings,
+    addresses,
 }: Props) => {
     const [fileHover, setFileHover] = useState(false);
 
@@ -123,6 +128,8 @@ const ComposerContent = ({
                     editorActionsRef={editorActionsRef}
                     keydownHandler={squireKeydownHandler}
                     isOutside={isOutside}
+                    mailSettings={mailSettings}
+                    addresses={addresses}
                 />
                 {fileHover && (
                     <div

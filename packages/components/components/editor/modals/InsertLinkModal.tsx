@@ -2,6 +2,7 @@ import { useState, ChangeEvent, useRef } from 'react';
 import { c } from 'ttag';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { linkToType, addLinkPrefix } from '@proton/shared/lib/helpers/url';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import FormModal from '../../modal/FormModal';
 import { PrimaryButton } from '../../button';
 import Alert from '../../alert/Alert';
@@ -19,15 +20,16 @@ interface Props {
     onSubmit: (link: LinkData) => void;
     onClose?: () => void;
     onMailTo?: (src: string) => void;
+    mailSettings?: MailSettings;
 }
 
-const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, ...rest }: Props) => {
+const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, mailSettings, ...rest }: Props) => {
     const [url, setUrl] = useState(inputLink.link);
     const [label, setLabel] = useState(inputLink.title);
     const [type, setType] = useState(linkToType(inputLink.link) || LINK_TYPES.WEB);
     const modalContentRef = useRef<HTMLDivElement>(null);
 
-    useLinkHandler(modalContentRef, { onMailTo });
+    useLinkHandler(modalContentRef, mailSettings, { onMailTo });
 
     const typesOptions = [
         { value: LINK_TYPES.WEB, text: c('Info').t`Web URL` },

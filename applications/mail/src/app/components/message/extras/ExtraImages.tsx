@@ -1,6 +1,7 @@
-import { shiftKey } from '@proton/shared/lib/helpers/browser';
-import { Icon, useMailSettings, Tooltip } from '@proton/components';
 import { c } from 'ttag';
+import { shiftKey } from '@proton/shared/lib/helpers/browser';
+import { Icon, Tooltip } from '@proton/components';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowEmbedded, hasShowRemote } from '../../../helpers/mailSettings';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
@@ -9,12 +10,11 @@ interface Props {
     message: MessageState;
     type: string;
     onLoadImages: () => void;
-    isOutside?: boolean;
+    mailSettings?: MailSettings;
 }
 
-const ExtraImages = ({ message, type, onLoadImages, isOutside }: Props) => {
-    const [mailSettings] = useMailSettings(isOutside);
-    const [{ Shortcuts = 0 } = {}] = useMailSettings(isOutside);
+const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
+    const { Shortcuts = 0 } = mailSettings || {};
 
     const { showRemoteImages = true, showEmbeddedImages = true } = message.messageImages || {};
 

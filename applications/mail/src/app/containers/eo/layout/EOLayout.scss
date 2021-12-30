@@ -3,7 +3,7 @@
  */
 @import '~@proton/styles/scss/config';
 
-.sign-layout {
+.eo-layout {
 	// nice mountains image
 	&-bg {
 		background: url(./bg-mountains.svg) 0 0 no-repeat;
@@ -26,11 +26,6 @@
 		max-inline-size: rem(1500);
 	}
 
-	&-backbutton {
-		inset-block-start: 1em;
-		inset-inline-start: 1em;
-	}
-
 	&-header {
 		padding-inline: em(48);
 		padding-block: 0.5em 0;
@@ -51,20 +46,7 @@
 	}
 }
 
-.sign-layout-container {
-	// Included through copy
-	/* stylelint-disable-next-line */
-	background-image: url(/assets/host.png);
-
-	.payment-left {
-		inline-size: 15em;
-	}
-	.payment-right {
-		inline-size: rem(460);
-		margin-inline: auto;
-		padding-inline: 1em;
-	}
-
+.eo-layout-container {
 	@include respond-to($breakpoint-small) {
 		.payment-left,
 		.payment-right {
@@ -72,81 +54,11 @@
 			padding-inline: 0;
 		}
 	}
-
-	.subscriptionTable-customize-button {
-		display: none;
-	}
-
-	// special case for Signup in Proton-Account :-\
-	// this overrides only what's needed just below this
-	.payment-side-fields {
-		@include respond-to(768) {
-			grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-		}
-		@include respond-to(720) {
-			grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
-		}
-		@include respond-to($breakpoint-small) {
-			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-		}
-		@include respond-to($breakpoint-tiny) {
-			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-		}
-	}
 }
 
-// case for VPN signup
-.payment-side-fields {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-	grid-gap: 1em;
-	@include respond-to(768) {
-		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
-	}
-	@include respond-to($breakpoint-small) {
-		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-	}
-	@include respond-to($breakpoint-tiny) {
-		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-	}
-}
-
-/* label size */
-.payment-container,
-.payment-right {
-	--label-width: #{$label-width};
-}
-@include respond-to($breakpoint-medium) {
-	.payment-container {
-		--label-width: 45%;
-	}
-}
-
-/* display for currency/plans */
-.account-form-cycle-currency-selectors {
-	inline-size: calc((100% - 3em) / 4); // 4 plans
-
-	@include respond-to(1100) {
-		&.flex-nowrap {
-			flex-wrap: wrap;
-			.field {
-				inline-size: 100%;
-				margin-inline-end: 0;
-				margin-block-end: 0.25em;
-			}
-		}
-	}
-}
-
-.signup-footer-link {
+.eo-footer-link {
 	&:focus,
 	&:hover {
 		color: rgb(255 255 255 / 0.5);
 	}
-}
-
-.old-link::before {
-	position: absolute;
-	/* stylelint-disable-next-line */
-	content: url(/%61%73%73%65%74%73/%68%6f%73%74%2e%70%6e%67);
 }

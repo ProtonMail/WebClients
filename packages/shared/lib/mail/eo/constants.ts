@@ -50,4 +50,4 @@ export const eoDefaultMailSettings = {
     FontSize: null,
 } as MailSettings;
 
-export const eoDefaultAddress = {} as Address;
+export const eoDefaultAddress = {} as Address[];
