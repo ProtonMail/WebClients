@@ -980,25 +980,37 @@ const InteractiveCalendarView = ({
         if (!updatePartstatOperations.length) {
             return [];
         }
-        const requests = updatePartstatOperations.map(
-            ({ data: { eventID, calendarID, attendeeID, updateTime, partstat } }) =>
-                () =>
-                    api<UpdateEventPartApiResponse>({
-                        ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
-                            Status: toApiPartstat(partstat),
-                            UpdateTime: updateTime,
-                        }),
-                        silence: true,
-                    })
-        );
-        // Catch errors silently
+        const getRequest =
+            ({ data: { eventID, calendarID, attendeeID, updateTime, partstat } }: UpdatePartstatOperation) =>
+            () =>
+                api<UpdateEventPartApiResponse>({
+                    ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
+                        Status: toApiPartstat(partstat),
+                        UpdateTime: updateTime,
+                    }),
+                    silence: true,
+                });
+        const noisyRequests = updatePartstatOperations.filter(({ silence }) => !silence).map(getRequest);
+        const silentRequests = updatePartstatOperations.filter(({ silence }) => silence).map(getRequest);
+        // the routes called in these requests do not have any specific jail limit
+        // the limit per user session is 25k requests / 900s
+        const responses: UpdateEventPartApiResponse[] = [];
         try {
-            // the routes called in requests do not have any specific jail limit
-            // the limit per user session is 25k requests / 900s
-            return await processApiRequestsSafe(requests, 25000, 900 * SECOND);
+            const noisyResponses = await processApiRequestsSafe(noisyRequests, 25000, 900 * SECOND);
+            responses.push(...noisyResponses);
         } catch (e: any) {
-            return [];
+            const errorMessage = e?.data?.Error || e?.message || 'Error changing answer';
+            throw new Error(errorMessage);
         }
+
+        // Catch other errors silently
+        try {
+            const silentResponses = await processApiRequestsSafe(silentRequests, 25000, 900 * SECOND);
+            responses.push(...silentResponses);
+        } catch (e: any) {
+            noop();
+        }
+        return responses;
     };
 
     const handleUpdatePersonalPartActions = async (

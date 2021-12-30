@@ -150,6 +150,7 @@ export const getDeleteRecurringEventActions = async ({
                     memberID: originalMemberID,
                     timestamp,
                     inviteActions: updatedInviteActions,
+                    silence: true,
                 });
                 if (updatePartstatOperation) {
                     updatePartstatOperations.push(updatePartstatOperation);
@@ -181,6 +182,7 @@ export const getDeleteRecurringEventActions = async ({
                             attendeeID,
                             partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
                         },
+                        silence: true,
                     };
                 })
             );
