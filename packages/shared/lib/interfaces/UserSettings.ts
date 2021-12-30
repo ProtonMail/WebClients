@@ -50,6 +50,13 @@ export interface Flags {
 }
 
 export interface UserSettings {
+    AppWelcome: {
+        Account?: string[];
+        Calendar?: string[];
+        Contacts?: string[];
+        Mail?: string[];
+        Drive?: string[];
+    };
     Email: {
         Value: string;
         Status: SETTINGS_STATUS;

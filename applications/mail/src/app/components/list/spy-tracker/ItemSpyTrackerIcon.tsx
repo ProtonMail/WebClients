@@ -1,6 +1,14 @@
 import { useRef } from 'react';
 import { c } from 'ttag';
-import { FeatureCode, Spotlight, useSpotlightOnFeature, classnames, Href, Tooltip } from '@proton/components';
+import {
+    FeatureCode,
+    Spotlight,
+    useSpotlightOnFeature,
+    classnames,
+    Href,
+    Tooltip,
+    useSpotlightShow,
+} from '@proton/components';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import SpyTrackerIcon from './SpyTrackerIcon';
@@ -24,6 +32,8 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
         numberOfTrackers > 0
     );
 
+    const shouldShowSpotlight = useSpotlightShow(showSpotlight);
+
     /*
      * Don't display the tracker icon when :
      * Loading remote images is automatic and email protection is OFF : We consider that the user don't want any protection at all.
@@ -36,7 +46,7 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     return (
         <Spotlight
             originalPlacement="top-right"
-            show={showSpotlight}
+            show={shouldShowSpotlight}
             onDisplayed={onDisplayed}
             anchorRef={anchorRef}
             content={

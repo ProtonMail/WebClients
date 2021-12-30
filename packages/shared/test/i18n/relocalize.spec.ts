@@ -8,6 +8,7 @@ import { relocalizeText } from '../../lib/i18n/relocalize';
 import { UserSettings } from '../../lib/interfaces';
 
 const dummyUserSettings: UserSettings = {
+    AppWelcome: {},
     Email: {
         Value: 'test',
         Status: 0,
