@@ -158,7 +158,16 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         <dialog {...dialogProps} className={dialogClassName}>
             <ModalContext.Provider value={modalContextValue}>
                 {as === 'form' ? (
-                    <form {...dialogContainerProps}>{children}</form>
+                    <form
+                        method="post"
+                        {...dialogContainerProps}
+                        onSubmit={(event) => {
+                            event.preventDefault();
+                            dialogContainerProps.onSubmit?.(event);
+                        }}
+                    >
+                        {children}
+                    </form>
                 ) : (
                     <div {...dialogContainerProps}>{children}</div>
                 )}
