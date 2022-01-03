@@ -17,20 +17,21 @@ interface Props {
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const match = useRouteMatch<DriveSectionRouteProps>();
 
-    const [sidebarClassName, setSidebarClassName] = useState('');
-    const setSidebarExtraWidth = (extraWidth: boolean) => {
-        setSidebarClassName(extraWidth ? 'drive-sidebar--extra-wide' : '');
+    const [sidebarWidth, setSidebarWidth] = useState('100%');
+    const setSidebarLevel = (level: number) => {
+        const extraWidth = Math.floor(level / 7) * 50;
+        setSidebarWidth(`${100 + extraWidth}%`);
     };
 
     return (
-        <SidebarList className={sidebarClassName}>
+        <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
             {userShares.map((useShare) => (
                 <DriveSidebarFolders
                     key={useShare.ShareID}
                     path={match.url}
                     shareId={useShare.ShareID}
                     linkId={useShare.LinkID}
-                    setSidebarExtraWidth={setSidebarExtraWidth}
+                    setSidebarLevel={setSidebarLevel}
                 />
             ))}
             <DriveSidebarListItem

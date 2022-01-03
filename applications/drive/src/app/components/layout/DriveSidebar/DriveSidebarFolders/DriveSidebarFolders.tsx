@@ -8,15 +8,15 @@ interface Props {
     path: string;
     shareId: string;
     linkId: string;
-    setSidebarExtraWidth: (extraWidth: boolean) => void;
+    setSidebarLevel: (level: number) => void;
 }
 
-export default function DriveSidebarFolders({ shareId, linkId, path, setSidebarExtraWidth }: Props) {
-    const { expandedDeepStructure, rootFolder, toggleExpand } = useFolders(shareId, linkId);
+export default function DriveSidebarFolders({ shareId, linkId, path, setSidebarLevel }: Props) {
+    const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolders(shareId, linkId);
 
     useEffect(() => {
-        setSidebarExtraWidth(expandedDeepStructure);
-    }, [expandedDeepStructure]);
+        setSidebarLevel(deepestOpenedLevel);
+    }, [deepestOpenedLevel]);
 
     return (
         <>
