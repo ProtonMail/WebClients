@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { useLabels, classnames, useHotkeys } from '@proton/components';
+import { useLabels, classnames, useHotkeys, Scroll } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -37,6 +37,8 @@ const MessageOnlyView = ({
     highlightKeywords = false,
 }: Props) => {
     const [labels = []] = useLabels();
+
+    const [hasScrollShadow, setHasScrollShadow] = useState(false);
 
     const { message, messageLoaded, bodyLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as Message));
@@ -85,30 +87,32 @@ const MessageOnlyView = ({
                 className={classnames([hidden && 'hidden'])}
                 loading={!messageLoaded}
                 element={message.data}
-                labelID={labelID}
                 highlightKeywords={highlightKeywords}
+                hasScrollShadow={hasScrollShadow}
             />
-            <div
-                className={classnames(['flex-item-fluid pt0-5 pr1-5 pl1-5 max-w100 outline-none', hidden && 'hidden'])}
-                ref={messageContainerRef}
-                tabIndex={-1}
-            >
-                <MessageView
-                    ref={messageRef}
-                    labelID={labelID}
-                    conversationMode={false}
-                    loading={!messageLoaded}
-                    message={data}
-                    labels={labels}
-                    mailSettings={mailSettings}
-                    onBack={onBack}
-                    breakpoints={breakpoints}
-                    onMessageReady={onMessageReady}
-                    columnLayout={columnLayout}
-                    isComposerOpened={isComposerOpened}
-                    highlightKeywords={highlightKeywords}
-                />
-            </div>
+            <Scroll setHasScrollShadow={setHasScrollShadow}>
+                <div
+                    className={classnames(['flex-item-fluid pt1 pr1 pl1 max-w100 outline-none', hidden && 'hidden'])}
+                    ref={messageContainerRef}
+                    tabIndex={-1}
+                >
+                    <MessageView
+                        ref={messageRef}
+                        labelID={labelID}
+                        conversationMode={false}
+                        loading={!messageLoaded}
+                        message={data}
+                        labels={labels}
+                        mailSettings={mailSettings}
+                        onBack={onBack}
+                        breakpoints={breakpoints}
+                        onMessageReady={onMessageReady}
+                        columnLayout={columnLayout}
+                        isComposerOpened={isComposerOpened}
+                        highlightKeywords={highlightKeywords}
+                    />
+                </div>
+            </Scroll>
         </>
     );
 };

@@ -128,6 +128,11 @@ a:active {
 	inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
 }
 
+.icon-14p {
+	width: 14px;
+	height: 14px;
+}
+
 /*
  * 1. do not handle responsivess if there is a width attribute / inline width style
  * 2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)
@@ -147,6 +152,10 @@ a:active {
 	border-color: #657ee4;
 	border-inline-start-width: 3px;
 	border-inline-start-style: solid;
+	&[type='cite'] {
+		border-inline-start: 0;
+		padding-inline-start: 0;
+	}
 }
 .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote {
 	padding-inline: 0;
@@ -172,9 +181,10 @@ a:active {
 
 .proton-toggle-button {
 	display: inline-block;
-	padding-block: 2px;
-	padding-inline: 12px;
-	margin: 7px;
+	padding-block: rem(4);
+	padding-inline: rem(8);
+	margin: 1em;
+	margin-inline-start: 0;
 	box-shadow: inset 0 0 0 1px silver;
 	border: none;
 	border-radius: 3px;

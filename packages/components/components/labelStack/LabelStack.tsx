@@ -1,9 +1,7 @@
 import { MouseEvent } from 'react';
-import { c } from 'ttag';
-import { COLORS } from '@proton/shared/lib/calendar/constants';
 import { classnames } from '../../helpers';
 import Tooltip from '../tooltip/Tooltip';
-import Icon from '../icon/Icon';
+import LabelStackItem from './LabelStackItem';
 
 export interface LabelDescription {
     name: string;
@@ -19,9 +17,10 @@ interface Props {
     isStacked?: boolean;
     maxNumber?: number;
     className?: string;
+    showDropDown?: boolean;
 }
 
-const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, className }: Props) => {
+const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, showDropDown, className }: Props) => {
     const labelsToShow = labels.slice(0, maxNumber);
     const labelsOverflow = labels.slice(maxNumber || labels.length);
 
@@ -34,50 +33,7 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
             ])}
         >
             {labelsToShow.map((label: LabelDescription) => (
-                <li
-                    className="label-stack-item flex flex-row flex-align-items-center flex-justify-start flex-nowrap"
-                    style={
-                        label.color
-                            ? {
-                                  '--background': label.color,
-                                  // TODO: Use white for now, re-introduce the readability calculation as soon as possible
-                                  '--foreground': COLORS.WHITE,
-                              }
-                            : undefined
-                    }
-                    key={label.name}
-                >
-                    {label.onClick ? (
-                        <button
-                            type="button"
-                            className="label-stack-item-button text-ellipsis"
-                            onClick={label.onClick}
-                            title={label.title}
-                        >
-                            <span className="label-stack-item-button-text">{label.name}</span>
-                        </button>
-                    ) : (
-                        <span className="label-stack-item-button text-ellipsis" title={label.title}>
-                            <span className="label-stack-item-button-text">{label.name}</span>
-                        </span>
-                    )}
-
-                    {showDelete && (
-                        <button
-                            type="button"
-                            className="label-stack-item-delete flex-item-noshrink"
-                            onClick={label.onDelete}
-                            title={`${c('Action').t`Remove`} ${label.title}`}
-                        >
-                            <Icon
-                                name="xmark"
-                                size={12}
-                                className="label-stack-item-delete-icon"
-                                alt={c('Action').t`Remove`}
-                            />
-                        </button>
-                    )}
-                </li>
+                <LabelStackItem label={label} key={label.name} showDropdown={showDropDown} showDelete={showDelete} />
             ))}
             {labelsOverflow.length > 0 && (
                 <li className="label-stack-overflow-count flex">

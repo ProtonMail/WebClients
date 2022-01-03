@@ -7,13 +7,18 @@ const TOLERANCE = 4;
 
 interface ScrollProps extends React.ComponentPropsWithoutRef<'div'> {
     horizontal?: boolean;
+    setHasScrollShadow?: (hasScrollShadow: boolean) => void;
 }
 
-const Scroll = ({ children, horizontal, className, ...rest }: ScrollProps) => {
+const Scroll = ({ children, horizontal, setHasScrollShadow, className, ...rest }: ScrollProps) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const scrollChildRef = useRef<HTMLDivElement>(null);
     const [showStartShadow, setShowStartShadow] = useState(false);
     const [showEndShadow, setShowEndShadow] = useState(false);
+
+    useEffect(() => {
+        setHasScrollShadow?.(showStartShadow);
+    }, [showStartShadow]);
 
     const setShadows = (container: HTMLDivElement, child: HTMLDivElement) => {
         if (!container || !child) {

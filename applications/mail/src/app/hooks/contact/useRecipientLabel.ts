@@ -37,10 +37,10 @@ export const useRecipientLabel = () => {
         const recipientKey = getRecipientKey(recipient, detailed);
         return recipientsLabelCache[recipientKey]
             ? (recipientsLabelCache[recipientKey] as string)
-            : (detailed ? computeRecipientLabel : computeRecipientLabelDetailed)(recipient, contactsMap);
+            : (detailed ? computeRecipientLabelDetailed : computeRecipientLabel)(recipient, contactsMap);
     };
 
-    const getGroupLabel = (recipientGroup: RecipientGroup | undefined): string => {
+    const getGroupLabel = (recipientGroup: RecipientGroup | undefined, isShortName = false): string => {
         if (!recipientGroup) {
             return '';
         }
@@ -49,7 +49,8 @@ export const useRecipientLabel = () => {
             ? (groupsLabelCache[recipientGroupKey] as string)
             : computeRecipientGroupLabel(
                   recipientGroup,
-                  groupsWithContactsMap[recipientGroup.group?.ID || '']?.contacts.length
+                  groupsWithContactsMap[recipientGroup.group?.ID || '']?.contacts.length,
+                  isShortName
               );
     };
 

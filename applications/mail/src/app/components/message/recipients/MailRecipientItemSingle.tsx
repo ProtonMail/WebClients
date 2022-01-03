@@ -5,16 +5,14 @@ import {
     ContactDetailsModal,
     DropdownMenuButton,
     Icon,
-    useNotifications,
     useModals,
     usePopperAnchor,
 } from '@proton/components';
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { HighlightMetadata } from '@proton/encrypted-search';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { getContactEmail } from '../../../helpers/addresses';
@@ -22,29 +20,41 @@ import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import RecipientItemSingle from './RecipientItemSingle';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
+    message?: MessageState;
     recipient: Recipient;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
     showAddress?: boolean;
     showLockIcon?: boolean;
     signingPublicKey?: OpenPGPKey;
+    attachedPublicKey?: OpenPGPKey;
+    isNarrow?: boolean;
     highlightKeywords?: boolean;
+    highlightMetadata?: HighlightMetadata;
+    showDropdown?: boolean;
+    isOutside?: boolean;
 }
 
 const MailRecipientItemSingle = ({
+    message,
     recipient,
     mapStatusIcons,
     globalIcon,
     showAddress = true,
     showLockIcon = true,
     signingPublicKey,
+    attachedPublicKey,
+    isNarrow,
     highlightKeywords = false,
+    highlightMetadata,
+    showDropdown,
+    isOutside,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
@@ -53,9 +63,9 @@ const MailRecipientItemSingle = ({
     const onMailTo = useOnMailTo();
 
     const { ContactID } = getContactEmail(contactsMap, recipient.Address) || {};
-    const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined);
     const label = getRecipientLabel(recipient, true);
-    const showTrustPublicKey = !!signingPublicKey;
+
+    const showTrustPublicKey = !!signingPublicKey || !!attachedPublicKey;
 
     const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
@@ -63,13 +73,6 @@ const MailRecipientItemSingle = ({
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: [recipient] } },
         });
-        close();
-    };
-
-    const handleCopy = (event: MouseEvent<HTMLButtonElement>) => {
-        event.stopPropagation();
-        textToClipboard(recipient.Address, event.currentTarget);
-        createNotification({ text: c('Info').t`Copied to clipboard` });
         close();
     };
 
@@ -99,21 +102,18 @@ const MailRecipientItemSingle = ({
             name: label,
             contactID: ContactID,
             isInternal: true,
-            bePinnedPublicKey: signingPublicKey as OpenPGPKey,
+            bePinnedPublicKey: (signingPublicKey as OpenPGPKey) || (attachedPublicKey as OpenPGPKey),
         };
 
         createModal(<TrustPublicKeyModal contact={contact} />);
     };
 
-    const dropdownActions = (
+    const customDropdownActions = (
         <>
+            <hr className="my0-5" />
             <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCompose}>
                 <Icon name="envelope" className="mr0-5 mt0-25" />
                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`New message`}</span>
-            </DropdownMenuButton>
-            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCopy}>
-                <Icon name="copy" className="mr0-5 mt0-25" />
-                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy address`}</span>
             </DropdownMenuButton>
             {ContactID ? (
                 <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
@@ -126,6 +126,7 @@ const MailRecipientItemSingle = ({
                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
+
             {showTrustPublicKey && (
                 <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickTrust}>
                     <Icon name="user" className="mr0-5 mt0-25" />
@@ -135,28 +136,25 @@ const MailRecipientItemSingle = ({
         </>
     );
 
-    const LockIcon = (
-        <>
-            {showLockIcon && icon && (
-                <span className="flex ml0-25 flex-item-noshrink message-recipient-item-lockIcon">
-                    <EncryptionStatusIcon {...icon} />
-                </span>
-            )}
-        </>
-    );
-
     return (
         <RecipientItemSingle
+            message={message}
             recipient={recipient}
-            dropdownActions={dropdownActions}
+            mapStatusIcons={mapStatusIcons}
+            globalIcon={globalIcon}
             showAddress={showAddress}
-            icon={LockIcon}
+            showLockIcon={showLockIcon}
+            isNarrow={isNarrow}
             highlightKeywords={highlightKeywords}
+            highlightMetadata={highlightMetadata}
+            showDropdown={showDropdown}
+            actualLabel={label}
+            customDropdownActions={customDropdownActions}
             anchorRef={anchorRef}
-            isOpen={isOpen}
             toggle={toggle}
             close={close}
-            actualLabel={label}
+            isOpen={isOpen}
+            isOutside={isOutside}
         />
     );
 };

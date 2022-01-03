@@ -19,6 +19,8 @@ import {
     Tooltip,
     useLabels,
     useMailSettings,
+    useLoading,
+    useModalState,
 } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -30,12 +32,12 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
-import { getDate } from '../../../helpers/elements';
+import { getDate, isStarred as IsMessageStarred } from '../../../helpers/elements';
 import { formatFileNameDate } from '../../../helpers/date';
 import MessagePrintModal from '../modals/MessagePrintModal';
 import { exportBlob } from '../../../helpers/message/messageExport';
 import HeaderDropdown, { DropdownRender } from './HeaderDropdown';
-import { useMoveToFolder } from '../../../hooks/useApplyLabels';
+import { useMoveToFolder, useStar } from '../../../hooks/useApplyLabels';
 import { getFolderName, getCurrentFolderID } from '../../../helpers/labels';
 import { useMarkAs, MARK_AS_STATUS } from '../../../hooks/useMarkAs';
 import { Element } from '../../../models/element';
@@ -49,8 +51,10 @@ import { isConversationMode } from '../../../helpers/mailSettings';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../../../hooks/useAttachment';
 import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import MessageDetailsModal from '../modals/MessageDetailsModal';
+import { MessageViewIcons } from '../../../helpers/message/icon';
 
-const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -63,6 +67,7 @@ interface Props {
     breakpoints: Breakpoints;
     parentMessageRef: React.RefObject<HTMLElement>;
     mailSettings: MailSettings;
+    messageViewIcons: MessageViewIcons;
 }
 
 const HeaderMoreDropdown = ({
@@ -76,11 +81,14 @@ const HeaderMoreDropdown = ({
     breakpoints,
     parentMessageRef,
     mailSettings,
+    messageViewIcons,
 }: Props) => {
     const location = useLocation();
     const api = useApi();
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
+    const [loading, withLoading] = useLoading();
+    const star = useStar();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -91,6 +99,12 @@ const HeaderMoreDropdown = ({
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
+
+    const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();
+
+    const isStarred = IsMessageStarred(message.data || ({} as Element));
+
+    const staringText = isStarred ? c('Action').t`Unstar` : c('Action').t`Star`;
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
@@ -176,6 +190,12 @@ const HeaderMoreDropdown = ({
         createModal(<MessagePrintModal message={message as MessageStateWithData} labelID={labelID} />);
     };
 
+    const handleStar = async () => {
+        if (!loading) {
+            void withLoading(star([message.data || ({} as Element)], !isStarred));
+        }
+    };
+
     const messageLabelIDs = message.data?.LabelIDs || [];
     const selectedIDs = [message.data?.ID || ''];
     const isSpam = messageLabelIDs.includes(SPAM);
@@ -247,146 +267,196 @@ const HeaderMoreDropdown = ({
     );
 
     return (
-        <ButtonGroup className="mr1 mb0-5">
-            {isSpam ? (
-                <Tooltip title={titleMoveInboxNotSpam}>
-                    <Button icon disabled={!messageLoaded} onClick={handleMove(INBOX, SPAM)}>
-                        <Icon name="fire-slash" alt={c('Title').t`Move to inbox (not spam)`} />
-                    </Button>
-                </Tooltip>
-            ) : (
-                <Tooltip title={titleUnread}>
-                    <Button
-                        icon
-                        disabled={!messageLoaded}
-                        onClick={handleUnread}
-                        data-testid="message-header-expanded:mark-as-unread"
-                    >
-                        <Icon name="eye-slash" alt={c('Title').t`Mark as unread`} />
-                    </Button>
-                </Tooltip>
-            )}
-            {isInTrash ? (
-                <Tooltip title={titleMoveInbox}>
-                    <Button icon disabled={!messageLoaded} onClick={handleMove(INBOX, TRASH)}>
-                        <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
-                    </Button>
-                </Tooltip>
-            ) : (
-                <Tooltip title={titleMoveTrash}>
-                    <Button
-                        icon
-                        disabled={!messageLoaded}
-                        onClick={handleMove(TRASH, fromFolderID)}
-                        data-testid="message-header-expanded:move-to-trash"
-                    >
-                        <Icon name="trash" alt={c('Title').t`Move to trash`} />
-                    </Button>
-                </Tooltip>
-            )}
-            <HeaderDropdown
-                icon
-                disabled={!messageLoaded}
-                autoClose
-                title={c('Title').t`More`}
-                content={<Icon name="angle-down" className="caret-like" alt={c('Title').t`More options`} />}
-                hasCaret={false}
-                additionalDropdowns={additionalDropdowns}
-                data-testid="message-header-expanded:more-dropdown"
-            >
-                {({ onClose, onOpenAdditionnal }) => {
-                    closeDropdown.current = onClose;
-                    return (
-                        <DropdownMenu>
-                            {isNarrow && (
+        <>
+            <ButtonGroup className="mr1 mb0-5">
+                {isSpam ? (
+                    <Tooltip title={titleMoveInboxNotSpam}>
+                        <Button icon disabled={!messageLoaded} onClick={handleMove(INBOX, SPAM)}>
+                            <Icon name="fire-slash" alt={c('Title').t`Move to inbox (not spam)`} />
+                        </Button>
+                    </Tooltip>
+                ) : (
+                    <Tooltip title={titleUnread}>
+                        <Button
+                            icon
+                            disabled={!messageLoaded}
+                            onClick={handleUnread}
+                            data-testid="message-header-expanded:mark-as-unread"
+                        >
+                            <Icon name="eye-slash" alt={c('Title').t`Mark as unread`} />
+                        </Button>
+                    </Tooltip>
+                )}
+                {isInTrash ? (
+                    <Tooltip title={titleMoveInbox}>
+                        <Button icon disabled={!messageLoaded} onClick={handleMove(INBOX, TRASH)}>
+                            <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
+                        </Button>
+                    </Tooltip>
+                ) : (
+                    <Tooltip title={titleMoveTrash}>
+                        <Button
+                            icon
+                            disabled={!messageLoaded}
+                            onClick={handleMove(TRASH, fromFolderID)}
+                            data-testid="message-header-expanded:move-to-trash"
+                        >
+                            <Icon name="trash" alt={c('Title').t`Move to trash`} />
+                        </Button>
+                    </Tooltip>
+                )}
+                <HeaderDropdown
+                    icon
+                    disabled={!messageLoaded}
+                    autoClose
+                    title={c('Title').t`More`}
+                    content={<Icon name="ellipsis" className="caret-like" alt={c('Title').t`More options`} />}
+                    additionalDropdowns={additionalDropdowns}
+                    data-testid="message-header-expanded:more-dropdown"
+                    noMaxHeight
+                    noMaxSize
+                >
+                    {({ onClose, onOpenAdditionnal }) => {
+                        closeDropdown.current = onClose;
+                        return (
+                            <DropdownMenu>
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleStar}>
+                                    <Icon name={isStarred ? 'star-remove' : 'star'} className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{staringText}</span>
+                                </DropdownMenuButton>
+
+                                <hr className="my0-5" />
+
                                 <DropdownMenuButton
                                     className="text-left flex flex-nowrap"
-                                    onClick={() => onOpenAdditionnal(0)}
+                                    onClick={handleMove(ARCHIVE, fromFolderID)}
                                 >
-                                    <Icon name="filter" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Filter on...`}</span>
+                                    <Icon name="box-archive" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Archive`}</span>
                                 </DropdownMenuButton>
-                            )}
-                            {isNarrow && (
+                                {isNarrow && (
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap"
+                                        onClick={() => onOpenAdditionnal(0)}
+                                    >
+                                        <Icon name="filter" className="mr0-5 mt0-25" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`Filter on...`}</span>
+                                    </DropdownMenuButton>
+                                )}
+                                {isNarrow && (
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap"
+                                        onClick={() => onOpenAdditionnal(1)}
+                                    >
+                                        <Icon name="folder" className="mr0-5 mt0-25" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`Move to...`}</span>
+                                    </DropdownMenuButton>
+                                )}
+                                {isNarrow && (
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap"
+                                        onClick={() => onOpenAdditionnal(2)}
+                                    >
+                                        <Icon name="tag" className="mr0-5 mt0-25" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`Label as...`}</span>
+                                    </DropdownMenuButton>
+                                )}
+                                {isSpam ? (
+                                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleUnread}>
+                                        <Icon name="eye-slash" className="mr0-5 mt0-25" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`Mark as unread`}</span>
+                                    </DropdownMenuButton>
+                                ) : (
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap"
+                                        onClick={handleMove(SPAM, fromFolderID)}
+                                    >
+                                        <Icon name="fire" className="mr0-5 mt0-25" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`Move to spam`}</span>
+                                    </DropdownMenuButton>
+                                )}
+                                {isInTrash ? (
+                                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleDelete}>
+                                        <Icon name="circle-xmark" className="mr0-5 mt0-25" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Delete`}</span>
+                                    </DropdownMenuButton>
+                                ) : null}
+
+                                <hr className="my0-5" />
+
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleExport}>
+                                    <Icon name="arrow-up-from-screen" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
+                                </DropdownMenuButton>
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handlePrint}>
+                                    <Icon name="printer" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Print`}</span>
+                                </DropdownMenuButton>
+
+                                <hr className="my0-5" />
+
                                 <DropdownMenuButton
                                     className="text-left flex flex-nowrap"
-                                    onClick={() => onOpenAdditionnal(1)}
+                                    onClick={() => setMessageDetailsModalOpen(true)}
                                 >
-                                    <Icon name="folder" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Move to...`}</span>
-                                </DropdownMenuButton>
-                            )}
-                            {isNarrow && (
-                                <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
-                                    onClick={() => onOpenAdditionnal(2)}
-                                >
-                                    <Icon name="tag" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Label as...`}</span>
-                                </DropdownMenuButton>
-                            )}
-                            {isSpam ? (
-                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleUnread}>
-                                    <Icon name="eye-slash" className="mr0-5 mt0-25" />
+                                    <Icon name="list" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                        .t`Mark as unread`}</span>
+                                        .t`View message details`}</span>
                                 </DropdownMenuButton>
-                            ) : (
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleHeaders}>
+                                    <Icon name="window-terminal" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View headers`}</span>
+                                </DropdownMenuButton>
+                                {!sourceMode && (
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap"
+                                        onClick={() => onSourceMode(true)}
+                                    >
+                                        <Icon name="code" className="mr0-5 mt0-25" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`View HTML`}</span>
+                                    </DropdownMenuButton>
+                                )}
+                                {sourceMode && (
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap"
+                                        onClick={() => onSourceMode(false)}
+                                    >
+                                        <Icon name="window-image" className="mr0-5 mt0-25" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`View rendered HTML`}</span>
+                                    </DropdownMenuButton>
+                                )}
+
+                                <hr className="my0-5" />
+
                                 <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
-                                    onClick={handleMove(SPAM, fromFolderID)}
+                                    className="text-left flex flex-nowrap color-danger"
+                                    onClick={handlePhishing}
                                 >
-                                    <Icon name="fire" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Move to spam`}</span>
-                                </DropdownMenuButton>
-                            )}
-                            {isInTrash ? (
-                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleDelete}>
-                                    <Icon name="circle-xmark" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Delete`}</span>
-                                </DropdownMenuButton>
-                            ) : null}
-                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handlePhishing}>
-                                <Icon name="hook" className="mr0-5 mt0-25" />
-                                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Report phishing`}</span>
-                            </DropdownMenuButton>
-                            {!sourceMode && (
-                                <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
-                                    onClick={() => onSourceMode(true)}
-                                >
-                                    <Icon name="code" className="mr0-5 mt0-25" />
+                                    <Icon name="hook" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                        .t`View source code`}</span>
+                                        .t`Report phishing`}</span>
                                 </DropdownMenuButton>
-                            )}
-                            {sourceMode && (
-                                <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
-                                    onClick={() => onSourceMode(false)}
-                                >
-                                    <Icon name="window-image" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                        .t`View rendered HTML`}</span>
-                                </DropdownMenuButton>
-                            )}
-                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleHeaders}>
-                                <Icon name="window-terminal" className="mr0-5 mt0-25" />
-                                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View headers`}</span>
-                            </DropdownMenuButton>
-                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleExport}>
-                                <Icon name="arrow-up-from-screen" className="mr0-5 mt0-25" />
-                                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
-                            </DropdownMenuButton>
-                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handlePrint}>
-                                <Icon name="printer" className="mr0-5 mt0-25" />
-                                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Print`}</span>
-                            </DropdownMenuButton>
-                        </DropdownMenu>
-                    );
-                }}
-            </HeaderDropdown>
-        </ButtonGroup>
+                            </DropdownMenu>
+                        );
+                    }}
+                </HeaderDropdown>
+            </ButtonGroup>
+            <MessageDetailsModal
+                labelID={labelID}
+                message={message}
+                mailSettings={mailSettings}
+                messageViewIcons={messageViewIcons}
+                messageLoaded={messageLoaded}
+                {...messageDetailsModalProps}
+            />
+        </>
     );
 };
 

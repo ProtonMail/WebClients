@@ -13,28 +13,34 @@ export enum BannerBackgroundColor {
     SUCCESS = 'success',
 }
 
+export enum IconColor {
+    WARNING = 'warning',
+    DANGER = 'danger',
+}
+
 export interface BannerProps {
     backgroundColor?: BannerBackgroundColor;
+    iconColor?: IconColor;
     icon?: React.ReactNode;
     action?: React.ReactNode;
     children: React.ReactNode;
 }
 
-const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, action, children }: BannerProps) => {
+const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor, action, children }: BannerProps) => {
     const getIcon = () => {
         if (!icon) {
             return null;
         }
 
         if (typeof icon === 'string') {
-            return <Icon name={icon} className="mr0-75 flex-item-noshrink" />;
+            return <Icon name={icon} className={classnames(['mr0-75 flex-item-noshrink', `color-${iconColor}`])} />;
         }
 
         return icon;
     };
 
     return (
-        <div className={`bg-${backgroundColor} rounded p0-75 mb0-5 flex flex-align-items-center flex-nowrap`}>
+        <div className={`bg-${backgroundColor} rounded p0-5 mb0-75 flex flex-align-items-center flex-nowrap border`}>
             {getIcon()}
             <span className={classnames([!!action && 'mr1'])}>{children}</span>
             {action}

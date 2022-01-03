@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Icon, Href, useModals, Alert } from '@proton/components';
+import { Icon, Href, useModals, Alert, Button } from '@proton/components';
 import { c } from 'ttag';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import ContactResignModal from '../modals/ContactResignModal';
@@ -52,18 +52,23 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
     };
 
     return (
-        <div className="bg-norm rounded border p0-5 mb0-5 flex flex-nowrap">
-            <Icon name="triangle-exclamation" className="flex-item-noshrink mtauto mbauto" />
-            <span className="pl0-5 pr0-5 flex-item-fluid flex-align-self-center">
-                <span className="mr0-25">{c('Info').t`We could not verify the sender's trusted keys.`}</span>
-                <Href
-                    className="mr1 inline-block"
-                    href="https://protonmail.com/support/knowledge-base/address-verification/"
-                >
-                    {c('Info').t`Learn more`}
-                </Href>
+        <div className="bg-norm rounded border p0-5 mb0-85 flex flex-nowrap on-mobile-flex-column">
+            <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-5 color-danger" />
+                <span className="pl0-5 pr0-5 mt0-25 flex-item-fluid flex-align-self-center">
+                    <span className="mr0-25">{c('Info').t`We could not verify the sender's trusted keys.`}</span>
+                    <Href
+                        className="mr1 inline-block"
+                        href="https://protonmail.com/support/knowledge-base/address-verification/"
+                    >
+                        {c('Info').t`Learn more`}
+                    </Href>
+                </span>
+            </div>
+            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100">
+                <Button size="small" className="on-mobile-w100 py0-25" onClick={handleClick}>{c('Action')
+                    .t`Verify`}</Button>
             </span>
-            <button type="button" className="text-underline link" onClick={handleClick}>{c('Action').t`Verify`}</button>
         </div>
     );
 };

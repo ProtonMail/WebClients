@@ -11,14 +11,19 @@ import {
     Tooltip,
     useAddresses,
     useMailSettings,
-    InlineLinkButton,
     Button,
     useFeature,
     FeatureCode,
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { isInternal, isOutbox, isScheduled, getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
+import {
+    isInternal,
+    isOutbox,
+    isScheduled,
+    getHasOnlyIcsAttachments,
+    getRecipients,
+} from '@proton/shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
@@ -32,22 +37,21 @@ import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { getCurrentFolderID } from '../../../helpers/labels';
 import HeaderExtra from './HeaderExtra';
-import MailRecipientsSimple from '../recipients/MailRecipientsSimple';
-import RecipientsDetails from '../recipients/RecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import HeaderDropdown from './HeaderDropdown';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
-import HeaderExpandedDetails from './HeaderExpandedDetails';
-import RecipientType from '../recipients/RecipientType';
 import RecipientItem from '../recipients/RecipientItem';
 import { Breakpoints } from '../../../models/utils';
-import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { isSelfAddress } from '../../../helpers/addresses';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import MailRecipients from '../recipients/MailRecipients';
+import RecipientType from '../recipients/RecipientType';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
 interface Props {
     labelID: string;
@@ -98,6 +102,7 @@ const HeaderExpanded = ({
     highlightKeywords = false,
     parentMessageRef,
 }: Props) => {
+    const { highlightMetadata } = useEncryptedSearchContext();
     const [addresses = []] = useAddresses();
     const [folders = []] = useFolders();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
@@ -113,6 +118,10 @@ const HeaderExpanded = ({
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const onCompose = useOnCompose();
+
+    const { getRecipientsOrGroups } = useRecipientLabel();
+    const recipients = getRecipients(message.data);
+    const recipientsOrGroup = getRecipientsOrGroups(recipients);
 
     const handleClick = (event: MouseEvent) => {
         if (
@@ -137,22 +146,33 @@ const HeaderExpanded = ({
         });
     };
 
-    const showPinPublicKey =
+    const hasSigningPublicKey =
         isInternal(message.data) &&
         !isSelfAddress(message.data?.Sender.Address, addresses) &&
         message.verification?.signingPublicKey &&
         message.verification?.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID;
 
+    const hasAttachedPublicKey =
+        !isSelfAddress(message.data?.Sender?.Address, addresses) &&
+        message.verification?.attachedPublicKeys &&
+        message.verification?.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID;
+
+    const showPinPublicKey = hasSigningPublicKey || hasAttachedPublicKey;
+
+    const { isNarrow } = breakpoints;
+
     const from = (
         <RecipientItem
+            message={message}
             recipientOrGroup={{ recipient: message.data?.Sender }}
             isLoading={!messageLoaded}
             signingPublicKey={showPinPublicKey ? message.verification?.signingPublicKey : undefined}
+            attachedPublicKey={showPinPublicKey ? message.verification?.attachedPublicKeys?.[0] : undefined}
+            isNarrow={isNarrow}
             highlightKeywords={highlightKeywords}
+            highlightMetadata={highlightMetadata}
         />
     );
-
-    const { isNarrow } = breakpoints;
 
     const titleReply = Shortcuts ? (
         <>
@@ -212,171 +232,97 @@ const HeaderExpanded = ({
     return (
         <div
             className={classnames([
-                'message-header message-header-expanded',
-                showDetails && 'message-header--showDetails',
+                'message-header mx1-25 message-header-expanded',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 !messageLoaded && 'is-loading',
+                showDetails ? 'message-header-expanded--with-details' : 'message-header-expanded--without-details',
             ])}
             data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
-            <div className="flex flex-nowrap flex-align-items-center cursor-pointer" onClick={handleClick}>
-                <span className="flex flex-item-fluid flex-nowrap mr0-5">
-                    {showDetails ? (
-                        <RecipientType
-                            label={c('Label').t`From:`}
-                            className={classnames([
-                                'flex flex-align-items-start flex-nowrap',
-                                !messageLoaded && 'flex-item-fluid',
-                            ])}
-                        >
-                            {from}
-                        </RecipientType>
-                    ) : (
-                        <div className={classnames(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
-                            {from}
-                        </div>
-                    )}
-                </span>
-                <div
-                    className={classnames([
-                        'message-header-metas-container flex flex-align-items-center flex-item-noshrink',
-                        isNarrow && 'flex-align-self-start',
-                    ])}
-                    data-testid="message:message-header-metas"
-                >
-                    {messageLoaded && (isOutboxMessage || isSendingMessage) && !isScheduledMessage && (
-                        <span className="badge-label-primary mr0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
-                    )}
-                    {messageLoaded && isScheduledMessage && (
-                        <span className="badge-label-primary mr0-5 flex-item-noshrink">{c('Info').t`Scheduled`}</span>
-                    )}
-                    {messageLoaded && !showDetails && (
-                        <>
-                            <span className="inline-flex">
-                                <ItemAction element={message.data} className="flex-item-noshrink" />
-                                <EncryptionStatusIcon {...messageViewIcons.globalIcon} className="mr0-5" />
-                                <ItemLocation element={message.data} labelID={labelID} />
-                            </span>
-                            {!isNarrow && <ItemDate className="ml0-5" element={message.data} labelID={labelID} />}
-                        </>
-                    )}
-                    {messageLoaded && showDetails && (
-                        <span className="ml0-5 inline-flex">
-                            <ItemAction element={message.data} className="flex-item-noshrink" />
-                        </span>
-                    )}
-                    {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex" />}
-                    <span className="message-header-star ml0-5 inline-flex">
+            <span className="absolute message-header-security-icons flex flex-row flex-nowrap">
+                {messageLoaded && <EncryptionStatusIcon {...messageViewIcons.globalIcon} className="ml0-25" />}
+                {feature?.Value && <ItemSpyTrackerIcon message={message} className="ml0-25" />}
+            </span>
+            {isNarrow && messageLoaded && (
+                <div className="flex flex-align-items-center flex-justify-space-between my0-5" onClick={handleClick}>
+                    <span className="inline-flex">
+                        <ItemLocation element={message.data} labelID={labelID} />
+                        <ItemAttachmentIcon
+                            icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                            onClick={handleAttachmentIconClick}
+                            element={message.data}
+                            className="mr0-5"
+                        />
+                    </span>
+                    <ItemDate element={message.data} labelID={labelID} useTooltip className="color-weak text-sm" />
+                    <span className="message-header-star mr0-5 inline-flex">
                         <ItemStar element={message.data} />
                     </span>
                 </div>
-            </div>
+            )}
             <div
-                className={classnames([
-                    'flex flex-nowrap flex-align-items-center mb0-5 on-mobile-flex-wrap',
-                    !showDetails && 'mt0-5',
-                ])}
+                className="flex flex-nowrap flex-align-items-center message-header-from-container"
+                onClick={handleClick}
             >
-                <div className="flex-item-fluid flex flex-nowrap mr0-5 on-mobile-mr0 message-header-recipients">
-                    {showDetails ? (
-                        <RecipientsDetails
-                            message={message}
-                            mapStatusIcons={messageViewIcons.mapStatusIcon}
-                            isLoading={!messageLoaded}
-                            highlightKeywords={highlightKeywords}
-                        />
-                    ) : (
-                        <MailRecipientsSimple
-                            message={message.data}
-                            isLoading={!messageLoaded}
-                            highlightKeywords={highlightKeywords}
-                        />
-                    )}
-                    <span
-                        className={classnames([
-                            'message-show-hide-link-container flex-item-noshrink',
-                            showDetails ? 'mt0-25 on-mobile-mt0-5' : 'ml0-5',
-                        ])}
-                    >
-                        {messageLoaded && (
-                            <InlineLinkButton
-                                onClick={toggleDetails}
-                                className="message-show-hide-link"
-                                disabled={!messageLoaded}
-                                data-testid="message-show-details"
-                            >
-                                {showDetails
-                                    ? c('Action').t`Hide details`
-                                    : isNarrow
-                                    ? c('Action').t`Details`
-                                    : c('Action').t`Show details`}
-                            </InlineLinkButton>
+                <span className="flex flex-item-fluid flex-nowrap mr0-5">
+                    <div className={classnames(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
+                        {isNarrow ? (
+                            <span className="message-header-recipient-mobile">{from}</span>
+                        ) : (
+                            <RecipientType label={c('Label').t`From`}>{from}</RecipientType>
                         )}
-                    </span>
-                </div>
-                {messageLoaded && !showDetails && !isNarrow && (
-                    <>
-                        <div className="flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
-                            <ItemLabels
-                                element={message.data}
-                                labelID={labelID}
-                                labels={labels}
-                                showUnlabel
-                                maxNumber={5}
-                                className="on-mobile-pt0-25 ml0-5"
-                            />
-                            {feature?.Value && <ItemSpyTrackerIcon message={message} className="ml0-5" />}
-                            <ItemAttachmentIcon
-                                icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
-                                onClick={handleAttachmentIconClick}
-                                element={message.data}
-                                className="ml0-5"
-                            />
-                        </div>
-                    </>
+                        {messageLoaded && (isOutboxMessage || isSendingMessage) && !isScheduledMessage && (
+                            <span className="ml0-5 flex-item-noshrink mtauto mbauto">
+                                <span className="badge-label-primary">{c('Info').t`Sending`}</span>
+                            </span>
+                        )}
+                    </div>
+                </span>
+
+                {!isNarrow && (
+                    <div
+                        className="message-header-metas-container flex flex-align-items-center flex-item-noshrink"
+                        data-testid="message:message-header-metas"
+                    >
+                        <span className="message-header-star mr0-5 inline-flex">
+                            <ItemStar element={message.data} />
+                        </span>
+                        {messageLoaded && (
+                            <>
+                                <span className="inline-flex">
+                                    <ItemLocation element={message.data} labelID={labelID} />
+                                    <ItemAttachmentIcon
+                                        icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                                        onClick={handleAttachmentIconClick}
+                                        element={message.data}
+                                        className="mr0-5"
+                                    />
+                                </span>
+                                <ItemDate element={message.data} labelID={labelID} useTooltip className="text-sm" />
+                            </>
+                        )}
+                        {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex" />}
+                    </div>
                 )}
             </div>
-
-            {!showDetails && isNarrow && (
-                <div className="flex flex-justify-space-between flex-align-items-center border-top pt0-5 mb0-5">
-                    {messageLoaded ? (
-                        <>
-                            <div className="flex flex-nowrap flex-align-items-center">
-                                <Icon name="calendar-days" className="ml0-5 mr0-5" />
-                                <ItemDate element={message.data} labelID={labelID} />
-                            </div>
-                            <div className="mlauto flex flex-nowrap flex-align-items-center">
-                                {feature?.Value && <ItemSpyTrackerIcon message={message} />}
-                                <ItemLabels
-                                    element={message.data}
-                                    labelID={labelID}
-                                    labels={labels}
-                                    showUnlabel
-                                    maxNumber={1}
-                                />
-                                <ItemAttachmentIcon
-                                    icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
-                                    onClick={handleAttachmentIconClick}
-                                    element={message.data}
-                                    className="ml0-5"
-                                />
-                            </div>
-                        </>
-                    ) : (
-                        <span className="message-header-metas inline-flex" />
-                    )}
-                </div>
-            )}
-
-            {showDetails && (
-                <HeaderExpandedDetails
-                    labelID={labelID}
+            <div className="flex flex-nowrap flex-align-items-center mb0-5 on-mobile-flex-wrap message-header-ccbcc-container">
+                <MailRecipients
                     message={message}
-                    messageViewIcons={messageViewIcons}
-                    labels={labels}
-                    mailSettings={mailSettings}
-                    onAttachmentIconClick={handleAttachmentIconClick}
+                    recipientsOrGroup={recipientsOrGroup}
+                    mapStatusIcons={messageViewIcons.mapStatusIcon}
+                    isLoading={!messageLoaded}
+                    highlightKeywords={highlightKeywords}
+                    highlightMetadata={highlightMetadata}
+                    expanded={showDetails}
+                    toggleDetails={toggleDetails}
                 />
+            </div>
+            {showDetails && (
+                <div className="mb0-5 flex flex-nowrap color-weak">
+                    <span className="flex-align-self-center mr0-5 text-ellipsis">
+                        <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
+                    </span>
+                </div>
             )}
 
             <HeaderExtra
@@ -389,7 +335,21 @@ const HeaderExpanded = ({
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
             />
 
-            <div className="pt0-5 flex flex-justify-space-between border-top">
+            {messageLoaded && (
+                <>
+                    <div className="mb0-85 flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
+                        <ItemLabels
+                            element={message.data}
+                            labelID={labelID}
+                            labels={labels}
+                            isCollapsed={false}
+                            className="on-mobile-pt0-25 ml0-5"
+                        />
+                    </div>
+                </>
+            )}
+
+            <div className="pt0 flex flex-justify-space-between">
                 <div className="flex">
                     <HeaderMoreDropdown
                         labelID={labelID}
@@ -403,6 +363,7 @@ const HeaderExpanded = ({
                         data-testid="message-header-expanded:more-dropdown"
                         parentMessageRef={parentMessageRef}
                         mailSettings={mailSettings}
+                        messageViewIcons={messageViewIcons}
                     />
 
                     {!isNarrow && (

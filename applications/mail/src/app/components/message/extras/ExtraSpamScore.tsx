@@ -3,9 +3,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import {
     Icon,
     Href,
-    InlineLinkButton,
+    Button,
     ConfirmModal,
-    Alert,
     useModals,
     useLoading,
     useEventManager,
@@ -31,11 +30,11 @@ const ExtraSpamScore = ({ message }: Props) => {
 
     if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
         return (
-            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap">
-                <Icon name="fire" className="flex-item-noshrink mtauto mbauto" />
-                <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info')
-                    .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}</span>
-                <span className="flex-item-noshrink flex">
+            <div className="bg-norm border rounded p0-5 mb0-85 flex flex-nowrap">
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-5 color-danger" />
+                <span className="pl0-5 pr0-5 mt0-25 pb0-25 flex-item-fluid">
+                    {c('Info')
+                        .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}{' '}
                     <Href
                         className="text-underline color-inherit"
                         url="https://protonmail.com/support/knowledge-base/email-has-failed-its-domains-authentication-requirements-warning/"
@@ -60,8 +59,8 @@ const ExtraSpamScore = ({ message }: Props) => {
                         onClose={reject}
                         onConfirm={() => resolve(undefined)}
                     >
-                        <Alert className="mb1">{c('Info')
-                            .t`We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?`}</Alert>
+                        {c('Info')
+                            .t`We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?`}
                     </ConfirmModal>
                 );
             });
@@ -70,8 +69,8 @@ const ExtraSpamScore = ({ message }: Props) => {
             createNotification({ text: c('Success').t`Message marked as legitimate` });
         };
         return (
-            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap" data-testid="phishing-banner">
-                <Icon name="fire" className="flex-item-noshrink mtauto mbauto" />
+            <div className="bg-norm border rounded p0-5 mb0-5 flex flex-nowrap" data-testid="phishing-banner">
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-25 color-danger" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
@@ -79,12 +78,15 @@ const ExtraSpamScore = ({ message }: Props) => {
                         {c('Info').t`Learn more`}
                     </Href>
                 </span>
-                <span className="flex-item-noshrink flex">
-                    <InlineLinkButton
-                        className="color-inherit"
+                <span className="flex-item-noshrink flex-align-items-start flex">
+                    <Button
+                        size="small"
+                        className="on-mobile-w100 py0-25"
                         onClick={() => withLoading(markAsLegitimate())}
                         disabled={loading}
-                    >{c('Action').t`Mark legitimate`}</InlineLinkButton>
+                    >
+                        {c('Action').t`Mark legitimate`}
+                    </Button>
                 </span>
             </div>
         );

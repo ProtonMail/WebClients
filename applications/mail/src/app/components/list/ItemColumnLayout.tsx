@@ -92,7 +92,7 @@ const ItemColumnLayout = ({
                     </span>
                 )}
 
-                <ItemDate element={element} labelID={labelID} className="item-senddate-col" />
+                <ItemDate element={element} labelID={labelID} className="item-senddate-col" useTooltip />
 
                 <span className="ml0-5 flex-flex-children flex-item-centered-vert">
                     <ItemStar element={element} />
@@ -127,6 +127,7 @@ const ItemColumnLayout = ({
                         element={element}
                         labelID={labelID}
                         maxNumber={breakpoints.isNarrow ? 1 : 5}
+                        showDropdown={false}
                     />
                     <ItemAttachmentIcon
                         icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
