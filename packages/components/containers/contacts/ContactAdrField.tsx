@@ -1,4 +1,3 @@
-import { getStringContactValue } from '@proton/shared/lib/contacts/properties';
 import { ContactValue } from '@proton/shared/lib/interfaces/contacts';
 import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
@@ -11,12 +10,12 @@ const { POST_BOX, EXTENDED, STREET, LOCALITY, REGION, POSTAL_CODE, COUNTRY } = A
 
 const initialAddress = (address: ContactValue) => {
     const addressArray = Array.isArray(address) ? address : address.split(',');
-    return Array.from({ length: 7 }).map((_, i) => getStringContactValue(addressArray[i]) || '');
+    return Array.from({ length: 7 }).map((_, i) => addressArray[i] || '');
 };
 
 interface Props {
     value: ContactValue;
-    onChange: (address: string[]) => void;
+    onChange: (address: (string | string[])[]) => void;
 }
 const ContactAdrField = ({ value, onChange }: Props) => {
     const [uid] = useState(generateUID('contact-adr'));
@@ -25,8 +24,9 @@ const ContactAdrField = ({ value, onChange }: Props) => {
     const handleChange =
         (index: number) =>
         ({ target }: ChangeEvent<HTMLInputElement>) => {
+            const newValue = target.value.includes(',') ? target.value.split(',') : target.value;
             const newAddress = [...address];
-            newAddress[index] = target.value;
+            newAddress[index] = newValue;
             setAddress(newAddress);
             onChange(newAddress);
         };
