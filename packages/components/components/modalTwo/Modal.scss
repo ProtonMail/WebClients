@@ -80,16 +80,19 @@
 		padding: 0;
 		margin: auto;
 		transform-origin: center top;
-		flex: 0 1 auto;
-		flex-flow: column nowrap;
-		justify-content: flex-start;
-		align-items: stretch;
 		border-radius: var(--border-radius-large);
 		box-shadow: var(--shadow-lifted);
 		background: var(--background-norm);
 		color: var(--text-norm);
 		animation: 0.25s easing(easeOutCubic) both;
 		animation-name: anime-modal-two-dialog-in;
+
+		&-container {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			align-items: stretch;
+		}
 
 		&--small {
 			--size: #{rem(392)};
