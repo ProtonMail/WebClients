@@ -2,6 +2,7 @@ import {
     getHasOnlyIcsAttachments,
     hasAttachments,
     isDraft,
+    isExpiring,
     isOutbox,
     isScheduled,
 } from '@proton/shared/lib/mail/messages';
@@ -14,11 +15,11 @@ import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import ItemExpiration from '../../list/ItemExpiration';
-import ItemAction from '../../list/ItemAction';
 import { Breakpoints } from '../../../models/utils';
 import RecipientItem from '../recipients/RecipientItem';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { useExpiration } from '../../../hooks/useExpiration';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 
 interface Props {
     labelID: string;
@@ -43,6 +44,9 @@ const HeaderCollapsed = ({
     breakpoints,
     highlightKeywords = false,
 }: Props) => {
+    const { highlightMetadata } = useEncryptedSearchContext();
+    const { lessThanTwoHours } = useExpiration(message);
+
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
             event.stopPropagation();
@@ -55,12 +59,13 @@ const HeaderCollapsed = ({
     const isDraftMessage = isDraft(message.data) && !message.draftFlags?.sending;
     const isOutboxMessage = isOutbox(message.data) || message.draftFlags?.sending;
     const isScheduledMessage = isScheduled(message.data);
+    const isExpiringMessage = isExpiring(message.data);
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
 
     return (
         <div
             className={classnames([
-                'message-header message-header-collapsed flex flex-nowrap flex-align-items-center cursor-pointer',
+                'message-header message-header-collapsed mx1-25 flex flex-nowrap flex-align-items-center cursor-pointer',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
                 !messageLoaded && 'is-loading',
@@ -70,15 +75,14 @@ const HeaderCollapsed = ({
         >
             <div className="flex flex-item-fluid flex-nowrap flex-align-items-center mr0-5">
                 <RecipientItem
+                    message={message}
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     showAddress={false}
                     isLoading={!messageLoaded}
                     highlightKeywords={highlightKeywords}
+                    highlightMetadata={highlightMetadata}
+                    showDropdown={false}
                 />
-
-                {messageLoaded && (
-                    <ItemAction element={message.data} className="flex-item-noshrink mtauto mbauto ml0-25" />
-                )}
 
                 {messageLoaded && isDraftMessage && (
                     <span className="badge-label-success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
@@ -86,25 +90,40 @@ const HeaderCollapsed = ({
                 {messageLoaded && isOutboxMessage && !isScheduledMessage && (
                     <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
                 )}
-                {messageLoaded && isScheduledMessage && (
-                    <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Scheduled`}</span>
+                {messageLoaded && isExpiringMessage && !lessThanTwoHours && (
+                    <span className="badge-label-weak ml0-5 flex-item-noshrink">{c('Info').t`Expires`}</span>
                 )}
-            </div>
-            <div className="flex flex-align-items-center flex-nowrap flex-item-noshrink">
-                {messageLoaded ? (
-                    <>
+                {messageLoaded && isExpiringMessage && lessThanTwoHours && (
+                    <span className="badge-label-danger ml0-5 flex-item-noshrink">{c('Info').t`Expires soon`}</span>
+                )}
+
+                {messageLoaded && (
+                    <div className="ml0-5 flex-item-fluid flex flex-nowrap">
                         <ItemLabels
                             className="no-mobile"
                             element={message.data}
                             labels={labels}
                             labelID={labelID}
-                            showUnlabel
                             maxNumber={breakpoints.isTablet ? 1 : 5}
+                            isCollapsed={false}
                             data-testid="message-header-collapsed:labels"
                         />
+                    </div>
+                )}
+            </div>
+            <div className="flex flex-align-items-center flex-nowrap flex-item-noshrink">
+                {messageLoaded ? (
+                    <>
+                        <span className="message-header-star mr0-5 flex">
+                            <ItemStar element={message.data} />
+                        </span>
+
+                        <span className="flex">
+                            <ItemLocation element={message.data} labelID={labelID} />
+                        </span>
 
                         {!!hasAttachments(message.data) && (
-                            <span className="ml0-5 flex">
+                            <span className="mr0-5 flex">
                                 <ItemAttachmentIcon
                                     icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
                                     element={message.data}
@@ -113,20 +132,13 @@ const HeaderCollapsed = ({
                             </span>
                         )}
 
-                        <span className="ml0-5 flex">
-                            <ItemLocation element={message.data} labelID={labelID} />
+                        <span className="text-sm">
+                            <ItemDate element={message.data} labelID={labelID} useTooltip />
                         </span>
-
-                        <ItemExpiration element={message.data} className="flex flex-item-noshrink ml0-25 mr0-25" />
-
-                        <ItemDate className="ml0-5" element={message.data} labelID={labelID} />
                     </>
                 ) : (
                     <span className="message-header-metas ml0-5 flex" />
                 )}
-                <span className="message-header-star ml0-5 flex">
-                    <ItemStar element={message.data} />
-                </span>
             </div>
         </div>
     );

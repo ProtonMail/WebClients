@@ -2,7 +2,7 @@ import { RefObject, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { classnames, Tooltip } from '@proton/components';
+import { classnames, Tooltip, Icon } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -125,13 +125,18 @@ const MessageBodyIframe = ({
                     >
                         <button
                             type="button"
-                            className="proton-toggle-button"
+                            className="proton-toggle-button inline-flex"
                             onClick={() => {
                                 setShowBlockquote(!showBlockquote);
                             }}
                             data-testid="message-view:expand-codeblock"
                         >
-                            ...
+                            <Icon name="ellipsis" size={14} className="mauto" />
+                            <span className="proton-sr-only">
+                                {showBlockquote
+                                    ? c('Info').t`Hide original message`
+                                    : c('Info').t`Show original message`}
+                            </span>
                         </button>
                     </Tooltip>,
                     iframeToggleDiv

@@ -54,24 +54,28 @@ const ExtraErrors = ({ message }: Props) => {
                 return (
                     <div
                         key={errorType}
-                        className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap flex-align-items-center"
+                        className="bg-norm border rounded p0-5 mb0-85 flex flex-nowrap on-mobile-flex-column"
                         data-testid="errors-banner"
                     >
-                        <Icon name="triangle-exclamation" className="flex-item-noshrink mtauto mbauto" />
-                        <span className="pl0-5 pr0-5 flex-item-fluid">{getTranslations(errorType, alreadyTried)}</span>
+                        <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
+                            <Icon name="circle-exclamation-filled" className="flex-item-noshrink mt0-5 color-danger" />
+                            <span className="mt0-25 pl0-5 pr0-5 flex-item-fluid">
+                                {getTranslations(errorType, alreadyTried)}
+                            </span>
+                        </div>
                         {showReload && (
-                            <span className="flex-item-noshrink flex">
-                                <Button size="small" onClick={handleReload}>
-                                    {c('Action').t`Try again`}
-                                </Button>
+                            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100">
+                                <Button size="small" className="on-mobile-w100 py0-25" onClick={handleReload}>{c(
+                                    'Action'
+                                ).t`Try again`}</Button>
                             </span>
                         )}
                         {showKeysLink && (
-                            <span className="flex-item-noshrink flex">
+                            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100">
                                 <SettingsLink
                                     path="/encryption-keys"
                                     app={APPS.PROTONMAIL}
-                                    className="text-underline color-inherit mtauto"
+                                    className="text-underline color-inherit on-mobile-w100"
                                 >
                                     {c('Action').t`View keys`}
                                 </SettingsLink>

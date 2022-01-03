@@ -1,0 +1,13 @@
+@import '~@proton/styles/scss/config/index';
+
+.eo-message-header {
+	padding-block-end: 0.25em;
+
+	.message-recipient-item-expanded-content {
+		padding-block-start: 0.5em;
+	}
+
+	.message-recipient-expanded .message-recipient-item-expanded-content {
+		padding-block-start: 0.2em;
+	}
+}

@@ -13,7 +13,7 @@ const RecipientType = ({
 }: Props) => {
     return (
         <span className={className} data-testid={`message-header-expanded:${label}`}>
-            <span className="container-to pt0-5">{label}</span>
+            <span className="container-to pt0-5 text-semibold">{label}</span>
             <span className="flex-align-self-center message-recipient-item-expanded-content">{children}</span>
         </span>
     );

@@ -4,7 +4,7 @@
  * For conversations and contacts lists
  */
 
-$container-to-width: 3em !default;
+$container-to-width: 4em !default;
 
 .items-column-list {
 	inline-size: var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)}));
@@ -415,9 +415,10 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	font-size: em(12);
 }
 
-.message-header-metas-container {
-	block-size: rem($conversation-icon-size);
-}
+// NEEDED?
+// .message-header-metas-container {
+// 	block-size: rem($conversation-icon-size);
+// }
 
 .starbutton {
 	// no focus state, only focus-visible

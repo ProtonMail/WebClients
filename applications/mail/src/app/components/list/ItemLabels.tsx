@@ -13,20 +13,20 @@ interface Props {
     element?: Element;
     labelID: string;
     labels?: Label[];
-    showUnlabel?: boolean;
     className?: string;
     isCollapsed?: boolean;
     maxNumber?: number;
+    showDropdown?: boolean;
 }
 
 const ItemLabels = ({
     element,
     labelID,
-    showUnlabel = false,
     labels = [],
     className = '',
     isCollapsed = true,
     maxNumber,
+    showDropdown = true,
 }: Props) => {
     const applyLabels = useApplyLabels();
 
@@ -57,8 +57,8 @@ const ItemLabels = ({
             labels={labelsDescription}
             className={classnames([className, isCollapsed && 'flex-justify-end'])}
             isStacked={isCollapsed}
-            showDelete={showUnlabel}
             maxNumber={maxNumber}
+            showDropDown={showDropdown}
         />
     );
 };

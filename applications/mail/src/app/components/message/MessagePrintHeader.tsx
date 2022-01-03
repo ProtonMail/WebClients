@@ -25,7 +25,7 @@ const MessagePrintHeader = ({ message, labelID }: Props) => {
                     {getRecipientLabel(sender as Recipient, true)}{' '}
                     <span className="color-weak">&lt;{sender?.Address}&gt;</span>
                 </RecipientType>
-                <RecipientsDetails message={message} isLoading={false} />
+                <RecipientsDetails message={message} isLoading={false} showDropdown={false} />
                 <RecipientType label={c('Label').t`Date:`}>
                     <ItemDate element={message.data} labelID={labelID} mode="full" />
                 </RecipientType>

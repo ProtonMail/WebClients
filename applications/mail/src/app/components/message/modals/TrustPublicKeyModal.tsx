@@ -1,7 +1,7 @@
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import {
-    Alert,
     FormModal,
+    LearnMore,
     PrimaryButton,
     useApi,
     useEventManager,
@@ -145,14 +145,15 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
             loading={loading}
             {...rest}
         >
-            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/address-verification">
+            <div className="mb1">
                 {alertMessage}
-            </Alert>
-            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
+                <LearnMore url="https://protonmail.com/support/knowledge-base/address-verification" className="ml0-5" />
+            </div>
+            <div className="mb1">
                 {c('Info').t`This public key will be automatically used for encrypting email sent to this address.`}
-            </Alert>
+                <LearnMore url="https://protonmail.com/support/knowledge-base/how-to-use-pgp/" className="ml0-5" />
+            </div>
             <div>
-                <div className="mb0-5">{c('Key pinning').t`Do you want to trust the following public key?`}</div>
                 <SimplePublicKeyTable contact={contact} />
             </div>
         </FormModal>
