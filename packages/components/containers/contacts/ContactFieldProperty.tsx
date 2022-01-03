@@ -48,7 +48,7 @@ const ContactFieldProperty = (
     }
 
     if (field === 'adr') {
-        const handleChangeAdr = (adr: string[]) => onChange({ value: adr, uid });
+        const handleChangeAdr = (adr: (string | string[])[]) => onChange({ value: adr, uid });
         return <ContactAdrField value={value} onChange={handleChangeAdr} />;
     }
 
