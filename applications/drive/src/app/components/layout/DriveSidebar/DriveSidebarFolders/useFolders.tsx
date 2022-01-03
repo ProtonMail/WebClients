@@ -91,7 +91,7 @@ export default function useFolders(shareId: string, rootLinkId: string) {
     const loadSubfolders = useCallback(
         (linkId: string) => {
             const recursiveLoader = async () => {
-                await getFoldersOnlyMetas(shareId, linkId);
+                await getFoldersOnlyMetas(shareId, linkId, true);
                 const complete = cache.get.foldersOnlyComplete(shareId, linkId);
                 if (!complete) {
                     recursiveLoader().catch(console.error);
@@ -128,21 +128,19 @@ export default function useFolders(shareId: string, rootLinkId: string) {
         [loadSubfolders]
     );
 
-    const expandedDeepStructure = useMemo(() => isTooDeep(rootFolder), [rootFolder]);
+    const deepestOpenedLevel = useMemo(() => getDeepestOpenedLevel(rootFolder), [rootFolder]);
 
     return {
-        expandedDeepStructure,
+        deepestOpenedLevel,
         rootFolder,
         toggleExpand,
     };
 }
 
-function isTooDeep(folder: Folder, level = 0): boolean {
-    if (level > 7) {
-        return true;
+function getDeepestOpenedLevel(folder: Folder, level = 0): number {
+    if (!folder.expanded || !folder.subfolders.length) {
+        return level;
     }
-    if (!folder.expanded) {
-        return false;
-    }
-    return !!folder.subfolders.find((subfolder) => isTooDeep(subfolder, level + 1));
+    const levels = folder.subfolders.map((subfolder) => getDeepestOpenedLevel(subfolder, level + 1));
+    return Math.max(...levels);
 }
