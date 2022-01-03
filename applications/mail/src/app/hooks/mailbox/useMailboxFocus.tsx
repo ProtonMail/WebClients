@@ -3,13 +3,21 @@ import { useHandler, useIsMounted } from '@proton/components';
 
 export interface MailboxFocusContext {
     elementIDs: string[];
+    page: number;
     showList: boolean;
     listRef: MutableRefObject<HTMLElement | null>;
     labelID: string;
     isComposerOpened: boolean;
 }
 
-export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComposerOpened }: MailboxFocusContext) => {
+export const useMailboxFocus = ({
+    elementIDs,
+    page,
+    showList,
+    listRef,
+    labelID,
+    isComposerOpened,
+}: MailboxFocusContext) => {
     const isMounted = useIsMounted();
     const [focusIndex, setFocusIndex] = useState<number>();
 
@@ -24,8 +32,10 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
     const handleFocus = useHandler((index) => setFocusIndex(index));
 
     const focusOnElementByIndex = (index: number) => {
+        // Selecting on index may fail during loading time with placeholders
+        // Selecting by sibblings is a bit more stable but we have to skip "ListSettings"
         const element = listRef.current?.querySelector(
-            `[data-shortcut-target="item-container"][data-element-id="${elementIDs[index]}"]`
+            `[data-shortcut-target="item-container"]:nth-child(${index + 2})`
         ) as HTMLElement;
         element?.focus();
     };
@@ -83,6 +93,7 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
         }
     }, [labelID, elementIDs]);
 
+    // Show flag change: focus on current index if defined fallback on first
     useEffect(() => {
         if (showList) {
             if (focusIndex !== undefined) {
@@ -92,6 +103,13 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
             }
         }
     }, [showList]);
+
+    // Page change: focus on first element
+    useEffect(() => {
+        if (showList && elementIDs.length) {
+            setFocusIndex(0);
+        }
+    }, [page]);
 
     useEffect(() => {
         if (typeof focusIndex !== 'undefined') {
