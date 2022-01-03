@@ -100,7 +100,7 @@ const MessageBodyIframe = ({
             <iframe
                 title={c('Title').t`Email content`}
                 src="about:blank"
-                scrolling="no"
+                scrolling="yes"
                 frameBorder="0"
                 ref={iframeRef}
                 className={classnames([initStatus !== 'start' ? 'w100' : 'w0 h0', isResizing && 'no-pointer-events'])}
