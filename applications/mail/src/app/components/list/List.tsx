@@ -1,4 +1,4 @@
-import { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject, useContext } from 'react';
+import { ChangeEvent, Ref, memo, forwardRef, useContext } from 'react';
 import { c, msgid } from 'ttag';
 import {
     useLabels,
@@ -124,11 +124,6 @@ const List = (
         user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
         user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED;
     const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
-
-    // Scroll top when changing page
-    useEffect(() => {
-        (ref as MutableRefObject<HTMLElement | null>).current?.scroll?.({ top: 0 });
-    }, [loading, page]);
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
