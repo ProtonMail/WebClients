@@ -1,18 +1,20 @@
+import { useRef } from 'react';
 import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { Tooltip } from '@proton/components';
 import { OpenPGPKey } from 'pmcrypto';
 
+import { HighlightMetadata } from '@proton/encrypted-search';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
 
-import MailRecipientItem from './MailRecipientItem';
+import RecipientItemLayout from './RecipientItemLayout';
 import RecipientItemGroup from './RecipientItemGroup';
 import MailRecipientItemSingle from './MailRecipientItemSingle';
-import RecipientItemLayout from './RecipientItemLayout';
 import EORecipientSingle from '../../eo/message/recipients/EORecipientSingle';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
+    message?: MessageState;
     recipientOrGroup: RecipientOrGroup;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
@@ -20,11 +22,16 @@ interface Props {
     showLockIcon?: boolean;
     isLoading: boolean;
     signingPublicKey?: OpenPGPKey;
+    attachedPublicKey?: OpenPGPKey;
+    isNarrow?: boolean;
     highlightKeywords?: boolean;
+    highlightMetadata?: HighlightMetadata;
+    showDropdown?: boolean;
     isOutside?: boolean;
 }
 
 const RecipientItem = ({
+    message,
     recipientOrGroup,
     mapStatusIcons,
     globalIcon,
@@ -32,28 +39,24 @@ const RecipientItem = ({
     showLockIcon = true,
     isLoading,
     signingPublicKey,
+    attachedPublicKey,
+    isNarrow,
     highlightKeywords = false,
+    highlightMetadata,
+    showDropdown,
     isOutside = false,
 }: Props) => {
+    const ref = useRef<HTMLButtonElement>(null);
+
     if (isLoading) {
-        if (!isOutside) {
-            return (
-                <MailRecipientItem
-                    isLoading
-                    button={
-                        <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5" />
-                    }
-                    showAddress={showAddress}
-                />
-            );
-        }
         return (
             <RecipientItemLayout
+                dropdrownAnchorRef={ref}
                 isLoading
-                button={
-                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5" />
-                }
                 showAddress={showAddress}
+                showDropdown={showDropdown}
+                highlightMetadata={highlightMetadata}
+                isOutside={isOutside}
             />
         );
     }
@@ -64,8 +67,9 @@ const RecipientItem = ({
                 group={recipientOrGroup.group}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
-                showAddress={showAddress}
                 highlightKeywords={highlightKeywords}
+                highlightMetadata={highlightMetadata}
+                showDropdown={showDropdown}
             />
         );
     }
@@ -74,13 +78,19 @@ const RecipientItem = ({
         if (!isOutside) {
             return (
                 <MailRecipientItemSingle
+                    message={message}
                     recipient={recipientOrGroup.recipient as Recipient}
                     mapStatusIcons={mapStatusIcons}
                     globalIcon={globalIcon}
                     showAddress={showAddress}
                     showLockIcon={showLockIcon}
                     signingPublicKey={signingPublicKey}
+                    attachedPublicKey={attachedPublicKey}
+                    isNarrow={isNarrow}
                     highlightKeywords={highlightKeywords}
+                    highlightMetadata={highlightMetadata}
+                    showDropdown={showDropdown}
+                    isOutside={isOutside}
                 />
             );
         }
@@ -88,32 +98,13 @@ const RecipientItem = ({
     }
 
     // Undisclosed Recipient
-    if (!isOutside) {
-        return (
-            <MailRecipientItem
-                button={
-                    <Tooltip title={c('Title').t`All recipients were added to the BCC field and cannot be disclosed`}>
-                        <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5 flex flex-justify-center flex-align-items-center">
-                            ?
-                        </span>
-                    </Tooltip>
-                }
-                label={c('Label').t`Undisclosed Recipients`}
-                title={c('Label').t`Undisclosed Recipients`}
-            />
-        );
-    }
     return (
         <RecipientItemLayout
-            button={
-                <Tooltip title={c('Title').t`All recipients were added to the BCC field and cannot be disclosed`}>
-                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5 flex flex-justify-center flex-align-items-center">
-                        ?
-                    </span>
-                </Tooltip>
-            }
+            dropdrownAnchorRef={ref}
             label={c('Label').t`Undisclosed Recipients`}
             title={c('Label').t`Undisclosed Recipients`}
+            showDropdown={showDropdown}
+            isOutside={isOutside}
         />
     );
 };

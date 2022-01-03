@@ -317,8 +317,9 @@ const MailboxContainer = ({
                         <section
                             ref={messageContainerRef}
                             className={classnames([
-                                'view-column-detail flex-no-min-children flex-column flex-item-fluid flex-nowrap scroll-if-needed relative',
+                                'view-column-detail flex flex-column flex-item-fluid flex-nowrap relative',
                                 !showContentPanel && 'hidden',
+                                showContentView ? 'no-scroll' : 'scroll-if-needed',
                             ])}
                         >
                             {showPlaceholder && (

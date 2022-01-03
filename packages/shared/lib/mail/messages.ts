@@ -68,6 +68,7 @@ export const isSentAndReceived = hasFlag(FLAG_SENT | FLAG_RECEIVED);
 export const isDraft = (message?: Partial<Message>) =>
     message?.Flags !== undefined && !isSent(message) && !isReceived(message);
 export const isOutbox = (message?: Partial<Message>) => message?.LabelIDs?.includes(MAILBOX_LABEL_IDS.OUTBOX);
+export const isExpiring = (message?: Partial<Message>) => !!message?.ExpirationTime;
 export const isScheduled = (message?: Partial<Message>) => message?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SCHEDULED);
 export const isScheduledSend = hasFlag(FLAG_SCHEDULED_SEND);
 export const isE2E = hasFlag(FLAG_E2E);
@@ -124,7 +125,7 @@ export const getOriginalTo = (message?: Partial<Message>) => {
 export const requireReadReceipt = (message?: Message) => {
     const dispositionNotificationTo = getParsedHeaders(message, 'Disposition-Notification-To') || ''; // ex: Andy <andy@pm.me>
 
-    if (!dispositionNotificationTo || isReadReceiptSent(message) || isSent(message)) {
+    if (!dispositionNotificationTo || isSent(message)) {
         return false;
     }
 

@@ -78,7 +78,7 @@ const ComposerMeta = ({
                     className="field-lighter composer-meta-input-subject"
                 />
             </div>
-            <ExtraExpirationTime marginBottom={false} message={message} />
+            <ExtraExpirationTime marginBottom message={message} />
         </div>
     );
 };

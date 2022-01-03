@@ -1,92 +1,108 @@
 import { ReactNode, RefObject, useState } from 'react';
-import { c } from 'ttag';
+import { generateUID, Dropdown, DropdownMenu } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { Dropdown, DropdownMenu, generateUID, Icon } from '@proton/components';
-import { getInitials } from '@proton/shared/lib/helpers/string';
-import MailRecipientItem from './MailRecipientItem';
+import { HighlightMetadata } from '@proton/encrypted-search';
+import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientItemLayout from './RecipientItemLayout';
+import RecipientDropdownItem from './RecipientDropdownItem';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import ItemAction from '../../list/ItemAction';
 
 interface Props {
+    message?: MessageState;
     recipient: Recipient;
-    dropdownActions: ReactNode;
+    mapStatusIcons?: MapStatusIcons;
+    globalIcon?: StatusIcon;
     showAddress?: boolean;
-    icon?: ReactNode;
+    showLockIcon?: boolean;
+    isNarrow?: boolean;
     highlightKeywords?: boolean;
+    highlightMetadata?: HighlightMetadata;
+    showDropdown?: boolean;
+    actualLabel?: string;
+    customDropdownActions?: ReactNode;
     anchorRef: RefObject<HTMLButtonElement>;
     isOpen: boolean;
     toggle: () => void;
     close: () => void;
-    actualLabel?: string;
     isOutside?: boolean;
 }
 
 const RecipientItemSingle = ({
+    message,
     recipient,
-    dropdownActions,
-    showAddress,
-    icon,
-    highlightKeywords,
+    mapStatusIcons,
+    globalIcon,
+    showAddress = true,
+    showLockIcon = true,
+    isNarrow,
+    highlightKeywords = false,
+    highlightMetadata,
+    showDropdown,
+    actualLabel,
+    customDropdownActions,
     anchorRef,
     isOpen,
     toggle,
     close,
-    actualLabel,
     isOutside,
 }: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
 
     const label = actualLabel || recipient.Name || recipient.Address;
-    const initial = getInitials(label);
 
-    const address = <>&lt;{recipient.Address}&gt;</>;
-    const title = `${label} <${recipient.Address}>`;
+    const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined);
 
-    const button = (
-        <>
-            <button
-                ref={anchorRef}
-                type="button"
-                onClick={toggle}
-                aria-expanded={isOpen}
-                className="item-icon flex-item-noshrink rounded inline-flex stop-propagation mr0-5"
-                data-testid="message:recipient-button"
-            >
-                <span className="mauto item-abbr" aria-hidden="true">
-                    {initial}
-                </span>
-                <span className="mauto item-caret hidden" aria-hidden="true">
-                    <Icon name="angle-down" />
-                </span>
-                <span className="sr-only">{c('Action').t`Address options`}</span>
-            </button>
-            <Dropdown id={uid} originalPlacement="bottom" isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                <DropdownMenu>{dropdownActions}</DropdownMenu>
-            </Dropdown>
-        </>
-    );
+    // We don't want to show the address in the collapsed mode unless the recipient Name = recipient Address
+    // In this case, we want to display the Address only
+    const actualShowAddress = showAddress ? showAddress : label === recipient.Address;
 
-    if (!isOutside) {
-        return (
-            <MailRecipientItem
-                button={button}
-                label={label}
-                showAddress={showAddress}
-                address={address}
-                title={title}
-                icon={icon}
-                highlightKeywords={highlightKeywords}
-            />
-        );
-    }
+    // If the message is has been forwarded, replied or replied all we want to display an icon
+    const isActionLabel = message?.data?.IsForwarded || message?.data?.IsReplied || message?.data?.IsRepliedAll;
+
+    const canDisplayName = label !== recipient.Address;
 
     return (
         <RecipientItemLayout
-            button={button}
             label={label}
-            showAddress={showAddress}
-            address={address}
-            title={title}
-            icon={icon}
+            itemActionIcon={<ItemAction element={message?.data} />}
+            labelHasIcon={!!isActionLabel}
+            showAddress={actualShowAddress}
+            address={recipient.Address}
+            title={`${label} <${recipient.Address}>`}
+            icon={
+                showLockIcon &&
+                icon && (
+                    <span className="inline-flex ml0-25 flex-item-noshrink message-recipient-item-lockIcon">
+                        <EncryptionStatusIcon {...icon} />
+                    </span>
+                )
+            }
+            canDisplayName={canDisplayName}
+            isNarrow={isNarrow}
+            highlightKeywords={highlightKeywords}
+            highlightMetadata={highlightMetadata}
+            showDropdown={showDropdown}
+            dropdrownAnchorRef={anchorRef}
+            dropdownToggle={toggle}
+            isDropdownOpen={isOpen}
+            dropdownContent={
+                <Dropdown
+                    id={uid}
+                    noMaxWidth
+                    originalPlacement="bottom"
+                    isOpen={isOpen}
+                    anchorRef={anchorRef}
+                    onClose={close}
+                >
+                    <DropdownMenu>
+                        <RecipientDropdownItem recipient={recipient} label={label} closeDropdown={close} />
+                        {customDropdownActions}
+                    </DropdownMenu>
+                </Dropdown>
+            }
+            isOutside={isOutside}
         />
     );
 };

@@ -1,5 +1,6 @@
 import { fireEvent, within } from '@testing-library/dom';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { assertIcon } from '../../../helpers/test/assertion';
 import { clearAll, createEmbeddedImage, createMessageImages, tick } from '../../../helpers/test/helper';
 import { initMessage, setup } from './Message.test.helpers';
@@ -55,10 +56,13 @@ describe('Message attachments', () => {
 
         expect(items.length).toBe(NumAttachments);
         for (let i = 0; i < NumAttachments; i++) {
-            const { getByText } = within(items[i]);
+            const { getByText, getByTestId } = within(items[i]);
             getByText(Attachments[i].nameSplitStart);
             getByText(Attachments[i].nameSplitEnd);
-            getByText(Attachments[i].Size, { exact: false });
+
+            const attachmentSizeText = getByTestId('attachment-item:size').textContent;
+            expect(attachmentSizeText).toEqual(humanSize(Attachments[i].Size));
+
             assertIcon(items[i].querySelector('svg'), icons[i], undefined, 'mime');
         }
     });

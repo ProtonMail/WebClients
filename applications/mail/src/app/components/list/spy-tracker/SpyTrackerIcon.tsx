@@ -9,9 +9,17 @@ interface Props {
     title: string;
     className?: string;
     openSpyTrackerModal?: () => void;
+    isDetailsModal?: boolean;
 }
 
-const SpyTrackerIcon = ({ numberOfTrackers, needsMoreProtection, title, className, openSpyTrackerModal }: Props) => {
+const SpyTrackerIcon = ({
+    numberOfTrackers,
+    needsMoreProtection,
+    title,
+    className,
+    openSpyTrackerModal,
+    isDetailsModal = false,
+}: Props) => {
     return (
         <div
             className={classnames([
@@ -26,7 +34,8 @@ const SpyTrackerIcon = ({ numberOfTrackers, needsMoreProtection, title, classNam
                 data-testid="privacy:tracker-icon"
                 className={classnames([
                     needsMoreProtection && numberOfTrackers === 0 ? 'color-weak' : 'color-primary',
-                    'relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center cursor-pointer',
+                    'relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center',
+                    !isDetailsModal && 'cursor-pointer',
                     className,
                 ])}
                 onClick={openSpyTrackerModal}
