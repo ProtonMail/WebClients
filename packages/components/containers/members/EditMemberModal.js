@@ -21,7 +21,7 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
             storage: member.MaxSpace,
             vpn: member.MaxVPN,
             private: member.Private,
-            admin: member.Role === MEMBER_ROLE.ORGANIZATION_OWNER,
+            admin: member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
         }),
         [member]
     );
@@ -35,7 +35,7 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
     const hasVPN = Boolean(organization.MaxVPN);
     const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
     const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
-    const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_OWNER;
+    const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
 
     const updatePartialModel = (partial) => {
         updateModel({ ...model, ...partial });
@@ -65,7 +65,7 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
         }
 
         if (canMakeAdmin && model.admin && model.admin !== initialModel.Admin) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_OWNER));
+            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
         }
 
         if (canRevokeAdmin && !model.admin && model.admin !== initialModel.Admin) {

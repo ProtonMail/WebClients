@@ -67,7 +67,7 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
     const loginType = useLoginType();
 
     const handleConfirmDelete = async () => {
-        if (member.Role === MEMBER_ROLE.ORGANIZATION_OWNER) {
+        if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
             await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
         }
         await api(removeMember(member.ID));
