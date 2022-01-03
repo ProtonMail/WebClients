@@ -4,22 +4,20 @@
 
 -   Drag and drop an ICS file into calendar view to import it
 -   Select language in which event invites and RSVPs are sent
-
-[comment]: <> (- Allow organizer to add participants replying to forwarded invitations directly from Mail)
+-   Allow organizer to add participants replying to forwarded invitations directly from Mail
 
 ### Improvements
 
-[comment]: <> (- Differentiate invitation emails with calendar icons in the mailbox)
-
 -   Improve the browser print rendering of calendar
+-   Differentiate invitation emails with calendar icons in the mailbox
 -   Extend supported timezone formats (Bluejeans, Mozilla and others using globally defined time zone registries)
 -   Support certain ICS formats that would result in the error "File does not have the right format" when trying to import them
 -   Better handling of large ICS files import
 -   Minor UI and accessibility improvements
 
-[comment]: <> (### Fixes)
+### Fixes
 
-[comment]: <> (- Do not display Calendar invitation information header for bounced emails)
+-   Do not display Calendar invitation information header for bounced emails
 
 ## Release: 4.0.6 — Dec 1, 2021
 
