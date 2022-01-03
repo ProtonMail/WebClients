@@ -95,7 +95,7 @@ const MessageBody = ({
             className={classnames([
                 'message-content relative bg-norm color-norm',
                 plain && 'plain',
-                !isPrint && 'p1',
+                !isPrint && 'pt1 pl1 pr1',
                 hasDarkStyles && 'dark-style',
             ])}
             data-testid="message-content:body"
