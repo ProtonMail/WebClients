@@ -1,7 +1,7 @@
 import { AnimationEvent, ElementType, createContext, useLayoutEffect, useState, useRef } from 'react';
 
 import { useChanged, useHotkeys, useInstance } from '../../hooks';
-import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import { PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { classnames, generateUID } from '../../helpers';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
@@ -46,6 +46,10 @@ interface ModalOwnProps {
      * Fires when the Modal has finished its exit animation.
      */
     onExit?: () => void;
+    /**
+     * Only supports 'form' as a polymorphic element
+     */
+    as?: 'form';
 }
 
 const defaultElement = 'dialog';
@@ -61,6 +65,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     disableCloseOnEscape,
     className,
     children,
+    as,
     ...rest
 }: PolymorphicComponentProps<E, ModalOwnProps>) => {
     const last = useModalPosition(open || false);
@@ -137,28 +142,17 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         size === 'full' && 'modal-two-dialog--full',
     ]);
 
-    const rootElementProps = { ...rest };
-
     const dialogProps = {
         ref: dialogRef,
-        className: dialogClassName,
         'aria-labelledby': id,
         'aria-describedby': `${id}-description`,
-        ...(rest.as ? {} : rootElementProps),
         ...focusTrapProps,
     };
 
-    const child = rest.as ? (
-        <Box as={defaultElement} {...rootElementProps}>
-            <dialog {...dialogProps}>
-                <ModalContext.Provider value={modalContextValue}>{children}</ModalContext.Provider>
-            </dialog>
-        </Box>
-    ) : (
-        <dialog {...dialogProps}>
-            <ModalContext.Provider value={modalContextValue}>{children}</ModalContext.Provider>
-        </dialog>
-    );
+    const dialogContainerProps = {
+        ...rest,
+        className: 'modal-two-dialog-container',
+    };
 
     return (
         <Portal>
@@ -167,7 +161,24 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                 onAnimationEnd={handleAnimationEnd}
                 style={!last ? { '--z-position': -1 } : undefined}
             >
-                {child}
+                <dialog {...dialogProps} className={dialogClassName}>
+                    <ModalContext.Provider value={modalContextValue}>
+                        {as === 'form' ? (
+                            <form
+                                method="post"
+                                {...dialogContainerProps}
+                                onSubmit={(event) => {
+                                    event.preventDefault();
+                                    dialogContainerProps.onSubmit?.(event);
+                                }}
+                            >
+                                {children}
+                            </form>
+                        ) : (
+                            <div {...dialogContainerProps}>{children}</div>
+                        )}
+                    </ModalContext.Provider>
+                </dialog>
             </div>
         </Portal>
     );
