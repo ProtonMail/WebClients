@@ -154,27 +154,6 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         className: 'modal-two-dialog-container',
     };
 
-    const child = (
-        <dialog {...dialogProps} className={dialogClassName}>
-            <ModalContext.Provider value={modalContextValue}>
-                {as === 'form' ? (
-                    <form
-                        method="post"
-                        {...dialogContainerProps}
-                        onSubmit={(event) => {
-                            event.preventDefault();
-                            dialogContainerProps.onSubmit?.(event);
-                        }}
-                    >
-                        {children}
-                    </form>
-                ) : (
-                    <div {...dialogContainerProps}>{children}</div>
-                )}
-            </ModalContext.Provider>
-        </dialog>
-    );
-
     return (
         <Portal>
             <div
@@ -182,7 +161,24 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                 onAnimationEnd={handleAnimationEnd}
                 style={!last ? { '--z-position': -1 } : undefined}
             >
-                {child}
+                <dialog {...dialogProps} className={dialogClassName}>
+                    <ModalContext.Provider value={modalContextValue}>
+                        {as === 'form' ? (
+                            <form
+                                method="post"
+                                {...dialogContainerProps}
+                                onSubmit={(event) => {
+                                    event.preventDefault();
+                                    dialogContainerProps.onSubmit?.(event);
+                                }}
+                            >
+                                {children}
+                            </form>
+                        ) : (
+                            <div {...dialogContainerProps}>{children}</div>
+                        )}
+                    </ModalContext.Provider>
+                </dialog>
             </div>
         </Portal>
     );
