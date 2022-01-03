@@ -4,19 +4,30 @@ import { getISOWeek } from 'date-fns';
 import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
 
-const getTargetWeek = (target: any) => {
-    const idx = parseInt(target?.dataset?.i || '', 10);
-    if (idx >= 0 && idx <= 53) {
-        return idx;
+/*
+    ISO weeks always start on Monday, and they won't match user custom weeks starting on Saturday/Sunday.
+    A custom week with number N is defined as the one which has the same Monday as ISO week N.
+*/
+
+const getWeekNumberToMondayMap = (days: Date[]) => {
+    const firstMondayIndex = days.findIndex((day) => day.getDay() === 1);
+    const result: { [weekNumber: number]: Date } = {};
+    if (firstMondayIndex === -1) {
+        return result;
     }
+    for (let i = 0; i < Math.floor(days.length / 7); i++) {
+        const day = days[firstMondayIndex + 7 * i];
+        result[getISOWeek(day)] = day;
+    }
+    return result;
 };
 
-export interface Props {
-    days: Date[];
-    numberOfWeeks: number;
-    onClickWeekNumber?: (weekNumber: number) => void;
-    onSelectWeekRange?: (arg: [number, number]) => void;
-}
+const getTargetMonday = (target: any, weekNumberToMondayMap: { [weekNumber: number]: Date }) => {
+    const idx = parseInt(target?.dataset?.i || '', 10);
+    if (idx >= 0 && idx <= 53) {
+        return weekNumberToMondayMap[idx];
+    }
+};
 
 const getMonday = (days: Date[], start: number, end: number) => {
     for (let i = start; i < end; ++i) {
@@ -27,22 +38,29 @@ const getMonday = (days: Date[], start: number, end: number) => {
     }
 };
 
+export interface Props {
+    days: Date[];
+    numberOfWeeks: number;
+    onClickWeekNumber?: (monday: Date) => void;
+    onSelectWeekRange?: (arg: [Date, Date]) => void;
+}
 const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange }: Props) => {
     const style = {
         '--week-count': numberOfWeeks + 1,
     };
-    const [temporaryWeekRange, setTemporaryWeekRange] = useState<[number, number | undefined] | undefined>(undefined);
-    const rangeStartRef = useRef<number | undefined>(undefined);
-    const rangeEndRef = useRef<number | undefined>(undefined);
+    const weekNumberToMondayMap = useMemo(() => getWeekNumberToMondayMap(days), days);
+    const [temporaryWeekRange, setTemporaryWeekRange] = useState<[Date, Date | undefined] | undefined>(undefined);
+    const rangeStartRef = useRef<Date | undefined>(undefined);
+    const rangeEndRef = useRef<Date | undefined>(undefined);
 
     const handleMouseDown = ({ target }: MouseEvent<HTMLUListElement>) => {
-        const targetWeek = getTargetWeek(target);
-        if (rangeStartRef.current || !targetWeek || !onSelectWeekRange) {
+        const targetMonday = getTargetMonday(target, weekNumberToMondayMap);
+        if (rangeStartRef.current || !targetMonday || !onSelectWeekRange) {
             return;
         }
 
-        setTemporaryWeekRange([targetWeek, undefined]);
-        rangeStartRef.current = targetWeek;
+        setTemporaryWeekRange([targetMonday, undefined]);
+        rangeStartRef.current = targetMonday;
 
         const handleMouseUp = () => {
             if (rangeEndRef.current && rangeStartRef.current) {
@@ -64,16 +82,16 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
     };
 
     const handleMouseOver = ({ target }: MouseEvent<HTMLUListElement>) => {
-        const targetWeek = getTargetWeek(target);
-        if (!rangeStartRef.current || !targetWeek || !onSelectWeekRange) {
+        const targetMonday = getTargetMonday(target, weekNumberToMondayMap);
+        if (!rangeStartRef.current || !targetMonday || !onSelectWeekRange) {
             return;
         }
-        rangeEndRef.current = targetWeek;
+        rangeEndRef.current = targetMonday;
 
         setTemporaryWeekRange(
-            targetWeek > rangeStartRef.current
-                ? [rangeStartRef.current, targetWeek]
-                : [targetWeek, rangeStartRef.current]
+            targetMonday > rangeStartRef.current
+                ? [rangeStartRef.current, targetMonday]
+                : [targetMonday, rangeStartRef.current]
         );
     };
 
@@ -108,8 +126,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
             {weekNumberLabels.map(({ monday, weekNumber }) => {
                 const isPressed = !temporaryWeekRange
                     ? false
-                    : weekNumber >= temporaryWeekRange[0] &&
-                      weekNumber <= (temporaryWeekRange[1] || temporaryWeekRange[0]);
+                    : monday >= temporaryWeekRange[0] && monday <= (temporaryWeekRange[1] || temporaryWeekRange[0]);
                 return (
                     <li key={+monday}>
                         <Tooltip title={`${c('Info').t`Week`} ${weekNumber}`} originalPlacement="bottom">
@@ -121,7 +138,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
                                     'minicalendar-weeknumber',
                                     !onClickWeekNumber && 'no-pointer-events',
                                 ])}
-                                onClick={() => onClickWeekNumber?.(weekNumber)}
+                                onClick={() => onClickWeekNumber?.(monday)}
                             >
                                 <span className="no-pointer-events">{weekNumber}</span>
                             </button>
