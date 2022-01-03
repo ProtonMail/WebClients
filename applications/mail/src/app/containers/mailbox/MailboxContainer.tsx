@@ -169,6 +169,7 @@ const MailboxContainer = ({
 
     const { focusIndex, getFocusedId, setFocusIndex, handleFocus, focusOnLastMessage } = useMailboxFocus({
         elementIDs,
+        page,
         showList,
         listRef,
         labelID,
