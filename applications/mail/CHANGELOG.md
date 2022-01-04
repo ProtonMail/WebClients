@@ -1,3 +1,26 @@
+## Release 4.0.14 - Jan 19, 2022
+
+### Improvements
+
+-   Actual message content will now be displayed in dark if a Dark theme is set on the account for most messages, excluding newsletters
+-   Improved the underlying technology responsible for the message view display
+-   Added reasoning for unallowed message move actions into the existing error message
+-   Added the ability to filter by Addresses in the advanced search widget
+-   Added a special icon for contact details where the digital signature could be verified
+-   Bug fixes
+
+### Bug fixes
+
+-   Fixed an issue where when resizing the browser window in column layout, the proportion between the list view and the message view would resize unintentionally
+-   Fixed an issue where when the "Search message content" option is activated and a search is performed, switching between folders/location would not succeed until a full page reload
+-   Fixed an issue where it was possible to activate the Sticky Labels option despite the Conversation mode being disabled
+-   Fixed an issue where Anniversary and Birthday dates might be imported incorrectly if the respective values are not formatted as dates
+-   Fixed an issue where the "Clear" option in advanced search would not clear certain field inputs
+-   Fixed an issue where sending a message would fail if uploading an attachment and changing the sender very quickly after
+-   Fixed an issue where contact groups would not be displayed correctly in the "Insert contact" modal
+-   Fixed an issue where a contact could not be imported correctly if the name is separated by a comma
+-   Fixed an issue where the ellipsis would be displayed wrongly for long attachment names in the message view
+
 ## Release 4.0.13 - Dec 22, 2021
 
 ### Improvements
