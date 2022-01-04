@@ -20,6 +20,7 @@ import { UploadProvider } from '../components/uploads/UploadProvider';
 import { DownloadProvider } from '../components/downloads/DownloadProvider';
 import { ThumbnailsDownloadProvider } from '../components/downloads/ThumbnailDownloadProvider';
 import TransferManager from '../components/TransferManager/TransferManager';
+import DriveWindow from '../components/layout/DriveWindow';
 import DriveContainer from './DriveContainer';
 import NoAccessContainer from './NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
@@ -106,12 +107,14 @@ const InitContainer = () => {
         <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
             <ModalsChildren />
             <TransferManager />
-            <Switch>
-                <Route path="/trash" component={TrashContainer} />
-                <Route path="/shared-urls" component={SharedURLsContainer} />
-                <Route path="/:shareId?/:type/:linkId?" component={DriveContainer} />
-                <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
-            </Switch>
+            <DriveWindow>
+                <Switch>
+                    <Route path="/trash" component={TrashContainer} />
+                    <Route path="/shared-urls" component={SharedURLsContainer} />
+                    <Route path="/:shareId?/:type/:linkId?" component={DriveContainer} />
+                    <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
+                </Switch>
+            </DriveWindow>
         </ActiveShareProvider>
     );
 };
