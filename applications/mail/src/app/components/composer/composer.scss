@@ -195,6 +195,7 @@
 		// Here I tried to keep field height only with margin calculations
 		margin-block: calc(#{em(6)} - 0.25em);
 		margin-inline: calc(#{em(16)} - 0.5em) 0.5em;
+		min-inline-size: 7em; // magic number just to force it wrapping below to avoid issue
 	}
 
 	&-addresses-item {
