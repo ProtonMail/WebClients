@@ -13,12 +13,12 @@ const AlertModalTitle = ({ children }: { children: ReactNode }) => (
 interface AlertModalProps extends Omit<ModalProps, 'children'> {
     title: string;
     subline?: string;
-    buttons: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element];
+    buttons: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element];
     children: ReactNode;
 }
 
 const AlertModal = ({ title, subline, buttons, className, children, ...rest }: AlertModalProps) => {
-    const [firstButton, secondButton] = Array.isArray(buttons) ? buttons : [buttons];
+    const [firstButton, secondButton, thirdButton] = Array.isArray(buttons) ? buttons : [buttons];
 
     return (
         <ModalTwo size="small" {...rest} className={classnames([className, 'alert-modal'])}>
@@ -30,6 +30,7 @@ const AlertModal = ({ title, subline, buttons, className, children, ...rest }: A
             <ModalTwoFooter className="flex-column flex-align-items-stretch">
                 {firstButton}
                 {secondButton}
+                {thirdButton}
             </ModalTwoFooter>
         </ModalTwo>
     );
