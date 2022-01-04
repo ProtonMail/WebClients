@@ -6,7 +6,7 @@ import InvalidVerificationCodeModal from '@proton/components/containers/api/huma
 import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { useModals, RequestNewCodeModal, VerifyCodeForm, useNotifications } from '@proton/components';
+import { RequestNewCodeModal, VerifyCodeForm, useNotifications } from '@proton/components';
 import { SignupModel } from './interfaces';
 import { HumanApi } from './helpers/humanApi';
 
@@ -19,10 +19,10 @@ interface Props {
 }
 
 const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }: Props) => {
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [key, setKey] = useState(0);
     const [newCodeModal, setNewCodeModal] = useState(false);
+    const [invalidVerificationModal, setInvalidVerificationModal] = useState(false);
 
     const handleResend = async () => {
         await humanApi.api(queryVerificationCode('email', { Address: model.email }));
@@ -47,18 +47,7 @@ const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }:
             const { data: { Code } = { Code: 0 } } = error;
 
             if (Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
-                createModal(
-                    <InvalidVerificationCodeModal
-                        edit={c('Action').t`Change email`}
-                        request={c('Action').t`Request new code`}
-                        onEdit={() => {
-                            return onBack();
-                        }}
-                        onResend={() => {
-                            return handleResend().catch(noop);
-                        }}
-                    />
-                );
+                setInvalidVerificationModal(true);
             }
         }
     };
@@ -75,7 +64,15 @@ const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }:
                 open={newCodeModal}
                 verificationModel={verificationModel}
                 onClose={() => setNewCodeModal(false)}
-                onEdit={() => onBack()}
+                onEdit={onBack}
+                onResend={() => handleResend().catch(noop)}
+            />
+            <InvalidVerificationCodeModal
+                open={invalidVerificationModal}
+                edit={c('Action').t`Change email`}
+                request={c('Action').t`Request new code`}
+                onClose={() => setInvalidVerificationModal(false)}
+                onEdit={onBack}
                 onResend={() => handleResend().catch(noop)}
             />
             <div className="mb1">{c('Info').t`For security reasons, please verify that you are not a robot.`}</div>
