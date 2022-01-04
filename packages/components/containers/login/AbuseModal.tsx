@@ -1,11 +1,13 @@
 import { c } from 'ttag';
-import { FormModal, Href } from '../../components';
+import { AlertModal, Button, Href } from '../../components';
 
 interface Props {
     message?: string;
+    open: boolean;
+    onClose: () => void;
 }
 
-const AbuseModal = ({ message, ...rest }: Props) => {
+const AbuseModal = ({ message, open, onClose }: Props) => {
     const contactLink = (
         <Href url="https://protonmail.com/abuse" key={1}>
             {c('Info').t`here`}
@@ -13,13 +15,11 @@ const AbuseModal = ({ message, ...rest }: Props) => {
     );
 
     return (
-        <FormModal
-            hasClose={false}
-            hasSubmit={false}
+        <AlertModal
+            open={open}
             title={c('Title').t`Account suspended`}
-            small
-            close={c('Action').t`Close`}
-            {...rest}
+            onClose={onClose}
+            buttons={<Button onClick={onClose}>I understand</Button>}
         >
             {message || (
                 <>
@@ -28,7 +28,7 @@ const AbuseModal = ({ message, ...rest }: Props) => {
                     <div>{c('Info').jt`If you believe this is in error, please contact us ${contactLink}.`}</div>
                 </>
             )}
-        </FormModal>
+        </AlertModal>
     );
 };
 
