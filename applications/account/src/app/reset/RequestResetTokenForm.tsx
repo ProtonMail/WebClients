@@ -86,7 +86,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                     }
                     throw new Error('Missing method');
                 })();
-                return withLoading(
+                withLoading(
                     onSubmit({
                         method: currentMethod,
                         value,
@@ -97,8 +97,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
             <MnemonicResetPasswordConfirmModal
                 onClose={() => setMnemonicResetConfirmModal(false)}
                 onConfirm={() => {
-                    setMnemonicResetConfirmModal(false);
-                    return withLoading(
+                    withLoading(
                         onSubmit({
                             method: 'mnemonic',
                             value: mnemonic,
