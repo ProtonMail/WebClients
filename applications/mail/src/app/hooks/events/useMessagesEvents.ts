@@ -20,6 +20,7 @@ export const useMessagesEvents = () => {
             if (!currentValue) {
                 continue;
             }
+
             dispatch(event(MessageEvent));
         }
     });
