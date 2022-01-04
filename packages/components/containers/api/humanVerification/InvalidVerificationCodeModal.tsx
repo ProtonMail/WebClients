@@ -1,49 +1,54 @@
 import { c } from 'ttag';
-import { FormModal } from '../../../components';
+import { AlertModal, Button } from '../../../components';
 import { useLoading } from '../../../hooks';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 interface Props {
     edit?: string;
     request?: string;
     onEdit: () => void;
     onResend: () => Promise<void>;
-    onClose?: () => void;
+    onClose: () => void;
+    open: boolean;
 }
 
 const InvalidVerificationCodeModal = ({
     onEdit,
     onResend,
+    onClose,
+    open,
     edit = c('Action').t`Try another method`,
     request = c('Action').t`Request new code`,
-    ...rest
 }: Props) => {
     const [loading, withLoading] = useLoading();
     return (
-        <FormModal
-            loading={loading}
+        <AlertModal
+            open={open}
             title={c('Title').t`Invalid verification code`}
-            small
-            mode="alert"
-            onSubmit={async () => {
-                await withLoading(onResend());
-                rest.onClose?.();
-            }}
-            submit={request}
-            onClose={() => {
-                rest.onClose?.();
-                onEdit();
-            }}
-            close={edit}
-            closeProps={{
-                onClick: () => {
-                    rest.onClose?.();
-                    onEdit();
-                },
-            }}
-            {...rest}
+            onClose={onClose}
+            buttons={[
+                <Button
+                    loading={loading}
+                    color="norm"
+                    onClick={() => {
+                        withLoading(onResend()).then(onClose).catch(noop);
+                    }}
+                >
+                    {request}
+                </Button>,
+                <Button
+                    disabled={loading}
+                    onClick={() => {
+                        onClose();
+                        onEdit();
+                    }}
+                >
+                    {edit}
+                </Button>,
+            ]}
         >
             {c('Info').t`Would you like to receive a new verification code or use an alternative verification method?`}
-        </FormModal>
+        </AlertModal>
     );
 };
 

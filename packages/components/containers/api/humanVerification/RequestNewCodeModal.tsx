@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { AlertModal, Button } from '../../../components';
 import { useLoading } from '../../../hooks';
 import { VerificationModel } from './interface';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 interface Props {
     verificationModel: VerificationModel;
@@ -18,35 +19,30 @@ const RequestNewCodeModal = ({ open, verificationModel, onEdit, onResend, onClos
     return (
         <AlertModal
             open={open}
+            onClose={onClose}
             title={c('Title').t`Request new code`}
             buttons={[
                 <Button
                     color="norm"
-                    type="button"
-                    fullWidth
                     loading={loading}
-                    onClick={async () => {
-                        await withLoading(onResend());
-                        onClose();
+                    onClick={() => {
+                        withLoading(onResend()).then(onClose).catch(noop);
                     }}
                 >
                     {c('Action').t`Request new code`}
                 </Button>,
                 <Button
-                    color="weak"
-                    type="button"
                     onClick={() => {
                         onClose();
                         onEdit();
                     }}
                     disabled={loading}
-                    fullWidth
                 >
                     {verificationModel.method === 'email'
                         ? c('Action').t`Edit email address`
                         : c('Action').t`Edit phone number`}
                 </Button>,
-                <Button color="weak" type="button" onClick={onClose} disabled={loading} fullWidth>
+                <Button onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>,
             ]}
