@@ -14,7 +14,13 @@ const MnemonicResetPasswordConfirmModal = ({ onClose, onConfirm, open }: Props) 
             onClose={onClose}
             title={c('Title').t`Reset password?`}
             buttons={[
-                <Button color="danger" onClick={onConfirm}>
+                <Button
+                    color="danger"
+                    onClick={() => {
+                        onClose();
+                        onConfirm();
+                    }}
+                >
                     {c('Action').t`Reset password`}
                 </Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,

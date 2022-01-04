@@ -18,7 +18,13 @@ const ValidateResetTokenConfirmModal = ({ onClose, onConfirm, open }: ModalProps
             onClose={onClose}
             title={c('Title').t`Warning!`}
             buttons={[
-                <Button color="danger" onClick={onConfirm}>
+                <Button
+                    color="danger"
+                    onClick={() => {
+                        onClose();
+                        onConfirm();
+                    }}
+                >
                     {c('Action').t`Reset password`}
                 </Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
