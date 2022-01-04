@@ -1,7 +1,9 @@
 @import '~@proton/styles/scss/config';
 
 .alert-modal {
-	--size: #{rem(288)};
+	&#{&} {
+		--size: #{rem(288)};
+	}
 
 	&-header {
 		margin: 1.5em var(--margin) 0.5em;
