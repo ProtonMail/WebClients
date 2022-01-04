@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { useState } from 'react';
-import { Button, RequestNewCodeModal, useFormErrors, useLoading, useModals, InputFieldTwo } from '@proton/components';
+import { Button, RequestNewCodeModal, useFormErrors, useLoading, InputFieldTwo } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -17,8 +17,8 @@ interface Props {
 
 const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { createModal } = useModals();
-    const [modal, setConfirmModal] = useState(false);
+    const [confirmModal, setConfirmModal] = useState(false);
+    const [newCodeModal, setNewCodeModal] = useState(false);
     const [token, setToken] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -48,8 +48,21 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                     setConfirmModal(false);
                     withLoading(onSubmit(token)).catch(noop);
                 }}
-                open={modal}
+                open={confirmModal}
             />
+            {method === 'sms' ||
+                (method === 'email' && (
+                    <RequestNewCodeModal
+                        verificationModel={{
+                            method,
+                            value,
+                        }}
+                        onClose={() => setNewCodeModal(false)}
+                        open={newCodeModal}
+                        onEdit={onBack}
+                        onResend={onRequest}
+                    />
+                ))}
             <div className="mb1-75">{subTitle}</div>
             <InputFieldTwo
                 id="reset-token"
@@ -71,18 +84,7 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                     type="button"
                     fullWidth
                     disabled={loading}
-                    onClick={() =>
-                        createModal(
-                            <RequestNewCodeModal
-                                verificationModel={{
-                                    method,
-                                    value,
-                                }}
-                                onEdit={onBack}
-                                onResend={onRequest}
-                            />
-                        )
-                    }
+                    onClick={() => setNewCodeModal(true)}
                     className="mt0-5"
                 >{c('Action').t`Didn't receive a code?`}</Button>
             ) : null}

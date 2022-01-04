@@ -22,6 +22,7 @@ const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }:
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [key, setKey] = useState(0);
+    const [newCodeModal, setNewCodeModal] = useState(false);
 
     const handleResend = async () => {
         await humanApi.api(queryVerificationCode('email', { Address: model.email }));
@@ -36,21 +37,6 @@ const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }:
         method: 'email',
         value: model.email,
     } as const;
-
-    const handleModalResend = () => {
-        createModal(
-            <RequestNewCodeModal
-                verificationModel={verificationModel}
-                onEdit={() => {
-                    return onBack();
-                }}
-                onResend={() => {
-                    return handleResend().catch(noop);
-                }}
-                email={model.email}
-            />
-        );
-    };
 
     const handleSubmit = async (token: string) => {
         try {
@@ -85,12 +71,19 @@ const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }:
             }}
             method="post"
         >
+            <RequestNewCodeModal
+                open={newCodeModal}
+                verificationModel={verificationModel}
+                onClose={() => setNewCodeModal(false)}
+                onEdit={() => onBack()}
+                onResend={() => handleResend().catch(noop)}
+            />
             <div className="mb1">{c('Info').t`For security reasons, please verify that you are not a robot.`}</div>
             <VerifyCodeForm
                 key={key}
                 verification={verificationModel}
                 onSubmit={handleSubmit}
-                onNoReceive={handleModalResend}
+                onNoReceive={() => setNewCodeModal(true)}
             />
         </form>
     );
