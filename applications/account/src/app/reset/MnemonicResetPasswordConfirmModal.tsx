@@ -1,27 +1,29 @@
 import { c } from 'ttag';
-import { ConfirmModal } from '@proton/components';
+import { AlertModal, Button } from '@proton/components';
 
 interface Props {
-    onClose?: () => void;
-    onConfirm?: () => void;
+    onClose: () => void;
+    onConfirm: () => void;
+    open: boolean;
 }
 
-const MnemonicResetPasswordConfirmModal = (props: Props) => {
+const MnemonicResetPasswordConfirmModal = ({ onClose, onConfirm, open }: Props) => {
     return (
-        <ConfirmModal
-            mode="alert"
+        <AlertModal
+            open={open}
+            onClose={onClose}
             title={c('Title').t`Reset password?`}
-            confirm={c('Action').t`Reset password`}
-            cancel={c('Action').t`Cancel`}
-            submitProps={{
-                color: 'danger',
-            }}
-            {...props}
+            buttons={[
+                <Button color="danger" onClick={onConfirm}>
+                    {c('Action').t`Reset password`}
+                </Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
         >
             <p className="m0">
                 {c('Info').t`This will sign you out of any active sessions and disable 2-factor authentication.`}
             </p>
-        </ConfirmModal>
+        </AlertModal>
     );
 };
 

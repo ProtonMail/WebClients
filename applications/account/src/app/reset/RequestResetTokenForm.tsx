@@ -1,16 +1,7 @@
 import { c } from 'ttag';
 import { useState } from 'react';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import {
-    Button,
-    Icon,
-    Tabs,
-    useLoading,
-    useFormErrors,
-    PhoneInput,
-    InputFieldTwo,
-    useModals,
-} from '@proton/components';
+import { Button, Icon, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from '@proton/components';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -31,7 +22,6 @@ interface Props {
 
 const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMethod, defaultValue = '' }: Props) => {
     const history = useHistory();
-    const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
 
     const recoveryMethods = [
@@ -54,21 +44,12 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
     const [email, setEmail] = useState(defaultMethod === 'email' ? defaultValue : '');
     const [phone, setPhone] = useState(defaultMethod === 'sms' ? defaultValue : '');
     const [mnemonic, setMnemonic] = useState(defaultMethod === 'mnemonic' ? defaultValue : '');
+    const [mnemonicResetConfirmModal, setMnemonicResetConfirmModal] = useState(false);
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
 
     const currentMethod = recoveryMethods[tabIndex];
 
     const { validator, onFormSubmit } = useFormErrors();
-
-    const handleSubmit = async (data: { method: RecoveryMethod; value: string }) => {
-        if (data.method !== 'mnemonic') {
-            return onSubmit(data);
-        }
-        await new Promise<void>((resolve, reject) => {
-            createModal(<MnemonicResetPasswordConfirmModal onClose={reject} onConfirm={resolve} />);
-        });
-        return onSubmit(data);
-    };
 
     const boldWarning = (
         <b key="bold-warning-text" className="color-danger">{
@@ -92,10 +73,11 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                 if (loading || !onFormSubmit()) {
                     return;
                 }
+                if (currentMethod === 'mnemonic') {
+                    setMnemonicResetConfirmModal(true);
+                    return;
+                }
                 const value = (() => {
-                    if (currentMethod === 'mnemonic') {
-                        return mnemonic;
-                    }
                     if (currentMethod === 'email') {
                         return email;
                     }
@@ -105,13 +87,26 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                     throw new Error('Missing method');
                 })();
                 return withLoading(
-                    handleSubmit({
+                    onSubmit({
                         method: currentMethod,
                         value,
                     })
                 ).catch(noop);
             }}
         >
+            <MnemonicResetPasswordConfirmModal
+                onClose={() => setMnemonicResetConfirmModal(false)}
+                onConfirm={() => {
+                    setMnemonicResetConfirmModal(false);
+                    return withLoading(
+                        onSubmit({
+                            method: 'mnemonic',
+                            value: mnemonic,
+                        })
+                    ).catch(noop);
+                }}
+                open={mnemonicResetConfirmModal}
+            />
             {(() => {
                 if (recoveryMethods.length === 1) {
                     return;
