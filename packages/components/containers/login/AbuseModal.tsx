@@ -19,7 +19,7 @@ const AbuseModal = ({ message, open, onClose }: Props) => {
             open={open}
             title={c('Title').t`Account suspended`}
             onClose={onClose}
-            buttons={<Button onClick={onClose}>{c('Action').t`I understand`}</Button>}
+            buttons={<Button onClick={onClose}>{c('Action').t`Close`}</Button>}
         >
             {message || (
                 <>
