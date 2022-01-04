@@ -1,11 +1,36 @@
 @keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 .location-refresh-rotate {
-    animation: rotating 0.5s linear infinite;
+	animation: rotating 0.5s linear infinite;
+}
+
+.drive-sidebar--icon {
+	width: rem(16);
+}
+
+.drive-sidebar--button-expand {
+	&#{&} {
+		// Specificity -_-v
+		// In this case we want to have background change only on hover.
+
+		padding-block: rem(2); // to avoid increasing the size of item
+
+		&:focus,
+		&[aria-expanded='true'] {
+			background-color: initial;
+		}
+
+		&:hover,
+		&[aria-expanded='true']:hover,
+		&:focus-visible {
+			background-color: var(--interaction-weak-hover);
+			color: var(--button-hover-text-color);
+		}
+	}
 }
