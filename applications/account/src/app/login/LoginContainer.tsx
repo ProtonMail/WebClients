@@ -140,7 +140,11 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
 
     return (
         <Main>
-            <AbuseModal open={!!abuseModal} onClose={() => setAbuseModal(undefined)} />
+            <AbuseModal
+                message={abuseModal?.apiErrorMessage}
+                open={!!abuseModal}
+                onClose={() => setAbuseModal(undefined)}
+            />
             {step === AuthStep.LOGIN && (
                 <>
                     <Header

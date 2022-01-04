@@ -278,7 +278,11 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
 
     return (
         <>
-            <AbuseModal open={!!abuseModal} onClose={() => setAbuseModal(undefined)} />
+            <AbuseModal
+                message={abuseModal?.apiErrorMessage}
+                open={!!abuseModal}
+                onClose={() => setAbuseModal(undefined)}
+            />
             {step === AuthStep.LOGIN && (
                 <LoginForm
                     needHelp={needHelp}
