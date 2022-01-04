@@ -21,7 +21,7 @@ const forEachStyle = (style: CSSStyleDeclaration | undefined, iterator: (propert
     }
 };
 
-const extractStyle = (original: HTMLElement | undefined): CSSProperties => {
+const extractStyle = (original: HTMLElement | undefined, documentWidth: number | undefined): CSSProperties => {
     if (!original) {
         return {};
     }
@@ -41,7 +41,11 @@ const extractStyle = (original: HTMLElement | undefined): CSSProperties => {
         if (value?.endsWith('%') || value === 'auto') {
             style[prop] = value;
         } else if (value) {
-            style[prop] = `${value}px`;
+            if (documentWidth && Number(value.replace('px', '') || 0) > documentWidth) {
+                style[prop] = '100%';
+            } else {
+                style[prop] = `${value}px`;
+            }
         } else if (!style[prop]) {
             style[prop] = '30px';
         }
@@ -56,9 +60,18 @@ interface Props {
     anchor: HTMLElement;
     iframePosition: IframeOffsetType | undefined;
     isPrint?: boolean;
+    iframeRef: RefObject<HTMLIFrameElement>;
 }
 
-const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor, iframePosition, isPrint }: Props) => {
+const MessageBodyImage = ({
+    showRemoteImages,
+    showEmbeddedImages,
+    image,
+    anchor,
+    iframePosition,
+    isPrint,
+    iframeRef,
+}: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
 
     const { type, status, error } = image;
@@ -102,7 +115,7 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor,
 
     const icon = error ? 'circle-xmark' : 'file-shapes';
 
-    const style = extractStyle(image.original);
+    const style = extractStyle(image.original, iframeRef.current?.contentWindow?.innerWidth);
 
     const placeholder = (
         <span
@@ -137,11 +150,7 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor,
     );
 };
 
-interface PortalProps extends Omit<Props, 'anchor'> {
-    iframeRef: RefObject<HTMLIFrameElement>;
-}
-
-const MessageBodyImagePortal = ({ iframeRef, ...props }: PortalProps) => {
+const MessageBodyImagePortal = ({ iframeRef, ...props }: Omit<Props, 'anchor'>) => {
     const iframeBody = iframeRef.current?.contentWindow?.document.body;
     const anchor = getAnchor(iframeBody, props.image);
 
@@ -149,7 +158,7 @@ const MessageBodyImagePortal = ({ iframeRef, ...props }: PortalProps) => {
         return null;
     }
 
-    return createPortal(<MessageBodyImage {...props} anchor={anchor} />, anchor);
+    return createPortal(<MessageBodyImage {...props} anchor={anchor} iframeRef={iframeRef} />, anchor);
 };
 
 export default MessageBodyImagePortal;
