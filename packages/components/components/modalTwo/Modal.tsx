@@ -127,28 +127,6 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         }
     };
 
-    const rootClassName = classnames([
-        'modal-two',
-        exiting && 'modal-two--out',
-        fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
-        last && 'modal-two--is-last-opened',
-    ]);
-
-    const dialogClassName = classnames([
-        'modal-two-dialog',
-        className,
-        size === 'small' && 'modal-two-dialog--small',
-        size === 'large' && 'modal-two-dialog--large',
-        size === 'full' && 'modal-two-dialog--full',
-    ]);
-
-    const dialogProps = {
-        ref: dialogRef,
-        'aria-labelledby': id,
-        'aria-describedby': `${id}-description`,
-        ...focusTrapProps,
-    };
-
     const dialogContainerProps = {
         ...rest,
         className: 'modal-two-dialog-container',
@@ -157,11 +135,28 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     return (
         <Portal>
             <div
-                className={rootClassName}
+                className={classnames([
+                    'modal-two',
+                    exiting && 'modal-two--out',
+                    fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
+                    last && 'modal-two--is-last-opened',
+                ])}
                 onAnimationEnd={handleAnimationEnd}
                 style={!last ? { '--z-position': -1 } : undefined}
             >
-                <dialog {...dialogProps} className={dialogClassName}>
+                <dialog
+                    ref={dialogRef}
+                    aria-labelledby={id}
+                    aria-describedby={`${id}-description`}
+                    {...focusTrapProps}
+                    className={classnames([
+                        'modal-two-dialog',
+                        className,
+                        size === 'small' && 'modal-two-dialog--small',
+                        size === 'large' && 'modal-two-dialog--large',
+                        size === 'full' && 'modal-two-dialog--full',
+                    ])}
+                >
                     <ModalContext.Provider value={modalContextValue}>
                         {as === 'form' ? (
                             <form
