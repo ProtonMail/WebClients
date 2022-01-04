@@ -1,3 +1,19 @@
+## Release: 4.0.10 — January 12, 2022
+
+### New Features
+
+-   New "Recovery" settings page, adding additional account and data recovery options, as well as a better overview on their status
+
+### Improvements
+
+-   General design & UI/UX enhancements
+-   Recategorized account settings for improved ease of use
+-   Added clarity for error messages in the Tor browser
+
+### Bug Fixes
+
+-   Resolved bug that could cause error messages to flash on screen while loading the application
+
 ## Release: 4.0.9 — December 1, 2021
 
 ### New features
