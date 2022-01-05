@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
@@ -8,8 +8,6 @@ import { useSharedLinksContent } from './SharedLinksContentProvider';
 import EmptyShared from './EmptyShared';
 import SharedLinksItemContextMenu from './SharedLinksItemContextMenu';
 import useNavigate from '../../../hooks/drive/useNavigate';
-import useDriveEvents from '../../../hooks/drive/useDriveEvents';
-import useDrive from '../../../hooks/drive/useDrive';
 import SortDropdown from './SortDropdown';
 
 type Props = {
@@ -21,8 +19,6 @@ const SharedLinks = ({ shareId }: Props) => {
 
     const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls, sortParams, setSorting } =
         useSharedLinksContent();
-    const driveEvents = useDriveEvents();
-    const { handleDriveEvents } = useDrive();
 
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
         fileBrowserControls;
@@ -32,10 +28,6 @@ const SharedLinks = ({ shareId }: Props) => {
             loadNextPage();
         }
     }, [initialized, complete, loadNextPage]);
-
-    useEffect(() => {
-        void driveEvents.listenForShareEvents(shareId, handleDriveEvents(shareId));
-    }, [shareId]);
 
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {

@@ -19,14 +19,14 @@ import { queryTrashList } from '@proton/shared/lib/api/drive/share';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import useDrive from './useDrive';
 import useDebouncedRequest from '../util/useDebouncedRequest';
-import useDriveEvents from './useDriveEvents';
+import { useDriveEventManager } from '../../components/driveEventManager/driveEventManager';
 
 function useTrash() {
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
-    const driveEvents = useDriveEvents();
+    const driveEventManager = useDriveEventManager();
 
     const fetchTrash = async (shareId: string, Page: number, PageSize: number) => {
         const { Links, Parents } = await debouncedRequest<{
@@ -72,7 +72,7 @@ function useTrash() {
 
         try {
             const trashed = await preventLeave(runInQueue(trashQueue, MAX_THREADS_PER_REQUEST));
-            await driveEvents.call(shareId);
+            await driveEventManager.pollShare(shareId);
             return ([] as string[]).concat(...trashed);
         } finally {
             cache.set.linksLocked(false, shareId, linkIds);
@@ -92,7 +92,7 @@ function useTrash() {
         );
         try {
             const responses = await preventLeave(runInQueue(restoreQueue, MAX_THREADS_PER_REQUEST));
-            await driveEvents.call(shareId);
+            await driveEventManager.pollShare(shareId);
             const results = responses.reduce(
                 (acc, { Responses }) => acc.concat(...Responses),
                 [] as {
@@ -137,13 +137,15 @@ function useTrash() {
         );
 
         const deletedBatches = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));
-        await driveEvents.callAll(shareId).catch(console.error);
+        await driveEventManager.pollAllShareEvents(shareId);
         return ([] as string[]).concat(...deletedBatches);
     };
 
     const emptyTrash = async (shareId: string) => {
         cache.set.allTrashedLocked(true, shareId);
-        return debouncedRequest(queryEmptyTrashOfShare(shareId));
+        const response = await debouncedRequest(queryEmptyTrashOfShare(shareId));
+        await driveEventManager.pollAllShareEvents(shareId);
+        return response;
     };
 
     return {

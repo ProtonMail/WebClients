@@ -6,7 +6,6 @@ import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser
 
 import useDrive from '../../hooks/drive/useDrive';
 import ModalContentLoader from '../ModalContentLoader';
-import useDriveEvents from '../../hooks/drive/useDriveEvents';
 
 interface Props {
     modalTitleID?: string;
@@ -21,7 +20,6 @@ function ShareModal({ modalTitleID = 'share-modal', shareId, item, onClose, ...r
     const [shareInfo, setShareInfo] = useState<string>();
 
     const { getShareMetaShort, createShare } = useDrive();
-    const driveEvents = useDriveEvents();
 
     useEffect(() => {
         if (shareInfo) {
@@ -34,7 +32,6 @@ function ShareModal({ modalTitleID = 'share-modal', shareId, item, onClose, ...r
             } else {
                 return getShareMetaShort(shareId).then(async ({ VolumeID }) => {
                     const result = await createShare(shareId, VolumeID, item.LinkID);
-                    await driveEvents.call(shareId);
                     setShareInfo(result.Share.ID);
                 });
             }
