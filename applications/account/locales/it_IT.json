@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } negozio"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ Name }@pm.me": [
         "Attiva ${ Name }@pm.me"
@@ -2916,67 +2916,67 @@
     },
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu": [
-        ""
+        "Clicca ${ boldManage } per espandere il menu delle opzioni"
       ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
         ""
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        ""
+        "Espandi il menu a tendina cliccando sui 3 puntini (...)"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "Genera una ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da Proton"
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "Genera la ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da Proton"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        ""
+        "Vai a ${ boldAccountInfo } nel tuo profilo su ${ yahooMailLink }"
       ],
       "Go to ${ boldAccountSecurity }": [
         "Vai a ${ boldAccountSecurity }"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
-        ""
+        "Vai su Outlook.com ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
-        ""
+        "Se la verifica in due passaggi è disattivata, attivala"
       ],
       "Open your ${ yahooMailLink } contacts": [
-        ""
+        "Apri i contatti di ${ yahooMailLink }"
       ],
       "Open your Outlook ${ outlookContactsLink }": [
-        ""
+        "Apri il tuo Outlook ${ outlookContactsLink }"
       ],
       "Select ${ boldExportContacts } and choose which contacts to export": [
-        ""
+        "Seleziona ${ boldExportContacts } e scegli quali contatti esportare"
       ],
       "Select ${ boldExportCSV }": [
         "Seleziona ${ boldExportCSV }"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "Per importare un calendario su Proton, necessiti del ${ knowledgeBaseLink }. Scaricala da Outlook in 3 facili passaggi:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "Per importare un calendario su Proton, necessiti del ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 facili passaggi:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
         ""
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "Per importare i contatti su Proton, necessiti del ${ knowledgeBaseLink }. Scaricala da Outlook in 3 facili passaggi:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "Per importare i contatti su Proton, necessiti del ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 facili passaggi:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
         ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        ""
+        "Per importare le email su Proton, necessiti di una ${ appPasswordLink } da Outlook. Ottienila seguendo questi passaggi:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        ""
+        "Per importare le email a Proton, necessiti di un ${ appPasswordLink } da Yahoo. Ottienilo seguendo questi passaggi:"
       ]
     },
     "Import instructions emphasis": {
@@ -3650,7 +3650,7 @@
         "Inserisci il tuo numero di telefono di recupero e ti invieremo il tuo nome utente o indirizzo email."
       ],
       "Event invites and RSVPs will be sent in this language.": [
-        ""
+        "Gli inviti agli eventi e gli RSVP verranno inviati in questa lingua."
       ],
       "Expired": [
         "Scaduto"
@@ -3786,7 +3786,7 @@
         "Importa casella email"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        ""
+        "Importa le tue e-mail, calendari e contatti da un altro servizio a Proton. Ti guideremo passo dopo passo e crittograferemo i tuoi dati man mano che vengono spostati. Benvenuto nel mondo della privacy."
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "IMPORTANTE: Scaricare le tue chiavi private e inviarle o archiviarle su supporti insicuri può compromettere la sicurezza del tuo account!"
@@ -3898,6 +3898,9 @@
       ],
       "Loading preview": [
         "Caricamento anteprima"
+      ],
+      "Log in to ProtonMail to activate your address": [
+        "Accedi a ProtonMail per attivare il tuo indirizzo"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "I registri includono tentativi di autenticazione per tutti i servizi Proton che utilizzano le tue credenziali Proton."
@@ -4552,7 +4555,7 @@
         "È possibile abilitare la registrazione dell'autenticazione per vedere gli accessi al tuo account e da quale IP. Registreremo l'indirizzo IP che accede all'account e il tempo, come pure i tentativi non riusciti."
       ],
       "You can import one data type at a time.": [
-        ""
+        "Puoi importare un tipo di dati alla volta."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ora puoi ricevere messaggi al tuo indirizzo @pm.me. Passa ad un piano a pagamento per inviare email utilizzando anche il tuo indirizzo @pm.me e creare ulteriori indirizzi @pm.me."
@@ -5294,7 +5297,7 @@
         "Lingua predefinita"
       ],
       "Default language (${ defaultLanguage })": [
-        ""
+        "Lingua predefinita (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Schema PGP predefinito"
@@ -5613,6 +5616,9 @@
       ],
       "Proton username": [
         "Nome utente di Proton"
+      ],
+      "ProtonMail address": [
+        "Indirizzo ProtonMail"
       ],
       "ProtonMail footer": [
         "ProtonMail piè di pagina"
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "Per saperne di più"
+      ],
+      "Not activated": [
+        "Non attivato"
       ],
       "Pay invoice": [
         "Paga fattura"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Risposta automatica"
       ],
-      "Backup & Export": [
-        "Backup & Esportazione"
+      "Backup and export": [
+        "Backup ed esportazione"
       ],
       "Calendars": [
         "Calendari"
-      ],
-      "Domain Names": [
-        "Nomi dominio"
       ],
       "Domain names": [
         "Nome dominio"
@@ -7152,20 +7158,20 @@
       "Email privacy": [
         "Privacy email"
       ],
-      "Encryption & keys": [
-        "Crittografia & chiavi"
+      "Encryption and keys": [
+        "Crittografia e chiavi"
       ],
       "Filters": [
         "Filtri"
       ],
-      "Folders & labels": [
-        "Cartelle & etichette"
+      "Folders and labels": [
+        "Cartelle ed etichette"
       ],
       "General": [
         "Generale"
       ],
-      "Identity & addresses": [
-        "Identità & indirizzi"
+      "Identity and addresses": [
+        "Identità e indirizzi"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7179,11 +7185,11 @@
       "Organization": [
         "Organizzazione"
       ],
-      "Organization & keys": [
-        "Organizzazione & chiavi"
+      "Organization and keys": [
+        "Organizzazione e chiavi"
       ],
-      "Users & addresses": [
-        "Utenti & indirizzi"
+      "Users and addresses": [
+        "Utenti e indirizzi"
       ],
       "VPN apps": [
         "App VPN"
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Seleziona file di configurazione e scarica"
       ],
+      "Account and password": [
+        "Account e password"
+      ],
       "Account recovery": [
         "Recupero dell'account"
       ],
@@ -7707,8 +7716,8 @@
       "Back": [
         "Indietro"
       ],
-      "Backup & Export": [
-        "Backup & Esportazione"
+      "Backup and export": [
+        "Backup ed esportazione"
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
@@ -7812,7 +7821,7 @@
       "Currency": [
         "Valuta"
       ],
-      "Current & past imports": [
+      "Current and past imports": [
         "Importazioni attuali e passate"
       ],
       "Current plan": [
@@ -7884,8 +7893,8 @@
       "Disable two-factor authentication": [
         "Disabilita l'autenticazione in due fattori"
       ],
-      "Display name & signature": [
-        "Mostra nome e firma"
+      "Display name and signature": [
+        "Nome visualizzato e firma"
       ],
       "Domain names": [
         "Nome dominio"
@@ -7932,8 +7941,8 @@
       "Enable keyboard shortcuts": [
         "Abilita scorciatoie da tastiera"
       ],
-      "Encryption & keys": [
-        "Crittografia & chiavi"
+      "Encryption and keys": [
+        "Crittografia e chiavi"
       ],
       "Error": [
         "Errore"
@@ -7968,8 +7977,8 @@
       "Folders": [
         "Cartelle"
       ],
-      "Folders & labels": [
-        "Cartelle & etichette"
+      "Folders and labels": [
+        "Cartelle ed etichette"
       ],
       "General": [
         "Generale"
@@ -7986,8 +7995,8 @@
       "Human verification": [
         "Verifica umana"
       ],
-      "Identity & addresses": [
-        "Identità & indirizzi"
+      "Identity and addresses": [
+        "Identità e indirizzi"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8038,8 +8047,8 @@
       "Labels": [
         "Etichette"
       ],
-      "Language & time": [
-        "Lingua & ora"
+      "Language and time": [
+        "Lingua e ora"
       ],
       "Layout": [
         "Layout"
@@ -8089,8 +8098,8 @@
       "Organization": [
         "Organizzazione"
       ],
-      "Organization & keys": [
-        "Organizzazione & chiavi"
+      "Organization and keys": [
+        "Organizzazione e chiavi"
       ],
       "Other": [
         "Altro"
@@ -8098,20 +8107,14 @@
       "Password": [
         "Password"
       ],
-      "Password & keys": [
-        "Password & chiavi"
-      ],
-      "Password & security": [
-        "Password & sicurezza"
+      "Password and keys": [
+        "Password e chiavi"
       ],
       "Passwords": [
         "Password"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
-      ],
-      "Payment": [
-        "Pagamento"
       ],
       "Payment details": [
         "Dettagli del pagamento"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Ripristina i privilegi di amministratore"
+      ],
+      "Security": [
+        "Sicurezza"
       ],
       "Security logs": [
         "Registro di sicurezza"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Esecuzione dell'upgrade"
+      ],
+      "Username": [
+        "Nome utente"
       ],
       "Users and addresses": [
         "Utenti e indirizzi"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Firma automaticamente tutti i messaggi in uscita in modo che gli utenti possano verificare l'autenticità dei messaggi. Questo viene fatto in combinazione con le impostazioni PGP predefinite che possono essere configurate qui sotto."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versione stabile"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Questa versione di Tor Browser non è supportata. Si prega di aggiornare all'ultima ${ stableRelease }"
       ]
     },
     "Update font modal": {

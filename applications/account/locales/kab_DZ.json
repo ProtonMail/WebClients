@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ Name }@pm.me": [
         "Rmed ${ Name }@pm.me"
@@ -3899,6 +3899,9 @@
       "Loading preview": [
         "Asali n teskant"
       ],
+      "Log in to ProtonMail to activate your address": [
+        ""
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Iɣmisen gebren aɛraḍ n usesteb i yimeẓla meṛṛa n Proton iseqdacen inekcam-ik Proton."
       ],
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Isem n useqdac Proton"
       ],
+      "ProtonMail address": [
+        ""
+      ],
       "ProtonMail footer": [
         "Aqerru n ProtonMail"
       ],
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "Issin ugar"
+      ],
+      "Not activated": [
+        ""
       ],
       "Pay invoice": [
         "Xelleṣ tafaturt"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Tiririt tawurmant"
       ],
-      "Backup & Export": [
-        "Aḥraz & asifeḍ"
+      "Backup and export": [
+        ""
       ],
       "Calendars": [
         "Iwitayen"
-      ],
-      "Domain Names": [
-        "Ismawen n taɣult"
       ],
       "Domain names": [
         "Ismawen n taɣult"
@@ -7152,20 +7158,20 @@
       "Email privacy": [
         "Tabaḍnit n imayl"
       ],
-      "Encryption & keys": [
-        "Awgelhen d tsura"
+      "Encryption and keys": [
+        ""
       ],
       "Filters": [
         "Imsizedgen"
       ],
-      "Folders & labels": [
-        "Ikaramen d tebzimin"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Amatu"
       ],
-      "Identity & addresses": [
-        "Tamagit d tansiwin"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7179,11 +7185,11 @@
       "Organization": [
         "Tuddsa"
       ],
-      "Organization & keys": [
-        "Tuddsa d tsura"
+      "Organization and keys": [
+        ""
       ],
-      "Users & addresses": [
-        "Iseqdacen d tansiwin"
+      "Users and addresses": [
+        ""
       ],
       "VPN apps": [
         "Isnasen VPN"
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Fren afaylu n twila yerna sader"
       ],
+      "Account and password": [
+        ""
+      ],
       "Account recovery": [
         "Tiririt n umiḍan"
       ],
@@ -7707,8 +7716,8 @@
       "Back": [
         "Ar deffir"
       ],
-      "Backup & Export": [
-        "Aḥraz & asifeḍ"
+      "Backup and export": [
+        ""
       ],
       "Billing cycle": [
         "Twala n ufter"
@@ -7812,8 +7821,8 @@
       "Currency": [
         "Aqarid"
       ],
-      "Current & past imports": [
-        "Aktaren imiranen d wid yezrin"
+      "Current and past imports": [
+        ""
       ],
       "Current plan": [
         "Aɣawas amiran"
@@ -7884,8 +7893,8 @@
       "Disable two-factor authentication": [
         "Sens asesteb s snat n tarrayin"
       ],
-      "Display name & signature": [
-        "Isem n uskan d uzmul"
+      "Display name and signature": [
+        ""
       ],
       "Domain names": [
         "Ismawen n taɣult"
@@ -7932,8 +7941,8 @@
       "Enable keyboard shortcuts": [
         "Fren inegzumen n unasiw"
       ],
-      "Encryption & keys": [
-        "Awgelhen & Tisura"
+      "Encryption and keys": [
+        ""
       ],
       "Error": [
         "Anezri"
@@ -7968,8 +7977,8 @@
       "Folders": [
         "Ikaramen"
       ],
-      "Folders & labels": [
-        "Ikaramen d tebzimin"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Amatu"
@@ -7986,8 +7995,8 @@
       "Human verification": [
         "Asenqed b-umdan"
       ],
-      "Identity & addresses": [
-        "Timagit d tansiwin"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8038,8 +8047,8 @@
       "Labels": [
         "Tibzimin"
       ],
-      "Language & time": [
-        "Tutlayt d wakud"
+      "Language and time": [
+        ""
       ],
       "Layout": [
         "Taneɣruft"
@@ -8089,8 +8098,8 @@
       "Organization": [
         "Tuddsa"
       ],
-      "Organization & keys": [
-        "Tuddsa d tsura"
+      "Organization and keys": [
+        ""
       ],
       "Other": [
         "Ayen-nniḍen"
@@ -8098,20 +8107,14 @@
       "Password": [
         "Awal ufir"
       ],
-      "Password & keys": [
-        "Awal uffir d tsura"
-      ],
-      "Password & security": [
-        "Awal uffir & taɣellist"
+      "Password and keys": [
+        ""
       ],
       "Passwords": [
         "Awalen uffiren"
       ],
       "Pay invoice": [
         "Xelleṣ tafaturt"
-      ],
-      "Payment": [
-        "Lexlaṣ"
       ],
       "Payment details": [
         "Talqayt n lexlas"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Err-d izerfan n unedbal"
+      ],
+      "Security": [
+        ""
       ],
       "Security logs": [
         "Iɣmisen n tɣellist"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Sali aswir"
+      ],
+      "Username": [
+        ""
       ],
       "Users and addresses": [
         "Iseqdacen d tansiwin"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Zmel s wudem awurman akk iznan-inek·inem itteffɣen i wakken iseqdacen-inek·inem ad izmiren ad selknen asesteb n yiznan-inek·inem. Ayagi yettili-d s usdukkel n yiɣewwaren PGP imezwer ara izemren ad ttusewlen ukessar-a."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

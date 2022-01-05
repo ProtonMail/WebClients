@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
@@ -218,7 +218,7 @@
         "Buat kalender"
       ],
       "Create folder": [
-        "Buat Folder"
+        "Buat folder"
       ],
       "Create label": [
         "Buat label"
@@ -302,7 +302,7 @@
         "Edit alamat email"
       ],
       "Edit label": [
-        "Edit label"
+        "Sunting label"
       ],
       "Edit phone number": [
         "Edit nomor telepon"
@@ -374,7 +374,7 @@
         "Saya memiliki sebuah pertanyaan"
       ],
       "Import": [
-        "Import"
+        "Impor"
       ],
       "Import calendars": [
         "Impor kalender"
@@ -3105,7 +3105,7 @@
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
       "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } akan diatur sebagai kalendar bawaan."
+        "${ calendarName } akan diatur sebagai kalendar default."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } kalender baru"
@@ -3216,7 +3216,7 @@
         "Konten yang diblokir aksesnya, seperti sosial media, berita, Wikipedia, YouTube, dan masih banyak lagi, di mana pun Anda berada."
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Akses layanan tontonan Anda, seperti ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, di mana pun Anda berada."
+        "Akses berbagai layanan streaming yang Anda kehendaki mulai dari ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } di mana pun Anda berada."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
@@ -3279,7 +3279,7 @@
         "Semua kunci berhasil diaktifkan kembali"
       ],
       "All your changes will be lost.": [
-        "Perubahan akan hilang."
+        "Seluruh perubahan yang belum Anda simpan akan hilang."
       ],
       "Allow recovery by email": [
         "Izinkan pemulihan akun melalui email"
@@ -3330,7 +3330,7 @@
         "Apakah Anda yakin ingin menghapus label ini?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Yakin ingin membuang perubahan?"
+        "Apakah Anda yakin untuk membatalkan perubahan-perubahan Anda?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Apakah Anda yakin mau menghapus secara permanen seluruh log Anda?"
@@ -3354,7 +3354,7 @@
         "Pesan balasan otomatis akan selalu terkirim pada setiap hari-hari dan jam-jam yang ditentukan."
       ],
       "Available on macOS, Windows, and Linux.": [
-        "Tersedia di macOS, Windows, dan Linux."
+        "Tersedia untuk macOS, Windows, dan Linux."
       ],
       "Background color": [
         "Warna latar belakang"
@@ -3456,7 +3456,7 @@
         "Buat di"
       ],
       "Creating your Proton account": [
-        "Buat akun Proton Anda"
+        "Membuat akun Proton Anda"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Anda dapat mengimpor berkas-berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas-berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
@@ -3540,7 +3540,7 @@
         "Setiap koneksi tambahan dapat diberikan kepada pengguna di organisasi Anda."
       ],
       "Edit label": [
-        "Edit label"
+        "Sunting label"
       ],
       "Email address": [
         "Alamat email"
@@ -3841,6 +3841,9 @@
       ],
       "Loading preview": [
         "Memuat pratinjau"
+      ],
+      "Log in to ProtonMail to activate your address": [
+        "Masuk ke ProtonMail untuk mengaktifkan alamat email Anda"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Log mencakup upaya otentikasi untuk semua layanan Proton yang menggunakan kredensial ProtonMail Anda."
@@ -4197,7 +4200,7 @@
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
       ],
       "The calendar will be removed from your account.": [
-        "Kalender akan dihapus dari akun Anda."
+        "Kalender ini akan dihapus dari akun Anda."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Alamat email yang Anda tempatkan di bagian atas daftar adalah alamat email default Anda. Tarik dan lepas untuk menyusun ulang alamat Anda."
@@ -4248,7 +4251,7 @@
         "Tautan ini mungkin adalah sebuah serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan membukanya."
       ],
       "This phone number will only be used for recovery purposes.": [
-        "Nomor telepon ini akan difungsikan sebagai langkah pemulihan."
+        "Nomor telepon ini hanya akan dipergunakan untuk keperluan pemulihan akun."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
@@ -4446,7 +4449,7 @@
         "Apa yang hendak Anda impor dari akun Google Anda?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Saat nonaktif, ini mencegah semua gambar dimuat di perangkat Anda tanpa Anda ketahui."
+        "Ketika dinonaktifkan, opsi ini akan mencegah gambar-gambar yang ada untuk dapat dimuat pada perangkat Anda tanpa Anda ketahui."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Saat pemberitahuan diaktifkan, kami akan mengirimkan peringatan ke alamat pemulihan/pemberitahuan Anda jika Anda memiliki pesan baru di akun ProtonMail Anda."
@@ -4575,7 +4578,7 @@
         "Metode pemulihan akun Anda telah ditentukan"
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Akun anda akan diperbarui setelah pembayaran sah."
+        "Akun anda akan diperbarui setelah pembayaran Anda diterima."
       ],
       "Your Allow List is empty.": [
         "Daftar Izin Anda kosong."
@@ -5552,6 +5555,9 @@
       "Proton username": [
         "Nama Pengguna Proton"
       ],
+      "ProtonMail address": [
+        "Alamat ProtonMail"
+      ],
       "ProtonMail footer": [
         "Footer ProtonMail"
       ],
@@ -5927,6 +5933,9 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Not activated": [
+        "Belum diaktifkan"
       ],
       "Pay invoice": [
         "Bayar tagihan"
@@ -7063,14 +7072,11 @@
       "Auto reply": [
         "Balasan otomatis"
       ],
-      "Backup & Export": [
-        "Backup & Ekspor"
+      "Backup and export": [
+        "Backup dan ekspor"
       ],
       "Calendars": [
         "Kalender"
-      ],
-      "Domain Names": [
-        "Nama Domain"
       ],
       "Domain names": [
         "Nama domain"
@@ -7078,20 +7084,20 @@
       "Email privacy": [
         "Privasi email"
       ],
-      "Encryption & keys": [
-        "Enkripsi & kunci"
+      "Encryption and keys": [
+        "Enkripsi dan kunci"
       ],
       "Filters": [
         "Filter"
       ],
-      "Folders & labels": [
-        "Folder & label"
+      "Folders and labels": [
+        "Folder dan label"
       ],
       "General": [
         "Umum"
       ],
-      "Identity & addresses": [
-        "Identitas & alamat"
+      "Identity and addresses": [
+        "Identitas dan alamat"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7105,11 +7111,11 @@
       "Organization": [
         "Organisasi"
       ],
-      "Organization & keys": [
-        "Organisasi & kunci"
+      "Organization and keys": [
+        "Organisasi dan kunci"
       ],
-      "Users & addresses": [
-        "Pengguna & alamat"
+      "Users and addresses": [
+        "Pengguna dan alamat"
       ],
       "VPN apps": [
         "Aplikasi VPN"
@@ -7526,6 +7532,9 @@
       "3. Select config file and download": [
         "3. Pilih berkas konfigurasi dan unduh"
       ],
+      "Account and password": [
+        "Akun dan kata sandi"
+      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -7631,8 +7640,8 @@
       "Back": [
         "Kembali"
       ],
-      "Backup & Export": [
-        "Backup & Ekspor"
+      "Backup and export": [
+        "Backup dan ekspor"
       ],
       "Billing cycle": [
         "Siklus tagihan"
@@ -7736,8 +7745,8 @@
       "Currency": [
         "Mata uang"
       ],
-      "Current & past imports": [
-        "Impor sekarang & sebelumnya"
+      "Current and past imports": [
+        "Impor yang telah dan tengah berlangsung"
       ],
       "Current plan": [
         "Paket saat ini"
@@ -7808,8 +7817,8 @@
       "Disable two-factor authentication": [
         "Nonaktifkan otentikasi dua-faktor"
       ],
-      "Display name & signature": [
-        "Nama tampilan & tanda tangan"
+      "Display name and signature": [
+        "Nama tampilan dan tanda tangan"
       ],
       "Domain names": [
         "Nama domain"
@@ -7856,8 +7865,8 @@
       "Enable keyboard shortcuts": [
         "Aktifkan pintasan papan ketik"
       ],
-      "Encryption & keys": [
-        "Enkripsi & kunci"
+      "Encryption and keys": [
+        "Enkripsi dan kunci"
       ],
       "Error": [
         "Kesalahan"
@@ -7892,8 +7901,8 @@
       "Folders": [
         "Folder"
       ],
-      "Folders & labels": [
-        "Folder & label"
+      "Folders and labels": [
+        "Folder dan label"
       ],
       "General": [
         "Umum"
@@ -7910,8 +7919,8 @@
       "Human verification": [
         "Verifikasi manusia"
       ],
-      "Identity & addresses": [
-        "Identitas & alamat"
+      "Identity and addresses": [
+        "Identitas dan alamat"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7961,8 +7970,8 @@
       "Labels": [
         "Label"
       ],
-      "Language & time": [
-        "Bahasa & waktu"
+      "Language and time": [
+        "Bahasa dan waktu"
       ],
       "Layout": [
         "Tata letak"
@@ -8012,8 +8021,8 @@
       "Organization": [
         "Organisasi"
       ],
-      "Organization & keys": [
-        "Organisasi & kunci"
+      "Organization and keys": [
+        "Organisasi dan kunci"
       ],
       "Other": [
         "Lainnya"
@@ -8021,20 +8030,14 @@
       "Password": [
         "Kata Sandi"
       ],
-      "Password & keys": [
-        "Kata sandi & kunci"
-      ],
-      "Password & security": [
-        "Kata sandi & keamanan"
+      "Password and keys": [
+        "Kata sandi dan kunci"
       ],
       "Passwords": [
         "Kata Sandi"
       ],
       "Pay invoice": [
         "Bayar tagihan"
-      ],
-      "Payment": [
-        "Pembayaran"
       ],
       "Payment details": [
         "Rincian pembayaran"
@@ -8110,6 +8113,9 @@
       ],
       "Restore administrator privileges": [
         "Pulihkan hak administrator"
+      ],
+      "Security": [
+        "Keamanan"
       ],
       "Security logs": [
         "Catatan keamanan"
@@ -8187,7 +8193,7 @@
         "Filter spam"
       ],
       "Spy Tracker Protection": [
-        "Pelindungan Dari Pelacak"
+        "Perlindungan Pelacak"
       ],
       "Start a new import": [
         "Mulai impor baru"
@@ -8217,7 +8223,7 @@
         "Beralih ke mode dua kata sandi"
       ],
       "Take precautions to avoid data loss!": [
-        "Ambil tindakan preventif agar data-data yang ada tidak hilang!"
+        "Bersiagalah agar data-data Anda tidak hilang!"
       ],
       "Theme": [
         "Tema"
@@ -8245,6 +8251,9 @@
       ],
       "Upgrade": [
         "Tingkatkan"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "Users and addresses": [
         "Pengguna dan alamat"
@@ -8523,6 +8532,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Tandatangani pesan keluar secara otomatis agar pengguna dapat memverifikasi keaslian pesan Anda. Ini dilakukan dengan kombinasi Skema PGP standar yang dapat dikonfigurasikan dibawah ini."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versi rilisan stabil"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Versi Tor Browser ini sudah tidak lagi didukung. Silakan perbarui Tor Browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "Update font modal": {

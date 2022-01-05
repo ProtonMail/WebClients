@@ -3522,6 +3522,14 @@
         "Uw e-mailadres wordt niet gedeeld met derden en wordt alleen gebruikt voor herstel en accountgerelateerde vragen of communicatie."
       ]
     },
+    "Tor out of date": {
+      "stable release": [
+        "stabiele release"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie (${ stableRelease })"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Wachtwoord moet ten minste ${ length } teken bevatten",

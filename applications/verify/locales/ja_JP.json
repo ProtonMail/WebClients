@@ -90,16 +90,16 @@
         "エラーが解消されるまでお待ちください。"
       ],
       "Error: ${ errorMessage }": [
-        ""
+        "エラー: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
       "Please ${ refresh } or check your connection.": [
-        ""
+        "${ refresh } または接続を確認してください。"
       ],
       "There was a problem connecting to Proton.": [
-        ""
+        "Proton への接続中に問題が発生しました。"
       ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } するか再度お試しください。"
@@ -222,7 +222,7 @@
         "無効な検証コードです"
       ],
       "Request new code": [
-        ""
+        "新しいコードをリクエスト"
       ],
       "Sign in again to continue": [
         "再度サインインして続行"

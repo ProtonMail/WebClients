@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
@@ -3899,6 +3899,9 @@
       "Loading preview": [
         "Voorbeeld laden"
       ],
+      "Log in to ProtonMail to activate your address": [
+        "Log in op ProtonMail om uw e-mailadres te activeren"
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Logboeken bevatten authenticatiepogingen voor alle diensten die uw Proton inloggegevens gebruiken."
       ],
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Proton-gebruikersnaam"
       ],
+      "ProtonMail address": [
+        "ProtonMail e-mailadres"
+      ],
       "ProtonMail footer": [
         "ProtonMail footer"
       ],
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
       ],
       "Pay invoice": [
         "Factuur betalen"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Automatisch antwoorden"
       ],
-      "Backup & Export": [
-        "Back-up & Exporteren"
+      "Backup and export": [
+        ""
       ],
       "Calendars": [
         "Agenda's"
-      ],
-      "Domain Names": [
-        "Domein namen"
       ],
       "Domain names": [
         "Domeinnamen"
@@ -7152,20 +7158,20 @@
       "Email privacy": [
         "E-mail privacy"
       ],
-      "Encryption & keys": [
-        "Versleuteling & sleutels"
+      "Encryption and keys": [
+        ""
       ],
       "Filters": [
         "Filters"
       ],
-      "Folders & labels": [
-        "Mappen & labels"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Algemeen"
       ],
-      "Identity & addresses": [
-        "Identiteit & adressen"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7179,11 +7185,11 @@
       "Organization": [
         "Bedrijf"
       ],
-      "Organization & keys": [
-        "Organisatie & sleutels"
+      "Organization and keys": [
+        ""
       ],
-      "Users & addresses": [
-        "Gebruikers & adressen"
+      "Users and addresses": [
+        ""
       ],
       "VPN apps": [
         "VPN-apps"
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Configuratiebestand kiezen en downloaden"
       ],
+      "Account and password": [
+        "Account en wachtwoord"
+      ],
       "Account recovery": [
         "Account herstel"
       ],
@@ -7707,8 +7716,8 @@
       "Back": [
         "Terug"
       ],
-      "Backup & Export": [
-        "Back-up & Exporteren"
+      "Backup and export": [
+        "Back-up en exporteren"
       ],
       "Billing cycle": [
         "Factuurperiode"
@@ -7812,8 +7821,8 @@
       "Currency": [
         "Valuta"
       ],
-      "Current & past imports": [
-        "Import uit het verleden en huidige"
+      "Current and past imports": [
+        "Huidige en eerdere imports"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -7884,8 +7893,8 @@
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
       ],
-      "Display name & signature": [
-        "Naam & handtekening weergeven"
+      "Display name and signature": [
+        "Weergavenaam en handtekening"
       ],
       "Domain names": [
         "Domeinnamen"
@@ -7932,8 +7941,8 @@
       "Enable keyboard shortcuts": [
         "Sneltoetsen inschakelen"
       ],
-      "Encryption & keys": [
-        "Versleuteling & sleutels"
+      "Encryption and keys": [
+        "Versleuteling en sleutels"
       ],
       "Error": [
         "Fout"
@@ -7968,8 +7977,8 @@
       "Folders": [
         "Mappen"
       ],
-      "Folders & labels": [
-        "Mappen & labels"
+      "Folders and labels": [
+        "Mappen en labels"
       ],
       "General": [
         "Algemeen"
@@ -7986,8 +7995,8 @@
       "Human verification": [
         "Menselijke verificatie"
       ],
-      "Identity & addresses": [
-        "Identiteit & adressen"
+      "Identity and addresses": [
+        "Identiteit en adressen"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8038,8 +8047,8 @@
       "Labels": [
         "Labels"
       ],
-      "Language & time": [
-        "Taal & Tijd"
+      "Language and time": [
+        "Taal en tijd"
       ],
       "Layout": [
         "Lay-out"
@@ -8089,8 +8098,8 @@
       "Organization": [
         "Bedrijf"
       ],
-      "Organization & keys": [
-        "Organisatie & sleutels"
+      "Organization and keys": [
+        "Organisatie en sleutels"
       ],
       "Other": [
         "Anders"
@@ -8098,20 +8107,14 @@
       "Password": [
         "Wachtwoord"
       ],
-      "Password & keys": [
-        "Wachtwoord & sleutels"
-      ],
-      "Password & security": [
-        "Wachtwoord & veiligheid"
+      "Password and keys": [
+        "Wachtwoord en sleutels"
       ],
       "Passwords": [
         "Wachtwoorden"
       ],
       "Pay invoice": [
         "Factuur betalen"
-      ],
-      "Payment": [
-        "Betalingswijze"
       ],
       "Payment details": [
         "Betalingsgegevens"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Herstel beheerdersbevoegdheden"
+      ],
+      "Security": [
+        "Beveiliging"
       ],
       "Security logs": [
         "Beveiligingslogboek"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Upgrade"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ],
       "Users and addresses": [
         "Gebruikers en adressen"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Automatisch al uw uitgaande berichten ondertekenen zodat gebruikers de authenticiteit van uw berichten kunnen verifiëren. Dit wordt gedaan in combinatie met de standaard PGP-instellingen, welke hieronder kunnen worden geconfigureerd."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabiele release"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie (${ stableRelease })"
       ]
     },
     "Update font modal": {

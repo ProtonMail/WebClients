@@ -15,19 +15,19 @@
         "Botiga de ${ BRAND_NAME }"
       ],
       "Activate recovery": [
-        ""
+        "Activar la recuperació"
       ],
       "Add": [
         "Afegir"
       ],
       "Add address": [
-        ""
+        "Afegir adreça"
       ],
       "Add contact": [
         "Afegir contacte"
       ],
       "Add email": [
-        ""
+        "Afegir correu electrònic"
       ],
       "Add group": [
         "Afegir grup"
@@ -42,7 +42,7 @@
         "Afegir notificació"
       ],
       "Add phone number": [
-        ""
+        "Afegir número de telèfon"
       ],
       "Add screenshot(s)": [
         "Afegir captura(es) de pantalla"
@@ -69,7 +69,7 @@
         "Xategeu amb nosaltres"
       ],
       "Check import progress": [
-        ""
+        "Comprovar el progrés de la importació"
       ],
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
@@ -120,7 +120,7 @@
         "Confirmar"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Confirmar l'obertura de l'enllaç ${ linkToShow }"
       ],
       "Contact group": [
         "Grup de contactes"
@@ -129,7 +129,7 @@
         "Continua"
       ],
       "Continue import": [
-        ""
+        "Continuar importació"
       ],
       "Continue with Google": [
         "Continuar amb Google"
@@ -138,13 +138,13 @@
         "Copiar correu electrònic al porta-retalls"
       ],
       "Create calendar": [
-        ""
+        "Crear calendari"
       ],
       "Create event": [
         "Crea un esdeveniment"
       ],
       "Customize": [
-        ""
+        "Personalitzar"
       ],
       "Decrease": [
         "Reduir"
@@ -188,7 +188,7 @@
         "Editar l'adreça de correu electrònic"
       ],
       "Edit label": [
-        ""
+        "Editar etiqueta"
       ],
       "Edit phone number": [
         "Editar el número de telèfon"
@@ -224,13 +224,13 @@
         "Amagar configuració PGP avançada"
       ],
       "Hide folders": [
-        ""
+        "Amagar carpetes"
       ],
       "Hide info": [
         "Amagar informació"
       ],
       "Hide labels": [
-        ""
+        "Amagar etiquetes"
       ],
       "Hide time zones": [
         "Amaga el fus horari"
@@ -245,10 +245,10 @@
         "Importar"
       ],
       "Import events": [
-        ""
+        "Importar esdeveniments"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importar des de .csv o vCard"
       ],
       "Increase": [
         "Incrementar"
@@ -350,7 +350,7 @@
         "Any anterior"
       ],
       "Quit": [
-        ""
+        "Sortir"
       ],
       "Re-sign": [
         "Tornar a signar"
@@ -380,7 +380,7 @@
         "Eliminar aquest participant"
       ],
       "Rename": [
-        ""
+        "Canviar el nom"
       ],
       "Report a problem": [
         "Avisar d'un problema"
@@ -410,7 +410,7 @@
         "Envia"
       ],
       "Set recovery phrase": [
-        ""
+        "Establir la frase de recuperació"
       ],
       "Share": [
         "Compartir"
@@ -419,13 +419,13 @@
         "Mostrar configuració PGP avançada"
       ],
       "Show folders": [
-        ""
+        "Mostrar carpetes"
       ],
       "Show info": [
         "Mostra informació"
       ],
       "Show labels": [
-        ""
+        "Mostrar etiquetes"
       ],
       "Show less": [
         "Mostrar menys"
@@ -452,7 +452,7 @@
         "Començar la configuració"
       ],
       "Stay": [
-        ""
+        "Mantenir"
       ],
       "Submit": [
         "Enviar"
@@ -485,10 +485,10 @@
         "Actualitza"
       ],
       "Update recovery file": [
-        ""
+        "Actualitzar el fitxer de recuperació"
       ],
       "Update recovery phrase": [
-        ""
+        "Actualitzar la frase de recuperació"
       ],
       "Upgrade": [
         "Millorar"
@@ -1372,13 +1372,13 @@
         "Error d'autenticació."
       ],
       "Calendar limit reached": [
-        ""
+        "Límit de calendari assolit"
       ],
       "Calendar primary private key is not decrypted": [
         "La clau privada primària del calendari no està desxifrada"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "No es poden crear nous calendaris per a tots els calendaris importats a causa del límit personal de calendaris."
       ],
       "Can't validate email, try again later": [
         "No es pot validar el correu electrònic, torneu-ho a provar més tard"
@@ -1390,7 +1390,7 @@
         "No s'ha pogut enviar la cancel·lació"
       ],
       "Checkout expired, please try again": [
-        ""
+        "El pagament ha expirat. Torneu-ho a provar"
       ],
       "Contact could not be saved": [
         "El contacte no s'ha pogut desar"
@@ -1408,12 +1408,12 @@
         "Error de desxifrat: el desxifrat del contingut d'encriptació d'aquest esdeveniment a fallat."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
+        "Desmarqueu almenys ${ calendarToFixCount } calendari",
+        "Desmarqueu almenys ${ calendarToFixCount } calendaris"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Desmarqueu almenys ${ calendarToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarToFixCount } calendaris o"
       ],
       "Email address disabled": [
         "Correu electrònic deshabilitat"
@@ -1446,7 +1446,7 @@
         "No s'ha pogut obtenir l'ocurrència original a sèries"
       ],
       "Folder name cannot be empty": [
-        ""
+        "El nom de la carpeta no es pot deixar buit"
       ],
       "Image upload failed": [
         "La càrrega de la imatge ha fallat"
@@ -1500,11 +1500,11 @@
         "Només és possible moure esdeveniments entre ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        ""
+        "El nom de l'etiqueta no es pot deixar buit"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Uniu almenys ${ calendarToFixCount } calendari amb un calendari Proton existent",
+        "Uniu almenys ${ calendarToFixCount } calendaris amb calendaris Proton existents"
       ],
       "Missing signature": [
         "Signatura no trobada"
@@ -1516,7 +1516,7 @@
         "Nom requerit"
       ],
       "No data to import": [
-        ""
+        "Ni hi ha dades per importar"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Cap enviament de cap clau per a l’usuari intern és vàlid per enviar-la"
@@ -1548,7 +1548,7 @@
         "Alguns grups no tenen contactes: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organització no reconeguda. Torneu-ho a provar."
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
@@ -1569,8 +1569,8 @@
         "Si us plau, creeu la vostra adreça primer."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Arregleu el conflicte ressaltat per continuar.",
+        "Arregleu els conflictes ressaltats per continuar."
       ],
       "Preferences could not be saved": [
         "No s'han pogut desar les preferències"
@@ -1603,10 +1603,10 @@
         "Alguns grups no poden ser esborrats"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Alguns dels vostres noms d'etiqueta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Alguns dels vostres noms d'etiquetes superen el límit de caràcters màxim de ProtonMail. Personalitzeu la importació per tal d'editar-ne aquests noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d’error, poseu-vos en contacte amb el nostre ${ supportTeam }."
@@ -1621,10 +1621,10 @@
         "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "El nom de la carpeta és massa llarg. Escolliu-ne un de diferent."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "El nom de l'etiqueta és massa llarg. Escolliu-ne un de diferent."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ _price }"
@@ -1639,7 +1639,7 @@
         "La clau enviada no es vàlida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
@@ -1651,10 +1651,10 @@
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Aquest nom de carpeta no està disponible. Trieu-ne un de diferent"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Aquest nom d'etiqueta no està disponible. Trieu-ne un de diferent"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el vostre navegador actual"
@@ -1746,100 +1746,100 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        ""
+        "Format dolent. No es pot llegir el component."
       ],
       "Calendar": [
-        ""
+        "Calendari"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Zona horària del calendari no admesa"
       ],
       "Component with wrong format": [
-        ""
+        "Component amb format erroni"
       ],
       "Custom timezone": [
-        ""
+        "Zona horària personalitzada"
       ],
       "Edited event not supported": [
-        ""
+        "Esdeveniment editat no admès"
       ],
       "Element": [
-        ""
+        "Element"
       ],
       "Encryption failed": [
         ""
       ],
       "End time out of bounds": [
-        ""
+        "Hora de finalització fora de límits"
       ],
       "Event": [
-        ""
+        "Esdeveniment"
       ],
       "Event validation failed": [
         ""
       ],
       "Floating times not supported": [
-        ""
+        "Els temps flotants no són admesos"
       ],
       "Free-busy time information": [
-        ""
+        "Informació de disponibilitat temporal"
       ],
       "Invalid event": [
-        ""
+        "Esdeveniment no vàlid"
       ],
       "Journal entry": [
-        ""
+        "Entrada de diari"
       ],
       "Malformed all-day event": [
-        ""
+        "Esdeveniment de tot el dia amb format incorrecte"
       ],
       "Malformed end time": [
-        ""
+        "Hora de finalització amb format incorrecte"
       ],
       "Malformed recurring event": [
-        ""
+        "Esdeveniment recurrent amb format incorrecte"
       ],
       "Malformed start time": [
-        ""
+        "Hora d'inici amb format incorrecte"
       ],
       "Missing start time": [
-        ""
+        "Falta l’hora d’inici"
       ],
       "No UID, title or start time": [
         ""
       ],
       "Non-Gregorian": [
-        ""
+        "No gregorià"
       ],
       "Notification out of bounds": [
-        ""
+        "Notificació fora de límits"
       ],
       "Original recurring event could not be found": [
         ""
       ],
       "Recurring event has no occurrences": [
-        ""
+        "L'esdeveniment recurrent no té cap ocurrència"
       ],
       "Recurring rule not supported": [
-        ""
+        "Regla recurrent no admesa"
       ],
       "Start time out of bounds": [
-        ""
+        "Hora d’inici fora de límits"
       ],
       "Timezone": [
-        ""
+        "Zona Horària"
       ],
       "Timezone not supported": [
-        ""
+        "Zona horària no admesa"
       ],
       "To-do entry": [
-        ""
+        "Entrada de tasques"
       ],
       "Unknown": [
-        ""
+        "Desconegut"
       ],
       "Unsupported event": [
-        ""
+        "Esdeveniment no suportat"
       ]
     },
     "Error message": {
@@ -1850,7 +1850,7 @@
         "Error: ${ errorMessage }"
       ],
       "Invalid URL": [
-        ""
+        "URL no vàlida"
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
@@ -1865,7 +1865,7 @@
         "També podeu ${ refresh } o tornar-ho a intentar més tard."
       ],
       "You need an active personal calendar to import events": [
-        ""
+        "Necessiteu tenir un calendari personal actiu per importar esdeveniments"
       ]
     },
     "Error notification": {
@@ -1987,7 +1987,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } actualitzada"
       ]
     },
     "Free price": {
@@ -2089,18 +2089,18 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "Les invitacions importades aparèixen a ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador i dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de Proton."
       ],
       "This file contains an event invitation:": [
-        "",
-        ""
+        "Aquest fitxer conté una invitació a un esdeveniment:",
+        "Aquest fitxer conté invitacions a un esdeveniment:"
       ],
       "This file contains an invitation response:": [
-        "",
-        ""
+        "Aquest fitxer conté una resposta a la invitació:",
+        "Aquest fitxer conté respostes a la invitació:"
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "Aquest fitxer conté algunes dades que no podem importar:"
       ]
     },
     "Import contact": {
@@ -2181,16 +2181,16 @@
         "${ calendarAppName } s'ha afegit a la suite Proton. Ens agradaria saber què en penseu!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nou calendari",
+        "${ calendarsToBeCreatedCount } nous calendaris"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendari combinat",
+        "${ calendarsToBeMerged } calendaris combinats"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendari combinat",
+        "${ calendarsToBeMergedCount } calendaris combinats"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membre",
@@ -2226,12 +2226,12 @@
         "${ namesWithoutLast } i ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } grup de contactes",
+        "${ numContactGroups } grups de contactes"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contacte",
+        "${ numContacts } contactes"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } en la vostra subscripció canviant a ${ annualBilling }"
@@ -2243,16 +2243,16 @@
         "${ saveExtra20 } en VPN i Correu afegint una subscripció de VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetes seleccionades"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetes seleccionades"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat satisfactòriament.",
@@ -2327,12 +2327,12 @@
         "Després de fer el pagament amb Bitcoin, seguiu les següents instruccions per actualitzar."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Tot (${ totalFoldersCount } carpeta)",
+        "Tot (${ totalFoldersCount } carpetes)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Tot (${ totalFoldersCount } etiqueta)",
+        "Tot (${ totalFoldersCount } etiquetes)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Us permet allotjar correus electrònics pel(s) vostre(s) propi(s) domini(s) a ${ mailAppName }, p. ex. jordi.catala@exemple.cat"
@@ -2398,14 +2398,14 @@
         "Connexions"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Crear ${ calendarsToBeCreated } nou calendari",
+        "Crear ${ calendarsToBeCreated } nous calendaris"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que us agradaria importar."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les etiquetes que us agradaria importar."
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
@@ -2414,7 +2414,7 @@
         "Crear a"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
       ],
       "Custom": [
         "Personalitzat"
@@ -2513,11 +2513,11 @@
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendari",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendaris"
       ],
       "Import from": [
         "Importar des de"
@@ -2544,7 +2544,7 @@
         "S'ha restaurat la connexió a Internet."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Només confirmeu la vostra selecció i nosaltres farem la resta."
       ],
       "Key fingerprint": [
         "Empremta digital de la clau"
@@ -2577,13 +2577,13 @@
         "Mensual ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
       "New": [
         "Nou"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Tot seguit haureu d'iniciar sessió al vostre compte de Google i permetre'ns accés a les vostres dades."
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
@@ -2646,7 +2646,7 @@
         "Si us plau, suprimiu els duplicats i torneu-ho a provar."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Seleccioneu les carpetes que voleu importar:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Torneu-ho a provar, utilitzeu un mètode de pagament diferent, o bé truqueu al vostre banc per assistència."
@@ -2701,7 +2701,7 @@
         "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -2878,7 +2878,7 @@
         "Actualment esteu registrat com a ${ user.Name } (${ user.Email }) i té accés restringit."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "També podeu combinar els calendaris importats amb calendaris Proton existents."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
@@ -2959,13 +2959,13 @@
         "El vostre banc requereix una verificació segura en 3-D amb finalitats de seguretat."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your events will be encrypted and then saved.": [
-        ""
+        "Els vostres esdeveniments seran xifrats i després desats."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -3217,7 +3217,7 @@
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(Disponible properament)"
       ],
       "0 - Not likely": [
         "0 - Poc probable"
@@ -3238,7 +3238,7 @@
         "Tot el dia"
       ],
       "All-day event notifications": [
-        ""
+        "Notificacions d'esdeveniments de tot el dia"
       ],
       "Automatically save contacts": [
         "Desar contactes automàticament"
@@ -3256,10 +3256,10 @@
         "Import de BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendari"
       ],
       "Calendars": [
-        ""
+        "Calendaris"
       ],
       "Cancel": [
         "Cancel·la"
@@ -3280,10 +3280,10 @@
         "Ciutat"
       ],
       "Color": [
-        ""
+        "Color"
       ],
       "Contacts": [
-        ""
+        "Contactes"
       ],
       "Copy": [
         "Copia"
@@ -3295,7 +3295,7 @@
         "Codi CVV"
       ],
       "Date and time": [
-        ""
+        "Data i hora"
       ],
       "Description": [
         "Descripció"
@@ -3316,7 +3316,7 @@
         "Format de correu electrònic"
       ],
       "Emails": [
-        ""
+        "Correus electrònics"
       ],
       "Enable Beta Access": [
         "Activar Accés Beta"
@@ -3328,13 +3328,13 @@
         "Finalitza"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Introdueixi el nom de l'organització per confirmar"
       ],
       "Enter the 6-digit code": [
         "Introduïu el codi de 6 dígits"
       ],
       "Event duration": [
-        ""
+        "Durada de l'esdeveniment"
       ],
       "Event notifications": [
         "Notificacions d'esdeveniment"
@@ -3355,13 +3355,13 @@
         "Adreça ampliada"
       ],
       "Folder location": [
-        ""
+        "Ubicació de la carpeta"
       ],
       "Frequency": [
-        ""
+        "Freqüència"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "De: ${ importedEmail }"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -3370,46 +3370,46 @@
         "Recomanaríeu ${ calendarAppName } a un amic o col·lega?"
       ],
       "Import all messages": [
-        ""
+        "Importar tots els missatges"
       ],
       "Import contacts": [
         "Importar contactes"
       ],
       "Import interval": [
-        ""
+        "Interval d'importació"
       ],
       "Import to email address": [
-        ""
+        "Importar a l'adreça de correu electrònic"
       ],
       "Import to:": [
-        ""
+        "Importar a:"
       ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
       ],
       "Label messages as": [
-        ""
+        "Etiquetar els missatges com"
       ],
       "Last 12 months only": [
-        ""
+        "Només els darrers 12 mesos"
       ],
       "Last 3 months only": [
-        ""
+        "Només els darrers 3 mesos"
       ],
       "Last month only": [
-        ""
+        "Només el darrer mes"
       ],
       "Location": [
-        ""
+        "Ubicació"
       ],
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
       "Manage folders": [
-        ""
+        "Gestionar carpetes"
       ],
       "Manage labels": [
-        ""
+        "Gestionar etiquetes"
       ],
       "Name": [
         "Nom"
@@ -3418,10 +3418,10 @@
         "Titular de la targeta"
       ],
       "Notification": [
-        ""
+        "Notificació"
       ],
       "Notifications": [
-        ""
+        "Notificacions"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -3449,7 +3449,7 @@
         "Pagador"
       ],
       "PGP scheme": [
-        ""
+        "Esquema PGP"
       ],
       "Phone number": [
         "Número de telèfon"
@@ -3509,7 +3509,7 @@
         "Informació del sistema"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Per a: ${ emailAddress }"
       ],
       "Total": [
         "Total"
@@ -3583,21 +3583,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Crear carpeta"
       ],
       "Create label": [
-        ""
+        "Crear etiqueta"
       ],
       "Edit folder": [
-        ""
+        "Editar carpeta"
       ],
       "Edit label": [
-        ""
+        "Editar etiqueta"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } creada"
       ]
     },
     "Layout mode": {
@@ -3791,10 +3791,10 @@
     },
     "Modal action": {
       "Close": [
-        ""
+        "Tancar"
       ],
       "Manage calendars": [
-        ""
+        "Gestionar els calendaris"
       ]
     },
     "Modal title": {
@@ -3802,12 +3802,12 @@
         "Fus horari canviat"
       ],
       "Unable to add more calendars": [
-        ""
+        "No es poden afegir més calendaris"
       ]
     },
     "Modal title and action": {
       "Add calendar": [
-        ""
+        "Afegir calendari"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -3950,13 +3950,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Color"
       ],
       "Folder name": [
-        ""
+        "Nom de carpeta"
       ],
       "Label name": [
-        ""
+        "Nom d'etiqueta"
       ]
     },
     "Notification": {
@@ -4123,7 +4123,7 @@
     },
     "Onboarding ProtonCalendar": {
       "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
+        "Un calendari és un registre de la vostra vida. Manteniu-la segura i privada amb ${ appName }."
       ],
       "Import events": [
         ""
@@ -4514,23 +4514,23 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        ""
+        "URL del calendari"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, entreu la URL. Una versió de només lectura del calendari s'afegirà als vostres Calendaris subscrits.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "Apreneu com obtenir un enllaç de calendari privat."
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "Usant aquest enllaç, Google farà que el calendari al que us esteu subscrivint sigui públic"
       ],
       "This link might be wrong": [
-        ""
+        "Aquest enllaç podria ser erroni"
       ]
     },
     "Subscribed calendar feature unavailable error": {
@@ -4869,7 +4869,7 @@
         "Confirmeu la pèrdua dels beneficis de Proton"
       ],
       "Contact details": [
-        ""
+        "Detalls del contacte"
       ],
       "Contact Details": [
         "Dades de contacte"
@@ -4881,7 +4881,7 @@
         "Contactes"
       ],
       "Continue with partial import?": [
-        ""
+        "Continuar amb la importació parcial?"
       ],
       "Coupon discount": [
         "Cupó de descompte"
@@ -4908,13 +4908,13 @@
         "Pla actual"
       ],
       "Customize and confirm": [
-        ""
+        "Personalitzeu i confirmeu"
       ],
       "Customize calendar import": [
-        ""
+        "Personalitzeu la importació del calendari"
       ],
       "Customize your mail import": [
-        ""
+        "Personalitzeu la importació del vostre correu"
       ],
       "Customize your plan": [
         "Personalitzeu el vostre pla"
@@ -4934,7 +4934,7 @@
         "Suprimeix l'esdeveniment"
       ],
       "Delete organization?": [
-        ""
+        "Eliminar l'organització?"
       ],
       "Delete recurring event": [
         "Suprimeix l'esdeveniment recurrent"
@@ -4946,10 +4946,10 @@
         "Degradar compte"
       ],
       "Drop to upload": [
-        ""
+        "Arrossegar per carregar"
       ],
       "Edit calendar": [
-        ""
+        "Editeu el calendari"
       ],
       "Edit contact": [
         "Editar contacte"
@@ -5009,17 +5009,17 @@
         "Verificació humana"
       ],
       "Import as simple event?": [
-        "",
-        ""
+        "Importar com a un esdeveniment simple?",
+        "Importar com a esdeveniments simples?"
       ],
       "Import contacts": [
         "Importar contactes"
       ],
       "Import events": [
-        ""
+        "Importar esdeveniments"
       ],
       "Import failed": [
-        ""
+        "Error en la importació"
       ],
       "Import groups": [
         "Importar grups"
@@ -5112,7 +5112,7 @@
         "Avisar d'un problema"
       ],
       "Request new code": [
-        ""
+        "Demanar un codi nou"
       ],
       "Reset calendar keys": [
         "Restaurar claus de calendari"
@@ -5157,7 +5157,7 @@
         "Seleccioneu l'última data de l'esdeveniment"
       ],
       "Select permissions": [
-        ""
+        "Seleccioneu els permisos"
       ],
       "Select the time to send this notification": [
         "Seleccioneu l'hora per enviar aquesta notificació"
@@ -5172,7 +5172,7 @@
         "Seleccioneu la manera d’enviar aquesta notificació"
       ],
       "Select what to import": [
-        ""
+        "Seleccioneu què voleu importar"
       ],
       "Select when this event will stop happening": [
         "Seleccioneu quan deixarà de succeir aquest esdeveniment"
@@ -5239,7 +5239,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Avui"
       ]
     },
     "Tooltip": {
@@ -5271,7 +5271,7 @@
         "El xifratge de correu electrònic força la signatura del correu a ajudar a autenticar els vostres missatges enviats"
       ],
       "Encrypted data": [
-        ""
+        "Dades xifrades"
       ],
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
@@ -5333,10 +5333,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Cliqueu per reproduir el vídeo"
       ],
       "Replay video": [
-        ""
+        "Reproduir el vídeo"
       ]
     },
     "VPN feature": {
@@ -5484,7 +5484,7 @@
         "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop efectuat el pagament."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-les."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
@@ -5493,13 +5493,13 @@
         "Alguns dels contactes que s'han de combinar tenen errors. Reviseu-los individualment"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "Les dades de contacte estan corrompudes i no es poden mostrar."
       ],
       "The contact failed to load.": [
         "No s'ha pogut carregar el contacte."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "La configuració de data i hora del vostre dispositiu no estan sincronitzats. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "El desxifratge del contingut xifrat ha fallat."
@@ -5517,7 +5517,7 @@
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Perdreu qualsevol personalització que hàgiu fet fins ara."
       ]
     },
     "Weekly recurring event, frequency": {

@@ -1598,12 +1598,12 @@
         "${ activeDownloadsCount } κατεβαίνουν"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "",
-        ""
+        "${ activeDownloadsCount } κατεβαίνει (${ downloadProgress }%)",
+        "${ activeDownloadsCount } κατεβαίνουν (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "",
-        ""
+        "${ activeUploadsCount } ανεβαίνει (${ uploadProgress }%)",
+        "${ activeUploadsCount } ανεβαίνουν (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
@@ -2007,7 +2007,7 @@
         "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        ""
+        "Εάν έχετε ένα από αυτά, συνεχίστε στη ρύθμιση λογαριασμού Proton για να αρχίσετε τη διαδικασία ξεμπλοκαρίσματος."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
@@ -2044,7 +2044,7 @@
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Απλά επιβεβαίωσε την επιλογή σου και εμείς θα κάνουμε τα υπόλοιπα."
+        "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
       "Key fingerprint": [
         "Κλειδί αποτυπώματος"
@@ -2484,7 +2484,7 @@
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your file failed to download.": [
-        "Το φάκελος σας απέτυχε να ληφθεί."
+        "Το αρχείο σας απέτυχε να ληφθεί."
       ],
       "Your file has finished downloading.": [
         "Η λήψη του αρχείου σας ολοκληρώθηκε."
@@ -2499,7 +2499,7 @@
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
       ],
       "Your folder failed to download.": [
-        "Ο φάκελος σας απέτυχε να ληφθεί."
+        "Ο φάκελός σας απέτυχε να ληφθεί."
       ],
       "Your folder has finished downloading.": [
         "Η λήψη του φακέλου σας ολοκληρώθηκε."
@@ -2849,9 +2849,9 @@
       "CVV code": [
         "Κωδικός CVV"
       ],
-      "Delete Drive?": [
-        "Διαγραφή Αρχειοθήκης;",
-        "Διαγραφή Αρχειοθηκών;"
+      "Delete drive?": [
+        "",
+        ""
       ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
@@ -3090,8 +3090,8 @@
       "Unknown file": [
         "Άγνωστο αρχείο"
       ],
-      "Unlock Drive": [
-        "Ξεκλείδωμα Αρχειοθήκης"
+      "Unlock drive": [
+        ""
       ],
       "Unlock drive (recommended)": [
         "Ξεκλείδωμα αρχειοθήκης (συστήνεται)"
@@ -3204,7 +3204,7 @@
         "κάντε κλικ εδώ"
       ],
       "Go to subscription plans": [
-        "Μεταβείτε σε πλάνα συνδρομής"
+        "Μετάβαση στα πακέτα συνδρομής"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -3213,7 +3213,7 @@
         "Τα αρχεία μου"
       ],
       "Pay invoice": [
-        "Πληρωμή υπολοίπου"
+        "Πληρωμή τιμολογίου"
       ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
@@ -3587,7 +3587,7 @@
     },
     "Onboarding Proton Drive Info": {
       "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } είναι αυτήν τη στιγμή στην πρόωρη πρόσβαση και μόνο διαθέσιμος σε χρήστες πλάνων επί πληρωμή."
+        "Το ${ appName } βρίσκεται σε πρώιμη πρόσβαση και διατίθεται μόνο σε χρήστες πακέτου επί πληρωμή."
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
         "${ appName } είναι διαθέσιμη προς το παρόν μόνο εάν ενεργοποιήσετε την Πρόσβαση Beta."
@@ -3767,7 +3767,7 @@
         "Πρόσβαση στο ${ driveAppName } (beta)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Όλα ${ PLAN_NAMES[PLANS.VPNPLUS] } χαρακτηριστικά πλάνου"
+        "Όλα τα χαρακτηριστικά του πακέτου ${ PLAN_NAMES[PLANS.VPNPLUS] }"
       ],
       "Built-in Adblocker (NetShield)": [
         "Ενσωματωμένο Adblocker (NetShield)"
@@ -4146,7 +4146,7 @@
         "Στοιχεία επαφής"
       ],
       "Contact Details": [
-        "Λεπτομέρειες Επαφής"
+        "Στοιχεία Επαφής"
       ],
       "Contact group": [
         "Ομάδα Επαφών"
@@ -4173,7 +4173,7 @@
         "Νόμισμα"
       ],
       "Current plan": [
-        "Τρέχον πλάνο"
+        "Τρέχον πακέτο"
       ],
       "Customize and confirm": [
         "Προσαρμογή και επιβεβαίωση"
@@ -4185,7 +4185,7 @@
         "Προσαρμογή εισαγωγής μηνυμάτων"
       ],
       "Customize your plan": [
-        "Προσαρμόστε το πλάνο σας"
+        "Προσαρμογή του πακέτου σας"
       ],
       "Date": [
         "Ραντεβού"
@@ -4421,7 +4421,7 @@
         "Ανακτήστε τα αρχεία σας"
       ],
       "Select a plan": [
-        "Επιλέξτε ένα πλάνο"
+        "Επιλογή πακέτου"
       ],
       "Select a theme": [
         "Επιλέξτε ένα θέμα"
@@ -4520,7 +4520,7 @@
         "Δεν έχετε ακόμη φακέλους"
       ],
       "Your file is ready to be downloaded": [
-        "Το φάκελος σας είναι έτοιμος για λήψη"
+        "Το αρχείο σας είναι έτοιμο για λήψη"
       ],
       "Your folder is ready to be downloaded": [
         "Ο φάκελός σας είναι έτοιμος για λήψη"

@@ -90,16 +90,16 @@
         "Kérjük vigyázzon magára, amíg a hibát elhárítjuk."
       ],
       "Error: ${ errorMessage }": [
-        ""
+        "Hiba: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Hoppá, valami hiba történt"
       ],
       "Please ${ refresh } or check your connection.": [
-        ""
+        "Kérjük, ${ refresh } vagy ellenőrizze az internetkapcsolatot."
       ],
       "There was a problem connecting to Proton.": [
-        ""
+        "Hiba lépett fel a Proton-hoz történő csatlakozás során."
       ],
       "You may also ${ refresh } or try again later.": [
         "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
@@ -222,7 +222,7 @@
         "Érvénytelen ellenőrző kód"
       ],
       "Request new code": [
-        ""
+        "Új kód kérése"
       ],
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
