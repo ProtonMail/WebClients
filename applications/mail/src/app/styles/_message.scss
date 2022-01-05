@@ -235,10 +235,6 @@
 	transition: 0.1s easing(easeOutSine);
 	transition-property: opacity;
 	// force color until real dark mode
-	&:not(.plain):not(.dark-style) {
-		background: white;
-		color: #262a33;
-	}
 	// as mail content is forced on white bg, button has to be forced as well
 	.toggle-original-message-button {
 		--button-default-border-color: silver;
@@ -260,15 +256,7 @@
 	}
 
 	&.dark-style {
-		&:not(.plain) {
-			filter: invert(1) hue-rotate(180deg) !important;
-			color: var(--optional-email-item-read-background-color);
-			background: var(--optional-email-item-read-background-color-inverted);
-		}
-
-		img {
-			filter: invert(1) hue-rotate(180deg) !important;
-		}
+		background: white;
 	}
 
 	&.message-content-not-set {

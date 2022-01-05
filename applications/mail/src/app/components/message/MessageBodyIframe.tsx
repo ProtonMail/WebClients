@@ -9,7 +9,6 @@ import { useMailboxContainerContext } from '../../containers/mailbox/MailboxCont
 import { MessageState } from '../../logic/messages/messagesTypes';
 import useInitIframeContent from './hooks/useInitIframeContent';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
-
 import { locateHead } from '../../helpers/message/messageHead';
 import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
 import { MESSAGE_IFRAME_PRINT_ID } from './constants';
@@ -27,6 +26,7 @@ interface Props {
     onBlockquoteToggle?: () => void;
     onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
     isPrint?: boolean;
+    hasDarkStyles: boolean;
     message: MessageState;
     labelID: string;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
@@ -43,6 +43,7 @@ const MessageBodyIframe = ({
     onBlockquoteToggle,
     onContentLoaded,
     isPlainText,
+    hasDarkStyles,
     isPrint = false,
     message,
     labelID,
@@ -64,6 +65,7 @@ const MessageBodyIframe = ({
         isPlainText,
         onReady,
     });
+
     const { showToggle, iframeToggleDiv, showBlockquote, setShowBlockquote } = useIframeShowBlockquote({
         blockquoteContent,
         iframeRef,
@@ -73,6 +75,7 @@ const MessageBodyIframe = ({
         onBlockquoteToggle,
     });
     const iframeOffset = useIframeOffset(iframeRef);
+    const iframePrintDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_ID);
 
     useLinkHandler(iframeRootDivRef, mailSettings, {
         onMailTo,
@@ -84,7 +87,11 @@ const MessageBodyIframe = ({
 
     useObserveIframeHeight(initStatus === 'done', iframeRef);
 
-    const iframePrintDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_ID);
+    useEffect(() => {
+        if (iframeRootDivRef.current) {
+            iframeRootDivRef.current?.classList[hasDarkStyles ? 'add' : 'remove']('proton-dark-style');
+        }
+    }, [hasDarkStyles, iframeRootDivRef.current]);
 
     return (
         <>

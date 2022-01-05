@@ -1,13 +1,12 @@
-import { RefObject, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { FeatureCode, useFeature, useTheme } from '@proton/components';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
-import { canSupportDarkStyle } from '../../../helpers/message/messageContent';
 import { applyDarkStyle } from '../../../logic/messages/read/messagesReadActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
-const useMessageDarkStyles = (message: MessageState, isBodyLoaded: boolean, bodyRef: RefObject<HTMLDivElement>) => {
+const useMessageDarkStyles = (message: MessageState) => {
     const darkStylesFeature = useFeature(FeatureCode.DarkStylesInBody);
     const [theme] = useTheme();
     const dispatch = useDispatch();
@@ -18,27 +17,27 @@ const useMessageDarkStyles = (message: MessageState, isBodyLoaded: boolean, body
         return (
             darkStylesFeature.feature?.Value &&
             !message.messageDocument?.noDarkStyle &&
-            isBodyLoaded &&
             isDarkTheme &&
             !isNewsLetter(message.data) &&
-            !isPlainText(message.data) &&
-            canSupportDarkStyle(bodyRef.current)
+            !isPlainText(message.data)
         );
     }, [
         darkStylesFeature.feature?.Value,
-        message.data,
         message.messageDocument?.noDarkStyle,
         isDarkTheme,
-        bodyRef.current,
+        message.data,
+        message.messageDocument?.document,
     ]);
 
     useEffect(() => {
         if (injectDarkStyle) {
-            setTimeout(() => {
-                dispatch(applyDarkStyle({ ID: message.localID, hasDarkStyle: true }));
-            });
+            dispatch(applyDarkStyle({ ID: message.localID, hasDarkStyle: true }));
         }
     }, [message.localID, injectDarkStyle]);
+
+    if (darkStylesFeature.loading) {
+        return isDarkTheme;
+    }
 
     return injectDarkStyle;
 };
