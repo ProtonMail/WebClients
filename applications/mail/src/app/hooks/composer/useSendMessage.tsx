@@ -79,12 +79,13 @@ export const useSendMessage = () => {
                 if (isScheduledMessage) {
                     await dispatch(cancelScheduled(savedMessage.localID));
                     await api(cancelSend(savedMessage.data.ID));
+                    await call();
                     createNotification({ text: c('Message notification').t`Scheduled sending undone` });
                 } else {
                     await api(cancelSend(savedMessage.data.ID));
+                    await call();
                     createNotification({ text: c('Message notification').t`Sending undone` });
                 }
-                await call();
                 // Re-open draft
                 onCompose({
                     existingDraft: {
