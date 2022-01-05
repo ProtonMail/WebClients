@@ -8,7 +8,7 @@ const htmlToElement = (html: string) => {
 
 describe('canSupportDarkStyle', () => {
     it('should return false for empty content', () => {
-        expect(canSupportDarkStyle(null)).toBe(false);
+        expect(canSupportDarkStyle()).toBe(false);
     });
 
     it('should return true for HTML content with no style', () => {

@@ -105,23 +105,23 @@ export const querySelectorAll = (message: Partial<MessageState> | undefined, sel
     ...((message?.messageDocument?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
 ];
 
-export const canSupportDarkStyle = (element: HTMLElement | null) => {
+export const canSupportDarkStyle = (element?: Element) => {
     if (!element) {
         return false;
     }
 
     const STARTING_DEPTH = 0;
-    const MAX_DEPTH = 5;
+    const MAX_DEPTH = 30;
     const nodes = getAllNodesRecursively(element, MAX_DEPTH, STARTING_DEPTH);
 
     return nodes.every((node) => {
         const style = window.getComputedStyle(node);
         const backgroundColor = style.getPropertyValue('background-color') || '#ffffff';
         const fontColor = style.getPropertyValue('color') || '#000000';
-
+        const backgroundColorTc = tinycolor(backgroundColor);
         // rgba(0, 0, 0, 0) is the default value for background-color and is transparent
         return (
-            (tinycolor(backgroundColor)?.toHexString() === '#ffffff' || tinycolor(backgroundColor)?.getAlpha() === 0) &&
+            (backgroundColorTc?.toHexString() === '#ffffff' || backgroundColorTc?.getAlpha() === 0) &&
             tinycolor(fontColor)?.isDark()
         );
     });
