@@ -73,10 +73,10 @@ import useQueuedFunction from '../util/useQueuedFunction';
 import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
 import useDriveCrypto from './useDriveCrypto';
 import { LinkKeys, useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { ShareEvent } from '../../components/DriveEventManager/DriveEventManagerProvider';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../utils/link';
 import { decryptExtendedAttributes, ecryptFolderExtendedAttributes } from '../../utils/drive/extendedAttributes';
-import useDriveEvents from './useDriveEvents';
+import { useDriveEventManager } from '../../components/driveEventManager';
+import { DriveEventsPayload } from '../../components/driveEventManager/interface';
 
 const { CREATE, DELETE, UPDATE, UPDATE_METADATA } = EVENT_TYPES;
 
@@ -98,7 +98,7 @@ function useDrive() {
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
     const { createNotification } = useNotifications();
-    const driveEvents = useDriveEvents();
+    const driveEventManager = useDriveEventManager();
 
     const getShareMeta = async (shareId: string) => {
         const cachedMeta = cache.get.shareMeta(shareId);
@@ -476,13 +476,17 @@ function useDrive() {
             }),
         ]);
 
-        await debouncedRequest(
+        const response = await debouncedRequest(
             queryRenameLink(shareId, linkId, {
                 Name: encryptedName,
                 Hash,
                 SignatureAddress: address.Email,
             })
         );
+
+        await driveEventManager.pollShare(shareId);
+
+        return response;
     };
 
     const createNewFolder = queuedFunction(
@@ -517,7 +521,7 @@ function useDrive() {
                 ? undefined
                 : await ecryptFolderExtendedAttributes(modificationTime, privateKey, addressKey);
 
-            return debouncedRequest<{ Folder: { ID: string } }>(
+            const response = await debouncedRequest<{ Folder: { ID: string } }>(
                 queryCreateFolder(shareId, {
                     Hash,
                     NodeHashKey,
@@ -530,12 +534,16 @@ function useDrive() {
                     XAttr: xattr,
                 })
             );
+
+            await driveEventManager.pollShare(shareId);
+
+            return response;
         },
         5
     );
 
     const moveLink = async (shareId: string, ParentLinkID: string, linkId: string) => {
-        await driveEvents.call(shareId); // Name could have changed while moving
+        await driveEventManager.pollShare(shareId); // Name could have changed while moving
 
         const [meta, parentKeys, { privateKey: addressKey, address }] = await Promise.all([
             getLinkMeta(shareId, linkId),
@@ -598,7 +606,7 @@ function useDrive() {
 
         try {
             await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_REQUEST));
-            await driveEvents.call(shareId);
+            await driveEventManager.pollShare(shareId);
             return { moved, failed };
         } finally {
             cache.set.linksLocked(false, shareId, linkIds);
@@ -823,6 +831,8 @@ function useDrive() {
         // TODO: get share meta from events when BE implements them
         cache.set.emptyShares([{ ShareID: Share.ID, LinkType: linkType }]);
 
+        await driveEventManager.pollShare(shareId);
+
         return {
             Share,
             meta: {
@@ -848,17 +858,19 @@ function useDrive() {
 
         const deletedBatches = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));
 
-        await driveEvents.call(shareId);
+        await driveEventManager.pollShare(shareId);
         return ([] as string[]).concat(...deletedBatches);
     };
 
     const deleteShare = async (shareId: string) => {
-        return api(queryDeleteShare(shareId));
+        const response = api(queryDeleteShare(shareId));
+        await driveEventManager.pollAllDriveEvents();
+        return response;
     };
 
     const handleDriveEvents =
         (shareId: string) =>
-        async ({ Events = [] }: { Events: ShareEvent[] }) => {
+        async ({ Events }: DriveEventsPayload) => {
             const decryptLinkAsync = async (meta: LinkMeta) => {
                 const { privateKey } = meta.ParentLinkID
                     ? await getLinkKeys(shareId, meta.ParentLinkID)

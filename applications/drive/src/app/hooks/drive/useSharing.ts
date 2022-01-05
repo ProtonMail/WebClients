@@ -39,6 +39,7 @@ import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
+import { useDriveEventManager } from '../../components/driveEventManager';
 
 function useSharing() {
     const { createNotification } = useNotifications();
@@ -48,6 +49,7 @@ function useSharing() {
     const api = useApi();
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
+    const driveEventManager = useDriveEventManager();
 
     const encryptSymmetricSessionKey = async (sessionKey: SessionKey, password: string) => {
         const { message } = await encryptSessionKey({
@@ -150,6 +152,8 @@ function useSharing() {
          * meta never gets updated.
          */
         cache.set.shareURLs(new Map([[ShareURL.ShareURLID, ShareURL]]), shareId);
+
+        await driveEventManager.pollAllShareEvents(shareId).catch(console.warn);
 
         return {
             ShareURL: {
@@ -260,6 +264,8 @@ function useSharing() {
             fieldsToUpdate.Password = newPassword;
         }
 
+        await driveEventManager.pollAllDriveEvents().catch(console.warn);
+
         return {
             ...fieldsToUpdate,
             ExpirationTime: ShareURL.ExpirationTime,
@@ -354,8 +360,10 @@ function useSharing() {
         };
     };
 
-    const deleteSharedLink = (sharedURLShareId: string, token: string) => {
-        return api(queryDeleteSharedLink(sharedURLShareId, token));
+    const deleteSharedLink = async (sharedURLShareId: string, token: string) => {
+        const res = api(queryDeleteSharedLink(sharedURLShareId, token));
+        await driveEventManager.pollAllDriveEvents().catch(console.warn);
+        return res;
     };
 
     const deleteMultipleSharedLinks = async (shareId: string, sharedUrlIds: string[]) => {
@@ -373,6 +381,7 @@ function useSharing() {
         );
 
         const deletedIds = await preventLeave(runInQueue(deleteSharedQueue, MAX_THREADS_PER_REQUEST));
+        await driveEventManager.pollAllShareEvents(shareId);
         return ([] as string[]).concat(...deletedIds);
     };
 
