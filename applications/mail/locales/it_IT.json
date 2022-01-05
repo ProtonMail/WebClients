@@ -317,7 +317,7 @@
         "Crittografia"
       ],
       "exclude message content": [
-        ""
+        "escludi il contenuto del messaggio"
       ],
       "Expand composer": [
         "Espandi il compositore"
@@ -657,7 +657,7 @@
         "Recupera dati"
       ],
       "Refine it": [
-        ""
+        "Affinalo"
       ],
       "refresh the page": [
         "aggiorna la pagina"
@@ -721,6 +721,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Search in ${ option.text }": [
+        "Cerca in ${ option.text }"
       ],
       "Search message content": [
         "Cerca il contenuto del messaggio"
@@ -1309,7 +1312,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        ""
+        "Ha un evento in calendario"
       ]
     },
     "Calendar feature": {
@@ -3952,7 +3955,7 @@
         "Screenshot allegato/i"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
+        "La ricerca sta impiegando troppo tempo? ${ dropdownButton } o ${ toggleOffButton } da questa sessione di ricerca."
       ],
       "Seems like you are all caught up for now": [
         "Sembra che sia tutto a posto al momento"
@@ -5522,7 +5525,7 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        ""
+        "Invio programmato annullato"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Pianificazione annullata. Il messaggio è stato spostato nelle Bozze."

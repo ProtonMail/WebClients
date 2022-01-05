@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiviraj ${ Name }@pm.me"
@@ -3956,6 +3956,9 @@
       "Loading preview": [
         "Učitavanje pregleda"
       ],
+      "Log in to ProtonMail to activate your address": [
+        ""
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Zapisi uključuju pokušaje autentikacije za sve Proton usluge koje koriste vaše Proton vjerodajnice."
       ],
@@ -5676,6 +5679,9 @@
       "Proton username": [
         "Proton korisničko ime"
       ],
+      "ProtonMail address": [
+        ""
+      ],
       "ProtonMail footer": [
         "ProtonMail podnožje"
       ],
@@ -6051,6 +6057,9 @@
       ],
       "Learn more": [
         "Saznajte više"
+      ],
+      "Not activated": [
+        ""
       ],
       "Pay invoice": [
         "Plati račun"
@@ -7211,14 +7220,11 @@
       "Auto reply": [
         "Automatski odgovori"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         ""
       ],
       "Calendars": [
         "Kalendari"
-      ],
-      "Domain Names": [
-        "Nazivi domena"
       ],
       "Domain names": [
         "Nazivi domena"
@@ -7226,20 +7232,20 @@
       "Email privacy": [
         ""
       ],
-      "Encryption & keys": [
-        "Šifriranje i ključevi"
+      "Encryption and keys": [
+        ""
       ],
       "Filters": [
         "Filtri"
       ],
-      "Folders & labels": [
-        "Mape i oznake"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Općenito"
       ],
-      "Identity & addresses": [
-        "Identitet i adrese"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7253,11 +7259,11 @@
       "Organization": [
         "Organizacija"
       ],
-      "Organization & keys": [
-        "Organizacija i ključevi"
+      "Organization and keys": [
+        ""
       ],
-      "Users & addresses": [
-        "Korisnici i adrese"
+      "Users and addresses": [
+        ""
       ],
       "VPN apps": [
         "VPN aplikacije"
@@ -7678,6 +7684,9 @@
       "3. Select config file and download": [
         "3. Odaberite konfiguracijsku datoteku i preuzmite"
       ],
+      "Account and password": [
+        ""
+      ],
       "Account recovery": [
         ""
       ],
@@ -7783,7 +7792,7 @@
       "Back": [
         "Natrag"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         ""
       ],
       "Billing cycle": [
@@ -7888,8 +7897,8 @@
       "Currency": [
         "Valuta"
       ],
-      "Current & past imports": [
-        "Trenutni i prošli uvozi"
+      "Current and past imports": [
+        ""
       ],
       "Current plan": [
         "Trenutni plan"
@@ -7960,8 +7969,8 @@
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
       ],
-      "Display name & signature": [
-        "Zaslonsko ime i potpis"
+      "Display name and signature": [
+        ""
       ],
       "Domain names": [
         "Nazivi domena"
@@ -8008,8 +8017,8 @@
       "Enable keyboard shortcuts": [
         "Omogući tipkovne prečace"
       ],
-      "Encryption & keys": [
-        "Šifriranje i ključevi"
+      "Encryption and keys": [
+        ""
       ],
       "Error": [
         "Pogreška"
@@ -8044,8 +8053,8 @@
       "Folders": [
         "Mape"
       ],
-      "Folders & labels": [
-        "Mape i oznake"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Općenito"
@@ -8062,8 +8071,8 @@
       "Human verification": [
         "Ljudska provjera"
       ],
-      "Identity & addresses": [
-        "Identitet i adrese"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8115,8 +8124,8 @@
       "Labels": [
         "Oznake"
       ],
-      "Language & time": [
-        "Jezik i vrijeme"
+      "Language and time": [
+        ""
       ],
       "Layout": [
         "Izgled"
@@ -8166,8 +8175,8 @@
       "Organization": [
         "Organizacija"
       ],
-      "Organization & keys": [
-        "Organizacija i ključevi"
+      "Organization and keys": [
+        ""
       ],
       "Other": [
         "Ostalo"
@@ -8175,10 +8184,7 @@
       "Password": [
         "Lozinka"
       ],
-      "Password & keys": [
-        "Lozinka i ključevi"
-      ],
-      "Password & security": [
+      "Password and keys": [
         ""
       ],
       "Passwords": [
@@ -8186,9 +8192,6 @@
       ],
       "Pay invoice": [
         "Plati račun"
-      ],
-      "Payment": [
-        "Plaćanje"
       ],
       "Payment details": [
         "Detalji o plaćanju"
@@ -8264,6 +8267,9 @@
       ],
       "Restore administrator privileges": [
         "Vraćanje administratorskih ovlasti"
+      ],
+      "Security": [
+        ""
       ],
       "Security logs": [
         "Sigurnosni zapisi"
@@ -8399,6 +8405,9 @@
       ],
       "Upgrade": [
         "Nadogradnja"
+      ],
+      "Username": [
+        ""
       ],
       "Users and addresses": [
         "Korisnici i adrese"
@@ -8677,6 +8686,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanim PGP postavkama koje su postavljene ispod."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

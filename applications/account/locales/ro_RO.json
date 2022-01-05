@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
@@ -602,7 +602,7 @@
         "Selectare fișiere"
       ],
       "Select language for invitation emails": [
-        "Selectați limba pentru e-mailurile de invitație"
+        "Selectare limbă pentru conținutul invitaților"
       ],
       "Select plan": [
         "Selectare plan"
@@ -3084,7 +3084,7 @@
         "Accesați ${ calendarLink } din setările Outlook.com."
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Mergeți la ${ calendarViewLink } în Yahoo Mail"
+        "Accesați ${ calendarViewLink } din Yahoo Mail"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Mutați cursorul peste calendarul de importat și deschideți meniul derulant."
@@ -3955,6 +3955,9 @@
       ],
       "Loading preview": [
         "Se încarcă previzualizarea"
+      ],
+      "Log in to ProtonMail to activate your address": [
+        "Autentificați-vă în ProtonMail pentru vă activa adresa."
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Jurnalele includ încercările de autentificare pentru toate serviciile Proton care folosesc acreditările ProtonMail."
@@ -5676,6 +5679,9 @@
       "Proton username": [
         "Utilizator Proton"
       ],
+      "ProtonMail address": [
+        "Adresa ProtonMail"
+      ],
       "ProtonMail footer": [
         "Subsol ProtonMail"
       ],
@@ -5713,7 +5719,7 @@
         "Trimitere autorăspuns"
       ],
       "Send invites in": [
-        "Trimiteți invitații în"
+        "Trimitere invitații în"
       ],
       "Show secondary time zone": [
         "Afișare fus orar secundar"
@@ -6051,6 +6057,9 @@
       ],
       "Learn more": [
         "Detalii"
+      ],
+      "Not activated": [
+        "Neactivat"
       ],
       "Pay invoice": [
         "Plată factură"
@@ -6546,7 +6555,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Vă rugăm să rețineți că ${ boldNextStep } solicitat de aplicație pentru a începe importul."
+        "Vă rugăm să rețineți că ${ boldNextStep } solicitate de către aplicație pentru a începe importarea."
       ]
     },
     "Onboarding Proton": {
@@ -7211,14 +7220,11 @@
       "Auto reply": [
         "Auto răspuns"
       ],
-      "Backup & Export": [
-        "Conservare și exportare"
+      "Backup and export": [
+        "Conservare şi exportare"
       ],
       "Calendars": [
         "Calendare"
-      ],
-      "Domain Names": [
-        "Nume domenii"
       ],
       "Domain names": [
         "Nume de domenii"
@@ -7226,19 +7232,19 @@
       "Email privacy": [
         "Confidențialitate mesaje"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "Criptare și chei"
       ],
       "Filters": [
         "Filtre"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "Foldere și etichete"
       ],
       "General": [
         "Generale"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "Identitate și adrese"
       ],
       "IMAP/SMTP": [
@@ -7253,10 +7259,10 @@
       "Organization": [
         "Organizația"
       ],
-      "Organization & keys": [
-        "Organizație și chei"
+      "Organization and keys": [
+        "Organizare și chei"
       ],
-      "Users & addresses": [
+      "Users and addresses": [
         "Utilizatori și adrese"
       ],
       "VPN apps": [
@@ -7678,6 +7684,9 @@
       "3. Select config file and download": [
         "3. Selectați fișierul de configurare și descărcați-l"
       ],
+      "Account and password": [
+        "Cont și parolă"
+      ],
       "Account recovery": [
         "Recuperare cont"
       ],
@@ -7783,8 +7792,8 @@
       "Back": [
         "Înapoi"
       ],
-      "Backup & Export": [
-        "Conservare şi exportare"
+      "Backup and export": [
+        "Copie de rezervă și export"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -7888,7 +7897,7 @@
       "Currency": [
         "Moneda"
       ],
-      "Current & past imports": [
+      "Current and past imports": [
         "Importări actuale și anterioare"
       ],
       "Current plan": [
@@ -7960,8 +7969,8 @@
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
       ],
-      "Display name & signature": [
-        "Nume afișat și semnătură"
+      "Display name and signature": [
+        "Numele afișat și semnătura"
       ],
       "Domain names": [
         "Nume domenii"
@@ -8008,7 +8017,7 @@
       "Enable keyboard shortcuts": [
         "Activare combinații de taste"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "Criptare și chei"
       ],
       "Error": [
@@ -8044,7 +8053,7 @@
       "Folders": [
         "Foldere"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "Foldere și etichete"
       ],
       "General": [
@@ -8062,7 +8071,7 @@
       "Human verification": [
         "Verificare persoană"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "Identitate și adrese"
       ],
       "IMAP/SMTP": [
@@ -8115,7 +8124,7 @@
       "Labels": [
         "Etichete"
       ],
-      "Language & time": [
+      "Language and time": [
         "Limba și ora"
       ],
       "Layout": [
@@ -8166,7 +8175,7 @@
       "Organization": [
         "Organizația"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "Organizație și chei"
       ],
       "Other": [
@@ -8175,20 +8184,14 @@
       "Password": [
         "Parola"
       ],
-      "Password & keys": [
-        "Parole și chei"
-      ],
-      "Password & security": [
-        "Parolă şi securitate"
+      "Password and keys": [
+        "Parolă și chei"
       ],
       "Passwords": [
         "Parole"
       ],
       "Pay invoice": [
         "Plată factură"
-      ],
-      "Payment": [
-        "Plată"
       ],
       "Payment details": [
         "Detalii plată"
@@ -8265,6 +8268,9 @@
       "Restore administrator privileges": [
         "Restaurare privilegii administrator"
       ],
+      "Security": [
+        "Securitate"
+      ],
       "Security logs": [
         "Jurnale de securitate"
       ],
@@ -8278,7 +8284,7 @@
         "Selectare grup contacte"
       ],
       "Select permissions": [
-        "Selectați permisiunile"
+        "Selectare permisiuni"
       ],
       "Select plan": [
         "Selectare plan"
@@ -8399,6 +8405,9 @@
       ],
       "Upgrade": [
         "Migrare"
+      ],
+      "Username": [
+        "Nume utilizator"
       ],
       "Users and addresses": [
         "Utilizatori și adrese"
@@ -8677,6 +8686,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Semnare automată toate mesajele trimise, astfel încât utilizatorii să vă poată verifica autenticitatea mesajelor. Aceasta se poate face în combinație cu setările implicite PGP care pot fi configurate mai jos."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versiunea stabilă"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a Tor Browser nu este suportată. Vă rugăm să actualizați la cea mai recentă ${ stableRelease }"
       ]
     },
     "Update font modal": {

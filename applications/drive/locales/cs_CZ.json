@@ -15,19 +15,19 @@
         "${ BRAND_NAME } obchod"
       ],
       "Activate recovery": [
-        ""
+        "Aktivovat obnovení"
       ],
       "Add": [
         "Přidat"
       ],
       "Add address": [
-        ""
+        "Přidat adresu"
       ],
       "Add contact": [
         "Přidat kontakt"
       ],
       "Add email": [
-        ""
+        "Přidat e-mail"
       ],
       "Add group": [
         "Přidat skupinu"
@@ -39,7 +39,7 @@
         "Přidat novou skupinu"
       ],
       "Add phone number": [
-        ""
+        "Přidat telefonní číslo"
       ],
       "Add screenshot(s)": [
         "Přidat snímek(y) obrazovky"
@@ -78,7 +78,7 @@
         "Komunikace s námi"
       ],
       "Check import progress": [
-        ""
+        "Zkontrolovat průběh importu"
       ],
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
@@ -153,7 +153,7 @@
         "Vytvořit novou složku"
       ],
       "Customize": [
-        ""
+        "Přizpůsobit"
       ],
       "Decrease": [
         "Snížit"
@@ -198,7 +198,7 @@
         "Stáhnout"
       ],
       "Drive Locked": [
-        ""
+        "Disk uzamčen"
       ],
       "Edit": [
         "Upravit"
@@ -207,7 +207,7 @@
         "Upravit e-mailovou adresu"
       ],
       "Edit label": [
-        ""
+        "Upravit štítek"
       ],
       "Edit phone number": [
         "Upravit telefonní číslo"
@@ -231,7 +231,7 @@
         "Přeposlat jako přílohu"
       ],
       "Get link": [
-        ""
+        "Získat odkaz"
       ],
       "Get started": [
         "Začínáme"
@@ -249,13 +249,13 @@
         "Skrýt pokročilé nastavení PGP"
       ],
       "Hide folders": [
-        ""
+        "Skrýt složky"
       ],
       "Hide info": [
         "Skrýt informace"
       ],
       "Hide labels": [
-        ""
+        "Skrýt štítky"
       ],
       "I have a question": [
         "Mám dotaz"
@@ -267,7 +267,7 @@
         "Importovat"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importovat z .csv nebo vCard"
       ],
       "Increase": [
         "Zvýšit"
@@ -291,7 +291,7 @@
         "Rozvržení mailové schránky"
       ],
       "Manage link": [
-        ""
+        "Správa odkazu"
       ],
       "Mark for deletion": [
         "Označit pro odstranění"
@@ -366,7 +366,7 @@
         "Předchozí měsíc"
       ],
       "Quit": [
-        ""
+        "Odejít"
       ],
       "Re-sign": [
         "Znovu podepsat"
@@ -441,7 +441,7 @@
         "Vybrat plán"
       ],
       "Set recovery phrase": [
-        ""
+        "Nastavit obnovovací frázi"
       ],
       "Share": [
         "Sdílet"
@@ -462,13 +462,13 @@
         "Zobrazit pokročilá nastavení PGP"
       ],
       "Show folders": [
-        ""
+        "Zobrazit složky"
       ],
       "Show info": [
         "Zobrazit informace"
       ],
       "Show labels": [
-        ""
+        "Zobrazit štítky"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -489,7 +489,7 @@
         "Spusťte nastavení"
       ],
       "Stay": [
-        ""
+        "Zůstat"
       ],
       "Stop sharing": [
         "Zrušit sdílení"
@@ -522,10 +522,10 @@
         "Nedůvěřovat"
       ],
       "Update recovery file": [
-        ""
+        "Aktualizovat soubor pro obnovení"
       ],
       "Update recovery phrase": [
-        ""
+        "Aktualizovat obnovovací frázi"
       ],
       "Upgrade": [
         "Rozšířit"
@@ -867,7 +867,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "Kalendář se nepodařilo dešifrovat"
       ],
       "Calendar is syncing": [
         "Kalendář se synchronizuje"
@@ -879,7 +879,7 @@
         "Odkaz na kalendář není přístupný"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Odkaz na kalendář je dočasně nedostupný"
       ],
       "Failed to sync calendar": [
         "Synchronizace kalendáře selhala"
@@ -901,7 +901,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Ukončit přizpůsobení importu?"
       ]
     },
     "Contact field label": {
@@ -1078,12 +1078,12 @@
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Vypnuto"
       ]
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Zapnuto"
       ]
     },
     "Error": {
@@ -1106,7 +1106,7 @@
         "Dosažen limit kalendářů"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
       ],
       "Can't validate email, try again later": [
         "Nemůžeme ověřit váš e-mail, zkuste to později"
@@ -1115,7 +1115,7 @@
         "Nemůžeme ověřit váš telefon, zkuste to později"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Objednávka vypršela, zkuste to prosím znovu"
       ],
       "Contact could not be saved": [
         "Kontakt nebylo možné uložit"
@@ -1130,16 +1130,16 @@
         "Nepodařilo se vygenerovat klíče"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        "",
-        "",
-        ""
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
       ],
       "Email address invalid": [
         "E-mailová adresa je neplatná"
@@ -1154,31 +1154,31 @@
         "Chyba při připojování k Bitcoin API."
       ],
       "Failed to download a file": [
-        ""
+        "Nepodařilo se stáhnout soubor"
       ],
       "Failed to download a folder": [
-        ""
+        "Nepodařilo se stáhnout složku"
       ],
       "Failed to load the link": [
         "Nepodařilo se načíst odkaz"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "Soubor \"${ item.name }\" nelze nahrát kvůli chybě \"${ error }\""
       ],
       "File \"${ name }\" is already downloading": [
-        ""
+        "Soubor \"${ name }\" se již stahuje"
       ],
       "File cannot be merged with folder": [
-        ""
+        "Soubor nelze sloučit se složkou"
       ],
       "File has no contents to preview": [
         "Soubor nemá žádný obsah k náhledu"
       ],
       "File selection is already downloading": [
-        ""
+        "Vybraný soubor se již stahuje"
       ],
       "Folder \"${ name }\" is already downloading": [
-        ""
+        "Složka \"${ name }\" se již stahuje"
       ],
       "Folder name cannot be empty": [
         "Název složky nemůže být prázdné"
@@ -1223,10 +1223,10 @@
         "Název štítku nemůže být prázdné"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
+        "Sloučit nejméně ${ calendarToFixCount } kalendáře s existujícími Proton kalendáři",
+        "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři",
+        "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři"
       ],
       "Missing signature": [
         "Chybí podpis"
@@ -1235,7 +1235,7 @@
         "Jméno držitele karty je povinná položka"
       ],
       "No data to import": [
-        ""
+        "Žádná data k importu"
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -1256,7 +1256,7 @@
         "Některé skupiny neobsahují kontakty: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organizace nebyla rozpoznána. Zkuste to znovu."
       ],
       "Passwords do not match": [
         "Hesla se neshodují"
@@ -1274,10 +1274,10 @@
         "Platební proces transakce není podporován"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty."
       ],
       "Preferences could not be saved": [
         "Zvýhodnění Preference nebylo možné uložit"
@@ -1307,10 +1307,10 @@
         "Některé skupiny nelze smazat"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Některé z vašich názvů štítků nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ProtonMail. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
@@ -1337,28 +1337,28 @@
         "Minimální platba, kterou lze zadat je ${ _price2 }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        ""
+        "Nová revize původního souboru ještě nebyla nahrána, zkuste to prosím později"
       ],
       "The original file has missing active revision": [
-        ""
+        "V původním souboru chybí aktivní revize"
       ],
       "The original file has missing hash key": [
-        ""
+        "V původním souboru chybí hash klíč"
       ],
       "The original file has missing session key": [
-        ""
+        "V původním souboru chybí klíč relace"
       ],
       "The original file is not uploaded yet, please try again later": [
-        ""
+        "Původní soubor ještě nebyl nahrán, zkuste to prosím později"
       ],
       "The original folder not found": [
-        ""
+        "Původní složka nebyla nalezena"
       ],
       "The original folder or file not found": [
-        ""
+        "Původní složka nebo soubor nebyl nalezen"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
       ],
       "There was an error when exporting the contacts vCards": [
         "Při exportu kontaktů do vCard došlo k chybě"
@@ -1494,7 +1494,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } byl aktualizován"
       ]
     },
     "Free price": {
@@ -1661,22 +1661,22 @@
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nový kalendář",
+        "${ calendarsToBeCreatedCount } nové kalendáře",
+        "${ calendarsToBeCreatedCount } nových kalendářů",
+        "${ calendarsToBeCreatedCount } nových kalendářů"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMerged } sloučený kalendář",
+        "${ calendarsToBeMerged } sloučené kalendáře",
+        "${ calendarsToBeMerged } sloučených kalendářů",
+        "${ calendarsToBeMerged } sloučených kalendářů"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMergedCount } sloučený kalendář",
+        "${ calendarsToBeMergedCount } sloučené kalendáře",
+        "${ calendarsToBeMergedCount } sloučených kalendářů",
+        "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
       "${ canceledCount } canceled": [
         "",
@@ -1709,25 +1709,25 @@
         "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidáte do skupiny."
       ],
       "${ doneCount } finished": [
-        "",
+        "${ doneCount } hotovo",
         "",
         "",
         ""
       ],
       "${ doneDownloadsCount } downloaded": [
-        "",
+        "${ doneDownloadsCount } staženo",
         "",
         "",
         ""
       ],
       "${ doneUploadsCount } uploaded": [
-        "",
+        "${ doneUploadsCount } nahráno",
         "",
         "",
         ""
       ],
       "${ errorCount } failed": [
-        "",
+        "${ errorCount } selhal",
         "",
         "",
         ""
@@ -1748,16 +1748,16 @@
         "${ namesWithoutLast } a ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContactGroups } skupina kontaktů",
+        "${ numContactGroups } skupiny kontaktů",
+        "${ numContactGroups } skupin kontaktů",
+        "${ numContactGroups } skupin kontaktů"
       ],
       "${ numContacts } contact": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContacts } kontakt",
+        "${ numContacts } kontakty",
+        "${ numContacts } kontaktů",
+        "${ numContacts } kontaktů"
       ],
       "${ pausedCount } paused": [
         "",
@@ -1775,22 +1775,22 @@
         "${ saveExtra20 } za předplatné VPN a e-mailu."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedFoldersCount } vybraná složka",
+        "${ selectedFoldersCount } vybrané složky",
+        "${ selectedFoldersCount } vybraných složek",
+        "${ selectedFoldersCount } vybraných složek"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedFoldersCount } vybraný štítek",
+        "${ selectedFoldersCount } vybrané štítky",
+        "${ selectedFoldersCount } vybraných štítků",
+        "${ selectedFoldersCount } vybraných štítků"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -1868,16 +1868,16 @@
         "Po provedení platby pomocí Bitcoinu, postupujte podle níže uvedených pokynů pro upgrade."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        "",
-        "",
-        ""
+        "Vše (${ totalFoldersCount } složka)",
+        "Vše (${ totalFoldersCount } složky)",
+        "Vše (${ totalFoldersCount } složek)",
+        "Vše (${ totalFoldersCount } složky)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        "",
-        "",
-        ""
+        "Vše (${ totalFoldersCount } štítek)",
+        "Vše (${ totalFoldersCount } štítky)",
+        "Vše (${ totalFoldersCount } štítků)",
+        "Vše (${ totalFoldersCount } štítků)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Umožňuje hostovat e-maily pro Vaši(e) vlastní doménu(y) na ${ mailAppName }, např. jan.smith@example.com"
@@ -1886,22 +1886,22 @@
         "Částka je nižší než povolené minumum (${ amount })."
       ],
       "An active recovery file": [
-        ""
+        "Aktualizovat soubor pro obnovení"
       ],
       "and": [
-        ""
+        "a"
       ],
       "Anyone with this link can access your file.": [
         "Kdokoliv s tímto odkazovým řádkem může mít přístup k Vašim souborům."
       ],
       "Anyone with this link can access your folder.": [
-        ""
+        "Kdokoli s tímto odkazem může získat přístup k vaší složce."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
       ],
       "Are you sure you want to permanently delete selected item from trash?": [
-        "",
+        "Jste si jisti, že chcete vybranou položku z koše trvale odstranit?",
         "",
         "",
         ""
@@ -1952,7 +1952,7 @@
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
       "Close this screen to exit.": [
-        ""
+        "Pro ukončení zavřete tuto obrazovku."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Uzavíráme správce přenosu, budou zrušeny aktivní přenosy, jste si touto akcí jistí?"
@@ -1964,13 +1964,13 @@
         "Připojení"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        ""
+        "Pokračujte v používání ${ appName } a odemkněte disk později"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Vytvořit ${ calendarsToBeCreated } nový kalendář",
+        "Vytvořit ${ calendarsToBeCreated } nové kalendáře",
+        "Vytvořit ${ calendarsToBeCreated } nových kalendářů",
+        "Vytvořit ${ calendarsToBeCreated } nových kalendářů"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvořte štítek pro importované zprávy, vyberte období, za které chcete provést import a složky, které chcete importovat."
@@ -1982,7 +1982,7 @@
         "Vytvořit novou skupinu kontaktů"
       ],
       "Create in": [
-        ""
+        "Vytvořit v"
       ],
       "Create links and share your files with others.": [
         "Vytvořte odkazové řádky a sdílejte své soubory s ostatními."
@@ -1994,16 +1994,16 @@
         "Vytvářím odkazový řádek k souboru"
       ],
       "Creating link to folder": [
-        ""
+        "Vytvoření odkazu pro složku"
       ],
       "Creating share": [
         "Vytvářím sdílení"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "Jsou podporovány CSV soubory z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
       ],
       "Delete drive": [
-        "",
+        "Odstranit Disk",
         "",
         "",
         ""
@@ -2105,25 +2105,25 @@
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        ""
+        "Pokud máte některý z nich, pokračujte do nastavení účtu Proton, abyste\nzahájit proces odblokování."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendáře",
+        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů"
       ],
       "Import from": [
         "Importovat z"
       ],
       "Import in progress": [
-        ""
+        "Import probíhá"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Included": [
         "Zahrnuto"
@@ -2144,19 +2144,19 @@
         "Připojení k internetu obnoveno."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
       "Key fingerprint": [
         "Klíč otisk prstu"
       ],
       "Large imports can take several days.": [
-        ""
+        "Dokončení velkých importů může trvat i několik dní."
       ],
       "Learn more": [
         "Dozvědět se více"
       ],
       "Link copied to clipboard": [
-        ""
+        "Odkaz zkopírován do schránky"
       ],
       "Link expires: ": [
         "Expirace odkazového řádku: "
@@ -2177,7 +2177,7 @@
         "Načítání sdílení"
       ],
       "Merged": [
-        ""
+        "Sloučeno"
       ],
       "More": [
         "Více"
@@ -2198,7 +2198,7 @@
         "Nové"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Dále se musíte přihlásit ke svému účtu Google a povolit nám přístup k Vašim datům."
       ],
       "No": [
         "Ne"
@@ -2231,7 +2231,7 @@
         "Nelze změnit"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Poznámka: Na zařízeních, kde jste nainstalovali ${ appName }, mohou být data stále dostupná lokálně."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Počet VPN připojení, která mohou být přiřazena uživatelům. Každé připojené zařízení použije jedno VPN připojení."
@@ -2249,7 +2249,7 @@
         "Jenom lidé s tímto odkazovým řádkem a heslem, můžou mít přístup k tomuto souboru."
       ],
       "Only the people with the link and the password can access this folder.": [
-        ""
+        "Do této složky mají přístup pouze osoby s Url odkazem a heslem."
       ],
       "Paused": [
         "Pozastaveno"
@@ -2261,7 +2261,7 @@
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
       "Permanently delete all files in your drive": [
-        ""
+        "Trvalé odstranění všech souborů na disku"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy."
@@ -2306,7 +2306,7 @@
         "Připravuji odkazový řádek k souboru"
       ],
       "Preparing link to folder": [
-        ""
+        "Příprava odkazu na složku"
       ],
       "Preview": [
         "Náhled"
@@ -2348,7 +2348,7 @@
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery nejsou dostupné. Prosím zkuste to znovu za pár minut"
@@ -2366,7 +2366,7 @@
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        ""
+        "Některé vaše soubory již nejsou přístupné. Obnovte přístup k souborům. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
@@ -2411,16 +2411,16 @@
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        ""
+        "Tento odkaz byl vytvořen v\nv předchozí verzi a nelze jej upravit. Odstraňte tento odkaz a vytvořte nový.\nnový, abyste změnili nastavení."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Tento odkazový řádek bude permanentně deaktivován. Nikdo s tímto odkazovým řádkem nebude mít přístup k tvému souboru. Pro opětné sdílení souboru, budete potřebovat nový odkazový řádek."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        ""
+        "Tento odkaz bude trvale deaktivován. Nikdo s tímto odkazem nebude mít přístup k vaší složce. Chcete-li složku znovu sdílet, budete potřebovat nový odkaz."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "",
+        "Tím odstraníte odkaz a zrušíte přístup k vašemu souboru nebo složce pro každého, kdo má tento odkaz.",
         "",
         "",
         ""
@@ -2447,22 +2447,22 @@
         "Chcete-li použít ověření adresy, musíte nastavit povolení důvěryhodných klíčů a navázat tak na jeden nebo více dostupných veřejných klíčů, včetně primárního klíče pro tuto adresu. Zabráníte tak použití falešných šifrovacích klíčů."
       ],
       "Transfer canceled for file \"${ name }\"": [
-        ""
+        "Přenos zrušen pro soubor \"${ name }\""
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        ""
+        "Přenos zrušen pro složku \"${ name }\""
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        ""
+        "Přenos vynechán pro soubor \"${ file.name }\""
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        ""
+        "Přenos přeskočen pro složku \"${ folderName }\""
       ],
       "Trash": [
         "Koš"
       ],
       "Unlock drive to recover files": [
-        ""
+        "Odemknutí disku pro obnovení souborů"
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -2498,7 +2498,7 @@
         "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Po dokončení importu Vás budeme informovat."
       ],
       "Week": [
         "Týden"
@@ -2507,10 +2507,10 @@
         "Co chcete udělat?"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Co chcete importovat z účtu Google?"
       ],
       "What would you like to do?": [
-        ""
+        "Co byste chtěli dělat?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -2528,10 +2528,10 @@
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Můžete zkontrolovat průběh ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -2579,7 +2579,7 @@
         "Z důvodu bezpečnosti, Vaše banka vyžaduje ověření pomocí 3-D Secure."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
       ],
       "Your download has been canceled.": [
         "Stahování bylo přerušeno."
@@ -2597,28 +2597,28 @@
         "Soubor se stahuje."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        ""
+        "Vaše soubory již nejsou přístupné z důvodu resetování hesla. Pro obnovení přístupu znovu nahrajte starý šifrovací klíč. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
       ],
       "Your folder failed to download.": [
-        ""
+        "Vaši složku se nepodařilo stáhnout."
       ],
       "Your folder has finished downloading.": [
-        ""
+        "Stahování složky bylo dokončeno."
       ],
       "Your folder is being downloaded.": [
-        ""
+        "Právě se stahuje vaše složka."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
       ],
       "Your previous password": [
-        ""
+        "Vaše předchozí heslo"
       ],
       "Your previous recovery phrase": [
-        ""
+        "Vaše předchozí fráze pro obnovu"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
@@ -2857,17 +2857,17 @@
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "Vypnuto"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "Zapnuto"
       ]
     },
     "Label": {
       "(Coming soon)": [
-        ""
+        "(již brzy)"
       ],
       "(Expired)": [
         "(Vypršelo)"
@@ -2894,7 +2894,7 @@
         "Použít na všechny duplicitní složky"
       ],
       "Apply to selection": [
-        ""
+        "Použít pro výběr"
       ],
       "Audio file": [
         "Zvukový soubor"
@@ -2915,7 +2915,7 @@
         "Částka BTC:"
       ],
       "Calendars": [
-        ""
+        "Kalendáře"
       ],
       "Cancel": [
         "Zrušit"
@@ -2936,10 +2936,10 @@
         "Město"
       ],
       "Completed": [
-        ""
+        "Dokončeno"
       ],
       "Contacts": [
-        ""
+        "Kontakty"
       ],
       "Copy": [
         "Kopírovat"
@@ -2953,11 +2953,11 @@
       "CVV code": [
         "Kód CVV"
       ],
-      "Delete Drive?": [
-        "",
-        "",
-        "",
-        ""
+      "Delete drive?": [
+        "Smazat disk?",
+        "Smazat disky?",
+        "Smazat disky?",
+        "Smazat disky?"
       ],
       "Display name": [
         "Zobrazované jméno"
@@ -2972,7 +2972,7 @@
         "Formát e-mailu"
       ],
       "Emails": [
-        ""
+        "E-maily"
       ],
       "Enable Beta Access": [
         "Zapnout přístup do beta verze"
@@ -2981,7 +2981,7 @@
         "Šifrovat e-maily"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Zadejte název organizace pro potvrzení"
       ],
       "Enter the 6-digit code": [
         "Zadejte 6-místný kód"
@@ -3014,13 +3014,13 @@
         "Složka"
       ],
       "Folder location": [
-        ""
+        "Umístění složky"
       ],
       "Folder name": [
         "Název složky"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Od: ${ importedEmail }"
       ],
       "Get your own ${ appName }": [
         "Získejte své vlastní ${ appName }"
@@ -3032,40 +3032,40 @@
         "Obrázek"
       ],
       "Import all messages": [
-        ""
+        "Importovat všechny zprávy"
       ],
       "Import contacts": [
         "Importovat kontakty"
       ],
       "Import interval": [
-        ""
+        "Interval pro import"
       ],
       "Import to email address": [
-        ""
+        "Importovat na e-mailovou adresu"
       ],
       "Keyboard shortcuts": [
         "Klávesové zkratky"
       ],
       "Label messages as": [
-        ""
+        "Označte zprávu jako"
       ],
       "Last 12 months only": [
-        ""
+        "Pouze posledních 12 měsíců"
       ],
       "Last 3 months only": [
-        ""
+        "Pouze poslední 3 měsíce"
       ],
       "Last month only": [
-        ""
+        "Pouze minulý měsíc"
       ],
       "Mailbox password": [
         "Heslo k e-mailové schránce"
       ],
       "Manage folders": [
-        ""
+        "Správa složek"
       ],
       "Manage labels": [
-        ""
+        "Správa štítků"
       ],
       "Merge a folder": [
         "Sloučit složku"
@@ -3080,7 +3080,7 @@
         "Nikdy"
       ],
       "Notification": [
-        ""
+        "Oznámení"
       ],
       "Operating system": [
         "Operační systém"
@@ -3095,7 +3095,7 @@
         "Plátce"
       ],
       "PGP scheme": [
-        ""
+        "PGP Schéma"
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -3176,10 +3176,10 @@
         "Text"
       ],
       "This will permanently delete all files in your locked drive.": [
-        ""
+        "Tím se trvale odstraní všechny soubory na uzamčeném disku."
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Pro: ${ emailAddress }"
       ],
       "Total": [
         "Celkem"
@@ -3196,14 +3196,14 @@
       "Unknown file": [
         "Neznámý soubor"
       ],
-      "Unlock Drive": [
-        ""
+      "Unlock drive": [
+        "Odemknout disk"
       ],
       "Unlock drive (recommended)": [
-        ""
+        "Odemknutí disku (doporučeno)"
       ],
       "Unlock later": [
-        ""
+        "Odemknout později"
       ],
       "Upload anyway": [
         "Přesto nahrát"
@@ -3227,7 +3227,7 @@
         "Co se stalo?"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        ""
+        "Ano, chci trvale odstranit\nsvé staré soubory"
       ],
       "ZIP": [
         "PSČ"
@@ -3274,21 +3274,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Vytvořit složku"
       ],
       "Create label": [
-        ""
+        "Vytvořit štítek"
       ],
       "Edit folder": [
-        ""
+        "Upravit složku"
       ],
       "Edit label": [
-        ""
+        "Upravit štítek"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } byl vytvořen"
       ]
     },
     "Layout mode": {
@@ -3345,19 +3345,19 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Téměř hotovo"
       ],
       "Creating new calendars": [
-        ""
+        "Vytvořit nový kalendář"
       ],
       "Gathering your data": [
-        ""
+        "Shromažďování dat"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Shromažďujeme vaše údaje od vašeho poskytovatele"
       ],
       "Your import is starting": [
-        ""
+        "Váš import byl zahájen"
       ]
     },
     "Mail feature": {
@@ -3485,13 +3485,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Barva"
       ],
       "Folder name": [
-        ""
+        "Název složky"
       ],
       "Label name": [
-        ""
+        "Název štítku"
       ]
     },
     "Notification": {
@@ -3511,7 +3511,7 @@
         "\"${ firstItemName }\" obnoveno z koše"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "",
+        "${ deletedCount } odkaz na váš soubor byl odstraněn",
         "",
         "",
         ""
@@ -3535,7 +3535,7 @@
         "${ deletedItemsCount } položky trvale odstraněné z koše"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "",
+        "${ failedCount } odkaz na váš soubor se nepodařilo odstranit",
         "",
         "",
         ""
@@ -3625,25 +3625,25 @@
         "Skupina kontaktů byla aktualizována"
       ],
       "Failed to download files: ${ err }": [
-        ""
+        "Nepodařilo se stáhnout soubory: ${ err }"
       ],
       "Failed to move, please try again": [
         "Nepodařilo se přesunout, zkuste to prosím znovu"
       ],
       "Failed to upload files: ${ err }": [
-        ""
+        "Nepodařilo se nahrát soubory: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "",
+        "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
         "",
         "",
         ""
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        ""
+        "Soubor nebo složka \"${ filename }\" se již nahrává"
       ],
       "File or folder is missing a name": [
-        ""
+        "Souboru nebo složce chybí název"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Přesunout ${ itemsToMoveCount } soubor",
@@ -3682,19 +3682,19 @@
         "Přestěhuj ${ movingCount } položek"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        ""
+        "Není dostatek místa pro nahrání ${ formattedTotal }"
       ],
       "The link to your file failed to be deleted": [
-        ""
+        "Odkaz na váš soubor se nepodařilo odstranit"
       ],
       "The link to your file was deleted": [
-        ""
+        "Odkaz na váš soubor byl odstraněn"
       ],
       "Your old files will be deleted in 72 hours": [
-        ""
+        "Vaše staré soubory budou smazány do 72 hodin"
       ],
       "Your settings have been changed successfully": [
-        ""
+        "Vaše nastavení bylo úspěšně změněno"
       ]
     },
     "Oauth instructions": {
@@ -3778,15 +3778,15 @@
         "Ignorovat skupinu"
       ],
       "No parent folder": [
-        ""
+        "Žádná nadřazená složka"
       ]
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Vytvořit nový kalendář"
       ],
       "Merge with calendar": [
-        ""
+        "Sloučit s kalendářem"
       ]
     },
     "Payment method option": {
@@ -4110,10 +4110,10 @@
         "Nastavení bylo uloženo"
       ],
       "Recovery has started": [
-        ""
+        "Obnova právě probíhá"
       ],
       "The link to your file was successfully copied": [
-        ""
+        "Odkaz na váš soubor byl úspěšně zkopírován"
       ],
       "Verification successful": [
         "Ověření proběhlo úspěšně"
@@ -4122,7 +4122,7 @@
         "Předplatné bylo úspěšně zrušeno"
       ],
       "Your files were successfully recovered to \"My files\".": [
-        ""
+        "Vaše soubory byly úspěšně obnoveny do složky \"Moje soubory\"."
       ]
     },
     "Suffix for price": {
@@ -4197,7 +4197,7 @@
         "Velikost"
       ],
       "Uploaded": [
-        ""
+        "Nahráno"
       ],
       "Values": [
         "Hodnoty"
@@ -4213,16 +4213,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "datum vytvoření účtu"
       ],
       "the last 12 months": [
-        ""
+        "posledních 12 měsíců"
       ],
       "the last 3 months": [
-        ""
+        "poslední 3 měsíce"
       ],
       "the last month": [
-        ""
+        "poslední měsíc"
       ]
     },
     "Time unit": {
@@ -4319,7 +4319,7 @@
         "Potvrdit odebrání Proton bonusů"
       ],
       "Contact details": [
-        ""
+        "Detaily kontaktu"
       ],
       "Contact Details": [
         "Detaily kontaktu"
@@ -4352,13 +4352,13 @@
         "Aktuální plán"
       ],
       "Customize and confirm": [
-        ""
+        "Přizpůsobit a potvrdit"
       ],
       "Customize calendar import": [
-        ""
+        "Přizpůsobit proces importování kalendáře"
       ],
       "Customize your mail import": [
-        ""
+        "Přizpůsobte proces importování e-mailů"
       ],
       "Customize your plan": [
         "Přizpůsobte si svůj plán"
@@ -4382,7 +4382,7 @@
         "Odstranit ${ Name }"
       ],
       "Delete organization?": [
-        ""
+        "Smazat organizaci?"
       ],
       "Delete permanently": [
         "Navždy smazat"
@@ -4397,7 +4397,7 @@
         "Zrušit změny?"
       ],
       "Downgrade account": [
-        ""
+        "Downgradovat účet"
       ],
       "Download canceled": [
         "Stahování zrušeno"
@@ -4445,7 +4445,7 @@
         "Vysypat koš"
       ],
       "Enter password to download": [
-        ""
+        "Zadejte heslo pro stažení souboru"
       ],
       "Enter your password": [
         "Zadejte Vaše heslo"
@@ -4595,7 +4595,7 @@
         "Nahlásit problém"
       ],
       "Request new code": [
-        ""
+        "Poslat nový kód"
       ],
       "Restore your files": [
         "Obnovit soubory"
@@ -4622,7 +4622,7 @@
         "Výběr oprávnění"
       ],
       "Select what to import": [
-        ""
+        "Vyberte co chcete importovat"
       ],
       "Settings": [
         "Nastavení"
@@ -4676,7 +4676,7 @@
         "Vyžadována aktualizace"
       ],
       "Uploaded": [
-        ""
+        "Nahráno"
       ],
       "Uploaded by": [
         "Nahráno uživatelem"
@@ -4703,7 +4703,7 @@
         "Soubor je připraven ke stažení"
       ],
       "Your folder is ready to be downloaded": [
-        ""
+        "Vaše složka je připravena ke stažení"
       ],
       "ZIP / postal code": [
         "ZIP / PSČ"
@@ -4711,7 +4711,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Dnes"
       ]
     },
     "Tooltip": {
@@ -4737,7 +4737,7 @@
         "Byla uplatněna sleva pro dvouleté vyúčtování"
       ],
       "Each imported email will have this label": [
-        ""
+        "Každý importovaný e-mail bude mít tento štítek"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifrování e-mailů posiluje e-mailový podpis, aby Vaše zprávy byly ověřeny"
@@ -4779,10 +4779,10 @@
         "Podpora protokolů pro sdílení souborů, jako je BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Systémové podsložky se v ProtonMailu zobrazí jako samostatné složky"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Import bude zahájen nejnovějšími zprávami."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Nahrát veřejný klíč, který umožní odesílání end-to-end šifrovaných e-mailů na tento e-mail"
@@ -4988,7 +4988,7 @@
         "Vemte prosím na vědomí, že výběrem tohoto způsobu platby nemůže být Váš účet okamžitě upgradován. Aktualizujeme Vás účet v okamžiku, jakmile bude platba vyřízena."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton sloučí všechny složky se stejným názvem. Chcete-li tomu zabránit, změňte názvy před importem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Zprávy nejsou šifrovány end-to-end, neposílejte žádné citlivé informace."
@@ -5003,7 +5003,7 @@
         "Kontakt se nepodařilo načíst."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Nastavení datumu, a času v zařízení není synchronizováno. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Dešifrování zašifrovaného obsahu se nezdařilo."
@@ -5021,7 +5021,7 @@
         "Bohužel nejsme momentálně online. Chcete -li popsat svůj problém, vyplňte níže uvedený formulář. Budeme se jím zabývat a kontaktovat Vás, až budeme opět online."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Ztratíte všechna dosud provedená přizpůsobení."
       ]
     }
   }

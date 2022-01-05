@@ -728,6 +728,9 @@
       "Search": [
         "Szukaj"
       ],
+      "Search in ${ option.text }": [
+        "Przeszukaj ${ option.text }"
+      ],
       "Search message content": [
         "Szukaj zawartości wiadomości"
       ],
@@ -3870,7 +3873,7 @@
         "Zarządzaj etykietami"
       ],
       "members": [
-        "użytkownicy"
+        "członków"
       ],
       "Members": [
         "Członkowie"

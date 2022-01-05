@@ -990,7 +990,7 @@
         "У вас нет счетов."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ваш аккаунт или организация имеет просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
+        "У вашей учетной записи или организации есть просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
       ]
     },
     "Error message": {
@@ -2998,7 +2998,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } скопировано в ваш буфер обмена"
+        "${ server.Domain } скопирован в ваш буфер обмена"
       ],
       "Account deleted. Logging out...": [
         "Аккаунт удален. Выход из системы..."
@@ -3562,6 +3562,14 @@
       ],
       "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
         "Ваш email не передается третьим лицам и используется только для уведомлений и вопросов, связанных с аккаунтом, и для восстановления доступа."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "стабильная версия"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней версии ${ stableRelease }"
       ]
     },
     "Validation": {
