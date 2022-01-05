@@ -719,6 +719,9 @@
       "Search": [
         "搜尋"
       ],
+      "Search in ${ option.text }": [
+        "在 ${ option.text } 下搜尋"
+      ],
       "Search message content": [
         "搜尋郵件內容"
       ],
@@ -2470,7 +2473,7 @@
         ""
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "無法將草稿移動到垃圾郵件匣"
       ],
       "Sent messages cannot be moved to Inbox": [
         ""

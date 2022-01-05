@@ -722,6 +722,9 @@
       "Search": [
         "Αναζήτηση"
       ],
+      "Search in ${ option.text }": [
+        ""
+      ],
       "Search message content": [
         "Αναζήτηση εντός περιεχομένου μηνυμάτων"
       ],
@@ -3347,7 +3350,7 @@
         "Χρεώνεται ως ${ billedPrice } κάθε 2 χρόνια"
       ],
       "Billed as ${ billedPrice } per year": [
-        "Χρεώθηκε ως ${ billedPrice } το χρόνο"
+        "Χρεώνεται ${ billedPrice } ανά έτος"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Χρέωση στο τέλος του τρέχοντος κύκλου χρέωσης (ανανεώνεται την ${ renewalDate })"
@@ -5286,7 +5289,7 @@
         "Εξερχόμενα"
       ],
       "Pay invoice": [
-        "Πληρωμή υπολοίπου"
+        "Πληρωμή τιμολογίου"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Ενεργοποιήστε ξανά τη διεύθυνση που συνδέεται με αυτό το ημερολόγιο για τη διαχείριση της πρόσκλησής σας."
@@ -6783,7 +6786,7 @@
         "Στοιχεία επαφής"
       ],
       "Contact Details": [
-        "Λεπτομέρειες Επαφής"
+        "Στοιχεία Επαφής"
       ],
       "Contact group": [
         "Ομάδα Επαφών"

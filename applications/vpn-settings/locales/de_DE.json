@@ -3522,6 +3522,14 @@
         "Ihre E-Mail-Adresse wird nicht an Dritte weitergegeben und dient nur der Wiederherstellung und kontobezogenen Fragen oder der Kommunikation."
       ]
     },
+    "Tor out of date": {
+      "stable release": [
+        "stabile Version"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Passwort muss mindestens ${ length } Zeichen enthalten",

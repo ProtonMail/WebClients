@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
@@ -4013,6 +4013,9 @@
       "Loading preview": [
         "Завантаження попереднього перегляду"
       ],
+      "Log in to ProtonMail to activate your address": [
+        "Увійдіть в ProtonMail, щоб активувати вашу адресу"
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Журнали містять спроби авторизації в усіх сервісах Proton з використанням ваших облікових даних Proton."
       ],
@@ -5738,6 +5741,9 @@
       "Proton username": [
         "Ім'я користувача Proton"
       ],
+      "ProtonMail address": [
+        "Адреса ProtonMail"
+      ],
       "ProtonMail footer": [
         "Підпис ProtonMail"
       ],
@@ -6113,6 +6119,9 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "Not activated": [
+        "Не активовано"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -7285,14 +7294,11 @@
       "Auto reply": [
         "Автовідповідач"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         "Резервне копіювання та експорт"
       ],
       "Calendars": [
         "Календарі"
-      ],
-      "Domain Names": [
-        "Імена доменів"
       ],
       "Domain names": [
         "Імена доменів"
@@ -7300,19 +7306,19 @@
       "Email privacy": [
         "Приватність електронної пошти"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "Шифрування та ключі"
       ],
       "Filters": [
         "Фільтри"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "Теки й мітки"
       ],
       "General": [
         "Загальні"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "Облікові дані та адреси"
       ],
       "IMAP/SMTP": [
@@ -7327,10 +7333,10 @@
       "Organization": [
         "Організація"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "Організація та ключі"
       ],
-      "Users & addresses": [
+      "Users and addresses": [
         "Користувачі та адреси"
       ],
       "VPN apps": [
@@ -7754,6 +7760,9 @@
       "3. Select config file and download": [
         "3. Виберіть файл конфігурації та завантажте"
       ],
+      "Account and password": [
+        "Обліковий запис і пароль"
+      ],
       "Account recovery": [
         "Відновлення облікового запису"
       ],
@@ -7859,7 +7868,7 @@
       "Back": [
         "Назад"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         "Резервне копіювання та експорт"
       ],
       "Billing cycle": [
@@ -7964,7 +7973,7 @@
       "Currency": [
         "Валюта"
       ],
-      "Current & past imports": [
+      "Current and past imports": [
         "Поточні та минулі імпорти"
       ],
       "Current plan": [
@@ -8036,7 +8045,7 @@
       "Disable two-factor authentication": [
         "Вимкнути двоетапну перевірку"
       ],
-      "Display name & signature": [
+      "Display name and signature": [
         "Ім'я та підпис"
       ],
       "Domain names": [
@@ -8084,7 +8093,7 @@
       "Enable keyboard shortcuts": [
         "Увімкнути комбінації клавіш"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "Шифрування та ключі"
       ],
       "Error": [
@@ -8120,7 +8129,7 @@
       "Folders": [
         "Теки"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "Теки й мітки"
       ],
       "General": [
@@ -8138,7 +8147,7 @@
       "Human verification": [
         "Перевірка \"Я не робот\""
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "Облікові дані та адреси"
       ],
       "IMAP/SMTP": [
@@ -8192,8 +8201,8 @@
       "Labels": [
         "Мітки"
       ],
-      "Language & time": [
-        "Мова й час"
+      "Language and time": [
+        "Мова і час"
       ],
       "Layout": [
         "Макет"
@@ -8243,7 +8252,7 @@
       "Organization": [
         "Організація"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "Організація та ключі"
       ],
       "Other": [
@@ -8252,20 +8261,14 @@
       "Password": [
         "Пароль"
       ],
-      "Password & keys": [
-        "Паролі та ключі"
-      ],
-      "Password & security": [
-        "Пароль і безпека"
+      "Password and keys": [
+        "Пароль та ключі"
       ],
       "Passwords": [
         "Паролі"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
-      ],
-      "Payment": [
-        "Оплата"
       ],
       "Payment details": [
         "Подробиці платежу"
@@ -8341,6 +8344,9 @@
       ],
       "Restore administrator privileges": [
         "Відновити права адміністратора"
+      ],
+      "Security": [
+        "Безпека"
       ],
       "Security logs": [
         "Журнали безпеки"
@@ -8476,6 +8482,9 @@
       ],
       "Upgrade": [
         "Покращити"
+      ],
+      "Username": [
+        "Ім'я користувача"
       ],
       "Users and addresses": [
         "Користувачі та адреси"
@@ -8754,6 +8763,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Автоматично підписуйте всі вихідні повідомлення, щоб користувачі могли перевірити їх надійність. Це виконується в комбінації з типовою конфігурацією PGP, яку можна налаштувати нижче."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "стабільна версія"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ця версія браузера Tor не підтримується. Будь ласка, оновіть до останньої версії ${ stableRelease }"
       ]
     },
     "Update font modal": {

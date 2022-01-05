@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Etkinleştir"
-      ],
       "activate": [
         "etkinleştir"
+      ],
+      "Activate": [
+        "Etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
@@ -3175,8 +3175,8 @@
         "${ number } sunucu"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "",
-        ""
+        "${ numberOfNonPrivateKeys } yüklenen dosya geçerli bir gizli anahtar değil. Lütfen doğrulayın ve yeniden deneyin.",
+        "${ numberOfNonPrivateKeys } yüklenen dosyalar geçerli gizli anahtarlar değil. Lütfen doğrulayın ve yeniden deneyin."
       ],
       "${ numContactGroups } contact group": [
         "",
@@ -3378,7 +3378,7 @@
         "Bu filtreyi silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        ""
+        "Bu klasörü silmek istediğinize emin misiniz? Bu klasörün içindeki klasörler de silinecektir."
       ],
       "Are you sure you want to delete this label?": [
         "Bu etiketi silmek istediğinizden emin misiniz?"
@@ -3650,7 +3650,7 @@
         "Kurtarma telefon numaranızı girin, size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
       "Event invites and RSVPs will be sent in this language.": [
-        ""
+        "Etkinlik davetleri ve Davete Cevap istemleri bu dilde gönderilecektir."
       ],
       "Expired": [
         "Süresi doldu"
@@ -3846,7 +3846,7 @@
         ""
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Sadece seçiminizi onaylayın, gerisini biz halledeceğiz."
       ],
       "Justify": [
         "Yasla"
@@ -3898,6 +3898,9 @@
       ],
       "Loading preview": [
         "Önizleme yükleniyor"
+      ],
+      "Log in to ProtonMail to activate your address": [
+        ""
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Günlükler, Proton kimlik bilgilerinizi kullanan tüm Proton hizmetleri için kimlik doğrulama girişimlerini içerir."
@@ -3954,7 +3957,7 @@
         "Kişinin şifreleme anahtarları yok"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        ""
+        "Veri kurtarma yöntemi ayarlanmadı; verilerinize erişiminizi kaybetme riskiyle karşı karşıyasınız"
       ],
       "No folder selected": [
         "Dosya seçilmedi"
@@ -4104,7 +4107,7 @@
         "Plus veya Vizyoner aboneliği gerekli"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "Göndericinin sunucusundaki içeriğin izniniz olmaksızın yüklenmesini engeller."
       ],
       "Preview": [
         "Önizleme"
@@ -4162,10 +4165,10 @@
         "Kurtarma anahtar metni devre dışı bırakıldı"
       ],
       "Recovery phrase is not associated with any keys.": [
-        ""
+        "Kurtarma ifadesi herhangi bir anahtarla ilintili değildir."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        ""
+        "Kurtarma ifadesi geçerliliğini doldurmuş herhangi bir anahtarla ilintili değildir."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu kendiliğinden çözecektir."
@@ -4288,16 +4291,16 @@
         "Bu özellik sadece ileri düzey kullanıcılar içindir! Bu anahtarı sildikten sonra, bu anahtarla şifrelenmiş herhangi bir iletinin şifresini çözemezsiniz. Veri kaybına neden olabilir. Devam etmek istediğine emin misin."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
-        ""
+        "Bu, ayarlamanız istenen 12 kelimelik bir ifadedir."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        ""
+        "Bu, daha önceden kaydettiğiniz bir kurtarma dosyası ya da şifreleme anahtarı olabilir."
       ],
       "This is an encryption key you may have previously saved.": [
-        ""
+        "Bu, daha önceden kaydettiğiniz bir şifreleme anahtarı olabilir."
       ],
       "This is the password you used before the password reset.": [
-        ""
+        "Bu parola sıfırlama öncesinde kullandığınız paroladır."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Bu bağlantı bir eşyazım saldırısı olabilir ve Internet Explorer ve Edge tarayıcıları tarafından açılamaz. Bağlantının yasal olduğundan eminseniz, lütfen açmak için farklı bir tarayıcı kullanın."
@@ -4357,7 +4360,7 @@
         ""
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        ""
+        "Parola sıfırlama sonrası erişime engellenen verilerinizin şifresini çözmek ve bunları görüntülemek için bir kurtarma yöntemi belirleyin."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Spam ve kötüye kullanımla mücadele etmek için lütfen insan olduğunuzu doğrulayın."
@@ -4501,7 +4504,7 @@
         ""
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Google hesabınızdan ne aktarmak istiyorsunuz?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Devre dışı bırakıldığında, görüntü dosyalarının bilginiz olmadan cihazınıza yüklenmesini engeller."
@@ -4594,7 +4597,7 @@
         "Bağlantı oluşturmak için kişisel bir takviminizin olması gerekir."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "Etkinliklerinizi .ics.'ten içeri aktarmak için aktif durumda bir kişisel takviminiz olması gerekir."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Etkinliklerinizi içeri aktarmak için aktif bir takviminizin olması gerekir."
@@ -4645,10 +4648,10 @@
         "Engel listeniz boş."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Verileriniz ${ importedEmailAddressStrong } adresinden Proton hesabınıza aktarılmaya hazır."
       ],
       "Your data recovery method is set": [
-        ""
+        "Veri kurtarma yönteminiz ayarlandı"
       ],
       "Your email will only be used for this one-time verification.": [
         "E-postanız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Proton kullanıcı adı"
       ],
+      "ProtonMail address": [
+        ""
+      ],
       "ProtonMail footer": [
         "ProtonMail alt bilgi"
       ],
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "Daha fazla bilgi edinin"
+      ],
+      "Not activated": [
+        ""
       ],
       "Pay invoice": [
         "Faturayı öde"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Otomatik Yanıt"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         ""
       ],
       "Calendars": [
         "Takvimler"
-      ],
-      "Domain Names": [
-        "Alan Adları"
       ],
       "Domain names": [
         "Alan adları"
@@ -7152,20 +7158,20 @@
       "Email privacy": [
         ""
       ],
-      "Encryption & keys": [
-        "Şifreleme ve anahtarlar"
+      "Encryption and keys": [
+        ""
       ],
       "Filters": [
         "Süzgeçler"
       ],
-      "Folders & labels": [
-        "Klasörler ve etiketler"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Genel"
       ],
-      "Identity & addresses": [
-        "Kimlik ve adresler"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7179,11 +7185,11 @@
       "Organization": [
         "Organizasyon"
       ],
-      "Organization & keys": [
-        "Kuruluş ve Anahtarlar"
+      "Organization and keys": [
+        ""
       ],
-      "Users & addresses": [
-        "Kullanıcı ve Adresler"
+      "Users and addresses": [
+        ""
       ],
       "VPN apps": [
         "VPN uygulamaları"
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Yapılandırma dosyasını seçin ve indirin"
       ],
+      "Account and password": [
+        ""
+      ],
       "Account recovery": [
         "Hesap kurtarma"
       ],
@@ -7707,8 +7716,8 @@
       "Back": [
         "Geri"
       ],
-      "Backup & Export": [
-        "Yedekle & Dışa aktar"
+      "Backup and export": [
+        ""
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -7812,8 +7821,8 @@
       "Currency": [
         "Para birimi"
       ],
-      "Current & past imports": [
-        "Mevcut ve geçmiş içe aktarmalar"
+      "Current and past imports": [
+        ""
       ],
       "Current plan": [
         "Mevcut plan"
@@ -7884,8 +7893,8 @@
       "Disable two-factor authentication": [
         "İki adımlı kimlik doğrulamayı devre dışı bırakın"
       ],
-      "Display name & signature": [
-        "Görünen ad ve imza"
+      "Display name and signature": [
+        ""
       ],
       "Domain names": [
         "Alan adları"
@@ -7932,8 +7941,8 @@
       "Enable keyboard shortcuts": [
         "Klavye kısayollarını etkinleştir"
       ],
-      "Encryption & keys": [
-        "Şifreleme ve anahtarlar"
+      "Encryption and keys": [
+        ""
       ],
       "Error": [
         "Hata"
@@ -7968,8 +7977,8 @@
       "Folders": [
         "Klasörler"
       ],
-      "Folders & labels": [
-        "Klasörler ve etiketler"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Genel"
@@ -7986,8 +7995,8 @@
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
-      "Identity & addresses": [
-        "Kimlik ve adresler"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8038,8 +8047,8 @@
       "Labels": [
         "Etiketler"
       ],
-      "Language & time": [
-        "Dil ve zaman"
+      "Language and time": [
+        ""
       ],
       "Layout": [
         "Yerleşim"
@@ -8089,8 +8098,8 @@
       "Organization": [
         "Organizasyon"
       ],
-      "Organization & keys": [
-        "Kuruluş ve Anahtarlar"
+      "Organization and keys": [
+        ""
       ],
       "Other": [
         "Diğer"
@@ -8098,20 +8107,14 @@
       "Password": [
         "Parola"
       ],
-      "Password & keys": [
-        "Parolalar ve Anahtarlar"
-      ],
-      "Password & security": [
-        "Parola ve güvenlik"
+      "Password and keys": [
+        ""
       ],
       "Passwords": [
         "Parolalar"
       ],
       "Pay invoice": [
         "Fatura ödeme"
-      ],
-      "Payment": [
-        "Ödeme"
       ],
       "Payment details": [
         "Ödeme ayrıntıları"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Yönetici ayrıcalıklarını geri yükle"
+      ],
+      "Security": [
+        ""
       ],
       "Security logs": [
         "Güvenlik günlüğü"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Username": [
+        ""
       ],
       "Users and addresses": [
         "Kullanıcılar ve Adresler"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Tüm giden iletilerinizi otomatik olarak imzalayın, böylece kullanıcılar mesajlarınızın orijinalliğini doğrulayabilir. Bu, aşağıda yapılandırılabilen varsayılan PGP ayarları ile birlikte yapılır."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

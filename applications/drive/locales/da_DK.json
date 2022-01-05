@@ -126,7 +126,7 @@
         "Bekræft"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Bekræft åbning af link ${ linkToShow }"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -876,7 +876,7 @@
         "Der er gået mere end 12 timer siden seneste opdatering"
       ],
       "Unsupported calendar format": [
-        ""
+        "Kalenderformat understøttes ikke"
       ]
     },
     "Composer size": {
@@ -1581,7 +1581,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "i det næste trin skal du vælge alle tilladelserne"
       ]
     },
     "Import warning": {
@@ -1649,8 +1649,8 @@
         "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
       ],
       "${ doneCount } finished": [
-        "",
-        ""
+        "${ doneCount } færdig",
+        "${ doneCount } færdig"
       ],
       "${ doneDownloadsCount } downloaded": [
         "",
@@ -2007,7 +2007,7 @@
         "Hvis du ikke kan se e-mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        ""
+        "Hvis du har en af disse, skal du fortsætte til Proton-kontoindstillingerne for at\nfortsætte processen med at fjerne spærringen."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
@@ -2849,7 +2849,7 @@
       "CVV code": [
         "CVV-kode"
       ],
-      "Delete Drive?": [
+      "Delete drive?": [
         "Slet drev?",
         "Slet drev?"
       ],
@@ -3090,7 +3090,7 @@
       "Unknown file": [
         "Ukendt fil"
       ],
-      "Unlock Drive": [
+      "Unlock drive": [
         "Lås drev op"
       ],
       "Unlock drive (recommended)": [
@@ -3539,7 +3539,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Bemærk at ${ boldNextStep } som applikationen anmoder om, for at starte din import."
       ]
     },
     "Onboarding Proton": {
@@ -4439,7 +4439,7 @@
         "Vælg link-udløbstid"
       ],
       "Select permissions": [
-        ""
+        "Vælg tilladelser"
       ],
       "Select what to import": [
         "Vælg, hvad der skal importeres"
@@ -4563,7 +4563,7 @@
         "E-mailkryptering gennemtvinger e-mailsignatur som hjælp til godkendelse af dine sendte beskeder"
       ],
       "Encrypted data": [
-        ""
+        "Krypterede data"
       ],
       "Encrypted data with verified digital signature": [
         "Krypterede data med bekræftet digital underskrift"
@@ -4645,10 +4645,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Klik for at afspille videoen"
       ],
       "Replay video": [
-        ""
+        "Afspil video"
       ]
     },
     "VPN feature": {
