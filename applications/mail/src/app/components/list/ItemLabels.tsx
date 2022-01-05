@@ -1,5 +1,5 @@
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { LabelStack } from '@proton/components';
+import { classnames, LabelStack } from '@proton/components';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { orderBy } from '@proton/shared/lib/helpers/array';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -55,7 +55,7 @@ const ItemLabels = ({
     return (
         <LabelStack
             labels={labelsDescription}
-            className={className}
+            className={classnames([className, isCollapsed && 'flex-justify-end'])}
             isStacked={isCollapsed}
             showDelete={showUnlabel}
             maxNumber={maxNumber}
