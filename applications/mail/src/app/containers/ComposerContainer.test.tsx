@@ -74,7 +74,7 @@ ${Signature}
 
 Sent with ProtonMail Secure Email.
 
-‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐
+------- Original Message -------
 
 On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 
