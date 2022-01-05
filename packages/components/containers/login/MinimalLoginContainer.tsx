@@ -5,7 +5,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 
-import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
+import { useApi, useErrorHandler, useLoading, useNotifications } from '../../hooks';
 import { FullLoader, Input, Label, LinkButton, PasswordInput, PrimaryButton } from '../../components';
 import { OnLoginCallback } from '../app/interface';
 import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
@@ -227,7 +227,7 @@ interface Props {
 
 const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = false, needHelp, footer }: Props) => {
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
+    const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -251,8 +251,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
 
     const handleError = (e: any) => {
         if (e.data?.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
-            const apiErrorMessage = getApiErrorMessage(e);
-            createModal(<AbuseModal message={apiErrorMessage} />);
+            setAbuseModal({ apiErrorMessage: getApiErrorMessage(e) });
             return;
         }
         if (e.name === 'TOTPError' || e.name === 'PasswordError') {
@@ -269,29 +268,6 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
         errorHandler(e);
     };
 
-    if (step === AuthStep.LOGIN) {
-        return (
-            <LoginForm
-                needHelp={needHelp}
-                footer={footer}
-                hasChallenge={hasChallenge}
-                onSubmit={(username, password, payload) => {
-                    return handleLogin({
-                        username,
-                        password,
-                        payload,
-                        api: silentApi,
-                        hasGenerateKeys: false,
-                        keyMigrationFeatureValue: 0,
-                        ignoreUnlock,
-                    })
-                        .then(handleResult)
-                        .catch(handleError);
-                }}
-            />
-        );
-    }
-
     const cancelButton = (
         <LinkButton type="reset" onClick={handleCancel}>
             {c('Action').t`Cancel`}
@@ -299,44 +275,63 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     );
 
     const cache = cacheRef.current;
-    if (!cache) {
-        throw new Error('Missing cache');
-    }
 
-    if (step === AuthStep.TOTP) {
-        return (
-            <TOTPForm
-                cancelButton={cancelButton}
-                onSubmit={(totp) => {
-                    return handleTotp({
-                        cache,
-                        totp,
-                    })
-                        .then(handleResult)
-                        .catch(handleError);
-                }}
+    return (
+        <>
+            <AbuseModal
+                message={abuseModal?.apiErrorMessage}
+                open={!!abuseModal}
+                onClose={() => setAbuseModal(undefined)}
             />
-        );
-    }
-
-    if (step === AuthStep.UNLOCK) {
-        return (
-            <UnlockForm
-                cancelButton={cancelButton}
-                onSubmit={(keyPassword) => {
-                    return handleUnlock({
-                        cache,
-                        clearKeyPassword: keyPassword,
-                        isOnePasswordMode: false,
-                    })
-                        .then(handleResult)
-                        .catch(handleError);
-                }}
-            />
-        );
-    }
-
-    throw new Error('Unsupported form');
+            {step === AuthStep.LOGIN && (
+                <LoginForm
+                    needHelp={needHelp}
+                    footer={footer}
+                    hasChallenge={hasChallenge}
+                    onSubmit={(username, password, payload) => {
+                        return handleLogin({
+                            username,
+                            password,
+                            payload,
+                            api: silentApi,
+                            hasGenerateKeys: false,
+                            keyMigrationFeatureValue: 0,
+                            ignoreUnlock,
+                        })
+                            .then(handleResult)
+                            .catch(handleError);
+                    }}
+                />
+            )}
+            {step === AuthStep.TOTP && cache && (
+                <TOTPForm
+                    cancelButton={cancelButton}
+                    onSubmit={(totp) => {
+                        return handleTotp({
+                            cache,
+                            totp,
+                        })
+                            .then(handleResult)
+                            .catch(handleError);
+                    }}
+                />
+            )}
+            {step === AuthStep.UNLOCK && cache && (
+                <UnlockForm
+                    cancelButton={cancelButton}
+                    onSubmit={(keyPassword) => {
+                        return handleUnlock({
+                            cache,
+                            clearKeyPassword: keyPassword,
+                            isOnePasswordMode: false,
+                        })
+                            .then(handleResult)
+                            .catch(handleError);
+                    }}
+                />
+            )}
+        </>
+    );
 };
 
 export default MinimalLoginContainer;
