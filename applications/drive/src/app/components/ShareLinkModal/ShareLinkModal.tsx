@@ -21,7 +21,6 @@ import {
     getSharedLink,
 } from '../../utils/link';
 import ModalContentLoader from '../ModalContentLoader';
-import useDriveEvents from '../../hooks/drive/useDriveEvents';
 
 const getLoadingMessage = (item: FileBrowserItem) => {
     if (item.SharedUrl) {
@@ -69,7 +68,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
     const [initialExpiration, setInitialExpiration] = useState<number | null>(null);
     const [error, setError] = useState('');
     const { getShareMetaShort, deleteShare, getShareKeys } = useDrive();
-    const driveEvents = useDriveEvents();
     const { createSharedLink, getSharedURLs, decryptSharedLink, updateSharedLink, deleteSharedLink } = useSharing();
     const { createNotification } = useNotifications();
     const { openConfirmModal } = useConfirm();
@@ -83,7 +81,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         const getShareMetaAsync = async (shareInfo?: { ID: string; sessionKey: SessionKey }) => {
             return getShareMetaShort(shareId).then(async ({ VolumeID }) => {
                 const result = await createSharedLink(shareId, VolumeID, item.LinkID, shareInfo);
-                await driveEvents.call(shareId);
                 return result;
             });
         };
@@ -150,7 +147,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
                 newDuration,
                 newPassword
             );
-            await driveEvents.call(shareId);
             return res;
         };
 
@@ -195,7 +191,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             const { Token, ShareID } = shareUrlInfo.ShareURL;
             await deleteSharedLink(ShareID, Token);
             await deleteShare(ShareID);
-            await driveEvents.call(shareId);
             createNotification({
                 text: c('Notification').t`The link to your file was deleted`,
             });
