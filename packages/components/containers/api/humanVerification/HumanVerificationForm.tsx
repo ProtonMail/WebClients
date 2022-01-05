@@ -8,10 +8,9 @@ import { Alert, Button, Href, LearnMore, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
 import useNotifications from '../../../hooks/useNotifications';
 import useLoading from '../../../hooks/useLoading';
-import useModals from '../../../hooks/useModals';
 import { VerificationModel } from './interface';
 import { getRoute } from './helper';
-import RequestNewCodeModal from "./RequestNewCodeModal";
+import RequestNewCodeModal from './RequestNewCodeModal';
 import Captcha from './Captcha';
 import EmailMethodForm from './EmailMethodForm';
 import PhoneMethodForm from './PhoneMethodForm';
@@ -55,8 +54,8 @@ const HumanVerificationForm = ({
 }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const [loadingResend, withLoadingResend] = useLoading();
+    const [newCodeModal, setNewCodeModal] = useState(false);
 
     const verificationRef = useRef<VerificationModel | undefined>(undefined);
     const verificationModel = verificationRef.current;
@@ -182,19 +181,22 @@ const HumanVerificationForm = ({
 
     if (step === HumanVerificationSteps.VERIFY_CODE && verificationModel) {
         return (
-            <VerifyCodeForm
-                verification={verificationModel}
-                onSubmit={verifyToken}
-                onNoReceive={() => {
-                    createModal(
-                        <RequestNewCodeModal
-                            onEdit={handleEditDestination}
-                            onResend={handleResend}
-                            verificationModel={verificationModel}
-                        />
-                    );
-                }}
-            />
+            <>
+                <RequestNewCodeModal
+                    open={newCodeModal}
+                    onEdit={handleEditDestination}
+                    onClose={() => setNewCodeModal(false)}
+                    onResend={handleResend}
+                    verificationModel={verificationModel}
+                />
+                <VerifyCodeForm
+                    verification={verificationModel}
+                    onSubmit={verifyToken}
+                    onNoReceive={() => {
+                        setNewCodeModal(true);
+                    }}
+                />
+            </>
         );
     }
 

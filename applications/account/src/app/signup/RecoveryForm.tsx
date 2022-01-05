@@ -9,23 +9,53 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import {
     Button,
     Challenge,
-    useModals,
     useLoading,
     useApi,
     Tabs,
     useFormErrors,
-    ConfirmModal,
     PhoneInput,
     InputFieldTwo,
     captureChallengeMessage,
     ChallengeResult,
     ChallengeRef,
+    AlertModal,
 } from '@proton/components';
 
 import { SignupModel, SIGNUP_STEPS } from './interfaces';
 import Loader from './Loader';
 
 const { RECOVERY_EMAIL, RECOVERY_PHONE } = SIGNUP_STEPS;
+
+const RecoveryConfirmModal = ({
+    open,
+    onClose,
+    onConfirm,
+}: {
+    open: boolean;
+    onClose: () => void;
+    onConfirm: () => void;
+}) => {
+    return (
+        <AlertModal
+            open={open}
+            onClose={onClose}
+            title={c('Title').t`Warning`}
+            buttons={[
+                <Button
+                    color="norm"
+                    onClick={async () => {
+                        onClose();
+                        onConfirm();
+                    }}
+                >{c('Action').t`Confirm`}</Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+        >
+            {c('Info')
+                .t`You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?`}
+        </AlertModal>
+    );
+};
 
 interface Props {
     model: SignupModel;
@@ -40,11 +70,11 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
     const api = useApi();
     const formRef = useRef<HTMLFormElement>(null);
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
-    const { createModal } = useModals();
     const challengeRefRecovery = useRef<ChallengeRef>();
     const [loading, withLoading] = useLoading();
     const [phoneError, setPhoneError] = useState('');
     const [emailError, setEmailError] = useState('');
+    const [confirmModal, setConfirmModal] = useState(false);
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -52,19 +82,6 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
 
     const setRecoveryPhone = getOnChange('recoveryPhone');
     const setRecoveryEmail = getOnChange('recoveryEmail');
-
-    const handleSkip = async () => {
-        await new Promise<void>((resolve, reject) => {
-            createModal(
-                <ConfirmModal title={c('Title').t`Warning`} onConfirm={resolve} onClose={reject} mode="alert">
-                    {c('Info')
-                        .t`You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?`}
-                </ConfirmModal>
-            );
-        });
-        const payload = await challengeRefRecovery.current?.getChallenge();
-        return onSkip(payload);
-    };
 
     const handleSubmit = async () => {
         if (loading || !onFormSubmit()) {
@@ -134,6 +151,14 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                     <Loader />
                 </div>
             ) : null}
+            <RecoveryConfirmModal
+                open={confirmModal}
+                onClose={() => setConfirmModal(false)}
+                onConfirm={async () => {
+                    const payload = await challengeRefRecovery.current?.getChallenge();
+                    onSkip(payload);
+                }}
+            />
             <form
                 name="recoveryForm"
                 onSubmit={(e) => {
@@ -245,7 +270,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                     type="button"
                     fullWidth
                     disabled={loading}
-                    onClick={handleSkip}
+                    onClick={() => setConfirmModal(true)}
                     className="mt0-5"
                 >
                     {c('Action').t`Skip`}
