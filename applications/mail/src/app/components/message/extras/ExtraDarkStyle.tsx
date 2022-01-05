@@ -15,25 +15,25 @@ const LOG_ID = 'dark_styles';
 const ExtraDarkStyle = ({ message }: Props) => {
     const dispatch = useDispatch();
     const api = useApi();
-    const hideBanner = !message.messageDocument?.hasDarkStyle || message.messageDocument?.noDarkStyle;
-    const showBanner = !hideBanner;
-    const trackActions = false; // We don't want to track actions on this component
+    const showBanner = message.messageDocument?.hasDarkStyle && !message.messageDocument?.noDarkStyle;
 
     useEffect(() => {
-        if (showBanner && trackActions) {
-            void api(sendMetricsReport({ Log: LOG_ID, Title: 'Apply dark styles' }));
+        if (showBanner) {
+            void api(
+                sendMetricsReport({ Log: LOG_ID, Title: 'Apply dark styles', Data: { action: 'apply-dark-styles' } })
+            );
         }
     }, [showBanner]);
 
-    if (hideBanner) {
+    if (!showBanner) {
         return null;
     }
 
     const handleClick = () => {
         dispatch(removeDarkStyle({ ID: message.localID, noDarkStyle: true }));
-        if (trackActions) {
-            void api(sendMetricsReport({ Log: LOG_ID, Title: 'Remove dark styles' }));
-        }
+        void api(
+            sendMetricsReport({ Log: LOG_ID, Title: 'Remove dark styles', Data: { action: 'remove-dark-styles' } })
+        );
     };
 
     return (
