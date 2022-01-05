@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktivieren"
@@ -3899,6 +3899,9 @@
       "Loading preview": [
         "Vorschau wird geladen"
       ],
+      "Log in to ProtonMail to activate your address": [
+        "Melde dich bei ProtonMail an, um deine Adresse zu aktivieren"
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Die Protokolle enthalten Authentifizierungsversuche für alle Proton-Dienste, welche Ihre Proton-Anmeldedaten verwenden."
       ],
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Proton‐Benutzername"
       ],
+      "ProtonMail address": [
+        "ProtonMail‐Adresse"
+      ],
       "ProtonMail footer": [
         "ProtonMail-Fußzeile"
       ],
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Not activated": [
+        "Nicht aktiviert"
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Automatisches Antworten"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         "Sichern und Exportieren"
       ],
       "Calendars": [
         "Kalender"
-      ],
-      "Domain Names": [
-        "Domainnamen"
       ],
       "Domain names": [
         "Domainname"
@@ -7152,19 +7158,19 @@
       "Email privacy": [
         "E-Mail-Datenschutz"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
       ],
       "Filters": [
         "Filter"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "Ordner und Kategorien"
       ],
       "General": [
         "Allgemein"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "Identität und E-Mail-Adressen"
       ],
       "IMAP/SMTP": [
@@ -7179,10 +7185,10 @@
       "Organization": [
         "Organisation"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "Organisation und Schlüssel"
       ],
-      "Users & addresses": [
+      "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
       ],
       "VPN apps": [
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3.) Konfigurationsdatei auswählen und herunterladen"
       ],
+      "Account and password": [
+        "Konto und Passwort"
+      ],
       "Account recovery": [
         "Konto wiederherstellen"
       ],
@@ -7707,7 +7716,7 @@
       "Back": [
         "Zurück"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         "Sichern und Exportieren"
       ],
       "Billing cycle": [
@@ -7812,7 +7821,7 @@
       "Currency": [
         "Währung"
       ],
-      "Current & past imports": [
+      "Current and past imports": [
         "Aktuelle und frühere Importvorgänge"
       ],
       "Current plan": [
@@ -7884,8 +7893,8 @@
       "Disable two-factor authentication": [
         "Zwei-Faktor-Authentifizierung deaktivieren"
       ],
-      "Display name & signature": [
-        "Name und Signatur anzeigen"
+      "Display name and signature": [
+        "Anzeigename und Signatur"
       ],
       "Domain names": [
         "Domainnamen"
@@ -7932,7 +7941,7 @@
       "Enable keyboard shortcuts": [
         "Tastaturkürzel aktivieren"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
       ],
       "Error": [
@@ -7968,7 +7977,7 @@
       "Folders": [
         "Ordner"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "Ordner und Kategorien"
       ],
       "General": [
@@ -7986,7 +7995,7 @@
       "Human verification": [
         "Captcha"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "Identität und E-Mail-Adressen"
       ],
       "IMAP/SMTP": [
@@ -8038,7 +8047,7 @@
       "Labels": [
         "Kategorien"
       ],
-      "Language & time": [
+      "Language and time": [
         "Sprache und Zeit"
       ],
       "Layout": [
@@ -8089,7 +8098,7 @@
       "Organization": [
         "Organisation"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "Organisation und Schlüssel"
       ],
       "Other": [
@@ -8098,20 +8107,14 @@
       "Password": [
         "Passwort"
       ],
-      "Password & keys": [
+      "Password and keys": [
         "Passwort und Schlüssel"
-      ],
-      "Password & security": [
-        "Passwort und Sicherheit"
       ],
       "Passwords": [
         "Passwörter"
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
-      ],
-      "Payment": [
-        "Zahlung"
       ],
       "Payment details": [
         "Zahlungsdetails"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Administrationsprivilegien wiederherstellen"
+      ],
+      "Security": [
+        "Sicherheit"
       ],
       "Security logs": [
         "Sicherheitsprotokolle"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Umsteigen"
+      ],
+      "Username": [
+        "Benutzername"
       ],
       "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Signieren Sie automatisch alle Ihre ausgehenden Nachrichten, damit die Benutzer die Authentizität Ihrer Nachrichten überprüfen können. Dies geschieht in Kombination mit den Standard-PGP-Einstellungen, die nachfolgend konfiguriert werden können."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "Stabile Version"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "Update font modal": {

@@ -315,7 +315,7 @@
         "加密"
       ],
       "exclude message content": [
-        ""
+        "不包含信息内容"
       ],
       "Expand composer": [
         "展开编辑窗"
@@ -654,7 +654,7 @@
         "恢复数据"
       ],
       "Refine it": [
-        ""
+        "细化它"
       ],
       "refresh the page": [
         "刷新页面"
@@ -718,6 +718,9 @@
       ],
       "Search": [
         "搜索"
+      ],
+      "Search in ${ option.text }": [
+        "在 ${ option.text } 中搜索"
       ],
       "Search message content": [
         "搜索邮件全文"
@@ -990,7 +993,7 @@
         "添加参与者失败"
       ],
       "Invitation sent and participant added": [
-        ""
+        "邀请已发送且参与者已同意"
       ],
       "Participant added": [
         "参与者已添加"
@@ -1053,7 +1056,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        ""
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } 已完成"
       ]
     },
     "Apps dropdown": {
@@ -1108,10 +1111,10 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "启用 \"测试版功能\" 能让您在正式发布之前使用 ProtonMail, Proton Calendar, Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能"
+        "开启测试版功能后您将使用 ProtonMail、Proton Calendar 和 Proton Drive 未正式发布的公测版本，可以抢先体验新产品和新功能。"
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        "如果您在使用过程中遇到问题，您可以随时禁用该选项"
+        "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
     },
     "Billing cycle option": {
@@ -1300,7 +1303,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        ""
+        "您有一个预约事件"
       ]
     },
     "Calendar feature": {
@@ -1488,7 +1491,7 @@
         "${ participantName } 已暂时接受了您参加该活动的邀请，并为其提议了一个新时间。回复和提议已过期。"
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName }不在参与者列表中。"
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } 为一次该活动提议了一个新时间。"
@@ -1611,10 +1614,10 @@
     },
     "Calendar widget banner": {
       "Event already ended": [
-        ""
+        "活动已结束"
       ],
       "Event in progress": [
-        ""
+        "活动正在进行中"
       ]
     },
     "Collapsible tooltip": {
@@ -1863,7 +1866,7 @@
     },
     "Density mode": {
       "Comfortable": [
-        "舒适"
+        "适中"
       ],
       "Compact": [
         "紧凑"
@@ -2003,15 +2006,15 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "活动细节已加密。请重新登陆已刷新日历并解密您的数据。${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        ""
+        "无法解开被加密的活动内容。${ whyNotLink }"
       ]
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        ""
+        "此活动已不在您的日程中"
       ]
     },
     "Email reminder out of date alert": {
@@ -2232,7 +2235,7 @@
         "网络错误：请检查网络后重试。"
       ],
       "No address with keys available to compose a message": [
-        ""
+        "没有可用于撰写邮件的密钥"
       ],
       "No data to import": [
         "没有要导入的数据"
@@ -2467,16 +2470,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "草稿无法移至收件箱"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "草稿无法标为垃圾邮件"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "发送的邮件无法移至收件箱"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "发送的邮件无法标为垃圾邮件"
       ],
       "This action cannot be performed": [
         "无法执行此操作"
@@ -2639,7 +2642,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "向 ${ email }. ${ errorMessage } 发送邀请失败"
       ]
     },
     "Event invitation error": {
@@ -2803,7 +2806,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "我们已经将您的存储总空间提升至${ totalGBStorageAfterCompletion } GB。您可以获取更多附加存储空间，同时解锁高级功能！"
       ],
       "You're all set!": [
         "一切就绪！"
@@ -2811,7 +2814,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        ""
+        "完成所有步骤后，您的账户将得到 ${ totalGBStorageAfterCompletion } GB 存储空间"
       ],
       "Expires soon": [
         "即将过期"
@@ -2825,44 +2828,44 @@
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "支持 iOS 与安卓设备。"
       ],
       "Get the ${ protonMailAppName } mobile app": [
         "下载 ${ protonMailAppName } 移动应用"
       ],
       "Import contacts or emails": [
-        ""
+        "导入您的通讯录或信息"
       ],
       "Import your contacts or messages": [
-        ""
+        "导入您的通讯录或信息"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "通过简单转换助手以快速地将您之前的联系人和电子邮件从任何服务提供商转移"
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "打开手机APP完成后续操作。"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "使用您的移动设备扫描此二维码或只读打开"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "获取移动端应用"
       ],
       "Import contacts or emails": [
-        ""
+        "导入您的通讯录或电子邮件"
       ],
       "Send a message": [
-        ""
+        "发送邮件"
       ],
       "Set up a recovery method": [
-        ""
+        "设置恢复方法"
       ]
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "您可以在任何时候通过这里查看任务进度"
       ]
     },
     "Get started checklist title": {
@@ -3002,7 +3005,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "授予本应用所需的所有权限"
       ]
     },
     "Import warning": {
@@ -3024,7 +3027,7 @@
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        ""
+        "${ calendarsToBeMerged } 个合并日历"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 个合并日历"
@@ -3078,10 +3081,10 @@
         "${ numContacts } 名联系人"
       ],
       "${ occurrencesInBody } occurrence found": [
-        ""
+        "找到 ${ occurrencesInBody } 条结果"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
-        ""
+        "邮件正文中找到 ${ occurrencesInBody } 条结果"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 个文件已添加到附件。"
@@ -3156,7 +3159,7 @@
         "+${ organization.BonusVPN } 台设备可接入 ProtonVPN"
       ],
       "/month.": [
-        "/月."
+        "/月。"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "优惠券 ${ code } 已提供 20% 优惠"
@@ -3237,7 +3240,7 @@
         "检测到此收件人的一枚未知公钥。"
       ],
       "and": [
-        ""
+        "和"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "确定要删除此文件夹内的所有邮件吗？"
@@ -3438,13 +3441,13 @@
         "已禁用电子邮件跟踪保护"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        ""
+        "邮件跟踪器会威胁到您的隐私，Proton暂未在此邮件中发现任何跟踪器。"
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        ""
+        "邮件跟踪器会威胁到您的隐私，Proton找到并阻止了 ${ numberOfTrackers } 个跟踪器。"
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        ""
+        "邮件跟踪器会威胁到您的隐私，开启跟踪器防护可以避免发件人得知您在何时何地阅览了此邮件。"
       ],
       "embedded image": [
         "张嵌入图像"
@@ -3687,7 +3690,7 @@
         "无邮箱地址"
       ],
       "No email trackers found": [
-        ""
+        "未发现电子邮件跟踪器"
       ],
       "No folder found": [
         "未找到文件夹"
@@ -3813,7 +3816,7 @@
         "Proton 不会通过滥用用户隐私来赚钱。"
       ],
       "ProtonMail can protect your business as well.": [
-        "ProtonMail 也可以保护您的业务。"
+        "您的商务邮件也可以交由 ProtonMail 保护。"
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus 仅限一名用户使用，5 GB 存储空间起步。"
@@ -3873,7 +3876,7 @@
         "已添加截图"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
+        "搜索耗时太长? 尝试 ${ dropdownButton } 或 ${ toggleOffButton } 搜索结果。"
       ],
       "Seems like you are all caught up for now": [
         "看来没有要处理的事务了"
@@ -3936,7 +3939,7 @@
         "主题："
       ],
       "Support privacy by upgrading for": [
-        ""
+        "升级账户支持我们的隐私保护事业，仅需"
       ],
       "support team": [
         "客服团队"
@@ -4110,31 +4113,31 @@
         "升级后可向您的账户添加更多地址。"
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        "升级后可配置假期自动回复。"
+        "升级账户即可开启自动回复功能。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "升级账户即可创建更多文件夹、筛选规则和邮箱地址。"
       ],
       "Upgrade to host emails from your own domain name.": [
-        ""
+        "开通付费账户即可使用您自己的域名收发邮件。"
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "升级后可通过 @pm.me 地址发送电子邮件。"
+        "开通付费账户即可通过 @pm.me 地址发送电子邮件。"
       ],
       "Upgrade to send emails to contact groups easily.": [
         "升级后可轻松向联系人群组发送电子邮件。"
       ],
       "Upgrade to support a privacy-first internet.": [
-        "升级以支持隐私优先的互联网。"
+        "升级账户即可助力我们构建隐私优先的互联网。"
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "升级以支持我们全面隐私的使命。"
+        "升级账户即可支持我们为大众捍卫隐私的使命。"
       ],
       "Upgrade to support privacy and get more features.": [
-        "升级以助力隐私并获取更多功能。"
+        "升级账户不仅可以支持我们的隐私保护事业，还能解锁更多功能。"
       ],
       "Upgrade to use ProtonMail with third-party desktop clients.": [
-        "升级后可配合使用第三方桌面客户端。"
+        "开通付费账户即可通过第三方客户端使用 ProtonMail。"
       ],
       "Upload picture": [
         "上传图片"
@@ -4167,7 +4170,7 @@
         "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
       ],
       "Visit our shop to get Proton merchandise.": [
-        "访问我们的商店以获取 Proton 商品。"
+        "前往我们的商店即可选购 Proton 特色纪念品。"
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } 套装，适合家庭和小企业。"
@@ -4930,7 +4933,7 @@
         "显示密码"
       ],
       "Search in": [
-        ""
+        "在其中搜索"
       ],
       "Select a method": [
         "选择支付方式"
@@ -4939,7 +4942,7 @@
         "请选择编辑窗的默认外观"
       ],
       "Select how your list of messages looks like by default.": [
-        "请选择收件箱列表的默认外观"
+        "调整邮件列表的显示方式。"
       ],
       "Select how your mailbox looks like by default.": [
         "请选择邮箱的默认外观"
@@ -5064,7 +5067,7 @@
     },
     "Label to change density": {
       "Comfortable": [
-        "舒适"
+        "适中"
       ],
       "Compact": [
         "紧凑"
@@ -5429,13 +5432,13 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        ""
+        "定时发送未完成"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "定时发送已取消，邮件已移至草稿箱。"
       ],
       "Sending undone": [
-        "撤回了邮件"
+        "邮件已撤回"
       ]
     },
     "MIME type": {
@@ -5608,7 +5611,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "请注意，下一步您需要${ boldNextStep }才能开始导入。"
       ]
     },
     "Onboarding": {
@@ -6055,7 +6058,7 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "请注意：点击 \"应用\" 按钮后，服务将重新加载"
+        "请注意：点击「应用」按钮后网页将重新加载。"
       ]
     },
     "Reply to calendar invitation": {
@@ -6210,13 +6213,13 @@
         "邮件全文搜索"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
+        "为了保护您的隐私，Proton 屏蔽了此邮件中的电子邮件跟踪器"
       ],
       "You can now schedule your messages to be sent later": [
         "您现在可以计划稍后发送邮件"
       ],
       "You can now search the content of your encrypted emails.": [
-        ""
+        "您现在可以搜索加密电子邮件的内容了。"
       ]
     },
     "Status": {
@@ -7297,7 +7300,7 @@
         "${ n } 台服务器"
       ],
       "${ n } VPN connection": [
-        ""
+        "${ n } 个VPN连接"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } 个国家的 ${ numberOfServers }"

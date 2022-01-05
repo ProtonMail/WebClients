@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
@@ -2045,7 +2045,7 @@
         "Έχετε χάσει την πρόσβαση στα κλειδιά της επιχείρησης σας. Χωρίς επαναφορά, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
       ],
       "You have no invoices.": [
-        "Δεν έχετε υπόλοιπο."
+        "Δεν έχετε τιμολόγια."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις στο διαθέσιμο πακέτο/πλάνο σας. Κάντε αναβάθμιση του λογαριασμού σας για να προσθέσετε μια νέα διεύθυνση."
@@ -3803,6 +3803,9 @@
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
       ],
+      "Log in to ProtonMail to activate your address": [
+        "Συνδεθείτε στο ProtonMail για να ενεργοποιήσετε τη διεύθυνσή σας"
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Τα αρχεία καταγραφής περιλαμβάνουν προσπάθειες ελέγχου ταυτότητας για όλες τις υπηρεσίες Proton που χρησιμοποιούν τα διαπιστευτήριά σας Proton."
       ],
@@ -4303,7 +4306,7 @@
         "Δυστυχώς, δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "Εάν δεν αποσυνδεθείτε ή αλλάξετε τον κωδικό πρόσβασής σας, οι συνεδρία σας θα παραμείνει ενεργή. Οι συνεδρίες λήγουν μετά από 60 ημέρες αδράνειας."
+        "Εφόσον δεν εξέλθετε του λογαριασμού σας, ούτε αλλάξετε τον κωδικό πρόσβασής σας, η συνεδρία σας θα παραμείνει ενεργή. Οι συνεδρίες λήγουν μετά από 60 ημέρες αδράνειας."
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
@@ -4450,7 +4453,7 @@
         "Μπορείτε να δημιουργήσετε μέχρι ${ MAX_LINKS_PER_CALENDAR } συνδέσμους ανά ημερολόγιο. Για τη δημιουργία ενός νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε έναν από την παρακάτω λίστα."
       ],
       "You can customize and download your invoices for accounting purposes.": [
-        "Μπορείτε να προσαρμόσετε και να λάβετε τους λογαριασμούς/υπόλοιπα σας για λογιστικούς σκοπούς."
+        "Μπορείτε να προσαρμόσετε και να κατεβάσετε τα τιμολόγιά σας για λογιστικούς σκοπούς."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Μπορείτε να ενεργοποιήσετε την καταγραφή ταυτότητας για να δείτε πότε θα έχει πρόσβαση ο λογαριασμός σας και από ποια διεύθυνση IP. Θα καταγράψουμε τη διεύθυνση IP που έχει πρόσβαση στον λογαριασμό και την ώρα, καθώς και τις αποτυχημένες προσπάθειες."
@@ -5180,7 +5183,7 @@
         "Τρέχων κωδικός εισόδου"
       ],
       "Customize invoices": [
-        "Προσαρμόστε τα τιμολόγια σας"
+        "Προσαρμογή τιμολογίων"
       ],
       "CVV code": [
         "Κωδικός CVV"
@@ -5517,6 +5520,9 @@
       ],
       "Proton username": [
         "Όνομα χρήστη Proton"
+      ],
+      "ProtonMail address": [
+        "Διεύθυνση ProtonMail"
       ],
       "ProtonMail footer": [
         "Υποσέλιδο ProtonMail"
@@ -5894,8 +5900,11 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
+      "Not activated": [
+        "Μη ενεργοποιημένο"
+      ],
       "Pay invoice": [
-        "Πληρωμή υπολοίπου"
+        "Πληρωμή τιμολογίου"
       ],
       "Previous version": [
         "Προηγούμενη έκδοση"
@@ -7041,14 +7050,11 @@
       "Auto reply": [
         "Αυτόματη απάντηση"
       ],
-      "Backup & Export": [
-        "Αντίγραφο Ασφαλείας & Εξαγωγή"
+      "Backup and export": [
+        "Αντίγραφο ασφαλείας και εξαγωγή"
       ],
       "Calendars": [
         "Ημερολόγια"
-      ],
-      "Domain Names": [
-        "Ονόματα Τομέων"
       ],
       "Domain names": [
         "Ονόματα τομέων"
@@ -7056,20 +7062,20 @@
       "Email privacy": [
         "Προστασία προσωπικών δεδομένων Ηλεκτρονικού Ταχυδρομείου"
       ],
-      "Encryption & keys": [
-        "Κρυπτογράφηση & κλειδιά"
+      "Encryption and keys": [
+        "Κρυπτογράφηση και κλειδιά"
       ],
       "Filters": [
         "Φίλτρα"
       ],
-      "Folders & labels": [
-        "Φάκελοι & ετικέτες"
+      "Folders and labels": [
+        "Φάκελοι και ετικέτες"
       ],
       "General": [
         "Γενικά"
       ],
-      "Identity & addresses": [
-        "Ταυτότητα & διευθύνσεις"
+      "Identity and addresses": [
+        "Ταυτότητα και διευθύνσεις"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7083,11 +7089,11 @@
       "Organization": [
         "Οργανισμός"
       ],
-      "Organization & keys": [
-        "Οργανισμός & κλειδιά"
+      "Organization and keys": [
+        "Οργανισμός και κλειδιά"
       ],
-      "Users & addresses": [
-        "Χρήστες & διευθύνσεις"
+      "Users and addresses": [
+        "Χρήστες και διευθύνσεις"
       ],
       "VPN apps": [
         "Εφαρμογές VPN"
@@ -7296,10 +7302,10 @@
         "Η εισαγωγή εγγραφής διαγράφηκε"
       ],
       "Invoice customized": [
-        "Το υπόλοιπο προσαρμόστηκε"
+        "Το τιμολόγιο προσαρμόστηκε"
       ],
       "Invoice paid": [
-        "Το υπόλοιπο πληρώθηκε"
+        "Το τιμολόγιο πληρώθηκε"
       ],
       "Keyboard shortcuts preferences updated": [
         "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
@@ -7506,6 +7512,9 @@
       "3. Select config file and download": [
         "3. Επιλέξτε αρχείο ρυθμίσεων και λήψη"
       ],
+      "Account and password": [
+        "Λογαριασμός και κωδικός πρόσβασης"
+      ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
@@ -7546,7 +7555,7 @@
         "Προσθήκη φίλτρου"
       ],
       "Add invoice details": [
-        "Προσθήκη λεπτομερειών υπολοίπου"
+        "Προσθήκη στοιχείων τιμολογίου"
       ],
       "Add PayPal payment method": [
         "Προσθέστε μία μέθοδο πληρωμής PayPal"
@@ -7611,8 +7620,8 @@
       "Back": [
         "Πίσω"
       ],
-      "Backup & Export": [
-        "Αντίγραφο Ασφαλείας & Εξαγωγή"
+      "Backup and export": [
+        "Αντίγραφο ασφαλείας και εξαγωγή"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -7716,8 +7725,8 @@
       "Currency": [
         "Νόμισμα"
       ],
-      "Current & past imports": [
-        "Τρέχουσες & παλαιότερες εισαγωγές"
+      "Current and past imports": [
+        "Τρέχουσα και προηγούμενες εισαγωγές"
       ],
       "Current plan": [
         "Τρέχον πακέτο"
@@ -7788,8 +7797,8 @@
       "Disable two-factor authentication": [
         "Απενεργοποίηση ελέγχου ταυτότητας δύο παραγόντων"
       ],
-      "Display name & signature": [
-        "Εμφανιζόμενο όνομα & υπογραφή"
+      "Display name and signature": [
+        "Εμφανιζόμενο όνομα και υπογραφή"
       ],
       "Domain names": [
         "Ονόματα τομέων"
@@ -7836,8 +7845,8 @@
       "Enable keyboard shortcuts": [
         "Ενεργοποίηση συντομεύσεων πληκτρολογίου"
       ],
-      "Encryption & keys": [
-        "Κρυπτογράφηση & κλειδιά"
+      "Encryption and keys": [
+        "Κρυπτογράφηση και κλειδιά"
       ],
       "Error": [
         "Σφάλμα"
@@ -7872,8 +7881,8 @@
       "Folders": [
         "Φάκελοι"
       ],
-      "Folders & labels": [
-        "Φάκελοι & ετικέτες"
+      "Folders and labels": [
+        "Φάκελοι και ετικέτες"
       ],
       "General": [
         "Γενικά"
@@ -7890,8 +7899,8 @@
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
       ],
-      "Identity & addresses": [
-        "Ταυτότητα & διευθύνσεις"
+      "Identity and addresses": [
+        "Ταυτότητα και διευθύνσεις"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7934,7 +7943,7 @@
         "Προσκλήσεις"
       ],
       "Invoices": [
-        "Υπόλοιπα"
+        "Τιμολόγια"
       ],
       "Keyboard Shortcuts": [
         "Συντομεύσεις Πληκτρολογίου"
@@ -7942,8 +7951,8 @@
       "Labels": [
         "Ετικέτες"
       ],
-      "Language & time": [
-        "Γλώσσα & ώρα"
+      "Language and time": [
+        "Γλώσσα και ώρα"
       ],
       "Layout": [
         "Διάταξη"
@@ -7993,8 +8002,8 @@
       "Organization": [
         "Οργανισμός"
       ],
-      "Organization & keys": [
-        "Οργανισμός & κλειδιά"
+      "Organization and keys": [
+        "Οργανισμός και κλειδιά"
       ],
       "Other": [
         "Άλλο"
@@ -8002,20 +8011,14 @@
       "Password": [
         "Κωδικός"
       ],
-      "Password & keys": [
-        "Κωδικός & κλειδιά"
-      ],
-      "Password & security": [
-        "Κωδικός & ασφάλεια"
+      "Password and keys": [
+        "Κωδικός πρόσβασης και κλειδιά"
       ],
       "Passwords": [
         "Κωδικοί πρόσβασης"
       ],
       "Pay invoice": [
-        "Πληρωμή υπολοίπου"
-      ],
-      "Payment": [
-        "Πληρωμή"
+        "Πληρωμή τιμολογίου"
       ],
       "Payment details": [
         "Στοιχεία Πληρωμής"
@@ -8091,6 +8094,9 @@
       ],
       "Restore administrator privileges": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
+      ],
+      "Security": [
+        "Διασφάλιση"
       ],
       "Security logs": [
         "Καταγραφές διασφάλισης"
@@ -8226,6 +8232,9 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Username": [
+        "Όνομα χρήστη"
       ],
       "Users and addresses": [
         "Χρήστες και διευθύνσεις"
@@ -8504,6 +8513,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Υπογράψτε αυτόματα όλα τα εξερχόμενα μηνύματά σας, ώστε οι χρήστες να μπορούν να επαληθεύσουν τη γνησιότητά τους. Αυτό γίνεται σε συνδυασμό με τις προεπιλεγμένες ρυθμίσεις PGP, οι οποίες μπορούν να διαμορφωθούν παρακάτω."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "ευσταθή έκδοση"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Αυτή η έκδοση του περιηγητή Tor δεν υποστηρίζεται. Παρακαλούμε ενημερώστε στην τελευταία ${ stableRelease }"
       ]
     },
     "Update font modal": {

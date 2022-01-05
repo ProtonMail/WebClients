@@ -90,16 +90,16 @@
         "不好意思，這個錯誤有待修正。我們就去處理一下。"
       ],
       "Error: ${ errorMessage }": [
-        ""
+        "錯誤：${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
       "Please ${ refresh } or check your connection.": [
-        ""
+        "請${ refresh }或檢查您的連線。"
       ],
       "There was a problem connecting to Proton.": [
-        ""
+        "連線至 Proton 時發生問題。"
       ],
       "You may also ${ refresh } or try again later.": [
         "您亦可${ refresh }或稍後再試一次。"
@@ -222,7 +222,7 @@
         "無效的驗證碼"
       ],
       "Request new code": [
-        ""
+        "要求新代碼"
       ],
       "Sign in again to continue": [
         "請重新登入以繼續"

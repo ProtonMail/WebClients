@@ -3564,6 +3564,14 @@
         "Twój adres e-mail nie jest nikomu udostępniany i jest używany tylko do odzyskiwania i pytań związanych z kontem lub komunikacją."
       ]
     },
+    "Tor out of date": {
+      "stable release": [
+        "wersji stabilnej"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Hasło musi zawierać co najmniej ${ length } znak",

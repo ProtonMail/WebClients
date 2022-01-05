@@ -31,10 +31,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ Name }@pm.me": [
@@ -3842,6 +3842,9 @@
       "Loading preview": [
         "正在載入預覽"
       ],
+      "Log in to ProtonMail to activate your address": [
+        "登入 ProtonMail 以啟用您的電子郵件地址"
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "記錄包含使用您的 Proton 認證登入所有 Proton 服務的認證嘗試。"
       ],
@@ -5552,6 +5555,9 @@
       "Proton username": [
         "Proton 使用者名稱"
       ],
+      "ProtonMail address": [
+        "ProtonMail 電子郵件地址"
+      ],
       "ProtonMail footer": [
         "ProtonMail 下款"
       ],
@@ -5927,6 +5933,9 @@
       ],
       "Learn more": [
         "瞭解更多"
+      ],
+      "Not activated": [
+        "未啟用"
       ],
       "Pay invoice": [
         "支付帳單"
@@ -7063,14 +7072,11 @@
       "Auto reply": [
         "自動回覆"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         "備份與匯出"
       ],
       "Calendars": [
         "行事曆"
-      ],
-      "Domain Names": [
-        "網域名稱"
       ],
       "Domain names": [
         "網域名稱"
@@ -7078,20 +7084,20 @@
       "Email privacy": [
         "電子郵件隱私"
       ],
-      "Encryption & keys": [
-        "加密和金鑰"
+      "Encryption and keys": [
+        "加密與金鑰"
       ],
       "Filters": [
         "篩選器"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "資料夾與標籤"
       ],
       "General": [
         "一般"
       ],
-      "Identity & addresses": [
-        "身份和電子郵件地址"
+      "Identity and addresses": [
+        "身份與電子郵件地址"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7105,10 +7111,10 @@
       "Organization": [
         "組織"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "組織和金鑰"
       ],
-      "Users & addresses": [
+      "Users and addresses": [
         "使用者及電子郵件地址"
       ],
       "VPN apps": [
@@ -7526,6 +7532,9 @@
       "3. Select config file and download": [
         "3. 選取組態設定檔並下載"
       ],
+      "Account and password": [
+        "帳戶與密碼"
+      ],
       "Account recovery": [
         "帳戶救援"
       ],
@@ -7631,7 +7640,7 @@
       "Back": [
         "返回"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         "備份與匯出"
       ],
       "Billing cycle": [
@@ -7736,8 +7745,8 @@
       "Currency": [
         "貨幣"
       ],
-      "Current & past imports": [
-        "目前及過去匯入"
+      "Current and past imports": [
+        "目前及過去的匯入"
       ],
       "Current plan": [
         "目前方案"
@@ -7808,7 +7817,7 @@
       "Disable two-factor authentication": [
         "停用兩步驟驗證"
       ],
-      "Display name & signature": [
+      "Display name and signature": [
         "顯示名稱與簽名"
       ],
       "Domain names": [
@@ -7856,7 +7865,7 @@
       "Enable keyboard shortcuts": [
         "啟用鍵盤快捷鍵"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "加密和金鑰"
       ],
       "Error": [
@@ -7892,8 +7901,8 @@
       "Folders": [
         "資料夾"
       ],
-      "Folders & labels": [
-        "資料夾與標籤"
+      "Folders and labels": [
+        "資料夾和標籤"
       ],
       "General": [
         "一般"
@@ -7910,7 +7919,7 @@
       "Human verification": [
         "真人驗證"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "身份和電子郵件地址"
       ],
       "IMAP/SMTP": [
@@ -7961,7 +7970,7 @@
       "Labels": [
         "標籤"
       ],
-      "Language & time": [
+      "Language and time": [
         "語言和時間"
       ],
       "Layout": [
@@ -8012,8 +8021,8 @@
       "Organization": [
         "組織"
       ],
-      "Organization & keys": [
-        "組織和金鑰"
+      "Organization and keys": [
+        "組織與金鑰"
       ],
       "Other": [
         "其他"
@@ -8021,20 +8030,14 @@
       "Password": [
         "密碼"
       ],
-      "Password & keys": [
+      "Password and keys": [
         "密碼和金鑰"
-      ],
-      "Password & security": [
-        "密碼與安全"
       ],
       "Passwords": [
         "密碼"
       ],
       "Pay invoice": [
         "支付帳單"
-      ],
-      "Payment": [
-        "付款"
       ],
       "Payment details": [
         "付款詳情"
@@ -8110,6 +8113,9 @@
       ],
       "Restore administrator privileges": [
         "恢復系統管理員權限"
+      ],
+      "Security": [
+        "安全性"
       ],
       "Security logs": [
         "安全記錄檔"
@@ -8245,6 +8251,9 @@
       ],
       "Upgrade": [
         "升級"
+      ],
+      "Username": [
+        "使用者名稱"
       ],
       "Users and addresses": [
         "使用者及電子郵件地址"
@@ -8523,6 +8532,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "自動簽署您所有外送的郵件，以便使用者可驗證您的郵件是否真確。將一併採用設置於下方的預設 PGP 設定。"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "穩定發行版"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "此版本的洋蔥瀏覽器不受支援，請升級到最新的 ${ stableRelease }"
       ]
     },
     "Update font modal": {
