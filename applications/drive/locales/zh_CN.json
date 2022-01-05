@@ -624,10 +624,10 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "启用“测试版功能”能让您在正式发布之前使用 ProtonMail、Proton Calendar、Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能。"
+        "开启测试版功能后您将使用 ProtonMail、Proton Calendar 和 Proton Drive 未正式发布的公测版本，可以抢先体验新产品和新功能。"
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        "如果您在使用过程中遇到问题，您可以随时禁用该选项。"
+        "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
     },
     "Billing cycle option": {
@@ -993,7 +993,7 @@
     },
     "Density mode": {
       "Comfortable": [
-        "舒适"
+        "适中"
       ],
       "Compact": [
         "紧凑"
@@ -2354,7 +2354,7 @@
         "您想从您的 Google 账户中导入哪些内容？"
       ],
       "What would you like to do?": [
-        ""
+        "您想要做些什么？"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
@@ -2797,8 +2797,8 @@
       "CVV code": [
         "CVV 码"
       ],
-      "Delete Drive?": [
-        "删除网盘？"
+      "Delete drive?": [
+        "删除网盘?"
       ],
       "Display name": [
         "显示名称"
@@ -2981,7 +2981,7 @@
         "请选择编辑窗的默认外观"
       ],
       "Select how your list of messages looks like by default.": [
-        "请选择收件箱列表的默认外观"
+        "调整邮件列表的显示方式。"
       ],
       "Select how your mailbox looks like by default.": [
         "请选择邮箱的默认外观"
@@ -3037,7 +3037,7 @@
       "Unknown file": [
         "未知文件格式"
       ],
-      "Unlock Drive": [
+      "Unlock drive": [
         "解锁网盘"
       ],
       "Unlock drive (recommended)": [
@@ -3094,7 +3094,7 @@
     },
     "Label to change density": {
       "Comfortable": [
-        "舒适"
+        "适中"
       ],
       "Compact": [
         "紧凑"
@@ -3792,7 +3792,7 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "请注意：点击“应用”按钮后，服务将重新加载。"
+        "请注意：点击「应用」按钮后网页将重新加载。"
       ]
     },
     "Select files": {
@@ -4349,7 +4349,7 @@
         "选择链接失效时间"
       ],
       "Select permissions": [
-        ""
+        "选择权限"
       ],
       "Select what to import": [
         "选择要导入的内容"
@@ -4665,10 +4665,10 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        ""
+        "${ n } 个服务器"
       ],
       "${ n } VPN connection": [
-        ""
+        "${ n } 个VPN连接"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } 个国家的 ${ numberOfServers }"

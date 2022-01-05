@@ -33,7 +33,7 @@
         "Tambah kontak"
       ],
       "Add email": [
-        "Tambah surel"
+        "Tambah email"
       ],
       "Add group": [
         "Tambah grup"
@@ -204,7 +204,7 @@
         "Salin alamat"
       ],
       "Copy email to clipboard": [
-        "Salin surel ke papan klip"
+        "Salin email ke clipboard"
       ],
       "Create folder": [
         "Buat folder"
@@ -303,7 +303,7 @@
         "Ubah nomor telepon"
       ],
       "Email settings": [
-        "Pengaturan surel"
+        "Pengaturan email"
       ],
       "Enable": [
         "Aktifkan"
@@ -654,7 +654,7 @@
         "Pulihkan data"
       ],
       "Refine it": [
-        "Cobalah untuk mempersempit kata kunci pencarian"
+        "Persempit kata kunci pencarian"
       ],
       "refresh the page": [
         "muat ulang halaman"
@@ -718,6 +718,9 @@
       ],
       "Search": [
         "Pencarian"
+      ],
+      "Search in ${ option.text }": [
+        "Cari di ${ option.text }"
       ],
       "Search message content": [
         "Cari konten pesan"
@@ -998,7 +1001,7 @@
     },
     "Addon": {
       "+ ${ addresses } email address": [
-        "+ ${ addresses } alamat surel"
+        "+ ${ addresses } alamat email"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } domain kustom"
@@ -2133,7 +2136,7 @@
         "Draf tidak dapat disimpan. Coba lagi."
       ],
       "Email address disabled": [
-        "Alamat surel nonaktif"
+        "Alamat email dinonaktifkan"
       ],
       "Email address invalid": [
         "Alamat email tidak valid"
@@ -3432,7 +3435,7 @@
         "Setiap koneksi tambahan dapat diberikan kepada pengguna di organisasi Anda."
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Email tracker protection is disabled": [
         "Perlindungan pelacak email dinonakifkan"
@@ -3444,7 +3447,7 @@
         "Program-program pelacak email dapat mengusik privasi Anda. Proton telah menemukan dan memblokir ${ numberOfTrackers } program pelacak yang terdapat pada email ini."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Program-program pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak email agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan-pesan yang Anda terima atau belum."
+        "Program-program pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan-pesan yang Anda terima atau belum."
       ],
       "embedded image": [
         "gambar tertanam"
@@ -4005,7 +4008,7 @@
         "Percakapan ini berisi pesan yang dibuang."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Surel ini telah gagal memenuhi persyaratan autentikasi domainnya. Surel ini mungkin palsu atau tidak diteruskan dengan benar!"
+        "Email ini tidak memenuhi syarat otentikasi domainnya. Email ini mungkin telah dipalsukan atau tidak diteruskan dengan benar!"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Undangan ini disimpan di kalender nonaktif."
@@ -4065,7 +4068,7 @@
         "Pesan ini akan kedaluwarsa besok pada pukul ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        "Kunci publik ini akan dipakai secara otomatis untuk mengenkripsi surel yang dikirim ke alamat ini."
+        "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi email-email yang dikirim ke alamat ini."
       ],
       "This sender's public key has not been trusted yet.": [
         "Kunci publik pengirim belum dipercaya."
@@ -4083,10 +4086,10 @@
         "Untuk memulihkan data Anda, Anda perlu mengaktivasi ulang kunci enkripsi kontak yang dipakai saat data dibuat. Ini mewajibkan Anda untuk mengingat kata sandi yang dipakai saat kunci dibuat dulu."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Untuk berhenti langganan dari milis ini, sebuah surel akan dikirim dari ${ boldFrom } dengan rincian berikut seperti yang didefinisikan oleh pengirim newsletter:"
+        "Untuk dapat berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian-rincian berikut sebagaimana yang diterakan oleh pengelola milis:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Untuk berhenti langganan dari milis ini, Anda akan dibawa ke URL berikut tempat petunjuk disediakan oleh pengirim newsletter:"
+        "Untuk dapat berhenti berlangganan dari milis ini, Anda akan dibawa ke URL berikut yang berisikan arahan-arahan lebih lanjut dari pengelola milis:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
@@ -4173,7 +4176,7 @@
         "Bundel VPN + ${ mailAppName } untuk keluarga dan usaha kecil."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Maaf. Ini mungkin kesalahan dari kami. Maukah Anda mengonfirmasi bahwa Anda ingin menandai surel ini sebagai surel sah?"
+        "Mohon maaf, namun sepertinya terjadi suatu kesalahan pada sistem kami. Dapatkah Anda mengonfirmasi bahwa Anda memang benar ingin menandai email ini sebagai email yang sah?"
       ],
       "We could not verify the sender's trusted keys.": [
         "Kami tidak dapat memverifikasi kunci yang dipercaya pengirim."
@@ -4615,7 +4618,7 @@
         "Tindakan"
       ],
       "Add email address": [
-        "Tambah alamat surel"
+        "Tambah alamat email"
       ],
       "Add image URL": [
         "Tambah URL gambar"
@@ -4732,10 +4735,10 @@
         "Email"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Email format": [
-        "Format surel"
+        "Format email"
       ],
       "Emails": [
         "Email"
@@ -4744,7 +4747,7 @@
         "Aktifkan Akses Beta"
       ],
       "Encrypt emails": [
-        "Enkripsi surel"
+        "Enkripsi email"
       ],
       "Enter organization name to confirm": [
         "Masukkan nama organisasi untuk dapat melanjutkan"
@@ -4954,7 +4957,7 @@
         "Pengirim"
       ],
       "Sign emails": [
-        "Tanda tangani surel"
+        "Tanda tangani email"
       ],
       "Size:": [
         "Ukuran:"
@@ -6104,7 +6107,7 @@
     },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
-        "Yakin ingin mengirim surel ini?"
+        "Apakah Anda tetap ingin mengirim email ini?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "Kami telah mendeteksi kesalahan. Surel Anda tidak dapat dikirim ke alamat surel manapun kerena alasan berikut:"
@@ -6118,7 +6121,7 @@
         "Apakah Anda tetap ingin mengirim email ini?"
       ],
       "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Jika Anda memutuskan untuk mengirim pesan ini, penerima berikut akan menerima surel tanpa waktu kedaluwarsa:"
+        "Apabila Anda memutuskan untuk tetap mengirim email ini, para penerima berikut akan menerima email yang bersangkutan tanpa terikat waktu kedaluwarsa:"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Alamat berikut tidak valid: ${ invalidAddresses }"
@@ -6762,7 +6765,7 @@
         "Konten email"
       ],
       "Email settings": [
-        "Pengaturan surel"
+        "Pengaturan email"
       ],
       "Email settings (${ emailAddress })": [
         "Pengaturan email (${ emailAddress })"
@@ -6774,7 +6777,7 @@
         "Enkripsi"
       ],
       "Enter your password": [
-        "Masukkan sandi Anda"
+        "Masukkan kata sandi Anda"
       ],
       "Enter your username or ProtonMail email address": [
         "Masukkan nama pengguna atau alamat email ProtonMail Anda"

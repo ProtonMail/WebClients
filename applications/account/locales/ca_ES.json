@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -3899,6 +3899,9 @@
       "Loading preview": [
         "Carregant la previsualització"
       ],
+      "Log in to ProtonMail to activate your address": [
+        ""
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Els registres inclouen els intents d'autentificació per a tots els serveis de Proton que utilitzen les vostres credencials de Proton."
       ],
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Nom d'usuari de Proton"
       ],
+      "ProtonMail address": [
+        ""
+      ],
       "ProtonMail footer": [
         "Peu de pàgina de ProtonMail"
       ],
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "Not activated": [
+        ""
       ],
       "Pay invoice": [
         "Pagar la factura"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Resposta automàtica"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         ""
       ],
       "Calendars": [
         "Calendaris"
-      ],
-      "Domain Names": [
-        "Noms de domini"
       ],
       "Domain names": [
         "Noms de domini"
@@ -7152,20 +7158,20 @@
       "Email privacy": [
         "Privacitat del correu electrònic"
       ],
-      "Encryption & keys": [
-        "Xifratge i claus"
+      "Encryption and keys": [
+        ""
       ],
       "Filters": [
         "Filtres"
       ],
-      "Folders & labels": [
-        "Carpetes i etiquetes"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "General"
       ],
-      "Identity & addresses": [
-        "Identitat i adreces"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7179,11 +7185,11 @@
       "Organization": [
         "Organització"
       ],
-      "Organization & keys": [
-        "Organització i claus"
+      "Organization and keys": [
+        ""
       ],
-      "Users & addresses": [
-        "Usuaris i adreces"
+      "Users and addresses": [
+        ""
       ],
       "VPN apps": [
         "Aplicacions VPN"
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Seleccionar arxiu de configuració i descarregar"
       ],
+      "Account and password": [
+        ""
+      ],
       "Account recovery": [
         "Recuperació de compte"
       ],
@@ -7707,8 +7716,8 @@
       "Back": [
         "Torna"
       ],
-      "Backup & Export": [
-        "Copia de Seguritat i Exportar"
+      "Backup and export": [
+        ""
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -7812,8 +7821,8 @@
       "Currency": [
         "Moneda"
       ],
-      "Current & past imports": [
-        "Importacions actuals i anteriors"
+      "Current and past imports": [
+        ""
       ],
       "Current plan": [
         "Pla actual"
@@ -7884,8 +7893,8 @@
       "Disable two-factor authentication": [
         "Deshabilitar l'autenticació en dos passos"
       ],
-      "Display name & signature": [
-        "Nom de visualització i signatura"
+      "Display name and signature": [
+        ""
       ],
       "Domain names": [
         "Noms de domini"
@@ -7932,8 +7941,8 @@
       "Enable keyboard shortcuts": [
         "Activar les dreceres de teclat"
       ],
-      "Encryption & keys": [
-        "Xifratge i claus"
+      "Encryption and keys": [
+        ""
       ],
       "Error": [
         "Error"
@@ -7968,8 +7977,8 @@
       "Folders": [
         "Carpetes"
       ],
-      "Folders & labels": [
-        "Carpetes i etiquetes"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "General"
@@ -7986,8 +7995,8 @@
       "Human verification": [
         "Verificació humana"
       ],
-      "Identity & addresses": [
-        "Identitat i adreces"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8038,8 +8047,8 @@
       "Labels": [
         "Etiquetes"
       ],
-      "Language & time": [
-        "Idioma i hora"
+      "Language and time": [
+        ""
       ],
       "Layout": [
         "Disposició"
@@ -8089,8 +8098,8 @@
       "Organization": [
         "Organització"
       ],
-      "Organization & keys": [
-        "Organització i claus"
+      "Organization and keys": [
+        ""
       ],
       "Other": [
         "Altres"
@@ -8098,20 +8107,14 @@
       "Password": [
         "Contrasenya"
       ],
-      "Password & keys": [
-        "Contrasenya i claus"
-      ],
-      "Password & security": [
-        "Paraula de pas I seguretat"
+      "Password and keys": [
+        ""
       ],
       "Passwords": [
         "Contrasenyes"
       ],
       "Pay invoice": [
         "Factura de pagament"
-      ],
-      "Payment": [
-        "Pagament"
       ],
       "Payment details": [
         "Detalls de pagament"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
+      ],
+      "Security": [
+        ""
       ],
       "Security logs": [
         "Registres de seguretat"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Actualitzar"
+      ],
+      "Username": [
+        ""
       ],
       "Users and addresses": [
         "Usuaris i adreces"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar l'autenticitat dels vostres missatges. Això es fa en combinació amb la configuració PGP per defecte que es pot configurar a continuació."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

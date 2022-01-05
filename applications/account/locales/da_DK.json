@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
@@ -2922,7 +2922,7 @@
         ""
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        ""
+        "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         ""
@@ -2931,7 +2931,7 @@
         ""
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        ""
+        "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }"
       ],
       "Go to ${ boldAccountSecurity }": [
         ""
@@ -2952,7 +2952,7 @@
         ""
       ],
       "Select ${ boldExportCSV }": [
-        ""
+        "Vælg ${ boldExportCSV }"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         ""
@@ -2976,7 +2976,7 @@
         ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        ""
+        "For at importere til Proton skal du bruge et ${ appPasswordLink } fra Yahoo. Få det ved at følge disse trin:"
       ]
     },
     "Import instructions emphasis": {
@@ -2990,57 +2990,57 @@
         "app-adgangskode"
       ],
       "Can view all details": [
-        ""
+        "Kan se alle detaljer"
       ],
       "Export": [
-        ""
+        "Eksport"
       ],
       "Export contacts": [
-        ""
+        "Eksportér kontakter"
       ],
       "Export to CSV file": [
-        ""
+        "Eksportér til CSV-fil"
       ],
       "ICS": [
-        ""
+        "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        ""
+        "i det næste trin skal du vælge alle tilladelserne"
       ],
       "Manage": [
-        ""
+        "Administrer"
       ],
       "Publish a calendar": [
-        ""
+        "Offentliggør en kalender"
       ]
     },
     "Import instructions link": {
       "app password": [
-        ""
+        "app-adgangskode"
       ],
       "app password or enable IMAP": [
-        ""
+        "app-adgangskode eller aktivér IMAP"
       ],
       "contacts": [
-        ""
+        "kontakter"
       ],
       "CSV file": [
-        ""
+        "CSV fil"
       ],
       "full calendar view": [
-        ""
+        "fuld kalendervisning"
       ],
       "ICS file": [
-        ""
+        "ICS fil"
       ],
       "security settings": [
-        ""
+        "sikkerhedsindstillinger"
       ],
       "shared calendars": [
-        ""
+        "delte kalendere"
       ],
       "Yahoo Mail": [
-        ""
+        "Yahoo Mail"
       ]
     },
     "Import instructions step": {
@@ -3070,7 +3070,7 @@
     },
     "Import provider": {
       "Other": [
-        ""
+        "Anden"
       ]
     },
     "Import status": {
@@ -3898,6 +3898,9 @@
       ],
       "Loading preview": [
         "Indlæser forhåndsvisning"
+      ],
+      "Log in to ProtonMail to activate your address": [
+        "Log ind på ProtonMail for at aktivere din adresse"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Logger omfatter godkendelsesforsøg for alle Proton-tjenester, som benytter dine ProtonMail-akkreditiver."
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Proton-brugernavn"
       ],
+      "ProtonMail address": [
+        "ProtonMail-adressse"
+      ],
       "ProtonMail footer": [
         "ProtonMail sidefod"
       ],
@@ -5990,6 +5996,9 @@
       "Learn more": [
         "Få mere at vide"
       ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
       "Pay invoice": [
         "Betal faktura"
       ],
@@ -6209,31 +6218,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        ""
+        "Sådan importerer du kalendere fra en anden tjeneste"
       ],
       "How to import calendars from Outlook": [
-        ""
+        "Sådan importerer du kalendere fra Outlook"
       ],
       "How to import calendars from Yahoo": [
-        ""
+        "Sådan importerer du kalendere fra Yahoo"
       ],
       "How to import contacts from another service": [
-        ""
+        "Sådan importerer du kontakter fra en anden tjeneste"
       ],
       "How to import contacts from Outlook": [
-        ""
+        "Sådan importerer du kontakter fra Outlook"
       ],
       "How to import contacts from Yahoo": [
-        ""
+        "Sådan importerer du kontakter fra Yahoo"
       ],
       "How to import emails from another service": [
-        ""
+        "Sådan importerer du e-mails fra en anden tjeneste"
       ],
       "How to import emails from Outlook": [
-        ""
+        "Sådan importerer du e-mails fra Outlook"
       ],
       "How to import emails from Yahoo": [
-        ""
+        "Sådan importerer du e-mails fra Yahoo"
       ]
     },
     "Modal title and action": {
@@ -6473,7 +6482,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Bemærk at ${ boldNextStep } som applikationen anmoder om, for at starte din import."
       ]
     },
     "Onboarding Proton": {
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Autosvar"
       ],
-      "Backup & Export": [
-        "Backup & eksport"
+      "Backup and export": [
+        "Backup og eksport"
       ],
       "Calendars": [
         "Kalendere"
-      ],
-      "Domain Names": [
-        "Domænenavne"
       ],
       "Domain names": [
         "Domænenavne"
@@ -7152,20 +7158,20 @@
       "Email privacy": [
         "E-mail-privatliv"
       ],
-      "Encryption & keys": [
-        "Kryptering & nøgler"
+      "Encryption and keys": [
+        "Kryptering og nøgler"
       ],
       "Filters": [
         "Filtre"
       ],
-      "Folders & labels": [
-        "Mapper & etiketter"
+      "Folders and labels": [
+        "Mapper og etiketter"
       ],
       "General": [
         "Generelt"
       ],
-      "Identity & addresses": [
-        "Identitet & adresser"
+      "Identity and addresses": [
+        "Identitet og adresser"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7179,11 +7185,11 @@
       "Organization": [
         "Organisation"
       ],
-      "Organization & keys": [
-        "Organisation & nøgler"
+      "Organization and keys": [
+        "Organisation og nøgler"
       ],
-      "Users & addresses": [
-        "Brugere & adresser"
+      "Users and addresses": [
+        "Brugere og adresser"
       ],
       "VPN apps": [
         "VPN-apps"
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Vælg konfigurationsfil og download"
       ],
+      "Account and password": [
+        "Konto og adgangskode"
+      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -7707,8 +7716,8 @@
       "Back": [
         "Tilbage"
       ],
-      "Backup & Export": [
-        "Backup & eksport"
+      "Backup and export": [
+        "Backup og eksport"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
@@ -7812,7 +7821,7 @@
       "Currency": [
         "Valuta"
       ],
-      "Current & past imports": [
+      "Current and past imports": [
         "Nuværende og tidligere importer"
       ],
       "Current plan": [
@@ -7884,7 +7893,7 @@
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
       ],
-      "Display name & signature": [
+      "Display name and signature": [
         "Visningsnavn og signatur"
       ],
       "Domain names": [
@@ -7932,8 +7941,8 @@
       "Enable keyboard shortcuts": [
         "Aktiver tastaturgenveje"
       ],
-      "Encryption & keys": [
-        "Kryptering & nøgler"
+      "Encryption and keys": [
+        "Kryptering og nøgler"
       ],
       "Error": [
         "Fejl"
@@ -7968,8 +7977,8 @@
       "Folders": [
         "Mapper"
       ],
-      "Folders & labels": [
-        "Mapper & etiketter"
+      "Folders and labels": [
+        "Mapper og etiketter"
       ],
       "General": [
         "Generelt"
@@ -7986,8 +7995,8 @@
       "Human verification": [
         "Menneskelig bekræftelse"
       ],
-      "Identity & addresses": [
-        "Identitet & adresser"
+      "Identity and addresses": [
+        "Identitet og adresser"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8038,8 +8047,8 @@
       "Labels": [
         "Etiketter"
       ],
-      "Language & time": [
-        "Sprog & tid"
+      "Language and time": [
+        "Sprog og tid"
       ],
       "Layout": [
         "Layout"
@@ -8089,8 +8098,8 @@
       "Organization": [
         "Organisation"
       ],
-      "Organization & keys": [
-        "Organisation & nøgler"
+      "Organization and keys": [
+        "Organisation og nøgler"
       ],
       "Other": [
         "Andet"
@@ -8098,20 +8107,14 @@
       "Password": [
         "Adgangskode"
       ],
-      "Password & keys": [
-        "Adgangskode & nøgler"
-      ],
-      "Password & security": [
-        "Adgangskode & sikkerhed"
+      "Password and keys": [
+        "Adgangskode og nøgler"
       ],
       "Passwords": [
         "Adgangskoder"
       ],
       "Pay invoice": [
         "Betal faktura"
-      ],
-      "Payment": [
-        "Betaling"
       ],
       "Payment details": [
         "Betalingsdetaljer"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Gendan administratorprivilegier"
+      ],
+      "Security": [
+        "Sikkerhed"
       ],
       "Security logs": [
         "Sikkerhedslog"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Opgradér"
+      ],
+      "Username": [
+        "Brugernavn"
       ],
       "Users and addresses": [
         "Brugere og adresser"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Signér automatisk alle dine udgående beskeder, så brugerne kan bekræfte ægtheden af dine beskeder. Dette gøres i kombination med den standard PGP-konfiguration, der kan vælges nedenfor."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabil udgave"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne version af Tor Browseren er ikke understøttet. Opdatér venligst til den nyeste ${ stableRelease }"
       ]
     },
     "Update font modal": {

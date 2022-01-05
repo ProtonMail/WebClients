@@ -15,7 +15,7 @@
         "${ BRAND_NAME } ショップ"
       ],
       "Activate recovery": [
-        ""
+        "リカバリーを有効化"
       ],
       "Add": [
         "追加"
@@ -78,7 +78,7 @@
         "チャットする"
       ],
       "Check import progress": [
-        ""
+        "インポートの進行を確認"
       ],
       "Choose a file or drag it here": [
         "ファイルを選択するか、ここにドラッグしてください"
@@ -126,7 +126,7 @@
         "確認"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "リンク ${ linkToShow } を確認"
       ],
       "Contact group": [
         "連絡先グループ"
@@ -192,7 +192,7 @@
         "ダウンロード"
       ],
       "Drive Locked": [
-        ""
+        "ドライブはロックされています"
       ],
       "Edit": [
         "編集"
@@ -608,7 +608,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        ""
+        "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
       ]
     },
     "Apps dropdown": {
@@ -849,7 +849,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "カレンダーを復号できませんでした"
       ],
       "Calendar is syncing": [
         "カレンダーの同期中"
@@ -883,7 +883,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "インポートのカスタマイズを終了しますか?"
       ]
     },
     "Contact field label": {
@@ -1076,7 +1076,7 @@
         "認証エラー"
       ],
       "Calendar limit reached": [
-        ""
+        "カレンダーの制限に達しました"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
@@ -1088,7 +1088,7 @@
         "電話番号の検証ができませんでした。再度お試しください"
       ],
       "Checkout expired, please try again": [
-        ""
+        "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
@@ -1100,7 +1100,7 @@
         "${ email } というメールアドレスが見つかりませんでした。"
       ],
       "Could not generate file keys": [
-        ""
+        "鍵を生成することができませんでした"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         ""
@@ -1121,19 +1121,19 @@
         "ビットコインAPIへの接続中にエラーが発生しました。"
       ],
       "Failed to download a file": [
-        ""
+        "ファイルをダウンロードできませんでした"
       ],
       "Failed to download a folder": [
-        ""
+        "フォルダーをダウンロードできませんでした"
       ],
       "Failed to load the link": [
-        ""
+        "リンクの読み込みに失敗しました"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
       ],
       "File \"${ name }\" is already downloading": [
-        ""
+        "ファイル \"${ name }\" はすでにダウンロード中です"
       ],
       "File cannot be merged with folder": [
         ""
@@ -1142,10 +1142,10 @@
         "ファイルにプレビューするコンテンツがありません"
       ],
       "File selection is already downloading": [
-        ""
+        "選択されたファイルはすでにダウンロード中です"
       ],
       "Folder \"${ name }\" is already downloading": [
-        ""
+        "フォルダー \"${ name }\" はすでにダウンロード中です"
       ],
       "Folder name cannot be empty": [
         "フォルダー名は空欄にできません"
@@ -1199,7 +1199,7 @@
         "カードの名義人を入力してください。"
       ],
       "No data to import": [
-        ""
+        "インポートするデータがありません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
@@ -1211,10 +1211,10 @@
         "一部の連絡先にメールアドレスがありません: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
-        ""
+        "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "組織が認識されていません。再度お試しください。"
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
@@ -1238,10 +1238,10 @@
         "設定が保存できませんでした。"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "プライマリーアドレス鍵が復号されていません"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "プライマリーアドレス鍵が復号されていません。"
       ],
       "Process aborted": [
         "処理が中断されました"
@@ -1262,7 +1262,7 @@
         "一部のグループは削除できませんでした"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
         ""
@@ -1307,10 +1307,10 @@
         ""
       ],
       "The original folder not found": [
-        ""
+        "元のフォルダーが見つかりません"
       ],
       "The original folder or file not found": [
-        ""
+        "元のフォルダーまたはファイルが見つかりません"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
@@ -1349,7 +1349,7 @@
         "名前を設定してください"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "あなたのブラウザーはフォルダーのアップロードをサポートしていません"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -1449,7 +1449,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } が更新されました"
       ]
     },
     "Free price": {
@@ -1522,7 +1522,7 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        ""
+        "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
@@ -1545,7 +1545,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        ""
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち{ totalImported } 件の連絡先のインポートに成功しました。"
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
@@ -1566,7 +1566,7 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        ""
+        "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
       ],
       "No contact can be imported. Click for details": [
         "連絡先をインポートすることはできません。詳細はクリックしてください"
@@ -1649,7 +1649,7 @@
         "${ numContacts } 件の連絡先"
       ],
       "${ pausedCount } paused": [
-        ""
+        "${ pausedCount } 一時停止"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ annualBilling } に切り替えることで ${ save20 } になります"
@@ -1661,7 +1661,7 @@
         "VPN サブスクリプションを追加することによって VPN とメールの両方が ${ saveExtra20 } になります。"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        ""
+        "${ providerCalendars.length } 件のうち ${ selectedCalendarsTotal } 件のカレンダー"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
@@ -1682,7 +1682,7 @@
         "${ vpnAppName } Free"
       ],
       "(${ memberCount } member)": [
-        ""
+        "(${ memberCount } メンバー)"
       ],
       "(Mail + VPN)": [
         "(メール + VPN)"
@@ -1748,7 +1748,7 @@
         "最少金額 (${ amount }) を下回っています。"
       ],
       "An active recovery file": [
-        ""
+        "有効な復元ファイル"
       ],
       "and": [
         "と"
@@ -1757,7 +1757,7 @@
         "このリンクを知っていれば、誰でもこのファイルにアクセスできます。"
       ],
       "Anyone with this link can access your folder.": [
-        ""
+        "このリンクを知っていれば、誰でもこのフォルダーにアクセスできます。"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "全てのアイテムを完全に削除し、ごみ箱を空にしてよろしいですか？"
@@ -1829,10 +1829,10 @@
         "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "インポートされたメッセージのラベル、インポートする期間、およびインポート先のラベルを設定します。"
       ],
       "Create a new contact group": [
         "新しい連絡先グループを作成"
@@ -1850,13 +1850,13 @@
         "ファイルへのリンクを作成中"
       ],
       "Creating link to folder": [
-        ""
+        "フォルダーのリンクを作成しています"
       ],
       "Creating share": [
         "共有を作成しています"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora の CSV ファイルや vCard 3.1 および 4.0 フォーマット (UTF-8 エンコーディング) 形式をサポートしています。"
       ],
       "Delete drive": [
         "ドライブを削除"
@@ -1943,7 +1943,7 @@
         "「マイファイル」に移動し、ファイルをアップロードしてください。"
       ],
       "Group assignment applied": [
-        ""
+        "グループの割り当てが適用されました"
       ],
       "here": [
         "こちら"
@@ -1979,7 +1979,7 @@
         "プランに含む"
       ],
       "Inherited from parent folder": [
-        ""
+        "親フォルダーから継承"
       ],
       "Initializing": [
         "初期化中"
@@ -2000,7 +2000,7 @@
         "鍵のフィンガープリント"
       ],
       "Large imports can take several days.": [
-        ""
+        "巨大なインポートは数日かかる場合があります。"
       ],
       "Learn more": [
         "より詳しく"
@@ -2039,7 +2039,7 @@
         "マイリンク"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "新しいフォルダー名と親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
       "Network issue": [
         "ネットワークの問題"
@@ -2099,7 +2099,7 @@
         "リンクとパスワードを知っている人のみがファイルにアクセスすることができます。"
       ],
       "Only the people with the link and the password can access this folder.": [
-        ""
+        "リンクとパスワードを知っている人のみがフォルダーにアクセスすることができます。"
       ],
       "Paused": [
         "一時停止"
@@ -2111,7 +2111,7 @@
         "支払い情報は TLS で暗号化され、スイスのプライバシー法によっても保護されます。"
       ],
       "Permanently delete all files in your drive": [
-        ""
+        "ドライブからすべてのファイルを完全に削除"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline はプレーンテキスト形式としか互換性がありません。 ProtonMail は暗号化されたメッセージに常に署名することに注意してください。"
@@ -2129,7 +2129,7 @@
         "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "インポートしたいフォルダを選択してください:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "再度試すか、別の支払い方法を用いてください。あるいはあなたの銀行にお尋ねください。"
@@ -2198,7 +2198,7 @@
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "サーバーに接続できません。数分後にもう一度お試しください"
       ],
       "Session timed out.": [
         "セッションがタイムアウトしました。"
@@ -2273,10 +2273,10 @@
         "これにより、 PayPal を使用して Proton のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は、 ポップアップブロッカーを無効にしてから続行してください。"
       ],
       "This will overwrite the existing file": [
-        ""
+        "存在するファイルを上書きします"
       ],
       "This will overwrite the existing folder": [
-        ""
+        "存在するフォルダーを上書きします"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -2306,7 +2306,7 @@
         "ごみ箱"
       ],
       "Unlock drive to recover files": [
-        ""
+        "回復ファイルを使ってドライブのロックを解除"
       ],
       "Unsupported file": [
         "非対応のファイル"
@@ -2318,7 +2318,7 @@
         "アップロード中"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        ""
+        "同時にたくさんのファイルをアップロードするとパフォーマンスが低下する可能性があります。"
       ],
       "Users": [
         "ユーザー"
@@ -2372,13 +2372,13 @@
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
       "You cannot undo this action.": [
         "この操作は取り消せません。"
@@ -2447,10 +2447,10 @@
         "あなたのファイルは暗号化して保存されます。"
       ],
       "Your folder failed to download.": [
-        ""
+        "フォルダーのダウンロードに失敗しました。"
       ],
       "Your folder has finished downloading.": [
-        ""
+        "フォルダーのダウンロードが完了しました。"
       ],
       "Your folder is being downloaded.": [
         ""
@@ -2553,7 +2553,7 @@
         "下書きを破棄"
       ],
       "Expand / contract composer": [
-        ""
+        "作成画面を拡大/縮小"
       ],
       "Forward": [
         "転送"
@@ -2797,8 +2797,8 @@
       "CVV code": [
         "CVV コード"
       ],
-      "Delete Drive?": [
-        "ドライブを削除しますか?"
+      "Delete drive?": [
+        ""
       ],
       "Display name": [
         "表示名"
@@ -2822,7 +2822,7 @@
         "メールを暗号化"
       ],
       "Enter organization name to confirm": [
-        ""
+        "続行するために組織名を入力してください"
       ],
       "Enter the 6-digit code": [
         "6 桁のコードを入力"
@@ -2855,7 +2855,7 @@
         "フォルダー"
       ],
       "Folder location": [
-        ""
+        "フォルダーの場所"
       ],
       "Folder name": [
         "フォルダー名"
@@ -2879,16 +2879,16 @@
         "連絡先をインポート"
       ],
       "Import interval": [
-        ""
+        "インポートする期間"
       ],
       "Import to email address": [
-        ""
+        "メールアドレスをインポート"
       ],
       "Keyboard shortcuts": [
         "キーボードショートカット"
       ],
       "Label messages as": [
-        ""
+        "メッセージにつけるラベル"
       ],
       "Last 12 months only": [
         "過去 12 か月のみ"
@@ -2897,16 +2897,16 @@
         "過去 3 か月のみ"
       ],
       "Last month only": [
-        ""
+        "過去 1 か月のみ"
       ],
       "Mailbox password": [
         "メールボックスのパスワード"
       ],
       "Manage folders": [
-        ""
+        "フォルダーを管理"
       ],
       "Manage labels": [
-        ""
+        "ラベルを管理"
       ],
       "Merge a folder": [
         "フォルダーを統合"
@@ -2981,7 +2981,7 @@
         "新規メッセージ作成時の既定のモードを選択してください。"
       ],
       "Select how your list of messages looks like by default.": [
-        ""
+        "デフォルトで使用されるメッセージのリストを選択してください。"
       ],
       "Select how your mailbox looks like by default.": [
         "デフォルトで使用される受信箱の見た目を選択してください。"
@@ -3020,7 +3020,7 @@
         ""
       ],
       "To: ${ emailAddress }": [
-        ""
+        "移行先: ${ emailAddress }"
       ],
       "Total": [
         "合計"
@@ -3037,11 +3037,11 @@
       "Unknown file": [
         "不明なファイル"
       ],
-      "Unlock Drive": [
-        "ドライブのロックを解除"
+      "Unlock drive": [
+        ""
       ],
       "Unlock drive (recommended)": [
-        ""
+        "ドライブのロックを解除 (おすすめ)"
       ],
       "Unlock later": [
         "後でロック解除"
@@ -3068,7 +3068,7 @@
         "どのような症状がでましたか？"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        ""
+        "はい、古いファイルを完全に削除します"
       ],
       "ZIP": [
         "郵便番号"
@@ -3115,7 +3115,7 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "フォルダーを作成"
       ],
       "Create label": [
         "ラベルを作成"
@@ -3129,7 +3129,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } が作成されました"
       ]
     },
     "Layout mode": {
@@ -3189,13 +3189,13 @@
         "新しいカレンダーを作成しています"
       ],
       "Gathering your data": [
-        ""
+        "データを集めています"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "プロバイダーからファイルを集めています"
       ],
       "Your import is starting": [
-        ""
+        "インポートが開始しました"
       ]
     },
     "Mail feature": {
@@ -3294,7 +3294,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "これにより、組織に関連付けられているすべての副ユーザー、アカウント、データが完全に削除されます。"
       ]
     },
     "Message display when a new app version is available": {
@@ -3343,7 +3343,7 @@
         "「${ firstItemName }」がごみ箱から復元されました"
       ],
       "${ deletedCount } link to your file was deleted": [
-        ""
+        "${ deletedCount } 件のリンクが削除されました"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } 件のファイルがごみ箱から完全に削除されました"
@@ -3355,7 +3355,7 @@
         "${ deletedItemsCount } 件のアイテムがごみ箱から完全に削除されました"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        ""
+        "${ failedCount } 件のリンクが削除できませんでした"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } 件のファイルの移動に失敗しました"
@@ -3397,7 +3397,7 @@
         "全てのアイテムは間もなくごみ箱から完全に削除されます。"
       ],
       "An item with the name \"${ name }\" already exists in the current folder": [
-        ""
+        "\"${ name }\" というアイテムはすでに現在のフォルダーに存在します"
       ],
       "Contact group created": [
         "連絡先グループが作成されました。"
@@ -3406,22 +3406,22 @@
         "連絡先グループが更新されました。"
       ],
       "Failed to download files: ${ err }": [
-        ""
+        "ファイルのダウンロードに失敗しました: ${ err }"
       ],
       "Failed to move, please try again": [
         "移動に失敗しました。再度お試しください。"
       ],
       "Failed to upload files: ${ err }": [
-        ""
+        "ファイルのアップロードに失敗しました: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         ""
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        ""
+        "ファイルまたはフォルダー \"${ filename }\" はすでにアップロード中です"
       ],
       "File or folder is missing a name": [
-        ""
+        "ファイルまたはフォルダーが存在しません"
       ],
       "Move ${ itemsToMoveCount } file": [
         "${ itemsToMoveCount } 件のファイルを移動"
@@ -3442,19 +3442,19 @@
         "${ movingCount } 件のアイテムの移動"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        ""
+        "${ formattedTotal } をアップロードするスペースがありません"
       ],
       "The link to your file failed to be deleted": [
-        ""
+        "ファイルへのリンクが削除できませんでした"
       ],
       "The link to your file was deleted": [
-        ""
+        "ファイルへのリンクが削除されました"
       ],
       "Your old files will be deleted in 72 hours": [
-        ""
+        "古いファイルは 72 時間で削除されます"
       ],
       "Your settings have been changed successfully": [
-        ""
+        "設定は正常に変更されました"
       ]
     },
     "Oauth instructions": {
@@ -3538,15 +3538,15 @@
         "グループを無視"
       ],
       "No parent folder": [
-        ""
+        "親フォルダなし"
       ]
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "新しいカレンダーを作成"
       ],
       "Merge with calendar": [
-        ""
+        "カレンダーと結合"
       ]
     },
     "Payment method option": {
@@ -3752,7 +3752,7 @@
         "連絡先はエクスポートされていません。"
       ],
       "No contacts merged.": [
-        ""
+        "連絡先は結合されません。"
       ],
       "Progress: ${ combinedProgress }%": [
         "進捗: ${ combinedProgress }%"
@@ -3870,7 +3870,7 @@
         "退会手続きが正常に行なわれました。"
       ],
       "Your files were successfully recovered to \"My files\".": [
-        ""
+        "ファイルは正常に復元され「マイファイル」に保存されました。"
       ]
     },
     "Suffix for price": {
@@ -3961,13 +3961,13 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "アカウントを作成した日"
       ],
       "the last 12 months": [
-        ""
+        "過去 12 か月以内"
       ],
       "the last 3 months": [
-        ""
+        "過去 3 か月以内"
       ],
       "the last month": [
         "過去 1 か月以内"
@@ -4088,13 +4088,13 @@
         "現在のプラン"
       ],
       "Customize and confirm": [
-        ""
+        "カスタマイズと確認"
       ],
       "Customize calendar import": [
-        ""
+        "カレンダーのインポートをカスタマイズ"
       ],
       "Customize your mail import": [
-        ""
+        "メールのインポートをカスタマイズ"
       ],
       "Customize your plan": [
         "プランをカスタマイズ"
@@ -4127,7 +4127,7 @@
         "変更を破棄してよろしいですか？"
       ],
       "Downgrade account": [
-        ""
+        "アカウントをダウングレード"
       ],
       "Download canceled": [
         "ダウンロードをキャンセルしました"
@@ -4175,7 +4175,7 @@
         "ごみ箱を空にする"
       ],
       "Enter password to download": [
-        ""
+        "パスワードを入力してダウンロード"
       ],
       "Enter your password": [
         "パスワードを入力してください"
@@ -4325,7 +4325,7 @@
         "問題を報告"
       ],
       "Request new code": [
-        ""
+        "新しいコードをリクエスト"
       ],
       "Restore your files": [
         "ファイルを復元"
@@ -4554,7 +4554,7 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "クリックして動画を再生"
       ],
       "Replay video": [
         "ビデオを再生"
@@ -4671,7 +4671,7 @@
         "${ n } VPN 接続"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        ""
+        "${ numberOfCountries } か国の ${ numberOfServers } 台のサーバー"
       ]
     },
     "Warning": {
@@ -4700,7 +4700,7 @@
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されないため、機密情報は含めないでください。"
@@ -4709,7 +4709,7 @@
         ""
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "連絡先データが壊れているため表示できません。"
       ],
       "The contact failed to load.": [
         "連絡先の読み込みに失敗しました。"

@@ -317,7 +317,7 @@
         "Kryptering"
       ],
       "exclude message content": [
-        ""
+        "undtag beskedindhold"
       ],
       "Expand composer": [
         "Udvid skrivevinduet"
@@ -657,7 +657,7 @@
         "Gendan data"
       ],
       "Refine it": [
-        ""
+        "Præciser den"
       ],
       "refresh the page": [
         "opdater siden"
@@ -721,6 +721,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Search in ${ option.text }": [
+        "Søg i ${ option.text }"
       ],
       "Search message content": [
         "Søg i beskedindhold"
@@ -1309,7 +1312,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        ""
+        "Har en begivenhed i kalenderen"
       ]
     },
     "Calendar feature": {
@@ -1350,10 +1353,10 @@
         " Dette svar matcher ikke dine invitationsdetaljer. Kontroller invitationsoplysningerne i din kalender."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } accepterede en invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } accepterede en invitation og foreslog et nyt tidspunkt for denne begivenhed."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
         "${ participantName } accepterede en invitation til én forekomst af begivenheden."
@@ -1383,10 +1386,10 @@
         "${ participantName } bad om de seneste opdateringer til en begivenhed, der ikke findes i din kalender længere."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } afslog en invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } afslog en invitation og foreslog et nyt tidspunkt for denne begivenhed."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
         "${ participantName } afslog en invitation til én forekomst af begivenheden."
@@ -1407,10 +1410,10 @@
         "${ participantName } afslog din invitation."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } accepterede en invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } accepterede en invitation og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
         "${ participantName } havde accepteret din invitation til én forekomst af begivenheden."
@@ -1425,10 +1428,10 @@
         "${ participantName } accepterede din invitation og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } afslog en invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } afslog en invitation og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
         "${ participantName } havde afslået en invitation til én forekomst af begivenheden."
@@ -1479,10 +1482,10 @@
         "${ participantName } havde foreslået en ny tid til denne begivenhed. Dette forslag er forældet. Du har ingen kalendere."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } accepterede en invitation med forbehold og foreslog et nyt tidspunkt til én forekomst af denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } accepterede en invitation med forbehold og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
         "${ participantName } havde foreløbig accepteret en invitation til én forekomst af begivenheden."
@@ -1497,7 +1500,7 @@
         "${ participantName } accepterede din invitation med forbehold og foreslog et nyt tidspunkt for denne begivenhed. Svar og forslag er forældet."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } er ikke på deltagerlisten."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } foreslog et nyt tidspunkt for én forekomst af denne begivenhed."
@@ -1506,13 +1509,13 @@
         "${ participantName } foreslog et nyt tidspunkt for denne begivenhed."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } accepterede en invitation med forbehold og foreslog et nyt tidspunkt for én forekomst af denne begivenhed."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } accepterede en invitation med forbehold og foreslog et nyt tidspunkt for denne begivenhed."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } accepterede foreløbig en invitation til én forekomst af begivenheden."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
         "${ participantName } accepterede foreløbig en invitation til denne begivenhed."
@@ -3036,7 +3039,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "i det næste trin skal du vælge alle tilladelserne"
       ]
     },
     "Import warning": {
@@ -3952,7 +3955,7 @@
         "Skærmfoto(-s) vedhæftet"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
+        "Tager søgningen for lang tid? ${ dropdownButton } eller ${ toggleOffButton } fra denne søgesession."
       ],
       "Seems like you are all caught up for now": [
         "Det ser ud til, at du er nået i bund"
@@ -5522,7 +5525,7 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        ""
+        "Planlagt afsendelse annulleret"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Planlægning annulleret. Besked er blevet flyttet til Kladder."
@@ -5704,7 +5707,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Bemærk at ${ boldNextStep } som applikationen anmoder om, for at starte din import."
       ]
     },
     "Onboarding": {
@@ -7121,7 +7124,7 @@
         "Vælg kontaktgruppe"
       ],
       "Select permissions": [
-        ""
+        "Vælg tilladelser"
       ],
       "Select what to import": [
         "Vælg, hvad der skal importeres"
@@ -7325,10 +7328,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Klik for at afspille videoen igen"
       ],
       "Replay video": [
-        ""
+        "Afspil video igen"
       ]
     },
     "VPN feature": {

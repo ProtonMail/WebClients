@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -3899,6 +3899,9 @@
       "Loading preview": [
         "Cargando vista previa"
       ],
+      "Log in to ProtonMail to activate your address": [
+        "Inicie sesión en ProtonMail para activar su dirección"
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Los registros incluyen intentos de autenticación de todos los servicios que usan sus credenciales de ProtonMail."
       ],
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Nombre de usuario de Proton"
       ],
+      "ProtonMail address": [
+        "Dirección de ProtonMail"
+      ],
       "ProtonMail footer": [
         "Pie de página - ProtonMail"
       ],
@@ -5651,7 +5657,7 @@
         "Enviar respuesta automática"
       ],
       "Send invites in": [
-        "Enviar invitaciones el"
+        "Enviar invitaciones en"
       ],
       "Show secondary time zone": [
         "Mostrar zona horaria secundaria"
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "Not activated": [
+        "No activado"
       ],
       "Pay invoice": [
         "Pagar factura"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Autorrespuesta"
       ],
-      "Backup & Export": [
-        "Respaldo y Exportación"
+      "Backup and export": [
+        "Respaldar y exportar"
       ],
       "Calendars": [
         "Calendarios"
-      ],
-      "Domain Names": [
-        "Nombres de dominio"
       ],
       "Domain names": [
         "Nombres de dominio"
@@ -7152,19 +7158,19 @@
       "Email privacy": [
         "Privacidad del correo"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "Cifrado y claves"
       ],
       "Filters": [
         "Filtros"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "Carpetas y etiquetas"
       ],
       "General": [
         "General"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "Identidad y direcciones"
       ],
       "IMAP/SMTP": [
@@ -7179,10 +7185,10 @@
       "Organization": [
         "Organización"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "Organización y claves"
       ],
-      "Users & addresses": [
+      "Users and addresses": [
         "Usuarios y direcciones"
       ],
       "VPN apps": [
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Seleccionar archivo de configuración y descargar"
       ],
+      "Account and password": [
+        "Cuenta y contraseña"
+      ],
       "Account recovery": [
         "Recuperación de cuenta"
       ],
@@ -7707,8 +7716,8 @@
       "Back": [
         "Atrás"
       ],
-      "Backup & Export": [
-        "Respaldo y Exportación"
+      "Backup and export": [
+        "Respaldar y exportar"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -7812,8 +7821,8 @@
       "Currency": [
         "Moneda"
       ],
-      "Current & past imports": [
-        "Importaciones actuales y anteriores"
+      "Current and past imports": [
+        "Importaciones actual y anteriores"
       ],
       "Current plan": [
         "Plan actual"
@@ -7884,7 +7893,7 @@
       "Disable two-factor authentication": [
         "Deshabilitar autenticación de dos factores"
       ],
-      "Display name & signature": [
+      "Display name and signature": [
         "Nombre a mostrar y firma"
       ],
       "Domain names": [
@@ -7932,7 +7941,7 @@
       "Enable keyboard shortcuts": [
         "Habilitar atajos de teclado"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "Cifrado y claves"
       ],
       "Error": [
@@ -7968,7 +7977,7 @@
       "Folders": [
         "Carpetas"
       ],
-      "Folders & labels": [
+      "Folders and labels": [
         "Carpetas y etiquetas"
       ],
       "General": [
@@ -7986,7 +7995,7 @@
       "Human verification": [
         "Verificación humana"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "Identidad y direcciones"
       ],
       "IMAP/SMTP": [
@@ -8038,7 +8047,7 @@
       "Labels": [
         "Etiquetas"
       ],
-      "Language & time": [
+      "Language and time": [
         "Idioma y hora"
       ],
       "Layout": [
@@ -8089,7 +8098,7 @@
       "Organization": [
         "Organización"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "Organización y claves"
       ],
       "Other": [
@@ -8098,20 +8107,14 @@
       "Password": [
         "Contraseña"
       ],
-      "Password & keys": [
+      "Password and keys": [
         "Contraseña y claves"
-      ],
-      "Password & security": [
-        "Contraseña y seguridad"
       ],
       "Passwords": [
         "Contraseñas"
       ],
       "Pay invoice": [
         "Pagar factura"
-      ],
-      "Payment": [
-        "Pago"
       ],
       "Payment details": [
         "Detalles del pago"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Restaurar privilegios de administrador"
+      ],
+      "Security": [
+        "Seguridad"
       ],
       "Security logs": [
         "Registros de seguridad"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ],
       "Users and addresses": [
         "Usuarios y direcciones"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Firmar automáticamente todos sus mensajes salientes para que los usuarios puedan verificar la autenticidad de sus mensajes. Esto se hace en combinación con la configuración predeterminada de PGP que se puede configurar a continuación."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versión estable"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versión del navegador Tor no es soportada. Actualice a la última ${ stableRelease }"
       ]
     },
     "Update font modal": {

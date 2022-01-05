@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
@@ -185,7 +185,7 @@
         "确认"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "确认打开链接？ ${ linkToShow }"
       ],
       "Contact support": [
         "联系客服"
@@ -377,13 +377,13 @@
         "导入"
       ],
       "Import calendars": [
-        ""
+        "导入日历"
       ],
       "Import contacts": [
         "导入联系人"
       ],
       "Import emails": [
-        ""
+        "导入电子邮件"
       ],
       "Import from .ics": [
         "从 .ics 文件导入"
@@ -653,7 +653,7 @@
         "显示更多"
       ],
       "Show shortcuts": [
-        "显示快捷方式"
+        "显示快捷键"
       ],
       "sign in": [
         "登录"
@@ -1075,7 +1075,7 @@
         "年费（省 20%）"
       ],
       "Monthly": [
-        "按月"
+        "月费"
       ],
       "Two years SAVE 33%": [
         "两年计费（省 33%）"
@@ -1334,7 +1334,7 @@
         "离上一个更新已经超过了12小时"
       ],
       "Unsupported calendar format": [
-        ""
+        "不受支持的日历格式"
       ]
     },
     "Calendar view": {
@@ -2571,13 +2571,13 @@
     },
     "Frequency of news": {
       "(1 email per month)": [
-        "（1 封邮件/月）"
+        "（每月 1 封邮件）"
       ],
       "(1 email per quarter)": [
-        "（1 封邮件/季度）"
+        "（每个季度 1 封邮件）"
       ],
       "(1-2 emails per month)": [
-        "（1-2 封邮件/月）"
+        "（每月 1 至 2 封邮件）"
       ]
     },
     "Group": {
@@ -2943,7 +2943,7 @@
         ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        ""
+        "要将电子邮件从Yahoo导入到Proton，您需要在Yahoo得到一条 ${ appPasswordLink }，通过下面的步骤来获取："
       ]
     },
     "Import instructions emphasis": {
@@ -2957,57 +2957,57 @@
         "应用专用密码"
       ],
       "Can view all details": [
-        ""
+        "可以浏览详细内容"
       ],
       "Export": [
-        ""
+        "导出"
       ],
       "Export contacts": [
-        ""
+        "导出联系人"
       ],
       "Export to CSV file": [
-        ""
+        "导出至 CSV 文件"
       ],
       "ICS": [
-        ""
+        "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        ""
+        "在下一步中，您需要选择全部的许可"
       ],
       "Manage": [
-        ""
+        "管理"
       ],
       "Publish a calendar": [
-        ""
+        "发布一个日历"
       ]
     },
     "Import instructions link": {
       "app password": [
-        ""
+        "应用专用密码"
       ],
       "app password or enable IMAP": [
         ""
       ],
       "contacts": [
-        ""
+        "通讯录"
       ],
       "CSV file": [
-        ""
+        "CSV 文件"
       ],
       "full calendar view": [
         ""
       ],
       "ICS file": [
-        ""
+        "ICS 文件"
       ],
       "security settings": [
-        ""
+        "安全设置"
       ],
       "shared calendars": [
-        ""
+        "共享的日历"
       ],
       "Yahoo Mail": [
-        ""
+        "Yahoo Mail"
       ]
     },
     "Import instructions step": {
@@ -3037,7 +3037,7 @@
     },
     "Import provider": {
       "Other": [
-        ""
+        "其它"
       ]
     },
     "Import status": {
@@ -3594,7 +3594,7 @@
         "请输入您的恢复电话号码，我们将发送您的用户名或电子邮件地址信息。"
       ],
       "Event invites and RSVPs will be sent in this language.": [
-        ""
+        "会通过这个语言发送活动邀请或回复信息"
       ],
       "Expired": [
         "已过期"
@@ -3729,7 +3729,7 @@
         "导入收件箱"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        ""
+        "若要将邮件、日历和联系人从其它电子邮箱服务中转移到Proton，我们会全程指导您的每一步操作，转移过程中会加密您的数据，欢迎走进隐私世界的大门！"
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "注意：下载私钥并采用不安全的媒介传输或存储会严重威胁您的账户安全！"
@@ -3841,6 +3841,9 @@
       ],
       "Loading preview": [
         "正在载入预览"
+      ],
+      "Log in to ProtonMail to activate your address": [
+        "登录 ProtonMail 激活您的邮箱地址"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "试图使用您的 Proton 账户登录任何 Proton 产品的操作都会被记录。"
@@ -4137,7 +4140,7 @@
         "已添加截图"
       ],
       "Select a service provider to start": [
-        ""
+        "请选择一个服务提供商并开始导入"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -4536,7 +4539,7 @@
         "您需要有个人日历才能创建链接。"
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "从.ics导入您的日程之前需要有一个启用的个人日历。"
       ],
       "You need to have an active personal calendar to import your events.": [
         "导入您的日程之前您需要有一个启用的个人日历。"
@@ -5211,7 +5214,7 @@
         "扣除余额"
       ],
       "Current login password": [
-        ""
+        "当前登录密码"
       ],
       "Customize invoices": [
         "自定义账单"
@@ -5232,7 +5235,7 @@
         "默认语言"
       ],
       "Default language (${ defaultLanguage })": [
-        ""
+        "默认语言 (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "默认 PGP 加密方案"
@@ -5244,7 +5247,7 @@
         "删除"
       ],
       "Density": [
-        "间距"
+        "密度"
       ],
       "Description": [
         "说明："
@@ -5552,6 +5555,9 @@
       "Proton username": [
         "Proton 用户名"
       ],
+      "ProtonMail address": [
+        "ProtonMail 地址"
+      ],
       "ProtonMail footer": [
         "ProtonMail 标识"
       ],
@@ -5850,7 +5856,7 @@
     },
     "Label to change density": {
       "Comfortable": [
-        "舒适"
+        "适中"
       ],
       "Compact": [
         "紧凑"
@@ -5927,6 +5933,9 @@
       ],
       "Learn more": [
         "了解更多"
+      ],
+      "Not activated": [
+        "尚未激活"
       ],
       "Pay invoice": [
         "支付发票"
@@ -6143,31 +6152,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        ""
+        "如何从其他服务导入日历"
       ],
       "How to import calendars from Outlook": [
-        ""
+        "如何从Outlook导入日历"
       ],
       "How to import calendars from Yahoo": [
-        ""
+        "如何从Yahoo导入日历"
       ],
       "How to import contacts from another service": [
-        ""
+        "如何从其他服务导入联系人"
       ],
       "How to import contacts from Outlook": [
-        ""
+        "如何从Outlook导入联系人"
       ],
       "How to import contacts from Yahoo": [
-        ""
+        "如何从Yahoo导入联系人"
       ],
       "How to import emails from another service": [
-        ""
+        "如何从其他邮件服务导入邮件"
       ],
       "How to import emails from Outlook": [
-        ""
+        "如何从Outlook导入邮件"
       ],
       "How to import emails from Yahoo": [
-        ""
+        "如何从Yahoo导入邮件"
       ]
     },
     "Modal title and action": {
@@ -7047,10 +7056,10 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        ""
+        "迈出通向隐私的一步。安全且轻松。"
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "您可以为单个邮件添加多个标签，但其通常只能位于一个文件夹中。拖放以重新排序文件夹和标签。"
+        "一封邮件可以有多个标签，但通常只能位于一个文件夹中。文件夹和标签的顺序可以在下方通过拖动调整。"
       ]
     },
     "Settings section title": {
@@ -7063,14 +7072,11 @@
       "Auto reply": [
         "自动回复"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         "备份和导出"
       ],
       "Calendars": [
         "日历"
-      ],
-      "Domain Names": [
-        "域名"
       ],
       "Domain names": [
         "域名"
@@ -7078,19 +7084,19 @@
       "Email privacy": [
         "电子邮件隐私"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "加密与密钥"
       ],
       "Filters": [
         "筛选规则"
       ],
-      "Folders & labels": [
-        "文件夹与标签"
+      "Folders and labels": [
+        "标签与文件夹"
       ],
       "General": [
         "常规"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "身份和地址"
       ],
       "IMAP/SMTP": [
@@ -7105,10 +7111,10 @@
       "Organization": [
         "机构"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "机构和密钥"
       ],
-      "Users & addresses": [
+      "Users and addresses": [
         "用户和地址"
       ],
       "VPN apps": [
@@ -7410,7 +7416,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } 标签已删除"
+        "${ label.Name } 已删除"
       ],
       "Address deleted": [
         "地址已删除"
@@ -7526,6 +7532,9 @@
       "3. Select config file and download": [
         "3. 选择配置文件并下载"
       ],
+      "Account and password": [
+        "账户和密钥"
+      ],
       "Account recovery": [
         "账户恢复"
       ],
@@ -7631,7 +7640,7 @@
       "Back": [
         "返回"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         "备份和导出"
       ],
       "Billing cycle": [
@@ -7736,7 +7745,7 @@
       "Currency": [
         "货币"
       ],
-      "Current & past imports": [
+      "Current and past imports": [
         "当前和过去导入"
       ],
       "Current plan": [
@@ -7808,7 +7817,7 @@
       "Disable two-factor authentication": [
         "关闭双重验证"
       ],
-      "Display name & signature": [
+      "Display name and signature": [
         "对外名称与落款"
       ],
       "Domain names": [
@@ -7856,7 +7865,7 @@
       "Enable keyboard shortcuts": [
         "启用快捷键"
       ],
-      "Encryption & keys": [
+      "Encryption and keys": [
         "加密与密钥"
       ],
       "Error": [
@@ -7892,8 +7901,8 @@
       "Folders": [
         "文件夹"
       ],
-      "Folders & labels": [
-        "文件夹与标签"
+      "Folders and labels": [
+        "标签与文件夹"
       ],
       "General": [
         "常规"
@@ -7910,7 +7919,7 @@
       "Human verification": [
         "真人验证"
       ],
-      "Identity & addresses": [
+      "Identity and addresses": [
         "身份和地址"
       ],
       "IMAP/SMTP": [
@@ -7950,7 +7959,7 @@
         "无效的验证码"
       ],
       "Invitations": [
-        ""
+        "邀请"
       ],
       "Invoices": [
         "账单"
@@ -7961,7 +7970,7 @@
       "Labels": [
         "标签"
       ],
-      "Language & time": [
+      "Language and time": [
         "语言和时间"
       ],
       "Layout": [
@@ -8012,7 +8021,7 @@
       "Organization": [
         "机构"
       ],
-      "Organization & keys": [
+      "Organization and keys": [
         "机构和密钥"
       ],
       "Other": [
@@ -8021,20 +8030,14 @@
       "Password": [
         "密码"
       ],
-      "Password & keys": [
+      "Password and keys": [
         "密码与密钥"
-      ],
-      "Password & security": [
-        "密码与安全"
       ],
       "Passwords": [
         "密码"
       ],
       "Pay invoice": [
         "支付账单"
-      ],
-      "Payment": [
-        "支付"
       ],
       "Payment details": [
         "支付明细"
@@ -8111,6 +8114,9 @@
       "Restore administrator privileges": [
         "恢复管理员权限"
       ],
+      "Security": [
+        "安全"
+      ],
       "Security logs": [
         "安全日志"
       ],
@@ -8124,7 +8130,7 @@
         "选择联系人群组"
       ],
       "Select permissions": [
-        ""
+        "设置权限"
       ],
       "Select plan": [
         "开通"
@@ -8217,7 +8223,7 @@
         "切换到双密码模式"
       ],
       "Take precautions to avoid data loss!": [
-        "采取预防措施以避免数据丢失！"
+        "避免数据丢失需要防患于未然！"
       ],
       "Theme": [
         "配色"
@@ -8246,6 +8252,9 @@
       "Upgrade": [
         "升级"
       ],
+      "Username": [
+        "用户名"
+      ],
       "Users and addresses": [
         "用户和地址"
       ],
@@ -8259,7 +8268,7 @@
         "警告！"
       ],
       "What would you like to import?": [
-        ""
+        "您希望导入哪些信息？"
       ],
       "What's new": [
         "更新内容"
@@ -8364,7 +8373,7 @@
     },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "无论身在何方，Netflix, Amazon Prime, BBC iPlayer, Wikipedia, Facebook, YouTube 等均触手可及。"
+        "无论身在何方，Netflix、Amazon Prime、BBC iPlayer、Wikipedia、Facebook、YouTube 均触手可及。"
       ],
       "Account is disconnected": [
         "账户已断开连接"
@@ -8525,6 +8534,14 @@
         "使用可在下方配置的首选 PGP 格式，自动对所有发往非 ProtonMail 邮箱的邮件予以数字签名，以便他人验证您的邮件真实性。"
       ]
     },
+    "Tor out of date": {
+      "stable release": [
+        "稳定版"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "此版本的Tor浏览器已不受支持。请更新至最新${ stableRelease }"
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "今天是写邮件的好日子"
@@ -8567,10 +8584,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "点击以播放视频"
       ],
       "Replay video": [
-        ""
+        "回放视频"
       ]
     },
     "VPN feature": {
@@ -8694,7 +8711,7 @@
     },
     "VPN upsell feature": {
       "Access geo-blocked content (Netflix, YouTube, etc.)": [
-        "访问地理受限内容 (Netflix, YouTube 等)"
+        "绕过网站的地区限制（Netflix、YouTube 等）"
       ],
       "Higher speed servers (up to 10Gbps)": [
         "高速服务器（速度可达 10Gbps）"

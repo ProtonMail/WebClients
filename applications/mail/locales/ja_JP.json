@@ -719,6 +719,9 @@
       "Search": [
         "検索"
       ],
+      "Search in ${ option.text }": [
+        ""
+      ],
       "Search message content": [
         "メッセージ内容を検索"
       ],
@@ -3354,7 +3357,7 @@
         "新しい連絡先グループを作成"
       ],
       "Create in": [
-        ""
+        "作成日時"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
@@ -3381,7 +3384,7 @@
         "日"
       ],
       "Default email application": [
-        ""
+        "既定のメールアプリ"
       ],
       "Disable message content search": [
         "メッセージ内容の検索を無効化"
@@ -3903,7 +3906,7 @@
         "リカバリーフレーズを設定"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        ""
+        "ProtonMail をブラウザー既定のメールアプリとして設定すると、メールのリンクをクリックした際に ProtonMail が自動で起動します。"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -4107,7 +4110,7 @@
         "メッセージ内容の検索を更新中..."
       ],
       "Upgrade to add more addresses to your account.": [
-        ""
+        "アップグレードして更なるアドレスを手に入れましょう。"
       ],
       "Upgrade to configure a vacation auto-responder.": [
         ""
@@ -4816,7 +4819,7 @@
         "ラベル付け"
       ],
       "Label messages as": [
-        ""
+        "メッセージにつけるラベル"
       ],
       "Labels:": [
         "ラベル:"
@@ -6759,7 +6762,7 @@
         "メールアドレス"
       ],
       "Email content": [
-        ""
+        "メール内容"
       ],
       "Email settings": [
         "メールの設定"

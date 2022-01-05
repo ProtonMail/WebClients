@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -3899,6 +3899,9 @@
       "Loading preview": [
         "A carregar antevisão"
       ],
+      "Log in to ProtonMail to activate your address": [
+        ""
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Os diários incluem tentativas de autenticação em todos os serviços Proton que utilizem as suas credenciais Proton."
       ],
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Utilizador Proton"
       ],
+      "ProtonMail address": [
+        ""
+      ],
       "ProtonMail footer": [
         "Rodapé do ProtonMail"
       ],
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Not activated": [
+        ""
       ],
       "Pay invoice": [
         "Pagar factura"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Resposta automática"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         ""
       ],
       "Calendars": [
         "Calendários"
-      ],
-      "Domain Names": [
-        "Nomes de domínio"
       ],
       "Domain names": [
         "Nomes de domínio"
@@ -7152,20 +7158,20 @@
       "Email privacy": [
         ""
       ],
-      "Encryption & keys": [
-        "Encriptação e chaves"
+      "Encryption and keys": [
+        ""
       ],
       "Filters": [
         "Filtros"
       ],
-      "Folders & labels": [
-        "Pastas e etiquetas"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Geral"
       ],
-      "Identity & addresses": [
-        "Identidade e endereços"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7179,11 +7185,11 @@
       "Organization": [
         "Organização"
       ],
-      "Organization & keys": [
-        "Organização e chaves"
+      "Organization and keys": [
+        ""
       ],
-      "Users & addresses": [
-        "Utilizadores e endereços"
+      "Users and addresses": [
+        ""
       ],
       "VPN apps": [
         "Aplicações VPN"
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Seleccionar configuração e transferir"
       ],
+      "Account and password": [
+        ""
+      ],
       "Account recovery": [
         ""
       ],
@@ -7707,7 +7716,7 @@
       "Back": [
         "Recuar"
       ],
-      "Backup & Export": [
+      "Backup and export": [
         ""
       ],
       "Billing cycle": [
@@ -7812,8 +7821,8 @@
       "Currency": [
         "Moeda"
       ],
-      "Current & past imports": [
-        "Importações actuais e anteriores"
+      "Current and past imports": [
+        ""
       ],
       "Current plan": [
         "Plano actual"
@@ -7884,8 +7893,8 @@
       "Disable two-factor authentication": [
         "Desactivar autenticação em dois passos"
       ],
-      "Display name & signature": [
-        "Nome a mostrar e assinatura"
+      "Display name and signature": [
+        ""
       ],
       "Domain names": [
         "Nomes de domínio"
@@ -7932,8 +7941,8 @@
       "Enable keyboard shortcuts": [
         "Activar atalhos de teclado"
       ],
-      "Encryption & keys": [
-        "Encriptação e chaves"
+      "Encryption and keys": [
+        ""
       ],
       "Error": [
         "Erro"
@@ -7968,8 +7977,8 @@
       "Folders": [
         "Pastas"
       ],
-      "Folders & labels": [
-        "Pastas e etiquetas"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Geral"
@@ -7986,8 +7995,8 @@
       "Human verification": [
         "Verificação humana"
       ],
-      "Identity & addresses": [
-        "Identidade e endereços"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8038,8 +8047,8 @@
       "Labels": [
         "Etiquetas"
       ],
-      "Language & time": [
-        "Idioma e hora"
+      "Language and time": [
+        ""
       ],
       "Layout": [
         "Esquema"
@@ -8089,8 +8098,8 @@
       "Organization": [
         "Organização"
       ],
-      "Organization & keys": [
-        "Organização e chaves"
+      "Organization and keys": [
+        ""
       ],
       "Other": [
         "Outro"
@@ -8098,10 +8107,7 @@
       "Password": [
         "Senha"
       ],
-      "Password & keys": [
-        "Senha e chaves"
-      ],
-      "Password & security": [
+      "Password and keys": [
         ""
       ],
       "Passwords": [
@@ -8109,9 +8115,6 @@
       ],
       "Pay invoice": [
         "Pagar factura"
-      ],
-      "Payment": [
-        "Pagamento"
       ],
       "Payment details": [
         "Detalhes do pagamento"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Restaurar privilégios de administrador"
+      ],
+      "Security": [
+        ""
       ],
       "Security logs": [
         "Diários de segurança"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Atualizar"
+      ],
+      "Username": [
+        ""
       ],
       "Users and addresses": [
         "Utilizadores e endereços"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Assinar automaticamente todas as suas mensagens de saída para que os utilizadores possam verificar a sua autenticidade. Isto é feito em combinação com as predefinições PGP seleccionadas abaixo."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {
