@@ -22,7 +22,6 @@ import {
     useFeature,
     useApi,
     useErrorHandler,
-    useModals,
 } from '@proton/components';
 import {
     handleLogin,
@@ -52,9 +51,9 @@ interface Props {
 }
 
 const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
-    const { createModal } = useModals();
     const errorHandler = useErrorHandler();
     const keyMigrationFeature = useFeature(FeatureCode.KeyMigration);
+    const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -126,8 +125,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
 
     const handleError = (e: any) => {
         if (e.data?.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
-            const apiErrorMessage = getApiErrorMessage(e);
-            createModal(<AbuseModal message={apiErrorMessage} />);
+            setAbuseModal({ apiErrorMessage: getApiErrorMessage(e) });
         } else {
             errorHandler(e);
         }
@@ -142,6 +140,11 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
 
     return (
         <Main>
+            <AbuseModal
+                message={abuseModal?.apiErrorMessage}
+                open={!!abuseModal}
+                onClose={() => setAbuseModal(undefined)}
+            />
             {step === AuthStep.LOGIN && (
                 <>
                     <Header

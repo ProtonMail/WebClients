@@ -1,17 +1,11 @@
 import { c } from 'ttag';
-import { useRef, useState } from 'react';
-import {
-    Button,
-    RequestNewCodeModal,
-    useFormErrors,
-    useLoading,
-    useModals,
-    ConfirmModal,
-    InputFieldTwo,
-} from '@proton/components';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useState } from 'react';
+import { Button, RequestNewCodeModal, useFormErrors, useLoading, InputFieldTwo } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
+import { noop } from '@proton/shared/lib/helpers/function';
+
+import ValidateResetTokenConfirmModal from './ValidateResetTokenConfirmModal';
 
 interface Props {
     onSubmit: (token: string) => Promise<void>;
@@ -23,41 +17,11 @@ interface Props {
 
 const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { createModal } = useModals();
-    const hasModal = useRef<boolean>(false);
+    const [confirmModal, setConfirmModal] = useState(false);
+    const [newCodeModal, setNewCodeModal] = useState(false);
     const [token, setToken] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
-
-    const handleSubmit = async () => {
-        await new Promise<void>((resolve, reject) => {
-            const loseAllData = (
-                <span className="text-bold" key="lose-access">{c('Info')
-                    .t`lose access to all current encrypted data`}</span>
-            );
-            createModal(
-                <ConfirmModal
-                    title={c('Title').t`Warning!`}
-                    confirm={c('Action').t`Reset password`}
-                    onConfirm={resolve}
-                    onClose={reject}
-                    mode="alert"
-                    submitProps={{
-                        color: 'danger',
-                    }}
-                >
-                    <div>
-                        <p className="mt0">{c('Info')
-                            .jt`You will ${loseAllData} in your ${BRAND_NAME} Account. To restore it, you will need to enter your old password.`}</p>
-                        <p className="mt0">{c('Info')
-                            .t`This will also disable any two-factor authentication method associated with this account.`}</p>
-                        <p className="mt0 mb0">{c('Info').t`Continue anyway?`}</p>
-                    </div>
-                </ConfirmModal>
-            );
-        });
-        return onSubmit(token);
-    };
 
     // To not break translations
     const email = value;
@@ -75,23 +39,29 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                 if (loading || !onFormSubmit()) {
                     return;
                 }
-
-                if (hasModal.current) {
-                    return;
-                }
-
-                hasModal.current = true;
-                withLoading(
-                    handleSubmit()
-                        .then(() => {
-                            hasModal.current = false;
-                        })
-                        .catch(() => {
-                            hasModal.current = false;
-                        })
-                );
+                setConfirmModal(true);
             }}
         >
+            <ValidateResetTokenConfirmModal
+                onClose={() => setConfirmModal(false)}
+                onConfirm={() => {
+                    withLoading(onSubmit(token)).catch(noop);
+                }}
+                open={confirmModal}
+            />
+            {method === 'sms' ||
+                (method === 'email' && (
+                    <RequestNewCodeModal
+                        verificationModel={{
+                            method,
+                            value,
+                        }}
+                        onClose={() => setNewCodeModal(false)}
+                        open={newCodeModal}
+                        onEdit={onBack}
+                        onResend={onRequest}
+                    />
+                ))}
             <div className="mb1-75">{subTitle}</div>
             <InputFieldTwo
                 id="reset-token"
@@ -113,18 +83,7 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                     type="button"
                     fullWidth
                     disabled={loading}
-                    onClick={() =>
-                        createModal(
-                            <RequestNewCodeModal
-                                verificationModel={{
-                                    method,
-                                    value,
-                                }}
-                                onEdit={onBack}
-                                onResend={onRequest}
-                            />
-                        )
-                    }
+                    onClick={() => setNewCodeModal(true)}
                     className="mt0-5"
                 >{c('Action').t`Didn't receive a code?`}</Button>
             ) : null}
