@@ -9,7 +9,7 @@
         "${ boldSave } al cambiar a la facturación anual"
       ],
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introducción"
+        "Introducción a ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -281,7 +281,7 @@
         "Iniciar sesión "
       ],
       "Mailbox density": [
-        "Densidad de la bandeja de entrada"
+        "Densidad del buzón"
       ],
       "Mailbox layout": [
         "Diseño del buzón"
@@ -641,7 +641,7 @@
         "Anual"
       ],
       "Annually SAVE 20%": [
-        "AHORRA un 20% anual"
+        "Anual (ahorra un 20%)"
       ],
       "Monthly": [
         "Mensual"
@@ -1202,7 +1202,7 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
-        ""
+        "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
       ],
       "Missing signature": [
         "No se ha encontrado la firma"
@@ -1277,10 +1277,10 @@
         "Algunos grupos no se pueden eliminar"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Algunos de tus nombres de etiquetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Algunos de tus nombres de etiquetas exceden el límite máximo de caracteres de ProtonMail. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ves este mensaje de error, ponte en contacto con nuestro ${ supportTeam }."
@@ -1904,7 +1904,7 @@
         "Creando recurso compartido"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
       "Delete drive": [
         "Borrar la unidad",
@@ -2029,7 +2029,7 @@
         "Incluido"
       ],
       "Inherited from parent folder": [
-        ""
+        "Heredado de la carpeta padre"
       ],
       "Initializing": [
         "Inicializando"
@@ -2089,7 +2089,7 @@
         "Mis enlaces"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Nombre su nueva carpeta y seleccione la carpeta principal en la que desea colocarla. Si no selecciona una carpeta principal, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
       "Network issue": [
         "Problema de red"
@@ -2179,7 +2179,7 @@
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Por favor, selecciona las carpetas que te gustaría importar:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Inténtelo de nuevo, use un método de pago diferente o llame a su banco para obtener ayuda."
@@ -2234,7 +2234,7 @@
         "Ahorra un 20%"
       ],
       "Save extra 20%": [
-        "Ahorra 20% adicional"
+        "Ahorra un 20% adicional"
       ],
       "Screenshot(s) attached": [
         "Captura(s) de pantalla adjuntada(s)"
@@ -2249,7 +2249,7 @@
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
       ],
       "Session timed out.": [
         "El tiempo de la sesión ha expirado."
@@ -2273,7 +2273,7 @@
         "Servicio inicial de VPN con soporte P2P."
       ],
       "Storage GB": [
-        "Almacenamiento en GB"
+        "GB de almacenamiento"
       ],
       "support team": [
         "equipo de soporte"
@@ -2403,7 +2403,7 @@
         ""
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "¿Qué quieres importar de tu cuenta de Google?"
       ],
       "What would you like to do?": [
         "¿Qué te gustaría hacer?"
@@ -2424,13 +2424,13 @@
         "Actualmente estás conectado como ${ user.Name } (${ user.Email }) y tienes acceso restringido."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Puede fusionar calendarios importados con calendarios existentes en Proton."
       ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
       ],
       "You cannot undo this action.": [
         "No puedes deshacer esta acción."
@@ -2442,7 +2442,7 @@
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta de PayPal. Si tu cuenta de PayPal no lo tiene, haz clic en el botón de abajo."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Debes eliminar cualquier calendario adicional y cualquier enlace de calendario compartido, antes de cancelar tu suscripción. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Has alcanzado el{ spaceDisplayed }% de tu capacidad de almacenamiento. Libera algo de espacio o añade más espacio de almacenamiento.${ freeUpMessage } ${ upgradeLink }"
@@ -2849,9 +2849,9 @@
       "CVV code": [
         "Código CVV"
       ],
-      "Delete Drive?": [
-        "¿Borrar la unidad?",
-        "¿Borrar unidades?"
+      "Delete drive?": [
+        "",
+        ""
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -3031,7 +3031,7 @@
         "Selecciona un método"
       ],
       "Select how your composer opens by default.": [
-        "Selecciona como se abrirá el redactor por defecto."
+        "Selecciona como se abrirá el editor por defecto."
       ],
       "Select how your list of messages looks like by default.": [
         "Seleccionar como tu lista de mensajes aparece de forma preestablecida."
@@ -3090,8 +3090,8 @@
       "Unknown file": [
         "Archivo desconocido"
       ],
-      "Unlock Drive": [
-        "Desbloquear la unidad"
+      "Unlock drive": [
+        ""
       ],
       "Unlock drive (recommended)": [
         "Desbloquear la unidad (recomendado)"
@@ -4072,7 +4072,7 @@
         "# de accesos"
       ],
       "${ appName } customization": [
-        "${ appName } personalización"
+        "Personalización de ${ appName }"
       ],
       "${ appName } Keyboard Shortcuts": [
         "Atajos de teclado de ${ appName }"
@@ -4137,7 +4137,7 @@
         "Limpiando datos"
       ],
       "Composer mode": [
-        "Modo del redactor"
+        "Modo del editor"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmar pérdida de beneficios de Proton"
@@ -4319,7 +4319,7 @@
         "Ubicación"
       ],
       "Mailbox density": [
-        "Densidad de la bandeja de entrada"
+        "Densidad del buzón"
       ],
       "Mailbox layout": [
         "Diseño del buzón"

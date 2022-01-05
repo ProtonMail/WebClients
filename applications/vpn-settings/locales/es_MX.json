@@ -3522,6 +3522,14 @@
         "Su correo electrónico no es compartido con terceros, sólo se usa para la recuperación y las preguntas relacionadas con la cuenta o la comunicación."
       ]
     },
+    "Tor out of date": {
+      "stable release": [
+        "versión estable"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versión del navegador Tor no es soportada. Actualice a la última ${ stableRelease }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "La contraseña debe tener al menos ${ length } caracter",

@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktiválása"
@@ -3899,6 +3899,9 @@
       "Loading preview": [
         "Előnézet betöltése"
       ],
+      "Log in to ProtonMail to activate your address": [
+        ""
+      ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "A naplók minden azonosítási kísérletet tárolnak az összes Proton szolgáltatáshoz, amelyek az ön Proton bejelentkezését használják."
       ],
@@ -5614,6 +5617,9 @@
       "Proton username": [
         "Proton felhasználónév"
       ],
+      "ProtonMail address": [
+        ""
+      ],
       "ProtonMail footer": [
         "ProtonMail aláírás"
       ],
@@ -5989,6 +5995,9 @@
       ],
       "Learn more": [
         "További információk"
+      ],
+      "Not activated": [
+        ""
       ],
       "Pay invoice": [
         "Számla kifizetése"
@@ -7137,14 +7146,11 @@
       "Auto reply": [
         "Automatikus válasz"
       ],
-      "Backup & Export": [
-        "Mentés és exportálás"
+      "Backup and export": [
+        ""
       ],
       "Calendars": [
         "Naptárak"
-      ],
-      "Domain Names": [
-        "Domain nevek"
       ],
       "Domain names": [
         "Domain nevek"
@@ -7152,20 +7158,20 @@
       "Email privacy": [
         "E-mail adatvédelem"
       ],
-      "Encryption & keys": [
-        "Titkosítás és kulcsok"
+      "Encryption and keys": [
+        ""
       ],
       "Filters": [
         "Szűrők"
       ],
-      "Folders & labels": [
-        "Mappák és címkék"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Általános"
       ],
-      "Identity & addresses": [
-        "Személyazonosság és címek"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7179,11 +7185,11 @@
       "Organization": [
         "Szervezet"
       ],
-      "Organization & keys": [
-        "Szervezet és kulcsok"
+      "Organization and keys": [
+        ""
       ],
-      "Users & addresses": [
-        "Felhasználók és címek"
+      "Users and addresses": [
+        ""
       ],
       "VPN apps": [
         "VPN alkalmazások"
@@ -7602,6 +7608,9 @@
       "3. Select config file and download": [
         "3. Beállítási fájl kiválasztása és letöltése"
       ],
+      "Account and password": [
+        ""
+      ],
       "Account recovery": [
         "Fiók helyreállítás"
       ],
@@ -7707,8 +7716,8 @@
       "Back": [
         "Vissza"
       ],
-      "Backup & Export": [
-        "Mentés és exportálás"
+      "Backup and export": [
+        ""
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -7812,8 +7821,8 @@
       "Currency": [
         "Pénznem"
       ],
-      "Current & past imports": [
-        "Jelenlegi és korábbi importálások"
+      "Current and past imports": [
+        ""
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -7884,8 +7893,8 @@
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
       ],
-      "Display name & signature": [
-        "Megjelenített név és aláírás"
+      "Display name and signature": [
+        ""
       ],
       "Domain names": [
         "Domain nevek"
@@ -7932,8 +7941,8 @@
       "Enable keyboard shortcuts": [
         "Gyorsbillentyűk engedélyezése"
       ],
-      "Encryption & keys": [
-        "Titkosítás és kulcsok"
+      "Encryption and keys": [
+        ""
       ],
       "Error": [
         "Hiba"
@@ -7968,8 +7977,8 @@
       "Folders": [
         "Mappák"
       ],
-      "Folders & labels": [
-        "Mappák és címkék"
+      "Folders and labels": [
+        ""
       ],
       "General": [
         "Általános"
@@ -7986,8 +7995,8 @@
       "Human verification": [
         "Robot ellenőrzés"
       ],
-      "Identity & addresses": [
-        "Személyazonosság és címek"
+      "Identity and addresses": [
+        ""
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8038,8 +8047,8 @@
       "Labels": [
         "Címkék"
       ],
-      "Language & time": [
-        "Nyelv és idő"
+      "Language and time": [
+        ""
       ],
       "Layout": [
         "Elrendezés"
@@ -8089,8 +8098,8 @@
       "Organization": [
         "Szervezet"
       ],
-      "Organization & keys": [
-        "Szervezet és kulcsok"
+      "Organization and keys": [
+        ""
       ],
       "Other": [
         "Egyéb"
@@ -8098,20 +8107,14 @@
       "Password": [
         "Jelszó"
       ],
-      "Password & keys": [
-        "Jelszó és kulcs"
-      ],
-      "Password & security": [
-        "Jelszó és biztonság"
+      "Password and keys": [
+        ""
       ],
       "Passwords": [
         "Jelszavak"
       ],
       "Pay invoice": [
         "Számla kifizetése"
-      ],
-      "Payment": [
-        "Fizetés"
       ],
       "Payment details": [
         "Fizetés részletei"
@@ -8187,6 +8190,9 @@
       ],
       "Restore administrator privileges": [
         "Adminisztrátori jogok visszaállítása"
+      ],
+      "Security": [
+        ""
       ],
       "Security logs": [
         "Biztonsági napló"
@@ -8322,6 +8328,9 @@
       ],
       "Upgrade": [
         "Váltás nagyobb csomagra"
+      ],
+      "Username": [
+        ""
       ],
       "Users and addresses": [
         "Felhasználók és címek"
@@ -8600,6 +8609,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Bekapcsolásakor a kimenő üzenetek automatikusan aláírásra kerülnek, így a címzettek ellenőrizhetik az üzenet hitelességét. Ez együtt működik a lentebb beállított alapértelmezett PGP beállításokkal."
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

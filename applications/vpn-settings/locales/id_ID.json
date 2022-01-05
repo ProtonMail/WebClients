@@ -3501,6 +3501,14 @@
         "Surel Anda tidak dijual ke pihak ketiga. Fungsinya hanya untuk pemulihan dan masalah akun Anda atau komunikasi."
       ]
     },
+    "Tor out of date": {
+      "stable release": [
+        "versi rilisan stabil"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Versi Tor Browser ini sudah tidak lagi didukung. Silakan perbarui Tor Browser Anda ke ${ stableRelease } terbaru"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Kata sandi minimal ${ length } karakter"
