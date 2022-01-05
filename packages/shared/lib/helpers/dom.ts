@@ -94,11 +94,11 @@ export const scrollIntoView = (element: HTMLElement | undefined | null, extra?: 
     } catch (e: any) {}
 };
 
-export const hasChildren = (node?: HTMLElement) => {
+export const hasChildren = (node?: Element) => {
     return typeof node === 'object' && typeof node.childNodes !== 'undefined' && node.childNodes.length > 0;
 };
 
-export const getAllNodesRecursively = (node: HTMLElement, limit: number, depth: number) => {
+export const getAllNodesRecursively = (node: Element, limit: number, depth: number) => {
     const nodes = [node];
     if (depth > limit) {
         return nodes;
