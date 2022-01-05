@@ -2,12 +2,11 @@
 
 ### Improvements
 
--   Actual message content will now be displayed in dark if a Dark theme is set on the account for most messages, excluding newsletters
+-   Dark theme now also applies to message contents - newsletters will continue to keep their original color scheme
 -   Improved the underlying technology responsible for the message view display
 -   Added reasoning for unallowed message move actions into the existing error message
 -   Added the ability to filter by Addresses in the advanced search widget
 -   Added a special icon for contact details where the digital signature could be verified
--   Bug fixes
 
 ### Bug fixes
 
