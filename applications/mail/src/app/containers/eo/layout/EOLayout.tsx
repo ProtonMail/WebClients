@@ -35,17 +35,17 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     return (
         <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 eo-layout-bg scroll-if-needed">
             <PublicTopBanners />
-            <header className="flex flex-justify-space-between flex-align-items-center flex-item-noshrink p2">
+            <header className="flex flex-nowrap flex-justify-space-between flex-align-items-center flex-item-noshrink p2">
                 <span>
                     <Logo appName={toApp} to="/" toApp={toApp} target="_self" />
                 </span>
-                <div className="flex flex-flex-align-items-center">
+                <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-column">
                     {hasLanguageSelect && (
-                        <span className="text-right flex flex-flex-align-items-center">
+                        <span className="text-right flex flex-align-items-center on-mobile-flex-column on-mobile-text-right on-mobile-mr1 on-mobile-mb1">
                             <LanguageSelect className="support-dropdown-button" locales={locales} />
                         </span>
                     )}
-                    <div className="ml1">
+                    <div className="ml1 on-mobile-ml0">
                         <Href key="terms" className="button button-solid-norm" href="https://protonmail.com/signup">
                             {c('Link').t`Sign up for free`}
                         </Href>
