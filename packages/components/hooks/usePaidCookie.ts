@@ -8,7 +8,7 @@ const COOKIE_NAME = 'is-paid-user';
 
 const today = new Date();
 const lastDayOfTheYear = new Date(today.getFullYear(), 11, 31, 23, 59, 59);
-const cookieDomain = `.${getSecondLevelDomain()}`;
+const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 
 const usePaidCookie = () => {
     const [user] = useUser();

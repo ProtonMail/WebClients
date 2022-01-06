@@ -11,7 +11,7 @@ const useCookieState = ({
     cookieName,
     expirationDate,
     path = '/',
-    cookieDomain = `.${getSecondLevelDomain()}`,
+    cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`,
 }: Props): [string | undefined, (value: string | undefined) => void] => {
     const [value, setValue] = useState(() => getCookie(cookieName));
 
