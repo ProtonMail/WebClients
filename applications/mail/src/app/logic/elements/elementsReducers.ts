@@ -14,7 +14,6 @@ import {
     OptimisticUpdates,
     QueryParams,
     QueryResults,
-    RetryData,
 } from './elementsTypes';
 import { Element } from '../../models/element';
 import { isMessage as testIsMessage, parseLabelIDsInEvent } from '../../helpers/elements';
@@ -33,11 +32,19 @@ export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<nu
     state.page = action.payload;
 };
 
-export const retry = (state: Draft<ElementsState>, action: PayloadAction<RetryData>) => {
+export const retry = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<{ queryParameters: any; error: Error | undefined }>
+) => {
     state.beforeFirstLoad = false;
     state.invalidated = false;
     state.pendingRequest = false;
-    state.retry = action.payload;
+    state.retry = newRetry(state.retry, action.payload.queryParameters, action.payload.error);
+};
+
+export const retryStale = (state: Draft<ElementsState>, action: PayloadAction<{ queryParameters: any }>) => {
+    state.pendingRequest = false;
+    state.retry = { payload: action.payload.queryParameters, count: 1, error: undefined };
 };
 
 export const loadPending = (
@@ -160,4 +167,12 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
 export const optimisticEmptyLabel = (state: Draft<ElementsState>) => {
     state.elements = {};
     state.page = 0;
+};
+
+export const backendActionStarted = (state: Draft<ElementsState>) => {
+    state.pendingActions++;
+};
+
+export const backendActionFinished = (state: Draft<ElementsState>) => {
+    state.pendingActions--;
 };

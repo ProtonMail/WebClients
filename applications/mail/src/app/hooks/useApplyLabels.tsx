@@ -14,6 +14,8 @@ import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { Conversation } from '../models/conversation';
+import { useDispatch } from 'react-redux';
+import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -180,6 +182,7 @@ export const useApplyLabels = () => {
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
+    const dispatch = useDispatch();
 
     const applyLabels = useCallback(
         async (elements: Element[], changes: { [labelID: string]: boolean }, silent = false) => {
@@ -201,6 +204,7 @@ export const useApplyLabels = () => {
                 try {
                     // Stop the event manager to prevent race conditions
                     stop();
+                    dispatch(backendActionStarted());
                     tokens = await Promise.all(
                         changesKeys.map(async (LabelID) => {
                             rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
@@ -215,6 +219,7 @@ export const useApplyLabels = () => {
                         })
                     );
                 } finally {
+                    dispatch(backendActionFinished());
                     if (!undoing) {
                         start();
                         await call();
@@ -276,6 +281,7 @@ export const useMoveToFolder = () => {
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
+    const dispatch = useDispatch();
     const { createModal } = useModals();
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
@@ -383,12 +389,14 @@ export const useMoveToFolder = () => {
                 try {
                     // Stop the event manager to prevent race conditions
                     stop();
+                    dispatch(backendActionStarted());
                     const { UndoToken } = await api(action({ LabelID: folderID, IDs: elementIDs }));
                     // We are not checking ValidUntil since notification stay for few seconds after this action
                     token = UndoToken.Token;
                 } catch (error: any) {
                     rollback();
                 } finally {
+                    dispatch(backendActionFinished());
                     if (!undoing) {
                         start();
                         await call();
@@ -444,6 +452,7 @@ export const useStar = () => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const optimisticApplyLabels = useOptimisticApplyLabels();
+    const dispatch = useDispatch();
 
     const star = useCallback(async (elements: Element[], value: boolean) => {
         if (!elements.length) {
@@ -460,11 +469,13 @@ export const useStar = () => {
         try {
             // Stop the event manager to prevent race conditions
             stop();
+            dispatch(backendActionStarted());
             await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
         } catch (error: any) {
             rollback();
             throw error;
         } finally {
+            dispatch(backendActionFinished());
             start();
             await call();
         }
