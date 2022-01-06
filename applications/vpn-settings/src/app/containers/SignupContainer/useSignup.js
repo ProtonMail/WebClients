@@ -262,8 +262,9 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         }
 
         const { User } = await api(withAuthHeaders(UID, AccessToken, getUser()));
-        await persistSession({ ...authResult, User, api });
-        await onLogin({ ...authResult, User });
+        const persistent = false;
+        await persistSession({ ...authResult, User, api, persistent });
+        await onLogin({ ...authResult, User, persistent });
     };
 
     return {

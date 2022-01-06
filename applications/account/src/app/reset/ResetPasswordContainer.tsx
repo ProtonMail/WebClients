@@ -59,10 +59,11 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
     const [step, setStep] = useState(STEPS.REQUEST_RECOVERY_METHODS);
 
     const handleCancel = () => {
-        const username = cacheRef.current?.username ?? '';
+        const { username, persistent } = cacheRef.current || {};
         cacheRef.current = undefined;
         cacheRef.current = {
-            username,
+            persistent: persistent ?? true,
+            username: username ?? '',
             Methods: [],
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
@@ -108,6 +109,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                             onSubmit={(username) => {
                                 return handleRequestRecoveryMethods({
                                     username,
+                                    persistent: true,
                                     api: silentApi,
                                 })
                                     .then(handleResult)

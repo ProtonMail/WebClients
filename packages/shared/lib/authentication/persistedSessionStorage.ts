@@ -21,6 +21,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             UID: parsedValue.UID || '',
             blob: parsedValue.blob || '',
             isSubUser: parsedValue.isSubUser || false,
+            persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
         };
     } catch (e: any) {
         return undefined;
@@ -87,22 +88,24 @@ export const getDecryptedPersistedSessionBlob = async (
 export const setPersistedSessionWithBlob = async (
     localID: number,
     key: CryptoKey,
-    data: { UserID: string; UID: string; keyPassword: string; isSubUser: boolean }
+    data: { UserID: string; UID: string; keyPassword: string; isSubUser: boolean; persistent: boolean }
 ) => {
     const persistedSession: PersistedSession = {
         UserID: data.UserID,
         UID: data.UID,
         isSubUser: data.isSubUser,
         blob: await getEncryptedBlob(key, JSON.stringify({ keyPassword: data.keyPassword })),
+        persistent: data.persistent,
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };
 
-export const setPersistedSession = (localID: number, data: { UID: string; UserID: string }) => {
+export const setPersistedSession = (localID: number, data: { UID: string; UserID: string; persistent: boolean }) => {
     const persistedSession: PersistedSession = {
         UserID: data.UserID,
         UID: data.UID,
         isSubUser: false,
+        persistent: data.persistent,
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };

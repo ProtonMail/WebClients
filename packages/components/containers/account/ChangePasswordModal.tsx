@@ -138,12 +138,14 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         }
         try {
             authentication.setPassword(keyPassword);
+
             await persistSessionWithPassword({
                 api,
                 keyPassword,
                 User,
                 UID: authentication.getUID(),
                 LocalID: localID,
+                persistent: authentication.getPersistent(),
             });
             sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
         } catch (e: any) {

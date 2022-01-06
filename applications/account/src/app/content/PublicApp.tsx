@@ -118,7 +118,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const toApp = forkState?.app || localRedirect?.toApp || toTargetService || DEFAULT_APP;
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
-        const { keyPassword, UID, User, LocalID } = args;
+        const { keyPassword, UID, User, LocalID, persistent } = args;
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
         if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
@@ -128,7 +128,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         }
         if (forkState) {
             const type = args.flow === 'signup' ? FORK_TYPE.SIGNUP : undefined;
-            await produceFork({ api, UID, keyPassword, ...forkState, type });
+            await produceFork({ api, UID, keyPassword, ...forkState, persistent, type });
             return;
         }
         if (localRedirect || !isSSOMode) {
