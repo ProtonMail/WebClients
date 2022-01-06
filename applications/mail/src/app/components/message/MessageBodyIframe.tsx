@@ -107,7 +107,7 @@ const MessageBodyIframe = ({
                 data-testid="content-iframe"
                 data-subject={message.data?.Subject}
                 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox
-                sandbox="allow-same-origin allow-popups allow-modals"
+                sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"
                 allowFullScreen={false}
             />
             {initStatus !== 'start' && (
