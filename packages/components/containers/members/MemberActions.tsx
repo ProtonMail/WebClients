@@ -116,6 +116,7 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
                 User,
                 LocalID,
                 UID,
+                persistent: authentication.getPersistent(),
             });
             done(LocalID);
             return;

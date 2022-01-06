@@ -45,13 +45,14 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
                 const { session, sessions } = activeSessionsResult;
 
                 if (session && sessions.length === 1 && type !== FORK_TYPE.SWITCH) {
-                    const { UID, keyPassword } = session;
+                    const { UID, keyPassword, persistent } = session;
                     await produceFork({
                         api: silentApi,
                         UID,
                         keyPassword,
                         state,
                         app,
+                        persistent,
                     });
                     return;
                 }
@@ -74,6 +75,7 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
                     UID: validatedSession.UID,
                     state,
                     app,
+                    persistent: validatedSession.persistent,
                 });
             } catch (e: any) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {

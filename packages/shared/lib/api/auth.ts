@@ -58,8 +58,15 @@ interface CookiesArgs {
     RefreshToken: string;
     State: string;
     RedirectURI?: string;
+    Persistent?: boolean;
 }
-export const setCookies = ({ UID, RefreshToken, State, RedirectURI = 'https://protonmail.com' }: CookiesArgs) => ({
+export const setCookies = ({
+    UID,
+    RefreshToken,
+    State,
+    RedirectURI = 'https://protonmail.com',
+    Persistent,
+}: CookiesArgs) => ({
     method: 'post',
     url: 'auth/cookies',
     data: {
@@ -68,6 +75,7 @@ export const setCookies = ({ UID, RefreshToken, State, RedirectURI = 'https://pr
         GrantType: 'refresh_token',
         RefreshToken,
         RedirectURI,
+        Persistent: Number(Persistent),
         State,
     },
 });

@@ -155,7 +155,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                     <Content>
                         <LoginForm
                             defaultUsername={previousUsernameRef.current}
-                            onSubmit={async (username, password, payload) => {
+                            onSubmit={async ({ username, password, payload, persistent }) => {
                                 const keyMigrationFeatureValue = await keyMigrationFeature
                                     .get<number>()
                                     .then(({ Value }) => Value)
@@ -163,6 +163,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                                 return handleLogin({
                                     username,
                                     password,
+                                    persistent,
                                     api: silentApi,
                                     hasGenerateKeys: true,
                                     keyMigrationFeatureValue,

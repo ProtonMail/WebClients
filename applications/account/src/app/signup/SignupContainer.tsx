@@ -403,8 +403,9 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             const authResponse = authApi.getAuthResponse();
             const User = await authApi.api<{ User: tsUser }>(getUser()).then(({ User }) => User);
             await authApi.api(updateLocale(localeCode)).catch(noop);
-            await persistSession({ ...authResponse, User, keyPassword, api });
-            await onLogin({ ...authResponse, User, keyPassword, flow: 'signup' });
+            const persistent = true;
+            await persistSession({ ...authResponse, User, keyPassword, api, persistent });
+            await onLogin({ ...authResponse, User, keyPassword, flow: 'signup', persistent });
         } catch (error: any) {
             // TODO: If any of these requests fail we should probably handle it differently
             return setModelDiff({ step: oldStep, stepHistory: model.stepHistory });

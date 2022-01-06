@@ -297,6 +297,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                             hasGenerateKeys: false,
                             keyMigrationFeatureValue: 0,
                             ignoreUnlock,
+                            persistent: false,
                         })
                             .then(handleResult)
                             .catch(handleError);
