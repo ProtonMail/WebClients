@@ -170,8 +170,8 @@ export const addLinkPrefix = (input = '', type: LINK_TYPES) => {
     return input;
 };
 
-export const getSecondLevelDomain = () => {
-    const { hostname } = window.location;
+// Note: This function makes some heavy assumptions on the hostname. Only intended to work on proton-domains.
+export const getSecondLevelDomain = (hostname: string) => {
     return hostname.substr(hostname.indexOf('.') + 1);
 };
 
