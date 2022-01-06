@@ -10,7 +10,6 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
     const [password, setPassword] = useState<string>('');
 
     const handleSubmit = () => {
-        setPassword('');
         onSubmit(password);
     };
 
