@@ -9,6 +9,8 @@ import { Element } from '../models/element';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
 import { useOptimisticMarkAs } from './optimistic/useOptimisticMarkAs';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
+import { useDispatch } from 'react-redux';
+import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 
 export enum MARK_AS_STATUS {
     READ = 'read',
@@ -60,6 +62,7 @@ export const useMarkAs = () => {
     const { call, start, stop } = useEventManager();
     const optimisticMarkAs = useOptimisticMarkAs();
     const { createNotification } = useNotifications();
+    const dispatch = useDispatch();
 
     const markAs = useCallback((elements: Element[], labelID = '', status: MARK_AS_STATUS, silent = true) => {
         if (!elements.length) {
@@ -77,6 +80,7 @@ export const useMarkAs = () => {
             try {
                 // Stop the event manager to prevent race conditions
                 stop();
+                dispatch(backendActionStarted());
                 const { UndoToken } = await api(
                     action(
                         elements.map((element) => element.ID),
@@ -88,6 +92,7 @@ export const useMarkAs = () => {
                 rollback();
                 throw error;
             } finally {
+                dispatch(backendActionFinished());
                 start();
                 await call();
             }

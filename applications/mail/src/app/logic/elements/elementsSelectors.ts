@@ -22,6 +22,7 @@ const page = (state: RootState) => state.elements.page;
 const pages = (state: RootState) => state.elements.pages;
 const bypassFilter = (state: RootState) => state.elements.bypassFilter;
 const pendingRequest = (state: RootState) => state.elements.pendingRequest;
+export const pendingActions = (state: RootState) => state.elements.pendingActions;
 const retry = (state: RootState) => state.elements.retry;
 const invalidated = (state: RootState) => state.elements.invalidated;
 const total = (state: RootState) => state.elements.total;
@@ -182,8 +183,9 @@ export const placeholderCount = createSelector(
 );
 
 export const loading = createSelector(
-    [beforeFirstLoad, pendingRequest, invalidated],
-    (beforeFirstLoad, pendingRequest, invalidated) => (beforeFirstLoad || pendingRequest) && !invalidated
+    [beforeFirstLoad, pendingRequest, shouldSendRequest, invalidated],
+    (beforeFirstLoad, pendingRequest, shouldSendRequest, invalidated) =>
+        (beforeFirstLoad || pendingRequest || shouldSendRequest) && !invalidated
 );
 
 export const totalReturned = createSelector([dynamicTotal, total], (dynamicTotal, total) => dynamicTotal || total);
