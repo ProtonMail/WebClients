@@ -300,6 +300,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                         });
                         return handleRequestToken({
                             cache: {
+                                persistent: false,
                                 username,
                                 Methods: [],
                             },

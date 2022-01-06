@@ -7,4 +7,5 @@ export interface PersistedSession {
     UID: string;
     blob?: string;
     isSubUser: boolean;
+    persistent: boolean;
 }
