@@ -40,6 +40,6 @@ describe('Mailbox performance loss check', () => {
         getHistory().push('/elsewhere');
 
         // There will be a few more call but it has to be in limited amount
-        expect(useStar.mock.calls.length).toBe(callsAfterInitialization + 5);
+        expect(useStar.mock.calls.length).toBeLessThan(callsAfterInitialization + 5);
     });
 });
