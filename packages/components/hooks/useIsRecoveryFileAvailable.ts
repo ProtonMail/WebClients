@@ -20,12 +20,12 @@ const useIsRecoveryFileAvailable = () => {
     const [userKeys = [], loadingUserKeys] = useUserKeys();
     const primaryKey = getPrimaryKey(userKeys);
 
-    const isNonPrivateSubUser = !user?.isPrivate && user?.isMember;
+    const isNonPrivateUser = !user?.isPrivate;
     const isRecoveryFileAvailable =
         !!recoveryFileFeature.feature?.Value &&
         !!primaryKey?.privateKey &&
         hasMigratedKeys &&
-        !isNonPrivateSubUser &&
+        !isNonPrivateUser &&
         APP_NAME !== PROTONVPN_SETTINGS;
 
     return [isRecoveryFileAvailable, loadingUserKeys || loadingAddresses || loadingUser] as const;
