@@ -5,7 +5,7 @@ import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import { Key } from '@proton/shared/lib/interfaces';
 import { APPS } from '@proton/shared/lib/constants';
-import { Alert, Copy, FormModal, LinkButton, useAppLink } from '../../../components';
+import { Alert, Copy, FormModal, LinkButton, useSettingsLink } from '../../../components';
 import { useModals, useNotifications, useUser } from '../../../hooks';
 import ContactClearDataConfirmModal from './ContactClearDataConfirmModal';
 import useContact from '../useContact';
@@ -21,7 +21,7 @@ const ContactDecryptionErrorModal = ({ onClose = noop, contactID, ...rest }: Pro
     const [user] = useUser();
     const [contact] = useContact(contactID) as [Contact | undefined, boolean, Error];
     const [errorKey, setErrorKey] = useState<Key>();
-    const appLink = useAppLink();
+    const goToSettings = useSettingsLink();
 
     useEffect(() => {
         const findKey = async () => {
@@ -35,7 +35,7 @@ const ContactDecryptionErrorModal = ({ onClose = noop, contactID, ...rest }: Pro
     }, [user, contact]);
 
     const handleSubmit = () => {
-        appLink('/mail/encryption-keys', APPS.PROTONACCOUNT);
+        goToSettings('/encryption-keys', APPS.PROTONMAIL);
     };
 
     const handleClear = () => {
