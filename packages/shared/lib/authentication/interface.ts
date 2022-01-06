@@ -23,6 +23,7 @@ export interface AuthResponse {
     UserID: string;
     RefreshToken: string;
     EventID: string;
+    TemporaryPassword: 0 | 1;
     PasswordMode: number;
     LocalID: number;
     TwoFactor: number;

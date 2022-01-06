@@ -1,10 +1,4 @@
-import {
-    Address as tsAddress,
-    Api,
-    KeySalt as tsKeySalt,
-    Member as tsMember,
-    User as tsUser,
-} from '@proton/shared/lib/interfaces';
+import { Address as tsAddress, Api, KeySalt as tsKeySalt, User as tsUser } from '@proton/shared/lib/interfaces';
 import { AUTH_VERSION } from '@proton/srp';
 import { c } from 'ttag';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -18,11 +12,9 @@ import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallba
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { MEMBER_PRIVATE, USER_ROLES } from '@proton/shared/lib/constants';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getMember } from '@proton/shared/lib/api/members';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -253,7 +245,7 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
 };
 
 const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep }): Promise<AuthActionResponse> => {
-    const { hasTotp, hasUnlock, hasU2F, authApi, ignoreUnlock, hasGenerateKeys, loginPassword } = cache;
+    const { hasTotp, hasUnlock, hasU2F, authApi, authResult, ignoreUnlock, hasGenerateKeys, loginPassword } = cache;
 
     if (from === AuthStep.LOGIN && hasTotp) {
         return {
@@ -288,17 +280,8 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
 
     if (User.Keys.length === 0) {
         if (hasGenerateKeys) {
-            if (User.Role === USER_ROLES.MEMBER_ROLE && User.Private === MEMBER_PRIVATE.UNREADABLE) {
+            if (authResult.TemporaryPassword) {
                 return { cache, to: AuthStep.NEW_PASSWORD };
-            }
-            if (User.Role === USER_ROLES.ADMIN_ROLE && User.Private === MEMBER_PRIVATE.UNREADABLE) {
-                // Attempt to find out if this was an admin member added to an organization
-                const selfMember = await authApi<{ Member: tsMember }>(getMember('me')).then(({ Member }) => Member);
-                // If the member is not the super owner, then he was probably added to the organization, and we can display the new password selection screen
-                if (!selfMember.Subscriber) {
-                    return { cache, to: AuthStep.NEW_PASSWORD };
-                }
-                // If the member is the super owner, then fall through to the automatic setup
             }
             return handleSetupPassword({ cache, newPassword: loginPassword });
         }
