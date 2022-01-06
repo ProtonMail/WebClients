@@ -126,7 +126,7 @@ export const useLinkHandler: UseLinkHandler = (wrapperRef, { onMailTo, startList
 
         const askForConfirmation = mailSettings?.ConfirmLink === undefined ? 1 : mailSettings?.ConfirmLink;
         const hostname = getHostname(src.raw);
-        const currentDomain = getSecondLevelDomain();
+        const currentDomain = getSecondLevelDomain(window.location.hostname);
 
         /*
          * If the modal is already active --- do nothing
