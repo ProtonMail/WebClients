@@ -80,7 +80,13 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
 
     useEffect(() => {
         void (async () => {
-            if (!calendarIdHeader || !eventIdHeader || messageHasDecryptionError) {
+            if (
+                !calendarIdHeader ||
+                !eventIdHeader ||
+                !occurrenceHeader ||
+                !sequenceHeader ||
+                messageHasDecryptionError
+            ) {
                 // widget should not be displayed under these circumstances
                 // clear up React states in case this component does not unmount when opening new emails
                 setError(null);
@@ -291,6 +297,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
         !calendarIdHeader ||
         !eventIdHeader ||
         !occurrenceHeader ||
+        !sequenceHeader ||
         messageHasDecryptionError
     ) {
         return null;

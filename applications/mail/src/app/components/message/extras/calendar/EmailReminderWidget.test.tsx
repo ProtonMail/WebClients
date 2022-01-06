@@ -214,7 +214,7 @@ describe('EmailReminderWidget', () => {
             }
 
             if (key === 'X-Pm-Calendar-Sequence') {
-                return 0;
+                return '0';
             }
 
             return key;
@@ -294,7 +294,7 @@ describe('EmailReminderWidget', () => {
             }
 
             if (key === 'X-Pm-Calendar-Sequence') {
-                return -1;
+                return '-1';
             }
 
             return key;
