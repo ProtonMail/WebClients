@@ -29,6 +29,7 @@ import {
     loadedEmpty as loadedEmptySelector,
     partialESSearch as partialESSearchSelector,
     stateInconsistency as stateInconsistencySelector,
+    pendingActions as pendingActionsSelector,
 } from '../../logic/elements/elementsSelectors';
 import { useElementsEvents } from '../events/useElementsEvents';
 import { RootState } from '../../logic/store';
@@ -86,6 +87,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const stateParams = useSelector(paramsSelector);
     const elementsMap = useSelector(elementsMapSelector);
+    const pendingActions = useSelector(pendingActionsSelector);
     const elements = useSelector(elementsSelector);
     const elementIDs = useSelector(elementIDsSelector);
     const shouldLoadMoreES = useSelector((state: RootState) =>
@@ -96,7 +98,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const shouldUpdatePage = useSelector((state: RootState) => shouldUpdatePageSelector(state, { page }));
     const dynamicTotal = useSelector((state: RootState) => dynamicTotalSelector(state, { counts }));
     const placeholderCount = useSelector((state: RootState) => placeholderCountSelector(state, { counts }));
-    const loading = useSelector((state: RootState) => loadingSelector(state));
+    const loading = useSelector((state: RootState) => loadingSelector(state, { page, params }));
     const totalReturned = useSelector((state: RootState) => totalReturnedSelector(state, { counts }));
     const expectingEmpty = useSelector((state: RootState) => expectingEmptySelector(state, { counts }));
     const loadedEmpty = useSelector(loadedEmptySelector);
@@ -118,7 +120,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         if (shouldResetCache) {
             dispatch(reset({ page, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
         }
-        if (shouldSendRequest && !isSearch(search)) {
+        if (shouldSendRequest && pendingActions === 0 && !isSearch(search)) {
             void dispatch(
                 loadAction({ api, abortController: abortControllerRef.current, conversationMode, page, params })
             );
@@ -126,7 +128,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         if (shouldUpdatePage && !shouldLoadMoreES) {
             dispatch(updatePage(page));
         }
-    }, [shouldResetCache, shouldSendRequest, shouldUpdatePage, shouldLoadMoreES, search]);
+    }, [shouldResetCache, shouldSendRequest, shouldUpdatePage, shouldLoadMoreES, pendingActions, search]);
 
     // Move to the last page if the current one becomes empty
     useEffect(() => {
