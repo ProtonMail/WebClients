@@ -160,6 +160,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                                     {warningText} {recommendRecoveryPhraseText}
                                 </div>
                                 <InputFieldTwo
+                                    key="email"
                                     id="email"
                                     bigger
                                     label={c('Label').t`Recovery email address`}
@@ -190,6 +191,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                                     {warningText} {recommendRecoveryPhraseText}
                                 </div>
                                 <InputFieldTwo
+                                    key="phone"
                                     as={PhoneInput}
                                     id="phone"
                                     bigger
