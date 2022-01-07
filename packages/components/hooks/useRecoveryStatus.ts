@@ -15,13 +15,15 @@ const useRecoveryStatus = () => {
 
     const accountRecoveryStatus: RecoveryStatus =
         hasVerifiedRecoveryEmailAddress || hasRecoveryPhoneNumber ? 'complete' : 'incomplete';
-    const dataRecoveryStatus: RecoveryStatus =
-        user.MnemonicStatus === MNEMONIC_STATUS.SET || hasCurrentRecoveryFile ? 'complete' : 'incomplete';
+
+    const mnemonicIsSet = user.MnemonicStatus === MNEMONIC_STATUS.SET;
+    const dataRecoveryStatus: RecoveryStatus = mnemonicIsSet || hasCurrentRecoveryFile ? 'complete' : 'incomplete';
 
     return [
         {
             accountRecoveryStatus,
             dataRecoveryStatus,
+            mnemonicIsSet,
         },
         loadingUserSettings || !userSettings,
     ] as const;

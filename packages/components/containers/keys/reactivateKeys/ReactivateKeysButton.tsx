@@ -16,10 +16,14 @@ import {
 import { getAllKeysReactivationRequests } from './getAllKeysToReactive';
 import ReactivateKeysModal from './ReactivateKeysModal';
 import { KeyReactivationRequest } from './interface';
+import { MutableRefObject, useEffect } from 'react';
 
-interface Props extends Omit<ButtonProps, 'onClick'> {}
+interface Props extends Omit<ButtonProps, 'onClick'> {
+    openRecoverDataModalRef?: MutableRefObject<boolean>;
+}
 
 const ReactivateKeysButton = ({
+    openRecoverDataModalRef,
     children = c('Action').t`Reactivate keys`,
     color = 'norm',
     disabled,
@@ -34,6 +38,8 @@ const ReactivateKeysButton = ({
     const [userKeys, loadingUserKeys] = useUserKeys();
     const [addressesKeys, loadingAddressesKeys] = useAddressesKeys();
     const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
+
+    const loading = loadingAddresses || loadingAddressesKeys || loadingUserKeys || !userKeys;
 
     const handleReactivateKeys = (keyReactivationRequests: KeyReactivationRequest[]) => {
         createModal(
@@ -56,6 +62,13 @@ const ReactivateKeysButton = ({
         );
     };
 
+    useEffect(() => {
+        if (openRecoverDataModalRef?.current && !loading) {
+            openRecoverDataModalRef.current = false;
+            handleReactivateKeys(allKeysToReactivate);
+        }
+    }, [loading, openRecoverDataModalRef?.current]);
+
     return (
         <Button
             {...rest}
@@ -63,7 +76,7 @@ const ReactivateKeysButton = ({
             onClick={() => {
                 handleReactivateKeys(allKeysToReactivate);
             }}
-            disabled={disabled || loadingAddresses || loadingAddressesKeys || loadingUserKeys || !userKeys}
+            disabled={disabled || loading}
         >
             {children}
         </Button>

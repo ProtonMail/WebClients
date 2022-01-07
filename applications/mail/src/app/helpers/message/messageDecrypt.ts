@@ -15,7 +15,7 @@ import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/
 import { c } from 'ttag';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { KeyId } from '@proton/shared/lib/contacts/keyVerifications';
-import { Address, AddressKey } from '@proton/shared/lib/interfaces';
+import { Address, Key } from '@proton/shared/lib/interfaces';
 import { utf8ArrayToString } from 'pmcrypto/lib/utils';
 import { AttachmentMime } from '../../models/attachment';
 import { convert } from '../attachment/attachmentConverter';
@@ -222,7 +222,7 @@ export const getMessageDecryptionKeyFromAddress = async (address: Address, messa
     const cryptoMessage = await getMessage(message.data.Body);
     const encryptionKeyIDs = cryptoMessage.getEncryptionKeyIds() as KeyId[];
 
-    const addressKeyIDs: { address: Address; key: AddressKey; keyIDs: KeyId[] }[] = [];
+    const addressKeyIDs: { address: Address; key: Key; keyIDs: KeyId[] }[] = [];
     await Promise.all(
         address.Keys.map(async (key) => {
             const compiled = await getKeys(key.PrivateKey);

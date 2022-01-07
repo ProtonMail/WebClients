@@ -14,7 +14,7 @@ export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: st
         <>
             <p className="mt0">{c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}</p>
 
-            <p className="color-danger">
+            <p className="color-warning">
                 <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" />
 
                 {c('Info')
@@ -48,6 +48,8 @@ interface MnemonicPhraseStepButtonsProps {
     onDone: () => void;
 }
 export const MnemonicPhraseStepButtons = ({ mnemonic, disabled, onDone }: MnemonicPhraseStepButtonsProps) => {
+    const { createNotification } = useNotifications();
+
     const handleDownload = async () => {
         if (!mnemonic) {
             return;
@@ -55,6 +57,7 @@ export const MnemonicPhraseStepButtons = ({ mnemonic, disabled, onDone }: Mnemon
 
         const blob = new Blob([mnemonic], { type: 'text/plain;charset=utf-8' });
         downloadFile(blob, `proton_recovery_phrase.txt`);
+        createNotification({ text: c('Info').t`Recovery phrase downloaded` });
     };
 
     return (
