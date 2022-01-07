@@ -58,7 +58,8 @@ const DataRecoverySection = ({ openMnemonicModalRef }: Props) => {
     useEffect(() => {
         if (openMnemonicModalRef?.current && !loading) {
             openMnemonicModalRef.current = false;
-            void openGenerateMnemonicModal();
+            // Should not prompt the confirm step since it's for new users
+            createModal(<GenerateMnemonicModal onSuccess={call} />);
         }
     }, [loading, openMnemonicModalRef?.current]);
 
