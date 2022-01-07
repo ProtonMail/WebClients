@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
     FeatureCode,
     SectionConfig,
     SettingsPropsShared,
+    NotificationDotColor,
     useFeature,
     useIsDataRecoveryAvailable,
 } from '@proton/components';
@@ -23,10 +24,10 @@ const getSharedConfig = () => {
 
 export const hasRecoverySettings = (user: UserModel) => user.isPrivate;
 
-export const getRecoveryPage = (showNotification: boolean): SectionConfig => {
+export const getRecoveryPage = (notification?: NotificationDotColor): SectionConfig => {
     return {
         ...getSharedConfig(),
-        notification: showNotification,
+        notification,
     };
 };
 
@@ -53,6 +54,8 @@ const AccountRecoverySettings = ({ location, setActiveSection }: SettingsPropsSh
     const [action] = useState(() => {
         return new URLSearchParams(location.search).get('action');
     });
+    const openRecoverDataModalRef = useRef(action === 'recover-data');
+    const openMnemonicModalRef = useRef(action === 'generate-recovery-phrase');
 
     const [isDataRecoveryAvailable] = useIsDataRecoveryAvailable();
 
@@ -72,11 +75,9 @@ const AccountRecoverySettings = ({ location, setActiveSection }: SettingsPropsSh
             config={getRecoveryPageWithSubsections(isDataRecoveryAvailable)}
             setActiveSection={setActiveSection}
         >
-            <OverviewSection ids={ids} />
+            <OverviewSection ids={ids} openRecoverDataModalRef={openRecoverDataModalRef} />
             <AccountRecoverySection />
-            {isDataRecoveryAvailable && (
-                <DataRecoverySection openMnemonicModal={action === 'generate-recovery-phrase'} />
-            )}
+            {isDataRecoveryAvailable && <DataRecoverySection openMnemonicModalRef={openMnemonicModalRef} />}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };

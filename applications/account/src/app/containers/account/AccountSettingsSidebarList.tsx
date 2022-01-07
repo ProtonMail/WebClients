@@ -1,15 +1,15 @@
 import {
+    NotificationDot,
     SectionConfig,
     SidebarList,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-    useShowRecoveryNotification,
+    useRecoveryNotification,
     useUser,
 } from '@proton/components';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import NotificationDot from '@proton/components/components/notificationDot/NotificationDot';
 
 import { getDashboardPage, hasAccountDashboardPage } from './AccountDashboardSettings';
 import { getEasySwitchPage } from './AccountEasySwitchSettings';
@@ -20,11 +20,11 @@ import { getAccountAndPasswordPage } from './AccountAccountAndPasswordSettings';
 
 const AccountSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
     const [user] = useUser();
-    const showRecoveryNotification = useShowRecoveryNotification();
+    const recoveryNotification = useRecoveryNotification(false);
 
     const pages: SectionConfig[] = [
         hasAccountDashboardPage(user) && getDashboardPage({ user }),
-        hasRecoverySettings(user) && getRecoveryPage(showRecoveryNotification),
+        hasRecoverySettings(user) && getRecoveryPage(recoveryNotification?.color),
         getAccountAndPasswordPage({ user }),
         getLanguageAndTimePage(),
         getSecurityPage(),
@@ -38,7 +38,7 @@ const AccountSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
                     <SidebarListItemLink to={`/${appSlug}${to}`}>
                         <SidebarListItemContent
                             left={<SidebarListItemContentIcon name={icon} />}
-                            right={notification && <NotificationDot />}
+                            right={notification && <NotificationDot color={notification} />}
                         >
                             {text}
                         </SidebarListItemContent>

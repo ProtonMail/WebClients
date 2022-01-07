@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 import { c } from 'ttag';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
@@ -27,15 +27,14 @@ import VoidRecoveryFilesButton from './VoidRecoveryFilesButton';
 import { classnames } from '../../helpers/component';
 
 interface Props {
-    openMnemonicModal?: boolean;
+    openMnemonicModalRef?: MutableRefObject<boolean>;
 }
 
-const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
+const DataRecoverySection = ({ openMnemonicModalRef }: Props) => {
     const [user] = useUser();
     const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const { call } = useEventManager();
-    const shownGenerateMnemonicModal = useRef<boolean>(false);
 
     const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
@@ -57,11 +56,12 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
     };
 
     useEffect(() => {
-        if (openMnemonicModal && !loading && !shownGenerateMnemonicModal.current) {
-            shownGenerateMnemonicModal.current = true;
-            void openGenerateMnemonicModal();
+        if (openMnemonicModalRef?.current && !loading) {
+            openMnemonicModalRef.current = false;
+            // Should not prompt the confirm step since it's for new users
+            createModal(<GenerateMnemonicModal onSuccess={call} />);
         }
-    }, [loading, openMnemonicModal, shownGenerateMnemonicModal.current]);
+    }, [loading, openMnemonicModalRef?.current]);
 
     if (loading) {
         return <Loader />;
