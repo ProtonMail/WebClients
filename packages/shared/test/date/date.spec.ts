@@ -1,5 +1,5 @@
 import { enUS, fr } from 'date-fns/locale';
-import { getFormattedWeekdays, getFormattedMonths, getWeekStartsOn } from '../../lib/date/date';
+import { getFormattedWeekdays, getFormattedMonths, getWeekStartsOn, isValidDate } from '../../lib/date/date';
 
 describe('getFormattedWeekdays', () => {
     it('should get a list with the names of the days of the week according to current locale', () => {
@@ -10,7 +10,7 @@ describe('getFormattedWeekdays', () => {
             'Wednesday',
             'Thursday',
             'Friday',
-            'Saturday'
+            'Saturday',
         ]);
         expect(getFormattedWeekdays('cccc', { locale: fr })).toEqual([
             'dimanche',
@@ -19,7 +19,7 @@ describe('getFormattedWeekdays', () => {
             'mercredi',
             'jeudi',
             'vendredi',
-            'samedi'
+            'samedi',
         ]);
     });
 });
@@ -38,7 +38,7 @@ describe('getFormattedMonths', () => {
             'September',
             'October',
             'November',
-            'December'
+            'December',
         ]);
         expect(getFormattedMonths('MMMM', { locale: fr })).toEqual([
             'janvier',
@@ -52,7 +52,7 @@ describe('getFormattedMonths', () => {
             'septembre',
             'octobre',
             'novembre',
-            'décembre'
+            'décembre',
         ]);
     });
 });
@@ -61,5 +61,15 @@ describe('getWeekStartsOn', () => {
     it('should get a index from 0 (Sunday) to 6 (Saturday) of the first day of week of a given locale', () => {
         expect(getWeekStartsOn(enUS)).toEqual(0);
         expect(getWeekStartsOn(fr)).toEqual(1);
+    });
+});
+
+describe('isValidDate', () => {
+    it('should detect valid date', () => {
+        expect(isValidDate(new Date())).toEqual(true);
+    });
+
+    it('should detect invalid date', () => {
+        expect(isValidDate(new Date('panda'))).toEqual(false);
     });
 });
