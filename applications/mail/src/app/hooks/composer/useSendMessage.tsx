@@ -29,6 +29,7 @@ import { useGetAttachment } from '../useAttachment';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
 import { cancelScheduled, endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
+import LoadingNotificationContent from '../../components/notifications/LoadingNotificationContent';
 
 const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
@@ -76,15 +77,44 @@ export const useSendMessage = () => {
                 }
                 const savedMessage = getMessage(localID) as MessageStateWithData;
                 const isScheduledMessage = savedMessage.draftFlags?.scheduledAt;
-                if (isScheduledMessage) {
-                    await dispatch(cancelScheduled(savedMessage.localID));
-                    await api(cancelSend(savedMessage.data.ID));
+                const request = async () => {
+                    if (isScheduledMessage) {
+                        await dispatch(cancelScheduled(savedMessage.localID));
+                        await api(cancelSend(savedMessage.data.ID));
+                    } else {
+                        await api(cancelSend(savedMessage.data.ID));
+                    }
                     await call();
-                    createNotification({ text: c('Message notification').t`Scheduled sending undone` });
-                } else {
-                    await api(cancelSend(savedMessage.data.ID));
-                    await call();
-                    createNotification({ text: c('Message notification').t`Sending undone` });
+                };
+                const promise = request();
+                const undoingSendNotification = createNotification({
+                    text: (
+                        <LoadingNotificationContent
+                            loadingText={c('Message notification').t`Undoing send...`}
+                            loadedText={
+                                isScheduledMessage
+                                    ? c('Message notification').t`Scheduled sending undone`
+                                    : c('Message notification').t`Sending undone`
+                            }
+                            promise={promise}
+                        />
+                    ),
+                    expiration: -1,
+                });
+                const startTime = performance.now();
+                try {
+                    await promise;
+                    const endTime = performance.now();
+                    // Display the notification at least 1,5 second to let the user read it
+                    setTimeout(
+                        () => {
+                            hideNotification(undoingSendNotification);
+                        },
+                        endTime - startTime > 2000 ? 0 : 1500
+                    );
+                } catch (error: any) {
+                    hideNotification(undoingSendNotification);
+                    throw error;
                 }
                 // Re-open draft
                 onCompose({
