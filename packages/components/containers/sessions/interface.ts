@@ -1,11 +1,8 @@
-import { getClientsI18N } from './helper';
-
-type ClientIDs = keyof ReturnType<typeof getClientsI18N>;
-
 export interface Session {
     ExpirationTime: number;
     UnlockExpirationTime: number;
-    ClientID: ClientIDs;
+    ClientID: string;
+    LocalizedClientName: string;
     CreateTime: number;
     Scope: number;
     ParentUID: null;
