@@ -114,3 +114,7 @@ export const getDifferenceInDays = (earlierDate: Date, laterDate: Date) => {
     const diff = differenceInMilliseconds(laterDate, earlierDate);
     return Math.floor(diff / DAY);
 };
+
+export const isValidDate = (date: Date) => {
+    return date instanceof Date && !Number.isNaN(date.getTime());
+};
