@@ -87,9 +87,9 @@ const DisableMnemonicModal = (props: Props) => {
             };
 
             return {
-                title: c('Action').t`Enter password to continue`,
+                title: c('Title').t`Sign in again to continue`,
                 cancel: c('Action').t`Cancel`,
-                submit: c('Action').t`Continue`,
+                submit: c('Action').t`Submit`,
                 hasClose: !submittingAuth,
                 onClose: submittingAuth ? noop : onClose,
                 error: authError,
