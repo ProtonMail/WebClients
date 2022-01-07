@@ -1,16 +1,17 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, forwardRef, Ref } from 'react';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import NotificationDot from '../../components/notificationDot/NotificationDot';
+
+import { NotificationDot, NotificationDotColor } from '../../components';
 
 export interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;
     className?: string;
     isOpen?: boolean;
-    showNotification?: boolean;
+    notification?: NotificationDotColor;
 }
 
-const UserDropdownButton = ({ user, isOpen, showNotification, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
+const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
     const { Email, DisplayName, Name } = user;
     const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
     // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
@@ -42,7 +43,9 @@ const UserDropdownButton = ({ user, isOpen, showNotification, ...rest }: Props, 
             <span className="mtauto mbauto text-semibold rounded bordered p0-25 inline-block user-initials relative flex flex-item-noshrink">
                 <span className="mtauto mbauto center">{initials}</span>
             </span>
-            {showNotification && <NotificationDot className="absolute top-right notification-dot--top-right" />}
+            {notification && (
+                <NotificationDot color={notification} className="absolute top-right notification-dot--top-right" />
+            )}
         </button>
     );
 };

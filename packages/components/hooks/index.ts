@@ -101,7 +101,7 @@ export { default as usePromiseResult } from './usePromiseResult';
 export { default as useRecoverySecrets } from './useRecoverySecrets';
 export { default as useRecoveryStatus } from './useRecoveryStatus';
 export { default as useSearch } from './useSearch';
-export { default as useShowRecoveryNotification } from './useShowRecoveryNotification';
+export { default as useRecoveryNotification } from './useRecoveryNotification';
 export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './useSortedList';
 export { default as useSpotlightOnFeature } from './useSpotlightOnFeature';
 export { default as useStep } from './useStep';

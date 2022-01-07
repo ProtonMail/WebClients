@@ -38,7 +38,6 @@ const DisableMnemonicModal = (props: Props) => {
         if (step === STEPS.CONFIRM) {
             return {
                 title: c('Action').t`Disable recovery phrase?`,
-                tiny: true,
                 hasClose: false,
                 section: (
                     <>
