@@ -17,7 +17,6 @@ import { useApi, useAuthentication, useModals, useLoading, useNotifications } fr
 
 import SessionAction from './SessionAction';
 import { Session } from './interface';
-import { getClientsI18N } from './helper';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 const PAGE_SIZE = 10;
@@ -74,7 +73,6 @@ const SessionsSection = () => {
         withLoading(fetchSessions());
     }, []);
 
-    const i18n = getClientsI18N();
     const currentUID = authentication.getUID();
 
     return (
@@ -106,7 +104,7 @@ const SessionsSection = () => {
                             <TableRow
                                 key={key}
                                 cells={[
-                                    i18n[session.ClientID],
+                                    session.LocalizedClientName,
                                     <Time format="PPp" key={1}>
                                         {session.CreateTime}
                                     </Time>,
