@@ -1,4 +1,6 @@
 import ICAL from 'ical.js';
+import { parseISO } from 'date-fns';
+import { isValidDate } from '../date/date';
 import { readFileAsString } from '../helpers/file';
 import isTruthy from '../helpers/isTruthy';
 import { ContactProperties, ContactProperty } from '../interfaces/contacts';
@@ -117,6 +119,10 @@ export const toICAL = (properties: ContactProperties = []) => {
     return versionLessProperties.reduce((component, { field, type, pref, value, group }) => {
         const fieldWithGroup = [group, field].filter(isTruthy).join('.');
         const property = new ICAL.Property(fieldWithGroup);
+
+        if (['bday', 'anniversary'].includes(field) && typeof value === 'string' && !isValidDate(parseISO(value))) {
+            property.resetType('text');
+        }
 
         property.setValue(value);
 
