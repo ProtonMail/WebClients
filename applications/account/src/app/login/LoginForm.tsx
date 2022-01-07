@@ -136,8 +136,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                         id="staySignedIn"
                         className="mt0-5"
                         checked={persistent}
-                        onChange={() => setPersistent(!persistent)}
-                        disabled={loading}
+                        onChange={loading ? noop : () => setPersistent(!persistent)}
                     />
                     <div className="flex-item-fluid">
                         <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
