@@ -125,6 +125,7 @@ const ItemRow = ({
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-strong',
                     (dragging || item.Disabled) && 'opacity-50',
                 ])}
+                data-testid={isSelected ? 'selected' : undefined}
                 {...itemHandlers}
             >
                 <TableCell className="m0 flex">
