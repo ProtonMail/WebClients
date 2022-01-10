@@ -3,9 +3,5 @@
     "extends": ["config:base", "group:allNonMajor"],
     "postUpdateOptions": ["yarnDedupeHighest"],
     "rangeStrategy": "bump",
-    "lockFileMaintenance": {
-        "enabled": true,
-        "schedule": "before 5am on Monday"
-    },
     "rebaseWhen": "conflicted"
 }
