@@ -16,7 +16,7 @@ interface InternalAddressGenerationPayload {
 }
 
 export interface InternalAddressGeneration {
-    externalEmailAddress: Address;
+    externalEmailAddress?: Address;
     availableDomains: string[];
     api: Api;
     onDone: () => Promise<void>;
@@ -26,7 +26,7 @@ export interface InternalAddressGeneration {
 }
 
 interface Props {
-    externalEmailAddress: string;
+    externalEmailAddress?: string;
     onBack: () => void;
     onSubmit: (payload: InternalAddressGenerationPayload) => Promise<void>;
     mailAppName: string;
@@ -57,8 +57,10 @@ const GenerateInternalAddressStep = ({
                     />
                     <Content>
                         <div className="mb1-75">
-                            {c('Info')
-                                .t`Your ${BRAND_NAME} Account is associated with ${externalEmailAddress}. To use ${toAppName}, please create an address.`}
+                            {externalEmailAddress
+                                ? c('Info')
+                                      .t`Your ${BRAND_NAME} Account is associated with ${externalEmailAddress}. To use ${toAppName}, please create an address.`
+                                : c('Info').t`To use ${toAppName}, please create an address.`}
                         </div>
                         <GenerateInternalAddressForm
                             api={api}

@@ -1,23 +1,21 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { Route, Redirect, Switch, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
-import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 
 import {
-    useActiveBreakpoint,
-    useToggle,
-    PrivateHeader,
-    PrivateAppContainer,
-    Logo,
-    useUser,
-    useAddresses,
-    useFeatures,
     FeatureCode,
+    Logo,
+    PrivateAppContainer,
+    PrivateHeader,
+    useActiveBreakpoint,
+    useFeatures,
+    useToggle,
+    useUser,
 } from '@proton/components';
 
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { UserModel, UserType } from '@proton/shared/lib/interfaces';
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
 import AccountSidebar from './AccountSidebar';
@@ -58,7 +56,6 @@ const getDefaultRedirect = (user: UserModel) => {
 
 const MainContainer = () => {
     const [user] = useUser();
-    const [addresses] = useAddresses();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
@@ -81,7 +78,7 @@ const MainContainer = () => {
         return <Redirect to={`/${getSlugFromApp(DEFAULT_APP)}${getDefaultRedirect(user)}`} />;
     }
 
-    if (REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(app) && getHasOnlyExternalAddresses(addresses || [])) {
+    if (REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(app) && user.Type === UserType.EXTERNAL) {
         return <Redirect to={`/setup-internal-address?app=${app}`} />;
     }
 
