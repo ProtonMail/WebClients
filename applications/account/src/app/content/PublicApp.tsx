@@ -6,7 +6,14 @@ import ForceRefreshContext from '@proton/components/containers/forceRefresh/cont
 import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from '@proton/shared/lib/authentication/sessionForking';
-import { APPS, SSO_PATHS, UNPAID_STATE, isSSOMode, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    APPS_CONFIGURATION,
+    isSSOMode,
+    REQUIRES_INTERNAL_EMAIL_ADDRESS,
+    SSO_PATHS,
+    UNPAID_STATE,
+} from '@proton/shared/lib/constants';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
@@ -15,6 +22,7 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { UserType } from '@proton/shared/lib/interfaces';
 
 import AccountPublicApp from './AccountPublicApp';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
@@ -114,8 +122,12 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return getLocalRedirect(getPathFromLocation(localLocation));
     });
 
-    // Either another app wants to fork, or a specific route is requested on this app, or we just go to default
-    const toApp = forkState?.app || localRedirect?.toApp || toTargetService || DEFAULT_APP;
+    // Either another app wants to fork, or a specific route is requested on this app
+    const maybeTargetApp = forkState?.app || localRedirect?.toApp || toTargetService;
+    // Require internal setup if an app is specified
+    const shouldSetupInternalAddress = maybeTargetApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybeTargetApp);
+    // Or just default
+    const toApp = maybeTargetApp || DEFAULT_APP;
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
         const { keyPassword, UID, User, LocalID, persistent } = args;
@@ -130,6 +142,13 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             const type = args.flow === 'signup' ? FORK_TYPE.SIGNUP : undefined;
             await produceFork({ api, UID, keyPassword, ...forkState, persistent, type });
             return;
+        }
+        // Special case for external users to redirect to VPN until more apps are supported
+        if (User.Type === UserType.EXTERNAL && !shouldSetupInternalAddress) {
+            return onLogin({
+                ...args,
+                path: `${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`,
+            });
         }
         if (localRedirect || !isSSOMode) {
             return onLogin({
@@ -270,6 +289,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                         <Route path={SSO_PATHS.LOGIN}>
                                             <LoginContainer
                                                 toApp={toApp}
+                                                shouldSetupInternalAddress={shouldSetupInternalAddress}
                                                 onLogin={handleLogin}
                                                 onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                             />
