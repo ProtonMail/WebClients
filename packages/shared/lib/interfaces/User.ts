@@ -9,6 +9,12 @@ export enum MNEMONIC_STATUS {
     PROMPT = 4,
 }
 
+export enum UserType {
+    PROTON = 1,
+    MANAGED = 2,
+    EXTERNAL = 3,
+}
+
 export interface User {
     ID: string;
     Name: string;
@@ -19,6 +25,7 @@ export interface User {
     MaxUpload: number;
     Role: USER_ROLES;
     Private: number;
+    Type: UserType;
     Subscribed: number;
     Services: number;
     Delinquent: number;
