@@ -144,7 +144,17 @@ const ImportManageFoldersRow = ({
         if (DestinationFolder) {
             return false;
         }
-        return nameAlreadyExists(inputValue, isLabelMapping ? folders : labels);
+        const collection = [
+            ...(isLabelMapping ? folders : labels),
+            ...(isLabelMapping
+                ? Object.entries(labelsMap).map(([key, label]) => [key, label.Name])
+                : Object.entries(folderPathsMap)
+            )
+                .filter(([source]) => folder.Source !== source)
+                .map(([, dest]) => ({ Path: dest })),
+        ];
+
+        return nameAlreadyExists(inputValue, collection);
     }, [inputValue, folders, labels]);
 
     const nameTooLongError = useMemo(() => {
