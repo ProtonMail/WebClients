@@ -1,4 +1,4 @@
-import { Fragment, MouseEvent, useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,6 +6,7 @@ import {
     Alert,
     Button,
     CircleLoader,
+    ConfirmSignOutModal,
     Icon,
     InlineLinkButton,
     Loader,
@@ -15,18 +16,23 @@ import {
     useApi,
     useErrorHandler,
     useLoading,
+    useModals,
     useNotifications,
 } from '@proton/components';
 import { revoke } from '@proton/shared/lib/api/auth';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSession, removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import { hasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
+import partition from '@proton/utils/partition';
 
 import Content from './Content';
 import Header from './Header';
@@ -74,6 +80,7 @@ const SwitchAccountContainer = ({
     const [loadingMap, setLoadingMap] = useState<{ [key: number]: boolean }>({});
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
+    const { createModal } = useModals();
 
     useEffect(() => {
         if (!activeSessions) {
@@ -94,18 +101,68 @@ const SwitchAccountContainer = ({
         silentApi(withUIDHeaders(persistedSession.UID, revoke())).catch(noop);
     };
 
-    const handleSignOut = async (event: MouseEvent<HTMLButtonElement>, localID: number) => {
+    const handleSignOut = (localID: number, updatedActiveSessions: LocalSessionResponse[] | undefined) => {
         clearSession(localID);
-        const updatedActiveSessions = localActiveSessions?.filter((session) => session.LocalID !== localID);
         setLocalActiveSessions(updatedActiveSessions);
         onSignOut(updatedActiveSessions);
     };
 
+    const handleSignOutClick = async (localID: number) => {
+        const [sessionToLogout, updatedActiveSessions] = localActiveSessions
+            ? partition<LocalSessionResponse>(
+                  localActiveSessions,
+                  (session): session is LocalSessionResponse => session.LocalID === localID
+              )
+            : [undefined, undefined];
+
+        if (sessionToLogout && sessionToLogout.some((session) => hasRecoveryMessage(session.UserID))) {
+            return createModal(
+                <ConfirmSignOutModal
+                    onSignOut={(clearData: boolean) => {
+                        const params = new URLSearchParams();
+                        if (clearData) {
+                            const clearDeviceRecoveryData = sessionToLogout.map((session) => session.UserID);
+                            params.set('clearDeviceRecoveryData', JSON.stringify(clearDeviceRecoveryData));
+                            replaceUrl(getAppHref(`/switch?${params.toString()}`, APPS.PROTONACCOUNT));
+                        }
+
+                        handleSignOut(localID, updatedActiveSessions);
+                    }}
+                />
+            );
+        }
+
+        handleSignOut(localID, updatedActiveSessions);
+    };
+
     const handleSignOutAll = async () => {
-        localActiveSessions?.forEach(({ LocalID }) => {
-            clearSession(LocalID);
-        });
-        onSignOutAll();
+        const prompt = localActiveSessions && localActiveSessions.some((session) => hasRecoveryMessage(session.UserID));
+
+        const signOutAll = () => {
+            localActiveSessions?.forEach(({ LocalID }) => {
+                clearSession(LocalID);
+            });
+            onSignOutAll();
+        };
+
+        if (prompt) {
+            return createModal(
+                <ConfirmSignOutModal
+                    onSignOut={(clearData: boolean) => {
+                        const params = new URLSearchParams();
+                        if (clearData) {
+                            const clearDeviceRecoveryData = localActiveSessions.map((session) => session.UserID);
+                            params.set('clearDeviceRecoveryData', JSON.stringify(clearDeviceRecoveryData));
+                            replaceUrl(getAppHref(`/switch?${params.toString()}`, APPS.PROTONACCOUNT));
+                        }
+
+                        signOutAll();
+                    }}
+                />
+            );
+        }
+
+        signOutAll();
     };
 
     const handleClickSession = async (localID: number) => {
@@ -202,7 +259,7 @@ const SwitchAccountContainer = ({
                                         className="relative upper-layer"
                                         title={signOutText}
                                         aria-label={signOutText}
-                                        onClick={(event) => handleSignOut(event, LocalID)}
+                                        onClick={() => handleSignOutClick(LocalID)}
                                     >
                                         {c('Action').t`Sign out`}
                                     </InlineLinkButton>

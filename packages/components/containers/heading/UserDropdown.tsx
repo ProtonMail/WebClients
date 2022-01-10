@@ -9,6 +9,7 @@ import { ThemeColor } from '@proton/colors';
 import {
     Button,
     ButtonLike,
+    ConfirmSignOutModal,
     Copy,
     Dropdown,
     DropdownMenu,
@@ -19,6 +20,7 @@ import {
     ReferralSpotlight,
     SettingsLink,
     SimpleDropdown,
+    shouldShowConfirmSignOutModal,
     useAuthentication,
     useConfig,
     useFeature,
@@ -73,13 +75,15 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
     const location = useLocation();
     const [subscription] = useSubscription();
     const [userSettings] = useUserSettings();
+    const authentication = useAuthentication();
     const [redDotReferral, setRedDotReferral] = useState(false);
     const { Email, DisplayName, Name } = user;
     const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
     const { logout } = useAuthentication();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [bugReportModal, setBugReportModal, render] = useModalState();
+    const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
+    const [confirmSignOutModal, setConfirmSignOutModal, renderConfirmSignOutModal] = useModalState();
 
     const buttonRecoveryNotification = useRecoveryNotification(true);
     const insideDropdownRecoveryNotification = useRecoveryNotification(false);
@@ -103,9 +107,13 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
         });
     };
 
-    const handleLogout = () => {
-        logout();
+    const handleSignOutClick = () => {
         close();
+        if (shouldShowConfirmSignOutModal({ user, userSettings, authentication })) {
+            setConfirmSignOutModal(true);
+        } else {
+            logout();
+        }
     };
 
     const planName = getPlanTitle(subscription, APP_NAME);
@@ -144,7 +152,15 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
     return (
         <>
-            {render && <AuthenticatedBugModal {...bugReportModal} />}
+            {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} />}
+            {renderConfirmSignOutModal && (
+                <ConfirmSignOutModal
+                    onSignOut={(clearData: boolean) =>
+                        logout({ clearDeviceRecoveryData: clearData ? [user.ID] : undefined })
+                    }
+                    {...confirmSignOutModal}
+                />
+            )}
             <ReferralSpotlight
                 show={showSpotlight}
                 anchorRef={anchorRef}
@@ -386,7 +402,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                             shape="solid"
                             color="norm"
                             className="w100"
-                            onClick={handleLogout}
+                            onClick={handleSignOutClick}
                             data-testid="userdropdown:button:logout"
                         >
                             {c('Action').t`Sign out`}

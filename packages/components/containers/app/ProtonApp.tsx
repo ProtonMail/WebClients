@@ -7,7 +7,6 @@ import { ExperimentsProvider, FeaturesProvider } from '@proton/components/contai
 import useInstance from '@proton/hooks/useInstance';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import {
     getBasename,
@@ -15,7 +14,6 @@ import {
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { APPS, SSO_PATHS, isSSOMode } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
@@ -102,6 +100,7 @@ interface AuthState {
     localID?: number;
     history: History;
     isLoggingOut?: boolean;
+    clearDeviceRecoveryData?: string[];
     consumerLogoutPromise?: Promise<void>;
 }
 
@@ -127,6 +126,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
 
         return {
             ...state,
+            clearDeviceRecoveryData: [],
             history,
         };
     });
@@ -195,7 +195,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
         []
     );
 
-    const handleFinalizeLogout = useCallback(() => {
+    const handleFinalizeLogout = useCallback((clearDeviceRecoveryData: string[] = []) => {
         authentication.setUID(undefined);
         authentication.setPassword(undefined);
         authentication.setPersistent(undefined);
@@ -211,11 +211,13 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
         pathRef.current = '/';
 
         if (isSSOMode) {
-            const { APP_NAME } = config;
-            if (APP_NAME === APPS.PROTONACCOUNT) {
-                return replaceUrl(getAppHref('/switch?flow=logout', APPS.PROTONACCOUNT));
+            const params = new URLSearchParams();
+            params.set('flow', 'logout');
+            if (clearDeviceRecoveryData) {
+                params.set('clearDeviceRecoveryData', JSON.stringify(clearDeviceRecoveryData));
             }
-            return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
+
+            return replaceUrl(getAppHref(`/switch?${params.toString()}`, APPS.PROTONACCOUNT));
         }
         setAuthData({
             history: createHistory({ basename: getBasename() }),
@@ -224,23 +226,27 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
 
     const logoutListener = useInstance(() => createListeners());
 
-    const handleLogout = useCallback((type?: 'soft') => {
-        setAuthData((authData) => {
-            // Nothing to logout
-            if (!authData.UID) {
-                return authData;
-            }
-            if (type === 'soft') {
-                handleFinalizeLogout();
-                return authData;
-            }
-            return {
-                ...authData,
-                consumerLogoutPromise: Promise.all(logoutListener.notify()).then(noop).catch(noop),
-                isLoggingOut: true,
-            };
-        });
-    }, []);
+    const handleLogout = useCallback(
+        ({ type, clearDeviceRecoveryData = [] }: { type?: 'soft'; clearDeviceRecoveryData?: string[] } = {}) => {
+            setAuthData((authData) => {
+                // Nothing to logout
+                if (!authData.UID) {
+                    return authData;
+                }
+                if (type === 'soft') {
+                    handleFinalizeLogout(clearDeviceRecoveryData);
+                    return authData;
+                }
+                return {
+                    ...authData,
+                    consumerLogoutPromise: Promise.all(logoutListener.notify()).then(noop).catch(noop),
+                    isLoggingOut: true,
+                    clearDeviceRecoveryData,
+                };
+            });
+        },
+        []
+    );
 
     const { UID, localID, history, isLoggingOut, consumerLogoutPromise } = authData;
 
@@ -310,9 +316,11 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                                                                                 if (isLoggingOut) {
                                                                                     return (
                                                                                         <Signout
-                                                                                            onDone={
-                                                                                                handleFinalizeLogout
-                                                                                            }
+                                                                                            onDone={() => {
+                                                                                                handleFinalizeLogout(
+                                                                                                    authData.clearDeviceRecoveryData
+                                                                                                );
+                                                                                            }}
                                                                                             onLogout={() =>
                                                                                                 consumerLogoutPromise
                                                                                             }

@@ -38,6 +38,7 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { UserType } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
+import ClearDeviceRecoveryData from '../containers/ClearDeviceRecoveryData';
 import LoginContainer from '../login/LoginContainer';
 import AuthExtension from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
@@ -219,10 +220,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             } catch (error) {}
         }
 
-        const { keyPassword, UID, User, LocalID, persistent, appIntent: maybeFlowAppIntent } = args;
+        const { keyPassword, UID, User: user, LocalID, persistent, appIntent: maybeFlowAppIntent } = args;
         const toAppIntent = maybeFlowAppIntent?.app || maybePreAppIntent;
         // Special case for external users to redirect to VPN until more apps are supported, when no app intent is provided.
-        const toApp = toAppIntent || (User.Type === UserType.EXTERNAL ? APPS.PROTONVPN_SETTINGS : DEFAULT_APP);
+        const toApp = toAppIntent || (user.Type === UserType.EXTERNAL ? APPS.PROTONVPN_SETTINGS : DEFAULT_APP);
 
         // Handle special case going for internal vpn on account settings.
         const localRedirect =
@@ -230,7 +231,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             (toApp === APPS.PROTONVPN_SETTINGS ? getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug) : undefined);
 
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
-        if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
+        if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
                 path: `${getSlugFromApp(toApp)}${getInvoicesPathname(config.APP_NAME)}`,
@@ -371,6 +372,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     return (
         <>
+            <ClearDeviceRecoveryData />
             <ModalsChildren />
             <Switch>
                 <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions`}>
