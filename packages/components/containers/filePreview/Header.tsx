@@ -25,7 +25,7 @@ const Header = ({ mimeType, name, sharedStatus, onClose, onSave, onDetail, onSha
     return (
         <div className="flex flex-justify-space-between flex-align-items-center p2 relative">
             <div className="file-preview-filename flex flex-align-items-center flex-nowrap">
-                {mimeType && <FileIcon mimeType={mimeType} />}
+                {mimeType && <FileIcon mimeType={mimeType} className="mr0-5" />}
                 <FileNameDisplay text={name} />
             </div>
             {children}
