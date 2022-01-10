@@ -2,10 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi, useUser, useUserKeys } from '@proton/components/hooks';
 import { AlgorithmInfo } from '@proton/crypto';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
 import { getAlgorithmExists } from '@proton/shared/lib/keys';
+import { storeDeviceRecovery, useIsDeviceRecoveryEnabled } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import {
     Alert,
@@ -36,16 +38,24 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
     const [step, setStep] = useState(STEPS.SELECT_ENCRYPTION);
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
     const [newKeyFingerprint, setNewKeyFingerprint] = useState<string>();
+    const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
+    const [user] = useUser();
+    const [userKeys] = useUserKeys();
+    const api = useApi();
 
-    const handleProcess = () => {
-        onAdd(ENCRYPTION_CONFIGS[encryptionType])
-            .then((fingerprint) => {
-                setNewKeyFingerprint(fingerprint);
-                setStep(STEPS.SUCCESS);
-            })
-            .catch(() => {
-                rest.onClose?.();
-            });
+    const handleProcess = async () => {
+        try {
+            const fingerprint = await onAdd(ENCRYPTION_CONFIGS[encryptionType]);
+
+            if (isDeviceRecoveryEnabled) {
+                await storeDeviceRecovery({ api, user, userKeys });
+            }
+
+            setNewKeyFingerprint(fingerprint);
+            setStep(STEPS.SUCCESS);
+        } catch (error) {
+            rest.onClose?.();
+        }
     };
 
     const { children, onSubmit, submit, close, loading } = (() => {
@@ -58,7 +68,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                     const nextStep = algorithmExists ? STEPS.WARNING : STEPS.GENERATE_KEY;
                     setStep(nextStep);
                     if (nextStep === STEPS.GENERATE_KEY) {
-                        handleProcess();
+                        void handleProcess();
                     }
                 },
                 submit: c('Action').t`Continue`,
@@ -80,7 +90,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
             return {
                 onSubmit: () => {
                     setStep(STEPS.GENERATE_KEY);
-                    handleProcess();
+                    void handleProcess();
                 },
                 close: c('Action').t`No`,
                 submit: c('Action').t`Continue`,

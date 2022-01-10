@@ -1,16 +1,24 @@
 import { CryptoProxy } from '@proton/crypto';
+import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
+import { getSettings } from '@proton/shared/lib/api/settings';
 import { GetMnemonicResetData, getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
 import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
 import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { Api, UserType, User as tsUser } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getResetAddressesKeys, handleSetupAddressKeys } from '@proton/shared/lib/keys';
+import { Api, UserSettings, UserType, User as tsUser } from '@proton/shared/lib/interfaces';
+import {
+    generateKeySaltAndPassphrase,
+    getDecryptedUserKeysHelper,
+    getResetAddressesKeys,
+    handleSetupAddressKeys,
+} from '@proton/shared/lib/keys';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
+import { attemptDeviceRecovery, storeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
@@ -84,6 +92,32 @@ export const handleNewPassword = async ({
     }
 
     await persistSession({ ...authResponse, persistent, User, keyPassword, api });
+
+    if (keyPassword) {
+        const numberOfReactivatedKeys = await attemptDeviceRecovery({
+            api: authApi,
+            user: User,
+            addresses: await getAllAddresses(authApi),
+            keyPassword,
+        }).catch(noop);
+
+        if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
+            // Refetch user with new reactivated keys
+            User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+        }
+
+        // Store device recovery information
+        if (persistent) {
+            const userSettings = await authApi<{ UserSettings: UserSettings }>(getSettings()).then(
+                ({ UserSettings }) => UserSettings
+            );
+
+            if (userSettings.DeviceRecovery) {
+                const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
+                await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+            }
+        }
+    }
 
     return {
         to: STEPS.DONE,

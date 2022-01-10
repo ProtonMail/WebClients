@@ -92,11 +92,8 @@ const LoginForm = ({
         return <ChallengeError />;
     }
     const keepMeSignedInLearnMoreLink = (
-        <Href
-            className="color-inherit"
-            key="learn-more"
-            url={getKnowledgeBaseUrl('/how-to-access-protonmail-in-private-incognito-mode')}
-        >{c('Info').t`Why?`}</Href>
+        <Href className="color-inherit" key="learn-more" url={getKnowledgeBaseUrl('/keep-me-signed-in')}>{c('Info')
+            .t`Why?`}</Href>
     );
 
     return (
