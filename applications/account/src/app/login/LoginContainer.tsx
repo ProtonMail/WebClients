@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { APP_NAMES, APPS, BRAND_NAME, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
+import { APP_NAMES, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { Address as tsAddress, UserType } from '@proton/shared/lib/interfaces';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { queryAddresses } from '@proton/shared/lib/api/addresses';
@@ -45,11 +45,12 @@ import GenerateInternalAddressStep, { InternalAddressGeneration } from './Genera
 
 interface Props {
     onLogin: OnLoginCallback;
+    shouldSetupInternalAddress?: boolean;
     toApp?: APP_NAMES;
     onBack?: () => void;
 }
 
-const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
+const LoginContainer = ({ onLogin, onBack, toApp, shouldSetupInternalAddress }: Props) => {
     const errorHandler = useErrorHandler();
     const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration);
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -75,7 +76,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
         const { UID, User } = args;
         const uidApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
 
-        if (toApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(toApp)) {
+        if (shouldSetupInternalAddress) {
             const Addresses =
                 args.Addresses ||
                 (await uidApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses));
