@@ -1,4 +1,4 @@
-import { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { KeyReactivationRequest } from './interface';
@@ -16,7 +16,7 @@ export const getKeysToReactivateCount = (inactiveKeys: KeyReactivationRequest[])
 
 export const getAllKeysReactivationRequests = (
     addressesKeys: { address: Address; keys: DecryptedKey[] }[] | undefined,
-    User: UserModel | undefined,
+    User: User | undefined,
     userKeys: DecryptedKey[] | undefined
 ): KeyReactivationRequest[] => {
     const allAddressesKeys = (addressesKeys || []).map(({ address, keys }) => {

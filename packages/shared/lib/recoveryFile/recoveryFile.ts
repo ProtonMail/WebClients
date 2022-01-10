@@ -5,7 +5,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { KEY_FILE_EXTENSION } from '../constants';
 import downloadFile from '../helpers/downloadFile';
-import { DecryptedKey, KeyWithRecoverySecret } from '../interfaces';
+import { DecryptedKey, Key, KeyWithRecoverySecret } from '../interfaces';
 import { ArmoredKeyWithInfo } from '../keys';
 
 const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async (file: string) => {
@@ -66,15 +66,15 @@ export const generateRecoverySecret = async (privateKey: PrivateKeyReference) =>
     };
 };
 
-export const exportRecoveryFile = async ({
+export const generateRecoveryFileMessage = async ({
     recoverySecret,
-    userKeys,
+    privateKeys,
 }: {
     recoverySecret: string;
-    userKeys: DecryptedKey[];
+    privateKeys: PrivateKeyReference[];
 }) => {
     const userKeysArray = await Promise.all(
-        userKeys.map(({ privateKey }) =>
+        privateKeys.map((privateKey) =>
             CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: null, format: 'binary' })
         )
     );
@@ -84,6 +84,20 @@ export const exportRecoveryFile = async ({
         passwords: [recoverySecret],
     });
 
+    return message;
+};
+
+export const exportRecoveryFile = async ({
+    recoverySecret,
+    userKeys,
+}: {
+    recoverySecret: string;
+    userKeys: DecryptedKey[];
+}) => {
+    const message = await generateRecoveryFileMessage({
+        recoverySecret,
+        privateKeys: userKeys.map(({ privateKey }) => privateKey),
+    });
     const blob = new Blob([message], { type: 'text/plain' });
     downloadFile(blob, `proton_recovery${KEY_FILE_EXTENSION}`);
 };
@@ -99,4 +113,24 @@ export const validateRecoverySecret = async (recoverySecret: KeyWithRecoverySecr
     });
 
     return verified === VERIFICATION_STATUS.SIGNED_AND_VALID;
+};
+
+export const getRecoverySecrets = (Keys: Key[] = []): KeyWithRecoverySecret[] => {
+    return Keys.map((key) => {
+        if (!key?.RecoverySecret || !key?.RecoverySecretSignature) {
+            return;
+        }
+
+        return key as KeyWithRecoverySecret;
+    }).filter(isTruthy);
+};
+
+export const getPrimaryRecoverySecret = (Keys: Key[] = []): KeyWithRecoverySecret | undefined => {
+    const primaryUserKey = Keys?.[0];
+
+    if (!primaryUserKey?.RecoverySecret || !primaryUserKey?.RecoverySecretSignature) {
+        return;
+    }
+
+    return primaryUserKey as KeyWithRecoverySecret;
 };

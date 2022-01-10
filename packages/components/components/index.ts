@@ -11,6 +11,7 @@ export * from './calendarEventDateHeader';
 export * from './collapsible';
 export * from './collapsingBreadcrumbs';
 export * from './color';
+export * from './confirmSignOutModal';
 export * from './container';
 export * from './contextMenu';
 export * from './dragMoveContainer';

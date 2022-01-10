@@ -18,8 +18,8 @@ const VoidRecoveryFilesModal = ({ onClose, ...rest }: Props) => {
     const handleVoidClick = async () => {
         await api(deleteRecoverySecrets());
         await call();
-        onClose?.();
         createNotification({ type: 'info', text: c('Info').t`Recovery files have been voided` });
+        onClose?.();
     };
 
     return (
@@ -28,14 +28,14 @@ const VoidRecoveryFilesModal = ({ onClose, ...rest }: Props) => {
             title={c('Action').t`Void all recovery files?`}
             buttons={[
                 <Button color="danger" loading={revoking} onClick={() => withRevoking(handleVoidClick())}>
-                    {c('Action').t`Void anyway`}
+                    {c('Action').t`Void`}
                 </Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
             <p className="m0">
                 {c('Info')
-                    .t`You won’t be able to recover locked data using your downloaded recovery files. This will also delete trusted device-recovery information.`}
+                    .t`You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.`}
             </p>
         </AlertModal>
     );
