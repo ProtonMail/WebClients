@@ -2,7 +2,7 @@ import { serializeData } from '@proton/shared/lib/fetch/helpers';
 import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getClientID } from '@proton/shared/lib/apps/helper';
-import { APP_VERSION, API_VERSION, API_URL, APP_NAME } from '../config';
+import { APP_VERSION, API_URL, APP_NAME } from '../config';
 import { createErrorHandler } from './dom';
 
 export type HTTPHeaders = { [key: string]: string };
@@ -32,7 +32,6 @@ const defaultHeaders: HTTPHeaders = {
     'X-Requested-With': 'XMLHttpRequest',
     Accept: 'application/vnd.protonmail.v1+json',
     ...appVersionHeaders,
-    'x-pm-apiversion': API_VERSION,
 };
 
 export interface Upload<T> {
