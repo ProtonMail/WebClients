@@ -14,7 +14,6 @@ import {
 import { SettingsSectionTitle } from '../account';
 import useIsRecoveryFileAvailable from '../../hooks/useIsRecoveryFileAvailable';
 import RecoveryCardStatus, { RecoveryCardStatusProps } from './RecoveryCardStatus';
-import RecoveryStatus from './RecoveryStatus';
 
 interface Props {
     ids: {
@@ -124,7 +123,7 @@ const RecoveryCard = ({ ids }: Props) => {
 
         if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && hasOutdatedRecoveryFile) {
             return {
-                status: 'incomplete' as RecoveryStatus,
+                status: 'incomplete',
                 statusText: c('Info').t`Outdated recovery methods; update to ensure access to your data`,
                 callToActions: [updateRecoveryPhraseCTA, updateRecoveryFileCTA].filter(isTruthy),
             };
@@ -132,7 +131,7 @@ const RecoveryCard = ({ ids }: Props) => {
 
         if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
             return {
-                status: 'incomplete' as RecoveryStatus,
+                status: 'incomplete',
                 statusText: c('Info').t`Outdated recovery phrase; update to ensure access to your data`,
                 callToActions: [updateRecoveryPhraseCTA, recoverySecrets.length === 0 && recoveryFileCTA].filter(
                     isTruthy
@@ -142,7 +141,7 @@ const RecoveryCard = ({ ids }: Props) => {
 
         if (hasOutdatedRecoveryFile) {
             return {
-                status: 'incomplete' as RecoveryStatus,
+                status: 'incomplete',
                 statusText: c('Info').t`Outdated recovery file; update to ensure access to your data`,
                 callToActions: [
                     user.MnemonicStatus !== MNEMONIC_STATUS.SET && recoveryPhraseCTA,
