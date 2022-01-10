@@ -17,7 +17,7 @@ import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
 import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
-import { getAppHrefBundle, getAppName } from '@proton/shared/lib/apps/helper';
+import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
 import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -62,7 +62,9 @@ const SetupInternalAccountContainer = () => {
 
     const handleBack = () => {
         // Always forces a refresh for the theme
-        document.location.assign(getAppHrefBundle(`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`, APPS.PROTONACCOUNT));
+        document.location.assign(
+            getAppHref(`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`, APPS.PROTONACCOUNT, authentication.getLocalID())
+        );
     };
 
     useEffect(() => {
@@ -99,7 +101,7 @@ const SetupInternalAccountContainer = () => {
                 keyPassword: authentication.getPassword(),
                 api: silentApi,
                 onDone: async () => {
-                    goToApp('/', app);
+                    document.location.assign(getAppHref('/', app, authentication.getLocalID()));
                 },
                 revoke: () => {},
             };
