@@ -130,7 +130,6 @@ const getConfigFile = ({ buildData, appData }) => {
     export const APP_NAME = '${appData.appName}';
     export const API_URL = '/api';
     export const LOCALES = ${JSON.stringify(LOCALES)};
-    export const API_VERSION = '3';
     export const VERSION_PATH = '${appData.publicPath}assets/version.json';
     export const SENTRY_DSN = '${appData.sentryDsn}';
     `;
