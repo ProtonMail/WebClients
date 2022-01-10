@@ -15,19 +15,10 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getUser } from '@proton/shared/lib/api/user';
 import { MemberAuthResponse } from '@proton/shared/lib/authentication/interface';
-import { LoginTypes } from '@proton/shared/lib/authentication/LoginInterface';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 
 import { DropdownActions } from '../../components';
-import {
-    useApi,
-    useAuthentication,
-    useEventManager,
-    useLoading,
-    useLoginType,
-    useModals,
-    useNotifications,
-} from '../../hooks';
+import { useApi, useAuthentication, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
@@ -64,7 +55,6 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
-    const loginType = useLoginType();
 
     const handleConfirmDelete = async () => {
         if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
@@ -96,11 +86,7 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
 
             const done = (localID: number) => {
                 const url = getAppHref('/overview', APPS.PROTONACCOUNT, localID);
-                if (loginType === LoginTypes.TRANSIENT || loginType === LoginTypes.PERSISTENT_WORKAROUND) {
-                    document.location.assign(url);
-                } else {
-                    window.open(url);
-                }
+                window.open(url);
             };
 
             const validatedSession = await maybeResumeSessionByUser(silentApi, User);
