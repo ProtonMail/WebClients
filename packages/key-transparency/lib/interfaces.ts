@@ -25,7 +25,6 @@ export interface Proof {
     Neighbors: (string | null)[];
     Proof: string;
     Revision: number;
-    Name: string;
 }
 
 export interface KTInfo {
