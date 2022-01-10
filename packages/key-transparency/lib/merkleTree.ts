@@ -1,9 +1,7 @@
 import { SHA256, arrayToHexString, concatArrays, binaryStringToArray } from 'pmcrypto';
 import { vrfVerify } from './vrf';
-import { vrfHexKey } from './constants';
 import { Proof } from './interfaces';
-
-const LEFT_N = 1; // left neighbor
+import { KT_LEN, LEFT_N, vrfHexKey } from './constants';
 
 /**
  * Convert a string of hexadecimal numbers into a byte array
@@ -11,7 +9,7 @@ const LEFT_N = 1; // left neighbor
 const hexStringToArray = (hex: string): Uint8Array => {
     const result = new Uint8Array(hex.length >> 1);
     for (let k = 0; k < hex.length >> 1; k++) {
-        result[k] = parseInt(hex.substr(k << 1, 2), 16);
+        result[k] = parseInt(hex.substring(k << 1, (k << 1) + 2), 16);
     }
     return result;
 };
@@ -29,13 +27,17 @@ export const verifyChainHash = async (TreeHash: string, PreviousChainHash: strin
  * Verify the KT proof given by the server for a specific email address
  */
 export const verifyProof = async (proof: Proof, TreeHash: string, sklData: string, email: string) => {
+    if (proof.Neighbors.length !== KT_LEN * 8) {
+        throw new Error('Inconsistent number of neighbors');
+    }
+
     // Verify proof
+    let vrfHash: Uint8Array;
     try {
-        await vrfVerify(
-            hexStringToArray(vrfHexKey),
+        vrfHash = await vrfVerify(
             binaryStringToArray(email),
             hexStringToArray(proof.Proof),
-            hexStringToArray(proof.Name)
+            hexStringToArray(vrfHexKey)
         );
     } catch (error: any) {
         throw new Error(`VRF verification failed with error "${error.message}"`);
@@ -48,11 +50,11 @@ export const verifyProof = async (proof: Proof, TreeHash: string, sklData: strin
             new Uint8Array([proof.Revision >>> 24, proof.Revision >>> 16, proof.Revision >>> 8, proof.Revision]),
         ])
     );
-    const emptyNode = new Uint8Array(32);
-    const key = hexStringToArray(proof.Name);
+    const emptyNode = new Uint8Array(KT_LEN);
+    const key = vrfHash.subarray(0, KT_LEN);
 
     for (let i = proof.Neighbors.length - 1; i >= 0; i--) {
-        const bit = (key[Math.floor(i / 8) % 32] >>> (8 - (i % 8) - 1)) & 1;
+        const bit = (key[Math.floor(i / 8)] >>> (8 - (i % 8) - 1)) & 1;
         let neighbor = emptyNode;
         const neighborToCheck = proof.Neighbors[i];
         if (neighborToCheck !== null) {
