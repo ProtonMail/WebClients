@@ -73,7 +73,6 @@ export { default as useLoad } from './useLoad';
 export { default as useLoading } from './useLoading';
 export { default as useLoadingMap } from './useLoadingMap';
 export { default as useLocalState } from './useLocalState';
-export { default as useLoginType } from './useLoginType';
 export * from './useMailSettings';
 export { default as useMainArea, MainAreaContext } from './useMainArea';
 export { default as useMemberAddresses } from './useMemberAddresses';
