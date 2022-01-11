@@ -62,7 +62,7 @@ export const useLoadEOMessage = ({ id, setSessionStorage }: Props) => {
             id,
             decryptedToken,
         } as OutsideKey;
-    }, []);
+    }, [password, decryptedToken, id]);
 
     // When opening the app, we try to get the session from the secureSessionStorage.
     // If session has not been found, we try to load the EO token from the ID in the URL
