@@ -4,7 +4,7 @@
 	$arrow-width: 0.5em;
 
 	position: fixed;
-	z-index: 777;
+	z-index: $layer-tooltips;
 	min-inline-size: $arrow-width;
 	max-inline-size: $tooltip-width;
 	border-radius: var(--border-radius-medium);
@@ -72,7 +72,7 @@
 		content: '';
 		speak: none;
 		position: absolute;
-		z-index: 666;
+		z-index: 1;
 		inline-size: $arrow-width;
 		block-size: $arrow-width;
 		pointer-events: none;

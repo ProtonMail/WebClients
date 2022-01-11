@@ -3,7 +3,7 @@
 		position: absolute;
 		inset-block: 0;
 		inset-inline-end: 0;
-		z-index: 10; // same as toolbar, change as soon as possible
+		z-index: $layer-upper; // Because filter toolbar has `.upper-layer` helper
 		inline-size: 0;
 		overflow: visible;
 	}

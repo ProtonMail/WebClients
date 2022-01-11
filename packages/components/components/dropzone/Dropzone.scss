@@ -9,7 +9,7 @@
 	transition-duration: 0.15s;
 	transition-timing-function: easing(easeIn);
 	// 1 less than what modals currently have
-	z-index: calc(665 + var(--z-position, 0));
+	z-index: $layer-dropzone;
 
 	&::before {
 		content: '';
