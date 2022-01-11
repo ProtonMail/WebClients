@@ -1,11 +1,10 @@
 import { c } from 'ttag';
-import { updateNotifyEmail, updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
+import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { Info, Loader, Toggle } from '../../components';
+import { Loader, Toggle } from '../../components';
 
 import {
-    useApi,
     useConfig,
     useEventManager,
     useLoading,
@@ -27,11 +26,9 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 const { PROTONVPN_SETTINGS } = APPS;
 
 const AccountRecoverySection = () => {
-    const api = useApi();
     const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [loadingEmailReset, withLoadingEmailReset] = useLoading();
-    const [loadingEmailNotify, withLoadingEmailNotify] = useLoading();
     const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -53,17 +50,6 @@ const AccountRecoverySection = () => {
         await new Promise((resolve, reject) => {
             createModal(<AuthModal onClose={reject} onSuccess={resolve} config={updateResetEmail(value)} />);
         });
-        await call();
-    };
-
-    const handleChangeEmailNotify = async (value: number) => {
-        if (value && !userSettings.Email.Value) {
-            return createNotification({
-                type: 'error',
-                text: c('Error').t`Please set a recovery/notification email first`,
-            });
-        }
-        await api(updateNotifyEmail(value));
         await call();
     };
 
@@ -113,27 +99,6 @@ const AccountRecoverySection = () => {
                             {c('Label').t`Allow recovery by email`}
                         </label>
                     </div>
-                    {APP_NAME !== PROTONVPN_SETTINGS ? (
-                        <div className="flex flex-align-items-center">
-                            <Toggle
-                                className="mr0-5"
-                                loading={loadingEmailNotify}
-                                checked={!!userSettings.Email.Notify && !!userSettings.Email.Value}
-                                id="dailyNotificationsToggle"
-                                onChange={({ target: { checked } }) =>
-                                    withLoadingEmailNotify(handleChangeEmailNotify(+checked))
-                                }
-                            />
-                            <label htmlFor="dailyNotificationsToggle" className="mr0-5 flex-item-fluid">
-                                <span className="pr0-5">{c('Label').t`Daily email notifications`}</span>
-                                <Info
-                                    url="https://protonmail.com/blog/notification-emails/"
-                                    title={c('Info')
-                                        .t`When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.`}
-                                />
-                            </label>
-                        </div>
-                    ) : null}
                 </SettingsLayoutRight>
             </SettingsLayout>
 
