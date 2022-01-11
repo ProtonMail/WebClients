@@ -1,6 +1,6 @@
 import { ADDRESS_TYPE } from '../constants';
 import { Key } from './Key';
-import { SignedKeyList } from './SignedKeyList';
+import { SignedKeyListEpochs } from './SignedKeyList';
 
 export interface Address {
     DisplayName: string;
@@ -9,7 +9,7 @@ export interface Address {
     HasKeys: number;
     ID: string;
     Keys: Key[];
-    SignedKeyList: SignedKeyList | null;
+    SignedKeyList: SignedKeyListEpochs | null;
     Order: number;
     Priority: number;
     Receive: number;

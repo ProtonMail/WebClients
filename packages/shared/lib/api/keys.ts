@@ -247,3 +247,29 @@ export const migrateAddressKeysRoute = (data: MigrateAddressKeysPayload) => ({
     method: 'post',
     data,
 });
+
+export interface GetSignedKeyListsParams {
+    SinceEpochID: number;
+    Email: string;
+}
+
+export const getSignedKeyListsRoute = (params: GetSignedKeyListsParams) => ({
+    url: 'keys/signedkeylists',
+    method: 'get',
+    params,
+});
+
+export interface UpdateSignedKeyListParams {
+    AddressID: string;
+}
+
+export interface UpdateSignedKeyListPayload {
+    SignedKeyList: SignedKeyList;
+}
+
+export const updateSignedKeyListRoute = (params: UpdateSignedKeyListParams, data: UpdateSignedKeyListPayload) => ({
+    url: 'keys/signedkeylists',
+    method: 'post',
+    params,
+    data,
+});

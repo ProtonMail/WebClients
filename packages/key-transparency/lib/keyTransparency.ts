@@ -1,20 +1,15 @@
-import { OpenPGPKey, getSignature, encryptMessage, decryptMessage, getMessage } from 'pmcrypto';
-import { Api } from './helpers/interfaces/Api';
-import { Address } from './helpers/interfaces/Address';
-import { Epoch, EpochExtended, KTInfo, KTInfoSelfAudit, KTInfoToLS } from './interfaces';
-import { SignedKeyList, SignedKeyListEpochs } from './helpers/interfaces/SignedKeyList';
+import { getSignature, decryptMessage, getMessage, OpenPGPKey, encryptMessage } from 'pmcrypto';
+import { Api, Address, SignedKeyList, SignedKeyListEpochs, KeyPair, SimpleMap } from '@proton/shared/lib/interfaces';
+import { getCanonicalEmailMap } from '@proton/shared/lib/api/helpers/canonicalEmailMap';
 import {
-    getParsedSignedKeyLists,
     fetchProof,
     fetchEpoch,
-    getVerifiedEpoch,
     uploadEpoch,
     fetchLastEpoch,
+    fetchParsedSKLs,
+    fetchVerifiedEpoch,
 } from './fetchHelper';
-import { setItem, hasStorage, removeItem } from './helpers/storage';
-import { getCanonicalEmailMap } from './helpers/api/canonicalEmailMap';
-import { KT_STATUS, EXP_EPOCH_INTERVAL, KTError } from './constants';
-import { SimpleMap } from './helpers/interfaces/utils';
+import { EXP_EPOCH_INTERVAL, KT_STATUS } from './constants';
 import {
     checkSignature,
     getFromLS,
@@ -28,9 +23,13 @@ import {
     verifyKeyLists,
 } from './utils';
 import { parseCertChain } from './certTransparency';
-import { KeyPair } from './helpers/interfaces/Key';
+import { hasStorage, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { Epoch, EpochExtended, KTInfo, KTInfoSelfAudit, KTInfoToLS } from './interfaces';
 
-export async function verifyPublicKeys(
+/**
+ * For that public keys associated to an email address are correctly stored in KT
+ */
+export const verifyPublicKeys = async (
     keyList: {
         Flags: number;
         PublicKey: string;
@@ -38,7 +37,7 @@ export async function verifyPublicKeys(
     email: string,
     signedKeyList: SignedKeyListEpochs | undefined,
     api: Api
-): Promise<KTInfo> {
+): Promise<KTInfo> => {
     if (!signedKeyList) {
         return {
             code: KT_STATUS.KTERROR_ADDRESS_NOT_IN_KT,
@@ -49,8 +48,8 @@ export async function verifyPublicKeys(
     let canonicalEmail: string | undefined;
     try {
         canonicalEmail = (await getCanonicalEmailMap([email], api))[email];
-    } catch (err: any) {
-        return { code: KT_STATUS.KT_FAILED, error: err.message };
+    } catch (error: any) {
+        return { code: KT_STATUS.KT_FAILED, error: error.message };
     }
     if (!canonicalEmail) {
         return {
@@ -69,8 +68,8 @@ export async function verifyPublicKeys(
             signedKeyList.Signature,
             'SKL during PK verification'
         );
-    } catch (err: any) {
-        return { code: KT_STATUS.KT_FAILED, error: err.message };
+    } catch (error: any) {
+        return { code: KT_STATUS.KT_FAILED, error: error.message };
     }
 
     // Check key list and signed key list
@@ -95,19 +94,19 @@ export async function verifyPublicKeys(
     let maxEpoch: Epoch;
     try {
         maxEpoch = await fetchEpoch(signedKeyList.MaxEpochID, api);
-    } catch (err: any) {
+    } catch (error: any) {
         let status = KT_STATUS.KT_FAILED;
-        if (err.message === 'Leaf node does not exist') {
+        if (error.message === 'Leaf node does not exist') {
             status = KT_STATUS.KTERROR_ADDRESS_NOT_IN_KT;
         }
-        return { code: status, error: err.message };
+        return { code: status, error: error.message };
     }
 
     let returnedDate: number;
     try {
         returnedDate = await verifyEpoch(maxEpoch, canonicalEmail, signedKeyList.Data, api);
-    } catch (err: any) {
-        return { code: KT_STATUS.KT_FAILED, error: err.message };
+    } catch (error: any) {
+        return { code: KT_STATUS.KT_FAILED, error: error.message };
     }
 
     if (isTimestampTooOld(returnedDate)) {
@@ -118,13 +117,16 @@ export async function verifyPublicKeys(
     }
 
     return { code: KT_STATUS.KT_PASSED, error: '' };
-}
+};
 
-export async function ktSelfAudit(
+/**
+ * Execute self-audit on the user's own keys
+ */
+export const ktSelfAudit = async (
     apis: Api[],
     addresses: Address[],
     userKeys: { privateKey?: OpenPGPKey }[] | undefined
-): Promise<Map<string, KTInfoSelfAudit>> {
+): Promise<Map<string, KTInfoSelfAudit>> => {
     // silentApi is used to prevent red banner when a verified epoch is not found
     const [api, silentApi] = apis;
 
@@ -145,7 +147,7 @@ export async function ktSelfAudit(
             addresses.map((address) => address.Email),
             api
         );
-    } catch (err: any) {
+    } catch (error: any) {
         canonicalEmailMap = undefined;
     }
 
@@ -226,7 +228,7 @@ export async function ktSelfAudit(
                 const localSignature = await getSignature(localSKL.Signature);
 
                 // Retrieve oldest SKL since localEpochID
-                const fetchedSKLs = await getParsedSignedKeyLists(api, localEpochID, email, false);
+                const fetchedSKLs = await fetchParsedSKLs(api, localEpochID, email, false);
                 const includedSKLarray: SignedKeyListEpochs[] = await Promise.all(
                     fetchedSKLs.filter(async (skl) => {
                         const sklSignature = await getSignature(skl.Signature);
@@ -267,10 +269,10 @@ export async function ktSelfAudit(
                         includedSKL.Signature,
                         'Included SKL localStorage self-audit (NOTE: the correct key might have been deleted)'
                     );
-                } catch (err: any) {
+                } catch (error: any) {
                     addressesToVerifiedEpochs.set(address.ID, {
                         code: KT_STATUS.KT_FAILED,
-                        error: err.message,
+                        error: error.message,
                     });
                     errorFlag = true;
                     break;
@@ -294,10 +296,10 @@ export async function ktSelfAudit(
 
                     try {
                         removeFromLS(i, address.ID);
-                    } catch (err: any) {
+                    } catch (error: any) {
                         addressesToVerifiedEpochs.set(address.ID, {
                             code: KT_STATUS.KT_FAILED,
-                            error: `Removing object from localStorag failed with error "${err.message}"`,
+                            error: `Removing object from localStorag failed with error "${error.message}"`,
                         });
                         errorFlag = true;
                         break;
@@ -335,10 +337,10 @@ export async function ktSelfAudit(
                 address.SignedKeyList.Signature,
                 'Fetched SKL elf-audit'
             );
-        } catch (err: any) {
+        } catch (error: any) {
             addressesToVerifiedEpochs.set(address.ID, {
                 code: KT_STATUS.KT_FAILED,
-                error: err.message,
+                error: error.message,
             });
             continue;
         }
@@ -354,7 +356,7 @@ export async function ktSelfAudit(
         }
 
         // Fetch the last verified epoch. If there isn't any, the address is recent
-        const verifiedEpoch = await getVerifiedEpoch(silentApi, address.ID);
+        const verifiedEpoch = await fetchVerifiedEpoch(silentApi, address.ID);
         if (!verifiedEpoch) {
             // If the MinEpochID is null the address was created after the last epoch generation, therefore
             // self-audit is postponed at least until the SKL is included in the next epoch
@@ -374,10 +376,10 @@ export async function ktSelfAudit(
             let returnedDate;
             try {
                 returnedDate = await verifyEpoch(minEpoch, email, address.SignedKeyList.Data, api);
-            } catch (err: any) {
+            } catch (error: any) {
                 addressesToVerifiedEpochs.set(address.ID, {
                     code: KT_STATUS.KT_FAILED,
-                    error: err.message,
+                    error: error.message,
                 });
                 continue;
             }
@@ -418,16 +420,16 @@ export async function ktSelfAudit(
                 verifiedEpoch.Signature,
                 'Verified epoch self-audit'
             );
-        } catch (err: any) {
+        } catch (error: any) {
             addressesToVerifiedEpochs.set(address.ID, {
                 code: KT_STATUS.KT_FAILED,
-                error: err.message,
+                error: error.message,
             });
             continue;
         }
 
         // Fetch all new SKLs and corresponding epochs
-        const newSKLs = await getParsedSignedKeyLists(api, verifiedEpochData.EpochID, email, true);
+        const newSKLs = await fetchParsedSKLs(api, verifiedEpochData.EpochID, email, true);
 
         // There can be at most three SKLs in newSKLs:
         //   - the last one before verifiedEpochData.EpochID (i.e. the old one);
@@ -491,10 +493,10 @@ export async function ktSelfAudit(
             let verifiedCurrent;
             try {
                 verifiedCurrent = await verifyCurrentEpoch(oldSKL, email, api);
-            } catch (err: any) {
+            } catch (error: any) {
                 addressesToVerifiedEpochs.set(address.ID, {
                     code: KT_STATUS.KT_FAILED,
-                    error: err.message,
+                    error: error.message,
                 });
                 continue;
             }
@@ -602,36 +604,39 @@ export async function ktSelfAudit(
     }
 
     return addressesToVerifiedEpochs;
-}
+};
 
-export async function verifySelfAuditResult(
+/**
+ * Verify that self-audit has run correctly before modifying any key
+ */
+export const verifySelfAuditResult = async (
     address: Address | undefined,
     submittedSKL: SignedKeyList,
     ktSelfAuditResult: Map<string, KTInfoSelfAudit>,
     lastSelfAudit: number,
     isRunning: boolean,
     api: Api
-): Promise<KTInfoToLS> {
+): Promise<KTInfoToLS> => {
     if (!address) {
-        throw new KTError('Address is undefined');
+        throw new Error('Address is undefined');
     }
 
     if (isRunning) {
-        throw new KTError('Self-audit is still running');
+        throw new Error('Self-audit is still running');
     }
 
     if (Date.now() - lastSelfAudit > EXP_EPOCH_INTERVAL) {
-        throw new KTError('Self-audit should run before proceeding');
+        throw new Error('Self-audit should run before proceeding');
     }
 
     const ktResult = ktSelfAuditResult.get(address.ID);
 
     if (!ktResult) {
-        throw new KTError(`${address.Email} was not audited`);
+        throw new Error(`${address.Email} was not audited`);
     }
 
     if (ktResult.code === KT_STATUS.KT_FAILED) {
-        throw new KTError(`Self-audit failed for ${address.Email} with error "${ktResult.error}"`);
+        throw new Error(`Self-audit failed for ${address.Email} with error "${ktResult.error}"`);
     }
 
     let verifiedEpoch;
@@ -650,13 +655,13 @@ export async function verifySelfAuditResult(
     }
 
     if (!verifiedEpoch) {
-        throw new KTError('Verified epoch not found');
+        throw new Error('Verified epoch not found');
     }
 
     if (
         isTimestampTooOld(verifiedEpoch.CertificateDate, getSignatureTime(await getSignature(submittedSKL.Signature)))
     ) {
-        throw new KTError(`Verified epoch for ${address.Email} has invalid CertificateDate`);
+        throw new Error(`Verified epoch for ${address.Email} has invalid CertificateDate`);
     }
 
     return {
@@ -666,11 +671,14 @@ export async function verifySelfAuditResult(
         }),
         addressID: address.ID,
     };
-}
+};
 
-export async function ktSaveToLS(messageObject: KTInfoToLS | undefined, userKeys: KeyPair[] | undefined, api: Api) {
+/**
+ * Commit changes to SKLs to local storage for later checking
+ */
+export const ktSaveToLS = async (messageObject: KTInfoToLS | undefined, userKeys: KeyPair[] | undefined, api: Api) => {
     if (!messageObject) {
-        throw new KTError('Message object not found');
+        throw new Error('Message object not found');
     }
 
     const { message, addressID } = messageObject;
@@ -678,7 +686,7 @@ export async function ktSaveToLS(messageObject: KTInfoToLS | undefined, userKeys
     if (hasStorage()) {
         const userKey = userKeys ? userKeys[0].publicKey : undefined;
         if (!userKey) {
-            throw new KTError('Missing primary user key');
+            throw new Error('Missing primary user key');
         }
 
         // Check if there is something in localStorage with counter either 0 or 1 and the previous or current epoch
@@ -697,7 +705,7 @@ export async function ktSaveToLS(messageObject: KTInfoToLS | undefined, userKeys
                     .slice(1)
                     .map((n) => +n);
                 if (epochBlob > currentEpoch) {
-                    throw new KTError('Inconsistent data in localStorage');
+                    throw new Error('Inconsistent data in localStorage');
                 }
                 if (counterBlob !== 0) {
                     removeItem(key);
@@ -715,11 +723,11 @@ export async function ktSaveToLS(messageObject: KTInfoToLS | undefined, userKeys
                         .map((n) => +n);
                     if (counterBlob === 0) {
                         if (epochBlob >= currentEpoch) {
-                            throw new KTError('Inconsistent data in localStorage');
+                            throw new Error('Inconsistent data in localStorage');
                         }
                     } else {
                         if (epochBlob > currentEpoch) {
-                            throw new KTError('Inconsistent data in localStorage');
+                            throw new Error('Inconsistent data in localStorage');
                         }
                         counter = 1;
                     }
@@ -727,7 +735,7 @@ export async function ktSaveToLS(messageObject: KTInfoToLS | undefined, userKeys
                 break;
             }
             default:
-                throw new KTError('There are too many blobs in localStorage');
+                throw new Error('There are too many blobs in localStorage');
         }
 
         // Save the new blob
@@ -741,4 +749,4 @@ export async function ktSaveToLS(messageObject: KTInfoToLS | undefined, userKeys
             ).data
         );
     }
-}
+};
