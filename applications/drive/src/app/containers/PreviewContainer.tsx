@@ -11,6 +11,7 @@ import useNavigate from '../hooks/drive/useNavigate';
 import { mapDecryptedLinksToChildren } from '../components/sections/helpers';
 import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
+import { useSearchResultsStorage } from '../components/search/SearchResultsStorage';
 
 const getSharedStatus = (link?: DecryptedLink) => {
     if (!link?.isShared) {
@@ -24,13 +25,15 @@ const getSharedStatus = (link?: DecryptedLink) => {
 
 export default function PreviewContainer({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) {
     const { shareId, linkId } = match.params;
-    const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot } = useNavigate();
+    const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot, navigateToSearch } = useNavigate();
     const { setFolder } = useActiveShare();
     const [, setError] = useState();
     const { createModal } = useModals();
+    const esStorage = useSearchResultsStorage();
 
     const referer = new URLSearchParams(useLocation().search).get('r');
-    const useNavigation = !referer?.startsWith('/shared-urls') && !referer?.startsWith('/trash');
+    const useNavigation =
+        !referer?.startsWith('/shared-urls') && !referer?.startsWith('/trash') && !referer?.startsWith('/search');
 
     const { isLoading, error, link, contents, saveFile, navigation } = useFileView(shareId, linkId, useNavigation);
 
@@ -60,6 +63,13 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         if (referer?.startsWith('/trash')) {
             navigateToTrash();
             return;
+        }
+        if (referer?.startsWith('/search')) {
+            const lastQuery = esStorage.getLastQuery();
+            if (lastQuery) {
+                navigateToSearch(lastQuery);
+                return;
+            }
         }
         if (link?.parentLinkId) {
             navigateToLink(shareId, link.parentLinkId, LinkType.FOLDER);

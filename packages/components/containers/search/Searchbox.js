@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 import { SearchInput, Icon, Button } from '../../components';
 import { classnames } from '../../helpers';
 
-const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = '', onSearch, onChange, onFocus }) => {
+const Searchbox = ({
+    delay,
+    className = '',
+    advanced,
+    placeholder = '',
+    value = '',
+    onSearch,
+    onChange,
+    onFocus,
+    disabled,
+}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         onSearch?.(value);
@@ -43,6 +53,7 @@ const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = 
                     className="searchbox-field"
                     iconSearchDisplayed={false}
                     data-shorcut-target="searchbox-field"
+                    disabled={disabled}
                     onFocus={onFocus}
                 />
             </label>
@@ -53,12 +64,20 @@ const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = 
                 color="weak"
                 className="searchbox-search-button flex"
                 title={c('Action').t`Search`}
+                disabled={disabled}
             >
                 <Icon name="magnifying-glass" size={22} className="mauto searchbox-search-button-icon" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
             {value.length ? (
-                <Button type="reset" icon shape="ghost" color="weak" className="searchbox-advanced-search-button flex">
+                <Button
+                    type="reset"
+                    icon
+                    shape="ghost"
+                    color="weak"
+                    className="searchbox-advanced-search-button flex"
+                    disabled={disabled}
+                >
                     <Icon name="xmark" className="mauto searchbox-search-button-icon" />
                     <span className="sr-only">{c('Action').t`Clear`}</span>
                 </Button>
@@ -76,6 +95,8 @@ Searchbox.propTypes = {
     onSearch: PropTypes.func,
     onChange: PropTypes.func.isRequired,
     advanced: PropTypes.node,
+    onFocus: PropTypes.func,
+    disabled: PropTypes.bool,
 };
 
 export default Searchbox;
