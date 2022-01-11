@@ -11,8 +11,9 @@ import { EOLoadEmbeddedResults, EOLoadRemoteResults } from '../../logic/eo/eoTyp
 import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateImages } from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
-export const useLoadEORemoteImages = () => {
+export const useLoadEORemoteImages = (mailSettings: MailSettings) => {
     const dispatch = useDispatch();
     const api = useApi();
     const getMessage = useGetEOMessageState();
@@ -30,7 +31,7 @@ export const useLoadEORemoteImages = () => {
                 ...message,
                 messageImages: updateImages(message.messageImages, { showRemoteImages: true }, undefined, undefined),
             },
-            undefined,
+            mailSettings,
             handleLoadEORemoteImages
         );
     }, []);
