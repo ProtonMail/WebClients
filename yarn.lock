@@ -3606,7 +3606,7 @@ __metadata:
     karma-jasmine: ^4.0.1
     karma-webpack: ^5.0.0
     pkijs: ^2.2.1
-    pmcrypto: "github:ProtonMail/pmcrypto.git#semver:~6.6.0"
+    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.0"
     ts-loader: ^9.2.6
     typescript: ^4.5.4
     webpack: ^5.65.0
@@ -3722,7 +3722,7 @@ __metadata:
     mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     mutex-browser: "github:ProtonMail/mutex-browser#semver:^1.0.0"
     papaparse: ^5.3.1
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.6.0"
+    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.0"
     prettier: ^2.5.1
     puppeteer: ^13.0.1
     push.js: ^1.0.12
@@ -3754,7 +3754,7 @@ __metadata:
     bcryptjs: ^2.4.3
     eslint: ^8.6.0
     mocha: ^9.1.3
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.6.0"
+    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.0"
     prettier: ^2.5.1
     require-inject: ^1.4.4
     typescript: ^4.5.4
@@ -13591,13 +13591,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esm@npm:^3.0.84":
-  version: 3.2.25
-  resolution: "esm@npm:3.2.25"
-  checksum: 978aabe2de83541c105605a6d60a26ed8e627ef6bb0a7605fe15a95bbdea6b8348bd045255cb22219c054dd09a81a94823df00843d9e97f42419c92015ce3a64
-  languageName: node
-  linkType: hard
-
 "espree@npm:^9.2.0, espree@npm:^9.3.0":
   version: 9.3.0
   resolution: "espree@npm:9.3.0"
@@ -22487,14 +22480,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.6.0, pmcrypto@github:ProtonMail/pmcrypto.git#semver:~6.6.0":
-  version: 6.6.0
-  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=2b5d380a5d89c19badd5cbec5fff15426909786b"
+"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.7.0":
+  version: 6.7.0
+  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=7a6092d68fb1a7247e154bc675c3f078c5c0892e"
   dependencies:
     "@types/openpgp": ^4.4.18
-    esm: ^3.0.84
     openpgp: ^4.10.8
-  checksum: 1737a687e896b3bd1dfba26b22761509ad6eb668fa55cd8fe05f03f6d91ca5d91d52d19d6795a9bb2effa62f26e08ba1318a2b1a37e94d9c0450d7111a2f4b4a
+  checksum: ae61cbd6e336f2116b4c5ec3e3564a8e527386acf396bf08672fe639e32d403c985767bf4fae05100793011808368f43bb5e5d76fef8d5896650d127a58f0d6f
   languageName: node
   linkType: hard
 
