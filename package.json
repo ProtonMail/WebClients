@@ -15,7 +15,7 @@
         "version": "yarn workspace scripts run version:applications"
     },
     "resolutions": {
-        "@types/jest": "^27.0.3",
+        "@types/jest": "^27.4.0",
         "@types/react": "^17.0.38",
         "@types/react-dom": "^17.0.11",
         "safe-buffer": "^5.2.1"
@@ -28,12 +28,12 @@
     },
     "devDependencies": {
         "husky": "^7.0.4",
-        "lint-staged": "^12.1.4",
+        "lint-staged": "^12.1.7",
         "prettier": "^2.5.1",
         "sort-package-json": "^1.53.1"
     },
     "engines": {
-        "node": ">= v16"
+        "node": ">= v16.13.2"
     },
     "packageManager": "yarn@3.1.1"
 }
