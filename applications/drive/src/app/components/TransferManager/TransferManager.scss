@@ -4,7 +4,7 @@
 	position: fixed;
 	inset-inline-end: 0;
 	inset-block-end: 0;
-	z-index: 352;
+	z-index: $layer-floating-frames;
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
 	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);

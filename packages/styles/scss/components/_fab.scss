@@ -4,7 +4,7 @@
 		position: fixed;
 		inset-block-end: 1em;
 		inset-inline-end: 1.6em;
-		z-index: 77;
+		z-index: $layer-floating-action-buttons;
 		block-size: rem(66);
 		inline-size: rem(66);
 		border-radius: 50%;

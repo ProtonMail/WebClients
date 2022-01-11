@@ -178,7 +178,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                                     <CircleLoader />
                                 ) : (
                                     <LinkButton
-                                        className="relative z10"
+                                        className="relative upper-layer"
                                         onClick={(event) => handleSignOut(event, LocalID)}
                                     >{c('Action').t`Sign out`}</LinkButton>
                                 )}

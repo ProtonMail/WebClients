@@ -5,7 +5,7 @@
 	@extend .flex-column;
 	position: fixed;
 	inset: 0;
-	z-index: 350;
+	z-index: $layer-previewer;
 	display: flex;
 
 	&-container {

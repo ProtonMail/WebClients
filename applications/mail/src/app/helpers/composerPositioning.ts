@@ -7,7 +7,6 @@ export const COMPOSER_WIDTH = 640;
 export const COMPOSER_GUTTER = 15;
 const COMPOSER_HEIGHT = 640;
 const COMPOSER_VERTICAL_GUTTER = 10;
-const COMPOSER_ZINDEX = 300;
 const COMPOSER_SWITCH_MODE = 100;
 const HEADER_HEIGHT = 80;
 const APP_BAR_WIDTH = 45;
@@ -52,7 +51,7 @@ export const computeComposerStyle = (
 
     const style = {
         '--right-custom': `${computeRightPosition(index, count, windowSize.width)}px`,
-        zIndex: focus ? COMPOSER_ZINDEX + 1 : COMPOSER_ZINDEX,
+        '--z-position': focus ? 1 : 0,
         computeHeight: `${computeHeight(windowSize.height)}px`,
     };
 

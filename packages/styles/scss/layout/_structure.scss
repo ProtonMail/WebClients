@@ -65,7 +65,7 @@ html,
 	@include respond-to($breakpoint-small) {
 		position: fixed;
 		inset: 0;
-		z-index: 500;
+		z-index: $layer-mobile-navigation;
 		inline-size: 100%;
 		max-inline-size: 100%;
 		max-block-size: none;

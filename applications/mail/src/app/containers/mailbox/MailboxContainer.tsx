@@ -45,8 +45,6 @@ import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { useEncryptedSearch } from '../../hooks/mailbox/useEncryptedSearch';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
 
-import './MailboxContainer.scss';
-
 interface Props {
     labelID: string;
     userSettings: UserSettings;

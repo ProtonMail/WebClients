@@ -88,7 +88,7 @@
 	}
 
 	&-nowHourLine {
-		z-index: 6;
+		z-index: 8; // Need to be higher than .calendar-eventcell.isSelected's z-index
 		inset-inline-start: 0;
 		inset-inline-end: -$calendar-gridcell-margin;
 		border-block-end: 2px solid var(--primary);

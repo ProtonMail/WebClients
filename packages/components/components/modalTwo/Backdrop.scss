@@ -1,6 +1,8 @@
+@import '~@proton/styles/scss/config';
+
 .modal-two-backdrop {
 	position: fixed;
-	z-index: 666;
+	z-index: $layer-modals;
 	inset: 0;
 	background: var(--backdrop-norm);
 	animation: 0.1s ease-out forwards;
