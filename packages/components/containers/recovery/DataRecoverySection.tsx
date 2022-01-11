@@ -74,7 +74,7 @@ const DataRecoverySection = ({ openMnemonicModalRef }: Props) => {
                 {(() => {
                     if (isMnemonicAvailable && isRecoveryFileAvailable) {
                         return c('Info')
-                            .t`To decrypt and view your emails and other data, you need a recovery file or recovery phrase.`;
+                            .t`To decrypt and view your emails and other data, you need a recovery phrase or recovery file.`;
                     }
 
                     if (isMnemonicAvailable) {
