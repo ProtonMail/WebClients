@@ -3372,9 +3372,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.16.3":
-  version: 1.16.3
-  resolution: "@playwright/test@npm:1.16.3"
+"@playwright/test@npm:^1.17.2":
+  version: 1.17.2
+  resolution: "@playwright/test@npm:1.17.2"
   dependencies:
     "@babel/code-frame": ^7.14.5
     "@babel/core": ^7.14.8
@@ -3393,25 +3393,27 @@ __metadata:
     "@babel/plugin-syntax-optional-catch-binding": ^7.8.3
     "@babel/plugin-transform-modules-commonjs": ^7.14.5
     "@babel/preset-typescript": ^7.14.5
-    colors: ^1.4.0
+    colors: 1.4.0
     commander: ^8.2.0
     debug: ^4.1.1
     expect: =27.2.5
     jest-matcher-utils: =27.2.5
     jpeg-js: ^0.4.2
+    mime: ^2.4.6
     minimatch: ^3.0.3
     ms: ^2.1.2
     open: ^8.3.0
     pirates: ^4.0.1
     pixelmatch: ^5.2.1
-    playwright-core: =1.16.3
+    playwright-core: =1.17.2
     pngjs: ^5.0.0
     rimraf: ^3.0.2
     source-map-support: ^0.4.18
     stack-utils: ^2.0.3
+    yazl: ^2.5.1
   bin:
     playwright: cli.js
-  checksum: 363f2f214da1aa5ad0e6f5a3affb0a4d33a43bfc5a628e3c58816ef363a0dbae2400e36334142c0d65e1bbde1f622a032e5b55e92e541b1e7e7c82ae8c7d835c
+  checksum: dd6ffc0794989373c4c86199eb7b2e7405688bc089d213d9554daccf7651e7cb418f679316e625f97444a4cbee8c3d63e57a93d78c23c7f864297647bb32ecdc
   languageName: node
   linkType: hard
 
@@ -13543,7 +13545,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.5.0, eslint@npm:^8.6.0":
+"eslint@npm:^8.6.0":
   version: 8.6.0
   resolution: "eslint@npm:8.6.0"
   dependencies:
@@ -22436,9 +22438,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:=1.16.3":
-  version: 1.16.3
-  resolution: "playwright-core@npm:1.16.3"
+"playwright-core@npm:=1.17.2":
+  version: 1.17.2
+  resolution: "playwright-core@npm:1.17.2"
   dependencies:
     commander: ^8.2.0
     debug: ^4.1.1
@@ -22458,18 +22460,18 @@ fsevents@^1.2.7:
     yazl: ^2.5.1
   bin:
     playwright: cli.js
-  checksum: b37e5abadb22096f84515fa9307587747a65c2b465b10b0688ae228aff5537eb5faa88ee9d1cd1225ff9270747b6c9b72a76a008cfb670b8df939b078f3d29b9
+  checksum: d7d648eebd2529acecae3d1fa09fbb96b0101f26a33a4109ac70073c686cde7ad49706fcc65d610e30a945c17c9aa5b15d0f190fd64bc001dd08a80f38dafd3a
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.16.3":
-  version: 1.16.3
-  resolution: "playwright@npm:1.16.3"
+"playwright@npm:^1.17.2":
+  version: 1.17.2
+  resolution: "playwright@npm:1.17.2"
   dependencies:
-    playwright-core: =1.16.3
+    playwright-core: =1.17.2
   bin:
     playwright: cli.js
-  checksum: c1fe9255e3023195ca94c7a693b8816f9f13ce5901599806ac161df8da193f2bbb016fa452c8f750602845e7ce517129ea639feae0ea182d0ec77e4cb6fc9030
+  checksum: 8276273b64325a4f11225883f6625244f378aac7dadb47a073866ee63fd3be8bd880a79f696aa1327ed9c9e0b5c1a539a7bfb5e55d7b28b21f0e3b357c785557
   languageName: node
   linkType: hard
 
@@ -23606,16 +23608,16 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "proton-e2e@workspace:tests"
   dependencies:
-    "@playwright/test": ^1.16.3
+    "@playwright/test": ^1.17.2
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@types/chance": ^1.1.3
     chance: ^1.1.8
     cross-fetch: ^3.1.4
-    eslint: ^8.5.0
+    eslint: ^8.6.0
     node-fetch: ^3.0.0
-    playwright: ^1.16.3
+    playwright: ^1.17.2
     proxy-agent: ^5.0.0
-    totp-generator: ^0.0.12
+    totp-generator: ^0.0.13
   languageName: unknown
   linkType: soft
 
@@ -28001,12 +28003,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"totp-generator@npm:^0.0.12":
-  version: 0.0.12
-  resolution: "totp-generator@npm:0.0.12"
+"totp-generator@npm:^0.0.13":
+  version: 0.0.13
+  resolution: "totp-generator@npm:0.0.13"
   dependencies:
     jssha: ^3.1.2
-  checksum: 1390dd488f66873458dd8aa41df06f6c1bc946f46459e00749b61bbf30a931b1bff6316a1478e89a2c894798928b51ef3258e9241bb5422158e8a8915a0c8050
+  checksum: 562296b68580811d47e00c494f31cccaf5d071874f984e76ad30bbec4374b5f25ba8171ee09252d0ce61fdcb7cf83394defab9b427f8412d1fd8ef6a326a2a8c
   languageName: node
   linkType: hard
 
