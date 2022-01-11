@@ -16,7 +16,7 @@
         "@types/pkijs": "0.0.12",
         "elliptic": "^6.5.4",
         "pkijs": "^2.2.1",
-        "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:~6.6.0"
+        "pmcrypto": "github:ProtonMail/pmcrypto#semver:~6.7.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
