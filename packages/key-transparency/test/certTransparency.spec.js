@@ -1,16 +1,16 @@
-import * as asn1js from 'asn1js';
+import { Integer as asn1jsInteger } from 'asn1js';
 import { epoch } from './keyTransparency.data';
 import { parseCertChain, parseCertificate, checkAltName, verifyLEcert, verifySCT } from '../lib/certTransparency';
 
 describe('certificate transparency', () => {
     it('should verify a certificate', async () => {
-        const { Certificate, ChainHash, EpochID } = epoch;
+        const { Certificate, ChainHash } = epoch;
 
         const certChain = parseCertChain(Certificate);
         const epochCert = certChain[0];
         const issuerCert = certChain[1];
         await verifyLEcert(certChain);
-        checkAltName(epochCert, ChainHash, EpochID);
+        checkAltName(epochCert, ChainHash);
         await verifySCT(epochCert, issuerCert);
     });
 
@@ -26,13 +26,13 @@ describe('certificate transparency', () => {
     });
 
     it('should fail in checkAltName with missing extensions', () => {
-        const { Certificate, ChainHash, EpochID } = epoch;
-        const cert = parseCertificate(Certificate);
+        const { Certificate, ChainHash } = epoch;
+        const [cert] = parseCertChain(Certificate);
         const { extensions, ...certNoExt } = cert;
 
         let errorThrown = true;
         try {
-            checkAltName(certNoExt, ChainHash, EpochID);
+            checkAltName(certNoExt, ChainHash);
             errorThrown = false;
         } catch (err) {
             expect(err.message).toEqual('Epoch certificate does not have extensions');
@@ -41,13 +41,13 @@ describe('certificate transparency', () => {
     });
 
     it('should fail in checkAltName with missing AltName extension', () => {
-        const { Certificate, ChainHash, EpochID } = epoch;
-        const cert = parseCertificate(Certificate);
+        const { Certificate, ChainHash } = epoch;
+        const [cert] = parseCertChain(Certificate);
         const corruptExt = cert.extensions.filter((ext) => ext.extnID !== '2.5.29.17');
 
         let errorThrown = true;
         try {
-            checkAltName({ ...cert, extensions: corruptExt }, ChainHash, EpochID);
+            checkAltName({ ...cert, extensions: corruptExt }, ChainHash);
             errorThrown = false;
         } catch (err) {
             expect(err.message).toEqual('Epoch certificate does not have AltName extension');
@@ -56,8 +56,8 @@ describe('certificate transparency', () => {
     });
 
     it('should fail in checkAltName with corrupt altName', () => {
-        const { Certificate, ChainHash, EpochID } = epoch;
-        const cert = parseCertificate(Certificate);
+        const { Certificate, ChainHash } = epoch;
+        const [cert] = parseCertChain(Certificate);
         cert.extensions.map((ext) => {
             if (ext.extnID === '2.5.29.17') {
                 ext.parsedValue.altNames[0].value = 'corrupt';
@@ -67,7 +67,7 @@ describe('certificate transparency', () => {
 
         let errorThrown = true;
         try {
-            checkAltName(cert, ChainHash, EpochID);
+            checkAltName(cert, ChainHash);
             errorThrown = false;
         } catch (err) {
             expect(err.message).toEqual('Epoch certificate alternative name does not match');
@@ -94,7 +94,7 @@ describe('certificate transparency', () => {
 
     it('should fail in verifySCT with missing extensions', async () => {
         const { Certificate } = epoch;
-        const cert = parseCertificate(Certificate);
+        const [cert] = parseCertChain(Certificate);
         const { extensions, ...certNoExt } = cert;
 
         let errorThrown = true;
@@ -111,7 +111,7 @@ describe('certificate transparency', () => {
 
     it('should fail in verifySCT with missing SCTs extension', async () => {
         const { Certificate } = epoch;
-        const cert = parseCertificate(Certificate);
+        const [cert] = parseCertChain(Certificate);
         const corruptExt = cert.extensions.filter((ext) => ext.extnID !== '1.3.6.1.4.1.11129.2.4.2');
 
         let errorThrown = true;
@@ -128,7 +128,7 @@ describe('certificate transparency', () => {
 
     it('should fail in verifySCT with missing SCTs', async () => {
         const { Certificate } = epoch;
-        const cert = parseCertificate(Certificate);
+        const [cert] = parseCertChain(Certificate);
         cert.extensions.map((ext) => {
             if (ext.extnID === '1.3.6.1.4.1.11129.2.4.2') {
                 ext.parsedValue.timestamps = [];
@@ -151,7 +151,7 @@ describe('certificate transparency', () => {
         const certChain = parseCertChain(Certificate);
         const epochCert = certChain[0];
         const issuerCert = certChain[1];
-        epochCert.serialNumber = new asn1js.Integer();
+        epochCert.serialNumber = new asn1jsInteger();
 
         let errorThrown = true;
         try {
