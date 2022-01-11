@@ -74,25 +74,34 @@ const RecoveryCard = ({ ids }: Props) => {
             };
         }
 
+        const emailCTA = {
+            text:
+                !!userSettings.Email.Value && !userSettings.Email.Reset
+                    ? c('Info').t`Allow recovery by email`
+                    : c('Info').t`Add a recovery email address`,
+            path: `/recovery#${ids.account}`,
+        };
+
+        const phoneCTA = {
+            text:
+                !!userSettings.Phone.Value && !userSettings.Phone.Reset
+                    ? c('Info').t`Allow recovery by phone`
+                    : c('Info').t`Add a recovery phone number`,
+            path: `/recovery#${ids.account}`,
+        };
+
+        if (user.MnemonicStatus === MNEMONIC_STATUS.SET) {
+            return {
+                status: 'intermediate',
+                statusText: c('Info').t`To ensure continuous access to your account, set an account recovery method`,
+                callToActions: [emailCTA, phoneCTA],
+            };
+        }
+
         return {
             status: accountRecoveryStatus,
             statusText: c('Info').t`No account recovery method set; you are at risk of losing access to your account`,
-            callToActions: [
-                {
-                    text:
-                        !!userSettings.Email.Value && !userSettings.Email.Reset
-                            ? c('Info').t`Allow recovery by email`
-                            : c('Info').t`Add a recovery email address`,
-                    path: `/recovery#${ids.account}`,
-                },
-                {
-                    text:
-                        !!userSettings.Phone.Value && !userSettings.Phone.Reset
-                            ? c('Info').t`Allow recovery by phone`
-                            : c('Info').t`Add a recovery phone number`,
-                    path: `/recovery#${ids.account}`,
-                },
-            ],
+            callToActions: [emailCTA, phoneCTA],
         };
     })();
 
