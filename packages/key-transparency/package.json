@@ -1,5 +1,5 @@
 {
-    "name": "@proton/kt",
+    "name": "@proton/key-transparency",
     "description": "ProtonMail Key Transparency Web Client",
     "license": "MIT",
     "author": "ProtonMail",
@@ -11,6 +11,7 @@
         "test": "NODE_ENV=test karma start test/karma.conf.js"
     },
     "dependencies": {
+        "@proton/shared": "workspace:packages/shared",
         "@types/elliptic": "^6.4.14",
         "@types/pkijs": "0.0.12",
         "elliptic": "^6.5.4",
