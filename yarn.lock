@@ -16402,10 +16402,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"idb@npm:^6.1.5":
-  version: 6.1.5
-  resolution: "idb@npm:6.1.5"
-  checksum: 45d81be3bf5d5ae6d009d62b4a7eeb873fe2a9972d235aaa5c33cd3e27947b33a01fd3fb7bbdbe795cd608d2279c55ccd2db3f8b3f486bc74bdb5eab1c1be957
+"idb@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "idb@npm:7.0.0"
+  checksum: 561ccdfa0c5c799ac1abb946058dfbbd954e3df97b3efceb864069893f040f8169f44a64d6b1c496c3d70ebe9d8180c0f6bf50bff0e41423bc6b147c621f94f1
   languageName: node
   linkType: hard
 
@@ -23655,7 +23655,7 @@ fsevents@^1.2.7:
     eslint: ^8.6.0
     eslint-config-airbnb-typescript: ^16.1.0
     eslint-config-prettier: ^8.3.0
-    idb: ^6.1.5
+    idb: ^7.0.0
     jest: ^27.4.7
     jest-junit: ^13.0.0
     jszip: ^3.7.1
