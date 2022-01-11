@@ -2,7 +2,6 @@
 
 ### Improvements
 
--   Dark theme now also applies to message contents - newsletters will continue to keep their original color scheme
 -   Improved the underlying technology responsible for the message view display
 -   Added reasoning for unallowed message move actions into the existing error message
 -   Added the ability to filter by Addresses in the advanced search widget
