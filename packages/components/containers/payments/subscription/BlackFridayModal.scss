@@ -106,7 +106,7 @@ $price-size: 21;
 	border-radius: 1em;
 	padding-block: 0.1em;
 	padding-inline: 0.75em;
-	z-index: 10;
+	z-index: 1;
 }
 
 .blackfriday-monthly-price.blackfriday-monthly-price {
@@ -169,7 +169,7 @@ $price-size: 21;
 	}
 	.blackfriday-percentage {
 		inset-block-start: -2.8em;
-		z-index: 10;
+		z-index: 1;
 	}
 }
 

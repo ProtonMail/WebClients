@@ -21,7 +21,7 @@
 	}
 
 	position: fixed;
-	z-index: 666;
+	z-index: $layer-modals;
 	color: var(--text-norm);
 	animation: 0.15s ease-out both;
 
