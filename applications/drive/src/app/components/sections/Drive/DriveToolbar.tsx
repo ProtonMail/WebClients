@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import { ToolbarSeparator, Toolbar, useActiveBreakpoint, Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { ENCRYPTED_SEARCH_ENABLED } from '@proton/shared/lib/drive/constants';
 
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import {
@@ -23,7 +24,7 @@ import {
     UploadFileButton,
     UploadFolderButton,
 } from './ToolbarButtons';
-import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
+import { useSearchIndexingContext } from '../../search/indexing/SearchIndexingProvider';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -33,29 +34,30 @@ interface Props {
 const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { isNarrow } = useActiveBreakpoint();
+    // TODO: remove
+    const { getESDBStatus, esDelete } = useSearchIndexingContext();
 
     const { shareId } = activeFolder;
 
     /* ES PoC */
-    const { getESDBStatus, resumeIndexing, esDelete } = useEncryptedSearchContext();
-    const { esEnabled } = getESDBStatus();
-    const esButtons = (
-        <>
-            <ToolbarSeparator />
-            <ToolbarButton
-                disabled={esEnabled}
-                title={c('Action').t`Index`}
-                icon={<Icon name="arrow-down-to-screen" />}
-                onClick={() => resumeIndexing()}
-            />
-            <ToolbarButton
-                disabled={!esEnabled}
-                title={c('Action').t`Remove index`}
-                icon={<Icon name="xmark" />}
-                onClick={() => esDelete()}
-            />
-        </>
-    );
+    const getEsButtons = () => {
+        if (!ENCRYPTED_SEARCH_ENABLED) {
+            return null;
+        }
+        const { esEnabled } = getESDBStatus();
+        return (
+            <>
+                <ToolbarSeparator />
+                <ToolbarButton
+                    disabled={!esEnabled}
+                    title={c('Action').t`Remove index`}
+                    icon={<Icon name="xmark" />}
+                    onClick={() => esDelete()}
+                />
+            </>
+        );
+    };
+    const esButtons = getEsButtons();
     /* ES PoC */
 
     const renderSelectionActions = () => {

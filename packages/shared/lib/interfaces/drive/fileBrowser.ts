@@ -48,7 +48,7 @@ export type ItemRowColumns =
     | 'share_options'
     | 'size'
     | 'trashed';
-export type FileBrowserLayouts = 'trash' | 'sharing' | 'drive';
+export type FileBrowserLayouts = 'trash' | 'sharing' | 'drive' | 'search';
 
 export interface ItemProps {
     style?: React.CSSProperties;

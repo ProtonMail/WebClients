@@ -72,7 +72,7 @@ const ItemRow = ({
         if (item.HasThumbnail) {
             addToDownloadQueue(shareId, item.LinkID, item.ModifyTime);
         }
-    }, [item.ModifyTime]);
+    }, [item.ModifyTime, item.HasThumbnail]);
 
     const generateExpiresCell = () => {
         const expiredPart = isDesktop ? (
