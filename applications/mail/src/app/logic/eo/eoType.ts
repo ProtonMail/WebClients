@@ -36,12 +36,12 @@ export interface EOTokenParams {
     set: (key: string, data: any) => void;
 }
 
-export type EOMessageReply = {
+export interface EOMessageReply {
     Attachments: Attachment[];
     Body: any;
     DecryptedBody?: any;
     Time: number;
-};
+}
 
 export interface EOLoadEmbeddedParams {
     attachments: Attachment[];

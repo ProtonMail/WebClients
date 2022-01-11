@@ -17,6 +17,9 @@ import SendingMessageNotification, {
 } from '../../components/notifications/SendingMessageNotification';
 import { EO_MESSAGE_REDIRECT_PATH, MIN_DELAY_SENT_NOTIFICATION } from '../../constants';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { useDispatch } from 'react-redux';
+import { EOAddReply } from '../../logic/eo/eoActions';
+import { EOMessageReply } from '../../logic/eo/eoType';
 
 interface EOAttachment {
     Filename: string[];
@@ -34,6 +37,7 @@ interface Props {
 
 export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
     const api = useApi();
+    const dispatch = useDispatch();
     const history = useHistory();
     const notifManager = createSendingMessageNotificationManager();
     const { createNotification, hideNotification } = useNotifications();
@@ -123,8 +127,12 @@ export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
             const promise = api(EOReply(decryptedToken || '', id, data));
 
             notifManager.setProperties(promise);
+            const result = (await promise) as unknown as { Reply: EOMessageReply };
 
-            await promise;
+            if (result?.Reply) {
+                await dispatch(EOAddReply(result.Reply));
+            }
+
             history.push(`${EO_MESSAGE_REDIRECT_PATH}/${id}`);
 
             await wait(MIN_DELAY_SENT_NOTIFICATION);

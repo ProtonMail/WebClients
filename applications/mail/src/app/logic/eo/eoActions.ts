@@ -12,6 +12,7 @@ import {
     EOLoadRemoteResults,
     EOMessage,
     EOMessageParams,
+    EOMessageReply,
     EOTokenParams,
 } from './eoType';
 import { EO_DECRYPTED_TOKEN_KEY, EO_PASSWORD_KEY, EO_TOKEN_KEY } from '../../constants';
@@ -123,3 +124,5 @@ export const EOLoadRemote = createAsyncThunk<EOLoadRemoteResults[], EOLoadRemote
         );
     }
 );
+
+export const EOAddReply = createAction<EOMessageReply>('eo/message/reply');

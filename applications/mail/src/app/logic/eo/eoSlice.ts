@@ -9,8 +9,10 @@ import {
     EOLoadEmbeddedFulfilled,
     EOLoadRemotePending,
     EOLoadRemoteFulfilled,
+    EOAddReply as EOAddReplyReducer,
 } from './eoReducers';
 import {
+    EOAddReply,
     EODocumentInitializeFulfilled,
     EODocumentInitializePending,
     EOLoadEmbedded,
@@ -35,6 +37,8 @@ export const eoSlice = createSlice({
         builder.addCase(EOLoadEmbedded.fulfilled, EOLoadEmbeddedFulfilled);
         builder.addCase(EOLoadRemote.pending, EOLoadRemotePending);
         builder.addCase(EOLoadRemote.fulfilled, EOLoadRemoteFulfilled);
+
+        builder.addCase(EOAddReply, EOAddReplyReducer);
     },
 });
 
