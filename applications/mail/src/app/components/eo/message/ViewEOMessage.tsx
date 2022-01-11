@@ -11,6 +11,7 @@ import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
 import { useLoadEOEmbeddedImages, useLoadEORemoteImages } from '../../../hooks/eo/useLoadEOImages';
 import MessageFooter from '../../message/MessageFooter';
 import EORedirect from '../EORedirect';
+import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 
 interface Props {
     setSessionStorage: (key: string, data: any) => void;
@@ -23,7 +24,7 @@ const ViewEOMessage = ({ setSessionStorage }: Props) => {
     const match = useRouteMatch<EOUrlParams>();
     const { id } = match.params;
 
-    const loadRemoteImages = useLoadEORemoteImages();
+    const loadRemoteImages = useLoadEORemoteImages(eoDefaultMailSettings);
     const loadEmbeddedImages = useLoadEOEmbeddedImages(id || '');
 
     const { isStoreInitialized, messageState, message, outsideKey } = useLoadEOMessage({ id, setSessionStorage });
