@@ -5,21 +5,30 @@ import { Proof } from './interfaces';
 
 const LEFT_N = 1; // left neighbor
 
-function hexStringToArray(hex: string): Uint8Array {
+/**
+ * Convert a string of hexadecimal numbers into a byte array
+ */
+const hexStringToArray = (hex: string): Uint8Array => {
     const result = new Uint8Array(hex.length >> 1);
     for (let k = 0; k < hex.length >> 1; k++) {
         result[k] = parseInt(hex.substr(k << 1, 2), 16);
     }
     return result;
-}
+};
 
-export async function verifyChainHash(TreeHash: string, PreviousChainHash: string, ChainHash: string) {
+/**
+ * Verify the chain hash of an epoch
+ */
+export const verifyChainHash = async (TreeHash: string, PreviousChainHash: string, ChainHash: string) => {
     if (ChainHash !== arrayToHexString(await SHA256(hexStringToArray(`${PreviousChainHash}${TreeHash}`)))) {
         throw new Error('Chain hash of fetched epoch is not consistent');
     }
-}
+};
 
-export async function verifyProof(proof: Proof, TreeHash: string, sklData: string, email: string) {
+/**
+ * Verify the KT proof given by the server for a specific email address
+ */
+export const verifyProof = async (proof: Proof, TreeHash: string, sklData: string, email: string) => {
     // Verify proof
     try {
         await vrfVerify(
@@ -28,8 +37,8 @@ export async function verifyProof(proof: Proof, TreeHash: string, sklData: strin
             hexStringToArray(proof.Proof),
             hexStringToArray(proof.Name)
         );
-    } catch (err: any) {
-        throw new Error(`VRF verification failed with error "${err.message}"`);
+    } catch (error: any) {
+        throw new Error(`VRF verification failed with error "${error.message}"`);
     }
 
     // Parse proof and verify epoch against proof
@@ -56,4 +65,4 @@ export async function verifyProof(proof: Proof, TreeHash: string, sklData: strin
     if (arrayToHexString(val) !== TreeHash) {
         throw new Error('Hash chain does not result in TreeHash');
     }
-}
+};

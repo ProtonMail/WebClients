@@ -8,16 +8,19 @@ import {
     createMessage,
     OpenPGPSignature,
 } from 'pmcrypto';
-import { Api } from './helpers/interfaces/Api';
+import { enums } from 'openpgp';
+import { Api, SignedKeyListEpochs } from '@proton/shared/lib/interfaces';
+import { getItem, hasStorage, removeItem } from '@proton/shared/lib/helpers/storage';
 import { Epoch, EpochExtended, KeyInfo } from './interfaces';
-import { SignedKeyListEpochs } from './helpers/interfaces/SignedKeyList';
 import { fetchProof, fetchEpoch } from './fetchHelper';
 import { checkAltName, verifyLEcert, verifySCT, parseCertChain } from './certTransparency';
 import { verifyProof, verifyChainHash } from './merkleTree';
 import { MAX_EPOCH_INTERVAL } from './constants';
-import { getItem, hasStorage, removeItem } from './helpers/storage';
 
-export function compareKeyInfo(keyInfo: KeyInfo, sklKeyInfo: KeyInfo) {
+/**
+ * Check whether the metadata of a key matches what is stored in the Signed Key List
+ */
+export const compareKeyInfo = (keyInfo: KeyInfo, sklKeyInfo: KeyInfo) => {
     // Check fingerprints
     if (keyInfo.Fingerprint !== sklKeyInfo.Fingerprint) {
         throw new Error('Fingerprints');
@@ -42,15 +45,18 @@ export function compareKeyInfo(keyInfo: KeyInfo, sklKeyInfo: KeyInfo) {
     if (keyInfo.Primary !== sklKeyInfo.Primary) {
         throw new Error('Primariness');
     }
-}
+};
 
-export async function verifyKeyLists(
+/**
+ * Check that a list of keys is correctly represented by a Signed Key List
+ */
+export const verifyKeyLists = async (
     keyList: {
         Flags: number;
         PublicKey: OpenPGPKey;
     }[],
     signedKeyListData: KeyInfo[]
-) {
+) => {
     // Check arrays validity
     if (keyList.length === 0) {
         throw new Error('No keys detected');
@@ -93,14 +99,12 @@ export async function verifyKeyLists(
     keyListInfo.forEach((key, i) => {
         compareKeyInfo(key, signedKeyListInfo[i]);
     });
-}
+};
 
-export async function verifyEpoch(
-    epoch: Epoch,
-    email: string,
-    signedKeyListArmored: string,
-    api: Api
-): Promise<number> {
+/**
+ * Verify that the Signed Key List of an email address is correctly stored in an epoch
+ */
+export const verifyEpoch = async (epoch: Epoch, email: string, signedKeyListArmored: string, api: Api) => {
     // Fetch and verify proof
     const proof = await fetchProof(epoch.EpochID, email, api);
     await verifyProof(proof, epoch.TreeHash, signedKeyListArmored, email);
@@ -113,7 +117,7 @@ export async function verifyEpoch(
     const epochCert = certChain[0];
     const issuerCert = certChain[1];
     await verifyLEcert(certChain);
-    checkAltName(epochCert, epoch.ChainHash, epoch.EpochID);
+    checkAltName(epochCert, epoch.ChainHash);
     await verifySCT(epochCert, issuerCert);
 
     let returnedDate: number;
@@ -127,9 +131,12 @@ export async function verifyEpoch(
     }
 
     return returnedDate;
-}
+};
 
-export async function parseKeyLists(
+/**
+ * Parse a key list and the associated Signed Key List
+ */
+export const parseKeyLists = async (
     keyList: {
         Flags: number | undefined;
         PublicKey: string;
@@ -138,7 +145,7 @@ export async function parseKeyLists(
 ): Promise<{
     signedKeyListData: KeyInfo[];
     parsedKeyList: { Flags: number; PublicKey: OpenPGPKey }[];
-}> {
+}> => {
     return {
         signedKeyListData: JSON.parse(signedKeyListData),
         parsedKeyList: await Promise.all(
@@ -150,14 +157,17 @@ export async function parseKeyLists(
             })
         ),
     };
-}
+};
 
-export async function checkSignature(
+/**
+ * Verified the detached signature of a message
+ */
+export const checkSignature = async (
     message: string,
     publicKeys: OpenPGPKey[],
     signature: string,
     failMessage: string
-) {
+) => {
     const { verified } = await verifyMessage({
         message: createMessage(message),
         publicKeys,
@@ -166,24 +176,37 @@ export async function checkSignature(
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         throw new Error(`Signature verification failed (${failMessage})`);
     }
-}
+};
 
-export function getSignatureTime(signature: OpenPGPSignature): number {
-    const packet = signature.packets.findPacket(2);
+/**
+ * Extract the timestamp from a signature
+ */
+export const getSignatureTime = (signature: OpenPGPSignature): number => {
+    const packet = signature.packets.findPacket(enums.packet.signature);
     if (!packet) {
         throw new Error('Signature contains no signature packet');
     }
     return (packet as any).created.getTime();
-}
+};
 
-export function isTimestampTooOld(time: number, refereceTime?: number) {
+/**
+ * Check whether a timestamp is older than am hardcoded treshold
+ */
+export const isTimestampTooOld = (time: number, refereceTime?: number) => {
     if (!refereceTime) {
         refereceTime = Date.now();
     }
     return Math.abs(refereceTime - time) > MAX_EPOCH_INTERVAL;
-}
+};
 
-export async function verifyCurrentEpoch(signedKeyList: SignedKeyListEpochs, email: string, api: Api) {
+/**
+ * Verify the latest epoch
+ */
+export const verifyCurrentEpoch = async (
+    signedKeyList: SignedKeyListEpochs,
+    email: string,
+    api: Api
+): Promise<EpochExtended> => {
     const currentEpoch = await fetchEpoch(signedKeyList.MaxEpochID as number, api);
 
     const returnedDate: number = await verifyEpoch(currentEpoch, email, signedKeyList.Data, api);
@@ -199,9 +222,12 @@ export async function verifyCurrentEpoch(signedKeyList: SignedKeyListEpochs, ema
         Revision,
         CertificateDate: returnedDate,
     } as EpochExtended;
-}
+};
 
-export function getKTBlobs(addressID: string) {
+/**
+ * Helper to get all KT-related blobs from localStorage for a given address
+ */
+export const getKTBlobs = (addressID: string) => {
     const returnedMap: Map<string, string> = new Map();
 
     if (!hasStorage()) {
@@ -220,9 +246,12 @@ export function getKTBlobs(addressID: string) {
     }
 
     return returnedMap;
-}
+};
 
-export function getFromLS(addressID: string): string[] {
+/**
+ * Get all KT-related blobs from localStorage for a given address
+ */
+export const getFromLS = (addressID: string): string[] => {
     if (!hasStorage()) {
         return [];
     }
@@ -237,9 +266,12 @@ export function getFromLS(addressID: string): string[] {
     }
 
     return values;
-}
+};
 
-export function removeFromLS(index: number, addressID: string) {
+/**
+ * Remove a specific KT blob from localStorage
+ */
+export const removeFromLS = (index: number, addressID: string) => {
     if (!hasStorage()) {
         throw new Error('localStorage unavailable');
     }
@@ -260,4 +292,4 @@ export function removeFromLS(index: number, addressID: string) {
     if (!removed) {
         throw new Error('Cannot remove blob from localStorage');
     }
-}
+};
