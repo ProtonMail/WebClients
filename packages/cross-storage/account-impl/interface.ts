@@ -1,6 +1,6 @@
 export enum Action {
     getLocalStorage = 'getLocalStorage',
-    getAllLocalStorage = 'getAllLocalStorage',
+    getLocalStorageKeys = 'getLocalStorageKeys',
     setLocalStorage = 'setLocalStorage',
     removeLocalStorage = 'removeLocalStorage',
 }
@@ -14,11 +14,11 @@ export interface GetLocalStorageMessage {
 
 export type GetLocalStorageMessageResponse = string | null | undefined;
 
-export interface GetAllLocalStorageMessage {
-    type: Action.getAllLocalStorage;
+export interface GetLocalStorageKeysMessage {
+    type: Action.getLocalStorageKeys;
 }
 
-export type GetAllLocalStorageMessageResponse = string[] | null | undefined;
+export type GetLocalStorageKeysMessageResponse = string[] | null | undefined;
 
 export interface SetLocalStorageMessage {
     type: Action.setLocalStorage;
@@ -41,12 +41,12 @@ export type RemoveLocalStorageMessageResponse = undefined;
 
 export type ProtonMessages =
     | GetLocalStorageMessage
-    | GetAllLocalStorageMessage
+    | GetLocalStorageKeysMessage
     | SetLocalStorageMessage
     | RemoveLocalStorageMessage;
 
 export type ProtonMessageResponses =
     | GetLocalStorageMessageResponse
-    | GetAllLocalStorageMessageResponse
+    | GetLocalStorageKeysMessageResponse
     | SetLocalStorageMessageResponse
     | RemoveLocalStorageMessageResponse;
