@@ -3,7 +3,7 @@ import { APPS, isSSOMode } from '@proton/shared/lib/constants';
 import create from '../lib/guest';
 import {
     Action,
-    GetAllLocalStorageMessageResponse,
+    GetLocalStorageKeysMessageResponse,
     GetLocalStorageMessageResponse,
     ProtonMessages,
     RemoveLocalStorageMessageResponse,
@@ -26,9 +26,9 @@ const createHandlers = ({ postAndGetMessage }: CrossStorageInstance) => {
         });
     };
 
-    const getAllLocalStorage = () => {
-        return postAndGetMessage<GetAllLocalStorageMessageResponse>({
-            type: Action.getAllLocalStorage,
+    const getLocalStorageKeys = () => {
+        return postAndGetMessage<GetLocalStorageKeysMessageResponse>({
+            type: Action.getLocalStorageKeys,
         });
     };
 
@@ -54,7 +54,7 @@ const createHandlers = ({ postAndGetMessage }: CrossStorageInstance) => {
     return {
         setLocalStorage,
         getLocalStorage,
-        getAllLocalStorage,
+        getLocalStorageKeys,
         removeLocalStorage,
     };
 };
