@@ -1,29 +1,30 @@
 import { useRef } from 'react';
 import { c } from 'ttag';
-import { decryptMessage, decryptPrivateKey, getMessage, OpenPGPKey, SessionKey } from 'pmcrypto';
+import { decryptMessage, decryptPrivateKey, getMessage, OpenPGPKey } from 'pmcrypto';
 
 import { computeKeyPassword } from '@proton/srp';
 import { useApi } from '@proton/components';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
-import {
-    querySharedURLChildren,
-    querySharedURLFileRevision,
-    querySharedURLInformation,
-} from '@proton/shared/lib/api/drive/sharing';
 import { ThumbnailURLInfo, SharedURLRevision, SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { LinkMeta, LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FOLDER_PAGE_SIZE } from '@proton/shared/lib/drive/constants';
+import { NodeKeys } from '@proton/shared/lib/interfaces/drive/node';
+import {
+    querySharedURLChildren,
+    querySharedURLFileRevision,
+    querySharedURLInformation,
+} from '@proton/shared/lib/api/drive/sharing';
 
+import { DecryptedLink, EncryptedLink } from '../../store';
 import { linkMetaToEncryptedLink } from '../../store/api/transformers';
-import usePublicSession from '../../components/DownloadShared/usePublicSession';
 import { DownloadControls, DownloadEventCallbacks, LinkDownload, Pagination } from '../../store/downloads/interface';
 import downloadThumbnailPure from '../../store/downloads/download/downloadThumbnail';
 import initDownloadPure from '../../store/downloads/download/download';
+import usePublicSession from '../../components/DownloadShared/usePublicSession';
 import retryOnError from '../../utils/retryOnError';
-import { DecryptedLink, EncryptedLink } from '../../store';
 
 export interface SharedURLInfoDecrypted {
     expirationTime: SharedURLInfo['ExpirationTime'];
@@ -38,13 +39,8 @@ export interface SharedURLInfoDecrypted {
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
 const AUTH_RETRY_COUNT = 2;
 
-interface LinkKeys {
-    privateKey: OpenPGPKey;
-    sessionKey?: SessionKey;
-}
-
 const cache: {
-    [linkId: string]: LinkKeys;
+    [linkId: string]: NodeKeys;
 } = {};
 
 function usePublicSharing() {

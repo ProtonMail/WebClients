@@ -9,7 +9,7 @@ import ShareFileSidebarButton from '../sections/SharedLinks/ShareFileSidebarButt
 import EmptyTrashSidebarButton from '../sections/Trash/EmptyTrashSidebarButton';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import AppErrorBoundary from '../AppErrorBoundary';
-import DriveHeader from './DriveHeader';
+import { DriveHeaderPrivate } from './DriveHeader';
 import DriveSidebar from './DriveSidebar/DriveSidebar';
 
 interface Props {
@@ -41,7 +41,7 @@ const DriveWindow = ({ children }: Props) => {
 
     const logo = <MainLogo to="/" />;
     const header = (
-        <DriveHeader
+        <DriveHeaderPrivate
             logo={logo}
             floatingPrimary={PrimaryButton && <PrimaryButton mobileVersion />}
             isHeaderExpanded={expanded}

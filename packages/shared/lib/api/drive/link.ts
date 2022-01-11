@@ -48,3 +48,19 @@ export const queryEmptyTrashOfShare = (ShareID: string) => ({
     method: 'delete',
     url: `drive/shares/${ShareID}/trash`,
 });
+
+export const queryLinkMetaBatch = (shareId: string, linksIds: string[]) => ({
+    method: 'post',
+    url: `/drive/shares/${shareId}/links/fetch_metadata`,
+    data: { LinkIDs: linksIds, Thumbnails: 1 },
+});
+
+export const queryShareMap = (shareID: string, lastIndex?: number, sessionName?: string, pageSize?: number) => ({
+    url: `drive/shares/${shareID}/map`,
+    method: 'get',
+    params: {
+        LastIndex: lastIndex,
+        SessionName: sessionName,
+        PageSize: pageSize,
+    },
+});
