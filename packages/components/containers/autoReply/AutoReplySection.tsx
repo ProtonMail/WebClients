@@ -222,8 +222,8 @@ const AutoReplySection = () => {
                 isEnabled && renderForm()
             ) : (
                 <UpgradeBanner className="mt2">
-                    {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
-                        PLAN_NAMES[PLANS.PROFESSIONAL]
+                    {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]}, ${PLAN_NAMES[PLANS.PROFESSIONAL]} or ${
+                        PLAN_NAMES[PLANS.PLUS]
                     } plan to enable automatic replies for when you are out of the office.`}
                 </UpgradeBanner>
             )}
