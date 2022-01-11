@@ -12,7 +12,7 @@ interface Props {
     locales?: TtagLocaleMap;
 }
 
-const cookieDomain = `.${getSecondLevelDomain()}`;
+const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 const LanguageSelect = ({ className, locales = {} }: Props) => {
     const forceRefresh = useForceRefresh();
     const { LOCALES = {} } = useConfig();
