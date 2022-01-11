@@ -7,7 +7,7 @@ const handler = async (message: ProtonMessages): Promise<ProtonMessageResponses 
         return getItem(message.payload.key);
     }
 
-    if (message.type === Action.getAllLocalStorage) {
+    if (message.type === Action.getLocalStorageKeys) {
         return [...Object.keys(window.localStorage)];
     }
 
