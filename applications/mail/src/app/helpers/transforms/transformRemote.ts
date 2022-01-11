@@ -116,8 +116,8 @@ export const transformRemote = (
 
     if (skipProxy) {
         void loadSkipProxyImages(remoteImages, onLoadRemoteImagesDirect);
-    } else if (showRemoteImages && onLoadRemoteImagesProxy) {
-        void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesProxy, onLoadRemoteImagesDirect);
+    } else if (showRemoteImages) {
+        void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesDirect, onLoadRemoteImagesProxy);
     } else if (useProxy && onLoadFakeImagesProxy) {
         void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
     }
