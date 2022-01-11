@@ -3601,8 +3601,8 @@ __metadata:
     "@types/pkijs": 0.0.12
     elliptic: ^6.5.4
     eslint: ^8.6.0
-    jasmine: 3.99.0
-    jasmine-core: 3.99.0
+    jasmine: 4.0.2
+    jasmine-core: 4.0.0
     karma: ^6.3.10
     karma-chrome-launcher: ^3.1.0
     karma-jasmine: ^4.0.1
@@ -3713,8 +3713,8 @@ __metadata:
     hi-base32: ^0.5.1
     ical.js: ^1.5.0
     is-valid-domain: 0.1.5
-    jasmine: ^3.99.0
-    jasmine-core: ^3.99.0
+    jasmine: ^4.0.2
+    jasmine-core: ^4.0.0
     jsbi: ^4.1.0
     karma: ^6.3.10
     karma-chrome-launcher: ^3.1.0
@@ -17603,22 +17603,29 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:3.99.0, jasmine-core@npm:^3.6.0, jasmine-core@npm:^3.99.0, jasmine-core@npm:~3.99.0":
+"jasmine-core@npm:4.0.0, jasmine-core@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "jasmine-core@npm:4.0.0"
+  checksum: ebb5906c3e91f6d403e9122b8c2955c3272072c4b0fecc1cf1d356e8e4399b0c85b8d6dd0b5abbaa3b9afbdcd279c13394a4a71c0683d4e68fb18213abb68065
+  languageName: node
+  linkType: hard
+
+"jasmine-core@npm:^3.6.0":
   version: 3.99.0
   resolution: "jasmine-core@npm:3.99.0"
   checksum: afab2049116105547619b6591a700a137c95b3535ddc83583df666db356d45a7ea5564eeef74321b414d839c796d619e5fa1584096a73f82bd978a2bdad06b1a
   languageName: node
   linkType: hard
 
-"jasmine@npm:3.99.0, jasmine@npm:^3.99.0":
-  version: 3.99.0
-  resolution: "jasmine@npm:3.99.0"
+"jasmine@npm:4.0.2, jasmine@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "jasmine@npm:4.0.2"
   dependencies:
     glob: ^7.1.6
-    jasmine-core: ~3.99.0
+    jasmine-core: ^4.0.0
   bin:
     jasmine: bin/jasmine.js
-  checksum: baa9a5d8555b844063cd6e11bb272d424a17fa3ebd31c62b211a80c9b8dbb4d9c26218b33212b4f8122e38204a443c2eefbcce89c1c72ee3f0044037ec651427
+  checksum: a65e1cf0deb6c54044004b4562461e29ebc7c6cf4b2edd2d7e06cd60a300c391761d2b5674aa7405d40307edb66316a8f9e496d538b5a86ea75447b63e40615f
   languageName: node
   linkType: hard
 
