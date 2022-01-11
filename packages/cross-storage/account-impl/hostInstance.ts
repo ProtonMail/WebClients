@@ -7,6 +7,10 @@ const handler = async (message: ProtonMessages): Promise<ProtonMessageResponses 
         return getItem(message.payload.key);
     }
 
+    if (message.type === Action.getAllLocalStorage) {
+        return [...Object.keys(window.localStorage)];
+    }
+
     if (message.type === Action.setLocalStorage) {
         setItem(message.payload.key, message.payload.value);
         return;
