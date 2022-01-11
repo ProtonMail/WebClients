@@ -77,7 +77,7 @@ const AttachmentPreview = (
     const handleClose = () => setPreviewing(undefined);
     const handleDownload = async () => {
         const { attachment } = previewing;
-        const verificationStatus = await download(message, attachment);
+        const verificationStatus = await download(message, attachment, outsideKey);
         onDownload(attachment, verificationStatus);
     };
 

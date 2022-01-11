@@ -22,9 +22,9 @@ export const formatDownload = async (
     attachment: Attachment,
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
-    api: Api
+    api: Api,
+    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined
 ): Promise<Download> => {
     try {
         const reverify = !!(verification?.senderVerified && verification.senderPinnedKeys?.length);
@@ -84,9 +84,9 @@ export const formatDownloadAll = async (
     attachments: Attachment[],
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
-    api: Api
+    api: Api,
+    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined
 ): Promise<Download[]> => {
     const { list }: { list: Attachment[] } = attachments.reduce(
         (acc: any, att) => {
@@ -108,7 +108,7 @@ export const formatDownloadAll = async (
     );
 
     return Promise.all(
-        list.map((att) => formatDownload(att, verification, messageKeys, getAttachment, onUpdateAttachment, api))
+        list.map((att) => formatDownload(att, verification, messageKeys, onUpdateAttachment, api, getAttachment))
     );
 };
 

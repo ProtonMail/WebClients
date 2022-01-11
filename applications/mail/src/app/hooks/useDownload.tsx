@@ -16,7 +16,7 @@ import {
 import { useGetMessageKeys } from './message/useGetMessageKeys';
 import { updateAttachment } from '../logic/attachments/attachmentsActions';
 import { useGetAttachment } from './useAttachment';
-import { MessageStateWithData, OutsideKey } from '../logic/messages/messagesTypes';
+import { MessageKeys, MessageStateWithData, OutsideKey } from '../logic/messages/messagesTypes';
 import { useGetMessage } from './message/useMessage';
 import { getAttachmentCounts } from '../helpers/message/messages';
 
@@ -104,16 +104,28 @@ export const useDownload = () => {
     };
 
     return useCallback(
-        async (message: MessageStateWithData, attachment: Attachment) => {
-            const messageKeys = await getMessageKeys(message.localID);
-            const download = await formatDownload(
-                attachment,
-                message.verification,
-                messageKeys,
-                getAttachment,
-                onUpdateAttachment,
-                api
-            );
+        async (message: MessageStateWithData, attachment: Attachment, outsideKey?: MessageKeys) => {
+            let download;
+            if (!outsideKey) {
+                const messageKeys = await getMessageKeys(message.localID);
+                download = await formatDownload(
+                    attachment,
+                    message.verification,
+                    messageKeys,
+                    onUpdateAttachment,
+                    api,
+                    getAttachment
+                );
+            } else {
+                download = await formatDownload(
+                    attachment,
+                    message.verification,
+                    outsideKey,
+                    onUpdateAttachment,
+                    api,
+                    getAttachment
+                );
+            }
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 await showConfirmModal([download]);
@@ -139,19 +151,31 @@ export const useDownloadAll = () => {
     };
 
     return useCallback(
-        async (message: MessageStateWithData) => {
-            const messageKeys = await getMessageKeys(message.localID);
+        async (message: MessageStateWithData, outsideKey?: MessageKeys) => {
             const attachments = getAttachments(message.data);
             const { pureAttachments } = getAttachmentCounts(attachments, message.messageImages);
 
-            const list = await formatDownloadAll(
-                isNumAttachmentsWithoutEmbedded ? pureAttachments : attachments,
-                message.verification,
-                messageKeys,
-                getAttachment,
-                onUpdateAttachment,
-                api
-            );
+            let list;
+            if (!outsideKey) {
+                const messageKeys = await getMessageKeys(message.localID);
+                list = await formatDownloadAll(
+                    isNumAttachmentsWithoutEmbedded ? pureAttachments : attachments,
+                    message.verification,
+                    messageKeys,
+                    onUpdateAttachment,
+                    api,
+                    getAttachment
+                );
+            } else {
+                list = await formatDownloadAll(
+                    isNumAttachmentsWithoutEmbedded ? pureAttachments : attachments,
+                    message.verification,
+                    outsideKey,
+                    onUpdateAttachment,
+                    api
+                );
+            }
+
             const isError = list.some(({ isError }) => isError);
             const senderVerificationFailed = list.some(
                 ({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_INVALID
@@ -188,19 +212,12 @@ export const usePreview = () => {
                     attachment,
                     message.verification,
                     messageKeys,
-                    getAttachment,
                     onUpdateAttachment,
-                    api
+                    api,
+                    getAttachment
                 );
             } else {
-                download = await formatDownload(
-                    attachment,
-                    message.verification,
-                    outsideKey,
-                    getAttachment,
-                    onUpdateAttachment,
-                    api
-                );
+                download = await formatDownload(attachment, message.verification, outsideKey, onUpdateAttachment, api);
             }
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {

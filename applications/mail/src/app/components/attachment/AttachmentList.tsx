@@ -105,7 +105,7 @@ const AttachmentList = ({
     };
 
     const handleDownload = async (attachment: Attachment) => {
-        const verificationStatus = await download(message, attachment);
+        const verificationStatus = await download(message, attachment, outsideKey);
         setVerifiedAttachments((verifiedAttachments) => {
             return {
                 ...verifiedAttachments,
@@ -128,7 +128,7 @@ const AttachmentList = ({
     const handleDownloadAll = async () => {
         setShowLoader(true);
         try {
-            await downloadAll(message);
+            await downloadAll(message, outsideKey);
         } catch (error: any) {
             // Notification is handled by the hook
             console.log('error', error);
