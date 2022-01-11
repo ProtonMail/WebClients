@@ -237,7 +237,7 @@ export const getTotalMessages = async (messageCounts: LabelCount[]) => {
  * but also because IDB is not corrupt, i.e. the object store exists
  */
 export const canUseES = async (userID: string) => {
-    if (!indexKeyExists) {
+    if (!indexKeyExists(userID)) {
         return false;
     }
     const esDB = await openESDB(userID);
