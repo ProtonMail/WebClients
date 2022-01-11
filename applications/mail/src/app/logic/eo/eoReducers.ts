@@ -1,7 +1,7 @@
 import { Draft } from 'immer';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './eoStore';
-import { eoMessageStateSelector } from './eoSelectors';
+import { eoMessageSelector, eoMessageStateSelector } from './eoSelectors';
 import {
     EOState,
     EOMessageParams,
@@ -14,6 +14,7 @@ import {
     EOLoadEmbeddedParams,
     EOLoadRemoteParams,
     EOLoadRemoteResults,
+    EOMessageReply,
 } from './eoType';
 import { MessageRemoteImage, MessageState } from '../messages/messagesTypes';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
@@ -25,6 +26,8 @@ import {
 } from '../../helpers/message/messageRemotes';
 
 export const getMessageState = (state: Draft<EOState>) => eoMessageStateSelector({ eo: state } as RootState);
+
+export const getEOMessage = (state: Draft<EOState>) => eoMessageSelector({ eo: state } as RootState);
 
 // Get image refs in the state for those in data
 const getStateImages = <T extends { image: MessageRemoteImage }>(data: T[], messageState: MessageState) => {
@@ -161,5 +164,13 @@ export const EOLoadRemoteFulfilled = (
         loadElementOtherThanImages(images, messageState.messageDocument?.document);
 
         loadBackgroundImages({ document: messageState.messageDocument?.document, images });
+    }
+};
+
+export const EOAddReply = (state: Draft<EOState>, { payload: reply }: PayloadAction<EOMessageReply>) => {
+    const message = getEOMessage(state);
+
+    if (message) {
+        message.Replies.push(reply);
     }
 };
