@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import {
+    classnames,
     ErrorBoundary,
     PrivateMainArea,
     useCalendars,
@@ -168,6 +169,7 @@ const MailboxContainer = ({
 
     const { focusIndex, getFocusedId, setFocusIndex, handleFocus, focusOnLastMessage } = useMailboxFocus({
         elementIDs,
+        page,
         showList,
         listRef,
         labelID,
@@ -277,88 +279,88 @@ const MailboxContainer = ({
                     hasRowMode={!showContentPanel}
                     ref={mainAreaRef}
                 >
-                    {showList && (
-                        <ErrorBoundary>
-                            <List
-                                ref={listRef}
-                                conversationMode={conversationMode}
-                                labelID={labelID}
-                                loading={loading}
-                                placeholderCount={placeholderCount}
-                                columnLayout={columnLayout}
-                                mailSettings={mailSettings}
-                                elementID={elementIDForList}
-                                elements={elements}
-                                checkedIDs={checkedIDs}
-                                onCheck={handleCheck}
-                                onClick={handleElement}
-                                userSettings={userSettings}
-                                isSearch={isSearch}
-                                breakpoints={breakpoints}
-                                page={page}
-                                total={total}
-                                onPage={handlePage}
-                                onFocus={handleFocus}
-                                onCheckOne={handleCheckOne}
-                                sort={sort}
-                                onSort={handleSort}
-                                filter={filter}
-                                onFilter={handleFilter}
-                                resizeAreaRef={resizeAreaRef}
-                                enableResize={enableResize}
-                                resetWidth={resetWidth}
-                                showContentPanel={showContentPanel}
-                                scrollBarWidth={scrollBarWidth}
-                            />
-                        </ErrorBoundary>
-                    )}
-                    {showContentPanel && (
-                        <ErrorBoundary>
-                            <section
-                                ref={messageContainerRef}
-                                className="view-column-detail flex-no-min-children flex-column flex-item-fluid flex-nowrap scroll-if-needed relative"
-                            >
-                                {showPlaceholder && (
-                                    <PlaceholderView
-                                        welcomeFlag={welcomeFlag}
+                    <ErrorBoundary>
+                        <List
+                            ref={listRef}
+                            show={showList}
+                            conversationMode={conversationMode}
+                            labelID={labelID}
+                            loading={loading}
+                            placeholderCount={placeholderCount}
+                            columnLayout={columnLayout}
+                            mailSettings={mailSettings}
+                            elementID={elementIDForList}
+                            elements={elements}
+                            checkedIDs={checkedIDs}
+                            onCheck={handleCheck}
+                            onClick={handleElement}
+                            userSettings={userSettings}
+                            isSearch={isSearch}
+                            breakpoints={breakpoints}
+                            page={page}
+                            total={total}
+                            onPage={handlePage}
+                            onFocus={handleFocus}
+                            onCheckOne={handleCheckOne}
+                            sort={sort}
+                            onSort={handleSort}
+                            filter={filter}
+                            onFilter={handleFilter}
+                            resizeAreaRef={resizeAreaRef}
+                            enableResize={enableResize}
+                            resetWidth={resetWidth}
+                            showContentPanel={showContentPanel}
+                            scrollBarWidth={scrollBarWidth}
+                        />
+                    </ErrorBoundary>
+                    <ErrorBoundary>
+                        <section
+                            ref={messageContainerRef}
+                            className={classnames([
+                                'view-column-detail flex-no-min-children flex-column flex-item-fluid flex-nowrap scroll-if-needed relative',
+                                !showContentPanel && 'hidden',
+                            ])}
+                        >
+                            {showPlaceholder && (
+                                <PlaceholderView
+                                    welcomeFlag={welcomeFlag}
+                                    labelID={labelID}
+                                    checkedIDs={checkedIDs}
+                                    onCheckAll={handleCheckAll}
+                                />
+                            )}
+                            {showContentView &&
+                                (isConversationContentView ? (
+                                    <ConversationView
+                                        hidden={showPlaceholder}
                                         labelID={labelID}
-                                        checkedIDs={checkedIDs}
-                                        onCheckAll={handleCheckAll}
+                                        messageID={messageID}
+                                        mailSettings={mailSettings}
+                                        conversationID={elementID as string}
+                                        onBack={handleBack}
+                                        breakpoints={breakpoints}
+                                        onMessageReady={onMessageReady}
+                                        columnLayout={columnLayout}
+                                        isComposerOpened={isComposerOpened}
+                                        containerRef={messageContainerRef}
+                                        highlightKeywords={shouldHighlight()}
                                     />
-                                )}
-                                {showContentView &&
-                                    (isConversationContentView ? (
-                                        <ConversationView
-                                            hidden={showPlaceholder}
-                                            labelID={labelID}
-                                            messageID={messageID}
-                                            mailSettings={mailSettings}
-                                            conversationID={elementID as string}
-                                            onBack={handleBack}
-                                            breakpoints={breakpoints}
-                                            onMessageReady={onMessageReady}
-                                            columnLayout={columnLayout}
-                                            isComposerOpened={isComposerOpened}
-                                            containerRef={messageContainerRef}
-                                            highlightKeywords={shouldHighlight()}
-                                        />
-                                    ) : (
-                                        <MessageOnlyView
-                                            hidden={showPlaceholder}
-                                            labelID={labelID}
-                                            mailSettings={mailSettings}
-                                            messageID={elementID as string}
-                                            onBack={handleBack}
-                                            breakpoints={breakpoints}
-                                            onMessageReady={onMessageReady}
-                                            columnLayout={columnLayout}
-                                            isComposerOpened={isComposerOpened}
-                                            highlightKeywords={shouldHighlight()}
-                                        />
-                                    ))}
-                            </section>
-                        </ErrorBoundary>
-                    )}
+                                ) : (
+                                    <MessageOnlyView
+                                        hidden={showPlaceholder}
+                                        labelID={labelID}
+                                        mailSettings={mailSettings}
+                                        messageID={elementID as string}
+                                        onBack={handleBack}
+                                        breakpoints={breakpoints}
+                                        onMessageReady={onMessageReady}
+                                        columnLayout={columnLayout}
+                                        isComposerOpened={isComposerOpened}
+                                        highlightKeywords={shouldHighlight()}
+                                    />
+                                ))}
+                        </section>
+                    </ErrorBoundary>
                 </PrivateMainArea>
             </div>
         </MailboxContainerContextProvider>
