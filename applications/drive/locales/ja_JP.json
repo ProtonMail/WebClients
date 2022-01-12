@@ -110,6 +110,9 @@
       "Close transfers": [
         "転送一覧を閉じる"
       ],
+      "Collapse folder": [
+        ""
+      ],
       "Compare all features": [
         "すべての機能を比較"
       ],
@@ -214,6 +217,9 @@
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効化する"
+      ],
+      "Expand folder": [
+        ""
       ],
       "Export": [
         "エクスポート"
@@ -508,6 +514,9 @@
       ],
       "Undo": [
         "取り消し"
+      ],
+      "Unlock data": [
+        ""
       ],
       "Unmark for deletion": [
         "削除マークを解除"
@@ -1265,7 +1274,7 @@
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "ラベル名の中に ProtonMail の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -1313,7 +1322,7 @@
         "元のフォルダーまたはファイルが見つかりません"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "外部アカウントのフォルダーが多すぎます。いくつかのフォルダーを削除するにはインポートをカスタマイズしてください。"
       ],
       "There was an error when exporting the contacts vCards": [
         "連絡先のvCardのエクスポート中にエラーが発生しました"
@@ -3155,9 +3164,6 @@
       ],
       "Learn more": [
         "より詳しく"
-      ],
-      "My files": [
-        "マイファイル"
       ],
       "Pay invoice": [
         "請求の支払い"

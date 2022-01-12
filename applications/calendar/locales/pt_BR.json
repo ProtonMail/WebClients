@@ -475,6 +475,9 @@
       "Try another method": [
         "Tentar outro método"
       ],
+      "Unlock data": [
+        "Desbloquear dados"
+      ],
       "Unmark for deletion": [
         "Desmarcar para exclusão"
       ],
@@ -2054,16 +2057,16 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "",
-        ""
+        "${ totalImported }/${ totalToImport } evento criptografado e adicionado ao seu calendário",
+        "${ totalImported }/${ totalToImport } eventos criptografados e adicionados ao seu calendário"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
         "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "",
-        ""
+        "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado.",
+        "Ocorreu um erro ao criptografar e adicionar seus eventos. Nenhum evento pôde ser importado."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptografando e adicionando contatos: ${ totalImported }/${ totalToImport }"
@@ -2072,8 +2075,8 @@
         "Criptografando e adicionando eventos ao seu calendário: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "",
-        ""
+        "Evento importado com sucesso. O evento importado agora aparecerá em sua agenda.",
+        "Eventos importados com sucesso. Os eventos importados agora aparecerão em sua agenda."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Por favor, não feche a aba antes que o processo de importação termine."
@@ -2096,8 +2099,8 @@
         "Este arquivo contém convites eventos:"
       ],
       "This file contains an invitation response:": [
-        "",
-        ""
+        "Este arquivo contém uma resposta de convite:",
+        "Este arquivo contém respostas a convites:"
       ],
       "This file contains some data that we cannot import:": [
         "Este arquivo contém alguns dados que não pudemos importar:"
@@ -2178,7 +2181,7 @@
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
+        "${ calendarAppName } foi adicionado ao Proton suite. Adoraríamos saber qual a sua opinião a respeito!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -2327,12 +2330,12 @@
         "Após efetuar o seu pagamento em Bitcoin. Por favor, siga as instruções abaixo para fazer o upgrade de plano."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Todas (${ totalFoldersCount } pasta)",
+        "Todas (${ totalFoldersCount } pastas)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Todos (${ totalFoldersCount } marcador)",
+        "Todos (${ totalFoldersCount } marcadores)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Permite a você hospedar e-mails para os seus próprio(s) domínio(s) em ${ mailAppName }, ex. fulano.tal@exemplo.com"
@@ -3750,12 +3753,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importar todas as mensagens de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {

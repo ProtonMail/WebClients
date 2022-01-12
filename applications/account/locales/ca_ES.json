@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Activar suport multiusuari"
-      ],
-      "Enter password to continue": [
-        "Introduïu la contrasenya per continuar"
       ],
       "Export": [
         "Exportar"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Iniciar la sessió"
       ],
+      "Sign in again to continue": [
+        ""
+      ],
       "Sign out": [
         "Tancar la sessió"
       ],
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Sóc fora de l'oficina i amb accés limitat al meu correu electrònic."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } per Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } per iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } versió web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } per Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } per iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } per macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } versió web"
-      ],
-      "Admin": [
-        "Administrador/a"
-      ],
-      "Proton Account for web": [
-        "Compte de Proton per a web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts per a web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge per a GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge per a macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge per a Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail per a Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail per a iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail per a web"
-      ],
-      "ProtonMail Import-Export": [
-        "Import-Export ProtonMail"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "Import-Export de ProtonMail per a GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "Import-Export de ProtonMail per a macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "Import-Export de ProtonMail per a Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Configuració de ProtonMail per a web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN per a Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN per a Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN per a GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN per a iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN per a MacOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN per a web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN per a Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "Configuració de ProtonVPN per la web"
       ]
     },
     "Badge for domain": {
@@ -3995,8 +3903,8 @@
       "Not set": [
         "No establert"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "No és el vostre ordinador? Utilitzeu la finestra de navegació privada per iniciar la sessió. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        ""
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Nombre de connexions VPN que poden ser assignades a usuaris. Cada dispositiu connectat consumeix una connexió VPN."
@@ -4155,11 +4063,17 @@
       "read our two-factor authentication Guide first": [
         "llegir primer la nostra Guia d’autenticació de dos factors"
       ],
+      "Recovery file downloaded": [
+        ""
+      ],
       "Recovery files have been voided": [
         ""
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
+      ],
+      "Recovery phrase downloaded": [
+        ""
       ],
       "Recovery phrase has been disabled": [
         "S'ha desactivat la frase de recuperació"
@@ -4618,6 +4532,9 @@
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
+      "You'll stay signed in even after you close the browser.": [
         ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
@@ -5445,6 +5362,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Keep me signed in": [
+        ""
       ],
       "Keep messages in Sent/Drafts": [
         "Mantenir els missatges a Enviats/Esborranys"

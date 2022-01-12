@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "启用多用户支持"
-      ],
-      "Enter password to continue": [
-        "请输入密码以继续"
       ],
       "Export": [
         "导出"
@@ -602,7 +599,7 @@
         "选择文件"
       ],
       "Select language for invitation emails": [
-        ""
+        "选择邀请邮件的语言"
       ],
       "Select plan": [
         "选择套餐"
@@ -660,6 +657,9 @@
       ],
       "Sign in": [
         "登录"
+      ],
+      "Sign in again to continue": [
+        "再次登录方可继续"
       ],
       "Sign out": [
         "退出"
@@ -943,98 +943,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "您好，我现在有事不在，暂时无法处理邮件。"
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } Android 客户端"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } iOS 客户端"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } 网页版"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } Android 客户端"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } iOS 客户端"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } macOS 客户端"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } 网页版"
-      ],
-      "Admin": [
-        "管理员"
-      ],
-      "Proton Account for web": [
-        "Proton 账户网页版"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts 网页版"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge GNU/Linux 客户端"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge macOS 客户端"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge Windows 客户端"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail Android 客户端"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail iOS 客户端"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail 网页版"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail 导入/导出"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail GNU/Linux 导入/导出客户端"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail macOS 导入/导出客户端"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Windows 导入/导出客户端"
-      ],
-      "ProtonMail settings for web": [
-        "ProtonMail 网页版设置"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN Android 客户端"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN Android TV 客户端"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN GNU/Linux 客户端"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN iOS 客户端"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN macOS 客户端"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN 网页版"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN Windows 客户端"
-      ],
-      "ProtonVPN settings for web": [
-        "ProtonVPN 网页版设置"
       ]
     },
     "Badge for domain": {
@@ -2995,7 +2903,7 @@
         "CSV 文件"
       ],
       "full calendar view": [
-        ""
+        "全日历视图"
       ],
       "ICS file": [
         "ICS 文件"
@@ -3684,10 +3592,10 @@
         "若您同时设定了 SPF 和 DKIM，可以使用 DMARC 来指定其他邮件系统遇到来自您域名的邮件无法通过 SPF 和 DKIM 检查时应采取的措施，这样他人就更难以伪装成您发送垃圾邮件，但如果操作不当也可能导致投递出现问题。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "如果您丢失了登录信息并需要重置账户，${ boldImperative }您必须正好同时拥有${ boldAccountAndRecovery }。"
+        "如果您忘记了账号或密码，${ boldAccountRecovery }是找回账户的${ boldImperative }。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "如果您丢失了登录信息并需要重置账户，${ boldImperative }您必须正好同时拥有${ boldAccountAndRecovery }，否则您可能无法访问您的任何电子邮件、联系人或文件。"
+        "如果您忘记了账号或密码，${ boldAccountAndRecovery }是找回账户和数据的${ boldImperative }，若不事先设置，届时您很可能失去所有的邮件、文件和联系人信息。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "若双重验证设备丢失，您可以使用这些代码代替验证码登录账户。每段代码只能使用一次。"
@@ -3744,10 +3652,10 @@
         "正在将您的数据从 ${ importedEmailAddress } 导入到 ${ toEmail }。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "如果您丢失了登录信息，我们将通过电子邮件或短信向您发送恢复说明指南。"
+        "如果您忘记了账号或密码，我们将通过邮件或短信帮助您找回账户。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        "如果您不慎丢失了登录信息，我们将通过电子邮件向您发送恢复说明指南。"
+        "如果您忘记了账号或密码，我们将通过邮件帮助您找回账户。"
       ],
       "Included": [
         "已包含在内"
@@ -3777,16 +3685,16 @@
         "网络连接断开。"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "网络连接已丢失。请检查您设备的连接性。"
+        "网络连接中断，请检查系统网络情况。"
       ],
       "Internet connection restored.": [
         "互联网连接已恢复。"
       ],
       "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        ""
+        "部分加密数据无法被解密，可能是由于您最近或曾今重置过密钥，建议您尝试从备份的数据中找回这些密钥用于解密这部分内容。"
       ],
       "it’s imperative": [
-        "至关重要的是"
+        "唯一途径"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交由我们！"
@@ -3938,8 +3846,8 @@
       "Not set": [
         "未设置"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "这不是您的私人电脑？请使用隐私窗口登录。${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "不是您的私人设备？尝试使用隐私窗口并且在不需要时将它关闭。 ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "可分配给用户的 VPN 连接数，每台连接设备占用一个名额。"
@@ -4097,11 +4005,17 @@
       "read our two-factor authentication Guide first": [
         "先阅读我们的双重验证指南"
       ],
+      "Recovery file downloaded": [
+        "恢复文件已下载"
+      ],
       "Recovery files have been voided": [
         "恢复文件已作废"
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
+      ],
+      "Recovery phrase downloaded": [
+        "恢复密语已下载"
       ],
       "Recovery phrase has been disabled": [
         "恢复密语已被禁用"
@@ -4356,7 +4270,7 @@
         "更新恢复密语"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐，方能开启不在办公室时自动回复。"
+        "开通 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 账户即可使用自动回复功能。"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 计划以开始使用。"
@@ -4365,7 +4279,7 @@
         "开通付费账户方可解锁更大的存储空间和更多高级功能。"
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "升级到付费计划，即可通过 ProtonMail Bridge 在本地邮箱客户端使用 IMAP/SMTP 连接 ProtonMail。"
+        "开通付费账户即可借助 ProtonMail Bridge 使用 IMAP/SMTP 邮件客户端。"
       ],
       "Upload picture": [
         "上传图片"
@@ -4497,7 +4411,7 @@
         "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
       ],
       "You can import one data type at a time.": [
-        ""
+        "您一次可以导入一种数据类型。"
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
@@ -4506,7 +4420,7 @@
         "您可以开启通知功能，以便此文件夹有新邮件时收到提醒。"
       ],
       "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "您可以在任何支持 IMAP/SMTP 的桌面电子邮件客户端中使用 ProtonMail ，包括 Outlook、Apple Mail 、Thunderbird 等。"
+        "您可以通过 Outlook、Apple Mail、Thunderbird 等任何支持 IMAP/SMTP 的邮件客户端使用 ProtonMail。"
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可以使用以下凭证通过第三方开源 VPN 客户端连接到 ProtonVPN 服务器，例如 macOS 下的 Tunnelblick 或 GNU/Linux 下的 OpenVPN。"
@@ -4561,6 +4475,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "通过下载的恢复文件重置帐账户后，您将无法恢复加密数据。"
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "即使您关闭浏览器也不会退出账户。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，请先创建账户。"
@@ -4802,10 +4719,10 @@
     },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit（较慢，但兼容性好）"
+        "${ compatibility }：4096 位 RSA 密钥（较慢，但便于配合老旧软件使用）"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519（最快、最前沿）"
+        "${ stateOfTheArt }：Curve25519 椭圆曲线密钥（更快、更前沿）"
       ]
     },
     "Keyboard shortcut name": {
@@ -5238,7 +5155,7 @@
         "默认语言 (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
-        "默认 PGP 加密方案"
+        "默认 PGP 格式"
       ],
       "Default view": [
         "首选视图"
@@ -5262,7 +5179,7 @@
         "显示"
       ],
       "Display name": [
-        "显示名称"
+        "对外名称"
       ],
       "Do not ask again": [
         "不再询问"
@@ -5383,6 +5300,9 @@
       ],
       "Interval": [
         "验证码更新周期"
+      ],
+      "Keep me signed in": [
+        "保持登录状态"
       ],
       "Keep messages in Sent/Drafts": [
         "保留消息在发件箱/草稿箱中"
@@ -5595,7 +5515,7 @@
         "自动回复"
       ],
       "Send invites in": [
-        ""
+        "发送邀请"
       ],
       "Show secondary time zone": [
         "显示次要时区"
@@ -5932,7 +5852,7 @@
         "转至订阅计划"
       ],
       "Learn more": [
-        "了解更多"
+        "了解详情"
       ],
       "Not activated": [
         "尚未激活"
@@ -6136,7 +6056,7 @@
         "确定要关闭双重验证吗？"
       ],
       "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "配置一个自有域名邮箱地址（例如 you@yourcompany.com）。只需要几分钟，我们的向导将指导您完成整个过程。"
+        "仅需数分钟即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
         "开通 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 账户即可使用替补邮箱等高级功能"
@@ -6414,7 +6334,7 @@
     },
     "Onboarding Proton": {
       "Choose a display name": [
-        "选择显示名称"
+        "填写对外名称"
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护。"
@@ -6746,7 +6666,7 @@
         "选择地址"
       ],
       "Choose display name": [
-        "选择显示名称"
+        "填写对外名称"
       ],
       "Confirm": [
         "确认"
@@ -7015,10 +6935,10 @@
     },
     "Remark about a key type option": {
       "Compatibility": [
-        "版本要求"
+        "兼容性较高"
       ],
       "State of the art": [
-        "顶尖加密方式"
+        "安全性较强"
       ]
     },
     "Restore administrator panel": {
@@ -8521,7 +8441,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "选择用于与非 ProtonMail PGP 用户数字签名或加密邮件的默认 PGP 设置。请注意，内联 PGP 强制使用纯文本邮件。了解更多"
+        "选择面向非 ProtonMail 用户加密与数字签名的 PGP 格式。注意：PGP/Inline 只能用于发送纯文本邮件。"
       ]
     },
     "Tooltip prompt to trust keys": {

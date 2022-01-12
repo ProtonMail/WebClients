@@ -881,6 +881,9 @@
       "Undo": [
         "Скасувати"
       ],
+      "Unlock data": [
+        "Розблокувати дані"
+      ],
       "Unmark for deletion": [
         "Прибрати позначку для видалення"
       ],
@@ -2777,7 +2780,7 @@
         "ГБ"
       ],
       "KB": [
-        "КБ"
+        "кБ"
       ],
       "MB": [
         "МБ"
@@ -3825,7 +3828,7 @@
         "Вставити посилання"
       ],
       "Internet connection lost.": [
-        "Втрачено Інтернет-з'єднання."
+        "Втрачено інтернет-з'єднання."
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Відсутнє з'єднання з інтернетом. Перевірте доступ до мережі свого пристрою."
@@ -4066,6 +4069,9 @@
       ],
       "Recovery phrase copied to clipboard": [
         "Фразу відновлення скопійовано до буфера обміну"
+      ],
+      "Recovery phrase downloaded": [
+        "Фразу відновлення завантажено"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
@@ -5718,6 +5724,9 @@
       ],
       "Sending undone": [
         "Надсилання скасовано"
+      ],
+      "Undoing send...": [
+        "Скасування надсилання..."
       ]
     },
     "MIME type": {

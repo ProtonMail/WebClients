@@ -729,7 +729,7 @@
         "Поиск"
       ],
       "Search in ${ option.text }": [
-        ""
+        "Искать в ${ option.text }"
       ],
       "Search message content": [
         "Поиск содержимого сообщения"
@@ -880,6 +880,9 @@
       ],
       "Undo": [
         "Отменить"
+      ],
+      "Unlock data": [
+        "Разблокировать данные"
       ],
       "Unmark for deletion": [
         "Снять отметку для удаления"
@@ -4067,6 +4070,9 @@
       "Recovery phrase copied to clipboard": [
         "Фраза для восстановления доступа к аккаунту скопирована в буфер обмена"
       ],
+      "Recovery phrase downloaded": [
+        "Фраза восстановления загружена"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
@@ -5718,6 +5724,9 @@
       ],
       "Sending undone": [
         "Отправка отменена"
+      ],
+      "Undoing send...": [
+        "Отмена отправки..."
       ]
     },
     "MIME type": {

@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktivieren"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Mehrbenutzerunterstützung aktivieren"
-      ],
-      "Enter password to continue": [
-        "Passwort eingeben, um fortzufahren"
       ],
       "Export": [
         "Exportieren"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Anmelden"
       ],
+      "Sign in again to continue": [
+        "Erneut anmelden, um fortzufahren"
+      ],
       "Sign out": [
         "Abmelden"
       ],
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ich bin nicht im Büro und habe nur begrenzten Zugriff auf meine Postfach."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } für Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } für iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } als Web-Version"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } für Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } für iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } für iOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } als Web-Version"
-      ],
-      "Admin": [
-        "Admin"
-      ],
-      "Proton Account for web": [
-        "Proton-Konto für Web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonKontakte für Web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail-Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge für GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge für macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge für Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail für Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail für iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail für Web"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail-Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail-Import-Export für GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail-Import-Export für macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail-Import-Export für Windows"
-      ],
-      "ProtonMail settings for web": [
-        "ProtonMail-Einstellungen für Web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonMail für Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonMail für Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN für GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN für iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN für macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN für Web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN für Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "ProtonVPN-Einstellungen für Web"
       ]
     },
     "Badge for domain": {
@@ -3995,8 +3903,8 @@
       "Not set": [
         "Nicht gesetzt"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Nicht Ihr Computer? Verwenden Sie ein privates Browser-Fenster um sich anzumelden. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Nicht dein Gerät? Verwende ein privates Browser-Fenster, um dich anzumelden, und schließe es, wenn du fertig bist. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Anzahl der VPN-Verbindungen, die den Benutzern zugewiesen werden können. Jedes angeschlossene Gerät belegt eine VPN-Verbindung."
@@ -4155,11 +4063,17 @@
       "read our two-factor authentication Guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
       ],
+      "Recovery file downloaded": [
+        "Wiederherstellungsdatei wurde heruntergeladen"
+      ],
       "Recovery files have been voided": [
         "Die Wiederherstellungsdateien wurden für ungültig erklärt"
       ],
       "Recovery phrase copied to clipboard": [
         "Wiederherstellungsphrase in die Zwischenablage kopiert"
+      ],
+      "Recovery phrase downloaded": [
+        "Wiederherstellungsphrase wurde heruntergeladen"
       ],
       "Recovery phrase has been disabled": [
         "Die Wiederherstellungsphrase wurde deaktiviert"
@@ -4619,6 +4533,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Sie können verschlüsselte Daten nach dem Zurücksetzen des Kontos mit den heruntergeladenen Wiederherstellungsdateien nicht mehr wiederherstellen."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Du bleibst angemeldet, auch wenn du den Browser schließt."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ihr ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft. Um ${ toAppName } verwenden zu können, erstellen Sie bitte eine E-Mail-Adresse."
@@ -5445,6 +5362,9 @@
       ],
       "Interval": [
         "Intervall"
+      ],
+      "Keep me signed in": [
+        "Angemeldet bleiben"
       ],
       "Keep messages in Sent/Drafts": [
         "Nachrichten in „Gesendet” und „Entwürfe” behalten"

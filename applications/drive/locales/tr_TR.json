@@ -110,6 +110,9 @@
       "Close transfers": [
         ""
       ],
+      "Collapse folder": [
+        ""
+      ],
       "Compare all features": [
         "Tüm özellikleri karşılaştırın"
       ],
@@ -216,6 +219,9 @@
       ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştirmek"
+      ],
+      "Expand folder": [
+        ""
       ],
       "Export": [
         "Dışa aktar"
@@ -510,6 +516,9 @@
       ],
       "Undo": [
         "Geri al"
+      ],
+      "Unlock data": [
+        "Verilere erişim engelini kaldırın"
       ],
       "Unmark for deletion": [
         "Silmek için işaretlemeyi kaldır"
@@ -1085,7 +1094,7 @@
         "Kimlik doğrulama hatası."
       ],
       "Calendar limit reached": [
-        ""
+        "Takvim sınırına ulaşıldı"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
@@ -1138,7 +1147,7 @@
         ""
       ],
       "Failed to load the link": [
-        ""
+        "Bağlantı yüklenemedi"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
@@ -1159,7 +1168,7 @@
         ""
       ],
       "Folder name cannot be empty": [
-        ""
+        "Klasör adı boş olamaz"
       ],
       "Image upload failed": [
         "Resim yükleme başarısız"
@@ -1198,7 +1207,7 @@
         "Geçersiz doğrulama kodu"
       ],
       "Label name cannot be empty": [
-        ""
+        "Etiket adı boş olamaz"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -1325,7 +1334,7 @@
         ""
       ],
       "The original folder or file not found": [
-        ""
+        "Orijinal klasör veya dosya bulunamadı"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
@@ -1797,7 +1806,7 @@
         "Geçerli bir kurtarma dosyası"
       ],
       "and": [
-        ""
+        "ve"
       ],
       "Anyone with this link can access your file.": [
         "Bu bağlantıya sahip olan herkes dosyanıza erişebilir."
@@ -1858,7 +1867,7 @@
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" seçeneğine tıklayın."
       ],
       "Close this screen to exit.": [
-        ""
+        "Çıkmak için bu ekranı kapatın."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Transfer yöneticisinin kapatılması tüm aktif transferleri iptal edecek, emin misiniz?"
@@ -2020,7 +2029,7 @@
         ""
       ],
       "Import in progress": [
-        ""
+        "İçe aktarma devam ediyor"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -2400,7 +2409,7 @@
         "Hafta"
       ],
       "What do you want to do?": [
-        ""
+        "Ne yapmak istiyorsunuz?"
       ],
       "What do you want to import from your Google account?": [
         ""
@@ -2430,7 +2439,7 @@
         ""
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
       "You cannot undo this action.": [
         "Bu eylemi geri alamazsınız."
@@ -3168,16 +3177,16 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Klasör oluştur"
       ],
       "Create label": [
-        ""
+        "Etiket oluştur"
       ],
       "Edit folder": [
-        ""
+        "Klasörü düzenle"
       ],
       "Edit label": [
-        ""
+        "Etiketi düzenle"
       ]
     },
     "label/folder notification": {
@@ -3208,9 +3217,6 @@
       ],
       "Learn more": [
         "Daha fazla bilgi edinin"
-      ],
-      "My files": [
-        "Dosyalarım"
       ],
       "Pay invoice": [
         "Faturayı öde"
@@ -3373,13 +3379,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Renk"
       ],
       "Folder name": [
-        ""
+        "Klasör adı"
       ],
       "Label name": [
-        ""
+        "Etiket adı"
       ]
     },
     "Notification": {
@@ -4045,7 +4051,7 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "hesap oluşturma tarihi"
       ],
       "the last 12 months": [
         ""
