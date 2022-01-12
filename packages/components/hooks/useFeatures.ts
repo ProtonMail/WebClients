@@ -1,7 +1,7 @@
 import { useMemo, useContext, useEffect } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 
-import { FeatureCode, FeaturesContext } from '../containers/features';
+import { FeatureCode, FeatureContextValue, FeaturesContext } from '../containers/features';
 
 const useFeatures = (codes: FeatureCode[], prefetch = true) => {
     const { features, loading, get, put, enqueue } = useContext(FeaturesContext);
@@ -18,10 +18,10 @@ const useFeatures = (codes: FeatureCode[], prefetch = true) => {
         }
     }, codes);
 
-    return codes.map((code) => {
+    return codes.map((code): FeatureContextValue => {
         return {
-            get: <V = any>() => get<V>([code]).then(([result]) => result),
-            update: <V = any>(value: V) => put<V>(code, value),
+            get: () => get([code]).then(([result]) => result),
+            update: (value) => put(code, value),
             feature: features[code],
             loading: loading[code] === undefined || !!loading[code],
         };

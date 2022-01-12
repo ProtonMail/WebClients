@@ -49,7 +49,7 @@ const KeyBackgroundManager = ({
     const { subscribe, call } = useEventManager();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const keyMigrationFeature = useFeature(FeatureCode.KeyMigration, false);
+    const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration, false);
 
     useEffect(() => {
         const run = async () => {
@@ -102,7 +102,7 @@ const KeyBackgroundManager = ({
             }
 
             const keyMigrationFeatureValue = await keyMigrationFeature
-                .get<number>()
+                .get()
                 .then(({ Value }) => Value)
                 .catch(() => 0);
 
