@@ -39,7 +39,7 @@ const decodeProof = (pi: Uint8Array) => {
 
 /**
  * Hash strings to an EC point, according to section 5.4.1.1, ECVRF_hash_to_curve_try_and_increment, of
- * draft-irtf-cfrg-vrf-10. It is instantied for ECVRF-EDWARDS25519-SHA512-TAI according to section 5.5
+ * draft-irtf-cfrg-vrf-10. It is instantiated for ECVRF-EDWARDS25519-SHA512-TAI according to section 5.5
  */
 const hashToCurveTAI = async (alpha: Uint8Array, Y: Uint8Array) => {
     for (let ctr = 0x00; ctr <= 0xff; ctr++) {
