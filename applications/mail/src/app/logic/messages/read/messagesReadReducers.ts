@@ -46,13 +46,13 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
         delete state[localID];
     }
     if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-        const currentValue = state[localID] as MessageState;
+        const currentValue = state[localID] as MessageState | undefined;
         const isSentDraft = isSent(Message);
         const isScheduled = isScheduledSend(Message);
         const isDraft = testIsDraft(Message);
 
-        if (currentValue.data) {
-            const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message as Message & LabelIDsChanges);
+        if (currentValue?.data) {
+            currentValue.data = parseLabelIDsInEvent(currentValue.data, Message as Message & LabelIDsChanges);
 
             // Draft updates can contains body updates but will not contains it in the event
             // By removing the current body value in the cache, we will reload it next time we need it
@@ -72,10 +72,8 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
 
             // If not a draft, numAttachment will never change, but can be calculated client side for PGP messages
             if (!isDraft) {
-                delete (MessageToUpdate as Partial<Message>).NumAttachments;
+                delete (currentValue.data as Partial<Message>).NumAttachments;
             }
-
-            currentValue.data = { ...currentValue.data, ...MessageToUpdate };
         }
     }
 };
