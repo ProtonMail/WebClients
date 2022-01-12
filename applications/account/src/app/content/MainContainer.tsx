@@ -107,8 +107,17 @@ const MainContainer = () => {
         />
     );
 
+    const canHaveOrganization = !user.isMember && !user.isSubUser && user.Type !== UserType.EXTERNAL;
+
     const sidebar = (
-        <AccountSidebar app={app} appSlug={appSlug} logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} />
+        <AccountSidebar
+            app={app}
+            appSlug={appSlug}
+            logo={logo}
+            expanded={expanded}
+            onToggleExpand={onToggleExpand}
+            canHaveOrganization={canHaveOrganization}
+        />
     );
 
     return (
@@ -136,18 +145,26 @@ const MainContainer = () => {
                 <Route path={`/${appSlug}/security`}>
                     <AccountSecuritySettings location={location} setActiveSection={() => {}} />
                 </Route>
-                <Route path={`/${appSlug}/multi-user-support`}>
-                    <OrganizationMultiUserSupportSettings location={location} />
-                </Route>
-                <Route path={`/${appSlug}/domain-names`}>
-                    <MailDomainNamesSettings location={location} />
-                </Route>
-                <Route path={`/${appSlug}/organization-keys`}>
-                    <OrganizationKeysSettings location={location} />
-                </Route>
-                <Route path={`/${appSlug}/users-addresses`}>
-                    <OrganizationUsersAndAddressesSettings location={location} />
-                </Route>
+                {canHaveOrganization && (
+                    <Route path={`/${appSlug}/multi-user-support`}>
+                        <OrganizationMultiUserSupportSettings location={location} />
+                    </Route>
+                )}
+                {canHaveOrganization && (
+                    <Route path={`/${appSlug}/domain-names`}>
+                        <MailDomainNamesSettings location={location} />
+                    </Route>
+                )}
+                {canHaveOrganization && (
+                    <Route path={`/${appSlug}/organization-keys`}>
+                        <OrganizationKeysSettings location={location} />
+                    </Route>
+                )}
+                {canHaveOrganization && (
+                    <Route path={`/${appSlug}/users-addresses`}>
+                        <OrganizationUsersAndAddressesSettings location={location} />
+                    </Route>
+                )}
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
                         <MailSettingsRouter redirect={redirect} />

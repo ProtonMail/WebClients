@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { Route, Switch } from 'react-router-dom';
-import { Sidebar, SidebarNav, SidebarList, SidebarListItem, useUser, SidebarBackButton } from '@proton/components';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { Sidebar, SidebarBackButton, SidebarList, SidebarListItem, SidebarNav } from '@proton/components';
+import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 
 import MailSettingsSidebarList from '../containers/mail/MailSettingsSidebarList';
@@ -19,6 +19,7 @@ interface AccountSidebarProps {
     logo: JSX.Element;
     expanded: boolean;
     onToggleExpand: () => void;
+    canHaveOrganization?: boolean;
 }
 
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
@@ -27,11 +28,7 @@ const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
 const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
 const contactsSlug = getSlugFromApp(APPS.PROTONCONTACTS);
 
-const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand }: AccountSidebarProps) => {
-    const [user] = useUser();
-
-    const canHaveOrganization = !user.isMember && !user.isSubUser;
-
+const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, canHaveOrganization }: AccountSidebarProps) => {
     const backButtonCopy = {
         [APPS.PROTONMAIL]: c('Navigation').t`Back to Mail`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Back to Calendar`,
