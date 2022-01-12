@@ -18,7 +18,7 @@
         "Activar"
       ],
       "Activate recovery": [
-        ""
+        "Activar la recuperació"
       ],
       "Add": [
         "Afegir"
@@ -45,7 +45,7 @@
         "Afegir nou grup"
       ],
       "Add participant": [
-        ""
+        "Afegir participant"
       ],
       "Add phone number": [
         "Afegir número de telèfon"
@@ -183,7 +183,7 @@
         "Confirmar"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Confirmar l'obertura de l'enllaç ${ linkToShow }"
       ],
       "Contact group": [
         "Grups de contactes"
@@ -317,7 +317,7 @@
         "Xifratge"
       ],
       "exclude message content": [
-        ""
+        "excloure contingut del missatge"
       ],
       "Expand composer": [
         "Ampliar l'editor"
@@ -471,7 +471,7 @@
         "Carregar-ne més"
       ],
       "Load unprotected": [
-        ""
+        "Carregar sense protecció"
       ],
       "Loading verification": [
         "Carregant verificació"
@@ -657,7 +657,7 @@
         "Recuperar dades"
       ],
       "Refine it": [
-        ""
+        "Afinar"
       ],
       "refresh the page": [
         "refresqueu la pàgina"
@@ -705,7 +705,7 @@
         "Tornar a provar"
       ],
       "Revert to original display": [
-        ""
+        "Tornar a la vista original"
       ],
       "Save": [
         "Desa"
@@ -762,7 +762,7 @@
         "Definir el temps d'expiració"
       ],
       "Set recovery phrase": [
-        ""
+        "Definir la frase de recuperació"
       ],
       "Share via link": [
         "Compartir amb enllaç"
@@ -816,7 +816,7 @@
         "Ometre"
       ],
       "Some images could not be loaded with tracking protection": [
-        ""
+        "Algunes imatges no s'han pogut carregar amb la protecció de seguiment"
       ],
       "Start import": [
         "Començar importació"
@@ -846,7 +846,7 @@
         "Aquest missatge conté imatges incrustades."
       ],
       "This message contains remote content.": [
-        ""
+        "Aquest missatge conté contingut remot."
       ],
       "Trust": [
         "De confiança"
@@ -873,6 +873,9 @@
       "Undo": [
         "Desfer"
       ],
+      "Unlock data": [
+        "Desbloquejar dades"
+      ],
       "Unmark for deletion": [
         "Desmarcar la supressió"
       ],
@@ -892,10 +895,10 @@
         "Actualitzar"
       ],
       "Update recovery file": [
-        ""
+        "Actualitzar el fitxer de recuperació"
       ],
       "Update recovery phrase": [
-        ""
+        "Actualitzar la frase de recuperació"
       ],
       "Upgrade": [
         "Actualitzar"
@@ -1312,7 +1315,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        ""
+        "Té un esdeveniment de calendari"
       ]
     },
     "Calendar feature": {
@@ -1353,16 +1356,16 @@
         " Aquesta resposta no coincideix amb els detalls de la vostra invitació. Si us plau verifiqueu els detalls de la invitació al vostre calendari."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } ha acceptat una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } ha acceptat una invitació i ha proposat una nova hora per a aquest esdeveniment."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } ha acceptat una invitació a una ocurrència de l'esdeveniment."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } ha acceptat una invitació a aquest esdeveniment."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ja va acceptar la vostra invitació i va proposar una nova hora per a una ocurrència d'aquest esdeveniment."
@@ -1386,16 +1389,16 @@
         "${ participantName } va sol·licitar les darreres actualitzacions d'un esdeveniment que ja no existeix al vostre calendari."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } ha rebutjat una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } ha rebutjat una invitació i ha proposat una nova hora per a aquest esdeveniment."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } ha rebutjat una invitació a una ocurrència de l'esdeveniment."
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } ha rebutjat una invitació a aquest esdeveniment."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } va rebutjat la vostra invitació i va proposar una nova hora per a aquest esdeveniment."
@@ -1410,16 +1413,16 @@
         "${ participantName } ha declinat la teva invitació."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha acceptat una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha acceptat una invitació i ha proposat una nova hora per a aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } ha acceptat una invitació a una ocurrència de l'esdeveniment."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "${ participantName } ha acceptat una invitació a aquest esdeveniment."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ja ha acceptat la vostra invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment. La resposta i la proposta no estan actualitzades."
@@ -1428,16 +1431,16 @@
         "${ participantName } ja ha acceptat la vostra invitació i ha proposat una nova hora per a aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha rebutjat una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha rebutjat la vostra invitació i ha proposat una nova hora per a aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } ha rebutjat una invitació a una ocurrència de l'esdeveniment."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } ha rebutjat una invitació a aquest esdeveniment."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } havia rebutjat la vostra invitació i havia proposat una nova hora per a una ocurrència d'aquest esdeveniment. La resposta i la proposta no estan actualitzades."
@@ -1482,16 +1485,16 @@
         "${ participantName } ja havia proposat una nova hora per a aquest esdeveniment. Aquesta proposta no està actualitzada. No teniu calendaris."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha acceptat provisionalment una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } ha acceptat provisionalment una invitació i ha proposat una nova hora per a aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } ha acceptat provisionalment una invitació a una ocurrència de l'esdeveniment."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } ha acceptat provisionalment una invitació a aquest esdeveniment."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } ha acceptat provisionalment la vostra invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment. La resposta i la proposta no estan actualitzades."
@@ -1500,7 +1503,7 @@
         "${ participantName } ha acceptat provisionalment la vostra invitació i ha proposat una nova hora per a aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } no és a la llista de participants."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } va proposar una nova hora per a una ocurrència d'aquest esdeveniment."
@@ -1509,16 +1512,16 @@
         "${ participantName } va proposar una nova hora per aquest esdeveniment."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } ha acceptat provisionalment una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "$ { participantName } ha acceptat provisionalment una invitació i ha proposat una nova hora per a aquest esdeveniment."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } ha acceptat provisionalment una invitació a una ocurrència de l'esdeveniment."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } ha acceptat provisionalment una invitació a aquest esdeveniment."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } va acceptar provisionalment la vostra invitació i va proposar una nova hora per a una ocurrència d'aquest esdeveniment."
@@ -1536,28 +1539,28 @@
         "(Assistència opcional)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        ""
+        "Actualment no s’admet afegir ocurrències a un esdeveniment"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "S'ha afegit una ocurrència a l'esdeveniment ${ veventIcsTitle }"
       ],
       "Event refreshing is not supported for the moment": [
-        ""
+        "L'actualització d'esdeveniments no és compatible de moment"
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
+        "La reprogramació d'esdeveniments no és compatible de moment"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        ""
+        "Aquesta resposta no es pot afegir a ${ calendarAppName } perquè per ara només admetem respostes per a tots els esdeveniments d'una sèrie"
       ],
       "This event has been canceled.": [
-        ""
+        "Aquest esdeveniment ha estat cancel·lat."
       ],
       "This event has been updated.": [
         "Aquest esdeveniment ha estat actualitzat."
       ],
       "This invitation is out of date. The event has been canceled.": [
-        ""
+        "Aquesta invitació no està actualitzada. L'esdeveniment s'ha cancel·lat."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Aquesta invitació no està actualitzada. L'esdeveniment s'ha suprimit."
@@ -1584,7 +1587,7 @@
         "Ja heu acceptat provisionalment aquesta invitació."
       ],
       "Your email address is not in the participants list": [
-        ""
+        "La vostra adreça de correu electrònic no es troba a la llista de participants"
       ]
     },
     "Calendar status": {
@@ -1618,7 +1621,7 @@
         "Han passat més de 12 hores des de la darrera actualització"
       ],
       "Unsupported calendar format": [
-        ""
+        "Format de calendari no suportat"
       ]
     },
     "Calendar widget banner": {
@@ -2492,7 +2495,7 @@
     },
     "Error adding participants to a calendar event": {
       "At most 100 participants are allowed per invitation": [
-        ""
+        "Es permet un màxim de 100 participants per invitació"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2847,7 +2850,7 @@
         ""
       ],
       "Expires today": [
-        ""
+        "Caduca avui"
       ],
       "Only ${ days } day left": [
         "Només queda ${ days } dia",
@@ -3039,7 +3042,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "en el proper pas necessiteu seleccionar tots els permisos"
       ]
     },
     "Import warning": {
@@ -3338,7 +3341,7 @@
         "Segur que voleu eliminar aquest missatge permanentment?"
       ],
       "Attach public key": [
-        ""
+        "Adjuntar la clau pública"
       ],
       "Background color": [
         "Color de fons"
@@ -3909,6 +3912,9 @@
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
       ],
+      "Recovery phrase downloaded": [
+        "Frase de recuperació descarregada"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
@@ -3916,7 +3922,7 @@
         "Informar un missatge com a intent de pesca us enviarà el missatge, per poder analitzar-lo i millorar-ne els filtres. Això significa que podrem veure el contingut del missatge complet."
       ],
       "Request read receipt": [
-        ""
+        "Sol·licitar confirmació de lectura"
       ],
       "Right to Left": [
         "Dreta a Esquerra"
@@ -3955,7 +3961,7 @@
         "Captures de pantalla(s) adjuntes"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
+        "La cerca està trigant massa? ${ dropdownButton } o ${ toggleOffButton } d'aquesta sessió de cerca."
       ],
       "Seems like you are all caught up for now": [
         "Sembla que ara mateix esteu al dia"
@@ -4100,7 +4106,7 @@
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
       "This message has been adjusted to comply with a dark background.": [
-        ""
+        "Aquest missatge s'ha ajustat perquè compleixi amb un fons fosc."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Aquest missatge es genera automàticament com a resposta a un missatge previ."
@@ -4717,7 +4723,7 @@
         "Afegeix al grup"
       ],
       "Address": [
-        ""
+        "Adreça"
       ],
       "ALL": [
         "TOT"
@@ -4762,7 +4768,7 @@
         "Import de BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendari"
       ],
       "Calendars": [
         "Calendaris"
@@ -4864,7 +4870,7 @@
         "Ubicació de la carpeta"
       ],
       "Frequency": [
-        ""
+        "Freqüència"
       ],
       "From": [
         "Des de"
@@ -4924,7 +4930,7 @@
         "Només el darrer mes"
       ],
       "Location": [
-        ""
+        "Ubicació"
       ],
       "Mailbox password": [
         "Contrasenya de la bústia"
@@ -4975,7 +4981,7 @@
         "O"
       ],
       "Participants": [
-        ""
+        "Participants"
       ],
       "Password": [
         "Contrasenya"
@@ -5532,6 +5538,9 @@
       ],
       "Sending undone": [
         "Enviament desfet"
+      ],
+      "Undoing send...": [
+        "Desfent l'enviament..."
       ]
     },
     "MIME type": {
@@ -5707,7 +5716,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Tingueu en compte que ${ boldNextStep } demanats per l'aplicació per iniciar la importació."
       ]
     },
     "Onboarding": {
@@ -5783,7 +5792,7 @@
         "Afegir a grup existent"
       ],
       "All": [
-        ""
+        "Totes"
       ],
       "Create new group": [
         "Crear nou grup"
@@ -6902,7 +6911,7 @@
         "Adreces de correu electrònic"
       ],
       "Email content": [
-        ""
+        "Contingut de correu electrònic"
       ],
       "Email settings": [
         "Configuració del correu"
@@ -6971,7 +6980,7 @@
         "Confirmació d'enllaç"
       ],
       "Load embedded images": [
-        ""
+        "Carregar imatges incrustades"
       ],
       "Load remote content": [
         "Carrega el contingut remot"
@@ -7124,7 +7133,7 @@
         "Seleccionar grup de contactes"
       ],
       "Select permissions": [
-        ""
+        "Selecció de permisos"
       ],
       "Select what to import": [
         "Seleccioneu què voleu importar"
@@ -7249,7 +7258,7 @@
         "El xifratge de correu electrònic obliga la signatura de correu electrònic a ajudar a autenticar els missatges enviats"
       ],
       "Encrypted data": [
-        ""
+        "Dades xifrades"
       ],
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
@@ -7328,10 +7337,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Cliqueu per reproduir el vídeo"
       ],
       "Replay video": [
-        ""
+        "Reproduir el vídeo"
       ]
     },
     "VPN feature": {
@@ -7439,16 +7448,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } servidor",
+        "Més de ${ n } servidors"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } connexió VPN",
+        "${ n } connexions VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } a ${ numberOfCountries } país",
+        "${ numberOfServers } a ${ numberOfCountries } països"
       ]
     },
     "Warning": {

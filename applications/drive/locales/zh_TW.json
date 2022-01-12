@@ -110,6 +110,9 @@
       "Close transfers": [
         "關閉轉移"
       ],
+      "Collapse folder": [
+        ""
+      ],
       "Compare all features": [
         "比較所有功能"
       ],
@@ -214,6 +217,9 @@
       ],
       "enable desktop notifications": [
         "啟用桌面通知"
+      ],
+      "Expand folder": [
+        ""
       ],
       "Export": [
         "匯出"
@@ -508,6 +514,9 @@
       ],
       "Undo": [
         "復原"
+      ],
+      "Unlock data": [
+        ""
       ],
       "Unmark for deletion": [
         "取消標記作刪除"
@@ -1073,7 +1082,7 @@
         "認證已取消。"
       ],
       "Authentication error.": [
-        "認證錯誤。"
+        "驗證錯誤。"
       ],
       "Calendar limit reached": [
         "行事曆數量達到上限"
@@ -1103,10 +1112,10 @@
         "無法產生檔案金鑰"
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        ""
+        "請取消選取至少 ${ calendarToFixCount } 個行事曆"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        ""
+        "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
       ],
       "Email address invalid": [
         "電子郵件地址無效"
@@ -1190,7 +1199,7 @@
         "標籤名稱不能留空"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        ""
+        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 Proton calendar 合併"
       ],
       "Missing signature": [
         "簽章遺失"
@@ -1748,7 +1757,7 @@
         "金額低於最小值 (${ amount })。"
       ],
       "An active recovery file": [
-        ""
+        "作用的還原檔案"
       ],
       "and": [
         "和"
@@ -2006,7 +2015,7 @@
         "瞭解更多"
       ],
       "Link copied to clipboard": [
-        ""
+        "連結已複製到剪貼簿"
       ],
       "Link expires: ": [
         "連結有效期至： "
@@ -2258,7 +2267,7 @@
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        ""
+        "此連結是在先前的版本中建立的，\n且無法修改。 刪除此連結並同時建\n立新連結以變更設定。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此連結將會永久停用。無人將可憑此連結存取您的檔案。若要重新分享此檔案，您將需要一個新的連結。"
@@ -2306,7 +2315,7 @@
         "垃圾桶"
       ],
       "Unlock drive to recover files": [
-        ""
+        "解鎖雲端硬碟以恢復文件"
       ],
       "Unsupported file": [
         "不支援的檔案"
@@ -2354,7 +2363,7 @@
         "您想要從你的 Google 帳戶匯入什麼資料？"
       ],
       "What would you like to do?": [
-        ""
+        "您想要做什麼？"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是換一個驗證方法？"
@@ -2462,7 +2471,7 @@
         "您先前的密碼"
       ],
       "Your previous recovery phrase": [
-        ""
+        "您先前的還原短語"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
@@ -3156,9 +3165,6 @@
       "Learn more": [
         "瞭解更多"
       ],
-      "My files": [
-        "我的檔案"
-      ],
       "Pay invoice": [
         "支付帳單"
       ],
@@ -3180,19 +3186,19 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        ""
+        "${ createdCalendars } / ${ calendarsToBeCreated } 已建立"
       ],
       "Almost there": [
-        ""
+        "快完成了"
       ],
       "Creating new calendars": [
         "建立新行事曆"
       ],
       "Gathering your data": [
-        ""
+        "正在蒐集您的資料"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "我們正從您的提供者蒐集您的資料"
       ],
       "Your import is starting": [
         "您的匯入已開始"

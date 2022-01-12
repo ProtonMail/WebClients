@@ -881,6 +881,9 @@
       "Undo": [
         "Cofnij"
       ],
+      "Unlock data": [
+        "Odblokuj dane"
+      ],
       "Unmark for deletion": [
         "Odznacz do usunięcia"
       ],
@@ -994,10 +997,10 @@
         "Spróbuj użyć innego zapytania."
       ],
       "You don't have any contacts.": [
-        "Nie posiadasz żadnych kontaktów."
+        "Nie masz żadnych kontaktów."
       ],
       "You don't have any groups.": [
-        "Nie posiadasz żadnych grup."
+        "Nie masz żadnych grup."
       ]
     },
     "Add participant to calendar event": {
@@ -1398,7 +1401,7 @@
         "Uczestnik ${ participantName } poprosił o najnowsze szczegóły wydarzenia."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
-        "Uczestnik ${ participantName } poprosił o najnowsze szczegóły wydarzenia, które nie istnieje. Nie posiadasz kalendarzy."
+        "Uczestnik ${ participantName } poprosił o najnowsze szczegóły wydarzenia, które nie istnieje. Nie masz kalendarzy."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "Uczestnik ${ participantName } poprosił o najnowsze szczegóły wydarzenia, które nie istnieje w Twoim kalendarzu."
@@ -1488,7 +1491,7 @@
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia w tej serii, ale propozycja jest nieaktualna. Wydarzenie nie istnieje w Twoim kalendarzu."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
-        "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia w tej serii, ale propozycja jest nieaktualna. Nie posiadasz kalendarzy."
+        "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia w tej serii, ale propozycja jest nieaktualna. Nie masz kalendarzy."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia, ale propozycja jest nieaktualna."
@@ -1497,7 +1500,7 @@
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia, ale propozycja jest nieaktualna. Wydarzenie nie istnieje w Twoim kalendarzu."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
-        "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia, ale propozycja jest nieaktualna. Nie posiadasz kalendarzy."
+        "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia, ale propozycja jest nieaktualna. Nie masz kalendarzy."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
@@ -1590,7 +1593,7 @@
         "Odpowiedź jest nieaktualna. Wydarzenie zostało zaktualizowane."
       ],
       "This response is out of date. You have no calendars.": [
-        "Odpowiedź jest nieaktualna. Nie posiadasz kalendarzy."
+        "Odpowiedź jest nieaktualna. Nie masz kalendarzy."
       ],
       "You already accepted this invitation.": [
         "Zaakceptowano zaproszenie."
@@ -2705,7 +2708,7 @@
         "Wystąpił problem z połączeniem z usługą Proton."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
-        "Nie posiadasz jeszcze żadnego kontaktu. Zacznij od utworzenia nowego kontaktu"
+        "Nie masz jeszcze żadnego kontaktu. Zacznij od utworzenia nowego kontaktu"
       ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } lub spróbuj ponownie później."
@@ -4067,6 +4070,9 @@
       "Recovery phrase copied to clipboard": [
         "Hasło odzyskiwania zostało skopiowane do schowka"
       ],
+      "Recovery phrase downloaded": [
+        "Hasło odzyskiwania zostało pobrane"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
@@ -4482,37 +4488,37 @@
         "Nie możesz odpowiedzieć z zaproszonego adresu."
       ],
       "You do not have any messages here": [
-        "Nie posiadasz tutaj żadnych wiadomości"
+        "Nie masz tutaj żadnych wiadomości"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "Posiadasz ${ totalLabel } w swojej skrzynce odbiorczej."
+        "Masz ${ totalLabel } w swojej skrzynce odbiorczej."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "Posiadasz ${ unreadsLabel } w swojej skrzynce odbiorczej."
+        "Masz ${ unreadsLabel } w swojej skrzynce odbiorczej."
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "Posiadasz **${ count } wątek** w tym folderze",
-        "Posiadasz **${ count } wątki** w tym folderze",
-        "Posiadasz **${ count } wątków** w tym folderze",
-        "Posiadasz **${ count } wątków** w tym folderze"
+        "Masz **${ count } wątek** w tym folderze",
+        "Masz **${ count } wątki** w tym folderze",
+        "Masz **${ count } wątków** w tym folderze",
+        "Masz **${ count } wątków** w tym folderze"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Posiadasz **${ count } wątek** oznaczony tą etykietą",
-        "Posiadasz **${ count } wątki** oznaczone tą etykietą",
-        "Posiadasz **${ count } wątków** oznaczonych tą etykietą",
-        "Posiadasz **${ count } wątków** oznaczonych tą etykietą"
+        "Masz **${ count } wątek** oznaczony tą etykietą",
+        "Masz **${ count } wątki** oznaczone tą etykietą",
+        "Masz **${ count } wątków** oznaczonych tą etykietą",
+        "Masz **${ count } wątków** oznaczonych tą etykietą"
       ],
       "You have **${ count } message** stored in this folder": [
-        "Posiadasz **${ count } wiadomość** w tym folderze",
-        "Posiadasz **${ count } wiadomości** w tym folderze",
-        "Posiadasz **${ count } wiadomości** w tym folderze",
-        "Posiadasz **${ count } wiadomości** w tym folderze"
+        "Masz **${ count } wiadomość** w tym folderze",
+        "Masz **${ count } wiadomości** w tym folderze",
+        "Masz **${ count } wiadomości** w tym folderze",
+        "Masz **${ count } wiadomości** w tym folderze"
       ],
       "You have **${ count } message** tagged with this label": [
-        "Posiadasz **${ count } wiadomość** oznaczoną tą etykietą",
-        "Posiadasz **${ count } wiadomości** oznaczone tą etykietą",
-        "Posiadasz **${ count } wiadomości** oznaczonych tą etykietą",
-        "Posiadasz **${ count } wiadomości** oznaczonych tą etykietą"
+        "Masz **${ count } wiadomość** oznaczoną tą etykietą",
+        "Masz **${ count } wiadomości** oznaczone tą etykietą",
+        "Masz **${ count } wiadomości** oznaczonych tą etykietą",
+        "Masz **${ count } wiadomości** oznaczonych tą etykietą"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nie wpisano żadnego tematu wiadomości. Czy chcesz wysłać tę wiadomość mimo to?"
@@ -5718,6 +5724,9 @@
       ],
       "Sending undone": [
         "Wysyłanie zostało anulowane"
+      ],
+      "Undoing send...": [
+        "Anulowanie wysłania..."
       ]
     },
     "MIME type": {
@@ -7588,7 +7597,7 @@
         "Użyj osobistego adresu nazwaużytkownika@pm.me do wysyłania wiadomości"
       ],
       "You do not have any contacts to export": [
-        "Nie posiadasz żadnych kontaktów do wyeksportowania"
+        "Nie masz żadnych kontaktów do wyeksportowania"
       ]
     },
     "Update font modal": {
