@@ -42,14 +42,12 @@ const ViewEOMessage = ({ setSessionStorage }: Props) => {
             {id && messageState && (
                 <main className="ui-standard color-norm bg-norm relative no-scroll w100 max-w100 center eo-layout mw52r">
                     <div ref={elementRef}>
-                        <div className="flex flex-align-items-center border-bottom p1">
-                            <EOMessageHeader
-                                message={messageState}
-                                messageLoaded={messageLoaded}
-                                id={id}
-                                numberOfReplies={message.Replies.length}
-                            />
-                        </div>
+                        <EOMessageHeader
+                            message={messageState}
+                            messageLoaded={messageLoaded}
+                            id={id}
+                            numberOfReplies={message.Replies.length}
+                        />
                         <EOHeaderExpanded
                             labelID="test"
                             message={messageState}

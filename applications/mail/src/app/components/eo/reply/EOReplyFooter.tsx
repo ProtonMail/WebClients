@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import { useHistory } from 'react-router';
 import { OpenPGPKey } from 'pmcrypto';
 
-import { Button } from '@proton/components';
+import { Button, Tooltip } from '@proton/components';
 
 import AttachmentsButton from '../../attachment/AttachmentsButton';
 import { MessageKeys, MessageState } from '../../../logic/messages/messagesTypes';
 import { useSendEO } from '../../../hooks/eo/useSendEO';
-import { EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
+import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 
 interface Props {
     id: string;
@@ -16,12 +16,17 @@ interface Props {
     message: MessageState;
     publicKeys?: OpenPGPKey[];
     outsideKey?: MessageKeys;
+    numberOfReplies: number;
 }
 
-const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey }: Props) => {
+const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey, numberOfReplies }: Props) => {
     const history = useHistory();
 
     const [isSending, setIsSending] = useState(false);
+
+    const isUnderLimit = numberOfReplies < EO_MAX_REPLIES_NUMBER;
+
+    const canSend = !isSending && isUnderLimit;
 
     const { send } = useSendEO({
         message,
@@ -41,6 +46,12 @@ const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey }
         history.push(`${EO_MESSAGE_REDIRECT_PATH}/${id}`);
     };
 
+    const sendButton = (
+        <Button className="ml1" size="large" color="norm" type="button" onClick={handleSend} disabled={!canSend}>
+            {c('Action').t`Send`}
+        </Button>
+    );
+
     return (
         <div className="flex flex-justify-space-between border-top p1">
             <Button size="large" color="weak" type="button" onClick={handleCancel}>
@@ -48,16 +59,13 @@ const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey }
             </Button>
             <div className="flex">
                 <AttachmentsButton onAddAttachments={onAddAttachments} data-testid="eo-composer:attachment-button" />
-                <Button
-                    className="ml1"
-                    size="large"
-                    color="norm"
-                    type="button"
-                    onClick={handleSend}
-                    disabled={isSending}
-                >
-                    {c('Action').t`Send`}
-                </Button>
+                {isUnderLimit ? (
+                    sendButton
+                ) : (
+                    <Tooltip title={c('Info').t`You have reached the maximum number of 5 replies.`}>
+                        <span>{sendButton}</span>
+                    </Tooltip>
+                )}
             </div>
         </div>
     );
