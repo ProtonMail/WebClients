@@ -1895,7 +1895,7 @@
         "Lütfen kuruluşunuza kullanıcı eklemeden önce çoklu kullanıcı desteğini etkinleştirin."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
+        "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
       ],
       "Please generate keys before you try to change your password": [
@@ -3091,7 +3091,7 @@
         "${ numContactGroups } kişi grubu"
       ],
       "${ numContacts } contact": [
-        "",
+        "${ numContacts } kişi",
         "${ numContacts } kişi"
       ],
       "${ providerFoldersNumLocalized } folder found": [
@@ -3250,7 +3250,7 @@
         "Telefonla kurtarmaya izin verin"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "{ mailAppName }'de kendi alan adınızı (ya da adlarınızı) kullanarak e-postalarınızı barındırmanıza olanak sağlar. örn. ali.yilmaz@ornek.com"
+        "${ mailAppName }'de kendi alan adınızı (ya da adlarınızı) kullanarak e-postalarınızı barındırmanıza olanak sağlar. örn. ali.yilmaz@ornek.com"
       ],
       "Already have an account? ${ loginLink }": [
         "Zaten hesabınız var mı? ${ loginLink }"
@@ -3528,10 +3528,10 @@
         "Bunun yerine anahtarı manuel girin"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        "{ phone } numaranıza gönderdiğimiz kodu girin."
+        "${ phone } numaranıza gönderdiğimiz kodu girin."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "{ email }'ne kod gönderdik. Bu mesajı gelen kutusunda bulamazsanız, lütfen spam kutusunu kontrol edin."
+        "${ email }'ne kod gönderdik. Bu mesajı gelen kutusunda bulamazsanız, lütfen spam kutusunu kontrol edin."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "İçeri aktarmak istediğiniz e-posta hesabının kimlik bilgilerini girin."

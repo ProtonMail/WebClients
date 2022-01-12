@@ -614,7 +614,7 @@
         "${ members } weitere Nutzer"
       ],
       "+ ${ storage } storage": [
-        "{ storage } zusätzlicher Speicher"
+        "${ storage } zusätzlicher Speicher"
       ],
       "+ ${ vpn } connection": [
         "${ vpn } weitere Verbindung",
@@ -1638,8 +1638,8 @@
         "${ canceledCount } abgebrochen"
       ],
       "${ contactEmailsLength } Member": [
-        "{ contactEmailsLength } Mitglied",
-        "{ contactEmailsLength } Mitglieder"
+        "${ contactEmailsLength } Mitglied",
+        "${ contactEmailsLength } Mitglieder"
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
         "Der Kontakt „${ contactName }” enthält mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zu „${ groupsEnumeration }” hinzufügen möchten."
@@ -1675,7 +1675,7 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
-        "{ groupCounts } Gruppen gefunden"
+        "${ groupCounts } Gruppen gefunden"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } kostenlos"

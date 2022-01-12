@@ -566,7 +566,7 @@
         "${ members } weitere Nutzer"
       ],
       "+ ${ storage } storage": [
-        "{ storage } zusätzlicher Speicher"
+        "${ storage } zusätzlicher Speicher"
       ],
       "+ ${ vpn } connection": [
         "${ vpn } weitere Verbindung",
@@ -2196,8 +2196,8 @@
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
       "${ contactEmailsLength } Member": [
-        "{ contactEmailsLength } Mitglied",
-        "{ contactEmailsLength } Mitglieder"
+        "${ contactEmailsLength } Mitglied",
+        "${ contactEmailsLength } Mitglieder"
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
         "Der Kontakt „${ contactName }” enthält mehrere E-Mail-Adressen. Bitte wählen Sie aus, welche E-Mail-Adresse(n) Sie zur Gruppe „${ groupsEnumeration }” hinzufügen möchten."
@@ -2217,7 +2217,7 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
-        "{ groupCounts } Gruppen gefunden"
+        "${ groupCounts } Gruppen gefunden"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } kostenlos"
@@ -4015,7 +4015,7 @@
     "Notifications": {
       "${ value } day after": [
         "${ value } Tag später",
-        "{ value } Tage später"
+        "${ value } Tage später"
       ],
       "${ value } day after at ${ time }": [
         "${ value } Tag später um ${ time }",
@@ -4439,8 +4439,8 @@
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "{ model.submitted.length } von ${ totalBeMerged } Kontakt(en) erfolgreich zusammengeführt.",
-        "{ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt."
+        "${ model.submitted.length } von ${ totalBeMerged } Kontakt(en) erfolgreich zusammengeführt.",
+        "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt."
       ],
       "No contacts exported.": [
         "Keine Kontakte exportiert."
