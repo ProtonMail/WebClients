@@ -8,7 +8,7 @@ import { CO_FACTOR, N, ptLen } from './constants';
 const stringToScalar = (array: Uint8Array) => BigInt(`0x${arrayToHexString(array.reverse())}`);
 
 /**
- * Converst a ptLen-octet Uint8Array to EC point, according to section 5.1.3 of rfc8032.
+ * Convert a ptLen-octet Uint8Array to EC point, according to section 5.1.3 of rfc8032.
  * It returns null if the octet string does not convert to a valid EC point
  */
 const stringToPoint = (array: Uint8Array) => {
