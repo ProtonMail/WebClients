@@ -56,7 +56,7 @@ const GenerateInternalAddressStep = ({
                         left={<BackButton onClick={onBack} />}
                     />
                     <Content>
-                        <div className="mb1-75">
+                        <div className="mb1-75 text-break">
                             {externalEmailAddress
                                 ? c('Info')
                                       .t`Your ${BRAND_NAME} Account is associated with ${externalEmailAddress}. To use ${toAppName}, please create an address.`

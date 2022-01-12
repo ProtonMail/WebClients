@@ -26,12 +26,12 @@ const GenerateInternalAddressConfirmForm = ({ onSubmit, address, recoveryAddress
             }}
             method="post"
         >
-            <div className="mb1-75">
+            <div className="mb1-75 text-break">
                 {c('Info')
                     .jt`${strongAddressAvailable} You will use this email address to sign into all ${BRAND_NAME} services.`}
             </div>
             {recoveryAddress && (
-                <div className="p1 mb1-75 text-center bg-weak rounded">
+                <div className="p1 mb1-75 text-center bg-weak rounded text-break">
                     <div className="text-bold">{c('Info').t`Your recovery email address:`}</div>
                     {recoveryAddress}
                 </div>
