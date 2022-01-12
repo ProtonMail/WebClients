@@ -2463,10 +2463,10 @@
         "Minimální objem kreditu, který lze přidat, je ${ _price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "Minimální částka, kterou lze darovat, je{ price }"
+        "Minimální částka, kterou lze darovat, je${ price }"
       ],
       "The minimum payment we accept is ${ _price2 }": [
-        "Minimální platba, kterou lze zadat je{ _price2 }"
+        "Minimální platba, kterou lze zadat je${ _price2 }"
       ],
       "The sending key is not valid": [
         "Klíč pro odesílání je neplatný"
@@ -3603,7 +3603,7 @@
         "Zakázat vyhledávání v obsahu zprávy"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        "Sleva na Vaše předplatné s kupónem{ code }$"
+        "Sleva na Vaše předplatné s kupónem${ code }"
       ],
       "Do you want to download this attachment anyway?": [
         "Chcete přesto přílohu stáhnout?",
@@ -5696,7 +5696,7 @@
         "Fw:"
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
-        "{ date }, { name } { address } napsal/-a:"
+        "${ date }, ${ name } ${ address } napsal/-a:"
       ],
       "Re:": [
         "Re:"
