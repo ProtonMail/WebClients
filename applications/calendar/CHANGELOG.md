@@ -1,4 +1,4 @@
-## Release: 4.0.7 — Jan 12, 2022
+## Release: 4.0.7 — Jan 13, 2022
 
 ### New features
 
