@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
@@ -316,9 +316,6 @@
       "Enable multi-user support": [
         "Ondersteuning voor meerdere gebruikers inschakelen"
       ],
-      "Enter password to continue": [
-        "Voer wachtwoord in om door te gaan"
-      ],
       "Export": [
         "Exporteren"
       ],
@@ -377,13 +374,13 @@
         "Importeren"
       ],
       "Import calendars": [
-        ""
+        "Agenda's importeren"
       ],
       "Import contacts": [
         "Contactpersonen importeren"
       ],
       "Import emails": [
-        ""
+        "E-mails importeren"
       ],
       "Import from .ics": [
         "Importeer vanuit .ics"
@@ -602,7 +599,7 @@
         "Selecteer bestanden"
       ],
       "Select language for invitation emails": [
-        ""
+        "Selecteer taal voor uitnodigings-e-mails"
       ],
       "Select plan": [
         "Selecteer abonnement"
@@ -660,6 +657,9 @@
       ],
       "Sign in": [
         "Inloggen"
+      ],
+      "Sign in again to continue": [
+        ""
       ],
       "Sign out": [
         "Uitloggen"
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ik ben afwezig en heb beperkte toegang tot mijn e-mail."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } voor Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } voor iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } voor web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } voor Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } voor iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } voor macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } voor web"
-      ],
-      "Admin": [
-        "Beheerder"
-      ],
-      "Proton Account for web": [
-        "Proton Account voor het web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacten voor web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge voor GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge voor macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge voor Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail voor Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail voor iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail voor web"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export voor GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export voor macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export voor Windows"
-      ],
-      "ProtonMail settings for web": [
-        "ProtonMail-instellingen voor web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN voor Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN voor Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN voor GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN voor iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN voor macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN voor web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN voor Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "ProtonVPN-instellingen voor web"
       ]
     },
     "Badge for domain": {
@@ -1344,7 +1252,7 @@
         "Er is meer dan 12 uur verstreken sinds de laatste update"
       ],
       "Unsupported calendar format": [
-        ""
+        "Niet-ondersteunde agenda-indeling"
       ]
     },
     "Calendar view": {
@@ -2916,67 +2824,67 @@
     },
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu": [
-        ""
+        "Klik op ${ boldManage } om het keuzemenu uit te vouwen"
       ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        ""
+        "Afhankelijk van uw e-mail-serviceprovider moet u mogelijk eerst een ${ knowledgeBaseLink } voordat u kunt importeren naar Proton"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        ""
+        "Vouw het dropdown-menu uit door te klikken op de 3 puntjes (...)"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "Genereer een ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door Proton"
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "Genereer het ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door Proton"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        ""
+        "Ga naar ${ boldAccountInfo } onder uw profiel in ${ yahooMailLink }"
       ],
       "Go to ${ boldAccountSecurity }": [
-        ""
+        "Ga naar ${ boldAccountSecurity }"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
-        ""
+        "Ga naar Outlook.com ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
-        ""
+        "Als 2-staps-verificatie uit staat, schakelt u deze in"
       ],
       "Open your ${ yahooMailLink } contacts": [
         ""
       ],
       "Open your Outlook ${ outlookContactsLink }": [
-        ""
+        "Open uw Outlook ${ outlookContactsLink }"
       ],
       "Select ${ boldExportContacts } and choose which contacts to export": [
-        ""
+        "Selecteer ${ boldExportContacts } en kies welke contactpersonen u wilt exporteren"
       ],
       "Select ${ boldExportCSV }": [
-        ""
+        "Selecteer ${ boldExportCSV }"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        ""
+        "Om uw e-mails te importeren naar Proton heeft u een ${ appPasswordLink } nodig van Outlook. Krijg het door deze stappen te volgen:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        ""
+        "Om uw e-mails te importeren naar Proton heeft u een ${ appPasswordLink } nodig van Yahoo. Krijg het door deze stappen te volgen:"
       ]
     },
     "Import instructions emphasis": {
@@ -2990,77 +2898,77 @@
         "app-wachtwoord"
       ],
       "Can view all details": [
-        ""
+        "Kan alle details bekijken"
       ],
       "Export": [
-        ""
+        "Exporteren"
       ],
       "Export contacts": [
-        ""
+        "Contactpersonen exporteren"
       ],
       "Export to CSV file": [
-        ""
+        "Exporteer naar CSV bestand"
       ],
       "ICS": [
-        ""
+        "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        ""
+        "u in de volgende stap alle machtigingen moet selecteren"
       ],
       "Manage": [
-        ""
+        "Beheren"
       ],
       "Publish a calendar": [
-        ""
+        "Publiceer een agenda"
       ]
     },
     "Import instructions link": {
       "app password": [
-        ""
+        "app-wachtwoord"
       ],
       "app password or enable IMAP": [
-        ""
+        "appwachtwoord of IMAP inschakelen"
       ],
       "contacts": [
-        ""
+        "contactpersonen"
       ],
       "CSV file": [
-        ""
+        "CSV-bestand"
       ],
       "full calendar view": [
         ""
       ],
       "ICS file": [
-        ""
+        "ICS-bestand"
       ],
       "security settings": [
-        ""
+        "beveiligingsinstellingen"
       ],
       "shared calendars": [
-        ""
+        "gedeelde agenda's"
       ],
       "Yahoo Mail": [
-        ""
+        "Yahoo Mail"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
-        ""
+        "Klik op de ${ boldICS }-link en download het bestand"
       ],
       "Go to ${ calendarLink } in your Outlook.com settings": [
-        ""
+        "Ga naar ${ calendarLink } in uw Outlook.com-instellingen"
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
-        ""
+        "Ga naar ${ calendarViewLink } in Yahoo Mail"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
-        ""
+        "Beweeg uw muis naar de agenda die u wilt importeren en open het dropdown-menu"
       ],
       "Select ${ boldExport } to export the calendar as an ICS file": [
-        ""
+        "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand"
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        ""
+        "Selecteer de agenda die u wilt importeren onder ${ boldPublish }. Stel de machtiging in op ${ boldCanViewAllDetails } en publiceer het"
       ]
     },
     "Import key": {
@@ -3070,7 +2978,7 @@
     },
     "Import provider": {
       "Other": [
-        ""
+        "Overig"
       ]
     },
     "Import status": {
@@ -3650,7 +3558,7 @@
         "Voer uw herstel-telefoonnummer in en wij sturen u uw gebruikersnaam of e-mailadres."
       ],
       "Event invites and RSVPs will be sent in this language.": [
-        ""
+        "Gebeurtenisuitnodigingen en RSVPs zullen worden verstuurd in deze taal."
       ],
       "Expired": [
         "Verlopen"
@@ -3786,7 +3694,7 @@
         "Mailbox importeren"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        ""
+        "Importeer uw e-mails, agenda's en contacten vanuit een andere dienst naar Proton. We zullen u bij elke stap leiden en uw gegevens versleutelen terwijl het wordt verplaatst. Welkom in de wereld van privacy."
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "BELANGRIJK: Het downloaden van uw geheime sleutels en ze verzenden via of opslaan op onveilige media kan de veiligheid van uw account in gevaar brengen!"
@@ -3840,7 +3748,7 @@
         "Internetverbinding hersteld."
       ],
       "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        ""
+        "Het lijkt erop data een deel van uw data versleuteld en vergrendeld. Dit komt waarschijnlijk door een recentelijk of eerder wachtwoordherstel. We raden u aan om een gegevensherstelmethode te gebruiken om uw data te ontgrendelen."
       ],
       "it’s imperative": [
         "het is noodzakelijk"
@@ -3995,8 +3903,8 @@
       "Not set": [
         "Niet ingesteld"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Niet uw computer? Gebruik een privénavigatievenster om in te loggen. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Niet uw apparaat? Gebruik een privé-browservenster om in te loggen en sluit het als u klaar bent. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Aantal VPN-verbindingen die aan gebruikers kunnen worden toegewezen. Elk verbonden apparaat verbruikt één VPN-verbinding."
@@ -4155,11 +4063,17 @@
       "read our two-factor authentication Guide first": [
         "eerst de instructies over tweestapsverificatie (2FA) te lezen"
       ],
+      "Recovery file downloaded": [
+        ""
+      ],
       "Recovery files have been voided": [
         "Herstel bestanden zijn ongeldig gemaakt"
       ],
       "Recovery phrase copied to clipboard": [
         "Herstel zin gekopieerd naar klembord"
+      ],
+      "Recovery phrase downloaded": [
+        ""
       ],
       "Recovery phrase has been disabled": [
         "Herstelzin is uitgeschakeld"
@@ -4198,7 +4112,7 @@
         "Schermafbeelding(en) toegevoegd"
       ],
       "Select a service provider to start": [
-        ""
+        "Selecteer een dienstverlener om te beginnen"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
@@ -4555,7 +4469,7 @@
         "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
       ],
       "You can import one data type at a time.": [
-        ""
+        "U kunt maar één type gegevens tegelijk importeren."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "U kunt nu berichten ontvangen op uw @pm.me-adres. Upgrade naar een betaald abonnement om ook e-mails te versturen via uw @pm.me-adres en meerdere @pm.me-adressen te maken."
@@ -4597,7 +4511,7 @@
         "U moet een persoonlijke agenda hebben om een koppeling aan te maken."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "U heeft een actieve persoonlijke agenda nodig om uw afspraken uit .ics te importeren."
       ],
       "You need to have an active personal calendar to import your events.": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren."
@@ -4619,6 +4533,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "U zult niet in staat zijn om versleutelde gegevens te herstellen na een account reset met behulp van uw gedownloade herstelbestanden."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "U zult ingelogd blijven, zelfs als u de browser sluit."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een adres aan om ${ toAppName } te gebruiken."
@@ -5276,7 +5193,7 @@
         "Verbruikt tegoed"
       ],
       "Current login password": [
-        ""
+        "Huidig loginwachtwoord"
       ],
       "Customize invoices": [
         "Facturen aanpassen"
@@ -5297,7 +5214,7 @@
         "Standaardtaal"
       ],
       "Default language (${ defaultLanguage })": [
-        ""
+        "Standaardtaal (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Standaard PGP-schema"
@@ -5445,6 +5362,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Keep me signed in": [
+        "Houd me ingelogd"
       ],
       "Keep messages in Sent/Drafts": [
         "Berichten behouden in Verzonden/Concepten"
@@ -5657,7 +5577,7 @@
         "Automatisch antwoord versturen"
       ],
       "Send invites in": [
-        ""
+        "Stuur uitnodigingen in het"
       ],
       "Show secondary time zone": [
         "Toon secundaire tijdzone"
@@ -6218,31 +6138,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        ""
+        "Hoe u agenda's importeert uit een andere dienst"
       ],
       "How to import calendars from Outlook": [
-        ""
+        "Hoe u agenda's importeert uit Outlook"
       ],
       "How to import calendars from Yahoo": [
-        ""
+        "Hoe u agenda's importeert uit Yahoo"
       ],
       "How to import contacts from another service": [
-        ""
+        "Hoe u contacten importeert uit een andere dienst"
       ],
       "How to import contacts from Outlook": [
-        ""
+        "Hoe u contacten importeert uit Outlook"
       ],
       "How to import contacts from Yahoo": [
-        ""
+        "Hoe u contacten importeert uit Yahoo"
       ],
       "How to import emails from another service": [
-        ""
+        "Hoe u e-mails importeert uit een andere dienst"
       ],
       "How to import emails from Outlook": [
-        ""
+        "Hoe u e-mails importeert uit Outlook"
       ],
       "How to import emails from Yahoo": [
-        ""
+        "Hoe u e-mails importeert uit Yahoo"
       ]
     },
     "Modal title and action": {
@@ -6482,7 +6402,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Let er op dat u ${ boldNextStep } die worden aangevraagd door de toepassing om uw import te starten."
       ]
     },
     "Onboarding Proton": {
@@ -7130,7 +7050,7 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        ""
+        "Maak de overstap naar privacy. Moeiteloos en veilig."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "U kunt meerdere labels toepassen op één bericht, maar berichten kunnen meestal slechts in één map voorkomen. Slepen en neerzetten om de volgorde van uw mappen en labels te wijzigen."
@@ -7147,7 +7067,7 @@
         "Automatisch antwoorden"
       ],
       "Backup and export": [
-        ""
+        "Back-up en exporteren"
       ],
       "Calendars": [
         "Agenda's"
@@ -7159,19 +7079,19 @@
         "E-mail privacy"
       ],
       "Encryption and keys": [
-        ""
+        "Versleuteling en sleutels"
       ],
       "Filters": [
         "Filters"
       ],
       "Folders and labels": [
-        ""
+        "Mappen en labels"
       ],
       "General": [
         "Algemeen"
       ],
       "Identity and addresses": [
-        ""
+        "Identiteit en adressen"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7186,10 +7106,10 @@
         "Bedrijf"
       ],
       "Organization and keys": [
-        ""
+        "Organisatie en sleutels"
       ],
       "Users and addresses": [
-        ""
+        "Gebruikers en adressen"
       ],
       "VPN apps": [
         "VPN-apps"
@@ -8036,7 +7956,7 @@
         "De ingevoerde code is ongeldig"
       ],
       "Invitations": [
-        ""
+        "Uitnodigingen"
       ],
       "Invoices": [
         "Facturen"
@@ -8207,7 +8127,7 @@
         "Contactgroep selecteren"
       ],
       "Select permissions": [
-        ""
+        "Selecteer machtigingen"
       ],
       "Select plan": [
         "Selecteer abonnement"
@@ -8345,7 +8265,7 @@
         "Let op!"
       ],
       "What would you like to import?": [
-        ""
+        "Wat zou u willen importeren?"
       ],
       "What's new": [
         "Wat is er nieuw"
@@ -8664,10 +8584,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Klik om de video te herhalen"
       ],
       "Replay video": [
-        ""
+        "Video opnieuw afspelen"
       ]
     },
     "VPN feature": {

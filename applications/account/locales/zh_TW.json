@@ -31,10 +31,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ Name }@pm.me": [
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "啟用多使用者支援"
-      ],
-      "Enter password to continue": [
-        "輸入密碼以繼續"
       ],
       "Export": [
         "匯出"
@@ -661,6 +658,9 @@
       "Sign in": [
         "登入"
       ],
+      "Sign in again to continue": [
+        "請重新登入以繼續"
+      ],
       "Sign out": [
         "登出"
       ],
@@ -943,98 +943,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "我不在辦公室，可能沒辦法看電子郵件。"
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "Android 版 ${ calendarAppName }"
-      ],
-      "${ calendarAppName } for iOS": [
-        "iOS 版 ${ calendarAppName }"
-      ],
-      "${ calendarAppName } for web": [
-        "網頁版 ${ calendarAppName }"
-      ],
-      "${ driveAppName } for Android": [
-        "Android 版 ${ driveAppName }"
-      ],
-      "${ driveAppName } for iOS": [
-        "iOS 版 ${ driveAppName }"
-      ],
-      "${ driveAppName } for macOS": [
-        "macOS 版 ${ driveAppName }"
-      ],
-      "${ driveAppName } for web": [
-        "網頁版 ${ driveAppName }"
-      ],
-      "Admin": [
-        "系統管理員"
-      ],
-      "Proton Account for web": [
-        "Proton Account 網頁版"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts 網頁版"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "GNU/Linux 版 ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "macOS 版 ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "Windows 版 ProtonMail Bridge"
-      ],
-      "ProtonMail for Android": [
-        "Android 版 ProtonMail"
-      ],
-      "ProtonMail for iOS": [
-        "iOS 版 ProtonMail"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail 網頁版"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "GNU/Linux 版 ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "macOS 版 ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "Windows 版 ProtonMail Import-Export"
-      ],
-      "ProtonMail settings for web": [
-        "ProtonMail 設定網頁版"
-      ],
-      "ProtonVPN for Android": [
-        "Android 版 ProtonVPN"
-      ],
-      "ProtonVPN for Android TV": [
-        "Android TV 版 ProtonVPN"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "GNU/Linux 版 ProtonVPN"
-      ],
-      "ProtonVPN for iOS": [
-        "iOS 版 ProtonVPN"
-      ],
-      "ProtonVPN for macOS": [
-        "macOS 版 ProtonVPN"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN 網頁版"
-      ],
-      "ProtonVPN for Windows": [
-        "Windows 版 ProtonVPN"
-      ],
-      "ProtonVPN settings for web": [
-        "ProtonVPN 設定網頁版"
       ]
     },
     "Badge for domain": {
@@ -3938,8 +3846,8 @@
       "Not set": [
         "未設定"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "不是用自己的電腦？請使用「隱私瀏覽」視窗登入。${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "不是您的裝置？請使用隱私瀏覽視窗登入並在完成後關閉它。${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "可指派給使用者的 VPN 連線數目。每一台連線的裝置將算作一個 VPN 連線。"
@@ -4097,11 +4005,17 @@
       "read our two-factor authentication Guide first": [
         "先閱讀我們的兩步驟驗證指南"
       ],
+      "Recovery file downloaded": [
+        "已下載還原檔案"
+      ],
       "Recovery files have been voided": [
         "復原檔案已被作廢"
       ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
+      ],
+      "Recovery phrase downloaded": [
+        "已下載還原短語"
       ],
       "Recovery phrase has been disabled": [
         "復原短語已被停用"
@@ -4561,6 +4475,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "在你使用下載的復原檔案重設你的帳戶後，將會無法還原已加密的檔案。"
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "即使關閉瀏覽器，您仍會維持登入狀態。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。如要使用 ${ toAppName }，請建立一個電子郵件地址。"
@@ -5383,6 +5300,9 @@
       ],
       "Interval": [
         "時間間隔"
+      ],
+      "Keep me signed in": [
+        "保持登入"
       ],
       "Keep messages in Sent/Drafts": [
         "保留郵件於 [已傳送]/[草稿] 中"
@@ -7330,13 +7250,13 @@
         "帳單已付"
       ],
       "Keyboard shortcuts preferences updated": [
-        "鍵盤快捷鍵喜好設定已更新"
+        "鍵盤快捷鍵偏好設定已更新"
       ],
       "Keys updated": [
         "金鑰已更新"
       ],
       "Locale updated": [
-        "語言設置已更新"
+        "語言設定已更新"
       ],
       "Organization activated": [
         "組織已啟用"
@@ -7357,7 +7277,7 @@
         "電話號碼已更新"
       ],
       "Preference saved": [
-        "喜好設定已儲存"
+        "偏好設定已儲存"
       ],
       "Premium address created": [
         "Premium 電子郵件地址已建立"

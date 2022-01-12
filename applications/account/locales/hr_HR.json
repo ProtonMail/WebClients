@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiviraj ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Omogući podršku za više korisnika"
-      ],
-      "Enter password to continue": [
-        ""
       ],
       "Export": [
         "Izvoz"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Prijavite se"
       ],
+      "Sign in again to continue": [
+        ""
+      ],
       "Sign out": [
         "Odjava"
       ],
@@ -961,98 +961,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ja sam izvan ureda s ograničenim pristupom mojoj e-pošti."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } za Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } za iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } za web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } za Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } za iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } za macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } za web"
-      ],
-      "Admin": [
-        "Admin"
-      ],
-      "Proton Account for web": [
-        "Proton Account za web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts za web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge za GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge za macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge za Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail za Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail za iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail za web"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export za GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export za macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export za Windows"
-      ],
-      "ProtonMail settings for web": [
-        "ProtonMail postavke za web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN za Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN za Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN za GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN za iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN za macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN za web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN za Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "ProtonVPN postavke za web"
       ]
     },
     "Badge for domain": {
@@ -4052,8 +3960,8 @@
       "Not set": [
         "Nije postavljeno"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Nije vaše računalo? Koristite prozor za privatno pregledavanje za prijavu. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        ""
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Broj VPN veza koje se mogu dodijeliti korisnicima. Svaki povezani uređaj koristi jednu VPN vezu."
@@ -4213,10 +4121,16 @@
       "read our two-factor authentication Guide first": [
         ""
       ],
+      "Recovery file downloaded": [
+        ""
+      ],
       "Recovery files have been voided": [
         ""
       ],
       "Recovery phrase copied to clipboard": [
+        ""
+      ],
+      "Recovery phrase downloaded": [
         ""
       ],
       "Recovery phrase has been disabled": [
@@ -4676,6 +4590,9 @@
         "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
+      "You'll stay signed in even after you close the browser.": [
         ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
@@ -5507,6 +5424,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Keep me signed in": [
+        ""
       ],
       "Keep messages in Sent/Drafts": [
         "Zadrži poruke u Poslano/Skice"

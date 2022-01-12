@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
@@ -188,7 +188,7 @@
         "Konfirmasi untuk membuka tautan ${ linkToShow }"
       ],
       "Contact support": [
-        "Hubungi dukungan"
+        "Hubungi layanan dukungan"
       ],
       "Continue": [
         "Lanjutkan"
@@ -260,7 +260,7 @@
         "Tidak menerima kode?"
       ],
       "Didn't receive a code?": [
-        "Kode belum diterima?"
+        "Belum menerima kode?"
       ],
       "Disable recovery phrase": [
         "Matikan sandi pemulihan"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
-      ],
-      "Enter password to continue": [
-        "Masukkan sandi untuk melanjutkan"
       ],
       "Export": [
         "Ekspor"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Masuk"
       ],
+      "Sign in again to continue": [
+        "Harap masuk kembali untuk melanjutkan"
+      ],
       "Sign out": [
         "Keluar"
       ],
@@ -943,98 +943,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Saya sedang di luar kantor dengan akses surel terbatas."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } untuk Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } untuk iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } untuk web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } untuk Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } untuk iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } untuk macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } untuk web"
-      ],
-      "Admin": [
-        "Admin"
-      ],
-      "Proton Account for web": [
-        "Akun Proton untuk web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts untuk web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge untuk GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge untuk macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge untuk Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail untuk Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail untuk iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail untuk web"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export untuk GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export untuk macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export untuk Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Pengaturan ProtonMail untuk web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN untuk Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN untuk Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN untuk GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN untuk iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN untuk macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonMail untuk web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonMail untuk Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "Pengaturan ProtonVPN untuk web"
       ]
     },
     "Badge for domain": {
@@ -3315,7 +3223,7 @@
         "Apakah Anda yakin untuk menghapus alamat ini?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Yakin ingin menghapus kalender ini?"
+        "Apakah Anda yakin ingin menghapus kalender ini?"
       ],
       "Are you sure you want to delete this domain?": [
         "Yakin ingin menghapus domain ini?"
@@ -3822,7 +3730,7 @@
         "Tampilan terbatas: orang lain melihat jika anda sedang sibuk. Tampilan penuh: tampilkan semua rician acara, termasuk nama, lokasi, atau peserta."
       ],
       "Link copied to clipboard": [
-        "Tautan telah disalin ke papanklip"
+        "Tautan disalin ke clipboard"
       ],
       "Link created": [
         "Tautan telah dibuat"
@@ -3938,8 +3846,8 @@
       "Not set": [
         "Tidak diatur"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Bukan komputer Anda? Gunakan jendela Penjelajahan Privat untuk masuk. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Sedang tidak berada pada perangkat Anda? Masuklah dengan mode penjelajahan privat dan tutup browser Anda setelah selesai. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Jumlah sambunganVPN yang dapat ditambahkan ke pengguna. Setiap perangkat terkoneksi mengonsumsi satu sambungan VPN."
@@ -4097,11 +4005,17 @@
       "read our two-factor authentication Guide first": [
         "baca Panduan otentikasi dua faktor kami terlebih dahulu"
       ],
+      "Recovery file downloaded": [
+        "Berkas pemulihan diunduh"
+      ],
       "Recovery files have been voided": [
         "Berkas-berkas pemulihan telah dianulir"
       ],
       "Recovery phrase copied to clipboard": [
         "Kalimat pemulihan disalin"
+      ],
+      "Recovery phrase downloaded": [
+        "Frasa pemulihan diunduh"
       ],
       "Recovery phrase has been disabled": [
         "Kalimat pemulihan telah dinonaktifkan"
@@ -4561,6 +4475,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Anda tidak akan dapat memulihkan data-data yang terenkripsi dengan berkas-berkas pemulihan yang ada pada akun yang telah disetel ulang."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Anda akan tetap masuk bahkan setelah Anda menutup browser."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Akun ${ BRAND_NAME } Anda dikaitkan dengan ${ externalEmailAddress }. Untuk menggunakan ${ toAppName }, harap buat alamat email."
@@ -5383,6 +5300,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Keep me signed in": [
+        "Biarkan saya tetap masuk"
       ],
       "Keep messages in Sent/Drafts": [
         "Simpan pesan di Terkirim/Draf"

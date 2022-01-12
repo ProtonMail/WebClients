@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Habilitar soporte multiusuario"
-      ],
-      "Enter password to continue": [
-        "Introduce la contraseña para continuar"
       ],
       "Export": [
         "Exportar"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Iniciar sesión"
       ],
+      "Sign in again to continue": [
+        "Inicia sesión de nuevo para continuar"
+      ],
       "Sign out": [
         "Cerrar la sesión"
       ],
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Estoy fuera de la oficina con acceso limitado a mi correo."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } para Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } para iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } para web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } para Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } para iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } para macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } para web"
-      ],
-      "Admin": [
-        "Administrador"
-      ],
-      "Proton Account for web": [
-        "Cuenta de Proton para la web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts para la web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge para GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge para macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge para Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail para Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail para iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail para la web"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export para GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export para macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export para Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Ajustes de ProtonMail para web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN para Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN para Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN para GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN para iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN para macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN para la web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN para Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "Ajustes de ProtonVPN para web"
       ]
     },
     "Badge for domain": {
@@ -2993,30 +2901,30 @@
         ""
       ],
       "Export": [
-        ""
+        "Exportar"
       ],
       "Export contacts": [
-        ""
+        "Exportar contactos"
       ],
       "Export to CSV file": [
         ""
       ],
       "ICS": [
-        ""
+        "ICS"
       ],
       "in the next step you need to select all the permissions": [
         ""
       ],
       "Manage": [
-        ""
+        "Gestionar"
       ],
       "Publish a calendar": [
-        ""
+        "Publicar un calendario"
       ]
     },
     "Import instructions link": {
       "app password": [
-        ""
+        "contraseña de la aplicación"
       ],
       "app password or enable IMAP": [
         "contraseña de la aplicación o habilitar IMAP"
@@ -3025,13 +2933,13 @@
         "contactos"
       ],
       "CSV file": [
-        ""
+        "archivo CSV"
       ],
       "full calendar view": [
         ""
       ],
       "ICS file": [
-        ""
+        "archivo CSV"
       ],
       "security settings": [
         ""
@@ -3040,7 +2948,7 @@
         ""
       ],
       "Yahoo Mail": [
-        ""
+        "Yahoo Mail"
       ]
     },
     "Import instructions step": {
@@ -3070,7 +2978,7 @@
     },
     "Import provider": {
       "Other": [
-        ""
+        "Otro"
       ]
     },
     "Import status": {
@@ -3945,7 +3853,7 @@
         "A continuación, deberás iniciar sesión en tu cuenta de Google y permitirnos acceder a sus datos."
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "No se ha establecido un método de recuperación de la cuenta; corre el riesgo de perder el acceso a su cuenta"
+        "No se ha establecido un método de recuperación de la cuenta; corre el riesgo de perder el acceso"
       ],
       "No action selected": [
         "Ninguna acción seleccionada"
@@ -3995,8 +3903,8 @@
       "Not set": [
         "No establecido"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "¿No es tu ordenador? Utiliza una ventana de navegación privada para iniciar sesión. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "¿No es tu dispositivo? Utiliza una ventana de navegación privada para iniciar sesión y ciérrala cuando hayas terminado. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Número de conexiones VPN que se pueden asignar a los usuarios. Cada dispositivo conectado consume una conexión VPN."
@@ -4155,11 +4063,17 @@
       "read our two-factor authentication Guide first": [
         "Leer primero nuestra guía de autentificación de doble factor"
       ],
+      "Recovery file downloaded": [
+        ""
+      ],
       "Recovery files have been voided": [
         "Los archivos de recuperación han sido anulados"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperación copiada en el portapapeles"
+      ],
+      "Recovery phrase downloaded": [
+        ""
       ],
       "Recovery phrase has been disabled": [
         "La frase de recuperación ha sido desactivada"
@@ -4619,6 +4533,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "No podrás recuperar los datos encriptados después de un restablecimiento de la cuenta utilizando los archivos de recuperación descargados."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Seguirás conectado incluso después de cerrar el navegador."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Tu cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para utilizar ${ toAppName }, por favor crea una dirección."
@@ -5446,6 +5363,9 @@
       "Interval": [
         "Intervalo"
       ],
+      "Keep me signed in": [
+        "Mantener mi sesión iniciada"
+      ],
       "Keep messages in Sent/Drafts": [
         "Mantener mensajes en Enviados/Borradores"
       ],
@@ -6039,7 +5959,7 @@
         "${ createdCalendars } de ${ calendarsToBeCreated } creados"
       ],
       "Almost there": [
-        ""
+        "Ya casi está"
       ],
       "Connecting to your email provider": [
         "Conectando con tu proveedor de correo eléctronico"
@@ -6054,7 +5974,7 @@
         ""
       ],
       "Your import is starting": [
-        ""
+        "Tu importación está comenzando"
       ]
     },
     "Log preference": {
