@@ -3075,7 +3075,7 @@
         "${ none } hat keinen Einfluss auf die Zustellung von E-Mails, aber es wird empfohlen, ${ quarantine } für eine bessere Sicherheit zu verwenden."
       ],
       "${ number } city": [
-        "{ number } $ Stadt",
+        "${ number } Stadt",
         "${ number } Städte"
       ],
       "${ number } server": [
@@ -3084,7 +3084,7 @@
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfen Sie die Datei und versuchen Sie es erneut.",
-        "{ numberOfNonPrivateKeys } hochgeladene Dateien sind keine gültige privaten Schlüssel. Bitte überprüfen Sie die Dateien und versuchen Sie es erneut."
+        "${ numberOfNonPrivateKeys } hochgeladene Dateien sind keine gültige privaten Schlüssel. Bitte überprüfen Sie die Dateien und versuchen Sie es erneut."
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } Kontaktgruppe",
@@ -3116,7 +3116,7 @@
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "{ selectedFoldersCount } Ordner ausgewählt",
+        "${ selectedFoldersCount } Ordner ausgewählt",
         "${ selectedFoldersCount } Ordner ausgewählt"
       ],
       "${ selectedFoldersCount } label selected": [

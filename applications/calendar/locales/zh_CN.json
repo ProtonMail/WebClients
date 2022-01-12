@@ -2191,7 +2191,7 @@
         "${ numContacts } 名联系人"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "{ save20 } 订阅，切换到{ annualBilling }"
+        "${ save20 } 订阅，切换到${ annualBilling }"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
         "添加邮件订阅，可整体享 ${ saveExtra20 } 优惠。"
@@ -2311,7 +2311,7 @@
         "每年支付 ${ billedPrice }"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "在您当前的账单周期结束时计费(更新于{ renewalDate })"
+        "在您当前的账单周期结束时计费(更新于${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "比特币付款需要一段时间（最长 24 小时）来确认交易，确认后金额将充入您的账户余额中，然后您就可以用余额支付了。"
@@ -5423,10 +5423,10 @@
         "每 ${ interval } 周的${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "每{ interval } 周的${ multipleDaysString }，${ timesString }"
+        "每${ interval } 周的${ multipleDaysString }，${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "每{ interval } 周的${ multipleDaysString }，${ untilString }"
+        "每${ interval } 周的${ multipleDaysString }，${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "每 ${ interval } 周整周"
