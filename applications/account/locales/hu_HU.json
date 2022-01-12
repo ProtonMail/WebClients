@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktiválása"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Többfelhasználós mód engedélyezése"
-      ],
-      "Enter password to continue": [
-        "Írja be a jelszavát a folytatáshoz"
       ],
       "Export": [
         "Exportálás"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Bejelentkezés"
       ],
+      "Sign in again to continue": [
+        "Lépjen be újból a folytatáshoz"
+      ],
       "Sign out": [
         "Kijelentkezés"
       ],
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Nem vagyok az irodában, ezért korlátozott a hozzáférésem az e-mailjeimhez."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } Androidhoz"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } iOS-hez"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } webhez"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } Androidhoz"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } iOS-hez"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } iOS-hez"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } webhez"
-      ],
-      "Admin": [
-        "Adminisztrátor"
-      ],
-      "Proton Account for web": [
-        "Proton web hozzáférés"
-      ],
-      "ProtonContacts for web": [
-        "Webes ProtonContacts"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge GNU/Linuxra"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge MacOS-re"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge Windowsra"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail Androidra"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail iOS-re"
-      ],
-      "ProtonMail for web": [
-        "Webes ProtonMail"
-      ],
-      "ProtonMail Import-Export": [
-        ""
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export GNU/Linuxra"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export MacOS-re"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export Windowsra"
-      ],
-      "ProtonMail settings for web": [
-        "Webes ProtonMail beállításai"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN Androidra"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN Android TV-re"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN GNU/Linuxra"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN iOS-re"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN macOS-re"
-      ],
-      "ProtonVPN for web": [
-        "Webes ProtonVPN"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN Windowsra"
-      ],
-      "ProtonVPN settings for web": [
-        "Webes ProtonVPN beállításai"
       ]
     },
     "Badge for domain": {
@@ -3995,8 +3903,8 @@
       "Not set": [
         "Nincs beállítva"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Nem a saját számítógépe? Használjon Privát Ablakot a belépéshez. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        ""
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "A felhasználókhoz rendelhető összes VPN kapcsolat száma. Minden eszköznek egy VPN kapcsolatra van szüksége."
@@ -4155,11 +4063,17 @@
       "read our two-factor authentication Guide first": [
         "először elolvasni a kétlépcsős hitelesítésről szóló útmutatót"
       ],
+      "Recovery file downloaded": [
+        ""
+      ],
       "Recovery files have been voided": [
         "A helyreállítási fájlok érvénytelenítésre kerültek"
       ],
       "Recovery phrase copied to clipboard": [
         "A helyreállító jelmondat a vágólapra másolva"
+      ],
+      "Recovery phrase downloaded": [
+        ""
       ],
       "Recovery phrase has been disabled": [
         "A helyreállító jelmondat kikpacsolva"
@@ -4619,6 +4533,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Nem fogja tudni helyreállítani az adatait, egy fiók jelszó visszaállítás után, a letöltött helyreállítási fájlokkal."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        ""
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik. A ${ toAppName } használatához hozzon létre egy címet."
@@ -5446,6 +5363,9 @@
       "Interval": [
         "Intervallum"
       ],
+      "Keep me signed in": [
+        ""
+      ],
       "Keep messages in Sent/Drafts": [
         "Üzenetek megőrzése az Elküldött és Piszkozatok mappában"
       ],
@@ -5997,7 +5917,7 @@
         "További információk"
       ],
       "Not activated": [
-        ""
+        "Nem aktivált"
       ],
       "Pay invoice": [
         "Számla kifizetése"
@@ -7147,7 +7067,7 @@
         "Automatikus válasz"
       ],
       "Backup and export": [
-        ""
+        "Mentés és exportálás"
       ],
       "Calendars": [
         "Naptárak"
@@ -7159,19 +7079,19 @@
         "E-mail adatvédelem"
       ],
       "Encryption and keys": [
-        ""
+        "Titkosítás és kulcsok"
       ],
       "Filters": [
         "Szűrők"
       ],
       "Folders and labels": [
-        ""
+        "Mappák és címkék"
       ],
       "General": [
         "Általános"
       ],
       "Identity and addresses": [
-        ""
+        "Személyazonosság és címek"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7189,7 +7109,7 @@
         ""
       ],
       "Users and addresses": [
-        ""
+        "Felhasználók és címek"
       ],
       "VPN apps": [
         "VPN alkalmazások"

@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ Name }@pm.me": [
         "Активировать ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Включить многопользовательский режим"
-      ],
-      "Enter password to continue": [
-        "Введите пароль для продолжения"
       ],
       "Export": [
         "Экспортировать"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Войти"
       ],
+      "Sign in again to continue": [
+        "Войдите снова, чтобы продолжить"
+      ],
       "Sign out": [
         "Выйти из учетной записи"
       ],
@@ -970,98 +970,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Я отсутствую на рабочем месте и не имею полного доступа к почте."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } для Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } для iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } в браузере"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } для Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } для iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } для macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } в браузере"
-      ],
-      "Admin": [
-        "Администратор"
-      ],
-      "Proton Account for web": [
-        "Веб-аккаунт Proton"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts в браузере"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge для GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge для macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge для Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail для Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail для iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail через браузер"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export для GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export для macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export для Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Настройки ProtonMail через браузер"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN для Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN для Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN для GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN для iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN для macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN через браузер"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN для Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "Настройки ProtonVPN через браузер"
       ]
     },
     "Badge for domain": {
@@ -4109,8 +4017,8 @@
       "Not set": [
         "Не задано"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Не ваш компьютер? Используйте конфиденциальный режим, чтобы войти. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Не ваше устройство? Используйте окно приватного просмотра для входа в систему и закройте его по завершении. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Количество VPN-соединений, которые могут быть назначены пользователям. Каждое подключенное устройство потребляет одно VPN соединение."
@@ -4271,11 +4179,17 @@
       "read our two-factor authentication Guide first": [
         "Сначала прочитайте наше Руководство по двухфакторной аутентификации"
       ],
+      "Recovery file downloaded": [
+        "Файл восстановления загружен"
+      ],
       "Recovery files have been voided": [
         "Файлы восстановления были уничтожены"
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза для восстановления доступа к учетной записи скопирована в буфер обмена"
+      ],
+      "Recovery phrase downloaded": [
+        "Фраза восстановления загружена"
       ],
       "Recovery phrase has been disabled": [
         "Фраза для восстановления доступа к учетной записи была отключена"
@@ -4735,6 +4649,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Вы не сможете восстановить зашифрованные данные после сброса учетной записи с помощью загруженных файлов восстановления."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Вы сохраните авторизацию даже после закрытия браузера."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ваша учетная запись для ${ BRAND_NAME } связана с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, пожалуйста, создайте адрес."
@@ -5569,6 +5486,9 @@
       ],
       "Interval": [
         "Интервал"
+      ],
+      "Keep me signed in": [
+        "Сохраните мою авторизацию"
       ],
       "Keep messages in Sent/Drafts": [
         "Сохранять сообщения в Отправленных/Черновиках"

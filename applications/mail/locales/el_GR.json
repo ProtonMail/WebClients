@@ -723,7 +723,7 @@
         "Αναζήτηση"
       ],
       "Search in ${ option.text }": [
-        ""
+        "Αναζήτηση σε ${ option.text }"
       ],
       "Search message content": [
         "Αναζήτηση εντός περιεχομένου μηνυμάτων"
@@ -872,6 +872,9 @@
       ],
       "Undo": [
         "Αναίρεση"
+      ],
+      "Unlock data": [
+        ""
       ],
       "Unmark for deletion": [
         "Κατάργηση σήμανσης για διαγραφή"
@@ -3909,6 +3912,9 @@
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
       ],
+      "Recovery phrase downloaded": [
+        ""
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
@@ -5532,6 +5538,9 @@
       ],
       "Sending undone": [
         "Η αποστολή αναιρέθηκε"
+      ],
+      "Undoing send...": [
+        ""
       ]
     },
     "MIME type": {

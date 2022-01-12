@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
-      ],
-      "Enter password to continue": [
-        "Skriv kodeord for at fortsætte"
       ],
       "Export": [
         "Exportér"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Log ind"
       ],
+      "Sign in again to continue": [
+        "Log ind igen for at fortsætte"
+      ],
       "Sign out": [
         "Log ud"
       ],
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } til Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } til iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } til web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } til Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } til iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } til macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } til web"
-      ],
-      "Admin": [
-        "Admin"
-      ],
-      "Proton Account for web": [
-        "Proton Konto til web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonKontakter til web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge til GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge til macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge til Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail til Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail til iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail til web"
-      ],
-      "ProtonMail Import-Export": [
-        ""
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-eksport til GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-eksport til macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-eksport til Windows"
-      ],
-      "ProtonMail settings for web": [
-        "ProtonMail-indstillinger til web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN til Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN til Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN til GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN til iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN til macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN til web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN til Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "ProtonVPN-indstillinger til web"
       ]
     },
     "Badge for domain": {
@@ -3995,8 +3903,8 @@
       "Not set": [
         "Ikke indstillet"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Ikke din computer? Brug et privat browservindue til at logge på. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Ikke din enhed? Brug et privat browsing vindue til at logge ind og luk det når du er færdig. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Antal VPN-forbindelser, som kan tildeles brugere. Hver tilsluttet enhed bruger én VPN-forbindelse."
@@ -4155,11 +4063,17 @@
       "read our two-factor authentication Guide first": [
         "læser vores to-faktor-godkendelsesguide først"
       ],
+      "Recovery file downloaded": [
+        "Gendannelsesfil downloadet"
+      ],
       "Recovery files have been voided": [
         "Genoprettelsesfiler er blevet ugyldiggjort"
       ],
       "Recovery phrase copied to clipboard": [
         "Gendannelsessætning kopieret til udklipsholderen"
+      ],
+      "Recovery phrase downloaded": [
+        "Gendannelsesfrase downloadet"
       ],
       "Recovery phrase has been disabled": [
         "Gendannelsessætning er blevet deaktiveret"
@@ -4619,6 +4533,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Du vil ikke kunne gendanne krypterede data efter en kontonulstilling ved hjælp af dine downloadede genoprettelsesfiler."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Du vil forblive logget på selv efter du lukker browseren."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Din ${ BRAND_NAME } konto er tilknyttet ${ externalEmailAddress }. For at bruge ${ toAppName } skal du oprette en adresse."
@@ -5445,6 +5362,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Keep me signed in": [
+        ""
       ],
       "Keep messages in Sent/Drafts": [
         "Behold beskeder i Sendt/Kladder"
