@@ -212,7 +212,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     const [myLocation] = useMyLocation();
     const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
-    const keyMigrationFeature = useFeature(FeatureCode.KeyMigration);
+    const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration);
 
     const cacheRef = useRef<CacheRef>({});
     const [humanApi] = useState(() => createHumanApi({ api, createModal }));
@@ -292,7 +292,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         } = model;
 
         const keyMigrationFeatureValue = await keyMigrationFeature
-            .get<number>()
+            .get()
             .then(({ Value }) => Value)
             .catch(() => 0);
 

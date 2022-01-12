@@ -1089,7 +1089,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     useEffect(() => {
         const run = async () => {
             try {
-                const esFeature = await getESFeature<boolean>();
+                const esFeature = await getESFeature();
                 if (
                     welcomeFlags.isWelcomeFlow &&
                     !isMobile() &&
