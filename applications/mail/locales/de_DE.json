@@ -1020,7 +1020,7 @@
         "${ members } weitere Nutzer"
       ],
       "+ ${ storage } storage": [
-        "{ storage } zusätzlicher Speicher"
+        "${ storage } zusätzlicher Speicher"
       ],
       "+ ${ vpn } connection": [
         "${ vpn } weitere Verbindung",
@@ -3074,8 +3074,8 @@
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
       "${ contactEmailsLength } Member": [
-        "{ contactEmailsLength } Mitglied",
-        "{ contactEmailsLength } Mitglieder"
+        "${ contactEmailsLength } Mitglied",
+        "${ contactEmailsLength } Mitglieder"
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
         "${ contactName } enthält mehrere E-Mail-Adressen. Bitte wähle, welche E-Mail-Adresse(n) du zu ${ groupsEnumeration } hinzufügen möchtest."
@@ -3103,7 +3103,7 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
-        "{ groupCounts } Gruppen gefunden"
+        "${ groupCounts } Gruppen gefunden"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } kostenlos"
@@ -6694,7 +6694,7 @@
         "${ minutesCountLeft } Minuten"
       ],
       "${ secondsCountLeft } second": [
-        "{ secondsCountLeft } Sekunde",
+        "${ secondsCountLeft } Sekunde",
         "${ secondsCountLeft } Sekunden"
       ]
     },
