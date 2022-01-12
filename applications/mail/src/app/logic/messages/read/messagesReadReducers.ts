@@ -64,6 +64,7 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
             if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
                 if (!currentValue.draftFlags?.sending) {
                     currentValue.messageDocument = undefined;
+                    currentValue.messageImages = undefined;
                     currentValue.data.Body = undefined;
                 }
 
