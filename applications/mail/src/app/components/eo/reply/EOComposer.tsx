@@ -23,9 +23,10 @@ interface Props {
     id: string;
     publicKey?: OpenPGPKey[];
     outsideKey?: OutsideKey;
+    numberOfReplies: number;
 }
 
-const EOComposer = ({ referenceMessage, id, publicKey, outsideKey }: Props) => {
+const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfReplies }: Props) => {
     const breakpoints = useActiveBreakpoint();
     // Indicates that the composer is in its initial opening
     // Needed to be able to force focus only at first time
@@ -136,6 +137,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey }: Props) => {
                 message={modelMessage}
                 publicKeys={publicKey}
                 outsideKey={outsideKey}
+                numberOfReplies={numberOfReplies}
             />
         </>
     );

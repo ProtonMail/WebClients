@@ -31,6 +31,7 @@ const EOReply = ({ setSessionStorage }: Props) => {
                         id={id}
                         publicKey={message.PublicKey}
                         outsideKey={outsideKey}
+                        numberOfReplies={message.Replies.length}
                     />
                 </main>
             )}
