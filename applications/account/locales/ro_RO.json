@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
-      ],
-      "Enter password to continue": [
-        "Introduceți parola pentru a continua"
       ],
       "Export": [
         "Exportare"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Autentificare"
       ],
+      "Sign in again to continue": [
+        "Reconectați-vă pentru a continua"
+      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -961,98 +961,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Nu sunt la birou și am acces limitat la e-mail."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } pentru Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } pentru iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } pentru web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } pentru Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } pentru iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } pentru macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } pentru web"
-      ],
-      "Admin": [
-        "Administrator"
-      ],
-      "Proton Account for web": [
-        "Cont Proton pentru web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts pentru web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge pentru GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge pentru macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge pentru Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail pentru Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail pentru iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail pentru web"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Importare-Exportare"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export pentru GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export pentru macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export pentru Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Setări web ProtonMail"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN pentru Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN pentru Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN pentru GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN pentru iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN pentru macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN pentru web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN pentru Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "Setări ProtonVPN pentru web"
       ]
     },
     "Badge for domain": {
@@ -4052,8 +3960,8 @@
       "Not set": [
         "Nesetat"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Nu sunteţi la calculatorul personal? Folosiţi o fereastră de navigare privată pentru a vă conecta. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Nu este dispozitivul dvs.? Folosiți o fereastră de navigare privată pentru a vă conecta și închideți-o când ați terminat. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Numărul de conexiuni VPN care poate fi atribuit utilizatorilor. Fiecare dispozitiv conectat consumă o conexiune VPN."
@@ -4213,11 +4121,17 @@
       "read our two-factor authentication Guide first": [
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
       ],
+      "Recovery file downloaded": [
+        "Fișier de recuperare descărcat"
+      ],
       "Recovery files have been voided": [
         "Fișierele de recuperare au fost anulate."
       ],
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
+      ],
+      "Recovery phrase downloaded": [
+        "Fraza de recuperare descărcată"
       ],
       "Recovery phrase has been disabled": [
         "Fraza de recuperare a fost dezactivată."
@@ -4677,6 +4591,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Nu veți putea recupera datele criptate după o resetare a contului folosind fișierele de recuperare descărcate."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Veți rămâne conectat chiar și după ce închideți browserul."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Acest cont ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }. Pentru a utiliza ${ toAppName }, trebuie să creați o adresă."
@@ -5507,6 +5424,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Keep me signed in": [
+        "Păstrați-mă conectat"
       ],
       "Keep messages in Sent/Drafts": [
         "Păstrare mesaje în «Ciorne»/«Trimise»"

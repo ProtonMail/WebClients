@@ -110,6 +110,9 @@
       "Close transfers": [
         "Uzavření transferů"
       ],
+      "Collapse folder": [
+        "Sbalit složku"
+      ],
       "Compare all features": [
         "Porovnat všechny funkce"
       ],
@@ -220,6 +223,9 @@
       ],
       "enable desktop notifications": [
         "povolit oznámení na ploše"
+      ],
+      "Expand folder": [
+        "Rozbalit složku"
       ],
       "Export": [
         "Exportovat"
@@ -514,6 +520,9 @@
       ],
       "Undo": [
         "Zpět"
+      ],
+      "Unlock data": [
+        "Odemknout údaje"
       ],
       "Unmark for deletion": [
         "Zrušit označení pro odstranění"
@@ -1634,10 +1643,10 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "",
-        "",
-        "",
-        ""
+        "${ activeDownloadsCount } stahování",
+        "${ activeDownloadsCount } stahování",
+        "${ activeDownloadsCount } stahování",
+        "${ activeDownloadsCount } stahování"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "",
@@ -1679,10 +1688,10 @@
         "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
       "${ canceledCount } canceled": [
-        "",
-        "",
-        "",
-        ""
+        "${ canceledCount } zrušen",
+        "${ canceledCount } zrušeny",
+        "${ canceledCount } zrušených",
+        "${ canceledCount } zrušených"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } člen",
@@ -1760,10 +1769,10 @@
         "${ numContacts } kontaktů"
       ],
       "${ pausedCount } paused": [
-        "",
-        "",
-        "",
-        ""
+        "${ pausedCount } pozastaven",
+        "${ pausedCount } pozastaveny",
+        "${ pausedCount } zastavených",
+        "${ pausedCount } zastavených"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na vašem předplatném přepnutím na ${ annualBilling }"
@@ -1910,7 +1919,7 @@
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        ""
+        "Vzhledem k tomu že ${ appName } je end-to-end zašifrovaná, tak nemáme přístup\na nemůžeme za Vás dekryptovat Vaše soubory. K odemknutí Vašeho disku po resetování hesla\nmusíte mít jedno z následujících:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Vyúčtováno jako ${ billedPrice } každé 2 roky"
@@ -2240,7 +2249,7 @@
         "z"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        ""
+        "Jeden ze zakryprovaných disků je uzamčen. Tohle je s největší pravděpodobností kvůli nedávnému resetování hesla. ${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
@@ -3315,9 +3324,6 @@
       "Learn more": [
         "Více informací"
       ],
-      "My files": [
-        "Moje soubory"
-      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
@@ -3339,10 +3345,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        "",
-        ""
+        "${ createdCalendars } z ${ calendarsToBeCreated } vytvořen",
+        "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeny",
+        "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno",
+        "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno"
       ],
       "Almost there": [
         "Téměř hotovo"
@@ -3462,7 +3468,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Tím se trvale odstraní všichni dílčí uživatelé, účty a data spojená s Vaší organizací."
       ]
     },
     "Message display when a new app version is available": {
@@ -4526,7 +4532,7 @@
         "Moje soubory"
       ],
       "My files ${ date }.zip": [
-        ""
+        "Moje soubory ${ date }.zip"
       ],
       "Name": [
         "Jméno"

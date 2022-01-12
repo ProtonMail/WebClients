@@ -869,6 +869,9 @@
       "Undo": [
         "取り消し"
       ],
+      "Unlock data": [
+        ""
+      ],
       "Unmark for deletion": [
         "削除マークを解除"
       ],
@@ -3830,6 +3833,9 @@
       "Recovery phrase copied to clipboard": [
         "リカバリーフレーズはクリップボードへコピーされました"
       ],
+      "Recovery phrase downloaded": [
+        ""
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
       ],
@@ -5439,6 +5445,9 @@
       ],
       "Sending undone": [
         "送信が取り消されました"
+      ],
+      "Undoing send...": [
+        ""
       ]
     },
     "MIME type": {
@@ -6275,7 +6284,7 @@
         "${ elementsCount } 件の会話を既読にしました。"
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } 件の会話にスターをつけました。"
+        "${ elementsCount } 件の会話に星印をつけました。"
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } 件の会話を未読にしました。"
@@ -6299,7 +6308,7 @@
         "${ elementsCount } 件のメッセージを既読にしました。"
       ],
       "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } 件のメッセージにスターをつけました。"
+        "${ elementsCount } 件のメッセージに星印をつけました。"
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } 件のメッセージを未読にしました。"
@@ -6350,7 +6359,7 @@
         "会話を既読にしました。"
       ],
       "Conversation marked as Starred.": [
-        "会話にスターをつけました。"
+        "会話に星印をつけました。"
       ],
       "Conversation marked as unread.": [
         "会話を未読にしました。"
@@ -6407,7 +6416,7 @@
         "メッセージを既読にしました。"
       ],
       "Message marked as Starred.": [
-        "メッセージにスターをつけました。"
+        "メッセージに星印を付けました。"
       ],
       "Message marked as unread.": [
         "メッセージを未読にしました。"

@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktywuj adres ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Włącz obsługę wielu użytkowników"
-      ],
-      "Enter password to continue": [
-        "Wpisz hasło, aby kontynuować"
       ],
       "Export": [
         "Eksportuj"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Zaloguj się"
       ],
+      "Sign in again to continue": [
+        "Zaloguj się ponownie, aby kontynuować"
+      ],
       "Sign out": [
         "Wyloguj"
       ],
@@ -970,98 +970,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jestem poza biurem, z ograniczonym dostępem do mojej poczty."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } na Androida"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } na iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } przez przeglądarkę"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } na Androida"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } na iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } na macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } przez przeglądarkę"
-      ],
-      "Admin": [
-        "Administrator"
-      ],
-      "Proton Account for web": [
-        "Konto Proton przez przeglądarkę"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts przez przeglądarkę"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge na GNU/Linuksa"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge na macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge na Windowsa"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail na Androida"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail na iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail przez przeglądarkę"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export na GNU/Linuksa"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export na macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export na Windowsa"
-      ],
-      "ProtonMail settings for web": [
-        "Ustawienia ProtonMaila przez przeglądarkę"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN na Androida"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN na Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN na GNU/Linuksa"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN na iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN na macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN przez przeglądarkę"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN na Windowsa"
-      ],
-      "ProtonVPN settings for web": [
-        "Ustawienia ProtonVPN przez przeglądarkę"
       ]
     },
     "Badge for domain": {
@@ -2183,7 +2091,7 @@
         "Utraciłeś dostęp do kluczy organizacji. Bez ich odzyskania nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
       ],
       "You have no invoices.": [
-        "Nie posiadasz faktur."
+        "Nie masz faktur."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Wykorzystano wszystkie dostępne adresy w obecnym planie. Ulepsz plan, aby dodać nowy adres."
@@ -4109,8 +4017,8 @@
       "Not set": [
         "Nie ustawiono"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "To nie jest Twój komputer? Zaloguj się przy użyciu okna prywatnego. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Nie Twoje urządzenie? Użyj prywatnego okna przeglądarki, aby się zalogować i zamknij je, jak już skończysz. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Liczba połączeń VPN, która może zostać przypisana do użytkowników. Każde podłączone urządzenie używa jednego połączenia VPN."
@@ -4271,11 +4179,17 @@
       "read our two-factor authentication Guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
       ],
+      "Recovery file downloaded": [
+        "Plik odzyskiwania został pobrany"
+      ],
       "Recovery files have been voided": [
         "Pliki odzyskiwania zostały unieważnione"
       ],
       "Recovery phrase copied to clipboard": [
         "Hasło odzyskiwania zostało skopiowane do schowka"
+      ],
+      "Recovery phrase downloaded": [
+        "Hasło odzyskiwania zostało pobrane"
       ],
       "Recovery phrase has been disabled": [
         "Hasło odzyskiwania zostało wyłączone"
@@ -4692,7 +4606,7 @@
         "Nie dodano metody odzyskiwania. Jeśli zapomnisz hasła, to nie odzyskasz już swojego konta. Czy chcesz przejść dalej bez dodawania metody odzyskiwania?"
       ],
       "You have no saved payment methods.": [
-        "Nie posiadasz zapisanych metod płatności."
+        "Nie masz zapisanych metod płatności."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Musisz aktywować klucz prywatny organizacji, używając hasła klucza zapasowego organizacji, otrzymanego od administratora organizacji."
@@ -4735,6 +4649,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Po zresetowaniu konta za pomocą plików odzyskiwania nie będziesz mógł odzyskać zaszyfrowanych danych."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Pozostaniesz zalogowany, nawet po zamknięciu przeglądarki."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres, aby korzystać z usługi ${ toAppName }."
@@ -5569,6 +5486,9 @@
       ],
       "Interval": [
         "Częstotliwość"
+      ],
+      "Keep me signed in": [
+        "Zapamiętaj mnie"
       ],
       "Keep messages in Sent/Drafts": [
         "Zachowaj wiadomości w Wysłanych/Szkicach"
@@ -8412,7 +8332,7 @@
         "Zaloguj się ponownie, aby kontynuować"
       ],
       "Sorry, you can't access this page": [
-        "Niestety nie posiadasz dostępu do tej strony"
+        "Niestety nie masz dostępu do tej strony"
       ],
       "Sort folders alphabetically": [
         "Sortuj foldery alfabetycznie"
@@ -8730,7 +8650,7 @@
         "Po kliknięciu na link, funkcja zapobiegająca próbie wyłudzenia informacji poprosi Cię o potwierdzenie adresu URL strony internetowej, który chcesz otworzyć."
       ],
       "You do not have any contacts to export": [
-        "Nie posiadasz żadnych kontaktów do wyeksportowania"
+        "Nie masz żadnych kontaktów do wyeksportowania"
       ],
       "You have locally decrypted this key": [
         "Odszyfrowano ten klucz lokalnie"

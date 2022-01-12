@@ -726,7 +726,7 @@
         "Căutare"
       ],
       "Search in ${ option.text }": [
-        ""
+        "Căutați în ${ option.text }"
       ],
       "Search message content": [
         "Căutare în conținut mesaj"
@@ -876,6 +876,9 @@
       ],
       "Undo": [
         "Anulare"
+      ],
+      "Unlock data": [
+        "Deblocare date"
       ],
       "Unmark for deletion": [
         "Anulare marcare ștergere"
@@ -3988,6 +3991,9 @@
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
       ],
+      "Recovery phrase downloaded": [
+        "Fraza de recuperare descărcată"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
@@ -5625,6 +5631,9 @@
       ],
       "Sending undone": [
         "Trimitere anulată"
+      ],
+      "Undoing send...": [
+        "Anularea trimiterii..."
       ]
     },
     "MIME type": {

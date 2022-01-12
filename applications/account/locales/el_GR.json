@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
-      ],
-      "Enter password to continue": [
-        "Για συνέχιση, εισαγωγή κωδικού πρόσβασης"
       ],
       "Export": [
         "Εξαγωγή"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Είσοδος"
       ],
+      "Sign in again to continue": [
+        "Εισέλθετε ξανά για να συνεχίσετε"
+      ],
       "Sign out": [
         "Αποσύνδεση"
       ],
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο email μου."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } για Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } για iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } για web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } για Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } για iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } για macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } για web"
-      ],
-      "Admin": [
-        "Διαχειριστής"
-      ],
-      "Proton Account for web": [
-        "Proton Λογαριασμός για web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts για web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge για GNU / Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge για macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge για Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail για Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail για iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail για web"
-      ],
-      "ProtonMail Import-Export": [
-        "Εισαγωγή-Εξαγωγή ProtonMail"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "Εισαγωγή-Εξαγωγή ProtonMail για GNU / Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "Εισαγωγή-Εξαγωγή ProtonMail για macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "Εισαγωγή-Εξαγωγή ProtonMail για Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Ρυθμίσεις ProtonMail για web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN για Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN για Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN για GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN για iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN για macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonMail για web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN για Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "Ρυθμίσεις ProtonVPN για web"
       ]
     },
     "Badge for domain": {
@@ -3240,7 +3148,7 @@
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
       "Allow recovery by email": [
-        ""
+        "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
       "Allow recovery by phone": [
         "Άδεια ανάκτησης μέσω τηλεφώνου"
@@ -3899,8 +3807,8 @@
       "Not set": [
         "Μη ορισμένο"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Δεν είναι ο υπολογιστής σας; Χρησιμοποιήστε ένα παράθυρο Ιδιωτικής Περιήγησης για είσοδο. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Δεν είναι συσκευή σας; Εισέλθετε από παράθυρο ιδιωτικής περιήγησης και κλείστε το όταν τελειώσετε. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Αριθμός συνδέσεων VPN που μπορούν να αντιστοιχιστούν στους χρήστες. Κάθε συνδεδεμένη συσκευή καταναλώνει μία σύνδεση VPN."
@@ -4059,11 +3967,17 @@
       "read our two-factor authentication Guide first": [
         "διαβάστε πρώτα τον οδηγό ελέγχου ταυτότητας δύο παραγόντων"
       ],
+      "Recovery file downloaded": [
+        ""
+      ],
       "Recovery files have been voided": [
         "Τα αρχεία ανάκτησης ακυρώθηκαν"
       ],
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Recovery phrase downloaded": [
+        ""
       ],
       "Recovery phrase has been disabled": [
         "Η φράση ανάκτησης έχει απενεργοποιηθεί"
@@ -4501,7 +4415,7 @@
         "Πρέπει να έχετε ένα προσωπικό ημερολόγιο για να δημιουργήσετε μια σύνδεση."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας από αρχείο .ics ."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
@@ -4523,6 +4437,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Η επαναφορά λογαριασμού καθιστά αδύνατη την ανάκτηση κρυπτογραφημένων δεδομένων με χρήση κατεβασμένων αρχείων ανάκτησης."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Η είσοδός σας θα διατηρηθεί ακόμα και μετά το κλείσιμο του περιηγητή."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ο λογαριασμός σας ${ BRAND_NAME } συνδέεται με ${ externalEmailAddress }. Για να χρησιμοποιήσετε ${ toAppName }, παρακαλώ δημιουργήστε μια διεύθυνση."
@@ -5349,6 +5266,9 @@
       ],
       "Interval": [
         "Διάστημα"
+      ],
+      "Keep me signed in": [
+        "Διατήρηση εισόδου μου"
       ],
       "Keep messages in Sent/Drafts": [
         "Διατήρηση μηνυμάτων στα Απεσταλμένα/Πρόχειρα"

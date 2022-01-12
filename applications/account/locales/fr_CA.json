@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activer ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Activer le support multi-utilisateur"
-      ],
-      "Enter password to continue": [
-        "Saisir le mot de passe pour continuer"
       ],
       "Export": [
         "Exporter"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Se connecter"
       ],
+      "Sign in again to continue": [
+        "Connectez-vous à nouveau pour continuer"
+      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Actuellement hors du bureau, je n'ai qu'un accès limité à mes courriels."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } pour Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } pour iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } pour le Web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } pour Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } pour iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } pour macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } pour le Web"
-      ],
-      "Admin": [
-        "Admin"
-      ],
-      "Proton Account for web": [
-        "Compte Proton pour le Web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts via web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge pour GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge pour macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge pour Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail pour Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail pour iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail via web"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export pour GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export pour macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import-Export pour Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Paramètres ProtonMail via web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN pour Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN pour Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN pour GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN pour iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN pour macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN via web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN pour Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "Paramètres ProtonVPN via web"
       ]
     },
     "Badge for domain": {
@@ -3995,8 +3903,8 @@
       "Not set": [
         "Non défini"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Vous n'êtes pas sur votre ordinateur habituel? Utilisez une fenêtre de navigation privée pour vous connecter. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Ce n'est pas votre appareil? Utilisez une fenêtre de navigation privée pour vous connecter et fermez-la lorsque vous avez terminé. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Nombre de connexions RPV qui peuvent être assignées aux utilisateurs. Chaque appareil connecté utilise une connexion RPV."
@@ -4155,11 +4063,17 @@
       "read our two-factor authentication Guide first": [
         "lire d'abord notre guide de l'authentification à deux facteurs"
       ],
+      "Recovery file downloaded": [
+        "Fichier de récupération téléchargé"
+      ],
       "Recovery files have been voided": [
         "Les fichiers de récupération ont été annulés"
       ],
       "Recovery phrase copied to clipboard": [
         "Phrase de récupération copiée dans le presse-papiers"
+      ],
+      "Recovery phrase downloaded": [
+        "Phrase de récupération téléchargée"
       ],
       "Recovery phrase has been disabled": [
         "La phrase de récupération a été désactivée"
@@ -4619,6 +4533,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Vous ne pourrez pas récupérer les données chiffrées après une réinitialisation du compte en utilisant les fichiers de récupération que vous avez téléchargés."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Vous resterez connecté même après avoir fermé le navigateur."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Votre compte ${ BRAND_NAME } est associé à ${ externalEmailAddress }. Pour utiliser ${ toAppName }, veuillez créer une adresse."
@@ -5445,6 +5362,9 @@
       ],
       "Interval": [
         "Intervalle"
+      ],
+      "Keep me signed in": [
+        "Gardez-moi connecté"
       ],
       "Keep messages in Sent/Drafts": [
         "Conserver les messages dans Envoyés/Brouillons"
