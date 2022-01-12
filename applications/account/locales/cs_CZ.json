@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktivovat ${ Name }@pm.me"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "Zapnout podporu pro více uživatelů"
-      ],
-      "Enter password to continue": [
-        "Zadejte heslo pro pokračování"
       ],
       "Export": [
         "Export"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Přihlásit se"
       ],
+      "Sign in again to continue": [
+        "Chcete-li pokračovat, znovu se přihlaste"
+      ],
       "Sign out": [
         "Odhlásit se"
       ],
@@ -970,98 +970,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jsem mimo kancelář s omezeným přístupem ke svému e-mailu."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } pro Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } pro iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } pro web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } pro Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } pro iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } pro macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } pro web"
-      ],
-      "Admin": [
-        "Správce"
-      ],
-      "Proton Account for web": [
-        "Proton účet pro web"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContact pro web"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge pro GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge pro macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge pro Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail pro Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail pro iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail pro web"
-      ],
-      "ProtonMail Import-Export": [
-        ""
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Import-Export pro GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Import-Export pro macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Import - Export pro Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Nastavení ProtonMail pro web"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN pro Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN pro Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN pro GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN pro iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN pro macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN pro web"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN pro Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "Nastavení ProtonVPN pro web"
       ]
     },
     "Badge for domain": {
@@ -4109,8 +4017,8 @@
       "Not set": [
         "Nenastaveno"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Není to Váš počítač? Použijte anonymní okno pro přihlášení. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Není to vaše zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Počet VPN připojení, která mohou být přiřazena uživatelům. Každé připojené zařízení použije jedno VPN připojení."
@@ -4271,11 +4179,17 @@
       "read our two-factor authentication Guide first": [
         "přečtěte si nejprve našeho průvodce dvoufázovým ověřováním"
       ],
+      "Recovery file downloaded": [
+        "Soubor pro obnovení byl stažen"
+      ],
       "Recovery files have been voided": [
         "Soubory pro obnovení byly zrušeny"
       ],
       "Recovery phrase copied to clipboard": [
         "Obnovovací fráze byla zkopírovaná do schránky"
+      ],
+      "Recovery phrase downloaded": [
+        "Heslo pro obnovení bylo staženo"
       ],
       "Recovery phrase has been disabled": [
         "Obnovovací fráze bude deaktivována"
@@ -4735,6 +4649,9 @@
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Po resetování účtu pomocí stažených souborů pro obnovení nebudete moci obnovit zašifrovaná data."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Zůstanete přihlášeni i po uzavření prohlížeče."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Váš účet ${ BRAND_NAME } je spojen s ${ externalEmailAddress }. Chcete-li použít ${ toAppName }, vytvořte prosím adresu."
@@ -5569,6 +5486,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Keep me signed in": [
+        "Zůstat přihlášen"
       ],
       "Keep messages in Sent/Drafts": [
         "Ponechat zprávy v Odeslaných/Konceptech"

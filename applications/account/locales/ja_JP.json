@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "アクティベート"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "アクティベート"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
@@ -315,9 +315,6 @@
       ],
       "Enable multi-user support": [
         "複数ユーザー対応を有効にする"
-      ],
-      "Enter password to continue": [
-        "続けるにはパスワードを入力してください"
       ],
       "Export": [
         "エクスポート"
@@ -661,6 +658,9 @@
       "Sign in": [
         "サインイン"
       ],
+      "Sign in again to continue": [
+        ""
+      ],
       "Sign out": [
         "サインアウト"
       ],
@@ -943,98 +943,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "これは自動返信メッセージです。現在休暇中のため、大変申し訳ございませんが、お送りいただいた電子メールをすぐには確認できない可能性があることをご了承ください。"
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "Android 版 ${ calendarAppName }"
-      ],
-      "${ calendarAppName } for iOS": [
-        "iOS 版 ${ calendarAppName }"
-      ],
-      "${ calendarAppName } for web": [
-        "ウェブ版 ${ calendarAppName }"
-      ],
-      "${ driveAppName } for Android": [
-        "Android 版 ${ driveAppName }"
-      ],
-      "${ driveAppName } for iOS": [
-        "iOS 版 ${ driveAppName }"
-      ],
-      "${ driveAppName } for macOS": [
-        "macOS 版 ${ driveAppName }"
-      ],
-      "${ driveAppName } for web": [
-        "ウェブ版 ${ driveAppName }"
-      ],
-      "Admin": [
-        "管理者"
-      ],
-      "Proton Account for web": [
-        "ウェブ版 Proton Account"
-      ],
-      "ProtonContacts for web": [
-        "ウェブ版 ProtonContacts"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "GNU/Linux 版 ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "macOS 版 ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "Windows 版 ProtonMail Bridge"
-      ],
-      "ProtonMail for Android": [
-        "Android 版 ProtonMail"
-      ],
-      "ProtonMail for iOS": [
-        "iOS 版 ProtonMail"
-      ],
-      "ProtonMail for web": [
-        "ウェブ版 ProtonMail"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "GNU/Linux 版 ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "macOS 版 ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "Windows 版 ProtonMail Import-Export"
-      ],
-      "ProtonMail settings for web": [
-        "ウェブ版 ProtonMail settings"
-      ],
-      "ProtonVPN for Android": [
-        "Android 版 ProtonVPN"
-      ],
-      "ProtonVPN for Android TV": [
-        "Android TV 版 ProtonVPN"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "GNU/Linux 版 ProtonVPN"
-      ],
-      "ProtonVPN for iOS": [
-        "iOS 版 ProtonVPN"
-      ],
-      "ProtonVPN for macOS": [
-        "macOS 版 ProtonVPN"
-      ],
-      "ProtonVPN for web": [
-        "ウェブ版 ProtonVPN"
-      ],
-      "ProtonVPN for Windows": [
-        "Windows 版 ProtonVPN"
-      ],
-      "ProtonVPN settings for web": [
-        "ウェブ版 ProtonVPN settings"
       ]
     },
     "Badge for domain": {
@@ -3938,8 +3846,8 @@
       "Not set": [
         "未設定"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "あなたが所有するコンピューター以外からサインインする場合は、プライベートブラウジングウィンドウをご使用ください。${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        ""
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "ユーザーに与えられる VPN の接続数。デバイスが接続されると1つのVPN接続が消費されます。"
@@ -4097,11 +4005,17 @@
       "read our two-factor authentication Guide first": [
         "はじめに2要素認証ガイドをお読みください"
       ],
+      "Recovery file downloaded": [
+        ""
+      ],
       "Recovery files have been voided": [
         ""
       ],
       "Recovery phrase copied to clipboard": [
         "リカバリーフレーズはクリップボードへコピーされました"
+      ],
+      "Recovery phrase downloaded": [
+        ""
       ],
       "Recovery phrase has been disabled": [
         "リカバリーフレーズは無効化されました"
@@ -4562,6 +4476,9 @@
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         ""
       ],
+      "You'll stay signed in even after you close the browser.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         ""
       ],
@@ -4861,7 +4778,7 @@
         "迷惑メールを開く"
       ],
       "Go to Starred": [
-        "スター付きを開く"
+        "星印付きを開く"
       ],
       "Go to Trash": [
         "ゴミ箱を開く"
@@ -5383,6 +5300,9 @@
       ],
       "Interval": [
         "間隔"
+      ],
+      "Keep me signed in": [
+        ""
       ],
       "Keep messages in Sent/Drafts": [
         "送信済み/下書きを保持"

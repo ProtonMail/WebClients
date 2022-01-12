@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
@@ -316,9 +316,6 @@
       "Enable multi-user support": [
         "Увімкнути підтримку декількох користувачів"
       ],
-      "Enter password to continue": [
-        "Введіть пароль для продовження"
-      ],
       "Export": [
         "Експорт"
       ],
@@ -467,7 +464,7 @@
         "Відкрити панель навігації"
       ],
       "Ordered list": [
-        "Впорядкований список"
+        "Нумерований список"
       ],
       "Organization": [
         "Організація"
@@ -661,6 +658,9 @@
       "Sign in": [
         "Увійти"
       ],
+      "Sign in again to continue": [
+        "Увійдіть знову для продовження"
+      ],
       "Sign out": [
         "Вийти"
       ],
@@ -722,7 +722,7 @@
         "Розблокувати дані"
       ],
       "Unordered list": [
-        "Невпорядкований список"
+        "Маркований список"
       ],
       "Unsubscribe": [
         "Відмовитися від підписки"
@@ -894,7 +894,7 @@
         "Генерувати відсутні ключі"
       ],
       "Make default": [
-        "Зробити типовим"
+        "Зробити типовою"
       ],
       "Saving": [
         "Збереження"
@@ -970,98 +970,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Я не на робочому місці з обмеженим доступом до електронної пошти."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } для Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } для iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } для браузера"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } для Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } для iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } для macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } для браузера"
-      ],
-      "Admin": [
-        "Адміністратор"
-      ],
-      "Proton Account for web": [
-        "Обліковий запис Proton для браузера"
-      ],
-      "ProtonContacts for web": [
-        "ProtonContacts для браузера"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge для GNU/Linux"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge для macOS"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge для Windows"
-      ],
-      "ProtonMail for Android": [
-        "ProtonMail для Android"
-      ],
-      "ProtonMail for iOS": [
-        "ProtonMail для iOS"
-      ],
-      "ProtonMail for web": [
-        "ProtonMail для браузера"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Імпорт-Експорт"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail Імпорт-Експорт для GNU/Linux"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "ProtonMail Імпорт-Експорт для macOS"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "ProtonMail Імпорт-Експорт для Windows"
-      ],
-      "ProtonMail settings for web": [
-        "Налаштування ProtonMail для браузера"
-      ],
-      "ProtonVPN for Android": [
-        "ProtonVPN для Android"
-      ],
-      "ProtonVPN for Android TV": [
-        "ProtonVPN для Android TV"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "ProtonVPN для GNU/Linux"
-      ],
-      "ProtonVPN for iOS": [
-        "ProtonVPN для iOS"
-      ],
-      "ProtonVPN for macOS": [
-        "ProtonVPN для macOS"
-      ],
-      "ProtonVPN for web": [
-        "ProtonVPN для браузера"
-      ],
-      "ProtonVPN for Windows": [
-        "ProtonVPN для Windows"
-      ],
-      "ProtonVPN settings for web": [
-        "ProtonVPN налаштування для браузера"
       ]
     },
     "Badge for domain": {
@@ -3240,7 +3148,7 @@
         "${ n } адрес"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } не впливає на доставку електронної пошти, але ми рекомендуємо ${ quarantine } для кращої безпеки."
+        "${ none } не впливає на доставлення електронної пошти, але ми рекомендуємо ${ quarantine } для кращої безпеки."
       ],
       "${ number } city": [
         "${ number } місто",
@@ -3363,10 +3271,10 @@
         "Файл відновлення дає змогу розблокувати і переглянути дані після скидання облікового запису. "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Фраза відновлення дозволяє вам отримати доступ до облікового запису та відновити зашифровані повідомлення, якщо ви забудете пароль."
+        "Фраза відновлення дає вам змогу отримати доступ до облікового запису та відновити зашифровані повідомлення, якщо ви забудете пароль."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Отримайте доступ до заблокованого вмісту, наприклад, соціальні мережі, новини, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви знаходитесь."
+        "Отримайте доступ до заблокованого вмісту, наприклад, соціальні мережі, новини, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви перебуваєте."
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
         "Отримуйте доступ до потокових служб, наприклад, ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, незалежно від місця перебування."
@@ -3498,7 +3406,7 @@
         "Ви дійсно хочете остаточно видалити усі ваші журнали?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Ви впевнені, що хочете забрати права адміністратора в цього користувача?"
+        "Ви впевнені, що хочете забрати права адміністратора у цього користувача?"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Автовідповідач активний щомісяця між заданим початковим та кінцевим часом."
@@ -3612,7 +3520,7 @@
         "Створіть посилання на ваш календар і надайте доступ до нього будь-кому за межами Proton. Лише ви можете додавати та вилучати події."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "Створюйте й керуйте підлеглими обліковими записами та признайте їм поштові адреси у своєму власному домені."
+        "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Створюйте електронні адреси для інших людей, керуйте ProtonMail для бізнесу, навчального закладу чи групи. Розпочніть з додавання назви своєї організації та власного домену (наприклад, @yourcompany.com). "
@@ -3825,7 +3733,7 @@
         "Якщо інший адміністратор змінив цей пароль, вам необхідно запитати в нього новий пароль організації."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Якщо системний часовий пояс не відповідає налаштуванням поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж один раз на день)."
+        "Якщо системний часовий пояс відрізняється від поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж один раз на день)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Якщо цей домен зараз отримує електронну пошту, виберіть вкладку ${ boldAddresses } і додайте всі активні електронні адреси перед зміною MX запису для безперебійного переходу."
@@ -3849,7 +3757,7 @@
         "Якщо раніше ви ніколи не використовували двоетапну перевірку, ми наполегливо рекомендуємо вам ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Якщо ви встановили обидва SPF та DKIM, DMARC дозволить вам вказати, як інші сервіси електронної пошти повинні доставляти пошту для вашого домену, якщо обидві перевірки SPF та DKIM не пройшли. Це може перешкоджати спамерам представлятися вашим іменем, але також може спричиняти проблеми при доставленні при неправильному налаштуванні."
+        "Якщо ви встановили обидва SPF та DKIM, DMARC дозволить вам вказати, як інші сервіси електронної пошти повинні доставляти пошту для вашого домену, якщо обидві перевірки SPF та DKIM не пройшли. Це може перешкоджати спамерам представлятися вашим іменем, але також може спричиняти проблеми доставлення при неправильному налаштуванні."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Якщо ви втратите свої облікові дані для входу і вам необхідно буде відновити доступ, ${ boldImperative }, щоб у вас були ${ boldAccountRecovery }."
@@ -3873,7 +3781,7 @@
         "Якщо ви хочете зберегти наявний запис SPF, ви можете просто додати ${ spf } до нього після ${ spfValue }. Не створюйте додаткових записів SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "Якщо ви хочете об'єднати цей обліковий запис з іншим, не видаляйте його."
+        "Якщо ви хочете об'єднати цей обліковий запис з іншим, НЕ видаляйте його."
       ],
       "Image URL": [
         "URL-адреса зображення"
@@ -3933,19 +3841,19 @@
         "Вставити посилання"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Встановіть файл конфігурації країни для підключення до випадкового сервера у вибраній країні."
+        "Установіть файл конфігурації країни для під'єднання до випадкового сервера у вибраній країні."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Встановіть файл конфігурації безплатного сервера для підключення до певного сервера в одному з трьох безплатних розташувань."
+        "Установіть файл конфігурації безплатного сервера для під'єднання до певного сервера в одному з трьох безплатних розташувань."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Встановіть файл конфігурації Secure Core для отримання переваг додаткового захисту від компрометації кінцевої точки з'єднання VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Встановіть файл конфігурації сервера для підключення до певного сервера у вибраній країні."
+        "Установіть файл конфігурації сервера для під'єднання до певного сервера у вибраній країні."
       ],
       "Internet connection lost.": [
-        "Втрачено Інтернет-з'єднання."
+        "Втрачено інтернет-з'єднання."
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Відсутнє з'єднання з інтернетом. Перевірте доступ до мережі свого пристрою."
@@ -4109,8 +4017,8 @@
       "Not set": [
         "Не встановлено"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Не ваш комп'ютер? Скористайтеся вікном приватного перегляду, щоб увійти. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Користуєтеся чужим пристроєм? Використовуйте вікно приватного перегляду, щоб увійти та завершити сеанс, коли все готово. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Кількість VPN-з'єднань, які можна призначити користувачам. Кожен під'єднаний пристрій використовує одне VPN-з'єднання."
@@ -4266,16 +4174,22 @@
         "придбати додатковий простір"
       ],
       "Queued": [
-        "В черзі"
+        "У черзі"
       ],
       "read our two-factor authentication Guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
+      ],
+      "Recovery file downloaded": [
+        "Файл відновлення завантажено"
       ],
       "Recovery files have been voided": [
         "Фали відновлення були видалені"
       ],
       "Recovery phrase copied to clipboard": [
         "Фразу відновлення скопійовано до буфера обміну"
+      ],
+      "Recovery phrase downloaded": [
+        "Фразу відновлення завантажено"
       ],
       "Recovery phrase has been disabled": [
         "Фразу відновлення вимкнено"
@@ -4341,7 +4255,7 @@
         "Деякі ключі успішно повторно активовано"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF використовується для зазначення, кому дозволено надсилати пошту для домену, тому ми наполегливо раекомендуємо включити ProtonMail у ваш запис SPF. Додайте такий TXT запис у ваш DNS. Зазвичай це можна зробити на панелі керування вашого реєстратора доменних імен."
+        "SPF використовується для зазначення, кому дозволено надсилати пошту для домену, тому ми наполегливо рекомендуємо включити ProtonMail у ваш запис SPF. Додайте такий TXT запис у ваш DNS. Зазвичай це можна зробити на панелі керування вашого реєстратора доменних імен."
       ],
       "Starter VPN service with P2P support.": [
         "Початковий рівень VPN з підтримкою P2P."
@@ -4389,7 +4303,7 @@
         "Немає платіжних реквізитів, доступних для вашої поточної передплати."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Ці файли конфігурації дозволяють обрати сервер ProtonVPN, з яким ви з'єднуєтесь при використанні сторонньої програми VPN чи налаштованому VPN-з'єднанні маршрутизатора."
+        "Ці файли конфігурації дають змогу обрати сервер ProtonVPN, з яким ви з'єднуєтесь при використанні сторонньої програми VPN чи налаштованому VPN-з'єднанні маршрутизатора."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -4488,7 +4402,7 @@
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Щоб захистити своє з'єднання з Інтернетом, завантажте та встановіть програму ProtonVPN для вашого пристрою і підключіться до сервера ProtonVPN."
+        "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ProtonVPN для вашого пристрою і під'єднайтеся до сервера ProtonVPN."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
@@ -4569,7 +4483,7 @@
         "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться назад."
+        "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться."
       ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
@@ -4587,7 +4501,7 @@
         "Ми рекомендуємо вам використовувати офіційні програми ProtonVPN, якщо це можливо."
       ],
       "We recommend using your recovery phrase instead.": [
-        "Рекомендовано натомість користуватися вашою фразою відновлення."
+        "Радимо натомість скористатися вашою фразою відновлення."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів."
@@ -4623,7 +4537,7 @@
         "Що ви хочете імпортувати зі свого облікового запису Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Якщо вимкнено, це не дозволяє завантажувати всі файли зображень на вашому пристрої без вашої згоди.\t"
+        "Якщо вимкнено, це запобігатиме завантаженню файлів зображень на вашому пристрої без вашої згоди.\t"
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Коли сповіщення увімкнено, ми надішлемо сповіщення на вашу пов'язану адресу електронної пошти, якщо у вашій поштовій скриньці ProtonMail з'являться нові повідомлення."
@@ -4668,7 +4582,7 @@
         "Ви можете налаштувати і завантажити свої рахунки для бухгалтерського обліку."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Ви можете увімкнути журнал авторизації, що б побачити хто і з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час, коли було отримано доступ, а також невдалі спроби."
+        "Ви можете увімкнути журнал авторизації, щоб бачити хто й з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час, коли було отримано доступ, а також невдалі спроби."
       ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
@@ -4736,6 +4650,9 @@
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
         "Ви не зможете відновити зашифровані дані після скидання облікового запису за допомогою завантажених файлів відновлення."
       ],
+      "You'll stay signed in even after you close the browser.": [
+        "Сеанс буде активним навіть після закриття браузера."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Для використання ${ toAppName }, створіть адресу."
       ],
@@ -4782,7 +4699,7 @@
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Пароль вашої організації можна надати іншим учасникам, яких ви бажаєте зробити адміністраторами. Він також може бути резервним кодом відновлення для отримання доступу до організації у випадку втрати доступу до облікового запису. Зберігайте цей пароль в надійному місці."
+        "Пароль вашої організації можна надати іншим учасникам, яких ви бажаєте зробити адміністраторами. Він також може бути резервним кодом відновлення для отримання доступу до організації у випадку втрати доступу до облікового запису. Зберігайте цей пароль у надійному місці."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Електронні листи вашої організації захищаються наскрізним шифруванням з використанням ключа організації. Цей відбиток можна використати для перевірки того, що всі адміністратори у вашому обліковому записі мають однаковий ключ."
@@ -4806,7 +4723,7 @@
         "Ваша фраза відновлення"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Фраза відновлення - це послідовність з 12 слів у певному порядку."
+        "Фраза відновлення — це послідовність з 12 слів у певному порядку."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
@@ -5569,6 +5486,9 @@
       ],
       "Interval": [
         "Інтервал"
+      ],
+      "Keep me signed in": [
+        "Не виходити"
       ],
       "Keep messages in Sent/Drafts": [
         "Зберігати повідомлення у Надісланих/Чернетках"
@@ -7724,7 +7644,7 @@
         "${ hours } година",
         "${ hours } години",
         "${ hours } годин",
-        "${ hours } годин"
+        "${ hours } години"
       ],
       "${ minutes } minute": [
         "${ minutes } хвилина",
@@ -8235,7 +8155,7 @@
         "Немає способу відновлення"
       ],
       "Open actions dropdown": [
-        "Випадне меню дій"
+        "Спадне меню дій"
       ],
       "Open help menu": [
         "Відкрити меню довідки"
@@ -8781,7 +8701,7 @@
         "Оновити типовий шрифт і розмір"
       ],
       "Your default font will look like following:": [
-        "Ваш типовий шрифт виглядатиме так:"
+        "Ваш типовий шрифт матиме такий вигляд:"
       ]
     },
     "Upgrade": {

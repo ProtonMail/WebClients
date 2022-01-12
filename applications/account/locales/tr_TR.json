@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "activate": [
-        "etkinleştir"
-      ],
       "Activate": [
         "Etkinleştir"
+      ],
+      "activate": [
+        "etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
@@ -44,7 +44,7 @@
         "Kuruluş anahtarını etkinleştir"
       ],
       "Activate recovery": [
-        ""
+        "Kurtarmayı etkinleştir"
       ],
       "Add": [
         "Ekle"
@@ -149,7 +149,7 @@
         "Bizimle canlı konuşun"
       ],
       "Check import progress": [
-        ""
+        "İçe aktarım ilerlemesini kontrol edin"
       ],
       "Choose a file or drag it here": [
         "Bir dosya seçin veya buraya sürükleyin"
@@ -185,7 +185,7 @@
         "Onayla"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "${ linkToShow } bağlantısının açılmasını onaylayın"
       ],
       "Contact support": [
         "İletişim desteği"
@@ -263,10 +263,10 @@
         "Kod almadınız mı?"
       ],
       "Disable recovery phrase": [
-        ""
+        "Kurtarma anahtar metni devre dışı bırakılsın"
       ],
       "Disable recovery phrase?": [
-        ""
+        "Kurtarma anahtar metni devre dışı bırakılsın mı?"
       ],
       "Discard": [
         "Vazgeç"
@@ -278,10 +278,10 @@
         "Düşür"
       ],
       "Downgrade account": [
-        ""
+        "Hesabı eski sürüme döndür"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "${ BRAND_NAME } ${ downgradedPlanName } eski sürümüne geçin"
       ],
       "Download": [
         "İndir"
@@ -316,9 +316,6 @@
       "Enable multi-user support": [
         "Çoklu kullanıcı desteğini etkinleştir"
       ],
-      "Enter password to continue": [
-        "Devam etmek için şifreyi girin"
-      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -338,13 +335,13 @@
         "Anahtar oluştur"
       ],
       "Generate new recovery phrase": [
-        ""
+        "Yeni kurtarma anahtar metni oluştur"
       ],
       "Generate new recovery phrase?": [
-        ""
+        "Yeni kurtarma anahtar metni oluşturulsun mu?"
       ],
       "Generate recovery phrase": [
-        ""
+        "Yeni kurtarma anahtar metni oluşturun"
       ],
       "Get ProtonVPN Plus": [
         "ProtonVPN Plus edinin"
@@ -377,13 +374,13 @@
         "İçe aktar"
       ],
       "Import calendars": [
-        ""
+        "Takvimleri içe aktarın"
       ],
       "Import contacts": [
         "Kişileri içe aktar"
       ],
       "Import emails": [
-        ""
+        "E-postalarınızı içe aktarın"
       ],
       "Import from .ics": [
         ".ics'ten içe aktar"
@@ -413,7 +410,7 @@
         "Devam et"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "${ BRAND_NAME } ${ currentPlanName } hesabımı koru"
       ],
       "label emails as": [
         "e-postayı etiketleyin"
@@ -578,7 +575,7 @@
         "Oturum açmaya geri dön"
       ],
       "Return to sign in": [
-        ""
+        "Girişe dön"
       ],
       "Review": [
         "İncele"
@@ -602,7 +599,7 @@
         "Dosyaları seç"
       ],
       "Select language for invitation emails": [
-        ""
+        "Davet e-postaları için dil seçiminizi yapın"
       ],
       "Select plan": [
         "Plan seçin"
@@ -626,7 +623,7 @@
         "Tümünü yakalamayı ayarla"
       ],
       "Set recovery phrase": [
-        ""
+        "Kurtarma anahtar metni oluştur"
       ],
       "Share via link": [
         "Bağlantı yoluyla paylaş"
@@ -660,6 +657,9 @@
       ],
       "Sign in": [
         "Oturum açın"
+      ],
+      "Sign in again to continue": [
+        "Devam etmek için tekrar oturum açın"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -719,7 +719,7 @@
         "Kilidi aç"
       ],
       "Unlock data": [
-        ""
+        "Verilere erişim engelini kaldırın"
       ],
       "Unordered list": [
         "Sırasız liste"
@@ -791,7 +791,7 @@
         "Tüm kurtarma dosyaları geçersiz kılınsın mı?"
       ],
       "Void anyway": [
-        ""
+        "Yine de iptal edin"
       ],
       "Warning": [
         "Uyarı"
@@ -876,10 +876,10 @@
         "Eksik anahtarları oluştur"
       ],
       "Make default": [
-        ""
+        "Varsayılan yap"
       ],
       "Saving": [
-        ""
+        "Kaydediliyor"
       ]
     },
     "Address status": {
@@ -931,7 +931,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "ICS dosyası boş"
       ],
       "Invalid event": [
         "Geçersiz etkinlik"
@@ -943,7 +943,7 @@
         "Geçersiz yöntem"
       ],
       "Unsupported calendar component": [
-        ""
+        "Takvim bileşeni desteklenmiyor"
       ],
       "Unsupported event": [
         "Desteklenmeyen etkinlik"
@@ -952,98 +952,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ofis dışındayım ve e-postama erişimim kısıtlı."
-      ]
-    },
-    "Badge": {
-      "${ calendarAppName } for Android": [
-        "${ calendarAppName } Android"
-      ],
-      "${ calendarAppName } for iOS": [
-        "${ calendarAppName } iOS"
-      ],
-      "${ calendarAppName } for web": [
-        "${ calendarAppName } Web"
-      ],
-      "${ driveAppName } for Android": [
-        "${ driveAppName } Android"
-      ],
-      "${ driveAppName } for iOS": [
-        "${ driveAppName } iOS"
-      ],
-      "${ driveAppName } for macOS": [
-        "${ driveAppName } macOS"
-      ],
-      "${ driveAppName } for web": [
-        "${ driveAppName } Web"
-      ],
-      "Admin": [
-        "Yönetici"
-      ],
-      "Proton Account for web": [
-        "Web için Proton Hesabı"
-      ],
-      "ProtonContacts for web": [
-        "Web için ProtonContacts"
-      ],
-      "ProtonMail Bridge": [
-        "ProtonMail Köprüsü"
-      ],
-      "ProtonMail Bridge for GNU/Linux": [
-        "GNU/Linux için ProtonMail Köprüsü"
-      ],
-      "ProtonMail Bridge for macOS": [
-        "macOS için ProtonMail Bridge"
-      ],
-      "ProtonMail Bridge for Windows": [
-        "Windows için ProtonMail Köprüsü"
-      ],
-      "ProtonMail for Android": [
-        "Android için ProtonMail"
-      ],
-      "ProtonMail for iOS": [
-        "iOS için ProtonMail"
-      ],
-      "ProtonMail for web": [
-        "Web için ProtonMail"
-      ],
-      "ProtonMail Import-Export": [
-        "ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for GNU/Linux": [
-        "GNU/Linux için ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for macOS": [
-        "macOS için ProtonMail Import-Export"
-      ],
-      "ProtonMail Import-Export for Windows": [
-        "Windows için ProtonMail Import-Export"
-      ],
-      "ProtonMail settings for web": [
-        "Web için ProtonMail ayarları"
-      ],
-      "ProtonVPN for Android": [
-        "Android için ProtonVPN"
-      ],
-      "ProtonVPN for Android TV": [
-        "Android TV için ProtonVPN"
-      ],
-      "ProtonVPN for GNU/Linux": [
-        "GNU/Linux için ProtonVPN"
-      ],
-      "ProtonVPN for iOS": [
-        "iOS için ProtonVPN"
-      ],
-      "ProtonVPN for macOS": [
-        "macOS için ProtonVPN"
-      ],
-      "ProtonVPN for web": [
-        "Web için ProtonVPN"
-      ],
-      "ProtonVPN for Windows": [
-        "Windows için ProtonVPN"
-      ],
-      "ProtonVPN settings for web": [
-        "Web için ProtonVPN ayarları"
       ]
     },
     "Badge for domain": {
@@ -1292,7 +1200,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
+        "Başka bir takvimin ICS dosyalarını ${ CALENDAR_APP_NAME } içine aktarabilirsiniz. Böylece bir etkinliği ya da tüm günlüğünüzün kolayca içe aktarabilirsiniz."
       ]
     },
     "Calendar limit warning": {
@@ -1335,7 +1243,7 @@
         "Takvim bağlantısına erişilemiyor"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Takvim bağlantısına geçici olarak erişilemiyor"
       ],
       "Failed to sync calendar": [
         "Takvim senkronize edilemedi"
@@ -1344,7 +1252,7 @@
         "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
       ],
       "Unsupported calendar format": [
-        ""
+        "Takvim biçimi desteklenmiyor"
       ]
     },
     "Calendar view": {
@@ -1633,33 +1541,33 @@
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
-        ""
+        "Programdaki hatalar ya da kalite sorunu"
       ],
       "I use a different Proton account": [
-        ""
+        "Farklı bir Proton hesabı kullanıyorum"
       ],
       "Missing feature(s)": [
         "Eksik nitelik(ler)"
       ],
       "My reason isn't listed, please comment": [
-        ""
+        "Gerekçem listede yok, lütfen yorum ekleyin"
       ],
       "Streaming service unsupported": [
-        ""
+        "Medya akış hizmeti desteği yok"
       ],
       "Subscription is too expensive": [
-        ""
+        "Abonelik çok pahalı"
       ],
       "Switching to a different provider": [
-        ""
+        "Farklı bir hizmet sağşayıcıya geçiş yapıyorum"
       ],
       "Temporary need, may come back in the future": [
-        ""
+        "Geçici olarak bırakıyorum, ileride yeniden kullanıcı olabilirim"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
+        "Bize önerilerinizi gönderin!"
       ]
     },
     "Drive feature": {
@@ -1694,7 +1602,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } iptal edildi."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } güncellendi.\n${ eventDetailsText }"
@@ -1798,7 +1706,7 @@
         "Otomatik yanıtlar ücretli bir özelliktir. Bu özelliği kullanmak için ücretli bir hesaba yükseltin."
       ],
       "Calendar limit reached": [
-        ""
+        "Takvim sınırına ulaşıldı"
       ],
       "Calendar primary private key is not decrypted": [
         "Takvim birincil özel anahtarının şifresi çözülemedi"
@@ -1807,7 +1715,7 @@
         "Kullanıcı adı kontrol edilemiyor, daha sonra tekrar deneyin"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Kişisel takvim sınırı nedeniyle içe aktarılan takvimlerin tümü oluşturulamadı."
       ],
       "Can't validate email, try again later": [
         "E-postayı doğrulanamıyor, daha sonra tekrar deneyin"
@@ -1829,11 +1737,11 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "",
-        ""
+        "En az ${ calendarToFixCount } takvimi kaldırın"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
-        ""
+        "En az ${ calendarToFixCount } takvimi kaldırın ya da"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor, daha sonra tekrar deneyin"
@@ -1902,7 +1810,7 @@
         "Geçersiz son kullanma tarihi"
       ],
       "Invalid invitation link": [
-        ""
+        "Davet bağlantısı geçersiz"
       ],
       "Invalid name": [
         "Geçersiz isim"
@@ -1927,7 +1835,7 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
-        ""
+        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimine aktarın"
       ],
       "Missing signature": [
         "İmza eksik"
@@ -1957,7 +1865,7 @@
         "Kuruluş anahtarının şifresi çözülmedi."
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Kuruluş belirlenemedi. Yeniden deneyin."
       ],
       "Passwords do not match": [
         "Parolalar eşleşmiyor"
@@ -1988,7 +1896,7 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "",
-        ""
+        "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
       ],
       "Please generate keys before you try to change your password": [
         "Lütfen şifrenizi değiştirmeyi denemeden önce anahtarlar oluşturun"
@@ -1997,7 +1905,7 @@
         "Lütfen sayfayı yenileyin."
       ],
       "Please set a recovery email first": [
-        ""
+        "Lütfen önce bir kurtarma e-posta adresi ayarlayın"
       ],
       "Please set a recovery phone number first": [
         "Lütfen önce bir kurtarma telefon numarası ayarlayın"
@@ -2066,10 +1974,10 @@
         "Klasör adı çok uzun. Lütfen farklı bir isim seçin."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        ""
+        "Kurtarma dosyanızdaki anahtarlar doğrulanamadı. Lütfen destek ekibi ile görüşün."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        ""
+        "Kurtarma dosyanızdaki anahtarlar doğrulanamadı. Lütfen ayrıntılı bilgi almak için tek tek yükleyin."
       ],
       "The label name is too long. Please choose a different name.": [
         "Etiket adı çok uzun. Lütfen farklı bir isim seçin."
@@ -2117,10 +2025,10 @@
         "Bilinmeyen ödeme belirteci durumu"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
+        "Yüklenen dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        ""
+        "Yüklenen dosyalar geçerli kişisel anahtarlar değil. Lütfen doğrulayıp yeniden deneyin."
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Doğrulama başarısız oldu, lütfen bir saat içinde tekrar deneyin."
@@ -2132,7 +2040,7 @@
         "Hizmet sağlayıcınıza bağlanamadık."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
+        "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Hatalı doğrulama kodu. Lütfen doğrulama kodunu doğru bir şekilde kopyaladığınızdan emin olun ve tekrar deneyin. Değişikliklerin etkili olması 24 saati bulabilir."
@@ -2159,13 +2067,13 @@
         "Bir isim belirlemelisiniz"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
+        "Hesabınızın ya da kuruluşunuzun ödeme süresi geçmiş bir faturası var. Lütfen ödenmemiş tüm faturaları ödeyin."
       ],
       "Your import will not be processed.": [
         "İçe aktarımınız işlenmeyecektir."
       ],
       "Zero keys reactivated": [
-        ""
+        "Hiç bir anahtar yeniden etkinleştirilmemiş"
       ]
     },
     "Error importing calendar": {
@@ -2293,7 +2201,7 @@
         "Başlama zamanı eksik"
       ],
       "No UID, title or start time": [
-        ""
+        "UID, başlık veya başlangıç zamanı yok"
       ],
       "Non-Gregorian": [
         "Miladi değil"
@@ -2305,7 +2213,7 @@
         "Özgün yinelenen olay bulunamadı"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Yinelenen etkinliğin herhangi bir yinelemesi yok"
       ],
       "Recurring rule not supported": [
         "Tekrarlayan kural desteklenmiyor"
@@ -2384,7 +2292,7 @@
         "Eklenen ICS dosyası çözülemedi"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Eklenmiş ICS dosyası okunamadı"
       ],
       "Invalid invitation": [
         "Geçersiz davet"
@@ -2719,7 +2627,7 @@
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "",
-        ""
+        "Etkinlikleriniz şifrelenirken ve eklenirken bir sorun çıktı. ${ totalImported } / ${ totalToImport } etkinlik içe aktarıldı."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Etkinliğinizi şifrelerken ve eklerken bir hata oluştu. Hiçbir olay içe aktarılamaz.",
@@ -2916,67 +2824,67 @@
     },
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu": [
-        ""
+        "Seçenekler menüsü açmak için ${ boldManage } üzerine tıklayın"
       ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        ""
+        "E-posta hizmeti sağlayıcınıza bağlı olarak, Proton içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        ""
+        "3 nokta (...) üzerine tıklayarak menüyü açın"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "Bir ${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın"
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        ""
+        "${ yahooMailLink } üzerindeki profilinizin altından ${ boldAccountInfo } bölümüne gidin"
       ],
       "Go to ${ boldAccountSecurity }": [
-        ""
+        "${ boldAccountSecurity } bölümüne gidin"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
-        ""
+        "Outlook.com ${ securitySettingsLink } bölümüne gidin"
       ],
       "If 2-step verification is off, turn it on": [
-        ""
+        "2 aşamalı kimlik doğrulaması kapalı ise açın"
       ],
       "Open your ${ yahooMailLink } contacts": [
-        ""
+        "${ yahooMailLink } kişilerinizi açın"
       ],
       "Open your Outlook ${ outlookContactsLink }": [
-        ""
+        "Outlook ${ outlookContactsLink } bölümünü açın"
       ],
       "Select ${ boldExportContacts } and choose which contacts to export": [
-        ""
+        "${ boldExportContacts } seçin ve dışa aktarmak istediğiniz kişileri seçin"
       ],
       "Select ${ boldExportCSV }": [
-        ""
+        "${ boldExportCSV } seçin"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        ""
+        "E-postaları Proton içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        ""
+        "E-postaları Proton içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
       ]
     },
     "Import instructions emphasis": {
@@ -2990,77 +2898,77 @@
         "uygulama parolası"
       ],
       "Can view all details": [
-        ""
+        "Tüm ayrıntıları görebilir"
       ],
       "Export": [
-        ""
+        "Dışa aktar"
       ],
       "Export contacts": [
-        ""
+        "Kişiler dışa aktar"
       ],
       "Export to CSV file": [
-        ""
+        "CSV olarak dışa aktar"
       ],
       "ICS": [
-        ""
+        "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        ""
+        "sonraki adımda tüm izinleri seçmelisiniz"
       ],
       "Manage": [
-        ""
+        "Yönet"
       ],
       "Publish a calendar": [
-        ""
+        "Bir takvimi yayınla"
       ]
     },
     "Import instructions link": {
       "app password": [
-        ""
+        "uygulama parolası"
       ],
       "app password or enable IMAP": [
-        ""
+        "uygulama parolası ya da IMAP etkinleştirin"
       ],
       "contacts": [
-        ""
+        "kişiler"
       ],
       "CSV file": [
-        ""
+        "CSV dosyası"
       ],
       "full calendar view": [
-        ""
+        "tam takvim görünümü"
       ],
       "ICS file": [
-        ""
+        "ICS dosyası"
       ],
       "security settings": [
-        ""
+        "güvenlik ayarları"
       ],
       "shared calendars": [
-        ""
+        "paylaşılmış takvimler"
       ],
       "Yahoo Mail": [
-        ""
+        "Yahoo Mail"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
-        ""
+        "${ boldICS } bağlantısına tıklayıp dosyayı indirin"
       ],
       "Go to ${ calendarLink } in your Outlook.com settings": [
-        ""
+        "Outlook.com ayarlarınızdan ${ calendarLink } bölümüne gidin"
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
-        ""
+        "Yahoo Mail üzerinde ${ calendarViewLink } bölümüne gidin"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
-        ""
+        "İmleci içe aktarmak istediğiniz takvim üzerine getirin ve menüyü açın"
       ],
       "Select ${ boldExport } to export the calendar as an ICS file": [
-        ""
+        "Takvimi ICS olarak dışa aktarmak için ${ boldExport } seçin"
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        ""
+        "${ boldPublish } altından, içe aktarmak istediğiniz takvimi seçin. İzinleri ${ boldCanViewAllDetails } olarak ayarlayıp yayınlayın"
       ]
     },
     "Import key": {
@@ -3070,7 +2978,7 @@
     },
     "Import provider": {
       "Other": [
-        ""
+        "Diğer"
       ]
     },
     "Import status": {
@@ -3093,7 +3001,7 @@
         "Başarısız Oldu"
       ],
       "In progress": [
-        ""
+        "İşleniyor"
       ],
       "Paused": [
         "Duraklatıldı"
@@ -3104,13 +3012,13 @@
     },
     "Import type": {
       "Calendar": [
-        ""
+        "Takvim"
       ],
       "Contacts": [
-        ""
+        "Kişiler"
       ],
       "Mail": [
-        ""
+        "Posta"
       ]
     },
     "Import warning": {
@@ -3119,7 +3027,7 @@
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "",
-        ""
+        "${ totalEventsDiscarded } / ${ totalEvents } etkinlik içe aktarılmayacak. Ayrıntıları görmek için genişletin."
       ],
       "No contact can be imported. Click for details": [
         "Kişi içe aktarılamadı. Ayrıntılar için tıklayın"
@@ -3136,22 +3044,22 @@
         "${ appName }, ${ enableDesktopNotifications } için izninize ihtiyaç duyuyor."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        ""
+        "${ boldWarning } Devam ederseniz hesabınızdaki mevcut tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } varsayılan takvim olarak ayarlanacaktır."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ CalendarsToBeCreatedCount } yeni takvim",
+        "${ calendarsToBeCreatedCount } adet yeni takvim"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "",
-        ""
+        "${ calendarsToBeMerged } birleştirilmiş takvim"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "",
-        ""
+        "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Ücretsiz"
@@ -3180,11 +3088,11 @@
       ],
       "${ numContactGroups } contact group": [
         "",
-        ""
+        "${ numContactGroups } kişi grubu"
       ],
       "${ numContacts } contact": [
         "",
-        ""
+        "${ numContacts } kişi"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dosya bulundu",
@@ -3204,8 +3112,8 @@
         "VPN aboneliği ekleyerek, hem VPN hem de e-posta için ${ saveExtra20 } tasarruf edin."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ providerCalendars.length }'daki ${ selectedCalendarsTotal} takvimi",
+        "${ providerCalendars.length }'daki ${ selectedCalendarsTotal} takvimleri"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dosya seçildi",
@@ -3258,7 +3166,7 @@
         "Özgür ve sansürsüz bir İnternet herkese açık olmalıdır."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        ""
+        "Bir kurtarma dosyası, bir hesap sıfırlandıktan sonra verilerinizin kilidini açmanıza ve görüntülemenize olanak tanır. "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Kurtarma anahtar metni, şifrenizi unutursanız hesabınıza erişmenizi sağlar ve şifreli iletilerinizi kurtarır."
@@ -3273,10 +3181,10 @@
         "Ödenmemiş faturalar nedeniyle hesaba erişim kısıtlandı. Lütfen yöneticinizle iletişime geçin."
       ],
       "account recovery and data recovery method": [
-        ""
+        "hesap kurtarma ve veri kurtarma yöntemi"
       ],
       "account recovery method": [
-        ""
+        "hesap kurtarma yöntemi"
       ],
       "Account successfully updated": [
         "Hesap başarıyla güncellendi"
@@ -3310,7 +3218,7 @@
         "Adres"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
-        ""
+        "Parola sıfırlama işleminden sonra verileriniz, güvenliğini sağlamak için şifrelenmiş biçimde kilitlenir."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Bitcoin ödemenizi yaptıktan sonra, yükseltmek için lütfen aşağıdaki talimatları izleyin."
@@ -3336,10 +3244,10 @@
         "Tüm değişiklikleriniz kaybolacak."
       ],
       "Allow recovery by email": [
-        ""
+        "E-posta ile kurtarmaya izin verin"
       ],
       "Allow recovery by phone": [
-        ""
+        "Telefonla kurtarmaya izin verin"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "{ mailAppName }'de kendi alan adınızı (ya da adlarınızı) kullanarak e-postalarınızı barındırmanıza olanak sağlar. örn. ali.yilmaz@ornek.com"
@@ -3450,13 +3358,13 @@
         "Kara Cuma 2020'de yeni gelen indirimi uygulandı"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "Gönderenlerin bir mesajı açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz plana düşürürseniz, gelecekte yeniden yükseltme yapsanız bile bu avantajları kalıcı olarak kaybedersiniz."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Bir önceki sürüme geçerek aşağıdaki avantajları kaybedersiniz. Devam etmek istediğinizden emin misiniz?"
       ],
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilmeyebilir"
@@ -3490,7 +3398,7 @@
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
-        ""
+        "${ calendarsToBeCreated } yeni takvim ekle"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan mesajlar için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
@@ -3508,7 +3416,7 @@
         "Diğer kişiler için e-posta adresleri oluşturun, bir işletme, okul veya grup için Protonmail'i yönetin. Kuruluşunuzun adını ve özel etki alanını ekleyerek başlayın (ör. @sirketiniz.com). "
       ],
       "Create in": [
-        ""
+        "'de oluştur"
       ],
       "Creating your Proton account": [
         "Proton hesabınızı oluşturun"
@@ -3581,7 +3489,7 @@
         "Sürüm düşürme, ücretli ProtonVPN sunucularına herhangi bir bağlantıyı sonlandıracaktır."
       ],
       "Download recovery file": [
-        ""
+        "Kurtarma dosyasını indirin"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "En sevdiğiniz uygulamayı bugün indirin ve gittiğiniz her yerde gizliliğinizi yanınızda taşıyın."
@@ -3611,7 +3519,7 @@
         "Bu etiket ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        ""
+        "Anahtar metniyle kurtarmanın tekrar etkinleştirilmesi, yeni bir kurtarma anahtar metni oluşturacaktır."
       ],
       "Encryption setting updated": [
         "Şifreleme ayarları güncellendi"
@@ -3641,7 +3549,7 @@
         "Kendi şifrenizi (kuruluş yöneticisi olarak) ve bu kullanıcının yeni şifresini girin."
       ],
       "Enter your Proton account email address or username.": [
-        ""
+        "Proton hesabı e-posta adresinizi veya kullanıcı adınızı girin."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi girin, size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
@@ -3695,7 +3603,7 @@
         "10 Gbps'ye kadar hıza sahip tam özellikli VPN."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        ""
+        "Yeni bir kurtarma anahtarı metni oluşturmak eskisini devre dışı bırakır."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Açık anahtarınızı arkadaşlarınıza verin ya da çevrimiçi yayınlayın, böylece herkes size uçtan uca şifreli e-posta gönderebilir!"
@@ -3707,7 +3615,7 @@
         "buradan"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        ""
+        "Uzak içeriği bir vekil sunucu aracılığıyla yükleyerek tanımlayıcı bilgileri gizler. İçeriği ek olarak saklama seçeneği."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Başka bir yönetici bu parolayı değiştirdiyse, ondan yeni Kuruluş Parolasını istemeniz gerekecek."
@@ -3740,10 +3648,10 @@
         "Hem SPF hem de DKIM'i ayarladıysanız, DMARC, iki denetim de başarısız olursa, diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirlemenizi sağlar. Bu, gereksiz e-posta gönderenlerin sizin gibi davranmasını zorlaştırabilir, ancak doğru şekilde yapılmazsa teslimat sorunlarına da neden olabilir."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        ""
+        "Giriş bilgilerinizi kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, ${ boldAccountRecovery } den birer tane olması gerekir."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        ""
+        "Giriş bilgilerinizi kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, her iki yerde de ${ boldAccountAndRecovery }'den birer tane olması gerekir, aksi takdirde e-postalarınıza, kişilerinize veya dosyalarınıza erişemeyebilirsiniz."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "İki adımlı doğrulamanın etkin olduğu cihazınızı kaybederseniz, bu kodlar hesabınıza giriş yapmak için 6 haneli iki faktörlü kimlik doğrulama kodu yerine kullanılabilir. Her kod sadece bir kez kullanılabilir."
@@ -3770,14 +3678,14 @@
         "Görüntüler, otomatik yanıt içinde izin verilmediği için kaldırıldı"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "${ contactsFragment } ve ${ contactsGroupsFragment } değerlerini içe aktar"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "",
-        ""
+        "${ selectedCalendarsCount } / ${ totalCalendarsCount } takvimi içe aktar"
       ],
       "Import from": [
-        ""
+        "Buradan içe aktar"
       ],
       "Import in progress": [
         "İçe aktarma devam ediyor"
@@ -3786,7 +3694,7 @@
         "Posta kutusunu içe aktar"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        ""
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten Proton'a aktarın. Her adımda size rehberlik edeceğiz ve verilerinizi taşınırken şifreleyeceğiz. Gizlilik dünyasına hoş geldiniz."
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "ÖNEMLİ: Özel anahtarlarınızı indirmek ve onları göndermek ya da güvenli olmayan bir ortamda saklamak, hesabınızın güvenliğini tehlikeye atabilir!"
@@ -3798,13 +3706,13 @@
         "ÖNEMLİ: Bazı kayıt kuruluşları, sonunda nokta bulunan CNAME değerlerini kabul etmezler (bazıları ise gerektirir). Kayıt şirketiniz CNAME kayıtlarınızı kabul etmiyorsa, lütfen her CNAME değerinin sonundaki noktayı silin ve tekrar deneyin."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "${ importedEmailAddress }'dan ${ toEmail }'e verileriniz aktarılıyor."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "Giriş bilgilerinizi kaybetmeniz durumunda size e-posta veya SMS yoluyla kurtarma talimatlarını göndereceğiz."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "Giriş bilgilerinizi kaybetmeniz durumunda size e-posta yoluyla kurtarma talimatlarını göndereceğiz."
       ],
       "Included": [
         "Dahil"
@@ -3840,10 +3748,10 @@
         "İnternet bağlantısı tekrar sağlandı."
       ],
       "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        ""
+        "Bazı verileriniz şifrelenmiş ve kilitli görünüyor. Bu muhtemelen yakın zamanda veya önceki bir parola sıfırlamasından kaynaklanmaktadır. Verilerinizin kilidini açmak için bir veri kurtarma yöntemi kullanmanızı öneririz."
       ],
       "it’s imperative": [
-        ""
+        "bu zorunlu"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Sadece seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -3861,7 +3769,7 @@
         "İçe aktarılan tüm iletileri şu şekilde etiketle"
       ],
       "Large imports can take several days.": [
-        ""
+        "Büyük boyutlu içe aktarmaların tamamlanması bir kaç gün sürebilir."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
         "Üçüncü taraf VPN uygulamalarıyla ProtonVPN'e nasıl giriş yapacağınızı öğrenin."
@@ -3900,7 +3808,7 @@
         "Önizleme yükleniyor"
       ],
       "Log in to ProtonMail to activate your address": [
-        ""
+        "Adresinizi etkinleştirmek için ProtonMail'de oturum açın"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Günlükler, Proton kimlik bilgilerinizi kullanan tüm Proton hizmetleri için kimlik doğrulama girişimlerini içerir."
@@ -3942,10 +3850,10 @@
         "İlk defa mı ${ BRAND_NAME } kullanıyorsunuz? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Ardından, Google hesabınıza giriş yapmanız ve verilerinize erişmemize izin vermeniz gerekmektedir."
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        ""
+        "Hesap kurtarma yöntemi ayarlanmadı; hesabınıza erişiminizi kaybetme riskiniz var"
       ],
       "No action selected": [
         "İşlem seçilemedi"
@@ -3995,8 +3903,8 @@
       "Not set": [
         "Ayarlanmadı"
       ],
-      "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Kendi bilgisayarınız değil mi? Giriş yapmak için Gizli Gezinti penceresi kullanın. ${ learnMore }"
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "Cihaz sizin değil mi? Oturum açmak ve bittiğinde kapatmak için özel bir göz atma penceresi kullanın.${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Kullanıcılara atanabilecek VPN bağlantılarının sayısı. Bağlı her cihaz bir VPN bağlantısı kullanır."
@@ -4026,13 +3934,13 @@
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmekten siz sorumlusunuz."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        ""
+        "Kurtarma dosyası eskimiş; verilerinize erişim sağlamak için güncelleyin"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        ""
+        "Kurtarma yöntemleri eskimiş; verilerinize erişim sağlamak için güncelleme yapın"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        ""
+        "Kurtarma anahtar metni eskimiş; verilerine erişim sağlamak için güncelleyin"
       ],
       "P2P": [
         "P2P"
@@ -4062,7 +3970,7 @@
         "Lütfen hesabınızla ilişkili 12 kelimelik kurtarma ifadesini girin."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Lütfen güvende tutun. Parola sıfırlama durumunda hesabınıza erişmek ve verilerinizin şifresini çözmek için buna ihtiyacınız olacak."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Bu adresi silerseniz, artık bu adresi kullanarak e-posta gönderip alamayacağınızı lütfen unutmayın."
@@ -4153,13 +4061,19 @@
         "Sıraya Alındı"
       ],
       "read our two-factor authentication Guide first": [
-        ""
+        "öncelikle iki adımda doğrulama Kılavuzumuzu okuyun"
+      ],
+      "Recovery file downloaded": [
+        "Kurtarma dosyası indirildi"
       ],
       "Recovery files have been voided": [
         "Kurtarma dosyaları iptal edildi"
       ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma anahtar metni panoya kopyalandı"
+      ],
+      "Recovery phrase downloaded": [
+        "Kurtarma anahtar metni indirildi"
       ],
       "Recovery phrase has been disabled": [
         "Kurtarma anahtar metni devre dışı bırakıldı"
@@ -4186,7 +4100,7 @@
         "Parolanızı güvenli bir yerde saklayın."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
-        ""
+        "Şifrenizi güvenli bir yere kaydedin. Parolanızı doğru yazdığınızı onaylamak için simgeye tıklayın."
       ],
       "Scan QR code instead": [
         "Bunun yerine QR kodunu tarayın"
@@ -4198,10 +4112,10 @@
         "Ekran görüntüsü eklendi"
       ],
       "Select a service provider to start": [
-        ""
+        "Başlamak için bir hizmet sağlayıcı seçin"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Hangi takvimlerin içe aktarılacağını seçin. Maksimum 20 olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
       ],
       "Server is currently down": [
         "Sunucu şu anda kapalı"
@@ -4210,13 +4124,13 @@
         "Sunucu yükü"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Sunuculara ulaşılamıyor. Lütfen birkaç dakika sonra tekrar deneyin"
       ],
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
       ],
       "Set recovery phrase": [
-        ""
+        "Kurtarma anahtar metnini belirleyin"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
@@ -4285,7 +4199,7 @@
         "Bu işlem cihazınıza bağlı olarak birkaç saniye veya birkaç dakika sürebilir"
       ],
       "This email address will only be used for recovery purposes.": [
-        ""
+        "Bu e-posta adresi yalnızca kurtarma amacıyla kullanılacaktır."
       ],
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Bu özellik sadece ileri düzey kullanıcılar içindir! Bu anahtarı sildikten sonra, bu anahtarla şifrelenmiş herhangi bir iletinin şifresini çözemezsiniz. Veri kaybına neden olabilir. Devam etmek istediğine emin misin."
@@ -4324,7 +4238,7 @@
         "Bu, kuruluşunuz için bir şifreleme anahtarı oluşturur. 4096 bit anahtarlar yalnızca yüksek performanslı bilgisayarlarda çalışır, çoğu kullanıcı için 2048 bit anahtarları kullanmanızı öneririz."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        ""
+        "Bu, mevcut kurtarma anahtar metninizi devre dışı bırakacaktır. Hesabınıza erişmek veya verilerinizin şifresini çözmek için artık bunu kullanamazsınız."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu, PayPal'ın Proton aboneliğiniz için ödeme yapmasını sağlayacaktır. Sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyicisi kullanıyorsanız, lütfen devam etmek için bunları devre dışı bırakın."
@@ -4339,7 +4253,7 @@
         "Bu, geçici parolanızın yerini alacaktır. Gelecekte ${ BRAND_NAME } hesabınıza erişmek için bunu kullanacaksınız."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
+        "Bu, tüm aktif oturumlardan çıkış yapmanızı ve 2 adımda kimlik doğrulamayı devre dışı bırakmanızı sağlar."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Bu sihirbaz, Proton hesabınızda İki Adımlı Kimlik Doğrulamayı (2FA) etkinleştirir. İki adımlı kimlik doğrulama, Proton hesabınızı daha güvenli duruma getireceğinden, etkinleştirmenizi öneririz."
@@ -4351,13 +4265,13 @@
         "${ toAppName } uygulamasına devam etmek için"
       ],
       "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        ""
+        "E-postalarınızın ve diğer verilerinizin şifresini çözmek ve görüntülemek için bir kurtarma dosyasına veya kurtarma anahtar metnine ihtiyacınız bulunmaktadır."
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        ""
+        "E-postalarınızın ve diğer verilerinizin şifresini çözmek ve görüntülemek için bir kurtarma dosyasına ihtiyacınız bulunmaktadır."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        ""
+        "E-postalarınızın ve diğer verilerinizin şifresini çözmek ve görüntülemek için bir kurtarma dosyasına veya kurtarma anahtar metnine ihtiyacınız bulunmaktadır."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Parola sıfırlama sonrası erişime engellenen verilerinizin şifresini çözmek ve bunları görüntülemek için bir kurtarma yöntemi belirleyin."
@@ -4369,7 +4283,7 @@
         "Proton ürünlerindeki en son gelişmeleri takip etmek için çeşitli e-postalarımıza abone olabilir ve zaman zaman blogumuzu ziyaret edebilirsiniz."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        ""
+        "Devam etmek için, talebi doğrulayabilmemize yarayacak bir hesap kurtarma yöntemi seçin."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "İnternet bağlantınızı güvence altına almak için cihazınıza ProtonVPN uygulamasını indirip yükleyin ve bir ProtonVPN sunucusuna bağlanın."
@@ -4396,7 +4310,7 @@
         "Çift şifre modu giriş ve posta kutusu için ayrı şifreler kullanır. Bu bazı durumlarda küçük bir güvenlik yararı sağlasa da çoğu kullanıcı için tek şifre modunu öneririz. Çift şifre moduna geçmek için önce bir oturum açma şifresi belirleyin ve ardından da bir posta kutusu şifresi belirleyin."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        ""
+        "Kurtarma dosyası imzası doğrulanamıyor. Lütfen destek birimi ile iletişime geçin."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Üzgünüz bu hesap için kaydedilmiş bir kurtarma yöntemi yok."
@@ -4408,10 +4322,10 @@
         "Desteklenmeyen dosya"
       ],
       "Update recovery file": [
-        ""
+        "Kurtarma dosyasını güncelleyin"
       ],
       "Update recovery phrase": [
-        ""
+        "Kurtarma anahtar metnini güncelleyin"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
         "Ofisinizde olmadığınız zaman otomatik yanıtları açmak için bir ${ PLAN_NAMES[PLANS.VISIONARY] } ya da ${ PLAN_NAMES[PLANS.PROFESSIONAL] } tarifesine yükseltin."
@@ -4471,7 +4385,7 @@
         "Mümkün oldukça resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
       ],
       "We recommend using your recovery phrase instead.": [
-        ""
+        "Bunun yerine kurtarma anahtar metni kullanmanızı öneririz."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenli Ödeme kullanıyoruz."
@@ -4486,7 +4400,7 @@
         "Parolanızı unutursanız veya hesabınıza erişimi kaybederseniz, size bu e-posta adresinden bir kurtarma bağlantısı göndereceğiz."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
       "Web URL": [
         "Web Adresi"
@@ -4501,7 +4415,7 @@
         "Hesap kurtarma için verdiğiniz e-posta adresine bir sıfırlama kodu göndereceğiz."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        ""
+        "Hesap kurtarma için verdiğiniz telefon numarasına bir sıfırlama kodu göndereceğiz."
       ],
       "What do you want to import from your Google account?": [
         "Google hesabınızdan ne aktarmak istiyorsunuz?"
@@ -4540,10 +4454,10 @@
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız ve erişiminiz kısıtlı."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Ayrıca içe aktarılan takvimleri mevcut Proton takvimleriyle birleştirebilirsiniz."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "${ importProgressLink }'in ilerlemesini kontrol edebilirsiniz."
       ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Takvim başına en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı oluşturabilirsiniz. Bu takvime yeni bir bağlantı oluşturmak için aşağıdaki listeden birini silin."
@@ -4555,7 +4469,7 @@
         "Hesabınıza ne zaman ve hangi IP'den erişildiğini görmek için kimlik doğrulama günlüğünü etkinleştirebilirsiniz. Başarısız denemelerin yanı sıra hesaba erişen IP adresini ve saati de kaydedeceğiz."
       ],
       "You can import one data type at a time.": [
-        ""
+        "Bir seferde bir veri türünü içe aktarabilirsiniz."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Artık, @pm.me adresine iletilerinizi alabilirsiniz. @pm.me adresinizi kullanarak e-postalar göndermek ve ek olarak @pm.me adresleri oluşturmak için paralı bir plana yükseltin."
@@ -4618,7 +4532,10 @@
         "Ödemenizi doğrulamak için kısa süre içinde PayPal'a yönlendirileceksiniz."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        ""
+        "İndirdiğiniz kurtarma dosyalarını kullanarak bir hesap sıfırlandıktan sonra şifrelenmiş verileri kurtaramazsınız."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "Tarayıcıyı kapattıktan sonra bile oturumunuz açık kalacaktır."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. ${ toAppName } kullanmak için lütfen bir adres oluşturun."
@@ -4633,7 +4550,7 @@
         "Hesabınız yükseltiliyor, bu 30 saniye sürebilir."
       ],
       "Your account recovery method is set": [
-        ""
+        "Hesap kurtarma yönteminiz ayarlandı"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecektir."
@@ -4657,7 +4574,7 @@
         "E-postanız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        ""
+        "${ delayedImport.Account }'dan içe aktarımınız geçici olarak duraklatıldı."
       ],
       "Your import will not be processed.": [
         "İçe aktarımınız gerçekleştirilemedi."
@@ -4701,10 +4618,10 @@
         "(beta)"
       ],
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        ""
+        "Ek yinelenen anahtarlar algılandı. Daha fazla bilgi için lütfen tek tek yükleyin."
       ],
       "Key ${ fingerprint } has already been uploaded": [
-        ""
+        "${ fingerprint } anahtarı zaten yüklenmiş"
       ]
     },
     "Info - folder colouring feature": {
@@ -4860,10 +4777,10 @@
     },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        ""
+        "${ compatibility } RSA 4096-bit (Daha yavaş, ama eski yazılımlarla daha uyumlu)"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        ""
+        "${ stateOfTheArt } ECC Curve25519 (en hızlı, en güncel)"
       ]
     },
     "Keyboard shortcut name": {
@@ -5162,7 +5079,7 @@
         "Uygulama parolası"
       ],
       "Ask before loading remote content": [
-        ""
+        "Uzak içeriği yüklemeden önce sor"
       ],
       "Attach public key": [
         "Genel anahtar ekle"
@@ -5198,7 +5115,7 @@
         "BTC tutarı:"
       ],
       "Calendars": [
-        ""
+        "Takvimler"
       ],
       "Cancel": [
         "İptal Et"
@@ -5225,7 +5142,7 @@
         "Oluşturucu"
       ],
       "Composer default font/size": [
-        ""
+        "E-posta sihirbazının varsayılan yazı tipi/boyutu"
       ],
       "Composer mode": [
         "Oluşturucu modu"
@@ -5252,7 +5169,7 @@
         "Parolayı onayla"
       ],
       "Contacts": [
-        ""
+        "Kişiler"
       ],
       "Conversation grouping": [
         "Konuşma gruplandırma"
@@ -5261,13 +5178,13 @@
         "Kopyala"
       ],
       "Could you please let us know which provider?": [
-        ""
+        "Lütfen hangi sağlayıcı olduğu hakkında bilgi verebilir misiniz?"
       ],
       "Could you please specify which streaming service?": [
-        ""
+        "Hangi akış hizmeti olduğunu belirtebilir misiniz?"
       ],
       "Could you please specify?": [
-        ""
+        "Lütfen daha açık belirtir misiniz?"
       ],
       "Country": [
         "Ülke"
@@ -5276,7 +5193,7 @@
         "Krediler kullanıldı"
       ],
       "Current login password": [
-        ""
+        "Geçerli oturum açma parolası"
       ],
       "Customize invoices": [
         "Faturaları özelleştirin"
@@ -5297,10 +5214,10 @@
         "Varsayılan dil"
       ],
       "Default language (${ defaultLanguage })": [
-        ""
+        "Varsayılan dil (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
-        ""
+        "Varsayılan PGP Şeması"
       ],
       "Default view": [
         "Varsayılan görünüm"
@@ -5330,7 +5247,7 @@
         "Tekrar sorma"
       ],
       "Do you have any suggestions for our team?": [
-        ""
+        "Ekibimize herhangi bir öneriniz var mı?"
       ],
       "Domain": [
         "Etki alanı"
@@ -5351,7 +5268,7 @@
         "E-posta veya kullanıcı adı"
       ],
       "Emails": [
-        ""
+        "E-postalar"
       ],
       "End date": [
         "Bitiş tarihi"
@@ -5366,7 +5283,7 @@
         "Hafta sonu"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Doğrulamak için kuruluş adını girin"
       ],
       "Enter password": [
         "Parolayı girin"
@@ -5402,10 +5319,10 @@
         "Klasör konumu"
       ],
       "From: ${ emailFrom }": [
-        ""
+        "Gönderen: ${ emailFrom }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Gönderen: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
         "Gönderen: ${ importedEmailAddress }"
@@ -5445,6 +5362,9 @@
       ],
       "Interval": [
         "Aralık"
+      ],
+      "Keep me signed in": [
+        "Oturumum açık kalsın"
       ],
       "Keep messages in Sent/Drafts": [
         "İletileri Gönderilenler/Taslaklar klasöründe tut"
@@ -5576,10 +5496,10 @@
         "Telefon numarası"
       ],
       "Phrase": [
-        ""
+        "Metin"
       ],
       "Phrase consists of 12 unique words in a specific order": [
-        ""
+        "Metin belirli bir sırayla 12 benzersiz kelimeden oluşur"
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Lütfen aşağıdaki CNAME kayıtlarının 3'ünü de ekleyin. DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
@@ -5600,7 +5520,7 @@
         "Posta kodu"
       ],
       "Previous password": [
-        ""
+        "Eski şifreniz"
       ],
       "Private User": [
         "Özel Kullanıcı"
@@ -5618,7 +5538,7 @@
         "Proton kullanıcı adı"
       ],
       "ProtonMail address": [
-        ""
+        "ProtonMail adresi"
       ],
       "ProtonMail footer": [
         "ProtonMail alt bilgi"
@@ -5630,13 +5550,13 @@
         "Kurtarma kodu"
       ],
       "Recovery email address": [
-        ""
+        "Kurtarma e-posta adresiniz"
       ],
       "Recovery file": [
         "Kurtarma dosyası"
       ],
       "Recovery phone number": [
-        ""
+        "Kurtarma telefon numarası"
       ],
       "Recovery phrase": [
         "Kurtarma anahtar metni"
@@ -5657,7 +5577,7 @@
         "Otomatik yanıt gönder"
       ],
       "Send invites in": [
-        ""
+        "Davetiye gönderin"
       ],
       "Show secondary time zone": [
         "İkincil saat dilimini göster"
@@ -5723,7 +5643,7 @@
         "Alıcı: ${ emailAddress }"
       ],
       "To: ${ emailTo }": [
-        ""
+        "Alıcı: ${ emailTo }"
       ],
       "To: ${ PMEmailAddress }": [
         "Alıcı: ${ PMEmailAddress }"
@@ -5750,7 +5670,7 @@
         "1 veya daha fazla şifreleme anahtarı yükleyin"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        ""
+        "1 veya daha fazla kurtarma dosyası veya şifreleme anahtarı yükleyin"
       ],
       "URL": [
         "URL"
@@ -5833,7 +5753,7 @@
     },
     "label": {
       "Recovery phone number": [
-        ""
+        "Kurtarma telefonu numarası"
       ],
       "Recovery phrase": [
         "Kurtarma anahtar metni"
@@ -5997,7 +5917,7 @@
         "Daha fazla bilgi edinin"
       ],
       "Not activated": [
-        ""
+        "Etkinleştirilmemiş"
       ],
       "Pay invoice": [
         "Faturayı öde"
@@ -6036,25 +5956,25 @@
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "",
-        ""
+        "${ calendarsToBeCreated } değerinden ${ createdCalendars } adet oluşturuldu"
       ],
       "Almost there": [
-        ""
+        "Neredeyse tamam"
       ],
       "Connecting to your email provider": [
         "E-posta sağlayıcınıza bağlanılıyor"
       ],
       "Creating new calendars": [
-        ""
+        "Yeni takvimler oluşturuluyor"
       ],
       "Gathering your data": [
-        ""
+        "Verileriniz toplanıyor"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Hizmet sağlayıcınızdan verilerinizi topluyoruz"
       ],
       "Your import is starting": [
-        ""
+        "İçe aktarımınız başlıyor"
       ]
     },
     "Log preference": {
@@ -6149,11 +6069,11 @@
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
-        ""
+        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } zamanından sonraki tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
-        ""
+        "${ totalLabelsCount } etiketin ${ periodFragment } zamanından sonraki tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ]
     },
     "Mail upsell feature": {
@@ -6194,7 +6114,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Bu, kuruluşunuzla ilişkili tüm alt kullanıcıları, hesapları ve verileri kalıcı olarak siler."
       ]
     },
     "Message": {
@@ -6218,31 +6138,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        ""
+        "Başka bir e-posta sağlayıcıdan takvimler nasıl içe aktarılır"
       ],
       "How to import calendars from Outlook": [
-        ""
+        "Outlook'tan takvimler nasıl içe aktarılır"
       ],
       "How to import calendars from Yahoo": [
-        ""
+        "Yahoo'dan takvimler nasıl içe aktarılır"
       ],
       "How to import contacts from another service": [
-        ""
+        "Başka bir e-posta sağlayıcıdan kişiler nasıl içe aktarılır"
       ],
       "How to import contacts from Outlook": [
-        ""
+        "Outlook'tan kişiler nasıl içe aktarılır"
       ],
       "How to import contacts from Yahoo": [
-        ""
+        "Yahoo'dan kişiler nasıl içe aktarılır"
       ],
       "How to import emails from another service": [
-        ""
+        "Başka bir e-posta sağlayıcıdan e-postalar nasıl içe aktarılır"
       ],
       "How to import emails from Outlook": [
-        ""
+        "Outlook'tan e-postalar nasıl içe aktarılır"
       ],
       "How to import emails from Yahoo": [
-        ""
+        "Yahoo'dan e-postalar nasıl içe aktarılır"
       ]
     },
     "Modal title and action": {
@@ -6413,7 +6333,7 @@
         "Drive'a dön"
       ],
       "Back to Mail": [
-        "Mail'e dön"
+        "Posta'ya Dön"
       ]
     },
     "Netflix": {
@@ -6482,7 +6402,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Lütfen içe aktarmayı başlatmak için uygulama tarafından ${ boldNextStep } gerektiğini unutmayın."
       ]
     },
     "Onboarding Proton": {
@@ -6738,18 +6658,18 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Yeni takvim oluşturun"
       ],
       "Merge with calendar": [
-        ""
+        "Takvim ile birleştir"
       ]
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        ""
+        "İçeriği proxy ile yükleyin (tavsiye olunur)"
       ],
       "Load content via proxy and store as attachments": [
-        ""
+        "İçeriği proxy ile yükleyin ve eklenti olarak saklayın"
       ]
     },
     "OS compatibility": {
@@ -6787,7 +6707,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+        "E-posta adresi, gönderme anahtarında tanımlanmış kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6885,7 +6805,7 @@
         "Kullanıcıları ara"
       ],
       "Select a reason": [
-        ""
+        "Bir neden seçin"
       ],
       "Text": [
         "Metin"
@@ -7009,8 +6929,8 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        ""
+        "${ BRAND_NAME } ${ currentPlanName } hesabınızda hala ${ daysRemaining } günlük kullanım hakkınız var.",
+        "${ BRAND_NAME } ${ currentPlanName } hesabınızda hala ${ daysRemaining } gün boyunca kullanım hakkınız var."
       ]
     },
     "Price": {
@@ -7084,15 +7004,15 @@
         "Telefon numarası"
       ],
       "Phrase": [
-        ""
+        "İfade"
       ]
     },
     "Remark about a key type option": {
       "Compatibility": [
-        ""
+        "Uyumluluk"
       ],
       "State of the art": [
-        ""
+        "Son teknoloji"
       ]
     },
     "Restore administrator panel": {
@@ -7114,13 +7034,13 @@
     },
     "Select files": {
       "Browse": [
-        ""
+        "İnternette gezinin"
       ],
       "Upload": [
         "Yükle"
       ],
       "Upload additional files": [
-        ""
+        "Ek dosyaları yükleyin"
       ]
     },
     "Select search results": {
@@ -7130,7 +7050,7 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        ""
+        "Gizliliğe geçiş yapın. Zahmetsizce ve güvenli bir şekilde."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Tek bir iletiye birden çok etiket uygulayabilirsiniz, ancak iletiler genellikle yalnızca tek bir klasörde olabilir. Klasörlerinizin ve etiketlerinizin sırasını yeniden düzenlemek için sürükleyip bırakın."
@@ -7147,7 +7067,7 @@
         "Otomatik Yanıt"
       ],
       "Backup and export": [
-        ""
+        "Yedekleme ve dışa aktarma"
       ],
       "Calendars": [
         "Takvimler"
@@ -7156,22 +7076,22 @@
         "Alan adları"
       ],
       "Email privacy": [
-        ""
+        "E-posta gizliliği"
       ],
       "Encryption and keys": [
-        ""
+        "Şifreleme ve anahtarlar"
       ],
       "Filters": [
         "Süzgeçler"
       ],
       "Folders and labels": [
-        ""
+        "Klasörler ve etiketler"
       ],
       "General": [
         "Genel"
       ],
       "Identity and addresses": [
-        ""
+        "Kimlik ve adresler"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7186,10 +7106,10 @@
         "Organizasyon"
       ],
       "Organization and keys": [
-        ""
+        "Organizasyon ve anahtarlar"
       ],
       "Users and addresses": [
-        ""
+        "Kullanıcılar ve adresler"
       ],
       "VPN apps": [
         "VPN uygulamaları"
@@ -7303,7 +7223,7 @@
         "Takvim URL'si"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "Bir dış ya da herkese açık takvime ve güncellemelerine abone olmak için adresi yazın. Abone olduğunuz takvimler arasına bu takvimin salt okunur sürümü eklenir.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7326,7 +7246,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } panonuza kopyalandı"
       ],
       "Account deleted. Logging out...": [
         "Hesap silindi. Çıkış yapılıyor..."
@@ -7437,7 +7357,7 @@
         "Premium hesap yaratın"
       ],
       "Resuming import": [
-        "İçe aktarma devam ediliyor"
+        "İçeri aktarmaya devam ediliyor"
       ],
       "Session revoked": [
         "Oturum iptal edildi"
@@ -7559,16 +7479,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "hesap oluşturma tarihi"
       ],
       "the last 12 months": [
-        ""
+        "son 12 ay"
       ],
       "the last 3 months": [
-        ""
+        "son 3 ay"
       ],
       "the last month": [
-        ""
+        "geçen ay"
       ]
     },
     "Time unit": {
@@ -7609,7 +7529,7 @@
         "3. Yapılandırma dosyasını seçin ve indirin"
       ],
       "Account and password": [
-        ""
+        "Hesap ve parola"
       ],
       "Account recovery": [
         "Hesap kurtarma"
@@ -7717,7 +7637,7 @@
         "Geri"
       ],
       "Backup and export": [
-        ""
+        "Yedekleme ve dışa aktarma"
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -7822,7 +7742,7 @@
         "Para birimi"
       ],
       "Current and past imports": [
-        ""
+        "Güncel ve geçmiş içe aktarmalar"
       ],
       "Current plan": [
         "Mevcut plan"
@@ -7834,10 +7754,10 @@
         "Özelleştir ve onayla"
       ],
       "Customize calendar import": [
-        ""
+        "Takvim içe aktarımını özelleştirin"
       ],
       "Customize your mail import": [
-        ""
+        "Posta içe aktarımınızı özelleştirin"
       ],
       "Customize your plan": [
         "Planınızı özelleştirin"
@@ -7846,7 +7766,7 @@
         "Kontrol paneli"
       ],
       "Data locked": [
-        ""
+        "Veriler erişime kapatıldı"
       ],
       "Data recovery": [
         "Veri kurtarma"
@@ -7885,7 +7805,7 @@
         "Kayıtları Sil"
       ],
       "Delete organization?": [
-        ""
+        "Kuruluş silinsin mi?"
       ],
       "Delete user": [
         "Kullanıcıyı sil"
@@ -7894,13 +7814,13 @@
         "İki adımlı kimlik doğrulamayı devre dışı bırakın"
       ],
       "Display name and signature": [
-        ""
+        "Görünen ad ve imza"
       ],
       "Domain names": [
         "Alan adları"
       ],
       "Downgrade account": [
-        ""
+        "Hesap planını alçalt"
       ],
       "Edit Allow List": [
         "İzin verilen listesini düzenle"
@@ -7942,7 +7862,7 @@
         "Klavye kısayollarını etkinleştir"
       ],
       "Encryption and keys": [
-        ""
+        "Şifreleme ve anahtarlar"
       ],
       "Error": [
         "Hata"
@@ -7978,7 +7898,7 @@
         "Klasörler"
       ],
       "Folders and labels": [
-        ""
+        "Klasörler ve etiketler"
       ],
       "General": [
         "Genel"
@@ -7996,7 +7916,7 @@
         "İnsan olduğunuzu doğrulayın"
       ],
       "Identity and addresses": [
-        ""
+        "Kimlik ve adresler"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -8027,7 +7947,7 @@
         "Anahtarı içeri aktar"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "${ PRODUCT_NAMES.EASY_SWITCH } üzerinden içe aktar"
       ],
       "Import-Export app": [
         "Import-Export uygulaması"
@@ -8036,7 +7956,7 @@
         "Geçersiz doğrulama kodu"
       ],
       "Invitations": [
-        ""
+        "Davetler"
       ],
       "Invoices": [
         "Faturalar"
@@ -8048,7 +7968,7 @@
         "Etiketler"
       ],
       "Language and time": [
-        ""
+        "Dil ve zaman"
       ],
       "Layout": [
         "Yerleşim"
@@ -8099,7 +8019,7 @@
         "Organizasyon"
       ],
       "Organization and keys": [
-        ""
+        "Kuruluş ve anahtarlar"
       ],
       "Other": [
         "Diğer"
@@ -8108,7 +8028,7 @@
         "Parola"
       ],
       "Password and keys": [
-        ""
+        "Parola ve anahtarlar"
       ],
       "Passwords": [
         "Parolalar"
@@ -8162,7 +8082,7 @@
         "Hesabınızı yeniden bağlayın"
       ],
       "Recover data": [
-        ""
+        "Veriyi kurtar"
       ],
       "Recovery": [
         "Kurtarma"
@@ -8192,7 +8112,7 @@
         "Yönetici ayrıcalıklarını geri yükle"
       ],
       "Security": [
-        ""
+        "Güvenlik"
       ],
       "Security logs": [
         "Güvenlik günlüğü"
@@ -8207,7 +8127,7 @@
         "Kişi grubunu seç"
       ],
       "Select permissions": [
-        ""
+        "İzinleri seçin"
       ],
       "Select plan": [
         "Tarife seçin"
@@ -8219,7 +8139,7 @@
         "Bu bildirimi gönderme yöntemini seçin"
       ],
       "Select what to import": [
-        ""
+        "Neyi içe aktaracağınızı seçin"
       ],
       "Select when you want this notification to be sent": [
         "Bu bildirimi ne zaman göndermek istediğinizi seçin"
@@ -8300,7 +8220,7 @@
         "Çift parola moduna geç"
       ],
       "Take precautions to avoid data loss!": [
-        ""
+        "Veri kaybına karşı tedbir alın!"
       ],
       "Theme": [
         "Tema"
@@ -8330,7 +8250,7 @@
         "Yükselt"
       ],
       "Username": [
-        ""
+        "Kullanıcı adı"
       ],
       "Users and addresses": [
         "Kullanıcılar ve Adresler"
@@ -8345,7 +8265,7 @@
         "Uyarı!"
       ],
       "What would you like to import?": [
-        ""
+        "Neyi içe aktarmak istersiniz?"
       ],
       "What's new": [
         "Yenilikler"
@@ -8360,7 +8280,7 @@
         "Tarifeniz"
       ],
       "Your recovery status": [
-        ""
+        "Kurtarma durumunuz"
       ],
       "ZIP / postal code": [
         "ZIP / posta kodu"
@@ -8445,7 +8365,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Bugün"
       ]
     },
     "Tooltip": {
@@ -8613,10 +8533,10 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "istikrarlı sürüm"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Tor Tarayıcısının bu sürümü desteklenmemektedir. Lütfen en son ${ stableRelease } sürümünü yükleyin"
       ]
     },
     "Update font modal": {
@@ -8664,10 +8584,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Görüntüyü yeniden oynatmak için tıklayın"
       ],
       "Replay video": [
-        ""
+        "Görüntüyü yeniden oynat"
       ]
     },
     "VPN feature": {
@@ -8781,15 +8701,15 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "",
-        ""
+        "${ n } sunucu"
       ],
       "${ n } VPN connection": [
         "",
-        ""
+        "${ n } VPN bağlantısı"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "",
-        ""
+        "${ numberOfCountries } ülkede ${ numberOfServers }"
       ]
     },
     "VPN upsell feature": {
@@ -8873,7 +8793,7 @@
         "Raporlar uçtan uca şifrelenmez, lütfen herhangi bir hassas bilgi göndermeyin."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Aygıtınızın tarih ve saat ayarları eşit değil. ${ learnMore }"
       ],
       "This feature is only available for ProtonMail Professional plans or higher": [
         "Bu özellik yalnızca ProtonMail Profesyonel planları veya üstü için kullanılabilir"
@@ -8882,7 +8802,7 @@
         "Bu içe aktarma, şu anda Proton hesabınızda bulunan depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi düşünün."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun tespit ettik. Lütfen kayıtlarınızın aşağıdaki talimatlarla eşleştiğinden emin olun. Sorun devam ederse, DKIM imzalamayı kapatmamız gerekecek."
@@ -8897,10 +8817,10 @@
         "Bu içe aktarma kaydını artık listede görmeyeceksiniz."
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Kurtarma dosyanızın kullanma süresi geçmiş. Hesabınızı yeniden sıfırlarsanız bu dosya yeni verileri kurtarmakta kullanılamaz."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        ""
+        "Kurtarma ifadenizin kullanma süresi geçmiş. Hesabınızı yeniden sıfırlarsanız bu ifade yeni verileri kurtarmakta kullanılamaz."
       ]
     },
     "Warning for domain modal": {
@@ -8913,7 +8833,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        ""
+        "Bu anahtar artık güvenlik standartlarını karşılamıyor. Bu anahtarı kullanımdan kaldırılmış olarak işaretleyip yeni bir anahtar oluşturmanız önerilir."
       ]
     },
     "Weekly recurring event, frequency": {

@@ -315,7 +315,7 @@
         "加密"
       ],
       "exclude message content": [
-        ""
+        "排除訊息内容"
       ],
       "Expand composer": [
         "展開撰寫器"
@@ -468,7 +468,7 @@
         "載入更多"
       ],
       "Load unprotected": [
-        ""
+        "無保護加載"
       ],
       "Loading verification": [
         "載入驗證中"
@@ -654,7 +654,7 @@
         "恢復資料"
       ],
       "Refine it": [
-        ""
+        "重組"
       ],
       "refresh the page": [
         "更新頁面"
@@ -813,7 +813,7 @@
         "略過"
       ],
       "Some images could not be loaded with tracking protection": [
-        ""
+        "跟踪保護下某些圖像無法加載"
       ],
       "Start import": [
         "開始匯入"
@@ -868,6 +868,9 @@
       ],
       "Undo": [
         "復原"
+      ],
+      "Unlock data": [
+        "解鎖資料"
       ],
       "Unmark for deletion": [
         "取消標記作刪除"
@@ -1303,7 +1306,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        ""
+        "有行事曆事件"
       ]
     },
     "Calendar feature": {
@@ -2256,7 +2259,7 @@
         "使用者沒有提取到任何用於寄送的有效 WKD 金鑰"
       ],
       "Not a valid number": [
-        "不是有效的數字"
+        "號碼無效"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "部份聯絡人無電子郵件地址：${ noEmailsContactNamesList }"
@@ -2268,7 +2271,7 @@
         "未識別組織。再試一次。"
       ],
       "Passwords do not match": [
-        "密碼不符合"
+        "密碼不相符"
       ],
       "Payment process cancelled": [
         "付款程序已取消"
@@ -2334,7 +2337,7 @@
         "簽名驗證錯誤。"
       ],
       "Signature verification failed": [
-        "簽章驗證失敗"
+        "簽名驗證失敗"
       ],
       "Some contacts could not be deleted": [
         "一些聯絡人未能刪除"
@@ -2470,16 +2473,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "草稿無法移至收件匣"
       ],
       "Drafts cannot be moved to Spam": [
         "無法將草稿移動到垃圾郵件匣"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "已傳送的郵件無法移動至收件匣"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "已傳送的郵件無法移動至垃圾郵件匣"
       ],
       "This action cannot be performed": [
         "此動作無法執行"
@@ -3830,6 +3833,9 @@
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
       ],
+      "Recovery phrase downloaded": [
+        "已下載還原短語"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
       ],
@@ -3876,7 +3882,7 @@
         "已附加的螢幕截圖"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
+        "搜索耗時過長? 請嘗試 ${ dropdownButton } 或 ${ toggle Off Button } 搜索結果。"
       ],
       "Seems like you are all caught up for now": [
         "看來您處理完您所有的信了！"
@@ -4627,7 +4633,7 @@
         "新增到群組"
       ],
       "Address": [
-        ""
+        "地址"
       ],
       "ALL": [
         "全部"
@@ -5432,13 +5438,16 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        ""
+        "已取消排定的傳送"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "排程已取消。郵件已移動到草稿。"
       ],
       "Sending undone": [
         "傳送未完成"
+      ],
+      "Undoing send...": [
+        "正在取消傳送……"
       ]
     },
     "MIME type": {
@@ -5687,7 +5696,7 @@
         "新增至現有群組"
       ],
       "All": [
-        ""
+        "全部"
       ],
       "Create new group": [
         "建立新群組"
@@ -6831,7 +6840,7 @@
         "連結確認"
       ],
       "Load embedded images": [
-        ""
+        "載入內嵌圖片"
       ],
       "Load remote content": [
         "載入遠端內容"
@@ -7108,7 +7117,7 @@
         "電子郵件加密強制電子郵件簽章，以助驗證您已寄送郵件的真確性"
       ],
       "Encrypted data": [
-        ""
+        "加密數據"
       ],
       "Encrypted data with verified digital signature": [
         "經加密資料，已驗證數碼簽章"
@@ -7186,10 +7195,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "點擊以重播影片"
       ],
       "Replay video": [
-        ""
+        "重播影片"
       ]
     },
     "VPN feature": {

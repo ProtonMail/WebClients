@@ -273,7 +273,7 @@
         "放弃"
       ],
       "Dismiss get started checklist": [
-        "忽略开始入门清单"
+        "忽略入门清单"
       ],
       "Done": [
         "完成"
@@ -868,6 +868,9 @@
       ],
       "Undo": [
         "撤销"
+      ],
+      "Unlock data": [
+        ""
       ],
       "Unmark for deletion": [
         "取消标记以删除。"
@@ -2806,7 +2809,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        "我们已经将您的存储总空间提升至${ totalGBStorageAfterCompletion } GB。您可以获取更多附加存储空间，同时解锁高级功能！"
+        "我们已将您的存储空间升至 ${ totalGBStorageAfterCompletion } GB。您还可以升级账户，从而获得更大的存储空间和更高级的功能。"
       ],
       "You're all set!": [
         "一切就绪！"
@@ -2814,7 +2817,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        "完成所有步骤后，您的账户将得到 ${ totalGBStorageAfterCompletion } GB 存储空间"
+        "完成所有步骤即可将存储空间升至 ${ totalGBStorageAfterCompletion } GB"
       ],
       "Expires soon": [
         "即将过期"
@@ -2851,10 +2854,10 @@
     },
     "Get started checklist item": {
       "Get mobile app": [
-        "获取移动端应用"
+        "下载移动端应用"
       ],
       "Import contacts or emails": [
-        "导入您的通讯录或电子邮件"
+        "导入通讯录或邮件"
       ],
       "Send a message": [
         "发送邮件"
@@ -2870,7 +2873,7 @@
     },
     "Get started checklist title": {
       "Get started": [
-        "开始入门"
+        "入门步骤"
       ]
     },
     "Group": {
@@ -3829,6 +3832,9 @@
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
+      ],
+      "Recovery phrase downloaded": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${ link }来解决。"
@@ -5439,6 +5445,9 @@
       ],
       "Sending undone": [
         "邮件已撤回"
+      ],
+      "Undoing send...": [
+        ""
       ]
     },
     "MIME type": {
@@ -5632,7 +5641,7 @@
     },
     "Onboarding Proton": {
       "Choose a display name": [
-        "选择显示名称"
+        "填写对外名称"
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护。"
@@ -6717,7 +6726,7 @@
         "删除 ${ count } 条会话"
       ],
       "Delete ${ count } draft": [
-        "删除 ${ count } 封草稿"
+        "删除 ${ count } 份草稿"
       ],
       "Delete ${ count } message": [
         "删除 ${ count } 封邮件"
