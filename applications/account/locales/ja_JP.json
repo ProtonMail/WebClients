@@ -281,7 +281,7 @@
         "アカウントをダウングレード"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        "{ BRAND_NAME }{ downgradedPlanName } へダウングレード"
+        "${ BRAND_NAME }${ downgradedPlanName } へダウングレード"
       ],
       "Download": [
         "ダウンロード"
@@ -410,7 +410,7 @@
         "保持"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        "{ BRAND_NAME }{ currentPlanName } を継続"
+        "${ BRAND_NAME }${ currentPlanName } を継続"
       ],
       "label emails as": [
         "電子メールにラベル付け"
@@ -1615,7 +1615,7 @@
         "${ emailAddress } は${ eventTitle } への招待を承諾しました"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } は{ eventTitle } への招待を辞退しました"
+        "${ emailAddress } は${ eventTitle } への招待を辞退しました"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } は、${ eventTitle } への招待を暫定的に承認しました"
@@ -1626,7 +1626,7 @@
         "${ formattedStart } のイベントのキャンセル"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "{ formattedStart } から始まるイベントのキャンセル"
+        "${ formattedStart } から始まるイベントのキャンセル"
       ],
       "Invitation for an event on ${ formattedStart }": [
         "${ formattedStart } のイベントへの招待"
@@ -1635,7 +1635,7 @@
         "${ formattedStart } から始まるイベントの招待"
       ],
       "Update for an event on ${ formattedStart }": [
-        "{ formattedStart } のイベントの更新"
+        "${ formattedStart } のイベントの更新"
       ],
       "Update for an event starting on ${ formattedStart }": [
         "${ formattedStart } から始まるイベントの更新"
@@ -2081,7 +2081,7 @@
         ""
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "ファイル{ formattedFilename } は空です。"
+        "ファイル${ formattedFilename } は空です。"
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
         "ファイル ${ formattedFilename } はカレンダーではありません。"
@@ -2115,7 +2115,7 @@
         "ファイル ${ formattedFilename } にインポートする連絡先がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "ファイル{ formattedFilename } は空です。"
+        "ファイル${ formattedFilename } は空です。"
       ]
     },
     "Error importing event": {
@@ -2652,7 +2652,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "{ contactId } へのお問い合わせ "
+        "${ contactId } へのお問い合わせ "
       ]
     },
     "Import contact groups info": {
@@ -3574,7 +3574,7 @@
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "エラーだと思われる場合は{ contactLink } までご連絡ください"
+        "エラーだと思われる場合は${ contactLink } までご連絡ください"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダを確認してください。"
@@ -7102,13 +7102,13 @@
         "${ domain } を追加しました"
       ],
       "${ domain } updated": [
-        "{ domain } が更新されました"
+        "${ domain } が更新されました"
       ],
       "${ email } added": [
         "${ email } を追加しました"
       ],
       "${ email } updated": [
-        "{ email } が更新されました"
+        "${ email } が更新されました"
       ]
     },
     "State": {

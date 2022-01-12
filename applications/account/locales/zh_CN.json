@@ -2803,13 +2803,13 @@
         ""
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "生成${ boldAppPassword }并在 Proton 提示时用其代替您的常规密码"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        ""
+        "前往 ${ yahooMailLink } 中您个人资料下的${ boldAccountInfo }"
       ],
       "Go to ${ boldAccountSecurity }": [
-        ""
+        "转至 ${ boldAccountSecurity }"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         ""
@@ -2818,7 +2818,7 @@
         ""
       ],
       "Open your ${ yahooMailLink } contacts": [
-        ""
+        "打开您的 ${ yahooMailLink } 通讯录"
       ],
       "Open your Outlook ${ outlookContactsLink }": [
         ""
@@ -2827,7 +2827,7 @@
         ""
       ],
       "Select ${ boldExportCSV }": [
-        ""
+        "选择“${ boldExportCSV }”"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         ""
@@ -2894,7 +2894,7 @@
         "应用专用密码"
       ],
       "app password or enable IMAP": [
-        ""
+        "应用程序密码或启用 IMAP"
       ],
       "contacts": [
         "通讯录"
@@ -3058,7 +3058,7 @@
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "{ save20 } 订阅，切换到{ annualBilling }"
+        "${ save20 } 订阅，切换到 ${ annualBilling }"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
         "添加邮件订阅，可整体享 ${ saveExtra20 } 优惠。"
@@ -8758,10 +8758,10 @@
         "每 ${ interval } 周的${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "每{ interval } 周的${ multipleDaysString }，${ timesString }"
+        "每${ interval } 周的${ multipleDaysString }，${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "每{ interval } 周的${ multipleDaysString }，${ untilString }"
+        "每${ interval } 周的${ multipleDaysString }，${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "每 ${ interval } 周整周"
