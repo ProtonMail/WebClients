@@ -3093,7 +3093,7 @@
         "${ pureAttachmentsCount } 个文件已添加到附件。"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "{ save20 } 订阅，切换到{ annualBilling }"
+        "${ save20 } 订阅，切换到${ annualBilling }"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
         "添加邮件订阅，可整体享 ${ saveExtra20 } 优惠。"
@@ -6573,7 +6573,7 @@
         "${ appName } 快捷键"
       ],
       "${ emailsCount } member": [
-        "{ emailsCount } 位成員"
+        "${ emailsCount } 位成員"
       ],
       "3-D Secure verification failed": [
         "3-D Secure 验证失败"
@@ -7385,10 +7385,10 @@
         "每 ${ interval } 周的${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "每{ interval } 周的${ multipleDaysString }，${ timesString }"
+        "每${ interval } 周的${ multipleDaysString }，${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "每{ interval } 周的${ multipleDaysString }，知道${ untilString }"
+        "每${ interval } 周的${ multipleDaysString }，知道${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "每 ${ interval } 周整周"

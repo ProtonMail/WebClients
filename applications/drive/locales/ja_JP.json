@@ -1397,7 +1397,7 @@
         "ファイル ${ formattedFilename } にインポートする連絡先がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "ファイル{ formattedFilename } は空です。"
+        "ファイル ${ formattedFilename } は空です。"
       ]
     },
     "Error message": {
@@ -1539,7 +1539,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "{ contactId } へのお問い合わせ "
+        "${ contactId } へのお問い合わせ "
       ]
     },
     "Import contact groups info": {
@@ -1554,7 +1554,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち{ totalImported } 件の連絡先のインポートに成功しました。"
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先のインポートに成功しました。"
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"

@@ -153,10 +153,10 @@
         "削除"
       ],
       "Delete ${ selectedCount } contact": [
-        "{ selectedCount } 件の連絡先を削除"
+        "${ selectedCount } 件の連絡先を削除"
       ],
       "Delete ${ selectedCount } contact group": [
-        "{ selectedCount } 件の連絡先を削除"
+        "${ selectedCount } 件の連絡先を削除"
       ],
       "Delete contact": [
         "連絡先を削除"
@@ -1293,7 +1293,7 @@
         "${ emailAddress } は${ eventTitle } への招待を承諾しました"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } は{ eventTitle } への招待を辞退しました"
+        "${ emailAddress } は${ eventTitle } への招待を辞退しました"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } は、${ eventTitle } への招待を暫定的に承認しました"
@@ -1304,7 +1304,7 @@
         "${ formattedStart } のイベントのキャンセル"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "{ formattedStart } から始まるイベントのキャンセル"
+        "${ formattedStart } から始まるイベントのキャンセル"
       ],
       "Invitation for an event on ${ formattedStart }": [
         "${ formattedStart } のイベントへの招待"
@@ -1313,7 +1313,7 @@
         "${ formattedStart } から始まるイベントの招待"
       ],
       "Update for an event on ${ formattedStart }": [
-        "{ formattedStart } のイベントの更新"
+        "${ formattedStart } のイベントの更新"
       ],
       "Update for an event starting on ${ formattedStart }": [
         "${ formattedStart } から始まるイベントの更新"
@@ -1720,7 +1720,7 @@
         "ファイル ${ formattedFilename } にインポートする連絡先がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "ファイル{ formattedFilename } は空です。"
+        "ファイル${ formattedFilename } は空です。"
       ]
     },
     "Error importing event": {
@@ -2084,7 +2084,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "{ contactId } へのお問い合わせ "
+        "${ contactId } へのお問い合わせ "
       ]
     },
     "Import contact groups info": {
@@ -2851,7 +2851,7 @@
         "サブスクリプションをキャンセルするには、追加のカレンダーと共有中のカレンダーのリンクを削除する必要があります。${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "ストレージ容量の{ spaceDisplayed }%に達しました。${ freeUpMessage } ${ upgradeLink }"
+        "ストレージ容量の${ spaceDisplayed }%に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
