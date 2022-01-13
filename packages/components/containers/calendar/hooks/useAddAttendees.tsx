@@ -1,6 +1,7 @@
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getAttendeeEmail, withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { DEFAULT_ATTENDEE_PERMISSIONS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getInviteLocale } from '@proton/shared/lib/calendar/getSettings';
 import { ADD_EVENT_ERROR_TYPE, AddAttendeeError } from '@proton/shared/lib/calendar/integration/AddAttendeeError';
 import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
 import {
@@ -25,7 +26,6 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { serverTime } from 'pmcrypto';
-import { getInviteLocale } from 'proton-calendar/src/app/containers/calendar/getSettings';
 import { useCallback } from 'react';
 import {
     useAddresses,
