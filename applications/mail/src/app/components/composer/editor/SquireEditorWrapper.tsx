@@ -102,7 +102,7 @@ const SquireEditorWrapper = ({
 
     const metadata: SquireEditorMetadata = useMemo(
         () => ({
-            supportPlainText: true,
+            supportPlainText: !isOutside,
             isPlainText,
             supportRightToLeft: true,
             rightToLeft,
