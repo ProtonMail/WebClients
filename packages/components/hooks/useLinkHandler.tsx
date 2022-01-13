@@ -9,7 +9,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 
 import { isExternal, isSubDomain, getHostname } from '../helpers/url';
-import { useModals, useNotifications, useMailSettings, useHandler } from './index';
+import { useModals, useNotifications, useHandler } from './index';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
@@ -22,12 +22,22 @@ interface LinkSource {
 interface UseLinkHandlerOptions {
     onMailTo?: (src: string) => void;
     startListening?: boolean;
+    isOutside?: boolean;
 }
-type UseLinkHandler = (wrapperRef: RefObject<HTMLDivElement | undefined>, options?: UseLinkHandlerOptions) => void;
+type UseLinkHandler = (
+    wrapperRef: RefObject<HTMLDivElement | undefined>,
+    mailSettings?: MailSettings,
+    options?: UseLinkHandlerOptions
+) => void;
 
-const defaultOptions: UseLinkHandlerOptions = { startListening: true };
-export const useLinkHandler: UseLinkHandler = (wrapperRef, { onMailTo, startListening } = defaultOptions) => {
-    const [mailSettings] = useMailSettings() as [MailSettings | undefined, boolean, Error];
+const defaultOptions: UseLinkHandlerOptions = {
+    startListening: true,
+};
+export const useLinkHandler: UseLinkHandler = (
+    wrapperRef,
+    mailSettings,
+    { onMailTo, startListening, isOutside } = defaultOptions
+) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
 
@@ -165,7 +175,11 @@ export const useLinkHandler: UseLinkHandler = (wrapperRef, { onMailTo, startList
             const link = await encoder(src);
 
             const modalId = createModal(
-                <LinkConfirmationModal link={link} onClose={() => setConfirmationModalID(undefined)} />
+                <LinkConfirmationModal
+                    link={link}
+                    onClose={() => setConfirmationModalID(undefined)}
+                    isOutside={isOutside}
+                />
             );
 
             setConfirmationModalID(modalId);

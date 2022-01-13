@@ -13,7 +13,8 @@ import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { decodeBase64 } from '@proton/shared/lib/helpers/base64';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
+import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';
+import { getEOAttachment } from '@proton/shared/lib/api/eo';
 import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
@@ -40,7 +41,10 @@ export const decrypt = async (
     }
 };
 
-export const getRequest = ({ ID = '' }: Attachment = {}, api: Api): Promise<ArrayBuffer> => {
+export const getRequest = ({ ID = '' }: Attachment = {}, api: Api, messageKeys: MessageKeys): Promise<ArrayBuffer> => {
+    if (messageKeys.type === 'outside') {
+        return api(getEOAttachment(ID, messageKeys.decryptedToken, messageKeys.id));
+    }
     return api(getAttachment(ID));
 };
 
@@ -50,12 +54,23 @@ export const getDecryptedAttachment = async (
     messageKeys: MessageKeys,
     api: Api
 ): Promise<DecryptResultPmcrypto> => {
-    const encryptedBinary = await getRequest(attachment, api);
+    const isOutside = messageKeys.type === 'outside';
+    const encryptedBinary = await getRequest(attachment, api, messageKeys);
+
     try {
-        const sessionKey = await getSessionKey(attachment, messageKeys.privateKeys);
-        // verify attachment signature only when sender is verified
-        const publicKeys = verification?.senderVerified ? verification.senderPinnedKeys : undefined;
-        return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
+        if (!isOutside) {
+            const sessionKey = await getSessionKey(attachment, messageKeys.privateKeys);
+            // verify attachment signature only when sender is verified
+            const publicKeys = verification?.senderVerified ? verification.senderPinnedKeys : undefined;
+            return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
+        }
+        const sessionKey = await getEOSessionKey(attachment, messageKeys.password);
+        return await decryptMessage({
+            message: await getMessage(new Uint8Array(encryptedBinary)),
+            passwords: [messageKeys.password],
+            format: 'binary',
+            sessionKeys: [sessionKey],
+        });
     } catch (error: any) {
         const blob = concatArrays([
             binaryStringToArray(decodeBase64(attachment.KeyPackets) || ''),
@@ -73,10 +88,11 @@ export const getAndVerify = async (
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     reverify = false,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
-    api: Api
+    api: Api,
+    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void
 ): Promise<DecryptResultPmcrypto> => {
+    const isOutside = messageKeys.type === 'outside';
     let attachmentdata: DecryptResultPmcrypto;
 
     const attachmentID = attachment.ID || '';
@@ -90,19 +106,21 @@ export const getAndVerify = async (
         };
     }
 
-    const attachmentInState = getAttachment(attachmentID);
+    if (!isOutside && getAttachment && onUpdateAttachment) {
+        const attachmentInState = getAttachment(attachmentID);
+        if (!reverify && attachmentInState) {
+            attachmentdata = attachmentInState;
+        } else {
+            const isMIMEAttachment = !attachment.KeyPackets;
 
-    if (!reverify && attachmentInState) {
-        attachmentdata = attachmentInState;
+            attachmentdata = isMIMEAttachment
+                ? (attachmentInState as DecryptResultPmcrypto)
+                : await getDecryptedAttachment(attachment, verification, messageKeys, api);
+        }
+        onUpdateAttachment(attachmentID, attachmentdata);
     } else {
-        const isMIMEAttachment = !attachment.KeyPackets;
-        // TODO: implement reverification of MIME attachment
-        attachmentdata = isMIMEAttachment
-            ? (attachmentInState as DecryptResultPmcrypto)
-            : await getDecryptedAttachment(attachment, verification, messageKeys, api);
+        attachmentdata = await getDecryptedAttachment(attachment, verification, messageKeys, api);
     }
-
-    onUpdateAttachment(attachmentID, attachmentdata);
 
     return attachmentdata;
 };
@@ -111,12 +129,12 @@ export const get = (
     attachment: Attachment = {},
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
-    api: Api
+    api: Api,
+    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void
 ): Promise<DecryptResultPmcrypto> => {
     const reverify = false;
-    return getAndVerify(attachment, verification, messageKeys, reverify, getAttachment, onUpdateAttachment, api);
+    return getAndVerify(attachment, verification, messageKeys, reverify, api, getAttachment, onUpdateAttachment);
 };
 
 export const reverify = (
@@ -128,5 +146,5 @@ export const reverify = (
     api: Api
 ): Promise<DecryptResultPmcrypto> => {
     const reverify = true;
-    return getAndVerify(attachment, verification, messageKeys, reverify, getAttachment, onUpdateAttachment, api);
+    return getAndVerify(attachment, verification, messageKeys, reverify, api, getAttachment, onUpdateAttachment);
 };

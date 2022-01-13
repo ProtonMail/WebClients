@@ -57,7 +57,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     };
 
     return useCallback(async () => {
-        // Message can change during the whole initilization sequence
+        // Message can change during the whole initialization sequence
         // To have the most up to date version, best is to get back to the cache version each time
         const getData = () => (getMessage(localID) as MessageStateWithData).data;
 

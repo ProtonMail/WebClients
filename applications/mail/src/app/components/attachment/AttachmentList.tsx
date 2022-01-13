@@ -9,7 +9,7 @@ import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { useDownload, useDownloadAll } from '../../hooks/useDownload';
 import AttachmentPreview, { AttachmentPreviewControls } from './AttachmentPreview';
 import { getAttachmentCounts } from '../../helpers/message/messages';
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 
 export enum AttachmentAction {
     Download,
@@ -33,6 +33,7 @@ interface Props {
     onRemoveAttachment?: (attachment: Attachment) => Promise<void>;
     onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     className?: string;
+    outsideKey?: OutsideKey;
 }
 
 const AttachmentList = ({
@@ -46,6 +47,7 @@ const AttachmentList = ({
     onRemoveAttachment,
     onRemoveUpload,
     className,
+    outsideKey,
 }: Props) => {
     const download = useDownload();
     const downloadAll = useDownloadAll();
@@ -103,7 +105,7 @@ const AttachmentList = ({
     };
 
     const handleDownload = async (attachment: Attachment) => {
-        const verificationStatus = await download(message, attachment);
+        const verificationStatus = await download(message, attachment, outsideKey);
         setVerifiedAttachments((verifiedAttachments) => {
             return {
                 ...verifiedAttachments,
@@ -126,7 +128,7 @@ const AttachmentList = ({
     const handleDownloadAll = async () => {
         setShowLoader(true);
         try {
-            await downloadAll(message);
+            await downloadAll(message, outsideKey);
         } catch (error: any) {
             // Notification is handled by the hook
             console.log('error', error);
@@ -167,8 +169,12 @@ const AttachmentList = ({
                 attachments={attachmentsToShow}
                 message={message}
                 onDownload={handlePreviewDownload}
+                outsideKey={outsideKey}
             />
-            <div className="flex flex-row w100 p0-5 flex-justify-space-between" data-testid="attachments-header">
+            <div
+                className="flex flex-row w100 p0-5 flex-justify-space-between composer-attachment-list-wrapper"
+                data-testid="attachments-header"
+            >
                 <TagButton
                     type="button"
                     title={titleButton}

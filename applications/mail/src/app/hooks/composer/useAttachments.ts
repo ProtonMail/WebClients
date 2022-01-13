@@ -2,12 +2,11 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { useState } from 'react';
 import { useApi, useNotifications, useAuthentication, useHandler } from '@proton/components';
-import { c } from 'ttag';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { useDispatch } from 'react-redux';
 import { Upload } from '../../helpers/upload';
-import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../../helpers/attachment/attachmentUploader';
+import { UploadResult, ATTACHMENT_ACTION, upload, checkSize } from '../../helpers/attachment/attachmentUploader';
 import { EditorActionsRef } from '../../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../../components/composer/Composer';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
@@ -120,7 +119,7 @@ export const useAttachments = ({
                 const embeddedImages = getEmbeddedImages(message);
 
                 if (action === ATTACHMENT_ACTION.INLINE) {
-                    embeddedImages.push(createEmbeddedImageFromUpload(upload));
+                    embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
                 }
 
                 const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
@@ -141,19 +140,6 @@ export const useAttachments = ({
             removePendingUpload(pendingUpload, error);
         }
     });
-
-    const checkSize = (files: File[]) => {
-        const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
-
-        const sizeExcedeed = isSizeExceeded(message, [...files, ...pendingUploadFiles]);
-        if (sizeExcedeed) {
-            createNotification({
-                type: 'error',
-                text: c('Error').t`Attachments are limited to 25 MB`,
-            });
-        }
-        return sizeExcedeed;
-    };
 
     /**
      * Start uploading a file, the choice between attachment or inline is done.
@@ -190,7 +176,9 @@ export const useAttachments = ({
      * Trigger an directly an embedded upload.
      */
     const handleAddEmbeddedImages = async (files: File[]) => {
-        if (checkSize(files)) {
+        const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
+
+        if (checkSize(createNotification, message, files, pendingUploadFiles)) {
             return;
         }
 
@@ -203,8 +191,9 @@ export const useAttachments = ({
     const handleAddAttachmentsStart = useHandler(async (files: File[]) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
         const plainText = isPlainText(message.data);
+        const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
 
-        if (checkSize(files)) {
+        if (checkSize(createNotification, message, files, pendingUploadFiles)) {
             return;
         }
 

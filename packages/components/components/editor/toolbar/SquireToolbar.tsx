@@ -39,6 +39,7 @@ interface Props {
     editorReady: boolean;
     onAddImages: (files: File[]) => void;
     defaultFont?: FontData;
+    isOutside?: boolean;
 }
 
 const SquireToolbar = ({
@@ -49,6 +50,7 @@ const SquireToolbar = ({
     editorReady,
     onAddImages,
     defaultFont,
+    isOutside,
 }: Props) => {
     const isMounted = useIsMounted();
     const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
@@ -195,6 +197,7 @@ const SquireToolbar = ({
                     value={fontFace}
                     update={setFontFace}
                     onDefaultClick={handleClickUpdateFont}
+                    isOutside={isOutside}
                 />
                 <SquireToolbarSeparator />
                 <SquireToolbarFontSizeDropdown

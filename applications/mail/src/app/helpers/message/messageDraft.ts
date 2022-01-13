@@ -187,9 +187,12 @@ export const createNewDraft = (
     referenceMessage: PartialMessageState | undefined,
     mailSettings: MailSettings,
     addresses: Address[],
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    isOutside = false
 ): PartialMessageState => {
-    const MIMEType = referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
+    const MIMEType = isOutside
+        ? (mailSettings.DraftMIMEType as unknown as MIME_TYPES)
+        : referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
     const { FontFace, FontSize, RightToLeft } = mailSettings;
 
     let Flags = 0;
@@ -215,7 +218,11 @@ export const createNewDraft = (
     const senderAddress = getFromAddress(addresses, originalTo, referenceMessage?.data?.AddressID);
 
     const AddressID = senderAddress?.ID || ''; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
-    const Sender = senderAddress
+
+    // When writing an EO message, we cannot use the Sender which has an external address, so we need to use the Recipient which is a PM address
+    const Sender = isOutside
+        ? { Name: referenceMessage?.data?.Sender?.Name || '', Address: referenceMessage?.data?.Sender?.Address || '' }
+        : senderAddress
         ? { Name: senderAddress.DisplayName, Address: senderAddress.Email }
         : { Name: '', Address: '' };
 

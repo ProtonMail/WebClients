@@ -1,7 +1,7 @@
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { classnames } from '@proton/components';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;
@@ -12,9 +12,10 @@ interface Props {
      * false: no buttons, only static content
      */
     showActions?: boolean;
+    outsideKey?: OutsideKey;
 }
 
-const MessageFooter = ({ message, showActions = true }: Props) => {
+const MessageFooter = ({ message, showActions = true, outsideKey }: Props) => {
     const attachments = getAttachments(message.data);
 
     return (
@@ -30,6 +31,7 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
                 collapsable={false}
                 showDownloadAll={showActions}
                 className="message-attachments-list"
+                outsideKey={outsideKey}
             />
         </div>
     );

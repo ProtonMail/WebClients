@@ -12,7 +12,7 @@ import { MessageStateWithData, MessageEmbeddedImage } from '../../logic/messages
 import { useGetMessage } from '../message/useMessage';
 import { sendModifications } from '../../logic/messages/draft/messagesDraftActions';
 
-export const useSendMoficiations = () => {
+export const useSendModifications = () => {
     const getMessage = useGetMessage();
     const dispatch = useDispatch();
     const getMessageKeys = useGetMessageKeys();
@@ -39,7 +39,7 @@ export const useSendMoficiations = () => {
                 const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_ACTION.INLINE, auth.UID, cid);
                 const uploadResult = await uploadInfo.resultPromise;
                 attachments.push(uploadResult.attachment);
-                images.push(createEmbeddedImageFromUpload(uploadResult));
+                images.push(createEmbeddedImageFromUpload(uploadResult.attachment));
             }
         }
 

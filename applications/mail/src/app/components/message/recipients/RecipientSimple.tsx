@@ -1,33 +1,37 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
-
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
+import { HighlightMetadata } from '../../../models/encryptedSearch';
+import { RecipientOrGroup } from '../../../models/address';
 
 interface Props {
-    message?: Message;
+    recipientsOrGroup: RecipientOrGroup[];
     isLoading?: boolean;
     highlightKeywords?: boolean;
+    highlightMetadata?: HighlightMetadata;
+    getRecipientOrGroupLabel?: ({ recipient, group }: RecipientOrGroup, detailed?: boolean) => string;
 }
 
-const RecipientsSimple = ({ message, isLoading, highlightKeywords = false }: Props) => {
-    const { getRecipientsOrGroups, getRecipientOrGroupLabel } = useRecipientLabel();
-    const { highlightMetadata } = useEncryptedSearchContext();
-    const recipients = getRecipients(message);
-    const recipientsOrGroup = getRecipientsOrGroups(recipients);
-
+const RecipientSimple = ({
+    recipientsOrGroup,
+    isLoading,
+    highlightKeywords,
+    highlightMetadata,
+    getRecipientOrGroupLabel,
+}: Props) => {
     return (
         <div className="flex flex-nowrap" data-testid="message-header:to">
             <span className="message-header-to container-to pl0-5">{!isLoading && c('Label').t`To:`}</span>
             <span className="message-header-contact text-ellipsis">
                 {!isLoading && (
                     <>
-                        {recipients.length
+                        {recipientsOrGroup.length
                             ? recipientsOrGroup.map((recipientOrGroup, index) => {
-                                  const label = getRecipientOrGroupLabel(recipientOrGroup);
+                                  const label = getRecipientOrGroupLabel
+                                      ? getRecipientOrGroupLabel(recipientOrGroup)
+                                      : recipientOrGroup.recipient?.Address;
                                   const highlightedLabel =
-                                      !!label && highlightKeywords ? highlightMetadata(label).resultJSX : label;
+                                      !!label && highlightKeywords && highlightMetadata
+                                          ? highlightMetadata(label).resultJSX
+                                          : label;
 
                                   return (
                                       <span
@@ -47,4 +51,4 @@ const RecipientsSimple = ({ message, isLoading, highlightKeywords = false }: Pro
     );
 };
 
-export default RecipientsSimple;
+export default RecipientSimple;

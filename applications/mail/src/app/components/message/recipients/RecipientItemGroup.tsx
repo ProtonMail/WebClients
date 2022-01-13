@@ -13,7 +13,7 @@ import {
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { RecipientGroup } from '../../../models/address';
-import RecipientItemLayout from './RecipientItemLayout';
+import MailRecipientItem from './MailRecipientItem';
 import GroupModal from '../modals/GroupModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
@@ -84,7 +84,7 @@ const RecipientItemGroup = ({
     };
 
     return (
-        <RecipientItemLayout
+        <MailRecipientItem
             button={
                 <>
                     <button

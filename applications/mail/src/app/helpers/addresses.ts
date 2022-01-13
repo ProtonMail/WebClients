@@ -76,16 +76,20 @@ export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contacts
     return `${recipientGroup?.group?.Name} (${count}/${contactsInGroup} ${members})`;
 };
 
-export const recipientsToRecipientOrGroup = (recipients: Recipient[], contactGroupsMap: ContactGroupsMap) =>
+export const recipientsToRecipientOrGroup = (recipients: Recipient[], contactGroupsMap?: ContactGroupsMap) =>
     recipients.reduce<RecipientOrGroup[]>((acc, value) => {
         if (value.Group) {
             const existingGroup = acc.find((recipientsOrGroup) => recipientsOrGroup.group?.group?.Path === value.Group);
             if (existingGroup) {
                 existingGroup.group?.recipients.push(value);
             } else {
-                const group = contactGroupsMap[value.Group];
-                if (group) {
-                    acc.push({ group: { group, recipients: [value] } });
+                if(contactGroupsMap) {
+                    const group = contactGroupsMap[value.Group];
+                    if (group) {
+                        acc.push({ group: { group, recipients: [value] } });
+                    } else {
+                        acc.push({ recipient: value });
+                    }
                 } else {
                     acc.push({ recipient: value });
                 }
