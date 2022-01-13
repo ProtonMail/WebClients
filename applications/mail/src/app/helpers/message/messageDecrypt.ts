@@ -61,7 +61,8 @@ const decryptMimeMessage = async (
     message: Message,
     privateKeys: OpenPGPKey[],
     getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void
+    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    password?: string
 ): Promise<DecryptMessageResult> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
@@ -70,13 +71,22 @@ const decryptMimeMessage = async (
     let processing: MimeProcessResult;
 
     try {
-        decryption = await decryptMessageLegacy({
-            message: message?.Body,
-            messageDate: getDate(message),
-            privateKeys,
-            publicKeys: [],
-            format: 'binary',
-        });
+        if (!password) {
+            decryption = await decryptMessageLegacy({
+                message: message?.Body,
+                messageDate: getDate(message),
+                privateKeys,
+                publicKeys: [],
+                format: 'binary',
+            });
+        } else {
+            decryption = await decryptMessageLegacy({
+                message: message?.Body,
+                messageDate: getDate(message),
+                passwords: [...password],
+                format: 'binary',
+            });
+        }
 
         processing = await processMIME(
             {
@@ -107,17 +117,30 @@ const decryptMimeMessage = async (
     };
 };
 
-const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[]): Promise<DecryptMessageResult> => {
+const decryptLegacyMessage = async (
+    message: Message,
+    privateKeys: OpenPGPKey[],
+    password?: string
+): Promise<DecryptMessageResult> => {
     let result: DecryptBinaryResult;
 
     try {
-        result = await decryptMessageLegacy({
-            message: message?.Body,
-            messageDate: getDate(message),
-            privateKeys,
-            publicKeys: [],
-            format: 'binary',
-        });
+        if (!password) {
+            result = await decryptMessageLegacy({
+                message: message?.Body,
+                messageDate: getDate(message),
+                privateKeys,
+                publicKeys: [],
+                format: 'binary',
+            });
+        } else {
+            result = await decryptMessageLegacy({
+                message: message?.Body,
+                messageDate: getDate(message),
+                passwords: [password],
+                format: 'binary',
+            });
+        }
     } catch (error: any) {
         return {
             decryptedBody: '',
@@ -145,12 +168,13 @@ export const decryptMessage = async (
     message: Message,
     privateKeys: OpenPGPKey[],
     getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void
+    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    password?: string
 ): Promise<DecryptMessageResult> => {
     if (isMIME(message)) {
-        return decryptMimeMessage(message, privateKeys, getAttachment, onUpdateAttachment);
+        return decryptMimeMessage(message, privateKeys, getAttachment, onUpdateAttachment, password);
     }
-    return decryptLegacyMessage(message, privateKeys);
+    return decryptLegacyMessage(message, privateKeys, password);
 };
 
 /**

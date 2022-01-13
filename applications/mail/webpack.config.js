@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const { produce, setAutoFreeze } = require('immer');
 const getConfig = require('@proton/pack/webpack.config');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (...env) => {
     setAutoFreeze(false);
@@ -12,6 +14,43 @@ module.exports = (...env) => {
                 // It's required by the lib rfc2047 which is used by mimemessage.js
                 // Without it any mimemessage with an attachment including special char will fail
                 Buffer: [require.resolve('buffer'), 'Buffer'],
+            })
+        );
+
+        // The order is important so that the unsupported file is loaded after
+        config.entry = {
+            eo: [path.resolve('./src/app/eo.tsx'), require.resolve('@proton/shared/lib/browser/supported.js')],
+            ...config.entry,
+        };
+
+        config.devServer.historyApiFallback.rewrites = [{ from: /^\/eo/, to: '/eo.html' }];
+
+        const htmlIndex = config.plugins.findIndex((plugin) => {
+            return plugin instanceof HtmlWebpackPlugin;
+        });
+
+        // We keep the order because the other plugins have an impact
+        // Replace the old html webpackplugin with this
+        config.plugins.splice(
+            htmlIndex,
+            1,
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                template: path.resolve('./src/app.ejs'),
+                scriptLoading: 'defer',
+                excludeChunks: ['eo'],
+            })
+        );
+        // Add another webpack plugin on top
+        config.plugins.splice(
+            htmlIndex,
+            0,
+            new HtmlWebpackPlugin({
+                filename: 'eo.html',
+                template: path.resolve('./src/eo.ejs'),
+                scriptLoading: 'defer',
+                excludeChunks: ['index'],
+                inject: 'body',
             })
         );
     });

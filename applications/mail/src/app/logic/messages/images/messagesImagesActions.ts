@@ -14,9 +14,9 @@ export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedPa
                     attachment,
                     messageVerification,
                     messageKeys,
+                    api,
                     getAttachment,
-                    onUpdateAttachment,
-                    api
+                    onUpdateAttachment
                 );
                 return {
                     attachment,

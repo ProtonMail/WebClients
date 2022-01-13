@@ -17,7 +17,7 @@ export const encryptAttachment = async (
     { name, type, size }: File = {} as File,
     inline: boolean,
     publicKeys: OpenPGPKey[],
-    privateKeys: OpenPGPKey[]
+    privateKeys?: OpenPGPKey[]
 ): Promise<Packets> => {
     const { message, signature } = await encryptMessage({
         // filename: name,
@@ -55,6 +55,19 @@ export const getSessionKey = async (attachment: Attachment, privateKeys: OpenPGP
     // } else {
     //     options.privateKeys = keysModel.getPrivateKeys(message.AddressID);
     // }
+
+    const sessionKey = await decryptSessionKey(options);
+
+    if (sessionKey === undefined) {
+        throw new Error('Error while decrypting session keys');
+    }
+
+    return sessionKey;
+};
+
+export const getEOSessionKey = async (attachment: Attachment, password: string): Promise<SessionKey> => {
+    const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets) || '');
+    const options = { message: await getMessage(keyPackets), passwords: [password] };
 
     const sessionKey = await decryptSessionKey(options);
 

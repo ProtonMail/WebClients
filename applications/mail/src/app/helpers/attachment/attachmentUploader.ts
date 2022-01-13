@@ -6,6 +6,7 @@ import { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
+import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { c } from 'ttag';
 import {
     ATTACHMENT_MAX_SIZE,
@@ -14,7 +15,7 @@ import {
 } from '../../constants';
 import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import { RequestParams, upload as uploadHelper, Upload } from '../upload';
-import { MessageKeys, MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 
@@ -38,7 +39,7 @@ export interface UploadResult {
 /**
  * Read the file locally, and encrypt it. return the encrypted file.
  */
-const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], privKey: OpenPGPKey[]) => {
+export const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], privKey?: OpenPGPKey[]) => {
     if (!file) {
         throw new TypeError(c('Error').t`You did not provide a file.`);
     }
@@ -56,7 +57,7 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], p
 const uploadFile = (
     file: File,
     message: MessageStateWithData,
-    messageKeys: MessageKeys,
+    messageKeys: PublicPrivateKey,
     inline: boolean,
     uid: string,
     cid = ''
@@ -104,13 +105,56 @@ const uploadFile = (
     };
 };
 
+const buildHeaders = ({ Inline }: Packets, message: MessageStateWithData) => {
+    if (!Inline) {
+        return {};
+    }
+
+    const cid = generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '');
+    return {
+        'content-disposition': 'inline',
+        'content-id': cid,
+    };
+};
+
+const packetToAttachment = (packet: Packets, message: MessageStateWithData) => {
+    return {
+        ID: generateUID('att'),
+        Name: packet.Filename,
+        Size: packet.FileSize,
+        MIMEType: packet.MIMEType,
+        KeyPackets: new Blob([packet.keys]),
+        DataPacket: new Blob([packet.data]),
+        Preview: packet.Preview,
+        Headers: buildHeaders(packet, message),
+    };
+};
+
+/**
+ * Add a new EO attachment
+ */
+const uploadEOFile = (
+    file: File,
+    message: MessageStateWithData,
+    publicKeys: OpenPGPKey[],
+    inline: boolean
+): Promise<{ attachment: Attachment; packets: Packets }> => {
+    const getAttachment = async () => {
+        const packets = (await encryptFile(file, inline, publicKeys)) as Packets;
+
+        return { attachment: packetToAttachment(packets, message) as Attachment, packets };
+    };
+
+    return getAttachment();
+};
+
 /**
  * Upload a list of attachments [...File]
  */
 export const upload = (
     files: File[] = [],
     message: MessageStateWithData,
-    messageKeys: MessageKeys,
+    messageKeys: PublicPrivateKey,
     action = ATTACHMENT_ACTION.ATTACHMENT,
     uid: string,
     cid = ''
@@ -121,6 +165,16 @@ export const upload = (
     });
 };
 
+export const uploadEO = (
+    file: File,
+    message: MessageStateWithData,
+    publicKey: OpenPGPKey[],
+    action = ATTACHMENT_ACTION.ATTACHMENT
+) => {
+    const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
+    return uploadEOFile(file, message, publicKey, inline);
+};
+
 /**
  * Is current attachments plus eventual files to upload will exceed the max size
  */
@@ -129,4 +183,20 @@ export const isSizeExceeded = (message: MessageState, files: File[] = []) => {
     const attachmentsSize = attachments.reduce((acc, attachment) => acc + (attachment.Size || 0), 0);
     const filesSize = files.reduce((acc, file) => acc + (file.size || 0), 0);
     return attachmentsSize + filesSize > ATTACHMENT_MAX_SIZE;
+};
+
+export const checkSize = (
+    createNotification: any,
+    message: MessageState,
+    files: File[],
+    pendingUploadFiles: File[] = []
+) => {
+    const sizeExcedeed = isSizeExceeded(message, [...files, ...pendingUploadFiles]);
+    if (sizeExcedeed) {
+        createNotification({
+            type: 'error',
+            text: c('Error').t`Attachments are limited to 25 MB`,
+        });
+    }
+    return sizeExcedeed;
 };

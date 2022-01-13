@@ -10,7 +10,7 @@ import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Calendar as tsCalendar, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { Collapsible, IconRow, Info } from '@proton/components';
+import { Collapsible, IconRow, Info, useMailSettings } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 
@@ -42,6 +42,7 @@ interface Props {
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;
 }
 const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap }: Props) => {
+    const [mailSettings] = useMailSettings();
     const { Name: calendarName, Color } = calendar;
 
     const isInvitation = !model.isOrganizer;
@@ -91,8 +92,8 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
     const locationWrapRef = useRef<HTMLDivElement>(null);
     const descriptionWrapRef = useRef<HTMLDivElement>(null);
 
-    useLinkHandler(locationWrapRef);
-    useLinkHandler(descriptionWrapRef);
+    useLinkHandler(locationWrapRef, mailSettings);
+    useLinkHandler(descriptionWrapRef, mailSettings);
 
     const canonizedOrganizerEmail = canonizeEmailByGuess(organizer?.email || '');
 

@@ -184,7 +184,6 @@ export const loadRemoteDirectFulFilled = (
         const images = payload.map(({ image }) => image);
 
         loadElementOtherThanImages(images, messageState.messageDocument?.document);
-
         loadBackgroundImages({ document: messageState.messageDocument?.document, images });
     }
 };
