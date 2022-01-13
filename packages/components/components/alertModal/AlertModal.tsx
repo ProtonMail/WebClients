@@ -1,7 +1,7 @@
 import { ReactNode, useContext } from 'react';
 
 import { classnames } from '../../helpers';
-import { ModalTwo, ModalProps, ModalTwoContent, ModalTwoFooter, ModalContext } from '../modalTwo';
+import { ModalTwo, ModalProps, ModalTwoContent, ModalContentProps, ModalTwoFooter, ModalContext } from '../modalTwo';
 import './AlertModal.scss';
 
 const AlertModalTitle = ({ children }: { children: ReactNode }) => (
@@ -15,9 +15,10 @@ interface AlertModalProps extends Omit<ModalProps, 'children'> {
     subline?: string;
     buttons: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element];
     children: ReactNode;
+    ModalContentProps?: ModalContentProps;
 }
 
-const AlertModal = ({ title, subline, buttons, className, children, ...rest }: AlertModalProps) => {
+const AlertModal = ({ title, subline, buttons, className, children, ModalContentProps, ...rest }: AlertModalProps) => {
     const [firstButton, secondButton, thirdButton] = Array.isArray(buttons) ? buttons : [buttons];
 
     return (
@@ -26,7 +27,7 @@ const AlertModal = ({ title, subline, buttons, className, children, ...rest }: A
                 <AlertModalTitle>{title}</AlertModalTitle>
                 {subline && <div className="color-weak">{subline}</div>}
             </div>
-            <ModalTwoContent>{children}</ModalTwoContent>
+            <ModalTwoContent {...ModalContentProps}>{children}</ModalTwoContent>
             <ModalTwoFooter className="flex-column flex-align-items-stretch">
                 {firstButton}
                 {secondButton}
