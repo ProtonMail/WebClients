@@ -21,6 +21,9 @@ const RequestNewCodeModal = ({ open, verificationModel, onEdit, onResend, onClos
             open={open}
             onClose={onClose}
             title={c('Title').t`Request new code`}
+            ModalContentProps={{
+                className: 'text-break',
+            }}
             buttons={[
                 <Button
                     color="norm"
