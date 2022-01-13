@@ -48,6 +48,7 @@ import { removeInitialAttachments } from '../../logic/messages/draft/messagesDra
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
+import { useDraftSenderVerification } from '../../hooks/composer/useDraftSenderVerification';
 
 export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
 
@@ -338,6 +339,23 @@ const Composer = (
             return { data: { Flags } };
         }, shouldReloadSendInfo);
     });
+
+    /**
+     * When opening a draft we also want to check that the message Sender is valid
+     * If a message is imported through EasySwitch or the sender address has been deleted in the mean time,
+     * we want to replace the Sender by the account default address
+     */
+    const { verifyDraftSender } = useDraftSenderVerification({ onChange: handleChange });
+
+    useEffect(() => {
+        const handleVerify = async () => {
+            await verifyDraftSender(modelMessage);
+        };
+
+        if (modelMessage.messageDocument?.initialized) {
+            void handleVerify();
+        }
+    }, [modelMessage.messageDocument?.initialized]);
 
     /**
      * In some rare situations, Squire can miss an input event.
