@@ -4,21 +4,21 @@ import MessageBodyImage from './MessageBodyImage';
 
 import { MessageImages } from '../../logic/messages/messagesTypes';
 import { IframeOffsetType } from './interface';
+import { debouncedSetIframeHeight } from './helpers/setIframeHeight';
 
 interface Props {
     messageImages: MessageImages | undefined;
     iframeRef: RefObject<HTMLIFrameElement>;
     isPrint: boolean;
     iframeOffset: IframeOffsetType | undefined;
-    onImagesLoaded: () => void;
 }
 
-const MessageBodyImages = ({ messageImages, iframeRef, isPrint, iframeOffset, onImagesLoaded }: Props) => {
+const MessageBodyImages = ({ messageImages, iframeRef, isPrint, iframeOffset }: Props) => {
     const hasTriggeredLoaded = useRef<boolean>(false);
 
     useEffect(() => {
         if (!hasTriggeredLoaded.current && messageImages?.images.every((img) => img.status === 'loaded')) {
-            onImagesLoaded();
+            debouncedSetIframeHeight(iframeRef);
             hasTriggeredLoaded.current = true;
         }
     }, [messageImages?.images]);
