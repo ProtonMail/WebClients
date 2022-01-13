@@ -227,12 +227,13 @@
 }
 
 .message-content {
+	opacity: 1;
 	border-start-start-radius: 0;
 	border-start-end-radius: 0;
 	border-end-start-radius: var(--border-radius-medium);
 	border-end-end-radius: var(--border-radius-medium);
-	// transition: 0.5s easing(easeOutSine);
-	// transition-property: background-color, color;
+	transition: 0.1s easing(easeOutSine);
+	transition-property: opacity;
 	// force color until real dark mode
 	&:not(.plain):not(.dark-style) {
 		background: white;
@@ -268,6 +269,12 @@
 		img {
 			filter: invert(1) hue-rotate(180deg) !important;
 		}
+	}
+
+	&.message-content-not-set {
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
 	}
 }
 
