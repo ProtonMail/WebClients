@@ -58,7 +58,9 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
         return (
             <div className="inputform-icon-container flex flex-nowrap flex-align-items-center flex-item-fluid relative">
                 <div className="flex-item-fluid">{inputElement}</div>
-                <div className="inputform-suffix right-icon pr0-5 flex">{suffix}</div>
+                <div className="inputform-suffix right-icon pr0-5 flex">
+                    <span className="mauto">{suffix}</span>
+                </div>
             </div>
         );
     }
