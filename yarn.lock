@@ -3197,6 +3197,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@noble/ed25519@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@noble/ed25519@npm:1.3.0"
+  checksum: 4ec8c23ab0a0846a97268007190564ba452aae21076b797457167af12cdce4267034aa64f68271f985d4aed115efff8ab3e842a457c8c1934f0edf4c6b0bd23f
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -3594,12 +3601,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/key-transparency@workspace:packages/key-transparency"
   dependencies:
+    "@noble/ed25519": ^1.3.0
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
-    "@types/elliptic": ^6.4.14
     "@types/jasmine": ^3.10.3
     "@types/pkijs": 0.0.12
-    elliptic: ^6.5.4
     eslint: ^8.6.0
     jasmine: 4.0.2
     jasmine-core: 4.0.0
@@ -5715,15 +5721,6 @@ __metadata:
     "@types/got": ^8
     "@types/node": "*"
   checksum: eabd3d9666b24065fd113551f04387d7eda86d513de5cd3877481c30832ec4617c8fe47464b56b787c733b13320bf19b87aa8babac113ff949fa88958fab4c2e
-  languageName: node
-  linkType: hard
-
-"@types/elliptic@npm:^6.4.14":
-  version: 6.4.14
-  resolution: "@types/elliptic@npm:6.4.14"
-  dependencies:
-    "@types/bn.js": "*"
-  checksum: d5a64f540e0ed4b74a12dfa5cc88c0aa7b531eab3b7a9fab17948ffbfc6e01814230e63d7417ce1b607dbd8b5d70e1b64f5afac632deabf96e44875aaac0ae1b
   languageName: node
   linkType: hard
 
@@ -12859,7 +12856,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"elliptic@npm:^6.5.3, elliptic@npm:^6.5.4":
+"elliptic@npm:^6.5.3":
   version: 6.5.4
   resolution: "elliptic@npm:6.5.4"
   dependencies:
