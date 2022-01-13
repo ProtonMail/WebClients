@@ -51,7 +51,7 @@ const getRawValues = (property: any): string[] => {
  *
  * @return currently an array for the fields adr and categories, a string otherwise
  */
-export const getValue = (property: any, field: string): string | string[] => {
+export const getValue = (property: any, field: string): ContactValue => {
     const values = getRawValues(property).map((val: string | string[] | Date) => {
         /*
             To avoid unintended CRLF sequences inside the values of vCard address fields (those are interpreted as field separators unless followed by a space), we sanitize string values
@@ -63,7 +63,9 @@ export const getValue = (property: any, field: string): string | string[] => {
         // adr
         if (Array.isArray(val)) {
             if (property.name === 'adr') {
-                return val.map((value) => sanitizeStringValue(value));
+                return val.map((value) =>
+                    Array.isArray(value) ? value.map(sanitizeStringValue) : sanitizeStringValue(value)
+                );
             }
             return val;
         }
@@ -98,7 +100,7 @@ export const getValue = (property: any, field: string): string | string[] => {
 
     if (field === 'categories') {
         // the ICAL library will parse item1.CATEGORIES:cat1,cat2 with value ['cat1,cat2'], but we expect ['cat1', 'cat2']
-        const flatValues = values.flat();
+        const flatValues = values.flat(2);
         const splitValues = flatValues.map((value) => value.split(','));
         return splitValues.flat();
     }
