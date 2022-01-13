@@ -1,123 +1,101 @@
-import BN from 'bn.js';
-import * as elliptic from 'elliptic';
-import { SHA256, concatArrays } from 'pmcrypto';
+import { SHA512, concatArrays, arrayToHexString } from 'pmcrypto';
+import { Point, CURVE } from '@noble/ed25519';
+import { CO_FACTOR, N, ptLen } from './constants';
 
-type Point = elliptic.curve.base.BasePoint;
-/* eslint-disable new-cap */
-const EDDSA = new elliptic.eddsa('ed25519');
-/* eslint-enable new-cap */
-const N2 = 32;
-const PROOF_SIZE = 48;
-const N = N2 / 2;
-const G = EDDSA.curve.g as Point;
-const LIMIT = 100;
-const CO_FACTOR = 8;
+/**
+ * Convert an Uint8Array representing a scalar to a bigint instance, also swapping endianness
+ */
+const stringToScalar = (array: Uint8Array) => BigInt(`0x${arrayToHexString(array.reverse())}`);
 
-function OS2ECP(os: Uint8Array) {
-    try {
-        return EDDSA.decodePoint(elliptic.utils.toArray(os, 16)) as Point;
-    } catch (e: any) {
-        return null;
+/**
+ * Convert a ptLen-octet Uint8Array to EC point, according to section 5.1.3 of rfc8032.
+ * It returns null if the octet string does not convert to a valid EC point
+ */
+const stringToPoint = (array: Uint8Array) => {
+    if (array.length !== ptLen) {
+        throw new Error('Input length is inconsistent for conversion to point');
     }
-}
-
-function S2OS(os: number[]) {
-    const sign = os[31] >>> 7;
-    os.unshift(sign + 2);
-    return Uint8Array.from(os);
-}
-
-function ECP2OS(P: Point) {
-    return S2OS([...EDDSA.encodePoint(P)]);
-}
-
-function OS2IP(os: Uint8Array) {
-    return new BN(os);
-}
-
-function I2OSP(i: BN, len?: number) {
-    return Uint8Array.from(i.toArray('be', len));
-}
-
-function decodeProof(proof: Uint8Array) {
-    let pos = 0;
-    const sign = proof[pos++];
-    if (sign !== 2 && sign !== 3) {
-        return;
-    }
-    const r = OS2ECP(proof.slice(pos, pos + N2));
-    if (!r) {
-        return;
-    }
-    pos += N2;
-    const c = proof.slice(pos, pos + N);
-    pos += N;
-    const s = proof.slice(pos, pos + N2);
-    return { r, c: OS2IP(c), s: OS2IP(s) };
-}
-
-async function hashToCurve(email: Uint8Array, publicKey: Uint8Array): Promise<any> {
-    for (let i = 0; i < LIMIT; i++) {
-        const ctr = I2OSP(new BN(i), 4);
-        const digest = Uint8Array.from(
-            await SHA256(concatArrays([new Uint8Array(email), new Uint8Array(publicKey), new Uint8Array(ctr)]))
-        );
-
-        let point = OS2ECP(digest);
-        if (point) {
-            for (let j = 1; j < CO_FACTOR; j *= 2) {
-                point = point.add(point);
-            }
-            return point;
-        }
-    }
-    return null;
-}
-
-async function hashPoints(...args: Point[]) {
-    let hash = new Uint8Array();
-    for (let i = 0; i < args.length; i++) {
-        hash = concatArrays([hash, new Uint8Array(ECP2OS(args[i]))]);
-    }
-    const digest = Uint8Array.from(await SHA256(hash));
-    return OS2IP(digest.slice(0, N));
-}
-
-const arrayEquality = (a: Uint8Array, b: Uint8Array) => {
-    if (a.length !== b.length) {
-        return false;
-    }
-    for (let i = 0; i < a.length; i++) {
-        if (a[i] !== b[i]) {
-            return false;
-        }
-    }
-    return true;
+    return Point.fromHex(array);
 };
 
-export async function vrfVerify(publicKey: Uint8Array, email: Uint8Array, proof: Uint8Array, value: Uint8Array) {
-    if (proof.length !== N2 + PROOF_SIZE + 1 || value.length !== N2 || publicKey.length !== N2) {
-        throw new Error('Length mismatch found');
+/**
+ * Parse a VRF proof, according to section 5.4.4, ECVRF Decode Proof, of draft-irtf-cfrg-vrf-10
+ */
+const decodeProof = (pi: Uint8Array) => {
+    if (pi.length !== 2 * ptLen + N) {
+        throw new Error('Inconsistent proof length');
     }
-    if (!arrayEquality(value, proof.slice(1, N2 + 1))) {
-        throw new Error('Fetched name is different than name in proof');
+
+    const Gamma = stringToPoint(pi.slice(0, ptLen));
+    const c = stringToScalar(pi.slice(ptLen, ptLen + N));
+    const s = stringToScalar(pi.slice(ptLen + N, 2 * ptLen + N));
+
+    if (s >= CURVE.P) {
+        throw new Error('Scalar from proof out of range');
     }
-    const o = decodeProof(proof);
-    if (!o) {
-        throw new Error('Proof decoding failed');
+
+    return { Gamma, c, s };
+};
+
+/**
+ * Hash strings to an EC point, according to section 5.4.1.1, ECVRF_hash_to_curve_try_and_increment, of
+ * draft-irtf-cfrg-vrf-10. It is instantiated for ECVRF-EDWARDS25519-SHA512-TAI according to section 5.5
+ */
+const hashToCurveTAI = async (alpha: Uint8Array, Y: Uint8Array) => {
+    for (let ctr = 0x00; ctr <= 0xff; ctr++) {
+        const hash = await SHA512(concatArrays([new Uint8Array([0x03, 0x01]), Y, alpha, new Uint8Array([ctr, 0x00])]));
+
+        let H: Point;
+        try {
+            H = stringToPoint(hash.slice(0, ptLen));
+        } catch (error: any) {
+            continue;
+        }
+
+        if (!H.equals(Point.BASE)) {
+            return H.multiply(CO_FACTOR);
+        }
     }
-    const P1 = OS2ECP(publicKey);
-    if (!P1) {
-        throw new Error('VRF public key parsing failed');
+
+    throw new Error('Hashing to curve failed to generate a valid point');
+};
+
+/**
+ * Hash several points together, according to section 5.4.3, ECVRF Hash Points, of
+ * draft-irtf-cfrg-vrf-10
+ */
+const hashPoints = async (...points: Point[]) => {
+    const digest = await SHA512(
+        concatArrays([new Uint8Array([0x03, 0x02]), ...points.map((p) => p.toRawBytes()), new Uint8Array([0x00])])
+    );
+    return stringToScalar(digest.slice(0, N));
+};
+
+/**
+ * Hash the VRF proof, according to section 5.2, ECVRF Proof to Hash, of
+ * draft-irtf-cfrg-vrf-10
+ */
+const proofToHash = async (Gamma: Point) =>
+    SHA512(
+        concatArrays([new Uint8Array([0x03, 0x03]), Gamma.multiply(CO_FACTOR).toRawBytes(), new Uint8Array([0x00])])
+    );
+
+/**
+ * VRF verify a proof, according to section 5.3, ECVRF Verifying, of draft-irtf-cfrg-vrf-10
+ */
+export const vrfVerify = async (alpha: Uint8Array, pi: Uint8Array, vrfHexKey: Uint8Array) => {
+    const Y = stringToPoint(vrfHexKey);
+    const H = await hashToCurveTAI(alpha, vrfHexKey);
+    const D = decodeProof(pi);
+    const { Gamma, c, s } = D;
+
+    const U = Point.BASE.multiply(s).subtract(Y.multiply(c));
+    const V = H.multiply(s).subtract(Gamma.multiply(c));
+
+    const cPrime = await hashPoints(H, Gamma, U, V);
+    if (cPrime !== c) {
+        throw new Error('Verification failed');
     }
-    const u = P1.mul(o.c).add(G.mul(o.s));
-    const h = await hashToCurve(email, publicKey);
-    if (!h) {
-        throw new Error('Point generation failed');
-    }
-    const v = o.r.mul(o.c).add(h.mul(o.s));
-    const c = await hashPoints(G, h, P1, o.r, u, v);
-    if (!c.eq(o.c)) {
-        throw new Error('Verification went through but failed');
-    }
-}
+
+    return proofToHash(Gamma);
+};
