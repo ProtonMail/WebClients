@@ -4,7 +4,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import ContactContainer from '../ContactContainer';
-import { useModals, useContactGroups, useAddresses, useUserKeys } from '../../../hooks';
+import { useModals, useContactGroups, useAddresses, useUserKeys, useMailSettings } from '../../../hooks';
 import useContactList from '../useContactList';
 import useContact from '../useContact';
 import useContactProperties from '../useContactProperties';
@@ -23,6 +23,7 @@ interface Props {
 
 const ContactDetailsModal = ({ contactID, onClose = noop, onMailTo, ...rest }: Props) => {
     const { createModal } = useModals();
+    const [mailSettings] = useMailSettings();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const [addresses = [], loadingAddresses] = useAddresses();
@@ -31,7 +32,7 @@ const ContactDetailsModal = ({ contactID, onClose = noop, onMailTo, ...rest }: P
     const modalRef = useRef<HTMLDivElement>(null);
     const modalContentRef = useRef<HTMLDivElement>(null);
 
-    useLinkHandler(modalContentRef, { onMailTo });
+    useLinkHandler(modalContentRef, mailSettings, { onMailTo });
 
     const [{ properties }] = useContactProperties({ contact, userKeysList });
 

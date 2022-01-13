@@ -95,8 +95,8 @@ export const hasToSkipProxy = (images: MessageImage[] = []) => {
 export const loadRemoteImages = async (
     useProxy: boolean,
     images: MessageRemoteImage[],
-    onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
-    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void
+    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadRemoteImagesProxy?: (imagesToLoad: MessageRemoteImage[]) => void
 ) => {
     // Not really happy with this hack but we need to "wait" that the message transform process is finished
     // And update the message cache before updating image statuses
@@ -105,7 +105,7 @@ export const loadRemoteImages = async (
     const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
 
     if (useProxy) {
-        return onLoadRemoteImagesProxy(imagesToLoad);
+        return onLoadRemoteImagesProxy?.(imagesToLoad);
     }
     return onLoadRemoteImagesDirect(imagesToLoad);
 };

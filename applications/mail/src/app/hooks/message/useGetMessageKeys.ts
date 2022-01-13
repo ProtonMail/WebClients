@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 import { useGetAddressKeys } from '@proton/components';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MessageKeys } from '../../logic/messages/messagesTypes';
+import { PublicPrivateKey } from '../../logic/messages/messagesTypes';
 
-export type GetMessageKeys = (message: Pick<Message, 'AddressID'>) => Promise<MessageKeys>;
+export type GetMessageKeys = (message: Pick<Message, 'AddressID'>) => Promise<PublicPrivateKey>;
 export type UseGetMessageKeys = () => GetMessageKeys;
 
 /**
@@ -16,7 +16,7 @@ export const useGetMessageKeys: UseGetMessageKeys = () => {
     return useCallback(
         async (message: Pick<Message, 'AddressID'>) => {
             const { publicKeys, privateKeys } = splitKeys(await getAddressKeys(message.AddressID));
-            return { publicKeys, privateKeys };
+            return { publicKeys, privateKeys, type: 'publicPrivate' };
         },
         [getAddressKeys]
     );

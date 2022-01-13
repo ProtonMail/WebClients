@@ -193,9 +193,9 @@ const SquireToolbarMoreDropdown = ({
                             <Icon name="check" className={classnames(['mt0-25', getClassname(isRTL)])} />
                             <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Right to Left`}</span>
                         </DropdownMenuButton>,
-                        <div className="dropdown-item-hr" key="hr-5" />,
                     ]}
                 {metadata.supportPlainText && [
+                    <div className="dropdown-item-hr" key="hr-5" />,
                     <DropdownMenuButton
                         key={3}
                         className="text-left flex flex-nowrap no-border-bottom"

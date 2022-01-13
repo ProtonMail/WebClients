@@ -24,8 +24,8 @@ export type SendingMessageNotificationManager = ReturnType<typeof createSendingM
 interface SendingMessageNotificationProps {
     manager: SendingMessageNotificationManager;
     scheduledAt?: number;
-    viewMode: number;
-    message: Message | undefined;
+    viewMode?: number;
+    message?: Message;
 }
 
 enum SendingStep {

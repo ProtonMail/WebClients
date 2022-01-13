@@ -16,6 +16,7 @@ interface Props {
     value: string;
     update: (nextFontSize: string) => void;
     onDefaultClick: () => void;
+    isOutside?: boolean;
 }
 
 const SquireToolbarFontFaceDropdown = ({
@@ -25,6 +26,7 @@ const SquireToolbarFontFaceDropdown = ({
     value,
     update,
     onDefaultClick,
+    isOutside,
 }: Props) => {
     useEffect(
         () =>
@@ -66,7 +68,7 @@ const SquireToolbarFontFaceDropdown = ({
                         style={{ fontFamily: font.toString() }}
                         buttonContent={<span className="pr0-5">{getFontLabel(font)}</span>}
                         extraContent={
-                            font === defaultValue ? (
+                            font === defaultValue && !isOutside ? (
                                 <div className="flex pl0-5 pr0-5 flex-item-noshrink">
                                     <Button
                                         color="weak"

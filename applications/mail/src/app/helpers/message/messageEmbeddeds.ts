@@ -4,7 +4,6 @@ import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { LoadEmbeddedResults, MessageEmbeddedImage, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { UploadResult } from '../attachment/attachmentUploader';
 import { hash, toUnsignedString } from '../string';
 import { querySelectorAll } from './messageContent';
 import { getEmbeddedImages, updateImages } from './messageImages';
@@ -81,16 +80,15 @@ export const createBlob = (attachment: Attachment, data: Uint8Array | string) =>
 /**
  * Prepare MessageEmbeddedImage structure based on an upload result
  */
-export const createEmbeddedImageFromUpload = (upload: UploadResult): MessageEmbeddedImage => {
-    const { cid, cloc } = readContentIDandLocation(upload.attachment);
-
+export const createEmbeddedImageFromUpload = (attachment: Attachment): MessageEmbeddedImage => {
+    const { cid, cloc } = readContentIDandLocation(attachment);
     return {
         type: 'embedded',
         id: generateUID('embedded'),
         cid,
         cloc,
         tracker: undefined,
-        attachment: upload.attachment,
+        attachment,
         status: 'loaded',
     };
 };

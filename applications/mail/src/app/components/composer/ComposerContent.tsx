@@ -4,13 +4,14 @@ import { isPlainText, getAttachments } from '@proton/shared/lib/mail/messages';
 import { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
 import { classnames, EllipsisLoader } from '@proton/components';
+import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/placeholders/drag-and-drop-img.svg';
 import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';
 import { Breakpoints } from '../../models/utils';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 
 interface Props {
@@ -20,14 +21,18 @@ interface Props {
     onEditorReady: () => void;
     onChange: MessageChange;
     onChangeContent: (content: string) => void;
-    onFocus: () => void;
+    onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
-    onRemoveUpload: (pendingUpload: PendingUpload) => Promise<void>;
+    onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     pendingUploads?: PendingUpload[];
     contentFocusRef: MutableRefObject<() => void>;
     editorActionsRef: EditorActionsRef;
-    squireKeydownHandler: (e: KeyboardEvent) => void;
+    squireKeydownHandler?: (e: KeyboardEvent) => void;
+    isOutside?: boolean;
+    outsideKey?: OutsideKey;
+    mailSettings?: MailSettings;
+    addresses: Address[];
 }
 
 const ComposerContent = ({
@@ -45,6 +50,10 @@ const ComposerContent = ({
     contentFocusRef,
     editorActionsRef,
     squireKeydownHandler,
+    isOutside = false,
+    outsideKey,
+    mailSettings,
+    addresses,
 }: Props) => {
     const [fileHover, setFileHover] = useState(false);
 
@@ -83,7 +92,7 @@ const ComposerContent = ({
     return (
         <section
             className={classnames([
-                'flex-item-fluid mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
+                'flex-item-fluid-auto mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
                 attachments?.length > 0 && 'composer-content--has-attachments',
                 isPlainText(message.data) ? '' : 'composer-content--rich-edition',
             ])}
@@ -99,7 +108,10 @@ const ComposerContent = ({
                 </>
             )}
             <div
-                className="flex-item-fluid mb0-5 pl1-75 pr1-75 w100 flex flex-column flex-nowrap relative"
+                className={classnames([
+                    'flex-item-fluid flex flex-column flex-nowrap relative',
+                    isOutside ? 'mx0-5' : 'w100 pl1-75 pr1-75 mb0-5',
+                ])}
                 data-testid="composer-content"
             >
                 <SquireEditorWrapper
@@ -115,12 +127,18 @@ const ComposerContent = ({
                     contentFocusRef={contentFocusRef}
                     editorActionsRef={editorActionsRef}
                     keydownHandler={squireKeydownHandler}
+                    isOutside={isOutside}
+                    mailSettings={mailSettings}
+                    addresses={addresses}
                 />
                 {fileHover && (
                     <div
                         onDragLeave={handleDragLeave}
                         onDropCapture={handleDrop}
-                        className="composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center rounded-xl"
+                        className={classnames([
+                            'composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center rounded-xl',
+                            !isOutside && 'mr1-75 ml1-75',
+                        ])}
                     >
                         <span className="composer-editor-dropzone-text no-pointer-events text-center color-weak">
                             <img src={dragAndDrop} alt="" className="mb1" />
@@ -148,7 +166,11 @@ const ComposerContent = ({
                         showDownloadAll={false}
                         onRemoveAttachment={onRemoveAttachment}
                         onRemoveUpload={onRemoveUpload}
-                        className="composer-attachments-list"
+                        className={classnames([
+                            'composer-attachments-list',
+                            isOutside && 'eo-composer-attachments-list',
+                        ])}
+                        outsideKey={outsideKey}
                     />
                 </div>
             )}

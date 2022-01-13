@@ -17,6 +17,8 @@ export interface Attachment {
     Headers?: { [key: string]: string };
     Encrypted?: number;
     Signature?: string;
+    // EO specific
+    DataPacket?: any;
 }
 
 export interface UnsubscribeMethods {
@@ -70,4 +72,5 @@ export interface Message {
     RightToLeft?: number;
     UnsubscribeMethods?: UnsubscribeMethods;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
+    EORecipient?: Recipient;
 }

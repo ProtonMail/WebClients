@@ -29,9 +29,9 @@ export const extractKeysFromAttachments = async (
                         attachment,
                         undefined,
                         messageKeys,
+                        api,
                         getAttachment,
-                        onUpdateAttachment,
-                        api
+                        onUpdateAttachment
                     );
                     const [key] = await getKeys(arrayToBinaryString(data));
                     return key;

@@ -4,7 +4,7 @@ import { FilePreview, NavigationControl } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import Portal from '@proton/components/components/portal/Portal';
 import { useDownload, usePreview } from '../../hooks/useDownload';
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 
 export interface AttachmentPreviewControls {
     preview: (attachment: Attachment) => void;
@@ -19,10 +19,11 @@ interface Props {
     attachments: Attachment[];
     message: MessageStateWithData;
     onDownload: (attachment: Attachment, verificationStatus: VERIFICATION_STATUS) => void;
+    outsideKey?: OutsideKey;
 }
 
 const AttachmentPreview = (
-    { attachments, message, onDownload }: Props,
+    { attachments, message, onDownload, outsideKey }: Props,
     ref: Ref<AttachmentPreviewControls | undefined>
 ) => {
     const preview = usePreview();
@@ -36,7 +37,7 @@ const AttachmentPreview = (
         setPreviewing({
             attachment,
         });
-        const download = await preview(message, attachment);
+        const download = await preview(message, attachment, outsideKey);
         setPreviewing((previewing) => {
             // Preview can be closed or changed during download;
             if (previewing === undefined || previewing.attachment !== attachment) {
@@ -76,7 +77,7 @@ const AttachmentPreview = (
     const handleClose = () => setPreviewing(undefined);
     const handleDownload = async () => {
         const { attachment } = previewing;
-        const verificationStatus = await download(message, attachment);
+        const verificationStatus = await download(message, attachment, outsideKey);
         onDownload(attachment, verificationStatus);
     };
 

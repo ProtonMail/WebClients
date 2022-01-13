@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, forwardRef, Ref } from 'react';
 import { c } from 'ttag';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { message } from '@proton/shared/lib/sanitize';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useHandler, useModals, useNotifications } from '../../hooks';
 import { getSquireRef, setSquireRef, initSquire, toggleEllipsisButton } from './squireConfig';
 import { getLinkAtCursor, makeLink, pasteFileHandler, scrollIntoViewIfNeeded } from './squireActions';
@@ -23,6 +24,7 @@ interface Props {
     onEllipseClick: () => void;
     keydownHandler?: (e: KeyboardEvent) => void;
     defaultFont?: FontData;
+    mailSettings?: MailSettings;
 }
 
 /**
@@ -43,6 +45,7 @@ const SquireIframe = (
         onEllipseClick,
         keydownHandler,
         defaultFont,
+        mailSettings,
         ...rest
     }: Props,
     ref: Ref<SquireType>
@@ -146,7 +149,13 @@ const SquireIframe = (
 
     const handleLink = (squire: SquireType) => {
         const link = getLinkAtCursor(squire);
-        createModal(<InsertLinkModal inputLink={link} onSubmit={(linkData) => makeLink(squire, linkData)} />);
+        createModal(
+            <InsertLinkModal
+                inputLink={link}
+                onSubmit={(linkData) => makeLink(squire, linkData)}
+                mailSettings={mailSettings}
+            />
+        );
     };
 
     const handleKeyDown = (e: KeyboardEvent, squire: SquireType) => {

@@ -1,0 +1,64 @@
+/*
+ * signup specific styles
+ */
+@import '~@proton/styles/scss/config';
+
+.eo-layout {
+	// nice mountains image
+	&-bg {
+		background: url(./bg-mountains.svg) 0 0 no-repeat;
+		background-size: cover;
+		background-position: bottom;
+
+		@include respond-to($breakpoint-small, 'max') {
+			background: linear-gradient(180deg, #263163 2.81%, #263163 43.71%, #151b38 89.91%);
+			background-position: top;
+		}
+	}
+
+	// main content
+	transition: max-inline-size 0.15s easing(easeIn);
+	//min-block-size: 30em;// was here to limitate shifts
+	border-radius: var(--border-radius-large);
+
+	// fix for plans, same as in subscription flow
+	&:not([class*='mw']) {
+		max-inline-size: rem(1500);
+	}
+
+	&-header {
+		padding-inline: em(48);
+		padding-block: 0.5em 0;
+	}
+	&-title {
+		font-size: em(16);
+	}
+	&-main-content {
+		padding-inline: em(48);
+		padding-block: em(24) em(48);
+		@include respond-to($breakpoint-small) {
+			padding-inline: em(20);
+		}
+	}
+
+	&-container-challenge {
+		min-block-size: rem(100);
+	}
+}
+
+.eo-layout-container {
+	@include respond-to($breakpoint-small) {
+		.payment-left,
+		.payment-right {
+			inline-size: 100%;
+			padding-inline: 0;
+		}
+	}
+}
+
+.eo-footer-link {
+	&:focus,
+	&:hover {
+		color: rgb(255 255 255 / 0.5);
+	}
+}

@@ -18,9 +18,9 @@ describe('transformRemote', () => {
         return transformRemote(
             message,
             mailSettings,
+            onLoadRemoteImagesDirect,
             onLoadRemoteImagesProxy,
-            onLoadFakeImagesProxy,
-            onLoadRemoteImagesDirect
+            onLoadFakeImagesProxy
         );
     };
 
