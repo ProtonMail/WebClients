@@ -43,6 +43,14 @@ const Verify = () => {
 
     const isEmbedded = windowIsEmbedded || embed;
 
+    const handleClose = () => {
+        broadcast({ type: MessageType.CLOSE });
+    };
+
+    const handleLoaded = () => {
+        broadcast({ type: MessageType.LOADED });
+    };
+
     useEffect(() => {
         if (theme) {
             setTheme(Number(theme));
@@ -53,7 +61,10 @@ const Verify = () => {
         const localeCode = getClosestLocaleMatch(locale || '', locales) || getClosestLocaleCode(browserLocale, locales);
 
         withLoading(Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])).catch(
-            () => setError(true)
+            () => {
+                setError(true);
+                setTimeout(() => handleLoaded(), 50);
+            }
         );
 
         if (!isEmbedded) {
@@ -122,14 +133,6 @@ const Verify = () => {
                 payload: { token, type },
             });
         }
-    };
-
-    const handleClose = () => {
-        broadcast({ type: MessageType.CLOSE });
-    };
-
-    const handleLoaded = () => {
-        broadcast({ type: MessageType.LOADED });
     };
 
     const wrapInMain = (child: ReactNode) => (
