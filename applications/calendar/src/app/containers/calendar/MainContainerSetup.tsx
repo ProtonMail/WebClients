@@ -1,3 +1,4 @@
+import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import {
@@ -22,7 +23,6 @@ import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEven
 import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
 import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
 import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
-import { getDefaultTzid } from './getSettings';
 import CalendarContainer from './CalendarContainer';
 import AlarmContainer from '../alarms/AlarmContainer';
 import EventActionContainer from './EventActionContainer';
