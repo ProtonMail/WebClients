@@ -15,7 +15,15 @@ const useSetIframeHeight = (iframeRef: RefObject<HTMLIFrameElement>) => {
                 return;
             }
 
-            iframe.style.height = `${emailContentRootHeight + 16}px`;
+            /**
+             * Here to avoid unexpected sidebar appear.
+             * Margin value is equal to 1rem in order to simulate
+             * a normal margin at the bottom of the content.
+             */
+            const SAFETY_MARGIN = 16;
+            const computedContentHeight = emailContentRootHeight ? emailContentRootHeight + SAFETY_MARGIN : 0;
+
+            iframe.style.height = `${computedContentHeight}px`;
         }, 50),
         []
     );
