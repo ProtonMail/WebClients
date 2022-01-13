@@ -124,6 +124,10 @@ const Verify = () => {
         }
     };
 
+    const handleLoaded = () => {
+        broadcast({ type: MessageType.LOADED });
+    };
+
     const wrapInMain = (child: ReactNode) => (
         <main className="hv h100 ui-standard" ref={registerRootRef}>
             <div className="hv-container color-norm bg-norm relative no-scroll w100 max-w100 center mw30r">{child}</div>
@@ -151,6 +155,7 @@ const Verify = () => {
             step={step}
             onChangeStep={setStep}
             onSubmit={handleSubmit}
+            onLoaded={handleLoaded}
             methods={methods}
             token={token}
             defaultCountry={defaultCountry}
