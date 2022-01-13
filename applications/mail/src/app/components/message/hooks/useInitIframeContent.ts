@@ -6,6 +6,7 @@ import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
 import getIframeHtml from '../helpers/getIframeHtml';
+import { debouncedSetIframeHeight } from '../helpers/setIframeHeight';
 
 interface Props {
     content: string;
@@ -13,19 +14,10 @@ interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
     isPlainText: boolean;
     onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
-    setIframeHeight: () => void;
     onReady?: (iframe: RefObject<HTMLIFrameElement>) => void;
 }
 
-const useInitIframeContent = ({
-    iframeRef,
-    setIframeHeight,
-    messageHead,
-    content,
-    onContentLoaded,
-    isPlainText,
-    onReady,
-}: Props) => {
+const useInitIframeContent = ({ iframeRef, messageHead, content, onContentLoaded, isPlainText, onReady }: Props) => {
     const [initStatus, setInitStatus] = useState<'start' | 'base_content' | 'done'>('start');
     const hasBeenDone = useRef<boolean>(false);
     const iframeRootDivRef = useRef<HTMLDivElement>();
@@ -55,7 +47,8 @@ const useInitIframeContent = ({
         }
 
         if (initStatus === 'base_content') {
-            setIframeHeight();
+            debouncedSetIframeHeight(iframeRef);
+
             setInitStatus('done');
             return;
         }

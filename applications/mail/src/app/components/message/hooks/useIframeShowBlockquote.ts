@@ -1,5 +1,6 @@
 import { RefObject, useEffect, useState } from 'react';
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
+import { debouncedSetIframeHeight } from '../helpers/setIframeHeight';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
@@ -7,7 +8,6 @@ interface Props {
     showBlockquoteProp: boolean;
     showBlockquoteToggle: boolean;
     blockquoteContent: string;
-    setIframeHeight: () => void;
     onBlockquoteToggle?: () => void;
 }
 
@@ -17,7 +17,6 @@ const useIframeShowBlockquote = ({
     initStatus,
     showBlockquoteProp,
     showBlockquoteToggle,
-    setIframeHeight,
     onBlockquoteToggle,
 }: Props) => {
     const [showBlockquote, setShowBlockquote] = useState(showBlockquoteProp);
@@ -38,7 +37,7 @@ const useIframeShowBlockquote = ({
             iframeBlockquoteDiv.innerHTML = '';
         }
 
-        setIframeHeight();
+        debouncedSetIframeHeight(iframeRef);
         onBlockquoteToggle?.();
     }, [showBlockquote]);
 

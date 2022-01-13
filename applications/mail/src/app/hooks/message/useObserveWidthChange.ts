@@ -1,9 +1,15 @@
-import { RefObject, useEffect, useMemo, useRef } from 'react';
+import { RefObject, useEffect, useRef } from 'react';
+import { debouncedSetIframeHeight } from '../../components/message/helpers/setIframeHeight';
 
-const useObserveWidthChange = (elRef: RefObject<HTMLElement>, onResizeCallback: () => void) => {
+const useObserveWidthChange = (elRef: RefObject<HTMLElement>, iframeRef: RefObject<HTMLIFrameElement>) => {
     const prevWidthRef = useRef<number | undefined>(elRef.current?.offsetWidth);
-    const observer = useMemo(() => {
-        return new ResizeObserver((entries) => {
+
+    useEffect(() => {
+        if (!elRef.current) {
+            return;
+        }
+
+        const observer = new ResizeObserver((entries) => {
             const elEntry = entries.find((entry) => entry.target === elRef.current);
             const width = elEntry?.borderBoxSize.map((size) => size.inlineSize)[0];
 
@@ -15,17 +21,11 @@ const useObserveWidthChange = (elRef: RefObject<HTMLElement>, onResizeCallback: 
             const hasResized = roundedWidth !== prevWidthRef.current;
 
             if (hasResized) {
-                onResizeCallback();
+                debouncedSetIframeHeight(iframeRef);
             }
 
             prevWidthRef.current = roundedWidth;
         });
-    }, [onResizeCallback]);
-
-    useEffect(() => {
-        if (!elRef.current) {
-            return;
-        }
 
         observer.observe(elRef.current);
 
