@@ -27,13 +27,14 @@ export const getTargetEnvironment = (
 
 export const versionCookieAtLoad = getCookie('Version') as Environment | undefined;
 
-export const updateVersionCookie = (
+export const updateVersionCookieHelper = (
+    cookieName: string,
     environment: Environment | undefined,
     earlyAccessScopeFeature: Feature<Environment> | undefined
 ) => {
     if (environment) {
         setCookie({
-            cookieName: 'Version',
+            cookieName,
             cookieValue: environment,
             expirationDate: 'max',
             path: '/',
@@ -44,13 +45,21 @@ export const updateVersionCookie = (
      * if there is a not-allowed cookie already set in the browser,
      * leave it be, version will not be treated as set by it
      */
-    if (!getVersionCookieIsValid(getCookie('Version') as Environment | undefined, earlyAccessScopeFeature)) {
+    if (!getVersionCookieIsValid(getCookie(cookieName) as Environment | undefined, earlyAccessScopeFeature)) {
         return;
     }
 
     if (!environment) {
-        deleteCookie('Version');
+        deleteCookie(cookieName);
     }
+};
+
+export const updateVersionCookie = (
+    environment: Environment | undefined,
+    earlyAccessScopeFeature: Feature<Environment> | undefined
+) => {
+    updateVersionCookieHelper('Version', environment, earlyAccessScopeFeature);
+    updateVersionCookieHelper('Tag', environment, earlyAccessScopeFeature);
 };
 
 const useEarlyAccess = () => {
