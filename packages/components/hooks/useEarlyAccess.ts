@@ -1,5 +1,6 @@
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
+import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
 
 import useFeature from './useFeature';
 import useApi from './useApi';
@@ -58,6 +59,9 @@ export const updateVersionCookie = (
     environment: Environment | undefined,
     earlyAccessScopeFeature: Feature<Environment> | undefined
 ) => {
+    if (doesNotSupportEarlyAccessVersion()) {
+        return;
+    }
     updateVersionCookieHelper('Version', environment, earlyAccessScopeFeature);
     updateVersionCookieHelper('Tag', environment, earlyAccessScopeFeature);
 };
