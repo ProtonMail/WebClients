@@ -5,7 +5,9 @@ import { Scroll } from '../scroll';
 import { ModalContext } from './Modal';
 import './ModalContent.scss';
 
-const ModalContent = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
+export type ModalContentProps = ComponentPropsWithoutRef<'div'>;
+
+const ModalContent = ({ className, ...rest }: ModalContentProps) => {
     const { id } = useContext(ModalContext);
 
     return (
