@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
@@ -31,6 +31,7 @@ const Text = ({ children }: { children: ReactNode }) => {
 
 interface Props {
     onSubmit: (token: string, tokenType: HumanVerificationMethodType) => void;
+    onLoaded?: () => void;
     token: string;
     methods: HumanVerificationMethodType[];
     defaultEmail?: string;
@@ -48,6 +49,7 @@ const HumanVerificationForm = ({
     methods,
     token,
     onSubmit,
+    onLoaded,
     step,
     isEmbedded,
     onChangeStep,
@@ -171,6 +173,15 @@ const HumanVerificationForm = ({
     ].filter(isTruthy);
 
     const [index, setIndex] = useState(0);
+
+    const loadedOnceRef = useRef(false);
+    useEffect(() => {
+        if (loadedOnceRef.current) {
+            return;
+        }
+        onLoaded?.();
+        loadedOnceRef.current = true;
+    }, [onLoaded]);
 
     if (tabs.length === 0) {
         return (

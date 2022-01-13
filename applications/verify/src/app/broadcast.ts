@@ -32,6 +32,7 @@ export enum MessageType {
     NOTIFICATION = 'NOTIFICATION',
     RESIZE = 'RESIZE',
     HUMAN_VERIFICATION_SUCCESS = 'HUMAN_VERIFICATION_SUCCESS',
+    LOADED = 'LOADED',
 }
 
 type Message =
@@ -46,6 +47,9 @@ type Message =
     | {
           type: MessageType.HUMAN_VERIFICATION_SUCCESS;
           payload: { token: string; type: string };
+      }
+    | {
+          type: MessageType.LOADED;
       };
 
 const broadcast = (message: Message) => {
