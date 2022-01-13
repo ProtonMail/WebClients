@@ -103,7 +103,8 @@ const encryptBodyPackage = async (
     pack: Package,
     messageKeys: MessageKeys,
     publicKeys: OpenPGPKey[],
-    message: MessageState
+    message: MessageState,
+    scheduledTime?: number
 ) => {
     const cleanPublicKeys = publicKeys.filter(identity);
 
@@ -123,6 +124,7 @@ const encryptBodyPackage = async (
         privateKeys,
         returnSessionKey: true,
         compression: shouldCompress ? enums.compression.zlib : enums.compression.uncompressed,
+        date: scheduledTime ? new Date(scheduledTime) : undefined,
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
@@ -134,7 +136,12 @@ const encryptBodyPackage = async (
  * (the encrypted body in the message object) is the same as the other emails so we can use 1 blob for them in the api
  * (i.e. deduplication)
  */
-const encryptDraftBodyPackage = async (pack: Package, messageKeys: MessageKeys, publicKeys: OpenPGPKey[]) => {
+const encryptDraftBodyPackage = async (
+    pack: Package,
+    messageKeys: MessageKeys,
+    publicKeys: OpenPGPKey[],
+    scheduledTime?: number
+) => {
     const cleanPublicKeys = [...messageKeys.publicKeys, ...publicKeys].filter(identity);
 
     // Always encrypt with a single private key
@@ -145,6 +152,7 @@ const encryptDraftBodyPackage = async (pack: Package, messageKeys: MessageKeys, 
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
+        date: scheduledTime ? new Date(scheduledTime) : undefined,
     });
 
     const packets = await splitMessage(data);
@@ -170,13 +178,17 @@ const encryptBody = async (pack: Package, messageKeys: MessageKeys, message: Mes
     const addressKeys = Object.keys(pack.Addresses || {});
     const addresses = Object.values(pack.Addresses || {});
     const publicKeysList = addresses.map(({ PublicKey }) => PublicKey as OpenPGPKey);
+
+    const scheduledTime = message.draftFlags?.scheduledAt ? message.draftFlags?.scheduledAt * 1000 : undefined;
+
     /*
      * Special case: reuse the encryption packet from the draft, this allows us to do deduplication on the back-end.
      * In fact, this will be the most common case.
      */
-    const encryptPack = message.data?.MIMEType === pack.MIMEType ? encryptDraftBodyPackage : encryptBodyPackage;
-
-    const { keys, encrypted, sessionKey } = await encryptPack(pack, messageKeys, publicKeysList, message);
+    const { keys, encrypted, sessionKey } =
+        message.data?.MIMEType === pack.MIMEType
+            ? await encryptDraftBodyPackage(pack, messageKeys, publicKeysList, scheduledTime)
+            : await encryptBodyPackage(pack, messageKeys, publicKeysList, message, scheduledTime);
 
     let counter = 0;
     publicKeysList.forEach((publicKey, index) => {
