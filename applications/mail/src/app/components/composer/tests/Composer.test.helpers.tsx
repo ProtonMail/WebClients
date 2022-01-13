@@ -1,5 +1,5 @@
 import squire from 'squire-rte';
-import { fireEvent, RenderResult } from '@testing-library/react';
+import { act, fireEvent, RenderResult } from '@testing-library/react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mergeMessages } from '../../../helpers/message/messages';
 import Composer from '../Composer';
@@ -11,11 +11,13 @@ import {
     waitForNotification,
     addApiKeys,
     apiKeys,
+    tick,
 } from '../../../helpers/test/helper';
 import { Breakpoints } from '../../../models/utils';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { store } from '../../../logic/store';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 // Fake timers fails for the complexe send action
 // These more manual trick is used to skip undo timing
@@ -116,4 +118,15 @@ export const send = async (message: MessageState, useMinimalCache = true) => {
         console.log('Error in sending helper', error);
         throw error;
     }
+};
+
+export const saveNow = async (container: HTMLElement) => {
+    fireEvent.keyDown(container, { key: 's', ctrlKey: true });
+    await tick();
+
+    // Mandatory to wait on every consequence of the change before starting another test
+    // Definitely not proud of this, any better suggestion is welcomed
+    await act(async () => {
+        await wait(3000);
+    });
 };
