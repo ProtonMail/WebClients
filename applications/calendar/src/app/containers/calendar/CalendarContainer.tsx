@@ -1,4 +1,13 @@
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
+import {
+    getAutoDetectPrimaryTimezone,
+    getDefaultTzid,
+    getDefaultView,
+    getDisplaySecondaryTimezone,
+    getDisplayWeekNumbers,
+    getInviteLocale,
+    getSecondaryTimezone,
+} from '@proton/shared/lib/calendar/getSettings';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from '@proton/shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
@@ -28,15 +37,6 @@ import ContactEmailsProvider from './ContactEmailsProvider';
 import { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import getDateRange from './getDateRange';
-import {
-    getAutoDetectPrimaryTimezone,
-    getDefaultTzid,
-    getDefaultView,
-    getDisplaySecondaryTimezone,
-    getDisplayWeekNumbers,
-    getInviteLocale,
-    getSecondaryTimezone,
-} from './getSettings';
 import getTitleDateString from './getTitleDateString';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
 import InteractiveCalendarView from './InteractiveCalendarView';

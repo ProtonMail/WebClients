@@ -1,6 +1,7 @@
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getInviteLocale } from '@proton/shared/lib/calendar/getSettings';
 import {
     createInviteIcs,
     generateEmailBody,
@@ -22,7 +23,6 @@ import {
     SavedInviteData,
 } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { getInviteLocale } from 'proton-calendar/src/app/containers/calendar/getSettings';
 import { useCallback } from 'react';
 import {
     useApi,
