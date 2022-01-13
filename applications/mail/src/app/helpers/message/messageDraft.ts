@@ -190,7 +190,9 @@ export const createNewDraft = (
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     isOutside = false
 ): PartialMessageState => {
-    const MIMEType = referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
+    const MIMEType = isOutside
+        ? (mailSettings.DraftMIMEType as unknown as MIME_TYPES)
+        : referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
     const { FontFace, FontSize, RightToLeft } = mailSettings;
 
     let Flags = 0;
