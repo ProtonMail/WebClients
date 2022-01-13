@@ -67,9 +67,9 @@ export const locateBlockquote = (inputDocument: Element | undefined): [content: 
 
     const testBlockquote = (blockquote: Element) => {
         const blockquoteText = blockquote.textContent || '';
-        const [beforeText = '', afterText = ''] = split(parentText, blockquoteText);
+        const [, afterText = ''] = split(parentText, blockquoteText);
 
-        if (beforeText.trim().length && !afterText.trim().length) {
+        if (!afterText.trim().length) {
             const blockquoteHTML = blockquote.outerHTML || '';
             const [beforeHTML = ''] = split(parentHTML, blockquoteHTML);
             return [beforeHTML, blockquoteHTML] as [string, string];
