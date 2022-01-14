@@ -5,7 +5,7 @@ export default function useControlled<V>(controlled: V, defaultValue?: V) {
 
     const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
 
-    const setValueIfUncontrolled = useCallback((v) => {
+    const setValueIfUncontrolled = useCallback((v: V) => {
         if (!isControlled) {
             setUncontrolledValue(v);
         }
