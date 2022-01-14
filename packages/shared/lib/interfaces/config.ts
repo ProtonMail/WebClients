@@ -8,7 +8,6 @@ export interface ProtonConfig {
     APP_NAME: APP_NAMES;
     API_URL: string;
     LOCALES: { [key: string]: string };
-    API_VERSION: string;
     DATE_VERSION: string;
     COMMIT: string;
     BRANCH: string;

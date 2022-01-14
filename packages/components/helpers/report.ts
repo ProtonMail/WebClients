@@ -1,8 +1,8 @@
 import { getOS, getBrowser, getDevice } from '@proton/shared/lib/helpers/browser';
-import { CLIENT_ID_KEYS, CLIENT_IDS } from '@proton/shared/lib/constants';
+import { APP_NAMES, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
-export const getClient = (clientID: CLIENT_ID_KEYS) => {
-    return CLIENT_IDS[clientID];
+export const getClientName = (appName: APP_NAMES) => {
+    return `Web ${APPS_CONFIGURATION[appName].bareName}`;
 };
 
 const getIsTouchDevice = () => navigator.maxTouchPoints > 1;
