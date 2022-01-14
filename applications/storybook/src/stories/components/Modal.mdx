@@ -20,6 +20,16 @@ Modals come in four different sizes. `small`, `medium`, `large` & `full`.
     <Story id="components-modal--primary" />
 </Canvas>
 
+### Using `useModalState`
+
+For use-cases where one would prefer to lose the local state (e.g. form state) of a given modal after it closes/exits, you can use the `useModalState` hook.
+
+Internally, the react-node is un- & re-mounted by incrementing and passing of a `key` after each `onExit` call.
+
+<Canvas>
+    <Story id="components-modal--using-use-modal-state" />
+</Canvas>
+
 ### Title in Header
 
 The `ModalHeader` comes with some built-ins. It will always display a close button, and optionally a back button, a title and a subline.
