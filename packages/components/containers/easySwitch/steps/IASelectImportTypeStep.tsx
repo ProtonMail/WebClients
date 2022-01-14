@@ -189,7 +189,7 @@ const IASelectImportTypeStep = ({
     const hasErrors = payloadErrors.length > 0;
 
     const errorBox = (
-        <div className="rounded-bigger p1 mt1 bg-danger color-white text-semibold no-border">
+        <div className="rounded-lg p1 mt1 bg-danger color-white text-semibold no-border">
             {c('Error').ngettext(
                 msgid`Please fix the highlighted conflict to proceed.`,
                 `Please fix the highlighted conflicts to proceed.`,

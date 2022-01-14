@@ -2,7 +2,7 @@
 	@extend .bordered;
 	@extend .scroll-if-needed;
 
-	border-radius: var(--border-radius-medium);
+	border-radius: var(--border-radius-md);
 	block-size: 28em;
 
 	&-table {

@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 /*
  * Items
  * For conversations and contacts lists
@@ -254,7 +254,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			position: absolute;
 			inset: 0;
 			z-index: 1;
-			border-radius: var(--border-radius-medium);
+			border-radius: var(--border-radius-md);
 			background-color: currentColor;
 			opacity: 0;
 		}
