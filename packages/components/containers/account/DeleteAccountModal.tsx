@@ -6,11 +6,10 @@ import { reportBug } from '@proton/shared/lib/api/reports';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { getReportInfo, getClient } from '../../helpers/report';
+import { getReportInfo, getClientName } from '../../helpers/report';
 import {
     Checkbox,
     Row,
@@ -58,8 +57,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
         twoFa: '',
     });
     const { APP_NAME, APP_VERSION, CLIENT_TYPE } = useConfig();
-    const ClientID = getClientID(APP_NAME);
-    const Client = getClient(ClientID);
+    const Client = getClientName(APP_NAME);
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
 
     const isDisabled = useMemo(() => {
