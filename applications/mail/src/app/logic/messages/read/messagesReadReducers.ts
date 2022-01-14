@@ -52,6 +52,11 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
         const isDraft = testIsDraft(Message);
 
         if (currentValue?.data) {
+            // If not a draft, numAttachment will never change, but can be calculated client side for PGP messages
+            if (!isDraft) {
+                delete (Message as Partial<Message>).NumAttachments;
+            }
+
             currentValue.data = parseLabelIDsInEvent(currentValue.data, Message as Message & LabelIDsChanges);
 
             // Draft updates can contains body updates but will not contains it in the event
@@ -68,11 +73,6 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
                         isSentDraft: true,
                     };
                 }
-            }
-
-            // If not a draft, numAttachment will never change, but can be calculated client side for PGP messages
-            if (!isDraft) {
-                delete (currentValue.data as Partial<Message>).NumAttachments;
             }
         }
     }
