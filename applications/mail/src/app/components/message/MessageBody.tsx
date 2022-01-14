@@ -101,7 +101,7 @@ const MessageBody = ({
                 'message-content relative bg-norm color-norm',
                 !isIframeContentSet && 'message-content-not-set',
                 plain && 'plain',
-                isPrint || !isIframeContentSet ? '' : 'pt1 pl1 pr1',
+                isPrint || !isIframeContentSet ? '' : 'p1',
                 hasDarkStyles && 'dark-style',
             ])}
             data-testid="message-content:body"
@@ -125,7 +125,6 @@ const MessageBody = ({
                     showBlockquoteToggle={showButton}
                     showBlockquote={showBlockquote}
                     onBlockquoteToggle={toggleOriginalMessage}
-                    wrapperRef={bodyRef}
                     onContentLoaded={onContentLoadedCallback}
                     isPlainText={plain}
                     isPrint={isPrint}

@@ -61,7 +61,6 @@ const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSo
                         blockquoteContent={blockquote}
                         showBlockquote={false}
                         showBlockquoteToggle={isBlockquote}
-                        wrapperRef={bodyRef}
                         onContentLoaded={() => {}}
                         isPlainText={plain}
                         message={message}
