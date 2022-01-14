@@ -15,7 +15,7 @@
         "@proton/shared": "workspace:packages/shared",
         "@types/pkijs": "0.0.12",
         "pkijs": "^2.2.1",
-        "pmcrypto": "github:ProtonMail/pmcrypto#semver:~6.7.0"
+        "pmcrypto": "github:ProtonMail/pmcrypto#semver:~6.7.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
