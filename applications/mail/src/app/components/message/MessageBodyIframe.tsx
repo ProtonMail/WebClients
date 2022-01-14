@@ -112,8 +112,12 @@ const MessageBodyIframe = ({
                 className={classnames([initStatus !== 'start' ? 'w100' : 'w0 h0', isResizing && 'no-pointer-events'])}
                 data-testid="content-iframe"
                 data-subject={message.data?.Subject}
-                // Had to allow scripts in order to allow react portals to execute in Safari
-                sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-scripts"
+                /**
+                 * "allow-modals" is for printing emails
+                 * "allow-scripts" allows react portals to execute in Safari
+                 * "allow-popups-to-escape-sandbox" allows to open links in non modal sandboxed mode
+                 */
+                sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-scripts allow-modals"
                 allowFullScreen={false}
             />
             {initStatus !== 'start' && (
