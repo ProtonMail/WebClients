@@ -46,9 +46,9 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 
 import './AdvancedSearchDropdown.scss';
 import { useClickMailContent } from '../../hooks/useClickMailContent';
-import SearchField from './AdvancedSearchFields/SearchField';
-import LocationField from './AdvancedSearchFields/LocationField';
-import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
+import SearchField from './search/AdvancedSearchFields/SearchField';
+import LocationField from './search/AdvancedSearchFields/LocationField';
+import EncryptedSearchField from './search/AdvancedSearchFields/EncryptedSearchField';
 import useEncryptedSearchToggleState from './useEncryptedSearchToggleState';
 import { getOldestTimeMail } from '../../helpers/encryptedSearch/esUtils';
 

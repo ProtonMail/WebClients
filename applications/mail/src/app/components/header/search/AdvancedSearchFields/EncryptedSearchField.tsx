@@ -5,7 +5,6 @@ import {
     classnames,
     Info,
     Label,
-    UnderlineButton,
     Progress,
     Toggle,
     Tooltip,
@@ -22,9 +21,8 @@ import {
     wasIndexingDone,
     esStorageHelpers,
 } from '@proton/encrypted-search';
-
-import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { formatSimpleDate } from '../../../helpers/date';
+import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
+import { formatSimpleDate } from '../../../../helpers/date';
 
 interface Props {
     showMore: boolean;
@@ -32,7 +30,7 @@ interface Props {
     esState: ESIndexingState;
 }
 
-const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
+const EncryptedSearchField = ({ esState }: Props) => {
     const [user] = useUser();
     const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch } = useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
@@ -154,15 +152,15 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     );
 
     // Button to show advanced search options
-    const showMoreTitle = showMore ? c('Action').t`Show fewer search options` : c('Action').t`Show more search options`;
-    const showMoreText = showMore ? c('Action').t`Fewer search options` : c('Action').t`More search options`;
-    const showMoreButton = (
-        <div className="flex mb1">
-            <UnderlineButton onClick={toggleShowMore} aria-expanded={showMore} title={showMoreTitle}>
-                {showMoreText}
-            </UnderlineButton>
-        </div>
-    );
+    // const showMoreTitle = showMore ? c('Action').t`Show fewer search options` : c('Action').t`Show more search options`;
+    // const showMoreText = showMore ? c('Action').t`Fewer search options` : c('Action').t`More search options`;
+    // const showMoreButton = (
+    //     <div className="flex mb1">
+    //         <UnderlineButton onClick={toggleShowMore} aria-expanded={showMore} title={showMoreTitle}>
+    //             {showMoreText}
+    //         </UnderlineButton>
+    //     </div>
+    // );
 
     const handleEnableES = async () => {
         enableESModalProps.onClose();
@@ -215,8 +213,8 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
                     </span>
                 </div>
             )}
-            <hr className="mt1" />
-            {showMoreButton}
+            {/* <hr className="mt1" /> */}
+            {/* {showMoreButton} */}
         </div>
     );
 };

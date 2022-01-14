@@ -4,8 +4,8 @@ import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { getStandardFolders } from '../../../helpers/labels';
-import { getLabelIDsToI18N } from '../../../constants';
+import { getStandardFolders } from '../../../../helpers/labels';
+import { getLabelIDsToI18N } from '../../../../constants';
 
 interface ItemBase {
     text: string;
