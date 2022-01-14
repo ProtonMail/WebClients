@@ -88,36 +88,30 @@ $breakpoint-2-columns: 1180 !default;
 	}
 }
 
-.rounded {
-	border-radius: var(--border-radius-medium);
+.rounded-sm {
+	border-radius: var(--border-radius-sm);
 }
 
-.rounded-bigger {
-	border-radius: var(--border-radius-large);
+.rounded {
+	border-radius: var(--border-radius-md);
+}
+
+.rounded-lg {
+	border-radius: var(--border-radius-lg);
 }
 
 .rounded-xl {
 	border-radius: var(--border-radius-xl);
 }
 
-.rounded50 {
+.rounded-full {
+	border-radius: var(--border-radius-full);
+}
+
+.rounded-50 {
 	border-radius: 50%;
 }
 
-.rounded1e {
-	border-radius: 1em;
-}
-
-.rounded0 {
+.rounded-none {
 	border-radius: 0;
-}
-
-.rounded0-left {
-	border-start-start-radius: 0;
-	border-end-start-radius: 0;
-}
-
-.rounded0-right {
-	border-start-end-radius: 0;
-	border-end-end-radius: 0;
 }

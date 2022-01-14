@@ -24,7 +24,7 @@ const RoundedIcon = (
     return (
         <span
             className={classnames([
-                'inline-flex rounded50 flex-item-noshrink',
+                'inline-flex rounded-50 flex-item-noshrink',
                 className,
                 padding,
                 type && TYPES[type],

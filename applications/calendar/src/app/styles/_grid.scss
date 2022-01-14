@@ -4,7 +4,7 @@
 
 		&-number {
 			display: inline-flex;
-			border-radius: var(--border-radius-medium);
+			border-radius: var(--border-radius-md);
 
 			@include respond-to($breakpoint-small, 'min') {
 				padding-inline: 0.5em;

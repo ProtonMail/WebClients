@@ -27,7 +27,7 @@ const InputButton = ({
         <label htmlFor={id} title={title} className={labelClassName} {...labelPropsRest}>
             <input id={id} type={type} className="input-button-input sr-only" checked={checked} {...rest} />
 
-            <ButtonLike as="span" className="input-button flex flex-justify-center flex-item-noshrink rounded50">
+            <ButtonLike as="span" className="input-button flex flex-justify-center flex-item-noshrink rounded-50">
                 {children}
             </ButtonLike>
         </label>

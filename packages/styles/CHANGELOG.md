@@ -625,7 +625,7 @@
 -   added `badgeLabel-primary` and set this one by default
 -   added `flex-item-fluid-auto` helper: `flex: 1 1 auto`
 -   added `onmobile-flex-wrap` and `onmobile-min-w100` helpers
--   added `rounded0`, `rounded0-left` and `rounded0-right` helpers
+-   added `rounded-none`, `rounded-none-left` and `rounded-none-right` helpers
 -   added title style for VPN signup
 
 ## Updated/fixes
@@ -1290,7 +1290,7 @@ Bonuses:
 
 ## New
 
--   added class `rounded50` (`border-radius: 50%`)
+-   added class `rounded-50` (`border-radius: 50%`)
 -   made design system more RTL-friendly (WIP)
 -   added examples of integration in icons
 -   added one DO/DONT

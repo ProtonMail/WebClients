@@ -9,7 +9,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 }
 
 const NotificationDot = ({ color, className, ...rest }: Props) => {
-    return <span className={classnames([className, `notification-dot bg-${color} rounded50`])} {...rest} />;
+    return <span className={classnames([className, `notification-dot bg-${color} rounded-50`])} {...rest} />;
 };
 
 export default NotificationDot;

@@ -29,7 +29,7 @@ const DynamicProgress = ({
         : success
         ? {
               icon: (
-                  <span className="inline-flex bg-success rounded50 p0-5">
+                  <span className="inline-flex bg-success rounded-50 p0-5">
                       <Icon name="check" size={24} />
                   </span>
               ),
@@ -38,7 +38,7 @@ const DynamicProgress = ({
         : partialSuccess
         ? {
               icon: (
-                  <span className="inline-flex bg-warning rounded50 p0-5">
+                  <span className="inline-flex bg-warning rounded-50 p0-5">
                       <Icon name="xmark" size={24} />
                   </span>
               ),
@@ -46,7 +46,7 @@ const DynamicProgress = ({
           }
         : {
               icon: (
-                  <span className="inline-flex bg-danger rounded50 p0-5">
+                  <span className="inline-flex bg-danger rounded-50 p0-5">
                       <Icon name="xmark" size={24} />
                   </span>
               ),

@@ -48,13 +48,13 @@
 
 .message-container {
 	border: 1px solid var(--border-norm);
-	border-radius: var(--border-radius-medium);
+	border-radius: var(--border-radius-md);
 	@extend %appearing-container;
 	transition: 0.15s easing(easeOutQuint);
 }
 
 .message-header {
-	border-radius: var(--border-radius-medium); // Can't overflow 'cause of ::before, so repeat radius
+	border-radius: var(--border-radius-md); // Can't overflow 'cause of ::before, so repeat radius
 	padding: 0.6em;
 
 	.is-appearing-content {
@@ -230,8 +230,8 @@
 	opacity: 1;
 	border-start-start-radius: 0;
 	border-start-end-radius: 0;
-	border-end-start-radius: var(--border-radius-medium);
-	border-end-end-radius: var(--border-radius-medium);
+	border-end-start-radius: var(--border-radius-md);
+	border-end-end-radius: var(--border-radius-md);
 	transition: 0.1s easing(easeOutSine);
 	transition-property: opacity;
 	// force color until real dark mode

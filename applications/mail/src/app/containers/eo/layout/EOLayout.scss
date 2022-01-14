@@ -19,7 +19,7 @@
 	// main content
 	transition: max-inline-size 0.15s easing(easeIn);
 	//min-block-size: 30em;// was here to limitate shifts
-	border-radius: var(--border-radius-large);
+	border-radius: var(--border-radius-lg);
 
 	// fix for plans, same as in subscription flow
 	&:not([class*='mw']) {

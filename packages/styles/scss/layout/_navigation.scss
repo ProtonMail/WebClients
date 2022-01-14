@@ -75,7 +75,7 @@ $padding-inline-start-link: rem(20) !default;
 	@extend .interactive;
 
 	padding: 0.5em;
-	border-radius: var(--border-radius-medium);
+	border-radius: var(--border-radius-md);
 	color: var(--text-weak);
 
 	.navigation-icon--expand {

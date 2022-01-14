@@ -104,7 +104,7 @@
 		@extend .interactive;
 
 		inline-size: 100%;
-		border-radius: var(--border-radius-medium);
+		border-radius: var(--border-radius-md);
 
 		&[aria-pressed='true'] {
 			background: var(--interaction-weak);
@@ -128,7 +128,7 @@
 			inset: 0;
 			z-index: 0;
 			background: var(--interaction-norm);
-			border-radius: var(--border-radius-medium);
+			border-radius: var(--border-radius-md);
 			opacity: 0;
 			pointer-events: none;
 			transition: opacity 0.15s easing(easeOutQuad);
