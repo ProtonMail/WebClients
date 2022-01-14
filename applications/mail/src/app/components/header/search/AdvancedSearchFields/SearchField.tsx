@@ -10,7 +10,7 @@ interface Props {
 }
 
 const SearchField = ({ onSubmit, onChange, value, showEncryptedSearch }: Props) => (
-    <div className={classnames([showEncryptedSearch ? 'mb0-5' : 'mb1-5', 'relative'])}>
+    <div className={classnames(['relative flex-item-fluid', showEncryptedSearch ? 'mb0-5' : 'mb1-5'])}>
         <Label className="advanced-search-label p0" htmlFor="search-keyword" title={c('Label').t`Keyword`}>
             <InputTwo
                 id="search-keyword"
