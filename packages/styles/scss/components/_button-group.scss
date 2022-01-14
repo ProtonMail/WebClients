@@ -1,11 +1,11 @@
-@use "sass:math";
+@use 'sass:math';
 
 .button-group {
 	@extend .inline-flex;
 	@extend .flex-nowrap;
 	@extend .flex-align-items-stretch;
 
-	border-radius: var(--border-radius-medium);
+	border-radius: var(--border-radius-md);
 	background-color: var(--button-group-background-color, var(--background-norm));
 	vertical-align: middle;
 
@@ -73,11 +73,11 @@
 	&[class*='button-group-outline'] &-item {
 		padding-block: em(3);
 		padding-inline: em(8);
-		border-radius: var(--border-radius-small);
+		border-radius: var(--border-radius-sm);
 
 		&.button-for-icon {
 			padding-block: em(5.5);
-		  padding-inline: em(6);
+			padding-inline: em(6);
 		}
 	}
 

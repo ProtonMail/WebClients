@@ -29,8 +29,8 @@
 		color: var(--text-norm);
 
 		@include respond-to($breakpoint-small, 'min') {
-			border-start-start-radius: var(--border-radius-medium);
-			border-start-end-radius: var(--border-radius-medium);
+			border-start-start-radius: var(--border-radius-md);
+			border-start-end-radius: var(--border-radius-md);
 			border-end-start-radius: 0;
 			border-end-end-radius: 0;
 		}

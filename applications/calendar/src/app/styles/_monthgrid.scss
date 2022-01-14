@@ -6,7 +6,7 @@
 			display: inline-flex;
 			inline-size: 1.75em;
 			block-size: 1.75em;
-			border-radius: var(--border-radius-medium);
+			border-radius: var(--border-radius-md);
 		}
 
 		&:hover &-number {
@@ -16,8 +16,8 @@
 
 		@media not print {
 			&[aria-current='date'] &-number {
-					color: var(--primary);
-					font-weight: bold;
+				color: var(--primary);
+				font-weight: bold;
 			}
 
 			@include respond-to($breakpoint-small) {

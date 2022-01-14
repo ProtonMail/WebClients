@@ -7,7 +7,7 @@
 	&-button {
 		@extend .interactive;
 
-		border-radius: var(--border-radius-medium);
+		border-radius: var(--border-radius-md);
 		padding: 0.25em;
 
 		& &-icon {
@@ -34,7 +34,7 @@
 
 		display: block;
 		padding: 0.75em;
-		border-radius: var(--border-radius-medium);
+		border-radius: var(--border-radius-md);
 		text-align: center;
 		text-decoration: none;
 	}

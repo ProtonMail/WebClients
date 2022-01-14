@@ -58,7 +58,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, ...rest }: P
             title={
                 <TitleModal id="contact-group-details-modal" className="flex flex-nowrap flex-align-items-center">
                     <div
-                        className="contact-group-details-chip rounded50 mr0-5 flex-item-noshrink"
+                        className="contact-group-details-chip rounded-50 mr0-5 flex-item-noshrink"
                         style={{ backgroundColor: group?.Color }}
                     />
                     <span className="text-ellipsis" title={group?.Name}>

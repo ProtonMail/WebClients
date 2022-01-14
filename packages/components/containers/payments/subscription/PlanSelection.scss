@@ -22,7 +22,7 @@
 	grid-template-columns: repeat(var(--plan-selection-number, 4), 1fr);
 	& &-plan {
 		// specificity ^^
-		border-radius: var(--border-radius-large);
+		border-radius: var(--border-radius-lg);
 	}
 
 	.plan-selection {
@@ -32,18 +32,18 @@
 			position: absolute;
 			inset-block-end: 100%;
 			inset-inline: -1px;
-			border-start-start-radius: var(--border-radius-large);
-			border-start-end-radius: var(--border-radius-large);
+			border-start-start-radius: var(--border-radius-lg);
+			border-start-end-radius: var(--border-radius-lg);
 			border-end-end-radius: 0;
 			border-end-start-radius: 0;
 			padding: 0.35em; // Design wants 28px height ^^
 			&-card {
 				border-color: var(--primary);
-				border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+				border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
 				border-start-start-radius: 0;
 				border-start-end-radius: 0;
-				border-end-end-radius: var(--border-radius-large);
-				border-end-start-radius: var(--border-radius-large);
+				border-end-end-radius: var(--border-radius-lg);
+				border-end-start-radius: var(--border-radius-lg);
 			}
 		}
 

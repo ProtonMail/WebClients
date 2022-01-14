@@ -10,7 +10,7 @@
 	box-shadow: inset 0 0 0 var(--button-default-border-width, 0) var(--button-default-border-color, transparent);
 
 	border: none;
-	border-radius: var(--border-radius-medium);
+	border-radius: var(--border-radius-md);
 	outline: none; // be careful of a11y
 	@supports selector(:focus-visible) {
 		// had to do this because of Safari
@@ -200,7 +200,7 @@
 .button-small {
 	padding-block: em(1) em(2); // 24px height
 	padding-inline: em(12);
-	border-radius: var(--border-radius-small);
+	border-radius: var(--border-radius-sm);
 }
 
 .button-large {
