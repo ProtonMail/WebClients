@@ -3,10 +3,13 @@ import { HumanVerificationMethodType } from '../interfaces';
 interface Headers {
     [key: string]: any;
 }
+
 interface MergeHeaderArgs {
     headers: Headers;
+
     [key: string]: any;
 }
+
 export const mergeHeaders = ({ headers: configHeaders, ...restConfig }: MergeHeaderArgs, headers: Headers) => ({
     ...restConfig,
     headers: {
@@ -14,6 +17,12 @@ export const mergeHeaders = ({ headers: configHeaders, ...restConfig }: MergeHea
         ...headers,
     },
 });
+
+export const getAppVersionHeaders = (clientID: string, appVersion: string) => {
+    return {
+        'x-pm-appversion': `${clientID}@${appVersion}`,
+    };
+};
 
 export const getUIDHeaders = (UID: string) => ({
     'x-pm-uid': UID,

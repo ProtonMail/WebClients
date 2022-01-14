@@ -1,8 +1,8 @@
 import getRandomValues from '@proton/get-random-values';
-import { APP_NAMES, APPS, APPS_CONFIGURATION, SSO_PATHS } from '../constants';
+import { APP_NAMES, APPS, SSO_PATHS } from '../constants';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
 import { replaceUrl } from '../helpers/browser';
-import { getAppHref } from '../apps/helper';
+import { getAppHref, getClientID } from '../apps/helper';
 import {
     getValidatedApp,
     getValidatedForkType,
@@ -83,7 +83,7 @@ export const produceFork = async ({ api, UID, keyPassword, state, app, type, per
     const rawKey = getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
     const payload = keyPassword ? await getForkEncryptedBlob(await getKey(rawKey), { keyPassword }) : undefined;
-    const childClientID = APPS_CONFIGURATION[app].clientID;
+    const childClientID = getClientID(app);
     const { Selector } = await api<PushForkResponse>(
         withUIDHeaders(
             UID,
