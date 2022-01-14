@@ -1,8 +1,7 @@
-import { useRef, useState, useEffect, memo } from 'react';
+import { memo } from 'react';
 import { c } from 'ttag';
 import { useLocation } from 'react-router-dom';
 import {
-    Searchbox,
     useLabels,
     useFolders,
     PrivateHeader,
@@ -22,11 +21,10 @@ import {
     AppsDropdownWithDiscoverySpotlight,
     useModalState,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS, APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
+import { APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import AdvancedSearchDropdown from './AdvancedSearchDropdown';
-import { extractSearchParameters, setParamsInUrl } from '../../helpers/mailboxUrl';
+import { setParamsInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
 import { getLabelName } from '../../helpers/labels';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -34,27 +32,24 @@ import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
 import MailDefaultHandlerModal from './MailDefaultHandlerModal';
 import ClearBrowserDataModal from './ClearBrowserDataModal';
+import MailSearch from './search/MailSearch';
 
 interface Props {
     labelID: string;
     elementID: string | undefined;
     breakpoints: Breakpoints;
-    onSearch: (keyword?: string, labelID?: string) => void;
     expanded?: boolean;
     onToggleExpand: () => void;
 }
 
-const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand, onSearch }: Props) => {
+const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand }: Props) => {
     const [{ Density }] = useUserSettings();
     const [{ Shortcuts, ComposerMode, ViewLayout } = { Shortcuts: 0, ComposerMode: 0, ViewLayout: 0 }] =
         useMailSettings();
     const location = useLocation();
-    const { keyword = '' } = extractSearchParameters(location);
-    const [value, updateValue] = useState(keyword);
-    const oldLabelIDRef = useRef<string>(MAILBOX_LABEL_IDS.INBOX);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const { cacheIndexedDB, getESDBStatus } = useEncryptedSearchContext();
+    const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
 
     const onCompose = useOnCompose();
@@ -66,28 +61,6 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
     const [mailComposerModeProps, setMailComposerModeModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
     const [clearBrowserDataProps, setClearBrowserDataModalOpen] = useModalState();
-
-    // Update the search input field when the keyword in the URL is changed
-    useEffect(() => updateValue(keyword), [keyword]);
-
-    const searchDropdown = <AdvancedSearchDropdown keyword={value} isNarrow={breakpoints.isNarrow} />;
-
-    const searchBox = (
-        <Searchbox
-            delay={0}
-            placeholder={c('Placeholder').t`Search messages`}
-            onSearch={(keyword) => {
-                if (keyword) {
-                    oldLabelIDRef.current = labelID;
-                }
-                onSearch(keyword, keyword ? undefined : oldLabelIDRef.current);
-            }}
-            onChange={updateValue}
-            value={value}
-            advanced={searchDropdown}
-            onFocus={() => cacheIndexedDB()}
-        />
-    );
 
     const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
         onCompose({
@@ -187,8 +160,8 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
                 contactsButton={
                     <TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />
                 }
-                searchBox={searchBox}
-                searchDropdown={searchDropdown}
+                searchBox={<MailSearch breakpoints={breakpoints} />}
+                searchDropdown={<MailSearch breakpoints={breakpoints} />}
                 expanded={!!expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={breakpoints.isNarrow}
