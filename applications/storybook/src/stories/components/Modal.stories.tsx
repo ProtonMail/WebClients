@@ -12,6 +12,8 @@ import {
     RadioGroup,
     Tooltip,
     InputFieldTwo,
+    useModalState,
+    ModalProps,
 } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
@@ -67,6 +69,40 @@ export const Primary = () => {
                     <Button color="norm">Primary action</Button>
                 </ModalTwoFooter>
             </ModalTwo>
+        </div>
+    );
+};
+
+const WrappedFormModal = (props: ModalProps) => {
+    const [name, setName] = useState('');
+    return (
+        <ModalTwo {...props}>
+            <ModalTwoHeader title="Title in ModalHeader" subline="Subline in ModalHeader" />
+            <ModalTwoContent>
+                <p>I will lose any local state of mine after closing.</p>
+                <InputFieldTwo value={name} label="Name" placeholder="e.g. John Fitzgerald..." onValue={setName} />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button>Secondary action</Button>
+                <Button color="norm">Primary action</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
+    );
+};
+
+export const UsingUseModalState = () => {
+    const [modalProps, setOpen] = useModalState();
+
+    return (
+        <div className="text-center">
+            <Button
+                onClick={() => {
+                    setOpen(true);
+                }}
+            >
+                Open modal with useModalState
+            </Button>
+            <WrappedFormModal {...modalProps} />
         </div>
     );
 };
