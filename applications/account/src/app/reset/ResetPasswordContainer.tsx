@@ -42,7 +42,7 @@ interface Props {
 
 const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
     const history = useHistory();
-    const keyMigrationFeature = useFeature(FeatureCode.KeyMigration);
+    const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration);
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
     const normalApi = useApi();
@@ -241,7 +241,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                                 }
 
                                 const keyMigrationFeatureValue = await keyMigrationFeature
-                                    .get<number>()
+                                    .get()
                                     .then(({ Value }) => Value)
                                     .catch(() => 0);
                                 return handleNewPassword({

@@ -52,7 +52,7 @@ interface Props {
 
 const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
     const errorHandler = useErrorHandler();
-    const keyMigrationFeature = useFeature(FeatureCode.KeyMigration);
+    const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration);
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
     const normalApi = useApi();
@@ -157,7 +157,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                             defaultUsername={previousUsernameRef.current}
                             onSubmit={async ({ username, password, payload, persistent }) => {
                                 const keyMigrationFeatureValue = await keyMigrationFeature
-                                    .get<number>()
+                                    .get()
                                     .then(({ Value }) => Value)
                                     .catch(() => 0);
                                 return handleLogin({
