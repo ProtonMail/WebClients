@@ -1,3 +1,19 @@
+## Release 4.0.15 - Feb 19th, 2022
+
+### Improvements
+
+-   Reworked the underlying technology of the Encrypted to Outside functionality that allows sending messages to external recipients with end-to-end encryption
+-   Drafts containing an invalid sender will now revert to the default sending address with an informational message when opening them
+-   Improved speed of loading the composer when undoing sending of a message
+
+### Bug fixes
+
+-   Fixed an issue where a message update made from mobile would not immediately be displayed on the web version
+-   Fixed an issue where contacts with commas in Addresses could not be saved
+-   Fixed an issue where in Row layout, opening an email and then navigating back to the list would result in the last position not being retained
+-   Fixed an issue where the characters in the "Original message" heading would not be displayed correctly when replying to an email on accounts where no signature is set
+-   Fixed an issue where the Plus plan was not mentioned as a paid plan in the conditions for the auto-reply functionality
+
 ## Release 4.0.14 - Jan 19, 2022
 
 ### Improvements
