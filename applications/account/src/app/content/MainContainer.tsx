@@ -1,21 +1,21 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { Route, Redirect, Switch, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
 
 import {
-    useActiveBreakpoint,
-    useToggle,
-    PrivateHeader,
-    PrivateAppContainer,
-    Logo,
-    useUser,
-    useFeatures,
     FeatureCode,
+    Logo,
+    PrivateAppContainer,
+    PrivateHeader,
+    useActiveBreakpoint,
+    useFeatures,
+    useToggle,
+    useUser,
 } from '@proton/components';
 
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { UserModel, UserType } from '@proton/shared/lib/interfaces';
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
 import AccountSidebar from './AccountSidebar';
@@ -74,9 +74,12 @@ const MainContainer = () => {
 
     const app = getAppFromPathnameSafe(location.pathname);
 
-    
     if (!app) {
         return <Redirect to={`/${getSlugFromApp(DEFAULT_APP)}${getDefaultRedirect(user)}`} />;
+    }
+
+    if (REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(app) && user.Type === UserType.EXTERNAL) {
+        return <Redirect to={`/setup-internal-address?app=${app}`} />;
     }
 
     const appSlug = getSlugFromApp(app);
@@ -104,8 +107,17 @@ const MainContainer = () => {
         />
     );
 
+    const canHaveOrganization = !user.isMember && !user.isSubUser && user.Type !== UserType.EXTERNAL;
+
     const sidebar = (
-        <AccountSidebar app={app} appSlug={appSlug} logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} />
+        <AccountSidebar
+            app={app}
+            appSlug={appSlug}
+            logo={logo}
+            expanded={expanded}
+            onToggleExpand={onToggleExpand}
+            canHaveOrganization={canHaveOrganization}
+        />
     );
 
     return (
@@ -133,18 +145,26 @@ const MainContainer = () => {
                 <Route path={`/${appSlug}/security`}>
                     <AccountSecuritySettings location={location} setActiveSection={() => {}} />
                 </Route>
-                <Route path={`/${appSlug}/multi-user-support`}>
-                    <OrganizationMultiUserSupportSettings location={location} />
-                </Route>
-                <Route path={`/${appSlug}/domain-names`}>
-                    <MailDomainNamesSettings location={location} />
-                </Route>
-                <Route path={`/${appSlug}/organization-keys`}>
-                    <OrganizationKeysSettings location={location} />
-                </Route>
-                <Route path={`/${appSlug}/users-addresses`}>
-                    <OrganizationUsersAndAddressesSettings location={location} />
-                </Route>
+                {canHaveOrganization && (
+                    <Route path={`/${appSlug}/multi-user-support`}>
+                        <OrganizationMultiUserSupportSettings location={location} />
+                    </Route>
+                )}
+                {canHaveOrganization && (
+                    <Route path={`/${appSlug}/domain-names`}>
+                        <MailDomainNamesSettings location={location} />
+                    </Route>
+                )}
+                {canHaveOrganization && (
+                    <Route path={`/${appSlug}/organization-keys`}>
+                        <OrganizationKeysSettings location={location} />
+                    </Route>
+                )}
+                {canHaveOrganization && (
+                    <Route path={`/${appSlug}/users-addresses`}>
+                        <OrganizationUsersAndAddressesSettings location={location} />
+                    </Route>
+                )}
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
                         <MailSettingsRouter redirect={redirect} />

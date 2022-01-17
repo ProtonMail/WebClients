@@ -2,11 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { APP_NAMES, APPS, BRAND_NAME, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
-import { Address as tsAddress } from '@proton/shared/lib/interfaces';
+import { APP_NAMES, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { Address as tsAddress, UserType } from '@proton/shared/lib/interfaces';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { queryAddresses } from '@proton/shared/lib/api/addresses';
-import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -19,9 +18,9 @@ import {
     FeatureCode,
     OnLoginCallback,
     OnLoginCallbackArguments,
-    useFeature,
     useApi,
     useErrorHandler,
+    useFeature,
 } from '@proton/components';
 import {
     handleLogin,
@@ -46,11 +45,12 @@ import GenerateInternalAddressStep, { InternalAddressGeneration } from './Genera
 
 interface Props {
     onLogin: OnLoginCallback;
+    shouldSetupInternalAddress?: boolean;
     toApp?: APP_NAMES;
     onBack?: () => void;
 }
 
-const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
+const LoginContainer = ({ onLogin, onBack, toApp, shouldSetupInternalAddress }: Props) => {
     const errorHandler = useErrorHandler();
     const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration);
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -73,18 +73,18 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
     }, []);
 
     const handleDone = async (args: OnLoginCallbackArguments) => {
-        const { UID } = args;
+        const { UID, User } = args;
         const uidApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
 
-        if (toApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(toApp)) {
+        if (shouldSetupInternalAddress) {
             const Addresses =
                 args.Addresses ||
                 (await uidApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses));
             const { keyPassword, LocalID, UID } = args;
-            if (Addresses?.length && keyPassword && getHasOnlyExternalAddresses(Addresses)) {
+            if (keyPassword && User.Type === UserType.EXTERNAL) {
                 const { Domains = [] } = await uidApi<{ Domains: string[] }>(queryAvailableDomains());
                 generateInternalAddressRef.current = {
-                    externalEmailAddress: Addresses[0],
+                    externalEmailAddress: Addresses?.[0],
                     availableDomains: Domains,
                     keyPassword,
                     onDone: () => {
@@ -136,7 +136,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
 
     const cache = cacheRef.current;
     const generateInternalAddress = generateInternalAddressRef.current;
-    const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email || '';
+    const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email;
 
     return (
         <Main>
