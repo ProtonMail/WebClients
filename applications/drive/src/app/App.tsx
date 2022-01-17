@@ -24,7 +24,7 @@ const PublicDriveLinkContainer = () => {
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.0-beta.23',
+    APP_VERSION_DISPLAY: '4.0.0-beta.24',
     ...config,
 };
 newVersionUpdater(enhancedConfig);

@@ -1,3 +1,14 @@
+# [4.0.0-beta.24] - 2022-01-25
+
+## Added
+
+-   Folder tree view for quicker navigation through your Drive
+-   Ability to view number of accesses to the folder details
+
+## Fixed
+
+-   Missing copy link for folders within contextual menu
+
 # [4.0.0-beta.23] - 2022-01-05
 
 ## Improved
