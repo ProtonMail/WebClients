@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
-import { MessagesSection, SettingsPropsShared, PmMeSection, useAddresses } from '@proton/components';
+import { MessagesSection, PmMeSection, SettingsPropsShared, useAddresses } from '@proton/components';
 
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { UserModel, UserType } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
@@ -43,8 +42,8 @@ const MailGeneralSettings = ({ location, user }: Props) => {
         return <PrivateMainAreaLoading />;
     }
 
-    const { hasPaidMail, canPay } = user;
-    const isExternalUser = getHasOnlyExternalAddresses(addresses);
+    const { hasPaidMail, canPay, Type } = user;
+    const isExternalUser = Type === UserType.EXTERNAL;
     const isPMAddressActive = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
     const hasNoOriginalAddresses = !addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_ORIGINAL);
     const showPmMeSection = !isExternalUser && canPay && !hasNoOriginalAddresses && !(isPMAddressActive && hasPaidMail);
