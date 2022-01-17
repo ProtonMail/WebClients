@@ -62,8 +62,8 @@ const NotificationInput = ({
             {hasType && (
                 <span
                     className={classnames([
-                        'flex flex-nowrap flex-item-fluid on-mobile-mt0-5 on-mobile-mb0-5 mr0-5',
-                        isAllDay && at ? 'on-tiny-mobile-ml0' : 'on-mobile-ml0',
+                        'flex flex-nowrap on-mobile-mt0-5 on-mobile-mb0-5 mr0-5',
+                        isAllDay && at ? 'on-tiny-mobile-ml0' : 'w10e on-mobile-ml0',
                     ])}
                 >
                     <SelectTwo
@@ -110,7 +110,7 @@ const NotificationInput = ({
                 )}
                 <SelectTwo
                     data-test-id="notification-time-dropdown"
-                    className="flex-item-fluid flex-item-grow-2"
+                    className="flex-item-fluid"
                     value={optionsValue}
                     onChange={({ value }) => {
                         const optionIndex = +value;
@@ -132,18 +132,20 @@ const NotificationInput = ({
                 </SelectTwo>
             </span>
             {isAllDay && at && (
-                <span className="flex on-tiny-mobile-flex-column flex-nowrap flex-item-fluid">
+                <span className="flex on-tiny-mobile-flex-column flex-nowrap">
                     {isAllDay && at && (
                         <span className="flex flex-nowrap flex-item-fluid flex-align-items-center on-mobile-mt0-5">
                             <span className="flex-item-noshrink ml0-5 on-mobile-ml0 mr0-5">{c('Notification time input')
                                 .t`at`}</span>
-                            <TimeInput
-                                data-test-id="notification-time-at"
-                                value={at}
-                                onChange={(at) => onChange({ ...notification, at })}
-                                title={c('Title').t`Select the time to send this notification`}
-                                {...errorProps}
-                            />
+                            <span className="w8e">
+                                <TimeInput
+                                    data-test-id="notification-time-at"
+                                    value={at}
+                                    onChange={(at) => onChange({ ...notification, at })}
+                                    title={c('Title').t`Select the time to send this notification`}
+                                    {...errorProps}
+                                />
+                            </span>
                         </span>
                     )}
                 </span>

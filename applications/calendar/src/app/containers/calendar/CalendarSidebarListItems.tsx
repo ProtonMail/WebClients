@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -12,7 +13,6 @@ import {
     SimpleDropdown,
     DropdownMenuLink,
     Tooltip,
-    useModals,
     useUser,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -29,6 +29,7 @@ import {
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 
+import { Nullable } from '@proton/shared/lib/interfaces';
 import { getMostReadableColor } from '../../helpers/color';
 
 export interface CalendarSidebarListItemsProps {
@@ -44,8 +45,9 @@ const CalendarSidebarListItems = ({
     onChangeVisibility = noop,
     actionsDisabled = false,
 }: CalendarSidebarListItemsProps) => {
-    const { createModal } = useModals();
     const [user] = useUser();
+    const [importModalCalendar, setImportModalCalendar] = useState<Nullable<Calendar>>(null);
+    const [calendarModalCalendar, setIsCalendarModalCalendar] = useState<Nullable<Calendar>>(null);
 
     if (calendars.length === 0) {
         return null;
@@ -116,7 +118,9 @@ const CalendarSidebarListItems = ({
                                     <DropdownMenu>
                                         <DropdownMenuButton
                                             className="text-left"
-                                            onClick={() => createModal(<CalendarModal calendar={calendar} />)}
+                                            onClick={() => {
+                                                setIsCalendarModalCalendar(calendar);
+                                            }}
                                         >
                                             {c('Action').t`Edit`}
                                         </DropdownMenuButton>
@@ -131,16 +135,11 @@ const CalendarSidebarListItems = ({
                                         {isPersonalCalendar && !isCalendarDisabled && (
                                             <DropdownMenuButton
                                                 className="text-left"
-                                                onClick={() =>
-                                                    user.hasNonDelinquentScope
-                                                        ? createModal(
-                                                              <ImportModal
-                                                                  defaultCalendar={calendar}
-                                                                  calendars={getProbablyActiveCalendars(calendars)}
-                                                              />
-                                                          )
-                                                        : null
-                                                }
+                                                onClick={() => {
+                                                    if (user.hasNonDelinquentScope) {
+                                                        setImportModalCalendar(calendar);
+                                                    }
+                                                }}
                                             >
                                                 {c('Action').t`Import events`}
                                             </DropdownMenuButton>
@@ -162,7 +161,27 @@ const CalendarSidebarListItems = ({
         );
     });
 
-    return <>{result}</>;
+    return (
+        <>
+            {!!calendarModalCalendar && !!calendarModalCalendar && (
+                <CalendarModal
+                    isOpen
+                    onClose={() => setIsCalendarModalCalendar(null)}
+                    calendar={calendarModalCalendar}
+                />
+            )}
+
+            {!!importModalCalendar && (
+                <ImportModal
+                    isOpen={!!importModalCalendar}
+                    onClose={() => setImportModalCalendar(null)}
+                    defaultCalendar={importModalCalendar}
+                    calendars={getProbablyActiveCalendars(calendars)}
+                />
+            )}
+            {result}
+        </>
+    );
 };
 
 export default CalendarSidebarListItems;
