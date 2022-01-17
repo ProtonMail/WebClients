@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef } from 'react';
+import { RefObject, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
@@ -6,7 +6,6 @@ import { classnames, Tooltip } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
-import useObserveWidthChange from '../../hooks/message/useObserveWidthChange';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import useInitIframeContent from './hooks/useInitIframeContent';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
@@ -17,7 +16,7 @@ import { MESSAGE_IFRAME_PRINT_ID } from './constants';
 import MessagePrintHeader from './MessagePrintHeader';
 import MessageBodyImages from './MessageBodyImages';
 import useIframeOffset from './hooks/useIframeOffset';
-import { debouncedSetIframeHeight } from './helpers/setIframeHeight';
+import useSetIframeHeightPolling from './hooks/useSetIframeHeightPolling';
 
 interface Props {
     content: string;
@@ -25,7 +24,6 @@ interface Props {
     showBlockquoteToggle: boolean;
     blockquoteContent: string;
     isPlainText: boolean;
-    wrapperRef: RefObject<HTMLDivElement>;
     onBlockquoteToggle?: () => void;
     onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
     isPrint?: boolean;
@@ -39,7 +37,6 @@ interface Props {
 
 const MessageBodyIframe = ({
     content,
-    wrapperRef,
     blockquoteContent,
     showBlockquote: showBlockquoteProp,
     showBlockquoteToggle,
@@ -83,14 +80,9 @@ const MessageBodyIframe = ({
         isOutside,
     });
 
-    useObserveWidthChange(wrapperRef, iframeRef);
     useIframeDispatchEvents(initStatus, iframeRef);
 
-    useEffect(() => {
-        if (message.messageImages?.showRemoteImages || message.messageImages?.showEmbeddedImages) {
-            debouncedSetIframeHeight(iframeRef);
-        }
-    }, [message.messageImages?.showRemoteImages, message.messageImages?.showEmbeddedImages]);
+    useSetIframeHeightPolling(initStatus === 'done', isResizing, iframeRef);
 
     const iframePrintDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_ID);
 
