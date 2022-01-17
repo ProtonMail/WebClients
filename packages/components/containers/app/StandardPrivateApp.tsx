@@ -1,18 +1,17 @@
-import { useState, useRef, useEffect, FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
-import { AddressesModel, UserModel, UserSettingsModel } from '@proton/shared/lib/models';
+import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { Model } from '@proton/shared/lib/interfaces/Model';
-import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
+import { User, UserSettings, UserType } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
-import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 import { getFeatures } from '@proton/shared/lib/api/features';
 
 import { useApi, useCache, useConfig, useErrorHandler } from '../../hooks';
@@ -35,7 +34,7 @@ import StandardLoadErrorPage from './StandardLoadErrorPage';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StorageListener from './StorageListener';
 import DelinquentContainer from './DelinquentContainer';
-import { FeaturesProvider, FeatureCode, Feature } from '../features';
+import { Feature, FeatureCode, FeaturesProvider } from '../features';
 import { useAppLink } from '../../components';
 import { handleEarlyAccessDesynchronization } from '../../helpers/earlyAccessDesynchronization';
 
@@ -92,28 +91,21 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
 
         const hasInternalEmailAddressRequirement = REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(APP_NAME);
 
-        const addressesPromise = hasInternalEmailAddressRequirement
-            ? loadModels([AddressesModel], loadModelsArgs)
-            : undefined;
-
-        const hasOnlyExternalAddressesPromise = addressesPromise?.then((result: any) => {
-            const [Addresses] = result as [Address[]];
-            return hasInternalEmailAddressRequirement && Addresses?.length && getHasOnlyExternalAddresses(Addresses);
-        });
-
         const featuresPromise = silentApi<{ Features: Feature[] }>(getFeatures([FeatureCode.EarlyAccessScope]));
 
         const models = unique([UserSettingsModel, UserModel, ...preloadModels]);
-        const filteredModels = addressesPromise ? models.filter((model) => model !== AddressesModel) : models;
 
         let earlyAccessRefresher: undefined | (() => void);
+        let shouldSetupInternalAddress = false;
 
-        const setupPromise = loadModels(filteredModels, loadModelsArgs).then((result: any) => {
+        const setupPromise = loadModels(models, loadModelsArgs).then((result: any) => {
             const [userSettings, user] = result as [UserSettings, User];
 
             const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
             const hasNonDelinquentScope = getHasNonDelinquentScope(user);
             hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
+
+            shouldSetupInternalAddress = hasInternalEmailAddressRequirement && user.Type === UserType.EXTERNAL;
 
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
@@ -135,16 +127,8 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             appRef.current = result.default;
         });
 
-        Promise.all([
-            hasOnlyExternalAddressesPromise,
-            eventManagerPromise,
-            setupPromise,
-            addressesPromise,
-            onInit?.(),
-            loadOpenPGP(openpgpConfig),
-            appPromise,
-        ])
-            .then(([hasOnlyExternalAddresses]) => {
+        Promise.all([eventManagerPromise, setupPromise, onInit?.(), loadOpenPGP(openpgpConfig), appPromise])
+            .then(() => {
                 // The Version cookie is set on each request. This causes race-conditions between with what the client
                 // has set it to and what the API is replying with. Old API requests with old cookies may finish after
                 // the refresh has happened which resets the Version cookie, causing assets to fail loading.
@@ -153,7 +137,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                     earlyAccessRefresher();
                     return;
                 }
-                if (hasOnlyExternalAddresses) {
+                if (shouldSetupInternalAddress) {
                     appLink(`/setup-internal-address?app=${APP_NAME}`, APPS.PROTONACCOUNT);
                 } else {
                     setLoading(false);

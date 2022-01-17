@@ -7,21 +7,22 @@ import {
     LoaderPage,
     StandardLoadErrorPage,
     useApi,
-    useAppLink,
     useAuthentication,
     useErrorHandler,
+    useGetAddresses,
+    useGetUser,
     useModals,
     useTheme,
 } from '@proton/components';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
-import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
-import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
 import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { UserType } from '@proton/shared/lib/interfaces';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 
 import { getToAppName } from '../public/helper';
 import GenerateInternalAddressStep, { InternalAddressGeneration } from '../login/GenerateInternalAddressStep';
@@ -53,15 +54,19 @@ const SetupInternalAccountContainer = () => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
-    const goToApp = useAppLink();
     const toAppRef = useRef<APP_NAMES | null>(null);
     const authentication = useAuthentication();
+    const getAddresses = useGetAddresses();
+    const getUser = useGetUser();
     const [, setTheme] = useTheme();
 
     const generateInternalAddressRef = useRef<InternalAddressGeneration | undefined>(undefined);
 
     const handleBack = () => {
-        goToApp('/');
+        // Always forces a refresh for the theme
+        document.location.assign(
+            getAppHref(`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`, APPS.PROTONACCOUNT, authentication.getLocalID())
+        );
     };
 
     useEffect(() => {
@@ -79,12 +84,13 @@ const SetupInternalAccountContainer = () => {
                 return handleBack();
             }
 
-            const [addresses, domains] = await Promise.all([
-                getAllAddresses(silentApi),
+            const [user, addresses, domains] = await Promise.all([
+                getUser(),
+                getAddresses(),
                 silentApi<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains),
             ]);
 
-            if (!getHasOnlyExternalAddresses(addresses)) {
+            if (user.Type !== UserType.EXTERNAL) {
                 return handleBack();
             }
 
@@ -93,12 +99,12 @@ const SetupInternalAccountContainer = () => {
 
             toAppRef.current = app;
             generateInternalAddressRef.current = {
-                externalEmailAddress: addresses[0],
+                externalEmailAddress: addresses?.[0],
                 availableDomains: domains,
                 keyPassword: authentication.getPassword(),
                 api: silentApi,
                 onDone: async () => {
-                    goToApp('/', app);
+                    document.location.assign(getAppHref('/', app, authentication.getLocalID()));
                 },
                 revoke: () => {},
             };
@@ -130,7 +136,7 @@ const SetupInternalAccountContainer = () => {
     const mailAppName = getAppName(APPS.PROTONMAIL);
 
     const generateInternalAddress = generateInternalAddressRef.current;
-    const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email || '';
+    const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email;
 
     if (!generateInternalAddress) {
         throw new Error('Missing dependencies');

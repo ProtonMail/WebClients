@@ -6,7 +6,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 interface Props {
     onSubmit: () => Promise<void>;
     address: string;
-    recoveryAddress: string;
+    recoveryAddress?: string;
 }
 
 const GenerateInternalAddressConfirmForm = ({ onSubmit, address, recoveryAddress }: Props) => {
@@ -26,14 +26,16 @@ const GenerateInternalAddressConfirmForm = ({ onSubmit, address, recoveryAddress
             }}
             method="post"
         >
-            <div className="mb1-75">
+            <div className="mb1-75 text-break">
                 {c('Info')
                     .jt`${strongAddressAvailable} You will use this email address to sign into all ${BRAND_NAME} services.`}
             </div>
-            <div className="p1 mb1-75 text-center bg-weak rounded">
-                <div className="text-bold">{c('Info').t`Your recovery email address:`}</div>
-                {recoveryAddress}
-            </div>
+            {recoveryAddress && (
+                <div className="p1 mb1-75 text-center bg-weak rounded text-break">
+                    <div className="text-bold">{c('Info').t`Your recovery email address:`}</div>
+                    {recoveryAddress}
+                </div>
+            )}
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} autoFocus className="mt1-75">
                 {c('Action').t`Create address`}
             </Button>

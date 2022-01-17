@@ -141,25 +141,22 @@ const CreateAccountForm = ({
                 }}
             />
         ) : (
-            <div className="flex-item-fluid">
-                <InputFieldTwo
-                    id="email"
-                    bigger
-                    label={c('Signup label').t`Email`}
-                    error={validator(signupType === 'email' ? [requiredValidator(email), emailValidator(email)] : [])}
-                    disableChange={loading}
-                    autoFocus
-                    type="email"
-                    value={email}
-                    onValue={setEmail}
-                    onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                        if (e.key === 'Enter') {
-                            handleSubmit();
-                        }
-                    }}
-                />
-                <InsecureEmailInfo email={email} />
-            </div>
+            <InputFieldTwo
+                id="email"
+                bigger
+                label={c('Signup label').t`Email`}
+                error={validator(signupType === 'email' ? [requiredValidator(email), emailValidator(email)] : [])}
+                disableChange={loading}
+                autoFocus
+                type="email"
+                value={email}
+                onValue={setEmail}
+                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                    if (e.key === 'Enter') {
+                        handleSubmit();
+                    }
+                }}
+            />
         );
 
     if (challengeError) {
@@ -205,6 +202,7 @@ const CreateAccountForm = ({
                 ) : (
                     innerChallenge
                 )}
+                {signupType === 'email' && <InsecureEmailInfo email={email} />}
                 {hasExternalSignup ? (
                     <div className="text-center">
                         <LinkButton
