@@ -67,7 +67,7 @@ const ContactsGroupsList = ({
                 isCompactView && 'list-compact',
             ])}
         >
-            <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--no-border">
+            <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--border-none">
                 <AutoSizer>
                     {({ height, width }) => (
                         <List

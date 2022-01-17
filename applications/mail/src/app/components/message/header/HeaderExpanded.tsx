@@ -158,7 +158,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply`}
             <br />
-            <kbd className="no-border">R</kbd>
+            <kbd className="border-none">R</kbd>
         </>
     ) : (
         c('Title').t`Reply`
@@ -167,7 +167,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply all`}
             <br />
-            <kbd className="no-border">{shiftKey}</kbd> + <kbd className="no-border">R</kbd>
+            <kbd className="border-none">{shiftKey}</kbd> + <kbd className="border-none">R</kbd>
         </>
     ) : (
         c('Title').t`Reply all`
@@ -176,7 +176,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Forward`}
             <br />
-            <kbd className="no-border">{shiftKey}</kbd> + <kbd className="no-border">F</kbd>
+            <kbd className="border-none">{shiftKey}</kbd> + <kbd className="border-none">F</kbd>
         </>
     ) : (
         c('Title').t`Forward`
@@ -185,7 +185,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Filter on`}
             <br />
-            <kbd className="no-border">F</kbd>
+            <kbd className="border-none">F</kbd>
         </>
     ) : (
         c('Title').t`Filter on`
@@ -194,7 +194,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="no-border">M</kbd>
+            <kbd className="border-none">M</kbd>
         </>
     ) : (
         c('Title').t`Move to`
@@ -203,7 +203,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="no-border">L</kbd>
+            <kbd className="border-none">L</kbd>
         </>
     ) : (
         c('Title').t`Label as`
