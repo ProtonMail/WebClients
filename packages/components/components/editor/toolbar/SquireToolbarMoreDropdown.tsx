@@ -198,7 +198,7 @@ const SquireToolbarMoreDropdown = ({
                     <div className="dropdown-item-hr" key="hr-5" />,
                     <DropdownMenuButton
                         key={3}
-                        className="text-left flex flex-nowrap no-border-bottom"
+                        className="text-left flex flex-nowrap border-none-bottom"
                         onClick={handleChangePlainText(false)}
                         data-testid="squire-to-html"
                     >

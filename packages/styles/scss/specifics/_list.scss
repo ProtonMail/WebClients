@@ -24,7 +24,7 @@ $container-to-width: 3em !default;
 	min-block-size: 100%;
 }
 
-.items-column-list-inner--no-border {
+.items-column-list-inner--border-none {
 	// fix for Contact and ReactVirtualized__Grid
 	border: 0;
 }
