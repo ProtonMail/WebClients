@@ -1,16 +1,26 @@
-import { Alert, ConfirmModal, Button } from '@proton/components';
+import { Button, AlertModal } from '@proton/components';
 import { c } from 'ttag';
 
-const CloseConfirmationModal = (props: any) => {
+interface CloseConfirmationModalProps {
+    onClose: () => void;
+    onSubmit: () => void;
+    isOpen: boolean;
+}
+
+const CloseConfirmationModal = ({ onClose, onSubmit, isOpen }: CloseConfirmationModalProps) => {
     return (
-        <ConfirmModal
+        <AlertModal
             title={c('Info').t`Discard changes?`}
-            close={<Button type="reset" autoFocus>{c('Action').t`Cancel`}</Button>}
-            confirm={c('Action').t`Discard`}
-            {...props}
+            onClose={onClose}
+            onSubmit={onSubmit}
+            open={isOpen}
+            buttons={[
+                <Button color="norm" type="submit" onClick={onSubmit}>{c('Action').t`Discard`}</Button>,
+                <Button type="reset" autoFocus onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
         >
-            <Alert className="mb1" type="warning">{c('Info').t`You will lose all unsaved changes.`}</Alert>
-        </ConfirmModal>
+            {c('Info').t`You will lose all unsaved changes.`}
+        </AlertModal>
     );
 };
 

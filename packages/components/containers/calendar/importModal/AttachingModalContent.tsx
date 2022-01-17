@@ -9,7 +9,7 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import { Bordered, FileInput, Alert, Label, Field, Row, AttachedFile, Dropzone } from '../../../components';
+import { Bordered, FileInput, Alert, Label, Field, Row, AttachedFile, Dropzone, LearnMore } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 import { classnames } from '../../../helpers';
 
@@ -50,10 +50,13 @@ const AttachingModalContent = ({
             {model.failure?.message}
         </Alert>
     ) : (
-        <Alert className="mb1" type="info" learnMore={IMPORT_CALENDAR_FAQ_URL}>
+        <div className="mb1">
             {c('Description')
                 .t`You can import events in iCal format (ICS file). The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_EVENTS_STRING} events. If your file is bigger, please split it into smaller files.`}
-        </Alert>
+            <div>
+                <LearnMore url={IMPORT_CALENDAR_FAQ_URL} />
+            </div>
+        </div>
     );
 
     return (

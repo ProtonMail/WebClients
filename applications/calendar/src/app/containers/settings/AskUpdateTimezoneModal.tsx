@@ -1,13 +1,14 @@
 import { c } from 'ttag';
-import { Button, useApi, useEventManager, useNotifications, FormModal, useLoading } from '@proton/components';
+import { Button, useApi, useEventManager, useNotifications, AlertModal, useLoading } from '@proton/components';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 
 interface Props {
     localTzid: string;
     onClose?: () => void;
+    isOpen: boolean;
 }
 
-const AskUpdateTimezoneModal = ({ localTzid, onClose, ...rest }: Props) => {
+const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -26,21 +27,24 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, ...rest }: Props) => {
         onClose?.();
     };
 
+    const handleSubmit = () => {
+        withLoading(handleUpdateTimezone(localTzid));
+    };
+
     return (
-        <FormModal
+        <AlertModal
+            open={isOpen}
             onClose={handleClose}
-            onSubmit={() => withLoading(handleUpdateTimezone(localTzid))}
+            onSubmit={handleSubmit}
             title={c('Modal title').t`Time zone changed`}
-            close={<Button onClick={handleClose} autoFocus>{c('Action').t`Cancel`}</Button>}
-            submit={c('Action').t`Update`}
-            small
-            loading={loading}
-            hasClose={false}
-            {...rest}
+            buttons={[
+                <Button loading={loading} color="norm" onClick={handleSubmit}>{c('Action').t`Update`}</Button>,
+                <Button onClick={handleClose} autoFocus>{c('Action').t`Cancel`}</Button>,
+            ]}
         >
             {c('Info')
                 .jt`Your system time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}
-        </FormModal>
+        </AlertModal>
     );
 };
 
