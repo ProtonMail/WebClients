@@ -12,7 +12,7 @@ interface Props extends SortableContainerProps {
 
 function LabelSortableList({ items, ...rest }: Props) {
     return (
-        <OrderableTable className="no-border simple-table--has-actions border-collapse mt1" {...rest}>
+        <OrderableTable className="border-none simple-table--has-actions border-collapse mt1" {...rest}>
             <caption className="sr-only">{c('Settings/labels').t`Labels/Folders`}</caption>
             <OrderableTableHeader>
                 <tr>

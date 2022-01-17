@@ -107,7 +107,7 @@ const TableBodyRenderer = ({
         <Table
             {...props}
             className={classnames([
-                'file-browser-table simple-table--is-hoverable no-border border-collapse',
+                'file-browser-table simple-table--is-hoverable border-none border-collapse',
                 className,
             ])}
         >

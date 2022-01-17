@@ -53,7 +53,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
         <>
             {tooltipText}
             <br />
-            <kbd className="no-border">{shiftKey}</kbd> + <kbd className="no-border">C</kbd>
+            <kbd className="border-none">{shiftKey}</kbd> + <kbd className="border-none">C</kbd>
         </>
     ) : undefined;
 

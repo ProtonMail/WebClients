@@ -136,7 +136,7 @@ const Toolbar = ({
                 onToggle={() => {
                     onExpand(!isExpanded);
                 }}
-                className="no-border"
+                className="border-none"
             >
                 <Summary tabIndex={0} className="pl1 pr1">
                     <span>{c('Title').t`Additional settings`}</span>

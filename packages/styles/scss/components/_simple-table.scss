@@ -1,6 +1,6 @@
 .simple-table {
 	@extend .border-collapse;
-	@extend .no-border;
+	@extend .border-none;
 	inline-size: 100%;
 
 	caption {
@@ -110,7 +110,7 @@
 }
 
 .alternate-table-bg-row-rounded {
-	@extend .no-border;
+	@extend .border-none;
 	inline-size: 100%;
 	border-spacing: 0; // no border-collapse for radius ^^
 
