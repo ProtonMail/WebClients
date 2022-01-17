@@ -84,7 +84,7 @@ const CalendarSidebarListItems = ({
                         left={left}
                         className={classnames(['flex', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                     >
-                        <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
+                        <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w100">
                             <div className="flex flex-nowrap mr0-5">
                                 <div className="text-ellipsis" title={Name}>
                                     {Name}
