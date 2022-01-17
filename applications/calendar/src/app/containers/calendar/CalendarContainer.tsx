@@ -22,7 +22,7 @@ import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, Calendar, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { useAppTitle, useCalendarBootstrap, useModals } from '@proton/components';
+import { useAppTitle, useCalendarBootstrap } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
 import { unary } from '@proton/shared/lib/helpers/function';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
@@ -108,13 +108,13 @@ const CalendarContainer = ({
     const history = useHistory();
     const location = useLocation();
     const [disableCreate, setDisableCreate] = useState(false);
-
-    const { createModal } = useModals();
+    const [isAskUpdateTimezoneModalOpen, setIsAskUpdateTimezoneModalOpen] = useState(false);
 
     const interactiveRef = useRef<InteractiveRef>(null);
     const timeGridViewRef = useRef<TimeGridRef>(null);
 
     const [nowDate, setNowDate] = useState(() => new Date());
+    const [localTimezoneId, setLocalTimezoneId] = useState<string>();
 
     useEffect(() => {
         const handle = setInterval(() => setNowDate(new Date()), 30000);
@@ -162,7 +162,8 @@ const CalendarContainer = ({
             const key = await getTimezoneSuggestionKey(user.ID);
             if (savedTzid !== localTzid && canAskTimezoneSuggestion(key)) {
                 saveLastTimezoneSuggestion(key);
-                createModal(<AskUpdateTimezoneModal localTzid={localTzid} />);
+                setIsAskUpdateTimezoneModalOpen(true);
+                setLocalTimezoneId(localTzid);
             }
         };
         void run();
@@ -313,6 +314,7 @@ const CalendarContainer = ({
 
     return (
         <CalendarContainerView
+            calendarUserSettings={calendarUserSettings}
             calendars={calendars}
             onCreateCalendarFromSidebar={(id: string) => setInitializeCacheOnlyCalendarsIDs([id])}
             isLoading={isLoading}
@@ -339,6 +341,14 @@ const CalendarContainer = ({
             containerRef={setContainerRef}
             addresses={addresses}
         >
+            {!!localTimezoneId && (
+                <AskUpdateTimezoneModal
+                    isOpen={isAskUpdateTimezoneModalOpen}
+                    onClose={() => setIsAskUpdateTimezoneModalOpen(false)}
+                    localTzid={localTimezoneId}
+                />
+            )}
+
             <ContactEmailsProvider>
                 <InteractiveCalendarView
                     view={view}

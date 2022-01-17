@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { endOfWeek, startOfWeek } from '@proton/shared/lib/date-fns-utc';
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { SETTINGS_VIEW, VIEWS } from '@proton/shared/lib/calendar/constants';
 import CalendarContainerView from './CalendarContainerView';
 import TimeGrid from '../../components/calendar/TimeGrid';
 import { TimeGridRef } from './interface';
@@ -13,6 +13,18 @@ const CalendarContainerViewBlurred = () => {
     const dateRange: [Date, Date] = [startOfWeek(now), endOfWeek(now)];
     const containerRef = useRef<HTMLDivElement>(null);
     const tzid = 'Europe/Zurich';
+
+    const calendarUserSettings = {
+        WeekLength: 7,
+        DisplayWeekNumber: 1,
+        DefaultCalendarID: '1',
+        AutoDetectPrimaryTimezone: 1,
+        PrimaryTimezone: 'America/New_York',
+        DisplaySecondaryTimezone: 0,
+        SecondaryTimezone: undefined,
+        ViewPreference: SETTINGS_VIEW.WEEK,
+        InviteLocale: null,
+    };
 
     return (
         <CalendarContainerView
@@ -30,6 +42,7 @@ const CalendarContainerViewBlurred = () => {
             setTzid={noop}
             containerRef={containerRef}
             addresses={[]}
+            calendarUserSettings={calendarUserSettings}
         >
             <TimeGrid
                 tzid={tzid}

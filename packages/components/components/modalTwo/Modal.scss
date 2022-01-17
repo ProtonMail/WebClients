@@ -76,6 +76,7 @@
 		z-index: 1;
 		display: flex;
 		max-inline-size: var(--size);
+		inline-size: 100%;
 		overflow: hidden;
 		padding: 0;
 		margin: auto;
@@ -88,6 +89,8 @@
 		animation-name: anime-modal-two-dialog-in;
 
 		&-container {
+			flex-grow: 1;
+			max-inline-size: 100%;
 			display: flex;
 			flex-flow: column nowrap;
 			justify-content: flex-start;

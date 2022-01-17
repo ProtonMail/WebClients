@@ -1,14 +1,34 @@
+import { ReactNode, useState } from 'react';
+import { c } from 'ttag';
+
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-import { useState } from 'react';
-import { c } from 'ttag';
-import { Alert, ConfirmModal, ErrorButton } from '../../../components';
-import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
+import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+
+import { AlertModal, Button } from '../../../components';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
+import { useModalsMap } from '../../../hooks/useModalsMap';
 import { CalendarModal } from '../calendarModal/CalendarModal';
 import { ExportModal } from '../exportModal/ExportModal';
 import CalendarsSection from './CalendarsSection';
+
+type ModalsMap = {
+    calendarModal: ModalWithProps<{
+        activeCalendars?: Calendar[];
+        defaultCalendarID?: string;
+        calendar?: Calendar;
+    }>;
+    exportCalendarModal: ModalWithProps<{
+        exportCalendar?: Calendar;
+    }>;
+    deleteCalendarModal: ModalWithProps<{
+        defaultCalendarWarning?: ReactNode;
+        onClose: () => void;
+        onConfirm: () => void;
+    }>;
+};
 
 export interface PersonalCalendarsSectionProps {
     activeAddresses: Address[];
@@ -17,6 +37,7 @@ export interface PersonalCalendarsSectionProps {
     defaultCalendar?: Calendar;
     user: UserModel;
 }
+
 const PersonalCalendarsSection = ({
     activeAddresses,
     calendars = [],
@@ -27,17 +48,27 @@ const PersonalCalendarsSection = ({
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const [loadingMap, setLoadingMap] = useState({});
+    const { modalsMap, updateModal, closeModal } = useModalsMap<ModalsMap>({
+        calendarModal: { isOpen: false },
+        exportCalendarModal: { isOpen: false },
+        deleteCalendarModal: { isOpen: false },
+    });
 
     const defaultCalendarID = defaultCalendar?.ID;
 
     const handleCreate = () => {
-        createModal(<CalendarModal activeCalendars={activeCalendars} defaultCalendarID={defaultCalendarID} />);
+        updateModal('calendarModal', {
+            isOpen: true,
+            props: { activeCalendars, defaultCalendarID },
+        });
     };
 
     const handleEdit = (calendar: Calendar) => {
-        createModal(<CalendarModal calendar={calendar} />);
+        updateModal('calendarModal', {
+            isOpen: true,
+            props: { calendar },
+        });
     };
 
     const handleSetDefault = async (calendarID: string) => {
@@ -68,21 +99,25 @@ const PersonalCalendarsSection = ({
             ) : (
                 ''
             );
-            createModal(
-                <ConfirmModal
-                    title={c('Title').t`Delete calendar`}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
-                    onClose={reject}
-                    onConfirm={resolve}
-                >
-                    <Alert className="mb1" type="error">{c('Info')
-                        .t`Are you sure you want to delete this calendar?`}</Alert>
-                    {isDeleteDefaultCalendar && firstRemainingCalendar && (
-                        <Alert className="mb1" type="warning">{c('Info')
-                            .jt`${calendarName} will be set as default calendar.`}</Alert>
-                    )}
-                </ConfirmModal>
-            );
+            const defaultCalendarWarning =
+                isDeleteDefaultCalendar && firstRemainingCalendar ? (
+                    <div className="mb1">{c('Info').jt`${calendarName} will be set as default calendar.`}</div>
+                ) : null;
+
+            updateModal('deleteCalendarModal', {
+                isOpen: true,
+                props: {
+                    onClose: () => {
+                        reject();
+                        closeModal('deleteCalendarModal');
+                    },
+                    onConfirm: () => {
+                        resolve();
+                        closeModal('deleteCalendarModal');
+                    },
+                    defaultCalendarWarning,
+                },
+            });
         });
         try {
             setLoadingMap((old) => ({
@@ -102,28 +137,62 @@ const PersonalCalendarsSection = ({
         }
     };
 
-    const handleExport = (calendar: Calendar) => createModal(<ExportModal calendar={calendar} />);
+    const handleExport = (exportCalendar: Calendar) => {
+        updateModal('exportCalendarModal', {
+            isOpen: true,
+            props: { exportCalendar },
+        });
+    };
 
     const calendarsLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
     const calendarLimitReachedText = c('Calendar limit warning')
         .t`You have reached the maximum number of personal calendars you can create within your plan.`;
     const isBelowLimit = calendars.length < calendarsLimit;
 
+    const { calendarModal, exportCalendarModal, deleteCalendarModal } = modalsMap;
+
     return (
-        <CalendarsSection
-            calendars={calendars}
-            user={user}
-            defaultCalendarID={defaultCalendar?.ID}
-            loadingMap={loadingMap}
-            add={c('Action').t`Create calendar`}
-            calendarLimitReachedText={calendarLimitReachedText}
-            canAdd={activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope}
-            onAdd={handleCreate}
-            onSetDefault={handleSetDefault}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-            onExport={handleExport}
-        />
+        <>
+            <AlertModal
+                open={deleteCalendarModal.isOpen}
+                title={c('Title').t`Delete calendar`}
+                buttons={[
+                    <Button color="danger" onClick={deleteCalendarModal.props?.onConfirm} type="submit">{c('Action')
+                        .t`Delete`}</Button>,
+                    <Button onClick={deleteCalendarModal.props?.onClose} type="submit">{c('Action').t`Cancel`}</Button>,
+                ]}
+                onClose={deleteCalendarModal.props?.onClose}
+            >
+                <div className="mb1">{c('Info').t`Are you sure you want to delete this calendar?`}</div>
+                {deleteCalendarModal.props?.defaultCalendarWarning}
+            </AlertModal>
+            {!!exportCalendarModal.props?.exportCalendar && (
+                <ExportModal
+                    calendar={exportCalendarModal.props?.exportCalendar}
+                    isOpen={exportCalendarModal.isOpen}
+                    onClose={() => closeModal('exportCalendarModal')}
+                />
+            )}
+
+            {!!calendarModal.props && calendarModal.isOpen && (
+                <CalendarModal {...calendarModal.props} isOpen onClose={() => closeModal('calendarModal')} />
+            )}
+
+            <CalendarsSection
+                calendars={calendars}
+                user={user}
+                defaultCalendarID={defaultCalendar?.ID}
+                loadingMap={loadingMap}
+                add={c('Action').t`Create calendar`}
+                calendarLimitReachedText={calendarLimitReachedText}
+                canAdd={activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope}
+                onAdd={handleCreate}
+                onSetDefault={handleSetDefault}
+                onEdit={handleEdit}
+                onDelete={handleDelete}
+                onExport={handleExport}
+            />
+        </>
     );
 };
 

@@ -17,7 +17,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { format } from 'date-fns';
 import { getAppHref, getClientID } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { Button, FormModal } from '../../../components';
+import { Button, ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter } from '../../../components';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import ExportingModalContent from './ExportingModalContent';
 import ExportSummaryModalContent from './ExportSummaryModalContent';
@@ -25,10 +25,11 @@ import { useGetCalendarUserSettings, useUserSettings } from '../../../hooks';
 
 interface Props {
     calendar: Calendar;
-    onClose?: () => void;
+    onClose: () => void;
+    isOpen: boolean;
 }
 
-export const ExportModal = ({ calendar, ...rest }: Props) => {
+export const ExportModal = ({ calendar, onClose, isOpen }: Props) => {
     const getVTimezonesMap = useGetVtimezonesMap();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const [userSettings] = useUserSettings();
@@ -48,7 +49,7 @@ export const ExportModal = ({ calendar, ...rest }: Props) => {
 
     const [calendarBlob, setCalendarBlob] = useState<Blob>();
 
-    const { content, ...modalProps } = (() => {
+    const { content, onSubmit } = (() => {
         if (model.step === EXPORT_STEPS.EXPORTING) {
             const handleFinish = async (exportedEvents: VcalVeventComponent[], exportErrors: ExportError[]) => {
                 // we don't catch errors here as they're caught into a NETWORK error on ExportingModalContent
@@ -84,31 +85,39 @@ export const ExportModal = ({ calendar, ...rest }: Props) => {
 
             return {
                 content: <ExportingModalContent model={model} setModel={setModel} onFinish={handleFinish} />,
-                submit: null,
+                onSubmit: null,
             };
         }
-        const submit =
-            model.error === EXPORT_ERRORS.NETWORK_ERROR ? (
-                <Button color="norm" onClick={() => updateModel({ step: EXPORT_STEPS.EXPORTING })}>{c('Action')
-                    .t`Try again`}</Button>
-            ) : (
-                <Button color="norm" type="submit">{c('Action').t`Save ICS file`}</Button>
-            );
 
         return {
             content: <ExportSummaryModalContent model={model} />,
-            submit,
             onSubmit: () => {
+                if (model.error === EXPORT_ERRORS.NETWORK_ERROR) {
+                    updateModel({ step: EXPORT_STEPS.EXPORTING });
+                    return;
+                }
+
                 downloadFile(calendarBlob, `${calendar.Name}-${format(Date.now(), 'yyyy-MM-dd')}.ics`);
-                rest.onClose?.();
+                onClose();
             },
         };
     })();
 
     return (
-        <FormModal title={c('Title').t`Export calendar`} {...modalProps} {...rest}>
-            {content}
-        </FormModal>
+        <ModalTwo open={isOpen} size="large" fullscreenOnMobile onClose={onClose}>
+            <ModalTwoHeader title={c('Title').t`Export calendar`} />
+            <ModalTwoContent>{content}</ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                {!!onSubmit && (
+                    <Button color="norm" onClick={onSubmit} type="submit">
+                        {model.error === EXPORT_ERRORS.NETWORK_ERROR
+                            ? c('Action').t`Try again`
+                            : c('Action').t`Save ICS file`}
+                    </Button>
+                )}
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

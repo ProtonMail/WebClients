@@ -74,7 +74,11 @@ const useGetCalendarActions = ({
                 ...calendarPayload,
                 AddressID: addressID,
             })
-        );
+        ).catch((e: Error) => {
+            // Hard failure if the keys fail to setup. Force the user to reload.
+            setError(true);
+            throw e;
+        });
 
         await setupCalendarKey({
             api,
@@ -104,7 +108,12 @@ const useGetCalendarActions = ({
                         : newCalendarID;
                     return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
                 })(),
-            ]);
+            ]).catch(() => {
+                createNotification({
+                    type: 'warning',
+                    text: c('Settings update growler warning').t`Failed to update settings`,
+                });
+            });
         }
 
         // Refresh the calendar model in order to ensure flags are correct

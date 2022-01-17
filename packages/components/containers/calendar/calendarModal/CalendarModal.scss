@@ -1,0 +1,9 @@
+@import '~@proton/styles/scss/config';
+
+.calendar-modal {
+	&-content {
+		> * + * {
+			margin-block-start: rem(16);
+		}
+	}
+}

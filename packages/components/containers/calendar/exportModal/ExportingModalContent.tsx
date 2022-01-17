@@ -12,7 +12,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 
 import { getEventsCount } from '@proton/shared/lib/api/calendars';
-import { Alert, DynamicProgress } from '../../../components';
+import { DynamicProgress } from '../../../components';
 import useGetCalendarEventPersonal from '../../../hooks/useGetCalendarEventPersonal';
 import {
     useGetCalendarInfo,
@@ -141,9 +141,9 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
     return (
         <>
-            <Alert className="mb1">
+            <div className="mb1">
                 {c('Export calendar').t`Please don't close the tab before the exporting process is finished.`}
-            </Alert>
+            </div>
             <DynamicProgress
                 id="progress-export-calendar"
                 value={totalFetched + totalProcessed + totalErrors}
