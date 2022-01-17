@@ -1,3 +1,32 @@
+.row--orderable {
+	z-index: $layer-modals;
+	/* In case the modal is open */
+	background: var(--background-norm);
+	color: var(--text-norm);
+}
+
+/*
+ * Welcome boxes in a 2 column design
+ * Make breakpoint overable
+ */
+$breakpoint-2-columns: 1180 !default;
+
+@include respond-to($breakpoint-2-columns) {
+	.boxes-placeholder-container {
+		flex-direction: column;
+
+		& > * {
+			margin-block-end: 1em;
+			inline-size: 100%;
+			flex-basis: auto;
+		}
+	}
+
+	.boxes-placeholder-button {
+		margin-block-start: 0;
+	}
+}
+
 .qr-code {
 	border: 1px solid white;
 }
