@@ -27,6 +27,7 @@ export const BRAND_NAME = 'Proton';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
+    PROTONACCOUNTLITE: 'proton-account-lite',
     PROTONMAIL: 'proton-mail',
     PROTONCONTACTS: 'proton-contacts',
     PROTONDRIVE: 'proton-drive',
@@ -42,6 +43,15 @@ export const APPS_CONFIGURATION = {
         name: 'Proton Account',
         bareName: 'Account',
         clientID: 'web-account',
+        icon: 'brand-proton-account',
+        settingsSlug: 'account',
+    },
+    [APPS.PROTONACCOUNTLITE]: {
+        publicPath: '',
+        subdomain: 'account',
+        name: 'Proton Account',
+        bareName: 'Account',
+        clientID: 'web-account-lite',
         icon: 'brand-proton-account',
         settingsSlug: 'account',
     },

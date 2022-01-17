@@ -44,6 +44,18 @@
 		}
 	}
 
+	&--fullscreen {
+		padding: 0;
+		align-items: stretch;
+		background: none;
+	}
+
+	&--fullscreen &-dialog {
+		flex: 1 0 100%;
+		border-radius: 0;
+		max-width: unset;
+	}
+
 	@keyframes anime-modal-two-in {
 		from {
 			opacity: 0;
