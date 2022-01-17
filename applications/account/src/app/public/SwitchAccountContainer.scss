@@ -1,0 +1,25 @@
+@import '~@proton/styles/scss/config';
+
+.account-button {
+	padding: 1em;
+	padding-inline-end: 2.5em;
+
+	&-content {
+		margin-block-start: -0.25em;
+	}
+
+	&-icon {
+		position: absolute;
+		inset-block-start: 50%;
+		inset-inline-end: 1.5em;
+		transform: translateY(-50%);
+		opacity: 0;
+		transition: 0.25s easing(easeOutQuint);
+	}
+
+	&:hover &-icon,
+	&:focus-within &-icon {
+		inset-inline-end: 1em;
+		opacity: 1;
+	}
+}
