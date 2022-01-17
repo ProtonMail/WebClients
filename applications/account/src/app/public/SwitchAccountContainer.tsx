@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useState } from 'react';
+import { Fragment, MouseEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import * as History from 'history';
 
@@ -23,6 +23,10 @@ import {
     useLoading,
     useNotifications,
     Button,
+    Alert,
+    InlineLinkButton,
+    Icon,
+    Scroll,
 } from '@proton/components';
 import { getToAppName } from './helper';
 import Main from './Main';
@@ -30,6 +34,8 @@ import Header from './Header';
 import Footer from './Footer';
 import Content from './Content';
 import { SERVICES, SERVICES_KEYS } from '../signup/interfaces';
+
+import './SwitchAccountContainer.scss';
 
 export const getSearchParams = (search: History.Search) => {
     const searchParams = new URLSearchParams(search);
@@ -128,13 +134,24 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
         }
     };
 
-    const listItemClassName = 'flex-no-min-children w100 mt0-25 pt0-25 text-left';
-
     const inner = () => {
         if (error) {
+            const refresh = (
+                <InlineLinkButton key="1" onClick={() => window.location.reload()}>
+                    {
+                        // translator: Full sentence is "Failed to get active sessions. Please refresh the page or try again later."
+                        c('Action').t`refresh the page`
+                    }
+                </InlineLinkButton>
+            );
+
             return (
-                <div className={listItemClassName}>{c('Error')
-                    .t`Failed to get active sessions. Please refresh or try again later.`}</div>
+                <Alert className="mb1" type="error">
+                    {
+                        // translator: Full sentence is "Failed to get active sessions. Please refresh the page or try again later."
+                        c('Error').jt`Failed to get active sessions. Please ${refresh} or try again later.`
+                    }
+                </Alert>
             );
         }
 
@@ -143,48 +160,56 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
         }
 
         if (!localActiveSessions?.length) {
-            return <div className={listItemClassName}>{c('Error').t`No active sessions`}</div>;
+            return <Alert className="mb1">{c('Error').t`No active sessions`}</Alert>;
         }
 
         return [...localActiveSessions.sort(compareSessions)].map(
-            ({ DisplayName, Username, LocalID, PrimaryEmail }) => {
+            ({ DisplayName, Username, LocalID, PrimaryEmail }, index) => {
                 const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
                 const initials = getInitials(nameToDisplay);
+
+                // translator: This is the tooltip that appears when you hover over an account button in switch account screen. Ex.: Continue with Kung Fury <kung.fury@pm.me>
+                const continueWithText = `${c('Action').t`Continue with`} ${nameToDisplay} <${PrimaryEmail}>`;
+                // translator: This is the tooltip that appears when you hover over an 'sign out' button in switch account screen. Ex.: Sign out from Kung Fury <kung.fury@pm.me>
+                const signOutText = `${c('Action').t`Sign out from`} ${nameToDisplay} <${PrimaryEmail}>`;
+
                 return (
-                    <div
-                        key={LocalID}
-                        className={`${listItemClassName} opacity-on-hover-container flex-align-items-center button-account no-outline relative`}
-                    >
-                        <span className="user-initials rounded p0-25 mb0-5 inline-flex bg-primary">
-                            <span className="dropdown-logout-text mauto text-semibold" aria-hidden="true">
-                                {initials}
+                    <Fragment key={LocalID}>
+                        <div className="account-button interactive flex flex-align-items-start w100 text-left rounded-bigger relative">
+                            <span className="flex user-initials rounded bg-primary">
+                                <span className="mauto text-semibold" aria-hidden="true">
+                                    {initials}
+                                </span>
                             </span>
-                        </span>
-                        <div className="no-scroll ml1 border-bottom pr1 pb1 mt0-25 flex-item-fluid flex flex-align-items-center">
-                            <button
-                                type="button"
-                                className="flex-item-fluid text-left increase-click-surface outline-offset-2p"
-                                onClick={() => handleClickSession(LocalID)}
-                            >
-                                <strong className="block text-ellipsis" title={nameToDisplay}>
-                                    {nameToDisplay}
-                                </strong>
-                                <div className="text-ellipsis color-weak" title={PrimaryEmail}>
-                                    {PrimaryEmail}
+                            <div className="account-button-content ml1 flex-item-fluid">
+                                <button
+                                    type="button"
+                                    className="text-left increase-click-surface"
+                                    title={continueWithText}
+                                    aria-label={continueWithText}
+                                    onClick={() => handleClickSession(LocalID)}
+                                >
+                                    <strong className="block text-break">{nameToDisplay}</strong>
+                                    <div className="text-break color-weak">{PrimaryEmail}</div>
+                                </button>
+                                <div className="relative upper-layer overflow-hidden">
+                                    {loadingMap[LocalID] ? (
+                                        <CircleLoader />
+                                    ) : (
+                                        <InlineLinkButton
+                                            title={signOutText}
+                                            aria-label={signOutText}
+                                            onClick={(event) => handleSignOut(event, LocalID)}
+                                        >
+                                            {c('Action').t`Sign out`}
+                                        </InlineLinkButton>
+                                    )}
                                 </div>
-                            </button>
-                            <div className="ml1 block text-no-wrap no-tiny-mobile no-scroll opacity-on-hover button-account-login text-sm m0 flex flex-align-items-center color-primary">
-                                {loadingMap[LocalID] ? (
-                                    <CircleLoader />
-                                ) : (
-                                    <LinkButton
-                                        className="relative upper-layer"
-                                        onClick={(event) => handleSignOut(event, LocalID)}
-                                    >{c('Action').t`Sign out`}</LinkButton>
-                                )}
+                                <Icon className="account-button-icon" name="arrow-right" aria-hidden="true" />
                             </div>
                         </div>
-                    </div>
+                        {index !== localActiveSessions.length - 1 && <hr className="my0-5" />}
+                    </Fragment>
                 );
             }
         );
@@ -198,13 +223,12 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 title={c('Title').t`Choose an account`}
                 subTitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
             />
-            <Content>
-                <div className="scroll-if-needed max-h-custom" style={{ '--max-height-custom': '20em' }}>
-                    {inner()}
+            <Content className="flex">
+                <div className="w100 max-h-custom" style={{ '--max-height-custom': '25em' }}>
+                    <Scroll>{inner()}</Scroll>
                 </div>
-                <div className="flex">
-                    <Button className="mt1 mlauto mrauto" onClick={onAddAccount}>{c('Action')
-                        .t`Add ${BRAND_NAME} account`}</Button>
+                <div className="w100 text-center">
+                    <Button className="mt1" onClick={onAddAccount}>{c('Action').t`Add ${BRAND_NAME} account`}</Button>
                 </div>
             </Content>
             <Footer>
