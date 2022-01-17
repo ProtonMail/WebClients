@@ -55,8 +55,8 @@ export enum FeatureCode {
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
     SpotlightGetStartedChecklist = 'SpotlightGetStartedChecklist',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
-    EasySwitchCalendar = 'EasySwitchCalendar',
     DarkStylesInBody = 'DarkStylesInBody',
+    EasySwitch = 'EasySwitch',
 }
 
 export interface FeaturesContextValue {
@@ -65,6 +65,13 @@ export interface FeaturesContextValue {
     enqueue: (code: FeatureCode[]) => void;
     get: <V = any>(code: FeatureCode[]) => Promise<Feature<V>[]>;
     put: <V = any>(code: FeatureCode, value: V) => Promise<Feature<V>>;
+}
+
+export interface FeatureContextValue<V = any> {
+    feature: Feature<V> | undefined;
+    loading: boolean | undefined;
+    get: () => Promise<Feature<V>>;
+    update: (value: V) => Promise<Feature<V>>;
 }
 
 export default createContext<FeaturesContextValue>({} as FeaturesContextValue);

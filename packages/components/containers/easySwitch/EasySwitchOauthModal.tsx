@@ -34,6 +34,7 @@ import {
     CalendarImportMapping,
     CreateImportPayload,
     EASY_SWITCH_SOURCE,
+    EasySwitchFeatureFlag,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, LABEL_COLORS } from '@proton/shared/lib/constants';
@@ -76,7 +77,7 @@ interface Props {
     onClose?: () => void;
     defaultCheckedTypes?: ImportType[];
     source: EASY_SWITCH_SOURCE;
-    isEasySwitchCalendarEnabled?: boolean;
+    featureMap?: EasySwitchFeatureFlag;
 }
 
 const {
@@ -106,7 +107,7 @@ const EasySwitchOauthModal = ({
     onClose = noop,
     defaultCheckedTypes = [],
     source,
-    isEasySwitchCalendarEnabled = false,
+    featureMap,
     ...rest
 }: Props) => {
     const activeAddresses = getActiveAddresses(addresses);
@@ -624,7 +625,7 @@ const EasySwitchOauthModal = ({
                             labels={labels}
                             folders={folders}
                             updateModalModel={(newModel) => setModalModel(newModel)}
-                            isEasySwitchCalendarEnabled={isEasySwitchCalendarEnabled}
+                            featureMap={featureMap}
                         />
                     )}
                     {modalModel.step === SUCCESS && (
