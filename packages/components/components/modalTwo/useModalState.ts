@@ -20,7 +20,7 @@ const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?
         onExit?.();
     };
 
-    const modalProps: Partial<ModalProps> = {
+    const modalProps: Pick<ModalProps, 'key' | 'open' | 'onClose' | 'onExit'> = {
         key,
         open,
         onClose: handleClose,

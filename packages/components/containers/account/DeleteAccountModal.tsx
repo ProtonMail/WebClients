@@ -1,4 +1,4 @@
-import { useState, useMemo, ChangeEvent } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { ACCOUNT_DELETION_REASONS } from '@proton/shared/lib/constants';
 import { deleteUser, canDelete, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -8,22 +8,27 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { omit } from '@proton/shared/lib/helpers/object';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { getReportInfo, getClientName } from '../../helpers/report';
 import {
-    Checkbox,
-    Row,
-    Field,
-    Label,
-    Select,
-    TextArea,
-    EmailInput,
-    PasswordInput,
-    TwoFactorInput,
-    FormModal,
     Alert,
+    Button,
+    Checkbox,
     ErrorButton,
     Info,
+    InputFieldTwo,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoHeader,
+    ModalTwoFooter,
+    Option,
+    PasswordInputTwo,
+    SelectTwo,
+    TextAreaTwo,
+    useFormErrors,
 } from '../../components';
 import {
     useEventManager,
@@ -36,12 +41,31 @@ import {
     useConfig,
 } from '../../hooks';
 
-interface Props {
-    onClose?: () => void;
+const { DIFFERENT_ACCOUNT, TOO_EXPENSIVE, MISSING_FEATURE, USE_OTHER_SERVICE, OTHER } = ACCOUNT_DELETION_REASONS;
+
+interface Props extends Omit<ModalProps<'form'>, 'as'> {
+    onSuccess?: () => Promise<void>;
+    hideHeader?: boolean;
 }
 
-const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
+const DeleteAccountModal = (props: Props) => {
     const { createNotification } = useNotifications();
+
+    const defaultOnSuccess = async () => {
+        createNotification({ text: c('Success').t`Account deleted. Logging out...` });
+
+        // Add an artificial delay to show the notification.
+        await wait(2500);
+    };
+
+    const {
+        onSuccess = defaultOnSuccess,
+        hideHeader = false,
+        onClose,
+        disableCloseOnEscape,
+        size = 'large',
+        ...rest
+    } = props;
     const eventManager = useEventManager();
     const api = useApi();
     const authentication = useAuthentication();
@@ -56,44 +80,36 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
         password: '',
         twoFa: '',
     });
+    const { validator, onFormSubmit } = useFormErrors();
     const { APP_NAME, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClientName(APP_NAME);
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
 
-    const isDisabled = useMemo(() => {
-        if (!model.check || !model.reason || !model.email || !model.password) {
-            return true;
-        }
-        if (hasTOTPEnabled && !model.twoFa) {
-            return true;
-        }
-        return false;
-    }, [model.check, model.reason, model.feedback, model.email, model.password, model.twoFa]);
-
-    const handleChange =
-        (key: string) =>
-        ({ target }: ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) =>
-            setModel({
-                ...model,
-                [key]: target.value,
-            });
-
     const reasons = [
-        { text: c('Option').t`Select a reason`, value: '', disabled: true },
-        { text: c('Option').t`I use a different Proton account`, value: ACCOUNT_DELETION_REASONS.DIFFERENT_ACCOUNT },
-        isAdmin && { text: c('Option').t`It's too expensive`, value: ACCOUNT_DELETION_REASONS.TOO_EXPENSIVE },
-        {
-            text: c('Option').t`It's missing a key feature that I need`,
-            value: ACCOUNT_DELETION_REASONS.MISSING_FEATURE,
-        },
-        {
-            text: c('Option').t`I found another service that I like better`,
-            value: ACCOUNT_DELETION_REASONS.USE_OTHER_SERVICE,
-        },
-        { text: c('Option').t`My reason isn't listed`, value: ACCOUNT_DELETION_REASONS.OTHER },
+        <Option
+            title={c('Option').t`I use a different Proton account`}
+            value={DIFFERENT_ACCOUNT}
+            key={DIFFERENT_ACCOUNT}
+        />,
+        isAdmin && <Option title={c('Option').t`It's too expensive`} value={TOO_EXPENSIVE} key={TOO_EXPENSIVE} />,
+        <Option
+            title={c('Option').t`It's missing a key feature that I need`}
+            value={MISSING_FEATURE}
+            key={MISSING_FEATURE}
+        />,
+        <Option
+            title={c('Option').t`I found another service that I like better`}
+            value={USE_OTHER_SERVICE}
+            key={USE_OTHER_SERVICE}
+        />,
+        <Option title={c('Option').t`My reason isn't listed`} value={OTHER} key={OTHER} />,
     ].filter(isTruthy);
 
     const handleSubmit = async () => {
+        if (!onFormSubmit()) {
+            return;
+        }
+
         try {
             eventManager.stop();
 
@@ -128,11 +144,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                 })
             );
 
-            createNotification({ text: c('Success').t`Account deleted. Logging out...` });
-
-            // Add an artificial delay to show the notification.
-            await wait(2500);
-
+            await onSuccess?.();
             onClose?.();
             authentication.logout();
         } catch (error: any) {
@@ -142,110 +154,106 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
     };
 
     return (
-        <FormModal
-            onSubmit={() => withLoading(handleSubmit())}
-            onClose={onClose}
-            close={c('Action').t`Cancel`}
-            submit={
-                <ErrorButton loading={loading} disabled={isDisabled} type="submit">{c('Action').t`Delete`}</ErrorButton>
-            }
-            title={c('Title').t`Delete account`}
-            loading={loading}
+        <ModalTwo
+            as="form"
+            onClose={hideHeader ? undefined : onClose}
+            disableCloseOnEscape={disableCloseOnEscape || loading}
+            size={size}
+            onSubmit={loading ? noop : () => withLoading(handleSubmit())}
             {...rest}
         >
-            <Alert
-                className="mb1"
-                type="warning"
-                learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/"
-            >
-                <div className="text-bold text-uppercase">
-                    {c('Info')
-                        .t`Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.`}
-                </div>
-                <div>{c('Info').t`If you wish to combine this account with another one, do NOT delete it.`}</div>
-            </Alert>
-            <Row>
-                <Label htmlFor="reason">{c('Label').t`What is the main reason you are deleting your account?`}</Label>
-                <Field>
-                    <Select
-                        id="reason"
-                        autoFocus
-                        options={reasons}
-                        value={model.reason}
-                        onChange={handleChange('reason')}
-                        disabled={loading}
-                        required
-                    />
-                </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="feedback">{c('Label')
-                    .t`We are sorry to see you go. Please explain why you are leaving to help us improve.`}</Label>
-                <Field>
-                    <TextArea
-                        id="feedback"
-                        rows={3}
-                        value={model.feedback}
-                        placeholder={c('Placeholder').t`Feedback`}
-                        onChange={handleChange('feedback')}
-                        disabled={loading}
-                    />
-                </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="email">
-                    {c('Label').t`Email address`}
-                    &nbsp;
-                    <Info title={c('Info').t`Please provide an email address in case we need to contact you.`} />
-                </Label>
-                <Field>
-                    <div className="mb0-5">
-                        <EmailInput
-                            id="email"
-                            required
-                            disabled={loading}
-                            value={model.email}
-                            onChange={handleChange('email')}
-                            placeholder={c('Placeholder').t`Email address`}
-                        />
+            {!hideHeader && <ModalTwoHeader title={c('Title').t`Delete account`} />}
+            <ModalTwoContent>
+                <Alert
+                    className="mb1"
+                    type="warning"
+                    learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/"
+                >
+                    <div className="text-bold text-uppercase">
+                        {c('Info')
+                            .t`Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.`}
                     </div>
-                </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="password">
-                    {c('Label').t`Login password`}
-                    &nbsp;
-                    <Info title={c('Info').t`Enter your login password to confirm your identity.`} />
-                </Label>
-                <Field>
-                    <div className="mb0-5">
-                        <PasswordInput
-                            id="password"
-                            required
-                            disabled={loading}
-                            value={model.password}
-                            onChange={handleChange('password')}
-                            placeholder={c('Placeholder').t`Password`}
-                        />
-                    </div>
-                </Field>
-            </Row>
-            {hasTOTPEnabled ? (
-                <Row>
-                    <Label htmlFor="twoFa">{c('Label').t`Two-factor authentication code`}</Label>
-                    <Field>
-                        <TwoFactorInput
-                            id="twoFa"
-                            required
-                            disabled={loading}
-                            value={model.twoFa}
-                            onChange={handleChange('twoFa')}
-                            placeholder={c('Placeholder').t`Two-factor authentication code`}
-                        />
-                    </Field>
-                </Row>
-            ) : null}
-            <Row>
+                    <div>{c('Info').t`If you wish to combine this account with another one, do NOT delete it.`}</div>
+                </Alert>
+                <InputFieldTwo
+                    rootClassName="mb0-5"
+                    as={SelectTwo}
+                    label={c('Label').t`What is the main reason you are deleting your account?`}
+                    placeholder={c('Placeholder').t`Select a reason`}
+                    id="reason"
+                    autoFocus
+                    value={model.reason}
+                    onValue={(value: unknown) => setModel({ ...model, reason: value as string })}
+                    error={validator([requiredValidator(model.reason)])}
+                    disabled={loading}
+                >
+                    {reasons}
+                </InputFieldTwo>
+
+                <InputFieldTwo
+                    id="feedback"
+                    as={TextAreaTwo}
+                    rootClassName="mt0-5"
+                    rows={3}
+                    label={c('Label')
+                        .t`We are sorry to see you go. Please explain why you are leaving to help us improve.`}
+                    placeholder={c('Placeholder').t`Feedback`}
+                    value={model.feedback}
+                    onValue={(value: string) => setModel({ ...model, feedback: value })}
+                    error={validator([requiredValidator(model.feedback), minLengthValidator(model.feedback, 10)])}
+                    disabled={loading}
+                />
+
+                <InputFieldTwo
+                    id="email"
+                    rootClassName="mt0-5"
+                    label={
+                        <>
+                            {c('Label').t`Email address`}&nbsp;
+                            <Info
+                                title={c('Info').t`Please provide an email address in case we need to contact you.`}
+                            />
+                        </>
+                    }
+                    placeholder={c('Placeholder').t`Email address`}
+                    value={model.email}
+                    onValue={(value: string) => setModel({ ...model, email: value })}
+                    error={validator([requiredValidator(model.email), emailValidator(model.email)])}
+                    disabled={loading}
+                />
+
+                <InputFieldTwo
+                    id="password"
+                    rootClassName="mt0-5"
+                    label={
+                        <>
+                            {c('Label').t`Login password`}&nbsp;
+                            <Info title={c('Info').t`Enter your login password to confirm your identity.`} />
+                        </>
+                    }
+                    placeholder={c('Placeholder').t`Password`}
+                    error={validator([requiredValidator(model.password)])}
+                    as={PasswordInputTwo}
+                    autoComplete="current-password"
+                    value={model.password}
+                    onValue={(value: string) => setModel({ ...model, password: value })}
+                    disabled={loading}
+                />
+
+                {hasTOTPEnabled && (
+                    <InputFieldTwo
+                        id="twoFa"
+                        rootClassName="mt0-5"
+                        label={c('Label').t`Two-factor authentication code`}
+                        placeholder={c('Placeholder').t`Two-factor authentication code`}
+                        autoComplete="one-time-code"
+                        value={model.twoFa}
+                        onValue={(value: string) => setModel({ ...model, twoFa: value })}
+                        error={validator([requiredValidator(model.twoFa)])}
+                        disabled={loading}
+                    />
+                )}
+
                 <Checkbox
                     required
                     id="check"
@@ -253,8 +261,14 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                     disabled={loading}
                     onChange={({ target }) => setModel({ ...model, check: target.checked })}
                 >{c('Label').t`Yes, I want to permanently delete this account and all its data.`}</Checkbox>
-            </Row>
-        </FormModal>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
+                <ErrorButton loading={loading} disabled={!model.check} type="submit">
+                    {c('Action').t`Delete`}
+                </ErrorButton>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

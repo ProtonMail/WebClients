@@ -1,7 +1,8 @@
 import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Href, Button, Loader } from '../../components';
-import { useModals, useSubscription, useAddresses, useConfig } from '../../hooks';
+import { useAddresses, useConfig, useSubscription } from '../../hooks';
+import { useModalState } from '../../components/modalTwo';
 
 import MozillaInfoPanel from './MozillaInfoPanel';
 import DeleteAccountModal from './DeleteAccountModal';
@@ -10,8 +11,8 @@ import SettingsParagraph from './SettingsParagraph';
 const DeleteSection = () => {
     const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
-    const { createModal } = useModals();
     const { APP_NAME } = useConfig();
+    const [deleteAccountModalProps, setDeleteAccountModalOpen] = useModalState();
 
     if (loadingAddresses || loadingSubscription) {
         return <Loader />;
@@ -38,16 +39,12 @@ const DeleteSection = () => {
 
     return (
         <>
+            <DeleteAccountModal {...deleteAccountModalProps} />
             <SettingsParagraph>
                 {c('Info')
                     .t`This will permanently delete your account and all of its data. You will not be able to reactivate this account.`}
             </SettingsParagraph>
-            <Button
-                color="danger"
-                shape="outline"
-                id="deleteButton"
-                onClick={() => createModal(<DeleteAccountModal />)}
-            >
+            <Button color="danger" shape="outline" id="deleteButton" onClick={() => setDeleteAccountModalOpen(true)}>
                 {c('Action').t`Delete your account`}
             </Button>
         </>
