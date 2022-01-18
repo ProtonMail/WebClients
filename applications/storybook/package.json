@@ -26,7 +26,7 @@
         "@types/react": "^17.0.38",
         "@types/react-dom": "^17.0.11",
         "cross-env": "^7.0.3",
-        "eslint": "^8.6.0",
+        "eslint": "^8.7.0",
         "lodash.startcase": "^4.4.0",
         "prettier": "^2.5.1",
         "prop-types": "15.8.1",
@@ -34,20 +34,20 @@
         "react-dom": "^17.0.2",
         "ts-loader": "^9.2.6",
         "typescript": "^4.5.4",
-        "webpack": "^5.65.0"
+        "webpack": "^5.66.0"
     },
     "devDependencies": {
         "@babel/core": "^7.16.7",
-        "@storybook/addon-actions": "^6.4.12",
-        "@storybook/addon-essentials": "^6.4.12",
-        "@storybook/addon-links": "^6.4.12",
-        "@storybook/addon-storysource": "^6.4.12",
-        "@storybook/builder-webpack5": "^6.4.12",
-        "@storybook/manager-webpack5": "^6.4.12",
-        "@storybook/react": "^6.4.12",
-        "@storybook/source-loader": "^6.4.12",
+        "@storybook/addon-actions": "^6.4.13",
+        "@storybook/addon-essentials": "^6.4.13",
+        "@storybook/addon-links": "^6.4.13",
+        "@storybook/addon-storysource": "^6.4.13",
+        "@storybook/builder-webpack5": "^6.4.13",
+        "@storybook/manager-webpack5": "^6.4.13",
+        "@storybook/react": "^6.4.13",
+        "@storybook/source-loader": "^6.4.13",
         "babel-loader": "^8.2.3",
         "eslint-plugin-storybook": "^0.5.5",
-        "netlify-cli": "^8.6.20"
+        "netlify-cli": "^8.9.6"
     }
 }
