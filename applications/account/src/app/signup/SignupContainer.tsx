@@ -741,7 +741,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                     <Content>
                         <div className="flex-no-min-children on-mobile-flex-column">
                             <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0">
-                                <div className="mlauto mrauto max-w50e border-bottom-children border-bottom-children--not-last">
+                                <div className="mlauto mrauto max-w50e divide-y">
                                     <PlanCustomization
                                         plans={plans}
                                         loading={loading}

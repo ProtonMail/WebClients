@@ -41,13 +41,10 @@
 	border: none;
 }
 
-.border-bottom-children {
-	> * {
-		border-block-end: 1px solid var(--border-norm);
-	}
-	&--not-last {
-		& > :last-child {
-			border-block-end: 0;
-		}
-	}
+.divide-x > * ~ * {
+	border-inline-start: 1px solid var(--border-norm);
+}
+
+.divide-y > * ~ * {
+	border-block-start: 1px solid var(--border-norm);
 }
