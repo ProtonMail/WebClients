@@ -1,10 +1,9 @@
-import { RefObject, useRef } from 'react';
+import { RefObject, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { classnames, Tooltip } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import useInitIframeContent from './hooks/useInitIframeContent';
