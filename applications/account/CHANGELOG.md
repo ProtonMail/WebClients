@@ -1,3 +1,16 @@
+## Release: 4.0.11 - January 26, 2022
+
+### New Features
+
+-   Added "Keep me signed in" option during log in
+
+### Improvements
+
+-   General design, UI/UX enhancements
+-   Minor restructure to the settings pages for ease of use
+-   Updated recovery settings page for added clarity
+-   Multiple minor bug fixes
+
 ## Release: 4.0.10 — January 12, 2022
 
 ### New Features
