@@ -17,7 +17,7 @@ export default {
 export const Primary = () => {
     return (
         <div>
-            <div className="bordered mb2" style={{ height: 160 }}>
+            <div className="border mb2" style={{ height: 160 }}>
                 <Scroll>
                     <div className="px1 text-justify">
                         <p style={{ maxWidth: 400 }}>
@@ -43,7 +43,7 @@ export const Primary = () => {
                     </div>
                 </Scroll>
             </div>
-            <div className="bordered">
+            <div className="border">
                 <Scroll horizontal>
                     <div className="px1 py1 flex flex-nowrap">
                         <p className="pr2" style={{ minWidth: 400 }}>

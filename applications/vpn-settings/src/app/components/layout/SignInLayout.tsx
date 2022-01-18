@@ -54,7 +54,7 @@ const SignInLayout = ({ children, title = '' }: Props) => {
             <Title className="flex-item-noshrink text-center color-primary">{title}</Title>
             <div className="flex-item-fluid flex-item-noshrink flex flex-column flex-nowrap">
                 <div className="flex flex-column flex-nowrap flex-item-noshrink">
-                    <div className="center ui-standard bg-norm color-norm mt2 max-w40e w100 p2 bordered flex-item-noshrink">
+                    <div className="center ui-standard bg-norm color-norm mt2 max-w40e w100 p2 border flex-item-noshrink">
                         {children}
                     </div>
                 </div>

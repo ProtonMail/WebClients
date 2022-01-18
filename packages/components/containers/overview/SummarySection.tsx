@@ -43,7 +43,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     const languageText = LOCALES[closestLocale];
 
     return (
-        <div className="bordered bg-norm shadow-norm p2">
+        <div className="border bg-norm shadow-norm p2">
             <div className="mb2 text-center">
                 <span className="user-initials rounded text-semibold p0-25 mb0-5 inline-flex bg-primary">
                     <span className="dropdown-logout-text mauto">{initials}</span>

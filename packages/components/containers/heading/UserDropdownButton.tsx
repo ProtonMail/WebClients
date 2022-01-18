@@ -40,7 +40,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
                     <span className="block text-ellipsis user-dropdown-displayName">{Email}</span>
                 </span>
             )}
-            <span className="mtauto mbauto text-semibold rounded bordered p0-25 inline-block user-initials relative flex flex-item-noshrink">
+            <span className="mtauto mbauto text-semibold rounded border p0-25 inline-block user-initials relative flex flex-item-noshrink">
                 <span className="mtauto mbauto center">{initials}</span>
             </span>
             {notification && (

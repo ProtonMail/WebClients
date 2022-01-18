@@ -12,7 +12,7 @@ import { SUBSCRIPTION_STEPS } from './constants';
 import UpsellItem from './UpsellItem';
 
 const UpsellMailTemplate = ({ children }: { children: ReactNode }) => (
-    <Card rounded bordered={false} className="mt1-5">
+    <Card rounded border={false} className="mt1-5">
         <UpsellItem icon="people">{c('Mail upsell feature').t`Get Multi-user support`}</UpsellItem>
         <UpsellItem icon="buildings">{c('Mail upsell feature').t`Host emails for your organization`}</UpsellItem>
         <UpsellItem icon="key">{c('Mail upsell feature').t`Create separate logins for each user`}</UpsellItem>

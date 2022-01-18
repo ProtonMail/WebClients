@@ -1,5 +1,5 @@
 .folder-tree {
-	@extend .bordered;
+	@extend .border;
 	@extend .scroll-if-needed;
 
 	border-radius: var(--border-radius-md);

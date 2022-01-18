@@ -122,7 +122,7 @@ const MessageBodyImage = ({
             style={style}
             className={classnames([
                 'proton-image-placeholder',
-                !!error && 'proton-image-placeholder--error border--danger',
+                !!error && 'proton-image-placeholder--error border-danger',
             ])}
         >
             {!showLoader ? <Icon name={icon} size={20} /> : null}
