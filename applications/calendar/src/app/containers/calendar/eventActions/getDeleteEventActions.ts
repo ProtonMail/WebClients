@@ -73,7 +73,7 @@ const getDeleteSingleEventActionsHelper = async ({
             vevent: oldVevent,
         });
         updatedInviteActions = cleanInviteActions;
-        // even though we are going to delete the event, we need to update the partstat firs to notify the organizer for
+        // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
         // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
         const updatePartstatOperation = getUpdatePartstatOperation({
             eventComponent: oldVevent,
@@ -81,6 +81,7 @@ const getDeleteSingleEventActionsHelper = async ({
             memberID,
             timestamp,
             inviteActions: updatedInviteActions,
+            silence: true,
         });
         if (updatePartstatOperation) {
             updatePartstatOperations.push(updatePartstatOperation);
