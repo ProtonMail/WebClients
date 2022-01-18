@@ -56,7 +56,7 @@ const CustomizeCalendarImportRow = ({
                         <SelectTwo
                             value={value}
                             onChange={({ value }) => updateCalendarMapping(calendar.ID, value)}
-                            className={classnames([calendarLimitReached && 'border--danger'])}
+                            className={classnames([calendarLimitReached && 'border-danger'])}
                         >
                             {[
                                 <li className="dropdown-item" key="label-create">

@@ -37,7 +37,7 @@ const DeleteAllMessagesModal = ({ email, ...rest }: Props) => {
             <div>{c('Instructions').t`To confirm this action enter the following text in the box below.`}</div>
 
             <div
-                className="p1 mt1 mb1 bg-weak text-bold bordered"
+                className="p1 mt1 mb1 bg-weak text-bold border"
                 style={{
                     userSelect: 'none',
                     letterSpacing: '-0.2px',

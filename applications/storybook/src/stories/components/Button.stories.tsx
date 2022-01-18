@@ -39,7 +39,7 @@ const sizes: Required<ButtonProps>['size'][] = ['small', 'medium', 'large'];
 
 const toggles = ['loading', 'pill', 'fullWidth'] as const;
 
-const buttonContainerClassName = 'flex flex-item-fluid flex-align-items-center flex-justify-center bordered';
+const buttonContainerClassName = 'flex flex-item-fluid flex-align-items-center flex-justify-center border';
 
 export const Sandbox = () => {
     const [selectedShape, setSelectedShape] = useState<Required<ButtonProps>['shape']>('solid');

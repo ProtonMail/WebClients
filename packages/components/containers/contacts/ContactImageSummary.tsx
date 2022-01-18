@@ -58,7 +58,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
 
     if (!photo) {
         return (
-            <div className="bordered bg-norm rounded ratio-container-square mb0">
+            <div className="border bg-norm rounded ratio-container-square mb0">
                 <span className="inner-ratio-container flex">
                     <span className="mauto color-weak h1">{getInitials(name)}</span>
                 </span>
@@ -71,7 +71,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     if (shouldShow) {
         if (loading) {
             return (
-                <div className="ratio-container-square rounded bordered">
+                <div className="ratio-container-square rounded border">
                     <span className="inner-ratio-container flex">
                         <Loader />
                     </span>
@@ -89,7 +89,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         if (!image.isSmall) {
             // fit the image in the rounded container as background image
             return (
-                <div className="ratio-container-square rounded bordered" style={style}>
+                <div className="ratio-container-square rounded border" style={style}>
                     <span className="inner-ratio-container" />
                 </div>
             );
@@ -98,7 +98,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         // For a small image, we have to create a smaller rounded container inside the bigger standard one,
         // and fit the image as background inside it. As container width we must pick the smallest dimension
         return (
-            <div className="ratio-container-square mb0 rounded bordered">
+            <div className="ratio-container-square mb0 rounded border">
                 <span className="inner-ratio-container flex">
                     <div
                         className="mbauto mtauto flex center w-custom"
@@ -114,7 +114,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     }
 
     return (
-        <button type="button" className="bordered rounded bg-norm ratio-container-square mb0" onClick={handleClick}>
+        <button type="button" className="border rounded bg-norm ratio-container-square mb0" onClick={handleClick}>
             <span className="inner-ratio-container flex">
                 <span className="mauto lh-rg flex flex-column flex-align-items-center">
                     <Icon name="file-shapes" />

@@ -155,7 +155,7 @@ const YourPlanSection = ({ permission }: Props) => {
 
     return (
         <SettingsSection>
-            <div className="bordered mb2">
+            <div className="border mb2">
                 <SettingsLayout className="pb1 pt1 pl2 pr2">
                     <SettingsLayoutLeft className="text-semibold">
                         {hasPaidMail ? (

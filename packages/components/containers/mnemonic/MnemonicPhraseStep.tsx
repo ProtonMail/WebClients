@@ -28,7 +28,7 @@ export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: st
                     <span className="text-semibold">{c('Label').t`Recovery phrase`}</span>
                     <Card
                         className="mt0-5 flex flex-justify-space-between flex-align-items-center flex-nowrap"
-                        bordered={false}
+                        border={false}
                         rounded
                     >
                         <span className="mr0-5" data-testid="account:recovery:generatedRecoveryPhrase">

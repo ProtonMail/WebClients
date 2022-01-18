@@ -46,7 +46,7 @@ const AttachingModalContent = ({
     return (
         <>
             {alert}
-            <Bordered className={classnames(['flex relative', !!model.failure && 'border--danger'])}>
+            <Bordered className={classnames(['flex relative', !!model.failure && 'border-danger'])}>
                 {model.fileAttached ? (
                     <AttachedFile
                         file={model.fileAttached}

@@ -267,7 +267,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                     ) : null}
                                     <div
                                         className={classnames([
-                                            'blackfriday-plan w100 bordered p1 mb1 flex flex-column flex-align-items-center flex-justify-end',
+                                            'blackfriday-plan w100 border p1 mb1 flex flex-column flex-align-items-center flex-justify-end',
                                             popular && 'border-color-primary',
                                         ])}
                                     >

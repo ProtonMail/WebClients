@@ -46,7 +46,7 @@ const UpsellVPNSubscription = () => {
     }
 
     return (
-        <Card rounded bordered={false} className="mt1-5">
+        <Card rounded border={false} className="mt1-5">
             <UpsellItem icon="rocket">{c('VPN upsell feature').t`Higher speed servers (up to 10Gbps)`}</UpsellItem>
             <UpsellItem icon="presentation-screen">
                 {c('VPN upsell feature').t`Access geo-blocked content (Netflix, YouTube, etc.)`}
