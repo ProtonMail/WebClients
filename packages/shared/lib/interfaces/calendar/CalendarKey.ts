@@ -24,3 +24,8 @@ export interface InactiveCalendarKey {
     Key: CalendarKey;
     error: Error;
 }
+
+export interface ReenableKeyResponse {
+    Code: number;
+    Key: CalendarKey;
+}
