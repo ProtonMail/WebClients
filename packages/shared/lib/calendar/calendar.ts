@@ -4,16 +4,24 @@ import { CALENDAR_FLAGS, MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, SE
 import { Calendar, CalendarUserSettings } from '../interfaces/calendar';
 import { getIsPersonalCalendar } from './subscribe/helpers';
 
-export const getDoesCalendarNeedUserAction = ({ Flags }: Calendar) => {
-    return hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) || hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
-};
-
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
 };
 
 export const getIsCalendarDisabled = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.SELF_DISABLED) || hasBit(Flags, CALENDAR_FLAGS.SUPER_OWNER_DISABLED);
+};
+
+export const getDoesCalendarNeedReset = ({ Flags } = { Flags: 0 }) => {
+    return hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED);
+};
+
+export const getDoesCalendarHaveInactiveKeys = ({ Flags } = { Flags: 0 }) => {
+    return hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
+};
+
+export const getDoesCalendarNeedUserAction = ({ Flags } = { Flags: 0 }) => {
+    return getDoesCalendarNeedReset({ Flags }) || getDoesCalendarHaveInactiveKeys({ Flags });
 };
 
 export const getIsCalendarProbablyActive = (calendar = { Flags: 0 }) => {
