@@ -25,7 +25,7 @@ interface Props {
     onBlockquoteToggle?: () => void;
     onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
     isPrint?: boolean;
-    hasDarkStyles: boolean;
+    hasDarkStyles?: boolean;
     message: MessageState;
     labelID: string;
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
