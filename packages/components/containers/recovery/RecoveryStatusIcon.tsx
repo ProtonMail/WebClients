@@ -12,7 +12,14 @@ const RecoveryStatusIcon = ({ status, className, ...rest }: Props) => {
         className: 'color-success',
     };
 
-    if (status === 'intermediate' || status === 'incomplete') {
+    if (status === 'intermediate') {
+        config = {
+            name: 'circle-info-filled',
+            className: 'color-info',
+        };
+    }
+
+    if (status === 'incomplete') {
         config = {
             name: 'circle-exclamation-filled',
             className: 'color-warning',
