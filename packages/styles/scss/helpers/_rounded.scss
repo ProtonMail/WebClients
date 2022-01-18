@@ -1,0 +1,27 @@
+.rounded-sm {
+	border-radius: var(--border-radius-sm);
+}
+
+.rounded {
+	border-radius: var(--border-radius-md);
+}
+
+.rounded-lg {
+	border-radius: var(--border-radius-lg);
+}
+
+.rounded-xl {
+	border-radius: var(--border-radius-xl);
+}
+
+.rounded-full {
+	border-radius: var(--border-radius-full);
+}
+
+.rounded-50 {
+	border-radius: 50%;
+}
+
+.rounded-none {
+	border-radius: 0;
+}
