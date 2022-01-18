@@ -106,7 +106,7 @@ const HeaderExpanded = ({
     const isSendingMessage = message.draftFlags?.sending;
     const isOutboxMessage = isOutbox(message.data);
     const { feature } = useFeature(FeatureCode.SpyTrackerProtection);
-    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data);
+    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
 
     const isScheduledMessage = isScheduled(message.data);
 
