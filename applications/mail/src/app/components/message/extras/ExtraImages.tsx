@@ -58,7 +58,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
     ) : undefined;
 
     return (
-        <div className="bg-norm rounded bordered p0-5 mb0-5 flex flex-nowrap">
+        <div className="bg-norm rounded border p0-5 mb0-5 flex flex-nowrap">
             <Icon name="image" className="mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{text}</span>
             <Tooltip title={tooltip}>

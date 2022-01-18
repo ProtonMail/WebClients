@@ -41,7 +41,7 @@ const colors: Required<ButtonGroupProps>['color'][] = ['norm', 'weak', 'danger',
 
 const sizes: Required<ButtonGroupProps>['size'][] = ['small', 'medium', 'large'];
 
-const buttonContainerClassName = 'flex flex-item-fluid flex-align-items-center flex-justify-center bordered';
+const buttonContainerClassName = 'flex flex-item-fluid flex-align-items-center flex-justify-center border';
 
 export const Sandbox = () => {
     const [selectedShape, setSelectedShape] = useState<Required<ButtonGroupProps>['shape']>('solid');
