@@ -39,6 +39,8 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
     const isUnknown = !config?.method;
     const isImport = config?.method === ICAL_METHOD.PUBLISH;
     const isResponse = config?.method && ICAL_METHODS_ATTENDEE.includes(config?.method);
+    const isProtonInvite = !!config?.isProtonInvite;
+
     if (errorType === INVITATION_INVALID) {
         if (isUnknown) {
             return c('Attached ics file error').t`Invalid ICS file`;
@@ -86,10 +88,14 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
         return c('Event invitation error').t`We could not update the event in your calendar`;
     }
     if (errorType === EVENT_CREATION_ERROR) {
-        return c('Event invitation error').t`Your answer was sent, but the event could not be added to your calendar`;
+        return isProtonInvite
+            ? c('Event invitation error').t`The event could not be added to your calendar. No answer was sent`
+            : c('Event invitation error').t`Your answer was sent, but the event could not be added to your calendar`;
     }
     if (errorType === EVENT_UPDATE_ERROR) {
-        return c('Event invitation error').t`Your answer was sent, but the event could not be updated in your calendar`;
+        return isProtonInvite
+            ? c('Event invitation error').t`The event could not be updated in your calendar. No answer was sent`
+            : c('Event invitation error').t`Your answer was sent, but the event could not be updated in your calendar`;
     }
     if (errorType === CANCELLATION_ERROR) {
         return c('Event invitation error').t`We could not cancel the event in your calendar`;
@@ -107,6 +113,7 @@ interface EventInvitationErrorConfig {
     externalError?: Error;
     partstat?: ICAL_ATTENDEE_STATUS;
     timestamp?: number;
+    isProtonInvite?: boolean;
     method?: ICAL_METHOD;
 }
 
@@ -117,6 +124,8 @@ export class EventInvitationError extends Error {
 
     timestamp?: number;
 
+    isProtonInvite?: boolean;
+
     externalError?: Error;
 
     method?: ICAL_METHOD;
@@ -126,6 +135,7 @@ export class EventInvitationError extends Error {
         this.type = errorType;
         this.partstat = config?.partstat;
         this.timestamp = config?.timestamp;
+        this.isProtonInvite = config?.isProtonInvite;
         this.externalError = config?.externalError;
         Object.setPrototypeOf(this, EventInvitationError.prototype);
     }

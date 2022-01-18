@@ -899,9 +899,10 @@ export const updatePartstatFromInvitation = async ({
         Status: toApiPartstat(partstat),
         UpdateTime: getUnixTime(timestamp),
     };
-    const { Event: updatedEvent } = await api<UpdateEventPartApiResponse>(
-        updateAttendeePartstat(calendar.ID, eventID, attendeeID, data)
-    );
+    const { Event: updatedEvent } = await api<UpdateEventPartApiResponse>({
+        ...updateAttendeePartstat(calendar.ID, eventID, attendeeID, data),
+        silence: true,
+    });
     // reset single-edits partstats if necessary (if this step fails, we silently ignore it)
     // we also need to drop alarms for the ones that had them
     if (!isSingleEdit && singleEditData?.length && attendeeToken) {

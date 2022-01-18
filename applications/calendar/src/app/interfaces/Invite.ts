@@ -55,6 +55,7 @@ export interface UpdatePartstatOperation {
         partstat: ICAL_ATTENDEE_STATUS;
         updateTime: number;
     };
+    silence: boolean;
 }
 
 export interface UpdatePersonalPartOperation {
