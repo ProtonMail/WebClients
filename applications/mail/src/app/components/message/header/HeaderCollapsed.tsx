@@ -55,7 +55,7 @@ const HeaderCollapsed = ({
     const isDraftMessage = isDraft(message.data) && !message.draftFlags?.sending;
     const isOutboxMessage = isOutbox(message.data) || message.draftFlags?.sending;
     const isScheduledMessage = isScheduled(message.data);
-    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data);
+    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
 
     return (
         <div

@@ -1,4 +1,3 @@
-import { isICS } from '@proton/shared/lib/helpers/mimetype';
 import { c, msgid } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import ItemStar from './ItemStar';
@@ -13,7 +12,7 @@ import ItemAction from './ItemAction';
 import { Breakpoints } from '../../models/utils';
 import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { Conversation } from '../../models/conversation';
+import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
 interface Props {
     labelID: string;
@@ -68,8 +67,7 @@ const ItemColumnLayout = ({
         occurrencesInBody
     );
 
-    const attachmentInfo = (element as Conversation)?.AttachmentInfo;
-    const hasOnlyIcsAttachments = attachmentInfo && !Object.keys(attachmentInfo).some((key) => !isICS(key));
+    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
     return (
         <div
