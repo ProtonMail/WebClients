@@ -23,6 +23,7 @@ export interface InputFieldOwnProps {
     assistiveText?: ReactNode;
     disabled?: boolean;
     bigger?: boolean;
+    compact?: boolean;
     id?: string;
     error?: NodeOrBoolean;
     warning?: NodeOrBoolean;
@@ -50,6 +51,7 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
             assistiveText,
             disabled,
             bigger,
+            compact,
             error,
             id: idProp,
             rootClassName,
@@ -65,6 +67,7 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
         const classes = {
             root: classnames([
                 'inputform-container w100',
+                compact && 'inputform-container--compact',
                 rootClassName,
                 disabled && 'inputform-container--disabled',
                 Boolean(error) && 'inputform-container--invalid',
