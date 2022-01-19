@@ -196,6 +196,9 @@
       "Continue import": [
         "Nastavi uvoz"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Nastavi s Googleom"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Odjavi sve račune"
+      ],
+      "Sign out from": [
+        ""
       ],
       "Signing in": [
         ""
@@ -1786,8 +1792,8 @@
       "Error in one of the conditions": [
         "Pogreška u jednom od uvjeta"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Dohvaćanje aktivnih sesija nije uspjelo. Osvježite ili pokušajte ponovo kasnije."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "Datoteka nema sadržaja za pregled"
@@ -4214,6 +4220,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Prebacite se na ${ professionalPlan } za dodavanje još korisnika."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
+      ],
       "Test link": [
         "Testiraj poveznicu"
       ],
@@ -4346,6 +4355,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Da biste osigurali internetsku vezu, preuzmite i instalirajte ProtonVPN aplikaciju za vaš uređaj i povežite se s ProtonVPN poslužiteljem."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Dopunite svoj račun sa kreditima koje možete upotrijebiti za pretplatu na novi plan ili za obnovu trenutnog plana. Dobivate jedan kredit za svaku potrošenu ${ i18nCurrency }."
       ],
@@ -4385,11 +4397,11 @@
       "Update recovery phrase": [
         ""
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Nadogradite na ${ PLAN_NAMES[PLANS.VISIONARY] } ili ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan za započeti."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        ""
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Nadogradite na plaćeni plan kako biste pristupili premium značajkama i povećali vaš prostor za pohranu."
@@ -5107,9 +5119,6 @@
       "ALL": [
         "SVE"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Allow recovery by email": [
         "Omogući oporavak putem adrese e-pošte"
       ],
@@ -5272,10 +5281,22 @@
       "Days of the week": [
         "Dani u tjednu"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "Zadani jezik"
       ],
       "Default language (${ defaultLanguage })": [
+        ""
+      ],
+      "Default notifications": [
         ""
       ],
       "Default PGP scheme": [
@@ -5355,12 +5376,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Unesite lozinku za ključ s otiskom prsta: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        ""
       ],
       "Expires": [
         "Ističe"
@@ -7187,6 +7202,11 @@
       ],
       "VPN apps": [
         "VPN aplikacije"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Settings/filters": {

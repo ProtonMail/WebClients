@@ -200,6 +200,9 @@
       "Export": [
         "エクスポート"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "連絡先をエクスポート"
       ],
@@ -510,7 +513,7 @@
         "送信に使用"
       ],
       "Use “${ label }” setting": [
-        "「{ label }」設定を使用する"
+        "「${ label }」設定を使用する"
       ],
       "Verify": [
         "検証"
@@ -1900,6 +1903,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         ""
       ],
@@ -1919,9 +1928,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -2167,7 +2173,7 @@
         "${ contactsCount } の連絡先が見つかりました"
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス(複数可) を選択してください。"
+        "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス(複数可) を選択してください。"
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
         "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス(複数可) を選択してください。"
@@ -3183,9 +3189,6 @@
       "All day": [
         "終日"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Automatically save contacts": [
         "連絡先への宛先の自動追加"
       ],
@@ -3243,6 +3246,18 @@
       "Date and time": [
         "日付と時刻"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "詳細"
       ],
@@ -3278,12 +3293,6 @@
       ],
       "Enter the 6-digit code": [
         "6 桁のコードを入力"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        "予定の通知"
       ],
       "Event title": [
         "予定のタイトル"
@@ -4407,6 +4416,11 @@
     "Select search results": {
       "No results found": [
         "結果が見つかりませんでした"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

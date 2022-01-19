@@ -196,6 +196,9 @@
       "Continue import": [
         "Continuer l'importation"
       ],
+      "Continue with": [
+        "Continuer avec"
+      ],
       "Continue with Google": [
         "Continuer avec Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Déconnecter tous les comptes"
+      ],
+      "Sign out from": [
+        "Se déconnecter de"
       ],
       "Signing in": [
         "Connexion en cours"
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Erreur dans une des conditions"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Impossible d'obtenir les sessions actives. Veuillez actualiser ou réessayer plus tard."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        "Impossible d'obtenir les sessions actives. Veuillez ${ refresh } ou réessayer plus tard."
       ],
       "File has no contents to preview": [
         "Ce fichier n'a pas de contenu à prévisualiser"
@@ -4156,6 +4162,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Basculez vers ${ professionalPlan } pour ajouter plus d'utilisateurs."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporairement indisponible. Veuillez vérifier plus tard."
+      ],
       "Test link": [
         "Lien test"
       ],
@@ -4288,6 +4297,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Pour sécuriser votre connexion Internet, téléchargez et installez l'application ProtonVPN pour votre appareil et connectez-vous à un serveur ProtonVPN."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        "Pour utiliser ${ toAppName }, veuillez créer une adresse."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Rechargez votre compte avec des crédits que vous pouvez utiliser pour vous abonner ou renouveler votre abonnement actuel. Vous obtenez un crédit pour chaque ${ i18nCurrency } dépensé."
       ],
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         "Mettre à jour la phrase de récupération"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Passez à l'offre ${ PLAN_NAMES[PLANS.VISIONARY] } ou ${ PLAN_NAMES[PLANS.PROFESSIONAL] } pour activer les réponses automatiques quand vous n'êtes pas au bureau."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Passez à une offre ${ PLAN_NAMES[PLANS.VISIONARY] } ou ${ PLAN_NAMES[PLANS.PROFESSIONAL] } pour commencer."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "Passez à l'offre ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } ou ${ PLAN_NAMES[PLANS.PLUS] } pour activer les réponses automatiques quand vous n'êtes pas au bureau."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Passez à une offre payante pour accéder à des fonctionnalités premium et augmenter votre espace de stockage."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "TOUT"
       ],
-      "All-day event notifications": [
-        "Notifications d'événement sur journée complète"
-      ],
       "Allow recovery by email": [
         "Autoriser la récupération par e-mail"
       ],
@@ -5210,11 +5219,23 @@
       "Days of the week": [
         "Jours de la semaine"
       ],
+      "Default email address": [
+        "Adresse électronique par défaut"
+      ],
+      "Default event duration": [
+        "Durée de l'événement par défaut"
+      ],
+      "Default full day notifications": [
+        "Notifications par défaut pour la journée complète"
+      ],
       "Default language": [
         "Langue par défaut"
       ],
       "Default language (${ defaultLanguage })": [
         "Langue par défaut (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Notifications par défaut"
       ],
       "Default PGP scheme": [
         "Protocole PGP par défaut"
@@ -5293,12 +5314,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Veuillez saisir le mot de passe pour la clé à empreinte : ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Durée de l’événement"
-      ],
-      "Event notifications": [
-        "Notifications de l’événement"
       ],
       "Expires": [
         "Expire le"
@@ -7113,6 +7128,11 @@
       ],
       "VPN apps": [
         "Applications VPN"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Impossible de mettre à jour les paramètres"
       ]
     },
     "Settings/filters": {

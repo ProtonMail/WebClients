@@ -227,6 +227,9 @@
       "Decrease": [
         "Μείωση"
       ],
+      "Decrypt": [
+        "Αποκρυπτογράφηση"
+      ],
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
@@ -327,6 +330,9 @@
       ],
       "Export": [
         "Εξαγωγή"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Εξαγωγή Επαφών"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Μετακίνηση σε..."
       ],
+      "Need help?": [
+        "Χρειάζεστε βοήθεια;"
+      ],
       "Never show": [
         "Να μην εμφανίζεται ποτέ"
       ],
@@ -682,6 +691,9 @@
       ],
       "Rename": [
         "Μετονομασία"
+      ],
+      "Reply securely": [
+        "Απάντηση με διασφάλιση"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -874,7 +886,7 @@
         "Αναίρεση"
       ],
       "Unlock data": [
-        ""
+        "Ξεκλείδωμα δεδομένων"
       ],
       "Unmark for deletion": [
         "Κατάργηση σήμανσης για διαγραφή"
@@ -1874,7 +1886,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Χρησιμοποιήστε την παγκόσμια προεπιλογή (${ defaultValueText })"
+        "Χρήση γενικής προεπιλογής (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -2173,11 +2185,14 @@
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
       ],
+      "Enter a password": [
+        "Εισάγετε κωδικό πρόσβασης"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
       "Error in one of the conditions": [
-        "Λάθος σε μιά από τις συνθήκες"
+        "Σφάλμα σε μια από τις συνθήκες"
       ],
       "Error while saving draft. Please try again.": [
         "Σφάλμα κατά την αποθήκευση του πρόχειρου. Παρακαλούμε δοκιμάστε ξανά."
@@ -2464,6 +2479,9 @@
       "Unknown payment token status": [
         "Άγνωστη κατάσταση πληρωμής"
       ],
+      "Wrong mailbox password": [
+        "Λανθασμένος κωδικός πρόσβασης θυρίδας"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Μη έγκυρη απάντηση"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Απροσδόκητο σφάλμα"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας"
       ]
     },
     "Event title": {
@@ -3346,6 +3367,9 @@
       "Background color": [
         "Χρώμα φόντου"
       ],
+      "Based in Switzerland, available globally": [
+        "Βασισμένο στην Ελβετία, διαθέσιμο παγκοσμίως"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
       ],
@@ -3455,6 +3479,9 @@
       "Day": [
         "Ημέρα",
         "Ημέρες"
+      ],
+      "Decrypt message": [
+        "Αποκρυπτογράφηση μηνύματος"
       ],
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
@@ -3840,7 +3867,7 @@
         "Αριθμός τηλεφώνου"
       ],
       "Plain text": [
-        "Απλό κείμενο"
+        "Σκέτο κείμενο"
       ],
       "Please add at least one recipient.": [
         "Παρακαλούμε προσθέστε τουλάχιστον έναν παραλήπτη."
@@ -3913,7 +3940,7 @@
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "Η φράση ανάκτησης κατέβηκε"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
@@ -4002,6 +4029,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Καθώς είστε αφοσιωμένος χρήστης, ο λογαριασμός σας έχει ενεργοποιημένα πρόσθετα χαρακτηριστικά."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει"
+      ],
       "Starter VPN service with P2P support.": [
         "Εκκίνηση υπηρεσίας VPN με υποστήριξη P2P."
       ],
@@ -4055,6 +4085,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Το αρχικό μήνυμα στο οποίο προσπαθείτε να προωθήσετε / απαντήσετε βρίσκεται στη διαδικασία αποστολής. Εάν συνεχίσετε, δεν θα μπορείτε πλέον να αναιρέσετε την αποστολή του αρχικού μηνύματος."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "Ο αποστολέας έχει ζητήσει αποδεικτικό ανάγνωσης."
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλούμε απενεργοποιήστε τυχόν φραγή αναδυόμενων. Δεν θα χρεωθείτε. Όποιο ποσό χρησιμοποιηθεί για την επαλήθευση της κάρτας, θα επιστραφεί αμέσως."
       ],
+      "Version ${ appVersion }": [
+        "'Εκδοση ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Επισκεφθείτε το κατάστημά μας για να αγοράσετε εμπορεύματα Proton."
       ],
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Έχετε φτάσει το 100% της χωρητικότητας αποθήκευσης. Εξετάστε το ενδεχόμενο να ελευθερώσετε χώρο ή να αναβαθμίσετε τον λογαριασμό σας με επιπλέον χώρο, αποθήκευσης για να συνθέσετε νέα μηνύματα."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Έχετε φτάσει τον μέγιστο αριθμό των 5 απαντήσεων."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal, έτσι ώστε να την προσθέσετε ως μέθοδο πληρωμής."
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
       ],
+      "Previous version": [
+        "Προηγούμενη έκδοση"
+      ],
+      "Privacy policy": [
+        "Πολιτική απορρήτου"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Ενεργοποιήστε ξανά τη διεύθυνση που συνδέεται με αυτό το ημερολόγιο για τη διαχείριση της πρόσκλησής σας."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Απεσταλμένα"
       ],
+      "Sign up for free": [
+        "Εγγραφείτε δωρεάν"
+      ],
       "Spam": [
         "Ενοχλητικά"
       ],
       "Starred": [
         "Με αστέρι"
+      ],
+      "Terms": [
+        "Όροι"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Αυτό το αρχείο ICS περιέχει περισσότερα από ένα συμβάντα. Κατεβάστε το και εισαγάγετε τα συμβάντα στο ${ calendarAppName }"
@@ -5540,7 +5591,7 @@
         "Η αποστολή αναιρέθηκε"
       ],
       "Undoing send...": [
-        ""
+        "Γίνεται αναίρεση αποστολής..."
       ]
     },
     "MIME type": {
@@ -5548,7 +5599,7 @@
         "Αυτόματο"
       ],
       "Plain text": [
-        "Απλό κείμενο"
+        "Σκέτο κείμενο"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -7090,6 +7141,9 @@
       "Processing...": [
         "Γίνεται επεξεργασία..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"
       ],
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "Αποστολή χωρίς λήξη;"
+      ],
+      "Sender changed": [
+        "Ο αποστολέας άλλαξε"
       ],
       "Sending error": [
         "Σφάλμα αποστολής"
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "Δεν έχετε επαφές προς εξαγωγή"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "ευσταθή έκδοση"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Αυτή η έκδοση του περιηγητή Tor δεν υποστηρίζεται. Παρακαλούμε ενημερώστε στην τελευταία ${ stableRelease }"
       ]
     },
     "Update font modal": {

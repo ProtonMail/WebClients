@@ -196,6 +196,9 @@
       "Continue import": [
         "Importálás folytatása"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Minden fiók kiléptetése"
+      ],
+      "Sign out from": [
+        ""
       ],
       "Signing in": [
         "Bejelentkezés"
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Hiba az egyik feltételben"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Az aktív munkamenetek betöltése nem sikerült. Frissítse az oldalt vagy próbálja meg később."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "Nincs előnézeti tartalom"
@@ -4156,6 +4162,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Váltson ${ professionalPlan } csomagra további felhasználók hozzáadásához."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
+      ],
       "Test link": [
         "Link kipróbálása"
       ],
@@ -4288,6 +4297,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ProtonVPN alkalmazást és kapcsolódjon egy ProtonVPN szerverhez."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Töltse fel egyenlegét kreditekkel, melyből magasabb előfizetést vásárolhat, vagy meghosszabbíthatja jelenlegi előfizetését. Minden egyes ${ i18nCurrency } egy kreditet ér."
       ],
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         "Helyreállító jelmondat frissítése"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Váltson ${ PLAN_NAMES[PLANS.VISIONARY] } vagy ${ PLAN_NAMES[PLANS.PROFESSIONAL] } csomagra, hogy távolléte esetén a automatikus válaszokat küldhessen a feladóknak."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Váltson a ${ PLAN_NAMES[PLANS.VISIONARY] } vagy ${ PLAN_NAMES[PLANS.PROFESSIONAL] } csomagra az induláshoz."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        ""
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "További prémium funkciókért és nagyobb tárhelyért váltson előfizetéses csomagra."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "MIND"
       ],
-      "All-day event notifications": [
-        "Egésznapos esemény értesítések"
-      ],
       "Allow recovery by email": [
         "Helyreállítás engedélyezése e-mail címmel"
       ],
@@ -5210,11 +5219,23 @@
       "Days of the week": [
         "A hét napjai"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "Alapértelmezett nyelv"
       ],
       "Default language (${ defaultLanguage })": [
         "Alapértelmezett nyelv (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        ""
       ],
       "Default PGP scheme": [
         "Alapértelmezett PGP séma"
@@ -5293,12 +5314,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Írja be a következő ujjlenyomattal rendelkező kulcshoz tartozó jelszót: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Esemény időtartama"
-      ],
-      "Event notifications": [
-        "Esemény értesítések"
       ],
       "Expires": [
         "Lejárat"
@@ -7113,6 +7128,11 @@
       ],
       "VPN apps": [
         "VPN alkalmazások"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Settings/filters": {

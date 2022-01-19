@@ -1,108 +1,108 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "tr_TR"
+    "language": "en_GB"
   },
   "contexts": {
     "Action": {
       "Cancel": [
-        "İptal"
+        "Cancel"
       ],
       "Close": [
-        "Kapat"
+        "Close"
       ],
       "Close modal": [
-        "Pencereyi kapat"
+        "Close modal"
       ],
       "Did not receive the code?": [
-        "Kodu almadınız mı?"
+        "Did not receive the code?"
       ],
       "Edit email address": [
-        "E-posta adresini düzenle"
+        "Edit email address"
       ],
       "Edit phone number": [
-        "Telefon numarasını düzenle"
+        "Edit phone number"
       ],
       "Get verification code": [
-        "Doğrulama kodu al"
+        "Get verification code"
       ],
       "refresh the page": [
-        "sayfayı yenile"
+        "refresh the page"
       ],
       "Request new code": [
-        "Yeni kod iste"
+        "Request new code"
       ],
       "Submit": [
-        "Gönder"
+        "Submit"
       ],
       "Try another method": [
-        "Başka bir yöntem deneyin"
+        "Try another method"
       ],
       "Verify": [
-        "Doğrula"
+        "Verify"
       ],
       "View invoice": [
-        "Faturayı görüntüle"
+        "View invoice"
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Gecikmiş fatura"
+        "Overdue invoice"
       ]
     },
     "Error": {
       "Can't validate email, try again later": [
-        "E-posta doğrulanamadı. Bir süre sonra yeniden deneyin"
+        "Can't validate email, try again later"
       ],
       "Can't validate phone, try again later": [
-        "Telefon doğrulanamadı. Bir süre sonra yeniden deneyin"
+        "Phone validation failed, try again later"
       ],
       "Email is not valid": [
-        "E-posta geçersiz"
+        "Invalid email"
       ],
       "Enter 6 digits": [
-        "6 rakamı yazın"
+        "Enter 6 digits verification code"
       ],
       "Invalid verification code": [
-        "Doğrulama kodu geçersiz"
+        "Invalid verification code"
       ],
       "Not a valid number": [
-        "Numara geçerli değil"
+        "Invalid number"
       ],
       "Passwords do not match": [
-        "Parola ile onayı aynı değil"
+        "Passwords do not match"
       ],
       "Request timed out.": [
-        "İstek zaman aşımına uğradı."
+        "Request timed out."
       ],
       "This field is required": [
-        "Bu alan zorunludur"
+        "This field is required"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
+        "This field requires a minimum of ${ minimumLength } characters."
       ],
       "Unknown error": [
-        "Bilinmeyen hata"
+        "Unknown error"
       ]
     },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
-        "Hatayı düzeltene kadar bekleyin."
+        "Brace yourself till we get the error fixed."
       ],
       "Error: ${ errorMessage }": [
-        "Hata: ${ errorMessage }"
+        ""
       ],
       "Oops, something went wrong": [
-        "Bir şeyler ters gitti"
+        "Oops, something went wrong"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Lütfen ${ refresh } ya da bağlantınızı denetleyin."
+        ""
       ],
       "There was a problem connecting to Proton.": [
-        "Proton bağlantısı kurulurken bir sorun çıktı."
+        ""
       ],
       "You may also ${ refresh } or try again later.": [
-        "Ayrıca ${ refresh } ya da bir süre sonra yeniden deneyebilirsiniz."
+        ""
       ]
     },
     "Human verification method": {
@@ -110,13 +110,13 @@
         "CAPTCHA"
       ],
       "Email": [
-        "E-posta"
+        "Email"
       ],
       "Manual": [
-        "El ile"
+        "Manual"
       ],
       "No verification method available": [
-        "Kullanılabilecek bir doğrulama yöntemi yok"
+        "No verification method available"
       ],
       "SMS": [
         "SMS"
@@ -124,114 +124,114 @@
     },
     "Info": {
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" üzerine tıklayın."
+        "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
+        "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } adresine gönderilen doğrulama kodunu yazın."
+        "Enter the verification code that was sent to ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
+        "If you are having trouble creating your account, please request an invitation and we will respond within one business day."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyenler kutusuna bakmayı unutmayın."
+        "If you don't find the email in your inbox, please check your spam folder."
       ],
       "Internet connection lost.": [
-        "İnternet bağlantısı kesildi."
+        ""
       ],
       "Loading": [
-        "Yükleniyor"
+        "Loading"
       ],
       "No results found": [
-        "Herhangi bir sonuç bulunamadı"
+        "No results found"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
+        ""
       ],
       "Session timed out.": [
-        "Oturum zaman aşımına uğradı."
+        "Session timed out."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+        "To fight spam and abuse, please verify you are human."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Yeni bir doğrulama kodu almak için ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+        "Would you like to receive a new verification code or use an alternative verification method?"
       ],
       "Your email will only be used for this one-time verification.": [
-        "E-posta adresiniz yalnız bu tek seferlik doğrulama için kullanılacak."
+        "Your email will only be used for this one-time verification."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Telefon numaranız yalnız bu tek seferlik doğrulama için kullanılacak."
+        "Your phone number will only be used for this one-time verification."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
+        "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices."
       ]
     },
     "Label": {
       "Cancel": [
-        "İptal"
+        "Cancel"
       ],
       "Email address": [
-        "E-posta adresi"
+        "Email address"
       ],
       "Enter the 6-digit code": [
-        "6 rakamlı kodu yazın"
+        "Enter the 6-digit code"
       ],
       "Hide password": [
-        "Parolayı gizle"
+        "Hide password"
       ],
       "Password": [
-        "Parola"
+        "Password"
       ],
       "Phone number": [
-        "Telefon numarası"
+        "Phone number"
       ],
       "Reveal password": [
-        "Parolayı göster"
+        "Reveal password"
       ],
       "Submit": [
-        "Gönder"
+        "Submit"
       ],
       "Verification code": [
-        "Doğrulama kodu"
+        "Verification code"
       ]
     },
     "Link": {
       "Learn more": [
-        "Ayrıntılı bilgi alın"
+        "Learn more"
       ],
       "Request an invite": [
-        "Bir davet iste"
+        "Request an invite"
       ]
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "Kod ${ methodTo } ile gönderildi"
+        "Code sent to ${ methodTo }"
       ],
       "Verification successful": [
-        "Doğrulandı"
+        "Verification successful"
       ]
     },
     "Title": {
       "Human verification": [
-        "İnsan olduğunuzu doğrulayın"
+        "Human verification"
       ],
       "Invalid verification code": [
-        "Doğrulama kodu geçersiz"
+        "Invalid verification code"
       ],
       "Request new code": [
-        "Yeni kod iste"
+        ""
       ],
       "Sign in again to continue": [
-        "Devam etmek için yeniden oturum açın"
+        "Sign in again to continue"
       ]
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır"
+        "",
+        ""
       ]
     }
   }

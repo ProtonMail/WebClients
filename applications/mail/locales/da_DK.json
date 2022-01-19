@@ -227,6 +227,9 @@
       "Decrease": [
         "Formindsk"
       ],
+      "Decrypt": [
+        "Dekryptér"
+      ],
       "Default email application": [
         "Standardprogram til mails"
       ],
@@ -327,6 +330,9 @@
       ],
       "Export": [
         "Exportér"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Eksportér kontakter"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Flyt til..."
       ],
+      "Need help?": [
+        "Brug for hjælp?"
+      ],
       "Never show": [
         "Vis aldrig"
       ],
@@ -682,6 +691,9 @@
       ],
       "Rename": [
         "Omdøb"
+      ],
+      "Reply securely": [
+        "Svar sikkert"
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -2173,6 +2185,9 @@
       "Enter 6 digits": [
         "Indtast 6 cifre"
       ],
+      "Enter a password": [
+        "Angiv en adgangskode"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
       ],
@@ -2464,6 +2479,9 @@
       "Unknown payment token status": [
         "Ukendt betalings-token status"
       ],
+      "Wrong mailbox password": [
+        "Forkert postkasseadgangskode"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Du kan ikke sende en mail til mere end 100 modtagere"
       ],
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Ugyldigt svar"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Uventet fejl"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Dit svar blev sendt, men begivenheden kunne ikke tilføjes til din kalender"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Dit svar blev sendt, men begivenheden kunne ikke opdateres i din kalender"
       ]
     },
     "Event title": {
@@ -3346,6 +3367,9 @@
       "Background color": [
         "Baggrundsfarve"
       ],
+      "Based in Switzerland, available globally": [
+        "Baseret i Schweiz, tilgængelig globalt"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
       ],
@@ -3455,6 +3479,9 @@
       "Day": [
         "Dag",
         "Dage"
+      ],
+      "Decrypt message": [
+        "Dekryptér beskeder"
       ],
       "Default email application": [
         "Standardprogram til mails"
@@ -4002,6 +4029,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        "Beklager, denne besked findes ikke eller er allerede udløbet"
+      ],
       "Starter VPN service with P2P support.": [
         "Grundlæggende VPN-tjeneste med P2P-understøttelse."
       ],
@@ -4055,6 +4085,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Den oprindelige meddelelse du forsøger at videresende / besvare til er i færd med at blive sendt. Hvis du fortsætter, vil du ikke være i stand til at fortryde afsendelse af den oprindelige besked længere."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "Den originale afsender af denne besked er ikke længere gyldig. Din besked vil blive sendt fra din standardadresse ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "Afsenderen har anmodet om en læsekvittering."
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke få en opkrævning. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
       ],
+      "Version ${ appVersion }": [
+        "Version ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Besøg vores butik for at få Proton-merchandise."
       ],
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Du har nået 100% af din lagerkapacitet. Overvej at frigøre noget plads eller at opgradere din konto med ekstra lagerplads for at lave nye beskeder."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Du har nået det maksimale antal på 5 svar."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Betal faktura"
       ],
+      "Previous version": [
+        "Forrige version"
+      ],
+      "Privacy policy": [
+        "Privatlivspolitik"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Genaktivér adressen knyttet til denne kalender for at håndtere din invitation."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Sendt"
       ],
+      "Sign up for free": [
+        "Tilmeld gratis"
+      ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
         "Stjernemarkeret"
+      ],
+      "Terms": [
+        "Betingelser"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Denne ICS-fil indeholder mere end én begivenhed. Download den og importer begivenhederne i ${ calendarAppName }"
@@ -7090,6 +7141,9 @@
       "Processing...": [
         "Behandler..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "Gensignér alle kontakter"
       ],
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "Send uden udløb?"
+      ],
+      "Sender changed": [
+        "Afsender ændret"
       ],
       "Sending error": [
         "Afsendelsesfejl"
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter at eksportere"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabil udgave"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne version af Tor Browseren er ikke understøttet. Opdatér venligst til den nyeste ${ stableRelease }"
       ]
     },
     "Update font modal": {

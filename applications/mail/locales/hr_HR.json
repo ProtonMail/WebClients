@@ -227,6 +227,9 @@
       "Decrease": [
         "Smanji"
       ],
+      "Decrypt": [
+        ""
+      ],
       "Default email application": [
         ""
       ],
@@ -329,6 +332,9 @@
       ],
       "Export": [
         "Izvoz"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Uvezi kontakte"
@@ -557,6 +563,9 @@
       "Move to...": [
         "Premjesti u..."
       ],
+      "Need help?": [
+        ""
+      ],
       "Never show": [
         "Više ne prikazuj"
       ],
@@ -684,6 +693,9 @@
         "Ukloni ovu oznaku"
       ],
       "Rename": [
+        ""
+      ],
+      "Reply securely": [
         ""
       ],
       "Report a problem": [
@@ -2193,6 +2205,9 @@
       "Enter 6 digits": [
         "Unesite 6 znamenki"
       ],
+      "Enter a password": [
+        ""
+      ],
       "Error connecting to the Bitcoin API.": [
         "Pogreška prilikom spajanja na Bitcoin API."
       ],
@@ -2490,6 +2505,9 @@
       "Unknown payment token status": [
         "Nepoznati status tokena za plaćanje"
       ],
+      "Wrong mailbox password": [
+        ""
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Ne možete poslati e-poštu za više od 100 primatelja"
       ],
@@ -2715,6 +2733,12 @@
       "Invalid response": [
         "Nevažeći odgovor"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Neočekivana pogreška"
       ],
@@ -2735,9 +2759,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Vaš je odgovor poslan, ali događaj nije moguće dodati u vaš kalendar"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Vaš je odgovor poslan, ali događaj nije moguće ažurirati u vašem kalendaru"
       ]
     },
     "Event title": {
@@ -3414,6 +3435,9 @@
       "Background color": [
         "Pozadinska boja"
       ],
+      "Based in Switzerland, available globally": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
       ],
@@ -3525,6 +3549,9 @@
         "Dan",
         "Dani",
         "Dani"
+      ],
+      "Decrypt message": [
+        ""
       ],
       "Default email application": [
         ""
@@ -4081,6 +4108,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Početna VPN usluga s P2P podrškom."
       ],
@@ -4134,6 +4164,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Izvorna poruka koju pokušavate proslijediti/odgovoriti je u procesu slanja. Ako nastavite, više nećete moći poništiti slanje izvorne poruke."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "Pošiljatelj je zatražio potvrdu o čitanju poruke."
@@ -4335,6 +4368,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces potvrde otvorit će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora. Neće vam biti naplaćeno. Bilo koji iznos korišten za potvrdu kartice bit će vraćen odmah."
       ],
+      "Version ${ appVersion }": [
+        ""
+      ],
       "Visit our shop to get Proton merchandise.": [
         ""
       ],
@@ -4441,6 +4477,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Dosegli ste 100% svog prostora za pohranu. Razmislite o oslobađanju nekog prostora ili nadogradnji računa dodatnim prostorom za pohranu da biste sastavili nove poruke."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom kako biste ga mogli dodati kao način plaćanja."
@@ -5387,6 +5426,12 @@
       "Pay invoice": [
         "Plati račun"
       ],
+      "Previous version": [
+        ""
+      ],
+      "Privacy policy": [
+        ""
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Ponovno omogućite adresu povezanu s ovim kalendarom za upravljanje vašom pozivnicom."
       ],
@@ -5402,11 +5447,17 @@
       "Sent": [
         "Poslano"
       ],
+      "Sign up for free": [
+        ""
+      ],
       "Spam": [
         "Neželjena pošta"
       ],
       "Starred": [
         "Sa zvjezdicom"
+      ],
+      "Terms": [
+        ""
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         ""
@@ -7230,6 +7281,9 @@
       "Processing...": [
         "Obrada..."
       ],
+      "ProtonMail": [
+        ""
+      ],
       "Re-sign all contacts": [
         "Ponovno potpiši sve kontakte"
       ],
@@ -7286,6 +7340,9 @@
       ],
       "Send without expiration?": [
         "Pošalji bez isteka?"
+      ],
+      "Sender changed": [
+        ""
       ],
       "Sending error": [
         ""
@@ -7457,6 +7514,14 @@
       ],
       "You do not have any contacts to export": [
         "Nemate kontakata za izvoz"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

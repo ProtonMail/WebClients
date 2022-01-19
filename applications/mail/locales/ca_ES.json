@@ -227,6 +227,9 @@
       "Decrease": [
         "Reduir"
       ],
+      "Decrypt": [
+        "Desxifra"
+      ],
       "Default email application": [
         "Aplicació de correu electrònic predeterminada"
       ],
@@ -328,6 +331,9 @@
       "Export": [
         "Exporta"
       ],
+      "Export contact group": [
+        "Exporta el grup de contactes"
+      ],
       "Export contacts": [
         "Exportar contactes"
       ],
@@ -371,7 +377,7 @@
         "Anar a la pàgina anterior"
       ],
       "Go to settings": [
-        "Anar a la configuració"
+        "Vés a la configuració"
       ],
       "Got it": [
         "Entesos"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Moure a..."
       ],
+      "Need help?": [
+        "Necessiteu ajuda?"
+      ],
       "Never show": [
         "No mostrar mai"
       ],
@@ -682,6 +691,9 @@
       ],
       "Rename": [
         "Reanomenar"
+      ],
+      "Reply securely": [
+        ""
       ],
       "Report a problem": [
         "Avisar d'un problema"
@@ -1067,7 +1079,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completats",
         ""
       ]
     },
@@ -1911,7 +1923,7 @@
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Utilitzeu Arrossegar i Deixar anar per classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
+        "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
@@ -2172,6 +2184,9 @@
       ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
+      ],
+      "Enter a password": [
+        "Introduïu una contrasenya"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error en connectar-se a l'API de Bitcoin."
@@ -2464,6 +2479,9 @@
       "Unknown payment token status": [
         "Estat del testimoni de pagament desconegut"
       ],
+      "Wrong mailbox password": [
+        "Contrasenya de la bústia de correu incorrecta"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "No podeu enviar un correu a més de 100 destinataris"
       ],
@@ -2500,16 +2518,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Els esborranys no es poden moure a la safata d'entrada"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Els esborranys no es poden moure al correu brossa"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Els missatges enviats no es poden moure a la safata d'entrada"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Els missatges enviats no es poden moure a la safata de correu brossa"
       ],
       "This action cannot be performed": [
         "No es pot portar a terme aquesta acció"
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Resposta no vàlida"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "S'ha produït un error inesperat"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "S'ha enviat la vostra resposta, però l'esdeveniment no s'ha pogut afegir al vostre calendari"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "S'ha enviat la vostra resposta, però l'esdeveniment no s'ha pogut actualitzar al vostre calendari"
       ]
     },
     "Event title": {
@@ -2836,7 +2857,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Us hem augmentat l'emmagatzematge del compte a ${ totalGBStorageAfterCompletion } GB. Obteniu espai addicional i desbloquegeu característiques prèmium ara."
       ],
       "You're all set!": [
         ""
@@ -2847,7 +2868,7 @@
         ""
       ],
       "Expires soon": [
-        ""
+        "Caduca aviat"
       ],
       "Expires today": [
         "Caduca avui"
@@ -2885,7 +2906,7 @@
         "Obtenir l'aplicació mòbil"
       ],
       "Import contacts or emails": [
-        ""
+        "Importeu contactes o correus electrònics"
       ],
       "Send a message": [
         "Enviar un missatge"
@@ -3346,6 +3367,9 @@
       "Background color": [
         "Color de fons"
       ],
+      "Based in Switzerland, available globally": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
       ],
@@ -3455,6 +3479,9 @@
       "Day": [
         "Dia",
         "Dies"
+      ],
+      "Decrypt message": [
+        "Desxifra el missatge"
       ],
       "Default email application": [
         "Aplicació de correu electrònic predeterminada"
@@ -4002,6 +4029,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Servei VPN de base amb suport P2P."
       ],
@@ -4055,6 +4085,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "El missatge original que esteu intentant reenviar o respondre està en procés d'enviament. Si continueu, ja no podreu desfer l'enviament del missatge original."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "L'emissor ha sol·licitat una confirmació de lectura."
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una nova pestanya, desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta us serà retornada immediatament."
       ],
+      "Version ${ appVersion }": [
+        ""
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Visiteu la nostra botiga per obtenir marxandatge de Proton."
       ],
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. Considereu alliberar espai o actualitzar el vostre compte amb espai d'emmagatzematge addicional per redactar missatges nous."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Per afegir-lo com a mètode de pagament, heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal."
@@ -4493,7 +4532,7 @@
         "Al fer clic a \"Clau de confiança\" s'associarà aquesta clau pública amb aquest remitent\ni els correus electrònics d’aquesta adreça es verificaran de forma criptogràfica automàticament."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Al fer clic a \"Clau de confiança\" es crearà un nou contacte i s'associarà aquesta clau pública amb aquest remitent. Els correus electrònics d’aquesta adreça es verificaràn de forma criptogràfica automàticament."
+        "En fer clic a «Clau de confiança» es crearà un contacte nou i s'associarà aquesta clau pública amb el remitent. Els correus electrònics d’aquesta adreça es verificaran de forma criptogràfica automàticament."
       ],
       "Do you want to trust the following public key?": [
         "Vols confiar la següent clau pública?"
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Pagar la factura"
       ],
+      "Previous version": [
+        ""
+      ],
+      "Privacy policy": [
+        ""
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Reactivar l'adreça enllaçada a aquest calendari per gestionar la vostra invitació."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Enviats"
       ],
+      "Sign up for free": [
+        ""
+      ],
       "Spam": [
         "Correu brossa"
       ],
       "Starred": [
         "Destacats"
+      ],
+      "Terms": [
+        ""
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ calendarAppName }"
@@ -5531,7 +5582,7 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        ""
+        "S'ha desfet l'enviament programat"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Programació cancel·lada. El missatge s'ha mogut a Esborranys."
@@ -5795,7 +5846,7 @@
         "Totes"
       ],
       "Create new group": [
-        "Crear nou grup"
+        "Crea un grup nou"
       ],
       "Ignore group": [
         "Ignorar grup"
@@ -7090,6 +7141,9 @@
       "Processing...": [
         "Processant..."
       ],
+      "ProtonMail": [
+        ""
+      ],
       "Re-sign all contacts": [
         "Tornant a signar tots els contactes"
       ],
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "Enviar sense expiració?"
+      ],
+      "Sender changed": [
+        ""
       ],
       "Sending error": [
         "Error enviant"
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "No teniu cap contacte per exportar"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versió estable"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

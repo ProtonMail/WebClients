@@ -200,6 +200,9 @@
       "Export": [
         "Ekspor"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Ekspor kontak"
       ],
@@ -1900,6 +1903,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         ""
       ],
@@ -1919,9 +1928,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3183,9 +3189,6 @@
       "All day": [
         "Seharian"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
       ],
@@ -3243,6 +3246,18 @@
       "Date and time": [
         ""
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Deskripsi"
       ],
@@ -3278,12 +3293,6 @@
       ],
       "Enter the 6-digit code": [
         "Masukkan kode 6 digit"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        "Notifikasi acara"
       ],
       "Event title": [
         "Judul acara"
@@ -4407,6 +4416,11 @@
     "Select search results": {
       "No results found": [
         "Hasil tidak ditemukan"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

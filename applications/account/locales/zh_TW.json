@@ -196,6 +196,9 @@
       "Continue import": [
         "繼續匯入"
       ],
+      "Continue with": [
+        "繼續使用"
+      ],
       "Continue with Google": [
         "繼續用Google"
       ],
@@ -667,6 +670,9 @@
       "Sign out all accounts": [
         "登出所有帳號"
       ],
+      "Sign out from": [
+        "登出自"
+      ],
       "Signing in": [
         "登入"
       ],
@@ -731,7 +737,7 @@
         "更新"
       ],
       "Update recovery file": [
-        "上傳還原檔案"
+        "更新還原檔案"
       ],
       "Update recovery phrase": [
         "上傳還原短語"
@@ -1748,8 +1754,8 @@
       "Error in one of the conditions": [
         "其中一個條件有誤"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "無法取得使用中工作階段。請重新整理或稍後再試。"
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        "無法取得使用中工作階段。請 ${ refresh } 或稍後再試。"
       ],
       "File has no contents to preview": [
         "預覽的檔案無內容"
@@ -3574,7 +3580,7 @@
         "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "若您相信箇中有誤，請聯絡我們：{ contactLink }。"
+        "若您相信箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
@@ -4098,6 +4104,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "改用 ${ professionalPlan } 以新增更多使用者。"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "暫時無法使用，請稍後再試。"
+      ],
       "Test link": [
         "測試連結"
       ],
@@ -4230,6 +4239,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "若要保護您的網際網路連線安全，請為您的裝置下載並安裝 ProtonVPN 應用程式並連接到 ProtonVPN 伺服器。"
       ],
+      "To use ${ toAppName }, please create an address.": [
+        "要使用 ${ toAppName }，請建立地址。"
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "為您的帳號儲值，以便訂閱新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳戶餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
       ],
@@ -4269,11 +4281,11 @@
       "Update recovery phrase": [
         "更新還原短語"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "升級至 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 方案以於您不在辦公室時啟用自動回覆。"
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "升級至 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 方案以開始使用。"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "請升級至 ${ PLAN_NAMES[PLANS.VISIONARY] }，${ PLAN_NAMES[PLANS.PROFESSIONAL] }或${ PLAN_NAMES[PLANS.PLUS] }方案，以啟用[不在辦公室]自動回覆。"
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "升級至付費方案以使用 Premium 功能並增加儲存空間。"
@@ -4983,9 +4995,6 @@
       "ALL": [
         "全部"
       ],
-      "All-day event notifications": [
-        "全天候事件通知"
-      ],
       "Allow recovery by email": [
         "允許透過電子郵件復原"
       ],
@@ -5148,11 +5157,23 @@
       "Days of the week": [
         "星期"
       ],
+      "Default email address": [
+        "預設電郵地址"
+      ],
+      "Default event duration": [
+        "預設活動持續時間"
+      ],
+      "Default full day notifications": [
+        "預設整日活動通知"
+      ],
       "Default language": [
         "預設語言"
       ],
       "Default language (${ defaultLanguage })": [
         "預設語言 (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "預設通知"
       ],
       "Default PGP scheme": [
         "預設 PGP 格式"
@@ -5231,12 +5252,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "請輸入密碼以解密金鑰，金鑰指紋為：${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "事件經過"
-      ],
-      "Event notifications": [
-        "事件通知"
       ],
       "Expires": [
         "到期日"
@@ -7039,6 +7054,11 @@
       ],
       "VPN apps": [
         "VPN 應用程式"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "未能更新設定"
       ]
     },
     "Settings/filters": {
