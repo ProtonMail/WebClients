@@ -56,6 +56,7 @@ jest.mock('@proton/shared/lib/calendar/veventHelper', () => ({
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 jest.mock('@proton/components/hooks/useUser', () => () => [{ isFree: true }]);
 jest.mock('@proton/components/hooks/useContactEmails', () => () => []);
+jest.mock('@proton/components/hooks/useGetAddressKeys', () => () => []);
 jest.mock('@proton/components/hooks/useCalendars', () => ({
     useGetCalendars: jest.fn(
         () => () =>
