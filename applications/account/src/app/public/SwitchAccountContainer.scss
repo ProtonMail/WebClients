@@ -19,7 +19,8 @@
 	}
 
 	&:hover &-icon,
-	&:focus-within &-icon {
+	&:focus-within &-icon,
+	&.is-loading &-icon {
 		inset-inline-end: 1em;
 		opacity: 1;
 	}
