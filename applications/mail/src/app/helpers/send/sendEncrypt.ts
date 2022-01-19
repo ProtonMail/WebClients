@@ -104,7 +104,8 @@ const encryptBodyPackage = async (
     messageKeys: PublicPrivateKey,
     publicKeys: OpenPGPKey[],
     message: MessageState,
-    scheduledTime?: number
+    scheduledTime?: number,
+    canUseScheduledTime = false
 ) => {
     const cleanPublicKeys = publicKeys.filter(identity);
 
@@ -117,6 +118,12 @@ const encryptBodyPackage = async (
     // since its value is constant and known to the server, hence compressing it won't necessarily limit compression-based information leakage.
     const shouldCompress = containsEmbeddedAttachments && pack.Body!.length > MEGABYTE;
 
+    /*
+     * Used to disable temporary the usage of the scheduled date in the signature
+     * Because on the BE we cannot have a signature date in the future
+     */
+    const canUseScheduledTimeInSignature = scheduledTime && canUseScheduledTime;
+
     const { data, sessionKey } = await encryptMessage({
         data: pack.Body || '',
         publicKeys: cleanPublicKeys,
@@ -124,7 +131,7 @@ const encryptBodyPackage = async (
         privateKeys,
         returnSessionKey: true,
         compression: shouldCompress ? enums.compression.zlib : enums.compression.uncompressed,
-        date: scheduledTime ? new Date(scheduledTime) : undefined,
+        date: canUseScheduledTimeInSignature ? new Date(scheduledTime) : undefined,
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
@@ -140,19 +147,26 @@ const encryptDraftBodyPackage = async (
     pack: Package,
     messageKeys: PublicPrivateKey,
     publicKeys: OpenPGPKey[],
-    scheduledTime?: number
+    scheduledTime?: number,
+    canUseScheduledTime = false
 ) => {
     const cleanPublicKeys = [...messageKeys.publicKeys, ...publicKeys].filter(identity);
 
     // Always encrypt with a single private key
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
 
+    /*
+     * Used to disable temporary the usage of the scheduled date in the signature
+     * Because on the BE we cannot have a signature date in the future
+     */
+    const canUseScheduledTimeInSignature = scheduledTime && canUseScheduledTime;
+
     const { data, sessionKey } = await encryptMessage({
         data: pack.Body || '',
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
-        date: scheduledTime ? new Date(scheduledTime) : undefined,
+        date: canUseScheduledTimeInSignature ? new Date(scheduledTime) : undefined,
     });
 
     const packets = await splitMessage(data);
