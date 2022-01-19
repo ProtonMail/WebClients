@@ -4,7 +4,7 @@
 
 @each $placement in (top, right, bottom, left) {
 	.border-#{$placement} {
-		border-#{placement-to-logical($placement)}: 1px solid var(--border-norm);
+		#{dash-join('border', logical($placement))}: 1px solid var(--border-norm);
 	}
 }
 
@@ -13,15 +13,15 @@
 	$prefix: '';
 
 	@if $color == 'norm' or $color == 'weak' {
-		$prefix: 'border-';
+		$prefix: 'border';
 	}
 
 	@if $color == 'danger' or $color == 'warning' or $color == 'success' or $color == 'info' {
-		$prefix: 'signal-';
+		$prefix: 'signal';
 	}
 
 	.border-#{$color} {
-		border-color: var(--#{$prefix + $color});
+		border-color: var(--#{dash-join($prefix, $color)});
 	}
 }
 
