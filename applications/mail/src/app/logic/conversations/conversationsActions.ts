@@ -14,7 +14,7 @@ export const load = createAsyncThunk<ConversationResult, ConversationParams>(
         try {
             return await api(getConversation(conversationID, messageID));
         } catch (error: any | undefined) {
-            console.log(error);
+            console.error(error);
             throw error;
         }
     }

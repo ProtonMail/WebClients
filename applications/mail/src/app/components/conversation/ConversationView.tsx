@@ -82,7 +82,7 @@ const ConversationView = ({
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
     const messageInUrl = conversationState?.Messages?.find((message) => message.ID === messageID);
     const loading = loadingConversation || loadingMessages;
-    const showConversationError = !loading && !conversationState?.Conversation;
+    const showConversationError = !loading && conversationState?.Conversation?.Subject === undefined;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
 
     const { focusIndex, handleFocus, getFocusedId } = useConversationFocus(messagesToShow);

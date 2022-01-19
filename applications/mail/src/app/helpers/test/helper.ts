@@ -18,6 +18,8 @@ export * from './event-manager';
 export * from './message';
 export * from './assertion';
 
+const savedConsole = { ...console };
+
 export const clearAll = () => {
     jest.clearAllMocks();
     api.mockClear();
@@ -30,6 +32,11 @@ export const clearAll = () => {
     base64Cache.clear();
     eventManagerListeners.splice(0, eventManagerListeners.length);
     resetHistory();
+    console = { ...savedConsole };
+};
+
+export const mockConsole = (level: keyof Console = 'error') => {
+    console[level] = jest.fn();
 };
 
 export const waitForSpyCall = async (mock: jest.Mock) =>
