@@ -76,7 +76,7 @@ const Sidebar = ({
     return (
         <div
             ref={rootRef}
-            className="sidebar flex flex-nowrap flex-column no-print no-outline"
+            className="sidebar flex flex-nowrap flex-column no-print outline-none"
             data-expanded={expanded}
             {...rest}
             {...focusTrapProps}

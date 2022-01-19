@@ -16,7 +16,7 @@ const CountrySelectRow = ({ data, style, value, onChange }: Props, ref?: Ref<HTM
             <DropdownMenuButton
                 isSelected={false}
                 className={classnames([
-                    'block w100 text-ellipsis text-left no-outline flex',
+                    'block w100 text-ellipsis text-left outline-none flex',
                     data === value && 'active',
                 ])}
                 title={data.countryName}

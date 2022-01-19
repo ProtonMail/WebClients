@@ -9,7 +9,7 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HT
 const Title = ({ children, className, ...rest }: Props) => {
     return (
         <h1
-            className={classnames(['modal-title no-outline', className])}
+            className={classnames(['modal-title outline-none', className])}
             data-focus-trap-fallback="0"
             tabIndex={-1}
             {...rest}

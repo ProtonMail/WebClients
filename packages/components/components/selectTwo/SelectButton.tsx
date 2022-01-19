@@ -33,7 +33,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 aria-live="assertive"
                 aria-atomic="true"
                 className={classnames([
-                    'no-outline select field w100 flex flex-justify-space-between flex-align-items-center flex-nowrap',
+                    'outline-none select field w100 flex flex-justify-space-between flex-align-items-center flex-nowrap',
                     className,
                 ])}
                 {...rest}
