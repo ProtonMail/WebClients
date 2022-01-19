@@ -206,6 +206,9 @@
       "Export": [
         "Exportovat"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Exportovat kontakty"
       ],
@@ -1975,6 +1978,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         ""
       ],
@@ -1994,9 +2003,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3354,9 +3360,6 @@
       "All day": [
         "Celý den"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
@@ -3414,6 +3417,18 @@
       "Date and time": [
         ""
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Popis"
       ],
@@ -3449,12 +3464,6 @@
       ],
       "Enter the 6-digit code": [
         "Zadejte 6-místný kód"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        "Oznámení události"
       ],
       "Event title": [
         "Název události"
@@ -4555,7 +4564,7 @@
         "Přístup k ${ driveAppName } (beta)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Vše ${ PLAN_NÁZEV[PLANS.VPNPLUS] } funkce plánu"
+        "Vše ${ PLAN_NAMES[PLANS.VPNPLUS] } funkce plánu"
       ],
       "Built-in Adblocker (NetShield)": [
         "Vestavěný Adblocker (NetShield)"
@@ -4677,6 +4686,11 @@
     "Select search results": {
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

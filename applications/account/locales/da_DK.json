@@ -196,6 +196,9 @@
       "Continue import": [
         "Fortsæt import"
       ],
+      "Continue with": [
+        "Fortsæt med"
+      ],
       "Continue with Google": [
         "Fortsæt med Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Log ud alle konti"
+      ],
+      "Sign out from": [
+        "Log ud fra"
       ],
       "Signing in": [
         "Logger ind"
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Fejl i en af betingelserne"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Kunne ikke hente aktive sessioner. Genindlæs eller prøv igen senere."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "Filen har intet indhold at forhåndsvise"
@@ -2836,19 +2842,19 @@
         ""
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "Generer ${ boldAppPassword } og bruge det i stedet for din almindelige adgangskode, når Proton beder dig om det"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
         "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }"
       ],
       "Go to ${ boldAccountSecurity }": [
-        ""
+        "Gå til ${ boldAccountSecurity }"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
         ""
       ],
       "If 2-step verification is off, turn it on": [
-        ""
+        "Hvis totrinsbekræftelse er deaktiveret, slå det til"
       ],
       "Open your ${ yahooMailLink } contacts": [
         ""
@@ -2863,16 +2869,16 @@
         "Vælg ${ boldExportCSV }"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
         ""
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         ""
@@ -4156,6 +4162,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Skift til ${ professionalPlan } for at tilføje flere brugere."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Midlertidigt utilgængelig. Tjek igen senere."
+      ],
       "Test link": [
         "Test link"
       ],
@@ -4288,6 +4297,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "For at sikre din internetforbindelse, skal du downloade og installere ProtonVPN-applikationen til din enhed og oprette forbindelse til en ProtonVPN-server."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Genopfyld din konto med kredit, som du kan benytte på et nyt abonnement eller fornyelse af dit nuværende. Du får én kredit pr. brugte ${ i18nCurrency }."
       ],
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         "Opdater gendannelsessætning"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] } eller ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement for at aktivere automatiske svar, når du er væk fra kontoret."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] } eller ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement for at komme i gang."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } eller ${ PLAN_NAMES[PLANS.PLUS] } abonnement for at aktivere automatiske svar, når du er væk fra kontoret."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Opgrader til et betalt abonnement for at få adgang til premium-funktioner og øge din lagerplads."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "ALL"
       ],
-      "All-day event notifications": [
-        "Notifikationer for heldagsbegivenheder"
-      ],
       "Allow recovery by email": [
         "Tillad gendannelse via e-mail"
       ],
@@ -5210,11 +5219,23 @@
       "Days of the week": [
         "Ugedage"
       ],
+      "Default email address": [
+        "Standard e-mailadresse"
+      ],
+      "Default event duration": [
+        "Standardvarighed for begivenheder"
+      ],
+      "Default full day notifications": [
+        "Standard heldagsnotifikationer"
+      ],
       "Default language": [
         "Standardsporg"
       ],
       "Default language (${ defaultLanguage })": [
         "Standardsprog (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Standardnotifikationer"
       ],
       "Default PGP scheme": [
         "Standard PGP-metode"
@@ -5294,12 +5315,6 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Angiv adgangskoden til nøgle med fingeraftryk: ${ fingerprintCode }"
       ],
-      "Event duration": [
-        "Begivenhedsvarighed"
-      ],
-      "Event notifications": [
-        "Begivenhedsnotifikationer"
-      ],
       "Expires": [
         "Udløber"
       ],
@@ -5364,7 +5379,7 @@
         "Interval"
       ],
       "Keep me signed in": [
-        ""
+        "Hold mig logget ind"
       ],
       "Keep messages in Sent/Drafts": [
         "Behold beskeder i Sendt/Kladder"
@@ -7050,7 +7065,7 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        ""
+        "Skift til privatliv. Ubesværet og sikkert."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Du kan anvende flere etiketter på en enkelt besked, men beskeder kan normalt kun være i én enkelt mappe. Træk og slip for at omarrangere rækkefølgen af dine mapper og etiketter."
@@ -7113,6 +7128,11 @@
       ],
       "VPN apps": [
         "VPN-apps"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Kunne ikke opdatere indstillinger"
       ]
     },
     "Settings/filters": {

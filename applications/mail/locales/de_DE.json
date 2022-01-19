@@ -24,7 +24,7 @@
         "Hinzufügen"
       ],
       "Add address": [
-        "Anschrift hinzufügen"
+        "Adresse hinzufügen"
       ],
       "Add condition": [
         "Bedingung hinzufügen"
@@ -78,13 +78,13 @@
         "Ausrichtung"
       ],
       "All Read": [
-        "Alle als „Gelesen” kennzeichnen"
+        "Alle als gelesen kennzeichnen"
       ],
       "All Starred": [
-        "Alle gekennzeichnet"
+        "Alle gekennzeichneten"
       ],
       "All Unread": [
-        "Alle als „Ungelesen” kennzeichnen"
+        "Alle als ungelesen kennzeichnen"
       ],
       "All Unstarred": [
         "Alle Kennzeichnungen entfernen"
@@ -227,6 +227,9 @@
       "Decrease": [
         "Verkleinern"
       ],
+      "Decrypt": [
+        "Entschlüsseln"
+      ],
       "Default email application": [
         "Standard E-Mail-Anwendung"
       ],
@@ -311,7 +314,7 @@
         "Aktivieren"
       ],
       "enable desktop notifications": [
-        "Desktop-Benachrichtigungen aktivieren"
+        "Desktop-Benachrichtigungen zu aktivieren"
       ],
       "Encryption": [
         "Verschlüsselung"
@@ -327,6 +330,9 @@
       ],
       "Export": [
         "Exportieren"
+      ],
+      "Export contact group": [
+        "Kontaktgruppe exportieren"
       ],
       "Export contacts": [
         "Kontakte exportieren"
@@ -489,10 +495,10 @@
         "Postfach-Anordnung"
       ],
       "Mark as read": [
-        "Als „Gelesen” kennzeichnen"
+        "Als gelesen markieren"
       ],
       "Mark as unread": [
-        "Als „Ungelesen” kennzeichnen"
+        "Als ungelesen markieren"
       ],
       "mark emails as": [
         "Nachrichten kennzeichnen als"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Verschieben nach …"
       ],
+      "Need help?": [
+        "Benötigst du Hilfe?"
+      ],
       "Never show": [
         "Niemals anzeigen"
       ],
@@ -564,7 +573,7 @@
         "Weiter"
       ],
       "Next conversation": [
-        "Nächstes Thema"
+        "Nächste Unterhaltung"
       ],
       "Next message": [
         "Nächste Nachricht"
@@ -630,7 +639,7 @@
         "Zurück"
       ],
       "Previous conversation": [
-        "Vorheriges Thema"
+        "Vorherige Unterhaltung"
       ],
       "Previous message": [
         "Vorherige Nachricht"
@@ -683,6 +692,9 @@
       "Rename": [
         "Umbenennen"
       ],
+      "Reply securely": [
+        "Sicher antworten"
+      ],
       "Report a problem": [
         "Ein Problem melden"
       ],
@@ -726,7 +738,7 @@
         "Suchen in ${ option.text }"
       ],
       "Search message content": [
-        "Inhalt der Nachricht durchsuchen"
+        "Inhalt der Nachrichten durchsuchen"
       ],
       "Select all": [
         "Alle auswählen"
@@ -1043,7 +1055,7 @@
         "Allen geantwortet"
       ],
       "Star conversation": [
-        "Thema kennzeichnen"
+        "Unterhaltung kennzeichnen"
       ],
       "Star message": [
         "Nachricht kennzeichnen"
@@ -1057,7 +1069,7 @@
     },
     "Alternative text for conversation image": {
       "Conversation": [
-        "Thema"
+        "Unterhaltung"
       ]
     },
     "Alternative text for welcome image": {
@@ -1907,8 +1919,8 @@
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf.",
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf."
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
@@ -2172,6 +2184,9 @@
       ],
       "Enter 6 digits": [
         "6 Ziffern eingeben"
+      ],
+      "Enter a password": [
+        "Passwort eingeben"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
@@ -2464,6 +2479,9 @@
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
       ],
+      "Wrong mailbox password": [
+        "Ungültiges Postfach-Passwort"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
       ],
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Ungültige Antwort"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Der Termin konnte nicht zu deinem Kalender hinzugefügt werden. Es wurde keine Antwort gesendet"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Der Termin konnte nicht in deinem Kalender aktualisiert werden. Es wurde keine Antwort gesendet"
+      ],
       "Unexpected error": [
         "Unerwarteter Fehler"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Ihre Antwort wurde gesendet, aber das Ereignis konnte nicht in Ihren Kalender eingetragen werden."
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ihre Antwort wurde gesendet, aber das Ereignis konnte nicht in Ihrem Kalender aktualisiert werden."
       ]
     },
     "Event title": {
@@ -3020,8 +3041,8 @@
         "Beim Verschlüsseln und Hinzufügen der Kontakte ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Kontakte erfolgreich importiert."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakt erfolgreich importiert. Der importierte Kontakte wird nun in Ihrer Kontaktliste angezeigt.",
-        "Kontakt erfolgreich importiert. Die importierten Kontakte werden nun in Ihrer Kontaktliste angezeigt."
+        "Kontakt erfolgreich importiert. Der importierte Kontakte wird nun in deiner Kontaktliste angezeigt.",
+        "Kontakt erfolgreich importiert. Die importierten Kontakte werden nun in deiner Kontaktliste angezeigt."
       ]
     },
     "Import contacts warning": {
@@ -3059,7 +3080,7 @@
         "${ addressCount } E-Mail-Adressen"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } benötigt Ihre Erlaubnis, um ${ enableDesktopNotifications }."
+        "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
@@ -3164,8 +3185,8 @@
         "${ selectedFoldersCount } Kategorien ausgewählt"
       ],
       "${ total } conversation": [
-        "${ total } Thema",
-        "${ total } Themen"
+        "${ total } Unterhaltung",
+        "${ total } Unterhaltungen"
       ],
       "${ total } message": [
         "${ total } Nachricht",
@@ -3176,16 +3197,16 @@
         "${ totalMessagesCount } zum Senden geplante Nachrichten"
       ],
       "${ unread } unread conversation": [
-        "${ unread } ungelesenes Thema",
-        "${ unread } ungelesene Themen"
+        "${ unread } ungelesene Unterhaltung",
+        "${ unread } ungelesene Unterhaltungen"
       ],
       "${ unread } unread message": [
         "${ unread } ungelesene Nachricht",
         "${ unread } ungelesene Nachrichten"
       ],
       "${ unreadCount } unread conversation": [
-        "${ unreadCount } ungelesenes Thema",
-        "${ unreadCount } ungelesene Themen"
+        "${ unreadCount } ungelesene Unterhaltung",
+        "${ unreadCount } ungelesene Unterhaltungen"
       ],
       "${ unreadCount } unread message": [
         "${ unreadCount } ungelesene Nachricht",
@@ -3311,7 +3332,7 @@
         "und"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "Möchten Sie wirklich alle Nachrichten in diesem Ordner löschen?"
+        "Möchtest du wirklich alle Nachrichten in diesem Ordner löschen?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Möchtest du wirklich alle Nachrichten mit dieser Kategorie löschen?"
@@ -3320,8 +3341,8 @@
         "Möchten Sie Ihre Änderungen wirklich verwerfen?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Möchten Sie wirklich ${ count } Thema dauerhaft löschen?",
-        "Möchten Sie wirklich ${ count } Themen dauerhaft löschen?"
+        "Möchtest du wirklich ${ count } Unterhaltung dauerhaft löschen?",
+        "Möchtest du wirklich ${ count } Unterhaltungen dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
         "Möchten Sie wirklich ${ count } Entwurf dauerhaft löschen?",
@@ -3332,13 +3353,13 @@
         "Möchten Sie wirklich ${ count } Nachrichten dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Möchten Sie dieses Thema wirklich dauerhaft löschen?"
+        "Möchtest du diese Unterhaltung wirklich dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "Möchten Sie diesen Entwurf wirklich dauerhaft löschen?"
+        "Möchtest du diesen Entwurf wirklich dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Möchten Sie diese Nachricht wirklich dauerhaft löschen?"
+        "Möchtest du diese Nachricht wirklich löschen?"
       ],
       "Attach public key": [
         "Öffentlichen Schlüssel anhängen"
@@ -3346,8 +3367,11 @@
       "Background color": [
         "Hintergrundfarbe"
       ],
+      "Based in Switzerland, available globally": [
+        "In der Schweiz ansässig, weltweit verfügbar"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Grundlegende Navigation und Aktionen bleiben auch dann verfügbar, wenn die Tastaturkürzel in den Einstellungen deaktiviert sind."
+        "Standardnavigation sowie Standardaktionen bleiben auch dann verfügbar, wenn die Tastaturkürzel in den Einstellungen deaktiviert sind."
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Abgerechnet mit ${ billedPrice } aller 2 Jahre"
@@ -3420,10 +3444,10 @@
         "${ calendarsToBeCreated } neue Kalender erstellen"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Erstellen Sie eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die Sie importieren möchten."
+        "Erstellen eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchten."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Erstellen Sie eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die Sie importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchten."
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
@@ -3456,6 +3480,9 @@
         "Tag",
         "Tagen"
       ],
+      "Decrypt message": [
+        "Nachricht entschlüsseln"
+      ],
       "Default email application": [
         "Standard E-Mail-Anwendung"
       ],
@@ -3485,7 +3512,7 @@
         "Laden Sie noch heute diese großartige App herunter und nehmen Sie Ihre Privatsphäre überall hin mit."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ esProgress } von ${ totalProgressToShow } Nachrichten wird heruntergeladen …"
+        "${ esProgress } von ${ totalProgressToShow } Nachrichten werden heruntergeladen …"
       ],
       "Draft": [
         "Entwurf"
@@ -3623,7 +3650,7 @@
         "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
       ],
       "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Wenn Sie diese Nachricht an einen Nicht-ProtonMail-Nutzer senden, stellen Sie bitte sicher, dass Sie ein Passwort für Ihre Nachricht festlegen."
+        "Wenn du diese Nachricht an einen Nicht-ProtonMail-Nutzer sendest, stelle bitte sicher, dass du ein Passwort für deine Nachricht festlegst."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
@@ -3753,7 +3780,7 @@
         "Monatlich ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Benennen Sie Ihren neuen Ordner und wählen Sie den übergeordneten Ordner, in den Sie ihn einfügen möchten. Wenn Sie keinen übergeordneten Ordner auswählen, wird dieser neue Ordner als übergeordneter Ordner erstellt."
+        "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
       "New": [
         "Neu"
@@ -3819,7 +3846,7 @@
         "von"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Änder diese Einstellungen nur, wenn du PGP mit Nicht-ProtonMail-Empfängern verwendest."
+        "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-ProtonMail-Empfängern verwendest."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
@@ -3991,7 +4018,7 @@
         "Wiederherstellungsphrase festlegen"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
-        "Legen Sie ProtonMail als Ihre Standard-E-Mail-Anwendung für diesen Browser fest. ProtonMail wird automatisch geöffnet, wenn Sie auf einen E-Mail-Link klicken."
+        "Lege ProtonMail als deine Standard-E-Mail-Anwendung für diesen Browser fest. ProtonMail wird automatisch geöffnet, wenn du auf einen E-Mail-Link klickst."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-ProtonMail-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
@@ -4001,6 +4028,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie zu den Stammkunden gehören, wurden für Ihr Konto zusätzliche Funktionen aktiviert."
+      ],
+      "Sorry, this message does not exist or has already expired": [
+        "Entschuldige, diese Nachricht existiert nicht oder ist bereits abgelaufen"
       ],
       "Starter VPN service with P2P support.": [
         "VPN-Dienst für Einsteiger mit P2P-Unterstützung."
@@ -4048,13 +4078,16 @@
         "Vielen Dank für Ihre Unterstützung zu diesem Projekt."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Die Anwendung muss Ihre Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die Sie anschließend herunterladen können."
+        "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Die in den Entwurf eingegebenen Daten werden möglicherweise nicht gespeichert, wenn Sie die Seite verlassen."
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Die ursprüngliche Nachricht, die Sie weiterleiten/beantworten möchten, wird gegenwärtig gesendet. Wenn Sie fortfahren, können Sie das Senden der ursprünglichen Nachricht nicht mehr widerrufen."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "Der ursprüngliche Absender dieser Nachricht ist nicht mehr gültig. Deine Nachricht wird von deiner Standardadresse ${ defaultAddress.Email } gesendet."
       ],
       "The sender has requested a read receipt.": [
         "Der Absender hat eine Lesebestätigung angefordert."
@@ -4076,7 +4109,7 @@
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass diese lokal durchsucht werden können. Sobald Sie Ihre Browserdaten löschen, wird diese Option wieder deaktiviert."
+        "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass diese lokal durchsucht werden können. Sobald du deine Browserdaten löschst, wird diese Option wieder deaktiviert."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
@@ -4085,13 +4118,13 @@
         "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Dieses Thema enthält eine geplante Nachrichtenübertragung. Das Versenden dieser Nachricht wurde widerrufen."
+        "Diese Unterhaltung enthält eine geplante Nachrichtenübertragung. Das Versenden dieser Nachricht wurde widerrufen."
       ],
       "This conversation contains non-trashed messages.": [
-        "Dieses Thema enthält nicht-gelöschte Nachrichten."
+        "Diese Unterhaltung enthält nicht-gelöschte Nachrichten."
       ],
       "This conversation contains trashed messages.": [
-        "Dieses Thema enthält gelöschte Nachrichten."
+        "Diese Unterhaltung enthält gelöschte Nachrichten."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Diese E-Mail hat die Domain-Authentifizierungsanforderungen nicht bestanden. Sie könnte gefälscht oder unsachgemäß weitergeleitet worden sein!"
@@ -4187,7 +4220,7 @@
         "Deaktiviert die Inhaltssuche. Der Aktivierungsfortschritt geht nicht verloren."
       ],
       "Turn on to search the content of your messages": [
-        "Aktivieren, um den Inhalt Ihrer Nachrichten durchsuchen zu können"
+        "Aktivieren, um den Inhalt deiner Nachrichten durchsuchen zu können"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Die Überprüfung öffnet einen neuen Tab — bitte deaktivieren Sie daher alle Popup-Blocker. Ihr Konto wird nicht belastet. Jeder Betrag, der zur Überprüfung der Karte verwendet wird, wird sofort zurückerstattet."
       ],
+      "Version ${ appVersion }": [
+        "Version ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Besuchen Sie unseren Shop, um Proton Fanartikel zu erwerben."
       ],
@@ -4304,7 +4340,7 @@
         "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet und hast nur eingeschränkten Zugang."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        "Sie können es als Anhang hinzufügen oder eingebettet in den Text Ihrer Nachricht anzeigen."
+        "Du kannst es als Anhang hinzufügen oder eingebettet in den Text deiner Nachricht anzeigen."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Sie können zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
@@ -4331,18 +4367,18 @@
         "Noch keine Nachrichten vorhanden"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "Es befinden sich ${ totalLabel } in Ihrem Posteingang."
+        "Es befinden sich ${ totalLabel } in deinem Posteingang."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "Es befinden sich ${ unreadsLabel } in Ihrem Posteingang."
+        "Es befinden sich ${ unreadsLabel } in deinem Posteingang."
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "Sie haben **${ count } Thema** in diesen Ordner gespeichert",
-        "Sie haben **${ count } Themen** in diesen Ordner ausgewählt"
+        "Du hast **${ count } Unterhaltung** in diesem Ordner gespeichert",
+        "Du hast **${ count } Unterhaltungen** in diesem Ordner gespeichert"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Sie haben **${ count } Thema** zu dieser Kategorie hinzugefügt",
-        "Sie haben **${ count } Themen** zu dieser Kategorie hinzugefügt"
+        "Du hast **${ count } Unterhaltung** zu dieser Kategorie hinzugefügt",
+        "Du hast **${ count } Unterhaltungen** zu dieser Kategorie hinzugefügt"
       ],
       "You have **${ count } message** stored in this folder": [
         "Sie haben **${ count } Nachricht** in diesen Ordner gespeichert",
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Sie haben Ihren Speicherplatz zu 100% aufgebraucht. Erwägen Sie, Speicherplatz freizugeben oder Ihr Konto mit zusätzlichem Speicherplatz zu erweitern, um neue Nachrichten verfassen zu können."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Du hast die maximale Anzahl von 5 Antworten erreicht."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
@@ -4374,12 +4413,12 @@
         "Sie haben 100% Ihrer Speicherkapazität aufgebraucht. Sie können keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
-        "Sie haben **${ count } Thema** in diesem Ordner ausgewählt",
-        "Sie haben **${ count } Themen** in diesem Ordner ausgewählt"
+        "Du hast **${ count } Unterhaltung** in diesem Ordner ausgewählt",
+        "Du hast **${ count } Unterhaltungen** in diesem Ordner ausgewählt"
       ],
       "You selected **${ count } conversation** with this label": [
-        "Sie haben **${ count } Thema** mit dieser Kategorie ausgewählt",
-        "Sie haben **${ count } Themen** mit dieser Kategorie ausgewählt"
+        "Du hast **${ count } Unterhaltung** mit dieser Kategorie ausgewählt",
+        "Du hast **${ count } Unterhaltungen** mit dieser Kategorie ausgewählt"
       ],
       "You selected **${ count } message** from this folder": [
         "Sie haben **${ count } Nachricht** in diesem Ordner ausgewählt",
@@ -4586,7 +4625,7 @@
         "Inhalte aus externen Quellen laden"
       ],
       "Mark as unread": [
-        "Als „Ungelesen” kennzeichnen"
+        "Als ungelesen kennzeichnen"
       ],
       "Minimize / maximize composer": [
         "Verfassen-Fenster minimieren/maximieren"
@@ -5035,13 +5074,13 @@
         "Methode wählen"
       ],
       "Select how your composer opens by default.": [
-        "Wählen Sie aus, wie Ihr Verfassen-Fenster standardmäßig geöffnet wird."
+        "Wähle aus, wie dein Verfassen-Fenster standardmäßig geöffnet wird."
       ],
       "Select how your list of messages looks like by default.": [
-        "Wählen Sie aus, wie Ihre Nachrichtenliste standardmäßig aussehen soll."
+        "Wähle aus, wie deine Nachrichtenliste standardmäßig aussehen soll."
       ],
       "Select how your mailbox looks like by default.": [
-        "Wählen Sie aus, wie Ihre Postfach standardmäßig aussehen soll."
+        "Wähle aus, wie dein Postfach standardmäßig aussehen soll."
       ],
       "Select your country": [
         "Ihr Land auswählen"
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
+      "Previous version": [
+        "Vorherige Version"
+      ],
+      "Privacy policy": [
+        "Datenschutzerklärung"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Reaktivieren Sie die mit diesem Kalender verknüpfte E-Mail-Adresse, um Ihre Einladung verwalten zu können."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Gesendet"
       ],
+      "Sign up for free": [
+        "Kostenlos registrieren"
+      ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
         "Gekennzeichnet"
+      ],
+      "Terms": [
+        "AGB"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Diese ICS-Datei enthält mehr als ein Ereignis. Bitte laden Sie sie herunter und importieren Sie die Ereignisse in ${ calendarAppName }"
@@ -5746,7 +5797,7 @@
         "Alle Proton-Dienste kennenlernen"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Unsere Zielsetzung ist es, ein Internet aufzubauen, in dem Sie die Kontrolle über Ihre Daten und Ihre Privatsphäre haben. Wir haben Proton kürzlich aktualisiert - Willkommen im sicheren Internet."
+        "Unsere Zielsetzung ist es, ein Internet aufzubauen, in dem du die Kontrolle über deine Daten und deine Privatsphäre hast. Wir haben Proton kürzlich aktualisiert - Willkommen im sicheren Internet."
       ],
       "Select a theme": [
         "Farbschema auswählen"
@@ -6373,8 +6424,8 @@
     },
     "Success": {
       "${ count } conversation deleted": [
-        "${ count } Thema gelöscht",
-        "${ count } Themen gelöscht"
+        "${ count } Unterhaltung gelöscht",
+        "${ count } Unterhaltungen gelöscht"
       ],
       "${ count } draft deleted": [
         "${ count } Entwurf gelöscht",
@@ -6385,52 +6436,52 @@
         "${ count } Nachrichten gelöscht"
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
-        "${ elementsCount } Thema zu „${ labelName }” hinzugefügt.",
-        "${ elementsCount } Themen zu „${ labelName }” hinzugefügt."
+        "${ elementsCount } Unterhaltung zu „${ labelName }” hinzugefügt.",
+        "${ elementsCount } Unterhaltungen zu „${ labelName }” hinzugefügt."
       ],
       "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } Thema als „Gelesen” gekennzeichnet.",
-        "${ elementsCount } Themen als „Gelesen” gekennzeichnet."
+        "${ elementsCount } Unterhaltung als gelesen markieren.",
+        "${ elementsCount } Unterhaltungen als gelesen markieren."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } Thema gekennzeichnet.",
-        "${ elementsCount } Themen gekennzeichnet."
+        "${ elementsCount } Unterhaltung gekennzeichnet.",
+        "${ elementsCount } Unterhaltungen gekennzeichnet."
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } Thema als „Ungelesen” gekennzeichnet.",
-        "${ elementsCount } Themen als „Ungelesen” gekennzeichnet."
+        "${ elementsCount } Unterhaltung als ungelesen markieren.",
+        "${ elementsCount } Unterhaltungen als ungelesen markieren."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } Thema wurde in den Ordner „${ folderName }” verschoben und der Absender zur Ausnahmenliste hinzugefügt.",
-        "${ elementsCount } Themen wurden in den Ordner „${ folderName }” verschoben und der/die Absender zur Ausnahmenliste hinzugefügt."
+        "${ elementsCount } Unterhaltung wurde in den Ordner „${ folderName }” verschoben und der Absender zur Ausnahmenliste hinzugefügt.",
+        "${ elementsCount } Unterhaltungen wurden in den Ordner „${ folderName }” verschoben und der/die Absender zur Ausnahmenliste hinzugefügt."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } Thema nach „${ folderName }” verschoben.",
-        "${ elementsCount } Themen nach „${ folderName }” verschoben."
+        "${ elementsCount } Unterhaltung in „${ folderName }” verschoben.",
+        "${ elementsCount } Unterhaltungen in „${ folderName }” verschoben."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } Thema nach Spam verschoben und Absender zur Sperrliste hinzugefügt.",
-        "${ elementsCount } Themen nach Spam verschoben und Absender zur Sperrliste hinzugefügt."
+        "${ elementsCount } Unterhaltung in Spam verschoben und Absender zur Sperrliste hinzugefügt.",
+        "${ elementsCount } Unterhaltungen in Spam verschoben und Absender zur Sperrliste hinzugefügt."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } Thema aus „${ labelName }” entfernt.",
-        "${ elementsCount } Themen aus „${ labelName }” entfernt."
+        "${ elementsCount } Unterhaltung aus „${ labelName }” entfernt.",
+        "${ elementsCount } Unterhaltungen aus „${ labelName }” entfernt."
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } Nachricht zu „${ labelName }” hinzugefügt.",
         "${ elementsCount } Nachrichten zu „${ labelName }” hinzugefügt."
       ],
       "${ elementsCount } message marked as read.": [
-        "${ elementsCount } Nachricht als „Gelesen” gekennzeichnet.",
-        "${ elementsCount } Nachrichten als „Gelesen” gekennzeichnet."
+        "${ elementsCount } Nachricht als gelesen gekennzeichnet.",
+        "${ elementsCount } Nachrichten als gelesen gekennzeichnet."
       ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } Nachricht gekennzeichnet.",
         "${ elementsCount } Nachrichten gekennzeichnet."
       ],
       "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } Nachricht als „Ungelesen” gekennzeichnet.",
-        "${ elementsCount } Nachrichten als „Ungelesen” gekennzeichnet."
+        "${ elementsCount } Nachricht als ungelesen gekennzeichnet.",
+        "${ elementsCount } Nachrichten als ungelesen gekennzeichnet."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
         "${ elementsCount } Nachricht in den Ordner „${ folderName }” verschoben und Absender zur Ausnahmenliste hinzugefügt.",
@@ -6475,31 +6526,31 @@
         "Kontakte gelöscht"
       ],
       "Conversation added to ${ labelName }.": [
-        "Thema zu „${ labelName }” hinzugefügt."
+        "Unterhaltung zu „${ labelName }” hinzugefügt."
       ],
       "Conversation deleted": [
-        "Thema gelöscht"
+        "Unterhaltung gelöscht"
       ],
       "Conversation marked as read.": [
-        "Thema als „Gelesen” gekennzeichnet."
+        "Unterhaltung als gelesen markieren."
       ],
       "Conversation marked as Starred.": [
-        "Thema gekennzeichnet."
+        "Unterhaltung gekennzeichnet."
       ],
       "Conversation marked as unread.": [
-        "Thema als „Ungelesen” gekennzeichnet."
+        "Unterhaltung als ungelesen markieren."
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Thema in den Ordner „${ folderName }” verschoben und Absender zur Ausnahmenliste hinzugefügt."
+        "Unterhaltung in den Ordner „${ folderName }” verschoben und Absender zur Ausnahmenliste hinzugefügt."
       ],
       "Conversation moved to ${ folderName }.": [
-        "Thema nach „${ folderName }” verschoben."
+        "Unterhaltung in „${ folderName }” verschoben."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Thema nach Spam verschoben und Absender zur Sperrliste hinzugefügt."
+        "Unterhaltung wurde in den Spam-Ordner verschoben und der Absender zur Sperrliste hinzugefügt."
       ],
       "Conversation removed from ${ labelName }.": [
-        "Thema aus „${ labelName }” entfernt."
+        "Unterhaltung aus „${ labelName }” entfernt."
       ],
       "Draft deleted": [
         "Entwurf wurde gelöscht"
@@ -6538,13 +6589,13 @@
         "Nachricht als „Seriös” gekennzeichnet"
       ],
       "Message marked as read.": [
-        "Nachricht als „Gelesen” gekennzeichnet."
+        "Nachricht als gelesen gekennzeichnet."
       ],
       "Message marked as Starred.": [
         "Nachricht gekennzeichnet."
       ],
       "Message marked as unread.": [
-        "Nachricht als „Ungelesen” gekennzeichnet."
+        "Nachricht als ungelesen gekennzeichnet."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
         "Nachricht in den Ordner „${ folderName }” verschoben und Absender zur Ausnahmenliste hinzugefügt."
@@ -6559,8 +6610,8 @@
         "Nachricht aus „${ labelName }” entfernt."
       ],
       "Move ${ selectionCount } conversation": [
-        "${ selectionCount } Thema verschieben",
-        "${ selectionCount } Themen verschieben"
+        "${ selectionCount } Unterhaltung verschieben",
+        "${ selectionCount } Unterhaltungen verschieben"
       ],
       "Move ${ selectionCount } message": [
         "${ selectionCount } Nachricht verschieben",
@@ -6860,8 +6911,8 @@
         "${ count } Kontaktgruppen löschen"
       ],
       "Delete ${ count } conversation": [
-        "${ count } Thema löschen",
-        "${ count } Themen löschen"
+        "${ count } Unterhaltung löschen",
+        "${ count } Unterhaltungen löschen"
       ],
       "Delete ${ count } draft": [
         "${ count } Entwurf löschen",
@@ -6878,7 +6929,7 @@
         "Alle Nachrichten auswählen"
       ],
       "Delete conversation": [
-        "Thema löschen"
+        "Unterhaltung löschen"
       ],
       "Delete draft": [
         "Entwurf löschen"
@@ -6992,7 +7043,7 @@
         "Postfach-Anordnung"
       ],
       "Mark as unread": [
-        "Als „Ungelesen” kennzeichnen"
+        "Als ungelesen kennzeichnen"
       ],
       "Mark email as legitimate": [
         "E-Mail-Adresse als „Seriös” kennzeichnen"
@@ -7037,7 +7088,7 @@
         "Neue Nachricht"
       ],
       "Next conversation": [
-        "Nächstes Thema"
+        "Nächste Unterhaltung"
       ],
       "Next message": [
         "Nächste Nachricht"
@@ -7079,7 +7130,7 @@
         "Tarifzusammenfassung"
       ],
       "Previous conversation": [
-        "Vorheriges Thema"
+        "Vorherige Unterhaltung"
       ],
       "Previous message": [
         "Vorherige Nachricht"
@@ -7089,6 +7140,9 @@
       ],
       "Processing...": [
         "Wird verarbeitet ..."
+      ],
+      "ProtonMail": [
+        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Alle Kontakte neu signieren"
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "Ohne Ablaufdatum versenden?"
+      ],
+      "Sender changed": [
+        "Absender geändert"
       ],
       "Sending error": [
         "Sendefehler"
@@ -7300,7 +7357,7 @@
         "Der Import beginnt mit den neuesten Nachrichten."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Durch diese Aktion werden alle Nachrichten heruntergeladen, so dass sie lokal durchsucht werden können. Sobald Sie Ihre Browserdaten löschen, wird diese Option wieder deaktiviert."
+        "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass diese lokal durchsucht werden können. Sobald du deine Browserdaten löschst, wird diese Option wieder deaktiviert."
       ],
       "This feature is only available for paid users": [
         "Diese Funktion ist nur für zahlende Benutzer verfügbar"
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "Es gibt keine Kontakte, die exportiert werden können"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabile Version"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "Update font modal": {

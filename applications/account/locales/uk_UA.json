@@ -196,6 +196,9 @@
       "Continue import": [
         "Продовжити імпорт"
       ],
+      "Continue with": [
+        "Продовжити з"
+      ],
       "Continue with Google": [
         "Продовжити з Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Вийти з усіх облікових записів"
+      ],
+      "Sign out from": [
+        "Вийти з"
       ],
       "Signing in": [
         "Виконується вхід"
@@ -1535,7 +1541,7 @@
         "Розшифрування контактів... Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Об'єднання та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+        "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -1547,7 +1553,7 @@
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
+        "Ви можете імпортувати події у форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -1710,7 +1716,7 @@
     },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, перейдіть в Налаштування > Адреси > Короткий домен (pm.me)"
+        "${ Local } ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, перейдіть у Налаштування > Адреси > Короткий домен (pm.me)"
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
@@ -1805,8 +1811,8 @@
       "Error in one of the conditions": [
         "Помилка в одній з умов"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Не вдалося отримати активні сеанси. Оновіть сторінку або спробуйте знову пізніше."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        "Не вдалося отримати активні сеанси. ${ refresh } або повторіть спробу пізніше."
       ],
       "File has no contents to preview": [
         "Файл не має вмісту для перегляду"
@@ -2416,7 +2422,7 @@
         "Деякі з ваших подій не вдалося експортувати."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Підключення до інтернету було перервано, внаслідок чого процес експорту зазнав невдачі. Будь ласка, спробуйте ще раз."
+        "Інтернет-з'єднання було перервано, внаслідок чого процес експорту зазнав невдачі. Будь ласка, спробуйте ще раз."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Ви можете зберегти ICS файл подій, які були успішно експортовані."
@@ -4272,6 +4278,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Перейдіть на ${ professionalPlan }, щоб додати більше користувачів."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Тимчасово недоступно. Повторіть спробу пізніше."
+      ],
       "Test link": [
         "Тестове посилання"
       ],
@@ -4404,6 +4413,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ProtonVPN для вашого пристрою і під'єднайтеся до сервера ProtonVPN."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        "Щоб скористатися ${ toAppName }, створіть адресу."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
       ],
@@ -4443,11 +4455,11 @@
       "Update recovery phrase": [
         "Оновити фразу відновлення"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.VISIONARY] } або ${ PLAN_NAMES[PLANS.PROFESSIONAL] }, щоб увімкнути автоматичні відповіді, коли ви не можете відповісти."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.VISIONARY] } або ${ PLAN_NAMES[PLANS.PROFESSIONAL] }, щоб розпочати."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } або ${ PLAN_NAMES[PLANS.PLUS] }, щоб увімкнути автоматичні відповіді, коли ви не можете відповісти."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Перейдіть на платний тарифний план, щоб отримати доступ до преміум функцій та збільшити обсяг вашого сховища."
@@ -4853,7 +4865,7 @@
         "Ключ з таким самим алгоритмом шифрування вже існує. Генерування іншого ключа спричинить повільніше завантаження облікового запису. Ви дійсно хочете продовжити?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Для цієї адреси вже активний ключ з таким самим алгоритмом шифрування. Генерування іншого ключа спричинить повільніше завантаження облікового запису, а видалення цього ключа може викликати проблеми. Якщо ви генеруєте новий ключ, тому що ваш старий ключ був скомпрометований, будь ласка, позначте той ключ як скомпрометований. Ви дійсно хочете продовжити?"
+        "Для цієї адреси вже активний ключ з таким самим алгоритмом шифрування. Генерування іншого ключа спричинить сповільнення завантаження облікового запису, а видалення цього ключа може викликати проблеми. Якщо ви генеруєте новий ключ, тому що ваш старий ключ був скомпрометований, будь ласка, позначте той ключ скомпрометованим. Ви дійсно хочете продовжити?"
       ],
       "Generate key": [
         "Генерувати ключ"
@@ -5169,9 +5181,6 @@
       "ALL": [
         "ВСЕ"
       ],
-      "All-day event notifications": [
-        "Сповіщення події на цілий день"
-      ],
       "Allow recovery by email": [
         "Дозволити відновлення за електронною поштою"
       ],
@@ -5334,11 +5343,23 @@
       "Days of the week": [
         "Дні тижня"
       ],
+      "Default email address": [
+        "Типова електронна адреса"
+      ],
+      "Default event duration": [
+        "Типова тривалість події"
+      ],
+      "Default full day notifications": [
+        "Типові сповіщення на весь день"
+      ],
       "Default language": [
         "Типова мова"
       ],
       "Default language (${ defaultLanguage })": [
         "Типова мова (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Типові сповіщення"
       ],
       "Default PGP scheme": [
         "Типова схема PGP"
@@ -5417,12 +5438,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введіть пароль для ключа з відбитком: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Тривалість події"
-      ],
-      "Event notifications": [
-        "Сповіщення про події"
       ],
       "Expires": [
         "Термін дії"
@@ -7263,6 +7278,11 @@
         "Програми VPN"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Не вдалося оновити налаштування"
+      ]
+    },
     "Settings/filters": {
       "Filters": [
         "Фільтри"
@@ -8539,7 +8559,7 @@
         "Налаштуйте імпорт щоб зменшити кількість міток"
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Захищає від загроз приватності VPN, спрямовуючи ваш Інтернет-трафік через різні сервери."
+        "Захищає від загроз приватності VPN, спрямовуючи ваш інтернет-трафік через кілька серверів."
       ],
       "Discount applied for annual billing cycle": [
         "Знижка застосовується до річного циклу платежів"
@@ -8593,7 +8613,7 @@
         "Користувачі ProtonMail використовуватимуть цей ключ типово для надсилання"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
-        "Спрямовуйте свій Інтернет-трафік через мережу Tor одним натисканням."
+        "Спрямовуйте свій інтернет-трафік через мережу Tor одним натисканням."
       ],
       "Set the default Composer popup size as small or full screen.": [
         "Встановіть звичайний чи розгорнутий типовий розмір редактора."
@@ -8672,7 +8692,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Виберіть типові налаштування PGP, що використовуються для підписування чи шифрування повідомлень для отримувачів, які використовують PGP за межами ProtonMail. Зауважте, що вбудований PGP примусово перетворює вміст повідомлень в формат звичайного тексту. Докладніше"
+        "Виберіть типові налаштування PGP, що використовуються для підписування чи шифрування повідомлень для отримувачів, які використовують PGP за межами ProtonMail. Зауважте, що вбудований PGP примусово перетворює вміст повідомлень у формат звичайного тексту. Докладніше"
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -8932,7 +8952,7 @@
         "Видаливши цю адресу, ви більше не зможете відновити свій обліковий запис."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Видаливши цю номер телефону, ви більше не зможете відновити свій обліковий запис."
+        "Видаливши цей номер телефону, ви більше не зможете відновити свій обліковий запис."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Вимкнувши журнали, ви також очистите всю історію записів. Ви дійсно хочете вимкнути журнали?"
@@ -8956,7 +8976,7 @@
         "Proton перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте будь-яку конфіденційну інформацію."
+        "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"

@@ -227,6 +227,9 @@
       "Decrease": [
         "減少"
       ],
+      "Decrypt": [
+        ""
+      ],
       "Default email application": [
         "既定のメールアプリ"
       ],
@@ -325,6 +328,9 @@
       ],
       "Export": [
         "エクスポート"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "連絡先のエクスポート"
@@ -551,6 +557,9 @@
       "Move to...": [
         "...に移動"
       ],
+      "Need help?": [
+        ""
+      ],
       "Never show": [
         "常に非表示"
       ],
@@ -679,6 +688,9 @@
       ],
       "Rename": [
         "名前を変更"
+      ],
+      "Reply securely": [
+        ""
       ],
       "Report a problem": [
         "問題を報告"
@@ -2153,6 +2165,9 @@
       "Enter 6 digits": [
         "6 桁の数字を入力してください"
       ],
+      "Enter a password": [
+        ""
+      ],
       "Error connecting to the Bitcoin API.": [
         "ビットコインAPIへの接続中にエラーが発生しました。"
       ],
@@ -2438,6 +2453,9 @@
       "Unknown payment token status": [
         "支払いトークンの状態が不明です"
       ],
+      "Wrong mailbox password": [
+        ""
+      ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
       ],
@@ -2661,6 +2679,12 @@
       "Invalid response": [
         "無効なレスポンスです"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "予期しないエラー"
       ],
@@ -2680,9 +2704,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3278,6 +3299,9 @@
       "Background color": [
         "背景色"
       ],
+      "Based in Switzerland, available globally": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
       ],
@@ -3385,6 +3409,9 @@
       ],
       "Day": [
         "日"
+      ],
+      "Decrypt message": [
+        ""
       ],
       "Default email application": [
         "既定のメールアプリ"
@@ -3923,6 +3950,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
+      "Sorry, this message does not exist or has already expired": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "P2P対応のStarter VPNサービス。"
       ],
@@ -3975,6 +4005,9 @@
         "このページを離れると入力したデータの下書きは保存されません。"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
+        ""
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
         ""
       ],
       "The sender has requested a read receipt.": [
@@ -4175,6 +4208,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。この検証作業では課金されません。カードの確認に使用した金額は直ちに返金されます。"
       ],
+      "Version ${ appVersion }": [
+        ""
+      ],
       "Visit our shop to get Proton merchandise.": [
         ""
       ],
@@ -4273,6 +4309,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "ストレージ容量の100%に達しました。新しいメッセージを作成するために、ストレージ容量を増やしたり、容量追加のためにアカウントをアップグレードすることを検討してください。"
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "支払い方法にPayPalを追加する場合は、クレジットカードまたは銀行口座が登録されている必要があります。"
@@ -5207,6 +5246,12 @@
       "Pay invoice": [
         "請求の支払い"
       ],
+      "Previous version": [
+        ""
+      ],
+      "Privacy policy": [
+        ""
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         ""
       ],
@@ -5222,11 +5267,17 @@
       "Sent": [
         "送信済み"
       ],
+      "Sign up for free": [
+        ""
+      ],
       "Spam": [
         "迷惑メール"
       ],
       "Starred": [
         "星印付き"
+      ],
+      "Terms": [
+        ""
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         ""
@@ -6950,6 +7001,9 @@
       "Processing...": [
         "処理中..."
       ],
+      "ProtonMail": [
+        ""
+      ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
       ],
@@ -7005,6 +7059,9 @@
         ""
       ],
       "Send without expiration?": [
+        ""
+      ],
+      "Sender changed": [
         ""
       ],
       "Sending error": [
@@ -7175,6 +7232,14 @@
       ],
       "You do not have any contacts to export": [
         "エクスポートする連絡先がありません"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

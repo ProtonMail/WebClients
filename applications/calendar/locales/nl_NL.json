@@ -202,6 +202,9 @@
       "Export": [
         "Exporteren"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Contactpersonen exporteren"
       ],
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         "Ongeldige reactie"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Onverwachte fout"
       ],
@@ -1945,9 +1954,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Uw antwoord werd verzonden, maar de afspraak kon niet worden toegevoegd aan uw agenda"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Uw antwoord is verzonden, maar de afspraak kon niet worden bijgewerkt in uw agenda"
       ]
     },
     "Event popover close button": {
@@ -3240,9 +3246,6 @@
       "All day": [
         "De hele dag"
       ],
-      "All-day event notifications": [
-        "De hele dag meldingen van evenementen"
-      ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         "Datum en tijd"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Beschrijving"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Voer de 6-cijferige code in"
-      ],
-      "Event duration": [
-        "Duur van het evenement"
-      ],
-      "Event notifications": [
-        "Gebeurtenismeldingen"
       ],
       "Event title": [
         "Gebeurtenis titel"
@@ -4497,6 +4506,11 @@
     "Select search results": {
       "No results found": [
         "Geen resultaten gevonden"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

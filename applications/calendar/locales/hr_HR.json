@@ -204,6 +204,9 @@
       "Export": [
         "Izvoz"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Izvezi kontakte"
       ],
@@ -1950,6 +1953,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         ""
       ],
@@ -1969,9 +1978,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3297,9 +3303,6 @@
       "All day": [
         "Cijeli dan"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
       ],
@@ -3357,6 +3360,18 @@
       "Date and time": [
         ""
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Opis"
       ],
@@ -3392,12 +3407,6 @@
       ],
       "Enter the 6-digit code": [
         "Unesite 6-znamenkasti kôd"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        "Obavijest o događaju"
       ],
       "Event title": [
         "Naziv događaja"
@@ -4587,6 +4596,11 @@
     "Select search results": {
       "No results found": [
         "Nema rezultata"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

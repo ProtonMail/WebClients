@@ -202,6 +202,9 @@
       "Export": [
         "Exportar"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Exportar contactos"
       ],
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         ""
       ],
@@ -1944,9 +1953,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3240,9 +3246,6 @@
       "All day": [
         "Dia inteiro"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         ""
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Descrição"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Insira o código de 6 algarismos"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        "Notificações do evento"
       ],
       "Event title": [
         "Título do evento"
@@ -4499,6 +4508,11 @@
         "Nenhum resultado encontrado"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gerir a agenda"
@@ -5529,12 +5543,12 @@
         "A cada ${ interval } semanas, ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "A cada ${ interval } semana, ${ multipleDaysString }, §{ timesString }",
-        "A cada ${ interval } semanas, ${ multipleDaysString }, §{ timesString }"
+        "A cada ${ interval } semana, ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "A cada ${ interval } semana, ${ multipleDaysString }, §{ untilString }",
-        "A cada ${ interval } semanas, ${ multipleDaysString }, §{ untilString }"
+        "A cada ${ interval } semana, ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "A cada ${ interval } semana, todos os dias",

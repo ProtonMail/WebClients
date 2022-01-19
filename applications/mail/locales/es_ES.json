@@ -227,6 +227,9 @@
       "Decrease": [
         "Reducir"
       ],
+      "Decrypt": [
+        ""
+      ],
       "Default email application": [
         ""
       ],
@@ -327,6 +330,9 @@
       ],
       "Export": [
         "Exportar"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Exportar contactos"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Mover a..."
       ],
+      "Need help?": [
+        ""
+      ],
       "Never show": [
         "No mostrar nunca"
       ],
@@ -682,6 +691,9 @@
       ],
       "Rename": [
         "Renombrar"
+      ],
+      "Reply securely": [
+        ""
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -874,7 +886,7 @@
         "Deshacer"
       ],
       "Unlock data": [
-        ""
+        "Desbloquear Datos"
       ],
       "Unmark for deletion": [
         "Desmarcar para eliminar"
@@ -2026,7 +2038,7 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "Los detalles del evento están cifrados. Inicie sesión de nuevo para restaurar el Calendario y descifrar sus datos. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "Los detalles del evento no se pueden descifrar. ${ whyNotLink }"
@@ -2121,7 +2133,7 @@
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "",
-        ""
+        "Elija una fecha dentro de los siguientes ${ SCHEDULED_MAX_DATE_DAYS } días."
       ],
       "Condition incomplete": [
         "Condición incompleta"
@@ -2172,6 +2184,9 @@
       ],
       "Enter 6 digits": [
         "Introduce 6 dígitos"
+      ],
+      "Enter a password": [
+        ""
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
@@ -2340,7 +2355,7 @@
         "No se ha podido verificar la clave pública"
       ],
       "re-activate the previous key": [
-        ""
+        "reactivar la clave anterior"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "",
@@ -2463,6 +2478,9 @@
       ],
       "Unknown payment token status": [
         "Se desconoce el estado del token de pago"
+      ],
+      "Wrong mailbox password": [
+        ""
       ],
       "You can't send a mail to more than 100 recipients": [
         "No puedes enviar un correo a más de 100 destinatarios"
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Respuesta no válida"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Se ha producido un error inesperado"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Tu respuesta ha sido enviada, pero el evento no ha podido ser añadido a tu calendario"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Tu respuesta ha sido enviada, pero el evento no ha podido ser actualizado en tu calendario"
       ]
     },
     "Event title": {
@@ -3346,6 +3367,9 @@
       "Background color": [
         "Color de fondo"
       ],
+      "Based in Switzerland, available globally": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
       ],
@@ -3455,6 +3479,9 @@
       "Day": [
         "Día",
         "Días"
+      ],
+      "Decrypt message": [
+        ""
       ],
       "Default email application": [
         ""
@@ -3913,7 +3940,7 @@
         "Frase de recuperación copiada en el portapapeles"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "Frase de recuperación descargada"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
@@ -4002,6 +4029,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene habilitadas características adicionales."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Servicio inicial de VPN con soporte P2P."
       ],
@@ -4055,6 +4085,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "El mensaje original al que estás intentando reenviar / responder está en proceso de ser enviado. Si continúas, no podrás deshacer el envío del mensaje original."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "El remitente original de este mensaje ya no es válido. Tu mensaje se enviará desde tu dirección predeterminada ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "El remitente ha solicitado una confirmación de lectura."
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificación abrirá una nueva pestaña, desactiva cualquier bloqueador de ventanas emergentes. No se te cobrará este proceso. Cualquier monto utilizado para verificar la tarjeta te será reembolsado inmediatamente."
       ],
+      "Version ${ appVersion }": [
+        ""
+      ],
       "Visit our shop to get Proton merchandise.": [
         ""
       ],
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Has alcanzado el 100% de tu capacidad de almacenamiento. Considera en liberar algo de espacio o mejorar tu cuenta con espacio de almacenamiento adicional para redactar mensajes nuevos."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada con su cuenta de PayPal para añadirla como método de pago."
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Pagar factura"
       ],
+      "Previous version": [
+        ""
+      ],
+      "Privacy policy": [
+        ""
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Rehabilita la dirección vinculada a este calendario para gestionar tu invitación."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Enviados"
       ],
+      "Sign up for free": [
+        ""
+      ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
         "Destacado"
+      ],
+      "Terms": [
+        ""
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         ""
@@ -7090,6 +7141,9 @@
       "Processing...": [
         "Procesando..."
       ],
+      "ProtonMail": [
+        ""
+      ],
       "Re-sign all contacts": [
         "Volver a firmar todos los contactos"
       ],
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "¿Enviar sin expiración?"
+      ],
+      "Sender changed": [
+        "El remitente ha cambiado"
       ],
       "Sending error": [
         ""
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "No tienes ningún contacto para exportar"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

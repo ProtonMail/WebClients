@@ -18,10 +18,10 @@
         "未收到验证码？"
       ],
       "Edit email address": [
-        "编辑邮箱地址"
+        "修改邮箱地址"
       ],
       "Edit phone number": [
-        "编辑电话号码"
+        "修改电话号码"
       ],
       "Get verification code": [
         "获取验证码"
@@ -30,7 +30,7 @@
         "刷新页面"
       ],
       "Request new code": [
-        "请求新的验证码"
+        "重新发送验证码"
       ],
       "Submit": [
         "提交"
@@ -52,22 +52,22 @@
     },
     "Error": {
       "Can't validate email, try again later": [
-        "无法验证邮箱，请重试"
+        "无法验证邮箱，请稍后再试"
       ],
       "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再重试"
+        "无法验证电话号码，请稍后再试"
       ],
       "Email is not valid": [
-        "无效邮箱"
+        "邮箱地址无效"
       ],
       "Enter 6 digits": [
-        "输入 6 位代码"
+        "请输入 6 位验证码"
       ],
       "Invalid verification code": [
-        "无效的验证码"
+        "验证码无效"
       ],
       "Not a valid number": [
-        "无效号码"
+        "电话号码无效"
       ],
       "Passwords do not match": [
         "两次输入的密码不一致"
@@ -76,10 +76,10 @@
         "请求超时。"
       ],
       "This field is required": [
-        "此字段必填"
+        "此项必须填写"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "此字段至少需要 ${ minimumLength } 个字符。"
+        "此项至少应填写 ${ minimumLength } 个字符。"
       ],
       "Unknown error": [
         "未知错误"
@@ -90,19 +90,19 @@
         "别担心，我们会解决的。"
       ],
       "Error: ${ errorMessage }": [
-        ""
+        "错误：${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "糟糕，出错了"
       ],
       "Please ${ refresh } or check your connection.": [
-        ""
+        "请${ refresh }或检查网络连接。"
       ],
       "There was a problem connecting to Proton.": [
-        ""
+        "连接 Proton 失败。"
       ],
       "You may also ${ refresh } or try again later.": [
-        "您也可以${ refresh }页面或稍后再试"
+        "您也可以${ refresh }或稍后再试。"
       ]
     },
     "Human verification method": {
@@ -113,7 +113,7 @@
         "电子邮件"
       ],
       "Manual": [
-        "手动"
+        "人工验证"
       ],
       "No verification method available": [
         "没有可用的验证方法"
@@ -154,16 +154,16 @@
         "会话已超时。"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "为了防止垃圾邮件和滥用，请验证您是人类。"
+        "为防止滥发邮件，请验证您是真人操作。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的邮箱将只会用于此一次性验证"
+        "您的邮箱地址仅用于本次验证。"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "您的电话号码将只会用于此一次性验证"
+        "您的电话号码仅用于本次验证。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
@@ -174,7 +174,7 @@
         "取消"
       ],
       "Email address": [
-        "电子邮件地址"
+        "邮箱地址"
       ],
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
@@ -203,12 +203,12 @@
         "了解详情"
       ],
       "Request an invite": [
-        "请求注册邀请"
+        "申请注册"
       ]
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "代码已发送到 ${ methodTo }"
+        "验证码已发至 ${ methodTo }"
       ],
       "Verification successful": [
         "验证成功"
@@ -219,10 +219,10 @@
         "人机验证"
       ],
       "Invalid verification code": [
-        "无效的验证码"
+        "验证码无效"
       ],
       "Request new code": [
-        ""
+        "重新发送验证码"
       ],
       "Sign in again to continue": [
         "再次登录方可继续"

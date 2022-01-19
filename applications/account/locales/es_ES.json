@@ -196,6 +196,9 @@
       "Continue import": [
         "Continuar importación"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Continuar con Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Cerrar sesión en todas las cuentas"
+      ],
+      "Sign out from": [
+        ""
       ],
       "Signing in": [
         "Iniciando sesión"
@@ -1544,19 +1550,19 @@
         ""
       ],
       "I use a different Proton account": [
-        ""
+        "Utilizo una cuenta Proton diferente"
       ],
       "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
-        ""
+        "Mi razón no está en la lista, por favor comente"
       ],
       "Streaming service unsupported": [
         ""
       ],
       "Subscription is too expensive": [
-        ""
+        "La suscripción es demasiado cara"
       ],
       "Switching to a different provider": [
         ""
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Error en una de las condiciones"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Error al obtener las sesiones activas. Por favor, refresca o intenta de nuevo más tarde."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "El archivo no tiene contenido para previsualizar"
@@ -2898,7 +2904,7 @@
         "contraseña de la aplicación"
       ],
       "Can view all details": [
-        ""
+        "Puede ver todos los detalles"
       ],
       "Export": [
         "Exportar"
@@ -2907,13 +2913,13 @@
         "Exportar contactos"
       ],
       "Export to CSV file": [
-        ""
+        "Exportar a archivo CSV"
       ],
       "ICS": [
         "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        ""
+        "en el paso siguiente, debe seleccionar todos los permisos"
       ],
       "Manage": [
         "Gestionar"
@@ -2936,16 +2942,16 @@
         "archivo CSV"
       ],
       "full calendar view": [
-        ""
+        "vista de calendario completa"
       ],
       "ICS file": [
         "archivo CSV"
       ],
       "security settings": [
-        ""
+        "configuración de seguridad"
       ],
       "shared calendars": [
-        ""
+        "calendarios compartidos"
       ],
       "Yahoo Mail": [
         "Yahoo Mail"
@@ -4064,7 +4070,7 @@
         "Leer primero nuestra guía de autentificación de doble factor"
       ],
       "Recovery file downloaded": [
-        ""
+        "Archivo de recuperación descargado"
       ],
       "Recovery files have been voided": [
         "Los archivos de recuperación han sido anulados"
@@ -4073,7 +4079,7 @@
         "Frase de recuperación copiada en el portapapeles"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "Frase de recuperación descargada"
       ],
       "Recovery phrase has been disabled": [
         "La frase de recuperación ha sido desactivada"
@@ -4155,6 +4161,9 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Cambia a ${ professionalPlan } para añadir más usuarios."
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporalmente no disponible. Vuelva a comprobarlo más tarde."
       ],
       "Test link": [
         "Enlace de prueba"
@@ -4288,6 +4297,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Para asegurar tu conexión a Internet, descarga e instala la aplicación ProtonVPN para tu dispositivo y conéctate a un servidor ProtonVPN."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        "Para utilizar ${ toAppName }, cree una dirección."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarga tu cuenta con créditos que puedes utilizar para suscribirte a un plan nuevo o renovar el actual. Obtienes un crédito por cada ${ i18nCurrency } gastado."
       ],
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Actualiza a el plan ${ PLAN_NAMES[PLANS.VISIONARY] } o el plan ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para activar respuestas automáticas para cuando estas fuera de la oficina."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Actualiza a un plan ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para empezar."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "Actualice a un plan ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } o ${ PLAN_NAMES[PLANS.PLUS] } para habilitar las respuestas automáticas para cuando esté fuera de la oficina."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Actualiza a un plan de pago para acceder a funciones premium y aumentar tu espacio de almacenamiento."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "TODO"
       ],
-      "All-day event notifications": [
-        "Notificaciones de eventos durante todo el día"
-      ],
       "Allow recovery by email": [
         "Permitir recuperación por correo electrónico"
       ],
@@ -5210,11 +5219,23 @@
       "Days of the week": [
         "Días de la semana"
       ],
+      "Default email address": [
+        "Dirección de correo electrónico por defecto"
+      ],
+      "Default event duration": [
+        "Duración del evento por defecto"
+      ],
+      "Default full day notifications": [
+        "Notificaciones de todo el día por defecto"
+      ],
       "Default language": [
         "Idioma por defecto"
       ],
       "Default language (${ defaultLanguage })": [
         "Idioma predeterminado (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Notificaciones por defecto"
       ],
       "Default PGP scheme": [
         "Esquema PGP por defecto"
@@ -5293,12 +5314,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduce la contraseña para la clave con huella digital: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Duración del evento"
-      ],
-      "Event notifications": [
-        "Notificaciones de eventos"
       ],
       "Expires": [
         "Expira"
@@ -5803,7 +5818,7 @@
         "Boletín de Proton"
       ],
       "Proton offers and promotions": [
-        ""
+        "Ofertas y promociones de Proton"
       ],
       "Proton product announcements": [
         "Anuncios de productos de Proton"
@@ -5971,7 +5986,7 @@
         "Obteniendo tus datos"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Recogemos los datos de su proveedor"
       ],
       "Your import is starting": [
         "Tu importación está comenzando"
@@ -6138,7 +6153,7 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        ""
+        "Cómo importar calendarios desde otro servicio"
       ],
       "How to import calendars from Outlook": [
         ""
@@ -6147,7 +6162,7 @@
         ""
       ],
       "How to import contacts from another service": [
-        ""
+        "Cómo importar contactos desde otro servicio"
       ],
       "How to import contacts from Outlook": [
         ""
@@ -6156,7 +6171,7 @@
         ""
       ],
       "How to import emails from another service": [
-        ""
+        "Cómo importar correos electrónicos desde otro servicio"
       ],
       "How to import emails from Outlook": [
         ""
@@ -7113,6 +7128,11 @@
       ],
       "VPN apps": [
         "Aplicaciones VPN"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Fallo en la actualización de la configuración"
       ]
     },
     "Settings/filters": {
