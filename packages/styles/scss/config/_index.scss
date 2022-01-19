@@ -4,9 +4,9 @@
 @import 'variables';
 
 // Functions
-@import 'functions/em', 'functions/rem', 'functions/line-height', 'functions/margin-em', 'functions/placement-to-logical', 'functions/str-replace',
-	'functions/easing';
+@import 'functions/em', 'functions/rem', 'functions/line-height', 'functions/margin-em', 'functions/logical', 'functions/str-replace',
+	'functions/easing', 'functions/dash-join';
 
 // Mixins
-@import 'mixins/rhythm', 'mixins/vendor-prefix', 'mixins/margin-generator', 'mixins/padding-generator',
+@import 'mixins/rhythm', 'mixins/vendor-prefix', 'mixins/spacing-generator',
 	'mixins/respond-to', 'mixins/body-before', 'mixins/transform-origins';
