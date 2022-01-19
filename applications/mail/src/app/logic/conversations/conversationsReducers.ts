@@ -64,9 +64,9 @@ export const loadFulfilled = (
 
 export const loadRejected = (
     state: Draft<ConversationsState>,
-    action: PayloadAction<any, string, { arg: ConversationParams }>
+    action: PayloadAction<any, string, { arg: ConversationParams }, any | undefined>
 ) => {
-    const error = action.payload;
+    const { error } = action;
 
     const errors: ConversationErrors = {};
     if (isNetworkError(error)) {
