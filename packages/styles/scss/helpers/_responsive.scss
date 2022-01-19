@@ -9,7 +9,7 @@
  * medium/tablet landscape minor breakpoint
  */
 @include respond-to($breakpoint-medium-landscape) {
-	@include padding-generator(
+	@include spacing-generator(
 		// coordinates
 		(p, pt, pr, pb, pl),
 		// padding sizes
@@ -51,7 +51,7 @@
 		inline-size: auto;
 	}
 
-	@include margin-generator(
+	@include spacing-generator(
 		// coordinates
 		(m, mt, mr, mb, ml),
 		// margin sizes
@@ -60,7 +60,7 @@
 		'on-tablet-'
 	);
 
-	@include padding-generator(
+	@include spacing-generator(
 		// coordinates
 		(p, pt, pr, pb, pl),
 		// padding sizes
@@ -142,7 +142,7 @@
 		inline-size: auto;
 	}
 
-	@include margin-generator(
+	@include spacing-generator(
 		// coordinates
 		(m, mt, mr, mb, ml),
 		// margin sizes
@@ -151,7 +151,7 @@
 		'on-mobile-'
 	);
 
-	@include padding-generator(
+	@include spacing-generator(
 		// coordinates
 		(p, pt, pr, pb, pl),
 		// padding sizes
@@ -336,7 +336,7 @@
 		}
 	}
 
-	@include margin-generator(
+	@include spacing-generator(
 		// coordinates
 		(m, mt, mr, mb, ml),
 		// margin sizes
@@ -345,7 +345,7 @@
 		'on-tiny-mobile-'
 	);
 
-	@include padding-generator(
+	@include spacing-generator(
 		// coordinates
 		(p, pt, pr, pb, pl),
 		// padding sizes

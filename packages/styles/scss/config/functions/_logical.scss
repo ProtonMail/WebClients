@@ -1,0 +1,32 @@
+/**
+ * Give logical string for a "classic" placement
+ * @param {String} $placement - top/left/right/bottom/vertical/horizontal/t/r/b/l/v/h/x/y
+ * @return {String} - the logical prop fragment
+ */
+@function logical($placement) {
+	@if $placement == 'top' or $placement == 't' {
+		@return 'block-start';
+	}
+
+	@if $placement == 'bottom' or $placement == 'b' {
+		@return 'block-end';
+	}
+
+	@if $placement == 'left' or $placement == 'l' {
+		@return 'inline-start';
+	}
+
+	@if $placement == 'right' or $placement == 'r' {
+		@return 'inline-end';
+	}
+
+	@if $placement == 'horizontal' or $placement == 'h' or $placement == 'x' {
+		@return 'inline';
+	}
+
+	@if $placement == 'vertical' or $placement == 'v' or $placement == 'y' {
+		@return 'block';
+	}
+
+	@return null;
+}
