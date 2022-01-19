@@ -1,0 +1,12 @@
+.no-outline {
+	// we remove outline for all cases, and add it back for focus-visible cases
+
+	&,
+	&:focus {
+		outline: 0;
+	}
+
+	&:focus-visible {
+		outline: 2px auto;
+	}
+}

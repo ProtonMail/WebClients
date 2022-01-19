@@ -245,7 +245,7 @@ const MailboxContainer = ({
             <div
                 ref={elementRef}
                 tabIndex={-1}
-                className="flex-item-fluid flex flex-column flex-nowrap no-outline"
+                className="flex-item-fluid flex flex-column flex-nowrap outline-none"
                 data-testid="mailbox"
             >
                 {showToolbar && (
