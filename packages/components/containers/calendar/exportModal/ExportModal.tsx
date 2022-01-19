@@ -51,7 +51,11 @@ export const ExportModal = ({ calendar, onClose, isOpen }: Props) => {
 
     const { content, onSubmit } = (() => {
         if (model.step === EXPORT_STEPS.EXPORTING) {
-            const handleFinish = async (exportedEvents: VcalVeventComponent[], exportErrors: ExportError[]) => {
+            const handleFinish = async (
+                exportedEvents: VcalVeventComponent[],
+                exportErrors: ExportError[],
+                keepError?: boolean
+            ) => {
                 // we don't catch errors here as they're caught into a NETWORK error on ExportingModalContent
                 const { PrimaryTimezone: defaultTzid } = await getCalendarUserSettings();
                 const uniqueTimezonesPromise = getUniqueVtimezones({
@@ -79,7 +83,11 @@ export const ExportModal = ({ calendar, onClose, isOpen }: Props) => {
                     defaultTzid,
                     vtimezones: uniqueTimezones,
                 });
-                updateModel({ step: EXPORT_STEPS.FINISHED, exportErrors, error: undefined });
+                updateModel({
+                    step: EXPORT_STEPS.FINISHED,
+                    exportErrors,
+                    ...(!keepError && { error: undefined }),
+                });
                 setCalendarBlob(new Blob([ics], { type: 'text/plain;charset=utf-8' }));
             };
 
