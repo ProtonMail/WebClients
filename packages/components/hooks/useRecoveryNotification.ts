@@ -63,7 +63,7 @@ const useRecoveryNotification = (
         };
     }
 
-    if (isLessInvasive && hasVisitedRecoveryPage?.Value === true) {
+    if (isLessInvasive && hasVisitedRecoveryPage?.Value !== false) {
         return;
     }
 
