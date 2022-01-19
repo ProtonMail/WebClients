@@ -77,7 +77,7 @@
         "Изменить пароль"
       ],
       "Chat with us": [
-        "Поболтать с нами"
+        "Поговорить с нами"
       ],
       "Clear": [
         "Очистить"
@@ -278,7 +278,7 @@
         "Отправить заново"
       ],
       "Reset": [
-        "Сброс"
+        "Сбросить"
       ],
       "Reset credentials": [
         "Сбросить учётные данные"
@@ -802,7 +802,7 @@
         "Я использую другой аккаунт Proton"
       ],
       "Missing feature(s)": [
-        "Отсутствующие функции"
+        "Отсутствующая(ие) функция(ии)"
       ],
       "My reason isn't listed, please comment": [
         "Моя причина не указана, пожалуйста, прокомментируйте"
@@ -1671,7 +1671,7 @@
         "Этот аккаунт был приостановлен из-за возможного нарушения политики пользования сервисом."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Этот браузер не поддерживает предпросмотр PDF-документов. Пожалуйста, скачайте файл."
+        "Этот браузер не поддерживает предпросмотр документов в формате PDF. Пожалуйста, скачайте файл."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
@@ -1680,7 +1680,7 @@
         "Этот тариф временно отключён"
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Это действие отменит текущую платную подписку, и вы потеряете все накопленные вами льготы. Остаток вашей подписки будет возвращен в виде кредита по счету."
+        "Это действие отменит текущую платную подписку, и вы потеряете все накопленные вами льготы. Остаток вашей подписки будет возвращен в виде остатка на счету."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед продолжением."
@@ -1752,7 +1752,7 @@
         "Набор VPN + ${ mailAppName } для семей и малых предприятий."
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Внимание: удаление безвозвратно. Это также отключит доступ ко всем подключенным сервисам и удалит все ваши контакты."
+        "Внимание: удаление безвозвратно. Это также отключит доступ ко всем подключенным службам и удалит все ваши контакты."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Советуем вам по возможности использовать официальные приложения ProtonVPN."
@@ -1961,10 +1961,10 @@
     },
     "Label": {
       "${ n } VPN connection available": [
-        "${ n } VPN-соединение доступно",
-        "${ n } VPN-соединения доступно",
-        "${ n } VPN-соединений доступно",
-        "${ n } VPN-соединений доступно"
+        "${ n } подключение к VPN доступно",
+        "${ n } подключения к VPN доступно",
+        "${ n } подключений к VPN доступно",
+        "${ n } подключений к VPN доступно"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
@@ -2632,9 +2632,6 @@
       "Secure Core configs": [
         "Конфигурации Secure Core"
       ],
-      "Select a reason": [
-        "Выберите причину"
-      ],
       "SMS": [
         "SMS"
       ],
@@ -2945,10 +2942,10 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "У вас остался еще ${ daysRemaining } день на учетной записи ${ currentPlanName } ${ BRAND_NAME }.",
-        "У вас осталось еще ${ daysRemaining } дня на учетной записи ${ currentPlanName } ${ BRAND_NAME }.",
-        "У вас осталось еще ${ daysRemaining } дней на учетной записи ${ currentPlanName } ${ BRAND_NAME }.",
-        "У вас осталось еще ${ daysRemaining } дней на учетной записи ${ currentPlanName } ${ BRAND_NAME }."
+        "У вас остался еще ${ daysRemaining } день на аккаунте ${ currentPlanName } ${ BRAND_NAME }.",
+        "У вас осталось еще ${ daysRemaining } дня на аккаунте ${ currentPlanName } ${ BRAND_NAME }.",
+        "У вас осталось еще ${ daysRemaining } дней на аккаунте ${ currentPlanName } ${ BRAND_NAME }.",
+        "У вас осталось еще ${ daysRemaining } дней на аккаунте ${ currentPlanName } ${ BRAND_NAME }."
       ]
     },
     "Plan upsell": {
@@ -2975,7 +2972,7 @@
         "Free"
       ],
       "FREE": [
-        "БЕСПЛАТНО"
+        "БЕСПЛАТНАЯ"
       ]
     },
     "Prime Video": {
@@ -2985,7 +2982,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Ваша учётная запись понижается, пожалуйста, ждите"
+        "Вы переходите на более дешевую версию аккаунта, пожалуйста, подождите"
       ]
     },
     "Storage": {
@@ -3001,7 +2998,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } скопирован в ваш буфер обмена"
+        "${ server.Domain } скопировано в буфер обмена"
       ],
       "Account deleted. Logging out...": [
         "Аккаунт удален. Выход из системы..."
@@ -3216,7 +3213,7 @@
         "Настройте ваш тариф"
       ],
       "Dashboard": [
-        "Личный кабинет"
+        "Панель управления"
       ],
       "Date": [
         "Дата"
@@ -3707,10 +3704,10 @@
         "${ n }+ серверов"
       ],
       "${ n } VPN connection": [
-        "${ n } подключение VPN",
-        "${ n } подключения VPN",
-        "${ n } подключений VPN",
-        "${ n } подключений VPN"
+        "${ n } подключение к VPN",
+        "${ n } подключения к VPN",
+        "${ n } подключений к VPN",
+        "${ n } подключений к VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } в ${ numberOfCountries } стране",
@@ -3785,7 +3782,7 @@
         "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
+        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, мы рассмотрим ее и свяжемся с вами, когда снова будем в сети."
       ]
     }
   }

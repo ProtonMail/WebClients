@@ -200,6 +200,9 @@
       "Export": [
         "导出"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "导出联系人"
       ],
@@ -1900,6 +1903,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "发生意外错误"
       ],
@@ -1919,9 +1928,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3183,9 +3189,6 @@
       "All day": [
         "全天事件"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Automatically save contacts": [
         "自动保存联系人"
       ],
@@ -3243,6 +3246,18 @@
       "Date and time": [
         ""
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "说明："
       ],
@@ -3278,12 +3293,6 @@
       ],
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        "日程通知"
       ],
       "Event title": [
         "日程名称"
@@ -4407,6 +4416,11 @@
     "Select search results": {
       "No results found": [
         "未找到结果"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

@@ -202,6 +202,9 @@
       "Export": [
         "Sifeḍ"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Kter inermisen"
       ],
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         ""
       ],
@@ -1944,9 +1953,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3240,9 +3246,6 @@
       "All day": [
         "Ass meṛṛa"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Automatically save contacts": [
         "Seekles inermisen s wudem awurman"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         ""
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Aglam"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Sekcem tangalt n 6 n yizwilen"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        "Ilɣa n uneḍru"
       ],
       "Event title": [
         "Azwel n uneḍru"
@@ -4497,6 +4506,11 @@
     "Select search results": {
       "No results found": [
         "Ulac igmaḍ"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

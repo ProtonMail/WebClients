@@ -196,6 +196,9 @@
       "Continue import": [
         "İçe aktarmaya devam et"
       ],
+      "Continue with": [
+        "Devam edilecek hesap"
+      ],
       "Continue with Google": [
         "Google ile Devam Et"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Tüm hesapların oturumunu kapat"
+      ],
+      "Sign out from": [
+        "Çıkış yapılacak hesap"
       ],
       "Signing in": [
         "Giriş yapılıyor"
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Koşullardan birinde hata"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Aktif oturumlar alınamadı. Lütfen daha sonra tekrar deneyin."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        "Etkin oturum açma başarısız oldu. Lütfen ${ refresh } ya da sonra tekrar deneyin."
       ],
       "File has no contents to preview": [
         "Dosyanın önizlenecek içeriği yok"
@@ -2734,7 +2740,7 @@
         "Eğer Gmail'de ${ bold2StepsEnabled } ise, lütfen normal parolanız yerine uygulama parolanızı kullandığınızdan emin olun."
       ],
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Eğer ${ bold2StepsEnabled } ise, lütfen e-posta adresinizin ve uygulama parolanızın doğru olduğundan emin olun. Normal parolanızı kullanmayın."
+        "Eğer ${ bold2StepsEnabled } ise, lütfen e-posta adresinizin ve uygulama parolanızın doğru olduğundan emin olun. Normal parolanız ${ boldNot }."
       ],
       "IMAP access is enabled in your external account": [
         "Harici hesabınızda IMAP erişimi etkinleştirildi"
@@ -2782,7 +2788,7 @@
         "Ayrıca tarayıcıda açık olan ${ boldGoogleAccounts } oturumlarından çıkış yapıp sonrasında ${ linkCAPTCHA } doğrulamasını açmayı deneyebilirsiniz."
       ],
       "your app password is correct. Do ${ boldNot } use your regular password": [
-        "uygulama parolanız doğru. Normal parolanızı kullanmayın"
+        "uygulama parolanız doğru. Normal parolanız ${ boldNot }"
       ],
       "your email account requires an app password to export your data": [
         "e-posta hesabınız, verilerinizi dışa aktarmak için bir uygulama şifresi gerektiriyor"
@@ -2791,7 +2797,7 @@
         "e-posta hesabınız, verilerinizi dışa aktarmak için bir tane gerektirir"
       ],
       "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "eposta adresinizin ve uygulama parolanızın doğru olduğundan. Normal parolanızı kullanmayın"
+        "eposta adresinizin ve uygulama parolanız doğru. Normal parolanız ${ boldNot }"
       ],
       "your email address and password are correct": [
         "e-posta adresiniz ve şifreniz doğru"
@@ -2814,7 +2820,7 @@
         "CAPTCHA"
       ],
       "not": [
-        "değil"
+        "değildir"
       ]
     },
     "Import error link": {
@@ -4156,6 +4162,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Daha fazla kullanıcı eklemek için ${ professionalPlan } satın alınız."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Geçici olarak kullanım dışı. Lütfen daha sonra tekrar kontrol edin."
+      ],
       "Test link": [
         "Deneme bağlantısı"
       ],
@@ -4288,6 +4297,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "İnternet bağlantınızı güvence altına almak için cihazınıza ProtonVPN uygulamasını indirip yükleyin ve bir ProtonVPN sunucusuna bağlanın."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        "${ toAppName } kullanabilmek için lütfen bir adres oluşturun."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Hesabınıza yeni bir plana abone olmak veya mevcut planınızı yenilemek için kullanabileceğiniz krediler ekleyin. Harcadığınız her ${ i18nCurrency } için bir kredi alırsınız."
       ],
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         "Kurtarma anahtar metnini güncelleyin"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Ofisinizde olmadığınız zaman otomatik yanıtları açmak için bir ${ PLAN_NAMES[PLANS.VISIONARY] } ya da ${ PLAN_NAMES[PLANS.PROFESSIONAL] } tarifesine yükseltin."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Başlamak için ${ PLAN_NAMES[PLANS.VISIONARY] } veya ${ PLAN_NAMES[PLANS.PROFESSIONAL] } bir plana yükseltin."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } ya da ${ PLAN_NAMES[PLANS.PLUS] } ücretli paketine geçerek, ofis dışında olduğunuzda otomatik yanıtları etkinleştirin."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Premium özelliklere erişmek ve depolama alanınızı artırmak için ücretli bir plana yükseltin."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "TÜMÜ"
       ],
-      "All-day event notifications": [
-        "Tüm gün etkinlik bildirimleri"
-      ],
       "Allow recovery by email": [
         "E-posta ile kurtarmaya izin ver"
       ],
@@ -5210,11 +5219,23 @@
       "Days of the week": [
         "Haftanın günleri"
       ],
+      "Default email address": [
+        "Varsayılan e-posta adresi"
+      ],
+      "Default event duration": [
+        "Varsayılan etkinlik süresi"
+      ],
+      "Default full day notifications": [
+        "Varsayılan tam gün bildirimleri"
+      ],
       "Default language": [
         "Varsayılan dil"
       ],
       "Default language (${ defaultLanguage })": [
         "Varsayılan dil (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Varsayılan bildirimler"
       ],
       "Default PGP scheme": [
         "Varsayılan PGP Şeması"
@@ -5293,12 +5314,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Anahtar için parmak iziyle parolayı girin: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Etkinlik süresi"
-      ],
-      "Event notifications": [
-        "Etkinlik bildirimleri"
       ],
       "Expires": [
         "Bitiş tarihi"
@@ -7113,6 +7128,11 @@
       ],
       "VPN apps": [
         "VPN uygulamaları"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Ayarların güncellenmesi başarısız oldu"
       ]
     },
     "Settings/filters": {

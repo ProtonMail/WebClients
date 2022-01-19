@@ -206,6 +206,9 @@
       "Export": [
         "Експорт"
       ],
+      "Export contact group": [
+        "Експортувати групу контактів"
+      ],
       "Export contacts": [
         "Експортувати контакти"
       ],
@@ -1975,6 +1978,12 @@
       "Invalid response": [
         "Недійсна відповідь"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Неочікувана помилка"
       ],
@@ -1995,9 +2004,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Вашу відповідь надіслано, але подію не вдалося додати до вашого календаря"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Вашу відповідь надіслано, але подію не вдалося оновити у вашому календарі"
       ]
     },
     "Event popover close button": {
@@ -3354,9 +3360,6 @@
       "All day": [
         "Весь день"
       ],
-      "All-day event notifications": [
-        "Сповіщення події на цілий день"
-      ],
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
@@ -3414,6 +3417,18 @@
       "Date and time": [
         "Дата й час"
       ],
+      "Default email address": [
+        "Типова електронна адреса"
+      ],
+      "Default event duration": [
+        "Типова тривалість події"
+      ],
+      "Default full day notifications": [
+        "Типові сповіщення на весь день"
+      ],
+      "Default notifications": [
+        "Типові сповіщення"
+      ],
       "Description": [
         "Опис"
       ],
@@ -3449,12 +3464,6 @@
       ],
       "Enter the 6-digit code": [
         "Введіть 6-значний код"
-      ],
-      "Event duration": [
-        "Тривалість події"
-      ],
-      "Event notifications": [
-        "Сповіщення про події"
       ],
       "Event title": [
         "Назва події"
@@ -4677,6 +4686,11 @@
     "Select search results": {
       "No results found": [
         "Результатів не знайдено"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Не вдалося оновити налаштування"
       ]
     },
     "Sidebar calendar edit tooltip": {

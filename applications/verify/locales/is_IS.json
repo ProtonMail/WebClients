@@ -1,122 +1,122 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "tr_TR"
+    "language": "is_IS"
   },
   "contexts": {
     "Action": {
       "Cancel": [
-        "İptal"
+        "Hætta við"
       ],
       "Close": [
-        "Kapat"
+        "Loka"
       ],
       "Close modal": [
-        "Pencereyi kapat"
+        "Loka glugga"
       ],
       "Did not receive the code?": [
-        "Kodu almadınız mı?"
+        "Fékkstu ekki kóðann?"
       ],
       "Edit email address": [
-        "E-posta adresini düzenle"
+        "Breyta netfangi"
       ],
       "Edit phone number": [
-        "Telefon numarasını düzenle"
+        "Breyta símanúmeri"
       ],
       "Get verification code": [
-        "Doğrulama kodu al"
+        "Sækja staðfestingarkóða"
       ],
       "refresh the page": [
-        "sayfayı yenile"
+        "endurlesa síðuna"
       ],
       "Request new code": [
-        "Yeni kod iste"
+        "Biðja um nýjan kóða"
       ],
       "Submit": [
-        "Gönder"
+        "Senda inn"
       ],
       "Try another method": [
-        "Başka bir yöntem deneyin"
+        "Prófa aðra aðferð"
       ],
       "Verify": [
-        "Doğrula"
+        "Sannreyna"
       ],
       "View invoice": [
-        "Faturayı görüntüle"
+        "Skoða reikning"
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Gecikmiş fatura"
+        "Reikningur yfir gjalddaga"
       ]
     },
     "Error": {
       "Can't validate email, try again later": [
-        "E-posta doğrulanamadı. Bir süre sonra yeniden deneyin"
+        "Ekki er hægt að sannreyna tölvupóstfangið, reyndu aftur síðar"
       ],
       "Can't validate phone, try again later": [
-        "Telefon doğrulanamadı. Bir süre sonra yeniden deneyin"
+        "Ekki er hægt að sannreyna símann, reyndu aftur síðar"
       ],
       "Email is not valid": [
-        "E-posta geçersiz"
+        ""
       ],
       "Enter 6 digits": [
-        "6 rakamı yazın"
+        "Sláðu inn 6 tölustafi"
       ],
       "Invalid verification code": [
-        "Doğrulama kodu geçersiz"
+        "Ógildur sannvottunarkóði"
       ],
       "Not a valid number": [
-        "Numara geçerli değil"
+        ""
       ],
       "Passwords do not match": [
-        "Parola ile onayı aynı değil"
+        "Lykilorðin stemma ekki"
       ],
       "Request timed out.": [
-        "İstek zaman aşımına uğradı."
+        "Beiðni rann út á tíma."
       ],
       "This field is required": [
-        "Bu alan zorunludur"
+        "Þessi reitur er nauðsynlegur"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
+        ""
       ],
       "Unknown error": [
-        "Bilinmeyen hata"
+        "Óþekkt villa"
       ]
     },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
-        "Hatayı düzeltene kadar bekleyin."
+        "Taktu því með ró þangað til við höfum lagað vandamálið."
       ],
       "Error: ${ errorMessage }": [
-        "Hata: ${ errorMessage }"
+        ""
       ],
       "Oops, something went wrong": [
-        "Bir şeyler ters gitti"
+        "Úbbs! Eitthvað fór úrskeiðis"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Lütfen ${ refresh } ya da bağlantınızı denetleyin."
+        ""
       ],
       "There was a problem connecting to Proton.": [
-        "Proton bağlantısı kurulurken bir sorun çıktı."
+        ""
       ],
       "You may also ${ refresh } or try again later.": [
-        "Ayrıca ${ refresh } ya da bir süre sonra yeniden deneyebilirsiniz."
+        ""
       ]
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "CAPTCHA-mennskupróf"
       ],
       "Email": [
-        "E-posta"
+        "Tölvupóstur"
       ],
       "Manual": [
-        "El ile"
+        "Handvirkt"
       ],
       "No verification method available": [
-        "Kullanılabilecek bir doğrulama yöntemi yok"
+        "Engin sannvottunaraðgerð tiltæk"
       ],
       "SMS": [
         "SMS"
@@ -124,114 +124,114 @@
     },
     "Info": {
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" üzerine tıklayın."
+        "Smelltu á „Óska eftir nýjum kóða“ til að fá nýjan staðfestingarkóða sendan ${ strong }. Ef þetta netfang er rangt skaltu smella á „Breyta“ til að leiðrétta það."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
+        "Smelltu á „Óska eftir nýjum kóða“ til að fá nýjan staðfestingarkóða sendan ${ strong }. Ef þetta símanúmer er rangt skaltu smella á „Breyta“ til að leiðrétta það."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } adresine gönderilen doğrulama kodunu yazın."
+        "Settu inn sannvottunarkóðann sem sendur var til ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
+        "Ef þú átt í vandræðum með að útbúa notandaaðgang, geturðu sent inn beiðni um aðgang og við munum svara innan næsta virka dags."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyenler kutusuna bakmayı unutmayın."
+        "Ef þú finnur ekki tölvupóstinn í pósthólfinu þínu, skaltu skoða í ruslpóstmöppuna þína."
       ],
       "Internet connection lost.": [
-        "İnternet bağlantısı kesildi."
+        "Nettenging rofnaði."
       ],
       "Loading": [
-        "Yükleniyor"
+        "Hleð inn"
       ],
       "No results found": [
-        "Herhangi bir sonuç bulunamadı"
+        "Engar niðurstöður fundust"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
+        ""
       ],
       "Session timed out.": [
-        "Oturum zaman aşımına uğradı."
+        "Setan rann út á tíma."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+        "Til að koma í veg fyrir ruslpóstsendingar og aðra misnotkun, verðum við að ganga úr skugga um að þú sért mannvera."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Yeni bir doğrulama kodu almak için ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+        "Viltu fá sendan nýjan sannvottunarkóða eða nota aðra aðferð til auðkenningar?"
       ],
       "Your email will only be used for this one-time verification.": [
-        "E-posta adresiniz yalnız bu tek seferlik doğrulama için kullanılacak."
+        "Netfangið þitt verður aðeins notað við þessa einu sinni staðfestingu."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Telefon numaranız yalnız bu tek seferlik doğrulama için kullanılacak."
+        "Símanúmerið þitt verður aðeins notað við þessa einu sinni staðfestingu."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
+        "Proton notandaaðgangurinn þinn er núna í biðstöðu. Til að halda áfram að nota aðganginn þinn þarftu að borga alla ógreidda reikninga."
       ]
     },
     "Label": {
       "Cancel": [
-        "İptal"
+        "Hætta við"
       ],
       "Email address": [
-        "E-posta adresi"
+        "Tölvupóstfang"
       ],
       "Enter the 6-digit code": [
-        "6 rakamlı kodu yazın"
+        "Settu inn 6-stafa kóðann"
       ],
       "Hide password": [
-        "Parolayı gizle"
+        "Fela lykilorð"
       ],
       "Password": [
-        "Parola"
+        "Lykilorð"
       ],
       "Phone number": [
-        "Telefon numarası"
+        "Símanúmer"
       ],
       "Reveal password": [
-        "Parolayı göster"
+        "Birta lykilorð"
       ],
       "Submit": [
-        "Gönder"
+        "Senda inn"
       ],
       "Verification code": [
-        "Doğrulama kodu"
+        "Sannvottunarkóði"
       ]
     },
     "Link": {
       "Learn more": [
-        "Ayrıntılı bilgi alın"
+        "Kanna nánar"
       ],
       "Request an invite": [
-        "Bir davet iste"
+        "Beiðni um boð"
       ]
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "Kod ${ methodTo } ile gönderildi"
+        "Kóði var sendur á ${ methodTo }"
       ],
       "Verification successful": [
-        "Doğrulandı"
+        "Sannvottun tókst"
       ]
     },
     "Title": {
       "Human verification": [
-        "İnsan olduğunuzu doğrulayın"
+        "Mennskupróf"
       ],
       "Invalid verification code": [
-        "Doğrulama kodu geçersiz"
+        "Ógildur sannvottunarkóði"
       ],
       "Request new code": [
-        "Yeni kod iste"
+        ""
       ],
       "Sign in again to continue": [
-        "Devam etmek için yeniden oturum açın"
+        "Skráðu þig inn aftur til að halda áfram"
       ]
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır"
+        "",
+        ""
       ]
     }
   }

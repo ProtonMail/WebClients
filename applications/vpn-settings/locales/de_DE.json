@@ -435,7 +435,7 @@
         "+ ${ members } Nutzer"
       ],
       "+ ${ storage } storage": [
-        "+{ storage } Speicher"
+        "+${ storage } Speicher"
       ],
       "+ ${ vpn } connection": [
         "+ ${ vpn } Verbindung",
@@ -2591,9 +2591,6 @@
       ],
       "Secure Core configs": [
         "„Secure Core”-Konfigurationen"
-      ],
-      "Select a reason": [
-        "Wählen Sie einen Grund"
       ],
       "SMS": [
         "SMS"

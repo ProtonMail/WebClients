@@ -227,6 +227,9 @@
       "Decrease": [
         "減少"
       ],
+      "Decrypt": [
+        "解密"
+      ],
       "Default email application": [
         "預設電子郵件程式"
       ],
@@ -325,6 +328,9 @@
       ],
       "Export": [
         "匯出"
+      ],
+      "Export contact group": [
+        "匯出聯絡人群組"
       ],
       "Export contacts": [
         "匯出聯絡人"
@@ -551,6 +557,9 @@
       "Move to...": [
         "移動至..."
       ],
+      "Need help?": [
+        "需要協助？"
+      ],
       "Never show": [
         "永不顯示"
       ],
@@ -679,6 +688,9 @@
       ],
       "Rename": [
         "重新命名"
+      ],
+      "Reply securely": [
+        "私密回覆"
       ],
       "Report a problem": [
         "回報問題"
@@ -1725,7 +1737,7 @@
         "性別"
       ],
       "Geo": [
-        "經緯"
+        "地理位置"
       ],
       "Language": [
         "語言"
@@ -1752,7 +1764,7 @@
         "相片"
       ],
       "Role": [
-        "角色"
+        "身份"
       ],
       "Timezone": [
         "時區"
@@ -1778,7 +1790,7 @@
         "其他"
       ],
       "Pager": [
-        "呼叫器"
+        "傳呼機"
       ],
       "Personal": [
         "私人"
@@ -2153,6 +2165,9 @@
       "Enter 6 digits": [
         "輸入6位數"
       ],
+      "Enter a password": [
+        "請輸入您的密碼"
+      ],
       "Error connecting to the Bitcoin API.": [
         "連接比特幣 API 時出錯。"
       ],
@@ -2438,6 +2453,9 @@
       "Unknown payment token status": [
         "未知的付款通證狀態"
       ],
+      "Wrong mailbox password": [
+        "密碼錯誤"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "您不得傳送一封電子郵件給超過 100 個收件人"
       ],
@@ -2661,6 +2679,12 @@
       "Invalid response": [
         "無效的回應"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "無法在您的日曆中添加活動。未發送任何答复"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "無法在您的日曆中更新活動。未發送任何答复"
+      ],
       "Unexpected error": [
         "未預期的錯誤"
       ],
@@ -2681,9 +2705,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "您的回答已傳送，惟此事件無法新增到您的行事曆中"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "您的回答已傳送，惟此事件無法在您的行事曆中更新"
       ]
     },
     "Event title": {
@@ -3278,6 +3299,9 @@
       "Background color": [
         "背景色彩"
       ],
+      "Based in Switzerland, available globally": [
+        "立足瑞士，惠及全球"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
       ],
@@ -3385,6 +3409,9 @@
       ],
       "Day": [
         "天"
+      ],
+      "Decrypt message": [
+        "解密訊息"
       ],
       "Default email application": [
         "預設郵件應用程式"
@@ -3549,7 +3576,7 @@
         "若您打算傳送此訊息至一位非 ProtonMail 使用者，請緊記設定訊息密碼。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "若您相信箇中有誤，請聯絡我們：{ contactLink }。"
+        "若您相信箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
@@ -3882,7 +3909,7 @@
         "已附加的螢幕截圖"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        "搜索耗時過長? 請嘗試 ${ dropdownButton } 或 ${ toggle Off Button } 搜索結果。"
+        "搜索耗時過長? 請嘗試 ${ dropdownButton } 或 ${ toggleOffButton } 搜索結果。"
       ],
       "Seems like you are all caught up for now": [
         "看來您處理完您所有的信了！"
@@ -3922,6 +3949,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "因為您是忠誠老朋友，特別為您的帳號啟用附加功能。"
+      ],
+      "Sorry, this message does not exist or has already expired": [
+        "抱歉，此訊息不存在或已過期"
       ],
       "Starter VPN service with P2P support.": [
         "初階 VPN 服務，搭配 P2P 支援。"
@@ -3976,6 +4006,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "您正在嘗試轉寄/回覆的原始郵件仍有待傳送。若您繼續，您將自此刻起無法再取消傳送原始郵件。"
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "此郵件的原寄件者已無效，您的訊息將會從預設電子郵件${ defaultAddress.Email }發出。"
       ],
       "The sender has requested a read receipt.": [
         "寄件人要求發送讀取回條。"
@@ -4175,6 +4208,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "驗證將會開啟新分頁，請停用所有彈出式視窗攔截程式。您將不會被收費。任何用於驗證卡片的金額都會馬上退還。"
       ],
+      "Version ${ appVersion }": [
+        "版本 ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "造訪我們的線上商店以取得 Proton 商品。"
       ],
@@ -4273,6 +4309,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "您的儲存空間容量已達到 100%。請考慮清空部分空間或升級您的帳號以取得額外儲存空間，以便撰寫新郵件。"
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "您以達到五次的回覆上限"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您的 PayPal 帳號須先連結信用卡或銀行賬戶，才能新增為付款方式。"
@@ -5207,6 +5246,12 @@
       "Pay invoice": [
         "支付帳單"
       ],
+      "Previous version": [
+        "先前版本"
+      ],
+      "Privacy policy": [
+        "隱私權政策"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "重新啟用連結至此行事曆的電子郵件地址，以便管理您的邀請。"
       ],
@@ -5222,11 +5267,17 @@
       "Sent": [
         "已傳送"
       ],
+      "Sign up for free": [
+        "免費註冊"
+      ],
       "Spam": [
         "垃圾郵件"
       ],
       "Starred": [
         "已加星號"
+      ],
+      "Terms": [
+        "條款"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "此 ICS 檔案包含超過一個以上的事件。請下載後並在 ${ calendarAppName } 中匯入事件"
@@ -6003,7 +6054,7 @@
         "地址"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Fax": [
         "傳真"
@@ -6021,7 +6072,7 @@
         "其他"
       ],
       "Pager": [
-        "呼叫器"
+        "傳呼機"
       ],
       "Phone": [
         "電話"
@@ -6950,6 +7001,9 @@
       "Processing...": [
         "處理中..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
       ],
@@ -7006,6 +7060,9 @@
       ],
       "Send without expiration?": [
         "不設到期日發送嗎？"
+      ],
+      "Sender changed": [
+        "寄件者已變更"
       ],
       "Sending error": [
         "回報錯誤"
@@ -7175,6 +7232,14 @@
       ],
       "You do not have any contacts to export": [
         "您未有任何聯絡人可以匯出"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "穩定版本"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "此版本的 Tor 瀏覽器已不受支援，請更新至最新版本 ${ stableRelease } 。"
       ]
     },
     "Update font modal": {
@@ -7368,7 +7433,7 @@
         "聯絡人詳細資料的簽章驗證失敗。"
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "此動作無法復原。請在欄位輸入「{ boldDanger }」一詞以繼續。"
+        "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
       ],
       "This feature requires a paid Proton account": [
         "付費的 Proton 帳號才能使用此功能"

@@ -227,6 +227,9 @@
       "Decrease": [
         "Azaltın"
       ],
+      "Decrypt": [
+        "Şifreyi çöz"
+      ],
       "Default email application": [
         "Varsayılan e-posta uygulaması"
       ],
@@ -327,6 +330,9 @@
       ],
       "Export": [
         "Dışa aktar"
+      ],
+      "Export contact group": [
+        "Kişi grubunu dışa aktar"
       ],
       "Export contacts": [
         "Kişileri dışa aktar"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Şuraya taşı..."
       ],
+      "Need help?": [
+        "Yardım mı lazım?"
+      ],
       "Never show": [
         "Asla gösterme"
       ],
@@ -682,6 +691,9 @@
       ],
       "Rename": [
         ""
+      ],
+      "Reply securely": [
+        "Güvenle yanıtla"
       ],
       "Report a problem": [
         "Sorun bildir"
@@ -2173,6 +2185,9 @@
       "Enter 6 digits": [
         "6 hane girin"
       ],
+      "Enter a password": [
+        "Bir şifre girin"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API'sine bağlanırken hata oluştu."
       ],
@@ -2464,6 +2479,9 @@
       "Unknown payment token status": [
         "Bilinmeyen ödeme belirteci durumu"
       ],
+      "Wrong mailbox password": [
+        "Yanlış posta kutusu parolası"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "100'den fazla alıcıya ileti gönderemezsiniz"
       ],
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Geçersiz yanıt"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Etkinlik takviminize eklenemedi. Hiçbir yanıt gönderilmedi"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Etkinlik takviminizde güncellenemedi. Hiçbir yanıt gönderilmedi"
+      ],
       "Unexpected error": [
         "Beklenmeyen hata"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Cevabınız gönderildi, ancak etkinlik takviminize eklenemedi"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Cevabınız gönderildi, ancak etkinlik takviminizde güncellenemedi"
       ]
     },
     "Event title": {
@@ -3346,6 +3367,9 @@
       "Background color": [
         "Arka plan rengi"
       ],
+      "Based in Switzerland, available globally": [
+        "İsviçre merkezli, küresel olarak erişilebilir"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
       ],
@@ -3455,6 +3479,9 @@
       "Day": [
         "Gün",
         "gün"
+      ],
+      "Decrypt message": [
+        "İletinin şifresini çöz"
       ],
       "Default email application": [
         "Varsayılan e-posta uygulaması"
@@ -4002,6 +4029,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirilmiştir."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        "Üzgünüz, bu ileti mevcut değil ya da süresi dolmuş"
+      ],
       "Starter VPN service with P2P support.": [
         "P2P destekli başlangıç ​​VPN hizmeti."
       ],
@@ -4055,6 +4085,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Yönlendirmeye veya yanıtlamaya çalıştığınız iletinin aslı halen gönderilmekte. Devam ederseniz asıl iletinin gönderilmesini geri alamayacaksınız."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "Bu mesajın asıl göndericisi artık geçerli bir kullanıcı değil. Mesajınız varsayılan ${ defaultAddress.Email } adresinizden gönderilecek."
       ],
       "The sender has requested a read receipt.": [
         "Gönderen bir okundu bilgisi istedi."
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama yeni bir sekme açacak, lütfen tüm açılır pencere engelleyicilerini devre dışı bırakın. Ücretlendirilmeyeceksiniz. Kartı doğrulamak için kullanılan herhangi bir ücret hemen iade edilecektir."
       ],
+      "Version ${ appVersion }": [
+        "Sürüm ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Proton satılık ürünlerini almak için marketimizi ziyaret edin."
       ],
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Depolama kapasitenizin %100'üne ulaştınız. Yeni iletiler oluşturmak için yer açmayı veya hesabınızı yükseltmeyi düşünün."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Maksimum 5 cevap sayısına ulaştınız."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Onu, bir ödeme yöntemi olarak eklemek için PayPal hesabınıza bağlı bir kredi kartınız ya da banka hesabınızın olması gerekir."
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Fatura ödeme"
       ],
+      "Previous version": [
+        "Önceki sürüm"
+      ],
+      "Privacy policy": [
+        "Gizlilik politikası"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Davetinizi yönetmek için bu takvime bağlı adresi yeniden etkinleştirin."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Gönderilen"
       ],
+      "Sign up for free": [
+        "Ücretsiz kaydolun"
+      ],
       "Spam": [
         "Gereksiz"
       ],
       "Starred": [
         "Yıldızlı"
+      ],
+      "Terms": [
+        "Şartlar"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Bu ICS dosyası birden fazla etkinlik içeriyor. Lütfen dosyayı indirin ve ${ calendarAppName } içine aktarın"
@@ -6438,7 +6489,7 @@
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı.",
-        "${ elementsCount } ileti ${ folderName }'üne taşındı."
+        "${ elementsCount } ileti ${ folderName } klasörüne taşındı."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
         "${ elementsCount } ileti gereksiz klasörüne taşındı ve gönderici Engellenen Listesine eklendi.",
@@ -7090,6 +7141,9 @@
       "Processing...": [
         "İşleniyor..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
       ],
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "Sonlanma süresi olmadan gönderilsin mi?"
+      ],
+      "Sender changed": [
+        "Gönderici hesabı değiştirildi"
       ],
       "Sending error": [
         "Gönderme hatası"
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "Dışa aktarılacak kişiniz yok"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "istikrarlı sürüm"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tor Tarayıcısının bu sürümü desteklenmemektedir. Lütfen en son ${ stableRelease } sürümünü yükleyin"
       ]
     },
     "Update font modal": {
