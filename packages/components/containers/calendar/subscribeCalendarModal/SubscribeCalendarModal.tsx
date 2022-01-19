@@ -145,6 +145,7 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
 ${kbLink}
 `}</p>
                             <InputFieldTwo
+                                compact
                                 autoFocus
                                 hint={
                                     <span className={classnames([isURLMaxLength && 'color-warning'])}>
