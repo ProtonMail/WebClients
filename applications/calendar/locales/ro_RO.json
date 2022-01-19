@@ -204,6 +204,9 @@
       "Export": [
         "Exportare"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Exportare contacte"
       ],
@@ -1950,6 +1953,12 @@
       "Invalid response": [
         "Răspuns nevalid"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Eroare neașteptată"
       ],
@@ -1970,9 +1979,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar."
       ]
     },
     "Event popover close button": {
@@ -3297,9 +3303,6 @@
       "All day": [
         "Toată ziua"
       ],
-      "All-day event notifications": [
-        "Notificări evenimente toată ziua"
-      ],
       "Automatically save contacts": [
         "Salvare automată contacte"
       ],
@@ -3357,6 +3360,18 @@
       "Date and time": [
         "Data și ora"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Descriere"
       ],
@@ -3392,12 +3407,6 @@
       ],
       "Enter the 6-digit code": [
         "Introduceți codul din 6 cifre"
-      ],
-      "Event duration": [
-        "Durată eveniment"
-      ],
-      "Event notifications": [
-        "Notificări eveniment"
       ],
       "Event title": [
         "Titlu eveniment"
@@ -4587,6 +4596,11 @@
     "Select search results": {
       "No results found": [
         "Nu s-au găsit rezultate"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

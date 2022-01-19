@@ -196,6 +196,9 @@
       "Continue import": [
         "インポートを続行"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Googleで続行"
       ],
@@ -667,6 +670,9 @@
       "Sign out all accounts": [
         "すべてのアカウントからサインアウト"
       ],
+      "Sign out from": [
+        ""
+      ],
       "Signing in": [
         "サインイン中"
       ],
@@ -770,7 +776,7 @@
         ""
       ],
       "Use “${ label }” setting": [
-        "「{ label }」設定を使用する"
+        "「${ label }」設定を使用する"
       ],
       "User": [
         "ユーザー"
@@ -1748,8 +1754,8 @@
       "Error in one of the conditions": [
         "いずれかの条件にエラーがあります"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "アクティブなセッションを取得できませんでした。更新するか、後でもう一度お試しください。"
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "ファイルにプレビューするコンテンツがありません"
@@ -2749,7 +2755,7 @@
         "また、ブラウザで ${ boldGoogleAccounts } のサインアウトを試し、 ${ linkCAPTCHA } をロックを解除することもできます。"
       ],
       "your app password is correct. Do ${ boldNot } use your regular password": [
-        "アプリのパスワードは正しいです。{ boldNot } 通常のパスワードを使用してください"
+        "アプリのパスワードは正しいです。${ boldNot } 通常のパスワードを使用してください"
       ],
       "your email account requires an app password to export your data": [
         "あなたの電子メールアカウントは、データをエクスポートするためにアプリのパスワードを必要としています。"
@@ -2758,7 +2764,7 @@
         "あなたのメールアカウントはあなたのデータをエクスポートするために必要です"
       ],
       "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "メールアドレスとアプリのパスワードは正しいです。{ boldNot } 通常のパスワードを使用してください"
+        "メールアドレスとアプリのパスワードは正しいです。${ boldNot } 通常のパスワードを使用してください"
       ],
       "your email address and password are correct": [
         "あなたのメールアドレスとパスワードは正しいです"
@@ -4098,6 +4104,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "${ professionalPlan } に切り替えることでさらにユーザーを追加できます。"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
+      ],
       "Test link": [
         "リンクのテスト"
       ],
@@ -4230,6 +4239,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "インターネット接続を保護するには、ProtonVPN アプリケーションをダウンロード・インストールし、ProtonVPN サーバーに接続します。"
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "新規プランに登録したり、現在のプランを更新するときに使えるクレジットをアカウントにチャージします。${ i18nCurrency } ごとに 1 クレジットを取得できます。"
       ],
@@ -4269,11 +4281,11 @@
       "Update recovery phrase": [
         "リカバリーフレーズを更新"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "${ PLAN_NAMES[PLANS.VISIONARY] } または ${ PLAN_NAMES[PLANS.PROFESSIONAL] } プランにアップグレードすることで不在の場合に自動リプライを有効にすることができます。"
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "この機能を利用するには ${ PLAN_NAMES[PLANS.VISIONARY] } または ${ PLAN_NAMES[PLANS.PROFESSIONAL] } プランにアップグレードしてください。"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        ""
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "有料プランにアップグレードすると、プレミアム機能にアクセスでき、ストレージ容量を増やせます。"
@@ -4983,9 +4995,6 @@
       "ALL": [
         "すべて"
       ],
-      "All-day event notifications": [
-        "終日イベントの通知"
-      ],
       "Allow recovery by email": [
         "メールアドレスでの回復を許可"
       ],
@@ -5148,11 +5157,23 @@
       "Days of the week": [
         "曜日"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "デフォルトの言語"
       ],
       "Default language (${ defaultLanguage })": [
         "標準の言語 (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        ""
       ],
       "Default PGP scheme": [
         "標準 PGP 方式"
@@ -5231,12 +5252,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         ""
-      ],
-      "Event duration": [
-        "イベントの期間"
-      ],
-      "Event notifications": [
-        "イベントの通知"
       ],
       "Expires": [
         "有効期限"
@@ -7039,6 +7054,11 @@
       ],
       "VPN apps": [
         "VPN アプリ"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Settings/filters": {

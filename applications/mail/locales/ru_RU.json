@@ -227,6 +227,9 @@
       "Decrease": [
         "Уменьшить"
       ],
+      "Decrypt": [
+        "Расшифровать"
+      ],
       "Default email application": [
         "Приложение электронной почты по умолчанию"
       ],
@@ -331,6 +334,9 @@
       ],
       "Export": [
         "Экспорт"
+      ],
+      "Export contact group": [
+        "Экспорт группы контактов"
       ],
       "Export contacts": [
         "Экспортировать контакты"
@@ -560,6 +566,9 @@
       "Move to...": [
         "Переместить в..."
       ],
+      "Need help?": [
+        "Нужна помощь?"
+      ],
       "Never show": [
         "Никогда не показывать"
       ],
@@ -688,6 +697,9 @@
       ],
       "Rename": [
         "Переименовать"
+      ],
+      "Reply securely": [
+        "Ответить безопасно"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -2199,7 +2211,7 @@
         "Черновик не сохранился. Попробуйте еще раз."
       ],
       "Email address disabled": [
-        "Адрес электронной почты неактивен"
+        "Адрес электронной почты отключен"
       ],
       "Email address invalid": [
         "Неверный адрес электронной почты"
@@ -2212,6 +2224,9 @@
       ],
       "Enter 6 digits": [
         "Введите 6 цифр"
+      ],
+      "Enter a password": [
+        "Введите пароль"
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к Bitcoin API."
@@ -2274,7 +2289,7 @@
         "Неправильный файл публичного ключа"
       ],
       "Invalid verification code": [
-        "Неверный проверочный код"
+        "Неверный код подтверждения"
       ],
       "Label name cannot be empty": [
         "Название ярлыка не может быть пустым"
@@ -2516,6 +2531,9 @@
       "Unknown payment token status": [
         "Неизвестный статус платежного токена"
       ],
+      "Wrong mailbox password": [
+        "Неправильный пароль почтового ящика"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Нельзя отправить письмо более чем 100 получателям"
       ],
@@ -2742,6 +2760,12 @@
       "Invalid response": [
         "Ошибка сервера"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Событие невозможно добавить в ваш календарь. Ответ не отправлен"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Непредвиденная ошибка"
       ],
@@ -2762,9 +2786,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Ваш ответ отправлен, но событие не может быть добавлено в ваш календарь"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ваш ответ отправлен, но событие не может быть обновлено в Вашем календаре"
       ]
     },
     "Event title": {
@@ -3482,6 +3503,9 @@
       "Background color": [
         "Цвет фона"
       ],
+      "Based in Switzerland, available globally": [
+        "Находится в Швейцарии, доступна везде"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
       ],
@@ -3596,6 +3620,9 @@
         "Дня",
         "Дня(ей)"
       ],
+      "Decrypt message": [
+        "Расшифровать сообщение"
+      ],
       "Default email application": [
         "Приложение электронной почты по умолчанию"
       ],
@@ -3687,7 +3714,7 @@
         "Оставшееся время: ${ estimatedMinutes } минута",
         "Оставшееся время: ${ estimatedMinutes } минуты",
         "Оставшееся время: ${ estimatedMinutes } минут",
-        "Оставшееся время:{ estimatedMinutes } минут"
+        "Оставшееся время: ${ estimatedMinutes } минут"
       ],
       "Estimated time remaining: Less than a minute": [
         "Оставшееся время: меньше минуты"
@@ -4160,6 +4187,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы - наш постоянный пользователь, в вашем аккаунте включены дополнительные функции."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        "Извините, это сообщение не существует или срок его действия уже истек"
+      ],
       "Starter VPN service with P2P support.": [
         "Сервис VPN начального уровня с поддержкой P2P."
       ],
@@ -4213,6 +4243,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Исходное сообщение, которое вы пытаетесь переслать или ответ на которое вы пытаетесь отправить, находится в процессе отправки. Если вы продолжите, то больше не сможете отменить отправку исходного сообщения."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "Первоначальный отправитель этого сообщения больше не действителен. Ваше сообщение будет отправлено с адреса по умолчанию ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "Отправитель запросил квитанцию о прочтении."
@@ -4415,6 +4448,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка откроет новую вкладку, пожалуйста, отключите все блокировщики всплывающих окон. С вас не будет снята плата. Любая сумма, использованная для верификации карты, будет немедленно возвращена."
       ],
+      "Version ${ appVersion }": [
+        "Версия ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Посетите наш магазин, чтобы приобрести товары Proton."
       ],
@@ -4525,6 +4561,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Вы достигли 100% ёмкости своего хранилища. Подумайте насчёт освобождения некоторого объёма или улучшения своей учётной записи дополнительным объёмом для создания новых сообщений."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Вы достигли максимального количества в 5 ответов."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Вы должны иметь кредитную карту или банковский счет, привязанный к вашему счету PayPal, чтобы добавить ее как способ оплаты."
@@ -5477,6 +5516,12 @@
       "Pay invoice": [
         "Оплатить счёт"
       ],
+      "Previous version": [
+        "Предыдущая версия"
+      ],
+      "Privacy policy": [
+        "Политика конфиденциальности"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Повторно включите адрес, связанный с этим календарем, для управления вашим приглашением."
       ],
@@ -5492,11 +5537,17 @@
       "Sent": [
         "Отправленные"
       ],
+      "Sign up for free": [
+        "Зарегистрируйтесь бесплатно"
+      ],
       "Spam": [
         "Спам"
       ],
       "Starred": [
         "Со звёздами"
+      ],
+      "Terms": [
+        "Правила"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Этот ICS файл календаря содержит более, чем одно событие. Пожалуйста, скачайте его и импортируйте события в ${ calendarAppName }"
@@ -5580,7 +5631,7 @@
         "Автоответчик"
       ],
       "Catch-All email": [
-        "Получение писем всех адресов домена"
+        "Эл. почта для приема всей почты домена"
       ],
       "Contact groups": [
         "Группы контактов"
@@ -7370,6 +7421,9 @@
       "Processing...": [
         "Обработка..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "Переподписать все контакты"
       ],
@@ -7426,6 +7480,9 @@
       ],
       "Send without expiration?": [
         "Отправить без истечения срока действия?"
+      ],
+      "Sender changed": [
+        "Отправитель изменен"
       ],
       "Sending error": [
         "Ошибка отправки"
@@ -7598,6 +7655,14 @@
       ],
       "You do not have any contacts to export": [
         "У вас нет контактов для экспорта"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "стабильная версия"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней версии ${ stableRelease }"
       ]
     },
     "Update font modal": {

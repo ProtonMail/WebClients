@@ -227,6 +227,9 @@
       "Decrease": [
         "Verlagen"
       ],
+      "Decrypt": [
+        ""
+      ],
       "Default email application": [
         "Standaard e-mailapplicatie"
       ],
@@ -327,6 +330,9 @@
       ],
       "Export": [
         "Exporteren"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Contactpersonen exporteren"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Verplaats naar..."
       ],
+      "Need help?": [
+        ""
+      ],
       "Never show": [
         "Nooit tonen"
       ],
@@ -682,6 +691,9 @@
       ],
       "Rename": [
         "Hernoem"
+      ],
+      "Reply securely": [
+        ""
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -2173,6 +2185,9 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
+      "Enter a password": [
+        ""
+      ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin-API."
       ],
@@ -2464,6 +2479,9 @@
       "Unknown payment token status": [
         "Onbekende status van betalingstoken"
       ],
+      "Wrong mailbox password": [
+        ""
+      ],
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
       ],
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Ongeldige reactie"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Onverwachte fout"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Uw antwoord werd verzonden, maar de afspraak kon niet worden toegevoegd aan uw agenda"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Uw antwoord is verzonden, maar de afspraak kon niet worden bijgewerkt in uw agenda"
       ]
     },
     "Event title": {
@@ -3346,6 +3367,9 @@
       "Background color": [
         "Achtergrondkleur"
       ],
+      "Based in Switzerland, available globally": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
@@ -3455,6 +3479,9 @@
       "Day": [
         "Dag",
         "Dagen"
+      ],
+      "Decrypt message": [
+        ""
       ],
       "Default email application": [
         "Standaard e-mailapplicatie"
@@ -4002,6 +4029,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Starter VPN-service met P2P-ondersteuning."
       ],
@@ -4055,6 +4085,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Het oorspronkelijke bericht dat u probeert door te sturen/te reageren, is in het proces van verzonden worden. Als u doorgaat, kunt u het oorspronkelijke bericht niet meer ongedaan maken."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "De zender heeft om een leesbevestiging gevraagd."
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
       ],
+      "Version ${ appVersion }": [
+        ""
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Bezoek onze winkel voor Proton merchandise."
       ],
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "U heeft 100% van uw opslagruimte gebruikt. Maak wat ruimte vrij of upgrade uw abonnement om nieuwe berichten te verzenden."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "U moet een kredietkaart of een bankrekening gekoppeld hebben aan uw PayPal-account om deze toe te voegen als betaalmethode."
@@ -5223,7 +5262,7 @@
         "Alle e-mail"
       ],
       "Archive": [
-        "Archiveren"
+        "Archief"
       ],
       "clearing your browser cache": [
         "browsercache legen"
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Factuur betalen"
       ],
+      "Previous version": [
+        ""
+      ],
+      "Privacy policy": [
+        ""
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging te beheren."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Verzonden"
       ],
+      "Sign up for free": [
+        ""
+      ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
         "Met ster"
+      ],
+      "Terms": [
+        ""
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Dit ICS-bestand bevat meer dan één gebeurtenis. Download het en importeer de gebeurtenissen in ${ calendarAppName }"
@@ -5474,7 +5525,7 @@
     },
     "Mailbox": {
       "Archive": [
-        "Archiveren"
+        "Archief"
       ],
       "Drafts": [
         "Concepten"
@@ -7090,6 +7141,9 @@
       "Processing...": [
         "Wordt verwerkt..."
       ],
+      "ProtonMail": [
+        ""
+      ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
       ],
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "Versturen zonder verlooptijd?"
+      ],
+      "Sender changed": [
+        ""
       ],
       "Sending error": [
         "Fout bij verzenden"
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "U heeft geen contactpersonen om te exporteren"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

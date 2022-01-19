@@ -196,6 +196,9 @@
       "Continue import": [
         "Import fortsetzen"
       ],
+      "Continue with": [
+        "Fortfahren mit"
+      ],
       "Continue with Google": [
         "Weiter mit Google"
       ],
@@ -667,6 +670,9 @@
       "Sign out all accounts": [
         "Von allen Konten abmelden"
       ],
+      "Sign out from": [
+        "Abmelden von"
+      ],
       "Signing in": [
         "Anmelden"
       ],
@@ -728,7 +734,7 @@
         "Abbestellen"
       ],
       "Update": [
-        "Update"
+        "Aktualisieren"
       ],
       "Update recovery file": [
         "Wiederherstellungsdatei aktualisieren"
@@ -833,7 +839,7 @@
         "+ ${ members } Nutzer"
       ],
       "+ ${ storage } storage": [
-        "+{ storage } Speicher"
+        "+${ storage } Speicher"
       ],
       "+ ${ vpn } connection": [
         "+ ${ vpn } Verbindung",
@@ -951,7 +957,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "Ich bin nicht im Büro und habe nur begrenzten Zugriff auf meine Postfach."
+        "Ich bin nicht im Büro und habe nur begrenzten Zugriff auf mein Postfach."
       ]
     },
     "Badge for domain": {
@@ -1300,10 +1306,10 @@
     },
     "Confirm": {
       "Are you sure you want to delete this key without backing it up?": [
-        "Möchten Sie diesen Schlüssel wirklich löschen, ohne ihn zuvor gesichert zu haben?"
+        "Möchtest du diesen Schlüssel wirklich löschen, ohne ihn zuvor gesichert zu haben?"
       ],
       "Are you sure you want to permanently delete this key?": [
-        "Möchten Sie diesen Schlüssel wirklich dauerhaft löschen?"
+        "Möchtest du diesen Schlüssel wirklich dauerhaft löschen?"
       ],
       "Do you want to export your key?": [
         "Möchten Sie Ihren Schlüssel exportieren?"
@@ -1509,11 +1515,11 @@
         "Es scheint, dass die zu importierende Kontaktliste einige Gruppen enthält. Bitte überprüfen Sie, wie diese Gruppen importiert werden sollen."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf.",
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf."
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Sie können Ereignisse im iCal-Format (ICS-Datei) importieren. Die Datei darf maximal ${ MAX_IMPORT_FILE_SIZE_STRING } groß sein und bis zu ${ MAX_IMPORT_EVENTS_STRING } Ereignisse enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf."
+        "Sie können Ereignisse im iCal-Format (ICS-Datei) importieren. Die Datei darf maximal ${ MAX_IMPORT_FILE_SIZE_STRING } groß sein und bis zu ${ MAX_IMPORT_EVENTS_STRING } Ereignisse enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -1703,7 +1709,7 @@
         "Authentifizierungsfehler."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatische Antworten sind eine kostenpflichtige Funktion. Bitte führen Sie ein Umstieg auf ein kostenpflichtiges Konto durch, um diese Funktion nutzen zu können."
+        "Automatische Antworten sind eine kostenpflichtige Funktion. Bitte führe ein Umstieg auf ein kostenpflichtiges Konto durch, um diese Funktion nutzen zu können."
       ],
       "Calendar limit reached": [
         "Max. Anzahl von Kalendern erreicht"
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Fehler in einer der Bedingungen"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Aktive Sitzungen konnten nicht genutzt werden. Bitte aktualisieren oder versuchen Sie es später noch einmal."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        "Aktive Sitzungen konnten nicht erhalten werden. Bitte ${ refresh } oder später erneut versuchen."
       ],
       "File has no contents to preview": [
         "Vorschau nicht möglich, da die Datei keinen Inhalt enthält"
@@ -1783,7 +1789,7 @@
         "Bitte Namen des Ordners angeben"
       ],
       "Incorrect login credentials. Please try again": [
-        "Ungültige Anmeldedaten. Bitte versuchen Sie es erneut."
+        "Falsche Anmeldedaten. Bitte versuchen es erneut"
       ],
       "Incorrect mailbox password. Please try again": [
         "Ungültiges Postfachpasswort. Bitte versuchen Sie es erneut."
@@ -1905,7 +1911,7 @@
         "Bitte aktualisieren Sie die Seite."
       ],
       "Please set a recovery email first": [
-        "Bitte legen Sie zunächst eine Wiederherstellungs-E-Mail fest"
+        "Bitte lege zunächst eine Wiederherstellungs-E-Mail fest"
       ],
       "Please set a recovery phone number first": [
         "Bitte zuerst eine Wiederherstellungsrufnummer festlegen"
@@ -1917,7 +1923,7 @@
         "Bitte versuchen Sie, sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt wurden."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        "Bitte wechseln Sie zu einem Professional-Abonnement mit mehr als 1 Benutzer oder zu einem Visionary-Konto, um Unterstützung für mehrere Benutzer zu erhalten"
+        "Bitte wechsle zu einem Professional-Abonnement mit mehr als 1 Benutzer oder zu einem Visionary-Konto, um Unterstützung für mehrere Benutzer zu erhalten"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Bitte wechseln Sie auf ein Professional-Abonnement mit mehr als einem Benutzer oder ein Visionary-Konto, um mehrere Benutzer verwalten zu können."
@@ -2031,7 +2037,7 @@
         "Die hochgeladenen Dateien sind keine gültige privaten Schlüssel. Bitte überprüfen Sie die Dateien und versuchen Sie es erneut."
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "Die Überprüfung konnte nicht abgeschlossen werden. Bitte versuchen Sie es in einer Stunde erneut."
+        "Die Überprüfung konnte nicht abgeschlossen werden. Bitte versuche es in einer Stunde erneut."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Wir haben die DKIM-Signierung aufgrund von Problemen mit Ihrer DNS-Konfiguration gestoppt. Bitte folgen Sie den untenstehenden Anweisungen, um die Signierung erneut aufzunehmen."
@@ -2043,7 +2049,7 @@
         "Wiederherstellungsphrase ungültig. Versuchen Sie es erneut oder verwenden Sie eine andere Wiederherstellungsmethode."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Ungültiger Bestätigungscode. Bitte stellen Sie sicher, dass Sie den Bestätigungscode korrekt kopiert haben und versuchen Sie es erneut. Es kann bis zu 24 Stunden dauern, bis Änderungen wirksam werden."
+        "Ungültiger Bestätigungscode. Bitte stelle sicher, dass du den Bestätigungscode korrekt kopiert hast und versuche es erneut. Es kann bis zu 24 Stunden dauern, bis Änderungen wirksam werden."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sie haben den Zugriff auf Ihre Organisationsschlüssel verloren. Ohne deren Wiederherstellung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
@@ -2070,7 +2076,7 @@
         "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
       ],
       "Your import will not be processed.": [
-        "Ihr Import wird nicht verarbeitet."
+        "Dein Import wird nicht verarbeitet."
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
@@ -2476,10 +2482,10 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Fügen Sie einen benutzerdefinierten Filter hinzu, um bestimmte Aktionen, wie das Kategorisieren oder Archivieren von Nachrichten, automatisch durchzuführen."
+        "Füge einen benutzerdefinierten Filter hinzu, um bestimmte Aktionen, wie das Kategorisieren oder Archivieren von Nachrichten, automatisch durchzuführen."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Wenden Sie absenderspezifische Spam-Regeln an. Nachrichten von E-Mail-Adressen oder Domains, die in der Freigabeliste aufgeführt sind, landen immer in Ihrem Posteingang, während Nachrichten von E-Mail-Adressen oder Domains, die in der Sperrliste aufgeführt sind, immer in den Spamordner verschoben werden. Wenn Sie eine Nachricht als Spam kennzeichnen, wird die E-Mail-Adresse zur Sperrliste hinzugefügt. Wenn Sie eine Nachricht als Kein Spam kennzeichnen, wird sie der Freigabeliste hinzugefügt."
+        "Wende absenderspezifische Spam-Regeln an. Nachrichten von E-Mail-Adressen oder Domains, die in der Freigabeliste aufgeführt sind, landen immer in deinem Posteingang, während Nachrichten von E-Mail-Adressen oder Domains, die in der Sperrliste aufgeführt sind, immer in den Spamordner verschoben werden. Wenn du eine Nachricht als Spam kennzeichnest, wird die E-Mail-Adresse zur Sperrliste hinzugefügt. Wenn du eine Nachricht als Kein Spam kennzeichnest, wird sie der Freigabeliste hinzugefügt."
       ],
       "Search in Allow List and Block List": [
         "Freigabe- und Sperrliste durchsuchen"
@@ -2497,7 +2503,7 @@
     },
     "Free price": {
       "Free": [
-        "Kostenl."
+        "Kostenlos"
       ]
     },
     "Frequency of news": {
@@ -2719,10 +2725,10 @@
         "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen Ihres Google-Kontos aktiviert."
       ],
       "2-step verification is enabled in your external account": [
-        "Die 2-Schritt-Verifizierung in Ihrem externen Konto aktiviert ist"
+        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist"
       ],
       "2-step verification is enabled in your external email account": [
-        "Die 2-Schritt-Bestäigung ist Ihrem externen E-Mail-Konto aktiviert ist"
+        "Die 2-Schritt-Bestäigung ist deinem externen E-Mail-Konto aktiviert ist"
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Wenn ${ bold2StepsDisabled } (Google Mail Standardeinstellungen), stellen Sie bitte sicher, dass:"
@@ -2737,64 +2743,64 @@
         "Wenn ${ bold2StepsEnabled }, stellen Sie bitte sicher, dass Ihre E-Mail-Adresse und Ihr App-Passwort korrekt sind. Verwenden Sie ${ boldNot } Ihr reguläres Passwort!"
       ],
       "IMAP access is enabled in your external account": [
-        "Der IMAP-Zugang in Ihrem externen Konto ist aktiviert."
+        "Der IMAP-Zugang in deinem externen Konto ist aktiviert"
       ],
       "IMAP access is enabled in your Yahoo account": [
-        "Der IMAP-Zugang in Ihrem Yahoo-Konto ist aktiviert"
+        "Der IMAP-Zugang in deinem Yahoo-Konto ist aktiviert"
       ],
       "Invalid IMAP port": [
         "Ungültiger IMAP-Port"
       ],
       "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton konnte keine Verbindung zu Ihrem Konto herstellen. Bitte stellen Sie sicher, dass der IMAP-Zugang von Google Mail aktiviert ist."
+        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass der IMAP-Zugang von Google Mail aktiviert ist."
       ],
       "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton konnte keine Verbindung zu Ihrem Konto herstellen. Bitte stellen Sie sicher, dass in Ihrem Google Mail-Konto der IMAP-Zugang aktiviert ist."
+        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass in deinem Google Mail-Konto der IMAP-Zugang aktiviert ist."
       ],
       "Proton can't connect to your account. Please make sure that:": [
-        "Proton konnte keine Verbindung zu Ihrem Konto herstellen. Bitte stellen Sie sicher, dass:"
+        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass:"
       ],
       "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton konnte keine Verbindung zu Ihrem externen Konto herstellen. Bitte stellen Sie sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
+        "Proton konnte keine Verbindung zu deinem externen Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
       ],
       "Proton can't connect to your external account. Please make sure that:": [
-        "Proton konnte keine Verbindung zu Ihrem externen Konto herstellen. Bitte stellen Sie sicher, dass:"
+        "Proton konnte keine Verbindung zu deinem externen Konto herstellen. Bitte stelle sicher, dass:"
       ],
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton konnte keine Verbindung zu Ihrem Google Mail-Konto herstellen. Bitte stellen Sie sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
+        "Proton konnte keine Verbindung zu deinem Google Mail-Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
       ],
       "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton konnte keine Verbindung zu Ihrem Yahoo Mail-Konto herstellen. Bitte stellen Sie sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
+        "Proton konnte keine Verbindung zu deinem Yahoo Mail-Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
       ],
       "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton konnte keine Verbindung zu Ihrem Yahoo Mail-Konto herstellen. Bitte stellen Sie sicher, dass:"
+        "Proton konnte keine Verbindung zu deinem Yahoo Mail-Konto herstellen. Bitte stelle sicher, dass:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zu viele neue Anfragen. Bitte versuchen Sie es in wenigen Augenblicken noch einmal."
       ],
       "Use your app password if:": [
-        "Verwenden Sie Ihr App-Passwort, wenn:"
+        "Verwende dein App-Passwort, wenn:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Verwenden Sie Ihr App-Passwort anstelle Ihres regulären Passworts, wenn:"
+        "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
       ],
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Sie können auch versuchen, sich von „${ boldGoogleAccounts }” im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
       ],
       "your app password is correct. Do ${ boldNot } use your regular password": [
-        "Ihr App-Passwort ist korrekt. Verwenden Sie ${ boldNot } Ihr reguläres Passwort."
+        "dein App-Passwort ist korrekt. Verwende ${ boldNot } dein reguläres Passwort"
       ],
       "your email account requires an app password to export your data": [
-        "Ihr E-Mail-Konto ein App-Passwort erfordert, um Ihre Daten exportieren zu können"
+        "dein E-Mail-Konto ein App-Passwort erfordert, um deine Daten exportieren zu können"
       ],
       "your email account requires one to export your data": [
         "Ihr E-Mail-Konto ein solches erfordert, um Ihre Daten zu exportieren"
       ],
       "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "Ihre E-Mail-Adresse ist korrekt. Verwenden Sie ${ boldNot } Ihr reguläres Passwort."
+        "deine E-Mail-Adresse ist korrekt. Verwende ${ boldNot } dein reguläres Passwort"
       ],
       "your email address and password are correct": [
-        "Ihre E-Mail-Adresse und Ihr Passwort sind korrekt"
+        "deine E-Mail-Adresse und dein Passwort korrekt sind"
       ],
       "your password is correct": [
         "Ihr Passwort ist gültig"
@@ -2973,7 +2979,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Möchten Sie wirklich einen privaten Schlüssel importieren? Der Import eines unsicher erzeugten oder entwendeten privaten Schlüssels kann die Sicherheit Ihrer E-Mails beeinträchtigen.\n\nBitte beachten Sie auch, dass der öffentliche Schlüssel, der diesem privaten Schlüssel entspricht, auf unserem Schlüsselserver öffentlich zugänglich ist. Wenn der Schlüssel persönliche Daten enthält (z. B. Ihren vollständigen Namen), die Sie aber nicht veröffentlichen möchten, bearbeiten Sie ihn bitte, bevor Sie ihn importieren."
+        "Möchtest du wirklich einen privaten Schlüssel importieren? Der Import eines unsicher erzeugten oder entwendeten privaten Schlüssels kann die Sicherheit deiner E-Mails beeinträchtigen.\n\nBitte beachte ebenfalls, dass der öffentliche Schlüssel, der diesem privaten Schlüssel entspricht, auf unserem Schlüsselserver öffentlich zugänglich ist. Wenn der Schlüssel persönliche Daten enthält (z. B. Deinen vollständigen Namen), den du aber nicht veröffentlichen möchtest, bearbeite ihn bitte, bevor du ihn importierst."
       ]
     },
     "Import provider": {
@@ -3062,7 +3068,7 @@
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
       "${ mailAppName } Free": [
-        "${ mailAppName } kostenlos"
+        "${ mailAppName } Free"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
         "${ mailAppName } Professional beginnt mit einem Benutzer, und jeder Benutzer fügt dem Speicher der Organisation weitere 5 GB und 5 E-Mail-Adressen hinzu."
@@ -3106,10 +3112,10 @@
         "${ save20 } bei Ihrem Abonnement, durch den Wechsel zu ${ annualBilling }"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } sowohl bei Mail und VPN, indem Sie ein Mail-Abonnement hinzufügen."
+        "${ saveExtra20 } sowohl bei Mail und VPN, indem du ein Mail-Abonnement hinzufügst."
       ],
       "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } sowohl bei VPN und Mail, indem Sie ein VPN-Abonnement hinzufügen."
+        "${ saveExtra20 } sowohl bei VPN und Mail, indem du ein VPN-Abonnement hinzufügst."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
@@ -3135,7 +3141,7 @@
         "${ strongAddressAvailable } Mit dieser E-Mail-Adresse können Sie sich bei allen Diensten von ${ BRAND_NAME } anmelden."
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } kostenlos"
+        "${ vpnAppName } Free"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtern, wenn ALLE der folgenden Bedingungen erfüllt sind)"
@@ -3178,7 +3184,7 @@
         "Greifen Sie auf Ihre Streaming-Dienste zu, wie ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, egal wo Sie sich aufhalten."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Der Zugriff auf das Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wenden Sie sich an Ihren Administrator."
+        "Der Zugriff auf das Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
       "account recovery and data recovery method": [
         "Konten- und Datenwiederherstellungsmethode"
@@ -3190,7 +3196,7 @@
         "Konto erfolgreich aktualisiert"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Fügen Sie Ihrem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"ProtonMail me\" oder \"Private Message me\"."
+        "Fügen deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"ProtonMail me\" oder \"Private Message me\"."
       ],
       "Add a recovery email address": [
         "Emailadresse zur Wiederherstellung hinzufügen"
@@ -3212,7 +3218,7 @@
         "Adressen"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Die Adressverifizierung ist eine erweiterte Sicherheitsfunktion. Aktivieren Sie dies nur, wenn Sie wissen, was dies bedeutet."
+        "Die Adressverifizierung ist eine erweiterte Sicherheitsfunktion. Aktiviere dies nur, wenn du sicher bist, was dies bedeutet."
       ],
       "Addresses": [
         "Adressen"
@@ -3280,16 +3286,16 @@
         "Möchten Sie diesen Kalender wirklich löschen?"
       ],
       "Are you sure you want to delete this domain?": [
-        "Möchten Sie diese Domain wirklich löschen?"
+        "Möchtest du diese Domain wirklich löschen?"
       ],
       "Are you sure you want to delete this filter?": [
-        "Möchten Sie diesen Filter wirklich löschen?"
+        "Möchtest du diesen Filter wirklich löschen?"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
         "Bist du sicher, dass du diesen Ordner löschen möchtest? Alle Unterordner werden ebenfalls gelöscht."
       ],
       "Are you sure you want to delete this label?": [
-        "Möchten Sie diese Kategorie wirklich löschen?"
+        "Möchtest du diese Kategorie wirklich löschen?"
       ],
       "Are you sure you want to discard your changes?": [
         "Möchten Sie Ihre Änderungen wirklich verwerfen?"
@@ -3334,7 +3340,7 @@
         "Bevor Sie E-Mails unter ihren eigenen Domain-Adressen in ProtonMail empfangen können, müssen Sie zuerst folgenden MX-Eintrag zu Ihrer DNS hinzufügen. Dies kann in der Regel im Kontrollinterface Ihres Domainanbieters durchgeführt werden."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Bevor Sie mit dem Senden und Empfangen von Nachrichten von Ihren neuen E-Mail-Adressen beginnen können, müssen Verschlüsselungscodes dafür erstellt werden."
+        "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Abgerechnet mit ${ billedPrice } alle 2 Jahre"
@@ -3364,7 +3370,7 @@
         "Durch den Wechsel auf das kostenlose Abonnement verlieren Sie diese Leistungen dauerhaft, auch wenn Sie in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigen."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Durch die Herabstufung verlieren Sie die folgenden Vorteile. Möchten Sie wirklich fortfahren?"
+        "Durch die Herabstufung verlierst du die folgenden Vorteile. Möchtest du wirklich fortfahren?"
       ],
       "By leaving now, changes may not be saved": [
         "Beim Verlassen werden Änderungen möglicherweise nicht gespeichert"
@@ -3379,7 +3385,7 @@
         "Prüfen Sie den Status aktueller und früherer Importvorgänge."
       ],
       "Choose the look and feel of the application.": [
-        "Wählen Sie das Erscheinungsbild der Anwendung."
+        "Wähle das Erscheinungsbild der Anwendung."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
@@ -3410,7 +3416,7 @@
         "Erstellen Sie einen Link zu Ihrem Kalender und teilen Sie ihn mit allen Personen außerhalb von Proton. Nur Sie selbst können Ereignisse hinzufügen oder entfernen."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "Erstellen und verwalten Sie Unterkonten und weisen Sie ihnen E-Mail-Adressen in Ihrer eigenen Domain zu."
+        "Erstelle und verwalten Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Sie können E-Mail-Adressen für andere Personen erstellen und ProtonMail für ein Unternehmen, eine Schule oder eine Gruppe verwalten. Beginnen Sie, indem Sie Ihren Organisationsnamen und Ihre eigene Domain (z. B. @MeineFirma.de) hinzufügen. "
@@ -3470,7 +3476,7 @@
         "Verwenden Sie die OpenVPN-/IKEv2-Zugangsdaten NICHT in ProtonVPN-Anwendungen oder in der ProtonVPN-Übersicht. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "Möchten Sie alle anderen (außer der aktuellen) Sitzungen widerrufen?"
+        "Möchtest du alle anderen (außer der aktuellen) Sitzungen widerrufen?"
       ],
       "domain used": [
         "Domain verwendet",
@@ -3495,7 +3501,7 @@
         "Laden Sie noch heute diese großartige App herunter und nehmen Sie Ihre Privatsphäre überall hin mit."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "Laden Sie Ihre PGP-Schlüssel zur Verwendung mit anderen PGP-kompatiblen Diensten herunter."
+        "Lade deine PGP-Schlüssel zur Verwendung mit anderen PGP-kompatiblen Diensten herunter."
       ],
       "Drop the file here to upload": [
         "Datei zum Hochladen hier hinein ziehen"
@@ -3513,10 +3519,10 @@
         "E-Mail-Einstellungen gespeichert"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-Mails, die in diesem Ordner gespeichert sind, werden nicht gelöscht und können weiterhin im Ordner „Alle Nachrichten” verfügbar."
+        "E-Mails, die in diesem Ordner abgelegt sind, werden nicht gelöscht und sind weiterhin im Ordner „Alle Nachrichten” verfügbar."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-Mails, die mit diesem Kategorie gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
+        "E-Mails, die mit dieser Kategorie gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Wenn Sie die Wiederherstellung nach Phrase erneut aktivieren, wird eine neue Wiederherstellungsphrase generiert."
@@ -3534,7 +3540,7 @@
         "Geben Sie den an „${ email }” gesendeten Code ein. Sollten Sie die Nachricht nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Geben Sie die Anmeldedaten des E-Mail-Kontos ein, aus dem Sie Daten importieren möchten."
+        "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Geben Sie das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
@@ -3606,7 +3612,7 @@
         "Wenn Sie eine neue Wiederherstellungsphrase erstellen, wird damit Ihre bisherige Phrase deaktiviert."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Geben Sie Ihren öffentlichen Schlüssel an Ihre Freunde weiter oder veröffentlichen Sie ihn online, so dass Ihnen jeder Ende-zu-Ende verschlüsselte E-Mails senden kann!"
+        "Gib deinen öffentlichen Schlüssel an deine Freunde weiter oder veröffentliche ihn online, so dass dir jeder Ende-zu-Ende verschlüsselte E-Mails senden kann!"
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google zeichnet Ihre Online-Aktivität auf und liest Ihre persönlichen Daten aus, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz erstellen Sie eine sichere E-Mail-Adresse."
@@ -3636,25 +3642,25 @@
         "Sollten Sie die E-Mail nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
       ],
       "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Wenn Sie eine eigene Domain mit ProtonMail nutzen, können Sie eine Catch-All-E-Mail-Adresse festlegen, die Nachrichten empfängt, die an Ihre Domain, aber an eine ungültige E-Mail-Adresse (z.B. durch Tippfehler) gesendet werden."
+        "Wenn du eine eigene Domain mit ProtonMail nutzt, kannst du eine Catch-All-E-Mail-Adresse festlegen, die Nachrichten empfängt, welche an deine Domain, aber an eine ungültige E-Mail-Adresse (z.B. durch Tippfehler) gesendet werden."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Wenn Sie einen Geschenkgutschein haben, geben Sie den Code unten ein, um Ihren Rabatt einzulösen."
+        "Wenn du einen Geschenkgutschein habst, gib den Code unten ein, um deinen Rabatt einzulösen."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Wenn Sie Zwei-Faktor-Authentifizierung noch nie zuvor verwendet haben, empfehlen wir Ihnen dringend ${ guideButton }."
+        "Wenn du Zwei-Faktor-Authentifizierung noch nie zuvor verwendet hast, empfehlen wir dir dringend ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Wenn Sie sowohl SPF als auch DKIM eingerichtet haben, können Sie mit DMARC festlegen, wie andere E-Mail-Dienste Nachrichten für Ihre Domain zustellen sollen, wenn sowohl SPF- als auch DKIM-Prüfungen fehlgeschlagen sind. Dies kann es Spammern erschweren, Ihre Identität vorzutäuschen - kann aber auch zu Zustellungsproblemen führen, wenn dies nicht ordnungsgemäß eingestellt ist."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Wenn Sie Ihre Anmeldedaten verlieren und deshalb Ihr Konto zurücksetzen müssen, ist es ${ boldImperative } dass Sie eine ${ boldAccountRecovery } eingerichtet haben."
+        "Wenn du deine Anmeldedaten verlierst und deshalb dein Konto zurücksetzen musst, ist es ${ boldImperative } dass du eine ${ boldAccountRecovery } eingerichtet hast."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Wenn Sie Ihre Anmeldedaten verlieren und Ihr Konto zurücksetzen müssen, ${ boldImperative } wichtig, dass Sie sowohl ein ${ boldAccountAndRecovery } eingerichtet haben, da Sie sonst möglicherweise nicht auf Ihre E-Mails, Kontakte oder Dateien zugreifen können."
+        "Wenn du deine Anmeldedaten verlierst und dein Konto zurücksetzen musst, ist es ${ boldImperative } wichtig, dass du sowohl eine ${ boldAccountAndRecovery } eingerichtet hast, da du sonst möglicherweise nicht auf deine E-Mails, Kontakte oder Dateien zugreifen kannst."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Wenn Sie Ihr bestätigtes 2-Faktor-Gerät verlieren, können diese Codes anstelle des 6-stelligen Zwei-Faktor-Authentifizierung-Codes verwendet werden, um sich in Ihrem Konto anzumelden. Jeder Code kann nur einmal verwendet werden."
+        "Wenn du dein bestätigtes 2-Faktor-Gerät verlierst, können diese Codes anstelle des 6-stelligen Zwei-Faktor-Authentifizierung-Codes verwendet werden, um dich wieder in deinem Konto anzumelden. Jeder Code kann nur einmal verwendet werden."
       ],
       "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
         "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu den kostenpflichtigen Funktionen von ProtonMail und ProtonVPN."
@@ -3697,10 +3703,10 @@
         "Importiere deine E-Mails, Kalender und Kontakte von einem anderen Dienst zu Proton. Wir begleiten dich bei jedem Schritt und verschlüsseln deine Daten während des Transfers. Willkommen in der Welt des Datenschutzes."
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "WICHTIG: Das Herunterladen und Versenden Ihrer privaten Schlüssel oder das Speichern auf unsicheren Medien kann die Sicherheit Ihres Kontos gefährden!"
+        "WICHTIG: Das Herunterladen und Versenden deines privaten Schlüssels oder das Speichern auf unsicheren Medien kann die Sicherheit deines Kontos gefährden!"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Wichtig: Bitte stellen Sie sicher, dass Sie Ihre Wiederherstellungscodes speichern. Andernfalls können Sie den Zugriff auf Ihr Konto dauerhaft verlieren, wenn Sie Ihr Gerät zur Zwei-Faktor-Authentifizierung verlieren."
+        "Wichtig: Bitte stelle sicher, dass du deine Wiederherstellungscodes speicherst. Andernfalls kannst du den Zugriff auf dein Konto dauerhaft verlieren, wenn du dein Gerät zur Zwei-Faktor-Authentifizierung verlierst."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "WICHTIG: Einige Registrare akzeptieren keine CNAME-Werte mit einem Punkt am Ende (während andere dies wiederum vorschreiben). Wenn Ihr Registrar Ihre CNAME-Einträge nicht akzeptiert, löschen Sie bitte den Punkt am Ende jedes CNAME-Wertes und versuchen Sie es erneut."
@@ -3709,10 +3715,10 @@
         "Ihrer Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Sollten Sie Ihre Anmeldedaten verlieren, senden wir Ihnen eine Anleitung zur Wiederherstellung als E-Mail oder SMS."
+        "Solltest du deine Anmeldedaten verlieren, senden wir dir eine Anleitung zur Wiederherstellung als E-Mail oder SMS."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        "Sollten Sie Ihre Anmeldedaten verlieren, senden wir Ihnen eine Anleitung zur Wiederherstellung als E-Mail."
+        "Solltest du deine Anmeldedaten verlieren, senden wir dir eine Anleitung zur Wiederherstellung als E-Mail."
       ],
       "Included": [
         "Enthalten"
@@ -3781,7 +3787,7 @@
         "Von links nach rechts"
       ],
       "Let your contacts know you care about their privacy.": [
-        "Lassen Sie Ihre Kontakte wissen, dass Sie deren Privatsphäre ernst nehmen."
+        "Lasse deine Kontakte wissen, dass du Ihre Privatsphäre ernst nimmst"
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
         "Eingeschränkte Ansicht: andere können erkennen, ob Sie beschäftigt sind. Vollansicht: zeigt alle Ereignisdetails, einschließlich Name, Ort oder Teilnehmer."
@@ -3811,7 +3817,7 @@
         "Melde dich bei ProtonMail an, um deine Adresse zu aktivieren"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Die Protokolle enthalten Authentifizierungsversuche für alle Proton-Dienste, welche Ihre Proton-Anmeldedaten verwenden."
+        "Die Protokolle enthalten Authentifizierungsversuche für alle Proton-Dienste, welche deine Proton-Anmeldedaten verwenden."
       ],
       "lose access to all current encrypted data": [
         "den Zugriff auf alle derzeit verschlüsselten Daten verlieren"
@@ -3820,10 +3826,10 @@
         "Mail.ru liest Ihre persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Achten Sie darauf, dass Sie sich das Passwort zum Anmelden und Entschlüsseln von E-Mails merken. ${ boldAlert }. Wir empfehlen, zuerst eine Wiederherstellungs-E-Mail-Adresse hinzuzufügen."
+        "Achte darauf, dass du dir das Passwort zum Anmelden und Entschlüsseln von E-Mails merkst. ${ boldAlert }. Wir empfehlen, zuerst eine Wiederherstellungs-E-Mail-Adresse hinzuzufügen."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Geben Sie diese Informationen manuell in Ihr Zwei‐Faktor‐Authentifizierungsgerät ein, um Ihr Konto einzurichten. ${ _switchButton }."
+        "Gib diese Informationen manuell in dein Zwei‐Faktor‐Authentifizierungsgerät ein, um dein Konto einzurichten. ${ _switchButton }."
       ],
       "Merged": [
         "Zusammengeführt"
@@ -3850,10 +3856,10 @@
         "Neu bei ${ BRAND_NAME }? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Als Nächstes müssen Sie sich bei Ihrem Google-Konto anmelden und ProtonMail den Zugriff auf Ihre Daten erlauben."
+        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und ProtonMail den Zugriff auf deine Daten erlauben."
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Wenn keine Methode zur Wiederherstellung des Kontos festgelegt wurde, besteht die Gefahr, dass Sie den Zugriff auf Ihr Konto unwiderruflich verlieren könnten"
+        "Wenn keine Methode zur Wiederherstellung des Kontos festgelegt wurde, besteht die Gefahr, dass du den Zugriff auf dein Konto unwiderruflich verlierst"
       ],
       "No action selected": [
         "Keine Aktion ausgewählt"
@@ -3919,7 +3925,7 @@
         "Ein Konto für alle Proton-Dienste"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Ändern Sie diese Einstellungen nur, wenn Sie PGP mit Nicht-ProtonMail-Empfängern verwenden."
+        "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-ProtonMail-Empfängern verwendest."
       ],
       "Only you can see the labels.": [
         "Die Kategorien sind nur für Sie sichtbar."
@@ -3958,13 +3964,13 @@
         "Rufnummer"
       ],
       "Plain text": [
-        "Reintext"
+        "Klartext"
       ],
       "Plan upgrade required": [
         "Umstieg auf ein anderes Abo erforderlich"
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
-        "Bitte geben Sie ein Passwort ein, um Ihren privaten Schlüssel vor dem Export zu verschlüsseln."
+        "Bitte gib ein Passwort ein, um deinen privaten Schlüssel vor dem Export zu verschlüsseln."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Bitte geben Sie die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit Ihrem Konto verknüpft ist."
@@ -3976,10 +3982,10 @@
         "Bitte beachten Sie, dass Sie, wenn Sie diese E-Mail-Adresse löschen, keine E-Mails mehr darüber senden oder empfangen können."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Bitte beachten Sie, dass, wenn Sie diese Domain löschen, alle damit verbundenen E-Mail-Adressen deaktiviert werden."
+        "Bitte beachte, dass, wenn du diese Domain löschst, alle damit verbundenen E-Mail-Adressen deaktiviert werden."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Bitte beachten Sie, dass durch das Löschen dieses Filters die Verarbeitung aller automatisiert ausgelösten Aktionen beendet wird."
+        "Bitte beachte, dass durch das Löschen dieses Filters die Verarbeitung aller automatisiert ausgelösten Aktionen beendet wird."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben."
@@ -4015,13 +4021,13 @@
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        "Verhindert, dass Inhalte vom Server des Absenders ohne Ihre Zustimmung geladen werden."
+        "Verhindert, dass Inhalte vom Server des Absenders ohne deine Zustimmung geladen werden."
       ],
       "Preview": [
         "Vorschau"
       ],
       "Proton can't help you recover any lost passwords": [
-        "Proton kann Ihnen nicht helfen, verlorene Passwörter wiederherzustellen"
+        "Proton kann dir nicht helfen, verlorene Passwörter wiederherzustellen"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton hat einen Importvorgang angehalten, weil die Verbindung zu Ihrem anderen E-Mail-Provider unterbrochen wurde. Bitte stellen Sie die Verbindung wieder her."
@@ -4033,10 +4039,10 @@
         "Proton wird versuchen, den Import fortzusetzen, sobald Ihr E-Mail-Anbieter die ${ bandwithLimitLink } Ihres Kontos zurücksetzt. Sie brauchen nichts weiter zu unternehmen. Wenn Sie den Import abbrechen, können Sie ihn nicht mehr fortsetzen und er muss erneut begonnen werden."
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Postfachpasswort ersetzt. Um in den Einzelpasswort-Modus zu wechseln, geben Sie das gewünschte Einzelpasswort ein und klicken Sie auf „Speichern”."
+        "ProtonMail kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Postfachpasswort ersetzt. Um in den Einzelpasswort-Modus zu wechseln, gib das gewünschte Einzelpasswort ein und klicken auf „Speichern”."
       ],
       "ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        "Mit ProtonMail können Sie E-Mail-Adressen für andere Personen erstellen. Dies ist perfekt für Unternehmen, Familien oder Gruppen."
+        "Mit ProtonMail kannst du E-Mail-Adressen für andere Personen erstellen. Dies ist perfekt für Unternehmen, Familien oder Gruppen."
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus ist auf einen Benutzer beschränkt und beginnt bei 5 GB Speicherplatz."
@@ -4094,7 +4100,7 @@
         "Sparen Sie 20%"
       ],
       "Save extra 20%": [
-        "Sparen Sie weitere 20 %"
+        "Spare weitere 20 %"
       ],
       "Save your password somewhere safe.": [
         "Bewahren Sie Ihr Passwort an einem sicheren Ort auf."
@@ -4106,7 +4112,7 @@
         "Stattdessen QR-Code scannen"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scannen Sie diesen Code mit Ihrem Zwei-Faktor-Authentifizierungsgerät, um Ihr Konto einzurichten. ${ switchButton }."
+        "Scanne diesen Code mit deinem Zwei-Faktor-Authentifizierungsgerät, um dein Konto einzurichten. ${ switchButton }."
       ],
       "Screenshot(s) attached": [
         "Bildschirmfoto(s) hinzugefügt"
@@ -4151,10 +4157,13 @@
         "Support-Team"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "Wechseln Sie zu ${ professionalPlan }, um weitere Verbindungen hinzufügen zu können."
+        "Wechsle zu ${ professionalPlan }, um weitere Verbindungen hinzuzufügen."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "Wechseln Sie zu ${ professionalPlan }, um weitere Benutzer hinzufügen zu können."
+        "Wechsle zu ${ professionalPlan }, um weitere Benutzer hinzuzufügen."
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
       "Test link": [
         "Link testen"
@@ -4175,7 +4184,7 @@
         "Der Kalender wird aus Ihrem Konto entfernt."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Die E-Mail-Adresse, die Sie an den Anfang der Liste setzen, ist Ihre Standard-E-Mail-Adresse. Durch Ziehen und Ablegen können Sie Ihre Adressen neu anordnen."
+        "Die E-Mail-Adresse, die du an den Anfang der Liste setzt, ist deine Standard-E-Mail-Adresse. Durch Ziehen und Ablegen kannst du deine Adressen neu anordnen."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Mit der App „Import-Export” können Sie Nachrichten als lokale Datensicherung exportieren und frühere Sicherungen in Ihrem Konto wiederherstellen."
@@ -4184,7 +4193,7 @@
         "Der Name wird für Ihre Benutzer sichtbar sein, solange sie angemeldet sind."
       ],
       "There are no billing details available for your current subscription.": [
-        "Für Ihr aktuelles Abonnement sind keine Zahlungsinformationen verfügbar."
+        "Für dein aktuelles Abonnement sind keine Zahlungsinformationen verfügbar."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Mit diesen Konfigurationsdateien können Sie festlegen, mit welchem ProtonVPN-Server Sie sich verbinden möchten, wenn Sie eine VPN-App eines Drittanbieters verwenden oder eine VPN-Verbindung auf einem Router einrichten."
@@ -4202,7 +4211,7 @@
         "Diese E-Mail-Adresse wird nur für Wiederherstellungszwecke verwendet."
       ],
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Diese Funktion ist nur für fortgeschrittene Benutzer gedacht. Nach dem Löschen dieses Schlüssels können Sie KEINE Nachricht entschlüsseln, die mit diesem Schlüssel verschlüsselt wurde. Dies kann zu Datenverlust führen."
+        "Diese Funktion ist nur für fortgeschrittene Benutzer gedacht. Nach dem Löschen dieses Schlüssels kannt du KEINE Nachricht entschlüsseln, die mit diesem Schlüssel verschlüsselt wurden. Dies kann zu Datenverlust führen."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Es handelt sich dabei um einen Satz mit 12 Wörtern, den Sie eingeben sollten."
@@ -4232,7 +4241,7 @@
         "Dadurch wird auch jede mit diesem Konto verknüpften 2-Faktor-Authentifizierungsmethode deaktiviert."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Dadurch wird Ihr aktuelles kostenpflichtiges Abonnement aufgehoben und Sie verlieren alle angesammelten Treuevorteile. Der verbleibende Restbetrag Ihres Abonnements wird als Kontoguthaben zurückerstattet."
+        "Dadurch wird dein aktuelles kostenpflichtiges Abonnement aufgehoben und du verlierst alle angesammelten Treuevorteile. Der verbleibende Restbetrag deines Abonnements wird als Kontoguthaben zurückerstattet."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Dadurch wird ein Verschlüsselungscode für Ihre Organisation erstellt. 4096-Bit-Schlüssel funktionieren nur auf Hochleistungscomputern. Für die meisten Benutzer empfehlen wir die Verwendung von 2048-Bit-Schlüsseln."
@@ -4241,7 +4250,7 @@
         "Dadurch wird Ihre aktuelle Wiederherstellungsphrase deaktiviert. Sie sind dann nicht mehr in der Lage, auf Ihr Konto zuzugreifen oder Ihre Daten zu entschlüsseln."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dadurch kann PayPal zur Bezahlung Ihres Proton-Abonnements verwendet werden. Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, bevor Sie fortfahren."
+        "Dadurch kann PayPal zur Bezahlung deines Proton-Abonnements verwendet werden. Wir werden dich in einem neuen Browser-Tab zu PayPal weiterleiten. Wenn du Popup-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Dadurch werden die Daten und alle mit diesem Benutzer verbundenen E-Mail-Adressen dauerhaft gelöscht."
@@ -4256,7 +4265,7 @@
         "Dadurch werden Sie von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf Ihrem Proton-Konto. Zwei-Faktor-Authentifizierung wird Ihr Proton-Konto sicherer machen, daher empfehlen wir Ihnen, diese zu aktivieren."
+        "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf deinem Proton-Konto. Zwei-Faktor-Authentifizierung wird dein Proton-Konto sicherer machen, daher empfehlen wir dir, diese zu aktivieren."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Zur Bestätigung geben Sie bitte den Namen des zu löschenden Benutzers ein."
@@ -4280,13 +4289,16 @@
         "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Um über die neuesten Entwicklungen bei den Proton-Produkten informiert zu werden, können Sie unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren Blog besuchen."
+        "Um über die neuesten Entwicklungen bei den Proton-Produkten informiert zu werden, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren Blog besuchen."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Um fortzufahren, wählen Sie eine Kontenwiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Um Ihre Internetverbindung zu schützen, laden Sie die ProtonVPN-App für Ihr Gerät herunter, installieren Sie diese und verbinden Sie sich mit einem ProtonVPN-Server."
+      ],
+      "To use ${ toAppName }, please create an address.": [
+        "Um ${ toAppName } zu verwenden, erstelle bitte eine E-Mail-Adresse."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Laden Sie Ihr Konto mit Guthaben auf, mit dem Sie ein anderes Abonnement abschließen oder Ihre aktuelles Abonnement verlängern können. Sie erhalten ein Guthaben für jeden ${ i18nCurrency }, der ausgegeben wird."
@@ -4327,17 +4339,17 @@
       "Update recovery phrase": [
         "Wiederherstellungsphrase aktualisieren"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Wechseln Sie zu einem ${ PLAN_NAMES[PLANS.VISIONARY] }- oder ${ PLAN_NAMES[PLANS.PROFESSIONAL] }-Paket, um automatisches Antworten zu aktivieren, wenn Sie nicht im Büro sind."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
-        "Wechseln Sie zu einem ${ PLAN_NAMES[PLANS.VISIONARY] } oder ${ PLAN_NAMES[PLANS.PROFESSIONAL] } Abonnement, um loszulegen."
+        "Wechsle zu einem ${ PLAN_NAMES[PLANS.VISIONARY] } oder ${ PLAN_NAMES[PLANS.PROFESSIONAL] } Abonnement, um loszulegen."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "Um automatisches Antworten zu aktivieren, wenn du nicht im Büro bist, wechsle zu einem ${ PLAN_NAMES[PLANS.VISIONARY] }-, ${ PLAN_NAMES[PLANS.PROFESSIONAL] }- oder ${ PLAN_NAMES[PLANS.PLUS] }-Abonnement."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Wechseln Sie zu einem kostenpflichtigen Paket, um Premium-Funktionen freizuschalten und Ihren Speicherplatz zu erweitern."
+        "Wechsle zu einem kostenpflichtigen Paket, um Premium-Funktionen freizuschalten und deinen Speicherplatz zu erweitern."
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Wechseln Sie zu einem kostenpflichtigen Abonnement, um die IMAP/SMTP-Unterstützung durch ProtonMail Bridge freizuschalten."
+        "Wechsle zu einem kostenpflichtigen Abonnement, um die IMAP/SMTP-Unterstützung durch ProtonMail Bridge freizuschalten."
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -4418,16 +4430,16 @@
         "Sie erhalten dann einen Rücksetzungscode an die Rufnummer, die Sie für die Wiederherstellung Ihres Kontos angegeben haben."
       ],
       "What do you want to import from your Google account?": [
-        "Was möchten Sie aus Ihrem Google-Konto importieren?"
+        "Was möchtest du aus deinem Google-Konto importieren?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Wenn diese Funktion deaktiviert ist, verhindert sie, dass Bilddateien ohne Ihr Wissen auf Ihr Gerät geladen werden."
+        "Wenn diese Funktion deaktiviert ist, verhindert sie, dass Bilddateien ohne dein Wissen auf dein Gerät geladen werden."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Wenn Mitteilungen aktiviert sind, senden wir eine Benachrichtigung an Ihre Wiederherstellungs-/Benachrichtigungsadresse, wenn neue Nachrichten in Ihrem ProtonMail-Konto vorhanden sind."
+        "Wenn Mitteilungen aktiviert sind, senden wir eine Benachrichtigung an deine Wiederherstellungs-/Benachrichtigungsadresse, wenn neue Nachrichten in deinem ProtonMail-Konto vorhanden sind."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Wenn Ihr Abonnement verlängert wird, werden wir alle verfügbaren Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
+        "Wenn dein Abonnement verlängert wird, werden wir alle verfügbaren Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ohne Aktivierung ist es Ihnen nicht möglich, neue Benutzer anzulegen, E-Mail-Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
@@ -4472,13 +4484,13 @@
         "Du kannst jeweils nur einen Datentyp importieren."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Sie können jetzt Nachrichten an Ihre @pm.me-Adresse empfangen. Wechseln Sie zu einem kostenpflichtigen Abonnement, um E-Mails auch über Ihre @pm.me-Adresse zu versenden und weitere @pm.me-Adressen anzulegen."
+        "Du kannst jetzt Nachrichten an deine @pm.me-Adresse empfangen. Wechsle zu einem kostenpflichtigen Abonnement, um E-Mails auch über deine @pm.me-Adresse zu versenden und weitere @pm.me-Adressen anzulegen."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Sie können Benachrichtigungen aktivieren, um eine Benachrichtigung zu erhalten, wenn neue E-Mail-Nachrichten in diesem Ordner eintreffen."
       ],
       "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Sie können ProtonMail mit jedem Desktop-E-Mail-Client verwenden, der die Protokolle IMAP/SMTP unterstützt, einschließlich Outlook, Apple Mail und Thunderbird."
+        "Du kannst ProtonMail mit jedem Desktop-E-Mail-Client verwenden, der die Protokolle IMAP/SMTP unterstützt, einschließlich Outlook, Apple Mail und Thunderbird."
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Sie können die folgenden Anmeldedaten verwenden, um sich mit einer Open-Source-VPN-App eines Drittanbieters, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux, mit einem ProtonVPN-Server zu verbinden."
@@ -4490,7 +4502,7 @@
         "Sie haben keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls Sie Ihr Passwort vergessen. Trotzdem ohne Wiederherstellungs-Möglichkeit fortfahren?"
       ],
       "You have no saved payment methods.": [
-        "Sie haben keine Zahlungsmethoden festgelegt."
+        "Du hast keine Zahlungsmethoden festgelegt."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Sie müssen den privaten Schlüssel Ihrer Organisation mit dem Passwort für den gesicherten Organisationsschlüssel aktivieren, das Sie von Ihrem Organisationsadministrator erhalten haben."
@@ -4502,7 +4514,7 @@
         "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Es muss eine Kreditkarte oder ein Bankkonto mit Ihrem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicken Sie bitte auf die nachfolgende Schaltfläche."
+        "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicke bitte auf die nachfolgende Schaltfläche."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
         "Sie müssen alle hinzugefügten persönlichen Kalender und alle Verknüpfungen zu freigegebenen Kalendern aufheben, bevor Sie Ihr Abonnement kündigen können. ${ linkButton }"
@@ -4514,7 +4526,7 @@
         "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine mittels .ics Datei zu importieren."
       ],
       "You need to have an active personal calendar to import your events.": [
-        "Sie müssen einen aktiven persönlichen Kalender nutzen, um Ihre Termine importieren zu können."
+        "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine importieren zu können."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Sie haben ${ spaceDisplayed }% Ihrer Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
@@ -4550,19 +4562,19 @@
         "Ihr Konto wird gerade umgestellt, dies kann bis zu 30 Sekunden dauern."
       ],
       "Your account recovery method is set": [
-        "Ihre Kontenwiederherstellungsmethode wurde festgelegt"
+        "Deine Kontowiederherstellungsmethode wurde festgelegt"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ihr Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
       "Your Allow List is empty.": [
-        "Ihre Freigabeliste ist leer."
+        "Deine Freigabeliste ist leer."
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Ihre Bank erfordert aus Sicherheitsgründen eine 3-D-Sicherheitsüberprüfung."
       ],
       "Your Block List is empty.": [
-        "Ihre Sperrliste ist leer."
+        "Deine Sperrliste ist leer."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ihre Daten von ${ importedEmailAddressStrong } können nun in Ihr Proton-Konto übertragen werden."
@@ -4577,10 +4589,10 @@
         "Ihr Import vom Konto ${ delayedImport.Account } verzögert sich vorübergehend."
       ],
       "Your import will not be processed.": [
-        "Ihr Import wird nicht verarbeitet."
+        "Dein Import wird nicht verarbeitet."
       ],
       "Your login information will not be saved after the import is completed.": [
-        "Ihre Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
+        "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ihr Organisationspasswort kann mit anderen Benutzern geteilt werden, wenn Sie diesen Administrationsberechtigungen erteilen möchten. Es ist auch ein Notfall-Wiederherstellungscode, um Zugriff auf Ihre Organisation zu erhalten, wenn Sie den Zugriff auf Ihr Konto verlieren. Bitte speichern Sie dieses Passwort sicher ab."
@@ -4650,7 +4662,7 @@
         "Fügen Sie einen neuen Benutzer Ihrer Organisation hinzu und erstellen Sie für ihn eine E-Mail-Adresse."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Aus Sicherheitsgründen müssen wir überprüfen, ob Sie der Eigentümer von „${ domainName }” sind. Bitte fügen Sie den folgenden DNS-TXT-Eintrag zu Ihrer Domain hinzu. Dies kann normalerweise in der Systemsteuerung Ihres Domainnamen-Registrators erfolgen."
+        "Aus Sicherheitsgründen müssen wir überprüfen, ob du der Eigentümer von ${ domainName } bist. Bitte füge den folgenden DNS-TXT-Eintrag zu deiner Domain hinzu. Dies kann normalerweise in der Systemsteuerung deines Domainnamen-Registrars erfolgen."
       ]
     },
     "Info for members section": {
@@ -4660,12 +4672,12 @@
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "Sie können eine Zahlungsmethode hinzufügen, um Ihr Abonnement automatisch zu erneuern. Weitere Zahlungsarten sind ebenfalls verfügbar."
+        "Du kannst eine Zahlungsmethode hinzufügen, um dein Abonnement automatisch zu erneuern. Weitere Zahlungsarten sind ebenfalls verfügbar."
       ]
     },
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
-        "Fügen Sie Ihren Namen (oder Firmennamen) und Ihre Adresse zu Ihren Rechnungen hinzu."
+        "Füge deinen Namen (oder Firmennamen) und deine Adresse zu deinen Rechnungen hinzu."
       ]
     },
     "Info on errors": {
@@ -4737,7 +4749,7 @@
         "Es existiert bereits ein Schlüssel mit demselben Verschlüsselungsalgorithmus. Das Erzeugen eines anderen Schlüssels führt zu einem langsameren Laden des Kontos. Möchten Sie wirklich fortfahren?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Für diese Adresse ist bereits ein Schlüssel mit identischem Verschlüsselungsalgorithmus aktiv. Das Erzeugen eines weiteren Schlüssels führt zu einem langsameren Laden des Kontos und das Löschen dieses Schlüssels kann zu Problemen führen. Wenn Sie einen neuen Schlüssel erstellen, weil Ihr alter Schlüssel gefährdet ist, markieren Sie diesen Schlüssel bitte als gefährdet. Möchten Sie wirklich fortfahren?"
+        "Für diese Adresse ist bereits ein Schlüssel mit identischem Verschlüsselungsalgorithmus aktiv. Das Erzeugen eines weiteren Schlüssels führt zu einem langsameren Laden des Kontos und das Löschen dieses Schlüssels kann zu Problemen führen. Wenn du einen neuen Schlüssel erstellst, weil dein alter Schlüssel gefährdet ist, markiere diesen Schlüssel bitte als gefährdet. Möchtest du wirklich fortfahren?"
       ],
       "Generate key": [
         "Schlüssel erzeugen"
@@ -4777,10 +4789,10 @@
     },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Langsamer, aber bessere Kompatibilität mit älterer Software)"
+        "${ compatibility } RSA 4096-bit (Langsamer, bietet bessere Kompatibilität mit älterer Software)"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } ECC Curve25519 (Schnellste, modernste)"
+        "${ stateOfTheArt } ECC Curve25519 (Schnellste und modernste Methode)"
       ]
     },
     "Keyboard shortcut name": {
@@ -5045,9 +5057,6 @@
       "ALL": [
         "ALLE"
       ],
-      "All-day event notifications": [
-        "Benachrichtigungen zu ganztägigen Ereignissen"
-      ],
       "Allow recovery by email": [
         "Wiederherstellung per E-Mail zulassen"
       ],
@@ -5210,11 +5219,23 @@
       "Days of the week": [
         "Tage der Woche"
       ],
+      "Default email address": [
+        "Standard E-Mail-Adresse"
+      ],
+      "Default event duration": [
+        "Standarddauer für Termine"
+      ],
+      "Default full day notifications": [
+        "Standardbenachrichtigungen für ganztägige Termine"
+      ],
       "Default language": [
         "Standardsprache"
       ],
       "Default language (${ defaultLanguage })": [
         "Standardsprache (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Standard-Benachrichtigungen"
       ],
       "Default PGP scheme": [
         "Standard PGP-Schema"
@@ -5292,13 +5313,7 @@
         "6-stelligen Code eingeben"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
-        "Geben Sie das Passwort für den Schlüssel mit dem Fingerabdruck ein: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Dauer des Ereignisses"
-      ],
-      "Event notifications": [
-        "Ereignisbenachrichtigungen"
+        "Gib das Passwort für den Schlüssel mit dem folgenden Fingerabdruck ein: ${ fingerprintCode }"
       ],
       "Expires": [
         "Gültig bis"
@@ -5706,7 +5721,7 @@
         "Möchte hinzufügen"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Wir bedauern es sehr, dass Sie ProtonMail nicht mehr nutzen möchten. Bitte teilen Sie uns Ihre Gründe mit, damit wir uns verbessern können."
+        "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
       ],
       "Week start": [
         "Wochenanfang"
@@ -5761,12 +5776,12 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ProtonMail account.": [
-        "Fügen Sie Ihre eigene Domain zu Ihrem ProtonMail-Konto hinzu."
+        "Füge deine eigene Domain zu deinem ProtonMail-Konto hinzu."
       ]
     },
     "Label for domain modal": {
       "Please add the following TXT record:": [
-        "Bitte folgenden TXT-Eintrag hinzufügen:"
+        "Bitte füge folgenden TXT-Eintrag hinzu:"
       ]
     },
     "Label for new member": {
@@ -6078,13 +6093,13 @@
     },
     "Mail upsell feature": {
       "Create separate logins for each user": [
-        "Erstellen Sie getrennte Zugänge für jeden einzelnen Benutzer"
+        "Erstelle getrennte Zugänge für jeden einzelnen Benutzer"
       ],
       "Get Multi-user support": [
-        "Holen Sie sich die Unterstützung für mehrere Benutzer"
+        "Hole dir die Unterstützung für mehrere Benutzer"
       ],
       "Host emails for your organization": [
-        "Stellen Sie E-Mails für Ihr Unternehmen zur Verfügung"
+        "Stelle E-Mails für dein Unternehmen zur Verfügung"
       ]
     },
     "Many Others": {
@@ -6119,16 +6134,16 @@
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
-        "Möchten Sie die Zwei-Faktor-Authentifizierung wirklich deaktivieren?"
+        "Möchtest du die Zwei-Faktor-Authentifizierung wirklich deaktivieren?"
       ],
       "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "Richten Sie eine eigene Domain-E-Mail-Adresse ein (z. B. Ich@MeineFirma.eu). Es dauert nur wenige Minuten, und unser Assistent führt Sie durch den Prozess."
+        "Richte eine eigene Domain-E-Mail-Adresse ein (z. B. Ich@MeineFirma.eu). Es dauert nur wenige Minuten, und unser Assistent führt dich durch den Prozess."
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        "Wechseln Sie zu einem ${ PLAN_NAMES[PLANS.VISIONARY] } oder ${ PLAN_NAMES[PLANS.PROFESSIONAL] }-Paket, um eine Catch-All-Adresse verwenden und Premium-Funktionen freischalten zu können"
+        "Wechsle zu einem ${ PLAN_NAMES[PLANS.VISIONARY] } oder ${ PLAN_NAMES[PLANS.PROFESSIONAL] }-Paket, um eine Catch-All-Adresse verwenden und Premium-Funktionen freischalten zu können"
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        "Wechseln Sie zu einem beliebigen kostenpflichtigen Tarif, um eigene Domains verwenden und Premium-Funktionen freischalten zu können"
+        "Wechsle zu einem beliebigen kostenpflichtigen Tarif, um eigene Domains verwenden und Premium-Funktionen freischalten zu können"
       ]
     },
     "Message display when a new app version is available": {
@@ -6595,7 +6610,7 @@
         "Dauerhaft"
       ],
       "Plain text": [
-        "Unformatierter Reintext"
+        "Unformatierter Klartext"
       ],
       "Repeat daily": [
         "Täglich wiederholen"
@@ -6828,15 +6843,15 @@
     },
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
-        "Fügen Sie Ihren Namen (oder Firmennamen) und Ihre Adresse zu Ihren Rechnungen hinzu"
+        "Füge deinen Namen (oder Firmennamen) und deine Adresse zu deinen Rechnungen hinzu"
       ]
     },
     "Plan": {
       "${ mailAppName } Free": [
-        "${ mailAppName } kostenlos"
+        "${ mailAppName } Free"
       ],
       "Free": [
-        "Umsonst"
+        "Free"
       ]
     },
     "Plan feature": {
@@ -6929,13 +6944,13 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "Ihnen verbleiben noch ${ daysRemaining } Tag auf Ihrem ${ BRAND_NAME } ${ currentPlanName } Konto.",
-        "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account."
+        "Dir verbleiben noch ${ daysRemaining } Tag auf dein ${ BRAND_NAME } ${ currentPlanName }-Konto.",
+        "Dir verbleiben noch ${ daysRemaining } Tage Zeit auf dein ${ BRAND_NAME } ${ currentPlanName }-Konto."
       ]
     },
     "Price": {
       "Free": [
-        "Kostenl."
+        "Kostenlos"
       ]
     },
     "Primary timezone": {
@@ -7113,6 +7128,11 @@
       ],
       "VPN apps": [
         "VPN-Apps"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Aktualisieren der Einstellungen fehlgeschlagen"
       ]
     },
     "Settings/filters": {
@@ -7775,7 +7795,7 @@
         "Datum"
       ],
       "Decrypt key": [
-        "Schlüssel entschlüss."
+        "Schlüssel entschlüsseln"
       ],
       "Delete ${ address.Email }": [
         "${ address.Email } löschen"
@@ -7944,7 +7964,7 @@
         "Gruppen importieren"
       ],
       "Import key": [
-        "Schlüssel import."
+        "Schlüssel importieren"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importieren über ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -8220,7 +8240,7 @@
         "Wechseln zum Zwei-Passwörter-Modus"
       ],
       "Take precautions to avoid data loss!": [
-        "Treffen Sie Vorsichtsmaßnahmen, um Datenverluste zu vermeiden!"
+        "Treffe Vorsichtsmaßnahmen, um Datenverluste zu vermeiden!"
       ],
       "Theme": [
         "Farbschema"
@@ -8274,13 +8294,13 @@
         "Ihre Kalender-Verknüpfung"
       ],
       "Your current plan": [
-        "Ihr aktuelles Abonnement"
+        "Dein aktuelles Abonnement"
       ],
       "Your plan": [
         "Mein Abonnement"
       ],
       "Your recovery status": [
-        "Ihr Wiederherstellungsstatus"
+        "Dein Wiederherstellungsstatus"
       ],
       "ZIP / postal code": [
         "PLZ/Postleitzahl"
@@ -8406,7 +8426,7 @@
         "Mitteilungen auf Desktop- und Mobilgeräten aktivieren/deaktivieren"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Wenn Sie die erweiterten Protokolle aktivieren, wird die IP-Adresse für jedes Ereignis im Sicherheitsprotokoll aufgezeichnet."
+        "Wenn du die erweiterten Protokolle aktivierst, wird die IP-Adresse für jedes Ereignis im Sicherheitsprotokoll aufgezeichnet."
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Sie erhalten Zugriff auf alle kostenpflichtigen Funktionen sowohl für ${ vpnAppName } als auch für ${ mailAppName } (der verschlüsselte E-Mail-Dienst, den Millionen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
@@ -8415,7 +8435,7 @@
         "Erhalten Sie Zugang zu allen kostenpflichtigen Funktionen von ProtonVPN und ProtonMail (dem verschlüsselten E-Mail-Dienst, den Millionen von Menschen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Gruppieren Sie E-Mails zum gleichen Thema in Ihrem Posteingang oder zeigen Sie diese getrennt an."
+        "Gruppiere E-Mails zum gleichen Thema in deinem Posteingang oder zeige diese getrennt an."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName }, z. B. max.mustermann@beispiel.de"
@@ -8427,7 +8447,7 @@
         "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Nachrichten in den Ordnern „Gesendet” oder „Entwürfe” werden weiterhin in diesem Ordner angezeigt, auch wenn Sie diese in einen anderen Ordner verschieben."
+        "Nachrichten in den Ordnern „Gesendet” oder „Entwürfe” werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Die Mehrbenutzerunterstützung ist nur für Abonnements mit 2 oder mehr Benutzern verfügbar"
@@ -8442,10 +8462,10 @@
         "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Legen Sie die Standardgröße (Klein/Vollbild) des Verfassen-Fensters fest."
+        "Legen die Standardgröße (Klein/Vollbild) des Verfassen-Fensters fest."
       ],
       "Set the default layout for your Inbox.": [
-        "Legen Sie das Standardlayout für Ihren Posteingang fest."
+        "Lege das Standard-Layout für deinen Posteingang fest."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Mit diesem Schlüssel erzeugte Signaturen werden als ungültig behandelt und können nicht zur Verschlüsselung verwendet werden."
@@ -8463,7 +8483,7 @@
         "Diese Adresse wurde deaktiviert"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Diese Funktion verzögert den Versand Ihrer E-Mails und gibt Ihnen die Möglichkeit, den Versand während des gewählten Zeitfensters zu widerrufen."
+        "Diese Funktion verzögert den Versand deiner E-Mails und gibt dir die Möglichkeit, den Versand während des gewählten Zeitfensters zu widerrufen."
       ],
       "This feature is only available for paid users": [
         "Diese Funktion ist nur für zahlende Benutzer verfügbar"
@@ -8490,10 +8510,10 @@
         "Die DKIM-Signierung wurde aufgrund von Problemen mit Ihrer DNS-Konfiguration angehalten. Bitte folgen Sie den untenstehenden Anweisungen, um die Signierung erneut auszuführen."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Wenn Sie einer Nachricht in einem Thema eine Kategorie hinzufügen, wird diese automatisch auf alle zukünftigen Nachrichten angewendet, die Sie im Rahmen dieses Themas senden oder empfangen."
+        "Wenn du einer Nachricht in einem Thema eine Kategorie hinzufügst, wird diese automatisch auf alle zukünftigen Nachrichten angewendet, die du im Rahmen dieses Themas sendest oder empfängst."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Wenn Sie auf einen Link klicken, werden Sie von dieser Anti-Phishing-Funktion aufgefordert, die URL der Webseite zu bestätigen."
+        "Wenn du auf einen Link klickst, wirst du von dieser Anti-Phishing-Funktion aufgefordert, die URL der Webseite zu bestätigen."
       ],
       "You do not have any contacts to export": [
         "Es gibt noch keine zu exportierenden Kontakte"
@@ -8513,22 +8533,22 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Dadurch wird jeder gesendeten Nachricht automatisch Ihr öffentlicher Schlüssel hinzugefügt. Empfänger können damit die Authentizität Ihrer Nachrichten überprüfen und verschlüsselte Nachrichten an Sie senden."
+        "Dadurch wird jeder gesendeten Nachricht automatisch dein öffentlicher Schlüssel hinzugefügt. Empfänger können damit die Authentizität deiner Nachrichten überprüfen und verschlüsselte Nachrichten an dich senden."
       ]
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Wählen Sie die Standard-PGP-Einstellungen, die zum Signieren oder Verschlüsseln von Nachrichten mit Nicht-ProtonMail-PGP-Benutzern verwendet werden sollen. Beachten Sie, dass Inline-PGP reine Textnachrichten erzwingt. Mehr erfahren"
+        "Wähle die Standard-PGP-Einstellungen, die zum Signieren oder Verschlüsseln von Nachrichten mit Nicht-ProtonMail-PGP-Benutzern verwendet werden sollen. Beachte, dass Inline-PGP reine Textnachrichten erzwingt. Mehr erfahren"
       ]
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Wenn Sie eine E-Mail von einem anderen ProtonMail-Benutzer erhalten, der keine vertrauenswürdigen Schlüssel in Ihren Kontakten hat, werden Sie in einem Hinweisfenster gefragt, ob Sie vertrauenswürdige Schlüssel aktivieren möchten."
+        "Wenn du eine E-Mail von einem anderen ProtonMail-Benutzer erhälst, der keine vertrauenswürdigen Schlüssel in deinen Kontakten hat, wirst du in einem Hinweisfenster gefragt, ob du vertrauenswürdige Schlüssel aktivieren möchtest."
       ]
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Signieren Sie automatisch alle Ihre ausgehenden Nachrichten, damit die Benutzer die Authentizität Ihrer Nachrichten überprüfen können. Dies geschieht in Kombination mit den Standard-PGP-Einstellungen, die nachfolgend konfiguriert werden können."
+        "Signiere automatisch alle ausgehenden Nachrichten, damit die Benutzer die Authentizität deiner Nachrichten überprüfen können. Dies geschieht in Kombination mit den Standard-PGP-Einstellungen, die nachfolgend konfiguriert werden können."
       ]
     },
     "Tor out of date": {
@@ -8754,7 +8774,7 @@
         "Möchten Sie die Rufnummer wirklich löschen?"
       ],
       "Are you sure you want to discard your import?": [
-        "Möchten Sie Ihren Import wirklich verwerfen?"
+        "Möchtest du deinen Import wirklich verwerfen?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Wenn Sie diese Adresse löschen, werden Sie keine täglichen E-Mail-Benachrichtigungen mehr erhalten."
@@ -8769,7 +8789,7 @@
         "Wenn Sie diese Rufnummer löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Wenn Sie die Protokollierung deaktivieren, wird Sie auch Ihr gesamter Protokollverlauf gelöscht. Möchten Sie die Protokollierung wirklich deaktivieren?"
+        "Wenn du die Protokollierung deaktivierst, wird auch dein gesamter Protokollverlauf gelöscht. Möchtest du die Protokollierung wirklich deaktivieren?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Wenn Sie diese E-Mail-Adresse deaktivieren, können Sie keine Nachrichten mehr über diese Adresse senden oder empfangen, und alle damit verbundenen Proton-Produkte werden ebenfalls deaktiviert. Möchten Sie diese E-Mail-Adresse wirklich deaktivieren?"
@@ -8825,7 +8845,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Nach der erfolgreichen Verifizierung entfernen Sie diesen keinesfalls den TXT-Eintrag, da er dazu dient, zu bestätigen, dass Sie weiterhin Besitzer der Domain sind."
+        "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
       ],
       "It can take up to a day for DNS changes to update.": [
         "Es kann bis zu einem Tag dauern, bis DNS-Änderungen aktualisiert werden."
@@ -8949,7 +8969,7 @@
         "Wöchentlich am ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Wöchentlich am ${ multipleDaysString }, bis §{ timesString }"
+        "Wöchentlich am ${ multipleDaysString }, bis ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Wöchentlich am ${ multipleDaysString }, ${ untilString }"

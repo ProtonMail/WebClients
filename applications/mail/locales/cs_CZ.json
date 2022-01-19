@@ -227,6 +227,9 @@
       "Decrease": [
         "Snížit"
       ],
+      "Decrypt": [
+        "Dešifrovat"
+      ],
       "Default email application": [
         "Výchozí e-mailová aplikace"
       ],
@@ -331,6 +334,9 @@
       ],
       "Export": [
         "Exportovat"
+      ],
+      "Export contact group": [
+        "Exportovat skupinu kontaktů"
       ],
       "Export contacts": [
         "Exportovat kontakty"
@@ -560,6 +566,9 @@
       "Move to...": [
         "Přesunout do…"
       ],
+      "Need help?": [
+        "Potřebujete pomoc?"
+      ],
       "Never show": [
         "Nikdy nezobrazovat"
       ],
@@ -688,6 +697,9 @@
       ],
       "Rename": [
         "Přejmenovat"
+      ],
+      "Reply securely": [
+        "Bezpečně odpovědět"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -2213,6 +2225,9 @@
       "Enter 6 digits": [
         "Zadejte 6 číslic"
       ],
+      "Enter a password": [
+        "Zadejte heslo"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování API Bitcoin."
       ],
@@ -2516,6 +2531,9 @@
       "Unknown payment token status": [
         "Neznámý stav platebního tokenu"
       ],
+      "Wrong mailbox password": [
+        "Chybné heslo e-mailové schránky"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
       ],
@@ -2742,6 +2760,12 @@
       "Invalid response": [
         "Neplatná odpověď"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Událost se nepodařilo přidat do kalendáře. Nebyla odeslána žádná odpověď"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Událost se nepodařilo aktualizovat ve vašem kalendáři. Nebyla odeslána žádná odpověď"
+      ],
       "Unexpected error": [
         "Neočekávaná chyba"
       ],
@@ -2762,9 +2786,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Vaše odpověď byla odeslána, ale událost nemohla být přidána do Vašeho kalendáře"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Vaše odpověď byla odeslána, ale událost nemohla být aktualizována ve Vašem kalendáři"
       ]
     },
     "Event title": {
@@ -3482,6 +3503,9 @@
       "Background color": [
         "Barva pozadí"
       ],
+      "Based in Switzerland, available globally": [
+        "Se sídlem ve Švýcarsku, celosvětově dostupné"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
@@ -3595,6 +3619,9 @@
         "dny",
         "dny",
         "dny"
+      ],
+      "Decrypt message": [
+        "Dešifrovat zprávu"
       ],
       "Default email application": [
         "Výchozí e-mailová aplikace"
@@ -4160,6 +4187,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste stálý klient, k Vašemu účtu jste dostal další povolené funkce."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        "Je nám líto, tato zpráva neexistuje, nebo jí vypršela platnost"
+      ],
       "Starter VPN service with P2P support.": [
         "Základní služba VPN s podporou P2P."
       ],
@@ -4213,6 +4243,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Originál zprávy, který se snažíte přeposlat / odpovědět je v procesu zaslání. Jestlíže budete pokračovat, nebudete už více moci vrátit rozeslanou zprávu."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "Původní odesílatel této zprávy již není platný. Vaše zpráva bude odeslána z Vaší výchozí adresy ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "Odesílatel požádal o potvrzení o přečtení."
@@ -4415,6 +4448,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken. Účtován nebude žádný poplatek. Jakákoli finanční částka, která bude stažená pro ověření karty bude obratem připsána zpět na účet majitele."
       ],
+      "Version ${ appVersion }": [
+        "Verze ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Navštivte náš obchod a získejte nabídky Proton."
       ],
@@ -4525,6 +4561,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Dosáhli jste 100% kapacity úložného místa. Zvažte uvolnění úložného prostoru nebo navyšte předplatné účtu s dalším úložným místem pro vytváření nových zpráv."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Bylo dosaženo maximálního počtu 5 odpovědí."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Abyste mohli přidat PayPal jako platební metodu, musíte jej mít propojený s kreditní kartou nebo bankovním účtem."
@@ -5477,6 +5516,12 @@
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
+      "Previous version": [
+        "Předchozí verze"
+      ],
+      "Privacy policy": [
+        "Zásady ochrany osobních údajů"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Znovu povolte adresu přiřazenou k tomuto kalendáři, aby jste mohli spravovat své pozvání."
       ],
@@ -5492,11 +5537,17 @@
       "Sent": [
         "Odeslané"
       ],
+      "Sign up for free": [
+        "Zaregistrujte se zdarma"
+      ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
         "S hvězdičkou"
+      ],
+      "Terms": [
+        "Podmínky"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Tento ICS soubor zahrnuje více, než jednu událost. Prosím, stáhněte důležité události do ${ calendarAppName }"
@@ -7370,6 +7421,9 @@
       "Processing...": [
         "Zpracovávání..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "Znovu podepsat všechny kontakty"
       ],
@@ -7426,6 +7480,9 @@
       ],
       "Send without expiration?": [
         "Odeslat zprávu bez data vypršení platnosti?"
+      ],
+      "Sender changed": [
+        "Odesílatel byl změněn"
       ],
       "Sending error": [
         "Chyba při odesílání"
@@ -7598,6 +7655,14 @@
       ],
       "You do not have any contacts to export": [
         "Nemáte žádné kontakty k exportu"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "stabilní verze"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tato verze prohlížeče Tor není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
       ]
     },
     "Update font modal": {

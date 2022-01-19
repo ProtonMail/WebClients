@@ -196,6 +196,9 @@
       "Continue import": [
         "Pokračovat v importu"
       ],
+      "Continue with": [
+        "Pokračujte jako"
+      ],
       "Continue with Google": [
         "Pokračovat pomocí účtu Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Odhlásit se ze všech účtů"
+      ],
+      "Sign out from": [
+        "Odhlásit z"
       ],
       "Signing in": [
         "Přihlášení"
@@ -1805,8 +1811,8 @@
       "Error in one of the conditions": [
         "Chyba v jedné z podmínek"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Nepodařilo se získat aktivní relace. Obnovte stránku nebo akci opakujte později."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        "Nepodařilo se získat aktivní relace. Prosím ${ refresh } nebo to zkuste znovu později."
       ],
       "File has no contents to preview": [
         "Soubor nemá žádný obsah k náhledu"
@@ -4272,6 +4278,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Chcete-li přidat více uživatelů, přepněte na ${ professionalPlan }."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Dočasně nedostupné. Zkontrolujte to prosím později."
+      ],
       "Test link": [
         "Testovací odkaz"
       ],
@@ -4404,6 +4413,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Chcete-li zabezpečit své připojení k internetu, stáhněte a nainstalujte si do svého zařízení aplikaci ProtonVPN a připojte se k serveru ProtonVPN."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        "Chcete-li použít ${ toAppName }, vytvořte adresu, prosím."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Dobijte na svůj účet kredity, za které si můžete předplatit nový tarif nebo prodloužit předplatné vašeho současného tarifu. Získáte jeden kredit za každý/každou/každé ${ i18nCurrency }."
       ],
@@ -4443,11 +4455,11 @@
       "Update recovery phrase": [
         "Aktualizovat obnovovací frázi"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Předplaťte si ${ PLAN_NAMES[PLANS.VISIONARY] } nebo ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plán pro povolení automatických odpovědí, když jste mimo kancelář."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Pro začátek přejděte na plán ${ PLAN_NAMES[PLANS.VISIONARY] }, nebo ${ PLAN_NAMES[PLANS.PROFESSIONAL]}."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "Předplaťte si ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } nebo ${ PLAN_NAMES[PLANS.PLUS] } plán pro povolení automatických odpovědí, kdy jste mimo kancelář."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Přejděte na placený tarif a získejte přístup k prémiovým funkcím a většímu úložnímu prostoru."
@@ -5169,9 +5181,6 @@
       "ALL": [
         "VŠE"
       ],
-      "All-day event notifications": [
-        "Celodenní oznámení o událostech"
-      ],
       "Allow recovery by email": [
         "Povolit obnovení e-mailem"
       ],
@@ -5334,11 +5343,23 @@
       "Days of the week": [
         "Dny v týdnu"
       ],
+      "Default email address": [
+        "Výchozí e-mailová adresa"
+      ],
+      "Default event duration": [
+        "Výchozí doba trvání události"
+      ],
+      "Default full day notifications": [
+        "Výchozí celodenní oznámení"
+      ],
       "Default language": [
         "Výchozí jazyk"
       ],
       "Default language (${ defaultLanguage })": [
         "Výchozí jazyk (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Výchozí upozornění"
       ],
       "Default PGP scheme": [
         "Výchozí schéma PGP"
@@ -5417,12 +5438,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Zadejte heslo pro klíč s otiskem: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Doba trvání události"
-      ],
-      "Event notifications": [
-        "Oznámení o událostech"
       ],
       "Expires": [
         "Expiruje"
@@ -7032,7 +7047,7 @@
         "Přístup k ${ driveAppName } (beta)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Vše ${ PLAN_NÁZEV[PLANS.VPNPLUS] } funkce plánu"
+        "Vše ${ PLAN_NAMES[PLANS.VPNPLUS] } funkce plánu"
       ],
       "Built-in Adblocker (NetShield)": [
         "Vestavěný Adblocker (NetShield)"
@@ -7261,6 +7276,11 @@
       ],
       "VPN apps": [
         "VPN aplikace"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Aktualizace nastavení se nezdařila"
       ]
     },
     "Settings/filters": {

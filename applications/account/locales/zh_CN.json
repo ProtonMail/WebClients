@@ -196,6 +196,9 @@
       "Continue import": [
         "继续导入"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "使用 Google 账号继续"
       ],
@@ -667,6 +670,9 @@
       "Sign out all accounts": [
         "退出所有账户"
       ],
+      "Sign out from": [
+        ""
+      ],
       "Signing in": [
         "正在登录"
       ],
@@ -827,7 +833,7 @@
         "+ ${ domains } 个自有域名"
       ],
       "+ ${ members } user": [
-        "+{ members } 位用户"
+        "+${ members } 位用户"
       ],
       "+ ${ storage } storage": [
         "+ ${ storage } 存储空间"
@@ -1748,8 +1754,8 @@
       "Error in one of the conditions": [
         "条件存在错误"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "未能获得活动会话。请刷新或稍后再试。"
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "文件没有内容可预览"
@@ -2602,7 +2608,7 @@
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "加密并添加日程时出错，${ totalImported }/{ totalToImport } 个日程已成功导入。"
+        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "加密并添加日程时出错，未能导入任何日程。"
@@ -2791,16 +2797,16 @@
     },
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu": [
-        ""
+        "点击 ${ boldManage } 下拉菜单"
       ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        ""
+        "由于各邮箱厂商的规定不同，您可能需要先${ knowledgeBaseLink }才能开始导入"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        ""
+        "点击三点图标（...）展开下拉菜单"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        ""
+        "生成 ${ boldAppPassword }，并在 Proton 中根据提示使用"
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
         "生成${ boldAppPassword }并在 Proton 提示时用其代替您的常规密码"
@@ -2812,43 +2818,43 @@
         "转至 ${ boldAccountSecurity }"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
-        ""
+        "前往 Outlook.com ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
-        ""
+        "如果双重验证已关闭，请将其开启"
       ],
       "Open your ${ yahooMailLink } contacts": [
         "打开您的 ${ yahooMailLink } 通讯录"
       ],
       "Open your Outlook ${ outlookContactsLink }": [
-        ""
+        "打开您的 Outlook ${ outlookContactsLink }"
       ],
       "Select ${ boldExportContacts } and choose which contacts to export": [
-        ""
+        "点击 ${ boldExportContacts } 并选择需要导出的联系人"
       ],
       "Select ${ boldExportCSV }": [
         "选择“${ boldExportCSV }”"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "如需将日程导入 Proton，您需要在 Outlook 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "如需将日程导入 Proton，您需要在 Yahoo 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "如需将日程导入 Proton，您需要先下载一份 ${ knowledgeBaseLink }"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
+        "如需将通讯录导入 Proton，您需要在 Outlook 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "如需将通讯录导入 Proton，您需要在 Yahoo 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        ""
+        "如需将通讯录导入 Proton，您需要先下载一份 ${ knowledgeBaseLink }"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        ""
+        "如需将邮件导入 Proton，您需要按下列步骤获取 Outlook ${ appPasswordLink }："
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "要将电子邮件从Yahoo导入到Proton，您需要在Yahoo得到一条 ${ appPasswordLink }，通过下面的步骤来获取："
@@ -2865,7 +2871,7 @@
         "应用专用密码"
       ],
       "Can view all details": [
-        "可以浏览详细内容"
+        "可查看所有详细信息"
       ],
       "Export": [
         "导出"
@@ -2880,13 +2886,13 @@
         "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        "在下一步中，您需要选择全部的许可"
+        "授予本应用所需的所有权限"
       ],
       "Manage": [
         "管理"
       ],
       "Publish a calendar": [
-        "发布一个日历"
+        "发布日历"
       ]
     },
     "Import instructions link": {
@@ -2894,7 +2900,7 @@
         "应用专用密码"
       ],
       "app password or enable IMAP": [
-        "应用程序密码或启用 IMAP"
+        "生成应用专用密码或开启 IMAP 功能"
       ],
       "contacts": [
         "通讯录"
@@ -2912,7 +2918,7 @@
         "安全设置"
       ],
       "shared calendars": [
-        "共享的日历"
+        "共享日历"
       ],
       "Yahoo Mail": [
         "Yahoo Mail"
@@ -2920,22 +2926,22 @@
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
-        ""
+        "点击 ${ boldICS } 文件链接即可下载文件"
       ],
       "Go to ${ calendarLink } in your Outlook.com settings": [
-        ""
+        "转至 Outlook.com 设置中的“${ calendarLink }”选项"
       ],
       "Go to ${ calendarViewLink } in Yahoo Mail": [
-        ""
+        "转至 Yahoo Mail 中的 ${ calendarViewLink }"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
-        ""
+        "将光标指向您要导入的日历，打开下拉菜单"
       ],
       "Select ${ boldExport } to export the calendar as an ICS file": [
-        ""
+        "选择 ${ boldExport } 将日历作为 ICS 文件下载"
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        ""
+        "在 ${ boldPublish } 选项中，选择您要导入的日历，并将权限设为 ${ boldCanViewAllDetails }，然后选择发布。"
       ]
     },
     "Import key": {
@@ -3271,7 +3277,7 @@
         "扎根瑞士，惠及全球"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "无论您是否开启快捷键，ProtonMail Web 的 “基本导航快捷键” 和 “基本操作快捷键” 始终可用。"
+        "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
       ],
       "Basic, Plus or Visionary subscription required": [
         "需要 Basic、Plus 或 Visionary 订阅方案"
@@ -3331,7 +3337,7 @@
         "点击“请求新验证码”将发送到 ${ strong }。 如果此电子邮件地址不正确，请点击“编辑”进行纠正。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电话号码不正确，请点击 \"编辑\"。"
+        "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
       ],
       "Close this screen to exit.": [
         "关闭此窗口以退出。"
@@ -3790,7 +3796,7 @@
         "新建"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
-        "初到 ${ BRAND_NAME }？${ signupLink }"
+        "首次使用 ${ BRAND_NAME }？请${ signupLink }。"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "接下来您需要登录 Google 账户并允许我们获取您的数据。"
@@ -3859,7 +3865,7 @@
         "确认后降级为免费账户可能需要几分钟的时间。 "
       ],
       "One account for all Proton services": [
-        "一个账户用于所有Proton服务"
+        "一个账户即可登录所有 Proton 服务"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项。"
@@ -4098,6 +4104,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "开通 ${ professionalPlan } 可添加更多用户。"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
+      ],
       "Test link": [
         "测试链接"
       ],
@@ -4230,6 +4239,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "若想提高上网安全性，请为您的设备安装 ProtonVPN 应用程序并连接到 ProtonVPN 服务器。"
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "充值后即可使用余额升级账户或增添服务项目。余额与${ i18nCurrency }等额兑换。"
       ],
@@ -4269,11 +4281,11 @@
       "Update recovery phrase": [
         "更新恢复密语"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "开通 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 账户即可使用自动回复功能。"
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 计划以开始使用。"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "开通 ${ PLAN_NAMES[PLANS.VISIONARY] }、${ PLAN_NAMES[PLANS.PROFESSIONAL] } 或 ${ PLAN_NAMES[PLANS.PLUS] } 账户即可使用自动回复功能。"
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "开通付费账户方可解锁更大的存储空间和更多高级功能。"
@@ -4522,7 +4534,7 @@
         "您的导入将不会被处理。"
       ],
       "Your login information will not be saved after the import is completed.": [
-        "导入完成后将不会被保存您的登录信息。"
+        "导入完成后我们不会留存您的账号和密码。"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "若您希望给予他人管理员权限，可以告诉他们这个机构密码。假如您无法登录自己的账户，这个密码也能起到取回机构账户控制权的作用。请妥善保管此密码。"
@@ -4727,10 +4739,10 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "添加加密"
+        "加密邮件"
       ],
       "Add expiration time": [
-        "添加到期时间"
+        "设置有效期"
       ],
       "Apply / open": [
         "应用 / 打开"
@@ -4763,16 +4775,16 @@
         "转至所有邮件"
       ],
       "Go to Archive": [
-        "转至归档"
+        "转至存档"
       ],
       "Go to Drafts": [
         "转至草稿箱"
       ],
       "Go to Inbox": [
-        "转到收件箱"
+        "转至收件箱"
       ],
       "Go to Sent": [
-        "转至发件箱"
+        "转至已发送"
       ],
       "Go to Spam": [
         "转至垃圾邮件"
@@ -4784,13 +4796,13 @@
         "转至废件箱"
       ],
       "Jump to first": [
-        "跳转到第一个"
+        "选择第一项"
       ],
       "Jump to last": [
-        "跳转到最后一个"
+        "选择最后一项"
       ],
       "Label as...": [
-        "标签为..."
+        "加标签"
       ],
       "Load embedded images": [
         "加载嵌入图像"
@@ -4814,7 +4826,7 @@
         "右移 / 展开"
       ],
       "Move to Archive": [
-        "移至归档"
+        "存档"
       ],
       "Move to Inbox": [
         "移至收件箱"
@@ -4826,7 +4838,7 @@
         "移至废件箱"
       ],
       "Move to...": [
-        "移至..."
+        "移动邮件"
       ],
       "Move up": [
         "上移"
@@ -4835,10 +4847,10 @@
         "撰写邮件"
       ],
       "Open next message": [
-        "打开下则消息"
+        "打开下一封邮件"
       ],
       "Open previous message": [
-        "打开上则消息"
+        "打开上一封邮件"
       ],
       "Open this modal": [
         "打开此面板"
@@ -4847,7 +4859,7 @@
         "回复"
       ],
       "Reply all": [
-        "回复全部"
+        "回复所有人"
       ],
       "Save draft": [
         "保存草稿"
@@ -4859,7 +4871,7 @@
         "选择 / 取消选择"
       ],
       "Select / unselect all": [
-        "全选 / 反选"
+        "全选 / 全不选"
       ],
       "Send email": [
         "发送邮件"
@@ -4891,13 +4903,13 @@
         "编辑窗快捷键"
       ],
       "Folder shortcuts": [
-        "类别快捷键"
+        "文件夹快捷键"
       ],
       "List shortcuts": [
         "列表快捷键"
       ],
       "Message shortcuts": [
-        "消息快捷键"
+        "邮件快捷键"
       ]
     },
     "Keys actions": {
@@ -4982,9 +4994,6 @@
       ],
       "ALL": [
         "且"
-      ],
-      "All-day event notifications": [
-        "全天事件通知"
       ],
       "Allow recovery by email": [
         "允许通过电子邮件恢复"
@@ -5148,11 +5157,23 @@
       "Days of the week": [
         "星期"
       ],
+      "Default email address": [
+        "首选邮箱地址"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "默认语言"
       ],
       "Default language (${ defaultLanguage })": [
         "默认语言 (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        ""
       ],
       "Default PGP scheme": [
         "默认 PGP 格式"
@@ -5197,7 +5218,7 @@
         "时间"
       ],
       "Email": [
-        "邮件"
+        "邮箱"
       ],
       "Email address": [
         "邮箱地址"
@@ -5231,12 +5252,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "输入以下密钥的密码：${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "事件持续时间"
-      ],
-      "Event notifications": [
-        "事件通知"
       ],
       "Expires": [
         "到期"
@@ -5314,7 +5329,7 @@
         "密钥强度"
       ],
       "Keyboard shortcuts": [
-        "快捷键"
+        "开启快捷键"
       ],
       "Label as": [
         "加标签"
@@ -5861,7 +5876,7 @@
         "支付发票"
       ],
       "Previous version": [
-        "先前版本"
+        "使用旧版"
       ],
       "Privacy policy": [
         "隐私协议"
@@ -6329,7 +6344,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "请注意，下一步您需要${ boldNextStep }才能开始导入。"
       ]
     },
     "Onboarding Proton": {
@@ -7041,6 +7056,11 @@
         "VPN apps"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
+      ]
+    },
     "Settings/filters": {
       "Filters": [
         "筛选规则"
@@ -7250,7 +7270,7 @@
         "支付完成"
       ],
       "Keyboard shortcuts preferences updated": [
-        "键盘快捷键设置已更新"
+        "快捷键设置已更改"
       ],
       "Keys updated": [
         "密钥已更新"
@@ -8459,7 +8479,7 @@
         "稳定版"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "此版本的Tor浏览器已不受支持。请更新至最新${ stableRelease }"
+        "不支持此版本的 Tor 浏览器，请升级至最新的${ stableRelease }"
       ]
     },
     "Update font modal": {

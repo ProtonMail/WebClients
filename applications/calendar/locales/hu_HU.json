@@ -202,6 +202,9 @@
       "Export": [
         "Exportálás"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Névjegyek exportálása"
       ],
@@ -584,7 +587,7 @@
         "${ title } ekkor kezdődik: ${ _formattedDate } ${ formattedHour }"
       ],
       "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } ekkor kezdődött: ${ formattedDateWithTime }"
+        "${ title } ekkor kezdődött: ${ _formattedDateWithTime }"
       ],
       "${ title } started on ${ formattedDate }": [
         "${ title } kezdődik: ${ formattedDate }"
@@ -593,7 +596,7 @@
         "${ title } ekkor kezdődött: ${ formattedDate } ${ formattedHour }"
       ],
       "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } elkezdődött ekkor: ${ formattedDateWithTime }"
+        "${ title } elkezdődött ekkor: ${ formattedDateWithoutTime }"
       ],
       "${ title } started yesterday": [
         "${ title } tegnap kezdődött"
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         "Érvénytelen válasz"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Váratlan hiba"
       ],
@@ -1945,9 +1954,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "A válasz elküldésre került, de az eseményt nem sikerült a naptárában frissíteni"
       ]
     },
     "Event popover close button": {
@@ -3240,9 +3246,6 @@
       "All day": [
         "Egész nap"
       ],
-      "All-day event notifications": [
-        "Egész napos esemény emlékeztetők"
-      ],
       "Automatically save contacts": [
         "Névjegyek automatikus létrehozása"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         "Dátum és idő"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Leírás"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Írja be a hatjegyű kódot"
-      ],
-      "Event duration": [
-        "Esemény időtartama"
-      ],
-      "Event notifications": [
-        "Esemény értesítések"
       ],
       "Event title": [
         "Esemény neve"
@@ -4497,6 +4506,11 @@
     "Select search results": {
       "No results found": [
         "Nincs találat"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

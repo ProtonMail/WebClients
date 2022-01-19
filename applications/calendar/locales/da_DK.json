@@ -202,6 +202,9 @@
       "Export": [
         "Exportér"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Eksportér kontakter"
       ],
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         "Ugyldigt svar"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Uventet fejl"
       ],
@@ -1945,9 +1954,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Dit svar blev sendt, men begivenheden kunne ikke tilføjes til din kalender"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Dit svar blev sendt, men begivenheden kunne ikke opdateres i din kalender"
       ]
     },
     "Event popover close button": {
@@ -3240,9 +3246,6 @@
       "All day": [
         "Hele dagen"
       ],
-      "All-day event notifications": [
-        "Notifikationer for heldagsbegivenheder"
-      ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         "Dato og tid"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Beskrivelse"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
-      ],
-      "Event duration": [
-        "Begivenhedsvarighed"
-      ],
-      "Event notifications": [
-        "Begivenhedsnotifikationer"
       ],
       "Event title": [
         "Begivenhedstitel"
@@ -4497,6 +4506,11 @@
     "Select search results": {
       "No results found": [
         "Ingen resultater fundet"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

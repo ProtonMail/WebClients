@@ -196,6 +196,9 @@
       "Continue import": [
         "Kemmel aktar"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Kemmel s Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Ffeɣ seg meṛṛa imiḍanen"
+      ],
+      "Sign out from": [
+        ""
       ],
       "Signing in": [
         "Tuqqna"
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Tella-d tuccḍa deg yiwet gar tiwtilin"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Awway n tɣimit turmidt ur yeddi ara. Ttxil smiren neɣ εreḍ tikkelt-nniḍen ticki."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "Afaylu ur isεi ara agbur i teskant"
@@ -4156,6 +4162,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Uɣal ɣer ${ professionalPlan } i wakken ad ternuḍ ugar n yiseqdacen."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
+      ],
       "Test link": [
         "Aseɣwen n usekyed"
       ],
@@ -4288,6 +4297,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Akken ad terreḍ tuqqna-inek•m ɣer internet d taɣelsant, sader yerna sbedd asnas ProtonVPN i yibenk-inek sakin qqen ɣer uqeddac ProtonVPN."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ččar amiḍan-ik·im s yisemdan i tzemreḍ ad tesxedmeḍ i uttekki deg uɣawas amaynut neɣ allus n uɣawas-ik·im amiran. Ad d-tesɛud asmad i yal ${ i18nCurrency } i tserfeḍ."
       ],
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         "Leqqem tafyirt n tririt"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Leqqem ɣer uɣawas ${ PLAN_NAMES[PLANS.VISIONARY] } neɣ ${ PLAN_NAMES[PLANS.PROFESSIONAL] } akken ad tremdeḍ tiririyin tiwurmanin i mi ara tiliḍ berra i tnarit."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Sali aswir ɣer uɣawas ${ PLAN_NAMES[PLANS.VISIONARY] } neɣ aɣawas ${ PLAN_NAMES[PLANS.PROFESSIONAL] } akken ad tebduḍ."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        ""
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Leqqem ɣer uɣawas s lexlaṣ i wakken ad tekecmeḍ ɣer tmahilin n premium akked usnerni n tallunt-inek·inem n uklas."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "AKK"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Allow recovery by email": [
         "Sireg tiririt s imayl"
       ],
@@ -5210,10 +5219,22 @@
       "Days of the week": [
         "Ussan n dduṛt"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "Tutlayt tamezwert"
       ],
       "Default language (${ defaultLanguage })": [
+        ""
+      ],
+      "Default notifications": [
         ""
       ],
       "Default PGP scheme": [
@@ -5293,12 +5314,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Sekcem awal uffir i tsarut s udlis umḍin: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Tanzagt n uneḍru"
-      ],
-      "Event notifications": [
-        "Ilɣa n uneḍru"
       ],
       "Expires": [
         "Azmez n tasewti"
@@ -7115,6 +7130,11 @@
         "Isnasen VPN"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
+      ]
+    },
     "Settings/filters": {
       "Filters": [
         "Imzizdigen"
@@ -7410,7 +7430,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ Label.Name } yettwakkes"
+        "${ label.Name } yettwakkes"
       ],
       "Address deleted": [
         "Tansa tettwakkes"
