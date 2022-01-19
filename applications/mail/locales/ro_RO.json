@@ -227,6 +227,9 @@
       "Decrease": [
         "Reducere"
       ],
+      "Decrypt": [
+        "Decriptare"
+      ],
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
@@ -329,6 +332,9 @@
       ],
       "Export": [
         "Exportare"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Exportare contacte"
@@ -557,6 +563,9 @@
       "Move to...": [
         "Mutare în..."
       ],
+      "Need help?": [
+        "Aveţi nevoie de ajutor?"
+      ],
       "Never show": [
         "Nu mai arăta"
       ],
@@ -685,6 +694,9 @@
       ],
       "Rename": [
         "Redenumire"
+      ],
+      "Reply securely": [
+        "Răspunde în siguranţă"
       ],
       "Report a problem": [
         "Raportare problemă"
@@ -2193,6 +2205,9 @@
       "Enter 6 digits": [
         "Introduceți 6 cifre"
       ],
+      "Enter a password": [
+        "Introduceți o parolă"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
       ],
@@ -2490,6 +2505,9 @@
       "Unknown payment token status": [
         "Stare necunoscută cod plată generat."
       ],
+      "Wrong mailbox password": [
+        "Parolă greșită mesaje"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
       ],
@@ -2715,6 +2733,12 @@
       "Invalid response": [
         "Răspuns nevalid"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Eroare neașteptată"
       ],
@@ -2735,9 +2759,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar."
       ]
     },
     "Event title": {
@@ -3414,6 +3435,9 @@
       "Background color": [
         "Culoare fundal"
       ],
+      "Based in Switzerland, available globally": [
+        "Cu sediul în Elveția, disponibil la nivel global"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
       ],
@@ -3525,6 +3549,9 @@
         "zi",
         "zile",
         "de zile"
+      ],
+      "Decrypt message": [
+        "Decriptare mesaj"
       ],
       "Default email application": [
         "Aplicaţia de e-mail implicită"
@@ -4081,6 +4108,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        "Ne pare rău, acest mesaj nu există sau a expirat deja"
+      ],
       "Starter VPN service with P2P support.": [
         "Serviciu VPN de bază cu suport P2P."
       ],
@@ -4134,6 +4164,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Mesajul original pe care încercați să-l redirecționați / să-i răspundeți este în curs de a fi trimis. Dacă continuați, nu veți mai putea anula trimiterea mesajului original."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "Expeditorul original al acestui mesaj nu mai este valabil. Mesajul dvs. va fi trimis de la adresa implicită ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "Expeditorul a solicitat o confirmare de primire a citirii."
@@ -4335,6 +4368,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu veți fi taxat. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
       ],
+      "Version ${ appVersion }": [
+        "Versiunea ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Vizitați magazinul nostru pentru a obține produse Proton."
       ],
@@ -4441,6 +4477,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Ați atins capacitatea maximă de stocare. Pentru a mai putea scrie mesaje trebuie să eliberați spațiu sau să adăugați spațiu de stocare în cont."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Ați atins numărul maxim de 5 răspunsuri."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Trebuie să aveți un card de credit sau un cont bancar asociat cu contul de PayPal pentru a-l adăuga ca metodă de plată."
@@ -5387,6 +5426,12 @@
       "Pay invoice": [
         "Plată factură"
       ],
+      "Previous version": [
+        "Versiunea anterioară"
+      ],
+      "Privacy policy": [
+        "Politica de confidențialitate"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Reactivați adresa asociată acestui calendar pentru a vă gestiona invitația."
       ],
@@ -5402,11 +5447,17 @@
       "Sent": [
         "Trimise"
       ],
+      "Sign up for free": [
+        "Înscriere gratuită"
+      ],
       "Spam": [
         "Nedorite"
       ],
       "Starred": [
         "Cu stea"
+      ],
+      "Terms": [
+        "Termeni"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Acest fișier ICS conține mai multe evenimente. Descărcați-l și importați evenimentele în ${ calendarAppName }"
@@ -7230,6 +7281,9 @@
       "Processing...": [
         "Se procesează..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "Resemnare toate contactele"
       ],
@@ -7286,6 +7340,9 @@
       ],
       "Send without expiration?": [
         "Trimitere fără expirare?"
+      ],
+      "Sender changed": [
+        "Transmițător schimbat"
       ],
       "Sending error": [
         "Eroare trimitere"
@@ -7457,6 +7514,14 @@
       ],
       "You do not have any contacts to export": [
         "Nu aveți persoane de contact pentru exportare"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versiunea stabilă"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a Tor Browser nu este suportată. Vă rugăm să actualizați la cea mai recentă ${ stableRelease }"
       ]
     },
     "Update font modal": {

@@ -1,0 +1,238 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "fa_IR"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "لغو"
+      ],
+      "Close": [
+        "بستن"
+      ],
+      "Close modal": [
+        "بستن پنجره"
+      ],
+      "Did not receive the code?": [
+        "کد را دریافت نکردید؟"
+      ],
+      "Edit email address": [
+        "ویرایش رایانشانی"
+      ],
+      "Edit phone number": [
+        "ویرایش شماره تلفن"
+      ],
+      "Get verification code": [
+        "دریافت کد تایید"
+      ],
+      "refresh the page": [
+        "نوسازی صفحه"
+      ],
+      "Request new code": [
+        "درخواست کد جدید"
+      ],
+      "Submit": [
+        "ثبت"
+      ],
+      "Try another method": [
+        "روش دیگری بیازمایید"
+      ],
+      "Verify": [
+        "تایید"
+      ],
+      "View invoice": [
+        "مشاهده صورت‌حساب"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "صورت‌حساب‌ واگذاشته"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "نمی‌توان رایانامه را تایید کرد، بعدا دوباره امتحان کنید"
+      ],
+      "Can't validate phone, try again later": [
+        "نمی‌توان تلفن را تایید کرد، بعدا دوباره امتحان کنید"
+      ],
+      "Email is not valid": [
+        "رایانامه معتبر نیست"
+      ],
+      "Enter 6 digits": [
+        "۶ رقم را وارد کنید"
+      ],
+      "Invalid verification code": [
+        "کد تایید نامعتبر"
+      ],
+      "Not a valid number": [
+        "عدد معتبری نیست"
+      ],
+      "Passwords do not match": [
+        "گذرواژه‌ها یکسان نیستند"
+      ],
+      "Request timed out.": [
+        "مهلت درخواست تمام شد."
+      ],
+      "This field is required": [
+        "این بخش الزامی است"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "حداقل ${ minimumLength } کاراکتر برای این قسمت الزامی است."
+      ],
+      "Unknown error": [
+        "خطای ناشناخته"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "منتظر باشید تا مشکل را برطرف کنیم."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "آه، مشکلی پیش آمد"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "همچنین می‌توانید ${ refresh } کرده یا بعدا دوباره امتحان کنید."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "کپچا"
+      ],
+      "Email": [
+        "رایانامه"
+      ],
+      "Manual": [
+        "دستی"
+      ],
+      "No verification method available": [
+        "هیچ شیوه تاییدی در دسترس نیست"
+      ],
+      "SMS": [
+        "پیامک"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این نشانی ایمیل نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره‌تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "کد تاییدی که برای ${ destinationText } ارسال شد را وارد نمایید."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "اگر شما در ساختن حسابتان مشکل دارید، لطفاً درخواست یک دعوتنامه داده و ما در طی یک روز کاری به شما پاسخ خواهیم داد."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "اگر ایمیلی در صندوق دریافت نمی بینید، لطفا پوشه اسپم را بررسی کنید."
+      ],
+      "Internet connection lost.": [
+        "اتصال اینترنت قطع شد."
+      ],
+      "Loading": [
+        "در حال بارگذاری"
+      ],
+      "No results found": [
+        "نتیجه‌ای پیدا نشد"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
+      ],
+      "Session timed out.": [
+        "مهلت نشست پایان یافت."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "برای نبرد با هرزنامه و سؤاستفاده، لطفاً تایید کنید که شما انسانید."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "از رایانامه شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "از شماره تلفن شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "حساب پروتن شما در حال حاضر متوقف شده است. به منظور ادامه استفاده از حسابتان، لطفا صورتحساب‌های عقب افتاده را بپردازید."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "لغو"
+      ],
+      "Email address": [
+        "رایانشانی"
+      ],
+      "Enter the 6-digit code": [
+        "کد 6 رقمی را وارد نمایید"
+      ],
+      "Hide password": [
+        "پنهان‌سازی گذرواژه"
+      ],
+      "Password": [
+        "گذرواژه"
+      ],
+      "Phone number": [
+        "شماره تلفن"
+      ],
+      "Reveal password": [
+        "افشای گذرواژه"
+      ],
+      "Submit": [
+        "ثبت"
+      ],
+      "Verification code": [
+        "کد تایید"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "بیشتر بدانید"
+      ],
+      "Request an invite": [
+        "درخواست دعوتنامه"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "کد به ${ methodTo } ارسال شد"
+      ],
+      "Verification successful": [
+        "تایید با موفقیت بود"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "تشخیص انسان"
+      ],
+      "Invalid verification code": [
+        "کد تایید نامعتبر"
+      ],
+      "Request new code": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "برای ادامه دوباره وارد شوید"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "گذرواژه باید حداقل ${ length } نویسه داشته باشد",
+        "گذرواژه باید حداقل ${ length } نویسه داشته باشد"
+      ]
+    }
+  }
+}

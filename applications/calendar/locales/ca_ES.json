@@ -202,6 +202,9 @@
       "Export": [
         "Exportar"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Exportar contactes"
       ],
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         ""
       ],
@@ -1944,9 +1953,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3240,9 +3246,6 @@
       "All day": [
         "Tot el dia"
       ],
-      "All-day event notifications": [
-        "Notificacions d'esdeveniments de tot el dia"
-      ],
       "Automatically save contacts": [
         "Desar contactes automàticament"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         "Data i hora"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Descripció"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Introduïu el codi de 6 dígits"
-      ],
-      "Event duration": [
-        "Durada de l'esdeveniment"
-      ],
-      "Event notifications": [
-        "Notificacions d'esdeveniment"
       ],
       "Event title": [
         "Títol de l'esdeveniment"
@@ -4497,6 +4506,11 @@
     "Select search results": {
       "No results found": [
         "No s'han trobat resultats"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

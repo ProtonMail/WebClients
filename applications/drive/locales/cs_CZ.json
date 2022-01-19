@@ -230,6 +230,9 @@
       "Export": [
         "Exportovat"
       ],
+      "Export contact group": [
+        "Exportovat skupinu kontaktů"
+      ],
       "Export contacts": [
         "Exportovat kontakty"
       ],
@@ -1649,16 +1652,16 @@
         "${ activeDownloadsCount } stahování"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "",
-        "",
-        "",
-        ""
+        "Stahuji ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "Stahuji ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "Stahuji ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "Stahuji ${ activeDownloadsCount } (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "",
-        "",
-        "",
-        ""
+        "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)",
+        "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)",
+        "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)",
+        "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mail adresa",
@@ -1719,27 +1722,27 @@
       ],
       "${ doneCount } finished": [
         "${ doneCount } hotovo",
-        "",
-        "",
-        ""
+        "${ doneCount } hotovy",
+        "${ doneCount } hotov",
+        "${ doneCount } hotov"
       ],
       "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } stažen",
+        "${ doneDownloadsCount } staženy",
         "${ doneDownloadsCount } staženo",
-        "",
-        "",
-        ""
+        "${ doneDownloadsCount } staženo"
       ],
       "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } nahrán",
+        "${ doneUploadsCount } nahrány",
         "${ doneUploadsCount } nahráno",
-        "",
-        "",
-        ""
+        "${ doneUploadsCount } nahráno"
       ],
       "${ errorCount } failed": [
         "${ errorCount } selhal",
-        "",
-        "",
-        ""
+        "${ errorCount } selhaly",
+        "${ errorCount } selhalo",
+        "${ errorCount } selhalo"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } skupina nalezena",
@@ -1911,9 +1914,9 @@
       ],
       "Are you sure you want to permanently delete selected item from trash?": [
         "Jste si jisti, že chcete vybranou položku z koše trvale odstranit?",
-        "",
-        "",
-        ""
+        "Jste si jisti, že chcete vybrané položky z koše trvale odstranit?",
+        "Jste si jisti, že chcete vybrané položky z koše trvale odstranit?",
+        "Jste si jisti, že chcete vybrané položky z koše trvale odstranit?"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
@@ -2013,9 +2016,9 @@
       ],
       "Delete drive": [
         "Odstranit Disk",
-        "",
-        "",
-        ""
+        "Odstranit disky",
+        "Odstranit disků",
+        "Odstranit disků"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Sleva na Vaše předplatné s kupónem ${ code }"
@@ -2430,9 +2433,9 @@
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Tím odstraníte odkaz a zrušíte přístup k vašemu souboru nebo složce pro každého, kdo má tento odkaz.",
-        "",
-        "",
-        ""
+        "Tím odstraníte odkaz a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tento odkaz.",
+        "Tím odstraníte odkaz a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tento odkaz.",
+        "Tím odstraníte odkaz a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tento odkaz."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní použít Paypal pro platby Proton předplatného. Přesměrujeme vás na Váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím pro než budete pokračovat."
@@ -3449,16 +3452,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importoval všechny zprávy z ${ selectedLabelsCount } štítku z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importoval všechny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importoval všechny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importoval všechny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importovat všechny zprávy z ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3517,10 +3520,10 @@
         "\"${ firstItemName }\" obnoveno z koše"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } odkaz na váš soubor byl odstraněn",
-        "",
-        "",
-        ""
+        "${ deletedCount } odkaz na Váš soubor byl odstraněn",
+        "${ deletedCount } odkazy na Vaše soubory byl odstraněny",
+        "${ deletedCount } odkazů na Vaše soubory byl odstraněny",
+        "${ deletedCount } odkazů na Vaše soubory byl odstraněny"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } soubor trvale odstraněn z koše",
@@ -3541,10 +3544,10 @@
         "${ deletedItemsCount } položky trvale odstraněné z koše"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "${ failedCount } odkaz na váš soubor se nepodařilo odstranit",
-        "",
-        "",
-        ""
+        "${ failedCount } odkaz na Váš soubor se nepodařilo odstranit",
+        "${ failedCount } odkazy na Váše soubory se nepodařilo odstranit",
+        "${ failedCount } odkazů na Váše soubory se nepodařilo odstranit",
+        "${ failedCount } odkazů na Váše soubory se nepodařilo odstranit"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } soubor se nepodařilo přestěhovat",
@@ -3641,9 +3644,9 @@
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
-        "",
-        "",
-        ""
+        "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
+        "Soubor nebo složka \"${ filename }\" a ${ count } dalších se již nahrávají",
+        "Soubor nebo složka \"${ filename }\" a ${ count } dalších se již nahrávají"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Soubor nebo složka \"${ filename }\" se již nahrává"

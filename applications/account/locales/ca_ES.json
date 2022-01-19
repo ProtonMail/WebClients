@@ -196,6 +196,9 @@
       "Continue import": [
         "Continua la importació"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Continua amb Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Sortir de tots els comptes"
+      ],
+      "Sign out from": [
+        ""
       ],
       "Signing in": [
         "Iniciant sessió"
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Errada en una de les condicions"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "No s'han pogut obtenir sessions actives. Actualitzeu o torneu-ho a provar més tard."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "L'arxiu no té contingut per previsualitzar"
@@ -3184,7 +3190,7 @@
         ""
       ],
       "account recovery method": [
-        ""
+        "mètode de recuperació de compte"
       ],
       "Account successfully updated": [
         "El compte s'ha actualitzat correctament"
@@ -3558,7 +3564,7 @@
         "Introduïu el vostre número de telèfon de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
       ],
       "Event invites and RSVPs will be sent in this language.": [
-        ""
+        "Les invitacions d'esdeveniments i confirmacions d'assistència s'enviaran en aquesta llengua."
       ],
       "Expired": [
         "Vençuda"
@@ -3844,7 +3850,7 @@
         "Nombreu la vostra nova carpeta i seleccioneu la carpeta principal on introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
       "New": [
-        ""
+        "Nou"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "Nou a ${ BRAND_NAME }? ${ signupLink }"
@@ -4079,10 +4085,10 @@
         "S'ha desactivat la frase de recuperació"
       ],
       "Recovery phrase is not associated with any keys.": [
-        ""
+        "La frase de recuperació no està associada amb cap clau."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        ""
+        "La frase de recuperació no està associada amb cap clau antiquada."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -4156,6 +4162,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Canvia a ${ professionalPlan } per afegir més usuaris."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
+      ],
       "Test link": [
         "Enllaç de prova"
       ],
@@ -4211,7 +4220,7 @@
         "Aquest és un fitxer de recuperació o una clau de xifratge que potser heu desat anteriorment."
       ],
       "This is an encryption key you may have previously saved.": [
-        ""
+        "Això és una clau de xifratge que potser heu desat anteriorment."
       ],
       "This is the password you used before the password reset.": [
         ""
@@ -4274,7 +4283,7 @@
         ""
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        ""
+        "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
@@ -4287,6 +4296,9 @@
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Per protegir la vostra connexió a internet, descarregueu i instal·leu l'aplicació de ProtonVPN per al vostre dispositiu i connecteu a un servidor ProtonVPN."
+      ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregeu el vostre compte amb crèdits que podeu utilitzar per subscriure-us a un nou pla o per renovar el pla actual. Obteniu un crèdit per cada ${ i18nCurrency } gastat."
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         ""
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Actualitzeu a un pla ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per activar les respostes automàtiques per quan esteu fora de l'oficina."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Actualitzeu-vos a un pla ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per començar."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "Milloreu el pla a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } o ${ PLAN_NAMES[PLANS.PLUS] } per a activar les respostes automàtiques quan esteu fora de l'oficina."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Actualitzeu a un pla de pagament per accedir a funcions premium i augmentar el vostre espai d’emmagatzematge."
@@ -4511,7 +4523,7 @@
         "Necessiteu tenir un calendari personal per crear un enllaç."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        ""
+        "Necessiteu tenir un calendari personal actiu per a importar els esdeveniments d'un .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "TOT"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Allow recovery by email": [
         "Permetre recuperació per correu electrònic"
       ],
@@ -5210,10 +5219,22 @@
       "Days of the week": [
         "Dies de la setmana"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "Idioma per defecte"
       ],
       "Default language (${ defaultLanguage })": [
+        ""
+      ],
+      "Default notifications": [
         ""
       ],
       "Default PGP scheme": [
@@ -5293,12 +5314,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduïu la contrasenya per la clau amb l'empremta digital ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        ""
       ],
       "Expires": [
         "Venç"
@@ -7113,6 +7128,11 @@
       ],
       "VPN apps": [
         "Aplicacions VPN"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Settings/filters": {

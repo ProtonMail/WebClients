@@ -224,6 +224,9 @@
       "Export": [
         "导出"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "导出联系人"
       ],
@@ -1570,7 +1573,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "授予本应用所需的所有权限"
       ]
     },
     "Import warning": {
@@ -1775,7 +1778,7 @@
         "您确定要从回收站永久删除所选项目吗？"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
+        "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "因为 ${ appName } 是端到端加密的，我们无法为您\n访问或解密您的文件。要在密码重置后解锁您的网盘，\n您必须具备以下条件之一："
@@ -2535,10 +2538,10 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "添加加密"
+        "加密邮件"
       ],
       "Add expiration time": [
-        "添加到期时间"
+        "设置有效期"
       ],
       "Apply / open": [
         "应用 / 打开"
@@ -2571,16 +2574,16 @@
         "转至所有邮件"
       ],
       "Go to Archive": [
-        "转至归档"
+        "转至存档"
       ],
       "Go to Drafts": [
         "转至草稿箱"
       ],
       "Go to Inbox": [
-        "转到收件箱"
+        "转至收件箱"
       ],
       "Go to Sent": [
-        "转至发件箱"
+        "转至已发送"
       ],
       "Go to Spam": [
         "转至垃圾邮件"
@@ -2589,16 +2592,16 @@
         "转至星标邮件"
       ],
       "Go to Trash": [
-        "转至回收站"
+        "转至废件箱"
       ],
       "Jump to first": [
-        "跳转到第一个"
+        "选择第一项"
       ],
       "Jump to last": [
-        "跳转到最后一个"
+        "选择最后一项"
       ],
       "Label as...": [
-        "标记为"
+        "加标签"
       ],
       "Load embedded images": [
         "加载嵌入图像"
@@ -2607,7 +2610,7 @@
         "加载外链内容"
       ],
       "Mark as unread": [
-        "标记为未读"
+        "标为未读"
       ],
       "Minimize / maximize composer": [
         "最小化/最大化编辑窗"
@@ -2622,31 +2625,31 @@
         "右移 / 展开"
       ],
       "Move to Archive": [
-        "移动到归档"
+        "存档"
       ],
       "Move to Inbox": [
-        "移动到收件箱"
+        "移至收件箱"
       ],
       "Move to Spam": [
-        "归为垃圾邮件"
+        "标为垃圾邮件"
       ],
       "Move to Trash": [
-        "移至回收站"
+        "移至废件箱"
       ],
       "Move to...": [
-        "移至..."
+        "移动邮件"
       ],
       "Move up": [
         "上移"
       ],
       "New message": [
-        "新邮件"
+        "撰写邮件"
       ],
       "Open next message": [
-        "打开下则消息"
+        "打开下一封邮件"
       ],
       "Open previous message": [
-        "打开上则消息"
+        "打开上一封邮件"
       ],
       "Open this modal": [
         "打开此面板"
@@ -2655,7 +2658,7 @@
         "回复"
       ],
       "Reply all": [
-        "回复全部"
+        "回复所有人"
       ],
       "Save draft": [
         "保存草稿"
@@ -2667,7 +2670,7 @@
         "选择 / 取消选择"
       ],
       "Select / unselect all": [
-        "全选 / 反选"
+        "全选 / 全不选"
       ],
       "Send email": [
         "发送邮件"
@@ -2699,13 +2702,13 @@
         "编辑窗快捷键"
       ],
       "Folder shortcuts": [
-        "类别快捷键"
+        "文件夹快捷键"
       ],
       "List shortcuts": [
         "列表快捷键"
       ],
       "Message shortcuts": [
-        "消息快捷键"
+        "邮件快捷键"
       ]
     },
     "Keyboard Shortcuts Disabled": {
@@ -2894,7 +2897,7 @@
         "导入到邮箱地址"
       ],
       "Keyboard shortcuts": [
-        "键盘快捷键"
+        "开启快捷键"
       ],
       "Label messages as": [
         "给导入的邮件加标签"
@@ -3465,7 +3468,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "请注意，下一步您需要${ boldNextStep }才能开始导入。"
       ]
     },
     "Onboarding Proton": {
@@ -3852,7 +3855,7 @@
         "指纹已复制到剪贴板"
       ],
       "Keyboard shortcuts preferences updated": [
-        "键盘快捷键设置已更新"
+        "快捷键设置已更改"
       ],
       "Phone number copied to clipboard": [
         "电话号码已复制到剪贴板"

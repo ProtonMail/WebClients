@@ -196,6 +196,9 @@
       "Continue import": [
         "Continuar a importação"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Continuar com Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Sair de todas as contas"
+      ],
+      "Sign out from": [
+        ""
       ],
       "Signing in": [
         ""
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Erro numa das condições"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Falha ao obter sessões activas. Por favor, actualize ou tente novamente mais tarde."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "O ficheiro não tem conteúdo para antever"
@@ -4156,6 +4162,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Mude para ${ professionalPlan } para adicionar mais utilizadores."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
+      ],
       "Test link": [
         "Testar ligação"
       ],
@@ -4288,6 +4297,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Para proteger a ligação à Internet, transfira e instale a aplicação ProtonVPN para o seu dispositivo e ligue-o a um servidor ProtonVPN."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         ""
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Actualize para um plano ${ PLAN_NAMES[PLANS.VISIONARY] } ou ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para activar respostas automáticas quando se ausenta do escritório."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Actualize para um plano ${ PLAN_NAMES[PLANS.VISIONARY] } ou ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para começar."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        ""
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Actualize para um plano pago para desbloquear funcionalidades e aumentar a sua capacidade de armazenamento."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "TUDO"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Allow recovery by email": [
         "Permitir recuperação por email"
       ],
@@ -5210,10 +5219,22 @@
       "Days of the week": [
         "Dias da semana"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "Idioma predefinido"
       ],
       "Default language (${ defaultLanguage })": [
+        ""
+      ],
+      "Default notifications": [
         ""
       ],
       "Default PGP scheme": [
@@ -5293,12 +5314,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Insira a senha para a chave com impressão digital: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        ""
-      ],
-      "Event notifications": [
-        ""
       ],
       "Expires": [
         "Expira"
@@ -7115,6 +7130,11 @@
         "Aplicações VPN"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
+      ]
+    },
     "Settings/filters": {
       "Filters": [
         "Filtros"
@@ -8842,12 +8862,12 @@
         "A cada ${ interval } semanas, ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "A cada semana, ${ multipleDaysString }, §{ timesString }",
-        "A cada ${ interval } semanas, ${ multipleDaysString }, §{ timesString }"
+        "A cada semana, ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "A cada semana, ${ multipleDaysString }, §{ untilString }",
-        "A cada ${ interval } semanas, ${ multipleDaysString }, §{ untilString }"
+        "A cada semana, ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "A cada semana, todos os dias",

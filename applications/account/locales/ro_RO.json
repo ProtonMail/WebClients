@@ -196,6 +196,9 @@
       "Continue import": [
         "Continuare importare"
       ],
+      "Continue with": [
+        "Continuați cu"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Deconectare toate conturile"
+      ],
+      "Sign out from": [
+        "Ieșiți din"
       ],
       "Signing in": [
         "Conectare"
@@ -1786,8 +1792,8 @@
       "Error in one of the conditions": [
         "Eroare în una dintre condiții"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Obținerea sesiunilor active a eșuat. Reîmprospătați pagina sau reîncercați mai târziu."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        "Nu a reușit să obțină sesiuni active. Vă rugăm ${ refresh } sau încercați din nou mai târziu."
       ],
       "File has no contents to preview": [
         "Fișierul nu are conținut de afișat"
@@ -4214,6 +4220,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Comutați la ${ professionalPlan } pentru a adăuga mai mulți utilizatori."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
+      ],
       "Test link": [
         "Testare legătură"
       ],
@@ -4346,6 +4355,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Pentru a vă securiza conexiunea la Internet, descărcați și instalați aplicația ProtonVPN pentru propriul dispozitiv și conectați-vă la un server ProtonVPN."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        "Pentru a utiliza ${ toAppName }, vă rugăm să creați o adresă."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Alimentați-vă contul cu credite pe care le puteți folosi pentru a vă cumpăra un plan nou sau pentru a-l reînnoi pe cel existent. Veți obține câte un credit pentru fiecare ${ i18nCurrency } cheltuit."
       ],
@@ -4385,11 +4397,11 @@
       "Update recovery phrase": [
         "Actualizare frază de recuperare"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Treceți la un plan ${ PLAN_NAMES[PLANS.VISIONARY] } sau ${ PLAN_NAMES[PLANS.PROFESSIONAL] } pentru a activa răspunsurile automate atunci când nu aveţi acces la e-mail."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Migraţi la planul ${ PLAN_NAMES[PLANS.PROFESSIONAL] } sau ${ PLAN_NAMES[PLANS.VISIONARY] } sau pentru a începe."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        "Treceți la un plan ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } sau ${ PLAN_NAMES[PLANS.PLUS] } pentru a activa răspunsurile automate atunci când sunteți plecat de la birou."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Treceți la un plan cu plată pentru a accesa funcțiile premium și a crește spațiul de stocare."
@@ -5107,9 +5119,6 @@
       "ALL": [
         "TOATE"
       ],
-      "All-day event notifications": [
-        "Notificări evenimente toată ziua"
-      ],
       "Allow recovery by email": [
         "Permitere recuperare prin e-mail"
       ],
@@ -5272,11 +5281,23 @@
       "Days of the week": [
         "Ziua săptămânii"
       ],
+      "Default email address": [
+        "Adresa implicită"
+      ],
+      "Default event duration": [
+        "Durată implicită eveniment"
+      ],
+      "Default full day notifications": [
+        "Notificări întreaga zi implicite"
+      ],
       "Default language": [
         "Limba implicită"
       ],
       "Default language (${ defaultLanguage })": [
         "Limba implicită (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Notificări implicite"
       ],
       "Default PGP scheme": [
         "Schema PGP implicită"
@@ -5355,12 +5376,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduceți parola pentru cheia cu amprenta: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Durată eveniment"
-      ],
-      "Event notifications": [
-        "Notificări eveniment"
       ],
       "Expires": [
         "Expirare"
@@ -7187,6 +7202,11 @@
       ],
       "VPN apps": [
         "Aplicații VPN"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Nu s-a reușit actualizarea setărilor"
       ]
     },
     "Settings/filters": {

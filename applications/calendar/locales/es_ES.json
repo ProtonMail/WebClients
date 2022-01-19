@@ -202,6 +202,9 @@
       "Export": [
         "Exportar"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Exportar contactos"
       ],
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         ""
       ],
@@ -1944,9 +1953,6 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3240,9 +3246,6 @@
       "All day": [
         "Todo el día"
       ],
-      "All-day event notifications": [
-        ""
-      ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         "Fecha y hora"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Descripción"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Introduce el código de 6 dígitos"
-      ],
-      "Event duration": [
-        "Duración del evento"
-      ],
-      "Event notifications": [
-        "Notificaciones del evento"
       ],
       "Event title": [
         "Título del evento"
@@ -4497,6 +4506,11 @@
     "Select search results": {
       "No results found": [
         "No se han encontrado resultados"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {
