@@ -237,4 +237,11 @@ select {
 			}
 		}
 	}
+
+	&-container--compact {
+		.inputform-assist:empty {
+			min-block-size: 0;
+			padding-block-start: 0;
+		}
+	}
 }
