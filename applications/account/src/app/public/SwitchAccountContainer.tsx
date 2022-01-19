@@ -192,11 +192,12 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                                     <strong className="block text-break">{nameToDisplay}</strong>
                                     <div className="text-break color-weak">{PrimaryEmail}</div>
                                 </button>
-                                <div className="relative upper-layer overflow-hidden">
+                                <div className="overflow-hidden">
                                     {loadingMap[LocalID] ? (
                                         <CircleLoader />
                                     ) : (
                                         <InlineLinkButton
+                                            className="relative upper-layer"
                                             title={signOutText}
                                             aria-label={signOutText}
                                             onClick={(event) => handleSignOut(event, LocalID)}
