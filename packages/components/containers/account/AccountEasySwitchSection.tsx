@@ -96,6 +96,7 @@ const AccountEasySwitchSection = () => {
                 onOpenCalendarModal={onOpenCalendarModal}
                 addresses={addresses}
                 provider={provider}
+                featureMap={easySwitchFeatureValue}
             />
         );
 
