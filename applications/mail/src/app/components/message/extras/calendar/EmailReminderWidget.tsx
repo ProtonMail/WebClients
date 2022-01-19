@@ -18,6 +18,7 @@ import {
     CalendarEventDateHeader,
     useGetCalendars,
     useIsMounted,
+    useGetAddressKeys,
 } from '@proton/components';
 import { Calendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { getEvent } from '@proton/shared/lib/api/calendars';
@@ -28,7 +29,7 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { getParticipant } from '@proton/shared/lib/calendar/integration/invite';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
-import { getDoesCalendarNeedUserAction } from '@proton/shared/lib/calendar/calendar';
+import { getCalendarWithReactivatedKeys, getDoesCalendarNeedUserAction } from '@proton/shared/lib/calendar/calendar';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
@@ -74,6 +75,8 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const contactEmails = (useContactEmails()[0] as ContactEmail[]) || [];
     const getCalendars = useGetCalendars();
+    const getAddressKeys = useGetAddressKeys();
+
     const isMounted = useIsMounted();
 
     const messageHasDecryptionError = !!message.errors?.decryption?.length;
@@ -153,12 +156,15 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                 const calendar = calendars.find(({ ID }) => ID === Event.CalendarID);
 
                 // We cannot be sure that setCalendar has finished when reaching the catch
-                calendarData = calendar;
+                calendarData = calendar
+                    ? await getCalendarWithReactivatedKeys({ calendar, api, addresses, getAddressKeys })
+                    : calendar;
 
                 if (!isMounted()) {
                     return;
                 }
-                setCalendar(calendar);
+
+                setCalendar(calendarData);
 
                 const { veventComponent } = await getCalendarEventRaw(Event).catch(() => {
                     throw new Error(DECRYPTION_ERROR);

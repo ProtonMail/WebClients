@@ -1,7 +1,5 @@
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
-import { reactivateCalendarsKeys } from '@proton/shared/lib/calendar/keys/reactivateCalendarKeys';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { toggleBit } from '@proton/shared/lib/helpers/bitset';
 import { getUnixTime } from 'date-fns';
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -12,16 +10,11 @@ import {
     withPmAttendees,
 } from '@proton/shared/lib/calendar/attendees';
 import {
-    getDoesCalendarHaveInactiveKeys,
+    getCalendarWithReactivatedKeys,
     getDoesCalendarNeedUserAction,
     getIsCalendarDisabled,
 } from '@proton/shared/lib/calendar/calendar';
-import {
-    CALENDAR_FLAGS,
-    ICAL_ATTENDEE_STATUS,
-    ICAL_EVENT_STATUS,
-    ICAL_METHOD,
-} from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -266,30 +259,22 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         recurrenceId: veventComponent['recurrence-id'],
     });
     const { event: calendarEvent, parentEvent: calendarParentEvent, supportedRecurrenceId } = allEventsWithUID;
-    const calendar =
+    const calendarWithPossiblyNotReactivatedKeys =
         calendars.find(({ ID }) => ID === (calendarEvent || calendarParentEvent)?.CalendarID) || defaultCalendar;
-    if (!calendar) {
+    if (!calendarWithPossiblyNotReactivatedKeys) {
         return {};
     }
     let hasReactivatedCalendar = false;
-    if (getDoesCalendarHaveInactiveKeys(calendar)) {
-        try {
-            const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
-            await reactivateCalendarsKeys({
-                calendars: [calendar],
-                api: silentApi,
-                addresses: ownAddresses,
-                getAddressKeys,
-            });
-            // we need to update the calendar data manually. We update the flags here,
-            // while the calendar keys will be updated in the step after the catch
-            calendar.Flags = toggleBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
+    const calendar = await getCalendarWithReactivatedKeys({
+        calendar: calendarWithPossiblyNotReactivatedKeys,
+        api,
+        addresses: ownAddresses,
+        getAddressKeys,
+        successCallback: () => {
             hasReactivatedCalendar = true;
-        } catch (e) {
-            // fail silently, proceed with the calendar in a passphrase-needs-update state
-            noop();
-        }
-    }
+        },
+    });
+
     const { memberID, addressID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(
         calendar.ID,
         hasReactivatedCalendar
