@@ -64,13 +64,13 @@ export interface GetErrorProps {
 }
 
 export const getError = ({ event, errorType, weekStartsOn, defaultTzid }: GetErrorProps): ExportError => {
-    const { StartTime, RRule } = event;
+    const { StartTime, RRule, FullDay } = event;
     const startDate = new Date(StartTime * SECOND);
     const fakeUTCStartDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startDate), defaultTzid));
-    const startDateString = formatUTC(fakeUTCStartDate, 'Pp', { locale: dateLocale });
+    const startDateString = formatUTC(fakeUTCStartDate, FullDay ? 'P' : 'Pp', { locale: dateLocale });
     const { offset } = getTimezoneOffset(startDate, defaultTzid);
     const offsetString = formatGMTOffsetAbbreviation(offset);
-    const timeString = `${startDateString} ${offsetString}`;
+    const timeString = `${startDateString}${FullDay ? '' : ` ${offsetString}`}`;
 
     const rruleValueFromString = RRule ? fromRruleString(RRule) : undefined;
     const utcStartDate = fromUnixTime(StartTime);

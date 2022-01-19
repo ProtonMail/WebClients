@@ -25,7 +25,7 @@ import {
 interface Props {
     model: ExportCalendarModel;
     setModel: Dispatch<SetStateAction<ExportCalendarModel>>;
-    onFinish: (vevents: VcalVeventComponent[], exportErrors: ExportError[]) => void;
+    onFinish: (vevents: VcalVeventComponent[], exportErrors: ExportError[], keepError?: boolean) => void;
 }
 const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
@@ -124,7 +124,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     return;
                 }
 
-                onFinish([], []);
+                onFinish([], [], true);
             }
         };
 
