@@ -227,6 +227,9 @@
       "Decrease": [
         "减少"
       ],
+      "Decrypt": [
+        "解密"
+      ],
       "Default email application": [
         "设为默认邮件应用"
       ],
@@ -325,6 +328,9 @@
       ],
       "Export": [
         "导出"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "导出联系人"
@@ -534,7 +540,7 @@
         "移至"
       ],
       "Move to archive": [
-        "归档"
+        "存档"
       ],
       "Move to inbox": [
         "移至收件箱"
@@ -550,6 +556,9 @@
       ],
       "Move to...": [
         "移至..."
+      ],
+      "Need help?": [
+        "需要帮助？"
       ],
       "Never show": [
         "不再显示"
@@ -594,7 +603,7 @@
         "打开日历"
       ],
       "Open get started checklist modal": [
-        ""
+        "打开入门清单"
       ],
       "Open navigation": [
         "打开导航栏"
@@ -679,6 +688,9 @@
       ],
       "Rename": [
         "重命名"
+      ],
+      "Reply securely": [
+        "安全回复"
       ],
       "Report a problem": [
         "反馈问题"
@@ -870,7 +882,7 @@
         "撤销"
       ],
       "Unlock data": [
-        ""
+        "解锁数据"
       ],
       "Unmark for deletion": [
         "取消标记以删除。"
@@ -2153,6 +2165,9 @@
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
+      "Enter a password": [
+        "输入密码"
+      ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
@@ -2438,6 +2453,9 @@
       "Unknown payment token status": [
         "支付状态不明"
       ],
+      "Wrong mailbox password": [
+        "邮箱密码错误"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "收件人不能超过 100 个"
       ],
@@ -2661,6 +2679,12 @@
       "Invalid response": [
         "无效回复"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "意外错误"
       ],
@@ -2681,9 +2705,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "您的回复已发送，但活动无法添加到您的日历"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "您的回复已发送，但活动无法在您的日历中更新"
       ]
     },
     "Event title": {
@@ -3278,8 +3299,11 @@
       "Background color": [
         "背景颜色"
       ],
+      "Based in Switzerland, available globally": [
+        "扎根瑞士，惠及全球"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "无论您是否开启快捷键，一些基本的导航和操作始终可用。"
+        "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "每两年支付 ${ billedPrice }"
@@ -3385,6 +3409,9 @@
       ],
       "Day": [
         "天"
+      ],
+      "Decrypt message": [
+        "解密邮件"
       ],
       "Default email application": [
         "设为默认邮件应用"
@@ -3923,6 +3950,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
+      "Sorry, this message does not exist or has already expired": [
+        "对不起，此邮件不存在或已过期"
+      ],
       "Starter VPN service with P2P support.": [
         "支持 P2P 的入门级 VPN 服务。"
       ],
@@ -3976,6 +4006,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "您正在转发或回复的原始邮件还在发送中，如果继续，您将无法再撤回原始邮件。"
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "此邮件原先的发件地址已不再有效，邮件将由您的默认地址 ${ defaultAddress.Email } 发送。"
       ],
       "The sender has requested a read receipt.": [
         "发件人请您寄回执。"
@@ -4175,6 +4208,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
       ],
+      "Version ${ appVersion }": [
+        "版本 ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "前往我们的商店即可选购 Proton 特色纪念品。"
       ],
@@ -4273,6 +4309,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "你已经达到了100%的存储容量。考虑释放一些空间或升级您的帐户，以获得额外的存储空间来撰写新的信息。"
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您的 PayPal 账户需要绑定信用卡或银行账户才能作为支付方式。"
@@ -4424,10 +4463,10 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "添加加密"
+        "加密邮件"
       ],
       "Add expiration time": [
-        "添加有效期"
+        "设置有效期"
       ],
       "Apply / open": [
         "应用 / 打开"
@@ -4460,16 +4499,16 @@
         "转至所有邮件"
       ],
       "Go to Archive": [
-        "转至归档"
+        "转至存档"
       ],
       "Go to Drafts": [
         "转至草稿箱"
       ],
       "Go to Inbox": [
-        "转到收件箱"
+        "转至收件箱"
       ],
       "Go to Sent": [
-        "转至发件箱"
+        "转至已发送"
       ],
       "Go to Spam": [
         "转至垃圾邮件"
@@ -4481,13 +4520,13 @@
         "转至废件箱"
       ],
       "Jump to first": [
-        "跳转到第一个"
+        "选择第一项"
       ],
       "Jump to last": [
-        "跳转到最后一个"
+        "选择最后一项"
       ],
       "Label as...": [
-        "标记为"
+        "加标签"
       ],
       "Load embedded images": [
         "加载嵌入图像"
@@ -4496,7 +4535,7 @@
         "加载外链内容"
       ],
       "Mark as unread": [
-        "标记为未读"
+        "标为未读"
       ],
       "Minimize / maximize composer": [
         "最小化/最大化编辑窗"
@@ -4511,10 +4550,10 @@
         "右移 / 展开"
       ],
       "Move to Archive": [
-        "移动到归档"
+        "存档"
       ],
       "Move to Inbox": [
-        "移动到收件箱"
+        "移至收件箱"
       ],
       "Move to Spam": [
         "标为垃圾邮件"
@@ -4523,19 +4562,19 @@
         "移至废件箱"
       ],
       "Move to...": [
-        "移至..."
+        "移动邮件"
       ],
       "Move up": [
         "上移"
       ],
       "New message": [
-        "新邮件"
+        "撰写邮件"
       ],
       "Open next message": [
-        "打开下则消息"
+        "打开下一封邮件"
       ],
       "Open previous message": [
-        "打开上则消息"
+        "打开上一封邮件"
       ],
       "Open this modal": [
         "打开此面板"
@@ -4544,7 +4583,7 @@
         "回复"
       ],
       "Reply all": [
-        "回复全部"
+        "回复所有人"
       ],
       "Save draft": [
         "保存草稿"
@@ -4556,7 +4595,7 @@
         "选择 / 取消选择"
       ],
       "Select / unselect all": [
-        "全选 / 反选"
+        "全选 / 全不选"
       ],
       "Send email": [
         "发送邮件"
@@ -4588,13 +4627,13 @@
         "编辑窗快捷键"
       ],
       "Folder shortcuts": [
-        "类别快捷键"
+        "文件夹快捷键"
       ],
       "List shortcuts": [
         "列表快捷键"
       ],
       "Message shortcuts": [
-        "消息快捷键"
+        "邮件快捷键"
       ]
     },
     "Keyboard Shortcuts Disabled": {
@@ -4816,7 +4855,7 @@
         "导入到邮箱地址"
       ],
       "Keyboard shortcuts": [
-        "快捷键"
+        "开启快捷键"
       ],
       "Keyword": [
         "关键词"
@@ -5133,7 +5172,7 @@
         "所有邮件"
       ],
       "Archive": [
-        "归档"
+        "存档"
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
@@ -5207,6 +5246,12 @@
       "Pay invoice": [
         "前去支付"
       ],
+      "Previous version": [
+        "使用旧版"
+      ],
+      "Privacy policy": [
+        "隐私协议"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "重新启用与本日历关联的地址以管理您的邀请。"
       ],
@@ -5222,11 +5267,17 @@
       "Sent": [
         "已发送"
       ],
+      "Sign up for free": [
+        "免费注册"
+      ],
       "Spam": [
         "垃圾邮件"
       ],
       "Starred": [
         "已加星标"
+      ],
+      "Terms": [
+        "服务条款"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "此 ICS 文件包含多个日程，请下载并导入 ${ calendarAppName } 中的日程"
@@ -5438,16 +5489,16 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        "定时发送未完成"
+        "定时发送已撤销"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "定时发送已取消，邮件已移至草稿箱。"
       ],
       "Sending undone": [
-        "邮件已撤回"
+        "邮件发送已撤销"
       ],
       "Undoing send...": [
-        ""
+        "正在撤销发送..."
       ]
     },
     "MIME type": {
@@ -5869,7 +5920,7 @@
         "输入文本或关键词"
       ],
       "Write your message": [
-        "编写你的邮件"
+        "在此撰写邮件内容"
       ],
       "ZIP": [
         "邮编"
@@ -6389,7 +6440,7 @@
         "文件夹已清空"
       ],
       "Keyboard shortcuts preferences updated": [
-        "键盘快捷键设置已更新"
+        "快捷键设置已更改"
       ],
       "Label cleared": [
         "标签已清除"
@@ -6950,6 +7001,9 @@
       "Processing...": [
         "正在处理..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
       ],
@@ -7006,6 +7060,9 @@
       ],
       "Send without expiration?": [
         "发送永久有效的邮件？"
+      ],
+      "Sender changed": [
+        "发件地址已更改"
       ],
       "Sending error": [
         "发送时出错"
@@ -7175,6 +7232,14 @@
       ],
       "You do not have any contacts to export": [
         "您没有任何联系人可导出"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "稳定版"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "不支持此版本的 Tor 浏览器，请升级至最新的${ stableRelease }"
       ]
     },
     "Update font modal": {

@@ -202,6 +202,9 @@
       "Export": [
         "Εξαγωγή"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Εξαγωγή Επαφών"
       ],
@@ -476,7 +479,7 @@
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
       "Unlock data": [
-        ""
+        "Ξεκλείδωμα δεδομένων"
       ],
       "Unmark for deletion": [
         "Κατάργηση σήμανσης για διαγραφή"
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         "Μη έγκυρη απάντηση"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Απροσδόκητο σφάλμα"
       ],
@@ -1945,9 +1954,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας"
       ]
     },
     "Event popover close button": {
@@ -3240,9 +3246,6 @@
       "All day": [
         "Όλη την ημέρα"
       ],
-      "All-day event notifications": [
-        "Ολοήμερες ειδοποιήσεις εκδήλωσης"
-      ],
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         "Ημερομηνία και ώρα"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
       "Description": [
         "Περιγραφή"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Εισάγετε τον 6-ψήφιο κωδικό"
-      ],
-      "Event duration": [
-        "Διάρκεια εκδήλωσης"
-      ],
-      "Event notifications": [
-        "Ειδοποιήσεις συμβάντων"
       ],
       "Event title": [
         "Τίτλος εκδήλωσης"
@@ -4497,6 +4506,11 @@
     "Select search results": {
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Sidebar calendar edit tooltip": {

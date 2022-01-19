@@ -224,6 +224,9 @@
       "Export": [
         "匯出"
       ],
+      "Export contact group": [
+        "匯出聯絡人群組"
+      ],
       "Export contacts": [
         "匯出聯絡人"
       ],
@@ -1832,7 +1835,7 @@
         "連線"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        ""
+        "繼續使用 ${ appName } 並在稍後解鎖硬碟"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "建立 ${ calendarsToBeCreated } 個新行事曆"
@@ -2099,7 +2102,7 @@
         "，共"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        ""
+        "您的其中一個加密硬碟被鎖定。這很可能是因為近期的密碼重設。${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有當您使用 PGP 寄送給非 ProtonMail 收件人時，才需修改這些設定。"
@@ -2300,16 +2303,16 @@
         "如要使用地址驗證，您必須信任一或多個可用的公開金鑰，包括您想用於寄送的公開金鑰。這樣做是為了防止加密金鑰遭到偽造。"
       ],
       "Transfer canceled for file \"${ name }\"": [
-        "已取消檔案「{ name }」的傳輸"
+        "已取消檔案「${ name }」的傳輸"
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        "已取消資料夾「{ name }」的傳輸"
+        "已取消資料夾「${ name }」的傳輸"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "已跳過檔案「{ file.name }」的傳輸"
+        "已跳過檔案「${ file.name }」的傳輸"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "已跳過資料夾「{ folderName }」的傳輸"
+        "已跳過資料夾「${ folderName }」的傳輸"
       ],
       "Trash": [
         "垃圾桶"
@@ -3287,10 +3290,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "匯入${ periodFragment }迄今帶有 ${ totalLabelsCount } 中之 ${ selectedLabelsCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "匯入${ periodFragment }迄今帶有 ${ totalLabelsCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3361,7 +3364,7 @@
         "${ deletedItemsCount } 個項目已從垃圾桶中永久刪除"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        ""
+        "${ failedCount } 個連結到您的檔案刪除失敗。"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } 個檔案移動失敗"
@@ -3421,10 +3424,10 @@
         "上傳檔案失敗：${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "檔案或資料夾「{ filename }」以及其他 ${ count } 已上傳"
+        "檔案或資料夾「${ filename }」以及其他 ${ count } 已上傳"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "檔案或資料夾「{ filename }」已上傳"
+        "檔案或資料夾「${ filename }」已上傳"
       ],
       "File or folder is missing a name": [
         "檔案或資料夾名稱遺失"
@@ -4677,7 +4680,7 @@
         "${ n } 條VPN連線"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        ""
+        "有 ${ numberOfServers } 台伺服器分布在 ${ numberOfCountries } 個國家"
       ]
     },
     "Warning": {
@@ -4730,7 +4733,7 @@
         "聯絡人詳細資料的簽章驗證失敗。"
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "此動作無法復原。請在欄位輸入「{ boldDanger }」一詞以繼續。"
+        "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
       ],
       "This feature requires a paid Proton account": [
         "付費的 Proton 帳號才能使用此功能"

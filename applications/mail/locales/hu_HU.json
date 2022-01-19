@@ -227,6 +227,9 @@
       "Decrease": [
         "Csökkent"
       ],
+      "Decrypt": [
+        ""
+      ],
       "Default email application": [
         ""
       ],
@@ -327,6 +330,9 @@
       ],
       "Export": [
         "Exportálás"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Névjegyek exportálása"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Áthelyezés..."
       ],
+      "Need help?": [
+        ""
+      ],
       "Never show": [
         "Elrejtés"
       ],
@@ -681,6 +690,9 @@
         "Címke eltávolítása"
       ],
       "Rename": [
+        ""
+      ],
+      "Reply securely": [
         ""
       ],
       "Report a problem": [
@@ -2173,6 +2185,9 @@
       "Enter 6 digits": [
         "6 számjegyet írjon be"
       ],
+      "Enter a password": [
+        ""
+      ],
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
       ],
@@ -2464,6 +2479,9 @@
       "Unknown payment token status": [
         "Ismeretlen fizetési token állapot"
       ],
+      "Wrong mailbox password": [
+        ""
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Nem küldhet üzenetet több mint 100 címzettnek"
       ],
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Érvénytelen válasz"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Váratlan hiba"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "A válasz elküldésre került, de az eseményt nem sikerült a naptárában frissíteni"
       ]
     },
     "Event title": {
@@ -3346,6 +3367,9 @@
       "Background color": [
         "Háttérszín"
       ],
+      "Based in Switzerland, available globally": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
       ],
@@ -3455,6 +3479,9 @@
       "Day": [
         "Nap",
         "Nap"
+      ],
+      "Decrypt message": [
+        ""
       ],
       "Default email application": [
         ""
@@ -4002,6 +4029,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        ""
+      ],
       "Starter VPN service with P2P support.": [
         "Alap VPN csomag, P2P támogatással."
       ],
@@ -4055,6 +4085,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Az eredeti levél amelyre válaszolna vagy továbbítaná, éppen kiküldés alatt áll. Ha folytatja, már nem lesz lehetősége a kiküldés alatt álló levél elküldésének megszakítására."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "A feladó olvasási visszaigazolást kért."
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Az ellenőrzés meg fog nyitni egy új böngészőfület. Kérjük engedélyezze a felugró ablakokat. Nem fog fizetés történni. A kártya ellenőrzéséhez felhasznált összeg azonnal visszatérítésre kerül."
       ],
+      "Version ${ appVersion }": [
+        ""
+      ],
       "Visit our shop to get Proton merchandise.": [
         ""
       ],
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Teljesen betelt a tárhelye. További üzenetek küldéséhez szabadítson fel helyet vagy vásároljon további tárhelyet."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ahhoz, hogy felvehesse fizetési módként, a PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát."
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Számla kifizetése"
       ],
+      "Previous version": [
+        ""
+      ],
+      "Privacy policy": [
+        ""
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "A meghívó kezeléséhez, engedélyezze újra a naptárhoz tartozó címét."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Elküldött"
       ],
+      "Sign up for free": [
+        ""
+      ],
       "Spam": [
         "Levélszemét"
       ],
       "Starred": [
         "Csillagozott"
+      ],
+      "Terms": [
+        ""
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         ""
@@ -7090,6 +7141,9 @@
       "Processing...": [
         "Folyamatban..."
       ],
+      "ProtonMail": [
+        ""
+      ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
       ],
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "Küldés időkorlát nélkül?"
+      ],
+      "Sender changed": [
+        ""
       ],
       "Sending error": [
         "Hiba a küldés közben"
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "Önnek nincs exportálható névjegye"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        ""
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        ""
       ]
     },
     "Update font modal": {

@@ -227,6 +227,9 @@
       "Decrease": [
         "Kurangi"
       ],
+      "Decrypt": [
+        "Dekripsi"
+      ],
       "Default email application": [
         "Aplikasi email default"
       ],
@@ -252,7 +255,7 @@
         "Hapus draf"
       ],
       "Delete permanently": [
-        "Hapus permanen"
+        "Hapus secara permanen"
       ],
       "Deselect": [
         "Hapus pilihan"
@@ -321,10 +324,13 @@
         "Lebarkan komposer"
       ],
       "Expand URL": [
-        "Lebarkan URL"
+        "Panjangkan URL"
       ],
       "Export": [
         "Ekspor"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Ekspor kontak"
@@ -507,7 +513,7 @@
         "Mungkin"
       ],
       "Maybe I'll attend": [
-        "Mungkin saya akan datang"
+        "Mungkin saya akan hadir"
       ],
       "Merge": [
         "Gabung"
@@ -551,6 +557,9 @@
       "Move to...": [
         "Pindah ke..."
       ],
+      "Need help?": [
+        "Butuh bantuan?"
+      ],
       "Never show": [
         "Jangan pernah tampilkan"
       ],
@@ -576,7 +585,7 @@
         "Tidak"
       ],
       "No, I won't attend": [
-        "Tidak, saya tidak akan datang"
+        "Tidak, saya tidak akan hadir"
       ],
       "Not saved": [
         "Belum disimpan"
@@ -680,6 +689,9 @@
       "Rename": [
         "Ubah nama"
       ],
+      "Reply securely": [
+        "Balas secara aman"
+      ],
       "Report a problem": [
         "Laporkan sebuah masalah"
       ],
@@ -744,7 +756,7 @@
         "Tetap kirim"
       ],
       "send auto-reply email": [
-        "kirim surel balasan-otomatis"
+        "kirim pesan balasan otomatis"
       ],
       "Send receipt": [
         "Kirim bukti baca"
@@ -882,7 +894,7 @@
         "Berhenti berlangganan"
       ],
       "Unsubscribing": [
-        "Berhenti berlangganan"
+        "Menghentikan langganan"
       ],
       "Untrust": [
         "Jangan percayai"
@@ -924,7 +936,7 @@
         "Gunakan pengaturan \"${ label }\""
       ],
       "Verify": [
-        "Memeriksa"
+        "Verifikasi"
       ],
       "View": [
         "Lihat"
@@ -960,7 +972,7 @@
         "Ya"
       ],
       "Yes, I'll attend": [
-        "Ya, saya akan datang"
+        "Ya, saya akan hadir"
       ],
       "Zoom in": [
         "Perbesar"
@@ -2153,6 +2165,9 @@
       "Enter 6 digits": [
         "Masukkan 6 digit"
       ],
+      "Enter a password": [
+        "Masukkan kata sandi"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Gagal menyambungkan ke API Bitcoin."
       ],
@@ -2259,7 +2274,7 @@
         "Tidak ada kunci WKD yang diambil untuk pengguna internal yang valid untuk pengiriman"
       ],
       "Not a valid number": [
-        "Bukan nomor yang valid"
+        "Nomor telepon tidak valid"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
@@ -2438,6 +2453,9 @@
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
       ],
+      "Wrong mailbox password": [
+        "Kata sandi kotak pesan salah"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
       ],
@@ -2529,7 +2547,7 @@
         "Zona waktu kalender tidak didukung"
       ],
       "Component with wrong format": [
-        "Komponen dengan format salah"
+        "Komponen dengan format yang salah"
       ],
       "Custom timezone": [
         "Zona waktu khusus"
@@ -2541,7 +2559,7 @@
         "Enkripsi gagal"
       ],
       "End time out of bounds": [
-        "Waktu akhif di luar batas"
+        "Waktu akhir di luar batas"
       ],
       "Event validation failed": [
         "Validasi acara gagal"
@@ -2661,8 +2679,14 @@
       "Invalid response": [
         "Respon tidak valid"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
-        "Galat tak terduga"
+        "Kesalahan yang tidak terduga"
       ],
       "Unsupported invitation": [
         "Undangan tidak didukung"
@@ -2681,9 +2705,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Jawaban Anda terkirim, tapi acara tidak dapat ditambahkan ke kalender Anda"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Jawaban Anda terkirim, tapi acara tidak dapat diperbarui di kalender Anda"
       ]
     },
     "Event title": {
@@ -3084,7 +3105,7 @@
         "${ numContacts } kontak"
       ],
       "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } peristiwa ditemukan"
+        "${ occurrencesInBody } kecocokan ditemukan"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
         "${ occurrencesInBody } kecocokan ditemukan di dalam badan email"
@@ -3278,6 +3299,9 @@
       "Background color": [
         "Warna latar belakang"
       ],
+      "Based in Switzerland, available globally": [
+        "Berbasis di Swiss, tersedia secara global"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
       ],
@@ -3385,6 +3409,9 @@
       ],
       "Day": [
         "Hari"
+      ],
+      "Decrypt message": [
+        "Dekripsi pesan"
       ],
       "Default email application": [
         "Aplikasi email default"
@@ -3690,13 +3717,13 @@
         "Belum ada kontak yang ditambahkan"
       ],
       "No email address": [
-        "Tidak ada alamat surel"
+        "Tidak ada alamat email"
       ],
       "No email trackers found": [
         "Tidak ada program pelacak email yang ditemukan"
       ],
       "No folder found": [
-        "Folder tidak ditemukan"
+        "Tidak ada folder yang ditemukan"
       ],
       "No folder selected": [
         "Tidak ada folder yang dipilih"
@@ -3705,13 +3732,13 @@
         "Grup tidak ditemukan"
       ],
       "No label found": [
-        "Label tidak ditemukan"
+        "Tidak ada label yang ditemukan"
       ],
       "No label selected": [
         "Tidak ada label yang dipilih"
       ],
       "No more results found": [
-        "Hasil tidak ditemukan lagi"
+        "Tidak ada hasil lainnya yang ditemukan"
       ],
       "No payment is required at this time.": [
         "Tidak diperukan pembayaran untuk saat ini."
@@ -3813,10 +3840,10 @@
         "Utama"
       ],
       "Print email": [
-        "Cetak surel"
+        "Cetak email"
       ],
       "Proton doesn't make money by abusing privacy.": [
-        "Proton hadir bukan untuk melanggar privasi."
+        "Proton tidak meraup keuntungan dengan cara melanggar privasi."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail juga melindungi bisnis Anda."
@@ -3888,7 +3915,7 @@
         "Untuk saat ini sepertinya semuanya sudah terbaca"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
+        "Pilih format email yang akan Anda gunakan setiap kali Anda mengirim email ke alamat ini."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
@@ -3922,6 +3949,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda adalah pengguna yang loyal, akun Anda memiliki fitur-fitur tambahan yang diaktifkan."
+      ],
+      "Sorry, this message does not exist or has already expired": [
+        "Maaf, pesan ini tidak ada atau sudah kedaluwarsa"
       ],
       "Starter VPN service with P2P support.": [
         "Layanan VPN pengantar dengan dukungan P2P."
@@ -3976,6 +4006,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Pesan asli yang Anda coba teruskan / balas dalam proses dikirim. Jika lanjut, Anda tidak akan dapat mengurungkan pengiriman pesan asli lebih lama lagi."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "Alamat pengirim pesan sudah tidak lagi valid. Pesan ini akan dikirim melalui ${ defaultAddress.Email } yang merupakan alamat default Anda."
       ],
       "The sender has requested a read receipt.": [
         "Pengirim pesan meminta bukti yang membenarkan bahwa Anda telah membaca pesan ini."
@@ -4175,6 +4208,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup Anda. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
       ],
+      "Version ${ appVersion }": [
+        "Versi ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Kunjungilah toko kami untuk mendapatkan berbagai cinderamata Proton."
       ],
@@ -4273,6 +4309,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Kapasitas penyimpanan Anda mencapai 100%. Pertimbangkan untuk mengosongkan ruang atau meningkatkan akun dengan ruang penyimpanan tambahan untuk menulis pesan baru."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Anda telah mencapai jumlah pesan balasan maksimum (5 pesan) yang dapat dikirim."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Akun PayPal Anda harus terhubung ke kartu kredit atau rekening bank agar bisa ditambahkan sebagai metode pembayaran."
@@ -4984,16 +5023,16 @@
         "Informasi sistem"
       ],
       "The email was sent ${ attachment }": [
-        "Surel dikirim ${ attachment }"
+        "Email terkirim ${ attachment }"
       ],
       "the email was sent ${ attachment }": [
-        "surel dikirim ${ attachment }"
+        "email terkirim ${ attachment }"
       ],
       "The email was sent ${ attachmentStrong }": [
-        "Surel dikirim ${ attachmentStrong }"
+        "Email terkirim ${ attachmentStrong }"
       ],
       "the email was sent ${ label }": [
-        "surel dikirim ${ label }"
+        "email terkirim ${ label }"
       ],
       "Then": [
         "Maka"
@@ -5207,6 +5246,12 @@
       "Pay invoice": [
         "Bayar tagihan"
       ],
+      "Previous version": [
+        "Versi sebelumnya"
+      ],
+      "Privacy policy": [
+        "Kebijakan privasi"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Aktifkan ulang alamat yang tertaut ke kalender ini untuk mengelola undangan Anda."
       ],
@@ -5222,11 +5267,17 @@
       "Sent": [
         "Terkirim"
       ],
+      "Sign up for free": [
+        "Daftar gratis"
+      ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
         "Bintang"
+      ],
+      "Terms": [
+        "Ketentuan"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Berkas ICS ini berisi lebih dari satu acara. Silakan unduh dan impor acara di ${ calendarAppName }"
@@ -5659,7 +5710,7 @@
         "Siapkan organisasi Anda"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ini adalah apa yang orang akan lihat ketika Anda mengirim surel, mengundang ke acara, atau berbagi berkas."
+        "Ini adalah apa yang orang lain akan lihat pada saat Anda mengirim email, memberi undangan, atau berbagi berkas dengan mereka."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Gunakan menu aplikasi di atas kiri untuk akses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
@@ -6136,7 +6187,7 @@
         "Alamat berikut tidak valid: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "Kami telah mendeteksi beberapa peringatan. Alamat surel berikut mungkin tidak dapat menerima pesan:"
+        "Kami mendeteksi beberapa ketidakwajaran pada alamat-alamat email yang hendak Anda tuju. Alamat-alamat berikut mungkin tidak akan dapat menerima pesan Anda:"
       ]
     },
     "Sent email icon": {
@@ -6950,6 +7001,9 @@
       "Processing...": [
         "Memproses..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
       ],
@@ -7006,6 +7060,9 @@
       ],
       "Send without expiration?": [
         "Kirim tanpa waktu kedaluwarsa?"
+      ],
+      "Sender changed": [
+        "Nama pengirim diubah"
       ],
       "Sending error": [
         "Kesalahan saat mengirim"
@@ -7175,6 +7232,14 @@
       ],
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "versi rilisan stabil"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Versi Tor Browser ini sudah tidak lagi didukung. Silakan perbarui Tor Browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "Update font modal": {

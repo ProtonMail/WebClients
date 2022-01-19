@@ -196,6 +196,9 @@
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Αποσύνδεση από όλους τους λογαριασμούς"
+      ],
+      "Sign out from": [
+        ""
       ],
       "Signing in": [
         "Γίνεται είσοδος"
@@ -1669,10 +1675,10 @@
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
       "Error in one of the conditions": [
-        "Λάθος σε μιά από τις συνθήκες"
+        "Σφάλμα σε μια από τις συνθήκες"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Απέτυχε η λήψη ενεργών περιόδων λειτουργίας. Ανανεώστε ή προσπαθήστε ξανά αργότερα."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
@@ -1693,7 +1699,7 @@
         "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
       ],
       "Incorrect password": [
-        "Λάθος κωδικός"
+        "Λανθασμένος κωδικός πρόσβασης"
       ],
       "Invalid ${ name } code": [
         "Μη έγκυρο ${ name } κωδικός"
@@ -1944,7 +1950,7 @@
         "Δεν ήταν δυνατή η σύνδεση με τον πάροχο υπηρεσιών σας."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Λάθος φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο αποκατάστασης."
+        "Λανθασμένη φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο ανάκτησης."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Λάθος κωδικός επαλήθευσης. Βεβαιωθείτε ότι έχετε αντιγράψει τον κωδικό επαλήθευσης σωστά και προσπαθήστε ξανά. Μπορεί να χρειαστούν έως και 24 ώρες για να εφαρμοστούν οι αλλαγές."
@@ -2054,7 +2060,7 @@
         "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
       ],
       "Component with wrong format": [
-        "Εφαρμογή με λάθος μορφή"
+        "Συνθετικό λανθασμένης μορφής"
       ],
       "Custom timezone": [
         "Προσαρμοσμένη ζώνη ώρας"
@@ -3226,7 +3232,7 @@
         "Χρώμα φόντου"
       ],
       "Based in Switzerland, available globally": [
-        "Βασισμένο στην Ελβετία, διαθέσιμο σε όλο τον κόσμο"
+        "Βασισμένο στην Ελβετία, διαθέσιμο παγκοσμίως"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
@@ -3862,7 +3868,7 @@
         "Αριθμός τηλεφώνου"
       ],
       "Plain text": [
-        "Απλό κείμενο"
+        "Σκέτο κείμενο"
       ],
       "Plan upgrade required": [
         "Απαιτείται αναβάθμιση πακέτου"
@@ -3968,7 +3974,7 @@
         "διαβάστε πρώτα τον οδηγό ελέγχου ταυτότητας δύο παραγόντων"
       ],
       "Recovery file downloaded": [
-        ""
+        "Το αρχείο ανάκτησης κατέβηκε"
       ],
       "Recovery files have been voided": [
         "Τα αρχεία ανάκτησης ακυρώθηκαν"
@@ -3977,7 +3983,7 @@
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "Η φράση ανάκτησης κατέβηκε"
       ],
       "Recovery phrase has been disabled": [
         "Η φράση ανάκτησης έχει απενεργοποιηθεί"
@@ -4059,6 +4065,9 @@
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Μετάβαση σε ${ professionalPlan } για να προσθέσετε περισσότερους χρήστες."
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
       ],
       "Test link": [
         "Δοκ. σύνδεσμος"
@@ -4192,6 +4201,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Για να ξεκινήσετε να διασφαλίζετε τη σύνδεση σας στο διαδίκτυο, θα πρέπει να εγκαταστήσετε την εφαρμογή ProtonVPN στη συσκευή σας και να συνδεθείτε σε ένα διακομιστή ProtonVPN."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Προσθέστε στο λογαριασμό πιστωτικές μονάδες, τις οποίες μπορείτε να χρησιμοποιήσετε για να έχετε μια νέα συνδρομή πακέτου/πλάνου ή να ανανεώσετε το τρέχον πακέτο σας. Λαμβάνετε μία πιστωτική μονάδα για κάθε ${ i18nCurrency } που ξοδεύτηκε."
       ],
@@ -4231,11 +4243,11 @@
       "Update recovery phrase": [
         "Ενημέρωση φράσης ανάκτησης"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Αναβαθμίστε σε ένα ${ PLAN_NAMES[PLANS.VISIONARY] } ή ένα ${ PLAN_NAMES[PLANS.PROFESSIONAL] } πλάνο ώστε να ενεργοποιήσετε αυτόματες απαντήσεις για όταν βρίσκεστε εκτός γραφείου."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Αναβαθμήστε σε ${ PLAN_NAMES[PLANS.VISIONARY] } ή ${ PLAN_NAMES[PLANS.PROFESSIONAL] } πλάνο για να ξεκινήσετε."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        ""
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Αναβαθμίστε σε ένα λογαριασμό επί πληρωμή για να αποκτήσετε πρόσβαση σε κορυφαίες λειτουργίες και να αυξήσετε το χώρο αποθήκευσής σας."
@@ -4949,9 +4961,6 @@
       "ALL": [
         "ΟΛΑ"
       ],
-      "All-day event notifications": [
-        "Ολοήμερες ειδοποιήσεις εκδήλωσης"
-      ],
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
@@ -5114,11 +5123,23 @@
       "Days of the week": [
         "Ημέρα της εβδομάδας"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "Προεπιλεγμένη γλώσσα"
       ],
       "Default language (${ defaultLanguage })": [
         "Προεπιλεγμένη γλώσσα (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        ""
       ],
       "Default PGP scheme": [
         "Προεπιλεγμένο σχήμα PGP"
@@ -5197,12 +5218,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Εισάγετε τον κωδικό πρόσβασης για το κλειδί με δακτυλικό αποτύπωμα: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Διάρκεια εκδήλωσης"
-      ],
-      "Event notifications": [
-        "Ειδοποιήσεις συμβάντων"
       ],
       "Expires": [
         "Λήγει"
@@ -6499,7 +6514,7 @@
         "Μόνιμο"
       ],
       "Plain text": [
-        "Απλό κείμενο"
+        "Σκέτο κείμενο"
       ],
       "Repeat daily": [
         "Επανάληψη καθημερινά"
@@ -7019,6 +7034,11 @@
         "Εφαρμογές VPN"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
+      ]
+    },
     "Settings/filters": {
       "Filters": [
         "Φίλτρα"
@@ -7140,7 +7160,7 @@
         "Χρησιμοποιώντας αυτόν τον σύνδεσμο, η Google θα αλλάξει το ημερολόγιο που εγγράφεστε σε κοινό"
       ],
       "This link might be wrong": [
-        "Αυτός ο σύνδεσμος ενδέχεται να είναι λανθασμένος"
+        "Αυτός ο σύνδεσμος ίσως είναι λανθασμένος"
       ]
     },
     "Subscribed calendar section description": {

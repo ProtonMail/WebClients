@@ -196,6 +196,9 @@
       "Continue import": [
         "Doorgaan met importeren"
       ],
+      "Continue with": [
+        ""
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -666,6 +669,9 @@
       ],
       "Sign out all accounts": [
         "Alle accounts uitloggen"
+      ],
+      "Sign out from": [
+        ""
       ],
       "Signing in": [
         "Aanmelden"
@@ -1767,8 +1773,8 @@
       "Error in one of the conditions": [
         "Fout in de volgende voorwaarden"
       ],
-      "Failed to get active sessions. Please refresh or try again later.": [
-        "Het ophalen van de actieve sessie is mislukt. Vernieuw of probeer het later opnieuw."
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        ""
       ],
       "File has no contents to preview": [
         "Bestand heeft geen inhoud om een voorbeeld te tonen"
@@ -4156,6 +4162,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Schakel over naar ${ professionalPlan } om meer gebruikers toe te voegen."
       ],
+      "Temporarily unavailable. Please check back later.": [
+        ""
+      ],
       "Test link": [
         "Test link"
       ],
@@ -4288,6 +4297,9 @@
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Om uw internetverbinding te beveiligen, installeert u de ProtonVPN-applicatie op uw apparaat en maakt u verbinding met een ProtonVPN-server."
       ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
       ],
@@ -4327,11 +4339,11 @@
       "Update recovery phrase": [
         "Herstelzin bijwerken"
       ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "UPGRADE naar een ${ PLAN_NAMES[PLANS.VISIONARY] } of ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement om automatisch antwoord in te schakelen voor als u niet in kantoor bent."
-      ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Upgrade naar een ${ PLAN_NAMES[PLANS.VISIONARY] } of ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan om te beginnen."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
+        ""
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Upgrade naar een betaald abonnement om toegang te krijgen tot premium functies en uw opslagruimte te vergroten."
@@ -5045,9 +5057,6 @@
       "ALL": [
         "ALLES"
       ],
-      "All-day event notifications": [
-        "De hele dag meldingen van evenementen"
-      ],
       "Allow recovery by email": [
         "Herstellen via e-mail toestaan"
       ],
@@ -5210,11 +5219,23 @@
       "Days of the week": [
         "Dagen van de week"
       ],
+      "Default email address": [
+        ""
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "Default language": [
         "Standaardtaal"
       ],
       "Default language (${ defaultLanguage })": [
         "Standaardtaal (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        ""
       ],
       "Default PGP scheme": [
         "Standaard PGP-schema"
@@ -5293,12 +5314,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
-      ],
-      "Event duration": [
-        "Duur van het evenement"
-      ],
-      "Event notifications": [
-        "Gebeurtenismeldingen"
       ],
       "Expires": [
         "Verloopt"
@@ -7113,6 +7128,11 @@
       ],
       "VPN apps": [
         "VPN-apps"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        ""
       ]
     },
     "Settings/filters": {

@@ -200,6 +200,9 @@
       "Export": [
         "匯出"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "匯出聯絡人"
       ],
@@ -1900,6 +1903,12 @@
       "Invalid response": [
         "無效的回應"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "未預期的錯誤"
       ],
@@ -1920,9 +1929,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "您的回答已傳送，惟此事件無法新增到您的行事曆中"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "您的回答已傳送，惟此事件無法在您的行事曆中更新"
       ]
     },
     "Event popover close button": {
@@ -3183,9 +3189,6 @@
       "All day": [
         "整天"
       ],
-      "All-day event notifications": [
-        "全日事件通知"
-      ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
       ],
@@ -3243,6 +3246,18 @@
       "Date and time": [
         "日期與時間"
       ],
+      "Default email address": [
+        "預設電郵地址"
+      ],
+      "Default event duration": [
+        "預設活動持續時間"
+      ],
+      "Default full day notifications": [
+        "預設整日活動通知"
+      ],
+      "Default notifications": [
+        "預設通知"
+      ],
       "Description": [
         "描述"
       ],
@@ -3278,12 +3293,6 @@
       ],
       "Enter the 6-digit code": [
         "請輸入 6 位數代碼"
-      ],
-      "Event duration": [
-        "事件持續時間"
-      ],
-      "Event notifications": [
-        "事件通知"
       ],
       "Event title": [
         "事件標題"
@@ -4409,6 +4418,11 @@
         "查無結果"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "未能更新設定"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "管理行事曆"
@@ -5406,7 +5420,7 @@
         "聯絡人詳細資料的簽章驗證失敗。"
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "此動作無法復原。請在欄位輸入「{ boldDanger }」一詞以繼續。"
+        "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
       ],
       "This feature requires a paid Proton account": [
         "付費的 Proton 帳號才能使用此功能"

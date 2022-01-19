@@ -202,6 +202,9 @@
       "Export": [
         "Exporter"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Exporter les contacts"
       ],
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         "Réponse non valide"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Erreur inattendue"
       ],
@@ -1945,9 +1954,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Votre réponse a été envoyée, mais l'événement n'a pas pu être ajouté à votre calendrier"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Votre réponse a été envoyée, mais l'événement n'a pas pu être mis à jour dans votre calendrier"
       ]
     },
     "Event popover close button": {
@@ -3240,9 +3246,6 @@
       "All day": [
         "Journée entière"
       ],
-      "All-day event notifications": [
-        "Notifications d'événement sur journée complète"
-      ],
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         "Date et heure"
       ],
+      "Default email address": [
+        "Adresse électronique par défaut"
+      ],
+      "Default event duration": [
+        "Durée de l'événement par défaut"
+      ],
+      "Default full day notifications": [
+        "Notifications par défaut pour la journée complète"
+      ],
+      "Default notifications": [
+        "Notifications par défaut"
+      ],
       "Description": [
         "Description"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "Saisissez le code à 6 chiffres"
-      ],
-      "Event duration": [
-        "Durée de l’événement"
-      ],
-      "Event notifications": [
-        "Notifications de l’événement"
       ],
       "Event title": [
         "Titre de l’événement"
@@ -4497,6 +4506,11 @@
     "Select search results": {
       "No results found": [
         "Aucun résultat trouvé"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Impossible de mettre à jour les paramètres"
       ]
     },
     "Sidebar calendar edit tooltip": {

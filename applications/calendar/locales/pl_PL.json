@@ -206,6 +206,9 @@
       "Export": [
         "Eksportuj"
       ],
+      "Export contact group": [
+        "Eksportuj grupę kontaktów"
+      ],
       "Export contacts": [
         "Eksportuj kontakty"
       ],
@@ -1975,6 +1978,12 @@
       "Invalid response": [
         "Odpowiedź jest nieprawidłowa"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Wydarzenie nie może zostać dodane do kalendarza. Odpowiedź nie została wysłana"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Wydarzenie nie może zostać zaktualizowane. Odpowiedź nie została wysłana"
+      ],
       "Unexpected error": [
         "Wystąpił nieoczekiwany błąd"
       ],
@@ -1995,9 +2004,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Twoja odpowiedź została wysłana, ale wydarzenie nie może zostać dodane do kalendarza"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Twoja odpowiedź została wysłana, ale wydarzenie nie może zostać zaktualizowane"
       ]
     },
     "Event popover close button": {
@@ -2218,7 +2224,7 @@
         "obecnie"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts nie obsługuje ${ forNow }:"
+        "Proton Contacts nie obsługuje ${ forNow }:"
       ]
     },
     "Import instructions emphasis": {
@@ -3354,9 +3360,6 @@
       "All day": [
         "Cały dzień"
       ],
-      "All-day event notifications": [
-        "Powiadomienia wydarzenia całodniowego"
-      ],
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
       ],
@@ -3414,6 +3417,18 @@
       "Date and time": [
         "Data i czas"
       ],
+      "Default email address": [
+        "Domyślny adres e-mail"
+      ],
+      "Default event duration": [
+        "Domyślny czas trwania wydarzenia"
+      ],
+      "Default full day notifications": [
+        "Domyślne powiadomienia całodniowe"
+      ],
+      "Default notifications": [
+        "Domyślne powiadomienia"
+      ],
       "Description": [
         "Opis"
       ],
@@ -3449,12 +3464,6 @@
       ],
       "Enter the 6-digit code": [
         "Wpisz 6-cyfrowy kod"
-      ],
-      "Event duration": [
-        "Czas trwania wydarzenia"
-      ],
-      "Event notifications": [
-        "Powiadomienia wydarzenia"
       ],
       "Event title": [
         "Tytuł wydarzenia"
@@ -4677,6 +4686,11 @@
     "Select search results": {
       "No results found": [
         "Nie znaleziono żadnych wyników"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Nie udało się zaktualizować ustawień"
       ]
     },
     "Sidebar calendar edit tooltip": {

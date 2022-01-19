@@ -227,6 +227,9 @@
       "Decrease": [
         "Diminuer"
       ],
+      "Decrypt": [
+        "Déchiffrer"
+      ],
       "Default email application": [
         "Application de messagerie par défaut"
       ],
@@ -327,6 +330,9 @@
       ],
       "Export": [
         "Exporter"
+      ],
+      "Export contact group": [
+        ""
       ],
       "Export contacts": [
         "Exporter les contacts"
@@ -554,6 +560,9 @@
       "Move to...": [
         "Déplacer vers…"
       ],
+      "Need help?": [
+        "Besoin d'aide?"
+      ],
       "Never show": [
         "Ne jamais afficher"
       ],
@@ -682,6 +691,9 @@
       ],
       "Rename": [
         "Renommer"
+      ],
+      "Reply securely": [
+        "Répondre en toute sécurité"
       ],
       "Report a problem": [
         "Signaler un problème"
@@ -2173,6 +2185,9 @@
       "Enter 6 digits": [
         "Saisissez 6 chiffres"
       ],
+      "Enter a password": [
+        "Saisissez un mot de passe"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Erreur de connexion à l’API Bitcoin."
       ],
@@ -2464,6 +2479,9 @@
       "Unknown payment token status": [
         "Statut du jeton de paiement inconnu"
       ],
+      "Wrong mailbox password": [
+        "Mot de passe de messagerie incorrect"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
       ],
@@ -2688,6 +2706,12 @@
       "Invalid response": [
         "Réponse invalide"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Erreur inattendue"
       ],
@@ -2708,9 +2732,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Votre réponse a été envoyée, mais l'événement n'a pas pu être ajouté à votre calendrier"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Votre réponse a été envoyée, mais l'événement n'a pas pu être mis à jour dans votre calendrier"
       ]
     },
     "Event title": {
@@ -3346,6 +3367,9 @@
       "Background color": [
         "Couleur d'arrière-plan"
       ],
+      "Based in Switzerland, available globally": [
+        "Basé en Suisse, disponible dans le monde entier"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
@@ -3455,6 +3479,9 @@
       "Day": [
         "Jour",
         "Jours"
+      ],
+      "Decrypt message": [
+        "Déchiffrer le message"
       ],
       "Default email application": [
         "Application de messagerie par défaut"
@@ -4002,6 +4029,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Puisque vous nous avez été fidèle, votre compte dispose de fonctionnalités supplémentaires activées."
       ],
+      "Sorry, this message does not exist or has already expired": [
+        "Désolé, ce message n'existe pas ou a déjà expiré"
+      ],
       "Starter VPN service with P2P support.": [
         "Service RPV pour débuter avec prise en charge du pair-à-pair."
       ],
@@ -4055,6 +4085,9 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Le message original que vous essayez de transférer ou auquel vous répondez est en cours d'envoi. Si vous continuez, vous ne pourrez plus annuler l'envoi du message original."
+      ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+        "L'expéditeur original de ce message n'est plus valide. Votre message sera envoyé depuis votre adresse par défaut ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "L'expéditeur·rice a demandé une confirmation de lecture."
@@ -4255,6 +4288,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La vérification s'effectuera dans un nouvel onglet, veuillez désactiver tous les bloqueurs de fenêtres surgissantes. Vous ne serez pas facturé·e. Tout montant utilisé pour vérifier la carte sera immédiatement remboursé."
       ],
+      "Version ${ appVersion }": [
+        "Version ${ appVersion }"
+      ],
       "Visit our shop to get Proton merchandise.": [
         "Visitez notre boutique pour obtenir des objets promotionnels Proton."
       ],
@@ -4357,6 +4393,9 @@
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Vous avez atteint 100 % de votre capacité de stockage. Pour composer de nouveaux messages, pensez à libérer de l'espace ou à passer à un abonnement avec un espace de stockage supplémentaire."
+      ],
+      "You have reached the maximum number of 5 replies.": [
+        "Vous avez atteint le nombre maximum de 5 réponses."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal afin de l'ajouter comme mode de paiement."
@@ -5297,6 +5336,12 @@
       "Pay invoice": [
         "Payer la facture"
       ],
+      "Previous version": [
+        "Version précédente"
+      ],
+      "Privacy policy": [
+        "Politique de confidentialité"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Réactivez l'adresse liée à ce calendrier pour gérer votre invitation."
       ],
@@ -5312,11 +5357,17 @@
       "Sent": [
         "Envoyés"
       ],
+      "Sign up for free": [
+        "Inscrivez-vous gratuitement"
+      ],
       "Spam": [
         "Pourriels"
       ],
       "Starred": [
         "Favoris"
+      ],
+      "Terms": [
+        "Conditions générales d'utilisation"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Ce fichier ICS contient plus d'un événement. Veuillez le télécharger et importer les événements dans ${ calendarAppName }"
@@ -7090,6 +7141,9 @@
       "Processing...": [
         "Traitement en cours..."
       ],
+      "ProtonMail": [
+        "ProtonMail"
+      ],
       "Re-sign all contacts": [
         "Signer à nouveau tous les contacts"
       ],
@@ -7146,6 +7200,9 @@
       ],
       "Send without expiration?": [
         "Envoyer sans expiration?"
+      ],
+      "Sender changed": [
+        "Expéditeur modifié"
       ],
       "Sending error": [
         "Erreur lors de l'envoi"
@@ -7316,6 +7373,14 @@
       ],
       "You do not have any contacts to export": [
         "Vous n'avez aucun contact à exporter"
+      ]
+    },
+    "Tor out of date": {
+      "stable release": [
+        "version stable"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Cette version du navigateur Tor n'est pas prise en charge. Veuillez mettre à jour avec la dernière ${ stableRelease }"
       ]
     },
     "Update font modal": {

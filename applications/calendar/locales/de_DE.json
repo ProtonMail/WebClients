@@ -202,6 +202,9 @@
       "Export": [
         "Exportieren"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Kontakte exportieren"
       ],
@@ -476,7 +479,7 @@
         "Eine weitere Methode verwenden"
       ],
       "Unlock data": [
-        ""
+        "Daten entsperren"
       ],
       "Unmark for deletion": [
         "Markierung zum Löschen entfernen"
@@ -662,7 +665,7 @@
         "Leere ICS-Datei"
       ],
       "Invalid event": [
-        "Ungültiges Ereignis"
+        "Ungültiger Termin"
       ],
       "Invalid ICS file": [
         "Ungültige ICS-Datei"
@@ -674,7 +677,7 @@
         "Nicht unterstütztes Kalender-Modul"
       ],
       "Unsupported event": [
-        "Nicht unterstütztes Ereignis"
+        "Nicht unterstützter Termin"
       ]
     },
     "Attendee role": {
@@ -1283,7 +1286,7 @@
         "„${ eventTitle }” wurde aktualisiert.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Sie wurden zu „${ eventTitle }” eingeladen\n${ eventDetailsText }"
+        "Du wurdest zu „${ eventTitle }” eingeladen\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -1304,33 +1307,33 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat Ihre Einladung zu „${ eventTitle }” angenommen"
+        "${ emailAddress } hat deine Einladung zu „${ eventTitle }” angenommen"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat Ihre Einladung zu „${ eventTitle }” abgelehnt"
+        "${ emailAddress } hat deine Einladung zu „${ eventTitle }” abgelehnt"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat Ihre Einladung zu „${ eventTitle }” unter Vorbehalt angenommen"
+        "${ emailAddress } hat deine Einladung zu „${ eventTitle }” unter Vorbehalt angenommen"
       ]
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Absage eines Ereignisses am ${ formattedStart }"
+        "Absage eines Termins am ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Absage eines Ereignisses, das am ${ formattedStart } beginnen sollte"
+        "Absage eines Termins, der am ${ formattedStart } beginnen sollte"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Einladung zu einem Ereignis am ${ formattedStart }"
+        "Einladung zu einem Termin am ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Einladung zu einem Ereignis, das am ${ formattedStart } beginnt"
+        "Einladung zu einem Termin, der am ${ formattedStart } beginnt"
       ],
       "Update for an event on ${ formattedStart }": [
-        "Aktualisierung eines Ereignisses am ${ formattedStart }"
+        "Aktualisierung eines Termins am ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Aktualisierung zu einem Ereignis, das am ${ formattedStart } beginnt"
+        "Aktualisierung zu einem Termin, der am ${ formattedStart } beginnt"
       ]
     },
     "Error": {
@@ -1354,7 +1357,7 @@
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
       "A maximum of 10 notifications is allowed": [
-        "Maximal 10 Benachrichtigungen sind zulässig"
+        "Maximal sind 10 Benachrichtigungen zulässig"
       ],
       "Address primary private key not found": [
         "Adresse privater Hauptschlüssel nicht gefunden"
@@ -1393,7 +1396,7 @@
         "Absage konnte nicht gesendet werden"
       ],
       "Checkout expired, please try again": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+        "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
       "Contact could not be saved": [
         "Kontakt konnte nicht gespeichert werden"
@@ -1408,7 +1411,7 @@
         "Adresse ${ email } wurde nicht gefunden."
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Entschlüsselungsfehler: Die Entschlüsselung des Inhalts dieses Ereignisses ist fehlgeschlagen."
+        "Entschlüsselungsfehler: Die Entschlüsselung des Inhalts dieses Termins ist fehlgeschlagen."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Mindestens ${ calendarToFixCount } Kalender abwählen",
@@ -1479,7 +1482,7 @@
         "Ungültiges Gültigkeitsdatum"
       ],
       "Invalid link to the event": [
-        "Link zum Ereignis ungültig"
+        "Link zum Termin ungültig"
       ],
       "Invalid name": [
         "Ungültiger Name"
@@ -1497,10 +1500,10 @@
         "Einladung konnte nicht gesendet werden"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        "Ereignisse können nur zwischen ${ minDateString } und ${ maxDatum-String } erstellt werden."
+        "Termine können nur zwischen ${ minDateString } und ${ maxDateString } erstellt werden"
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
-        "Ereignisse können nur zwischen ${ minDateString } und ${ maxDatumString } verschoben werden."
+        "Termine können nur zwischen ${ minDateString } und ${ maxDateString } verschoben werden"
       ],
       "Label name cannot be empty": [
         "Name der Kategorie muss angegeben werden"
@@ -1569,7 +1572,7 @@
         "Bezahlvorgang nicht unterstützt"
       ],
       "Please create an address first.": [
-        "Bitte zuerst eine Adresse eingeben."
+        "Bitte zuerst eine Adresse erstellen."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte beheben Sie den hervorgehobenen Konflikt, um fortfahren zu können.",
@@ -1606,13 +1609,13 @@
         "Einige Gruppen konnten nicht gelöscht werden"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Einige Ihrer Kategorienamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
+        "Einige deiner Kategorienamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Einige Ihrer Kategorienamen überschreiten die maximale von ProtonMail erlaubte Zeichenanzahl . Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
+        "Einige deiner Kategorienamen überschreiten die maximale von ProtonMail erlaubte Zeichenanzahl. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn Ihnen diese Fehlermeldung weiterhin angezeigt wird, wenden Sie sich bitte an unser ${ supportTeam }."
+        "Ein Problem ist aufgetreten. Bitte die ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wenden dich bitte an unser ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Startzeit muss vor der Endzeit liegen"
@@ -1624,10 +1627,10 @@
         "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "Der Name des Ordners ist zu lang. Bitte wählen Sie einen kürzeren Namen."
+        "Der Name des Ordners ist zu lang. Bitte wähle einen kürzeren Namen."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Der Name der Kategorie ist zu lang. Bitte wählen Sie einen kürzeren Namen."
+        "Der Name der Kategorie ist zu lang. Bitte wähle einen kürzeren Namen."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ _price }"
@@ -1642,7 +1645,7 @@
         "Der Sendeschlüssel ist ungültig"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "In Ihrem externen Konto gibt es zu viele Ordner. Bitte passen Sie den Import so an, dass einige Ordner gelöscht werden."
+        "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
       ],
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der Kontakte als vCards"
@@ -1657,7 +1660,7 @@
         "Dieser Ordnername ist nicht verfügbar. Bitte wähle einen anderen Namen"
       ],
       "This label name is not available. Please choose a different name": [
-        "Dieser Kategoriename ist nicht verfügbar. Bitte wählen Sie einen anderen Namen"
+        "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Diese Nachricht kann einige Internetadressen enthalten, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können"
@@ -1681,21 +1684,21 @@
         "Sie müssen einen Namen festlegen"
       ],
       "Your import will not be processed.": [
-        "Ihr Importauftrag konnte nicht verarbeitet werden."
+        "Dein Import wird nicht verarbeitet."
       ]
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Beim Lesen Ihrer Datei ist ein Fehler aufgetreten ${ formattedFilename }. Format der Datei ungültig."
+        "Beim Lesen deiner Datei ist ein Fehler aufgetreten ${ formattedFilename }. Format der Datei ungültig."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Das Hochladen Ihrer Datei ist fehlgeschlagen ${ formattedFilename }. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Das Hochladen deiner Datei ist fehlgeschlagen ${ formattedFilename }. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Das Hochladen Ihrer Datei ${ formattedFilename } ist fehlgeschlagen. Nur Dateien im ICS-Formate sind zulässig."
+        "Das Hochladen deiner Datei ${ formattedFilename } ist fehlgeschlagen. Nur Dateien im ICS-Format sind zulässig."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Hochladen fehlgeschlagen. Bitte wählen Sie zuerst eine Datei aus."
+        "Hochladen fehlgeschlagen. Bitte wähle zuerst eine Datei aus."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ein unerwarteter Fehler ist aufgetreten. Der Import muss neu ausgeführt werden."
@@ -1704,10 +1707,10 @@
         "Die Datei „${ formattedFilename }” enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Ereignisse."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ihre Datei ${ formattedFilename } enthält eine ungültige Methode und konnte nicht importiert werden."
+        "Deine Datei ${ formattedFilename } enthält eine ungültige Methode und konnte nicht importiert werden."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Ihre Datei „${ formattedFilename }” enthält keine zu importierenden Ereignisse."
+        "Deine Datei „${ formattedFilename }” enthält keine importierbaren Termine."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Die Datei „${ formattedFilename }” enthält keine Daten."
@@ -1758,13 +1761,13 @@
         "Kalenderzeitzone wird nicht unterstützt"
       ],
       "Component with wrong format": [
-        "Ungültigen Format der Komponente"
+        "Komponente mit ungültigem Format"
       ],
       "Custom timezone": [
         "Benutzerdefinierte Zeitzone"
       ],
       "Edited event not supported": [
-        "Regel für bearbeitete Ereignisse werden nicht unterstützt"
+        "Regeln für bearbeitete Ereignisse werden nicht unterstützt"
       ],
       "Element": [
         "Eintrag"
@@ -1779,7 +1782,7 @@
         "Ereignis"
       ],
       "Event validation failed": [
-        "Überprüfung der Ereignisse fehlgeschlagen"
+        "Überprüfung des Termins fehlgeschlagen"
       ],
       "Floating times not supported": [
         "Gleitzeiten werden nicht unterstützt"
@@ -1788,22 +1791,22 @@
         "Zeitinformationen zu Verfügbar/Beschäftigt"
       ],
       "Invalid event": [
-        "Ungültiges Ereignis"
+        "Ungültiger Termin"
       ],
       "Journal entry": [
         "Journaleintrag"
       ],
       "Malformed all-day event": [
-        "Fehlerhaftes ganztägiges Ereignis"
+        "Fehlerhafter ganztägiger Termin"
       ],
       "Malformed end time": [
-        "Fehlerhafte Endzeit"
+        "Endzeit fehlerhaft"
       ],
       "Malformed recurring event": [
-        "Fehlerhafte Terminserie"
+        "Fehlerhafter wiederkehrender Termin"
       ],
       "Malformed start time": [
-        "Fehlerhafte Startzeit"
+        "Startzeit fehlerhaft"
       ],
       "Missing start time": [
         "Startzeit fehlt"
@@ -1818,13 +1821,13 @@
         "Benachrichtigung außerhalb der Vorgaben"
       ],
       "Original recurring event could not be found": [
-        "Ursprüngliches Terminserie wurde nicht gefunden"
+        "Ursprüngliche Terminserie wurde nicht gefunden"
       ],
       "Recurring event has no occurrences": [
-        "Wiederkehrendes Ereignis enthält keine Termine"
+        "Wiederkehrender Termin enthält keine Vorkommen"
       ],
       "Recurring rule not supported": [
-        "Regel für Terminserien werden nicht unterstützt"
+        "Regeln für Terminserien werden nicht unterstützt"
       ],
       "Start time out of bounds": [
         "Startzeit außerhalb der Vorgaben"
@@ -1842,7 +1845,7 @@
         "Unbekannt"
       ],
       "Unsupported event": [
-        "Nicht unterstütztes Ereignis"
+        "Nicht unterstützter Termin"
       ]
     },
     "Error message": {
@@ -1925,6 +1928,12 @@
       "Invalid response": [
         "Ungültige Antwort"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Unerwarteter Fehler"
       ],
@@ -1935,19 +1944,16 @@
         "Nicht unterstützte Antwort"
       ],
       "We could not cancel the event in your calendar": [
-        "Das Ereignis in Ihrem Kalender konnte nicht abgesagt werden"
+        "Der Termin in deinem Kalender konnte nicht abgesagt werden"
       ],
       "We could not retrieve the event from your calendar": [
-        "Das Ereignis konnte nicht aus Ihrem Kalender ausgelesen werden"
+        "Der Termin konnte nicht aus deinem Kalender ausgelesen werden"
       ],
       "We could not update the event in your calendar": [
-        "Das Ereignis konnte nicht in Ihrem Kalender aktualisiert werden"
+        "Der Termin konnte nicht in deinem Kalender aktualisiert werden"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Ihre Antwort wurde gesendet, aber das Ereignis konnte nicht in Ihren Kalender eingetragen werden"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ihre Antwort wurde gesendet, aber das Ereignis konnte nicht in Ihrem Kalender aktualisiert werden"
+        "Deine Antwort wurde gesendet, aber der Termin konnte nicht in deinen Kalender eingetragen werden"
       ]
     },
     "Event popover close button": {
@@ -2220,7 +2226,7 @@
         "${ groupCounts } Gruppen gefunden"
       ],
       "${ mailAppName } Free": [
-        "${ mailAppName } kostenlos"
+        "${ mailAppName } Free"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
         "${ mailAppName } Professional beginnt mit einem Benutzer, und jeder Benutzer fügt dem Speicher der Organisation weitere 5 GB und 5 E-Mail-Adressen hinzu."
@@ -2237,13 +2243,13 @@
         "${ numContacts } Kontakte"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } bei Ihrem Abonnement, durch den Wechsel zu ${ annualBilling }"
+        "${ save20 } bei deinem Abonnement, durch den Wechsel zu ${ annualBilling }"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } sowohl bei Mail und VPN, indem Sie ein Mail-Abonnement hinzufügen."
+        "${ saveExtra20 } sowohl bei Mail und VPN, indem du ein Mail-Abonnement hinzufügst."
       ],
       "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } sowohl bei VPN und Mail, indem Sie ein VPN-Abonnement hinzufügen."
+        "${ saveExtra20 } sowohl bei VPN und Mail, indem du ein VPN-Abonnement hinzufügst."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
@@ -2262,7 +2268,7 @@
         "${ updated } Kontakte erfolgreich aktualisiert."
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } kostenlos"
+        "${ vpnAppName } Free"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
@@ -2278,11 +2284,11 @@
         "${ bonusSpace } zusätzlicher Speicherplatz"
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit VPN zu verbinden)",
-        "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit VPN zu verbinden)"
+        "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
+        "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglichen es dir, weitere Geräte mit VPN zu verbinden)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
-        "20% Rabatt auf Ihr Abonnement mit Gutschein ${ code } eingelöst"
+        "20% Rabatt auf dein Abonnement mit Gutschein ${ code } eingelöst"
       ],
       "30 days money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
@@ -2300,10 +2306,10 @@
         "Ein freies und unzensiertes Internet sollte für alle möglich sein."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Greifen Sie auf gesperrte Inhalte wie soziale Medien, Nachrichten, Wikipedia, YouTube und viele andere zu, egal wo Sie sich aufhalten."
+        "Greife auf gesperrte Inhalte wie soziale Medien, Nachrichten, Wikipedia, YouTube und viele andere zu, egal wo du dich aufhältst."
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nutzen Sie Ihre Streaming-Dienste, wie ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, egal wo Sie sich aufhalten."
+        "Nutze deine Streaming-Dienste, wie ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, egal wo du dich aufhältst."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf das Konto ist aufgrund noch offener Rechnungen eingeschränkt. Bitte wenden Sie sich an Ihren Administrator."
@@ -2312,7 +2318,7 @@
         "Konto wurde erfolgreich aktualisiert"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
-        "Fügen Sie zusätzliche E-Mail-Adressen wie nutzer2@protonmail.com zu Ihrem Konto hinzu"
+        "Füge zusätzliche E-Mail-Adressen wie nutzer2@protonmail.com zu deinem Konto hinzu"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Hinzugefügte und entfernte Teilnehmer werden über alle Termine in dieser Serie benachrichtigt."
@@ -2327,7 +2333,7 @@
         "E-Mail-Adressen"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Nachdem Sie Ihre Bitcoin-Zahlung getätigt haben, folgen Sie bitte den nachfolgenden Anweisungen zum Wechsel."
+        "Nachdem du deine Bitcoin-Zahlung getätigt hast, folge bitte den untenstehenden Anweisungen um das Upgrade vorzunehmen."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } $ Ordner)",
@@ -2338,7 +2344,7 @@
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Ermöglicht es Ihnen, E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName } zu hosten, z. B. max.musterman@beispiel.de"
+        "Ermöglicht es dir, E-Mail-Adressen für deine eigene(n) Domain(s) unter ${ mailAppName } zu hosten, z. B. max.musterman@beispiel.de"
       ],
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag (${ amount }) unterschritten."
@@ -2368,19 +2374,19 @@
         "Wird am Ende des aktuellen Abrechnungszyklus abgerechnet (wird erneuert am ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin-Transaktionen können einige Zeit in Anspruch nehmen, bis sie bestätigt werden (bis zu 24 Stunden). Sobald die Bestätigung erfolgt ist, werden wir Ihrem Konto Guthaben hinzufügen. Nach der Bestätigung der Transaktion können Sie Ihre Rechnung mit dem Guthaben begleichen."
+        "Bitcoin-Transaktionen können einige Zeit in Anspruch nehmen, bis sie bestätigt werden (bis zu 24 Stunden). Sobald die Bestätigung erfolgt ist, werden wir deinem Konto Guthaben hinzufügen. Nach der Bestätigung der Transaktion kannst du deine Rechnung mit dem Guthaben begleichen."
       ],
       "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 für Ihr Abonnement eingelöst"
+        "Black Friday 2018 für dein Abonnement eingelöst"
       ],
       "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 für Ihr Abonnement eingelöst"
+        "Black Friday 2019 für dein Abonnement eingelöst"
       ],
       "Black Friday 2020 newcomer discount has been applied": [
         "Black Friday 2020 Rabatt für Neukunden wurde eingelöst"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Durch den Wechsel auf das Free-Paket verlieren Sie diese Leistungen dauerhaft, auch wenn Sie in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigen."
+        "Durch den Wechsel auf das Free-Paket verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Sie können sich nicht mehr an Ihr Passwort erinnern? Wir können Ihnen helfen, die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, zu löschen und dabei den Alarm zu deaktivieren."
@@ -2441,13 +2447,13 @@
         "Änderungen verwerfen?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        "Rabatt auf Ihr Abonnement mit Gutschein ${ code } eingelöst"
+        "Rabatt auf dein Abonnement mit Gutschein ${ code } eingelöst"
       ],
       "Domains": [
         "Domains"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Laden Sie noch heute diese großartige App herunter und nehmen Sie Ihre Privatsphäre überall hin mit."
+        "Lade noch heute diese großartige App herunter und nimm deine Privatsphäre überallhin mit."
       ],
       "Drop the file here to upload": [
         "Datei zum Hochladen hier hinein ziehen"
@@ -2456,7 +2462,7 @@
         "Zweitschlüssel aktualisiert"
       ],
       "Each additional connection can be assigned to users in your organization.": [
-        "Jede zusätzliche Verbindung kann Benutzern in Ihrer Organisation zugewiesen werden."
+        "Jede zusätzliche Verbindung kann Benutzern in deiner Organisation zugewiesen werden."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Geben Sie den an ${ destinationText } gesendeten Bestätigungsschlüssel ein."
@@ -2486,7 +2492,7 @@
         "Für Organisationen, die eine sichere Geschäftskommunikation benötigen."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Bei Visa und MasterCard — die 3-stellige Sicherheitsnummer auf der Rückseite Ihrer Karte. Bei American Express — die 4-stellige Sicherheitsnummer auf der Vorderseite Ihrer Karte."
+        "Bei Visa und MasterCard — die 3-stellige Sicherheitsnummer auf der Rückseite deiner Karte. Bei American Express — die 4-stellige Sicherheitsnummer auf der Vorderseite deiner Karte."
       ],
       "Free up some space or add more storage space.": [
         "Geben Sie etwas Platz frei oder fügen Sie zusätzlichen Speicherplatz hinzu."
@@ -2643,7 +2649,7 @@
         "Bitte beachten Sie, dass dieser Vorgang (je nach Größe Ihres Adressbuchs) einige Zeit dauern kann."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleibt."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf deinem Konto noch ${ creditsRemaining } Guthaben verbleiben."
       ],
       "Please remove the duplicates and try again.": [
         "Bitte entfernen Sie die Duplikate und versuchen Sie es erneut."
@@ -2652,19 +2658,19 @@
         "Bitte die zu importierenden Ordner auswählen:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank."
+        "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an deine Bank."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an PayPal, um Hilfe zu erhalten."
+        "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Bitte überprüfen Sie die Zahlung im neu geöffneten Tab."
+        "Bitte überprüfe die Zahlung im neu geöffneten Tab."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Bitte überprüfen Sie die Karte im neu geöffneten Tab."
+        "Bitte überprüfe die Karte im neu geöffneten Tab."
       ],
       "Please verify the payment in the new tab.": [
-        "Bitte bestätigen Sie die Zahlung in neu geöffneten Tab."
+        "Bitte bestätige die Zahlung in neu geöffneten Tab."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warten Sie, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
@@ -2692,10 +2698,10 @@
         "Entfernte Teilnehmer werden benachrichtigt."
       ],
       "Save 20%": [
-        "20% sparen"
+        "20 % sparen"
       ],
       "Save extra 20%": [
-        "Sparen Sie weitere 20%"
+        "Spare weitere 20 %"
       ],
       "Screenshot(s) attached": [
         "Bildschirmfoto(s) hinzugefügt"
@@ -2716,7 +2722,7 @@
         "Die Einrichtung von PGP ermöglicht es Ihnen, verschlüsselte Ende-zu-Ende Nachrichten an einen Nicht-ProtonMail-Benutzer zu senden, welcher einen PGP-kompatiblen Dienst verwendet."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Da Sie zu den Stammkunden gehören, wurden für Ihr Konto zusätzliche Funktionen aktiviert."
+        "Da du zu den Stammkunden gehörst, wurden für dein Konto zusätzliche Funktionen aktiviert."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Einige Ihre Antworten auf Ereignisse, die zuvor vom Organisator aktualisiert wurden, gehen verloren."
@@ -2731,13 +2737,13 @@
         "Support-Team"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "Wechseln Sie zu ${ professionalPlan }, um weitere Verbindungen hinzufügen zu können."
+        "Wechsle zu ${ professionalPlan }, um weitere Verbindungen hinzuzufügen."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "Wechseln Sie zu ${ professionalPlan }, um weitere Benutzer hinzufügen zu können."
+        "Wechsle zu ${ professionalPlan }, um weitere Benutzer hinzuzufügen."
       ],
       "Thank you for supporting our mission.": [
-        "Vielen Dank für Ihre Unterstützung zu diesem Projekt."
+        "Vielen Dank für deine Unterstützung bei unserem Projekt."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Die Anwendung muss Ihre Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die Sie anschließend herunterladen können."
@@ -2794,7 +2800,7 @@
         "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität). Bitte vergewissern Sie sich, dass dies der Link ist, den Sie besuchen möchten, oder öffnen Sie ihn nicht."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dadurch kann PayPal zur Bezahlung Ihres Proton-Abonnements verwendet werden. Sie werden in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, bevor Sie fortfahren."
+        "Dadurch kann PayPal zur Bezahlung deines Proton-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Popup-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
@@ -2818,10 +2824,10 @@
         "Die Überprüfung kann einige Minuten dauern."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "Bei der Überprüfung wird ein neuer Tab geöffnet. Bitte deaktivieren Sie alle Popup-Blocker."
+        "Bei der Überprüfung wird ein neuer Tab geöffnet. Bitte deaktiviere alle Popup-Blocker."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Die Überprüfung öffnet einen neuen Tab — bitte deaktivieren Sie daher alle Popup-Blocker. Ihr Konto wird nicht belastet. Jeder Betrag, der zur Überprüfung der Karte verwendet wird, wird sofort zurückerstattet."
+        "Die Überprüfung öffnet einen neuen Tab — bitte deaktiviere daher alle Popup-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Überprüfung der Karte verwendet wurde, wird sofort zurückerstattet."
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Ein Paket aus VPN + ${ mailAppName } für Familien und kleine Unternehmen."
@@ -2830,7 +2836,7 @@
         "Wir verwenden 3D-Sicherheitsüberprüfung zum Schutz Ihrer Zahlungen."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Sie werden in einem neuen Browser-Tab zu PayPal weitergeleitet, um diese Zahlung abzuschließen. Wenn Sie einen Popup-Blocker verwenden, deaktivieren Sie diesen bitte, um fortzufahren."
+        "Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet, um diese Zahlung abzuschließen. Wenn du einen Popup-Blocker verwendest, deaktiviere diesen bitte, um fortzufahren."
       ],
       "We'll notify you when the import is done.": [
         "Sie werden benachrichtigt, sobald der Datenimport abgeschlossen ist."
@@ -2902,10 +2908,10 @@
         "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Es muss eine Kreditkarte oder ein Bankkonto mit Ihrem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicken Sie bitte auf die nachfolgende Schaltfläche."
+        "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicke bitte auf die nachfolgende Schaltfläche."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Sie müssen alle hinzugefügten persönlichen Kalender und alle Verknüpfungen zu freigegebenen Kalendern entfernen, bevor Sie Ihr Abonnement kündigen können. ${ linkButton }"
+        "Du musst alle hinzugefügten persönlichen Kalender und alle Verknüpfungen zu freigegebenen Kalendern entfernen, bevor du dein Abonnement kündigen kannst. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Sie haben ${ spaceDisplayed }% Ihrer Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
@@ -2914,13 +2920,13 @@
         "Sie haben 100 % Ihrer Speicherkapazität aufgebraucht. Sie können keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
-        "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu bestätigen."
+        "Du wirst in Kürze zu deiner Bank weitergeleitet, um deine Zahlung zu bestätigen."
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Sie werden in Kürze zur Überprüfung Ihrer Zahlung an PayPal weitergeleitet."
+        "Du wirst in Kürze zur Überprüfung deiner Zahlung an PayPal weitergeleitet."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         "Sie sind dabei, alle Ereignisse dieser Serie zu aktualisieren. Hinzugefügte und entfernte Teilnehmer werden darüber informiert."
@@ -2947,10 +2953,10 @@
         "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wird in Kürze eingeschränkt werden. ${ payInvoiceLink }"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ihr Konto wird umgestellt, dies kann bis zu 30 Sekunden dauern."
+        "Dein Konto wird umgestellt, dies kann bis zu 30 Sekunden dauern."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Ihr Konto wird umgestellt, sobald die Zahlung abgeschlossen ist."
+        "Dein Konto wird umgestellt, sobald die Zahlung abgeschlossen ist."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Ihre E-Mail-Adresse ist deaktiviert. Eine Absage-E-Mail kann nicht an die Teilnehmer der Ereignisse gesendet werden. Möchten Sie trotzdem alle Termine dieser Serie löschen?"
@@ -2959,7 +2965,7 @@
         "Ihre E-Mail-Adresse ist deaktiviert. Eine Absage-E-Mail kann nicht an die Teilnehmer des Ereignisses gesendet werden. Möchten Sie diesen Termin dennoch löschen?"
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
-        "Ihre Bank benötigt aus Sicherheitsgründen eine „3-D Secure”-Bestätigung."
+        "Deine Bank benötigt aus Sicherheitsgründen eine „3-D Secure”-Bestätigung."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ihre Daten können nun von ${ importedEmailAddressStrong } in Ihr Proton-Konto importiert werden."
@@ -3240,9 +3246,6 @@
       "All day": [
         "Ganztägig"
       ],
-      "All-day event notifications": [
-        "Benachrichtigungen zu ganztägigen Ereignissen"
-      ],
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
       ],
@@ -3300,6 +3303,18 @@
       "Date and time": [
         "Datum und Zeit"
       ],
+      "Default email address": [
+        "Standard E-Mail-Adresse"
+      ],
+      "Default event duration": [
+        "Standarddauer für Termine"
+      ],
+      "Default full day notifications": [
+        "Standardbenachrichtigungen für ganztägige Termine"
+      ],
+      "Default notifications": [
+        "Standard-Benachrichtigungen"
+      ],
       "Description": [
         "Beschreibung"
       ],
@@ -3335,12 +3350,6 @@
       ],
       "Enter the 6-digit code": [
         "6-stelligen Code eingeben"
-      ],
-      "Event duration": [
-        "Dauer des Ereignisses"
-      ],
-      "Event notifications": [
-        "Ereignisbenachrichtigungen"
       ],
       "Event title": [
         "Titel des Ereignisses"
@@ -4499,6 +4508,11 @@
         "Keine Ergebnisse gefunden"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Aktualisieren der Einstellungen fehlgeschlagen"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Kalender verwalten"
@@ -5636,7 +5650,7 @@
         "Wöchentlich am ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Wöchentlich am ${ multipleDaysString }, bis §{ timesString }"
+        "Wöchentlich am ${ multipleDaysString }, bis ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Wöchentlich am ${ multipleDaysString }, ${ untilString }"

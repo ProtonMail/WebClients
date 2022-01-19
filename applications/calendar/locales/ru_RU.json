@@ -206,6 +206,9 @@
       "Export": [
         "Экспорт"
       ],
+      "Export contact group": [
+        ""
+      ],
       "Export contacts": [
         "Экспорт контактов"
       ],
@@ -955,7 +958,7 @@
     },
     "Calendar status": {
       "Not synced": [
-        "Не синхронизировано"
+        "Не синхронизирован"
       ],
       "Syncing": [
         "Синхронизация"
@@ -1975,6 +1978,12 @@
       "Invalid response": [
         "Недействительный ответ"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "Непредвиденная ошибка"
       ],
@@ -1995,9 +2004,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Ваш ответ был отослан, но событие не может быть добавлено в ваш календарь"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ваш ответ отправлен, но событие не может быть обновлено в Вашем календаре"
       ]
     },
     "Event popover close button": {
@@ -3354,9 +3360,6 @@
       "All day": [
         "Весь день"
       ],
-      "All-day event notifications": [
-        "Уведомления о событии в течение всего дня"
-      ],
       "Automatically save contacts": [
         "Автоматически сохранять контакты"
       ],
@@ -3414,6 +3417,18 @@
       "Date and time": [
         "Дата и время"
       ],
+      "Default email address": [
+        "Адрес электронной почты по умолчанию"
+      ],
+      "Default event duration": [
+        "Длительность события по умолчанию"
+      ],
+      "Default full day notifications": [
+        "Уведомления на весь день по умолчанию"
+      ],
+      "Default notifications": [
+        "Уведомления по умолчанию"
+      ],
       "Description": [
         "Описание"
       ],
@@ -3449,12 +3464,6 @@
       ],
       "Enter the 6-digit code": [
         "Введите код из шести цифр"
-      ],
-      "Event duration": [
-        "Длительность события"
-      ],
-      "Event notifications": [
-        "Уведомления о событии"
       ],
       "Event title": [
         "Название события"
@@ -4677,6 +4686,11 @@
     "Select search results": {
       "No results found": [
         "Результаты не найдены"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Не удалось обновить настройки"
       ]
     },
     "Sidebar calendar edit tooltip": {
