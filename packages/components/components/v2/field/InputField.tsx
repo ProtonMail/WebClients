@@ -1,9 +1,10 @@
-import { ElementType, forwardRef, ReactElement, ReactNode } from 'react';
+import { ElementType, forwardRef, ReactElement, ReactNode, useState } from 'react';
 import { Box, PolymorphicComponentProps } from '../../../helpers/react-polymorphic-box';
 import Icon from '../../icon/Icon';
 import { classnames, generateUID } from '../../../helpers';
 import { useInstance } from '../../../hooks';
 import Input from '../input/Input';
+import { Tooltip } from '../../tooltip';
 
 type NodeOrBoolean = ReactNode | boolean;
 
@@ -23,7 +24,7 @@ export interface InputFieldOwnProps {
     assistiveText?: ReactNode;
     disabled?: boolean;
     bigger?: boolean;
-    compact?: boolean;
+    dense?: boolean;
     id?: string;
     error?: NodeOrBoolean;
     warning?: NodeOrBoolean;
@@ -51,7 +52,7 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
             assistiveText,
             disabled,
             bigger,
-            compact,
+            dense = false,
             error,
             id: idProp,
             rootClassName,
@@ -62,12 +63,13 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
         }: InputFieldProps<E>,
         ref: typeof rest.ref
     ) => {
+        const [isFocused, setIsFocused] = useState(false);
         const id = useInstance(() => idProp || generateUID());
         const assistiveUid = useInstance(() => generateUID());
         const classes = {
             root: classnames([
                 'inputform-container w100',
-                compact && 'inputform-container--compact',
+                dense && 'inputform-container--dense',
                 rootClassName,
                 disabled && 'inputform-container--disabled',
                 Boolean(error) && 'inputform-container--invalid',
@@ -79,7 +81,11 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
                 labelContainerClassName,
             ]),
             inputContainer: 'inputform-field-container relative',
-            assistContainer: classnames(['inputform-assist flex flex-nowrap', assistContainerClassName]),
+            assistContainer: classnames([
+                'inputform-assist flex flex-nowrap',
+                assistContainerClassName,
+                dense && 'sr-only',
+            ]),
         };
         const hintElement = hint && <div className="inputform-label-hint flex-item-noshrink">{hint}</div>;
         const labelElement = label && <span className="inputform-label-text">{label}</span>;
@@ -96,8 +102,38 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
                 <span>{warning}</span>
             </>
         );
+
+        const getIcon = () => {
+            if (dense && (error || warning)) {
+                const { tooltipType, iconClassName, title } = error
+                    ? { tooltipType: 'error' as const, iconClassName: 'color-danger', title: error }
+                    : { tooltipType: 'warning' as const, iconClassName: 'color-warning', title: warning };
+                return (
+                    <Tooltip
+                        title={title}
+                        type={tooltipType}
+                        anchorOffset={{ y: -4, x: 0 }}
+                        isOpen={isFocused && !rest.value}
+                    >
+                        <Icon name="circle-exclamation-filled" className={iconClassName} />
+                    </Tooltip>
+                );
+            }
+
+            return rest.icon;
+        };
+
         return (
-            <label className={classes.root} htmlFor={id}>
+            <label
+                className={classes.root}
+                htmlFor={id}
+                onFocus={() => {
+                    setIsFocused(true);
+                }}
+                onBlur={() => {
+                    setIsFocused(false);
+                }}
+            >
                 {(label || hint) && (
                     <div className={classes.labelContainer}>
                         {labelElement}
@@ -113,6 +149,7 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
                         disabled={disabled}
                         aria-describedby={assistiveUid}
                         {...rest}
+                        icon={getIcon()}
                     />
                 </div>
                 <div className={classes.assistContainer} id={assistiveUid}>

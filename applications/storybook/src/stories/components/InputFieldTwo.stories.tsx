@@ -158,6 +158,41 @@ export const Sizes = () => {
     );
 };
 
+export const Dense = () => {
+    const [vals, setVals] = useState({ warning: '', error: '', assistive: '' });
+    const handleChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement>) =>
+        setVals((prev) => ({
+            ...prev,
+            [key]: e.target.value,
+        }));
+
+    return (
+        <>
+            <InputFieldTwo
+                dense
+                value={vals.warning}
+                onChange={handleChange('warning')}
+                label="Warning"
+                warning="I'm a warning"
+            />
+            <InputFieldTwo
+                dense
+                value={vals.error}
+                onChange={handleChange('error')}
+                label="Error"
+                error="I'm an error"
+            />
+            <InputFieldTwo
+                dense
+                value={vals.assistive}
+                onChange={handleChange('assistive')}
+                label="Assistive text"
+                assistiveText="I'm invisible"
+            />
+        </>
+    );
+};
+
 export const CustomElements = () => {
     return (
         <div>
@@ -168,7 +203,12 @@ export const CustomElements = () => {
                 <InputFieldTwo as={TextAreaTwo} rows={3} label="Text area" placeholder="Placeholder" />
             </div>
             <div className="mb1">
-                <InputFieldTwo as={SelectTwo} placeholder="Placeholder" assistiveText="Choose wisely." label="With new select">
+                <InputFieldTwo
+                    as={SelectTwo}
+                    placeholder="Placeholder"
+                    assistiveText="Choose wisely."
+                    label="With new select"
+                >
                     <Option title="one" value="one" />
                     <Option title="two" value="two" />
                     <Option title="three" value="three" />

@@ -155,7 +155,7 @@ export const CalendarModal = ({
 
         return (
             <InputFieldTwo
-                compact
+                dense
                 as={SelectTwo}
                 id="calendar-address-select"
                 value={model.addressID}
@@ -196,7 +196,7 @@ export const CalendarModal = ({
                         ) : (
                             <>
                                 <InputFieldTwo
-                                    compact
+                                    dense
                                     id="calendar-name-input"
                                     label={c('Label').t`Name`}
                                     value={model.name}
@@ -210,7 +210,7 @@ export const CalendarModal = ({
                                     autoFocus
                                 />
                                 <InputFieldTwo
-                                    compact
+                                    dense
                                     as={ColorPicker}
                                     label={c('Label').t`Color`}
                                     id="calendar-color"
@@ -232,7 +232,7 @@ export const CalendarModal = ({
                                     </Field>
                                 </div>
                                 <InputFieldTwo
-                                    compact
+                                    dense
                                     as={TextArea}
                                     label={c('Label').t`Description`}
                                     autoGrow
@@ -248,7 +248,7 @@ export const CalendarModal = ({
                                 />
                                 {!isSubscribedCalendar && (
                                     <InputFieldTwo
-                                        compact
+                                        dense
                                         as={SelectTwo}
                                         label={c('Label').t`Default event duration`}
                                         id="duration-select"
@@ -283,7 +283,7 @@ export const CalendarModal = ({
                                 {!isSubscribedCalendar && (
                                     <>
                                         <InputFieldTwo
-                                            compact
+                                            dense
                                             as={Notifications}
                                             label={c('Label').t`Default notifications`}
                                             data-test-id="create-calendar/event-settings:default-notification"
@@ -300,7 +300,7 @@ export const CalendarModal = ({
                                         />
 
                                         <InputFieldTwo
-                                            compact
+                                            dense
                                             as={Notifications}
                                             label={c('Label').t`Default full day notifications`}
                                             data-test-id="create-calendar/event-settings:default-full-day-notification"
