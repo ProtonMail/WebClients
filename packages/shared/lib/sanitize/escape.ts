@@ -91,3 +91,21 @@ export const escapeURLinStyle = (style: string) => {
 
     return escapeFlag ? escape(escapedStyle) : escapedStyle;
 };
+
+const HTML_ENTITIES_TO_REMOVE_CHAR_CODES: number[] = [
+    9, // Tab : &Tab; - &#x00009; - &#9;
+    10, // New line : &NewLine; - &#x0000A; - &#10;
+    173, // Soft hyphen : &shy; - &#x000AD; - &#173;
+];
+
+/**
+ * Remove completely some HTML entities from a string
+ * @param {String} string
+ * @return {String}
+ */
+export const unescapeFromString = (string: string) => {
+    const toRemove = HTML_ENTITIES_TO_REMOVE_CHAR_CODES.map((charCode) => String.fromCharCode(charCode));
+    const regex = new RegExp(toRemove.join('|'), 'g');
+
+    return string.replace(regex, '');
+};

@@ -1,10 +1,13 @@
 import { Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
+import { unescapeFromString } from '../sanitize/escape';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
 export const inputToRecipient = (input: string) => {
-    const trimmedInput = input.trim();
+    // Remove potential unwanted HTML entities such as '&shy;' from the string
+    const cleanInput = unescapeFromString(input);
+    const trimmedInput = cleanInput.trim();
     const match = REGEX_RECIPIENT.exec(trimmedInput);
 
     if (match !== null && (match[1] || match[2])) {

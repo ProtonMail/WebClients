@@ -1,6 +1,8 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { protonizer, sanitizeString } from '@proton/shared/lib/sanitize';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { unescapeFromString } from '@proton/shared/lib/sanitize/escape';
+
 import { MAILTO_PROTOCOL_HANDLER_PATH } from '../constants';
 import { PartialMessageState } from '../logic/messages/messagesTypes';
 
@@ -10,7 +12,15 @@ import { PartialMessageState } from '../logic/messages/messagesTypes';
  */
 export const toAddresses = (emailsStr: string): Recipient[] => {
     const emails = sanitizeString(emailsStr).split(',');
-    return emails.map((Address) => ({ Address, Name: Address }));
+
+    // Remove potential unwanted HTML entities such as '&shy;' from the address
+    const escaped = emails.map((email) => {
+        // Some HTML Entities might still be URI encoded at this point
+        const uriDecoded = decodeURIComponent(email);
+        return unescapeFromString(uriDecoded);
+    });
+
+    return escaped.map((Address) => ({ Address, Name: Address }));
 };
 
 /**
