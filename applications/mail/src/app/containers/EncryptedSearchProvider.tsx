@@ -49,7 +49,6 @@ import {
     removeES,
     setES,
     esSentryReport,
-    checkNewUserID,
     parseSearchParams,
     resetSort,
     increaseNumPauses,
@@ -1004,9 +1003,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     /**
      * Remove the index and restart ES by creating a new one from scratch
      */
-    const restartIndexing = async () => {
+    const restartIndexing = async (notify?: boolean) => {
         await esDelete();
-        return resumeIndexing({ isRefreshed: true });
+        return resumeIndexing({ isRefreshed: true, notify });
     };
 
     /**
@@ -1103,29 +1102,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 }
 
                 // Check all keys that decrypt under the current user's key
-                const indexKeys = await checkNewUserID(getUserKeys);
-
-                // If there is none, the user has never activated ES
-                if (indexKeys.length === 0) {
-                    return;
-                }
-
-                // If there is more than one something is off and it's best to remove them all
-                if (indexKeys.length > 1) {
-                    await Promise.all(
-                        indexKeys.map(async ({ userID }) => {
-                            await esDelete(userID);
-                        })
-                    );
-                    return await restartIndexing();
-                }
-
-                // At this point there is only one key blob. If the stored user ID does not coincide with the
-                // current one, the old index is removed and a new one is automatically created
-                const { userID: storedUserID, indexKey } = indexKeys[0];
-                if (storedUserID !== userID) {
-                    await esDelete(storedUserID);
-                    return await restartIndexing();
+                const indexKey = await getIndexKey(getUserKeys, userID);
+                if (!indexKey) {
+                    return await restartIndexing(false);
                 }
 
                 const isIDBIntact = await canUseES(userID);
