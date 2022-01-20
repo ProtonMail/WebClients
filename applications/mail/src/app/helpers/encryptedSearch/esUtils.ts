@@ -2,14 +2,12 @@ import { getItem, setItem, removeItem } from '@proton/shared/lib/helpers/storage
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
 import { Location, History } from 'history';
-import { EncryptedSearchDB, ESProgressBlob, GetUserKeys } from '../../models/encryptedSearch';
+import { EncryptedSearchDB, ESProgressBlob } from '../../models/encryptedSearch';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
-import { decryptIndexKey } from './esBuild';
 import { extractSearchParameters, filterFromUrl, pageFromUrl, setSortInUrl, sortFromUrl } from '../mailboxUrl';
 import { isSearch } from '../elements';
 import { roundMilliseconds } from './esSearch';
@@ -261,31 +259,6 @@ export const refreshOpenpgp = async () => {
     }
     await destroyOpenPGP();
     await loadOpenPGP();
-};
-
-/**
- * Return index keys from legacy blobs and associated user IDs
- */
-export const checkNewUserID = async (getUserKeys: GetUserKeys) => {
-    return (
-        await Promise.all(
-            Object.keys(window.localStorage).map(async (key) => {
-                const chunks = key.split(':');
-                if (chunks[0] === 'ES' && chunks[2] === 'Key') {
-                    const userID = chunks[1];
-                    try {
-                        const indexKey = await decryptIndexKey(getUserKeys, getItem(key));
-                        if (indexKey) {
-                            return { userID, indexKey };
-                        }
-                    } catch (error: any) {
-                        // Ignore errors in this instance as there could be indexes not
-                        // belonging to the current user
-                    }
-                }
-            })
-        )
-    ).filter(isTruthy);
 };
 
 /**
