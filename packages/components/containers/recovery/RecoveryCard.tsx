@@ -68,7 +68,7 @@ const RecoveryCard = ({ ids }: Props) => {
     const accountStatusProps: RecoveryCardStatusProps = (() => {
         if (accountRecoveryStatus === 'complete') {
             return {
-                status: accountRecoveryStatus,
+                type: 'success',
                 statusText: c('Info').t`Your account recovery method is set`,
                 callToActions: [],
             };
@@ -92,14 +92,14 @@ const RecoveryCard = ({ ids }: Props) => {
 
         if (user.MnemonicStatus === MNEMONIC_STATUS.SET) {
             return {
-                status: 'intermediate',
+                type: 'info',
                 statusText: c('Info').t`To ensure continuous access to your account, set an account recovery method`,
                 callToActions: [emailCTA, phoneCTA],
             };
         }
 
         return {
-            status: accountRecoveryStatus,
+            type: 'warning',
             statusText: c('Info').t`No account recovery method set; you are at risk of losing access to your account`,
             callToActions: [emailCTA, phoneCTA],
         };
@@ -132,7 +132,7 @@ const RecoveryCard = ({ ids }: Props) => {
 
         if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && hasOutdatedRecoveryFile) {
             return {
-                status: 'incomplete',
+                type: 'danger',
                 statusText: c('Info').t`Outdated recovery methods; update to ensure access to your data`,
                 callToActions: [updateRecoveryPhraseCTA, updateRecoveryFileCTA].filter(isTruthy),
             };
@@ -140,7 +140,7 @@ const RecoveryCard = ({ ids }: Props) => {
 
         if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
             return {
-                status: 'incomplete',
+                type: 'danger',
                 statusText: c('Info').t`Outdated recovery phrase; update to ensure access to your data`,
                 callToActions: [updateRecoveryPhraseCTA, recoverySecrets.length === 0 && recoveryFileCTA].filter(
                     isTruthy
@@ -150,7 +150,7 @@ const RecoveryCard = ({ ids }: Props) => {
 
         if (hasOutdatedRecoveryFile) {
             return {
-                status: 'incomplete',
+                type: 'danger',
                 statusText: c('Info').t`Outdated recovery file; update to ensure access to your data`,
                 callToActions: [
                     user.MnemonicStatus !== MNEMONIC_STATUS.SET && recoveryPhraseCTA,
@@ -161,14 +161,14 @@ const RecoveryCard = ({ ids }: Props) => {
 
         if (dataRecoveryStatus === 'complete') {
             return {
-                status: dataRecoveryStatus,
+                type: 'success',
                 statusText: c('Info').t`Your data recovery method is set`,
                 callToActions: [],
             };
         }
 
         return {
-            status: dataRecoveryStatus,
+            type: 'warning',
             statusText: c('Info').t`No data recovery method set; you are at risk of losing access to your data`,
             callToActions: [recoveryPhraseCTA, recoveryFileCTA].filter(isTruthy),
         };
