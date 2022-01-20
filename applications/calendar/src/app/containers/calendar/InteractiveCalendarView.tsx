@@ -447,13 +447,10 @@ const InteractiveCalendarView = ({
         viewEventData: { calendarData, eventData, eventReadResult, eventRecurrence },
         emailNotificationsEnabled,
         partstat,
-        allowDisabled = false,
     }: {
         viewEventData: CalendarViewEventData;
         emailNotificationsEnabled?: boolean;
         partstat?: ICAL_ATTENDEE_STATUS;
-        // For duplicating an event from a disabled calendar to an active one
-        allowDisabled?: boolean;
     }): EventModel | undefined => {
         if (
             !eventData ||
@@ -465,18 +462,10 @@ const InteractiveCalendarView = ({
             return;
         }
         const initialDate = getInitialDate();
-        const canUseDisabledCalendar = getIsCalendarDisabled(calendarData) && allowDisabled;
-        const possiblyAdjustedCalendarData = canUseDisabledCalendar
-            ? defaultCalendar || activeCalendars[0]
-            : calendarData;
-        const { Members = [], CalendarSettings } = readCalendarBootstrap(possiblyAdjustedCalendarData.ID);
+        const { Members = [], CalendarSettings } = readCalendarBootstrap(calendarData.ID);
         const [Member, Address] = getMemberAndAddress(addresses, Members, eventData.Author);
 
         const [{ veventComponent, verificationStatus, selfAddressData }, personalMap] = eventReadResult.result;
-
-        const veventValarmComponent =
-            personalMap[canUseDisabledCalendar ? readCalendarBootstrap(calendarData.ID).Members[0].ID : Member.ID]
-                ?.veventComponent;
 
         const veventComponentParentPartial = veventComponent['recurrence-id']
             ? getVeventComponentParent(veventComponent.uid.value, eventData.CalendarID)
@@ -484,7 +473,7 @@ const InteractiveCalendarView = ({
         const createResult = getInitialModel({
             initialDate,
             CalendarSettings,
-            Calendar: possiblyAdjustedCalendarData,
+            Calendar: calendarData,
             Calendars: activeCalendars,
             Addresses: addresses,
             Members,
@@ -501,12 +490,12 @@ const InteractiveCalendarView = ({
             : veventComponent;
         const eventResult = getExistingEvent({
             veventComponent: originalOrOccurrenceEvent,
-            veventValarmComponent,
+            veventValarmComponent: personalMap[Member.ID]?.veventComponent,
             veventComponentParentPartial,
             tzid,
             isOrganizer: !!eventData.IsOrganizer,
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-            selfAddressData: allowDisabled ? undefined : selfAddressData,
+            selfAddressData,
         });
         if (partstat) {
             return {
@@ -1309,10 +1298,17 @@ const InteractiveCalendarView = ({
             return null;
         }
 
+        const viewEventData = { ...targetEvent.data };
+
+        if (isDuplication && getIsCalendarDisabled(viewEventData.calendarData)) {
+            if (!defaultCalendar) {
+                throw new Error('Invalid calendar data');
+            }
+            viewEventData.calendarData = defaultCalendar;
+        }
         const newTemporaryModel = getUpdateModel({
-            viewEventData: targetEvent.data,
+            viewEventData,
             emailNotificationsEnabled,
-            allowDisabled: isDuplication,
         });
 
         if (!newTemporaryModel) {
