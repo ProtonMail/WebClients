@@ -166,20 +166,24 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
 
         return [...localActiveSessions.sort(compareSessions)].map(
             ({ DisplayName, Username, LocalID, PrimaryEmail }, index) => {
+                const isLoading = loadingMap[LocalID];
+
                 const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
                 const initials = getInitials(nameToDisplay);
 
+                const maybeEmailInBrackets = PrimaryEmail ? `<${PrimaryEmail}>` : '';
+
                 // translator: This is the tooltip that appears when you hover over an account button in switch account screen. Ex.: Continue with Kung Fury <kung.fury@pm.me>
-                const continueWithText = `${c('Action').t`Continue with`} ${nameToDisplay} <${PrimaryEmail}>`;
+                const continueWithText = `${c('Action').t`Continue with`} ${nameToDisplay} ${maybeEmailInBrackets}`;
                 // translator: This is the tooltip that appears when you hover over an 'sign out' button in switch account screen. Ex.: Sign out from Kung Fury <kung.fury@pm.me>
-                const signOutText = `${c('Action').t`Sign out from`} ${nameToDisplay} <${PrimaryEmail}>`;
+                const signOutText = `${c('Action').t`Sign out from`} ${nameToDisplay} ${maybeEmailInBrackets}`;
 
                 return (
                     <Fragment key={LocalID}>
                         <div
                             className={classnames([
                                 'account-button interactive flex flex-align-items-start w100 text-left rounded-bigger relative',
-                                loadingMap[LocalID] && 'is-loading',
+                                isLoading && 'is-loading',
                             ])}
                         >
                             <span className="flex user-initials rounded bg-primary">
@@ -196,7 +200,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                                     onClick={() => handleClickSession(LocalID)}
                                 >
                                     <strong className="block text-break">{nameToDisplay}</strong>
-                                    <div className="text-break color-weak">{PrimaryEmail}</div>
+                                    {PrimaryEmail && <div className="text-break color-weak">{PrimaryEmail}</div>}
                                 </button>
                                 <div>
                                     <InlineLinkButton
@@ -208,7 +212,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                                         {c('Action').t`Sign out`}
                                     </InlineLinkButton>
                                 </div>
-                                {loadingMap[LocalID] ? (
+                                {isLoading ? (
                                     <div className="account-button-icon flex text-lg">
                                         <CircleLoader />
                                     </div>
