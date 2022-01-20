@@ -1,28 +1,34 @@
 import Icon, { IconProps } from '../../components/icon/Icon';
 import { classnames } from '../../helpers';
-import RecoveryStatus from './RecoveryStatus';
 
 interface Props extends Omit<IconProps, 'name' | 'size'> {
-    status: RecoveryStatus;
+    type: 'info' | 'success' | 'warning' | 'danger';
 }
 
-const RecoveryStatusIcon = ({ status, className, ...rest }: Props) => {
+const RecoveryStatusIcon = ({ type, className, ...rest }: Props) => {
     let config = {
-        name: 'circle-check-filled',
-        className: 'color-success',
+        name: 'circle-info-filled',
+        className: 'color-info',
     };
 
-    if (status === 'intermediate') {
+    if (type === 'success') {
         config = {
-            name: 'circle-info-filled',
-            className: 'color-info',
+            name: 'circle-check-filled',
+            className: 'color-success',
         };
     }
 
-    if (status === 'incomplete') {
+    if (type === 'warning') {
         config = {
             name: 'circle-exclamation-filled',
             className: 'color-warning',
+        };
+    }
+
+    if (type === 'danger') {
+        config = {
+            name: 'circle-exclamation-filled',
+            className: 'color-danger',
         };
     }
 
