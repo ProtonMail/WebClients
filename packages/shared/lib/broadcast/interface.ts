@@ -1,6 +1,6 @@
 export interface GenericErrorPayload {
     status?: number;
-    message?: string;
+    message: string;
     code?: number;
     details?: any;
 }
