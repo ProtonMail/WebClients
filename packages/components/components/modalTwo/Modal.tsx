@@ -153,7 +153,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     aria-describedby={`${id}-description`}
                     {...focusTrapProps}
                     className={classnames([
-                        'modal-two-dialog',
+                        'modal-two-dialog no-outline',
                         className,
                         size === 'small' && 'modal-two-dialog--small',
                         size === 'large' && 'modal-two-dialog--large',
