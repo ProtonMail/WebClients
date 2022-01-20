@@ -80,10 +80,11 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
             return Promise.reject(e);
         };
 
-        const handleVerification = ({ token, methods, onVerify }, e) => {
+        const handleVerification = ({ token, methods, onVerify, title }, e) => {
             return new Promise((resolve, reject) => {
                 createModal(
                     <HumanVerificationModal
+                        title={title}
                         token={token}
                         methods={methods}
                         onVerify={onVerify}

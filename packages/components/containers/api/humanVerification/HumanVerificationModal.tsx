@@ -9,16 +9,26 @@ import HumanVerificationForm from './HumanVerificationForm';
 import { HumanVerificationSteps } from './interface';
 
 interface Props<T> {
+    title?: string;
     token: string;
     methods: HumanVerificationMethodType[];
     onSuccess: (data: T) => void;
     onVerify: (token: string, tokenType: HumanVerificationMethodType) => Promise<T>;
     onError: (error: any) => void;
+
     [key: string]: any;
 }
 
-const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, onError, ...rest }: Props<T>) => {
-    const title = c('Title').t`Human verification`;
+const HumanVerificationModal = <T,>({
+    title: maybeTitle,
+    token,
+    methods = [],
+    onSuccess,
+    onVerify,
+    onError,
+    ...rest
+}: Props<T>) => {
+    const title = maybeTitle || c('Title').t`Human verification`;
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
