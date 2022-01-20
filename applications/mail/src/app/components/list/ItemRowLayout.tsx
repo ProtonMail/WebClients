@@ -1,4 +1,3 @@
-import { isICS } from '@proton/shared/lib/helpers/mimetype';
 import { c, msgid } from 'ttag';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -15,7 +14,7 @@ import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
 import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { Conversation } from '../../models/conversation';
+import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
 interface Props {
     labelID: string;
@@ -69,8 +68,7 @@ const ItemRowLayout = ({
         occurrencesInBody
     );
 
-    const attachmentInfo = (element as Conversation)?.AttachmentInfo;
-    const hasOnlyIcsAttachments = attachmentInfo && !Object.keys(attachmentInfo).some((key) => !isICS(key));
+    const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
