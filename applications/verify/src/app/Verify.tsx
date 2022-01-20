@@ -4,10 +4,11 @@ import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
+import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import {
     HumanVerificationForm,
     HumanVerificationSteps,
@@ -52,8 +53,7 @@ const Verify = () => {
     };
 
     const handleError = (error: unknown) => {
-        const payload = getApiError(error);
-        broadcast({ type: MessageType.ERROR, payload });
+        broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
     };
 
     useEffect(() => {
