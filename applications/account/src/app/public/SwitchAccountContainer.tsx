@@ -27,6 +27,7 @@ import {
     InlineLinkButton,
     Icon,
     Scroll,
+    classnames,
 } from '@proton/components';
 import { getToAppName } from './helper';
 import Main from './Main';
@@ -175,7 +176,12 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
 
                 return (
                     <Fragment key={LocalID}>
-                        <div className="account-button interactive flex flex-align-items-start w100 text-left rounded-bigger relative">
+                        <div
+                            className={classnames([
+                                'account-button interactive flex flex-align-items-start w100 text-left rounded-bigger relative',
+                                loadingMap[LocalID] && 'is-loading',
+                            ])}
+                        >
                             <span className="flex user-initials rounded bg-primary">
                                 <span className="mauto text-semibold" aria-hidden="true">
                                     {initials}
@@ -192,20 +198,23 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                                     <strong className="block text-break">{nameToDisplay}</strong>
                                     <div className="text-break color-weak">{PrimaryEmail}</div>
                                 </button>
-                                <div className="relative upper-layer overflow-hidden">
-                                    {loadingMap[LocalID] ? (
-                                        <CircleLoader />
-                                    ) : (
-                                        <InlineLinkButton
-                                            title={signOutText}
-                                            aria-label={signOutText}
-                                            onClick={(event) => handleSignOut(event, LocalID)}
-                                        >
-                                            {c('Action').t`Sign out`}
-                                        </InlineLinkButton>
-                                    )}
+                                <div>
+                                    <InlineLinkButton
+                                        className="relative upper-layer"
+                                        title={signOutText}
+                                        aria-label={signOutText}
+                                        onClick={(event) => handleSignOut(event, LocalID)}
+                                    >
+                                        {c('Action').t`Sign out`}
+                                    </InlineLinkButton>
                                 </div>
-                                <Icon className="account-button-icon" name="arrow-right" aria-hidden="true" />
+                                {loadingMap[LocalID] ? (
+                                    <div className="account-button-icon flex text-lg">
+                                        <CircleLoader />
+                                    </div>
+                                ) : (
+                                    <Icon className="account-button-icon" name="arrow-right" aria-hidden="true" />
+                                )}
                             </div>
                         </div>
                         {index !== localActiveSessions.length - 1 && <hr className="my0-5" />}

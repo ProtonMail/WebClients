@@ -14,11 +14,13 @@
 		inset-inline-end: 1.5em;
 		transform: translateY(-50%);
 		opacity: 0;
+		pointer-events: none;
 		transition: 0.25s easing(easeOutQuint);
 	}
 
 	&:hover &-icon,
-	&:focus-within &-icon {
+	&:focus-within &-icon,
+	&.is-loading &-icon {
 		inset-inline-end: 1em;
 		opacity: 1;
 	}
