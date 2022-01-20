@@ -4,7 +4,7 @@ import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
 import { canonizeInternalEmail, getEmailParts } from '../helpers/email';
 import { identity } from '../helpers/function';
 import { isICS } from '../helpers/mimetype';
-import { Message } from '../interfaces/mail/Message';
+import { AttachmentInfo, Message } from '../interfaces/mail/Message';
 import { MESSAGE_FLAGS, SIGNATURE_START } from './constants';
 
 const { PLAINTEXT, MIME } = MIME_TYPES;
@@ -136,15 +136,8 @@ export const getAttachments = (message?: Message) => message?.Attachments || [];
 export const hasAttachments = (message?: Message) => !!(message?.NumAttachments && message?.NumAttachments > 0);
 export const attachmentsSize = (message?: Message) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
-export const getHasOnlyIcsAttachments = (message?: Message) => {
-    const attachments = getAttachments(message);
-
-    if (attachments.length === 0) {
-        return false;
-    }
-
-    return attachments.every(({ MIMEType = '' }) => isICS(MIMEType));
-};
+export const getHasOnlyIcsAttachments = (attachmentInfo?: Partial<Record<MIME_TYPES, AttachmentInfo>>) =>
+    !!attachmentInfo && !Object.keys(attachmentInfo).some((key) => !isICS(key));
 
 export const isAutoReply = (message?: Message) => {
     const ParsedHeaders = message?.ParsedHeaders || {};
