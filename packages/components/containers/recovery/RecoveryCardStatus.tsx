@@ -1,10 +1,9 @@
 import { ButtonLike, Icon, SettingsLink } from '../../components';
 import RecoveryStatusIcon from './RecoveryStatusIcon';
 import RecoveryStatusText from './RecoveryStatusText';
-import RecoveryStatus from './RecoveryStatus';
 
 export interface RecoveryCardStatusProps {
-    status: RecoveryStatus;
+    type: 'info' | 'success' | 'warning' | 'danger';
     statusText: string;
     callToActions?: {
         text: string;
@@ -12,12 +11,12 @@ export interface RecoveryCardStatusProps {
     }[];
 }
 
-const RecoveryCardStatus = ({ status, statusText, callToActions: items = [] }: RecoveryCardStatusProps) => {
+const RecoveryCardStatus = ({ type, statusText, callToActions: items = [] }: RecoveryCardStatusProps) => {
     return (
         <>
             <span className="flex flex-align-items-center flex-nowrap">
-                <RecoveryStatusIcon className="flex-item-noshrink" status={status} />
-                <RecoveryStatusText className="ml1" status={status}>
+                <RecoveryStatusIcon className="flex-item-noshrink" type={type} />
+                <RecoveryStatusText className="ml1" type={type}>
                     {statusText}
                 </RecoveryStatusText>
             </span>
