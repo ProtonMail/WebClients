@@ -52,7 +52,7 @@ export const propertiesToModel = ({
 
     return {
         uid: uid ? uid.value : undefined,
-        frequencyModel: propertiesToFrequencyModel(rrule, start, !isOrganizer),
+        frequencyModel: propertiesToFrequencyModel(rrule, start),
         title: truncate(titleString.trim(), MAX_LENGTHS_API.TITLE),
         location: truncate(locationString.trim(), MAX_LENGTHS_API.LOCATION),
         description: truncate(descriptionString.trim(), MAX_LENGTHS_API.EVENT_DESCRIPTION),

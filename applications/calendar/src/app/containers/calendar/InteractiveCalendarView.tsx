@@ -15,7 +15,7 @@ import { c } from 'ttag';
 import { updateAttendeePartstat, updateCalendar, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
-import { getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
 import {
     DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
@@ -78,6 +78,7 @@ import { serverTime } from 'pmcrypto';
 import eventImport from '@proton/styles/assets/img/calendar/event-import.svg';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import {
@@ -94,7 +95,11 @@ import { sortEvents, sortWithTemporaryEvent } from '../../components/calendar/so
 import CreateEventModal from '../../components/eventModal/CreateEventModal';
 import CreateEventPopover from '../../components/eventModal/CreateEventPopover';
 import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
-import { getExistingEvent, getInitialModel } from '../../components/eventModal/eventForm/state';
+import {
+    getExistingEvent,
+    getInitialFrequencyModel,
+    getInitialModel,
+} from '../../components/eventModal/eventForm/state';
 
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
@@ -151,7 +156,6 @@ import {
 } from './interface';
 import { getInitialTargetEventData } from './targetEventHelper';
 import DuplicateAttendeesModal from './confirmationModals/DuplicateAttendeesModal';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -173,7 +177,9 @@ type ModalsMap = {
     deleteConfirmModal: ModalWithProps<{
         inviteActions: InviteActions;
     }>;
-    createEventModal: ModalWithProps;
+    createEventModal: ModalWithProps<{
+        isDuplicating: boolean;
+    }>;
     confirmModal: ModalWithProps;
     editRecurringConfirmModal: ModalWithProps<{
         data: {
@@ -206,6 +212,7 @@ type ModalsMap = {
 
 interface Props extends SharedViewProps {
     isLoading: boolean;
+    isEventCreationDisabled: boolean;
     weekStartsOn: WeekStartsOn;
     inviteLocale?: string;
     onChangeDate: (date: Date) => void;
@@ -225,6 +232,7 @@ const InteractiveCalendarView = ({
     view,
     isLoading,
     isNarrow,
+    isEventCreationDisabled,
 
     tzid,
     primaryTimezone,
@@ -340,6 +348,7 @@ const InteractiveCalendarView = ({
 
     const isCreatingEvent = !!tmpData && !tmpEvent;
     const isEditingEvent = !!tmpData && !!tmpEvent;
+    const isDuplicatingEvent = !!modalsMap.createEventModal.props?.isDuplicating;
     const isInTemporaryBlocking =
         tmpData && tmpDataOriginal && getHasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
     const isScrollDisabled = !!interactiveData && !temporaryEvent;
@@ -434,11 +443,15 @@ const InteractiveCalendarView = ({
         return getComponentFromCalendarEvent(parentEvent);
     };
 
-    const getUpdateModel = (
-        { calendarData, eventData, eventReadResult, eventRecurrence }: CalendarViewEventData,
-        emailNotificationsEnabled?: boolean,
-        partstat?: ICAL_ATTENDEE_STATUS
-    ): EventModel | undefined => {
+    const getUpdateModel = ({
+        viewEventData: { calendarData, eventData, eventReadResult, eventRecurrence },
+        emailNotificationsEnabled,
+        partstat,
+    }: {
+        viewEventData: CalendarViewEventData;
+        emailNotificationsEnabled?: boolean;
+        partstat?: ICAL_ATTENDEE_STATUS;
+    }): EventModel | undefined => {
         if (
             !eventData ||
             !eventReadResult ||
@@ -449,9 +462,8 @@ const InteractiveCalendarView = ({
             return;
         }
         const initialDate = getInitialDate();
-
         const { Members = [], CalendarSettings } = readCalendarBootstrap(calendarData.ID);
-        const [Member, Address] = getMemberAndAddress(activeAddresses, Members, eventData.Author);
+        const [Member, Address] = getMemberAndAddress(addresses, Members, eventData.Author);
 
         const [{ veventComponent, verificationStatus, selfAddressData }, personalMap] = eventReadResult.result;
 
@@ -463,7 +475,7 @@ const InteractiveCalendarView = ({
             CalendarSettings,
             Calendar: calendarData,
             Calendars: activeCalendars,
-            Addresses: activeAddresses,
+            Addresses: addresses,
             Members,
             Member,
             Address,
@@ -472,6 +484,7 @@ const InteractiveCalendarView = ({
             tzid,
             emailNotificationsEnabled,
         });
+
         const originalOrOccurrenceEvent = eventRecurrence
             ? withOccurrenceEvent(veventComponent, eventRecurrence)
             : veventComponent;
@@ -538,7 +551,7 @@ const InteractiveCalendarView = ({
                 }
 
                 if (!newTemporaryModel) {
-                    newTemporaryModel = getUpdateModel(event.data, emailNotificationsEnabled);
+                    newTemporaryModel = getUpdateModel({ viewEventData: event.data, emailNotificationsEnabled });
                     if (!newTemporaryModel) {
                         isAllowedToMoveEvent = false;
                         return;
@@ -898,29 +911,35 @@ const InteractiveCalendarView = ({
         return Promise.resolve();
     };
 
-    const handleEditEvent = (temporaryEvent: CalendarViewEventTemporaryEvent) => {
+    const handleEditEvent = (temporaryEvent: CalendarViewEventTemporaryEvent, isDuplicating = false) => {
         if (isSavingEvent.current) {
             return;
         }
         // Close the popover only
         setInteractiveData({ temporaryEvent });
-        updateModal('createEventModal', { isOpen: true });
+        updateModal('createEventModal', { isOpen: true, props: { isDuplicating } });
     };
 
-    const handleCreateEvent = (attendees: AttendeeModel[]) => {
+    const handleCreateEvent = ({
+        attendees,
+        startModel,
+        isDuplicating,
+    }: {
+        attendees?: AttendeeModel[];
+        startModel?: EventModel;
+        isDuplicating?: boolean;
+    }) => {
         if (!defaultCalendar) {
             return;
         }
-        const startModel = getCreateModel(false, attendees);
-        if (!startModel) {
+
+        const model = startModel || getCreateModel(false, attendees);
+
+        if (!model) {
             throw new Error('Unable to get create model');
         }
-        const newTemporaryEvent = getTemporaryEvent(
-            getCreateTemporaryEvent(defaultCalendar, startModel, tzid),
-            startModel,
-            tzid
-        );
-        handleEditEvent(newTemporaryEvent);
+        const newTemporaryEvent = getTemporaryEvent(getCreateTemporaryEvent(defaultCalendar, model, tzid), model, tzid);
+        handleEditEvent(newTemporaryEvent, isDuplicating);
     };
 
     const handleCreateNotification = (texts?: { success: string }) => {
@@ -1056,7 +1075,11 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions: InviteActions) => {
+    const handleSaveEvent = async (
+        temporaryEvent: CalendarViewEventTemporaryEvent,
+        inviteActions: InviteActions,
+        isDuplicatingEvent = false
+    ) => {
         try {
             isSavingEvent.current = true;
             const {
@@ -1070,6 +1093,7 @@ const InteractiveCalendarView = ({
                 weekStartsOn,
                 addresses,
                 inviteActions,
+                isDuplicatingEvent,
                 api,
                 onSaveConfirmation: handleSaveConfirmation,
                 onDuplicateAttendees: handleDuplicateAttendees,
@@ -1158,7 +1182,7 @@ const InteractiveCalendarView = ({
 
     useImperativeHandle(interactiveRef, () => ({
         createEvent: (attendees) => {
-            handleCreateEvent(attendees);
+            handleCreateEvent({ attendees });
         },
     }));
 
@@ -1268,6 +1292,31 @@ const InteractiveCalendarView = ({
         setIsDropzoneHovered(false);
         onAddFiles([...event.dataTransfer.files]);
     });
+
+    const getEditedTemporaryEvent = (isDuplication: boolean = false) => {
+        if (!targetEvent) {
+            return null;
+        }
+
+        const viewEventData = { ...targetEvent.data };
+
+        if (isDuplication && getIsCalendarDisabled(viewEventData.calendarData)) {
+            if (!defaultCalendar) {
+                throw new Error('Invalid calendar data');
+            }
+            viewEventData.calendarData = defaultCalendar;
+        }
+        const newTemporaryModel = getUpdateModel({
+            viewEventData,
+            emailNotificationsEnabled,
+        });
+
+        if (!newTemporaryModel) {
+            return null;
+        }
+
+        return getTemporaryEvent(getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid), newTemporaryModel, tzid);
+    };
 
     const {
         importModal,
@@ -1501,29 +1550,62 @@ const InteractiveCalendarView = ({
                                 );
                             }}
                             onEdit={() => {
-                                if (!targetEvent) {
+                                const newTemporaryEvent = getEditedTemporaryEvent();
+
+                                if (!newTemporaryEvent) {
                                     return;
                                 }
-                                const newTemporaryModel = getUpdateModel(targetEvent.data, emailNotificationsEnabled);
-                                if (!newTemporaryModel) {
-                                    return;
-                                }
-                                const newTemporaryEvent = getTemporaryEvent(
-                                    getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid),
-                                    newTemporaryModel,
-                                    tzid
-                                );
+
                                 return handleEditEvent(newTemporaryEvent);
                             }}
+                            onDuplicate={
+                                isEventCreationDisabled
+                                    ? undefined
+                                    : () => {
+                                          const newTemporaryEvent = getEditedTemporaryEvent(true);
+
+                                          if (!newTemporaryEvent) {
+                                              return;
+                                          }
+
+                                          const { tmpData } = newTemporaryEvent;
+
+                                          if (tmpData.rest['recurrence-id']) {
+                                              // when duplicating a single edit, we want to forget the previous recurrence
+                                              tmpData.frequencyModel = getInitialFrequencyModel(tmpData.start.date);
+                                              delete tmpData.rest['recurrence-id'];
+                                          }
+
+                                          tmpData.attendees.forEach((attendee) => {
+                                              attendee.partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+                                          });
+
+                                          delete tmpData.uid;
+
+                                          handleCreateEvent({
+                                              attendees: undefined,
+                                              startModel: {
+                                                  ...tmpData,
+                                                  organizer: undefined,
+                                                  isOrganizer: true,
+                                                  hasTouchedNotifications: {
+                                                      partDay: !tmpData.isAllDay,
+                                                      fullDay: tmpData.isAllDay,
+                                                  },
+                                              },
+                                              isDuplicating: true,
+                                          });
+                                      }
+                            }
                             onChangePartstat={async (partstat: ICAL_ATTENDEE_STATUS) => {
                                 if (!targetEvent) {
                                     return;
                                 }
-                                const newTemporaryModel = getUpdateModel(
-                                    targetEvent.data,
+                                const newTemporaryModel = getUpdateModel({
+                                    viewEventData: targetEvent.data,
                                     emailNotificationsEnabled,
-                                    partstat
-                                );
+                                    partstat,
+                                });
                                 if (!newTemporaryModel) {
                                     return;
                                 }
@@ -1588,6 +1670,7 @@ const InteractiveCalendarView = ({
                     tzid={tzid}
                     model={tmpData}
                     setModel={handleSetTemporaryEventModel}
+                    isDuplicating={isDuplicatingEvent}
                     isOpen={createEventModal.isOpen}
                     onSave={async (inviteActions: InviteActions) => {
                         if (!temporaryEvent) {
@@ -1595,9 +1678,12 @@ const InteractiveCalendarView = ({
                         }
 
                         try {
-                            await handleSaveEvent(temporaryEvent, inviteActions);
+                            await handleSaveEvent(temporaryEvent, inviteActions, isDuplicatingEvent);
 
-                            closeModal('createEventModal');
+                            // close modal clearing props
+                            updateModal('createEventModal', {
+                                isOpen: false,
+                            });
                         } catch (error) {
                             return noop();
                         }

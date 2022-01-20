@@ -5,7 +5,13 @@ import { getTimeInUtc } from './time';
 
 const isZeroHoursMinutes = (date: Date) => date.getHours() === 0 && date.getMinutes() === 0;
 
-export const getAllDayCheck = (oldModel: EventModel, isAllDay: boolean) => {
+export const getAllDayCheck = ({
+    oldModel,
+    isAllDay,
+}: {
+    oldModel: EventModel;
+    isAllDay: boolean;
+}): Partial<EventModel> => {
     if (!isAllDay && oldModel.isAllDay) {
         // If switching to a part day event and there is no time, assume it has never been set.
         if (isZeroHoursMinutes(oldModel.start.time) && isZeroHoursMinutes(oldModel.end.time)) {

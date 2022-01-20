@@ -44,6 +44,7 @@ const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 interface Props {
     formatTime: (date: Date) => string;
     onEdit: (event: CalendarEvent, calendarData: Calendar) => void;
+    onDuplicate?: (event: CalendarEvent, calendarData: Calendar) => void;
     onChangePartstat: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
     onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
@@ -59,6 +60,7 @@ interface Props {
 const EventPopover = ({
     formatTime,
     onEdit,
+    onDuplicate,
     onChangePartstat,
     onDelete,
     onClose,
@@ -117,6 +119,12 @@ const EventPopover = ({
         }
     };
 
+    const handleDuplicate = () => {
+        if (eventData && getIsCalendarEvent(eventData)) {
+            onDuplicate?.(eventData, calendarData);
+        }
+    };
+
     const dateHeader = useMemo(
         () => (
             <CalendarEventDateHeader
@@ -159,6 +167,21 @@ const EventPopover = ({
                 title={c('Action').t`Delete`}
             >
                 <Icon name="trash" />
+            </ButtonLike>
+        </Tooltip>
+    );
+    const duplicateButton = model.isOrganizer && !!onDuplicate && (
+        <Tooltip title={c('Event duplicate button tooltip').t`Duplicate event`}>
+            <ButtonLike
+                data-test-id="event-popover:duplicate"
+                shape="ghost"
+                onClick={handleDuplicate}
+                disabled={loadingAction}
+                icon
+                size="small"
+                title={c('Action').t`Duplicate`}
+            >
+                <Icon name="copy" />
             </ButtonLike>
         </Tooltip>
     );
@@ -232,6 +255,7 @@ const EventPopover = ({
                     !isSubscribedCalendar && (
                         <>
                             {editButton}
+                            {duplicateButton}
                             {deleteButton}
                         </>
                     )
