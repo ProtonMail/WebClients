@@ -2,8 +2,9 @@ import { ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
@@ -14,7 +15,6 @@ import {
     useTheme,
     useApi,
     useNotifications,
-    useLoading,
     StandardLoadErrorPage,
 } from '@proton/components';
 
@@ -30,7 +30,7 @@ const parseSearch = (search: string) => Object.fromEntries(new URLSearchParams(s
 
 const Verify = () => {
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
-    const [loading, withLoading] = useLoading(true);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [, setTheme] = useTheme();
     const api = useApi();
@@ -51,6 +51,11 @@ const Verify = () => {
         broadcast({ type: MessageType.LOADED });
     };
 
+    const handleError = (error: unknown) => {
+        const payload = getApiError(error);
+        broadcast({ type: MessageType.ERROR, payload });
+    };
+
     useEffect(() => {
         if (theme) {
             setTheme(Number(theme));
@@ -60,12 +65,17 @@ const Verify = () => {
 
         const localeCode = getClosestLocaleMatch(locale || '', locales) || getClosestLocaleCode(browserLocale, locales);
 
-        withLoading(Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])).catch(
-            () => {
+        Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])
+            .then(() => {
+                setLoading(false);
+            })
+            .catch(() => {
                 setError(true);
-                setTimeout(() => handleLoaded(), 50);
-            }
-        );
+                setLoading(false);
+                handleError(createOfflineError({}));
+                // Also sends out a loaded message for clients that don't handle the error message to display the error screen.
+                handleLoaded();
+            });
 
         if (!isEmbedded) {
             document.body.classList.remove('embedded');
@@ -164,6 +174,12 @@ const Verify = () => {
             onSubmit={handleSubmit}
             onLoaded={handleLoaded}
             onClose={handleClose}
+            onError={(e) => {
+                setError(true);
+                handleError(e);
+                // Also sends out a loaded message for clients that don't handle the error message to display the error screen.
+                handleLoaded();
+            }}
             methods={methods}
             token={token}
             defaultCountry={defaultCountry}

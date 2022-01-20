@@ -1,4 +1,4 @@
-import genericBroadcast from '@proton/shared/lib/broadcast';
+import genericBroadcast, { GenericErrorPayload } from '@proton/shared/lib/broadcast';
 
 export enum MessageType {
     SUCCESS = 'SUCCESS',
@@ -12,7 +12,7 @@ type Message =
       }
     | {
           type: MessageType.ERROR;
-          payload: { status?: number; code?: number; message?: string; details?: any };
+          payload: GenericErrorPayload;
       }
     | {
           type: MessageType.CLOSE;
