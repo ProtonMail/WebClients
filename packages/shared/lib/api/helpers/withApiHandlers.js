@@ -233,7 +233,11 @@ export default ({ call, UID, onUnlock, onVerification }) => {
                     ignoreHandler.includes(API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED);
                 if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED && !ignoreHumanVerification) {
                     const {
-                        Details: { HumanVerificationToken: captchaToken, HumanVerificationMethods: methods = [] } = {},
+                        Details: {
+                            HumanVerificationToken: captchaToken,
+                            HumanVerificationMethods: methods = [],
+                            Title: title,
+                        } = {},
                     } = e.data || {};
 
                     const onVerify = (token, tokenType) => {
@@ -254,7 +258,7 @@ export default ({ call, UID, onUnlock, onVerification }) => {
                         });
                     };
 
-                    return onVerification({ token: captchaToken, methods, onVerify }, e);
+                    return onVerification({ token: captchaToken, methods, onVerify, title }, e);
                 }
 
                 throw e;

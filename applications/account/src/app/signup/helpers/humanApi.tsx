@@ -59,10 +59,11 @@ const humanApiHelper = <T,>(
                 });
         };
 
-        const handleVerification = ({ token, methods, onVerify }: any): Promise<T> => {
+        const handleVerification = ({ token, methods, onVerify, title }: any): Promise<T> => {
             return new Promise((resolve, reject) => {
                 createModal(
                     <HumanVerificationModal<T>
+                        title={title}
                         token={token}
                         methods={methods}
                         onVerify={onVerify}
@@ -74,10 +75,11 @@ const humanApiHelper = <T,>(
             });
         };
 
-        const { Details: { HumanVerificationToken = '', HumanVerificationMethods: methods = [] } = {} } =
-            error.data || {};
+        const {
+            Details: { HumanVerificationToken = '', HumanVerificationMethods: methods = [], Title: title = '' } = {},
+        } = error.data || {};
 
-        return handleVerification({ token: HumanVerificationToken, methods, onVerify });
+        return handleVerification({ token: HumanVerificationToken, methods, title, onVerify });
     });
 };
 
