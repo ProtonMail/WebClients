@@ -200,7 +200,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                                     onClick={() => handleClickSession(LocalID)}
                                 >
                                     <strong className="block text-break">{nameToDisplay}</strong>
-                                    <div className="text-break color-weak">{PrimaryEmail}</div>
+                                    {PrimaryEmail && <div className="text-break color-weak">{PrimaryEmail}</div>}
                                 </button>
                                 <div>
                                     <InlineLinkButton
