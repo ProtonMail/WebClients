@@ -1,8 +1,10 @@
+import { c } from 'ttag';
+
 import { MAXIMUM_DATE, MINIMUM_DATE, DATE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { DateInput, TimeInput, MemoizedIconRow as IconRow } from '@proton/components';
-import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+
 import { getAllDayCheck } from '../eventForm/stateActions';
 import useDateTimeFormHandlers from '../hooks/useDateTimeFormHandlers';
 import AllDayCheckbox from '../inputs/AllDayCheckbox';
@@ -93,7 +95,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                             : c('Title').t`Event is happening all day`
                     }
                     checked={model.isAllDay}
-                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
+                    onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck({ oldModel: model, isAllDay }) })}
                 />
             </div>
         </IconRow>

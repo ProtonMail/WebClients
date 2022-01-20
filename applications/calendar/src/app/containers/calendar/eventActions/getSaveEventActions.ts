@@ -1,22 +1,23 @@
+import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
-import { getSharedEventIDAndSessionKey } from '@proton/shared/lib/calendar/veventHelper';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
 import withVeventRruleWkst from '@proton/shared/lib/calendar/rruleWkst';
 import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
+import { getSharedEventIDAndSessionKey } from '@proton/shared/lib/calendar/veventHelper';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { noop } from '@proton/shared/lib/helpers/function';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';
-import { CalendarBootstrap, SyncMultipleApiResponse, VcalDays } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
@@ -39,7 +40,6 @@ import getSaveSingleEventActions from './getSaveSingleEventActions';
 import { getDuplicateAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
 import { getOriginalEvent } from './recurringHelper';
 import { withVeventSequence } from './sequence';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 
 const getSaveSingleEventActionsHelper = async ({
     newEditEventData,
@@ -113,6 +113,7 @@ interface Arguments {
     weekStartsOn: WeekStartsOn;
     addresses: Address[];
     inviteActions: InviteActions;
+    isDuplicatingEvent: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
     onDuplicateAttendees: (attendees: string[][]) => Promise<void>;
     api: Api;
@@ -132,6 +133,7 @@ const getSaveEventActions = async ({
     weekStartsOn,
     addresses,
     inviteActions,
+    isDuplicatingEvent,
     onSaveConfirmation,
     onDuplicateAttendees,
     api,
@@ -155,6 +157,7 @@ const getSaveEventActions = async ({
         tmpData: {
             calendar: { id: newCalendarID },
             member: { memberID: newMemberID, addressID: newAddressID },
+            frequencyModel,
         },
     } = temporaryEvent;
     const { isOrganizer } = tmpData;
@@ -198,8 +201,9 @@ const getSaveEventActions = async ({
     // Creation
     if (!oldEventData) {
         // add sequence and WKST (if needed)
+        const wkst = isDuplicatingEvent ? dayToNumericDay(frequencyModel.vcalRruleValue?.wkst || 'MO') : weekStartsOn;
         const newVeventWithSequence = {
-            ...withVeventRruleWkst(omit(newVeventComponent, ['exdate']), weekStartsOn),
+            ...withVeventRruleWkst(omit(newVeventComponent, ['exdate']), wkst),
             sequence: { value: 0 },
         };
         const updatedInviteActions = getUpdatedSaveInviteActions({
@@ -258,8 +262,7 @@ const getSaveEventActions = async ({
     }
 
     // WKST should be preserved unless the user edited the RRULE explicitly. Otherwise, add it here (if needed)
-    const oldWkstDay = dayToNumericDay(oldEditEventData.veventComponent?.rrule?.value.wkst || 'MO');
-    const oldWkst = oldWkstDay === undefined ? VcalDays.MO : oldWkstDay;
+    const oldWkst = dayToNumericDay(oldEditEventData.veventComponent?.rrule?.value.wkst || 'MO');
     const newWkst = getIsRruleEqual(oldEditEventData.veventComponent?.rrule, newVeventComponent.rrule, true)
         ? oldWkst
         : weekStartsOn;

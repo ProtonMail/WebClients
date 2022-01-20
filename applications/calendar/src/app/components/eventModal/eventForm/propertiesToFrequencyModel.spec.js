@@ -5,7 +5,10 @@ import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 const startModel = {
     date: new Date(2020, 0, 20),
 };
-const dummyFrequencyModel = getInitialFrequencyModel(startModel.date);
+const dummyFrequencyModel = (rrule) => ({
+    ...getInitialFrequencyModel(startModel.date),
+    vcalRruleValue: rrule.value,
+});
 
 describe('frequency properties to model, daily recurring rule', () => {
     test('non-custom: single day, recurring never ends', () => {
@@ -15,7 +18,7 @@ describe('frequency properties to model, daily recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.DAILY,
             frequency: FREQUENCY.DAILY,
         });
@@ -29,7 +32,7 @@ describe('frequency properties to model, daily recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.DAILY,
             interval: 3,
@@ -45,7 +48,7 @@ describe('frequency properties to model, daily recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.DAILY,
             interval: 2,
@@ -71,7 +74,7 @@ describe('frequency properties to model, daily recurring rule', () => {
             tzid: 'Europe/Athens',
         };
         expect(propertiesToFrequencyModel(rrule, startAthens)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.DAILY,
             ends: {
@@ -94,7 +97,7 @@ describe('frequency properties to model, daily recurring rule', () => {
         };
 
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.DAILY,
             interval: 2,
@@ -115,7 +118,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.WEEKLY,
         });
     });
@@ -129,7 +132,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             interval: 3,
@@ -145,7 +148,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             interval: 3,
@@ -165,7 +168,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             weekly: {
@@ -195,7 +198,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
             tzid: 'Europe/Athens',
         };
         expect(propertiesToFrequencyModel(rrule, startAthens)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             weekly: {
@@ -223,7 +226,7 @@ describe('frequency properties to model, weekly recurring rule', () => {
         };
 
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.WEEKLY,
             weekly: {
@@ -247,7 +250,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.MONTHLY,
             frequency: FREQUENCY.MONTHLY,
         });
@@ -261,7 +264,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.MONTHLY,
             interval: 3,
@@ -291,6 +294,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
                 type: END_TYPE.AFTER_N_TIMES,
                 count: 5,
             },
+            vcalRruleValue: rrule.value,
         });
     });
 
@@ -315,6 +319,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
                 type: END_TYPE.AFTER_N_TIMES,
                 count: 2,
             },
+            vcalRruleValue: rrule.value,
         });
     });
 
@@ -347,6 +352,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
                 count: 2,
                 until: date,
             },
+            vcalRruleValue: rrule.value,
         });
     });
     test('one all-day event every 12th of every 6 months, recursion ends on 30th January', () => {
@@ -375,6 +381,7 @@ describe('frequency properties to model, monthly recurring rule', () => {
                 count: 2,
                 until: date,
             },
+            vcalRruleValue: rrule.value,
         });
     });
 });
@@ -387,7 +394,7 @@ describe('frequency properties to model, yearly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.YEARLY,
             frequency: FREQUENCY.YEARLY,
         });
@@ -403,7 +410,7 @@ describe('frequency properties to model, yearly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.YEARLY,
             interval: 2,
@@ -421,7 +428,7 @@ describe('frequency properties to model, yearly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.YEARLY,
             interval: 2,
@@ -449,7 +456,7 @@ describe('frequency properties to model, yearly recurring rule', () => {
             tzid: 'Europe/Athens',
         };
         expect(propertiesToFrequencyModel(rrule, start)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.YEARLY,
             ends: {
@@ -472,7 +479,7 @@ describe('frequency properties to model, yearly recurring rule', () => {
             },
         };
         expect(propertiesToFrequencyModel(rrule, startModel)).toEqual({
-            ...dummyFrequencyModel,
+            ...dummyFrequencyModel(rrule),
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.YEARLY,
             interval: 2,

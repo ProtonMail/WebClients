@@ -7,13 +7,13 @@ import { VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalMo
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay, isOrganizer }: EventModel) => {
-    const { type, frequency, interval, weekly, monthly, ends, rruleValue } = frequencyModel;
+    const { type, frequency, interval, weekly, monthly, ends, vcalRruleValue } = frequencyModel;
     const { date: startDate, tzid } = start;
 
-    if ((!isOrganizer || type === FREQUENCY.OTHER) && rruleValue) {
+    if ((!isOrganizer || type === FREQUENCY.OTHER) && vcalRruleValue) {
         return {
             rrule: {
-                value: rruleValue,
+                value: vcalRruleValue,
             },
         };
     }
