@@ -15,8 +15,14 @@ import {
     useModals,
     ConfirmModal,
     DropdownMenuButton,
+    useUserSettings,
+    useMailSettings,
+    MailShortcutsModal,
+    MailDensityModal,
+    MailViewLayoutModal,
+    MailComposerModeModal,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import AdvancedSearchDropdown from './AdvancedSearchDropdown';
@@ -38,6 +44,9 @@ interface Props {
 }
 
 const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand, onSearch }: Props) => {
+    const [{ Density }] = useUserSettings();
+    const [{ Shortcuts, ComposerMode, ViewLayout } = { Shortcuts: 0, ComposerMode: 0, ViewLayout: 0 }] =
+        useMailSettings();
     const location = useLocation();
     const { keyword = '' } = extractSearchParameters(location);
     const [value, updateValue] = useState(keyword);
@@ -117,6 +126,22 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
         createModal(<MailDefaultHandlerModal />);
     };
 
+    const handleKeyboardShortcutsClick = () => {
+        createModal(<MailShortcutsModal />, 'shortcuts-modal');
+    };
+
+    const handleDensityClick = () => {
+        createModal(<MailDensityModal />);
+    };
+
+    const handleViewLayoutClick = () => {
+        createModal(<MailViewLayoutModal />);
+    };
+
+    const handleComposerModeClick = () => {
+        createModal(<MailComposerModeModal />);
+    };
+
     return (
         <PrivateHeader
             logo={logo}
@@ -124,6 +149,49 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
             title={labelName}
             settingsButton={
                 <TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT}>
+                    <hr className="mt0-5 mb0-5" />
+                    <DropdownMenuButton
+                        onClick={handleKeyboardShortcutsClick}
+                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                    >
+                        <span className="flex-item-fluid text-left">{c('Action').t`Keyboard shortcuts`}</span>
+                        <span className="color-primary ml0-5">
+                            {Shortcuts
+                                ? c('Keyboard Shortcuts Enabled').t`On`
+                                : c('Keyboard Shortcuts Disabled').t`Off`}
+                        </span>
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                        onClick={handleViewLayoutClick}
+                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
+                    >
+                        <span className="flex-item-fluid text-left">{c('Action').t`Mailbox layout`}</span>
+                        <span className="color-primary ml0-5">
+                            {ViewLayout === VIEW_LAYOUT.COLUMN ? c('Layout mode').t`Column` : c('Layout mode').t`Row`}
+                        </span>
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                        onClick={handleDensityClick}
+                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                    >
+                        <span className="flex-item-fluid text-left">{c('Action').t`Mailbox density`}</span>
+                        <span className="color-primary flex-item-noshrink ml0-5">
+                            {Density === DENSITY.COMFORTABLE
+                                ? c('Density mode').t`Comfortable`
+                                : c('Density mode').t`Compact`}
+                        </span>
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                        onClick={handleComposerModeClick}
+                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
+                    >
+                        <span className="flex-item-fluid text-left">{c('Action').t`Composer size`}</span>
+                        <span className="color-primary ml0-5">
+                            {ComposerMode === COMPOSER_MODE.MAXIMIZED
+                                ? c('Composer size').t`Maximized`
+                                : c('Composer size').t`Normal`}
+                        </span>
+                    </DropdownMenuButton>
                     {isFirefox() && (
                         <DropdownMenuButton
                             onClick={handleDefaultMailHandlerClick}
