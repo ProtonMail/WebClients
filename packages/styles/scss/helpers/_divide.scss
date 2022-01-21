@@ -1,0 +1,11 @@
+.divide-x > * ~ * {
+	border-inline-start: 1px solid var(--border-norm);
+}
+
+.divide-y > * ~ * {
+	border-block-start: 1px solid var(--border-norm);
+}
+
+.divide-weak > * ~ * {
+	border-color: var(--border-weak);
+}

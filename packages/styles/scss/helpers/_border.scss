@@ -33,18 +33,14 @@
 	border-style: dashed;
 }
 
+.border-dotted {
+	border-style: dotted;
+}
+
 .border-collapse {
 	border-collapse: collapse;
 }
 
 .border-none {
 	border: none;
-}
-
-.divide-x > * ~ * {
-	border-inline-start: 1px solid var(--border-norm);
-}
-
-.divide-y > * ~ * {
-	border-block-start: 1px solid var(--border-norm);
 }
