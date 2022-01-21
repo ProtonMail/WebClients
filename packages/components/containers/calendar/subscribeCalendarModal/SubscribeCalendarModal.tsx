@@ -116,7 +116,7 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
     })();
 
     const kbLink = (
-        <Href href="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c(
+        <Href key="kbLink" href="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c(
             'Subscribe to calendar modal description'
         ).t`Learn how to get a private calendar link.`}</Href>
     );
