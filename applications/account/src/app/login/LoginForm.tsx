@@ -36,7 +36,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
-    const [persistent, setPersistent] = useState(false);
+    const [persistent, setPersistent] = useState(true);
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
