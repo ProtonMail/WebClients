@@ -114,14 +114,22 @@ export const canSupportDarkStyle = (message: MessageState) => {
     const colorSchemeMetaTag = container.querySelector('meta[name="color-scheme"]');
 
     // If the meta tag color-scheme is present, we assume that the email supports dark mode
-    if (colorSchemeMetaTag && colorSchemeMetaTag.getAttribute('content')?.includes('dark')) {
+    if (colorSchemeMetaTag?.getAttribute('content')?.includes('dark')) {
+        return true;
+    }
+
+    const supportedColorSchemesMetaTag = container.querySelector('meta[name="supported-color-schemes"]');
+
+    // If the meta tag supported-color-schemes is present, we assume that the email supports dark mode
+    if (supportedColorSchemesMetaTag?.getAttribute('content')?.includes('dark')) {
         return true;
     }
 
     const styleTag = container.querySelector('style');
+    const styleTextContent = styleTag?.textContent;
 
     // If the media query prefers-color-scheme is present, we assume that the email supports dark mode
-    if (styleTag && styleTag.textContent?.includes('prefers-color-scheme:')) {
+    if (styleTextContent?.includes('color-scheme') || styleTextContent?.includes('prefers-color-scheme')) {
         return true;
     }
 
