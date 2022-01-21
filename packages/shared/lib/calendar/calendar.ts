@@ -1,5 +1,5 @@
 import { hasBit, toggleBit } from '../helpers/bitset';
-import { noop, unary } from '../helpers/function';
+import { unary } from '../helpers/function';
 import { CALENDAR_FLAGS, MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, SETTINGS_VIEW } from './constants';
 import { Calendar, CalendarUserSettings } from '../interfaces/calendar';
 import { getIsPersonalCalendar } from './subscribe/helpers';
@@ -78,7 +78,7 @@ export const getCalendarWithReactivatedKeys = async ({
     addresses,
     getAddressKeys,
     successCallback,
-    handleError = noop,
+    handleError,
 }: {
     calendar: Calendar;
     api: Api;
@@ -106,7 +106,7 @@ export const getCalendarWithReactivatedKeys = async ({
                 Flags: toggleBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
             };
         } catch (e) {
-            handleError(e);
+            handleError?.(e);
 
             return calendar;
         }

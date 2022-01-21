@@ -22,11 +22,11 @@ export const useGetCalendarBootstrap = () => {
     );
 
     return useCallback(
-        (calendarID: string, noCache?: boolean) => {
+        (calendarID: string) => {
             if (!cache.has(KEY)) {
                 cache.set(KEY, createCache());
             }
-            return getPromiseValue(cache.get(KEY), calendarID, miss, noCache ? 0 : undefined);
+            return getPromiseValue(cache.get(KEY), calendarID, miss);
         },
         [cache, miss]
     );
