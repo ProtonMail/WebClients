@@ -5,7 +5,7 @@ import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import useTooltipHandlers from './useTooltipHandlers';
 import { useCombinedRefs } from '../../hooks';
 
-type TooltipType = 'info' | 'error' | 'warning';
+export type TooltipType = 'info' | 'error' | 'warning';
 
 interface Props {
     children: ReactElement;
@@ -13,6 +13,7 @@ interface Props {
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
     type?: TooltipType;
     anchorOffset?: { x: number; y: number };
+    isOpen?: boolean;
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
@@ -89,7 +90,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', an
             <Popper
                 divRef={setPopperEl}
                 id={uid}
-                isOpen={!!title && isOpen}
+                isOpen={!!title && (rest.isOpen || isOpen)}
                 style={position}
                 className={classnames(['tooltip', `tooltip--${placement}`, getTooltipTypeClass(type)])}
             >
