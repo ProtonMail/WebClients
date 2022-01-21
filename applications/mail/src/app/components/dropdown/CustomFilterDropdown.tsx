@@ -69,7 +69,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
         },
         {
             value: ConditionType.ATTACHMENTS,
-            label: c('CustomFilter').t`Attachments`,
+            label: c('CustomFilter').t`Attachment`,
             conditionLabel: c('Filter modal type').t`If the attachments`,
         },
     ];
