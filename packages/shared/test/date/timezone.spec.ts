@@ -66,16 +66,29 @@ describe('convert utc', () => {
 describe('getSupportedTimezone', () => {
     it('should remove extra slashes', () => {
         expect(getSupportedTimezone('/Europe/London/')).toEqual('Europe/London');
+        expect(getSupportedTimezone('/Africa/Freetown/')).toEqual('Africa/Abidjan');
     });
 
     it('should support the bluejeans format', () => {
         expect(getSupportedTimezone('/tzurl.org/2020b/America/Chicago')).toEqual('America/Chicago');
+        expect(getSupportedTimezone('/tzurl.org/2020b/Asia/Istanbul')).toEqual('Europe/Istanbul');
     });
 
     it('should support the mozilla format', () => {
         expect(getSupportedTimezone('/mozilla.org/20050126_1/America/Argentina/Ushuaia')).toEqual(
             'America/Argentina/Ushuaia'
         );
+        expect(getSupportedTimezone('/mozilla.org/20050126_1/America/Argentina/ComodRivadavia')).toEqual(
+            'America/Argentina/Catamarca'
+        );
+    });
+
+    it('should transform globally defined alias timezones according to the longest match', () => {
+        // GB (Europe/London), Eire (Europe/Dublin) and GB-Eire (Europe/London) are all alias timezones.
+        // getSupportedTimezone should transform according to the longest match, GB-Eire -> Europe/London
+        expect(getSupportedTimezone('/mozilla.org/20050126_1/GB-Eire')).toEqual('Europe/London');
+        expect(getSupportedTimezone('/tzurl.org/2021a/Eire')).toEqual('Europe/Dublin');
+        expect(getSupportedTimezone('/GB/')).toEqual('Europe/London');
     });
 
     it('should be robust for capturing globally defined timezones (for which no specification exists)', () => {
