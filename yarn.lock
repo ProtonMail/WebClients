@@ -27742,10 +27742,10 @@ fsevents@^1.2.7:
 
 "timezone-support@github:ProtonMail/timezone-support#bundle":
   version: 0.0.0-development
-  resolution: "timezone-support@https://github.com/ProtonMail/timezone-support.git#commit=c164e6c51021f3fa061034a1a7dc4571a2fadf94"
+  resolution: "timezone-support@https://github.com/ProtonMail/timezone-support.git#commit=42a03e3218dad70a1e60e64246c014bbc8e9b562"
   dependencies:
     commander: 2.20.0
-  checksum: 9d55395bf4cdea4e3c955b7007109f14f779a53a5b1383e7f0422bcb42c9e0668efd0ad9887abb2a0af1e63e7c4ad3bebe134899ace61d3af09ec48f154d6a64
+  checksum: 70fa295106d8efe1f90907199d0d52aa6e6e92687db4ecc2f5839673c201508448971fbeaab377fe25384be4b1b51dd525ffc744bee6e88f5dad29e26633459c
   languageName: node
   linkType: hard
 
