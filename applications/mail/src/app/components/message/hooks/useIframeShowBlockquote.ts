@@ -20,7 +20,7 @@ const useIframeShowBlockquote = ({
     const [showBlockquote, setShowBlockquote] = useState(showBlockquoteProp);
 
     const iframeToggleDiv = iframeRef.current?.contentWindow?.document.getElementById(MESSAGE_IFRAME_TOGGLE_ID);
-    const showToggle = initStatus !== 'start' && !!iframeToggleDiv && showBlockquoteToggle === true;
+    const showToggle = initStatus !== 'start' && !!iframeToggleDiv && showBlockquoteToggle;
 
     useEffect(() => {
         const iframeBlockquoteDiv =
@@ -29,14 +29,25 @@ const useIframeShowBlockquote = ({
             return;
         }
 
-        if (showBlockquote === true) {
+        if (showBlockquote) {
             iframeBlockquoteDiv.innerHTML = blockquoteContent;
         } else {
             iframeBlockquoteDiv.innerHTML = '';
         }
 
-        onBlockquoteToggle?.();
+        // If the user clicks the show blockquote button, we want to set the showBlockquotesProp state
+        // But this useEffect can be triggered by the shortcut, where we don't want to trigger the OnBlockquoteToggle
+        if (showBlockquote !== showBlockquoteProp) {
+            onBlockquoteToggle?.();
+        }
     }, [showBlockquote]);
+
+    useEffect(() => {
+        // If the user triggers the showBlockquoteProp with a shortcut, we want to update showBlockquote
+        if (showBlockquote !== showBlockquoteProp) {
+            setShowBlockquote(showBlockquoteProp);
+        }
+    }, [showBlockquoteProp]);
 
     return {
         iframeToggleDiv,
