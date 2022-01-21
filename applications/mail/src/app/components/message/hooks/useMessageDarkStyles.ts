@@ -2,24 +2,26 @@ import { useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { FeatureCode, useFeature, useTheme } from '@proton/components';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
-import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { applyDarkStyle } from '../../../logic/messages/read/messagesReadActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { canSupportDarkStyle } from '../../../helpers/message/messageContent';
 
 const useMessageDarkStyles = (message: MessageState) => {
     const darkStylesFeature = useFeature(FeatureCode.DarkStylesInBody);
     const [theme] = useTheme();
     const dispatch = useDispatch();
     const isDarkTheme = DARK_THEMES.includes(theme);
+    const DEBUG = true;
 
     // canSupportDarkStyle is costly, so we only call it when needed
     const injectDarkStyle = useMemo(() => {
         return (
-            darkStylesFeature.feature?.Value &&
+            (darkStylesFeature.feature?.Value || DEBUG) &&
             !message.messageDocument?.noDarkStyle &&
             isDarkTheme &&
-            !isNewsLetter(message.data) &&
-            !isPlainText(message.data)
+            !isPlainText(message.data) &&
+            canSupportDarkStyle(message)
         );
     }, [
         darkStylesFeature.feature?.Value,
