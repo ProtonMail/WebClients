@@ -264,20 +264,17 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     if (!calendarWithPossiblyNotReactivatedKeys) {
         return {};
     }
-    let hasReactivatedCalendar = false;
     const calendar = await getCalendarWithReactivatedKeys({
         calendar: calendarWithPossiblyNotReactivatedKeys,
         api,
         addresses: ownAddresses,
         getAddressKeys,
-        successCallback: () => {
-            hasReactivatedCalendar = true;
-        },
+        // if we fail to reactivate keys, fail silently and proceed with the calendar in a passphrase-needs-update state
+        handleError: noop,
     });
 
     const { memberID, addressID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(
-        calendar.ID,
-        hasReactivatedCalendar
+        calendar.ID
     );
     const calendarData = {
         calendar,
