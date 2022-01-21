@@ -23,7 +23,10 @@ const EmptyFolders = ({ onFocus }: Props) => {
     return (
         <SidebarListItem>
             <SidebarListItemButton onFocus={onFocus} data-shortcut-target="add-folder" onClick={handleClick}>
-                <SidebarListItemContent right={<SidebarListItemContentIcon name="plus" color="white" />}>
+                <SidebarListItemContent
+                    right={<SidebarListItemContentIcon name="plus" color="white" />}
+                    title={c('Title').t`Create a new folder`}
+                >
                     {c('Link').t`Add folder`}
                 </SidebarListItemContent>
             </SidebarListItemButton>
