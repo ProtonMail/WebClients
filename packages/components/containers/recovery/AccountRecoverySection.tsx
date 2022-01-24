@@ -95,7 +95,7 @@ const AccountRecoverySection = () => {
                 <SettingsLayoutRight className="flex-item-fluid">
                     <RecoveryEmail
                         className="mb0 on-mobile-mb1"
-                        email={userSettings.Email.Value}
+                        email={userSettings.Email}
                         hasReset={!!userSettings.Email.Reset}
                         hasNotify={!!userSettings.Email.Notify}
                     />

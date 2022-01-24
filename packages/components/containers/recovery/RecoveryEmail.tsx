@@ -1,29 +1,48 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { updateEmail } from '@proton/shared/lib/api/settings';
+import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
 
-import { Alert, Button, ConfirmModal, InputFieldTwo, useFormErrors } from '../../components';
-import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
+import { Alert, AlertModal, Button, ConfirmModal, Icon, InputFieldTwo, useFormErrors } from '../../components';
+import { useApi, useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
+import { classnames } from '../../helpers';
 import AuthModal from '../password/AuthModal';
 
-import { classnames } from '../../helpers';
-
 interface Props {
-    email: string | null;
+    email: UserSettings['Email'];
     hasReset: boolean;
     hasNotify: boolean;
     className?: string;
 }
 
 const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
-    const [input, setInput] = useState(email || '');
-    const [loading, withLoading] = useLoading();
+    const [input, setInput] = useState(email.Value || '');
+    const [verifyModalOpen, setVerifyModalOpen] = useState(false);
+    const [loadingSubmit, withLoadingSubmit] = useLoading();
+    const [loadingVerifySend, withLoadingVerifySend] = useLoading();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
+    const api = useApi();
+
+    const handleSendVerificationEmailClick = () => {
+        withLoadingVerifySend(
+            api(postVerifySend({ Type: 'recovery_email' }))
+                .then(() => {
+                    createNotification({
+                        type: 'success',
+                        text: c('Recovery Email').t`Verification email sent to ${email.Value}`,
+                    });
+                })
+                .finally(() => {
+                    setVerifyModalOpen(false);
+                })
+        );
+    };
 
     const submit = async () => {
         if (!input && (hasReset || hasNotify)) {
@@ -67,28 +86,62 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
             onSubmit={(e) => {
                 e.preventDefault();
                 if (onFormSubmit()) {
-                    void withLoading(submit());
+                    void withLoadingSubmit(submit());
                 }
             }}
         >
-            <div className="mr1 on-mobile-mr0 flex-item-fluid min-w14e" title={email || ''}>
+            <AlertModal
+                open={verifyModalOpen}
+                title={c('Recovery Email').t`Verify recovery email?`}
+                buttons={[
+                    <Button
+                        loading={loadingVerifySend}
+                        shape="solid"
+                        color="norm"
+                        onClick={handleSendVerificationEmailClick}
+                    >{c('Recovery Email').t`Send verification email`}</Button>,
+                    <Button onClick={() => setVerifyModalOpen(false)} disabled={loadingVerifySend}>{c('Recovery Email')
+                        .t`Cancel`}</Button>,
+                ]}
+            >
+                {c('Recovery Email')
+                    .t`Verifying your email address increases your account security and allows additional options for recovery.`}
+            </AlertModal>
+            <div className="mr1 mb1 on-mobile-mr0 flex-item-fluid min-w14e" title={email.Value || ''}>
                 <InputFieldTwo
                     type="email"
                     autoComplete="email"
                     id="recovery-email-input"
-                    disableChange={loading}
+                    disableChange={loadingSubmit}
                     value={input || ''}
                     placeholder={c('Info').t`Not set`}
                     error={validator([input && emailValidator(input)].filter(isTruthy))}
                     onValue={setInput}
+                    assistiveText={
+                        email.Status === SETTINGS_STATUS.UNVERIFIED ? (
+                            <span className="flex flex-align-items-center">
+                                <Icon className="color-danger aligntop mr0-25" name="circle-exclamation-filled" />
+                                <span className="color-norm mr0-5">{c('Recovery Email')
+                                    .t`Email address not yet verified.`}</span>
+                                <Button shape="link" color="norm" onClick={() => setVerifyModalOpen(true)}>{c(
+                                    'Recovery Email'
+                                ).t`Verify now`}</Button>
+                            </span>
+                        ) : (
+                            <span className="flex flex-align-items-center">
+                                <Icon className="color-success aligntop mr0-25" name="circle-check-filled" />
+                                <span className="mr0-5">{c('Recovery Email').t`Email address has been verified.`}</span>
+                            </span>
+                        )
+                    }
                 />
             </div>
             <div className="mb0-5">
                 <Button
                     type="submit"
                     shape="outline"
-                    disabled={(email || '') === input}
-                    loading={loading}
+                    disabled={(email.Value || '') === input}
+                    loading={loadingSubmit}
                     data-testid="account:recovery:emailSubmit"
                 >
                     {c('Action').t`Save`}
