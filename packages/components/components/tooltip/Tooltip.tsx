@@ -14,6 +14,7 @@ interface Props {
     type?: TooltipType;
     anchorOffset?: { x: number; y: number };
     isOpen?: boolean;
+    uid?: string;
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
@@ -42,9 +43,16 @@ const mergeCallbacks = (a: any, b: any) => {
     );
 };
 
-const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', anchorOffset, ...rest }: Props) => {
-    const [uid] = useState(generateUID('tooltip'));
-
+const Tooltip = ({
+    children,
+    title,
+    originalPlacement = 'top',
+    type = 'info',
+    anchorOffset,
+    uid: uidProp,
+    ...rest
+}: Props) => {
+    const [uid] = useState(uidProp || generateUID('tooltip'));
     const [isRTL] = useRightToLeft();
 
     const rtlAdjustedPlacement = originalPlacement.includes('right')
@@ -52,16 +60,16 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', an
         : originalPlacement.replace('left', 'right');
 
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
-    const { anchorRef, open, close, isOpen } = usePopperAnchor<HTMLSpanElement>();
+    const { anchorRef, open, close, isOpen } = usePopperAnchor<HTMLSpanElement>(uid);
     const { position, placement } = usePopper({
         popperEl,
         anchorEl: anchorRef.current,
-        isOpen,
+        isOpen: rest?.isOpen || isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
         anchorOffset,
     });
 
-    const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
+    const tooltipHandlers = useTooltipHandlers(open, close, rest?.isOpen || isOpen);
 
     const child = Children.only(children);
     // Types are wrong? Not sure why ref doesn't exist on a ReactElement

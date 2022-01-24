@@ -7,6 +7,7 @@ import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
 import './Modal.scss';
 import { useModalPosition } from './modalPositions';
+import { Form } from '../..';
 
 export type ModalSize = 'small' | 'medium' | 'large' | 'full';
 
@@ -161,16 +162,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                 >
                     <ModalContext.Provider value={modalContextValue}>
                         {as === 'form' ? (
-                            <form
-                                method="post"
-                                {...dialogContainerProps}
-                                onSubmit={(event) => {
-                                    event.preventDefault();
-                                    dialogContainerProps.onSubmit?.(event);
-                                }}
-                            >
-                                {children}
-                            </form>
+                            <Form {...dialogContainerProps}>{children}</Form>
                         ) : (
                             <div {...dialogContainerProps}>{children}</div>
                         )}

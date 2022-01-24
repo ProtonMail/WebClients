@@ -127,6 +127,8 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
             className="modal--shorter-labels w100"
             onClose={handleClose}
             as="form"
+            // @ts-ignore
+            dense
             onSubmit={() => {
                 if (!submitProps.loading) {
                     onSubmit();
@@ -145,7 +147,6 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
 ${kbLink}
 `}</p>
                             <InputFieldTwo
-                                dense
                                 autoFocus
                                 hint={
                                     <span className={classnames([isURLMaxLength && 'color-warning'])}>

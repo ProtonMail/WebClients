@@ -20,6 +20,7 @@ export * from './emailPrivacy';
 export * from './features';
 export * from './filePreview';
 export * from './filters';
+export * from './form';
 export * from './general';
 export * from './heading';
 export * from './illustration';
