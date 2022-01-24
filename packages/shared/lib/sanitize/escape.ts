@@ -5,7 +5,7 @@
  * - background:url&lpar;
  * - etc.
  */
-const CSS_URL = '((url)(\\(|&(#40|#x00028|lpar);))';
+const CSS_URL = '((url|image-set)(\\(|&(#40|#x00028|lpar);))';
 const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
 const REGEXP_HEIGHT_POURCENTAGE = /height\s*:\s[\d.]+%/gi;
@@ -85,7 +85,7 @@ export const escapeURLinStyle = (style: string) => {
     const unescapedEncoding = unescapeCSSEncoding(style);
     const escapeFlag = unescapedEncoding !== style;
 
-    const escapedStyle = unescapedEncoding.replace(/\\r/g, 'r').replace(REGEXP_URL_ATTR, 'proton-url(');
+    const escapedStyle = unescapedEncoding.replace(/\\r/g, 'r').replace(REGEXP_URL_ATTR, 'proton-$2(');
 
     if (escapedStyle === unescapedEncoding) {
         // nothing escaped: just return input
