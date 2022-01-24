@@ -19,7 +19,7 @@ type ModalContextValue = ModalOwnProps & { id: string; size: ModalSize };
 
 export const ModalContext = createContext({} as ModalContextValue);
 
-interface ModalOwnProps {
+export interface ModalOwnProps {
     /**
      * Whether the modal is open or not.
      */
