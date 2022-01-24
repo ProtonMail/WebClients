@@ -84,7 +84,7 @@
 	--file-preview-text-color: var(--optional-file-preview-text-color, var(--text-norm));
 	--file-preview-background-color: var(--optional-file-preview-background-color, var(--background-norm));
 
-	--border-radius: var(--optional-border-radius, 3);
+	--border-radius: var(--optional-border-radius, 8);
 
 	--font-family: var(--optional-font-family, #{$font-family});
 }
