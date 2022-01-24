@@ -14,6 +14,7 @@ import {
     DropdownMenuLink,
     Tooltip,
     useUser,
+    useModalState,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -47,7 +48,22 @@ const CalendarSidebarListItems = ({
 }: CalendarSidebarListItemsProps) => {
     const [user] = useUser();
     const [importModalCalendar, setImportModalCalendar] = useState<Nullable<Calendar>>(null);
-    const [calendarModalCalendar, setIsCalendarModalCalendar] = useState<Nullable<Calendar>>(null);
+    const [calendarModalCalendar, setCalendarModalCalendar] = useState<Nullable<Calendar>>(null);
+
+    const [
+        {
+            open: isCalendarModalOpen,
+            onClose: onCloseCalendarModal,
+            onExit: onExitCalendarModal,
+            ...calendarModalProps
+        },
+        setIsCalendarModalOpen,
+    ] = useModalState();
+
+    const [
+        { open: isImportModalOpen, onClose: onCloseImportModal, onExit: onExitImportModal, ...importModalProps },
+        setIsImportModalOpen,
+    ] = useModalState();
 
     if (calendars.length === 0) {
         return null;
@@ -119,7 +135,8 @@ const CalendarSidebarListItems = ({
                                         <DropdownMenuButton
                                             className="text-left"
                                             onClick={() => {
-                                                setIsCalendarModalCalendar(calendar);
+                                                setCalendarModalCalendar(calendar);
+                                                setIsCalendarModalOpen(true);
                                             }}
                                         >
                                             {c('Action').t`Edit`}
@@ -138,6 +155,7 @@ const CalendarSidebarListItems = ({
                                                 onClick={() => {
                                                     if (user.hasNonDelinquentScope) {
                                                         setImportModalCalendar(calendar);
+                                                        setIsImportModalOpen(true);
                                                     }
                                                 }}
                                             >
@@ -163,18 +181,28 @@ const CalendarSidebarListItems = ({
 
     return (
         <>
-            {!!calendarModalCalendar && !!calendarModalCalendar && (
+            {!!calendarModalCalendar && (
                 <CalendarModal
-                    isOpen
-                    onClose={() => setIsCalendarModalCalendar(null)}
+                    {...calendarModalProps}
+                    isOpen={isCalendarModalOpen}
+                    onClose={onCloseCalendarModal}
+                    onExit={() => {
+                        setCalendarModalCalendar(null);
+                        onExitCalendarModal?.();
+                    }}
                     calendar={calendarModalCalendar}
                 />
             )}
 
             {!!importModalCalendar && (
                 <ImportModal
-                    isOpen={!!importModalCalendar}
-                    onClose={() => setImportModalCalendar(null)}
+                    {...importModalProps}
+                    isOpen={isImportModalOpen}
+                    onClose={onCloseImportModal}
+                    onExit={() => {
+                        onExitImportModal?.();
+                        setImportModalCalendar(null);
+                    }}
                     defaultCalendar={importModalCalendar}
                     calendars={getProbablyActiveCalendars(calendars)}
                 />

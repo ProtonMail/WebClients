@@ -42,8 +42,9 @@ export interface CalendarModalProps {
     activeCalendars?: Calendar[];
     defaultCalendarID?: Nullable<string>;
     onClose?: () => void;
+    onExit?: () => void;
     onCreateCalendar?: (id: string) => void;
-    isOpen: boolean;
+    isOpen?: boolean;
 }
 
 export const CalendarModal = ({
@@ -52,6 +53,7 @@ export const CalendarModal = ({
     defaultCalendarID = '',
     isOpen,
     onClose,
+    onExit,
     onCreateCalendar,
 }: CalendarModalProps) => {
     const [loadingAction, withLoadingAction] = useLoading();
@@ -186,6 +188,7 @@ export const CalendarModal = ({
                         handleSubmit();
                     }
                 }}
+                onExit={onExit}
             >
                 {loadingSetup ? (
                     <Loader />
