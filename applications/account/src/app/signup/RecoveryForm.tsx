@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import * as React from 'react';
 import { c } from 'ttag';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
 
@@ -72,8 +71,6 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
     const challengeRefRecovery = useRef<ChallengeRef>();
     const [loading, withLoading] = useLoading();
-    const [phoneError, setPhoneError] = useState('');
-    const [emailError, setEmailError] = useState('');
     const [confirmModal, setConfirmModal] = useState(false);
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -91,23 +88,13 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
         const payload = await challengeRefRecovery.current?.getChallenge();
 
         if (model.step === RECOVERY_EMAIL) {
-            try {
-                await api(validateEmail(model.recoveryEmail));
-                return onSubmit(payload);
-            } catch (error: any) {
-                setEmailError(getApiErrorMessage(error) || c('Error').t`Can't validate email, try again later`);
-                throw error;
-            }
+            await api(validateEmail(model.recoveryEmail));
+            return onSubmit(payload);
         }
 
         if (model.step === RECOVERY_PHONE) {
-            try {
-                await api(validatePhone(model.recoveryPhone));
-                return onSubmit(payload);
-            } catch (error: any) {
-                setPhoneError(getApiErrorMessage(error) || c('Error').t`Can't validate phone, try again later`);
-                throw error;
-            }
+            await api(validatePhone(model.recoveryPhone));
+            return onSubmit(payload);
         }
     };
 
@@ -125,7 +112,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
             label={c('Label').t`Recovery email address`}
             error={validator(
                 model.step === RECOVERY_EMAIL
-                    ? [requiredValidator(model.recoveryEmail), emailValidator(model.recoveryEmail), emailError]
+                    ? [requiredValidator(model.recoveryEmail), emailValidator(model.recoveryEmail)]
                     : []
             )}
             autoFocus
@@ -133,7 +120,6 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
             type="email"
             value={model.recoveryEmail}
             onValue={(value: string) => {
-                setEmailError('');
                 setRecoveryEmail(value);
             }}
             onKeyDown={({ key }: React.KeyboardEvent<HTMLInputElement>) => {
@@ -213,7 +199,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                                         label={c('Label').t`Recovery phone number`}
                                         error={validator(
                                             model.step === RECOVERY_PHONE
-                                                ? [requiredValidator(model.recoveryPhone), phoneError]
+                                                ? [requiredValidator(model.recoveryPhone)]
                                                 : []
                                         )}
                                         disableChange={loading}
@@ -221,7 +207,6 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                                         defaultCountry={defaultCountry}
                                         value={model.recoveryPhone}
                                         onChange={(value: string) => {
-                                            setPhoneError('');
                                             setRecoveryPhone(value);
                                         }}
                                     />
@@ -230,8 +215,6 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                         },
                     ]}
                     onChange={() => {
-                        setEmailError('');
-                        setPhoneError('');
                         onChange({
                             step: model.step === RECOVERY_EMAIL ? RECOVERY_PHONE : RECOVERY_EMAIL,
                             recoveryEmail: '',
