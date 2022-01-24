@@ -4,7 +4,7 @@ import { MessageState } from '../../logic/messages/messagesTypes';
 import { Address } from '@proton/shared/lib/interfaces';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { c } from 'ttag';
-import { getFromAddress } from '../../helpers/addresses';
+import { getAddressFromEmail, getFromAddress } from '../../helpers/addresses';
 
 interface Props {
     onChange: MessageChange;
@@ -17,9 +17,7 @@ export const useDraftSenderVerification = ({ onChange }: Props) => {
     const verifyDraftSender = async (message: MessageState) => {
         const currentSender = message.data?.Sender;
 
-        const actualAddress: Address | undefined = addresses.filter(
-            (address) => address.Email === currentSender?.Address
-        )[0];
+        const actualAddress: Address | undefined = getAddressFromEmail(addresses, currentSender?.Address);
 
         if (!actualAddress || !getIsAddressActive(actualAddress)) {
             const defaultAddress = getFromAddress(addresses, '', undefined);
