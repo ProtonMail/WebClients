@@ -170,9 +170,12 @@ export const usePermanentDelete = (labelID: string) => {
                 </ConfirmModal>
             );
         });
-        const rollback = optimisticDelete(elements, labelID);
+
+        let rollback = () => {};
+
         try {
             dispatch(backendActionStarted());
+            rollback = optimisticDelete(elements, labelID);
             const action = conversationMode ? deleteConversations(selectedIDs, labelID) : deleteMessages(selectedIDs);
             await api(action);
             const notificationText = getNotificationText(draft, conversationMode, selectedItemsCount, totalMessages);
