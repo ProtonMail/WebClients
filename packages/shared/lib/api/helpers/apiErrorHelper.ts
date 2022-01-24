@@ -65,16 +65,16 @@ export const getIsTimeoutError = (e: any) => {
 export const getApiErrorMessage = (e: Error) => {
     const { message } = getApiError(e);
     if (getIs401Error(e)) {
-        return message || c('Info').t`Session timed out.`;
+        return message || c('Info').t`Session timed out`;
     }
     if (getIsOfflineError(e)) {
-        return message || c('Info').t`Internet connection lost.`;
+        return message || c('Info').t`Internet connection lost`;
     }
     if (getIsUnreachableError(e)) {
         return message || c('Info').t`Servers are unreachable. Please try again in a few minutes`;
     }
     if (getIsTimeoutError(e)) {
-        return message || c('Error').t`Request timed out.`;
+        return message || c('Error').t`Request timed out`;
     }
     if (message) {
         return `${message}`;
