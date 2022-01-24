@@ -56,9 +56,12 @@ export const useEmptyLabel = () => {
                     </ConfirmModal>
                 );
             });
-            const rollback = optimisticEmptyLabel(labelID);
+
+            let rollback = () => {};
+
             try {
                 dispatch(backendActionStarted());
+                rollback = optimisticEmptyLabel(labelID);
                 await api(emptyLabelRequest({ LabelID: labelID, AddressID: undefined }));
             } catch (error: any) {
                 rollback();

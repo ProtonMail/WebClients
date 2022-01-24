@@ -73,7 +73,8 @@ export const useMarkAs = () => {
         const markAsReadAction = isMessage ? markMessageAsRead : markConversationsAsRead;
         const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
         const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
-        const rollback = optimisticMarkAs(elements, labelID, { status });
+
+        let rollback = () => {};
 
         const request = async () => {
             let token;
@@ -81,6 +82,7 @@ export const useMarkAs = () => {
                 // Stop the event manager to prevent race conditions
                 stop();
                 dispatch(backendActionStarted());
+                rollback = optimisticMarkAs(elements, labelID, { status });
                 const { UndoToken } = await api(
                     action(
                         elements.map((element) => element.ID),

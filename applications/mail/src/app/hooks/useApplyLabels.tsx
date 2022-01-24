@@ -382,7 +382,7 @@ export const useMoveToFolder = () => {
                 return;
             }
 
-            const rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
+            let rollback = () => {};
 
             const handleDo = async () => {
                 let token;
@@ -390,6 +390,7 @@ export const useMoveToFolder = () => {
                     // Stop the event manager to prevent race conditions
                     stop();
                     dispatch(backendActionStarted());
+                    rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
                     const { UndoToken } = await api(action({ LabelID: folderID, IDs: elementIDs }));
                     // We are not checking ValidUntil since notification stay for few seconds after this action
                     token = UndoToken.Token;
@@ -464,12 +465,13 @@ export const useStar = () => {
         const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
         const action = value ? labelAction : unlabelAction;
 
-        const rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
+        let rollback = () => {};
 
         try {
             // Stop the event manager to prevent race conditions
             stop();
             dispatch(backendActionStarted());
+            rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
             await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
         } catch (error: any) {
             rollback();
