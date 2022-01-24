@@ -140,8 +140,13 @@
 	font-style: italic;
 }
 
-.no-outline {
+.no-outline,
+.no-outline:focus {
+	// we remove outline for all cases, and add it back for focus-visible cases
 	outline: 0;
+	&:focus-visible {
+		outline: 2px auto;
+	}
 }
 
 .text-strike {
