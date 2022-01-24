@@ -13,9 +13,10 @@ const {
     HTTP_REQUEST_FAILED_NOT_FOUND,
     HTTP_REQUEST_FAILED_GENERIC,
     HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR,
+    HTTP_REQUEST_FAILED_TIMEOUT,
     CALENDAR_MISSING_PRIMARY_KEY,
-    PROTON_CALENDAR_NOT_FOUND,
-    PROTON_CALENDAR_NOT_DECRYPTABLE,
+    INTERNAL_CALENDAR_URL_NOT_FOUND,
+    INTERNAL_CALENDAR_UNDECRYPTABLE,
 } = CALENDAR_SUBSCRIPTION_STATUS;
 
 describe('getSyncingInfo', () => {
@@ -103,8 +104,9 @@ describe('getCalendarIsNotSyncedInfo', () => {
             HTTP_REQUEST_FAILED_NOT_FOUND,
             HTTP_REQUEST_FAILED_GENERIC,
             HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR,
-            PROTON_CALENDAR_NOT_FOUND,
-            PROTON_CALENDAR_NOT_DECRYPTABLE,
+            HTTP_REQUEST_FAILED_TIMEOUT,
+            INTERNAL_CALENDAR_URL_NOT_FOUND,
+            INTERNAL_CALENDAR_UNDECRYPTABLE,
             CALENDAR_MISSING_PRIMARY_KEY,
         ].forEach((status) =>
             expect(
@@ -148,7 +150,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_NOT_FOUND))).toEqual(
             getNotSyncedInfo('Calendar link is not accessible')
         );
-        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(PROTON_CALENDAR_NOT_FOUND))).toEqual(
+        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(INTERNAL_CALENDAR_URL_NOT_FOUND))).toEqual(
             getNotSyncedInfo('Calendar link is not accessible')
         );
 
@@ -158,8 +160,11 @@ describe('getCalendarIsNotSyncedInfo', () => {
         expect(
             getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR))
         ).toEqual(getNotSyncedInfo('Calendar link is temporarily inaccessible'));
+        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_TIMEOUT))).toEqual(
+            getNotSyncedInfo('Calendar link is temporarily inaccessible')
+        );
 
-        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(PROTON_CALENDAR_NOT_DECRYPTABLE))).toEqual(
+        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(INTERNAL_CALENDAR_UNDECRYPTABLE))).toEqual(
             getNotSyncedInfo('Calendar could not be decrypted')
         );
 
