@@ -5,7 +5,7 @@ import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Address } from '@proton/shared/lib/interfaces';
 import { useState } from 'react';
-import { Button, ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, Form } from '@proton/components';
+import { Button, BasicModal, Form } from '@proton/components';
 import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
@@ -119,12 +119,12 @@ const CreateEventModal = ({
     );
 
     return (
-        <ModalTwo
+        <BasicModal
             size="large"
             fullscreenOnMobile
             onClose={onClose}
             {...rest}
-            open={isOpen}
+            isOpen={isOpen}
             className="w100"
             as={Form}
             onSubmit={() => {
@@ -132,35 +132,35 @@ const CreateEventModal = ({
                     handleSubmitWithInviteActions();
                 }
             }}
+            title={displayTitle ? getDisplayTitle(model.title) : undefined}
+            footer={
+                <>
+                    <Button
+                        data-test-id="event-creation-modal:cancel-event-creation"
+                        disabled={loadingAction}
+                        onClick={onClose}
+                    >
+                        {c('Action').t`Cancel`}
+                    </Button>
+                    {submit}
+                </>
+            }
         >
-            <ModalTwoHeader title={displayTitle ? getDisplayTitle(model.title) : undefined} />
-            <ModalTwoContent>
-                <EventForm
-                    displayWeekNumbers={displayWeekNumbers}
-                    weekStartsOn={weekStartsOn}
-                    addresses={addresses}
-                    isSubmitted={isSubmitted}
-                    errors={errors}
-                    model={model}
-                    setModel={setModel}
-                    tzid={tzid}
-                    isCreateEvent={isCreateEvent}
-                    setParticipantError={setParticipantError}
-                    isSubscribedCalendar={isSubscribedCalendar}
-                    isDuplicating={isDuplicating}
-                />
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button
-                    data-test-id="event-creation-modal:cancel-event-creation"
-                    disabled={loadingAction}
-                    onClick={onClose}
-                >
-                    {c('Action').t`Cancel`}
-                </Button>
-                {submit}
-            </ModalTwoFooter>
-        </ModalTwo>
+            <EventForm
+                displayWeekNumbers={displayWeekNumbers}
+                weekStartsOn={weekStartsOn}
+                addresses={addresses}
+                isSubmitted={isSubmitted}
+                errors={errors}
+                model={model}
+                setModel={setModel}
+                tzid={tzid}
+                isCreateEvent={isCreateEvent}
+                setParticipantError={setParticipantError}
+                isSubscribedCalendar={isSubscribedCalendar}
+                isDuplicating={isDuplicating}
+            />
+        </BasicModal>
     );
 };
 
