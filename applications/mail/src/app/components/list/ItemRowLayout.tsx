@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';
@@ -14,7 +15,6 @@ import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
 import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
 interface Props {
     labelID: string;
