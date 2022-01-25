@@ -399,6 +399,16 @@ const storeMessagesBatches = async (
 
         Messages = resultMetadata.Messages;
 
+        // Temporary fix for mailboxes with messages whose Time
+        // is corrupted on DB. Upon DB intervention this can be
+        // removed.
+        if (Messages.length === 1 && Messages[0].ID === recoveryPoint.ID) {
+            const storedCiphertext = await esDB.get('messages', recoveryPoint.ID);
+            if (storedCiphertext) {
+                return true;
+            }
+        }
+
         if (batchCount++ >= OPENPGP_REFRESH_CUTOFF) {
             await refreshOpenpgp();
             batchCount = 0;
