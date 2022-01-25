@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
@@ -9,7 +10,6 @@ import { Element } from '../models/element';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
 import { useOptimisticMarkAs } from './optimistic/useOptimisticMarkAs';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
-import { useDispatch } from 'react-redux';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 
 export enum MARK_AS_STATUS {

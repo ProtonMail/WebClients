@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
 import { useApi, useNotifications, useEventManager, useLabels, useModals, ConfirmModal } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
@@ -14,7 +15,6 @@ import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { Conversation } from '../models/conversation';
-import { useDispatch } from 'react-redux';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;

@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
 import { encryptMessage, OpenPGPKey } from 'pmcrypto';
 import { c } from 'ttag';
 
@@ -6,6 +7,7 @@ import { useApi, useNotifications } from '@proton/components';
 import { EOReply } from '@proton/shared/lib/api/eo';
 import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
 import { prepareExport } from '../../helpers/message/messageExport';
@@ -16,8 +18,6 @@ import SendingMessageNotification, {
     createSendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
 import { EO_MESSAGE_REDIRECT_PATH, MIN_DELAY_SENT_NOTIFICATION } from '../../constants';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { useDispatch } from 'react-redux';
 import { EOAddReply } from '../../logic/eo/eoActions';
 import { EOMessageReply } from '../../logic/eo/eoType';
 
