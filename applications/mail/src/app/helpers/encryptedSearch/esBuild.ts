@@ -42,24 +42,16 @@ import { toText } from '../parserHtml';
 import { sizeOfCachedMessage } from './esCache';
 
 /**
- * Decrypt the given armored index key. Return undefined if something goes wrong.
+ * Decrypt the given armored index key.
  */
-export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: string | null | undefined) => {
-    if (!encryptedKey) {
-        return;
-    }
-
+export const decryptIndexKey = async (getUserKeys: GetUserKeys, armoredKey: string) => {
     const userKeysList = await getUserKeys();
     const primaryUserKey = userKeysList[0];
     const decryptionResult = await pmcryptoDecryptMessage({
-        message: await pmcryptoGetMessage(encryptedKey),
+        message: await pmcryptoGetMessage(armoredKey),
         publicKeys: [primaryUserKey.publicKey],
         privateKeys: [primaryUserKey.privateKey],
     });
-
-    if (!decryptionResult) {
-        return;
-    }
 
     const { data: decryptedKey } = decryptionResult;
 
@@ -74,14 +66,22 @@ export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: st
     if ((importedKey as CryptoKey).algorithm) {
         return importedKey;
     }
+
+    throw new Error('Importing key failed');
 };
 
 /**
- * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong.
+ * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong
+ * or if there is no key in local storage.
  */
 export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
     try {
-        return await decryptIndexKey(getUserKeys, getES.Key(userID));
+        const armoredKey = getES.Key(userID);
+        if (!armoredKey) {
+            return;
+        }
+
+        return await decryptIndexKey(getUserKeys, armoredKey);
     } catch (error: any) {
         esSentryReport('getIndexKey', { error });
     }
