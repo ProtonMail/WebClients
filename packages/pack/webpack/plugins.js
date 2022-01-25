@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
@@ -28,6 +29,15 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
             : [
                   new ReactRefreshWebpackPlugin({
                       overlay: false,
+                  }),
+                  new ESLintPlugin({
+                      extensions: ['js', 'ts', 'tsx'],
+                      eslintPath: require.resolve('eslint'),
+                      context: path.resolve('.'),
+                      // ESLint class options
+                      resolvePluginsRelativeTo: __dirname,
+                      cwd: path.resolve('.'),
+                      cache: true,
                   }),
               ]),
 
