@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -12,7 +13,6 @@ import ItemAction from './ItemAction';
 import { Breakpoints } from '../../models/utils';
 import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
 interface Props {
     labelID: string;
