@@ -56,7 +56,13 @@ import {
     getES,
     isDBReadyAfterBuilding,
 } from '../helpers/encryptedSearch/esUtils';
-import { buildDB, getIndexKey, initialiseDB, sendIndexingMetrics } from '../helpers/encryptedSearch/esBuild';
+import {
+    buildDB,
+    decryptIndexKey,
+    getIndexKey,
+    initialiseDB,
+    sendIndexingMetrics,
+} from '../helpers/encryptedSearch/esBuild';
 import {
     hybridSearch,
     normaliseSearchParams,
@@ -1101,14 +1107,23 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     return await resumeIndexing({ notify: false });
                 }
 
-                // Check all keys that decrypt under the current user's key
-                const indexKey = await getIndexKey(getUserKeys, userID);
-                if (!indexKey) {
+                // If no ES:*:Key blob can be found, the user has never activated ES.
+                const armoredKey = getES.Key(userID);
+                if (!armoredKey) {
+                    return;
+                }
+
+                // If the blob can be found but failed decryption, password was reset therefore we
+                // index again under the new user key.
+                let indexKey: CryptoKey;
+                try {
+                    indexKey = await decryptIndexKey(getUserKeys, armoredKey);
+                } catch (error: any) {
                     return await restartIndexing(false);
                 }
 
                 const isIDBIntact = await canUseES(userID);
-                if (!indexKey || !isIDBIntact) {
+                if (!isIDBIntact) {
                     return await dbCorruptError();
                 }
 
