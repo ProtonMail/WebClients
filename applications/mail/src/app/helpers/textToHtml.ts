@@ -12,7 +12,7 @@ const OPTIONS = {
     linkify: true,
 };
 
-const md = markdownit('default', OPTIONS).disable(['lheading']);
+const md = markdownit('default', OPTIONS).disable(['lheading', 'heading', 'list', 'code', 'fence', 'hr']);
 
 /**
  * This function generates a random string that is not included in the input text.
