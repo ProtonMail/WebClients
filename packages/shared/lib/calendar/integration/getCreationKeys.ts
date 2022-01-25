@@ -6,7 +6,7 @@ import { CalendarEvent, DecryptedCalendarKey, CalendarKeyFlags } from '../../int
 import { DecryptedKey } from '../../interfaces';
 
 interface GetCreationKeysArguments {
-    Event?: CalendarEvent;
+    calendarEvent?: CalendarEvent;
     addressKeys: DecryptedKey[];
     newCalendarKeys: DecryptedCalendarKey[];
     oldCalendarKeys?: DecryptedCalendarKey[];
@@ -14,7 +14,7 @@ interface GetCreationKeysArguments {
 }
 
 export const getCreationKeys = async ({
-    Event,
+    calendarEvent,
     addressKeys,
     newCalendarKeys,
     oldCalendarKeys,
@@ -35,15 +35,14 @@ export const getCreationKeys = async ({
     const decryptionKeys = oldCalendarKeys || newCalendarKeys;
 
     const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
-        calendarEvent: Event,
+        calendarEvent,
         ...splitKeys(decryptionKeys),
         decryptedSharedKeyPacket,
     });
 
     return {
-        privateKey: primaryPrivateCalendarKey,
         publicKey: primaryPublicCalendarKey,
-        signingKey: primaryPrivateAddressKey,
+        privateKey: primaryPrivateAddressKey,
         sharedSessionKey,
         calendarSessionKey,
     };

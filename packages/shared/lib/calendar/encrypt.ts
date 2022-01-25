@@ -8,6 +8,7 @@ import {
     signMessage,
     splitMessage,
 } from 'pmcrypto';
+import { SimpleMap } from '../interfaces';
 import { EncryptPartResult, SignPartResult } from '../interfaces/calendar';
 
 export function signPart(dataToSign: string, signingKey: OpenPGPKey): Promise<SignPartResult>;
@@ -78,4 +79,23 @@ export const createSessionKey = async (publicKey: OpenPGPKey) => {
         data: sessionKey,
         algorithm,
     };
+};
+
+export const getEncryptedSessionKeysMap = async (sessionKey: SessionKey, publicKeyMap: SimpleMap<OpenPGPKey> = {}) => {
+    const emails = Object.keys(publicKeyMap);
+    if (!emails.length) {
+        return;
+    }
+    const result: SimpleMap<Uint8Array> = {};
+    await Promise.all(
+        emails.map(async (email) => {
+            const publicKey = publicKeyMap[email];
+            if (!publicKey) {
+                return;
+            }
+            result[email] = await getEncryptedSessionKey(sessionKey, publicKey);
+        })
+    );
+
+    return result;
 };

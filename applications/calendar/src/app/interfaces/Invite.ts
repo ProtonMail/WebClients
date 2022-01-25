@@ -9,10 +9,10 @@ export enum INVITE_ACTION_TYPES {
     CHANGE_PARTSTAT,
     DECLINE_INVITATION,
     DECLINE_DISABLED,
-    SEND_INVITATION,
-    SEND_UPDATE,
-    CANCEL_INVITATION,
-    CANCEL_DISABLED,
+    SEND_INVITATION, // organizer creates new invitation, or just adds/removes attendees
+    SEND_UPDATE, // organizer updates event details and/or attendees
+    CANCEL_INVITATION, // organizer deletes invitation
+    CANCEL_DISABLED, // organizer deletes invitation but can't notify attendees
 }
 
 export interface InviteActions {

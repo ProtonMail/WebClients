@@ -152,7 +152,7 @@ const useAddAttendees = () => {
                 eventComponent: pmVevent,
                 isCreateEvent: false,
                 isSwitchCalendar: false,
-                ...(await getCreationKeys({ Event: calendarEvent, addressKeys, newCalendarKeys: calendarKeys })),
+                ...(await getCreationKeys({ calendarEvent, addressKeys, newCalendarKeys: calendarKeys })),
             });
             if (!getHasSharedEventContent(data)) {
                 throw new Error('Missing shared data');
