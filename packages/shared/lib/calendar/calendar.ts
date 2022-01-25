@@ -1,8 +1,11 @@
-import { hasBit } from '../helpers/bitset';
+import { hasBit, toggleBit } from '../helpers/bitset';
 import { unary } from '../helpers/function';
 import { CALENDAR_FLAGS, MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, SETTINGS_VIEW } from './constants';
 import { Calendar, CalendarUserSettings } from '../interfaces/calendar';
 import { getIsPersonalCalendar } from './subscribe/helpers';
+import { Address, Api } from '../interfaces';
+import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
+import { reactivateCalendarsKeys } from './keys/reactivateCalendarKeys';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
@@ -66,6 +69,50 @@ export const getMaxUserCalendarsDisabled = (disabledCalendars: Calendar[], isFre
     const calendarLimit = isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
 
     return disabledCalendars.length === calendarLimit;
+};
+
+export const getCalendarWithReactivatedKeys = async ({
+    calendar,
+    api,
+    silenceApi = true,
+    addresses,
+    getAddressKeys,
+    successCallback,
+    handleError,
+}: {
+    calendar: Calendar;
+    api: Api;
+    silenceApi?: boolean;
+    addresses: Address[];
+    getAddressKeys: GetAddressKeys;
+    successCallback?: () => void;
+    handleError?: (error: any) => void;
+}) => {
+    if (getDoesCalendarHaveInactiveKeys(calendar)) {
+        try {
+            const possiblySilentApi = <T>(config: any) => api<T>({ ...config, silence: silenceApi });
+
+            await reactivateCalendarsKeys({
+                calendars: [calendar],
+                api: possiblySilentApi,
+                addresses,
+                getAddressKeys,
+            });
+
+            successCallback?.();
+
+            return {
+                ...calendar,
+                Flags: toggleBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
+            };
+        } catch (e) {
+            handleError?.(e);
+
+            return calendar;
+        }
+    }
+
+    return calendar;
 };
 
 export const DEFAULT_CALENDAR_USER_SETTINGS: CalendarUserSettings = {
