@@ -96,12 +96,12 @@ describe('calendar encryption', () => {
     it('should encrypt and sign calendar events', async () => {
         const dummyProdId = 'Proton Calendar';
         setVcalProdId(dummyProdId);
-        const primaryCalendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
+        const calendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
+        const addressKey = await decryptPrivateKey(DecryptableKey2, '123');
         const data = await createCalendarEvent({
             eventComponent: veventComponent,
-            privateKey: primaryCalendarKey,
-            publicKey: primaryCalendarKey.toPublic(),
-            signingKey: primaryCalendarKey, // Should be an address key
+            privateKey: addressKey,
+            publicKey: calendarKey.toPublic(),
             isCreateEvent: true,
             isSwitchCalendar: false,
         });
@@ -159,29 +159,29 @@ describe('calendar encryption', () => {
                 { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
             ],
             RemovedAttendeeAddresses: undefined,
+            AddedProtonAttendees: undefined,
         });
         setVcalProdId('');
     });
 
     it('should roundtrip', async () => {
         const addressKey = await decryptPrivateKey(DecryptableKey2, '123');
-        const primaryCalendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
-        const publicKey = primaryCalendarKey.toPublic();
+        const calendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
+        const publicKey = calendarKey.toPublic();
         const publicAddressKey = addressKey.toPublic();
 
         const data = await createCalendarEvent({
             eventComponent: veventComponent,
             prodId: 'Proton Calendar',
-            privateKey: primaryCalendarKey,
+            privateKey: addressKey,
             publicKey,
-            signingKey: addressKey,
             isCreateEvent: true,
             isSwitchCalendar: false,
         });
 
         const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
             calendarEvent: data,
-            privateKeys: primaryCalendarKey,
+            privateKeys: calendarKey,
         });
         const { veventComponent: otherVeventComponent, verificationStatus: verificationStatusOther } =
             await readCalendarEvent(transformToExternal(data, publicAddressKey, sharedSessionKey, calendarSessionKey));

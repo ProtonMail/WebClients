@@ -1,3 +1,4 @@
+import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { getAttendeeEmail, getDuplicateAttendees, withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
@@ -10,6 +11,7 @@ import {
 import { getAttendeePartstat, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
+import { unary } from '@proton/shared/lib/helpers/function';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -17,8 +19,8 @@ import { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezo
 import { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { getSupportedPlusAlias } from '@proton/shared/lib/mail/addresses';
+import { OpenPGPKey } from 'pmcrypto';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 import { withIncrementedSequence } from './sequence';
 
@@ -66,6 +68,65 @@ export const getDuplicateAttendeesSend = (vevent: VcalVeventComponent, inviteAct
     if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
         return getDuplicateAttendees(vevent.attendee);
     }
+};
+
+const extractProtonAttendeePublicKey = (email: string, sendPreferencesMap: SimpleMap<SendPreferences>) => {
+    const sendPreferences = sendPreferencesMap[email];
+    if (!sendPreferences) {
+        return;
+    }
+    const { publicKeys, hasApiKeys, error } = sendPreferences;
+    if (!hasApiKeys) {
+        // Not a Proton Attendee then
+        return;
+    }
+    if (error) {
+        // There should be no errors at this stage. Throwing just in case
+        throw error;
+    }
+    if (!publicKeys?.length) {
+        // This should not happen either. Throwing just in case
+        throw new Error('No public key for Proton attendee');
+    }
+    return publicKeys[0];
+};
+
+const extractNewInvitedAttendeeEmails = (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => {
+    const { type, addedAttendees, removedAttendees } = inviteActions;
+    if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
+        if (addedAttendees?.length) {
+            return addedAttendees.map(unary(getAttendeeEmail));
+        }
+        if (removedAttendees?.length) {
+            // no new attendee is invited
+            return [];
+        }
+        return (veventComponent.attendee || []).map(unary(getAttendeeEmail));
+    }
+    if (type === INVITE_ACTION_TYPES.SEND_UPDATE && addedAttendees?.length) {
+        return addedAttendees.map(unary(getAttendeeEmail));
+    }
+    return [];
+};
+
+export const getAddedAttendeesPublicKeysMap = ({
+    veventComponent,
+    inviteActions,
+    sendPreferencesMap,
+}: {
+    veventComponent: VcalVeventComponent;
+    inviteActions: InviteActions;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
+}) => {
+    const addedAttendeesEmails = extractNewInvitedAttendeeEmails(veventComponent, inviteActions);
+    return addedAttendeesEmails.reduce<SimpleMap<OpenPGPKey>>((acc, email) => {
+        const publicKey = extractProtonAttendeePublicKey(email, sendPreferencesMap);
+        if (!publicKey) {
+            return acc;
+        }
+        acc[email] = publicKey;
+        return acc;
+    }, {});
 };
 
 export const getUpdatedSaveInviteActions = ({

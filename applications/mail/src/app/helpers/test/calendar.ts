@@ -41,9 +41,8 @@ export const generateApiCalendarEvent = async ({
     eventComponent,
     author,
     memberID,
-    privateKey,
     publicKey,
-    signingKey,
+    privateKey,
     eventID,
     sharedEventID,
     calendarID,
@@ -53,9 +52,8 @@ export const generateApiCalendarEvent = async ({
     eventComponent: VcalVeventComponent;
     author: string;
     memberID: string;
-    privateKey: OpenPGPKey;
     publicKey: OpenPGPKey;
-    signingKey: OpenPGPKey;
+    privateKey: OpenPGPKey;
     eventID: string;
     sharedEventID: string;
     calendarID: string;
@@ -72,9 +70,8 @@ export const generateApiCalendarEvent = async ({
         Attendees = [],
     } = await createCalendarEvent({
         eventComponent,
-        privateKey,
         publicKey,
-        signingKey,
+        privateKey,
         isCreateEvent: true,
         isSwitchCalendar: false,
     });

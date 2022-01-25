@@ -399,7 +399,7 @@ const updateEventApi = async ({
     // attendee mode
     const veventWithPmAttendees = await withPmAttendees(vevent, getCanonicalEmailsMap, true);
     const creationKeys = await getCreationKeys({
-        Event: createSingleEdit ? undefined : calendarEvent,
+        calendarEvent: createSingleEdit ? undefined : calendarEvent,
         addressKeys,
         newCalendarKeys: calendarKeys,
     });
