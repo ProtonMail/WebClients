@@ -49,8 +49,8 @@ export const mappingHasLabelsTooLong = (mapping: MailImportMapping[]) => {
     });
 };
 
-export const nameAlreadyExists = (name: string, collection: Label[] | Folder[]) => {
-    return collection.map((i: Label | Folder) => i.Path).some((i) => i.toLowerCase() === name.toLowerCase());
+export const nameAlreadyExists = (name: string, collection: Pick<Label, 'Path'>[] | Pick<Folder, 'Path'>[]) => {
+    return collection.map((i) => i.Path).some((i) => i.toLowerCase() === name.toLowerCase());
 };
 
 export const mappingHasUnavailableNames = (
