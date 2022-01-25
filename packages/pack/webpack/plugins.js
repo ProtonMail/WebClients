@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
@@ -39,6 +40,7 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
                       cwd: path.resolve('.'),
                       cache: true,
                   }),
+                  new ForkTsCheckerWebpackPlugin({ async: true, formatter: 'basic' }),
               ]),
 
         new CopyWebpackPlugin({
