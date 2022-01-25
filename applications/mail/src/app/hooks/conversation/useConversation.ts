@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useDispatch, useSelector, useStore } from 'react-redux';
-import { useApi } from '@proton/components';
+import { useApi, useIsMounted } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Conversation } from '../../models/conversation';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
@@ -48,6 +48,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const getConversation = useGetConversation();
+    const isMounted = useIsMounted();
 
     const conversationState = useSelector((state: RootState) => conversationByID(state, { ID: inputConversationID }));
 
@@ -89,10 +90,13 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
             return;
         }
 
-        setPendingRequest(true);
+        if (isMounted()) {
+            setPendingRequest(true);
+        }
         (await dispatch(loadAction({ api, conversationID, messageID }))) as any as Promise<any>;
 
         const updatedConversation = getConversation(conversationID);
+
         if (
             updatedConversation &&
             hasError(updatedConversation.errors) &&
@@ -100,7 +104,9 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
         ) {
             await wait(LOAD_RETRY_DELAY);
         }
-        setPendingRequest(false);
+        if (isMounted()) {
+            setPendingRequest(false);
+        }
     };
 
     useEffect(() => {
@@ -115,7 +121,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
         if (!conversationInState || !conversationInState.Messages || !conversationInState.Messages.length) {
             void load(inputConversationID, messageID);
         }
-    }, [inputConversationID, messageID, pendingRequest]);
+    }, [inputConversationID, messageID, pendingRequest, conversation?.loadRetry]);
 
     useEffect(() => {
         if (conversationState) {
@@ -128,7 +134,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     }, [conversationID]);
 
     const loadingError = hasError(conversation?.errors) && (conversation?.loadRetry || 0) > LOAD_RETRY_COUNT;
-    const loadingConversation = !loadingError && !conversation?.Conversation;
+    const loadingConversation = !loadingError && conversation?.Conversation?.Subject === undefined;
     const loadingMessages = !loadingError && !conversation?.Messages?.length;
     const numMessages = conversation?.Messages?.length || conversation?.Conversation?.NumMessages;
 
