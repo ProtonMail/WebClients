@@ -17,16 +17,16 @@
         "bcryptjs": "^2.4.3"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.16.8",
+        "@babel/preset-env": "^7.16.11",
         "@babel/preset-typescript": "^7.16.7",
         "@babel/register": "^7.16.9",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "eslint": "^8.7.0",
-        "mocha": "^9.1.4",
+        "mocha": "^9.2.0",
         "pmcrypto": "github:ProtonMail/pmcrypto#semver:~6.7.1",
         "prettier": "^2.5.1",
         "require-inject": "^1.4.4",
-        "typescript": "^4.5.4"
+        "typescript": "^4.5.5"
     },
     "peerDependencies": {
         "pmcrypto": "*"
