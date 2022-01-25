@@ -32,9 +32,9 @@ this is a multiline string`,
             } as MailSettings
         );
 
-        expect(html).toEqual(`<p>a title</p>
-<h2>hello</h2>
-<p>this is a multiline string</p>`);
+        expect(html).toEqual(`a title<br>
+## hello<br>
+this is a multiline string`);
     });
 
     it('should not convert markdown line headings ', () => {
