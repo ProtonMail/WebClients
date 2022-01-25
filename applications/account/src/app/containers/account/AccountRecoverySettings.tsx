@@ -65,7 +65,7 @@ const AccountRecoverySettings = ({ location, setActiveSection }: SettingsPropsSh
 
     useEffect(() => {
         if (hasVisitedRecoveryPage?.Value === false) {
-            setVisitedRecoveryPage(true);
+            void setVisitedRecoveryPage(true);
         }
     }, [hasVisitedRecoveryPage]);
 
