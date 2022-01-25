@@ -1,6 +1,9 @@
 import { act } from '@testing-library/react';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { fireEvent } from '@testing-library/dom';
+import { range } from '@proton/shared/lib/helpers/array';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { render, clearAll, addApiMock, assertFocus, tick, mockConsole } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';
 import ConversationView from './ConversationView';
@@ -12,9 +15,6 @@ import {
     updateConversation,
 } from '../../logic/conversations/conversationsActions';
 import { initialize as initializeMessage } from '../../logic/messages/read/messagesReadActions';
-import { fireEvent } from '@testing-library/dom';
-import { range } from '@proton/shared/lib/helpers/array';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
 jest.setTimeout(20000);
 
