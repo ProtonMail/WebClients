@@ -81,7 +81,10 @@ export const getDeleteRecurringEventActions = async ({
 
         const singleDeleteOperation = isSingleEdit ? getDeleteSyncOperation(oldEvent) : undefined;
 
-        const originalExdateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent);
+        const originalExdateOperation = getUpdateSyncOperation({
+            veventComponent: updatedVeventComponent,
+            calendarEvent: originalEvent,
+        });
 
         return {
             multiSyncActions: [
@@ -114,7 +117,10 @@ export const getDeleteRecurringEventActions = async ({
         const singleEditRecurrencesAfter = getRecurrenceEventsAfter(singleEditRecurrences, recurrence.localStart);
 
         const deleteOperations = singleEditRecurrencesAfter.map(getDeleteSyncOperation);
-        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent);
+        const updateOperation = getUpdateSyncOperation({
+            veventComponent: updatedVeventComponent,
+            calendarEvent: originalEvent,
+        });
 
         return {
             multiSyncActions: [

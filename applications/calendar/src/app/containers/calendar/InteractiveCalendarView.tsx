@@ -805,6 +805,7 @@ const InteractiveCalendarView = ({
             veventComponent: cleanVevent,
             inviteActions: cleanInviteActions,
             timestamp: currentTimestamp,
+            sendPreferencesMap,
         };
     };
 

@@ -114,6 +114,7 @@ const extractEncryptionPreferencesOwnAddress = (
         };
     }
     const warnings = getEmailMismatchWarning(publicKey, emailAddress, true);
+
     return { ...result, sendKey: publicKey, isSendKeyPinned: false, warnings };
 };
 
@@ -203,8 +204,9 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ),
         };
     }
-    // return the pinned key, not the API one
     const warnings = getEmailMismatchWarning(sendKey, emailAddress, true);
+
+    // return the pinned key, not the API one
     return { ...result, sendKey, isSendKeyPinned: true, warnings };
 };
 
@@ -285,8 +287,9 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             ),
         };
     }
-    // return the pinned key, not the API one
     const warnings = getEmailMismatchWarning(sendKey, emailAddress, false);
+
+    // return the pinned key, not the API one
     return { ...result, sendKey, isSendKeyPinned: true, warnings };
 };
 
@@ -351,6 +354,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         };
     }
     const warnings = getEmailMismatchWarning(sendKey, emailAddress, false);
+
     return { ...result, sendKey, isSendKeyPinned: true, warnings };
 };
 
