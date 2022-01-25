@@ -87,6 +87,10 @@ const getConfig = (env) => {
             },
             client: {
                 webSocketURL: 'auto://0.0.0.0:0/ws',
+                overlay: {
+                    errors: true,
+                    warnings: false,
+                },
             },
             webSocketServer: 'ws',
             ...(options.api && {
