@@ -299,7 +299,7 @@ const IASelectImportTypeStep = ({
                         {c('Label').t`Emails`}
                         {!isEasySwitchMailEnabled && (
                             <span className="block">
-                                {c('Label').t`(Temporarily unavailable. Please check back later)`}
+                                {c('Label').t`(Temporarily unavailable. Please check back later.)`}
                             </span>
                         )}
                     </div>
@@ -438,7 +438,7 @@ const IASelectImportTypeStep = ({
                         {c('Label').t`Calendars`}
                         {!isEasySwitchCalendarEnabled && (
                             <span className="block">
-                                {c('Label').t`(Temporarily unavailable. Please check back later)`}
+                                {c('Label').t`(Temporarily unavailable. Please check back later.)`}
                             </span>
                         )}
                     </div>
@@ -525,7 +525,7 @@ const IASelectImportTypeStep = ({
                         {c('Label').t`Contacts`}
                         {!isEasySwitchContactsEnabled && (
                             <span className="block">
-                                {c('Label').t`(Temporarily unavailable. Please check back later)`}
+                                {c('Label').t`(Temporarily unavailable. Please check back later.)`}
                             </span>
                         )}
                     </div>
