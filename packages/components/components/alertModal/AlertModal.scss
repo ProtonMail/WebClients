@@ -8,4 +8,10 @@
 	&-header {
 		margin: 1.5em var(--margin) 0.5em;
 	}
+
+	&-footer {
+		> .button {
+			width: 100%;
+		}
+	}
 }

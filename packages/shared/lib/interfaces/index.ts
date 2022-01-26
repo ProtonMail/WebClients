@@ -26,4 +26,12 @@ export interface EncryptionConfig {
     numBits?: number;
 }
 
-export type HumanVerificationMethodType = 'captcha' | 'payment' | 'sms' | 'email' | 'invite' | 'coupon';
+export type HumanVerificationMethodType =
+    | 'captcha'
+    | 'payment'
+    | 'sms'
+    | 'email'
+    | 'invite'
+    | 'coupon'
+    | 'ownership-email'
+    | 'ownership-sms';

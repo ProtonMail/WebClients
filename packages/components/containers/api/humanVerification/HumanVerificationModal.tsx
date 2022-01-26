@@ -5,19 +5,30 @@ import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { FormModal } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
-import HumanVerificationForm, { HumanVerificationSteps } from './HumanVerificationForm';
+import HumanVerificationForm from './HumanVerificationForm';
+import { HumanVerificationSteps } from './interface';
 
 interface Props<T> {
+    title?: string;
     token: string;
     methods: HumanVerificationMethodType[];
     onSuccess: (data: T) => void;
     onVerify: (token: string, tokenType: HumanVerificationMethodType) => Promise<T>;
     onError: (error: any) => void;
+
     [key: string]: any;
 }
 
-const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, onError, ...rest }: Props<T>) => {
-    const title = c('Title').t`Human verification`;
+const HumanVerificationModal = <T,>({
+    title: maybeTitle,
+    token,
+    methods = [],
+    onSuccess,
+    onVerify,
+    onError,
+    ...rest
+}: Props<T>) => {
+    const title = maybeTitle || c('Title').t`Human verification`;
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
@@ -56,6 +67,7 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
                 step={step}
                 onChangeStep={setStep}
                 onSubmit={(...args) => withLoading(handleSubmit(...args))}
+                onClose={rest.onClose}
                 methods={methods}
                 token={token}
             />

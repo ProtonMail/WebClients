@@ -43,7 +43,7 @@ const reducer = (oldState, diff) => {
 };
 
 /** @type any */
-const ApiProvider = ({ config, onLogout, children, UID }) => {
+const ApiProvider = ({ config, onLogout, children, UID, noErrorState }) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [apiStatus, setApiStatus] = useReducer(reducer, defaultApiStatus);
@@ -80,10 +80,11 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
             return Promise.reject(e);
         };
 
-        const handleVerification = ({ token, methods, onVerify }, e) => {
+        const handleVerification = ({ token, methods, onVerify, title }, e) => {
             return new Promise((resolve, reject) => {
                 createModal(
                     <HumanVerificationModal
+                        title={title}
                         token={token}
                         methods={methods}
                         onVerify={onVerify}
@@ -144,6 +145,21 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                     const { code } = getApiError(e);
                     const errorMessage = getApiErrorMessage(e);
 
+                    const handleErrorNotification = () => {
+                        if (errorMessage) {
+                            const isSilenced = getSilenced(e.config, code);
+                            if (!isSilenced) {
+                                createNotification({ type: 'error', text: errorMessage });
+                            }
+                        }
+                    };
+
+                    // Intended for the verify app where we always want to pass an error notification
+                    if (noErrorState) {
+                        handleErrorNotification();
+                        throw e;
+                    }
+
                     const isOffline = getIsOfflineError(e);
                     const isUnreachable = getIsUnreachableError(e);
 
@@ -173,12 +189,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                         throw e;
                     }
 
-                    if (errorMessage) {
-                        const isSilenced = getSilenced(e.config, code);
-                        if (!isSilenced) {
-                            createNotification({ type: 'error', text: errorMessage });
-                        }
-                    }
+                    handleErrorNotification();
                     throw e;
                 });
         };
@@ -196,6 +207,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
 ApiProvider.propTypes = {
     children: PropTypes.node.isRequired,
     config: PropTypes.object.isRequired,
+    noErrorState: PropTypes.bool,
     UID: PropTypes.string,
     onLogout: PropTypes.func,
 };

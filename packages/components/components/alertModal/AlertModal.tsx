@@ -28,7 +28,7 @@ const AlertModal = ({ title, subline, buttons, className, children, ModalContent
                 {subline && <div className="color-weak">{subline}</div>}
             </div>
             <ModalTwoContent {...ModalContentProps}>{children}</ModalTwoContent>
-            <ModalTwoFooter className="flex-column flex-align-items-stretch">
+            <ModalTwoFooter className="block alert-modal-footer">
                 {firstButton}
                 {secondButton}
                 {thirdButton}

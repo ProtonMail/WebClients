@@ -2,25 +2,30 @@ import { useState, useEffect, useRef } from 'react';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
 import { Loader } from '../../../components/loader';
+import { CaptchaTheme } from './interface';
 
-const getIframeUrl = (token: string) => {
+const getIframeUrl = (token: string, theme?: CaptchaTheme) => {
     const url = getApiSubdomainUrl('/core/v4/captcha');
     url.searchParams.set('Token', token);
     url.searchParams.set('ForceWebMessaging', '1');
+    if (theme === 'dark') {
+        url.searchParams.set('Dark', 'true');
+    }
     return url;
 };
 
 interface Props {
     token: string;
+    theme?: CaptchaTheme;
     onSubmit: (token: string) => void;
 }
 
-const Captcha = ({ token, onSubmit }: Props) => {
+const Captcha = ({ token, theme, onSubmit }: Props) => {
     const [style, setStyle] = useState<any>();
     const [loading, setLoading] = useState(true);
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
-    const iframeUrl = getIframeUrl(token);
+    const iframeUrl = getIframeUrl(token, theme);
 
     const src = iframeUrl.toString();
     const targetOrigin = iframeUrl.origin;
