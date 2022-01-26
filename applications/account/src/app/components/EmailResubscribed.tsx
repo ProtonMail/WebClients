@@ -1,7 +1,8 @@
 import { Button } from '@proton/components';
 import { c } from 'ttag';
+
 import EmailUnsubscribeCategories from './EmailUnsubscribeCategories';
-import EmailUnsubscribeLayout from './EmailUnsubscribeLayout';
+import PublicLayout from './PublicLayout';
 
 interface EmailResubscribedProps {
     categories: string[];
@@ -14,7 +15,7 @@ const EmailResubscribed = ({ categories, onUnsubscribeClick, onManageClick, load
     const categoriesJsx = <EmailUnsubscribeCategories categories={categories} />;
 
     return (
-        <EmailUnsubscribeLayout
+        <PublicLayout
             main={c('Email Unsubscribe').jt`You resubscribed to ${categoriesJsx} emails.`}
             footer={
                 <Button onClick={onUnsubscribeClick} loading={loading}>
