@@ -142,10 +142,9 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     exiting && 'modal-two--out',
                     fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
                     fullscreen && 'modal-two--fullscreen',
-                    last && 'modal-two--is-last-opened',
+                    !last && 'modal-two--is-behind-backdrop',
                 ])}
                 onAnimationEnd={handleAnimationEnd}
-                style={!last ? { '--z-position': -1 } : undefined}
             >
                 <dialog
                     ref={dialogRef}
