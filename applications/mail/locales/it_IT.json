@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Allegati"
+      "Attachment": [
+        "Allegato"
       ],
       "Filter on": [
         "Filtra"
@@ -2713,7 +2713,7 @@
         "Impossibile aggiornare l'evento nel tuo calendario. Nessuna risposta inviata"
       ],
       "Unexpected error": [
-        "Errore inaspettato"
+        "Errore imprevisto"
       ],
       "Unsupported invitation": [
         "Invito non supportato"
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "La tua risposta è stata inviata, ma l'evento non può essere aggiunto al tuo calendario"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "La tua risposta è stata inviata, ma non è stato possibile aggiornare l'evento nel tuo calendario"
       ]
     },
     "Event title": {

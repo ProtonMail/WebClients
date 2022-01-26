@@ -332,7 +332,7 @@
         "Exportar"
       ],
       "Export contact group": [
-        ""
+        "Exportar grupo de contato"
       ],
       "Export contacts": [
         "Exportar contatos"
@@ -849,7 +849,7 @@
         "Trocar de conta"
       ],
       "Switch to rich text": [
-        ""
+        "Alternar para rich text"
       ],
       "Theme": [
         "Tema"
@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Anexos"
+      "Attachment": [
+        ""
       ],
       "Filter on": [
         "Filtrar em"
@@ -2023,7 +2023,7 @@
     },
     "Email reminder banner": {
       "Event is tomorrow": [
-        ""
+        "O evento é amanhã"
       ],
       "Event starting now": [
         "Evento começando agora"
@@ -2033,12 +2033,12 @@
         "O evento começa em ${ minutesUntilEvent } minutos"
       ],
       "Event starts tomorrow": [
-        ""
+        "O evento iniciará amanhã"
       ]
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "Os detalhes do evento são criptografados. Conecte-se novamente para restaurar o calendário e descriptografar seus dados. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "Os detalhes do evento não podem ser descriptografados. ${ whyNotLink }"
@@ -2707,10 +2707,10 @@
         "Resposta inválida"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Não foi possível atualizar o evento no seu calendário. Nenhuma resposta foi enviada"
       ],
       "Unexpected error": [
         "Erro inesperado"
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Sua resposta foi enviada, mas o evento não pôde ser adicionado ao seu calendário"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Sua resposta foi enviada, mas o evento não pôde ser atualizado em seu calendário"
       ]
     },
     "Event title": {
@@ -2895,7 +2898,7 @@
         "Transfira rapidamente seus contatos ou e-mails de qualquer provedor usando nosso assistente de importação Troca Fácil."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Acesse o aplicativo móvel para completar a ação"
       ],
       "Using your mobile device, scan this QR code or visit": [
         "Utilizando o seu dispositivo móvel, escaneie este código QR ou visite"
@@ -6944,7 +6947,7 @@
         "Excluindo contatos"
       ],
       "Downgrade account": [
-        ""
+        "Fazer downgrade da conta"
       ],
       "Edit contact": [
         "Editar contato"

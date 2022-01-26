@@ -2348,6 +2348,12 @@
       "Invalid response": [
         "Odpowiedź jest nieprawidłowa"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Wydarzenie nie może zostać dodane do kalendarza. Odpowiedź nie została wysłana"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Wydarzenie nie może zostać zaktualizowane. Odpowiedź nie została wysłana"
+      ],
       "Unexpected error": [
         "Wystąpił nieoczekiwany błąd"
       ],
@@ -2783,7 +2789,7 @@
         "obecnie"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts nie obsługuje ${ forNow }:"
+        "ProtonContacts nie obsługuje ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4389,17 +4395,20 @@
       "to continue to ${ toAppName }": [
         "i przejdź do aplikacji ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Aby odszyfrować wiadomości i inne dane, będziesz potrzebować pliku odzyskiwania lub hasła odzyskiwania."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Aby odszyfrować wiadomości i inne dane, będziesz potrzebować pliku odzyskiwania."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Aby odszyfrować wiadomości i inne dane, będziesz potrzebować hasła odzyskiwania lub pliku odzyskiwania."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Aby odszyfrować wiadomości i inne dane, będziesz potrzebować hasła odzyskiwania."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Wybierz metodę odzyskiwania, aby odszyfrować dane zablokowane przed zresetowaniem hasła."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Ustaw metodę odzyskiwania konta, aby zapewnić dostęp do swojego konta"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."

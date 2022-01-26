@@ -57,7 +57,7 @@
         "新增至 ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
-        "新增到群組"
+        "新增至群組"
       ],
       "Address options": [
         "地址選項"
@@ -66,7 +66,7 @@
         "進階搜尋"
       ],
       "Align center": [
-        "水平置中"
+        "置中"
       ],
       "Align left": [
         "靠左對齊"
@@ -162,7 +162,7 @@
         "關閉導覽"
       ],
       "Close this banner": [
-        "關閉這個橫幅"
+        "關閉此橫幅"
       ],
       "Color": [
         "色彩"
@@ -270,7 +270,7 @@
         "詳細資訊"
       ],
       "Did not receive the code?": [
-        "沒收到代碼？"
+        "尚未收到驗證碼？"
       ],
       "Discard": [
         "捨棄"
@@ -297,7 +297,7 @@
         "編輯草稿"
       ],
       "Edit email address": [
-        "編輯電子郵件位址"
+        "編輯電子郵件地址"
       ],
       "Edit label": [
         "編輯標籤"
@@ -498,7 +498,7 @@
         "標記為未讀"
       ],
       "mark emails as": [
-        "將電子郵件標記為"
+        "將電子郵件標示為"
       ],
       "Mark for deletion": [
         "標記作刪除"
@@ -702,7 +702,7 @@
         "功能請求"
       ],
       "Request new code": [
-        "要求新代碼"
+        "重新傳送驗證碼"
       ],
       "Reset zoom": [
         "重設縮放"
@@ -870,7 +870,7 @@
         "再試一次"
       ],
       "Try another method": [
-        "換另一個方法試試"
+        "嘗試其他驗證方式"
       ],
       "Turn on tracker protection": [
         "開啟追蹤保護"
@@ -1811,7 +1811,7 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
+      "Attachment": [
         "附件"
       ],
       "Filter on": [
@@ -2097,7 +2097,7 @@
         "行事曆數目已達上限"
       ],
       "Calendar primary private key is not decrypted": [
-        "行事曆主要私密金鑰未解密"
+        "行事曆主要私密金鑰尚未解密"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
@@ -2190,7 +2190,7 @@
         "預覽的檔案無內容"
       ],
       "Filter with this name already exists": [
-        "以此為名的篩選器已存在"
+        "篩選器名稱重複"
       ],
       "Folder name cannot be empty": [
         "資料夾名稱不能留空"
@@ -2199,7 +2199,7 @@
         "影像上載失敗"
       ],
       "Incorrect login credentials. Please try again": [
-        "登入認證不正確，請再試一次"
+        "登入憑登不正確，請再試一次"
       ],
       "Incorrect mailbox password. Please try again": [
         "郵箱密碼不正確，請再試一次"
@@ -2226,7 +2226,7 @@
         "無效的郵遞區號"
       ],
       "Invalid public key file": [
-        "公開密鑰檔案無效"
+        "公開金鑰檔案無效"
       ],
       "Invalid verification code": [
         "驗證碼無效"
@@ -2244,7 +2244,7 @@
         "郵件處理錯誤。"
       ],
       "Missing signature": [
-        "簽章遺失"
+        "遺漏簽章"
       ],
       "Name on card required": [
         "持卡人姓名必須填寫"
@@ -2253,25 +2253,25 @@
         "網路錯誤：請檢查您的連線，然後重試。"
       ],
       "No address with keys available to compose a message": [
-        "沒有可用於編寫郵件的包含金鑰電子郵件地址"
+        "無法撰寫郵件，無郵件地址具備可加密郵件之金鑰。"
       ],
       "No data to import": [
         "沒有匯入任何資料"
       ],
       "No key retrieved for internal user is valid for sending": [
-        "內部使用者沒有提取到任何用於寄送的有效金鑰"
+        "未為內部使用者檢索到可用於寄送的有效密鑰"
       ],
       "No keys retrieved for internal user": [
-        "內部使用者沒有提取到任何金鑰"
+        "未為內部使用者檢索到密鑰"
       ],
       "No valid address found": [
         "找不到有效的位址"
       ],
       "No valid keys retrieved for internal user": [
-        "內部使用者沒有提取到任何有效的金鑰"
+        "未為內部使用者檢索到有效密鑰"
       ],
       "No WKD key retrieved for user is valid for sending": [
-        "使用者沒有提取到任何用於寄送的有效 WKD 金鑰"
+        "未為內部使用者檢索到有效WKD密鑰"
       ],
       "Not a valid number": [
         "號碼無效"
@@ -2316,7 +2316,7 @@
         "請設置一組密碼"
       ],
       "Preferences could not be saved": [
-        "無法儲存喜好設定"
+        "無法儲存偏好設定"
       ],
       "Primary address key is not decrypted": [
         "主要地址金鑰並未被解密"
@@ -2388,7 +2388,7 @@
         "資料夾名稱太長。請換另一個名稱。"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
-        "${ emailAddress } 的金鑰屬性無法擷取"
+        "無法擷取 ${ emailAddress } 的金鑰屬性"
       ],
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請換另一個名稱。"
@@ -2442,7 +2442,7 @@
         "使用中的篩選器以達上限，請升級至付費方案以建立更多的篩選器。"
       ],
       "Trusted keys are not valid for sending": [
-        "信任的金鑰用於寄送時無效"
+        "已信任的密鑰用於寄送時無效"
       ],
       "Unknown error": [
         "未知的錯誤"
@@ -2705,6 +2705,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "您的回答已傳送，惟此事件無法新增到您的行事曆中"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "您的回答已傳送，惟此事件無法在您的行事曆中更新"
       ]
     },
     "Event title": {
@@ -2894,12 +2897,12 @@
     },
     "Get started checklist title": {
       "Get started": [
-        "讓我們開始吧"
+        "入門指南"
       ]
     },
     "Group": {
       "Account": [
-        "帳號"
+        "帳戶"
       ],
       "Apps": [
         "應用程式"
@@ -2947,7 +2950,7 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "驗證碼"
       ],
       "Email": [
         "電子郵件"
@@ -2959,7 +2962,7 @@
         "無可用的驗證方法"
       ],
       "SMS": [
-        "簡訊"
+        "短訊"
       ]
     },
     "ICS widget label for event details": {
@@ -3252,7 +3255,7 @@
         "您所有的行事曆都已停用。"
       ],
       "All your changes will be lost.": [
-        "一切您所作的變更將會消失。"
+        "您所作的一切變更將會消失。"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "讓您在 ${ mailAppName } 上為自己的網域託管電子郵件，例如 john.smith@example.com"
@@ -3489,7 +3492,7 @@
         "傳送給非 ProtonMail 收件者的加密訊息會在28天內過期，除非已設置較短有效期限。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "請輸入發送到 ${ destinationText } 的驗證碼。"
+        "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "預計尚餘時間：${ estimatedMinutes } 分鐘"
@@ -3561,7 +3564,7 @@
         "有 ${ numAttachments } 份附件"
       ],
       "here": [
-        "這裡"
+        "此處"
       ],
       "Hide original message": [
         "隱藏原始訊息"
@@ -3570,7 +3573,7 @@
         "小時"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
+        "如果你無法建立帳戶，請聯絡我們。我們將會於一個工作天內處理你的申請。"
       ],
       "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
         "若您打算傳送此訊息至一位非 ProtonMail 使用者，請緊記設定訊息密碼。"
@@ -3642,7 +3645,7 @@
         "大量的匯入可能要數天才能完成。"
       ],
       "Learn more": [
-        "瞭解更多"
+        "了解更多"
       ],
       "Left to Right": [
         "由左至右"
@@ -3756,7 +3759,7 @@
         "內文"
       ],
       "Not a valid URL": [
-        "URL 無效"
+        "非有效的圖片網址"
       ],
       "Not customizable": [
         "不能自訂"
@@ -3780,10 +3783,10 @@
         "支付受 TLS 加密及瑞士隱私法律保護。"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署加密的郵件。"
+        "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署所有加密郵件。"
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "「PGP/MIME」自動使用目前撰寫器模式寄送郵件。請注意：ProtonMail 一律簽署加密的郵件。"
+        "「PGP/MIME」自動使用目前撰寫器模式寄送郵件。請注意：ProtonMail 一律簽署所有加密郵件。"
       ],
       "Phone number": [
         "電話號碼"
@@ -3915,7 +3918,7 @@
         "看來您處理完您所有的信了！"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
+        "選擇您希望在向該電子郵件地址發送郵件時的預設格式。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "選取哪些行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
@@ -3990,7 +3993,7 @@
         "測試連結"
       ],
       "Text color": [
-        "文字色彩"
+        "文字顏色"
       ],
       "Text to display": [
         "要顯示的文字"
@@ -4248,7 +4251,7 @@
         "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會新增到其連絡人詳細資料。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "您想要接收新的驗證碼，還是換一個驗證方法？"
+        "您想要接收新的驗證碼，還是更換驗證方法？"
       ],
       "Yearly": [
         "每年"
@@ -4562,7 +4565,7 @@
         "移動到垃圾桶"
       ],
       "Move to...": [
-        "移到‧‧‧"
+        "移至..."
       ],
       "Move up": [
         "向上移"
@@ -4669,10 +4672,10 @@
         "新增圖片網址"
       ],
       "Add to group": [
-        "新增到群組"
+        "新增至群組"
       ],
       "Address": [
-        "地址"
+        "電郵地址"
       ],
       "ALL": [
         "全部"
@@ -4798,7 +4801,7 @@
         "輸入組織名稱以確認"
       ],
       "Enter the 6-digit code": [
-        "輸入六位數的碼"
+        "請輸入六位數驗證碼"
       ],
       "Expires": [
         "有效期限"
@@ -4894,13 +4897,13 @@
         "管理我的電子郵件地址"
       ],
       "Mark as": [
-        "標記為"
+        "標示為"
       ],
       "Message password": [
         "郵件密碼"
       ],
       "Move to": [
-        "移動到"
+        "移至"
       ],
       "Name": [
         "名稱"
@@ -4939,7 +4942,7 @@
         "密碼提示"
       ],
       "Payer": [
-        "付款人"
+        ""
       ],
       "PGP scheme": [
         "PGP 方案"
@@ -4996,7 +4999,7 @@
         "請選擇您的國家"
       ],
       "Send auto-reply": [
-        "發送自動回覆"
+        "傳送自動回覆"
       ],
       "Sender": [
         "寄件者"
@@ -5023,16 +5026,16 @@
         "系統資訊"
       ],
       "The email was sent ${ attachment }": [
-        "電子郵件${ attachment }送出"
+        "電子郵件已傳送${ attachment }"
       ],
       "the email was sent ${ attachment }": [
         "電子郵件${ attachment }送出"
       ],
       "The email was sent ${ attachmentStrong }": [
-        "電子郵件${ attachmentStrong }送出"
+        "電子郵件已傳送${ attachmentStrong }"
       ],
       "the email was sent ${ label }": [
-        "電子郵件${ label }送出"
+        "電子郵件已送出${ label }"
       ],
       "Then": [
         "則"
@@ -5074,16 +5077,16 @@
         "發生了甚麼問題？"
       ],
       "With attachment": [
-        "連同附件"
+        "包含附件"
       ],
       "with attachments": [
-        "連同附件"
+        "包含附件"
       ],
       "Without attachment": [
         "不帶附件"
       ],
       "without attachment": [
-        "不帶附件"
+        "不包含附件"
       ],
       "without attachments": [
         "不帶附件"
@@ -5223,7 +5226,7 @@
         "標籤"
       ],
       "Learn more": [
-        "瞭解更多"
+        "了解更多"
       ],
       "Manage your folders": [
         "管理您的資料夾"
@@ -5289,7 +5292,7 @@
         "升級"
       ],
       "Upgrade account": [
-        "升級帳號"
+        "升級帳戶"
       ],
       "You need to activate your calendar keys to add this event": [
         "您需要先啟用您的行事曆金鑰，才可以新增此事件"
@@ -5767,12 +5770,12 @@
         "預設資料夾"
       ],
       "Move to...": [
-        "移動到..."
+        "移至..."
       ]
     },
     "Option group label": {
       "Create new calendar": [
-        "新增行事曆"
+        "建立行事曆"
       ],
       "Merge with calendar": [
         "與行事曆合併"
@@ -5806,7 +5809,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "有甚麼途徑可以聯絡您"
+        "您的聯絡方式"
       ],
       "Browser name": [
         "瀏覽器名稱"
@@ -5818,7 +5821,7 @@
         "確認密碼"
       ],
       "e.g. Julia Smith": [
-        "範例：衛梓祐"
+        "例如：Julia Smith"
       ],
       "E.g., ": [
         "範例："
@@ -5836,7 +5839,7 @@
         "填寫電話號碼及文字以測試您的連結"
       ],
       "Fill in the URL link and text to test your link": [
-        "填寫 URL 連結及文字以測試您的連結"
+        "填寫網址連結及文字以測試您的連結"
       ],
       "Filter folders": [
         "篩選資料夾"
@@ -5854,7 +5857,7 @@
         "提示"
       ],
       "Image URL": [
-        "影像網址"
+        "圖片網址"
       ],
       "Link": [
         "連結"
@@ -6054,7 +6057,7 @@
         "地址"
       ],
       "Email": [
-        "電郵"
+        "電子郵件"
       ],
       "Fax": [
         "傳真"
@@ -6500,7 +6503,7 @@
         "喜好設定已儲存"
       ],
       "Preferences saved": [
-        "喜好設定已儲存"
+        "偏好設定已儲存"
       ],
       "Public key trusted": [
         "公開金鑰已信任"

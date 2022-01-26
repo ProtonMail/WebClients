@@ -2285,6 +2285,12 @@
       "Invalid response": [
         ""
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
         "予期しないエラー"
       ],
@@ -2307,7 +2313,7 @@
         ""
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "回答は送信されましたが、イベントをカレンダーに反映できませんでした"
       ]
     },
     "Event title": {
@@ -3310,7 +3316,7 @@
         "ブラックフライデー 2020 の新規登録者向け割引が適用されました。"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "あなたがメッセージを閲覧したかどうか、いつ閲覧したかを送信者が確認できないようにします。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "FREEプランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
@@ -3643,7 +3649,7 @@
         "メールボックスのインポート"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        ""
+        "メール、カレンダー、連絡先を他のサービスから Proton にインポートできます。Proton では、データを移行し暗号化する手順を手順をわかりやすく解説します。プライバシーの世界へようこそ。"
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
         "重要: ダウンロードした秘密鍵を送信したり、安全でないメディアに保存したりすると、アカウントが危険にさらされる可能性があります。"
@@ -4215,16 +4221,19 @@
       "to continue to ${ toAppName }": [
         "サインイン後 ${ toAppName } を開きます"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+      "To decrypt and view your emails and other data, you need a recovery file.": [
         ""
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
         ""
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         ""
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        ""
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
         ""
       ],
       "To fight spam and abuse, please verify you are human.": [
@@ -4423,7 +4432,7 @@
         "アカウントにアクセスした IPや時刻を確認するために認証ログを有効にできます。アカウントへのログインの試みの失敗と共に、アクセス元IP アドレスと時刻が記録されます。"
       ],
       "You can import one data type at a time.": [
-        ""
+        "一回にインポートできるのは一種類のみです。"
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "@pm.me アドレスを使ってメッセージを受信できるようになりました。 有料プランにアップグレードすると、@pm.me アドレスを使用してメールを送信したり、追加の @pm.me アドレスを作成することもできます。"
@@ -6608,7 +6617,7 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        "プロキシ経由でコンテンツを読み込む (おすすめ)"
+        "プロキシ経由でコンテンツを読み込む (推奨)"
       ],
       "Load content via proxy and store as attachments": [
         ""
@@ -6991,7 +7000,7 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        ""
+        "プライバシーが保護される環境に、簡単かつ確実に移行する。"
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         ""
@@ -7686,7 +7695,7 @@
         "通貨"
       ],
       "Current and past imports": [
-        ""
+        "現在と過去のインポート"
       ],
       "Current plan": [
         "現在のプラン"
@@ -8208,7 +8217,7 @@
         "警告!"
       ],
       "What would you like to import?": [
-        ""
+        "何をインポートしたいですか？"
       ],
       "What's new": [
         "更新情報"

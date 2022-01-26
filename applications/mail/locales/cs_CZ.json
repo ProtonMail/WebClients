@@ -1844,8 +1844,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Přílohy"
+      "Attachment": [
+        "Příloha"
       ],
       "Filter on": [
         "Filtr zapnut"
@@ -2786,6 +2786,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Vaše odpověď byla odeslána, ale událost nemohla být přidána do Vašeho kalendáře"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Odpověď byla odeslána, ale událost nemohla být aktualizována ve vašem kalendáři"
       ]
     },
     "Event title": {
@@ -3616,9 +3619,9 @@
       ],
       "Day": [
         "Den",
-        "dny",
-        "dny",
-        "dny"
+        "Dny",
+        "Dny",
+        "Dnů"
       ],
       "Decrypt message": [
         "Dešifrovat zprávu"

@@ -1781,7 +1781,7 @@
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "因為 ${ appName } 是端到端加密的，所以我們沒有辦法為您解密或存取您的資料。為了在密碼重設後仍能解鎖您的雲端硬碟，您需要至少一個手段如下："
+        "由於${ appName } 是端到端加密的，因此我們無法為您解密或存取您的資料。為了確保密碼重設後您仍能解鎖雲端硬碟，您必須具備以下條件之一："
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "以每 2 年 ${ billedPrice } 扣帳"
@@ -2123,7 +2123,7 @@
         "支付受 TLS 加密及瑞士隱私法律保護。"
       ],
       "Permanently delete all files in your drive": [
-        "自雲端硬碟永久刪除所有檔案"
+        "永久刪除雲端硬碟中所有文件"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署加密的郵件。"
@@ -2279,7 +2279,7 @@
         "此連結將會永久停用。無人將可憑此連結存取您的資料夾。若要重新分享此資料夾，您將需要一個新的連結。"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "此操作將會刪除此連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
+        "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "這將會啟用 PayPal 以支付您的 Proton 訂閱。我們將會把您在新瀏覽器分頁中重新導向至 PayPal。如果您使用了任何彈出式視窗攔截程式，請停用以繼續。"
@@ -3056,7 +3056,7 @@
         "解鎖雲端硬碟（建議的）"
       ],
       "Unlock later": [
-        "稍後再解鎖"
+        "稍後解鎖"
       ],
       "Upload anyway": [
         "仍要上傳"
@@ -4442,7 +4442,7 @@
         "已準備好您的檔案，可供下載"
       ],
       "Your folder is ready to be downloaded": [
-        "您的文件夾已可被下載"
+        "資料夾已準備就緒，可供下載"
       ],
       "ZIP / postal code": [
         "郵編 / 郵政代碼"

@@ -130,7 +130,7 @@
         "Haz clic en \"Solicitar un nuevo código\" para recibir un nuevo código de verificación en ${ strong }. Si este número de teléfono es incorrecto, haz clic en \"Editar\" para corregirlo."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Introduzca el código de verificación que se envió a ${ destinationText }."
+        "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si estás teniendo problemas para crear tu cuenta, solicita una invitación y te responderemos en un día hábil."
@@ -139,7 +139,7 @@
         "Si no encuentra el correo electrónico en su bandeja de entrada, por favor, compruebe su carpeta de spam."
       ],
       "Internet connection lost.": [
-        "Sin conexión a Internet."
+        "Se ha perdido la conexión a Internet."
       ],
       "Loading": [
         "Cargando"
@@ -154,13 +154,13 @@
         "El tiempo de la sesión ha expirado."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para luchar contra el spam y el abuso, por favor verifica que eres humano."
+        "Para luchar contra el spam y el abuso, verifica que eres humano."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Le gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Tu correo electrónico sólo se utilizará para esta verificación única."
+        "Tu correo electrónico sólo se utilizará para esta verificación."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono sólo se utilizará para esta verificación única."
@@ -211,7 +211,7 @@
         "Código enviado a ${ methodTo }"
       ],
       "Verification successful": [
-        "Verificación exitosa"
+        "Verificación completada con éxito"
       ]
     },
     "Title": {
@@ -225,7 +225,7 @@
         ""
       ],
       "Sign in again to continue": [
-        "Inicia sesión otra vez para continuar"
+        "Inicia sesión de nuevo para continuar"
       ]
     },
     "Validation": {

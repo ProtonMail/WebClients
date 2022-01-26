@@ -113,9 +113,6 @@
       "Compose": [
         "撰寫郵件"
       ],
-      "Composer size": [
-        "撰寫器大寫"
-      ],
       "Confirm": [
         "確認"
       ],
@@ -179,6 +176,9 @@
       "Download": [
         "下載"
       ],
+      "Duplicate": [
+        "再製"
+      ],
       "Edit": [
         "編輯"
       ],
@@ -201,7 +201,7 @@
         "匯出"
       ],
       "Export contact group": [
-        ""
+        "匯出聯絡人群組"
       ],
       "Export contacts": [
         "匯出聯絡人"
@@ -1875,6 +1875,11 @@
         "刪除事件"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "再製活動"
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "編輯事件"
@@ -1904,13 +1909,13 @@
         "無效的回應"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "無法將活動新增至您的行事曆。未傳送答覆"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "無法更新您行事曆中的活動。未傳送答覆"
       ],
       "Unexpected error": [
-        "未預期的錯誤"
+        "預料之外的錯誤"
       ],
       "Unsupported invitation": [
         "邀請不受支援"
@@ -1929,6 +1934,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "您的回答已傳送，惟此事件無法新增到您的行事曆中"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "您的回答已傳送，惟此事件無法在您的行事曆中更新"
       ]
     },
     "Event popover close button": {

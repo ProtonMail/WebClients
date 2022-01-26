@@ -113,9 +113,6 @@
       "Compose": [
         "Levélírás"
       ],
-      "Composer size": [
-        "Szerkesztő mérete"
-      ],
       "Confirm": [
         "Jóváhagyás"
       ],
@@ -180,6 +177,9 @@
       ],
       "Download": [
         "Letöltés"
+      ],
+      "Duplicate": [
+        ""
       ],
       "Edit": [
         "Szerkesztés"
@@ -1899,6 +1899,11 @@
         "Esemény törlése"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        ""
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Esemény szerkesztése"
@@ -1935,7 +1940,7 @@
         ""
       ],
       "Unexpected error": [
-        "Váratlan hiba"
+        ""
       ],
       "Unsupported invitation": [
         "Nem támogatott meghívó"
@@ -1954,6 +1959,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event popover close button": {

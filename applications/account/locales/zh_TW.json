@@ -2285,8 +2285,14 @@
       "Invalid response": [
         "無效的回應"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "無法新增此活動到您的行事曆。未傳送回覆"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "無法更新您行事曆中的活動。未傳送回覆"
+      ],
       "Unexpected error": [
-        "未預期的錯誤"
+        "預料之外的錯誤"
       ],
       "Unsupported invitation": [
         "邀請不受支援"
@@ -3556,7 +3562,7 @@
         "產生新的復原短語並廢棄舊的。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "將公開金鑰給您的朋友們，或是在線上發佈，這樣每個人都可以向您寄送端到端加密電子郵件！"
+        "把公開金鑰給您的朋友們，或是發佈在網路上，這樣每個人都可以向您寄送端到端加密電子郵件！"
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
@@ -3571,7 +3577,7 @@
         "如果另一位系統管理員更改了此密碼，您將需要向其索取新的組織密碼。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "若系統時區與目前時區喜好設定不符，將詢問您是否更新 (最多每天一次)。"
+        "若系統時區與目前時區偏好設定不符，將詢問您是否更新 (最多每天一次)。"
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果此網域目前正在接收電子郵件，請選取 ${ boldAddresses } 分頁並新增所有作用中的電子郵件地址，然後再更動 MX 紀錄以確保平穩過渡。"
@@ -3646,7 +3652,7 @@
         "從其他服務匯入您的電子郵件、行事曆或聯絡人到 Proton。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
       ],
       "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "注意：下載您的私密金鑰並以不安全的媒體傳送或儲存它們將會危害您帳號的安全性！"
+        "注意：下載您的私密金鑰並以不安全的媒體傳送或儲存它們將會危害您的帳號安全！"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要：請確定您將復原代碼儲存到其他地方了。否則在您遺失您的兩步驟驗證裝置時，您也會永久失去對您的帳號的存取權。"
@@ -3700,7 +3706,7 @@
         "您的部份資料似乎已被加密並鎖定。這可能是因為最近或先前的密碼重設。我們建議您使用資料還原方法來解鎖您的資料。"
       ],
       "it’s imperative": [
-        "您需要有"
+        "您需要"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選取，我們就會處理餘下一切。"
@@ -3901,7 +3907,7 @@
         "支付受 TLS 加密及瑞士隱私法律保護。"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "若外寄郵件已經簽署，PGP 用戶端較大可能會自動偵測您的 PGP 金鑰。"
+        "若外寄郵件已被簽署，PGP 用戶端很可能會自動偵測您的 PGP 金鑰。"
       ],
       "Phone number": [
         "電話號碼"
@@ -4215,17 +4221,20 @@
       "to continue to ${ toAppName }": [
         "繼續使用 ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "為解密您的郵件與其他資料，需要救援檔案或是短語"
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "為解密您的郵件與其他資料，需要救援檔案"
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "為解密您的郵件與其他資料，需要救援短語或是檔案"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "為解密您的郵件與其他資料，需要救援短語"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "為了能在密碼重設後存取加密的資料，選擇帳戶復原方法。"
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "為確保能持續存取您的帳戶，設置一個帳戶復原方法"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用，請驗證您是真人。"

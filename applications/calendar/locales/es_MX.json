@@ -113,9 +113,6 @@
       "Compose": [
         "Redactar"
       ],
-      "Composer size": [
-        "Tamaño del compositor"
-      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -180,6 +177,9 @@
       ],
       "Download": [
         "Descargar"
+      ],
+      "Duplicate": [
+        "Duplicar"
       ],
       "Edit": [
         "Editar"
@@ -1899,6 +1899,11 @@
         "Eliminar evento"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "Duplicar evento"
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Editar evento"
@@ -1954,6 +1959,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Su respuesta fue enviada, pero el evento no pudo ser añadido a su calendario"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Su respuesta se envió, pero no se pudo actualizar el evento en su calendario"
       ]
     },
     "Event popover close button": {

@@ -2306,6 +2306,12 @@
       "Invalid response": [
         "Réponse non valide"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "L'événement ne peut pas être ajouté à votre calendrier. Aucune réponse n'a été envoyée"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "L'événement ne peut pas être mis à jour dans votre calendrier. Aucune réponse n'a été envoyée"
+      ],
       "Unexpected error": [
         "Erreur inattendue"
       ],
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "pour continuer vers ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'un fichier ou d'une phrase de récupération."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'un fichier de récupération."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Pour déchiffrer et afficher vos courriers électroniques et autres données, vous avez besoin d'une phrase ou d'un fichier de récupération."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'une phrase de récupération."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation de mot de passe, sélectionnez une méthode de récupération."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Pour garantir un accès continu à votre compte, configurez une méthode de récupération de compte"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."

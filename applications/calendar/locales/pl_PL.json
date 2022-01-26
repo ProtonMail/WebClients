@@ -113,9 +113,6 @@
       "Compose": [
         "Napisz"
       ],
-      "Composer size": [
-        "Rozmiar edytora"
-      ],
       "Confirm": [
         "Potwierdź"
       ],
@@ -184,6 +181,9 @@
       ],
       "Download": [
         "Pobierz"
+      ],
+      "Duplicate": [
+        "Duplikuj"
       ],
       "Edit": [
         "Edytuj"
@@ -1947,6 +1947,11 @@
         "Usuń wydarzenie"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "Duplikuj wydarzenie"
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Edytuj wydarzenie"
@@ -2004,6 +2009,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Twoja odpowiedź została wysłana, ale wydarzenie nie może zostać dodane do kalendarza"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Twoja odpowiedź została wysłana, ale wydarzenie nie może zostać zaktualizowane"
       ]
     },
     "Event popover close button": {
@@ -2224,7 +2232,7 @@
         "obecnie"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts nie obsługuje ${ forNow }:"
+        "ProtonContacts nie obsługuje ${ forNow }:"
       ]
     },
     "Import instructions emphasis": {
