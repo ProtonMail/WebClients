@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { c } from 'ttag';
 
-import { InputTwo, Button, BasicModal, Form } from '../../../components';
-import { useLoading } from '../../../hooks';
+import { BasicModal, InputTwo, Button, Form } from '../../../components';
+import { useLoading, useNotifications } from '../../../hooks';
 
 interface Props {
     decryptedPurpose: Nullable<string>;
@@ -15,9 +15,31 @@ interface Props {
 const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, isOpen }: Props) => {
     const [purpose, setPurpose] = useState(decryptedPurpose || '');
     const [isLoading, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
 
     const handleSubmit = async () => {
-        await onSubmit(purpose);
+        const text = (() => {
+            if (!decryptedPurpose && purpose) {
+                return c('Calendar link purpose update success message').t`Label added`;
+            }
+
+            if (decryptedPurpose && purpose) {
+                return c('Calendar link purpose update success message').t`Label edited`;
+            }
+
+            if (decryptedPurpose && !purpose) {
+                return c('Calendar link purpose update success message').t`Label deleted`;
+            }
+
+            return null;
+        })();
+
+        if (text) {
+            await onSubmit(purpose);
+
+            createNotification({ text });
+        }
+
         onClose();
     };
 
