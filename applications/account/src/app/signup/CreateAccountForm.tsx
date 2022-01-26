@@ -16,7 +16,7 @@ import {
     ChallengeError,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { queryCheckUsernameAvailability, queryVerificationCode } from '@proton/shared/lib/api/user';
+import { queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -39,7 +39,8 @@ interface Props {
     domains: string[];
     humanApi: HumanApi;
     hasChallenge?: boolean;
-    onSubmit: (args: ChallengeResult) => void;
+    onSubmit: (args: ChallengeResult) => Promise<void>;
+    loading?: boolean;
 }
 
 const CreateAccountForm = ({
@@ -50,12 +51,16 @@ const CreateAccountForm = ({
     hasExternalSignup,
     hasChallenge = true,
     domains,
+    loading: loadingDependencies,
 }: Props) => {
     const challengeRefLogin = useRef<ChallengeRef>();
     const [loading, withLoading] = useLoading();
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
     const [challengeError, setChallengeError] = useState(false);
     const [usernameError, setUsernameError] = useState('');
+    const [emailError, setEmailError] = useState('');
+
+    const isLoadingView = challengeLoading || loadingDependencies;
 
     const getOnChange = (field: keyof SignupModel) => (value: string) => onChange({ [field]: value });
 
@@ -79,19 +84,36 @@ const CreateAccountForm = ({
         }
     };
 
+    const handleSubmitEmail = async () => {
+        try {
+            await humanApi.api({
+                ...queryCheckEmailAvailability(email),
+                silence: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
+            });
+        } catch (error: any) {
+            // If the error was human verification required, the user cancelled the verification, and we short circuit it here
+            if (error.data?.Code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
+                throw error;
+            }
+            const errorText = getApiErrorMessage(error) || c('Error').t`Can't check username, try again later`;
+            setEmailError(errorText);
+            throw error;
+        }
+    };
+
     useEffect(() => {
         humanApi.clearToken();
     }, []);
 
     const run = async () => {
         if (signupType === 'email') {
-            await humanApi.api(queryVerificationCode('email', { Address: email }));
+            await handleSubmitEmail();
         } else {
             await handleSubmitUsername();
         }
 
         const payload = await challengeRefLogin.current?.getChallenge();
-        onSubmit(payload);
+        return onSubmit(payload);
     };
 
     const [availableDomain = ''] = domains;
@@ -110,12 +132,12 @@ const CreateAccountForm = ({
     const setConfirmPassword = getOnChange('confirmPassword');
 
     useEffect(() => {
-        if (challengeLoading) {
+        if (isLoadingView) {
             return;
         }
         // Special focus management for challenge
         challengeRefLogin.current?.focus(signupType === 'username' ? '#username' : '#email');
-    }, [signupType, challengeLoading]);
+    }, [signupType, isLoadingView]);
 
     const innerChallenge =
         signupType === 'username' ? (
@@ -145,12 +167,15 @@ const CreateAccountForm = ({
                 id="email"
                 bigger
                 label={c('Signup label').t`Email`}
-                error={validator(signupType === 'email' ? [requiredValidator(email), emailValidator(email)] : [])}
+                error={validator(signupType === 'email' ? [requiredValidator(email), emailValidator(email), emailError] : [])}
                 disableChange={loading}
                 autoFocus
                 type="email"
                 value={email}
-                onValue={setEmail}
+                onValue={(value: string) => {
+                    setEmailError('');
+                    setEmail(value);
+                }}
                 onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
                     if (e.key === 'Enter') {
                         handleSubmit();
@@ -165,14 +190,14 @@ const CreateAccountForm = ({
 
     return (
         <>
-            {challengeLoading && (
+            {isLoadingView && (
                 <div className="text-center">
                     <Loader />
                 </div>
             )}
             <form
                 name="accountForm"
-                className={challengeLoading ? 'hidden' : undefined}
+                className={isLoadingView ? 'hidden' : undefined}
                 onSubmit={(e) => {
                     e.preventDefault();
                     return handleSubmit();

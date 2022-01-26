@@ -1,9 +1,11 @@
-import genericBroadcast from '@proton/shared/lib/broadcast';
+import genericBroadcast, { GenericErrorPayload } from '@proton/shared/lib/broadcast';
 
 export enum MessageType {
     NOTIFICATION = 'NOTIFICATION',
     RESIZE = 'RESIZE',
     HUMAN_VERIFICATION_SUCCESS = 'HUMAN_VERIFICATION_SUCCESS',
+    CLOSE = 'CLOSE',
+    ERROR = 'ERROR',
     LOADED = 'LOADED',
 }
 
@@ -21,7 +23,14 @@ type Message =
           payload: { token: string; type: string };
       }
     | {
+          type: MessageType.CLOSE;
+      }
+    | {
           type: MessageType.LOADED;
+      }
+    | {
+          type: MessageType.ERROR;
+          payload: GenericErrorPayload;
       };
 
 const broadcast = (message: Message) => genericBroadcast(message);

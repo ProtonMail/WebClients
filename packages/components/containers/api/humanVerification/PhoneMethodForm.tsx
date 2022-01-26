@@ -2,8 +2,6 @@ import { KeyboardEvent, useState } from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Api } from '@proton/shared/lib/interfaces';
-import { validatePhone } from '@proton/shared/lib/api/core/validate';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Button, useFormErrors, PhoneInput, InputFieldTwo } from '../../../components';
 import { useLoading } from '../../../hooks';
@@ -16,10 +14,9 @@ interface Props {
     api: Api;
 }
 
-const PhoneMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry, isEmbedded }: Props) => {
+const PhoneMethodForm = ({ onSubmit, defaultPhone = '', defaultCountry, isEmbedded }: Props) => {
     const [phone, setPhone] = useState(defaultPhone);
     const [loading, withLoading] = useLoading();
-    const [phoneError, setPhoneError] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -27,14 +24,6 @@ const PhoneMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry, isE
         if (loading || !onFormSubmit()) {
             return;
         }
-
-        try {
-            await api(validatePhone(phone));
-        } catch (error: any) {
-            setPhoneError(getApiErrorMessage(error) || c('Error').t`Can't validate phone, try again later`);
-            throw error;
-        }
-
         await onSubmit(phone);
     };
 
@@ -46,13 +35,12 @@ const PhoneMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry, isE
                 embedded={isEmbedded}
                 bigger
                 label={c('Label').t`Phone number`}
-                error={validator([requiredValidator(phone), phoneError])}
+                error={validator([requiredValidator(phone)])}
                 disableChange={loading}
                 autoFocus
                 defaultCountry={defaultCountry}
                 value={phone}
                 onChange={(value: string) => {
-                    setPhoneError('');
                     setPhone(value);
                 }}
                 onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {

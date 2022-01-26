@@ -2,20 +2,22 @@ import { ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
+import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import {
     HumanVerificationForm,
     HumanVerificationSteps,
-    useInstance,
-    useTheme,
-    useApi,
-    useNotifications,
-    useLoading,
     StandardLoadErrorPage,
+    useApi,
+    useInstance,
+    useNotifications,
+    useTheme,
 } from '@proton/components';
 
 import broadcast, { MessageType } from './broadcast';
@@ -26,11 +28,16 @@ const locales = initLocales(require.context('../../locales', true, /.json$/, 'la
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
-const parseSearch = (search: string) => Object.fromEntries(new URLSearchParams(search).entries());
+const parseSearch = (search: string) =>
+    Object.fromEntries(
+        [...new URLSearchParams(search).entries()].map(([key, value]) => {
+            return key === 'methods' ? [key, value.split(',')] : [key, value];
+        })
+    );
 
 const Verify = () => {
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
-    const [loading, withLoading] = useLoading(true);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [, setTheme] = useTheme();
     const api = useApi();
@@ -43,6 +50,18 @@ const Verify = () => {
 
     const isEmbedded = windowIsEmbedded || embed;
 
+    const handleClose = () => {
+        broadcast({ type: MessageType.CLOSE });
+    };
+
+    const handleLoaded = () => {
+        broadcast({ type: MessageType.LOADED });
+    };
+
+    const handleError = (error: unknown) => {
+        broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
+    };
+
     useEffect(() => {
         if (theme) {
             setTheme(Number(theme));
@@ -52,9 +71,17 @@ const Verify = () => {
 
         const localeCode = getClosestLocaleMatch(locale || '', locales) || getClosestLocaleCode(browserLocale, locales);
 
-        withLoading(Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])).catch(
-            () => setError(true)
-        );
+        Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])
+            .then(() => {
+                setLoading(false);
+            })
+            .catch(() => {
+                setError(true);
+                setLoading(false);
+                handleError(createOfflineError({}));
+                // Also sends out a loaded message for clients that don't handle the error message to display the error screen.
+                handleLoaded();
+            });
 
         if (!isEmbedded) {
             document.body.classList.remove('embedded');
@@ -90,7 +117,7 @@ const Verify = () => {
     );
 
     const handleSubmit = async (token: string, type: HumanVerificationMethodType) => {
-        if (type !== 'captcha') {
+        if (type !== 'captcha' && type !== 'ownership-sms' && type !== 'ownership-email') {
             try {
                 await api({ ...queryCheckVerificationCode(token, type, 1), silence: true });
 
@@ -124,10 +151,6 @@ const Verify = () => {
         }
     };
 
-    const handleLoaded = () => {
-        broadcast({ type: MessageType.LOADED });
-    };
-
     const wrapInMain = (child: ReactNode) => (
         <main className="hv h100 ui-standard" ref={registerRootRef}>
             <div className="hv-container color-norm bg-norm relative no-scroll w100 max-w100 center mw30r">{child}</div>
@@ -152,10 +175,18 @@ const Verify = () => {
 
     const hv = (
         <HumanVerificationForm
+            theme={theme === ThemeTypes.Dark || theme === ThemeTypes.Monokai ? 'dark' : 'light'}
             step={step}
             onChangeStep={setStep}
             onSubmit={handleSubmit}
             onLoaded={handleLoaded}
+            onClose={handleClose}
+            onError={(e) => {
+                setError(true);
+                handleError(e);
+                // Also sends out a loaded message for clients that don't handle the error message to display the error screen.
+                handleLoaded();
+            }}
             methods={methods}
             token={token}
             defaultCountry={defaultCountry}

@@ -7,8 +7,8 @@ import { getUser } from '@proton/shared/lib/api/user';
 import { pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getRandomString } from '@proton/shared/lib/helpers/string';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 
 import PrivateApp from './content/PrivateApp';
 import MainContainer from './content/MainContainer';
@@ -65,9 +65,8 @@ const Setup = () => {
                 });
 
                 return;
-            } catch (e: any) {
-                const error = getApiError(e);
-                broadcast({ type: MessageType.ERROR, payload: { ...error } });
+            } catch (error: any) {
+                broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
             }
         };
 

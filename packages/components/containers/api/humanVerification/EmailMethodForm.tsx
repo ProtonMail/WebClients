@@ -2,9 +2,7 @@ import { KeyboardEvent, useState } from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Api } from '@proton/shared/lib/interfaces';
-import { validateEmail } from '@proton/shared/lib/api/core/validate';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { Button, useFormErrors, InputFieldTwo } from '../../../components';
 import { useLoading } from '../../../hooks';
@@ -15,10 +13,9 @@ interface Props {
     api: Api;
 }
 
-const EmailMethodForm = ({ api, onSubmit, defaultEmail = '' }: Props) => {
+const EmailMethodForm = ({ onSubmit, defaultEmail = '' }: Props) => {
     const [email, setEmail] = useState(defaultEmail);
     const [loading, withLoading] = useLoading();
-    const [emailError, setEmailError] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -26,14 +23,6 @@ const EmailMethodForm = ({ api, onSubmit, defaultEmail = '' }: Props) => {
         if (loading || !onFormSubmit()) {
             return;
         }
-
-        try {
-            await api(validateEmail(email));
-        } catch (error: any) {
-            setEmailError(getApiErrorMessage(error) || c('Error').t`Can't validate email, try again later`);
-            throw error;
-        }
-
         await onSubmit(email);
     };
 
@@ -43,13 +32,12 @@ const EmailMethodForm = ({ api, onSubmit, defaultEmail = '' }: Props) => {
                 id="email"
                 bigger
                 label={c('Label').t`Email address`}
-                error={validator([requiredValidator(email), emailError])}
+                error={validator([requiredValidator(email), emailValidator(email)])}
                 disableChange={loading}
                 autoFocus
                 type="email"
                 value={email}
                 onValue={(value: string) => {
-                    setEmailError('');
                     setEmail(value);
                 }}
                 onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
