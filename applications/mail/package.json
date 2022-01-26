@@ -20,7 +20,7 @@
         "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
-        "@babel/plugin-transform-runtime": "^7.16.8",
+        "@babel/plugin-transform-runtime": "^7.16.10",
         "@proton/components": "workspace:packages/components",
         "@proton/pack": "workspace:packages/pack",
         "@proton/polyfill": "workspace:packages/polyfill",
@@ -48,7 +48,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@testing-library/dom": "^8.11.2",
+        "@testing-library/dom": "^8.11.3",
         "@testing-library/jest-dom": "^5.16.1",
         "@testing-library/react": "^12.1.2",
         "@testing-library/react-hooks": "^7.0.2",
@@ -56,8 +56,8 @@
         "@types/history": "^4.7.11",
         "@types/jest": "^27.4.0",
         "@types/turndown": "^5.0.1",
-        "@typescript-eslint/eslint-plugin": "^5.10.0",
-        "@typescript-eslint/parser": "^5.10.0",
+        "@typescript-eslint/eslint-plugin": "^5.10.1",
+        "@typescript-eslint/parser": "^5.10.1",
         "babel-jest": "^27.4.6",
         "babel-plugin-transform-require-context": "^0.1.1",
         "eslint": "^8.7.0",
@@ -68,6 +68,6 @@
         "loud-rejection": "^2.2.0",
         "prettier": "^2.5.1",
         "redux-logger": "^3.0.6",
-        "typescript": "^4.5.4"
+        "typescript": "^4.5.5"
     }
 }
