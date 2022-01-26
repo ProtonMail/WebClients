@@ -1,3 +1,4 @@
+import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
 import { useCallback } from 'react';
 import { AddressesModel } from '@proton/shared/lib/models/addressesModel';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -5,7 +6,7 @@ import useApi from './useApi';
 import useCache from './useCache';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
-export const useGetAddresses = (): (() => Promise<Address[]>) => {
+export const useGetAddresses = (): GetAddresses => {
     const api = useApi();
     const cache = useCache();
     const miss = useCallback(() => AddressesModel.get(api), [api]);

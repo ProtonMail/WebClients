@@ -62,13 +62,13 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
 
     const handleCreateLink = async ({ accessLevel, calendarID }: { accessLevel: ACCESS_LEVEL; calendarID: string }) => {
         setIsLoadingCreate(true);
-        const { decryptedCalendarKeys, decryptedPassphrase, passphraseID } = await getCalendarInfo(calendarID);
-        const { publicKeys } = splitKeys(decryptedCalendarKeys);
+        const { calendarKeys, passphrase, passphraseID } = await getCalendarInfo(calendarID);
+        const { publicKeys } = splitKeys(calendarKeys);
 
         const { payload, passphraseKey, cacheKey } = await getCreatePublicLinkPayload({
             accessLevel,
             publicKeys,
-            decryptedPassphrase,
+            passphrase,
             passphraseID,
         });
 
@@ -158,8 +158,8 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
                         const { calendarID, urlID } = editLinkModalProps;
 
                         return tryLoadingAction(urlID, async () => {
-                            const { decryptedCalendarKeys } = await getCalendarInfo(calendarID);
-                            const { publicKeys } = splitKeys(decryptedCalendarKeys);
+                            const { calendarKeys } = await getCalendarInfo(calendarID);
+                            const { publicKeys } = splitKeys(calendarKeys);
                             const purpose = untrimmedPurpose.trim();
                             const encryptedPurpose = purpose
                                 ? await generateEncryptedPurpose({ purpose, publicKeys })

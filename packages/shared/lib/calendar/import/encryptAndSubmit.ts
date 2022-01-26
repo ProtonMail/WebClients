@@ -1,18 +1,19 @@
+import { syncMultipleEvents } from '../../api/calendars';
 import { HTTP_ERROR_CODES } from '../../errors';
 import {
     SyncMultipleApiResponses,
-    SyncMultipleApiResponse,
     DecryptedCalendarKey,
     ImportedEvent,
     VcalVeventComponent,
     EncryptedEvent,
+    SyncMultipleApiResponse,
 } from '../../interfaces/calendar';
 import { HOUR, SECOND } from '../../constants';
 import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
+import { DEFAULT_ATTENDEE_PERMISSIONS } from '../constants';
 import { getIsSuccessSyncApiResponse } from '../helper';
 import { getComponentIdentifier, splitErrors } from './import';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
-import { syncMultipleEvents } from '../../api/calendars';
 import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
 import getCreationKeys from '../integration/getCreationKeys';
 import { chunk } from '../../helpers/array';
@@ -32,7 +33,7 @@ const encryptEvent = async (
             eventComponent,
             isCreateEvent: true,
             isSwitchCalendar: false,
-            ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys })),
+            ...(await getCreationKeys({ newAddressKeys: addressKeys, newCalendarKeys: calendarKeys })),
         });
         if (!getHasSharedKeyPacket(data) || !getHasSharedEventContent(data)) {
             throw new Error('Missing shared data');
@@ -48,36 +49,32 @@ const submitEvents = async (
     calendarID: string,
     memberID: string,
     api: Api,
-    overwrite?: 0 | 1,
+    overwrite?: boolean,
     withJails?: boolean
-) => {
-    // prepare the events data in the way the API wants it
-    const Events = events.map(
-        (event): CreateCalendarEventSyncData => ({
-            Overwrite: overwrite,
-            Event: { Permissions: 1, ...event.data },
-        })
-    );
-    // submit the data
-    let responses: SyncMultipleApiResponses[];
+): Promise<SyncMultipleApiResponses[]> => {
     try {
+        const Events = events.map(
+            ({ data }): CreateCalendarEventSyncData => ({
+                Overwrite: overwrite ? 1 : 0,
+                Event: { Permissions: DEFAULT_ATTENDEE_PERMISSIONS, ...data },
+            })
+        );
         const { Responses } = await api<SyncMultipleApiResponse>({
             ...syncMultipleEvents(calendarID, { MemberID: memberID, IsImport: 1, Events }),
             timeout: HOUR,
             silence: true,
             ignoreHandler: withJails ? [HTTP_ERROR_CODES.TOO_MANY_REQUESTS] : undefined,
         });
-        responses = Responses;
+        return Responses;
     } catch (error: any) {
         if (withJails && error?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
             throw error;
         }
-        responses = events.map((event, index) => ({
+        return events.map((event, index) => ({
             Index: index,
             Response: { Code: 0, Error: `${error}` },
         }));
     }
-    return responses;
 };
 
 const processResponses = (responses: SyncMultipleApiResponses[], events: EncryptedEvent[]) => {
@@ -106,7 +103,7 @@ interface ProcessData {
     addressKeys: DecryptedKey[];
     calendarKeys: DecryptedCalendarKey[];
     api: Api;
-    overwrite?: 0 | 1;
+    overwrite?: boolean;
     signal?: AbortSignal;
     onProgress?: (encrypted: EncryptedEvent[], imported: EncryptedEvent[], errors: ImportEventError[]) => void;
 }
@@ -115,7 +112,7 @@ export const processInBatches = async ({
     events,
     calendarID,
     memberID,
-    overwrite = 1,
+    overwrite = true,
     addressKeys,
     calendarKeys,
     api,
@@ -186,7 +183,7 @@ export const processWithJails = async ({
     events,
     calendarID,
     memberID,
-    overwrite = 1,
+    overwrite = true,
     addressKeys,
     calendarKeys,
     api,

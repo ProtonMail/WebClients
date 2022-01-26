@@ -146,6 +146,8 @@ export const calendarEventBuilder = build<CalendarEventWithMetadata>('Event', {
             },
         ],
         CalendarKeyPacket: null,
+        AddressKeyPacket: null,
+        AddressID: null,
         CalendarEvents: [
             {
                 Type: 2,

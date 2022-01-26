@@ -5,7 +5,7 @@ import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
 import withVeventRruleWkst from '@proton/shared/lib/calendar/rruleWkst';
 import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
-import { getSharedEventIDAndSessionKey } from '@proton/shared/lib/calendar/veventHelper';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { noop } from '@proton/shared/lib/helpers/function';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -13,6 +13,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
@@ -23,6 +24,7 @@ import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
     InviteActions,
+    ReencryptInviteActionData,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -48,6 +50,7 @@ const getSaveSingleEventActionsHelper = async ({
     getCalendarKeys,
     onSaveConfirmation,
     sendIcs,
+    reencryptSharedEvent,
     onSendPrefsErrors,
     inviteActions,
     onDuplicateAttendees,
@@ -56,12 +59,16 @@ const getSaveSingleEventActionsHelper = async ({
     newEditEventData: EventNewData;
     oldEditEventData: EventOldData;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
-    sendIcs: (data: SendIcsActionData) => Promise<{
+    sendIcs: (
+        data: SendIcsActionData,
+        calendarID?: string
+    ) => Promise<{
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
         sendPreferencesMap: SimpleMap<SendPreferences>;
     }>;
+    reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     onSaveConfirmation: OnSaveConfirmationCb;
     onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
@@ -94,6 +101,7 @@ const getSaveSingleEventActionsHelper = async ({
         onSaveConfirmation,
         inviteActions: updatedInviteActions,
         sendIcs,
+        reencryptSharedEvent,
         onSendPrefsErrors,
         onDuplicateAttendees,
         handleSyncActions,
@@ -123,13 +131,18 @@ interface Arguments {
     getEventDecrypted: GetDecryptedEventCb;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getAddressKeys: GetAddressKeys;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
-    sendIcs: (data: SendIcsActionData) => Promise<{
+    sendIcs: (
+        data: SendIcsActionData,
+        calendarID?: string
+    ) => Promise<{
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
         sendPreferencesMap: SimpleMap<SendPreferences>;
     }>;
+    reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
@@ -146,8 +159,10 @@ const getSaveEventActions = async ({
     getEventDecrypted,
     getCalendarBootstrap,
     getCalendarKeys,
+    getAddressKeys,
     getCanonicalEmailsMap,
     sendIcs,
+    reencryptSharedEvent,
     onSendPrefsErrors,
     handleSyncActions,
 }: Arguments): Promise<{
@@ -232,6 +247,7 @@ const getSaveEventActions = async ({
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
+            reencryptSharedEvent,
             onDuplicateAttendees: handleDuplicateAttendees,
             onSendPrefsErrors,
             handleSyncActions,
@@ -258,12 +274,13 @@ const getSaveEventActions = async ({
         eventResult: eventReadResult.result,
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
-    const { sharedEventID, sharedSessionKey } = await getSharedEventIDAndSessionKey({
+    const sharedSessionKey = await getBase64SharedSessionKey({
         calendarEvent: oldEventData,
         getCalendarKeys,
+        getAddressKeys,
     });
-    if (sharedEventID && sharedSessionKey) {
-        inviteActionsWithSelfAddress.sharedEventID = sharedEventID;
+    if (sharedSessionKey) {
+        inviteActionsWithSelfAddress.sharedEventID = oldEventData.SharedEventID;
         inviteActionsWithSelfAddress.sharedSessionKey = sharedSessionKey;
     }
 
@@ -283,6 +300,7 @@ const getSaveEventActions = async ({
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
+            reencryptSharedEvent,
             inviteActions: inviteActionsWithSelfAddress,
             onDuplicateAttendees: handleDuplicateAttendees,
             onSendPrefsErrors,
@@ -301,6 +319,7 @@ const getSaveEventActions = async ({
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
+            reencryptSharedEvent,
             inviteActions: inviteActionsWithSelfAddress,
             onDuplicateAttendees: handleDuplicateAttendees,
             onSendPrefsErrors,
@@ -384,6 +403,7 @@ const getSaveEventActions = async ({
         inviteActions: updatedInviteActions,
         isInvitation,
         sendIcs,
+        reencryptSharedEvent,
         selfAttendeeToken,
     });
     const successText = getRecurringEventUpdatedText(saveType, saveInviteActions);
