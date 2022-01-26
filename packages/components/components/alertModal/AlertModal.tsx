@@ -10,7 +10,7 @@ const AlertModalTitle = ({ children }: { children: ReactNode }) => (
     </h3>
 );
 
-interface AlertModalProps extends Omit<ModalProps, 'children' | 'size'> {
+export interface AlertModalProps extends Omit<ModalProps, 'children' | 'size'> {
     title: string;
     subline?: string;
     buttons: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element];
