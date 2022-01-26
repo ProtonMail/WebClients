@@ -5,10 +5,10 @@ import Text from './Text';
 
 import { Alert, Href, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
-import { HumanVerificationSteps, OwnershipCache, VerificationModel } from './interface';
+
+import { CaptchaTheme, HumanVerificationSteps, OwnershipCache, VerificationModel } from './interface';
 import { getAvailableMethods } from './helper';
 import Captcha from './Captcha';
-
 import './HumanVerificationModal.scss';
 import OwnershipMethod from './OwnershipMethod';
 import CodeMethod from './CodeMethod';
@@ -26,6 +26,7 @@ interface Props {
     step: HumanVerificationSteps;
     isEmbedded?: boolean;
     onChangeStep: (step: HumanVerificationSteps) => void;
+    theme?: CaptchaTheme;
 }
 
 type SupportedHumanVerificationMethodType = keyof ReturnType<typeof getAvailableMethods>;
@@ -36,6 +37,7 @@ const HumanVerificationForm = ({
     defaultPhone,
     methods,
     token,
+    theme,
     onSubmit,
     onClose,
     onLoaded,
@@ -113,7 +115,7 @@ const HumanVerificationForm = ({
             content: (
                 <>
                     <Text>{c('Info').t`To fight spam and abuse, please verify you are human.`}</Text>
-                    <Captcha token={token} onSubmit={(token) => onSubmit(token, 'captcha')} />
+                    <Captcha theme={theme} token={token} onSubmit={(token) => onSubmit(token, 'captcha')} />
                 </>
             ),
         } as const,
