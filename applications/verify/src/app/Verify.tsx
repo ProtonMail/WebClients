@@ -27,7 +27,12 @@ const locales = initLocales(require.context('../../locales', true, /.json$/, 'la
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
-const parseSearch = (search: string) => Object.fromEntries(new URLSearchParams(search).entries());
+const parseSearch = (search: string) =>
+    Object.fromEntries(
+        [...new URLSearchParams(search).entries()].map(([key, value]) => {
+            return key === 'methods' ? [key, value.split(',')] : [key, value];
+        })
+    );
 
 const Verify = () => {
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
