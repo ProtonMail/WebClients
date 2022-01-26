@@ -17,7 +17,7 @@ const { OPENPGP_FILES } = require('./constants');
 
 const { logo, ...logoConfig } = require(path.resolve('./src/assets/logoConfig.js'));
 
-module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI }) => {
+module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, silent }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
         OPENPGP_FILES,
         publicPath,
@@ -31,16 +31,17 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
                   new ReactRefreshWebpackPlugin({
                       overlay: false,
                   }),
-                  new ESLintPlugin({
-                      extensions: ['js', 'ts', 'tsx'],
-                      eslintPath: require.resolve('eslint'),
-                      context: path.resolve('.'),
-                      // ESLint class options
-                      resolvePluginsRelativeTo: __dirname,
-                      cwd: path.resolve('.'),
-                      cache: true,
-                  }),
-                  new ForkTsCheckerWebpackPlugin({ async: true, formatter: 'basic' }),
+                  !silent &&
+                      new ESLintPlugin({
+                          extensions: ['js', 'ts', 'tsx'],
+                          eslintPath: require.resolve('eslint'),
+                          context: path.resolve('.'),
+                          // ESLint class options
+                          resolvePluginsRelativeTo: __dirname,
+                          cwd: path.resolve('.'),
+                          cache: true,
+                      }),
+                  !silent && new ForkTsCheckerWebpackPlugin({ async: true, formatter: 'basic' }),
               ]),
 
         new CopyWebpackPlugin({

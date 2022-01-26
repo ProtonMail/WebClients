@@ -26,6 +26,7 @@ const getConfig = (env) => {
             date: env.date,
             mode: env.appMode,
         },
+        silent: env.silent || false,
     };
 
     return {
