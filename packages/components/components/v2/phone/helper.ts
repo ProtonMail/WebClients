@@ -71,10 +71,16 @@ export const getCountryFromNumber = (value: string) => {
     if (result) {
         return result.country || getCountryFromCallingCode(result.countryCallingCode as string) || '';
     }
-    // @ts-ignore Types are wrong
-    const country = asYouType.getCountry?.() as CountryCode;
+    const country = asYouType.getCountry();
     if (country) {
         return country;
+    }
+    const callingCode = asYouType.getCallingCode();
+    if (callingCode) {
+        const country = getCountryFromCallingCode(callingCode);
+        if (country) {
+            return country;
+        }
     }
     if (!value.length) {
         return '';
@@ -82,7 +88,9 @@ export const getCountryFromNumber = (value: string) => {
     if (value[0] === '+') {
         const callingCode = value.slice(1);
         const country = getCountryFromCallingCode(callingCode);
-        return country || '';
+        if (country) {
+            return country;
+        }
     }
     return '';
 };
