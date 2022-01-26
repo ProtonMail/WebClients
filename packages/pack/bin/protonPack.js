@@ -44,12 +44,17 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         publicPath: options.publicPath === '/' ? undefined : options.publicPath,
         featureFlags: options.featureFlags,
         writeSri: options.sri ? undefined : options.sri,
+        silent: options.silent,
         ...buildData,
     };
     const extraWebpackArgs = env.args.join(' ');
     const webpackEnvArgs = Object.entries(envArgs)
         .filter(([, value]) => value !== undefined && value !== '')
         .reduce((acc, [key, value]) => {
+            if (typeof value === 'boolean') {
+                return `${acc} --env ${key}`;
+            }
+
             return `${acc} --env ${key}=${value.replace(/ /g, '\\ ')}`;
         }, '');
 
@@ -93,6 +98,7 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
         },
         getApi('')
     )
+    .option('--silent', 'disable error reporting')
     .action(async (options, env) => {
         console.log(chalk.magenta('Starting development server...\n'));
 
