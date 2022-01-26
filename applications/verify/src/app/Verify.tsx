@@ -9,14 +9,15 @@ import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import {
     HumanVerificationForm,
     HumanVerificationSteps,
-    useInstance,
-    useTheme,
-    useApi,
-    useNotifications,
     StandardLoadErrorPage,
+    useApi,
+    useInstance,
+    useNotifications,
+    useTheme,
 } from '@proton/components';
 
 import broadcast, { MessageType } from './broadcast';
@@ -174,6 +175,7 @@ const Verify = () => {
 
     const hv = (
         <HumanVerificationForm
+            theme={theme === ThemeTypes.Dark || theme === ThemeTypes.Monokai ? 'dark' : 'light'}
             step={step}
             onChangeStep={setStep}
             onSubmit={handleSubmit}
