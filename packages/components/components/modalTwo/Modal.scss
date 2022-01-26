@@ -3,7 +3,7 @@
 .modal-two {
 	position: fixed;
 	inset: 0;
-	z-index: calc(#{$layer-modals} + var(--z-position, 0));
+	z-index: $layer-modals;
 	display: flex;
 	padding: 3.5em;
 	overflow: hidden;
@@ -54,6 +54,10 @@
 		flex: 1 0 100%;
 		border-radius: 0;
 		max-width: unset;
+	}
+
+	&--is-behind-backdrop {
+		z-index: $layer-modals - 1;
 	}
 
 	@keyframes anime-modal-two-in {
