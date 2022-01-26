@@ -197,7 +197,7 @@
         "继续导入"
       ],
       "Continue with": [
-        ""
+        "切换到"
       ],
       "Continue with Google": [
         "使用 Google 账号继续"
@@ -665,13 +665,13 @@
         "再次登录方可继续"
       ],
       "Sign out": [
-        "退出"
+        "退出账户"
       ],
       "Sign out all accounts": [
         "退出所有账户"
       ],
       "Sign out from": [
-        ""
+        "退出"
       ],
       "Signing in": [
         "正在登录"
@@ -1755,7 +1755,7 @@
         "条件存在错误"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        ""
+        "未能获取已登录的账户，请${ refresh }或稍后再试。"
       ],
       "File has no contents to preview": [
         "文件没有内容可预览"
@@ -1833,7 +1833,7 @@
         "姓名是必填的"
       ],
       "No active sessions": [
-        "没有活跃的会话"
+        "没有已登录的账户"
       ],
       "No data to import": [
         "没有要导入的数据"
@@ -2285,8 +2285,14 @@
       "Invalid response": [
         "无效回复"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "该事件不能被添加到您的日历。没有已发送的结果"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "该事件无法在您的日历中更新。没有已发送的结果"
+      ],
       "Unexpected error": [
-        "意外错误"
+        "发生意外错误"
       ],
       "Unsupported invitation": [
         "不支持的邀请"
@@ -2307,7 +2313,7 @@
         "您的答案已发送，但事件无法添加到您的日历"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "您的答案已发送，但事件无法在您的日历中更新"
+        "您的回复已发送，但事件无法在您的日历中更新"
       ]
     },
     "Event title": {
@@ -4105,7 +4111,7 @@
         "开通 ${ professionalPlan } 可添加更多用户。"
       ],
       "Temporarily unavailable. Please check back later.": [
-        ""
+        "暂时不可用。请稍后再试。"
       ],
       "Test link": [
         "测试链接"
@@ -4215,17 +4221,20 @@
       "to continue to ${ toAppName }": [
         "即可使用 ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "要解密并查看您的邮件和其他数据，您需要提供恢复文件或恢复密语。"
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "要解密并查看您的邮件和其他数据，您需要提供恢复文件。"
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "要解密并查看您的邮件和其他数据，您需要提供恢复密语或恢复文件。"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "要解密并查看您的邮件和其他数据，您需要提供恢复密语。"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "要在密码重置之后解密并查看锁定的数据，请选择一种恢复方法。"
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "设置账户恢复方式可进一步保障您对账户的控制权"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用，请验证您是人类。"
@@ -4240,7 +4249,7 @@
         "若想提高上网安全性，请为您的设备安装 ProtonVPN 应用程序并连接到 ProtonVPN 服务器。"
       ],
       "To use ${ toAppName }, please create an address.": [
-        ""
+        "创建一个地址以使用${ toAppName }。"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "充值后即可使用余额升级账户或增添服务项目。余额与${ i18nCurrency }等额兑换。"
@@ -5161,10 +5170,10 @@
         "首选邮箱地址"
       ],
       "Default event duration": [
-        ""
+        "默认事件时长"
       ],
       "Default full day notifications": [
-        ""
+        "默认全天通知"
       ],
       "Default language": [
         "默认语言"
@@ -5173,7 +5182,7 @@
         "默认语言 (${ defaultLanguage })"
       ],
       "Default notifications": [
-        ""
+        "默认通知"
       ],
       "Default PGP scheme": [
         "默认 PGP 格式"
@@ -7058,7 +7067,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        ""
+        "未能更新设置"
       ]
     },
     "Settings/filters": {
@@ -7635,7 +7644,7 @@
         "结算"
       ],
       "Choose an account": [
-        "选择帐户"
+        "选择账户"
       ],
       "Clear": [
         "清除"

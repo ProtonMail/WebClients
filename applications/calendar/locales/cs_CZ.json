@@ -113,9 +113,6 @@
       "Compose": [
         "Nová zpráva"
       ],
-      "Composer size": [
-        "Velikost okna pro psaní zpráv"
-      ],
       "Confirm": [
         "Potvrdit"
       ],
@@ -184,6 +181,9 @@
       ],
       "Download": [
         "Stáhnout"
+      ],
+      "Duplicate": [
+        ""
       ],
       "Edit": [
         "Upravit"
@@ -1947,6 +1947,11 @@
         ""
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        ""
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         ""
@@ -2003,6 +2008,9 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },

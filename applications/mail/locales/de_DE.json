@@ -669,7 +669,7 @@
         "Verfeinere sie"
       ],
       "refresh the page": [
-        "Seite aktualisieren"
+        "aktualisiere die Seite"
       ],
       "Refresh the page": [
         "Seite aktualisieren"
@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Anhänge"
+      "Attachment": [
+        "Anhang"
       ],
       "Filter on": [
         "Filtern nach …"
@@ -2129,11 +2129,11 @@
         "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
       ],
       "Choose a date in the future.": [
-        "Wählen Sie ein zukünftiges Datum."
+        "Wähle ein Datum in derZukunft."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Wählen Sie ein Datum innerhalb des nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tages.",
-        "Wählen Sie ein Datum innerhalb der nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tage."
+        "Wähle ein Datum innerhalb des nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tages.",
+        "Wähle ein Datum innerhalb der nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tage."
       ],
       "Condition incomplete": [
         "Bedingung unvollständig"
@@ -2204,7 +2204,7 @@
         "Fehler beim Hochladen der Anhänge. Die Nachricht wurde nicht gesendet."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "Der Anhang konnte nicht verschlüsselt werden. Bitte versuchen Sie es erneut."
+        "Der Anhang konnte nicht verschlüsselt werden. Bitte versuche es erneut."
       ],
       "File has no contents to preview": [
         "Es gibt keine Dateiinhalte, für die eine Vorschau angezeigt werden kann"
@@ -2213,7 +2213,7 @@
         "Es gibt bereits einen Filter mit diesem Namen"
       ],
       "Folder name cannot be empty": [
-        "Bitte Namen des Ordners angeben"
+        "Name des Ordners muss angegeben werden"
       ],
       "Image upload failed": [
         "Hochladen des Bilds fehlgeschlagen"
@@ -2234,7 +2234,7 @@
         "Ungültiger Code"
       ],
       "Invalid expiration date": [
-        "Ungültiges Ablaufdatum"
+        "Ungültiges Verfallsdatum"
       ],
       "Invalid expiration time": [
         "Ungültiges Ablaufdatum"
@@ -2255,14 +2255,14 @@
         "Name der Kategorie muss angegeben werden"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden Proton-Kalender zusammenführen",
-        "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden Proton-Kalender zusammenführen"
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen",
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen"
       ],
       "Message needs to be sent first": [
         "Die Nachricht muss zuerst gesendet werden"
       ],
       "Message processing error.": [
-        "Fehler bei der Verarbeitung der Nachricht."
+        "Fehler beim Verarbeiten der Nachricht."
       ],
       "Missing signature": [
         "Fehlende Signatur"
@@ -2271,10 +2271,10 @@
         "Karteninhaber erforderlich"
       ],
       "Network error: Please check your connection and try again.": [
-        "Netzwerkfehler Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+        "Netzwerkfehler: Bitte überprüfe deine Internetverbindung und versuche es erneut."
       ],
       "No address with keys available to compose a message": [
-        "Keine Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar"
+        "Keine E-Mail-Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar"
       ],
       "No data to import": [
         "Keine zu importierenden Daten"
@@ -2306,7 +2306,7 @@
         "Einige Gruppen enthalten keine Kontakte: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        "Organisation nicht erkannt. Bitte versuchen Sie es erneut."
+        "Organisation nicht erkannt. Bitte versuche es erneut."
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
@@ -2324,7 +2324,7 @@
         "Bezahlvorgang nicht unterstützt"
       ],
       "Please activate your content search again": [
-        "Bitte aktivieren Sie Ihre Inhaltssuche erneut"
+        "Bitte aktiviere deine Inhalts-Suche erneut"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte beheben Sie den hervorgehobenen Konflikt, um fortfahren zu können.",
@@ -2343,16 +2343,16 @@
         "Die Einstellungen konnten nicht gespeichert werden"
       ],
       "Primary address key is not decrypted": [
-        "Der Schlüssel der primären Adresse ist nicht entschlüsselt"
+        "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
       ],
       "Primary address key is not decrypted.": [
-        "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
+        "Der Schlüssel der primären Adresse wird nicht entschlüsselt."
       ],
       "Process aborted": [
         "Prozess abgebrochen"
       ],
       "Public key could not be trusted": [
-        "Öffentlichem Schlüssel konnte nicht vertraut werden"
+        "Öffentlicher Schlüssel war nicht vertrauenswürdig"
       ],
       "re-activate the previous key": [
         "vorherigen Schlüssel erneut aktivieren"
@@ -2392,20 +2392,20 @@
         "Einige Ihrer Kategorienamen überschreiten die maximale Zeichenanzahl von ProtonMail. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn Ihnen diese Fehlermeldung weiterhin angezeigt wird, wenden Sie sich bitte an unser ${ supportTeam }."
+        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Leider konnte Proton Ihre Nachricht nicht entschlüsseln. Bitte prüfen Sie, ob alle Ihre Schlüssel aktiv sind."
+        "Leider konnte Proton deine Nachricht nicht entschlüsseln. Bitte prüfe, ob alle deine Schlüssel aktiv sind."
       ],
       "Tab closed": [
         "Tab geschlossen"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Der Anhang konnte nicht entschlüsselt werden.\nWenn Sie den entsprechenden privaten Schlüssel besitzen, können Sie die Datei trotzdem mit einem Programm wie GnuPG entschlüsseln.",
-        "Einige der Anhänge konnten nicht entschlüsselt werden.\nWenn Sie den entsprechenden privaten Schlüssel besitzen, können Sie die Dateien trotzdem mit einem Programm wie GnuPG entschlüsseln."
+        "Der Anhang konnte nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Datei trotzdem mit einem Programm wie GnuPG entschlüsseln.",
+        "Einige der Anhänge konnten nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Dateien trotzdem mit einem Programm wie GnuPG entschlüsseln."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
+        "Der von dir verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwende einen anderen Browser oder melde dich über einen Computer an."
       ],
       "The composer failed to load.": [
         "Das Verfassen-Fenster konnte nicht geladen werden."
@@ -2438,7 +2438,7 @@
         "Es gibt zu viele Ordner in Ihrem externen Konto. Bitte passen Sie den Import an, um einige Ordner zu löschen."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        "Es ist ein Problem mit der Suche nach Inhalten aufgetreten. Stattdessen wurde die Standardsuche verwendet."
+        "Es ist ein Problem mit der Inhalts-Suche aufgetreten. Stattdessen wurde die Standardsuche verwendet."
       ],
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der vCards der Kontakte"
@@ -2450,7 +2450,7 @@
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
       "This folder name is not available. Please choose a different name": [
-        "Dieser Ordnername ist nicht verfügbar. Bitte wählen Sie einen anderen Namen."
+        "Dieser Ordnername ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
       "This label name is not available. Please choose a different name": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wählen Sie einen anderen Namen"
@@ -2493,7 +2493,7 @@
         "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen"
       ],
       "You did not provide a file.": [
-        "Sie haben keine Datei angegeben."
+        "Du hast keine Datei angegeben."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -2505,7 +2505,7 @@
         "Ihre E-Mails konnten nicht entschlüsselt werden. Dies könnte auf das Zurücksetzen des Passworts zurückzuführen sein. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
-        "Ihr Import wird nicht verarbeitet."
+        "Dein Import wird nicht verarbeitet."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ihre Suche ergab zu viele Treffer. Schränken Sie Ihre Suche ein und versuchen Sie es erneut."
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Ihre Antwort wurde gesendet, aber das Ereignis konnte nicht in Ihren Kalender eingetragen werden."
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Deine Antwort wurde gesendet, der Termin konnte jedoch nicht in deinem Kalender aktualisiert werden."
       ]
     },
     "Event title": {
@@ -3164,17 +3167,17 @@
         "${ pureAttachmentsCount } Dateien angehängt"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } bei Ihrem Abonnement, durch den Wechsel zu ${ annualBilling }"
+        "${ save20 } bei deinem Abonnement, durch den Wechsel zu ${ annualBilling }"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } sowohl bei Mail und VPN, indem Sie ein Mail-Abonnement hinzufügen."
+        "${ saveExtra20 } sowohl bei Mail und VPN, indem du ein Mail-Abonnement hinzufügst."
       ],
       "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } sowohl bei VPN und Mail, indem Sie ein VPN-Abonnement hinzufügen."
+        "${ saveExtra20 } sowohl bei VPN und Mail, indem du ein VPN-Abonnement hinzufügst."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender"
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } Ordner ausgewählt",
@@ -3242,32 +3245,32 @@
         "${ bonusSpace } zusätzlicher Speicherplatz"
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit VPN zu verbinden)",
-        "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit VPN zu verbinden)"
+        "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
+        "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglichen es dir, weitere Geräte mit VPN zu verbinden)"
       ],
       "/month.": [
         "/Monat."
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
-        "20% Rabatt auf Ihr Abonnement mit Gutschein ${ code } eingelöst"
+        "20 % Rabatt auf dein Abonnement mit Gutschein ${ code } eingelöst"
       ],
       "30 days money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
       ],
       "A free and uncensored Internet should be available to all.": [
-        "Ein freies und unzensiertes Internet sollte für alle möglich sein."
+        "Ein freies und unzensiertes Internet sollte allen zur Verfügung stehen."
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Eine Wiederherstellungsphrase ist eine der sichersten Möglichkeiten, den Zugang zu Ihrem Konto zu schützen. Mit dieser können Sie auf Ihr Konto zugreifen und Ihre verschlüsselten Daten wiederherstellen, falls Sie Ihr Passwort einmal vergessen sollten."
+        "Eine Wiederherstellungsphrase ist eine der sichersten Möglichkeiten, den Zugang zu deinem Konto zu schützen. Mit dieser kannst du auf dein Konto zugreifen und deine verschlüsselten Daten wiederherstellen, falls du dein Passwort einmal vergessen solltest."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Eine Anfrage zum Abbestellen von dieser Mailingliste wird an den Absender des Newsletters gesendet und automatisch bearbeitet."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Greifen Sie auf gesperrte Inhalte wie soziale Medien, Nachrichten, Wikipedia, YouTube und viele andere zu, egal wo Sie sich aufhalten."
+        "Greife auf gesperrte Inhalte wie soziale Medien, Nachrichten, Wikipedia, YouTube und viele andere zu, egal wo du dich befindest."
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nutzen Sie Ihre Streaming-Dienste, wie ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, egal wo Sie sich aufhalten."
+        "Nutze deine Streaming-Dienste, wie ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, egal wo du dich befindest."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf das Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wenden Sie sich an Ihren Administrator."
@@ -3279,7 +3282,7 @@
         "Aktivierung wird durchgeführt"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
-        "Fügen Sie zusätzliche E-Mail-Adressen wie nutzer2@protonmail.com zu Ihrem Konto hinzu"
+        "Füge zusätzliche E-Mail-Adressen wie nutzer2@protonmail.com zu deinem Konto hinzu"
       ],
       "Add image URL": [
         "Bild-URL hinzufügen"
@@ -3288,10 +3291,10 @@
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
       ],
       "Addresses": [
-        "E-MailAdressen"
+        "E-Mail-Adressen"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Nachdem Sie Ihre Bitcoin-Zahlung getätigt haben, folgen Sie bitte den nachfolgenden Anweisungen zum Wechsel."
+        "Nachdem du deine Bitcoin-Zahlung getätigt hast, folge bitte den untenstehenden Anweisungen um das Upgrade vorzunehmen."
       ],
       "Align left": [
         "Linksbündig"
@@ -3320,7 +3323,7 @@
         "Alle Ihre Änderungen gehen dabei verloren."
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Ermöglicht es Ihnen, E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName } zu hosten, z. B. max.musterman@beispiel.de"
+        "Ermöglicht es dir, E-Mail-Adressen für deine eigene(n) Domain(s) unter ${ mailAppName } zu hosten, z. B. max.musterman@beispiel.de"
       ],
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag (${ amount }) unterschritten."
@@ -3374,22 +3377,22 @@
         "Standardnavigation sowie Standardaktionen bleiben auch dann verfügbar, wenn die Tastaturkürzel in den Einstellungen deaktiviert sind."
       ],
       "Billed as ${ billedPrice } every 2 years": [
-        "Abgerechnet mit ${ billedPrice } aller 2 Jahre"
+        "Abgerechnet mit ${ billedPrice } alle 2 Jahre"
       ],
       "Billed as ${ billedPrice } per year": [
         "Abgerechnet mit ${ billedPrice } pro Jahr"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Wird am Ende des aktuellen Abrechnungszyklus abgerechnet (wird erneuert am ${ renewalDate })"
+        "Wird am Ende des aktuellen Abrechnungszeitraums abgerechnet (Erneuerung am ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin-Transaktionen können einige Zeit in Anspruch nehmen, bis sie bestätigt werden (bis zu 24 Stunden). Sobald die Bestätigung erfolgt ist, werden wir Ihrem Konto Guthaben hinzufügen. Nach der Bestätigung der Transaktion können Sie Ihre Rechnung mit dem Guthaben begleichen."
+        "Bitcoin-Transaktionen können einige Zeit in Anspruch nehmen, bis sie bestätigt werden (bis zu 24 Stunden). Sobald die Bestätigung erfolgt ist, werden wir deinem Konto Guthaben hinzufügen. Nach der Bestätigung der Transaktion kannst du deine Rechnung mit dem Guthaben begleichen."
       ],
       "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 für Ihr Abonnement eingelöst"
+        "Black Friday 2018 für dein Abonnement eingelöst"
       ],
       "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 für Ihr Abonnement eingelöst"
+        "Black Friday 2019 für dein Abonnement eingelöst"
       ],
       "Black Friday 2020 newcomer discount has been applied": [
         "Black Friday 2020 Rabatt für Neukunden wurde eingelöst"
@@ -3398,7 +3401,7 @@
         "Nachrichteninhalt: "
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Durch den Wechsel auf das Free-Paket verlieren Sie diese Leistungen dauerhaft, auch wenn Sie in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigen."
+        "Durch den Wechsel auf das Free-Paket verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Sie können sich nicht mehr an Ihr Passwort erinnern? Wir können Ihnen helfen, die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, zu löschen und dabei den Alarm zu deaktivieren."
@@ -3490,11 +3493,11 @@
         "Suche nach Nachrichteninhalten deaktivieren"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        "Rabatt auf Ihr Abonnement mit Gutschein ${ code } eingelöst"
+        "Rabatt auf dein Abonnement mit Gutschein ${ code } eingelöst"
       ],
       "Do you want to download this attachment anyway?": [
-        "Möchten Sie diesen Anhang trotzdem herunterladen?",
-        "Möchten Sie diese Anhänge trotzdem herunterladen?"
+        "Möchtest du diesen Anhang trotzdem herunterladen?",
+        "Möchtest du diese Anhänge trotzdem herunterladen?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "Möchten Sie die Kontaktdaten erneut signieren und dabei den Schlüsseln mit den folgenden Fingerabdrücken vertrauen?"
@@ -3509,7 +3512,7 @@
         "Laden Sie unsere mobile App aus Ihrem bevorzugten App-Store herunter, um auch von unterwegs sicher zu kommunizieren."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Laden Sie noch heute diese großartige App herunter und nehmen Sie Ihre Privatsphäre überall hin mit."
+        "Lade noch heute diese großartige App herunter und nimm deine Privatsphäre überallhin mit."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
         "${ esProgress } von ${ totalProgressToShow } Nachrichten werden heruntergeladen …"
@@ -3533,7 +3536,7 @@
         "Zweitschlüssel aktualisiert"
       ],
       "Each additional connection can be assigned to users in your organization.": [
-        "Jede zusätzliche Verbindung kann Benutzern in Ihrer Organisation zugewiesen werden."
+        "Jede zusätzliche Verbindung kann Benutzern in deiner Organisation zugewiesen werden."
       ],
       "Email address": [
         "E-Mail-Adresse"
@@ -3556,10 +3559,10 @@
         "eingebettete Grafiken"
       ],
       "Encrypt for non-ProtonMail users": [
-        "Für Nutzer ohne ProtonMail-Konto verschlüsseln"
+        "Für Benutzer ohne ProtonMail-Konto verschlüsseln"
       ],
       "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Verschlüsselte Nachrichten an Empfänger ohne ProtonMail-Konto verfallen nach 28 Tagen, wenn kein kürzeres Verfallsdatum festgelegt wurde."
+        "Verschlüsselte Nachrichten an Nicht-ProtonMail-Empfänger verfallen nach 28 Tagen, es sei denn, es wurde eine kürzere Verfallszeit festgelegt."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Geben Sie den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -3578,10 +3581,10 @@
         "Verfallszeit"
       ],
       "Expiration Time": [
-        "Ablaufzeit"
+        "Verfallszeit"
       ],
       "Expired": [
-        "Ausgelaufen"
+        "Abgelaufen"
       ],
       "file attached": [
         "Datei angehängt",
@@ -3597,7 +3600,7 @@
         "Für Familien und kleine Teams. Beinhaltet sowohl Mail als auch VPN."
       ],
       "For getting started with private and secure emailing.": [
-        "Steigen Sie ein in das sichere Versenden und Empfangen von privaten E-Mails."
+        "Für den Einstieg in den privaten und sicheren E-Mail-Versand."
       ],
       "For increased security, activate 2FA.": [
         "Für erhöhte Sicherheit aktivieren Sie die Zwei-Faktor-Authentifizierung."
@@ -3612,7 +3615,7 @@
         "Für Organisationen, die eine sichere Geschäftskommunikation benötigen."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Bei Visa und MasterCard — die 3-stellige Sicherheitsnummer auf der Rückseite Ihrer Karte. Bei American Express — die 4-stellige Sicherheitsnummer auf der Vorderseite Ihrer Karte."
+        "Bei Visa und MasterCard — die 3-stellige Sicherheitsnummer auf der Rückseite deiner Karte. Bei American Express — die 4-stellige Sicherheitsnummer auf der Vorderseite deiner Karte."
       ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
@@ -3650,7 +3653,7 @@
         "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
       ],
       "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.": [
-        "Wenn du diese Nachricht an einen Nicht-ProtonMail-Nutzer sendest, stelle bitte sicher, dass du ein Passwort für deine Nachricht festlegst."
+        "Wenn du diese Nachricht an einen Nicht-ProtonMail-Benutzer sendest, stelle bitte sicher, dass du ein Passwort für deine Nachricht festlegst."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
@@ -3675,7 +3678,7 @@
         "Importieren aus"
       ],
       "Import in progress": [
-        "Datenimport wird ausgeführt"
+        "Datenimport im Gange"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Ihrer Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
@@ -3756,7 +3759,7 @@
         "Zusammengeführt"
       ],
       "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
-        "Das Verfallen/Ablaufen von Nachrichten funktioniert unmittelbar und sofort, wenn Nachrichten an andere ProtonMail-Benutzer gesendet werden. Um verfallende E-Mails an Nicht-ProtonMail-Benutzer zu senden, widerrufen Sie bitte Ihre Nachricht und fügen Sie einen Passwortschutz hinzu."
+        "Das Verfallen/Ablaufen von Nachrichten funktioniert unmittelbar und sofort, wenn Nachrichten an andere ProtonMail-Benutzer gesendet werden. Um verfallende E-Mails an Nicht-ProtonMail-Benutzer zu senden, widerrufe bitte deine Nachricht und füge einen Passwortschutz hinzu."
       ],
       "Message headers": [
         "Kopfzeilen der Nachricht"
@@ -3873,7 +3876,7 @@
         "Bitte mindestens einen Empfänger angeben."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Bitte bewahren Sie sie sicher auf. Sie benötigen sie, um auf Ihr Konto zuzugreifen und Ihre Daten zu entschlüsseln, falls Sie Ihr Passwort zurücksetzen müssen."
+        "Bitte bewahre sie sicher auf. Du benötigst sie, um auf dein Konto zuzugreifen und deine Daten zu entschlüsseln, falls du dein Passwort zurücksetzen musst."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bitte beachte, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
@@ -3882,7 +3885,7 @@
         "Bitte beachten Sie, dass dieser Vorgang (je nach Größe Ihres Adressbuchs) einige Zeit dauern kann."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleibt."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf deinem Konto noch ${ creditsRemaining } Guthaben verbleiben."
       ],
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
@@ -3891,19 +3894,19 @@
         "Bitte wähle die Art des einzufügenden Links aus und fülle alle Felder aus."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank."
+        "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an deine Bank."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an PayPal, um Hilfe zu erhalten."
+        "Bitte versuche es erneut, verwende eine andere Zahlungsmethode oder wende dich an PayPal, um Hilfe zu erhalten."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Bitte überprüfen Sie die Zahlung im neu geöffneten Tab."
+        "Bitte überprüfe die Zahlung im neu geöffneten Tab."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Bitte überprüfen Sie die Karte im neu geöffneten Tab."
+        "Bitte überprüfe die Karte im neu geöffneten Tab."
       ],
       "Please verify the payment in the new tab.": [
-        "Bitte bestätigen Sie die Zahlung in neu geöffneten Tab."
+        "Bitte bestätige die Zahlung in neu geöffneten Tab."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
@@ -3961,7 +3964,7 @@
         "20% sparen"
       ],
       "Save extra 20%": [
-        "Sparen Sie weitere 20%"
+        "Spare weitere 20 %"
       ],
       "Saved ${ dateString }": [
         "Gespeichert ${ dateString }"
@@ -3979,7 +3982,7 @@
         "Geplant"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Das geplante Versenden dieser Nachricht wurde widerrufen."
+        "Der geplante Versand dieser Nachricht wird widerrufen."
       ],
       "Scheduling message...": [
         "Nachricht wird geplant …"
@@ -4006,7 +4009,7 @@
         "Nachricht wird gesendet …"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Ihre Nachricht wird von Ihrer Standardadresse „${ email }” gesendet."
+        "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }” gesendet."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuchen Sie es in ein paar Minuten erneut"
@@ -4027,7 +4030,7 @@
         "Originalnachricht anzeigen"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Da Sie zu den Stammkunden gehören, wurden für Ihr Konto zusätzliche Funktionen aktiviert."
+        "Da du zu den Stammkunden gehörst, wurden für dein Konto zusätzliche Funktionen aktiviert."
       ],
       "Sorry, this message does not exist or has already expired": [
         "Entschuldige, diese Nachricht existiert nicht oder ist bereits abgelaufen"
@@ -4060,10 +4063,10 @@
         "Support-Team"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "Wechseln Sie zu ${ professionalPlan }, um weitere Verbindungen hinzufügen zu können."
+        "Wechsle zu ${ professionalPlan }, um weitere Verbindungen hinzuzufügen."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "Wechseln Sie zu ${ professionalPlan }, um weitere Benutzer hinzufügen zu können."
+        "Wechsle zu ${ professionalPlan }, um weitere Benutzer hinzuzufügen."
       ],
       "Test link": [
         "Link testen"
@@ -4075,7 +4078,7 @@
         "Anzuzeigender Text"
       ],
       "Thank you for supporting our mission.": [
-        "Vielen Dank für Ihre Unterstützung zu diesem Projekt."
+        "Vielen Dank für deine Unterstützung bei unserem Projekt."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
@@ -4084,7 +4087,7 @@
         "Die in den Entwurf eingegebenen Daten werden möglicherweise nicht gespeichert, wenn Sie die Seite verlassen."
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
-        "Die ursprüngliche Nachricht, die Sie weiterleiten/beantworten möchten, wird gegenwärtig gesendet. Wenn Sie fortfahren, können Sie das Senden der ursprünglichen Nachricht nicht mehr widerrufen."
+        "Die ursprüngliche Nachricht, die du weiterleiten/beantworten möchtest, wird gerade gesendet. Wenn du fortfährst, kann das Senden der Originalnachricht nicht mehr widerrufen werden."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
         "Der ursprüngliche Absender dieser Nachricht ist nicht mehr gültig. Deine Nachricht wird von deiner Standardadresse ${ defaultAddress.Email } gesendet."
@@ -4093,11 +4096,11 @@
         "Der Absender hat eine Lesebestätigung angefordert."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Die Überprüfung von ${ contactName } ist fehlgeschlagen: der Kontakt wurde nicht korrekt signiert.\nDies könnte das Ergebnis einer Passwortzurücksetzung sein.\nSie müssen den Kontakt erneut signieren, um eine Nachricht an ${ contactAddress } senden oder den Kontakt bearbeiten zu können."
+        "Die Überprüfung von ${ contactName } ist fehlgeschlagen: der Kontakt wurde nicht korrekt signiert.\nDies könnte das Ergebnis einer Passwortzurücksetzung sein.\nDu musst den Kontakt erneut signieren, um eine Nachricht an ${ contactAddress } zu senden oder den Kontakt zu bearbeiten."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: der Kontakt wurde nicht richtig signiert.\nDies könnte das Ergebnis einer Passwortzurücksetzung sein.\nSie müssen den Kontakt erneut signieren, um eine Nachricht an ${ contactAddresses } senden oder den Kontakt bearbeiten zu können.",
-        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: die Kontakte wurde nicht richtig signiert.\nDies könnte das Ergebnis einer Passwortzurücksetzung sein.\nSie müssen den Kontakte erneut signieren, um eine Nachricht an ${ contactAddresses } senden oder den Kontakt bearbeiten zu können."
+        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: der Kontakt wurde nicht korrekt signiert.\nDies könnte das Ergebnis einer Passwortzurücksetzung sein.\nDu musst den Kontakt erneut signieren, um eine Nachricht an ${ contactAddresses } zu senden oder den Kontakt zu bearbeiten.",
+        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: die Kontakte wurden nicht korrekt signiert.\nDies könnte das Ergebnis einer Passwortzurücksetzung sein.\nDu musst die Kontakte erneut signieren, um eine Nachricht an ${ contactAddresses } zu senden oder die Kontakte zu bearbeiten."
       ],
       "Themes can give your inbox a new look.": [
         "Farbschemen können Ihrem Posteingang ein neues Aussehen verleihen."
@@ -4193,7 +4196,7 @@
         "Dem öffentlichen Schlüssel dieses Absenders wurde noch nicht vertraut."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dadurch kann PayPal zur Bezahlung Ihres Proton-Abonnements verwendet werden. Sie werden in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, bevor Sie fortfahren."
+        "Dadurch kann PayPal zur Bezahlung deines Proton-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Popup-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
@@ -4214,7 +4217,7 @@
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Es befinden sich zu viele Nachrichten für den Versand in der Warteschlange. Bitte warten Sie, bis eine andere Nachricht gesendet wurde, um diese Nachricht planen zu können."
+        "Es befinden sich zu viele Nachrichten für den Versand in der Warteschlange. Bitte warte, bis eine andere Nachricht gesendet wurde, um diese Nachricht planen zu können."
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Deaktiviert die Inhaltssuche. Der Aktivierungsfortschritt geht nicht verloren."
@@ -4283,10 +4286,10 @@
         "Die Überprüfung kann einige Minuten dauern."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "Bei der Überprüfung wird ein neuer Tab geöffnet. Bitte deaktivieren Sie alle Popup-Blocker."
+        "Bei der Überprüfung wird ein neuer Tab geöffnet. Bitte deaktiviere alle Popup-Blocker."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Die Überprüfung öffnet einen neuen Tab — bitte deaktivieren Sie daher alle Popup-Blocker. Ihr Konto wird nicht belastet. Jeder Betrag, der zur Überprüfung der Karte verwendet wird, wird sofort zurückerstattet."
+        "Die Überprüfung öffnet einen neuen Tab — bitte deaktiviere daher alle Popup-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Überprüfung der Karte verwendet wurde, wird sofort zurückerstattet."
       ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
@@ -4304,10 +4307,10 @@
         "Die vertrauenswürdigen Schlüssel des Absenders konnten nicht verifiziert werden."
       ],
       "We use 3-D Secure to protect your payments.": [
-        "Wir verwenden 3D-Sicherheitsüberprüfung zum Schutz Ihrer Zahlungen."
+        "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Sie werden in einem neuen Browser-Tab zu PayPal weitergeleitet, um diese Zahlung abzuschließen. Wenn Sie einen Popup-Blocker verwenden, deaktivieren Sie diesen bitte, um fortzufahren."
+        "Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet, um diese Zahlung abzuschließen. Wenn du einen Popup-Blocker verwendest, deaktiviere diesen bitte, um fortzufahren."
       ],
       "We'll notify you when the import is done.": [
         "Sie werden benachrichtigt, sobald der Datenimport abgeschlossen ist."
@@ -4389,22 +4392,22 @@
         "Sie haben **${ count } Nachrichten** zu dieser Kategorie hinzugefügt"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Sie haben in Ihrer E-Mail keinen Betreff angegeben. Möchten Sie die Nachricht trotzdem versenden?"
+        "Du hast in deiner E-Mail keinen Betreff angegeben. Möchtest du die Nachricht trotzdem versenden?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Sie haben Ihren Speicherplatz zu 100% aufgebraucht. Erwägen Sie, Speicherplatz freizugeben oder Ihr Konto mit zusätzlichem Speicherplatz zu erweitern, um neue Nachrichten verfassen zu können."
+        "Du hast deinen Speicherplatz zu 100 % aufgebraucht. Gib Speicherplatz frei oder füge deinem Konto zusätzlichen Speicherplatz hinzu, um neue Nachrichten verfassen zu können."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Du hast die maximale Anzahl von 5 Antworten erreicht."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
+        "Deinem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Es muss eine Kreditkarte oder ein Bankkonto mit Ihrem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicken Sie bitte auf die nachfolgende Schaltfläche."
+        "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicke bitte auf die nachfolgende Schaltfläche."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Sie müssen alle hinzugefügten persönlichen Kalender und alle Verknüpfungen zu freigegebenen Kalendern entfernen, bevor Sie Ihr Abonnement kündigen können. ${ linkButton }"
+        "Du musst alle hinzugefügten persönlichen Kalender und alle Verknüpfungen zu freigegebenen Kalendern entfernen, bevor du dein Abonnement kündigen kannst. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Sie haben ${ spaceDisplayed }% Ihrer Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
@@ -4429,10 +4432,10 @@
         "Sie haben **${ count } Nachrichten** mit dieser Kategorie ausgewählt"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
-        "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu bestätigen."
+        "Du wirst in Kürze zu deiner Bank weitergeleitet, um deine Zahlung zu bestätigen."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Sie werden in Kürze zur Überprüfung Ihrer Zahlung an PayPal weitergeleitet."
+        "Du wirst in Kürze zur Überprüfung deiner Zahlung an PayPal weitergeleitet."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ihre Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }”, es wurde jedoch kein Anhang hinzugefügt. Möchten Sie Ihre Nachricht trotzdem senden?"
@@ -4444,13 +4447,13 @@
         "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ihr Konto wird umgestellt, dies kann bis zu 30 Sekunden dauern."
+        "Dein Konto wird aktualisiert, dies kann bis zu 30 Sekunden dauern."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Ihr Konto wird umgestellt, sobald die Zahlung abgeschlossen ist."
+        "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
-        "Ihre Bank erfordert aus Sicherheitsgründen eine 3D-Sicherheitsüberprüfung."
+        "Deine Bank benötigt aus Sicherheitsgründen eine „3-D Secure”-Bestätigung."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ihre Daten von ${ importedEmailAddressStrong } können nun in Ihr Proton-Konto übertragen werden."
@@ -4465,10 +4468,10 @@
         "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiterhin nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
       ],
       "Your recovery phrase": [
-        "Ihre Wiederherstellungsphrase"
+        "Deine Wiederherstellungsphrase"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Ihre Wiederherstellungsphrase besteht aus einer Reihe von 12 Wörtern in einer bestimmten Reihenfolge."
+        "Deine Wiederherstellungsphrase besteht aus einer Reihe von 12 Wörtern in einer bestimmten Reihenfolge."
       ]
     },
     "info": {
@@ -6761,7 +6764,7 @@
         "${ emailsCount } Mitglieder"
       ],
       "3-D Secure verification failed": [
-        "3D-Sicherheitsprüfung fehlgeschlagen"
+        "„3-D Secure”-Bestätigung fehlgeschlagen"
       ],
       "Account suspended": [
         "Konto gesperrt"
@@ -7339,7 +7342,7 @@
         "Die Mehrbenutzerunterstützung ist nur für Abonnements mit 2 oder mehr Benutzern verfügbar"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield schützt Ihr Gerät und beschleunigt Ihr Surfen durch das Sperren von Werbung, Trackern und Schadsoftware."
+        "NetShield schützt dein Gerät und beschleunigt dein Surfen durch das Sperren von Werbung, Trackern und Schadsoftware."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."

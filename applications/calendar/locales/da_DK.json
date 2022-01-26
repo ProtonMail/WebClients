@@ -113,9 +113,6 @@
       "Compose": [
         "Skriv"
       ],
-      "Composer size": [
-        "Skrivevinduestørrelse"
-      ],
       "Confirm": [
         "Bekræft"
       ],
@@ -181,6 +178,9 @@
       "Download": [
         "Download"
       ],
+      "Duplicate": [
+        "Dupliker"
+      ],
       "Edit": [
         "Redigér"
       ],
@@ -203,7 +203,7 @@
         "Exportér"
       ],
       "Export contact group": [
-        ""
+        "Eksporter kontaktgruppe"
       ],
       "Export contacts": [
         "Eksportér kontakter"
@@ -479,7 +479,7 @@
         "Prøv en anden metode"
       ],
       "Unlock data": [
-        ""
+        "Lås op for data"
       ],
       "Unmark for deletion": [
         "Afmarkér fra sletning"
@@ -1899,6 +1899,11 @@
         "Slet begivenhed"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "Dupliker begivenhed"
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Redigér begivenhed"
@@ -1929,10 +1934,10 @@
         "Ugyldigt svar"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Begivenheden kunne ikke tilføjes til din kalender. Der blev ikke sendt noget svar"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Begivenheden kunne ikke opdateres i din kalender. Der blev ikke sendt noget svar"
       ],
       "Unexpected error": [
         "Uventet fejl"
@@ -1954,6 +1959,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Dit svar blev sendt, men begivenheden kunne ikke tilføjes til din kalender"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Dit svar blev sendt, men begivenheden kunne ikke opdateres i din kalender"
       ]
     },
     "Event popover close button": {
@@ -3304,16 +3312,16 @@
         "Dato og tid"
       ],
       "Default email address": [
-        ""
+        "Standard e-mailadresse"
       ],
       "Default event duration": [
-        ""
+        "Standardvarighed for begivenheder"
       ],
       "Default full day notifications": [
-        ""
+        "Standard heldagsnotifikationer"
       ],
       "Default notifications": [
-        ""
+        "Standardnotifikationer"
       ],
       "Description": [
         "Beskrivelse"
@@ -4510,7 +4518,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        ""
+        "Kunne ikke opdatere indstillinger"
       ]
     },
     "Sidebar calendar edit tooltip": {

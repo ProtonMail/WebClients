@@ -494,7 +494,7 @@
         "Iniciar configuração"
       ],
       "Stay": [
-        ""
+        "Permanecer"
       ],
       "Stop sharing": [
         "Parar compartilhamento"
@@ -1637,8 +1637,8 @@
         "${ calendarsToBeMergedCount } calendários mesclados"
       ],
       "${ canceledCount } canceled": [
-        "",
-        ""
+        "${ canceledCount } cancelado",
+        "${ canceledCount } cancelados"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
@@ -1669,8 +1669,8 @@
         "${ doneDownloadsCount } baixados"
       ],
       "${ doneUploadsCount } uploaded": [
-        "",
-        ""
+        "${ doneUploadsCount } enviado",
+        "${ doneUploadsCount } enviados"
       ],
       "${ errorCount } failed": [
         "${ errorCount } falhou",
@@ -1698,8 +1698,8 @@
         "${ numContacts } contatos"
       ],
       "${ pausedCount } paused": [
-        "",
-        ""
+        "${ pausedCount } pausado",
+        "${ pausedCount } pausados"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na sua assinatura mudando para o ${ annualBilling }"
@@ -1882,7 +1882,7 @@
         "Conexões"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        ""
+        "Continue usando ${ appName } e desbloqueie o drive depois"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Criar ${ calendarsToBeCreated } novo calendário",
@@ -1919,8 +1919,8 @@
         "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim como os formatos vCard 3.1 e 4.0 (encode UTF-8)."
       ],
       "Delete drive": [
-        "",
-        ""
+        "Excluir drive",
+        "Excluir drives"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto em sua assinatura com o cupom ${ code }"
@@ -2152,7 +2152,7 @@
         "de"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        ""
+        "Um dos seus drives criptografados está bloqueado. Isso provavelmente se deve a uma recente redefinição de senha.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ProtonMail."
@@ -2370,7 +2370,7 @@
         "Lixeira"
       ],
       "Unlock drive to recover files": [
-        ""
+        "Desbloquear drive para recuperar arquivos"
       ],
       "Unsupported file": [
         "Arquivo não suportado"
@@ -2856,7 +2856,7 @@
         "País"
       ],
       "Created": [
-        ""
+        "Criado"
       ],
       "CVV code": [
         "Código CVV"
@@ -3082,7 +3082,7 @@
         "Texto"
       ],
       "This will permanently delete all files in your locked drive.": [
-        ""
+        "Isso irá excluir permanentemente todos os arquivos em sua unidade bloqueada."
       ],
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
@@ -3106,10 +3106,10 @@
         "Desbloquear drive"
       ],
       "Unlock drive (recommended)": [
-        ""
+        "Desbloquear drive (recomendado)"
       ],
       "Unlock later": [
-        ""
+        "Desbloquear depois"
       ],
       "Upload anyway": [
         "Enviar assim mesmo"
@@ -3118,7 +3118,7 @@
         "Carregar imagem"
       ],
       "Uploaded": [
-        ""
+        "Enviado"
       ],
       "Username or ProtonMail address": [
         "Nome de usuário ou endereço do ProtonMail"
@@ -3504,7 +3504,7 @@
         "O arquivo ou pasta \"${ filename }\" já está sendo enviado"
       ],
       "File or folder is missing a name": [
-        ""
+        "Arquivo ou pasta sem nome"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Mover ${ itemsToMoveCount } arquivo",
@@ -4038,7 +4038,7 @@
         "Tamanho"
       ],
       "Uploaded": [
-        ""
+        "Enviado"
       ],
       "Values": [
         "Valores"

@@ -113,9 +113,6 @@
       "Compose": [
         "Componi"
       ],
-      "Composer size": [
-        "Dimensione compositore"
-      ],
       "Confirm": [
         "Conferma"
       ],
@@ -180,6 +177,9 @@
       ],
       "Download": [
         "Scarica"
+      ],
+      "Duplicate": [
+        "Duplica"
       ],
       "Edit": [
         "Modifica"
@@ -1899,6 +1899,11 @@
         "Elimina evento"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "Duplica l'evento"
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Modifica evento"
@@ -1935,7 +1940,7 @@
         "Impossibile aggiornare l'evento nel tuo calendario. Nessuna risposta inviata"
       ],
       "Unexpected error": [
-        "Errore inaspettato"
+        "Errore imprevisto"
       ],
       "Unsupported invitation": [
         "Invito non supportato"
@@ -1954,6 +1959,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "La tua risposta è stata inviata, ma l'evento non può essere aggiunto al tuo calendario"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "La tua risposta è stata inviata ma l'evento non può essere aggiornato nel tuo calendario"
       ]
     },
     "Event popover close button": {

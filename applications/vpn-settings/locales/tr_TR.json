@@ -9,24 +9,24 @@
         "İnternet bağlantınızı en güçlü şifreleme olan AES-256 ile koruyun."
       ],
       "Defend yourself against advanced network-based attacks by routing your traffic through hardened servers": [
-        "Trafiğinizi güçlendirilmiş sunucular üzerinden yönlendirerek kendinizi gelişmiş ağ tabanlı saldırılara karşı koruyun"
+        "Trafiğinizi güçlendirilmiş sunucular üzerinden yönelterek kendinizi ağ tabanlı saldırılara karşı koruyun"
       ],
       "Keep your browsing history private - we do not keep any records of our users' online activity": [
-        "Göz atma geçmişinizi gizli tutun - kullanıcılarımızın çevrimiçi etkinliklerinin herhangi bir kaydını tutmayız"
+        "Gezinme geçmişinizi gizli tutun. Kullanıcılarımızın çevrimiçi etkinliklerinin herhangi bir kaydını tutmayız"
       ],
       "Keep your data secure even if you are disconnected from your VPN server": [
         "VPN sunucunuzla bağlantınız kesilse bile verilerinizi güvende tutun"
       ],
       "Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries": [
-        "Tüm DNS sorgularınızı şifreleyerek DNS isteklerinizin tarama geçmişinizi açığa çıkarmasını önleyin"
+        "Tüm DNS sorgularınızı şifreleyerek DNS isteklerinizin gezinme geçmişinizi açığa çıkarmasını önleyin"
       ],
       "Protect your data with Swiss privacy laws, some of the strongest in the world": [
-        "Verilerinizi, dünyanın en güçlülerinden biri olan İsviçre gizlilik yasaları ile koruyun"
+        "Verilerinizi, dünyanın en güçlülerinden biri olan İsviçre kişilik gizlilik yasaları ile koruyun"
       ]
     },
     "Action": {
       "${ boldSave } by switching to annual billing": [
-        "Yıllık faturalandırmaya geçerek ${ boldSave }"
+        "Yıllık faturaya geçerek ${ boldSave }"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
@@ -41,7 +41,7 @@
         "Kuponumu etkinleştir"
       ],
       "Activate recovery": [
-        ""
+        "Kurtarmayı etkinleştir"
       ],
       "Add credit / debit card": [
         "Kredi / banka kartı ekle"
@@ -71,13 +71,13 @@
         "İptal"
       ],
       "Change mailbox password": [
-        "Posta kutusu şifresini değiştir"
+        "Posta kutusu parolasını değiştir"
       ],
       "Change password": [
         "Parolayı değiştir"
       ],
       "Chat with us": [
-        "Bizimle canlı konuşun"
+        "Bizimle canlı görüşün"
       ],
       "Clear": [
         "Temizle"
@@ -89,7 +89,7 @@
         "Pencereyi kapat"
       ],
       "Close navigation": [
-        "Gezintiyi kapat"
+        "Gezinmeyi kapat"
       ],
       "Close this banner": [
         "Bu uyarıyı kapat"
@@ -98,13 +98,13 @@
         "Tüm özellikleri karşılaştırın"
       ],
       "Compare plans": [
-        "Planları karşılaştır"
+        "Tarifeleri karşılaştır"
       ],
       "Confirm": [
         "Onayla"
       ],
       "Confirm payment": [
-        "Ödemeyi Onayla"
+        "Ödemeyi onayla"
       ],
       "Continue": [
         "Devam et"
@@ -116,7 +116,7 @@
         "E-postayı panoya kopyala"
       ],
       "Create account": [
-        "Hesap oluştur"
+        "Hesap aç"
       ],
       "Customize": [
         "Özelleştir"
@@ -140,16 +140,16 @@
         "Kod almadınız mı?"
       ],
       "Done": [
-        "Tamamlandı"
+        "Tamam"
       ],
       "Downgrade": [
-        "Eski sürüme yükle"
+        "Düşür"
       ],
       "Downgrade account": [
-        ""
+        "Hesap tarifesini düşür"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "${ BRAND_NAME } ${ downgradedPlanName } tarifesine düşür"
       ],
       "Download": [
         "İndir"
@@ -173,10 +173,10 @@
         "masaüstü bildirimlerini etkinleştir"
       ],
       "Get a new password": [
-        "Yeni bir şifre al"
+        "Yeni bir parola al"
       ],
       "Get ProtonVPN Plus": [
-        "ProtonVPN Plus alın"
+        "ProtonVPN Plus edinin"
       ],
       "Get started": [
         "Başlayalım"
@@ -188,7 +188,7 @@
         "Oturum açmaya gidin"
       ],
       "Go to panel ${ index }": [
-        "${ index } paneline git"
+        "${ index } panosuna git"
       ],
       "Hide": [
         "Gizle"
@@ -197,7 +197,7 @@
         "Ek özellikleri gizle"
       ],
       "Hide info": [
-        "Bilgileri gizle"
+        "Bilgiyi gizle"
       ],
       "Homepage": [
         "Ana sayfa"
@@ -206,10 +206,10 @@
         "Bir sorum var"
       ],
       "Increase": [
-        "Arttır"
+        "Artır"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "${ BRAND_NAME } ${ currentPlanName } tarifemi koru"
       ],
       "Loading verification": [
         "Doğrulama yükleniyor"
@@ -221,13 +221,13 @@
         "Varsayılan olarak işaretle"
       ],
       "More info: ${ safeTitle }": [
-        "Daha fazla bilgi: ${ safeTitle }"
+        "Ayrıntılı bilgi: ${ safeTitle }"
       ],
       "Next": [
         "İleri"
       ],
       "OK": [
-        "TAMAM"
+        "Tamam"
       ],
       "Ok": [
         "Tamam"
@@ -236,7 +236,7 @@
         "${ CALENDAR_APP_NAME } ayarlarını açın"
       ],
       "Open navigation": [
-        "Gezintiyi aç"
+        "Gezinmeyi aç"
       ],
       "Organization": [
         "Kuruluş"
@@ -245,7 +245,7 @@
         "Öde"
       ],
       "Pay annually and save 20%": [
-        "Yıllık ödeyin ve %20 tasarruf edin"
+        "Yıllık ödeyin ve %20 indirim alın"
       ],
       "Previous": [
         "Önceki"
@@ -257,37 +257,37 @@
         "Sayfayı yenile"
       ],
       "Remove bonuses": [
-        "Bonusları kaldır"
+        "Ödülleri kaldır"
       ],
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
       "Report a problem": [
-        "Sorun bildir"
+        "Bir sorun bildir"
       ],
       "Report bug": [
         "Hata bildir"
       ],
       "Request a feature": [
-        "Bir özellik isteyin"
+        "Bir özellik iste"
       ],
       "Request new code": [
-        "Yeni kod isteyin"
+        "Yeni kod iste"
       ],
       "Resend": [
         "Yeniden gönder"
       ],
       "Reset": [
-        ""
+        "Sıfırla"
       ],
       "Reset credentials": [
-        "Bilgileri sıfırla"
+        "Kimlik doğrulama bilgilerini sıfırla"
       ],
       "Reset my password": [
-        "Şifremi sıfırla"
+        "Parolamı sıfırla"
       ],
       "Reset password": [
-        "Şifreyi sıfırla"
+        "Parolayı sıfırla"
       ],
       "Reset zoom": [
         "Yakınlaştırmayı sıfırla"
@@ -299,19 +299,19 @@
         "Kaydet"
       ],
       "Select": [
-        "Seç"
+        "Seçin"
       ],
       "Select plan": [
-        "Plan seçin"
+        "Tarife seçin"
       ],
       "Send": [
         "Gönder"
       ],
       "Set recovery phrase": [
-        ""
+        "Kurtarma ifadesini ayarla"
       ],
       "Share via link": [
-        "Bağlantı yoluyla paylaş"
+        "Bağlantı ile paylaş"
       ],
       "Sharing options": [
         "Paylaşım seçenekleri"
@@ -320,13 +320,13 @@
         "Göster"
       ],
       "Show info": [
-        "Bilgileri göster"
+        "Bilgiyi göster"
       ],
       "Sign out": [
         "Oturumu kapat"
       ],
       "Signing out": [
-        "Çıkış yapılıyor"
+        "Oturum kapatılıyor"
       ],
       "Skip": [
         "Atla"
@@ -335,7 +335,7 @@
         "Kurulumu başlat"
       ],
       "Submit": [
-        "Bildir"
+        "Gönder"
       ],
       "Switch account": [
         "Hesap değiştir"
@@ -344,43 +344,43 @@
         "Doldur"
       ],
       "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "Sadece ${ totalMonthlyText } ${ upsellPlan.title } deneyin"
+        "${ upsellPlan.title } tarifesini yalnızca ${ totalMonthlyText } ile deneyin"
       ],
       "Try again": [
-        "Tekrar dene"
+        "Yeniden dene"
       ],
       "Try another method": [
         "Başka bir yöntem dene"
       ],
       "Unlock data": [
-        ""
+        "Verilerin kilidini aç"
       ],
       "Update": [
         "Güncelle"
       ],
       "Update recovery file": [
-        ""
+        "Kurtarma dosyasını güncelle"
       ],
       "Update recovery phrase": [
-        ""
+        "Kurtarma ifadesini güncelle"
       ],
       "Upgrade": [
         "Yükselt"
       ],
       "Upgrade to Plus": [
-        "Plus'a Yükselt"
+        "Plus tarifesine yükselt"
       ],
       "Upgrade to Professional": [
-        "Profesyonel'e Yükselt"
+        "Professional tarifesine yükselt"
       ],
       "Use ${ label } theme": [
-        "${ label } temasını kullan"
+        "${ label } teması kullanılsın"
       ],
       "Use a different card": [
-        "Farklı bir kart kullanın"
+        "Başka bir kart kullanın"
       ],
       "Use a different payment method": [
-        "Farklı bir ödeme yöntemi kullanın"
+        "Başka bir ödeme yöntemi kullanın"
       ],
       "Use another verification method": [
         "Başka bir doğrulama yöntemi kullan"
@@ -395,7 +395,7 @@
         "Kodu doğrula"
       ],
       "Verify code again": [
-        "Kodu tekrar doğrula"
+        "Kodu yeniden doğrula"
       ],
       "View": [
         "Görüntüle"
@@ -418,7 +418,7 @@
     },
     "Action to select a title for the bug report modal": {
       "Select": [
-        "Seç"
+        "Seçin"
       ]
     },
     "Addon": {
@@ -427,8 +427,8 @@
         "+ ${ addresses } e-posta adresi"
       ],
       "+ ${ domains } custom domain": [
-        "+ ${ domains } özel alan adı",
-        "+ ${ domains } özel alan adı"
+        "+ ${ domains } özel etki alanı",
+        "+ ${ domains } özel etki alanı"
       ],
       "+ ${ members } user": [
         "+ ${ members } kullanıcı",
@@ -448,8 +448,8 @@
         "${ addressAddon.MaxAddresses } adres"
       ],
       "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } alan adı",
-        "${ domainAddon.MaxDomains } alan adı"
+        "${ domainAddon.MaxDomains } etki alanı",
+        "${ domainAddon.MaxDomains } etki alanı"
       ],
       "${ memberAddon.MaxMembers } user": [
         "${ memberAddon.MaxMembers } kullanıcı",
@@ -466,7 +466,7 @@
     },
     "Apps dropdown": {
       "Go to ${ title }": [
-        "${ title } gidin"
+        "${ title } uygulamasına git"
       ],
       "Go to ${ vpnName }": [
         "${ vpnName } uygulamasına git"
@@ -477,16 +477,16 @@
     },
     "Billing cycle": {
       "2-year billing (Renewal on ${ formattedEndTime })": [
-        "2 Yıllık faturalandırma (${ formattedEndTime } tarihinde yenilenir)"
+        "2 yıllık faturalama (${ formattedEndTime } tarihinde yenilenir)"
       ],
       "Billing (Renewal on ${ formattedEndTime })": [
-        "Faturalandırma (${ formattedEndTime } tarihinde yenilenir)"
+        "Faturalama (${ formattedEndTime } tarihinde yenilenir)"
       ],
       "Monthly billing (Renewal on ${ formattedEndTime })": [
-        "Aylık faturalandırma (${ formattedEndTime } tarihinde yenilenir)"
+        "Aylık faturalama (${ formattedEndTime } tarihinde yenilenir)"
       ],
       "Yearly billing (Renewal on ${ formattedEndTime })": [
-        "Yıllık faturalandırma (${ formattedEndTime } tarihinde yenilenir)"
+        "Yıllık faturalama (${ formattedEndTime } tarihinde yenilenir)"
       ]
     },
     "Billing cycle option": {
@@ -494,16 +494,16 @@
         "Yıllık"
       ],
       "Annually SAVE 20%": [
-        "Yıllık %20 TASARRUF EDİN"
+        "Yıllık %20 İNDİRİM"
       ],
       "Monthly": [
         "Aylık"
       ],
       "Two years SAVE 33%": [
-        "İki yıl %33 TASARRUF EDİN"
+        "İki yıllık %33 İNDİRİM"
       ],
       "Two-year": [
-        "İki yıl"
+        "Iki yıllık"
       ]
     },
     "blackfriday Action": {
@@ -607,7 +607,7 @@
         "Uygulama sorunu"
       ],
       "Bridge problem": [
-        "Köprüleme sorunu"
+        "Köprü sorunu"
       ],
       "Calendar problem": [
         "Takvim sorunu"
@@ -619,7 +619,7 @@
         "İletişim sorunu"
       ],
       "Custom domain problem": [
-        "Özel alan adı sorunu"
+        "Özel etki alanı sorunu"
       ],
       "Drive problem": [
         "Sürücü sorunu"
@@ -637,22 +637,22 @@
         "Posta sorunu"
       ],
       "Manual setup problem": [
-        "Elle kurulum sorunu"
+        "El ile kurulum sorunu"
       ],
       "Other": [
         "Diğer"
       ],
       "Payments problem": [
-        "Ödemeler sorunu"
+        "Ödeme sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
       ],
       "Sign up problem": [
-        "Kaydolma sorunu"
+        "Hesap açma sorunu"
       ],
       "Signup problem": [
-        "Kayıt sorunu"
+        "Hesap açma sorunu"
       ],
       "Slow speed problem": [
         "Yavaş hız sorunu"
@@ -670,24 +670,24 @@
         "VPN sorunu"
       ],
       "Website access problem": [
-        "İnternet sitesi erişim sorunu"
+        "Web sitesi erişim sorunu"
       ]
     },
     "Calendar feature": {
       "Calendar import": [
-        "Takvim aktarma"
+        "Takvim içe aktarma"
       ],
       "Invitations": [
-        "Davetiyeler"
+        "Davetler"
       ],
       "Multiple calendars": [
         "Birden çok takvim"
       ],
       "Recurring events": [
-        "Tekrarlayan etkinlikler"
+        "Yinelenen etkinlikler"
       ],
       "Share Calendar via link": [
-        "Takvimi bağlantı yoluyla paylaşma"
+        "Bağlantı ile takvim paylaşma"
       ]
     },
     "Calendar feature option": {
@@ -700,10 +700,10 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "Eşitlenmemiş"
       ],
       "Syncing": [
-        "Senkronize ediliyor"
+        "Eşitleniyor"
       ]
     },
     "Calendar subscription not synced error": {
@@ -711,30 +711,30 @@
         "Takvimin şifresi çözülemedi"
       ],
       "Calendar is syncing": [
-        ""
+        "Takvim eşitleniyor"
       ],
       "Calendar is too big": [
-        ""
+        "Takvim çok büyük"
       ],
       "Calendar link is not accessible": [
-        ""
+        "Takvim bağlantısına erişilemiyor"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Takvim bağlantısına geçici olarak erişilemiyor"
       ],
       "Failed to sync calendar": [
-        ""
+        "Takvim eşitlenemedi"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
       ],
       "Unsupported calendar format": [
-        ""
+        "Takvim biçimi desteklenmiyor"
       ]
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "Bu ödeme yöntemini silmek istediğinizden emin misiniz?"
+        "Bu ödeme yöntemini silmek istediğinize emin misiniz?"
       ]
     },
     "Confirmation title": {
@@ -744,8 +744,8 @@
     },
     "Countdown unit": {
       "${ days } day": [
-        "",
-        ""
+        "${ days } gün",
+        "${ days } gün"
       ],
       "${ monthsWithYears } month": [
         "${ monthsWithYears } ay",
@@ -759,7 +759,7 @@
     },
     "Credits": {
       "Unused credits": [
-        "Kullanılmamış bakiye"
+        "Kullanılmamış kredi"
       ]
     },
     "Delinquent modal title": {
@@ -774,33 +774,33 @@
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
-        ""
+        "Hatalar veya kalite sorunları"
       ],
       "I use a different Proton account": [
-        "Farklı bir Proton hesabı kullanıyorum"
+        "Başka bir Proton hesabı kullanıyorum"
       ],
       "Missing feature(s)": [
-        "Eksik nitelik(ler)"
+        "Özellikler eksik"
       ],
       "My reason isn't listed, please comment": [
-        ""
+        "Gerekçem listede yok. Lütfen yorum yazın"
       ],
       "Streaming service unsupported": [
-        ""
+        "Yayın akışı hizmetinin desteklenmemesi"
       ],
       "Subscription is too expensive": [
-        ""
+        "Abonelik çok pahalı"
       ],
       "Switching to a different provider": [
-        ""
+        "Başka bir hizmet sağlayıcıya geçiş"
       ],
       "Temporary need, may come back in the future": [
-        ""
+        "Geçici olarak ayrılıyorum. İleride yeniden kullanabilirim"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
+        "Kendimizi geliştirmemize yardımcı olun!"
       ]
     },
     "Drive feature": {
@@ -808,119 +808,119 @@
         "Web üzerinden erişim"
       ],
       "Share files via link": [
-        "Dosyaları bağlantı yoluyla paylaşın"
+        "Bağlantı ile dosya paylaşma"
       ],
       "Upload / download files": [
-        "Dosyaları yükleyin / indirin"
+        "Dosya yükleme / indirme"
       ]
     },
     "Dropdown button": {
       "Need help?": [
-        "Yardım mı lazım?"
+        "Yardım gerekiyor mu?"
       ]
     },
     "Error": {
       "Amount above the maximum.": [
-        "En yüksek değer tutarı."
+        "Tutar en fazla miktarın üstünde."
       ],
       "Amount below minimum.": [
-        "En düşük değer tutarı."
+        "Tutar en az miktarın altında."
       ],
       "Can't check username, try again later": [
-        "Kullanıcı adı kontrol edilemiyor, daha sonra tekrar deneyin"
+        "Kullanıcı adı denetlenemedi. Bir süre sonra yeniden deneyin"
       ],
       "Can't validate email, try again later": [
-        "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
+        "E-posta doğrulanamadı. Bir süre sonra yeniden deneyin"
       ],
       "Can't validate phone, try again later": [
-        "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
+        "Telefon doğrulanamadı. Bir süre sonra yeniden deneyin"
       ],
       "Checkout expired, please try again": [
-        "Ödeme süresi doldu, lütfen tekrar deneyin"
+        "Ödeme süresi dolmuş. Lütfen yeniden deneyin"
       ],
       "Code wrong or not valid anymore": [
-        "Kod yanlış veya artık geçersiz"
+        "Kod yanlış ya da artık geçersiz"
       ],
       "Email address invalid": [
         "E-posta adresi geçersiz"
       ],
       "Email is not valid": [
-        "E-posta geçerli değil"
+        "E-posta geçersiz"
       ],
       "Enter 6 digits": [
-        "6 hane girin"
+        "6 rakam yazın"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Bitcoin API'ye bağlanırken hata oluştu."
+        "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
       "File has no contents to preview": [
-        "Dosyanın önizlenecek içeriği yok"
+        "Dosyanın ön izlenecek bir içeriği yok"
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "TV'nizdeki süre dolduysa, TV'nizdeki Yenile butonuna tıklayın ve kodunuzu tekrar girin."
+        "Televizyonunuzda süre dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
       ],
       "Incorrect login credentials. Please try again": [
-        "Oturum açma bilgileri yanlış. Lütfen tekrar deneyin"
+        "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin"
       ],
       "Incorrect mailbox password. Please try again": [
-        "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
+        "Posta kutusu parolası yanlış. Lütfen yeniden deneyin"
       ],
       "Invalid ${ name } code": [
-        "Geçersiz ${ name } kodu"
+        "${ name } kodu geçersiz"
       ],
       "Invalid card number": [
-        "Geçersiz kart numarası"
+        "Kart numarası geçersiz"
       ],
       "Invalid code": [
-        "Geçersiz kod"
+        "Kod geçersiz"
       ],
       "Invalid expiration date": [
-        "Geçersiz son kullanma tarihi"
+        "Son kullanma tarihi geçersiz"
       ],
       "Invalid invitation link": [
-        "Geçersiz davet bağlantısı"
+        "Davet bağlantısı geçersiz"
       ],
       "Invalid postal code": [
-        "Geçersiz posta kodu"
+        "Posta kodu geçersiz"
       ],
       "Invalid verification code": [
-        "Geçersiz doğrulama kodu"
+        "Doğrulama kodu geçersiz"
       ],
       "Name on card required": [
-        "Kart üzerindeki isim gerekli"
+        "Kartın üzerindeki ad yazılmalı"
       ],
       "Not a valid number": [
-        "Geçerli bir numara değil"
+        "Numara geçerli değil"
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Kuruluş belirlenemedi. Yeniden deneyin."
       ],
       "Passwords do not match": [
-        "Parolalar eşleşmiyor"
+        "Parola ile onayı aynı değil"
       ],
       "Payment process cancelled": [
         "Ödeme işlemi iptal edildi"
       ],
       "Payment process consumed": [
-        "Tüketilen ödeme işlemi"
+        "Ödeme işleminin süresi geçmiş"
       ],
       "Payment process failed": [
-        "Ödeme işlemi başarısız oldu"
+        "Ödeme işlemi tamamlanamadı"
       ],
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
       ],
       "Payments are currently not available, please try again later": [
-        "Ödemeler şu anda kullanılamıyor, lütfen daha sonra tekrar deneyin"
+        "Ödemeler şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin"
       ],
       "Please enter '${ dangerWord }'": [
-        "Lütfen girin '${ dangerWord }'"
+        "Lütfen '${ dangerWord }' yazın"
       ],
       "Please generate keys before you try to change your password": [
-        "Lütfen şifrenizi değiştirmeyi denemeden önce anahtarlar oluşturun"
+        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
       "Please set a recovery email first": [
-        ""
+        "Lütfen önce bir kurtarma e-posta adresi ayarlayın"
       ],
       "Please set a recovery phone number first": [
         "Lütfen önce bir kurtarma telefon numarası ayarlayın"
@@ -935,68 +935,68 @@
         "İstek zaman aşımına uğradı."
       ],
       "Signature verification failed": [
-        "İmza doğrulama başarısız oldu"
+        "İmza doğrulanamadı"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Bir şeyler ters gitti, devam etmek için lütfen ${ refresh }. Hala bu hata mesajını görüyorsanız, lütfen ${ supportTeam } ile bağlantı kurun."
+        "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ],
       "Tab closed": [
         "Sekme kapatıldı"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullandığınız tarayıcı, ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın veya bir bilgisayar aracılığıyla giriş yapın."
+        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da başka bir bilgisayarla oturum açın."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "Eklenebilecek en az kredi tutarı ${ _price }"
+        "Eklenebilecek en az kredi tutarı: ${ _price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "Bağışlanabilecek en düşük tutar ${ price }"
+        "Bağışlanabilecek en az tutar: ${ price }"
       ],
       "The minimum payment we accept is ${ _price2 }": [
-        "Kabul ettiğimiz en az ödeme ${ _price2 }"
+        "Kabul ettiğimiz en az ödeme: ${ _price2 }"
       ],
       "This field is required": [
-        "Bu alan gereklidir"
+        "Bu alan zorunludur"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bu alan en az ${ minimumLength } karakter gerektirir."
+        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
       "Unknown error": [
         "Bilinmeyen hata"
       ],
       "Unknown payment token status": [
-        "Bilinmeyen ödeme belirteci durumu"
+        "Ödeme kodu durumu bilinmiyor"
       ],
       "You have no invoices.": [
-        "Faturalarınız yok."
+        "Herhangi bir faturanız yok."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
+        "Hesabınızın ya da kuruluşunuzun ödeme süresi geçmiş bir faturası var. Lütfen ödenmemiş tüm faturaları ödeyin."
       ]
     },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
-        "Biz hatayı düzeltene kadar bekleyin."
+        "Lütfen biz hatayı düzeltene kadar bekleyin."
       ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Hay aksi, bir şeyler ters gitti"
+        "Bir şeyler ters gitti"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Lütfen ${ refresh } veya bağlantınızı kontrol edin."
+        "Lütfen ${ refresh } ya da bağlantınızı denetleyin."
       ],
       "There was a problem connecting to Proton.": [
-        "Proton'a bağlanırken bir sorun oluştu."
+        "Proton bağlantısı kurulurken bir sorun çıktı."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Ayrıca sayfayı ${ refresh } veya daha sonra tekrar deneyebilirsiniz."
+        "Ayrıca sayfayı ${ refresh } ya da bir süre sonra yeniden deneyin."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Resim seçilmedi"
+        "Herhangi bir görsel seçilmemiş"
       ]
     },
     "Feature": {
@@ -1004,8 +1004,8 @@
         "Tüm ülkelere erişim"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "${ plusVpnConnections } cihaza kadar bağlantı",
-        "${ plusVpnConnections } cihaza kadar bağlantı"
+        "${ plusVpnConnections } aygıta kadar bağlantı",
+        "${ plusVpnConnections } aygıta kadar bağlantı"
       ],
       "Fastest VPN servers": [
         "En hızlı VPN sunucuları"
@@ -1014,7 +1014,7 @@
         "Secure Core sunucuları"
       ],
       "Secure streaming support": [
-        "Güvenli medya akışı desteği"
+        "Güvenli yayın akışı desteği"
       ],
       "Torrenting support (P2P)": [
         "Torrent desteği (P2P)"
@@ -1036,7 +1036,7 @@
     },
     "Footer": {
       "Based in Switzerland, available globally.": [
-        "İsviçre merkezli, küresel olarak erişilebilir."
+        "İsviçre merkezli, tüm dünyada kullanılabilir."
       ]
     },
     "Free price": {
@@ -1049,7 +1049,7 @@
         "(ayda 1 e-posta)"
       ],
       "(1 email per quarter)": [
-        "(her çeyrek yılda 1 e-posta)"
+        "(üç ayda 1 e-posta)"
       ],
       "(1-2 emails per month)": [
         "(ayda 1-2 e-posta)"
@@ -1074,10 +1074,10 @@
     },
     "Header": {
       "30-day money-back guarantee": [
-        "30 günlük para iade garantisi"
+        "30 gün ücret iade garantisi"
       ],
       "Access blocked content": [
-        "Engellenen içeriğe erişin"
+        "Engellenen içeriğe erişim"
       ],
       "Advanced encryption": [
         "Gelişmiş şifreleme"
@@ -1086,7 +1086,7 @@
         "Android / Linux / iOS / Windows için uygulamalar"
       ],
       "Countries": [
-        "Ülkeler"
+        "Ülke sayısı"
       ],
       "Get help": [
         "Yardım alın"
@@ -1095,13 +1095,13 @@
         "Yardım"
       ],
       "Kill Switch / Always-on": [
-        "Bağlantı Kesme Anahtarı / Her zaman açık"
+        "Bağlantı kesici / Her zaman açık"
       ],
       "No data limits": [
-        "Veri kısıtlaması yok"
+        "Veri sınırı yok"
       ],
       "No logs policy": [
-        "Kayıt tutmama politikası"
+        "Kayıt tutmama ilkesi"
       ],
       "P2P filesharing/BitTorrent support": [
         "P2P dosya paylaşımı/BitTorrent desteği"
@@ -1110,13 +1110,13 @@
         "Secure Core VPN"
       ],
       "Simultaneous connections": [
-        "Eş zamanlı bağlantılar"
+        "Eş zamanlı bağlantı sayısı"
       ],
       "Speed": [
         "Hız"
       ],
       "Streaming service support": [
-        "Yayın hizmeti desteği"
+        "Yayın akışı hizmeti desteği"
       ],
       "Tor over VPN": [
         "VPN üzerinden Tor"
@@ -1133,7 +1133,7 @@
         "El ile"
       ],
       "No verification method available": [
-        "Kullanılabilir doğrulama yöntemi yok"
+        "Kullanılabilecek bir doğrulama yöntemi yok"
       ],
       "SMS": [
         "SMS"
@@ -1144,10 +1144,10 @@
         "DNS sızıntısı önleme"
       ],
       "Kill switch to prevent IP exposure": [
-        "IP açığa çıkmasını önlemek için Bağlantı Kesme Anahtarı"
+        "IP adresinin açığa çıkmasını önlemek için Bağlantı kesici"
       ],
       "Laptop & smartphone shown connected to ProtonVPN network.": [
-        "Dizüstü bilgisayar ve akıllı telefon ProtonVPN ağına bağlı olarak gösterilir."
+        "ProtonVPN ağına bağlı dizüstü bilgisayar ve akıllı telefonları görün."
       ],
       "No logs": [
         "Kayıt tutmaz"
@@ -1164,169 +1164,169 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName }, ${ enableDesktopNotifications } için izninize ihtiyaç duyuyor."
+        "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
       "${ mailAppName } Free": [
-        "${ mailAppName } Ücretsiz"
+        "${ mailAppName } ücretsiz"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Profesyonel, bir kullanıcıyla başlar ve her kullanıcı, kuruluşun havuzuna 5 GB ve 5 e-posta adresi ekler."
+        "${ mailAppName } Professional bir kullanıcıyla başlar ve her kullanıcı kuruluşun havuzuna 5 GB ve 5 e-posta adresi ekler."
       ],
       "${ number } city": [
         "${ number } şehir",
-        "${ number } şehir"
+        "${ number } il"
       ],
       "${ number } server": [
         "${ number } sunucu",
         "${ number } sunucu"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ annualBilling } hesabına geçerek aboneliğinizde ${ save20 } tasarruf edin"
+        "${ annualBilling } tarifesine geçerek aboneliğinizde ${ save20 } indirim alın"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "E-Posta aboneliği ekleyerek hem E-Posta hem de VPN'de ${ saveExtra20 } tasarruf edin."
+        "E-posta aboneliği ekleyerek, hem e-posta hem de VPN için ${ saveExtra20 } indirim alın."
       ],
       "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "VPN aboneliği ekleyerek hem VPN hem de E-Posta için ${ saveExtra20 } tasarruf edin."
+        "VPN aboneliği ekleyerek, hem VPN hem de e-posta için ${ saveExtra20 } indirim alın."
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } Ücretsiz"
+        "${ vpnAppName } ücretsiz"
       ],
       "(Mail + VPN)": [
         "(Posta + VPN)"
       ],
       "* Customizable features": [
-        "* Özelleştirilebilir özellikler"
+        "* Değiştirilebilecek özellikler"
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ekstra depolama"
+        "+${ bonusSpace } ödül depolama alanı"
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "ProtonVPN için + ${ organization.BonusVPN } bağlantısı (VPN'e daha fazla cihaz bağlamanıza izin verir)",
-        "ProtonVPN için + ${ organization.BonusVPN } bağlantıları (VPN'e daha fazla cihaz bağlamanıza izin verir)"
+        "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
+        "+${ organization.BonusVPN } ProtonVPN bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
-        "${ code } kuponu ile aboneliğinize %20 indirim uygulanır"
+        "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
       "30 days money-back guarantee.": [
-        "30 gün para iade garantisi."
+        "30 gün ücret iade garantisi."
       ],
       "30-days money back guarantee": [
-        "30 günlük para iade garantisi"
+        "30 günlük ücret iade garantisi"
       ],
       "A free and uncensored Internet should be available to all.": [
-        "Özgür ve sansürsüz bir İnternet herkese açık olmalıdır."
+        "Herkes intetneti özgürce ve sansürsüz olarak kullanabilmelidir."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Sosyal medya, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
+        "Sosyal ağlar, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nerede olursanız olun ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } gibi yayın hizmetlerine erişin."
+        "Nerede olursanız olun ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } gibi yayın akışı hizmetlerine erişin."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Ödenmemiş faturalar nedeniyle hesaba erişim kısıtlandı. Lütfen yöneticinizle iletişime geçin."
+        "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
       "Account successfully updated": [
-        "Hesap başarıyla güncellendi"
+        "Hesap güncellendi"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Hesabınıza kullanıcı2@protonmail.com gibi ek adresler ekleyin"
       ],
       "Addresses": [
-        "Adresler"
+        "Adres sayısı"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Bitcoin ödemenizi yaptıktan sonra, yükseltmek için lütfen aşağıdaki talimatları izleyin."
+        "Bitcoin ödemenizi yaptıktan sonra, tarifenizi yükseltmek için aşağıdaki yönergeleri izleyin."
       ],
       "All plans support: ${ supportedOS }": [
-        "Tüm planlar şunları destekler: ${ supportedOS }"
+        "Tüm tarifeler şunları destekler: ${ supportedOS }"
       ],
       "ALL YOUR DATA WILL BE LOST!": [
         "TÜM VERİLERİNİZ KAYBOLACAK!"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Kendi alan adlarınız için e-postaları ${ mailAppName } adresinde barındırmanıza olanak tanır, ör. john.smith@example.com"
+        "${ mailAppName } üzerinde kendi etki alanınızı kullanarak e-posta barındırmanızı sağlar, Örnek ali.kaya@ornek.com"
       ],
       "Amount below minimum (${ amount }).": [
-        "En düşük tutarın altında (${ amount })."
+        "Tutar en az miktarın altında (${ amount })."
       ],
       "Basic, Plus or Visionary subscription required": [
-        "Temel, Plus veya Vizyoner aboneliği gerekli"
+        "Basic, Plus veya Visionary aboneliği gerekli"
       ],
       "billed as ${ billedPrice }": [
         "${ billedPrice } olarak faturalandırıldı"
       ],
       "Billed as ${ billedPrice } every 2 years": [
-        "Her 2 yılda bir ${ billedPrice } olarak faturalandırılır"
+        "2 yılda bir ${ billedPrice } tutarında faturalanır"
       ],
       "Billed as ${ billedPrice } per year": [
-        "Yıllık ${ billedPrice } olarak faturalandırılır"
+        "Yılda bir ${ billedPrice } tutarında faturalanır"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Geçerli faturalandırma döngüsünün sonunda faturalandırılır (${ renewalDate } tarihinde yenilenir)"
+        "Güncel fatura döneminin sonunda faturalanır (${ renewalDate } tarihinde yenilenir)"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin işlemlerinin onaylanması biraz zaman alabilir (24 saate kadar). Onaylandıktan sonra hesabınıza kredi ekleyeceğiz. İşlem onaylandıktan sonra faturanızı kredi ile ödeyebilirsiniz."
+        "Bitcoin işlemlerinin onaylanması biraz zaman alabilir (24 saate kadar). Onaylandıktan sonra hesabınıza kredi ekleyeceğiz. İşlem onayından sonra, faturanızı kredilerle ödeyebilirsiniz."
       ],
       "Black Friday 2018 applied to your subscription": [
-        "Kara Cuma 2018 aboneliğinize uygulandı"
+        "2018 Kara Cuma indirimi aboneliğinize uygulandı"
       ],
       "Black Friday 2019 applied to your subscription": [
-        "Kara Cuma 2019 aboneliğinize uygulandı"
+        "2019 Kara Cuma indirimi aboneliğinize uygulandı"
       ],
       "Black Friday 2020 newcomer discount has been applied": [
-        "Kara Cuma 2020 yeni gelen indirimi uygulandı"
+        "2020 Kara Cuma yeni gelen indirimi uygulandı"
       ],
       "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
-        "Hesap oluştur butonuna tıklayarak ${ termsOfServiceLink } ve ${ privacyPolicyLink } şartlarına uymayı kabul edersiniz."
+        "Hesap aç üzerine tıklayarak ${ termsOfServiceLink } ve ${ privacyPolicyLink } metinlerine uymayı kabul etmiş olursunuz."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ücretsiz plana geçerseniz, gelecekte yeniden yükseltme yapsanız bile bu avantajları kalıcı olarak kaybedersiniz."
+        "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu avantajları kalıcı olarak kaybedersiniz."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Tarifenizi düşürdüğünüzde aşağıdaki özellikleri kaybedeceksiniz. Devam etmek istediğinize emin misiniz?"
       ],
       "By leaving now, changes may not be saved": [
-        "Şimdi çıkarsanız, değişiklikler kaydedilmeyebilir"
+        "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni Kod İste\" seçeneğine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" seçeneğine tıklayın."
+        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" seçeneğine tıklayın."
+        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Click below to resend the code to ${ destinationText }. If ${ destinationType } is incorrect, please click \"${ editI18n }\".": [
-        "Kodu ${ destinationText } yeniden göndermek için aşağıya tıklayın. ${ destinationType } yanlışsa, lütfen \"${ editI18n }\" butonuna tıklayın."
+        "Kodu ${ destinationText } alıcısına yeniden göndermek için aşağıya tıklayın. ${ destinationType } doğru değilse, lütfen \"${ editI18n }\" üzerine tıklayın."
       ],
       "Connections": [
-        "Bağlantılar"
+        "Bağlantı sayısı"
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "İnternet trafiğinizi birden çok sunucu üzerinden yönlendirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar."
+        "İnternet trafiğinizi birden çok sunucu üzerinden geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize indirim uygulandı"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Bu parolayı UNUTMAYIN. Unutursanız, mesajlarınıza giriş yapamaz veya şifresini çözemezsiniz."
+        "Bu parolayı UNUTMAYIN. Unutursanız, iletileriniz için oturum açamaz ya da şifrelerini çözemezsiniz."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "ProtonVPN uygulamalarında veya ProtonVPN kontrol panelinde OpenVPN / IKEv2 kimlik bilgilerini kullanmayın. ${ learnMore }"
+        "ProtonVPN uygulamalarında veya ProtonVPN kontrol panosunda OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanmayın. ${ learnMore }"
       ],
       "Domains": [
-        "Alan adları"
+        "Etki alanı sayısı"
       ],
       "Done! We sent a code to ${ destination }": [
         "Bitti! ${ destination } adresine bir kod gönderdik"
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Eski sürümü yüklemek, ücretli ProtonVPN sunucularına yapılan bağlantıyı sonlandıracaktır."
+        "Tarifenizi düşürdüğünüzde, ücretli ProtonVPN sunucularına yapılan bağlantılar kesilecek."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "En sevdiğiniz uygulamayı bugün indirin ve gittiğiniz her yerde gizliliğinizi yanınızda taşıyın."
+        "Kullanmak istediğiniz uygulamayı indirin ve kişisel gizliliğinizi gittiğiniz her yere götürün."
       ],
       "Each additional connection can be assigned to users in your organization.": [
         "Her ek bağlantı, kuruluşunuzdaki kullanıcılara atanabilir."
@@ -1335,130 +1335,130 @@
         "E-posta tercihi kaydedildi"
       ],
       "Enter key manually instead": [
-        "Bunun yerine anahtarı el ile girin"
+        "Bunun yerine anahtarı el ile yazın"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } adresine gönderilen doğrulama kodunu girin."
+        "${ destinationText } adresine gönderilen doğrulama kodunu yazın."
       ],
       "Enter your login password to confirm your identity.": [
-        "Kimliğinizi onaylamak için oturum açma parolanızı girin."
+        "Kimliğinizi doğrulamak için oturum açma parolanızı yazın."
       ],
       "Enter your own password (as organization admin) and this user's new password.": [
-        "Kendi şifrenizi (kuruluş yöneticisi olarak) ve bu kullanıcının yeni şifresini girin."
+        "Kendi parolanızı (kuruluş yöneticisi olarak) ve bu kullanıcının yeni parolasını yazın."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
-        "Kurtarma e-posta adresinizi girin, size kullanıcı adınızı(lar) gönderelim. (Bu genellikle kayıt sırasında verdiğiniz e-posta adresidir.)"
+        "Kurtarma e-posta adresinizi yazın. Size kullanıcı adlarınızı gönderelim. (Kullanıcı adı genellikle hesap açarken verdiğiniz e-posta adresidir.)"
       ],
       "Expired": [
         "Süresi geçmiş"
       ],
       "For families and small teams; includes both Mail and VPN.": [
-        "Aileler ve küçük ekipler için; Posta ve VPN içerir."
+        "Aileler ve küçük ekipler için; Posta ve VPN hizmetleri sağlar."
       ],
       "For getting started with private and secure emailing.": [
-        "Özel ve güvenli e-posta kullanımına başlamak için."
+        "Gizli ve güvenli e-posta kullanmaya başlamak için."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Gelişmiş korumaya sahip tam özellikli bir posta kutusuna ihtiyaç duyan kişiler için."
+        "Gelişmiş koruma ile tam özellikli bir posta kutusuna gerek duyan kişiler için."
       ],
       "For professionals that need secure business communications.": [
-        "Güvenli iş iletişimine ihtiyaç duyan profesyoneller için."
+        "İş ortamında güvenli iletişime gerek duyan profesyoneller için."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa ve MasterCard için kartınızın arkasındaki 3 hane. American Express için ise kartınızın önündeki 4 hane."
+        "Visa ve MasterCard için kartınızın arkasındaki 3 haneli kod. American Express için ise kartınızın önündeki 4 haneli kod."
       ],
       "Free up some space or add more storage space.": [
-        "Biraz alan boşaltın veya daha fazla depolama alanı ekleyin."
+        "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
       ],
       "Free up some space or contact your administrator.": [
-        "Biraz yer açın veya yöneticinize başvurun."
+        "Biraz boş yer açın veya yöneticinizle görüşün."
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
-        "10 Gbps'ye kadar hıza sahip tam özellikli VPN."
+        "10 Gb/sn hıza ulaşan tam özellikli VPN."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere tek bir planla erişin."
+        "Tek bir tarife ile tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) özelliklerini kullanın."
       ],
       "here": [
         "buraya"
       ],
       "If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.": [
-        "ProtonMail kullanıcısıysanız, ProtonVPN'de oturum açmak için Proton hesabınızı kullanabilirsiniz."
+        "Zaten bir ProtonMail kullanıcısıysanız, ProtonVPN ile oturum açmak için Proton hesabınızı kullanabilirsiniz."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hesabınızı oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde yanıt vereceğiz."
+        "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Bunun bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } ile iletişime geçin."
+        "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda bulamazsanız, lütfen spam klasörünüzü kontrol edin."
+        "E-postayı gelen kutunuzda göremezseniz, istenmeyenler kutusuna bakmayı unutmayın."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Hediye kodunuz varsa, indiriminizi uygulamak için aşağıya girin."
+        "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Daha önce iki aşamalı kimlik doğrulamayı hiç kullanmadıysanız, size kesinlikle ${ guideButton } kullanmanızı öneririz."
+        "Daha önce hiç iki aşamalı kimlik doğrulama kullanmadıysanız, kesinlikle ${ guideButton } kullanmanızı öneririz."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "İki faktörlü cihazınızı kaybederseniz, hesabınıza giriş yapmak için 6 basamaklı iki faktörlü kimlik doğrulama kodu yerine bu kodlar kullanılabilir. Her kod yalnızca bir kez kullanılabilir."
+        "İki aşamalı kimlik doğrulaması aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki aşamalı kimlik doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
       ],
       "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Eski sürümü yüklemeye devam ederseniz, ProtonMail ve ProtonVPN ücretli özelliklerine erişiminizi kaybedeceksiniz."
+        "Tarifenizi düşürdüğünüzde, ücretli ProtonMail ve ProtonVPN özelliklerini kullanamayacaksınız."
       ],
       "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Eski sürümü yüklemeye devam ederseniz, ek depolama ve filtreler dahil olmak üzere ProtonMail ücretli özelliklerine erişiminizi kaybedeceksiniz."
+        "Tarifenizi düşürdüğünüzde, ek depolama alanı ve süzgeçler gibi ücretli ProtonMail özelliklerini kullanamayacaksınız."
       ],
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Eski sürümü yüklemeye devam ederseniz, ProtonVPN'nin ücretli özelliklerine erişiminizi kaybedeceksiniz."
+        "Tarifenizi düşürdüğünüzde, ücretli ProtonVPN özelliklerini kullanamayacaksınız."
       ],
       "If you remember your old password later, you can recover your existing messages.": [
-        "Eski şifrenizi daha sonra hatırlarsanız, mevcut mesajlarınızı kurtarabilirsiniz."
+        "Daha sonra eski parolanızı hatırlarsanız, var olan iletilerinizi kurtarabilirsiniz."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        ""
+        "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
       ],
       "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
-        "ÖNEMLİ: Bu sayfayı kapatmayın veya buradan uzaklaşmayın. Sıfırlama kodunu aldıktan sonra aşağıdaki alana girmeniz gerekecektir."
+        "ÖNEMLİ: Bu sayfayı kapatmayın ya da başka bir sayfaya geçmeyin. Sıfırlama kodunu aldıktan sonra aşağıdaki alana yazmanız gerekir."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Önemli: Lütfen kurtarma kodlarını kaydettiğinizden emin olun. Aksi takdirde, iki faktörlü kimlik doğrulama cihazınızı kaybederseniz hesabınıza erişimi kalıcı olarak kaybedebilirsiniz."
+        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Yoksa, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesap erişiminizi kalıcı olarak kaybedebilirsiniz."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "Oturum açma bilgilerinizi kaybederseniz, size e-posta ya da SMS ile kurtarma yönergelerini göndereceğiz."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "Oturum açma bilgilerinizi kaybederseniz, size e-posta ile kurtarma yönergelerini göndereceğiz."
       ],
       "Included": [
-        "Dahil"
+        "İçerdikleri"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Seçtiğiniz ülkedeki rastgele bir sunucuya bağlanmak için bir Ülke yapılandırma dosyası yükleyin."
+        "Seçtiğiniz ülkedeki rastgele bir sunucuya bağlanmak için bir ülke yapılandırma dosyası yükleyin."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Üç ücretsiz konumdan birinde belirli bir sunucuya bağlanmak için Ücretsiz bir sunucu yapılandırma dosyası yükleyin."
+        "Üç ücretsiz konumdan birindeki belirli bir sunucuya bağlanmak için bir Free sunucusu yapılandırma dosyası yükleyin."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "VPN uç nokta güvenliğinin ihlaline karşı ek bir korumadan yararlanmak için bir Secure Core yapılandırma dosyası yükleyin."
+        "VPN uç noktasının ele geçirilme olasılığına karşı ek bir koruma sağlamak için bir Secure Core yapılandırma dosyası yükleyin."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Seçtiğiniz ülkedeki belirli bir sunucuya bağlanmak için bir Sunucu yapılandırma dosyası yükleyin."
+        "Seçtiğiniz ülkedeki belirli bir sunucuya bağlanmak için bir sunucu yapılandırma dosyası yükleyin."
       ],
       "Internet connection lost.": [
         "İnternet bağlantısı kesildi."
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "İnternet bağlantısı kesildi. Lütfen cihazınızın bağlantısını kontrol edin."
+        "İnternet bağlantısı kesildi. Lütfen aygıtınızın bağlantısını denetleyin."
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
       "Keep this password safe, it cannot be recovered.": [
-        "Bu şifreyi güvende tutun, kurtarılamaz."
+        "Bu parolayı güvende tutun, daha sonra kurtarılamaz."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Üçüncü taraf VPN uygulamalarıyla ProtonVPN'ye nasıl giriş yapacağınızı öğrenin."
+        "Üçüncü taraf VPN uygulamalarında ProtonVPN oturumunu nasıl açabileceğinizi öğrenin."
       ],
       "Loading": [
         "Yükleniyor"
@@ -1467,140 +1467,140 @@
         "${ appName } yükleniyor"
       ],
       "Loading preview": [
-        "Önizleme yükleniyor"
+        "Ön izleme yükleniyor"
       ],
       "Log in to ProtonMail to activate your address": [
-        "Adresinizi etkinleştirmek için ProtonMail'de oturum açın"
+        "Adresinizi etkinleştirmek için ProtonMail oturumu açın"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Oturum açmak ve e-postaların şifresini çözmek için şifreyi hatırladığınızdan emin olun. ${ boldAlert }. Önce bir kurtarma e-postası eklemenizi öneririz."
+        "Oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı hatırlayacağınızdan emin olun. ${ boldAlert }. Öncelikle bir kurtarma e-postası eklemenizi öneririz."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Hesabınızı kurmak için bu bilgileri iki faktörlü kimlik doğrulama cihazınıza el ile girin. ${ _switchButton }."
+        "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ _switchButton }."
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        ""
+        "NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinme hızınızı artırır."
       ],
       "No payment is required at this time.": [
-        "Şu anda herhangi bir ödeme gerekmiyor."
+        "Şu anda yapılacak herhangi bir ödeme yok."
       ],
       "No preview available": [
-        "Önizleme mevcut değil"
+        "Ön izleme yok"
       ],
       "No results found": [
-        "Sonuç bulunamadı"
+        "Herhangi bir sonuç bulunamadı"
       ],
       "No subscription yet": [
-        "Henüz aboneliğiniz yok"
+        "Henüz bir aboneliğiniz yok"
       ],
       "Not customizable": [
         "Özelleştirilemez"
       ],
       "Not set": [
-        "Ayarlanmadı"
+        "Ayarlanmamış"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Kullanıcılara atanabilecek VPN bağlantılarının sayısı. Bağlı her cihaz bir VPN bağlantısı kullanır."
+        "Kullanıcılara atanabilecek VPN bağlantılarının sayısı. Bağlı her aygıt ayrı bir VPN bağlantısı kullanır."
       ],
       "of": [
-        "den"
+        "/"
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
-        "\"Eski Sürüme Geç\"e tıkladığınızda, hesabınızı Ücretsiz plana düşürmek birkaç dakika sürebilir. "
+        "\"Düşür\" üzerine tıkladığınızda, hesabınızın Free tarifesine düşürülmesi birkaç dakika sürebilir. "
       ],
       "P2P": [
         "P2P"
       ],
       "Payment can take a few minutes to fully verify.": [
-        "Ödemenin tamamen doğrulanması birkaç dakika sürebilir."
+        "Ödeme işleminin tamamen doğrulanması birkaç dakika sürebilir."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Ödemeler TLS şifreleme ve İsviçre gizlilik yasaları ile korunmaktadır."
+        "Ödemeler TLS şifrelemesi ve İsviçre kişisel gizlilik yasaları ile korunmaktadır."
       ],
       "Plan upgrade required": [
-        "Plan yükseltmesi gerekli"
+        "Tarifenin yükseltilmesi gerekli"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Onayla butonuna tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını lütfen unutmayın."
+        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Sizinle iletişime geçmemiz gerekirse lütfen bir e-posta adresi girin."
+        "Sizinle iletişim kurmamız gerekirse kullanabileceğimiz bir e-posta adresi yazın."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Lütfen tekrar deneyin, farklı bir ödeme yöntemi kullanın veya yardım için bankanızı arayın."
+        "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için bankanızla görüşün."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Lütfen tekrar deneyin, farklı bir ödeme yöntemi kullanın veya yardım için PayPal ile iletişime geçin."
+        "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Lütfen açılan yeni sekmedeki ödemeyi doğrulayın."
+        "Lütfen açılan yeni sekmeden ödemeyi doğrulayın."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Lütfen açılan yeni sekmedeki kartı doğrulayın."
+        "Lütfen açılan yeni sekmede kartı doğrulayın."
       ],
       "Please verify the payment in the new tab.": [
-        "Lütfen ödemeyi yeni sekmede doğrulayın."
+        "Lütfen ödemeyi yeni sekmeden doğrulayın."
       ],
       "Plus or Visionary subscription required": [
-        "Plus veya Vizyoner aboneliği gerekli"
+        "Plus veya Visionary aboneliği gerekli"
       ],
       "Preview": [
         "Ön izle"
       ],
       "Proton can't help you recover any lost passwords": [
-        "Proton, kaybolan şifreleri kurtarmanıza yardımcı olamaz"
+        "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz"
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        ""
+        "ProtonMail, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus, bir kullanıcıyla sınırlıdır ve 5 GB depolama alanıyla başlar."
+        "ProtonMail Plus, bir kullanıcıyla sınırlıdır ve 5 GB depolama alanından başlar."
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] }, ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN bağlantısını içerir.",
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] }, ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN bağlantılarını içerir."
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] }, ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN bağlantısı sunar.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] }, ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN bağlantısı sunar."
       ],
       "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Ülke düzeyinde bağlantı için ProtonVPN Temel, Plus veya Vizyoner gereklidir."
+        "Ülke düzeyinde bağlantı için ProtonVPN Basic, Plus ya da Visionary tarifesi gereklidir."
       ],
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Secure Core özelliği için ProtonVPN Plus veya Vizyoner gereklidir."
+        "Secure Core özelliği için ProtonVPN Plus ya da Visionary tarifesi gereklidir."
       ],
       "read our two-factor authentication Guide first": [
-        ""
+        "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Sayfayı yenilemek veya ${ link } çoğu sorunu otomatik olarak çözecektir."
+        "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
       "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Şifrenizi sıfırlamak, tüm Proton ile ilgili hizmetler (Posta ve VPN) için şifreleme anahtarlarınızı sıfırlayacaktır. Mevcut mesajlarınızı okuyamayacaksınız. ProtonMail kimlik bilgilerinizi biliyorsanız, SIFIRLAMAYIN. Onunla giriş yapabilirsin ${ hereLink }."
+        "Parola sıfırlama işlemi, Proton ile ilgili tüm hizmetler (Posta ve VPN) için şifreleme anahtarlarınızı sıfırlar. Var olan iletilerinizi okuyamayacaksınız. ProtonMail kimlik doğrulama bilgilerinizi biliyorsanız, SIFIRLAMAYIN. O bilgiler ile oturum açabilirsiniz ${ hereLink }."
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yönlendirin."
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin."
       ],
       "Save 20%": [
         "%20 tasarruf edin"
       ],
       "Save extra 20%": [
-        "Fazladan %20 tasarruf edin"
+        "Ek %20 indirim alın"
       ],
       "Scan QR code instead": [
         "Bunun yerine QR kodunu tarayın"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu kodu iki faktörlü kimlik doğrulama cihazınızla tarayın. ${ switchButton }."
+        "Hesabınızı kurmak için bu kodu iki aşamalı kimlik doğrulama aygıtınızla tarayın. ${ switchButton }."
       ],
       "Screenshot(s) attached": [
         "Ekran görüntüleri eklendi"
       ],
       "Server is currently down": [
-        "Sunucu şu anda kapalı"
+        "Sunucu şu anda çalışmıyor"
       ],
       "Server load": [
         "Sunucu yükü"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
@@ -1609,139 +1609,139 @@
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
       ],
       "Starter VPN service with P2P support.": [
-        "P2P destekli başlangıç ​​VPN hizmeti."
+        "P2P destekleyen ​​başlangıç VPN hizmeti."
       ],
       "Storage GB": [
-        "GB Depolama"
+        "GB olarak depolama"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent gibi dosya paylaşım protokollerini destekler."
+        "BitTorrent gibi dosya paylaşım iletişim kurallarına destek."
       ],
       "support team": [
         "destek ekibi"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "Daha fazla bağlantı eklemek için ${ professionalPlan } 'a geçin."
+        "Daha fazla bağlantı eklemek için ${ professionalPlan } geçişi yapın."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "Daha fazla kullanıcı eklemek için ${ professionalPlan } 'a geçin."
+        "Daha fazla kullanıcı eklemek için ${ professionalPlan } geçişi yapın."
       ],
       "Thank you for supporting our mission.": [
-        "Çalışmamızı desteklediğiniz için teşekkür ederiz."
+        "Misyonumuza destek olduğunuz için teşekkür ederiz."
       ],
       "There are no billing details available for your current subscription.": [
-        "Mevcut aboneliğiniz için fatura bilgileri bulunmamaktadır."
+        "Geçerli aboneliğiniz için herhangi bir fatura bilgisi yok."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönlendiricide VPN bağlantısı kurarken hangi ProtonVPN sunucusuna bağlanacağınızı seçmenizi sağlar."
+        "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ProtonVPN sunucusunu seçmenizi sağlar."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Bu hesap, olası bir ilke ihlali nedeniyle askıya alındı."
+        "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Bu tarayıcı, PDF belgelerinin önizlemesini desteklemiyor. Lütfen dosyayı indirin."
+        "Bu web tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        "Bu işlem cihazınıza bağlı olarak birkaç saniye veya birkaç dakika sürebilir"
+        "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
       ],
       "This plan is temporarily disabled": [
-        "Bu plan geçici olarak devre dışı bırakıldı"
+        "Bu tarife geçici olarak devre dışı bırakıldı"
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Bu, mevcut ücretli aboneliğinizi iptal edecek ve biriktirdiğiniz sadakat avantajlarını kaybetmenize sebep olacaktır. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecektir."
+        "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı özelliklerini kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu, PayPal'ın Proton aboneliğiniz için ödeme yapmasını sağlayacaktır. Sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyicisi kullanıyorsanız, lütfen devam etmek için devre dışı bırakın."
+        "Bu seçenek, Proton aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işleme devam etmek için devre dışı bırakın."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Bu, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden etkinleştiremezsiniz."
+        "Bu işlem, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden etkinleştiremezsiniz."
       ],
       "This will void your password, and you won't be able to use it to sign in to your account.": [
-        ""
+        "Bu işlem, parolanızı geçersiz kılar ve parolanızı kullanarak hesabınızda oturum açamazsınız."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Bu sihirbaz, Proton hesabınızda İki Aşamalı Kimlik Doğrulamayı (2FA) etkinleştirir. İki aşamalı kimlik doğrulama, Proton hesabınızı daha güvenli hale getirecek, bu nedenle etkinleştirmenizi öneririz."
+        "Bu yardımcı, Proton hesabınızda iki aşamalı kimlik doğrulamayı (2FA) etkinleştirir. Proton hesabınızı daha güvenli kılacağından iki aşamalı kimlik doğrulamayı etkinleştirmenizi öneririz."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanımla mücadele etmek için lütfen insan olduğunuzu doğrulayın."
+        "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Proton ürünlerindeki en son gelişmeleri takip etmek için çeşitli e-postalarımıza abone olabilir ve zaman zaman blogumuzu ziyaret edebilirsiniz."
+        "Proton ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman blog sayfamıza bakabilirsiniz."
       ],
       "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
         "Kötüye kullanımı önlemek için lütfen insan olduğunuzu doğrulayın. Lütfen hesabınızı doğrulayana kadar bu sekmeyi kapatmayın."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "İnternet bağlantınızı güvence altına almak için cihazınıza ProtonVPN uygulamasını indirip yükleyin ve bir ProtonVPN sunucusuna bağlanın."
+        "İnternet bağlantınızı güvenli kılmak için aygıtınıza ProtonVPN uygulamasını indirip kurun ve bir ProtonVPN sunucusuna bağlanın."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Hesabınızla yeni bir plana abone olun veya mevcut planınızı yenilemek için kullanabileceğiniz krediler ekleyin. Harcadığınız her ${ i18nCurrency } için bir kredi alırsınız."
+        "Hesabınızla yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz krediler ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
       ],
       "Tor": [
         "Tor"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "İki aşamalı kimlik doğrulama, şifrenizin tehlikeye girmesi durumunda hesabınıza fazladan bir güvenlik katmanı ekler."
+        "İki aşamalı kimlik doğrulaması, parolanızın ele geçirilmesi durumunda hesabınıza ek bir güvenlik katmanı ekler."
       ],
       "Two-factor authentication disabled": [
-        "İki aşamalı kimlik doğrulama devre dışı bırakıldı"
+        "İki aşamalı kimlik doğrulaması devre dışı bırakıldı"
       ],
       "Two-factor authentication enabled": [
-        "İki faktörlü kimlik doğrulama etkinleştirildi"
+        "İki aşamalı kimlik doğrulaması etkinleştirildi"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "İki parola modu iki parola gerektirir: biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için. (Gelişmiş)"
+        "İki parola kipinde iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        ""
+        "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözemek için ayrı parolalar kullanır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
       ],
       "Unsupported file": [
-        "Desteklenmeyen dosya"
+        "Dosya desteklenmiyor"
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Premium özelliklere erişmek ve depolama alanınızı artırmak için ücretli bir plana yükseltin."
+        "Ücretli özelliklere erişmek ve depolama alanınızı artırmak için ücretli bir tarifeye geçin."
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "ProtonVPN sunucularına uygulama olmadan bağlanırken aşağıdaki kimlik bilgilerini kullanın. Kullanım örnekleri: MacOS'ta Tunnelblick, GNU/Linux'ta OpenVPN."
+        "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: MacOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
       ],
       "Users": [
-        "Kullanıcılar"
+        "Kullanıcı sayısı"
       ],
       "Verification can take a few minutes.": [
-        "Doğrulama birkaç dakika sürebilir."
+        "Doğrulama işlemi birkaç dakika sürebilir."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "Doğrulama için yeni bir sekme açılacak, lütfen tüm açılır pencere engelleyicilerini devre dışı bırakın."
+        "Doğrulama için yeni bir sekme açılacak. Lütfen tüm açılır pencere engelleyicileri kapatın."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Doğrulama için yeni bir sekme açılacak, lütfen tüm açılır pencere engelleyicilerini devre dışı bırakın. Ücret ödemeniz gerekmez. Kartı doğrulamak için kullanılan herhangi bir miktar hemen iade edilecektir."
+        "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar derhal iade edilir."
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } aileler ve küçük işletmeler için paket."
+        "Aileler ve küçük işletmeler için VPN + ${ mailAppName } paketi."
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Uyarı: Silme işlemi kalıcıdır. Bu işlem ayrıca, tüm bağlı hizmetlere erişimi keser ve tüm kişilerinizi siler."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
-        "Mümkün oldukça resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
+        "Olabildiğince resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
       ],
       "We use 3-D Secure to protect your payments.": [
-        "Ödemelerinizi korumak için 3-D Güvenli Ödeme kullanıyoruz."
+        "Ödemelerinizi korumak için 3-D Secure kullanıyoruz."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu işlemi tamamlamak için sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyicisi kullanıyorsanız, lütfen devam etmek için devre dışı bırakın."
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
       "We will send a reset code to your recovery email to reset your password.": [
-        "Şifrenizi sıfırlamak için kurtarma e-postanıza bir sıfırlama kodu göndereceğiz."
+        "Parolanızı sıfırlamanız için kurtarma e-postanıza bir sıfırlama kodu göndereceğiz."
       ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        "Kurtarma e-postanıza bir saatlik veya yeni bir kod isteyene kadar geçerli bir sıfırlama kodu gönderdik. Devam etmek için kodu aşağıya girin."
+        "Kurtarma e-postanıza bir saat süreyle ya da yeni bir kod isteyene kadar geçerli olacak bir sıfırlama kodu gönderdik. Devam etmek için gönderilen kodu aşağıya yazın."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Bildirimler etkinleştirildiğinde, ProtonMail hesabınızda yeni mesajlarınız varsa kurtarma/bildirim adresinize bir uyarı göndereceğiz."
+        "Bildirimler etkinleştirildiğinde, ProtonMail hesabınıza yeni ileti geldiğinde kurtarma/bildirim adresinize bildirim göndereceğiz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Aboneliğiniz yenilendiğinde, yukarıdaki ödeme yöntemini ücretlendirmeden önce mevcut tüm kredileri uygulayacağız."
+        "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak veya alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -1753,91 +1753,91 @@
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız ve erişiminiz kısıtlı."
       ],
       "You are saving 20% with an annual plan": [
-        "Yıllık bir planla %20 tasarruf ediyorsunuz"
+        "Yıllık tarife kullanarak %20 indirim alıyorsunuz"
       ],
       "You are saving 33% with an two-year plan": [
-        "İki yıllık bir planla %33 tasarruf ediyorsunuz"
+        "İki yıllık tarife kullanarak %33 indirim alıyorsunuz"
       ],
       "You can customize and download your invoices for accounting purposes.": [
-        "Faturalarınızı muhasebe amacıyla özelleştirebilir ve indirebilirsiniz."
+        "Faturalarınızı muhasebe kullanımı için özelleştirebilir ve indirebilirsiniz."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        ""
+        "Aynı anda yalnızca bir sohbet kopyası açabilirsiniz. Lütfen yeni bir konuşma başlatmadan önce önceki konuşmaları kapatın."
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "MacOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bir ProtonVPN sunucusuna bağlanmak için aşağıdaki kimlik bilgilerini kullanabilirsiniz."
+        "Bir ProtonVPN sunucusuna MacOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "ProtonVPN uygulamalarına veya ProtonVPN kontrol paneline giriş yapmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
+        "ProtonVPN uygulamalarında ya da ProtonVPN kontrol panosunda oturum açmak için OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanamazsınız. ${ learnMore }"
       ],
       "You have no saved payment methods.": [
-        "Kayıtlı ödeme yönteminiz yok."
+        "Kayıtlı bir ödeme yönteminiz yok."
       ],
       "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Eski sürümü yüklemeden önce, ek ProtonMail kullanıcılarını, adreslerini ve özel alan adlarını devre dışı bırakmalı veya kaldırmalısınız."
+        "Tarifenizi düşürmeden önce, ek ProtonMail kullanıcılarını, adreslerini ve özel etki alanlarını devre dışı bırakmalı ya da silmelisiniz."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Ödeme yöntemi olarak eklemek için PayPal hesabınıza bağlı bir kredi kartınız veya banka hesabınızın olması gerekir."
+        "Ödeme yöntemi olarak eklemek için, PayPal hesabınızla bağlantılı bir kredi kartı ya da banka hesabı olmalıdır."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal hesabınızla bağlantılı bir kredi kartınız ya da banka hesabınız olmalıdır. PayPal hesabınız buna sahip değilse, lütfen aşağıdaki butona tıklayın."
+        "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Aboneliğinizi iptal etmeden önce bütün ek olan kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir. ${ linkButton }"
+        "Aboneliğinizi iptal etmeden önce tüm ek kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Depolama kapasitenizin %${ spaceDisplayed } oranına ulaştınız. ${ freeUpMessage } ${ upgradeLink }"
+        "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Depolama kapasitenizin %100'üne ulaştınız. Yeni e-posta gönderemez veya alamazsınız. ${ freeUpMessage } ${ upgradeLink }"
+        "Depolama kapasitenizi %100 oranında kullanıyorsunuz. Yeni e-postalar gönderemez veya alamazsınız. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
-        "Ödemenizi doğrulamak için kısa süre içinde bankanıza yönlendirileceksiniz."
+        "Birazdan ödemenizi doğrulamak için bankanıza yönlendirileceksiniz."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Ödemenizi doğrulamak için kısa süre içinde PayPal'a yönlendirileceksiniz."
+        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Hesabınızda vadesi geçmiş en az bir fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
+        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Hesabınızda en az bir gecikmiş fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
+        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your account has been successfully created. Please press the \"Close\" button to be taken back to the app.": [
-        "Hesabınız başarıyla oluşturuldu. Uygulamaya geri dönmek için lütfen \"Kapat\" butonuna basın."
+        "Hesabınız oluşturuldu. Uygulamaya geri dönmek için \"Kapat\" düğmesine tıklayın."
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Hesabınız yükseltiliyor, bu işlem 30 saniye kadar sürebilir."
+        "Hesabınız yüksek tarifeye geçiriliyor. Bu işlem 30 saniye kadar sürebilir."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Ödemeniz onaylandıktan sonra hesabınız güncellenecektir."
+        "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
-        "Bankanız, güvenlik amacıyla 3-D Güvenli doğrulama gerektiriyor."
+        "Bankanız güvenlik için 3-D Secure ile doğrulama istiyor."
       ],
       "Your email will only be used for this one-time verification.": [
-        "E-postanız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
+        "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
-        "Mevcut Proton hesabınız tüm Proton hizmetlerine erişmek için kullanılabilir. Lütfen ${ email } ile giriş yapın"
+        "Var olan Proton hesabınız tüm Proton hizmetlerine erişmek için kullanılabilir. Lütfen ${ email } ile oturum açın"
       ],
       "Your payment details are protected with TLS encryption and Swiss laws": [
         "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre yasaları ile korunmaktadır"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
+        "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre kişisel gizlilik yasaları ile korunmaktadır."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
+        "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen gecikmiş faturaları ödeyin."
+        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "ProtonVPN ve ProtonMail hesaplarınız birbirine bağlıdır. Her ikisini de silmek için lütfen ${ loginLink } adresinden giriş yapın ve hesabınızı silin."
+        "ProtonVPN ve ProtonMail hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Aboneliğiniz Mozilla tarafından yönetilmektedir. Lütfen Mozilla desteği ile iletişime geçin."
+        "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
       ]
     },
     "info": {
@@ -1847,20 +1847,20 @@
     },
     "Info concerning plan features": {
       "Customizable features": [
-        "Özelleştirilebilir özellikler"
+        "Değiştirilebilecek özellikler"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail, toplu e-posta veya spam gönderme için kullanılamaz. Yasal e-posta mesajları sınırsızdır."
+        "ProtonMail, toplu e-posta veya spam gönderimi için kullanılamaz. Yasal e-posta iletileri için sınır yoktur."
       ]
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Bize nakit olarak nasıl ödeme yapacağınıza ilişkin talimatlar için lütfen ${ email } adresinden bizimle iletişime geçin."
+        "Nakit ödemenin nasıl yapılacağı hakkında bilgi almak için bizimle ${ email } adresinden görüşün."
       ]
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "Aboneliğinizin otomatik olarak yenilenmesi için bir ödeme yöntemi ekleyebilirsiniz. Diğer ödeme yöntemleri de mevcuttur."
+        "Aboneliğinizin otomatik olarak yenilenmesi için bir ödeme yöntemi ekleyebilirsiniz. Başka ödeme yöntemleri de kullanılabilir."
       ]
     },
     "Info message for custom invoice modal": {
@@ -1870,7 +1870,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Ödenmemiş faturalar nedeniyle herhangi bir hizmet kesintisini önlemek için, lütfen herhangi bir zamanda en az 1 geçerli ödeme yönteminiz olduğundan emin olun."
+        "Ödenmeyen faturalar nedeniyle herhangi bir hizmet kesintisi yaşamamak için, her zaman en az 1 geçerli ödeme yönteminiz bulunduğundan emin olun."
       ]
     },
     "information": {
@@ -1880,7 +1880,7 @@
     },
     "Invoice state display as badge": {
       "Billed": [
-        "Faturalandırılan"
+        "Faturalanmış"
       ],
       "Paid": [
         "Ödenmiş"
@@ -1892,18 +1892,18 @@
         "Geçersiz"
       ],
       "Writeoff": [
-        ""
+        "Vazgeçilmiş"
       ]
     },
     "Invoice type display as badge": {
       "Addition": [
-        "İlave"
+        "Ekleme"
       ],
       "Cancellation": [
-        "İptal et"
+        "İptal"
       ],
       "Chargeback": [
-        "Geri ödeme talep et"
+        "Geri ödeme"
       ],
       "Credit": [
         "Kredi"
@@ -1912,7 +1912,7 @@
         "Bağış"
       ],
       "Modification": [
-        "Değiştir"
+        "Değişiklik"
       ],
       "Other": [
         "Diğer"
@@ -1921,7 +1921,7 @@
         "Para iadesi"
       ],
       "Renewal": [
-        "Yenile"
+        "Yenileme"
       ],
       "Subscription": [
         "Abonelik"
@@ -1933,16 +1933,16 @@
         "${ n } VPN bağlantısı kullanılabilir"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ MaxAddresses } e-posta adresinden ${ UsedAddresses } tanesi",
-        "${ MaxAddresses } e-posta adresinden ${ UsedAddresses } tanesi"
+        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi",
+        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ MaxDomains } özel alan adından ${ UsedDomains } tanesi",
-        "${ MaxDomains } özel alan adından ${ UsedDomains } tanesi"
+        "${ MaxDomains } / ${ UsedDomains } özel etki alanı",
+        "${ MaxDomains } / ${ UsedDomains } özel etki alanı"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ MaxMembers } kullanıcıdan ${ UsedMembers } tanesi",
-        "${ MaxMembers } kullanıcıdan ${ UsedMembers } tanesi"
+        "${ MaxMembers } / ${ UsedMembers } kullanıcı",
+        "${ MaxMembers } / ${ UsedMembers } kullanıcı"
       ],
       "1 month": [
         "1 ay"
@@ -1954,13 +1954,13 @@
         "24 ay"
       ],
       "6-digit code": [
-        "6 haneli kod"
+        "6 rakamlı kod"
       ],
       "Allow recovery by email": [
-        "E-posta ile kurtarmaya izin ver"
+        "E-posta ile kurtarma yapılabilsin"
       ],
       "Allow recovery by phone": [
-        "Telefon ile kurtarmaya izin ver"
+        "Telefon ile kurtarma yapılabilsin"
       ],
       "Amount": [
         "Tutar"
@@ -1975,13 +1975,13 @@
         "Geri dön:"
       ],
       "bonus storage": [
-        "bonus depolama"
+        "ödül depolama alanı"
       ],
       "Browser": [
-        "Tarayıcı"
+        "Web tarayıcı"
       ],
       "Browser version": [
-        "Tarayıcı sürümü"
+        "Web tarayıcı sürümü"
       ],
       "BTC address:": [
         "BTC adresi:"
@@ -2005,40 +2005,40 @@
         "Kategori"
       ],
       "Confirm login password": [
-        "Oturum açma parolasını onayla"
+        "Yeni oturum açma parolası onayı"
       ],
       "Confirm mailbox password": [
-        "Posta kutusu şifresini onayla"
+        "Posta kutusu parolası onayı"
       ],
       "Confirm new password": [
-        "Yeni şifreyi onaylayın"
+        "Yeni parola onayı"
       ],
       "Confirm password": [
-        "Şifreyi onayla"
+        "Parola onayı"
       ],
       "Copy": [
         "Kopyala"
       ],
       "Could you please let us know which provider?": [
-        ""
+        "Hangi hizmet sağlayıcı olduğunu belirtebilir misiniz?"
       ],
       "Could you please specify which streaming service?": [
-        ""
+        "Hangi yayın akışı hizmeti olduğunu belirtebilir misiniz?"
       ],
       "Could you please specify?": [
-        ""
+        "Lütfen daha açık belirtir misiniz?"
       ],
       "Country": [
         "Ülke"
       ],
       "Credits used": [
-        "Kullanılan krediler"
+        "Kullanılan kredi"
       ],
       "Current login password": [
-        ""
+        "Geçerli oturum açma parolası"
       ],
       "Customize invoices": [
-        "Faturaları özelleştirin"
+        "Faturaları özelleştir"
       ],
       "CVV code": [
         "CVV kodu"
@@ -2047,52 +2047,52 @@
         "Günlük e-posta bildirimleri"
       ],
       "Danger": [
-        "Tehlikeli"
+        "Tehlike"
       ],
       "Default language": [
         "Varsayılan dil"
       ],
       "Digits": [
-        "Rakamlar"
+        "Hane sayısı"
       ],
       "Discount": [
         "İndirim"
       ],
       "Display name": [
-        "Görünen isim"
+        "Görüntülenecek ad"
       ],
       "Do you have any suggestions for our team?": [
-        ""
+        "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
       "Email": [
-        "E-posta"
+        "E-posta adresi"
       ],
       "Email address": [
         "E-posta adresi"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Onaylamak için kuruluş adını yazın"
       ],
       "Enter the 6-digit code": [
-        "6 haneli kodu girin"
+        "6 rakamlı kodu yazın"
       ],
       "Enter the code displayed on your TV": [
-        "TV'nizde görüntülenen kodu girin"
+        "Televizyonunuzda görüntülenen kodu yazın"
       ],
       "Expires": [
-        "Bitiş tarihi"
+        "Geçerlilik sonu"
       ],
       "Expiry date": [
         "Son kullanma tarihi"
       ],
       "extra storage": [
-        "ekstra depolama"
+        "ek depolama alanı"
       ],
       "Gift code": [
         "Hediye kodu"
       ],
       "Hide password": [
-        "Şifreyi gizle"
+        "Parolayı gizle"
       ],
       "Interval": [
         "Aralık"
@@ -2101,34 +2101,34 @@
         "Anahtar"
       ],
       "Login password": [
-        "Oturum açma şifresi"
+        "Oturum açma parolası"
       ],
       "Mailbox password": [
-        "Posta kutusu şifresi"
+        "Posta kutusu parolası"
       ],
       "Name": [
         "Ad"
       ],
       "Name on card": [
-        "Kartın üzerindeki isim"
+        "Kart üzerindeki isim"
       ],
       "New login password": [
         "Yeni oturum açma parolası"
       ],
       "New mailbox password": [
-        "Yeni posta kutusu şifresi"
+        "Yeni posta kutusu parolası"
       ],
       "New password": [
-        "Yeni şifre"
+        "Yeni parola"
       ],
       "Old login password": [
         "Eski oturum açma parolası"
       ],
       "Old password": [
-        "Eski şifre"
+        "Eski parola"
       ],
       "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 şifresi"
+        "OpenVPN / IKEv2 parolası"
       ],
       "OpenVPN / IKEv2 username": [
         "OpenVPN / IKEv2 kullanıcı adı"
@@ -2140,13 +2140,13 @@
         "İşletim sistemi sürümü"
       ],
       "Optional": [
-        ""
+        "İsteğe bağlı"
       ],
       "Other amount": [
         "Diğer tutar"
       ],
       "Password": [
-        "Şifre"
+        "Parola"
       ],
       "Payer": [
         "Ödeyen"
@@ -2158,7 +2158,7 @@
         "Posta kodu"
       ],
       "Proration": [
-        "Paylaştır"
+        "Eşit dağıtım"
       ],
       "Proton username": [
         "Proton kullanıcı adı"
@@ -2167,10 +2167,10 @@
         "ProtonMail adresi"
       ],
       "Recovery email address": [
-        ""
+        "Kurtarma e-posta adresi"
       ],
       "Reveal password": [
-        "Şifreyi göster"
+        "Parolayı göster"
       ],
       "Select a method": [
         "Bir yöntem seçin"
@@ -2185,10 +2185,10 @@
         "Ara toplam"
       ],
       "System information": [
-        "Sistem bilgisi"
+        "Sistem bilgileri"
       ],
       "Token": [
-        "Erişim anahtarı"
+        "Kod"
       ],
       "Total": [
         "Toplam"
@@ -2206,13 +2206,13 @@
         "Toplam fiyat (iki yıllık)"
       ],
       "Two-factor authentication": [
-        "İki faktörlü kimlik doğrulama"
+        "İki aşamalı kimlik doğrulama"
       ],
       "Two-factor authentication code": [
-        "İki aşamalı doğrulama kodu"
+        "İki aşamalı kimlik doğrulama kodu"
       ],
       "Two-password mode": [
-        "İki şifre modu"
+        "İki parola kipi"
       ],
       "Two-year discount (${ discountPercentage }%)": [
         "İki yıllık indirim (${ discountPercentage }%)"
@@ -2224,10 +2224,10 @@
         "Kullanıcı adı"
       ],
       "Username or ProtonMail address": [
-        "Kullanıcı adı veya ProtonMail adresi"
+        "Kullanıcı adı ya da ProtonMail adresi"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "${ humanMaxSpace } toplamından ${ humanUsedSpace } kadarı kullanılıyor"
+        "${ humanMaxSpace } / ${ humanUsedSpace } kullanılıyor"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -2236,7 +2236,7 @@
         "Doğrulama yöntemi"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Gittiğinizi görmekten üzgünüz. Lütfen gelişmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
+        "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
       ],
       "What happened?": [
         "Ne oldu?"
@@ -2259,7 +2259,7 @@
     },
     "label": {
       "Recovery phone number": [
-        ""
+        "Kurtarma telefon numarası"
       ]
     },
     "Label for news": {
@@ -2276,7 +2276,7 @@
         "Proton bülteni"
       ],
       "Proton offers and promotions": [
-        "Proton önerileri ve tanıtımları"
+        "Proton teklif ve tanıtımları"
       ],
       "Proton product announcements": [
         "Proton ürün duyuruları"
@@ -2287,77 +2287,77 @@
         "Varsayılan"
       ],
       "Expired": [
-        "Süresi dolmuş"
+        "Süresi geçmiş"
       ]
     },
     "Label, make it short please": {
       "Attach screenshot(s)": [
-        "Ekran görüntüsü(leri) ekleyin"
+        "Ekran görüntüsü ekleyin"
       ]
     },
     "Link": {
       "Add a gift code": [
-        "Hediye kodu ekle"
+        "Bir hediye kodu ekleyin"
       ],
       "Back to login": [
         "Oturum açma sayfasına geri dön"
       ],
       "clearing your browser cache": [
-        "tarayıcı önbelleğini temizleme"
+        "web tarayıcınızın ön belleğini temizleme"
       ],
       "click here": [
-        "buraya tıkla"
+        "buraya tıklayın"
       ],
       "Close": [
         "Kapat"
       ],
       "Common login problems": [
-        "Yaygın oturum açma problemleri"
+        "Sık karşılaşılan oturum açma sorunları"
       ],
       "Contact support": [
-        "Destek ile iletişime geçin"
+        "Destek ekibimizle görüşün"
       ],
       "Don't have an account yet? Sign up for free!": [
-        "Henüz bir hesabınız yok mu? Ücretsiz kaydolun!"
+        "Henüz bir hesabınız yok mu? Ücretsiz hesap açın!"
       ],
       "Forgot username?": [
         "Kullanıcı adınızı mı unuttunuz?"
       ],
       "Go to subscription plans": [
-        "Abonelik planlarına git"
+        "Abonelik tarifelerine git"
       ],
       "here": [
         "buraya"
       ],
       "Learn more": [
-        "Daha fazla bilgi edinin"
+        "Ayrıntılı bilgi alın"
       ],
       "Log in": [
         "Oturum aç"
       ],
       "Not activated": [
-        "Etkinleştirilmedi"
+        "Etkinleştirilmemiş"
       ],
       "Pay invoice": [
         "Faturayı ödeyin"
       ],
       "Privacy Policy": [
-        "Gizlilik Politikası"
+        "Gizlilik ilkesi"
       ],
       "protonvpn.com": [
         "protonvpn.com"
       ],
       "Request an invite": [
-        "Davet et"
+        "Davet isteği yap"
       ],
       "Reset password": [
-        "Şifreyi sıfırla"
+        "Parolayı sıfırla"
       ],
       "Sign up for free": [
-        "Ücretsiz kaydol"
+        "Ücretsiz hesap açın"
       ],
       "Terms of Service": [
-        "Hizmet Şartları"
+        "Hizmet koşulları"
       ],
       "Upgrade": [
         "Yükselt"
@@ -2372,7 +2372,7 @@
         "Rehberi görüntüle"
       ],
       "What is the difference between UDP and TCP protocols?": [
-        "UDP ve TCP protokolleri arasındaki fark nedir?"
+        "UDP ve TCP iletişim kuralları arasındaki fark nedir?"
       ]
     },
     "Mail feature": {
@@ -2383,16 +2383,16 @@
         "20 GB"
       ],
       "Address verification": [
-        "Adres doğrulama"
+        "Adres doğrulaması"
       ],
       "Addresses": [
-        "Adresler"
+        "Adres sayısı"
       ],
       "Autoresponder": [
         "Otomatik yanıtlayıcı"
       ],
       "Catch-All email": [
-        "Tüm e-postaları yakala"
+        "Tümümü toplayan e-posta"
       ],
       "Contact groups": [
         "Kişi grupları"
@@ -2401,13 +2401,13 @@
         "Özel e-posta adresleri"
       ],
       "Custom filters": [
-        "Özel filtreler"
+        "Özel süzgeçler"
       ],
       "Encrypted contacts": [
         "Şifrelenmiş kişiler"
       ],
       "Folders / labels": [
-        "Klasörler / etiketler"
+        "Klasör / etiket sayısı"
       ],
       "IMAP / SMTP": [
         "IMAP / SMTP"
@@ -2416,25 +2416,25 @@
         "Sınırlı"
       ],
       "Messages per day": [
-        "Günlük ileti limiti"
+        "Günlük ileti sayısı"
       ],
       "Multi-user support": [
         "Çoklu kullanıcı desteği"
       ],
       "Priority": [
-        "Öncelik"
+        "Öncelikli"
       ],
       "Storage": [
-        "Depolama"
+        "Depolama alanı"
       ],
       "Support": [
         "Destek"
       ],
       "Use @pm.me address": [
-        "@pm.me adresini kullan"
+        "@pm.me adresi kullanımı"
       ],
       "Users": [
-        "Kullanıcılar"
+        "Kullanıcı sayısı"
       ]
     },
     "Mail feature option": {
@@ -2458,13 +2458,13 @@
     },
     "Mail upsell feature": {
       "Create separate logins for each user": [
-        "Her kullanıcı için ayrı girişler oluşturun"
+        "Her kullanıcıya ayrı oturum açma bilgileri verin"
       ],
       "Get Multi-user support": [
         "Çoklu kullanıcı desteği alın"
       ],
       "Host emails for your organization": [
-        "Kuruluşunuz için e-postalar sağlayın"
+        "Kuruluşunuzun e-postalarını barındırın"
       ]
     },
     "Many Others": {
@@ -2474,17 +2474,17 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Bu işlem, kuruluşunuzla ilgili tüm alt kullanıcıları, hesapları ve verileri kalıcı olarak silecek."
       ]
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
-        "İki faktörlü kimlik doğrulamayı devre dışı bırakmak istediğinizden emin misiniz?"
+        "İki aşamalı kimlik doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
       ]
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "${ appName } uygulamasının yeni bir sürümü mevcut. ${ reloadButton }."
+        "${ appName } uygulamasının yeni bir sürümü yayınlanmış ${ reloadButton }."
       ]
     },
     "Monetary unit": {
@@ -2511,15 +2511,15 @@
         "Davetler geçici olarak devre dışı bırakıldı"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 Kimlik bilgileri güncellendi"
+        "OpenVPN / IKEv2 kimlik doğrulama bilgileri güncellendi"
       ],
       "Verification code successfully sent to ${ destination }": [
-        "Doğrulama kodu başarıyla ${ destination } adresine gönderildi"
+        "Doğrulama kodu ${ destination } alıcısına gönderildi"
       ]
     },
     "Onboarding Proton": {
       "Choose a display name": [
-        "Görünen adınızı seçin"
+        "Görüntülenecek adı yazın"
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar oluşturun."
@@ -2528,22 +2528,22 @@
         "Tüm Proton hizmetlerini keşfedin"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Görevimiz, verilerinizin ve gizliliğinizin kontrolünün sizde olduğu bir internet oluşturmaktır. Yakın zamanda Proton'u güncelledik - güvenli internete hoş geldiniz."
+        "Misyonumuz, verilerinizin ve kişisel gizliliğinizin kontrolunuz altında olacağı bir internet oluşturmaktır. Proton yakın zamanda güncellendi, güvenli internete hoş geldiniz."
       ],
       "Select a theme": [
-        "Tema seçin"
+        "Bir tema seçin"
       ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "İnsanlara bir e-posta gönderdiğinizde, onları bir etkinliğe davet ettiğinizde veya onlarla bir dosya paylaştığınızda bunu görürler."
+        "İnsanlar bunu bir e-posta gönderdiğinizde, bir etkinliğe davet ettiğinizde ya da bir dosya paylaştığınızda görür."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "VPN, Calendar ve Drive gibi diğer Proton hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
       ],
       "Welcome to Proton": [
-        "Proton'a Hoşgeldin"
+        "Proton'a hoş geldiniz"
       ],
       "You can change this anytime in your settings.": [
         "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
@@ -2569,13 +2569,13 @@
         "Daha çok beğendiğim başka bir hizmet buldum"
       ],
       "I use a different Proton account": [
-        "Farklı bir Proton hesabı kullanıyorum"
+        "Başka bir Proton hesabı kullanıyorum"
       ],
       "iOS": [
         "iOS"
       ],
       "It's missing a key feature that I need": [
-        "İhtiyacım olan önemli bir özelliği eksik"
+        "İhtiyacım olan önemli bir özellik eksik"
       ],
       "It's too expensive": [
         "Çok pahalı"
@@ -2584,10 +2584,10 @@
         "macOS"
       ],
       "My reason isn't listed": [
-        "Sebebim listede yok"
+        "Gerekçem listede yok"
       ],
       "Router": [
-        "Yönlendirici"
+        "Yöneltici"
       ],
       "Secure Core configs": [
         "Secure Core yapılandırmaları"
@@ -2610,7 +2610,7 @@
     },
     "Password": {
       "Confirm new password": [
-        "Yeni şifreyi onayla"
+        "Yeni parola onayı"
       ]
     },
     "Payment method option": {
@@ -2626,40 +2626,40 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Sizinle iletişim kurmanın bir yolu"
+        "Sizinle iletişim kurmak için bir yol"
       ],
       "Add gift code": [
         "Hediye kodu ekle"
       ],
       "Browser name": [
-        "Tarayıcı adı"
+        "Web tarayıcı adı"
       ],
       "Browser version": [
-        "Tarayıcı sürümü"
+        "Web tarayıcı sürümü"
       ],
       "Choose a new password": [
-        "Yeni bir şifre seçin"
+        "Yeni bir parola seçin"
       ],
       "Confirm": [
         "Onayla"
       ],
       "Confirm password": [
-        "Şifreyi onayla"
+        "Parola onayı"
       ],
       "e.g. Julia Smith": [
         "örn. Ayşe Yılmaz"
       ],
       "Email": [
-        "E-posta"
+        "E-posta adresi"
       ],
       "Email address": [
         "E-posta adresi"
       ],
       "Enter coupon code": [
-        "Kupon kodunu girin"
+        "Kupon kodunu yazın"
       ],
       "Enter the word '${ dangerWord }' here": [
-        "Buraya '${ dangerWord }' kelimesini girin"
+        "Buraya '${ dangerWord }' sözcüğünü yazın"
       ],
       "Feedback": [
         "Geri bildirim"
@@ -2668,7 +2668,7 @@
         "Hediye kodu"
       ],
       "Mailbox password": [
-        "Posta kutusu şifresi"
+        "Posta kutusu parolası"
       ],
       "OS name": [
         "İşletim sistemi adı"
@@ -2680,10 +2680,10 @@
         "Diğer"
       ],
       "Password": [
-        "Şifre"
+        "Parola"
       ],
       "Please describe the problem and include any error messages": [
-        "Lütfen sorunu açıklayın varsa hata mesajlarını ekleyin"
+        "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
       ],
       "Postal code": [
         "Posta kodu"
@@ -2692,19 +2692,19 @@
         "Proton kullanıcı adı"
       ],
       "Recovery email address": [
-        ""
+        "Kurtarma e-posta adresi"
       ],
       "Reset code": [
         "Sıfırlama kodu"
       ],
       "Select a reason": [
-        "Bir sebep seçin"
+        "Bir neden seçin"
       ],
       "Two-factor authentication code": [
-        "İki aşamalı doğrulama kodu"
+        "İki aşamalı kimlik doğrulama kodu"
       ],
       "Username": [
-        "Kullanıcı Adı"
+        "Kullanıcı adı"
       ],
       "ZIP": [
         "ZIP"
@@ -2717,7 +2717,7 @@
     },
     "Plan": {
       "${ mailAppName } Free": [
-        "${ mailAppName } Ücretsiz"
+        "${ mailAppName } Free"
       ],
       "Free": [
         "Ücretsiz"
@@ -2725,7 +2725,7 @@
     },
     "Plan Action": {
       "Get ${ plan.title }": [
-        "${ plan.title } Alın"
+        "${ plan.title } alın"
       ]
     },
     "Plan Description": {
@@ -2733,16 +2733,16 @@
         "Gelişmiş güvenlik özellikleri"
       ],
       "Basic privacy features": [
-        "Temel gizlilik özellikleri"
+        "Temel kişisel gizlilik özellikleri"
       ],
       "Bundle plan": [
-        "Paket planı"
+        "Paket tarifesi"
       ],
       "Privacy and security for everyone": [
-        "Herkes için gizlilik ve güvenlik"
+        "Herkes için kişisel gizlilik ve güvenlik"
       ],
       "The complete privacy suite": [
-        "Tam gizlilik paketi"
+        "Eksiksiz kişisel gizlilik paketi"
       ]
     },
     "Plan details": {
@@ -2753,7 +2753,7 @@
         "En yüksek hız (10 Gbps)"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "En Yüksek hız (10 Gbps'ye kadar)"
+        "En yüksek hız (10 Gb/sn hıza kadar)"
       ],
       "Medium": [
         "Orta"
@@ -2761,7 +2761,7 @@
     },
     "Plan feature": {
       "0.5 GB storage": [
-        "0.5 GB depolama"
+        "0.5 GB depolama alanı"
       ],
       "1 - 5000 users *": [
         "1 - 5000 kullanıcı *"
@@ -2773,7 +2773,7 @@
         "1 kullanıcı"
       ],
       "20 GB storage": [
-        "20 GB depolama"
+        "20 GB depolama alanı"
       ],
       "200 folders / labels": [
         "200 klasör / etiket"
@@ -2788,7 +2788,7 @@
         "5 adres / kullanıcı"
       ],
       "5 GB storage *": [
-        "5 GB depolama *"
+        "5 GB depolama alanı *"
       ],
       "5 GB storage / user": [
         "5 GB depolama / kullanıcı"
@@ -2800,19 +2800,19 @@
         "6 kullanıcı"
       ],
       "Access blocked content": [
-        "Engellenen içeriğe erişin"
+        "Engellenmiş içeriğe erişin"
       ],
       "Access to ${ driveAppName } (beta)": [
-        "${ driveAppName } (beta) erişimi"
+        "${ driveAppName } erişimi (beta)"
       ],
       "Adblocker (NetShield)": [
         "Reklam engelleyici (NetShield)"
       ],
       "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
-        "Tüm ${ PLAN_NAMES[PLAN.PLUS] } plan özellikleri"
+        "Tüm ${ PLAN_NAMES[PLAN.PLUS] } tarifesi özellikleri"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Tüm ${ PLAN_NAMES[PLANS.VPNPLUS] } planı özellikleri"
+        "Tüm ${ PLAN_NAMES[PLANS.VPNPLUS] } tarifesi özellikleri"
       ],
       "Built-in Adblocker (NetShield)": [
         "Yerleşik reklam engelleyici (NetShield)"
@@ -2827,13 +2827,13 @@
         "Yüksek hız"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "En Yüksek hız (10 Gbps'ye kadar)"
+        "En yüksek hız (10 Gb/sn hıza kadar)"
       ],
       "Includes 6 user accounts": [
-        "6 kullanıcı hesabı içerir"
+        "6 kullanıcı hesabı bulunur"
       ],
       "Includes Proton Visionary": [
-        "Proton Vizyoner içerir"
+        "Proton Visionary bulunur"
       ],
       "Medium speed": [
         "Orta hız"
@@ -2851,7 +2851,7 @@
         "Secure Core VPN"
       ],
       "Streaming service support": [
-        "Yayın hizmeti desteği"
+        "Yayın akışı hizmeti desteği"
       ],
       "Tor over VPN": [
         "VPN üzerinden Tor"
@@ -2874,7 +2874,7 @@
         "En yüksek hız (10 Gbps)"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "En Yüksek hız (10 Gbps'ye kadar)"
+        "En yüksek hız (10 Gb/sn hıza kadar)"
       ],
       "Medium speed": [
         "Orta hız"
@@ -2886,32 +2886,32 @@
         "ProtonMail Visionary hesabı"
       ],
       "Streaming service support": [
-        "Yayın hizmeti desteği"
+        "Yayın akışı hizmeti desteği"
       ],
       "Strict no-logs policy": [
-        "Sıkı kayıt tutmama politikası"
+        "Sıkı kayıt tutmama ilkesi"
       ]
     },
     "Plan info": {
       "(current plan)": [
-        "(geçerli plan)"
+        "(geçerli tarife)"
       ],
       "Most popular": [
-        "En popüler"
+        "En beğenilen"
       ]
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        ""
+        "${ BRAND_NAME } ${ currentPlanName } hesabınızda hala ${ daysRemaining } günlük kullanım hakkınız var.",
+        "${ BRAND_NAME } ${ currentPlanName } hesabınızda hala ${ daysRemaining } gün boyunca kullanım hakkınız var."
       ]
     },
     "Plan upsell": {
       "Monthly plan": [
-        "Aylık plan"
+        "Aylık tarife"
       ],
       "Yearly plan": [
-        "Yıllık plan"
+        "Yıllık tarife"
       ]
     },
     "PlanPrice": {
@@ -2919,10 +2919,10 @@
         "${ totalMonthlyPriceText } / ay"
       ],
       "Billed as ${ totalBilledText }": [
-        "${ totalBilledText } faturalandırıldı"
+        "${ totalBilledText } faturalandı"
       ],
       "SAVE ${ discountText }": [
-        "${ discountText } TASARRUF EDİN"
+        "${ discountText } İNDİRİM"
       ]
     },
     "Price": {
@@ -2948,24 +2948,24 @@
         "Sürüm notları"
       ],
       "Upgrade storage": [
-        "Depolamayı yükseltin"
+        "Depolama alanını artırın"
       ],
       "Your current storage:": [
-        "Mevcut depolama alanınız:"
+        "Geçerli depolama alanınız:"
       ]
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } panonuza kopyalandı"
       ],
       "Account deleted. Logging out...": [
-        "Hesap silindi. Çıkış yapılıyor..."
+        "Hesap silindi. Oturum kapatılıyor..."
       ],
       "Bug reported": [
         "Hata bildirildi"
       ],
       "Code sent to ${ methodTo }": [
-        "${ methodTo } kod gönderildi"
+        "Kod ${ methodTo } alıcısına gönderildi"
       ],
       "Credits added": [
         "Krediler eklendi"
@@ -2980,7 +2980,7 @@
         "Hediye kodu uygulandı"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute": [
-        "Geçerli bir bildirim e-postası girdiyseniz, birkaç dakika içinde size kullanıcı adlarınızı içeren bir e-posta göndereceğiz"
+        "Geçerli bir bildirim e-posta adresi yazdıysanız, birkaç dakika içinde size kullanıcı adlarınızın bulunduğu bir e-posta göndereceğiz"
       ],
       "Invoice customized": [
         "Fatura özelleştirildi"
@@ -2992,7 +2992,7 @@
         "Yerel ayarlar güncellendi"
       ],
       "Password updated": [
-        "Şifreniz güncellendi"
+        "Parola güncellendi"
       ],
       "Payment method added": [
         "Ödeme yöntemi eklendi"
@@ -3007,10 +3007,10 @@
         "Telefon numarası güncellendi"
       ],
       "Verification successful": [
-        "Doğrulama başarılı"
+        "Doğrulandı"
       ],
       "You have successfully unsubscribed": [
-        "Aboneliğinizi başarıyla iptal ettiniz"
+        "Abonelikten ayrıldınız"
       ]
     },
     "Suffix": {
@@ -3021,7 +3021,7 @@
         "/2 yıl"
       ],
       "/month": [
-        ""
+        "/ay"
       ],
       "/year": [
         "/yıl"
@@ -3034,10 +3034,10 @@
     },
     "TableHeader": {
       "Action": [
-        "Eylem"
+        "İşlem"
       ],
       "City": [
-        "Şehir"
+        "İl"
       ],
       "Country": [
         "Ülke"
@@ -3054,16 +3054,16 @@
         "${ appName } özelleştirme"
       ],
       "${ title } plan details": [
-        "${ title } planı ayrıntıları"
+        "${ title } tarifesi ayrıntıları"
       ],
       "1. Select platform": [
         "1. Platform seçin"
       ],
       "2. Select protocol": [
-        "2. Protokol seçin"
+        "2. İletişim kuralı seçin"
       ],
       "3-D Secure verification failed": [
-        "3-D Güvenli doğrulama başarısız oldu"
+        "3-D Secure doğrulaması başarısız oldu"
       ],
       "3. Select config file and download": [
         "3. Yapılandırma dosyasını seçin ve indirin"
@@ -3075,22 +3075,22 @@
         "Hesap oluşturuldu"
       ],
       "Account suspended": [
-        "Hesap askıya alındı"
+        "Hesap askıya alınmış"
       ],
       "Action": [
-        "Eylem"
+        "İşlem"
       ],
       "Add credit/debit card": [
-        "Kredi/banka kartı ekleyin"
+        "Kredi / banka kartı ekle"
       ],
       "Add credits": [
-        "Kredileri ekle"
+        "Kredi ekle"
       ],
       "Add invoice details": [
-        "Fatura ayrıntılarını ekleyin"
+        "Fatura bilgileri ekle"
       ],
       "Add PayPal payment method": [
-        "PayPal ödeme yöntemi ekleyin"
+        "PayPal ödeme yöntemi ekle"
       ],
       "Already have a Proton account?": [
         "Zaten bir Proton hesabınız var mı?"
@@ -3105,37 +3105,37 @@
         "Hediye kodunu uygula"
       ],
       "Are you human?": [
-        "Gerçekten insan mısın?"
+        "Gerçek bir insan mısınız?"
       ],
       "Back": [
         "Geri"
       ],
       "Billing": [
-        "Faturalandırma"
+        "Faturalama"
       ],
       "Billing cycle": [
-        "Faturalandırma döngüsü"
+        "Fatura dönemi"
       ],
       "Card verification": [
-        "Kartı doğrula"
+        "Kart doğrulama"
       ],
       "Card verification in progress": [
-        "Kart doğrulama devam ediyor"
+        "Kart doğrulanıyor"
       ],
       "Change login password": [
-        "Giriş şifresini değiştirin"
+        "Oturum açma parolasını değiştir"
       ],
       "Change mailbox password": [
-        "Posta kutusu şifresini değiştir"
+        "Posta kutusu parolasını değiştir"
       ],
       "Change password": [
-        "Şifreyi değiştir"
+        "Parolayı değiştir"
       ],
       "Change password for ${ Name } (${ Email })": [
-        "${ Name } (${ Email }) şifresini değiştir"
+        "${ Name } (${ Email }) parolasını değiştir"
       ],
       "Checking invitation parameters": [
-        "Davet parametrelerini kontrol et"
+        "Davet parametreleri denetleniyor"
       ],
       "Checkout": [
         "Ödeme yap"
@@ -3144,10 +3144,10 @@
         "Adresi onaylayın"
       ],
       "Confirm downgrade": [
-        "Eski sürüme geçmeyi onaylayın"
+        "Düşürmeyi onayla"
       ],
       "Confirm loss of Proton bonuses": [
-        "Proton bonuslarının kaybını onaylayın"
+        "Proton ödüllerini kaybedeceğinizi onaylayın"
       ],
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
@@ -3156,22 +3156,22 @@
         "Kupon indirimi"
       ],
       "Create an account": [
-        "Hesap oluştur"
+        "Bir hesap açın"
       ],
       "Credits": [
-        "Krediler"
+        "Kredi"
       ],
       "Currency": [
         "Para birimi"
       ],
       "Current plan": [
-        "Geçerli plan"
+        "Geçerli tarife"
       ],
       "Customize your plan": [
-        "Planınızı özelleştirin"
+        "Tarifenizi özelleştirin"
       ],
       "Dashboard": [
-        "Kontrol Paneli"
+        "Pano"
       ],
       "Date": [
         "Tarih"
@@ -3183,67 +3183,67 @@
         "Hesabı sil"
       ],
       "Delete organization?": [
-        ""
+        "Kuruluş silinsin mi?"
       ],
       "Device connected!": [
-        "Cihaz bağlandı!"
+        "Aygıt bağlandı!"
       ],
       "Disable two-factor authentication": [
-        "İki faktörlü kimlik doğrulamayı devre dışı bırakın"
+        "İki aşamalı kimlik doğrulamayı devre dışı bırak"
       ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
       ],
       "Downgrade account": [
-        ""
+        "Hesap tarifesini düşür"
       ],
       "Downloads": [
-        "İndirilenler"
+        "İndirmeler"
       ],
       "Edit credit/debit card": [
-        "Kredi/banka kartını düzenleyin"
+        "Kredi/banka kartını düzenle"
       ],
       "Email subscriptions": [
         "E-posta abonelikleri"
       ],
       "Enter verification code": [
-        "Doğrulama kodunu girin"
+        "Doğrulama kodunu yazın"
       ],
       "Enter your password": [
-        "Şifrenizi girin"
+        "Parolanızı yazın"
       ],
       "Enter your username or ProtonMail email address": [
-        "Kullanıcı adınızı veya ProtonMail e-posta adresinizi girin"
+        "Kullanıcı adınızı ya da ProtonMail e-posta adresinizi yazın"
       ],
       "Error": [
         "Hata"
       ],
       "Forgot username": [
-        "Kullanıcı adını unuttum"
+        "Kullanıcı adımı unuttum"
       ],
       "General": [
         "Genel"
       ],
       "Get ProtonVPN Plus to access all servers": [
-        "Tüm sunuculara erişmek için ProtonVPN Plus'ı edinin"
+        "Tüm sunuculara erişmek için ProtonVPN Plus tarifesine geçin"
       ],
       "Gift code": [
         "Hediye kodu"
       ],
       "Gift Code": [
-        "Hediye Kodu"
+        "Hediye kodu"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
       "Invalid verification code": [
-        "Geçersiz doğrulama kodu"
+        "Doğrulama kodu geçersiz"
       ],
       "Invoices": [
         "Faturalar"
       ],
       "Kill Switch": [
-        "Kill Switch"
+        "Bağlantı kesici"
       ],
       "Language": [
         "Dil"
@@ -3252,22 +3252,22 @@
         "Oturum aç"
       ],
       "Login password": [
-        "Oturum açma şifresi"
+        "Outurum açma parolası"
       ],
       "My subscription": [
         "Aboneliğim"
       ],
       "Network error": [
-        "Ağ hatası"
+        "Ağ sorunu"
       ],
       "Next": [
-        "İleri"
+        "Sonraki"
       ],
       "No Logs": [
-        "Kayıt Yok"
+        "Kayıt tutmaz"
       ],
       "Open actions dropdown": [
-        "Açılır menü işlemleri"
+        "İşlemler menüsünü aç"
       ],
       "Open help menu": [
         "Yardım menüsünü aç"
@@ -3282,25 +3282,25 @@
         "OpenVPN yapılandırma dosyaları"
       ],
       "Password": [
-        "Şifre"
+        "Parola"
       ],
       "Passwords": [
-        "Şifreler"
+        "Parolalar"
       ],
       "Pay invoice": [
         "Faturayı öde"
       ],
       "Payment details": [
-        "Ödeme detayları"
+        "Ödeme ayrıntıları"
       ],
       "Payment methods": [
         "Ödeme yöntemleri"
       ],
       "Payment verification": [
-        "Ödemeyi doğrula"
+        "Ödemeyi doğrulayın"
       ],
       "Payment verification in progress": [
-        "Ödeme doğrulaması devam ediyor"
+        "Ödeme doğrulanıyor"
       ],
       "Payments": [
         "Ödemeler"
@@ -3309,10 +3309,10 @@
         "PayPal doğrulaması başarısız oldu"
       ],
       "Plan summary": [
-        "Plan özeti"
+        "Tarife özeti"
       ],
       "Plans": [
-        "Planlar"
+        "Tarifeler"
       ],
       "Previous": [
         "Önceki"
@@ -3321,61 +3321,61 @@
         "İşleniyor"
       ],
       "Processing...": [
-        "İşlem devam ediyor..."
+        "İşleniyor..."
       ],
       "ProtonVPN clients": [
         "ProtonVPN istemcileri"
       ],
       "ProtonVPN plan comparison": [
-        "ProtonVPN plan karşılaştırması"
+        "ProtonVPN tarifeleri karşılaştırması"
       ],
       "Provide payment details": [
-        "Ödeme ayrıntılarını sağlayın"
+        "Ödeme bilgilerini verin"
       ],
       "Recovery": [
-        ""
+        "Kurtarma"
       ],
       "Redeem coupon": [
         "Kuponu kullan"
       ],
       "Redeem your coupon and start protecting your online privacy": [
-        "Kuponunuzu kullanın ve çevrimiçi gizliliğinizi korumaya başlayın"
+        "Kuponunuzu kullanın ve çevrimiçi kişisel gizliliğinizi korumaya başlayın"
       ],
       "Report a problem": [
-        "Sorun bildir"
+        "Bir sorun bildir"
       ],
       "Request new code": [
-        "Yeni kod isteyin"
+        "Yeni kod iste"
       ],
       "Resend code": [
         "Kodu yeniden gönder"
       ],
       "Reset password": [
-        "Şifreyi sıfırla"
+        "Parolayı sıfırla"
       ],
       "Reset password?": [
-        ""
+        "Parola sıfırlansın mı?"
       ],
       "Secure Core Servers": [
-        "Secure Core Sunucuları"
+        "Secure Core sunucuları"
       ],
       "Select a plan": [
-        "Bir plan seçin"
+        "Bir tarife seçin"
       ],
       "Select an account verification method": [
         "Bir hesap doğrulama yöntemi seçin"
       ],
       "Set up two-factor authentication": [
-        "İki faktörlü kimlik doğrulamayı ayarlayın"
+        "İki aşamalı kimlik doğrulamayı ayarla"
       ],
       "Settings": [
         "Ayarlar"
       ],
       "Sign in again to continue": [
-        "Devam etmek için tekrar oturum açın"
+        "Devam etmek için yeniden oturum açın"
       ],
       "Sign up": [
-        "Kaydol"
+        "Hesap açın"
       ],
       "Status": [
         "Durum"
@@ -3384,31 +3384,31 @@
         "Güçlü şifreleme"
       ],
       "Subtotal": [
-        "Kısmi toplam"
+        "Ara toplam"
       ],
       "Summary": [
         "Özet"
       ],
       "Swiss Based": [
-        "İsviçre Merkezli"
+        "İsviçre merkezli"
       ],
       "Switch to one-password mode": [
-        "Tek parola moduna geç"
+        "Tek parola kipine geç"
       ],
       "Switch to two-password mode": [
-        "Çift parola moduna geç"
+        "İki parola kipine geç"
       ],
       "Total (monthly)": [
         "Toplam (aylık)"
       ],
       "TV log in": [
-        "TV girişi"
+        "TV oturumu açma"
       ],
       "Type": [
         "Tür"
       ],
       "Unsupported browser": [
-        "Desteklenmeyen tarayıcı"
+        "Web tarayıcı desteklenmiyor"
       ],
       "Upgrade": [
         "Yükselt"
@@ -3417,7 +3417,7 @@
         "Yükseltin ve daha fazlasını alın"
       ],
       "User log in": [
-        "Kullanıcı girişi"
+        "Kullanıcı oturumu açma"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -3440,7 +3440,7 @@
     },
     "Title for payment methods table": {
       "Actions": [
-        "Hareketler"
+        "İşlemler"
       ],
       "Method": [
         "Yöntem"
@@ -3456,84 +3456,84 @@
     },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Nerede olursanız olun coğrafi olarak engellenen içeriğe erişin (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.)."
+        "Nerede olursanız olun coğrafi olarak engellenen içeriğe (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.) erişin."
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Hesabınıza bağlı birden fazla e-posta adresi oluşturun, örn. kullaniciadi2@protonmail.com"
+        "Hesabınıza bağlı birden fazla e-posta adresi oluşturun. Örnek: kullaniciadi2@protonmail.com"
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar."
       ],
       "Discount applied for annual billing cycle": [
-        "Yıllık faturalandırma döngüsü için uygulanan indirim"
+        "Yıllık fatura dönemine uygulanan indirim"
       ],
       "Discount applied for two-year billing cycle": [
-        "İki yıllık faturalandırma döngüsü için uygulanan indirim"
+        "İki yıllık fatura dönemine uygulanan indirim"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek bir planla hem ${ vpnAppName } hem de ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere erişin."
+        "Tek tarifeyle tüm ücretli ${ vpnAppName } ve ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) özelliklerine erişin."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Hem ProtonVPN hem de ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere tek bir tarifeyle erişin."
+        "Tek tarifeyle tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) özelliklerine erişin."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Kendi alan adlarınız için e-postaları ${ mailAppName } adresinde barındırın, ör. john.smith@ornek.com"
+        "Kendi etki alanınızın e-postalarını ${ mailAppName } üzerinde barındırın. Örnek: ali.kaya@ornek.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "ProtonMail'de kendi alan adlarınız için e-postaları barındırın, örn. ali.yilmaz@ornek.com"
+        "Kendi etki alanınızın e-postalarını ProtonMail üzerinde barındırın. Örnek: ali.kaya@ornek.com"
       ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
-        "Parolanızı unutursanız, hesabınıza veya verilerinize artık erişemezsiniz. Lütfen güvenli bir yere saklayın."
+        "Parolanızı unutursanız, hesabınıza veya verilerinize erişemezsiniz. Lütfen güvenli bir yerde tutun."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Bir hediye kodu satın aldıysan ya da destek ekibimizden bir tane aldıysan, buraya girebilirsin."
+        "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Includes ProtonMail encrypted email with all features": [
-        "Tüm özelliklere sahip ProtonMail şifreli e-postayı içerir"
+        "Tüm özellikleri ile ProtonMail şifreli e-posta bulunur"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı tarifeler için geçerlidir"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield cihazınızı korur ve reklamları, izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinmenizi hızlandırır."
+        "NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinme hızınızı artırır."
       ],
       "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
-        "Bağlantıları Secure Core ağımız üzerinden yönlendirerek VPN sunucu tehlikesine karşı ek koruma sağlar"
+        "Bağlantıları Secure Core ağımız üzerinden yönelterek VPN sunucunun ele geçirilmiş olmasına karşı ek koruma sağlar"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
-        "Tek bir tıklama ile internet trafiğinizi Tor ağı üzerinden yönlendirin."
+        "Tek tıklama ile internet trafiğinizi Tor ağı üzerinden yöneltin."
       ],
       "Save 20% when billed annually": [
-        "Yıllık faturalandırmada %20 tasarruf edin"
+        "Yıllık faturalama ile %20 indirim alın"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent gibi dosya paylaşım protokolleri için destek."
+        "BitTorrent gibi dosya paylaşım iletişim kurallarına destek."
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Hesabınıza bağlı birden fazla adres / takma ad kullanın, örn. kullaniciadi2@protonmail.com"
+        "Hesabınıza bağlı birden fazla adres / takma ad kullanın. Örnek: kullaniciadi2@protonmail.com"
       ],
       "Use the personal address username@pm.me to send emails": [
         "E-posta göndermek için kullanıcıadı@pm.me kişisel adresinizi kullanın"
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
-        "Tüm Proton hizmetleri için kullanılan kullanıcı adı. Bu, daha sonra güvenli bir ProtonMail hesabı oluşturmak için de kullanılabilir."
+        "Tüm Proton hizmetleri için kullanılan kullanıcı adı. Bu ad, daha sonra güvenli bir ProtonMail hesabı açmak için de kullanılabilir."
       ],
       "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
-        "E-postanız üçüncü şahıslarla paylaşılmaz yalnızca kurtarma ve hesapla ilgili sorular veya iletişim için kullanılır."
+        "E-posta adresiniz üçüncü taraflarla paylaşılmaz. Yalnızca kurtarma, hesapla ilgili sorular ve iletişim için kullanılır."
       ]
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "kararlı sürüm"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Şifre en az ${ length } karakter içermelidir",
-        "Şifre en az ${ length } karakter içermelidir"
+        "Parola en az ${ length } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ length } karakter uzunluğunda olmalıdır"
       ]
     },
     "VerificationType": {
@@ -3549,10 +3549,10 @@
         "${ mailAppName } Visionary"
       ],
       "30-days money-back guarantee": [
-        "30-gün para iade garantisi"
+        "30 gün ücret iade garantisi"
       ],
       "Access blocked content": [
-        "Engellenen içeriğe erişin"
+        "Engellenen içeriğe erişim"
       ],
       "Adblocker (NetShield)": [
         "Reklam engelleyici (NetShield)"
@@ -3564,13 +3564,13 @@
         "DNS sızıntısı önleme"
       ],
       "Full Disk Encryption on Servers": [
-        "Sunucularda Tam Disk Şifrelemesi"
+        "Sunucularda tam disk şifrelemesi"
       ],
       "Jurisdiction": [
-        "Hükümet"
+        "Yetkili mahkemeler"
       ],
       "Kill Switch / Always-on VPN": [
-        "Kill Switch / Her zaman açık VPN"
+        "Bağlantı kesici / Her zaman açık VPN"
       ],
       "Languages supported": [
         "Desteklenen diller"
@@ -3579,19 +3579,19 @@
         "Konumlar/Ülkeler"
       ],
       "Open Source & audited apps": [
-        "Açık kaynaklı & denetlenen uygulamalar"
+        "Açık kaynaklı ve denetlenmiş uygulamalar"
       ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"
       ],
       "Perfect Forward Secrecy (PFS)": [
-        "Mükemmel İleri Gizlilik (PFS)"
+        "Mükemmel ileriye dönük gizlilik (PFS)"
       ],
       "Platforms supported": [
         "Desteklenen platformlar"
       ],
       "Router support": [
-        "Yönlendirici desteği"
+        "Yöneltici desteği"
       ],
       "Secure Core servers": [
         "Secure Core sunucuları"
@@ -3603,10 +3603,10 @@
         "Bölünmüş tünelleme"
       ],
       "Streaming service support": [
-        "Yayın hizmeti desteği"
+        "Yayın akışı hizmeti desteği"
       ],
       "Strict no-logs policy": [
-        "Sıkı kayıt tutmama politikası"
+        "Sıkı kayıt tutmama ilkesi"
       ],
       "Tor over VPN": [
         "VPN üzerinden Tor"
@@ -3615,24 +3615,24 @@
         "Kullanıcı verilerini pazarlama"
       ],
       "Volume/bandwidth cap": [
-        "Hacim/bant genişliği sınırı"
+        "Boyut/bant genişliği sınırı"
       ],
       "VPN Connections": [
-        "VPN Bağlantıları"
+        "VPN bağlantısı sayısı"
       ],
       "VPN servers": [
-        "VPN sunucuları"
+        "VPN sunucu sayısı"
       ]
     },
     "VPN feature option": {
       "(Android & Windows only)": [
-        "(yalnızca Android & Windows)"
+        "(yalnızca Android ve Windows)"
       ],
       "High": [
         "Yüksek"
       ],
       "Highest (up to 10 Gbps)": [
-        "En yüksek (10 Gbps'ye kadar)"
+        "En yüksek (10 Gb/sn hıza kadar)"
       ],
       "Medium": [
         "Orta"
@@ -3654,27 +3654,27 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } sunucu",
+        "${ n }+ sunucu"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfCountries } ülkede ${ numberOfServers }",
+        "${ numberOfCountries } ülkede ${ numberOfServers }"
       ]
     },
     "VPN upsell feature": {
       "Access geo-blocked content (Netflix, YouTube, etc.)": [
-        "Coğrafi olarak engellenen içeriğe erişin (Netflix, YouTube, vb.)"
+        "Coğrafi olarak engellenmiş içeriğe erişin (Netflix, YouTube, vb.)"
       ],
       "Higher speed servers (up to 10Gbps)": [
-        "En yüksek hızlı sunucular (10 Gbps'ye kadar)"
+        "Daha yüksek hızlı sunucular (10Gb/sn hıza kadar)"
       ],
       "Unlock advanced VPN features": [
-        "Gelişmiş VPN özelliklerinin kilidini açın"
+        "Gelişmiş VPN özelliklerine erişin"
       ]
     },
     "VPNClient": {
@@ -3702,37 +3702,37 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Adresi silmek istediğinizden emin misiniz?"
+        "Adresi silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to delete the phone number?": [
-        "Telefon numarasını silmek istediğinizden emin misiniz?"
+        "Telefon numarasını silmek istediğinize emin misiniz?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Bu adresi sildiğinizde, artık günlük e-posta bildirimlerini alamayacaksınız."
+        "Bu adresi sildikten sonra günlük e-posta bildirimlerini alamazsınız."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Bu adresi sildiğinizde, artık hesabınızı kurtaramayacak veya günlük e-posta bildirimleri alamayacaksınız."
+        "Bu adresi sildikten sonra, hesabınızı kurtaramaz ya da günlük e-posta bildirimlerini alamazsınız."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "Bu adresi sildiğinizde, artık hesabınızı kurtaramazsınız."
+        "Bu adresi sildikten sonra hesabınızı kurtaramazsınız."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Bu telefon numarasını sildiğinizde, artık hesabınızı kurtaramayacaksınız."
+        "Bu telefon numarasını sildikten sonra hesabınızı kurtaramazsınız."
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Canlı sohbet yalnızca ücretli ProtonVPN tarife sahiplerinin kullanabildiği ayrıcalıklı özelliktir. Lütfen bunun yerine destek bileti alın."
+        "Canlı sohbet yalnızca ücretli ProtonVPN tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bu ödeme yöntemini seçerek hesabınızın hemen güncellenemeyeceğini lütfen unutmayın. Ödeme temizlendikten sonra hesabınızı güncelleyeceğiz."
+        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Raporlar uçtan uca şifrelenmez, lütfen hassas bilgiler göndermeyin."
+        "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Aygıtınızın tarih ve saat ayarları eşit değil. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."
       ]
     }
   }
