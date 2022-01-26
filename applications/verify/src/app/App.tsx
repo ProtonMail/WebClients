@@ -44,7 +44,7 @@ const App = () => {
                         <PreventLeaveProvider>
                             <NotificationsHijack onCreate={handleNotificationCreate}>
                                 <ModalsProvider>
-                                    <ApiProvider config={config} onLogout={noop}>
+                                    <ApiProvider config={config} onLogout={noop} noErrorState>
                                         <Verify />
                                         <ModalsChildren />
                                     </ApiProvider>

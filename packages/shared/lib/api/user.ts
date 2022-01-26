@@ -114,6 +114,12 @@ export const queryCheckUsernameAvailability = (Name: string) => ({
     params: { Name },
 });
 
+export const queryCheckEmailAvailability = (Name: string) => ({
+    url: 'users/availableExternal',
+    method: 'get',
+    params: { Name },
+});
+
 export const queryDirectSignupStatus = (
     Type: 1 | 2 // 1 = mail, 2 = VPN
 ) => ({
