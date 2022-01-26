@@ -1,4 +1,4 @@
-import { findTimeZone, getUTCOffset, getZonedTime, listTimeZones } from 'timezone-support';
+import { findTimeZone, getTimeZoneLinks, getUTCOffset, getZonedTime, listTimeZones } from 'timezone-support';
 import { DateTime } from '../interfaces/calendar/Date';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from './timezoneDatabase';
 
@@ -170,15 +170,27 @@ export const getSupportedTimezone = (tzid: string): string | undefined => {
         const normalizedTzid = strippedTzid.toLowerCase().replace(/\./g, '');
         // try manual conversions
         const timezone = MANUAL_TIMEZONE_LINKS[normalizedTzid];
-        if (!timezone) {
-            // It might be a globally unique timezone identifier, whose specification is not addressed by the RFC.
-            // We try to match it with one of our supported list by brute force. We should fall here rarely
-            const lowerCaseTzid = tzid.toLowerCase();
-            return SUPPORTED_TIMEZONES_LIST.find((supportedTzid) =>
-                lowerCaseTzid.includes(supportedTzid.toLowerCase())
-            );
+        if (timezone) {
+            return timezone;
         }
-        return timezone;
+        // It might be a globally unique timezone identifier, whose specification is not addressed by the RFC.
+        // We try to match it with one of our supported list by brute force. We should fall here rarely
+        const lowerCaseTzid = tzid.toLowerCase();
+        const supportedTimezone = SUPPORTED_TIMEZONES_LIST.find((supportedTzid) =>
+            lowerCaseTzid.includes(supportedTzid.toLowerCase())
+        );
+        if (supportedTimezone) {
+            return supportedTimezone;
+        }
+        // Try alias timezones
+        const aliasMap = getTimeZoneLinks();
+        // some alias names have overlap (e.g. GB-Eire and Eire). To find the longest match, we sort them by decreasing length
+        const sortedAlias = Object.keys(aliasMap).sort((a: string, b: string) => b.length - a.length);
+        for (const alias of sortedAlias) {
+            if (lowerCaseTzid.includes(alias.toLowerCase())) {
+                return aliasMap[alias];
+            }
+        }
     }
 };
 
