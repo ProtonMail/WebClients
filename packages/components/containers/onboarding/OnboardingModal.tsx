@@ -246,6 +246,7 @@ const OnboardingModal = ({
             }
             intermediate
             footer={null}
+            className="modal--no-outline"
         >
             {childStep}
             <footer className="flex flex-nowrap flex-column">
