@@ -12,7 +12,7 @@ const OPTIONS = {
     linkify: true,
 };
 
-const md = markdownit('default', OPTIONS);
+const md = markdownit('default', OPTIONS).disable(['lheading', 'heading', 'list', 'code', 'fence', 'hr']);
 
 /**
  * This function generates a random string that is not included in the input text.
@@ -123,9 +123,13 @@ export const textToHtml = (input = '', signature: string, mailSettings: MailSett
     const rendered = md.render(withPlaceholder);
     const html = removeNewLinePlaceholder(rendered, placeholder);
 
-    const withSignature = attachSignature(html, signature, text, mailSettings);
+    const withSignature = attachSignature(html, signature, text, mailSettings).trim();
+    /**
+     * The capturing group includes negative lookup "(?!<p>)" in order to avoid nested problems.
+     * Ex, this capture will be ignored : "<p>Hello</p><p>Hello again</p>""
+     * Because it would have ended up with this result : "Hello</p><p>Hello again"
+     */
+    const extractContentFromPTag = /^<p>(((?!<p>)[\s\S])*)<\/p>$/.exec(withSignature)?.[1];
 
-    const result = /^<p>([\s\S]*)<\/p>$/gm.exec(withSignature)?.[1] || withSignature;
-
-    return result;
+    return extractContentFromPTag || withSignature;
 };
