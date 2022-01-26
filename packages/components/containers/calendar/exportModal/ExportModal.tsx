@@ -15,13 +15,12 @@ import { c } from 'ttag';
 
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { format } from 'date-fns';
-import { getAppHref, getClientID } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
 import { Button, BasicModal } from '../../../components';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import ExportingModalContent from './ExportingModalContent';
 import ExportSummaryModalContent from './ExportSummaryModalContent';
-import { useGetCalendarUserSettings, useUserSettings } from '../../../hooks';
+import { useConfig, useGetCalendarUserSettings, useUserSettings } from '../../../hooks';
+import { getAppVersion } from '../../..';
 
 interface Props {
     calendar: Calendar;
@@ -35,6 +34,8 @@ export const ExportModal = ({ calendar, onClose, onExit, isOpen = false }: Props
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const [userSettings] = useUserSettings();
     const weekStartsOn = getWeekStartsOn(userSettings);
+    const { APP_VERSION } = useConfig();
+    const appVersion = getAppVersion(APP_VERSION);
 
     const [model, setModel] = useState<ExportCalendarModel>({
         step: EXPORT_STEPS.EXPORTING,
@@ -59,27 +60,21 @@ export const ExportModal = ({ calendar, onClose, onExit, isOpen = false }: Props
             ) => {
                 // we don't catch errors here as they're caught into a NETWORK error on ExportingModalContent
                 const { PrimaryTimezone: defaultTzid } = await getCalendarUserSettings();
-                const uniqueTimezonesPromise = getUniqueVtimezones({
+                const uniqueTimezones = await getUniqueVtimezones({
                     vevents: exportedEvents,
                     tzids: [defaultTzid],
                     getVTimezonesMap,
                 }).catch(() => {
                     return [];
                 });
-                const appVersionPromise = fetch(getAppHref('/assets/version.json', APPS.PROTONCALENDAR))
-                    .then((result) => result.json())
-                    .then((json) => json.version)
-                    .catch(() => {
-                        // TODO: remove when atlas CSP issues are resolved
-                        return '4.1.11';
-                    });
-
-                const [uniqueTimezones, appVersion] = await Promise.all([uniqueTimezonesPromise, appVersionPromise]);
-                const clientId = getClientID(APPS.PROTONCALENDAR);
 
                 const ics = createExportIcs({
                     calendar,
-                    prodId: getProdIdFromNameAndVersion(clientId, appVersion),
+                    // We use the ProtonAccount version here,
+                    // but we do not want to display 'Web Account' in this public PRODID
+                    // As a compromise between a "marketing display" and traceability,
+                    // we add a '.a' suffix to indicate that the version refers to Proton Account
+                    prodId: getProdIdFromNameAndVersion('WebCalendar', `${appVersion}.a`),
                     eventsWithSummary: exportedEvents,
                     defaultTzid,
                     vtimezones: uniqueTimezones,
