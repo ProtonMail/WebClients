@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { useControlled } from '../../hooks';
-import { ModalProps } from './Modal';
 
 const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?: () => void }) => {
     const { open: controlledOpen, onClose, onExit } = options || {};
@@ -20,7 +19,7 @@ const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?
         onExit?.();
     };
 
-    const modalProps: Pick<ModalProps, 'key' | 'open' | 'onClose' | 'onExit'> = {
+    const modalProps = {
         key,
         open,
         onClose: handleClose,

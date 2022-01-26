@@ -9,7 +9,7 @@ import { generateMnemonicPayload, generateMnemonicWithSalt, MnemonicData } from 
 
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { Button, FormModal, Loader } from '../../components';
-import { useApi, useGetUserKeys, useLoading, useUser } from '../../hooks';
+import { useApi, useGetUserKeys, useLoading, useUser, useEventManager } from '../../hooks';
 import { PasswordTotpInputs, useAskAuth } from '../password';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 
@@ -36,6 +36,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, onClose = () => {}, onSucc
     const [step, setStep] = useState(confirmStep ? STEPS.CONFIRM : nonConfirmStep);
 
     const api = useApi();
+    const { call } = useEventManager();
     const [submittingAuth, setSubmittingAuth] = useState(false);
     const [authError, setAuthError] = useState('');
     const getUserKeys = useGetUserKeys();
@@ -64,6 +65,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, onClose = () => {}, onSucc
         try {
             const payload = await getPayload(data);
             await api(reactivateMnemonicPhrase(payload));
+            await call();
 
             onSuccess();
             if (confirmStep) {
@@ -135,6 +137,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, onClose = () => {}, onSucc
                         credentials: { password, totp },
                         config: updateMnemonicPhrase(payload),
                     });
+                    await call();
 
                     onSuccess();
                     setStep(STEPS.MNEMONIC_PHRASE);
