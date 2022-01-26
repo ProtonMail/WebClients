@@ -1,9 +1,10 @@
-import { Children, cloneElement, ReactElement, ReactNode, useState } from 'react';
+import { Children, cloneElement, ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
 import { generateUID, classnames } from '../../helpers';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import useTooltipHandlers from './useTooltipHandlers';
-import { useCombinedRefs } from '../../hooks';
+import { useCombinedRefs, useInstance } from '../../hooks';
+import { TooltipExclusiveContext } from './TooltipExclusive';
 
 export type TooltipType = 'info' | 'error' | 'warning';
 
@@ -14,7 +15,6 @@ interface Props {
     type?: TooltipType;
     anchorOffset?: { x: number; y: number };
     isOpen?: boolean;
-    uid?: string;
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
@@ -43,16 +43,8 @@ const mergeCallbacks = (a: any, b: any) => {
     );
 };
 
-const Tooltip = ({
-    children,
-    title,
-    originalPlacement = 'top',
-    type = 'info',
-    anchorOffset,
-    uid: uidProp,
-    ...rest
-}: Props) => {
-    const [uid] = useState(uidProp || generateUID('tooltip'));
+const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', anchorOffset, ...rest }: Props) => {
+    const uid = useInstance(() => generateUID('tooltip'));
     const [isRTL] = useRightToLeft();
 
     const rtlAdjustedPlacement = originalPlacement.includes('right')
@@ -60,21 +52,32 @@ const Tooltip = ({
         : originalPlacement.replace('left', 'right');
 
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
-    const { anchorRef, open, close, isOpen } = usePopperAnchor<HTMLSpanElement>(uid);
+    const { anchorRef, open, close, isOpen } = usePopperAnchor<HTMLSpanElement>();
+    const combinedIsOpen = rest?.isOpen || isOpen;
     const { position, placement } = usePopper({
         popperEl,
         anchorEl: anchorRef.current,
-        isOpen: rest?.isOpen || isOpen,
+        isOpen: combinedIsOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
         anchorOffset,
     });
 
-    const tooltipHandlers = useTooltipHandlers(open, close, rest?.isOpen || isOpen);
+    const exclusive = useContext(TooltipExclusiveContext) || {};
+
+    const tooltipHandlers = useTooltipHandlers(open, close, combinedIsOpen);
 
     const child = Children.only(children);
     // Types are wrong? Not sure why ref doesn't exist on a ReactElement
     // @ts-ignore
     const mergedRef = useCombinedRefs(anchorRef, child?.ref);
+
+    useEffect(() => {
+        if (combinedIsOpen) {
+            exclusive.add?.(uid);
+        } else {
+            exclusive.remove?.(uid);
+        }
+    }, [isOpen, rest?.isOpen]);
 
     if (!title) {
         return cloneElement(child, {
@@ -98,7 +101,7 @@ const Tooltip = ({
             <Popper
                 divRef={setPopperEl}
                 id={uid}
-                isOpen={!!title && (rest.isOpen || isOpen)}
+                isOpen={exclusive.last === uid && !!title && combinedIsOpen}
                 style={position}
                 className={classnames(['tooltip', `tooltip--${placement}`, getTooltipTypeClass(type)])}
             >

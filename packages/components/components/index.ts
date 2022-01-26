@@ -25,6 +25,7 @@ export * from './ellipsis';
 export * from './fileIcon';
 export * from './fileNameDisplay';
 export * from './focus';
+export * from './form';
 export * from './globalLoader';
 export * from './icon';
 export * from './iconRow';

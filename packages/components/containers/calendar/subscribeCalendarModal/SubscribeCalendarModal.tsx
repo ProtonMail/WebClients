@@ -15,6 +15,7 @@ import {
     InputFieldTwo,
     Loader,
     Button,
+    Form,
 } from '../../../components';
 import { useLoading, useCalendarEmailNotificationsFeature } from '../../../hooks';
 import { GenericError } from '../../error';
@@ -126,8 +127,7 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
             open={isOpen}
             className="modal--shorter-labels w100"
             onClose={handleClose}
-            as="form"
-            // @ts-ignore
+            as={Form}
             dense
             onSubmit={() => {
                 if (!submitProps.loading) {

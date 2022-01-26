@@ -1,13 +1,12 @@
 import { AnimationEvent, ElementType, createContext, useLayoutEffect, useState, useRef } from 'react';
 
 import { useChanged, useHotkeys, useInstance } from '../../hooks';
-import { PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { classnames, generateUID } from '../../helpers';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
 import './Modal.scss';
 import { useModalPosition } from './modalPositions';
-import { Form } from '../..';
 
 export type ModalSize = 'small' | 'medium' | 'large' | 'full';
 
@@ -48,13 +47,9 @@ interface ModalOwnProps {
      * Fires when the Modal has finished its exit animation.
      */
     onExit?: () => void;
-    /**
-     * Only supports 'form' as a polymorphic element
-     */
-    as?: 'form';
 }
 
-const defaultElement = 'dialog';
+const defaultElement = 'div';
 
 export type ModalProps<E extends ElementType = typeof defaultElement> = PolymorphicComponentProps<E, ModalOwnProps>;
 
@@ -67,8 +62,6 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     onExit,
     disableCloseOnEscape,
     className,
-    children,
-    as,
     ...rest
 }: PolymorphicComponentProps<E, ModalOwnProps>) => {
     const last = useModalPosition(open || false);
@@ -130,11 +123,6 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         }
     };
 
-    const dialogContainerProps = {
-        ...rest,
-        className: 'modal-two-dialog-container',
-    };
-
     return (
         <Portal>
             <div
@@ -161,11 +149,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     ])}
                 >
                     <ModalContext.Provider value={modalContextValue}>
-                        {as === 'form' ? (
-                            <Form {...dialogContainerProps}>{children}</Form>
-                        ) : (
-                            <div {...dialogContainerProps}>{children}</div>
-                        )}
+                        <Box as={defaultElement} className="modal-two-dialog-container" {...rest} />
                     </ModalContext.Provider>
                 </dialog>
             </div>
