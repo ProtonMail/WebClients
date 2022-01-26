@@ -113,9 +113,6 @@
       "Compose": [
         "Σύνταξη"
       ],
-      "Composer size": [
-        "Μέγεθος συντάκτη"
-      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -180,6 +177,9 @@
       ],
       "Download": [
         "Λήψη"
+      ],
+      "Duplicate": [
+        ""
       ],
       "Edit": [
         "Επεξεργασία"
@@ -1899,6 +1899,11 @@
         "Διαγραφή γεγονότος"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        ""
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Επεξεργασία γεγονότος"
@@ -1935,7 +1940,7 @@
         ""
       ],
       "Unexpected error": [
-        "Απροσδόκητο σφάλμα"
+        ""
       ],
       "Unsupported invitation": [
         "Μη υποστηριζόμενη πρόσκληση"
@@ -1954,6 +1959,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event popover close button": {

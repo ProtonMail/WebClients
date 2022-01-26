@@ -332,7 +332,7 @@
         "Exporter"
       ],
       "Export contact group": [
-        ""
+        "Exporter le groupe de contacts"
       ],
       "Export contacts": [
         "Exporter les contacts"
@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Pièces jointes"
+      "Attachment": [
+        ""
       ],
       "Filter on": [
         "Filtrer sur"
@@ -2707,10 +2707,10 @@
         "Réponse invalide"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "L'événement n'a pas pu être ajouté à votre calendrier. Aucune réponse n'a été envoyée"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "L'événement n'a pas pu être mis à jour dans votre calendrier. Aucune réponse n'a été envoyée"
       ],
       "Unexpected error": [
         "Erreur inattendue"
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Votre réponse a été envoyée, mais l'événement n'a pas pu être ajouté à votre calendrier"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Votre réponse a été envoyée, mais l'événement n'a pas pu être mis à jour dans votre calendrier"
       ]
     },
     "Event title": {
@@ -7202,7 +7205,7 @@
         "Envoyer sans expiration?"
       ],
       "Sender changed": [
-        "Expéditeur modifié"
+        "Expéditeur·rice modifié·e"
       ],
       "Sending error": [
         "Erreur lors de l'envoi"

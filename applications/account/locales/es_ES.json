@@ -197,7 +197,7 @@
         "Continuar importación"
       ],
       "Continue with": [
-        ""
+        "Continuar con"
       ],
       "Continue with Google": [
         "Continuar con Google"
@@ -2306,8 +2306,14 @@
       "Invalid response": [
         "Respuesta no válida"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "No se pudo agregar el evento a tú calendario. No se envió respuesta"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "No se pudo actualizar el evento en tú calendario. No se envió respuesta"
+      ],
       "Unexpected error": [
-        "Se ha producido un error inesperado"
+        "Error inesperado"
       ],
       "Unsupported invitation": [
         "Invitación no soportada"
@@ -2328,7 +2334,7 @@
         "Tu respuesta ha sido enviada, pero el evento no ha podido ser añadido a tu calendario"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Tu respuesta ha sido enviada, pero el evento no ha podido ser actualizado en tu calendario"
+        "Su respuesta fue enviada, pero el evento no pudo ser actualizado en su calendario"
       ]
     },
     "Event title": {
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "para continuar a ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Para desencriptar y ver sus correos electrónicos y otros datos, necesitas un archivo de recuperación o una frase de recuperación."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Para desencriptar y ver sus correos electrónicos y otros datos, necesitas un archivo de recuperación."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        ""
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Para desencriptar y ver sus correos electrónicos y otros datos, necesitas una frase de recuperación."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Selecciona el método de recuperación, para desencriptar y ver los datos protegidos después de resetear la contraseña."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
@@ -6156,28 +6165,28 @@
         "Cómo importar calendarios desde otro servicio"
       ],
       "How to import calendars from Outlook": [
-        ""
+        "Cómo importar calendarios desde Outlook"
       ],
       "How to import calendars from Yahoo": [
-        ""
+        "Cómo importar calendarios desde Yahoo"
       ],
       "How to import contacts from another service": [
         "Cómo importar contactos desde otro servicio"
       ],
       "How to import contacts from Outlook": [
-        ""
+        "Cómo importar contactos desde Outlook"
       ],
       "How to import contacts from Yahoo": [
-        ""
+        "Cómo importar contactos desde Yahoo"
       ],
       "How to import emails from another service": [
         "Cómo importar correos electrónicos desde otro servicio"
       ],
       "How to import emails from Outlook": [
-        ""
+        "Cómo importar correos electrónicos desde Outlook"
       ],
       "How to import emails from Yahoo": [
-        ""
+        "Cómo importar correos electrónicos desde Yahoo"
       ]
     },
     "Modal title and action": {
@@ -8822,7 +8831,7 @@
         "Esta importación puede superar la capacidad de almacenamiento disponible actualmente en tu cuenta de Proton. Por favor, considera la opción de personalizar tu importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Desafortunadamente, no estamos en línea en este momento. Complete el siguiente formulario para describir su problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectamos un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."

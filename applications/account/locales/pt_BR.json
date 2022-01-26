@@ -281,7 +281,7 @@
         "Downgrade"
       ],
       "Downgrade account": [
-        ""
+        "Fazer downgrade da conta"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
         "Rebaixar para ${ BRAND_NAME }${ downgradedPlanName }"
@@ -413,7 +413,7 @@
         "Manter"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "Manter minha conta ${ BRAND_NAME } ${ currentPlanName }"
       ],
       "label emails as": [
         "marcar e-mail como"
@@ -707,7 +707,7 @@
         "Alternar de conta"
       ],
       "Switch to rich text": [
-        ""
+        "Alternar para rich text"
       ],
       "Top up": [
         "Recarregar"
@@ -949,7 +949,7 @@
         "Método inválido"
       ],
       "Unsupported calendar component": [
-        ""
+        "Componente de calendário não suportado"
       ],
       "Unsupported event": [
         "Evento não suportado"
@@ -2306,6 +2306,12 @@
       "Invalid response": [
         "Resposta inválida"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Não foi possível atualizar o evento no seu calendário. Nenhuma resposta foi enviada"
+      ],
       "Unexpected error": [
         "Erro inesperado"
       ],
@@ -2942,7 +2948,7 @@
         "arquivo CSV"
       ],
       "full calendar view": [
-        ""
+        "ver o calendário completo"
       ],
       "ICS file": [
         "Arquivo ICS"
@@ -3039,7 +3045,7 @@
         "Nenhum contato pôde ser importado. Clique para maiores detalhes"
       ],
       "No event can be imported. Expand for details.": [
-        ""
+        "Nenhum evento pôde ser importado. Clique para detalhes."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
@@ -3172,7 +3178,7 @@
         "Todos devem dispor de uma Internet livre e sem censura."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        ""
+        "Um arquivo de recuperação permite desbloquear e visualizar seus dados após uma redefinição de conta. "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Uma frase de recuperação permitirá que você acesse sua conta e recupere suas mensagens criptografadas caso você perca sua senha."
@@ -3364,13 +3370,13 @@
         "Foi aplicado um desconto da Black Friday 2020 para novatos"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "Impede que os remetentes vejam se e quando você abriu uma mensagem."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Ao fazer o downgrade você perderá os seguintes benefícios. Você tem certeza que quer prosseguir?"
       ],
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
@@ -3525,7 +3531,7 @@
         "Emails marcados com este marcador não serão excluídos e ainda podem ser encontrados na respectiva pasta."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        ""
+        "Habilitar recuperação por frase novamente irá gerar uma nova frase de recuperação."
       ],
       "Encryption setting updated": [
         "Configuração de criptografia atualizada"
@@ -3621,7 +3627,7 @@
         "aqui"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        ""
+        "Oculta informações de identificação ao carregar conteúdo remoto por meio de um proxy. Opção para armazenar conteúdo como anexos."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se outro administrador alterou esta senha, você precisará perguntar a nova senha da organização."
@@ -3757,7 +3763,7 @@
         "Parece que alguns dados seus estão encriptados e bloqueados. Provavelmente, isto se deve a uma troca recente ou anterior de senha. Sugerimos que use um método de recuperação para desbloquear seus dados."
       ],
       "it’s imperative": [
-        ""
+        "é obrigatório"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
@@ -4021,7 +4027,7 @@
         "É necessária a assinatura Plus ou Visionária"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "Previne que o conteúdo do servidor de origem seja carregado sem sua permissão."
       ],
       "Preview": [
         "Visualizar"
@@ -4073,7 +4079,7 @@
         "Arquivo de recuperação baixado"
       ],
       "Recovery files have been voided": [
-        ""
+        "Os arquivos de recuperação foram anulados"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperação copiada para a área de transferência"
@@ -4088,7 +4094,7 @@
         "A frase de recuperação não está associada com nenhuma das chaves."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        ""
+        "A frase de recuperação não está associada com nenhuma das chaves desatualizadas."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
@@ -4187,7 +4193,7 @@
         "O endereço de e-mail que você colocou no topo da lista é o seu endereço de e-mail padrão. Arraste e solte para reordenar seus endereços."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        ""
+        "O aplicativo de Importação-Exportação permite a exportação de mensagens para backups locais e a restauração de backups anteriores para sua conta."
       ],
       "The name will be visible to your users while they are logged in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem logados."
@@ -4262,7 +4268,7 @@
         "Isso substituirá a sua senha temporária. Você a usará para acessar a sua conta do ${ BRAND_NAME } no futuro."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
+        "Isto irá encerrar qualquer sessão ativa e desabilitar a autenticação de 2 fatores."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Este assistente habilitará a autenticação de dois fatores (2FA) em sua conta Proton. A autenticação de dois fatores tornará sua conta Proton mais segura, portanto, recomendamos ativá-la."
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Para descriptografar e ver seus e-mails e outros dados, você precisa de um arquivo de recuperação ou uma frase de recuperação."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Para descriptografar e ver seus e-mails e outros dados, você precisa de um arquivo de recuperação."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Para descriptografar e ver seus e-mails e outros dados, você precisa de uma frase de recuperação ou um arquivo de recuperação."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Para descriptografar e ver seus e-mails e outros dados, você precisa de uma frase de recuperação."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descriptografar e ver seus dados bloqueados depois de uma redefinição de senha, selecione um método de recuperação."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Para garantir acesso permanente à sua conta, defina um método de recuperação de conta"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam, verifique se você é humano."
@@ -4322,7 +4331,7 @@
         "O modo de duas senhas usa senhas separadas para acessar e descriptografar a caixa de correio. Isso provê um pequeno benefício de segurança em algumas situações, porém recomendamos o modo de senha única para a maioria dos usuários. Para alternar para o modo de duas senhas, primeiro defina uma senha de acesso e depois uma senha para a caixa de correio."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        ""
+        "Não foi possível verificar a assinatura do arquivo de recuperação. Por favor, entre em contato com o suporte."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há um método de recuperação salvo para esta conta."
@@ -4397,7 +4406,7 @@
         "Recomendamos usar os aplicativos oficiais do ProtonVPN quando possível."
       ],
       "We recommend using your recovery phrase instead.": [
-        ""
+        "Nós recomendamos usar sua frase de recuperação."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Usamos o 3-D Secure para proteger os seus pagamentos."
@@ -4544,7 +4553,7 @@
         "Em breve você será redirecionado para o PayPal para verificação do pagamento."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        ""
+        "Você não poderá recuperar dados criptografados após uma redefinição de conta usando seus arquivos de recuperação baixados."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Você permanecerá conectado mesmo depois de fechar o navegador."
@@ -5106,7 +5115,7 @@
         "Salvar contatos automaticamente"
       ],
       "Block email tracking": [
-        ""
+        "Bloquear rastreamento de e-mail"
       ],
       "bonus storage": [
         "bônus de armazenamento"
@@ -6681,10 +6690,10 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        ""
+        "Carregar conteúdo via proxy (recomendado)"
       ],
       "Load content via proxy and store as attachments": [
-        ""
+        "Carregar conteúdo via proxy e guardar como anexos"
       ]
     },
     "OS compatibility": {
@@ -7786,7 +7795,7 @@
         "Painel de controle"
       ],
       "Data locked": [
-        ""
+        "Dados bloqueados"
       ],
       "Data recovery": [
         "Recuperação de dados"
@@ -7840,7 +7849,7 @@
         "Nome do domínio"
       ],
       "Downgrade account": [
-        ""
+        "Fazer downgrade da conta"
       ],
       "Edit Allow List": [
         "Editar Lista de Permitidos"

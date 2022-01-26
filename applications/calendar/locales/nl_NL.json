@@ -113,14 +113,11 @@
       "Compose": [
         "Opstellen"
       ],
-      "Composer size": [
-        "Opstelmodusgrootte"
-      ],
       "Confirm": [
         "Bevestigen"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Bevestig het openen van link ${ linkToShow }"
       ],
       "Contact group": [
         "Contactgroep"
@@ -181,6 +178,9 @@
       "Download": [
         "Downloaden"
       ],
+      "Duplicate": [
+        "Dupliceer"
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -203,7 +203,7 @@
         "Exporteren"
       ],
       "Export contact group": [
-        ""
+        "Exporteer contactgroep"
       ],
       "Export contacts": [
         "Contactpersonen exporteren"
@@ -479,7 +479,7 @@
         "Andere methode proberen"
       ],
       "Unlock data": [
-        ""
+        "Ontgrendel gegevens"
       ],
       "Unmark for deletion": [
         "Niet markeren voor verwijderen"
@@ -975,7 +975,7 @@
         "Er is meer dan 12 uur verstreken sinds de laatste update"
       ],
       "Unsupported calendar format": [
-        ""
+        "Niet-ondersteunde agenda-indeling"
       ]
     },
     "Calendar view": {
@@ -1871,7 +1871,7 @@
         "U kunt ook ${ refresh } of probeer het later opnieuw."
       ],
       "You need an active personal calendar to import events": [
-        ""
+        "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren"
       ]
     },
     "Error notification": {
@@ -1897,6 +1897,11 @@
     "Event delete button tooltip": {
       "Delete event": [
         "Afspraak verwijderen"
+      ]
+    },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "Afspraak dupliceren"
       ]
     },
     "Event edit button tooltip": {
@@ -1929,10 +1934,10 @@
         "Ongeldige reactie"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Deze afspraak kon niet aan uw agenda worden toegevoegd. Er werd geen antwoord verstuurd"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Deze gebeurtenis kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
       ],
       "Unexpected error": [
         "Onverwachte fout"
@@ -1954,6 +1959,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Uw antwoord werd verzonden, maar de afspraak kon niet worden toegevoegd aan uw agenda"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Uw antwoord werd verstuurd, maar de afspraak kon niet worden bijgewerkt in uw agenda"
       ]
     },
     "Event popover close button": {
@@ -2157,7 +2165,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "in de volgende stap moet u alle machtigingen selecteren"
       ]
     },
     "Import warning": {
@@ -2974,7 +2982,7 @@
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
       "Your events will be encrypted and then saved.": [
-        ""
+        "Uw afspraken worden versleuteld en vervolgens opgeslagen."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -3304,16 +3312,16 @@
         "Datum en tijd"
       ],
       "Default email address": [
-        ""
+        "Standaard e-mailadres"
       ],
       "Default event duration": [
-        ""
+        "Standaard afspraakduur"
       ],
       "Default full day notifications": [
-        ""
+        "Standaardmeldingen volledige dag"
       ],
       "Default notifications": [
-        ""
+        "Standaardmeldingen"
       ],
       "Description": [
         "Beschrijving"
@@ -4098,7 +4106,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Let er op dat u ${ boldNextStep } die worden aangevraagd door de toepassing om uw import te starten."
       ]
     },
     "Onboarding Proton": {
@@ -4510,7 +4518,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        ""
+        "Instellingen wijzigen mislukt"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -4963,7 +4971,7 @@
         "Account downgraden"
       ],
       "Drop to upload": [
-        ""
+        "Sleep hier om te uploaden"
       ],
       "Edit calendar": [
         "Agenda bijwerken"
@@ -5174,7 +5182,7 @@
         "Selecteer laatste datum van afspraak"
       ],
       "Select permissions": [
-        ""
+        "Selecteer machtigingen"
       ],
       "Select the time to send this notification": [
         "Selecteer de tijd om deze melding te verzenden"
@@ -5288,7 +5296,7 @@
         "E-mailversleuteling vereist dat u de e-mails ook ondertekent, zodat anderen uw berichten kunnen verifiëren"
       ],
       "Encrypted data": [
-        ""
+        "Versleutelde gegevens"
       ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
@@ -5350,10 +5358,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Klik om de video opnieuw af te spelen"
       ],
       "Replay video": [
-        ""
+        "Video opnieuw afspelen"
       ]
     },
     "VPN feature": {

@@ -41,7 +41,7 @@
         "Ativar meu cupom"
       ],
       "Activate recovery": [
-        ""
+        "Ativar a recuperação"
       ],
       "Add credit / debit card": [
         "Adicionar cartão de crédito/débito"
@@ -146,10 +146,10 @@
         "Downgrade"
       ],
       "Downgrade account": [
-        ""
+        "Fazer downgrade da conta"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "Rebaixar para ${ BRAND_NAME }${ downgradedPlanName }"
       ],
       "Download": [
         "Baixar"
@@ -209,7 +209,7 @@
         "Aumentar"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "Manter minha conta ${ BRAND_NAME } ${ currentPlanName }"
       ],
       "Loading verification": [
         "Carregando verificação"
@@ -278,7 +278,7 @@
         "Reenviar"
       ],
       "Reset": [
-        ""
+        "Redefinir"
       ],
       "Reset credentials": [
         "Redefinir credenciais"
@@ -308,7 +308,7 @@
         "Enviar"
       ],
       "Set recovery phrase": [
-        ""
+        "Definir uma frase de recuperação"
       ],
       "Share via link": [
         "Compartilhar via link"
@@ -353,16 +353,16 @@
         "Tentar outro método"
       ],
       "Unlock data": [
-        ""
+        "Desbloquear dados"
       ],
       "Update": [
         "Atualizar"
       ],
       "Update recovery file": [
-        ""
+        "Atualizar o arquivo de recuperação"
       ],
       "Update recovery phrase": [
-        ""
+        "Atualizar a frase de recuperação"
       ],
       "Upgrade": [
         "Upgrade"
@@ -700,7 +700,7 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "Não sincronizado"
       ],
       "Syncing": [
         "Sincronizando"
@@ -708,28 +708,28 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "O calendário não pôde ser descriptografado"
       ],
       "Calendar is syncing": [
-        ""
+        "O calendário está sincronizando"
       ],
       "Calendar is too big": [
-        ""
+        "O calendário é grande demais"
       ],
       "Calendar link is not accessible": [
-        ""
+        "O link do calendário está inacessível"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "O link do calendário está temporariamente inacessível"
       ],
       "Failed to sync calendar": [
-        ""
+        "Falha ao sincronizar calendário"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Mais de 12 horas se passaram desde a última atualização"
       ],
       "Unsupported calendar format": [
-        ""
+        "Formato de calendário não suportado"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -774,33 +774,33 @@
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
-        ""
+        "Defeitos ou problema de qualidade"
       ],
       "I use a different Proton account": [
         "Eu uso uma conta Proton diferente"
       ],
       "Missing feature(s)": [
-        ""
+        "Recurso(s) ausente(s)"
       ],
       "My reason isn't listed, please comment": [
-        ""
+        "Minha razão não está listada, por favor comente"
       ],
       "Streaming service unsupported": [
-        ""
+        "Serviço de streaming não suportado"
       ],
       "Subscription is too expensive": [
-        ""
+        "A assinatura é muito cara"
       ],
       "Switching to a different provider": [
-        ""
+        "Mudando para um provedor diferente"
       ],
       "Temporary need, may come back in the future": [
-        ""
+        "Necessidade temporária, posso voltar no futuro"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
+        "Ajude-nos a melhorar!"
       ]
     },
     "Drive feature": {
@@ -836,7 +836,7 @@
         "Não é possível validar o telefone, tente novamente mais tarde"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Pedido expirado. Por favor, tente novamente"
       ],
       "Code wrong or not valid anymore": [
         "Código errado ou não é mais válido"
@@ -893,7 +893,7 @@
         "Não é um número válido"
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organização não reconhecida. Tente novamente."
       ],
       "Passwords do not match": [
         "As senhas não conferem"
@@ -917,10 +917,10 @@
         "Por favor, digite '${ dangerWord }'"
       ],
       "Please generate keys before you try to change your password": [
-        ""
+        "Gere as chaves antes de tentar alterar sua senha"
       ],
       "Please set a recovery email first": [
-        ""
+        "Em primeiro lugar, defina um e-mail de recuperação"
       ],
       "Please set a recovery phone number first": [
         "Por favor, defina um número de telefone de recuperação"
@@ -971,7 +971,7 @@
         "Você não tem faturas."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
+        "Sua conta ou organização tem uma fatura vencida. Por favor, pague todas as faturas pendentes."
       ]
     },
     "Error message": {
@@ -1284,7 +1284,7 @@
         "Ao rebaixar para um plano Gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Ao fazer o downgrade você perderá os seguintes benefícios. Você tem certeza que quer prosseguir?"
       ],
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
@@ -1425,10 +1425,10 @@
         "Importante: certifique-se de salvar os códigos de recuperação. Caso contrário, você pode perder permanentemente o acesso à sua conta se perder seu dispositivo de autenticação de dois fatores."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "Caso você perca acesso, enviaremos instruções de recuperação por e-mail ou SMS."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "Caso você perca acesso, enviaremos instruções de recuperação por e-mail."
       ],
       "Included": [
         "Incluído"
@@ -1600,7 +1600,7 @@
         "Carga do servidor"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
       ],
       "Session timed out.": [
         "Sessão expirada."
@@ -1657,7 +1657,7 @@
         "Isto irá excluir permanentemente a sua conta e todas as suas informações. Você não será capaz de reativar essa conta."
       ],
       "This will void your password, and you won't be able to use it to sign in to your account.": [
-        ""
+        "Isso anulará sua senha e você não poderá usá-la para fazer login em sua conta."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Este assistente habilitará a autenticação de dois fatores (2FA) em sua conta Proton. A autenticação de dois fatores tornará sua conta Proton mais segura, portanto, recomendamos ativá-la."
@@ -1762,7 +1762,7 @@
         "Você pode personalizar e baixar suas faturas para fins contábeis."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        ""
+        "Você só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Você pode usar as credenciais a seguir para se conectar a um servidor ProtonVPN usando um aplicativo de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
@@ -2020,13 +2020,13 @@
         "Copiar"
       ],
       "Could you please let us know which provider?": [
-        ""
+        "Você poderia nos informar qual provedor?"
       ],
       "Could you please specify which streaming service?": [
-        ""
+        "Você poderia especificar qual serviço de streaming?"
       ],
       "Could you please specify?": [
-        ""
+        "Você poderia especificar?"
       ],
       "Country": [
         "País"
@@ -2035,7 +2035,7 @@
         "Créditos usados"
       ],
       "Current login password": [
-        ""
+        "Senha de acesso atual"
       ],
       "Customize invoices": [
         "Personalizar faturas"
@@ -2062,7 +2062,7 @@
         "Nome de exibição"
       ],
       "Do you have any suggestions for our team?": [
-        ""
+        "Você tem alguma sugestão para nossa equipe?"
       ],
       "Email": [
         "E-mail"
@@ -2071,7 +2071,7 @@
         "Endereço de e-mail"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Digite o nome da organização para confirmar"
       ],
       "Enter the 6-digit code": [
         "Insira o código de 6 dígitos"
@@ -2140,7 +2140,7 @@
         "Versão do sistema operacional"
       ],
       "Optional": [
-        ""
+        "Opcional"
       ],
       "Other amount": [
         "Outra quantia"
@@ -2167,7 +2167,7 @@
         "Endereço do ProtonMail"
       ],
       "Recovery email address": [
-        ""
+        "Endereço de e-mail de recuperação"
       ],
       "Reveal password": [
         "Revelar senha"
@@ -2259,7 +2259,7 @@
     },
     "label": {
       "Recovery phone number": [
-        ""
+        "Telefone de recuperação"
       ]
     },
     "Label for news": {
@@ -2276,7 +2276,7 @@
         "Newsletter da Proton"
       ],
       "Proton offers and promotions": [
-        ""
+        "Ofertas e promoções da Proton"
       ],
       "Proton product announcements": [
         "Anúncios de produtos da Proton"
@@ -2474,7 +2474,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Isso excluirá permanentemente todos os subusuários, contas e dados associados à sua organização."
       ]
     },
     "Message": {
@@ -2692,7 +2692,7 @@
         "Nome de usuário"
       ],
       "Recovery email address": [
-        ""
+        "Endereço de e-mail de recuperação"
       ],
       "Reset code": [
         "Código de redefinição"
@@ -2902,8 +2902,8 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        ""
+        "Você ainda tem ${ daysRemaining } dia restante em sua conta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Você ainda tem ${ daysRemaining } dias restantes em sua conta ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Plan upsell": {
@@ -2956,7 +2956,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        ""
+        "${ server.Domain } copiado para a área de transferência"
       ],
       "Account deleted. Logging out...": [
         "Conta excluída. Saindo..."
@@ -2980,7 +2980,7 @@
         "Código de presente aplicado"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute": [
-        ""
+        "Se você inseriu um e-mail de notificação válido, enviaremos um e-mail com seus nomes de usuário no próximo minuto"
       ],
       "Invoice customized": [
         "Fatura personalizada"
@@ -3021,7 +3021,7 @@
         "/2 anos"
       ],
       "/month": [
-        ""
+        "/mês"
       ],
       "/year": [
         "/ano"
@@ -3183,7 +3183,7 @@
         "Excluir conta"
       ],
       "Delete organization?": [
-        ""
+        "Excluir organização?"
       ],
       "Device connected!": [
         "Dispositivo conectado!"
@@ -3195,7 +3195,7 @@
         "Proteção de vazamento de DNS"
       ],
       "Downgrade account": [
-        ""
+        "Fazer downgrade da conta"
       ],
       "Downloads": [
         "Baixar"
@@ -3333,7 +3333,7 @@
         "Fornecer detalhes do pagamento"
       ],
       "Recovery": [
-        ""
+        "Recuperação"
       ],
       "Redeem coupon": [
         "Resgatar cupom"
@@ -3354,7 +3354,7 @@
         "Redefinir senha"
       ],
       "Reset password?": [
-        ""
+        "Redefinir senha?"
       ],
       "Secure Core Servers": [
         "Servidores Secure Core"
@@ -3524,10 +3524,10 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "versão estável"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Esta versão do navegador Tor não é suportada. Por favor, atualize-o para a última ${ stableRelease }"
       ]
     },
     "Validation": {
@@ -3654,16 +3654,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } servidor",
+        "Mais de ${ n } servidores"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } conexão de VPN",
+        "${ n } conexões de VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } em ${ numberOfCountries } país",
+        "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
     "VPN upsell feature": {
@@ -3729,10 +3729,10 @@
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "As configurações de data e hora em seu dispositivo não estão sincronizadas. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos on-line."
       ]
     }
   }

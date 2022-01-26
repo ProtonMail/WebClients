@@ -2306,8 +2306,14 @@
       "Invalid response": [
         "Risposta non valida"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Impossibile aggiungere l'evento al tuo calendario. Nessuna risposta inviata"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Impossibile aggiornare l'evento nel tuo calendario. Nessuna risposta inviata"
+      ],
       "Unexpected error": [
-        "Errore inaspettato"
+        "Errore imprevisto"
       ],
       "Unsupported invitation": [
         "Invito non supportato"
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "continua su ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Per decrittografare e visualizzare le tue e-mail e altri dati, è necessario un file di ripristino o una frase di ripristino."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di un file di ripristino."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Per decrittografare e visualizzare le tue email e altri dati, necessiti di una frase o un file di ripristino."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di una frase di ripristino."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per decrittografare e visualizzare i dati bloccati dopo la reimpostazione della password, seleziona un metodo di ripristino."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Per assicurare l'accesso continuo al tuo profilo, imposta un metodo di recupero del profilo"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per contrastare spam e abusi, si prega di verificare di essere umano."

@@ -113,9 +113,6 @@
       "Compose": [
         "Escrever"
       ],
-      "Composer size": [
-        "Tamanho do compositor"
-      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -180,6 +177,9 @@
       ],
       "Download": [
         "Baixar"
+      ],
+      "Duplicate": [
+        ""
       ],
       "Edit": [
         "Editar"
@@ -1899,6 +1899,11 @@
         "Excluir evento"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        ""
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Editar evento"
@@ -1929,10 +1934,10 @@
         "Resposta inválida"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Não foi possível atualizar o evento no seu calendário. Nenhuma resposta foi enviada"
       ],
       "Unexpected error": [
         "Erro inesperado"
@@ -1954,6 +1959,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Sua resposta foi enviada, mas o evento não pôde ser adicionado ao seu calendário"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Sua resposta foi enviada, mas o evento não pôde ser atualizado em seu calendário"
       ]
     },
     "Event popover close button": {

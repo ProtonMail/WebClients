@@ -2306,8 +2306,14 @@
       "Invalid response": [
         "Érvénytelen válasz"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
-        "Váratlan hiba"
+        ""
       ],
       "Unsupported invitation": [
         "Nem támogatott meghívó"
@@ -2328,7 +2334,7 @@
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "A válasz elküldésre került, de az eseményt nem sikerült a naptárában frissíteni"
+        ""
       ]
     },
     "Event title": {
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "alkalmazás: ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító fájlra vagy jelmondatra van szüksége."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító fájlra van szüksége."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        ""
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító jelmondatra van szüksége."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "A jelszó visszaállítás után zárolt adatainak visszafejtéséhez és megjelenítéséhez, válasszon egy helyreállítási módszert."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
