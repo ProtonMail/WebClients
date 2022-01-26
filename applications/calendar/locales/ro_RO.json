@@ -113,9 +113,6 @@
       "Compose": [
         "Compunere"
       ],
-      "Composer size": [
-        "Dimensiune editor mesaje"
-      ],
       "Confirm": [
         "Confirmare"
       ],
@@ -182,6 +179,9 @@
       ],
       "Download": [
         "Descărcare"
+      ],
+      "Duplicate": [
+        ""
       ],
       "Edit": [
         "Editare"
@@ -1923,6 +1923,11 @@
         "Ștergere eveniment"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        ""
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Editare eveniment"
@@ -1960,7 +1965,7 @@
         ""
       ],
       "Unexpected error": [
-        "Eroare neașteptată"
+        ""
       ],
       "Unsupported invitation": [
         "Invitație nesuportată."
@@ -1979,6 +1984,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event popover close button": {

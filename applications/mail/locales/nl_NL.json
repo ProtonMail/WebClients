@@ -18,7 +18,7 @@
         "Activeren"
       ],
       "Activate recovery": [
-        ""
+        "Herstel activeren"
       ],
       "Add": [
         "Voeg toe"
@@ -45,7 +45,7 @@
         "Voeg nieuwe groep toe"
       ],
       "Add participant": [
-        ""
+        "Deelnemer toevoegen"
       ],
       "Add phone number": [
         "Telefoonnummer toevoegen"
@@ -183,7 +183,7 @@
         "Bevestigen"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Bevestig het openen van link ${ linkToShow }"
       ],
       "Contact group": [
         "Contactgroep"
@@ -228,7 +228,7 @@
         "Verlagen"
       ],
       "Decrypt": [
-        ""
+        "Decoderen"
       ],
       "Default email application": [
         "Standaard e-mailapplicatie"
@@ -320,7 +320,7 @@
         "Versleuteling"
       ],
       "exclude message content": [
-        ""
+        "berichtinhoud uitsluiten"
       ],
       "Expand composer": [
         "Opstelvenster vergroten"
@@ -332,7 +332,7 @@
         "Exporteren"
       ],
       "Export contact group": [
-        ""
+        "Exporteer contactgroep"
       ],
       "Export contacts": [
         "Contactpersonen exporteren"
@@ -477,7 +477,7 @@
         "Laad meer"
       ],
       "Load unprotected": [
-        ""
+        "Onbeveligd inladen"
       ],
       "Loading verification": [
         "Verificatie laden"
@@ -561,7 +561,7 @@
         "Verplaats naar..."
       ],
       "Need help?": [
-        ""
+        "Hulp nodig?"
       ],
       "Never show": [
         "Nooit tonen"
@@ -666,7 +666,7 @@
         "Gegevens herstellen"
       ],
       "Refine it": [
-        ""
+        "Verfijnen"
       ],
       "refresh the page": [
         "pagina vernieuwen"
@@ -693,7 +693,7 @@
         "Hernoem"
       ],
       "Reply securely": [
-        ""
+        "Veilig beantwoorden"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -717,7 +717,7 @@
         "Opnieuw proberen"
       ],
       "Revert to original display": [
-        ""
+        "Terugkeren naar originele weergave"
       ],
       "Save": [
         "Opslaan"
@@ -735,7 +735,7 @@
         "Zoeken"
       ],
       "Search in ${ option.text }": [
-        ""
+        "Zoeken in ${ option.text }"
       ],
       "Search message content": [
         "Doorzoek berichtinhoud"
@@ -774,7 +774,7 @@
         "Stel vervaltijd in"
       ],
       "Set recovery phrase": [
-        ""
+        "Herstelzin instellen"
       ],
       "Share via link": [
         "Deel via link"
@@ -828,7 +828,7 @@
         "Overslaan"
       ],
       "Some images could not be loaded with tracking protection": [
-        ""
+        "Sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking"
       ],
       "Start import": [
         "Begin met importeren"
@@ -858,7 +858,7 @@
         "Dit bericht bevat ingebedde afbeeldingen."
       ],
       "This message contains remote content.": [
-        ""
+        "Dit bericht bevat externe inhoud."
       ],
       "Trust": [
         "Vertrouwen"
@@ -886,7 +886,7 @@
         "Ongedaan maken"
       ],
       "Unlock data": [
-        ""
+        "Ontgrendel gegevens"
       ],
       "Unmark for deletion": [
         "Niet markeren voor verwijdering"
@@ -907,10 +907,10 @@
         "Updaten"
       ],
       "Update recovery file": [
-        ""
+        "Herstelbestand bijwerken"
       ],
       "Update recovery phrase": [
-        ""
+        "Herstelzin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1009,13 +1009,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        ""
+        "Deelnemer kon niet worden toegevoegd"
       ],
       "Invitation sent and participant added": [
-        ""
+        "Uitnodiging verstuurd en deelnemer toegevoegd"
       ],
       "Participant added": [
-        ""
+        "Deelnemer toegevoegd"
       ]
     },
     "Addon": {
@@ -1079,8 +1079,8 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
-        "",
-        ""
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } voltooid",
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } voltooid"
       ]
     },
     "Apps dropdown": {
@@ -1327,7 +1327,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        ""
+        "Heeft een kalendergebeurtenis"
       ]
     },
     "Calendar feature": {
@@ -1368,16 +1368,16 @@
         " Deze reactie komt niet overeen met uw uitnodigingsgegevens. Controleer de uitnodigingsgegevens in uw agenda."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging geaccepteerd en stelt een nieuw tijdstip voor één herhaling van de afspraak voor."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging geaccepteerd en een nieuw tijdstip voorgesteld voor deze afspraak."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "{ participantName } heeft de uitnodiging geaccepteerd voor één herhaling van de afspraak."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging voor deze afspraak geaccepteerd."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft uw uitnodiging geaccepteerd en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
@@ -1401,16 +1401,16 @@
         "${ participantName } vroeg om de laatste updates voor een afspraak die niet meer bestaat in uw kalender."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging afgewezen en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging afgewezen en een nieuw tijdstip voorgesteld voor deze afspraak."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "{ participantName } heeft de uitnodiging afgewezen voor één herhaling van de afspraak."
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging voor deze afspraak afgewezen."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft uw uitnodiging geweigerd en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
@@ -1425,16 +1425,16 @@
         "${ participantName } heeft uw uitnodiging geweigerd."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "{ participantName } had de uitnodiging geaccepteerd en een nieuw tijdstip voor één herhaling van deze afspraak voorgesteld. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "{ participantName } had de uitnodiging geaccepteerd en een nieuw tijdstip voor deze afspraak voorgesteld. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "{ participantName } had de uitnodiging geaccepteerd voor één herhaling van de afspraak."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "{ participantName } had de uitnodiging voor deze afspraak geaccepteerd."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } had uw uitnodiging geaccepteerd en een nieuwe tijd voorgesteld voor één herhaling van deze afspraak. Antwoord en voorstel zijn verouderd."
@@ -1443,16 +1443,16 @@
         "${ participantName } had uw uitnodiging geaccepteerd en een nieuwe tijd voorgesteld voor deze afspraak. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "{ participantName } had de uitnodiging afgewezen en een nieuw tijdstip voor één herhaling van deze afspraak voorgesteld. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "{ participantName } had de uitnodiging afgewezen en een nieuw tijdstip voor deze afspraak voorgesteld. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "{ participantName } had de uitnodiging afgewezen voor één herhaling van de afspraak."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "{ participantName } had de uitnodiging tot deze afspraak afgewezen."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } had uw uitnodiging geweigerd en een nieuwe tijd voorgesteld voor één herhaling van deze afspraak. Antwoord en voorstel zijn verouderd."
@@ -1497,16 +1497,16 @@
         "${ participantName } had een nieuwe tijd voorgesteld voor deze afspraak. Dit voorstel is verouderd. U heeft geen agenda's."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } had uw uitnodiging voorlopig geaccepteerd en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } had uw uitnodiging voorlopig geaccepteerd en een nieuwe tijd voorgesteld voor deze afspraak. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "{ participantName } had de uitnodiging voorlopig geaccepteerd voor één herhaling van de afspraak."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "{ participantName } had de uitnodiging voor deze afspraak voorlopig geaccepteerd."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } had uw uitnodiging voorzichtig geaccepteerd en een nieuwe tijd voorgesteld voor één herhaling van deze afspraak. Antwoord en voorstel zijn verouderd."
@@ -1515,7 +1515,7 @@
         "${ participantName } had uw uitnodiging voorzichtig geaccepteerd en een nieuwe tijd voorgesteld voor deze afspraak. Antwoord en voorstel zijn verouderd."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "{ participantName } staat niet in de deelnemerslijst."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft een nieuwe tijd voorgesteld voor één herhaling van deze afspraak."
@@ -1524,16 +1524,16 @@
         "${ participantName } heeft een nieuwe tijd voorgesteld voor deze afspraak."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging voorlopig geaccepteerd en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging voorlopig geaccepteerd en een nieuw tijdstip voorgesteld voor deze afspraak."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "{ participantName } heeft de uitnodiging voorlopig geaccepteerd voor één herhaling van de afspraak."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "{ participantName } heeft de uitnodiging voor deze afspraak voorlopig geaccepteerd."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft voorzichtig uw uitnodiging geaccepteerd en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
@@ -1633,15 +1633,15 @@
         "Er zijn meer dan 12 uur verstreken sinds de laatste update"
       ],
       "Unsupported calendar format": [
-        ""
+        "Niet-ondersteunde agenda-indeling"
       ]
     },
     "Calendar widget banner": {
       "Event already ended": [
-        ""
+        "Het evenement is al afgelopen"
       ],
       "Event in progress": [
-        ""
+        "Gebeurtenis in uitvoering"
       ]
     },
     "Collapsible tooltip": {
@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Bijlagen"
+      "Attachment": [
+        "Bijlage"
       ],
       "Filter on": [
         "Filteren op"
@@ -2186,7 +2186,7 @@
         "Voer 6 cijfers in"
       ],
       "Enter a password": [
-        ""
+        "Voer een wachtwoord in"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin-API."
@@ -2480,7 +2480,7 @@
         "Onbekende status van betalingstoken"
       ],
       "Wrong mailbox password": [
-        ""
+        "Verkeerd mailbox-wachtwoord"
       ],
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
@@ -2513,21 +2513,21 @@
     },
     "Error adding participants to a calendar event": {
       "At most 100 participants are allowed per invitation": [
-        ""
+        "Maximaal 100 deelnemers zijn toegestaan per uitnodiging"
       ]
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Concepten kunnen niet verplaatst worden naar Inbox"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Concepten kunnen niet verplaatst worden naar Spam"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Verzonden berichten kunnen niet verplaatst worden naar Inbox"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Verzonden berichten kunnen niet verplaatst worden naar Spam"
       ],
       "This action cannot be performed": [
         "Deze actie kan niet worden uitgevoerd"
@@ -2690,7 +2690,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "Kan geen uitnodiging versturen naar ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -2707,10 +2707,10 @@
         "Ongeldige reactie"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Deze afspraak kon niet aan uw agenda worden toegevoegd. Er werd geen antwoord verstuurd"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Deze gebeurtenis kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
       ],
       "Unexpected error": [
         "Onverwachte fout"
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Uw antwoord werd verzonden, maar de afspraak kon niet worden toegevoegd aan uw agenda"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Uw antwoord werd verstuurd, maar de afspraak kon niet worden bijgewerkt in uw agenda"
       ]
     },
     "Event title": {
@@ -3063,7 +3066,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "in de volgende stap moet u alle machtigingen selecteren"
       ]
     },
     "Import warning": {
@@ -3368,7 +3371,7 @@
         "Achtergrondkleur"
       ],
       "Based in Switzerland, available globally": [
-        ""
+        "Gebaseerd in Zwitserland, wereldwijd beschikbaar"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
@@ -3481,7 +3484,7 @@
         "Dagen"
       ],
       "Decrypt message": [
-        ""
+        "Bericht ontsleutelen"
       ],
       "Default email application": [
         "Standaard e-mailapplicatie"
@@ -3940,7 +3943,7 @@
         "Herstel zin gekopieerd naar klembord"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "Herstelzin gedownload"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
@@ -3988,7 +3991,7 @@
         "Schermafdruk(ken) bijgevoegd"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
+        "Duurt de zoekopdracht te lang? ${ dropdownButton } of ${ toggleOffButton } van deze zoeksessie."
       ],
       "Seems like you are all caught up for now": [
         "Het lijkt dat u helemaal mee bent voor nu"
@@ -4030,7 +4033,7 @@
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
       "Sorry, this message does not exist or has already expired": [
-        ""
+        "Sorry, dit bericht bestaat niet of is al verlopen"
       ],
       "Starter VPN service with P2P support.": [
         "Starter VPN-service met P2P-ondersteuning."
@@ -4087,7 +4090,7 @@
         "Het oorspronkelijke bericht dat u probeert door te sturen/te reageren, is in het proces van verzonden worden. Als u doorgaat, kunt u het oorspronkelijke bericht niet meer ongedaan maken."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        ""
+        "De originele afzender van dit bericht is niet langer geldig. Uw bericht zal verstuurd worden vanaf uw standaardmailadres ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "De zender heeft om een leesbevestiging gevraagd."
@@ -4139,7 +4142,7 @@
         "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
       ],
       "This message has been adjusted to comply with a dark background.": [
-        ""
+        "Dit bericht werd gewijzigd om overeen te komen met een donkere achtergrond."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Dit bericht is automatisch aangemaakt als reactie op een voorgaand bericht."
@@ -4289,7 +4292,7 @@
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
       ],
       "Version ${ appVersion }": [
-        ""
+        "Versie ${ appVersion }"
       ],
       "Visit our shop to get Proton merchandise.": [
         "Bezoek onze winkel voor Proton merchandise."
@@ -4395,7 +4398,7 @@
         "U heeft 100% van uw opslagruimte gebruikt. Maak wat ruimte vrij of upgrade uw abonnement om nieuwe berichten te verzenden."
       ],
       "You have reached the maximum number of 5 replies.": [
-        ""
+        "U heeft het maximale aantal van 5 reacties bereikt."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "U moet een kredietkaart of een bankrekening gekoppeld hebben aan uw PayPal-account om deze toe te voegen als betaalmethode."
@@ -4762,7 +4765,7 @@
         "Toevoegen aan groep"
       ],
       "Address": [
-        ""
+        "Adres"
       ],
       "ALL": [
         "ALLES"
@@ -4807,7 +4810,7 @@
         "BTC-bedrag:"
       ],
       "Calendar": [
-        ""
+        "Kalender"
       ],
       "Calendars": [
         "Agenda's"
@@ -4909,7 +4912,7 @@
         "Map locatie"
       ],
       "Frequency": [
-        ""
+        "Frequentie"
       ],
       "From": [
         "Van"
@@ -4969,7 +4972,7 @@
         "Alleen vorige maand"
       ],
       "Location": [
-        ""
+        "Locatie"
       ],
       "Mailbox password": [
         "Mailboxwachtwoord"
@@ -5020,7 +5023,7 @@
         "Of"
       ],
       "Participants": [
-        ""
+        "Deelnemers"
       ],
       "Password": [
         "Wachtwoord"
@@ -5337,10 +5340,10 @@
         "Factuur betalen"
       ],
       "Previous version": [
-        ""
+        "Vorige versie"
       ],
       "Privacy policy": [
-        ""
+        "Privacybeleid"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging te beheren."
@@ -5358,7 +5361,7 @@
         "Verzonden"
       ],
       "Sign up for free": [
-        ""
+        "Gratis inschrijven"
       ],
       "Spam": [
         "Spam"
@@ -5367,7 +5370,7 @@
         "Met ster"
       ],
       "Terms": [
-        ""
+        "Voorwaarden"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Dit ICS-bestand bevat meer dan één gebeurtenis. Download het en importeer de gebeurtenissen in ${ calendarAppName }"
@@ -5582,7 +5585,7 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        ""
+        "Geplande verzending ongedaan gemaakt"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Planning geannuleerd. Bericht is verplaatst naar Concepten."
@@ -5591,7 +5594,7 @@
         "Verzenden ongedaan gemaakt"
       ],
       "Undoing send...": [
-        ""
+        "Verzenden ongedaan maken..."
       ]
     },
     "MIME type": {
@@ -5767,7 +5770,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Let er op dat u ${ boldNextStep } die worden aangevraagd door de toepassing om uw import te starten."
       ]
     },
     "Onboarding": {
@@ -5843,7 +5846,7 @@
         "Toevoegen aan bestaande groep"
       ],
       "All": [
-        ""
+        "Alle"
       ],
       "Create new group": [
         "Nieuwe groep maken"
@@ -6962,7 +6965,7 @@
         "E-mailadressen"
       ],
       "Email content": [
-        ""
+        "E-mailinhoud"
       ],
       "Email settings": [
         "E-mailinstellingen"
@@ -7031,7 +7034,7 @@
         "Link bevestigen"
       ],
       "Load embedded images": [
-        ""
+        "Ingesloten afbeeldingen laden"
       ],
       "Load remote content": [
         "Externe inhoud laden"
@@ -7142,7 +7145,7 @@
         "Wordt verwerkt..."
       ],
       "ProtonMail": [
-        ""
+        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
@@ -7187,7 +7190,7 @@
         "Contactgroep selecteren"
       ],
       "Select permissions": [
-        ""
+        "Selecteer machtigingen"
       ],
       "Select what to import": [
         "Selecteer wat u wilt importeren"
@@ -7202,7 +7205,7 @@
         "Versturen zonder verlooptijd?"
       ],
       "Sender changed": [
-        ""
+        "Afzender gewijzigd"
       ],
       "Sending error": [
         "Fout bij verzenden"
@@ -7315,7 +7318,7 @@
         "E-mailberichten versleutelen zorgt dat ze ook ondertekend worden, om anderen te helpen om uw verzonden berichten te verifiëren"
       ],
       "Encrypted data": [
-        ""
+        "Versleutelde gegevens"
       ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
@@ -7377,10 +7380,10 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "stabiele release"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -7402,10 +7405,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Klik om de video opnieuw af te spelen"
       ],
       "Replay video": [
-        ""
+        "Video opnieuw afspelen"
       ]
     },
     "VPN feature": {

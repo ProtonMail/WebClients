@@ -2306,8 +2306,14 @@
       "Invalid response": [
         "Ugyldigt svar"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
-        "Uventet fejl"
+        ""
       ],
       "Unsupported invitation": [
         "Ikke-understøttet invitation"
@@ -2328,7 +2334,7 @@
         "Dit svar blev sendt, men begivenheden kunne ikke tilføjes til din kalender"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Dit svar blev sendt, men begivenheden kunne ikke opdateres i din kalender"
+        ""
       ]
     },
     "Event title": {
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "for at fortsætte til ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsesfil eller en gendannelsessætning."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsesfil."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        ""
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsessætning."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."

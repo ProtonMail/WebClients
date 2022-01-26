@@ -15,7 +15,7 @@
         "${ BRAND_NAME } winkel"
       ],
       "Activate recovery": [
-        ""
+        "Herstel activeren"
       ],
       "Add": [
         "Toevoegen"
@@ -129,7 +129,7 @@
         "Bevestigen"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Bevestig het openen van link ${ linkToShow }"
       ],
       "Contact group": [
         "Contactgroep"
@@ -227,7 +227,7 @@
         "Exporteren"
       ],
       "Export contact group": [
-        ""
+        "Exporteer contactgroep"
       ],
       "Export contacts": [
         "Contactgegevens exporteren"
@@ -446,7 +446,7 @@
         "Selecteer abonnement"
       ],
       "Set recovery phrase": [
-        ""
+        "Herstelzin instellen"
       ],
       "Share": [
         "Delen"
@@ -521,7 +521,7 @@
         "Ongedaan maken"
       ],
       "Unlock data": [
-        ""
+        "Ontgrendel gegevens"
       ],
       "Unmark for deletion": [
         "Niet markeren voor verwijderen"
@@ -530,10 +530,10 @@
         "Niet meer vertrouwen"
       ],
       "Update recovery file": [
-        ""
+        "Herstelbestand bijwerken"
       ],
       "Update recovery phrase": [
-        ""
+        "Herstelzin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -888,7 +888,7 @@
         "Er is meer dan 12 uur verstreken sinds de laatste update"
       ],
       "Unsupported calendar format": [
-        ""
+        "Niet-ondersteunde agenda-indeling"
       ]
     },
     "Composer size": {
@@ -1144,10 +1144,10 @@
         "Fout bij het verbinden met de Bitcoin-API."
       ],
       "Failed to download a file": [
-        ""
+        "Downloaden van een bestand mislukt"
       ],
       "Failed to download a folder": [
-        ""
+        "Downloaden van een map mislukt"
       ],
       "Failed to load the link": [
         "Kan de link niet laden"
@@ -1156,7 +1156,7 @@
         "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
       ],
       "File \"${ name }\" is already downloading": [
-        ""
+        "Bestand \"${ name }\" wordt reeds gedownload"
       ],
       "File cannot be merged with folder": [
         "Bestand kan niet worden samengevoegd met map"
@@ -1165,10 +1165,10 @@
         "Bestand heeft geen inhoud om een voorbeeld te bekijken"
       ],
       "File selection is already downloading": [
-        ""
+        "Geselecteerde bestanden worden reeds gedownload"
       ],
       "Folder \"${ name }\" is already downloading": [
-        ""
+        "Map \"${ name }\" wordt reeds gedownload"
       ],
       "Folder name cannot be empty": [
         "Mapnaam kan niet leeg zijn"
@@ -1593,7 +1593,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "in de volgende stap moet u alle machtigingen selecteren"
       ]
     },
     "Import warning": {
@@ -1606,15 +1606,15 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "",
+        "${ activeDownloadsCount } downloaden",
         ""
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "",
+        "${ activeDownloadsCount } downloaden (${ downloadProgress }%)",
         ""
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "",
+        "${ activeUploadsCount } uploaden (${ uploadProgress }%)",
         ""
       ],
       "${ addressCount } email address": [
@@ -1637,7 +1637,7 @@
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
       ],
       "${ canceledCount } canceled": [
-        "",
+        "${ canceledCount } geannuleerd",
         ""
       ],
       "${ contactEmailsLength } Member": [
@@ -1661,19 +1661,19 @@
         "${ contactsEnumeration } bevat meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan deze groep."
       ],
       "${ doneCount } finished": [
-        "",
+        "${ doneCount } voltooid",
         ""
       ],
       "${ doneDownloadsCount } downloaded": [
-        "",
+        "${ doneDownloadsCount } gedownload",
         ""
       ],
       "${ doneUploadsCount } uploaded": [
-        "",
-        ""
+        "${ doneUploadsCount } geüpload",
+        "${ doneUploadsCount } gedownload"
       ],
       "${ errorCount } failed": [
-        "",
+        "${ errorCount } mislukt",
         ""
       ],
       "${ groupCounts } group found": [
@@ -1698,7 +1698,7 @@
         "${ numContacts } contactpersonen"
       ],
       "${ pausedCount } paused": [
-        "",
+        "${ pausedCount } onderbroken",
         ""
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
@@ -1815,7 +1815,7 @@
         "Iedereen met deze link heeft toegang tot dit bestand."
       ],
       "Anyone with this link can access your folder.": [
-        ""
+        "Iedereen met deze link heeft toegang tot deze map."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
@@ -1910,7 +1910,7 @@
         "Link naar bestand maken"
       ],
       "Creating link to folder": [
-        ""
+        "Link naar map maken"
       ],
       "Creating share": [
         "Maak share"
@@ -2019,7 +2019,7 @@
         "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        ""
+        "Als u een van deze heeft, ga dan verder naar Proton account instelling om\nhet deblokkeerproces voort te zetten."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
@@ -2161,7 +2161,7 @@
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
       ],
       "Only the people with the link and the password can access this folder.": [
-        ""
+        "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
       ],
       "Paused": [
         "Gepauzeerd"
@@ -2218,7 +2218,7 @@
         "Link naar bestand wordt voorbereid"
       ],
       "Preparing link to folder": [
-        ""
+        "Link naar map wordt voorbereid"
       ],
       "Preview": [
         "Voorbeeld"
@@ -2327,11 +2327,11 @@
         "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw bestand. Om het bestand opnieuw in te stellen heeft u een nieuwe link nodig."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        ""
+        "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw map. Om de map opnieuw in te delen heeft u een nieuwe link nodig."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "",
-        ""
+        "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
+        "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browser tabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
@@ -2511,13 +2511,13 @@
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
       ],
       "Your folder failed to download.": [
-        ""
+        "Uw map kon niet worden gedownload."
       ],
       "Your folder has finished downloading.": [
-        ""
+        "Uw map is klaar met downloaden."
       ],
       "Your folder is being downloaded.": [
-        ""
+        "Uw map wordt gedownload."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -2862,8 +2862,8 @@
         "CVV code"
       ],
       "Delete drive?": [
-        "",
-        ""
+        "Drive verwijderen?",
+        "Drives verwijderen?"
       ],
       "Display name": [
         "Weergavenaam"
@@ -3103,7 +3103,7 @@
         "Onbekend bestand"
       ],
       "Unlock drive": [
-        ""
+        "Drive ontgrendelen"
       ],
       "Unlock drive (recommended)": [
         "Drive ontgrendelen (aanbevolen)"
@@ -3488,7 +3488,7 @@
         "Contactgroep bijgewerkt"
       ],
       "Failed to download files: ${ err }": [
-        ""
+        "Bestanden downloaden mislukt: ${ err }"
       ],
       "Failed to move, please try again": [
         "Verplaatsen mislukt, probeer het opnieuw"
@@ -3548,7 +3548,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Let er op dat u ${ boldNextStep } die worden aangevraagd door de toepassing om uw import te starten."
       ]
     },
     "Onboarding Proton": {
@@ -4274,7 +4274,7 @@
         "Prullenbak leegmaken"
       ],
       "Enter password to download": [
-        ""
+        "Voer wachtwoord in om te downloaden"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -4355,7 +4355,7 @@
         "Mijn bestanden"
       ],
       "My files ${ date }.zip": [
-        ""
+        "Mijn bestanden ${ date }.zip"
       ],
       "Name": [
         "Naam"
@@ -4448,7 +4448,7 @@
         "Selecteer vervaltijd link"
       ],
       "Select permissions": [
-        ""
+        "Selecteer machtigingen"
       ],
       "Select what to import": [
         "Selecteer wat u wilt importeren"
@@ -4532,7 +4532,7 @@
         "Uw bestand is klaar om te worden gedownload"
       ],
       "Your folder is ready to be downloaded": [
-        ""
+        "Uw map is klaar om te worden gedownload"
       ],
       "ZIP / postal code": [
         "Postcode"
@@ -4572,7 +4572,7 @@
         "E-mail encryptie dwingt e-mail handtekening om uw verzonden berichten te verifiëren"
       ],
       "Encrypted data": [
-        ""
+        "Versleutelde gegevens"
       ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
@@ -4654,10 +4654,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Klik om de video opnieuw af te spelen"
       ],
       "Replay video": [
-        ""
+        "Video opnieuw afspelen"
       ]
     },
     "VPN feature": {

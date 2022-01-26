@@ -332,7 +332,7 @@
         "Exportér"
       ],
       "Export contact group": [
-        ""
+        "Eksporter kontaktgruppe"
       ],
       "Export contacts": [
         "Eksportér kontakter"
@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Vedhæftninger"
+      "Attachment": [
+        ""
       ],
       "Filter on": [
         "Filtrer efter"
@@ -2707,10 +2707,10 @@
         "Ugyldigt svar"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Begivenheden kunne ikke tilføjes til din kalender. Der blev ikke sendt noget svar"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Begivenheden kunne ikke opdateres i din kalender. Der blev ikke sendt noget svar"
       ],
       "Unexpected error": [
         "Uventet fejl"
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Dit svar blev sendt, men begivenheden kunne ikke tilføjes til din kalender"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Dit svar blev sendt, men begivenheden kunne ikke opdateres i din kalender"
       ]
     },
     "Event title": {

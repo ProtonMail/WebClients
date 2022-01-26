@@ -227,7 +227,7 @@
         "Exportér"
       ],
       "Export contact group": [
-        ""
+        "Eksporter kontaktgruppe"
       ],
       "Export contacts": [
         "Eksportér kontakter"
@@ -1637,7 +1637,7 @@
         "${ calendarsToBeMergedCount } flettede kalendere"
       ],
       "${ canceledCount } canceled": [
-        "",
+        "${ canceledCount } annulleret",
         ""
       ],
       "${ contactEmailsLength } Member": [
@@ -1673,8 +1673,8 @@
         ""
       ],
       "${ errorCount } failed": [
-        "",
-        ""
+        "${ errorCount } mislykkedes",
+        "${ errorCount } mislykkedes"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",

@@ -2306,8 +2306,14 @@
       "Invalid response": [
         "Tiririt tarameɣtut"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
-        "Tuccḍa u nettwarǧa ara"
+        ""
       ],
       "Unsupported invitation": [
         "Tinubga ur nettwasefrak ara"
@@ -2328,7 +2334,7 @@
         "Tiririt-ik·im tettwazen, maca tadyant ulamek tettwarna ɣer uwitay-inek·inem"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Tiririt-ik·im tettwazen, maca tadyant ulamek tettuleqqem deg uwitay-inek·inem"
+        ""
       ]
     },
     "Event title": {
@@ -4273,16 +4279,19 @@
       "to continue to ${ toAppName }": [
         "i ukemmel ɣer ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+      "To decrypt and view your emails and other data, you need a recovery file.": [
         ""
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
         ""
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         ""
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        ""
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
         ""
       ],
       "To fight spam and abuse, please verify you are human.": [

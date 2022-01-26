@@ -873,7 +873,7 @@
         "別の方法を試してください"
       ],
       "Turn on tracker protection": [
-        "トラッカー保護を有効にする"
+        "トラッカー防止を有効にする"
       ],
       "Underline": [
         "下線"
@@ -1811,8 +1811,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "ファイルの添付"
+      "Attachment": [
+        ""
       ],
       "Filter on": [
         "フィルター対象"
@@ -2686,7 +2686,7 @@
         ""
       ],
       "Unexpected error": [
-        "予期しないエラー"
+        ""
       ],
       "Unsupported invitation": [
         ""
@@ -2704,6 +2704,9 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
@@ -3468,7 +3471,7 @@
         "メールアドレス"
       ],
       "Email tracker protection is disabled": [
-        "メールトラッカー保護は無効です"
+        "メールトラッカー防止は無効です"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
         "メールトラッカーはあなたのプライバシーを侵害します。Proton はこのメッセージのトラッカーを見つけることができませんでした。"
@@ -3477,7 +3480,7 @@
         "メールトラッカーはあなたのプライバシーを侵害します。Proton は ${ numberOfTrackers } 件のトラッカーを見つけてブロックしました。"
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        ""
+        "メールトラッカーはあなたのプライバシーを侵害します。トラッカー防止を有効にすると、あなたがメッセージを閲覧したかどうか、いつ閲覧したかを送信者に知られるのを防ぐことができます。"
       ],
       "embedded image": [
         "個の埋め込み画像"

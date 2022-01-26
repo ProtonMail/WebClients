@@ -332,7 +332,7 @@
         "Exportar"
       ],
       "Export contact group": [
-        ""
+        "Exportar grupo de contactos"
       ],
       "Export contacts": [
         "Exportar contactos"
@@ -561,7 +561,7 @@
         "Mover a..."
       ],
       "Need help?": [
-        ""
+        "¿Necesitas ayuda?"
       ],
       "Never show": [
         "No mostrar nunca"
@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Archivos adjuntos"
+      "Attachment": [
+        "Archivo adjunto"
       ],
       "Filter on": [
         "Filtrar por"
@@ -2186,7 +2186,7 @@
         "Introduce 6 dígitos"
       ],
       "Enter a password": [
-        ""
+        "Introduce una contraseña"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
@@ -2359,7 +2359,7 @@
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "",
-        ""
+        "Destinatarios duplicados eliminados: ${ recipents }"
       ],
       "Request timed out.": [
         "Tiempo de espera agotado."
@@ -2480,7 +2480,7 @@
         "Se desconoce el estado del token de pago"
       ],
       "Wrong mailbox password": [
-        ""
+        "Contraseña del buzón incorrecta"
       ],
       "You can't send a mail to more than 100 recipients": [
         "No puedes enviar un correo a más de 100 destinatarios"
@@ -2713,7 +2713,7 @@
         ""
       ],
       "Unexpected error": [
-        "Se ha producido un error inesperado"
+        "Error inesperado"
       ],
       "Unsupported invitation": [
         "Invitación no soportada"
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Tu respuesta ha sido enviada, pero el evento no ha podido ser añadido a tu calendario"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event title": {
@@ -3368,7 +3371,7 @@
         "Color de fondo"
       ],
       "Based in Switzerland, available globally": [
-        ""
+        "Con sede en Suiza, disponible globalmente"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
@@ -3921,7 +3924,7 @@
         "Imprimir correo electrónico"
       ],
       "Proton doesn't make money by abusing privacy.": [
-        ""
+        "Proton no gana dinero abusando de la privacidad."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail también puede proteger tu negocio."
@@ -4030,7 +4033,7 @@
         "Como eres un usuario leal, tu cuenta tiene habilitadas características adicionales."
       ],
       "Sorry, this message does not exist or has already expired": [
-        ""
+        "Lo sentimos, este mensaje no existe o ya ha caducado"
       ],
       "Starter VPN service with P2P support.": [
         "Servicio inicial de VPN con soporte P2P."
@@ -4039,7 +4042,7 @@
         "GB de almacenamiento"
       ],
       "Store and share files securely with Proton Drive.": [
-        ""
+        "Almacene y comparta archivos de forma segura con Proton Drive."
       ],
       "Subject": [
         "Asunto"
@@ -4292,7 +4295,7 @@
         ""
       ],
       "Visit our shop to get Proton merchandise.": [
-        ""
+        "Visite nuestra tienda para obtener mercancía de Proton."
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Paquete VPN + ${ mailAppName } para familias y pequeñas empresas."
@@ -4885,7 +4888,7 @@
         "Cifrar correos electrónicos"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Introduzca el nombre de la organización para confirmar"
       ],
       "Enter the 6-digit code": [
         "Introduce el código de 6 dígitos"
@@ -5059,7 +5062,7 @@
         "Destinatario"
       ],
       "Recovery phrase": [
-        ""
+        "Frase de recuperación"
       ],
       "Region": [
         "Región"
@@ -5337,10 +5340,10 @@
         "Pagar factura"
       ],
       "Previous version": [
-        ""
+        "Versión anterior"
       ],
       "Privacy policy": [
-        ""
+        "Política de privacidad"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Rehabilita la dirección vinculada a este calendario para gestionar tu invitación."
@@ -5358,7 +5361,7 @@
         "Enviados"
       ],
       "Sign up for free": [
-        ""
+        "Regístrate gratis"
       ],
       "Spam": [
         "Spam"
@@ -5367,7 +5370,7 @@
         "Destacado"
       ],
       "Terms": [
-        ""
+        "Términos"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         ""
@@ -5574,7 +5577,7 @@
     },
     "Message image": {
       "Image did not load because the remote server’s identity certificate is invalid.": [
-        ""
+        "La imagen no se cargó porque el certificado de identidad del servidor remoto no es válido."
       ],
       "Image has not been loaded in order to protect your privacy.": [
         "La imagen no ha sido cargada para proteger tu privacidad."
@@ -6550,7 +6553,7 @@
         "Conversación movida a spam y remitente añadido a la Lista Negra."
       ],
       "Conversation removed from ${ labelName }.": [
-        ""
+        "Conversación eliminada de ${ labelName }."
       ],
       "Draft deleted": [
         "Borrador eliminado"
@@ -6592,7 +6595,7 @@
         "Mensaje marcado como leído."
       ],
       "Message marked as Starred.": [
-        ""
+        "Mensaje marcado como Destacado."
       ],
       "Message marked as unread.": [
         "Mensaje marcado como no leído."
@@ -7142,7 +7145,7 @@
         "Procesando..."
       ],
       "ProtonMail": [
-        ""
+        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Volver a firmar todos los contactos"
@@ -7187,7 +7190,7 @@
         "Seleccionar grupo de contactos"
       ],
       "Select permissions": [
-        ""
+        "Seleccionar permisos"
       ],
       "Select what to import": [
         "Selecciona qué importar"
@@ -7402,10 +7405,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Haga clic para reproducir el vídeo"
       ],
       "Replay video": [
-        ""
+        "Repetición del vídeo"
       ]
     },
     "VPN feature": {
@@ -7587,7 +7590,7 @@
         "Esta función requiere una cuenta de pago de Proton"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Desafortunadamente, no estamos en línea en este momento. Complete el siguiente formulario para describir su problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
       ],
       "You will lose any customization you made so far.": [
         "Perderás cualquier personalización que hayas realizado hasta ahora."

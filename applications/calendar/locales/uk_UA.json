@@ -113,9 +113,6 @@
       "Compose": [
         "Написати"
       ],
-      "Composer size": [
-        "Розмір редактора"
-      ],
       "Confirm": [
         "Підтвердити"
       ],
@@ -184,6 +181,9 @@
       ],
       "Download": [
         "Завантажити"
+      ],
+      "Duplicate": [
+        "Дублювати"
       ],
       "Edit": [
         "Редагувати"
@@ -1947,6 +1947,11 @@
         "Видалити подію"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "Дублювати подію"
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Змінити подію"
@@ -1979,10 +1984,10 @@
         "Недійсна відповідь"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Неможливо додати подію до вашого календаря. Відповідь не надіслано"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Неможливо оновити подію вашого календаря. Відповідь не надіслано"
       ],
       "Unexpected error": [
         "Неочікувана помилка"
@@ -2004,6 +2009,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Вашу відповідь надіслано, але подію не вдалося додати до вашого календаря"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Вашу відповідь надіслано, але подію не вдалося оновити у вашому календарі"
       ]
     },
     "Event popover close button": {

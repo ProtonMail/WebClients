@@ -2348,6 +2348,12 @@
       "Invalid response": [
         "Недопустимый ответ"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Это событие не удалось добавить в ваш календарь. Ответ не был отправлен"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Событие не удалось обновить в вашем календаре. Ответ не был отправлен"
+      ],
       "Unexpected error": [
         "Неожиданная ошибка"
       ],
@@ -2370,7 +2376,7 @@
         "Ваш ответ был отослан, но событие не может быть добавлено в ваш календарь"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ваш ответ был отослан, но событие не было изменено в вашем календаре"
+        "Ваш ответ был отправлен, но событие не удалось обновить в вашем календаре"
       ]
     },
     "Event title": {
@@ -4389,17 +4395,20 @@
       "to continue to ${ toAppName }": [
         "чтобы продолжить в ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Для расшифровки и просмотра писем и других данных необходим файл восстановления или фраза восстановления."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Для расшифровки и просмотра писем и других данных необходим файл восстановления."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Для расшифровки и просмотра писем и других данных вам понадобится фраза восстановления или файл восстановления."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Для расшифровки и просмотра писем и других данных необходима фраза восстановления."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Чтобы расшифровать и просмотреть заблокированные данные после сброса пароля, выберите метод восстановления."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Чтобы обеспечить постоянный доступ к своему аккаунту, установите метод восстановления аккаунта"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."

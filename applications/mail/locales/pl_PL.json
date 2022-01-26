@@ -1844,8 +1844,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Załączniki"
+      "Attachment": [
+        "Załącznik"
       ],
       "Filter on": [
         "Filtruj"
@@ -2786,6 +2786,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Twoja odpowiedź została wysłana, ale wydarzenie nie może zostać dodane do kalendarza"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Twoja odpowiedź została wysłana, ale wydarzenie nie może zostać zaktualizowane"
       ]
     },
     "Event title": {
@@ -3118,7 +3121,7 @@
         "obecnie"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts nie obsługuje ${ forNow }:"
+        "ProtonContacts nie obsługuje ${ forNow }:"
       ]
     },
     "Import ICS file from Mail": {

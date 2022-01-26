@@ -113,9 +113,6 @@
       "Compose": [
         "撰写"
       ],
-      "Composer size": [
-        "编辑窗大小"
-      ],
       "Confirm": [
         "确认"
       ],
@@ -178,6 +175,9 @@
       ],
       "Download": [
         "下载"
+      ],
+      "Duplicate": [
+        ""
       ],
       "Edit": [
         "编辑"
@@ -1875,6 +1875,11 @@
         "删除日程"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        ""
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "编辑日程"
@@ -1910,7 +1915,7 @@
         ""
       ],
       "Unexpected error": [
-        "发生意外错误"
+        ""
       ],
       "Unsupported invitation": [
         ""
@@ -1928,6 +1933,9 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },
