@@ -5,8 +5,8 @@ export type GetCalendarInfo = (ID: string) => Promise<{
     memberID: string;
     addressID: string;
     addressKeys: DecryptedKey[];
-    decryptedCalendarKeys: DecryptedCalendarKey[];
+    calendarKeys: DecryptedCalendarKey[];
     calendarSettings: CalendarSettings;
-    decryptedPassphrase: string;
+    passphrase: string;
     passphraseID: string;
 }>;

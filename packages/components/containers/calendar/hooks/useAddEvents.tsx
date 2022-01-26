@@ -8,14 +8,14 @@ const useAddEvents = () => {
     const getCalendarInfo = useGetCalendarInfo();
 
     return useCallback(async ({ calendarID, events }: { calendarID: string; events: VcalVeventComponent[] }) => {
-        const { addressKeys, memberID, decryptedCalendarKeys } = await getCalendarInfo(calendarID);
+        const { addressKeys, memberID, calendarKeys } = await getCalendarInfo(calendarID);
         return processInBatches({
             events,
             api,
             memberID,
             addressKeys,
             calendarID,
-            calendarKeys: decryptedCalendarKeys,
+            calendarKeys,
         });
     }, []);
 };

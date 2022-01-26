@@ -32,9 +32,9 @@ export const useGetCalendarInfo = (): GetCalendarInfo => {
                 memberID,
                 addressID,
                 addressKeys,
-                decryptedCalendarKeys,
+                calendarKeys: decryptedCalendarKeys,
                 calendarSettings,
-                decryptedPassphrase,
+                passphrase: decryptedPassphrase,
                 passphraseID,
             };
         },

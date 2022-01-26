@@ -13,6 +13,7 @@ import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
+    ReencryptInviteActionData,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -53,6 +54,7 @@ interface SaveRecurringArguments {
         timestamp: number;
         sendPreferencesMap: SimpleMap<SendPreferences>;
     }>;
+    reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     selfAttendeeToken?: string;
 }
 
@@ -78,6 +80,7 @@ const getSaveRecurringEventActions = async ({
     inviteActions,
     isInvitation,
     sendIcs,
+    reencryptSharedEvent,
     selfAttendeeToken,
 }: SaveRecurringArguments): Promise<{
     multiSyncActions: SyncEventActionOperations[];
@@ -117,17 +120,21 @@ const getSaveRecurringEventActions = async ({
                     event: oldEvent,
                     memberID: newMemberID,
                     addressID: newAddressID,
+                    reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
                     sendIcs,
+                    reencryptSharedEvent,
                 });
             }
             if (!oldEvent.IsOrganizer) {
-                // the attendee edits notifications. We must do it through the updatePartstat route
+                // the attendee edits notifications. We must do it through the updatePersonalPart route
                 return getUpdatePersonalPartActions({
                     eventComponent: newVeventComponent,
                     event: oldEvent,
                     memberID: newMemberID,
                     addressID: newAddressID,
+                    reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
                     inviteActions,
+                    reencryptSharedEvent,
                 });
             }
 
@@ -258,7 +265,9 @@ const getSaveRecurringEventActions = async ({
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
+                reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
                 sendIcs,
+                reencryptSharedEvent,
             });
             const { updatePartstatActions: resetPartstatActions, updatePersonalPartActions: dropAlarmsActions } =
                 getResetPartstatActions(singleEditRecurrences, selfAttendeeToken, invitePartstat);
@@ -291,13 +300,15 @@ const getSaveRecurringEventActions = async ({
             };
         }
         if (!oldEvent.IsOrganizer && !isSwitchCalendar) {
-            // the attendee edits notifications. We must do it through the updatePartstat route
+            // the attendee edits notifications. We must do it through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
+                reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
                 inviteActions,
+                reencryptSharedEvent,
             });
         }
         const newRecurrentVevent = updateAllRecurrence({

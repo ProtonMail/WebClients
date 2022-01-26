@@ -242,6 +242,8 @@ export interface VcalVeventComponent {
     'x-yahoo-user-status'?: VcalStringProperty;
 }
 
+export type VcalComponentKeys = keyof VcalVeventComponent;
+
 export interface VcalPmVeventComponent extends Omit<VcalVeventComponent, 'attendee'> {
     attendee?: VcalAttendeePropertyWithToken[];
 }

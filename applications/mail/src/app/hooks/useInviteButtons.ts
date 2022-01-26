@@ -8,13 +8,16 @@ import {
     generateVtimezonesComponents,
     getParticipantHasAddressID,
 } from '@proton/shared/lib/calendar/integration/invite';
+import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
 import { prodId } from '@proton/shared/lib/calendar/vcalConfig';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     CalendarEvent,
+    CalendarEventEncryptionData,
     CalendarEventWithMetadata,
     CalendarWidgetData,
     Participant,
@@ -52,6 +55,7 @@ interface Args {
     calendarData?: CalendarWidgetData;
     pmData?: PmInviteData;
     singleEditData?: CalendarEventWithMetadata[];
+    reencryptionData?: Required<Pick<CalendarEventEncryptionData, 'encryptingAddressID' | 'sharedSessionKey'>>;
     calendarEvent?: CalendarEvent;
     onEmailSuccess: () => void;
     onEmailError: (error: Error) => void;
@@ -64,7 +68,7 @@ interface Args {
         isProtonInvite: boolean,
         error?: any
     ) => void;
-    onSuccess: (savedData: SavedInviteData) => void;
+    onSuccess: (savedData: SavedInviteData, retryReencrypt?: boolean) => void;
     onUnexpectedError: () => void;
     overwrite: boolean;
     reinviteEventID?: string;
@@ -80,6 +84,7 @@ const useInviteButtons = ({
     calendarData,
     pmData,
     singleEditData,
+    reencryptionData,
     calendarEvent,
     onEmailSuccess,
     onEmailError,
@@ -115,8 +120,6 @@ const useInviteButtons = ({
                 const vevent = withDtstamp(omit(veventIcs, ['dtstamp']), timestamp);
                 const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
                 if (pmData?.sharedEventID && pmData?.sharedSessionKey) {
-                    vevent['x-pm-shared-event-id'] = { value: pmData.sharedEventID };
-                    vevent['x-pm-session-key'] = { value: pmData.sharedSessionKey };
                     vevent['x-pm-proton-reply'] = { value: 'true', parameters: { type: 'boolean' } };
                 }
                 const ics = createInviteIcs({
@@ -175,7 +178,7 @@ const useInviteButtons = ({
                 return false;
             }
         },
-        [veventApi, veventIcs, attendee, api, calendarData, calendarEvent]
+        [veventApi, veventIcs, attendee, api, calendarData]
     );
 
     const createCalendarEvent = useCallback(
@@ -206,8 +209,8 @@ const useInviteButtons = ({
     );
 
     const updateCalendarEvent = useCallback(
-        async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number, isProtonInvite: boolean) => {
-            if (!attendee || !veventApi || !calendarEvent) {
+        async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number, isProtonInvite: boolean, event?: CalendarEvent) => {
+            if (!attendee || !veventApi || !event) {
                 onUnexpectedError();
                 return;
             }
@@ -215,7 +218,7 @@ const useInviteButtons = ({
                 const { savedEvent, savedVevent, savedVcalAttendee } = await updatePartstatFromInvitation({
                     veventIcs,
                     veventApi,
-                    calendarEvent,
+                    calendarEvent: event,
                     vcalAttendee: attendee.vcalComponent,
                     attendeeToken: attendee.token,
                     partstat,
@@ -232,11 +235,38 @@ const useInviteButtons = ({
                 onUpdateEventError(partstat, timestamp, isProtonInvite, error);
             }
         },
-        [veventApi, veventIcs, attendee, api, calendarData, calendarEvent, singleEditData]
+        [veventApi, veventIcs, attendee, api, calendarData, singleEditData]
     );
 
     const answerInvitation = useCallback(
         async (partstat: ICAL_ATTENDEE_STATUS) => {
+            let maybeReencryptedEvent: CalendarEvent | undefined = calendarEvent ? { ...calendarEvent } : undefined;
+            let hasReencrypted = false;
+            if (reencryptionData) {
+                const { sharedSessionKey } = reencryptionData;
+                try {
+                    const { calendarKeys } = calendarData || {};
+                    if (!calendarKeys || !calendarEvent) {
+                        throw new Error('Missing data for re-encrypting event');
+                    }
+                    const silentApi = <T>(config: any) =>
+                        api<T>({
+                            ...config,
+                            silence: true,
+                        });
+                    maybeReencryptedEvent = await reencryptCalendarSharedEvent({
+                        calendarEvent,
+                        sharedSessionKey,
+                        calendarKeys,
+                        api: silentApi,
+                    });
+                    hasReencrypted = true;
+                } catch {
+                    // Not being able to re-encrypt is not a a blocker for the rest of the operations
+                    // as they use the updatePartstat or updatePersonalPart routes
+                    noop();
+                }
+            }
             if (reinviteEventID) {
                 const deleted = await deleteCalendarEvent(reinviteEventID);
                 if (!deleted) {
@@ -250,7 +280,7 @@ const useInviteButtons = ({
                 const result =
                     !veventApi || reinviteEventID
                         ? await createCalendarEvent(partstat, true)
-                        : await updateCalendarEvent(partstat, currentTimestamp, true);
+                        : await updateCalendarEvent(partstat, currentTimestamp, true, maybeReencryptedEvent);
                 if (!result) {
                     return;
                 }
@@ -259,7 +289,7 @@ const useInviteButtons = ({
                     throw new Error('Could not retrieve attendee');
                 }
                 await sendReplyEmail(partstat, attendeeApi.UpdateTime * SECOND);
-                onSuccess(result);
+                onSuccess(result, reencryptionData && !hasReencrypted);
                 return;
             }
             // For other invites, we perform the sync operations after sending the email;
@@ -271,12 +301,12 @@ const useInviteButtons = ({
             const result =
                 !veventApi || reinviteEventID
                     ? await createCalendarEvent(partstat, false)
-                    : await updateCalendarEvent(partstat, currentTimestamp, false);
+                    : await updateCalendarEvent(partstat, currentTimestamp, false, maybeReencryptedEvent);
             if (result) {
                 onSuccess(result);
             }
         },
-        [sendReplyEmail, createCalendarEvent, updateCalendarEvent, reinviteEventID, pmData]
+        [sendReplyEmail, createCalendarEvent, updateCalendarEvent, reinviteEventID, pmData, reencryptionData]
     );
 
     const dummyActions = {
@@ -295,14 +325,30 @@ const useInviteButtons = ({
         accept: () => answerInvitation(ICAL_ATTENDEE_STATUS.ACCEPTED),
         acceptTentatively: () => answerInvitation(ICAL_ATTENDEE_STATUS.TENTATIVE),
         decline: () => answerInvitation(ICAL_ATTENDEE_STATUS.DECLINED),
-        retryCreateEvent: async (partstat: ICAL_ATTENDEE_STATUS, isProtonInvite: boolean) => {
+        retryCreateEvent: async ({
+            partstat,
+            isProtonInvite,
+        }: {
+            partstat: ICAL_ATTENDEE_STATUS;
+            isProtonInvite: boolean;
+        }) => {
             const result = await createCalendarEvent(partstat, isProtonInvite);
             if (result) {
                 onSuccess(result);
             }
         },
-        retryUpdateEvent: async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number, isProtonInvite: boolean) => {
-            const result = await updateCalendarEvent(partstat, timestamp, isProtonInvite);
+        retryUpdateEvent: async ({
+            partstat,
+            timestamp,
+            isProtonInvite,
+            calendarEvent,
+        }: {
+            partstat: ICAL_ATTENDEE_STATUS;
+            timestamp: number;
+            isProtonInvite: boolean;
+            calendarEvent?: CalendarEvent;
+        }) => {
+            const result = await updateCalendarEvent(partstat, timestamp, isProtonInvite, calendarEvent);
             if (result) {
                 onSuccess(result);
             }

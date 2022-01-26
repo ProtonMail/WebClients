@@ -66,7 +66,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
         const process = async () => {
             try {
-                const { memberID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(
+                const { memberID, addressKeys, calendarKeys, calendarSettings } = await getCalendarInfo(
                     model.calendar.ID
                 );
                 // add calendar alarms to invitations
@@ -82,7 +82,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     calendarID: model.calendar.ID,
                     memberID,
                     addressKeys,
-                    calendarKeys: decryptedCalendarKeys,
+                    calendarKeys,
                     api: apiWithAbort,
                     signal,
                     onProgress: handleImportProgress,

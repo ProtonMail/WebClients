@@ -72,13 +72,13 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
         if (!calendar) {
             return;
         }
-        const { decryptedCalendarKeys, decryptedPassphrase } = await getCalendarInfo(CalendarID);
-        const { privateKeys } = splitKeys(decryptedCalendarKeys);
+        const { calendarKeys, passphrase } = await getCalendarInfo(CalendarID);
+        const { privateKeys } = splitKeys(calendarKeys);
         const link = await transformLinkFromAPI({
             calendarUrl,
             calendar,
             privateKeys,
-            calendarPassphrase: decryptedPassphrase,
+            calendarPassphrase: passphrase,
             onError: handleError,
         });
         setLinksMap((linksMap) => {
@@ -101,15 +101,15 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
             await Promise.all(
                 calendars.map(async (calendar) => {
                     const calendarID = calendar.ID;
-                    const { decryptedCalendarKeys, decryptedPassphrase } = await getCalendarInfo(calendarID);
-                    const { privateKeys } = splitKeys(decryptedCalendarKeys);
+                    const { calendarKeys, passphrase } = await getCalendarInfo(calendarID);
+                    const { privateKeys } = splitKeys(calendarKeys);
                     try {
                         const { CalendarUrls } = await getPublicLinks(calendarID);
                         map[calendarID] = await transformLinksFromAPI({
                             calendarUrls: CalendarUrls,
                             calendar,
                             privateKeys,
-                            calendarPassphrase: decryptedPassphrase,
+                            calendarPassphrase: passphrase,
                             onError: handleError,
                         });
                     } catch (e: any) {

@@ -1,14 +1,9 @@
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
-import {
-    DecryptedPersonalVeventMapResult,
-    DecryptedVeventResult,
-    EventModelReadView,
-} from '@proton/shared/lib/interfaces/calendar';
+import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { useMemo } from 'react';
 
-import { EventInternalProperties } from '../../interfaces/EventInternalProperties';
 import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
 
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
@@ -33,15 +28,16 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
             { veventComponent = DEFAULT_VEVENT, verificationStatus, selfAddressData },
             alarmMap = {},
             { IsOrganizer, IsProtonProtonInvite },
-        ]: [DecryptedVeventResult, DecryptedPersonalVeventMapResult, EventInternalProperties] = value || [
+        ] = value || [
             {
                 veventComponent: DEFAULT_VEVENT,
                 verificationStatus: EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
                 selfAddressData: {},
             },
             {},
-            { Permissions: 1, IsOrganizer: 1, IsProtonProtonInvite: 0 },
+            { IsOrganizer: 1, IsProtonProtonInvite: 0 },
         ];
+
         const isAllDay = getIsAllDay(veventComponent);
         const model = propertiesToModel({
             veventComponent,

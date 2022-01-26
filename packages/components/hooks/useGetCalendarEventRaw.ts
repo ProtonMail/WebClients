@@ -1,43 +1,46 @@
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
+import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/keys/getCalendarEventDecryptionKeys';
 import { useCallback } from 'react';
 import { readCalendarEvent, readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
-import { splitKeys } from '@proton/shared/lib/keys';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
-import { useGetDecryptedPassphraseAndCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
+import { useGetCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';
 
 const useGetCalendarEventRaw = () => {
-    const getCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
+    const getCalendarKeys = useGetCalendarKeys();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
     return useCallback(
         async (Event: CalendarEvent) => {
+            const { IsOrganizer, AddressKeyPacket, AddressID, SharedEvents, CalendarEvents, AttendeesEvents } = Event;
+            const encryptingAddressID = AddressKeyPacket && AddressID ? AddressID : undefined;
             const addresses = await getAddresses();
 
-            const [{ decryptedCalendarKeys }, publicKeysMap] = await Promise.all([
-                getCalendarKeys(Event.CalendarID),
+            const [privateKeys, publicKeysMap] = await Promise.all([
+                getCalendarEventDecryptionKeys({ calendarEvent: Event, getAddressKeys, getCalendarKeys }),
                 getAuthorPublicKeysMap({ event: Event, addresses, getAddressKeys, getEncryptionPreferences }),
             ]);
             const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
                 calendarEvent: Event,
-                ...splitKeys(decryptedCalendarKeys),
+                privateKeys,
             });
             return readCalendarEvent({
-                isOrganizer: !!Event.IsOrganizer,
+                isOrganizer: !!IsOrganizer,
                 event: {
-                    SharedEvents: withNormalizedAuthors(Event.SharedEvents),
-                    CalendarEvents: withNormalizedAuthors(Event.CalendarEvents),
-                    AttendeesEvents: withNormalizedAuthors(Event.AttendeesEvents),
+                    SharedEvents: withNormalizedAuthors(SharedEvents),
+                    CalendarEvents: withNormalizedAuthors(CalendarEvents),
+                    AttendeesEvents: withNormalizedAuthors(AttendeesEvents),
                     Attendees: Event.Attendees,
                 },
                 publicKeysMap,
                 sharedSessionKey,
                 calendarSessionKey,
                 addresses,
+                encryptingAddressID,
             });
         },
         [getAddresses, getAddressKeys, getCalendarKeys]

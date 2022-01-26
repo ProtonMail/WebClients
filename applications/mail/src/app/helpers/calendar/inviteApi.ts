@@ -1,5 +1,7 @@
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 import { getUnixTime } from 'date-fns';
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -22,7 +24,6 @@ import {
     DeleteCalendarEventSyncData,
     UpdateCalendarEventSyncData,
 } from '@proton/shared/lib/interfaces/calendar/Api';
-import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
 import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
 import {
@@ -59,11 +60,11 @@ import { Address, Api } from '@proton/shared/lib/interfaces';
 import {
     Calendar,
     CalendarEvent,
+    CalendarEventEncryptionData,
     CalendarEventWithMetadata,
     CalendarUserSettings,
     CalendarWidgetData,
     DecryptedPersonalVeventMapResult,
-    DecryptedVeventResult,
     Participant,
     PmInviteData,
     SyncMultipleApiResponse,
@@ -139,7 +140,7 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
 interface GetVeventWithAlarmsArgs {
     calendarEvent: CalendarEventWithMetadata;
     memberID?: string;
-    getCalendarEventRaw: (event: CalendarEvent) => Promise<DecryptedVeventResult>;
+    getCalendarEventRaw: GetCalendarEventRaw;
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
 }
 const getVeventWithAlarms = async ({
@@ -148,15 +149,18 @@ const getVeventWithAlarms = async ({
     getCalendarEventRaw,
     getCalendarEventPersonal,
 }: GetVeventWithAlarmsArgs) => {
-    const [{ veventComponent: vevent }, eventPersonalMap] = await Promise.all([
+    const [{ veventComponent: vevent, encryptionData }, eventPersonalMap] = await Promise.all([
         getCalendarEventRaw(calendarEvent),
         getCalendarEventPersonal(calendarEvent),
     ]);
     const personalVevent = memberID ? eventPersonalMap[memberID] : undefined;
     const valarms = personalVevent ? personalVevent.veventComponent : {};
     return {
-        ...valarms,
-        ...vevent,
+        veventWithAlarms: {
+            ...valarms,
+            ...vevent,
+        },
+        encryptionData,
     };
 };
 
@@ -224,7 +228,7 @@ type FetchEventInvitation = (args: {
     api: Api;
     getAddressKeys: GetAddressKeys;
     getCalendarInfo: GetCalendarInfo;
-    getCalendarEventRaw: (event: CalendarEvent) => Promise<DecryptedVeventResult>;
+    getCalendarEventRaw: GetCalendarEventRaw;
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
     calendars: Calendar[];
     defaultCalendar?: Calendar;
@@ -237,6 +241,7 @@ type FetchEventInvitation = (args: {
     calendarData?: CalendarWidgetData;
     calendarEvent?: CalendarEventWithMetadata;
     singleEditData?: CalendarEventWithMetadata[];
+    reencryptionData?: Required<Pick<CalendarEventEncryptionData, 'encryptingAddressID' | 'sharedSessionKey'>>;
     hasDecryptionError?: boolean;
     supportedRecurrenceId?: VcalDateOrDateTimeProperty;
 }>;
@@ -273,18 +278,11 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         handleError: noop,
     });
 
-    const { memberID, addressID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(
-        calendar.ID
-    );
     const calendarData = {
         calendar,
-        calendarSettings,
         isCalendarDisabled: getIsCalendarDisabled(calendar),
         calendarNeedsUserAction: getDoesCalendarNeedUserAction(calendar),
-        memberID,
-        addressID,
-        addressKeys,
-        calendarKeys: decryptedCalendarKeys,
+        ...(await getCalendarInfo(calendar.ID)),
     };
 
     // if we retrieved a single edit when not looking for one, or looking for another one, do not return it
@@ -293,7 +291,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     }
     const singleEditData = getSingleEditWidgetData(allEventsWithUID);
     try {
-        const vevents = await Promise.all(
+        const veventResults = await Promise.all(
             [calendarEvent, calendarParentEvent].filter(isTruthy).map((event) =>
                 getVeventWithAlarms({
                     calendarEvent: event,
@@ -303,7 +301,13 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
                 })
             )
         );
-        const [vevent, parentVevent] = vevents;
+        const [
+            {
+                veventWithAlarms: vevent,
+                encryptionData: { sharedSessionKey, encryptingAddressID },
+            },
+            parentVeventResult,
+        ] = veventResults;
         const result: Unwrap<ReturnType<FetchEventInvitation>> = {
             calendarData,
             calendarEvent,
@@ -312,18 +316,23 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         };
         const { invitation } = processEventInvitation({ vevent, calendarEvent }, message, contactEmails, ownAddresses);
         result.invitation = invitation;
-        if (parentVevent && calendarParentEvent) {
+        if (parentVeventResult && calendarParentEvent) {
             const { invitation: parentInvitation } = processEventInvitation(
-                { vevent: parentVevent, calendarEvent: calendarParentEvent },
+                { vevent: parentVeventResult.veventWithAlarms, calendarEvent: calendarParentEvent },
                 message,
                 contactEmails,
                 ownAddresses
             );
             result.parentInvitation = parentInvitation;
         }
+        if (encryptingAddressID && sharedSessionKey) {
+            result.reencryptionData = {
+                encryptingAddressID,
+                sharedSessionKey,
+            };
+        }
         return result;
     } catch (e: any) {
-        console.error(e.message);
         // We need to detect if the error is due to a failed decryption of the event.
         // We don't have a great way of doing this as the error comes from openpgp
         return { calendarData, hasDecryptionError: e.message.includes('decrypt'), calendarEvent };
@@ -383,7 +392,7 @@ const updateEventApi = async ({
     const veventWithPmAttendees = await withPmAttendees(vevent, getCanonicalEmailsMap, true);
     const creationKeys = await getCreationKeys({
         calendarEvent: createSingleEdit ? undefined : calendarEvent,
-        addressKeys,
+        newAddressKeys: addressKeys,
         newCalendarKeys: calendarKeys,
     });
     const data = await createCalendarEvent({
@@ -785,7 +794,7 @@ export const createCalendarEventFromInvitation = async ({
         isSwitchCalendar: false,
         isInvitation: true,
         ...(await getCreationKeys({
-            addressKeys,
+            newAddressKeys: addressKeys,
             newCalendarKeys: calendarKeys,
             decryptedSharedKeyPacket: pmData?.sharedSessionKey,
         })),
@@ -815,7 +824,7 @@ export const createCalendarEventFromInvitation = async ({
     const {
         Responses: [
             {
-                Response: { Code, Event },
+                Response: { Code, Event, Error: errorMessage },
             },
         ],
     } = await api<SyncMultipleApiResponse>({
@@ -823,7 +832,7 @@ export const createCalendarEventFromInvitation = async ({
         silence: true,
     });
     if (Code !== API_CODES.SINGLE_SUCCESS || !Event) {
-        throw new Error('Creating calendar event from invitation failed');
+        throw new Error(errorMessage || 'Creating calendar event from invitation failed');
     }
     return {
         savedEvent: Event,
