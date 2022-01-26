@@ -33,6 +33,7 @@ import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import LoginContainer from '../login/LoginContainer';
 import Layout from '../public/Layout';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
+import ValidateRecoveryEmailContainer from '../public/ValidateRecoveryEmailContainer';
 
 const getPathFromLocation = (location: H.Location) => {
     return [location.pathname, location.search, location.hash].join('');
@@ -236,6 +237,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             <Switch>
                 <Route path="/unsubscribe/:subscriptions">
                     <EmailUnsubscribeContainer />
+                </Route>
+                <Route path="/verify-email">
+                    <ValidateRecoveryEmailContainer />
                 </Route>
                 <Route path={SSO_PATHS.AUTHORIZE}>
                     <SSOForkProducer onInvalidFork={handleInvalidFork} onActiveSessions={handleActiveSessionsFork} />
