@@ -318,7 +318,7 @@
         "加密"
       ],
       "exclude message content": [
-        "不包含信息内容"
+        "关闭全文搜索"
       ],
       "Expand composer": [
         "展开编辑窗"
@@ -330,7 +330,7 @@
         "导出"
       ],
       "Export contact group": [
-        ""
+        "导出联系人群组"
       ],
       "Export contacts": [
         "导出联系人"
@@ -663,7 +663,7 @@
         "恢复数据"
       ],
       "Refine it": [
-        "细化它"
+        "缩小搜索范围"
       ],
       "refresh the page": [
         "刷新页面"
@@ -1811,7 +1811,7 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
+      "Attachment": [
         "附件"
       ],
       "Filter on": [
@@ -2680,10 +2680,10 @@
         "无效回复"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "该事件不能被添加到您的日历。没有已发送的结果"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "该事件无法在您的日历中更新。没有已发送的结果"
       ],
       "Unexpected error": [
         "意外错误"
@@ -2705,6 +2705,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "您的回复已发送，但活动无法添加到您的日历"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "您的回复已发送，但事件无法在您的日历中更新"
       ]
     },
     "Event title": {
@@ -3861,7 +3864,7 @@
         "恢复短语已复制到剪贴板"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "恢复密语已下载"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${ link }来解决。"
@@ -3909,7 +3912,7 @@
         "已添加截图"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        "搜索耗时太长? 尝试 ${ dropdownButton } 或 ${ toggleOffButton } 搜索结果。"
+        "搜索耗时太长？试试${ dropdownButton }或${ toggleOffButton }。"
       ],
       "Seems like you are all caught up for now": [
         "看来没有要处理的事务了"
@@ -4311,7 +4314,7 @@
         "你已经达到了100%的存储容量。考虑释放一些空间或升级您的帐户，以获得额外的存储空间来撰写新的信息。"
       ],
       "You have reached the maximum number of 5 replies.": [
-        ""
+        "您已经达到5回复的最大限制。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您的 PayPal 账户需要绑定信用卡或银行账户才能作为支付方式。"
@@ -4978,7 +4981,7 @@
         "显示密码"
       ],
       "Search in": [
-        "在其中搜索"
+        "搜索范围"
       ],
       "Select a method": [
         "选择支付方式"
@@ -6368,7 +6371,7 @@
         "${ elementsCount } 封邮件已移至${ folderName }，其发件人已添加至白名单。"
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } 邮件已添加到 ${ folderName }。"
+        "${ elementsCount } 封邮件已移至${ folderName }。"
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
         "${ elementsCount } 封邮件已标为垃圾邮件，其发件人已加入黑名单。"
@@ -6419,7 +6422,7 @@
         "会话已移至${ folderName }，其发件人已添加至白名单。"
       ],
       "Conversation moved to ${ folderName }.": [
-        "会话已移动到 ${ folderName }。"
+        "会话已移至${ folderName }。"
       ],
       "Conversation moved to spam and sender added to Block List.": [
         "会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
@@ -6476,7 +6479,7 @@
         "邮件已移至${ folderName }，其发件人已添加至白名单。"
       ],
       "Message moved to ${ folderName }.": [
-        "邮件已移动到 ${ folderName }。"
+        "邮件已移至${ folderName }。"
       ],
       "Message moved to spam and sender added to Block List.": [
         "邮件已标为垃圾邮件，其发件人已加入黑名单。"

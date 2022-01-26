@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Mellékletek"
+      "Attachment": [
+        ""
       ],
       "Filter on": [
         "Szűrés be"
@@ -2084,7 +2084,7 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        ""
+        "${ error.message }. Címzett: <${ email }>. A megoldáshoz megadhat egy másik kulcsot, vagy kikapcsolhatja a titkosítást ehhez a címzetthez."
       ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -2132,8 +2132,8 @@
         "Egy jövőbeli időpontot válasszon ki."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "",
-        ""
+        "A következő ${ SCHEDULED_MAX_DATE_DAYS } napon belüli dátumot válasszon.",
+        "A következő ${ SCHEDULED_MAX_DATE_DAYS } napon belüli dátumot válasszon."
       ],
       "Condition incomplete": [
         "Hiányos feltétel"
@@ -2151,7 +2151,7 @@
         "A megoldáshoz lépjen kapcsolatba a szervezet adminisztrátorával"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
       ],
       "Could not find address ${ email }.": [
         "Nem található a cím: ${ email }."
@@ -2186,7 +2186,7 @@
         "6 számjegyet írjon be"
       ],
       "Enter a password": [
-        ""
+        "Írja be a jelszót"
       ],
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
@@ -2195,7 +2195,7 @@
         "Hiba az egyik feltételben"
       ],
       "Error while saving draft. Please try again.": [
-        ""
+        "Hiba a piszkozat mentése közben. Próbálja újra."
       ],
       "Error while sending the message. Message is not sent.": [
         "Hiba az üzenet elküldése közben. Nincs elküldve."
@@ -2334,7 +2334,7 @@
         "Kérjük frissítse az oldalt."
       ],
       "Please repeat the password": [
-        ""
+        "Adja meg ismételten a jelszót"
       ],
       "Please set a password": [
         "Kérjük, állítson be jelszót"
@@ -2355,11 +2355,11 @@
         "Ez a nyilvános kulcs nem jelölhető meg megbízhatóként"
       ],
       "re-activate the previous key": [
-        ""
+        "újra aktiválhatja az előző kulcsot"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "",
-        ""
+        "Kettőzött címzett eltávolítása: ${ recipents }",
+        "Kettőzött címzettek eltávolítása: ${ recipents }"
       ],
       "Request timed out.": [
         "A kérés túllépte az időkorlátot."
@@ -2459,7 +2459,7 @@
         "Ez az üzenet már el lett küldve"
       ],
       "This message has already been sent. A new draft has been saved.": [
-        ""
+        "Az üzenet már elküldésre került. Egy új piszkozat került mentésre."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
@@ -2480,7 +2480,7 @@
         "Ismeretlen fizetési token állapot"
       ],
       "Wrong mailbox password": [
-        ""
+        "Hibás e-mail titkosítási jelszó"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nem küldhet üzenetet több mint 100 címzettnek"
@@ -2489,8 +2489,8 @@
         "Egyszerre nem küldhet el több mint 10 vCard névjegyet"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
-        ""
+        "Egyszerre maximum ${ maxActiveComposer } szerkesztő ablakot nyithat meg",
+        "Egyszerre maximum ${ maxActiveComposer } szerkesztő ablakot nyithat meg"
       ],
       "You did not provide a file.": [
         "Nem adott meg fájlt."
@@ -2499,10 +2499,10 @@
         "Meg kell adnia egy nevet"
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        ""
+        "Az üzenetek visszafejtése nem lehetséges, a jelszó korábbi visszaállítása miatt. Ha emlékszik az előző jelszavára, ${ reActivateKeyLink } az üzenetek eléréséhez. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        ""
+        "Az üzenetek visszafejltése nem lehetséges. Ezt okozhattja a jelszó korábbi visszaállítása. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
@@ -2713,7 +2713,7 @@
         ""
       ],
       "Unexpected error": [
-        "Váratlan hiba"
+        ""
       ],
       "Unsupported invitation": [
         "Nem támogatott meghívó"
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event title": {
@@ -3083,16 +3086,16 @@
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } új naptár",
+        "${ calendarsToBeCreatedCount } új naptár"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } egyesített naptár",
+        "${ calendarsToBeMerged } egyesített naptár"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } egyesített naptár",
+        "${ calendarsToBeMergedCount } egyesített naptár"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } tag",
@@ -3144,12 +3147,12 @@
         ""
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } névjegy csoport",
+        "${ numContactGroups } névjegy csoport"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } névjegy",
+        "${ numContacts } névjegy"
       ],
       "${ occurrencesInBody } occurrence found": [
         "",
@@ -3173,16 +3176,16 @@
         "${ saveExtra20 } a VPN és az e-mail szolgáltatásokon a VPN előfizetés hozzáadásával."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } mappa kiválasztva",
+        "${ selectedFoldersCount } mappa kiválasztva"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } címke kiválasztva",
+        "${ selectedFoldersCount } címke kiválasztva"
       ],
       "${ total } conversation": [
         "${ total } beszélgetés",
@@ -3300,12 +3303,12 @@
         "Jobbra igazítás"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Mind (${ totalFoldersCount } mappa)",
+        "Mind (${ totalFoldersCount } mappa)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Mind (${ totalFoldersCount } címke)",
+        "Mind (${ totalFoldersCount } címke)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
         ""
@@ -3329,7 +3332,7 @@
         "Egy ismeretlen publikus kulcsot észleltünk ehhez a címzetthez."
       ],
       "and": [
-        ""
+        "és"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         ""
@@ -3428,7 +3431,7 @@
         "Kattintson ide a csoport részletekért"
       ],
       "Close this screen to exit.": [
-        ""
+        "A kilépéshez zárja be ezt a képernyőt."
       ],
       "Confirm phishing report": [
         "Erősítse meg az adathalász bejelentést"
@@ -3440,20 +3443,20 @@
         "Vágólapra másolva"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Létrehozandó ${ calendarsToBeCreated } új naptár",
+        "Létrehozandó ${ calendarsToBeCreated } új naptár"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó mappákat."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó címkéket."
       ],
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
       "Create in": [
-        ""
+        "Létrehozás itt"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Támogatottak az Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és más alkalmazások CSV fájljai, illetve a vCard 3.1 és 4.0 formátum (UTF-8 kódolással)."
@@ -3539,7 +3542,7 @@
         "E-mail cím"
       ],
       "Email tracker protection is disabled": [
-        ""
+        "E-mail követő védelem ki van kapcsolva"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
         ""
@@ -3665,20 +3668,20 @@
         "A képek eltávolításra kerültek, mert automatikus válaszban nem engedélyezettek"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból",
+        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból"
       ],
       "Import from": [
-        ""
+        "Importálás innen"
       ],
       "Import in progress": [
-        ""
+        "Importálás folyamatban"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
       "Included": [
         "Tartalmazza"
@@ -3708,7 +3711,7 @@
         "Internet kapcsolat helyreállt."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
       ],
       "Justify": [
         "Sorkizárás"
@@ -3717,7 +3720,7 @@
         "Kulcs ujjlenyomat"
       ],
       "Large imports can take several days.": [
-        ""
+        "Egy nagyobb importálás akár napokig is eltarthat."
       ],
       "Learn more": [
         "További információk"
@@ -3753,7 +3756,7 @@
         "Tagok"
       ],
       "Merged": [
-        ""
+        "Egyesítve"
       ],
       "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
         "ProtonMail felhasználóknak küldött üzeneteknél az időkorlát bármikor megadható. Külső címekre küldött üzenet esetén válassza a mégsem gombot, majd állítson be jelszó védelmet az üzenethez."
@@ -3783,10 +3786,10 @@
         "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
       "New": [
-        ""
+        "Új"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze az adatokhoz való hozzáférést."
       ],
       "No action selected": [
         "Nincs kiválasztva művelet"
@@ -3828,7 +3831,7 @@
         "Nincs találat"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "Az egyik feltöltött kulcs sem érvényes titkosításhoz. A titkosítás automatikusan kikapcsolt."
       ],
       "Normal": [
         "Normál"
@@ -3873,7 +3876,7 @@
         ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Tartsa biztonságban. Szüksége lesz rá a fiókja eléréshez és adatai visszafejtéséhez, ha visszaállítaná a fiókja jelszavát."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -3937,10 +3940,10 @@
         "Címzett: "
       ],
       "Recovery phrase copied to clipboard": [
-        ""
+        "A helyreállító jelmondat a vágólapra másolva"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "Helyreállító jelmondat letöltve"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
@@ -3997,7 +4000,7 @@
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
       ],
       "Sending": [
         "Küldés"
@@ -4015,7 +4018,7 @@
         "A munkamenet lejárt."
       ],
       "Set a recovery phrase": [
-        ""
+        "Helyreállító jelmondat beállítása"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
@@ -4087,7 +4090,7 @@
         "Az eredeti levél amelyre válaszolna vagy továbbítaná, éppen kiküldés alatt áll. Ha folytatja, már nem lesz lehetősége a kiküldés alatt álló levél elküldésének megszakítására."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        ""
+        "Az üzenet eredeti feladója már érvénytelen. Az üzenet a jelenlegi alapértelmezett címével kerül elküldésre: ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "A feladó olvasási visszaigazolást kért."
@@ -4214,7 +4217,7 @@
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        ""
+        "Túl sok üzenet vár elküldésre. Várjon amíg elküldődik egy üzenet, mielőtt ezt ütemezné."
       ],
       "Turn off content search. Activation progress won't be lost.": [
         ""
@@ -4310,7 +4313,7 @@
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Érdesíteni fogjuk az importálás végeztével."
       ],
       "Web URL": [
         "Weblap link"
@@ -4319,7 +4322,7 @@
         "Hét"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Mit szeretne importálni a Google fiókjából?"
       ],
       "When do you want your message to be sent?": [
         ""
@@ -4343,10 +4346,10 @@
         ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Az importált naptárokat összefűzheti meglévő Proton naptáraival is."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
       "You can either update your search query or ${ button }": [
         "Próbálkozzon másik kereséssel vagy ${ button }"
@@ -4453,7 +4456,7 @@
         "A nagyobb biztonság érdekében az ön bankja megköveteli a 3D Secure biztonsági ellenőrzést."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -4465,10 +4468,10 @@
         "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
       ],
       "Your recovery phrase": [
-        ""
+        "Az ön helyreállító jelmondata"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        ""
+        "A helyreállító jelmondat egy 12 szóból álló sorozat, megadott sorrendben."
       ]
     },
     "info": {

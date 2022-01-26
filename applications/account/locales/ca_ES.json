@@ -2306,8 +2306,14 @@
       "Invalid response": [
         "Resposta no vàlida"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        ""
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        ""
+      ],
       "Unexpected error": [
-        "Error inesperat"
+        ""
       ],
       "Unsupported invitation": [
         "Invitació no compatible"
@@ -2328,7 +2334,7 @@
         "S'ha enviat la vostra resposta però l'esdeveniment no s'ha pogut afegir al vostre calendari"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "S'ha enviat la vostra resposta però l'esdeveniment no s'ha pogut actualitzar al vostre calendari"
+        ""
       ]
     },
     "Event title": {
@@ -3187,7 +3193,7 @@
         "Accés al compte restringit degut a factures impagades. Si us plau, contacti amb el teu administrador."
       ],
       "account recovery and data recovery method": [
-        ""
+        "mètode de recuperació del compte i de les dades"
       ],
       "account recovery method": [
         "mètode de recuperació de compte"
@@ -3199,10 +3205,10 @@
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa \"ProtonMail me\" o \"Private Message me\""
       ],
       "Add a recovery email address": [
-        ""
+        "Afegeix una adreça de correu electrònic de recuperació"
       ],
       "Add a recovery phone number": [
-        ""
+        "Afegeix un número de telèfon de recuperació"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Afegiu adreces addicionals al vostre compte com ara usuari2@protonmail.com"
@@ -3250,10 +3256,10 @@
         "Tots els vostres canvis es perdran."
       ],
       "Allow recovery by email": [
-        ""
+        "Permet recuperació per correu electrònic"
       ],
       "Allow recovery by phone": [
-        ""
+        "Permet recuperació per telèfon"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Us permet allotjar correus electrònics pels vostres propis dominis a ${ mailAppName }, p. ex. usuari@exemple.cat"
@@ -3422,7 +3428,7 @@
         "Creeu adreces de correu electrònic per a altres persones, gestioneu ProtonMail per una empresa, escola o grup. Comenceu introduint el nom de la vostra organització i domini personalitzat (p.ex. @lavostracompanyia.cat). "
       ],
       "Create in": [
-        ""
+        "Crea a"
       ],
       "Creating your Proton account": [
         "Creant el teu compte Proton"
@@ -3495,7 +3501,7 @@
         "Baixant acabarà amb cualsevol connexió als servidors de pagament de ProtonVPN."
       ],
       "Download recovery file": [
-        ""
+        "Descarrega el fitxer de recuperació"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarrega la teva aplicació favorita avui i porta la privadesa amb tú allà on vagis."
@@ -3691,7 +3697,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importa des de"
       ],
       "Import in progress": [
         ""
@@ -3754,10 +3760,10 @@
         "S'ha restaurat la connexió a Internet."
       ],
       "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        ""
+        "Sembla que algunes de les vostres dades estan xifrades i bloquejades. Probablement es deu a un canvi de contrasenya recent o previ. Us suggerim que utilitzeu un mètode de recuperació de dades per desbloquejar-les."
       ],
       "it’s imperative": [
-        ""
+        "és obligatori"
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
@@ -3832,7 +3838,7 @@
         "Introduïu manualment aquesta informació al vostre dispositiu d'autenticació de dos factors per configurar el vostre compte. ${ _switchButton }."
       ],
       "Merged": [
-        ""
+        "Combinats"
       ],
       "Monthly ${ onDayString }": [
         "Mensualment ${ onDayString }"
@@ -3859,7 +3865,7 @@
         ""
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        ""
+        "No s'ha establert un mètode de recuperació; esteu en risc de perdre l'accés al vostre compte"
       ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
@@ -4136,7 +4142,7 @@
         "Temps de sessió esgotat."
       ],
       "Set recovery phrase": [
-        ""
+        "Estableix la frase de recuperació"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
@@ -4214,7 +4220,7 @@
         "Aquesta funció està destinada només a usuaris avançats. Després de suprimir aquesta clau, NO podreu desxifrar cap missatge que hi hagi estat xifrat. Pot comportar una pèrdua de dades."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
-        ""
+        "Això és una frase de 12 paraules que se't va demanar definir."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Aquest és un fitxer de recuperació o una clau de xifratge que potser heu desat anteriorment."
@@ -4223,7 +4229,7 @@
         "Això és una clau de xifratge que potser heu desat anteriorment."
       ],
       "This is the password you used before the password reset.": [
-        ""
+        "Això és la contrasenya que utilitzàveu abans del restabliment de contrasenya."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
@@ -4273,10 +4279,10 @@
       "to continue to ${ toAppName }": [
         "per continuar a ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+      "To decrypt and view your emails and other data, you need a recovery file.": [
         ""
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
         ""
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
@@ -4284,6 +4290,9 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
@@ -4334,10 +4343,10 @@
         "Fitxer no compatible"
       ],
       "Update recovery file": [
-        ""
+        "Actualitza el fitxer de recuperació"
       ],
       "Update recovery phrase": [
-        ""
+        "Actualitza la frase de recuperació"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Actualitzeu-vos a un pla ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per començar."
@@ -4562,7 +4571,7 @@
         "El seu compte s'està actualitzant, el que pot arribar a trigar fins a 30 segons."
       ],
       "Your account recovery method is set": [
-        ""
+        "S'ha establert el mètode de recuperació del vostre compte"
       ],
       "Your account will be updated once the payment is cleared.": [
         "El vostre compte s’actualitzarà un cop suprimit el pagament."

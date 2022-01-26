@@ -113,9 +113,6 @@
       "Compose": [
         "新規作成"
       ],
-      "Composer size": [
-        "作成サイズ"
-      ],
       "Confirm": [
         "確認"
       ],
@@ -178,6 +175,9 @@
       ],
       "Download": [
         "ダウンロード"
+      ],
+      "Duplicate": [
+        "複製"
       ],
       "Edit": [
         "編集"
@@ -1875,6 +1875,11 @@
         ""
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "イベントの複製"
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         ""
@@ -1910,7 +1915,7 @@
         ""
       ],
       "Unexpected error": [
-        ""
+        "予期せぬエラー"
       ],
       "Unsupported invitation": [
         ""
@@ -1929,6 +1934,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "回答は送信されましたが、イベントをカレンダーに反映できませんでした"
       ]
     },
     "Event popover close button": {

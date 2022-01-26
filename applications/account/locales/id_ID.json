@@ -2285,8 +2285,14 @@
       "Invalid response": [
         "Respon tidak valid"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Acara ini tidak dapat ditambahkan ke kalender Anda. Tidak ada jawaban yang terkirim"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Acara ini tidak dapat diperbarui ke kalender Anda. Tidak ada jawaban yang terkirim"
+      ],
       "Unexpected error": [
-        "Kesalahan tidak terduga"
+        "Kesalahan yang tidak terduga"
       ],
       "Unsupported invitation": [
         "Undangan tidak didukung"
@@ -2307,7 +2313,7 @@
         "Jawaban Anda terkirim, tapi acara tidak dapat ditambahkan ke kalender Anda"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Jawaban Anda terkirim, tapi acara tidak dapat diperbarui di kalender Anda"
+        "Jawaban Anda terkirim, namun acara yang bersangkutan tidak dapat diperbarui pada kalender Anda"
       ]
     },
     "Event title": {
@@ -2707,7 +2713,7 @@
         "Jika ${ bold2StepsEnabled } di Gmail, pastikan Anda menggunakan kata sandi aplikasi alih-alih kata sandi Anda biasanya."
       ],
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Jika ${ bold2StepsEnabled }, mohon pastikan alamat surel dan kata sandi aplikasi benar. ${ boldNot } gunakan kata sandi Anda biasanya."
+        "Apabila ${ bold2StepsEnabled }, mohon pastikan alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya."
       ],
       "IMAP access is enabled in your external account": [
         "Akses IMAP telah diaktifkan di akun eksternal Anda"
@@ -2764,10 +2770,10 @@
         "akun surel Anda memerlukan satu untuk mengekspor data"
       ],
       "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "alamat surel dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi Anda biasanya"
+        "alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya"
       ],
       "your email address and password are correct": [
-        "alamat surel dan kata sandi Anda benar"
+        "alamat email dan kata sandi Anda sudah benar"
       ],
       "your password is correct": [
         "kata sandi Anda benar"
@@ -4215,17 +4221,20 @@
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh berkas atau frasa keamanan."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh berkas keamanan."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Untuk dapat mendekripsi dan mengakses kembali email-email Anda, Anda akan membutuhkan frasa atau berkas keamanan."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh frasa keamanan."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Untuk dapat mendekripsi dan mengakses data-data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Agar akun Anda dapat selalu diakses sepanjang waktu, tentukan metode pemulihan akun"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk mencegah spam dan penyalahgunaan, mohon buktikan bahwa Anda adalah seorang manusia."

@@ -2327,6 +2327,12 @@
       "Invalid response": [
         "Răspuns nevalid"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Evenimentul nu a putut fi adăugat în calendarul dumneavoastră. Nu a fost trimis niciun răspuns"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Evenimentul nu a putut fi actualizat în calendarul dumneavoastră. Nu a fost trimis niciun răspuns"
+      ],
       "Unexpected error": [
         "Eroare neașteptată"
       ],
@@ -2349,7 +2355,7 @@
         "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar."
+        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar"
       ]
     },
     "Event title": {
@@ -4331,17 +4337,20 @@
       "to continue to ${ toAppName }": [
         "pentru a continua cu ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Pentru a decripta și vedea mesajele și alte date aveți nevoie de un fișier sau frază de recuperare."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Pentru a decripta și vedea mesajele și alte date aveți nevoie de un fișier de recuperare."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Pentru a decripta și vizualiza e-mailurile și alte date, aveți nevoie de o frază de recuperare sau de un fișier de recuperare."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Pentru a decripta și vedea mesajele și alte date aveți nevoie de o frază de recuperare."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Pentru a asigura accesul continuu la contul dumneavoastră, setați o metodă de recuperare a contului"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."

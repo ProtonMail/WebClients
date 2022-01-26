@@ -336,7 +336,7 @@
         "Экспорт"
       ],
       "Export contact group": [
-        "Экспорт группы контактов"
+        "Экспортировать группу контактов"
       ],
       "Export contacts": [
         "Экспортировать контакты"
@@ -1844,8 +1844,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Вложения"
+      "Attachment": [
+        "Вложение"
       ],
       "Filter on": [
         "Вкл фильтр"
@@ -2764,10 +2764,10 @@
         "Событие невозможно добавить в ваш календарь. Ответ не отправлен"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Событие не было обнавлено в вашем календаре. Ответ не отправлен"
       ],
       "Unexpected error": [
-        "Непредвиденная ошибка"
+        "Неожиданная ошибка"
       ],
       "Unsupported invitation": [
         "Неподдерживаемое приглашение"
@@ -2786,6 +2786,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Ваш ответ отправлен, но событие не может быть добавлено в ваш календарь"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Ваш ответ был отправлен, но событие не удалось обновить в вашем календаре"
       ]
     },
     "Event title": {

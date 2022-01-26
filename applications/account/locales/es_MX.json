@@ -2306,6 +2306,12 @@
       "Invalid response": [
         "Respuesta inválida"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "No se pudo añadir el evento a su calendario. No se envió ninguna respuesta"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "No se pudo actualizar el evento en su calendario. No se envió ninguna respuesta"
+      ],
       "Unexpected error": [
         "Error inesperado"
       ],
@@ -2328,7 +2334,7 @@
         "Su respuesta fue enviada, pero el evento no pudo ser añadido a su calendario"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Su respuesta fue enviada, pero el evento no pudo ser actualizado en su calendario"
+        "Su respuesta se envió, pero no se pudo actualizar el evento en su calendario"
       ]
     },
     "Event title": {
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "para continuar a ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Para descifrar y ver sus correos y otros datos, necesita un archivo de recuperación o frase de recuperación."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Para descifrar y ver sus correos y otros datos, necesita un archivo de recuperación."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Para descifrar y ver sus correos y otros datos, necesita una frase o archivo de recuperación."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Para descifrar y ver sus correos y otros datos, necesita una frase de recuperación."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descifrar y ver sus datos bloqueados después de restablecer la contraseña, seleccione un método de recuperación."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Para asegurar el acceso a su cuenta, establezca un método de recuperación de cuenta"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
