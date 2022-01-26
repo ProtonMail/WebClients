@@ -134,7 +134,9 @@ describe('PhoneInput', () => {
     it('should get a country from a number', () => {
         expect(getCountryFromNumber('+')).toEqual('');
         expect(getCountryFromNumber('+1')).toEqual('US');
-        expect(getCountryFromNumber('+11')).toEqual('');
+        expect(getCountryFromNumber('+11')).toEqual('US');
+        expect(getCountryFromNumber('+111')).toEqual('US');
+        expect(getCountryFromNumber('+12')).toEqual('US');
         expect(getCountryFromNumber('3')).toEqual('');
         expect(getCountryFromNumber('2')).toEqual('');
         expect(getCountryFromNumber('1')).toEqual('');
@@ -169,5 +171,21 @@ describe('PhoneInput', () => {
         ].forEach(({ digit, value, expectation }) => {
             expect(getCursorPosition(digit, value)).toEqual(expectation);
         });
+    });
+
+    it('should format input for CH', () => {
+        const { getByTestId } = render(<Test defaultCountry="CH" initialValue="" data-testid="input" />);
+        const input = getByTestId('input') as HTMLInputElement;
+        expect(input.value).toBe('');
+        fireEvent.change(input, { target: { value: '1' } });
+        expect(input.value).toBe('1');
+    });
+
+    it('should format input for US', () => {
+        const { getByTestId } = render(<Test defaultCountry="US" initialValue="" data-testid="input" />);
+        const input = getByTestId('input') as HTMLInputElement;
+        expect(input.value).toBe('');
+        fireEvent.change(input, { target: { value: '1' } });
+        expect(input.value).toBe('1');
     });
 });
