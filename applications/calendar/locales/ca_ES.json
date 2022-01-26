@@ -113,9 +113,6 @@
       "Compose": [
         "Redactar"
       ],
-      "Composer size": [
-        "Mida de l'editor"
-      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -180,6 +177,9 @@
       ],
       "Download": [
         "Descarregar"
+      ],
+      "Duplicate": [
+        ""
       ],
       "Edit": [
         "Editar"
@@ -1899,6 +1899,11 @@
         "Suprimir l'esdeveniment"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        ""
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Editar l'esdeveniment"
@@ -1953,6 +1958,9 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },

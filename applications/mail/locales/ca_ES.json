@@ -18,7 +18,7 @@
         "Activar"
       ],
       "Activate recovery": [
-        "Activar la recuperació"
+        "Activa la recuperació"
       ],
       "Add": [
         "Afegir"
@@ -45,7 +45,7 @@
         "Afegir nou grup"
       ],
       "Add participant": [
-        "Afegir participant"
+        "Afegeix participants"
       ],
       "Add phone number": [
         "Afegir número de telèfon"
@@ -183,7 +183,7 @@
         "Confirmar"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        "Confirmar l'obertura de l'enllaç ${ linkToShow }"
+        "Confirmeu l'obertura de l'enllaç ${ linkToShow }"
       ],
       "Contact group": [
         "Grups de contactes"
@@ -320,7 +320,7 @@
         "Xifratge"
       ],
       "exclude message content": [
-        "excloure contingut del missatge"
+        "exclou el contingut del missatge"
       ],
       "Expand composer": [
         "Ampliar l'editor"
@@ -477,7 +477,7 @@
         "Carregar-ne més"
       ],
       "Load unprotected": [
-        "Carregar sense protecció"
+        "Carrega sense protecció"
       ],
       "Loading verification": [
         "Carregant verificació"
@@ -666,7 +666,7 @@
         "Recuperar dades"
       ],
       "Refine it": [
-        "Afinar"
+        "Afina"
       ],
       "refresh the page": [
         "refresqueu la pàgina"
@@ -693,7 +693,7 @@
         "Reanomenar"
       ],
       "Reply securely": [
-        ""
+        "Respon de manera segura"
       ],
       "Report a problem": [
         "Avisar d'un problema"
@@ -717,7 +717,7 @@
         "Tornar a provar"
       ],
       "Revert to original display": [
-        "Tornar a la vista original"
+        "Torna a la vista original"
       ],
       "Save": [
         "Desa"
@@ -774,7 +774,7 @@
         "Definir el temps d'expiració"
       ],
       "Set recovery phrase": [
-        "Definir la frase de recuperació"
+        "Definineix la frase de recuperació"
       ],
       "Share via link": [
         "Compartir amb enllaç"
@@ -886,7 +886,7 @@
         "Desfer"
       ],
       "Unlock data": [
-        "Desbloquejar dades"
+        "Desbloqueja les dades"
       ],
       "Unmark for deletion": [
         "Desmarcar la supressió"
@@ -907,10 +907,10 @@
         "Actualitzar"
       ],
       "Update recovery file": [
-        "Actualitzar el fitxer de recuperació"
+        "Actualitza el fitxer de recuperació"
       ],
       "Update recovery phrase": [
-        "Actualitzar la frase de recuperació"
+        "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
         "Actualitzar"
@@ -1009,13 +1009,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        ""
+        "Error afegint el participant"
       ],
       "Invitation sent and participant added": [
-        ""
+        "Invitació enviada i participant afegit"
       ],
       "Participant added": [
-        ""
+        "Participant afegit"
       ]
     },
     "Addon": {
@@ -1080,7 +1080,7 @@
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completats",
-        ""
+        "${ numberOfCompletedItems }/${ totalNumberOfChecklistItems } completats"
       ]
     },
     "Apps dropdown": {
@@ -1638,10 +1638,10 @@
     },
     "Calendar widget banner": {
       "Event already ended": [
-        ""
+        "Esdeveniment ja finalitzat"
       ],
       "Event in progress": [
-        ""
+        "Esdeveniment en curs"
       ]
     },
     "Collapsible tooltip": {
@@ -1822,8 +1822,8 @@
       ]
     },
     "CustomFilter": {
-      "Attachments": [
-        "Adjunts"
+      "Attachment": [
+        ""
       ],
       "Filter on": [
         "Filtrat"
@@ -2023,38 +2023,38 @@
     },
     "Email reminder banner": {
       "Event is tomorrow": [
-        ""
+        "L'esdeveniment serà demà"
       ],
       "Event starting now": [
-        ""
+        "L'esdeveniment comença ara"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "",
-        ""
+        "L'esdeveniment comença en ${ minutesUntilEvent } minut",
+        "L'esdeveniment comença en ${ minutesUntilEvent } minuts"
       ],
       "Event starts tomorrow": [
-        ""
+        "L'esdeveniment comença demà"
       ]
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "Els detalls de l'esdeveniment estan xifrats. Torneu a iniciar sessió per restaurar el Caldendari i desxrifrar les dades. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        ""
+        "Els detalls de l'esdeveniment no es poden desxifrar. ${ whyNotLink }"
       ]
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        ""
+        "L'esdeveniment ja no és al vostre calendari"
       ]
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        ""
+        "L'esdeveniment s'ha cancel·lat"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        ""
+        "L'esdeveniment s'ha actualitzat. Aquest recordatori està antiquat."
       ]
     },
     "Email subject": {
@@ -2690,7 +2690,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "No es pot enviar la invitació a ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -2707,13 +2707,13 @@
         "Resposta no vàlida"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "No s'ha pogut afegir l'esdeveniment al calendari. No s'ha enviat cap resposta"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "No s'ha pogut actualitzar l'esdeveniment al calendari. No s'ha enviat cap resposta"
       ],
       "Unexpected error": [
-        "S'ha produït un error inesperat"
+        "Error inesperat"
       ],
       "Unsupported invitation": [
         "Invitació no compatible"
@@ -2732,6 +2732,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "S'ha enviat la vostra resposta, però l'esdeveniment no s'ha pogut afegir al vostre calendari"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "S'ha enviat la resposta, però no s'ha pogut actualitzar l'esdeveniment al calendari"
       ]
     },
     "Event title": {
@@ -2860,12 +2863,12 @@
         "Us hem augmentat l'emmagatzematge del compte a ${ totalGBStorageAfterCompletion } GB. Obteniu espai addicional i desbloquegeu característiques prèmium ara."
       ],
       "You're all set!": [
-        ""
+        "Ja ho teniu tot llest!"
       ]
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
-        ""
+        "Completeu totes les passes i obtingueu un total de ${ totalGBStorageAfterCompletion } GB al vostre compte"
       ],
       "Expires soon": [
         "Caduca aviat"
@@ -3368,7 +3371,7 @@
         "Color de fons"
       ],
       "Based in Switzerland, available globally": [
-        ""
+        "Amb seu a Suïssa, disponible a tot el món"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
@@ -3940,7 +3943,7 @@
         "Frase de recuperació copiada al porta-retalls"
       ],
       "Recovery phrase downloaded": [
-        "Frase de recuperació descarregada"
+        "S'ha descarregat la frase de recuperació"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -4030,7 +4033,7 @@
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
       "Sorry, this message does not exist or has already expired": [
-        ""
+        "Ho sentim, aquest missatge no existeix o ja ha caducat"
       ],
       "Starter VPN service with P2P support.": [
         "Servei VPN de base amb suport P2P."
@@ -4087,7 +4090,7 @@
         "El missatge original que esteu intentant reenviar o respondre està en procés d'enviament. Si continueu, ja no podreu desfer l'enviament del missatge original."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        ""
+        "El remitent original d'aquest missatge ja no és vàlid. El vostre missatge s'enviarà des de la vostra adreça predeterminada ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "L'emissor ha sol·licitat una confirmació de lectura."
@@ -4289,7 +4292,7 @@
         "La verificació obrirà una nova pestanya, desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta us serà retornada immediatament."
       ],
       "Version ${ appVersion }": [
-        ""
+        "Versió ${ appVersion }"
       ],
       "Visit our shop to get Proton merchandise.": [
         "Visiteu la nostra botiga per obtenir marxandatge de Proton."
@@ -4395,7 +4398,7 @@
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. Considereu alliberar espai o actualitzar el vostre compte amb espai d'emmagatzematge addicional per redactar missatges nous."
       ],
       "You have reached the maximum number of 5 replies.": [
-        ""
+        "Heu assolit el nombre màxim de 5 respostes."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Per afegir-lo com a mètode de pagament, heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal."
@@ -5337,10 +5340,10 @@
         "Pagar la factura"
       ],
       "Previous version": [
-        ""
+        "Versió anterior"
       ],
       "Privacy policy": [
-        ""
+        "Política de privacitat"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Reactivar l'adreça enllaçada a aquest calendari per gestionar la vostra invitació."
@@ -5358,7 +5361,7 @@
         "Enviats"
       ],
       "Sign up for free": [
-        ""
+        "Registreu-vos gratuïtament"
       ],
       "Spam": [
         "Correu brossa"
@@ -5367,7 +5370,7 @@
         "Destacats"
       ],
       "Terms": [
-        ""
+        "Termes"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ calendarAppName }"
@@ -5408,7 +5411,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        ""
+        "Obrir a ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -6374,16 +6377,16 @@
     },
     "Spotlight": {
       "Message Content Search": [
-        ""
+        "Cerca de contingut del missatge"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
+        "Per a protegir la vostra privacitat, Proton ha bloquejat els rastrejadors de correu electrònic en aquest missatge"
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
       ],
       "You can now search the content of your encrypted emails.": [
-        ""
+        "Ara podeu cercar el contingut dels vostres correus electrònics xifrats."
       ]
     },
     "Status": {
@@ -6962,7 +6965,7 @@
         "Adreces de correu electrònic"
       ],
       "Email content": [
-        "Contingut de correu electrònic"
+        "Contingut del correu electrònic"
       ],
       "Email settings": [
         "Configuració del correu"
@@ -7142,7 +7145,7 @@
         "Processant..."
       ],
       "ProtonMail": [
-        ""
+        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Tornant a signar tots els contactes"
@@ -7178,7 +7181,7 @@
         "Seleccioneu un pla"
       ],
       "Select a theme": [
-        "Seleccionar un tema"
+        "Seleccioneu un tema"
       ],
       "Select action to take on contact group": [
         "Seleccionar acció a realitzar al grup de contactes"
@@ -7202,7 +7205,7 @@
         "Enviar sense expiració?"
       ],
       "Sender changed": [
-        ""
+        "Remitent canviat"
       ],
       "Sending error": [
         "Error enviant"
@@ -7380,7 +7383,7 @@
         "versió estable"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }"
       ]
     },
     "Update font modal": {

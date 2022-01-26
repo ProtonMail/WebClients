@@ -113,9 +113,6 @@
       "Compose": [
         "Nova poruka"
       ],
-      "Composer size": [
-        ""
-      ],
       "Confirm": [
         "Potvrdi"
       ],
@@ -182,6 +179,9 @@
       ],
       "Download": [
         "Preuzmi"
+      ],
+      "Duplicate": [
+        ""
       ],
       "Edit": [
         "Uredi"
@@ -1923,6 +1923,11 @@
         ""
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        ""
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         ""
@@ -1978,6 +1983,9 @@
         ""
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
         ""
       ]
     },

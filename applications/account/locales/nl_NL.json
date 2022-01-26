@@ -197,7 +197,7 @@
         "Doorgaan met importeren"
       ],
       "Continue with": [
-        ""
+        "Doorgaan met"
       ],
       "Continue with Google": [
         "Ga verder met Google"
@@ -662,7 +662,7 @@
         "Inloggen"
       ],
       "Sign in again to continue": [
-        ""
+        "Log opnieuw in om door te gaan"
       ],
       "Sign out": [
         "Uitloggen"
@@ -671,7 +671,7 @@
         "Alle accounts uitloggen"
       ],
       "Sign out from": [
-        ""
+        "Afmelden van"
       ],
       "Signing in": [
         "Aanmelden"
@@ -1774,7 +1774,7 @@
         "Fout in de volgende voorwaarden"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        ""
+        "Het is niet gelukt om je actieve sessies op te halen. Gelieve te ${ refresh } of later opnieuw te proberen."
       ],
       "File has no contents to preview": [
         "Bestand heeft geen inhoud om een voorbeeld te tonen"
@@ -2306,6 +2306,12 @@
       "Invalid response": [
         "Ongeldige reactie"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Deze gebeurtenis kon niet aan uw agenda worden toegevoegd. Er werd geen antwoord verstuurd"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Deze afspraak kon niet worden bijgewerkt in je agenda. Er werd geen antwoord verstuurd"
+      ],
       "Unexpected error": [
         "Onverwachte fout"
       ],
@@ -2328,7 +2334,7 @@
         "Uw antwoord werd verzonden, maar de afspraak kon niet worden toegevoegd aan uw agenda"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Uw antwoord is verzonden, maar de afspraak kon niet worden bijgewerkt in uw agenda"
+        "Uw antwoord werd verstuurd, maar de afspraak kon niet worden bijgewerkt in uw agenda"
       ]
     },
     "Event title": {
@@ -2857,7 +2863,7 @@
         "Als 2-staps-verificatie uit staat, schakelt u deze in"
       ],
       "Open your ${ yahooMailLink } contacts": [
-        ""
+        "Open de contacten van uw ${ yahooMailLink }"
       ],
       "Open your Outlook ${ outlookContactsLink }": [
         "Open uw Outlook ${ outlookContactsLink }"
@@ -2942,7 +2948,7 @@
         "CSV-bestand"
       ],
       "full calendar view": [
-        ""
+        "volledige agendaweergave"
       ],
       "ICS file": [
         "ICS-bestand"
@@ -4070,7 +4076,7 @@
         "eerst de instructies over tweestapsverificatie (2FA) te lezen"
       ],
       "Recovery file downloaded": [
-        ""
+        "Herstelbestand gedownload"
       ],
       "Recovery files have been voided": [
         "Herstel bestanden zijn ongeldig gemaakt"
@@ -4079,7 +4085,7 @@
         "Herstel zin gekopieerd naar klembord"
       ],
       "Recovery phrase downloaded": [
-        ""
+        "Herstelzin gedownload"
       ],
       "Recovery phrase has been disabled": [
         "Herstelzin is uitgeschakeld"
@@ -4163,7 +4169,7 @@
         "Schakel over naar ${ professionalPlan } om meer gebruikers toe te voegen."
       ],
       "Temporarily unavailable. Please check back later.": [
-        ""
+        "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
       "Test link": [
         "Test link"
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelbestand of herstelzin nodig."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelbestand nodig."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelzin nodig."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelzin nodig."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Om uw vergrendelde gegevens te decoderen en te bekijken na een wachtwoordreset, selecteert u een herstelmethode."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Stel een herstelmethode in om ervoor te zorgen dat u blijvende toegang tot uw account heeft"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -4298,7 +4307,7 @@
         "Om uw internetverbinding te beveiligen, installeert u de ProtonVPN-applicatie op uw apparaat en maakt u verbinding met een ProtonVPN-server."
       ],
       "To use ${ toAppName }, please create an address.": [
-        ""
+        "Maak een adres aan om ${ toAppName } te gebruiken."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
@@ -4343,7 +4352,7 @@
         "Upgrade naar een ${ PLAN_NAMES[PLANS.VISIONARY] } of ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan om te beginnen."
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
-        ""
+        "Upgrade naar een ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } of ${ PLAN_NAMES[PLANS.PLUS] } abonnement om automatisch antwoord in te schakelen wanneer je niet op kantoor bent."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Upgrade naar een betaald abonnement om toegang te krijgen tot premium functies en uw opslagruimte te vergroten."
@@ -5220,13 +5229,13 @@
         "Dagen van de week"
       ],
       "Default email address": [
-        ""
+        "Standaard e-mailadres"
       ],
       "Default event duration": [
-        ""
+        "Standaard afspraakduur"
       ],
       "Default full day notifications": [
-        ""
+        "Standaardmeldingen volledige dag"
       ],
       "Default language": [
         "Standaardtaal"
@@ -5235,7 +5244,7 @@
         "Standaardtaal (${ defaultLanguage })"
       ],
       "Default notifications": [
-        ""
+        "Standaardmeldingen"
       ],
       "Default PGP scheme": [
         "Standaard PGP-schema"
@@ -7132,7 +7141,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        ""
+        "Instellingen wijzigen mislukt"
       ]
     },
     "Settings/filters": {

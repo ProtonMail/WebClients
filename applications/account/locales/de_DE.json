@@ -587,7 +587,7 @@
         "Alle anderen Sitzungen widerrufen"
       ],
       "Save": [
-        "Sichern"
+        "Speichern"
       ],
       "Save address": [
         "E-Mail-Adresse speichern"
@@ -2260,7 +2260,7 @@
         "Bitte ${ refresh } oder überprüfen Sie Ihre Verbindung."
       ],
       "Please ${ signIn } to update your email subscription preferences.": [
-        "Bitte ${ signIn }, um Ihre E-Mail-Aboeinstellungen aktualisieren zu können."
+        "Bitte ${ signIn }, um deine E-Mail-Aboeinstellungen zu aktualisieren."
       ],
       "There was a problem connecting to Proton.": [
         "Es gab ein Problem mit der Verbindung zu Proton."
@@ -2306,6 +2306,12 @@
       "Invalid response": [
         "Ungültige Antwort"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Der Termin konnte nicht zu deinem Kalender hinzugefügt werden. Es wurde keine Antwort gesendet"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Der Termin konnte nicht in deinem Kalender aktualisiert werden. Es wurde keine Antwort gesendet"
+      ],
       "Unexpected error": [
         "Unerwarteter Fehler"
       ],
@@ -2328,7 +2334,7 @@
         "Ihre Antwort wurde gesendet, aber das Ereignis konnte Ihrem Kalender nicht hinzugefügt werden"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ihre Antwort wurde gesendet, aber das Ereignis konnte nicht in Ihrem Kalender aktualisiert werden"
+        "Deine Antwort wurde gesendet, aber der Termin konnte nicht in deinem Kalender aktualisiert werden"
       ]
     },
     "Event title": {
@@ -3047,7 +3053,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } benötigt Ihre Erlaubnis, um ${ enableDesktopNotifications }."
+        "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Wenn Sie fortfahren, verlieren Sie den Zugriff auf alle derzeit verschlüsselten Daten in Ihrem Konto."
@@ -3688,7 +3694,7 @@
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren",
-        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren"
+        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalendern importieren"
       ],
       "Import from": [
         "Importieren aus"
@@ -4273,17 +4279,20 @@
       "to continue to ${ toAppName }": [
         "um mit ${ toAppName } fortzufahren"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "Um deine E-Mails und andere Daten zu entschlüsseln und anzuzeigen, benötigst du eine Wiederherstellungsdatei oder eine Wiederherstellungsphrase."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Um deine E-Mails und andere Daten zu entschlüsseln und anzuzeigen, benötigst du eine Wiederherstellungsdatei."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Um deine E-Mails und andere Daten zu entschlüsseln und anzuzeigen, benötigst du eine Wiederherstellungsdatei oder eine Wiederherstellungsphrase."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Um deine E-Mails und andere Daten zu entschlüsseln und anzuzeigen, benötigst du eine Wiederherstellungsphrase."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Um Ihre gesperrten Daten nach dem Zurücksetzen des Passworts entschlüsseln und anzeigen zu können, wählen Sie eine Wiederherstellungsmethode."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Lege eine Methode zur Wiederherstellung des Kontos fest, um einen kontinuierlichen Zugriff auf dein Konto zu gewährleisten."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
@@ -4343,7 +4352,7 @@
         "Wechsle zu einem ${ PLAN_NAMES[PLANS.VISIONARY] } oder ${ PLAN_NAMES[PLANS.PROFESSIONAL] } Abonnement, um loszulegen."
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
-        "Um automatisches Antworten zu aktivieren, wenn du nicht im Büro bist, wechsle zu einem ${ PLAN_NAMES[PLANS.VISIONARY] }-, ${ PLAN_NAMES[PLANS.PROFESSIONAL] }- oder ${ PLAN_NAMES[PLANS.PLUS] }-Abonnement."
+        "Wechsle zu einem ${ PLAN_NAMES[PLANS.VISIONARY] }-, ${ PLAN_NAMES[PLANS.PROFESSIONAL] }- oder ${ PLAN_NAMES[PLANS.PLUS] }-Abonnement, um automatisches Antworten zu aktivieren, wenn du nicht im Büro bist."
       ],
       "Upgrade to a paid plan to access premium features and increase your storage space.": [
         "Wechsle zu einem kostenpflichtigen Paket, um Premium-Funktionen freizuschalten und deinen Speicherplatz zu erweitern."

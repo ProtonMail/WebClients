@@ -2348,8 +2348,14 @@
       "Invalid response": [
         "Neplatná odpověď"
       ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Událost nelze přidat do kalendáře. Nebyla odeslána žádná odpověď"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Událost nelze v kalendáři aktualizovat. Nebyla odeslána žádná odpověď"
+      ],
       "Unexpected error": [
-        "Neočekávaná chyba"
+        ""
       ],
       "Unsupported invitation": [
         "Nepodporovaná pozvánka"
@@ -2370,7 +2376,7 @@
         "Vaše odpověď byla odeslána, ale událost nemohla být přidána do kalendáře"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Vaše odpověď byla odeslána, ale událost nemohla být v kalendáři aktualizována"
+        ""
       ]
     },
     "Event title": {
@@ -4389,17 +4395,20 @@
       "to continue to ${ toAppName }": [
         "pokračovat do ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "K dešifrování a zobrazení e-mailů a dalších dat potřebujete soubor nebo frázi pro obnovení."
-      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "K dešifrování a zobrazení e-mailů a dalších dat potřebujete soubor pro obnovení."
+      ],
+      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
+        "Chcete-li dešifrovat a zobrazit e-maily a další data, potřebujete frázi pro obnovení nebo soubor pro obnovení."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "K dešifrování a zobrazení e-mailů a dalších dat potřebujete frázi pro obnovení."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Chcete-li po resetování hesla dešifrovat a zobrazit uzamčená data, vyberte metodu obnovení."
+      ],
+      "To ensure continuous access to your account, set an account recovery method": [
+        "Chcete-li zajistit nepřetržitý přístup ke svému účtu, nastavte metodu obnovení účtu"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
