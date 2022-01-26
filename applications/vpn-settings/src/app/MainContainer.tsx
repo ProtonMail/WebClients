@@ -94,7 +94,7 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
-            hasAppsDropdown={false}
+            appsDropdown={null}
             onOpenChat={
                 canEnableChat
                     ? () => {

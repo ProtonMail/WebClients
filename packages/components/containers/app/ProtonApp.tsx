@@ -40,6 +40,7 @@ import { OnLoginCallbackArguments } from './interface';
 import { useInstance, PreventLeaveProvider } from '../../hooks';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
 import ThemeProvider from '../themes/ThemeProvider';
+import SpotlightProvider from '../../components/spotlight/Provider';
 
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
@@ -269,34 +270,36 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                         <ThemeProvider>
                             <Router history={history}>
                                 <PreventLeaveProvider>
-                                    <NotificationsProvider>
-                                        <ModalsProvider>
-                                            <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
-                                                <AuthenticationProvider store={authenticationValue}>
-                                                    <CacheProvider cache={cacheRef.current}>
-                                                        <GlobalLoaderProvider>
-                                                            <GlobalLoader />
-                                                            <NotificationsChildren />
-                                                            {(() => {
-                                                                if (isLoggingOut) {
-                                                                    return (
-                                                                        <Signout
-                                                                            onDone={handleFinalizeLogout}
-                                                                            onLogout={() => consumerLogoutPromise}
-                                                                        />
-                                                                    );
-                                                                }
-                                                                if (pathRef.current) {
-                                                                    return null;
-                                                                }
-                                                                return children;
-                                                            })()}
-                                                        </GlobalLoaderProvider>
-                                                    </CacheProvider>
-                                                </AuthenticationProvider>
-                                            </ApiProvider>
-                                        </ModalsProvider>
-                                    </NotificationsProvider>
+                                    <SpotlightProvider>
+                                        <NotificationsProvider>
+                                            <ModalsProvider>
+                                                <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
+                                                    <AuthenticationProvider store={authenticationValue}>
+                                                        <CacheProvider cache={cacheRef.current}>
+                                                            <GlobalLoaderProvider>
+                                                                <GlobalLoader />
+                                                                <NotificationsChildren />
+                                                                {(() => {
+                                                                    if (isLoggingOut) {
+                                                                        return (
+                                                                            <Signout
+                                                                                onDone={handleFinalizeLogout}
+                                                                                onLogout={() => consumerLogoutPromise}
+                                                                            />
+                                                                        );
+                                                                    }
+                                                                    if (pathRef.current) {
+                                                                        return null;
+                                                                    }
+                                                                    return children;
+                                                                })()}
+                                                            </GlobalLoaderProvider>
+                                                        </CacheProvider>
+                                                    </AuthenticationProvider>
+                                                </ApiProvider>
+                                            </ModalsProvider>
+                                        </NotificationsProvider>
+                                    </SpotlightProvider>
                                 </PreventLeaveProvider>
                             </Router>
                         </ThemeProvider>

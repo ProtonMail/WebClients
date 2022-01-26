@@ -16,6 +16,7 @@ import {
     Href,
     useSpotlightOnFeature,
     useFeatures,
+    useSpotlightShow,
 } from '@proton/components';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -159,6 +160,8 @@ const ComposerActions = ({
         [message.data, onChangeFlag]
     );
 
+    const shouldShowSpotlight = useSpotlightShow(showSpotlight);
+
     return (
         <footer
             data-testid="composer:footer"
@@ -168,7 +171,7 @@ const ComposerActions = ({
             <div className="flex flex-row-reverse flex-align-self-center w100 ml0-5 mr1-5 pl1-25 pr0-25 mb1">
                 <Spotlight
                     originalPlacement="top-right"
-                    show={showSpotlight}
+                    show={shouldShowSpotlight}
                     onDisplayed={onDisplayed}
                     anchorRef={dropdownRef}
                     content={

@@ -21,6 +21,7 @@ import {
     MailDensityModal,
     MailViewLayoutModal,
     MailComposerModeModal,
+    AppsDropdownWithDiscoverySpotlight,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS, APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -210,6 +211,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
             expanded={!!expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={breakpoints.isNarrow}
+            appsDropdown={<AppsDropdownWithDiscoverySpotlight />}
             floatingButton={
                 <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
                     <Icon size={24} name="pen" className="mauto" />

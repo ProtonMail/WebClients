@@ -1,6 +1,8 @@
 import { AnimationEvent, Children, cloneElement, ReactElement, ReactNode, RefObject, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
+import discoverIllustration from '@proton/styles/assets/img/shared/discover.svg';
+
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import Portal from '../portal/Portal';
 import { classnames, generateUID } from '../../helpers';
@@ -10,10 +12,13 @@ import { Icon } from '../icon';
 import { usePopper, usePopperAnchor } from '../popper';
 import { shouldShowSideRadius } from '../popper/utils';
 
-interface Props {
+type SpotlightType = 'discover';
+
+export interface SpotlightProps {
     children: ReactElement;
     show: boolean;
     content: ReactNode;
+    type?: SpotlightType;
     onDisplayed?: () => void;
     originalPlacement?: string;
     hasClose?: boolean;
@@ -27,11 +32,12 @@ const Spotlight = ({
     children,
     show,
     content,
+    type,
     onDisplayed,
     originalPlacement = 'top',
     hasClose = true,
     anchorRef: inputAnchorRef,
-}: Props) => {
+}: SpotlightProps) => {
     const [uid] = useState(generateUID('spotlight'));
 
     const [isRTL] = useRightToLeft();
@@ -76,6 +82,12 @@ const Spotlight = ({
 
     const closeText = c('Action').t`Close`;
 
+    const illustrationURL = type
+        ? {
+              discover: discoverIllustration as string,
+          }[type]
+        : null;
+
     return (
         <>
             {cloneElement(child, {
@@ -91,12 +103,17 @@ const Spotlight = ({
                         'spotlight',
                         `spotlight--${placement}`,
                         isClosing && 'is-spotlight-out',
+                        type && 'spotlight--with-illustration',
                         !showSideRadius && 'spotlight--no-side-radius',
                     ])}
                     onAnimationEnd={handleAnimationEnd}
                 >
-                    <div className="spotlight-inner">{content}</div>
-                    {hasClose ? (
+                    <div className={classnames(['spotlight-inner', type && 'flex flex-nowrap flex-align-items-start'])}>
+                        {illustrationURL && <img className="flex-item-noshrink mr1-5" src={illustrationURL} alt="" />}
+                        <div>{content}</div>
+                    </div>
+
+                    {hasClose && (
                         <Button
                             icon
                             shape="ghost"
@@ -107,7 +124,7 @@ const Spotlight = ({
                         >
                             <Icon name="xmark" alt={closeText} />
                         </Button>
-                    ) : null}
+                    )}
                 </div>
             </Portal>
         </>
