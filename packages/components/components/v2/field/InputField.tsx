@@ -5,7 +5,7 @@ import { classnames, generateUID } from '../../../helpers';
 import { useInstance } from '../../../hooks';
 import Input from '../input/Input';
 import { Tooltip } from '../../tooltip';
-import { FormContext, TooltipContext } from '../../../containers/form/Form';
+import { FormContext } from '../../../components';
 
 type NodeOrBoolean = ReactNode | boolean;
 
@@ -66,10 +66,7 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
     ) => {
         const [isFocused, setIsFocused] = useState(false);
         const { dense } = useContext(FormContext) || {};
-        const tooltipContext = useContext(TooltipContext);
-        const { tooltip } = tooltipContext || {};
         const id = useInstance(() => idProp || generateUID());
-        const [uid] = useState(generateUID('tooltip'));
         const assistiveUid = useInstance(() => generateUID());
         const isDense = denseProp || dense;
         const classes = {
@@ -117,11 +114,10 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
 
                 return (
                     <Tooltip
-                        uid={uid}
                         title={title}
                         type={tooltipType}
                         anchorOffset={{ y: -4, x: 0 }}
-                        isOpen={!tooltip && isFocused && !rest.value}
+                        isOpen={isFocused && !rest.value}
                     >
                         <Icon name="circle-exclamation-filled" className={iconClassName} />
                     </Tooltip>

@@ -14,6 +14,8 @@ import {
     Option,
     SelectTwo,
     TextArea,
+    Form,
+    TooltipExclusive,
     Toggle,
     InputFieldTwo,
     ModalTwo,
@@ -170,169 +172,169 @@ export const CalendarModal = ({
     };
 
     return (
-        <ModalTwo
-            size="large"
-            fullscreenOnMobile
-            className="w100"
-            open={isOpen}
-            onClose={onClose}
-            as="form"
-            // @ts-ignore
-            dense
-            onSubmit={(event: React.FormEvent) => {
-                event.preventDefault();
-                if (!loadingAction) {
-                    handleSubmit();
-                }
-            }}
-        >
-            {loadingSetup ? (
-                <Loader />
-            ) : (
-                <>
-                    <ModalTwoHeader title={getTitle()} />
-                    <ModalTwoContent className="calendar-modal-content">
-                        {hasError ? (
-                            <GenericError />
-                        ) : (
-                            <>
-                                <InputFieldTwo
-                                    id="calendar-name-input"
-                                    label={c('Label').t`Name`}
-                                    value={model.name}
-                                    error={isSubmitted && errors.name}
-                                    maxLength={MAX_LENGTHS_API.CALENDAR_NAME}
-                                    disableChange={loadingAction}
-                                    placeholder={c('Placeholder').t`Add a calendar name`}
-                                    onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                        setModel({ ...model, name: target.value })
-                                    }
-                                    autoFocus
-                                />
-                                <InputFieldTwo
-                                    as={ColorPicker}
-                                    label={c('Label').t`Color`}
-                                    id="calendar-color"
-                                    color={model.color}
-                                    onChange={(color: string) => setModel({ ...model, color })}
-                                />
-                                {getAddressRow()}
-                                <div className="flex flex-nowrap flex-align-items-center">
-                                    {getFakeLabel(c('Label').t`Display`)}
-                                    <Field className="ml1">
-                                        <Toggle
-                                            id="calendar-display-toggle"
-                                            className="p0"
-                                            checked={model.display}
-                                            onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                                setModel({ ...model, display: target.checked })
-                                            }
-                                        />
-                                    </Field>
-                                </div>
-                                <InputFieldTwo
-                                    as={TextArea}
-                                    label={c('Label').t`Description`}
-                                    autoGrow
-                                    id="calendar-description-textarea"
-                                    value={model.description}
-                                    placeholder={c('Placeholder').t`Add a calendar description`}
-                                    onChange={({ target }: ChangeEvent<HTMLTextAreaElement>) =>
-                                        setModel({ ...model, description: target.value })
-                                    }
-                                    maxLength={MAX_LENGTHS_API.CALENDAR_DESCRIPTION}
-                                    isSubmitted={isSubmitted}
-                                    error={errors.description}
-                                />
-                                {!isSubscribedCalendar && (
+        <TooltipExclusive>
+            <ModalTwo
+                size="large"
+                fullscreenOnMobile
+                className="w100"
+                open={isOpen}
+                onClose={onClose}
+                as={Form}
+                dense
+                onSubmit={() => {
+                    if (!loadingAction) {
+                        handleSubmit();
+                    }
+                }}
+            >
+                {loadingSetup ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <ModalTwoHeader title={getTitle()} />
+                        <ModalTwoContent className="calendar-modal-content">
+                            {hasError ? (
+                                <GenericError />
+                            ) : (
+                                <>
                                     <InputFieldTwo
-                                        as={SelectTwo}
-                                        label={c('Label').t`Default event duration`}
-                                        id="duration-select"
-                                        data-test-id="create-calendar/event-settings:event-duration"
-                                        value={model.duration}
-                                        // @ts-ignore
-                                        onChange={({ value }: SelectChangeEvent<string>) =>
-                                            setModel({ ...model, duration: +value })
+                                        id="calendar-name-input"
+                                        label={c('Label').t`Name`}
+                                        value={model.name}
+                                        error={isSubmitted && errors.name}
+                                        maxLength={MAX_LENGTHS_API.CALENDAR_NAME}
+                                        disableChange={loadingAction}
+                                        placeholder={c('Placeholder').t`Add a calendar name`}
+                                        onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                                            setModel({ ...model, name: target.value })
                                         }
-                                    >
-                                        {[
-                                            { text: c('Duration').t`30 minutes`, value: 30 },
-                                            { text: c('Duration').t`60 minutes`, value: 60 },
-                                            { text: c('Duration').t`90 minutes`, value: 90 },
-                                            { text: c('Duration').t`120 minutes`, value: 120 },
-                                        ].map(({ value, text }) => (
-                                            <Option key={value} value={value} title={text} />
-                                        ))}
-                                    </InputFieldTwo>
-                                )}
-                                {subscribeURL &&
-                                    getFakeInputTwo({
-                                        content: (
-                                            <span className="text-break-all">
-                                                <TruncatedText maxChars={URL_MAX_DISPLAY_LENGTH}>
-                                                    {subscribeURL}
-                                                </TruncatedText>
-                                            </span>
-                                        ),
-                                        label: c('Label').t`URL`,
-                                    })}
-                                {!isSubscribedCalendar && (
-                                    <>
+                                        autoFocus
+                                    />
+                                    <InputFieldTwo
+                                        as={ColorPicker}
+                                        label={c('Label').t`Color`}
+                                        id="calendar-color"
+                                        color={model.color}
+                                        onChange={(color: string) => setModel({ ...model, color })}
+                                    />
+                                    {getAddressRow()}
+                                    <div className="flex flex-nowrap flex-align-items-center">
+                                        {getFakeLabel(c('Label').t`Display`)}
+                                        <Field className="ml1">
+                                            <Toggle
+                                                id="calendar-display-toggle"
+                                                className="p0"
+                                                checked={model.display}
+                                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                                                    setModel({ ...model, display: target.checked })
+                                                }
+                                            />
+                                        </Field>
+                                    </div>
+                                    <InputFieldTwo
+                                        as={TextArea}
+                                        label={c('Label').t`Description`}
+                                        autoGrow
+                                        id="calendar-description-textarea"
+                                        value={model.description}
+                                        placeholder={c('Placeholder').t`Add a calendar description`}
+                                        onChange={({ target }: ChangeEvent<HTMLTextAreaElement>) =>
+                                            setModel({ ...model, description: target.value })
+                                        }
+                                        maxLength={MAX_LENGTHS_API.CALENDAR_DESCRIPTION}
+                                        isSubmitted={isSubmitted}
+                                        error={errors.description}
+                                    />
+                                    {!isSubscribedCalendar && (
                                         <InputFieldTwo
-                                            as={Notifications}
-                                            label={c('Label').t`Default notifications`}
-                                            data-test-id="create-calendar/event-settings:default-notification"
-                                            hasType={emailNotificationsEnabled}
-                                            notifications={model.partDayNotifications}
-                                            canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                                            defaultNotification={model.defaultPartDayNotification}
-                                            onChange={(notifications: NotificationModel[]) => {
-                                                setModel({
-                                                    ...model,
-                                                    partDayNotifications: notifications,
-                                                });
-                                            }}
-                                        />
+                                            as={SelectTwo}
+                                            label={c('Label').t`Default event duration`}
+                                            id="duration-select"
+                                            data-test-id="create-calendar/event-settings:event-duration"
+                                            value={model.duration}
+                                            // @ts-ignore
+                                            onChange={({ value }: SelectChangeEvent<string>) =>
+                                                setModel({ ...model, duration: +value })
+                                            }
+                                        >
+                                            {[
+                                                { text: c('Duration').t`30 minutes`, value: 30 },
+                                                { text: c('Duration').t`60 minutes`, value: 60 },
+                                                { text: c('Duration').t`90 minutes`, value: 90 },
+                                                { text: c('Duration').t`120 minutes`, value: 120 },
+                                            ].map(({ value, text }) => (
+                                                <Option key={value} value={value} title={text} />
+                                            ))}
+                                        </InputFieldTwo>
+                                    )}
+                                    {subscribeURL &&
+                                        getFakeInputTwo({
+                                            content: (
+                                                <span className="text-break-all">
+                                                    <TruncatedText maxChars={URL_MAX_DISPLAY_LENGTH}>
+                                                        {subscribeURL}
+                                                    </TruncatedText>
+                                                </span>
+                                            ),
+                                            label: c('Label').t`URL`,
+                                        })}
+                                    {!isSubscribedCalendar && (
+                                        <>
+                                            <InputFieldTwo
+                                                as={Notifications}
+                                                label={c('Label').t`Default notifications`}
+                                                data-test-id="create-calendar/event-settings:default-notification"
+                                                hasType={emailNotificationsEnabled}
+                                                notifications={model.partDayNotifications}
+                                                canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                                                defaultNotification={model.defaultPartDayNotification}
+                                                onChange={(notifications: NotificationModel[]) => {
+                                                    setModel({
+                                                        ...model,
+                                                        partDayNotifications: notifications,
+                                                    });
+                                                }}
+                                            />
 
-                                        <InputFieldTwo
-                                            as={Notifications}
-                                            label={c('Label').t`Default full day notifications`}
-                                            data-test-id="create-calendar/event-settings:default-full-day-notification"
-                                            hasType={emailNotificationsEnabled}
-                                            notifications={model.fullDayNotifications}
-                                            canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                                            defaultNotification={model.defaultFullDayNotification}
-                                            onChange={(notifications: NotificationModel[]) => {
-                                                setModel({
-                                                    ...model,
-                                                    fullDayNotifications: notifications,
-                                                });
-                                            }}
-                                        />
-                                    </>
-                                )}
-                            </>
-                        )}
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        {hasError ? (
-                            <Button onClick={() => window.location.reload()} className="mlauto" color="norm">{c(
-                                'Action'
-                            ).t`Close`}</Button>
-                        ) : (
-                            <>
-                                <Button onClick={onClose} disabled={loadingAction}>
-                                    {c('Action').t`Cancel`}
-                                </Button>
-                                <Button loading={loadingAction} type="submit" color="norm">{c('Action')
-                                    .t`Save`}</Button>
-                            </>
-                        )}
-                    </ModalTwoFooter>
-                </>
-            )}
-        </ModalTwo>
+                                            <InputFieldTwo
+                                                as={Notifications}
+                                                label={c('Label').t`Default full day notifications`}
+                                                data-test-id="create-calendar/event-settings:default-full-day-notification"
+                                                hasType={emailNotificationsEnabled}
+                                                notifications={model.fullDayNotifications}
+                                                canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                                                defaultNotification={model.defaultFullDayNotification}
+                                                onChange={(notifications: NotificationModel[]) => {
+                                                    setModel({
+                                                        ...model,
+                                                        fullDayNotifications: notifications,
+                                                    });
+                                                }}
+                                            />
+                                        </>
+                                    )}
+                                </>
+                            )}
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            {hasError ? (
+                                <Button onClick={() => window.location.reload()} className="mlauto" color="norm">{c(
+                                    'Action'
+                                ).t`Close`}</Button>
+                            ) : (
+                                <>
+                                    <Button onClick={onClose} disabled={loadingAction}>
+                                        {c('Action').t`Cancel`}
+                                    </Button>
+                                    <Button loading={loadingAction} type="submit" color="norm">{c('Action')
+                                        .t`Save`}</Button>
+                                </>
+                            )}
+                        </ModalTwoFooter>
+                    </>
+                )}
+            </ModalTwo>
+        </TooltipExclusive>
     );
 };
 
