@@ -22,6 +22,7 @@ loudRejection();
 jest.mock('@proton/shared/lib/helpers/browser', () => ({
     isMac: jest.fn(() => false),
     openNewTab: jest.fn(),
+    isMobile: jest.fn(),
 }));
 
 describe('Unsubscribe banner', () => {
