@@ -26,7 +26,7 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
 import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
-import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { getSharedSessionKey, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
@@ -66,6 +66,7 @@ import {
     onlyDragFiles,
     classnames,
     useRelocalizeText,
+    useCalendarModelEventManager,
 } from '@proton/components';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
@@ -77,6 +78,7 @@ import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from 'pmcrypto';
 import eventImport from '@proton/styles/assets/img/calendar/event-import.svg';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
+import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
@@ -114,6 +116,7 @@ import {
     INVITE_ACTION_TYPES,
     InviteActions,
     RecurringActionData,
+    ReencryptInviteActionData,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -270,6 +273,7 @@ const InteractiveCalendarView = ({
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
+    const { call: calendarCall } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
     const sendIcs = useSendIcs();
@@ -771,7 +775,12 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendPrefsErrors = async ({ inviteActions, vevent, cancelVevent, noCheck }: SendIcsActionData) => {
+    const handleSendPrefsErrors = async ({
+        inviteActions,
+        vevent,
+        cancelVevent,
+        noCheckSendPrefs,
+    }: SendIcsActionData) => {
         const sendPreferencesMap = await getSendIcsPreferencesMap({
             inviteActions,
             vevent,
@@ -779,7 +788,7 @@ const InteractiveCalendarView = ({
             contactEmailsMap,
         });
         const hasErrors = Object.values(sendPreferencesMap).some((sendPref) => !!sendPref?.error);
-        if (!hasErrors || noCheck) {
+        if (!hasErrors || noCheckSendPrefs) {
             return { sendPreferencesMap, inviteActions, vevent, cancelVevent };
         }
         return new Promise<CleanSendIcsActionData>((resolve, reject) => {
@@ -796,14 +805,26 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendIcs = async ({ inviteActions, vevent, cancelVevent, noCheck }: SendIcsActionData) => {
+    const handleSendIcs = async (
+        { inviteActions, vevent, cancelVevent, noCheckSendPrefs }: SendIcsActionData,
+        calendarID?: string
+    ) => {
         const onRequestError = () => {
+            if (calendarID) {
+                void calendarCall([calendarID]);
+            }
             throw new Error(c('Error').t`Invitation failed to be sent`);
         };
         const onReplyError = () => {
+            if (calendarID) {
+                void calendarCall([calendarID]);
+            }
             throw new Error(c('Error').t`Answer failed to be sent`);
         };
         const onCancelError = () => {
+            if (calendarID) {
+                void calendarCall([calendarID]);
+            }
             throw new Error(c('Error').t`Cancellation failed to be sent`);
         };
         const {
@@ -811,7 +832,7 @@ const InteractiveCalendarView = ({
             inviteActions: cleanInviteActions,
             vevent: cleanVevent,
             cancelVevent: cleanCancelVevent,
-        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent, noCheck });
+        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent, noCheckSendPrefs });
         // generate DTSTAMPs for the ICS
         const currentTimestamp = +serverTime();
         const cleanVeventWithDtstamp = cleanVevent
@@ -1031,8 +1052,35 @@ const InteractiveCalendarView = ({
         return multiResponses;
     };
 
-    const handleUpdatePartstatActions = async (updatePartstatOperations: UpdatePartstatOperation[] = []) => {
-        if (!updatePartstatOperations.length) {
+    const handleReencryptSharedEvent = async ({ calendarEvent, calendarID }: ReencryptInviteActionData) => {
+        try {
+            const [sharedSessionKey, calendarKeys] = await Promise.all([
+                getSharedSessionKey({ calendarEvent, getAddressKeys, getCalendarKeys }),
+                getCalendarKeys(calendarID),
+            ]);
+            if (!sharedSessionKey) {
+                throw new Error('Failed to retrieve shared session key. Cannot re-encrypt event');
+            }
+            const silentApi = <T,>(config: any) =>
+                api<T>({
+                    ...config,
+                    silence: true,
+                });
+            await reencryptCalendarSharedEvent({
+                calendarEvent,
+                sharedSessionKey,
+                calendarKeys,
+                api: silentApi,
+            });
+        } catch (e: any) {
+            // Not being able to re-encrypt is not a a blocker. We will retry next time around
+            console.error(e);
+            noop();
+        }
+    };
+
+    const handleUpdatePartstatActions = async (operations: UpdatePartstatOperation[] = []) => {
+        if (!operations.length) {
             return [];
         }
         const getRequest =
@@ -1045,8 +1093,8 @@ const InteractiveCalendarView = ({
                     }),
                     silence: true,
                 });
-        const noisyRequests = updatePartstatOperations.filter(({ silence }) => !silence).map(getRequest);
-        const silentRequests = updatePartstatOperations.filter(({ silence }) => silence).map(getRequest);
+        const noisyRequests = operations.filter(({ silence }) => !silence).map(getRequest);
+        const silentRequests = operations.filter(({ silence }) => silence).map(getRequest);
         // the routes called in these requests do not have any specific jail limit
         // the limit per user session is 25k requests / 900s
         const responses: UpdateEventPartApiResponse[] = [];
@@ -1068,13 +1116,11 @@ const InteractiveCalendarView = ({
         return responses;
     };
 
-    const handleUpdatePersonalPartActions = async (
-        updatePersonalPartOperations: UpdatePersonalPartOperation[] = []
-    ) => {
-        if (!updatePersonalPartOperations.length) {
+    const handleUpdatePersonalPartActions = async (operations: UpdatePersonalPartOperation[] = []) => {
+        if (!operations.length) {
             return [];
         }
-        const requests = updatePersonalPartOperations.map(
+        const requests = operations.map(
             ({ data: { addressID, memberID, eventID, calendarID, eventComponent } }) =>
                 async () => {
                     const payload = await getUpdatePersonalEventPayload({
@@ -1138,11 +1184,13 @@ const InteractiveCalendarView = ({
                 onDuplicateAttendees: handleDuplicateAttendees,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
+                getCalendarKeys,
+                getAddressKeys,
                 getCanonicalEmailsMap,
                 sendIcs: handleSendIcs,
+                reencryptSharedEvent: handleReencryptSharedEvent,
                 onSendPrefsErrors: handleSendPrefsErrors,
                 handleSyncActions,
-                getCalendarKeys,
             });
             hasStartChanged = hasStartChangedProp;
             const [syncResponses, updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
@@ -1150,15 +1198,15 @@ const InteractiveCalendarView = ({
                 handleUpdatePartstatActions(updatePartstatActions),
                 handleUpdatePersonalPartActions(updatePersonalPartActions),
             ]);
-            const calendarsEventCache = calendarsEventsCacheRef.current;
-            if (calendarsEventCache) {
-                upsertUpdateEventPartResponses(updatePartstatActions, updatePartstatResponses, calendarsEventCache);
+            const calendarsEventsCache = calendarsEventsCacheRef.current;
+            if (calendarsEventsCache) {
+                upsertUpdateEventPartResponses(updatePartstatActions, updatePartstatResponses, calendarsEventsCache);
                 upsertUpdateEventPartResponses(
                     updatePersonalPartActions,
                     updatePersonalPartResponses,
-                    calendarsEventCache
+                    calendarsEventsCache
                 );
-                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache);
+                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventsCache);
             }
             const uniqueCalendarIDs = unique([
                 ...syncActions.map(({ calendarID }) => calendarID),
@@ -1166,11 +1214,11 @@ const InteractiveCalendarView = ({
                 ...updatePersonalPartActions.map(({ data: { calendarID } }) => calendarID),
             ]);
             await handleUpdateVisibility(uniqueCalendarIDs);
-            calendarsEventCache.rerender?.();
+            calendarsEventsCache.rerender?.();
             handleCreateNotification(texts);
             if (sendActions.length) {
                 // if there is any send action, it's meant to be run after the sync actions above
-                await Promise.all(sendActions.map(handleSendIcs));
+                await Promise.all(sendActions.map((action) => handleSendIcs(action)));
             }
 
             if (temporaryEvent.tmpOriginalTarget) {
@@ -1214,6 +1262,7 @@ const InteractiveCalendarView = ({
                 api,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
+                getAddressKeys,
                 getCalendarKeys,
                 inviteActions,
                 sendIcs: handleSendIcs,

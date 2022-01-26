@@ -190,7 +190,9 @@ jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsKeysSettingsListener', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/ModelEventManagerProvider', () => ({
-    useCalendarModelEventManager: () => {},
+    useCalendarModelEventManager: () => () => {
+        call: jest.fn();
+    },
 }));
 jest.mock('./eventStore/useCalendarsEventsEventListener', () => () => ({}));
 jest.mock('./ContactEmailsProvider', () => ({
@@ -487,6 +489,7 @@ describe('MainContainer', () => {
             expect(getSaveEventActions).toHaveBeenCalledWith({
                 addresses: [{ Email: 'test@pm.gg', Receive: 1, Send: 1, Status: 1 }],
                 api: undefined,
+                getAddressKeys: expect.any(Function),
                 getCalendarBootstrap: [
                     {
                         CalendarSettings: {
@@ -545,6 +548,7 @@ describe('MainContainer', () => {
                 onSaveConfirmation: expect.any(Function),
                 onSendPrefsErrors: expect.any(Function),
                 sendIcs: expect.any(Function),
+                reencryptSharedEvent: expect.any(Function),
                 temporaryEvent: {
                     data: {
                         calendarData: {

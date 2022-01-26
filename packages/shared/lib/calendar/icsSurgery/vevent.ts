@@ -25,6 +25,7 @@ import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
 import { getSupportedAlarms } from './valarm';
 import { durationToMilliseconds } from '../vcal';
 import { DAY } from '../../constants';
+import { getSupportedStringValue } from './vcal';
 
 export const getDtendPropertyFromDuration = (
     dtstart: VcalDateOrDateTimeProperty,
@@ -214,9 +215,11 @@ export const getSupportedEvent = ({
             'x-yahoo-yid': xYahooID,
             'x-yahoo-user-status': xYahooUserStatus,
         } = vcalVeventComponent;
-        const trimmedSummaryValue = summary?.value.trim();
-        const trimmedDescriptionValue = description?.value.trim();
-        const trimmedLocationValue = location?.value.trim();
+        const [trimmedSummaryValue, trimmedDescriptionValue, trimmedLocationValue] = [
+            summary,
+            description,
+            location,
+        ].map(getSupportedStringValue);
         const isRecurring = !!rrule || !!recurrenceId;
 
         const validated: VcalVeventComponent = {

@@ -65,14 +65,11 @@ export const generateEncryptedPurpose = async ({
 };
 export const generateEncryptedPassphrase = ({
     passphraseKey,
-    decryptedPassphrase,
+    passphrase,
 }: {
     passphraseKey: Uint8Array;
-    decryptedPassphrase: string;
-}) =>
-    encodeBase64(
-        xorEncryptDecrypt({ key: uint8ArrayToString(passphraseKey), data: decodeBase64(decryptedPassphrase) })
-    );
+    passphrase: string;
+}) => encodeBase64(xorEncryptDecrypt({ key: uint8ArrayToString(passphraseKey), data: decodeBase64(passphrase) }));
 
 export const generateCacheKey = () => uint8ArrayToPaddedBase64URLString(generateRandomBytes(16));
 
@@ -152,18 +149,18 @@ export const buildLink = ({
 export const getCreatePublicLinkPayload = async ({
     accessLevel,
     publicKeys,
-    decryptedPassphrase,
+    passphrase,
     passphraseID,
 }: {
     accessLevel: ACCESS_LEVEL;
     publicKeys: OpenPGPKey[];
-    decryptedPassphrase: string;
+    passphrase: string;
     passphraseID: string;
 }) => {
     const encryptedPurpose = null;
     const passphraseKey = await generateSessionKey(AES256);
     const encryptedPassphrase =
-        accessLevel === ACCESS_LEVEL.FULL ? generateEncryptedPassphrase({ passphraseKey, decryptedPassphrase }) : null;
+        accessLevel === ACCESS_LEVEL.FULL ? generateEncryptedPassphrase({ passphraseKey, passphrase }) : null;
 
     const cacheKeySalt = generateCacheKeySalt();
     const cacheKey = generateCacheKey();

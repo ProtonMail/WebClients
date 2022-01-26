@@ -81,6 +81,11 @@ describe('EmailReminderWidget', () => {
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
                     selfAddressData: {},
                     veventComponent: veventBuilder(),
+                    encryptionData: {
+                        encryptingAddressID: undefined,
+                        sharedSessionKey: undefined,
+                        calendarSessionKey: undefined,
+                    },
                 })
         );
     });
@@ -146,6 +151,11 @@ describe('EmailReminderWidget', () => {
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
                     selfAddressData: {},
                     veventComponent: veventBuilder({ overrides: { sequence: { value: 2 } } }),
+                    encryptionData: {
+                        encryptingAddressID: undefined,
+                        sharedSessionKey: undefined,
+                        calendarSessionKey: undefined,
+                    },
                 })
         );
 
@@ -282,6 +292,11 @@ describe('EmailReminderWidget', () => {
                             },
                         },
                     }),
+                    encryptionData: {
+                        encryptingAddressID: undefined,
+                        sharedSessionKey: undefined,
+                        calendarSessionKey: undefined,
+                    },
                 })
         );
 
@@ -308,6 +323,11 @@ describe('EmailReminderWidget', () => {
                             },
                         },
                     }),
+                    encryptionData: {
+                        encryptingAddressID: undefined,
+                        sharedSessionKey: undefined,
+                        calendarSessionKey: undefined,
+                    },
                 })
         );
 
