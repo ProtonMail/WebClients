@@ -15,6 +15,7 @@ import {
     InputFieldTwo,
     Loader,
     Button,
+    Form,
 } from '../../../components';
 import { useLoading, useCalendarEmailNotificationsFeature } from '../../../hooks';
 import { GenericError } from '../../error';
@@ -126,7 +127,8 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
             open={isOpen}
             className="modal--shorter-labels w100"
             onClose={handleClose}
-            as="form"
+            as={Form}
+            dense
             onSubmit={() => {
                 if (!submitProps.loading) {
                     onSubmit();
@@ -145,7 +147,6 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
 ${kbLink}
 `}</p>
                             <InputFieldTwo
-                                dense
                                 autoFocus
                                 hint={
                                     <span className={classnames([isURLMaxLength && 'color-warning'])}>
