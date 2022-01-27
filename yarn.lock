@@ -3186,10 +3186,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/ed25519@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "@noble/ed25519@npm:1.5.1"
-  checksum: 51a76ee96fb4b4af6cd6bf1fcf952e67ee8105ab946c506d6e657e5aa62c6602d50e157a1c7fe62e508535b38959db59d62457236ea471cf9ed4bf4f17c3643e
+"@noble/ed25519@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "@noble/ed25519@npm:1.5.2"
+  checksum: 95562c2c9fb51e493aa98e970d900270a950975260b479a2da4b4358714157e0872f7dd3102a7feb9b7083e05388912c47e01cd7002c3f44d614b33d7a45f5b7
   languageName: node
   linkType: hard
 
@@ -3499,7 +3499,7 @@ __metadata:
     eslint: ^8.7.0
     intersection-observer: ^0.12.0
     jest: ^27.4.7
-    libphonenumber-js: ^1.9.44
+    libphonenumber-js: ^1.9.46
     markdown-it: ^10.0.0
     prettier: ^2.5.1
     prop-types: ^15.8.1
@@ -3593,7 +3593,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/key-transparency@workspace:packages/key-transparency"
   dependencies:
-    "@noble/ed25519": ^1.5.1
+    "@noble/ed25519": ^1.5.2
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
     "@types/jasmine": ^3.10.3
@@ -18973,10 +18973,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"libphonenumber-js@npm:^1.9.44":
-  version: 1.9.44
-  resolution: "libphonenumber-js@npm:1.9.44"
-  checksum: cac1f8c4d37a35f1763720d5dbd247ce70a2f7a7d045ab2c99d75bdd170ed00ea8a38ddbd68b481fee3f57b9292218e412a20aa8a2a9b871091ed93809f61f95
+"libphonenumber-js@npm:^1.9.46":
+  version: 1.9.46
+  resolution: "libphonenumber-js@npm:1.9.46"
+  checksum: 0ae1f46e0ff33fc30605a68d6112822a5f51c24e28a2ba369b6d4e9680183c5ff171d1007c55186ab42baeaeafcdac7c12ba654e0de54da5c7f582dfd10ae084
   languageName: node
   linkType: hard
 
@@ -19021,9 +19021,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^12.3.1":
-  version: 12.3.1
-  resolution: "lint-staged@npm:12.3.1"
+"lint-staged@npm:^12.3.2":
+  version: 12.3.2
+  resolution: "lint-staged@npm:12.3.2"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -19040,7 +19040,7 @@ fsevents@^1.2.7:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 53e4a0e6021221f8d712397996d4a10374f2ee287a0d62dab2e84ddd1e06f5cc4cb42ac909337c52feba20a13f89bfefe7939683003ccedc04ac6ec20fd65651
+  checksum: 35cab689dfc967ff95afeeaa7be7d1e19a131f36eeac9ac1d80240e0b20108286ce04f2d6bdf0b77fdf58db3ca5313bcbf2667dc6017335e604ff455caf69e33
   languageName: node
   linkType: hard
 
@@ -25524,7 +25524,7 @@ fsevents@^1.2.7:
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
     husky: ^7.0.4
     is-ci: ^3.0.1
-    lint-staged: ^12.3.1
+    lint-staged: ^12.3.2
     prettier: ^2.5.1
     sort-package-json: ^1.53.1
     typescript: ^4.5.5
