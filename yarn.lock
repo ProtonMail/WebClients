@@ -3483,7 +3483,7 @@ __metadata:
     "@types/codemirror": 5.60.5
     "@types/credit-card-type": ^7.0.0
     "@types/jest": ^27.4.0
-    "@types/markdown-it": ^10.0.3
+    "@types/markdown-it": ^12.2.3
     "@types/qrcode.react": ^1.0.2
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -3500,7 +3500,7 @@ __metadata:
     intersection-observer: ^0.12.0
     jest: ^27.4.7
     libphonenumber-js: ^1.9.46
-    markdown-it: ^10.0.0
+    markdown-it: ^12.3.2
     prettier: ^2.5.1
     prop-types: ^15.8.1
     punycode.js: ^2.1.0
@@ -5834,13 +5834,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/highlight.js@npm:^9.7.0":
-  version: 9.12.4
-  resolution: "@types/highlight.js@npm:9.12.4"
-  checksum: 1a491cc59b58c906b4e1c7263c839b8741f4ef3af395f7e0c90350792d89a832f4c4c39010df577f9c9dd447544c854a45a7c999a7901dc16dc20faedf73e7b5
-  languageName: node
-  linkType: hard
-
 "@types/history@npm:^4.7.11":
   version: 4.7.11
   resolution: "@types/history@npm:4.7.11"
@@ -5977,15 +5970,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/markdown-it@npm:^10.0.3":
-  version: 10.0.3
-  resolution: "@types/markdown-it@npm:10.0.3"
+"@types/markdown-it@npm:^12.2.3":
+  version: 12.2.3
+  resolution: "@types/markdown-it@npm:12.2.3"
   dependencies:
-    "@types/highlight.js": ^9.7.0
     "@types/linkify-it": "*"
     "@types/mdurl": "*"
-    highlight.js: ^9.7.0
-  checksum: e369a7a40f5b2ea5a72d865172a03fb6b0533401a550336fbeb4457b4353c6e47326562fbe868bba4920b09a25deb9c69f7e6e6e5a329739ce69bf78204876a0
+  checksum: 868824a3e4d00718ba9cd4762cf16694762a670860f4b402e6e9f952b6841a2027488bdc55d05c2b960bf5078df21a9d041270af7e8949514645fe88fdb722ac
   languageName: node
   linkType: hard
 
@@ -13099,10 +13090,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:~2.0.0":
-  version: 2.0.3
-  resolution: "entities@npm:2.0.3"
-  checksum: 5a7899fcc622e0d76afdeafe4c58a6b40ae3a8ee4772e5825a648c11a2ca324a9a02515386f512e466baac4aeb551f3d3b79eaece5cd98369b9f8601be336b1a
+"entities@npm:~2.1.0":
+  version: 2.1.0
+  resolution: "entities@npm:2.1.0"
+  checksum: a10a877e489586a3f6a691fe49bf3fc4e58f06c8e80522f08214a5150ba457e7017b447d4913a3fa041bda06ee4c92517baa4d8d75373eaa79369e9639225ffd
   languageName: node
   linkType: hard
 
@@ -15926,13 +15917,6 @@ fsevents@^1.2.7:
   version: 10.7.3
   resolution: "highlight.js@npm:10.7.3"
   checksum: defeafcd546b535d710d8efb8e650af9e3b369ef53e28c3dc7893eacfe263200bba4c5fcf43524ae66d5c0c296b1af0870523ceae3e3104d24b7abf6374a4fea
-  languageName: node
-  linkType: hard
-
-"highlight.js@npm:^9.7.0":
-  version: 9.18.5
-  resolution: "highlight.js@npm:9.18.5"
-  checksum: a8afdb395869bba8a892dd8891b738d3bd48fe2e5b6843ec3181c93d73f52abf2cab863424caa631442a7bbafac222bafdab3f5a536a69aab9c60d4c1b7f8b77
   languageName: node
   linkType: hard
 
@@ -19030,16 +19014,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"linkify-it@npm:^2.0.0":
-  version: 2.2.0
-  resolution: "linkify-it@npm:2.2.0"
-  dependencies:
-    uc.micro: ^1.0.1
-  checksum: d198871d0b3f3cfdb745dae564bfd6743474f20cd0ef1057e6ca29451834749e7f3da52b59b4de44e98f31a1e5c71bdad160490d4ae54de251cbcde57e4d7837
-  languageName: node
-  linkType: hard
-
-"linkify-it@npm:^3.0.3":
+"linkify-it@npm:^3.0.1, linkify-it@npm:^3.0.3":
   version: 3.0.3
   resolution: "linkify-it@npm:3.0.3"
   dependencies:
@@ -19790,18 +19765,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"markdown-it@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "markdown-it@npm:10.0.0"
+"markdown-it@npm:^12.3.2":
+  version: 12.3.2
+  resolution: "markdown-it@npm:12.3.2"
   dependencies:
-    argparse: ^1.0.7
-    entities: ~2.0.0
-    linkify-it: ^2.0.0
+    argparse: ^2.0.1
+    entities: ~2.1.0
+    linkify-it: ^3.0.1
     mdurl: ^1.0.1
     uc.micro: ^1.0.5
   bin:
     markdown-it: bin/markdown-it.js
-  checksum: 69f5ee640cbebb451b80d3cce308fff7230767e05c0f8c206a1e413775b7a6e5a08e91e9f3ec59f9b5c5a45493f9ce7ac089379cffb60c9d3e6677ed9d535086
+  checksum: 890555711c1c00fa03b936ca2b213001a3b9b37dea140d8445ae4130ce16628392aad24b12e2a0a9935336ca5951f2957a38f4e5309a2e38eab44e25ff32a41e
   languageName: node
   linkType: hard
 
@@ -23671,7 +23646,7 @@ fsevents@^1.2.7:
     juice: ^8.0.0
     linkify-it: ^3.0.3
     loud-rejection: ^2.2.0
-    markdown-it: ^10.0.0
+    markdown-it: ^12.3.2
     mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     prettier: ^2.5.1
     react: ^17.0.2
