@@ -36,6 +36,11 @@ export interface ElementsState {
     pendingRequest: boolean;
 
     /**
+     * An action is pending backend side on the element list and it shouldnt be refreshed yet
+     */
+    pendingActions: number;
+
+    /**
      * Current parameters of the list (label, filter, sort, search)
      */
     params: ElementsStateParams;
@@ -87,6 +92,7 @@ export interface QueryResults {
     abortController: AbortController;
     Total: number;
     Elements: Element[];
+    Stale: number;
 }
 
 export interface NewStateParams {

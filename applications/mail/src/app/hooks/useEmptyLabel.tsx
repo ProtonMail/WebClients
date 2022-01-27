@@ -15,6 +15,8 @@ import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages
 
 import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
 import { isCustomLabel } from '../helpers/labels';
+import { useDispatch } from 'react-redux';
+import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 
 export const useEmptyLabel = () => {
     const { createNotification } = useNotifications();
@@ -24,6 +26,7 @@ export const useEmptyLabel = () => {
     const optimisticEmptyLabel = useOptimisticEmptyLabel();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
+    const dispatch = useDispatch();
 
     const emptyLabel = useCallback(
         async (labelID: string) => {
@@ -53,12 +56,18 @@ export const useEmptyLabel = () => {
                     </ConfirmModal>
                 );
             });
-            const rollback = optimisticEmptyLabel(labelID);
+
+            let rollback = () => {};
+
             try {
+                dispatch(backendActionStarted());
+                rollback = optimisticEmptyLabel(labelID);
                 await api(emptyLabelRequest({ LabelID: labelID, AddressID: undefined }));
             } catch (error: any) {
                 rollback();
                 throw error;
+            } finally {
+                dispatch(backendActionFinished());
             }
             await call();
             createNotification({ text: isLabel ? c('Success').t`Label cleared` : c('Success').t`Folder cleared` });
