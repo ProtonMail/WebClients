@@ -73,7 +73,7 @@ const Toolbar = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="no-border">M</kbd>
+            <kbd className="border-none">M</kbd>
         </>
     ) : (
         c('Title').t`Move to`
@@ -83,7 +83,7 @@ const Toolbar = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="no-border">L</kbd>
+            <kbd className="border-none">L</kbd>
         </>
     ) : (
         c('Title').t`Label as`

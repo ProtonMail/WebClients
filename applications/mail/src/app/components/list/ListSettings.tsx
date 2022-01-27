@@ -19,7 +19,7 @@ interface Props {
 const ListSettings = ({ sort, onSort, onFilter, filter, conversationMode, mailSettings, isSearch, labelID }: Props) => {
     const isScheduledSettings = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
     return (
-        <div className="sticky-top upper-layer bg-norm border-bottom--weak pl0-5 pr0-5 pt0-25 pb0-25 flex flex-wrap flex-justify-space-between">
+        <div className="sticky-top upper-layer bg-norm border-bottom border-weak pl0-5 pr0-5 pt0-25 pb0-25 flex flex-wrap flex-justify-space-between">
             <FilterActions filter={filter} onFilter={onFilter} mailSettings={mailSettings} />
             <SortDropdown
                 conversationMode={conversationMode}

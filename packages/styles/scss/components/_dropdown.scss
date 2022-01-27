@@ -71,7 +71,7 @@
 		left: calc(var(--left) * 1px); // JS provide left value only
 		/* stylelint-enable */
 		transform: scale(1);
-		border-radius: var(--border-radius-large);
+		border-radius: var(--border-radius-lg);
 		box-shadow: var(--shadow-lifted);
 		border: 1px solid var(--border-norm);
 		background: var(--background-norm);
@@ -135,7 +135,7 @@
 		min-inline-size: min(var(--min-width, 1.5em), var(--max-width-bounds));
 		min-block-size: min(var(--min-height, 1em), var(--max-height-bounds));
 		overflow: auto;
-		border-radius: var(--border-radius-large);
+		border-radius: var(--border-radius-lg);
 		background-color: var(--background-norm);
 		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
 			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);

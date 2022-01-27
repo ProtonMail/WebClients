@@ -52,7 +52,7 @@ const TVContainer = () => {
                         <>
                             <p className="mt2 mb0 pl1 text-center color-danger">{c('Error')
                                 .t`Code wrong or not valid anymore`}</p>
-                            <p className="m0 text-center no-border">{c('Error')
+                            <p className="m0 text-center border-none">{c('Error')
                                 .t`If the time on your TV has expired, click on Refresh on your TV and enter your code again.`}</p>
                         </>
                     ) : null}
@@ -77,7 +77,7 @@ const TVContainer = () => {
                 <>
                     <h2>{c('Title').t`Device connected!`}</h2>
                     <div className="flex flex-justify-center mt2 mb2">
-                        <span className="inline-flex bg-success rounded50 p2">
+                        <span className="inline-flex bg-success rounded-50 p2">
                             <Icon name="check" size={60} />
                         </span>
                     </div>

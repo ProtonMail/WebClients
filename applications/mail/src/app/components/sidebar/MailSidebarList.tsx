@@ -231,7 +231,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     });
 
     return (
-        <div ref={sidebarRef} tabIndex={-1} className="no-outline">
+        <div ref={sidebarRef} tabIndex={-1} className="outline-none">
             <SidebarList>
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.INBOX)}

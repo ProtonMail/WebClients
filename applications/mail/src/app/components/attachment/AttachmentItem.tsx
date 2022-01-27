@@ -124,7 +124,7 @@ const AttachmentItem = ({
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
             <div
                 className={classnames([
-                    'message-attachmentList-item flex bordered flex-nowrap pm_button p0 rounded',
+                    'message-attachmentList-item flex border flex-nowrap pm_button p0 rounded',
                     loading && 'message-attachmentList-item--loading',
                 ])}
             >

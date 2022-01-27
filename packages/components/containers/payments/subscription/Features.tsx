@@ -110,7 +110,7 @@ const Features = ({ appName, onSelect, planLabels, features, activeTab, onSetAct
                             </th>
                             {restKeys.map((key) => {
                                 return (
-                                    <td className="no-border" key={key}>
+                                    <td className="border-none" key={key}>
                                         {rest[key]}
                                     </td>
                                 );

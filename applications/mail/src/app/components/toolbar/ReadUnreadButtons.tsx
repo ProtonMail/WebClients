@@ -36,7 +36,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         <>
             {c('Action').t`Mark as read`}
             <br />
-            <kbd className="no-border">R</kbd>
+            <kbd className="border-none">R</kbd>
         </>
     ) : (
         c('Action').t`Mark as read`
@@ -46,7 +46,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         <>
             {c('Action').t`Mark as unread`}
             <br />
-            <kbd className="no-border">U</kbd>
+            <kbd className="border-none">U</kbd>
         </>
     ) : (
         c('Action').t`Mark as unread`

@@ -136,7 +136,7 @@ const CustomizeCalendarImportModal = ({
     const canMerge = activeCalendars.length > 0;
 
     const errorBox = (
-        <div className="rounded-bigger p1 mb1 bg-danger color-white text-semibold no-border">
+        <div className="rounded-lg p1 mb1 bg-danger color-white text-semibold border-none">
             {c('Error').t`Can't create new calendars for all imported calendars due to the personal calendar limit.`}
             <ul className="m0">
                 <li>

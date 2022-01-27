@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 *,
 *::before,
 *::after {
@@ -209,7 +209,7 @@ kbd {
 	padding-inline: 0.25em;
 	background-color: var(--background-strong);
 	border: 1px solid var(--border-norm);
-	border-radius: var(--border-radius-medium);
+	border-radius: var(--border-radius-md);
 }
 
 hr {

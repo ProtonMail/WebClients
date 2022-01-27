@@ -205,7 +205,7 @@ const Dropdown = ({
         isClosing && `is-dropdown-out`,
         noCaret && 'dropdown--no-caret',
         className,
-        'no-outline',
+        'outline-none',
     ]);
 
     if (isClosed && !isOpen) {

@@ -30,7 +30,7 @@ const ContactsList = ({
             <AutoSizer>
                 {({ height, width }) => (
                     <List
-                        className="contact-list no-outline"
+                        className="contact-list outline-none"
                         ref={listRef}
                         rowRenderer={rowRenderer}
                         rowCount={rowCount}

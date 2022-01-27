@@ -48,7 +48,7 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
                                 <div>{BRAND_NAME}</div>
                                 <div className="text-bold">{title}</div>
                                 {id === APPS.PROTONDRIVE && (
-                                    <div className="bg-info rounded1e text-sm m0 mt0-5">BETA</div>
+                                    <div className="bg-info rounded-full text-sm m0 mt0-5">BETA</div>
                                 )}
                             </AppLink>
                         </li>

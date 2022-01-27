@@ -227,7 +227,7 @@ const TransferManager = ({
                 {rect && (
                     <FixedSizeList
                         direction={isRTL ? 'rtl' : 'ltr'}
-                        className="no-outline"
+                        className="outline-none"
                         itemData={{
                             entries,
                             latestStats,

@@ -89,7 +89,7 @@ const MessageOnlyView = ({
                 highlightKeywords={highlightKeywords}
             />
             <div
-                className={classnames(['flex-item-fluid pt0-5 pr1-5 pl1-5 max-w100 no-outline', hidden && 'hidden'])}
+                className={classnames(['flex-item-fluid pt0-5 pr1-5 pl1-5 max-w100 outline-none', hidden && 'hidden'])}
                 ref={messageContainerRef}
                 tabIndex={-1}
             >

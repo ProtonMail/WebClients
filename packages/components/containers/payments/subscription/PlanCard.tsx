@@ -48,7 +48,7 @@ const PlanCard = ({
         <>
             <div
                 className={classnames([
-                    'bordered relative h100 plan-selection-plan p2',
+                    'border relative h100 plan-selection-plan p2',
                     isCurrentPlan && 'plan-selection-plan-current-card',
                 ])}
             >

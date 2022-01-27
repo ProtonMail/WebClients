@@ -197,7 +197,7 @@ function GeneratedLinkState({
                             onToggle={() => {
                                 setAdditionalSettingsExpanded(!additionalSettingsExpanded);
                             }}
-                            className="no-border"
+                            className="border-none"
                         >
                             <Summary tabIndex={0}>
                                 <h3>{c('Title').t`Additional settings`}</h3>
