@@ -7,18 +7,10 @@ import { addToCache, minimalCache, addApiMock, assertIcon, clearAll } from '../.
 import MessageView from '../MessageView';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
-jest.mock('../../../helpers/dom', () => {
-    return { preloadImage: jest.fn(() => Promise.resolve()) };
-});
+const imageURL = 'imageURL';
+const blobURL = 'blobURL';
 
-describe('Message images', () => {
-    afterEach(clearAll);
-
-    it('should display all elements other than images', async () => {
-        addToCache('MailSettings', { ShowImages: SHOW_IMAGES.NONE });
-
-        const imageURL = 'imageURL';
-        const content = `<div>
+const content = `<div>
   <div>
     <table>
       <tbody>
@@ -48,6 +40,16 @@ describe('Message images', () => {
     </svg>
   </div>
 </div>`;
+
+jest.mock('../../../helpers/dom', () => {
+    return { preloadImage: jest.fn(() => Promise.resolve()) };
+});
+
+describe('Message images', () => {
+    afterEach(clearAll);
+
+    it('should display all elements other than images', async () => {
+        addToCache('MailSettings', { ShowImages: SHOW_IMAGES.NONE });
 
         const document = createDocument(content);
 
@@ -107,6 +109,79 @@ describe('Message images', () => {
 
         const updatedElementXlinkhref = await findByTestId(iframeRerendered, 'image-xlinkhref');
         expect(updatedElementXlinkhref.getAttribute('xlink:href')).toEqual(imageURL);
+    });
+
+    it('should load correctly all elements other than images with proxy', async () => {
+        addApiMock(`images`, () => {
+            const response = {
+                headers: { get: jest.fn() },
+                blob: () => new Blob(),
+            };
+            return Promise.resolve(response);
+        });
+
+        const document = createDocument(content);
+
+        const message: MessageState = {
+            localID: 'messageID',
+            data: {
+                ID: 'messageID',
+            } as Message,
+            messageDocument: { document },
+            messageImages: {
+                hasEmbeddedImages: false,
+                hasRemoteImages: true,
+                showRemoteImages: false,
+                showEmbeddedImages: true,
+                images: [],
+            },
+        };
+
+        minimalCache();
+        addToCache('MailSettings', { ShowImages: SHOW_IMAGES.NONE, ImageProxy: IMAGE_PROXY_FLAGS.PROXY });
+
+        initMessage(message);
+
+        const { container, rerender, getByTestId } = await setup({}, false);
+        const iframe = await getIframeRootDiv(container);
+
+        // Need to mock this function to mock the blob url
+        window.URL.createObjectURL = jest.fn(() => blobURL);
+
+        // Check that all elements are displayed in their proton attributes before loading them
+        const elementBackground = await findByTestId(iframe, 'image-background');
+        expect(elementBackground.getAttribute('proton-background')).toEqual(imageURL);
+
+        const elementPoster = await findByTestId(iframe, 'image-poster');
+        expect(elementPoster.getAttribute('proton-poster')).toEqual(imageURL);
+
+        const elementSrcset = await findByTestId(iframe, 'image-srcset');
+        expect(elementSrcset.getAttribute('proton-srcset')).toEqual(imageURL);
+
+        const elementXlinkhref = await findByTestId(iframe, 'image-xlinkhref');
+        expect(elementXlinkhref.getAttribute('proton-xlink:href')).toEqual(imageURL);
+
+        const loadButton = getByTestId('remote-content:load');
+
+        fireEvent.click(loadButton);
+
+        // Rerender the message view to check that images have been loaded
+        await rerender(<MessageView {...defaultProps} />);
+        const iframeRerendered = await getIframeRootDiv(container);
+
+        // Check that proton attribute has been removed after images loading
+        const updatedElementBackground = await findByTestId(iframeRerendered, 'image-background');
+        expect(updatedElementBackground.getAttribute('background')).toEqual(blobURL);
+
+        const updatedElementPoster = await findByTestId(iframeRerendered, 'image-poster');
+        expect(updatedElementPoster.getAttribute('poster')).toEqual(blobURL);
+
+        // srcset attribute is not loaded, so we need to check proton-srcset
+        const updatedElementSrcset = await findByTestId(iframeRerendered, 'image-srcset');
+        expect(updatedElementSrcset.getAttribute('proton-srcset')).toEqual(imageURL);
+
+        const updatedElementXlinkhref = await findByTestId(iframeRerendered, 'image-xlinkhref');
+        expect(updatedElementXlinkhref.getAttribute('xlink:href')).toEqual(blobURL);
     });
 
     it('should be able to load direct when proxy failed at loading', async () => {
