@@ -29,6 +29,7 @@ import {
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
+    Form,
 } from '../../components';
 import {
     useEventManager,
@@ -155,7 +156,7 @@ const DeleteAccountModal = (props: Props) => {
 
     return (
         <ModalTwo
-            as="form"
+            as={Form}
             onClose={hideHeader ? undefined : onClose}
             disableCloseOnEscape={disableCloseOnEscape || loading}
             size={size}
