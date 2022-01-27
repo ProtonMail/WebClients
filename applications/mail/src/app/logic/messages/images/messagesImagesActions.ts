@@ -3,6 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { get } from '../../../helpers/attachment/attachmentLoader';
 import { preloadImage } from '../../../helpers/dom';
 import { createBlob } from '../../../helpers/message/messageEmbeddeds';
+import encodeImageUri from '../helpers/encodeImageUri';
 import { LoadEmbeddedParams, LoadEmbeddedResults, LoadRemoteParams, LoadRemoteResults } from '../messagesTypes';
 
 export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedParams>(
@@ -37,8 +38,9 @@ export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults[], LoadRemoteP
                 }
 
                 try {
+                    const encodedImageUrl = encodeImageUri(image.url);
                     const response: Response = await api({
-                        ...getImage(image.url as string),
+                        ...getImage(encodedImageUrl),
                         output: 'raw',
                         silence: true,
                     });
@@ -68,8 +70,9 @@ export const loadFakeProxy = createAsyncThunk<LoadRemoteResults[], LoadRemotePar
                     }
 
                     try {
+                        const encodedImageUrl = encodeImageUri(image.url);
                         const response: Response = await api({
-                            ...getImage(image.url as string, 1),
+                            ...getImage(encodedImageUrl, 1),
                             output: 'raw',
                             silence: true,
                         });
