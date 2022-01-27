@@ -14,6 +14,7 @@ import {
     InputFieldTwo,
     useModalState,
     ModalProps,
+    Form,
 } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
@@ -274,7 +275,7 @@ export const WithFormRoot = () => {
             >
                 Open modal with form root
             </Button>
-            <ModalTwo open={open} onClose={() => setOpen(false)} as="form" onSubmit={handleSubmit}>
+            <ModalTwo open={open} onClose={() => setOpen(false)} as={Form} onSubmit={handleSubmit}>
                 <ModalTwoHeader title="Size" />
                 <ModalTwoContent>
                     <p>
