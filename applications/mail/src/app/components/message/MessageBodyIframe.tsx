@@ -1,4 +1,4 @@
-import { RefObject, useRef, useState } from 'react';
+import { RefObject, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
@@ -52,7 +52,6 @@ const MessageBodyIframe = ({
     mailSettings,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
-    const [messageImagesLoaded, setMessageImagesLoaded] = useState<boolean>(false);
     const messageHead = locateHead(message.messageDocument?.document);
 
     const { isResizing } = useMailboxContainerContext();
@@ -83,7 +82,7 @@ const MessageBodyIframe = ({
 
     useIframeDispatchEvents(initStatus, iframeRef);
 
-    useObserveIframeHeight(initStatus === 'done', iframeRef, messageImagesLoaded);
+    useObserveIframeHeight(initStatus === 'done', iframeRef);
 
     const iframePrintDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_ID);
 
@@ -112,7 +111,6 @@ const MessageBodyIframe = ({
                     iframeRef={iframeRef}
                     isPrint={isPrint}
                     messageImages={message.messageImages}
-                    onImagesLoaded={() => setMessageImagesLoaded(true)}
                 />
             )}
             {showToggle &&

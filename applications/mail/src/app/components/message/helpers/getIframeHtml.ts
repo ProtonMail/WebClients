@@ -12,6 +12,11 @@ const getIframeHtml = (emailContent: string, messageHead = '', isPlainText: bool
         return `<html>${emailHead}${emailBody}</html>`;
     }
 
+    /**
+     * Some infos about those `!important` values:
+     * In order to compute correctly the height and avoid any kind of override
+     * we had to put those inline style values with important on two divs.
+     */
     return `
       <html>
         <head>
@@ -24,7 +29,9 @@ const getIframeHtml = (emailContent: string, messageHead = '', isPlainText: bool
         ${svg}
         <div id="${MESSAGE_IFRAME_ROOT_ID}">
           <div id="${MESSAGE_IFRAME_PRINT_ID}"></div>
-          ${emailContent}
+          <div style="display: flex !important; width: 100% !important;">
+            <div style="width: 100% !important">${emailContent}</div>
+          </div>
         </div>
         </body>
       </html>
