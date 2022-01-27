@@ -3514,7 +3514,7 @@ __metadata:
     react-sortable-hoc: ^2.0.0
     react-virtualized: ^9.22.3
     resize-observer: ^1.0.4
-    squire-rte: "github:ProtonMail/Squire#proton-v4"
+    roosterjs: ^8.11.3
     tabbable: ^5.2.1
     tinycolor2: ^1.4.2
     ttag: ^1.7.24
@@ -5692,6 +5692,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 07a5ce4a63676c709946dbebe17c1f95740bfe8a585a14fb882aaa0443f41678ee3aec5c527dd0cbf0c4a1b67654ec15c7a166c25392f27593b7e01a508cfc9f
+  languageName: node
+  linkType: hard
+
+"@types/dom-inputevent@npm:^1.0.3":
+  version: 1.0.7
+  resolution: "@types/dom-inputevent@npm:1.0.7"
+  checksum: eb109efd5ca4c238bbc2b44b203bb3662013637bc8f87b8e70f239fe6c0168a9a74e35e28380df7a1c398e46e1f1b67f9e438973bc3bf23faad53ae1bd865a0b
   languageName: node
   linkType: hard
 
@@ -10721,7 +10728,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-convert@npm:^1.9.0, color-convert@npm:^1.9.1":
+"color-convert@npm:^1.9.0, color-convert@npm:^1.9.1, color-convert@npm:^1.9.3":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
   dependencies:
@@ -10763,6 +10770,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"color-string@npm:^1.6.0":
+  version: 1.9.0
+  resolution: "color-string@npm:1.9.0"
+  dependencies:
+    color-name: ^1.0.0
+    simple-swizzle: ^0.2.2
+  checksum: 93c6678b847f8cfa47d19677fd19e1d4b19d7a33f100644400357c298266080b5bca64e5f874fa8ac8cc0aa0606ad44f7a838b4e6fd05e6affea190a68555bb4
+  languageName: node
+  linkType: hard
+
 "color-support@npm:^1.1.2":
   version: 1.1.3
   resolution: "color-support@npm:1.1.3"
@@ -10779,6 +10796,16 @@ __metadata:
     color-convert: ^1.9.1
     color-string: ^1.5.2
   checksum: 273fe5d4c2a322dbc0e184ef6c891cbefefa11af7c6a8ed6001ff6986af747038cf3258bd4f4b715415f287c556efc8d1f0368bc02240877610ae1d427887537
+  languageName: node
+  linkType: hard
+
+"color@npm:^3.0.0":
+  version: 3.2.1
+  resolution: "color@npm:3.2.1"
+  dependencies:
+    color-convert: ^1.9.3
+    color-string: ^1.6.0
+  checksum: f81220e8b774d35865c2561be921f5652117638dcda7ca4029262046e37fc2444ac7bbfdd110cf1fd9c074a4ee5eda8f85944ffbdda26186b602dd9bb05f6400
   languageName: node
   linkType: hard
 
@@ -25516,6 +25543,88 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"roosterjs-color-utils@npm:1.0.0":
+  version: 1.0.0
+  resolution: "roosterjs-color-utils@npm:1.0.0"
+  dependencies:
+    color: ^3.0.0
+    roosterjs-editor-types: 8.2.8
+  checksum: b051eec2b286e03aa9abe1bac4780bab28b5e1a052991fbb93722a0879bab74fee1209b7ab3e0d4508886653ecd40c8ddc41dff5bb853bbbd851777c391001b0
+  languageName: node
+  linkType: hard
+
+"roosterjs-editor-api@npm:8.11.5":
+  version: 8.11.5
+  resolution: "roosterjs-editor-api@npm:8.11.5"
+  dependencies:
+    roosterjs-editor-dom: 8.11.5
+    roosterjs-editor-types: 8.11.5
+  checksum: 9af55bb34d662e37cee8a03fc6a63513a50a6f2687d106d14b2ef64148a8d195073e0f7f0f3a3cb01b0721cd657201ffad428b5d5893bb2e2f5654c0ff9d915a
+  languageName: node
+  linkType: hard
+
+"roosterjs-editor-core@npm:8.11.5":
+  version: 8.11.5
+  resolution: "roosterjs-editor-core@npm:8.11.5"
+  dependencies:
+    roosterjs-editor-dom: 8.11.5
+    roosterjs-editor-types: 8.11.5
+  checksum: 1a5b7ea39e9c717bc1ef7038303d4fd703d4cc69b3cf593b5b6cf12693aed8ba0fbfdf80f78ca0407aad3eac332abf0f69175130123b4a0cd487be2331d289d8
+  languageName: node
+  linkType: hard
+
+"roosterjs-editor-dom@npm:8.11.5":
+  version: 8.11.5
+  resolution: "roosterjs-editor-dom@npm:8.11.5"
+  dependencies:
+    roosterjs-editor-types: 8.11.5
+  checksum: c575aa1ce8f4d6b5b1976b73f34f1d07ccb9121f23c61aceff47a9b60cb7fdb1ed36118b799958dd2cbb6b3eff9727977741110e6cb5c3fc0a9a5c313e0eea66
+  languageName: node
+  linkType: hard
+
+"roosterjs-editor-plugins@npm:8.11.5":
+  version: 8.11.5
+  resolution: "roosterjs-editor-plugins@npm:8.11.5"
+  dependencies:
+    roosterjs-editor-api: 8.11.5
+    roosterjs-editor-dom: 8.11.5
+    roosterjs-editor-types: 8.11.5
+  checksum: 2cfe333afd5cd769bcc5e08e5ef9958df051b554fa5eddb31f03a04e3a618a95abe6ded484f4d5d937e307fa9155d48e787607c6bb70d0aa555b5be0ad1e9536
+  languageName: node
+  linkType: hard
+
+"roosterjs-editor-types@npm:8.11.5":
+  version: 8.11.5
+  resolution: "roosterjs-editor-types@npm:8.11.5"
+  dependencies:
+    "@types/dom-inputevent": ^1.0.3
+  checksum: b8434cbab10778a0f9037a5f2a7411898db40b57b0a0fa915d45db0158a6a9d809983b0685711c01616ac6c7f11478140a57c12b56fa142c1099b62e5952d11e
+  languageName: node
+  linkType: hard
+
+"roosterjs-editor-types@npm:8.2.8":
+  version: 8.2.8
+  resolution: "roosterjs-editor-types@npm:8.2.8"
+  dependencies:
+    "@types/dom-inputevent": ^1.0.3
+  checksum: 088a073e0e6c2c9bb5704486c6823970473aeaa035971f3625a70a38565ab84869c9323f23d60fd0ef7acd53745ac202e9d2a262d3b5bd4cebe885d89fec86cc
+  languageName: node
+  linkType: hard
+
+"roosterjs@npm:^8.11.3":
+  version: 8.11.5
+  resolution: "roosterjs@npm:8.11.5"
+  dependencies:
+    roosterjs-color-utils: 1.0.0
+    roosterjs-editor-api: 8.11.5
+    roosterjs-editor-core: 8.11.5
+    roosterjs-editor-dom: 8.11.5
+    roosterjs-editor-plugins: 8.11.5
+    roosterjs-editor-types: 8.11.5
+  checksum: 5e3879d5af2e0830b6606b326d0fd95fc36c9b3931c0728715394a955b1e400e805d0a396388beb5fca4430bf5732f0ede8a696e4b7bc70c994ae62161af9a23
+  languageName: node
+  linkType: hard
+
 "root@workspace:.":
   version: 0.0.0-use.local
   resolution: "root@workspace:."
@@ -26553,13 +26662,6 @@ fsevents@^1.2.7:
   version: 1.0.3
   resolution: "sprintf-js@npm:1.0.3"
   checksum: 19d79aec211f09b99ec3099b5b2ae2f6e9cdefe50bc91ac4c69144b6d3928a640bb6ae5b3def70c2e85a2c3d9f5ec2719921e3a59d3ca3ef4b2fd1a4656a0df3
-  languageName: node
-  linkType: hard
-
-"squire-rte@github:ProtonMail/Squire#proton-v4":
-  version: 1.10.2
-  resolution: "squire-rte@https://github.com/ProtonMail/Squire.git#commit=5b08185f5c52ccdd7c526708bcfd7246c3745ca3"
-  checksum: 495d4dc417f6c50386a5432f1bec07db5cfb2a3f298510fb286d93ce9ee97fd8c21a7bd31f36792e3bac65fe040b550fcb0e4a008ea1fbe53202bba2bef21e74
   languageName: node
   linkType: hard
 

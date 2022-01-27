@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { DEFAULT_FONT_FACE, FONT_FACE } from '../../components/editor/constants';
 import { Select } from '../../components/select';
-import { DEFAULT_FONT_FACE, FONT_FACE } from '../../components/editor/squireConfig';
 
 interface Props {
     id: string;

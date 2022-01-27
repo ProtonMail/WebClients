@@ -19,8 +19,8 @@ import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import FontFaceSelect from './FontFaceSelect';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/squireConfig';
 import FontSizeSelect from './FontSizeSelect';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
 
 const AppearanceOtherSection = () => {
     const api = useApi();

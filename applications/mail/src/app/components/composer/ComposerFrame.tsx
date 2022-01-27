@@ -125,7 +125,6 @@ const ComposerFrame = ({
                     ref={composerRef}
                     messageID={messageID}
                     composerFrameRef={composerFrameRef}
-                    breakpoints={breakpoints}
                     toggleMinimized={toggleMinimized}
                     toggleMaximized={toggleMaximized}
                     onFocus={onFocus}

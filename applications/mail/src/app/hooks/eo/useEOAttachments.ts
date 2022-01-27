@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { RefObject, useState } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
 
 import { useHandler, useNotifications } from '@proton/components';
@@ -14,13 +14,13 @@ import {
 } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
 import { MessageChange } from '../../components/composer/Composer';
-import { EditorActionsRef } from '../../components/composer/editor/SquireEditorWrapper';
 import { ATTACHMENT_ACTION, checkSize, uploadEO } from '../../helpers/attachment/attachmentUploader';
+import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 
 interface Props {
     message: MessageState;
     onChange: MessageChange;
-    editorActionsRef: EditorActionsRef;
+    editorActionsRef: RefObject<ExternalEditorActions | undefined>;
     publicKey?: OpenPGPKey[];
 }
 

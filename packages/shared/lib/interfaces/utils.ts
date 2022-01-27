@@ -15,3 +15,9 @@ export type Unwrap<T> = T extends Promise<infer U>
     : T;
 
 export type Nullable<T> = T | null;
+
+/**
+ * Allow interface to have "specific" optinal entries.
+ * Works the following : Optional<MyInterface, 'keya' | 'keyb'>
+ */
+export type Optional<T extends object, K extends keyof T = keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
