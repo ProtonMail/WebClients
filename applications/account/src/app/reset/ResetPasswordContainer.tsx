@@ -12,6 +12,7 @@ import {
     useApi,
     useErrorHandler,
     useFeature,
+    useLocalState,
     useMyLocation,
     useNotifications,
 } from '@proton/components';
@@ -30,6 +31,8 @@ import Header from '../public/Header';
 import Content from '../public/Content';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
 import Footer from '../public/Footer';
+import { defaultPersistentKey } from '../public/helper';
+
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
@@ -48,6 +51,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
+    const [persistent] = useLocalState(true, defaultPersistentKey);
 
     const [myLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
@@ -109,7 +113,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                             onSubmit={(username) => {
                                 return handleRequestRecoveryMethods({
                                     username,
-                                    persistent: true,
+                                    persistent,
                                     api: silentApi,
                                 })
                                     .then(handleResult)
