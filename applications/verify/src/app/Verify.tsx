@@ -31,7 +31,13 @@ const windowIsEmbedded = window.location !== window.parent.location;
 const parseSearch = (search: string) =>
     Object.fromEntries(
         [...new URLSearchParams(search).entries()].map(([key, value]) => {
-            return key === 'methods' ? [key, value.split(',')] : [key, value];
+            if (key === 'methods') {
+                return [key, value.split(',')];
+            }
+            if (key === 'theme') {
+                return [key, Number(value)];
+            }
+            return [key, value];
         })
     );
 
@@ -64,7 +70,7 @@ const Verify = () => {
 
     useEffect(() => {
         if (theme) {
-            setTheme(Number(theme));
+            setTheme(theme);
         }
 
         const browserLocale = getBrowserLocale();
