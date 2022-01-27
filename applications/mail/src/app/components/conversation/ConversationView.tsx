@@ -147,7 +147,7 @@ const ConversationView = ({
                 highlightKeywords={highlightKeywords}
             />
             <div ref={wrapperRef} className="flex-item-fluid pt0-5 pr1 pl1">
-                <div className={classnames(['no-outline', hidden && 'hidden'])} ref={elementRef} tabIndex={-1}>
+                <div className={classnames(['outline-none', hidden && 'hidden'])} ref={elementRef} tabIndex={-1}>
                     {showMessagesError ? (
                         <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
                     ) : null}

@@ -220,7 +220,7 @@ const DownloadSharedContainer = () => {
         content && (
             <>
                 <div className="ui-standard flex flex-column flex-nowrap flex-item-noshrink flex-align-items-center scroll-if-needed h100v p1">
-                    <div className="bg-norm color-norm flex flex-align-items-center flex-item-noshrink w100 max-w37e mbauto mtauto bordered rounded">
+                    <div className="bg-norm color-norm flex flex-align-items-center flex-item-noshrink w100 max-w37e mbauto mtauto border rounded">
                         <div className="flex flex-column flex-nowrap flex-align-items-center text-center p2 pb0 w100">
                             <h3>
                                 <span className="flex flex-nowrap flex-align-items-center">

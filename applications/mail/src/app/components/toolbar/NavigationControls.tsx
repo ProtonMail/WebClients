@@ -40,7 +40,7 @@ const NavigationControls = ({
         <>
             {c('Title').t`Previous conversation`}
             <br />
-            <kbd className="no-border">K</kbd>
+            <kbd className="border-none">K</kbd>
         </>
     ) : (
         c('Title').t`Previous conversation`
@@ -50,7 +50,7 @@ const NavigationControls = ({
         <>
             {c('Title').t`Previous message`}
             <br />
-            <kbd className="no-border">K</kbd>
+            <kbd className="border-none">K</kbd>
         </>
     ) : (
         c('Title').t`Previous message`
@@ -60,7 +60,7 @@ const NavigationControls = ({
         <>
             {c('Title').t`Next conversation`}
             <br />
-            <kbd className="no-border">J</kbd>
+            <kbd className="border-none">J</kbd>
         </>
     ) : (
         c('Title').t`Next conversation`
@@ -70,7 +70,7 @@ const NavigationControls = ({
         <>
             {c('Title').t`Next message`}
             <br />
-            <kbd className="no-border">J</kbd>
+            <kbd className="border-none">J</kbd>
         </>
     ) : (
         c('Title').t`Next message`

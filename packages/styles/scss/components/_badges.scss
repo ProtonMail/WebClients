@@ -5,7 +5,7 @@
 	padding-block: em(2, 11) em(3, 11);
 	padding-inline: em(8, 11);
 	line-height: 1;
-	border-radius: var(--border-radius-pill);
+	border-radius: var(--border-radius-full);
 }
 
 @each $color in (primary, danger, warning, success, info) {

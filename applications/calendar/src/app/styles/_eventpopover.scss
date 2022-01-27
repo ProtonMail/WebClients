@@ -7,7 +7,7 @@
 	max-inline-size: 100%;
 	max-block-size: 100%;
 	transform-origin: 50%;
-	border-radius: var(--border-radius-medium);
+	border-radius: var(--border-radius-md);
 	box-shadow: var(--shadow-lifted);
 	background: var(--background-norm);
 	color: var(--text-norm);
@@ -70,7 +70,7 @@
 		}
 
 		&-display {
-			border-radius: var(--border-radius-medium);
+			border-radius: var(--border-radius-md);
 		}
 	}
 

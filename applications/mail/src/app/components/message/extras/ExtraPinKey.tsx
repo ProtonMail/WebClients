@@ -183,7 +183,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     return (
         <div
             className={classnames([
-                'rounded bordered p0-5 mb0-5 flex flex-nowrap flex-align-items-center flex-justify-space-between',
+                'rounded border p0-5 mb0-5 flex flex-nowrap flex-align-items-center flex-justify-space-between',
                 bannerColorClassName,
             ])}
         >

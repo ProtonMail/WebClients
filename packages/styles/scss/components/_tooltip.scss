@@ -7,7 +7,7 @@
 	z-index: $layer-tooltips;
 	min-inline-size: $arrow-width;
 	max-inline-size: $tooltip-width;
-	border-radius: var(--border-radius-medium);
+	border-radius: var(--border-radius-md);
 	background-color: var(--tooltip-background-color);
 	color: var(--tooltip-text-color);
 	padding-block: 0.5em;

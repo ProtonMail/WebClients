@@ -90,34 +90,6 @@ import { Meta, Source } from '@storybook/addon-docs';
 
 ## Something that should appear on <code>hover</code> in a parent
 
-
-<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
-  <div class="w49 flex-align-self-center relative">
-    <button class="button-show-on-hover increase-click-surface" type="button">
-      hover me, pikaaaaa…
-      <span class="visibility-hidden button-show-on-hover-element">CHU</span>
-      </button>
-      <br /><br />
-    Careful when using this, might create issues with some tap devices like iPhone/iPads, etc.
-
-  </div>
-  <div class="w49">
-<Source
-  language='html'
-  dark
-  format
-  code={`
-<button className="button-show-on-hover">
-  hover me, pikaaaaa…
-  <span
-    className="visibility-hidden button-show-on-hover-element">
-  CHU</span>
-`}
-/>
-
-  </div>
-</div>
-
 This version below make an element with `className="opacity-on-hover"` appearing when hovering its container or when focus is inside its container (container needs `className="opacity-on-hover-container"`).
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">

@@ -30,7 +30,7 @@ const ESSlowToolbar = () => {
     );
 
     return (
-        <div className="sticky-top bg-norm border-bottom--weak p0-5 flex flex-wrap flex-justify-center">
+        <div className="sticky-top bg-norm border-bottom border-weak p0-5 flex flex-wrap flex-justify-center">
             {
                 // translator: sentence appears when a message content search takes too long . Complete sentence example: "Search taking too long? <Refine it> or <exclude message content> from this search session.
                 c('Info').jt`Search taking too long? ${dropdownButton} or ${toggleOffButton} from this search session.`

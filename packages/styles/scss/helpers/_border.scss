@@ -1,0 +1,46 @@
+.border {
+	border: 1px solid var(--border-norm);
+}
+
+@each $placement in (top, right, bottom, left) {
+	.border-#{$placement} {
+		#{dash-join('border', logical($placement))}: 1px solid var(--border-norm);
+	}
+}
+
+@each $color in (primary, norm, weak, danger, warning, success, info) {
+	// Initialize namespace
+	$prefix: '';
+
+	@if $color == 'norm' or $color == 'weak' {
+		$prefix: 'border';
+	}
+
+	@if $color == 'danger' or $color == 'warning' or $color == 'success' or $color == 'info' {
+		$prefix: 'signal';
+	}
+
+	.border-#{$color} {
+		border-color: var(--#{dash-join($prefix, $color)});
+	}
+}
+
+.border-currentColor {
+	border-color: currentColor;
+}
+
+.border-dashed {
+	border-style: dashed;
+}
+
+.border-dotted {
+	border-style: dotted;
+}
+
+.border-collapse {
+	border-collapse: collapse;
+}
+
+.border-none {
+	border: none;
+}

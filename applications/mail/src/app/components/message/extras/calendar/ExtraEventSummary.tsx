@@ -20,7 +20,7 @@ export const getSummaryContent = (firstLine?: string, secondLine?: string) => {
             <span>{firstLine || secondLine}</span>
         );
 
-    return <div className="mt0-5 mb0-5 rounded bordered bg-weak p0-5 flex flex-column text-break">{content}</div>;
+    return <div className="mt0-5 mb0-5 rounded border bg-weak p0-5 flex flex-column text-break">{content}</div>;
 };
 
 interface Props {

@@ -59,7 +59,7 @@ const PlansTable = ({
 
     return (
         <table
-            className="pm-plans-table pm-table--highlight no-border w100 min-w35e pt3"
+            className="pm-plans-table pm-table--highlight border-none w100 min-w35e pt3"
             data-plan-number={PLAN_NUMBERS[planName]}
         >
             <thead>

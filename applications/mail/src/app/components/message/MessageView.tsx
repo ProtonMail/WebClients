@@ -314,7 +314,7 @@ const MessageView = (
         <article
             ref={elementRef}
             className={classnames([
-                'message-container m0-5 mb1 no-outline',
+                'message-container m0-5 mb1 outline-none',
                 expanded && 'is-opened',
                 hasAttachments(message.data) && 'message-container--hasAttachment',
                 hasFocus && 'is-focused',

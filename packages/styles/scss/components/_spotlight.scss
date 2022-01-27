@@ -8,7 +8,7 @@
 	min-inline-size: 10em;
 	max-inline-size: 20em;
 	transform: scale(1);
-	border-radius: var(--border-radius-large);
+	border-radius: var(--border-radius-lg);
 	box-shadow: var(--shadow-lifted);
 	border: 1px solid var(--border-norm);
 	text-align: start;
@@ -49,7 +49,7 @@
 		z-index: 1;
 		padding-block: 1em;
 		padding-inline: 1.5em 3em;
-		border-radius: var(--border-radius-large);
+		border-radius: var(--border-radius-lg);
 		background-color: var(--background-norm);
 	}
 

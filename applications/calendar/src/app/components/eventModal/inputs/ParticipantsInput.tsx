@@ -171,7 +171,7 @@ const ParticipantsInput = ({
             )}
             {value.length > 0 &&
                 (collapsible ? (
-                    <Details className="no-border mt0-25" open>
+                    <Details className="border-none mt0-25" open>
                         <Summary>
                             {c('Event form').ngettext(
                                 msgid`${numberOfParticipants} participant`,

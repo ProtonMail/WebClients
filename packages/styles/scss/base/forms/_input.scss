@@ -48,7 +48,7 @@ select {
 	&-field {
 		padding-block: em(6); // design want 34px height (actually 35 to avoid .5px)
 		padding-inline: em(16);
-		border-radius: var(--border-radius-medium);
+		border-radius: var(--border-radius-md);
 		border: 1px solid var(--field-norm);
 		background-color: var(--field-background-color);
 		color: var(--field-text-color);
