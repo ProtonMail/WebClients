@@ -15,6 +15,7 @@ body {
 	text-rendering: geometricPrecision;
 	-webkit-font-smoothing: antialiased;
 	overflow-y: hidden;
+	overflow-x: auto;
 }
 
 /* override reset.scss */
@@ -76,11 +77,13 @@ code {
       CUSTOM STYLES AND HELPERS
 -----------------------------------*/
 
+/**
+ * Avoid overflow management on #proton-root.
+ * Better to handle it in body because risk of wrong height calculation
+ */
 #proton-root {
 	box-sizing: content-box;
 	max-inline-size: none;
-	overflow-y: hidden;
-	overflow-x: auto;
 }
 
 .proton-hidden {
