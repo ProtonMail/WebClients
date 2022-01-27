@@ -1,10 +1,9 @@
-import { ChangeEvent, useState, useRef } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
-import { FormModal, Row, Field, Label, Input, SimpleSquireEditor } from '../../components';
+import { FormModal, Row, Field, Label, Input, Editor, EditorActions } from '../../components';
 import { useApi, useLoading, useNotifications, useEventManager } from '../../hooks';
-import { SquireEditorRef } from '../../components/editor/SquireEditor';
 
 const EMPTY_VALUES = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];
 
@@ -23,12 +22,9 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
         signature: address.Signature,
     });
     const { createNotification } = useNotifications();
-    const editorRef = useRef<SquireEditorRef>(null);
 
-    const handleReady = () => {
-        if (editorRef.current) {
-            editorRef.current.value = model.signature;
-        }
+    const handleReady = (actions: EditorActions) => {
+        actions.setContent(model.signature);
     };
 
     const handleDisplayName = ({ target }: ChangeEvent<HTMLInputElement>) =>
@@ -71,7 +67,7 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
                 </Field>
             </Row>
             <Row>
-                <SimpleSquireEditor ref={editorRef} onReady={handleReady} onChange={handleSignature} />
+                <Editor onReady={handleReady} onChange={handleSignature} simple />
             </Row>
         </FormModal>
     );

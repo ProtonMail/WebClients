@@ -2,14 +2,13 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
 
 import { noop } from '@proton/shared/lib/helpers/function';
-import { useActiveBreakpoint, useHandler } from '@proton/components';
+import { useHandler } from '@proton/components';
 import { eoDefaultAddress, eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 
 import ComposerContent from '../../composer/ComposerContent';
 import { MessageState, OutsideKey } from '../../../logic/messages/messagesTypes';
 import { createNewDraft } from '../../../helpers/message/messageDraft';
 import { MESSAGE_ACTIONS } from '../../../constants';
-import { EditorActionsRef } from '../../composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../../composer/Composer';
 import { setContent } from '../../../helpers/message/messageContent';
 import { mergeMessages } from '../../../helpers/message/messages';
@@ -17,6 +16,7 @@ import EOReplyFooter from './EOReplyFooter';
 import { useEOAttachments } from '../../../hooks/eo/useEOAttachments';
 import ComposerInsertImageModal from '../../composer/modals/ComposerInsertImageModal';
 import EOReplyHeader from './EOReplyHeader';
+import { ExternalEditorActions } from '../../composer/editor/EditorWrapper';
 
 interface Props {
     referenceMessage: MessageState;
@@ -27,7 +27,6 @@ interface Props {
 }
 
 const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfReplies }: Props) => {
-    const breakpoints = useActiveBreakpoint();
     // Indicates that the composer is in its initial opening
     // Needed to be able to force focus only at first time
     const [opening, setOpening] = useState(true);
@@ -51,7 +50,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
     );
 
     // Get a ref on the editor to trigger insertion of embedded images
-    const editorActionsRef: EditorActionsRef = useRef();
+    const editorActionsRef = useRef<ExternalEditorActions>();
 
     // Manage focus from the container yet keeping logic in each component
     const contentFocusRef = useRef<() => void>(noop);
@@ -97,7 +96,10 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
             publicKey,
         });
 
-    const handleEditorReady = useCallback(() => setEditorReady(true), []);
+    const handleEditorReady = useCallback((editorActions) => {
+        setEditorReady(true);
+        editorActionsRef.current = editorActions;
+    }, []);
 
     const handleCloseInsertImageModal = () => {
         setImagesToInsert([]);
@@ -117,14 +119,11 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
                 <ComposerContent
                     message={modelMessage}
                     disabled={lock}
-                    breakpoints={breakpoints}
                     onEditorReady={handleEditorReady}
                     onChange={handleChange}
                     onChangeContent={handleChangeContent}
                     onAddAttachments={handleAddAttachments}
                     onRemoveAttachment={handleRemoveAttachment}
-                    contentFocusRef={contentFocusRef}
-                    editorActionsRef={editorActionsRef}
                     isOutside
                     outsideKey={outsideKey}
                     mailSettings={eoDefaultMailSettings}

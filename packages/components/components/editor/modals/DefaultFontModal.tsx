@@ -1,39 +1,30 @@
-import React, { MutableRefObject, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 
 import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../squireConfig';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
 import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
 import { useMailSettings, useNotifications, useApi, useEventManager } from '../../../hooks';
 import { TitleModal, FormModal } from '../../modal';
-import { SquireType } from '../interface';
 
 interface Props {
     onClose?: () => void;
     onChange: (nextFontFace: string, nextFontSize: number) => void;
-    squireRef: MutableRefObject<SquireType>;
 }
 
-const UpdateFontModal = ({ onChange, squireRef, onClose, ...rest }: Props) => {
+const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
     const api = useApi();
-    const [{ FontFace, FontSize } = { FontFace: undefined, FontSize: undefined }] = useMailSettings();
-    const [fontFace, setFontFace] = useState(FontFace || DEFAULT_FONT_FACE);
-    const [fontSize, setFontSize] = useState(FontSize || DEFAULT_FONT_SIZE);
+    const [settings] = useMailSettings();
+    const [fontFace, setFontFace] = useState(settings?.FontFace || DEFAULT_FONT_FACE);
+    const [fontSize, setFontSize] = useState(settings?.FontSize || DEFAULT_FONT_SIZE);
     const [loading, setLoading] = useState(false);
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
 
-    const changedFontFace = fontFace !== FontFace;
-    const changedFontSize = fontSize !== FontSize;
+    const changedFontFace = fontFace !== settings?.FontFace;
+    const changedFontSize = fontSize !== settings?.FontSize;
     const somethingChanged = changedFontFace || changedFontSize;
-
-    useEffect(() => {
-        setFontFace(FontFace || DEFAULT_FONT_FACE);
-    }, [FontFace]);
-    useEffect(() => {
-        setFontSize(FontSize || DEFAULT_FONT_SIZE);
-    }, [FontSize]);
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
@@ -42,12 +33,10 @@ const UpdateFontModal = ({ onChange, squireRef, onClose, ...rest }: Props) => {
 
         if (changedFontFace) {
             await api(updateFontFace(fontFace));
-            squireRef.current.setFontFace(fontFace);
         }
 
         if (changedFontSize) {
             await api(updateFontSize(fontSize));
-            squireRef.current.setFontSize(fontSize.toString());
         }
 
         if (somethingChanged) {
@@ -96,4 +85,4 @@ const UpdateFontModal = ({ onChange, squireRef, onClose, ...rest }: Props) => {
     );
 };
 
-export default UpdateFontModal;
+export default DefaultFontModal;

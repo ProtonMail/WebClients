@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
-import { isMac } from '@proton/shared/lib/helpers/browser';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import { AutoReplyDuration, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
@@ -13,15 +12,12 @@ import {
     useNotifications,
     useEventManager,
     useHotkeys,
-    useHandler,
     useUser,
     useErrorHandler,
 } from '../../hooks';
-import { Toggle, SimpleSquireEditor, Button } from '../../components';
+import { Toggle, Button, Editor, EditorActions } from '../../components';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-
-import { SquireEditorRef } from '../../components/editor/SquireEditor';
 
 import AutoReplyFormMonthly from './AutoReplyForm/AutoReplyFormMonthly';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
@@ -49,7 +45,7 @@ const AutoReplySection = () => {
     const { createNotification } = useNotifications();
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(AutoResponder);
 
-    const editorRef = useRef<SquireEditorRef>(null);
+    const editorActionsRef = useRef<EditorActions>();
     const composerRef = useRef<HTMLDivElement>(null);
 
     const handleToggle = async (enable: boolean) => {
@@ -89,8 +85,8 @@ const AutoReplySection = () => {
 
             updateModel('message').bind(message);
             // update the composer to remove the image from it
-            if (editorRef.current) {
-                editorRef.current.value = model.message;
+            if (editorActionsRef.current) {
+                editorActionsRef.current.setContent(model.message);
             }
         }
 
@@ -99,10 +95,9 @@ const AutoReplySection = () => {
         createNotification({ text: c('Success').t`Auto-reply updated` });
     };
 
-    const handleEditorReady = () => {
-        if (editorRef.current) {
-            editorRef.current.value = model.message;
-        }
+    const handleEditorReady = (actions: EditorActions) => {
+        editorActionsRef.current = actions;
+        actions.setContent(model.message);
     };
 
     const formRenderer = (duration: AutoReplyDuration) => {
@@ -121,24 +116,6 @@ const AutoReplySection = () => {
                 return null;
         }
     };
-
-    const squireKeydownHandler = useHandler((e: KeyboardEvent) => {
-        const ctrlOrMetaKey = (e: KeyboardEvent) => (isMac() ? e.metaKey : e.ctrlKey);
-
-        if (!e.key) {
-            return;
-        }
-
-        switch (e.key.toLowerCase()) {
-            case 'enter':
-                if (Shortcuts && ctrlOrMetaKey(e)) {
-                    void withUpdatingLoading(handleSubmit());
-                }
-                break;
-            default:
-                break;
-        }
-    });
 
     useHotkeys(composerRef, [
         [
@@ -164,18 +141,17 @@ const AutoReplySection = () => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label className="text-semibold" onClick={() => editorRef.current?.focus()}>
+                    <label className="text-semibold" onClick={() => editorActionsRef.current?.focus()}>
                         {c('Label').t`Message`}
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
                     <div ref={composerRef} tabIndex={-1} className="w100">
-                        <SimpleSquireEditor
-                            ref={editorRef}
-                            supportImages={false}
+                        <Editor
+                            metadata={{ supportImages: false }}
                             onReady={handleEditorReady}
                             onChange={updateModel('message')}
-                            keydownHandler={squireKeydownHandler}
+                            simple
                         />
                     </div>
 

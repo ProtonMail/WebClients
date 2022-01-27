@@ -32,8 +32,6 @@ import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/composer/useAttachments';
 import { getDate } from '../../helpers/elements';
-import { Breakpoints } from '../../models/utils';
-import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useReloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { DRAG_ADDRESS_KEY } from '../../constants';
@@ -56,6 +54,7 @@ import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
 import { useDraftSenderVerification } from '../../hooks/composer/useDraftSenderVerification';
+import { ExternalEditorActions } from './editor/EditorWrapper';
 
 export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
 
@@ -74,7 +73,6 @@ export interface ComposerAction {
 interface Props {
     messageID: string;
     composerFrameRef: RefObject<HTMLDivElement>;
-    breakpoints: Breakpoints;
     toggleMinimized: () => void;
     toggleMaximized: () => void;
     onFocus: () => void;
@@ -87,7 +85,6 @@ const Composer = (
     {
         messageID,
         composerFrameRef,
-        breakpoints,
         toggleMinimized,
         toggleMaximized,
         onFocus,
@@ -146,10 +143,9 @@ const Composer = (
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
     const addressesFocusRef = useRef<() => void>(noop);
-    const contentFocusRef = useRef<() => void>(noop);
 
     // Get a ref on the editor to trigger insertion of embedded images
-    const editorActionsRef: EditorActionsRef = useRef();
+    const editorActionsRef = useRef<ExternalEditorActions>();
 
     const handleDragEnter = (event: DragEvent) => {
         if (event.dataTransfer?.types.includes(DRAG_ADDRESS_KEY)) {
@@ -264,7 +260,7 @@ const Composer = (
                 if (getRecipients(syncedMessage.data).length === 0) {
                     addressesFocusRef.current();
                 } else {
-                    contentFocusRef.current();
+                    editorActionsRef.current?.focus();
                 }
             });
         }
@@ -373,8 +369,8 @@ const Composer = (
      */
     const ensureMessageContent = () => {
         // Should not be possible, more to satisfy TS
-        if (!editorActionsRef.current) {
-            return true;
+        if (!editorActionsRef.current || editorActionsRef.current.isDisposed()) {
+            return;
         }
 
         const actualContent = editorActionsRef.current.getContent();
@@ -523,14 +519,17 @@ const Composer = (
         close: handleClose,
     }));
 
-    const handleEditorReady = useCallback(() => setEditorReady(true), []);
+    const handleEditorReady = useCallback((editorActions: ExternalEditorActions) => {
+        editorActionsRef.current = editorActions;
+        setEditorReady(true);
+    }, []);
 
     const handleContentFocus = useCallback(() => {
         addressesBlurRef.current();
         onFocus(); // Events on the main div will not fire because the editor is in an iframe
     }, []);
 
-    const { squireKeydownHandler, attachmentTriggerRef } = useComposerHotkeys({
+    const { attachmentTriggerRef } = useComposerHotkeys({
         composerRef: composerFrameRef,
         handleClose,
         handleDelete,
@@ -586,7 +585,6 @@ const Composer = (
                     <ComposerContent
                         message={modelMessage}
                         disabled={lock}
-                        breakpoints={breakpoints}
                         onEditorReady={handleEditorReady}
                         onChange={handleChange}
                         onChangeContent={handleChangeContent}
@@ -595,9 +593,6 @@ const Composer = (
                         onRemoveAttachment={handleRemoveAttachment}
                         onRemoveUpload={handleRemoveUpload}
                         pendingUploads={pendingUploads}
-                        contentFocusRef={contentFocusRef}
-                        editorActionsRef={editorActionsRef}
-                        squireKeydownHandler={squireKeydownHandler}
                         mailSettings={mailSettings}
                         addresses={addresses}
                     />
