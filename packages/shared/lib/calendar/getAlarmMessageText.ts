@@ -62,39 +62,39 @@ const getAlarmMessageText = ({ title, isAllDay, startFakeUTCDate, nowFakeUTCDate
         if (isAllDay) {
             return c('Alarm notification').t`${title} starts today`;
         }
-        return c('Alarm notification').t`${title} will start at ${formattedHour}`;
+        return c('Alarm notification').t`${title} starts at ${formattedHour}`;
     }
 
     if (isNextDay(nowFakeUTCDate, startFakeUTCDate)) {
         if (isAllDay) {
-            return c('Alarm notification').t`${title} will start tomorrow`;
+            return c('Alarm notification').t`${title} starts tomorrow`;
         }
-        return c('Alarm notification').t`${title} will start tomorrow at ${formattedHour}`;
+        return c('Alarm notification').t`${title} starts tomorrow at ${formattedHour}`;
     }
 
     if (isSameMonth(nowFakeUTCDate, startFakeUTCDate)) {
         const formattedDate = formatUTC(startFakeUTCDate, 'eeee do', formatOptions);
         if (isAllDay) {
-            return c('Alarm notification').t`${title} will start on ${formattedDate}`;
+            return c('Alarm notification').t`${title} starts on ${formattedDate}`;
         }
-        return c('Alarm notification').t`${title} will start on ${formattedDate} at ${formattedHour}`;
+        return c('Alarm notification').t`${title} starts on ${formattedDate} at ${formattedHour}`;
     }
 
     if (isSameYear(nowFakeUTCDate, startFakeUTCDate)) {
         const formattedDate = formatUTC(startFakeUTCDate, 'eeee do MMMM', formatOptions);
         if (isAllDay) {
-            return c('Alarm notification').t`${title} will start on ${formattedDate}`;
+            return c('Alarm notification').t`${title} starts on ${formattedDate}`;
         }
-        return c('Alarm notification').t`${title} will start on ${formattedDate} at ${formattedHour}`;
+        return c('Alarm notification').t`${title} starts on ${formattedDate} at ${formattedHour}`;
     }
 
     if (isAllDay) {
         const formattedDateWithoutTime = formatUTC(startFakeUTCDate, 'PPPP', formatOptions);
-        return c('Alarm notification').t`${title} will start on ${formattedDateWithoutTime}`;
+        return c('Alarm notification').t`${title} starts on ${formattedDateWithoutTime}`;
     }
 
     const formattedDateWithTime = formatUTC(startFakeUTCDate, 'PPPPp', formatOptions);
-    return c('Alarm notification').t`${title} will start on ${formattedDateWithTime}`;
+    return c('Alarm notification').t`${title} starts on ${formattedDateWithTime}`;
 };
 
 export default getAlarmMessageText;
