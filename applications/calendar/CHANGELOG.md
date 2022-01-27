@@ -1,3 +1,18 @@
+## Release: 4.0.8 — Feb 9, 2022
+
+### New features
+
+-   Duplicate event to quickly create the same event on another date
+
+### Improvements
+
+-   Update modals designs
+-   Reactivate calendar keys automatically when opening an invitation in mail
+
+### Fixes
+
+-   Fix time zone aliases conversion
+
 ## Release: 4.0.7 — Jan 13, 2022
 
 ### New features
