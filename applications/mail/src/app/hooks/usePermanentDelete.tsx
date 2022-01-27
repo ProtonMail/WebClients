@@ -14,6 +14,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useGetElementsFromIDs } from './mailbox/useElements';
 import { isConversation } from '../helpers/elements';
 import useOptimisticDelete from './optimistic/useOptimisticDelete';
+import { useDispatch } from 'react-redux';
+import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 
 const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -139,6 +141,7 @@ export const usePermanentDelete = (labelID: string) => {
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const optimisticDelete = useOptimisticDelete();
+    const dispatch = useDispatch();
 
     return async (selectedIDs: string[]) => {
         const selectedItemsCount = selectedIDs.length;
@@ -167,15 +170,21 @@ export const usePermanentDelete = (labelID: string) => {
                 </ConfirmModal>
             );
         });
-        const rollback = optimisticDelete(elements, labelID);
+
+        let rollback = () => {};
+
         try {
+            dispatch(backendActionStarted());
+            rollback = optimisticDelete(elements, labelID);
             const action = conversationMode ? deleteConversations(selectedIDs, labelID) : deleteMessages(selectedIDs);
             await api(action);
-            await call();
             const notificationText = getNotificationText(draft, conversationMode, selectedItemsCount, totalMessages);
             createNotification({ text: notificationText });
         } catch {
             rollback();
+        } finally {
+            dispatch(backendActionFinished());
         }
+        await call();
     };
 };
