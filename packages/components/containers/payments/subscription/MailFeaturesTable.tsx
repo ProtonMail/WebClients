@@ -22,7 +22,7 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
 
     return (
         <>
-            <table className="simple-table text-cut simple-table--alternate-bg-row simple-table--bordered w100">
+            <table className="simple-table text-cut simple-table--alternate-bg-row simple-table--border w100">
                 <thead>
                     <tr>
                         <th scope="col" className="text-center align-top simple-table-row-th pt1">

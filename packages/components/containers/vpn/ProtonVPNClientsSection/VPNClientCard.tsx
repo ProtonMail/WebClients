@@ -21,7 +21,7 @@ interface Props {
 
 const VPNClientCard = ({ title, link, items, icon }: Props) => {
     return (
-        <Bordered className="rounded-bigger flex flex-column flex-align-items-center pt2 pb2 pl3 pr3 mt1 mr1">
+        <Bordered className="rounded-lg flex flex-column flex-align-items-center pt2 pb2 pl3 pr3 mt1 mr1">
             <div>
                 <Icon size={60} name={icon} />
             </div>

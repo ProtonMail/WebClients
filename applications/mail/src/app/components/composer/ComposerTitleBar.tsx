@@ -64,7 +64,7 @@ const ComposerTitleBar = ({
             <>
                 {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
                 <br />
-                <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">M</kbd>
+                <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">M</kbd>
             </>
         ) : minimized ? (
             c('Action').t`Maximize composer`
@@ -77,8 +77,8 @@ const ComposerTitleBar = ({
             <>
                 {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
                 <br />
-                <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{shiftKey}</kbd> +{' '}
-                <kbd className="no-border">M</kbd>
+                <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">{shiftKey}</kbd> +{' '}
+                <kbd className="border-none">M</kbd>
             </>
         ) : maximized ? (
             c('Action').t`Contract composer`
@@ -90,7 +90,7 @@ const ComposerTitleBar = ({
         <>
             {c('Action').t`Close composer`}
             <br />
-            <kbd className="no-border">Escape</kbd>
+            <kbd className="border-none">Escape</kbd>
         </>
     ) : (
         c('Action').t`Close composer`

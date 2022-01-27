@@ -351,7 +351,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                 isOutdated={isOutdated}
             />
             {!isOutdated && (
-                <div className="rounded bordered bg-norm mb0-5 scroll-if-needed">
+                <div className="rounded border bg-norm mb0-5 scroll-if-needed">
                     <div className="p1-5">
                         <h2 className="h3 mb0-25 text-bold">{getDisplayTitle(summary?.value)}</h2>
                         <CalendarEventDateHeader

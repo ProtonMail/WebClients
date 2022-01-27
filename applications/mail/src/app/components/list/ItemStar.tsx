@@ -42,7 +42,7 @@ const ItemStar = ({ element, size }: Props) => {
                     <>
                         {title}
                         <br />
-                        <kbd className="no-border">*</kbd>
+                        <kbd className="border-none">*</kbd>
                     </>
                 ) : (
                     title

@@ -123,7 +123,7 @@ const DownloadSharedInfo = ({
     return (
         <>
             <h3 className="text-bold mt0- mb1">{contents.title}</h3>
-            <div className="bordered rounded p2 w100">
+            <div className="border rounded p2 w100">
                 <div className="mb1">
                     {thumbnail === null ? (
                         <FileIcon size={56} mimeType={MIMEType} alt={name} className="mr0-5" />

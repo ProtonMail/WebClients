@@ -12,7 +12,7 @@ interface Props {
 }
 
 const FilterSortableList = ({ items, ...rest }: Props) => (
-    <OrderableTable className="no-border border-collapse mt1 simple-table--has-actions" {...rest}>
+    <OrderableTable className="border-none border-collapse mt1 simple-table--has-actions" {...rest}>
         <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
         <OrderableTableHeader>
             <tr>

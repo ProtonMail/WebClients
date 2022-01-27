@@ -89,7 +89,7 @@ const Dialog = ({
                         (isSmall || isTiny || isIntermediate) && 'modal--shorter-labels',
                         isClosing && CLASSES.MODAL_OUT,
                         extraClassNames,
-                        'no-outline',
+                        'outline-none',
                     ])}
                     onAnimationEnd={({ animationName }) => {
                         if (animationName === ANIMATIONS.MODAL_OUT && isClosing) {

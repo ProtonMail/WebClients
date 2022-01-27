@@ -2,7 +2,7 @@ import { IconRow } from '@proton/components';
 
 export const EmailReminderWidgetSkeleton = () => (
     <div data-testid="calendar-widget-widget-skeleton">
-        <div className="bg-norm rounded bordered">
+        <div className="bg-norm rounded border">
             <div className="p1-5">
                 <div className="h3 mb0-25 calendar-widget-skeleton calendar-widget-skeleton--title" />
                 <p className="text-sm mt0 mb1-5 calendar-widget-skeleton calendar-widget-skeleton--date" />

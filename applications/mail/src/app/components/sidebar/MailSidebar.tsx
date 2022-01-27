@@ -56,7 +56,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
         <>
             {c('Title').t`New message`}
             <br />
-            <kbd className="no-border">N</kbd>
+            <kbd className="border-none">N</kbd>
         </>
     ) : null;
 

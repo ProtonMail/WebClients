@@ -1,0 +1,32 @@
+/**
+ * Generate margin classes from coordinates and amounts
+ * @param {List} $types - List of coordinates for generation, i.e. 'mt, mr, pb, pl, m'
+ * @param {List} $sizes - List of value for generation, i.e. '0, 1, 2, 3'
+ * @param {String} $prefix - Specify a prefix for each class if needed
+ * @returns {String} - CSS classes with correct names from coordinates and values
+ */
+@mixin spacing-generator($types, $sizes, $prefix: '') {
+	@each $type in $types {
+		// first letter tells what kind of spacing we want
+		$spacing-type: if(str-slice($type, 1, 1) == 'm', 'margin', 'padding');
+
+		// second letter tells the placement
+		$placement: str-slice($type, 2, 3);
+
+		// building the logical property
+		$property: dash-join($spacing-type, logical($placement));
+
+		@each $size in $sizes {
+			// add unit if different from 0
+			$value: if($size == 0, $size, $size + 0em);
+
+			// replace from 1.5 to 1-5
+			$value-for-class: str-replace($size + '', '.', '-');
+
+			// .mr1-5 { margin-inline-end: 1.5em; }
+			.#{$prefix}#{$type}#{$value-for-class} {
+				#{$property}: #{$value};
+			}
+		}
+	}
+}

@@ -43,7 +43,7 @@ const LocationField = ({ value, onChange }: Props) => {
             <div className="flex flex-wrap flex-align-items-start mb0-5 flex-gap-0-5">
                 {firstOptions.map((option) => (
                     <Button
-                        className="no-border rounded"
+                        className="border-none rounded"
                         color={value === option.value ? 'norm' : 'weak'}
                         key={option.value}
                         data-testid={`location-${option.value}`}
@@ -64,7 +64,7 @@ const LocationField = ({ value, onChange }: Props) => {
                 <LocationFieldDropdown onChange={onChange} value={value} />
                 {showCustomValue ? (
                     <Button
-                        className="no-border rounded align-baseline"
+                        className="border-none rounded align-baseline"
                         color="norm"
                         onClick={() => onChange(ALL_MAIL)}
                         shape="solid"

@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 /*
  * Items
  * For conversations and contacts lists
@@ -24,7 +24,7 @@ $container-to-width: 3em !default;
 	min-block-size: 100%;
 }
 
-.items-column-list-inner--no-border {
+.items-column-list-inner--border-none {
 	// fix for Contact and ReactVirtualized__Grid
 	border: 0;
 }
@@ -254,7 +254,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			position: absolute;
 			inset: 0;
 			z-index: 1;
-			border-radius: var(--border-radius-medium);
+			border-radius: var(--border-radius-md);
 			background-color: currentColor;
 			opacity: 0;
 		}

@@ -80,7 +80,7 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
             </div>
             <div className="mt2 text-center">
                 <span className="auto-mobile">{c('Info').jt`All plans support: ${supportedOS}`}</span>
-                <span className="ml2 mr2 bordered no-mobile" />
+                <span className="ml2 mr2 border no-mobile" />
                 <span className="auto-mobile">{c('Info').t`30-days money back guarantee`}</span>
             </div>
         </>

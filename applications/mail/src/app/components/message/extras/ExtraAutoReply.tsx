@@ -13,7 +13,7 @@ const ExtraAutoReply = ({ message }: Props) => {
     }
 
     return (
-        <div className="bg-norm rounded bordered p0-5 mb0-5 flex flex-nowrap">
+        <div className="bg-norm rounded border p0-5 mb0-5 flex flex-nowrap">
             <Icon name="robot" className="flex-item-noshrink mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info')
                 .t`This message is automatically generated as a response to a previous message.`}</span>

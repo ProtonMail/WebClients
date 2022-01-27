@@ -1,6 +1,6 @@
 .simple-table {
 	@extend .border-collapse;
-	@extend .no-border;
+	@extend .border-none;
 	inline-size: 100%;
 
 	caption {
@@ -81,8 +81,8 @@
 		}
 	}
 
-	/* bordered-table */
-	&--bordered {
+	/* border-table */
+	&--border {
 		&,
 		th,
 		td {
@@ -110,7 +110,7 @@
 }
 
 .alternate-table-bg-row-rounded {
-	@extend .no-border;
+	@extend .border-none;
 	inline-size: 100%;
 	border-spacing: 0; // no border-collapse for radius ^^
 
@@ -127,12 +127,12 @@
 		}
 		// radiuses
 		> :first-child {
-			border-start-start-radius: var(--border-radius-large);
-			border-end-start-radius: var(--border-radius-large);
+			border-start-start-radius: var(--border-radius-lg);
+			border-end-start-radius: var(--border-radius-lg);
 		}
 		> :last-child {
-			border-start-end-radius: var(--border-radius-large);
-			border-end-end-radius: var(--border-radius-large);
+			border-start-end-radius: var(--border-radius-lg);
+			border-end-end-radius: var(--border-radius-lg);
 		}
 	}
 }

@@ -165,9 +165,11 @@ const OpenVPNConfigurationSection = () => {
                             >
                                 {label}
                             </Radio>
-                            <Href url={link} className="text-sm m0 block ml-custom" style={{ '--padding-left-custom': `1.312rem` }}>{c(
-                                'Link'
-                            ).t`View guide`}</Href>
+                            <Href
+                                url={link}
+                                className="text-sm m0 block ml-custom"
+                                style={{ '--padding-left-custom': `1.312rem` }}
+                            >{c('Link').t`View guide`}</Href>
                         </div>
                     );
                 })}
@@ -287,7 +289,7 @@ const OpenVPNConfigurationSection = () => {
                     )}
                 </div>
                 {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) ? (
-                    <div className="bordered p2 text-center">
+                    <div className="border p2 text-center">
                         <h3 className="color-primary mt0 mb1">{c('Title')
                             .t`Get ProtonVPN Plus to access all servers`}</h3>
                         <ul className="unstyled inline-flex mt0 mb2 on-mobile-flex-column">

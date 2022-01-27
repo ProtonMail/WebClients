@@ -45,7 +45,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
     return (
         <>
             <DropdownButton
-                className={classnames(['no-border', 'rounded'])}
+                className={classnames(['border-none', 'rounded'])}
                 color="weak"
                 hasCaret
                 onClick={toggle}

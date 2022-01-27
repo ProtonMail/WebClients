@@ -28,7 +28,7 @@ const PMSignature = ({ id, mailSettings = {} }: Props) => {
     return (
         <div className="flex flex-item-fluid">
             <div
-                className="bordered-container flex-item-fluid pr1 pt0-5 pb0-5 mb1"
+                className="border-container flex-item-fluid pr1 pt0-5 pb0-5 mb1"
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }}
             />

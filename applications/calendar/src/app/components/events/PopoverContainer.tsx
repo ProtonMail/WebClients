@@ -25,7 +25,7 @@ const PopoverContainer = (
     ]);
 
     return (
-        <div ref={combinedRefs} className={classnames([className, 'no-outline'])} {...rest} {...focusTrapProps}>
+        <div ref={combinedRefs} className={classnames([className, 'outline-none'])} {...rest} {...focusTrapProps}>
             {children}
         </div>
     );
