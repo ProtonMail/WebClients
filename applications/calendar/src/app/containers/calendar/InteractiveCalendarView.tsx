@@ -445,12 +445,12 @@ const InteractiveCalendarView = ({
 
     const getUpdateModel = ({
         viewEventData: { calendarData, eventData, eventReadResult, eventRecurrence },
-        duplicateEventData,
+        duplicateFromDisabledCalendarData,
         emailNotificationsEnabled,
         partstat,
     }: {
         viewEventData: CalendarViewEventData;
-        duplicateEventData?: { calendar: Calendar };
+        duplicateFromDisabledCalendarData?: { calendar: Calendar };
         emailNotificationsEnabled?: boolean;
         partstat?: ICAL_ATTENDEE_STATUS;
     }): EventModel | undefined => {
@@ -464,7 +464,7 @@ const InteractiveCalendarView = ({
             return;
         }
         const initialDate = getInitialDate();
-        const targetCalendar = duplicateEventData?.calendar || calendarData;
+        const targetCalendar = duplicateFromDisabledCalendarData?.calendar || calendarData;
         const { Members = [], CalendarSettings } = readCalendarBootstrap(targetCalendar.ID);
         const [Member, Address] = getMemberAndAddress(addresses, Members, eventData.Author);
 
@@ -491,7 +491,8 @@ const InteractiveCalendarView = ({
         const originalOrOccurrenceEvent = eventRecurrence
             ? withOccurrenceEvent(veventComponent, eventRecurrence)
             : veventComponent;
-        const existingAlarmMember = duplicateEventData
+        // when duplicating from a disabled calendar, we artificially changed the calendar. In that case we need to retrieve the old member
+        const existingAlarmMember = duplicateFromDisabledCalendarData
             ? getMemberAndAddress(addresses, readCalendarBootstrap(calendarData.ID).Members, eventData.Author)[0]
             : Member;
         const eventResult = getExistingEvent({
@@ -501,7 +502,8 @@ const InteractiveCalendarView = ({
             tzid,
             isOrganizer: !!eventData.IsOrganizer,
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-            selfAddressData,
+            // When duplicating from a disabled calendar, we need to reset the self address data (otherwise we would have disabled address data in there)
+            selfAddressData: duplicateFromDisabledCalendarData ? { selfAddress: Address } : selfAddressData,
         });
         if (partstat) {
             return {
@@ -1307,13 +1309,13 @@ const InteractiveCalendarView = ({
 
         const viewEventData = { ...targetEvent.data };
 
-        const duplicateEventData =
+        const duplicateFromDisabledCalendarData =
             isDuplication && getIsCalendarDisabled(viewEventData.calendarData) && defaultCalendar
                 ? { calendar: defaultCalendar }
                 : undefined;
         const newTemporaryModel = getUpdateModel({
             viewEventData,
-            duplicateEventData,
+            duplicateFromDisabledCalendarData,
             emailNotificationsEnabled,
         });
 
