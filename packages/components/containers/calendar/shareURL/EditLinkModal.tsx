@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { c } from 'ttag';
 
-import { ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, InputTwo, Button } from '../../../components';
+import { ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, InputTwo, Button, Form } from '../../../components';
 import { useLoading } from '../../../hooks';
 
 interface Props {
@@ -31,7 +31,7 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, isOpen }: Props) =
                 }
             }}
             onClose={onClose}
-            as="form"
+            as={Form}
         >
             <ModalTwoHeader title={decryptedPurpose ? c('Info').t`Edit label` : c('Info').t`Add label`} />
             <ModalTwoContent>
