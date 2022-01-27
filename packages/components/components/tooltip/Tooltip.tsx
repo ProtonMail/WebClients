@@ -101,7 +101,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', an
             <Popper
                 divRef={setPopperEl}
                 id={uid}
-                isOpen={exclusive.last === uid && !!title && combinedIsOpen}
+                isOpen={(exclusive.last === uid || !exclusive.last) && !!title && combinedIsOpen}
                 style={position}
                 className={classnames(['tooltip', `tooltip--${placement}`, getTooltipTypeClass(type)])}
             >
