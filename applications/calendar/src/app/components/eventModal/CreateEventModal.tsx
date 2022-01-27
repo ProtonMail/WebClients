@@ -5,7 +5,7 @@ import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Address } from '@proton/shared/lib/interfaces';
 import { useState } from 'react';
-import { Button, ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter } from '@proton/components';
+import { Button, ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, Form } from '@proton/components';
 import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
@@ -126,7 +126,7 @@ const CreateEventModal = ({
             {...rest}
             open={isOpen}
             className="w100"
-            as="form"
+            as={Form}
             onSubmit={() => {
                 if (!loadingAction) {
                     handleSubmitWithInviteActions();
