@@ -16,11 +16,13 @@ import {
     PasswordInputTwo,
     useFormErrors,
     useLoading,
+    useLocalState,
 } from '@proton/components';
 import { Link } from 'react-router-dom';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import Loader from '../signup/Loader';
+import { defaultPersistentKey } from '../public/helper';
 
 interface Props {
     onSubmit: (data: {
@@ -36,7 +38,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
-    const [persistent, setPersistent] = useState(true);
+    const [persistent, setPersistent] = useLocalState(true, defaultPersistentKey);
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();

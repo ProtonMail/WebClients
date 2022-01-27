@@ -53,6 +53,7 @@ import {
     usePlans,
     useVPNCountriesCount,
     useFeatures,
+    useLocalState,
 } from '@proton/components';
 import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
@@ -73,7 +74,7 @@ import {
     SignupModel,
 } from './interfaces';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getHasAppExternalSignup, getToAppName } from '../public/helper';
+import { defaultPersistentKey, getHasAppExternalSignup, getToAppName } from '../public/helper';
 import createHumanApi from './helpers/humanApi';
 import CreatingAccount from './CreatingAccount';
 import handleCreateUser from './helpers/handleCreateUser';
@@ -216,6 +217,8 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         FeatureCode.KeyMigration,
         FeatureCode.ExternalSignup,
     ]);
+
+    const [persistent] = useLocalState(true, defaultPersistentKey);
 
     const cacheRef = useRef<CacheRef>({});
     const [humanApi] = useState(() => createHumanApi({ api, createModal }));
@@ -406,7 +409,6 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             const authResponse = authApi.getAuthResponse();
             const User = await authApi.api<{ User: tsUser }>(getUser()).then(({ User }) => User);
             await authApi.api(updateLocale(localeCode)).catch(noop);
-            const persistent = true;
             await persistSession({ ...authResponse, User, keyPassword, api, persistent });
             await onLogin({ ...authResponse, User, keyPassword, flow: 'signup', persistent });
         } catch (error: any) {
@@ -483,7 +485,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     }
 
     const toAppName = getToAppName(toApp);
-    const hasAppExternalSignup = (externalSignupFeature.feature?.Value && getHasAppExternalSignup(toApp));
+    const hasAppExternalSignup = externalSignupFeature.feature?.Value && getHasAppExternalSignup(toApp);
 
     const defaultCountry = myLocation?.Country?.toUpperCase();
 

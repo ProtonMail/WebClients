@@ -11,3 +11,5 @@ export const getToAppName = (toApp?: APP_NAMES) => {
 export const getHasAppExternalSignup = (toApp?: APP_NAMES) => {
     return toApp === APPS.PROTONVPN_SETTINGS;
 };
+
+export const defaultPersistentKey = 'default-persistent';
