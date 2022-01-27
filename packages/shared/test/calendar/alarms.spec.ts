@@ -60,7 +60,7 @@ describe('getAlarmMessage', () => {
                 ...commonProps,
                 now: getNow({ ...testFakeZonedDate, minutes: testFakeZonedDate.minutes - 1, seconds: 29 }),
             })
-        ).toEqual('test alarm will start at 8:00 PM');
+        ).toEqual('test alarm starts at 8:00 PM');
 
         expect(
             getAlarmMessage({
@@ -88,7 +88,7 @@ describe('getAlarmMessage', () => {
         const fakeZonedNow = { ...testFakeZonedDate, hours: 1 };
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
-            'test alarm will start at 8:00 PM'
+            'test alarm starts at 8:00 PM'
         );
     });
 
@@ -104,7 +104,7 @@ describe('getAlarmMessage', () => {
         const fakeZonedNow = { ...testFakeZonedDate, day: 12 };
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
-            'test alarm will start tomorrow at 8:00 PM'
+            'test alarm starts tomorrow at 8:00 PM'
         );
     });
 
@@ -113,7 +113,7 @@ describe('getAlarmMessage', () => {
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(
             getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
-        ).toEqual('test alarm will start tomorrow');
+        ).toEqual('test alarm starts tomorrow');
     });
 
     it('it should display the right notification for full-day events happening yesterday', () => {
@@ -136,7 +136,7 @@ describe('getAlarmMessage', () => {
         const fakeZonedNow = { ...testFakeZonedDate, day: 5 };
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
-            'test alarm will start on Sunday 13th at 8:00 PM'
+            'test alarm starts on Sunday 13th at 8:00 PM'
         );
     });
 
@@ -145,7 +145,7 @@ describe('getAlarmMessage', () => {
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(
             getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
-        ).toEqual('test alarm will start on Sunday 13th');
+        ).toEqual('test alarm starts on Sunday 13th');
     });
 
     it('it should display the right notification for events happening earlier this month', () => {
@@ -168,7 +168,7 @@ describe('getAlarmMessage', () => {
         const fakeZonedNow = { ...testFakeZonedDate, month: 7 };
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
-            'test alarm will start on Sunday 13th October at 8:00 PM'
+            'test alarm starts on Sunday 13th October at 8:00 PM'
         );
     });
 
@@ -177,7 +177,7 @@ describe('getAlarmMessage', () => {
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(
             getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
-        ).toEqual('test alarm will start on Sunday 13th October');
+        ).toEqual('test alarm starts on Sunday 13th October');
     });
 
     it('it should display the right notification for events happening earlier this year', () => {
@@ -200,7 +200,7 @@ describe('getAlarmMessage', () => {
         const fakeZonedNow = { ...testFakeZonedDate, year: 2002 };
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
-            'test alarm will start on Sunday, October 13th, 2019 at 8:00 PM'
+            'test alarm starts on Sunday, October 13th, 2019 at 8:00 PM'
         );
     });
 
@@ -209,7 +209,7 @@ describe('getAlarmMessage', () => {
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(
             getAlarmMessage({ component: testFulldayComponent, start, now, tzid: tzidEurope, formatOptions })
-        ).toEqual('test alarm will start on Sunday, October 13th, 2019');
+        ).toEqual('test alarm starts on Sunday, October 13th, 2019');
     });
 
     it('it should display the right notification for events happening in past years', () => {
@@ -232,7 +232,7 @@ describe('getAlarmMessage', () => {
         const fakeZonedNow = { ...testFakeZonedDate, day: 5 };
         const now = toUTCDate(convertUTCDateTimeToZone(fakeZonedNow, tzidEurope));
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
-            'test alarm will start on Sunday 13th at 8:00 PM'
+            'test alarm starts on Sunday 13th at 8:00 PM'
         );
     });
 
@@ -240,7 +240,7 @@ describe('getAlarmMessage', () => {
         const fakeZonedNow = { ...testFakeZonedDate, day: 5 };
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
-            'test alarm will start on Sunday 13th at 8:00 PM'
+            'test alarm starts on Sunday 13th at 8:00 PM'
         );
     });
 
@@ -248,10 +248,10 @@ describe('getAlarmMessage', () => {
         const fakeZonedNow = { ...testFakeZonedDate, hours: 10 };
         const now = toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzidEurope));
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidEurope, formatOptions })).toEqual(
-            'test alarm will start at 8:00 PM'
+            'test alarm starts at 8:00 PM'
         );
         expect(getAlarmMessage({ component: testComponent, start, now, tzid: tzidAsia, formatOptions })).toEqual(
-            'test alarm will start tomorrow at 3:00 AM'
+            'test alarm starts tomorrow at 3:00 AM'
         );
     });
 });
