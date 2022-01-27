@@ -1,12 +1,13 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MessageImage, MessageRemoteImage } from '../../logic/messages/messagesTypes';
 
-export const ATTRIBUTES = ['url', 'xlink:href', 'src', 'srcset', 'svg', 'background', 'poster'];
+export const ATTRIBUTES_TO_FIND = ['url', 'xlink:href', 'src', 'srcset', 'svg', 'background', 'poster'];
+export const ATTRIBUTES_TO_LOAD = ['url', 'xlink:href', 'src', 'svg', 'background', 'poster'];
 
 export const urlCreator = () => window.URL || window.webkitURL;
 
 export const removeProtonPrefix = (match: HTMLElement) => {
-    ATTRIBUTES.forEach((attr) => {
+    ATTRIBUTES_TO_LOAD.forEach((attr) => {
         const protonAttr = `proton-${attr}`;
         if (match.hasAttribute(protonAttr)) {
             match.setAttribute(attr, match.getAttribute(protonAttr) as string);
@@ -50,7 +51,7 @@ export const loadBackgroundImages = ({ images, document }: LoadBackgroundImagesP
 export const loadElementOtherThanImages = (images: MessageRemoteImage[], messageDocument?: Element) => {
     const elementOtherThanImages = images.filter((image) => image.original?.tagName !== 'IMG');
 
-    const selector = ATTRIBUTES.map((name) => {
+    const selector = ATTRIBUTES_TO_LOAD.map((name) => {
         // https://stackoverflow.com/questions/23034283/is-it-possible-to-use-htmls-queryselector-to-select-by-xlink-attribute-in-an
         if (name === 'xlink:href') {
             return '[*|href]:not([href])';
@@ -63,7 +64,7 @@ export const loadElementOtherThanImages = (images: MessageRemoteImage[], message
     const foundElements = messageDocument ? messageDocument.querySelectorAll(selector) : [];
 
     foundElements.forEach((element) => {
-        ATTRIBUTES.forEach((attr) => {
+        ATTRIBUTES_TO_LOAD.forEach((attr) => {
             const protonAttr = `proton-${attr}`;
             if (element.hasAttribute(protonAttr)) {
                 const elementValue = element.getAttribute(protonAttr) as string;

@@ -101,8 +101,9 @@ describe('Message images', () => {
         const updatedElementPoster = await findByTestId(iframeRerendered, 'image-poster');
         expect(updatedElementPoster.getAttribute('poster')).toEqual(imageURL);
 
+        // srcset attribute is not loaded so we should check proton-srcset
         const updatedElementSrcset = await findByTestId(iframeRerendered, 'image-srcset');
-        expect(updatedElementSrcset.getAttribute('srcset')).toEqual(imageURL);
+        expect(updatedElementSrcset.getAttribute('proton-srcset')).toEqual(imageURL);
 
         const updatedElementXlinkhref = await findByTestId(iframeRerendered, 'image-xlinkhref');
         expect(updatedElementXlinkhref.getAttribute('xlink:href')).toEqual(imageURL);

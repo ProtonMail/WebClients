@@ -6,10 +6,10 @@ import {
     PartialMessageState,
 } from '../../logic/messages/messagesTypes';
 import { setEmbeddedAttr } from './messageEmbeddeds';
-import { ATTRIBUTES } from './messageRemotes';
+import { ATTRIBUTES_TO_LOAD } from './messageRemotes';
 
 const REGEXP_FIXER = (() => {
-    const str = ATTRIBUTES.map((key) => `proton-${key}`).join('|');
+    const str = ATTRIBUTES_TO_LOAD.map((key) => `proton-${key}`).join('|');
     return `(${str})`;
 })();
 
