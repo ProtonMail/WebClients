@@ -5,26 +5,34 @@ body {
 	color: inherit;
 }
 
+pre code {
+	line-height: 1.5 !important;
+}
+
 // dirty fixes while whaiting to have better solutions
 .language-markup code {
 	width: 100%;
 	white-space: pre-wrap;
 }
+
 .mauto {
 	margin: auto !important;
 }
+
 .mlauto {
-	margin-left: auto !important;
+	margin-inline-start: auto !important;
 }
+
 .center {
-	margin-left: auto !important;
-	margin-right: auto !important;
+	margin-inline: auto !important;
 }
+
 .mb1 {
-	margin-bottom: 1em !important;
+	margin-block-end: 1em !important;
 }
+
 .mb0-5 {
-	margin-bottom: 0.5em !important;
+	margin-block-end: 0.5em !important;
 }
 
 @include respond-to($breakpoint-medium) {
@@ -32,30 +40,40 @@ body {
 		margin: 1em !important;
 	}
 }
+
 @include respond-to($breakpoint-small) {
 	.on-mobile-m1 {
 		margin: 1em !important;
 	}
 }
+
 @include respond-to($breakpoint-tiny) {
 	.on-tiny-mobile-m1 {
 		margin: 1em !important;
 	}
 }
 
-.icon-ko::after,
-.icon-ok::after {
-	content: '⚠';
-	position: absolute;
-	top: 0.75em;
-	right: 0;
-	padding: 0 0.5em 0 0;
-	font-size: 2em;
+.icon-ko,
+.icon-ok {
+	&::after {
+		position: absolute;
+		inset-block-start: 0.75em;
+		inset-inline-end: 0;
+		padding: 0 0.5em 0 0;
+		font-size: 2em;
+	}
 }
+
+.icon-ko::after {
+	content: '×';
+	color: var(--signal-danger);
+}
+
 .icon-ok::after {
 	content: '✔';
 	color: var(--signal-success);
 }
+
 .icon-ko button {
 	display: none; // don't copy shit!
 }
@@ -64,4 +82,8 @@ table.no-bg {
 	tr {
 		background: none !important;
 	}
+}
+
+.sbdocs-h2 {
+	margin-block-start: 2em !important;
 }
