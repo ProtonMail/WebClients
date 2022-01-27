@@ -144,9 +144,8 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
             'ArrowUp',
             (e) => {
                 e.preventDefault();
-                const currentIndex = sidebarListItems.indexOf(focusedItem);
-                const previousIndex =
-                    currentIndex !== null ? Math.max(0, currentIndex - 1) : sidebarListItems.length - 1;
+                const currentIndex = sidebarListItems.indexOf(focusedItem || '');
+                const previousIndex = currentIndex !== -1 ? Math.max(0, currentIndex - 1) : sidebarListItems.length - 1;
                 updateFocusItem(sidebarListItems[previousIndex]);
             },
         ],
@@ -161,8 +160,8 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
             'ArrowDown',
             (e) => {
                 e.preventDefault();
-                const currentIndex = sidebarListItems.indexOf(focusedItem);
-                const nextIndex = currentIndex !== null ? Math.min(sidebarListItems.length - 1, currentIndex + 1) : 0;
+                const currentIndex = sidebarListItems.indexOf(focusedItem || '');
+                const nextIndex = currentIndex !== -1 ? Math.min(sidebarListItems.length - 1, currentIndex + 1) : 0;
                 updateFocusItem(sidebarListItems[nextIndex]);
             },
         ],
