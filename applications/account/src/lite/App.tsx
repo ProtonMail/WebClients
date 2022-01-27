@@ -1,7 +1,29 @@
+import { Fragment, useMemo, useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import { ProtonApp, ErrorBoundary, StandardErrorPage } from '@proton/components';
+import {
+    ErrorBoundary,
+    StandardErrorPage,
+    Icons,
+    PreventLeaveProvider,
+    ConfigProvider,
+    CompatibilityCheck,
+    RightToLeftProvider,
+    ThemeProvider,
+    NotificationsProvider,
+    ModalsProvider,
+    ApiProvider,
+    CacheProvider,
+    NotificationsChildren,
+} from '@proton/components';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { APPS } from '@proton/shared/lib/constants';
+
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import createAuthentication from '@proton/shared/lib/authentication/createAuthenticationStore';
+import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
+import createCache from '@proton/shared/lib/helpers/cache';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import * as config from '../app/config';
 import '../app/app.scss';
@@ -17,13 +39,67 @@ const enhancedConfig = {
 
 sentry(enhancedConfig);
 
+const authentication = createAuthentication(createSecureSessionStorage());
+const cache = createCache<string, any>();
+
 const App = () => {
+    const [UID, setUID] = useState<string | undefined>(() => authentication.getUID());
+
+    const handleLogin = (UID: string) => {
+        authentication.setUID(UID);
+        setUID(UID);
+    };
+
+    const handleLogout = () => {
+        authentication.setUID(undefined);
+        setUID(undefined);
+    };
+
+    const authenticationValue = useMemo(() => {
+        if (!UID) {
+            return {
+                // Handled in the callback only
+                login: noop,
+            };
+        }
+        return {
+            UID,
+            ...authentication,
+            logout: handleLogout,
+            onLogout: noop as any,
+        };
+    }, [UID]);
+
     return (
-        <ProtonApp config={enhancedConfig} hasInitialAuth>
-            <ErrorBoundary component={<StandardErrorPage />}>
-                <Setup />
-            </ErrorBoundary>
-        </ProtonApp>
+        <ConfigProvider config={enhancedConfig}>
+            <CompatibilityCheck>
+                <Icons />
+                <RightToLeftProvider>
+                    <Fragment key={UID}>
+                        <ThemeProvider>
+                            <Router>
+                                <PreventLeaveProvider>
+                                    <NotificationsProvider>
+                                        <ModalsProvider>
+                                            <ApiProvider UID={UID} config={enhancedConfig} onLogout={handleLogout}>
+                                                <AuthenticationProvider store={authenticationValue}>
+                                                    <CacheProvider cache={cache}>
+                                                        <NotificationsChildren />
+                                                        <ErrorBoundary component={<StandardErrorPage />}>
+                                                            <Setup UID={UID} onLogin={handleLogin} />
+                                                        </ErrorBoundary>
+                                                    </CacheProvider>
+                                                </AuthenticationProvider>
+                                            </ApiProvider>
+                                        </ModalsProvider>
+                                    </NotificationsProvider>
+                                </PreventLeaveProvider>
+                            </Router>
+                        </ThemeProvider>
+                    </Fragment>
+                </RightToLeftProvider>
+            </CompatibilityCheck>
+        </ConfigProvider>
     );
 };
 
