@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { AutoResponder } from '@proton/shared/lib/interfaces';
@@ -7,7 +6,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { AutoReplyDuration } from '@proton/shared/lib/constants';
 
 import { useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
-import { FormModal, SimpleSquireEditor } from '../../components';
+import { FormModal, Editor, EditorActions } from '../../components';
 
 import useAutoReplyForm from './AutoReplyForm/useAutoReplyForm';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';
@@ -16,7 +15,6 @@ import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
 import AutoReplyFormPermanent from './AutoReplyForm/AutoReplyFormPermanent';
 import DurationField from './AutoReplyForm/fields/DurationField';
-import { SquireEditorRef } from '../../components/editor/SquireEditor';
 
 interface Props {
     autoresponder: AutoResponder;
@@ -29,7 +27,6 @@ const AutoReplyModal = ({ onClose = noop, autoresponder, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(autoresponder);
     const { call } = useEventManager();
-    const editorRef = useRef<SquireEditorRef>(null);
 
     const handleSubmit = async () => {
         await api(updateAutoresponder(toAutoResponder(model)));
@@ -38,10 +35,8 @@ const AutoReplyModal = ({ onClose = noop, autoresponder, ...rest }: Props) => {
         createNotification({ text: c('Success').t`Auto-reply updated` });
     };
 
-    const handleEditorReady = () => {
-        if (editorRef.current) {
-            editorRef.current.value = model.message;
-        }
+    const handleEditorReady = (actions: EditorActions) => {
+        actions.setContent(model.message);
     };
 
     const formRenderer = (duration: AutoReplyDuration) => {
@@ -73,11 +68,11 @@ const AutoReplyModal = ({ onClose = noop, autoresponder, ...rest }: Props) => {
         >
             <DurationField value={model.duration} onChange={updateModel('duration')} />
             {formRenderer(model.duration)}
-            <SimpleSquireEditor
-                ref={editorRef}
-                supportImages={false}
+            <Editor
+                metadata={{ supportImages: false }}
                 onReady={handleEditorReady}
                 onChange={updateModel('message')}
+                simple
             />
         </FormModal>
     );

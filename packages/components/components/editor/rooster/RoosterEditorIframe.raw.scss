@@ -1,0 +1,154 @@
+$editor-font-family: "Arial, 'Helvetica Neue', Helvetica, sans-serif";
+
+// custom scroll
+body:not(.isDarkMode) {
+	--scrollbar-thumb-color: rgb(0 0 0 / 0.35);
+	--scrollbar-thumb-hover-color: rgb(0 0 0 / 0.5);
+}
+
+body.isDarkMode {
+	--scrollbar-thumb-color: rgb(255 255 255 / 0.2);
+	--scrollbar-thumb-hover-color: rgb(255 255 255 / 0.5);
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--scrollbar-thumb-color) transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 0.625rem; /* 10px */
+	height: 0.625rem;
+}
+*::-webkit-scrollbar-thumb {
+	border: 0.125rem solid transparent; /* 2px */
+	background-clip: padding-box;
+	border-radius: 0.313rem; /* 5px */
+	background-color: var(--scrollbar-thumb-color, rgb(0 0 0 / 0.35));
+}
+*::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+*::-webkit-scrollbar-thumb:horizontal:hover,
+*::-webkit-scrollbar-thumb:vertical:hover {
+	background-color: var(--scrollbar-thumb-hover-color, rgb(0 0 0 / 0.5));
+}
+*::-webkit-scrollbar-corner {
+	visibility: hidden;
+}
+
+html {
+	height: 100%;
+	font-size: 100%;
+	cursor: text;
+}
+
+body {
+	box-sizing: border-box;
+	font-family: $editor-font-family;
+	font-size: 0.875rem; /* 14 */
+	line-height: 1.65;
+	color: #222;
+	background: white;
+	/* to fix, CSS var are not passing through the iframe */
+	word-wrap: break-word;
+	margin: 0;
+}
+
+body a {
+	color: #657ee4;
+}
+
+#proton-editor-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+#rooster-editor-wrapper {
+	flex-grow: 1;
+}
+
+#rooster-editor {
+	font-family: $editor-font-family;
+	outline: none;
+	padding: 0.5rem;
+}
+
+#proton-editor-toggle-container {
+	flex-shrink: 0;
+}
+
+#ellipsis {
+	color: inherit;
+	border: 1px solid silver;
+	background-color: white;
+	border-radius: 3px;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 1.2em;
+	padding: 0 0.5em;
+	margin: 0 0.5rem 0.5rem;
+}
+
+#ellipsis:hover,
+#ellipsis:focus {
+	border-color: darkgrey;
+	background-color: whitesmoke;
+}
+
+blockquote {
+	padding: 0 0 0 1rem;
+	margin: 0;
+	border-left: 4px solid #e5e5e5;
+}
+
+blockquote blockquote blockquote {
+	padding-inline-start: 0;
+	margin-inline-start: 0;
+	border: none;
+}
+
+.proton-embedded:not([src]) {
+	position: relative;
+	min-height: 38px;
+	border: 1px solid;
+	border-color: #444 #ccc #ccc #444;
+}
+
+.proton-embedded:not([src]):not([alt]) {
+	background-position-x: 50%;
+}
+
+.proton-embedded[alt]:not([src])::after {
+	position: absolute;
+	inset: 0;
+	content: ' ' attr(alt);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 10px 0 0 20px;
+	color: rgb(0 0 0 / 0.5);
+}
+
+/* see embedded.scss rules */
+.proton-embedded:not([width]):not([style*='width']) {
+	max-width: 100%;
+	min-width: 38px;
+}
+
+.protonmail_quote {
+	position: relative;
+}
+
+li {
+	list-style-position: inside;
+}
+
+// Handle outlook https://github.com/ProtonMail/Angular/issues/6711
+p.MsoNormal,
+li.MsoNormal,
+div.MsoNormal {
+	margin: 0;
+}

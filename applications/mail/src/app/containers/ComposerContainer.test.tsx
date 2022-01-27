@@ -66,7 +66,7 @@ with a link -> https://protonmail.com/`;
             });
         });
 
-        const textarea = (await findByTestId('squire-textarea')) as HTMLTextAreaElement;
+        const textarea = (await findByTestId('editor-textarea')) as HTMLTextAreaElement;
 
         expect(textarea.value).toBe(`
 
