@@ -16,6 +16,10 @@ const DriveContainer = ({ match }: RouteComponentProps<DriveSectionRouteProps>) 
     const { navigateToRoot } = useNavigate();
     const { setFolder } = useActiveShare();
 
+    const hasValidLinkType = (type: string) => {
+        return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
+    };
+
     const folder = useMemo(() => {
         const { shareId, type, linkId } = match.params;
 
@@ -28,7 +32,7 @@ const DriveContainer = ({ match }: RouteComponentProps<DriveSectionRouteProps>) 
             setError(() => {
                 throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
             });
-        } else if (!shareId || !type || !linkId) {
+        } else if (!shareId || !hasValidLinkType(type as string) || !linkId) {
             console.warn('Missing parameters, should be none or shareId/type/linkId');
             navigateToRoot();
         } else if (type === LinkURLType.FOLDER) {
