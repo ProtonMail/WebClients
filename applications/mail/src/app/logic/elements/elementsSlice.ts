@@ -17,6 +17,10 @@ import {
     optimisticEmptyLabel,
     optimisticRestoreEmptyLabel,
     optimisticMarkAs,
+    backendActionStarted,
+    backendActionFinished,
+    retry,
+    retryStale,
 } from './elementsActions';
 import {
     globalReset as globalResetReducer,
@@ -34,6 +38,10 @@ import {
     optimisticUpdates,
     optimisticDelete as optimisticDeleteReducer,
     optimisticEmptyLabel as optimisticEmptyLabelReducer,
+    backendActionStarted as backendActionStartedReducer,
+    backendActionFinished as backendActionFinishedReducer,
+    retry as retryReducer,
+    retryStale as retryStaleReducer,
 } from './elementsReducers';
 import { globalReset } from '../actions';
 
@@ -55,6 +63,7 @@ export const newState = ({
         beforeFirstLoad,
         invalidated: false,
         pendingRequest: false,
+        pendingActions: 0,
         params: { ...defaultParams, ...params },
         page,
         total: undefined,
@@ -76,6 +85,8 @@ const elementsSlice = createSlice({
         builder.addCase(updatePage, updatePageReducer);
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
+        builder.addCase(retry, retryReducer);
+        builder.addCase(retryStale, retryStaleReducer);
         builder.addCase(removeExpired, removeExpiredReducer);
         builder.addCase(invalidate, invalidateReducer);
         builder.addCase(eventUpdates.pending, eventUpdatesPending);
@@ -91,6 +102,8 @@ const elementsSlice = createSlice({
         builder.addCase(optimisticEmptyLabel, optimisticEmptyLabelReducer);
         builder.addCase(optimisticRestoreEmptyLabel, optimisticUpdates);
         builder.addCase(optimisticMarkAs, optimisticUpdates);
+        builder.addCase(backendActionStarted, backendActionStartedReducer);
+        builder.addCase(backendActionFinished, backendActionFinishedReducer);
     },
 });
 
