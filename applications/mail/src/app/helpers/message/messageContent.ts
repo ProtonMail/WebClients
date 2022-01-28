@@ -1,8 +1,7 @@
-import tinycolor from 'tinycolor2';
 import { MailSettings, Address } from '@proton/shared/lib/interfaces';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { isPlainText, isNewsLetter } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getAllNodesRecursively } from '@proton/shared/lib/helpers/dom';
+import { getMaxDepth } from '@proton/shared/lib/helpers/dom';
 
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';
@@ -105,24 +104,53 @@ export const querySelectorAll = (message: Partial<MessageState> | undefined, sel
     ...((message?.messageDocument?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
 ];
 
-export const canSupportDarkStyle = (element: HTMLElement | null) => {
-    if (!element) {
+export const canSupportDarkStyle = (message: MessageState) => {
+    const container = message.messageDocument?.document;
+
+    if (!container) {
         return false;
     }
 
-    const STARTING_DEPTH = 0;
-    const MAX_DEPTH = 5;
-    const nodes = getAllNodesRecursively(element, MAX_DEPTH, STARTING_DEPTH);
+    const colorSchemeMetaTag = container.querySelector('meta[name="color-scheme"]');
 
-    return nodes.every((node) => {
-        const style = window.getComputedStyle(node);
-        const backgroundColor = style.getPropertyValue('background-color') || '#ffffff';
-        const fontColor = style.getPropertyValue('color') || '#000000';
+    // If the meta tag color-scheme is present, we assume that the email supports dark mode
+    if (colorSchemeMetaTag?.getAttribute('content')?.includes('dark')) {
+        return true;
+    }
 
-        // rgba(0, 0, 0, 0) is the default value for background-color and is transparent
-        return (
-            (tinycolor(backgroundColor)?.toHexString() === '#ffffff' || tinycolor(backgroundColor)?.getAlpha() === 0) &&
-            tinycolor(fontColor)?.isDark()
-        );
-    });
+    const supportedColorSchemesMetaTag = container.querySelector('meta[name="supported-color-schemes"]');
+
+    // If the meta tag supported-color-schemes is present, we assume that the email supports dark mode
+    if (supportedColorSchemesMetaTag?.getAttribute('content')?.includes('dark')) {
+        return true;
+    }
+
+    const styleTag = container.querySelector('style');
+    const styleTextContent = styleTag?.textContent;
+
+    // If the media query prefers-color-scheme is present, we assume that the email supports dark mode
+    if (styleTextContent?.includes('color-scheme') || styleTextContent?.includes('prefers-color-scheme')) {
+        return true;
+    }
+
+    const tableTag = container.querySelector('table');
+
+    // If the message contains a table, we assume that the message content is complex and not supporting dark mode
+    if (tableTag) {
+        return false;
+    }
+
+    const maxDepth = getMaxDepth(container);
+
+    // If the HTML content is deep, we assume that the message content is complex and not supporting dark mode
+    if (maxDepth > 15) {
+        return false;
+    }
+
+    // If the message is a newsletter, message content needs to be display as it has been decided by the sender, so no dark style injection
+    if (isNewsLetter(message.data)) {
+        return false;
+    }
+
+    return true;
 };
