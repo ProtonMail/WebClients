@@ -1,9 +1,9 @@
-import { MessageChange } from '../../components/composer/Composer';
 import { Alert, ConfirmModal, useAddresses, useModals } from '@proton/components';
-import { MessageState } from '../../logic/messages/messagesTypes';
 import { Address } from '@proton/shared/lib/interfaces';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { c } from 'ttag';
+import { MessageChange } from '../../components/composer/Composer';
+import { MessageState } from '../../logic/messages/messagesTypes';
 import { getAddressFromEmail, getFromAddress } from '../../helpers/addresses';
 
 interface Props {

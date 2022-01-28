@@ -117,7 +117,7 @@ const EmailUnsubscribeContainer = () => {
     };
 
     const handleChange = (news: number) => {
-        withLoading(update(news));
+        void withLoading(update(news));
     };
 
     const renderView = () => {

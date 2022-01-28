@@ -86,7 +86,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 const { sessions } = await getActiveSessions(silentApi);
                 setLocalActiveSessions(sessions);
             };
-            withLoading(run().catch(() => setError(true)));
+            void withLoading(run().catch(() => setError(true)));
         }
     }, []);
 

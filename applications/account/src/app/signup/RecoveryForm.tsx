@@ -130,6 +130,18 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
         />
     );
 
+    const tabValue = (() => {
+        if (model.step === RECOVERY_EMAIL) {
+            return 0;
+        }
+
+        if (model.step === RECOVERY_PHONE) {
+            return 1;
+        }
+
+        return 0;
+    })();
+
     return (
         <>
             {model.step === RECOVERY_EMAIL && challengeLoading ? (
@@ -167,7 +179,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                 noValidate
             >
                 <Tabs
-                    value={model.step === RECOVERY_EMAIL ? 0 : model.step === RECOVERY_PHONE ? 1 : 0}
+                    value={tabValue}
                     tabs={[
                         {
                             title: c('Label').t`Email`,
