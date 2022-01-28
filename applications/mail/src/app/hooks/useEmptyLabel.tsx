@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 import {
     ConfirmModal,
@@ -15,7 +16,6 @@ import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages
 
 import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
 import { isCustomLabel } from '../helpers/labels';
-import { useDispatch } from 'react-redux';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 
 export const useEmptyLabel = () => {

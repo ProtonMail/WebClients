@@ -56,7 +56,7 @@ const LoginContainer = ({ onLogin, onBack, toApp, shouldSetupInternalAddress }: 
 
     useEffect(() => {
         // Preparing login improvements
-        silentApi(queryAvailableDomains('login'));
+        void silentApi(queryAvailableDomains('login'));
         return () => {
             cacheRef.current = undefined;
             generateInternalAddressRef.current = undefined;

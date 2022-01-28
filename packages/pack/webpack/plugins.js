@@ -6,6 +6,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
@@ -15,7 +17,7 @@ const { OPENPGP_FILES } = require('./constants');
 
 const { logo, ...logoConfig } = require(path.resolve('./src/assets/logoConfig.js'));
 
-module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI }) => {
+module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, silent }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
         OPENPGP_FILES,
         publicPath,
@@ -29,6 +31,17 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
                   new ReactRefreshWebpackPlugin({
                       overlay: false,
                   }),
+                  !silent &&
+                      new ESLintPlugin({
+                          extensions: ['js', 'ts', 'tsx'],
+                          eslintPath: require.resolve('eslint'),
+                          context: path.resolve('.'),
+                          // ESLint class options
+                          resolvePluginsRelativeTo: __dirname,
+                          cwd: path.resolve('.'),
+                          cache: true,
+                      }),
+                  !silent && new ForkTsCheckerWebpackPlugin({ async: true, formatter: 'basic' }),
               ]),
 
         new CopyWebpackPlugin({

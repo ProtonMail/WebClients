@@ -4,6 +4,7 @@ const execa = require('execa');
 const path = require('path');
 const { Command } = require('commander');
 const portfinder = require('portfinder');
+const chalk = require('chalk');
 
 const program = new Command();
 
@@ -43,12 +44,17 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         publicPath: options.publicPath === '/' ? undefined : options.publicPath,
         featureFlags: options.featureFlags,
         writeSri: options.sri ? undefined : options.sri,
+        silent: options.silent,
         ...buildData,
     };
     const extraWebpackArgs = env.args.join(' ');
     const webpackEnvArgs = Object.entries(envArgs)
         .filter(([, value]) => value !== undefined && value !== '')
         .reduce((acc, [key, value]) => {
+            if (typeof value === 'boolean') {
+                return `${acc} --env ${key}`;
+            }
+
             return `${acc} --env ${key}=${value.replace(/ /g, '\\ ')}`;
         }, '');
 
@@ -56,13 +62,15 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
 };
 
 const commandWithLog = (...args) => {
-    console.log(args[0]);
+    console.log(chalk.cyan(args[0]), `\n`);
     return execa.command(...args);
 };
 
 addGlobalOptions(program.command('build').description('create an optimized production build'))
     .option('--no-sri', 'disable sri')
     .action(async (options, env) => {
+        console.log(chalk.magenta('Creating a production build...\n'));
+
         const configData = getConfigData(options);
         await writeConfig(getConfigFile(configData));
 
@@ -90,7 +98,10 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
         },
         getApi('')
     )
+    .option('--silent', 'disable error reporting')
     .action(async (options, env) => {
+        console.log(chalk.magenta('Starting development server...\n'));
+
         const configData = getConfigData(options);
         await writeConfig(getConfigFile(configData));
 
