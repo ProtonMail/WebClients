@@ -1,8 +1,9 @@
 import { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
+import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+import { classnames, useMailSettings, useTheme } from '@proton/components';
 
-import { classnames, useMailSettings } from '@proton/components';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -46,13 +47,15 @@ const MessageBody = ({
 }: Props) => {
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const bodyRef = useRef<HTMLDivElement>(null);
+    const [theme] = useTheme();
+    const isDarkTheme = DARK_THEMES.includes(theme);
     const { highlightString, getESDBStatus } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
     const [mailSettings] = useMailSettings();
     const { dbExists, esEnabled } = getESDBStatus();
     const highlightBody = highlightKeywords && dbExists && esEnabled;
     const plain = isPlainText(message.data);
-
+    const hasDarkStyles = useMessageDarkStyles(message);
     const [content, blockquote] = useMemo(
         () =>
             plain
@@ -92,8 +95,6 @@ const MessageBody = ({
         [content, highlightBody]
     );
 
-    const hasDarkStyles = useMessageDarkStyles(message, bodyLoaded, bodyRef);
-
     return (
         <div
             ref={bodyRef}
@@ -102,7 +103,7 @@ const MessageBody = ({
                 !isIframeContentSet && 'message-content-not-set',
                 plain && 'plain',
                 isPrint || !isIframeContentSet ? '' : 'p1',
-                hasDarkStyles && 'dark-style',
+                !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
             ])}
             data-testid="message-content:body"
         >
@@ -127,6 +128,7 @@ const MessageBody = ({
                     onBlockquoteToggle={toggleOriginalMessage}
                     onContentLoaded={onContentLoadedCallback}
                     isPlainText={plain}
+                    hasDarkStyles={hasDarkStyles}
                     isPrint={isPrint}
                     message={message}
                     labelID={labelID}

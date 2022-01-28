@@ -94,21 +94,19 @@ export const scrollIntoView = (element: HTMLElement | undefined | null, extra?: 
     } catch (e: any) {}
 };
 
-export const hasChildren = (node?: HTMLElement) => {
-    return typeof node === 'object' && typeof node.childNodes !== 'undefined' && node.childNodes.length > 0;
+export const hasChildren = (node?: ChildNode) => {
+    return node && node.childNodes && node.childNodes.length > 0;
 };
 
-export const getAllNodesRecursively = (node: HTMLElement, limit: number, depth: number) => {
-    const nodes = [node];
-    if (depth > limit) {
-        return nodes;
-    }
-    if (hasChildren(node)) {
-        for (const child of node.childNodes) {
-            if (child instanceof HTMLElement) {
-                nodes.push(...getAllNodesRecursively(child, limit, depth + 1));
+export const getMaxDepth = (node: ChildNode) => {
+    let maxDepth = 0;
+    for (const child of node.childNodes) {
+        if (hasChildren(child)) {
+            const depth = getMaxDepth(child);
+            if (depth > maxDepth) {
+                maxDepth = depth;
             }
         }
     }
-    return nodes;
+    return maxDepth + 1;
 };
