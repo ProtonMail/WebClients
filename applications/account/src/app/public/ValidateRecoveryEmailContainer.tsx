@@ -18,7 +18,7 @@ const ValidateRecoveryEmailContainer = () => {
 
         history.replace(location.pathname);
 
-        withLoading(api(postVerifyValidate({ JWT: jwt })).catch(setError));
+        withLoading(api({ ...postVerifyValidate({ JWT: jwt }), silence: true }).catch(setError));
     }, []);
 
     const signIn = (
