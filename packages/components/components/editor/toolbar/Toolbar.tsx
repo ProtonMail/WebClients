@@ -1,21 +1,20 @@
 import { c } from 'ttag';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+
 import { classnames } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { ButtonGroup, Button } from '../../button';
 import { Vr } from '../../vr';
 import { useActiveBreakpoint } from '../../../hooks';
-
 import { ToolbarConfig } from '../helpers/getToolbarConfig';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
+import { EditorMetadata } from '../interface';
 import ToolbarButton from './ToolbarButton';
-
 import ToolbarFontFaceDropdown from './ToolbarFontFaceDropdown';
 import ToolbarFontSizeDropdown from './ToolbarFontSizeDropdown';
 import ToolbarColorsDropdown from './ToolbarColorsDropdown';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
-import { EditorMetadata } from '../interface';
 import ToolbarMoreDropdown from './ToolbarMoreDropdown';
-import { MailSettings } from '@proton/shared/lib/interfaces';
 
 interface ShowProps {
     when: boolean;

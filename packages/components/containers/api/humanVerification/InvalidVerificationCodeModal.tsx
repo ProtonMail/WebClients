@@ -1,7 +1,8 @@
 import { c } from 'ttag';
+import { noop } from '@proton/shared/lib/helpers/function';
+
 import { AlertModal, Button } from '../../../components';
 import { useLoading } from '../../../hooks';
-import { noop } from '@proton/shared/lib/helpers/function';
 
 interface Props {
     edit?: string;

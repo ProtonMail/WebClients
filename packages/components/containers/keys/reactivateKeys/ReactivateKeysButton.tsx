@@ -1,3 +1,4 @@
+import { MutableRefObject, useEffect } from 'react';
 import { c } from 'ttag';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 
@@ -12,11 +13,9 @@ import {
     useUser,
     useUserKeys,
 } from '../../../hooks';
-
 import { getAllKeysReactivationRequests } from './getAllKeysToReactive';
 import ReactivateKeysModal from './ReactivateKeysModal';
 import { KeyReactivationRequest } from './interface';
-import { MutableRefObject, useEffect } from 'react';
 
 interface Props extends Omit<ButtonProps, 'onClick'> {
     openRecoverDataModalRef?: MutableRefObject<boolean>;

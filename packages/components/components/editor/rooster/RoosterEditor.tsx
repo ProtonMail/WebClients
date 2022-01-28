@@ -2,19 +2,16 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 import { createPortal } from 'react-dom';
 import { BeforePasteEvent } from 'roosterjs-editor-types';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { classnames } from '../../../helpers';
-
-import useInitRooster from './hooks/useInitRooster';
-import useBubbleIframeEvents from './hooks/useBubbleIframeEvents';
-
 import { EditorActions, SetEditorToolbarConfig } from '../interface';
 import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID } from '../constants';
+import useBubbleIframeEvents from './hooks/useBubbleIframeEvents';
+import useInitRooster from './hooks/useInitRooster';
 import BlockquoteToggle from './BlockquoteToggle';
-
-import './RoosterEditor.scss';
 import useOnEditorChange from './hooks/useOnEditorChange';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import './RoosterEditor.scss';
 
 interface Props {
     placeholder?: string;
