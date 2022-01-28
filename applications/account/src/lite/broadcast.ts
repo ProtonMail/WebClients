@@ -3,6 +3,7 @@ import genericBroadcast, { GenericErrorPayload } from '@proton/shared/lib/broadc
 export enum MessageType {
     SUCCESS = 'SUCCESS',
     ERROR = 'ERROR',
+    LOADED = 'LOADED',
     CLOSE = 'CLOSE',
 }
 
@@ -16,6 +17,9 @@ type Message =
       }
     | {
           type: MessageType.CLOSE;
+      }
+    | {
+          type: MessageType.LOADED;
       };
 
 const broadcast = (message: Message) => genericBroadcast(message);
