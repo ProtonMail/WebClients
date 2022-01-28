@@ -10,7 +10,11 @@
 	}
 
 	&-footer {
-		> .button {
+		&#{&} {
+			display: block;
+		}
+
+		& > .button {
 			width: 100%;
 		}
 	}
