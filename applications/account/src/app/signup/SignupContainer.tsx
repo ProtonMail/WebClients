@@ -30,7 +30,7 @@ import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { getHasKeyMigrationGeneration, handleSetupAddress, handleSetupKeys } from '@proton/shared/lib/keys';
+import { handleSetupAddress, handleSetupKeys } from '@proton/shared/lib/keys';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getUser } from '@proton/shared/lib/api/user';
 import {
@@ -52,8 +52,8 @@ import {
     usePayment,
     usePlans,
     useVPNCountriesCount,
-    useFeatures,
     useLocalState,
+    useFeature,
 } from '@proton/components';
 import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
@@ -213,10 +213,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     const [myLocation] = useMyLocation();
     const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
-    const [keyMigrationFeature, externalSignupFeature] = useFeatures([
-        FeatureCode.KeyMigration,
-        FeatureCode.ExternalSignup,
-    ]);
+    const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
 
     const [persistent] = useLocalState(true, defaultPersistentKey);
 
@@ -296,11 +293,6 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             currency,
             cycle,
         } = model;
-
-        const keyMigrationFeatureValue = await keyMigrationFeature
-            .get()
-            .then(({ Value }) => Value)
-            .catch(() => 0);
 
         if (isBuyingPaidPlan && method === PAYMENT_METHOD_TYPES.CARD) {
             const { Payment } = await getCardPayment({
@@ -402,7 +394,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                       api: authApi.api,
                       addresses,
                       password,
-                      hasAddressKeyMigrationGeneration: getHasKeyMigrationGeneration(keyMigrationFeatureValue),
+                      hasAddressKeyMigrationGeneration: true,
                   })
                 : undefined;
 
