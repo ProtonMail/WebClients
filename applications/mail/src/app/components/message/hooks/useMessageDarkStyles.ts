@@ -12,12 +12,11 @@ const useMessageDarkStyles = (message: MessageState) => {
     const [theme] = useTheme();
     const dispatch = useDispatch();
     const isDarkTheme = DARK_THEMES.includes(theme);
-    const DEBUG = true;
 
     // canSupportDarkStyle is costly, so we only call it when needed
     const injectDarkStyle = useMemo(() => {
         return (
-            (darkStylesFeature.feature?.Value || DEBUG) &&
+            darkStylesFeature.feature?.Value &&
             !message.messageDocument?.noDarkStyle &&
             isDarkTheme &&
             !isPlainText(message.data) &&
