@@ -11,7 +11,7 @@
     "scripts": {
         "config-app": "(packages/config/install 2>/dev/null) || true",
         "postinstall": "is-ci || (husky install; yarn run config-app)",
-        "start-all": "cd utilities/local-sso && ./run.sh",
+        "start-all": "cd utilities/local-sso && bash ./run.sh",
         "version": "yarn workspace scripts run version:applications"
     },
     "resolutions": {
