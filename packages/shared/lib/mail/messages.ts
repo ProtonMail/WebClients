@@ -136,8 +136,13 @@ export const getAttachments = (message?: Message) => message?.Attachments || [];
 export const hasAttachments = (message?: Message) => !!(message?.NumAttachments && message?.NumAttachments > 0);
 export const attachmentsSize = (message?: Message) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
-export const getHasOnlyIcsAttachments = (attachmentInfo?: Partial<Record<MIME_TYPES, AttachmentInfo>>) =>
-    !!attachmentInfo && !Object.keys(attachmentInfo).some((key) => !isICS(key));
+export const getHasOnlyIcsAttachments = (attachmentInfo?: Partial<Record<MIME_TYPES, AttachmentInfo>>) => {
+    if (!!attachmentInfo) {
+        const keys = Object.keys(attachmentInfo);
+        return keys.length > 0 && !keys.some((key) => !isICS(key));
+    }
+    return false;
+};
 
 export const isAutoReply = (message?: Message) => {
     const ParsedHeaders = message?.ParsedHeaders || {};
