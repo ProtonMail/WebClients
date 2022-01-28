@@ -2,7 +2,7 @@ import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { Api, User as tsUser } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getHasKeyMigrationRunner, getResetAddressesKeys } from '@proton/shared/lib/keys';
+import { generateKeySaltAndPassphrase, getResetAddressesKeys } from '@proton/shared/lib/keys';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
 import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
@@ -28,12 +28,10 @@ export const handleNewPassword = async ({
     password,
     cache,
     api,
-    keyMigrationFeatureValue,
 }: {
     password: string;
     cache: ResetCacheResult;
     api: Api;
-    keyMigrationFeatureValue: number;
 }): Promise<ResetActionResponse> => {
     const { username, token, resetResponse, persistent } = cache;
     if (!resetResponse || !token) {
@@ -41,7 +39,7 @@ export const handleNewPassword = async ({
     }
     const { Addresses: addresses } = resetResponse;
 
-    const hasAddressKeyMigration = resetResponse.ToMigrate === 1 && getHasKeyMigrationRunner(keyMigrationFeatureValue);
+    const hasAddressKeyMigration = resetResponse.ToMigrate === 1;
 
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
     const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeys({
