@@ -118,21 +118,22 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                     error={validator([input && emailValidator(input)].filter(isTruthy))}
                     onValue={setInput}
                     assistiveText={
-                        email.Status === SETTINGS_STATUS.UNVERIFIED ? (
-                            <span className="flex flex-align-items-center">
+                        email.Value &&
+                        (email.Status === SETTINGS_STATUS.UNVERIFIED ? (
+                            <>
                                 <Icon className="color-danger aligntop mr0-25" name="circle-exclamation-filled" />
                                 <span className="color-norm mr0-5">{c('Recovery Email')
                                     .t`Email address not yet verified.`}</span>
-                                <Button shape="link" color="norm" onClick={() => setVerifyModalOpen(true)}>{c(
-                                    'Recovery Email'
-                                ).t`Verify now`}</Button>
-                            </span>
+                                <button className="link" type="button" onClick={() => setVerifyModalOpen(true)}>
+                                    {c('Recovery Email').t`Verify now`}
+                                </button>
+                            </>
                         ) : (
-                            <span className="flex flex-align-items-center">
+                            <>
                                 <Icon className="color-success aligntop mr0-25" name="circle-check-filled" />
                                 <span className="mr0-5">{c('Recovery Email').t`Email address has been verified.`}</span>
-                            </span>
-                        )
+                            </>
+                        ))
                     }
                 />
             </div>
