@@ -1,7 +1,7 @@
+import { MutableRefObject } from 'react';
 import { useCanReactivateKeys } from '../../hooks';
 import RecoverDataCard from './RecoverDataCard';
 import RecoveryCard from './RecoveryCard';
-import { MutableRefObject } from 'react';
 
 interface Props {
     openRecoverDataModalRef?: MutableRefObject<boolean>;
