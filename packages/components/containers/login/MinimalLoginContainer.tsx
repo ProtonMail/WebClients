@@ -295,7 +295,6 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                             payload,
                             api: silentApi,
                             hasGenerateKeys: false,
-                            keyMigrationFeatureValue: 0,
                             ignoreUnlock,
                             persistent: false,
                         })
