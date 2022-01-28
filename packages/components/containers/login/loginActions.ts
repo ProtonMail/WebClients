@@ -18,7 +18,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getHasKeyMigrationRunner, migrateUser } from '@proton/shared/lib/keys';
+import { migrateUser } from '@proton/shared/lib/keys';
 
 import { ChallengeResult } from '../challenge';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
@@ -89,7 +89,7 @@ const handleKeyMigration = async ({
     user?: tsUser;
     addresses?: tsAddress[];
 }) => {
-    const { authApi, hasGenerateKeys, keyMigrationFeatureValue } = cache;
+    const { authApi, hasGenerateKeys } = cache;
 
     const [User, Addresses] = await Promise.all([
         maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
@@ -97,7 +97,7 @@ const handleKeyMigration = async ({
     ]);
 
     let hasDoneMigration = false;
-    if (getHasKeyMigrationRunner(keyMigrationFeatureValue) && keyPassword && Addresses) {
+    if (keyPassword && Addresses) {
         hasDoneMigration = await migrateUser({
             api: authApi,
             keyPassword,
@@ -223,7 +223,7 @@ export const handleUnlock = async ({
  * Setup keys and address for users that have not setup.
  */
 export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthCacheResult; newPassword: string }) => {
-    const { userSaltResult, authApi, username, keyMigrationFeatureValue } = cache;
+    const { userSaltResult, authApi, username } = cache;
     if (!userSaltResult) {
         throw new Error('Invalid state');
     }
@@ -232,7 +232,7 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
         api: authApi,
         username,
         password: newPassword,
-        hasAddressKeyMigrationGeneration: User.ToMigrate === 1 && getHasKeyMigrationRunner(keyMigrationFeatureValue),
+        hasAddressKeyMigrationGeneration: User.ToMigrate === 1,
     });
 
     return finalizeLogin({
@@ -332,7 +332,6 @@ export const handleLogin = async ({
     api,
     ignoreUnlock,
     hasGenerateKeys,
-    keyMigrationFeatureValue,
     payload,
 }: {
     username: string;
@@ -341,7 +340,6 @@ export const handleLogin = async ({
     api: Api;
     ignoreUnlock: boolean;
     hasGenerateKeys: boolean;
-    keyMigrationFeatureValue: number;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
@@ -365,7 +363,6 @@ export const handleLogin = async ({
         loginPassword: password,
         ignoreUnlock,
         hasGenerateKeys,
-        keyMigrationFeatureValue,
     };
 
     return next({ cache, from: AuthStep.LOGIN });

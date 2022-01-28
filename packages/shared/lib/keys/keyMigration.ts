@@ -14,7 +14,6 @@ import { getOrganizationKeys } from '../api/organization';
 import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
 import { noop } from '../helpers/function';
 import { migrateMembersAddressKeysRoute, restoreBrokenSKLRoute } from '../api/memberKeys';
-import { hasBit } from '../helpers/bitset';
 import isTruthy from '../helpers/isTruthy';
 
 export const getHasMigratedAddressKey = ({ Token, Signature }: { Token?: string; Signature?: string }): boolean => {
@@ -30,14 +29,6 @@ export const getHasMemberMigratedAddressKeys = (memberAddresses: Address[], owne
     return primaryMemberAddress?.Keys?.length > 0
         ? getHasMigratedAddressKeys(memberAddresses)
         : getHasMigratedAddressKeys(ownerAddresses);
-};
-
-export const getHasKeyMigrationRunner = (value: number) => {
-    return hasBit(value, 1);
-};
-
-export const getHasKeyMigrationGeneration = (value: number) => {
-    return hasBit(value, 2);
 };
 
 export interface MigrateAddressKeyPayload {
