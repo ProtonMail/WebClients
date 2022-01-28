@@ -1,9 +1,10 @@
+import { MutableRefObject } from 'react';
 import { c } from 'ttag';
+
 import { classnames } from '../../helpers/component';
 import { Card, Icon } from '../../components';
 import { SettingsSectionTitle } from '../account';
 import ReactivateKeysButton from '../keys/reactivateKeys/ReactivateKeysButton';
-import { MutableRefObject } from 'react';
 
 interface Props {
     openRecoverDataModalRef?: MutableRefObject<boolean>;
