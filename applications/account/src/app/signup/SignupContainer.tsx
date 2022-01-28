@@ -420,7 +420,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                 return setModelDiff({ step: NO_SIGNUP });
             }
         };
-        withLoading(fetchDependencies());
+        void withLoading(fetchDependencies());
     }, []);
 
     const getSubscriptionPrices = async (planIDs: PlanIDs, currency: Currency, cycle: Cycle, couponCode?: string) => {
@@ -461,7 +461,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             const checkResult = await getSubscriptionPrices(planIDs, model.currency, model.cycle);
             setModelDiff({ checkResult, planIDs, skipPlanStep: true });
         };
-        run();
+        void run();
     }, [plans]);
 
     useEffect(() => {
@@ -538,21 +538,21 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         setModelDiff({
             currency,
         });
-        withLoading(updateCheckResultTogether(model.planIDs, currency, model.cycle));
+        void withLoading(updateCheckResultTogether(model.planIDs, currency, model.cycle));
     };
 
     const handleChangeCycle = (cycle: Cycle) => {
         setModelDiff({
             cycle,
         });
-        withLoading(updateCheckResultTogether(model.planIDs, model.currency, cycle));
+        void withLoading(updateCheckResultTogether(model.planIDs, model.currency, cycle));
     };
 
     const handleChangePlanIDs = (planIDs: PlanIDs) => {
         setModelDiff({
             planIDs,
         });
-        withLoading(updateCheckResultTogether(planIDs, model.currency, model.cycle));
+        void withLoading(updateCheckResultTogether(planIDs, model.currency, model.cycle));
     };
 
     const handleFinalizePlanIDs = async (planIDs: PlanIDs, step: SIGNUP_STEPS) => {
@@ -575,7 +575,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                                 color="norm"
                                 onClick={() => {
                                     // Ensure that the check result is up to date.
-                                    withLoading(handleFinalizePlanIDs(model.planIDs, PAYMENT));
+                                    void withLoading(handleFinalizePlanIDs(model.planIDs, PAYMENT));
                                 }}
                                 fullWidth
                             >{c('Action').t`Proceed to checkout`}</Button>
@@ -666,11 +666,11 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             hasChallenge={!cacheRef.current.payload || Object.keys(cacheRef.current.payload).length < 2}
                             onSubmit={(payload) => {
                                 addChallengePayload(payload);
-                                handlePrePlanStep();
+                                void handlePrePlanStep();
                             }}
                             onSkip={(payload) => {
                                 addChallengePayload(payload);
-                                handlePrePlanStep({ recoveryEmail: '', recoveryPhone: '' });
+                                void handlePrePlanStep({ recoveryEmail: '', recoveryPhone: '' });
                             }}
                         />
                     </Content>
@@ -684,7 +684,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             clientType={CLIENT_TYPE}
                             model={model}
                             onSubmit={() => {
-                                handlePrePlanStep();
+                                void handlePrePlanStep();
                             }}
                             onBack={handleBack}
                             humanApi={humanApi}

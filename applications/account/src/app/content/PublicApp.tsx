@@ -201,7 +201,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             return false;
         }
         if (session && sessions.length === 1) {
-            handleLogin(session);
+            void handleLogin(session);
             return true;
         }
         setActiveSessions(sessions);

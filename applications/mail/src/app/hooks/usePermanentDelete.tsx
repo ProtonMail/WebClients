@@ -1,4 +1,5 @@
 import { c, msgid } from 'ttag';
+import { useDispatch } from 'react-redux';
 import {
     Alert,
     ConfirmModal,
@@ -14,7 +15,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useGetElementsFromIDs } from './mailbox/useElements';
 import { isConversation } from '../helpers/elements';
 import useOptimisticDelete from './optimistic/useOptimisticDelete';
-import { useDispatch } from 'react-redux';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
 
 const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
