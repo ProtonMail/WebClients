@@ -103,7 +103,7 @@ const MessageBody = ({
                 !isIframeContentSet && 'message-content-not-set',
                 plain && 'plain',
                 isPrint || !isIframeContentSet ? '' : 'p1',
-                !hasDarkStyles && isDarkTheme && !plain && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
+                !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
             ])}
             data-testid="message-content:body"
         >
