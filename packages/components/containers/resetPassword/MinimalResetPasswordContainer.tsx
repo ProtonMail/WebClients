@@ -343,7 +343,6 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                             password: newPassword,
                             api: silentApi,
                             cache,
-                            keyMigrationFeatureValue: 0, // not supported on vpn
                         })
                             .then(handleResult)
                             .catch(handleError);
