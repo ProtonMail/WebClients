@@ -5,6 +5,7 @@ import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 
 import { AlertModal, Button, Href } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
@@ -13,7 +14,6 @@ import useSubscribedCalendars from '../../../hooks/useSubscribedCalendars';
 import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarModal';
 import CalendarsSection from './CalendarsSection';
 import { SettingsParagraph } from '../../account';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 
 type ModalsMap = {
