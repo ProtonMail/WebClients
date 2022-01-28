@@ -13,15 +13,7 @@ import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import {
-    AbuseModal,
-    FeatureCode,
-    OnLoginCallback,
-    OnLoginCallbackArguments,
-    useApi,
-    useErrorHandler,
-    useFeature,
-} from '@proton/components';
+import { AbuseModal, OnLoginCallback, OnLoginCallbackArguments, useApi, useErrorHandler } from '@proton/components';
 import {
     handleLogin,
     handleSetupPassword,
@@ -52,7 +44,6 @@ interface Props {
 
 const LoginContainer = ({ onLogin, onBack, toApp, shouldSetupInternalAddress }: Props) => {
     const errorHandler = useErrorHandler();
-    const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration);
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
     const normalApi = useApi();
@@ -156,17 +147,12 @@ const LoginContainer = ({ onLogin, onBack, toApp, shouldSetupInternalAddress }: 
                         <LoginForm
                             defaultUsername={previousUsernameRef.current}
                             onSubmit={async ({ username, password, payload, persistent }) => {
-                                const keyMigrationFeatureValue = await keyMigrationFeature
-                                    .get()
-                                    .then(({ Value }) => Value)
-                                    .catch(() => 0);
                                 return handleLogin({
                                     username,
                                     password,
                                     persistent,
                                     api: silentApi,
                                     hasGenerateKeys: true,
-                                    keyMigrationFeatureValue,
                                     ignoreUnlock: false,
                                     payload,
                                 })

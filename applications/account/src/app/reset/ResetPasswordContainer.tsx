@@ -5,13 +5,11 @@ import { useHistory } from 'react-router-dom';
 import {
     Button,
     ButtonLike,
-    FeatureCode,
     GenericError,
     Href,
     OnLoginCallback,
     useApi,
     useErrorHandler,
-    useFeature,
     useLocalState,
     useMyLocation,
     useNotifications,
@@ -45,7 +43,6 @@ interface Props {
 
 const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
     const history = useHistory();
-    const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration);
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
     const normalApi = useApi();
@@ -244,15 +241,10 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                                         .catch(handleError);
                                 }
 
-                                const keyMigrationFeatureValue = await keyMigrationFeature
-                                    .get()
-                                    .then(({ Value }) => Value)
-                                    .catch(() => 0);
                                 return handleNewPassword({
                                     password: newPassword,
                                     api: silentApi,
                                     cache,
-                                    keyMigrationFeatureValue,
                                 })
                                     .then(handleResult)
                                     .catch(handleError);

@@ -6,7 +6,6 @@ import {
     generateAllPrivateMemberKeys,
     getAddressesWithKeysToGenerate,
     migrateMemberAddressKeys,
-    getHasKeyMigrationRunner,
     getHasMigratedAddressKeys,
     getDecryptedUserKeysHelper,
     migrateUser,
@@ -22,12 +21,10 @@ import {
     useGetAddressKeys,
     useGetUser,
     useGetUserKeys,
-    useFeature,
     useGetOrganization,
 } from '../../hooks';
 
 import useApi from '../../hooks/useApi';
-import { FeatureCode } from '../features';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;
@@ -49,7 +46,6 @@ const KeyBackgroundManager = ({
     const { subscribe, call } = useEventManager();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const keyMigrationFeature = useFeature<number>(FeatureCode.KeyMigration, false);
 
     useEffect(() => {
         const run = async () => {
@@ -98,15 +94,6 @@ const KeyBackgroundManager = ({
             const [user, organization, addresses] = await Promise.all([getUser(), getOrganization(), getAddresses()]);
 
             if (!(user.ToMigrate === 1 || organization.ToMigrate === 1)) {
-                return;
-            }
-
-            const keyMigrationFeatureValue = await keyMigrationFeature
-                .get()
-                .then(({ Value }) => Value)
-                .catch(() => 0);
-
-            if (!getHasKeyMigrationRunner(keyMigrationFeatureValue)) {
                 return;
             }
 
