@@ -4,6 +4,7 @@ import {
     InnerModal,
     ModalPropsInjection,
     useModals,
+    useModalState,
     useIsMnemonicAvailable,
     useSettingsLink,
     useUser,
@@ -22,6 +23,7 @@ interface MailGetStartedChecklistModalProps extends Partial<ModalPropsInjection>
 const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailGetStartedChecklistModalProps) => {
     const [user] = useUser();
     const { createModal } = useModals();
+    const [mnemonicPromptModal, setMnemonicPromptModalOpen] = useModalState();
     const goToSettings = useSettingsLink();
 
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
@@ -32,44 +34,47 @@ const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailG
     const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
 
     return (
-        <DialogModal intermediate onClose={onClose} {...rest}>
-            <ModalCloseButton onClose={onClose} />
-            <InnerModal className="modal-content pb2 pt2">
-                <GetStartedChecklist
-                    hideDismissButton
-                    onItemSelection={(key: GetStartedChecklistKey) => () => {
-                        onClose?.();
+        <>
+            <MnemonicPromptModal {...mnemonicPromptModal} />
+            <DialogModal intermediate onClose={onClose} {...rest}>
+                <ModalCloseButton onClose={onClose} />
+                <InnerModal className="modal-content pb2 pt2">
+                    <GetStartedChecklist
+                        hideDismissButton
+                        onItemSelection={(key: GetStartedChecklistKey) => () => {
+                            onClose?.();
 
-                        /* eslint-disable default-case */
-                        switch (key) {
-                            case GetStartedChecklistKey.SendMessage: {
-                                onSendMessage();
-                                break;
-                            }
-
-                            case GetStartedChecklistKey.MobileApp: {
-                                createModal(<ModalGetMobileApp />);
-                                break;
-                            }
-
-                            case GetStartedChecklistKey.RecoveryMethod: {
-                                if (displayMnemonicPrompt) {
-                                    createModal(<MnemonicPromptModal />);
-                                } else {
-                                    goToSettings('/recovery', undefined, true);
+                            /* eslint-disable default-case */
+                            switch (key) {
+                                case GetStartedChecklistKey.SendMessage: {
+                                    onSendMessage();
+                                    break;
                                 }
-                                break;
-                            }
 
-                            case GetStartedChecklistKey.Import: {
-                                createModal(<ModalImportEmails />);
-                                break;
+                                case GetStartedChecklistKey.MobileApp: {
+                                    createModal(<ModalGetMobileApp />);
+                                    break;
+                                }
+
+                                case GetStartedChecklistKey.RecoveryMethod: {
+                                    if (displayMnemonicPrompt) {
+                                        setMnemonicPromptModalOpen(true);
+                                    } else {
+                                        goToSettings('/recovery', undefined, true);
+                                    }
+                                    break;
+                                }
+
+                                case GetStartedChecklistKey.Import: {
+                                    createModal(<ModalImportEmails />);
+                                    break;
+                                }
                             }
-                        }
-                    }}
-                />
-            </InnerModal>
-        </DialogModal>
+                        }}
+                    />
+                </InnerModal>
+            </DialogModal>
+        </>
     );
 };
 
