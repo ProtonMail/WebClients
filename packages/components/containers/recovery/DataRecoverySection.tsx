@@ -1,15 +1,12 @@
-import { useState } from 'react';
 import { c } from 'ttag';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 import { Button, Icon, Info, Loader, Toggle, useModalState } from '../../components';
 
 import {
-    useEventManager,
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
     useIsRecoveryFileAvailable,
-    useModals,
     useRecoverySecrets,
     useUserSettings,
     useUser,
@@ -28,15 +25,15 @@ import { classnames } from '../../helpers/component';
 
 const DataRecoverySection = () => {
     const [user] = useUser();
-    const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const { call } = useEventManager();
 
     const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
 
-    const [loadingMnemonic, setLoadingMnemonic] = useState(false);
     const [disableMnemonicModal, setDisableMnemonicModalOpen] = useModalState();
+    const [generateMnemonicModal, setGenerateMnemonicModalOpen] = useModalState();
+    const [generateMnemonicModalButton, setGenerateMnemonicModalButtonOpen] = useModalState();
+    const [generateMnemonicModalToggle, setGenerateMnemonicModalToggleOpen] = useModalState();
 
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
     const recoverySecrets = useRecoverySecrets();
@@ -45,18 +42,10 @@ const DataRecoverySection = () => {
     const loading =
         loadingUserSettings || !userSettings || loadingIsMnemonicAvailable || loadingIsRecoveryFileAvailable;
 
-    const openGenerateMnemonicModal = async () => {
-        await new Promise<void>((resolve, reject) => {
-            createModal(<GenerateMnemonicModal onClose={reject} onSuccess={resolve} confirmStep />);
-        });
-        await call();
-    };
-
     useSearchParamsEffect(
         (params) => {
             if (!loading && params.get('action') === 'generate-recovery-phrase') {
-                // Should not prompt the confirm step since it's for new users
-                createModal(<GenerateMnemonicModal onSuccess={call} />);
+                setGenerateMnemonicModalOpen(true);
                 params.delete('action');
                 return params;
             }
@@ -64,141 +53,157 @@ const DataRecoverySection = () => {
         [loading]
     );
 
-    if (loading) {
-        return <Loader />;
-    }
-
     return (
-        <SettingsSection>
-            <SettingsParagraph>
-                {c('Info').t`After a password reset your data is locked in encrypted form to keep it safe.`}{' '}
-                {(() => {
-                    if (isMnemonicAvailable && isRecoveryFileAvailable) {
-                        return c('Info')
-                            .t`To decrypt and view your emails and other data, you need a recovery phrase or recovery file.`;
-                    }
+        <>
+            <DisableMnemonicModal {...disableMnemonicModal} />
+            <GenerateMnemonicModal confirmStep {...generateMnemonicModalToggle} />
+            <GenerateMnemonicModal confirmStep {...generateMnemonicModalButton} />
+            <GenerateMnemonicModal {...generateMnemonicModal} />
+            {loading ? (
+                <Loader />
+            ) : (
+                <SettingsSection>
+                    <SettingsParagraph>
+                        {c('Info').t`After a password reset your data is locked in encrypted form to keep it safe.`}{' '}
+                        {(() => {
+                            if (isMnemonicAvailable && isRecoveryFileAvailable) {
+                                return c('Info')
+                                    .t`To decrypt and view your emails and other data, you need a recovery phrase or recovery file.`;
+                            }
 
-                    if (isMnemonicAvailable) {
-                        return c('Info').t`To decrypt and view your emails and other data, you need a recovery phrase.`;
-                    }
+                            if (isMnemonicAvailable) {
+                                return c('Info')
+                                    .t`To decrypt and view your emails and other data, you need a recovery phrase.`;
+                            }
 
-                    if (isRecoveryFileAvailable) {
-                        return c('Info').t`To decrypt and view your emails and other data, you need a recovery file.`;
-                    }
+                            if (isRecoveryFileAvailable) {
+                                return c('Info')
+                                    .t`To decrypt and view your emails and other data, you need a recovery file.`;
+                            }
 
-                    return '';
-                })()}
-            </SettingsParagraph>
+                            return '';
+                        })()}
+                    </SettingsParagraph>
 
-            {isMnemonicAvailable && (
-                <>
-                    {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
-                        <p className="color-danger">
-                            <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
-                            {c('Warning')
-                                .t`Your recovery phrase is outdated. It can't recover new data if you reset your account again.`}
-                        </p>
-                    )}
+                    {isMnemonicAvailable && (
+                        <>
+                            {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
+                                <p className="color-danger">
+                                    <Icon
+                                        className="mr0-5 float-left mt0-25"
+                                        name="circle-exclamation-filled"
+                                        size={14}
+                                    />
+                                    {c('Warning')
+                                        .t`Your recovery phrase is outdated. It can't recover new data if you reset your account again.`}
+                                </p>
+                            )}
 
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="mnemonic-phrase-toggle">
-                                <span className="mr0-5">{c('label').t`Recovery phrase`}</span>
-                                <Info
-                                    title={c('Info')
-                                        .t`A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.`}
-                                />
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="flex-item-fluid pt0-5">
-                            {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ? (
-                                <Button color="norm" onClick={openGenerateMnemonicModal}>
-                                    {c('Action').t`Update recovery phrase`}
-                                </Button>
-                            ) : (
-                                <>
-                                    <DisableMnemonicModal {...disableMnemonicModal} />
-
-                                    <div className="flex flex-align-items-center mb1-5">
-                                        <Toggle
-                                            className="mr0-5"
-                                            loading={disableMnemonicModal.open || loadingMnemonic}
-                                            checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
-                                            id="passwordMnemonicResetToggle"
-                                            onChange={({ target: { checked } }) => {
-                                                if (checked) {
-                                                    setLoadingMnemonic(true);
-                                                    createModal(
-                                                        <GenerateMnemonicModal
-                                                            onClose={() => setLoadingMnemonic(false)}
-                                                            onSuccess={() => setLoadingMnemonic(false)}
-                                                        />
-                                                    );
-                                                } else {
-                                                    setDisableMnemonicModalOpen(true);
-                                                }
-                                            }}
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <label
+                                        className="pt0 on-mobile-mb0-5 text-semibold"
+                                        htmlFor="mnemonic-phrase-toggle"
+                                    >
+                                        <span className="mr0-5">{c('label').t`Recovery phrase`}</span>
+                                        <Info
+                                            title={c('Info')
+                                                .t`A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.`}
                                         />
-
-                                        <label
-                                            data-testid="account:recovery:mnemonicToggle"
-                                            htmlFor="passwordMnemonicResetToggle"
-                                            className="flex-item-fluid"
-                                        >
-                                            {c('Label').t`Allow recovery by recovery phrase`}
-                                        </label>
-                                    </div>
-
-                                    {user.MnemonicStatus === MNEMONIC_STATUS.SET && (
-                                        <Button shape="outline" onClick={openGenerateMnemonicModal}>
-                                            {c('Action').t`Generate new recovery phrase`}
+                                    </label>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight className="flex-item-fluid pt0-5">
+                                    {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ? (
+                                        <Button color="norm" onClick={() => setGenerateMnemonicModalButtonOpen(true)}>
+                                            {c('Action').t`Update recovery phrase`}
                                         </Button>
+                                    ) : (
+                                        <>
+                                            <div className="flex flex-align-items-center mb1-5">
+                                                <Toggle
+                                                    className="mr0-5"
+                                                    loading={
+                                                        disableMnemonicModal.open || generateMnemonicModalToggle.open
+                                                    }
+                                                    checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
+                                                    id="passwordMnemonicResetToggle"
+                                                    onChange={({ target: { checked } }) => {
+                                                        if (checked) {
+                                                            setGenerateMnemonicModalToggleOpen(true);
+                                                        } else {
+                                                            setDisableMnemonicModalOpen(true);
+                                                        }
+                                                    }}
+                                                />
+
+                                                <label
+                                                    data-testid="account:recovery:mnemonicToggle"
+                                                    htmlFor="passwordMnemonicResetToggle"
+                                                    className="flex-item-fluid"
+                                                >
+                                                    {c('Label').t`Allow recovery by recovery phrase`}
+                                                </label>
+                                            </div>
+
+                                            {user.MnemonicStatus === MNEMONIC_STATUS.SET && (
+                                                <Button
+                                                    shape="outline"
+                                                    onClick={() => setGenerateMnemonicModalButtonOpen(true)}
+                                                >
+                                                    {c('Action').t`Generate new recovery phrase`}
+                                                </Button>
+                                            )}
+                                        </>
                                     )}
-                                </>
-                            )}
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                </>
-            )}
-
-            {isMnemonicAvailable && isRecoveryFileAvailable && <hr className="mb2 mt2" />}
-
-            {isRecoveryFileAvailable && (
-                <>
-                    {hasOutdatedRecoveryFile && (
-                        <p className="color-danger">
-                            <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
-                            {c('Warning')
-                                .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}
-                        </p>
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                        </>
                     )}
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recoveryFile">
-                                <span className="mr0-5">{c('Title').t`Recovery file`}</span>
-                                <Info
-                                    title={c('Info')
-                                        .t`A recovery file lets you unlock and view your data after an account reset. `}
-                                />
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight>
-                            <ExportRecoveryFileButton
-                                className={classnames(['mr1-5', canRevokeRecoveryFiles && 'mb1'])}
-                                color="norm"
-                            >
-                                {hasOutdatedRecoveryFile
-                                    ? c('Action').t`Update recovery file`
-                                    : c('Action').t`Download recovery file`}
-                            </ExportRecoveryFileButton>
-                            {canRevokeRecoveryFiles && (
-                                <VoidRecoveryFilesButton className="mb1" color="danger" shape="underline" />
+
+                    {isMnemonicAvailable && isRecoveryFileAvailable && <hr className="mb2 mt2" />}
+
+                    {isRecoveryFileAvailable && (
+                        <>
+                            {hasOutdatedRecoveryFile && (
+                                <p className="color-danger">
+                                    <Icon
+                                        className="mr0-5 float-left mt0-25"
+                                        name="circle-exclamation-filled"
+                                        size={14}
+                                    />
+                                    {c('Warning')
+                                        .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}
+                                </p>
                             )}
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                </>
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
+                                    <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recoveryFile">
+                                        <span className="mr0-5">{c('Title').t`Recovery file`}</span>
+                                        <Info
+                                            title={c('Info')
+                                                .t`A recovery file lets you unlock and view your data after an account reset. `}
+                                        />
+                                    </label>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight>
+                                    <ExportRecoveryFileButton
+                                        className={classnames(['mr1-5', canRevokeRecoveryFiles && 'mb1'])}
+                                        color="norm"
+                                    >
+                                        {hasOutdatedRecoveryFile
+                                            ? c('Action').t`Update recovery file`
+                                            : c('Action').t`Download recovery file`}
+                                    </ExportRecoveryFileButton>
+                                    {canRevokeRecoveryFiles && (
+                                        <VoidRecoveryFilesButton className="mb1" color="danger" shape="underline" />
+                                    )}
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                        </>
+                    )}
+                </SettingsSection>
             )}
-        </SettingsSection>
+        </>
     );
 };
 
