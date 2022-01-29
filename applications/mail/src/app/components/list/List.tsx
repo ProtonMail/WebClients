@@ -8,6 +8,7 @@ import {
     useItemsDraggable,
     useModals,
     useIsMnemonicAvailable,
+    useModalState,
     useSettingsLink,
     useUser,
 } from '@proton/components';
@@ -112,6 +113,7 @@ const List = (
     const [user] = useUser();
     const onCompose = useOnCompose();
     const { createModal } = useModals();
+    const [mnemonicPromptModal, setMnemonicPromptModalOpen] = useModalState();
     const goToSettings = useSettingsLink();
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const { dismissed: getStartedDismissed, handleDismiss } = useContext(GetStartedChecklistContext);
@@ -207,38 +209,41 @@ const List = (
                                 !loading &&
                                 !(total > 1) &&
                                 !getStartedDismissed && (
-                                    <GetStartedChecklist
-                                        limitedMaxWidth={!isColumnMode(mailSettings)}
-                                        onDismiss={handleDismiss}
-                                        onItemSelection={(key: GetStartedChecklistKey) => () => {
-                                            /* eslint-disable default-case */
-                                            switch (key) {
-                                                case GetStartedChecklistKey.SendMessage: {
-                                                    onCompose({ action: MESSAGE_ACTIONS.NEW });
-                                                    break;
-                                                }
-
-                                                case GetStartedChecklistKey.MobileApp: {
-                                                    createModal(<ModalGetMobileApp />);
-                                                    break;
-                                                }
-
-                                                case GetStartedChecklistKey.RecoveryMethod: {
-                                                    if (displayMnemonicPrompt) {
-                                                        createModal(<MnemonicPromptModal />);
-                                                    } else {
-                                                        goToSettings('/recovery', undefined, true);
+                                    <>
+                                        <MnemonicPromptModal {...mnemonicPromptModal} />
+                                        <GetStartedChecklist
+                                            limitedMaxWidth={!isColumnMode(mailSettings)}
+                                            onDismiss={handleDismiss}
+                                            onItemSelection={(key: GetStartedChecklistKey) => () => {
+                                                /* eslint-disable default-case */
+                                                switch (key) {
+                                                    case GetStartedChecklistKey.SendMessage: {
+                                                        onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                        break;
                                                     }
-                                                    break;
-                                                }
 
-                                                case GetStartedChecklistKey.Import: {
-                                                    createModal(<ModalImportEmails />);
-                                                    break;
+                                                    case GetStartedChecklistKey.MobileApp: {
+                                                        createModal(<ModalGetMobileApp />);
+                                                        break;
+                                                    }
+
+                                                    case GetStartedChecklistKey.RecoveryMethod: {
+                                                        if (displayMnemonicPrompt) {
+                                                            setMnemonicPromptModalOpen(true);
+                                                        } else {
+                                                            goToSettings('/recovery', undefined, true);
+                                                        }
+                                                        break;
+                                                    }
+
+                                                    case GetStartedChecklistKey.Import: {
+                                                        createModal(<ModalImportEmails />);
+                                                        break;
+                                                    }
                                                 }
-                                            }
-                                        }}
-                                    />
+                                            }}
+                                        />
+                                    </>
                                 )}
 
                             {useLoadingElement && loadingElement}
