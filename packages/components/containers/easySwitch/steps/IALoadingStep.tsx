@@ -32,12 +32,18 @@ const IALoadingStep = ({
         }
 
         // translator: the variable here are numbers, e.g. "3 of 5 created"
-        const progressCopy = c('Loading info').ngettext(
-            msgid`${createdCalendars} of ${calendarsToBeCreated} created`,
-            `${createdCalendars} of ${calendarsToBeCreated} created`,
-            createdCalendars
-        );
-
+        const progressCopy =
+            calendarsToBeCreated === 1
+                ? c('Loading info').ngettext(
+                      msgid`${createdCalendars} of 1 created`,
+                      `${createdCalendars} of 1 created`,
+                      createdCalendars
+                  )
+                : c('Loading info').ngettext(
+                      msgid`${createdCalendars} of ${calendarsToBeCreated} created`,
+                      `${createdCalendars} of ${calendarsToBeCreated} created`,
+                      createdCalendars
+                  );
         if (isLoadingCreateCalendars) {
             return (
                 <>
