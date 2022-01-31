@@ -2,7 +2,7 @@ import { useCallback, useRef } from 'react';
 
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { TransferState, TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
-import { isTransferProgress, isTransferPending, isTransferActive } from '../../../utils/transfer';
+import { isTransferProgress, isTransferPending, isTransferActive, isTransferFinalizing } from '../../../utils/transfer';
 import { MAX_BLOCKS_PER_UPLOAD } from '../constants';
 import { UploadFileControls, UploadFolderControls } from '../interface';
 import { FileUpload, UpdateFilter, UpdateState, UpdateCallback } from './interface';
@@ -67,14 +67,19 @@ export default function useUploadControl(
      * state using the progresses.
      */
     const calculateFileUploadLoad = (): number => {
-        return fileUploads.filter(isTransferProgress).reduce((load, upload) => {
-            const remainingSize = (upload.file.size || 0) - (progresses.current[upload.id] || 0);
-            // Even if the file is empty, keep the minimum of blocks to 1,
-            // otherwise it would start too many threads.
-            const chunks = Math.max(Math.ceil(remainingSize / FILE_CHUNK_SIZE), 1);
-            const loadIncrease = Math.min(MAX_BLOCKS_PER_UPLOAD, chunks);
-            return load + loadIncrease;
-        }, 0);
+        // Count both progressing and finalizing transfers as both are still
+        // running the worker and using some load. Without counting finalizing
+        // state and the API being slow can keep around too many workers.
+        return fileUploads
+            .filter((transfer) => isTransferProgress(transfer) || isTransferFinalizing(transfer))
+            .reduce((load, upload) => {
+                const remainingSize = (upload.file.size || 0) - (progresses.current[upload.id] || 0);
+                // Even if the file is empty, keep the minimum of blocks to 1,
+                // otherwise it would start too many threads.
+                const chunks = Math.max(Math.ceil(remainingSize / FILE_CHUNK_SIZE), 1);
+                const loadIncrease = Math.min(MAX_BLOCKS_PER_UPLOAD, chunks);
+                return load + loadIncrease;
+            }, 0);
     };
 
     const pauseUploads = useCallback(
