@@ -3,36 +3,35 @@ import { c } from 'ttag';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
+import { UserType } from '@proton/shared/lib/interfaces';
 
 import {
     FeatureCode,
     Logo,
     PrivateAppContainer,
     PrivateHeader,
+    SectionConfig,
     useActiveBreakpoint,
+    useAddresses,
+    useCalendarSubscribeFeature,
     useFeatures,
+    useIsDataRecoveryAvailable,
+    useOrganization,
+    useRecoveryNotification,
     useToggle,
     useUser,
 } from '@proton/components';
+import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
-import { UserModel, UserType } from '@proton/shared/lib/interfaces';
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
+import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 
 import AccountSidebar from './AccountSidebar';
-import AccountDashboardSettings, { hasAccountDashboardPage } from '../containers/account/AccountDashboardSettings';
-import AccountSecuritySettings from '../containers/account/AccountSecuritySettings';
-import AccountRecoverySettings, { hasRecoverySettings } from '../containers/account/AccountRecoverySettings';
-import AccountAccountAndPasswordSettings from '../containers/account/AccountAccountAndPasswordSettings';
-import AccountLanguageAndTimeSettings from '../containers/account/AccountLanguageAndTimeSettings';
-import AccountEasySwitchSettings from '../containers/account/AccountEasySwitchSettings';
-import OrganizationMultiUserSupportSettings from '../containers/organization/OrganizationMultiUserSupportSettings';
-import OrganizationUsersAndAddressesSettings from '../containers/organization/OrganizationUsersAndAddressesSettings';
-import OrganizationKeysSettings from '../containers/organization/OrganizationKeysSettings';
-import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings';
+import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
+import { getRoutes } from './routes';
 
 const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
 const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
-const ContactsSettingsRouter = lazy(() => import('../containers/contacts/ContactsSettingsRouter'));
 const VpnSettingsRouter = lazy(() => import('../containers/vpn/VpnSettingsRouter'));
 const DriveSettingsRouter = lazy(() => import('../containers/drive/DriveSettingsRouter'));
 
@@ -40,51 +39,59 @@ const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
 const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
-const contactsSlug = getSlugFromApp(APPS.PROTONCONTACTS);
 
-const getDefaultRedirect = (user: UserModel) => {
-    if (hasAccountDashboardPage(user)) {
-        return '/dashboard';
+const getRoutePaths = (prefix: string, sectionConfigs: SectionConfig[]) => {
+    return sectionConfigs.map((section) => getSectionPath(prefix, section));
+};
+
+const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account']) => {
+    if (getIsSectionAvailable(accountRoutes.routes.dashboard)) {
+        return accountRoutes.routes.dashboard.to;
     }
-
-    if (hasRecoverySettings(user)) {
-        return '/recovery';
+    if (getIsSectionAvailable(accountRoutes.routes.recovery)) {
+        return accountRoutes.routes.recovery.to;
     }
-
-    return '/account-password';
+    return accountRoutes.routes.password.to;
 };
 
 const MainContainer = () => {
     const [user] = useUser();
+    const [addresses] = useAddresses();
+    const [organization, loadingOrganization] = useOrganization();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
     const [isBlurred] = useState(false);
 
     const features = useFeatures([
+        FeatureCode.SpyTrackerProtection,
+        FeatureCode.CalendarInviteLocale,
         FeatureCode.CalendarEmailNotification,
         FeatureCode.CalendarSubscription,
-        FeatureCode.CalendarInviteLocale,
     ]);
-    const loadingFeatures = features.some(({ loading }) => loading);
+    const [spyTrackerFeature, calendarInviteLocaleFeature] = features;
+    const { enabled, unavailable } = useCalendarSubscribeFeature();
+    const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
+    const loadingFeatures = features.some(({ loading }) => loading) || loadingDataRecovery;
+    const recoveryNotification = useRecoveryNotification(false);
+
+    const routes = getRoutes({
+        user,
+        addresses,
+        organization,
+        isUnsubscribeCalendarEnabled: enabled,
+        isSpyTrackerEnabled: spyTrackerFeature.feature?.Value === true,
+        isInviteSettingEnabled: calendarInviteLocaleFeature.feature?.Value === true,
+        isDataRecoveryAvailable,
+        recoveryNotification: recoveryNotification?.color,
+    });
 
     useEffect(() => {
         setExpand(false);
     }, [location.pathname, location.hash]);
 
-    const app = getAppFromPathnameSafe(location.pathname);
-
-    if (!app) {
-        return <Redirect to={`/${getSlugFromApp(DEFAULT_APP)}${getDefaultRedirect(user)}`} />;
-    }
-
-    if (REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(app) && user.Type === UserType.EXTERNAL) {
-        return <Redirect to={`/setup-internal-address?app=${app}`} />;
-    }
-
+    const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
     const appSlug = getSlugFromApp(app);
-
-    const redirect = `/${appSlug}${getDefaultRedirect(user)}`;
 
     /*
      * There's no logical app to return/go to from VPN settings since the
@@ -93,7 +100,7 @@ const MainContainer = () => {
      */
     const isVpn = app === APPS.PROTONVPN_SETTINGS;
     const toApp = isVpn ? APPS.PROTONACCOUNT : app;
-    const to = isVpn ? '/vpn' : '/';
+    const to = isVpn ? getSlugFromApp(APPS.PROTONVPN_SETTINGS) : '/';
 
     const logo = <Logo appName={app} to={to} toApp={toApp} target="_self" />;
 
@@ -107,8 +114,6 @@ const MainContainer = () => {
         />
     );
 
-    const canHaveOrganization = !user.isMember && !user.isSubUser && user.Type !== UserType.EXTERNAL;
-
     const sidebar = (
         <AccountSidebar
             app={app}
@@ -116,81 +121,74 @@ const MainContainer = () => {
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            canHaveOrganization={canHaveOrganization}
+            routes={routes}
         />
     );
+
+    // Switch can't reasonably traverse Router childrens. However we do want to place them in their own components
+    // and still have redirects working. This is a trick to short-circuit matches of these paths to specific routers.
+    // A better idea would be to use a prefix for account and org. /mail/account/dashboard etc.
+    const anyAccountAppRoute = getRoutePaths(`/${appSlug}`, Object.values(routes.account.routes));
+    const anyOrganizationAppRoute = getRoutePaths(
+        `/${appSlug}`,
+        Object.values(routes.organization.routes).filter((section) => {
+            // Filter out the domains section, the route clashes with the _same_ route in the mail router when
+            // it's not available and would take precedence in the routing. (E.g. for free users).
+            return !(section === routes.organization.routes.domains && !getIsSectionAvailable(section));
+        })
+    );
+
+    const redirect =
+        loadingOrganization || loadingFeatures ? (
+            <PrivateMainAreaLoading />
+        ) : (
+            <Redirect to={`/${appSlug}${getDefaultRedirect(routes.account)}`} />
+        );
+
+    if (REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(app) && user.Type === UserType.EXTERNAL) {
+        return <Redirect to={`/setup-internal-address?app=${app}`} />;
+    }
 
     return (
         <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
             <Switch>
-                {hasAccountDashboardPage(user) && (
-                    <Route path={`/${appSlug}/dashboard`}>
-                        <AccountDashboardSettings location={location} setActiveSection={() => {}} />
-                    </Route>
-                )}
-                {hasRecoverySettings(user) && (
-                    <Route path={`/${appSlug}/recovery`}>
-                        <AccountRecoverySettings location={location} setActiveSection={() => {}} />
-                    </Route>
-                )}
-                <Route path={`/${appSlug}/account-password`}>
-                    <AccountAccountAndPasswordSettings location={location} setActiveSection={() => {}} />
+                <Route path={anyAccountAppRoute}>
+                    <AccountSettingsRouter path={`/${appSlug}`} accountAppRoutes={routes.account} redirect={redirect} />
                 </Route>
-                <Route path={`/${appSlug}/language-time`}>
-                    <AccountLanguageAndTimeSettings location={location} setActiveSection={() => {}} />
+                <Route path={anyOrganizationAppRoute}>
+                    <OrganizationSettingsRouter
+                        path={`/${appSlug}`}
+                        organizationAppRoutes={routes.organization}
+                        redirect={redirect}
+                    />
                 </Route>
-                <Route path={`/${appSlug}/easy-switch`}>
-                    <AccountEasySwitchSettings location={location} setActiveSection={() => {}} />
-                </Route>
-                <Route path={`/${appSlug}/security`}>
-                    <AccountSecuritySettings location={location} setActiveSection={() => {}} />
-                </Route>
-                {canHaveOrganization && (
-                    <Route path={`/${appSlug}/multi-user-support`}>
-                        <OrganizationMultiUserSupportSettings location={location} />
-                    </Route>
-                )}
-                {canHaveOrganization && (
-                    <Route path={`/${appSlug}/domain-names`}>
-                        <MailDomainNamesSettings location={location} />
-                    </Route>
-                )}
-                {canHaveOrganization && (
-                    <Route path={`/${appSlug}/organization-keys`}>
-                        <OrganizationKeysSettings location={location} />
-                    </Route>
-                )}
-                {canHaveOrganization && (
-                    <Route path={`/${appSlug}/users-addresses`}>
-                        <OrganizationUsersAndAddressesSettings location={location} />
-                    </Route>
-                )}
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <MailSettingsRouter redirect={redirect} />
+                        <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <CalendarSettingsRouter redirect={redirect} user={user} loadingFeatures={loadingFeatures} />
-                    </Suspense>
-                </Route>
-                <Route path={`/${contactsSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <ContactsSettingsRouter redirect={redirect} />
+                        <CalendarSettingsRouter
+                            user={user}
+                            loadingFeatures={loadingFeatures}
+                            calendarAppRoutes={routes.calendar}
+                            calendarSubscribeUnavailable={unavailable}
+                            redirect={redirect}
+                        />
                     </Suspense>
                 </Route>
                 <Route path={`/${vpnSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <VpnSettingsRouter redirect={redirect} />
+                        <VpnSettingsRouter vpnAppRoutes={routes.vpn} redirect={redirect} />
                     </Suspense>
                 </Route>
                 <Route path={`/${driveSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <DriveSettingsRouter redirect={redirect} />
+                        <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
                     </Suspense>
                 </Route>
-                <Redirect to={redirect} />
+                {redirect}
             </Switch>
         </PrivateAppContainer>
     );
