@@ -61,7 +61,7 @@ const DomainsSectionInternal = () => {
             </div>
             {!domains.length ? null : <DomainsTable domains={domains} domainsAddressesMap={domainsAddressesMap} />}
             <div className="mb1 color-weak">
-                {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, UsedDomains)}
+                {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, MaxDomains)}
             </div>
         </SettingsSectionWide>
     );
