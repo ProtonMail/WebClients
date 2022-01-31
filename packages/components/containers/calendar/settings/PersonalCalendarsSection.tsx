@@ -7,7 +7,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 
-import { AlertModal, Button } from '../../../components';
+import { AlertModal, Button, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { CalendarModal } from '../calendarModal/CalendarModal';
@@ -55,9 +55,15 @@ const PersonalCalendarsSection = ({
         deleteCalendarModal: { isOpen: false },
     });
 
+    const [{ open: isCalendarModalOpen, onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] =
+        useModalState();
+    const [{ open: isExportModalOpen, onExit: onExitExportModal, ...exportModalProps }, setIsExportModalOpen] =
+        useModalState();
+
     const defaultCalendarID = defaultCalendar?.ID;
 
     const handleCreate = () => {
+        setIsCalendarModalOpen(true);
         updateModal('calendarModal', {
             isOpen: true,
             props: { activeCalendars, defaultCalendarID },
@@ -65,6 +71,7 @@ const PersonalCalendarsSection = ({
     };
 
     const handleEdit = (calendar: Calendar) => {
+        setIsCalendarModalOpen(true);
         updateModal('calendarModal', {
             isOpen: true,
             props: { calendar },
@@ -138,6 +145,7 @@ const PersonalCalendarsSection = ({
     };
 
     const handleExport = (exportCalendar: Calendar) => {
+        setIsExportModalOpen(true);
         updateModal('exportCalendarModal', {
             isOpen: true,
             props: { exportCalendar },
@@ -168,14 +176,33 @@ const PersonalCalendarsSection = ({
             </AlertModal>
             {!!exportCalendarModal.props?.exportCalendar && (
                 <ExportModal
+                    {...exportCalendarModal}
+                    {...exportModalProps}
                     calendar={exportCalendarModal.props?.exportCalendar}
-                    isOpen={exportCalendarModal.isOpen}
-                    onClose={() => closeModal('exportCalendarModal')}
+                    isOpen={isExportModalOpen}
+                    onExit={() => {
+                        onExitCalendarModal?.();
+                        updateModal('exportCalendarModal', {
+                            isOpen: false,
+                            props: undefined,
+                        });
+                    }}
                 />
             )}
 
-            {!!calendarModal.props && calendarModal.isOpen && (
-                <CalendarModal {...calendarModal.props} isOpen onClose={() => closeModal('calendarModal')} />
+            {!!calendarModal.props && (
+                <CalendarModal
+                    {...calendarModal.props}
+                    {...calendarModalProps}
+                    isOpen={isCalendarModalOpen}
+                    onExit={() => {
+                        onExitCalendarModal?.();
+                        updateModal('calendarModal', {
+                            isOpen: false,
+                            props: undefined,
+                        });
+                    }}
+                />
             )}
 
             <CalendarsSection

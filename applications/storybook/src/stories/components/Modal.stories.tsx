@@ -14,6 +14,7 @@ import {
     InputFieldTwo,
     useModalState,
     ModalProps,
+    BasicModal,
     Form,
 } from '@proton/components';
 
@@ -421,6 +422,35 @@ export const AlertWithOnlyOneButton = () => {
                     blanditiis quos?
                 </p>
             </AlertModal>
+        </div>
+    );
+};
+
+export const Basic = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div className="text-center">
+            <Button onClick={() => setOpen(true)}>Open Basic Modal with only one Button</Button>
+            <BasicModal
+                title="Title"
+                isOpen={open}
+                onClose={() => setOpen(false)}
+                footer={
+                    <>
+                        <Button onClick={() => setOpen(false)}>I understand</Button>
+                        <Button color="norm" onClick={() => setOpen(false)}>
+                            I do not understand
+                        </Button>
+                    </>
+                }
+            >
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
+                    obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
+                    blanditiis quos?
+                </p>
+            </BasicModal>
         </div>
     );
 };

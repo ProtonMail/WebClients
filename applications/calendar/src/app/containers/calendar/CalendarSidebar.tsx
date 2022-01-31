@@ -19,6 +19,7 @@ import {
     DropdownMenuButton,
     useNotifications,
     useCalendarSubscribeFeature,
+    useModalState,
 } from '@proton/components';
 import { c } from 'ttag';
 import { updateCalendar } from '@proton/shared/lib/api/calendars';
@@ -63,7 +64,8 @@ const CalendarSidebar = ({
 
     const { createNotification } = useNotifications();
 
-    const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false);
+    const [{ onClose, open, ...modalProps }, setOpen] = useModalState();
+
     const [isSubscribeCalendarModalOpen, setIsSubscribeCalendarModalOpen] = useState(false);
     const [isLimitReachedModalCopy, setIsLimitReachedModalCopy] = useState<Nullable<string>>(null);
 
@@ -94,7 +96,7 @@ const CalendarSidebar = ({
 
     const handleCreatePersonalCalendar = async () => {
         if (canAddPersonalCalendars) {
-            setIsCalendarModalOpen(true);
+            setOpen(true);
         } else {
             setIsLimitReachedModalCopy(
                 c('Personal calendar limit reached modal body')
@@ -238,15 +240,14 @@ const CalendarSidebar = ({
             primary={primaryAction}
             version={<CalendarSidebarVersion />}
         >
-            {isCalendarModalOpen && (
-                <CalendarModal
-                    isOpen
-                    onClose={() => setIsCalendarModalOpen(false)}
-                    activeCalendars={personalCalendars.filter(getIsCalendarActive)}
-                    defaultCalendarID={calendarUserSettings.DefaultCalendarID}
-                    onCreateCalendar={onCreateCalendar}
-                />
-            )}
+            <CalendarModal
+                isOpen={open}
+                onClose={onClose}
+                activeCalendars={personalCalendars.filter(getIsCalendarActive)}
+                defaultCalendarID={calendarUserSettings.DefaultCalendarID}
+                onCreateCalendar={onCreateCalendar}
+                {...modalProps}
+            />
 
             <SubscribeCalendarModal
                 isOpen={isSubscribeCalendarModalOpen}

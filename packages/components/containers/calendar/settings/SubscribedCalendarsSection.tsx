@@ -7,7 +7,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 
-import { AlertModal, Button, Href } from '../../../components';
+import { AlertModal, Button, Href, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { CalendarModal } from '../calendarModal/CalendarModal';
 import useSubscribedCalendars from '../../../hooks/useSubscribedCalendars';
@@ -44,6 +44,9 @@ const SubscribedCalendarsSection = ({
     const [loadingMap, setLoadingMap] = useState({});
     const { subscribedCalendars, loading } = useSubscribedCalendars(calendars);
 
+    const [{ open: isCalendarModalOpen, onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] =
+        useModalState();
+
     const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>();
 
     const { modalsMap, updateModal, closeModal } = useModalsMap<ModalsMap>({
@@ -57,6 +60,7 @@ const SubscribedCalendarsSection = ({
     };
 
     const handleEdit = (editCalendar: Calendar) => {
+        setIsCalendarModalOpen(true);
         updateModal('calendarModal', { isOpen: true, props: { editCalendar } });
     };
 
@@ -115,11 +119,15 @@ const SubscribedCalendarsSection = ({
                 isOpen={subscribeCalendarModal.isOpen}
                 onClose={() => closeModal('subscribeCalendarModal')}
             />
-            {calendarModal.isOpen && !!calendarModal.props?.editCalendar && (
+            {calendarModal.props?.editCalendar && (
                 <CalendarModal
-                    isOpen
+                    {...calendarModalProps}
+                    isOpen={isCalendarModalOpen}
                     calendar={calendarModal.props.editCalendar}
-                    onClose={() => closeModal('calendarModal')}
+                    onExit={() => {
+                        onExitCalendarModal?.();
+                        updateModal('calendarModal', { isOpen: true, props: undefined });
+                    }}
                 />
             )}
             <CalendarsSection
