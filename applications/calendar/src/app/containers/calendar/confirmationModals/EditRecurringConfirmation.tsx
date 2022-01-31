@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Alert, Button, ModalTwo, ModalTwoContent, ModalTwoHeader, ModalTwoFooter } from '@proton/components';
+import { Alert, Button, BasicModal } from '@proton/components';
 import { c } from 'ttag';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
@@ -176,13 +176,14 @@ const EditRecurringConfirmModal = ({
         const alertText = c('Info')
             .t`The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.`;
         return (
-            <ModalTwo size="small" open={isOpen}>
-                <ModalTwoHeader title={c('Info').t`Update recurring event`} />
-                <ModalTwoContent>{alertText}</ModalTwoContent>
-                <ModalTwoFooter>
-                    <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                </ModalTwoFooter>
-            </ModalTwo>
+            <BasicModal
+                title={c('Info').t`Update recurring event`}
+                footer={<Button onClick={onClose}>{c('Action').t`Cancel`}</Button>}
+                size="small"
+                isOpen={isOpen}
+            >
+                {alertText}
+            </BasicModal>
         );
     }
 
@@ -191,36 +192,40 @@ const EditRecurringConfirmModal = ({
     };
 
     return (
-        <ModalTwo onSubmit={handleSubmit} onClose={onClose} open={isOpen}>
-            <ModalTwoHeader title={title} />
-            <ModalTwoContent>
-                <div className="mb1">{alertText}</div>
-                {types.length > 1 ? (
-                    <SelectRecurringType
-                        types={types}
-                        type={type}
-                        setType={setType}
-                        data-test-id="update-recurring-popover:update-option-radio"
-                    />
-                ) : null}
-                {recurringWarningText ? (
-                    <Alert className="mb1" type="warning">
-                        {recurringWarningText}
-                    </Alert>
-                ) : null}
-                {rruleWarningText ? (
-                    <Alert className="mb1" type="warning">
-                        {rruleWarningText}
-                    </Alert>
-                ) : null}
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" onClick={handleSubmit}>
-                    {confirm}
-                </Button>
-            </ModalTwoFooter>
-        </ModalTwo>
+        <BasicModal
+            title={title}
+            footer={
+                <>
+                    <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                    <Button color="norm" onClick={handleSubmit}>
+                        {confirm}
+                    </Button>
+                </>
+            }
+            onSubmit={handleSubmit}
+            onClose={onClose}
+            isOpen={isOpen}
+        >
+            <div className="mb1">{alertText}</div>
+            {types.length > 1 ? (
+                <SelectRecurringType
+                    types={types}
+                    type={type}
+                    setType={setType}
+                    data-test-id="update-recurring-popover:update-option-radio"
+                />
+            ) : null}
+            {recurringWarningText ? (
+                <Alert className="mb1" type="warning">
+                    {recurringWarningText}
+                </Alert>
+            ) : null}
+            {rruleWarningText ? (
+                <Alert className="mb1" type="warning">
+                    {rruleWarningText}
+                </Alert>
+            ) : null}
+        </BasicModal>
     );
 };
 

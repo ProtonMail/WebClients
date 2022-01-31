@@ -3,14 +3,15 @@ import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/add
 # Modal
 
 ```javascript
-import { ModalTwo, ModalTwoHeader, ModalTwoTitle, ModalTwoContent, ModalTwoFooter } from '@proton/components'
+import { ModalTwo, ModalTwoHeader, ModalTwoTitle, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 ```
 
 Modals are made of multiple composite components, namely:
-- `Modal`
-- `ModalHeader`
-- `ModalContent`
-- `ModalFooter`
+
+-   `Modal`
+-   `ModalHeader`
+-   `ModalContent`
+-   `ModalFooter`
 
 ### Size
 
@@ -50,8 +51,7 @@ You can add up to two icon button to the header of a modal.
 
 ### Scrollable content
 
-When a Modal's content is so large that it exceeds the Modal's allowed maximum height (depending of course also on its width) it will become scrollable.
-This is easy to see in this example as there is a lot of content, however this can also be seen if you reduce the viewport height by a lot.
+When a Modal's content is so large that it exceeds the Modal's allowed maximum height (depending of course also on its width) it will become scrollable. This is easy to see in this example as there is a lot of content, however this can also be seen if you reduce the viewport height by a lot.
 
 <Canvas>
     <Story id="components-modal--a-lot-of-content" />
@@ -75,8 +75,7 @@ You can exchange the root element used for the `Modal` with an html `form` tag b
 
 ### AlertModal
 
-The `AlertModal` is a special variant of the `Modal` component.
-It is not composite, meant not to be too flexible and comes with a comparatively rudimentary props api, allowing only the passing of some templating props.
+The `AlertModal` is a special variant of the `Modal` component. It is not composite, meant not to be too flexible and comes with a comparatively rudimentary props api, allowing only the passing of some templating props.
 
 <Canvas>
     <Story id="components-modal--alert" />
@@ -84,6 +83,16 @@ It is not composite, meant not to be too flexible and comes with a comparatively
 
 <Canvas>
     <Story id="components-modal--alert-with-only-one-button" />
+</Canvas>
+
+### BasicModal
+
+Similarly to `AlertModal`, `BasicModal` is a special variant of the `Modal` component. It is not composite, meant not to be too flexible and comes with a comparatively rudimentary props api, allowing only the passing of some templating props.
+
+It also uses `useModalState` internally.
+
+<Canvas>
+    <Story id="components-modal--basic" />
 </Canvas>
 
 The props for `ModalContent` & `ModalFooter` aren't listed here because they don't possess any proprietary props, only the native ones of their respective underlying root dom-node.
