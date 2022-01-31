@@ -445,10 +445,12 @@ const InteractiveCalendarView = ({
 
     const getUpdateModel = ({
         viewEventData: { calendarData, eventData, eventReadResult, eventRecurrence },
+        duplicateFromDisabledCalendarData,
         emailNotificationsEnabled,
         partstat,
     }: {
         viewEventData: CalendarViewEventData;
+        duplicateFromDisabledCalendarData?: { calendar: Calendar };
         emailNotificationsEnabled?: boolean;
         partstat?: ICAL_ATTENDEE_STATUS;
     }): EventModel | undefined => {
@@ -462,7 +464,8 @@ const InteractiveCalendarView = ({
             return;
         }
         const initialDate = getInitialDate();
-        const { Members = [], CalendarSettings } = readCalendarBootstrap(calendarData.ID);
+        const targetCalendar = duplicateFromDisabledCalendarData?.calendar || calendarData;
+        const { Members = [], CalendarSettings } = readCalendarBootstrap(targetCalendar.ID);
         const [Member, Address] = getMemberAndAddress(addresses, Members, eventData.Author);
 
         const [{ veventComponent, verificationStatus, selfAddressData }, personalMap] = eventReadResult.result;
@@ -473,7 +476,7 @@ const InteractiveCalendarView = ({
         const createResult = getInitialModel({
             initialDate,
             CalendarSettings,
-            Calendar: calendarData,
+            Calendar: targetCalendar,
             Calendars: activeCalendars,
             Addresses: addresses,
             Members,
@@ -488,14 +491,19 @@ const InteractiveCalendarView = ({
         const originalOrOccurrenceEvent = eventRecurrence
             ? withOccurrenceEvent(veventComponent, eventRecurrence)
             : veventComponent;
+        // when duplicating from a disabled calendar, we artificially changed the calendar. In that case we need to retrieve the old member
+        const existingAlarmMember = duplicateFromDisabledCalendarData
+            ? getMemberAndAddress(addresses, readCalendarBootstrap(calendarData.ID).Members, eventData.Author)[0]
+            : Member;
         const eventResult = getExistingEvent({
             veventComponent: originalOrOccurrenceEvent,
-            veventValarmComponent: personalMap[Member.ID]?.veventComponent,
+            veventValarmComponent: personalMap[existingAlarmMember?.ID]?.veventComponent,
             veventComponentParentPartial,
             tzid,
             isOrganizer: !!eventData.IsOrganizer,
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-            selfAddressData,
+            // When duplicating from a disabled calendar, we need to reset the self address data (otherwise we would have disabled address data in there)
+            selfAddressData: duplicateFromDisabledCalendarData ? { selfAddress: Address } : selfAddressData,
         });
         if (partstat) {
             return {
@@ -1301,14 +1309,13 @@ const InteractiveCalendarView = ({
 
         const viewEventData = { ...targetEvent.data };
 
-        if (isDuplication && getIsCalendarDisabled(viewEventData.calendarData)) {
-            if (!defaultCalendar) {
-                throw new Error('Invalid calendar data');
-            }
-            viewEventData.calendarData = defaultCalendar;
-        }
+        const duplicateFromDisabledCalendarData =
+            isDuplication && getIsCalendarDisabled(viewEventData.calendarData) && defaultCalendar
+                ? { calendar: defaultCalendar }
+                : undefined;
         const newTemporaryModel = getUpdateModel({
             viewEventData,
+            duplicateFromDisabledCalendarData,
             emailNotificationsEnabled,
         });
 
@@ -1589,10 +1596,6 @@ const InteractiveCalendarView = ({
                                                   ...tmpData,
                                                   organizer: undefined,
                                                   isOrganizer: true,
-                                                  hasTouchedNotifications: {
-                                                      partDay: !tmpData.isAllDay,
-                                                      fullDay: tmpData.isAllDay,
-                                                  },
                                               },
                                               isDuplicating: true,
                                           });
