@@ -19,7 +19,10 @@ import { SettingsSectionWide, SettingsParagraph, UpgradeBanner } from '../accoun
 
 const DomainsSectionText = () => {
     return (
-        <SettingsParagraph learnMoreUrl="https://protonmail.com/support/categories/custom-domains/">
+        <SettingsParagraph
+            className="text-cut"
+            learnMoreUrl="https://protonmail.com/support/categories/custom-domains/"
+        >
             {c('Message')
                 .t`Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.`}
         </SettingsParagraph>
