@@ -28,6 +28,7 @@ const AskAuthModal = ({ onClose, onSubmit, error, loading, ...rest }: Props) => 
             submit={c('Label').t`Submit`}
             error={error}
             small
+            noTitleEllipsis
             loading={loading || isLoadingAuth}
             {...rest}
         >
