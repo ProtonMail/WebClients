@@ -4,7 +4,7 @@ import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import * as React from 'react';
-import { Button, ModalTwo, ModalTwoContent, ModalTwoHeader, ModalTwoFooter } from '@proton/components';
+import { Button, BasicModal } from '@proton/components';
 import { c } from 'ttag';
 import { CleanSendIcsActionData, INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 
@@ -252,25 +252,24 @@ const SendWithErrorsConfirmationModal = ({
     );
 
     return (
-        <ModalTwo
+        <BasicModal
             title={title}
+            footer={
+                <>
+                    {close}
+                    {submit}
+                </>
+            }
             onSubmit={handleConfirm}
             size="large"
             fullscreenOnMobile
             onClose={onClose}
-            open={isOpen}
+            isOpen={isOpen}
         >
-            <ModalTwoHeader title={title} />
-            <ModalTwoContent>
-                <div className="mb1">{warningText}</div>
-                <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
-                {alertText && <div>{alertText}</div>}
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                {close}
-                {submit}
-            </ModalTwoFooter>
-        </ModalTwo>
+            <div className="mb1">{warningText}</div>
+            <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
+            {alertText && <div>{alertText}</div>}
+        </BasicModal>
     );
 };
 

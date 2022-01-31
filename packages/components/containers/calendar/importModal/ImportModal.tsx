@@ -16,7 +16,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, IMPORT_STEPS, ImportCalendarModel, ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
 import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, onlyDragFiles, Button } from '../../../components';
+import { onlyDragFiles, Button, BasicModal } from '../../../components';
 
 import { useApi, useEventManager, useCalendarEmailNotificationsFeature } from '../../../hooks';
 
@@ -30,8 +30,9 @@ interface Props {
     defaultCalendar: Calendar;
     calendars: Calendar[];
     onClose?: () => void;
+    onExit?: () => void;
     files?: File[];
-    isOpen: boolean;
+    isOpen?: boolean;
 }
 
 const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
@@ -45,7 +46,7 @@ const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
     loading: false,
 });
 
-const ImportModal = ({ calendars, defaultCalendar, files, isOpen, onClose }: Props) => {
+const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClose, onExit }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
@@ -78,11 +79,13 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen, onClose }: Pro
         }
     };
 
-    const { content,
+    const {
+        content,
         close = <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
         submit,
         title = c('Title').t`Import events`,
-        ...modalProps } = (() => {
+        ...modalProps
+    } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
             const handleClear = () => {
                 setModel(getInitialState(model.calendar));
@@ -278,14 +281,24 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen, onClose }: Pro
     }, []);
 
     return (
-        <ModalTwo open={isOpen} size="large" className="w100" fullscreenOnMobile onClose={onClose} {...modalProps}>
-            <ModalTwoHeader title={title} />
-            <ModalTwoContent>{content}</ModalTwoContent>
-            <ModalTwoFooter>
-                {close}
-                {submit}
-            </ModalTwoFooter>
-        </ModalTwo>
+        <BasicModal
+            title={title}
+            footer={
+                <>
+                    {close}
+                    {submit}
+                </>
+            }
+            isOpen={isOpen}
+            size="large"
+            className="w100"
+            fullscreenOnMobile
+            onClose={onClose}
+            onExit={onExit}
+            {...modalProps}
+        >
+            {content}
+        </BasicModal>
     );
 };
 
