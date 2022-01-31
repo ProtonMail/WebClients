@@ -67,9 +67,9 @@ export default function useUploadControl(
      * state using the progresses.
      */
     const calculateFileUploadLoad = (): number => {
-        // Count both progressing and finalizing transfers as both are still
-        // running the worker and using some load. Without counting finalizing
-        // state and the API being slow can keep around too many workers.
+        // Count both in-progress and finalizing transfers as the ones still
+        // running the worker and taking up some load. Without counting finalizing
+        // state and with the API being slow, we can keep around too many workers.
         return fileUploads
             .filter((transfer) => isTransferProgress(transfer) || isTransferFinalizing(transfer))
             .reduce((load, upload) => {
