@@ -63,7 +63,7 @@ const PayPalModal = (props: any) => {
     };
 
     return (
-        <FormModal title={c('Title').t`Add PayPal payment method`} small footer={null} {...props}>
+        <FormModal noTitleEllipsis title={c('Title').t`Add PayPal payment method`} small footer={null} {...props}>
             {loading ? (
                 <>
                     <p className="text-center">{c('Info').t`Please verify payment at the new tab which was opened.`}</p>
