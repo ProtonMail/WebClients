@@ -1,21 +1,45 @@
-import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-router-dom';
+import { ReactNode } from 'react';
+import { Route, Switch, useRouteMatch, useLocation } from 'react-router-dom';
+import {
+    OpenVPNConfigurationSection,
+    OpenVPNCredentialsSection,
+    PrivateMainSettingsArea,
+    ProtonVPNClientsSection,
+} from '@proton/components';
+import { getSectionPath } from '@proton/components/containers/layout/helper';
 
-import VpnDownloadSettings from './VpnDownloadSettings';
-import VpnOpenVpnIKEv2Settings from './VpnOpenVpnIKEv2Settings';
+import VpnUpgradeSection from './VpnUpgradeSection';
+import { getVpnAppRoutes } from './routes';
 
-const VpnSettingsRouter = ({ redirect }: { redirect: string }) => {
+const VpnSettingsRouter = ({
+    vpnAppRoutes,
+    redirect,
+}: {
+    vpnAppRoutes: ReturnType<typeof getVpnAppRoutes>;
+    redirect?: ReactNode;
+}) => {
     const { path } = useRouteMatch();
     const location = useLocation();
 
+    const {
+        routes: { downloads, openvpn },
+    } = vpnAppRoutes;
+
     return (
         <Switch>
-            <Route path={`${path}/vpn-apps`}>
-                <VpnDownloadSettings location={location} />
+            <Route path={getSectionPath(path, downloads)}>
+                <PrivateMainSettingsArea location={location} config={downloads}>
+                    <VpnUpgradeSection />
+                    <ProtonVPNClientsSection />
+                </PrivateMainSettingsArea>
             </Route>
-            <Route path={`${path}/open-vpn-ike-v2`}>
-                <VpnOpenVpnIKEv2Settings location={location} />
+            <Route path={getSectionPath(path, openvpn)}>
+                <PrivateMainSettingsArea location={location} config={openvpn}>
+                    <OpenVPNCredentialsSection app="account" />
+                    <OpenVPNConfigurationSection />
+                </PrivateMainSettingsArea>
             </Route>
-            <Redirect to={redirect} />
+            {redirect}
         </Switch>
     );
 };

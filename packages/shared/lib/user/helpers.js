@@ -4,7 +4,7 @@ const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 
 export const hasPaidMail = ({ Subscribed }) => Subscribed & 1;
 export const hasPaidVpn = ({ Subscribed }) => Subscribed & 4;
-export const isPaid = ({ Subscribed }) => Subscribed;
+export const isPaid = ({ Subscribed }) => !!Subscribed;
 export const isPrivate = ({ Private }) => Private === 1;
 export const isFree = (user) => !isPaid(user);
 export const isAdmin = ({ Role }) => Role === ADMIN_ROLE;

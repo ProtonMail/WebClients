@@ -1,7 +1,7 @@
-import { HTMLAttributes, ReactNode, useEffect, useRef } from 'react';
+import { ComponentPropsWithoutRef, ReactNode, useEffect, useRef } from 'react';
 import { SettingsSectionTitle } from '../account';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
     className?: string;
     observer?: IntersectionObserver;
@@ -9,7 +9,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
 }
 
-const SubSettingsSection = ({ id, observer, title, children, ...rest }: Props) => {
+const SubSettingsSection = ({ id, observer, title, children, ...rest }: SubSettingsSectionProps) => {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

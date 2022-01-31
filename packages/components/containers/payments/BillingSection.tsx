@@ -9,7 +9,7 @@ import { Cycle } from '@proton/shared/lib/interfaces';
 import { Loader, Time } from '../../components';
 import { useUser, useSubscription, useOrganization, usePlans } from '../../hooks';
 import { classnames } from '../../helpers';
-import { SettingsParagraph, SettingsSection } from '../account';
+import { SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { formatPlans } from './subscription/helpers';
 import DiscountBadge from './DiscountBadge';
@@ -37,24 +37,11 @@ const getBillingText = (cycle: Cycle, periodEnd: number) => {
 const mailAppName = getAppName(APPS.PROTONMAIL);
 const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
 
-interface Props {
-    permission?: boolean;
-}
-const BillingSection = ({ permission }: Props) => {
+const BillingSection = () => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
     const [plans = [], loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-
-    if (!permission) {
-        return (
-            <SettingsSection>
-                <SettingsParagraph>
-                    {c('Info').t`There are no billing details available for your current subscription.`}
-                </SettingsParagraph>
-            </SettingsSection>
-        );
-    }
 
     if (loadingSubscription || loadingPlans || loadingOrganization) {
         return <Loader />;
