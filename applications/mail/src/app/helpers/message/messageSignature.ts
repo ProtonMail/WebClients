@@ -1,8 +1,8 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { PM_SIGNATURE } from '@proton/shared/lib/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { message } from '@proton/shared/lib/sanitize';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
 import { parseInDiv, isHTMLEmpty } from '../dom';
@@ -20,7 +20,7 @@ export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
  * Preformat the protonMail signature
  */
 const getProtonSignature = (mailSettings: Partial<MailSettings> = {}) =>
-    mailSettings.PMSignature === 0 ? '' : PM_SIGNATURE;
+    mailSettings.PMSignature === 0 ? '' : getProtonMailSignature();
 
 /**
  * Generate a space tag, it can be hidden from the UX via a className
