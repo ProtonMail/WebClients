@@ -72,7 +72,7 @@ with a link -> https://protonmail.com/`;
 
 ${Signature}
 
-Sent with ProtonMail Secure Email.
+Sent with ProtonMail secure email.
 
 ------- Original Message -------
 
