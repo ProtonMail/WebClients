@@ -248,6 +248,7 @@ export default function useUploadFile() {
             MAX_UPLOAD_BLOCKS_LOAD
         );
 
+        let finalizeCalled = false;
         // Keep promise reference so when upload is canceled but init is not
         // finished yet, onError handler can wait for the creation to get ID
         // with created file or revision to do proper clean-up.
@@ -326,6 +327,8 @@ export default function useUploadFile() {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                     }
 
+                    finalizeCalled = true;
+
                     const addressKeyInfo = await addressKeyInfoPromise;
                     const xattr = await ecryptFileExtendedAttributes(
                         file,
@@ -364,7 +367,19 @@ export default function useUploadFile() {
                 },
                 5
             ),
-            onError: async () => {
+            onError: async (err) => {
+                // If the upload was aborted but we already called finalize
+                // to commit revision, we cannot delete the revision. API
+                // does not support aborting of request, so the request will
+                // finish anyway. And calling two at the same time can cause
+                // confusing errors "file not found".
+                // Other options would be to wait for finalize to finish and
+                // then to delete it right away. But thats more complex and
+                // probably this is safer option to do.
+                if (finalizeCalled && err.name === 'AbortError') {
+                    return;
+                }
+
                 const createdFileRevision = await createdFileRevisionPromise;
                 try {
                     if (createdFileRevision) {
