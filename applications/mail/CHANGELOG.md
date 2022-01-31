@@ -1,3 +1,22 @@
+## Release 4.0.16 - Feb 16, 2022
+
+### Improvements
+
+-   The underlying technology of the content editor inside the composer has been completely reworked
+-   Added the ability to export a single contact group from the contact group view
+
+### Bug fixes
+
+-   Fixed an issue where particular pieces of text would not be displayed in forwarded messages if inserted after a certain sequence of characters (e.g. three dashes in a row)
+-   Fixed an issue where under rare circumstances, some messages would not load on the right side when in column layout
+-   Fixed an issue where sometimes the cursor would jump back to the beginning of the text already typed when inside the composer
+-   Fixed an issue where the '-' character would not be displayed correctly in the "Original message" separator within a forwarded/replied to email
+-   Fixed an issue where inline images would sometimes not load immediately when replying to a forwarded message and open the newly sent message right away
+-   Fixed an issue where a "The address might be misspelled" error message would display for valid email addresses in the composer
+-   Fixed an issue where a "URL is not valid" error would appear for particular remote images in some newsletters
+-   Fixed an issue where the "Show original message" keyboard shortcut would not be responsive in forwarded/replied to messages
+-   Various localization and translation fixes
+
 ## Release 4.0.15 - Feb 2, 2022
 
 ### Improvements
