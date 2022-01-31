@@ -90,6 +90,7 @@ const PaymentVerificationModal = ({
             onSubmit={() => handleSubmit(onProcess())}
             onClose={handleCancel}
             small
+            noTitleEllipsis
             hasClose={false}
             footer={
                 step === STEPS.REDIRECT ? (
