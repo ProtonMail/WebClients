@@ -1,17 +1,32 @@
-import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-router-dom';
+import { ReactNode } from 'react';
+import { Route, Switch, useRouteMatch, useLocation } from 'react-router-dom';
+import { PrivateMainSettingsArea, ThemesSection } from '@proton/components';
+import { getSectionPath } from '@proton/components/containers/layout/helper';
 
-import DriveGeneralSettings from './DriveGeneralSettings';
+import { getDriveAppRoutes } from './routes';
 
-const DriveSettingsRouter = ({ redirect }: { redirect: string }) => {
+const DriveSettingsRouter = ({
+    driveAppRoutes,
+    redirect,
+}: {
+    driveAppRoutes: ReturnType<typeof getDriveAppRoutes>;
+    redirect: ReactNode;
+}) => {
     const { path } = useRouteMatch();
     const location = useLocation();
 
+    const {
+        routes: { general },
+    } = driveAppRoutes;
+
     return (
         <Switch>
-            <Route path={`${path}/general`}>
-                <DriveGeneralSettings location={location} />
+            <Route path={getSectionPath(path, general)}>
+                <PrivateMainSettingsArea config={general} location={location}>
+                    <ThemesSection />
+                </PrivateMainSettingsArea>
             </Route>
-            <Redirect to={redirect} />
+            {redirect}
         </Switch>
     );
 };
