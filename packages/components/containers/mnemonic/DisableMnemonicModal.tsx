@@ -96,7 +96,7 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
         const loading = submittingAuth || isLoadingAuth;
 
         return (
-            <Modal as="form" open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
+            <Modal as="form" size="small" open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
                 <ModalHeader title={c('Title').t`Sign in again to continue`} />
                 <ModalContent>
                     {isLoadingAuth ? (
