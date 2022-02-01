@@ -202,7 +202,7 @@ const AttachmentList = ({
                         </span>
                     )}
                     {showCollapseButton && (
-                        <span className="link align-baseline text-left mr0-5">
+                        <span className="link align-baseline text-left mr0-5" data-testid="attachment-list-toggle">
                             {expanded ? c('Action').t`Hide` : c('Action').t`Show`}
                         </span>
                     )}

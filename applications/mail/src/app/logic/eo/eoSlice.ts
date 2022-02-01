@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { EOState } from './eoType';
 import {
+    reset as globalResetReducer,
     initFulfilled,
     loadEOMessageFulfilled,
     loadEOTokenFulfilled,
@@ -21,12 +22,22 @@ import {
     loadEOMessage,
     loadEOToken,
 } from './eoActions';
+import { globalReset } from '../actions';
+
+export const initialState = {
+    encryptedToken: '',
+    decryptedToken: '',
+    isStoreInitialized: false,
+    password: '',
+} as EOState;
 
 export const eoSlice = createSlice({
     name: 'eo',
-    initialState: {} as EOState,
+    initialState,
     reducers: {},
     extraReducers: (builder) => {
+        builder.addCase(globalReset, globalResetReducer);
+
         builder.addCase(init.fulfilled, initFulfilled);
         builder.addCase(loadEOToken.fulfilled, loadEOTokenFulfilled);
         builder.addCase(loadEOMessage.fulfilled, loadEOMessageFulfilled);

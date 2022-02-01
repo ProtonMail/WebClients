@@ -47,7 +47,15 @@ const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey, 
     };
 
     const sendButton = (
-        <Button className="ml1" size="large" color="norm" type="button" onClick={handleSend} disabled={!canSend}>
+        <Button
+            className="ml1"
+            size="large"
+            color="norm"
+            type="button"
+            onClick={handleSend}
+            disabled={!canSend}
+            data-testid="send-eo"
+        >
             {c('Action').t`Send`}
         </Button>
     );
