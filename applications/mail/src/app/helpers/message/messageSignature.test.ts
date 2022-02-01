@@ -1,6 +1,6 @@
-import { PM_SIGNATURE } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { message } from '@proton/shared/lib/sanitize';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
 import {
     insertSignature,
@@ -14,6 +14,8 @@ const content = '<p>test</p>';
 const signature = `
 <strong>>signature</strong>`;
 const mailSettings = { PMSignature: 0 } as MailSettings;
+
+const PM_SIGNATURE = getProtonMailSignature();
 
 describe('signature', () => {
     afterEach(() => {

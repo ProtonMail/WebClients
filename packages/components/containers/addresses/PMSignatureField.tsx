@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { PM_SIGNATURE } from '@proton/shared/lib/constants';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { useToggle, useNotifications, useEventManager, useApiWithoutResult } from '../../hooks';
@@ -30,7 +30,7 @@ const PMSignature = ({ id, mailSettings = {} }: Props) => {
             <div
                 className="border-container flex-item-fluid pr1 pt0-5 pb0-5 mb1"
                 // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }}
+                dangerouslySetInnerHTML={{ __html: getProtonMailSignature() }}
             />
             <div className="ml0-5 pt0-5 on-mobile-ml0" data-testid="settings:identity-section:signature-toggle">
                 <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />
