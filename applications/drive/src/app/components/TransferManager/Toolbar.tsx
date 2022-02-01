@@ -15,29 +15,6 @@ import {
 } from '../../utils/transfer';
 import { TransferManagerButtonProps } from './interfaces';
 
-const TRANSFER_GROUPS = [
-    {
-        value: undefined,
-        // translator: the label is for a button resetting current filter and displaying all the transfers."
-        label: c('Label').t`All`,
-    },
-    {
-        value: TransferGroup.ACTIVE,
-        // translator: the label is for a button showing only active transfers"
-        label: c('Label').t`Active`,
-    },
-    {
-        value: TransferGroup.DONE,
-        // translator: the label is for a button showing only completed transfers"
-        label: c('Label').t`Completed`,
-    },
-    {
-        value: TransferGroup.FAILURE,
-        // translator: the label is for a button showing only failed transfers"
-        label: c('Label').t`Failed`,
-    },
-];
-
 type TransferManagerEntry = { transfer: Upload | Download; type: TransferType };
 
 interface ToolbarProps {
@@ -129,6 +106,41 @@ const Toolbar = ({
         },
     ];
 
+    const filterOptions = [
+        {
+            value: undefined,
+            // translator: the label is for a button resetting current filter and displaying all the transfers."
+            label: c('Label').t`All`,
+        },
+        {
+            value: TransferGroup.ACTIVE,
+            // translator: the label is for a button showing only active transfers"
+            label: c('Label').t`Active`,
+        },
+        {
+            value: TransferGroup.DONE,
+            // translator: the label is for a button showing only completed transfers"
+            label: c('Label').t`Completed`,
+        },
+        {
+            value: TransferGroup.FAILURE,
+            // translator: the label is for a button showing only failed transfers"
+            label: c('Label').t`Failed`,
+        },
+    ].map((group) => (
+        <Radio
+            name="transfers-manager-controls-radio"
+            className="mr1"
+            value={group.value}
+            key={group.label}
+            id={`transfer-filter-${group.value}`}
+            checked={group.value === currentTransferGroup}
+            onChange={() => onTransferGroupFilterChange(group.value)}
+        >
+            {group.label}
+        </Radio>
+    ));
+
     return (
         <div className="transfers-manager-toolbar" data-testid="drive-transfers-manager:toolbar-details">
             <Details
@@ -143,19 +155,7 @@ const Toolbar = ({
                 </Summary>
                 <div className={classnames(['transfers-manager-controls pb1 pt0-5 pl1 pr1'])}>
                     <div className="transfers-manager-status-filter flex flex-nowrap flex-align-items-center text-ellipsis">
-                        {TRANSFER_GROUPS.map((group) => (
-                            <Radio
-                                name="transfers-manager-controls-radio"
-                                className="mr1"
-                                value={group.value}
-                                key={group.label}
-                                id={`transfer-filter-${group.value}`}
-                                checked={group.value === currentTransferGroup}
-                                onChange={() => onTransferGroupFilterChange(group.value)}
-                            >
-                                {group.label}
-                            </Radio>
-                        ))}
+                        {filterOptions}
                     </div>
                     <div className="flex flex-nowrap flex-justify-end no-scroll flex-item-noshrink">
                         <span className="mr1 text-ellipsis">{c('Label').t`Apply to selection`}</span>
