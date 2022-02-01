@@ -82,8 +82,12 @@ const LayoutsSection = () => {
                     </div>
 
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                        <span className="mb1 text-semibold" id="densityMode_desc">
-                            {c('Label').t`Density`}
+                        <span className="mb1 text-semibold">
+                            <span className="mr0-5" id="densityMode_desc">{c('Label').t`Density`}</span>
+                            <Info
+                                url="https://protonmail.com/support/knowledge-base/change-inbox-layout/"
+                                title={c('Tooltip').t`Set how your list of messages looks like by default.`}
+                            />
                         </span>
                         <DensityRadiosCards
                             density={Density}
