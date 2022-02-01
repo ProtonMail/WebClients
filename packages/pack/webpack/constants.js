@@ -19,7 +19,7 @@ const BABEL_INCLUDE_NODE_MODULES = [
     '@proton/components',
     'mutex-browser',
     'interval-tree',
-    'sieve.js',
+    '@protontech/sieve.js',
     'idb',
     '@protontech/bip39',
 ];
