@@ -6,8 +6,17 @@ import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { srpAuth } from '@proton/shared/lib/srp';
 
-import { Button, FormModal, Loader } from '../../components';
-import { useApi, useNotifications } from '../../hooks';
+import {
+    AlertModal,
+    ModalProps,
+    Button,
+    Loader,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+} from '../../components';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 import { PasswordTotpInputs, useAskAuth } from '../password';
 
 enum STEPS {
@@ -15,109 +24,108 @@ enum STEPS {
     AUTH,
 }
 
-interface Props {
-    onClose?: () => void;
-    onSuccess: () => void;
+interface DisableMnemonicModalProps {
+    onClose: ModalProps['onClose'];
+    onExit: ModalProps['onExit'];
+    open: ModalProps['open'];
 }
 
-const DisableMnemonicModal = (props: Props) => {
-    const { onClose, onSuccess, ...rest } = props;
+const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalProps) => {
     const [step, setStep] = useState(STEPS.CONFIRM);
-
-    const { createNotification } = useNotifications();
-
-    const api = useApi();
     const [submittingAuth, setSubmittingAuth] = useState(false);
     const [authError, setAuthError] = useState('');
-
     const [password, setPassword] = useState('');
     const [totp, setTotp] = useState('');
+
     const [hasTOTPEnabled, isLoadingAuth] = useAskAuth();
+    const { createNotification } = useNotifications();
+    const { call } = useEventManager();
+    const api = useApi();
 
-    const { section, ...modalProps } = (() => {
-        if (step === STEPS.CONFIRM) {
-            return {
-                title: c('Action').t`Disable recovery phrase?`,
-                hasClose: false,
-                section: (
-                    <>
-                        <p className="mt0">{c('Info')
-                            .t`This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.`}</p>
-                        <p className="mb0">{c('Info')
-                            .t`Enabling recovery by phrase again will generate a new recovery phrase.`}</p>
-                    </>
-                ),
-                footer: (
-                    <div className="w100">
-                        <Button fullWidth color="danger" onClick={() => setStep(STEPS.AUTH)}>
-                            {c('Action').t`Disable recovery phrase`}
-                        </Button>
-                        <Button className="mt1" fullWidth onClick={onClose}>
-                            {c('Action').t`Cancel`}
-                        </Button>
-                    </div>
-                ),
-            };
+    const handleSubmit = async () => {
+        try {
+            setSubmittingAuth(true);
+
+            await srpAuth({
+                api,
+                credentials: { password, totp },
+                config: disableMnemonicPhrase(),
+            });
+
+            await call();
+            onClose?.();
+            createNotification({ text: c('Info').t`Recovery phrase has been disabled` });
+        } catch (error: any) {
+            const { code, message } = getApiErrorMessage(error);
+            setSubmittingAuth(false);
+            if (code === PASSWORD_WRONG_ERROR) {
+                setAuthError(message);
+            } else {
+                onClose?.();
+            }
         }
+    };
 
-        if (step === STEPS.AUTH) {
-            const handleSubmit = async () => {
-                try {
-                    setSubmittingAuth(true);
+    if (step === STEPS.CONFIRM) {
+        return (
+            <AlertModal
+                open={open}
+                title={c('Action').t`Disable recovery phrase?`}
+                buttons={[
+                    <Button fullWidth color="danger" onClick={() => setStep(STEPS.AUTH)}>
+                        {c('Action').t`Disable recovery phrase`}
+                    </Button>,
+                    <Button fullWidth onClick={onClose}>
+                        {c('Action').t`Cancel`}
+                    </Button>,
+                ]}
+                onClose={onClose}
+                onExit={onExit}
+            >
+                <p className="mt0">{c('Info')
+                    .t`This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.`}</p>
+                <p className="mb0">{c('Info')
+                    .t`Enabling recovery by phrase again will generate a new recovery phrase.`}</p>
+            </AlertModal>
+        );
+    }
 
-                    await srpAuth({
-                        api,
-                        credentials: { password, totp },
-                        config: disableMnemonicPhrase(),
-                    });
+    if (step === STEPS.AUTH) {
+        const handleClose = submittingAuth ? noop : onClose;
 
-                    onSuccess();
-                    onClose?.();
-                    createNotification({ text: c('Info').t`Recovery phrase has been disabled` });
-                } catch (error: any) {
-                    const { code, message } = getApiErrorMessage(error);
-                    setSubmittingAuth(false);
-                    if (code === PASSWORD_WRONG_ERROR) {
-                        setAuthError(message);
-                    } else {
-                        onClose?.();
-                    }
-                }
-            };
+        const loading = submittingAuth || isLoadingAuth;
 
-            return {
-                title: c('Title').t`Sign in again to continue`,
-                cancel: c('Action').t`Cancel`,
-                submit: c('Action').t`Submit`,
-                hasClose: !submittingAuth,
-                onClose: submittingAuth ? noop : onClose,
-                error: authError,
-                loading: submittingAuth || isLoadingAuth,
-                onSubmit: handleSubmit,
-                section: isLoadingAuth ? (
-                    <Loader />
-                ) : (
-                    <PasswordTotpInputs
-                        password={password}
-                        setPassword={setPassword}
-                        passwordError={authError}
-                        totp={totp}
-                        setTotp={setTotp}
-                        totpError={authError}
-                        showTotp={hasTOTPEnabled}
-                    />
-                ),
-            };
-        }
+        return (
+            <Modal as="form" size="small" open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
+                <ModalHeader title={c('Title').t`Sign in again to continue`} />
+                <ModalContent>
+                    {isLoadingAuth ? (
+                        <Loader />
+                    ) : (
+                        <PasswordTotpInputs
+                            password={password}
+                            setPassword={setPassword}
+                            passwordError={authError}
+                            totp={totp}
+                            setTotp={setTotp}
+                            totpError={authError}
+                            showTotp={hasTOTPEnabled}
+                        />
+                    )}
+                </ModalContent>
+                <ModalFooter>
+                    <Button onClick={handleClose} disabled={loading}>
+                        {c('Action').t`Cancel`}
+                    </Button>
+                    <Button loading={loading} type="submit" color="norm">
+                        {c('Action').t`Submit`}
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        );
+    }
 
-        throw new Error('Unknown step');
-    })();
-
-    return (
-        <FormModal small noTitleEllipsis onClose={onClose} {...rest} {...modalProps}>
-            {section}
-        </FormModal>
-    );
+    throw new Error('Unknown step');
 };
 
 export default DisableMnemonicModal;

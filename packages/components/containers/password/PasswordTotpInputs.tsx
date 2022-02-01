@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { Row, Label, Field, PasswordInput, TwoFactorInput } from '../../components';
+
+import { InputFieldTwo, PasswordInputTwo } from '../../components';
 
 interface Props {
     password: string;
@@ -15,36 +16,31 @@ const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTot
     return (
         <>
             {setPassword && (
-                <Row>
-                    <Label htmlFor="password">{c('Label').t`Password`}</Label>
-                    <Field>
-                        <PasswordInput
-                            placeholder={c('Placeholder').t`Password`}
-                            id="password"
-                            value={password}
-                            onChange={({ target: { value } }) => setPassword(value)}
-                            error={passwordError}
-                            autoFocus
-                            autoComplete="current-password"
-                            required
-                        />
-                    </Field>
-                </Row>
+                <InputFieldTwo
+                    required
+                    autoFocus
+                    autoComplete="current-password"
+                    id="password"
+                    as={PasswordInputTwo}
+                    value={password}
+                    error={passwordError}
+                    onValue={setPassword}
+                    label={c('Label').t`Password`}
+                    placeholder={c('Placeholder').t`Password`}
+                />
             )}
+
             {showTotp && (
-                <Row>
-                    <Label htmlFor="totp">{c('Label').t`Two-factor authentication code`}</Label>
-                    <Field>
-                        <TwoFactorInput
-                            placeholder={c('Placeholder').t`Two-factor authentication code`}
-                            id="totp"
-                            value={totp}
-                            error={totpError}
-                            onChange={({ target: { value } }) => setTotp(value)}
-                            required
-                        />
-                    </Field>
-                </Row>
+                <InputFieldTwo
+                    required
+                    autoFocus
+                    id="totp"
+                    value={totp}
+                    error={totpError}
+                    onValue={setTotp}
+                    placeholder={c('Placeholder').t`Two-factor authentication code`}
+                    label={c('Label').t`Two-factor authentication code`}
+                />
             )}
         </>
     );

@@ -1,15 +1,14 @@
-import { MutableRefObject, useEffect } from 'react';
+import { MutableRefObject, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
-import { Button, Icon, Info, Loader, Toggle } from '../../components';
+import { Button, Icon, Info, Loader, Toggle, useModalState } from '../../components';
 
 import {
     useEventManager,
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
     useIsRecoveryFileAvailable,
-    useLoading,
     useModals,
     useRecoverySecrets,
     useUserSettings,
@@ -39,7 +38,8 @@ const DataRecoverySection = ({ openMnemonicModalRef }: Props) => {
     const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
 
-    const [loadingMnemonic, withLoadingMnemonic] = useLoading();
+    const [loadingMnemonic, setLoadingMnemonic] = useState(false);
+    const [disableMnemonicModal, setDisableMnemonicModalOpen] = useModalState();
 
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
     const recoverySecrets = useRecoverySecrets();
@@ -116,37 +116,29 @@ const DataRecoverySection = ({ openMnemonicModalRef }: Props) => {
                                 </Button>
                             ) : (
                                 <>
+                                    <DisableMnemonicModal {...disableMnemonicModal} />
+
                                     <div className="flex flex-align-items-center mb1-5">
                                         <Toggle
                                             className="mr0-5"
-                                            loading={loadingMnemonic}
+                                            loading={disableMnemonicModal.open || loadingMnemonic}
                                             checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
                                             id="passwordMnemonicResetToggle"
                                             onChange={({ target: { checked } }) => {
-                                                const handleMnemonicToggle = async (willBeChecked: boolean) => {
-                                                    await new Promise<void>((resolve, reject) => {
-                                                        if (willBeChecked) {
-                                                            createModal(
-                                                                <GenerateMnemonicModal
-                                                                    onClose={reject}
-                                                                    onSuccess={resolve}
-                                                                />
-                                                            );
-                                                        } else {
-                                                            createModal(
-                                                                <DisableMnemonicModal
-                                                                    onClose={reject}
-                                                                    onSuccess={resolve}
-                                                                />
-                                                            );
-                                                        }
-                                                    });
-                                                    await call();
-                                                };
-
-                                                return withLoadingMnemonic(handleMnemonicToggle(checked));
+                                                if (checked) {
+                                                    setLoadingMnemonic(true);
+                                                    createModal(
+                                                        <GenerateMnemonicModal
+                                                            onClose={() => setLoadingMnemonic(false)}
+                                                            onSuccess={() => setLoadingMnemonic(false)}
+                                                        />
+                                                    );
+                                                } else {
+                                                    setDisableMnemonicModalOpen(true);
+                                                }
                                             }}
                                         />
+
                                         <label
                                             data-testid="account:recovery:mnemonicToggle"
                                             htmlFor="passwordMnemonicResetToggle"
