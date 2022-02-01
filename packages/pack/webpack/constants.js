@@ -21,7 +21,7 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'interval-tree',
     'sieve.js',
     'idb',
-    'bip39',
+    '@protontech/bip39',
 ];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];
 
