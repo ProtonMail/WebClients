@@ -95,6 +95,18 @@ const decryptMimeMessage = async (
             },
             binaryToString(decryption.data)
         );
+
+        return {
+            decryptedBody: processing.body,
+            decryptedRawContent: decryption.data,
+            attachments: !onUpdateAttachment
+                ? undefined
+                : convert(message, processing.attachments, 0, onUpdateAttachment),
+            decryptedSubject: processing.encryptedSubject,
+            signature: decryption.signatures[0],
+            mimetype: processing.mimetype,
+            errors: decryption.errors?.length ? { decryption: decryption.errors } : undefined,
+        };
     } catch (error: any) {
         return {
             decryptedBody: '',
@@ -105,16 +117,6 @@ const decryptMimeMessage = async (
             },
         };
     }
-
-    return {
-        decryptedBody: processing.body,
-        decryptedRawContent: decryption.data,
-        attachments: !onUpdateAttachment ? undefined : convert(message, processing.attachments, 0, onUpdateAttachment),
-        decryptedSubject: processing.encryptedSubject,
-        signature: decryption.signatures[0],
-        mimetype: processing.mimetype,
-        errors: decryption.errors?.length ? { decryption: decryption.errors } : undefined,
-    };
 };
 
 const decryptLegacyMessage = async (
@@ -141,6 +143,13 @@ const decryptLegacyMessage = async (
                 format: 'binary',
             });
         }
+
+        const {
+            data,
+            signatures: [signature],
+        } = result;
+
+        return { decryptedBody: binaryToString(data), decryptedRawContent: data, signature };
     } catch (error: any) {
         return {
             decryptedBody: '',
@@ -150,13 +159,6 @@ const decryptLegacyMessage = async (
             },
         };
     }
-
-    const {
-        data,
-        signatures: [signature],
-    } = result;
-
-    return { decryptedBody: binaryToString(data), decryptedRawContent: data, signature };
 };
 
 /**
