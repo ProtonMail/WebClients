@@ -1,4 +1,4 @@
-import mimemessage from 'mimemessage';
+import mimemessage from '@protontech/mimemessage';
 import { arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
