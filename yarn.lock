@@ -3851,6 +3851,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@protontech/interval-tree@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@protontech/interval-tree@npm:1.0.0"
+  checksum: a0ad8a10381e25f998287ec8a7f87b5f2cc731198aa6924e3a747ae5d26ccb7fe563e9159f2188c35f36edc533abcdc7b75a29c466aa60dbd883ffe5d05eb859
+  languageName: node
+  linkType: hard
+
 "@protontech/mimemessage@npm:~v1.1.4":
   version: 1.1.4
   resolution: "@protontech/mimemessage@npm:1.1.4"
@@ -16963,13 +16970,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"interval-tree@github:ProtonMail/interval-tree#semver:^1.0.0":
-  version: 1.0.2
-  resolution: "interval-tree@https://github.com/ProtonMail/interval-tree.git#commit=cd86c8a87f29ae833d5a4cef8caabd47e8449cdd"
-  checksum: 27ae707008c411d10f1367f774bd82b8eb98a76fe2c557069b810b6933af9c4476825bb4bbd7ce5bba66a75192d2b3a5615d68dd2c28bdc2732daa94d60a6b73
-  languageName: node
-  linkType: hard
-
 "into-stream@npm:^3.1.0":
   version: 3.1.0
   resolution: "into-stream@npm:3.1.0"
@@ -23830,6 +23830,7 @@ fsevents@^1.2.7:
     "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
+    "@protontech/interval-tree": ^1.0.0
     "@testing-library/jest-dom": ^5.16.1
     "@testing-library/react": ^12.1.2
     "@testing-library/react-hooks": ^7.0.2
@@ -23844,7 +23845,6 @@ fsevents@^1.2.7:
     date-fns: ^2.28.0
     dompurify: ^2.3.5
     eslint: ^8.7.0
-    interval-tree: "github:ProtonMail/interval-tree#semver:^1.0.0"
     jest: ^27.4.7
     jest-junit: ^13.0.0
     prettier: ^2.5.1
