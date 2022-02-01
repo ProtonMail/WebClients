@@ -1,7 +1,8 @@
-import { RefObject, useRef } from 'react';
+import { MutableRefObject, RefObject, useRef } from 'react';
 import { HotkeyTuple, useHotkeys } from '@proton/components';
 import { isSafari as checkIsSafari } from '@proton/shared/lib/helpers/browser';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 
 export interface ComposerHotkeysHandlers {
     composerRef: RefObject<HTMLDivElement>;
@@ -15,6 +16,7 @@ export interface ComposerHotkeysHandlers {
     handleExpiration: () => void;
     lock: boolean;
     saving: boolean;
+    editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
 }
 
 export const useComposerHotkeys = ({
@@ -29,6 +31,7 @@ export const useComposerHotkeys = ({
     handleExpiration,
     lock,
     saving,
+    editorActionsRef,
 }: ComposerHotkeysHandlers) => {
     const isSafari = checkIsSafari();
 
@@ -84,6 +87,11 @@ export const useComposerHotkeys = ({
             e.stopPropagation();
             handleExpiration();
         },
+        linkModal: (e: KeyboardEvent) => {
+            e.preventDefault();
+            e.stopPropagation();
+            editorActionsRef.current?.showLinkModal();
+        },
     };
 
     const hotKeysActions: HotkeyTuple[] = [
@@ -110,6 +118,7 @@ export const useComposerHotkeys = ({
         [['Meta', 'Shift', 'A'], keyHandlers.addAttachment],
         [['Meta', 'Shift', 'E'], keyHandlers.encrypt],
         [['Meta', 'Shift', 'X'], keyHandlers.addExpiration],
+        [['Meta', 'K'], keyHandlers.linkModal],
     ];
 
     useHotkeys(composerRef, hotKeysActions);
