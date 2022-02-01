@@ -17,7 +17,7 @@ const BABEL_INCLUDE_NODE_MODULES = [
     '@proton/get-random-values',
     '@proton/srp',
     '@proton/components',
-    'mutex-browser',
+    '@protontech/mutex-browser',
     'interval-tree',
     '@protontech/sieve.js',
     'idb',
