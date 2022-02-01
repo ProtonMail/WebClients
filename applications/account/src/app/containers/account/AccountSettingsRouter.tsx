@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
 import {
@@ -57,13 +57,6 @@ const AccountSettingsRouter = ({
 }) => {
     const location = useLocation();
 
-    const [action] = useState(() => {
-        return new URLSearchParams(location.search).get('action');
-    });
-    const openRecoverDataModalRef = useRef(action === 'recover-data');
-    const openMnemonicModalRef = useRef(action === 'generate-recovery-phrase');
-    const openDashboardModalRef = useRef(false);
-
     const {
         routes: { dashboard, easySwitch, recovery, security, password, language },
     } = accountAppRoutes;
@@ -72,7 +65,7 @@ const AccountSettingsRouter = ({
         <Switch>
             {getIsSectionAvailable(dashboard) && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <AccountAutomaticDashboardModal location={location} onceRef={openDashboardModalRef} />
+                    <AccountAutomaticDashboardModal location={location} />
                     <PrivateMainSettingsArea location={location} config={dashboard}>
                         <PlansSection />
                         <YourPlanSection />
@@ -90,16 +83,16 @@ const AccountSettingsRouter = ({
                 <Route path={getSectionPath(path, recovery)}>
                     <RecoverySettingsPageVisited />
                     <PrivateMainSettingsArea location={location} config={recovery}>
-                        <OverviewSection ids={recoveryIds} openRecoverDataModalRef={openRecoverDataModalRef} />
+                        <OverviewSection ids={recoveryIds} />
                         <AccountRecoverySection />
-                        <DataRecoverySection openMnemonicModalRef={openMnemonicModalRef} />
+                        <DataRecoverySection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
             <Route path={getSectionPath(path, password)}>
                 <PrivateMainSettingsArea location={location} config={password}>
                     <UsernameSection />
-                    <PasswordsSection open={action === 'change-password'} />
+                    <PasswordsSection />
                     <DeleteSection />
                 </PrivateMainSettingsArea>
             </Route>

@@ -1,9 +1,8 @@
-import { useEffect } from 'react';
 import { c } from 'ttag';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
 import { Button, Info, Loader, Toggle } from '../../components';
-import { useAddresses, useModals, useUserSettings } from '../../hooks';
+import { useAddresses, useModals, useSearchParamsEffect, useUserSettings } from '../../hooks';
 
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 import TwoFactorSection from './TwoFactorSection';
@@ -12,11 +11,7 @@ import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 
-interface Props {
-    open?: boolean;
-}
-
-const PasswordsSection = ({ open }: Props) => {
+const PasswordsSection = () => {
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [addresses, loadingAddresses] = useAddresses();
     const { createModal } = useModals();
@@ -33,11 +28,16 @@ const PasswordsSection = ({ open }: Props) => {
         createModal(<ChangePasswordModal mode={mode} />, 'change-password');
     };
 
-    useEffect(() => {
-        if (open && !loading) {
-            handleChangePassword(changePasswordMode);
-        }
-    }, [loading]);
+    useSearchParamsEffect(
+        (params) => {
+            if (!loading && params.get('action') === 'change-password') {
+                handleChangePassword(changePasswordMode);
+                params.delete('action');
+                return params;
+            }
+        },
+        [loading]
+    );
 
     if (loading) {
         return <Loader />;

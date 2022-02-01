@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
     useUser,
@@ -21,13 +21,8 @@ interface PlansMap {
     [planName: string]: Plan;
 }
 
-const AccountAutomaticDashboardModal = ({
-    location,
-    onceRef,
-}: {
-    location: H.Location;
-    onceRef: MutableRefObject<boolean>;
-}) => {
+const AccountAutomaticDashboardModal = ({ location }: { location: H.Location }) => {
+    const onceRef = useRef(false);
     const [user] = useUser();
 
     const { createModal } = useModals();
