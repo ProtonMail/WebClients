@@ -3744,6 +3744,7 @@ __metadata:
     "@proton/srp": "workspace:packages/srp"
     "@protontech/bip39": ^1.0.2
     "@protontech/mimemessage": ~v1.1.4
+    "@protontech/sieve.js": ^2.0.6
     "@protontech/timezone-support": ^1.0.0
     "@sentry/browser": ^5.30.0
     "@types/dompurify": ^2.3.3
@@ -3774,7 +3775,6 @@ __metadata:
     puppeteer: ^13.1.2
     push.js: ^1.0.12
     require-inject: ^1.4.4
-    sieve.js: "github:ProtonMail/sieve.js#master"
     ts-loader: ^9.2.6
     ttag: ^1.7.24
     typescript: ^4.5.5
@@ -3858,6 +3858,13 @@ __metadata:
     debug: ^2.2.0
     rfc2047: ^2.0.1
   checksum: 0675b23cc2ddc307e073725464a2ab060173ca7a28f474d4d387d792ce34743638f529089f6e3bdda45a5d77e61a8f29896342c281a58f1bfab74e31d299ee38
+  languageName: node
+  linkType: hard
+
+"@protontech/sieve.js@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "@protontech/sieve.js@npm:2.0.6"
+  checksum: 8f85bcef1ae5705f0a7339ef16c076d7287335a5e96c8aef714e2b84a2ae68a114588dc1d68e713f72bd51edfafa51932470102ca911295b782742cecda3b35f
   languageName: node
   linkType: hard
 
@@ -26459,13 +26466,6 @@ fsevents@^1.2.7:
     get-intrinsic: ^1.0.2
     object-inspect: ^1.9.0
   checksum: 351e41b947079c10bd0858364f32bb3a7379514c399edb64ab3dce683933483fc63fb5e4efe0a15a2e8a7e3c436b6a91736ddb8d8c6591b0460a24bb4a1ee245
-  languageName: node
-  linkType: hard
-
-"sieve.js@github:ProtonMail/sieve.js#master":
-  version: 2.0.6
-  resolution: "sieve.js@https://github.com/ProtonMail/sieve.js.git#commit=a09ab52092164af74278e77612a091e730e9b7e9"
-  checksum: 0270aa144702e3e05e534f8a509f8d75a322d397e62868efdcf20e4e2aba07cf505e5aea2011dccc94e3f36f46976656f52bd5391aacaa4f71f185709b718a2a
   languageName: node
   linkType: hard
 
