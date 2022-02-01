@@ -1,4 +1,10 @@
-import { findTimeZone, getTimeZoneLinks, getUTCOffset, getZonedTime, listTimeZones } from 'timezone-support';
+import {
+    findTimeZone,
+    getTimeZoneLinks,
+    getUTCOffset,
+    getZonedTime,
+    listTimeZones,
+} from '@protontech/timezone-support';
 import { DateTime } from '../interfaces/calendar/Date';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from './timezoneDatabase';
 

@@ -3742,6 +3742,7 @@ __metadata:
     "@proton/get-random-values": "workspace:packages/get-random-values"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/srp": "workspace:packages/srp"
+    "@protontech/timezone-support": ^1.0.0
     "@sentry/browser": ^5.30.0
     "@types/dompurify": ^2.3.3
     "@types/jasmine": ^3.10.3
@@ -3774,7 +3775,6 @@ __metadata:
     push.js: ^1.0.12
     require-inject: ^1.4.4
     sieve.js: "github:ProtonMail/sieve.js#master"
-    timezone-support: "github:ProtonMail/timezone-support#bundle"
     ts-loader: ^9.2.6
     ttag: ^1.7.24
     typescript: ^4.5.5
@@ -3843,6 +3843,17 @@ __metadata:
     msw: ^0.36.5
   languageName: unknown
   linkType: soft
+
+"@protontech/timezone-support@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@protontech/timezone-support@npm:1.0.0"
+  dependencies:
+    commander: 2.20.0
+  bin:
+    create-timezone-data: bin/create-timezone-data
+  checksum: 8532e83f95e7066ae4b39278462bac3c38aec8bbfaa79ebe65dee02d37f4dbcca97510ffacb6c43ee8d1ad28581d522ef7872f91e1df0efea4834d9149b34be5
+  languageName: node
+  linkType: hard
 
 "@reduxjs/toolkit@npm:^1.7.1":
   version: 1.7.1
@@ -28102,15 +28113,6 @@ fsevents@^1.2.7:
   dependencies:
     setimmediate: ^1.0.4
   checksum: ec37ae299066bef6c464dcac29c7adafba1999e7227a9bdc4e105a459bee0f0b27234a46bfd7ab4041da79619e06a58433472867a913d01c26f8a203f87cee70
-  languageName: node
-  linkType: hard
-
-"timezone-support@github:ProtonMail/timezone-support#bundle":
-  version: 0.0.0-development
-  resolution: "timezone-support@https://github.com/ProtonMail/timezone-support.git#commit=42a03e3218dad70a1e60e64246c014bbc8e9b562"
-  dependencies:
-    commander: 2.20.0
-  checksum: 70fa295106d8efe1f90907199d0d52aa6e6e92687db4ecc2f5839673c201508448971fbeaab377fe25384be4b1b51dd525ffc744bee6e88f5dad29e26633459c
   languageName: node
   linkType: hard
 
