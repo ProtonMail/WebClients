@@ -541,6 +541,7 @@ const Composer = (
         toggleMaximized,
         lock: lock || !hasRecipients,
         saving,
+        editorActionsRef,
     });
 
     return (
