@@ -3743,6 +3743,7 @@ __metadata:
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/srp": "workspace:packages/srp"
     "@protontech/bip39": ^1.0.2
+    "@protontech/mimemessage": ~v1.1.4
     "@protontech/timezone-support": ^1.0.0
     "@sentry/browser": ^5.30.0
     "@types/dompurify": ^2.3.3
@@ -3766,7 +3767,6 @@ __metadata:
     karma-jasmine: ^4.0.1
     karma-webpack: ^5.0.0
     lodash: ^4.17.21
-    mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     mutex-browser: "github:ProtonMail/mutex-browser#semver:^1.0.0"
     papaparse: ^5.3.1
     pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.1"
@@ -3848,6 +3848,16 @@ __metadata:
   version: 1.0.2
   resolution: "@protontech/bip39@npm:1.0.2"
   checksum: 14c1239c2ebed817bbe1f903eb3db4fd210324a2da46f54b8a19a55212e1d1390c903c688aa01677a4256419c206c72d966cecc3a41e136ede2bb8d04c3083f2
+  languageName: node
+  linkType: hard
+
+"@protontech/mimemessage@npm:~v1.1.4":
+  version: 1.1.4
+  resolution: "@protontech/mimemessage@npm:1.1.4"
+  dependencies:
+    debug: ^2.2.0
+    rfc2047: ^2.0.1
+  checksum: 0675b23cc2ddc307e073725464a2ab060173ca7a28f474d4d387d792ce34743638f529089f6e3bdda45a5d77e61a8f29896342c281a58f1bfab74e31d299ee38
   languageName: node
   linkType: hard
 
@@ -20425,16 +20435,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mimemessage@github:ProtonMail/mimemessage.js#semver:~v1.1.4":
-  version: 1.1.4
-  resolution: "mimemessage@https://github.com/ProtonMail/mimemessage.js.git#commit=2120f80d9d9193f17a617dcfd3809d6e6d37e721"
-  dependencies:
-    debug: ^2.2.0
-    rfc2047: ^2.0.1
-  checksum: 4f2d4421cad3eda47491ba38095e460113765ac47b95811283dcc8a007056f1d424dbdde4f43bc84a89c7b8616873d617e5f291847f354a39a3924ed922d0b2e
-  languageName: node
-  linkType: hard
-
 "mimic-fn@npm:^1.0.0":
   version: 1.2.0
   resolution: "mimic-fn@npm:1.2.0"
@@ -23922,6 +23922,7 @@ fsevents@^1.2.7:
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
+    "@protontech/mimemessage": ~v1.1.4
     "@reduxjs/toolkit": ^1.7.1
     "@testing-library/dom": ^8.11.3
     "@testing-library/jest-dom": ^5.16.1
@@ -23952,7 +23953,6 @@ fsevents@^1.2.7:
     linkify-it: ^3.0.3
     loud-rejection: ^2.2.0
     markdown-it: ^12.3.2
-    mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     prettier: ^2.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
