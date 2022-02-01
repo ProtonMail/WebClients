@@ -7,8 +7,7 @@ import { useApi } from '@proton/components';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 import { useBase64Cache } from '../useBase64Cache';
 import {
@@ -111,7 +110,7 @@ export const useInitializeEOMessage = () => {
                           data: { ...messageFromState.data, Attachments: allAttachments } as Message,
                       },
                       base64Cache,
-                      { ShowImages: SHOW_IMAGES.NONE, ImageProxy: IMAGE_PROXY_FLAGS.NONE } as MailSettings,
+                      eoDefaultMailSettings,
                       handleEOLoadEmbeddedImages,
                       (imagesToLoad) => {
                           console.log(imagesToLoad);
