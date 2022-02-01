@@ -3742,6 +3742,7 @@ __metadata:
     "@proton/get-random-values": "workspace:packages/get-random-values"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/srp": "workspace:packages/srp"
+    "@protontech/bip39": ^1.0.2
     "@protontech/timezone-support": ^1.0.0
     "@sentry/browser": ^5.30.0
     "@types/dompurify": ^2.3.3
@@ -3750,7 +3751,6 @@ __metadata:
     "@types/papaparse": ^5.3.1
     "@types/ua-parser-js": ^0.7.36
     "@types/webpack-env": ^1.16.3
-    bip39: "github:ProtonMail/bip39#semver:^1.0.2"
     date-fns: ^2.28.0
     dompurify: ^2.3.5
     eslint: ^8.7.0
@@ -3843,6 +3843,13 @@ __metadata:
     msw: ^0.36.5
   languageName: unknown
   linkType: soft
+
+"@protontech/bip39@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@protontech/bip39@npm:1.0.2"
+  checksum: 14c1239c2ebed817bbe1f903eb3db4fd210324a2da46f54b8a19a55212e1d1390c903c688aa01677a4256419c206c72d966cecc3a41e136ede2bb8d04c3083f2
+  languageName: node
+  linkType: hard
 
 "@protontech/timezone-support@npm:^1.0.0":
   version: 1.0.0
@@ -9519,13 +9526,6 @@ __metadata:
   dependencies:
     file-uri-to-path: 1.0.0
   checksum: 65b6b48095717c2e6105a021a7da4ea435aa8d3d3cd085cb9e85bcb6e5773cf318c4745c3f7c504412855940b585bdf9b918236612a1c7a7942491de176f1ae7
-  languageName: node
-  linkType: hard
-
-"bip39@github:ProtonMail/bip39#semver:^1.0.2":
-  version: 1.0.1
-  resolution: "bip39@https://github.com/ProtonMail/bip39.git#commit=c8ed6f35d90db37844230b26199817c7c5fecd29"
-  checksum: 20873c4368cef1e32cdd8a99f56e438f64ac03ac46657f138314d3941aed1e387764840a5a3bdfe6321460503a14da0a7d7d245ef048d5cdbd1d4d6e0cfea4d8
   languageName: node
   linkType: hard
 
