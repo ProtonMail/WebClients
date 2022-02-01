@@ -90,6 +90,7 @@ export enum RESPONSE_CODE {
     SUCCESS = 1000,
     NOT_ALLOWED = 2011,
     ALREADY_EXISTS = 2500,
+    INVALID_ID = 2061,
 }
 
 export enum SupportedMimeTypes {
