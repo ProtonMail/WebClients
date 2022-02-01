@@ -19,6 +19,7 @@
         "@proton/srp": "workspace:packages/srp",
         "@protontech/bip39": "^1.0.2",
         "@protontech/mimemessage": "~v1.1.4",
+        "@protontech/sieve.js": "^2.0.6",
         "@protontech/timezone-support": "^1.0.0",
         "@sentry/browser": "^5.30.0",
         "@types/dompurify": "^2.3.3",
@@ -38,7 +39,6 @@
         "papaparse": "^5.3.1",
         "pmcrypto": "github:ProtonMail/pmcrypto#semver:~6.7.1",
         "push.js": "^1.0.12",
-        "sieve.js": "github:ProtonMail/sieve.js#master",
         "ua-parser-js": "^0.8.1",
         "web-streams-polyfill": "^3.2.0"
     },
