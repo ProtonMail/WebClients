@@ -1,4 +1,3 @@
-import { MutableRefObject, useEffect } from 'react';
 import { c } from 'ttag';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 
@@ -10,6 +9,7 @@ import {
     useAuthentication,
     useEventManager,
     useModals,
+    useSearchParamsEffect,
     useUser,
     useUserKeys,
 } from '../../../hooks';
@@ -17,12 +17,9 @@ import { getAllKeysReactivationRequests } from './getAllKeysToReactive';
 import ReactivateKeysModal from './ReactivateKeysModal';
 import { KeyReactivationRequest } from './interface';
 
-interface Props extends Omit<ButtonProps, 'onClick'> {
-    openRecoverDataModalRef?: MutableRefObject<boolean>;
-}
+interface Props extends Omit<ButtonProps, 'onClick'> {}
 
 const ReactivateKeysButton = ({
-    openRecoverDataModalRef,
     children = c('Action').t`Reactivate keys`,
     color = 'norm',
     disabled,
@@ -61,12 +58,16 @@ const ReactivateKeysButton = ({
         );
     };
 
-    useEffect(() => {
-        if (openRecoverDataModalRef?.current && !loading) {
-            openRecoverDataModalRef.current = false;
-            handleReactivateKeys(allKeysToReactivate);
-        }
-    }, [loading, openRecoverDataModalRef?.current]);
+    useSearchParamsEffect(
+        (params) => {
+            if (!loading && params.get('action') === 'recover-data') {
+                handleReactivateKeys(allKeysToReactivate);
+                params.delete('action');
+                return params;
+            }
+        },
+        [loading]
+    );
 
     return (
         <Button
