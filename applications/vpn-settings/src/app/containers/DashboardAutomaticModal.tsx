@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { SubscriptionModal, useModals, useOrganization, usePlans, useSubscription, useUser } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { BLACK_FRIDAY, CURRENCIES, CYCLE, DEFAULT_CYCLE, PLAN_SERVICES } from '@proton/shared/lib/constants';
@@ -12,7 +12,8 @@ interface PlansMap {
     [planName: string]: Plan;
 }
 
-const DashboardAutomaticModal = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
+const DashboardAutomaticModal = () => {
+    const onceRef = useRef(false);
     const [user] = useUser();
     const { createModal } = useModals();
     const [plans, loadingPlans] = usePlans();

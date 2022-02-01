@@ -66,10 +66,6 @@ const MainContainer = () => {
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
     const routes = getRoutes(user);
     const canEnableChat = useCanEnableChat(user);
-    const [action] = useState(() => {
-        return new URLSearchParams(location.search).get('action');
-    });
-    const onceRef = useRef(false);
 
     useEffect(() => {
         if (loadingSubscription || !canEnableChat) {
@@ -150,7 +146,7 @@ const MainContainer = () => {
                     <Switch>
                         {getIsSectionAvailable(routes.dashboard) && (
                             <Route path={routes.dashboard.to}>
-                                <DashboardAutomaticModal onceRef={onceRef} />
+                                <DashboardAutomaticModal />
                                 <PrivateMainSettingsArea
                                     setActiveSection={setActiveSection}
                                     location={location}
@@ -181,7 +177,7 @@ const MainContainer = () => {
                                 config={routes.account}
                             >
                                 <UsernameSection />
-                                <PasswordsSection open={action === 'change-password'} />
+                                <PasswordsSection />
                                 <OpenVPNCredentialsSection />
                                 <AccountRecoverySection />
                                 <EmailSubscriptionSection />

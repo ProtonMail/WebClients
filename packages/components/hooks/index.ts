@@ -119,3 +119,4 @@ export { default as useVPNServersCount } from './useVPNServersCount';
 export { default as useWelcomeFlags } from './useWelcomeFlags';
 export * from './useWelcomeFlags';
 export { default as useWindowSize } from './useWindowSize';
+export { default as useSearchParamsEffect } from './useSearchParamsEffect';
