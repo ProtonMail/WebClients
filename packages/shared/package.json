@@ -17,6 +17,7 @@
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@proton/get-random-values": "workspace:packages/get-random-values",
         "@proton/srp": "workspace:packages/srp",
+        "@protontech/timezone-support": "^1.0.0",
         "@sentry/browser": "^5.30.0",
         "@types/dompurify": "^2.3.3",
         "@types/node": "^16.11.21",
@@ -38,7 +39,6 @@
         "pmcrypto": "github:ProtonMail/pmcrypto#semver:~6.7.1",
         "push.js": "^1.0.12",
         "sieve.js": "github:ProtonMail/sieve.js#master",
-        "timezone-support": "github:ProtonMail/timezone-support#bundle",
         "ua-parser-js": "^0.8.1",
         "web-streams-polyfill": "^3.2.0"
     },
