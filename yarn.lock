@@ -3744,6 +3744,7 @@ __metadata:
     "@proton/srp": "workspace:packages/srp"
     "@protontech/bip39": ^1.0.2
     "@protontech/mimemessage": ~v1.1.4
+    "@protontech/mutex-browser": ^1.0.5
     "@protontech/sieve.js": ^2.0.6
     "@protontech/timezone-support": ^1.0.0
     "@sentry/browser": ^5.30.0
@@ -3768,7 +3769,6 @@ __metadata:
     karma-jasmine: ^4.0.1
     karma-webpack: ^5.0.0
     lodash: ^4.17.21
-    mutex-browser: "github:ProtonMail/mutex-browser#semver:^1.0.0"
     papaparse: ^5.3.1
     pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.1"
     prettier: ^2.5.1
@@ -3858,6 +3858,13 @@ __metadata:
     debug: ^2.2.0
     rfc2047: ^2.0.1
   checksum: 0675b23cc2ddc307e073725464a2ab060173ca7a28f474d4d387d792ce34743638f529089f6e3bdda45a5d77e61a8f29896342c281a58f1bfab74e31d299ee38
+  languageName: node
+  linkType: hard
+
+"@protontech/mutex-browser@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@protontech/mutex-browser@npm:1.0.5"
+  checksum: 9d85448090a5463f9f71a9dd58588e97a2694b0f7bb8031a09281f47517cfdd23e0e11711ba1cf0530756c716b9c231541cb7413454d62653cabd55e50fad55f
   languageName: node
   linkType: hard
 
@@ -20906,13 +20913,6 @@ fsevents@^1.2.7:
   version: 0.0.8
   resolution: "mute-stream@npm:0.0.8"
   checksum: ff48d251fc3f827e5b1206cda0ffdaec885e56057ee86a3155e1951bc940fd5f33531774b1cc8414d7668c10a8907f863f6561875ee6e8768931a62121a531a1
-  languageName: node
-  linkType: hard
-
-"mutex-browser@github:ProtonMail/mutex-browser#semver:^1.0.0":
-  version: 1.0.4
-  resolution: "mutex-browser@https://github.com/ProtonMail/mutex-browser.git#commit=7ff17672ec033203714507b39a5c5f3fe276033b"
-  checksum: e2d6ab6d29f629ce06b06a95429c541565db403a38a05435348b0e083865e37220eace6caecd32e3ef7d99c996aaf4751d3eefe20dab994e6f791b7cd4e7070e
   languageName: node
   linkType: hard
 
