@@ -1,4 +1,4 @@
-import { SHOW_IMAGES } from '../../constants';
+import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '../../constants';
 import { Address, MailSettings } from '../../interfaces';
 
 export const eoDefaultMailSettings = {
@@ -29,7 +29,7 @@ export const eoDefaultMailSettings = {
     Hotkeys: 0,
     Shortcuts: 1,
     PMSignature: 0,
-    ImageProxy: 0,
+    ImageProxy: IMAGE_PROXY_FLAGS.NONE,
     TLS: 0,
     RightToLeft: 0,
     AttachPublicKey: 0,
