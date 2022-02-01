@@ -149,7 +149,10 @@ const decryptLegacyMessage = async (
             signatures: [signature],
         } = result;
 
-        return { decryptedBody: binaryToString(data), decryptedRawContent: data, signature };
+        // Very old messages outputs as string
+        const decryptedBody = typeof data === 'string' ? data : binaryToString(data);
+
+        return { decryptedBody, decryptedRawContent: data, signature };
     } catch (error: any) {
         return {
             decryptedBody: '',
