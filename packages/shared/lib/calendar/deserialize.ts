@@ -4,7 +4,7 @@ import { getIsAddressDisabled } from '../helpers/address';
 import { canonizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
 import { unary } from '../helpers/function';
-import { Address } from '../interfaces';
+import { Address, Nullable } from '../interfaces';
 import {
     CalendarEvent,
     CalendarEventData,
@@ -27,7 +27,7 @@ import { unwrap } from './helper';
 import { parse } from './vcal';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
 
-export const readSessionKey = (KeyPacket?: string, privateKeys?: OpenPGPKey | OpenPGPKey[]) => {
+export const readSessionKey = (KeyPacket?: Nullable<string>, privateKeys?: OpenPGPKey | OpenPGPKey[]) => {
     if (!KeyPacket || !privateKeys) {
         return;
     }
