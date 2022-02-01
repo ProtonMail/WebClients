@@ -3649,7 +3649,7 @@ __metadata:
     karma-jasmine: ^4.0.1
     karma-webpack: ^5.0.0
     pkijs: ^2.2.2
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     ts-loader: ^9.2.6
     typescript: ^4.5.5
     webpack: ^5.67.0
@@ -3770,7 +3770,7 @@ __metadata:
     karma-webpack: ^5.0.0
     lodash: ^4.17.21
     papaparse: ^5.3.1
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     prettier: ^2.5.1
     puppeteer: ^13.1.2
     push.js: ^1.0.12
@@ -3800,7 +3800,7 @@ __metadata:
     bcryptjs: ^2.4.3
     eslint: ^8.7.0
     mocha: ^9.2.0
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     prettier: ^2.5.1
     require-inject: ^1.4.4
     typescript: ^4.5.5
@@ -22778,13 +22778,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.7.1":
+"pmcrypto@npm:@protontech/pmcrypto@^6.7.1":
   version: 6.7.1
-  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=feeb7a9e3225fe1b4a2ea72808c8370055e9c03d"
+  resolution: "@protontech/pmcrypto@npm:6.7.1"
   dependencies:
     "@types/openpgp": ^4.4.18
     openpgp: ^4.10.8
-  checksum: c72850d60867badc07b7e3f6e49e827f0061872b433e7c3ed8e10449e7545ee3b0fad59d07ff107bb7b65637cda5718b68f17fe4bfbc58bcd19ebb5c024bc174
+  checksum: 4ef7e7a9fc3ed766fa5090e8e4549ea520c21ffd47b81b0e29ed34cf68309bffd57d735421f4a41e16224d37850b8d0061096a1f304ab234eb670805bc8cec8f
   languageName: node
   linkType: hard
 
