@@ -203,7 +203,7 @@ export enum INVOICE_OWNER {
     USER = 0,
     ORGANIZATION = 1,
 }
-export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com/" target="_blank">ProtonMail</a> Secure Email.';
+
 export const PGP_SIGN = 1;
 export const DEFAULT_CURRENCY = 'EUR';
 export const CURRENCIES = ['EUR', 'USD', 'CHF'] as const;
