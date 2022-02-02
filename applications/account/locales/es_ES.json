@@ -259,11 +259,11 @@
       "Details": [
         "Detalles"
       ],
-      "Did not receive the code?": [
-        "¿No has recibido el código?"
-      ],
       "Didn't receive a code?": [
         "¿No has recibido el código?"
+      ],
+      "Didn't receive the code?": [
+        ""
       ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperación"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Editar sieve"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Cursiva"
-      ],
-      "Justify": [
-        "Justificar"
       ],
       "Keep": [
         "Conservar"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Visualizar"
@@ -1723,12 +1729,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "No se pueden crear nuevos calendarios, debido a que los calendarios importados han llegado al límite permitido."
       ],
-      "Can't validate email, try again later": [
-        "No se ha podido validar el correo electrónico, inténtalo de nuevo más tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "No se ha podido validar el teléfono, inténtalo de nuevo más tarde"
-      ],
       "Checkout expired, please try again": [
         "La compra ha caducado, intenta de nuevo"
       ],
@@ -1907,9 +1907,6 @@
       "Please generate keys before you try to change your password": [
         "Por favor genera claves antes de intentar cambiar tu contraseña"
       ],
-      "Please refresh the page.": [
-        "Por favor, actualiza la página."
-      ],
       "Please set a recovery email first": [
         "Por favor, primero establece un correo electrónico de recuperación"
       ],
@@ -1937,8 +1934,8 @@
       "Process aborted": [
         "Proceso abortado"
       ],
-      "Request timed out.": [
-        "Tiempo de espera agotado."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Requiere al menos una acción"
@@ -1972,9 +1969,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que estás utilizando no permite que el pago sea autorizado. Por favor, utiliza un navegador diferente o inicia sesión a través de un ordenador."
-      ],
-      "The composer failed to load.": [
-        "La carga del compositor ha fallado."
       ],
       "The folder name is too long. Please choose a different name.": [
         "El nombre de la carpeta es demasiado largo. Por favor, elige un nombre diferente."
@@ -2925,7 +2919,7 @@
         "ICS"
       ],
       "in the next step you need to select all the permissions": [
-        "en el paso siguiente, debe seleccionar todos los permisos"
+        "en el siguiente paso, debes seleccionar todos los permisos"
       ],
       "Manage": [
         "Gestionar"
@@ -3211,7 +3205,7 @@
         "Agregar un número de teléfono de recuperación"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
-        "Agrega direcciones adicionales a tu cuenta como user2@protonmail.com"
+        "Agrega direcciones adicionales a tu cuenta como usuario2@protonmail.com"
       ],
       "Add image URL": [
         "Agregar URL de imagen"
@@ -3525,10 +3519,10 @@
         "Preferencias de correo guardadas"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Los emails archivados en esta carpeta no serán borrados, y se podrán encontrar en \"Todo el Correo\"."
+        "Los correos electrónicos almacenados en esta carpeta no se eliminarán y aún se pueden encontrar en la carpeta Todos los correos."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Los emails marcados con esta etiqueta no serán borrados, y se podrán encontrar en sus respectivas carpetas."
+        "Los correos electrónicos etiquetados con esta etiqueta no se eliminarán y se podrán encontrar en sus respectivas carpetas."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Habilitar la recuperación por frase nuevamente generará una nueva frase de recuperación."
@@ -3651,7 +3645,7 @@
         "Si tienes un dominio personalizado con ProtonMail, puedes establecer una dirección de correo catch-all que recibirá mensajes enviados a tu dominio pero a una dirección de correo electrónico no válida (e.., errores ortográficos)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Si tienes un código de regalo, introdúcelo abajo para aplicar tu descuento."
+        "Si tienes un código promocional, introdúcelo abajo para aplicar tu descuento."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Si nunca has utilizado la autenticación de doble factor anteriormente, te recomendamos encarecidamente ${ guideButton }."
@@ -3730,7 +3724,7 @@
         "Incluido"
       ],
       "Inherited from parent folder": [
-        "Heredado de la carpeta padre"
+        "Heredado de la carpeta principal"
       ],
       "Insert image": [
         "Insertar imagen"
@@ -3750,8 +3744,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instala un archivo de configuración de Servidor para conectarte a un servidor específico en el país de tu elección."
       ],
-      "Internet connection lost.": [
-        "Sin conexión a Internet."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Se ha perdido la conexión a Internet. Comprueba la conectividad de tu dispositivo."
@@ -3767,9 +3761,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Simplemente confirme su selección y nosotros haremos el resto."
-      ],
-      "Justify": [
-        "Justificar"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantén estos registros en tu DNS durante el tiempo que quieras utilizar DKIM."
@@ -4138,8 +4129,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
       ],
-      "Session timed out.": [
-        "El tiempo de la sesión ha expirado."
+      "Session timed out": [
+        ""
       ],
       "Set recovery phrase": [
         "Establezca una frase de recuperación"
@@ -4193,7 +4184,7 @@
         "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico predeterminada. Arrastra y suelta para reordenar tus direcciones."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "En la opción Import-Export podrás guardar una copia de seguridad local de los emails, y también restaurar copias de seguridad anteriores."
+        "La aplicación Import-Export te permite exportar mensajes para crear copias de seguridad locales y restaurar copias de seguridad anteriores en tu cuenta."
       ],
       "The name will be visible to your users while they are logged in.": [
         "El nombre será visible para tus usuarios mientras estén conectados."
@@ -4423,6 +4414,9 @@
       "We'll notify you when the import is done.": [
         "Te avisaremos cuando la importación haya terminado."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "URL Web"
       ],
@@ -4442,7 +4436,7 @@
         "¿Qué quieres importar de tu cuenta de Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Cuando está deshabilitado, esto evita que los archivos de imaggen se carguen en tu dispositivo sin tu conocimiento.\t"
+        "Cuando está deshabilitado, esto evita que los archivos de imagen se carguen en tu dispositivo sin tu conocimiento.\t"
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Cuando las notificaciones están habilitadas, enviaremos una alerta a tu dirección de recuperación/notificación cuando tengas nuevos mensajes en tu cuenta de ProtonMail."
@@ -4455,6 +4449,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo lee tus datos personales con el fin de facilitar el acceso a anunciantes, agencias de inteligencia de Estados Unidos y terceros. Para una mejor privacidad, crea una dirección de correo electrónico segura."
@@ -4647,7 +4644,7 @@
     },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Cuando está habilitada, las subcarpetas heredan el color de la carpeta padre."
+        "Cuando está habilitada, las subcarpetas heredan el color de la carpeta principal."
       ]
     },
     "Info concerning plan features": {
@@ -5045,8 +5042,8 @@
         "${ UsedMembers } de ${ MaxMembers } usuario",
         "${ UsedMembers } de ${ MaxMembers } usuarios"
       ],
-      "(Coming soon)": [
-        "(Próximamente)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Account storage": [
         "Almacenamiento de la cuenta"
@@ -5152,6 +5149,9 @@
       ],
       "Code": [
         "Código"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "Color"
@@ -5318,9 +5318,6 @@
       "Enter password": [
         "Introduce la contraseña"
       ],
-      "Enter the 6-digit code": [
-        "Introduce el código de 6 dígitos"
-      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduce la contraseña para la clave con huella digital: ${ fingerprintCode }"
       ],
@@ -5382,7 +5379,7 @@
         "Bandeja de entrada"
       ],
       "Inherit color from parent folder": [
-        "Heredar color de la carpeta padre"
+        "Heredar el color de la carpeta principal"
       ],
       "Interval": [
         "Intervalo"
@@ -6426,7 +6423,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Por favor ten en cuenta que ${ boldNextStep } solicitados por la aplicación para iniciar tu importación."
       ]
     },
     "Onboarding Proton": {
@@ -6639,9 +6636,6 @@
       "Secure Core configs": [
         "Configuraciones de Secure Core"
       ],
-      "Select a reason": [
-        "Selecciona un motivo"
-      ],
       "Standard server configs": [
         "Configuraciones estándar del servidor"
       ],
@@ -6745,7 +6739,7 @@
         "Añadir un nombre al calendario"
       ],
       "Add gift code": [
-        "Agregar código de regalo"
+        "Añadir código promocional"
       ],
       "Address": [
         "Dirección"
@@ -6953,8 +6947,8 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        ""
+        "Aún te quedan ${ daysRemaining } día en tu cuenta de ${ BRAND_NAME } ${ currentPlanName }.",
+        "Aún te quedan ${ daysRemaining } días en tu cuenta de ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Price": {
@@ -7878,6 +7872,9 @@
       "Email": [
         "Correo electrónico"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email encryption keys": [
         "Claves de cifrado del correo electrónico"
       ],
@@ -7895,9 +7892,6 @@
       ],
       "Error": [
         "Error"
-      ],
-      "Expand content": [
-        "Expandir contenido"
       ],
       "Export": [
         "Exportar"

@@ -259,11 +259,11 @@
       "Details": [
         "Details"
       ],
-      "Did not receive the code?": [
-        "Code niet ontvangen?"
-      ],
       "Didn't receive a code?": [
         "Heeft u geen code ontvangen?"
+      ],
+      "Didn't receive the code?": [
+        "Code niet ontvangen?"
       ],
       "Disable recovery phrase": [
         "Herstelzin uitschakelen"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Regel bewerken"
+      ],
+      "Edit sign-in details": [
+        "Bewerk aanmeldgegevens"
       ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Cursief"
-      ],
-      "Justify": [
-        "Uitvullen"
       ],
       "Keep": [
         "Behouden"
@@ -524,7 +524,7 @@
         "Agenda verwijderen"
       ],
       "Remove gift code": [
-        "Verwijder cadeaucode"
+        "Verwijder geschenkcode"
       ],
       "Remove this label": [
         "Label verwijderen"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Verifiëren"
+      ],
+      "Verify account": [
+        "Verifieer account"
+      ],
+      "Verify email": [
+        "Verifieer e-mailadres"
       ],
       "View": [
         "Bekijken"
@@ -1723,12 +1729,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
       ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
@@ -1774,7 +1774,7 @@
         "Fout in de volgende voorwaarden"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Het is niet gelukt om je actieve sessies op te halen. Gelieve te ${ refresh } of later opnieuw te proberen."
+        "Het is niet gelukt om uw actieve sessies op te halen. Gelieve te ${ refresh } of later opnieuw te proberen."
       ],
       "File has no contents to preview": [
         "Bestand heeft geen inhoud om een voorbeeld te tonen"
@@ -1907,9 +1907,6 @@
       "Please generate keys before you try to change your password": [
         "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ],
-      "Please refresh the page.": [
-        "Vernieuw de pagina."
-      ],
       "Please set a recovery email first": [
         "Stel eerst een herstel-e-mailadres in"
       ],
@@ -1937,8 +1934,8 @@
       "Process aborted": [
         "Proces afgebroken"
       ],
-      "Request timed out.": [
-        "Reactietijd verzoek overschreden."
+      "Request timed out": [
+        "Reactietijd verzoek overschreden"
       ],
       "Require at least one action": [
         "Vereist minstens één actie"
@@ -1972,9 +1969,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
-      "The composer failed to load.": [
-        "Het opstelvenster kon niet worden geladen."
       ],
       "The folder name is too long. Please choose a different name.": [
         "De naam van de map is te lang. Kies een andere naam."
@@ -3651,7 +3645,7 @@
         "Als u een eigen domein heeft met ProtonMail, kunt u een catch-all e-mailadres instellen dat berichten zal ontvangen die naar uw domein worden verstuurd, maar op een ongeldig e-mailadres (bijv. typos)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Als u een cadeaucode heeft, voer deze hieronder in om uw korting toe te passen."
+        "Als u een geschenkcode heeft, voer deze hieronder in om uw korting toe te passen."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Als u nog nooit eerder tweestapsverificatie heeft gebruikt, raden we u aan om ${ guideButton }."
@@ -3750,8 +3744,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installeer een serverconfiguratie bestand om te verbinden met een specifieke server in het land van uw keuze."
       ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
+      "Internet connection lost": [
+        "Internetverbinding verbroken"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbinding verbroken. Controleer uw internetverbinding."
@@ -3767,9 +3761,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
-      ],
-      "Justify": [
-        "Uitvullen"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Houd deze records in uw DNS voor zolang u DKIM wilt gebruiken."
@@ -4118,7 +4109,7 @@
         "Scan QR-code in plaats daarvan"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scan deze Qr-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
+        "Scan deze QR-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
       ],
       "Screenshot(s) attached": [
         "Schermafbeelding(en) toegevoegd"
@@ -4138,8 +4129,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
-      "Session timed out.": [
-        "Sessie verlopen."
+      "Session timed out": [
+        "Sessie verlopen"
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
@@ -4256,7 +4247,7 @@
         "Dit zal uw huidige herstelzin uitschakelen. U kunt deze dan niet meer gebruiken om toegang te krijgen tot uw account of om uw gegevens te ontsleutelen."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browser tabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
+        "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Dit verwijdert permanent alle gegevens en e-mailadressen die aan deze gebruiker zijn gekoppeld."
@@ -4423,6 +4414,9 @@
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "We verzenden een nieuwe verificatiecode naar ${ strong }"
+      ],
       "Web URL": [
         "Web URL"
       ],
@@ -4455,6 +4449,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo leest uw persoonlijke gegevens om adverteerders, Amerikaanse inlichtingendiensten en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
@@ -5045,8 +5042,8 @@
         "${ UsedMembers }/${ MaxMembers } actieve gebruiker",
         "${ UsedMembers }/${ MaxMembers } actieve gebruikers"
       ],
-      "(Coming soon)": [
-        "(Komt binnenkort)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
       "Account storage": [
         "Opslagruimte account"
@@ -5152,6 +5149,9 @@
       ],
       "Code": [
         "Code"
+      ],
+      "Code is 6 digits without spaces": [
+        "Code is 6 cijfers zonder spaties"
       ],
       "Color": [
         "Kleur"
@@ -5317,9 +5317,6 @@
       ],
       "Enter password": [
         "Vul login wachtwoord in"
-      ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
@@ -5908,7 +5905,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "Voeg een cadeaucode toe"
+        "Voeg een geschenkcode toe"
       ],
       "Calendars": [
         "Agenda's"
@@ -6639,9 +6636,6 @@
       "Secure Core configs": [
         "Secure Core configuraties"
       ],
-      "Select a reason": [
-        "Selecteer een reden"
-      ],
       "Standard server configs": [
         "Standaard server configuraties"
       ],
@@ -6745,7 +6739,7 @@
         "Voeg een kalendernaam toe"
       ],
       "Add gift code": [
-        "Voeg cadeaucode toe"
+        "Voeg geschenkcode toe"
       ],
       "Address": [
         "Adres"
@@ -7878,6 +7872,9 @@
       "Email": [
         "E-mailadres"
       ],
+      "Email composer": [
+        "Opstelvenster e-mail"
+      ],
       "Email encryption keys": [
         "E-mail encryptiesleutels"
       ],
@@ -7895,9 +7892,6 @@
       ],
       "Error": [
         "Fout"
-      ],
-      "Expand content": [
-        "Inhoud uitvouwen"
       ],
       "Export": [
         "Exporteren"
@@ -8453,7 +8447,7 @@
         "Host e-mails voor uw eigen domein(en) op ProtonMail, bijvoorbeeld john.smith@voorbeeld.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+        "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Berichten in de map Verzonden of Concepten blijven in die map verschijnen, zelfs als u ze naar een andere map verplaatst."

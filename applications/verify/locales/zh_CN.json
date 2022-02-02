@@ -14,14 +14,17 @@
       "Close modal": [
         "关闭"
       ],
-      "Did not receive the code?": [
-        "未收到验证码？"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "修改邮箱地址"
       ],
       "Edit phone number": [
         "修改电话号码"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "获取验证码"
@@ -41,6 +44,12 @@
       "Verify": [
         "验证"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "查看账单"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "无法验证邮箱，请稍后再试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证电话号码，请稍后再试"
-      ],
       "Email is not valid": [
         "邮箱地址无效"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "两次输入的密码不一致"
       ],
-      "Request timed out.": [
-        "请求超时。"
+      "Request timed out": [
+        "请求超时"
       ],
       "This field is required": [
         "此项必须填写"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
-      "Internet connection lost.": [
-        "网络连接断开。"
+      "Internet connection lost": [
+        "网络连接已断开"
       ],
       "Loading": [
         "加载中"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
-      "Session timed out.": [
-        "会话已超时。"
+      "Session timed out": [
+        "会话超时"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为防止滥发邮件，请验证您是真人操作。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "我们将向 ${ strong } 发送新的验证码"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        "您想要接收新的验证码吗？"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱地址仅用于本次验证。"
@@ -173,11 +182,11 @@
       "Cancel": [
         "取消"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "邮箱地址"
-      ],
-      "Enter the 6-digit code": [
-        "请输入 6 位验证码"
       ],
       "Hide password": [
         "隐藏密码"

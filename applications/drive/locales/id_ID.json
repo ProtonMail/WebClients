@@ -122,9 +122,6 @@
       "Compose": [
         "Tulis"
       ],
-      "Composer size": [
-        "Ukuran komposer"
-      ],
       "Confirm": [
         "Konfirmasi"
       ],
@@ -185,8 +182,8 @@
       "Details": [
         "Rincian"
       ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
+      "Didn't receive the code?": [
+        "Tidak menerima kode yang dimaksud?"
       ],
       "Done": [
         "Selesai"
@@ -208,6 +205,9 @@
       ],
       "Edit phone number": [
         "Edit nomor telepon"
+      ],
+      "Edit sign-in details": [
+        "Sunting rincian masuk"
       ],
       "Email settings": [
         "Pengaturan surel"
@@ -275,9 +275,6 @@
       "Increase": [
         "Tingkatkan"
       ],
-      "Keyboard shortcuts": [
-        "Pintasan papan ketik"
-      ],
       "Load image": [
         "Muat gambar"
       ],
@@ -286,12 +283,6 @@
       ],
       "Log in": [
         "Masuk"
-      ],
-      "Mailbox density": [
-        "Kepadatan kotak surat"
-      ],
-      "Mailbox layout": [
-        "Tata letak kotak surat"
       ],
       "Manage link": [
         "Kelola tautan"
@@ -557,11 +548,14 @@
       "Use for sending": [
         "Gunakan untuk pengiriman"
       ],
-      "Use “${ label }” setting": [
-        "Gunakan pengaturan \"${ label }\""
-      ],
       "Verify": [
         "Verifikasi"
+      ],
+      "Verify account": [
+        "Verifikasi akun"
+      ],
+      "Verify email": [
+        "Verifikasi email"
       ],
       "View": [
         "Tampilkan"
@@ -885,14 +879,6 @@
         "Format kalender tidak didukung"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Dimaksimalkan"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Keluar dari menu pengaturan proses impor?"
@@ -1003,14 +989,6 @@
         "Tagihan jatuh tempo"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak... Ini perlu beberapa menit. Saat proses selesai, Anda akan dapat mengunduh semua kontak yang diekspor."
@@ -1092,12 +1070,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Tidak dapat membuat kalendar baru dari kalender-kalender yang diimpor karena batas jumlah kalender maksimal telah tercapai."
-      ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi email, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
       ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
@@ -1258,8 +1230,8 @@
       "Process aborted": [
         "Proses dibatalkan"
       ],
-      "Request timed out.": [
-        "Waktu permintaan habis."
+      "Request timed out": [
+        "Waktu permintaan habis"
       ],
       "Signature not verified": [
         "Tanda tangan tidak terverifikasi"
@@ -1700,7 +1672,7 @@
         "(Mail + VPN)"
       ],
       "* Customizable features": [
-        "* Fitur yang dapat disesuaikan"
+        "* Dapat diatur sesuai kebutuhan"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ bonus kapasitas ${ bonusSpace }"
@@ -1776,9 +1748,6 @@
       ],
       "Are you sure you want to permanently delete selected item from trash?": [
         "Anda yakin ingin menghapus permanen?"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Karena ${ appName } terenkripsi secara end-to-end, kami tidak dapat mengakses atau mendekripsi data-data Anda. Untuk dapat kembali masuk ke dalam drive milik Anda yang kata sandinya telah diatur ulang, Anda harus memiliki setidaknya salah satu hal berikut:"
@@ -1996,8 +1965,8 @@
       "Initializing": [
         "Memulai"
       ],
-      "Internet connection lost.": [
-        "Koneksi internet terputus."
+      "Internet connection lost": [
+        "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Koneksi internet terputus. Mohon periksa koneksi pada perangkat Anda."
@@ -2138,7 +2107,7 @@
         "Mohon dicatat proses ini memerlukan waktu, tergantung pada ukuran buku alamat Anda."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Harap diperhatikan dengan mengklik tombol Konfirmasi, akun anda akan memiliki kredit ${ creditsRemaining } yang tersisa."
+        "Harap diperhatikan bahwa dengan mengklik tombol Konfirmasi, sisa saldo Anda akan menjadi ${ creditsRemaining }."
       ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
@@ -2212,8 +2181,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
-      "Session timed out.": [
-        "Sesi habis."
+      "Session timed out": [
+        "Masa berlaku sesi telah berakhir"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara end-to-end dengan para pengguna layanan email lainnya yang juga mendukung PGP."
@@ -2356,6 +2325,9 @@
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda ketika proses impor telah selesai."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
+      ],
       "Week": [
         "Pekan"
       ],
@@ -2370,6 +2342,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Apakah Anda ingin menerima kode verifikasi baru?"
       ],
       "Would you like to restore your files?": [
         "Apa Anda ingin memulihkan berkas Anda?"
@@ -2536,197 +2511,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Tambah enkripsi"
-      ],
-      "Add expiration time": [
-        "Tambah waktu kedaluwarsa"
-      ],
-      "Apply / open": [
-        "Terapkan / buka"
-      ],
-      "Attach file": [
-        "Lampirkan berkas"
-      ],
-      "Cancel / close": [
-        "Batal / tutup"
-      ],
-      "Close draft": [
-        "Tutup draf"
-      ],
-      "Create filter with...": [
-        "Buat filter dengan..."
-      ],
-      "Delete permanently": [
-        "Hapus permanen"
-      ],
-      "Discard draft": [
-        "Buang draf"
-      ],
-      "Expand / contract composer": [
-        "Lebarkan / kerutkan komposer"
-      ],
-      "Forward": [
-        "Teruskan"
-      ],
-      "Go to All Mail": [
-        "Ke Semua Surat"
-      ],
-      "Go to Archive": [
-        "Ke Arsip"
-      ],
-      "Go to Drafts": [
-        "Ke Draf"
-      ],
-      "Go to Inbox": [
-        "Ke Kotak masuk"
-      ],
-      "Go to Sent": [
-        "Ke Terkirim"
-      ],
-      "Go to Spam": [
-        "Ke Spam"
-      ],
-      "Go to Starred": [
-        "Ke Bintang"
-      ],
-      "Go to Trash": [
-        "Ke Tempat Sampah"
-      ],
-      "Jump to first": [
-        "Lompat ke pertama"
-      ],
-      "Jump to last": [
-        "Lompat ke terakhir"
-      ],
-      "Label as...": [
-        "Labeli sebagai..."
-      ],
-      "Load embedded images": [
-        "Muat gambar tertanam"
-      ],
-      "Load remote content": [
-        "Muat remote content"
-      ],
-      "Mark as unread": [
-        "Tandai belum dibaca"
-      ],
-      "Minimize / maximize composer": [
-        "Minimalkan / maksimalkan komposer"
-      ],
-      "Move down": [
-        "Turunkan"
-      ],
-      "Move left / collapse": [
-        "Geser kiri / tutup"
-      ],
-      "Move right / expand": [
-        "Geser kanan / buka"
-      ],
-      "Move to Archive": [
-        "Pindahkan ke Arsip"
-      ],
-      "Move to Inbox": [
-        "Pindahkan ke Kotak masuk"
-      ],
-      "Move to Spam": [
-        "Pindahkan ke Spam"
-      ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
-      "Move to...": [
-        "Pindah ke..."
-      ],
-      "Move up": [
-        "Naikkan"
-      ],
-      "New message": [
-        "Pesan baru"
-      ],
-      "Open next message": [
-        "Buka pesan selanjutnya"
-      ],
-      "Open previous message": [
-        "Buka pesan sebelumnya"
-      ],
-      "Open this modal": [
-        "Buka jendela ini"
-      ],
-      "Reply": [
-        "Balas"
-      ],
-      "Reply all": [
-        "Balas semua"
-      ],
-      "Save draft": [
-        "Simpan draf"
-      ],
-      "Search": [
-        "Pencarian"
-      ],
-      "Select / unselect": [
-        "Pilih / batal pilih"
-      ],
-      "Select / unselect all": [
-        "Pilih / batal pilih semua"
-      ],
-      "Send email": [
-        "Kirim surel"
-      ],
-      "Show all emails": [
-        "Tampilkan semua surel"
-      ],
-      "Show original message": [
-        "Tampilkan pesan orisinal"
-      ],
-      "Show unread emails": [
-        "Tampilkan email-email yang belum dibaca"
-      ],
-      "Star": [
-        "Bintang"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Pintasan tindakan"
-      ],
-      "Basic actions": [
-        "Tindakan dasar"
-      ],
-      "Basic navigation": [
-        "Navigasi dasar"
-      ],
-      "Composer shortcuts": [
-        "Pintasan komposer"
-      ],
-      "Folder shortcuts": [
-        "Pintasan folder"
-      ],
-      "List shortcuts": [
-        "Buat daftar pintasan"
-      ],
-      "Message shortcuts": [
-        "Pintasan pesan"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Nonaktif"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Aktif"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Segera hadir)"
-      ],
       "(Expired)": [
         "(Kedaluwarsa)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
       "Active": [
         "Aktif"
@@ -2791,6 +2581,9 @@
       "City": [
         "Kota"
       ],
+      "Code is 6 digits without spaces": [
+        "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
       "Completed": [
         "Selesai"
       ],
@@ -2835,9 +2628,6 @@
       ],
       "Enter organization name to confirm": [
         "Masukkan nama organisasi untuk dapat melanjutkan"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -2895,9 +2685,6 @@
       ],
       "Import to email address": [
         "Impor ke alamat email"
-      ],
-      "Keyboard shortcuts": [
-        "Pintasan papan ketik"
       ],
       "Label messages as": [
         "Labeli pesan-pesan ini dengan"
@@ -2988,15 +2775,6 @@
       ],
       "Select a method": [
         "Pilih metode"
-      ],
-      "Select how your composer opens by default.": [
-        "Tentukan bagaimana jendela komposer Anda akan terbuka."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
       ],
       "Select your country": [
         "Pilih negara anda"
@@ -3096,30 +2874,6 @@
         "Nama"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Dimaksimalkan"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
@@ -3142,14 +2896,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } dibuat"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
       ]
     },
     "Link": {
@@ -3190,6 +2936,9 @@
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } dari ${ calendarsToBeCreated } telah terbuat"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "${ createdCalendars } dari 1 telah terbuat"
       ],
       "Almost there": [
         "Hampir selesai"
@@ -3479,7 +3228,7 @@
         "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all Proton services": [
-        "Temukan semua layanan Proton"
+        "Telusuri seluruh layanan yang Proton tawarkan"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
         "Misi kami adalah membangun internet dimana Anda memegang kendali data dan privasi Anda. Kami baru saja memutakhirkan Proton - Selamat datang di internet aman."
@@ -3854,9 +3603,6 @@
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke clipboard"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferensi pintasan papan ketik diperbarui"
-      ],
       "Phone number copied to clipboard": [
         "Nomor telepon disalin ke papan klip"
       ],
@@ -3997,9 +3743,6 @@
       "${ appName } customization": [
         "Penyesuaian ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Pintasan Papan Ketik"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } anggota"
       ],
@@ -4028,7 +3771,7 @@
         "Jumlah jatuh tempo"
       ],
       "Apply gift code": [
-        "Tambah kode hadiah"
+        "Gunakan kode hadiah"
       ],
       "Back": [
         "Kembali"
@@ -4056,9 +3799,6 @@
       ],
       "Clearing data": [
         "Membersihkan data"
-      ],
-      "Composer mode": [
-        "Mode menulis"
       ],
       "Confirm loss of Proton bonuses": [
         "Konfirmasi kehilangan bonus Proton"
@@ -4088,7 +3828,7 @@
         "Buat grup baru"
       ],
       "Credits": [
-        "Kredit"
+        "Saldo"
       ],
       "Currency": [
         "Mata uang"
@@ -4228,20 +3968,11 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
-      "Keyboard Shortcuts": [
-        "Pintasan Papan Ketik"
-      ],
       "Link confirmation": [
         "Konfirmasi tautan"
       ],
       "Location": [
         "Lokasi"
-      ],
-      "Mailbox density": [
-        "Kepadatan kotak surat"
-      ],
-      "Mailbox layout": [
-        "Tata letak kotak surat"
       ],
       "Manage secure link": [
         "Kelola tautan aman"
@@ -4500,7 +4231,7 @@
         "Hosting email untuk domain Anda sendiri di ProtonMail, mis. john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
+        "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami sebelumnya, silakan masukkan di sini."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Dukungan multi-pengguna hanya dapat diterapkan ke paket dengan 2 pengguna atau lebih"

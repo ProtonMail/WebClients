@@ -122,9 +122,6 @@
       "Compose": [
         "写邮件"
       ],
-      "Composer size": [
-        "编辑窗大小"
-      ],
       "Confirm": [
         "确认"
       ],
@@ -185,8 +182,8 @@
       "Details": [
         "详细信息"
       ],
-      "Did not receive the code?": [
-        "没有收到验证码？"
+      "Didn't receive the code?": [
+        "没收到验证码？"
       ],
       "Done": [
         "完成"
@@ -208,6 +205,9 @@
       ],
       "Edit phone number": [
         "编辑电话号码"
+      ],
+      "Edit sign-in details": [
+        "编辑登录信息"
       ],
       "Email settings": [
         "邮件设置"
@@ -275,9 +275,6 @@
       "Increase": [
         "增加"
       ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
-      ],
       "Load image": [
         "加载图片"
       ],
@@ -286,12 +283,6 @@
       ],
       "Log in": [
         "登录"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
       ],
       "Manage link": [
         "管理链接"
@@ -327,7 +318,7 @@
         "移至回收站"
       ],
       "New upload": [
-        "新上传"
+        "上传文件"
       ],
       "Next": [
         "后一页"
@@ -557,11 +548,14 @@
       "Use for sending": [
         "用于发送邮件"
       ],
-      "Use “${ label }” setting": [
-        "使用 \"${ label }\" 设置"
-      ],
       "Verify": [
         "验证"
+      ],
+      "Verify account": [
+        "验证账户"
+      ],
+      "Verify email": [
+        "验证邮箱"
       ],
       "View": [
         "查看"
@@ -885,14 +879,6 @@
         "不受支持的日历格式"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "满屏"
-      ],
-      "Normal": [
-        "常规"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "退出导入定制？"
@@ -1003,14 +989,6 @@
         "逾期账单"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "适中"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "正在解密联系人，可能需要几分钟的时间。完成后您就可以下载导出的联系人了。"
@@ -1092,12 +1070,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "由于个人日历限制，无法为所有导入的日历创建新日历。"
-      ],
-      "Can't validate email, try again later": [
-        "无法验证电子邮件，请稍后再试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再重试"
       ],
       "Checkout expired, please try again": [
         "支付超时，请重试"
@@ -1258,8 +1230,8 @@
       "Process aborted": [
         "操作已中止"
       ],
-      "Request timed out.": [
-        "请求超时。"
+      "Request timed out": [
+        "请求超时"
       ],
       "Signature not verified": [
         "签名未验证"
@@ -1777,9 +1749,6 @@
       "Are you sure you want to permanently delete selected item from trash?": [
         "您确定要从回收站永久删除所选项目吗？"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "因为 ${ appName } 是端到端加密的，我们无法为您\n访问或解密您的文件。要在密码重置后解锁您的网盘，\n您必须具备以下条件之一："
       ],
@@ -1940,7 +1909,7 @@
         "适合需要安全业务通信的专业人士。"
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "对于 Visa 和 MasterCard，请输入卡背面的 3 位数字。；对于美国运通卡，请输入卡正面的 4 位数字。"
+        "Visa、万事达卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
       ],
       "Free up some space or add more storage space.": [
         "释放一些空间或添加更多存储空间。"
@@ -1996,8 +1965,8 @@
       "Initializing": [
         "正在初始化"
       ],
-      "Internet connection lost.": [
-        "网络连接断开。"
+      "Internet connection lost": [
+        "网络连接已断开"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "网络连接中断，请检查系统网络情况。"
@@ -2174,7 +2143,7 @@
         "预览"
       ],
       "Primary": [
-        "主密钥"
+        "主要"
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
         "ProtonMail Plus 仅限一名用户使用，5 GB 存储空间起步。"
@@ -2212,8 +2181,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
-      "Session timed out.": [
-        "会话已超时。"
+      "Session timed out": [
+        "会话超时"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
@@ -2356,6 +2325,9 @@
       "We'll notify you when the import is done.": [
         "导入完成时我们将通知您。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "我们将向 ${ strong } 发送新的验证码"
+      ],
       "Week": [
         "周"
       ],
@@ -2370,6 +2342,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        "要重新发送验证码吗？"
       ],
       "Would you like to restore your files?": [
         "想要恢复您的文件吗？"
@@ -2536,197 +2511,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "加密邮件"
-      ],
-      "Add expiration time": [
-        "设置有效期"
-      ],
-      "Apply / open": [
-        "应用 / 打开"
-      ],
-      "Attach file": [
-        "添加附件"
-      ],
-      "Cancel / close": [
-        "取消 / 关闭"
-      ],
-      "Close draft": [
-        "关闭草稿"
-      ],
-      "Create filter with...": [
-        "创建筛选规则"
-      ],
-      "Delete permanently": [
-        "永久删除"
-      ],
-      "Discard draft": [
-        "舍弃草稿"
-      ],
-      "Expand / contract composer": [
-        "展开/还原编辑窗"
-      ],
-      "Forward": [
-        "转发"
-      ],
-      "Go to All Mail": [
-        "转至所有邮件"
-      ],
-      "Go to Archive": [
-        "转至存档"
-      ],
-      "Go to Drafts": [
-        "转至草稿箱"
-      ],
-      "Go to Inbox": [
-        "转至收件箱"
-      ],
-      "Go to Sent": [
-        "转至已发送"
-      ],
-      "Go to Spam": [
-        "转至垃圾邮件"
-      ],
-      "Go to Starred": [
-        "转至星标邮件"
-      ],
-      "Go to Trash": [
-        "转至废件箱"
-      ],
-      "Jump to first": [
-        "选择第一项"
-      ],
-      "Jump to last": [
-        "选择最后一项"
-      ],
-      "Label as...": [
-        "加标签"
-      ],
-      "Load embedded images": [
-        "加载嵌入图像"
-      ],
-      "Load remote content": [
-        "加载外链内容"
-      ],
-      "Mark as unread": [
-        "标为未读"
-      ],
-      "Minimize / maximize composer": [
-        "最小化/最大化编辑窗"
-      ],
-      "Move down": [
-        "下移"
-      ],
-      "Move left / collapse": [
-        "左移 / 折叠"
-      ],
-      "Move right / expand": [
-        "右移 / 展开"
-      ],
-      "Move to Archive": [
-        "存档"
-      ],
-      "Move to Inbox": [
-        "移至收件箱"
-      ],
-      "Move to Spam": [
-        "标为垃圾邮件"
-      ],
-      "Move to Trash": [
-        "移至废件箱"
-      ],
-      "Move to...": [
-        "移动邮件"
-      ],
-      "Move up": [
-        "上移"
-      ],
-      "New message": [
-        "撰写邮件"
-      ],
-      "Open next message": [
-        "打开下一封邮件"
-      ],
-      "Open previous message": [
-        "打开上一封邮件"
-      ],
-      "Open this modal": [
-        "打开此面板"
-      ],
-      "Reply": [
-        "回复"
-      ],
-      "Reply all": [
-        "回复所有人"
-      ],
-      "Save draft": [
-        "保存草稿"
-      ],
-      "Search": [
-        "搜索"
-      ],
-      "Select / unselect": [
-        "选择 / 取消选择"
-      ],
-      "Select / unselect all": [
-        "全选 / 全不选"
-      ],
-      "Send email": [
-        "发送邮件"
-      ],
-      "Show all emails": [
-        "显示所有邮件"
-      ],
-      "Show original message": [
-        "显示原始邮件"
-      ],
-      "Show unread emails": [
-        "显示未读邮件"
-      ],
-      "Star": [
-        "星标"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "操作快捷键"
-      ],
-      "Basic actions": [
-        "基本操作"
-      ],
-      "Basic navigation": [
-        "基本导航"
-      ],
-      "Composer shortcuts": [
-        "编辑窗快捷键"
-      ],
-      "Folder shortcuts": [
-        "文件夹快捷键"
-      ],
-      "List shortcuts": [
-        "列表快捷键"
-      ],
-      "Message shortcuts": [
-        "邮件快捷键"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "关"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "开"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "（即将推出）"
-      ],
       "(Expired)": [
         "（已失效）"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "（暂时不可用。请稍后再试。）"
       ],
       "Active": [
         "启用"
@@ -2791,6 +2581,9 @@
       "City": [
         "城市"
       ],
+      "Code is 6 digits without spaces": [
+        "验证码是无空格的六位数"
+      ],
       "Completed": [
         "完成"
       ],
@@ -2836,9 +2629,6 @@
       "Enter organization name to confirm": [
         "请输入机构名称进行确认"
       ],
-      "Enter the 6-digit code": [
-        "请输入 6 位验证码"
-      ],
       "Expired": [
         "已失效"
       ],
@@ -2876,7 +2666,7 @@
         "来自：${ importedEmail }"
       ],
       "Get your own ${ appName }": [
-        "上手您专属的 ${ appName }"
+        "获取您的专属 ${ appName }"
       ],
       "Hide password": [
         "隐藏密码"
@@ -2895,9 +2685,6 @@
       ],
       "Import to email address": [
         "导入到邮箱地址"
-      ],
-      "Keyboard shortcuts": [
-        "开启快捷键"
       ],
       "Label messages as": [
         "给导入的邮件加标签"
@@ -2988,15 +2775,6 @@
       ],
       "Select a method": [
         "选择支付方式"
-      ],
-      "Select how your composer opens by default.": [
-        "请选择编辑窗的默认外观"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "调整邮件列表的显示方式。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "请选择邮箱的默认外观"
       ],
       "Select your country": [
         "选择国家"
@@ -3093,31 +2871,7 @@
     },
     "Label for contact group name": {
       "Name": [
-        "姓名"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "满屏"
-      ],
-      "Normal": [
-        "常规"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "适中"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
+        "名称"
       ]
     },
     "Label, make it short please": {
@@ -3142,14 +2896,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } 标签已创建"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
       ]
     },
     "Link": {
@@ -3190,6 +2936,9 @@
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
+      ],
+      "${ createdCalendars } of 1 created": [
+        ""
       ],
       "Almost there": [
         "即将完成"
@@ -3611,7 +3360,7 @@
         "邮箱密码"
       ],
       "Name": [
-        "姓名"
+        "名称"
       ],
       "New name": [
         "新名称"
@@ -3646,7 +3395,7 @@
     },
     "Placeholder for contact group name": {
       "Name": [
-        "姓名"
+        "名称"
       ]
     },
     "Plan feature": {
@@ -3693,7 +3442,7 @@
         "突破网络封锁"
       ],
       "Access to ${ driveAppName } (beta)": [
-        "抢鲜体验 ${ driveAppName } (测试版)"
+        "抢先体验 ${ driveAppName }（公测版）"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
         "所有 ${ PLAN_NAMES[PLANS.VPNPLUS] } 套餐功能"
@@ -3854,9 +3603,6 @@
       "Fingerprint copied to clipboard": [
         "指纹已复制到剪贴板"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "快捷键设置已更改"
-      ],
       "Phone number copied to clipboard": [
         "电话号码已复制到剪贴板"
       ],
@@ -3997,9 +3743,6 @@
       "${ appName } customization": [
         "自定义 ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 快捷键"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } 位成员"
       ],
@@ -4022,7 +3765,7 @@
         "其他设置"
       ],
       "Addresses": [
-        "邮箱地址"
+        "地址"
       ],
       "Amount due": [
         "应付金额"
@@ -4056,9 +3799,6 @@
       ],
       "Clearing data": [
         "正在清除数据"
-      ],
-      "Composer mode": [
-        "邮件格式"
       ],
       "Confirm loss of Proton bonuses": [
         "确定放弃 Proton 特权"
@@ -4172,7 +3912,7 @@
         "更改图片"
       ],
       "Email addresses": [
-        "邮箱地址数"
+        "邮箱地址"
       ],
       "Email settings": [
         "邮件设置"
@@ -4228,20 +3968,11 @@
       "Invalid verification code": [
         "无效的验证代码"
       ],
-      "Keyboard Shortcuts": [
-        "键盘快捷键"
-      ],
       "Link confirmation": [
         "确认打开链接"
       ],
       "Location": [
         "位置"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
       ],
       "Manage secure link": [
         "管理安全链接"
@@ -4268,7 +3999,7 @@
         "我的文件 ${ date }.zip"
       ],
       "Name": [
-        "姓名"
+        "名称"
       ],
       "Network error": [
         "网络错误"
@@ -4485,7 +4216,7 @@
         "加密数据"
       ],
       "Encrypted data with verified digital signature": [
-        "经过已验证的数字签名加密过的数据"
+        "已加密并验证数字签名"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"

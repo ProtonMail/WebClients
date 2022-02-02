@@ -14,7 +14,7 @@
       "Close modal": [
         "Stäng modal"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Fick du inte koden?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Redigera telefonnummer"
+      ],
+      "Edit sign-in details": [
+        "Redigera inloggningsdetaljer"
       ],
       "Get verification code": [
         "Få verifieringskod"
@@ -41,6 +44,12 @@
       "Verify": [
         "Verifiera"
       ],
+      "Verify account": [
+        "Verifiera konto"
+      ],
+      "Verify email": [
+        "Verifiera e-post"
+      ],
       "View invoice": [
         "Visa faktura"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Kan inte validera e-post, försök igen senare"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan inte validera telefon, försök igen senare"
-      ],
       "Email is not valid": [
         "E-post är inte giltig"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Lösenorden matchar inte"
       ],
-      "Request timed out.": [
-        "Förfrågan gjorde timeout."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "Detta fält är obligatoriskt"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
-      "Internet connection lost.": [
-        "Internetanslutning förlorades."
+      "Internet connection lost": [
+        "Internetanslutning förlorades"
       ],
       "Loading": [
         "Laddar"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
-      "Session timed out.": [
-        "Session timeout."
+      "Session timed out": [
+        "Session timeout"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Vi skickar en ny verifieringskod till ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Vill du få en ny verifieringskod?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Code is 6 digits without spaces": [
+        "Kod är 6 siffror utan mellanslag"
+      ],
       "Email address": [
         "E-postadress"
-      ],
-      "Enter the 6-digit code": [
-        "Ange den 6-siffriga koden"
       ],
       "Hide password": [
         "Dölj lösenord"

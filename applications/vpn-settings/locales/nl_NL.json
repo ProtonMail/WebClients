@@ -139,6 +139,9 @@
       "Did not receive the code?": [
         "Code niet ontvangen?"
       ],
+      "Didn't receive the code?": [
+        ""
+      ],
       "Done": [
         "Klaar"
       ],
@@ -165,6 +168,9 @@
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email me my username(s)": [
         "E-mail me mijn gebruikersnaam(namen)"
@@ -391,11 +397,17 @@
       "Verify": [
         "Verifiëren"
       ],
+      "Verify account": [
+        ""
+      ],
       "Verify code": [
         "Bevestig de code"
       ],
       "Verify code again": [
         "Verifieer code opnieuw"
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Bekijk"
@@ -829,12 +841,6 @@
       "Can't check username, try again later": [
         "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
       ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
@@ -931,8 +937,8 @@
       "Process aborted": [
         "Proces afgebroken"
       ],
-      "Request timed out.": [
-        "Het verzoek timed out."
+      "Request timed out": [
+        ""
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
@@ -1445,8 +1451,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installeer een serverconfiguratie bestand om te verbinden met een specifieke server in het land van uw keuze."
       ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbinding verbroken. Controleer uw internetverbinding."
@@ -1602,8 +1608,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
-      "Session timed out.": [
-        "Sessie verlopen."
+      "Session timed out": [
+        ""
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
@@ -1734,6 +1740,9 @@
       "We will send a reset code to your recovery email to reset your password.": [
         "We sturen een reset code naar uw herstel e-mailadres om uw wachtwoord te resetten."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "We hebben een herstelcode naar uw herstel-e-mailadres gestuurd, die een uur geldig is tot u een nieuwe code aanvraagt. Voer de code hieronder in om door te gaan."
       ],
@@ -1745,6 +1754,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "You already have a free account": [
         "U heeft al een gratis account"
@@ -2004,6 +2016,9 @@
       "Category": [
         "Categorie"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Confirm login password": [
         "Bevestig inlogwachtwoord"
       ],
@@ -2072,9 +2087,6 @@
       ],
       "Enter organization name to confirm": [
         "Voer de naam van de organisatie in om te bevestigen"
-      ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
       ],
       "Enter the code displayed on your TV": [
         "Voer de op uw TV weergegeven code in"

@@ -14,14 +14,17 @@
       "Close modal": [
         "Close modal"
       ],
-      "Did not receive the code?": [
-        "Did not receive the code?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "Edit email address"
       ],
       "Edit phone number": [
         "Edit phone number"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "Get verification code"
@@ -41,6 +44,12 @@
       "Verify": [
         "Verify"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "View invoice"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Can't validate email, try again later"
-      ],
-      "Can't validate phone, try again later": [
-        "Phone validation failed, try again later"
-      ],
       "Email is not valid": [
         "Invalid email"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Passwords do not match"
       ],
-      "Request timed out.": [
-        "Request timed out."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "This field is required"
@@ -138,7 +141,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "If you don't find the email in your inbox, please check your spam folder."
       ],
-      "Internet connection lost.": [
+      "Internet connection lost": [
         ""
       ],
       "Loading": [
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Session timed out."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "To fight spam and abuse, please verify you are human."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Would you like to receive a new verification code or use an alternative verification method?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "Your email will only be used for this one-time verification."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Cancel"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "Email address"
-      ],
-      "Enter the 6-digit code": [
-        "Enter the 6-digit code"
       ],
       "Hide password": [
         "Hide password"

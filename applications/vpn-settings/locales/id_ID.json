@@ -139,6 +139,9 @@
       "Did not receive the code?": [
         "Tidak menerima kode?"
       ],
+      "Didn't receive the code?": [
+        "Tidak menerima kode yang dimaksud?"
+      ],
       "Done": [
         "Selesai"
       ],
@@ -165,6 +168,9 @@
       ],
       "Edit phone number": [
         "Edit nomor telepon"
+      ],
+      "Edit sign-in details": [
+        "Sunting rincian masuk"
       ],
       "Email me my username(s)": [
         "Kirim surel nama pengguna saya"
@@ -391,11 +397,17 @@
       "Verify": [
         "Verifikasikan"
       ],
+      "Verify account": [
+        "Verifikasi akun"
+      ],
       "Verify code": [
         "Verifikasi kode"
       ],
       "Verify code again": [
         "Verifikasi kode lagi"
+      ],
+      "Verify email": [
+        "Verifikasi email"
       ],
       "View": [
         "Lihat"
@@ -818,12 +830,6 @@
       "Can't check username, try again later": [
         "Tidak dapat memeriksa nama pengguna, coba lagi nanti"
       ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi surel, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
@@ -920,8 +926,8 @@
       "Process aborted": [
         "Proses dibatalkan"
       ],
-      "Request timed out.": [
-        "Terlalu lama memuat."
+      "Request timed out": [
+        "Waktu permintaan habis"
       ],
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
@@ -1430,8 +1436,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Pasang berkas Konfigurasi server untuk menyambung ke server khusus di negara pilihan Anda."
       ],
-      "Internet connection lost.": [
-        "Koneksi internet terputus."
+      "Internet connection lost": [
+        "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
@@ -1586,8 +1592,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
-      "Session timed out.": [
-        "Sesi habis."
+      "Session timed out": [
+        "Masa berlaku sesi telah berakhir"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda pengguna setia, akun Anda memiliki fitur tambahan yang diaktifkan."
@@ -1718,6 +1724,9 @@
       "We will send a reset code to your recovery email to reset your password.": [
         "Kami akan mengirim sebuah kode untuk mengatur ulang ke alamat surel pemulihan Anda guna mengatur ulang kata sandi Anda."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
+      ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Kami telah mengirim kode untuk mengatur ulang ke surel pemulihan, valid hingga satu jam sampai Anda meminta kode baru. Masukkanlah kode di bawah untuk melanjutkan."
       ],
@@ -1729,6 +1738,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Apakah Anda ingin menerima kode verifikasi baru?"
       ],
       "You already have a free account": [
         "Anda sudah memiliki akun gratis"
@@ -1984,6 +1996,9 @@
       "Category": [
         "Kategori"
       ],
+      "Code is 6 digits without spaces": [
+        "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
       "Confirm login password": [
         "Konfirmasi sandi masuk"
       ],
@@ -2052,9 +2067,6 @@
       ],
       "Enter organization name to confirm": [
         "Masukkan nama organisasi untuk dapat melanjutkan"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
       ],
       "Enter the code displayed on your TV": [
         "Masukkan kode yang ditampilkan di TV Anda"

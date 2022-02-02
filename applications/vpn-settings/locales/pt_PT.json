@@ -139,6 +139,9 @@
       "Did not receive the code?": [
         "Não recebeu o código?"
       ],
+      "Didn't receive the code?": [
+        ""
+      ],
       "Done": [
         "Feito"
       ],
@@ -165,6 +168,9 @@
       ],
       "Edit phone number": [
         "Editar número de telefone"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email me my username(s)": [
         "Enviem-me o nome de utilizador"
@@ -391,11 +397,17 @@
       "Verify": [
         "Verificar"
       ],
+      "Verify account": [
+        ""
+      ],
       "Verify code": [
         "Verificar código"
       ],
       "Verify code again": [
         "Verificar código novamente"
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Ver"
@@ -829,12 +841,6 @@
       "Can't check username, try again later": [
         "Impossível verificar o utilizador, tente mais tarde"
       ],
-      "Can't validate email, try again later": [
-        "Impossível validar o email, tente mais tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "Impossível validar o telefone, tente mais tarde"
-      ],
       "Checkout expired, please try again": [
         ""
       ],
@@ -931,8 +937,8 @@
       "Process aborted": [
         "Processo abortado"
       ],
-      "Request timed out.": [
-        "O pedido expirou."
+      "Request timed out": [
+        ""
       ],
       "Signature verification failed": [
         "Falha ao verificar a assinatura"
@@ -1445,8 +1451,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instale um ficheiro de configuração do servidor para ligar a um servidor específico num país à sua escolha."
       ],
-      "Internet connection lost.": [
-        "Ligação à Internet perdida."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ligação à Internet perdida. Verifique a ligação do seu dispositivo."
@@ -1602,8 +1608,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "A sessão expirou."
+      "Session timed out": [
+        ""
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
@@ -1734,6 +1740,9 @@
       "We will send a reset code to your recovery email to reset your password.": [
         "Vamos enviar-lhe um código de reposição para o seu email de recuperação."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Enviámos um código de reposição para o seu email, válido por uma hora ou até que requeira um novo código. Insira-o abaixo para continuar."
       ],
@@ -1745,6 +1754,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
@@ -2004,6 +2016,9 @@
       "Category": [
         "Categoria"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Confirm login password": [
         "Confirmar senha de início de sessão"
       ],
@@ -2072,9 +2087,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Inserir o código de 6 algarismos"
       ],
       "Enter the code displayed on your TV": [
         "Insira o código mostrado na sua TV"

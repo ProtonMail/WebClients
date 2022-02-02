@@ -122,9 +122,6 @@
       "Compose": [
         "Nova poruka"
       ],
-      "Composer size": [
-        ""
-      ],
       "Confirm": [
         "Potvrdi"
       ],
@@ -189,8 +186,8 @@
       "Details": [
         "Pojedinosti"
       ],
-      "Did not receive the code?": [
-        "Niste primili kôd?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Done": [
         "Gotovo"
@@ -212,6 +209,9 @@
       ],
       "Edit phone number": [
         "Uredi broj telefona"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Postavke e-pošte"
@@ -279,9 +279,6 @@
       "Increase": [
         "Povećaj"
       ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
-      ],
       "Load image": [
         "Učitaj sliku"
       ],
@@ -290,12 +287,6 @@
       ],
       "Log in": [
         "Prijavite se"
-      ],
-      "Mailbox density": [
-        "Gustoća poštanskog sandučića"
-      ],
-      "Mailbox layout": [
-        "Izgled poštanskog sandučića"
       ],
       "Manage link": [
         ""
@@ -561,11 +552,14 @@
       "Use for sending": [
         "Koristi za slanje"
       ],
-      "Use “${ label }” setting": [
-        "Koristi “${ label }” postavku"
-      ],
       "Verify": [
         "Potvrdi"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Pregled"
@@ -897,14 +891,6 @@
         ""
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Maksimizirano"
-      ],
-      "Normal": [
-        "Normalno"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1019,14 +1005,6 @@
         "Neplaćena faktura"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Udobno"
-      ],
-      "Compact": [
-        "Kompaktno"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje kontakata... Ovo može potrajati nekoliko minuta. Nakon dovršetka možete preuzeti datoteku koja sadrži vaše sve kontakte."
@@ -1110,12 +1088,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
-      ],
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
       ],
       "Checkout expired, please try again": [
         ""
@@ -1288,8 +1260,8 @@
       "Process aborted": [
         "Proces je prekinut"
       ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
+      "Request timed out": [
+        ""
       ],
       "Signature not verified": [
         "Potpis nije ovjeren"
@@ -1871,9 +1843,6 @@
         "",
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
@@ -2096,8 +2065,8 @@
       "Initializing": [
         "Pokretanje"
       ],
-      "Internet connection lost.": [
-        "Prekinuta je internetska veza."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
@@ -2314,8 +2283,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Sesija je istekla."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ProtonMaila, ali koriste PGP kompatibilne usluge."
@@ -2460,6 +2429,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Tjedan"
       ],
@@ -2474,6 +2446,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to restore your files?": [
         "Želite li vratiti svoje datoteke?"
@@ -2640,197 +2615,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Dodaj šifriranje"
-      ],
-      "Add expiration time": [
-        "Dodaj vrijeme isteka"
-      ],
-      "Apply / open": [
-        "Primijeni / otvori"
-      ],
-      "Attach file": [
-        "Priloži datoteku"
-      ],
-      "Cancel / close": [
-        "Odustani / zatvori"
-      ],
-      "Close draft": [
-        "Zatvori skicu"
-      ],
-      "Create filter with...": [
-        "Stvori filtar s..."
-      ],
-      "Delete permanently": [
-        "Trajno izbriši"
-      ],
-      "Discard draft": [
-        "Odbaci skicu"
-      ],
-      "Expand / contract composer": [
-        "Proširi / smanji prozor za novu poruku"
-      ],
-      "Forward": [
-        "Proslijedi"
-      ],
-      "Go to All Mail": [
-        "Premjesti u Svu poštu"
-      ],
-      "Go to Archive": [
-        "Idi u Arhivu"
-      ],
-      "Go to Drafts": [
-        "Idi u Skice"
-      ],
-      "Go to Inbox": [
-        "Idi u Pristiglu poštu"
-      ],
-      "Go to Sent": [
-        "Idi u Poslano"
-      ],
-      "Go to Spam": [
-        "Idi u Neželjenu poštu"
-      ],
-      "Go to Starred": [
-        "Idi u Sa zvjezdicom"
-      ],
-      "Go to Trash": [
-        "Idi u Otpad"
-      ],
-      "Jump to first": [
-        "Preskoči na prvo"
-      ],
-      "Jump to last": [
-        "Preskoči na zadnje"
-      ],
-      "Label as...": [
-        "Označi kao..."
-      ],
-      "Load embedded images": [
-        "Učitaj ugrađene slike"
-      ],
-      "Load remote content": [
-        "Učitaj udaljeni sadržaj"
-      ],
-      "Mark as unread": [
-        "Označi kao nepročitano"
-      ],
-      "Minimize / maximize composer": [
-        "Smanji / povećaj prozor za novu poruku"
-      ],
-      "Move down": [
-        "Premjesti dolje"
-      ],
-      "Move left / collapse": [
-        "Pomakni lijevo / smanji"
-      ],
-      "Move right / expand": [
-        "Pomakni desno / proširi"
-      ],
-      "Move to Archive": [
-        "Premjesti u arhivu"
-      ],
-      "Move to Inbox": [
-        "Premjesti u Pristiglu poštu"
-      ],
-      "Move to Spam": [
-        "Premjesti u Neželjenu poštu"
-      ],
-      "Move to Trash": [
-        "Premjesti u Otpad"
-      ],
-      "Move to...": [
-        "Premjesti u..."
-      ],
-      "Move up": [
-        "Premjesti gore"
-      ],
-      "New message": [
-        "Nova poruka"
-      ],
-      "Open next message": [
-        "Otvori sljedeću poruku"
-      ],
-      "Open previous message": [
-        "Otvori prethodnu poruku"
-      ],
-      "Open this modal": [
-        "Otvori ovaj modal"
-      ],
-      "Reply": [
-        "Odgovor"
-      ],
-      "Reply all": [
-        "Odgovori svima"
-      ],
-      "Save draft": [
-        "Spremi skicu"
-      ],
-      "Search": [
-        "Pretraga"
-      ],
-      "Select / unselect": [
-        "Odaberi / poništi odabir"
-      ],
-      "Select / unselect all": [
-        "Odaberi sve / poništi sav odabir"
-      ],
-      "Send email": [
-        "Pošalji e-poruku"
-      ],
-      "Show all emails": [
-        "Prikaži svu e-poštu"
-      ],
-      "Show original message": [
-        "Prikaži originalnu poruku"
-      ],
-      "Show unread emails": [
-        "Prikaži nepročitane e-poruke"
-      ],
-      "Star": [
-        "Zvjezdica"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Prečaci radnji"
-      ],
-      "Basic actions": [
-        "Osnovne radnje"
-      ],
-      "Basic navigation": [
-        "Osnovna navigacija"
-      ],
-      "Composer shortcuts": [
-        "Prečaci prozora za novu poruku"
-      ],
-      "Folder shortcuts": [
-        "Prečaci mapa"
-      ],
-      "List shortcuts": [
-        "Popis prečaca"
-      ],
-      "Message shortcuts": [
-        "Prečaci poruke"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        ""
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        ""
-      ],
       "(Expired)": [
         "(Isteklo)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Active": [
         "Aktivno"
@@ -2895,6 +2685,9 @@
       "City": [
         "Grad"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Completed": [
         ""
       ],
@@ -2941,9 +2734,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Unesite 6-znamenkasti kôd"
       ],
       "Expired": [
         "Isteklo"
@@ -3001,9 +2791,6 @@
       ],
       "Import to email address": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
       ],
       "Label messages as": [
         ""
@@ -3094,15 +2881,6 @@
       ],
       "Select a method": [
         "Odaberite način plaćanja"
-      ],
-      "Select how your composer opens by default.": [
-        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Odaberite kako će vaš popis poruka izgledati po zadanom."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
       ],
       "Select your country": [
         "Odaberite vašu državu"
@@ -3202,30 +2980,6 @@
         "Naziv"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maksimizirano"
-      ],
-      "Normal": [
-        "Normalno"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Udobno"
-      ],
-      "Compact": [
-        "Kompaktno"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Stupac"
-      ],
-      "Row": [
-        "Redak"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Dodajte snimku(e) zaslona"
@@ -3248,14 +3002,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Stupac"
-      ],
-      "Row": [
-        "Redak"
       ]
     },
     "Link": {
@@ -3295,6 +3041,11 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
+        "",
+        ""
+      ],
+      "${ createdCalendars } of 1 created": [
         "",
         "",
         ""
@@ -4022,9 +3773,6 @@
       "Fingerprint copied to clipboard": [
         "Otisak prsta je kopiran u međuspremnik"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Postavke tipkovnih prečaca su ažurirane"
-      ],
       "Phone number copied to clipboard": [
         "Telefonski broj je kopiran u međuspremnik"
       ],
@@ -4169,9 +3917,6 @@
       "${ appName } customization": [
         "${ appName } prilagođavanje"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } tipkovni prečaci"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } član",
         "${ emailsCount } člana",
@@ -4232,9 +3977,6 @@
       ],
       "Clearing data": [
         "Brisanje podataka"
-      ],
-      "Composer mode": [
-        "Način rada prozora za novu poruku"
       ],
       "Confirm loss of Proton bonuses": [
         "Potvrdite gubitak Proton bonusa"
@@ -4408,20 +4150,11 @@
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
       ],
-      "Keyboard Shortcuts": [
-        "Tipkovni prečaci"
-      ],
       "Link confirmation": [
         "Potvrda poveznice"
       ],
       "Location": [
         "Lokacija"
-      ],
-      "Mailbox density": [
-        "Gustoća poštanskog sandučića"
-      ],
-      "Mailbox layout": [
-        "Izgled poštanskog sandučića"
       ],
       "Manage secure link": [
         "Upravljanje sigurnom poveznicom"

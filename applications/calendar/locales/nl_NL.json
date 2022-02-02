@@ -166,7 +166,7 @@
       "Deselect all": [
         "Alles deselecteren"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Code niet ontvangen?"
       ],
       "Discard": [
@@ -192,6 +192,9 @@
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Edit sign-in details": [
+        "Bewerk aanmeldgegevens"
       ],
       "Email settings": [
         "E-mail instellingen"
@@ -256,9 +259,6 @@
       "Increase": [
         "Verhoog"
       ],
-      "Keyboard shortcuts": [
-        "Sneltoetsen"
-      ],
       "Load image": [
         "Afbeelding laden"
       ],
@@ -267,12 +267,6 @@
       ],
       "Log in": [
         "Aanmelden"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Mailbox layout": [
-        "Mailbox layout"
       ],
       "Make this participant optional": [
         "Maak deze deelnemer optioneel"
@@ -514,11 +508,14 @@
       "Use for sending": [
         "Gebruik voor verzenden"
       ],
-      "Use “${ label }” setting": [
-        "Gebruik “${ label }”-instelling"
-      ],
       "Verify": [
         "Verifiëer"
+      ],
+      "Verify account": [
+        "Verifieer account"
+      ],
+      "Verify email": [
+        "Verifieer e-mailadres"
       ],
       "View": [
         "Bekijken"
@@ -604,37 +601,37 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } begon gisteren om ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        "${ title } begint om ${ formattedHour }"
+      ],
       "${ title } starts now": [
         "${ title } begint nu"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        "${ title } begint op ${ _formattedDate2 }"
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } begint op ${ _formattedDate2 } om ${ formattedHour }"
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        "${ title } begint op ${ _formattedDate3 }"
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } begint op ${ _formattedDate3 } om ${ formattedHour }"
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        "${ title } begint op ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        "${ title } begint op ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } begint vandaag"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } start om ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } begint op ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } begint op ${ _formattedDate2 } om ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } begint op ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } begint op ${ _formattedDate3 } om ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } begint op ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } begint op ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
+      "${ title } starts tomorrow": [
         "${ title } begint morgen"
       ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
+      "${ title } starts tomorrow at ${ formattedHour }": [
         "${ title } begint morgen om ${ formattedHour }"
       ]
     },
@@ -1002,14 +999,6 @@
         ": "
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Gemaximaliseerd"
-      ],
-      "Normal": [
-        "Normaal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Persoonlijke instellingen m.b.t. importeren sluiten?"
@@ -1165,14 +1154,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Onbetaalde factuur"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
       ]
     },
     "Description": {
@@ -1386,12 +1367,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
       ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
       "Cancellation failed to be sent": [
         "Annulering kon niet worden verzonden"
       ],
@@ -1590,8 +1565,8 @@
       "Process aborted": [
         "Proces afgebroken"
       ],
-      "Request timed out.": [
-        "Reactietijd verzoek overschreden."
+      "Request timed out": [
+        "Reactietijd verzoek overschreden"
       ],
       "Self invitation not allowed": [
         "Zelf uitnodiging niet toegestaan"
@@ -2369,9 +2344,6 @@
       "At most 100 participants are allowed per invitation": [
         "Maximaal 100 deelnemers zijn toegestaan per uitnodiging"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief of inactief zijn in de instellingen."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "Gefactureerd als ${ billedPrice } elke 2 jaar"
       ],
@@ -2551,8 +2523,8 @@
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
+      "Internet connection lost": [
+        "Internetverbinding verbroken"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbinding verbroken. Controleer uw internetverbinding."
@@ -2723,8 +2695,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
-      "Session timed out.": [
-        "Sessie verlopen."
+      "Session timed out": [
+        "Sessie verlopen"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
@@ -2849,6 +2821,9 @@
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "We verzenden een nieuwe verificatiecode naar ${ strong }"
+      ],
       "Week": [
         "Week"
       ],
@@ -2878,6 +2853,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
       "Would you like to update all events in this series?": [
         "Wilt u alle gebeurtenissen in deze serie bijwerken?"
@@ -3047,194 +3025,9 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Versleuteling toevoegen"
-      ],
-      "Add expiration time": [
-        "Vervaltijd toevoegen"
-      ],
-      "Apply / open": [
-        "Toepassen / openen"
-      ],
-      "Attach file": [
-        "Bestand toevoegen"
-      ],
-      "Cancel / close": [
-        "Annuleren / sluiten"
-      ],
-      "Close draft": [
-        "Concept sluiten"
-      ],
-      "Create filter with...": [
-        "Filter maken met..."
-      ],
-      "Delete permanently": [
-        "Permanent verwijderen"
-      ],
-      "Discard draft": [
-        "Concept weggooien"
-      ],
-      "Expand / contract composer": [
-        "Opstelvenster uitvouwen / invouwen"
-      ],
-      "Forward": [
-        "Doorsturen"
-      ],
-      "Go to All Mail": [
-        "Ga naar Alle Berichten"
-      ],
-      "Go to Archive": [
-        "Ga naar Archief"
-      ],
-      "Go to Drafts": [
-        "Ga naar Concepten"
-      ],
-      "Go to Inbox": [
-        "Ga naar Inbox"
-      ],
-      "Go to Sent": [
-        "Ga naar Verzonden"
-      ],
-      "Go to Spam": [
-        "Ga naar Spam"
-      ],
-      "Go to Starred": [
-        "Ga naar Berichten met ster"
-      ],
-      "Go to Trash": [
-        "Ga naar Prullenbak"
-      ],
-      "Jump to first": [
-        "Spring naar eerste"
-      ],
-      "Jump to last": [
-        "Spring naar laatste"
-      ],
-      "Label as...": [
-        "Labellen als..."
-      ],
-      "Load embedded images": [
-        "Ingesloten afbeeldingen laden"
-      ],
-      "Load remote content": [
-        "Externe inhoud laden"
-      ],
-      "Mark as unread": [
-        "Markeren als ongelezen"
-      ],
-      "Minimize / maximize composer": [
-        "Opstelvenster minimaliseren / maximaliseren"
-      ],
-      "Move down": [
-        "Naar beneden verplaatsen"
-      ],
-      "Move left / collapse": [
-        "Verplaats naar links / inklappen"
-      ],
-      "Move right / expand": [
-        "Verplaats naar rechts / uitbreiden"
-      ],
-      "Move to Archive": [
-        "Verplaats naar Archief"
-      ],
-      "Move to Inbox": [
-        "Verplaats naar inbox"
-      ],
-      "Move to Spam": [
-        "Verplaats naar Spam"
-      ],
-      "Move to Trash": [
-        "Verplaats naar Prullenbak"
-      ],
-      "Move to...": [
-        "Verplaatsen naar..."
-      ],
-      "Move up": [
-        "Naar boven verplaatsen"
-      ],
-      "New message": [
-        "Nieuw bericht"
-      ],
-      "Open next message": [
-        "Open volgend bericht"
-      ],
-      "Open previous message": [
-        "Vorig bericht openen"
-      ],
-      "Open this modal": [
-        "Open dit hulpvenster"
-      ],
-      "Reply": [
-        "Beantwoorden"
-      ],
-      "Reply all": [
-        "Allen beantwoorden"
-      ],
-      "Save draft": [
-        "Concept opslaan"
-      ],
-      "Search": [
-        "Zoeken"
-      ],
-      "Select / unselect": [
-        "Selecteren / deselecteren"
-      ],
-      "Select / unselect all": [
-        "Selecteer / deselecteer alles"
-      ],
-      "Send email": [
-        "E-mail verzenden"
-      ],
-      "Show all emails": [
-        "Toon alle e-mails"
-      ],
-      "Show original message": [
-        "Toon het originele bericht"
-      ],
-      "Show unread emails": [
-        "Toon ongelezen e-mails"
-      ],
-      "Star": [
-        "Ster"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Sneltoetsen voor acties"
-      ],
-      "Basic actions": [
-        "Algemene acties"
-      ],
-      "Basic navigation": [
-        "Algemene navigatie"
-      ],
-      "Composer shortcuts": [
-        "Sneltoetsen voor opstelvenster"
-      ],
-      "Folder shortcuts": [
-        "Sneltoetsen voor mappen"
-      ],
-      "List shortcuts": [
-        "Sneltoetsen voor lijsten"
-      ],
-      "Message shortcuts": [
-        "Berichtsneltoetsen"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Uit"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Aan"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Komt binnenkort)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
       "0 - Not likely": [
         "0 - Niet waarschijnlijk"
@@ -3292,6 +3085,9 @@
       ],
       "City": [
         "Plaats"
+      ],
+      "Code is 6 digits without spaces": [
+        "Code is 6 cijfers zonder spaties"
       ],
       "Color": [
         "Kleur"
@@ -3356,9 +3152,6 @@
       "Enter organization name to confirm": [
         "Voer de naam van de organisatie in om te bevestigen"
       ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
-      ],
       "Event title": [
         "Gebeurtenis titel"
       ],
@@ -3403,9 +3196,6 @@
       ],
       "Import to:": [
         "Importeren naar:"
-      ],
-      "Keyboard shortcuts": [
-        "Sneltoetsen"
       ],
       "Label messages as": [
         "Berichten labellen als"
@@ -3504,15 +3294,6 @@
       "Select a method": [
         "Een methode selecteren"
       ],
-      "Select how your composer opens by default.": [
-        "Selecteer hoe uw opstelvenster standaard opent."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selecteer hoe uw lijst met berichten er standaard uitziet."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selecteer hoe uw mailbox er standaard uitziet."
-      ],
       "Select your country": [
         "Selecteer uw land"
       ],
@@ -3572,30 +3353,6 @@
         "Naam"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Gemaximaliseerd"
-      ],
-      "Normal": [
-        "Normaal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -3618,14 +3375,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } aangemaakt"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
       ]
     },
     "Link": {
@@ -4670,9 +4419,6 @@
       "Invitation sent and participants added to all events": [
         "Uitnodiging verstuurd en deelnemers toegevoegd aan alle afspraken"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Sneltoetsvoorkeuren bijgewerkt"
-      ],
       "Participants notified and all events updated": [
         "Gebruiker ingelicht en alle afspraken bijgewerkt"
       ],
@@ -4804,9 +4550,6 @@
       "${ appName } customization": [
         "${ appName } aanpassingen"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Sneltoetsen"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } lid",
         "${ emailsCount } leden"
@@ -4887,9 +4630,6 @@
       "Clearing data": [
         "Gegevens aan het wissen"
       ],
-      "Composer mode": [
-        "Opstelmodus"
-      ],
       "Confirm loss of Proton bonuses": [
         "Bevestig verlies van Proton bonussen"
       ],
@@ -4916,9 +4656,6 @@
       ],
       "Create contact": [
         "Contactpersoon aanmaken"
-      ],
-      "Create event": [
-        "Afspraak aanmaken"
       ],
       "Create new group": [
         "Nieuwe groep maken"
@@ -4981,9 +4718,6 @@
       ],
       "Edit contact group": [
         "Contactgroep bewerken"
-      ],
-      "Edit event": [
-        "Afspraak wijzigen"
       ],
       "Edit image": [
         "Afbeelding bewerken"
@@ -5052,17 +4786,8 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
-      "Keyboard Shortcuts": [
-        "Sneltoetsen"
-      ],
       "Link confirmation": [
         "Bevestiging link"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Mailbox layout": [
-        "Mailbox layout"
       ],
       "Merge contacts": [
         "Contactpersonen samenvoegen"
