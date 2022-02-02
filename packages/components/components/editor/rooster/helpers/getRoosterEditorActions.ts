@@ -8,7 +8,8 @@ import { EditorActions } from '../../interface';
 const getRoosterEditorActions = (
     editorInstance: IEditor,
     clearUndoHistory: () => void,
-    setTextDirection: (direction: Direction) => void
+    setTextDirection: (direction: Direction) => void,
+    showModalLink: () => void
 ): EditorActions => {
     return {
         getContent() {
@@ -36,6 +37,7 @@ const getRoosterEditorActions = (
         },
         clearUndoHistory,
         setTextDirection,
+        showModalLink,
     };
 };
 

@@ -5,10 +5,12 @@ import { EditorActions, OnEditorEventListened } from '../../interface';
 import EditorEventListener from '../plugins/EditorEventListener';
 import UndoSnapshots from '../plugins/UndoSnapshots';
 import getRoosterEditorActions from './getRoosterEditorActions';
+import { ModalLinkProps } from '../../hooks/useModalLink';
 
 interface Options {
     onEditorEvent: OnEditorEventListened;
     initialContent?: string;
+    showModalLink: (props: ModalLinkProps) => void;
 }
 
 interface InitRoosterReturns {
@@ -29,6 +31,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         clearProceedingSnapshots,
         moveCurrentSnapshot,
         setDirection,
+        createLink,
     } = await import(/* webpackPreload: true */ 'roosterjs');
 
     const plugins: EditorPlugin[] = [
@@ -72,6 +75,21 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         },
         (direction: Direction) => {
             setDirection(editor, direction);
+        },
+        () => {
+            const selectedText = editor.getSelectionRange().toString();
+            const cursorEl = editor.getElementAtCursor('a[href]') as HTMLElement | null;
+
+            const title = selectedText || cursorEl?.innerText || undefined;
+            const href = selectedText ? undefined : cursorEl?.getAttribute('href') || undefined;
+
+            options.showModalLink?.({
+                linkLabel: title,
+                linkUrl: href,
+                onSubmit: (nextLinkTitle, nextLinkUrl) => {
+                    createLink(editor, nextLinkUrl, undefined, nextLinkTitle);
+                },
+            });
         }
     );
 
