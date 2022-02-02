@@ -3649,7 +3649,7 @@ __metadata:
     karma-jasmine: ^4.0.1
     karma-webpack: ^5.0.0
     pkijs: ^2.2.2
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     ts-loader: ^9.2.6
     typescript: ^4.5.5
     webpack: ^5.67.0
@@ -3742,6 +3742,11 @@ __metadata:
     "@proton/get-random-values": "workspace:packages/get-random-values"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/srp": "workspace:packages/srp"
+    "@protontech/bip39": ^1.0.2
+    "@protontech/mimemessage": ~v1.1.4
+    "@protontech/mutex-browser": ^1.0.5
+    "@protontech/sieve.js": ^2.0.6
+    "@protontech/timezone-support": ^1.0.0
     "@sentry/browser": ^5.30.0
     "@types/dompurify": ^2.3.3
     "@types/jasmine": ^3.10.3
@@ -3749,7 +3754,6 @@ __metadata:
     "@types/papaparse": ^5.3.1
     "@types/ua-parser-js": ^0.7.36
     "@types/webpack-env": ^1.16.3
-    bip39: "github:ProtonMail/bip39#semver:^1.0.2"
     date-fns: ^2.28.0
     dompurify: ^2.3.5
     eslint: ^8.7.0
@@ -3765,16 +3769,12 @@ __metadata:
     karma-jasmine: ^4.0.1
     karma-webpack: ^5.0.0
     lodash: ^4.17.21
-    mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
-    mutex-browser: "github:ProtonMail/mutex-browser#semver:^1.0.0"
     papaparse: ^5.3.1
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     prettier: ^2.5.1
     puppeteer: ^13.1.2
     push.js: ^1.0.12
     require-inject: ^1.4.4
-    sieve.js: "github:ProtonMail/sieve.js#master"
-    timezone-support: "github:ProtonMail/timezone-support#bundle"
     ts-loader: ^9.2.6
     ttag: ^1.7.24
     typescript: ^4.5.5
@@ -3800,7 +3800,7 @@ __metadata:
     bcryptjs: ^2.4.3
     eslint: ^8.7.0
     mocha: ^9.2.0
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.7.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     prettier: ^2.5.1
     require-inject: ^1.4.4
     typescript: ^4.5.5
@@ -3843,6 +3843,55 @@ __metadata:
     msw: ^0.36.5
   languageName: unknown
   linkType: soft
+
+"@protontech/bip39@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@protontech/bip39@npm:1.0.2"
+  checksum: 14c1239c2ebed817bbe1f903eb3db4fd210324a2da46f54b8a19a55212e1d1390c903c688aa01677a4256419c206c72d966cecc3a41e136ede2bb8d04c3083f2
+  languageName: node
+  linkType: hard
+
+"@protontech/interval-tree@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@protontech/interval-tree@npm:1.0.0"
+  checksum: a0ad8a10381e25f998287ec8a7f87b5f2cc731198aa6924e3a747ae5d26ccb7fe563e9159f2188c35f36edc533abcdc7b75a29c466aa60dbd883ffe5d05eb859
+  languageName: node
+  linkType: hard
+
+"@protontech/mimemessage@npm:~v1.1.4":
+  version: 1.1.4
+  resolution: "@protontech/mimemessage@npm:1.1.4"
+  dependencies:
+    debug: ^2.2.0
+    rfc2047: ^2.0.1
+  checksum: 0675b23cc2ddc307e073725464a2ab060173ca7a28f474d4d387d792ce34743638f529089f6e3bdda45a5d77e61a8f29896342c281a58f1bfab74e31d299ee38
+  languageName: node
+  linkType: hard
+
+"@protontech/mutex-browser@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@protontech/mutex-browser@npm:1.0.5"
+  checksum: 9d85448090a5463f9f71a9dd58588e97a2694b0f7bb8031a09281f47517cfdd23e0e11711ba1cf0530756c716b9c231541cb7413454d62653cabd55e50fad55f
+  languageName: node
+  linkType: hard
+
+"@protontech/sieve.js@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "@protontech/sieve.js@npm:2.0.6"
+  checksum: 8f85bcef1ae5705f0a7339ef16c076d7287335a5e96c8aef714e2b84a2ae68a114588dc1d68e713f72bd51edfafa51932470102ca911295b782742cecda3b35f
+  languageName: node
+  linkType: hard
+
+"@protontech/timezone-support@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@protontech/timezone-support@npm:1.0.0"
+  dependencies:
+    commander: 2.20.0
+  bin:
+    create-timezone-data: bin/create-timezone-data
+  checksum: 8532e83f95e7066ae4b39278462bac3c38aec8bbfaa79ebe65dee02d37f4dbcca97510ffacb6c43ee8d1ad28581d522ef7872f91e1df0efea4834d9149b34be5
+  languageName: node
+  linkType: hard
 
 "@reduxjs/toolkit@npm:^1.7.1":
   version: 1.7.1
@@ -9508,13 +9557,6 @@ __metadata:
   dependencies:
     file-uri-to-path: 1.0.0
   checksum: 65b6b48095717c2e6105a021a7da4ea435aa8d3d3cd085cb9e85bcb6e5773cf318c4745c3f7c504412855940b585bdf9b918236612a1c7a7942491de176f1ae7
-  languageName: node
-  linkType: hard
-
-"bip39@github:ProtonMail/bip39#semver:^1.0.2":
-  version: 1.0.1
-  resolution: "bip39@https://github.com/ProtonMail/bip39.git#commit=c8ed6f35d90db37844230b26199817c7c5fecd29"
-  checksum: 20873c4368cef1e32cdd8a99f56e438f64ac03ac46657f138314d3941aed1e387764840a5a3bdfe6321460503a14da0a7d7d245ef048d5cdbd1d4d6e0cfea4d8
   languageName: node
   linkType: hard
 
@@ -16928,13 +16970,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"interval-tree@github:ProtonMail/interval-tree#semver:^1.0.0":
-  version: 1.0.2
-  resolution: "interval-tree@https://github.com/ProtonMail/interval-tree.git#commit=cd86c8a87f29ae833d5a4cef8caabd47e8449cdd"
-  checksum: 27ae707008c411d10f1367f774bd82b8eb98a76fe2c557069b810b6933af9c4476825bb4bbd7ce5bba66a75192d2b3a5615d68dd2c28bdc2732daa94d60a6b73
-  languageName: node
-  linkType: hard
-
 "into-stream@npm:^3.1.0":
   version: 3.1.0
   resolution: "into-stream@npm:3.1.0"
@@ -20414,16 +20449,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mimemessage@github:ProtonMail/mimemessage.js#semver:~v1.1.4":
-  version: 1.1.4
-  resolution: "mimemessage@https://github.com/ProtonMail/mimemessage.js.git#commit=2120f80d9d9193f17a617dcfd3809d6e6d37e721"
-  dependencies:
-    debug: ^2.2.0
-    rfc2047: ^2.0.1
-  checksum: 4f2d4421cad3eda47491ba38095e460113765ac47b95811283dcc8a007056f1d424dbdde4f43bc84a89c7b8616873d617e5f291847f354a39a3924ed922d0b2e
-  languageName: node
-  linkType: hard
-
 "mimic-fn@npm:^1.0.0":
   version: 1.2.0
   resolution: "mimic-fn@npm:1.2.0"
@@ -20888,13 +20913,6 @@ fsevents@^1.2.7:
   version: 0.0.8
   resolution: "mute-stream@npm:0.0.8"
   checksum: ff48d251fc3f827e5b1206cda0ffdaec885e56057ee86a3155e1951bc940fd5f33531774b1cc8414d7668c10a8907f863f6561875ee6e8768931a62121a531a1
-  languageName: node
-  linkType: hard
-
-"mutex-browser@github:ProtonMail/mutex-browser#semver:^1.0.0":
-  version: 1.0.4
-  resolution: "mutex-browser@https://github.com/ProtonMail/mutex-browser.git#commit=7ff17672ec033203714507b39a5c5f3fe276033b"
-  checksum: e2d6ab6d29f629ce06b06a95429c541565db403a38a05435348b0e083865e37220eace6caecd32e3ef7d99c996aaf4751d3eefe20dab994e6f791b7cd4e7070e
   languageName: node
   linkType: hard
 
@@ -22760,13 +22778,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.7.1":
+"pmcrypto@npm:@protontech/pmcrypto@^6.7.1":
   version: 6.7.1
-  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=feeb7a9e3225fe1b4a2ea72808c8370055e9c03d"
+  resolution: "@protontech/pmcrypto@npm:6.7.1"
   dependencies:
     "@types/openpgp": ^4.4.18
     openpgp: ^4.10.8
-  checksum: c72850d60867badc07b7e3f6e49e827f0061872b433e7c3ed8e10449e7545ee3b0fad59d07ff107bb7b65637cda5718b68f17fe4bfbc58bcd19ebb5c024bc174
+  checksum: 4ef7e7a9fc3ed766fa5090e8e4549ea520c21ffd47b81b0e29ed34cf68309bffd57d735421f4a41e16224d37850b8d0061096a1f304ab234eb670805bc8cec8f
   languageName: node
   linkType: hard
 
@@ -23812,6 +23830,7 @@ fsevents@^1.2.7:
     "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
+    "@protontech/interval-tree": ^1.0.0
     "@testing-library/jest-dom": ^5.16.1
     "@testing-library/react": ^12.1.2
     "@testing-library/react-hooks": ^7.0.2
@@ -23826,7 +23845,6 @@ fsevents@^1.2.7:
     date-fns: ^2.28.0
     dompurify: ^2.3.5
     eslint: ^8.7.0
-    interval-tree: "github:ProtonMail/interval-tree#semver:^1.0.0"
     jest: ^27.4.7
     jest-junit: ^13.0.0
     prettier: ^2.5.1
@@ -23911,6 +23929,7 @@ fsevents@^1.2.7:
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
+    "@protontech/mimemessage": ~v1.1.4
     "@reduxjs/toolkit": ^1.7.1
     "@testing-library/dom": ^8.11.3
     "@testing-library/jest-dom": ^5.16.1
@@ -23941,7 +23960,6 @@ fsevents@^1.2.7:
     linkify-it: ^3.0.3
     loud-rejection: ^2.2.0
     markdown-it: ^12.3.2
-    mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     prettier: ^2.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -26451,13 +26469,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"sieve.js@github:ProtonMail/sieve.js#master":
-  version: 2.0.6
-  resolution: "sieve.js@https://github.com/ProtonMail/sieve.js.git#commit=a09ab52092164af74278e77612a091e730e9b7e9"
-  checksum: 0270aa144702e3e05e534f8a509f8d75a322d397e62868efdcf20e4e2aba07cf505e5aea2011dccc94e3f36f46976656f52bd5391aacaa4f71f185709b718a2a
-  languageName: node
-  linkType: hard
-
 "signal-exit@npm:^3.0.0, signal-exit@npm:^3.0.2, signal-exit@npm:^3.0.3":
   version: 3.0.3
   resolution: "signal-exit@npm:3.0.3"
@@ -28102,15 +28113,6 @@ fsevents@^1.2.7:
   dependencies:
     setimmediate: ^1.0.4
   checksum: ec37ae299066bef6c464dcac29c7adafba1999e7227a9bdc4e105a459bee0f0b27234a46bfd7ab4041da79619e06a58433472867a913d01c26f8a203f87cee70
-  languageName: node
-  linkType: hard
-
-"timezone-support@github:ProtonMail/timezone-support#bundle":
-  version: 0.0.0-development
-  resolution: "timezone-support@https://github.com/ProtonMail/timezone-support.git#commit=42a03e3218dad70a1e60e64246c014bbc8e9b562"
-  dependencies:
-    commander: 2.20.0
-  checksum: 70fa295106d8efe1f90907199d0d52aa6e6e92687db4ecc2f5839673c201508448971fbeaab377fe25384be4b1b51dd525ffc744bee6e88f5dad29e26633459c
   languageName: node
   linkType: hard
 
