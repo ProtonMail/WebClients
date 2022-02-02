@@ -56,6 +56,7 @@ export enum FeatureCode {
     DarkStylesInBody = 'DarkStylesInBody',
     EasySwitch = 'EasySwitch',
     SpotlightDiscoverProtonServices = 'SpotlightDiscoverProtonServices',
+    DismissedRecoverDataCard = 'DismissedRecoverDataCard',
 }
 
 export interface FeaturesContextValue {

@@ -30,7 +30,7 @@ const ReactivateKeysButton = ({
     const authentication = useAuthentication();
     const api = useApi();
     const [User] = useUser();
-    const [Addresses, loadingAddresses] = useAddresses();
+    const [addresses, loadingAddresses] = useAddresses();
     const [userKeys, loadingUserKeys] = useUserKeys();
     const [addressesKeys, loadingAddressesKeys] = useAddressesKeys();
     const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
@@ -47,7 +47,7 @@ const ReactivateKeysButton = ({
                         api,
                         user: User,
                         userKeys,
-                        addresses: Addresses,
+                        addresses,
                         keyReactivationRecords,
                         keyPassword: authentication.getPassword(),
                         onReactivation,
