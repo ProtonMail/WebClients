@@ -14,7 +14,7 @@
       "Close modal": [
         "Sluit het venster"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Code niet ontvangen?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Edit sign-in details": [
+        "Bewerk aanmeldgegevens"
       ],
       "Get verification code": [
         "Krijg verificatiecode"
@@ -41,6 +44,12 @@
       "Verify": [
         "Verifiëren"
       ],
+      "Verify account": [
+        "Verifieer account"
+      ],
+      "Verify email": [
+        "Verifieer e-mailadres"
+      ],
       "View invoice": [
         "Factuur bekijken"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
-      "Request timed out.": [
-        "Reactietijd verzoek overschreden."
+      "Request timed out": [
+        "Reactietijd verzoek overschreden"
       ],
       "This field is required": [
         "Dit veld is verplicht"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
       ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
+      "Internet connection lost": [
+        "Internetverbinding verbroken"
       ],
       "Loading": [
         "Laden"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
-      "Session timed out.": [
-        "Sessie time-out."
+      "Session timed out": [
+        "Sessie verlopen"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "We verzenden een nieuwe verificatiecode naar ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Code is 6 digits without spaces": [
+        "Code is 6 cijfers zonder spaties"
+      ],
       "Email address": [
         "E-mailadres"
-      ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
       ],
       "Hide password": [
         "Wachtwoord verbergen"

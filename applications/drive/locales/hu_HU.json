@@ -122,9 +122,6 @@
       "Compose": [
         "Levélírás"
       ],
-      "Composer size": [
-        ""
-      ],
       "Confirm": [
         "Megerősítés"
       ],
@@ -187,8 +184,8 @@
       "Details": [
         "Részletek"
       ],
-      "Did not receive the code?": [
-        "Nem kapta meg a kódot?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Done": [
         "Kész"
@@ -210,6 +207,9 @@
       ],
       "Edit phone number": [
         "Telefonszám módosítása"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "E-mail beállítások"
@@ -277,9 +277,6 @@
       "Increase": [
         "Növel"
       ],
-      "Keyboard shortcuts": [
-        "Gyorsbillentyűk"
-      ],
       "Load image": [
         "Kép betöltése"
       ],
@@ -288,12 +285,6 @@
       ],
       "Log in": [
         "Bejelentkezés"
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Mailbox layout": [
-        ""
       ],
       "Manage link": [
         ""
@@ -559,11 +550,14 @@
       "Use for sending": [
         "Használja küldéshez"
       ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" beállítás használata"
-      ],
       "Verify": [
         "Ellenőrzés"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Megtekintés"
@@ -891,14 +885,6 @@
         ""
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Teljes méretű"
-      ],
-      "Normal": [
-        "Normál"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1011,14 +997,6 @@
         "Lejárt számla"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Kényelmes"
-      ],
-      "Compact": [
-        "Tömör"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Névjegyek visszafejtése. Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
@@ -1101,12 +1079,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
-      ],
-      "Can't validate email, try again later": [
-        "E-mail ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
       ],
       "Checkout expired, please try again": [
         ""
@@ -1273,8 +1245,8 @@
       "Process aborted": [
         "A folyamat megszakítva"
       ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
+      "Request timed out": [
+        ""
       ],
       "Signature not verified": [
         "Aláírás nincs ellenőrizve"
@@ -1824,9 +1796,6 @@
         "",
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
@@ -2046,8 +2015,8 @@
       "Initializing": [
         "Inicializálás"
       ],
-      "Internet connection lost.": [
-        "Az internetkapcsolat megszakadt."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
@@ -2263,8 +2232,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "A munkamenet lejárt."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
@@ -2408,6 +2377,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Hét"
       ],
@@ -2422,6 +2394,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to restore your files?": [
         "Szeretné helyreállítani a fájljait?"
@@ -2588,197 +2563,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Titkosítás hozzáadása"
-      ],
-      "Add expiration time": [
-        "Időkorlát megadása"
-      ],
-      "Apply / open": [
-        "Alkalmazás, megnyitás"
-      ],
-      "Attach file": [
-        "Fájl csatolása"
-      ],
-      "Cancel / close": [
-        "Elvetés, bezárás"
-      ],
-      "Close draft": [
-        "Piszkozat bezárása"
-      ],
-      "Create filter with...": [
-        "Szűrő készítése..."
-      ],
-      "Delete permanently": [
-        "Végleges törlés"
-      ],
-      "Discard draft": [
-        "Piszkozat elvetése"
-      ],
-      "Expand / contract composer": [
-        "Szerkesztő kiterjesztése / összehúzása"
-      ],
-      "Forward": [
-        "Továbbítás"
-      ],
-      "Go to All Mail": [
-        "Áthelyezés az Összes Üzenethez"
-      ],
-      "Go to Archive": [
-        "Ugrás az archívumhoz"
-      ],
-      "Go to Drafts": [
-        "Ugrás a piszkozatokhoz"
-      ],
-      "Go to Inbox": [
-        "Ugrás a beérkezett üzenetekhez"
-      ],
-      "Go to Sent": [
-        "Ugrás az elküldött levelekhez"
-      ],
-      "Go to Spam": [
-        "Ugrás a levélszeméthez"
-      ],
-      "Go to Starred": [
-        "Ugrás a csillagozottakhoz"
-      ],
-      "Go to Trash": [
-        "Ugrás a lomtárhoz"
-      ],
-      "Jump to first": [
-        "Ugrás az elsőre"
-      ],
-      "Jump to last": [
-        "Ugrás az utolsóra"
-      ],
-      "Label as...": [
-        "Címkézés, mint..."
-      ],
-      "Load embedded images": [
-        "Beágyazott képek betöltése"
-      ],
-      "Load remote content": [
-        "Távoli tartalom betöltése"
-      ],
-      "Mark as unread": [
-        "Megjelölés olvasatlanként"
-      ],
-      "Minimize / maximize composer": [
-        "Szerkesztő kicsinyítése / felnagyítása"
-      ],
-      "Move down": [
-        "Mozgás lefelé"
-      ],
-      "Move left / collapse": [
-        "Mozgás balra, becsukás"
-      ],
-      "Move right / expand": [
-        "Mozgás jobbra, kibontás"
-      ],
-      "Move to Archive": [
-        "Áthelyezés az archívumba"
-      ],
-      "Move to Inbox": [
-        "Áthelyezés a beérkezett üzenetekhez"
-      ],
-      "Move to Spam": [
-        "Áthelyezés a levélszeméthez"
-      ],
-      "Move to Trash": [
-        "Áthelyezés a lomtárba"
-      ],
-      "Move to...": [
-        "Áthelyezés..."
-      ],
-      "Move up": [
-        "Mozgás felfelé"
-      ],
-      "New message": [
-        "Új üzenet"
-      ],
-      "Open next message": [
-        "Következő üzenet megnyitása"
-      ],
-      "Open previous message": [
-        "Előző üzenet megnyitása"
-      ],
-      "Open this modal": [
-        "Ezen ablak megnyitása"
-      ],
-      "Reply": [
-        "Válasz"
-      ],
-      "Reply all": [
-        "Válasz mindenkinek"
-      ],
-      "Save draft": [
-        "Piszkozat mentése"
-      ],
-      "Search": [
-        "Keresés"
-      ],
-      "Select / unselect": [
-        "Kijelölés / kijelölés megszüntetése"
-      ],
-      "Select / unselect all": [
-        "Összes kijelölése / kijelölés megszüntetése"
-      ],
-      "Send email": [
-        "E-mail küldése"
-      ],
-      "Show all emails": [
-        "Összes üzenet megjelenítése"
-      ],
-      "Show original message": [
-        "Eredeti üzenet megjelenítése"
-      ],
-      "Show unread emails": [
-        "Olvasatlan üzenetek megjelenítése"
-      ],
-      "Star": [
-        "Csillagozás"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Művelet gyorsbillentyűk"
-      ],
-      "Basic actions": [
-        "Alapműveletek"
-      ],
-      "Basic navigation": [
-        "Alapvető navigáció"
-      ],
-      "Composer shortcuts": [
-        "Szerkesztő gyorsbillentyűk"
-      ],
-      "Folder shortcuts": [
-        "Mappa gyorsbillentyűk"
-      ],
-      "List shortcuts": [
-        "Lista gyorsbillentyűk"
-      ],
-      "Message shortcuts": [
-        "Üzenet gyorsbillentyűk"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        ""
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        ""
-      ],
       "(Expired)": [
         "(Lejárt)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Active": [
         "Aktív"
@@ -2843,6 +2633,9 @@
       "City": [
         "Település"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Completed": [
         ""
       ],
@@ -2888,9 +2681,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
       ],
       "Expired": [
         "Lejárt"
@@ -2948,9 +2738,6 @@
       ],
       "Import to email address": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "Gyorsbillentyűk"
       ],
       "Label messages as": [
         ""
@@ -3041,15 +2828,6 @@
       ],
       "Select a method": [
         "Válasszon fizetési módot"
-      ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
       ],
       "Select your country": [
         "Válassza ki az országot"
@@ -3149,30 +2927,6 @@
         "Név"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Teljes méretű"
-      ],
-      "Normal": [
-        "Normál"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Kényelmes"
-      ],
-      "Compact": [
-        "Tömör"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Oszlop"
-      ],
-      "Row": [
-        "Sor"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Képernyőkép csatolása"
@@ -3195,14 +2949,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Oszlop"
-      ],
-      "Row": [
-        "Sor"
       ]
     },
     "Link": {
@@ -3242,6 +2988,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
+        ""
+      ],
+      "${ createdCalendars } of 1 created": [
         "",
         ""
       ],
@@ -3938,9 +3688,6 @@
       "Fingerprint copied to clipboard": [
         "Ujjlenyomat a vágólapra másolva"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Gyorsbillentyű beállítások frissítve"
-      ],
       "Phone number copied to clipboard": [
         "Telefonszám a vágólapra másolva"
       ],
@@ -4083,9 +3830,6 @@
       "${ appName } customization": [
         "${ appName } testreszabása"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } gyorsbillentyűk"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } tag",
         "${ emailsCount } tag"
@@ -4144,9 +3888,6 @@
       ],
       "Clearing data": [
         "Adatok törlése"
-      ],
-      "Composer mode": [
-        "Szerkesztő módja"
       ],
       "Confirm loss of Proton bonuses": [
         "Proton kedvezmények elvesztésének megerősítése"
@@ -4318,20 +4059,11 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
-      "Keyboard Shortcuts": [
-        "Gyorsbillentyűk"
-      ],
       "Link confirmation": [
         "Hivatkozás jóváhagyása"
       ],
       "Location": [
         "Hely"
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Mailbox layout": [
-        ""
       ],
       "Manage secure link": [
         "Biztonságos hivatkozás kezelése"

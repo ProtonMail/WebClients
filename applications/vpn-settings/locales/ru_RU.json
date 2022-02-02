@@ -139,6 +139,9 @@
       "Did not receive the code?": [
         "Не получили код?"
       ],
+      "Didn't receive the code?": [
+        "Не получили код?"
+      ],
       "Done": [
         "Готово"
       ],
@@ -165,6 +168,9 @@
       ],
       "Edit phone number": [
         "Изменить номер телефона"
+      ],
+      "Edit sign-in details": [
+        "Изменить информацию о входе в систему"
       ],
       "Email me my username(s)": [
         "Отправить мне имя моего пользователя"
@@ -391,11 +397,17 @@
       "Verify": [
         "Подтвердить"
       ],
+      "Verify account": [
+        "Подтвердить аккаунт"
+      ],
       "Verify code": [
         "Подтвердите код"
       ],
       "Verify code again": [
         "Подтвердить код еще раз"
+      ],
+      "Verify email": [
+        "Подтвердить эл. почту"
       ],
       "View": [
         "Просмотр"
@@ -851,12 +863,6 @@
       "Can't check username, try again later": [
         "Не могу проверить имя пользователя, повторите попытку позже"
       ],
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты, повторите попытку позже"
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить телефон, повторите попытку позже"
-      ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
       ],
@@ -953,8 +959,8 @@
       "Process aborted": [
         "Процесс прерван"
       ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
+      "Request timed out": [
+        "Время запроса истекло"
       ],
       "Signature verification failed": [
         "Ошибка проверки подписи"
@@ -1475,8 +1481,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Установите конфигурационный файл сервера для подключения к определенному серверу в выбранной стране."
       ],
-      "Internet connection lost.": [
-        "Подключение к Интернету прервано."
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Интернет-соединение потеряно. Пожалуйста, проверьте подключение вашего устройства."
@@ -1634,8 +1640,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
-      "Session timed out.": [
-        "Время сессии истекло."
+      "Session timed out": [
+        "Время сеанса истекло"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Вы постоянный пользователь, поэтому вам доступны дополнительные функции."
@@ -1766,6 +1772,9 @@
       "We will send a reset code to your recovery email to reset your password.": [
         "Мы отправим код для сброса пароля на указанный вами резервный адрес эл. почты."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Мы отправим новый код подтверждения на ${ strong }"
+      ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Мы отправили на вашу резервную эл. почту код сброса, действующий в течение часа или до запроса вами нового кода. Введите его ниже для продолжения."
       ],
@@ -1777,6 +1786,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать альтернативный метод проверки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Хотите ли вы получить новый код подтверждения?"
       ],
       "You already have a free account": [
         "У вас уже есть бесплатный аккаунт"
@@ -2044,6 +2056,9 @@
       "Category": [
         "Категория"
       ],
+      "Code is 6 digits without spaces": [
+        "Код состоит из 6 цифр без пробелов"
+      ],
       "Confirm login password": [
         "Подтвердите пароль входа"
       ],
@@ -2112,9 +2127,6 @@
       ],
       "Enter organization name to confirm": [
         "Введите название организации для подтверждения"
-      ],
-      "Enter the 6-digit code": [
-        "Введите код из 6 цифр"
       ],
       "Enter the code displayed on your TV": [
         "Введите код, отображаемый на вашем ТВ"
@@ -3614,7 +3626,7 @@
         "Юрисдикция"
       ],
       "Kill Switch / Always-on VPN": [
-        "Аварийный выключатель Kill switch и постоянно включенный VPN"
+        "Аварийный стоп / Постоянная VPN"
       ],
       "Languages supported": [
         "Поддерживаемые языки"

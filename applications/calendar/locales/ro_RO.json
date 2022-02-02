@@ -168,8 +168,8 @@
       "Deselect all": [
         "Deselectare toate"
       ],
-      "Did not receive the code?": [
-        "Nu ați primit codul?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Renunțare"
@@ -194,6 +194,9 @@
       ],
       "Edit phone number": [
         "Editare număr de telefon"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Setări e-mail"
@@ -258,9 +261,6 @@
       "Increase": [
         "Mărire"
       ],
-      "Keyboard shortcuts": [
-        "Combinații de taste"
-      ],
       "Load image": [
         "Încărcare imagine"
       ],
@@ -269,12 +269,6 @@
       ],
       "Log in": [
         "Conectare"
-      ],
-      "Mailbox density": [
-        "Densitate cutie poștală"
-      ],
-      "Mailbox layout": [
-        "Aspect cutie poștală"
       ],
       "Make this participant optional": [
         "Stabilire acest participant ca opțional"
@@ -516,11 +510,14 @@
       "Use for sending": [
         "Folosire pentru trimitere"
       ],
-      "Use “${ label }” setting": [
-        "Folosire setarea „${ label }”"
-      ],
       "Verify": [
         "Verificare"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Afișare"
@@ -610,38 +607,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } a început ieri la ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        ""
+      ],
       "${ title } starts now": [
         "${ title } începe acum"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        ""
       ],
       "${ title } starts today": [
         "${ title } începe astăzi"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } va începe la ${ formattedHour }"
+      "${ title } starts tomorrow": [
+        ""
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } va începe ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } va începe ${ _formattedDate2 } la ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } va începe ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } va începe ${ _formattedDate3 } la ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } va începe ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } va începe ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } va începe mâine"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } va începe mâine la ${ formattedHour }"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        ""
       ]
     },
     "Alert": {
@@ -1008,14 +1005,6 @@
         ": "
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Mare"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Părăsiți personalizarea importării?"
@@ -1178,14 +1167,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factură restantă"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
       ]
     },
     "Description": {
@@ -1404,12 +1385,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
-      "Can't validate email, try again later": [
-        "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
-      ],
-      "Can't validate phone, try again later": [
-        "Nu se poate valida telefonul, reîncercați mai târziu."
-      ],
       "Cancellation failed to be sent": [
         "Anularea nu a putut fi trimisă."
       ],
@@ -1614,8 +1589,8 @@
       "Process aborted": [
         "Proces abandonat."
       ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
+      "Request timed out": [
+        ""
       ],
       "Self invitation not allowed": [
         "Autoinvitarea nu este permisă."
@@ -2423,9 +2398,6 @@
       "At most 100 participants are allowed per invitation": [
         "Cel mult 100 de participanți sunt autorizați per invitație."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "Facturat cu ${ billedPrice } la doi ani"
       ],
@@ -2607,8 +2579,8 @@
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte."
       ],
-      "Internet connection lost.": [
-        "Conexiunea la internet s-a întrerupt."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
@@ -2780,8 +2752,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
-      "Session timed out.": [
-        "Sesiune expirată."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
@@ -2906,6 +2878,9 @@
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Săptămâna"
       ],
@@ -2935,6 +2910,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to update all events in this series?": [
         "Doriţi să actualizați toate evenimentele din serie?"
@@ -3104,194 +3082,9 @@
         "Web Key Directory (WKD)"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Adăugare criptare"
-      ],
-      "Add expiration time": [
-        "Adăugare dată de expirare"
-      ],
-      "Apply / open": [
-        "Aplicare/deschidere"
-      ],
-      "Attach file": [
-        "Atașare fișier"
-      ],
-      "Cancel / close": [
-        "Anulare/închidere"
-      ],
-      "Close draft": [
-        "Închidere ciornă"
-      ],
-      "Create filter with...": [
-        "Creare filtru cu..."
-      ],
-      "Delete permanently": [
-        "Ștergere permanentă"
-      ],
-      "Discard draft": [
-        "Aruncare ciornă"
-      ],
-      "Expand / contract composer": [
-        "Extindere/restrângere editor"
-      ],
-      "Forward": [
-        "Redirecționare"
-      ],
-      "Go to All Mail": [
-        "Accesare «Toate mesajele»"
-      ],
-      "Go to Archive": [
-        "Accesare «Arhivă»"
-      ],
-      "Go to Drafts": [
-        "Accesare «Ciorne»"
-      ],
-      "Go to Inbox": [
-        "Accesare «Primite»"
-      ],
-      "Go to Sent": [
-        "Accesare «Trimise»"
-      ],
-      "Go to Spam": [
-        "Accesare «Nedorite»"
-      ],
-      "Go to Starred": [
-        "Accesare «Cu stea»"
-      ],
-      "Go to Trash": [
-        "Accesare «Gunoi»"
-      ],
-      "Jump to first": [
-        "Salt la primul"
-      ],
-      "Jump to last": [
-        "Salt la ultimul"
-      ],
-      "Label as...": [
-        "Etichetare ca..."
-      ],
-      "Load embedded images": [
-        "Încărcare imagini integrate"
-      ],
-      "Load remote content": [
-        "Încărcare conținut extern"
-      ],
-      "Mark as unread": [
-        "Marcare ca necitit"
-      ],
-      "Minimize / maximize composer": [
-        "Micșorare/mărire editor"
-      ],
-      "Move down": [
-        "Mutare în jos"
-      ],
-      "Move left / collapse": [
-        "Mutare la stânga/restrângere"
-      ],
-      "Move right / expand": [
-        "Mutare la dreapta/extindere"
-      ],
-      "Move to Archive": [
-        "Mutare în «Arhivă»"
-      ],
-      "Move to Inbox": [
-        "Mutare în «Primite»"
-      ],
-      "Move to Spam": [
-        "Mutare în «Nedorite»"
-      ],
-      "Move to Trash": [
-        "Mutare în «Gunoi»"
-      ],
-      "Move to...": [
-        "Mutare în..."
-      ],
-      "Move up": [
-        "Mutare în sus"
-      ],
-      "New message": [
-        "Mesaj nou"
-      ],
-      "Open next message": [
-        "Deschidere mesaj următor"
-      ],
-      "Open previous message": [
-        "Deschidere mesaj anterior"
-      ],
-      "Open this modal": [
-        "Deschidere ca fereastră"
-      ],
-      "Reply": [
-        "Răspuns"
-      ],
-      "Reply all": [
-        "Răspuns tuturor"
-      ],
-      "Save draft": [
-        "Salvare ciornă"
-      ],
-      "Search": [
-        "Căutare"
-      ],
-      "Select / unselect": [
-        "Selectare/deselectare"
-      ],
-      "Select / unselect all": [
-        "Selectare/deselectare toate"
-      ],
-      "Send email": [
-        "Trimitere e-mail"
-      ],
-      "Show all emails": [
-        "Afișare toate mesajele"
-      ],
-      "Show original message": [
-        "Afișare mesaj original"
-      ],
-      "Show unread emails": [
-        "Afișare mesaje necitite"
-      ],
-      "Star": [
-        "Marcare cu stea"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Combinații de taste acțiuni"
-      ],
-      "Basic actions": [
-        "Acțiuni de bază"
-      ],
-      "Basic navigation": [
-        "Navigare de bază"
-      ],
-      "Composer shortcuts": [
-        "Combinații de taste editor mesaje"
-      ],
-      "Folder shortcuts": [
-        "Combinații de taste foldere"
-      ],
-      "List shortcuts": [
-        "Combinații de taste listă mesaje"
-      ],
-      "Message shortcuts": [
-        "Combinații de taste mesaje"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Dezactivate"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Activate"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(În curând)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "0 - Not likely": [
         "0 - Probabil nu"
@@ -3349,6 +3142,9 @@
       ],
       "City": [
         "Oraș"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "Culoare"
@@ -3413,9 +3209,6 @@
       "Enter organization name to confirm": [
         "Introduceți numele organizației pentru confirmare"
       ],
-      "Enter the 6-digit code": [
-        "Introduceți codul din 6 cifre"
-      ],
       "Event title": [
         "Titlu eveniment"
       ],
@@ -3460,9 +3253,6 @@
       ],
       "Import to:": [
         "Importare în:"
-      ],
-      "Keyboard shortcuts": [
-        "Combinații de taste"
       ],
       "Label messages as": [
         "Etichetare mesaje cu"
@@ -3562,15 +3352,6 @@
       "Select a method": [
         "Selectați metoda"
       ],
-      "Select how your composer opens by default.": [
-        "Selectați modul în care se deschide implicit editorul de mesaje."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selectați cum să arate lista de mesaje în mod implicit."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selectați cum să arate căsuța poștală în mod implicit."
-      ],
       "Select your country": [
         "Selectați țara"
       ],
@@ -3630,30 +3411,6 @@
         "Nume"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximizat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -3676,14 +3433,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } a fost creată"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
       ]
     },
     "Link": {
@@ -4762,9 +4511,6 @@
       "Invitation sent and participants added to all events": [
         "Invitația a fost trimisă și participanții adăugați la toate evenimentele."
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferințele combinațiilor de taste au fost actualizate"
-      ],
       "Participants notified and all events updated": [
         "Participanții au fost notificați și toate evenimentele au fost actualizate."
       ],
@@ -4898,9 +4644,6 @@
       "${ appName } customization": [
         "Personalizare ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "Combinații de taste ${ appName }"
-      ],
       "${ emailsCount } member": [
         "Un membru",
         "${ emailsCount } membri",
@@ -4983,9 +4726,6 @@
       "Clearing data": [
         "Ştergere date"
       ],
-      "Composer mode": [
-        "Mod editor mesaje"
-      ],
       "Confirm loss of Proton bonuses": [
         "Confirmare pierdere bonusuri Proton"
       ],
@@ -5012,9 +4752,6 @@
       ],
       "Create contact": [
         "Creare contact"
-      ],
-      "Create event": [
-        "Creare eveniment"
       ],
       "Create new group": [
         "Creare grup"
@@ -5079,9 +4816,6 @@
       ],
       "Edit contact group": [
         "Editare grup de contacte"
-      ],
-      "Edit event": [
-        "Editare eveniment"
       ],
       "Edit image": [
         "Editare imagine"
@@ -5151,17 +4885,8 @@
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
-      "Keyboard Shortcuts": [
-        "Combinații de taste"
-      ],
       "Link confirmation": [
         "Legătură de confirmare"
-      ],
-      "Mailbox density": [
-        "Densitate cutie poștală"
-      ],
-      "Mailbox layout": [
-        "Aspect cutie poștală"
       ],
       "Merge contacts": [
         "Îmbinare contacte"

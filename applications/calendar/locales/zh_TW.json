@@ -164,8 +164,8 @@
       "Deselect all": [
         "取消全選"
       ],
-      "Did not receive the code?": [
-        "尚未收到驗證碼？"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "捨棄"
@@ -190,6 +190,9 @@
       ],
       "Edit phone number": [
         "編輯電話號碼"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "電子郵件設定"
@@ -254,9 +257,6 @@
       "Increase": [
         "加"
       ],
-      "Keyboard shortcuts": [
-        "鍵盤快捷鍵"
-      ],
       "Load image": [
         "載入圖片"
       ],
@@ -265,12 +265,6 @@
       ],
       "Log in": [
         "登入"
-      ],
-      "Mailbox density": [
-        "收件匣密度"
-      ],
-      "Mailbox layout": [
-        "收件匣佈局"
       ],
       "Make this participant optional": [
         "此參與者自由列席"
@@ -512,11 +506,14 @@
       "Use for sending": [
         "用於寄送"
       ],
-      "Use “${ label }” setting": [
-        "使用「${ label }」設定"
-      ],
       "Verify": [
         "驗證"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "檢視"
@@ -598,38 +595,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } 已在昨天 ${ formattedHour } 開始"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        ""
+      ],
       "${ title } starts now": [
         "${ title } 現在開始"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        ""
       ],
       "${ title } starts today": [
         "${ title } 是日開始"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } 將於 ${ formattedHour } 開始"
+      "${ title } starts tomorrow": [
+        ""
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } 將在 ${ _formattedDate2 } 開始"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } 將在 ${ _formattedDate2 } 於 ${ formattedHour } 開始"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } 將在 ${ _formattedDate3 } 開始"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } 將在 ${ _formattedDate3 } 於 ${ formattedHour } 開始"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } 將在 ${ _formattedDateWithoutTime } 開始"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } 將在 ${ formattedDateWithTime } 開始"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } 將在明天開始"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } 將在明天 ${ formattedHour } 開始"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        ""
       ]
     },
     "Alert": {
@@ -996,14 +993,6 @@
         "："
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "一般"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "要結束匯入自訂嗎？"
@@ -1152,14 +1141,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期帳單"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
       ]
     },
     "Description": {
@@ -1368,12 +1349,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
       ],
-      "Can't validate email, try again later": [
-        "無法驗證電子郵件，請稍後再試"
-      ],
-      "Can't validate phone, try again later": [
-        "無法驗證電話號碼，請稍後再試"
-      ],
       "Cancellation failed to be sent": [
         "取消傳送失敗"
       ],
@@ -1566,8 +1541,8 @@
       "Process aborted": [
         "處理已中止"
       ],
-      "Request timed out.": [
-        "請求逾時。"
+      "Request timed out": [
+        ""
       ],
       "Self invitation not allowed": [
         "不允許自我邀請"
@@ -2315,9 +2290,6 @@
       "At most 100 participants are allowed per invitation": [
         "每一邀請允許最多 100 個參與者"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "以每 2 年 ${ billedPrice } 扣帳"
       ],
@@ -2495,8 +2467,8 @@
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
-      "Internet connection lost.": [
-        "網際網路連線中斷。"
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "網絡連線已中斷。請檢查你的裝置是否連接正常。"
@@ -2666,8 +2638,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試一次"
       ],
-      "Session timed out.": [
-        "工作階段已逾時。"
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者寄送端對端加密的電子郵件。"
@@ -2792,6 +2764,9 @@
       "We'll notify you when the import is done.": [
         "匯入完成時，我們便會通知您。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "週"
       ],
@@ -2821,6 +2796,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "你想接收新的驗證碼還是選擇另一種驗證方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to update all events in this series?": [
         "您要更新此一系列中全部事件嗎？"
@@ -2990,194 +2968,9 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "新增加密"
-      ],
-      "Add expiration time": [
-        "新增到期時間"
-      ],
-      "Apply / open": [
-        "套用 / 開啟"
-      ],
-      "Attach file": [
-        "附加檔案"
-      ],
-      "Cancel / close": [
-        "取消 / 關閉"
-      ],
-      "Close draft": [
-        "關閉草稿"
-      ],
-      "Create filter with...": [
-        "建立篩選器為..."
-      ],
-      "Delete permanently": [
-        "永久刪除"
-      ],
-      "Discard draft": [
-        "捨棄草稿"
-      ],
-      "Expand / contract composer": [
-        "展開 / 收合撰寫器"
-      ],
-      "Forward": [
-        "轉寄"
-      ],
-      "Go to All Mail": [
-        "前往 [所有郵件]"
-      ],
-      "Go to Archive": [
-        "前往 [封存]"
-      ],
-      "Go to Drafts": [
-        "前往 [草稿]"
-      ],
-      "Go to Inbox": [
-        "前往 [收件匣]"
-      ],
-      "Go to Sent": [
-        "前往 [已傳送]"
-      ],
-      "Go to Spam": [
-        "前往 [垃圾郵件]"
-      ],
-      "Go to Starred": [
-        "前往 [已加星號]"
-      ],
-      "Go to Trash": [
-        "前往 [垃圾桶]"
-      ],
-      "Jump to first": [
-        "跳到第一個"
-      ],
-      "Jump to last": [
-        "跳到最後一個"
-      ],
-      "Label as...": [
-        "加上標籤..."
-      ],
-      "Load embedded images": [
-        "載入內嵌圖片"
-      ],
-      "Load remote content": [
-        "載入遠端內容"
-      ],
-      "Mark as unread": [
-        "標記為未讀"
-      ],
-      "Minimize / maximize composer": [
-        "最小化 / 最大化撰寫器"
-      ],
-      "Move down": [
-        "往下移"
-      ],
-      "Move left / collapse": [
-        "往左移 / 收合"
-      ],
-      "Move right / expand": [
-        "往右移 / 展開"
-      ],
-      "Move to Archive": [
-        "移動到 [封存]"
-      ],
-      "Move to Inbox": [
-        "移動到 [收件匣]"
-      ],
-      "Move to Spam": [
-        "移動到 [垃圾郵件]"
-      ],
-      "Move to Trash": [
-        "移動到 [垃圾桶]"
-      ],
-      "Move to...": [
-        "移動到..."
-      ],
-      "Move up": [
-        "上移"
-      ],
-      "New message": [
-        "新郵件"
-      ],
-      "Open next message": [
-        "開啟下一封郵件"
-      ],
-      "Open previous message": [
-        "開啟上一封郵件"
-      ],
-      "Open this modal": [
-        "開啟此方塊"
-      ],
-      "Reply": [
-        "回覆"
-      ],
-      "Reply all": [
-        "回覆所有人"
-      ],
-      "Save draft": [
-        "儲存草稿"
-      ],
-      "Search": [
-        "搜尋"
-      ],
-      "Select / unselect": [
-        "選取 / 取消選取"
-      ],
-      "Select / unselect all": [
-        "全選 / 取消全選"
-      ],
-      "Send email": [
-        "傳送電子郵件"
-      ],
-      "Show all emails": [
-        "顯示所有電子郵件"
-      ],
-      "Show original message": [
-        "顯示原始郵件"
-      ],
-      "Show unread emails": [
-        "顯示未讀電子郵件"
-      ],
-      "Star": [
-        "加上星號"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "動作快捷鍵"
-      ],
-      "Basic actions": [
-        "基本動作"
-      ],
-      "Basic navigation": [
-        "基本導覽"
-      ],
-      "Composer shortcuts": [
-        "撰寫器快捷鍵"
-      ],
-      "Folder shortcuts": [
-        "資料夾捷徑"
-      ],
-      "List shortcuts": [
-        "列表快捷鍵"
-      ],
-      "Message shortcuts": [
-        "郵件快捷鍵"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "關閉"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "開啟"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(敬請期待)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "0 - Not likely": [
         "0 - 不太可能"
@@ -3235,6 +3028,9 @@
       ],
       "City": [
         "城市"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "色彩"
@@ -3299,9 +3095,6 @@
       "Enter organization name to confirm": [
         "請輸入組織名稱作確認"
       ],
-      "Enter the 6-digit code": [
-        "請輸入 6 位數代碼"
-      ],
       "Event title": [
         "事件標題"
       ],
@@ -3346,9 +3139,6 @@
       ],
       "Import to:": [
         "匯入到："
-      ],
-      "Keyboard shortcuts": [
-        "鍵盤快捷鍵"
       ],
       "Label messages as": [
         "為郵件加上標籤："
@@ -3446,15 +3236,6 @@
       "Select a method": [
         "請選擇一個方法"
       ],
-      "Select how your composer opens by default.": [
-        "選取預設情況下撰寫器開啟的方式。"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "選取預設情況下您郵件清單的外觀。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "選取預設情況下的收件匣外觀。"
-      ],
       "Select your country": [
         "請選擇您的國家"
       ],
@@ -3514,30 +3295,6 @@
         "名稱"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "一般"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "欄"
-      ],
-      "Row": [
-        "列"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "附加螢幕截圖"
@@ -3560,14 +3317,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } 已建立"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "欄"
-      ],
-      "Row": [
-        "列"
       ]
     },
     "Link": {
@@ -4578,9 +4327,6 @@
       "Invitation sent and participants added to all events": [
         "邀請已送出，並且已新增參與者到全部事件"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "鍵盤快捷鍵喜好設定已更新"
-      ],
       "Participants notified and all events updated": [
         "參與者已通知，並且已更新全部事件"
       ],
@@ -4710,9 +4456,6 @@
       "${ appName } customization": [
         "${ appName } 自訂化"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 鍵盤快捷鍵"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } 個成員"
       ],
@@ -4791,9 +4534,6 @@
       "Clearing data": [
         "清除資料中"
       ],
-      "Composer mode": [
-        "撰寫器模式"
-      ],
       "Confirm loss of Proton bonuses": [
         "確認失去 Proton 獎勵"
       ],
@@ -4820,9 +4560,6 @@
       ],
       "Create contact": [
         "建立聯絡人"
-      ],
-      "Create event": [
-        "建立事件"
       ],
       "Create new group": [
         "建立新群組"
@@ -4883,9 +4620,6 @@
       ],
       "Edit contact group": [
         "編輯聯絡人群組"
-      ],
-      "Edit event": [
-        "編輯事件"
       ],
       "Edit image": [
         "編輯圖片"
@@ -4953,17 +4687,8 @@
       "Invalid verification code": [
         "無效的驗證碼"
       ],
-      "Keyboard Shortcuts": [
-        "鍵盤快捷鍵"
-      ],
       "Link confirmation": [
         "連結確認"
-      ],
-      "Mailbox density": [
-        "收件匣密度"
-      ],
-      "Mailbox layout": [
-        "收件匣佈局"
       ],
       "Merge contacts": [
         "合併聯絡人"

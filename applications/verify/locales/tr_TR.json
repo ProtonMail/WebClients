@@ -14,7 +14,7 @@
       "Close modal": [
         "Pencereyi kapat"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Kodu almadınız mı?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
+      ],
+      "Edit sign-in details": [
+        "Oturum açma bilgilerini düzenle"
       ],
       "Get verification code": [
         "Doğrulama kodu al"
@@ -41,6 +44,12 @@
       "Verify": [
         "Doğrula"
       ],
+      "Verify account": [
+        "Hesabı doğrula"
+      ],
+      "Verify email": [
+        "E-posta adresini doğrula"
+      ],
       "View invoice": [
         "Faturayı görüntüle"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "E-posta doğrulanamadı. Bir süre sonra yeniden deneyin"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefon doğrulanamadı. Bir süre sonra yeniden deneyin"
-      ],
       "Email is not valid": [
         "E-posta geçersiz"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
+      "Request timed out": [
+        "İstek zaman aşımına uğradı"
       ],
       "This field is required": [
         "Bu alan zorunludur"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı gelen kutunuzda göremezseniz, istenmeyenler kutusuna bakmayı unutmayın."
       ],
-      "Internet connection lost.": [
-        "İnternet bağlantısı kesildi."
+      "Internet connection lost": [
+        "İnternet bağlantısı kesildi"
       ],
       "Loading": [
         "Yükleniyor"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
-      "Session timed out.": [
-        "Oturum zaman aşımına uğradı."
+      "Session timed out": [
+        "Oturum zaman aşımına uğradı"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak için ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -173,11 +182,11 @@
       "Cancel": [
         "İptal"
       ],
+      "Code is 6 digits without spaces": [
+        "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
       "Email address": [
         "E-posta adresi"
-      ],
-      "Enter the 6-digit code": [
-        "6 rakamlı kodu yazın"
       ],
       "Hide password": [
         "Parolayı gizle"

@@ -269,8 +269,8 @@
       "Details": [
         "Rincian"
       ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
+      "Didn't receive the code?": [
+        "Tidak menerima kode yang dimaksud?"
       ],
       "Discard": [
         "Buang"
@@ -304,6 +304,9 @@
       ],
       "Edit phone number": [
         "Ubah nomor telepon"
+      ],
+      "Edit sign-in details": [
+        "Sunting rincian masuk"
       ],
       "Email settings": [
         "Pengaturan email"
@@ -445,9 +448,6 @@
       ],
       "Italic": [
         "Miring"
-      ],
-      "Justify": [
-        "Rata kiri kanan"
       ],
       "Keyboard shortcuts": [
         "Pintasan papan ketik"
@@ -852,7 +852,7 @@
         "Tema"
       ],
       "This message contains embedded images.": [
-        "Pesan ini mengandung gambar yang disematkan."
+        "Pesan ini mengandung gambar-gambar yang tersemat."
       ],
       "This message contains remote content.": [
         "Pesan ini mengandung remote content."
@@ -937,6 +937,12 @@
       ],
       "Verify": [
         "Verifikasi"
+      ],
+      "Verify account": [
+        "Verifikasi akun"
+      ],
+      "Verify email": [
+        "Verifikasi email"
       ],
       "View": [
         "Lihat"
@@ -2102,12 +2108,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Tidak dapat membuat kalendar baru dari kalender-kalender yang diimpor karena batas jumlah kalender maksimal telah tercapai."
       ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi email, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
@@ -2306,9 +2306,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
-      "Please refresh the page.": [
-        "Harap muat ulang halaman ini."
-      ],
       "Please repeat the password": [
         "Harap ulangi kata sandi"
       ],
@@ -2336,8 +2333,8 @@
       "Removed duplicate recipient: ${ recipents }": [
         "Penerima duplikat dihapus: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Terlalu lama memuat."
+      "Request timed out": [
+        "Waktu permintaan habis"
       ],
       "Require at least one action": [
         "Perlu minimal satu tindakan"
@@ -2380,9 +2377,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Browser yang Anda gunakan tidak mengizinkan kami untuk dapat mengotorisir pembayaran Anda secara menyeluruh. Silakan gunakan browser lain atau masuk via komputer."
-      ],
-      "The composer failed to load.": [
-        "Komposer gagal termuat."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Nama folder terlalu panjang. Mohon pilih nama lain."
@@ -3081,7 +3075,7 @@
         "${ count } pesan yang belum dibaca"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } gambar tertanam"
+        "${ embeddedAttachmentsCount } gambar yang tersemat"
       ],
       "${ groupCounts } group found": [
         "ditemukan ${ groupCounts } grup"
@@ -3177,7 +3171,7 @@
         "(Tidak Ada Penerima)"
       ],
       "* Customizable features": [
-        "* Fitur yang dapat disesuaikan"
+        "* Dapat diatur sesuai kebutuhan"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ bonus kapasitas ${ bonusSpace }"
@@ -3222,7 +3216,7 @@
         "Buat alamat tambahan untuk akun Anda seperti user2@protonmail.com"
       ],
       "Add image URL": [
-        "Tambah URL gambar"
+        "Sisipkan gambar melalui URL"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verifikasi Alamat dengan Kunci Terpercaya sudah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
@@ -3339,7 +3333,7 @@
         "Tidak mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
       ],
       "Center": [
-        "Tengah"
+        "Rata tengah"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
@@ -3459,7 +3453,7 @@
         "Jatuhkan di sini untuk mengunggah berkas"
       ],
       "Drop the file here to upload": [
-        "Taruh berkas di sini untuk mengunggah"
+        "Letakkan berkas yang hendak Anda unggah di sini"
       ],
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
@@ -3483,7 +3477,7 @@
         "Program-program pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan-pesan yang Anda terima atau belum."
       ],
       "embedded image": [
-        "gambar tertanam"
+        "gambar yang tersemat"
       ],
       "Encrypt for non-ProtonMail users": [
         "Enkripsi untuk pengguna non-ProtonMail"
@@ -3618,25 +3612,22 @@
         "Ikuti folder induk"
       ],
       "Insert image": [
-        "Memasukkan gambar"
+        "Sisipkan gambar"
       ],
       "Insert link": [
         "Sisipkan tautan"
       ],
-      "Internet connection lost.": [
-        "Koneksi internet terputus."
+      "Internet connection lost": [
+        "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
+        "Koneksi internet terputus. Mohon periksa koneksi perangkat Anda."
       ],
       "Internet connection restored.": [
-        "Koneksi internet dipulihkan."
+        "Koneksi internet telah kembali pulih."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
-      ],
-      "Justify": [
-        "Rata kiri kanan"
       ],
       "Key fingerprint": [
         "Sidik jari kunci"
@@ -3651,7 +3642,7 @@
         "Kiri ke Kanan"
       ],
       "Link type": [
-        "Jenis Tautan"
+        "Jenis tautan"
       ],
       "Loading": [
         "Memuat"
@@ -3750,7 +3741,7 @@
         "Pratinjau tidak tersedia"
       ],
       "No results found": [
-        "Tidak ada hasil ditemukan"
+        "Tidak ada hasil yang ditemukan"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Kunci yang diunggah tidak ada yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
@@ -3807,7 +3798,7 @@
         "Mohon dicatat proses ini memerlukan waktu, tergantung pada ukuran buku alamat Anda."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Harap diperhatikan dengan mengklik tombol Konfirmasi, akun anda akan memiliki kredit ${ creditsRemaining } yang tersisa."
+        "Harap diperhatikan bahwa dengan mengklik tombol Konfirmasi, sisa saldo Anda akan menjadi ${ creditsRemaining }."
       ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
@@ -3932,11 +3923,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Pengiriman pesan dari alamat @pm.me hanya tersedia bagi pengguna yang menggunakan layanan berbayar. Pesan Anda akan dikirim dari alamat bawaan Anda ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Dikirim melalui layanan email aman <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
-      "Session timed out.": [
-        "Sesi habis."
+      "Session timed out": [
+        "Masa berlaku sesi telah berakhir"
       ],
       "Set a recovery phrase": [
         "Tentukan frasa pemulihan"
@@ -3990,13 +3984,13 @@
         "Beralih ke ${ professionalPlan } untuk menambah lebih banyak pengguna."
       ],
       "Test link": [
-        "Tes tautan"
+        "Uji tautan"
       ],
       "Text color": [
         "Warna teks"
       ],
       "Text to display": [
-        "Teks untuk ditampilkan"
+        "Teks yang akan ditampilkan"
       ],
       "Thank you for supporting our mission.": [
         "Terima kasih telah mendukung misi kami."
@@ -4137,7 +4131,7 @@
         "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Pesan yang akan dikirim terlalu banyak. Tunggu sejenak sebelum menjadwalkan pengiriman pesan ini."
+        "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Nonaktifkan pencarian konten. Kemajuan aktivasi tidak akan hilang."
@@ -4215,7 +4209,7 @@
         "Versi ${ appVersion }"
       ],
       "Visit our shop to get Proton merchandise.": [
-        "Kunjungilah toko kami untuk mendapatkan berbagai cinderamata Proton."
+        "Kunjungi toko kami untuk mendapatkan berbagai cinderamata Proton."
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Bundel VPN + ${ mailAppName } untuk keluarga dan usaha kecil."
@@ -4235,6 +4229,9 @@
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda apabila proses impor telah selesai."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
+      ],
       "Web URL": [
         "URL Web"
       ],
@@ -4253,11 +4250,14 @@
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
       ],
+      "Would you like to receive a new verification code?": [
+        "Apakah Anda ingin menerima kode verifikasi baru?"
+      ],
       "Yearly": [
         "Tahunan"
       ],
       "You are about to open another browser tab and visit:": [
-        "Anda akan membuka tab peramban lain dan mengunjungi:"
+        "Anda akan membuka tab browser lain dan mengunjungi:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Anda saat ini masuk sebagai ${ user.Name } (${ user.Email }) dan memiliki akses terbatas."
@@ -4311,7 +4311,7 @@
         "Anda belum menulis subjek email. Apakah Anda yakin untuk tetap mengirim email ini?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Kapasitas penyimpanan Anda mencapai 100%. Pertimbangkan untuk mengosongkan ruang atau meningkatkan akun dengan ruang penyimpanan tambahan untuk menulis pesan baru."
+        "Kuota penyimpanan Anda telah 100% terpakai. Mohon hapus pesan-pesan yang sudah tidak lagi digunakan atau tingkatkan akun Anda untuk memperoleh kuota penyimpanan tambahan."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Anda telah mencapai jumlah pesan balasan maksimum (5 pesan) yang dapat dikirim."
@@ -4466,10 +4466,10 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "Tambah enkripsi"
+        "Tambahkan enkripsi"
       ],
       "Add expiration time": [
-        "Tambah waktu kedaluwarsa"
+        "Tambahkan waktu kedaluwarsa"
       ],
       "Apply / open": [
         "Terapkan / buka"
@@ -4499,13 +4499,13 @@
         "Teruskan"
       ],
       "Go to All Mail": [
-        "Ke Semua Surat"
+        "Ke Semua surat"
       ],
       "Go to Archive": [
         "Ke Arsip"
       ],
       "Go to Drafts": [
-        "Tuju Draf"
+        "Ke Draf"
       ],
       "Go to Inbox": [
         "Ke Kotak masuk"
@@ -4532,7 +4532,7 @@
         "Labeli sebagai..."
       ],
       "Load embedded images": [
-        "Muat gambar tertanam"
+        "Muat gambar-gambar yang tersemat"
       ],
       "Load remote content": [
         "Muat remote content"
@@ -4592,7 +4592,7 @@
         "Simpan draf"
       ],
       "Search": [
-        "Pencarian"
+        "Cari"
       ],
       "Select / unselect": [
         "Pilih / batal pilih"
@@ -4607,10 +4607,10 @@
         "Tampilkan semua email"
       ],
       "Show original message": [
-        "Tampilkan pesan orisinal"
+        "Tampilkan pesan asli"
       ],
       "Show unread emails": [
-        "Tampilkan email-email yang belum dibaca"
+        "Tampilkan email yang belum dibaca"
       ],
       "Star": [
         "Bintang"
@@ -4659,8 +4659,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } dan ${ count } lainnya"
       ],
-      "(Coming soon)": [
-        "(Segera hadir)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
       "Actions": [
         "Tindakan"
@@ -4749,6 +4749,9 @@
       "City": [
         "Kota"
       ],
+      "Code is 6 digits without spaces": [
+        "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
       "Conditions": [
         "Syarat"
       ],
@@ -4799,9 +4802,6 @@
       ],
       "Enter organization name to confirm": [
         "Masukkan nama organisasi untuk dapat melanjutkan"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
       ],
       "Expires": [
         "Kedaluwarsa"
@@ -5163,7 +5163,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "Tambah kode hadiah"
+        "Tambahkan kode hadiah"
       ],
       "Add folder": [
         "Tambah folder"
@@ -5328,6 +5328,9 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } dari ${ calendarsToBeCreated } telah terbuat"
       ],
+      "${ createdCalendars } of 1 created": [
+        "${ createdCalendars } dari 1 telah terbuat"
+      ],
       "Almost there": [
         "Hampir selesai"
       ],
@@ -5484,7 +5487,7 @@
     },
     "Message image": {
       "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Gambar tidak termuat karena sertifikat identitas server daring tidak valid."
+        "Gambar tidak termuat karena sertifikat identitas milik server penyedia gambar tidak valid."
       ],
       "Image has not been loaded in order to protect your privacy.": [
         "Gambar tidak dimuat demi melindungi privasi Anda."
@@ -5701,7 +5704,7 @@
         "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all Proton services": [
-        "Temukan semua layanan Proton"
+        "Telusuri seluruh layanan yang Proton tawarkan"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
         "Misi kami adalah membangun internet dimana Anda memegang kendali data dan privasi Anda. Kami baru saja memutakhirkan Proton - Selamat datang di internet aman."
@@ -6139,12 +6142,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Tidak dapat mengerim ke alamat penyelenggara: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Gagal membuat kalender acara"
-      ],
-      "Updating calendar event failed": [
-        "Gagal memperbarui kalender acara"
       ]
     },
     "Search - no results": {
@@ -6272,8 +6269,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Telusuri seluruh layanan yang Proton tawarkan"
+      ],
       "Message Content Search": [
         "Pencarian Konten Pesan"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Kelola jadwal, berkas, dan aktivitas online Anda dengan aman! Buka untuk menelusuri seluruh layanan yang Proton tawarkan."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Demi melindungi privasi Anda, Proton telah memblokir program-program pelacak email yang terdapat pada pesan ini"
@@ -6657,7 +6660,7 @@
         "Jumlah jatuh tempo"
       ],
       "Apply gift code": [
-        "Tambah kode hadiah"
+        "Gunakan kode hadiah"
       ],
       "Are you sure you want to close?": [
         "Yakin ingin menutupnya?"
@@ -6824,6 +6827,9 @@
       "Email addresses": [
         "Alamat email"
       ],
+      "Email composer": [
+        "Komposer email"
+      ],
       "Email content": [
         "Konten email"
       ],
@@ -6847,9 +6853,6 @@
       ],
       "Error": [
         "Kesalahan"
-      ],
-      "Expand content": [
-        "Buka konten"
       ],
       "Exporting contacts": [
         "Mengekspor kontak"
@@ -7195,10 +7198,10 @@
         "Hosting email untuk domain Anda sendiri di ProtonMail, mis. john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
+        "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami sebelumnya, silakan masukkan di sini."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        "Dukungan multi-pengguna hanya dapat diterapkan ke paket dengan 2 pengguna atau lebih"
+        "Dukungan multi-user hanya dapat diterapkan pada paket dengan 2 pengguna atau lebih"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan malware."

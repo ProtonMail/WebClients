@@ -259,10 +259,10 @@
       "Details": [
         "Подробиці"
       ],
-      "Did not receive the code?": [
+      "Didn't receive a code?": [
         "Не отримали код?"
       ],
-      "Didn't receive a code?": [
+      "Didn't receive the code?": [
         "Не отримали код?"
       ],
       "Disable recovery phrase": [
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Редагувати Sieve"
+      ],
+      "Edit sign-in details": [
+        "Змінити дані входу"
       ],
       "enable desktop notifications": [
         "увімкнути сповіщення стільниці"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Курсив"
-      ],
-      "Justify": [
-        "За шириною"
       ],
       "Keep": [
         "Залишити"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Перевірити"
+      ],
+      "Verify account": [
+        "Підтвердити обліковий запис"
+      ],
+      "Verify email": [
+        "Підтвердити електронну пошту"
       ],
       "View": [
         "Переглянути"
@@ -1757,12 +1763,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Не вдалося створити нові календарі для всіх імпортованих календарів через обмеження особистого календаря."
       ],
-      "Can't validate email, try again later": [
-        "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
-      ],
-      "Can't validate phone, try again later": [
-        "Не вдається перевірити номер телефону. Спробуйте знову пізніше"
-      ],
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
       ],
@@ -1949,9 +1949,6 @@
       "Please generate keys before you try to change your password": [
         "Будь ласка, згенеруйте ключі перед зміною пароля"
       ],
-      "Please refresh the page.": [
-        "Будь ласка, оновіть сторінку."
-      ],
       "Please set a recovery email first": [
         "Спершу вкажіть е-пошту для відновлення"
       ],
@@ -1979,8 +1976,8 @@
       "Process aborted": [
         "Процес перервано"
       ],
-      "Request timed out.": [
-        "Час очікування запиту завершився."
+      "Request timed out": [
+        "Час очікування запиту завершився"
       ],
       "Require at least one action": [
         "Необхідна принаймні одна дія"
@@ -2014,9 +2011,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Браузер, який ви використовуєте, не дозволяє повністю авторизувати платіж. Будь ласка, скористайтеся іншим браузером або увійдіть за допомогою комп'ютера."
-      ],
-      "The composer failed to load.": [
-        "Не вдалося завантажити редактор."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Назва теки надто довга. Будь ласка, скоротіть назву."
@@ -3772,10 +3766,10 @@
         "Якщо ви встановили обидва SPF та DKIM, DMARC дозволить вам вказати, як інші сервіси електронної пошти повинні доставляти пошту для вашого домену, якщо обидві перевірки SPF та DKIM не пройшли. Це може перешкоджати спамерам представлятися вашим іменем, але також може спричиняти проблеми доставлення при неправильному налаштуванні."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Якщо ви втратите свої облікові дані для входу і вам необхідно буде відновити доступ, ${ boldImperative }, щоб у вас були ${ boldAccountRecovery }."
+        "Якщо ви втратите свої облікові дані для входу і вам необхідно буде відновити доступ, ${ boldImperative }, щоб у вас був налаштований ${ boldAccountRecovery }."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Якщо ви втратите свої облікові дані для входу і вам необхідно буде відновити доступ, ${ boldImperative }, щоб у вас були ${ boldAccountAndRecovery }, інакше ви не зможете отримати доступ до своїх листів, контактів чи файлів."
+        "Якщо ви втратите свої облікові дані для входу і вам необхідно буде відновити доступ, ${ boldImperative }, щоб у вас були налаштовані ${ boldAccountAndRecovery }, інакше ви не зможете отримати доступ до своїх листів, контактів чи файлів."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для авторизації в обліковому записі. Кожен код можна використати лише один раз."
@@ -3864,8 +3858,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Установіть файл конфігурації сервера для під'єднання до певного сервера у вибраній країні."
       ],
-      "Internet connection lost.": [
-        "Втрачено інтернет-з'єднання."
+      "Internet connection lost": [
+        "Втрачено інтернет-з'єднання"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Відсутнє з'єднання з інтернетом. Перевірте доступ до мережі свого пристрою."
@@ -3881,9 +3875,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
-      ],
-      "Justify": [
-        "За шириною"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Тримайте ці записи у вашому DNS стільки часу, скільки хочете використовувати DKIM."
@@ -3937,7 +3928,7 @@
         "Увійдіть в ProtonMail, щоб активувати вашу адресу"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Журнали містять спроби авторизації в усіх сервісах Proton з використанням ваших облікових даних Proton."
+        "Журнали містять спроби авторизації в усіх службах Proton з використанням ваших облікових даних Proton."
       ],
       "lose access to all current encrypted data": [
         "втратите доступ до всіх наявних зашифрованих даних"
@@ -4254,8 +4245,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
-      "Session timed out.": [
-        "Сеанс звершився."
+      "Session timed out": [
+        "Сеанс завершився"
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
@@ -4539,6 +4530,9 @@
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Ми надішлемо новий код підтвердження на ${ strong }"
+      ],
       "Web URL": [
         "URL-посилання"
       ],
@@ -4571,6 +4565,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Бажаєте отримати новий код підтвердження?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo читає ваші особисті дані, щоб забезпечити доступ для рекламодавців, державних агенцій США та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
@@ -4958,25 +4955,25 @@
         "Перейти до всієї пошти"
       ],
       "Go to Archive": [
-        "Перейти до Архіву"
+        "Перейти до архіву"
       ],
       "Go to Drafts": [
-        "Перейти до Чернеток"
+        "Перейти до чернеток"
       ],
       "Go to Inbox": [
-        "Перейти до Вхідних"
+        "Перейти до вхідних"
       ],
       "Go to Sent": [
-        "Перейти до Надісланих"
+        "Перейти до надісланих"
       ],
       "Go to Spam": [
-        "Перейти до Спаму"
+        "Перейти до спаму"
       ],
       "Go to Starred": [
-        "Перейти до Позначених зірочкою"
+        "Перейти до позначених зірочкою"
       ],
       "Go to Trash": [
-        "Перейти до Смітника"
+        "Перейти до смітника"
       ],
       "Jump to first": [
         "До першого"
@@ -5009,16 +5006,16 @@
         "Перемістити вправо / розгорнути"
       ],
       "Move to Archive": [
-        "Перемістити до Архіву"
+        "Перемістити до архіву"
       ],
       "Move to Inbox": [
-        "Перемістити до Вхідних"
+        "Перемістити до вхідних"
       ],
       "Move to Spam": [
-        "Перемістити до Спаму"
+        "Перемістити до спаму"
       ],
       "Move to Trash": [
-        "Перемістити до Смітника"
+        "Перемістити до смітника"
       ],
       "Move to...": [
         "Перемістити..."
@@ -5169,8 +5166,8 @@
         "${ UsedMembers } з ${ MaxMembers } користувачів",
         "${ UsedMembers } з ${ MaxMembers } користувачів"
       ],
-      "(Coming soon)": [
-        "(Незабаром з'явиться)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
       "Account storage": [
         "Сховище облікового запису"
@@ -5276,6 +5273,9 @@
       ],
       "Code": [
         "Код"
+      ],
+      "Code is 6 digits without spaces": [
+        "Код складається з 6 цифр без пробілів"
       ],
       "Color": [
         "Колір"
@@ -5442,9 +5442,6 @@
       "Enter password": [
         "Введіть пароль"
       ],
-      "Enter the 6-digit code": [
-        "Введіть 6-значний код"
-      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введіть пароль для ключа з відбитком: ${ fingerprintCode }"
       ],
@@ -5542,7 +5539,7 @@
         "Лише останній місяць"
       ],
       "Link confirmation": [
-        "Підтвердження посилання"
+        "Підтвердження посилань"
       ],
       "Login password": [
         "Пароль входу"
@@ -6132,7 +6129,7 @@
         "Увімкнути розширений журнал"
       ],
       "Enable authentication logs": [
-        "Увімкнути журнали автентифікації"
+        "Увімкнути журнали авторизації"
       ]
     },
     "Mail feature": {
@@ -6785,9 +6782,6 @@
       "Secure Core configs": [
         "Конфігурації Secure Core"
       ],
-      "Select a reason": [
-        "Виберіть причину"
-      ],
       "Standard server configs": [
         "Конфігурації сервера"
       ],
@@ -7248,7 +7242,7 @@
         "Імена доменів"
       ],
       "Email privacy": [
-        "Приватність електронної пошти"
+        "Приватність"
       ],
       "Encryption and keys": [
         "Шифрування та ключі"
@@ -8030,11 +8024,14 @@
       "Email": [
         "Е-пошта"
       ],
+      "Email composer": [
+        "Редактор"
+      ],
       "Email encryption keys": [
         "Ключі шифрування електронної пошти"
       ],
       "Email privacy": [
-        "Приватність електронної пошти"
+        "Приватність"
       ],
       "Email subscriptions": [
         "Підписки електронної пошти"
@@ -8047,9 +8044,6 @@
       ],
       "Error": [
         "Помилка"
-      ],
-      "Expand content": [
-        "Розгорнути вміст"
       ],
       "Export": [
         "Експорт"
@@ -8157,7 +8151,7 @@
         "Макет"
       ],
       "Link confirmation": [
-        "Підтвердження посилання"
+        "Підтвердження посилань"
       ],
       "Login password": [
         "Пароль входу"

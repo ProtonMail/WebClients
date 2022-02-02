@@ -122,9 +122,6 @@
       "Compose": [
         "Opstellen"
       ],
-      "Composer size": [
-        "Opstelmodusgrootte"
-      ],
       "Confirm": [
         "Bevestigen"
       ],
@@ -187,7 +184,7 @@
       "Details": [
         "Details"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Code niet ontvangen?"
       ],
       "Done": [
@@ -210,6 +207,9 @@
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Edit sign-in details": [
+        "Bewerk aanmeldgegevens"
       ],
       "Email settings": [
         "E-mailinstellingen"
@@ -277,9 +277,6 @@
       "Increase": [
         "Verhoog"
       ],
-      "Keyboard shortcuts": [
-        "Sneltoetsen"
-      ],
       "Load image": [
         "Afbeelding laden"
       ],
@@ -288,12 +285,6 @@
       ],
       "Log in": [
         "Aanmelden"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Mailbox layout": [
-        "Mailbox layout"
       ],
       "Manage link": [
         "Beheer link"
@@ -395,7 +386,7 @@
         "Van deze lijst verwijderen"
       ],
       "Remove gift code": [
-        "Verwijder cadeaucode"
+        "Verwijder geschenkcode"
       ],
       "Rename": [
         "Hernoem"
@@ -559,11 +550,14 @@
       "Use for sending": [
         "Gebruik voor verzenden"
       ],
-      "Use “${ label }” setting": [
-        "Gebruik “${ label }”-instelling"
-      ],
       "Verify": [
         "Verifiëer"
+      ],
+      "Verify account": [
+        "Verifieer account"
+      ],
+      "Verify email": [
+        "Verifieer e-mailadres"
       ],
       "View": [
         "Bekijken"
@@ -891,14 +885,6 @@
         "Niet-ondersteunde agenda-indeling"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Gemaximaliseerd"
-      ],
-      "Normal": [
-        "Normaal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Persoonlijke instellingen m.b.t. importeren sluiten?"
@@ -1011,14 +997,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw contacten geëxporteerd."
@@ -1101,12 +1079,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
-      ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoonnummer niet valideren, probeer het later opnieuw"
       ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
@@ -1273,8 +1245,8 @@
       "Process aborted": [
         "Proces afgebroken"
       ],
-      "Request timed out.": [
-        "Reactietijd verzoek overschreden."
+      "Request timed out": [
+        "Reactietijd verzoek overschreden"
       ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
@@ -1607,15 +1579,15 @@
     "Info": {
       "${ activeDownloadsCount } downloading": [
         "${ activeDownloadsCount } downloaden",
-        ""
+        "${ activeDownloadsCount } downloaden"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "${ activeDownloadsCount } downloaden (${ downloadProgress }%)",
-        ""
+        "${ activeDownloadsCount } downloaden (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
         "${ activeUploadsCount } uploaden (${ uploadProgress }%)",
-        ""
+        "${ activeUploadsCount } uploaden (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadres",
@@ -1638,7 +1610,7 @@
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } geannuleerd",
-        ""
+        "${ canceledCount } geannuleerd"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Lid",
@@ -1662,19 +1634,19 @@
       ],
       "${ doneCount } finished": [
         "${ doneCount } voltooid",
-        ""
+        "${ doneCount } voltooid"
       ],
       "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } gedownload",
-        ""
+        "${ doneDownloadsCount } gedownload"
       ],
       "${ doneUploadsCount } uploaded": [
         "${ doneUploadsCount } geüpload",
-        "${ doneUploadsCount } gedownload"
+        "${ doneUploadsCount } geüpload"
       ],
       "${ errorCount } failed": [
         "${ errorCount } mislukt",
-        ""
+        "${ errorCount } mislukt"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
@@ -1699,7 +1671,7 @@
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } onderbroken",
-        ""
+        "${ pausedCount } onderbroken"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } op uw abonnement door over te schakelen naar ${ annualBilling }"
@@ -1823,9 +1795,6 @@
       "Are you sure you want to permanently delete selected item from trash?": [
         "Weet u zeker dat u het geselecteerde item permanent uit de prullenbak wilt verwijderen?",
         "Weet u zeker dat u geselecteerde items permanent wilt verwijderen uit de prullenbak?"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Omdat ${ appName } end-to-end versleuteld is, kunnen we geen toegang krijgen\nof uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset,\nmoet u een van de volgende dingen hebben:"
@@ -2046,8 +2015,8 @@
       "Initializing": [
         "Initialiseren"
       ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
+      "Internet connection lost": [
+        "Internetverbinding verbroken"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbinding verbroken. Controleer uw internetverbinding."
@@ -2263,8 +2232,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
-      "Session timed out.": [
-        "Sessie verlopen."
+      "Session timed out": [
+        "Sessie verlopen"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
@@ -2334,7 +2303,7 @@
         "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browser tabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
+        "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
       ],
       "This will overwrite the existing file": [
         "Dit zal het bestaande bestand overschrijven"
@@ -2408,6 +2377,9 @@
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "We verzenden een nieuwe verificatiecode naar ${ strong }"
+      ],
       "Week": [
         "Week"
       ],
@@ -2422,6 +2394,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
       "Would you like to restore your files?": [
         "Wilt u uw bestanden herstellen?"
@@ -2588,197 +2563,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Versleuteling toevoegen"
-      ],
-      "Add expiration time": [
-        "Vervaltijd toevoegen"
-      ],
-      "Apply / open": [
-        "Toepassen / openen"
-      ],
-      "Attach file": [
-        "Bestand toevoegen"
-      ],
-      "Cancel / close": [
-        "Annuleren / sluiten"
-      ],
-      "Close draft": [
-        "Concept sluiten"
-      ],
-      "Create filter with...": [
-        "Filter maken met..."
-      ],
-      "Delete permanently": [
-        "Permanent verwijderen"
-      ],
-      "Discard draft": [
-        "Concept weggooien"
-      ],
-      "Expand / contract composer": [
-        "Opstelvenster uitvouwen / invouwen"
-      ],
-      "Forward": [
-        "Doorsturen"
-      ],
-      "Go to All Mail": [
-        "Ga naar Alle Berichten"
-      ],
-      "Go to Archive": [
-        "Ga naar Archief"
-      ],
-      "Go to Drafts": [
-        "Ga naar Concepten"
-      ],
-      "Go to Inbox": [
-        "Ga naar Inbox"
-      ],
-      "Go to Sent": [
-        "Ga naar Verzonden"
-      ],
-      "Go to Spam": [
-        "Ga naar Spam"
-      ],
-      "Go to Starred": [
-        "Ga naar Berichten met ster"
-      ],
-      "Go to Trash": [
-        "Ga naar Prullenbak"
-      ],
-      "Jump to first": [
-        "Spring naar eerste"
-      ],
-      "Jump to last": [
-        "Spring naar laatste"
-      ],
-      "Label as...": [
-        "Labellen als..."
-      ],
-      "Load embedded images": [
-        "Ingesloten afbeeldingen laden"
-      ],
-      "Load remote content": [
-        "Externe inhoud laden"
-      ],
-      "Mark as unread": [
-        "Markeer als ongelezen"
-      ],
-      "Minimize / maximize composer": [
-        "Opstelvenster minimaliseren / maximaliseren"
-      ],
-      "Move down": [
-        "Naar beneden verplaatsen"
-      ],
-      "Move left / collapse": [
-        "Verplaats naar links / inklappen"
-      ],
-      "Move right / expand": [
-        "Verplaats naar rechts / uitbreiden"
-      ],
-      "Move to Archive": [
-        "Verplaats naar Archief"
-      ],
-      "Move to Inbox": [
-        "Verplaats naar Inbox"
-      ],
-      "Move to Spam": [
-        "Verplaats naar Spam"
-      ],
-      "Move to Trash": [
-        "Verplaats naar Prullenbak"
-      ],
-      "Move to...": [
-        "Verplaatsen naar..."
-      ],
-      "Move up": [
-        "Naar boven verplaatsen"
-      ],
-      "New message": [
-        "Nieuw bericht"
-      ],
-      "Open next message": [
-        "Volgende bericht openen"
-      ],
-      "Open previous message": [
-        "Vorig bericht openen"
-      ],
-      "Open this modal": [
-        "Open dit hulpvenster"
-      ],
-      "Reply": [
-        "Beantwoorden"
-      ],
-      "Reply all": [
-        "Allen beantwoorden"
-      ],
-      "Save draft": [
-        "Concept opslaan"
-      ],
-      "Search": [
-        "Zoeken"
-      ],
-      "Select / unselect": [
-        "Selecteren / deselecteren"
-      ],
-      "Select / unselect all": [
-        "Selecteer / deselecteer alles"
-      ],
-      "Send email": [
-        "E-mail verzenden"
-      ],
-      "Show all emails": [
-        "Toon alle e-mails"
-      ],
-      "Show original message": [
-        "Toon het originele bericht"
-      ],
-      "Show unread emails": [
-        "Toon ongelezen e-mails"
-      ],
-      "Star": [
-        "Ster"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Sneltoetsen voor acties"
-      ],
-      "Basic actions": [
-        "Algemene acties"
-      ],
-      "Basic navigation": [
-        "Algemene navigatie"
-      ],
-      "Composer shortcuts": [
-        "Sneltoetsen voor opstelvenster"
-      ],
-      "Folder shortcuts": [
-        "Sneltoetsen voor mappen"
-      ],
-      "List shortcuts": [
-        "Sneltoetsen voor lijsten"
-      ],
-      "Message shortcuts": [
-        "Berichtsneltoetsen"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Uit"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Aan"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Komt binnenkort)"
-      ],
       "(Expired)": [
         "(Verlopen)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
       "Active": [
         "Actief"
@@ -2843,6 +2633,9 @@
       "City": [
         "Plaats"
       ],
+      "Code is 6 digits without spaces": [
+        "Code is 6 cijfers zonder spaties"
+      ],
       "Completed": [
         "Voltooid"
       ],
@@ -2888,9 +2681,6 @@
       ],
       "Enter organization name to confirm": [
         "Voer de naam van de organisatie in om te bevestigen"
-      ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
       ],
       "Expired": [
         "Verlopen"
@@ -2948,9 +2738,6 @@
       ],
       "Import to email address": [
         "Importeren naar e-mailadres"
-      ],
-      "Keyboard shortcuts": [
-        "Sneltoetsen"
       ],
       "Label messages as": [
         "Berichten labellen als"
@@ -3041,15 +2828,6 @@
       ],
       "Select a method": [
         "Een methode selecteren"
-      ],
-      "Select how your composer opens by default.": [
-        "Selecteer hoe uw opstelvenster standaard opent."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selecteer hoe uw lijst met berichten er standaard uitziet."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selecteer hoe uw mailbox er standaard uitziet."
       ],
       "Select your country": [
         "Selecteer uw land"
@@ -3149,30 +2927,6 @@
         "Naam"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Gemaximaliseerd"
-      ],
-      "Normal": [
-        "Normaal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -3195,14 +2949,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } aangemaakt"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
       ]
     },
     "Link": {
@@ -3244,6 +2990,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt",
         "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        ""
       ],
       "Almost there": [
         "Bijna daar"
@@ -3938,9 +3688,6 @@
       "Fingerprint copied to clipboard": [
         "Vingerafdruk gekopieerd naar klembord"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Sneltoetsvoorkeuren bijgewerkt"
-      ],
       "Phone number copied to clipboard": [
         "Telefoonnummer naar klembord gekopieerd"
       ],
@@ -4083,9 +3830,6 @@
       "${ appName } customization": [
         "${ appName } aanpassingen"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Sneltoetsen"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } lid",
         "${ emailsCount } leden"
@@ -4144,9 +3888,6 @@
       ],
       "Clearing data": [
         "Gegevens aan het wissen"
-      ],
-      "Composer mode": [
-        "Opstelmodus"
       ],
       "Confirm loss of Proton bonuses": [
         "Bevestig verlies van Proton bonussen"
@@ -4318,20 +4059,11 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
-      "Keyboard Shortcuts": [
-        "Sneltoetsen"
-      ],
       "Link confirmation": [
         "Link bevestigen"
       ],
       "Location": [
         "Locatie"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Mailbox layout": [
-        "Mailbox layout"
       ],
       "Manage secure link": [
         "Beveiligde link beheren"
@@ -4590,7 +4322,7 @@
         "Host e-mails voor uw eigen domein(en) op ProtonMail, bijvoorbeeld john.smith@voorbeeld.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+        "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Ondersteuning voor meerdere gebruikers is alleen van toepassing op abonnementen met 2 of meer gebruikers"

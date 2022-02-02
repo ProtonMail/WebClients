@@ -275,7 +275,7 @@
       "Details": [
         "Detaily"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Nedostali jste kód?"
       ],
       "Discard": [
@@ -310,6 +310,9 @@
       ],
       "Edit phone number": [
         "Upravit telefonní číslo"
+      ],
+      "Edit sign-in details": [
+        "Upravit přihlašovací údaje"
       ],
       "Email settings": [
         "Nastavení e-mailu"
@@ -454,9 +457,6 @@
       ],
       "Italic": [
         "Kurzíva"
-      ],
-      "Justify": [
-        "Zarovnat do bloku"
       ],
       "Keyboard shortcuts": [
         "Klávesové zkratky"
@@ -949,6 +949,12 @@
       ],
       "Verify": [
         "Ověřit"
+      ],
+      "Verify account": [
+        "Ověřit účet"
+      ],
+      "Verify email": [
+        "Ověřit e-mail"
       ],
       "View": [
         "Zobrazit"
@@ -2153,12 +2159,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
       ],
-      "Can't validate email, try again later": [
-        "Nemůžeme ověřit váš e-mail, zkuste to později"
-      ],
-      "Can't validate phone, try again later": [
-        "Nemůžeme ověřit váš telefon, zkuste to později"
-      ],
       "Checkout expired, please try again": [
         "Platnost objednávky vypršela, zkuste to prosím znovu"
       ],
@@ -2378,9 +2378,6 @@
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty."
       ],
-      "Please refresh the page.": [
-        "Prosím obnovte stránku."
-      ],
       "Please repeat the password": [
         "Zopakujte prosím heslo"
       ],
@@ -2411,8 +2408,8 @@
         "Odstraňte duplicitního příjemce: ${ recipents }",
         "Odstraňte duplicitního příjemce: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Vypršel časový limit žádosti."
+      "Request timed out": [
+        "Vypršel časový limit žádosti"
       ],
       "Require at least one action": [
         "Vyžaduje alespoň jednu akci"
@@ -2458,9 +2455,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Prohlížeč, který používáte, neumožňuje plnou autorizaci platby. Prosím použijte pro autorizaci platby jiný prohlížeč nebo se přihlašte přes počítač."
-      ],
-      "The composer failed to load.": [
-        "Editor se nepodařilo načíst."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Název složky je příliš dlouhý. Zvolte jiný název."
@@ -3378,7 +3372,7 @@
         "/měsíc."
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
-        "20% sleva na Vaše předplatné s kupónem ${ code }"
+        "Použita 20% sleva na Vaše předplatné s kupónem ${ code }"
       ],
       "30 days money-back guarantee.": [
         "30 denní záruka na vrácení peněz."
@@ -3857,8 +3851,8 @@
       "Insert link": [
         "Vložit odkaz"
       ],
-      "Internet connection lost.": [
-        "Připojení k Internetu bylo ztraceno."
+      "Internet connection lost": [
+        "Připojení k Internetu bylo ztraceno"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Připojení k Internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
@@ -3868,9 +3862,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
-      ],
-      "Justify": [
-        "Zarovnat do bloku"
       ],
       "Key fingerprint": [
         "Identifikátor klíče"
@@ -4169,11 +4160,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Odesílání zpráv z @pm.me adresy je placená služba. Vaše zpráva bude odeslána z vaší standardní adresy ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
-      "Session timed out.": [
-        "Relace vypršela."
+      "Session timed out": [
+        "Relace vypršela"
       ],
       "Set a recovery phrase": [
         "Nastavit obnovovací frázi"
@@ -4475,6 +4469,9 @@
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Zašleme nový ověřovací kód na ${ strong }"
+      ],
       "Web URL": [
         "Adresa URL"
       ],
@@ -4492,6 +4489,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Chcete obdržet nový ověřovací kód?"
       ],
       "Yearly": [
         "Ročně"
@@ -4581,7 +4581,7 @@
         "Dosáhli jste ${ spaceDisplayed }% své kapacity úložiště. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste 100% kapacity úložiště. Nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
+        "Dosáhli jste 100% Vaší kapacity úložiště. Nemůžete posílat nebo přijímat nové emaily. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Z této složky jste vybrali **${ count } konverzaci",
@@ -4929,8 +4929,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } a ${ count } dalších"
       ],
-      "(Coming soon)": [
-        "(již brzy)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
       "Actions": [
         "Akce"
@@ -5019,6 +5019,9 @@
       "City": [
         "Město"
       ],
+      "Code is 6 digits without spaces": [
+        "Kód má 6 číslic bez mezer"
+      ],
       "Conditions": [
         "Podmínky"
       ],
@@ -5069,9 +5072,6 @@
       ],
       "Enter organization name to confirm": [
         "Zadejte název organizace pro potvrzení"
-      ],
-      "Enter the 6-digit code": [
-        "Zadejte 6-místný kód"
       ],
       "Expires": [
         "Expirace"
@@ -5600,6 +5600,12 @@
         "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno",
         "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno",
         "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Téměř hotovo"
@@ -6433,12 +6439,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nelze odeslat na adresu organizátora: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Selhalo vytvoření události v kalendáři"
-      ],
-      "Updating calendar event failed": [
-        "Selhalo aktualizoání události v kalendáři"
       ]
     },
     "Search - no results": {
@@ -6584,8 +6584,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Objevte všechny Proton služby"
+      ],
       "Message Content Search": [
         "Vyhledávání obsahu zpráv"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Bezpečně spravujte svůj rozvrh, soubory a online život! Otevřeno pro objevování všech služeb Proton."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Z důvodu ochrany vašeho soukromí společnost Proton v této zprávě zablokovala sledování e-mailů"
@@ -7244,6 +7250,9 @@
       "Email addresses": [
         "E-mailové adresa"
       ],
+      "Email composer": [
+        "Editor emailu"
+      ],
       "Email content": [
         "Obsah e-mailu"
       ],
@@ -7267,9 +7276,6 @@
       ],
       "Error": [
         "Chyba"
-      ],
-      "Expand content": [
-        "Rozbalit obsah"
       ],
       "Exporting contacts": [
         "Exportování kontaktů"

@@ -122,9 +122,6 @@
       "Compose": [
         "新規作成"
       ],
-      "Composer size": [
-        "作成サイズ"
-      ],
       "Confirm": [
         "確認"
       ],
@@ -185,8 +182,8 @@
       "Details": [
         "詳細"
       ],
-      "Did not receive the code?": [
-        "コードが受信できませんか？"
+      "Didn't receive the code?": [
+        ""
       ],
       "Done": [
         "完了"
@@ -208,6 +205,9 @@
       ],
       "Edit phone number": [
         "電話番号を編集"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "メールの設定"
@@ -275,9 +275,6 @@
       "Increase": [
         "増加"
       ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
-      ],
       "Load image": [
         "画像を読み込む"
       ],
@@ -286,12 +283,6 @@
       ],
       "Log in": [
         "ログイン"
-      ],
-      "Mailbox density": [
-        "受信箱の密度"
-      ],
-      "Mailbox layout": [
-        "受信箱のレイアウト"
       ],
       "Manage link": [
         "リンクを管理"
@@ -557,11 +548,14 @@
       "Use for sending": [
         "送信に使用"
       ],
-      "Use “${ label }” setting": [
-        "「${ label }」設定を使用する"
-      ],
       "Verify": [
         "検証"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "表示"
@@ -885,14 +879,6 @@
         "非対応のカレンダー形式です"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "標準"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "インポートのカスタマイズを終了しますか?"
@@ -1003,14 +989,6 @@
         "未払いの請求書"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "通常"
-      ],
-      "Compact": [
-        "コンパクト"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "連絡先を復号化しています。この処理には数分かかる場合があります。処理が完了すると、すべての連絡先をエクスポートしてファイルとしてダウンロードできます。"
@@ -1092,12 +1070,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
-      ],
-      "Can't validate email, try again later": [
-        "メールアドレスを検証できませんした。再度お試しください"
-      ],
-      "Can't validate phone, try again later": [
-        "電話番号の検証ができませんでした。再度お試しください"
       ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
@@ -1258,8 +1230,8 @@
       "Process aborted": [
         "処理が中断されました"
       ],
-      "Request timed out.": [
-        "リクエストがタイムアウトしました。"
+      "Request timed out": [
+        ""
       ],
       "Signature not verified": [
         "署名が確認されていません"
@@ -1777,9 +1749,6 @@
       "Are you sure you want to permanently delete selected item from trash?": [
         "選択されたアイテムをごみ箱から完全に削除してよろしいですか？"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        ""
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
@@ -1996,8 +1965,8 @@
       "Initializing": [
         "初期化中"
       ],
-      "Internet connection lost.": [
-        "インターネット接続切断"
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "インターネット接続が失われました。デバイスの接続を確認してください。"
@@ -2212,8 +2181,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
-      "Session timed out.": [
-        "セッションがタイムアウトしました。"
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -2356,6 +2325,9 @@
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "週表示"
       ],
@@ -2370,6 +2342,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい検証コードを受け取るか、他の検証方法を使用しますか？"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to restore your files?": [
         "ファイルを復元しますか?"
@@ -2536,197 +2511,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "暗号化を追加"
-      ],
-      "Add expiration time": [
-        "有効期限を追加"
-      ],
-      "Apply / open": [
-        "適用 / 開く"
-      ],
-      "Attach file": [
-        "ファイルを添付"
-      ],
-      "Cancel / close": [
-        "キャンセル / 閉じる"
-      ],
-      "Close draft": [
-        "下書きを閉じる"
-      ],
-      "Create filter with...": [
-        "フィルターを作成..."
-      ],
-      "Delete permanently": [
-        "完全に削除"
-      ],
-      "Discard draft": [
-        "下書きを破棄"
-      ],
-      "Expand / contract composer": [
-        "作成画面を拡大/縮小"
-      ],
-      "Forward": [
-        "転送"
-      ],
-      "Go to All Mail": [
-        "全てのメールに移動"
-      ],
-      "Go to Archive": [
-        "アーカイブに移動"
-      ],
-      "Go to Drafts": [
-        "下書きを開く"
-      ],
-      "Go to Inbox": [
-        "受信箱を開く"
-      ],
-      "Go to Sent": [
-        "送信済みを開く"
-      ],
-      "Go to Spam": [
-        "迷惑メールを開く"
-      ],
-      "Go to Starred": [
-        "星印付きを開く"
-      ],
-      "Go to Trash": [
-        "ゴミ箱を開く"
-      ],
-      "Jump to first": [
-        "最初に移動"
-      ],
-      "Jump to last": [
-        "最後に移動"
-      ],
-      "Label as...": [
-        "ラベル付け"
-      ],
-      "Load embedded images": [
-        "埋め込み画像を読み込む"
-      ],
-      "Load remote content": [
-        "外部コンテンツを読み込む"
-      ],
-      "Mark as unread": [
-        "未読にする"
-      ],
-      "Minimize / maximize composer": [
-        "作成画面を最小化 / 最大化"
-      ],
-      "Move down": [
-        "下に移動"
-      ],
-      "Move left / collapse": [
-        ""
-      ],
-      "Move right / expand": [
-        ""
-      ],
-      "Move to Archive": [
-        "アーカイブに移動"
-      ],
-      "Move to Inbox": [
-        "受信箱に移動"
-      ],
-      "Move to Spam": [
-        "迷惑メールに移動"
-      ],
-      "Move to Trash": [
-        "ごみ箱に移動"
-      ],
-      "Move to...": [
-        "...に移動"
-      ],
-      "Move up": [
-        "上に移動"
-      ],
-      "New message": [
-        "新規メッセージ"
-      ],
-      "Open next message": [
-        "次のメッセージを開く"
-      ],
-      "Open previous message": [
-        "前のメッセージを開く"
-      ],
-      "Open this modal": [
-        "モーダルを開く"
-      ],
-      "Reply": [
-        "返信"
-      ],
-      "Reply all": [
-        "全員に返信"
-      ],
-      "Save draft": [
-        "下書きを保存"
-      ],
-      "Search": [
-        "検索"
-      ],
-      "Select / unselect": [
-        "選択 / 選択解除"
-      ],
-      "Select / unselect all": [
-        "すべて選択 / 解除"
-      ],
-      "Send email": [
-        "メールを送信"
-      ],
-      "Show all emails": [
-        "すべてのメールを表示"
-      ],
-      "Show original message": [
-        "元のメッセージを表示"
-      ],
-      "Show unread emails": [
-        "未読のメールを表示"
-      ],
-      "Star": [
-        "星印"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "アクションのショートカット"
-      ],
-      "Basic actions": [
-        "基本操作"
-      ],
-      "Basic navigation": [
-        "一般的なナビゲーション"
-      ],
-      "Composer shortcuts": [
-        "作成画面のショートカット"
-      ],
-      "Folder shortcuts": [
-        "フォルダーのショートカット"
-      ],
-      "List shortcuts": [
-        "リストのショートカット"
-      ],
-      "Message shortcuts": [
-        "メッセージショートカット"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "無効"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "有効"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(まもなく登場)"
-      ],
       "(Expired)": [
         "(有効期限切れ)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Active": [
         "処理中"
@@ -2791,6 +2581,9 @@
       "City": [
         "市町村"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Completed": [
         "完了"
       ],
@@ -2835,9 +2628,6 @@
       ],
       "Enter organization name to confirm": [
         "続行するために組織名を入力してください"
-      ],
-      "Enter the 6-digit code": [
-        "6 桁のコードを入力"
       ],
       "Expired": [
         "有効期限切れ"
@@ -2895,9 +2685,6 @@
       ],
       "Import to email address": [
         "メールアドレスをインポート"
-      ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
       ],
       "Label messages as": [
         "メッセージにつけるラベル"
@@ -2988,15 +2775,6 @@
       ],
       "Select a method": [
         "支払い方法の選択"
-      ],
-      "Select how your composer opens by default.": [
-        "新規メッセージ作成時の既定のモードを選択してください。"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "デフォルトで使用されるメッセージのリストを選択してください。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "デフォルトで使用される受信箱の見た目を選択してください。"
       ],
       "Select your country": [
         "国を選択してください"
@@ -3096,30 +2874,6 @@
         "名前"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "標準"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "通常"
-      ],
-      "Compact": [
-        "コンパクト"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "スクリーンショットの添付"
@@ -3142,14 +2896,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } が作成されました"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
       ]
     },
     "Link": {
@@ -3189,6 +2935,9 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        ""
+      ],
+      "${ createdCalendars } of 1 created": [
         ""
       ],
       "Almost there": [
@@ -3854,9 +3603,6 @@
       "Fingerprint copied to clipboard": [
         "フィンガープリントをクリップボードにコピーしました"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "キーボードショートカットの設定が更新されました"
-      ],
       "Phone number copied to clipboard": [
         "電話番号がクリップボードにコピーされました。"
       ],
@@ -3997,9 +3743,6 @@
       "${ appName } customization": [
         "${ appName } のカスタマイズ"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } のキーボードショートカット"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } メンバー"
       ],
@@ -4056,9 +3799,6 @@
       ],
       "Clearing data": [
         "データをクリアしています"
-      ],
-      "Composer mode": [
-        "新規作成時の書式"
       ],
       "Confirm loss of Proton bonuses": [
         "Protonボーナスの取り消しを確認"
@@ -4228,20 +3968,11 @@
       "Invalid verification code": [
         "無効な検証コードです"
       ],
-      "Keyboard Shortcuts": [
-        "キーボードショートカット"
-      ],
       "Link confirmation": [
         "リンクの確認"
       ],
       "Location": [
         "場所"
-      ],
-      "Mailbox density": [
-        "受信箱の密度"
-      ],
-      "Mailbox layout": [
-        "受信箱のレイアウト"
       ],
       "Manage secure link": [
         "セキュアリンクの管理"

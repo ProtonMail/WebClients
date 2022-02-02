@@ -164,8 +164,8 @@
       "Deselect all": [
         "選択を全て解除"
       ],
-      "Did not receive the code?": [
-        "コードを受け取っていませんか?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "破棄"
@@ -190,6 +190,9 @@
       ],
       "Edit phone number": [
         "電話番号を編集"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "メールの設定"
@@ -254,9 +257,6 @@
       "Increase": [
         "増加"
       ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
-      ],
       "Load image": [
         "画像を読み込む"
       ],
@@ -265,12 +265,6 @@
       ],
       "Log in": [
         "ログイン"
-      ],
-      "Mailbox density": [
-        ""
-      ],
-      "Mailbox layout": [
-        ""
       ],
       "Make this participant optional": [
         "この参加者の参加を任意にする"
@@ -512,11 +506,14 @@
       "Use for sending": [
         "送信に使用"
       ],
-      "Use “${ label }” setting": [
-        "「${ label }」設定を使用する"
-      ],
       "Verify": [
         "検証"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "表示"
@@ -598,38 +595,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } は昨日の ${ formattedHour } に開始しました"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        ""
+      ],
       "${ title } starts now": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
         ""
       ],
       "${ title } starts today": [
         ""
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } は ${ formattedHour } 開始予定です"
+      "${ title } starts tomorrow": [
+        ""
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } は ${ _formattedDate2 } 開始予定です"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } は ${ _formattedDate2 } の ${ formattedHour } 開始予定です"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } は ${ _formattedDate3 } 開始予定です"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } は ${ _formattedDate3 } の ${ formattedHour } 開始予定です"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } は ${ _formattedDateWithoutTime } 開始予定です"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } は ${ formattedDateWithTime } 開始予定です"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } は明日開始予定です"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } は明日の ${ formattedHour } 開始予定です"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        ""
       ]
     },
     "Alert": {
@@ -996,14 +993,6 @@
         ": "
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "標準"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1152,14 +1141,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "未払いの請求"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "通常"
-      ],
-      "Compact": [
-        "コンパクト"
       ]
     },
     "Description": {
@@ -1368,12 +1349,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "メールアドレスを検証できませんした。再度お試しください"
-      ],
-      "Can't validate phone, try again later": [
-        "電話番号の検証ができませんでした。再度お試しください"
-      ],
       "Cancellation failed to be sent": [
         ""
       ],
@@ -1566,8 +1541,8 @@
       "Process aborted": [
         "処理が中断されました"
       ],
-      "Request timed out.": [
-        "リクエストがタイムアウトしました。"
+      "Request timed out": [
+        ""
       ],
       "Self invitation not allowed": [
         "自分自身を招待することはできません"
@@ -2315,9 +2290,6 @@
       "At most 100 participants are allowed per invitation": [
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        ""
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "2年ごとに ${ billedPrice } のお支払い"
       ],
@@ -2495,8 +2467,8 @@
       "Inherited from parent folder": [
         ""
       ],
-      "Internet connection lost.": [
-        "インターネットに接続されていません。"
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "インターネット接続が失われました。デバイスの接続を確認してください。"
@@ -2666,8 +2638,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
-      "Session timed out.": [
-        "セッションがタイムアウトしました。"
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -2792,6 +2764,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "週"
       ],
@@ -2821,6 +2796,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to update all events in this series?": [
         ""
@@ -2990,193 +2968,8 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "暗号化を追加"
-      ],
-      "Add expiration time": [
-        "有効期限を追加"
-      ],
-      "Apply / open": [
-        "適用 / 開く"
-      ],
-      "Attach file": [
-        "ファイルを添付"
-      ],
-      "Cancel / close": [
-        "キャンセル / 閉じる"
-      ],
-      "Close draft": [
-        "下書きを閉じる"
-      ],
-      "Create filter with...": [
-        ""
-      ],
-      "Delete permanently": [
-        "完全に削除"
-      ],
-      "Discard draft": [
-        "下書きを破棄"
-      ],
-      "Expand / contract composer": [
-        ""
-      ],
-      "Forward": [
-        "転送"
-      ],
-      "Go to All Mail": [
-        ""
-      ],
-      "Go to Archive": [
-        "アーカイブに移動"
-      ],
-      "Go to Drafts": [
-        ""
-      ],
-      "Go to Inbox": [
-        ""
-      ],
-      "Go to Sent": [
-        ""
-      ],
-      "Go to Spam": [
-        ""
-      ],
-      "Go to Starred": [
-        ""
-      ],
-      "Go to Trash": [
-        ""
-      ],
-      "Jump to first": [
-        "最初にジャンプ"
-      ],
-      "Jump to last": [
-        ""
-      ],
-      "Label as...": [
-        "ラベル付け"
-      ],
-      "Load embedded images": [
-        "埋め込み画像を読み込む"
-      ],
-      "Load remote content": [
-        "外部コンテンツを読み込む"
-      ],
-      "Mark as unread": [
-        "未読にする"
-      ],
-      "Minimize / maximize composer": [
-        ""
-      ],
-      "Move down": [
-        ""
-      ],
-      "Move left / collapse": [
-        ""
-      ],
-      "Move right / expand": [
-        ""
-      ],
-      "Move to Archive": [
-        "アーカイブに移動"
-      ],
-      "Move to Inbox": [
-        "受信箱に移動"
-      ],
-      "Move to Spam": [
-        "迷惑メールに移動"
-      ],
-      "Move to Trash": [
-        "ごみ箱に移動"
-      ],
-      "Move to...": [
-        "...に移動"
-      ],
-      "Move up": [
-        ""
-      ],
-      "New message": [
-        "新規メッセージ"
-      ],
-      "Open next message": [
-        "次のメッセージを開く"
-      ],
-      "Open previous message": [
-        "前のメッセージを開く"
-      ],
-      "Open this modal": [
-        ""
-      ],
-      "Reply": [
-        "返信"
-      ],
-      "Reply all": [
-        "全員に返信"
-      ],
-      "Save draft": [
-        "下書きを保存"
-      ],
-      "Search": [
-        "検索"
-      ],
-      "Select / unselect": [
-        "選択 / 選択解除"
-      ],
-      "Select / unselect all": [
-        ""
-      ],
-      "Send email": [
-        "メールを送信"
-      ],
-      "Show all emails": [
-        ""
-      ],
-      "Show original message": [
-        ""
-      ],
-      "Show unread emails": [
-        "未読のメールを表示"
-      ],
-      "Star": [
-        "星印"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        ""
-      ],
-      "Basic actions": [
-        "基本操作"
-      ],
-      "Basic navigation": [
-        ""
-      ],
-      "Composer shortcuts": [
-        ""
-      ],
-      "Folder shortcuts": [
-        ""
-      ],
-      "List shortcuts": [
-        ""
-      ],
-      "Message shortcuts": [
-        "メッセージショートカット"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        ""
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "0 - Not likely": [
@@ -3235,6 +3028,9 @@
       ],
       "City": [
         "市町村"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "色"
@@ -3299,9 +3095,6 @@
       "Enter organization name to confirm": [
         ""
       ],
-      "Enter the 6-digit code": [
-        "6 桁のコードを入力"
-      ],
       "Event title": [
         "予定のタイトル"
       ],
@@ -3346,9 +3139,6 @@
       ],
       "Import to:": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
       ],
       "Label messages as": [
         ""
@@ -3446,15 +3236,6 @@
       "Select a method": [
         "支払い方法の選択"
       ],
-      "Select how your composer opens by default.": [
-        ""
-      ],
-      "Select how your list of messages looks like by default.": [
-        ""
-      ],
-      "Select how your mailbox looks like by default.": [
-        ""
-      ],
       "Select your country": [
         "国を選択してください"
       ],
@@ -3514,30 +3295,6 @@
         "名前"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "標準"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "通常"
-      ],
-      "Compact": [
-        "コンパクト"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "スクリーンショットの添付"
@@ -3560,14 +3317,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
       ]
     },
     "Link": {
@@ -4578,9 +4327,6 @@
       "Invitation sent and participants added to all events": [
         ""
       ],
-      "Keyboard shortcuts preferences updated": [
-        "キーボードショートカットの設定が更新されました"
-      ],
       "Participants notified and all events updated": [
         ""
       ],
@@ -4710,9 +4456,6 @@
       "${ appName } customization": [
         "${ appName } のカスタマイズ"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } のキーボードショートカット"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } メンバー"
       ],
@@ -4791,9 +4534,6 @@
       "Clearing data": [
         "データをクリアしています"
       ],
-      "Composer mode": [
-        "作成時の書式"
-      ],
       "Confirm loss of Proton bonuses": [
         "Protonボーナスの損失を確認"
       ],
@@ -4820,9 +4560,6 @@
       ],
       "Create contact": [
         "連絡先を作成"
-      ],
-      "Create event": [
-        "予定を作成"
       ],
       "Create new group": [
         "新しいグループの作成"
@@ -4883,9 +4620,6 @@
       ],
       "Edit contact group": [
         "連絡先グループを編集"
-      ],
-      "Edit event": [
-        "イベントを編集"
       ],
       "Edit image": [
         "画像の編集"
@@ -4953,17 +4687,8 @@
       "Invalid verification code": [
         "無効な検証コード"
       ],
-      "Keyboard Shortcuts": [
-        "キーボードショートカット"
-      ],
       "Link confirmation": [
         "リンクの確認"
-      ],
-      "Mailbox density": [
-        "受信箱の密度"
-      ],
-      "Mailbox layout": [
-        "受信箱のレイアウト"
       ],
       "Merge contacts": [
         "連絡先の統合"
