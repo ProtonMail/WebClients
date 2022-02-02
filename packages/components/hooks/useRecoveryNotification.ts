@@ -28,6 +28,8 @@ const useRecoveryNotification = (
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
     const [isDataRecoveryAvailable, loadingIsDataRecoveryAvailable] = useIsDataRecoveryAvailable();
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
+
+    const { feature: hasDismissedRecoverDataCard } = useFeature(FeatureCode.DismissedRecoverDataCard);
     const hasKeysToReactivate = getLikelyHasKeysToReactivate(user, addresses);
 
     const overallStatus = getOverallStatus({ accountRecoveryStatus, dataRecoveryStatus, isDataRecoveryAvailable });
@@ -67,7 +69,7 @@ const useRecoveryNotification = (
         return;
     }
 
-    if (hasKeysToReactivate) {
+    if (hasKeysToReactivate && hasDismissedRecoverDataCard?.Value === false) {
         return {
             path: '/recovery?action=recover-data',
             text: c('Action').t`Unlock data`,
