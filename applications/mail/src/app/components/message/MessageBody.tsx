@@ -95,6 +95,12 @@ const MessageBody = ({
         [content, highlightBody]
     );
 
+    useEffect(() => {
+        if (encryptedMode) {
+            setIsIframeContentSet(true);
+        }
+    }, [encryptedMode]);
+
     return (
         <div
             ref={bodyRef}
@@ -107,8 +113,8 @@ const MessageBody = ({
             ])}
             data-testid="message-content:body"
         >
-            {encryptedMode && <pre>{message.data?.Body}</pre>}
-            {sourceMode && <pre>{message.decryption?.decryptedBody}</pre>}
+            {encryptedMode && <pre className="m0">{message.data?.Body}</pre>}
+            {sourceMode && <pre className="m0">{message.decryption?.decryptedBody}</pre>}
             {(loadingMode || decryptingMode) && (
                 <>
                     <div className="message-content-loading-placeholder mb0-25 max-w8e" />
