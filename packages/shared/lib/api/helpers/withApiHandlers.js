@@ -1,4 +1,4 @@
-import { create as createMutex } from 'mutex-browser';
+import { create as createMutex } from '@protontech/mutex-browser';
 
 import { RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY } from '../../constants';
 import { createOnceHandler } from '../../apiHandlers';
