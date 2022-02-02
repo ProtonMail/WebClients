@@ -27,8 +27,10 @@ const getTrackers = (message: MessageState) => {
 
         // Ignore trackers located in the blockquote
         if (
-            !content.includes(`data-proton-remote="${trackerImage.id}"`) &&
-            blockquote.includes(`data-proton-remote="${trackerImage.id}"`)
+            (!content.includes(`data-proton-remote="${trackerImage.id}"`) &&
+                blockquote.includes(`data-proton-remote="${trackerImage.id}"`)) ||
+            (!content.includes(`data-proton-embedded="${trackerImage.id}"`) &&
+                blockquote.includes(`data-proton-embedded="${trackerImage.id}"`))
         ) {
             return;
         }
