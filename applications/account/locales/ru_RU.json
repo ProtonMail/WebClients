@@ -259,10 +259,10 @@
       "Details": [
         "Информация"
       ],
-      "Did not receive the code?": [
+      "Didn't receive a code?": [
         "Не получили код?"
       ],
-      "Didn't receive a code?": [
+      "Didn't receive the code?": [
         "Не получили код?"
       ],
       "Disable recovery phrase": [
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Изменить Sieve-фильтр"
+      ],
+      "Edit sign-in details": [
+        "Изменить информацию о входе в систему"
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Курсив"
-      ],
-      "Justify": [
-        "Выровнять по ширине"
       ],
       "Keep": [
         "Оставить"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Подтвердить"
+      ],
+      "Verify account": [
+        "Подтвердить аккаунт"
+      ],
+      "Verify email": [
+        "Подтвердить эл. почту"
       ],
       "View": [
         "Просмотреть"
@@ -1757,12 +1763,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Невозможно создать новые календари для всех импортированных календарей из-за лимита личных календарей."
       ],
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты, повторите попытку позже"
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить телефон, повторите попытку позже"
-      ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
       ],
@@ -1949,9 +1949,6 @@
       "Please generate keys before you try to change your password": [
         "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ],
-      "Please refresh the page.": [
-        "Пожалуйста, обновите страницу."
-      ],
       "Please set a recovery email first": [
         "Пожалуйста, сначала установите резервный адрес электронной почты"
       ],
@@ -1979,8 +1976,8 @@
       "Process aborted": [
         "Процесс прерван"
       ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
+      "Request timed out": [
+        "Время запроса истекло"
       ],
       "Require at least one action": [
         "Требуется как минимум одно действие"
@@ -2014,9 +2011,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Ваш браузер не позволяет завершить платеж. Пожалуйста, используйте другой браузер или войдите с компьютера."
-      ],
-      "The composer failed to load.": [
-        "Не удалось загрузить редактор."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
@@ -3864,8 +3858,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Установите конфигурационный файл сервера для подключения к определенному серверу в выбранной стране."
       ],
-      "Internet connection lost.": [
-        "Соединение с интернетом потеряно."
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Интернет-соединение потеряно. Пожалуйста, проверьте подключение вашего устройства."
@@ -3881,9 +3875,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
-      ],
-      "Justify": [
-        "По ширине"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Сохраняйте эти записи в вашем DNS на все время использования DKIM."
@@ -4254,8 +4245,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
-      "Session timed out.": [
-        "Время сессии истекло."
+      "Session timed out": [
+        "Время сеанса истекло"
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
@@ -4539,6 +4530,9 @@
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Мы отправим новый код подтверждения на ${ strong }"
+      ],
       "Web URL": [
         "Ссылка"
       ],
@@ -4571,6 +4565,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать альтернативный метод проверки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Хотите ли вы получить новый код подтверждения?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo читает ваши персональные данные с целью предоставления доступа рекламодателям, разведывательным агентствам США и другим третьим лицам. Для лучшей конфиденциальности, создайте безопасный адрес электронной почты."
@@ -5169,8 +5166,8 @@
         "${ UsedMembers } из ${ MaxMembers } пользователей",
         "${ UsedMembers } из ${ MaxMembers } пользователя(ей)"
       ],
-      "(Coming soon)": [
-        "(Скоро появится)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Временно недоступно. Пожалуйста, проверьте позже.)"
       ],
       "Account storage": [
         "Хранилище учётной записи"
@@ -5276,6 +5273,9 @@
       ],
       "Code": [
         "Код"
+      ],
+      "Code is 6 digits without spaces": [
+        "Код состоит из 6 цифр без пробелов"
       ],
       "Color": [
         "Цвет"
@@ -5441,9 +5441,6 @@
       ],
       "Enter password": [
         "Введите пароль"
-      ],
-      "Enter the 6-digit code": [
-        "Введите код из 6 цифр"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введите пароль для ключа с отпечатком: ${ fingerprintCode }"
@@ -6785,9 +6782,6 @@
       "Secure Core configs": [
         "Конфигурации Secure Core"
       ],
-      "Select a reason": [
-        "Выберите причину"
-      ],
       "Standard server configs": [
         "Настройки стандартных серверов"
       ],
@@ -8030,6 +8024,9 @@
       "Email": [
         "Эл. почта"
       ],
+      "Email composer": [
+        "Редактор эл. писем"
+      ],
       "Email encryption keys": [
         "Ключи шифрования эл. почты"
       ],
@@ -8047,9 +8044,6 @@
       ],
       "Error": [
         "Ошибка"
-      ],
-      "Expand content": [
-        "Развернуть содержимое"
       ],
       "Export": [
         "Экспорт"

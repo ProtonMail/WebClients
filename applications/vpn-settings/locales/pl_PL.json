@@ -139,6 +139,9 @@
       "Did not receive the code?": [
         "Nie otrzymano kodu?"
       ],
+      "Didn't receive the code?": [
+        "Nie otrzymano kodu?"
+      ],
       "Done": [
         "Gotowe"
       ],
@@ -165,6 +168,9 @@
       ],
       "Edit phone number": [
         "Edytuj numer telefonu"
+      ],
+      "Edit sign-in details": [
+        "Edytuj szczegóły logowania"
       ],
       "Email me my username(s)": [
         "Wyślij mi moją nazwę użytkownika"
@@ -391,11 +397,17 @@
       "Verify": [
         "Zweryfikuj"
       ],
+      "Verify account": [
+        "Zweryfikuj konto"
+      ],
       "Verify code": [
         "Zweryfikuj kod"
       ],
       "Verify code again": [
         "Zweryfikuj kod ponownie"
+      ],
+      "Verify email": [
+        "Zweryfikuj adres e-mail"
       ],
       "View": [
         "Podgląd"
@@ -851,12 +863,6 @@
       "Can't check username, try again later": [
         "Nie można sprawdzić nazwy użytkownika. Spróbuj ponownie później"
       ],
-      "Can't validate email, try again later": [
-        "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
-      ],
-      "Can't validate phone, try again later": [
-        "Nie można zweryfikować numeru telefonu. Spróbuj ponownie później"
-      ],
       "Checkout expired, please try again": [
         "Płatność wygasła. Spróbuj ponownie"
       ],
@@ -953,8 +959,8 @@
       "Process aborted": [
         "Proces został przerwany"
       ],
-      "Request timed out.": [
-        "Upłynął limit czasu żądania."
+      "Request timed out": [
+        "Upłynął limit czasu żądania"
       ],
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"
@@ -1475,8 +1481,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Zainstaluj plik konfiguracyjny serwera, aby połączyć się z określonym serwerem w wybranym przez Ciebie kraju."
       ],
-      "Internet connection lost.": [
-        "Połączenie z Internetem zostało utracone."
+      "Internet connection lost": [
+        "Połączenie z Internetem zostało utracone"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Połączenie z Internetem zostało utracone. Sprawdź połączenie swojego urządzenia."
@@ -1506,7 +1512,7 @@
         "Upewnij się, że pamiętasz hasło, aby zalogować się i odszyfrować wiadomości. ${ boldAlert }. Zalecamy w pierwszej kolejności dodanie adresu pomocniczego."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Wpisz ręcznie tę informację do urządzenia uwierzytelniania dwustopniowego, aby skonfigurować swoje konto. ${ _switchButton }."
+        "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ _switchButton }."
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Funkcja NetShield chroni Twoje urządzenie oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, skryptów śledzących i złośliwego oprogramowania."
@@ -1554,7 +1560,7 @@
         "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Podaj adres e-mail, na wypadek gdybyśmy potrzebowali się z Tobą skontaktować."
+        "Wpisz adres e-mail na wypadek, gdybyśmy potrzebowali się z Tobą skontaktować."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Spróbuj ponownie, użyj innej metody płatności lub skontaktuj się ze swoim bankiem w celu uzyskania pomocy."
@@ -1578,7 +1584,7 @@
         "Podgląd"
       ],
       "Proton can't help you recover any lost passwords": [
-        "Proton nie może Ci pomóc odzyskać utraconych haseł"
+        "Proton nie może odzyskać utraconych haseł"
       ],
       "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "ProtonMail może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
@@ -1620,7 +1626,7 @@
         "Zamiast tego zeskanuj kod QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Zeskanuj kod QR z ekranu za pomocą aplikacji uwierzytelniania dwustopniowego na Twoim urządzeniu. ${ switchButton }."
+        "Zeskanuj kod QR za pomocą aplikacji uwierzytelniania dwustopniowego. ${ switchButton }."
       ],
       "Screenshot(s) attached": [
         "Zrzuty ekranu zostały dołączone"
@@ -1634,8 +1640,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
-      "Session timed out.": [
-        "Upłynął limit czasu sesji."
+      "Session timed out": [
+        "Upłynął limit czasu sesji"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
@@ -1707,7 +1713,7 @@
         "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ProtonVPN i połącz się z serwerem."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden otrzymany kredyt."
+        "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
       ],
       "Tor": [
         "Tor"
@@ -1725,7 +1731,7 @@
         "Tryb podwójnego hasła wymaga podania dwóch haseł: jedno do zalogowania się, drugie do odszyfrowania skrzynki pocztowej. (Opcja zaawansowana)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Tryb podwójnego hasła umożliwia oddzielenie hasła logowania i szyfrowania skrzynki pocztowej. Zwiększa to nieznacznie bezpieczeństwo w określonych sytuacjach. Dla większości użytkowników wystarczający jest tryb pojedynczego hasła. Aby przełączyć się do trybu podwójnego hasła, wpisz hasło logowania, a następnie hasło szyfrowania."
+        "Tryb podwójnego hasła umożliwia oddzielenie haseł logowania i odszyfrowywania skrzynki pocztowej. W określonych sytuacjach zwiększa to nieznacznie bezpieczeństwo. Dla większości użytkowników wystarczający jest tryb pojedynczego hasła. Aby przełączyć się do trybu podwójnego hasła, wpisz hasło logowania, a następnie hasło szyfrowania."
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
@@ -1766,17 +1772,23 @@
       "We will send a reset code to your recovery email to reset your password.": [
         "W celu zresetowania hasła wyślemy kod resetowania na Twój adres pomocniczy."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Wyślemy nowy kod weryfikacyjny do ${ strong }"
+      ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Na Twój adres pomocniczy została wysłana wiadomość z kodem resetującym, ważnym przez godzinę lub do czasu, gdy poprosisz o nowy. Wpisz go do wskazanego pola, aby kontynuować."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Jeśli będziesz miał nowe wiadomości na koncie ProtonMail, to wyślemy powiadomienie na powyższy adres e-mail."
+        "Otrzymasz powiadomienie na powyższy adres e-mail, jeśli będziesz miał nowe wiadomości na koncie ProtonMail."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Podczas odnawiania subskrypcji, dostępne środki na koncie zostaną użyte w pierwszej kolejności."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Czy chcesz otrzymać nowy kod weryfikacyjny?"
       ],
       "You already have a free account": [
         "Posiadasz już darmowe konto"
@@ -1794,7 +1806,7 @@
         "Możesz dostosować i pobrać swoje faktury do celów księgowych."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "W jednej chwili możesz mieć otwartą tylko jedną sesję chatu. Prosimy zamknąć poprzednie konwersacje przed rozpoczęciem nowej."
+        "Możesz otworzyć jeden czat jednocześnie. Najpierw zamknij poprzedni wątek."
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Możesz użyć następujących danych logowania do połączenia się z serwerem ProtonVPN, używając alternatywnych aplikacji VPN, takich jak: Tunnelblick na macOS czy OpenVPN na GNU/Linuksie."
@@ -1887,7 +1899,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcje, jak zapłacić gotówką."
+        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
       ]
     },
     "Info for payment methods": {
@@ -1967,22 +1979,22 @@
         "${ n } dostępnych połączeń VPN"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "Adres e-mail ${ UsedAddresses }/${ MaxAddresses }",
-        "Adresów e-mail ${ UsedAddresses }/${ MaxAddresses }",
-        "Adresów e-mail ${ UsedAddresses }/${ MaxAddresses }",
-        "Adresów e-mail ${ UsedAddresses }/${ MaxAddresses }"
+        "Adres e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
+        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
+        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
+        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "Niestandardowa domena ${ UsedDomains }/${ MaxDomains }",
-        "Niestandardowe domeny ${ UsedDomains }/${ MaxDomains }",
-        "Niestandardowe domeny ${ UsedDomains }/${ MaxDomains }",
-        "Niestandardowe domeny ${ UsedDomains }/${ MaxDomains }"
+        "Niestandardowa domena: ${ UsedDomains } / ${ MaxDomains }",
+        "Niestandardowe domeny: ${ UsedDomains } / ${ MaxDomains }",
+        "Niestandardowe domeny: ${ UsedDomains } / ${ MaxDomains }",
+        "Niestandardowe domeny: ${ UsedDomains } / ${ MaxDomains }"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "Użytkownik ${ UsedMembers }/${ MaxMembers }",
-        "Użytkowników ${ UsedMembers }/${ MaxMembers }",
-        "Użytkowników ${ UsedMembers }/${ MaxMembers }",
-        "Użytkowników ${ UsedMembers }/${ MaxMembers }"
+        "Użytkownik ${ UsedMembers } / ${ MaxMembers }",
+        "Użytkownicy: ${ UsedMembers } / ${ MaxMembers }",
+        "Użytkownicy: ${ UsedMembers } / ${ MaxMembers }",
+        "Użytkownicy: ${ UsedMembers } / ${ MaxMembers }"
       ],
       "1 month": [
         "1 miesiąc"
@@ -2043,6 +2055,9 @@
       ],
       "Category": [
         "Kategoria"
+      ],
+      "Code is 6 digits without spaces": [
+        "Kod to 6 cyfr bez spacji"
       ],
       "Confirm login password": [
         "Potwierdź hasło logowania"
@@ -2112,9 +2127,6 @@
       ],
       "Enter organization name to confirm": [
         "Wpisz nazwę organizacji, aby potwierdzić"
-      ],
-      "Enter the 6-digit code": [
-        "Wpisz 6-cyfrowy kod"
       ],
       "Enter the code displayed on your TV": [
         "Wpisz kod wyświetlony na telewizorze"
@@ -3546,7 +3558,7 @@
         "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia."
       ],
       "Save 20% when billed annually": [
-        "Zaoszczędź 20% korzystając z planu rocznego"
+        "Zaoszczędź 20%, korzystając z planu rocznego"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Wsparcie dla protokołów udostępniania plików, takich jak BitTorrent."

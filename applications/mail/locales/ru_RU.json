@@ -275,8 +275,8 @@
       "Details": [
         "Подробности"
       ],
-      "Did not receive the code?": [
-        "Вы не получили код?"
+      "Didn't receive the code?": [
+        "Не получили код?"
       ],
       "Discard": [
         "Отказаться"
@@ -310,6 +310,9 @@
       ],
       "Edit phone number": [
         "Изменить номер телефона"
+      ],
+      "Edit sign-in details": [
+        "Изменить информацию о входе в систему"
       ],
       "Email settings": [
         "Настройки эл. почты"
@@ -454,9 +457,6 @@
       ],
       "Italic": [
         "Курсив"
-      ],
-      "Justify": [
-        "Выравнивание по ширине"
       ],
       "Keyboard shortcuts": [
         "Сочетания клавиш"
@@ -949,6 +949,12 @@
       ],
       "Verify": [
         "Подтвердить"
+      ],
+      "Verify account": [
+        "Подтвердить аккаунт"
+      ],
+      "Verify email": [
+        "Подтвердить эл. почту"
       ],
       "View": [
         "Посмотреть"
@@ -2153,12 +2159,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Невозможно создать новые календари для всех импортированных календарей из-за персонального лимита календарей."
       ],
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты. Повторите попытку позже."
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить номер телефона. Повторите попытку позже."
-      ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
       ],
@@ -2378,9 +2378,6 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
-      "Please refresh the page.": [
-        "Пожалуйста, обновите страницу."
-      ],
       "Please repeat the password": [
         "Пожалуйста, повторите пароль"
       ],
@@ -2411,8 +2408,8 @@
         "Удалено дубликатов получателей: ${ recipents }",
         "Удалено дубликатов получателей: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
+      "Request timed out": [
+        "Время запроса истекло"
       ],
       "Require at least one action": [
         "Требуется как минимум одно действие"
@@ -2458,9 +2455,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Используемый вами браузер не позволяет полностью авторизовать платеж. Пожалуйста, используйте другой браузер или войдите в через компьютер."
-      ],
-      "The composer failed to load.": [
-        "Не удалось загрузить редактор."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
@@ -3857,8 +3851,8 @@
       "Insert link": [
         "Вставить ссылку"
       ],
-      "Internet connection lost.": [
-        "Потеряно интернет-соединение."
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Интернет-соединение потеряно. Пожалуйста, проверьте возможность подключения устройства."
@@ -3868,9 +3862,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
-      ],
-      "Justify": [
-        "Выровнять по ширине"
       ],
       "Key fingerprint": [
         "Отпечаток ключа"
@@ -4169,11 +4160,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Отправка сообщений с @pm.me является платной функцией. Ваше сообщение будет отправлено с вашего обычного адреса ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Отправлено с помощью <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> защищенной электронной почты."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
-      "Session timed out.": [
-        "Время сессии истекло."
+      "Session timed out": [
+        "Время сеанса истекло"
       ],
       "Set a recovery phrase": [
         "Установите фразу для восстановления"
@@ -4475,6 +4469,9 @@
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Мы отправим новый код подтверждения на ${ strong }"
+      ],
       "Web URL": [
         "Ссылка"
       ],
@@ -4492,6 +4489,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Хотите ли вы получить новый код подтверждения?"
       ],
       "Yearly": [
         "Ежегодно"
@@ -4929,8 +4929,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } и ${ count } другие"
       ],
-      "(Coming soon)": [
-        "(Скоро появится)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Временно недоступно. Пожалуйста, проверьте позже.)"
       ],
       "Actions": [
         "Действия"
@@ -5019,6 +5019,9 @@
       "City": [
         "Город"
       ],
+      "Code is 6 digits without spaces": [
+        "Код состоит из 6 цифр без пробелов"
+      ],
       "Conditions": [
         "Условия"
       ],
@@ -5069,9 +5072,6 @@
       ],
       "Enter organization name to confirm": [
         "Введите название организации для подтверждения"
-      ],
-      "Enter the 6-digit code": [
-        "Введите код из шести цифр"
       ],
       "Expires": [
         "Срок действия"
@@ -5600,6 +5600,12 @@
         "${ createdCalendars } из ${ calendarsToBeCreated } создано",
         "${ createdCalendars } из ${ calendarsToBeCreated } создано",
         "${ createdCalendars } из ${ calendarsToBeCreated } создан(о)"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Почти там"
@@ -6433,12 +6439,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Не удается отправить на адрес организатора: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Не удалось создать событие календаря"
-      ],
-      "Updating calendar event failed": [
-        "Не удалось обновить событие календаря"
       ]
     },
     "Search - no results": {
@@ -6584,8 +6584,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Откройте для себя все службы Proton"
+      ],
       "Message Content Search": [
         "Поиск содержимого сообщения"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Защищенно управляйте своим расписанием, файлами и жизнью в Интернете! Откройте для себя все услуги Proton."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Чтобы защитить вашу конфиденциальность, Proton заблокировал почтовые трекеры в этом сообщении"
@@ -7244,6 +7250,9 @@
       "Email addresses": [
         "Адреса электронной почты"
       ],
+      "Email composer": [
+        "Редактор эл. писем"
+      ],
       "Email content": [
         "Содержимое письма"
       ],
@@ -7267,9 +7276,6 @@
       ],
       "Error": [
         "Ошибка"
-      ],
-      "Expand content": [
-        "Развернуть содержимое"
       ],
       "Exporting contacts": [
         "Экспортирование контактов"

@@ -14,14 +14,17 @@
       "Close modal": [
         "بستن پنجره"
       ],
-      "Did not receive the code?": [
-        "کد را دریافت نکردید؟"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "ویرایش رایانشانی"
       ],
       "Edit phone number": [
         "ویرایش شماره تلفن"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "دریافت کد تایید"
@@ -41,6 +44,12 @@
       "Verify": [
         "تایید"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "مشاهده صورت‌حساب"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "نمی‌توان رایانامه را تایید کرد، بعدا دوباره امتحان کنید"
-      ],
-      "Can't validate phone, try again later": [
-        "نمی‌توان تلفن را تایید کرد، بعدا دوباره امتحان کنید"
-      ],
       "Email is not valid": [
         "رایانامه معتبر نیست"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "گذرواژه‌ها یکسان نیستند"
       ],
-      "Request timed out.": [
-        "مهلت درخواست تمام شد."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "این بخش الزامی است"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "اگر ایمیلی در صندوق دریافت نمی بینید، لطفا پوشه اسپم را بررسی کنید."
       ],
-      "Internet connection lost.": [
-        "اتصال اینترنت قطع شد."
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "در حال بارگذاری"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "مهلت نشست پایان یافت."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "برای نبرد با هرزنامه و سؤاستفاده، لطفاً تایید کنید که شما انسانید."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "از رایانامه شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
@@ -173,11 +182,11 @@
       "Cancel": [
         "لغو"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "رایانشانی"
-      ],
-      "Enter the 6-digit code": [
-        "کد 6 رقمی را وارد نمایید"
       ],
       "Hide password": [
         "پنهان‌سازی گذرواژه"

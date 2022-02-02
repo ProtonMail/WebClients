@@ -122,9 +122,6 @@
       "Compose": [
         "Написать"
       ],
-      "Composer size": [
-        "Размер редактора"
-      ],
       "Confirm": [
         "Подтвердить"
       ],
@@ -191,8 +188,8 @@
       "Details": [
         "Подробности"
       ],
-      "Did not receive the code?": [
-        "Вы не получили код?"
+      "Didn't receive the code?": [
+        "Не получили код?"
       ],
       "Done": [
         "Готово"
@@ -214,6 +211,9 @@
       ],
       "Edit phone number": [
         "Изменить номер телефона"
+      ],
+      "Edit sign-in details": [
+        "Изменить информацию о входе в систему"
       ],
       "Email settings": [
         "Настройки эл. почты"
@@ -281,9 +281,6 @@
       "Increase": [
         "Увеличить"
       ],
-      "Keyboard shortcuts": [
-        "Сочетания клавиш"
-      ],
       "Load image": [
         "Загрузить изображение"
       ],
@@ -292,12 +289,6 @@
       ],
       "Log in": [
         "Войти"
-      ],
-      "Mailbox density": [
-        "Плотность отображения элементов для почты"
-      ],
-      "Mailbox layout": [
-        "Схема отображения для почты"
       ],
       "Manage link": [
         "Управлять ссылкой"
@@ -563,11 +554,14 @@
       "Use for sending": [
         "Использовать для отправки"
       ],
-      "Use “${ label }” setting": [
-        "Использовать настройку «${ label }»"
-      ],
       "Verify": [
         "Проверить"
+      ],
+      "Verify account": [
+        "Подтвердить аккаунт"
+      ],
+      "Verify email": [
+        "Подтвердить эл. почту"
       ],
       "View": [
         "Посмотреть"
@@ -903,14 +897,6 @@
         "Неподдерживаемый формат календаря"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Максимальный"
-      ],
-      "Normal": [
-        "Обычный"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Прекратить настройку импорта?"
@@ -1027,14 +1013,6 @@
         "Просроченный счёт"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Идет расшифровка контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете скачать файл со всеми своими контактами."
@@ -1119,12 +1097,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Невозможно создать новые календари для всех импортированных календарей из-за персонального лимита календарей."
-      ],
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты. Повторите попытку позже."
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить номер телефона. Повторите попытку позже."
       ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
@@ -1303,8 +1275,8 @@
       "Process aborted": [
         "Процесс прерван"
       ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
+      "Request timed out": [
+        "Время запроса истекло"
       ],
       "Signature not verified": [
         "Подпись не проверена"
@@ -1918,9 +1890,6 @@
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?",
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Поскольку ${ appName } зашифрован из конца в конец, мы не можем получить доступ\nили расшифровать ваши файлы. Чтобы разблокировать диск после сброса пароля,\nвы должны иметь одно из следующих устройств:"
       ],
@@ -2146,8 +2115,8 @@
       "Initializing": [
         "Инициализация"
       ],
-      "Internet connection lost.": [
-        "Потеряно интернет-соединение."
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Интернет-соединение потеряно. Пожалуйста, проверьте возможность подключения устройства."
@@ -2365,8 +2334,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
-      "Session timed out.": [
-        "Время сессии истекло."
+      "Session timed out": [
+        "Время сеанса истекло"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Настройка PGP позволяет вам отправлять зашифрованные письма пользователям вне ProtonMail, которые пользуются совместимыми с PGP сервисами."
@@ -2512,6 +2481,9 @@
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Мы отправим новый код подтверждения на ${ strong }"
+      ],
       "Week": [
         "Неделя"
       ],
@@ -2526,6 +2498,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Хотите ли вы получить новый код подтверждения?"
       ],
       "Would you like to restore your files?": [
         "Хотите восстановить свои файлы?"
@@ -2692,197 +2667,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Добавить шифрование"
-      ],
-      "Add expiration time": [
-        "Добавить срок действия"
-      ],
-      "Apply / open": [
-        "Применить / открыть"
-      ],
-      "Attach file": [
-        "Прикрепить файл"
-      ],
-      "Cancel / close": [
-        "Отменить / закрыть"
-      ],
-      "Close draft": [
-        "Закрыть черновик"
-      ],
-      "Create filter with...": [
-        "Создать фильтр с помощью..."
-      ],
-      "Delete permanently": [
-        "Удалить безвозвратно"
-      ],
-      "Discard draft": [
-        "Удалить черновик"
-      ],
-      "Expand / contract composer": [
-        "Расширить / сжать окно редактора"
-      ],
-      "Forward": [
-        "Переслать"
-      ],
-      "Go to All Mail": [
-        "Перейти во Все письма"
-      ],
-      "Go to Archive": [
-        "Перейти в Архив"
-      ],
-      "Go to Drafts": [
-        "Перейти в Черновики"
-      ],
-      "Go to Inbox": [
-        "Перейти во Входящие"
-      ],
-      "Go to Sent": [
-        "Перейти в Отправленные"
-      ],
-      "Go to Spam": [
-        "Перейти в Спам"
-      ],
-      "Go to Starred": [
-        "Перейти в Избранное"
-      ],
-      "Go to Trash": [
-        "Перейти в Корзину"
-      ],
-      "Jump to first": [
-        "Перейти к первому"
-      ],
-      "Jump to last": [
-        "Перейти к последнему"
-      ],
-      "Label as...": [
-        "Отметить как..."
-      ],
-      "Load embedded images": [
-        "Загрузить встроенные изображения"
-      ],
-      "Load remote content": [
-        "Загрузить внешнее содержимое"
-      ],
-      "Mark as unread": [
-        "Отметить как непрочитанное"
-      ],
-      "Minimize / maximize composer": [
-        "Свернуть / развернуть окно редактора"
-      ],
-      "Move down": [
-        "Переместить ниже"
-      ],
-      "Move left / collapse": [
-        "Переместить влево / свернуть"
-      ],
-      "Move right / expand": [
-        "Переместить вправо / развернуть"
-      ],
-      "Move to Archive": [
-        "Переместить в Архив"
-      ],
-      "Move to Inbox": [
-        "Переместить во Входящие"
-      ],
-      "Move to Spam": [
-        "Переместить в Спам"
-      ],
-      "Move to Trash": [
-        "Переместить в Корзину"
-      ],
-      "Move to...": [
-        "Переместить в..."
-      ],
-      "Move up": [
-        "Переместить выше"
-      ],
-      "New message": [
-        "Новое сообщение"
-      ],
-      "Open next message": [
-        "Открыть следующее сообщение"
-      ],
-      "Open previous message": [
-        "Открыть предыдущее сообщение"
-      ],
-      "Open this modal": [
-        "Открыть это окно"
-      ],
-      "Reply": [
-        "Ответить"
-      ],
-      "Reply all": [
-        "Ответить всем"
-      ],
-      "Save draft": [
-        "Сохранить черновик"
-      ],
-      "Search": [
-        "Поиск"
-      ],
-      "Select / unselect": [
-        "Выбрать / снять выделение"
-      ],
-      "Select / unselect all": [
-        "Выбрать всё / снять выделение"
-      ],
-      "Send email": [
-        "Отправить письмо"
-      ],
-      "Show all emails": [
-        "Показать все письма"
-      ],
-      "Show original message": [
-        "Показать исходное сообщение"
-      ],
-      "Show unread emails": [
-        "Показать непрочитанные письма"
-      ],
-      "Star": [
-        "Добавить в Избранное"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Сочетания клавиш для действий"
-      ],
-      "Basic actions": [
-        "Основные действия"
-      ],
-      "Basic navigation": [
-        "Основная навигация"
-      ],
-      "Composer shortcuts": [
-        "Сочетания клавиш редактора"
-      ],
-      "Folder shortcuts": [
-        "Сочетания клавиш для папок"
-      ],
-      "List shortcuts": [
-        "Сочетания клавиш для списка писем"
-      ],
-      "Message shortcuts": [
-        "Сочетания клавиш для сообщений"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Выкл"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Вкл"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Скоро появится)"
-      ],
       "(Expired)": [
         "(Истек)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Временно недоступно. Пожалуйста, проверьте позже.)"
       ],
       "Active": [
         "Активный"
@@ -2947,6 +2737,9 @@
       "City": [
         "Город"
       ],
+      "Code is 6 digits without spaces": [
+        "Код состоит из 6 цифр без пробелов"
+      ],
       "Completed": [
         "Завершено"
       ],
@@ -2994,9 +2787,6 @@
       ],
       "Enter organization name to confirm": [
         "Введите название организации для подтверждения"
-      ],
-      "Enter the 6-digit code": [
-        "Введите код из шести цифр"
       ],
       "Expired": [
         "Истёк"
@@ -3054,9 +2844,6 @@
       ],
       "Import to email address": [
         "Импортировать в адреса электронной почты"
-      ],
-      "Keyboard shortcuts": [
-        "Сочетания клавиш"
       ],
       "Label messages as": [
         "Отметить сообщения как"
@@ -3147,15 +2934,6 @@
       ],
       "Select a method": [
         "Выберите способ"
-      ],
-      "Select how your composer opens by default.": [
-        "Выберите вид по умолчанию для окна редактора."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Выберите, как выглядит список сообщений по умолчанию."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Выберите, как выглядит почтовый ящик по умолчанию."
       ],
       "Select your country": [
         "Выберите свою страну"
@@ -3255,30 +3033,6 @@
         "Имя"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "На весь экран"
-      ],
-      "Normal": [
-        "Обычный"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Строка"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
@@ -3301,14 +3055,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } создан"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Строка"
       ]
     },
     "Link": {
@@ -3352,6 +3098,12 @@
         "${ createdCalendars } из ${ calendarsToBeCreated } создано",
         "${ createdCalendars } из ${ calendarsToBeCreated } создано",
         "${ createdCalendars } из ${ calendarsToBeCreated } создан(о)"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Почти там"
@@ -4106,9 +3858,6 @@
       "Fingerprint copied to clipboard": [
         "Отпечаток скопирован в буфер обмена"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Настройки сочетаний клавиш обновлены"
-      ],
       "Phone number copied to clipboard": [
         "Номер телефона скопирован в буфер обмена"
       ],
@@ -4255,9 +4004,6 @@
       "${ appName } customization": [
         "${ appName } настройка"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "Сочетания клавиш ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } участник",
         "${ emailsCount } участника",
@@ -4320,9 +4066,6 @@
       ],
       "Clearing data": [
         "Очистка данных"
-      ],
-      "Composer mode": [
-        "Режим редактора"
       ],
       "Confirm loss of Proton bonuses": [
         "Подтвердите потерю бонусов Proton"
@@ -4498,20 +4241,11 @@
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
-      "Keyboard Shortcuts": [
-        "Сочетания клавиш"
-      ],
       "Link confirmation": [
         "Подтверждение ссылки"
       ],
       "Location": [
         "Местоположение"
-      ],
-      "Mailbox density": [
-        "Плотность отображения элементов для почты"
-      ],
-      "Mailbox layout": [
-        "Схема отображения для почты"
       ],
       "Manage secure link": [
         "Управление безопасной ссылкой"

@@ -259,11 +259,11 @@
       "Details": [
         "Detalls"
       ],
-      "Did not receive the code?": [
-        "No has regut el codi?"
-      ],
       "Didn't receive a code?": [
         "No heu rebut un codi?"
+      ],
+      "Didn't receive the code?": [
+        ""
       ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperació"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Editar sieve"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "enable desktop notifications": [
         "activar les notificacions d'escriptori"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Cursiva"
-      ],
-      "Justify": [
-        "Justificat"
       ],
       "Keep": [
         "Mantenir"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Veure"
@@ -1723,12 +1729,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
-      ],
-      "Can't validate phone, try again later": [
-        "No es pot validar el telèfon, torneu-ho a provar més tard"
-      ],
       "Checkout expired, please try again": [
         ""
       ],
@@ -1907,9 +1907,6 @@
       "Please generate keys before you try to change your password": [
         ""
       ],
-      "Please refresh the page.": [
-        "Si us plau, refresqueu la pàgina."
-      ],
       "Please set a recovery email first": [
         ""
       ],
@@ -1937,8 +1934,8 @@
       "Process aborted": [
         "Procés anul·lat"
       ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Requereix al menys una acció"
@@ -1972,9 +1969,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que utilitzeu no permet l'autorització total del pagament. Si us plau, utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
-      ],
-      "The composer failed to load.": [
-        "El compositor no s'ha pogut carregar."
       ],
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Trieu un nom diferent."
@@ -3271,7 +3265,7 @@
         "Import inferior al mínim (${ amount })."
       ],
       "and": [
-        ""
+        "i"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Qualsevol amb aquest enllaç pot veure tots els detalls dels esdeveniments d'aquest calendari com ara títol, localització o participants."
@@ -3750,8 +3744,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instal·leu un arxiu de configuració de servidor per connectar a un servidor a específic al país que trieu."
       ],
-      "Internet connection lost.": [
-        "S'ha perdut la connexió a Internet."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
@@ -3767,9 +3761,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
-      ],
-      "Justify": [
-        "Justificat"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantingueu aquest registre al DNS durant el temps que vulgueu fer servir el DKIM."
@@ -4138,8 +4129,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Temps de sessió esgotat."
+      "Session timed out": [
+        ""
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
@@ -4423,6 +4414,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "URL del web"
       ],
@@ -4455,6 +4449,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo llegeix les teves dades personals per donar-les a publicitants, agències d’intel·ligència de EEUU i altres terceres parts. Per una millor privadesa crea un compte de correu segur."
@@ -5045,7 +5042,7 @@
         "${ UsedMembers } de ${ MaxMembers } usuari",
         "${ UsedMembers } de ${ MaxMembers } usuaris"
       ],
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "Account storage": [
@@ -5152,6 +5149,9 @@
       ],
       "Code": [
         "Codi"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         ""
@@ -5317,9 +5317,6 @@
       ],
       "Enter password": [
         "Introdueix la contrasenya"
-      ],
-      "Enter the 6-digit code": [
-        "Introduïu el codi de 6 dígits"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduïu la contrasenya per la clau amb l'empremta digital ${ fingerprintCode }"
@@ -6639,9 +6636,6 @@
       "Secure Core configs": [
         "Configuracions Secure Core"
       ],
-      "Select a reason": [
-        "Selecciona un motiu"
-      ],
       "Standard server configs": [
         "Configuracions estàndard de servidor"
       ],
@@ -7878,6 +7872,9 @@
       "Email": [
         "Correu electrònic"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email encryption keys": [
         "Claus de xifratge de correu electrònic"
       ],
@@ -7895,9 +7892,6 @@
       ],
       "Error": [
         "Error"
-      ],
-      "Expand content": [
-        "Amplia el contingut"
       ],
       "Export": [
         "Exportació"

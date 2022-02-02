@@ -96,7 +96,7 @@
         "Εφαρμογή"
       ],
       "Attachment": [
-        "Συνημμένη"
+        "Συνημμένο"
       ],
       "Back": [
         "Πίσω"
@@ -174,7 +174,7 @@
         "Σύγκριση πακέτων"
       ],
       "Compose": [
-        "Σύνθεση"
+        "Σύνταξη"
       ],
       "Composer size": [
         "Μέγεθος συντάκτη"
@@ -271,7 +271,7 @@
       "Details": [
         "Λεπτομέρειες"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Δεν λάβατε τον κωδικό;"
       ],
       "Discard": [
@@ -307,6 +307,9 @@
       "Edit phone number": [
         "Επεξεργασία αριθμού τηλεφώνου"
       ],
+      "Edit sign-in details": [
+        "Επεξεργασία στοιχείων εισόδου"
+      ],
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
@@ -332,7 +335,7 @@
         "Εξαγωγή"
       ],
       "Export contact group": [
-        ""
+        "Εξαγωγή ομάδας επαφών"
       ],
       "Export contacts": [
         "Εξαγωγή Επαφών"
@@ -449,9 +452,6 @@
       "Italic": [
         "Πλάγια γραφή"
       ],
-      "Justify": [
-        "Στοίχιση"
-      ],
       "Keyboard shortcuts": [
         "Συντομεύσεις πληκτρολογίου"
       ],
@@ -501,7 +501,7 @@
         "Σήμανση ως μη διαβασμένο"
       ],
       "mark emails as": [
-        "επισημάνετε τα email ως"
+        "σήμανση μηνυμάτων ως"
       ],
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
@@ -941,6 +941,12 @@
       ],
       "Verify": [
         "Επαλήθευση"
+      ],
+      "Verify account": [
+        "Επαλήθευση λογαριασμού"
+      ],
+      "Verify email": [
+        "Επαλήθευση ηλ. διεύθυνσης"
       ],
       "View": [
         "Προβολή"
@@ -1823,7 +1829,7 @@
     },
     "CustomFilter": {
       "Attachment": [
-        ""
+        "Συνημμένο"
       ],
       "Filter on": [
         "Φίλτρο σε"
@@ -1985,7 +1991,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        "${ eventTitle } έχει ακυρωθεί."
+        "Το ${ eventTitle } έχει ακυρωθεί."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
@@ -2118,12 +2124,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
-      ],
-      "Can't validate email, try again later": [
-        "Δεν είναι δυνατή η επικύρωση ηλεκτρονικού ταχυδρομείου, προσπαθήστε ξανά αργότερα"
-      ],
-      "Can't validate phone, try again later": [
-        "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
       ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
@@ -2309,7 +2309,7 @@
         "Ο οργανισμός δεν αναγνωρίστηκε. Δοκιμάστε ξανά."
       ],
       "Passwords do not match": [
-        "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
+        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
       "Payment process cancelled": [
         "Η διαδικασία πληρωμής ακυρώθηκε"
@@ -2329,9 +2329,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
-      ],
-      "Please refresh the page.": [
-        "Παρακαλούμε ανανεώστε τη σελίδα."
       ],
       "Please repeat the password": [
         "Παρακαλούμε επαναλάβετε τον κωδικό πρόσβασης"
@@ -2361,8 +2358,8 @@
         "Αφαιρέθηκε ομώνυμος παραλήπτης: ${ recipents }",
         "Αφαιρέθηκαν ομώνυμοι παραλήπτες: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
+      "Request timed out": [
+        "Λήξη χρονικού ορίου αιτήματος"
       ],
       "Require at least one action": [
         "Απαίτηση τουλάχιστον μίας ενέργειας"
@@ -2406,9 +2403,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
-      ],
-      "The composer failed to load.": [
-        "Ο συνθέτης απέτυχε να φορτώσει."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος φακέλου. Παρακαλούμε δοκιμάστε ένα συντομότερο."
@@ -2713,7 +2707,7 @@
         ""
       ],
       "Unexpected error": [
-        ""
+        "Απροσδόκητο σφάλμα"
       ],
       "Unsupported invitation": [
         "Μη υποστηριζόμενη πρόσκληση"
@@ -3701,20 +3695,17 @@
       "Insert link": [
         "Εισαγωγή συνδέσμου"
       ],
-      "Internet connection lost.": [
-        "Απώλεια σύνδεσης στο διαδίκτυο."
+      "Internet connection lost": [
+        "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Η σύνδεση στο διαδίκτυο χάθηκε. Ελέγξτε τη συνδεσιμότητα της συσκευής σας."
+        "Απώλεια σύνδεσης στο διαδίκτυο. Παρακαλούμε ελέγξτε τη συνδεσιμότητα της συσκευής σας."
       ],
       "Internet connection restored.": [
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
-      ],
-      "Justify": [
-        "Στοίχιση"
       ],
       "Key fingerprint": [
         "Κλειδί δακτυλικού αποτυπώματος"
@@ -4011,11 +4002,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Η αποστολή μηνυμάτων από τη διεύθυνση @ pm.me είναι μια λειτουργία για λογαριασμούς επι πληρωμή. Το μήνυμά σας θα σταλεί από την προεπιλεγμένη διεύθυνση ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
-      "Session timed out.": [
-        "Η χρονική περίοδος σύνδεσης έληξε."
+      "Session timed out": [
+        "Λήξη χρόνου συνεδρίας"
       ],
       "Set a recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
@@ -4027,7 +4021,7 @@
         "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
       ],
       "Show original message": [
-        "Προβολή αρχικού μηνύματος"
+        "Εμφάνιση αρχικού μηνύματος"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Καθώς είστε αφοσιωμένος χρήστης, ο λογαριασμός σας έχει ενεργοποιημένα πρόσθετα χαρακτηριστικά."
@@ -4315,6 +4309,9 @@
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
       "Web URL": [
         "Web URL"
       ],
@@ -4332,6 +4329,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
       ],
       "Yearly": [
         "Ετήσια"
@@ -4628,10 +4628,10 @@
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
       "Mark as unread": [
-        "Επισήμανση ως μη αναγνωσμένου"
+        "Σήμανση ως μη διαβασμένο"
       ],
       "Minimize / maximize composer": [
-        "Ελαχιστοποίηση / μεγιστοποίηση συνθέτη"
+        "Ελαχιστοποίηση / μεγιστοποίηση συντάκτη"
       ],
       "Move down": [
         "Μετακίνηση προς τα κάτω"
@@ -4717,7 +4717,7 @@
         "Βασική πλοήγηση"
       ],
       "Composer shortcuts": [
-        "Συντομεύσεις συνθέτη"
+        "Συντομεύσεις συντάκτη"
       ],
       "Folder shortcuts": [
         "Συντομεύσεις φακέλων"
@@ -4749,8 +4749,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } και ${ count } άλλα"
       ],
-      "(Coming soon)": [
-        "(Ερχεται σύντομα)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
       "Actions": [
         "Ενέργειες"
@@ -4839,6 +4839,9 @@
       "City": [
         "Πόλη"
       ],
+      "Code is 6 digits without spaces": [
+        "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
+      ],
       "Conditions": [
         "Προϋποθέσεις"
       ],
@@ -4889,9 +4892,6 @@
       ],
       "Enter organization name to confirm": [
         "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
-      ],
-      "Enter the 6-digit code": [
-        "Εισάγετε τον 6-ψήφιο κωδικό"
       ],
       "Expires": [
         "Λήγει"
@@ -5056,7 +5056,7 @@
         "Δημόσια κλειδιά"
       ],
       "Read": [
-        "Διαβάστηκε"
+        "Διαβασμένα"
       ],
       "Recipient": [
         "Παραλήπτης"
@@ -5077,7 +5077,7 @@
         "Επιλέξτε μέθοδο"
       ],
       "Select how your composer opens by default.": [
-        "Επιλέξτε τον τρόπο με τον οποίο ανοίγει ο συνθέτης σας από προεπιλογή."
+        "Επιλέξτε πώς να ανοίγει ο συντάκτης σας από προεπιλογή."
       ],
       "Select how your list of messages looks like by default.": [
         "Επιλέξτε πώς μοιάζει η λίστα μηνυμάτων σας από προεπιλογή."
@@ -5418,6 +5418,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "Δημιουργήθηκε ${ createdCalendars } από ${ calendarsToBeCreated }",
         "Δημιουργήθηκαν ${ createdCalendars } από ${ calendarsToBeCreated }"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        ""
       ],
       "Almost there": [
         "Σχεδόν εκεί"
@@ -6237,12 +6241,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Αδυναμία αποστολής στη διεύθυνση του διοργανωτή: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Αποτυχία δημιουργίας εκδήλωσης ημερολογίου"
-      ],
-      "Updating calendar event failed": [
-        "Αποτυχία ενημέρωσης εκδήλωσης ημερολογίου"
       ]
     },
     "Search - no results": {
@@ -6376,8 +6374,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Ανακαλύψτε όλες τις υπηρεσίες Proton"
+      ],
       "Message Content Search": [
         "Αναζήτηση εντός Περιεχομένου Μηνυμάτων"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Για την προστασία του απορρήτου σας, το Proton απέκλεισε τους ιχνηλάτες εντός αυτού του μηνύματος"
@@ -6447,8 +6451,8 @@
         "${ elementsCount } συνομιλίες σημάνθηκαν ως διαβασμένες."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } συνομιλία επισημάνθηκε ως Αγαπημένη.",
-        "${ elementsCount } συνομιλίες επισημάνθηκαν ως Αγαπημένες."
+        "${ elementsCount } συνομιλία σημάνθηκε με Αστέρι.",
+        "${ elementsCount } συνομιλίες σημάνθηκαν με Αστέρι."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } συνομιλία σημάνθηκε ως μη διαβασμένη.",
@@ -6479,8 +6483,8 @@
         "${ elementsCount } μηνύματα σημάνθηκαν ως διαβασμένα."
       ],
       "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } μήνυμα επισημάνθηκε ως Αγαπημένο.",
-        "${ elementsCount } μηνύματα επισημάνθηκαν ως Αγαπημένα."
+        "${ elementsCount } μήνυμα σημάνθηκε με Αστέρι.",
+        "${ elementsCount } μηνύματα σημάνθηκαν με Αστέρι."
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } μήνυμα σημάνθηκε ως μη διαβασμένο.",
@@ -6964,8 +6968,11 @@
       "Email addresses": [
         "Διευθύνσεις Email"
       ],
+      "Email composer": [
+        "Συντάκτης μηνύματος"
+      ],
       "Email content": [
-        ""
+        "Περιεχόμενο μηνύματος"
       ],
       "Email settings": [
         "Ρυθμίσεις Email"
@@ -6987,9 +6994,6 @@
       ],
       "Error": [
         "Σφάλμα"
-      ],
-      "Expand content": [
-        "Ανάπτυξη περιεχομένου"
       ],
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"

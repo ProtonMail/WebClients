@@ -164,8 +164,8 @@
       "Deselect all": [
         "Batalkan semua pilihan"
       ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Buang"
@@ -190,6 +190,9 @@
       ],
       "Edit phone number": [
         "Edit nomor telepon"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Pengaturan surel"
@@ -254,9 +257,6 @@
       "Increase": [
         "Tingkatkan"
       ],
-      "Keyboard shortcuts": [
-        "Pintasan papan ketik"
-      ],
       "Load image": [
         "Muat gambar"
       ],
@@ -265,12 +265,6 @@
       ],
       "Log in": [
         "Masuk"
-      ],
-      "Mailbox density": [
-        "Kepadatan kotak surat"
-      ],
-      "Mailbox layout": [
-        "Tata letak kotak surat"
       ],
       "Make this participant optional": [
         "Jadikan peserta ini opsional"
@@ -512,11 +506,14 @@
       "Use for sending": [
         "Gunakan untuk pengiriman"
       ],
-      "Use “${ label }” setting": [
-        "Gunakan pengaturan \"${ label }\""
-      ],
       "Verify": [
         "Verifikasi"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Lihat"
@@ -598,38 +595,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } dimulai besok pada pukul ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        ""
+      ],
       "${ title } starts now": [
         "${ title } mulai sekarang"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        ""
       ],
       "${ title } starts today": [
         "${ title } mulai hari ini"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } akan mulai pada pukul ${ formattedHour }"
+      "${ title } starts tomorrow": [
+        ""
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } akan mulai pada ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } akan mulai pada ${ _formattedDate2 } pukul ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } akan mulai pada ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } akan mulai pada ${ _formattedDate3 } pukul ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } akan mulai pada ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } akan mulai pada ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } akan mulai besok"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } akan mulai besok pada ${ formattedHour }"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        ""
       ]
     },
     "Alert": {
@@ -996,14 +993,6 @@
         ""
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Dimaksimalkan"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1152,14 +1141,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tagihan jatuh tempo"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
       ]
     },
     "Description": {
@@ -1368,12 +1349,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi surel, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
       "Cancellation failed to be sent": [
         "Pembatalan gagal dikirim"
       ],
@@ -1566,8 +1541,8 @@
       "Process aborted": [
         "Proses dibatalkan"
       ],
-      "Request timed out.": [
-        "Waktu permintaan habis."
+      "Request timed out": [
+        ""
       ],
       "Self invitation not allowed": [
         "Dilarang mengundang diri sendiri"
@@ -2315,9 +2290,6 @@
       "At most 100 participants are allowed per invitation": [
         "Maksimal 100 peserta per undangan"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "Ditagih ${ billedPrice } setiap 2 tahun"
       ],
@@ -2495,8 +2467,8 @@
       "Inherited from parent folder": [
         ""
       ],
-      "Internet connection lost.": [
-        "Koneksi internet terputus."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
@@ -2666,8 +2638,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Sesi habis."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Menyetel PGP memungkinkan Anda mengirim surel terenkripsi end-to-end dengan bukan pengguna ProtonMail yang menggunakan layanan yang mendukung PGP."
@@ -2792,6 +2764,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Pekan"
       ],
@@ -2821,6 +2796,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to update all events in this series?": [
         "Anda ingin memperbarui semua acara dalam rangkaian ini?"
@@ -2990,193 +2968,8 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Tambah enkripsi"
-      ],
-      "Add expiration time": [
-        "Tambah waktu kedaluwarsa"
-      ],
-      "Apply / open": [
-        "Terapkan / buka"
-      ],
-      "Attach file": [
-        "Lampirkan berkas"
-      ],
-      "Cancel / close": [
-        "Batal / tutup"
-      ],
-      "Close draft": [
-        "Tutup draf"
-      ],
-      "Create filter with...": [
-        "Buat filter dengan..."
-      ],
-      "Delete permanently": [
-        "Hapus permanen"
-      ],
-      "Discard draft": [
-        "Buang draf"
-      ],
-      "Expand / contract composer": [
-        "Lebarkan / kerutkan komposer"
-      ],
-      "Forward": [
-        "Teruskan"
-      ],
-      "Go to All Mail": [
-        "Ke Semua Surat"
-      ],
-      "Go to Archive": [
-        "Ke Arsip"
-      ],
-      "Go to Drafts": [
-        "Ke Draf"
-      ],
-      "Go to Inbox": [
-        "Ke Kotak masuk"
-      ],
-      "Go to Sent": [
-        "Ke Terkirim"
-      ],
-      "Go to Spam": [
-        "Ke Spam"
-      ],
-      "Go to Starred": [
-        "Ke Bintang"
-      ],
-      "Go to Trash": [
-        "Ke Tempat Sampah"
-      ],
-      "Jump to first": [
-        "Lompat ke pertama"
-      ],
-      "Jump to last": [
-        "Lompat ke terakhir"
-      ],
-      "Label as...": [
-        "Labeli sebagai..."
-      ],
-      "Load embedded images": [
-        "Muat gambar tertanam"
-      ],
-      "Load remote content": [
-        "Muat konten jarak jauh"
-      ],
-      "Mark as unread": [
-        "Tandai belum dibaca"
-      ],
-      "Minimize / maximize composer": [
-        "Minimalkan / maksimalkan komposer"
-      ],
-      "Move down": [
-        "Turunkan"
-      ],
-      "Move left / collapse": [
-        "Geser kiri / tutup"
-      ],
-      "Move right / expand": [
-        "Geser kanan / buka"
-      ],
-      "Move to Archive": [
-        "Pindahkan ke Arsip"
-      ],
-      "Move to Inbox": [
-        "Pindahkan ke Kotak masuk"
-      ],
-      "Move to Spam": [
-        "Pindahkan ke Spam"
-      ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
-      "Move to...": [
-        "Pindah ke..."
-      ],
-      "Move up": [
-        "Naikkan"
-      ],
-      "New message": [
-        "Pesan baru"
-      ],
-      "Open next message": [
-        "Buka pesan selanjutnya"
-      ],
-      "Open previous message": [
-        "Buka pesan sebelumnya"
-      ],
-      "Open this modal": [
-        "Buka jendela ini"
-      ],
-      "Reply": [
-        "Balas"
-      ],
-      "Reply all": [
-        "Balas semua"
-      ],
-      "Save draft": [
-        "Simpan draf"
-      ],
-      "Search": [
-        "Pencarian"
-      ],
-      "Select / unselect": [
-        "Pilih / batal pilih"
-      ],
-      "Select / unselect all": [
-        "Pilih / batal pilih semua"
-      ],
-      "Send email": [
-        "Kirim surel"
-      ],
-      "Show all emails": [
-        "Tampilkan semua surel"
-      ],
-      "Show original message": [
-        "Tampilkan pesan orisinal"
-      ],
-      "Show unread emails": [
-        "Tampilkan surel belum dibaca"
-      ],
-      "Star": [
-        "Bintang"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Pintasan tindakan"
-      ],
-      "Basic actions": [
-        "Tindakan dasar"
-      ],
-      "Basic navigation": [
-        "Navigasi dasar"
-      ],
-      "Composer shortcuts": [
-        "Pintasan komposer"
-      ],
-      "Folder shortcuts": [
-        "Pintasan folder"
-      ],
-      "List shortcuts": [
-        "Buat daftar pintasan"
-      ],
-      "Message shortcuts": [
-        "Pintasan pesan"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        ""
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "0 - Not likely": [
@@ -3235,6 +3028,9 @@
       ],
       "City": [
         "Kota"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         ""
@@ -3299,9 +3095,6 @@
       "Enter organization name to confirm": [
         ""
       ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
-      ],
       "Event title": [
         "Judul acara"
       ],
@@ -3346,9 +3139,6 @@
       ],
       "Import to:": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "Pintasan papan ketik"
       ],
       "Label messages as": [
         ""
@@ -3446,15 +3236,6 @@
       "Select a method": [
         "Pilih metode"
       ],
-      "Select how your composer opens by default.": [
-        "Pilih bagaimana komposer Anda terbuka secara bawaan."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
-      ],
       "Select your country": [
         "Pilih negara anda"
       ],
@@ -3514,30 +3295,6 @@
         "Nama"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Dimaksimalkan"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
@@ -3560,14 +3317,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
       ]
     },
     "Link": {
@@ -4578,9 +4327,6 @@
       "Invitation sent and participants added to all events": [
         "Undangan terkirim dan peserta berhasil ditambahkan ke semua acara"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferensi pintasan papan ketik diperbarui"
-      ],
       "Participants notified and all events updated": [
         "Peserta diberi tahu dan semua acara berhasil diperbarui"
       ],
@@ -4710,9 +4456,6 @@
       "${ appName } customization": [
         "Penyesuaian ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Pintasan Papan Ketik"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } anggota"
       ],
@@ -4791,9 +4534,6 @@
       "Clearing data": [
         "Membersihkan data"
       ],
-      "Composer mode": [
-        "Mode menulis"
-      ],
       "Confirm loss of Proton bonuses": [
         "Konfirmasi kehilangan bonus Proton"
       ],
@@ -4820,9 +4560,6 @@
       ],
       "Create contact": [
         "Buat kontak"
-      ],
-      "Create event": [
-        "Buat acara"
       ],
       "Create new group": [
         "Buat grup baru"
@@ -4883,9 +4620,6 @@
       ],
       "Edit contact group": [
         "Edit grup kontak"
-      ],
-      "Edit event": [
-        "Edit acara"
       ],
       "Edit image": [
         "Edit gambar"
@@ -4953,17 +4687,8 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
-      "Keyboard Shortcuts": [
-        "Pintasan Papan Ketik"
-      ],
       "Link confirmation": [
         "Konfirmasi tautan"
-      ],
-      "Mailbox density": [
-        "Kepadatan kotak surat"
-      ],
-      "Mailbox layout": [
-        "Tata letak kotak surat"
       ],
       "Merge contacts": [
         "Gabungkan kontak"

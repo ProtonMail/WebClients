@@ -14,14 +14,17 @@
       "Close modal": [
         "Închidere"
       ],
-      "Did not receive the code?": [
-        "Nu ați primit codul?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
       ],
       "Edit phone number": [
         "Editare număr de telefon"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "Obținere cod de verificare"
@@ -41,6 +44,12 @@
       "Verify": [
         "Verificare"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "Afișare factură"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
-      ],
-      "Can't validate phone, try again later": [
-        "Nu se poate valida telefonul, reîncercați mai târziu."
-      ],
       "Email is not valid": [
         "E-mailul nu este valid"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "Acest câmp este obligatoriu"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați folderul de mesaje nesolicitate."
       ],
-      "Internet connection lost.": [
-        "Conexiunea la internet s-a întrerupt."
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "Se încarcă"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele sunt inaccesibile. Mai reîncercați peste câteva minute."
       ],
-      "Session timed out.": [
-        "Sesiune expirată."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate mesajele nesolicitate, dovediți că sunteți o persoană."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "E-mailul va fi folosit doar pentru această verificare unică."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Anulare"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "Adresă e-mail"
-      ],
-      "Enter the 6-digit code": [
-        "Introduceți codul din 6 cifre"
       ],
       "Hide password": [
         "Ascundere parolă"

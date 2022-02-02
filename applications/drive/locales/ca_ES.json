@@ -122,9 +122,6 @@
       "Compose": [
         "Redactar"
       ],
-      "Composer size": [
-        "Mida de l'editor"
-      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -187,8 +184,8 @@
       "Details": [
         "Detalls"
       ],
-      "Did not receive the code?": [
-        "No has regut el codi?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Done": [
         "Fet"
@@ -210,6 +207,9 @@
       ],
       "Edit phone number": [
         "Editar el número de telèfon"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Configuració del correu"
@@ -277,9 +277,6 @@
       "Increase": [
         "Incrementa"
       ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
-      ],
       "Load image": [
         "Carregar imatge"
       ],
@@ -288,12 +285,6 @@
       ],
       "Log in": [
         "Inicia la sessió"
-      ],
-      "Mailbox density": [
-        "Densitat de la bústia de correu"
-      ],
-      "Mailbox layout": [
-        "Disseny de la bústia de correu"
       ],
       "Manage link": [
         ""
@@ -559,11 +550,14 @@
       "Use for sending": [
         "Utilitzar per enviar"
       ],
-      "Use “${ label }” setting": [
-        "Utilitzar la configuració \"${ label }\""
-      ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Veure"
@@ -891,14 +885,6 @@
         ""
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Maximitzat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1011,14 +997,6 @@
         "Factura vençuda"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Desxifrant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
@@ -1101,12 +1079,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
-      ],
-      "Can't validate email, try again later": [
-        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
-      ],
-      "Can't validate phone, try again later": [
-        "No es pot validar el telèfon, torneu-ho a provar més tard"
       ],
       "Checkout expired, please try again": [
         "El pagament ha expirat. Torneu-ho a provar"
@@ -1273,8 +1245,8 @@
       "Process aborted": [
         "Procés anul·lat"
       ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
+      "Request timed out": [
+        ""
       ],
       "Signature not verified": [
         "Signatura no verificada"
@@ -1824,9 +1796,6 @@
         "Esteu segur que voleu suprimir permanentment l'element seleccionat de la paperera?",
         "Esteu segur que voleu suprimir permanentment els elements seleccionats de la paperera?"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegació bàsica i les accions es mantenen disponibles independentment de que les dreceres de teclat estiguin actives o no a la configuració."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
@@ -2046,8 +2015,8 @@
       "Initializing": [
         "Inicialitzant"
       ],
-      "Internet connection lost.": [
-        "S'ha perdut la connexió a Internet."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
@@ -2263,8 +2232,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Temps de sessió esgotat."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ProtonMail i que utilitza un servei compatible amb PGP."
@@ -2408,6 +2377,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Setmana"
       ],
@@ -2422,6 +2394,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to restore your files?": [
         "Voleu restaurar els vostres arxius?"
@@ -2588,197 +2563,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Afegir xifrat"
-      ],
-      "Add expiration time": [
-        "Afegir temps d'expiració"
-      ],
-      "Apply / open": [
-        "Aplicar / obrir"
-      ],
-      "Attach file": [
-        "Adjuntar arxiu"
-      ],
-      "Cancel / close": [
-        "Cancel·lar / tancar"
-      ],
-      "Close draft": [
-        "Tancar esborrany"
-      ],
-      "Create filter with...": [
-        "Crear filtre amb..."
-      ],
-      "Delete permanently": [
-        "Eliminar permanentment"
-      ],
-      "Discard draft": [
-        "Descartar esborrany"
-      ],
-      "Expand / contract composer": [
-        "Ampliar / contraure l'editor"
-      ],
-      "Forward": [
-        "Reenviar"
-      ],
-      "Go to All Mail": [
-        "Anar a Tot el correu"
-      ],
-      "Go to Archive": [
-        "Anar a l'arxiu"
-      ],
-      "Go to Drafts": [
-        "Anar a Esborranys"
-      ],
-      "Go to Inbox": [
-        "Anar a la Safata d'entrada"
-      ],
-      "Go to Sent": [
-        "Anar a Enviats"
-      ],
-      "Go to Spam": [
-        "Anar al Correu brossa"
-      ],
-      "Go to Starred": [
-        "Anar a Destacats"
-      ],
-      "Go to Trash": [
-        "Anar a la Paperera"
-      ],
-      "Jump to first": [
-        "Moure a la primera posició"
-      ],
-      "Jump to last": [
-        "Moure a l'última posició"
-      ],
-      "Label as...": [
-        "Etiquetar com..."
-      ],
-      "Load embedded images": [
-        "Carregar imatges incrustades"
-      ],
-      "Load remote content": [
-        "Carregar contingut remot"
-      ],
-      "Mark as unread": [
-        "Marcar com a no llegit"
-      ],
-      "Minimize / maximize composer": [
-        "Minimitzar / maximitzar l'editor"
-      ],
-      "Move down": [
-        "Moure avall"
-      ],
-      "Move left / collapse": [
-        "Cap a l'esquerra / reduir"
-      ],
-      "Move right / expand": [
-        "Cap a la dreta / expandir"
-      ],
-      "Move to Archive": [
-        "Moure a l'Arxiu"
-      ],
-      "Move to Inbox": [
-        "Moure a la Safata d'entrada"
-      ],
-      "Move to Spam": [
-        "Moure a Correu brossa"
-      ],
-      "Move to Trash": [
-        "Moure a la Paperera"
-      ],
-      "Move to...": [
-        "Moure a..."
-      ],
-      "Move up": [
-        "Moure amunt"
-      ],
-      "New message": [
-        "Nou missatge"
-      ],
-      "Open next message": [
-        "Obrir el missatge següent"
-      ],
-      "Open previous message": [
-        "Obrir el missatge anterior"
-      ],
-      "Open this modal": [
-        "Obrir aquest diàleg"
-      ],
-      "Reply": [
-        "Respondre"
-      ],
-      "Reply all": [
-        "Respondre a tots"
-      ],
-      "Save draft": [
-        "Desar esborrany"
-      ],
-      "Search": [
-        "Cercar"
-      ],
-      "Select / unselect": [
-        "Seleccioneu / Anul·leu selecció"
-      ],
-      "Select / unselect all": [
-        "Seleccionar-ho / desseleccionar-ho tot"
-      ],
-      "Send email": [
-        "Enviar correu"
-      ],
-      "Show all emails": [
-        "Mostrar tots els correus electrònics"
-      ],
-      "Show original message": [
-        "Mostrar missatge original"
-      ],
-      "Show unread emails": [
-        "Mostrar correus electrònics sense llegir"
-      ],
-      "Star": [
-        "Destacat"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Dreceres d’accions"
-      ],
-      "Basic actions": [
-        "Accions bàsiques"
-      ],
-      "Basic navigation": [
-        "Navegació bàsica"
-      ],
-      "Composer shortcuts": [
-        "Dreceres de l'editor"
-      ],
-      "Folder shortcuts": [
-        "Dreceres de carpeta"
-      ],
-      "List shortcuts": [
-        "Dreceres de llistat"
-      ],
-      "Message shortcuts": [
-        "Dreceres de missatge"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Desactivades"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Activades"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        ""
-      ],
       "(Expired)": [
         "(Caducat)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Active": [
         "Actiu"
@@ -2843,6 +2633,9 @@
       "City": [
         "Ciutat"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Completed": [
         "Completades"
       ],
@@ -2888,9 +2681,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Introduïu el codi de 6 dígits"
       ],
       "Expired": [
         "Vençuda"
@@ -2948,9 +2738,6 @@
       ],
       "Import to email address": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
       ],
       "Label messages as": [
         ""
@@ -3041,15 +2828,6 @@
       ],
       "Select a method": [
         "Selecciona un mètode"
-      ],
-      "Select how your composer opens by default.": [
-        "Seleccioneu com el vostre editor s'obre per defecte."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra llista de missatges."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra bústia de correu."
       ],
       "Select your country": [
         "Seleccioni el seu país"
@@ -3149,30 +2927,6 @@
         "Nom"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximitzat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
@@ -3195,14 +2949,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
       ]
     },
     "Link": {
@@ -3242,6 +2988,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
+        ""
+      ],
+      "${ createdCalendars } of 1 created": [
         "",
         ""
       ],
@@ -3938,9 +3688,6 @@
       "Fingerprint copied to clipboard": [
         "Empremta digital copiada al porta-retalls"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferències de les dreceres de teclat actualitzades"
-      ],
       "Phone number copied to clipboard": [
         "Número de telèfon copiat al porta-retalls"
       ],
@@ -4083,9 +3830,6 @@
       "${ appName } customization": [
         "Personalització de ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "Dreceres de teclat de ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
         "${ emailsCount } membres"
@@ -4144,9 +3888,6 @@
       ],
       "Clearing data": [
         "Netejant dades"
-      ],
-      "Composer mode": [
-        "Mode d'editor"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmeu la pèrdua de bonificacions de Proton"
@@ -4318,20 +4059,11 @@
       "Invalid verification code": [
         "Codi de verificació no vàlid"
       ],
-      "Keyboard Shortcuts": [
-        "Dreceres de teclat"
-      ],
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
       "Location": [
         "Ubicació"
-      ],
-      "Mailbox density": [
-        "Densitat de la bústia de correu"
-      ],
-      "Mailbox layout": [
-        "Disseny de la bústia de correu"
       ],
       "Manage secure link": [
         "Gestiona l'enllaç segur"

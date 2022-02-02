@@ -14,7 +14,7 @@
       "Close modal": [
         "Dialog schließen"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Code nicht erhalten?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Rufnummer bearbeiten"
+      ],
+      "Edit sign-in details": [
+        "Anmeldeinformationen bearbeiten"
       ],
       "Get verification code": [
         "Bestätigungscode abrufen"
@@ -41,6 +44,12 @@
       "Verify": [
         "Bestätigen"
       ],
+      "Verify account": [
+        "Konto verifizieren"
+      ],
+      "Verify email": [
+        "E-Mail-Adresse verifizieren"
+      ],
       "View invoice": [
         "Rechnung anzeigen"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später erneut."
-      ],
-      "Can't validate phone, try again later": [
-        "Rufnummer konnte nicht bestätigt werden. Bitte versuchen Sie es später erneut."
-      ],
       "Email is not valid": [
         "E-Mail-Adresse ungültig"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
       ],
-      "Request timed out.": [
-        "Zeitüberschreitung der Anfrage."
+      "Request timed out": [
+        "Zeitüberschreitung bei der Anfrage"
       ],
       "This field is required": [
         "Pflichtfeld"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Sollten Sie die E-Mail nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
       ],
-      "Internet connection lost.": [
-        "Internetverbindung unterbrochen."
+      "Internet connection lost": [
+        "Internetverbindung unterbrochen"
       ],
       "Loading": [
         "Wird geladen …"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind nicht erreichbar. Bitte versuche es in ein einigen Minuten erneut."
       ],
-      "Session timed out.": [
-        "Die Sitzung wurde getrennt."
+      "Session timed out": [
+        "Zeitüberschreitung der Sitzung"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchten Sie einen neuen Bestätigungsschlüssel erhalten oder eine alternative Bestätigungsmethode verwenden?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Möchtest du einen neuen Verifizierungscode erhalten?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Code is 6 digits without spaces": [
+        "Der Code ist 6-stellig ohne Leerzeichen"
+      ],
       "Email address": [
         "E-Mail-Adresse"
-      ],
-      "Enter the 6-digit code": [
-        "6-stelligen Code eingeben"
       ],
       "Hide password": [
         "Passwort ausblenden"

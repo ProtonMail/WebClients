@@ -14,7 +14,7 @@
       "Close modal": [
         "Luk dialogboks"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Ikke modtaget koden?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
+      ],
+      "Edit sign-in details": [
+        "Rediger login-detaljer"
       ],
       "Get verification code": [
         "Få bekræftelseskode"
@@ -41,6 +44,12 @@
       "Verify": [
         "Bekræft"
       ],
+      "Verify account": [
+        "Verificer konto"
+      ],
+      "Verify email": [
+        "Verificer e-mail"
+      ],
       "View invoice": [
         "Vis faktura"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Kan ikke bekræfte e-mail, prøv igen senere"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan ikke bekræfte telefon, prøv igen senere"
-      ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Adgangskoderne er ikke ens"
       ],
-      "Request timed out.": [
-        "Forespørgsel fik timeout."
+      "Request timed out": [
+        "Forespørgsel fik timeout"
       ],
       "This field is required": [
         "Dette felt er påkrævet"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
-      "Internet connection lost.": [
-        "Internetforbindelse mistet."
+      "Internet connection lost": [
+        "Internetforbindelse mistet"
       ],
       "Loading": [
         "Indlæser"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
-      "Session timed out.": [
-        "Din session er udløbet."
+      "Session timed out": [
+        "Session er udløbet"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Vi vil sende en ny verifikationskode til ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Ønsker du at modtage en ny verifikationskode?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Annuller"
       ],
+      "Code is 6 digits without spaces": [
+        "Koden er på 6 cifre uden mellemrum"
+      ],
       "Email address": [
         "E-mailadresse"
-      ],
-      "Enter the 6-digit code": [
-        "Indtast den sekscifrede kode"
       ],
       "Hide password": [
         "Skjul adgangskode"

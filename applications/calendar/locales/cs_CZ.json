@@ -15,19 +15,19 @@
         "Obchod ${ BRAND_NAME }"
       ],
       "Activate recovery": [
-        ""
+        "Aktivovat obnovení"
       ],
       "Add": [
         "Přidat"
       ],
       "Add address": [
-        ""
+        "Přidat adresu"
       ],
       "Add contact": [
         "Přidat kontakt"
       ],
       "Add email": [
-        ""
+        "Přidat e-mail"
       ],
       "Add group": [
         "Přidat skupinu"
@@ -42,7 +42,7 @@
         "Přidat upozornění"
       ],
       "Add phone number": [
-        ""
+        "Přidat telefonní číslo"
       ],
       "Add screenshot(s)": [
         "Přidat snímek(y) obrazovky"
@@ -69,7 +69,7 @@
         "Komunikace s námi"
       ],
       "Check import progress": [
-        ""
+        "Zkontrolovat průběh importu"
       ],
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
@@ -126,7 +126,7 @@
         "Pokračovat"
       ],
       "Continue import": [
-        ""
+        "Pokračovat v importu"
       ],
       "Continue with Google": [
         "Pokračovat pomocí účtu Google"
@@ -135,13 +135,13 @@
         "Zkopírovat e-mail do schránky"
       ],
       "Create calendar": [
-        ""
+        "Vytvořit kalendář"
       ],
       "Create event": [
         "Vytvořit událost"
       ],
       "Customize": [
-        ""
+        "Přizpůsobit"
       ],
       "Decrease": [
         "Snížit"
@@ -170,8 +170,8 @@
       "Deselect all": [
         "Odznačit vše"
       ],
-      "Did not receive the code?": [
-        "Nedostali jste kód?"
+      "Didn't receive the code?": [
+        "Neobdrželi jste kód?"
       ],
       "Discard": [
         "Zahodit"
@@ -192,10 +192,13 @@
         "Upravit e-mailovou adresu"
       ],
       "Edit label": [
-        ""
+        "Upravit štítek"
       ],
       "Edit phone number": [
         "Upravit telefonní číslo"
+      ],
+      "Edit sign-in details": [
+        "Úprava přihlašovacích údajů"
       ],
       "Email settings": [
         "Nastavení e-mailu"
@@ -207,7 +210,7 @@
         "Exportovat"
       ],
       "Export contact group": [
-        ""
+        "Exportovat skupinu kontaktů"
       ],
       "Export contacts": [
         "Exportovat kontakty"
@@ -231,13 +234,13 @@
         "Skrýt pokročilá nastavení PGP"
       ],
       "Hide folders": [
-        ""
+        "Skrýt složky"
       ],
       "Hide info": [
         "Skrýt informace"
       ],
       "Hide labels": [
-        ""
+        "Skrýt štítky"
       ],
       "Hide time zones": [
         "Skrýt časové pásma"
@@ -252,16 +255,13 @@
         "Importovat"
       ],
       "Import events": [
-        ""
+        "Import událostí"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importovat z .csv nebo vCard"
       ],
       "Increase": [
         "Zvýšit"
-      ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
       ],
       "Load image": [
         "Načíst obrázek"
@@ -271,12 +271,6 @@
       ],
       "Log in": [
         "Přihlásit se"
-      ],
-      "Mailbox density": [
-        "Hustota mailové schránky"
-      ],
-      "Mailbox layout": [
-        "Rozvržení mailové schránky"
       ],
       "Make this participant optional": [
         "Nastavit tohoto účastníka jako volitelného"
@@ -357,7 +351,7 @@
         "Předchozí rok"
       ],
       "Quit": [
-        ""
+        "Odejít"
       ],
       "Re-sign": [
         "Znovu podepsat"
@@ -387,7 +381,7 @@
         "Odstranit tohoto účastníka"
       ],
       "Rename": [
-        ""
+        "Přejmenovat"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -417,7 +411,7 @@
         "Odeslat"
       ],
       "Set recovery phrase": [
-        ""
+        "Nastavit obnovovací frázi"
       ],
       "Share": [
         "Sdílet"
@@ -426,13 +420,13 @@
         "Zobrazit pokročilá nastavení PGP"
       ],
       "Show folders": [
-        ""
+        "Zobrazit složky"
       ],
       "Show info": [
         "Zobrazit informace"
       ],
       "Show labels": [
-        ""
+        "Zobrazit štítky"
       ],
       "Show less": [
         "Zobrazit méně"
@@ -483,7 +477,7 @@
         "Zkuste jinou metodu"
       ],
       "Unlock data": [
-        ""
+        "Odemknout údaje"
       ],
       "Unmark for deletion": [
         "Zrušit označení pro odstranění"
@@ -495,10 +489,10 @@
         "Aktualizovat"
       ],
       "Update recovery file": [
-        ""
+        "Aktualizovat soubor pro obnovení"
       ],
       "Update recovery phrase": [
-        ""
+        "Aktualizovat obnovovací frázi"
       ],
       "Upgrade": [
         "Vylepšit"
@@ -518,11 +512,14 @@
       "Use for sending": [
         "Použít pro odesílání"
       ],
-      "Use “${ label }” setting": [
-        "Použijte nastavení “${ label }”"
-      ],
       "Verify": [
         "Ověřit"
+      ],
+      "Verify account": [
+        "Ověřit účet"
+      ],
+      "Verify email": [
+        "Ověřit e-mail"
       ],
       "View": [
         "Zobrazit"
@@ -616,38 +613,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } začalo včera v ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        ""
+      ],
       "${ title } starts now": [
         "${ title } začíná právě teď"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        ""
       ],
       "${ title } starts today": [
         "${ title } začíná dnes"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } začne v ${ formattedHour }"
+      "${ title } starts tomorrow": [
+        ""
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } začne ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } začne ${ _formattedDate2 } ve ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } začne ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } začne ${ _formattedDate3 } v ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } začne ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } začne ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } začne zítra"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } začne zítra ve ${ formattedHour }"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        ""
       ]
     },
     "Alert": {
@@ -1014,14 +1011,6 @@
         ""
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Maximalizováno"
-      ],
-      "Normal": [
-        "Normální"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1191,14 +1180,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Faktura po splatnosti"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Komfortní"
-      ],
-      "Compact": [
-        "Kompaktní"
       ]
     },
     "Description": {
@@ -1414,25 +1395,19 @@
         "Ověření selhalo."
       ],
       "Calendar limit reached": [
-        ""
+        "Dosažen limit kalendářů"
       ],
       "Calendar primary private key is not decrypted": [
         "Primární soukromý klíč kalendáře není dešifrován"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
-      ],
-      "Can't validate email, try again later": [
-        "Nelze ověřit e-mail, opakujte akci později"
-      ],
-      "Can't validate phone, try again later": [
-        "Nelze ověřit telefon, opakujte akci později"
+        "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
       ],
       "Cancellation failed to be sent": [
         ""
       ],
       "Checkout expired, please try again": [
-        ""
+        "Platnost objednávky vypršela, zkuste to prosím znovu"
       ],
       "Contact could not be saved": [
         "Kontakt nelze uložit"
@@ -1450,16 +1425,16 @@
         "Chyba dešifrování: Dešifrování obsahu této události selhalo."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        "",
-        "",
-        ""
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
       ],
       "Email address disabled": [
         "E-mailová adresa je zakázána"
@@ -1492,7 +1467,7 @@
         "Nepodařilo se získat původní výskyt v sérii"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Název složky nesmí být prázdný"
       ],
       "Image upload failed": [
         "Selhalo nahrání obrázku"
@@ -1546,13 +1521,13 @@
         "Lze přesunout události pouze mezi ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        ""
+        "Název štítku nesmí být prázdný"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
+        "Sloučit nejméně ${ calendarToFixCount } kalendáře s existujícími Proton kalendáři",
+        "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři",
+        "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři"
       ],
       "Missing signature": [
         "Podpis není nastaven"
@@ -1564,7 +1539,7 @@
         "Název je povinný"
       ],
       "No data to import": [
-        ""
+        "Žádná data k importu"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Žádný klíč pro interní uživatele není platný pro odeslání"
@@ -1600,7 +1575,7 @@
         "Některé skupiny neobsahují kontakty: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organizace nebyla rozpoznána. Zkuste to znovu."
       ],
       "Passwords do not match": [
         "Hesla se neshodují"
@@ -1638,8 +1613,8 @@
       "Process aborted": [
         "Proces přerušen"
       ],
-      "Request timed out.": [
-        "Vypršel časový limit žádosti."
+      "Request timed out": [
+        "Vypršel časový limit požadavku"
       ],
       "Self invitation not allowed": [
         "Vlastní pozvání není dovoleno"
@@ -1657,10 +1632,10 @@
         "Některé skupiny není možné odstranit"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Některé z vašich názvů štítků nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ProtonMail. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
@@ -1675,10 +1650,10 @@
         "Prohlížeč, který používáte, neumožňuje úplnou autorizaci platby. Použijte jiný prohlížeč nebo se přihlaste pomocí počítače."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Název složky je příliš dlouhý. Zvolte prosím jiný název."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Název štítku je příliš dlouhý. Zvolte prosím jiný název."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Minimální objem úvěrů, který lze přidat, je ${ _price }"
@@ -1693,7 +1668,7 @@
         "Odesílací klíč není platný"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
       ],
       "There was an error when exporting the contacts vCards": [
         "Při exportu kontaktů do vCard došlo k chybě"
@@ -1705,10 +1680,10 @@
         "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Tento název složky není k dispozici. Zvolte prosím jiný název"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Tento název štítku není k dispozici. Zvolte prosím jiný název"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva obsahuje URL odkazy, které nelze otevřít Vašim prohlížečem"
@@ -2331,16 +2306,16 @@
         "${ namesWithoutLast } a ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContactGroups } skupina kontaktů",
+        "${ numContactGroups } skupiny kontaktů",
+        "${ numContactGroups } skupin kontaktů",
+        "${ numContactGroups } skupin kontaktů"
       ],
       "${ numContacts } contact": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContacts } kontakt",
+        "${ numContacts } kontakty",
+        "${ numContacts } kontaktů",
+        "${ numContacts } kontaktů"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } na Vašem předplatném přepnutím na ${ annualBilling }"
@@ -2472,13 +2447,10 @@
         ""
       ],
       "and": [
-        ""
+        "a"
       ],
       "At most 100 participants are allowed per invitation": [
         ""
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Účtováno jako ${ billedPrice } každé 2 roky"
@@ -2517,7 +2489,7 @@
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
       "Close this screen to exit.": [
-        ""
+        "Pro ukončení zavřete tuto obrazovku."
       ],
       "Connections": [
         "Připojení"
@@ -2529,16 +2501,16 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a štítky, které chcete importovat."
       ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
       "Create in": [
-        ""
+        "Vytvořit v"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
@@ -2640,7 +2612,7 @@
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "",
@@ -2649,22 +2621,22 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importovat z"
       ],
       "Import in progress": [
-        ""
+        "Import probíhá"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Included": [
         "Zahrnuto"
       ],
       "Inherited from parent folder": [
-        ""
+        "Přebráno z nadřazené složky"
       ],
-      "Internet connection lost.": [
-        "Připojení k Internetu bylo ztraceno."
+      "Internet connection lost": [
+        "Připojení k internetu bylo ztraceno"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Připojení k internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
@@ -2673,13 +2645,13 @@
         "Připojení k internetu obnoveno."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
       "Key fingerprint": [
         "Identifikátor klíče"
       ],
       "Large imports can take several days.": [
-        ""
+        "Import velkého množství dat může trvat několik dní."
       ],
       "Learn more": [
         "Více informací"
@@ -2706,13 +2678,13 @@
         "Měsíčně ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Pojmenujte svoji novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude tato nová složka vytvořena v kořenové složce."
       ],
       "New": [
         ""
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Dále se musíte přihlásit ke svému účtu Google a povolit nám přístup k Vašim datům."
       ],
       "No contacts added yet": [
         "Žádné kontakty dosud nebyly přidány"
@@ -2775,7 +2747,7 @@
         ""
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Vyberte složky, které chcete importovat:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Zkuste to znovu prosím, použijte jinou platební metodu nebo kontaktujte svoji banku."
@@ -2832,13 +2804,13 @@
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
-      "Session timed out.": [
-        "Relace vypršela."
+      "Session timed out": [
+        "Relace vypršela"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
@@ -2961,13 +2933,16 @@
         "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
       ],
       "We'll notify you when the import is done.": [
+        "Po dokončení importu Vás budeme informovat."
+      ],
+      "We'll send a new verification code to ${ strong }": [
         ""
       ],
       "Week": [
         "Týden"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Co chcete importovat z účtu Google?"
       ],
       "Which event would you like to delete?": [
         "Která událost chcete smazat?"
@@ -2993,6 +2968,9 @@
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
       ],
+      "Would you like to receive a new verification code?": [
+        ""
+      ],
       "Would you like to update all events in this series?": [
         ""
       ],
@@ -3009,16 +2987,16 @@
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Zde můžete zkontrolovat průběh ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         ""
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Znovu jste aktivovali klíče a události spojené s následujícími kalendáři mohou být nyní dešifrovány."
@@ -3090,7 +3068,7 @@
         "Z důvodu bezpečnosti, Vaše banka vyžaduje ověření pomocí 3-D Secure."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
@@ -3161,193 +3139,8 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Přidat šifrování"
-      ],
-      "Add expiration time": [
-        "Přidat čas vypršení"
-      ],
-      "Apply / open": [
-        "Použít / otevřít"
-      ],
-      "Attach file": [
-        "Připojit soubor"
-      ],
-      "Cancel / close": [
-        "Zrušit/zavřít"
-      ],
-      "Close draft": [
-        "Zavřít koncept"
-      ],
-      "Create filter with...": [
-        "Vytvořit filtr s..."
-      ],
-      "Delete permanently": [
-        "Navždy smazat"
-      ],
-      "Discard draft": [
-        "Smazat koncept"
-      ],
-      "Expand / contract composer": [
-        "Rozšířit / smlouva správce knihovny"
-      ],
-      "Forward": [
-        "Přeposlat"
-      ],
-      "Go to All Mail": [
-        "Přejít na všechnu poštu"
-      ],
-      "Go to Archive": [
-        "Přejít do archivu"
-      ],
-      "Go to Drafts": [
-        "Přejděte do návrhů"
-      ],
-      "Go to Inbox": [
-        "Přesunout do složky Doručená pošta"
-      ],
-      "Go to Sent": [
-        "Přejít do odeslaných"
-      ],
-      "Go to Spam": [
-        "Přejít do spamu"
-      ],
-      "Go to Starred": [
-        "Přejít do oblíbených"
-      ],
-      "Go to Trash": [
-        "Přejít do koše"
-      ],
-      "Jump to first": [
-        "Přejít na první"
-      ],
-      "Jump to last": [
-        "Přejít na poslední"
-      ],
-      "Label as...": [
-        "Označit jako..."
-      ],
-      "Load embedded images": [
-        "Načíst vložené obrázky"
-      ],
-      "Load remote content": [
-        "Načíst vzdálený obsah"
-      ],
-      "Mark as unread": [
-        "Označit jako nepřečtené"
-      ],
-      "Minimize / maximize composer": [
-        "Minimalizovat / maximalizovat tvorbu"
-      ],
-      "Move down": [
-        "Přesunout dolů"
-      ],
-      "Move left / collapse": [
-        "Přemístit doleva/sbalit"
-      ],
-      "Move right / expand": [
-        "Přemístit doprava/rozšířit"
-      ],
-      "Move to Archive": [
-        "Přesunout do archivu"
-      ],
-      "Move to Inbox": [
-        "Přesunout do složky Doručená pošta"
-      ],
-      "Move to Spam": [
-        "Přesunout do složky Spam"
-      ],
-      "Move to Trash": [
-        "Přesunout do koše"
-      ],
-      "Move to...": [
-        "Přesunout do..."
-      ],
-      "Move up": [
-        "Přesunout nahoru"
-      ],
-      "New message": [
-        "Nová zpráva"
-      ],
-      "Open next message": [
-        "Otevřít následující zprávu"
-      ],
-      "Open previous message": [
-        "Otevřít předchozí zprávu"
-      ],
-      "Open this modal": [
-        "Otevřete tento způsob"
-      ],
-      "Reply": [
-        "Odpovědět"
-      ],
-      "Reply all": [
-        "Odpovědět všem"
-      ],
-      "Save draft": [
-        "Uložit koncept"
-      ],
-      "Search": [
-        "Hledat"
-      ],
-      "Select / unselect": [
-        "Vybrat/zrušit výběr"
-      ],
-      "Select / unselect all": [
-        "Vybrat vše/zrušit výběr všeho"
-      ],
-      "Send email": [
-        "Odeslat email"
-      ],
-      "Show all emails": [
-        "Zobrazit všechny emaily"
-      ],
-      "Show original message": [
-        "Zobrazit původní zprávu"
-      ],
-      "Show unread emails": [
-        "Zobrazit nepřečtené emaily"
-      ],
-      "Star": [
-        "Hvězdička"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Zkratky akcí"
-      ],
-      "Basic actions": [
-        "Základní akce"
-      ],
-      "Basic navigation": [
-        "Základní navigace"
-      ],
-      "Composer shortcuts": [
-        "Vytvoření zkratek"
-      ],
-      "Folder shortcuts": [
-        "Zkratky složek"
-      ],
-      "List shortcuts": [
-        "Seznam zkratek"
-      ],
-      "Message shortcuts": [
-        "Zkratky zpráv"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        ""
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "0 - Not likely": [
@@ -3406,6 +3199,9 @@
       ],
       "City": [
         "Město"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         ""
@@ -3470,9 +3266,6 @@
       "Enter organization name to confirm": [
         ""
       ],
-      "Enter the 6-digit code": [
-        "Zadejte 6-místný kód"
-      ],
       "Event title": [
         "Název události"
       ],
@@ -3517,9 +3310,6 @@
       ],
       "Import to:": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
       ],
       "Label messages as": [
         ""
@@ -3620,15 +3410,6 @@
       "Select a method": [
         "Vyberte metodu"
       ],
-      "Select how your composer opens by default.": [
-        "Vyberte, jak se má otevírat psaní nové zprávy."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Vyberte vzhled výpisu zpráv."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Vyberte vzhled vaší schránky."
-      ],
       "Select your country": [
         "Vyberte svou zemi"
       ],
@@ -3688,30 +3469,6 @@
         "Jméno"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximalizováno"
-      ],
-      "Normal": [
-        "Normální"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortní"
-      ],
-      "Compact": [
-        "Kompaktní"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sloupec"
-      ],
-      "Row": [
-        "Řádek"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Přiložit snímek/snímky obrazovky"
@@ -3734,14 +3491,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Sloupec"
-      ],
-      "Row": [
-        "Řádek"
       ]
     },
     "Link": {
@@ -4854,9 +4603,6 @@
       "Invitation sent and participants added to all events": [
         ""
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Nastavení klávesových zkratek upraveno"
-      ],
       "Participants notified and all events updated": [
         ""
       ],
@@ -4992,9 +4738,6 @@
       "${ appName } customization": [
         "${ appName } přizpůsobení"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Klávesové zkratky"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } člen",
         "${ emailsCount } členové",
@@ -5079,9 +4822,6 @@
       "Clearing data": [
         "Vymazání dat"
       ],
-      "Composer mode": [
-        "Režim psaní zpráv"
-      ],
       "Confirm loss of Proton bonuses": [
         "Potvrďte odebrání bonusů Proton"
       ],
@@ -5108,9 +4848,6 @@
       ],
       "Create contact": [
         "Vytvořit kontakt"
-      ],
-      "Create event": [
-        "Vytvořit událost"
       ],
       "Create new group": [
         "Vytvořit novou skupinu"
@@ -5177,9 +4914,6 @@
       ],
       "Edit contact group": [
         "Upravit skupinu kontaktů"
-      ],
-      "Edit event": [
-        "Upravit událost"
       ],
       "Edit image": [
         "Upravit obrázek"
@@ -5250,17 +4984,8 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
-      "Keyboard Shortcuts": [
-        "Klávesové zkratky"
-      ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
-      ],
-      "Mailbox density": [
-        "Hustota mailové schránky"
-      ],
-      "Mailbox layout": [
-        "Rozvržení mailové schránky"
       ],
       "Merge contacts": [
         "Sloučit kontakty"

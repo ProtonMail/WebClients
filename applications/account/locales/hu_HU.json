@@ -259,11 +259,11 @@
       "Details": [
         "Részletek"
       ],
-      "Did not receive the code?": [
-        "Nem kapta meg a kódot?"
-      ],
       "Didn't receive a code?": [
         "Nem kapta meg a kódot?"
+      ],
+      "Didn't receive the code?": [
+        ""
       ],
       "Disable recovery phrase": [
         "Helyreállító jelmondat kikapcsolása"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Sieve szűrő szerkesztése"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "enable desktop notifications": [
         "asztali értesítések engedélyezése"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Dőlt"
-      ],
-      "Justify": [
-        "Sorkizárás"
       ],
       "Keep": [
         "Megtartás"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Ellenőrzés"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Megtekintés"
@@ -1723,12 +1729,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
       ],
-      "Can't validate email, try again later": [
-        "E-mail ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
-      ],
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
       ],
@@ -1907,9 +1907,6 @@
       "Please generate keys before you try to change your password": [
         "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
       ],
-      "Please refresh the page.": [
-        "Kérjük frissítse az oldalt."
-      ],
       "Please set a recovery email first": [
         "Először adja meg a helyreállítási e-mail címet"
       ],
@@ -1937,8 +1934,8 @@
       "Process aborted": [
         "Folyamat megszakítva"
       ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Legalább egy művelet szükséges"
@@ -1972,9 +1969,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
-      ],
-      "The composer failed to load.": [
-        "A szerkesztőt nem sikerült betölteni."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
@@ -3750,8 +3744,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Telepítsen egy szerverkonfigurációs fájlt, ha egy adott szerverhez szeretne kapcsolódni a választott országban."
       ],
-      "Internet connection lost.": [
-        "Az internetkapcsolat megszakadt."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
@@ -3767,9 +3761,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
-      ],
-      "Justify": [
-        "Sorkizárás"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Tartsa meg ezt a DNS beállítást mindaddig amíg a DKIM-et használni szeretné."
@@ -4138,8 +4129,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
-      "Session timed out.": [
-        "A munkamenet lejárt."
+      "Session timed out": [
+        ""
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
@@ -4423,6 +4414,9 @@
       "We'll notify you when the import is done.": [
         "Érdesíteni fogjuk az importálás végeztével."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "Weblap link"
       ],
@@ -4455,6 +4449,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "A Yahoo olvassa az ön személyes adatait, hogy hirdetőknek, USA titkosügynökségeknek és más külső feleknek adja át. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
@@ -5045,8 +5042,8 @@
         "${ UsedMembers } az ${ MaxMembers } felhasználóból",
         "${ UsedMembers } a ${ MaxMembers } felhasználóból"
       ],
-      "(Coming soon)": [
-        "(Hamarosan)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Account storage": [
         "Fiók tárhely"
@@ -5152,6 +5149,9 @@
       ],
       "Code": [
         "Kód"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "Szín"
@@ -5317,9 +5317,6 @@
       ],
       "Enter password": [
         "Jelszó megadása"
-      ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Írja be a következő ujjlenyomattal rendelkező kulcshoz tartozó jelszót: ${ fingerprintCode }"
@@ -6639,9 +6636,6 @@
       "Secure Core configs": [
         "Secure Core konfigurációk"
       ],
-      "Select a reason": [
-        "Válasszon egy indokot"
-      ],
       "Standard server configs": [
         "Normál szerver konfigurációk"
       ],
@@ -7878,6 +7872,9 @@
       "Email": [
         "E-mail"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email encryption keys": [
         "E-mail titkosítási kulcsai"
       ],
@@ -7895,9 +7892,6 @@
       ],
       "Error": [
         "Hiba"
-      ],
-      "Expand content": [
-        "Tartalom kibontása"
       ],
       "Export": [
         "Exportálás"

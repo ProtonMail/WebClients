@@ -122,9 +122,6 @@
       "Compose": [
         "Redactar"
       ],
-      "Composer size": [
-        "Tamaño del editor"
-      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -187,8 +184,8 @@
       "Details": [
         "Detalles"
       ],
-      "Did not receive the code?": [
-        "¿No has recibido el código?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Done": [
         "Hecho"
@@ -210,6 +207,9 @@
       ],
       "Edit phone number": [
         "Editar número de teléfono"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Ajustes del correo electrónico"
@@ -277,9 +277,6 @@
       "Increase": [
         "Aumentar"
       ],
-      "Keyboard shortcuts": [
-        "Atajos de teclado"
-      ],
       "Load image": [
         "Cargar imagen"
       ],
@@ -288,12 +285,6 @@
       ],
       "Log in": [
         "Iniciar sesión "
-      ],
-      "Mailbox density": [
-        "Densidad del buzón"
-      ],
-      "Mailbox layout": [
-        "Diseño del buzón"
       ],
       "Manage link": [
         ""
@@ -559,11 +550,14 @@
       "Use for sending": [
         "Usar para enviar"
       ],
-      "Use “${ label }” setting": [
-        "Utilizar la configuración de \"${ label }\""
-      ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Visualizar"
@@ -891,14 +885,6 @@
         ""
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Maximizado"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1011,14 +997,6 @@
         "Factura atrasada"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Cómoda"
-      ],
-      "Compact": [
-        "Compacta"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, podrás descargar el archivo con todos tus contactos exportados."
@@ -1101,12 +1079,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "No se pueden crear nuevos calendarios para todos los calendarios importados debido al límite de calendarios personales."
-      ],
-      "Can't validate email, try again later": [
-        "No se ha podido validar el correo electrónico, inténtalo de nuevo más tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "No se ha podido validar el teléfono, inténtalo de nuevo más tarde"
       ],
       "Checkout expired, please try again": [
         "La compra ha caducado, intenta de nuevo"
@@ -1273,8 +1245,8 @@
       "Process aborted": [
         "El proceso fue anulado"
       ],
-      "Request timed out.": [
-        "Tiempo de espera agotado."
+      "Request timed out": [
+        ""
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -1593,7 +1565,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "en el siguiente paso, debes seleccionar todos los permisos"
       ]
     },
     "Import warning": {
@@ -1780,7 +1752,7 @@
         "Cuenta actualizada con éxito"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
-        "Agrega direcciones adicionales a tu cuenta como user2@protonmail.com"
+        "Agrega direcciones adicionales a tu cuenta como usuario2@protonmail.com"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
@@ -1823,9 +1795,6 @@
       "Are you sure you want to permanently delete selected item from trash?": [
         "¿Estás seguro de que quieres eliminar permanentemente el elemento seleccionado de la papelera?",
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Como ${ appName } está cifrado de extremo a extremo, no podemos acceder o descifrar tus archivos por ti. Para desbloquear su unidad después de un restablecimiento de la contraseña, debe tener uno de los siguientes:"
@@ -2041,13 +2010,13 @@
         "Incluido"
       ],
       "Inherited from parent folder": [
-        "Heredado de la carpeta padre"
+        "Heredado de la carpeta principal"
       ],
       "Initializing": [
         "Inicializando"
       ],
-      "Internet connection lost.": [
-        "Sin conexión a Internet."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Se ha perdido la conexión a Internet. Comprueba la conectividad de tu dispositivo."
@@ -2263,8 +2232,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
       ],
-      "Session timed out.": [
-        "El tiempo de la sesión ha expirado."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Configurar PGP te permite enviar correos electrónicos cifrados de extremo a extremo a usuarios fuera de ProtonMail que utilizan un servicio compatible con PGP."
@@ -2408,6 +2377,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Semana"
       ],
@@ -2422,6 +2394,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to restore your files?": [
         "¿Te gustaría restaurar tus archivos?"
@@ -2588,197 +2563,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Agregar cifrado"
-      ],
-      "Add expiration time": [
-        "Agregar tiempo de caducidad"
-      ],
-      "Apply / open": [
-        "Aplicar/abrir"
-      ],
-      "Attach file": [
-        "Adjuntar archivo"
-      ],
-      "Cancel / close": [
-        "Cancelar/cerrar"
-      ],
-      "Close draft": [
-        "Cerrar borrador"
-      ],
-      "Create filter with...": [
-        "Crear filtro con..."
-      ],
-      "Delete permanently": [
-        "Eliminar permanentemente"
-      ],
-      "Discard draft": [
-        "Descartar borrador"
-      ],
-      "Expand / contract composer": [
-        "Expandir/contraer compositor"
-      ],
-      "Forward": [
-        "Reenviar"
-      ],
-      "Go to All Mail": [
-        "Ir a todos"
-      ],
-      "Go to Archive": [
-        "Ir al archivo"
-      ],
-      "Go to Drafts": [
-        "Ir a borradores"
-      ],
-      "Go to Inbox": [
-        "Ir a la bandeja de entrada"
-      ],
-      "Go to Sent": [
-        "Ir a enviados"
-      ],
-      "Go to Spam": [
-        "Ir a spam"
-      ],
-      "Go to Starred": [
-        "Ir a destacados"
-      ],
-      "Go to Trash": [
-        "Ir a la papelera"
-      ],
-      "Jump to first": [
-        "Ir al primero"
-      ],
-      "Jump to last": [
-        "Ir al último"
-      ],
-      "Label as...": [
-        "Etiquetar como..."
-      ],
-      "Load embedded images": [
-        "Cargar imágenes incrustadas"
-      ],
-      "Load remote content": [
-        "Cargar contenido remoto"
-      ],
-      "Mark as unread": [
-        "Marcar como no leído"
-      ],
-      "Minimize / maximize composer": [
-        "Minimizar/maximizar compositor"
-      ],
-      "Move down": [
-        "Bajar"
-      ],
-      "Move left / collapse": [
-        "Ir a la izquierda/contraer"
-      ],
-      "Move right / expand": [
-        "Ir a la derecha/expandir"
-      ],
-      "Move to Archive": [
-        "Mover al archivo"
-      ],
-      "Move to Inbox": [
-        "Mover a la bandeja de entrada"
-      ],
-      "Move to Spam": [
-        "Mover a spam"
-      ],
-      "Move to Trash": [
-        "Mover a la papelera"
-      ],
-      "Move to...": [
-        "Mover a..."
-      ],
-      "Move up": [
-        "Subir"
-      ],
-      "New message": [
-        "Nuevo mensaje"
-      ],
-      "Open next message": [
-        "Abrir mensaje siguiente"
-      ],
-      "Open previous message": [
-        "Abrir mensaje anterior"
-      ],
-      "Open this modal": [
-        "Abrir esta ventana"
-      ],
-      "Reply": [
-        "Responder"
-      ],
-      "Reply all": [
-        "Responder a todos"
-      ],
-      "Save draft": [
-        "Guardar borrador"
-      ],
-      "Search": [
-        "Buscar"
-      ],
-      "Select / unselect": [
-        "Seleccionar/deseleccionar"
-      ],
-      "Select / unselect all": [
-        "Seleccionar/deseleccionar todo"
-      ],
-      "Send email": [
-        "Enviar correo electrónico"
-      ],
-      "Show all emails": [
-        "Mostrar todos los correos"
-      ],
-      "Show original message": [
-        "Mostrar mensaje original"
-      ],
-      "Show unread emails": [
-        "Mostrar correos no leídos"
-      ],
-      "Star": [
-        "Destacar"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Atajos de acciones"
-      ],
-      "Basic actions": [
-        "Acciones básicas"
-      ],
-      "Basic navigation": [
-        "Navegación básica"
-      ],
-      "Composer shortcuts": [
-        "Atajos del compositor"
-      ],
-      "Folder shortcuts": [
-        "Atajos de carpeta"
-      ],
-      "List shortcuts": [
-        "Lista de atajos"
-      ],
-      "Message shortcuts": [
-        "Atajos de mensajes"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Desactivados"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Activados"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Próximamente)"
-      ],
       "(Expired)": [
         "(Expirado)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Active": [
         "Activa"
@@ -2843,6 +2633,9 @@
       "City": [
         "Ciudad"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Completed": [
         "Completado"
       ],
@@ -2888,9 +2681,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Introduce el código de 6 dígitos"
       ],
       "Expired": [
         "Expirado"
@@ -2948,9 +2738,6 @@
       ],
       "Import to email address": [
         "Importar a la dirección de correo electrónico"
-      ],
-      "Keyboard shortcuts": [
-        "Atajos de teclado"
       ],
       "Label messages as": [
         "Etiquetar mensajes como"
@@ -3041,15 +2828,6 @@
       ],
       "Select a method": [
         "Selecciona un método"
-      ],
-      "Select how your composer opens by default.": [
-        "Selecciona como se abrirá el editor por defecto."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Seleccionar como tu lista de mensajes aparece de forma preestablecida."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Seleccionar como tu buzón aparece de manera preestablecida."
       ],
       "Select your country": [
         "Selecciona tu país"
@@ -3149,30 +2927,6 @@
         "Nombre"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximizado"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Cómoda"
-      ],
-      "Compact": [
-        "Compacta"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Adjuntar captura de pantalla"
@@ -3195,14 +2949,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } creada"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
       ]
     },
     "Link": {
@@ -3244,6 +2990,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } de ${ calendarsToBeCreated } creado",
         "${ createdCalendars } de ${ calendarsToBeCreated } creados"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        ""
       ],
       "Almost there": [
         "Ya casi está"
@@ -3548,7 +3298,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Por favor ten en cuenta que ${ boldNextStep } solicitados por la aplicación para iniciar tu importación."
       ]
     },
     "Onboarding Proton": {
@@ -3938,9 +3688,6 @@
       "Fingerprint copied to clipboard": [
         "Huella digital copiada al portapapeles"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferencias de atajos de teclado actualizadas"
-      ],
       "Phone number copied to clipboard": [
         "Número de teléfono copiado al portapapeles"
       ],
@@ -4083,9 +3830,6 @@
       "${ appName } customization": [
         "Personalización de ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "Atajos de teclado de ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } miembro",
         "${ emailsCount } miembros"
@@ -4144,9 +3888,6 @@
       ],
       "Clearing data": [
         "Limpiando datos"
-      ],
-      "Composer mode": [
-        "Modo del editor"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmar pérdida de beneficios de Proton"
@@ -4318,20 +4059,11 @@
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
-      "Keyboard Shortcuts": [
-        "Atajos de teclado"
-      ],
       "Link confirmation": [
         "Confirmación de enlace"
       ],
       "Location": [
         "Ubicación"
-      ],
-      "Mailbox density": [
-        "Densidad del buzón"
-      ],
-      "Mailbox layout": [
-        "Diseño del buzón"
       ],
       "Manage secure link": [
         "Gestionar enlace seguro"
