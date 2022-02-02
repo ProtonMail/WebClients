@@ -192,7 +192,7 @@ const DataRecoverySection = () => {
                                     : c('Action').t`Download recovery file`}
                             </ExportRecoveryFileButton>
                             {canRevokeRecoveryFiles && (
-                                <VoidRecoveryFilesButton className="mb1" color="danger" shape="link" />
+                                <VoidRecoveryFilesButton className="mb1" color="danger" shape="underline" />
                             )}
                         </SettingsLayoutRight>
                     </SettingsLayout>

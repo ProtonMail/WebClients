@@ -3,7 +3,7 @@ import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { CircleLoader } from '../loader';
 
-export type Shape = 'solid' | 'outline' | 'ghost' | 'link';
+export type Shape = 'solid' | 'outline' | 'ghost' | 'underline';
 
 export type Color = 'norm' | 'weak' | 'danger' | 'warning' | 'success' | 'info';
 
@@ -15,6 +15,13 @@ interface ButtonLikeOwnProps {
      * Button is disabled when this prop is true.
      */
     loading?: boolean;
+    /**
+     * Controls the shape of the button.
+     * - `solid` for filled button
+     * - `outline` for bordered button
+     * - `ghost` for minimalistic button with hover/focus changing
+     * - `underline` for underlined text button, with paddings for alignment
+     */
     shape?: Shape;
     /**
      * Controls the colors of the button.
@@ -25,15 +32,25 @@ interface ButtonLikeOwnProps {
      * Controls how large the button should be.
      */
     size?: Size;
-    /** Puts the button in a disabled state. */
+    /**
+     * Puts the button in a disabled state.
+     */
     disabled?: boolean;
-    /** If true, the button will take up the full width of its container. */
+    /**
+     * If true, the button will take up the full width of its container.
+     */
     fullWidth?: boolean;
-    /** If true, display as pill */
+    /**
+     * If true, display as pill.
+     */
     pill?: boolean;
-    /** If true, display as icon */
+    /**
+     * If true, display as icon.
+     */
     icon?: boolean;
-    /** If true, this button is part of a button group */
+    /**
+     * If true, this button is part of a button group.
+     */
     group?: boolean;
 }
 
@@ -67,16 +84,17 @@ const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonL
 
             const actualShape = group ? 'ghost' : shape;
             const actualColor = group ? 'weak' : color;
+            const isUnderlineShape = actualShape === 'underline';
 
             const buttonClassName = classnames([
-                actualShape === 'link' ? 'button-link' : 'button',
-                pill && 'button-pill',
-                icon && 'button-for-icon',
+                isUnderlineShape ? 'button-underline' : 'button',
+                !isUnderlineShape && pill && 'button-pill',
+                !isUnderlineShape && icon && 'button-for-icon',
                 group && 'button-group-item',
                 size !== 'medium' && `button-${size}`,
                 `button-${actualShape}-${actualColor}`,
                 restProps.as !== 'button' ? 'inline-block text-center' : '',
-                fullWidth && 'w100',
+                !isUnderlineShape && fullWidth && 'w100',
                 className,
             ]);
 
@@ -95,7 +113,7 @@ const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonL
                 >
                     {children}
                     {loading && (
-                        <span className="loader-container">
+                        <span className="button-loader-container">
                             <CircleLoader />
                         </span>
                     )}

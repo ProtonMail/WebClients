@@ -12,14 +12,15 @@
 	border: none;
 	border-radius: var(--border-radius-md);
 	outline: none; // be careful of a11y
-	@supports selector(:focus-visible) {
-		// had to do this because of Safari
-		outline: unset;
-	}
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
 	text-align: center;
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+	@supports selector(:focus-visible) {
+		// had to do this because of Safari
+		outline: unset;
+	}
 
 	&,
 	&:hover,
@@ -66,16 +67,24 @@
 	}
 }
 
-/*
- * Link shape
- */
-.button-link {
+.button-underline {
 	display: inline-block;
 	padding-block: em(5) em(6);
-	padding-inline: 0;
 	outline: none; // be careful of a11y
 	color: var(--button-default-text-color, inherit);
 	text-decoration: underline;
+	transition: 0.15s easing(easeOutQuint);
+
+	@supports selector(:focus-visible) {
+		// had to do this because of Safari
+		outline: unset;
+	}
+
+	&,
+	&.button-small,
+	&.button-large {
+		padding-inline: 0; // To ensure vertical alignments
+	}
 
 	&:hover,
 	&:focus,
@@ -185,8 +194,8 @@
 		--button-active-text-color: #{$activeTextColor};
 	}
 
-	// Link shape
-	.button-link-#{$color} {
+	// Underline shape
+	.button-underline-#{$color} {
 		--button-default-text-color: #{$textColor};
 		--button-hover-text-color: #{$hoverTextColor};
 		--button-active-text-color: #{$activeTextColor};
@@ -232,23 +241,6 @@
 .button[aria-busy='true'] {
 	position: relative;
 
-	.loader-container {
-		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		animation: 0.25s ease-out both anime-loader-container-fade-in;
-
-		@keyframes anime-loader-container-fade-in {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
-		}
-	}
-
 	&:not(.button-for-icon) {
 		&:not(.w100) {
 			&:not(.button-small, .button-large) {
@@ -264,19 +256,15 @@
 			}
 		}
 
-		.loader-container {
-			inset-block: 0;
-		}
-
-		&:not(.button-small, .button-large) .loader-container {
+		&:not(.button-small, .button-large) .button-loader-container {
 			inset-inline-end: em(16);
 		}
 
-		&.button-small .loader-container {
+		&.button-small .button-loader-container {
 			inset-inline-end: em(12);
 		}
 
-		&.button-large .loader-container {
+		&.button-large .button-loader-container {
 			inset-inline-end: em(20);
 		}
 	}
@@ -286,8 +274,35 @@
 			opacity: 0;
 		}
 
-		.loader-container {
+		.button-loader-container {
 			inset: 0;
+		}
+	}
+}
+
+.button-underline[aria-busy='true'] {
+	position: relative;
+	padding-inline-end: em(20);
+
+	.button-loader-container {
+		inset-inline-end: 0;
+	}
+}
+
+.button-loader-container {
+	position: absolute;
+	inset-block: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: 0.25s ease-out both anime-button-loader-container-fade-in;
+
+	@keyframes anime-button-loader-container-fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
 		}
 	}
 }
