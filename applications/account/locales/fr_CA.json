@@ -259,11 +259,11 @@
       "Details": [
         "Détails"
       ],
-      "Did not receive the code?": [
-        "Vous n'avez pas reçu le code?"
-      ],
       "Didn't receive a code?": [
         "Vous n'avez pas reçu de code?"
+      ],
+      "Didn't receive the code?": [
+        ""
       ],
       "Disable recovery phrase": [
         "Désactiver la phrase de récupération"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Modifier le filtre Sieve"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Italique"
-      ],
-      "Justify": [
-        "Justifier"
       ],
       "Keep": [
         "Conserver"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Vérifier"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Voir"
@@ -1723,12 +1729,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Impossible de créer de nouveaux calendriers pour tous les calendriers importés en raison de la limite de calendriers personnels."
       ],
-      "Can't validate email, try again later": [
-        "Impossible de valider le courriel, veuillez réessayer plus tard"
-      ],
-      "Can't validate phone, try again later": [
-        "Impossible de valider le numéro de téléphone, veuillez réessayer plus tard"
-      ],
       "Checkout expired, please try again": [
         "La commande a expiré, veuillez réessayer"
       ],
@@ -1907,9 +1907,6 @@
       "Please generate keys before you try to change your password": [
         "Veuillez générer des clés avant d'essayer de changer votre mot de passe"
       ],
-      "Please refresh the page.": [
-        "Veuillez actualiser la page."
-      ],
       "Please set a recovery email first": [
         "Veuillez d'abord définir une adresse courriel de récupération"
       ],
@@ -1937,8 +1934,8 @@
       "Process aborted": [
         "Processus abandonné"
       ],
-      "Request timed out.": [
-        "La requête a expiré."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Nécessite au moins une action"
@@ -1972,9 +1969,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Le navigateur que vous utilisez ne permet pas le traitement complet des paiements. Veuillez utiliser un autre navigateur ou connectez-vous depuis un ordinateur."
-      ],
-      "The composer failed to load.": [
-        "Le composeur n'a pas pu être chargé."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Le nom du dossier est trop long. Veuillez en choisir un autre."
@@ -3750,8 +3744,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installez un fichier de configuration serveur pour vous connecter à un serveur spécifique du pays de votre choix."
       ],
-      "Internet connection lost.": [
-        "Connexion Internet perdue."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Connexion Internet perdue. Veuillez vérifier la connectivité de votre appareil."
@@ -3767,9 +3761,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
-      ],
-      "Justify": [
-        "Justifier"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Conservez cet enregistrement dans votre DNS aussi longtemps que vous souhaiterez utiliser DKIM."
@@ -4138,8 +4129,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
       ],
-      "Session timed out.": [
-        "Session expirée."
+      "Session timed out": [
+        ""
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
@@ -4423,6 +4414,9 @@
       "We'll notify you when the import is done.": [
         "Nous vous informerons quand l'importation sera terminée."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "URL Web"
       ],
@@ -4455,6 +4449,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo lit vos données personnelles afin de permettre aux annonceurs, aux agences de renseignements américaines et à d'autres tiers d’y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
@@ -5045,8 +5042,8 @@
         "${ UsedMembers } sur ${ MaxMembers } utilisateur",
         "${ UsedMembers } sur ${ MaxMembers } utilisateurs"
       ],
-      "(Coming soon)": [
-        "(bientôt disponible)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Account storage": [
         "Espace de stockage du compte"
@@ -5152,6 +5149,9 @@
       ],
       "Code": [
         "Code"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "Couleur"
@@ -5317,9 +5317,6 @@
       ],
       "Enter password": [
         "Saisissez le mot de passe"
-      ],
-      "Enter the 6-digit code": [
-        "Entrez le code à 6 chiffres"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Veuillez saisir le mot de passe pour la clé à empreinte: ${ fingerprintCode }"
@@ -6639,9 +6636,6 @@
       "Secure Core configs": [
         "Configurations Secure Core"
       ],
-      "Select a reason": [
-        "Sélectionnez une raison"
-      ],
       "Standard server configs": [
         "Configurations standards des serveurs"
       ],
@@ -7878,6 +7872,9 @@
       "Email": [
         "Courriel"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email encryption keys": [
         "Clés de chiffrement des courriels"
       ],
@@ -7895,9 +7892,6 @@
       ],
       "Error": [
         "Erreur"
-      ],
-      "Expand content": [
-        "Développer le contenu"
       ],
       "Export": [
         "Exporter"

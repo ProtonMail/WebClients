@@ -269,8 +269,8 @@
       "Details": [
         "詳細"
       ],
-      "Did not receive the code?": [
-        "認証コードを受け取っていませんか?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "破棄"
@@ -304,6 +304,9 @@
       ],
       "Edit phone number": [
         "電話番号を編集"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "メールの設定"
@@ -445,9 +448,6 @@
       ],
       "Italic": [
         "イタリック体"
-      ],
-      "Justify": [
-        "両端揃え"
       ],
       "Keyboard shortcuts": [
         "キーボードショートカット"
@@ -937,6 +937,12 @@
       ],
       "Verify": [
         "検証"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "表示"
@@ -2102,12 +2108,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "メールを検証できません。後でもう一度お試しください"
-      ],
-      "Can't validate phone, try again later": [
-        "電話番号の検証ができませんでした。再度お試しください"
-      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -2306,9 +2306,6 @@
       "Please fix the highlighted conflict to proceed.": [
         ""
       ],
-      "Please refresh the page.": [
-        "ページを更新してください。"
-      ],
       "Please repeat the password": [
         ""
       ],
@@ -2336,8 +2333,8 @@
       "Removed duplicate recipient: ${ recipents }": [
         ""
       ],
-      "Request timed out.": [
-        "リクエストはタイムアウトしました。"
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "少なくとも 1 つのアクションが必要です"
@@ -2380,9 +2377,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "お使いのブラウザでは、支払いを完全に承認できません。 別のブラウザを使用するか、コンピューターからログインしてください。"
-      ],
-      "The composer failed to load.": [
-        "Composerが読み込みに失敗しました。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "フォルダー名が長すぎます。別の名前を選択してください。"
@@ -3623,8 +3617,8 @@
       "Insert link": [
         "リンクを挿入"
       ],
-      "Internet connection lost.": [
-        "インターネット接続が切断されました。"
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "インターネット接続が失われました。デバイスの接続を確認してください。"
@@ -3634,9 +3628,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
-      ],
-      "Justify": [
-        "両端揃え"
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
@@ -3932,11 +3923,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは ${ email } から送信されます"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
-      "Session timed out.": [
-        "セッションがタイムアウトしました。"
+      "Session timed out": [
+        ""
       ],
       "Set a recovery phrase": [
         "リカバリーフレーズを設定"
@@ -4235,6 +4229,9 @@
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "Web URL"
       ],
@@ -4252,6 +4249,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yearly": [
         "毎年"
@@ -4659,8 +4659,8 @@
       "${ firstAddress } and ${ count } others": [
         ""
       ],
-      "(Coming soon)": [
-        "(まもなく登場)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Actions": [
         "動作"
@@ -4749,6 +4749,9 @@
       "City": [
         "市区町村"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Conditions": [
         "条件"
       ],
@@ -4799,9 +4802,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "6 桁のコードを入力してください"
       ],
       "Expires": [
         "有効期限"
@@ -5326,6 +5326,9 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        ""
+      ],
+      "${ createdCalendars } of 1 created": [
         ""
       ],
       "Almost there": [
@@ -6139,12 +6142,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         ""
-      ],
-      "Creating calendar event failed": [
-        ""
-      ],
-      "Updating calendar event failed": [
-        ""
       ]
     },
     "Search - no results": {
@@ -6272,7 +6269,13 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        ""
+      ],
       "Message Content Search": [
+        ""
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
         ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
@@ -6824,6 +6827,9 @@
       "Email addresses": [
         "メールアドレス"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email content": [
         "メール内容"
       ],
@@ -6847,9 +6853,6 @@
       ],
       "Error": [
         "エラー"
-      ],
-      "Expand content": [
-        "コンテンツを展開"
       ],
       "Exporting contacts": [
         "連絡先のエクスポート中"

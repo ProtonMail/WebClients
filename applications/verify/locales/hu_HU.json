@@ -14,14 +14,17 @@
       "Close modal": [
         "Ablak bezárása"
       ],
-      "Did not receive the code?": [
-        "Nem kapta meg a kódot?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "E-mail cím módosítása"
       ],
       "Edit phone number": [
         "Telefonszám módosítása"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "Ellenőrző kód küldése"
@@ -41,6 +44,12 @@
       "Verify": [
         "Ellenőrzés"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "Számla megtekintése"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "E-mail ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
-      ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "A jelszavak nem egyeznek meg"
       ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "Kötelező mező"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
-      "Internet connection lost.": [
-        "Az internetkapcsolat megszakadt."
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "Betöltés"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
-      "Session timed out.": [
-        "A munkamenet lejárt."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Mégsem"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "E-mail cím"
-      ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
       ],
       "Hide password": [
         "A jelszó elrejtése"

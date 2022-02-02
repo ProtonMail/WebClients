@@ -139,6 +139,9 @@
       "Did not receive the code?": [
         "Code nicht erhalten?"
       ],
+      "Didn't receive the code?": [
+        ""
+      ],
       "Done": [
         "Fertig"
       ],
@@ -165,6 +168,9 @@
       ],
       "Edit phone number": [
         "Rufnummer bearbeiten"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email me my username(s)": [
         "Meine(n) Benutzernamen per E-Mail zusenden"
@@ -391,11 +397,17 @@
       "Verify": [
         "Verifizieren"
       ],
+      "Verify account": [
+        ""
+      ],
       "Verify code": [
         "Code bestätigen"
       ],
       "Verify code again": [
         "Code erneut bestätigen"
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Ansicht"
@@ -829,12 +841,6 @@
       "Can't check username, try again later": [
         "Benutzername konnte nicht überprüft werden, bitte versuchen Sie es später erneut"
       ],
-      "Can't validate email, try again later": [
-        "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
-      ],
-      "Can't validate phone, try again later": [
-        "Gerät konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
-      ],
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
       ],
@@ -931,8 +937,8 @@
       "Process aborted": [
         "Prozess abgebrochen"
       ],
-      "Request timed out.": [
-        "Zeitüberschreitung bei Anfrage."
+      "Request timed out": [
+        ""
       ],
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
@@ -1445,8 +1451,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installieren Sie eine Server-Konfigurationsdatei, um eine Verbindung zu einem bestimmten Server im Land Ihrer Wahl herzustellen."
       ],
-      "Internet connection lost.": [
-        "Internetverbindung unterbrochen."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbindung unterbrochen. Bitte überprüfen Sie die Konnektivität Ihres Geräts."
@@ -1602,8 +1608,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
-      "Session timed out.": [
-        "Zeitüberschreitung der Sitzung."
+      "Session timed out": [
+        ""
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
@@ -1734,6 +1740,9 @@
       "We will send a reset code to your recovery email to reset your password.": [
         "Wir senden Ihnen einen Zurücksetzungsschlüssel an Ihre Wiederherstellungs-E-Mail-Adresse, um Ihr Passwort zurückzusetzen."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Wir haben einen Schlüssel zum Zurücksetzen an Ihre Wiederherstellungs‐E‐Mail‐Adresse gesendet, der ohne das Anfordern eines weiteren eine Stunde lang gültig ist. Bitte unten eingeben, um fortzufahren."
       ],
@@ -1745,6 +1754,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchten Sie einen neuen Bestätigungsschlüssel anfordern oder eine alternative Bestätigungsmethode verwenden?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "You already have a free account": [
         "Sie verfügen bereits über ein kostenloses Konto"
@@ -2004,6 +2016,9 @@
       "Category": [
         "Kategorie"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Confirm login password": [
         "Anmeldepasswort bestätigen"
       ],
@@ -2072,9 +2087,6 @@
       ],
       "Enter organization name to confirm": [
         "Name der Organisation zur Bestätigung eingeben"
-      ],
-      "Enter the 6-digit code": [
-        "6-stelligen Code eingeben"
       ],
       "Enter the code displayed on your TV": [
         "Geben Sie den auf Ihrem Fernseher angezeigten Code ein"

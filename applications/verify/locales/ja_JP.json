@@ -14,14 +14,17 @@
       "Close modal": [
         "画面を閉じる"
       ],
-      "Did not receive the code?": [
-        "認証コードを受け取っていませんか?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
       "Edit phone number": [
         "電話番号を編集"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "検証コードを取得"
@@ -41,6 +44,12 @@
       "Verify": [
         "検証"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "請求書を参照"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "メールを検証できません。後でもう一度お試しください"
-      ],
-      "Can't validate phone, try again later": [
-        "電話番号の検証ができませんでした。再度お試しください"
-      ],
       "Email is not valid": [
         "メールアドレスが無効です"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
-      "Request timed out.": [
-        "リクエストがタイムアウトしました。"
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "この項目の入力は必須です"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
-      "Internet connection lost.": [
-        "インターネット接続切断"
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "読み込み中"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
-      "Session timed out.": [
-        "セッションがタイムアウトしました。"
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールと悪用の防止のため、人間である立証をお願いします。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
@@ -173,11 +182,11 @@
       "Cancel": [
         "キャンセル"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "メールアドレス"
-      ],
-      "Enter the 6-digit code": [
-        "6 桁のコードを入力してください"
       ],
       "Hide password": [
         "パスワードを隠す"

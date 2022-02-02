@@ -75,7 +75,7 @@
         "Wyrównaj do prawej"
       ],
       "Alignment": [
-        "Wyrównaj"
+        "Wyrównanie"
       ],
       "All Read": [
         "Wszystkie przeczytane"
@@ -275,7 +275,7 @@
       "Details": [
         "Szczegóły"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Nie otrzymano kodu?"
       ],
       "Discard": [
@@ -311,6 +311,9 @@
       "Edit phone number": [
         "Edytuj numer telefonu"
       ],
+      "Edit sign-in details": [
+        "Edytuj szczegóły logowania"
+      ],
       "Email settings": [
         "Ustawienia poczty e-mail"
       ],
@@ -327,7 +330,7 @@
         "wyklucz wyszukiwanie zawartości wiadomości"
       ],
       "Expand composer": [
-        "Pełny ekran"
+        "Otwórz pełny ekran"
       ],
       "Expand URL": [
         "Rozwiń adres URL"
@@ -454,9 +457,6 @@
       ],
       "Italic": [
         "Kursywa"
-      ],
-      "Justify": [
-        "Wyjustuj"
       ],
       "Keyboard shortcuts": [
         "Skróty klawiszowe"
@@ -949,6 +949,12 @@
       ],
       "Verify": [
         "Zweryfikuj"
+      ],
+      "Verify account": [
+        "Zweryfikuj konto"
+      ],
+      "Verify email": [
+        "Zweryfikuj adres e-mail"
       ],
       "View": [
         "Podgląd"
@@ -2153,12 +2159,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Z powodu limitu maksymalnej liczby osobistych kalendarzy, nie możesz utworzyć nowych kalendarzy dla wszystkich zaimportowanych kalendarzy."
       ],
-      "Can't validate email, try again later": [
-        "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
-      ],
-      "Can't validate phone, try again later": [
-        "Nie można zweryfikować numeru telefonu. Spróbuj ponownie później"
-      ],
       "Checkout expired, please try again": [
         "Płatność wygasła. Spróbuj ponownie"
       ],
@@ -2378,9 +2378,6 @@
         "Popraw zaznaczone konflikty, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować."
       ],
-      "Please refresh the page.": [
-        "Odśwież stronę."
-      ],
       "Please repeat the password": [
         "Potwierdź hasło"
       ],
@@ -2411,8 +2408,8 @@
         "Zduplikowani odbiorcy zostali usunięci: ${ recipents }",
         "Zduplikowani odbiorcy zostali usunięci: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Upłynął limit czasu żądania."
+      "Request timed out": [
+        "Upłynął limit czasu żądania"
       ],
       "Require at least one action": [
         "Co najmniej jedna akcja jest wymagana"
@@ -2458,9 +2455,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Przeglądarka, której używasz, nie pozwala na pełną autoryzację płatności. Skorzystaj z innej przeglądarki lub zaloguj się za pomocą komputera."
-      ],
-      "The composer failed to load.": [
-        "Nie udało się załadować edytora."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Nazwa folderu jest zbyt długa. Wpisz krótszą nazwę."
@@ -3741,10 +3735,10 @@
         "załączników"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtry działają na wszystkie wiadomości, przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę i skrypt Sieve."
+        "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę i skrypt Sieve."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtry działają na wszystkie wiadomości, przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
+        "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Dla rodzin i małych zespołów. Plan zawiera pocztę i usługę VPN."
@@ -3857,8 +3851,8 @@
       "Insert link": [
         "Wstaw link"
       ],
-      "Internet connection lost.": [
-        "Połączenie z Internetem zostało utracone."
+      "Internet connection lost": [
+        "Połączenie z Internetem zostało utracone"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Połączenie z Internetem zostało utracone. Sprawdź połączenie swojego urządzenia."
@@ -3868,9 +3862,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
-      ],
-      "Justify": [
-        "Wyjustuj"
       ],
       "Key fingerprint": [
         "Odcisk klucza"
@@ -4169,11 +4160,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Wysyłanie wiadomości z adresu @pm.me jest płatną funkcją. Wiadomości zostaną wysłane z Twojego domyślnego adresu ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Wysłano z bezpiecznej poczty e-mail <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
-      "Session timed out.": [
-        "Upłynął limit czasu sesji."
+      "Session timed out": [
+        "Upłynął limit czasu sesji"
       ],
       "Set a recovery phrase": [
         "Ustaw hasło odzyskiwania"
@@ -4475,6 +4469,9 @@
       "We'll notify you when the import is done.": [
         "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Wyślemy nowy kod weryfikacyjny do ${ strong }"
+      ],
       "Web URL": [
         "Adres URL"
       ],
@@ -4492,6 +4489,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Czy chcesz otrzymać nowy kod weryfikacyjny?"
       ],
       "Yearly": [
         "Co rok"
@@ -4668,7 +4668,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcje, jak zapłacić gotówką."
+        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
       ]
     },
     "Info on errors": {
@@ -4929,8 +4929,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } i ${ count } innych odbiorców"
       ],
-      "(Coming soon)": [
-        "(wkrótce)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
       "Actions": [
         "Akcje"
@@ -5019,6 +5019,9 @@
       "City": [
         "Miasto"
       ],
+      "Code is 6 digits without spaces": [
+        "Kod to 6 cyfr bez spacji"
+      ],
       "Conditions": [
         "Warunki"
       ],
@@ -5069,9 +5072,6 @@
       ],
       "Enter organization name to confirm": [
         "Wpisz nazwę organizacji, aby potwierdzić"
-      ],
-      "Enter the 6-digit code": [
-        "Wpisz 6-cyfrowy kod"
       ],
       "Expires": [
         "Wygasa"
@@ -5600,6 +5600,12 @@
         "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
         "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
         "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Już prawie"
@@ -6433,12 +6439,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nie można wysłać odpowiedzi na adres organizatora: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Utworzenie wydarzenia nie powiodło się"
-      ],
-      "Updating calendar event failed": [
-        "Zaktualizowanie wydarzenia nie powiodło się"
       ]
     },
     "Search - no results": {
@@ -6584,8 +6584,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Poznaj wszystkie usługi Proton"
+      ],
       "Message Content Search": [
         "Wyszukiwanie zawartości wiadomości"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Zarządzaj bezpiecznie swoim harmonogramem, plikami i życiem online! Otwórz i poznaj wszystkie usługi Proton."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Aby chronić prywatność, Proton zablokował elementy śledzące w tej wiadomości"
@@ -7244,6 +7250,9 @@
       "Email addresses": [
         "Adresy e-mail"
       ],
+      "Email composer": [
+        "Edytor wiadomości"
+      ],
       "Email content": [
         "Zawartość wiadomości"
       ],
@@ -7267,9 +7276,6 @@
       ],
       "Error": [
         "Błąd"
-      ],
-      "Expand content": [
-        "Rozwiń zawartość"
       ],
       "Exporting contacts": [
         "Eksportowanie kontaktów"

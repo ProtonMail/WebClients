@@ -14,7 +14,7 @@
       "Close modal": [
         "Κλείσιμο παραθύρου"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Δεν λάβατε τον κωδικό;"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Επεξεργασία αριθμού τηλεφώνου"
+      ],
+      "Edit sign-in details": [
+        "Επεξεργασία στοιχείων εισόδου"
       ],
       "Get verification code": [
         "Λήψη κωδικού επαλήθευσης"
@@ -41,6 +44,12 @@
       "Verify": [
         "Επαλήθευση"
       ],
+      "Verify account": [
+        "Επαλήθευση λογαριασμού"
+      ],
+      "Verify email": [
+        "Επαλήθευση ηλ. διεύθυνσης"
+      ],
       "View invoice": [
         "Προβολή τιμολογίου"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Αδυναμία επικύρωσης διεύθυνσης ηλ. ταχυδρομείου, παρακαλούμε δοκιμάστε ξανά αργότερα"
-      ],
-      "Can't validate phone, try again later": [
-        "Αδυναμία επικύρωσης αριθμού τηλεφώνου, παρακαλούμε δοκιμάστε ξανά αργότερα"
-      ],
       "Email is not valid": [
         "Μη έγκυρη ηλ. διεύθυνση"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
+      "Request timed out": [
+        "Λήξη χρονικού ορίου αιτήματος"
       ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
       ],
-      "Internet connection lost.": [
-        "Απώλεια σύνδεσης στο διαδίκτυο."
+      "Internet connection lost": [
+        "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
       "Loading": [
         "Φόρτωση"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
-      "Session timed out.": [
-        "Λήξη χρόνου συνεδρίας."
+      "Session timed out": [
+        "Λήξη χρόνου συνεδρίας"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
       ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Ακύρωση"
       ],
+      "Code is 6 digits without spaces": [
+        "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
+      ],
       "Email address": [
         "Διεύθυνση email"
-      ],
-      "Enter the 6-digit code": [
-        "Εισάγετε τον 6-ψήφιο κωδικό"
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"

@@ -271,7 +271,7 @@
       "Details": [
         "Dettagli"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Non hai ricevuto il codice?"
       ],
       "Discard": [
@@ -306,6 +306,9 @@
       ],
       "Edit phone number": [
         "Modifica il numero di telefono"
+      ],
+      "Edit sign-in details": [
+        "Modifica dettagli di accesso"
       ],
       "Email settings": [
         "Impostazioni email"
@@ -448,9 +451,6 @@
       ],
       "Italic": [
         "Corsivo"
-      ],
-      "Justify": [
-        "Giustifica"
       ],
       "Keyboard shortcuts": [
         "Scorciatoie da tastiera"
@@ -941,6 +941,12 @@
       ],
       "Verify": [
         "Verifica"
+      ],
+      "Verify account": [
+        "Verifica account"
+      ],
+      "Verify email": [
+        "Verifica email"
       ],
       "View": [
         "Visualizza"
@@ -2119,12 +2125,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Impossibile creare nuovi calendari per tutti i calendari importati a causa del limite del calendario personale."
       ],
-      "Can't validate email, try again later": [
-        "Impossibile convalidare l'email, riprova più tardi"
-      ],
-      "Can't validate phone, try again later": [
-        "Impossibile convalidare il telefono, riprova più tardi"
-      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
@@ -2330,9 +2330,6 @@
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
       ],
-      "Please refresh the page.": [
-        "Per favore ricarica la pagina."
-      ],
       "Please repeat the password": [
         "Si prega di ripetere la password"
       ],
@@ -2361,8 +2358,8 @@
         "Destinatario del duplicato rimosso: ${ recipents }",
         "Destinatari del duplicato rimossi: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Timeout della richiesta."
+      "Request timed out": [
+        "Timeout della richiesta"
       ],
       "Require at least one action": [
         "Richiede almeno un azione"
@@ -2406,9 +2403,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Il browser che stai usando non consente l'autorizzazione completa del pagamento. Sei pregato di usarne uno differente o di accedere tramite un computer."
-      ],
-      "The composer failed to load.": [
-        "Il compositore non è riuscito a caricare."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
@@ -3230,7 +3224,7 @@
         "(Filtrare se TUTTE le condizioni seguenti sono soddisfatte)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Filtrare se QUALUNQUE delle condizioni seguenti sono soddisfatte)"
+        "(Filtrare se QUALSIASI delle condizioni seguenti sono soddisfatte)"
       ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
@@ -3323,7 +3317,7 @@
         "Tutte le modifiche andranno perse."
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Ti consente di ospitare email per i tuoi domini a ${ mailAppName }, es. john.smith@example.com"
+        "Ti consente di ospitare email per i tuoi domini in ${ mailAppName }, es. john.smith@example.com"
       ],
       "Amount below minimum (${ amount }).": [
         "Importo inferiore al minimo (${ amount })."
@@ -3701,8 +3695,8 @@
       "Insert link": [
         "Inserisci link"
       ],
-      "Internet connection lost.": [
-        "Connessione ad Internet interrotta."
+      "Internet connection lost": [
+        "Connessione ad Internet interrotta"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Connessione Internet persa. Controlla la connettività del tuo dispositivo."
@@ -3712,9 +3706,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Basta confermare la tua selezione e noi faremo il resto."
-      ],
-      "Justify": [
-        "Giustifica"
       ],
       "Key fingerprint": [
         "Impronta digitale della chiave"
@@ -4011,11 +4002,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'invio dei messaggi dall'indirizzo @pm.me è una funzionalità a pagamento. Il tuo messaggio sarà inviato dal tuo indirizzo predefinito ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Inviato con <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> email sicura."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
-      "Session timed out.": [
-        "Sessione scaduta."
+      "Session timed out": [
+        "Sessione scaduta"
       ],
       "Set a recovery phrase": [
         "Imposta una frase di recupero"
@@ -4315,6 +4309,9 @@
       "We'll notify you when the import is done.": [
         "Ti avviseremo quando l'importazione sarà completata."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Invieremo un nuovo codice di verifica a ${ strong }"
+      ],
       "Web URL": [
         "URL web"
       ],
@@ -4332,6 +4329,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Vuoi ricevere un nuovo codice di verifica?"
       ],
       "Yearly": [
         "Annuale"
@@ -4515,7 +4515,7 @@
         "Scaduto"
       ],
       "Primary": [
-        "Primario"
+        "Primaria"
       ],
       "Revoked": [
         "Revocato"
@@ -4589,13 +4589,13 @@
         "Inoltra"
       ],
       "Go to All Mail": [
-        "Va' a Tutti i Messaggi"
+        "Vai a Tutti i Messaggi"
       ],
       "Go to Archive": [
         "Vai all'archivio"
       ],
       "Go to Drafts": [
-        "Va' alle Bozze"
+        "Vai alle Bozze"
       ],
       "Go to Inbox": [
         "Vai alla posta in entrata"
@@ -4604,13 +4604,13 @@
         "Vai alla posta inviata"
       ],
       "Go to Spam": [
-        "Va' a Spam"
+        "Vai a Spam"
       ],
       "Go to Starred": [
-        "Va' ai Preferiti"
+        "Vai ai Preferiti"
       ],
       "Go to Trash": [
-        "Va' al Cestino"
+        "Vai al Cestino"
       ],
       "Jump to first": [
         "Vai al primo"
@@ -4619,7 +4619,7 @@
         "Vai all'ultimo"
       ],
       "Label as...": [
-        "Etichettare come..."
+        "Etichetta come..."
       ],
       "Load embedded images": [
         "Carica le immagini incorporate"
@@ -4717,7 +4717,7 @@
         "Navigazione di base"
       ],
       "Composer shortcuts": [
-        "Compositore scorciatoie"
+        "Scorciatoie compositore"
       ],
       "Folder shortcuts": [
         "Scorciatoie cartella"
@@ -4749,8 +4749,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } e ${ count } altri"
       ],
-      "(Coming soon)": [
-        "(In arrivo)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
       ],
       "Actions": [
         "Azioni"
@@ -4839,6 +4839,9 @@
       "City": [
         "Città"
       ],
+      "Code is 6 digits without spaces": [
+        "Il codice è di 6 cifre senza spazi"
+      ],
       "Conditions": [
         "Condizioni"
       ],
@@ -4889,9 +4892,6 @@
       ],
       "Enter organization name to confirm": [
         "Inserisci il nome dell'organizzazione per confermare"
-      ],
-      "Enter the 6-digit code": [
-        "Inserisci il codice a 6 cifre"
       ],
       "Expires": [
         "Scade"
@@ -5419,6 +5419,10 @@
         "${ createdCalendars } di ${ calendarsToBeCreated } creato",
         "${ createdCalendars } di ${ calendarsToBeCreated } creato"
       ],
+      "${ createdCalendars } of 1 created": [
+        "${ createdCalendars } di 1 creato",
+        "${ createdCalendars } di 1 creati"
+      ],
       "Almost there": [
         "Già qui"
       ],
@@ -5482,7 +5486,7 @@
         "Supporto multi-utente"
       ],
       "Priority": [
-        "Priorità"
+        "Prioritario"
       ],
       "Storage": [
         "Archiviazione"
@@ -6237,12 +6241,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Impossibile inviare all'indirizzo dell'organizzatore: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Creazione dell'evento sul calendario non riuscita"
-      ],
-      "Updating calendar event failed": [
-        "Aggiornamento dell'evento del calendario non riuscito"
       ]
     },
     "Search - no results": {
@@ -6376,8 +6374,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Scopri tutti i servizi Proton"
+      ],
       "Message Content Search": [
         "Ricerca Contenuto Messaggio"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Gestisci in modo sicuro la tua pianificazione, i tuoi file e la tua vita online! Pronto per scoprire tutti i servizi Proton."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Per proteggere la tua privacy, Proton ha bloccato i tracker di posta elettronica in questo messaggio"
@@ -6757,7 +6761,7 @@
         "Personalizzazione di ${ appName }"
       ],
       "${ appName } Keyboard Shortcuts": [
-        "${ appName } Tasti scorciatoie"
+        "${ appName } Scorciatoie da tastiera"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } membro",
@@ -6964,6 +6968,9 @@
       "Email addresses": [
         "Indirizzi email"
       ],
+      "Email composer": [
+        "Compositore email"
+      ],
       "Email content": [
         "Contenuto email"
       ],
@@ -6987,9 +6994,6 @@
       ],
       "Error": [
         "Errore"
-      ],
-      "Expand content": [
-        "Espandi contenuto"
       ],
       "Exporting contacts": [
         "Esportazione contatti"

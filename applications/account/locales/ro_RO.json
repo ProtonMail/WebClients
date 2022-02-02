@@ -259,10 +259,10 @@
       "Details": [
         "Detalii"
       ],
-      "Did not receive the code?": [
+      "Didn't receive a code?": [
         "Nu ați primit codul?"
       ],
-      "Didn't receive a code?": [
+      "Didn't receive the code?": [
         "Nu ați primit codul?"
       ],
       "Disable recovery phrase": [
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Editare script Sieve"
+      ],
+      "Edit sign-in details": [
+        "Editați detaliile de conectare"
       ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Înclinat"
-      ],
-      "Justify": [
-        "Aliniere la margini"
       ],
       "Keep": [
         "Păstrare"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Verificare"
+      ],
+      "Verify account": [
+        "Verifică contul"
+      ],
+      "Verify email": [
+        "Verificarea contului"
       ],
       "View": [
         "Afișare"
@@ -1740,12 +1746,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
-      "Can't validate email, try again later": [
-        "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
-      ],
-      "Can't validate phone, try again later": [
-        "Nu se poate valida telefonul, reîncercați mai târziu."
-      ],
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat, mai reîncercați."
       ],
@@ -1928,9 +1928,6 @@
       "Please generate keys before you try to change your password": [
         "Generați cheile înainte de a vă schimba parola."
       ],
-      "Please refresh the page.": [
-        "Reîmprospătați pagina."
-      ],
       "Please set a recovery email first": [
         "Setați mai întâi un e-mail de recuperare."
       ],
@@ -1958,8 +1955,8 @@
       "Process aborted": [
         "Proces abandonat"
       ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
+      "Request timed out": [
+        "Solicitarea a expirat"
       ],
       "Require at least one action": [
         "Necesită cel puțin o acțiune"
@@ -1993,9 +1990,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Navigatorul folosit nu permite autorizarea plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
-      ],
-      "The composer failed to load.": [
-        "Editorul de mesaje nu a putut fi încărcat."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
@@ -3807,8 +3801,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instalați un fișier de configurare al serverului pentru a vă conecta la un server din țara aleasă."
       ],
-      "Internet connection lost.": [
-        "Conexiunea la internet s-a întrerupt."
+      "Internet connection lost": [
+        "Conexiunea la internet s-a întrerupt"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
@@ -3824,9 +3818,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
-      ],
-      "Justify": [
-        "Aliniere la margini"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Păstrați aceste înregistrări în DNS atât timp cât doriți să utilizați DKIM."
@@ -4196,8 +4187,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
-      "Session timed out.": [
-        "Sesiune expirată."
+      "Session timed out": [
+        "Sesiune expirată"
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
@@ -4481,6 +4472,9 @@
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Vom trimite un nou cod de verificare la ${ strong }"
+      ],
       "Web URL": [
         "Adresa URL"
       ],
@@ -4513,6 +4507,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Doriți să primiți un nou cod de verificare?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo vă citeşte datele personale pentru a oferi acces agenţilor de publicitate, agenţiilor de informaţii americane şi altor terţe părți. Pentru o confidențialitate mai bună, creați o adresă de e-mail securizată."
@@ -5107,8 +5104,8 @@
         "${ UsedMembers } din ${ MaxMembers } utilizatori",
         "${ UsedMembers } din ${ MaxMembers } de utilizatori"
       ],
-      "(Coming soon)": [
-        "(În curând)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
       ],
       "Account storage": [
         "Spațiu cont"
@@ -5214,6 +5211,9 @@
       ],
       "Code": [
         "Cod"
+      ],
+      "Code is 6 digits without spaces": [
+        "Codul este format din 6 cifre fără spații"
       ],
       "Color": [
         "Culoare"
@@ -5379,9 +5379,6 @@
       ],
       "Enter password": [
         "Introduceți parola"
-      ],
-      "Enter the 6-digit code": [
-        "Introduceți codul din 6 cifre"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduceți parola pentru cheia cu amprenta: ${ fingerprintCode }"
@@ -6712,9 +6709,6 @@
       "Secure Core configs": [
         "Configurări „Secure Core”"
       ],
-      "Select a reason": [
-        "Selectați un motiv"
-      ],
       "Standard server configs": [
         "Configurări standard de server"
       ],
@@ -7954,6 +7948,9 @@
       "Email": [
         "E-mail"
       ],
+      "Email composer": [
+        "Compozitor de e-mail"
+      ],
       "Email encryption keys": [
         "Chei de criptare e-mail"
       ],
@@ -7971,9 +7968,6 @@
       ],
       "Error": [
         "Eroare"
-      ],
-      "Expand content": [
-        "Extindere conținut"
       ],
       "Export": [
         "Exportare"

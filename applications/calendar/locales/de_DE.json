@@ -166,8 +166,8 @@
       "Deselect all": [
         "Alle abwählen"
       ],
-      "Did not receive the code?": [
-        "Code nicht erhalten?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Verwerfen"
@@ -192,6 +192,9 @@
       ],
       "Edit phone number": [
         "Rufnummer bearbeiten"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
@@ -256,9 +259,6 @@
       "Increase": [
         "Erhöhen"
       ],
-      "Keyboard shortcuts": [
-        "Tastaturkürzel"
-      ],
       "Load image": [
         "Bild laden"
       ],
@@ -267,12 +267,6 @@
       ],
       "Log in": [
         "Anmelden"
-      ],
-      "Mailbox density": [
-        "Postfach-Dichte"
-      ],
-      "Mailbox layout": [
-        "Postfach-Darstellung"
       ],
       "Make this participant optional": [
         "Diesen Teilnehmer als „Freiwillig” kennzeichnen"
@@ -344,7 +338,7 @@
         "Vorheriger Tag"
       ],
       "Previous month": [
-        "Voriger Monat"
+        "Vorheriger Monat"
       ],
       "Previous week": [
         "Vorherige Woche"
@@ -514,11 +508,14 @@
       "Use for sending": [
         "Zum Senden benutzen"
       ],
-      "Use “${ label }” setting": [
-        "Einstellung „${ label }” verwenden"
-      ],
       "Verify": [
         "Bestätigen"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Anzeigen"
@@ -604,37 +601,37 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } begann gestern um ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        "${ title } beginnt um ${ formattedHour }"
+      ],
       "${ title } starts now": [
         "${ title } beginnt jetzt"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        "${ title } beginnt am ${ _formattedDate2 }"
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } beginnt am ${ _formattedDate2 } um ${ formattedHour }"
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        "${ title } beginnt am ${ _formattedDate3 }"
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } beginnt am ${ _formattedDate3 } um ${ formattedHour }"
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        "${ title } beginnt am ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        "${ title } beginnt am ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } beginnt heute"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } beginnt um ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } beginnt am ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } beginnt am ${ _formattedDate2 } um ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } beginnt am ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } beginnt am ${ _formattedDate3 } um ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } beginnt am ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } beginnt am ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
+      "${ title } starts tomorrow": [
         "${ title } beginnt morgen"
       ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
+      "${ title } starts tomorrow at ${ formattedHour }": [
         "${ title } beginnt morgen um ${ formattedHour }"
       ]
     },
@@ -1002,14 +999,6 @@
         ": "
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Maximiert"
-      ],
-      "Normal": [
-        "Standard"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Importanpassung beenden?"
@@ -1165,14 +1154,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Überfällige Rechnung"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Gut lesbar"
-      ],
-      "Compact": [
-        "Kompakt"
       ]
     },
     "Description": {
@@ -1386,12 +1367,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Es können keine neuen Kalender für alle zu importierenden Kalender erstellt werden, da die Anzahl der persönlichen Kalender beschränkt ist."
       ],
-      "Can't validate email, try again later": [
-        "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
-      ],
-      "Can't validate phone, try again later": [
-        "Gerät konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
-      ],
       "Cancellation failed to be sent": [
         "Absage konnte nicht gesendet werden"
       ],
@@ -1458,10 +1433,10 @@
         "Das Hochladen der Grafik ist fehlgeschlagen"
       ],
       "Incorrect login credentials. Please try again": [
-        "Ungültige Anmeldedaten. Bitte versuchen Sie es erneut."
+        "Ungültige Anmeldedaten. Bitte versuche es erneut."
       ],
       "Incorrect mailbox password. Please try again": [
-        "Ungültiges Postfach-Passwort. Bitte versuchen Sie es erneut."
+        "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
       ],
       "Interval cannot be empty": [
         "Intervall muss angegeben werden"
@@ -1575,8 +1550,8 @@
         "Bitte zuerst eine Adresse erstellen."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Bitte beheben Sie den hervorgehobenen Konflikt, um fortfahren zu können.",
-        "Bitte beheben Sie die hervorgehobenen Konflikte, um fortfahren zu können."
+        "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
+        "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können."
       ],
       "Preferences could not be saved": [
         "Einstellungen konnten nicht gespeichert werden"
@@ -1590,8 +1565,8 @@
       "Process aborted": [
         "Prozess abgebrochen"
       ],
-      "Request timed out.": [
-        "Zeitüberschreitung der Anfrage."
+      "Request timed out": [
+        ""
       ],
       "Self invitation not allowed": [
         "Selbsteinladung nicht zulässig"
@@ -1681,7 +1656,7 @@
         "Es ist nicht zulässig, vCards an mehr als 10 Kontakte zu senden"
       ],
       "You must set a name": [
-        "Sie müssen einen Namen festlegen"
+        "Du musst einen Namen eingeben"
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
@@ -1868,7 +1843,7 @@
         "Es gab ein Problem mit der Verbindung zu Proton."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Sie können auch ${ refresh } oder es später noch einmal versuchen."
+        "Du kannst auch ${ refresh } oder es später noch einmal versuchen."
       ],
       "You need an active personal calendar to import events": [
         "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine importieren zu können"
@@ -2369,9 +2344,6 @@
       "At most 100 participants are allowed per invitation": [
         "Maximal 100 Teilnehmer sind pro Einladung erlaubt"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Grundlegende Navigation und Aktionen bleiben verfügbar, unabhängig davon, ob in den Einstellungen Tastaturkürzel aktiviert sind oder nicht."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "Abgerechnet mit ${ billedPrice } alle 2 Jahre"
       ],
@@ -2403,10 +2375,10 @@
         "Kontakte werden geprüft... (${ progress } von ${ max })"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+        "Klicke auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese E-Mail-Adresse nicht stimmt, klicke auf „Bearbeiten”, um sie zu korrigieren."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+        "Klicke auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten”, um sie zu korrigieren."
       ],
       "Close this screen to exit.": [
         "Schließe dieses Fenster, um den Vorgang zu beenden."
@@ -2473,7 +2445,7 @@
         "Jede zusätzliche Verbindung kann Benutzern in deiner Organisation zugewiesen werden."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Geben Sie den an ${ destinationText } gesendeten Bestätigungsschlüssel ein."
+        "Gib den an ${ destinationText } gesendeten Bestätigungsschlüssel ein."
       ],
       "Existent and added participants will be notified.": [
         "Vorhandene und hinzugefügte Teilnehmer werden benachrichtigt."
@@ -2521,13 +2493,13 @@
         "hier"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
+        "Wenn du Probleme bei der Erstellung deines Kontos hast, stelle bitte eine Anfrage, und wir werden dir innerhalb eines Werktages antworten."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Wenn Sie glauben, dass dies ungerechtfertigt ist, kontaktieren Sie uns bitte ${ contactLink }."
+        "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden können, überprüfen Sie bitte Ihren Spam-Ordner."
+        "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
@@ -2551,8 +2523,8 @@
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
       ],
-      "Internet connection lost.": [
-        "Internetverbindung unterbrochen."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbindung getrennt. Bitte überprüfe, ob dein Gerät verbunden ist."
@@ -2723,8 +2695,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
-      "Session timed out.": [
-        "Die Sitzung wurde getrennt."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-ProtonMail-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
@@ -2802,16 +2774,16 @@
         "Dieser Termin wurde aktualisiert. Der Organisator kann nicht darüber informiert werden, dass du die Einladung ablehnst, da du von der eingeladenen Adresse keine E-Mails senden kannst. Möchtest du diesen Termin trotzdem löschen?"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität) und kann von den Browsern Internet Explorer und Edge nicht geöffnet werden. Wenn Sie sicher sind, dass der Link seriös ist, verwenden Sie einen anderen Browser, um ihn zu öffnen."
+        "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein und kann von Internet Explorer und Edge nicht geöffnet werden. Wenn du sicher bist, dass der Link legitim ist, verwende einen anderen Browser, um ihn zu öffnen."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität). Bitte vergewissern Sie sich, dass dies der Link ist, den Sie besuchen möchten, oder öffnen Sie ihn nicht."
+        "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität). Bitte vergewissere dich, dass dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung deines Proton-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Popup-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
+        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob du ein Mensch bist."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Um deine Kontakte neu zu signieren, muss jeder Kontakt mit der Liste der in deinem Konto verfügbaren Verschlüsselungsschlüssel verglichen werden. Wenn keine Übereinstimmung gefunden wird, wird der Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
@@ -2849,6 +2821,9 @@
       "We'll notify you when the import is done.": [
         "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Woche"
       ],
@@ -2877,7 +2852,10 @@
         "Möchtest du diesen Termin löschen?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Möchten Sie einen neuen Verifizierungscode anfordern oder eine alternative Bestätigungsmethode verwenden?"
+        "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to update all events in this series?": [
         "Möchtest du alle Termine dieser Serie aktualisieren?"
@@ -2988,7 +2966,7 @@
         "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiterhin nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
+        "Dein Proton-Konto ist derzeit gesperrt. Um es weiter nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Deine Systemzeitzone scheint sich auf ${ timezone } geändert zu haben. Möchtest du deine Zeitzoneneinstellung aktualisieren?"
@@ -3047,194 +3025,9 @@
         "Web Key Directory (WKD)"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Jetzt verschlüsseln"
-      ],
-      "Add expiration time": [
-        "Verfallszeit hinzufügen"
-      ],
-      "Apply / open": [
-        "Übernehmen / Öffnen"
-      ],
-      "Attach file": [
-        "Datei anhängen"
-      ],
-      "Cancel / close": [
-        "Abbrechen / Schließen"
-      ],
-      "Close draft": [
-        "Entwurf schließen"
-      ],
-      "Create filter with...": [
-        "Filter erstellen mit …"
-      ],
-      "Delete permanently": [
-        "Dauerhaft löschen"
-      ],
-      "Discard draft": [
-        "Entwurf verwerfen"
-      ],
-      "Expand / contract composer": [
-        "Verfassen-Fenster erweitern/reduzieren"
-      ],
-      "Forward": [
-        "Weiterleiten"
-      ],
-      "Go to All Mail": [
-        "Zu „Allen Nachrichten”"
-      ],
-      "Go to Archive": [
-        "Zum Archiv"
-      ],
-      "Go to Drafts": [
-        "Zu den Entwürfen"
-      ],
-      "Go to Inbox": [
-        "Zum Posteingang"
-      ],
-      "Go to Sent": [
-        "Zu den Gesendeten"
-      ],
-      "Go to Spam": [
-        "Zum Spam-Ordner"
-      ],
-      "Go to Starred": [
-        "Zu den Gekennzeichneten"
-      ],
-      "Go to Trash": [
-        "Zum Papierkorb"
-      ],
-      "Jump to first": [
-        "Zum ersten Element"
-      ],
-      "Jump to last": [
-        "Zum letzten Element"
-      ],
-      "Label as...": [
-        "Zu Kategorie …"
-      ],
-      "Load embedded images": [
-        "Eingebettete Grafiken laden"
-      ],
-      "Load remote content": [
-        "Inhalte aus externen Quellen laden"
-      ],
-      "Mark as unread": [
-        "Als „Ungelesen” kennzeichnen"
-      ],
-      "Minimize / maximize composer": [
-        "Verfassen-Fenster minimieren/maximieren"
-      ],
-      "Move down": [
-        "Abwärts"
-      ],
-      "Move left / collapse": [
-        "Nach links / Reduzieren"
-      ],
-      "Move right / expand": [
-        "Nach rechts / Erweitern"
-      ],
-      "Move to Archive": [
-        "In Archiv verschieben"
-      ],
-      "Move to Inbox": [
-        "In Posteingang verschieben"
-      ],
-      "Move to Spam": [
-        "In Spam-Ordner verschieben"
-      ],
-      "Move to Trash": [
-        "In Papierkorb verschieben"
-      ],
-      "Move to...": [
-        "Verschieben nach …"
-      ],
-      "Move up": [
-        "Aufwärts"
-      ],
-      "New message": [
-        "Neue Nachricht"
-      ],
-      "Open next message": [
-        "Nächste Nachricht öffnen"
-      ],
-      "Open previous message": [
-        "Vorherige Nachricht öffnen"
-      ],
-      "Open this modal": [
-        "Als Dialog öffnen"
-      ],
-      "Reply": [
-        "Antworten"
-      ],
-      "Reply all": [
-        "Allen antworten"
-      ],
-      "Save draft": [
-        "Entwurf speichern"
-      ],
-      "Search": [
-        "Suchen"
-      ],
-      "Select / unselect": [
-        "Aus-/Abwählen"
-      ],
-      "Select / unselect all": [
-        "Alle auswählen/abwählen"
-      ],
-      "Send email": [
-        "E-Mail senden"
-      ],
-      "Show all emails": [
-        "Alle E-Mails anzeigen"
-      ],
-      "Show original message": [
-        "Originalnachricht anzeigen"
-      ],
-      "Show unread emails": [
-        "Ungelesene E-Mails anzeigen"
-      ],
-      "Star": [
-        "Kennzeichnen"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Aktions-Tastaturkürzel"
-      ],
-      "Basic actions": [
-        "Standardaktionen"
-      ],
-      "Basic navigation": [
-        "Standardnavigation"
-      ],
-      "Composer shortcuts": [
-        "Tastaturkürzel in Verfassen-Fenster"
-      ],
-      "Folder shortcuts": [
-        "Ordner-Tastaturkürzel"
-      ],
-      "List shortcuts": [
-        "Listen-Tastaturkürzel"
-      ],
-      "Message shortcuts": [
-        "Nachrichten-Tastaturkürzel"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Aus"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Ein"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Demnächst verfügbar)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "0 - Not likely": [
         "0 — Unwahrscheinlich"
@@ -3292,6 +3085,9 @@
       ],
       "City": [
         "Stadt"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "Farbe"
@@ -3356,9 +3152,6 @@
       "Enter organization name to confirm": [
         "Name der Organisation zur Bestätigung eingeben"
       ],
-      "Enter the 6-digit code": [
-        "6-stelligen Code eingeben"
-      ],
       "Event title": [
         "Titel des Termins"
       ],
@@ -3403,9 +3196,6 @@
       ],
       "Import to:": [
         "Importieren nach:"
-      ],
-      "Keyboard shortcuts": [
-        "Tastaturkürzel"
       ],
       "Label messages as": [
         "Nachrichten kennzeichnen als"
@@ -3504,15 +3294,6 @@
       "Select a method": [
         "Methode auswählen"
       ],
-      "Select how your composer opens by default.": [
-        "Wähle aus, wie dein Verfassen-Fenster standardmäßig geöffnet wird."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Wähle aus, wie deine Nachrichtenliste standardmäßig aussehen soll."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Wähle aus, wie dein Postfach standardmäßig aussehen soll."
-      ],
       "Select your country": [
         "Land auswählen"
       ],
@@ -3572,30 +3353,6 @@
         "Name"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximiert"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Gut lesbar"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Spalte"
-      ],
-      "Row": [
-        "Zeile"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
@@ -3618,14 +3375,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } erstellt"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Spalte"
-      ],
-      "Row": [
-        "Zeile"
       ]
     },
     "Link": {
@@ -4222,7 +3971,7 @@
     },
     "Participant name": {
       "You": [
-        "Sie"
+        "Du"
       ]
     },
     "Participants expand button label": {
@@ -4670,9 +4419,6 @@
       "Invitation sent and participants added to all events": [
         "Einladung gesendet und Teilnehmer zu allen Terminen hinzugefügt"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Tastaturkürzel-Voreinstellungen aktualisiert"
-      ],
       "Participants notified and all events updated": [
         "Teilnehmer benachrichtigt und alle Termine aktualisiert"
       ],
@@ -4804,9 +4550,6 @@
       "${ appName } customization": [
         "${ appName } anpassen"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Tastaturkürzel"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } Mitglied",
         "${ emailsCount } Mitglieder"
@@ -4887,9 +4630,6 @@
       "Clearing data": [
         "Daten werden bereinigt"
       ],
-      "Composer mode": [
-        "Verfassen-Modus"
-      ],
       "Confirm loss of Proton bonuses": [
         "Bestätige den Verzicht auf Proton-Prämien"
       ],
@@ -4916,9 +4656,6 @@
       ],
       "Create contact": [
         "Kontakt erstellen"
-      ],
-      "Create event": [
-        "Termin erstellen"
       ],
       "Create new group": [
         "Neue Gruppe erstellen"
@@ -4981,9 +4718,6 @@
       ],
       "Edit contact group": [
         "Kontaktgruppe bearbeiten"
-      ],
-      "Edit event": [
-        "Termin bearbeiten"
       ],
       "Edit image": [
         "Grafik bearbeiten"
@@ -5052,17 +4786,8 @@
       "Invalid verification code": [
         "Ungültiger Bestätigungscode"
       ],
-      "Keyboard Shortcuts": [
-        "Tastaturkürzel"
-      ],
       "Link confirmation": [
         "Link-Bestätigung"
-      ],
-      "Mailbox density": [
-        "Postfach-Dichte"
-      ],
-      "Mailbox layout": [
-        "Postfach-Darstellung"
       ],
       "Merge contacts": [
         "Kontakte zusammenführen"

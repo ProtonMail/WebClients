@@ -14,7 +14,7 @@
       "Close modal": [
         "Закрыть окно"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Не получили код?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Изменить номер телефона"
+      ],
+      "Edit sign-in details": [
+        "Изменить информацию о входе в систему"
       ],
       "Get verification code": [
         "Получить проверочный код"
@@ -41,6 +44,12 @@
       "Verify": [
         "Проверить"
       ],
+      "Verify account": [
+        "Подтвердить аккаунт"
+      ],
+      "Verify email": [
+        "Подтвердить эл. почту"
+      ],
       "View invoice": [
         "Просмотр счета"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты, повторите попытку позже"
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить телефон, повторите попытку позже"
-      ],
       "Email is not valid": [
         "Эл. почта недействительна"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Пароль и его подтверждение не совпадают"
       ],
-      "Request timed out.": [
-        "Время ожидания запроса истекло."
+      "Request timed out": [
+        "Время запроса истекло"
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
       ],
-      "Internet connection lost.": [
-        "Соединение с интернетом потеряно."
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
       ],
       "Loading": [
         "Загружаем"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
-      "Session timed out.": [
-        "Время сессии истекло."
+      "Session timed out": [
+        "Время сеанса истекло"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Мы отправим новый код подтверждения на ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать альтернативный метод проверки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Хотите ли вы получить новый код подтверждения?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Отменить"
       ],
+      "Code is 6 digits without spaces": [
+        "Код состоит из 6 цифр без пробелов"
+      ],
       "Email address": [
         "Адрес эл. почты"
-      ],
-      "Enter the 6-digit code": [
-        "Введите код из 6 цифр"
       ],
       "Hide password": [
         "Скрыть пароль"

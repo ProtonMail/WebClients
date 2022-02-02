@@ -122,9 +122,6 @@
       "Compose": [
         "Skriv"
       ],
-      "Composer size": [
-        "Skrivevinduestørrelse"
-      ],
       "Confirm": [
         "Bekræft"
       ],
@@ -187,8 +184,8 @@
       "Details": [
         "Detaljer"
       ],
-      "Did not receive the code?": [
-        "Ikke modtaget koden?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Done": [
         "Færdig"
@@ -210,6 +207,9 @@
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "E-mailindstillinger"
@@ -277,9 +277,6 @@
       "Increase": [
         "Forøg"
       ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
-      ],
       "Load image": [
         "Indlæs billede"
       ],
@@ -288,12 +285,6 @@
       ],
       "Log in": [
         "Log ind"
-      ],
-      "Mailbox density": [
-        "Postkasse tæthed"
-      ],
-      "Mailbox layout": [
-        "Postkasse layout"
       ],
       "Manage link": [
         "Håndter link"
@@ -559,11 +550,14 @@
       "Use for sending": [
         "Brug til afsendelse"
       ],
-      "Use “${ label }” setting": [
-        "Brug “${ label }” indstilling"
-      ],
       "Verify": [
         "Verificer"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Vis"
@@ -891,14 +885,6 @@
         "Kalenderformat understøttes ikke"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Maksimeret"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Afslut importtilpasning?"
@@ -1011,14 +997,6 @@
         "Forfalden faktura"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, vil du kunne downloade filen med alle dine eksporterede kontakter."
@@ -1101,12 +1079,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
-      ],
-      "Can't validate email, try again later": [
-        "Kan ikke bekræfte e-mail, prøv igen senere"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan ikke bekræfte telefon, prøv igen senere"
       ],
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
@@ -1273,8 +1245,8 @@
       "Process aborted": [
         "Proces afbrudt"
       ],
-      "Request timed out.": [
-        "Forespørgsel fik timeout."
+      "Request timed out": [
+        ""
       ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
@@ -1824,9 +1796,6 @@
         "Er du sikker på, at du ønsker at slette det valgte emne permanent fra papirkurven?",
         "Er du sikker på, at du ønsker at slette de valgte emner permanent fra papirkurven?"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Fordi ${ appName } er end-to-end krypteret, kan vi ikke få adgang til eller dekryptere dine filer for dig. For at låse dit drev op efter en nulstilling af adgangskode, skal du have en af følgende:"
       ],
@@ -2046,8 +2015,8 @@
       "Initializing": [
         "Initialiserer"
       ],
-      "Internet connection lost.": [
-        "Internetforbindelse afbrudt."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
@@ -2263,8 +2232,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
-      "Session timed out.": [
-        "Session er udløbet."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail-bruger, der benytter en PGP-kompatibel tjeneste."
@@ -2408,6 +2377,9 @@
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Uge"
       ],
@@ -2422,6 +2394,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to restore your files?": [
         "Ønsker du at gendanne dine filer?"
@@ -2588,197 +2563,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Tilføj kryptering"
-      ],
-      "Add expiration time": [
-        "Tilføj udløbstid"
-      ],
-      "Apply / open": [
-        "Anvend / åbn"
-      ],
-      "Attach file": [
-        "Vedhæft fil"
-      ],
-      "Cancel / close": [
-        "Annuller / luk"
-      ],
-      "Close draft": [
-        "Luk kladde"
-      ],
-      "Create filter with...": [
-        "Opret filter med..."
-      ],
-      "Delete permanently": [
-        "Slet permanent"
-      ],
-      "Discard draft": [
-        "Kassér kladde"
-      ],
-      "Expand / contract composer": [
-        "Udvid / sammentræk skrivevinduet"
-      ],
-      "Forward": [
-        "Videresend"
-      ],
-      "Go to All Mail": [
-        "Gå til Alle mails"
-      ],
-      "Go to Archive": [
-        "Gå til Arkiv"
-      ],
-      "Go to Drafts": [
-        "Gå til Kladder"
-      ],
-      "Go to Inbox": [
-        "Gå til Indbakke"
-      ],
-      "Go to Sent": [
-        "Gå til Sendt"
-      ],
-      "Go to Spam": [
-        "Gå til Spam"
-      ],
-      "Go to Starred": [
-        "Gå til Stjernemarkeret"
-      ],
-      "Go to Trash": [
-        "Gå til Papirkurv"
-      ],
-      "Jump to first": [
-        "Gå til første"
-      ],
-      "Jump to last": [
-        "Gå til sidste"
-      ],
-      "Label as...": [
-        "Tilføj etiket..."
-      ],
-      "Load embedded images": [
-        "Indlæs indlejrede billeder"
-      ],
-      "Load remote content": [
-        "Indlæs eksternt indhold"
-      ],
-      "Mark as unread": [
-        "Markér som ulæst"
-      ],
-      "Minimize / maximize composer": [
-        "Minimer / maksimer skrivevinduet"
-      ],
-      "Move down": [
-        "Flyt ned"
-      ],
-      "Move left / collapse": [
-        "Flyt til venstre / kollaps"
-      ],
-      "Move right / expand": [
-        "Flyt til højre / udvid"
-      ],
-      "Move to Archive": [
-        "Flyt til Arkiv"
-      ],
-      "Move to Inbox": [
-        "Flyt til Indbakke"
-      ],
-      "Move to Spam": [
-        "Flyt til Spam"
-      ],
-      "Move to Trash": [
-        "Flyt til Papirkurv"
-      ],
-      "Move to...": [
-        "Flyt til..."
-      ],
-      "Move up": [
-        "Flyt op"
-      ],
-      "New message": [
-        "Ny besked"
-      ],
-      "Open next message": [
-        "Åbn næste besked"
-      ],
-      "Open previous message": [
-        "Åbn forrige besked"
-      ],
-      "Open this modal": [
-        "Åbn dette hjælpevindue"
-      ],
-      "Reply": [
-        "Svar"
-      ],
-      "Reply all": [
-        "Svar alle"
-      ],
-      "Save draft": [
-        "Gem kladde"
-      ],
-      "Search": [
-        "Søg"
-      ],
-      "Select / unselect": [
-        "Vælg / fravælg"
-      ],
-      "Select / unselect all": [
-        "Vælg / fravælg alle"
-      ],
-      "Send email": [
-        "Send e-mail"
-      ],
-      "Show all emails": [
-        "Vis alle e-mails"
-      ],
-      "Show original message": [
-        "Vis oprindelig besked"
-      ],
-      "Show unread emails": [
-        "Vis ulæste e-mails"
-      ],
-      "Star": [
-        "Maekér med stjerne"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Genveje til handling"
-      ],
-      "Basic actions": [
-        "Grundlæggende handlinger"
-      ],
-      "Basic navigation": [
-        "Grundlæggende navigation"
-      ],
-      "Composer shortcuts": [
-        "Skrivevinduegenveje"
-      ],
-      "Folder shortcuts": [
-        "Mappegenveje"
-      ],
-      "List shortcuts": [
-        "Vis genveje"
-      ],
-      "Message shortcuts": [
-        "Beskedgenveje"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Fra"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Til"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Kommer snart)"
-      ],
       "(Expired)": [
         "(Udløbet)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Active": [
         "Aktiv"
@@ -2843,6 +2633,9 @@
       "City": [
         "By"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Completed": [
         "Fuldført"
       ],
@@ -2888,9 +2681,6 @@
       ],
       "Enter organization name to confirm": [
         "Indtast organisationsnavn for at bekræfte"
-      ],
-      "Enter the 6-digit code": [
-        "Indtast den sekscifrede kode"
       ],
       "Expired": [
         "Udløbet"
@@ -2948,9 +2738,6 @@
       ],
       "Import to email address": [
         "Importer til e-mailadresse"
-      ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
       ],
       "Label messages as": [
         "Giv beskeder etiketten"
@@ -3041,15 +2828,6 @@
       ],
       "Select a method": [
         "Vælg en metode"
-      ],
-      "Select how your composer opens by default.": [
-        "Vælg hvordan dit skrivevindue åbner som standard."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Vælg hvordan din liste over beskeder ser ud som standard."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Vælg hvordan din postkasse ser ud som standard."
       ],
       "Select your country": [
         "Vælg dit land"
@@ -3149,30 +2927,6 @@
         "Navn"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maksimeret"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Vedhæft screenshot(s)"
@@ -3195,14 +2949,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } oprettet"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
       ]
     },
     "Link": {
@@ -3244,6 +2990,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } af ${ calendarsToBeCreated } oprettet",
         "${ createdCalendars } af ${ calendarsToBeCreated } oprettet"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        ""
       ],
       "Almost there": [
         "Næsten færdig"
@@ -3938,9 +3688,6 @@
       "Fingerprint copied to clipboard": [
         "Fingeraftryk kopieret til udklipsholder"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Indstillinger for tastaturgenveje opdateret"
-      ],
       "Phone number copied to clipboard": [
         "Telefonnummer kopieret til udklipsholder"
       ],
@@ -4083,9 +3830,6 @@
       "${ appName } customization": [
         "${ appName } tilpasning"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Tastaturgenveje"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } medlem",
         "${ emailsCount } medlemmer"
@@ -4144,9 +3888,6 @@
       ],
       "Clearing data": [
         "Rydder data"
-      ],
-      "Composer mode": [
-        "Skrivetilstand"
       ],
       "Confirm loss of Proton bonuses": [
         "Bekræft tab af Proton-bonusser"
@@ -4318,20 +4059,11 @@
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
       ],
-      "Keyboard Shortcuts": [
-        "Tastaturgenveje"
-      ],
       "Link confirmation": [
         "Linkbekræftelse"
       ],
       "Location": [
         "Placering"
-      ],
-      "Mailbox density": [
-        "Postkasse tæthed"
-      ],
-      "Mailbox layout": [
-        "Postkasse layout"
       ],
       "Manage secure link": [
         "Administrer sikkert link"

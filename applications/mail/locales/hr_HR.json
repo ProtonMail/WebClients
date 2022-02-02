@@ -273,8 +273,8 @@
       "Details": [
         "Pojedinosti"
       ],
-      "Did not receive the code?": [
-        "Niste primili kôd?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Odbaci"
@@ -308,6 +308,9 @@
       ],
       "Edit phone number": [
         "Uredi broj telefona"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Postavke e-pošte"
@@ -451,9 +454,6 @@
       ],
       "Italic": [
         "Kurziv"
-      ],
-      "Justify": [
-        "Poravnaj obostrano"
       ],
       "Keyboard shortcuts": [
         "Tipkovni prečaci"
@@ -945,6 +945,12 @@
       ],
       "Verify": [
         "Potvrdi"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Pregled"
@@ -2136,12 +2142,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
-      ],
       "Checkout expired, please try again": [
         ""
       ],
@@ -2354,9 +2354,6 @@
         "",
         ""
       ],
-      "Please refresh the page.": [
-        "Osvježite stranicu."
-      ],
       "Please repeat the password": [
         ""
       ],
@@ -2386,8 +2383,8 @@
         "",
         ""
       ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Zahtijeva najmanje jednu radnju"
@@ -2432,9 +2429,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
-      ],
-      "The composer failed to load.": [
-        "Neuspješno učitavanje prozora za novu poruku."
       ],
       "The folder name is too long. Please choose a different name.": [
         ""
@@ -3779,8 +3773,8 @@
       "Insert link": [
         "Umetni poveznicu"
       ],
-      "Internet connection lost.": [
-        "Prekinuta je internetska veza."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
@@ -3790,9 +3784,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
-      ],
-      "Justify": [
-        "Poravnaj obostrano"
       ],
       "Key fingerprint": [
         "Otisak prsta ključa"
@@ -4090,11 +4081,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Slanje poruka s @pm.me adrese je plaćena značajka. Vaša će poruka biti poslana s Vaše zadane adrese ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Sesija je istekla."
+      "Session timed out": [
+        ""
       ],
       "Set a recovery phrase": [
         ""
@@ -4395,6 +4389,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "URL stranice"
       ],
@@ -4412,6 +4409,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yearly": [
         "Godišnje"
@@ -4839,7 +4839,7 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } i ${ count } drugih"
       ],
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "Actions": [
@@ -4929,6 +4929,9 @@
       "City": [
         "Grad"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Conditions": [
         "Uvjeti"
       ],
@@ -4979,9 +4982,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Unesite 6-znamenkasti kôd"
       ],
       "Expires": [
         "Ističe"
@@ -5506,6 +5506,11 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
+        "",
+        ""
+      ],
+      "${ createdCalendars } of 1 created": [
         "",
         "",
         ""
@@ -6335,12 +6340,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nije moguće poslati na adresu organizatora: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Stvaranje kalendarskog događaja nije uspjelo"
-      ],
-      "Updating calendar event failed": [
-        "Ažuriranje kalendarskog događaja nije uspjelo"
       ]
     },
     "Search - no results": {
@@ -6480,7 +6479,13 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        ""
+      ],
       "Message Content Search": [
+        ""
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
         ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
@@ -7104,6 +7109,9 @@
       "Email addresses": [
         "Adrese e-pošte"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email content": [
         ""
       ],
@@ -7127,9 +7135,6 @@
       ],
       "Error": [
         "Pogreška"
-      ],
-      "Expand content": [
-        "Proširi sadržaj"
       ],
       "Exporting contacts": [
         "Izvoz kontakata"

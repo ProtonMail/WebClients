@@ -271,8 +271,8 @@
       "Details": [
         "Részletek"
       ],
-      "Did not receive the code?": [
-        "Nem kapta meg a kódot?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Elvetés"
@@ -306,6 +306,9 @@
       ],
       "Edit phone number": [
         "Telefonszám módosítása"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "E-mail beállítások"
@@ -448,9 +451,6 @@
       ],
       "Italic": [
         "Dőlt"
-      ],
-      "Justify": [
-        "Sorkizárás"
       ],
       "Keyboard shortcuts": [
         "Gyorsbillentyűk"
@@ -941,6 +941,12 @@
       ],
       "Verify": [
         "Ellenőrzés"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Megtekintés"
@@ -2119,12 +2125,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
       ],
-      "Can't validate email, try again later": [
-        "E-mail ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
-      ],
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
       ],
@@ -2330,9 +2330,6 @@
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
-      "Please refresh the page.": [
-        "Kérjük frissítse az oldalt."
-      ],
       "Please repeat the password": [
         "Adja meg ismételten a jelszót"
       ],
@@ -2361,8 +2358,8 @@
         "Kettőzött címzett eltávolítása: ${ recipents }",
         "Kettőzött címzettek eltávolítása: ${ recipents }"
       ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Legalább egy művelet szükséges"
@@ -2406,9 +2403,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
-      ],
-      "The composer failed to load.": [
-        "A szerkesztőt nem sikerült betölteni."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
@@ -3701,8 +3695,8 @@
       "Insert link": [
         "Link beillesztése"
       ],
-      "Internet connection lost.": [
-        "Az internetkapcsolat megszakadt."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
@@ -3712,9 +3706,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
-      ],
-      "Justify": [
-        "Sorkizárás"
       ],
       "Key fingerprint": [
         "Kulcs ujjlenyomat"
@@ -4011,11 +4002,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Üzenetek küldése a @pm.me címről előfizetéshez kötött. Az Ön üzenete az ${ email }, alapértelmezett címről lesz elküldve"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
-      "Session timed out.": [
-        "A munkamenet lejárt."
+      "Session timed out": [
+        ""
       ],
       "Set a recovery phrase": [
         "Helyreállító jelmondat beállítása"
@@ -4315,6 +4309,9 @@
       "We'll notify you when the import is done.": [
         "Érdesíteni fogjuk az importálás végeztével."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "Weblap link"
       ],
@@ -4332,6 +4329,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yearly": [
         "Évente"
@@ -4749,7 +4749,7 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } és ${ count } további"
       ],
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "Actions": [
@@ -4839,6 +4839,9 @@
       "City": [
         "Település"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Conditions": [
         "Feltételek"
       ],
@@ -4889,9 +4892,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
       ],
       "Expires": [
         "Lejárat"
@@ -5416,6 +5416,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
+        ""
+      ],
+      "${ createdCalendars } of 1 created": [
         "",
         ""
       ],
@@ -6237,12 +6241,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nem sikerült a szervező címére küldeni: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Esemény létrehozása nem sikerült"
-      ],
-      "Updating calendar event failed": [
-        "Esemény frissítése nem sikerült"
       ]
     },
     "Search - no results": {
@@ -6376,7 +6374,13 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        ""
+      ],
       "Message Content Search": [
+        ""
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
         ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
@@ -6964,6 +6968,9 @@
       "Email addresses": [
         "E-mail cím"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email content": [
         ""
       ],
@@ -6987,9 +6994,6 @@
       ],
       "Error": [
         "Hiba"
-      ],
-      "Expand content": [
-        "Tartalom kibontása"
       ],
       "Exporting contacts": [
         "Névjegyek exportálása"

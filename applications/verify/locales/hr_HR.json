@@ -14,14 +14,17 @@
       "Close modal": [
         "Zatvori skočni prozor"
       ],
-      "Did not receive the code?": [
-        "Niste primili kȏd?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
       "Edit phone number": [
         "Uredi broj telefona"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
@@ -41,6 +44,12 @@
       "Verify": [
         "Potvrda"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "Prikaži fakturu"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
-      ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "Ovo polje je obavezno"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
-      "Internet connection lost.": [
-        "Prekinuta je internetska veza."
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "Učitavanje"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Sesija je istekla."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Poništi"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "Adresa e-pošte"
-      ],
-      "Enter the 6-digit code": [
-        "Unesite 6-znamenkasti kôd"
       ],
       "Hide password": [
         "Sakrij lozinku"

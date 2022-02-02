@@ -259,10 +259,10 @@
       "Details": [
         "详情"
       ],
-      "Did not receive the code?": [
+      "Didn't receive a code?": [
         "没收到验证码？"
       ],
-      "Didn't receive a code?": [
+      "Didn't receive the code?": [
         "没收到验证码？"
       ],
       "Disable recovery phrase": [
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "更改 Sieve 代码"
+      ],
+      "Edit sign-in details": [
+        "更改登录信息"
       ],
       "enable desktop notifications": [
         "启用桌面通知"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "斜体"
-      ],
-      "Justify": [
-        "两端对齐"
       ],
       "Keep": [
         "保留"
@@ -512,7 +512,7 @@
         "刷新页面"
       ],
       "Reload": [
-        "重载"
+        "刷新"
       ],
       "Remove": [
         "移除"
@@ -584,7 +584,7 @@
         "评论"
       ],
       "Revoke all other sessions": [
-        "下线其他登录设备"
+        "其余设备全部下线"
       ],
       "Save": [
         "保存"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "验证"
+      ],
+      "Verify account": [
+        "验证账户"
+      ],
+      "Verify email": [
+        "验证邮箱"
       ],
       "View": [
         "查看"
@@ -1706,12 +1712,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "由于个人日历限制，无法为所有导入的日历创建新日历。"
       ],
-      "Can't validate email, try again later": [
-        "无法验证电子邮件，请稍后再试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再重试"
-      ],
       "Checkout expired, please try again": [
         "支付超时，请重试"
       ],
@@ -1830,7 +1830,7 @@
         "必须填写持卡人姓名"
       ],
       "Name required": [
-        "姓名是必填的"
+        "名称必须填写"
       ],
       "No active sessions": [
         "没有已登录的账户"
@@ -1886,9 +1886,6 @@
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
       ],
-      "Please refresh the page.": [
-        "请刷新页面。"
-      ],
       "Please set a recovery email first": [
         "请先设置密保邮箱"
       ],
@@ -1916,8 +1913,8 @@
       "Process aborted": [
         "操作已中止"
       ],
-      "Request timed out.": [
-        "请求超时。"
+      "Request timed out": [
+        "请求超时"
       ],
       "Require at least one action": [
         "至少应有一项操作"
@@ -1951,9 +1948,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
-      ],
-      "The composer failed to load.": [
-        "编辑器加载失败。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请更改。"
@@ -2540,7 +2534,7 @@
         "标签"
       ],
       "Name": [
-        "姓名"
+        "名称"
       ],
       "Notifications": [
         "通知"
@@ -3427,7 +3421,7 @@
         "不要在 ProtonVPN 客户端或 ProtonVPN 总览上使用 OpenVPN / IKEv2 凭证。${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "确定要下线所有其他登录设备吗？"
+        "确定要让本机以外的所有设备退出此账户吗？"
       ],
       "domain used": [
         "域名用量"
@@ -3544,7 +3538,7 @@
         "出于安全考虑，请完成验证。"
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "对于 Visa 和 MasterCard，请输入卡背面的 3 位数字。；对于美国运通卡，请输入卡正面的 4 位数字。"
+        "Visa、万事达卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
       ],
       "Free up some space or add more storage space.": [
         "释放一些空间或添加更多存储空间。"
@@ -3595,7 +3589,7 @@
         "您可以为自有域名设置一个替补邮箱。如果由于发件人不慎输错等原因，某封邮件的收件地址在该域名中尚未分配，此邮件就将由替补邮箱代收。"
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "如果您有礼品代码，请在下面输入以应用您的折扣。"
+        "如果您有礼品码，可以在此处使用。"
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "如果您从未使用过双重验证技术，我们强烈建议您${ guideButton }。"
@@ -3693,8 +3687,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "服务器配置文件用于连接所选国家的特定服务器。"
       ],
-      "Internet connection lost.": [
-        "网络连接断开。"
+      "Internet connection lost": [
+        "网络连接已断开"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "网络连接中断，请检查系统网络情况。"
@@ -3710,9 +3704,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交由我们！"
-      ],
-      "Justify": [
-        "对齐"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "只要你想使用DKIM，就在DNS中保留这些记录。"
@@ -4080,8 +4071,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
-      "Session timed out.": [
-        "会话已超时。"
+      "Session timed out": [
+        "会话超时"
       ],
       "Set recovery phrase": [
         "设置恢复密语"
@@ -4252,7 +4243,7 @@
         "创建一个地址以使用${ toAppName }。"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "充值后即可使用余额升级账户或增添服务项目。余额与${ i18nCurrency }等额兑换。"
+        "充值后即可使用余额升级账户或增添服务项目。余额与${ i18nCurrency }等值。"
       ],
       "Tor": [
         "Tor"
@@ -4267,7 +4258,7 @@
         "双重验证已开启"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "密码模式需要两个密码：一个登录到您的帐户，另一个解密您的邮箱(高级)"
+        "双密码模式下登录账户和解密邮箱需要分别设置密码。（高级功能）"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "双密码模式下登录和解密邮箱需要两套密码，某些情况下这样能略微提高安全性，但我们建议大部分用户使用单密码。若要开启双密码模式，请先设置一个登录密码，再设置一个邮箱密码。"
@@ -4365,6 +4356,9 @@
       "We'll notify you when the import is done.": [
         "导入完成时我们将通知您。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "我们将向 ${ strong } 发送新的验证码"
+      ],
       "Web URL": [
         "网址"
       ],
@@ -4397,6 +4391,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        "要重新发送验证码吗？"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo 读取您的个人数据是为了给广告商、美国情报机构和其他第三方提供访问权限。为了更好地保护您的隐私，请创建一个安全的电子邮件地址。"
@@ -4668,16 +4665,16 @@
         "功能增添"
       ],
       "Cancellation": [
-        "取消"
+        "退订"
       ],
       "Chargeback": [
-        "退款"
+        "拒付"
       ],
       "Credit": [
-        "余额"
+        "充值"
       ],
       "Donation": [
-        "捐赠"
+        "捐款"
       ],
       "Modification": [
         "功能调整"
@@ -4692,7 +4689,7 @@
         "续费"
       ],
       "Subscription": [
-        "订阅"
+        "订购"
       ]
     },
     "Key generation": {
@@ -4983,8 +4980,8 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "用户数量：${ UsedMembers } / ${ MaxMembers }"
       ],
-      "(Coming soon)": [
-        "（即将推出）"
+      "(Temporarily unavailable. Please check back later.)": [
+        "（暂时不可用。请稍后再试。）"
       ],
       "Account storage": [
         "账户存储空间"
@@ -5090,6 +5087,9 @@
       ],
       "Code": [
         "验证码"
+      ],
+      "Code is 6 digits without spaces": [
+        "验证码是无空格的六位数"
       ],
       "Color": [
         "颜色"
@@ -5256,9 +5256,6 @@
       "Enter password": [
         "输入密码"
       ],
-      "Enter the 6-digit code": [
-        "输入 6 位验证码"
-      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "输入以下密钥的密码：${ fingerprintCode }"
       ],
@@ -5383,7 +5380,7 @@
         "移至"
       ],
       "Name": [
-        "姓名"
+        "名称"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -5940,10 +5937,10 @@
     },
     "Log preference": {
       "Enable advanced logs": [
-        "启用进阶日志"
+        "开启详细日志"
       ],
       "Enable authentication logs": [
-        "启用认证日志"
+        "开启登录日志"
       ]
     },
     "Mail feature": {
@@ -6566,9 +6563,6 @@
       "Secure Core configs": [
         "安全核心配置"
       ],
-      "Select a reason": [
-        "请选择原因"
-      ],
       "Standard server configs": [
         "标准服务器配置"
       ],
@@ -6672,7 +6666,7 @@
         "填写分类名称"
       ],
       "Add gift code": [
-        "使用礼品码"
+        "输入礼品码"
       ],
       "Address": [
         "地址"
@@ -7261,7 +7255,7 @@
         "邮箱已更改"
       ],
       "Gift code applied": [
-        "礼品码有效"
+        "成功使用礼品码"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
         "若您输入的密保邮箱正确，我们将马上发送邮件告知您的用户名。"
@@ -7802,6 +7796,9 @@
       "Email": [
         "邮件"
       ],
+      "Email composer": [
+        "邮件编辑器"
+      ],
       "Email encryption keys": [
         "邮件加密密钥"
       ],
@@ -7819,9 +7816,6 @@
       ],
       "Error": [
         "错误"
-      ],
-      "Expand content": [
-        "展开內容"
       ],
       "Export": [
         "导出"
@@ -8358,7 +8352,7 @@
         "开启或关闭推送通知"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "启用高级日志会在安全日志中记录每个事件的 IP 地址。"
+        "详细日志会记录触发各事件的 IP 地址。"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"
@@ -8715,7 +8709,7 @@
         "删除此号码后，您将无法再重置账户密码。"
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "禁用日志后，您同时将清除您的现有记录。您确定要关闭日志吗？"
+        "关闭日志功能后，现有日志将被清空。确定要关闭日志吗？"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "停用此地址后，您将无法用该地址收发邮件，与其相关联的 Proton 服务也将被停用。您确定要停用此地址吗？"

@@ -259,11 +259,11 @@
       "Details": [
         "詳細資訊"
       ],
-      "Did not receive the code?": [
-        "沒收到代碼？"
-      ],
       "Didn't receive a code?": [
         "沒收到代碼？"
+      ],
+      "Didn't receive the code?": [
+        "沒有收到驗證碼嗎？"
       ],
       "Disable recovery phrase": [
         "停用復原短語"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "編輯 Sieve"
+      ],
+      "Edit sign-in details": [
+        "編輯登入詳細資訊"
       ],
       "enable desktop notifications": [
         "啟用桌面通知"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "斜體"
-      ],
-      "Justify": [
-        "左右對齊"
       ],
       "Keep": [
         "保留"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "驗證"
+      ],
+      "Verify account": [
+        "驗證帳號"
+      ],
+      "Verify email": [
+        "驗證電子郵件"
       ],
       "View": [
         "查看"
@@ -1706,12 +1712,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
       ],
-      "Can't validate email, try again later": [
-        "無法驗證電子郵件，請稍後再試"
-      ],
-      "Can't validate phone, try again later": [
-        "無法驗證電話號碼，請稍後再試"
-      ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
       ],
@@ -1886,9 +1886,6 @@
       "Please generate keys before you try to change your password": [
         "請在您試著改變您的密碼前生成金鑰"
       ],
-      "Please refresh the page.": [
-        "請重新整理此頁面。"
-      ],
       "Please set a recovery email first": [
         "請先設定備援電子郵件"
       ],
@@ -1916,8 +1913,8 @@
       "Process aborted": [
         "處理已中止"
       ],
-      "Request timed out.": [
-        "請求已逾時。"
+      "Request timed out": [
+        "請求逾時"
       ],
       "Require at least one action": [
         "必須有至少一個動作"
@@ -1951,9 +1948,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您正使用的瀏覽器不允許付款完成授權。請使用另一個瀏覽器，或改以電腦登入。"
-      ],
-      "The composer failed to load.": [
-        "撰寫器載入失敗。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請換另一個名稱。"
@@ -3693,8 +3687,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "安裝伺服器設定檔以連線到您選擇國家的指定伺服器。"
       ],
-      "Internet connection lost.": [
-        "網際網路連線中斷。"
+      "Internet connection lost": [
+        "網際網路連線中斷"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "網際網路連線中斷。請檢查裝置的連線狀態。"
@@ -3710,9 +3704,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選取，我們就會處理餘下一切。"
-      ],
-      "Justify": [
-        "左右對齊"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "請在您的 DNS 一直保留這些記錄，直到您不欲再使用 DKIM 為止。"
@@ -4080,8 +4071,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
-      "Session timed out.": [
-        "工作階段已逾時。"
+      "Session timed out": [
+        "工作階段已逾時"
       ],
       "Set recovery phrase": [
         "設定還原短語"
@@ -4365,6 +4356,9 @@
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "我們將會向 ${ strong } 傳送新的驗證碼"
+      ],
       "Web URL": [
         "網頁 URL"
       ],
@@ -4397,6 +4391,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是換一個驗證方法？"
+      ],
+      "Would you like to receive a new verification code?": [
+        "您想要收到新的驗證碼嗎？"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo 讀取您的個人資料以供給廣告商、美國情報機構及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
@@ -4983,8 +4980,8 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "最多可有 ${ MaxMembers } 個使用者，目前已有 ${ UsedMembers } 個"
       ],
-      "(Coming soon)": [
-        "（即將推出）"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(暫時無法使用。請稍後再試。)"
       ],
       "Account storage": [
         "帳號儲存空間"
@@ -5090,6 +5087,9 @@
       ],
       "Code": [
         "代碼"
+      ],
+      "Code is 6 digits without spaces": [
+        "驗證碼為六位數且無空格"
       ],
       "Color": [
         "顏色"
@@ -5255,9 +5255,6 @@
       ],
       "Enter password": [
         "請輸入密碼"
-      ],
-      "Enter the 6-digit code": [
-        "請輸入 6 位數代碼"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "請輸入密碼以解密金鑰，金鑰指紋為：${ fingerprintCode }"
@@ -6566,9 +6563,6 @@
       "Secure Core configs": [
         "Secure Core 組態設定"
       ],
-      "Select a reason": [
-        "請選一個原因"
-      ],
       "Standard server configs": [
         "標準伺服器組態設定"
       ],
@@ -7802,6 +7796,9 @@
       "Email": [
         "電子郵件"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email encryption keys": [
         "電子郵件金鑰"
       ],
@@ -7819,9 +7816,6 @@
       ],
       "Error": [
         "錯誤"
-      ],
-      "Expand content": [
-        "免費"
       ],
       "Export": [
         "匯出"

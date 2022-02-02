@@ -14,14 +14,17 @@
       "Close modal": [
         "Zavřít okno"
       ],
-      "Did not receive the code?": [
-        "Nedostali jste kód?"
+      "Didn't receive the code?": [
+        "Neobdrželi jste kód?"
       ],
       "Edit email address": [
         "Upravit e-mailovou adresu"
       ],
       "Edit phone number": [
         "Upravit telefonní číslo"
+      ],
+      "Edit sign-in details": [
+        "Úprava přihlašovacích údajů"
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
@@ -41,6 +44,12 @@
       "Verify": [
         "Ověřit"
       ],
+      "Verify account": [
+        "Ověřit účet"
+      ],
+      "Verify email": [
+        "Ověřit e-mail"
+      ],
       "View invoice": [
         "Zobrazit fakturu"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Nelze ověřit e-mail, opakujte akci později"
-      ],
-      "Can't validate phone, try again later": [
-        "Nelze ověřit telefon, opakujte akci později"
-      ],
       "Email is not valid": [
         "Emailová adresa není platná"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
-      "Request timed out.": [
-        "Vypršel časový limit žádosti."
+      "Request timed out": [
+        "Vypršel časový limit požadavku"
       ],
       "This field is required": [
         "Toto pole je povinné"
@@ -90,16 +93,16 @@
         "Vyčkejte do doby, než opravíme tuhle chybu."
       ],
       "Error: ${ errorMessage }": [
-        ""
+        "Chyba: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Jejda, něco se pokazilo"
       ],
       "Please ${ refresh } or check your connection.": [
-        ""
+        "Prosím ${ refresh } nebo zkontrolujte své připojení."
       ],
       "There was a problem connecting to Proton.": [
-        ""
+        "Při připojování ke službě Proton došlo k chybě."
       ],
       "You may also ${ refresh } or try again later.": [
         "Můžete také ${ refresh } nebo to zkusit později."
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
-      "Internet connection lost.": [
-        "Připojení k Internetu bylo ztraceno."
+      "Internet connection lost": [
+        "Připojení k internetu bylo ztraceno"
       ],
       "Loading": [
         "Načítá se"
@@ -148,16 +151,22 @@
         "Nebyly nalezeny žádné výsledky"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
-      "Session timed out.": [
-        "Relace vypršela."
+      "Session timed out": [
+        "Relace vypršela"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Zašleme nový ověřovací kód na ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Chcete obdržet nový ověřovací kód?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Zrušit"
       ],
+      "Code is 6 digits without spaces": [
+        "Kód je 6 číslic bez mezer"
+      ],
       "Email address": [
         "E-mailová adresa"
-      ],
-      "Enter the 6-digit code": [
-        "Zadejte 6-místný kód"
       ],
       "Hide password": [
         "Skrýt heslo"
@@ -222,7 +231,7 @@
         "Neplatný ověřovací kód"
       ],
       "Request new code": [
-        ""
+        "Vyžádejte si nový kód"
       ],
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
