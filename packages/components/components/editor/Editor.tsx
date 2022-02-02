@@ -114,6 +114,7 @@ const Editor = ({
                         onBlockquoteToggleClick={onBlockquoteToggleClick}
                         setToolbarConfig={setToolbarConfig}
                         onBeforePaste={handleBeforePaste}
+                        showModalLink={showModalLink}
                     />
                 )}
             </div>

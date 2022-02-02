@@ -34,6 +34,7 @@ export interface ExternalEditorActions {
     removeEmbedded: (attachment: Attachment) => void;
     /** Is editor unmounted */
     isDisposed: () => boolean | undefined;
+    showLinkModal: () => void;
 }
 interface Props {
     message: MessageState;
@@ -227,6 +228,7 @@ const EditorWrapper = ({
                 insertEmbedded: handleInsertEmbedded,
                 removeEmbedded: handleRemoveEmbedded,
                 isDisposed: () => editorActionsRef.current?.isDisposed(),
+                showLinkModal: () => editorActionsRef.current?.showModalLink?.(),
             };
             onReady(externalActions);
         }
