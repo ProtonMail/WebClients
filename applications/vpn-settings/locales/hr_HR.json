@@ -139,6 +139,9 @@
       "Did not receive the code?": [
         "Niste primili kôd?"
       ],
+      "Didn't receive the code?": [
+        ""
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -165,6 +168,9 @@
       ],
       "Edit phone number": [
         "Uredi broj telefona"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email me my username(s)": [
         "Pošalji mi e-poruku s mojim korisničkim imenom(ima)"
@@ -391,11 +397,17 @@
       "Verify": [
         "Potvrdi"
       ],
+      "Verify account": [
+        ""
+      ],
       "Verify code": [
         "Potvrdi kôd"
       ],
       "Verify code again": [
         "Ponovno potvrdite kôd"
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Pregled"
@@ -840,12 +852,6 @@
       "Can't check username, try again later": [
         "Ne uspješna provjera korisničkog imena, pokušajte ponovo kasnije"
       ],
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
-      ],
       "Checkout expired, please try again": [
         ""
       ],
@@ -942,8 +948,8 @@
       "Process aborted": [
         "Proces je prekinut"
       ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
+      "Request timed out": [
+        ""
       ],
       "Signature verification failed": [
         "Potvrda potpisa je neuspješna"
@@ -1460,8 +1466,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instalirajte konfiguracijsku datoteku za poslužitelja da biste se povezali sa određenim poslužiteljem u državi vašeg izbora."
       ],
-      "Internet connection lost.": [
-        "Prekinuta je internetska veza."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
@@ -1618,8 +1624,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Sesija je istekla."
+      "Session timed out": [
+        ""
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
@@ -1750,6 +1756,9 @@
       "We will send a reset code to your recovery email to reset your password.": [
         "Poslat ćemo vam kôd za ponovno postavljanje na vašu e-poštu za oporavak da biste ponovno postavili vašu lozinku."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Poslali smo kôd za poništavanje na e-poštu za oporavak, koji vrijedi jedan sat ili dok ne zatražite novi kôd. Da biste nastavili, unesite u nastavku."
       ],
@@ -1761,6 +1770,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "You already have a free account": [
         "Već imate besplatan račun"
@@ -2024,6 +2036,9 @@
       "Category": [
         "Kategorija"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Confirm login password": [
         "Potvrdi lozinku za prijavu"
       ],
@@ -2092,9 +2107,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Unesite 6-znamenkasti kôd"
       ],
       "Enter the code displayed on your TV": [
         "Unesite kôd prikazan na vašem televizoru"

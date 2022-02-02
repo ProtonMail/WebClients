@@ -122,9 +122,6 @@
       "Compose": [
         "Napisz"
       ],
-      "Composer size": [
-        "Rozmiar edytora"
-      ],
       "Confirm": [
         "Potwierdź"
       ],
@@ -191,7 +188,7 @@
       "Details": [
         "Szczegóły"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Nie otrzymano kodu?"
       ],
       "Done": [
@@ -214,6 +211,9 @@
       ],
       "Edit phone number": [
         "Edytuj numer telefonu"
+      ],
+      "Edit sign-in details": [
+        "Edytuj szczegóły logowania"
       ],
       "Email settings": [
         "Ustawienia poczty e-mail"
@@ -281,9 +281,6 @@
       "Increase": [
         "Zwiększ"
       ],
-      "Keyboard shortcuts": [
-        "Skróty klawiszowe"
-      ],
       "Load image": [
         "Załaduj obraz"
       ],
@@ -292,12 +289,6 @@
       ],
       "Log in": [
         "Zaloguj się"
-      ],
-      "Mailbox density": [
-        "Układ skrzynki pocztowej"
-      ],
-      "Mailbox layout": [
-        "Widok skrzynki pocztowej"
       ],
       "Manage link": [
         "Zarządzaj linkiem"
@@ -563,11 +554,14 @@
       "Use for sending": [
         "Używaj do wysyłania"
       ],
-      "Use “${ label }” setting": [
-        "Użyj ustawień “${ label }”"
-      ],
       "Verify": [
         "Zweryfikuj"
+      ],
+      "Verify account": [
+        "Zweryfikuj konto"
+      ],
+      "Verify email": [
+        "Zweryfikuj adres e-mail"
       ],
       "View": [
         "Podgląd"
@@ -903,14 +897,6 @@
         "Format kalendarza jest nieobsługiwany"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Zmaksymalizowany"
-      ],
-      "Normal": [
-        "Standardowy"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Zakończyć personalizację importowania?"
@@ -1027,14 +1013,6 @@
         "Zaległa faktura"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Wygodny"
-      ],
-      "Compact": [
-        "Kompaktowy"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Trwa odszyfrowywanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
@@ -1119,12 +1097,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Z powodu limitu maksymalnej liczby osobistych kalendarzy, nie możesz utworzyć nowych kalendarzy dla wszystkich zaimportowanych kalendarzy."
-      ],
-      "Can't validate email, try again later": [
-        "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
-      ],
-      "Can't validate phone, try again later": [
-        "Nie można zweryfikować numeru telefonu. Spróbuj ponownie później"
       ],
       "Checkout expired, please try again": [
         "Płatność wygasła. Spróbuj ponownie"
@@ -1303,8 +1275,8 @@
       "Process aborted": [
         "Proces został przerwany"
       ],
-      "Request timed out.": [
-        "Upłynął limit czasu żądania."
+      "Request timed out": [
+        "Upłynął limit czasu żądania"
       ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
@@ -1918,9 +1890,6 @@
         "Czy na pewno chcesz trwale usunąć zaznaczone elementy z Kosza?",
         "Czy na pewno chcesz trwale usunąć zaznaczone elementy z Kosza?"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Skróty klawiszowe podstawowej nawigacji i akcji są zawsze włączone."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Ponieważ ${ appName } jest szyfrowany end-to-end, nie możemy\nodszyfrować Twoich plików. Aby odblokować dysk po zresetowaniu hasła,\nmusisz posiadać jeden z następujących elementów:"
       ],
@@ -2146,8 +2115,8 @@
       "Initializing": [
         "Inicjalizacja"
       ],
-      "Internet connection lost.": [
-        "Połączenie z Internetem zostało utracone."
+      "Internet connection lost": [
+        "Połączenie z Internetem zostało utracone"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Połączenie z Internetem zostało utracone. Sprawdź połączenie swojego urządzenia."
@@ -2365,8 +2334,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
-      "Session timed out.": [
-        "Upłynął limit czasu sesji."
+      "Session timed out": [
+        "Upłynął limit czasu sesji"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ProtonMaila, używających kompatybilnej usługi PGP."
@@ -2512,6 +2481,9 @@
       "We'll notify you when the import is done.": [
         "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Wyślemy nowy kod weryfikacyjny do ${ strong }"
+      ],
       "Week": [
         "Tydzień"
       ],
@@ -2526,6 +2498,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Czy chcesz otrzymać nowy kod weryfikacyjny?"
       ],
       "Would you like to restore your files?": [
         "Czy chcesz przywrócić pliki?"
@@ -2654,7 +2629,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcje, jak zapłacić gotówką."
+        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
       ]
     },
     "Info on errors": {
@@ -2692,197 +2667,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Dodaj szyfrowanie"
-      ],
-      "Add expiration time": [
-        "Dodaj czas wygaśnięcia"
-      ],
-      "Apply / open": [
-        "Zastosuj / otwórz"
-      ],
-      "Attach file": [
-        "Dodaj plik"
-      ],
-      "Cancel / close": [
-        "Anuluj / zamknij"
-      ],
-      "Close draft": [
-        "Zamknij szkic"
-      ],
-      "Create filter with...": [
-        "Utwórz filtr..."
-      ],
-      "Delete permanently": [
-        "Usuń trwale"
-      ],
-      "Discard draft": [
-        "Odrzuć szkic"
-      ],
-      "Expand / contract composer": [
-        "Otwórz / zamknij pełny ekran"
-      ],
-      "Forward": [
-        "Przekaż dalej"
-      ],
-      "Go to All Mail": [
-        "Przejdź do Wszystkich wiadomości"
-      ],
-      "Go to Archive": [
-        "Przejdź do Archiwum"
-      ],
-      "Go to Drafts": [
-        "Przejdź do Szkiców"
-      ],
-      "Go to Inbox": [
-        "Przejdź do Odebranych"
-      ],
-      "Go to Sent": [
-        "Przejdź do Wysłanych"
-      ],
-      "Go to Spam": [
-        "Przejdź do Spamu"
-      ],
-      "Go to Starred": [
-        "Przejdź do Wyróżnionych"
-      ],
-      "Go to Trash": [
-        "Przejdź do Kosza"
-      ],
-      "Jump to first": [
-        "Przejdź do góry"
-      ],
-      "Jump to last": [
-        "Przejdź na dół"
-      ],
-      "Label as...": [
-        "Oznacz jako..."
-      ],
-      "Load embedded images": [
-        "Załaduj osadzone obrazy"
-      ],
-      "Load remote content": [
-        "Załaduj zawartość zdalną"
-      ],
-      "Mark as unread": [
-        "Oznacz jako nieprzeczytane"
-      ],
-      "Minimize / maximize composer": [
-        "Minimalizuj / maksymalizuj edytor"
-      ],
-      "Move down": [
-        "W dół"
-      ],
-      "Move left / collapse": [
-        "W lewo / zwiń"
-      ],
-      "Move right / expand": [
-        "W prawo / rozwiń"
-      ],
-      "Move to Archive": [
-        "Przenieś do Archiwum"
-      ],
-      "Move to Inbox": [
-        "Przenieś do Odebranych"
-      ],
-      "Move to Spam": [
-        "Przenieś do Spamu"
-      ],
-      "Move to Trash": [
-        "Przenieś do Kosza"
-      ],
-      "Move to...": [
-        "Przenieś do..."
-      ],
-      "Move up": [
-        "Do góry"
-      ],
-      "New message": [
-        "Nowa wiadomość"
-      ],
-      "Open next message": [
-        "Otwórz następną wiadomość"
-      ],
-      "Open previous message": [
-        "Otwórz poprzednią wiadomość"
-      ],
-      "Open this modal": [
-        "Otwórz okno"
-      ],
-      "Reply": [
-        "Odpowiedz"
-      ],
-      "Reply all": [
-        "Odpowiedz wszystkim"
-      ],
-      "Save draft": [
-        "Zapisz szkic"
-      ],
-      "Search": [
-        "Szukaj"
-      ],
-      "Select / unselect": [
-        "Zaznacz / odznacz"
-      ],
-      "Select / unselect all": [
-        "Zaznacz / odznacz wszystko"
-      ],
-      "Send email": [
-        "Wyślij wiadomość"
-      ],
-      "Show all emails": [
-        "Pokaż wszystkie wiadomości"
-      ],
-      "Show original message": [
-        "Pokaż oryginalną wiadomość"
-      ],
-      "Show unread emails": [
-        "Pokaż nieprzeczytane wiadomości"
-      ],
-      "Star": [
-        "Oznacz gwiazdką"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Skróty akcji"
-      ],
-      "Basic actions": [
-        "Podstawowe akcje"
-      ],
-      "Basic navigation": [
-        "Podstawowa nawigacja"
-      ],
-      "Composer shortcuts": [
-        "Skróty edytora"
-      ],
-      "Folder shortcuts": [
-        "Skróty folderu"
-      ],
-      "List shortcuts": [
-        "Skróty listy"
-      ],
-      "Message shortcuts": [
-        "Skróty wiadomości"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Wyłączone"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Włączone"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(wkrótce)"
-      ],
       "(Expired)": [
         "(wygasł)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
       "Active": [
         "Aktywne"
@@ -2947,6 +2737,9 @@
       "City": [
         "Miasto"
       ],
+      "Code is 6 digits without spaces": [
+        "Kod to 6 cyfr bez spacji"
+      ],
       "Completed": [
         "Zakończone"
       ],
@@ -2994,9 +2787,6 @@
       ],
       "Enter organization name to confirm": [
         "Wpisz nazwę organizacji, aby potwierdzić"
-      ],
-      "Enter the 6-digit code": [
-        "Wpisz 6-cyfrowy kod"
       ],
       "Expired": [
         "Wygasł"
@@ -3054,9 +2844,6 @@
       ],
       "Import to email address": [
         "Importuj do adresu e-mail"
-      ],
-      "Keyboard shortcuts": [
-        "Skróty klawiszowe"
       ],
       "Label messages as": [
         "Oznacz wiadomości etykietą"
@@ -3147,15 +2934,6 @@
       ],
       "Select a method": [
         "Wybierz metodę płatności"
-      ],
-      "Select how your composer opens by default.": [
-        "Wybierz domyślny tryb edytora."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Wybierz domyślny układ skrzynki pocztowej."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Wybierz domyślny widok skrzynki pocztowej."
       ],
       "Select your country": [
         "Wybierz kraj"
@@ -3255,30 +3033,6 @@
         "Nazwa"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Zmaksymalizowany"
-      ],
-      "Normal": [
-        "Standardowy"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Wygodny"
-      ],
-      "Compact": [
-        "Kompaktowy"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolumna"
-      ],
-      "Row": [
-        "Wiersz"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
@@ -3301,14 +3055,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "Etykieta ${ Label.Name } została utworzona"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolumna"
-      ],
-      "Row": [
-        "Wiersz"
       ]
     },
     "Link": {
@@ -3352,6 +3098,12 @@
         "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
         "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
         "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Już prawie"
@@ -4106,9 +3858,6 @@
       "Fingerprint copied to clipboard": [
         "Odcisk klucza został skopiowany do schowka"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Ustawienia skrótów klawiszowych zostały zaktualizowane"
-      ],
       "Phone number copied to clipboard": [
         "Numer telefonu został skopiowany do schowka"
       ],
@@ -4255,9 +4004,6 @@
       "${ appName } customization": [
         "Personalizacja planu ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "Skróty klawiszowe ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } członek",
         "${ emailsCount } członków",
@@ -4320,9 +4066,6 @@
       ],
       "Clearing data": [
         "Usuwanie danych"
-      ],
-      "Composer mode": [
-        "Tryb edytora"
       ],
       "Confirm loss of Proton bonuses": [
         "Potwierdź utratę Proton bonusów"
@@ -4498,20 +4241,11 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
-      "Keyboard Shortcuts": [
-        "Skróty klawiszowe"
-      ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
       "Location": [
         "Lokalizacja"
-      ],
-      "Mailbox density": [
-        "Układ skrzynki pocztowej"
-      ],
-      "Mailbox layout": [
-        "Widok skrzynki pocztowej"
       ],
       "Manage secure link": [
         "Zarządzaj bezpiecznym linkiem"

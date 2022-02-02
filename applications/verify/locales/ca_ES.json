@@ -14,7 +14,7 @@
       "Close modal": [
         "Tancar el modal"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "No heu rebut el codi?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Editar el número de telèfon"
+      ],
+      "Edit sign-in details": [
+        "Editar detalls d'inici de sessió"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
@@ -41,6 +44,12 @@
       "Verify": [
         "Verificar"
       ],
+      "Verify account": [
+        "Verificar el compte"
+      ],
+      "Verify email": [
+        "Verificar el correu electrònic"
+      ],
       "View invoice": [
         "Veure factura"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
-      ],
-      "Can't validate phone, try again later": [
-        "No es pot validar el telèfon, torneu-ho a provar més tard"
-      ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
       ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
+      "Request timed out": [
+        "S'ha esgotat el temps d'espera"
       ],
       "This field is required": [
         "Aquest camp és obligatori"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
-      "Internet connection lost.": [
-        "S'ha perdut la connexió a internet."
+      "Internet connection lost": [
+        "S'ha perdut la connexió a internet"
       ],
       "Loading": [
         "Carregant"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
-      "Session timed out.": [
-        "Temps de sessió esgotat."
+      "Session timed out": [
+        "Temps de sessió esgotat"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Enviarem un codi de verificació nou a ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Voleu rebre un codi de verificació nou?"
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Cancel·lar"
       ],
+      "Code is 6 digits without spaces": [
+        "El codi consta de 6 dígits sense espais"
+      ],
       "Email address": [
         "Adreça de correu electrònic"
-      ],
-      "Enter the 6-digit code": [
-        "Introduïu el codi de 6 dígits"
       ],
       "Hide password": [
         "Oculta la contrasenya"

@@ -166,8 +166,8 @@
       "Deselect all": [
         "Kijelölés törlése"
       ],
-      "Did not receive the code?": [
-        "Nem kapta meg a kódot?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Elvetés"
@@ -192,6 +192,9 @@
       ],
       "Edit phone number": [
         "Telefonszám módosítása"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "E-mail beállítások"
@@ -256,9 +259,6 @@
       "Increase": [
         "Növel"
       ],
-      "Keyboard shortcuts": [
-        "Gyorsbillentyűk"
-      ],
       "Load image": [
         "Kép betöltése"
       ],
@@ -267,12 +267,6 @@
       ],
       "Log in": [
         "Belépés"
-      ],
-      "Mailbox density": [
-        "Megjelenítés tömörsége"
-      ],
-      "Mailbox layout": [
-        "Elrendezés"
       ],
       "Make this participant optional": [
         "Résztvevő megjelölése választhatóként"
@@ -514,11 +508,14 @@
       "Use for sending": [
         "Küldéshez használható"
       ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" beállítás használata"
-      ],
       "Verify": [
         "Ellenőrzés"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Megtekintés"
@@ -604,38 +601,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } tegnap kezdődött ekkor: ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        ""
+      ],
       "${ title } starts now": [
         "${ title } most kezdődik"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        ""
       ],
       "${ title } starts today": [
         "${ title } ma kezdődik"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ formattedHour }"
+      "${ title } starts tomorrow": [
+        ""
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate2 } ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate3 } ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } ekkor kezdődik: ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } ekkor kezdődik: ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } holnap kezdődik"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } holnap ekkor kezdődik: ${ formattedHour }"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        ""
       ]
     },
     "Alert": {
@@ -1002,14 +999,6 @@
         ": "
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Teljes méretű"
-      ],
-      "Normal": [
-        "Normál"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Elveti az importálás módosításait?"
@@ -1165,14 +1154,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Lejárt számla"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Kényelmes"
-      ],
-      "Compact": [
-        "Tömör"
       ]
     },
     "Description": {
@@ -1386,12 +1367,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
       ],
-      "Can't validate email, try again later": [
-        "E-mail ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
-      ],
       "Cancellation failed to be sent": [
         "A lemondó értesítés elküldése nem sikerült"
       ],
@@ -1590,8 +1565,8 @@
       "Process aborted": [
         "Folyamat megszakítva"
       ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
+      "Request timed out": [
+        ""
       ],
       "Self invitation not allowed": [
         "Önmaga meghívása nem lehetséges"
@@ -2369,9 +2344,6 @@
       "At most 100 participants are allowed per invitation": [
         "Maximum 100 résztvevő lehetséges meghívónként"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "${ billedPrice } számlázva kétévente"
       ],
@@ -2551,8 +2523,8 @@
       "Inherited from parent folder": [
         "Örökölve a felsőbb szintű mappából"
       ],
-      "Internet connection lost.": [
-        "Az internetkapcsolat megszakadt."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
@@ -2723,8 +2695,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
-      "Session timed out.": [
-        "A munkamenet lejárt."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
@@ -2849,6 +2821,9 @@
       "We'll notify you when the import is done.": [
         "Értesítést fog kapni az importálás végeztével."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Hét"
       ],
@@ -2878,6 +2853,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to update all events in this series?": [
         "Valóban szeretné a sorozat valamennyi eseményét frissíteni?"
@@ -3047,194 +3025,9 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Titkosítás hozzáadása"
-      ],
-      "Add expiration time": [
-        "Időkorlát megadása"
-      ],
-      "Apply / open": [
-        "Alkalmazás, megnyitás"
-      ],
-      "Attach file": [
-        "Fájl csatolása"
-      ],
-      "Cancel / close": [
-        "Elvetés, bezárás"
-      ],
-      "Close draft": [
-        "Piszkozat bezárása"
-      ],
-      "Create filter with...": [
-        "Szűrő készítése..."
-      ],
-      "Delete permanently": [
-        "Végleges törlés"
-      ],
-      "Discard draft": [
-        "Piszkozat elvetése"
-      ],
-      "Expand / contract composer": [
-        "Szerkesztő kiterjesztése / összehúzása"
-      ],
-      "Forward": [
-        "Továbbítás"
-      ],
-      "Go to All Mail": [
-        "Ugrás az Összes Üzenethez"
-      ],
-      "Go to Archive": [
-        "Ugrás az archívumhoz"
-      ],
-      "Go to Drafts": [
-        "Ugrás a piszkozatokhoz"
-      ],
-      "Go to Inbox": [
-        "Ugrás a beérkezett üzenetekhez"
-      ],
-      "Go to Sent": [
-        "Ugrás az elküldött levelekhez"
-      ],
-      "Go to Spam": [
-        "Ugrás a levélszeméthez"
-      ],
-      "Go to Starred": [
-        "Ugrás a csillagozottakhoz"
-      ],
-      "Go to Trash": [
-        "Ugrás a lomtárhoz"
-      ],
-      "Jump to first": [
-        "Ugrás az elsőre"
-      ],
-      "Jump to last": [
-        "Ugrás az utolsóra"
-      ],
-      "Label as...": [
-        "Címkézés, mint..."
-      ],
-      "Load embedded images": [
-        "Beágyazott képek betöltése"
-      ],
-      "Load remote content": [
-        "Távoli tartalom betöltése"
-      ],
-      "Mark as unread": [
-        "Megjelölés olvasatlanként"
-      ],
-      "Minimize / maximize composer": [
-        "Szerkesztő kicsinyítése / felnagyítása"
-      ],
-      "Move down": [
-        "Mozgás lefelé"
-      ],
-      "Move left / collapse": [
-        "Mozgás balra, becsukás"
-      ],
-      "Move right / expand": [
-        "Mozgás jobbra, kibontás"
-      ],
-      "Move to Archive": [
-        "Áthelyezés az archívumba"
-      ],
-      "Move to Inbox": [
-        "Áthelyezés a beérkezett üzenetekhez"
-      ],
-      "Move to Spam": [
-        "Áthelyezés a levélszeméthez"
-      ],
-      "Move to Trash": [
-        "Áthelyezés a lomtárba"
-      ],
-      "Move to...": [
-        "Áthelyezés..."
-      ],
-      "Move up": [
-        "Mozgás felfelé"
-      ],
-      "New message": [
-        "Új üzenet"
-      ],
-      "Open next message": [
-        "Következő üzenet megnyitása"
-      ],
-      "Open previous message": [
-        "Előző üzenet megnyitása"
-      ],
-      "Open this modal": [
-        "Ablak megnyitása"
-      ],
-      "Reply": [
-        "Válasz"
-      ],
-      "Reply all": [
-        "Válasz mindenkinek"
-      ],
-      "Save draft": [
-        "Piszkozat mentése"
-      ],
-      "Search": [
-        "Keresés"
-      ],
-      "Select / unselect": [
-        "Kijelölés / kijelölés megszüntetése"
-      ],
-      "Select / unselect all": [
-        "Összes kijelölése / kijelölés megszüntetése"
-      ],
-      "Send email": [
-        "E-mail küldése"
-      ],
-      "Show all emails": [
-        "Összes üzenet megjelenítése"
-      ],
-      "Show original message": [
-        "Eredeti üzenet megjelenítése"
-      ],
-      "Show unread emails": [
-        "Olvasatlan üzenetek megjelenítése"
-      ],
-      "Star": [
-        "Csillagozás"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Művelet gyorsbillentyűk"
-      ],
-      "Basic actions": [
-        "Alapműveletek"
-      ],
-      "Basic navigation": [
-        "Alapvető navigáció"
-      ],
-      "Composer shortcuts": [
-        "Szerkesztő gyorsbillentyűk"
-      ],
-      "Folder shortcuts": [
-        "Mappa gyorsbillentyűk"
-      ],
-      "List shortcuts": [
-        "Lista gyorsbillentyűk"
-      ],
-      "Message shortcuts": [
-        "Üzenet gyorsbillentyűk"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Ki"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Be"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Hamarosan)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "0 - Not likely": [
         "0 - Egyáltalán nem"
@@ -3292,6 +3085,9 @@
       ],
       "City": [
         "Település"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "Szín"
@@ -3356,9 +3152,6 @@
       "Enter organization name to confirm": [
         "Írja be a szervezet nevét a jóváhagyáshoz"
       ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
-      ],
       "Event title": [
         "Esemény neve"
       ],
@@ -3403,9 +3196,6 @@
       ],
       "Import to:": [
         "Importálás ide:"
-      ],
-      "Keyboard shortcuts": [
-        "Gyorsbillentyűk"
       ],
       "Label messages as": [
         "Üzenetek megjelölése címkével"
@@ -3504,15 +3294,6 @@
       "Select a method": [
         "Válasszon fizetési módot"
       ],
-      "Select how your composer opens by default.": [
-        "Válassza ki, hogy alapértelmezetten hogyan nyíljon meg a szerkesztő."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Válassza ki, hogy alapértelmezetten hogyan jelenjen meg az üzenetek listája."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Válassza ki, hogy alapértelmezetten hogyan jelenjen meg a levelezése."
-      ],
       "Select your country": [
         "Válassza ki az országot"
       ],
@@ -3572,30 +3353,6 @@
         "Név"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Teljes méretű"
-      ],
-      "Normal": [
-        "Normál"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Kényelmes"
-      ],
-      "Compact": [
-        "Tömör"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Oszlop"
-      ],
-      "Row": [
-        "Sor"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Képernyőkép csatolása"
@@ -3618,14 +3375,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } létrehozva"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Oszlop"
-      ],
-      "Row": [
-        "Sor"
       ]
     },
     "Link": {
@@ -4670,9 +4419,6 @@
       "Invitation sent and participants added to all events": [
         "Meghívó elküldve és résztvevők hozzáadva az összes eseményhez"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Gyorsbillentyű beállítások frissítve"
-      ],
       "Participants notified and all events updated": [
         "Résztvevők értesítve és az összes esemény frissítve"
       ],
@@ -4804,9 +4550,6 @@
       "${ appName } customization": [
         "${ appName } testreszabása"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } gyorsbillentyűk"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } tag",
         "${ emailsCount } tag"
@@ -4887,9 +4630,6 @@
       "Clearing data": [
         "Adatok törlése"
       ],
-      "Composer mode": [
-        "Szerkesztő módja"
-      ],
       "Confirm loss of Proton bonuses": [
         "Proton kedvezmények elvesztésének megerősítése"
       ],
@@ -4916,9 +4656,6 @@
       ],
       "Create contact": [
         "Névjegy létrehozása"
-      ],
-      "Create event": [
-        "Esemény létrehozása"
       ],
       "Create new group": [
         "Új csoport létrehozása"
@@ -4981,9 +4718,6 @@
       ],
       "Edit contact group": [
         "Névjegy csoport szerkesztése"
-      ],
-      "Edit event": [
-        "Esemény szerkesztése"
       ],
       "Edit image": [
         "Kép szerkesztése"
@@ -5052,17 +4786,8 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
-      "Keyboard Shortcuts": [
-        "Gyorsbillentyűk"
-      ],
       "Link confirmation": [
         "Link jóváhagyása"
-      ],
-      "Mailbox density": [
-        "Megjelenítés tömörsége"
-      ],
-      "Mailbox layout": [
-        "Elrendezés"
       ],
       "Merge contacts": [
         "Névjegyek összevonása"

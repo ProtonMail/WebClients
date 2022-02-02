@@ -259,10 +259,10 @@
       "Details": [
         "Detalles"
       ],
-      "Did not receive the code?": [
+      "Didn't receive a code?": [
         "¿No recibió el código?"
       ],
-      "Didn't receive a code?": [
+      "Didn't receive the code?": [
         "¿No recibió el código?"
       ],
       "Disable recovery phrase": [
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Editar sieve"
+      ],
+      "Edit sign-in details": [
+        "Editar datos de inicio de sesión"
       ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Cursiva"
-      ],
-      "Justify": [
-        "Justificar"
       ],
       "Keep": [
         "Conservar"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        "Verificar cuenta"
+      ],
+      "Verify email": [
+        "Verificar correo"
       ],
       "View": [
         "Ver"
@@ -1723,12 +1729,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "No se pueden crear calendarios nuevos para todos los calendarios importados debido al límite de calendarios personales."
       ],
-      "Can't validate email, try again later": [
-        "No se puede validar el correo electrónico, intente de nuevo más tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "No se puede validar el teléfono, intente más tarde"
-      ],
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
       ],
@@ -1907,9 +1907,6 @@
       "Please generate keys before you try to change your password": [
         "Genere claves antes de intentar cambiar su contraseña"
       ],
-      "Please refresh the page.": [
-        "Actualice la página."
-      ],
       "Please set a recovery email first": [
         "Defina primero un correo de recuperación"
       ],
@@ -1937,8 +1934,8 @@
       "Process aborted": [
         "Proceso abortado"
       ],
-      "Request timed out.": [
-        "Tiempo de espera agotado."
+      "Request timed out": [
+        "Tiempo de espera agotado"
       ],
       "Require at least one action": [
         "Requiere al menos una acción"
@@ -1972,9 +1969,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que está usando no permite que el pago sea autorizado. Use un navegador diferente o inicie sesión a través de una computadora."
-      ],
-      "The composer failed to load.": [
-        "No se pudo cargar el compositor."
       ],
       "The folder name is too long. Please choose a different name.": [
         "El nombre de la carpeta es demasiado largo. Elija un nombre diferente."
@@ -3325,7 +3319,7 @@
         "La respuesta automática está activa hasta que la desactive."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "La respuesta automática estará siempre activa los días de la semana que selecciones, entre las horas seleccionadas."
+        "La respuesta automática siempre está activa en los días de la semana que seleccione, entre las horas seleccionadas."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponible en macOS, Windows y Linux."
@@ -3750,8 +3744,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instale un archivo de configuración de Servidor para conectarse a un servidor específico en el país de su elección."
       ],
-      "Internet connection lost.": [
-        "Sin conexión a Internet."
+      "Internet connection lost": [
+        "Sin conexión a Internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "No hay conexión a internet. Compruebe la conectividad de su dispositivo."
@@ -3767,9 +3761,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tiene que confirmar su selección y nosotros haremos el resto."
-      ],
-      "Justify": [
-        "Justificar"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantenga estos registros en su DNS durante el tiempo que desee usar DKIM."
@@ -4138,8 +4129,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
-      "Session timed out.": [
-        "Sesión agotada."
+      "Session timed out": [
+        "Sesión agotada"
       ],
       "Set recovery phrase": [
         "Establecer frase de recuperación"
@@ -4423,6 +4414,9 @@
       "We'll notify you when the import is done.": [
         "Le avisaremos cuando la importación esté terminada."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
       "Web URL": [
         "URL Web"
       ],
@@ -4455,6 +4449,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Desea recibir un código de verificación nuevo o usar un método de verificación alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "¿Desearía recibir un código de verificación nuevo?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo lee sus datos personales con el fin de facilitar el acceso a anunciantes, agencias de inteligencia de Estados Unidos y terceros. Para una mejor privacidad, cree una dirección de correo electrónico segura."
@@ -4610,7 +4607,7 @@
         "Los correos electrónicos de su organización están protegidos con cifrado de extremo a extremo usando la clave de la organización. Esta huella digital puede ser usada para verificar que todos los administradores en su cuenta tienen la misma clave."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Sus detalles de pago están protegidos con el cifrado TLS y las leyes de privacidad siuzas."
+        "Sus detalles de pago están protegidos con el cifrado TLS y las leyes de privacidad suizas."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Su número de teléfono sólo se usará para esta verificación única."
@@ -5045,8 +5042,8 @@
         "${ UsedMembers } de ${ MaxMembers } usuario",
         "${ UsedMembers } de ${ MaxMembers } usuarios"
       ],
-      "(Coming soon)": [
-        "(Próximamente)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(No disponible temporalmente. Compruebe más tarde.)"
       ],
       "Account storage": [
         "Almacenamiento de la cuenta"
@@ -5152,6 +5149,9 @@
       ],
       "Code": [
         "Código"
+      ],
+      "Code is 6 digits without spaces": [
+        "El código es de 6 dígitos sin espacios"
       ],
       "Color": [
         "Color"
@@ -5317,9 +5317,6 @@
       ],
       "Enter password": [
         "Ingresar contraseña"
-      ],
-      "Enter the 6-digit code": [
-        "Ingrese el código de 6 dígitos"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Ingrese la contraseña para la clave con huella digital: ${ fingerprintCode }"
@@ -6639,9 +6636,6 @@
       "Secure Core configs": [
         "Ajustes de Secure Core"
       ],
-      "Select a reason": [
-        "Seleccione un motivo"
-      ],
       "Standard server configs": [
         "Ajustes estándar del servidor"
       ],
@@ -7878,6 +7872,9 @@
       "Email": [
         "Correo"
       ],
+      "Email composer": [
+        "Compositor del correo"
+      ],
       "Email encryption keys": [
         "Claves de cifrado de correo"
       ],
@@ -7895,9 +7892,6 @@
       ],
       "Error": [
         "Error"
-      ],
-      "Expand content": [
-        "Expandir contenido"
       ],
       "Export": [
         "Exportar"

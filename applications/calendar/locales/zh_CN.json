@@ -164,8 +164,8 @@
       "Deselect all": [
         "取消全选"
       ],
-      "Did not receive the code?": [
-        "没收到验证码？"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "舍弃"
@@ -190,6 +190,9 @@
       ],
       "Edit phone number": [
         "编辑电话号码"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "邮件设置"
@@ -254,9 +257,6 @@
       "Increase": [
         "增加"
       ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
-      ],
       "Load image": [
         "加载图片"
       ],
@@ -265,12 +265,6 @@
       ],
       "Log in": [
         "登录"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
       ],
       "Make this participant optional": [
         "可选择包含此参与者"
@@ -512,11 +506,14 @@
       "Use for sending": [
         "用于发送邮件"
       ],
-      "Use “${ label }” setting": [
-        "使用 \"${ label }\" 设置"
-      ],
       "Verify": [
         "验证"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "查看"
@@ -598,38 +595,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } 昨天${ formattedHour } 开始"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        ""
+      ],
       "${ title } starts now": [
         "${ title } 现在开始"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        ""
       ],
       "${ title } starts today": [
         "${ title } 今天开始"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } 将以${ formattedHour } 开始"
+      "${ title } starts tomorrow": [
+        ""
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } 将于 ${ _formattedDate2 } 开始"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } 将以${ _formattedDate2 } 开始，并${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } 将从 ${ _formattedDate3 } 开始"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } 将以${ _formattedDate3 } 开始，并${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } 将从 ${ _formattedDateWithoutTime } 开始"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } 将从 ${ formattedDateWithTime } 开始"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } 将于明天开始"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } 明天将以${ formattedHour } 开始"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        ""
       ]
     },
     "Alert": {
@@ -996,14 +993,6 @@
         ""
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "常规"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1152,14 +1141,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期账单"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "标准"
-      ],
-      "Compact": [
-        "紧凑"
       ]
     },
     "Description": {
@@ -1368,12 +1349,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "由于个人日历限制，无法为所有导入的日历创建新日历。"
       ],
-      "Can't validate email, try again later": [
-        "无法验证电子邮件，请稍后再试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再试"
-      ],
       "Cancellation failed to be sent": [
         "活动取消发送失败"
       ],
@@ -1566,8 +1541,8 @@
       "Process aborted": [
         "操作已中止"
       ],
-      "Request timed out.": [
-        "请求超时。"
+      "Request timed out": [
+        ""
       ],
       "Self invitation not allowed": [
         "不能自我邀请"
@@ -2315,9 +2290,6 @@
       "At most 100 participants are allowed per invitation": [
         "每次邀请的上限是 100 人"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "每两年支付 ${ billedPrice }"
       ],
@@ -2495,8 +2467,8 @@
       "Inherited from parent folder": [
         "继承自父文件夹"
       ],
-      "Internet connection lost.": [
-        "网络连接断开"
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "网络连接已丢失。请检查您设备的连接性。"
@@ -2666,8 +2638,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
-      "Session timed out.": [
-        "会话已超时。"
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ProtonMail 以外其他兼容 PGP 的邮箱发送端到端加密邮件了"
@@ -2792,6 +2764,9 @@
       "We'll notify you when the import is done.": [
         "导入完成时我们将通知您。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "周"
       ],
@@ -2821,6 +2796,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to update all events in this series?": [
         "您想要更新该系列活动中的所有活动吗？"
@@ -2990,193 +2968,8 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "添加加密"
-      ],
-      "Add expiration time": [
-        "添加到期时间"
-      ],
-      "Apply / open": [
-        "应用 / 打开"
-      ],
-      "Attach file": [
-        "添加附件"
-      ],
-      "Cancel / close": [
-        "取消 / 关闭"
-      ],
-      "Close draft": [
-        "关闭草稿"
-      ],
-      "Create filter with...": [
-        "创建过滤器..."
-      ],
-      "Delete permanently": [
-        "永久删除"
-      ],
-      "Discard draft": [
-        "舍弃草稿"
-      ],
-      "Expand / contract composer": [
-        "展开/还原编辑窗"
-      ],
-      "Forward": [
-        "转发"
-      ],
-      "Go to All Mail": [
-        "转至所有邮件"
-      ],
-      "Go to Archive": [
-        "转至归档"
-      ],
-      "Go to Drafts": [
-        "转至草稿箱"
-      ],
-      "Go to Inbox": [
-        "转至收件箱"
-      ],
-      "Go to Sent": [
-        "转至发件箱"
-      ],
-      "Go to Spam": [
-        "转至垃圾邮件"
-      ],
-      "Go to Starred": [
-        "转至星标邮件"
-      ],
-      "Go to Trash": [
-        "移至回收站"
-      ],
-      "Jump to first": [
-        "跳转到第一个"
-      ],
-      "Jump to last": [
-        "跳转到最后一个"
-      ],
-      "Label as...": [
-        "标记为"
-      ],
-      "Load embedded images": [
-        "加载嵌入图像"
-      ],
-      "Load remote content": [
-        "加载外链内容"
-      ],
-      "Mark as unread": [
-        "标为未读"
-      ],
-      "Minimize / maximize composer": [
-        "最小化/最大化编辑窗"
-      ],
-      "Move down": [
-        "下移"
-      ],
-      "Move left / collapse": [
-        "左移 / 折叠"
-      ],
-      "Move right / expand": [
-        "右移 / 展开"
-      ],
-      "Move to Archive": [
-        "移至归档"
-      ],
-      "Move to Inbox": [
-        "移至收件箱"
-      ],
-      "Move to Spam": [
-        "标为垃圾邮件"
-      ],
-      "Move to Trash": [
-        "移至回收站"
-      ],
-      "Move to...": [
-        "移至..."
-      ],
-      "Move up": [
-        "上移"
-      ],
-      "New message": [
-        "新邮件"
-      ],
-      "Open next message": [
-        "打开下则消息"
-      ],
-      "Open previous message": [
-        "打开上则消息"
-      ],
-      "Open this modal": [
-        "打开此面板"
-      ],
-      "Reply": [
-        "回复"
-      ],
-      "Reply all": [
-        "回复所有人"
-      ],
-      "Save draft": [
-        "保存草稿"
-      ],
-      "Search": [
-        "搜索"
-      ],
-      "Select / unselect": [
-        "选择 / 取消选择"
-      ],
-      "Select / unselect all": [
-        "全选 / 反选"
-      ],
-      "Send email": [
-        "发送邮件"
-      ],
-      "Show all emails": [
-        "显示所有邮件"
-      ],
-      "Show original message": [
-        "显示原始邮件"
-      ],
-      "Show unread emails": [
-        "显示未读邮件"
-      ],
-      "Star": [
-        "星标"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "操作快捷键"
-      ],
-      "Basic actions": [
-        "基本操作"
-      ],
-      "Basic navigation": [
-        "基本导航"
-      ],
-      "Composer shortcuts": [
-        "编辑窗快捷键"
-      ],
-      "Folder shortcuts": [
-        "类别快捷键"
-      ],
-      "List shortcuts": [
-        "列表快捷键"
-      ],
-      "Message shortcuts": [
-        "消息快捷键"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "关"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "开"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "0 - Not likely": [
@@ -3235,6 +3028,9 @@
       ],
       "City": [
         "城市"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         ""
@@ -3299,9 +3095,6 @@
       "Enter organization name to confirm": [
         "请输入机构名称进行确认"
       ],
-      "Enter the 6-digit code": [
-        "请输入 6 位验证码"
-      ],
       "Event title": [
         "日程名称"
       ],
@@ -3346,9 +3139,6 @@
       ],
       "Import to:": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
       ],
       "Label messages as": [
         ""
@@ -3446,15 +3236,6 @@
       "Select a method": [
         "选择支付方式："
       ],
-      "Select how your composer opens by default.": [
-        "请选择编辑窗的默认外观"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "请选择收件箱列表的默认外观"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "请选择邮箱的默认外观"
-      ],
       "Select your country": [
         "选择国家"
       ],
@@ -3514,30 +3295,6 @@
         "名称"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "常规"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "标准"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "分栏"
-      ],
-      "Row": [
-        "整行"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "添加截图"
@@ -3560,14 +3317,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } 标签已创建"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "分栏"
-      ],
-      "Row": [
-        "整行"
       ]
     },
     "Link": {
@@ -4578,9 +4327,6 @@
       "Invitation sent and participants added to all events": [
         "邀请已发送，活动参与者已被加入所有日程中"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "键盘快捷键设置已更新"
-      ],
       "Participants notified and all events updated": [
         "已向参与者发送通知，所有日程已更新"
       ],
@@ -4710,9 +4456,6 @@
       "${ appName } customization": [
         "自定义 ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 快捷键"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } 位成员"
       ],
@@ -4791,9 +4534,6 @@
       "Clearing data": [
         "正在清除数据"
       ],
-      "Composer mode": [
-        "编辑窗模式"
-      ],
       "Confirm loss of Proton bonuses": [
         "确定放弃 Proton 特权"
       ],
@@ -4820,9 +4560,6 @@
       ],
       "Create contact": [
         "创建联系人"
-      ],
-      "Create event": [
-        "创建事件"
       ],
       "Create new group": [
         "创建新群组"
@@ -4883,9 +4620,6 @@
       ],
       "Edit contact group": [
         "更改联系人群组"
-      ],
-      "Edit event": [
-        "编辑日程"
       ],
       "Edit image": [
         "编辑图片"
@@ -4953,17 +4687,8 @@
       "Invalid verification code": [
         "无效的验证代码"
       ],
-      "Keyboard Shortcuts": [
-        "键盘快捷键"
-      ],
       "Link confirmation": [
         "确认打开链接"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
       ],
       "Merge contacts": [
         "合并联系人"

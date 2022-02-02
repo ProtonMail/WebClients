@@ -107,7 +107,7 @@
         "Wyrównaj do prawej"
       ],
       "Alignment": [
-        "Wyrównaj"
+        "Wyrównanie"
       ],
       "annual billing": [
         "plan roczny"
@@ -259,10 +259,10 @@
       "Details": [
         "Szczegóły"
       ],
-      "Did not receive the code?": [
+      "Didn't receive a code?": [
         "Nie otrzymano kodu?"
       ],
-      "Didn't receive a code?": [
+      "Didn't receive the code?": [
         "Nie otrzymano kodu?"
       ],
       "Disable recovery phrase": [
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Edytuj filtr Sieve"
+      ],
+      "Edit sign-in details": [
+        "Edytuj szczegóły logowania"
       ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Kursywa"
-      ],
-      "Justify": [
-        "Wyjustuj"
       ],
       "Keep": [
         "Zachowaj"
@@ -784,6 +784,12 @@
       "Verify": [
         "Zweryfikuj"
       ],
+      "Verify account": [
+        "Zweryfikuj konto"
+      ],
+      "Verify email": [
+        "Zweryfikuj adres e-mail"
+      ],
       "View": [
         "Podgląd"
       ],
@@ -931,7 +937,7 @@
         "Jeśli wyjdziesz teraz, niektóre wydarzenia nie zostaną zaimportowane"
       ],
       "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Usunięcie kluczy jest nieodwracalne. Aby uzyskać dostęp do dowolnej wiadomości zaszyfrowanej za pomocą tego klucza, możesz utworzyć kopię zapasową tego klucza do późniejszego wykorzystania."
+        "Usunięcie kluczy jest nieodwracalne. Utwórz kopię zapasową klucza, aby uzyskać dostęp do wiadomości zaszyfrowanych za jego pomocą do późniejszego wykorzystania."
       ],
       "You will face a permanent data loss by not making a backup of your key.": [
         "Brak kopii zapasowej klucza może spowodować trwałą utratę danych."
@@ -975,7 +981,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "Jestem poza biurem, z ograniczonym dostępem do mojej poczty."
+        "Jestem poza biurem i mam ograniczony dostęp do poczty."
       ]
     },
     "Badge for domain": {
@@ -1757,12 +1763,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Z powodu limitu maksymalnej liczby osobistych kalendarzy, nie możesz utworzyć nowych kalendarzy dla wszystkich zaimportowanych kalendarzy."
       ],
-      "Can't validate email, try again later": [
-        "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
-      ],
-      "Can't validate phone, try again later": [
-        "Nie można zweryfikować numeru telefonu. Spróbuj ponownie później"
-      ],
       "Checkout expired, please try again": [
         "Płatność wygasła. Spróbuj ponownie"
       ],
@@ -1949,9 +1949,6 @@
       "Please generate keys before you try to change your password": [
         "Wygeneruj klucze, zanim spróbujesz zmienić hasło"
       ],
-      "Please refresh the page.": [
-        "Odśwież stronę."
-      ],
       "Please set a recovery email first": [
         "Ustaw adres pomocniczy"
       ],
@@ -1979,8 +1976,8 @@
       "Process aborted": [
         "Proces został przerwany"
       ],
-      "Request timed out.": [
-        "Upłynął limit czasu żądania."
+      "Request timed out": [
+        "Upłynął limit czasu żądania"
       ],
       "Require at least one action": [
         "Co najmniej jedna akcja jest wymagana"
@@ -2014,9 +2011,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Przeglądarka, której używasz, nie pozwala na pełną autoryzację płatności. Skorzystaj z innej przeglądarki lub zaloguj się za pomocą komputera."
-      ],
-      "The composer failed to load.": [
-        "Nie udało się załadować edytora."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Nazwa folderu jest zbyt długa. Wpisz krótszą nazwę."
@@ -3051,7 +3045,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Czy na pewno chcesz zaimportować klucz prywatny? Importowanie ujawnionych lub nieostrożnie wygenerowanych kluczy prywatnych może naruszyć bezpieczeństwo wiadomości e-mail.\n\nPamiętaj, że klucz publiczny odpowiadający temu kluczowi prywatnemu będzie publicznie dostępny na naszym serwerze kluczy. Jeśli klucz zawiera dane osobowe (takie jak imię i nazwisko), których nie chcesz publikować, edytuj klucz przed jego zaimportowaniem."
+        "Czy na pewno chcesz zaimportować klucz prywatny? Importowanie ujawnionych lub nieostrożnie wygenerowanych kluczy prywatnych może naruszyć bezpieczeństwo wiadomości.\n\nPamiętaj, że klucz publiczny (odpowiadający temu kluczowi prywatnemu) będzie publicznie dostępny na naszym serwerze kluczy. Jeśli klucz zawiera dane osobowe (takie jak imię i nazwisko), których nie chcesz publikować, edytuj klucz przed jego zaimportowaniem."
       ]
     },
     "Import provider": {
@@ -3535,7 +3529,7 @@
         "Twórz subkonta i zarządzaj nimi, a także przypisuj im adresy e-mail w niestandardowej domenie."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Utwórz adresy e-mail dla innych osób, zarządzaj ProtonMailem dla biznesu, szkoły lub grupy. Rozpocznij od dodania nazwy organizacji i niestandardowej domeny (np. @twojafirma.pl). "
+        "Utwórz adresy e-mail dla innych osób, zarządzaj pocztą ProtonMail dla biznesu, szkoły lub grupy. Rozpocznij od dodania nazwy organizacji i niestandardowej domeny (np. @twojafirma.pl)."
       ],
       "Create in": [
         "Utwórz w"
@@ -3559,7 +3553,7 @@
         "Codziennie (niestandardowo)"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Filtry niestandardowe działają na wszystkie nowe wiadomości, przychodzące oraz wysyłane. Filtry możesz tworzyć i edytować bezpośrednio w języku programowania Sieve."
+        "Filtry niestandardowe działają na wszystkie nowe wiadomości przychodzące oraz wysyłane. Filtry możesz tworzyć i edytować bezpośrednio w języku programowania Sieve."
       ],
       "Custom monthly": [
         "Co miesiąc (niestandardowo)"
@@ -3691,10 +3685,10 @@
         "Nie udało się pobrać logów."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtry działają na wszystkie wiadomości, przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę i skrypt Sieve."
+        "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę i skrypt Sieve."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtry działają na wszystkie wiadomości, przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
+        "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Dla rodzin i małych zespołów. Plan zawiera pocztę i usługę VPN."
@@ -3730,7 +3724,7 @@
         "Nowe hasło odzyskiwania zastąpi stare."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Podaj swój klucz publiczny znajomym lub opublikuj go online, aby każdy mógł wysyłać do Ciebie zaszyfrowane wiadomości e-mail!"
+        "Udostępnij swój klucz publiczny znajomym lub opublikuj go online, aby każdy mógł wysyłać do Ciebie zaszyfrowane wiadomości!"
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google rejestruje Twoją aktywność w sieci i odczytuje Twoje dane osobowe, aby zapewnić dostęp reklamodawcom i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
@@ -3864,8 +3858,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Zainstaluj plik konfiguracyjny serwera, aby połączyć się z określonym serwerem w wybranym przez Ciebie kraju."
       ],
-      "Internet connection lost.": [
-        "Połączenie z Internetem zostało utracone."
+      "Internet connection lost": [
+        "Połączenie z Internetem zostało utracone"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Połączenie z Internetem zostało utracone. Sprawdź połączenie swojego urządzenia."
@@ -3881,9 +3875,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
-      ],
-      "Justify": [
-        "Wyjustuj"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Zachowaj te rekordy DNS tak długo, jak chcesz używać DKIM."
@@ -3949,7 +3940,7 @@
         "Upewnij się, że pamiętasz hasło, aby zalogować się i odszyfrować wiadomości. ${ boldAlert }. Zalecamy w pierwszej kolejności dodanie adresu pomocniczego."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Wpisz ręcznie tę informację do urządzenia uwierzytelniania dwustopniowego, aby skonfigurować swoje konto. ${ _switchButton }."
+        "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ _switchButton }."
       ],
       "Merged": [
         "Scalony"
@@ -4030,7 +4021,7 @@
         "Nie ustawiono"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nie Twoje urządzenie? Użyj prywatnego okna przeglądarki, aby się zalogować i zamknij je, jak już skończysz. ${ learnMore }"
+        "To nie jest Twoje urządzenie? Zaloguj się przy użyciu okna prywatnego. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Liczba połączeń VPN, która może zostać przypisana do użytkowników. Każde podłączone urządzenie używa jednego połączenia VPN."
@@ -4078,7 +4069,7 @@
         "Płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Podpisanie wiadomości wychodzących ułatwi klientom PGP automatyczne rozpoznanie Twoich kluczy PGP."
+        "Podpisywanie wiadomości wychodzących ułatwi klientom PGP automatyczne rozpoznanie Twoich kluczy PGP."
       ],
       "Phone number": [
         "Numer telefonu"
@@ -4090,7 +4081,7 @@
         "Ulepszenie planu jest wymagane"
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
-        "Wpisz hasło, aby zaszyfrować Twój klucz prywatny przed eksportem."
+        "Wpisz hasło, aby zaszyfrować klucz prywatny przed eksportem."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Wpisz hasło odzyskiwania (składające się z 12 słów) powiązane z tym kontem."
@@ -4111,7 +4102,7 @@
         "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Wpisz adres e-mail, na wypadek gdybyśmy potrzebowali się z Tobą skontaktować."
+        "Wpisz adres e-mail na wypadek, gdybyśmy potrzebowali się z Tobą skontaktować."
       ],
       "Please select the folders you would like to import:": [
         "Wybierz foldery, które chcesz zaimportować:"
@@ -4147,7 +4138,7 @@
         "Podgląd"
       ],
       "Proton can't help you recover any lost passwords": [
-        "Proton nie może Ci pomóc odzyskać utraconych haseł"
+        "Proton nie może odzyskać utraconych haseł"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton wstrzymał proces importowania, ponieważ utracił połączenie z drugim dostawcą poczty e-mail. Połącz się ponownie."
@@ -4234,7 +4225,7 @@
         "Zamiast tego zeskanuj kod QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Zeskanuj kod QR z ekranu za pomocą aplikacji uwierzytelniania dwustopniowego na Twoim urządzeniu. ${ switchButton }."
+        "Zeskanuj kod QR za pomocą aplikacji uwierzytelniania dwustopniowego. ${ switchButton }."
       ],
       "Screenshot(s) attached": [
         "Zrzuty ekranu zostały dołączone"
@@ -4254,8 +4245,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
-      "Session timed out.": [
-        "Upłynął limit czasu sesji."
+      "Session timed out": [
+        "Upłynął limit czasu sesji"
       ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
@@ -4333,7 +4324,7 @@
         "Adres e-mail zostanie użyty tylko do odzyskiwania konta."
       ],
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Ta funkcja jest przeznaczona tylko dla zaawansowanych użytkowników. Po usunięciu tego klucza NIE będziesz w stanie odszyfrować żadnej wiadomości, zaszyfrowanej za jego pomocą. Może to spowodować utratę danych."
+        "Ta funkcja jest przeznaczona tylko dla zaawansowanych użytkowników. Po usunięciu tego klucza NIE będziesz w stanie odszyfrować żadnej wiadomości, która jest zaszyfrowana za jego pomocą. Może to spowodować utratę danych."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "To jest hasło odzyskiwania składające się z 12 słów, które ustawiano."
@@ -4426,7 +4417,7 @@
         "Utwórz adres, aby korzystać z usługi ${ toAppName }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. Otrzymasz jeden kredyt za każde wydane ${ i18nCurrency }."
+        "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
       ],
       "Tor": [
         "Tor"
@@ -4444,7 +4435,7 @@
         "Tryb podwójnego hasła wymaga podania dwóch haseł: jedno do zalogowania się, drugie do odszyfrowania skrzynki pocztowej. (Opcja zaawansowana)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Tryb podwójnego hasła umożliwia oddzielenie hasła logowania i szyfrowania skrzynki pocztowej. Zwiększa to nieznacznie bezpieczeństwo w określonych sytuacjach. Dla większości użytkowników wystarczający jest tryb pojedynczego hasła. Aby przełączyć się do trybu podwójnego hasła, wpisz hasło logowania, a następnie hasło szyfrowania."
+        "Tryb podwójnego hasła umożliwia oddzielenie haseł logowania i odszyfrowywania skrzynki pocztowej. W określonych sytuacjach zwiększa to nieznacznie bezpieczeństwo. Dla większości użytkowników wystarczający jest tryb pojedynczego hasła. Aby przełączyć się do trybu podwójnego hasła, wpisz hasło logowania, a następnie hasło szyfrowania."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie można zweryfikować podpisu pliku odzyskiwania. Skontaktuj się ze wsparciem technicznym."
@@ -4539,6 +4530,9 @@
       "We'll notify you when the import is done.": [
         "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Wyślemy nowy kod weryfikacyjny do ${ strong }"
+      ],
       "Web URL": [
         "Adres URL"
       ],
@@ -4561,7 +4555,7 @@
         "Jeśli funkcja jest wyłączona, osadzone obrazy nie zostaną załadowane bez Twojej wiedzy."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Jeśli będziesz miał nowe wiadomości na koncie ProtonMail, to wyślemy powiadomienie na powyższy adres e-mail."
+        "Otrzymasz powiadomienie na powyższy adres e-mail, jeśli będziesz miał nowe wiadomości na koncie ProtonMail."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Podczas odnawiania subskrypcji, dostępne środki na koncie zostaną użyte w pierwszej kolejności."
@@ -4571,6 +4565,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Czy chcesz otrzymać nowy kod weryfikacyjny?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo odczytuje Twoje dane osobowe, aby zapewnić dostęp reklamodawcom, amerykańskim agencjom wywiadowczym i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
@@ -4776,7 +4773,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcje, jak zapłacić gotówką."
+        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
       ]
     },
     "Info for domain modal": {
@@ -4787,7 +4784,7 @@
         "Dodaj nowego użytkownika do swojej organizacji i utwórz dla niego adres."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Ze względów bezpieczeństwa musimy sprawdzić, czy jesteś właścicielem domeny ${ domainName }. Dodaj następujący rekord TXT do swojej domeny. Zazwyczaj możesz to zrobić w panelu sterowania u rejestratora domeny."
+        "Ze względów bezpieczeństwa musimy zweryfikować, czy jesteś właścicielem domeny ${ domainName }. Dodaj następujący rekord TXT do swojej domeny. Zazwyczaj możesz to zrobić w panelu sterowania u rejestratora domeny."
       ]
     },
     "Info for members section": {
@@ -5152,25 +5149,25 @@
         "${ n } dostępnych połączeń VPN"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "Adres e-mail ${ UsedAddresses }/${ MaxAddresses }",
-        "Adresów e-mail ${ UsedAddresses }/${ MaxAddresses }",
-        "Adresów e-mail ${ UsedAddresses }/${ MaxAddresses }",
-        "Adresów e-mail ${ UsedAddresses }/${ MaxAddresses }"
+        "Adres e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
+        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
+        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
+        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "Niestandardowa domena ${ UsedDomains }/${ MaxDomains }",
-        "Niestandardowe domeny ${ UsedDomains }/${ MaxDomains }",
-        "Niestandardowe domeny ${ UsedDomains }/${ MaxDomains }",
-        "Niestandardowe domeny ${ UsedDomains }/${ MaxDomains }"
+        "Niestandardowa domena: ${ UsedDomains } / ${ MaxDomains }",
+        "Niestandardowe domeny: ${ UsedDomains } / ${ MaxDomains }",
+        "Niestandardowe domeny: ${ UsedDomains } / ${ MaxDomains }",
+        "Niestandardowe domeny: ${ UsedDomains } / ${ MaxDomains }"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "Użytkownik ${ UsedMembers }/${ MaxMembers }",
-        "Użytkowników ${ UsedMembers }/${ MaxMembers }",
-        "Użytkowników ${ UsedMembers }/${ MaxMembers }",
-        "Użytkowników ${ UsedMembers }/${ MaxMembers }"
+        "Użytkownik ${ UsedMembers } / ${ MaxMembers }",
+        "Użytkownicy: ${ UsedMembers } / ${ MaxMembers }",
+        "Użytkownicy: ${ UsedMembers } / ${ MaxMembers }",
+        "Użytkownicy: ${ UsedMembers } / ${ MaxMembers }"
       ],
-      "(Coming soon)": [
-        "(wkrótce)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
       "Account storage": [
         "Przestrzeń dyskowa konta"
@@ -5212,7 +5209,7 @@
         "oraz"
       ],
       "And": [
-        "Oraz"
+        "oraz"
       ],
       "ANY": [
         "JAKIKOLWIEK"
@@ -5276,6 +5273,9 @@
       ],
       "Code": [
         "Kod"
+      ],
+      "Code is 6 digits without spaces": [
+        "Kod to 6 cyfr bez spacji"
       ],
       "Color": [
         "Kolor"
@@ -5441,9 +5441,6 @@
       ],
       "Enter password": [
         "Wpisz hasło"
-      ],
-      "Enter the 6-digit code": [
-        "Wpisz 6-cyfrowy kod"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Wpisz hasło dla klucza z odciskiem: ${ fingerprintCode }"
@@ -5620,7 +5617,7 @@
         "lub"
       ],
       "Or": [
-        "Lub"
+        "lub"
       ],
       "Organization name": [
         "Nazwa organizacji"
@@ -6784,9 +6781,6 @@
       ],
       "Secure Core configs": [
         "Konfiguracje Secure Core"
-      ],
-      "Select a reason": [
-        "Wybierz przyczynę"
       ],
       "Standard server configs": [
         "Konfiguracje standardowego serwera"
@@ -8030,6 +8024,9 @@
       "Email": [
         "E-mail"
       ],
+      "Email composer": [
+        "Edytor wiadomości"
+      ],
       "Email encryption keys": [
         "Klucze szyfrujące pocztę"
       ],
@@ -8047,9 +8044,6 @@
       ],
       "Error": [
         "Błąd"
-      ],
-      "Expand content": [
-        "Rozwiń zawartość"
       ],
       "Export": [
         "Eksportuj"
@@ -8628,7 +8622,7 @@
         "Ustaw domyślny rozmiar okna edytora."
       ],
       "Set the default layout for your Inbox.": [
-        "Ustaw domyślny widok swojej skrzynki pocztowej."
+        "Ustaw domyślny widok skrzynki pocztowej."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Podpisy utworzone za pomocą tego klucza są traktowane jako nieprawidłowe. Klucz nie może zostać użyty do szyfrowania"
@@ -8696,7 +8690,7 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Automatycznie dodaje Twój klucz publiczny do każdej wysyłanej wiadomości. Dzięki temu odbiorcy mogą zweryfikować jej autentyczność i wysyłać do Ciebie zaszyfrowane wiadomości."
+        "Automatycznie dodaj swój klucz publiczny do każdej wysyłanej wiadomości. Dzięki temu odbiorcy mogą zweryfikować jej autentyczność i wysyłać do Ciebie zaszyfrowane wiadomości."
       ]
     },
     "Tooltip default pgp scheme": {

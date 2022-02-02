@@ -166,8 +166,8 @@
       "Deselect all": [
         "Tümünün bırak"
       ],
-      "Did not receive the code?": [
-        "Kodu almadınız mı?"
+      "Didn't receive the code?": [
+        "Doğrulama kodunu almadınız mı?"
       ],
       "Discard": [
         "Vazgeç"
@@ -192,6 +192,9 @@
       ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
+      ],
+      "Edit sign-in details": [
+        "Oturum açma bilgilerini düzenle"
       ],
       "Email settings": [
         "E-posta ayarları"
@@ -256,9 +259,6 @@
       "Increase": [
         "Artır"
       ],
-      "Keyboard shortcuts": [
-        "Tuş takımı kısayolları"
-      ],
       "Load image": [
         "Görsel yükle"
       ],
@@ -267,12 +267,6 @@
       ],
       "Log in": [
         "Oturum aç"
-      ],
-      "Mailbox density": [
-        "Posta kutusu yoğunluğu"
-      ],
-      "Mailbox layout": [
-        "Posta kutusu görünümü"
       ],
       "Make this participant optional": [
         "Bu katılımcı isteğe bağlı olsun"
@@ -514,11 +508,14 @@
       "Use for sending": [
         "Gönderim için kullan"
       ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" ayarı kullanılsın"
-      ],
       "Verify": [
         "Doğrula"
+      ],
+      "Verify account": [
+        "Hesabı doğrula"
+      ],
+      "Verify email": [
+        "E-posta adresini doğrula"
       ],
       "View": [
         "Görüntüle"
@@ -604,37 +601,37 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title }, dün ${ formattedHour } saatinde başladı"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        "${ title }, ${ formattedHour } saatinde başlayacak"
+      ],
       "${ title } starts now": [
         "${ title } şimdi başlıyor"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        "${ title }, ${ _formattedDate2 } tarihinde başlayacak"
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title }, ${ _formattedDate2 } tarihinde ${ formattedHour } saatinde başlayacak"
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        "${ title }, ${ _formattedDate3 } tarihinde başlayacak"
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title }, ${ _formattedDate3 } tarihinde ${ formattedHour } saatinde başlayacak"
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        "${ title }, ${ _formattedDateWithoutTime } tarihinde başlayacak"
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        "${ title }, ${ formattedDateWithTime } zamanında başlayacak"
       ],
       "${ title } starts today": [
         "${ title } bugün başlıyor"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title }, ${ formattedHour } saatinde başlayacak"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title }, ${ _formattedDate2 } tarihinde başlayacak"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title },${ _formattedDate2 } tarihinde ${ formattedHour } saatinde başlayacak"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title }, ${ _formattedDate3 } tarihinde başlayacak"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title }, ${ _formattedDate3 } tarihinde ${ formattedHour } saatinde başlayacak"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title }, ${ _formattedDateWithoutTime } tarihinde başlayacak"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title }, ${ formattedDateWithTime } zamanında başlayacak"
-      ],
-      "${ title } will start tomorrow": [
+      "${ title } starts tomorrow": [
         "${ title } yarın başlayacak"
       ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
+      "${ title } starts tomorrow at ${ formattedHour }": [
         "${ title }, yarın ${ formattedHour } saatinde başlayacak"
       ]
     },
@@ -814,13 +811,13 @@
         "Köprü sorunu"
       ],
       "Calendar problem": [
-        "Takvim sorunu"
+        "Calendar sorunu"
       ],
       "Connection problem": [
         "Bağlantı sorunu"
       ],
       "Contacts problem": [
-        "Kişiler sorunu"
+        "Contacts sorunu"
       ],
       "Custom domain problem": [
         "Özel etki alanı sorunu"
@@ -859,7 +856,7 @@
         "Hesap açma sorunu"
       ],
       "Slow speed problem": [
-        "Yavaş hız sorunu"
+        "Hız yavaşlığı sorunu"
       ],
       "Speed problem": [
         "Hız sorunu"
@@ -1000,14 +997,6 @@
     "colon": {
       ": ": [
         ": "
-      ]
-    },
-    "Composer size": {
-      "Maximized": [
-        "Büyütülmüş"
-      ],
-      "Normal": [
-        "Normal"
       ]
     },
     "Confirm modal title": {
@@ -1165,14 +1154,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Gecikmiş fatura"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Geniş"
-      ],
-      "Compact": [
-        "Sıkışık"
       ]
     },
     "Description": {
@@ -1386,12 +1367,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler oluşturulamıyor."
       ],
-      "Can't validate email, try again later": [
-        "E-posta doğrulanamadı. Bir süre sonra yeniden deneyin"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefon doğrulanamadı. Bir süre sonra yeniden deneyin"
-      ],
       "Cancellation failed to be sent": [
         "İptal bilgilendirmesi gönderilemedi"
       ],
@@ -1509,8 +1484,8 @@
         "Etiket adı boş olamaz"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimine aktarın",
-        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimine aktarın"
+        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
+        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
       ],
       "Missing signature": [
         "İmza eksik"
@@ -1590,8 +1565,8 @@
       "Process aborted": [
         "İşlem iptal edildi"
       ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
+      "Request timed out": [
+        "İstek zaman aşımına uğradı"
       ],
       "Self invitation not allowed": [
         "Kendinizi davet edemezsiniz"
@@ -1609,10 +1584,10 @@
         "Bazı gruplar silinemedi"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Etiket adlarınızdan bazıları kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+        "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "Etiket adlarınızdan bazıları Protonmail en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+        "Bazı etiket adlarınız ProtonMail tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -2369,9 +2344,6 @@
       "At most 100 participants are allowed per invitation": [
         "Bir davette en fazla 100 katılımcı olabilir"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Temel gezinme ve işlemler, ayarlardaki tuş takımı kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "2 yılda bir ${ billedPrice } tutarında faturalanır"
       ],
@@ -2551,8 +2523,8 @@
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
       ],
-      "Internet connection lost.": [
-        "İnternet bağlantısı kesildi."
+      "Internet connection lost": [
+        "İnternet bağlantısı kesildi"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "İnternet bağlantısı kesildi. Lütfen aygıtınızın bağlantısını denetleyin."
@@ -2723,8 +2695,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
-      "Session timed out.": [
-        "Oturum zaman aşımına uğradı."
+      "Session timed out": [
+        "Oturum zaman aşımına uğradı"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ProtonMail kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
@@ -2802,7 +2774,7 @@
         "Bu etkinlik güncellendi. Davet edilen adresten e-posta gönderemeyeceğiniz için bu etkinliğin düzenleyicisine daveti reddettiğiniz bildirilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı bir eşyazım saldırısı olabilir ve Internet Explorer veya Edge tarayıcıları tarafından açılamaz. Bağlantının yasal olduğundan eminseniz, açmak için farklı bir tarayıcı kullanın."
+        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Internet Explorer ya da Edge tarayıcıları ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı bir eşyazım saldırısı olabilir. Lütfen bunun ziyaret etmek istediğiniz bağlantı olduğunu doğrulayarak açın ya da açmayın."
@@ -2849,6 +2821,9 @@
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
       "Week": [
         "Hafta"
       ],
@@ -2878,6 +2853,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
       "Would you like to update all events in this series?": [
         "Bu dizideki tüm etkinlikleri güncellemek ister misiniz?"
@@ -3004,7 +2982,7 @@
         "Değiştirilebilecek özellikler"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail, toplu e-posta veya spam gönderimi için kullanılamaz. Yasal e-posta iletileri için sınır yoktur."
+        "ProtonMail, toplu veya istenmeyen e-postalar göndermek için kullanılamaz. Normal e-posta gönderimi sınırsızdır."
       ]
     },
     "Info for cash payment method": {
@@ -3047,194 +3025,9 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Şifreleme ekle"
-      ],
-      "Add expiration time": [
-        "Geçerlilik süresi ekle"
-      ],
-      "Apply / open": [
-        "Uygula / aç"
-      ],
-      "Attach file": [
-        "Dosya ekle"
-      ],
-      "Cancel / close": [
-        "İptal et / kapat"
-      ],
-      "Close draft": [
-        "Taslağı kapat"
-      ],
-      "Create filter with...": [
-        "Şununla süzgeç oluştur..."
-      ],
-      "Delete permanently": [
-        "Kalıcı olarak sil"
-      ],
-      "Discard draft": [
-        "Taslağı iptal et"
-      ],
-      "Expand / contract composer": [
-        "Oluşturucuyu genişlet / daralt"
-      ],
-      "Forward": [
-        "İlet"
-      ],
-      "Go to All Mail": [
-        "Tüm e-postalara git"
-      ],
-      "Go to Archive": [
-        "Arşive git"
-      ],
-      "Go to Drafts": [
-        "Taslaklara git"
-      ],
-      "Go to Inbox": [
-        "Gelen kutusuna git"
-      ],
-      "Go to Sent": [
-        "Gönderilmişlere git"
-      ],
-      "Go to Spam": [
-        "İstenmeyenlere git"
-      ],
-      "Go to Starred": [
-        "Yıldızlanmışlara git"
-      ],
-      "Go to Trash": [
-        "Çöp kutusuna git"
-      ],
-      "Jump to first": [
-        "Birinciye git"
-      ],
-      "Jump to last": [
-        "Sonuncuya git"
-      ],
-      "Label as...": [
-        "Etiketle..."
-      ],
-      "Load embedded images": [
-        "Gömülü görselleri yükle"
-      ],
-      "Load remote content": [
-        "Uzak içeriği yükle"
-      ],
-      "Mark as unread": [
-        "Okunmamış olarak işaretle"
-      ],
-      "Minimize / maximize composer": [
-        "Oluşturucuyu küçült / büyüt"
-      ],
-      "Move down": [
-        "Aşağı git"
-      ],
-      "Move left / collapse": [
-        "Sola git / daralt"
-      ],
-      "Move right / expand": [
-        "Sağa git / genişlet"
-      ],
-      "Move to Archive": [
-        "Arşive taşı"
-      ],
-      "Move to Inbox": [
-        "Gelen kutusuna taşı"
-      ],
-      "Move to Spam": [
-        "İstenmeyenlere taşı"
-      ],
-      "Move to Trash": [
-        "Çöp kutusuna taşı"
-      ],
-      "Move to...": [
-        "Şuraya taşı..."
-      ],
-      "Move up": [
-        "Yukarı git"
-      ],
-      "New message": [
-        "Yeni ileti"
-      ],
-      "Open next message": [
-        "Sonraki iletiyi aç"
-      ],
-      "Open previous message": [
-        "Önceki iletiyi aç"
-      ],
-      "Open this modal": [
-        "Üste açılan pencerede aç"
-      ],
-      "Reply": [
-        "Yanıtla"
-      ],
-      "Reply all": [
-        "Tümünü yanıtla"
-      ],
-      "Save draft": [
-        "Taslağı kaydet"
-      ],
-      "Search": [
-        "Arama"
-      ],
-      "Select / unselect": [
-        "Seç / bırak"
-      ],
-      "Select / unselect all": [
-        "Tümünü seç / bırak"
-      ],
-      "Send email": [
-        "E-posta gönder"
-      ],
-      "Show all emails": [
-        "Tüm e-postaları göster"
-      ],
-      "Show original message": [
-        "Özgün iletiyi görüntüle"
-      ],
-      "Show unread emails": [
-        "Okunmamış e-postaları göster"
-      ],
-      "Star": [
-        "Yıldız"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "İşlem kısayollları"
-      ],
-      "Basic actions": [
-        "Temel işlemler"
-      ],
-      "Basic navigation": [
-        "Temel gezinme"
-      ],
-      "Composer shortcuts": [
-        "Oluşturucu kısayolları"
-      ],
-      "Folder shortcuts": [
-        "Klasör kısayolları"
-      ],
-      "List shortcuts": [
-        "Liste kısayolları"
-      ],
-      "Message shortcuts": [
-        "İleti kısayolları"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Kapalı"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Açık"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Çok yakında)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
       "0 - Not likely": [
         "0 - Önermem"
@@ -3292,6 +3085,9 @@
       ],
       "City": [
         "İl"
+      ],
+      "Code is 6 digits without spaces": [
+        "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
       "Color": [
         "Renk"
@@ -3356,9 +3152,6 @@
       "Enter organization name to confirm": [
         "Doğrulamak için kuruluş adını yazın"
       ],
-      "Enter the 6-digit code": [
-        "6 rakamlı kodu yazın"
-      ],
       "Event title": [
         "Etkinlik başlığı"
       ],
@@ -3403,9 +3196,6 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
-      ],
-      "Keyboard shortcuts": [
-        "Tuş takımı kısayolları"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -3504,15 +3294,6 @@
       "Select a method": [
         "Bir yöntem seçin"
       ],
-      "Select how your composer opens by default.": [
-        "Oluşturucunuzun varsayılan olarak nasıl açılacağını seçin."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Posta kutunuzun varsayılan olarak nasıl görüneceğini seçin."
-      ],
       "Select your country": [
         "Ülkenizi seçin"
       ],
@@ -3572,30 +3353,6 @@
         "Ad"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Büyütülmüş"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Geniş"
-      ],
-      "Compact": [
-        "Sıkışık"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Satır"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Ekran görüntüleri ekle"
@@ -3618,14 +3375,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } oluşturuldu"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Satır"
       ]
     },
     "Link": {
@@ -4149,7 +3898,7 @@
         "Etkinlikleri içe aktar"
       ],
       "Meet your new encrypted calendar": [
-        "Yeni şifreli takviminizle tanışın"
+        "Yeni şifrelenmiş takviminizle tanışın"
       ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
@@ -4670,9 +4419,6 @@
       "Invitation sent and participants added to all events": [
         "Davet gönderildi ve katılımcılar tüm etkinliklere eklendi"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Tuş takımı kısayol tercihleri güncellendi"
-      ],
       "Participants notified and all events updated": [
         "Katılımcılar bilgilendirildi ve tüm etkinlikler güncellendi"
       ],
@@ -4804,9 +4550,6 @@
       "${ appName } customization": [
         "${ appName } özelleştirme"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } tuş takımı kısayolları"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } üye",
         "${ emailsCount } üye"
@@ -4887,9 +4630,6 @@
       "Clearing data": [
         "Veriler temizleniyor"
       ],
-      "Composer mode": [
-        "Oluşturucu kipi"
-      ],
       "Confirm loss of Proton bonuses": [
         "Proton ödüllerini kaybedeceğinizi onaylayın"
       ],
@@ -4917,9 +4657,6 @@
       "Create contact": [
         "Kişi oluştur"
       ],
-      "Create event": [
-        "Etkinlik oluştur"
-      ],
       "Create new group": [
         "Yeni grup oluştur"
       ],
@@ -4936,7 +4673,7 @@
         "Özelleştir ve onayla"
       ],
       "Customize calendar import": [
-        "Takvim içe aktarmayı özelleştirin"
+        "Takvim içe aktarma işlemini özelleştirin"
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
@@ -4981,9 +4718,6 @@
       ],
       "Edit contact group": [
         "Kişi grubunu düzenle"
-      ],
-      "Edit event": [
-        "Etkinliği düzenle"
       ],
       "Edit image": [
         "Görseli düzenle"
@@ -5052,17 +4786,8 @@
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
-      "Keyboard Shortcuts": [
-        "Tuş takımı kısayolları"
-      ],
       "Link confirmation": [
         "Bağlantı onayı"
-      ],
-      "Mailbox density": [
-        "Posta kutusu yoğunluğu"
-      ],
-      "Mailbox layout": [
-        "Posta kutusu görünümü"
       ],
       "Merge contacts": [
         "Kişileri birleştir"
@@ -5290,7 +5015,7 @@
         "İki yıllık fatura dönemine uygulanan indirim"
       ],
       "Each imported email will have this label": [
-        "İçe aktarılan her e-postaya bu etiket attanacak"
+        "İçe aktarılan her e-postaya bu etiket atanacak"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-posta şifrelemesi, gönderilen iletilerinizin kimliğinin doğrulanmasını sağlamak için e-posta imzası kullanılmasını zorunlu kılar"
@@ -5302,10 +5027,10 @@
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek tarifeyle tüm ücretli ${ vpnAppName } ve ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) özelliklerine erişin."
+        "Tek tarifeyle tüm ücretli ${ vpnAppName } ve ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek tarifeyle tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) özelliklerine erişin."
+        "Tek tarifeyle tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Kendi etki alanınızın e-postalarını ${ mailAppName } üzerinde barındırın. Örnek: ali.kaya@ornek.com"
@@ -5326,7 +5051,7 @@
         "Tek tıklama ile internet trafiğinizi Tor ağı üzerinden yöneltin."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Bir kullanıcıya imzalama ya da şifreleme için kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
+        "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "BitTorrent gibi dosya paylaşım iletişim kurallarına destek."
@@ -5338,7 +5063,7 @@
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Bu e-posta adresine uçtan uca şifreli e-postalar göndermek için bir herkese açık anahtar yükleyin"
+        "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Hesabınıza bağlı birden fazla adres / takma ad kullanın. Örnek: kullaniciadi2@protonmail.com"
@@ -5673,7 +5398,7 @@
         "Haftada bir her gün, ${ untilString }"
       ],
       "Weekly on Friday": [
-        "Haftada bir her Cuma günü"
+        "Haftada bir Cuma günü"
       ],
       "Weekly on Friday, ${ timesString }": [
         "Haftada bir Cuma günü, ${ timesString }"
@@ -5682,7 +5407,7 @@
         "Haftada bir Cuma günü, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Haftada bir her Pazartesi günü"
+        "Haftada bir Pazartesi günü"
       ],
       "Weekly on Monday, ${ timesString }": [
         "Haftada bir Pazartesi günü, ${ timesString }"
@@ -5691,7 +5416,7 @@
         "Haftada bir Pazartesi günü, ${ untilString }"
       ],
       "Weekly on Saturday": [
-        "Haftada bir her Cumartesi günü"
+        "Haftada bir Cumartesi günü"
       ],
       "Weekly on Saturday, ${ timesString }": [
         "Haftada bir Cumartesi günü, ${ timesString }"
@@ -5700,7 +5425,7 @@
         "Haftada bir Cumartesi günü, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Haftada bir her Pazar günü"
+        "Haftada bir Pazar günü"
       ],
       "Weekly on Sunday, ${ timesString }": [
         "Haftada bir Pazar günü, ${ timesString }"
@@ -5709,7 +5434,7 @@
         "Haftada bir Pazar günü, ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Haftada bir her Perşembe günü"
+        "Haftada bir Perşembe günü"
       ],
       "Weekly on Thursday, ${ timesString }": [
         "Haftada bir Perşembe günü, ${ timesString }"
@@ -5718,7 +5443,7 @@
         "Haftada bir Perşembe günü, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Haftada bir her Salı günü"
+        "Haftada bir Salı günü"
       ],
       "Weekly on Tuesday, ${ timesString }": [
         "Haftada bir Salı günü, ${ timesString }"
@@ -5727,10 +5452,10 @@
         "Haftada bir Salı günü, ${ untilString }"
       ],
       "Weekly on Wednesday": [
-        "Haftada bir her Çarşamba günü"
+        "Haftada bir Çarşamba günü"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Haftada bir her Çarşamba günü, ${ timesString }"
+        "Haftada bir Çarşamba günü, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Haftada bir Çarşamba günü, ${ untilString }"

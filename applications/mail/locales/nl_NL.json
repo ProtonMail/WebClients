@@ -271,8 +271,8 @@
       "Details": [
         "Details"
       ],
-      "Did not receive the code?": [
-        "Heeft u de code niet ontvangen?"
+      "Didn't receive the code?": [
+        "Code niet ontvangen?"
       ],
       "Discard": [
         "Verwijderen"
@@ -306,6 +306,9 @@
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Edit sign-in details": [
+        "Bewerk aanmeldgegevens"
       ],
       "Email settings": [
         "E-mailinstellingen"
@@ -448,9 +451,6 @@
       ],
       "Italic": [
         "Schuin"
-      ],
-      "Justify": [
-        "Uitvullen"
       ],
       "Keyboard shortcuts": [
         "Toetsenbord snelkoppelingen"
@@ -684,7 +684,7 @@
         "Verwijder bonussen"
       ],
       "Remove gift code": [
-        "Cadeaucode verwijderen"
+        "Geschenkcode verwijderen"
       ],
       "Remove this label": [
         "Label verwijderen"
@@ -941,6 +941,12 @@
       ],
       "Verify": [
         "Verifiëren"
+      ],
+      "Verify account": [
+        "Verifieer account"
+      ],
+      "Verify email": [
+        "Verifieer e-mailadres"
       ],
       "View": [
         "Bekijken"
@@ -1327,7 +1333,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        "Heeft een kalendergebeurtenis"
+        "Heeft een agendagebeurtenis"
       ]
     },
     "Calendar feature": {
@@ -2119,12 +2125,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
       ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
@@ -2330,9 +2330,6 @@
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
       ],
-      "Please refresh the page.": [
-        "Vernieuw de pagina."
-      ],
       "Please repeat the password": [
         "Herhaal het wachtwoord"
       ],
@@ -2361,8 +2358,8 @@
         "Dubbele ontvanger verwijderd: ${ recipents }",
         "Dubbele ontvangers verwijderd: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Het verzoek timed out."
+      "Request timed out": [
+        "Reactietijd verzoek overschreden"
       ],
       "Require at least one action": [
         "Vereist minstens één actie"
@@ -2406,9 +2403,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
-      ],
-      "The composer failed to load.": [
-        "Kon het opstelvenster niet laden."
       ],
       "The folder name is too long. Please choose a different name.": [
         "De mapnaam is te lang. Kies een andere naam."
@@ -3701,8 +3695,8 @@
       "Insert link": [
         "Link invoegen"
       ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
+      "Internet connection lost": [
+        "Internetverbinding verbroken"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbinding verbroken. Controleer uw internetverbinding."
@@ -3712,9 +3706,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
-      ],
-      "Justify": [
-        "Uitvullen"
       ],
       "Key fingerprint": [
         "Digitale vingerafdruk"
@@ -4011,11 +4002,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Berichten versturen vanaf een @pm.me-adres is enkel beschikbaar voor betalende gebruikers. Uw bericht wordt verzonden vanaf ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Verzonden met <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
-      "Session timed out.": [
-        "Sessie time-out."
+      "Session timed out": [
+        "Sessie verlopen"
       ],
       "Set a recovery phrase": [
         "Stel een herstel zin in"
@@ -4196,7 +4190,7 @@
         "De openbare sleutel van de afzender is nog niet vertrouwd."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browser tabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
+        "Dit zal PayPal inschakelen om te betalen voor uw Proton abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -4315,6 +4309,9 @@
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "We verzenden een nieuwe verificatiecode naar ${ strong }"
+      ],
       "Web URL": [
         "Website (URL)"
       ],
@@ -4332,6 +4329,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
       "Yearly": [
         "Jaarlijks"
@@ -4749,8 +4749,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } en ${ count } anderen"
       ],
-      "(Coming soon)": [
-        "(Komt binnenkort)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
       "Actions": [
         "Acties"
@@ -4810,7 +4810,7 @@
         "BTC-bedrag:"
       ],
       "Calendar": [
-        "Kalender"
+        "Agenda"
       ],
       "Calendars": [
         "Agenda's"
@@ -4838,6 +4838,9 @@
       ],
       "City": [
         "Stad"
+      ],
+      "Code is 6 digits without spaces": [
+        "Code is 6 cijfers zonder spaties"
       ],
       "Conditions": [
         "Voorwaarden"
@@ -4889,9 +4892,6 @@
       ],
       "Enter organization name to confirm": [
         "Voer de naam van de organisatie in om te bevestigen"
-      ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
       ],
       "Expires": [
         "Verloopt"
@@ -5418,6 +5418,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt",
         "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "${ createdCalendars } van de 1 aangemaakt",
+        "${ createdCalendars } van de 1 aangemaakt"
       ],
       "Almost there": [
         "Bijna daar"
@@ -6237,12 +6241,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Kan niet verzenden naar organisatieadres: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Aanmaken agenda-afspraak mislukt"
-      ],
-      "Updating calendar event failed": [
-        "Agenda-afspraak bijwerken mislukt"
       ]
     },
     "Search - no results": {
@@ -6376,8 +6374,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Ontdek alle Proton-diensten"
+      ],
       "Message Content Search": [
         "Zoeken naar berichtinhoud"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Beheer veilig uw planning, bestanden en online-leven! Open om alle Proton-diensten te ontdekken."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Om uw privacy te beschermen, heeft Proton e-mailtrackers in dit bericht geblokkeerd"
@@ -6964,6 +6968,9 @@
       "Email addresses": [
         "E-mailadressen"
       ],
+      "Email composer": [
+        "Opstelvenster e-mail"
+      ],
       "Email content": [
         "E-mailinhoud"
       ],
@@ -6987,9 +6994,6 @@
       ],
       "Error": [
         "Fout"
-      ],
-      "Expand content": [
-        "Inhoud uitvouwen"
       ],
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
@@ -7336,7 +7340,7 @@
         "Host e-mails voor uw eigen domein(en) op ProtonMail, bijvoorbeeld john.smith@voorbeeld.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+        "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Ondersteuning voor meerdere gebruikers is alleen van toepassing op abonnementen met 2 of meer gebruikers"

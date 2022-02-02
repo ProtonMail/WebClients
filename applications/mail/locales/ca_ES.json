@@ -271,8 +271,8 @@
       "Details": [
         "Detalls"
       ],
-      "Did not receive the code?": [
-        "No has regut el codi?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Descarta"
@@ -306,6 +306,9 @@
       ],
       "Edit phone number": [
         "Editar el número de telèfon"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Configuració del correu"
@@ -448,9 +451,6 @@
       ],
       "Italic": [
         "Cursiva"
-      ],
-      "Justify": [
-        "Justificat"
       ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
@@ -941,6 +941,12 @@
       ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Veure"
@@ -2119,12 +2125,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "No es poden crear nous calendaris per tots els calendaris importats a causa del límit personal de calendari."
       ],
-      "Can't validate email, try again later": [
-        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
-      ],
-      "Can't validate phone, try again later": [
-        "No es pot validar el telèfon, torneu-ho a provar més tard"
-      ],
       "Checkout expired, please try again": [
         "El pagament ha expirat. Torneu-ho a provar"
       ],
@@ -2330,9 +2330,6 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
-      "Please refresh the page.": [
-        "Si us plau, refresqueu la pàgina."
-      ],
       "Please repeat the password": [
         "Repetiu la contrassenya"
       ],
@@ -2361,8 +2358,8 @@
         "Destinatari duplicat eliminat: ${ recipents }",
         "Destinataris duplicats eliminats: ${ recipents }"
       ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Requereix al menys una acció"
@@ -2406,9 +2403,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
-      ],
-      "The composer failed to load.": [
-        "El compositor no s'ha pogut carregar."
       ],
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Trieu-ne un de diferent."
@@ -3701,8 +3695,8 @@
       "Insert link": [
         "Afegir enllaç"
       ],
-      "Internet connection lost.": [
-        "S'ha perdut la connexió a Internet."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
@@ -3712,9 +3706,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
-      ],
-      "Justify": [
-        "Justificat"
       ],
       "Key fingerprint": [
         "Clau d'empremta digital"
@@ -4011,11 +4002,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'enviament de missatges des de l'adreça @pm.me és una funció de pagament. El vostre missatge s'enviarà des de la vostra adreça per defecte ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
-      "Session timed out.": [
-        "Temps de sessió esgotat."
+      "Session timed out": [
+        ""
       ],
       "Set a recovery phrase": [
         "Establir una frase de recuperació"
@@ -4315,6 +4309,9 @@
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "URL del web"
       ],
@@ -4332,6 +4329,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yearly": [
         "Anual"
@@ -4749,8 +4749,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } i ${ count } altres"
       ],
-      "(Coming soon)": [
-        "(Disponible properament)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Actions": [
         "Accions"
@@ -4839,6 +4839,9 @@
       "City": [
         "Ciutat"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Conditions": [
         "Condicions"
       ],
@@ -4889,9 +4892,6 @@
       ],
       "Enter organization name to confirm": [
         "Introdueixi el nom de l'organització per confirmar"
-      ],
-      "Enter the 6-digit code": [
-        "Introduïu el codi de 6 dígits"
       ],
       "Expires": [
         "Venç"
@@ -5418,6 +5418,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } de ${ calendarsToBeCreated } creat",
         "${ createdCalendars } de ${ calendarsToBeCreated } creats"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        ""
       ],
       "Almost there": [
         "Ja gairebé està"
@@ -6237,12 +6241,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "No es pot enviar a l'adreça de l'organitzador: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Ha fallat la creació de l'esdeveniment del calendari"
-      ],
-      "Updating calendar event failed": [
-        "Ha fallat l'actualització de l'esdeveniment del calendari"
       ]
     },
     "Search - no results": {
@@ -6376,8 +6374,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        ""
+      ],
       "Message Content Search": [
         "Cerca de contingut del missatge"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Per a protegir la vostra privacitat, Proton ha bloquejat els rastrejadors de correu electrònic en aquest missatge"
@@ -6964,6 +6968,9 @@
       "Email addresses": [
         "Adreces de correu electrònic"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email content": [
         "Contingut del correu electrònic"
       ],
@@ -6987,9 +6994,6 @@
       ],
       "Error": [
         "Error"
-      ],
-      "Expand content": [
-        "Amplia el contingut"
       ],
       "Exporting contacts": [
         "Exportant contactes"

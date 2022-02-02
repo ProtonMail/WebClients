@@ -273,7 +273,7 @@
       "Details": [
         "Detalii"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Nu ați primit codul?"
       ],
       "Discard": [
@@ -308,6 +308,9 @@
       ],
       "Edit phone number": [
         "Editare număr de telefon"
+      ],
+      "Edit sign-in details": [
+        "Editați detaliile de conectare"
       ],
       "Email settings": [
         "Setări e-mail"
@@ -451,9 +454,6 @@
       ],
       "Italic": [
         "Înclinat"
-      ],
-      "Justify": [
-        "Aliniere la margini"
       ],
       "Keyboard shortcuts": [
         "Combinații de taste listă mesaje"
@@ -945,6 +945,12 @@
       ],
       "Verify": [
         "Verifică"
+      ],
+      "Verify account": [
+        "Verifică contul"
+      ],
+      "Verify email": [
+        "Verificarea contului"
       ],
       "View": [
         "Afișare"
@@ -2136,12 +2142,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
-      "Can't validate email, try again later": [
-        "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
-      ],
-      "Can't validate phone, try again later": [
-        "Nu se poate valida telefonul, reîncercați mai târziu."
-      ],
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat, mai încercați."
       ],
@@ -2354,9 +2354,6 @@
         "Remediați conflictele evidențiate pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua."
       ],
-      "Please refresh the page.": [
-        "Reîmprospătați pagina."
-      ],
       "Please repeat the password": [
         "Reintroduceți parola."
       ],
@@ -2386,8 +2383,8 @@
         "Destinatari duplicați eliminați: ${ recipents }",
         "Destinatari duplicați eliminați: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
+      "Request timed out": [
+        "Solicitarea a expirat"
       ],
       "Require at least one action": [
         "Necesită cel puțin o acțiune"
@@ -2432,9 +2429,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
-      ],
-      "The composer failed to load.": [
-        "Editorul de mesaje nu a putut fi încărcat."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
@@ -3779,8 +3773,8 @@
       "Insert link": [
         "Inserare legătură"
       ],
-      "Internet connection lost.": [
-        "Conexiunea la internet s-a întrerupt."
+      "Internet connection lost": [
+        "Conexiunea la internet s-a întrerupt"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
@@ -3790,9 +3784,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
-      ],
-      "Justify": [
-        "Aliniere la margini"
       ],
       "Key fingerprint": [
         "Amprentă cheie"
@@ -4090,11 +4081,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Trimiterea mesajelor de la o adresă @pm.me este o funcție cu plată. Mesajul va fi trimis de la adresa implicită ${ email }."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
-      "Session timed out.": [
-        "Sesiune expirată."
+      "Session timed out": [
+        "Sesiune expirată"
       ],
       "Set a recovery phrase": [
         "Setați o frază de recuperare"
@@ -4395,6 +4389,9 @@
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Vom trimite un nou cod de verificare la ${ strong }"
+      ],
       "Web URL": [
         "Adresa URL"
       ],
@@ -4412,6 +4409,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Doriți să primiți un nou cod de verificare?"
       ],
       "Yearly": [
         "Anual"
@@ -4839,8 +4839,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } și alte ${ count }"
       ],
-      "(Coming soon)": [
-        "(În curând)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
       ],
       "Actions": [
         "Acțiuni"
@@ -4929,6 +4929,9 @@
       "City": [
         "Oraş"
       ],
+      "Code is 6 digits without spaces": [
+        "Codul este format din 6 cifre fără spații"
+      ],
       "Conditions": [
         "Condiții"
       ],
@@ -4979,9 +4982,6 @@
       ],
       "Enter organization name to confirm": [
         "Introduceți numele organizației pentru confirmare"
-      ],
-      "Enter the 6-digit code": [
-        "Introduceți codul din 6 cifre"
       ],
       "Expires": [
         "Expiră"
@@ -5509,6 +5509,11 @@
         "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
         "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
         "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Aproape terminat"
@@ -6335,12 +6340,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nu se poate trimite la adresa organizatorului: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Crearea evenimentului din calendar a eșuat"
-      ],
-      "Updating calendar event failed": [
-        "Actualizarea calendarului a eșuat"
       ]
     },
     "Search - no results": {
@@ -6480,8 +6479,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Descoperiți toate serviciile Proton"
+      ],
       "Message Content Search": [
         "Căutare în conținut mesaj"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Gestionați-vă în siguranță programul, fișierele și viața online! Deschideți pentru a descoperi toate serviciile Proton."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Pentru a vă proteja confidențialitatea, Proton a blocat urmăritorii din acest mesaj."
@@ -7104,6 +7109,9 @@
       "Email addresses": [
         "Adrese de e-mail"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email content": [
         "Conținut e-mail"
       ],
@@ -7127,9 +7135,6 @@
       ],
       "Error": [
         "Eroare"
-      ],
-      "Expand content": [
-        "Extindere conținut"
       ],
       "Exporting contacts": [
         "Exportare contacte"

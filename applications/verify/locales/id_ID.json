@@ -14,14 +14,17 @@
       "Close modal": [
         "Tutup jendela"
       ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "Edit alamat email"
       ],
       "Edit phone number": [
         "Ubah nomor telepon"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
@@ -41,6 +44,12 @@
       "Verify": [
         "Verifikasi"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "Lihat tagihan"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi surel, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
       "Email is not valid": [
         "Email tidak valid"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
-      "Request timed out.": [
-        "Waktu permintaan habis."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "Bagian ini wajib isi"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
       ],
-      "Internet connection lost.": [
-        "Koneksi internet terputus."
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "Memuat"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
-      "Session timed out.": [
-        "Sesi habis."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Batal"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "Alamat surel"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
       ],
       "Hide password": [
         "Sembunyikan kata sandi"

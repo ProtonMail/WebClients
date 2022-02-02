@@ -275,7 +275,7 @@
       "Details": [
         "Подробиці"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Не отримали код?"
       ],
       "Discard": [
@@ -310,6 +310,9 @@
       ],
       "Edit phone number": [
         "Змінити номер телефону"
+      ],
+      "Edit sign-in details": [
+        "Змінити дані входу"
       ],
       "Email settings": [
         "Налаштування е-пошти"
@@ -454,9 +457,6 @@
       ],
       "Italic": [
         "Курсив"
-      ],
-      "Justify": [
-        "За шириною"
       ],
       "Keyboard shortcuts": [
         "Комбінації клавіш"
@@ -949,6 +949,12 @@
       ],
       "Verify": [
         "Перевірити"
+      ],
+      "Verify account": [
+        "Підтвердити обліковий запис"
+      ],
+      "Verify email": [
+        "Підтвердити електронну пошту"
       ],
       "View": [
         "Переглянути"
@@ -2153,12 +2159,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Не вдалося створити нові календарі для всіх імпортованих календарів через обмеження особистого календаря."
       ],
-      "Can't validate email, try again later": [
-        "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
-      ],
-      "Can't validate phone, try again later": [
-        "Не вдається підтвердити телефон. Спробуйте знову пізніше"
-      ],
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
       ],
@@ -2378,9 +2378,6 @@
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити."
       ],
-      "Please refresh the page.": [
-        "Будь ласка, оновіть сторінку."
-      ],
       "Please repeat the password": [
         "Будь ласка, повторіть пароль"
       ],
@@ -2411,8 +2408,8 @@
         "Вилучено дублікати отримувачів: ${ recipents }",
         "Вилучено дублікати отримувачів: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Час очікування запиту завершився."
+      "Request timed out": [
+        "Час очікування запиту завершився"
       ],
       "Require at least one action": [
         "Необхідна принаймні одна дія"
@@ -2458,9 +2455,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
-      ],
-      "The composer failed to load.": [
-        "Не вдалося завантажити редактор."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Назва теки надто довга. Будь ласка, скоротіть назву."
@@ -3857,8 +3851,8 @@
       "Insert link": [
         "Вставити посилання"
       ],
-      "Internet connection lost.": [
-        "Втрачено інтернет-з'єднання."
+      "Internet connection lost": [
+        "Втрачено інтернет-з'єднання"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Відсутнє з'єднання з інтернетом. Перевірте доступ до мережі свого пристрою."
@@ -3868,9 +3862,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
-      ],
-      "Justify": [
-        "За шириною"
       ],
       "Key fingerprint": [
         "Цифровий відбиток ключа"
@@ -4169,11 +4160,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Надсилання повідомлень з адреси @pm.me є платною функцією. Ваше повідомлення буде надіслано зі стандартної адреси ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Надіслано за допомогою безпечної пошти <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
-      "Session timed out.": [
-        "Сеанс завершився."
+      "Session timed out": [
+        "Сеанс завершився"
       ],
       "Set a recovery phrase": [
         "Встановити фразу відновлення"
@@ -4475,6 +4469,9 @@
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Ми надішлемо новий код підтвердження на ${ strong }"
+      ],
       "Web URL": [
         "URL-адреса"
       ],
@@ -4492,6 +4489,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Бажаєте отримати новий код підтвердження?"
       ],
       "Yearly": [
         "Щороку"
@@ -4929,8 +4929,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } і ${ count } інших"
       ],
-      "(Coming soon)": [
-        "(Незабаром з'явиться)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
       "Actions": [
         "Дії"
@@ -5019,6 +5019,9 @@
       "City": [
         "Місто"
       ],
+      "Code is 6 digits without spaces": [
+        "Код складається з 6 цифр без пробілів"
+      ],
       "Conditions": [
         "Умови"
       ],
@@ -5069,9 +5072,6 @@
       ],
       "Enter organization name to confirm": [
         "Введіть назву організації для підтвердження"
-      ],
-      "Enter the 6-digit code": [
-        "Введіть 6-значний код"
       ],
       "Expires": [
         "Термін дії"
@@ -5600,6 +5600,12 @@
         "${ createdCalendars } з ${ calendarsToBeCreated } створено",
         "${ createdCalendars } з ${ calendarsToBeCreated } створено",
         "${ createdCalendars } з ${ calendarsToBeCreated } створено"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "${ createdCalendars } з 1 створено",
+        "${ createdCalendars } з 1 створено",
+        "${ createdCalendars } з 1 створено",
+        "${ createdCalendars } з 1 створено"
       ],
       "Almost there": [
         "Майже готово"
@@ -6433,12 +6439,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Не вдалося надіслати на адресу організатора: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Не вдалося створити подію календаря"
-      ],
-      "Updating calendar event failed": [
-        "Не вдалося оновити подію календаря"
       ]
     },
     "Search - no results": {
@@ -6584,8 +6584,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Ознайомтеся з усіма службами Proton"
+      ],
       "Message Content Search": [
         "Пошук у вмісті повідомлень"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Безпечно керуйте своїм розкладом, файлами та онлайн-життям! Відкрийте для огляду всіх послуг Proton."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Щоб захистити вашу приватність, Proton заблокував елементи стеження в цьому повідомленні"
@@ -7244,6 +7250,9 @@
       "Email addresses": [
         "Адреси е-пошти"
       ],
+      "Email composer": [
+        "Редактор"
+      ],
       "Email content": [
         "Вміст листа"
       ],
@@ -7267,9 +7276,6 @@
       ],
       "Error": [
         "Помилка"
-      ],
-      "Expand content": [
-        "Розгорнути вміст"
       ],
       "Exporting contacts": [
         "Експортування контактів"

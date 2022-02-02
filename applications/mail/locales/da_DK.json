@@ -271,7 +271,7 @@
       "Details": [
         "Detaljer"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Ikke modtaget koden?"
       ],
       "Discard": [
@@ -306,6 +306,9 @@
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
+      ],
+      "Edit sign-in details": [
+        "Rediger login-detaljer"
       ],
       "Email settings": [
         "E-mailindstillinger"
@@ -448,9 +451,6 @@
       ],
       "Italic": [
         "Kursiv"
-      ],
-      "Justify": [
-        "Lige margener"
       ],
       "Keyboard shortcuts": [
         "Tastaturgenveje"
@@ -941,6 +941,12 @@
       ],
       "Verify": [
         "Bekræft"
+      ],
+      "Verify account": [
+        "Verificer konto"
+      ],
+      "Verify email": [
+        "Verificer e-mail"
       ],
       "View": [
         "Vis"
@@ -1823,7 +1829,7 @@
     },
     "CustomFilter": {
       "Attachment": [
-        ""
+        "Vedhæftning"
       ],
       "Filter on": [
         "Filtrer efter"
@@ -2119,12 +2125,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
       ],
-      "Can't validate email, try again later": [
-        "Kan ikke bekræfte e-mail, prøv igen senere"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan ikke bekræfte telefonen, prøv igen senere"
-      ],
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
       ],
@@ -2330,9 +2330,6 @@
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
       ],
-      "Please refresh the page.": [
-        "Genindlæs venligst siden."
-      ],
       "Please repeat the password": [
         "Gentag adgangskoden"
       ],
@@ -2361,8 +2358,8 @@
         "Duplikeret modtager fjernet: ${ recipents }",
         "Duplikerede modtagere fjernet: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Forespørgsel fik timeout."
+      "Request timed out": [
+        "Forespørgsel fik timeout"
       ],
       "Require at least one action": [
         "Kræver mindst en handling"
@@ -2406,9 +2403,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
-      ],
-      "The composer failed to load.": [
-        "Skriveværktøjet blev ikke indlæst."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Mappenavnet er for langt. Vælg venligst et andet navn."
@@ -3701,8 +3695,8 @@
       "Insert link": [
         "Indsæt link"
       ],
-      "Internet connection lost.": [
-        "Internetforbindelse afbrudt."
+      "Internet connection lost": [
+        "Internetforbindelse mistet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
@@ -3712,9 +3706,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, og så klarer vi resten."
-      ],
-      "Justify": [
-        "Lige margener"
       ],
       "Key fingerprint": [
         "Nøglefingeraftryk"
@@ -4011,11 +4002,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Afsendelse af beskeder fra @pm.me-adresse er en betalt funktion. Din besked afsendes via din standardadresse ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
-      "Session timed out.": [
-        "Din session er udløbet."
+      "Session timed out": [
+        "Session er udløbet"
       ],
       "Set a recovery phrase": [
         "Indstil en gendannelsessætning"
@@ -4315,6 +4309,9 @@
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Vi vil sende en ny verifikationskode til ${ strong }"
+      ],
       "Web URL": [
         "Webadresse"
       ],
@@ -4332,6 +4329,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Ønsker du at modtage en ny verifikationskode?"
       ],
       "Yearly": [
         "Årlig"
@@ -4749,8 +4749,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } og ${ count } andre"
       ],
-      "(Coming soon)": [
-        "(Kommer snart)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
       "Actions": [
         "Handlinger"
@@ -4839,6 +4839,9 @@
       "City": [
         "By"
       ],
+      "Code is 6 digits without spaces": [
+        "Koden er på 6 cifre uden mellemrum"
+      ],
       "Conditions": [
         "Betingelser"
       ],
@@ -4889,9 +4892,6 @@
       ],
       "Enter organization name to confirm": [
         "Indtast organisationsnavn for at bekræfte"
-      ],
-      "Enter the 6-digit code": [
-        "Indtast den sekscifrede kode"
       ],
       "Expires": [
         "Udløber"
@@ -5418,6 +5418,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } af ${ calendarsToBeCreated } oprettet",
         "${ createdCalendars } af ${ calendarsToBeCreated } oprettet"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        ""
       ],
       "Almost there": [
         "Næsten færdig"
@@ -6237,12 +6241,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Kan ikke sende til organisatoradresse: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Oprettelse af kalenderbegivenhed mislykkedes"
-      ],
-      "Updating calendar event failed": [
-        "Opdatering af kalenderbegivenhed mislykkedes"
       ]
     },
     "Search - no results": {
@@ -6376,8 +6374,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Udforsk alle Proton-tjenester"
+      ],
       "Message Content Search": [
         "Søgning efter beskedindhold"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "Administrer din tidsplan, dine filer og dit online-liv på en sikker måde! Åbn for at udforske alle Proton-tjenester."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "For at beskytte dit privatliv har Proton blokeret e-mail-trackere i denne besked"
@@ -6964,6 +6968,9 @@
       "Email addresses": [
         "E-mailadresser"
       ],
+      "Email composer": [
+        "E-mail skrivevindue"
+      ],
       "Email content": [
         "E-mailindhold"
       ],
@@ -6987,9 +6994,6 @@
       ],
       "Error": [
         "Fejl"
-      ],
-      "Expand content": [
-        "Udvid indhold"
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"

@@ -14,14 +14,17 @@
       "Close modal": [
         "Mdel"
       ],
-      "Did not receive the code?": [
-        "Ur d-teṭṭifeḍ ara tangalt?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "Ẓreg tansa n yimayl"
       ],
       "Edit phone number": [
         "Ẓreg uṭṭun n tiliɣri"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "Awi tangalt n usentem"
@@ -41,6 +44,12 @@
       "Verify": [
         "Senqed"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "Wali tafaṭurt"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Ulamek aseɣbel n yimayl, ɛreḍ ticki"
-      ],
-      "Can't validate phone, try again later": [
-        "Ulamek aseɣbel n tiliɣri, eɛreḍ areḍqal"
-      ],
       "Email is not valid": [
         "Imayl mačči d ameɣtu"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Awalen n uɛeddi mgraden"
       ],
-      "Request timed out.": [
-        "Akud n usuter yemmut."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "Urti-a ilaq"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
       ],
-      "Internet connection lost.": [
-        "Tuqqna internet truḥ."
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "Azdam"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Yemmed wakud n tɣimit."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Sefsex"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "Tansa n l'email"
-      ],
-      "Enter the 6-digit code": [
-        "Sekcem tangalt n 6 n yizwilen"
       ],
       "Hide password": [
         "Ffer awal uffir"

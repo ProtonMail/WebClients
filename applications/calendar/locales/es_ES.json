@@ -166,8 +166,8 @@
       "Deselect all": [
         "Deseleccionar todo"
       ],
-      "Did not receive the code?": [
-        "¿No has recibido el código?"
+      "Didn't receive the code?": [
+        "¿No recibió el código?"
       ],
       "Discard": [
         "Descartar"
@@ -192,6 +192,9 @@
       ],
       "Edit phone number": [
         "Editar número de teléfono"
+      ],
+      "Edit sign-in details": [
+        "Editar datos de inicio de sesión"
       ],
       "Email settings": [
         "Ajustes de correo electrónico"
@@ -256,9 +259,6 @@
       "Increase": [
         "Incrementar"
       ],
-      "Keyboard shortcuts": [
-        "Atajos de teclado"
-      ],
       "Load image": [
         "Cargar imagen"
       ],
@@ -267,12 +267,6 @@
       ],
       "Log in": [
         "Iniciar sesión"
-      ],
-      "Mailbox density": [
-        "Densidad del buzón"
-      ],
-      "Mailbox layout": [
-        "Diseño del buzón"
       ],
       "Make this participant optional": [
         "Hacer opcional a este participante"
@@ -514,11 +508,14 @@
       "Use for sending": [
         "Usar para enviar"
       ],
-      "Use “${ label }” setting": [
-        "Usa “${ label }” ajuste"
-      ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        "Verificar cuenta"
+      ],
+      "Verify email": [
+        "Verificar correo"
       ],
       "View": [
         "Visualizar"
@@ -604,38 +601,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } comenzó ayer a las ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        "${ title } comienza a las ${ formattedHour }"
+      ],
       "${ title } starts now": [
         "${ title } comienza ahora"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        "${ title } comienza el ${ _formattedDate2 }"
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } comienza el ${ _formattedDate2 } a las ${ formattedHour }"
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        "${ title } comienza el ${ _formattedDate3 }"
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } comienza el ${ _formattedDate3 } a las ${ formattedHour }"
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        "${ title } comienza el ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        "${ title } comienza el ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } comienza hoy"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } comenzará a las ${ formattedHour }"
+      "${ title } starts tomorrow": [
+        "${ title } comienza mañana"
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } comenzará el ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } comenzará el ${ _formattedDate2 } a las ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } comenzará el ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } comenzará el ${ _formattedDate3 } a las ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } comenzará el ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } comenzará el ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } comenzará mañana"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } comenzará mañana a las ${ formattedHour }"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        "${ title } comienza mañana a las ${ formattedHour }"
       ]
     },
     "Alert": {
@@ -1002,14 +999,6 @@
         ": "
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Maximizado"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1165,14 +1154,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura atrasada"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Cómoda"
-      ],
-      "Compact": [
-        "Compacta"
       ]
     },
     "Description": {
@@ -1386,12 +1367,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "No se ha podido validar el correo electrónico, inténtalo de nuevo más tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "No se ha podido validar el teléfono, inténtalo de nuevo más tarde"
-      ],
       "Cancellation failed to be sent": [
         "No se ha podido enviar la cancelación"
       ],
@@ -1590,8 +1565,8 @@
       "Process aborted": [
         "Proceso abortado"
       ],
-      "Request timed out.": [
-        "Tiempo de espera agotado."
+      "Request timed out": [
+        "Tiempo de espera agotado"
       ],
       "Self invitation not allowed": [
         "Autoinvitación no permitida"
@@ -2369,9 +2344,6 @@
       "At most 100 participants are allowed per invitation": [
         "Se permiten hasta 100 participantes por invitación"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "Facturados como ${ billedPrice } cada 2 años"
       ],
@@ -2551,8 +2523,8 @@
       "Inherited from parent folder": [
         ""
       ],
-      "Internet connection lost.": [
-        "Conexión a Internet perdida."
+      "Internet connection lost": [
+        "Sin conexión a Internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Se ha perdido la conexión a Internet. Comprueba la conectividad de tu dispositivo."
@@ -2723,8 +2695,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "El tiempo de la sesión ha expirado."
+      "Session timed out": [
+        "El tiempo de la sesión ha expirado"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Configurar PGP te permite enviar correos electrónicos cifrados de extremo a extremo a usuarios fuera de ProtonMail que utilizan un servicio compatible con PGP."
@@ -2849,6 +2821,9 @@
       "We'll notify you when the import is done.": [
         "Te avisaremos cuando la importación haya terminado."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
       "Week": [
         "Semana"
       ],
@@ -2878,6 +2853,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "¿Desearía recibir un código de verificación nuevo?"
       ],
       "Would you like to update all events in this series?": [
         "¿Quieres actualizar todos los eventos de esta serie?"
@@ -3047,194 +3025,9 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Agregar cifrado"
-      ],
-      "Add expiration time": [
-        "Agregar tiempo de caducidad"
-      ],
-      "Apply / open": [
-        "Aplicar/abrir"
-      ],
-      "Attach file": [
-        "Adjuntar archivo"
-      ],
-      "Cancel / close": [
-        "Cancelar/cerrar"
-      ],
-      "Close draft": [
-        "Cerrar borrador"
-      ],
-      "Create filter with...": [
-        "Crear filtro con..."
-      ],
-      "Delete permanently": [
-        "Eliminar permanentemente"
-      ],
-      "Discard draft": [
-        "Descartar borrador"
-      ],
-      "Expand / contract composer": [
-        "Expandir/contraer compositor"
-      ],
-      "Forward": [
-        "Reenviar"
-      ],
-      "Go to All Mail": [
-        "Ir a todos"
-      ],
-      "Go to Archive": [
-        "Ir al archivo"
-      ],
-      "Go to Drafts": [
-        "Ir a borradores"
-      ],
-      "Go to Inbox": [
-        "Ir a la bandeja de entrada"
-      ],
-      "Go to Sent": [
-        "Ir a enviados"
-      ],
-      "Go to Spam": [
-        "Ir a spam"
-      ],
-      "Go to Starred": [
-        "Ir a destacados"
-      ],
-      "Go to Trash": [
-        "Ir a la papelera"
-      ],
-      "Jump to first": [
-        "Ir al primero"
-      ],
-      "Jump to last": [
-        "Ir al último"
-      ],
-      "Label as...": [
-        "Etiquetar como..."
-      ],
-      "Load embedded images": [
-        "Cargar imágenes incrustadas"
-      ],
-      "Load remote content": [
-        "Cargar contenido remoto"
-      ],
-      "Mark as unread": [
-        "Marcar como no leído"
-      ],
-      "Minimize / maximize composer": [
-        "Minimizar/maximizar compositor"
-      ],
-      "Move down": [
-        "Bajar"
-      ],
-      "Move left / collapse": [
-        "Ir a la izquierda/contraer"
-      ],
-      "Move right / expand": [
-        "Ir a la derecha/expandir"
-      ],
-      "Move to Archive": [
-        "Mover al archivo"
-      ],
-      "Move to Inbox": [
-        "Mover a la bandeja de entrada"
-      ],
-      "Move to Spam": [
-        "Mover a spam"
-      ],
-      "Move to Trash": [
-        "Mover a la papelera"
-      ],
-      "Move to...": [
-        "Mover a..."
-      ],
-      "Move up": [
-        "Subir"
-      ],
-      "New message": [
-        "Nuevo mensaje"
-      ],
-      "Open next message": [
-        "Abrir mensaje siguiente"
-      ],
-      "Open previous message": [
-        "Abrir mensaje anterior"
-      ],
-      "Open this modal": [
-        "Abrir esta ventana"
-      ],
-      "Reply": [
-        "Responder"
-      ],
-      "Reply all": [
-        "Responder a todos"
-      ],
-      "Save draft": [
-        "Guardar borrador"
-      ],
-      "Search": [
-        "Buscar"
-      ],
-      "Select / unselect": [
-        "Seleccionar/deseleccionar"
-      ],
-      "Select / unselect all": [
-        "Seleccionar / deseleccionar todo"
-      ],
-      "Send email": [
-        "Enviar correo electrónico"
-      ],
-      "Show all emails": [
-        "Mostrar todos los correos"
-      ],
-      "Show original message": [
-        "Mostrar el mensaje original"
-      ],
-      "Show unread emails": [
-        "Mostrar correos no leídos"
-      ],
-      "Star": [
-        "Destacar"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Atajos de acciones"
-      ],
-      "Basic actions": [
-        "Acciones básicas"
-      ],
-      "Basic navigation": [
-        "Navegación básica"
-      ],
-      "Composer shortcuts": [
-        "Atajos del compositor"
-      ],
-      "Folder shortcuts": [
-        "Atajos de carpeta"
-      ],
-      "List shortcuts": [
-        "Lista de atajos"
-      ],
-      "Message shortcuts": [
-        "Atajos de mensajes"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Desactivados"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Activados"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Próximamente)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(No disponible temporalmente. Vuelva a comprobarlo más tarde.)"
       ],
       "0 - Not likely": [
         ""
@@ -3292,6 +3085,9 @@
       ],
       "City": [
         "Ciudad"
+      ],
+      "Code is 6 digits without spaces": [
+        "El código es de 6 dígitos sin espacios"
       ],
       "Color": [
         "Color"
@@ -3356,9 +3152,6 @@
       "Enter organization name to confirm": [
         ""
       ],
-      "Enter the 6-digit code": [
-        "Introduce el código de 6 dígitos"
-      ],
       "Event title": [
         "Título del evento"
       ],
@@ -3403,9 +3196,6 @@
       ],
       "Import to:": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "Atajos de teclado"
       ],
       "Label messages as": [
         "Etiquetar mensajes como"
@@ -3504,15 +3294,6 @@
       "Select a method": [
         "Selecciona un método"
       ],
-      "Select how your composer opens by default.": [
-        "Selecciona como se abrirá el redactor por defecto."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Seleccionar como tu lista de mensajes aparece de forma preestablecida."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selecciona como aparecerá tu buzón de manera predeterminada."
-      ],
       "Select your country": [
         "Selecciona tu país"
       ],
@@ -3572,30 +3353,6 @@
         "Nombre"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximizado"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Cómoda"
-      ],
-      "Compact": [
-        "Compacta"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
@@ -3618,14 +3375,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } creado"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
       ]
     },
     "Link": {
@@ -4670,9 +4419,6 @@
       "Invitation sent and participants added to all events": [
         "Invitación enviada y participantes añadidos todos los eventos"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferencias de atajos de teclado actualizadas"
-      ],
       "Participants notified and all events updated": [
         "Participantes notificados y todos los eventos actualizados"
       ],
@@ -4804,9 +4550,6 @@
       "${ appName } customization": [
         "${ appName } personalización"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "Atajos de teclado de ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } miembro",
         "${ emailsCount } miembros"
@@ -4887,9 +4630,6 @@
       "Clearing data": [
         "Limpiando datos"
       ],
-      "Composer mode": [
-        "Modo del redactor"
-      ],
       "Confirm loss of Proton bonuses": [
         "Confirmar pérdida de beneficios de Proton"
       ],
@@ -4916,9 +4656,6 @@
       ],
       "Create contact": [
         "Crear contacto"
-      ],
-      "Create event": [
-        "Crear evento"
       ],
       "Create new group": [
         "Crear nuevo grupo"
@@ -4981,9 +4718,6 @@
       ],
       "Edit contact group": [
         "Editar grupo de contactos"
-      ],
-      "Edit event": [
-        "Editar evento"
       ],
       "Edit image": [
         "Editar imagen"
@@ -5052,17 +4786,8 @@
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
-      "Keyboard Shortcuts": [
-        "Atajos de teclado"
-      ],
       "Link confirmation": [
         "Confirmación de enlace"
-      ],
-      "Mailbox density": [
-        "Densidad del buzón"
-      ],
-      "Mailbox layout": [
-        "Diseño del buzón"
       ],
       "Merge contacts": [
         "Combinar contactos"

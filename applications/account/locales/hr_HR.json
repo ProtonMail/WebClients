@@ -259,11 +259,11 @@
       "Details": [
         "Pojedinosti"
       ],
-      "Did not receive the code?": [
-        "Niste primili kôd?"
-      ],
       "Didn't receive a code?": [
         "Niste primili kôd?"
+      ],
+      "Didn't receive the code?": [
+        ""
       ],
       "Disable recovery phrase": [
         ""
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Uredi Sieve filtar"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Kurziv"
-      ],
-      "Justify": [
-        "Poravnaj obostrano"
       ],
       "Keep": [
         "Zadrži"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Potvrdi"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Pregled"
@@ -1740,12 +1746,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
-      ],
       "Checkout expired, please try again": [
         ""
       ],
@@ -1928,9 +1928,6 @@
       "Please generate keys before you try to change your password": [
         ""
       ],
-      "Please refresh the page.": [
-        "Osvježite stranicu."
-      ],
       "Please set a recovery email first": [
         ""
       ],
@@ -1958,8 +1955,8 @@
       "Process aborted": [
         "Proces je prekinut"
       ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Zahtijeva najmanje jednu radnju"
@@ -1993,9 +1990,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
-      ],
-      "The composer failed to load.": [
-        "Neuspješno učitavanje prozora za novu poruku."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Naziv mape je predugačak. Odaberite drugi naziv."
@@ -3807,8 +3801,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instalirajte konfiguracijsku datoteku za poslužitelja da biste se povezali sa određenim poslužiteljem u državi vašeg izbora."
       ],
-      "Internet connection lost.": [
-        "Prekinuta je internetska veza."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
@@ -3824,9 +3818,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
-      ],
-      "Justify": [
-        "Poravnaj obostrano"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Čuvajte ove zapise u svom DNS-u onoliko dugo koliko želite koristiti DKIM."
@@ -4196,8 +4187,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Sesija je istekla."
+      "Session timed out": [
+        ""
       ],
       "Set recovery phrase": [
         ""
@@ -4481,6 +4472,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "URL stranice"
       ],
@@ -4513,6 +4507,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo čita vaše osobne podatke kako bi omogućio pristup oglašivačima, američkim obavještajnim agencijama i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
@@ -5107,7 +5104,7 @@
         "",
         ""
       ],
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "Account storage": [
@@ -5214,6 +5211,9 @@
       ],
       "Code": [
         "Kôd"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         ""
@@ -5379,9 +5379,6 @@
       ],
       "Enter password": [
         "Unesi lozinku"
-      ],
-      "Enter the 6-digit code": [
-        "Unesite 6-znamenkasti kôd"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Unesite lozinku za ključ s otiskom prsta: ${ fingerprintCode }"
@@ -6712,9 +6709,6 @@
       "Secure Core configs": [
         "Secure core konfiguracije"
       ],
-      "Select a reason": [
-        "Odaberite razlog"
-      ],
       "Standard server configs": [
         "Postavke standardnog poslužitelja"
       ],
@@ -7954,6 +7948,9 @@
       "Email": [
         "E-pošta"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email encryption keys": [
         "Šifrirani ključevi e-pošte"
       ],
@@ -7971,9 +7968,6 @@
       ],
       "Error": [
         "Pogreška"
-      ],
-      "Expand content": [
-        "Proširi sadržaj"
       ],
       "Export": [
         "Izvoz"

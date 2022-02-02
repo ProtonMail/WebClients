@@ -166,8 +166,8 @@
       "Deselect all": [
         "Kkes afran i meṛṛa"
       ],
-      "Did not receive the code?": [
-        "Ur d-teṭṭifeḍ ara tangalt?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Sefsex"
@@ -192,6 +192,9 @@
       ],
       "Edit phone number": [
         "Ẓreg uṭṭun n tiliɣri"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Iɣewwaren n yimayl"
@@ -256,9 +259,6 @@
       "Increase": [
         "Snerni"
       ],
-      "Keyboard shortcuts": [
-        "Inegzumen n unasiw"
-      ],
       "Load image": [
         "Sali-d tugna"
       ],
@@ -267,12 +267,6 @@
       ],
       "Log in": [
         "Tuqqna"
-      ],
-      "Mailbox density": [
-        "Taččart n tnaka n urmas"
-      ],
-      "Mailbox layout": [
-        "Taneɣruft n tnaka n imayl"
       ],
       "Make this participant optional": [
         "Err amttekki-a d afrayan"
@@ -514,11 +508,14 @@
       "Use for sending": [
         "Seqdec i tuzna"
       ],
-      "Use “${ label }” setting": [
-        "Seqdec iɣewwaṛen n “${ label }”"
-      ],
       "Verify": [
         "Senqed"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Sken"
@@ -604,38 +601,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } yebda iḍelli ɣef ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        ""
+      ],
       "${ title } starts now": [
         "${ title } ad yebdu tura"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        ""
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        ""
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        ""
       ],
       "${ title } starts today": [
         "${ title } ad yebdu ass-a"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } ad yebdu ɣef ${ formattedHour }"
+      "${ title } starts tomorrow": [
+        ""
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } ad yebdu deg ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } ad yebdu deg ${ _formattedDate2 } ɣef ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } ad yebdu deg ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } ad yebdu deg ${ _formattedDate3 } ɣef ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } ad yebdu deg ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } ad yebdu deg ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } ad yebdu azekka"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } ad yebdu azekka ɣef ${ formattedHour }"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        ""
       ]
     },
     "Alert": {
@@ -1002,14 +999,6 @@
         ""
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Yettwasemɣer"
-      ],
-      "Normal": [
-        "Amagnu"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         ""
@@ -1165,14 +1154,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tafaturt ur nettwaxelleṣ ara"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Yerked"
-      ],
-      "Compact": [
-        "Yettwassed"
       ]
     },
     "Description": {
@@ -1386,12 +1367,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "Ulamek aseɣbel n imayl, eɛreḍ areḍqal"
-      ],
-      "Can't validate phone, try again later": [
-        "Ulamek aseɣbel n tiliɣri, eɛreḍ areḍqal"
-      ],
       "Cancellation failed to be sent": [
         "Ur teddi ara tuzna n usefsex"
       ],
@@ -1590,8 +1565,8 @@
       "Process aborted": [
         "Yettwanef ukala"
       ],
-      "Request timed out.": [
-        "Akud n usuter yemmut."
+      "Request timed out": [
+        ""
       ],
       "Self invitation not allowed": [
         "Ur tezmireḍ ara ad tazneḍ tinubga i yiman-ik·im"
@@ -2369,9 +2344,6 @@
       "At most 100 participants are allowed per invitation": [
         "Ma aṭas 100 n yimettekkiyen i yettusirgen i yiwen n unaɛruḍ"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "After s ${ billedPrice } yal 2 n yiseggasen"
       ],
@@ -2551,8 +2523,8 @@
       "Inherited from parent folder": [
         ""
       ],
-      "Internet connection lost.": [
-        "Tuqqna internet truḥ."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ulac tuqqna internet. Ttxil-k/m senqed tuqqna n yibenk-ik/m."
@@ -2723,8 +2695,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Yemmed wakud n tɣimit."
+      "Session timed out": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Asesteb n PGP ad ak·am-imudd tisirag i wakken ad tazneḍ imaylen yettwawgelhen seg yixef ɣer yixef i useqdac ur nesɛi ara Protonmail i iseqdacen ameẓlu yemṣadan d PGP."
@@ -2849,6 +2821,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Week": [
         "Dduṛt"
       ],
@@ -2878,6 +2853,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Would you like to update all events in this series?": [
         "Tbɣiḍ ad tleqqemeḍ akk ineḍruyen deg umazrar-agi?"
@@ -3047,193 +3025,8 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Rnu awgelhen"
-      ],
-      "Add expiration time": [
-        "Rnu tanzagt n taggara"
-      ],
-      "Apply / open": [
-        "Snes / ldi"
-      ],
-      "Attach file": [
-        "Seddu afaylu"
-      ],
-      "Cancel / close": [
-        "Sefsex / mdel"
-      ],
-      "Close draft": [
-        "Mdel arewway"
-      ],
-      "Create filter with...": [
-        "Rnu imsizdeg s..."
-      ],
-      "Delete permanently": [
-        "Kkes i lebda"
-      ],
-      "Discard draft": [
-        "Kkes arewway"
-      ],
-      "Expand / contract composer": [
-        "Snefli / fneẓ amsuddes"
-      ],
-      "Forward": [
-        "Seḍfeṛ"
-      ],
-      "Go to All Mail": [
-        "Ddu ɣer Meṛṛa Imaylen"
-      ],
-      "Go to Archive": [
-        "Ddu ɣer Uɣbaṛ"
-      ],
-      "Go to Drafts": [
-        "Ddu ɣer Yirewwayen"
-      ],
-      "Go to Inbox": [
-        "Ddu ɣer tenkult n urmas"
-      ],
-      "Go to Sent": [
-        "Ddu ɣer yiznan yettwaznen"
-      ],
-      "Go to Spam": [
-        "Ddu ɣer Yispamen"
-      ],
-      "Go to Starred": [
-        "Ddu ɣer Yinurifen"
-      ],
-      "Go to Trash": [
-        "Ddu ɣer Tqecawlt n yiḍumman"
-      ],
-      "Jump to first": [
-        "Ngez s amezwaru"
-      ],
-      "Jump to last": [
-        "Ngez s aneggaru"
-      ],
-      "Label as...": [
-        "Tabzimt am..."
-      ],
-      "Load embedded images": [
-        "Sali tugniwin tusliɣin"
-      ],
-      "Load remote content": [
-        "Sali-d agbur anmeggag"
-      ],
-      "Mark as unread": [
-        "Creḍ ur yettwaγra ara"
-      ],
-      "Minimize / maximize composer": [
-        "Semẓi / semɣer amsuddes"
-      ],
-      "Move down": [
-        "Smutti d akessar"
-      ],
-      "Move left / collapse": [
-        "Smutti s azelmaḍ / ḍfes"
-      ],
-      "Move right / expand": [
-        "Smutti s ayfus / ḍleq"
-      ],
-      "Move to Archive": [
-        "Awi ar uɣbar"
-      ],
-      "Move to Inbox": [
-        "Smutti ɣer tenkult n urmas"
-      ],
-      "Move to Spam": [
-        "Awi ɣer uspam"
-      ],
-      "Move to Trash": [
-        "Awi ɣer tqecwalt n yiḍumman"
-      ],
-      "Move to...": [
-        "Smutti ɣer..."
-      ],
-      "Move up": [
-        "Smutti d asawen"
-      ],
-      "New message": [
-        "Izen amaynut"
-      ],
-      "Open next message": [
-        "Ldi izen uḍfir"
-      ],
-      "Open previous message": [
-        "Ldi iznan yezrin"
-      ],
-      "Open this modal": [
-        "Ldi amodal-agi"
-      ],
-      "Reply": [
-        "Err"
-      ],
-      "Reply all": [
-        "Err i meṛṛa"
-      ],
-      "Save draft": [
-        "Sekles arewway"
-      ],
-      "Search": [
-        "Anadi"
-      ],
-      "Select / unselect": [
-        "Fren / ur ferren ara"
-      ],
-      "Select / unselect all": [
-        "Fren / ur ferren ara akk"
-      ],
-      "Send email": [
-        "Azen imayl"
-      ],
-      "Show all emails": [
-        "Sken meṛṛa imaylen"
-      ],
-      "Show original message": [
-        "Sken izen anaṣli"
-      ],
-      "Show unread emails": [
-        "Sken imaylen ur nettwaɣra ara"
-      ],
-      "Star": [
-        "Itri"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Inegzumen n tigawin"
-      ],
-      "Basic actions": [
-        "Tigawin tizadurin"
-      ],
-      "Basic navigation": [
-        "Tunigin tazadurt"
-      ],
-      "Composer shortcuts": [
-        "Inegzumen n umsuddes"
-      ],
-      "Folder shortcuts": [
-        "Inegzumen n ukaram"
-      ],
-      "List shortcuts": [
-        "Tabdart n yinegzumen"
-      ],
-      "Message shortcuts": [
-        "Inegzumen n yizen"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        ""
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "0 - Not likely": [
@@ -3292,6 +3085,9 @@
       ],
       "City": [
         "Tamdint"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         ""
@@ -3356,9 +3152,6 @@
       "Enter organization name to confirm": [
         ""
       ],
-      "Enter the 6-digit code": [
-        "Sekcem tangalt n 6 n yizwilen"
-      ],
       "Event title": [
         "Azwel n uneḍru"
       ],
@@ -3403,9 +3196,6 @@
       ],
       "Import to:": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "Inegzumen n unasiw"
       ],
       "Label messages as": [
         ""
@@ -3504,15 +3294,6 @@
       "Select a method": [
         "Fren tarrayt"
       ],
-      "Select how your composer opens by default.": [
-        "Fren amek ara yettban umsuddes-inek•inem s lexṣas."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Fren amek ara tettban tebdart n yiznan-inek•inem s lexṣas."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Fren amek ara tettban tnaka n imayl inek•inem s lexṣas."
-      ],
       "Select your country": [
         "Fren tamurt-ik•im"
       ],
@@ -3572,30 +3353,6 @@
         "Isem"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Yettwasemɣer"
-      ],
-      "Normal": [
-        "Amagnu"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Yerked"
-      ],
-      "Compact": [
-        "Yettwassed"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Tigejdit"
-      ],
-      "Row": [
-        "Izirig"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
@@ -3618,14 +3375,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Tigejdit"
-      ],
-      "Row": [
-        "Izirig"
       ]
     },
     "Link": {
@@ -4670,9 +4419,6 @@
       "Invitation sent and participants added to all events": [
         "Tinnubga tettwasen, imettekkiyen ttwarnan ɣer meṛṛa tidyanin"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Ismenyifen n yinegzumen n unasiw ttwaleqqmen"
-      ],
       "Participants notified and all events updated": [
         "Imttekkiyen ttwalɣun, tidyanin ttwaleqqment akk"
       ],
@@ -4804,9 +4550,6 @@
       "${ appName } customization": [
         "${ appName } udmawan"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "Inegzumen n unasiw ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } n uεeggal",
         "${ emailsCount } n yiεeggalen"
@@ -4887,9 +4630,6 @@
       "Clearing data": [
         "Asfaḍ n yisefka"
       ],
-      "Composer mode": [
-        "Askar n umsuddes"
-      ],
       "Confirm loss of Proton bonuses": [
         "Sentem lexṣara n yibunusen n Proton"
       ],
@@ -4916,9 +4656,6 @@
       ],
       "Create contact": [
         "Rnu anermis"
-      ],
-      "Create event": [
-        "Snulfu-d tadyant"
       ],
       "Create new group": [
         "Snulfu-d agraw amaynut"
@@ -4981,9 +4718,6 @@
       ],
       "Edit contact group": [
         "Ẓreg agraw n urmas"
-      ],
-      "Edit event": [
-        "Ẓreg aneḍru"
       ],
       "Edit image": [
         "Ẓreg tugna"
@@ -5052,17 +4786,8 @@
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
       ],
-      "Keyboard Shortcuts": [
-        "Inegzumen n unasiw"
-      ],
       "Link confirmation": [
         "Aseɣwen n usentem"
-      ],
-      "Mailbox density": [
-        "Taččart n tnaka n urmas"
-      ],
-      "Mailbox layout": [
-        "Taneɣruft n tnaka n yimayl"
       ],
       "Merge contacts": [
         "Smezdi inermisen"

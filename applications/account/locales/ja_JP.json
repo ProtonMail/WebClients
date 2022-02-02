@@ -259,11 +259,11 @@
       "Details": [
         "詳細"
       ],
-      "Did not receive the code?": [
-        "コードを受け取っていませんか?"
-      ],
       "Didn't receive a code?": [
         "コードを受取っていない場合"
+      ],
+      "Didn't receive the code?": [
+        ""
       ],
       "Disable recovery phrase": [
         "リカバリーフレーズを無効化"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "仕分けの編集"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効化する"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "斜体"
-      ],
-      "Justify": [
-        "両端揃え"
       ],
       "Keep": [
         "保持"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "検証"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "表示"
@@ -1706,12 +1712,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "メールアドレスを検証できませんした。再度お試しください"
-      ],
-      "Can't validate phone, try again later": [
-        "電話番号の検証ができませんでした。再度お試しください"
-      ],
       "Checkout expired, please try again": [
         ""
       ],
@@ -1886,9 +1886,6 @@
       "Please generate keys before you try to change your password": [
         ""
       ],
-      "Please refresh the page.": [
-        "ページを更新してください。"
-      ],
       "Please set a recovery email first": [
         ""
       ],
@@ -1916,8 +1913,8 @@
       "Process aborted": [
         "処理が中断されました"
       ],
-      "Request timed out.": [
-        "リクエストがタイムアウトしました。"
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "少なくとも 1 つのアクションが必要です"
@@ -1951,9 +1948,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
-      ],
-      "The composer failed to load.": [
-        "Composer が読み込みに失敗しました。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "フォルダー名が長すぎます。別の名前を選択してください。"
@@ -3693,8 +3687,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "選択した国の特定のサーバーに接続するためサーバーの構築ファイルをインストールします。"
       ],
-      "Internet connection lost.": [
-        "インターネット接続切断"
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "インターネット接続が失われました。デバイスの接続を確認してください。"
@@ -3710,9 +3704,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
-      ],
-      "Justify": [
-        "両端揃え"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "DKIM を使用し続ける限り、これらのレコードを DNS に登録したままにしておいてください。"
@@ -4080,8 +4071,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "セッションがタイムアウトしました。"
+      "Session timed out": [
+        ""
       ],
       "Set recovery phrase": [
         "リカバリーフレーズを設定"
@@ -4365,6 +4356,9 @@
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "Web URL"
       ],
@@ -4397,6 +4391,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい確認コードを受け取るか、他の検証方法を使用しますか?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         ""
@@ -4983,8 +4980,8 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ MaxMembers } ユーザーのうち ${ UsedMembers } ユーザー"
       ],
-      "(Coming soon)": [
-        "(まもなく登場)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Account storage": [
         "アカウントの容量"
@@ -5090,6 +5087,9 @@
       ],
       "Code": [
         "コード"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "色"
@@ -5255,9 +5255,6 @@
       ],
       "Enter password": [
         "パスワードを入力"
-      ],
-      "Enter the 6-digit code": [
-        "6桁のコードを入力"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         ""
@@ -6566,9 +6563,6 @@
       "Secure Core configs": [
         "Secure Core の設定"
       ],
-      "Select a reason": [
-        "理由を選択"
-      ],
       "Standard server configs": [
         "標準サーバーの設定ファイル"
       ],
@@ -7802,6 +7796,9 @@
       "Email": [
         "メールアドレス"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email encryption keys": [
         "電子メールの暗号鍵"
       ],
@@ -7819,9 +7816,6 @@
       ],
       "Error": [
         "エラー"
-      ],
-      "Expand content": [
-        "コンテンツを展開"
       ],
       "Export": [
         "エクスポート"

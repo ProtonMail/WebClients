@@ -122,9 +122,6 @@
       "Compose": [
         "Σύνταξη"
       ],
-      "Composer size": [
-        "Μέγεθος συντάκτη"
-      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -187,7 +184,7 @@
       "Details": [
         "Λεπτομέρειες"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Δεν λάβατε τον κωδικό;"
       ],
       "Done": [
@@ -211,6 +208,9 @@
       "Edit phone number": [
         "Επεξεργασία αριθμού τηλεφώνου"
       ],
+      "Edit sign-in details": [
+        "Επεξεργασία στοιχείων εισόδου"
+      ],
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
@@ -227,7 +227,7 @@
         "Εξαγωγή"
       ],
       "Export contact group": [
-        ""
+        "Εξαγωγή ομάδας επαφών"
       ],
       "Export contacts": [
         "Εξαγωγή Επαφών"
@@ -277,9 +277,6 @@
       "Increase": [
         "Αύξηση"
       ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
-      ],
       "Load image": [
         "Φόρτωση εικόνας"
       ],
@@ -288,12 +285,6 @@
       ],
       "Log in": [
         "Είσοδος"
-      ],
-      "Mailbox density": [
-        "Πυκνότητα θυρίδας"
-      ],
-      "Mailbox layout": [
-        "Διάταξη θυρίδας"
       ],
       "Manage link": [
         "Διαχείριση συνδέσμου"
@@ -559,11 +550,14 @@
       "Use for sending": [
         "Χρήση για αποστολή"
       ],
-      "Use “${ label }” setting": [
-        "Χρησιμοποιήστε τη ρύθμιση “${ label }”"
-      ],
       "Verify": [
         "Επαλήθευση"
+      ],
+      "Verify account": [
+        "Επαλήθευση λογαριασμού"
+      ],
+      "Verify email": [
+        "Επαλήθευση ηλ. διεύθυνσης"
       ],
       "View": [
         "Προβολή"
@@ -891,14 +885,6 @@
         "Μη υποστηριζόμενη μορφή ημερολογίου"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Μεγιστοποιημένο"
-      ],
-      "Normal": [
-        "Κανονικό"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Ακύρωση προσαρμογής εισαγωγής;"
@@ -1011,14 +997,6 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Γίνεται αποκρυπτογράφηση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, θα μπορείτε να κατεβάσετε το αρχείο με όλες τις επαφές σας εξαγμένες."
@@ -1101,12 +1079,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
-      ],
-      "Can't validate email, try again later": [
-        "Αδυναμία επικύρωσης διεύθυνσης ηλ. ταχυδρομείου, παρακαλούμε δοκιμάστε ξανά αργότερα"
-      ],
-      "Can't validate phone, try again later": [
-        "Αδυναμία επικύρωσης αριθμού τηλεφώνου, παρακαλούμε δοκιμάστε ξανά αργότερα"
       ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
@@ -1273,8 +1245,8 @@
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
       ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
+      "Request timed out": [
+        "Λήξη χρονικού ορίου αιτήματος"
       ],
       "Signature not verified": [
         "Μη επαληθευμένη επαφή"
@@ -1824,9 +1796,6 @@
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά το επιλεγμένο στοιχείο από τον κάδο απορριμμάτων;",
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τα επιλεγμένα στοιχεία από τον κάδο απορριμμάτων;"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Επειδή το ${ appName } είναι κρυπτογραφημένο από άκρο σε άκρο, δεν μπορούμε να έχουμε πρόσβαση\nή να αποκρυπτογραφήσουμε τα αρχεία για εσάς. Για να ξεκλειδώσετε τη μονάδα δίσκου μετά από επαναφορά κωδικού πρόσβασης,\nπρέπει να έχετε ένα από τα παρακάτω:"
       ],
@@ -2046,11 +2015,11 @@
       "Initializing": [
         "Εκκίνηση"
       ],
-      "Internet connection lost.": [
-        "Η διαδικτυακή σύνδεση χάθηκε."
+      "Internet connection lost": [
+        "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Η σύνδεση στο Διαδίκτυο χάθηκε. Ελέγξτε τη συνδεσιμότητα της συσκευής σας."
+        "Απώλεια σύνδεσης στο διαδίκτυο. Παρακαλούμε ελέγξτε τη συνδεσιμότητα της συσκευής σας."
       ],
       "Internet connection restored.": [
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
@@ -2263,8 +2232,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
-      "Session timed out.": [
-        "Η χρονική περίοδος σύνδεσης έληξε."
+      "Session timed out": [
+        "Λήξη χρόνου συνεδρίας"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
@@ -2408,6 +2377,9 @@
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
       "Week": [
         "Εβδομάδα"
       ],
@@ -2422,6 +2394,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
       ],
       "Would you like to restore your files?": [
         "Θα θέλατε επαναφορά των αρχείων σας;"
@@ -2588,197 +2563,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Προσθήκη κρυπτογράφησης"
-      ],
-      "Add expiration time": [
-        "Προσθήκη χρόνου λήξης"
-      ],
-      "Apply / open": [
-        "Εφαρμογή / άνοιγμα"
-      ],
-      "Attach file": [
-        "Επισύναψη αρχείου"
-      ],
-      "Cancel / close": [
-        "Ακύρωση / κλείσιμο"
-      ],
-      "Close draft": [
-        "Κλείσιμο προχείρου"
-      ],
-      "Create filter with...": [
-        "Δημιουργία φίλτρου με..."
-      ],
-      "Delete permanently": [
-        "Οριστική διαγραφή"
-      ],
-      "Discard draft": [
-        "Απόρριψη προχείρου"
-      ],
-      "Expand / contract composer": [
-        "Ανάπτυξη / σύμπτυξη συντάκτη"
-      ],
-      "Forward": [
-        "Προώθηση"
-      ],
-      "Go to All Mail": [
-        "Μετάβαση σε Όλα τα Μηνύματα"
-      ],
-      "Go to Archive": [
-        "Μετάβαση στα Αρχειοθετημένα"
-      ],
-      "Go to Drafts": [
-        "Μετάβαση στα Πρόχειρα"
-      ],
-      "Go to Inbox": [
-        "Μετάβαση στα Εισερχόμενα"
-      ],
-      "Go to Sent": [
-        "Μετάβαση στα Απεσταλμένα"
-      ],
-      "Go to Spam": [
-        "Μετάβαση στα Ενοχλητικά"
-      ],
-      "Go to Starred": [
-        "Μετάβαση στα Αγαπημένα"
-      ],
-      "Go to Trash": [
-        "Μετάβαση στον Κάδο Απορριμμάτων"
-      ],
-      "Jump to first": [
-        "Μετάβαση στην πρώτη"
-      ],
-      "Jump to last": [
-        "Μετάβαση στο τελευταίο"
-      ],
-      "Label as...": [
-        "Ορίστε ετικέτα..."
-      ],
-      "Load embedded images": [
-        "Φόρτωση ενσωματωμένων εικόνων"
-      ],
-      "Load remote content": [
-        "Φόρτωση απομακρυσμένου περιεχομένου"
-      ],
-      "Mark as unread": [
-        "Σήμανση ως μη διαβασμένο"
-      ],
-      "Minimize / maximize composer": [
-        "Ελαχιστοποίηση / μεγιστοποίηση συντάκτη"
-      ],
-      "Move down": [
-        "Μετακίνηση προς τα κάτω"
-      ],
-      "Move left / collapse": [
-        "Μετακίνηση αριστερά / σύμπτυξη"
-      ],
-      "Move right / expand": [
-        "Μετακίνηση δεξιά / ανάπτυξη"
-      ],
-      "Move to Archive": [
-        "Μεταφορά στα Αρχειοθετημένα"
-      ],
-      "Move to Inbox": [
-        "Μετακίνηση στα Εισερχόμενα"
-      ],
-      "Move to Spam": [
-        "Μετακίνηση στα Ενοχλητικά"
-      ],
-      "Move to Trash": [
-        "Μετακίνηση στον κάδο"
-      ],
-      "Move to...": [
-        "Μετακίνηση σε..."
-      ],
-      "Move up": [
-        "Μετακίνηση πάνω"
-      ],
-      "New message": [
-        "Νέο μήνυμα"
-      ],
-      "Open next message": [
-        "Άνοιγμα επόμενου μηνύματος"
-      ],
-      "Open previous message": [
-        "Άνοιγμα προηγούμενου μηνύματος"
-      ],
-      "Open this modal": [
-        "Άνοιγμα αυτού του modal"
-      ],
-      "Reply": [
-        "Απάντηση"
-      ],
-      "Reply all": [
-        "Απάντηση σε όλους"
-      ],
-      "Save draft": [
-        "Αποθήκευση προχείρου"
-      ],
-      "Search": [
-        "Αναζήτηση"
-      ],
-      "Select / unselect": [
-        "Επιλογή / αποεπιλογή"
-      ],
-      "Select / unselect all": [
-        "Επιλογή / αποεπιλογή όλων"
-      ],
-      "Send email": [
-        "Αποστολή email"
-      ],
-      "Show all emails": [
-        "Εμφάνιση όλων των email"
-      ],
-      "Show original message": [
-        "Προβολή αρχικού μηνύματος"
-      ],
-      "Show unread emails": [
-        "Εμφάνιση μη διαβασμένων μηνυμάτων"
-      ],
-      "Star": [
-        "Προσθήκη αστεριού"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Συντομεύσεις ενεργειών"
-      ],
-      "Basic actions": [
-        "Βασικές ενέργειες"
-      ],
-      "Basic navigation": [
-        "Βασική πλοήγηση"
-      ],
-      "Composer shortcuts": [
-        "Συντομεύσεις συντάκτη"
-      ],
-      "Folder shortcuts": [
-        "Συντομεύσεις φακέλων"
-      ],
-      "List shortcuts": [
-        "Συντομεύσεις λίστας"
-      ],
-      "Message shortcuts": [
-        "Συντομεύσεις μηνυμάτων"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Ανενεργό"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Ενεργό"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Ερχεται σύντομα)"
-      ],
       "(Expired)": [
         "(Ληγμένο)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
       "Active": [
         "Ενεργό"
@@ -2843,6 +2633,9 @@
       "City": [
         "Πόλη"
       ],
+      "Code is 6 digits without spaces": [
+        "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
+      ],
       "Completed": [
         "Ολοκληρωμένο"
       ],
@@ -2888,9 +2681,6 @@
       ],
       "Enter organization name to confirm": [
         "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
-      ],
-      "Enter the 6-digit code": [
-        "Εισαγάγετε τον 6-ψήφιο κωδικό"
       ],
       "Expired": [
         "Έχει λήξει"
@@ -2948,9 +2738,6 @@
       ],
       "Import to email address": [
         "Εισαγωγή σε διεύθυνση email"
-      ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
       ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
@@ -3041,15 +2828,6 @@
       ],
       "Select a method": [
         "Επιλέξτε μέθοδο"
-      ],
-      "Select how your composer opens by default.": [
-        "Επιλέξτε τον τρόπο με τον οποίο ανοίγει ο συνθέτης σας από προεπιλογή."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Επιλέξτε πώς μοιάζει η λίστα μηνυμάτων σας από προεπιλογή."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Επιλογή προεπιλεγμένης όψης της θυρίδας σας."
       ],
       "Select your country": [
         "Επιλέξτε τη χώρα σας"
@@ -3149,30 +2927,6 @@
         "Όνομα"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Μεγιστοποιημένο"
-      ],
-      "Normal": [
-        "Κανονικό"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
@@ -3195,14 +2949,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "Η ${ Label.Name } δημιουργήθηκε"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
       ]
     },
     "Link": {
@@ -3244,6 +2990,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "Δημιουργήθηκε ${ createdCalendars } από ${ calendarsToBeCreated }",
         "Δημιουργήθηκαν ${ createdCalendars } από ${ calendarsToBeCreated }"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        ""
       ],
       "Almost there": [
         "Σχεδόν εκεί"
@@ -3938,9 +3688,6 @@
       "Fingerprint copied to clipboard": [
         "Το αποτύπωμα αντιγράφηκε στο πρόχειρο"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
-      ],
       "Phone number copied to clipboard": [
         "Ο τηλεφωνικός αριθμός αντιγράφηκε στο πρόχειρο"
       ],
@@ -4083,9 +3830,6 @@
       "${ appName } customization": [
         "Προσαρμογή ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Συντομεύσεις πληκτρολογίου"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } μέλος",
         "${ emailsCount } μέλη"
@@ -4144,9 +3888,6 @@
       ],
       "Clearing data": [
         "Εκκαθάριση δεδομένων"
-      ],
-      "Composer mode": [
-        "Λειτουργία συντάκτη"
       ],
       "Confirm loss of Proton bonuses": [
         "Επιβεβαιώστε την απώλεια μπόνους Proton"
@@ -4318,20 +4059,11 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
-      "Keyboard Shortcuts": [
-        "Συντομεύσεις Πληκτρολογίου"
-      ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
       "Location": [
         "Τοποθεσία"
-      ],
-      "Mailbox density": [
-        "Πυκνότητα θυρίδας"
-      ],
-      "Mailbox layout": [
-        "Διάταξη θυρίδας"
       ],
       "Manage secure link": [
         "Διαχείριση ασφαλούς συνδέσμου"

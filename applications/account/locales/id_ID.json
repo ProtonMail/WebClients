@@ -62,10 +62,10 @@
         "Tambahkan syarat"
       ],
       "Add credit / debit card": [
-        "Tambah kartu kredit / debit"
+        "Tambahkan kartu kredit / debit"
       ],
       "Add credits": [
-        "Tambahkan kredit"
+        "Tambahkan saldo"
       ],
       "Add domain": [
         "Tambah domain"
@@ -259,11 +259,11 @@
       "Details": [
         "Rincian"
       ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
-      ],
       "Didn't receive a code?": [
         "Belum menerima kode?"
+      ],
+      "Didn't receive the code?": [
+        "Tidak menerima kode yang dimaksud?"
       ],
       "Disable recovery phrase": [
         "Matikan sandi pemulihan"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Edit sieve"
+      ],
+      "Edit sign-in details": [
+        "Sunting rincian masuk"
       ],
       "enable desktop notifications": [
         "mengaktifkan pemberitahuan desktop"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Miring"
-      ],
-      "Justify": [
-        "Rata kiri kanan"
       ],
       "Keep": [
         "Simpan"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Verifikasi"
+      ],
+      "Verify account": [
+        "Verifikasi akun"
+      ],
+      "Verify email": [
+        "Verifikasi email"
       ],
       "View": [
         "Lihat"
@@ -1426,7 +1432,7 @@
     },
     "Credits": {
       "Unused credits": [
-        "Saldo yang tidak digunakan"
+        "Saldo yang belum digunakan"
       ]
     },
     "Daily recurring event, frequency": {
@@ -1706,12 +1712,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Tidak dapat membuat kalendar baru dari kalender-kalender yang diimpor karena batas jumlah kalender maksimal telah tercapai."
       ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi email, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
@@ -1886,9 +1886,6 @@
       "Please generate keys before you try to change your password": [
         "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ],
-      "Please refresh the page.": [
-        "Harap muat ulang halaman ini."
-      ],
       "Please set a recovery email first": [
         "Harap tentukan alamat email pemulihan terlebih dahulu"
       ],
@@ -1916,8 +1913,8 @@
       "Process aborted": [
         "Proses dibatalkan"
       ],
-      "Request timed out.": [
-        "Terlalu lama memuat."
+      "Request timed out": [
+        "Waktu permintaan habis"
       ],
       "Require at least one action": [
         "Perlu minimal satu tindakan"
@@ -1952,9 +1949,6 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Peramban Anda tidak mengizinkan pembayaran dengan hak akses penuh. Mohon gunakan peramban lain atau masuk via komputer."
       ],
-      "The composer failed to load.": [
-        "Komposer gagal memuat."
-      ],
       "The folder name is too long. Please choose a different name.": [
         "Nama folder terlalu panjang. Mohon pilih nama lain."
       ],
@@ -1968,7 +1962,7 @@
         "Nama label terlalu panjang. Mohon pilih nama lain."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "Tambahan kredit minimal ${ _price }"
+        "Jumlah saldo minimal yang dapat ditambahkan adalah ${ _price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Sumbangan minimal ${ price }"
@@ -3109,7 +3103,7 @@
         "(Mail + VPN)"
       ],
       "* Customizable features": [
-        "* Fitur yang dapat disesuaikan"
+        "* Dapat diatur sesuai kebutuhan"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus penyimpanan"
@@ -3151,7 +3145,7 @@
         "Akun berhasil diperbarui"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Buat alamat email khusus dengan akhiran @pm.me untuk akun Anda. Alamat email yang simpel dan sederhana ini merupakan kependekan dari \"ProtonMail me\" atau \"Private Message me.\""
+        "Buat akun Anda menjadi lebih berwarna dengan alamat email khusus yang berakhiran @pm.me. Alamat email yang sederhana dan mudah diingat ini merupakan kependekan dari \"ProtonMail me\" atau \"Private Message me.\""
       ],
       "Add a recovery email address": [
         "Tambahkan alamat email pemulihan"
@@ -3595,7 +3589,7 @@
         "Jika Anda memiliki domain kustom dengan ProtonMail, Anda dapat menyetel alamat surel catch-all yang akan menerima pesan yang dikirim ke domain Anda namun ke alamat surel yang tidak valid (misal, salah ketik)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Jika Anda mempunyai sebuah kode hadiah, massukkan kode tersebut untuk menerapkan diskon Anda."
+        "Apabila Anda memiliki kode hadiah yang valid, masukkan kode tersebut pada kolom di bawah ini untuk mendapatkan diskon Anda."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Jika Anda belum pernah menggunakan otentikasi dua faktor, sangat kami anjurkan Anda ${ guideButton }."
@@ -3693,8 +3687,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Pasang berkas Konfigurasi server untuk menyambung ke server khusus di negara pilihan Anda."
       ],
-      "Internet connection lost.": [
-        "Koneksi internet terputus."
+      "Internet connection lost": [
+        "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
@@ -3710,9 +3704,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
-      ],
-      "Justify": [
-        "Rata kiri kanan"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Pertahankan data ini di DNS selama Anda ingin menggunakan DKIM."
@@ -3856,7 +3847,7 @@
         "Tidak dapat disesuaikan"
       ],
       "Not set": [
-        "Tidak diatur"
+        "Belum ditentukan"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Sedang tidak berada pada perangkat Anda? Masuklah dengan mode penjelajahan privat dan tutup browser Anda setelah selesai. ${ learnMore }"
@@ -3937,7 +3928,7 @@
         "Harap dicatat bahwa apabila Anda menghapus filter ini, kami akan berhenti memproses seluruh tindakan otomatis yang berhubungan dengan filter ini."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Harap diperhatikan dengan mengklik tombol Konfirmasi, sisa kredit Anda menjadi ${ creditsRemaining }."
+        "Harap diperhatikan bahwa dengan mengklik tombol Konfirmasi, sisa saldo Anda akan menjadi ${ creditsRemaining }."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Harap sertakan alamat email seandainya kami perlu menghubungi Anda."
@@ -4080,8 +4071,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
-      "Session timed out.": [
-        "Sesi habis."
+      "Session timed out": [
+        "Masa berlaku sesi telah berakhir"
       ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
@@ -4141,7 +4132,7 @@
         "Nama akan terlihat pada pengguna Anda ketika mereka masuk."
       ],
       "There are no billing details available for your current subscription.": [
-        "Rincian tagihan tidak tersedia bagi paket yang Anda langgan saat ini."
+        "Rincian tagihan tidak tersedia untuk paket yang Anda langgan saat ini."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda memilih server ProtonVPN mana yang ingin Anda sambungkan saat menggunakan aplikasi VPN pihak ketiga atau menyiapkan koneksi VPN di router."
@@ -4365,6 +4356,9 @@
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda ketika proses impor telah selesai."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
+      ],
       "Web URL": [
         "URL Web"
       ],
@@ -4390,13 +4384,16 @@
         "Saat pemberitahuan diaktifkan, kami akan mengirimkan peringatan ke alamat pemulihan/pemberitahuan Anda jika Anda memiliki pesan baru di akun ProtonMail Anda."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Pada saat masa langganan Anda telah jatuh tempo, kami akan terlebih dahulu memperbaharui langganan Anda dengan saldo yang tersedia sebelum kami menagih Anda melalui metode-metode pembayaran di atas."
+        "Pada saat paket yang Anda langgan telah jatuh tempo, kami akan terlebih dahulu memperbarui langganan Anda dengan saldo yang tersedia sebelum kami menagih Anda melalui metode-metode pembayaran di atas."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Apakah Anda ingin menerima kode verifikasi baru?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo membaca data pribadi Anda untuk memberikan akses bagi pengiklan, badan intelijen AS, dan pihak ketiga lainnya. Untuk privasi yang lebih baik, buat alamat email yang aman."
@@ -4597,7 +4594,7 @@
         "Fitur yang dapat disesuaikan"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail tidak dapat digunakan untuk mengirim email massal atau spam. Email yang sah tidak terbatas."
+        "ProtonMail tidak dapat digunakan untuk mengirim spam atau email massal. Email yang sah tidak dibatasi."
       ]
     },
     "Info for cash payment method": {
@@ -4674,7 +4671,7 @@
         "Uang kembali"
       ],
       "Credit": [
-        "Kredit"
+        "Saldo"
       ],
       "Donation": [
         "Sumbangan"
@@ -4748,10 +4745,10 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "Tambah enkripsi"
+        "Tambahkan enkripsi"
       ],
       "Add expiration time": [
-        "Tambah waktu kedaluwarsa"
+        "Tambahkan waktu kedaluwarsa"
       ],
       "Apply / open": [
         "Terapkan / buka"
@@ -4781,7 +4778,7 @@
         "Teruskan"
       ],
       "Go to All Mail": [
-        "Ke Semua Surat"
+        "Ke Semua surat"
       ],
       "Go to Archive": [
         "Ke Arsip"
@@ -4814,7 +4811,7 @@
         "Labeli sebagai..."
       ],
       "Load embedded images": [
-        "Muat gambar tertanam"
+        "Muat gambar-gambar yang tersemat"
       ],
       "Load remote content": [
         "Muat remote content"
@@ -4838,7 +4835,7 @@
         "Pindahkan ke Arsip"
       ],
       "Move to Inbox": [
-        "Pindahkan ke Kotak Masuk"
+        "Pindahkan ke Kotak masuk"
       ],
       "Move to Spam": [
         "Pindahkan ke Spam"
@@ -4889,7 +4886,7 @@
         "Tampilkan semua email"
       ],
       "Show original message": [
-        "Tampilkan pesan orisinal"
+        "Tampilkan pesan asli"
       ],
       "Show unread emails": [
         "Tampilkan email-email yang belum dibaca"
@@ -4983,8 +4980,8 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } dari ${ MaxMembers } pengguna"
       ],
-      "(Coming soon)": [
-        "(Segera hadir)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
       "Account storage": [
         "Penyimpanan akun"
@@ -5047,7 +5044,7 @@
         "Deteksi zona waktu secara otomatis"
       ],
       "Auto-load embedded images": [
-        "Muat gambar tertanam secara otomatis"
+        "Muat gambar-gambar yang tersemat secara otomatis"
       ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
@@ -5090,6 +5087,9 @@
       ],
       "Code": [
         "Kode"
+      ],
+      "Code is 6 digits without spaces": [
+        "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
       "Color": [
         "Warna"
@@ -5146,7 +5146,7 @@
         "Negara"
       ],
       "Credits used": [
-        "Kredit terpakai"
+        "Saldo digunakan"
       ],
       "Current login password": [
         "Kata sandi saat ini"
@@ -5255,9 +5255,6 @@
       ],
       "Enter password": [
         "Masukkan kata sandi"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Masukkan kata sandi kunci yang memiliki kode sidik jari berikut: ${ fingerprintCode }"
@@ -5626,7 +5623,7 @@
         "Mode dua kata sandi"
       ],
       "Undo send": [
-        "Urungkan kiriman"
+        "Tunda kiriman selama"
       ],
       "Upload 1 or more encryption keys": [
         "Unggah setidaknya 1 kunci enkripsi"
@@ -5653,7 +5650,7 @@
         "Nama Pengguna"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "Kapasitas terpakai: ${ humanUsedSpace } dari ${ humanMaxSpace }"
+        "Kuota penyimpanan terpakai: ${ humanUsedSpace } dari ${ humanMaxSpace }"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -5846,7 +5843,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "Tambah kode hadiah"
+        "Tambahkan kode hadiah"
       ],
       "Calendars": [
         "Kalender"
@@ -6364,7 +6361,7 @@
         "Kelola organisasi Anda, tautkan nama domain Anda, dan buat akun-akun bagi para karyawan Anda agar seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all Proton services": [
-        "Temukan semua layanan Proton"
+        "Telusuri seluruh layanan yang Proton tawarkan"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
         "Misi kami adalah membangun internet dimana Anda memegang kendali data dan privasi Anda. Kami baru saja memutakhirkan Proton - Selamat datang di internet aman."
@@ -6566,9 +6563,6 @@
       "Secure Core configs": [
         "Konfigurasi Secure Core"
       ],
-      "Select a reason": [
-        "Pilih alasan"
-      ],
       "Standard server configs": [
         "Konfigurasi server standar"
       ],
@@ -6672,7 +6666,7 @@
         "Masukkan nama kalender"
       ],
       "Add gift code": [
-        "Tambah kode hadiah"
+        "Tambahkan kode hadiah"
       ],
       "Address": [
         "Alamat"
@@ -7261,7 +7255,7 @@
         "Email diperbarui"
       ],
       "Gift code applied": [
-        "Kode hadiah diterapkan"
+        "Kode hadiah berhasil digunakan"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
         "Jika Anda memasukkan email pemulihan yang valid, kami akan mengirimkan email dengan nama pengguna Anda di menit berikutnya."
@@ -7512,10 +7506,10 @@
         "Tambah nama grup kontak"
       ],
       "Add credit/debit card": [
-        "Tambah kartu kredit/debit"
+        "Tambahkan kartu kredit/debit"
       ],
       "Add credits": [
-        "Tambahkan kredit"
+        "Tambahkan saldo"
       ],
       "Add domain": [
         "Tambah domain"
@@ -7524,7 +7518,7 @@
         "Tambah filter"
       ],
       "Add invoice details": [
-        "Tambah rincian tagihan"
+        "Tambahkan rincian tagihan"
       ],
       "Add PayPal payment method": [
         "Tambahkan metode pembayaran PayPal"
@@ -7572,7 +7566,7 @@
         "Tampilan"
       ],
       "Apply gift code": [
-        "Tambah kode hadiah"
+        "Gunakan kode hadiah"
       ],
       "Are you human?": [
         "Apakah kamu manusia?"
@@ -7785,7 +7779,7 @@
         "Sunting kalender"
       ],
       "Edit credit/debit card": [
-        "Ubah kartu kredit/debit"
+        "Sunting rincian kartu kredit/debit"
       ],
       "Edit domain": [
         "Ubah domain"
@@ -7801,6 +7795,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Email composer": [
+        "Komposer email"
       ],
       "Email encryption keys": [
         "Kunci-kunci enkripsi email"
@@ -7819,9 +7816,6 @@
       ],
       "Error": [
         "Kesalahan"
-      ],
-      "Expand content": [
-        "Buka konten"
       ],
       "Export": [
         "Ekspor"
@@ -8376,7 +8370,7 @@
         "Hosting email untuk domain Anda sendiri di ProtonMail, misal. john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
+        "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami sebelumnya, silakan masukkan di sini."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Pesan di folder Terkirim atau Draf akan selalu muncul di folder tersebut, walaupun Anda memindahkannya ke folder lain."

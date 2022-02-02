@@ -14,7 +14,7 @@
       "Close modal": [
         "Chiudi finestra"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Non hai ricevuto il codice?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Modifica il numero di telefono"
+      ],
+      "Edit sign-in details": [
+        "Modifica dettagli di accesso"
       ],
       "Get verification code": [
         "Ottieni il codice di verifica"
@@ -41,6 +44,12 @@
       "Verify": [
         "Verifica"
       ],
+      "Verify account": [
+        "Verifica account"
+      ],
+      "Verify email": [
+        "Verifica email"
+      ],
       "View invoice": [
         "Visualizza fattura"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Impossibile convalidare l'email, riprova più tardi"
-      ],
-      "Can't validate phone, try again later": [
-        "Impossibile convalidare il telefono, riprova più tardi"
-      ],
       "Email is not valid": [
         "Email non valida"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
-      "Request timed out.": [
-        "Richiesta scaduta."
+      "Request timed out": [
+        "Timeout della richiesta"
       ],
       "This field is required": [
         "Questo campo è obbligatorio"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
-      "Internet connection lost.": [
-        "Connessione ad Internet interrotta."
+      "Internet connection lost": [
+        "Connessione ad Internet interrotta"
       ],
       "Loading": [
         "Caricamento"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
-      "Session timed out.": [
-        "Sessione scaduta."
+      "Session timed out": [
+        "Sessione scaduta"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per contrastare spam e abusi, si prega di verificare di essere umano."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Invieremo un nuovo codice di verifica a ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Vuoi ricevere un nuovo codice di verifica?"
       ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Annulla"
       ],
+      "Code is 6 digits without spaces": [
+        "Il codice è di 6 cifre senza spazi"
+      ],
       "Email address": [
         "Indirizzo email"
-      ],
-      "Enter the 6-digit code": [
-        "Inserisci il codice a 6 cifre"
       ],
       "Hide password": [
         "Nascondi la password"

@@ -14,14 +14,17 @@
       "Close modal": [
         "Fechar janela"
       ],
-      "Did not receive the code?": [
-        "Não recebeu o código?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "Editar o endereço de email"
       ],
       "Edit phone number": [
         "Editar o número de telefone"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "Obter código de verificação"
@@ -41,6 +44,12 @@
       "Verify": [
         "Verificar"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "Ver factura"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Impossível validar o email, tente mais tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "Impossível validar o telefone, tente mais tarde"
-      ],
       "Email is not valid": [
         "Email inválido"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "As senhas não coincidem"
       ],
-      "Request timed out.": [
-        "O pedido expirou."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "Este campo é obrigatório"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o email na sua caixa de entrada, verifique a pasta de spam."
       ],
-      "Internet connection lost.": [
-        "Ligação à Internet perdida."
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "A carregar"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "A sessão expirou."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o assédio e o abuso, por favor confirme que é um ser humano."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "Endereço electrónico"
-      ],
-      "Enter the 6-digit code": [
-        "Insira o código de 6 algarismos"
       ],
       "Hide password": [
         "Ocultar senha"

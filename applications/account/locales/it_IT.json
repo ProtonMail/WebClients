@@ -259,11 +259,11 @@
       "Details": [
         "Dettagli"
       ],
-      "Did not receive the code?": [
-        "Non hai ricevuto il codice?"
-      ],
       "Didn't receive a code?": [
         "Non hai ricevuto un codice?"
+      ],
+      "Didn't receive the code?": [
+        "Non hai ricevuto il codice?"
       ],
       "Disable recovery phrase": [
         "Disabilita frase di recupero"
@@ -284,7 +284,7 @@
         "Effettua il downgrade dell'account"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        "Effettua il downgrade su ${ BRAND_NAME } ${ downgradedPlanName }"
+        "Effettua il downgrade a ${ BRAND_NAME } ${ downgradedPlanName }"
       ],
       "Download": [
         "Scarica"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Modifica sieve"
+      ],
+      "Edit sign-in details": [
+        "Modifica dettagli di accesso"
       ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Corsivo"
-      ],
-      "Justify": [
-        "Giustifica"
       ],
       "Keep": [
         "Mantieni"
@@ -701,7 +701,7 @@
         "Invia"
       ],
       "Support": [
-        "Assistenza"
+        "Supporto"
       ],
       "Switch account": [
         "Cambia account"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Verifica"
+      ],
+      "Verify account": [
+        "Verifica account"
+      ],
+      "Verify email": [
+        "Verifica email"
       ],
       "View": [
         "Vedi"
@@ -1723,12 +1729,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Impossibile creare nuovi calendari per tutti i calendari importati a causa del limite del calendario personale."
       ],
-      "Can't validate email, try again later": [
-        "Impossibile convalidare l'email, riprova più tardi"
-      ],
-      "Can't validate phone, try again later": [
-        "Impossibile convalidare il telefono, riprova più tardi"
-      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
@@ -1907,9 +1907,6 @@
       "Please generate keys before you try to change your password": [
         "Per favore genera le chiavi prima di provare a cambiare la tua password"
       ],
-      "Please refresh the page.": [
-        "Per favore ricarica la pagina."
-      ],
       "Please set a recovery email first": [
         "Per favore imposta prima un'email di recupero"
       ],
@@ -1937,8 +1934,8 @@
       "Process aborted": [
         "Processo interrotto"
       ],
-      "Request timed out.": [
-        "Richiesta scaduta."
+      "Request timed out": [
+        "Timeout della richiesta"
       ],
       "Require at least one action": [
         "Richiede almeno un azione"
@@ -1972,9 +1969,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Il browser che stai usando attualmente non permette l'autorizzazione completa del pagamento. Usa un browser differente oppure fai il log in da un computer."
-      ],
-      "The composer failed to load.": [
-        "Il compositore non è riuscito a caricare."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
@@ -2488,10 +2482,10 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Aggiunge un filtro personalizzato per eseguire automaticamente determinate azioni, come l'etichettatura o l'archiviazione dei messaggi."
+        "Aggiungi un filtro personalizzato per eseguire automaticamente determinate azioni, come l'etichettatura o l'archiviazione dei messaggi."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Applica regole spam specifiche per il mittente. Messaggi da indirizzi o domini nella Lista Consentiti andranno sempre nella tua casella di posta in arrivo mentre i messaggi da indirizzi o domini nella Lista Bloccati andranno sempre in Spam. Contrassegnare un messaggio come spam aggiungerà il suo indirizzo alla Lista Bloccati. Contrassegnare un messaggio come non spam lo aggiungerà alla Lista Consenti."
+        "Applica regole spam specifiche per il mittente. Messaggi da indirizzi o domini nella Lista Consentiti andranno sempre nella tua casella di posta in arrivo mentre i messaggi da indirizzi o domini nella Lista Bloccati andranno sempre in Spam. Contrassegnare un messaggio come spam aggiungerà il suo indirizzo alla Lista Bloccati. Contrassegnare un messaggio come non spam lo aggiungerà alla Lista Consentiti."
       ],
       "Search in Allow List and Block List": [
         "Cerca nella Lista Consentiti e nella Lista Bloccati"
@@ -2884,19 +2878,19 @@
         "Per importare un calendario su Proton, necessiti del ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Per importare i contatti su Proton, necessiti del ${ knowledgeBaseLink }. Scaricala da Outlook in 3 facili passaggi:"
+        "Per importare i contatti su Proton, necessiti di un ${ knowledgeBaseLink }. Scaricala da Outlook in 3 facili passaggi:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Per importare i contatti su Proton, necessiti del ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 facili passaggi:"
+        "Per importare i contatti su Proton, necessiti di un ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 facili passaggi:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Per importare i contatti su Proton, necessiti del ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione"
+        "Per importare i contatti su Proton, necessiti di un ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Per importare le email su Proton, necessiti di una ${ appPasswordLink } da Outlook. Ottienila seguendo questi passaggi:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Per importare le email a Proton, necessiti di un ${ appPasswordLink } da Yahoo. Ottienilo seguendo questi passaggi:"
+        "Per importare le email su Proton, necessiti di una ${ appPasswordLink } da Yahoo. Ottienila seguendo questi passaggi:"
       ]
     },
     "Import instructions emphasis": {
@@ -2907,7 +2901,7 @@
         "Sicurezza account"
       ],
       "app password": [
-        "password dell'app"
+        "password per le app"
       ],
       "Can view all details": [
         "Può visualizzare tutti i dettagli"
@@ -2936,10 +2930,10 @@
     },
     "Import instructions link": {
       "app password": [
-        "password dell'app"
+        "password per le app"
       ],
       "app password or enable IMAP": [
-        "password dell'app o abilitare IMAP"
+        "password per le app o abilitare IMAP"
       ],
       "contacts": [
         "contatti"
@@ -3153,7 +3147,7 @@
         "(Filtrare se TUTTE le condizioni seguenti sono soddisfatte)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Filtrare se QUALUNQUE delle condizioni seguenti sono soddisfatte)"
+        "(Filtrare se QUALSIASI delle condizioni seguenti sono soddisfatte)"
       ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
@@ -3262,7 +3256,7 @@
         "Consenti il recupero via telefono"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Consente di ospitare gli indirizzi di posta elettronica per i tuoi domini su ${ mailAppName }, ad esempio john.smith@example.com"
+        "Ti consente di ospitare email per i tuoi domini in ${ mailAppName }, es. john.smith@example.com"
       ],
       "Already have an account? ${ loginLink }": [
         "Hai già un account? ${ loginLink }"
@@ -3422,7 +3416,7 @@
         "Crea un link al tuo calendario e condividilo con chiunque sia fuori da Proton. Solo tu puoi aggiungere o rimuovere eventi."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "Crei e gestisca account secondari e assegni indirizzi email col suo dominio personalizzato ad essi."
+        "Crea e gestisci account secondari e assegna loro indirizzi email col tuo dominio personalizzato."
       ],
       "Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Crea indirizzi email per altre persone, gestisci ProtonMail per un azienda, una scuola o un gruppo. Inizia con l'aggiunta del nome dell'organizzazione e del dominio personalizzato (ad es. @yourcompany.com). "
@@ -3525,10 +3519,10 @@
         "Preferenze email salvate"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Le email memorizzate in questa cartella non saranno eliminate e possono ancora esser trovate nella Cartella Tutte le Mail."
+        "Le email memorizzate in questa cartella non saranno eliminate e possono ancora essere trovate nella cartella Tutti i messaggi."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Le email etichettate con quest'etichetta non saranno eliminate e possono ancora esser trovate nella cartella rispettiva."
+        "Le email etichettate con quest'etichetta non saranno eliminate e possono ancora essere trovate nella rispettiva cartella."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Abilitare nuovamente il ripristino per frase genererà una nuova frase di ripristino."
@@ -3648,7 +3642,7 @@
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
       "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Se hai un dominio personalizzato con ProtonMail, è possibile impostare un indirizzo email catch-all che riceverà messaggi inviati al tuo dominio ma a un indirizzo email non valido (e.., typos)."
+        "Se hai un dominio personalizzato con ProtonMail, è possibile impostare un indirizzo email catch-all che riceverà messaggi inviati al tuo dominio ma a un indirizzo email non valido (es. errori di battitura)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se hai un codice regalo, inseriscilo qui sotto per applicare lo sconto."
@@ -3660,10 +3654,10 @@
         "Se hai impostato sia SPF che DKIM, DMARC ti permette di specificare come gli altri servizi email dovrebbero consegnare le email per il tuo dominio nel caso falliscano sia i controlli SPF che DKIM. Questo può rendere più difficile agli spammer fingere di essere te, ma potrebbe creare problemi di consegna se non è fatto correttamente."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Se perdi i tuoi dati di accesso e hai bisogno di reimpostare il tuo account, ${ boldImperative } che hai un ${ boldAccountRecovery } impostato."
+        "Se perdi i tuoi dati di accesso e hai bisogno di reimpostare il tuo account, ${ boldImperative } che tu abbia un ${ boldAccountRecovery } impostato."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Se perdi i tuoi dati di accesso e hai bisogno di reimpostare il tuo account, ${ boldImperative } che hai entrambi un ${ boldAccountAndRecovery } impostati, altrimenti potresti non essere in grado di accedere a nessuna delle tue email, contatti o file."
+        "Se perdi i tuoi dati di accesso e hai bisogno di reimpostare il tuo account, ${ boldImperative } che tu abbia entrambi i ${ boldAccountAndRecovery } impostati, altrimenti potresti non essere in grado di accedere a nessuna delle tue email, contatti o file."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Se dovessi perdere il dispositivo che utilizzi per l'autenticazione in due fattori, potrai usare questi codici per accedere al posto del codice di 6 cifre dell'autenticazione a 2 fattori. Ogni codice può essere usato una sola volta."
@@ -3750,8 +3744,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installa un file di configurazione del Server per connetterti a un server specifico nel paese di tua scelta."
       ],
-      "Internet connection lost.": [
-        "Connessione ad Internet interrotta."
+      "Internet connection lost": [
+        "Connessione ad Internet interrotta"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Connessione Internet persa. Controlla la connettività del tuo dispositivo."
@@ -3767,9 +3761,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Basta confermare la tua selezione e noi faremo il resto."
-      ],
-      "Justify": [
-        "Giustifica"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantieni questi record nel tuo DNS per tutto il tempo che vuoi usare DKIM."
@@ -4073,7 +4064,7 @@
         "Accodato"
       ],
       "read our two-factor authentication Guide first": [
-        "leggi prima la nostra Guida all'autenticazione a due fattori"
+        "di leggere prima la nostra Guida all'autenticazione a due fattori"
       ],
       "Recovery file downloaded": [
         "File di recupero scaricato"
@@ -4138,8 +4129,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
-      "Session timed out.": [
-        "Disconnesso."
+      "Session timed out": [
+        "Sessione scaduta"
       ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
@@ -4325,7 +4316,7 @@
         "Autenticazione a due fattori attivata"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "La modalità due password richiede due password: una per accedere al tuo account e una per decifrare la tua casella di posta. (Avanzata)"
+        "La modalità a doppia password richiede due password: una per accedere al tuo account e una per decifrare la tua casella di posta. (Avanzata)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "La modalità a doppia password utilizza due password separate per la decifratura del login e della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
@@ -4370,7 +4361,7 @@
         "Link URL"
       ],
       "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Utilizzare le risposte automatiche per informare i contatti che si è fuori dall'ufficio o non si è in grado di rispondere."
+        "Utilizza le risposte automatiche per informare i contatti che si è fuori dall'ufficio o non si è in grado di rispondere."
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Usa le seguenti credenziali quando ti connetti ai server ProtonVPN senza applicazione. Esempi di utilizzo includono: Tunnelblick su macOS, OpenVPN su GNU/Linux."
@@ -4423,6 +4414,9 @@
       "We'll notify you when the import is done.": [
         "Ti avviseremo quando l'importazione sarà completata."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Invieremo un nuovo codice di verifica a ${ strong }"
+      ],
       "Web URL": [
         "URL web"
       ],
@@ -4442,7 +4436,7 @@
         "Cosa vuoi importare dal tuo account Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Se disabilitato, questo impedirà ai file di immagine il caricamento sul dispositivo senza che tu ne sia informato.\t"
+        "Se disabilitato, questo impedirà ai file di immagini il caricamento sul dispositivo senza che tu ne sia informato."
       ],
       "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
         "Quando le notifiche sono attive, manderemo un avviso al tuo indirizzo di notifica/recupero se avrai nuovi messaggi sul tuo account."
@@ -4455,6 +4449,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Vuoi ricevere un nuovo codice di verifica?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo legge i tuoi dati personali al fine di fornire accesso a inserzionisti, agenzie governative degli Stati Uniti e altri software di terze parti. Per una migliore privacy, crea un indirizzo email sicuro."
@@ -4511,7 +4508,7 @@
         "Non è stato impostato alcun metodo di recupero, quindi il recupero dell'account è impossibile se si dimentica la password. Procedere senza metodo di recupero?"
       ],
       "You have no saved payment methods.": [
-        "Non ha salvato alcun metodo di pagamento."
+        "Non hai salvato alcun metodo di pagamento."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "È necessario attivare la tua chiave privata dell'organizzazione con la password di backup dell'organizzazione fornita dal tuo amministratore dell'organizzazione."
@@ -4577,13 +4574,13 @@
         "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
       ],
       "Your Allow List is empty.": [
-        "La tua Lista Consenti è vuota."
+        "La tua Lista Consentiti è vuota."
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "La tua banca richiede una verifica 3-D Secure per scopi di sicurezza."
       ],
       "Your Block List is empty.": [
-        "La tua Lista Blocchi è vuota."
+        "La tua Lista Bloccati è vuota."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account Proton."
@@ -4793,12 +4790,12 @@
         "Obsoleta"
       ],
       "Primary": [
-        "Primario"
+        "Primaria"
       ]
     },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Più lento, ma compatibilità migliorata con il software ereditario)"
+        "${ compatibility } RSA 4096-bit (Più lento, ma compatibilità migliorata con il software obsoleto)"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
         "${ stateOfTheArt } ECC Curve25519 (Più veloce, più moderno)"
@@ -4839,13 +4836,13 @@
         "Inoltra"
       ],
       "Go to All Mail": [
-        "Va' a Tutti i Messaggi"
+        "Vai a Tutti i Messaggi"
       ],
       "Go to Archive": [
         "Vai all'archivio"
       ],
       "Go to Drafts": [
-        "Va' alle Bozze"
+        "Vai alle Bozze"
       ],
       "Go to Inbox": [
         "Vai alla posta in entrata"
@@ -4854,13 +4851,13 @@
         "Vai alla posta inviata"
       ],
       "Go to Spam": [
-        "Va' a Spam"
+        "Vai a Spam"
       ],
       "Go to Starred": [
-        "Va' ai Preferiti"
+        "Vai ai Preferiti"
       ],
       "Go to Trash": [
-        "Va' al Cestino"
+        "Vai al Cestino"
       ],
       "Jump to first": [
         "Vai al primo"
@@ -4869,7 +4866,7 @@
         "Vai all'ultimo"
       ],
       "Label as...": [
-        "Etichettare come..."
+        "Etichetta come..."
       ],
       "Load embedded images": [
         "Carica le immagini incorporate"
@@ -4967,7 +4964,7 @@
         "Navigazione di base"
       ],
       "Composer shortcuts": [
-        "Compositore scorciatoie"
+        "Scorciatoie compositore"
       ],
       "Folder shortcuts": [
         "Scorciatoie cartella"
@@ -5045,8 +5042,8 @@
         "${ UsedMembers } di ${ MaxMembers } utente",
         "${ UsedMembers } di ${ MaxMembers } utenti"
       ],
-      "(Coming soon)": [
-        "(In arrivo)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
       ],
       "Account storage": [
         "Spazio dell'account"
@@ -5152,6 +5149,9 @@
       ],
       "Code": [
         "Codice"
+      ],
+      "Code is 6 digits without spaces": [
+        "Il codice è di 6 cifre senza spazi"
       ],
       "Color": [
         "Colore"
@@ -5317,9 +5317,6 @@
       ],
       "Enter password": [
         "Inserisci la password"
-      ],
-      "Enter the 6-digit code": [
-        "Inserisci il codice a 6 cifre"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Inserisci la password per la chiave con l'impronta digitale: ${ fingerprintCode }"
@@ -5812,7 +5809,7 @@
         "Annunci di Proton beta"
       ],
       "Proton company announcements": [
-        "Annunci dell'azienda Proton"
+        "Annunci dall'azienda Proton"
       ],
       "Proton for business": [
         "Proton per le aziende"
@@ -5824,7 +5821,7 @@
         "Caratteristiche principali di Proton"
       ],
       "Proton newsletter": [
-        "Proton newsletter"
+        "Newsletter da Proton"
       ],
       "Proton offers and promotions": [
         "Offerte e promozioni di Proton"
@@ -5917,7 +5914,7 @@
         "cancellare la cache del browser"
       ],
       "click here": [
-        "clicchi qui"
+        "clicca qui"
       ],
       "Common sign in issues": [
         "Problemi di accesso comuni"
@@ -6056,13 +6053,13 @@
         "Supporto multi-utente"
       ],
       "Priority": [
-        "Priorità"
+        "Prioritario"
       ],
       "Storage": [
         "Archiviazione"
       ],
       "Support": [
-        "Assistenza"
+        "Supporto"
       ],
       "Use @pm.me address": [
         "Usa l'indirizzo @pm.me"
@@ -6639,9 +6636,6 @@
       "Secure Core configs": [
         "Configurazioni del Secure Core"
       ],
-      "Select a reason": [
-        "Seleziona un motivo"
-      ],
       "Standard server configs": [
         "Configurazioni server standard"
       ],
@@ -7194,10 +7188,10 @@
     },
     "Spam filter moved to whitelist": {
       "${ Domain } moved to Allow List": [
-        "${ Domain } spostato nella lista Consenti"
+        "${ Domain } spostato nella lista Consentiti"
       ],
       "${ Email } moved to Allow List": [
-        "${ Email } spostato nella lista Consenti"
+        "${ Email } spostato nella lista Consentiti"
       ]
     },
     "Spam notification": {
@@ -7678,7 +7672,7 @@
         "Lista Bloccati"
       ],
       "Bridge for ${ platform }": [
-        "Ponte per ${ platform }"
+        "Bridge per ${ platform }"
       ],
       "Card verification": [
         "Verifica della carta"
@@ -7878,6 +7872,9 @@
       "Email": [
         "Email"
       ],
+      "Email composer": [
+        "Compositore email"
+      ],
       "Email encryption keys": [
         "Chiavi di cifratura dell'email"
       ],
@@ -7895,9 +7892,6 @@
       ],
       "Error": [
         "Errore"
-      ],
-      "Expand content": [
-        "Espandi contenuto"
       ],
       "Export": [
         "Esporta"
@@ -7979,7 +7973,7 @@
         "Importa tramite ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
-        "App Import/Export"
+        "App Import-Export"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
@@ -8246,7 +8240,7 @@
         "Passa alla modalità singola password"
       ],
       "Switch to two-password mode": [
-        "Passa alla modalità due password"
+        "Passa alla modalità a doppia password"
       ],
       "Take precautions to avoid data loss!": [
         "Prendi precauzioni per evitare la perdita di dati!"
@@ -8471,7 +8465,7 @@
         "Convoglia tutto il traffico internet attraverso la rete Tor con un singolo click."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Imposta la dimensione predefinita del popup Compositore come piccolo o a schermo intero."
+        "Imposta la dimensione predefinita del popup del Compositore come piccolo o a schermo intero."
       ],
       "Set the default layout for your Inbox.": [
         "Imposta il layout predefinito per la tua Posta in arrivo."

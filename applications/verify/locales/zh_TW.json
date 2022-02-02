@@ -14,14 +14,17 @@
       "Close modal": [
         "關閉視窗"
       ],
-      "Did not receive the code?": [
-        "尚未收到驗證碼？"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
       "Edit phone number": [
         "編輯電話號碼"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -41,6 +44,12 @@
       "Verify": [
         "驗證"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "查看帳單"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "無法驗證電子郵件，請稍後再試"
-      ],
-      "Can't validate phone, try again later": [
-        "無法驗證電話號碼，請稍後再試"
-      ],
       "Email is not valid": [
         "電子郵件無效"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "密碼不正確"
       ],
-      "Request timed out.": [
-        "請求逾時。"
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "此欄位必填"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
       ],
-      "Internet connection lost.": [
-        "網際網路連線中斷。"
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "載入中"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
-      "Session timed out.": [
-        "工作階段已逾時。"
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用，請驗證您是真人。"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是換一個驗證方法？"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電子郵件只會用於此一次驗證。"
@@ -173,11 +182,11 @@
       "Cancel": [
         "取消"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "電子郵件地址"
-      ],
-      "Enter the 6-digit code": [
-        "請輸入 6 位數代碼"
       ],
       "Hide password": [
         "隱藏密碼"
