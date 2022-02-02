@@ -59,9 +59,8 @@ const cloneEvent = (event: Event) => {
 const preventUnwantedEvents = (event: Event) => {
     if (isKeyboardEvent(event)) {
         const ctrlKeyPressed = isMac() ? event.metaKey === true : event.ctrlKey === true;
-        const ctrlSaveKeysPressed = ctrlKeyPressed && event.key === 's';
 
-        if (ctrlSaveKeysPressed) {
+        if (ctrlKeyPressed) {
             event.preventDefault();
         }
     }

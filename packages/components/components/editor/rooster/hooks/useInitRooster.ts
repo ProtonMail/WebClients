@@ -7,6 +7,7 @@ import { EditorActions, OnEditorEventListened } from '../../interface';
 import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID, ROOSTER_EDITOR_ID, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
 
 import iframeCss from '../RoosterEditorIframe.raw.scss';
+import { ModalLinkProps } from '../../hooks/useModalLink';
 
 interface Props {
     /**
@@ -19,9 +20,10 @@ interface Props {
      */
     onEditorChange: OnEditorEventListened;
     initialContent?: string;
+    showModalLink: (props: ModalLinkProps) => void;
 }
 
-const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent }: Props) => {
+const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent, showModalLink }: Props) => {
     const editorRef = useRef<IEditor>();
     const isMounted = useIsMounted();
 
@@ -58,6 +60,7 @@ const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent }: 
         const { editor, actions } = await initRoosterEditor(editorDiv, {
             onEditorEvent: onEditorChange,
             initialContent,
+            showModalLink,
         });
 
         // Prevent setState execution in case component is unmounted
@@ -83,11 +86,6 @@ const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent }: 
             })
             .then(() => {
                 const editorWrapper = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_WRAPPER_ID);
-                const editor = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_ID);
-
-                editor?.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
 
                 editorWrapper?.addEventListener('click', () => {
                     editorRef.current?.focus();
