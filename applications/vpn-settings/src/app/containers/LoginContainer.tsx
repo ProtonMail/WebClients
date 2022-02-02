@@ -52,7 +52,7 @@ const LoginContainer = ({ onLogin }: Props) => {
                     </div>
                 }
                 needHelp={
-                    <SimpleDropdown content={c('Dropdown button').t`Need help?`} shape="link" color="norm">
+                    <SimpleDropdown content={c('Dropdown button').t`Need help?`} shape="underline" color="norm">
                         <DropdownMenu>
                             <ul className="unstyled mt0 mb0">
                                 <li className="dropdown-item">
