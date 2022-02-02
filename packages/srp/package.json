@@ -23,7 +23,7 @@
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "eslint": "^8.7.0",
         "mocha": "^9.2.0",
-        "pmcrypto": "github:ProtonMail/pmcrypto#semver:~6.7.1",
+        "pmcrypto": "npm:@protontech/pmcrypto@^6.7.1",
         "prettier": "^2.5.1",
         "require-inject": "^1.4.4",
         "typescript": "^4.5.5"

@@ -4,16 +4,17 @@ module.exports = {
     collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     testEnvironment: './jest.env.js',
-    transformIgnorePatterns: ['node_modules/(?!(@proton/shared|@proton/components|mutex-browser|pmcrypto)/)'],
+    transformIgnorePatterns: [
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto)/)',
+    ],
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
     },
     moduleNameMapper: {
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$':
-            '@proton/components/__mocks__/fileMock.js',
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
-        'sieve.js': '@proton/components/__mocks__/sieve.js',
+        '@protontech/sieve.js': '@proton/components/__mocks__/sieve.js',
     },
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
     coverageReporters: ['text', 'lcov', 'cobertura'],

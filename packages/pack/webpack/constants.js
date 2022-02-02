@@ -17,11 +17,11 @@ const BABEL_INCLUDE_NODE_MODULES = [
     '@proton/get-random-values',
     '@proton/srp',
     '@proton/components',
-    'mutex-browser',
-    'interval-tree',
-    'sieve.js',
+    '@protontech/mutex-browser',
+    '@protontech/interval-tree',
+    '@protontech/sieve.js',
     'idb',
-    'bip39',
+    '@protontech/bip39',
 ];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];
 
