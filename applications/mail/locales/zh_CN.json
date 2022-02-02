@@ -269,7 +269,7 @@
       "Details": [
         "详细信息"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "没收到验证码？"
       ],
       "Discard": [
@@ -304,6 +304,9 @@
       ],
       "Edit phone number": [
         "编辑手机号码"
+      ],
+      "Edit sign-in details": [
+        "更改登录信息"
       ],
       "Email settings": [
         "邮件设置"
@@ -445,9 +448,6 @@
       ],
       "Italic": [
         "斜体"
-      ],
-      "Justify": [
-        "两端对齐"
       ],
       "Keyboard shortcuts": [
         "键盘快捷键"
@@ -937,6 +937,12 @@
       ],
       "Verify": [
         "验证"
+      ],
+      "Verify account": [
+        "验证账户"
+      ],
+      "Verify email": [
+        "验证邮箱"
       ],
       "View": [
         "查看"
@@ -2102,12 +2108,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "由于个人日历限制，无法为所有导入的日历创建新日历。"
       ],
-      "Can't validate email, try again later": [
-        "无法验证邮箱，请重试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再试"
-      ],
       "Checkout expired, please try again": [
         "支付超时，请重试"
       ],
@@ -2306,9 +2306,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
-      "Please refresh the page.": [
-        "请刷新页面。"
-      ],
       "Please repeat the password": [
         "请重新输入密码"
       ],
@@ -2336,8 +2333,8 @@
       "Removed duplicate recipient: ${ recipents }": [
         "删除的重复收件人：${ recipents }"
       ],
-      "Request timed out.": [
-        "请求超时。"
+      "Request timed out": [
+        "请求超时"
       ],
       "Require at least one action": [
         "至少应有一项操作"
@@ -2380,9 +2377,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
-      ],
-      "The composer failed to load.": [
-        "编辑器加载失败。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
@@ -3540,7 +3534,7 @@
         "适合需要安全业务通信的专业人士。"
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "对于 Visa 和 MasterCard，请输入卡背面的 3 位数字。；对于美国运通卡，请输入卡正面的 4 位数字。"
+        "Visa、万事达卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
       ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
@@ -3623,8 +3617,8 @@
       "Insert link": [
         "插入链接"
       ],
-      "Internet connection lost.": [
-        "网络连接断开。"
+      "Internet connection lost": [
+        "网络连接已断开"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "网络连接中断，请检查系统网络情况。"
@@ -3634,9 +3628,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交由我们！"
-      ],
-      "Justify": [
-        "两端对齐"
       ],
       "Key fingerprint": [
         "指纹码"
@@ -3840,7 +3831,7 @@
         "预览"
       ],
       "Primary": [
-        "主密钥"
+        "主要"
       ],
       "Print email": [
         "打印邮件"
@@ -3932,11 +3923,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "从 @pm.me 地址发送邮件需要付费。您的邮件仍将从您的首选地址 ${ email } 发送。"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
-      "Session timed out.": [
-        "会话已超时。"
+      "Session timed out": [
+        "会话超时"
       ],
       "Set a recovery phrase": [
         "设置恢复密语"
@@ -4235,6 +4229,9 @@
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "我们将向 ${ strong } 发送新的验证码"
+      ],
       "Web URL": [
         "网址"
       ],
@@ -4252,6 +4249,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        "要重新发送验证码吗？"
       ],
       "Yearly": [
         "每年"
@@ -4659,8 +4659,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } 及其他 ${ count } 位"
       ],
-      "(Coming soon)": [
-        "（即将推出）"
+      "(Temporarily unavailable. Please check back later.)": [
+        "（暂时不可用。请稍后再试。）"
       ],
       "Actions": [
         "操作"
@@ -4749,6 +4749,9 @@
       "City": [
         "城市"
       ],
+      "Code is 6 digits without spaces": [
+        "验证码是无空格的六位数"
+      ],
       "Conditions": [
         "条件"
       ],
@@ -4799,9 +4802,6 @@
       ],
       "Enter organization name to confirm": [
         "请输入机构名称进行确认"
-      ],
-      "Enter the 6-digit code": [
-        "请输入 6 位验证码"
       ],
       "Expires": [
         "有效期至"
@@ -5102,7 +5102,7 @@
     },
     "Label for contact group name": {
       "Name": [
-        "姓名"
+        "名称"
       ]
     },
     "Label to change composer mode": {
@@ -5327,6 +5327,9 @@
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
+      ],
+      "${ createdCalendars } of 1 created": [
+        ""
       ],
       "Almost there": [
         "就快好了"
@@ -5931,7 +5934,7 @@
     },
     "Placeholder for contact group name": {
       "Name": [
-        "姓名"
+        "名称"
       ]
     },
     "Plan feature": {
@@ -6139,12 +6142,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "无法发送到组织者地址：${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "创建日历事项失败"
-      ],
-      "Updating calendar event failed": [
-        "更新日历事项失败"
       ]
     },
     "Search - no results": {
@@ -6272,8 +6269,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "探索所有 Proton 服务"
+      ],
       "Message Content Search": [
         "邮件全文搜索"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        "安全地管理您的日程，文件与线上生活！自由地探索所有的Proton服务。"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "为了保护您的隐私，Proton 屏蔽了此邮件中的电子邮件跟踪器"
@@ -6648,7 +6651,7 @@
         "添加到 ${ groupName }"
       ],
       "Addresses": [
-        "邮箱地址"
+        "地址"
       ],
       "All recipients were added to the BCC field and cannot be disclosed": [
         "所有收件人都已加入密送列表，不会公开"
@@ -6824,6 +6827,9 @@
       "Email addresses": [
         "邮箱地址"
       ],
+      "Email composer": [
+        "邮件编辑器"
+      ],
       "Email content": [
         "邮件内容"
       ],
@@ -6847,9 +6853,6 @@
       ],
       "Error": [
         "失败"
-      ],
-      "Expand content": [
-        "展开內容"
       ],
       "Exporting contacts": [
         "导出联系人"
@@ -7180,7 +7183,7 @@
         "加密数据"
       ],
       "Encrypted data with verified digital signature": [
-        "经过已验证的数字签名加密过的数据"
+        "已加密并验证数字签名"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "同时享用 ${ vpnAppName } 和 ${ mailAppName }（拥有数百万用户的加密邮箱服务）的所有收费功能。"

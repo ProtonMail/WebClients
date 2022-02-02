@@ -14,14 +14,17 @@
       "Close modal": [
         "Loka glugga"
       ],
-      "Did not receive the code?": [
-        "Fékkstu ekki kóðann?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Edit email address": [
         "Breyta netfangi"
       ],
       "Edit phone number": [
         "Breyta símanúmeri"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Get verification code": [
         "Sækja staðfestingarkóða"
@@ -41,6 +44,12 @@
       "Verify": [
         "Sannreyna"
       ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
+      ],
       "View invoice": [
         "Skoða reikning"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Ekki er hægt að sannreyna tölvupóstfangið, reyndu aftur síðar"
-      ],
-      "Can't validate phone, try again later": [
-        "Ekki er hægt að sannreyna símann, reyndu aftur síðar"
-      ],
       "Email is not valid": [
         ""
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Lykilorðin stemma ekki"
       ],
-      "Request timed out.": [
-        "Beiðni rann út á tíma."
+      "Request timed out": [
+        ""
       ],
       "This field is required": [
         "Þessi reitur er nauðsynlegur"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ef þú finnur ekki tölvupóstinn í pósthólfinu þínu, skaltu skoða í ruslpóstmöppuna þína."
       ],
-      "Internet connection lost.": [
-        "Nettenging rofnaði."
+      "Internet connection lost": [
+        ""
       ],
       "Loading": [
         "Hleð inn"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Setan rann út á tíma."
+      "Session timed out": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Til að koma í veg fyrir ruslpóstsendingar og aðra misnotkun, verðum við að ganga úr skugga um að þú sért mannvera."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Viltu fá sendan nýjan sannvottunarkóða eða nota aðra aðferð til auðkenningar?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "Netfangið þitt verður aðeins notað við þessa einu sinni staðfestingu."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Hætta við"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Email address": [
         "Tölvupóstfang"
-      ],
-      "Enter the 6-digit code": [
-        "Settu inn 6-stafa kóðann"
       ],
       "Hide password": [
         "Fela lykilorð"

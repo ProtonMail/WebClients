@@ -122,9 +122,6 @@
       "Compose": [
         "Написати"
       ],
-      "Composer size": [
-        "Розмір редактора"
-      ],
       "Confirm": [
         "Підтвердити"
       ],
@@ -191,7 +188,7 @@
       "Details": [
         "Подробиці"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Не отримали код?"
       ],
       "Done": [
@@ -214,6 +211,9 @@
       ],
       "Edit phone number": [
         "Змінити номер телефону"
+      ],
+      "Edit sign-in details": [
+        "Змінити дані входу"
       ],
       "Email settings": [
         "Налаштування електронної пошти"
@@ -281,9 +281,6 @@
       "Increase": [
         "Збільшити"
       ],
-      "Keyboard shortcuts": [
-        "Комбінації клавіш"
-      ],
       "Load image": [
         "Завантажити зображення"
       ],
@@ -292,12 +289,6 @@
       ],
       "Log in": [
         "Увійти"
-      ],
-      "Mailbox density": [
-        "Щільність поштової скриньки"
-      ],
-      "Mailbox layout": [
-        "Макет поштової скриньки"
       ],
       "Manage link": [
         "Керувати посиланням"
@@ -563,11 +554,14 @@
       "Use for sending": [
         "Використовувати для надсилання"
       ],
-      "Use “${ label }” setting": [
-        "Використовувати налаштування“${ label }”"
-      ],
       "Verify": [
         "Перевірити"
+      ],
+      "Verify account": [
+        "Підтвердити обліковий запис"
+      ],
+      "Verify email": [
+        "Підтвердити електронну пошту"
       ],
       "View": [
         "Вигляд"
@@ -903,14 +897,6 @@
         "Непідтримуваний формат календаря"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Розгорнутий"
-      ],
-      "Normal": [
-        "Звичайний"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Закрити налаштування імпорту?"
@@ -1027,14 +1013,6 @@
         "Протермінований рахунок"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Комфортно"
-      ],
-      "Compact": [
-        "Компактно"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів... Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
@@ -1119,12 +1097,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Не вдалося створити нові календарі для всіх імпортованих календарів через обмеження особистого календаря."
-      ],
-      "Can't validate email, try again later": [
-        "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
-      ],
-      "Can't validate phone, try again later": [
-        "Не вдається перевірити номер телефону. Спробуйте знову пізніше"
       ],
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
@@ -1303,8 +1275,8 @@
       "Process aborted": [
         "Процес перервано"
       ],
-      "Request timed out.": [
-        "Час очікування запиту завершився."
+      "Request timed out": [
+        "Час очікування запиту завершився"
       ],
       "Signature not verified": [
         "Підпис не перевірено"
@@ -1918,9 +1890,6 @@
         "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?",
         "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Оскільки ${ appName } наскрізно зашифрований, ми не можемо отримати доступ\nчи розшифрувати ваші файли. Щоб розблокувати сховище після скидання пароля,\nви повинні мати будь-що з вказаного:"
       ],
@@ -2146,8 +2115,8 @@
       "Initializing": [
         "Ініціалізація"
       ],
-      "Internet connection lost.": [
-        "Втрачено Інтернет-з'єднання."
+      "Internet connection lost": [
+        "Втрачено інтернет-з'єднання"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Відсутнє з'єднання з інтернетом. Перевірте доступ до мережі свого пристрою."
@@ -2365,8 +2334,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
-      "Session timed out.": [
-        "Сеанс завершився."
+      "Session timed out": [
+        "Сеанс завершився"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
@@ -2512,6 +2481,9 @@
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Ми надішлемо новий код підтвердження на ${ strong }"
+      ],
       "Week": [
         "Тиждень"
       ],
@@ -2526,6 +2498,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Бажаєте отримати новий код підтвердження?"
       ],
       "Would you like to restore your files?": [
         "Відновити ваші файли?"
@@ -2692,197 +2667,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Додати шифрування"
-      ],
-      "Add expiration time": [
-        "Додати термін дії"
-      ],
-      "Apply / open": [
-        "Застосувати / відкрити"
-      ],
-      "Attach file": [
-        "Вкласти файл"
-      ],
-      "Cancel / close": [
-        "Скасувати / закрити"
-      ],
-      "Close draft": [
-        "Закрити чернетку"
-      ],
-      "Create filter with...": [
-        "Створити фільтр..."
-      ],
-      "Delete permanently": [
-        "Видалити остаточно"
-      ],
-      "Discard draft": [
-        "Відхилити чернетку"
-      ],
-      "Expand / contract composer": [
-        "Розширити / зменшити редактор"
-      ],
-      "Forward": [
-        "Переслати"
-      ],
-      "Go to All Mail": [
-        "Перейти до всієї пошти"
-      ],
-      "Go to Archive": [
-        "Перейти до Архіву"
-      ],
-      "Go to Drafts": [
-        "Перейти до Чернеток"
-      ],
-      "Go to Inbox": [
-        "Перейти до Вхідних"
-      ],
-      "Go to Sent": [
-        "Перейти до Надісланих"
-      ],
-      "Go to Spam": [
-        "Перейти до Спаму"
-      ],
-      "Go to Starred": [
-        "Перейти до Позначених зірочкою"
-      ],
-      "Go to Trash": [
-        "Перейти до Смітника"
-      ],
-      "Jump to first": [
-        "До першого"
-      ],
-      "Jump to last": [
-        "До останнього"
-      ],
-      "Label as...": [
-        "Позначити міткою..."
-      ],
-      "Load embedded images": [
-        "Завантажити вбудовані зображення"
-      ],
-      "Load remote content": [
-        "Завантажити зовнішній вміст"
-      ],
-      "Mark as unread": [
-        "Позначити непрочитаним"
-      ],
-      "Minimize / maximize composer": [
-        "Згорнути / розгорнути редактор"
-      ],
-      "Move down": [
-        "Перемістити вниз"
-      ],
-      "Move left / collapse": [
-        "Перемістити вліво / згорнути"
-      ],
-      "Move right / expand": [
-        "Перемістити вправо / розгорнути"
-      ],
-      "Move to Archive": [
-        "Перемістити до архіву"
-      ],
-      "Move to Inbox": [
-        "Перемістити до вхідних"
-      ],
-      "Move to Spam": [
-        "Перемістити до спаму"
-      ],
-      "Move to Trash": [
-        "Перемістити до смітника"
-      ],
-      "Move to...": [
-        "Перемістити..."
-      ],
-      "Move up": [
-        "Перемістити вгору"
-      ],
-      "New message": [
-        "Нове повідомлення"
-      ],
-      "Open next message": [
-        "Відкрити наступне повідомлення"
-      ],
-      "Open previous message": [
-        "Відкрити попереднє повідомлення"
-      ],
-      "Open this modal": [
-        "Відкрити це вікно"
-      ],
-      "Reply": [
-        "Відповісти"
-      ],
-      "Reply all": [
-        "Відповісти всім"
-      ],
-      "Save draft": [
-        "Зберегти чернетку"
-      ],
-      "Search": [
-        "Пошук"
-      ],
-      "Select / unselect": [
-        "Вибрати / прибрати вибір"
-      ],
-      "Select / unselect all": [
-        "Вибрати все / прибрати вибір"
-      ],
-      "Send email": [
-        "Надіслати лист"
-      ],
-      "Show all emails": [
-        "Показати всі листи"
-      ],
-      "Show original message": [
-        "Показати оригінальне повідомлення"
-      ],
-      "Show unread emails": [
-        "Показати непрочитані листи"
-      ],
-      "Star": [
-        "Зірочка"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Комбінації клавіш дій"
-      ],
-      "Basic actions": [
-        "Основні дії"
-      ],
-      "Basic navigation": [
-        "Основна навігація"
-      ],
-      "Composer shortcuts": [
-        "Комбінації клавіш редактора"
-      ],
-      "Folder shortcuts": [
-        "Комбінації клавіш для тек"
-      ],
-      "List shortcuts": [
-        "Перелік комбінацій клавіш"
-      ],
-      "Message shortcuts": [
-        "Комбінації клавіш для повідомлення"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Вимкнено"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Увімкнено"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Незабаром з'явиться)"
-      ],
       "(Expired)": [
         "(Термін дії завершився)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
       "Active": [
         "Активні"
@@ -2947,6 +2737,9 @@
       "City": [
         "Місто"
       ],
+      "Code is 6 digits without spaces": [
+        "Код складається з 6 цифр без пробілів"
+      ],
       "Completed": [
         "Завершено"
       ],
@@ -2994,9 +2787,6 @@
       ],
       "Enter organization name to confirm": [
         "Введіть назву організації для підтвердження"
-      ],
-      "Enter the 6-digit code": [
-        "Введіть 6-значний код"
       ],
       "Expired": [
         "Термін дії завершився"
@@ -3054,9 +2844,6 @@
       ],
       "Import to email address": [
         "Електронна адреса для імпорту"
-      ],
-      "Keyboard shortcuts": [
-        "Комбінації клавіш"
       ],
       "Label messages as": [
         "Позначити повідомлення"
@@ -3147,15 +2934,6 @@
       ],
       "Select a method": [
         "Виберіть спосіб"
-      ],
-      "Select how your composer opens by default.": [
-        "Оберіть типовий вигляд редактора."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Оберіть типовий вигляд списку повідомлень."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Оберіть типовий вигляд поштової скриньки."
       ],
       "Select your country": [
         "Виберіть свою країну"
@@ -3255,30 +3033,6 @@
         "Назва"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Розгорнутий"
-      ],
-      "Normal": [
-        "Звичайний"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортно"
-      ],
-      "Compact": [
-        "Компактно"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Додати знімки екрану"
@@ -3301,14 +3055,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } створено"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
       ]
     },
     "Link": {
@@ -3352,6 +3098,12 @@
         "${ createdCalendars } з ${ calendarsToBeCreated } створено",
         "${ createdCalendars } з ${ calendarsToBeCreated } створено",
         "${ createdCalendars } з ${ calendarsToBeCreated } створено"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "${ createdCalendars } з 1 створено",
+        "${ createdCalendars } з 1 створено",
+        "${ createdCalendars } з 1 створено",
+        "${ createdCalendars } з 1 створено"
       ],
       "Almost there": [
         "Майже готово"
@@ -4106,9 +3858,6 @@
       "Fingerprint copied to clipboard": [
         "Цифровий відбиток скопійовано до буфера обміну"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Налаштування комбінацій клавіш оновлено"
-      ],
       "Phone number copied to clipboard": [
         "Номер телефону скопійовано до буфера обміну"
       ],
@@ -4255,9 +4004,6 @@
       "${ appName } customization": [
         "Налаштування ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "Комбінації клавіш ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } учасник",
         "${ emailsCount } учасники",
@@ -4320,9 +4066,6 @@
       ],
       "Clearing data": [
         "Стирання даних"
-      ],
-      "Composer mode": [
-        "Режим редактора"
       ],
       "Confirm loss of Proton bonuses": [
         "Підтвердити втрату бонусів Proton"
@@ -4498,20 +4241,11 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
-      "Keyboard Shortcuts": [
-        "Комбінації клавіш"
-      ],
       "Link confirmation": [
         "Підтвердження посилання"
       ],
       "Location": [
         "Розташування"
-      ],
-      "Mailbox density": [
-        "Щільність поштової скриньки"
-      ],
-      "Mailbox layout": [
-        "Макет поштової скриньки"
       ],
       "Manage secure link": [
         "Керувати захищеним посиланням"

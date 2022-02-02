@@ -15,7 +15,7 @@
         "${ BRAND_NAME } mağazası"
       ],
       "Activate recovery": [
-        ""
+        "Kurtarmayı etkinleştir"
       ],
       "Add": [
         "Ekle"
@@ -122,9 +122,6 @@
       "Compose": [
         "Oluştur"
       ],
-      "Composer size": [
-        "Oluşturucu boyutu"
-      ],
       "Confirm": [
         "Onayla"
       ],
@@ -187,8 +184,8 @@
       "Details": [
         "Ayrıntılar"
       ],
-      "Did not receive the code?": [
-        "Kodu almadınız mı?"
+      "Didn't receive the code?": [
+        "Doğrulama kodunu almadınız mı?"
       ],
       "Done": [
         "Bitti"
@@ -210,6 +207,9 @@
       ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
+      ],
+      "Edit sign-in details": [
+        "Oturum açma bilgilerini düzenleyin"
       ],
       "Email settings": [
         "E-posta ayarları"
@@ -277,9 +277,6 @@
       "Increase": [
         "Arttırın"
       ],
-      "Keyboard shortcuts": [
-        "Klavye kısayolları"
-      ],
       "Load image": [
         "Resim yükle"
       ],
@@ -288,12 +285,6 @@
       ],
       "Log in": [
         "Oturum aç"
-      ],
-      "Mailbox density": [
-        "Posta kutusu yoğunluğu"
-      ],
-      "Mailbox layout": [
-        "Posta kutusu düzeni"
       ],
       "Manage link": [
         "Bağlantıyı yönetin"
@@ -446,7 +437,7 @@
         "Plan seçin"
       ],
       "Set recovery phrase": [
-        ""
+        "Kurtarma ifadesini ayarla"
       ],
       "Share": [
         "Paylaş"
@@ -521,7 +512,7 @@
         "Geri al"
       ],
       "Unlock data": [
-        "Verilere erişim engelini kaldırın"
+        "Verilerin kilidini aç"
       ],
       "Unmark for deletion": [
         "Silmek için işaretlemeyi kaldır"
@@ -530,10 +521,10 @@
         "Güvenme"
       ],
       "Update recovery file": [
-        ""
+        "Kurtarma dosyasını güncelle"
       ],
       "Update recovery phrase": [
-        ""
+        "Kurtarma ifadesini güncelle"
       ],
       "Upgrade": [
         "Yükselt"
@@ -559,11 +550,14 @@
       "Use for sending": [
         "Göndermek için kullan"
       ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" ayarını kullan"
-      ],
       "Verify": [
         "Doğrula"
+      ],
+      "Verify account": [
+        "Hesabı doğrulayın"
+      ],
+      "Verify email": [
+        "E-posta adresini doğrulayın"
       ],
       "View": [
         "Görüntüle"
@@ -814,7 +808,7 @@
         "Kayıt sorunu"
       ],
       "Slow speed problem": [
-        "Yavaş hız sorunu"
+        "Hız yavaşlığı sorunu"
       ],
       "Speed problem": [
         "Hız sorunu"
@@ -889,14 +883,6 @@
       ],
       "Unsupported calendar format": [
         ""
-      ]
-    },
-    "Composer size": {
-      "Maximized": [
-        "Genişletilmiş"
-      ],
-      "Normal": [
-        "Normal"
       ]
     },
     "Confirm modal title": {
@@ -1011,14 +997,6 @@
         "Gecikmiş fatura"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Rahat"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresini çözülüyor... Bu birkaç dakika sürebilir. İşlem tamamlandığında dosyayı dışa aktardığınız tüm kişilerle birlikte indirebilirsiniz."
@@ -1101,12 +1079,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
-      ],
-      "Can't validate email, try again later": [
-        "E-postayı doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefon numarası doğrulanamıyor, daha sonra tekrar deneyin"
       ],
       "Checkout expired, please try again": [
         "Ödeme süresi doldu, lütfen tekrar deneyin"
@@ -1213,8 +1185,8 @@
         "Etiket adı boş olamaz"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
+        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
       ],
       "Missing signature": [
         "Eksik imza"
@@ -1273,8 +1245,8 @@
       "Process aborted": [
         "İşlem iptal edildi"
       ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
+      "Request timed out": [
+        "İstek zaman aşımına uğradı"
       ],
       "Signature not verified": [
         "İmza doğrulanmadı"
@@ -1759,7 +1731,7 @@
         "30 gün para iadesi garantisi."
       ],
       "A free and uncensored Internet should be available to all.": [
-        "Özgür ve sansürsüz bir internet herkese açık olmalıdır."
+        "Herkes interneti özgürce ve sansürsüz olarak kullanabilmelidir."
       ],
       "A number will be added to the filename": [
         ""
@@ -1823,9 +1795,6 @@
       "Are you sure you want to permanently delete selected item from trash?": [
         "Seçili öğeyi çöp kutusundan kalıcı olarak silmek istediğinizden emin misiniz?",
         "Seçili öğeleri çöp kutusundan kalıcı olarak silmek istediğinizden emin misiniz?"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "${ appName } uçtan uca şifreli olduğundan, dosyalarınıza erişemeyiz ve onların şifresini çözemeyiz. Şifre yenilemesi sonrası Sürücü kilidini açmak için belirtilenlerden birine sahip olmanız gerekir:"
@@ -1950,7 +1919,7 @@
         "Her ek bağlantı, kuruluşunuzdaki kullanıcılara atanabilir."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } adresine gönderilen doğrulama kodunu girin."
+        "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Expired": [
         "Süresi dolmuş"
@@ -2007,7 +1976,7 @@
         "Grup ataması uygulandı"
       ],
       "here": [
-        "Buradan"
+        "buradan"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesabınızı oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde yanıt vereceğiz."
@@ -2046,8 +2015,8 @@
       "Initializing": [
         "Başlatılıyor"
       ],
-      "Internet connection lost.": [
-        "İnternet bağlantısı kesildi."
+      "Internet connection lost": [
+        "İnternet bağlantısı kesildi"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "İnternet bağlantısı kesildi. Lütfen cihazınızın bağlantısını kontrol edin."
@@ -2263,8 +2232,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Oturum zaman aşımına uğradı."
+      "Session timed out": [
+        "Oturum zaman aşımına uğradı"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP'yi ayarlamak, PGP uyumlu bir hizmet kullanan ve ProtonMail kullanmayan bir kullanıcıyla uçtan uca şifreli e-postalar göndermenizi sağlar."
@@ -2300,7 +2269,7 @@
         "Çalışmamızı desteklediğiniz için teşekkürler."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Kışilerini dışa aktarmadan önce bu uygulamanın yerel şifreye ihtiyacı var. İlerlemenin sonunda, VCF dosyası genelleştirilecek ve indirmeye elvirişli olacaktır."
+        "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
       "There are no files yet": [
         "Henüz dosya yok"
@@ -2315,10 +2284,10 @@
         "Bu tarayıcı, PDF belgelerinin önizlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı bir eşyazım saldırısı olabilir ve Internet Explorer ve Edge tarayıcıları tarafından açılamaz. Bağlantının yasal olduğundan eminseniz, lütfen açmak için farklı bir tarayıcı kullanın."
+        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Internet Explorer ya da Edge tarayıcıları ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Bu bağlantı bir eşyazım saldırısı olabilir. Lütfen bunun ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın veya açmayın."
+        "Bu bağlantı aslına benzer görünen bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
         "Bu bağlantı bir önceki sürümde oluşturuldu ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
@@ -2408,6 +2377,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
       "Week": [
         "Hafta"
       ],
@@ -2422,6 +2394,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak veya alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
       "Would you like to restore your files?": [
         ""
@@ -2439,7 +2414,7 @@
         ""
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "İlerlemeye bakabilirsiniz ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -2545,7 +2520,7 @@
         "Özelleştirilebilir özellikler"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail, toplu e-posta veya spam gönderme için kullanılamaz. Yasal e-postalar sınırsızdır."
+        "ProtonMail, toplu veya istenmeyen e-postalar göndermek için kullanılamaz. Normal e-posta gönderimi sınırsızdır."
       ]
     },
     "Info for cash payment method": {
@@ -2588,197 +2563,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Şifreleme ekle"
-      ],
-      "Add expiration time": [
-        "Sona erme süresi ekle"
-      ],
-      "Apply / open": [
-        "Uygula / aç"
-      ],
-      "Attach file": [
-        "Dosya ekle"
-      ],
-      "Cancel / close": [
-        "İptal et / kapat"
-      ],
-      "Close draft": [
-        "Taslağı kapat"
-      ],
-      "Create filter with...": [
-        "Filtre oluştur..."
-      ],
-      "Delete permanently": [
-        "Kalıcı olarak sil"
-      ],
-      "Discard draft": [
-        "Taslağı iptal et"
-      ],
-      "Expand / contract composer": [
-        "Oluşturucuyu büyült / küçült"
-      ],
-      "Forward": [
-        "İlet"
-      ],
-      "Go to All Mail": [
-        "Tüm postalara git"
-      ],
-      "Go to Archive": [
-        "Arşive git"
-      ],
-      "Go to Drafts": [
-        "Taslaklara git"
-      ],
-      "Go to Inbox": [
-        "Gelen kutusuna git"
-      ],
-      "Go to Sent": [
-        "Gönderilenlere git"
-      ],
-      "Go to Spam": [
-        "Spam'a git"
-      ],
-      "Go to Starred": [
-        "Yıldızlılara git"
-      ],
-      "Go to Trash": [
-        "Çöp Kutusuna Git"
-      ],
-      "Jump to first": [
-        "En başa git"
-      ],
-      "Jump to last": [
-        "En sona git"
-      ],
-      "Label as...": [
-        "Etiketle..."
-      ],
-      "Load embedded images": [
-        "Gömülü resimleri yükle"
-      ],
-      "Load remote content": [
-        "Uzak içeriği yükle"
-      ],
-      "Mark as unread": [
-        "Okunmadı olarak işaretle"
-      ],
-      "Minimize / maximize composer": [
-        "Oluşturucuyu küçült / büyüt"
-      ],
-      "Move down": [
-        "Aşağı git"
-      ],
-      "Move left / collapse": [
-        "Sola git / daralt"
-      ],
-      "Move right / expand": [
-        "Sağa git / genişlet"
-      ],
-      "Move to Archive": [
-        "Arşive taşı"
-      ],
-      "Move to Inbox": [
-        "Gelen kutusuna taşı"
-      ],
-      "Move to Spam": [
-        "Spam'a taşı"
-      ],
-      "Move to Trash": [
-        "Çöp Kutusuna Taşı"
-      ],
-      "Move to...": [
-        "Şuraya taşı..."
-      ],
-      "Move up": [
-        "Yukarı git"
-      ],
-      "New message": [
-        "Yeni ileti"
-      ],
-      "Open next message": [
-        "Sonraki iletiyi aç"
-      ],
-      "Open previous message": [
-        "Önceki iletiyi aç"
-      ],
-      "Open this modal": [
-        "Bu diyaloğu aç"
-      ],
-      "Reply": [
-        "Yanıtla"
-      ],
-      "Reply all": [
-        "Tümünü yanıtla"
-      ],
-      "Save draft": [
-        "Taslağı kaydet"
-      ],
-      "Search": [
-        "Ara"
-      ],
-      "Select / unselect": [
-        "Seç / seçimi kaldır"
-      ],
-      "Select / unselect all": [
-        "Tümünü seç / seçimi kaldır"
-      ],
-      "Send email": [
-        "E-posta gönder"
-      ],
-      "Show all emails": [
-        "Tüm e-postaları göster"
-      ],
-      "Show original message": [
-        "İletinin aslını görüntüle"
-      ],
-      "Show unread emails": [
-        "Okunmamış e-postaları göster"
-      ],
-      "Star": [
-        "Yıldız"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Eylem kısayollları"
-      ],
-      "Basic actions": [
-        "Temel eylemler"
-      ],
-      "Basic navigation": [
-        "Temel gezinme"
-      ],
-      "Composer shortcuts": [
-        "Oluşturucu kısayolları"
-      ],
-      "Folder shortcuts": [
-        "Klasör kısayolları"
-      ],
-      "List shortcuts": [
-        "Liste kısayolları"
-      ],
-      "Message shortcuts": [
-        "İleti kısayolları"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        ""
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        ""
-      ],
       "(Expired)": [
         ""
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Geçici olarakdevre dışı. Lütfen daha sonra tekrar kontrol edin.)"
       ],
       "Active": [
         "Etkin"
@@ -2843,6 +2633,9 @@
       "City": [
         "Şehir"
       ],
+      "Code is 6 digits without spaces": [
+        "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
       "Completed": [
         ""
       ],
@@ -2888,9 +2681,6 @@
       ],
       "Enter organization name to confirm": [
         "Doğrulamak için kuruluş adını girin"
-      ],
-      "Enter the 6-digit code": [
-        "6 haneli kodu girin"
       ],
       "Expired": [
         "Süresi dolmuş"
@@ -2948,9 +2738,6 @@
       ],
       "Import to email address": [
         ""
-      ],
-      "Keyboard shortcuts": [
-        "Klavye kısayolları"
       ],
       "Label messages as": [
         ""
@@ -3041,15 +2828,6 @@
       ],
       "Select a method": [
         "Bir yöntem seçin"
-      ],
-      "Select how your composer opens by default.": [
-        "Oluşturucunuzun varsayılan olarak nasıl açılacağını seçin."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Posta kutunuzun varsayılan olarak nasıl görüneceğini seçin."
       ],
       "Select your country": [
         "Ülkenizi seçin"
@@ -3149,30 +2927,6 @@
         "Ad"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Genişletilmiş"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Rahat"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Liste"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Ekran görüntüsü(leri) ekleyin"
@@ -3195,14 +2949,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Liste"
       ]
     },
     "Link": {
@@ -3244,6 +2990,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "",
         ""
+      ],
+      "${ createdCalendars } of 1 created": [
+        "${ createdCalendars }/1 oluşturuldu",
+        "${ createdCalendars }/1 oluşturuldu"
       ],
       "Almost there": [
         ""
@@ -3938,9 +3688,6 @@
       "Fingerprint copied to clipboard": [
         "Parmak izi panoya kopyalandı"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Klavye kısayol tercihleri güncellendi"
-      ],
       "Phone number copied to clipboard": [
         "Telefon numarası panoya kopyalandı"
       ],
@@ -3960,7 +3707,7 @@
         "Doğrulama başarılı"
       ],
       "You have successfully unsubscribed": [
-        "Aboneliğinizi başarıyla iptal ettiniz"
+        "Abonelikten ayrıldınız"
       ],
       "Your files were successfully recovered to \"My files\".": [
         ""
@@ -4083,9 +3830,6 @@
       "${ appName } customization": [
         "${ appName } özelleştirme"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Klavye Kısayolları"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } üye",
         "${ emailsCount } üye"
@@ -4144,9 +3888,6 @@
       ],
       "Clearing data": [
         "Veri temizleniyor"
-      ],
-      "Composer mode": [
-        "Oluşturucu modu"
       ],
       "Confirm loss of Proton bonuses": [
         "Proton bonuslarının kaybını onaylayın"
@@ -4220,10 +3961,10 @@
         "Kişiler siliniyor"
       ],
       "Discard": [
-        "Vazgeç"
+        "Sil"
       ],
       "Discard changes?": [
-        "Değişiklikler yoksayılsın mı?"
+        "Değişiklikler silinsin mi?"
       ],
       "Downgrade account": [
         ""
@@ -4318,20 +4059,11 @@
       "Invalid verification code": [
         "Geçersiz doğrulama kodu"
       ],
-      "Keyboard Shortcuts": [
-        "Klavye Kısayolları"
-      ],
       "Link confirmation": [
         "Bağlantı onayı"
       ],
       "Location": [
         "Konum"
-      ],
-      "Mailbox density": [
-        "Posta kutusu yoğunluğu"
-      ],
-      "Mailbox layout": [
-        "Posta kutusu düzeni"
       ],
       "Manage secure link": [
         "Güvenli bağlantıyı yönet"
@@ -4602,7 +4334,7 @@
         "Tek bir tıklama ile internet trafiğinizi Tor ağına üzerinden yönlendirin."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Bir kullanıcıyı imzalarken veya şifrelerken kullanılacak PGP şemasını seçin. PGP/Satır-içi'nin düz metin mesajlarını zorunlu tuttuğunu unutmayın"
+        "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "BitTorrent gibi dosya paylaşım protokolleri için destek."

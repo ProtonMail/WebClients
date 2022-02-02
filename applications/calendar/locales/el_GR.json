@@ -166,7 +166,7 @@
       "Deselect all": [
         "Αποεπιλογή όλων"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Δεν λάβατε τον κωδικό;"
       ],
       "Discard": [
@@ -193,6 +193,9 @@
       "Edit phone number": [
         "Επεξεργασία αριθμού τηλεφώνου"
       ],
+      "Edit sign-in details": [
+        "Επεξεργασία στοιχείων εισόδου"
+      ],
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
@@ -203,7 +206,7 @@
         "Εξαγωγή"
       ],
       "Export contact group": [
-        ""
+        "Εξαγωγή ομάδας επαφών"
       ],
       "Export contacts": [
         "Εξαγωγή Επαφών"
@@ -256,9 +259,6 @@
       "Increase": [
         "Αύξηση"
       ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
-      ],
       "Load image": [
         "Φόρτωση εικόνας"
       ],
@@ -267,12 +267,6 @@
       ],
       "Log in": [
         "Είσοδος"
-      ],
-      "Mailbox density": [
-        "Πυκνότητα θυρίδας"
-      ],
-      "Mailbox layout": [
-        "Διάταξη θυρίδας"
       ],
       "Make this participant optional": [
         "Κάντε αυτό το συμμετέχοντα προαιρετικό"
@@ -514,11 +508,14 @@
       "Use for sending": [
         "Χρησιμοποιήστε την για αποστολή"
       ],
-      "Use “${ label }” setting": [
-        "Χρησιμοποιήστε τη ρύθμιση “${ label }”"
-      ],
       "Verify": [
         "Επαλήθευση"
+      ],
+      "Verify account": [
+        "Επαλήθευση λογαριασμού"
+      ],
+      "Verify email": [
+        "Επαλήθευση ηλ. διεύθυνσης"
       ],
       "View": [
         "Προβολή"
@@ -604,38 +601,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } ξεκίνησε χθες στις ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        "Το ${ title } ξεκινά στις ${ formattedHour }"
+      ],
       "${ title } starts now": [
         "${ title } ξεκινά τώρα"
+      ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        "Το ${ title } ξεκινά την ${ _formattedDate2 }"
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        "Το ${ title } ξεκινά την ${ _formattedDate2 } στις ${ formattedHour }"
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        "Το ${ title } ξεκινά την ${ _formattedDate3 }"
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        "Το ${ title } ξεκινά την ${ _formattedDate3 } στις ${ formattedHour }"
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        "Το ${ title } ξεκινά την ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        "Το ${ title } ξεκινά την ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } ξεκινά σήμερα"
       ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } θα ξεκινήσει από ${ formattedHour }"
+      "${ title } starts tomorrow": [
+        "Το ${ title } ξεκινά αύριο"
       ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDate2 } στις ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDate3 } στις ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } θα ξεκινήσει στις ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } θα ξεκινήσει στις ${ formattedDateWithTime }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } θα ξεκινήσει αύριο"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } θα ξεκινήσει αύριο στις ${ formattedHour }"
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        "Το ${ title } ξεκινά αύριο στις ${ formattedHour }"
       ]
     },
     "Alert": {
@@ -1002,14 +999,6 @@
         ": "
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Μεγιστοποιημένο"
-      ],
-      "Normal": [
-        "Κανονικό"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Έξοδος από την προσαρμογή εισαγωγής;"
@@ -1165,14 +1154,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Εκπρόθεσμο τιμολόγιο"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
       ]
     },
     "Description": {
@@ -1386,12 +1367,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
       ],
-      "Can't validate email, try again later": [
-        "Δεν είναι δυνατή η επικύρωση ηλεκτρονικού ταχυδρομείου, προσπαθήστε ξανά αργότερα"
-      ],
-      "Can't validate phone, try again later": [
-        "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
-      ],
       "Cancellation failed to be sent": [
         "Ακύρωση απέτυχε να σταλεί"
       ],
@@ -1590,8 +1565,8 @@
       "Process aborted": [
         "Η διαδικασία ακυρώθηκε"
       ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
+      "Request timed out": [
+        "Λήξη χρονικού ορίου αιτήματος"
       ],
       "Self invitation not allowed": [
         "Δεν επιτρέπεται η αυτοπρόσκληση"
@@ -1940,7 +1915,7 @@
         ""
       ],
       "Unexpected error": [
-        ""
+        "Απροσδόκητο σφάλμα"
       ],
       "Unsupported invitation": [
         "Μη υποστηριζόμενη πρόσκληση"
@@ -2369,9 +2344,6 @@
       "At most 100 participants are allowed per invitation": [
         "Το πολύ 100 συμμετέχοντες επιτρέπονται ανά πρόσκληση"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
-      ],
       "Billed as ${ billedPrice } every 2 years": [
         "Χρεώνεται ως ${ billedPrice } κάθε 2 χρόνια"
       ],
@@ -2551,8 +2523,8 @@
       "Inherited from parent folder": [
         "Μεταβίβαση από γονικό φάκελο"
       ],
-      "Internet connection lost.": [
-        "Η διαδικτυακή σύνδεση χάθηκε."
+      "Internet connection lost": [
+        "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Η σύνδεση στο Διαδίκτυο χάθηκε. Ελέγξτε τη συνδεσιμότητα της συσκευής σας."
@@ -2723,8 +2695,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
-      "Session timed out.": [
-        "Η χρονική περίοδος σύνδεσης έληξε."
+      "Session timed out": [
+        "Λήξη χρόνου συνεδρίας"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
@@ -2849,6 +2821,9 @@
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
       "Week": [
         "Εβδομάδα"
       ],
@@ -2878,6 +2853,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
       ],
       "Would you like to update all events in this series?": [
         "Θα θέλατε να ενημερώσετε όλα τα γεγονότα σε αυτή τη σειρά;"
@@ -3047,194 +3025,9 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Προσθήκη κρυπτογράφησης"
-      ],
-      "Add expiration time": [
-        "Προσθήκη χρόνου λήξης"
-      ],
-      "Apply / open": [
-        "Εφαρμογή / άνοιγμα"
-      ],
-      "Attach file": [
-        "Επισύναψη αρχείου"
-      ],
-      "Cancel / close": [
-        "Ακύρωση / κλείσιμο"
-      ],
-      "Close draft": [
-        "Κλείσιμο προχείρου"
-      ],
-      "Create filter with...": [
-        "Δημιουργία φίλτρου με..."
-      ],
-      "Delete permanently": [
-        "Οριστική διαγραφή"
-      ],
-      "Discard draft": [
-        "Απόρριψη προχείρου"
-      ],
-      "Expand / contract composer": [
-        "Επέκταση / συνθέτης συμβολαίου"
-      ],
-      "Forward": [
-        "Προώθηση"
-      ],
-      "Go to All Mail": [
-        "Μετάβαση σε Όλα τα Μηνύματα"
-      ],
-      "Go to Archive": [
-        "Μετάβαση στα Αρχειοθετημένα"
-      ],
-      "Go to Drafts": [
-        "Μετάβαση στα Πρόχειρα"
-      ],
-      "Go to Inbox": [
-        "Μετάβαση στα Εισερχόμενα"
-      ],
-      "Go to Sent": [
-        "Μετάβαση στα Απεσταλμένα"
-      ],
-      "Go to Spam": [
-        "Μετάβαση στα Ανεπιθύμητα"
-      ],
-      "Go to Starred": [
-        "Μετάβαση στα Αγαπημένα"
-      ],
-      "Go to Trash": [
-        "Μετάβαση στον Κάδο Απορριμμάτων"
-      ],
-      "Jump to first": [
-        "Μετάβαση στην πρώτη"
-      ],
-      "Jump to last": [
-        "Μετάβαση στο τελευταίο"
-      ],
-      "Label as...": [
-        "Ορίστε ετικέτα..."
-      ],
-      "Load embedded images": [
-        "Φόρτωση ενσωματωμένων εικόνων"
-      ],
-      "Load remote content": [
-        "Φόρτωση απομακρυσμένου περιεχομένου"
-      ],
-      "Mark as unread": [
-        "Επισήμανση ως μη αναγνωσμένου"
-      ],
-      "Minimize / maximize composer": [
-        "Ελαχιστοποίηση / μεγιστοποίηση συνθέτη"
-      ],
-      "Move down": [
-        "Μετακίνηση προς τα κάτω"
-      ],
-      "Move left / collapse": [
-        "Μετακίνηση αριστερά / σύμπτυξη"
-      ],
-      "Move right / expand": [
-        "Μετακίνηση δεξιά / επέκταση"
-      ],
-      "Move to Archive": [
-        "Μεταφορά στα Αρχειοθετημένα"
-      ],
-      "Move to Inbox": [
-        "Μετακίνηση στα Εισερχόμενα"
-      ],
-      "Move to Spam": [
-        "Μετακίνηση στα Ανεπιθύμητα"
-      ],
-      "Move to Trash": [
-        "Μετακίνηση στον κάδο"
-      ],
-      "Move to...": [
-        "Μετακίνηση σε..."
-      ],
-      "Move up": [
-        "Μετακίνηση πάνω"
-      ],
-      "New message": [
-        "Νέο μήνυμα"
-      ],
-      "Open next message": [
-        "Άνοιγμα επόμενου μηνύματος"
-      ],
-      "Open previous message": [
-        "Άνοιγμα προηγούμενου μηνύματος"
-      ],
-      "Open this modal": [
-        "Άνοιγμα αυτού του modal"
-      ],
-      "Reply": [
-        "Απάντηση"
-      ],
-      "Reply all": [
-        "Απάντηση σε όλους"
-      ],
-      "Save draft": [
-        "Αποθήκευση προχείρου"
-      ],
-      "Search": [
-        "Αναζήτηση"
-      ],
-      "Select / unselect": [
-        "Επιλογή / αποεπιλογή"
-      ],
-      "Select / unselect all": [
-        "Επιλογή / αποεπιλογή όλων"
-      ],
-      "Send email": [
-        "Αποστολή email"
-      ],
-      "Show all emails": [
-        "Εμφάνιση όλων των email"
-      ],
-      "Show original message": [
-        "Προβολή αρχικού μηνύματος"
-      ],
-      "Show unread emails": [
-        "Εμφάνιση μη αναγνωσμένων email"
-      ],
-      "Star": [
-        "Προσθήκη αστεριού"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Συντομεύσεις ενεργειών"
-      ],
-      "Basic actions": [
-        "Βασικές δράσεις"
-      ],
-      "Basic navigation": [
-        "Βασική πλοήγηση"
-      ],
-      "Composer shortcuts": [
-        "Συντομεύσεις συνθέτη"
-      ],
-      "Folder shortcuts": [
-        "Συντομεύσεις φακέλων"
-      ],
-      "List shortcuts": [
-        "Συντομεύσεις λίστας"
-      ],
-      "Message shortcuts": [
-        "Συντομεύσεις μηνυμάτων"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Ανενεργό"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Ενεργό"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(Ερχεται σύντομα)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
       "0 - Not likely": [
         "0 - Δεν είναι πιθανό"
@@ -3293,6 +3086,9 @@
       "City": [
         "Πόλη"
       ],
+      "Code is 6 digits without spaces": [
+        "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
+      ],
       "Color": [
         "Χρώμα"
       ],
@@ -3312,16 +3108,16 @@
         "Ημερομηνία και ώρα"
       ],
       "Default email address": [
-        ""
+        "Προεπιλεγμένη ηλ. διεύθυνση"
       ],
       "Default event duration": [
-        ""
+        "Προεπιλεγμένη διάρκεια εκδήλωσης"
       ],
       "Default full day notifications": [
-        ""
+        "Προεπιλεγμένες ολοήμερες ειδοποιήσεις"
       ],
       "Default notifications": [
-        ""
+        "Προεπιλεγμένες ειδοποιήσεις"
       ],
       "Description": [
         "Περιγραφή"
@@ -3355,9 +3151,6 @@
       ],
       "Enter organization name to confirm": [
         "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
-      ],
-      "Enter the 6-digit code": [
-        "Εισάγετε τον 6-ψήφιο κωδικό"
       ],
       "Event title": [
         "Τίτλος εκδήλωσης"
@@ -3403,9 +3196,6 @@
       ],
       "Import to:": [
         "Εισαγωγή σε:"
-      ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
       ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
@@ -3504,15 +3294,6 @@
       "Select a method": [
         "Επιλέξτε μέθοδο"
       ],
-      "Select how your composer opens by default.": [
-        "Επιλέξτε τον τρόπο με τον οποίο ανοίγει ο συνθέτης σας από προεπιλογή."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Επιλέξτε πώς μοιάζει η λίστα μηνυμάτων σας από προεπιλογή."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Επιλέξτε πώς μοιάζει το γραμματοκιβώτιό σας από προεπιλογή."
-      ],
       "Select your country": [
         "Επιλέξτε τη χώρα σας"
       ],
@@ -3572,30 +3353,6 @@
         "Όνομα"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Μεγιστοποιημένος"
-      ],
-      "Normal": [
-        "Κανονικό"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
@@ -3618,14 +3375,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "Η ${ Label.Name } δημιουργήθηκε"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
       ]
     },
     "Link": {
@@ -4518,7 +4267,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        ""
+        "Αποτυχία ενημέρωσης ρυθμίσεων"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -4670,9 +4419,6 @@
       "Invitation sent and participants added to all events": [
         "Η πρόσκληση εστάλη και οι συμμετέχοντες προστέθηκαν σε όλες τις εκδηλώσεις"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
-      ],
       "Participants notified and all events updated": [
         "Οι συμμετέχοντες ειδοποιήθηκαν και ενημερώθηκαν όλα τα γεγονότα"
       ],
@@ -4804,9 +4550,6 @@
       "${ appName } customization": [
         "Προσαρμογή ${ appName }"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Συντομεύσεις πληκτρολογίου"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } μέλος",
         "${ emailsCount } μέλη"
@@ -4887,9 +4630,6 @@
       "Clearing data": [
         "Εκκαθάριση δεδομένων"
       ],
-      "Composer mode": [
-        "Λειτουργία σύνθεσης"
-      ],
       "Confirm loss of Proton bonuses": [
         "Επιβεβαιώστε την απώλεια μπόνους Proton"
       ],
@@ -4916,9 +4656,6 @@
       ],
       "Create contact": [
         "Δημιουργία επαφής"
-      ],
-      "Create event": [
-        "Δημιουργία εκδήλωσης"
       ],
       "Create new group": [
         "Δημιουργία νέας ομάδας"
@@ -4981,9 +4718,6 @@
       ],
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
-      ],
-      "Edit event": [
-        "Επεξεργασία γεγονότος"
       ],
       "Edit image": [
         "Επεξεργασία εικόνας"
@@ -5052,17 +4786,8 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
-      "Keyboard Shortcuts": [
-        "Συντομεύσεις Πληκτρολογίου"
-      ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
-      ],
-      "Mailbox density": [
-        "Πυκνότητα θυρίδας"
-      ],
-      "Mailbox layout": [
-        "Διάταξη θυρίδας"
       ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"

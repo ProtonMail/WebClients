@@ -271,8 +271,8 @@
       "Details": [
         "Ifatusen"
       ],
-      "Did not receive the code?": [
-        "Ur d-teṭṭifeḍ ara tangalt?"
+      "Didn't receive the code?": [
+        ""
       ],
       "Discard": [
         "Sefsex"
@@ -306,6 +306,9 @@
       ],
       "Edit phone number": [
         "Ẓreg uṭṭun n tiliɣri"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "Email settings": [
         "Iɣewwaren n yimayl"
@@ -448,9 +451,6 @@
       ],
       "Italic": [
         "Yekna"
-      ],
-      "Justify": [
-        "Seggem"
       ],
       "Keyboard shortcuts": [
         "Inegzumen n unasiw"
@@ -941,6 +941,12 @@
       ],
       "Verify": [
         "Senqed"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Sken"
@@ -2119,12 +2125,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "Ulamek aseɣbel n imayl, eɛreḍ areḍqal"
-      ],
-      "Can't validate phone, try again later": [
-        "Ulamek aseɣbel n tiliɣri, eɛreḍ areḍqal"
-      ],
       "Checkout expired, please try again": [
         "Asenqed iɛedda wakud-is, ttxil-k·m ɛreḍ tikkelt-nniḍen"
       ],
@@ -2330,9 +2330,6 @@
         "",
         ""
       ],
-      "Please refresh the page.": [
-        "Ttxil smiren asebter."
-      ],
       "Please repeat the password": [
         "Ma ulac aɣilif ales awal uffir"
       ],
@@ -2361,8 +2358,8 @@
         "Anermas uslig yettwakkes: ${ recipents }",
         "Inermasen usligen ttwakksen: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Akud n usuter yemmut."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Yesra ma ulac yiwet n tigawt"
@@ -2406,9 +2403,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
-      ],
-      "The composer failed to load.": [
-        "Asali n umsuddes ur yeddi ara."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Isem n ukaram ɣezif aṭas. Ttxil-k·m fren isem-nniḍen."
@@ -3701,8 +3695,8 @@
       "Insert link": [
         "Ger aseɣwen"
       ],
-      "Internet connection lost.": [
-        "Tuqqna internet truḥ."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ulac tuqqna internet. Ttxil-k/m senqed tuqqna n yibenk-ik/m."
@@ -3712,9 +3706,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
-      ],
-      "Justify": [
-        "Seggem"
       ],
       "Key fingerprint": [
         "Adriz umḍin n tsarut"
@@ -4011,11 +4002,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Tuzna n yiznan seg @pm.me d tamahilt s uxelleṣ. Izen-inek ad itwazen seg tansa-inek tamezwart ${ email }"
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Yemmed wakud n tɣimit."
+      "Session timed out": [
+        ""
       ],
       "Set a recovery phrase": [
         ""
@@ -4315,6 +4309,9 @@
       "We'll notify you when the import is done.": [
         ""
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "URL web"
       ],
@@ -4332,6 +4329,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yearly": [
         "S useggas"
@@ -4749,7 +4749,7 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } akked ${ count } wiyyaḍ"
       ],
-      "(Coming soon)": [
+      "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
       "Actions": [
@@ -4839,6 +4839,9 @@
       "City": [
         "Aɣrem"
       ],
+      "Code is 6 digits without spaces": [
+        ""
+      ],
       "Conditions": [
         "Tiwtilin"
       ],
@@ -4889,9 +4892,6 @@
       ],
       "Enter organization name to confirm": [
         ""
-      ],
-      "Enter the 6-digit code": [
-        "Sekcem tangalt n 6 n yizwilen"
       ],
       "Expires": [
         "Ad ifat di"
@@ -5416,6 +5416,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
+        ""
+      ],
+      "${ createdCalendars } of 1 created": [
         "",
         ""
       ],
@@ -6237,12 +6241,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "D awezɣi ad tettwazen tansa n umsuddes: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Timerna n uneḍruy n uwitay tecceḍ"
-      ],
-      "Updating calendar event failed": [
-        "Aleqqem n tedyant n uwitay tecceḍ"
       ]
     },
     "Search - no results": {
@@ -6376,7 +6374,13 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        ""
+      ],
       "Message Content Search": [
+        ""
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
         ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
@@ -6964,6 +6968,9 @@
       "Email addresses": [
         "Tansiwin imayl"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email content": [
         "Agbur n yimayl"
       ],
@@ -6987,9 +6994,6 @@
       ],
       "Error": [
         "Tuccḍa"
-      ],
-      "Expand content": [
-        "Snerni agbur"
       ],
       "Exporting contacts": [
         "Kter inermisen"

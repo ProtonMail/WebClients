@@ -122,9 +122,6 @@
       "Compose": [
         "Vytvořit"
       ],
-      "Composer size": [
-        "Velikost okna pro psaní zpráv"
-      ],
       "Confirm": [
         "Potvrdit"
       ],
@@ -191,7 +188,7 @@
       "Details": [
         "Detaily"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Nedostali jste kód?"
       ],
       "Done": [
@@ -214,6 +211,9 @@
       ],
       "Edit phone number": [
         "Upravit telefonní číslo"
+      ],
+      "Edit sign-in details": [
+        "Upravit přihlašovací údaje"
       ],
       "Email settings": [
         "Nastavení e-mailu"
@@ -281,9 +281,6 @@
       "Increase": [
         "Zvýšit"
       ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
-      ],
       "Load image": [
         "Načíst obrázek"
       ],
@@ -292,12 +289,6 @@
       ],
       "Log in": [
         "Přihlásit se"
-      ],
-      "Mailbox density": [
-        "Hustota mailové schránky"
-      ],
-      "Mailbox layout": [
-        "Rozvržení mailové schránky"
       ],
       "Manage link": [
         "Správa odkazu"
@@ -563,11 +554,14 @@
       "Use for sending": [
         "Použít pro odesílání"
       ],
-      "Use “${ label }” setting": [
-        "Použijte nastavení “${ label }”"
-      ],
       "Verify": [
         "Ověřit"
+      ],
+      "Verify account": [
+        "Ověřit účet"
+      ],
+      "Verify email": [
+        "Ověřit e-mail"
       ],
       "View": [
         "Zobrazit"
@@ -903,14 +897,6 @@
         "Nepodporovaný formát kalendáře"
       ]
     },
-    "Composer size": {
-      "Maximized": [
-        "Maximalizováno"
-      ],
-      "Normal": [
-        "Normální"
-      ]
-    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Ukončit přizpůsobení importu?"
@@ -1027,14 +1013,6 @@
         "Faktura po splatnosti"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "Komfortní"
-      ],
-      "Compact": [
-        "Kompaktní"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů... To může trvat několik minut. Po dokončení procesu si budete moci stáhnout soubor se všemi exportovanými kontakty."
@@ -1119,12 +1097,6 @@
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
-      ],
-      "Can't validate email, try again later": [
-        "Nemůžeme ověřit váš e-mail, zkuste to později"
-      ],
-      "Can't validate phone, try again later": [
-        "Nemůžeme ověřit váš telefon, zkuste to později"
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
@@ -1303,8 +1275,8 @@
       "Process aborted": [
         "Platební transakce byla přerušena"
       ],
-      "Request timed out.": [
-        "Vypršel časový limit žádosti."
+      "Request timed out": [
+        "Vypršel časový limit žádosti"
       ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
@@ -1918,9 +1890,6 @@
         "Jste si jisti, že chcete vybrané položky z koše trvale odstranit?",
         "Jste si jisti, že chcete vybrané položky z koše trvale odstranit?"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Vzhledem k tomu že ${ appName } je end-to-end zašifrovaná, tak nemáme přístup\na nemůžeme za Vás dekryptovat Vaše soubory. K odemknutí Vašeho disku po resetování hesla\nmusíte mít jedno z následujících:"
       ],
@@ -2146,8 +2115,8 @@
       "Initializing": [
         "Inicializace"
       ],
-      "Internet connection lost.": [
-        "Připojení k Internetu bylo ztraceno."
+      "Internet connection lost": [
+        "Připojení k internetu bylo ztraceno"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Připojení k internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
@@ -2365,8 +2334,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery nejsou dostupné. Prosím zkuste to znovu za pár minut"
       ],
-      "Session timed out.": [
-        "Relace vypršela."
+      "Session timed out": [
+        "Relace vypršela"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované e-mailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
@@ -2512,6 +2481,9 @@
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Zašleme nový ověřovací kód na adresu ${ strong }"
+      ],
       "Week": [
         "Týden"
       ],
@@ -2526,6 +2498,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Chcete obdržet nový ověřovací kód?"
       ],
       "Would you like to restore your files?": [
         "Chcete obnovit soubory?"
@@ -2692,197 +2667,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "Přidat šifrování"
-      ],
-      "Add expiration time": [
-        "Přidat dobu platnosti"
-      ],
-      "Apply / open": [
-        "Použít / otevřít"
-      ],
-      "Attach file": [
-        "Přiložit soubor"
-      ],
-      "Cancel / close": [
-        "Zrušit/zavřít"
-      ],
-      "Close draft": [
-        "Zavřít koncept"
-      ],
-      "Create filter with...": [
-        "Vytvořit filtr s..."
-      ],
-      "Delete permanently": [
-        "Navždy smazat"
-      ],
-      "Discard draft": [
-        "Zrušit koncept"
-      ],
-      "Expand / contract composer": [
-        "Rozšířit / smlouva správce knihovny"
-      ],
-      "Forward": [
-        "Přeposlat"
-      ],
-      "Go to All Mail": [
-        "Přejít na všechnu poštu"
-      ],
-      "Go to Archive": [
-        "Přejít do archivu"
-      ],
-      "Go to Drafts": [
-        "Přejděte do návrhů"
-      ],
-      "Go to Inbox": [
-        "Přejít do složky Doručená pošta"
-      ],
-      "Go to Sent": [
-        "Přejít do odeslaných"
-      ],
-      "Go to Spam": [
-        "Přejít do spamu"
-      ],
-      "Go to Starred": [
-        "Přejít do oblíbených"
-      ],
-      "Go to Trash": [
-        "Přejít do koše"
-      ],
-      "Jump to first": [
-        "Přejít na první"
-      ],
-      "Jump to last": [
-        "Přejít na poslední"
-      ],
-      "Label as...": [
-        "Označit jako..."
-      ],
-      "Load embedded images": [
-        "Načíst vložené obrázky"
-      ],
-      "Load remote content": [
-        "Načíst vzdálený obsah"
-      ],
-      "Mark as unread": [
-        "Označit jako nepřečtené"
-      ],
-      "Minimize / maximize composer": [
-        "Minimalizovat / maximalizovat tvorbu"
-      ],
-      "Move down": [
-        "Přesunout dolů"
-      ],
-      "Move left / collapse": [
-        "Přetáhnout doleva zabalit"
-      ],
-      "Move right / expand": [
-        "Přetáhnout doprava rozbalit"
-      ],
-      "Move to Archive": [
-        "Přesunout do archivu"
-      ],
-      "Move to Inbox": [
-        "Přesunout do složky Doručená pošta"
-      ],
-      "Move to Spam": [
-        "Přesunout do spamu"
-      ],
-      "Move to Trash": [
-        "Přesunout do koše"
-      ],
-      "Move to...": [
-        "Přesunout do..."
-      ],
-      "Move up": [
-        "Přesunout nahoru"
-      ],
-      "New message": [
-        "Nová zpráva"
-      ],
-      "Open next message": [
-        "Otevřít následující zprvcu"
-      ],
-      "Open previous message": [
-        "Otevřít předchozí zprávu"
-      ],
-      "Open this modal": [
-        "Otevřete tento způsob"
-      ],
-      "Reply": [
-        "Odpovědět"
-      ],
-      "Reply all": [
-        "Odpovědět všem"
-      ],
-      "Save draft": [
-        "Uložit koncept"
-      ],
-      "Search": [
-        "Hledat"
-      ],
-      "Select / unselect": [
-        "Vybrat / zrušit výběr"
-      ],
-      "Select / unselect all": [
-        "Vybrat vše/zrušit výběr všeho"
-      ],
-      "Send email": [
-        "Odeslat e-mail"
-      ],
-      "Show all emails": [
-        "Zobrazit všechny e-maily"
-      ],
-      "Show original message": [
-        "Zobrazit původní zprávu"
-      ],
-      "Show unread emails": [
-        "Zobrazit nepřečtené e-maily"
-      ],
-      "Star": [
-        "Hvězdička"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "Zkratky akcí"
-      ],
-      "Basic actions": [
-        "Základní akce"
-      ],
-      "Basic navigation": [
-        "Základní navigace"
-      ],
-      "Composer shortcuts": [
-        "Vytvoření zkratek"
-      ],
-      "Folder shortcuts": [
-        "Zkratky složek"
-      ],
-      "List shortcuts": [
-        "Seznam zkratek"
-      ],
-      "Message shortcuts": [
-        "Zkratky zpráv"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Vypnuto"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Zapnuto"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "(již brzy)"
-      ],
       "(Expired)": [
         "(Vypršelo)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
       "Active": [
         "Aktivní"
@@ -2947,6 +2737,9 @@
       "City": [
         "Město"
       ],
+      "Code is 6 digits without spaces": [
+        "Kód má 6 číslic bez mezer"
+      ],
       "Completed": [
         "Dokončeno"
       ],
@@ -2994,9 +2787,6 @@
       ],
       "Enter organization name to confirm": [
         "Zadejte název organizace pro potvrzení"
-      ],
-      "Enter the 6-digit code": [
-        "Zadejte 6-místný kód"
       ],
       "Expired": [
         "Vypršelo"
@@ -3054,9 +2844,6 @@
       ],
       "Import to email address": [
         "Importovat na e-mailovou adresu"
-      ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
       ],
       "Label messages as": [
         "Označte zprávu jako"
@@ -3147,15 +2934,6 @@
       ],
       "Select a method": [
         "Vyberte metodu"
-      ],
-      "Select how your composer opens by default.": [
-        "Vyberte, jak se má otevírat psaní nové zprávy."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Vyberte, jak bude váš seznam zpráv vypadat ve výchozím nastavení."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Vyberte, jak bude vaše poštovní schránka vypadat ve výchozím nastavení."
       ],
       "Select your country": [
         "Vyberte svou zemi"
@@ -3255,30 +3033,6 @@
         "Název"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximalizováno"
-      ],
-      "Normal": [
-        "Normální"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortní"
-      ],
-      "Compact": [
-        "Kompaktní"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sloupec"
-      ],
-      "Row": [
-        "Řádek"
-      ]
-    },
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Přidat snímek(y) obrazovky"
@@ -3301,14 +3055,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } byl vytvořen"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Sloupec"
-      ],
-      "Row": [
-        "Řádek"
       ]
     },
     "Link": {
@@ -3352,6 +3098,12 @@
         "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeny",
         "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno",
         "${ createdCalendars } z ${ calendarsToBeCreated } vytvořeno"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Téměř hotovo"
@@ -4106,9 +3858,6 @@
       "Fingerprint copied to clipboard": [
         "Otisk prstu zkopírován do schránky"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "Nastavení klávesových zkratek upraveno"
-      ],
       "Phone number copied to clipboard": [
         "Telefonní číslo bylo zkopírováno do schránky"
       ],
@@ -4255,9 +4004,6 @@
       "${ appName } customization": [
         "${ appName } přizpůsobení"
       ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Klávesové zkratky"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } člen",
         "${ emailsCount } členové",
@@ -4320,9 +4066,6 @@
       ],
       "Clearing data": [
         "Vymazat data"
-      ],
-      "Composer mode": [
-        "Režim psaní zpráv"
       ],
       "Confirm loss of Proton bonuses": [
         "Potvrdit odebrání Proton bonusů"
@@ -4498,20 +4241,11 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
-      "Keyboard Shortcuts": [
-        "Klávesové zkratky"
-      ],
       "Link confirmation": [
         "Potvrzení odkazu"
       ],
       "Location": [
         "Umístění"
-      ],
-      "Mailbox density": [
-        "Hustota mailové schránky"
-      ],
-      "Mailbox layout": [
-        "Rozvržení mailové schránky"
       ],
       "Manage secure link": [
         "Spravovat zabezpečený odkaz"

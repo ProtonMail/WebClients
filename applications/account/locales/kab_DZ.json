@@ -259,11 +259,11 @@
       "Details": [
         "Talqayt"
       ],
-      "Did not receive the code?": [
-        "Ur d-teṭṭifeḍ ara tangalt?"
-      ],
       "Didn't receive a code?": [
         "Ur teṭṭifeḍ ara tangalt?"
+      ],
+      "Didn't receive the code?": [
+        ""
       ],
       "Disable recovery phrase": [
         "Sens tafyirt n tririt"
@@ -312,6 +312,9 @@
       ],
       "Edit sieve": [
         "Ẓreg sieve"
+      ],
+      "Edit sign-in details": [
+        ""
       ],
       "enable desktop notifications": [
         "rmed talɣutin n tnarit"
@@ -405,9 +408,6 @@
       ],
       "Italic": [
         "Yekna"
-      ],
-      "Justify": [
-        "Ṣeggem"
       ],
       "Keep": [
         "Eǧǧ"
@@ -783,6 +783,12 @@
       ],
       "Verify": [
         "Senqed"
+      ],
+      "Verify account": [
+        ""
+      ],
+      "Verify email": [
+        ""
       ],
       "View": [
         "Sken"
@@ -1723,12 +1729,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
       ],
-      "Can't validate email, try again later": [
-        "Ulamek aseɣbel n imayl, eɛreḍ areḍqal"
-      ],
-      "Can't validate phone, try again later": [
-        "Ulamek aseɣbel n tiliɣri, eɛreḍ areḍqal"
-      ],
       "Checkout expired, please try again": [
         ""
       ],
@@ -1907,9 +1907,6 @@
       "Please generate keys before you try to change your password": [
         ""
       ],
-      "Please refresh the page.": [
-        "Ttxil smiren asebter."
-      ],
       "Please set a recovery email first": [
         "Ttxil-k•m sbadu qbel uṭṭun n usawal n tiririt"
       ],
@@ -1937,8 +1934,8 @@
       "Process aborted": [
         "Yettwanef ukala"
       ],
-      "Request timed out.": [
-        "Immut wakud n usuter."
+      "Request timed out": [
+        ""
       ],
       "Require at least one action": [
         "Yesra ma ulac yiwet n tigawt"
@@ -1972,9 +1969,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
-      ],
-      "The composer failed to load.": [
-        "Asali n umsuddes ur yeddi ara."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Isem n ukaram ɣezzif aṭas. Ttxil fren isem-nniḍen."
@@ -3750,8 +3744,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Sbedd afaylu n twila n uqeddac akken ad teqqneḍ ɣer uqeddac ulmis di tmurt i tferneḍ."
       ],
-      "Internet connection lost.": [
-        "Tuqqna internet truḥ."
+      "Internet connection lost": [
+        ""
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ulac tuqqna internet. Ttxil-k/m senqed tuqqna n yibenk-ik/m."
@@ -3767,9 +3761,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
-      ],
-      "Justify": [
-        "Ṣeggem"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Ḥrez ikalasen-a deg DNS inek.inem i wakud tebɣiḍ ad tesqedceḍ DKIM."
@@ -4138,8 +4129,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         ""
       ],
-      "Session timed out.": [
-        "Yemmed wakud n tɣimit."
+      "Session timed out": [
+        ""
       ],
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
@@ -4423,6 +4414,9 @@
       "We'll notify you when the import is done.": [
         "Ad k•m-nazen talɣut mi ara temmed tektert."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
       "Web URL": [
         "URL n Web"
       ],
@@ -4455,6 +4449,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
+      ],
+      "Would you like to receive a new verification code?": [
+        ""
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin n wumlan n Marikan akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
@@ -5045,8 +5042,8 @@
         "${ UsedMembers } n useqdac ${ MaxMembers }",
         "${ UsedMembers } n yiseqdacen ${ MaxMembers }"
       ],
-      "(Coming soon)": [
-        "(qrib ad iwjed)"
+      "(Temporarily unavailable. Please check back later.)": [
+        ""
       ],
       "Account storage": [
         "Amḍiq n usekles n umiḍan"
@@ -5152,6 +5149,9 @@
       ],
       "Code": [
         "Tangalt"
+      ],
+      "Code is 6 digits without spaces": [
+        ""
       ],
       "Color": [
         "Ini"
@@ -5317,9 +5317,6 @@
       ],
       "Enter password": [
         "Sekcem Awal Uffir"
-      ],
-      "Enter the 6-digit code": [
-        "Sekcem tangalt n 6 n yizwilen"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Sekcem awal uffir i tsarut s udlis umḍin: ${ fingerprintCode }"
@@ -6639,9 +6636,6 @@
       "Secure Core configs": [
         "Tiwilawin Secure Core"
       ],
-      "Select a reason": [
-        "Fren taɣzint"
-      ],
       "Standard server configs": [
         "Tiwilawin tisluganin n yiqeddacen"
       ],
@@ -7878,6 +7872,9 @@
       "Email": [
         "Imayl"
       ],
+      "Email composer": [
+        ""
+      ],
       "Email encryption keys": [
         "Tisura n uwgelhen n imayl"
       ],
@@ -7895,9 +7892,6 @@
       ],
       "Error": [
         "Anezri"
-      ],
-      "Expand content": [
-        "Snerni agbur"
       ],
       "Export": [
         "Sifeḍ"

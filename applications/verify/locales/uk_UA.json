@@ -14,7 +14,7 @@
       "Close modal": [
         "Закрити вікно"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Не отримали код?"
       ],
       "Edit email address": [
@@ -22,6 +22,9 @@
       ],
       "Edit phone number": [
         "Змінити номер телефону"
+      ],
+      "Edit sign-in details": [
+        "Змінити дані входу"
       ],
       "Get verification code": [
         "Отримати код підтвердження"
@@ -41,6 +44,12 @@
       "Verify": [
         "Перевірити"
       ],
+      "Verify account": [
+        "Підтвердити обліковий запис"
+      ],
+      "Verify email": [
+        "Підтвердити електронну пошту"
+      ],
       "View invoice": [
         "Переглянути рахунок"
       ]
@@ -51,12 +60,6 @@
       ]
     },
     "Error": {
-      "Can't validate email, try again later": [
-        "Не вдалося перевірити електронну адресу. Повторіть спробу пізніше"
-      ],
-      "Can't validate phone, try again later": [
-        "Не вдалося перевірити номер телефону. Повторіть спробу пізніше"
-      ],
       "Email is not valid": [
         "Хибна електронна адреса"
       ],
@@ -72,8 +75,8 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Request timed out.": [
-        "Час очікування запиту завершився."
+      "Request timed out": [
+        "Час очікування запиту завершився"
       ],
       "This field is required": [
         "Це поле обов'язкове"
@@ -138,8 +141,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
-      "Internet connection lost.": [
-        "Втрачено Інтернет-з'єднання."
+      "Internet connection lost": [
+        "Втрачено інтернет-з'єднання"
       ],
       "Loading": [
         "Завантаження"
@@ -150,14 +153,20 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
-      "Session timed out.": [
-        "Сеанс завершився."
+      "Session timed out": [
+        "Сеанс завершився"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Ми надішлемо новий код підтвердження на ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Бажаєте отримати новий код підтвердження?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
@@ -173,11 +182,11 @@
       "Cancel": [
         "Скасувати"
       ],
+      "Code is 6 digits without spaces": [
+        "Код складається з 6 цифр без пробілів"
+      ],
       "Email address": [
         "Адреса е-пошти"
-      ],
-      "Enter the 6-digit code": [
-        "Введіть 6-значний код"
       ],
       "Hide password": [
         "Сховати пароль"

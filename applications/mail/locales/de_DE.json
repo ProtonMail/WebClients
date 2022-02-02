@@ -271,7 +271,7 @@
       "Details": [
         "Details"
       ],
-      "Did not receive the code?": [
+      "Didn't receive the code?": [
         "Code nicht erhalten?"
       ],
       "Discard": [
@@ -306,6 +306,9 @@
       ],
       "Edit phone number": [
         "Telefonnummer bearbeiten"
+      ],
+      "Edit sign-in details": [
+        "Anmeldeinformationen bearbeiten"
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
@@ -448,9 +451,6 @@
       ],
       "Italic": [
         "Kursiv"
-      ],
-      "Justify": [
-        "Blocksatz"
       ],
       "Keyboard shortcuts": [
         "Tastaturkürzel"
@@ -941,6 +941,12 @@
       ],
       "Verify": [
         "Verifizieren"
+      ],
+      "Verify account": [
+        "Konto verifizieren"
+      ],
+      "Verify email": [
+        "E-Mail-Adresse verifizieren"
       ],
       "View": [
         "Anzeigen"
@@ -2119,12 +2125,6 @@
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Es können keine neuen Kalender für alle zu importierenden Kalender erstellt werden, da die Anzahl der persönlichen Kalender beschränkt ist."
       ],
-      "Can't validate email, try again later": [
-        "Die E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuche es später noch einmal."
-      ],
-      "Can't validate phone, try again later": [
-        "Das Gerät konnte nicht bestätigt werden. Bitte versuche es später noch einmal."
-      ],
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
       ],
@@ -2330,9 +2330,6 @@
         "Bitte beheben Sie den hervorgehobenen Konflikt, um fortfahren zu können.",
         "Bitte beheben Sie die hervorgehobenen Konflikte, um fortfahren zu können."
       ],
-      "Please refresh the page.": [
-        "Bitte lade die Seite neu."
-      ],
       "Please repeat the password": [
         "Bitte Passwort erneut eingeben"
       ],
@@ -2361,8 +2358,8 @@
         "Doppelter Empfänger wurde entfernt: ${ recipents }",
         "Doppelte Empfänger wurden entfernt: ${ recipents }"
       ],
-      "Request timed out.": [
-        "Zeitüberschreitung bei der Anforderung."
+      "Request timed out": [
+        "Zeitüberschreitung bei der Anfrage"
       ],
       "Require at least one action": [
         "Erfordert mindestens eine Aktion"
@@ -2406,9 +2403,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Der von dir verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwende einen anderen Browser oder melde dich über einen Computer an."
-      ],
-      "The composer failed to load.": [
-        "Das Verfassen-Fenster konnte nicht geladen werden."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Der Name des Ordners ist zu lang. Bitte wählen Sie einen kürzeren Namen."
@@ -3701,8 +3695,8 @@
       "Insert link": [
         "Link einfügen"
       ],
-      "Internet connection lost.": [
-        "Internetverbindung unterbrochen."
+      "Internet connection lost": [
+        "Internetverbindung unterbrochen"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbindung getrennt. Bitte überprüfen Sie die Konnektivität Ihres Geräts."
@@ -3712,9 +3706,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bestätigen Sie einfach Ihre Auswahl und ProtonMail übernimmt den Rest."
-      ],
-      "Justify": [
-        "Blocksatz"
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
@@ -4011,11 +4002,14 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }” gesendet."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuchen Sie es in ein paar Minuten erneut"
       ],
-      "Session timed out.": [
-        "Zeitüberschreitung der Sitzung."
+      "Session timed out": [
+        "Zeitüberschreitung der Sitzung"
       ],
       "Set a recovery phrase": [
         "Wiederherstellungsphrase festlegen"
@@ -4315,6 +4309,9 @@
       "We'll notify you when the import is done.": [
         "Sie werden benachrichtigt, sobald der Datenimport abgeschlossen ist."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
       "Web URL": [
         "Web-URL"
       ],
@@ -4332,6 +4329,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Möchtest du einen neuen Verifizierungscode erhalten?"
       ],
       "Yearly": [
         "Jährlich"
@@ -4749,8 +4749,8 @@
       "${ firstAddress } and ${ count } others": [
         "${ firstAddress } und ${ count } weitere"
       ],
-      "(Coming soon)": [
-        "(Demnächst verfügbar)"
+      "(Temporarily unavailable. Please check back later.)": [
+        "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
       ],
       "Actions": [
         "Aktionen"
@@ -4839,6 +4839,9 @@
       "City": [
         "Stadt"
       ],
+      "Code is 6 digits without spaces": [
+        "Der Code ist 6-stellig ohne Leerzeichen"
+      ],
       "Conditions": [
         "Bedingungen"
       ],
@@ -4889,9 +4892,6 @@
       ],
       "Enter organization name to confirm": [
         "Name der Organisation zur Bestätigung eingeben"
-      ],
-      "Enter the 6-digit code": [
-        "6-stelligen Code eingeben"
       ],
       "Expires": [
         "Gültig bis"
@@ -5418,6 +5418,10 @@
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars }/${ calendarsToBeCreated } erstellt",
         "${ createdCalendars }/${ calendarsToBeCreated } erstellt"
+      ],
+      "${ createdCalendars } of 1 created": [
+        "",
+        ""
       ],
       "Almost there": [
         "Fast geschafft"
@@ -6237,12 +6241,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "An die E-Mail-Adresse des Organisators konnte nicht gesendet werden: ${ errorMessage }"
-      ],
-      "Creating calendar event failed": [
-        "Erstellen des Kalenderereignisses fehlgeschlagen"
-      ],
-      "Updating calendar event failed": [
-        "Aktualisieren des Kalenderereignisses fehlgeschlagen"
       ]
     },
     "Search - no results": {
@@ -6376,8 +6374,14 @@
       ]
     },
     "Spotlight": {
+      "Discover all Proton services": [
+        "Alle Proton Dienste kennenlernen"
+      ],
       "Message Content Search": [
         "Nachrichteninhalte durchsuchen"
+      ],
+      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
+        ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Um Ihre Privatsphäre zu schützen, hat Proton E-Mail-Tracker in dieser Nachricht gesperrt."
@@ -6964,6 +6968,9 @@
       "Email addresses": [
         "E‐Mail‐Adressen"
       ],
+      "Email composer": [
+        "Fenster zum Verfassen von E-Mails"
+      ],
       "Email content": [
         "Nachrichtentext"
       ],
@@ -6987,9 +6994,6 @@
       ],
       "Error": [
         "Fehler"
-      ],
-      "Expand content": [
-        "Inhalt erweitern"
       ],
       "Exporting contacts": [
         "Kontakte werden exportiert"

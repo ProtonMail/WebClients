@@ -139,6 +139,9 @@
       "Did not receive the code?": [
         "Kod almadınız mı?"
       ],
+      "Didn't receive the code?": [
+        "Doğrulama kodunu almadınız mı?"
+      ],
       "Done": [
         "Tamam"
       ],
@@ -165,6 +168,9 @@
       ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
+      ],
+      "Edit sign-in details": [
+        "Oturum açma bilgilerini düzenle"
       ],
       "Email me my username(s)": [
         "Kullanıcı adlarımı bana e-postala"
@@ -391,11 +397,17 @@
       "Verify": [
         "Doğrula"
       ],
+      "Verify account": [
+        "Hesabı doğrula"
+      ],
       "Verify code": [
         "Kodu doğrula"
       ],
       "Verify code again": [
         "Kodu yeniden doğrula"
+      ],
+      "Verify email": [
+        "E-posta adresini doğrula"
       ],
       "View": [
         "Görüntüle"
@@ -655,7 +667,7 @@
         "Hesap açma sorunu"
       ],
       "Slow speed problem": [
-        "Yavaş hız sorunu"
+        "Hız yavaşlığı sorunu"
       ],
       "Speed problem": [
         "Hız sorunu"
@@ -829,12 +841,6 @@
       "Can't check username, try again later": [
         "Kullanıcı adı denetlenemedi. Bir süre sonra yeniden deneyin"
       ],
-      "Can't validate email, try again later": [
-        "E-posta doğrulanamadı. Bir süre sonra yeniden deneyin"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefon doğrulanamadı. Bir süre sonra yeniden deneyin"
-      ],
       "Checkout expired, please try again": [
         "Ödeme süresi dolmuş. Lütfen yeniden deneyin"
       ],
@@ -931,8 +937,8 @@
       "Process aborted": [
         "İşlem iptal edildi"
       ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
+      "Request timed out": [
+        "İstek zaman aşımına uğradı"
       ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
@@ -1377,7 +1383,7 @@
         "10 Gb/sn hıza ulaşan tam özellikli VPN."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek bir tarife ile tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) özelliklerini kullanın."
+        "Tek bir tarife ile tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerini kullanın."
       ],
       "here": [
         "buraya"
@@ -1445,8 +1451,8 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Seçtiğiniz ülkedeki belirli bir sunucuya bağlanmak için bir sunucu yapılandırma dosyası yükleyin."
       ],
-      "Internet connection lost.": [
-        "İnternet bağlantısı kesildi."
+      "Internet connection lost": [
+        "İnternet bağlantısı kesildi"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "İnternet bağlantısı kesildi. Lütfen aygıtınızın bağlantısını denetleyin."
@@ -1602,8 +1608,8 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
-      "Session timed out.": [
-        "Oturum zaman aşımına uğradı."
+      "Session timed out": [
+        "Oturum zaman aşımına uğradı"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
@@ -1734,6 +1740,9 @@
       "We will send a reset code to your recovery email to reset your password.": [
         "Parolanızı sıfırlamanız için kurtarma e-postanıza bir sıfırlama kodu göndereceğiz."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
       "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
         "Kurtarma e-postanıza bir saat süreyle ya da yeni bir kod isteyene kadar geçerli olacak bir sıfırlama kodu gönderdik. Devam etmek için gönderilen kodu aşağıya yazın."
       ],
@@ -1745,6 +1754,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak veya alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
@@ -1850,7 +1862,7 @@
         "Değiştirilebilecek özellikler"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail, toplu e-posta veya spam gönderimi için kullanılamaz. Yasal e-posta iletileri için sınır yoktur."
+        "ProtonMail, toplu veya istenmeyen e-postalar göndermek için kullanılamaz. Normal e-posta gönderimi sınırsızdır."
       ]
     },
     "Info for cash payment method": {
@@ -2004,6 +2016,9 @@
       "Category": [
         "Kategori"
       ],
+      "Code is 6 digits without spaces": [
+        "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
       "Confirm login password": [
         "Yeni oturum açma parolası onayı"
       ],
@@ -2072,9 +2087,6 @@
       ],
       "Enter organization name to confirm": [
         "Onaylamak için kuruluş adını yazın"
-      ],
-      "Enter the 6-digit code": [
-        "6 rakamlı kodu yazın"
       ],
       "Enter the code displayed on your TV": [
         "Televizyonunuzda görüntülenen kodu yazın"
@@ -3471,10 +3483,10 @@
         "İki yıllık fatura dönemine uygulanan indirim"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek tarifeyle tüm ücretli ${ vpnAppName } ve ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) özelliklerine erişin."
+        "Tek tarifeyle tüm ücretli ${ vpnAppName } ve ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Tek tarifeyle tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) özelliklerine erişin."
+        "Tek tarifeyle tüm ücretli ProtonVPN ve ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifrelenmiş e-posta hizmeti) özelliklerine erişin."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Kendi etki alanınızın e-postalarını ${ mailAppName } üzerinde barındırın. Örnek: ali.kaya@ornek.com"
@@ -3489,7 +3501,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Includes ProtonMail encrypted email with all features": [
-        "Tüm özellikleri ile ProtonMail şifreli e-posta bulunur"
+        "Tüm özellikleri ile ProtonMail şifrelenmiş e-posta bulunur"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı tarifeler için geçerlidir"

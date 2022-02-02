@@ -6,10 +6,10 @@
   "contexts": {
     "Action": {
       "${ boldSave } by switching to annual billing": [
-        "改用每年付費，即可${ boldSave }"
+        "改用年度付款方案，即可節省${ boldSave }"
       ],
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 介紹"
+        "${ BRAND_NAME } 簡介"
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
@@ -21,7 +21,7 @@
         "新增"
       ],
       "Add address": [
-        "新增電子郵件地址"
+        "新增地址"
       ],
       "Add contact": [
         "新增聯絡人"
@@ -45,10 +45,10 @@
         "新增螢幕截圖"
       ],
       "Add to group": [
-        "新增到群組"
+        "新增至群組"
       ],
       "annual billing": [
-        "每年收費"
+        "年費"
       ],
       "Apply": [
         "套用"
@@ -63,7 +63,7 @@
         "取消"
       ],
       "Cancel all uploads": [
-        "取消所有上傳"
+        "取消所有上載"
       ],
       "Cancel download": [
         "取消下載"
@@ -75,7 +75,7 @@
         "取消上載"
       ],
       "Chat with us": [
-        "與我們聊天"
+        "與我們對話"
       ],
       "Check import progress": [
         "查看匯入進度"
@@ -87,7 +87,7 @@
         "清除"
       ],
       "Clear data": [
-        "清除數據"
+        "清除資料"
       ],
       "Clear query": [
         "清除查詢"
@@ -108,7 +108,7 @@
         "關閉此橫幅"
       ],
       "Close transfers": [
-        "關閉轉移"
+        "關閉傳輸"
       ],
       "Collapse folder": [
         "收合資料夾"
@@ -117,13 +117,10 @@
         "比較所有功能"
       ],
       "Compare plans": [
-        "比較各個方案"
+        "比較方案"
       ],
       "Compose": [
         "撰寫"
-      ],
-      "Composer size": [
-        "撰寫器大寫"
       ],
       "Confirm": [
         "確認"
@@ -138,7 +135,7 @@
         "繼續"
       ],
       "Continue with Google": [
-        "使用 Google 繼續"
+        "繼續以 Google 帳戶登入"
       ],
       "Copy email to clipboard": [
         "複製電子郵件至剪貼簿"
@@ -159,13 +156,13 @@
         "自訂"
       ],
       "Decrease": [
-        "減"
+        "減少"
       ],
       "Delete": [
         "刪除"
       ],
       "Delete ${ selectedCount } contact": [
-        "刪除 ${ selectedCount } 個聯絡人"
+        "刪除 ${ selectedCount } 位聯絡人"
       ],
       "Delete ${ selectedCount } contact group": [
         "刪除 ${ selectedCount } 個聯絡人群組"
@@ -174,7 +171,7 @@
         "刪除聯絡人"
       ],
       "Delete contact group": [
-        "刪除連絡人群組"
+        "刪除聯絡人群組"
       ],
       "Delete permanently": [
         "永久刪除"
@@ -185,8 +182,8 @@
       "Details": [
         "詳細資訊"
       ],
-      "Did not receive the code?": [
-        "沒收到代碼？"
+      "Didn't receive the code?": [
+        "沒有收到驗證碼嗎？"
       ],
       "Done": [
         "完成"
@@ -209,8 +206,11 @@
       "Edit phone number": [
         "編輯電話號碼"
       ],
+      "Edit sign-in details": [
+        "編輯登入詳細資訊"
+      ],
       "Email settings": [
-        "電郵設定"
+        "電子郵件設定"
       ],
       "Empty trash": [
         "清空垃圾桶"
@@ -243,7 +243,7 @@
         "取得驗證碼"
       ],
       "Go to panel ${ index }": [
-        "到面板 ${ index }"
+        "前往面板 ${ index }"
       ],
       "Go to settings": [
         "前往設定"
@@ -261,7 +261,7 @@
         "隱藏標籤"
       ],
       "I have a question": [
-        "我要發問"
+        "我有問題"
       ],
       "import": [
         "匯入"
@@ -273,25 +273,16 @@
         "從 .csv 或 vCard 匯入"
       ],
       "Increase": [
-        "加"
-      ],
-      "Keyboard shortcuts": [
-        "鍵盤快捷鍵"
+        "增加"
       ],
       "Load image": [
-        "載入圖片"
+        "載入相片"
       ],
       "Loading verification": [
         "載入驗證中"
       ],
       "Log in": [
         "登入"
-      ],
-      "Mailbox density": [
-        "收件匣密度"
-      ],
-      "Mailbox layout": [
-        "收件匣佈局"
       ],
       "Manage link": [
         "管理連結"
@@ -300,7 +291,7 @@
         "標記作刪除"
       ],
       "Maximize transfers": [
-        "最大化轉移"
+        "傳輸最大化"
       ],
       "Merge": [
         "合併"
@@ -309,7 +300,7 @@
         "合併聯絡人"
       ],
       "Minimize transfers": [
-        "最小化轉移"
+        "傳輸最小化"
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
@@ -321,13 +312,13 @@
         "移動"
       ],
       "Move to folder": [
-        "移動到資料夾"
+        "移至資料夾"
       ],
       "Move to trash": [
         "移至垃圾桶"
       ],
       "New upload": [
-        "上傳"
+        "新上載"
       ],
       "Next": [
         "下一個"
@@ -375,7 +366,7 @@
         "重新簽署"
       ],
       "Recover data": [
-        "回復資料"
+        "恢復資料"
       ],
       "refresh the page": [
         "重新整理此頁面"
@@ -384,7 +375,7 @@
         "重新整理此頁面"
       ],
       "Remove": [
-        "刪除"
+        "移除"
       ],
       "Remove bonuses": [
         "移除獎勵"
@@ -405,16 +396,16 @@
         "功能請求"
       ],
       "Request new code": [
-        "要求新代碼"
+        "重新傳送驗證碼"
       ],
       "Reset zoom": [
-        "重設縮放"
+        "重設縮放比例"
       ],
       "Restart download": [
         "重新開始下載"
       ],
       "Restart transfers": [
-        "重新啟動傳輸"
+        "重新開始傳輸"
       ],
       "Restart upload": [
         "重新開始上載"
@@ -444,7 +435,7 @@
         "選擇方案"
       ],
       "Set recovery phrase": [
-        "設定還原短語"
+        "設定恢復短語"
       ],
       "Share": [
         "分享"
@@ -492,7 +483,7 @@
         "開始設置"
       ],
       "Stay": [
-        "停留"
+        "留在此頁"
       ],
       "Stop sharing": [
         "停止分享"
@@ -513,7 +504,7 @@
         "再試一次"
       ],
       "Try another method": [
-        "換另一個方法試試"
+        "嘗試其他驗證方式"
       ],
       "Undo": [
         "復原"
@@ -543,25 +534,28 @@
         "上載資料夾"
       ],
       "Upload picture": [
-        "上傳圖片"
+        "上傳相片"
       ],
       "Use ${ label } theme": [
         "使用 ${ label } 佈景主題"
       ],
       "Use a different card": [
-        "使用不同的卡片"
+        "改用其他信用卡"
       ],
       "Use a different payment method": [
-        "使用不同的付款方式"
+        "改用其他付款方式"
       ],
       "Use for sending": [
-        "用於寄送"
-      ],
-      "Use “${ label }” setting": [
-        "使用「${ label }」設定"
+        "用於傳送郵件"
       ],
       "Verify": [
         "驗證"
+      ],
+      "Verify account": [
+        "驗證帳號"
+      ],
+      "Verify email": [
+        "驗證電子郵件"
       ],
       "View": [
         "瀏覽"
@@ -586,13 +580,13 @@
     },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
-        "${ addContact }或${ importContact }。"
+        "${ addContact } 或 ${ importContact }。"
       ],
       "No results found.": [
         "查無結果。"
       ],
       "Please try another search term.": [
-        "請換另一個搜尋詞試試。"
+        "請嘗試其他關鍵字。"
       ],
       "You don't have any contacts.": [
         "您沒有任何聯絡人。"
@@ -609,7 +603,7 @@
         "+ ${ domains } 個自訂網域"
       ],
       "+ ${ members } user": [
-        "+ ${ members } 個使用者"
+        "+ ${ members } 位使用者"
       ],
       "+ ${ storage } storage": [
         "+ ${ storage } 儲存空間"
@@ -620,7 +614,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "若您現在離開，有一些聯絡人或會無法匯入"
+        "若您現在離開，部份聯絡人或會無法匯入"
       ]
     },
     "Apps dropdown": {
@@ -636,10 +630,10 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "測試版體驗讓您可在公開發布前使用 ProtonMail、Proton Calendar 與 Proton Drive 的測試版。這代表您可率先嘗試新產品、取得新的更新以及使用新功能。"
+        "開啟測試版體驗後您將使用 ProtonMail、Proton Calendar 和 Proton Drive 未正式發布的公測版本。這代表您可以搶先體驗新產品、取得新的更新以及使用新功能。"
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        "若您遇上問題，您還是可以停用測試版體驗。"
+        "若您遇上問題，您隨時可以停止體驗測試版。"
       ]
     },
     "Billing cycle option": {
@@ -647,13 +641,13 @@
         "每年"
       ],
       "Annually SAVE 20%": [
-        "每年，節省 20%"
+        "每年 (節省 20%)"
       ],
       "Monthly": [
         "每月"
       ],
       "Two years SAVE 33%": [
-        "兩年，節省 33%"
+        "每兩年 (節省 33%)"
       ],
       "Two-year": [
         "兩年"
@@ -760,7 +754,7 @@
         "應用程式問題"
       ],
       "Bridge problem": [
-        "橋接問題"
+        "Bridge 問題"
       ],
       "Calendar problem": [
         "行事曆問題"
@@ -775,10 +769,10 @@
         "自訂網域問題"
       ],
       "Drive problem": [
-        "Drive 問題"
+        "雲端硬碟問題"
       ],
       "Feature request": [
-        "功能請求"
+        "提出新功能建議"
       ],
       "Import / export problem": [
         "匯入／匯出問題"
@@ -787,7 +781,7 @@
         "安裝問題"
       ],
       "Mail problem": [
-        "Mail 問題"
+        "郵件問題"
       ],
       "Manual setup problem": [
         "手動設置問題"
@@ -808,7 +802,7 @@
         "註冊問題"
       ],
       "Slow speed problem": [
-        "速度慢問題"
+        "速度缓慢"
       ],
       "Speed problem": [
         "速度問題"
@@ -861,36 +855,28 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "行事曆無法解密"
+        "無法解密行事曆"
       ],
       "Calendar is syncing": [
         "日曆正在同步"
       ],
       "Calendar is too big": [
-        "日曆太大了"
+        "行事曆太大"
       ],
       "Calendar link is not accessible": [
-        "日曆無法存取"
+        "行事曆連結無法存取"
       ],
       "Calendar link is temporarily inaccessible": [
-        "日曆連結暫時無法存取"
+        "行事曆連結暫時無法存取"
       ],
       "Failed to sync calendar": [
-        "同步日曆失敗"
+        "行事曆同步失敗"
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
       ],
       "Unsupported calendar format": [
         "不支援的行事曆格式"
-      ]
-    },
-    "Composer size": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "一般"
       ]
     },
     "Confirm modal title": {
@@ -915,13 +901,13 @@
         "性別"
       ],
       "Geo": [
-        "經緯"
+        "地理位置"
       ],
       "Language": [
         "語言"
       ],
       "Logo": [
-        "標誌"
+        "頭像"
       ],
       "Member": [
         "成員"
@@ -942,13 +928,13 @@
         "相片"
       ],
       "Role": [
-        "角色"
+        "身份"
       ],
       "Timezone": [
         "時區"
       ],
       "Title": [
-        "頭銜"
+        "職銜"
       ],
       "URL": [
         "網址"
@@ -968,10 +954,10 @@
         "其他"
       ],
       "Pager": [
-        "呼叫器"
+        "傳呼機"
       ],
       "Personal": [
-        "私人"
+        "個人"
       ],
       "Work": [
         "工作"
@@ -995,7 +981,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "使用全域預設值 (${ defaultValueText })"
+        "使用系统預設值 (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -1003,35 +989,27 @@
         "逾期帳單"
       ]
     },
-    "Density mode": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
-      ]
-    },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "正在解密聯絡人... 這可能需時數分鐘。當過程完成時，您就能下載一個包含所有您匯出聯絡人的檔案。"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在刪除聯絡人……這可能需要數分鐘。流程完成時，您可以關閉此對話方塊。"
+        "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此對話方塊。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在加密並匯入聯絡人... 這可能需時數分鐘。當過程完成時，您可以關閉此方塊。"
+        "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此對話方塊。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "您正在匯入的聯絡人清單似乎包含群組。請複閱這些群組該如何匯入。"
+        "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在合併聯絡人... 這可能需時數分鐘。當過程完成時，您可以關閉此方塊。"
+        "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此對話方塊。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
+        "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 位聯絡人。若您的檔案超出此限，請將其拆分為較小的檔案。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "拖放各聯絡人以排行合併優次。取消勾選您不欲合併的聯絡人。"
+        "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把您不欲合併、又不欲保留的聯絡人標記作刪除。只有在按下「合併」按鈕時，才會執行刪除"
@@ -1039,15 +1017,15 @@
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "另外，我們亦自動對應了 CSV 欄位到 vCard 欄位。您可以手動複閱並更改此對應。"
+        "另外，我們已將 CSV 自動轉換為 vCard 信息，您可以查看並修改對應關係。"
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的欄位。"
+        "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的内容。"
       ]
     },
     "Disney": {
       "Disney+": [
-        "迪士尼+"
+        "Disney+"
       ]
     },
     "Drive feature": {
@@ -1058,22 +1036,22 @@
         "透過連結分享檔案"
       ],
       "Upload / download files": [
-        "上傳／下載檔案"
+        "上載／下載檔案"
       ]
     },
     "Early Access Disabled": {
       "Off": [
-        "關閉"
+        "關"
       ]
     },
     "Early Access Enabled": {
       "On": [
-        "開啟"
+        "開"
       ]
     },
     "Error": {
       "A group with this name already exists": [
-        "以此為名的群組已存在"
+        "此名稱的群組已存在。"
       ],
       "Amount above the maximum.": [
         "金額高於上限。"
@@ -1085,19 +1063,13 @@
         "認證已取消。"
       ],
       "Authentication error.": [
-        "驗證錯誤。"
+        "認證錯誤。"
       ],
       "Calendar limit reached": [
-        "行事曆數量達到上限"
+        "行事曆數量已達上限"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
-      ],
-      "Can't validate email, try again later": [
-        "無法驗證電子郵件，請稍後再試"
-      ],
-      "Can't validate phone, try again later": [
-        "無法驗證電話號碼，請稍後再試"
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
@@ -1106,7 +1078,7 @@
         "無法儲存聯絡人"
       ],
       "Contact signature not verified": [
-        "聯絡人簽章未驗證"
+        "聯絡人簽章尚未驗證"
       ],
       "Could not find address ${ email }.": [
         "找不到電子郵件地址 ${ email }。"
@@ -1127,10 +1099,10 @@
         "電子郵件無效"
       ],
       "Enter 6 digits": [
-        "請輸入 6 位數字"
+        "請輸入 6 位驗證碼"
       ],
       "Error connecting to the Bitcoin API.": [
-        "連接比特幣 API 時出錯。"
+        "連接比特幣 API 時發生錯誤。"
       ],
       "Failed to download a file": [
         "檔案下載失敗"
@@ -1142,22 +1114,22 @@
         "連結載入失敗"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "檔案「${ item.name }」因為錯誤 ${ error } 無法上傳"
+        "由於“${ error }”錯誤，檔案“${ item.name }”無法上載"
       ],
       "File \"${ name }\" is already downloading": [
-        "檔案 「${ name } 」已可供下載"
+        "檔案 「${ name } 」已在下載中"
       ],
       "File cannot be merged with folder": [
         "檔案無法與資料夾合併"
       ],
       "File has no contents to preview": [
-        "預覽的檔案無內容"
+        "檔案無內容可預覽"
       ],
       "File selection is already downloading": [
-        "選中的檔案已可供下載"
+        "所選檔案已在下載中"
       ],
       "Folder \"${ name }\" is already downloading": [
-        "資料夾「${ name } 」已可供下載"
+        "資料夾「${ name } 」已在下載中"
       ],
       "Folder name cannot be empty": [
         "資料夾名稱不能留空"
@@ -1172,7 +1144,7 @@
         "郵箱密碼不正確。請再試一次"
       ],
       "Incorrect password. Please try again.": [
-        "密碼不正確。請重試。"
+        "密碼不正確。請再試一次。"
       ],
       "Invalid ${ name } code": [
         "${ name }代碼無效"
@@ -1202,82 +1174,82 @@
         "標籤名稱不能留空"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 Proton calendar 合併"
+        "請將至少 ${ calendarToFixCount } 個行事曆與現有的 Proton 行事曆合併"
       ],
       "Missing signature": [
         "簽章遺失"
       ],
       "Name on card required": [
-        "持卡人姓名必須填寫"
+        "必須填寫持卡人姓名"
       ],
       "No data to import": [
-        "沒有匯入任何資料"
+        "沒有要匯入的資料"
       ],
       "No valid address found": [
-        "找不到有效的地址"
+        "未能找到有效地址"
       ],
       "Not a valid number": [
         "號碼無效"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部份聯絡人無電子郵件地址：${ noEmailsContactNamesList }"
+        "某位/部份聯絡人無電子郵件地址：${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
-        "部份群組無聯絡人：${ noContactGroupList }"
+        "某個/部份群組無聯絡人：${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        "未識別組織。再試一次。"
+        "無法識別組織。請再試一次。"
       ],
       "Passwords do not match": [
         "密碼不相符"
       ],
       "Payment process cancelled": [
-        "付款程序已取消"
+        "已取消付款"
       ],
       "Payment process consumed": [
-        "付款程序完成"
+        "已付款"
       ],
       "Payment process failed": [
-        "付款程序失敗"
+        "付款失敗"
       ],
       "Payment process not supported": [
-        "付款程序不支援"
+        "不支援此付款方式"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "請先修正反白的衝突再繼續。"
+        "請先修正已標示的衝突以便繼續。"
       ],
       "Preferences could not be saved": [
-        "無法儲存喜好設定"
+        "無法儲存偏好設定"
       ],
       "Primary address key is not decrypted": [
-        "主要地址金鑰並未被加密"
+        "主要地址金鑰並未被解密"
       ],
       "Primary address key is not decrypted.": [
-        "主要地址金鑰並未被加密。"
+        "主要地址金鑰並未被解密"
       ],
       "Process aborted": [
-        "程序中斷"
+        "處理已中止"
       ],
-      "Request timed out.": [
-        "請求已逾時。"
+      "Request timed out": [
+        "請求逾時"
       ],
       "Signature not verified": [
-        "簽章未驗證"
+        "簽章尚未驗證"
       ],
       "Signature verification failed": [
         "簽章驗證失敗"
       ],
       "Some contacts could not be deleted": [
-        "一些聯絡人未能刪除"
+        "無法刪除部分聯絡人"
       ],
       "Some groups could not be deleted": [
-        "部份群組無法刪除"
+        "無法刪除部份群組"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "其中一些標籤名稱超出 ProtonMail 字數上限。請自訂匯入以編輯這些名稱。"
+        "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        "其中一些資料夾名稱超出 ProtonMail 字數上限。請自訂匯入以編輯這些名稱。"
+        "部分標籤名稱超出 ProtonMail 的字數上限。請自訂匯入內容以編輯該等名稱。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -1286,25 +1258,25 @@
         "分頁已關閉"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您目前使用的瀏覽器不允許付款完全授權。請使用不同的瀏覽器或是從另一台電腦登入。"
+        "您目前使用的瀏覽器無法完成支付認證，請使用其他瀏覽器或透過電腦登入。"
       ],
       "The folder name is too long. Please choose a different name.": [
-        "資料夾名稱太長。請換另一個名稱。"
+        "資料夾名稱太長。請選擇其他名稱。"
       ],
       "The label name is too long. Please choose a different name.": [
-        "標籤名稱太長。請換另一個名稱。"
+        "標籤名稱太長。請選擇其他名稱。"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "能夠被儲值的最低金額是 ${ _price }"
+        "每次儲值的最低金額為 ${ _price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "最低的捐款金額數量是 ${ price }"
+        "每筆捐款的最低金額為 ${ price }"
       ],
       "The minimum payment we accept is ${ _price2 }": [
-        "我們接受的最低付款是 ${ _price2 }"
+        "最低付款額為 ${ _price2 }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "尚未上傳原始檔案的新修訂版本，請稍後再試"
+        "原始檔案的新修訂版本尚未上傳，請稍後再試"
       ],
       "The original file has missing active revision": [
         "原始檔案缺少檔案修訂"
@@ -1316,7 +1288,7 @@
         "原始檔案缺少工作階段金鑰"
       ],
       "The original file is not uploaded yet, please try again later": [
-        "尚未上傳原始檔案，請稍後再試"
+        "原始檔案尚未上傳，請稍後再試"
       ],
       "The original folder not found": [
         "找不到原始資料夾"
@@ -1325,7 +1297,7 @@
         "找不到原始資料夾或檔案"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "您的外部帳號有太多資料夾。請自訂匯入以刪除一些資料夾。"
+        "待匯入帳戶的資料夾過多，請自訂匯入內容並刪除部份資料夾"
       ],
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
@@ -1337,10 +1309,10 @@
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
       "This folder name is not available. Please choose a different name": [
-        "此資料夾名稱無法使用。請換另一個名稱"
+        "此資料夾名稱無法使用。請選擇其他名稱"
       ],
       "This label name is not available. Please choose a different name": [
-        "此標籤名稱無法使用。請換另一個名稱"
+        "此標籤名稱無法使用。請選擇其他名稱"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
@@ -1349,19 +1321,19 @@
         "未知的錯誤"
       ],
       "Unknown payment token status": [
-        "未知的付款符記狀態"
+        "付款狀態不明"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "您不得傳送一封電子郵件給超過 100 個收件人"
+        "您不能將電子郵件傳送給超過100位收件人"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "您不得傳送超過 10 個聯絡人的 vCard"
+        "您不能傳送超過 10 個聯絡人的 vCard"
       ],
       "You must set a name": [
         "您必須設定名稱"
       ],
       "Your browser does not support uploading folders": [
-        "您的瀏覽器不支援上傳資料夾"
+        "您的瀏覽器不支援上載資料夾"
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
@@ -1369,7 +1341,7 @@
     },
     "Error importing calendar": {
       "An unexpected error occurred. Import must be restarted.": [
-        "發生未知的錯誤。匯入必須重新啟動。"
+        "發生未知的錯誤。需重新開始匯入。"
       ]
     },
     "Error importing contact": {
@@ -1377,7 +1349,7 @@
         "加密失敗"
       ],
       "vCard versions < 3.0 not supported": [
-        "vCard 版本 < 3.0 不受支援"
+        "不支援 vCard 3.0 以下版本"
       ]
     },
     "Error importing contacts": {
@@ -1394,7 +1366,7 @@
         "上載您的檔案時發生錯誤。未選取任何檔案。"
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。"
+        "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_CONTACTS_STRING } 位聯絡人。"
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "您的檔案 ${ formattedFilename } 沒有任何聯絡人可供匯入。"
@@ -1408,7 +1380,7 @@
         "存取被拒"
       ],
       "Brace yourself till we get the error fixed.": [
-        "不好意思，這個錯誤有待修正。我們就去處理一下。"
+        "不好意思，這個錯誤有待修正。我們將會處理。"
       ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
@@ -1426,7 +1398,7 @@
         "請${ refresh }或檢查您的連線。"
       ],
       "There was a problem connecting to Proton.": [
-        "連線到 Proton 時發生問題。"
+        "連線至 Proton 時發生問題。"
       ],
       "You may also ${ refresh } or try again later.": [
         "您亦可${ refresh }或稍後再試一次。"
@@ -1442,7 +1414,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "未選取影像"
+        "未選取任何圖片"
       ]
     },
     "file size format": {
@@ -1471,7 +1443,7 @@
     },
     "Group": {
       "Account": [
-        "帳號"
+        "帳戶"
       ],
       "Apps": [
         "應用程式"
@@ -1488,7 +1460,7 @@
     },
     "Header": {
       "Contacts": [
-        "聯絡人"
+        "通訊錄"
       ],
       "Contacts, groups and settings": [
         "聯絡人、群組和設定"
@@ -1499,7 +1471,7 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "找到 ${ items.length } 筆建議，請使用鍵盤導覽。"
+        "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
@@ -1507,7 +1479,7 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "驗證碼"
       ],
       "Email": [
         "電子郵件"
@@ -1519,7 +1491,7 @@
         "沒有可用的驗證方法"
       ],
       "SMS": [
-        "簡訊"
+        "短訊"
       ]
     },
     "Import calendar": {
@@ -1534,10 +1506,10 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } 個聯絡人已加密並新增到您的聯絡人清單"
+        "${ totalImported }/${ totalToImport } 個聯絡人已加密並新增至您的通訊錄"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "加密及新增您的聯絡人時發生錯誤。無法匯入任何聯絡人。"
+        "加密及新增聯絡人時發生錯誤。無法匯入任何聯絡人。"
       ]
     },
     "Import contact error": {
@@ -1547,7 +1519,7 @@
     },
     "Import contact groups info": {
       "${ totalContacts } contact": [
-        "${ totalContacts } 個聯絡人"
+        "${ totalContacts } 位聯絡人"
       ]
     },
     "Import contact. Contact identifier": {
@@ -1557,10 +1529,10 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密及新增您的聯絡人時發生錯誤。${ totalToImport } 個聯絡人之中，有 ${ totalImported } 個已成功匯入。"
+        "加密及新增聯絡人時發生錯誤。${ totalImported }/${ totalToImport } 聯絡人已成功匯入。"
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "聯絡人已成功匯入。已匯入的聯絡人現將顯示於聯絡人清單中。"
+        "聯絡人已成功匯入。已匯入的聯絡人現將顯示於通訊錄中。"
       ]
     },
     "Import contacts warning": {
@@ -1578,10 +1550,10 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContacts } 個聯絡人之中，有 ${ totalContactsDiscarded } 個將不會匯入。按一下以取得詳細資料"
+        "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
       ],
       "No contact can be imported. Click for details": [
-        "無聯絡人可供匯入。按一下以取得詳細資料"
+        "無聯絡人可供匯入。點擊以查看詳細資料"
       ]
     },
     "Info": {
@@ -1592,28 +1564,28 @@
         "${ activeDownloadsCount } 個下載任務執行中(${ downloadProgress } ％)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } 個任務上傳中（${ uploadProgress } ％）"
+        "${ activeUploadsCount } 個任務上載中（${ uploadProgress } ％）"
       ],
       "${ addressCount } email address": [
         "${ addressCount } 個電子郵件地址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } 需要您的權限以 ${ enableDesktopNotifications }。"
+        "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } 個合併的行事曆"
+        "${ calendarsToBeMerged } 個合併行事曆"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } 個合併的行事曆"
+        "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } 個任務已取消"
       ],
       "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } 個成員"
+        "${ contactEmailsLength } 位成員"
       ],
       "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
         "${ contactName } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
@@ -1622,7 +1594,7 @@
         "${ contactName } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
       ],
       "${ contactsCount } contact found": [
-        "找到 ${ contactsCount } 個聯絡人"
+        "找到 ${ contactsCount } 位聯絡人"
       ],
       "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
         "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
@@ -1631,13 +1603,13 @@
         "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
       ],
       "${ doneCount } finished": [
-        "${ doneCount } 任務已完成"
+        "${ doneCount } 項已完成"
       ],
       "${ doneDownloadsCount } downloaded": [
         "已完成 ${ doneDownloadsCount } 個下載任務"
       ],
       "${ doneUploadsCount } uploaded": [
-        "已完成 ${ doneUploadsCount } 個上傳任務"
+        "已完成 ${ doneUploadsCount } 個上載任務"
       ],
       "${ errorCount } failed": [
         "${ errorCount } 個任務失敗"
@@ -1649,7 +1621,7 @@
         "${ mailAppName } 免費版"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional 以一個使用者起計，按每一使用者新增 5 GB 和 5 個電子郵件地址作整個組織之用。"
+        "${ mailAppName } Professional 以一位使用者起計，每新增一位使用者，會為整個組織格外添加 5 GB 和 5 個電子郵件地址。"
       ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } 和 ${ nameOfLast }"
@@ -1685,7 +1657,7 @@
         "${ speed }/秒"
       ],
       "${ updated } contact updated successfully.": [
-        "${ updated } 個聯絡人已成功更新。"
+        "已成功更新 ${ updated } 位聯絡人。"
       ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } 已經存在此位置。"
@@ -1697,13 +1669,13 @@
         "(${ memberCount } 位成員)"
       ],
       "(Mail + VPN)": [
-        "（郵件 + VPN）"
+        "(郵件 + VPN)"
       ],
       "* Customizable features": [
         "* 自訂化功能"
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } 隨贈儲存空間"
+        "+${ bonusSpace } 額外存儲空間"
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 個 ProtonVPN 連線（讓您可以將更多裝置連上 VPN）"
@@ -1715,7 +1687,7 @@
         "30 天退款保證。"
       ],
       "A free and uncensored Internet should be available to all.": [
-        "每一個人都該可使用免費而不受審查的網際網路。"
+        "每一個人都應當享有網路自由，免受網際網路審查。"
       ],
       "A number will be added to the filename": [
         "將在檔案名稱中新增數字"
@@ -1724,31 +1696,31 @@
         "將在資料夾名稱中新增數字"
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "無論您身在何處，都可以存取被封鎖的內容，如社群媒體、新聞、維基百科、YouTube 與更多其他東西。"
+        "無論您身在何處，都可以存取被封鎖的內容，如社群媒體、新聞、維基百科、YouTube 以及更多。"
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "無論您身在何處，都可以存取您的串流服務，如 ${ netflix }、${ disney }、${ primeVideo } 與 ${ many }。"
+        "無論您身在何處，都可以存取您的串流服務，如 ${ netflix }、${ disney }、${ primeVideo } 以及 ${ many } 等。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "由於有帳單未付，因此帳號存取已受限制。請聯絡您的系統管理員。"
+        "由於有帳單仍未繳付，因此帳戶存取已受限制。請聯絡您的系統管理員。"
       ],
       "Account successfully updated": [
-        "帳號已成功更新"
+        "帳戶已成功更新"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
-        "為您的帳號新增額外的電子郵件地址，例如 user2@protonmail.com"
+        "為您的帳戶新增額外的電子郵件地址，例如 user2@protonmail.com"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "此電子郵件地址已啟用以受信任的金鑰驗證地址。若要寄送到此電子郵件地址，請首先信任可用於寄送的公開金鑰。"
+        "此電子郵件地址已啟用以受信任的金鑰驗證地址。若要傳送到此電子郵件地址，請首先信任可用於傳送的公開金鑰。"
       ],
       "Addresses": [
         "電子郵件地址"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "在進行您的比特幣付款後，請隨著下面的指示來升級。"
+        "進行比特幣付款後，請依照下列指示來升級。"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "全部（${ totalFoldersCount } 資料夾）"
+        "全部 (${ totalFoldersCount } 個資料夾)"
       ],
       "All (${ totalFoldersCount } label)": [
         "全部 (${ totalFoldersCount } 個標籤)"
@@ -1757,7 +1729,7 @@
         "讓您在 ${ mailAppName } 上為自己的網域託管電子郵件，例如 john.smith@example.com"
       ],
       "Amount below minimum (${ amount }).": [
-        "金額低於最小值 (${ amount })。"
+        "金額太少 (${ amount })。"
       ],
       "An active recovery file": [
         "作用的還原檔案"
@@ -1766,7 +1738,7 @@
         "和"
       ],
       "Anyone with this link can access your file.": [
-        "任何人憑此連結均可存取您的檔案。"
+        "任何人擁有此連結均可存取您的檔案。"
       ],
       "Anyone with this link can access your folder.": [
         "任何人憑此連結均可存取您的資料夾。"
@@ -1777,23 +1749,20 @@
       "Are you sure you want to permanently delete selected item from trash?": [
         "您確定要從垃圾桶中永久刪除選取的項目嗎？"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
-      ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "由於${ appName } 是端到端加密的，因此我們無法為您解密或存取您的資料。為了確保密碼重設後您仍能解鎖雲端硬碟，您必須具備以下條件之一："
       ],
       "Billed as ${ billedPrice } every 2 years": [
-        "以每 2 年 ${ billedPrice } 扣帳"
+        "以每兩年 ${ billedPrice } 購買"
       ],
       "Billed as ${ billedPrice } per year": [
-        "以每年 ${ billedPrice } 扣帳"
+        "以每年 ${ billedPrice } 購買"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "在您目前的付款週期結束時扣帳 (於 ${ renewalDate } 續期)"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "比特幣交易記錄可能需要一段時間才能確認（最多24小時）。一旦確認，我們將儲值到您的帳戶。交易確認後，您可用儲值餘額支付您的發票。"
+        "比特幣交易或需時確認 (可長達24小時)。一旦確認，金額將儲值至撥入您的帳戶。交易確認後，您即可使用儲值餘額繳付賬單。"
       ],
       "Black Friday 2018 applied to your subscription": [
         "您的訂閱已享用 2018 黑色星期五優惠"
@@ -1805,25 +1774,25 @@
         "已享用 2020 黑色星期五迎新折扣"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "降級到免費計畫，您將永久失去這些好處，即便您未來再次升級也一樣。"
+        "一旦降級至免費方案，即使您今後再次付款升級，您也將永久失去這些福利。"
       ],
       "Canceled": [
         "已取消"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "記不起您的密碼嗎？我們可幫助您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
+        "忘記密碼？我們可幫助您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
       "Checking contact ${ progress } of ${ max }...": [
-        "正在檢查 ${ progress } 個 (共 ${ max } 個) 聯絡人..."
+        "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電子郵件地址不正確，請按一下「編輯」作出修正。"
+        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此電子郵件地址不正確，請按一下「編輯」作出修正。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
+        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此電話號碼不正確，請按一下「編輯」作出修正。"
       ],
       "Close this screen to exit.": [
-        "關閉此螢幕來離開。"
+        "關閉此畫面以離開。"
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "關閉轉移管理員將取消所有進行中的轉移，您確定要這樣做嗎？"
@@ -1835,7 +1804,7 @@
         "連線"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        "繼續使用 ${ appName } 並在稍後解鎖硬碟"
+        "繼續使用 ${ appName } 並在稍後解鎖雲端硬碟"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "建立 ${ calendarsToBeCreated } 個新行事曆"
@@ -1847,10 +1816,10 @@
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
       ],
       "Create a new contact group": [
-        "建立新的聯絡人群組"
+        "建立新聯絡人群組"
       ],
       "Create in": [
-        "建立在"
+        "建立於"
       ],
       "Create links and share your files with others.": [
         "建立連結並與其他人分享您的檔案。"
@@ -1859,10 +1828,10 @@
         "建立您的第一個資料夾，並開始移動您的檔案。"
       ],
       "Creating link to file": [
-        "建立檔案的連結"
+        "正在建立檔案連結"
       ],
       "Creating link to folder": [
-        "資料夾的連結建立中"
+        "正在建立資料夾連結"
       ],
       "Creating share": [
         "正在建立分享"
@@ -1880,7 +1849,7 @@
         "網域"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "現在就下載您最愛的應用程式，隱私隨身帶著走。"
+        "立即下載您最喜愛的應用程序，隨時隨地保護隱私。"
       ],
       "Downloaded": [
         "已下載"
@@ -1889,70 +1858,70 @@
         "正在下載"
       ],
       "Drag and drop a file here or choose to upload.": [
-        "把檔案拖放到此處，或選擇上載。"
+        "拖放檔案到此處上載，或選擇您要上載的檔案。"
       ],
       "Drop the file here to upload": [
-        "拖放檔案到此處上載"
+        "拖曳檔案到此處上載"
       ],
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
       "Each additional connection can be assigned to users in your organization.": [
-        "每一額外連線可指派給您的組織中的使用者。"
+        "每一個額外購買的連線均可指派給您組織中的使用者。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "請輸入發送到 ${ destinationText } 的驗證碼。"
+        "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
       ],
       "Expired": [
-        "已過期"
+        "已失效"
       ],
       "Failed": [
-        "已失敗"
+        "失敗"
       ],
       "Failed to generate a secure link. Try again later.": [
         "無法產生安全連結，請稍後再試。"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "開啟安全鏈結失敗。原因：${ error }"
+        "開啟安全連結失敗。原因：${ error }"
       ],
       "File will not be uploaded": [
-        "檔案將不會被上傳"
+        "檔案將不會被上載"
       ],
       "Finalizing": [
-        "正在完成"
+        "即將完成"
       ],
       "Folder contents will merge into a single folder": [
         "資料夾內容將合併為單一個資料夾"
       ],
       "Folder will not be uploaded": [
-        "資料夾將不會被上傳"
+        "資料夾將不會被上載"
       ],
       "For families and small teams; includes both Mail and VPN.": [
-        "對於家庭成員與小型團隊；同時包含了郵件與 VPN。"
+        "適用於家庭與小型團隊; 已包含郵件與 VPN。"
       ],
       "For getting started with private and secure emailing.": [
-        "開始使用私密又安全的電郵服務"
+        "適合初次使用私密且安全的電子郵件服務的新手。"
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "適用於需要有進階保護的全功能電子郵件信箱的個人。"
+        "適用於需要具有進階保護的全功能電子郵件信箱的個人。"
       ],
       "For professionals that need secure business communications.": [
-        "適用於需要安全可靠商務通訊的專業人士"
+        "適用於需要安全商務通訊的專業人士。"
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "對於 Visa 與 MasterCard 信用卡而言，所指的是卡背的 3 位數字。而 American Express 信用卡則是卡面的 4 位數字。"
+        "若閣下使用的是Visa 或 MasterCard 信用卡，請輸入卡片背面的 3 位數字; 若閣下使用的是 American Express 信用卡，請輸入卡面的 4 位數字。"
       ],
       "Free up some space or add more storage space.": [
-        "請清空部分空間或增加更多儲存空間。"
+        "請釋放部分空間或增加更多儲存空間。"
       ],
       "Free up some space or contact your administrator.": [
-        "請清空部分空間或聯絡您的系統管理員。"
+        "請釋放部分空間或聯絡您的系統管理員。"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "全功能的 VPN，速度高達 10 Gbps。"
       ],
       "Go to \"My files\" and upload some files first.": [
-        "到「我的檔案」然後先上傳一些檔案。"
+        "請先前往「我的檔案」，並上載一些檔案。"
       ],
       "Group assignment applied": [
         "已套用群組分配"
@@ -1961,16 +1930,16 @@
         "這裡"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
+        "若您在建立帳戶時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "如果您相信這是錯的，請聯絡我們 ${ contactLink }。"
+        "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
+        "若您在收件匣中找不到該電子郵件，請查看「垃圾郵件」資料夾。"
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "如下列方案中有一個可用，請到 Proton 帳號設定開始您的解鎖程序。"
+        "如下列方案中有一個可用，請前往 Proton 帳戶設定開始您的解鎖程序。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -1985,7 +1954,7 @@
         "匯入進行中"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
+        "正在把你的資料從 ${ importedEmailAddress } 匯入至 ${ toEmail }。"
       ],
       "Included": [
         "已包含"
@@ -1996,8 +1965,8 @@
       "Initializing": [
         "正在初始化"
       ],
-      "Internet connection lost.": [
-        "網際網路連線中斷。"
+      "Internet connection lost": [
+        "網際網路連線中斷"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "網際網路連線中斷。請檢查裝置的連線狀態。"
@@ -2012,16 +1981,16 @@
         "金鑰指紋"
       ],
       "Large imports can take several days.": [
-        "大型匯入可能要數天才能完成。"
+        "大量匯入或需時數天完成。"
       ],
       "Learn more": [
-        "瞭解更多"
+        "了解更多"
       ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
       "Link expires: ": [
-        "連結有效期至： "
+        "連結有效期至: "
       ],
       "Loading": [
         "正在載入"
@@ -2039,7 +2008,7 @@
         "正在載入分享"
       ],
       "Merged": [
-        "合併"
+        "已合并"
       ],
       "More": [
         "更多"
@@ -2084,13 +2053,13 @@
         "無法預覽"
       ],
       "No results found": [
-        "查無結果"
+        "找不到相符的結果"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "所有上傳的金鑰都無法用於加密。加密將會自動停用。"
+        "所有已上載的金鑰都無法用於加密。加密將會自動停用。"
       ],
       "Not customizable": [
-        "不能自訂"
+        "無法自訂"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "備註：資料將會持續在安裝 ${ appName } 的裝置上保持可用狀態。"
@@ -2102,61 +2071,61 @@
         "，共"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "您的其中一個加密硬碟被鎖定。這很可能是因為近期的密碼重設。${ BrElement }\n${ BrElement }\n${ questionText }"
+        "您的其中一個加密雲端硬碟已被鎖定。這很可能是由於近期密碼重設所導致的。${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有當您使用 PGP 寄送給非 ProtonMail 收件人時，才需修改這些設定。"
       ],
       "Only the people with the link and the password can access this file.": [
-        "僅有知道連結與密碼的人才能存取此檔案。"
+        "僅同時擁有連結與密碼的人才能存取此檔案。"
       ],
       "Only the people with the link and the password can access this folder.": [
-        "僅有知道連結與密碼的人才能存取此資料夾。"
+        "僅同時擁有連結與密碼的人才能存取此檔案。"
       ],
       "Paused": [
         "已暫停"
       ],
       "Payment can take a few minutes to fully verify.": [
-        "付款可能需要數分鐘才能完全驗證。"
+        "付款驗證或需時數分鐘才能完成。"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "支付受 TLS 加密及瑞士隱私法律保護。"
+        "付款受到 TLS 加密及瑞士隱私法律保障。"
       ],
       "Permanently delete all files in your drive": [
         "永久刪除雲端硬碟中所有文件"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署加密的郵件。"
+        "「PGP/內嵌」僅與「純文字」格式相容。請注意：ProtonMail 一律簽署所有加密郵件。"
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "「PGP/MIME」自動使用目前撰寫器模式寄送郵件。請注意：ProtonMail 一律簽署加密的郵件。"
+        "「PGP/MIME」自動使用目前撰寫器模式傳送郵件。請注意：ProtonMail 一律簽署所有加密郵件。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "請注意：指派到此群組中的電子郵件地址不會被刪除。"
+        "請注意：指派到此群組中的電子郵件地址將不會被刪除。"
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "請注意：此過程或需時，視乎您的通訊錄大小而定。"
+        "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
+        "請注意，點擊確認按鈕後，您的帳戶儲值餘額將剩餘 ${ creditsRemaining }。"
       ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "請重試一次，使用不同的付款方式，或是聯絡你的銀行來協助。"
+        "請重試一次，您也可嘗試其他付款方式，或聯絡你的銀行尋求協助。"
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "請重試一次，使用不同的付款方式，或是聯絡 PayPal 來協助。"
+        "請重試一次，您也可嘗試其他付款方式，或聯絡PayPal尋求協助。"
       ],
       "Please verify payment at the new tab which was opened.": [
-        "請在開啟的新分頁中驗證付款。"
+        "請在剛開啟的新分頁中驗證卡片。"
       ],
       "Please verify the card in the new tab which was opened.": [
-        "請在開啟的新分頁中驗證卡片。"
+        "請在剛開啟的新分頁中驗證卡片。"
       ],
       "Please verify the payment in the new tab.": [
-        "請在新分頁驗證付款。"
+        "請在新分頁中驗證付款。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
@@ -2165,7 +2134,7 @@
         "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
       ],
       "Preparing link to file": [
-        "準備檔案的連結"
+        "檔案連結準備中"
       ],
       "Preparing link to folder": [
         "資料夾連結準備中"
@@ -2177,7 +2146,7 @@
         "主要"
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus 限於一個使用者，儲存空間以 5 GB 起計。"
+        "ProtonMail Plus 限於一位使用者，儲存空間以 5 GB 起計。"
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
         "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 包括 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 個 VPN 連線。"
@@ -2201,28 +2170,28 @@
         "已附加的螢幕截圖"
       ],
       "Select an uploaded file and create a link to it.": [
-        "選取已上傳的檔案並為其建立連結。"
+        "選取已上載的檔案並為其建立連結。"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
+        "請選擇向該電子郵件地址傳送時的預設格式"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "選取哪些行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
+        "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
-      "Session timed out.": [
-        "工作階段已逾時。"
+      "Session timed out": [
+        "工作階段已逾時"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者寄送端對端加密的電子郵件。"
+        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者傳送端對端加密的電子郵件。"
       ],
       "Share files with links": [
-        "以連結分享檔案"
+        "透過連結分享檔案"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "因為您是忠誠老朋友，特別為您的帳號啟用附加功能。"
+        "為答謝您的長期支持和厚愛，我們特別為您的帳戶啟用額外功能。"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您有部份檔案不再能夠存取。請為您的檔案還原存取。${ StartRecoveryButton }"
@@ -2231,7 +2200,7 @@
         "發生錯誤，請稍後再試。"
       ],
       "Starter VPN service with P2P support.": [
-        "初階 VPN 服務，搭配 P2P 支援。"
+        "支援 P2P 的入門級VPN服務。"
       ],
       "Storage GB": [
         "儲存空間 GB"
@@ -2249,28 +2218,28 @@
         "感謝您支持我們的使命。"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "應用程式需要在本機先解密您的聯絡人，然後才匯出。過程結束時，將會產生一個 VCF 檔案以供您下載。"
+        "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
       ],
       "There are no files yet": [
         "目前還沒有任何檔案"
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "因為可能違反政策，因此這個已被暫時停用。"
+        "此帳號可能因違反政策而遭停用。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "此電子郵件地址已停用。若要寄送到此電子郵件地址，請其擁有者首先啟用此電子郵件地址。"
+        "此電子郵件地址已停用。若要傳送到此電子郵件地址，請其擁有者首先啟用此電子郵件地址。"
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載檔案。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
+        "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
+        "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "此連結是在先前的版本中建立的，\n且無法修改。 刪除此連結並同時建\n立新連結以變更設定。"
+        "此連結於先前版本中建立，且無法修改。請刪除此連結並建立新連結以變更設定。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此連結將會永久停用。無人將可憑此連結存取您的檔案。若要重新分享此檔案，您將需要一個新的連結。"
@@ -2282,25 +2251,25 @@
         "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "這將會啟用 PayPal 以支付您的 Proton 訂閱。我們將會把您在新瀏覽器分頁中重新導向至 PayPal。如果您使用了任何彈出式視窗攔截程式，請停用以繼續。"
+        "完成此操作後，您將可以使用 PayPal 繳付您的 Proton 訂閱。我們將於新分頁中把您重新導向至 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用以繼續。"
       ],
       "This will overwrite the existing file": [
-        "這將會覆寫既有的檔案"
+        "這將會覆寫現有的檔案"
       ],
       "This will overwrite the existing folder": [
-        "這將會覆寫既有的資料夾"
+        "這將會覆寫現有的資料夾"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "為防止垃圾郵件及濫用，請驗證您是真人。"
+        "為防止垃圾郵件及濫用行為，請驗證您是真人。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
+        "若要重新簽署您的聯絡人，我們需要依照您的帳戶中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "若要恢復您的資料，您需要重新啟用在資料建立時所使用的聯絡人加密金鑰。您必須記得該金鑰產生時所使用的密碼。"
+        "若要恢復您的資料，您需要重新啟用在資料建立時所使用的聯絡人加密金鑰。該過程需提供金鑰產生時所使用的密碼。"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "如要使用地址驗證，您必須信任一或多個可用的公開金鑰，包括您想用於寄送的公開金鑰。這樣做是為了防止加密金鑰遭到偽造。"
+        "若要使用電子郵件驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電子郵件的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "已取消檔案「${ name }」的傳輸"
@@ -2336,31 +2305,34 @@
         "使用者"
       ],
       "Verification can take a few minutes.": [
-        "驗證需要幾分鐘的時間。"
+        "驗證或需時數分鐘。"
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "驗證將會開啟新分頁，請停用所有彈出式視窗攔截程式。"
+        "驗證將於新分頁中進行，請停用所有彈出式視窗攔截程式。"
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "驗證將會開啟新分頁，請停用所有彈出式視窗攔截程式。您將不會被收費。任何用於驗證卡片的金額都會馬上退還。"
+        "驗證將於新分頁中進行，請停用所有彈出式視窗攔截程式。您將不會被收費。驗證結束後所用金額將立即退還。"
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } 組合，專為家庭和小企業而設。"
       ],
       "We use 3-D Secure to protect your payments.": [
-        "我們使用 3-D Secure 保障您的付款。"
+        "我們使用 3-D Secure 以保障您的付款安全。"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "我們將會把您在新瀏覽器分頁中重新導向至 PayPal 以完成此交易。如果您使用了任何彈出式視窗攔截程式，請停用以繼續。"
+        "我們將於新分頁中把您重新導向至 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用以繼續。"
       ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
       "Week": [
         "週"
       ],
       "What do you want to do?": [
-        "您打算怎麼做？"
+        "您想要做什麼？"
       ],
       "What do you want to import from your Google account?": [
         "您想要從你的 Google 帳戶匯入什麼資料？"
@@ -2369,7 +2341,10 @@
         "您想要做什麼？"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "您想要接收新的驗證碼，還是換一個驗證方法？"
+        "您想要接收新的驗證碼，還是更換驗證方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        "您想要收到新的驗證碼嗎？"
       ],
       "Would you like to restore your files?": [
         "您要還原您的檔案嗎？"
@@ -2378,70 +2353,70 @@
         "是"
       ],
       "You are about to open another browser tab and visit:": [
-        "您即將開啟另一瀏覽器索引標籤並造訪："
+        "您即將開啟新分頁並造訪："
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
-        "您目前已登入為 ${ user.Name } (${ user.Email })，帳號的存取受限。"
+        "您目前已登入為 ${ user.Name } (${ user.Email })，且帳戶存取受限。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        "你也可以將匯入的行事曆與現有的 Proton calendars 合併。"
+        "您亦可將匯入的行事曆與現有的 Proton 行事曆合併。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "您可以開啟通知，以便在新的電子郵件訊息抵達此資料夾時收到提示。"
+        "您可以啟用通知功能，以便在新的電子郵件訊息送達此資料夾時收到通知。"
       ],
       "You cannot undo this action.": [
-        "此動作無法復原。"
+        "此操作無法復原。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "您必須有信用卡或連結到您的 PayPal 帳號的銀行帳戶，才能將其新增為付款方式。"
+        "您的 PayPal 帳戶須先綁定信用卡或銀行帳戶，才能新增為付款方式。"
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
+        "您需要在 PayPal 帳戶中綁定信用卡或銀行帳戶，如果您沒有綁定，請點擊下方按鈕。"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "您必須先移除所有額外的行事曆與任何已共享的行事曆連結，才能取消您的訂閱。${ linkButton }"
+        "您必須先移除所有額外的個人日曆與任何已分享的日曆連結，然後才能取消您的訂閱。${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的儲存空間容量已達到 ${ spaceDisplayed }%。${ freeUpMessage }${ upgradeLink }"
+        "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
-        "你將很快地重導到你的銀行去驗證付款"
+        "您即將會被導向至您的銀行驗證您的付款。"
       ],
       "You will lose all unsaved changes.": [
-        "您所有未儲存的變更將會消失。"
+        "您將會失去所有未儲存的變更。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "您將很快地重導到 PayPal 去驗證您的付款。"
+        "您即將會被導向至 PayPal 驗證您的付款。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
+        "您的帳戶至少有一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "您的帳號有至少一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
+        "您的帳戶至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "您的帳號正在升級，請稍候最多 30 秒。"
       ],
       "Your account will be updated once the payment is cleared.": [
-        "付款一結算完成，您的帳號將會升級。"
+        "付款完成後，您的帳戶將會升級。"
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
-        "你的銀行為了安全的理由要求使用 3-D 安全驗證"
+        "為確保安全，您的發卡銀行要求您進行 3-D Secure 驗證。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "你的資料已經準備好從 ${ importedEmailAddressStrong } 匯入你的 Proton 帳戶。"
+        "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 Proton 帳戶。"
       ],
       "Your download has been canceled.": [
-        "您的下載已被取消。"
+        "您的下載已取消。"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的電子郵件只會用於此一次驗證。"
+        "您的電子郵件只會用於此一次性驗證。"
       ],
       "Your file failed to download.": [
         "您的檔案下載失敗。"
@@ -2450,10 +2425,10 @@
         "您的檔案已完成下載。"
       ],
       "Your file is being downloaded.": [
-        "您的檔案已下載。"
+        "正在下載您的檔案。"
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "由於重設過密碼，您無法存取您的檔案。請再次上傳舊的加密金鑰以重新存取您的檔案。 ${ KeyReactivationButton }"
+        "由於密碼重設，您無法存取您的檔案。請再次上傳舊的加密金鑰以重新存取您的檔案。 ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "您的檔案將經加密後儲存。"
@@ -2465,16 +2440,16 @@
         "您的資料夾已完成下載。"
       ],
       "Your folder is being downloaded.": [
-        "您的資料夾已下載。"
+        "正在下載您的資料夾。"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "您的電話號碼只會用於此一次驗證。"
+        "您的電話號碼只會用於此一次性驗證。"
       ],
       "Your previous password": [
         "您先前的密碼"
       ],
       "Your previous recovery phrase": [
-        "您先前的還原短語"
+        "您先前的恢复短語"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
@@ -2493,22 +2468,22 @@
         "自訂化功能"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail 不能用作大量寄件或發佈垃圾郵件。正當的電子郵件則不受限制。"
+        "ProtonMail 不得用於大量郵寄或傳送垃圾郵件。正當的電子郵件則不受限制。"
       ]
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "請寄送電子郵件到 ${ email } 聯絡我們，以索取以現金支付給我們的相關指示。"
+        "請聯絡我們的 ${ email } 以了解如何使用現金支付。"
       ]
     },
     "Info on errors": {
       "Click for details": [
-        "按一下以取得詳細資料"
+        "點擊以查看詳細資料"
       ]
     },
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
-        "多個聯絡人看似一樣。${ mergeAction }"
+        "多位聯絡人重複。${ mergeAction }"
       ]
     },
     "information": {
@@ -2518,16 +2493,16 @@
     },
     "Key badge": {
       "Expired": [
-        "過期"
+        "已失效"
       ],
       "Primary": [
         "主要"
       ],
       "Revoked": [
-        "撤銷"
+        "已撤銷"
       ],
       "Trusted": [
-        "信任"
+        "已信任"
       ],
       "Verification only": [
         "僅用於驗證"
@@ -2536,197 +2511,12 @@
         "WKD"
       ]
     },
-    "Keyboard shortcut name": {
-      "Add encryption": [
-        "新增加密"
-      ],
-      "Add expiration time": [
-        "新增到期時間"
-      ],
-      "Apply / open": [
-        "套用 / 開啟"
-      ],
-      "Attach file": [
-        "附加檔案"
-      ],
-      "Cancel / close": [
-        "取消 / 關閉"
-      ],
-      "Close draft": [
-        "關閉草稿"
-      ],
-      "Create filter with...": [
-        "建立篩選器為..."
-      ],
-      "Delete permanently": [
-        "永久刪除"
-      ],
-      "Discard draft": [
-        "捨棄草稿"
-      ],
-      "Expand / contract composer": [
-        "展開 / 收合撰寫器"
-      ],
-      "Forward": [
-        "轉寄"
-      ],
-      "Go to All Mail": [
-        "前往 [所有郵件]"
-      ],
-      "Go to Archive": [
-        "前往 [封存]"
-      ],
-      "Go to Drafts": [
-        "前往 [草稿]"
-      ],
-      "Go to Inbox": [
-        "前往 [收件匣]"
-      ],
-      "Go to Sent": [
-        "前往 [已傳送]"
-      ],
-      "Go to Spam": [
-        "前往 [垃圾郵件]"
-      ],
-      "Go to Starred": [
-        "前往 [已加星號]"
-      ],
-      "Go to Trash": [
-        "前往 [垃圾桶]"
-      ],
-      "Jump to first": [
-        "跳到第一個"
-      ],
-      "Jump to last": [
-        "跳到最後一個"
-      ],
-      "Label as...": [
-        "加上標籤..."
-      ],
-      "Load embedded images": [
-        "載入內嵌圖片"
-      ],
-      "Load remote content": [
-        "載入遠端內容"
-      ],
-      "Mark as unread": [
-        "標記為未讀"
-      ],
-      "Minimize / maximize composer": [
-        "最小化 / 最大化撰寫器"
-      ],
-      "Move down": [
-        "往下移"
-      ],
-      "Move left / collapse": [
-        "往左移 / 收合"
-      ],
-      "Move right / expand": [
-        "往右移 / 展開"
-      ],
-      "Move to Archive": [
-        "移動到 [封存]"
-      ],
-      "Move to Inbox": [
-        "移動到 [收件匣]"
-      ],
-      "Move to Spam": [
-        "移動到 [垃圾郵件]"
-      ],
-      "Move to Trash": [
-        "移動到 [垃圾桶]"
-      ],
-      "Move to...": [
-        "移動到..."
-      ],
-      "Move up": [
-        "往上移"
-      ],
-      "New message": [
-        "新郵件"
-      ],
-      "Open next message": [
-        "開啟下一封郵件"
-      ],
-      "Open previous message": [
-        "開啟上一封郵件"
-      ],
-      "Open this modal": [
-        "開啟此方塊"
-      ],
-      "Reply": [
-        "回覆"
-      ],
-      "Reply all": [
-        "回覆所有人"
-      ],
-      "Save draft": [
-        "儲存草稿"
-      ],
-      "Search": [
-        "搜尋"
-      ],
-      "Select / unselect": [
-        "選取 / 取消選取"
-      ],
-      "Select / unselect all": [
-        "全選 / 取消全選"
-      ],
-      "Send email": [
-        "傳送電子郵件"
-      ],
-      "Show all emails": [
-        "顯示所有電子郵件"
-      ],
-      "Show original message": [
-        "顯示原始郵件"
-      ],
-      "Show unread emails": [
-        "顯示未讀電子郵件"
-      ],
-      "Star": [
-        "加上星號"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Action shortcuts": [
-        "動作快捷鍵"
-      ],
-      "Basic actions": [
-        "基本動作"
-      ],
-      "Basic navigation": [
-        "基本導覽"
-      ],
-      "Composer shortcuts": [
-        "撰寫器快捷鍵"
-      ],
-      "Folder shortcuts": [
-        "資料夾捷徑"
-      ],
-      "List shortcuts": [
-        "列表快捷鍵"
-      ],
-      "Message shortcuts": [
-        "郵件快捷鍵"
-      ]
-    },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "關閉"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "開啟"
-      ]
-    },
     "Label": {
-      "(Coming soon)": [
-        "（即將推出）"
-      ],
       "(Expired)": [
-        "（已過期）"
+        "(已失效)"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(暫時無法使用。請稍後再試。)"
       ],
       "Active": [
         "啟用"
@@ -2735,7 +2525,7 @@
         "新增電子郵件地址"
       ],
       "Add image URL": [
-        "新增圖片 URL"
+        "新增圖片網址"
       ],
       "Add to group": [
         "新增至群組"
@@ -2765,10 +2555,10 @@
         "瀏覽器版本"
       ],
       "BTC address:": [
-        "BTC 位址："
+        "比特幣地址："
       ],
       "BTC amount:": [
-        "BTC 數量："
+        "比特幣金額："
       ],
       "Calendars": [
         "行事曆"
@@ -2780,7 +2570,7 @@
         "持卡人"
       ],
       "Card number": [
-        "信用卡號"
+        "信用卡卡號"
       ],
       "Cash": [
         "現金"
@@ -2791,11 +2581,14 @@
       "City": [
         "城市"
       ],
+      "Code is 6 digits without spaces": [
+        "驗證碼為六位數且無空格"
+      ],
       "Completed": [
         "已完成"
       ],
       "Contacts": [
-        "聯絡人"
+        "通訊錄"
       ],
       "Copy": [
         "複製"
@@ -2836,17 +2629,14 @@
       "Enter organization name to confirm": [
         "輸入組織名稱以確認"
       ],
-      "Enter the 6-digit code": [
-        "請輸入 6 位數代碼"
-      ],
       "Expired": [
-        "已過期"
+        "已失效"
       ],
       "Expires": [
-        "到期日"
+        "有效期限"
       ],
       "Expiry date": [
-        "到期日"
+        "有效日期"
       ],
       "Export contacts": [
         "匯出聯絡人"
@@ -2873,7 +2663,7 @@
         "資料夾名稱"
       ],
       "From: ${ importedEmail }": [
-        "寄件人：${ importedEmail }"
+        "寄件者：${ importedEmail }"
       ],
       "Get your own ${ appName }": [
         "取得您的 ${ appName }"
@@ -2882,7 +2672,7 @@
         "隱藏密碼"
       ],
       "Image": [
-        "影像"
+        "圖片"
       ],
       "Import all messages": [
         "匯入全部郵件"
@@ -2891,13 +2681,10 @@
         "匯入聯絡人"
       ],
       "Import interval": [
-        "匯入頻率"
+        "匯入間距"
       ],
       "Import to email address": [
-        "匯入到電子郵件地址"
-      ],
-      "Keyboard shortcuts": [
-        "鍵盤快捷鍵"
+        "匯入至電子郵件地址"
       ],
       "Label messages as": [
         "為郵件加上標籤"
@@ -2909,7 +2696,7 @@
         "僅過去 3 個月"
       ],
       "Last month only": [
-        "僅過去一個月"
+        "僅過去 1 個月"
       ],
       "Mailbox password": [
         "郵箱密碼"
@@ -2930,7 +2717,7 @@
         "持卡人姓名"
       ],
       "Never": [
-        "從不"
+        "永不"
       ],
       "Notification": [
         "通知"
@@ -2948,7 +2735,7 @@
         "付款人"
       ],
       "PGP scheme": [
-        "PGP 配置"
+        "PGP 方案"
       ],
       "Phone number": [
         "電話號碼"
@@ -2978,7 +2765,7 @@
         "取代檔案"
       ],
       "Replace folder": [
-        "更換資料夾"
+        "取代資料夾"
       ],
       "Report abuse": [
         "檢舉濫用"
@@ -2987,19 +2774,10 @@
         "顯示密碼"
       ],
       "Select a method": [
-        "選擇方法"
-      ],
-      "Select how your composer opens by default.": [
-        "選取預設情況下的編輯器開啟時的外觀。"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "選取預設情況下您郵件清單的外觀。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "選取預設情況下的收件匣外觀。"
+        "選擇付款方式"
       ],
       "Select your country": [
-        "選擇你的國家或地區"
+        "請選擇您的國家"
       ],
       "Set expiration date": [
         "設定到期日"
@@ -3032,7 +2810,7 @@
         "此舉將會永久刪除所有位於鎖定之雲端硬碟內的檔案。"
       ],
       "To: ${ emailAddress }": [
-        "收件人：${ emailAddress }"
+        "收件者：${ emailAddress }"
       ],
       "Total": [
         "總計"
@@ -3041,7 +2819,7 @@
         "總計 (${ countdown })"
       ],
       "Two-factor authentication code": [
-        "兩步驟驗證代碼"
+        "兩步驟驗證碼"
       ],
       "Type": [
         "類型"
@@ -3053,7 +2831,7 @@
         "解鎖雲端硬碟"
       ],
       "Unlock drive (recommended)": [
-        "解鎖雲端硬碟（建議的）"
+        "解鎖雲端硬碟 (推薦)"
       ],
       "Unlock later": [
         "稍後解鎖"
@@ -3062,7 +2840,7 @@
         "仍要上傳"
       ],
       "Upload picture": [
-        "上載圖片"
+        "上載相片"
       ],
       "Uploaded": [
         "已上傳"
@@ -3083,41 +2861,17 @@
         "是的，我想要永久刪除我的舊檔案"
       ],
       "ZIP": [
-        "郵遞區號"
+        "郵編"
       ]
     },
     "Label for contact group color": {
       "Color": [
-        "色彩"
+        "顏色"
       ]
     },
     "Label for contact group name": {
       "Name": [
         "名稱"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "一般"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "欄"
-      ],
-      "Row": [
-        "列"
       ]
     },
     "Label, make it short please": {
@@ -3144,14 +2898,6 @@
         "${ Label.Name } 已建立"
       ]
     },
-    "Layout mode": {
-      "Column": [
-        "欄"
-      ],
-      "Row": [
-        "列"
-      ]
-    },
     "Link": {
       "Add a gift code": [
         "新增禮品代碼"
@@ -3160,19 +2906,19 @@
         "清除瀏覽器快取"
       ],
       "click here": [
-        "請按一下此處"
+        "點擊此處"
       ],
       "Go to subscription plans": [
         "前往訂閱方案"
       ],
       "Learn more": [
-        "瞭解更多"
+        "了解更多"
       ],
       "Pay invoice": [
-        "支付帳單"
+        "繳付帳單"
       ],
       "Request an invite": [
-        "請求一個邀請"
+        "請求邀請"
       ],
       "Shared": [
         "已分享"
@@ -3184,18 +2930,21 @@
         "升級"
       ],
       "Upgrade account": [
-        "升級帳號"
+        "升級帳戶"
       ]
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } / ${ calendarsToBeCreated } 已建立"
       ],
+      "${ createdCalendars } of 1 created": [
+        ""
+      ],
       "Almost there": [
         "快完成了"
       ],
       "Creating new calendars": [
-        "建立新行事曆"
+        "正在建立新行事曆"
       ],
       "Gathering your data": [
         "正在蒐集您的資料"
@@ -3224,10 +2973,10 @@
         "自動回覆"
       ],
       "Catch-All email": [
-        "全部擷取電子郵件地址"
+        "Catch-All 電子郵件地址"
       ],
       "Contact groups": [
-        "連絡人群組"
+        "聯絡人群組"
       ],
       "Custom email addresses": [
         "自訂電子郵件地址"
@@ -3236,7 +2985,7 @@
         "自訂篩選器"
       ],
       "Encrypted contacts": [
-        "加密通訊錄"
+        "經加密的通訊錄"
       ],
       "Folders / labels": [
         "資料夾 / 標籤"
@@ -3245,13 +2994,13 @@
         "IMAP / SMTP"
       ],
       "Limited": [
-        "受限"
+        "有限"
       ],
       "Messages per day": [
-        "訊息/日"
+        "每天郵件傳送數量上限"
       ],
       "Multi-user support": [
-        "多使用者支援"
+        "多使用者功能"
       ],
       "Priority": [
         "優先順序"
@@ -3290,20 +3039,20 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入${ periodFragment }迄今帶有 ${ totalLabelsCount } 中之 ${ selectedLabelsCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+        "匯入${ periodFragment } 迄今帶有 ${ totalLabelsCount } 中之 ${ selectedLabelsCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入${ periodFragment }迄今帶有 ${ totalLabelsCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+        "匯入${ periodFragment } 迄今帶有 ${ totalLabelsCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
       "and many others": [
-        "還有其他更多東西"
+        "以及更多"
       ]
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "這將會永久刪除所有與您的組織相關的子使用者、帳號與資料。"
+        "這將會永久刪除所有與您組織相關的子使用者、帳戶與資料。"
       ]
     },
     "Message display when a new app version is available": {
@@ -3346,13 +3095,13 @@
         "\"${ firstItemName }\" 移動失敗"
       ],
       "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" 已移動到垃圾桶"
+        "\"${ firstItemName }\" 已移至垃圾桶"
       ],
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" 已從垃圾桶中還原"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } 檔案連結已刪除"
+        "${ deletedCount } 個檔案連結已刪除"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } 個檔案已從垃圾桶中永久刪除"
@@ -3364,7 +3113,7 @@
         "${ deletedItemsCount } 個項目已從垃圾桶中永久刪除"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "${ failedCount } 個連結到您的檔案刪除失敗。"
+        "未能刪除${ failedCount } 個檔案連結"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } 個檔案移動失敗"
@@ -3394,16 +3143,16 @@
         "${ restoredItemsCount } 個項目已從垃圾桶中還原"
       ],
       "${ trashedLinksCount } file moved to trash": [
-        "${ trashedLinksCount } 個檔案已移動到垃圾桶"
+        "${ trashedLinksCount } 個檔案已移至垃圾桶"
       ],
       "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } 個資料夾已移動到垃圾桶"
+        "${ trashedLinksCount } 個資料夾已移至垃圾桶"
       ],
       "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } 個項目已移動到垃圾桶"
+        "${ trashedLinksCount } 個項目已移至垃圾桶"
       ],
       "All items will soon be permanently deleted from trash": [
-        "所有項目即將從垃圾桶中永久刪除"
+        "所有項目將從「垃圾桶」中永久刪除"
       ],
       "An item with the name \"${ name }\" already exists in the current folder": [
         "目前資料夾已有一個名為 \"${ name }\" 的檔案"
@@ -3421,16 +3170,16 @@
         "移動失敗，請再試一次"
       ],
       "Failed to upload files: ${ err }": [
-        "上傳檔案失敗：${ err }"
+        "上載檔案失敗：${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "檔案或資料夾「${ filename }」以及其他 ${ count } 已上傳"
+        "檔案或資料夾「${ filename }」以及其他 ${ count } 正在上傳中"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "檔案或資料夾「${ filename }」已上傳"
+        "檔案或資料夾「${ filename }」正在上傳中"
       ],
       "File or folder is missing a name": [
-        "檔案或資料夾名稱遺失"
+        "檔案或資料夾缺少名稱"
       ],
       "Move ${ itemsToMoveCount } file": [
         "移動 ${ itemsToMoveCount } 個檔案"
@@ -3451,10 +3200,10 @@
         "移動 ${ movingCount } 個項目"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        "空間不足，無法上傳 ${ formattedTotal }"
+        "空間不足，無法上載 ${ formattedTotal }"
       ],
       "The link to your file failed to be deleted": [
-        "您檔案的連結刪除失敗"
+        "未能刪除您的檔案連結"
       ],
       "The link to your file was deleted": [
         "已刪除此檔案的連結"
@@ -3463,7 +3212,7 @@
         "您的舊資料夾將於72小時後刪除"
       ],
       "Your settings have been changed successfully": [
-        "您已成功變更設置"
+        "您的設定已成功變更。"
       ]
     },
     "Oauth instructions": {
@@ -3473,16 +3222,16 @@
     },
     "Onboarding Proton": {
       "Choose a display name": [
-        "選擇一個顯示名稱"
+        "選擇顯示名稱"
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "設置您的組織、連結您的網域名稱，並建立各個帳號以確保您的組織中所有成員均得到保護。"
+        "設置您的組織、連結您的網域名稱，並建立各個帳戶以確保您的組織中所有成員均得到保護。"
       ],
       "Discover all Proton services": [
         "探索所有 Proton 服務"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "我們的使命是建構一個網際網路，讓您置身其中掌控您的數據和您的隱私。我們最近已更新 Proton - 歡迎來到安全的網際網路。"
+        "我們的使命是構建一個網際網路，讓您可以置身其中並掌控自己的資料和隱私。我們最近已更新 Proton - 歡迎來到安全的網際網路。"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -3491,16 +3240,16 @@
         "設定您的組織"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "當您寄送電子郵件、發出事件邀請或共享檔案給其他人時，對方會看到您這個名稱。"
+        "當您傳送電子郵件、活動邀請函或分享檔案時，對方將會看到此名稱。"
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "用左上方的應用程式選擇器存取其他 Proton 服務，包括 VPN、行事曆和 Drive。"
+        "請點擊左上方的應用程式選擇器以使用其他 Proton 服務，包括 VPN、行事曆和雲端硬碟。"
       ],
       "Welcome to Proton": [
         "歡迎使用 Proton"
       ],
       "You can change this anytime in your settings.": [
-        "您可以隨時在設定中變更。"
+        "您隨時都可以在設定中變更。"
       ]
     },
     "Onboarding Proton Drive Action": {
@@ -3511,15 +3260,15 @@
         "開始使用 ${ appName }"
       ],
       "Upgrade account": [
-        "升級帳號"
+        "升級帳戶"
       ]
     },
     "Onboarding Proton Drive Info": {
       "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } 目前仍屬搶鮮體驗，僅供付費方案的使用者使用。"
+        "${ appName } 目前仍在早期測試階段，僅開放予 付費方案的使用者使用。"
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } 目前僅限啟用測試版體驗時使用。"
+        "${ appName } 目前僅限您啟用測試版體驗時使用。"
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
         "以端對端加密保護您所有的檔案。使用 ${ appName } 安全地儲存並分享您的檔案。"
@@ -3527,13 +3276,13 @@
     },
     "Onboarding Proton Drive Title": {
       "${ appName } is in Beta": [
-        "${ appName } 目前屬測試版"
+        "${ appName } 處於測試階段"
       ],
       "Meet your new secure file storage": [
-        "迎接您新的安全檔案儲存空間"
+        "迎接您的新安全檔案儲存空間"
       ],
       "Upgrade to access ${ appName }": [
-        "升級以存取 ${ appName }"
+        "升级以使用 ${ appName }"
       ]
     },
     "Option": {
@@ -3560,7 +3309,7 @@
     },
     "Payment method option": {
       "Bitcoin": [
-        "比特幣"
+        "Bitcoin"
       ],
       "New credit/debit card": [
         "新增信用卡/扣帳卡"
@@ -3571,7 +3320,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "此金鑰不適用於加密"
+        "此金鑰不能用於加密"
       ]
     },
     "PGP key warning": {
@@ -3581,7 +3330,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "有甚麼途徑可以聯絡您"
+        "您的聯絡方式"
       ],
       "Browser name": [
         "瀏覽器名稱"
@@ -3593,7 +3342,7 @@
         "例如：Julia Smith"
       ],
       "E.g., ": [
-        "例如， "
+        "例如： "
       ],
       "Enter a new folder name": [
         "請輸入新的資料夾名稱"
@@ -3623,7 +3372,7 @@
         "作業系統版本"
       ],
       "Please describe the problem and include any error messages": [
-        "請描述問題並附上相關的錯誤訊息（如有的話）"
+        "請描述問題並附上相關的錯誤訊息 (如有)"
       ],
       "Postal code": [
         "郵遞區號"
@@ -3635,13 +3384,13 @@
         "搜尋群組名稱"
       ],
       "Search for name or email": [
-        "搜尋姓名或電子郵件"
+        "搜尋名稱或電子郵件"
       ],
       "Start typing an email address": [
         "在此輸入一個電子郵件地址"
       ],
       "ZIP": [
-        "郵遞區號"
+        "郵編"
       ]
     },
     "Placeholder for contact group name": {
@@ -3660,7 +3409,7 @@
         "1 個電子郵件地址"
       ],
       "1 user": [
-        "1 個使用者"
+        "1 位使用者"
       ],
       "20 GB storage": [
         "20 GB 儲存空間"
@@ -3687,25 +3436,25 @@
         "50 個電子郵件地址"
       ],
       "6 users": [
-        "6 個使用者"
+        "6 位使用者"
       ],
       "Access blocked content": [
         "存取被封鎖的內容"
       ],
       "Access to ${ driveAppName } (beta)": [
-        "存取 ${ driveAppName } (測試版)"
+        "搶先體驗 ${ driveAppName } (測試版)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
         "所有 ${ PLAN_NAMES[PLANS.VPNPLUS] } 方案功能"
       ],
       "Built-in Adblocker (NetShield)": [
-        "內置廣告封鎖程式 (NetShield)"
+        "內置廣告攔截程式 (NetShield)"
       ],
       "Custom email addresses": [
         "自訂電子郵件地址"
       ],
       "Early access to new products": [
-        "提早試用新產品"
+        "搶先體驗新產品"
       ],
       "High speed": [
         "高速"
@@ -3714,7 +3463,7 @@
         "速度最快 (高達 10 Gbps)"
       ],
       "Includes 6 user accounts": [
-        "包括 6 個使用者帳號"
+        "包括 6 個使用者帳戶"
       ],
       "Includes Proton Visionary": [
         "包括 Proton Visionary"
@@ -3723,7 +3472,7 @@
         "一般速度"
       ],
       "Secure Core servers": [
-        "Secure Core 伺服器"
+        "安全核心伺服器"
       ],
       "Streaming service support": [
         "串流服務支援"
@@ -3749,13 +3498,13 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts } 個聯絡人之中，有 ${ contactsExported.length } 個已成功匯出。"
+        "已成功匯出 ${ contactsExported.length }/${ countContacts } 位聯絡人。"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ totalBeDeleted } 中的 ${ model.deleted.length } 個聯絡人已成功刪除。"
+        "${ model.deleted.length }/${ totalBeDeleted } 位聯絡人已成功刪除。"
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ totalBeMerged } 中的 ${ model.submitted.length } 個聯絡人已成功合併。"
+        "${ model.submitted.length }/${ totalBeMerged } 位聯絡人已成功合併。"
       ],
       "No contacts exported.": [
         "沒有匯出任何聯絡人。"
@@ -3778,7 +3527,7 @@
         "傳真"
       ],
       "Home": [
-        "住家"
+        "住宅"
       ],
       "Main": [
         "主要"
@@ -3790,7 +3539,7 @@
         "其他"
       ],
       "Pager": [
-        "呼叫器"
+        "傳呼機"
       ],
       "Phone": [
         "電話號碼"
@@ -3801,7 +3550,7 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "請注意：按一下「套用」按鈕後，服務將會重新載入。"
+        "請注意：點擊「套用」按鈕後，服務將會重新載入。"
       ]
     },
     "Select files": {
@@ -3814,7 +3563,7 @@
         "版本資訊"
       ],
       "Upgrade storage": [
-        "升級儲存空間容量"
+        "升級儲存空間"
       ],
       "Your current storage:": [
         "您目前的儲存空間："
@@ -3831,10 +3580,10 @@
         "地址已複製到剪貼簿"
       ],
       "Bug reported": [
-        "錯誤已報告"
+        "錯誤已回報"
       ],
       "Code sent to ${ methodTo }": [
-        "代碼已發送到 ${ methodTo }"
+        "驗證碼已發送至 ${ methodTo }"
       ],
       "Contact deleted": [
         "聯絡人已刪除"
@@ -3854,17 +3603,14 @@
       "Fingerprint copied to clipboard": [
         "指紋已複製到剪貼簿"
       ],
-      "Keyboard shortcuts preferences updated": [
-        "鍵盤快捷鍵喜好設定已更新"
-      ],
       "Phone number copied to clipboard": [
         "電話號碼已複製到剪貼簿"
       ],
       "Preference saved": [
-        "喜好設定已儲存"
+        "偏好設定已儲存"
       ],
       "Preferences saved": [
-        "喜好設定已儲存"
+        "偏好設定已儲存"
       ],
       "Recovery has started": [
         "恢復程序已開始"
@@ -3889,10 +3635,10 @@
     },
     "Table header": {
       "Action": [
-        "動作"
+        "操作"
       ],
       "Actions": [
-        "動作"
+        "操作"
       ],
       "Address": [
         "電子郵件地址"
@@ -3901,7 +3647,7 @@
         "建立日期"
       ],
       "Expires": [
-        "到期日"
+        "有效期限"
       ],
       "Fingerprint": [
         "指紋"
@@ -3921,10 +3667,10 @@
         "存取次數"
       ],
       "Actions": [
-        "動作"
+        "操作"
       ],
       "Address": [
-        "電子郵件地址"
+        "地址"
       ],
       "Created": [
         "建立日期"
@@ -3933,10 +3679,10 @@
         "CSV 欄位"
       ],
       "Deleted": [
-        "刪除日期"
+        "已刪除"
       ],
       "Expires": [
-        "到期日"
+        "有效期限"
       ],
       "Import": [
         "匯入"
@@ -3970,7 +3716,7 @@
     },
     "Time period": {
       "account creation date": [
-        "帳號建立日期"
+        "帳戶建立日期"
       ],
       "the last 12 months": [
         "最近 12 個月"
@@ -3995,19 +3741,16 @@
         "存取次數"
       ],
       "${ appName } customization": [
-        "${ appName } 自訂化"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 鍵盤快捷鍵"
+        "${ appName } 客製化"
       ],
       "${ emailsCount } member": [
-        "${ emailsCount } 個成員"
+        "${ emailsCount } 位成員"
       ],
       "3-D Secure verification failed": [
-        "3-D 安全驗證失敗"
+        "3-D Secure 驗證失敗"
       ],
       "Account suspended": [
-        "帳號被暫停"
+        "帳戶已被停用"
       ],
       "Add contact group name": [
         "新增聯絡人群組名稱"
@@ -4040,13 +3783,13 @@
         "帳單週期"
       ],
       "Cancel all active transfers": [
-        "取消所有進行中的轉移"
+        "取消所有進行中的傳輸"
       ],
       "Card verification": [
         "卡片驗證"
       ],
       "Card verification in progress": [
-        "卡片驗證處理中"
+        "卡片驗證正在處理中"
       ],
       "Change layout": [
         "變更版面配置"
@@ -4057,14 +3800,11 @@
       "Clearing data": [
         "清除資料中"
       ],
-      "Composer mode": [
-        "撰寫器模式"
-      ],
       "Confirm loss of Proton bonuses": [
-        "確認失去 Proton 獎勵"
+        "確認放棄Proton 特別獎勵"
       ],
       "Contact details": [
-        "連絡人詳細資料"
+        "聯絡人詳細資料"
       ],
       "Contact Details": [
         "聯絡人詳細資料"
@@ -4088,7 +3828,7 @@
         "建立新群組"
       ],
       "Credits": [
-        "儲值"
+        "餘額"
       ],
       "Currency": [
         "貨幣"
@@ -4106,13 +3846,13 @@
         "自訂您的郵件匯入"
       ],
       "Customize your plan": [
-        "自訂你的方案"
+        "自訂您的方案"
       ],
       "Date": [
         "日期"
       ],
       "Delete ${ count } contact": [
-        "刪除 ${ count } 個聯絡人"
+        "刪除 ${ count } 位聯絡人"
       ],
       "Delete ${ count } contact group": [
         "刪除 ${ count } 個聯絡人群組"
@@ -4133,10 +3873,10 @@
         "捨棄"
       ],
       "Discard changes?": [
-        "放棄變更？"
+        "捨棄變更？"
       ],
       "Downgrade account": [
-        "降級帳號"
+        "降級帳戶"
       ],
       "Download canceled": [
         "下載已取消"
@@ -4151,16 +3891,16 @@
         "正在下載"
       ],
       "Drive": [
-        "硬碟"
+        "雲端硬碟"
       ],
       "Drop to upload": [
         "拖放到此處以上載"
       ],
       "Duplicate file found": [
-        "發現重複的資料夾"
+        "發現重複檔案"
       ],
       "Duplicate folder found": [
-        "發現重複的資料夾"
+        "發現重複資料夾"
       ],
       "Edit contact": [
         "編輯聯絡人"
@@ -4196,7 +3936,7 @@
         "錯誤"
       ],
       "Exporting contacts": [
-        "匯出聯絡人"
+        "正在匯出聯絡人"
       ],
       "File details": [
         "檔案詳細資訊"
@@ -4226,22 +3966,13 @@
         "匯入群組"
       ],
       "Invalid verification code": [
-        "無效的驗證碼"
-      ],
-      "Keyboard Shortcuts": [
-        "鍵盤快捷鍵"
+        "驗證碼無效"
       ],
       "Link confirmation": [
-        "連結確認"
+        "確認開啟連結"
       ],
       "Location": [
         "位置"
-      ],
-      "Mailbox density": [
-        "收件匣密度"
-      ],
-      "Mailbox layout": [
-        "收件匣佈局"
       ],
       "Manage secure link": [
         "管理安全連結"
@@ -4253,7 +3984,7 @@
         "合併聯絡人"
       ],
       "Merging contacts": [
-        "合併聯絡人"
+        "正在合併聯絡人"
       ],
       "MIME type": [
         "MIME 類型"
@@ -4277,13 +4008,13 @@
         "檔案數量"
       ],
       "Open actions dropdown": [
-        "開啟動作下拉選單"
+        "展開操作下拉選單"
       ],
       "Open help menu": [
-        "開啟說明功能表"
+        "開啟說明選單"
       ],
       "Open settings menu": [
-        "開啟設定功能表"
+        "開啟設定選單"
       ],
       "Other information": [
         "其他資訊"
@@ -4298,7 +4029,7 @@
         "付款驗證"
       ],
       "Payment verification in progress": [
-        "付款驗證處理中"
+        "付款驗證正在處理中"
       ],
       "PayPal verification failed": [
         "PayPal 驗證失敗"
@@ -4334,13 +4065,13 @@
         "回報問題"
       ],
       "Request new code": [
-        "重發驗證碼"
+        "重新傳送驗證碼"
       ],
       "Restore your files": [
         "還原您的檔案"
       ],
       "Select a plan": [
-        "選擇方案"
+        "請選擇一個方案"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -4352,10 +4083,10 @@
         "選擇聯絡人群組"
       ],
       "Select link expiration date": [
-        "選取連結過期日期"
+        "選擇連結到期日"
       ],
       "Select link expiration time": [
-        "選取連結過期時間"
+        "選擇連結到期時間"
       ],
       "Select permissions": [
         "選取權限"
@@ -4373,7 +4104,7 @@
         "已分享"
       ],
       "Show actions": [
-        "顯示動作"
+        "顯示操作"
       ],
       "Sign in again to continue": [
         "請再次登入以繼續"
@@ -4388,13 +4119,13 @@
         "停止分享"
       ],
       "Stop sharing with everyone?": [
-        "是否停止分享給所有人？"
+        "是否停止與所有人分享？"
       ],
       "Subtotal": [
         "小計"
       ],
       "The link either does not exist or has expired": [
-        "連結不存在或已過期"
+        "連結不存在或已失效"
       ],
       "Total (monthly)": [
         "總計 (每月)"
@@ -4427,7 +4158,7 @@
         "警告"
       ],
       "What's new": [
-        "最近更新"
+        "最新消息"
       ],
       "You have inaccessible files": [
         "您有部份檔案無法存取"
@@ -4436,10 +4167,10 @@
         "您沒有檔案可以分享"
       ],
       "You have no folders yet": [
-        "您還未有任何資料夾"
+        "您尚未建立任何資料夾"
       ],
       "Your file is ready to be downloaded": [
-        "已準備好您的檔案，可供下載"
+        "資料夾已準備就緒，可供下載"
       ],
       "Your folder is ready to be downloaded": [
         "資料夾已準備就緒，可供下載"
@@ -4458,64 +4189,64 @@
         "無論您身在何處，都可以存取有地域限制的內容 (Netflix、Amazon Prime Video、BBC iPlayer、維基百科、Facebook、YouTube 等)。"
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "「自動」表示寄送給此使用者時將使用撰寫器中的格式。「純文字」表示將一律轉換成純文字才寄送郵件。"
+        "「自動」表示傳送給此使用者時將使用撰寫器中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "建立連結到您帳號的多個電子郵件地址，例如 username2@protonmail.com"
+        "在同一個帳戶中建立多個電子郵件地址，例如 username2@protonmail.com"
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "將您的網際網路流量中轉多個伺服器，防範 VPN 隱私的威脅。"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "數碼簽署電子郵件有助驗證郵件真確由您寄送"
+        "經數碼簽署的電子郵件有助驗證郵件真確性"
       ],
       "Discount applied for annual billing cycle": [
-        "每年帳單週期已享用折扣"
+        "折扣已算入每年帳單週期"
       ],
       "Discount applied for two-year billing cycle": [
-        "兩年帳單週期已享用折扣"
+        "折扣已算入兩年帳單週期"
       ],
       "Each imported email will have this label": [
         "每一封匯入的電子郵件都將加上此標籤"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "電子郵件加密強制電子郵件簽章，以助驗證您已寄送郵件的真確性"
+        "電子郵件加密透過強制加入數碼簽章，以助驗證郵件真確性"
       ],
       "Encrypted data": [
         "已加密的資料"
       ],
       "Encrypted data with verified digital signature": [
-        "經加密資料，已驗證數碼簽章"
+        "已加密並驗證數碼簽章"
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "一個方案即可同時存取 ${ vpnAppName } 和 ${ mailAppName } (數百萬人用來保護他們資料的加密電子郵件服務) 的所有付費功能。"
+        "一個方案即可同時享用 ${ vpnAppName } 和 ${ mailAppName } (擁有數百萬使用者的加密電子郵件服務) 中所有付費功能。"
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "一個方案即可存取 ProtonVPN 和 ProtonMail (數以百萬計的人都在使用以保護資料安全的加密電子郵件服務) 的所有付費功能。"
+        "一個方案即可同時享用 ProtonVPN 和 ProtonMail (擁有數百萬使用者的加密電子郵件服務) 中所有付費功能。"
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "在 ${ mailAppName } 上為您自己的網域託管電子郵件，例如 john.smith@example.com"
+        "在 ${ mailAppName } 上使用自己的網域收取電子郵件，例如 john.smith@example.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "在 ProtonMail 上為您自己的網域託管電子郵件，例如 john.smith@example.com"
+        "在 ProtonMail 上使用自己的網域收取電子郵件，例如 john.smith@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "若您已購買或從我們的支援團隊獲取一個禮品代碼，您可在此輸入。"
+        "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        "多使用者支援僅適用於選用 2 個或以上使用者的方案"
+        "多使用者功能僅適用於選用 2 位或以上使用者的方案"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield 保護您的裝置並透過封鎖廣告、追蹤程式與惡意軟體來加速您的瀏覽。"
+        "NetShield 保護您的裝置並透過封鎖廣告、追蹤程式與惡意軟體來加快您的瀏覽速度。"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
-        "一按即可把您的網際網路流量繞經 Tor 網路。"
+        "一鍵將您的網路流量路由改為經由 Tor 網路傳送。"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "請選擇使用者簽章或加密所使用的 PGP 配置。請注意：「PGP/內嵌」將強制純文字郵件"
+        "請選擇向特定使用者簽署時，所需使用的簽章或PGP 方案。請注意 PGP/inline 模式將強制使用純文字郵件格式。"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "支援檔案分享通訊協定，例如 BitTorrent。"
+        "支援檔案分享協定，例如 BitTorrent。"
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         "系統子資料夾將在 ProtonMail 中顯示成獨立資料夾。"
@@ -4524,16 +4255,16 @@
         "匯入將自近期的郵件開始。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "上載公開金鑰以啟用寄送端對端加密電子郵件到此電子郵件地址"
+        "上載公開金鑰以啟用傳送端對端加密電子郵件到此電子郵件地址"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "使用多重電子郵件地址 / 別名連結到您的帳號，例如 username2@protonmail.com"
+        "在同一個帳戶中使用多個電子郵件地址 / 別名，例如 username2@protonmail.com"
       ],
       "Use the personal address username@pm.me to send emails": [
         "使用個人地址 username@pm.me 來傳送電子郵件"
       ],
       "You do not have any contacts to export": [
-        "您沒有任何聯絡人可以匯出"
+        "您沒有任何可匯出的聯絡人"
       ]
     },
     "Validation": {
@@ -4543,13 +4274,13 @@
     },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
-        "\"${ str }\" 並非有效的名稱"
+        "\"${ str }\" 並非有效名稱"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "名稱不能包含不可見的字元以及 / 或 \\。"
       ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "名稱最長只得 ${ MAX_NAME_LENGTH } 個字元"
+        "名稱長度最多為 ${ MAX_NAME_LENGTH } 個字元"
       ],
       "Name must not be empty": [
         "名稱不得留空"
@@ -4580,7 +4311,7 @@
         "存取被封鎖的內容"
       ],
       "Adblocker (NetShield)": [
-        "廣告封鎖程式 (NetShield)"
+        "廣告攔截程式 (NetShield)"
       ],
       "Custom connection profiles": [
         "自訂連線設定檔"
@@ -4595,10 +4326,10 @@
         "司法管轄區"
       ],
       "Kill Switch / Always-on VPN": [
-        "Kill Switch / 總是開啟 VPN"
+        "Kill Switch / 永久連線的 VPN"
       ],
       "Languages supported": [
-        "受支援語言"
+        "支援的語言"
       ],
       "Locations/Countries": [
         "位置/國家"
@@ -4610,28 +4341,28 @@
         "P2P/BitTorrent"
       ],
       "Perfect Forward Secrecy (PFS)": [
-        "完全前向保密 (PFS)"
+        "完美前向保密 (PFS)"
       ],
       "Platforms supported": [
-        "受支援平台"
+        "支援的平台"
       ],
       "Router support": [
         "路由器支援"
       ],
       "Secure Core servers": [
-        "Secure Core 伺服器"
+        "安全核心伺服器"
       ],
       "Speed": [
         "速度"
       ],
       "Split tunneling": [
-        "Split tunneling"
+        "VPN 分流"
       ],
       "Streaming service support": [
         "串流服務支援"
       ],
       "Strict no-logs policy": [
-        "嚴格的無日誌政策"
+        "嚴格的無記錄政策"
       ],
       "Tor over VPN": [
         "經 VPN 使用 Tor"
@@ -4640,7 +4371,7 @@
         "使用者數據謀利"
       ],
       "Volume/bandwidth cap": [
-        "流量/頻寬上限"
+        "流量/頻寬額度"
       ],
       "VPN Connections": [
         "VPN 連線"
@@ -4654,10 +4385,10 @@
         "(僅限 Android 和 Windows)"
       ],
       "High": [
-        "高速"
+        "高"
       ],
       "Highest (up to 10 Gbps)": [
-        "速度最快 (高達 10 Gbps)"
+        "最快 (高達 10 Gbps)"
       ],
       "Medium": [
         "一般"
@@ -4688,7 +4419,7 @@
         "您確定要永久刪除 ${ count } 個聯絡人群組嗎？"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "您確定要永久刪除 ${ count } 個聯絡人嗎？"
+        "您確定要永久刪除 ${ count } 位聯絡人嗎？"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "您確定要永久刪除此聯絡人群組嗎？"
@@ -4697,28 +4428,28 @@
         "您確定要永久刪除此聯絡人嗎？"
       ],
       "Contacts could not be merged": [
-        "聯絡人無法合併"
+        "無法合併聯絡人"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "若您記不起您的密碼，則沒辦法重新啟用您的金鑰。我們可幫助您關閉提示橫幅，然而在此過程中，您將永久失去所有以該金鑰加密的資料的存取。"
+        "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可幫助您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
         ""
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "請注意：選取此付款方法時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
+        "請注意：選取此付款方式時，您的帳戶無法立即升級。付款確認後，我們會立即為您升級帳戶。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 將會合併所有相同名稱的資料夾。為了避免這種狀況，請在匯入前變更名稱。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "報告並非端對端加密，請勿傳送任何敏感資訊。"
+        "回報未使用端到端加密，請不要傳送任何敏感資訊。"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "一些欲合併的聯絡人發現錯誤，請逐一複閱"
+        "部分需合併的聯絡人顯示錯誤。請逐一查看"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        "此聯絡人資料已毀損，無法顯示。"
+        "此聯絡人資料已損毀，無法顯示。"
       ],
       "The contact failed to load.": [
         "聯絡人載入失敗。"
@@ -4727,22 +4458,22 @@
         "您裝置上的日期與時間設置未同步。 ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "已加密內容的解密失敗。"
+        "加密內容解密失敗。"
       ],
       "The verification of the contact details' signature failed.": [
-        "聯絡人詳細資料的簽章驗證失敗。"
+        "聯絡人的數碼簽章驗證失敗。"
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
       ],
       "This feature requires a paid Proton account": [
-        "付費的 Proton 帳號才能使用此功能"
+        "此功能僅限付費Proton 帳戶使用"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
+        "非常抱歉，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
       ],
       "You will lose any customization you made so far.": [
-        "截至今日，所有您自訂的設置都將遺失。"
+        "您到目前為止所作的任何自訂都將會消失。"
       ]
     }
   }
