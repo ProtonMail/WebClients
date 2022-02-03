@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 
 import { debounce } from '@proton/shared/lib/helpers/function';
-import { useTheme } from '@proton/components';
+import { useIsMounted, useTheme } from '@proton/components';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
@@ -23,6 +23,7 @@ const useInitIframeContent = ({ iframeRef, messageHead, content, onContentLoaded
     const prevContentRef = useRef<string>(content);
     const [themeIndex] = useTheme();
     const themeCSSVariables: string = PROTON_THEMES_MAP[themeIndex].theme;
+    const isMounted = useIsMounted();
 
     useEffect(() => {
         if (initStatus === 'start') {
@@ -53,13 +54,11 @@ const useInitIframeContent = ({ iframeRef, messageHead, content, onContentLoaded
             hasBeenDone.current = true;
 
             const debouncedContentLoaded = debounce(() => {
-                onContentLoaded(iframeRootDivElement);
+                if (isMounted()) {
+                    onContentLoaded(iframeRootDivElement);
+                }
             }, 200);
             debouncedContentLoaded();
-
-            return () => {
-                debouncedContentLoaded.abort();
-            };
         }
     }, [initStatus]);
 
