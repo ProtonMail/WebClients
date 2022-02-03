@@ -2,11 +2,12 @@ import { classnames, Collapsible, ConfirmModal, Href, useMailSettings, useModals
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { c, msgid } from 'ttag';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { emailTrackerProtectionURL } from '../../constants';
 import NumberOfElementsBubble from '../../components/list/spy-tracker/NumberOfElementsBubble';
+import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 
 interface Tracker {
     name: string;
@@ -18,9 +19,21 @@ const getTrackers = (message: MessageState) => {
         return image.tracker;
     });
 
+    const [content, blockquote] = locateBlockquote(message.messageDocument?.document);
+
     const trackers: Tracker[] = [];
     trackersImages?.forEach((trackerImage) => {
         const elExists = trackers.findIndex((tracker) => tracker.name === trackerImage.tracker);
+
+        // Ignore trackers located in the blockquote
+        if (
+            (!content.includes(`data-proton-remote="${trackerImage.id}"`) &&
+                blockquote.includes(`data-proton-remote="${trackerImage.id}"`)) ||
+            (!content.includes(`data-proton-embedded="${trackerImage.id}"`) &&
+                blockquote.includes(`data-proton-embedded="${trackerImage.id}"`))
+        ) {
+            return;
+        }
 
         let url = '';
         if ('cloc' in trackerImage) {
@@ -60,7 +73,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
     const hasProtection = (mailSettings?.ImageProxy ? mailSettings.ImageProxy : 0) > IMAGE_PROXY_FLAGS.NONE;
     const hasShowImage = hasBit(mailSettings?.ShowImages ? mailSettings.ShowImages : 0, SHOW_IMAGES.REMOTE);
 
-    const { trackers, numberOfTrackers } = getTrackers(message);
+    const { trackers, numberOfTrackers } = useMemo(() => getTrackers(message), [message]);
 
     /*
      * If email protection is OFF and we do not load the image automatically, the user is aware about the need of protection.
