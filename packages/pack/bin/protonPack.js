@@ -44,7 +44,10 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         publicPath: options.publicPath === '/' ? undefined : options.publicPath,
         featureFlags: options.featureFlags,
         writeSri: options.sri ? undefined : options.sri,
-        silent: options.silent,
+        warningLogs: options.warningLogs,
+        errorLogs: options.errorLogs,
+        overlayWarnings: options.overlayWarnings,
+        overlayErrors: options.overlayErrors,
         ...buildData,
     };
     const extraWebpackArgs = env.args.join(' ');
@@ -52,7 +55,11 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         .filter(([, value]) => value !== undefined && value !== '')
         .reduce((acc, [key, value]) => {
             if (typeof value === 'boolean') {
-                return `${acc} --env ${key}`;
+                if (value) {
+                    return `${acc} --env ${key}`;
+                } else {
+                    return acc;
+                }
             }
 
             return `${acc} --env ${key}=${value.replace(/ /g, '\\ ')}`;
@@ -98,7 +105,10 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
         },
         getApi('')
     )
-    .option('--silent', 'disable error reporting')
+    .option('--warning-logs', 'emit typescript and eslint warnings')
+    .option('--no-error-logs', 'do not emit typescript and eslint errors')
+    .option('--overlay-warnings', 'show a full screen overlay when there are compiler warnings')
+    .option('--overlay-errors', 'show a full screen overlay when there are compiler errors')
     .action(async (options, env) => {
         console.log(chalk.magenta('Starting development server...\n'));
 
