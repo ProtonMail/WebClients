@@ -2,6 +2,7 @@ import { MutableRefObject, RefObject, useRef } from 'react';
 import { HotkeyTuple, useHotkeys } from '@proton/components';
 import { isSafari as checkIsSafari } from '@proton/shared/lib/helpers/browser';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 
 export interface ComposerHotkeysHandlers {
@@ -95,12 +96,12 @@ export const useComposerHotkeys = ({
     };
 
     const hotKeysActions: HotkeyTuple[] = [
-        [['Escape'], keyHandlers.close],
-        [['Meta', 'Enter'], keyHandlers.send],
-        [['Meta', 'Alt', 'Backspace'], keyHandlers.delete],
-        [['Meta', 'S'], keyHandlers.save],
+        [editorShortcuts.close, keyHandlers.close],
+        [editorShortcuts.send, keyHandlers.send],
+        [editorShortcuts.deleteDraft, keyHandlers.delete],
+        [editorShortcuts.save, keyHandlers.save],
         [
-            ['Meta', 'M'],
+            editorShortcuts.minimize,
             (e) => {
                 if (!isSafari) {
                     keyHandlers.minimize(e);
@@ -108,17 +109,17 @@ export const useComposerHotkeys = ({
             },
         ],
         [
-            ['Meta', 'Shift', 'M'],
+            editorShortcuts.maximize,
             (e) => {
                 if (!isSafari) {
                     keyHandlers.maximize(e);
                 }
             },
         ],
-        [['Meta', 'Shift', 'A'], keyHandlers.addAttachment],
-        [['Meta', 'Shift', 'E'], keyHandlers.encrypt],
-        [['Meta', 'Shift', 'X'], keyHandlers.addExpiration],
-        [['Meta', 'K'], keyHandlers.linkModal],
+        [editorShortcuts.addAttachment, keyHandlers.addAttachment],
+        [editorShortcuts.addEncryption, keyHandlers.encrypt],
+        [editorShortcuts.addExpiration, keyHandlers.addExpiration],
+        [editorShortcuts.addLink, keyHandlers.linkModal],
     ];
 
     useHotkeys(composerRef, hotKeysActions);
