@@ -17,7 +17,7 @@ const { OPENPGP_FILES } = require('./constants');
 
 const { logo, ...logoConfig } = require(path.resolve('./src/assets/logoConfig.js'));
 
-module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, silent }) => {
+module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, warningLogs, errorLogs }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
         OPENPGP_FILES,
         publicPath,
@@ -31,17 +31,34 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
                   new ReactRefreshWebpackPlugin({
                       overlay: false,
                   }),
-                  !silent &&
+                  (warningLogs || errorLogs) &&
                       new ESLintPlugin({
                           extensions: ['js', 'ts', 'tsx'],
                           eslintPath: require.resolve('eslint'),
                           context: path.resolve('.'),
+                          emitWarning: warningLogs,
+                          emitError: errorLogs,
                           // ESLint class options
                           resolvePluginsRelativeTo: __dirname,
                           cwd: path.resolve('.'),
                           cache: true,
                       }),
-                  !silent && new ForkTsCheckerWebpackPlugin({ async: true, formatter: 'basic' }),
+                  (warningLogs || errorLogs) &&
+                      new ForkTsCheckerWebpackPlugin({
+                          async: true,
+                          formatter: 'basic',
+                          issue: {
+                              include: (issue) => {
+                                  if (warningLogs && issue.severity === 'warning') {
+                                      return true;
+                                  }
+                                  if (errorLogs && issue.severity === 'error') {
+                                      return true;
+                                  }
+                                  return false;
+                              },
+                          },
+                      }),
               ]),
 
         new CopyWebpackPlugin({
