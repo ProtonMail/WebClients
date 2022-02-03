@@ -1,63 +1,132 @@
+import { ReactNode } from 'react';
 import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-router-dom';
 
-import { useUser } from '@proton/components';
+import {
+    useAddresses,
+    ThemesSection,
+    LayoutsSection,
+    AppearanceOtherSection,
+    IdentitySection,
+    AddressesSection,
+    PmMeSection,
+    MessagesSection,
+    FoldersSection,
+    LabelsSection,
+    FiltersSection,
+    SpamFiltersSection,
+    AutoReplySection,
+    DomainsSection,
+    CatchAllSection,
+    AddressVerificationSection,
+    ExternalPGPSettingsSection,
+    AddressKeysSection,
+    UserKeysSection,
+    ProtonMailBridgeSection,
+    EmailPrivacySection,
+    ImportExportAppSection,
+    PrivateMainSettingsArea,
+} from '@proton/components';
+import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
-import MailAppearanceSettings from './MailAppearanceSettings';
-import MailAutoReplySettings from './MailAutoReplySettings';
-import MailDomainNamesSettings from './MailDomainNamesSettings';
-import MailEncryptionKeysSettings from './MailEncryptionKeysSettings';
-import MailFiltersSettings from './MailFiltersSettings';
-import MailFoldersAndLabelsSettings from './MailFoldersAndLabelsSettings';
-import MailGeneralSettings from './MailGeneralSettings';
-import MailIdentityAndAddressesSettings from './MailIdentityAndAddressesSettings';
-import MailImapSmtpSettings from './MailImapSmtpSettings';
-import MailBackupAndExportSettings from './MailBackupAndExportSettings';
-import MailEmailPrivacySettings from './MailEmailPrivacySettings';
+import { getHasPmMeAddress, getMailAppRoutes } from './routes';
+import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
 
-const MailSettingsRouter = ({ redirect }: { redirect: string }) => {
+const MailSettingsRouter = ({
+    mailAppRoutes,
+    redirect,
+}: {
+    mailAppRoutes: ReturnType<typeof getMailAppRoutes>;
+    redirect: ReactNode;
+}) => {
     const { path } = useRouteMatch();
-    const [user] = useUser();
+    const [addresses, loadingAddresses] = useAddresses();
     const location = useLocation();
+
+    const {
+        routes: { general, identity, appearance, folder, filter, autoReply, domainNames, keys, imap, backup, privacy },
+    } = mailAppRoutes;
 
     return (
         <Switch>
-            <Route path={`${path}/general`}>
-                <MailGeneralSettings user={user} location={location} />
+            <Route path={getSectionPath(path, general)}>
+                {loadingAddresses && !Array.isArray(addresses) ? (
+                    <PrivateMainAreaLoading />
+                ) : (
+                    <PrivateMainSettingsArea location={location} config={general}>
+                        <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
+                        <MessagesSection />
+                    </PrivateMainSettingsArea>
+                )}
             </Route>
-            <Route path={`${path}/email-privacy`}>
-                <MailEmailPrivacySettings location={location} />
+            <Route path={getSectionPath(path, identity)}>
+                <PrivateMainSettingsArea location={location} config={identity}>
+                    <IdentitySection />
+                    <AddressesSection isOnlySelf />
+                </PrivateMainSettingsArea>
             </Route>
-            <Route path={`${path}/identity-addresses`}>
-                <MailIdentityAndAddressesSettings location={location} />
+            <Route path={getSectionPath(path, appearance)}>
+                <PrivateMainSettingsArea location={location} config={appearance}>
+                    <ThemesSection />
+                    <LayoutsSection />
+                    <AppearanceOtherSection />
+                </PrivateMainSettingsArea>
             </Route>
-            <Route path={`${path}/appearance`}>
-                <MailAppearanceSettings location={location} />
+            <Route path={getSectionPath(path, folder)}>
+                <PrivateMainSettingsArea location={location} config={folder}>
+                    <FoldersSection />
+                    <LabelsSection />
+                </PrivateMainSettingsArea>
             </Route>
-            <Route path={`${path}/folders-labels`}>
-                <MailFoldersAndLabelsSettings location={location} />
+            <Route path={getSectionPath(path, filter)}>
+                <PrivateMainSettingsArea location={location} config={filter}>
+                    <FiltersSection />
+                    <SpamFiltersSection />
+                </PrivateMainSettingsArea>
             </Route>
-            <Route path={`${path}/filters`}>
-                <MailFiltersSettings location={location} />
+            <Route path={getSectionPath(path, autoReply)}>
+                <PrivateMainSettingsArea location={location} config={autoReply}>
+                    <AutoReplySection />
+                </PrivateMainSettingsArea>
             </Route>
-            <Route path={`${path}/auto-reply`}>
-                <MailAutoReplySettings location={location} />
+            {getIsSectionAvailable(domainNames) && (
+                <Route path={getSectionPath(path, domainNames)}>
+                    <PrivateMainSettingsArea location={location} config={domainNames}>
+                        <DomainsSection />
+                        <CatchAllSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            <Route path={getSectionPath(path, keys)}>
+                <PrivateMainSettingsArea location={location} config={keys}>
+                    <AddressVerificationSection />
+                    <ExternalPGPSettingsSection />
+                    <AddressKeysSection />
+                    <UserKeysSection />
+                </PrivateMainSettingsArea>
             </Route>
-            <Route path={`${path}/domain-names`}>
-                <MailDomainNamesSettings location={location} />
-            </Route>
-            <Route path={`${path}/encryption-keys`}>
-                <MailEncryptionKeysSettings location={location} />
+            <Route path={getSectionPath(path, imap)}>
+                <PrivateMainSettingsArea location={location} config={imap}>
+                    <ProtonMailBridgeSection />
+                </PrivateMainSettingsArea>
             </Route>
             <Route path={`${path}/import-export`}>
                 <Redirect to={`${path}/easy-switch`} />
             </Route>
-            <Route path={`${path}/backup-export`}>
-                <MailBackupAndExportSettings location={location} />
-            </Route>
-            <Route path={`${path}/imap-smtp`}>
-                <MailImapSmtpSettings location={location} />
-            </Route>
-            <Redirect to={redirect} />
+            {getIsSectionAvailable(backup) && (
+                <Route path={getSectionPath(path, backup)}>
+                    <PrivateMainSettingsArea location={location} config={backup}>
+                        <ImportExportAppSection key="import-export-app" />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(privacy) && (
+                <Route path={getSectionPath(path, privacy)}>
+                    <PrivateMainSettingsArea location={location} config={privacy}>
+                        <EmailPrivacySection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {redirect}
         </Switch>
     );
 };

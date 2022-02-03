@@ -4,23 +4,24 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import ErrorBoundary from '../app/ErrorBoundary';
 import { SettingsPageTitle, SettingsParagraph } from '../account';
 import useAppTitle from '../../hooks/useAppTitle';
-import SubSettingsSection from './SubSettingsSection';
 import createScrollIntoView from '../../helpers/createScrollIntoView';
 import { classnames } from '../../helpers';
-import { SubSectionConfig, SettingsPropsShared } from './interface';
+import { SettingsPropsShared } from './interface';
 import useActiveSection from './useActiveSection';
 import PrivateMainArea from './PrivateMainArea';
+import SubSettingsSection from './SubSettingsSection';
+import { getIsSubsectionAvailable } from './helper';
 
 interface Props extends SettingsPropsShared {
-    title: string;
     children: ReactNode;
-    subsections: SubSectionConfig[];
-    description?: string;
+    setActiveSection?: (section: string) => void;
 }
 
-const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, description, subsections }: Props) => {
+const PrivateMainSettingsArea = ({ setActiveSection, location, children, config }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const useIntersectionSection = useRef(false);
+
+    const { text: title, description, subsections } = config;
 
     useAppTitle(title);
 
@@ -88,28 +89,33 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, 
 
     // Don't always use the observer section observed value since it can not go to sections that are at the bottom or too small.
     // In those cases it can be overridden by clicking on a specific section
-    const observer = useActiveSection(useIntersectionSection.current && setActiveSection ? setActiveSection : noop);
+    const sectionObserver = useActiveSection(
+        useIntersectionSection.current && setActiveSection ? setActiveSection : noop
+    );
 
-    const wrappedSections = Children.toArray(children)
-        .filter(isValidElement)
-        .map((child, index) => {
-            const subsectionConfig = subsections[index];
-            if (!subsectionConfig) {
-                return child;
-            }
-            const { id, text } = subsectionConfig;
-            return (
-                <SubSettingsSection
-                    key={id}
-                    className="container-section-sticky-section"
-                    title={text}
-                    id={id}
-                    observer={observer}
-                >
-                    {child}
-                </SubSettingsSection>
-            );
-        });
+    const wrappedSections = Children.toArray(children).map((child, i) => {
+        if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
+            return null;
+        }
+        const config = subsections?.[i];
+        if (!config) {
+            throw new Error('Missing subsection');
+        }
+        //
+        if (!getIsSubsectionAvailable(config)) {
+            return null;
+        }
+        return (
+            <SubSettingsSection
+                id={config.id}
+                title={config.text}
+                observer={sectionObserver}
+                className="container-section-sticky-section"
+            >
+                {child}
+            </SubSettingsSection>
+        );
+    });
 
     return (
         <PrivateMainArea ref={mainAreaRef}>
