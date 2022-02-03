@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { Member } from '@proton/shared/lib/interfaces/Member';
+import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 
 import { Alert, Input, ErrorButton, DeleteModal, Card } from '../../components';
 
@@ -10,9 +11,13 @@ interface Props {
     onClose: () => void;
 }
 
+const clean = (value: string) => {
+    return removeDiacritics(value.toLowerCase().replace(/\s+/g, ''));
+};
+
 const DeleteMemberModal = ({ member, onConfirm, onClose, ...rest }: Props) => {
     const [username, setUsername] = useState('');
-    const isValid = username === member.Name;
+    const isValid = clean(username) === clean(member.Name);
 
     const handleSubmit = async () => {
         if (!isValid) {
@@ -32,7 +37,7 @@ const DeleteMemberModal = ({ member, onConfirm, onClose, ...rest }: Props) => {
             <div className="mb1">
                 {c('Info').t`This will permanently delete the data and all email addresses associated with this user.`}
             </div>
-            <Card rounded className="text-break user-select mb1">
+            <Card rounded className="text-pre-wrap break user-select mb1">
                 {member.Name}
             </Card>
             <Alert className="mb1" type="error">{c('Info')
