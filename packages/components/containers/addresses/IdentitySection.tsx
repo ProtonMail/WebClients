@@ -17,9 +17,7 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 
 const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
-
     const [mailSettings] = useMailSettings();
-
     const [address, setAddress] = useState<Address>();
 
     const filtered = useMemo<Address[]>(() => {

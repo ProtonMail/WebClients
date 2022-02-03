@@ -1,4 +1,3 @@
-import { MutableRefObject } from 'react';
 import { c } from 'ttag';
 
 import { classnames } from '../../helpers/component';
@@ -7,11 +6,10 @@ import { SettingsSectionTitle } from '../account';
 import ReactivateKeysButton from '../keys/reactivateKeys/ReactivateKeysButton';
 
 interface Props {
-    openRecoverDataModalRef?: MutableRefObject<boolean>;
     className?: string;
 }
 
-const RecoverDataCard = ({ openRecoverDataModalRef, className }: Props) => {
+const RecoverDataCard = ({ className }: Props) => {
     return (
         <Card rounded background={false} className={classnames(['max-w52e p2', className])}>
             <SettingsSectionTitle className="h3 flex flex-align-items-center flex-nowrap">
@@ -20,8 +18,7 @@ const RecoverDataCard = ({ openRecoverDataModalRef, className }: Props) => {
             </SettingsSectionTitle>
             <p>{c('Info')
                 .t`It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.`}</p>
-            <ReactivateKeysButton openRecoverDataModalRef={openRecoverDataModalRef}>{c('Action')
-                .t`Unlock data`}</ReactivateKeysButton>
+            <ReactivateKeysButton>{c('Action').t`Unlock data`}</ReactivateKeysButton>
         </Card>
     );
 };

@@ -5,7 +5,6 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import {
     Sidebar,
     useToggle,
-    usePermissions,
     useUser,
     PrivateAppContainer,
     PrivateHeader,
@@ -20,22 +19,37 @@ import {
     useModals,
     useUserSettings,
     useSubscription,
+    PlansSection,
+    YourPlanSection,
+    BillingSection,
+    CreditsSection,
+    GiftCodeSection,
+    CancelSubscriptionSection,
+    PrivateMainSettingsArea,
+    LanguageSection,
+    PaymentMethodsSection,
+    InvoicesSection,
+    ProtonVPNClientsSection,
+    OpenVPNConfigurationSection,
+    UsernameSection,
+    PasswordsSection,
+    OpenVPNCredentialsSection,
+    AccountRecoverySection,
+    EmailSubscriptionSection,
+    DeleteSection,
 } from '@proton/components';
-import { hasPermission } from '@proton/shared/lib/helpers/permissions';
 import LiveChatZendesk, {
     ZendeskRef,
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { c } from 'ttag';
-import { getPages } from './pages';
-import DashboardContainer from './containers/DashboardContainer';
-import GeneralContainer from './containers/GeneralContainer';
-import AccountContainer from './containers/AccountContainer';
-import DownloadsContainer from './containers/DownloadsContainer';
-import PaymentsContainer from './containers/PaymentsContainer';
+import { getIsSectionAvailable } from '@proton/components/containers/layout/helper';
+import { locales } from '@proton/shared/lib/i18n/locales';
+import { getRoutes } from './routes';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import TVContainer from './containers/TVContainer';
+import DashboardAutomaticModal from './containers/DashboardAutomaticModal';
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -44,16 +58,13 @@ const MainContainer = () => {
     const [userSettings] = useUserSettings();
     const history = useHistory();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
-    const userPermissions = usePermissions();
     const { isNarrow } = useActiveBreakpoint();
     const location = useLocation();
     const [activeSection, setActiveSection] = useState('');
-    const filteredPages = getPages(user).filter(({ permissions: pagePermissions = [] }) =>
-        hasPermission(userPermissions, pagePermissions)
-    );
     const { createModal } = useModals();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
+    const routes = getRoutes(user);
     const canEnableChat = useCanEnableChat(user);
 
     useEffect(() => {
@@ -117,7 +128,7 @@ const MainContainer = () => {
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
-                        list={filteredPages}
+                        list={Object.values(routes)}
                         pathname={location.pathname}
                         activeSection={activeSection}
                     />
@@ -125,53 +136,79 @@ const MainContainer = () => {
             </SidebarNav>
         </Sidebar>
     );
-    const dashboardPage = filteredPages.some(({ to }) => {
-        return to === '/dashboard';
-    });
     return (
         <Switch>
-            <Route path="/tv" exact component={TVContainer} />
+            <Route path="/tv">
+                <TVContainer />
+            </Route>
             <Route path="*">
                 <PrivateAppContainer header={header} sidebar={sidebar}>
                     <Switch>
-                        {dashboardPage && (
-                            <Route
-                                path="/dashboard"
-                                exact
-                                render={({ location }) => (
-                                    <DashboardContainer location={location} setActiveSection={setActiveSection} />
-                                )}
-                            />
+                        {getIsSectionAvailable(routes.dashboard) && (
+                            <Route path={routes.dashboard.to}>
+                                <DashboardAutomaticModal />
+                                <PrivateMainSettingsArea
+                                    setActiveSection={setActiveSection}
+                                    location={location}
+                                    config={routes.dashboard}
+                                >
+                                    <PlansSection />
+                                    <YourPlanSection />
+                                    <BillingSection />
+                                    <CreditsSection />
+                                    <GiftCodeSection />
+                                    <CancelSubscriptionSection />
+                                </PrivateMainSettingsArea>
+                            </Route>
                         )}
-                        <Route
-                            path="/general"
-                            exact
-                            render={({ location }) => (
-                                <GeneralContainer location={location} setActiveSection={setActiveSection} />
-                            )}
+                        <Route path={routes.general.to}>
+                            <PrivateMainSettingsArea
+                                setActiveSection={setActiveSection}
+                                location={location}
+                                config={routes.general}
+                            >
+                                <LanguageSection locales={locales} />
+                            </PrivateMainSettingsArea>
+                        </Route>
+                        <Route path={routes.account.to}>
+                            <PrivateMainSettingsArea
+                                setActiveSection={setActiveSection}
+                                location={location}
+                                config={routes.account}
+                            >
+                                <UsernameSection />
+                                <PasswordsSection />
+                                <OpenVPNCredentialsSection />
+                                <AccountRecoverySection />
+                                <EmailSubscriptionSection />
+                                <DeleteSection />
+                            </PrivateMainSettingsArea>
+                        </Route>
+                        <Route path={routes.downloads.to}>
+                            <PrivateMainSettingsArea
+                                setActiveSection={setActiveSection}
+                                location={location}
+                                config={routes.downloads}
+                            >
+                                <ProtonVPNClientsSection />
+                                <OpenVPNConfigurationSection />
+                            </PrivateMainSettingsArea>
+                        </Route>
+                        {getIsSectionAvailable(routes.payments) && (
+                            <Route path={routes.payments.to}>
+                                <PrivateMainSettingsArea
+                                    setActiveSection={setActiveSection}
+                                    location={location}
+                                    config={routes.payments}
+                                >
+                                    <PaymentMethodsSection />
+                                    <InvoicesSection />
+                                </PrivateMainSettingsArea>
+                            </Route>
+                        )}
+                        <Redirect
+                            to={getIsSectionAvailable(routes.dashboard) ? routes.dashboard.to : routes.downloads.to}
                         />
-                        <Route
-                            path="/account"
-                            exact
-                            render={({ location }) => (
-                                <AccountContainer location={location} setActiveSection={setActiveSection} />
-                            )}
-                        />
-                        <Route
-                            path="/downloads"
-                            exact
-                            render={({ location }) => (
-                                <DownloadsContainer location={location} setActiveSection={setActiveSection} />
-                            )}
-                        />
-                        <Route
-                            path="/payments"
-                            exact
-                            render={({ location }) => (
-                                <PaymentsContainer location={location} setActiveSection={setActiveSection} />
-                            )}
-                        />
-                        <Redirect to={dashboardPage ? '/dashboard' : '/downloads'} />
                     </Switch>
                     {showChat.render && canEnableChat ? (
                         <LiveChatZendesk

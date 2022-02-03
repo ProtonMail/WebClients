@@ -9,7 +9,7 @@ import { Href, Loader, Meter, Button } from '../../../components';
 import { useModals, useSubscription, useOrganization, useUser, useAddresses } from '../../../hooks';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
 import { formatPlans } from './helpers';
-import { SettingsParagraph, SettingsSection } from '../../account';
+import { SettingsSection } from '../../account';
 import UpsellMailSubscription from './UpsellMailSubscription';
 import UpsellVPNSubscription from './UpsellVPNSubscription';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
@@ -22,24 +22,16 @@ const getVpnConnectionsText = (n = 0) => {
     return c('Label').ngettext(msgid`${n} VPN connection available`, `${n} VPN connections available`, n);
 };
 
-interface Props {
-    permission?: boolean;
-}
-
 const mailAppName = getAppName(APPS.PROTONMAIL);
 const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
 
-const YourPlanSection = ({ permission }: Props) => {
+const YourPlanSection = () => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
     const [organization, loadingOrganization] = useOrganization();
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
-
-    if (!permission) {
-        return <SettingsParagraph>{c('Info').t`No subscription yet`}</SettingsParagraph>;
-    }
 
     if (loadingSubscription || loadingOrganization || loadingAddresses) {
         return <Loader />;
