@@ -569,18 +569,6 @@ export enum COUPON_CODES {
 
 export const GIFT_CODE_LENGTH = 16;
 
-export enum PERMISSIONS {
-    ADMIN = 'admin',
-    MEMBER = 'member',
-    FREE = 'free',
-    UPGRADER = 'upgrader',
-    MULTI_USERS = 'multi-users',
-    PAID = 'paid',
-    PAID_MAIL = 'paid-mail',
-    PAID_VPN = 'paid-vpn',
-    NOT_SUB_USER = 'not-sub-user',
-}
-
 export enum MESSAGE_BUTTONS {
     READ_UNREAD = 0,
     UNREAD_READ = 1,

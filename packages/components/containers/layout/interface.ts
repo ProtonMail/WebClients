@@ -1,17 +1,16 @@
 import * as H from 'history';
-import { PERMISSIONS } from '@proton/shared/lib/constants';
 import { NotificationDotColor } from '../../components';
 
 export interface SettingsPropsShared {
     location: H.Location;
-    setActiveSection?: (section: string) => void;
+    config: SectionConfig;
 }
 
 export interface SubSectionConfig {
     text?: string;
     id: string;
     hide?: boolean;
-    permissions?: PERMISSIONS[];
+    available?: boolean;
 }
 
 export interface SectionConfig {
@@ -19,7 +18,13 @@ export interface SectionConfig {
     to: string;
     icon: string;
     description?: string;
-    subsections?: SubSectionConfig[];
-    permissions?: PERMISSIONS[];
+    subsections: SubSectionConfig[];
+    available?: boolean;
     notification?: NotificationDotColor;
+}
+
+export interface SidebarConfig {
+    readonly available?: boolean;
+    readonly header: string;
+    readonly routes: { [key: string]: SectionConfig };
 }

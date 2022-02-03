@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
@@ -13,6 +13,7 @@ import {
     useRecoverySecrets,
     useUserSettings,
     useUser,
+    useSearchParamsEffect,
 } from '../../hooks';
 
 import SettingsParagraph from '../account/SettingsParagraph';
@@ -25,11 +26,7 @@ import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesButton from './VoidRecoveryFilesButton';
 import { classnames } from '../../helpers/component';
 
-interface Props {
-    openMnemonicModalRef?: MutableRefObject<boolean>;
-}
-
-const DataRecoverySection = ({ openMnemonicModalRef }: Props) => {
+const DataRecoverySection = () => {
     const [user] = useUser();
     const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
@@ -55,13 +52,17 @@ const DataRecoverySection = ({ openMnemonicModalRef }: Props) => {
         await call();
     };
 
-    useEffect(() => {
-        if (openMnemonicModalRef?.current && !loading) {
-            openMnemonicModalRef.current = false;
-            // Should not prompt the confirm step since it's for new users
-            createModal(<GenerateMnemonicModal onSuccess={call} />);
-        }
-    }, [loading, openMnemonicModalRef?.current]);
+    useSearchParamsEffect(
+        (params) => {
+            if (!loading && params.get('action') === 'generate-recovery-phrase') {
+                // Should not prompt the confirm step since it's for new users
+                createModal(<GenerateMnemonicModal onSuccess={call} />);
+                params.delete('action');
+                return params;
+            }
+        },
+        [loading]
+    );
 
     if (loading) {
         return <Loader />;
