@@ -28,6 +28,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import * as config from '../app/config';
 import '../app/app.scss';
 import Setup from './Setup';
+import broadcast, { MessageType } from './broadcast';
 
 initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
@@ -44,6 +45,7 @@ const cache = createCache<string, any>();
 
 const App = () => {
     const [UID, setUID] = useState<string | undefined>(() => authentication.getUID());
+    const [isLogout, setLogout] = useState(false);
 
     const handleLogin = (UID: string) => {
         authentication.setUID(UID);
@@ -51,6 +53,9 @@ const App = () => {
     };
 
     const handleLogout = () => {
+        // If logout happens, we explicitly set a state to stop the process. There's nothing that can recover it.
+        setLogout(true);
+        broadcast({ type: MessageType.CLOSE });
         authentication.setUID(undefined);
         setUID(undefined);
     };
@@ -86,7 +91,9 @@ const App = () => {
                                                     <CacheProvider cache={cache}>
                                                         <NotificationsChildren />
                                                         <ErrorBoundary component={<StandardErrorPage />}>
-                                                            <Setup UID={UID} onLogin={handleLogin} />
+                                                            {isLogout ? null : (
+                                                                <Setup UID={UID} onLogin={handleLogin} />
+                                                            )}
                                                         </ErrorBoundary>
                                                     </CacheProvider>
                                                 </AuthenticationProvider>
