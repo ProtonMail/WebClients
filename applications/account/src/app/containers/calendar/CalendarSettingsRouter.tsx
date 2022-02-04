@@ -42,11 +42,15 @@ interface Props {
     calendarAppRoutes: ReturnType<typeof getCalendarAppRoutes>;
     redirect: ReactNode;
     calendarSubscribeUnavailable: boolean;
+    hasInviteLocaleFeature: boolean;
+    hasAutoImportInviteFeature: boolean;
 }
 
 const CalendarSettingsRouter = ({
     user,
     calendarSubscribeUnavailable,
+    hasInviteLocaleFeature,
+    hasAutoImportInviteFeature,
     loadingFeatures,
     calendarAppRoutes,
     redirect,
@@ -94,7 +98,12 @@ const CalendarSettingsRouter = ({
                 <PrivateMainSettingsArea config={general} location={location}>
                     <CalendarTimeSection calendarUserSettings={calendarUserSettings} />
                     <CalendarLayoutSection calendarUserSettings={calendarUserSettings} />
-                    <CalendarInvitationsSection calendarUserSettings={calendarUserSettings} locales={locales} />
+                    <CalendarInvitationsSection
+                        calendarUserSettings={calendarUserSettings}
+                        locales={locales}
+                        hasInviteLocaleFeature={hasInviteLocaleFeature}
+                        hasAutoImportInviteFeature={hasAutoImportInviteFeature}
+                    />
                     <ThemesSection />
                 </PrivateMainSettingsArea>
             </Route>
