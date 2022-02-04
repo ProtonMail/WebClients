@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { DefaultFormat, EditorPlugin, IEditor, Direction } from 'roosterjs-editor-types';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
 import { EditorActions, OnEditorEventListened } from '../../interface';
@@ -11,6 +12,7 @@ interface Options {
     onEditorEvent: OnEditorEventListened;
     initialContent?: string;
     showModalLink: (props: ModalLinkProps) => void;
+    iframeRef: RefObject<HTMLIFrameElement>;
 }
 
 interface InitRoosterReturns {
@@ -70,6 +72,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
 
     const actions = getRoosterEditorActions(
         editor,
+        options.iframeRef,
         () => {
             undoSnapshotService.clearSnapshots();
         },
