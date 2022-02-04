@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { IEditor, Direction } from 'roosterjs-editor-types';
 import { EditorActions } from '../../interface';
 
@@ -7,6 +8,7 @@ import { EditorActions } from '../../interface';
  */
 const getRoosterEditorActions = (
     editorInstance: IEditor,
+    iframeRef: RefObject<HTMLIFrameElement>,
     clearUndoHistory: () => void,
     setTextDirection: (direction: Direction) => void,
     showModalLink: () => void
@@ -22,6 +24,7 @@ const getRoosterEditorActions = (
             editorInstance.setContent(value);
         },
         focus() {
+            iframeRef.current?.contentWindow?.focus();
             editorInstance.focus();
         },
         insertImage(url: string, attrs: { [key: string]: string } = {}) {
