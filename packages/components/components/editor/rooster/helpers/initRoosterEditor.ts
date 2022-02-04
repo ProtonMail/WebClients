@@ -17,6 +17,7 @@ interface Options {
     iframeRef: RefObject<HTMLIFrameElement>;
     mailSettings?: MailSettings;
     onPasteImage: (image: File) => void;
+    openEmojiPicker: () => void;
 }
 
 interface InitRoosterReturns {
@@ -88,7 +89,8 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         },
         () => {
             options.showModalLink?.({ editor, createLink });
-        }
+        },
+        options.openEmojiPicker
     );
 
     return { editor, actions };
