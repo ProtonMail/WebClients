@@ -1,0 +1,162 @@
+import { c } from 'ttag';
+import { useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import {
+    AutocompleteList,
+    Icon,
+    InputTwo,
+    Marks,
+    Option,
+    useAutocomplete,
+    useAutocompleteFilter,
+} from '@proton/components';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getIsSectionAvailable, getIsSubsectionAvailable } from '@proton/components/containers/layout/helper';
+
+import { getRoutes } from './routes';
+
+type Routes = ReturnType<typeof getRoutes>;
+type RouteParents = keyof Routes;
+
+interface Props {
+    routes: Routes;
+    path: string;
+}
+
+interface SearchOption {
+    value: string;
+    icon: string;
+    to: string;
+    in: string[];
+}
+
+const getAppNameFromParentKey = (parentKey: RouteParents): APP_NAMES => {
+    switch (parentKey) {
+        case 'calendar':
+            return APPS.PROTONCALENDAR;
+        case 'mail':
+            return APPS.PROTONMAIL;
+        case 'drive':
+            return APPS.PROTONDRIVE;
+        case 'vpn':
+            return APPS.PROTONVPN_SETTINGS;
+    }
+    throw new Error('Unknown route');
+};
+
+const getSearchableItems = (routes: Routes, path: string): SearchOption[] => {
+    return Object.entries(routes).flatMap(([key, parentRoute]) => {
+        return Object.values(parentRoute.routes).flatMap((sectionRoute) => {
+            const parentKey = key as RouteParents;
+            const prefix =
+                parentKey === 'account' || parentKey === 'organization'
+                    ? path
+                    : `/${getSlugFromApp(getAppNameFromParentKey(parentKey))}`;
+
+            if (!getIsSectionAvailable(sectionRoute)) {
+                return [];
+            }
+
+            const parentItem: SearchOption = {
+                value: sectionRoute.text,
+                in: [parentRoute.header],
+                to: `${prefix}${sectionRoute.to}`,
+                icon: sectionRoute.icon,
+            };
+
+            const subsectionItems: SearchOption[] = sectionRoute.subsections
+                .map((subsection): SearchOption | null => {
+                    if (!subsection.text || !getIsSubsectionAvailable(subsection)) {
+                        return null;
+                    }
+                    return {
+                        value: subsection.text,
+                        in: [parentRoute.header, sectionRoute.text],
+                        to: `${prefix}${sectionRoute.to}#${subsection.id}`,
+                        icon: sectionRoute.icon,
+                    };
+                })
+                .filter(isTruthy);
+
+            return [parentItem, ...subsectionItems];
+        });
+    });
+};
+
+const getData = ({ value }: SearchOption) => value;
+
+const SettingsSearch = ({ routes, path }: Props) => {
+    const [value, setValue] = useState('');
+    const inputRef = useRef<HTMLInputElement>(null);
+    const history = useHistory();
+
+    const options = getSearchableItems(routes, path);
+
+    const filteredOptions = useAutocompleteFilter(value, options, getData, 20, 1);
+
+    const handleOption = (option: SearchOption) => {
+        history.push(option.to);
+        setValue('');
+    };
+
+    const { onClose, getOptionID, inputProps, suggestionProps } = useAutocomplete({
+        id: 'search-settings',
+        options: filteredOptions,
+        onSelect: (optionValue) => {
+            handleOption(optionValue);
+        },
+        input: value,
+        inputRef,
+    });
+
+    return (
+        <>
+            <div style={{ width: '35%' }} className="flex-item-centered-vert">
+                <InputTwo
+                    {...inputProps}
+                    placeholder={c('Placeholder').t`Search settings`}
+                    prefix={<Icon className="ml0-5" name="magnifying-glass" />}
+                    className="pl0"
+                    ref={inputRef}
+                    value={value}
+                    onChange={(event) => {
+                        setValue(event.currentTarget.value.trimStart());
+                    }}
+                />
+            </div>
+            <AutocompleteList anchorRef={inputRef} {...suggestionProps}>
+                {filteredOptions.map(({ chunks, text, option }, index) => {
+                    return (
+                        <Option
+                            key={text}
+                            id={getOptionID(index)}
+                            title={text}
+                            value={option}
+                            disableFocusOnActive
+                            onChange={(optionValue) => {
+                                handleOption(optionValue);
+                                onClose();
+                            }}
+                        >
+                            <div className="flex">
+                                <div className="pr1">
+                                    <Icon name={option.icon} />
+                                </div>
+                                <div className="flex-item-fluid">
+                                    <div>
+                                        <Marks chunks={chunks}>{text}</Marks>
+                                    </div>
+                                    <div className="color-weak text-sm">{option.in.join(' > ')}</div>
+                                </div>
+                            </div>
+                        </Option>
+                    );
+                })}
+            </AutocompleteList>
+        </>
+    );
+};
+
+export default SettingsSearch;
