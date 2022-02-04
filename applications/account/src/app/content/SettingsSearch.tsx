@@ -90,6 +90,7 @@ const getData = ({ value }: SearchOption) => value;
 const SettingsSearch = ({ routes, path }: Props) => {
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const history = useHistory();
 
     const options = getSearchableItems(routes, path);
@@ -120,13 +121,14 @@ const SettingsSearch = ({ routes, path }: Props) => {
                     prefix={<Icon className="ml0-5" name="magnifying-glass" />}
                     className="pl0"
                     ref={inputRef}
+                    containerRef={containerRef}
                     value={value}
                     onChange={(event) => {
                         setValue(event.currentTarget.value.trimStart());
                     }}
                 />
             </div>
-            <AutocompleteList anchorRef={inputRef} {...suggestionProps}>
+            <AutocompleteList anchorRef={containerRef.current ? containerRef : inputRef} {...suggestionProps}>
                 {filteredOptions.map(({ chunks, text, option }, index) => {
                     return (
                         <Option
