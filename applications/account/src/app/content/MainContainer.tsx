@@ -113,7 +113,7 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
-            searchBox={<SettingsSearch routes={routes} path={prefixPath} />}
+            searchBox={<SettingsSearch routes={routes} path={prefixPath} app={app} />}
         />
     );
 
