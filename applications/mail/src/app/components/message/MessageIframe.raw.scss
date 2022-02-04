@@ -29,6 +29,11 @@ body * {
 	position: relative !important;
 }
 
+/* Forbidden height with pourcentage on images */
+img[height$='%'] {
+	height: unset !important;
+}
+
 // remove reset margins
 blockquote,
 dl,
@@ -215,10 +220,6 @@ code {
 .proton-image-placeholder--error {
 	color: #d42f34;
 	border-color: #d42f34;
-}
-
-.proton-image-anchor {
-	display: inline-block;
 }
 
 .proton-image-placeholder .icon-20p {
