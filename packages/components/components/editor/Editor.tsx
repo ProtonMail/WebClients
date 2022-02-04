@@ -1,11 +1,10 @@
-import { Dispatch, DragEvent, SetStateAction, useCallback } from 'react';
+import { Dispatch, DragEvent, SetStateAction, useCallback, useRef  } from 'react';
 import { c } from 'ttag';
 import noop from '@proton/utils/noop';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 
 import { classnames } from '../../helpers';
-
 import EditorToolbar from './toolbar/Toolbar';
 import { EditorActions, EditorMetadata } from './interface';
 import { EDITOR_DEFAULT_METADATA } from './constants';
@@ -74,6 +73,7 @@ const Editor = ({
     const modalLink = useEditorModal<ModalLinkProps>();
     const modalImage = useEditorModal<ModalImageProps>();
     const modalDefaultFont = useEditorModal<ModalDefaultFontProps>();
+    const openEmojiPickerRef = useRef<() => void>(null);
 
     const [toolbarConfig, setToolbarConfig] = useToolbarConfig({
         showModalImage: modalImage.showCallback,
@@ -153,6 +153,7 @@ const Editor = ({
                             onFocus={onFocus}
                             mailSettings={mailSettings}
                             className={simple ? 'border rounded' : ''}
+                            openEmojiPicker={() => openEmojiPickerRef.current?.()}
                         />
                     )}
 
@@ -179,6 +180,7 @@ const Editor = ({
                     metadata={metadata}
                     mailSettings={mailSettings}
                     className={editorToolbarClassname}
+                    openEmojiPickerRef={openEmojiPickerRef}
                 />
             </div>
             {modalDefaultFont.render && metadata.supportDefaultFontSelector && (
