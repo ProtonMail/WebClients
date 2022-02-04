@@ -7,7 +7,8 @@ import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
 import {
-    ATTRIBUTES,
+    ATTRIBUTES_TO_FIND,
+    ATTRIBUTES_TO_LOAD,
     hasToSkipProxy,
     loadFakeImages,
     loadRemoteImages,
@@ -18,7 +19,7 @@ import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesT
 
 const WHITELIST = ['notify@protonmail.com'];
 
-const SELECTOR = ATTRIBUTES.map((name) => {
+const SELECTOR = ATTRIBUTES_TO_FIND.map((name) => {
     if (name === 'src') {
         return '[proton-src]:not([proton-src^="cid"]):not([proton-src^="data"])';
     }
@@ -89,7 +90,7 @@ export const transformRemote = (
 
         let url = '';
 
-        ATTRIBUTES.some((attribute) => {
+        ATTRIBUTES_TO_LOAD.some((attribute) => {
             url = match.getAttribute(`proton-${attribute}`) || '';
             return url && url !== '';
         });
@@ -104,14 +105,18 @@ export const transformRemote = (
             }
         }
 
-        remoteImages.push({
-            type: 'remote',
-            url,
-            original: match,
-            id,
-            tracker: undefined,
-            status: 'not-loaded',
-        });
+        // Some elements might not have a URL at this point, e.g. img tag with only a srcset attribute
+        // We don't want to display an error placeholder, so we don't add them
+        if (url) {
+            remoteImages.push({
+                type: 'remote',
+                url,
+                original: match,
+                id,
+                tracker: undefined,
+                status: 'not-loaded',
+            });
+        }
     });
 
     if (skipProxy) {
@@ -122,10 +127,13 @@ export const transformRemote = (
         void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
     }
 
+    // We might found images elements that we do not add to remote images, e.g. img tag with only a srcset attribute
+    const containsRemoteImages = hasRemoteImages && remoteImages.length > 0;
+
     return {
         document,
-        showRemoteImages: hasRemoteImages ? showRemoteImages : undefined,
+        showRemoteImages: containsRemoteImages ? showRemoteImages : undefined,
         remoteImages,
-        hasRemoteImages,
+        hasRemoteImages: containsRemoteImages,
     };
 };
