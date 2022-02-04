@@ -40,10 +40,10 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 shareId={shareId}
                 isActive={match.url === '/shared-urls'}
             >
-                {c('Link').t`Shared`}
+                <span className="text-ellipsis" title={c('Link').t`Shared`}>{c('Link').t`Shared`}</span>
             </DriveSidebarListItem>
             <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId} isActive={match.url === '/trash'}>
-                {c('Link').t`Trash`}
+                <span className="text-ellipsis" title={c('Link').t`Trash`}>{c('Link').t`Trash`}</span>
             </DriveSidebarListItem>
         </SidebarList>
     );
