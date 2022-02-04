@@ -152,7 +152,7 @@ const SidebarItem = ({
                     left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}
                     right={<LocationAside unreadCount={unreadCount} active={active} refreshing={refreshing} />}
                 >
-                    {content}
+                    <span className="text-ellipsis">{content}</span>
                     {totalMessagesCounter}
                 </SidebarListItemContent>
             </SidebarListItemLink>
