@@ -26,13 +26,15 @@ export default function DriveSidebarFoldersRoot({ path, rootFolder, toggleExpand
             isActive={path === url}
             onDoubleClick={() => toggleExpand(rootFolder.linkId)}
         >
-            <span>{rootFolder.name}</span>
+            <span className="text-ellipsis" title={rootFolder.name}>
+                {rootFolder.name}
+            </span>
             {isLoading ? (
                 <Loader className="ml0-5 drive-sidebar--icon inline" />
             ) : (
                 rootFolder.subfolders && (
                     <ExpandButton
-                        className="ml0-5"
+                        className="ml0-5 flex-item-noshrink"
                         expanded={rootFolder.expanded}
                         onClick={() => toggleExpand(rootFolder.linkId)}
                     />
