@@ -70,8 +70,9 @@ export const loadElementOtherThanImages = (images: MessageRemoteImage[], message
                 const elementValue = element.getAttribute(protonAttr) as string;
 
                 // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
+                // Check its originalUrl because url field can be a blob at this point
                 const elementWithOriginalURL = elementOtherThanImages.find((el) => {
-                    return elementValue === el.url;
+                    return elementValue === el.originalURL;
                 });
 
                 // Set attribute with the right URL (normal or blob depending on the setting)
