@@ -23,6 +23,7 @@ type RouteParents = keyof Routes;
 interface Props {
     routes: Routes;
     path: string;
+    app: APP_NAMES;
 }
 
 interface SearchOption {
@@ -46,15 +47,20 @@ const getAppNameFromParentKey = (parentKey: RouteParents): APP_NAMES => {
     throw new Error('Unknown route');
 };
 
-const getSearchableItems = (routes: Routes, path: string): SearchOption[] => {
+const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): SearchOption[] => {
     return Object.entries(routes).flatMap(([key, parentRoute]) => {
-        return Object.values(parentRoute.routes).flatMap((sectionRoute) => {
-            const parentKey = key as RouteParents;
-            const prefix =
-                parentKey === 'account' || parentKey === 'organization'
-                    ? path
-                    : `/${getSlugFromApp(getAppNameFromParentKey(parentKey))}`;
+        const parentKey = key as RouteParents;
+        const parentApp =
+            parentKey === 'account' || parentKey === 'organization' ? app : getAppNameFromParentKey(parentKey);
 
+        // Only interested in account, organization, or app-level settings
+        if (parentApp !== app) {
+            return [];
+        }
+
+        const prefix = `/${getSlugFromApp(parentApp)}`;
+
+        return Object.values(parentRoute.routes).flatMap((sectionRoute) => {
             if (!getIsSectionAvailable(sectionRoute)) {
                 return [];
             }
@@ -87,13 +93,13 @@ const getSearchableItems = (routes: Routes, path: string): SearchOption[] => {
 
 const getData = ({ value }: SearchOption) => value;
 
-const SettingsSearch = ({ routes, path }: Props) => {
+const SettingsSearch = ({ routes, path, app }: Props) => {
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const history = useHistory();
 
-    const options = getSearchableItems(routes, path);
+    const options = getSearchableItems(routes, path, app);
 
     const filteredOptions = useAutocompleteFilter(value, options, getData, 20, 1);
 
