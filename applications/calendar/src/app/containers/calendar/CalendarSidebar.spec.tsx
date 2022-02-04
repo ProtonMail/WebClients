@@ -112,9 +112,10 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
             AutoDetectPrimaryTimezone: 1,
             PrimaryTimezone: 'America/New_York',
             DisplaySecondaryTimezone: 0,
-            SecondaryTimezone: undefined,
+            SecondaryTimezone: null,
             ViewPreference: SETTINGS_VIEW.WEEK,
             InviteLocale: null,
+            AutoImportInvite: 0,
         },
         // onCreateEvent: jest.fn(),
     };
