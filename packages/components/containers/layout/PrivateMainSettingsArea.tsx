@@ -112,6 +112,7 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, children, config 
                 title={config.text}
                 observer={sectionObserver}
                 className="container-section-sticky-section"
+                key={config.id}
             >
                 {child}
             </SubSettingsSection>
