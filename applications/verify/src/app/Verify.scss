@@ -1,5 +1,9 @@
 @import '~@proton/styles/scss/config';
 
+html body {
+	overflow: auto;
+}
+
 body.embedded {
 	font-size: 1em;
 	background: none;
