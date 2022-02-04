@@ -1,5 +1,6 @@
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { RefObject, useCallback, useEffect } from 'react';
+import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import { IFRAME_EVENTS_LIST, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
 
 const isDragEvent = (event: Event): event is DragEvent => {
@@ -58,11 +59,32 @@ const cloneEvent = (event: Event) => {
  */
 const preventUnwantedEvents = (event: Event) => {
     if (isKeyboardEvent(event)) {
-        const ctrlKeyPressed = isMac() ? event.metaKey === true : event.ctrlKey === true;
+        Object.values(editorShortcuts).forEach((shortcut) => {
+            let isOk = shortcut.map(() => false);
+            shortcut.forEach((key, index) => {
+                const formattedKey = key.toLowerCase();
+                let ok = false;
 
-        if (ctrlKeyPressed) {
-            event.preventDefault();
-        }
+                if (formattedKey === 'meta') {
+                    ok = isMac() ? event.metaKey : event.ctrlKey;
+                }
+                if (formattedKey === 'shift') {
+                    ok = event.shiftKey;
+                }
+
+                if (formattedKey === event.key.toLowerCase()) {
+                    ok = true;
+                }
+
+                if (ok) {
+                    isOk[index] = true;
+                }
+            });
+
+            if (isOk.every((item) => item === true)) {
+                event.preventDefault();
+            }
+        });
     }
 };
 
