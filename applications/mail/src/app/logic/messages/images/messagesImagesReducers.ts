@@ -103,7 +103,7 @@ export const loadRemoteProxyFulFilled = (
 
         messageState.messageImages.showRemoteImages = true;
 
-        const images = payload.map(({ image }) => image);
+        const images = imagesLoaded.map(({ image }) => image);
 
         loadElementOtherThanImages(images, messageState.messageDocument?.document);
 
@@ -181,7 +181,7 @@ export const loadRemoteDirectFulFilled = (
 
         messageState.messageImages.showRemoteImages = true;
 
-        const images = payload.map(({ image }) => image);
+        const images = imagesLoaded.map(({ image }) => image);
 
         loadElementOtherThanImages(images, messageState.messageDocument?.document);
         loadBackgroundImages({ document: messageState.messageDocument?.document, images });
