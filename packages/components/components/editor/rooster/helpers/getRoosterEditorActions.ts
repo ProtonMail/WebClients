@@ -12,7 +12,8 @@ const getRoosterEditorActions = (
     iframeRef: RefObject<HTMLIFrameElement>,
     clearUndoHistory: () => void,
     setTextDirection: (direction: Direction) => void,
-    showModalLink: () => void
+    showModalLink: () => void,
+    openEmojiPicker: () => void
 ): EditorActions => {
     return {
         getContent() {
@@ -52,6 +53,7 @@ const getRoosterEditorActions = (
         clearUndoHistory,
         setTextDirection,
         showModalLink,
+        openEmojiPicker,
     };
 };
 

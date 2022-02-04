@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { forwardRef, ReactNode, Ref, useImperativeHandle, useState } from 'react';
 
 import { classnames, generateUID } from '../../../helpers';
 import { usePopperAnchor } from '../../popper';
@@ -8,6 +8,7 @@ import Dropdown from '../../dropdown/Dropdown';
 
 interface Props {
     autoClose?: boolean;
+    autoCloseOutside?: boolean;
     title?: string;
     className?: string;
     content?: ReactNode;
@@ -16,24 +17,35 @@ interface Props {
     noMaxSize?: boolean;
     disabled?: boolean;
     originalPlacement?: string;
+    hasCaret?: boolean;
     [rest: string]: any;
 }
 
-const ToolbarDropdown = ({
-    title,
-    content,
-    className,
-    children,
-    onOpen,
-    noMaxSize,
-    autoClose = true,
-    disabled = false,
-    originalPlacement = 'bottom',
-    ...rest
-}: Props) => {
+export interface ToolbarDropdownAction {
+    close: () => void;
+    open: () => void;
+}
+
+const ToolbarDropdown = (
+    {
+        title,
+        content,
+        className,
+        children,
+        onOpen,
+        noMaxSize,
+        autoClose = true,
+        autoCloseOutside = true,
+        disabled = false,
+        originalPlacement = 'bottom',
+        hasCaret = false,
+        ...rest
+    }: Props,
+    ref: Ref<ToolbarDropdownAction>
+) => {
     const [uid] = useState(generateUID('dropdown'));
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { anchorRef, isOpen, toggle, close, open } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = () => {
         if (!isOpen) {
@@ -41,6 +53,8 @@ const ToolbarDropdown = ({
         }
         toggle();
     };
+
+    useImperativeHandle(ref, () => ({ close, open }), [close, open]);
 
     return (
         <>
@@ -51,6 +65,7 @@ const ToolbarDropdown = ({
                     ref={anchorRef}
                     isOpen={isOpen}
                     onClick={handleClick}
+                    hasCaret={hasCaret}
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
                     className={classnames([
@@ -66,7 +81,7 @@ const ToolbarDropdown = ({
             <Dropdown
                 id={uid}
                 autoClose={autoClose}
-                autoCloseOutside={autoClose}
+                autoCloseOutside={autoCloseOutside}
                 originalPlacement={originalPlacement}
                 isOpen={isOpen}
                 noMaxSize={noMaxSize}
@@ -80,4 +95,4 @@ const ToolbarDropdown = ({
     );
 };
 
-export default ToolbarDropdown;
+export default forwardRef(ToolbarDropdown);

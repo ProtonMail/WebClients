@@ -28,6 +28,7 @@ export interface ExternalEditorActions {
     /** Is editor unmounted */
     isDisposed: () => boolean | undefined;
     showLinkModal: () => void;
+    openEmojiPicker: () => void;
 }
 interface Props {
     message: MessageState;
@@ -215,6 +216,7 @@ const EditorWrapper = ({
                 removeEmbedded: handleRemoveEmbedded,
                 isDisposed: () => editorActionsRef.current?.isDisposed(),
                 showLinkModal: () => editorActionsRef.current?.showModalLink?.(),
+                openEmojiPicker: () => editorActionsRef.current?.openEmojiPicker?.(),
             };
             onReady(externalActions);
         }

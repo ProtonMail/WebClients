@@ -3686,6 +3686,7 @@ __metadata:
     "@testing-library/user-event": ^13.5.0
     "@types/codemirror": 5.60.5
     "@types/credit-card-type": ^7.0.0
+    "@types/emoji-mart": ^3.0.9
     "@types/jest": ^28.1.6
     "@types/markdown-it": ^12.2.3
     "@types/qrcode.react": ^1.0.2
@@ -3700,6 +3701,7 @@ __metadata:
     codemirror: ^5.65.7
     date-fns: ^2.28.0
     dompurify: ^2.3.10
+    emoji-mart: ^3.0.1
     eslint: ^8.20.0
     intersection-observer: ^0.12.2
     jest: ^28.1.3
@@ -6103,6 +6105,15 @@ __metadata:
     "@types/got": ^8
     "@types/node": "*"
   checksum: eabd3d9666b24065fd113551f04387d7eda86d513de5cd3877481c30832ec4617c8fe47464b56b787c733b13320bf19b87aa8babac113ff949fa88958fab4c2e
+  languageName: node
+  linkType: hard
+
+"@types/emoji-mart@npm:^3.0.9":
+  version: 3.0.9
+  resolution: "@types/emoji-mart@npm:3.0.9"
+  dependencies:
+    "@types/react": "*"
+  checksum: 97e22728985e1542975b5d9ec43fc2bb9bfd1952640be177799a52f3cb5785def80ab59c23c34ac2310604c7097f2c1d24cebf4dd6a17706fceda6725c6d8150
   languageName: node
   linkType: hard
 
@@ -13570,6 +13581,18 @@ __metadata:
   version: 0.10.2
   resolution: "emittery@npm:0.10.2"
   checksum: ee3e21788b043b90885b18ea756ec3105c1cedc50b29709c92b01e239c7e55345d4bb6d3aef4ddbaf528eef448a40b3bb831bad9ee0fc9c25cbf1367ab1ab5ac
+  languageName: node
+  linkType: hard
+
+"emoji-mart@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "emoji-mart@npm:3.0.1"
+  dependencies:
+    "@babel/runtime": ^7.0.0
+    prop-types: ^15.6.0
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0-0 || ^16.0.0 || ^17.0.0
+  checksum: 6282c6bfea0b183941c63bf20aee53a317503465266cf634819fd5aab84c42c867ee8b412dca8628dd8a74acdf5bd2006dbac6ac024f8f6a07596471f7bbd35d
   languageName: node
   linkType: hard
 
@@ -25069,7 +25092,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.8.1, prop-types@npm:^15.0.0, prop-types@npm:^15.5.7, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:15.8.1, prop-types@npm:^15.0.0, prop-types@npm:^15.5.7, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Vr } from '@proton/atoms';
 
+import { forwardRef, Ref } from 'react';
 import { classnames } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { ButtonGroup } from '../../button';
@@ -16,15 +17,17 @@ import ToolbarFontSizeDropdown from './ToolbarFontSizeDropdown';
 import ToolbarColorsDropdown from './ToolbarColorsDropdown';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
 import ToolbarMoreDropdown from './ToolbarMoreDropdown';
+import ToolbarEmojiDropdown from './ToolbarEmojiDropdown';
 
 interface ToolbarProps {
     config: ToolbarConfig | undefined;
     metadata: EditorMetadata;
     mailSettings: MailSettings | undefined;
     className?: string;
+    openEmojiPickerRef: Ref<() => void>;
 }
 
-const Toolbar = ({ config, metadata, mailSettings, className }: ToolbarProps) => {
+const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className }: ToolbarProps) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || isNarrow;
@@ -136,6 +139,8 @@ const Toolbar = ({ config, metadata, mailSettings, className }: ToolbarProps) =>
                     >
                         <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
                     </ToolbarButton>
+                    <Vr aria-hidden="true" />
+                    <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
                     {metadata.supportImages && (
                         <>
                             <Vr aria-hidden="true" />
@@ -162,4 +167,4 @@ const Toolbar = ({ config, metadata, mailSettings, className }: ToolbarProps) =>
     );
 };
 
-export default Toolbar;
+export default forwardRef(Toolbar);
