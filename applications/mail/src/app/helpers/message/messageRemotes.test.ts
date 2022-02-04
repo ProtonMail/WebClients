@@ -38,20 +38,6 @@ describe('messageRemote', () => {
                         </video>
                   </div>`;
 
-        const srcsetContent = `<div>
-                              <picture>
-                                <source media="(min-width:650px)" proton-srcset='${imageURL}' >
-                                <img src='${imageURL}' >
-                              </picture>
-                            </div>`;
-
-        const srcsetExpectedContent = `<div>
-                              <picture>
-                                <source media="(min-width:650px)" srcset='${imageURL}' >
-                                <img src='${imageURL}' >
-                              </picture>
-                            </div>`;
-
         const xlinkhrefContent = `<div>
                               <svg width="90" height="90">
                                <image proton-xlink:href='${imageURL}'/>
@@ -64,11 +50,24 @@ describe('messageRemote', () => {
                               </svg>
                             </div>`;
 
+        const srcsetContent = `<div>
+                              <picture>
+                                <source media="(min-width:650px)" proton-srcset='${imageURL}' >
+                                <img src='${imageURL}' >
+                              </picture>
+                            </div>`;
+
+        const srcsetExpectedContent = `<div>
+                              <picture>
+                                <source media="(min-width:650px)" proton-srcset='${imageURL}' >
+                                <img src='${imageURL}' >
+                              </picture>
+                            </div>`;
+
         it.each`
             content              | expectedContent
             ${backgroundContent} | ${backgroundExpectedContent}
             ${posterContent}     | ${posterExpectedContent}
-            ${srcsetContent}     | ${srcsetExpectedContent}
             ${xlinkhrefContent}  | ${xlinkhrefExpectedContent}
         `('should load elements other than images', async ({ content, expectedContent }) => {
             const messageDocument = createDocument(content);
@@ -87,6 +86,27 @@ describe('messageRemote', () => {
             loadElementOtherThanImages(remoteImages, messageDocument);
 
             const expectedDocument = createDocument(expectedContent);
+
+            expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
+        });
+
+        it('should not load srcset attribute', () => {
+            const messageDocument = createDocument(srcsetContent);
+
+            const remoteImages = [
+                {
+                    type: 'remote',
+                    url: imageURL,
+                    originalURL: imageURL,
+                    id: 'remote-0',
+                    tracker: undefined,
+                    status: 'loaded',
+                },
+            ] as MessageRemoteImage[];
+
+            loadElementOtherThanImages(remoteImages, messageDocument);
+
+            const expectedDocument = createDocument(srcsetExpectedContent);
 
             expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
         });
