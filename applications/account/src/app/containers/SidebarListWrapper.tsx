@@ -22,7 +22,9 @@ const SidebarListWrapper = ({ header, routes, prefix }: Props) => {
                             notification={section.notification}
                             key={section.to}
                         >
-                            {section.text}
+                            <span className="text-ellipsis" title={section.text}>
+                                {section.text}
+                            </span>
                         </SettingsListItem>
                     )
             )}
