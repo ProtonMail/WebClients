@@ -74,11 +74,7 @@ const useGetCalendarActions = ({
                 ...calendarPayload,
                 AddressID: addressID,
             })
-        ).catch((e: Error) => {
-            // Hard failure if the keys fail to setup. Force the user to reload.
-            setError(true);
-            throw e;
-        });
+        );
 
         await setupCalendarKey({
             api,
