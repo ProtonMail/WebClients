@@ -182,7 +182,7 @@ const KeyUploadContent = ({
                         })}
                     </TableBody>
                 </Table>
-                <SelectFiles shape="link" color="norm">
+                <SelectFiles shape="underline" color="norm">
                     {c('Select files').t`Upload additional files`}
                 </SelectFiles>
             </>

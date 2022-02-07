@@ -5,7 +5,7 @@ import { useMemo, useState } from 'react';
 
 import {
     DateInput,
-    LinkButton,
+    UnderlineButton,
     TimeInput,
     classnames,
     TimezoneSelector,
@@ -173,23 +173,23 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 {!isAllDay &&
                     canToggleTzSelector &&
                     (showTzSelector ? (
-                        <LinkButton
+                        <UnderlineButton
                             className="p0"
                             data-test-id="hide-tz"
                             onClick={() => setShowTzSelector(false)}
                             title={c('Title').t`Hide time zones for event start and end times`}
                         >
                             {c('Action').t`Hide time zones`}
-                        </LinkButton>
+                        </UnderlineButton>
                     ) : (
-                        <LinkButton
+                        <UnderlineButton
                             className="p0"
                             data-test-id="show-tz"
                             onClick={() => setShowTzSelector(true)}
                             title={c('Title').t`Show time zones for event start and end times`}
                         >
                             {c('Action').t`Show time zones`}
-                        </LinkButton>
+                        </UnderlineButton>
                     ))}
             </div>
         </IconRow>

@@ -45,7 +45,7 @@ export const DropdownButton: <E extends ElementType = typeof defaultElement>(
             >
                 {children}
                 {loading && (
-                    <span className="loader-container">
+                    <span className="button-loader-container">
                         <CircleLoader />
                     </span>
                 )}

@@ -5,7 +5,7 @@ import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import { Key } from '@proton/shared/lib/interfaces';
 import { APPS } from '@proton/shared/lib/constants';
-import { Alert, Copy, FormModal, LinkButton, useSettingsLink } from '../../../components';
+import { Alert, Copy, FormModal, UnderlineButton, useSettingsLink } from '../../../components';
 import { useModals, useNotifications, useUser } from '../../../hooks';
 import ContactClearDataConfirmModal from './ContactClearDataConfirmModal';
 import useContact from '../useContact';
@@ -71,9 +71,9 @@ const ContactDecryptionErrorModal = ({ onClose = noop, contactID, ...rest }: Pro
             <Alert className="mb1" type="info">
                 {c('Info')
                     .t`Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.`}
-                <LinkButton className="ml0-5" onClick={handleClear} disabled={!errorKey}>
+                <UnderlineButton className="ml0-5" onClick={handleClear} disabled={!errorKey}>
                     {c('Action').t`Click here.`}
-                </LinkButton>
+                </UnderlineButton>
             </Alert>
         </FormModal>
     );
