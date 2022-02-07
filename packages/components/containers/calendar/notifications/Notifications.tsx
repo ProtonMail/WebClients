@@ -3,7 +3,7 @@ import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notifi
 import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
 import { addItem, removeItem, updateItem } from '@proton/shared/lib/helpers/array';
 import { classnames, generateUID } from '../../../helpers';
-import { ButtonLike, ErrorZone, Icon, LinkButton, Tooltip } from '../../../components';
+import { ButtonLike, ErrorZone, Icon, UnderlineButton, Tooltip } from '../../../components';
 import NotificationInput from './inputs/NotificationInput';
 
 export const NOTIFICATION_ID = 'notifications';
@@ -57,7 +57,7 @@ const Notifications = ({
                 );
             })}
             {canAdd && (
-                <LinkButton
+                <UnderlineButton
                     className={classnames(['p0', notifications.length === 0 && 'mt0-5'])}
                     data-test-id="add-notification"
                     title={c('Title').t`Add another notification to remind you of this event`}
@@ -66,7 +66,7 @@ const Notifications = ({
                     }
                 >
                     {c('Action').t`Add notification`}
-                </LinkButton>
+                </UnderlineButton>
             )}
             {errors?.notifications?.text && <ErrorZone id={NOTIFICATION_ID}>{errors.notifications.text}</ErrorZone>}
         </>

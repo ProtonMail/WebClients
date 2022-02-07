@@ -4,7 +4,7 @@ import {
     Icon,
     useLoading,
     Button,
-    LinkButton,
+    UnderlineButton,
     classnames,
     TableRowBusy,
     FileIcon,
@@ -75,9 +75,9 @@ const ExpandableRow = ({
     const viewMoreRow = !childrenComplete ? (
         <tr>
             <td style={viewMorePadding} className="pl-custom">
-                <LinkButton className="ml0-5" onClick={handleLoadMore(linkId)}>
+                <UnderlineButton className="ml0-5" onClick={handleLoadMore(linkId)}>
                     {c('Action').t`View more`}
-                </LinkButton>
+                </UnderlineButton>
             </td>
         </tr>
     ) : null;

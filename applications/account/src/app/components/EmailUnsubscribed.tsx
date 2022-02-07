@@ -22,7 +22,7 @@ const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick, load
                 </Button>
             }
             below={
-                <Button onClick={onManageClick} shape="link" color="norm">
+                <Button onClick={onManageClick} shape="underline" color="norm">
                     {c('Action').t`Change other email subscriptions`}
                 </Button>
             }

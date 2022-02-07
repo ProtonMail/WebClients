@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
 
-import { Button, useLoading, useFormErrors, InputFieldTwo, LinkButton } from '@proton/components';
+import { Button, useLoading, useFormErrors, InputFieldTwo, UnderlineButton } from '@proton/components';
 
 interface Props {
     onSubmit: (totp: string) => Promise<void>;
@@ -54,7 +54,7 @@ const TOTPForm = ({ onSubmit }: Props) => {
                 />
             )}
             <div className="text-center">
-                <LinkButton
+                <UnderlineButton
                     onClick={() => {
                         if (loading) {
                             return;
@@ -66,7 +66,7 @@ const TOTPForm = ({ onSubmit }: Props) => {
                     {isTotpRecovery
                         ? c('Action').t`Use two-factor authentication code`
                         : c('Action').t`Use recovery code`}
-                </LinkButton>
+                </UnderlineButton>
             </div>
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                 {c('Action').t`Authenticate`}

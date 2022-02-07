@@ -9,7 +9,7 @@ import {
     ContentModal,
     InnerModal,
     FooterModal,
-    LinkButton,
+    UnderlineButton,
     useModals,
     useActiveBreakpoint,
     Button,
@@ -206,12 +206,12 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
                             <Icon name="folder-plus" />
                         </Button>
                     ) : (
-                        <LinkButton
+                        <UnderlineButton
                             disabled={loading || !selectedFolder}
                             onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
                         >
                             {c('Action').t`Create new folder`}
-                        </LinkButton>
+                        </UnderlineButton>
                     )}
                     <div>
                         <Button type="reset" disabled={loading} autoFocus>

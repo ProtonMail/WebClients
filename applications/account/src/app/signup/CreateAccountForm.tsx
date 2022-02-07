@@ -9,7 +9,7 @@ import {
     PasswordInputTwo,
     useFormErrors,
     InputFieldTwo,
-    LinkButton,
+    UnderlineButton,
     ChallengeResult,
     ChallengeRef,
     captureChallengeMessage,
@@ -167,7 +167,9 @@ const CreateAccountForm = ({
                 id="email"
                 bigger
                 label={c('Signup label').t`Email`}
-                error={validator(signupType === 'email' ? [requiredValidator(email), emailValidator(email), emailError] : [])}
+                error={validator(
+                    signupType === 'email' ? [requiredValidator(email), emailValidator(email), emailError] : []
+                )}
                 disableChange={loading}
                 autoFocus
                 type="email"
@@ -230,7 +232,7 @@ const CreateAccountForm = ({
                 {signupType === 'email' && <InsecureEmailInfo email={email} />}
                 {hasExternalSignup ? (
                     <div className="text-center">
-                        <LinkButton
+                        <UnderlineButton
                             id="existing-email-button"
                             onClick={() => {
                                 // Reset verification parameters if email is changed
@@ -245,7 +247,7 @@ const CreateAccountForm = ({
                             {signupType === 'email'
                                 ? c('Action').t`Create a secure ProtonMail address instead`
                                 : c('Action').t`Use your current email address instead`}
-                        </LinkButton>
+                        </UnderlineButton>
                     </div>
                 ) : null}
                 <InputFieldTwo
