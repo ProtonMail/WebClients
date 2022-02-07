@@ -6,7 +6,7 @@ import {
     ConfirmModal,
     Info,
     Label,
-    LinkButton,
+    UnderlineButton,
     Progress,
     Toggle,
     Tooltip,
@@ -170,9 +170,9 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     const showMoreText = showMore ? c('Action').t`Fewer search options` : c('Action').t`More search options`;
     const showMoreButton = (
         <div className="flex mb1">
-            <LinkButton onClick={toggleShowMore} aria-expanded={showMore} title={showMoreTitle}>
+            <UnderlineButton onClick={toggleShowMore} aria-expanded={showMore} title={showMoreTitle}>
                 {showMoreText}
-            </LinkButton>
+            </UnderlineButton>
         </div>
     );
 

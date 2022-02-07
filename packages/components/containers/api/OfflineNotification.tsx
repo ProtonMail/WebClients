@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { LinkButton } from '../../components';
+import { UnderlineButton } from '../../components';
 import { useLoading } from '../../hooks';
 
 interface Props {
@@ -9,9 +9,9 @@ interface Props {
 const OfflineNotification = ({ onRetry, message }: Props) => {
     const [loading, withLoading] = useLoading();
     const retryNow = (
-        <LinkButton className="align-baseline p0" disabled={loading} onClick={() => withLoading(onRetry())}>
+        <UnderlineButton className="align-baseline p0" disabled={loading} onClick={() => withLoading(onRetry())}>
             {c('Action').t`Retry now`}
-        </LinkButton>
+        </UnderlineButton>
     );
     return (
         <>

@@ -1,4 +1,4 @@
-import { Label, LinkButton, Row } from '@proton/components';
+import { Label, UnderlineButton, Row } from '@proton/components';
 import { c } from 'ttag';
 import * as React from 'react';
 
@@ -27,7 +27,9 @@ const MoreRow = ({
                 <div className="flex flex-justify-space-between flex-nowrap flex-align-items-center">
                     {children}
                     {displayMore ? (
-                        <LinkButton onClick={() => onChange(!hasMore)}>{hasMore ? lessText : moreText}</LinkButton>
+                        <UnderlineButton onClick={() => onChange(!hasMore)}>
+                            {hasMore ? lessText : moreText}
+                        </UnderlineButton>
                     ) : null}
                 </div>
             </div>

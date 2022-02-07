@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Icon, LinkButton, Info, Button } from '../../components';
+import { Icon, UnderlineButton, Info, Button } from '../../components';
 import { useToggle } from '../../hooks';
 
 import GiftCodeForm from './subscription/GiftCodeForm';
@@ -61,7 +61,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }: Props) => {
 
     return (
         <>
-            <LinkButton className="mr0-5" onClick={toggle}>{c('Link').t`Add a gift code`}</LinkButton>
+            <UnderlineButton className="mr0-5" onClick={toggle}>{c('Link').t`Add a gift code`}</UnderlineButton>
             <Info
                 title={c('Tooltip')
                     .t`If you purchased a gift code or received one from our support team, you can enter it here.`}
