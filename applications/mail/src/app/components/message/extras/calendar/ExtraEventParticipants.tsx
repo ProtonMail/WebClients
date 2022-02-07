@@ -1,4 +1,4 @@
-import { LinkButton } from '@proton/components';
+import { UnderlineButton } from '@proton/components';
 import { Participant } from '@proton/shared/lib/interfaces/calendar';
 import { useState } from 'react';
 import { c, msgid } from 'ttag';
@@ -42,7 +42,7 @@ const ExtraEventParticipants = ({ list }: Props) => {
                             totalAttendees
                         )}
                     </span>
-                    <LinkButton onClick={toggleShowMore}>{c('Action').t`Show`}</LinkButton>
+                    <UnderlineButton onClick={toggleShowMore}>{c('Action').t`Show`}</UnderlineButton>
                 </div>
             )}
             {isShowingMore &&
@@ -52,7 +52,7 @@ const ExtraEventParticipants = ({ list }: Props) => {
             {}
             {isShowingMore && (
                 <div>
-                    <LinkButton onClick={toggleShowMore}>{c('Action').t`Show less`}</LinkButton>
+                    <UnderlineButton onClick={toggleShowMore}>{c('Action').t`Show less`}</UnderlineButton>
                 </div>
             )}
         </>

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import noResultsImg from '@proton/styles/assets/img/placeholders/empty-search.svg';
 
-import { LinkButton } from '../../components';
+import { UnderlineButton } from '../../components';
 
 interface Props {
     query?: string;
@@ -11,9 +11,9 @@ interface Props {
 const EmptyResults = ({ query = '', onClearSearch }: Props) => {
     const title = c('Error message').t`No results found for "${query}"`;
     const button = (
-        <LinkButton key="button" className="text-bold p0" onClick={onClearSearch}>
+        <UnderlineButton key="button" className="text-bold p0" onClick={onClearSearch}>
             {c('Action').t`clear it`}
-        </LinkButton>
+        </UnderlineButton>
     );
 
     return (

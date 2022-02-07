@@ -37,7 +37,7 @@ import {
     FooterModal,
     Button,
     PrimaryButton,
-    LinkButton,
+    UnderlineButton,
     Icon,
 } from '../../../components';
 
@@ -262,11 +262,11 @@ const ContactEmailSettingsModal = ({
                         </Field>
                     </Row>
                     <div className="mb1">
-                        <LinkButton onClick={() => setShowPgpSettings(!showPgpSettings)} disabled={isLoading}>
+                        <UnderlineButton onClick={() => setShowPgpSettings(!showPgpSettings)} disabled={isLoading}>
                             {showPgpSettings
                                 ? c('Action').t`Hide advanced PGP settings`
                                 : c('Action').t`Show advanced PGP settings`}
-                        </LinkButton>
+                        </UnderlineButton>
                     </div>
                     {showPgpSettings && model ? (
                         <ContactPgpSettings model={model} setModel={setModel} mailSettings={mailSettings} />

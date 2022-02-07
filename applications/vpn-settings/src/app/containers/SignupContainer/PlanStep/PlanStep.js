@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Field, CurrencySelector, CycleSelector, SubTitle, useModals, LinkButton } from '@proton/components';
+import { Row, Field, CurrencySelector, CycleSelector, SubTitle, useModals, UnderlineButton } from '@proton/components';
 import { CURRENCIES, CYCLE } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import PlanCard from './PlanCard/PlanCard';
@@ -75,8 +75,8 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
                     .t`You are saving 33% with an two-year plan`}</strong>
             )}
             <div className="mt2">
-                <LinkButton className="block center" onClick={handleComparisonClick}>{c('Action')
-                    .t`View full plan comparison`}</LinkButton>
+                <UnderlineButton className="block center" onClick={handleComparisonClick}>{c('Action')
+                    .t`View full plan comparison`}</UnderlineButton>
             </div>
             <div className="mt2 text-center">
                 <span className="auto-mobile">{c('Info').jt`All plans support: ${supportedOS}`}</span>

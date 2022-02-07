@@ -6,7 +6,7 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 
 import { useApi, useErrorHandler, useLoading, useNotifications } from '../../hooks';
-import { FullLoader, Input, Label, LinkButton, PasswordInput, PrimaryButton } from '../../components';
+import { FullLoader, Input, Label, UnderlineButton, PasswordInput, PrimaryButton } from '../../components';
 import { OnLoginCallback } from '../app/interface';
 import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
 
@@ -269,9 +269,9 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     };
 
     const cancelButton = (
-        <LinkButton type="reset" onClick={handleCancel}>
+        <UnderlineButton type="reset" onClick={handleCancel}>
             {c('Action').t`Cancel`}
-        </LinkButton>
+        </UnderlineButton>
     );
 
     const cache = cacheRef.current;
