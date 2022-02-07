@@ -14,7 +14,7 @@ import { revoke } from '@proton/shared/lib/api/auth';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
-    LinkButton,
+    UnderlineButton,
     Loader,
     CircleLoader,
     OnLoginCallbackArguments,
@@ -245,8 +245,8 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 </div>
             </Content>
             <Footer>
-                <LinkButton className="mlauto mrauto" onClick={handleSignOutAll}>{c('Action')
-                    .t`Sign out all accounts`}</LinkButton>
+                <UnderlineButton className="mlauto mrauto" onClick={handleSignOutAll}>{c('Action')
+                    .t`Sign out all accounts`}</UnderlineButton>
             </Footer>
         </Main>
     );

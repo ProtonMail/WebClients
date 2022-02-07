@@ -31,13 +31,13 @@ Basic.args = {};
 
 type ButtonProps = React.ComponentProps<typeof Button>;
 
-const shapes: Required<ButtonProps>['shape'][] = ['solid', 'outline', 'ghost'];
+const shapes: Required<ButtonProps>['shape'][] = ['solid', 'outline', 'ghost', 'underline'];
 
 const colors: Required<ButtonProps>['color'][] = ['norm', 'weak', 'danger', 'warning', 'success', 'info'];
 
 const sizes: Required<ButtonProps>['size'][] = ['small', 'medium', 'large'];
 
-const toggles = ['loading', 'pill', 'fullWidth'] as const;
+const toggles = ['loading', 'pill', 'fullWidth', 'icon'] as const;
 
 const buttonContainerClassName = 'flex flex-item-fluid flex-align-items-center flex-justify-center border';
 
@@ -57,7 +57,13 @@ export const Sandbox = () => {
                 return acc;
             }, {})}
         >
-            {selectedShape} {selectedColor} {selectedSize}
+            {selectedToggles[toggles.indexOf('icon')] ? (
+                <Icon name="brand-proton-mail" />
+            ) : (
+                <>
+                    {selectedShape} {selectedColor} {selectedSize}
+                </>
+            )}
         </Button>
     );
 
@@ -138,13 +144,15 @@ export const Variants = () => {
                     <TableRow key={shape}>
                         <TableCell>{shape}</TableCell>
                         {colors.map((color) => (
-                            <TableCell key={color}>
+                            <TableCell key={color} className="text-center">
                                 <Button shape={shape} color={color} className="mr0-5 mb0-5">
                                     Lorem
                                 </Button>
-                                <Button icon shape={shape} color={color} className="mb0-5">
-                                    <Icon name="brand-proton-mail" />
-                                </Button>
+                                {shape !== 'underline' && (
+                                    <Button icon shape={shape} color={color} className="mb0-5">
+                                        <Icon name="brand-proton-mail" />
+                                    </Button>
+                                )}
                             </TableCell>
                         ))}
                     </TableRow>

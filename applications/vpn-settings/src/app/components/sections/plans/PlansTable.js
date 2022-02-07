@@ -387,7 +387,7 @@ const PlansTable = ({
                 {onSelect && (
                     <tr>
                         <th scope="row" className="simple-table-row-th text-left bg-weak">
-                            <Button size="small" shape="link" color="norm" onClick={toggle}>
+                            <Button size="small" shape="underline" color="norm" onClick={toggle}>
                                 {state ? c('Action').t`Hide additional features` : c('Action').t`Compare all features`}
                             </Button>
                         </th>
