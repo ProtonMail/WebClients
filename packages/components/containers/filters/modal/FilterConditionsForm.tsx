@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Condition, FilterStatement, ConditionType, ConditionComparator, SimpleFilterModalModel } from '../interfaces';
-import { Radio, LinkButton } from '../../../components';
+import { Radio, UnderlineButton } from '../../../components';
 import { classnames, generateUID } from '../../../helpers';
 
 import FilterConditionsFormRow from './FilterConditionsFormRow';
@@ -103,9 +103,9 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
                 ))}
             </div>
             {conditions.every((c) => !c.error) && (
-                <LinkButton onClick={onAddCondition} className="mt0-5 mb0-5">
+                <UnderlineButton onClick={onAddCondition} className="mt0-5 mb0-5">
                     <strong>{c('Action').t`Add condition`}</strong>
-                </LinkButton>
+                </UnderlineButton>
             )}
         </>
     );

@@ -24,7 +24,7 @@ import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
-import { Checkbox, Icon, Label as FormLabel, LabelStack, LinkButton } from '../../../components';
+import { Checkbox, Icon, Label as FormLabel, LabelStack, UnderlineButton } from '../../../components';
 import { useModals } from '../../../hooks';
 
 import CustomizeMailImportModal from '../mail/modals/CustomizeMailImportModal';
@@ -339,7 +339,7 @@ const IASelectImportTypeStep = ({
                             ) : (
                                 <div className="color-weak">{getMailSummary()}</div>
                             )}
-                            <LinkButton
+                            <UnderlineButton
                                 className="flex-align-self-start pb0"
                                 onClick={() =>
                                     createModal(
@@ -359,7 +359,7 @@ const IASelectImportTypeStep = ({
                                 }
                             >
                                 {c('Action').t`Customize`}
-                            </LinkButton>
+                            </UnderlineButton>
                         </>
                     )}
                 </div>
@@ -453,7 +453,7 @@ const IASelectImportTypeStep = ({
                                 <div className="color-weak">{getCalendarSummary()}</div>
                             )}
 
-                            <LinkButton
+                            <UnderlineButton
                                 className="flex-align-self-start pb0"
                                 onClick={() =>
                                     createModal(
@@ -470,7 +470,7 @@ const IASelectImportTypeStep = ({
                                 }
                             >
                                 {c('Action').t`Customize`}
-                            </LinkButton>
+                            </UnderlineButton>
                         </>
                     )}
                 </div>
