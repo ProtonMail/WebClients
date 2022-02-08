@@ -1,0 +1,70 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import {
+    Table,
+    TableHeader,
+    TableRow,
+    TableCell,
+    TableBody,
+} from '@proton/components';
+import { getTitle } from '../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Box Shadow
+
+## Applying a box shadow
+
+Utilities for controlling the box shadow of an element.
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header">
+                Class
+            </TableCell>
+            <TableCell type="header">
+                Explanation
+            </TableCell>
+            <TableCell type="header" className="text-right">
+                Quick look
+            </TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>shadow-norm</code>
+            </TableCell>
+            <TableCell>
+                Applies a <code>--shadow-norm</code> shadow on an element.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block shadow-norm w3e">&nbsp;</span>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>shadow-lifted</code>
+            </TableCell>
+            <TableCell>
+                Applies a <code>--shadow-lifted</code> shadow on an element.<br/>
+                Should only be applied on lifted and out of flow elements, such as modals or tooltips.
+            </TableCell>
+            <TableCell className="text-right">
+                <span className="inline-block shadow-lifted w3e">&nbsp;</span>
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+## Example
+
+Applies the common box shadow on this element.
+
+<Source
+    language='html'
+    format
+    code={`
+<div className="shadow-norm">Lorem ipsum dolor sit amet</div>
+`}
+/>

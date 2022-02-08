@@ -87,3 +87,14 @@ table.no-bg {
 .sbdocs-h2 {
 	margin-block-start: 2em !important;
 }
+
+// Fix weird margin on auto scroll
+.docs-story > div {
+	margin: 0;
+}
+
+.icon-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1em;
+}
