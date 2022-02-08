@@ -32,7 +32,7 @@ const BasicModal = ({
         <ModalTwo {...rest} {...modalProps}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>{children}</ModalTwoContent>
-            <ModalTwoFooter>{footer}</ModalTwoFooter>
+            {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
         </ModalTwo>
     );
 };
