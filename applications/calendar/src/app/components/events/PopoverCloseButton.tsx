@@ -8,7 +8,7 @@ interface Props {
 const PopoverCloseButton = ({ onClose }: Props) => {
     return (
         <Tooltip title={c('Event popover close button').t`Close popover`}>
-            <Button icon shape="ghost" size="small" title={c('Action').t`Close popover`} onClick={onClose}>
+            <Button icon shape="ghost" size="small" onClick={onClose}>
                 <Icon name="xmark" alt={c('Action').t`Close event popover`} />
             </Button>
         </Tooltip>
