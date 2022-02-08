@@ -10,11 +10,11 @@ import {
     CompatibilityCheck,
     RightToLeftProvider,
     ThemeProvider,
-    NotificationsProvider,
     ModalsProvider,
     ApiProvider,
     CacheProvider,
     NotificationsChildren,
+    CreateNotificationOptions,
 } from '@proton/components';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { APPS } from '@proton/shared/lib/constants';
@@ -29,6 +29,7 @@ import * as config from '../app/config';
 import '../app/app.scss';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
+import NotificationsHijack from './NotificationsHijack';
 
 initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
@@ -75,6 +76,17 @@ const App = () => {
         };
     }, [UID]);
 
+    const handleNotificationCreate = (options: CreateNotificationOptions) => {
+        const { type = 'success', text } = options;
+
+        if (typeof text === 'string') {
+            broadcast({
+                type: MessageType.NOTIFICATION,
+                payload: { type, text },
+            });
+        }
+    };
+
     return (
         <ConfigProvider config={enhancedConfig}>
             <CompatibilityCheck>
@@ -84,7 +96,7 @@ const App = () => {
                         <ThemeProvider>
                             <Router>
                                 <PreventLeaveProvider>
-                                    <NotificationsProvider>
+                                    <NotificationsHijack onCreate={handleNotificationCreate}>
                                         <ModalsProvider>
                                             <ApiProvider UID={UID} config={enhancedConfig} onLogout={handleLogout}>
                                                 <AuthenticationProvider store={authenticationValue}>
@@ -99,7 +111,7 @@ const App = () => {
                                                 </AuthenticationProvider>
                                             </ApiProvider>
                                         </ModalsProvider>
-                                    </NotificationsProvider>
+                                    </NotificationsHijack>
                                 </PreventLeaveProvider>
                             </Router>
                         </ThemeProvider>
