@@ -1,4 +1,4 @@
-import { forwardRef, memo, Ref, useEffect, useRef } from 'react';
+import { forwardRef, memo, Ref, useEffect, useRef, useState } from 'react';
 import { Redirect, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import {
     FeatureCode,
@@ -13,6 +13,7 @@ import {
     MailShortcutsModal,
     BetaOnboardingModal,
     useIsMnemonicAvailable,
+    useModalState,
     useUser,
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -45,6 +46,8 @@ const PageContainer = (
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const { createModal } = useModals();
+    const [mnemonicPromptModal, setMnemonicPromptModalOpen] = useModalState();
+    const [shouldOpenMnemonicPrompt, setShouldOpenMnemonicPrompt] = useState(false);
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const [user] = useUser();
@@ -97,7 +100,8 @@ const PageContainer = (
             createModal(<BetaOnboardingModal />);
         } else if (shouldOpenMnemonicPrompt) {
             onceRef.current = true;
-            createModal(<MnemonicPromptModal />);
+            setMnemonicPromptModalOpen(true);
+            setShouldOpenMnemonicPrompt(true);
         }
     }, [isMnemonicAvailable, hasSeenMnemonicPrompt]);
 
@@ -123,6 +127,7 @@ const PageContainer = (
             elementID={elementID}
             breakpoints={breakpoints}
         >
+            {shouldOpenMnemonicPrompt && <MnemonicPromptModal {...mnemonicPromptModal} />}
             <LocationErrorBoundary>
                 <MailboxContainer
                     labelID={labelID}
