@@ -161,7 +161,7 @@ const getModalContent = (
             return {
                 title: c('Title').t`Organizer cannot be notified`,
                 warningText: c('Info').t`The organizer could not be notified that you changed your answer:`,
-                close: <Button onClick={onClose}>{c('Action').t`OK`}</Button>,
+                close: <Button className="mlauto" color="norm" onClick={onClose}>{c('Action').t`OK`}</Button>,
             };
         }
         return {
@@ -174,7 +174,10 @@ const getModalContent = (
             title: c('Title').t`Organizer cannot be notified`,
             warningText: c('Info').t`The organizer cannot be notified that you decline the invitation:`,
             alertText: c('Info').t`Would you like to delete the event anyway?`,
-            submit: <Button onClick={onSubmit} color="danger" type="submit">{c('Action').t`Delete`}</Button>,
+            submit: (
+                <Button className="mlauto" onClick={onSubmit} color="danger" type="submit">{c('Action')
+                    .t`Delete`}</Button>
+            ),
         };
     }
     return {
@@ -255,10 +258,12 @@ const SendWithErrorsConfirmationModal = ({
         <BasicModal
             title={title}
             footer={
-                <>
-                    {close}
-                    {submit}
-                </>
+                (close || submit) && (
+                    <>
+                        {close}
+                        {submit}
+                    </>
+                )
             }
             onSubmit={handleConfirm}
             size="large"
