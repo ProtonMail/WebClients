@@ -242,24 +242,21 @@ const EditorWrapper = ({
     }, [documentReady, isPlainText, editorReady, blockquoteSaved !== undefined]);
 
     // Handle input considering blockquote
-    const onChangeContentCallback = useCallback(
-        (content: string) => {
-            // Rooster (but not plaintext) triggers an onContentChange event when the initial content is inserted
-            if (!isPlainText) {
-                if (skipNextInputRef.current) {
-                    skipNextInputRef.current = false;
-                    return;
-                }
-
-                checkImageDeletion();
+    const onChangeContentCallback = useHandler((content: string) => {
+        // Rooster (but not plaintext) triggers an onContentChange event when the initial content is inserted
+        if (!isPlainText) {
+            if (skipNextInputRef.current) {
+                skipNextInputRef.current = false;
+                return;
             }
 
-            const nextContent = blockquoteExpanded ? content : `${content}${blockquoteExpanded}`;
+            checkImageDeletion();
+        }
 
-            onChangeContent(nextContent);
-        },
-        [onChangeContent, isPlainText, blockquoteExpanded]
-    );
+        const nextContent = blockquoteExpanded ? content : `${content}${blockquoteSaved}`;
+
+        onChangeContent(nextContent);
+    });
 
     const handleChangeMetadata = useCallback(
         (change: Partial<EditorMetadata>) => {
