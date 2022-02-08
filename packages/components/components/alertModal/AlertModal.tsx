@@ -1,4 +1,4 @@
-import { ReactNode, useContext } from 'react';
+import { ReactNode, ReactElement, cloneElement, useContext } from 'react';
 
 import { classnames } from '../../helpers';
 import { ModalTwo, ModalProps, ModalTwoContent, ModalContentProps, ModalTwoFooter, ModalContext } from '../modalTwo';
@@ -19,7 +19,11 @@ export interface AlertModalProps extends Omit<ModalProps, 'children' | 'size'> {
 }
 
 const AlertModal = ({ title, subline, buttons, className, children, ModalContentProps, ...rest }: AlertModalProps) => {
-    const [firstButton, secondButton, thirdButton] = Array.isArray(buttons) ? buttons : [buttons];
+    const buttonArray = Array.isArray(buttons) ? buttons : [buttons];
+
+    const [firstButton, secondButton, thirdButton] = buttonArray.map((child) =>
+        cloneElement(child as ReactElement, { fullWidth: true })
+    );
 
     return (
         <ModalTwo size="small" {...rest} className={classnames([className, 'alert-modal'])}>

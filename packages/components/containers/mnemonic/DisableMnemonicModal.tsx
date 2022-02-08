@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { c } from 'ttag';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -42,7 +42,9 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
     const { call } = useEventManager();
     const api = useApi();
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
         try {
             setSubmittingAuth(true);
 
@@ -72,12 +74,10 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
                 open={open}
                 title={c('Action').t`Disable recovery phrase?`}
                 buttons={[
-                    <Button fullWidth color="danger" onClick={() => setStep(STEPS.AUTH)}>
+                    <Button color="danger" onClick={() => setStep(STEPS.AUTH)}>
                         {c('Action').t`Disable recovery phrase`}
                     </Button>,
-                    <Button fullWidth onClick={onClose}>
-                        {c('Action').t`Cancel`}
-                    </Button>,
+                    <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
                 ]}
                 onClose={onClose}
                 onExit={onExit}

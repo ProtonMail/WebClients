@@ -45,7 +45,7 @@ export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: st
 interface MnemonicPhraseStepButtonsProps {
     mnemonic?: string;
     disabled?: boolean;
-    onDone: () => void;
+    onDone?: () => void;
 }
 export const MnemonicPhraseStepButtons = ({ mnemonic, disabled, onDone }: MnemonicPhraseStepButtonsProps) => {
     const { createNotification } = useNotifications();
@@ -61,13 +61,13 @@ export const MnemonicPhraseStepButtons = ({ mnemonic, disabled, onDone }: Mnemon
     };
 
     return (
-        <div className="w100">
-            <Button disabled={!mnemonic || disabled} onClick={handleDownload} fullWidth color="norm">
-                {c('Action').t`Download`}
-            </Button>
-            <Button className="mt1" disabled={!mnemonic || disabled} onClick={onDone} fullWidth>
+        <>
+            <Button disabled={!mnemonic || disabled} onClick={onDone}>
                 {c('Action').t`Done`}
             </Button>
-        </div>
+            <Button disabled={!mnemonic || disabled} onClick={handleDownload} color="norm">
+                {c('Action').t`Download`}
+            </Button>
+        </>
     );
 };
