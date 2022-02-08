@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { HighlightMetadata } from '../../../models/encryptedSearch';
+import { HighlightMetadata } from '@proton/encrypted-search';
 import { RecipientOrGroup } from '../../../models/address';
 
 interface Props {

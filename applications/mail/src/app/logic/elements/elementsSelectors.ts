@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { ESDBStatus } from '@proton/encrypted-search';
 import {
     PAGE_SIZE,
     MAX_ELEMENT_LIST_LOAD_RETRIES,
@@ -10,7 +11,7 @@ import {
 import { hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
 import { RootState } from '../store';
 import { ElementsStateParams } from './elementsTypes';
-import { ESDBStatus } from '../../models/encryptedSearch';
+import { ESMessage, NormalisedSearchParams } from '../../models/encryptedSearch';
 import { getTotal } from './helpers/elementTotal';
 import { expectedPageLength } from '../../helpers/paging';
 import { SearchParameters } from '../../models/tools';
@@ -30,7 +31,10 @@ const total = (state: RootState) => state.elements.total;
 const currentPage = (_: RootState, { page }: { page: number }) => page;
 const currentSearch = (_: RootState, { search }: { search: SearchParameters }) => search;
 const currentParams = (_: RootState, { params }: { params: ElementsStateParams }) => params;
-const currentESDBStatus = (_: RootState, { esDBStatus }: { esDBStatus: ESDBStatus }) => esDBStatus;
+const currentESDBStatus = (
+    _: RootState,
+    { esDBStatus }: { esDBStatus: ESDBStatus<ESMessage, NormalisedSearchParams> }
+) => esDBStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 
 export const elements = createSelector(

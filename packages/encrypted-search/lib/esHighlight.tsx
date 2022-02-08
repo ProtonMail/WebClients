@@ -1,29 +1,6 @@
 import { ReactNode } from 'react';
-import { classnames } from '@proton/components';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
-import { HighlightMetadata } from '../../models/encryptedSearch';
-import { ES_MAX_INITIAL_CHARS } from '../../constants';
-
-/**
- * Traverse an email's body to highlight only text within HTML tags
- */
-const recursiveBodyTraversal = (node: Node, applySearchMarkup: (text: string) => HTMLSpanElement | undefined) => {
-    if (node.nodeName === 'STYLE' || node.nodeName === 'SCRIPT') {
-        return;
-    }
-    if (node.nodeName === '#text') {
-        if (node.textContent) {
-            const highlightedSpan = applySearchMarkup(node.textContent);
-            if (highlightedSpan) {
-                node.parentNode?.replaceChild(highlightedSpan, node);
-            }
-        }
-        return;
-    }
-    for (const child of node.childNodes) {
-        recursiveBodyTraversal(child, applySearchMarkup);
-    }
-};
+import { ES_MAX_INITIAL_CHARS } from './constants';
 
 /**
  * Removes overlapping intervals to highlight
@@ -53,7 +30,7 @@ export const sanitisePositions = (positions: [number, number][]) => {
 /**
  * Find occurrences of a keyword in a text
  */
-export const findOccurrences = (text: string, normalisedKeywords: string[]) => {
+const findOccurrences = (text: string, normalisedKeywords: string[]) => {
     const positions: [number, number][] = [];
     const searchString = removeDiacritics(text.toLocaleLowerCase());
     for (const keyword of normalisedKeywords) {
@@ -72,7 +49,28 @@ export const findOccurrences = (text: string, normalisedKeywords: string[]) => {
 };
 
 /**
- * Insert the highlighting HTML tags inside the body of an email
+ * Traverse an email's body to highlight only text within HTML tags
+ */
+const recursiveBodyTraversal = (node: Node, applySearchMarkup: (text: string) => HTMLSpanElement | undefined) => {
+    if (node.nodeName === 'STYLE' || node.nodeName === 'SCRIPT') {
+        return;
+    }
+    if (node.nodeName === '#text') {
+        if (node.textContent) {
+            const highlightedSpan = applySearchMarkup(node.textContent);
+            if (highlightedSpan) {
+                node.parentNode?.replaceChild(highlightedSpan, node);
+            }
+        }
+        return;
+    }
+    for (const child of node.childNodes) {
+        recursiveBodyTraversal(child, applySearchMarkup);
+    }
+};
+
+/**
+ * Insert the highlighting HTML tags inside a content given as a string
  */
 export const insertMarks = (content: string, normalisedKeywords: string[], setAutoScroll: boolean) => {
     const domParser = new DOMParser();
@@ -158,7 +156,7 @@ export const highlightJSX = (
                             key={index} // eslint-disable-line react/no-array-index-key
                         >
                             {startingSlice}
-                            <mark className={classnames([isBold && 'text-bold'])}>
+                            <mark className={`${isBold ? 'text-bold' : ''}`}>
                                 {metadata.slice(position[0], position[1])}
                             </mark>
                             {index === sanitisedPositions.length - 1
@@ -175,7 +173,14 @@ export const highlightJSX = (
 /**
  * Insert highlighting markers only if a ReactNode is a string or can be parsed as such
  */
-export const highlightNode = (node: ReactNode, highlightMetadata: HighlightMetadata) => {
+export const highlightNode = (
+    node: ReactNode,
+    highlightMetadata: (
+        metadata: string,
+        isBold?: boolean,
+        trim?: boolean
+    ) => { numOccurrences: number; resultJSX: JSX.Element }
+) => {
     const nodeValue = node?.valueOf();
     if (typeof nodeValue === 'string') {
         return highlightMetadata(nodeValue).resultJSX;

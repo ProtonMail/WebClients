@@ -1,6 +1,5 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { ESCache, ESIndexingState, ESStatus } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 
@@ -119,15 +118,10 @@ export const DRAG_ADDRESS_SIZE_KEY = 'drag-address-size';
 
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
-export const OPENPGP_REFRESH_CUTOFF = 10;
-export const ES_MAX_PARALLEL_MESSAGES = 150;
-export const ES_MAX_CONCURRENT = 10;
-export const ES_MAX_CACHE = 500000000; // 500 MB
-export const ES_MAX_PAGES_PER_BATCH = 100;
-export const ES_MAX_MESSAGES_PER_BATCH = 1000;
-export const ES_MAX_INITIAL_CHARS = 20;
-export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };
-export const KeyUsages: KeyUsage[] = ['encrypt', `decrypt`];
+export const storeName = 'messages';
+export const indexName = 'byTime';
+export const primaryKeyName = 'ID';
+export const indexKeyNames: [string, string] = ['Time', 'Order'];
 export const localisedForwardFlags = [
     'fw:',
     'fwd:',
@@ -155,40 +149,9 @@ export const localisedForwardFlags = [
     'pd:',
     'i̇lt:',
 ];
-export const defaultESStatus: ESStatus = {
-    permanentResults: [],
-    setElementsCache: () => {},
-    labelID: '',
-    lastEmail: undefined,
-    previousNormSearchParams: undefined,
-    cachedIndexKey: undefined,
-    dbExists: false,
-    isBuilding: false,
-    isDBLimited: false,
-    esEnabled: false,
-    isRefreshing: false,
-    isSearchPartial: false,
-    isSearching: false,
-    isCaching: false,
-    isFirstSearch: true,
+export const defaultESMailStatus = {
     dropdownOpened: false,
     temporaryToggleOff: false,
-};
-export const defaultESCache: ESCache = {
-    esCache: [],
-    cacheSize: 0,
-    isCacheLimited: true,
-    isCacheReady: false,
-};
-export const defaultESIndexingState: ESIndexingState = {
-    esProgress: 0,
-    estimatedMinutes: 0,
-    startTime: 0,
-    endTime: 0,
-    oldestTime: 0,
-    esPrevProgress: 0,
-    totalIndexingMessages: 0,
-    currentProgressValue: 0,
 };
 
 export const WELCOME_PANE_OPTIONS_URLS = {
