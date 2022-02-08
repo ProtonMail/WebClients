@@ -45,8 +45,10 @@
 	}
 }
 
-.flex-nowrap {
-	flex-wrap: nowrap;
+@each $wrap in (wrap, wrap-reverse, nowrap) {
+	.flex-#{$wrap} {
+		flex-wrap: $wrap;
+	}
 }
 
 /* fix aspect ratio */

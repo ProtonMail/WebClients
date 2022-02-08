@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import { generateUID } from '../../helpers';
 
 import { useControlled } from '../../hooks';
 
 const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?: () => void }) => {
     const { open: controlledOpen, onClose, onExit } = options || {};
 
-    const [key, setKey] = useState(0);
+    const [key, setKey] = useState(() => generateUID());
 
     const [open, setOpen] = useControlled(controlledOpen);
 
@@ -15,7 +16,7 @@ const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?
     };
 
     const handleExit = () => {
-        setKey(key + 1);
+        setKey(generateUID());
         onExit?.();
     };
 
