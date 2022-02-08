@@ -1,15 +1,16 @@
 import { memo, useMemo } from 'react';
 import { c } from 'ttag';
 import { InlineLinkButton, useUser } from '@proton/components';
+import { sendSlowSearchReport } from '@proton/encrypted-search';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { sendSlowSearchReport } from '../../helpers/encryptedSearch/esSearch';
+import { storeName } from '../../constants';
 
 const ESSlowToolbar = () => {
     const [{ ID: userID }] = useUser();
     const { openDropdown, setTemporaryToggleOff } = useEncryptedSearchContext();
 
     useMemo(() => {
-        sendSlowSearchReport(userID);
+        void sendSlowSearchReport(userID, storeName);
     }, []);
 
     const dropdownButton = (
