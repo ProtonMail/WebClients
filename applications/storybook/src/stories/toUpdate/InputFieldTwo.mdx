@@ -1,0 +1,51 @@
+import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/addon-docs';
+
+# InputField
+
+<Canvas>
+    <Story id="to-update-inputfieldtwo--basic" />
+</Canvas>
+
+## Validation
+
+The `error` and `warning` props toggle the error state. If a node is provided, the `assistiveText` will be replaced.
+
+<Canvas>
+    <Story id="to-update-inputfieldtwo--validation" />
+</Canvas>
+
+## Adornments
+
+<Canvas>
+    <Story id="to-update-inputfieldtwo--adornments" />
+</Canvas>
+
+## Sizes
+
+The `bigger` prop to increases the size.
+
+<Canvas>
+    <Story id="to-update-inputfieldtwo--sizes" />
+</Canvas>
+
+## Dense inputs
+
+No assistive text, inline error appears as tooltip. Used where space is scarce.
+
+<Canvas>
+    <Story id="to-update-inputfieldtwo--dense" />
+</Canvas>
+
+## Custom elements
+
+The `as` prop allows for InputField to render as another element.
+
+<Canvas>
+    <Story id="to-update-inputfieldtwo--custom-elements" />
+</Canvas>
+
+## Playground
+
+<Primary />
+
+<ArgsTable story={PRIMARY_STORY} />

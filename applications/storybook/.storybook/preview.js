@@ -36,15 +36,16 @@ export const decorators = [
 const order = [
     'introduction-',
     'changelog-',
+    'core-concepts-',
+    'core-concepts-theming-explanations-',
+    'core-concepts-theming-usage-',
+    'core-concepts-theming-taxonomy-',
     'components-',
-    'css-',
-    'theming-explanations-',
-    'theming-usage-',
-    'theming-taxonomy-',
-    'proton-ui-',
+    'css-utilities-',
+    'to-update-',
 ];
 
-const priority = ['introduction-', 'changelog-', 'theming-'];
+const priority = ['introduction-', 'changelog-', 'core-concepts-'];
 
 export const parameters = {
     viewMode: 'docs',

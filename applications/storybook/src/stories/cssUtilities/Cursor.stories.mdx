@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs';
+import { getTitle } from '../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Cursor helpers
+
+Hover the squares to see cursor change (inside, the class to use to apply the cursor change to element):
+
+<div class="flex">
+    <div class="pb2 pt0-5 pr0-5">
+        <div class={`p1 border cursor-default`}>
+            <code class="mauto">.cursor-default</code>
+        </div>
+    </div>
+    <div class="pb2 pt0-5 pr0-5">
+        <div class={`p1 border cursor-help`}>
+            <code class="mauto">.cursor-help</code>
+        </div>
+    </div>
+    <div class="pb2 pt0-5 pr0-5">
+        <div class={`p1 border cursor-wait`}>
+            <code class="mauto">.cursor-wait</code>
+        </div>
+    </div>
+    <div class="pb2 pt0-5 pr0-5">
+        <div class={`p1 border cursor-grab`}>
+            <code class="mauto">.cursor-grab</code>
+        </div>
+    </div>
+    <div class="pb2 pt0-5 pr0-5">
+        <div class={`p1 border cursor-row-resize`}>
+            <code class="mauto">.cursor-row-resize</code>
+        </div>
+    </div>
+    <div class="pb2 pt0-5 pr0-5">
+        <div class={`p1 border cursor-pointer`}>
+            <code class="mauto">.cursor-pointer</code>
+        </div>
+    </div>
+    <div class="pb2 pt0-5 pr0-5">
+        <div class={`p1 border cursor-move`}>
+            <code class="mauto">.cursor-move</code>
+        </div>
+    </div>
+</div>
+
+<strong>Note</strong>: use this wisely only when you have to, do <strong class="text-uppercase">not</strong> change
+element native cursors.
