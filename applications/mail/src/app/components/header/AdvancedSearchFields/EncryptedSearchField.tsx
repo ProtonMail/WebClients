@@ -13,17 +13,17 @@ import {
     useModals,
     useUser,
 } from '@proton/components';
-
 import {
+    getES,
     getESCurrentProgress,
     getESTotal,
+    ESIndexingState,
     indexKeyExists,
     isDBReadyAfterBuilding,
-    getES,
     wasIndexingDone,
-} from '../../../helpers/encryptedSearch/esUtils';
+} from '@proton/encrypted-search';
+
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { ESIndexingState } from '../../../models/encryptedSearch';
 import { formatSimpleDate } from '../../../helpers/date';
 
 interface Props {

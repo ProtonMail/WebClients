@@ -37,11 +37,11 @@ import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
+import { wasIndexingDone } from '@proton/encrypted-search';
 
 import { getHumanLabelID } from '../../helpers/labels';
 import AddressesInput from '../composer/addresses/AddressesInput';
 import { extractSearchParameters, keywordToString } from '../../helpers/mailboxUrl';
-import { getOldestTime, wasIndexingDone } from '../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 import './AdvancedSearchDropdown.scss';
@@ -50,6 +50,7 @@ import SearchField from './AdvancedSearchFields/SearchField';
 import LocationField from './AdvancedSearchFields/LocationField';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
 import useEncryptedSearchToggleState from './useEncryptedSearchToggleState';
+import { getOldestTimeMail } from '../../helpers/encryptedSearch/esUtils';
 
 interface SearchModel {
     keyword: string;
@@ -320,7 +321,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                             if (begin) {
                                                 let oldestTime = -1;
                                                 if (wasIndexingDone(user.ID) && isDBLimited) {
-                                                    oldestTime = await getOldestTime(user.ID, 1000);
+                                                    oldestTime = await getOldestTimeMail(user.ID, 1000);
                                                 }
                                                 if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
                                                     return;

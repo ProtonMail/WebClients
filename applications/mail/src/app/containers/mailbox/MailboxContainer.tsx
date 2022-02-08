@@ -43,7 +43,7 @@ import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 import { useOnCompose, useOnMailTo } from '../ComposeProvider';
 import { useEncryptedSearchContext } from '../EncryptedSearchProvider';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
-import { useEncryptedSearch } from '../../hooks/mailbox/useEncryptedSearch';
+import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
 
 interface Props {
@@ -135,7 +135,7 @@ const MailboxContainer = ({
     };
 
     const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
-    useEncryptedSearch(elementsParams);
+    useApplyEncryptedSearch(elementsParams);
 
     const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
 
