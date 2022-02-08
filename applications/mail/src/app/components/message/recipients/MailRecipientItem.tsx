@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
+import { highlightNode } from '@proton/encrypted-search';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { highlightNode } from '../../../helpers/encryptedSearch/esHighlight';
 import RecipientItemLayout from './RecipientItemLayout';
 
 interface Props {

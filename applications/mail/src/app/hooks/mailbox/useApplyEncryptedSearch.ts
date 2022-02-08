@@ -25,7 +25,7 @@ interface EncryptedSearchParams {
     onPage: (page: number) => void;
 }
 
-export const useEncryptedSearch = ({
+export const useApplyEncryptedSearch = ({
     conversationMode,
     labelID,
     search,
@@ -38,7 +38,7 @@ export const useEncryptedSearch = ({
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
 
-    const { getESDBStatus, encryptedSearch, incrementSearch } = useEncryptedSearchContext();
+    const { getESDBStatus, encryptedSearch } = useEncryptedSearchContext();
     const esDBStatus = getESDBStatus();
     const { esEnabled } = esDBStatus;
 
@@ -51,7 +51,7 @@ export const useEncryptedSearch = ({
         shouldLoadMoreESSelector(state, { page, search, esDBStatus })
     );
 
-    const setEncryptedSearchResults: ESSetsElementsCache = (elements, page) => {
+    const setEncryptedSearchResults: ESSetsElementsCache = (elements) => {
         dispatch(addESResults({ elements, page }));
     };
 
@@ -60,7 +60,7 @@ export const useEncryptedSearch = ({
         try {
             let success = false;
             if (isES) {
-                success = await encryptedSearch(labelID, setEncryptedSearchResults);
+                success = await encryptedSearch(setEncryptedSearchResults);
             }
             if (!success) {
                 if (page >= 200) {
@@ -94,7 +94,7 @@ export const useEncryptedSearch = ({
             if (shouldLoadMoreES) {
                 dispatch(manualPending());
             }
-            void incrementSearch(page, setEncryptedSearchResults, shouldLoadMoreES);
+            void encryptedSearch(setEncryptedSearchResults);
         }
     }, [shouldSendRequest, shouldUpdatePage, shouldLoadMoreES, search]);
 };
