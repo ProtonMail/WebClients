@@ -1,8 +1,8 @@
 import { DENSITY } from '../constants';
 
 export enum SETTINGS_STATUS {
-    VERIFIED = 0,
-    UNVERIFIED = 1,
+    UNVERIFIED = 0,
+    VERIFIED = 1,
 }
 
 export enum SETTINGS_PASSWORD_MODE {
