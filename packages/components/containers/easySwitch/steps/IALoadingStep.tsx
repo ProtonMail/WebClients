@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Loader, FullLoader, TextLoader } from '../../../components';
 
@@ -31,19 +31,9 @@ const IALoadingStep = ({
             );
         }
 
-        // translator: the variable here are numbers, e.g. "3 of 5 created"
-        const progressCopy =
-            calendarsToBeCreated === 1
-                ? c('Loading info').ngettext(
-                      msgid`${createdCalendars} of 1 created`,
-                      `${createdCalendars} of 1 created`,
-                      createdCalendars
-                  )
-                : c('Loading info').ngettext(
-                      msgid`${createdCalendars} of ${calendarsToBeCreated} created`,
-                      `${createdCalendars} of ${calendarsToBeCreated} created`,
-                      createdCalendars
-                  );
+        // translator: the variables here are numbers, e.g. "Amount of calendars created: 3 out of 5"
+        const progressCopy = c('Loading info')
+            .t`Amount of calendars created: ${createdCalendars} out of ${calendarsToBeCreated}`;
         if (isLoadingCreateCalendars) {
             return (
                 <>
