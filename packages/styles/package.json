@@ -10,7 +10,7 @@
         "SVG"
     ],
     "license": "ISC",
-    "author": "Proton Technologies AG",
+    "author": "Proton AG",
     "main": "index.js",
     "scripts": {
         "build:reset": "sass --no-source-map --style=compressed scss/specifics/android-reset.scss assets/css/android-reset.css; sass --no-source-map --style=compressed scss/specifics/android-dark-mode.scss assets/css/android-dark-mode.css",
