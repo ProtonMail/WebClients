@@ -2,12 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import { useUser } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SECOND } from '@proton/shared/lib/constants';
+import {
+    defaultESIndexingState,
+    ESIndexingState,
+    estimateIndexingProgress,
+    wasIndexingDone,
+} from '@proton/encrypted-search';
 
-import { getOldestTime, wasIndexingDone } from '../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { ESIndexingState } from '../../models/encryptedSearch';
-import { defaultESIndexingState } from '../../constants';
-import { estimateIndexingProgress } from '../../helpers/encryptedSearch/esBuild';
+import { getOldestTimeMail } from '../../helpers/encryptedSearch/esUtils';
 
 const useEncryptedSearchToggleState = (isOpen: boolean) => {
     const [user] = useUser();
@@ -46,7 +49,7 @@ const useEncryptedSearchToggleState = (isOpen: boolean) => {
 
     const setOldestTime = async () => {
         if (wasIndexingDone(user.ID) && isDBLimited) {
-            const oldestTime = await getOldestTime(user.ID, 1000);
+            const oldestTime = await getOldestTimeMail(user.ID, 1000);
             setESState((esState) => {
                 return {
                     ...esState,
