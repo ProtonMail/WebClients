@@ -94,7 +94,6 @@ const Editor = ({
                 simple && 'simple-editor',
                 'editor w100 h100 rounded flex flex-column-reverse',
             ])}
-            onFocus={onFocus}
         >
             <div className={classnames(['w100 h100 flex-item-fluid relative', disabled && 'editor--disabled'])}>
                 {metadata.isPlainText ? (
@@ -115,6 +114,7 @@ const Editor = ({
                         setToolbarConfig={setToolbarConfig}
                         onBeforePaste={handleBeforePaste}
                         showModalLink={showModalLink}
+                        onFocus={onFocus}
                     />
                 )}
             </div>
