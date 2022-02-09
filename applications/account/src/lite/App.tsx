@@ -14,6 +14,7 @@ import {
     ApiProvider,
     CacheProvider,
     NotificationsChildren,
+    NotificationsHijack,
     CreateNotificationOptions,
 } from '@proton/components';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
@@ -29,7 +30,6 @@ import * as config from '../app/config';
 import '../app/app.scss';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
-import NotificationsHijack from './NotificationsHijack';
 
 initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
