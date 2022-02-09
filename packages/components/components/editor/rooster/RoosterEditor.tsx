@@ -25,6 +25,7 @@ interface Props {
     onBeforePaste?: (event: BeforePasteEvent) => void;
     mailSettings?: MailSettings;
     showModalLink: (props: ModalLinkProps) => void;
+    onFocus?: () => void;
 }
 
 const RoosterEditor = ({
@@ -37,6 +38,7 @@ const RoosterEditor = ({
     setToolbarConfig,
     onBeforePaste,
     showModalLink,
+    onFocus,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -53,6 +55,7 @@ const RoosterEditor = ({
         onReady,
         onEditorChange: onEditorChangeCallback,
         showModalLink,
+        onFocus,
     });
 
     useBubbleIframeEvents(iframeRef);

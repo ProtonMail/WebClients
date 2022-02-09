@@ -15,6 +15,7 @@ interface Props {
      */
     iframeRef: RefObject<HTMLIFrameElement>;
     onReady: (editorActions: EditorActions) => void;
+    onFocus?: () => void;
     /**
      * Notifies editor events
      */
@@ -23,7 +24,7 @@ interface Props {
     showModalLink: (props: ModalLinkProps) => void;
 }
 
-const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent, showModalLink }: Props) => {
+const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent, showModalLink, onFocus }: Props) => {
     const editorRef = useRef<IEditor>();
     const isMounted = useIsMounted();
 
@@ -46,7 +47,7 @@ const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent, sh
         </head>
         <body>
         <div id="proton-editor-container">
-            <div id="rooster-editor-wrapper">
+            <div id=${ROOSTER_EDITOR_WRAPPER_ID}>
                 <div id="${ROOSTER_EDITOR_ID}"></div>
                 <div id="${EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID}"></div>
             </div>
@@ -81,21 +82,25 @@ const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent, sh
             return;
         }
 
+        const onEditorClick = () => {
+            editorRef.current?.focus();
+            onFocus?.();
+        };
+
         void initRooster()
             .then((editorInstance) => {
                 editorRef.current = editorInstance;
             })
             .then(() => {
                 const editorWrapper = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_WRAPPER_ID);
-
-                editorWrapper?.addEventListener('click', () => {
-                    editorRef.current?.focus();
-                });
+                editorWrapper?.addEventListener('click', onEditorClick);
             });
 
         return () => {
             editorRef.current?.dispose();
-            editorRef.current = undefined;
+
+            const editorWrapper = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_WRAPPER_ID);
+            editorWrapper?.removeEventListener('click', onEditorClick);
         };
     }, []);
 };
