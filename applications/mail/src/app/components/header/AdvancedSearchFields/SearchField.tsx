@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { Button, classnames, Icon, Input, Label } from '@proton/components';
+import { Button, classnames, Icon, InputTwo, Label } from '@proton/components';
 import { ChangeEventHandler, MouseEventHandler } from 'react';
 
 interface Props {
@@ -15,7 +15,7 @@ const SearchField = ({ onSubmit, onChange, value, showEncryptedSearch }: Props) 
             <Button className="searchbox-search-button" onClick={onSubmit} shape="ghost" color="weak" icon>
                 <Icon name="magnifying-glass" />
             </Button>
-            <Input
+            <InputTwo
                 id="search-keyword"
                 className="pl3"
                 placeholder={c('Placeholder').t`Search Messages`}

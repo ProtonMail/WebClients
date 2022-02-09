@@ -6,6 +6,8 @@ import { DialogModal, ModalCloseButton, InnerModal, ModalPropsInjection, QRCode,
 const protonMailAppName = getAppName(APPS.PROTONMAIL);
 
 const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => (
+    /* TODO Modal refactor */
+    /* eslint-disable-next-line deprecation/deprecation */
     <DialogModal intermediate onClose={onClose} {...rest}>
         <ModalCloseButton onClose={onClose} />
         <InnerModal className="modal-content pb2 pt2 text-center">

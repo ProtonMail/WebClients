@@ -12,6 +12,8 @@ import onboardingImportAssistant from '@proton/styles/assets/img/onboarding/impo
 
 const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => {
     return (
+        /* TODO Modal refactor */
+        /* eslint-disable-next-line deprecation/deprecation */
         <DialogModal intermediate onClose {...rest}>
             <ModalCloseButton onClose={onClose} />
             <InnerModal className="modal-content pb2 pt2 text-center">
