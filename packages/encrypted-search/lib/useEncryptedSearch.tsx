@@ -8,6 +8,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useUser from '@proton/components/hooks/useUser';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import {
     EncryptedSearch,
     EncryptedSearchFunctions,
@@ -44,6 +45,7 @@ import { cacheDB, findItemIndex, refreshESCache } from './esCache';
 import { checkIsDBLimited, correctDecryptionErrors, syncMessageEvents } from './esSync';
 import { hybridSearch, sendSearchingMetrics, uncachedSearch } from './esSearch';
 import { highlightJSX, insertMarks } from './esHighlight';
+import { requestPersistence } from './esUtils';
 
 interface Props<ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext> {
     storeName: string;
@@ -514,6 +516,18 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                 return dbCorruptError();
             }
             indexKey = existingIndexKey;
+        }
+
+        // We request storage persistence to prevent IDB from being evicted. In Firefox this
+        // operation will trigger a popup asking the user to grant storage permission. If
+        // such a popup appears after the user has explicitly activated ES, then its request
+        // should come at no surprise. However, there are cases (e.g. at refresh or during
+        // welcome flow for new users) in which indexing starts without a manual input from
+        // the user, therefore such a popup will seem unrelated to any actions from the user's
+        // perspective. For this reason, only when the browser is Firefox, we don't request
+        // permission in cases indexing was not manually triggered.
+        if (!isFirefox() || notify) {
+            await requestPersistence();
         }
 
         const totalMessages = getESTotal(userID);
