@@ -480,7 +480,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                 createNotification({
                     text: notSupported
                         ? c('Error')
-                              .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser`
+                              .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`
                         : c('Error').t`A problem occurred, please try again`,
                     type: 'error',
                 });
