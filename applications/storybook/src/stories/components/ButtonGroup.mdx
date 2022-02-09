@@ -2,7 +2,21 @@ import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from "@storybook/add
 
 # ButtonGroup
 
-The button group is simply a group of [ButtonLike](?path=/docs/components-button--basic) components.
+The button group is simply a group of [Button](?path=/docs/components-button--basic) components.
+
+## How to use
+
+```html
+<ButtonGroup>
+    <Button>regular item</Button>
+    <Button>regular item</Button>
+    <Button className="is-selected">selected item</Button>
+</ButtonGroup>
+```
+
+## Variants
+
+The ButtonGroup component demands its own `shape`, `color` and `size` parameters to adapt its embeded buttons automatically.
 
 <Canvas>
     <Story id="components-buttongroup--sandbox" />
@@ -11,6 +25,8 @@ The button group is simply a group of [ButtonLike](?path=/docs/components-button
 <Canvas>
     <Story id="components-buttongroup--variants" />
 </Canvas>
+
+## Playground
 
 <Primary />
 
