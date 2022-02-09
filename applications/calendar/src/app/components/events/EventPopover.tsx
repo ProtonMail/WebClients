@@ -149,7 +149,6 @@ const EventPopover = ({
                 disabled={loadingAction}
                 icon
                 size="small"
-                title={c('Action').t`Edit`}
             >
                 <Icon name="pen" />
             </ButtonLike>
@@ -164,7 +163,6 @@ const EventPopover = ({
                 loading={loadingAction}
                 icon
                 size="small"
-                title={c('Action').t`Delete`}
             >
                 <Icon name="trash" />
             </ButtonLike>
@@ -179,7 +177,6 @@ const EventPopover = ({
                 disabled={loadingAction}
                 icon
                 size="small"
-                title={c('Action').t`Duplicate`}
             >
                 <Icon name="copy" />
             </ButtonLike>
