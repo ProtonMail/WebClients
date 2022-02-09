@@ -8,13 +8,13 @@ import {
     Icons,
     ModalsChildren,
     ModalsProvider,
+    NotificationsHijack,
     PreventLeaveProvider,
     RightToLeftProvider,
 } from '@proton/components';
 
 import * as config from './config';
 import Verify from './Verify';
-import NotificationsHijack from './NotificationsHijack';
 import broadcast, { MessageType } from './broadcast';
 import './app.scss';
 
