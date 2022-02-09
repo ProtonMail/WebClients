@@ -8,6 +8,9 @@
 const CSS_URL = '((url)(\\(|&(#40|#x00028|lpar);))';
 const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
+const REGEXP_HEIGHT_POURCENTAGE = /height\s*:\s[\d.]+%/gi;
+const REGEXP_POSITION_ABSOLUTE = /position\s*:\sabsolute/gi;
+
 export const escape = (string: string) => {
     const UNESCAPE_HTML_REGEX = /[&<>"']/g;
     const HTML_ESCAPES = {
@@ -90,6 +93,12 @@ export const escapeURLinStyle = (style: string) => {
     }
 
     return escapeFlag ? escape(escapedStyle) : escapedStyle;
+};
+
+export const escapeForbiddenStyle = (style: string) => {
+    return style
+        .replace(REGEXP_HEIGHT_POURCENTAGE, 'height: unset')
+        .replace(REGEXP_POSITION_ABSOLUTE, 'position: relative');
 };
 
 const HTML_ENTITIES_TO_REMOVE_CHAR_CODES: number[] = [

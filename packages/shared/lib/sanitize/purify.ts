@@ -1,6 +1,6 @@
 import DOMPurify, { Config } from 'dompurify';
 
-import { escapeURLinStyle } from './escape';
+import { escapeForbiddenStyle, escapeURLinStyle } from './escape';
 
 const toMap = (list: string[]) =>
     list.reduce<{ [key: string]: true | undefined }>((acc, key) => {
@@ -93,7 +93,7 @@ const beforeSanitizeElements = (node: Node) => {
 
     // Manage styles element
     if (element.tagName === 'STYLE') {
-        const escaped = escapeURLinStyle(element.innerHTML || '');
+        const escaped = escapeForbiddenStyle(escapeURLinStyle(element.innerHTML || ''));
         element.innerHTML = escaped;
     }
 
@@ -107,7 +107,7 @@ const beforeSanitizeElements = (node: Node) => {
 
         // Manage element styles tag
         if (item === 'style') {
-            const escaped = escapeURLinStyle(element.getAttribute('style') || '');
+            const escaped = escapeForbiddenStyle(escapeURLinStyle(element.getAttribute('style') || ''));
             element.setAttribute('style', escaped);
         }
     });
