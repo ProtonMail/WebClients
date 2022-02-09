@@ -1,6 +1,7 @@
 import { RefObject, useCallback, useEffect, useRef } from 'react';
 import { IEditor } from 'roosterjs-editor-types';
 
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { initRoosterEditor } from '../helpers/initRoosterEditor';
 import { useIsMounted } from '../../../../hooks';
 import { EditorActions, OnEditorEventListened } from '../../interface';
@@ -21,10 +22,19 @@ interface Props {
      */
     onEditorChange: OnEditorEventListened;
     initialContent?: string;
+    mailSettings?: MailSettings;
     showModalLink: (props: ModalLinkProps) => void;
 }
 
-const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent, showModalLink, onFocus }: Props) => {
+const useInitRooster = ({
+    iframeRef,
+    onReady,
+    onEditorChange,
+    initialContent,
+    showModalLink,
+    onFocus,
+    mailSettings,
+}: Props) => {
     const editorRef = useRef<IEditor>();
     const isMounted = useIsMounted();
 
@@ -63,6 +73,7 @@ const useInitRooster = ({ iframeRef, onReady, onEditorChange, initialContent, sh
             initialContent,
             showModalLink,
             iframeRef,
+            mailSettings,
         });
 
         // Prevent setState execution in case component is unmounted
