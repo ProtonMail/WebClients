@@ -78,9 +78,13 @@ pre code {
 	display: none; // don't copy shit!
 }
 
-table.no-bg {
-	tr {
-		background: none !important;
+table {
+	// table-layout: initial;
+
+	&.no-bg {
+		tr {
+			background: none !important;
+		}
 	}
 }
 
@@ -97,4 +101,10 @@ table.no-bg {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 1em;
+}
+
+.sbdocs-a {
+	&#{&} {
+		@extend .link;
+	}
 }
