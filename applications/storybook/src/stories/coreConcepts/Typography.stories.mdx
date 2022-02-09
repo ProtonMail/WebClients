@@ -5,30 +5,22 @@ import { getTitle } from '../../helpers/title';
 
 # Typography
 
-## Typeface
+## Normal text
 
-ProtonMail V4.0 utilizes a system font stack. System fonts are the default fonts used by any given OS, helping performance by eliminating the need to download font files.
+Proton apps suite uses a system font stack. System fonts are the default fonts used by any given operating system, helping performance by eliminating the need to download font files.
 
-<Source
-    language="css"
-    dark
-    format
-    code={`
+```css
 body {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
-`}
-/>
+```
 
-## Heading sizes
+## Source code
 
-<div>
-    <h1>h1</h1>
-    <h2>h2</h2>
-    <h3>h3</h3>
-    <h4>h4</h4>
-    <h5>h5</h5>
-    <h6>h6</h6>
-    <p>paragraph</p>
-    <span>span</span>
-</div>
+For any source code, Proton apps suite uses a monospaced system font stack. Why double `monospace`? [Here is the explanation](https://github.com/necolas/normalize.css/blob/master/README.md#pre-code-kbd-samp).
+
+```css
+pre, code, kbd, samp {
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', 'Menlo', monospace, monospace;
+}
+```
