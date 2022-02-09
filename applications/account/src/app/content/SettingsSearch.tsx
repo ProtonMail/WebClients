@@ -120,7 +120,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
 
     return (
         <>
-            <div style={{ width: '35%' }} className="flex-item-centered-vert">
+            <div className="w35 flex-item-centered-vert">
                 <InputTwo
                     {...inputProps}
                     placeholder={c('Placeholder').t`Search settings`}
