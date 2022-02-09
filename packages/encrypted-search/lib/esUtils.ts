@@ -305,3 +305,12 @@ export const refreshOpenpgp = async () => {
     await destroyOpenPGP();
     await loadOpenPGP();
 };
+
+/**
+ * Request storage persistence to prevent the ES database from being evicted
+ */
+export const requestPersistence = async () => {
+    if (window.navigator.storage && window.navigator.storage.persist) {
+        await window.navigator.storage.persist();
+    }
+};
