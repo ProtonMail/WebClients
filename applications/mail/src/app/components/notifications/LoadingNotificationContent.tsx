@@ -11,7 +11,7 @@ const LoadingNotificationContent = ({ loadingText, loadedText, promise }: Props)
     const [loading, withLoading] = useLoading();
 
     useEffect(() => {
-        withLoading(promise);
+        void withLoading(promise);
     }, [promise]);
 
     if (loading) {
