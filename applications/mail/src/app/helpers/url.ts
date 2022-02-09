@@ -20,7 +20,19 @@ export const toAddresses = (emailsStr: string): Recipient[] => {
         return unescapeFromString(uriDecoded);
     });
 
-    return escaped.map((Address) => ({ Address, Name: Address }));
+    return escaped.map((element) => {
+        // Search for elements with format "Name <Address>"
+        const nameAndAddressRegex = /([^<>]*)<(.*)>/g;
+        const findNameAndAddress = nameAndAddressRegex.exec(element);
+
+        // The first value of regex.exec is the entire match, but we want groups results
+        if (findNameAndAddress && findNameAndAddress.length === 3) {
+            return { Name: findNameAndAddress[1], Address: findNameAndAddress[2] };
+        }
+
+        // Element is an address only
+        return { Name: element, Address: element };
+    });
 };
 
 /**
