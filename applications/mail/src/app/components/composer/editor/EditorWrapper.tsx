@@ -323,7 +323,6 @@ const EditorWrapper = ({
             showBlockquoteToggle={!blockquoteExpanded}
             onBlockquoteToggleClick={handleBlocquoteToggleClick}
             onReady={handleEditorReady}
-            isOutside={isOutside}
             mailSettings={mailSettings}
             onAddAttachments={onAddAttachments}
         />
