@@ -12,6 +12,8 @@ import {
 import { Breakpoints } from '../models/utils';
 import PageContainer from './PageContainer';
 
+jest.setTimeout(20000);
+
 describe('PageContainer', () => {
     const props = {
         breakpoints: {} as Breakpoints,
