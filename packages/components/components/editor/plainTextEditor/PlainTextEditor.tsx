@@ -29,7 +29,7 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, placeholder }: Props) => 
                     setTimeout(() => textareaRef.current?.setSelectionRange(0, 0));
                 }
             },
-            isDisposed: () => isMountedCallback() === false,
+            isDisposed: () => isMountedCallback() === false || !textareaRef.current,
         };
         onReady(actions);
     }, []);

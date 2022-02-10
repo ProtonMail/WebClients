@@ -104,6 +104,12 @@ export const useCloseHandler = ({
     });
 
     const handleClose = useHandler(async () => {
+        if (!lock) {
+            // Has to be done before the onClose call
+            // It needs to refer to composer components which will be disposed otherwise
+            ensureMessageContent();
+        }
+
         // Closing the composer instantly, all the save process will be in background
         onClose();
 
@@ -123,8 +129,6 @@ export const useCloseHandler = ({
             // In all of those situation we don't need to save something, we can safely skip all the rest
             return;
         }
-
-        ensureMessageContent();
 
         // Message requires to be saved in background
         if (pendingAutoSave.isPending || uploadInProgress) {

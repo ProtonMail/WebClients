@@ -368,7 +368,6 @@ const Composer = (
      * This function perform an ultimate content check before sending especially.
      */
     const ensureMessageContent = () => {
-        // Should not be possible, more to satisfy TS
         if (!editorActionsRef.current || editorActionsRef.current.isDisposed()) {
             return;
         }
