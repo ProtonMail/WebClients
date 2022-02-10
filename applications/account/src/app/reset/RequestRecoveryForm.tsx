@@ -7,13 +7,16 @@ import { noop } from '@proton/shared/lib/helpers/function';
 interface Props {
     onSubmit: (username: string) => Promise<void>;
     defaultUsername?: string;
+    loading: boolean;
 }
 
-const RequestRecoveryForm = ({ onSubmit, defaultUsername = '' }: Props) => {
-    const [loading, withLoading] = useLoading();
+const RequestRecoveryForm = ({ onSubmit, defaultUsername = '', loading: outerLoading }: Props) => {
+    const [innerLoading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
 
     const { validator, onFormSubmit } = useFormErrors();
+
+    const loading = innerLoading || outerLoading;
 
     return (
         <form
