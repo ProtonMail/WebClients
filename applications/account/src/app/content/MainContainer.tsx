@@ -29,6 +29,7 @@ import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import AccountSidebar from './AccountSidebar';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import { getRoutes } from './routes';
+import SettingsSearch from './SettingsSearch';
 
 const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
 const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
@@ -101,6 +102,7 @@ const MainContainer = () => {
     const isVpn = app === APPS.PROTONVPN_SETTINGS;
     const toApp = isVpn ? APPS.PROTONACCOUNT : app;
     const to = isVpn ? getSlugFromApp(APPS.PROTONVPN_SETTINGS) : '/';
+    const prefixPath = `/${appSlug}`;
 
     const logo = <Logo appName={app} to={to} toApp={toApp} target="_self" />;
 
@@ -111,6 +113,7 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
+            searchBox={<SettingsSearch routes={routes} path={prefixPath} app={app} />}
         />
     );
 
@@ -128,9 +131,9 @@ const MainContainer = () => {
     // Switch can't reasonably traverse Router childrens. However we do want to place them in their own components
     // and still have redirects working. This is a trick to short-circuit matches of these paths to specific routers.
     // A better idea would be to use a prefix for account and org. /mail/account/dashboard etc.
-    const anyAccountAppRoute = getRoutePaths(`/${appSlug}`, Object.values(routes.account.routes));
+    const anyAccountAppRoute = getRoutePaths(prefixPath, Object.values(routes.account.routes));
     const anyOrganizationAppRoute = getRoutePaths(
-        `/${appSlug}`,
+        prefixPath,
         Object.values(routes.organization.routes).filter((section) => {
             // Filter out the domains section, the route clashes with the _same_ route in the mail router when
             // it's not available and would take precedence in the routing. (E.g. for free users).
@@ -153,11 +156,11 @@ const MainContainer = () => {
         <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
             <Switch>
                 <Route path={anyAccountAppRoute}>
-                    <AccountSettingsRouter path={`/${appSlug}`} accountAppRoutes={routes.account} redirect={redirect} />
+                    <AccountSettingsRouter path={prefixPath} accountAppRoutes={routes.account} redirect={redirect} />
                 </Route>
                 <Route path={anyOrganizationAppRoute}>
                     <OrganizationSettingsRouter
-                        path={`/${appSlug}`}
+                        path={prefixPath}
                         organizationAppRoutes={routes.organization}
                         redirect={redirect}
                     />
