@@ -8,27 +8,20 @@ import {
     useLoading,
     useWelcomeFlags,
     useEarlyAccess,
-    useApi,
-    useEventManager,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
+import { DriveProvider, useDriveEventManager, useDefaultShare } from '../store';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
-import useDrive from '../hooks/drive/useDrive';
-import DriveCacheProvider from '../components/DriveCache/DriveCacheProvider';
-import { UploadProvider } from '../components/uploads/UploadProvider';
-import { DownloadProvider } from '../components/downloads/DownloadProvider';
-import { ThumbnailsDownloadProvider } from '../components/downloads/ThumbnailDownloadProvider';
 import TransferManager from '../components/TransferManager/TransferManager';
+import ConflictModal from '../components/uploads/ConflictModal';
 import DriveWindow from '../components/layout/DriveWindow';
-import DriveContainer from './DriveContainer';
+import FolderContainer from './FolderContainer';
 import NoAccessContainer from './NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
-import { DriveEventManagerProvider } from '../components/driveEventManager/driveEventManager';
-import { useDriveEventManager } from '../components/driveEventManager';
 
 enum ERROR_TYPES {
     STANDARD,
@@ -43,7 +36,7 @@ const DEFAULT_SHARE_VALUE = {
 };
 
 const InitContainer = () => {
-    const { initDrive, handleDriveEvents } = useDrive();
+    const { getDefaultShare } = useDefaultShare();
     const [loading, withLoading] = useLoading(true);
     const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>(DEFAULT_SHARE_VALUE);
     const [errorType, setErrorType] = useState<ERROR_TYPES>(ERROR_TYPES.STANDARD);
@@ -52,12 +45,9 @@ const InitContainer = () => {
     const driveEventManager = useDriveEventManager();
 
     useEffect(() => {
-        const initPromise = initDrive()
-            .then((defaultShareMeta) => {
-                setDefaultShareRoot({
-                    shareId: defaultShareMeta.ShareID,
-                    linkId: defaultShareMeta.LinkID,
-                });
+        const initPromise = getDefaultShare()
+            .then(({ shareId, rootLinkId: linkId }) => {
+                setDefaultShareRoot({ shareId, linkId });
             })
             .catch((error) => {
                 if (
@@ -82,11 +72,8 @@ const InitContainer = () => {
         }
 
         driveEventManager.subscribeToShare(defaultShareRoot.shareId).catch(console.warn);
-        const handlerId = driveEventManager.registerEventHandler(handleDriveEvents(defaultShareRoot.shareId));
-
         return () => {
             driveEventManager.unsubscribeFromShare(defaultShareRoot.shareId);
-            driveEventManager.unregisterEventHandler(handlerId);
         };
     }, [defaultShareRoot.shareId]);
 
@@ -132,7 +119,7 @@ const InitContainer = () => {
                 <Switch>
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
-                    <Route path="/:shareId?/:type/:linkId?" component={DriveContainer} />
+                    <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
                     <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
                 </Switch>
             </DriveWindow>
@@ -141,21 +128,11 @@ const InitContainer = () => {
 };
 
 const MainContainer = () => {
-    const api = useApi();
-    const eventManager = useEventManager();
     return (
         <LocationErrorBoundary>
-            <DriveEventManagerProvider api={api} generalEventManager={eventManager}>
-                <DriveCacheProvider>
-                    <UploadProvider>
-                        <DownloadProvider>
-                            <ThumbnailsDownloadProvider>
-                                <InitContainer />
-                            </ThumbnailsDownloadProvider>
-                        </DownloadProvider>
-                    </UploadProvider>
-                </DriveCacheProvider>
-            </DriveEventManagerProvider>
+            <DriveProvider UploadConflictModal={ConflictModal}>
+                <InitContainer />
+            </DriveProvider>
         </LocationErrorBoundary>
     );
 };

@@ -1,31 +1,33 @@
 import { ReactNode } from 'react';
 
-import { Folder } from './useFolders';
+import { TreeItem } from '../../../../store';
 import DriveSidebarSubfolder from './DriveSidebarSubfolder';
 
 interface Props {
-    rootFolder: any;
+    shareId: string;
+    rootFolder?: TreeItem;
     toggleExpand: (linkId: string) => void;
 }
 
-export default function DriveSidebarSubfolders({ rootFolder, toggleExpand }: Props) {
-    if (!rootFolder || !rootFolder.expanded || !rootFolder.subfolders?.length) {
+export default function DriveSidebarSubfolders({ shareId, rootFolder, toggleExpand }: Props) {
+    if (!rootFolder || !rootFolder.isExpanded || !rootFolder.children?.length) {
         return null;
     }
 
-    const folderReducer = (acc: ReactNode[], folder: Folder, level = 0): any[] => {
+    const folderReducer = (acc: ReactNode[], folder: TreeItem, level = 0): any[] => {
         acc.push(
             <DriveSidebarSubfolder
-                key={folder.shareId + folder.linkId}
+                key={folder.link.linkId}
+                shareId={shareId}
                 folder={folder}
                 level={level}
-                toggleExpand={() => toggleExpand(folder.linkId)}
+                toggleExpand={() => toggleExpand(folder.link.linkId)}
             />
         );
-        if (folder.expanded && folder.subfolders?.length) {
-            folder.subfolders.forEach((subfolder: Folder) => folderReducer(acc, subfolder, level + 1));
+        if (folder.isExpanded && folder.children?.length) {
+            folder.children.forEach((subfolder: TreeItem) => folderReducer(acc, subfolder, level + 1));
         }
         return acc;
     };
-    return <>{rootFolder.subfolders.reduce((acc: ReactNode[], folder: Folder) => folderReducer(acc, folder), [])}</>;
+    return <>{rootFolder.children.reduce((acc: ReactNode[], folder: TreeItem) => folderReducer(acc, folder), [])}</>;
 }

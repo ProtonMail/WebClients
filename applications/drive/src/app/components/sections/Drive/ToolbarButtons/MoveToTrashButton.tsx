@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton, useLoading } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import { useActions } from '../../../../store';
 import { DriveFolder } from '../../../../hooks/drive/useActiveShare';
 
 interface Props {
@@ -12,15 +12,24 @@ interface Props {
 }
 
 const MoveToTrashButton = ({ sourceFolder, selectedItems }: Props) => {
-    const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
-    const { openMoveToTrash } = useToolbarActions();
+    const [isLoading, withLoading] = useLoading();
+    const { trashLinks } = useActions();
 
     return (
         <ToolbarButton
-            disabled={moveToTrashLoading}
+            disabled={isLoading}
             title={c('Action').t`Move to trash`}
             icon={<Icon name="trash" />}
-            onClick={() => withMoveToTrashLoading(openMoveToTrash(sourceFolder, selectedItems))}
+            onClick={() =>
+                withLoading(
+                    trashLinks(
+                        new AbortController().signal,
+                        sourceFolder.shareId,
+                        sourceFolder.linkId,
+                        selectedItems.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                    )
+                )
+            }
             data-testid="toolbar-trash"
         />
     );

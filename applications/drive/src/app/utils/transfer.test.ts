@@ -254,20 +254,15 @@ describe('trasfer utils', () => {
         const progress1 = 279297577;
         const progress2 = 8340324;
         const progress = Math.floor(100 * ((progress1 + progress2) / (size1 + size2 || 1)));
-        const latestStats: TransfersStats = {
-            stats: {
-                'drive-transfers-5740': {
-                    speed: 2588514,
-                    active: true,
-                    progress: progress1,
-                },
-                'drive-transfers-7456': {
-                    speed: 734032,
-                    active: false,
-                    progress: progress2,
-                },
+        const stats: TransfersStats = {
+            'drive-transfers-5740': {
+                averageSpeed: 2588514,
+                progress: progress1,
             },
-            timestamp: new Date('2021-02-17T17:34:25.031Z'),
+            'drive-transfers-7456': {
+                averageSpeed: 734032,
+                progress: progress2,
+            },
         };
 
         const transfers: Transfer[] = [
@@ -291,6 +286,6 @@ describe('trasfer utils', () => {
             } as any,
         ];
 
-        expect(calculateProgress(latestStats, transfers)).toEqual(progress);
+        expect(calculateProgress(stats, transfers)).toEqual(progress);
     });
 });

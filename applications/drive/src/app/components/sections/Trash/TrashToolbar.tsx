@@ -1,17 +1,15 @@
 import { Toolbar, ToolbarSeparator } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
-import { useTrashContent } from './TrashContentProvider';
 
 interface Props {
     shareId: string;
+    selectedItems: FileBrowserItem[];
 }
 
-const TrashToolbar = ({ shareId }: Props) => {
-    const { fileBrowserControls } = useTrashContent();
-    const { selectedItems } = fileBrowserControls;
-
+const TrashToolbar = ({ shareId, selectedItems }: Props) => {
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return null;
@@ -24,8 +22,8 @@ const TrashToolbar = ({ shareId }: Props) => {
                 <ToolbarSeparator />
                 <DetailsButton shareId={shareId} selectedItems={selectedItems} />
                 <ToolbarSeparator />
-                <RestoreFromTrashButton shareId={shareId} />
-                <DeletePermanentlyButton shareId={shareId} />
+                <RestoreFromTrashButton shareId={shareId} selectedItems={selectedItems} />
+                <DeletePermanentlyButton shareId={shareId} selectedItems={selectedItems} />
             </>
         );
     };

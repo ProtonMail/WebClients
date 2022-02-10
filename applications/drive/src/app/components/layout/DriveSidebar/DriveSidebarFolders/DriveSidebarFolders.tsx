@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useFolders from './useFolders';
+import { useFolderTree } from '../../../../store';
 import DriveSidebarFoldersRoot from './DriveSidebarFoldersRoot';
 import DriveSidebarSubfolders from './DriveSidebarSubfolders';
 
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function DriveSidebarFolders({ shareId, linkId, path, setSidebarLevel }: Props) {
-    const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolders(shareId, linkId);
+    const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolderTree(shareId, { rootLinkId: linkId });
 
     useEffect(() => {
         setSidebarLevel(deepestOpenedLevel);
@@ -20,8 +20,14 @@ export default function DriveSidebarFolders({ shareId, linkId, path, setSidebarL
 
     return (
         <>
-            <DriveSidebarFoldersRoot path={path} rootFolder={rootFolder} toggleExpand={toggleExpand} />
-            <DriveSidebarSubfolders rootFolder={rootFolder} toggleExpand={toggleExpand} />
+            <DriveSidebarFoldersRoot
+                path={path}
+                shareId={shareId}
+                linkId={linkId}
+                rootFolder={rootFolder}
+                toggleExpand={toggleExpand}
+            />
+            <DriveSidebarSubfolders shareId={shareId} rootFolder={rootFolder} toggleExpand={toggleExpand} />
         </>
     );
 }

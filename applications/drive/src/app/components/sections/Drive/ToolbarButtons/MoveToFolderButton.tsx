@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import useOpenModal from '../../../useOpenModal';
 import { DriveFolder } from '../../../../hooks/drive/useActiveShare';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const MoveToFolderButton = ({ sourceFolder, selectedItems }: Props) => {
-    const { openMoveToFolder } = useToolbarActions();
+    const { openMoveToFolder } = useOpenModal();
 
     return (
         <ToolbarButton

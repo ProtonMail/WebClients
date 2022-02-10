@@ -1,9 +1,7 @@
 import { useCallback, useRef } from 'react';
 
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { FileBrowserProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import { AllSortKeys } from '@proton/shared/lib/interfaces/drive/link';
-import useUserSettings from '../../hooks/drive/useUserSettings';
+import { FileBrowserProps, SortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 import ListView from './ListView/ListView';
@@ -13,7 +11,8 @@ import GridView from './GridView/GridView';
  * File browser that supports grid view and list view
  * If only grid or list view is needed better use them directly
  */
-const FileBrowser = <T extends AllSortKeys>({
+const FileBrowser = <T extends SortField>({
+    layout,
     loading,
     caption,
     contents,
@@ -27,15 +26,14 @@ const FileBrowser = <T extends AllSortKeys>({
     selectItem,
     clearSelections,
     onShiftClick,
+    sortFields,
     sortParams,
     setSorting,
     getDragMoveControls,
     onScrollEnd,
     ItemContextMenu,
     FolderContextMenu,
-    SortDropdown,
 }: FileBrowserProps<T>) => {
-    const { layout } = useUserSettings();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
 
     const handleScrollEnd = useCallback(() => {
@@ -53,6 +51,7 @@ const FileBrowser = <T extends AllSortKeys>({
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}
+            sortFields={sortFields}
             sortParams={sortParams}
             setSorting={setSorting}
             onItemClick={onItemClick}
@@ -64,7 +63,6 @@ const FileBrowser = <T extends AllSortKeys>({
             getDragMoveControls={getDragMoveControls}
             ItemContextMenu={ItemContextMenu}
             FolderContextMenu={FolderContextMenu}
-            SortDropdown={SortDropdown}
         />
     ) : (
         <ListView

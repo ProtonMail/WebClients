@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive//fileBrowser';
 
-import useToolbarActions from '../../../hooks/drive/useActions';
+import useOpenModal from '../../useOpenModal';
 import { noSelection } from './utils';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const DetailsButton = ({ shareId, selectedItems }: Props) => {
-    const { openDetails, openFilesDetails } = useToolbarActions();
+    const { openDetails, openFilesDetails } = useOpenModal();
 
     if (noSelection(selectedItems)) {
         return null;

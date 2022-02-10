@@ -3,8 +3,9 @@ import { c } from 'ttag';
 
 import { PrivateMainArea, useAppTitle } from '@proton/components';
 
+import { useSharedLinksView } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import SharedLinksContentProvider from './SharedLinksContentProvider';
+import { mapDecryptedLinksToChildren } from '../helpers';
 import SharedLinksToolbar from './SharedLinksToolbar';
 import SharedLinks from './SharedLinks';
 
@@ -13,14 +14,17 @@ const SharedLinksView = () => {
     const { activeShareId, setDefaultRoot } = useActiveShare();
     useEffect(setDefaultRoot, []);
 
+    const sharedLinksView = useSharedLinksView(activeShareId);
+    const selectedItems = mapDecryptedLinksToChildren(sharedLinksView.selectionControls.selectedItems);
+
     return (
-        <SharedLinksContentProvider shareId={activeShareId}>
-            <SharedLinksToolbar shareId={activeShareId} />
+        <>
+            <SharedLinksToolbar shareId={activeShareId} selectedItems={selectedItems} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
                 <div className="p1 text-strong border-bottom section--header">{c('Info').t`My Links`}</div>
-                <SharedLinks shareId={activeShareId} />
+                <SharedLinks shareId={activeShareId} sharedLinksView={sharedLinksView} />
             </PrivateMainArea>
-        </SharedLinksContentProvider>
+        </>
     );
 };
 

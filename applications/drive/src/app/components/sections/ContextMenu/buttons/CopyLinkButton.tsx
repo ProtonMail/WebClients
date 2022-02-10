@@ -1,15 +1,16 @@
 import { c } from 'ttag';
 
-import useSharing from '../../../../hooks/drive/useSharing';
+import { useActions } from '../../../../store';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
+    linkId: string;
     close: () => void;
 }
 
-const CopyLinkButton = ({ shareId, close }: Props) => {
-    const { copyShareLinkToClipboard } = useSharing();
+const CopyLinkButton = ({ shareId, linkId, close }: Props) => {
+    const { copyShareLinkToClipboard } = useActions();
 
     if (!copyShareLinkToClipboard) {
         return null;
@@ -20,7 +21,7 @@ const CopyLinkButton = ({ shareId, close }: Props) => {
             name={c('Action').t`Copy link`}
             icon="link"
             testId="context-menu-share-link"
-            action={() => copyShareLinkToClipboard(shareId)}
+            action={() => copyShareLinkToClipboard(new AbortController().signal, shareId, linkId)}
             close={close}
         />
     );

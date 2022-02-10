@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useToolbarActions from '../../../hooks/drive/useActions';
+import useOpenModal from '../../useOpenModal';
 import { isMultiSelect, hasFoldersSelected } from './utils';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const PreviewButton = ({ shareId, selectedItems }: Props) => {
-    const { preview } = useToolbarActions();
+    const { openPreview } = useOpenModal();
 
     const disabled =
         isMultiSelect(selectedItems) ||
@@ -30,7 +30,7 @@ const PreviewButton = ({ shareId, selectedItems }: Props) => {
             icon={<Icon name="eye" />}
             onClick={() => {
                 if (selectedItems.length) {
-                    preview(shareId, selectedItems[0]);
+                    openPreview(shareId, selectedItems[0]);
                 }
             }}
             data-testid="toolbar-preview"
