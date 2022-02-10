@@ -1,5 +1,6 @@
 import { RefObject } from 'react';
 import { DefaultFormat, EditorPlugin, IEditor, Direction } from 'roosterjs-editor-types';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
 import { EditorActions, OnEditorEventListened } from '../../interface';
 
@@ -13,6 +14,7 @@ interface Options {
     initialContent?: string;
     showModalLink: (props: ModalLinkProps) => void;
     iframeRef: RefObject<HTMLIFrameElement>;
+    mailSettings?: MailSettings;
 }
 
 interface InitRoosterReturns {
@@ -43,10 +45,12 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         new EditorEventListener(options.onEditorEvent),
     ];
 
+    const fontSize = options.mailSettings?.FontSize ? `${options.mailSettings.FontSize}px` : `${DEFAULT_FONT_SIZE}px`;
+
     const defaultFormat: DefaultFormat = {
         bold: false,
-        fontFamily: DEFAULT_FONT_FACE,
-        fontSize: `${DEFAULT_FONT_SIZE}px`,
+        fontFamily: options.mailSettings?.FontFace || DEFAULT_FONT_FACE,
+        fontSize,
     };
 
     if (element === null) {
