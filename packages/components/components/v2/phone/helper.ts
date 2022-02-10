@@ -9,7 +9,7 @@ import metadata from 'libphonenumber-js/metadata.min.json';
 import examples from 'libphonenumber-js/examples.mobile.json';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getFlagSvg } from './flagSvgs';
-import { callingCodeToLeading, countries } from './data';
+import { callingCodeToLeading, getCountryMap } from './data';
 
 export const getTrimmedString = (string: string) => {
     // Handle (123) -> (123
@@ -103,10 +103,11 @@ export interface CountryOptionData {
 }
 
 export const getCountries = (): CountryOptionData[] => {
+    const countryMap = getCountryMap();
     return Object.keys(metadata.countries)
         .map((countryCode): CountryOptionData | undefined => {
             const countryCallingCode = getSafeCountryCallingCode(countryCode as CountryCode);
-            const countryName = countries[countryCode];
+            const countryName = countryMap[countryCode];
             const countryFlag = getFlagSvg(countryCode);
             if (!countryFlag || !countryName || !countryCallingCode) {
                 return;
