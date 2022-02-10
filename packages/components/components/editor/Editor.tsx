@@ -19,7 +19,7 @@ interface Props {
     className?: string;
     placeholder?: string;
     metadata?: Partial<EditorMetadata>;
-    onChange?: (value: string) => void;
+    onChange: (value: string) => void;
     onChangeMetadata?: (metadataChange: Partial<EditorMetadata>) => void;
     showBlockquoteToggle?: boolean;
     onBlockquoteToggleClick?: () => void;
@@ -28,7 +28,11 @@ interface Props {
     simple?: boolean;
     onFocus?: () => void;
     onAddAttachments?: (files: File[]) => void;
-    isOutside?: boolean;
+    /**
+     * Are used for editor default font value
+     * It's optionnal but if passed it should be passed
+     * at same time component is first rendered
+     */
     mailSettings?: MailSettings;
 }
 
@@ -115,6 +119,7 @@ const Editor = ({
                         onBeforePaste={handleBeforePaste}
                         showModalLink={showModalLink}
                         onFocus={onFocus}
+                        mailSettings={mailSettings}
                     />
                 )}
             </div>
