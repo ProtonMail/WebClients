@@ -66,6 +66,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
             persistent: persistent ?? true,
             username: username ?? '',
             Methods: [],
+            hasGenerateKeys: true,
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
     };
@@ -109,6 +110,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                             defaultUsername={cache?.username}
                             onSubmit={(username) => {
                                 return handleRequestRecoveryMethods({
+                                    hasGenerateKeys: true,
                                     username,
                                     persistent,
                                     api: silentApi,
