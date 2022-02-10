@@ -106,7 +106,7 @@ const KeyReactivationModal = ({
                     />
                 </InnerModal>
                 <FooterModal>
-                    <Button color="norm" type="submit" data-test-id="drive-key-reactivations-options:continue">
+                    <Button color="norm" type="submit" data-testid="drive-key-reactivations-options:continue">
                         {c('Action').t`Continue`}
                     </Button>
                 </FooterModal>

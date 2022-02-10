@@ -16,15 +16,15 @@ import { shallowEqual } from '@proton/shared/lib/helpers/array';
 import { c } from 'ttag';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+
+import { useThumbnailsDownload } from '../../../store';
+import { formatAccessCount } from '../../../utils/formatters';
 import useFileBrowserItem from '../useFileBrowserItem';
 import LocationCell from './Cells/LocationCell';
 import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
 import CopyLinkIcon from '../CopyLinkIcon';
-import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
-import { formatAccessCount } from '../../../utils/formatters';
 
 const ItemRow = ({
     item,
@@ -66,22 +66,11 @@ const ItemRow = ({
     });
 
     const { isDesktop } = useActiveBreakpoint();
-    const cache = useDriveCache();
-    const thumbnailProvider = useThumbnailsDownloadProvider();
-    const shareURL =
-        columns.includes('share_num_access') && item.SharedUrl
-            ? cache.get.shareURL(shareId, item.SharedUrl?.ShareUrlID)
-            : undefined;
+    const { addToDownloadQueue } = useThumbnailsDownload();
 
     useEffect(() => {
         if (item.HasThumbnail) {
-            thumbnailProvider.addToDownloadQueue(
-                { modifyTime: item.ModifyTime },
-                {
-                    ShareID: shareId,
-                    LinkID: item.LinkID,
-                }
-            );
+            addToDownloadQueue(shareId, item.LinkID, item.ModifyTime);
         }
     }, [item.ModifyTime]);
 
@@ -128,7 +117,7 @@ const ItemRow = ({
                 data-testid={isSelected ? 'selected' : undefined}
                 {...itemHandlers}
             >
-                <TableCell className="m0 flex">
+                <TableCell className="m0 flex" data-testid="column-checkbox">
                     <div
                         role="presentation"
                         className={classnames([
@@ -146,7 +135,10 @@ const ItemRow = ({
                     </div>
                 </TableCell>
 
-                <TableCell className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid">
+                <TableCell
+                    className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid"
+                    data-testid="column-name"
+                >
                     {item.CachedThumbnailURL ? (
                         <img
                             src={item.CachedThumbnailURL}
@@ -164,54 +156,60 @@ const ItemRow = ({
                 </TableCell>
 
                 {columns.includes('location') && (
-                    <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])}>
+                    <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
                         <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
                     </TableCell>
                 )}
 
                 {columns.includes('uploaded') && (
-                    <TableCell className="m0 w15">
+                    <TableCell className="m0 w15" data-testid="column-uploaded">
                         <TimeCell time={item.ModifyTime} />
                     </TableCell>
                 )}
 
                 {columns.includes('modified') && (
-                    <TableCell className="m0 w15">
+                    <TableCell className="m0 w15" data-testid="column-modified">
                         <TimeCell time={item.RealModifyTime} />
                     </TableCell>
                 )}
 
                 {columns.includes('trashed') && (
-                    <TableCell className="m0 w25">
+                    <TableCell className="m0 w25" data-testid="column-trashed">
                         <TimeCell time={item.Trashed || item.ModifyTime} />
                     </TableCell>
                 )}
 
                 {columns.includes('share_created') && (
-                    <TableCell className="m0 w15">
+                    <TableCell className="m0 w15" data-testid="column-share-created">
                         {item.SharedUrl?.CreateTime && <TimeCell time={item.SharedUrl.CreateTime} />}
                     </TableCell>
                 )}
 
                 {columns.includes('share_num_access') && (
-                    <TableCell className="m0 w15">{formatAccessCount(shareURL?.NumAccesses)}</TableCell>
+                    <TableCell className="m0 w15" data-testid="column-num-accesses">
+                        {formatAccessCount(item.SharedUrl?.NumAccesses)}
+                    </TableCell>
                 )}
 
-                {columns.includes('share_expires') && <TableCell className="m0 w20">{generateExpiresCell()}</TableCell>}
+                {columns.includes('share_expires') && (
+                    <TableCell className="m0 w20" data-testid="column-share-expires">
+                        {generateExpiresCell()}
+                    </TableCell>
+                )}
 
                 {columns.includes('size') && (
-                    <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])}>
+                    <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])} data-testid="column-size">
                         {isFolder ? '-' : <SizeCell size={item.Size} />}
                     </TableCell>
                 )}
 
                 {columns.includes('share_options') && (
-                    <TableCell className="m0 file-browser-list--icon-column">
+                    <TableCell className="m0 file-browser-list--icon-column" data-testid="column-share-options">
                         <CopyLinkIcon shareId={shareId} item={item} />
                     </TableCell>
                 )}
 
-                <TableCell className="m0 file-browser-list--icon-column">
+                <TableCell className="m0 file-browser-list--icon-column" data-testid="column-options">
                     <Button
                         shape="ghost"
                         size="small"

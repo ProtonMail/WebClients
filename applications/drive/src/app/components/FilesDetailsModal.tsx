@@ -12,6 +12,7 @@ import {
 } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { LinkType } from '../store';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
 
 interface Props {
@@ -23,15 +24,30 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...rest }: Props) => {
     const modalTitleID = 'files-details-modal';
     const size = selectedItems.reduce((sum, current) => sum + current.Size, 0);
 
+    const hasFile = selectedItems.some(({ Type }) => Type === LinkType.FILE);
+    const hasFolder = selectedItems.some(({ Type }) => Type === LinkType.FOLDER);
+    const hasBoth = hasFile && hasFolder;
+
+    const title = hasBoth
+        ? c('Title').t`Items details`
+        : hasFile
+        ? c('Title').t`Files details`
+        : c('Title').t`Folders details`;
+    const labelCount = hasBoth
+        ? c('Title').t`Number of items`
+        : hasFile
+        ? c('Title').t`Number of files`
+        : c('Title').t`Number of folders`;
+
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
             <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Title').t`Files details`}
+                {title}
             </HeaderModal>
             <div className="modal-content">
                 <InnerModal>
                     <Row>
-                        <Label style={{ cursor: 'default' }}>{c('Title').t`Number of files`}</Label>
+                        <Label style={{ cursor: 'default' }}>{labelCount}</Label>
                         <Field className="pt0-5">
                             <b>{selectedItems.length}</b>
                         </Field>

@@ -8,7 +8,7 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { DriveFolder } from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
 import { useDriveDragMoveTarget } from '../hooks/drive/useDriveDragMove';
-import useWorkingDirectory from '../hooks/drive/useWorkingDirectory';
+import { useLinkPath } from '../store';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -18,48 +18,43 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     const { navigateToLink } = useNavigate();
     const { createNotification } = useNotifications();
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
-    const path = useWorkingDirectory();
+    const { traverseLinksToRoot } = useLinkPath(); // TODO: Get data using useFolderView instead one day.
     const [dropTarget, setDropTarget] = useState<string>();
-    const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([
+    const defaultBreadcrumbs: BreadcrumbInfo[] = [
         {
             key: 'default',
             text: c('Title').t`My files`,
             noShrink: true,
         },
-    ]);
+    ];
+    const [breadcrumbs, setBreadcrumbs] = useState(defaultBreadcrumbs);
 
     useEffect(() => {
-        let canceled = false;
+        const abortController = new AbortController();
 
-        path.traverseLinksToRoot(activeFolder.shareId, activeFolder.linkId)
-            .then((workingDirectory) => {
-                if (canceled) {
-                    return;
-                }
-
-                const breadcrumbs = workingDirectory.map((linkMeta) => {
-                    const isRoot = !linkMeta.ParentLinkID;
-                    const text = path.getLinkName(linkMeta);
-                    const handleDrop = getHandleItemDrop(linkMeta);
+        traverseLinksToRoot(abortController.signal, activeFolder.shareId, activeFolder.linkId)
+            .then((pathItems) => {
+                const breadcrumbs = pathItems.map(({ linkId, name, isRoot }) => {
+                    const handleDrop = getHandleItemDrop(linkId);
 
                     const breadcrumb: BreadcrumbInfo = {
-                        key: linkMeta.LinkID,
-                        text,
+                        key: linkId,
+                        text: name,
                         noShrink: isRoot,
-                        highlighted: dropTarget === linkMeta.LinkID,
-                        collapsedText: text,
+                        highlighted: dropTarget === linkId,
+                        collapsedText: name,
                         onClick:
-                            linkMeta.LinkID === activeFolder.linkId
+                            linkId === activeFolder.linkId
                                 ? undefined
-                                : () => navigateToLink(activeFolder.shareId, linkMeta.LinkID, LinkType.FOLDER),
+                                : () => navigateToLink(activeFolder.shareId, linkId, LinkType.FOLDER),
                         onDragLeave: () => {
                             setDropTarget(undefined);
                         },
                         onDragOver: (e) => {
                             e.stopPropagation();
                             e.preventDefault();
-                            if (dropTarget !== linkMeta.LinkID) {
-                                setDropTarget(linkMeta.LinkID);
+                            if (dropTarget !== linkId) {
+                                setDropTarget(linkId);
                             }
                         },
                         onDrop: async (e) => {
@@ -79,10 +74,14 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                 });
                 setBreadcrumbs(breadcrumbs);
             })
-            .catch(console.error);
+            .catch((err: any) => {
+                if (err.name !== 'AbortError') {
+                    setBreadcrumbs(defaultBreadcrumbs);
+                }
+            });
 
         return () => {
-            canceled = true;
+            abortController.abort();
         };
     }, [activeFolder.shareId, activeFolder.linkId, dropTarget]);
 

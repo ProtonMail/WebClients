@@ -2,33 +2,34 @@ import * as React from 'react';
 
 import { TableRowSticky, TableHeaderCell, Checkbox } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { AllSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { FileBrowserItem, SortParams, SortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { translateSortField } from '../../sections/SortDropdown';
+import SortDropdown, { translateSortField } from '../../sections/SortDropdown';
 
-interface Props<T extends AllSortKeys> {
+interface Props<T extends SortField> {
+    isLoading?: boolean;
+    sortFields?: T[];
     sortParams?: SortParams<T>;
     setSorting?: (sortParams: SortParams<T>) => void;
     selectedItems: FileBrowserItem[];
     onToggleAllSelected: () => void;
     contents: FileBrowserItem[];
     scrollAreaRef: React.RefObject<HTMLDivElement>;
-    SortDropdown?: React.FunctionComponent;
 }
 
-const GridHeader = <T extends AllSortKeys>({
+const GridHeader = <T extends SortField>({
+    isLoading,
+    sortFields,
     setSorting,
     sortParams,
     contents,
     selectedItems,
     onToggleAllSelected,
     scrollAreaRef,
-    SortDropdown,
 }: Props<T>) => {
     const canSort = (fn?: () => void) => (setSorting ? fn : undefined);
 
-    const handleSort = (key: AllSortKeys) => {
+    const handleSort = (key: SortField) => {
         if (!sortParams || !setSorting) {
             return;
         }
@@ -41,12 +42,12 @@ const GridHeader = <T extends AllSortKeys>({
         setSorting({ sortField: key as T, sortOrder: direction });
     };
 
-    const getSortDirectionForKey = (key: AllSortKeys) =>
+    const getSortDirectionForKey = (key: SortField) =>
         sortParams?.sortField === key ? sortParams.sortOrder : undefined;
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;
 
-    if (!SortDropdown || !sortParams || !setSorting) {
+    if (!sortFields || !sortParams || !setSorting) {
         return null;
     }
 
@@ -67,11 +68,12 @@ const GridHeader = <T extends AllSortKeys>({
                     className="w10e"
                     onSort={canSort(() => handleSort(sortParams.sortField))}
                     direction={getSortDirectionForKey(sortParams.sortField)}
+                    isLoading={isLoading}
                 >
                     {translateSortField(sortParams.sortField)}
                 </TableHeaderCell>
                 <TableHeaderCell>
-                    <SortDropdown />
+                    <SortDropdown sortFields={sortFields} sortParams={sortParams} setSorting={setSorting} />
                 </TableHeaderCell>
             </TableRowSticky>
         </thead>

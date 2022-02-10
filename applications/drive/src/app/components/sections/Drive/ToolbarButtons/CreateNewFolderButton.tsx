@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import useOpenModal from '../../../useOpenModal';
 
 const CreateNewFolderButton = () => {
-    const { openCreateFolder } = useToolbarActions();
+    const { openCreateFolder } = useOpenModal();
 
     return (
         <ToolbarButton

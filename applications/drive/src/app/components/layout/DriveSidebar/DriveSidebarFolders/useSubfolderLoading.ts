@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
-import { Folder } from './useFolders';
+import { TreeItem } from '../../../../store';
 
-export default function useSubfolderLoading(folder: Folder, initialState = false) {
-    const [isLoading, setIsLoading] = useState(initialState);
+export default function useSubfolderLoading(folder: TreeItem) {
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        if (folder.loaded) {
+        if (folder.isLoaded) {
             setIsLoading(false);
         }
-        if (!folder.expanded || folder.loaded) {
+        if (!folder.isExpanded || folder.isLoaded) {
             return;
         }
         const t = setTimeout(() => setIsLoading(true), 250);

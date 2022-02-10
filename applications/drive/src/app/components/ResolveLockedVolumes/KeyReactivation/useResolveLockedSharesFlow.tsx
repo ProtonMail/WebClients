@@ -3,11 +3,10 @@ import { c } from 'ttag';
 
 import { useModals, useNotifications } from '@proton/components';
 
+import { useLockedVolume } from '../../../store';
 import DeleteLockedVolumesConfirmModal from './DeleteLockedVolumesConfirmModal';
 import UnlockDriveConfirmationDialog from './UnlockDriveConfirmationDialog';
 import KeyReactivationModal from './LockedVolumesResolveMethodModal';
-import useDrive from '../../../hooks/drive/useDrive';
-import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { LockedVolumeResolveMethod } from './interfaces';
 
 interface ReactivationParams {
@@ -19,13 +18,11 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
     const lastResolveMethod = useRef<LockedVolumeResolveMethod>(LockedVolumeResolveMethod.ReactivateKeys);
     const currentModalRef = useRef<string | null>(null);
 
-    const { deleteLockedVolumes } = useDrive();
+    const { lockedVolumesCount, deleteLockedVolumes } = useLockedVolume();
     const { createModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
-    const cache = useDriveCache();
 
     const [currentModalType, setCurrentModalType] = useState<LockedVolumeResolveMethod | null>(null);
-    const lockedShares = cache.get.lockedShares.filter((share) => !share.VolumeSoftDeleted);
 
     const removeCurrentModal = () => {
         if (currentModalRef.current !== null) {
@@ -36,7 +33,7 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
 
     const handleDeleteLockedVolumesSubmit = async () => {
         try {
-            await deleteLockedVolumes(lockedShares);
+            await deleteLockedVolumes();
             createNotification({
                 text: c('Notification').t`Your old files will be deleted in 72 hours`,
             });
@@ -62,8 +59,6 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
         if (currentModalType === null) {
             return;
         }
-
-        const lockedVolumesCount = lockedShares.length;
 
         switch (currentModalType) {
             case LockedVolumeResolveMethod.ResolveMethodSelection:

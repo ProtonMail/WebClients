@@ -1,26 +1,24 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
-import { SessionKey } from 'pmcrypto';
 import { DialogModal, useLoading, useNotifications } from '@proton/components';
 import { SharedURLSessionKeyPayload, ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import useDrive from '../../hooks/drive/useDrive';
-import useSharing from '../../hooks/drive/useSharing';
 import useConfirm from '../../hooks/util/useConfirm';
-import GeneratedLinkState from './GeneratedLinkState';
-import ErrorState from './ErrorState';
 import {
+    useShareUrl,
     hasNoCustomPassword,
     hasCustomPassword,
     hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
     getSharedLink,
-} from '../../utils/link';
+} from '../../store';
 import ModalContentLoader from '../ModalContentLoader';
+import GeneratedLinkState from './GeneratedLinkState';
+import ErrorState from './ErrorState';
 
 const getLoadingMessage = (item: FileBrowserItem) => {
     if (item.SharedUrl) {
@@ -67,54 +65,36 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
     const [password, setPassword] = useState('');
     const [initialExpiration, setInitialExpiration] = useState<number | null>(null);
     const [error, setError] = useState('');
-    const { getShareMetaShort, deleteShare, getShareKeys } = useDrive();
-    const { createSharedLink, getSharedURLs, decryptSharedLink, updateSharedLink, deleteSharedLink } = useSharing();
+
+    const { loadOrCreateShareUrl, updateShareUrl, deleteShareUrl } = useShareUrl();
     const { createNotification } = useNotifications();
     const { openConfirmModal } = useConfirm();
 
     useEffect(() => {
-        // If token already loaded, don't reload it
         if (shareUrlInfo?.ShareURL.ShareID) {
             return;
         }
 
-        const getShareMetaAsync = async (shareInfo?: { ID: string; sessionKey: SessionKey }) => {
-            return getShareMetaShort(shareId).then(async ({ VolumeID }) => {
-                const result = await createSharedLink(shareId, VolumeID, item.LinkID, shareInfo);
-                return result;
-            });
-        };
-
-        const getToken = async () => {
-            const shareUrlInfo = item.ShareUrlShareID
-                ? await getSharedURLs(item.ShareUrlShareID).then(async ({ ShareURLs: [sharedUrl] }) => {
-                      const shareUrlShareID = item.ShareUrlShareID as string;
-                      if (sharedUrl) {
-                          return decryptSharedLink(sharedUrl);
-                      }
-
-                      const { sessionKey } = await getShareKeys(shareUrlShareID);
-                      return getShareMetaAsync({ ID: shareUrlShareID, sessionKey });
-                  })
-                : await getShareMetaAsync();
-
-            setShareUrlInfo(shareUrlInfo);
-
-            setPasswordToggledOn(hasCustomPassword(shareUrlInfo.ShareURL));
-            setExpirationToggledOn(!!shareUrlInfo.ShareURL?.ExpirationTime);
-            setPassword(shareUrlInfo.ShareURL.Password);
-            setInitialExpiration(shareUrlInfo.ShareURL?.ExpirationTime);
-        };
-
-        getToken()
+        const abortController = new AbortController();
+        loadOrCreateShareUrl(abortController.signal, shareId, item.LinkID)
+            .then((shareUrlInfo) => {
+                setShareUrlInfo(shareUrlInfo);
+                setPasswordToggledOn(hasCustomPassword(shareUrlInfo.ShareURL));
+                setExpirationToggledOn(!!shareUrlInfo.ShareURL?.ExpirationTime);
+                setPassword(shareUrlInfo.ShareURL.Password);
+                setInitialExpiration(shareUrlInfo.ShareURL?.ExpirationTime);
+            })
             .catch((err) => {
-                console.error(err);
                 setError(err);
             })
             .finally(() => {
                 setModalState(ShareLinkModalState.GeneratedLink);
             });
-    }, [shareId, item.LinkID, item.SharedUrl, shareUrlInfo?.ShareURL.ShareID]);
+
+        return () => {
+            abortController.abort();
+        };
+    }, [shareId, item.LinkID, shareUrlInfo?.ShareURL.ShareID]);
 
     const handleSaveSharedLink = async (newCustomPassword?: string, newDuration?: number | null) => {
         if (!shareUrlInfo) {
@@ -137,10 +117,10 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         }
 
         const update = async () => {
-            const res = await updateSharedLink(
+            const res = await updateShareUrl(
                 {
                     shareId: shareUrlInfo.ShareURL.ShareID,
-                    token: shareUrlInfo.ShareURL.Token,
+                    shareUrlId: shareUrlInfo.ShareURL.ShareURLID,
                     flags: shareUrlInfo.ShareURL.Flags,
                     keyInfo: shareUrlInfo.keyInfo,
                 },
@@ -188,9 +168,8 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         }
 
         const deleteLink = async () => {
-            const { Token, ShareID } = shareUrlInfo.ShareURL;
-            await deleteSharedLink(ShareID, Token);
-            await deleteShare(ShareID);
+            const { ShareID, ShareURLID } = shareUrlInfo.ShareURL;
+            await deleteShareUrl(ShareID, ShareURLID);
             createNotification({
                 text: c('Notification').t`The link to your file was deleted`,
             });

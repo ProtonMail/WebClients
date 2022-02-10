@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { DialogModal, HeaderModal, InnerModal } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useDrive from '../../hooks/drive/useDrive';
 import ModalContentLoader from '../ModalContentLoader';
 
 interface Props {
@@ -19,22 +18,13 @@ function ShareModal({ modalTitleID = 'share-modal', shareId, item, onClose, ...r
     const [error, setError] = useState('');
     const [shareInfo, setShareInfo] = useState<string>();
 
-    const { getShareMetaShort, createShare } = useDrive();
-
     useEffect(() => {
         if (shareInfo) {
             return;
         }
 
         const loadShare = async () => {
-            if (item.ShareUrlShareID) {
-                setShareInfo(item.ShareUrlShareID);
-            } else {
-                return getShareMetaShort(shareId).then(async ({ VolumeID }) => {
-                    const result = await createShare(shareId, VolumeID, item.LinkID);
-                    setShareInfo(result.Share.ID);
-                });
-            }
+            setShareInfo('info');
         };
 
         loadShare()

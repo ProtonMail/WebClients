@@ -4,7 +4,7 @@ import { Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { MEMBER_SHARING_ENABLED } from '@proton/shared/lib/drive/constants';
 
-import useToolbarActions from '../../../hooks/drive/useActions';
+import useOpenModal from '../../useOpenModal';
 import { noSelection, isMultiSelect } from './utils';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const ShareButton = ({ shareId, selectedItems }: Props) => {
-    const { openSharing } = useToolbarActions();
+    const { openSharing } = useOpenModal();
 
     if (!MEMBER_SHARING_ENABLED || noSelection(selectedItems) || isMultiSelect(selectedItems)) {
         return null;

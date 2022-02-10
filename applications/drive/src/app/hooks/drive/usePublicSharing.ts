@@ -17,16 +17,13 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { LinkMeta, LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FOLDER_PAGE_SIZE } from '@proton/shared/lib/drive/constants';
 
+import { linkMetaToEncryptedLink } from '../../store/api/transformers';
 import usePublicSession from '../../components/DownloadShared/usePublicSession';
-import {
-    DownloadControls,
-    DownloadEventCallbacks,
-    LinkDownload,
-    Pagination,
-} from '../../components/downloads/interface';
-import downloadThumbnailPure from '../../components/downloads/download/downloadThumbnail';
-import initDownloadPure from '../../components/downloads/download/download';
+import { DownloadControls, DownloadEventCallbacks, LinkDownload, Pagination } from '../../store/downloads/interface';
+import downloadThumbnailPure from '../../store/downloads/download/downloadThumbnail';
+import initDownloadPure from '../../store/downloads/download/download';
 import retryOnError from '../../utils/retryOnError';
+import { DecryptedLink, EncryptedLink } from '../../store';
 
 export interface SharedURLInfoDecrypted {
     expirationTime: SharedURLInfo['ExpirationTime'];
@@ -55,24 +52,29 @@ function usePublicSharing() {
     const api = useApi();
     const publicSession = usePublicSession();
 
-    const decryptLink = async (linkMeta: LinkMeta, privateKey: OpenPGPKey): Promise<LinkMeta> => {
-        const name = await decryptUnsigned({ armoredMessage: linkMeta.Name, privateKey });
-        return { ...linkMeta, Name: name };
+    const decryptLink = async (link: EncryptedLink, privateKey: OpenPGPKey): Promise<DecryptedLink> => {
+        const name = await decryptUnsigned({ armoredMessage: link.name, privateKey });
+        return {
+            ...link,
+            encryptedName: link.name,
+            name,
+            fileModifyTime: link.metaDataModifyTime,
+        };
     };
 
-    const getNodeKey = async (linkMeta: LinkMeta, privateKey: OpenPGPKey) => {
-        const nodePassphrase = await decryptUnsigned({ armoredMessage: linkMeta.NodePassphrase, privateKey });
-        const nodeKey = await decryptPrivateKey(linkMeta.NodeKey, nodePassphrase);
+    const getNodeKey = async (link: EncryptedLink, privateKey: OpenPGPKey) => {
+        const nodePassphrase = await decryptUnsigned({ armoredMessage: link.nodePassphrase, privateKey });
+        const nodeKey = await decryptPrivateKey(link.nodeKey, nodePassphrase);
 
         return nodeKey;
     };
 
-    const getSessionKey = async (linkMeta: LinkMeta, nodeKey: OpenPGPKey) => {
+    const getSessionKey = async (link: EncryptedLink, nodeKey: OpenPGPKey) => {
         // Folder links are no provided with ContentKeyPacket
-        if (linkMeta.Type !== LinkType.FILE) {
+        if (link.type !== LinkType.FILE || !link.contentKeyPacket) {
             return undefined;
         }
-        const blockKeys = base64StringToUint8Array(linkMeta.FileProperties.ContentKeyPacket);
+        const blockKeys = base64StringToUint8Array(link.contentKeyPacket);
         const sessionKey = await getDecryptedSessionKey({ data: blockKeys, privateKeys: nodeKey });
 
         return sessionKey;
@@ -248,17 +250,17 @@ function usePublicSharing() {
         const sharedURLChildren = await getAllSharedUrlChildren(token, password, linkId);
 
         return Promise.all(
-            sharedURLChildren.map(async (linkMeta: LinkMeta) => {
-                const { privateKey } = cache[linkMeta.ParentLinkID];
+            sharedURLChildren.map(linkMetaToEncryptedLink).map(async (link: EncryptedLink) => {
+                const { privateKey } = cache[link.parentLinkId];
 
-                const nodeKey = await getNodeKey(linkMeta, privateKey);
-                const sessionKey = await getSessionKey(linkMeta, nodeKey);
+                const nodeKey = await getNodeKey(link, privateKey);
+                const sessionKey = await getSessionKey(link, nodeKey);
 
-                cache[linkMeta.LinkID] = {
+                cache[link.linkId] = {
                     privateKey: nodeKey,
                     sessionKey,
                 };
-                return decryptLink(linkMeta, privateKey);
+                return decryptLink(link, privateKey);
             })
         );
     };
@@ -275,8 +277,8 @@ function usePublicSharing() {
                 getChildren(token, password, linkId),
             getBlocks: (abortSignal: AbortSignal, shareId: string, linkId: string, pagination: Pagination) =>
                 getBlocks(token, password, linkId, pagination),
-            getKeys: async (shareID, linkID) => {
-                const linkKeys = cache[linkID];
+            getKeys: async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+                const linkKeys = cache[linkId];
                 return {
                     privateKey: linkKeys.privateKey,
                     sessionKeys: linkKeys.sessionKey,

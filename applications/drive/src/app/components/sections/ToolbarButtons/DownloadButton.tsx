@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useToolbarActions from '../../../hooks/drive/useActions';
+import { useDownload } from '../../../store';
 import { noSelection, hasFoldersSelected } from './utils';
 
 interface Props {
@@ -13,7 +13,20 @@ interface Props {
 }
 
 const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
-    const { download } = useToolbarActions();
+    const { download } = useDownload();
+
+    const onClick = () => {
+        void download(
+            selectedItems.map((item) => ({
+                type: item.Type,
+                shareId,
+                linkId: item.LinkID,
+                name: item.Name,
+                mimeType: item.MIMEType,
+                size: item.Size,
+            }))
+        );
+    };
 
     if (noSelection(selectedItems) || (disabledFolders && hasFoldersSelected(selectedItems))) {
         return null;
@@ -23,7 +36,7 @@ const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
         <ToolbarButton
             title={c('Action').t`Download`}
             icon={<Icon name="arrow-down-to-rectangle" />}
-            onClick={() => download(shareId, selectedItems)}
+            onClick={onClick}
             data-testid="toolbar-download"
         />
     );

@@ -2,12 +2,16 @@ import { c } from 'ttag';
 
 import { classnames, FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
 
-import useFileUploadInput from '../../uploads/useUploadInput';
-import { useDownloadProvider } from '../../downloads/DownloadProvider';
-import { useUploadProvider } from '../../uploads/UploadProvider';
+import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useDownload, useFileUploadInput, useUpload } from '../../../store';
 
 export const UploadButton = ({ className }: { className?: string }) => {
-    const { inputRef: fileInput, handleClick, handleChange: handleFileChange } = useFileUploadInput();
+    const { activeFolder } = useActiveShare();
+    const {
+        inputRef: fileInput,
+        handleClick,
+        handleChange: handleFileChange,
+    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
 
     return (
         <>
@@ -19,10 +23,15 @@ export const UploadButton = ({ className }: { className?: string }) => {
 };
 
 const UploadMobileButton = () => {
-    const { inputRef: fileInput, handleClick, handleChange: handleFileChange } = useFileUploadInput();
+    const { activeFolder } = useActiveShare();
+    const {
+        inputRef: fileInput,
+        handleClick,
+        handleChange: handleFileChange,
+    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
 
-    const { downloads } = useDownloadProvider();
-    const { hasUploads } = useUploadProvider();
+    const { downloads } = useDownload();
+    const { hasUploads } = useUpload();
     const isTransferring = hasUploads || downloads.length > 0;
 
     return (

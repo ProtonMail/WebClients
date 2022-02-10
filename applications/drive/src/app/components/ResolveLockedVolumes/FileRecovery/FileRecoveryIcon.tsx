@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, Tooltip, useModals } from '@proton/components';
 
-import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
+import { useLockedVolume } from '../../../store';
 import FilesRecoveryModal from './FilesRecoveryModal';
 
 interface Props {
@@ -10,10 +10,10 @@ interface Props {
 }
 
 const FileRecoveryIcon = ({ className }: Props) => {
-    const cache = useDriveCache();
     const { createModal } = useModals();
+    const { hasVolumesForRestore } = useLockedVolume();
 
-    return cache.sharesReadyToRestore.length ? (
+    return hasVolumesForRestore ? (
         <Tooltip title={c('Title').t`You have inaccessible files`}>
             <Icon
                 color="red"
@@ -23,7 +23,7 @@ const FileRecoveryIcon = ({ className }: Props) => {
                     e.preventDefault();
                     e.stopPropagation();
 
-                    createModal(<FilesRecoveryModal lockedShareList={cache.sharesReadyToRestore} />);
+                    createModal(<FilesRecoveryModal />);
                 }}
             />
         </Tooltip>

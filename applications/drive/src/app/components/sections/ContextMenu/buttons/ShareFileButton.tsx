@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import useOpenModal from '../../../useOpenModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ShareFileButton = ({ shareId, close }: Props) => {
-    const { openFileSharing } = useToolbarActions();
+    const { openFileSharing } = useOpenModal();
 
     return (
         <ContextMenuButton
