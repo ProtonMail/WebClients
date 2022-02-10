@@ -1,4 +1,5 @@
 import { DBSchema } from 'idb';
+
 import { EncryptedSearchFunctions, ESStoredItem } from '@proton/encrypted-search';
 
 export interface ESLink {

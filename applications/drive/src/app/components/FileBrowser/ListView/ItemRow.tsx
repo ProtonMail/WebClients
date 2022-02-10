@@ -157,6 +157,12 @@ const ItemRow = ({
 
                 {columns.includes('location') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
+                        <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} isTrashed={!!item.Trashed} />
+                    </TableCell>
+                )}
+
+                {columns.includes('original_location') && (
+                    <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
                         <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
                     </TableCell>
                 )}

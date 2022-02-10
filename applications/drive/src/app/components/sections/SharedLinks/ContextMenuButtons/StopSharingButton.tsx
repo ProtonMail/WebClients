@@ -23,7 +23,12 @@ const StopSharingButton = ({ shareId, items, close }: Props) => {
                 stopSharingLinks(
                     new AbortController().signal,
                     shareId,
-                    items.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                    items.map((item) => ({
+                        parentLinkId: item.ParentLinkID,
+                        linkId: item.LinkID,
+                        name: item.Name,
+                        type: item.Type,
+                    }))
                 )
             }
             close={close}

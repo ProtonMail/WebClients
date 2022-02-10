@@ -1,33 +1,29 @@
 import { Location } from 'history';
+import { OpenPGPKey } from 'pmcrypto';
 
-import { NodeKeys } from '@proton/shared/lib/interfaces/drive/node';
 import { AesGcmCiphertext, ESHelpers, ESEvent, getES, normaliseKeyword, testKeywords } from '@proton/encrypted-search';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
-import { LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { Api, User } from '@proton/shared/lib/interfaces';
 import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
-import { ESDriveSearchParams, ESItemChangesDrive, ESLink, StoredCiphertextDrive } from '../types';
-import { FetchLinkConfig } from '../../../hooks/drive/useDrive';
-import { createLinkGenerator } from './createLinkGenerator';
-import { extractSearchParameters, generateOrder } from '../utils';
-import { DriveEventsPayload } from '../../driveEventManager/interface';
-import { convertDriveEventToSearchEvent } from '../processEvent';
-import { LinkKeys } from '../../DriveCache/DriveCacheProvider';
-import { parseItemId } from '../utils';
-import { FetchShareMap } from '../useSearchAPI';
+import { driveEventsResultToDriveEvents } from '../api';
+import { DecryptedLink } from '../links';
+import convertDriveEventsToSearchEvents from './indexing/processEvent';
+import { FetchShareMap } from './indexing/useFetchShareMap';
+import { createLinkGenerator } from './indexing/createLinkGenerator';
+import { ESDriveSearchParams, ESItemChangesDrive, ESLink, StoredCiphertextDrive } from './types';
+import { extractSearchParameters, generateOrder, parseItemId } from './utils';
 
 interface Props {
     api: Api;
     user: User;
-    shareId: string;
-
+    shareId: Promise<string>;
     fetchShareMap: FetchShareMap;
-    getLinkMeta: (shareId: string, linkId: string) => Promise<LinkMeta>;
-
-    getShareKeys: (shareId: string) => Promise<NodeKeys>;
-    getLinkKeys: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkKeys>;
+    getLink: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<DecryptedLink>;
+    getSharePrivateKey: (abortSignal: AbortSignal, shareId: string) => Promise<OpenPGPKey>;
+    getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<OpenPGPKey>;
 }
 
 let linkMapGenerator: AsyncGenerator<ESLink[]>;
@@ -37,17 +33,17 @@ export const getItemID = (item: ESLink | StoredCiphertextDrive) => item.id;
 export const useESHelpers = ({
     api,
     user,
-    fetchShareMap,
-    getLinkMeta,
     shareId,
-    getShareKeys,
-    getLinkKeys,
+    fetchShareMap,
+    getLink,
+    getSharePrivateKey,
+    getLinkPrivateKey,
 }: Props): ESHelpers<ESLink, ESLink, ESDriveSearchParams, ESItemChangesDrive, StoredCiphertextDrive> => {
     const userID = user.ID;
     const queryItemsMetadata = async (storedItem?: StoredCiphertextDrive) => {
         if (!linkMapGenerator || storedItem === undefined) {
-            const rootKey = await getShareKeys(shareId);
-            linkMapGenerator = createLinkGenerator(shareId, rootKey, { fetchShareMap });
+            const rootKey = await getSharePrivateKey(new AbortController().signal, await shareId);
+            linkMapGenerator = createLinkGenerator(await shareId, rootKey, { fetchShareMap });
         }
 
         const items = await linkMapGenerator.next();
@@ -60,18 +56,18 @@ export const useESHelpers = ({
         }
 
         const { shareId, linkId } = parseItemId(itemId as string);
-        const linkMeta = await getLinkMeta(shareId, linkId);
+        const link = await getLink(new AbortController().signal, shareId, linkId);
 
         return {
-            createTime: linkMeta.CreateTime,
-            MIMEType: linkMeta.MIMEType,
+            createTime: link.createTime,
+            MIMEType: link.mimeType,
             id: itemId as string,
             linkId,
             shareId,
-            modifiedTime: linkMeta.RealModifyTime,
-            parentLinkId: linkMeta.ParentLinkID,
-            size: linkMeta.Size,
-            decryptedName: linkMeta.Name,
+            modifiedTime: link.fileModifyTime,
+            parentLinkId: link.parentLinkId,
+            size: link.size,
+            decryptedName: link.name,
             order: await generateOrder(itemId as string),
         };
     };
@@ -110,7 +106,7 @@ export const useESHelpers = ({
     };
 
     const getPreviousEventID = async () => {
-        const latestEvent = await api<{ EventID: string }>(queryLatestEvents(shareId));
+        const latestEvent = await api<{ EventID: string }>(queryLatestEvents(await shareId));
         return latestEvent.EventID;
     };
 
@@ -124,8 +120,7 @@ export const useESHelpers = ({
             throw new Error('Event ID from local storage not found');
         }
 
-        const initialEvent = await api<DriveEventsPayload>(queryEvents(shareId, storedEventID));
-
+        const initialEvent = await api<DriveEventsResult>(queryEvents(await shareId, storedEventID));
         if (!initialEvent) {
             throw new Error('Event from local storage not found');
         }
@@ -133,22 +128,18 @@ export const useESHelpers = ({
         let keepSyncing = Boolean(initialEvent.More);
         let index = 0;
 
-        const newEvents: DriveEventsPayload[] = [initialEvent];
+        const newEvents: DriveEventsResult[] = [initialEvent];
         while (keepSyncing) {
-            try {
-                const lastEventId = newEvents[index++].EventID;
+            const lastEventId = newEvents[index++].EventID;
 
-                const newEventToCheck = await api<DriveEventsPayload>(queryEvents(shareId, lastEventId));
-                if (!newEventToCheck || !newEventToCheck.EventID) {
-                    throw new Error('No event found');
-                }
+            const newEventToCheck = await api<DriveEventsResult>(queryEvents(await shareId, lastEventId));
+            if (!newEventToCheck || !newEventToCheck.EventID) {
+                throw new Error('No event found');
+            }
 
-                keepSyncing = Boolean(newEventToCheck.More) || newEventToCheck.EventID !== lastEventId;
-                if (keepSyncing) {
-                    newEvents.push(newEventToCheck);
-                }
-            } catch (error: any) {
-                return getEventFromLS();
+            keepSyncing = Boolean(newEventToCheck.More);
+            if (newEventToCheck.EventID !== lastEventId) {
+                newEvents.push(newEventToCheck);
             }
         }
 
@@ -156,13 +147,15 @@ export const useESHelpers = ({
             return hasBit(event.Refresh, 1);
         });
 
-        const res = {
-            newEvents: await convertDriveEventToSearchEvent(shareId, newEvents, getLinkKeys),
+        return {
+            newEvents: await Promise.all(
+                newEvents
+                    .map(driveEventsResultToDriveEvents)
+                    .map(async (events) => convertDriveEventsToSearchEvents(await shareId, events, getLinkPrivateKey))
+            ),
             shouldRefresh,
             eventToStore: newEvents[newEvents.length - 1].EventID,
         };
-
-        return res;
     };
 
     const sizeOfESItem = (esItem: ESLink) => {
@@ -205,7 +198,7 @@ export const useESHelpers = ({
             let total: number;
             return async () => {
                 if (!total) {
-                    total = (await fetchShareMap({ shareId })).Total;
+                    total = (await fetchShareMap({ shareId: await shareId })).Total;
                 }
                 return total;
             };

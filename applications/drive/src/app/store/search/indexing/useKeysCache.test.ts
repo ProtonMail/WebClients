@@ -39,7 +39,7 @@ describe('useKeysCache', () => {
     let keyCache: KeyCache;
 
     beforeEach(() => {
-        keyCache = createKeysCache({ privateKey: {} as unknown as OpenPGPKey });
+        keyCache = createKeysCache('key' as unknown as OpenPGPKey);
     });
 
     it('caches decrypted links', async () => {
@@ -50,8 +50,8 @@ describe('useKeysCache', () => {
         expect(key).toEqual(PRIVATE_KEY);
     });
 
-    it("returns null when unknown link's keys are requested", async () => {
-        const result = await keyCache.getCachedPrivateKey('new-link-id');
-        expect(result).toBe(null);
+    it("returns undefined when unknown link's keys are requested", async () => {
+        const result = keyCache.getCachedPrivateKey('new-link-id');
+        expect(result).toBe(undefined);
     });
 });

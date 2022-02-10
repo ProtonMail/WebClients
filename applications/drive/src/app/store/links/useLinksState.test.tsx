@@ -51,6 +51,7 @@ function getLockedIds(state: LinksState): string[] {
 
 function generateEvents(events: any[]): DriveEvents {
     return {
+        eventId: 'eventId',
         events: events.map(([eventType, encryptedLink]) => ({ eventType, encryptedLink })),
         refresh: false,
     };

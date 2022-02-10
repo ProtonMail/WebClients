@@ -247,5 +247,3 @@ export const fileDescriptions: { [type: string]: string } = {
 
 // Delete once sharing between members is fully implemented.
 export const MEMBER_SHARING_ENABLED = false;
-// TODO: remove when search is rolled out for everyone.
-export const ENCRYPTED_SEARCH_ENABLED = true;

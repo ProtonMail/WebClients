@@ -4,7 +4,7 @@ import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 import retryOnError from '../../../utils/retryOnError';
 import { PAGE_SIZE, SESSION_EXPIRED_ERROR_CODE } from '../constants';
 import { Session } from '../types';
-import { FetchShareMap } from '../useSearchAPI';
+import { FetchShareMap } from './useFetchShareMap';
 import { getDefaultSessionValue } from '../utils';
 
 export const fetchItemsMetadataPage = async (

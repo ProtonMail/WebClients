@@ -1,11 +1,7 @@
-import { c } from 'ttag';
-
 import { getDevice } from '@proton/shared/lib/helpers/browser';
-import { ToolbarSeparator, Toolbar, useActiveBreakpoint, Icon, ToolbarButton } from '@proton/components';
+import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import { ENCRYPTED_SEARCH_ENABLED } from '@proton/shared/lib/drive/constants';
 
-import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import {
     DetailsButton,
     DownloadButton,
@@ -24,44 +20,21 @@ import {
     UploadFileButton,
     UploadFolderButton,
 } from './ToolbarButtons';
-import { useSearchIndexingContext } from '../../search/indexing/SearchIndexingProvider';
-
 interface Props {
-    activeFolder: DriveFolder;
+    shareId: string;
     selectedItems: FileBrowserItem[];
+    showOptionsForNoSelection?: boolean;
 }
 
-const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
+const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { isNarrow } = useActiveBreakpoint();
-    // TODO: remove
-    const { getESDBStatus, esDelete } = useSearchIndexingContext();
-
-    const { shareId } = activeFolder;
-
-    /* ES PoC */
-    const getEsButtons = () => {
-        if (!ENCRYPTED_SEARCH_ENABLED) {
-            return null;
-        }
-        const { esEnabled } = getESDBStatus();
-        return (
-            <>
-                <ToolbarSeparator />
-                <ToolbarButton
-                    disabled={!esEnabled}
-                    title={c('Action').t`Remove index`}
-                    icon={<Icon name="xmark" />}
-                    onClick={() => esDelete()}
-                />
-            </>
-        );
-    };
-    const esButtons = getEsButtons();
-    /* ES PoC */
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
+            if (!showOptionsForNoSelection) {
+                return null;
+            }
             return (
                 <>
                     <CreateNewFolderButton />
@@ -74,7 +47,6 @@ const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
                     )}
                     <ToolbarSeparator />
                     <ShareFileButton shareId={shareId} />
-                    {esButtons}
                 </>
             );
         }
@@ -91,12 +63,11 @@ const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
                         <ShareButton shareId={shareId} selectedItems={selectedItems} />
                         <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
                         <ToolbarSeparator />
-                        <MoveToFolderButton sourceFolder={activeFolder} selectedItems={selectedItems} />
+                        <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} />
                         <RenameButton shareId={shareId} selectedItems={selectedItems} />
                         <DetailsButton shareId={shareId} selectedItems={selectedItems} />
                         <ToolbarSeparator />
-                        <MoveToTrashButton sourceFolder={activeFolder} selectedItems={selectedItems} />
-                        {esButtons}
+                        <MoveToTrashButton shareId={shareId} selectedItems={selectedItems} />
                     </>
                 )}
             </>

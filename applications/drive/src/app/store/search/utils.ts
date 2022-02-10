@@ -2,6 +2,7 @@ import { unsafeMD5 } from 'pmcrypto';
 import { Location } from 'history';
 
 import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
+
 import { ESLink } from './types';
 
 export const createItemId = (shareId: string, linkId: string) => {

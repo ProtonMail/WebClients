@@ -40,6 +40,7 @@ export interface FileBrowserItem {
 
 export type ItemRowColumns =
     | 'location'
+    | 'original_location'
     | 'uploaded'
     | 'modified'
     | 'share_created'
@@ -94,6 +95,7 @@ export interface FileBrowserProps<T extends SortField = SortField> {
 export type FolderSortField = 'name' | 'mimeType' | 'fileModifyTime' | 'size';
 export type SharedLinkSortField = 'name' | 'linkCreateTime' | 'linkExpireTime' | 'numAccesses';
 export type TrashedLinksSortField = 'name' | 'size' | 'trashed';
+export type SearchSortField = 'name' | 'fileModifyTime' | 'size';
 export type SortField = FolderSortField | SharedLinkSortField | TrashedLinksSortField | 'metaDataModifyTime';
 
 export interface SortParams<T extends SortField = SortField> {
@@ -104,6 +106,7 @@ export interface SortParams<T extends SortField = SortField> {
 export interface FolderContextMenuProps {
     shareId: string;
     anchorRef: React.RefObject<HTMLElement>;
+    children?: React.ReactNode;
     isOpen: boolean;
     position:
         | {

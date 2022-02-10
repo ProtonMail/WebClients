@@ -4,15 +4,14 @@ import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser
 
 import useOpenModal from '../../../useOpenModal';
 import { ContextMenuButton } from '../../ContextMenu';
-import { DriveFolder } from '../../../../hooks/drive/useActiveShare';
 
 interface Props {
-    sourceFolder: DriveFolder;
+    shareId: string;
     items: FileBrowserItem[];
     close: () => void;
 }
 
-const MoveToFolderButton = ({ sourceFolder, items, close }: Props) => {
+const MoveToFolderButton = ({ shareId, items, close }: Props) => {
     const { openMoveToFolder } = useOpenModal();
 
     return (
@@ -20,7 +19,7 @@ const MoveToFolderButton = ({ sourceFolder, items, close }: Props) => {
             name={c('Action').t`Move to folder`}
             icon="arrows-up-down-left-right"
             testId="context-menu-move"
-            action={() => openMoveToFolder(sourceFolder, items)}
+            action={() => openMoveToFolder(shareId, items)}
             close={close}
         />
     );

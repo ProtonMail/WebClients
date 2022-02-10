@@ -24,7 +24,12 @@ const RestoreFromTrashButton = ({ shareId, selectedItems }: Props) => {
                     restoreLinks(
                         new AbortController().signal,
                         shareId,
-                        selectedItems.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                        selectedItems.map((item) => ({
+                            parentLinkId: item.ParentLinkID,
+                            linkId: item.LinkID,
+                            name: item.Name,
+                            type: item.Type,
+                        }))
                     )
                 )
             }

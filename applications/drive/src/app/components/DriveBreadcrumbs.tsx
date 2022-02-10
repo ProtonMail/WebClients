@@ -83,7 +83,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
         return () => {
             abortController.abort();
         };
-    }, [activeFolder.shareId, activeFolder.linkId, dropTarget]);
+    }, [traverseLinksToRoot, activeFolder.shareId, activeFolder.linkId, dropTarget]);
 
     return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />;
 };

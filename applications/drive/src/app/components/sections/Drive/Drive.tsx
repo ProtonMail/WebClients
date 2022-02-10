@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback } from 'react';
 
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
@@ -19,14 +19,6 @@ interface Props {
 
 function Drive({ activeFolder, folderView }: Props) {
     const { shareId } = activeFolder;
-
-    const abortController = useRef(new AbortController());
-    useEffect(() => {
-        return () => {
-            abortController.current.abort();
-            abortController.current = new AbortController();
-        };
-    }, [activeFolder.shareId, activeFolder.linkId]);
 
     const { navigateToLink } = useNavigate();
     const { layout, folderName, items, sortParams, setSorting, selectionControls, isLoading } = folderView;
