@@ -30,7 +30,13 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
     };
 
     const replyButton = (
-        <Button onClick={handleReply} color="norm" className="mlauto flex flex-align-items-center" disabled={!canReply}>
+        <Button
+            onClick={handleReply}
+            color="norm"
+            className="mlauto flex flex-align-items-center"
+            disabled={!canReply}
+            data-testid="eoreply:button"
+        >
             <Icon name="arrow-up-and-left-big" className="on-rtl-mirror mr0-5" alt={c('Title').t`Reply`} />
             <span>{c('Action').t`Reply securely`}</span>
         </Button>

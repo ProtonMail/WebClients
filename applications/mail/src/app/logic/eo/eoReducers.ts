@@ -24,6 +24,7 @@ import {
     loadElementOtherThanImages,
     removeProtonPrefix,
 } from '../../helpers/message/messageRemotes';
+import { initialState } from './eoSlice';
 
 export const getMessageState = (state: Draft<EOState>) => eoMessageStateSelector({ eo: state } as RootState);
 
@@ -37,6 +38,10 @@ const getStateImages = <T extends { image: MessageRemoteImage }>(data: T[], mess
         const image = remoteImages.find((image) => image.id === inputImage.id) as MessageRemoteImage;
         return { image, ...rest };
     });
+};
+
+export const reset = (state: Draft<EOState>) => {
+    Object.assign(state, initialState);
 };
 
 export const initFulfilled = (
