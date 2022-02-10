@@ -7,12 +7,23 @@ export interface InputTwoProps extends Omit<ComponentPropsWithRef<'input'>, 'pre
     suffix?: ReactNode;
     prefix?: ReactNode;
     icon?: ReactNode;
+    containerRef?: Ref<HTMLDivElement>;
     disableChange?: boolean;
     onValue?: (value: string) => void;
 }
 
 const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
-    const { error, icon, suffix, prefix, className: classNameProp, onValue, disableChange, ...rest } = props;
+    const {
+        error,
+        icon,
+        suffix,
+        prefix,
+        className: classNameProp,
+        onValue,
+        disableChange,
+        containerRef,
+        ...rest
+    } = props;
 
     const className = classnames([classNameProp, 'w100 inputform-field', Boolean(error) && 'error']);
 
@@ -38,7 +49,10 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
 
     if (prefix) {
         return (
-            <div className="inputform-icon-container flex flex-nowrap flex-align-items-center flex-item-fluid relative">
+            <div
+                className="inputform-icon-container flex flex-nowrap flex-align-items-center flex-item-fluid relative"
+                ref={containerRef}
+            >
                 <div className="inputform-prefix pr0-5 flex">{prefix}</div>
                 <div className="flex-item-fluid">{inputElement}</div>
             </div>
@@ -47,7 +61,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
 
     if (icon) {
         return (
-            <div className="inputform-icon-container text-left relative">
+            <div className="inputform-icon-container text-left relative" ref={containerRef}>
                 {inputElement}
                 <span className="right-icon absolute flex">{icon}</span>
             </div>
@@ -56,7 +70,10 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
 
     if (suffix) {
         return (
-            <div className="inputform-icon-container flex flex-nowrap flex-align-items-center flex-item-fluid relative">
+            <div
+                className="inputform-icon-container flex flex-nowrap flex-align-items-center flex-item-fluid relative"
+                ref={containerRef}
+            >
                 <div className="flex-item-fluid">{inputElement}</div>
                 <div className="inputform-suffix right-icon pr0-5 flex">
                     <span className="mauto">{suffix}</span>
