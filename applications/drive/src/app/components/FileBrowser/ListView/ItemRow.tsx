@@ -109,7 +109,7 @@ const ItemRow = ({
                 ref={contextMenu.anchorRef}
                 aria-disabled={item.Disabled}
                 className={classnames([
-                    'file-browser-list-item outline-none flex user-select-none opacity-on-hover-container',
+                    'file-browser-list-item flex user-select-none opacity-on-hover-container',
                     (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-strong',
                     (dragging || item.Disabled) && 'opacity-50',
