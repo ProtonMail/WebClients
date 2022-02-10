@@ -1,4 +1,5 @@
 import { Toolbar, ToolbarSeparator } from '@proton/components';
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import {
     DetailsButton,
@@ -10,16 +11,13 @@ import {
     ShareLinkButton,
 } from '../ToolbarButtons';
 import { StopSharingButton } from './ToolbarButtons';
-import { useSharedLinksContent } from './SharedLinksContentProvider';
 
 interface Props {
     shareId: string;
+    selectedItems: FileBrowserItem[];
 }
 
-const SharedLinksToolbar = ({ shareId }: Props) => {
-    const { fileBrowserControls } = useSharedLinksContent();
-    const { selectedItems } = fileBrowserControls;
-
+const SharedLinksToolbar = ({ shareId, selectedItems }: Props) => {
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return (

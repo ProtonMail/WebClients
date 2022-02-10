@@ -16,18 +16,15 @@ import {
     Download,
     STATE_TO_GROUP_MAP,
     TransferGroup,
-    TransfersStats,
     TransferType,
+    TransfersStats,
     Upload,
 } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { useUploadProvider } from '../uploads/UploadProvider';
+import useConfirm from '../../hooks/util/useConfirm';
+import { useTransfersView } from '../../store';
 import Header from './Header';
 import Transfer from './Transfer';
-import { isTransferFinished } from '../../utils/transfer';
-import useConfirm from '../../hooks/util/useConfirm';
-import useStatsHistory from '../../hooks/drive/useStatsHistory';
 import Toolbar from './Toolbar';
 
 interface TransferListEntry<T extends TransferType> {
@@ -41,14 +38,13 @@ const MAX_VISIBLE_TRANSFERS_MOBILE = 3;
 
 type ListItemData = {
     entries: (TransferListEntry<TransferType.Download> | TransferListEntry<TransferType.Upload>)[];
-    latestStats: TransfersStats;
-    calculateAverageSpeed: (id: string) => number;
+    stats: TransfersStats;
 };
 
 type ListItemRowProps = Omit<ListChildComponentProps, 'data'> & { data: ListItemData };
 
 const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
-    const { calculateAverageSpeed, latestStats, entries } = data;
+    const { stats, entries } = data;
     const { transfer, type } = entries[index];
 
     return (
@@ -57,8 +53,8 @@ const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
             transfer={transfer}
             type={type}
             stats={{
-                progress: latestStats.stats[transfer.id]?.progress ?? 0,
-                speed: calculateAverageSpeed(transfer.id),
+                progress: stats[transfer.id]?.progress ?? 0,
+                speed: stats[transfer.id]?.averageSpeed ?? 0,
             }}
         />
     );
@@ -67,15 +63,15 @@ const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
 const TransferManager = ({
     downloads,
     uploads,
-    statsHistory,
+    stats,
     onClear,
-    allTransfersFinished,
+    hasActiveTransfer,
 }: {
     downloads: Download[];
     uploads: Upload[];
-    statsHistory: TransfersStats[];
+    stats: TransfersStats;
     onClear: () => void;
-    allTransfersFinished: boolean;
+    hasActiveTransfer: boolean;
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLDivElement>(null);
@@ -113,8 +109,6 @@ const TransferManager = ({
         };
     }, [onClear]);
 
-    const latestStats = statsHistory[0];
-
     const getListEntry =
         <T extends TransferType>(type: T) =>
         (transfer: T extends TransferType.Download ? Download : Upload): TransferListEntry<T> => ({
@@ -140,31 +134,16 @@ const TransferManager = ({
     }, [downloadEntries, uploadEntries, transferGroupFilter]);
 
     const handleCloseClick = () => {
-        if (allTransfersFinished) {
-            onClear();
-        } else {
+        if (hasActiveTransfer) {
             openConfirmModal({
                 title: c('Title').t`Cancel all active transfers`,
                 confirm: c('Action').t`Confirm`,
                 message: c('Info').t`Closing transfer manager will cancel all active transfers, are you sure?`,
                 onConfirm: onClear,
             });
+        } else {
+            onClear();
         }
-    };
-
-    const calculateAverageSpeed = (id: string) => {
-        let sum = 0;
-
-        for (let i = 0; i < statsHistory.length; i++) {
-            const stats = statsHistory[i].stats[id];
-
-            if (!stats?.active || stats.speed < 0) {
-                break; // Only take most recent progress (e.g. after pause or progress reset)
-            }
-            sum += stats.speed;
-        }
-
-        return sum / statsHistory.length;
     };
 
     const maxVisibleTransfers = isNarrow ? MAX_VISIBLE_TRANSFERS_MOBILE : MAX_VISIBLE_TRANSFERS;
@@ -200,7 +179,7 @@ const TransferManager = ({
                 <Header
                     downloads={downloads}
                     uploads={uploads}
-                    latestStats={latestStats}
+                    stats={stats}
                     minimized={minimized}
                     onToggleMinimize={toggleMinimized}
                     onClose={handleCloseClick}
@@ -230,8 +209,7 @@ const TransferManager = ({
                         className="outline-none"
                         itemData={{
                             entries,
-                            latestStats,
-                            calculateAverageSpeed,
+                            stats,
                         }}
                         itemCount={entries.length}
                         itemSize={ROW_HEIGHT_PX}
@@ -257,24 +235,9 @@ const TransferManager = ({
  * width calculation.
  */
 const TransferManagerContainer = () => {
-    const { downloads, getDownloadsProgresses, clearDownloads } = useDownloadProvider();
-    const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();
+    const { downloads, uploads, hasActiveTransfer, stats, clearAllTransfers } = useTransfersView();
 
-    const transfers = useMemo(() => [...downloads, ...uploads], [downloads, uploads]);
-    const allTransfersFinished = useMemo(() => transfers.every(isTransferFinished), [transfers]);
-    const getTransferProgresses = useCallback(() => {
-        return { ...getUploadsProgresses(), ...getDownloadsProgresses() };
-    }, [getUploadsProgresses, getDownloadsProgresses]);
-    const statsHistory = useStatsHistory(transfers, getTransferProgresses);
-
-    const clearAllTransfers = useCallback(() => {
-        clearDownloads();
-        clearUploads();
-    }, [clearDownloads, clearUploads]);
-
-    const latestStats = statsHistory[0];
-
-    if (!latestStats || downloads.length + uploads.length === 0) {
+    if (!downloads.length && !uploads.length) {
         return null;
     }
 
@@ -282,9 +245,9 @@ const TransferManagerContainer = () => {
         <TransferManager
             downloads={downloads}
             uploads={uploads}
-            statsHistory={statsHistory}
+            stats={stats}
             onClear={clearAllTransfers}
-            allTransfersFinished={allTransfersFinished}
+            hasActiveTransfer={hasActiveTransfer}
         />
     );
 };

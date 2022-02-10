@@ -1,29 +1,24 @@
 import { c } from 'ttag';
 
 import { DialogModal, useLoading, useNotifications } from '@proton/components';
-import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
+import { useLockedVolume } from '../../../store';
 import FilesRecoveryState from './FilesRecoveryState';
-import useDrive from '../../../hooks/drive/useDrive';
 
 interface Props {
-    lockedShareList: {
-        lockedShareMeta: ShareMeta;
-        decryptedPassphrase: any;
-    }[];
     onClose?: () => void;
 }
 
-const FilesRecoveryModal = ({ lockedShareList, onClose, ...rest }: Props) => {
+const FilesRecoveryModal = ({ onClose, ...rest }: Props) => {
     const modalTitleID = 'files-recovery-modal';
 
-    const { restoreVolumes } = useDrive();
+    const { restoreVolumes } = useLockedVolume();
     const [recovering, withRecovering] = useLoading();
     const { createNotification } = useNotifications();
 
     const handleRecoveryClick = async () => {
         await withRecovering(
-            restoreVolumes(lockedShareList)
+            restoreVolumes(new AbortController().signal)
                 .then(() => {
                     createNotification({
                         text: c('Success').t`Recovery has started`,

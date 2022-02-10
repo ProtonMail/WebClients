@@ -1,4 +1,4 @@
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -11,16 +11,13 @@ import {
     FooterModal,
     Button,
     Alert,
-    useModals,
 } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import FolderTree, { FolderTreeItem } from '../FolderTree/FolderTree';
-import useDrive from '../../hooks/drive/useDrive';
-import { useDriveCache } from '../DriveCache/DriveCacheProvider';
-import ShareLinkModal from '../ShareLinkModal/ShareLinkModal';
-import { mapLinksToChildren } from '../sections/helpers';
+import { DecryptedLink, useTree } from '../../store';
+import useOpenModal from '../useOpenModal';
+import FolderTree from '../FolderTree/FolderTree';
+import { mapDecryptedLinksToChildren } from '../sections/helpers';
 import HasNoFilesToShare from './HasNoFilesToShare';
 import ModalContentLoader from '../ModalContentLoader';
 
@@ -30,117 +27,38 @@ interface Props {
 }
 
 const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
-    const cache = useDriveCache();
-    const { getShareMetaShort, getLinkMeta, fetchNextFolderContents } = useDrive();
+    const { rootFolder, toggleExpand } = useTree(shareId, { rootExpanded: true });
+
     const [loading, withLoading] = useLoading();
-    const [initializing, withInitialize] = useLoading(true);
-    const [treeItems, setTreeItems] = useState<FolderTreeItem[]>([]);
-    const [initiallyExpandedFolders, setInitiallyExpandedFolders] = useState<string[]>([]);
     const [selectedFile, setSelectedFile] = useState<FileBrowserItem>();
-    const { createModal } = useModals();
+    const { openLinkSharing } = useOpenModal();
 
-    const fetchChildrenData = async (linkId: string, loadNextPage = false) => {
-        await fetchNextFolderContents(shareId, linkId);
-        const contents = cache.get.childLinkMetas(shareId, linkId) || [];
-        const list = contents
-            .filter((meta) => !meta.Shared || meta.Type === LinkType.FOLDER)
-            .map((item) => ({
-                linkId: item.LinkID,
-                name: item.Name,
-                type: item.Type,
-                mimeType: item.MIMEType,
-                children: { list: [], complete: false },
-            }));
-
-        const complete = !!cache.get.childrenComplete(shareId, linkId);
-        return { list, complete, loadNextPage };
-    };
-
-    useEffect(() => {
-        const initializeData = async () => {
-            const { LinkID } = await getShareMetaShort(shareId);
-            const meta = await getLinkMeta(shareId, LinkID);
-            const children = await fetchChildrenData(LinkID);
-            const rootFolder = {
-                linkId: meta.LinkID,
-                name: c('Title').t`My files`,
-                type: meta.Type,
-                mimeType: meta.MIMEType,
-                children,
-            };
-
-            setInitiallyExpandedFolders([LinkID]);
-            setTreeItems([rootFolder]);
-        };
-
-        withInitialize(initializeData()).catch(console.error);
-    }, [shareId]);
-
-    const onSelect = async (linkId: string) => {
-        if (!loading && linkId) {
-            const meta = await getLinkMeta(shareId, linkId);
-            if (meta.Type === LinkType.FOLDER) {
-                return;
-            }
-
-            const file = mapLinksToChildren([meta], (linkId) => cache.get.isLinkLocked(shareId, linkId))[0];
-            setSelectedFile(file);
+    const onSelect = async (link: DecryptedLink) => {
+        if (!loading) {
+            setSelectedFile(mapDecryptedLinksToChildren([link])[0]);
         }
-    };
-
-    const loadChildren = async (linkId: string, loadNextPage = false) => {
-        let appended = false;
-
-        const childrenData = await fetchChildrenData(linkId, loadNextPage);
-        const rootFolder = [...treeItems][0];
-
-        const appendChildren = (parent: FolderTreeItem) => {
-            const childrenIds = parent.children.list.map(({ linkId }) => linkId);
-            const newChildren = childrenData.list.filter(({ linkId }) => !childrenIds.includes(linkId));
-            parent.children = { list: [...parent.children.list, ...newChildren], complete: childrenData.complete };
-            setTreeItems([rootFolder]);
-            appended = true;
-        };
-
-        const addSubfolders = (parentId: string, current: FolderTreeItem) => {
-            if (appended) {
-                return;
-            }
-            if (parentId === current.linkId) {
-                appendChildren(current);
-            } else {
-                const childrenList = current.children.list;
-                for (let i = 0; i < childrenList.length; i++) {
-                    addSubfolders(parentId, childrenList[i]);
-                }
-            }
-        };
-
-        addSubfolders(linkId, rootFolder);
     };
 
     const handleSubmit = async () => {
         if (selectedFile) {
-            createModal(<ShareLinkModal shareId={shareId} item={selectedFile} />);
+            openLinkSharing(shareId, selectedFile);
             onClose?.();
         }
     };
 
     const modalTitleID = 'SelectFileToShareId';
-    const shareIsDisabled = !selectedFile;
+    const shareIsDisabled = !selectedFile || !selectedFile.ParentLinkID;
 
     let modalContents = {
-        title: c('Action').t`Share file`,
-        content: (
+        title: c('Action').t`Share item`,
+        content: rootFolder && (
             <>
-                <Alert className="mb1">{c('Info').t`Select an uploaded file and create a link to it.`}</Alert>
+                <Alert className="mb1">{c('Info').t`Select an uploaded file or folder and create a link to it.`}</Alert>
                 <FolderTree
-                    items={treeItems}
-                    initiallyExpandedFolders={initiallyExpandedFolders}
+                    rootFolder={rootFolder}
                     selectedItemId={selectedFile?.LinkID}
-                    loading={initializing}
                     onSelect={onSelect}
-                    loadChildren={loadChildren}
+                    toggleExpand={toggleExpand}
                 />
             </>
         ),
@@ -151,14 +69,14 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
                         {c('Action').t`Cancel`}
                     </Button>
                     <PrimaryButton className="ml1 w8e" loading={loading} type="submit" disabled={shareIsDisabled}>
-                        {c('Action').t`Create link`}
+                        {selectedFile?.SharedUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
                     </PrimaryButton>
                 </div>
             </FooterModal>
         ) as ReactNode,
     };
 
-    if (!initializing && !treeItems[0]?.children.list.length) {
+    if (rootFolder && rootFolder.isLoaded && rootFolder.children.length === 0) {
         modalContents = {
             content: <HasNoFilesToShare />,
             title: '',
@@ -171,7 +89,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
             <HeaderModal modalTitleID={modalTitleID} hasClose={!loading} onClose={onClose}>
                 {modalContents.title}
             </HeaderModal>
-            {initializing ? (
+            {!rootFolder || !rootFolder.isLoaded ? (
                 <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
             ) : (
                 <ContentModal

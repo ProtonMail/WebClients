@@ -11,15 +11,15 @@ import {
     DropdownCaret,
 } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { AllSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
+import { SortField, SortParams } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-export interface MenuItem<T extends AllSortKeys> {
+export interface MenuItem<T extends SortField> {
     name: string;
     icon: string;
     sortField: T;
 }
 
-export default function SortDropdown<T extends AllSortKeys>({
+export default function SortDropdown<T extends SortField>({
     sortFields,
     sortParams,
     setSorting,
@@ -71,20 +71,20 @@ export default function SortDropdown<T extends AllSortKeys>({
     );
 }
 
-export function translateSortField(sortField: AllSortKeys): string {
-    const translations: Record<AllSortKeys, string> = {
-        Name: c('Label').t`Name`,
-        Size: c('Label').t`Size`,
+export function translateSortField(sortField: SortField): string {
+    const translations: Record<SortField, string> = {
+        name: c('Label').t`Name`,
+        size: c('Label').t`Size`,
         // Type is not used (in UI) at this moment, but users might have set
         // it, so we keep the code, so it continue to work until user changes
         // the sorting. Also, we might get it back at some point.
-        MIMEType: c('Label').t`Type`,
-        // On API its called ModifyTime, but its actually time when the last
-        // revision was uploaded. The real modify time is stored in encrypted
-        // extended attributes.
-        ModifyTime: c('Label').t`Uploaded`,
-        CreateTime: c('Label').t`Created`,
-        ExpireTime: c('Label').t`Expires`,
+        mimeType: c('Label').t`Type`,
+        fileModifyTime: c('Label').t`Modified`,
+        metaDataModifyTime: c('Label').t`Modified`,
+        linkCreateTime: c('Label').t`Created`,
+        linkExpireTime: c('Label').t`Expires`,
+        numAccesses: c('Label').t`# of accesses`,
+        trashed: c('Label').t`Deleted`,
     };
     return translations[sortField];
 }

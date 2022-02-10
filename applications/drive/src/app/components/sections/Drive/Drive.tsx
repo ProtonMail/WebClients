@@ -1,50 +1,42 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useDrive from '../../../hooks/drive/useDrive';
+import { useFolderView } from '../../../store';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { FileBrowser } from '../../FileBrowser';
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
-import { useDriveContent } from './DriveContentProvider';
+import { mapDecryptedLinksToChildren } from '../helpers';
 import EmptyFolder from './EmptyFolder';
 import FolderContextMenu from './FolderContextMenu';
 import DriveItemContextMenu from './DriveItemContextMenu';
-import SortDropdown from './SortDropdown';
 
 interface Props {
     activeFolder: DriveFolder;
+    folderView: ReturnType<typeof useFolderView>;
 }
 
-function Drive({ activeFolder }: Props) {
-    const cache = useDriveCache();
-    const { getLinkMeta } = useDrive();
-    const { navigateToLink } = useNavigate();
-    const { loadNextPage, fileBrowserControls, loading, contents, complete, sortParams, setSorting } =
-        useDriveContent();
+function Drive({ activeFolder, folderView }: Props) {
+    const { shareId } = activeFolder;
 
-    const { linkId, shareId } = activeFolder;
-    const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, toggleRange, selectItem } =
-        fileBrowserControls;
-
-    const folderName = cache.get.linkMeta(shareId, linkId)?.Name;
-    const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems, clearSelections);
-
+    const abortController = useRef(new AbortController());
     useEffect(() => {
-        if (folderName === undefined) {
-            getLinkMeta(shareId, linkId).catch(console.error);
-        }
-    }, [shareId, linkId, folderName]);
+        return () => {
+            abortController.current.abort();
+            abortController.current = new AbortController();
+        };
+    }, [activeFolder.shareId, activeFolder.linkId]);
 
-    const handleScrollEnd = useCallback(() => {
-        const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
-        // Only load on scroll after initial load from backend
-        if (isInitialized && !complete) {
-            loadNextPage();
-        }
-    }, [complete, loadNextPage, shareId, linkId, sortParams]);
+    const { navigateToLink } = useNavigate();
+    const { layout, folderName, items, sortParams, setSorting, selectionControls, isLoading } = folderView;
+    const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, toggleRange, selectItem } =
+        selectionControls;
+
+    const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
+    const contents = mapDecryptedLinksToChildren(items);
+
+    const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems2, clearSelections);
 
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
@@ -54,16 +46,18 @@ function Drive({ activeFolder }: Props) {
         [navigateToLink, shareId]
     );
 
-    return complete && !contents.length && !loading ? (
+    return !contents.length && !isLoading ? (
         <EmptyFolder shareId={shareId} />
     ) : (
         <FileBrowser
             type="drive"
+            layout={layout}
             caption={folderName}
             shareId={shareId}
-            loading={loading}
+            loading={isLoading}
             contents={contents}
-            selectedItems={selectedItems}
+            selectedItems={selectedItems2}
+            sortFields={['name', 'fileModifyTime', 'size']}
             sortParams={sortParams}
             setSorting={setSorting}
             onItemClick={handleClick}
@@ -73,10 +67,8 @@ function Drive({ activeFolder }: Props) {
             onShiftClick={toggleRange}
             selectItem={selectItem}
             getDragMoveControls={getDragMoveControls}
-            onScrollEnd={handleScrollEnd}
             ItemContextMenu={DriveItemContextMenu}
             FolderContextMenu={FolderContextMenu}
-            SortDropdown={SortDropdown}
         />
     );
 }

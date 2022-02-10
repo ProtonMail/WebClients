@@ -18,9 +18,9 @@ import {
     DragMoveControls,
     FileBrowserLayouts,
     ItemContextMenuProps,
+    SortField,
 } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { AllSortKeys } from '@proton/shared/lib/interfaces/drive/link';
 import { useFileBrowserColumns } from '../useFileBrowserColumns';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';
@@ -116,11 +116,11 @@ const TableBodyRenderer = ({
     );
 };
 
-type Props<T extends AllSortKeys> = Omit<FileBrowserProps<T>, 'onScrollEnd'> & {
+type Props<T extends SortField> = Omit<FileBrowserProps<T>, 'onScrollEnd' | 'layout'> & {
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 };
 
-const ListView = <T extends AllSortKeys>({
+const ListView = <T extends SortField>({
     loading,
     caption,
     contents,
@@ -178,6 +178,7 @@ const ListView = <T extends AllSortKeys>({
             <div>
                 <Table caption={caption} className="file-browser-table m0">
                     <ListHeader
+                        isLoading={loading}
                         contents={contents}
                         onToggleAllSelected={onToggleAllSelected}
                         scrollAreaRef={scrollAreaRef}

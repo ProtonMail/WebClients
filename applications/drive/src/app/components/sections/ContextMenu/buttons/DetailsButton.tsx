@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useToolbarActions from '../../../../hooks/drive/useActions';
+import useOpenModal from '../../../useOpenModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const DetailsButton = ({ shareId, items, close }: Props) => {
-    const { openDetails, openFilesDetails } = useToolbarActions();
+    const { openDetails, openFilesDetails } = useOpenModal();
 
     const action = useCallback(() => {
         if (items.length === 1) {

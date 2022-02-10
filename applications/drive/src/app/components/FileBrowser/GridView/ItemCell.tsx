@@ -7,7 +7,7 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useFileBrowserItem from '../useFileBrowserItem';
-import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
+import { useThumbnailsDownload } from '../../../store';
 
 export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation' | 'columns'> {
     style: React.CSSProperties;
@@ -51,17 +51,11 @@ function ItemCell({
         onShiftClick,
     });
 
-    const thumbnailProvider = useThumbnailsDownloadProvider();
+    const { addToDownloadQueue } = useThumbnailsDownload();
 
     useEffect(() => {
         if (item.HasThumbnail) {
-            thumbnailProvider.addToDownloadQueue(
-                { modifyTime: item.ModifyTime },
-                {
-                    ShareID: shareId,
-                    LinkID: item.LinkID,
-                }
-            );
+            addToDownloadQueue(shareId, item.LinkID, item.ModifyTime);
         }
     }, [item.ModifyTime]); // Reload thumbnail when file changes.
 

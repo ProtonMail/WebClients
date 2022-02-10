@@ -1,13 +1,13 @@
 import { useState, ChangeEvent, FocusEvent } from 'react';
-import { FormModal, InputTwo, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
+
+import { FormModal, InputTwo, Row, Label, Field, useLoading } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
-import { validateLinkNameField } from '../utils/validation';
-import { formatLinkName, splitLinkName } from '../utils/link';
-import useDrive from '../hooks/drive/useDrive';
+
+import { useActions, validateLinkNameField, formatLinkName, splitLinkName } from '../store';
 
 interface Props {
     shareId: string;
@@ -16,8 +16,7 @@ interface Props {
 }
 
 const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
-    const { createNotification } = useNotifications();
-    const { renameLink } = useDrive();
+    const { renameLink } = useActions();
     const [name, setName] = useState(item.Name);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
@@ -46,21 +45,8 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
         const formattedName = formatLinkName(name);
         setName(formattedName);
 
-        try {
-            await renameLink(shareId, item.LinkID, item.ParentLinkID, formattedName);
-            const nameElement = (
-                <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                    &quot;{formattedName}&quot;
-                </span>
-            );
-            createNotification({ text: c('Success').jt`${nameElement} renamed successfully` });
-            onClose?.();
-        } catch (e: any) {
-            if (e.name === 'ValidationError') {
-                createNotification({ text: e.message, type: 'error' });
-            }
-            throw e;
-        }
+        await renameLink(new AbortController().signal, shareId, item.LinkID, formattedName);
+        onClose?.();
     };
 
     const isFolder = item.Type === LinkType.FOLDER;

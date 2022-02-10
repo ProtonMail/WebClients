@@ -14,13 +14,13 @@ import {
 interface Props {
     downloads: Download[];
     uploads: Upload[];
-    latestStats: TransfersStats;
+    stats: TransfersStats;
     minimized: boolean;
     onToggleMinimize: () => void;
     onClose: () => void;
 }
 
-const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, minimized = false }: Props) => {
+const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimized = false }: Props) => {
     const [uploadsInSession, setUploadsInSession] = useState<Upload[]>([]);
     const [downloadsInSession, setDownloadsInSession] = useState<Download[]>([]);
 
@@ -102,7 +102,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
         }
 
         if (activeUploadsCount) {
-            const uploadProgress = calculateProgress(latestStats, uploadsInSession);
+            const uploadProgress = calculateProgress(stats, uploadsInSession);
             headingElements.push(
                 c('Info').ngettext(
                     msgid`${activeUploadsCount} uploading (${uploadProgress}%)`,
@@ -121,7 +121,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                     )
                 );
             } else {
-                const downloadProgress = calculateProgress(latestStats, downloadsInSession);
+                const downloadProgress = calculateProgress(stats, downloadsInSession);
                 headingElements.push(
                     c('Info').ngettext(
                         msgid`${activeDownloadsCount} downloading (${downloadProgress}%)`,

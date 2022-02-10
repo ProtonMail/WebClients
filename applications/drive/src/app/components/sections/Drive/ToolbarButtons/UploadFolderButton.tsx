@@ -2,10 +2,16 @@ import { c } from 'ttag';
 
 import { ToolbarButton, Icon } from '@proton/components';
 
-import useFileUploadInput from '../../../uploads/useUploadInput';
+import useActiveShare from '../../../../hooks/drive/useActiveShare';
+import { useFolderUploadInput } from '../../../../store';
 
 const UploadFolderButton = () => {
-    const { inputRef: fileInput, handleClick: handleUploadFolder, handleChange } = useFileUploadInput(true);
+    const { activeFolder } = useActiveShare();
+    const {
+        inputRef: fileInput,
+        handleClick: handleUploadFolder,
+        handleChange,
+    } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
 
     return (
         <>

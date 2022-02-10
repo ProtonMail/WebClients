@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import useWorkingDirectory from '../../../../hooks/drive/useWorkingDirectory';
+
+import { useLinkPath } from '../../../../store';
 
 interface Props {
     shareId: string;
@@ -8,14 +9,16 @@ interface Props {
 
 const LocationCell = ({ shareId, parentLinkId }: Props) => {
     const [location, setLocation] = useState<string>();
-    const path = useWorkingDirectory();
+    const { getPath } = useLinkPath();
 
     useEffect(() => {
-        path.traverseLinksToRoot(shareId, parentLinkId)
-            .then((workingDirectory) => {
-                setLocation(`/${workingDirectory.map(path.getLinkName).join('/')}`);
-            })
-            .catch(console.error);
+        const abortController = new AbortController();
+
+        void getPath(abortController.signal, shareId, parentLinkId).then(setLocation);
+
+        return () => {
+            abortController.abort();
+        };
     }, [shareId, parentLinkId]);
 
     return (

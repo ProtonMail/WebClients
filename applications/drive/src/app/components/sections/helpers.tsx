@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { LinkType, LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { LinkURLType, fileDescriptions } from '@proton/shared/lib/drive/constants';
+
+import { DecryptedLink, LinkType } from '../../store';
 
 export const selectMessageForItemList = (
     types: LinkType[],
@@ -19,45 +20,36 @@ export const selectMessageForItemList = (
     return message;
 };
 
-export const mapLinksToChildren = (
-    decryptedLinks: LinkMeta[],
-    isDisabled: (linkId: string) => boolean
-): FileBrowserItem[] => {
-    return decryptedLinks.map(
-        ({
-            LinkID,
-            Type,
-            Name,
-            ModifyTime,
-            RealModifyTime,
-            Size,
-            MIMEType,
-            ParentLinkID,
-            Trashed,
-            UrlsExpired,
-            ShareIDs,
-            ShareUrls,
-            FileProperties,
-            CachedThumbnailURL,
-        }) => ({
-            Name,
-            LinkID,
-            Type,
-            ModifyTime,
-            RealModifyTime,
-            Size,
-            ActiveRevisionSize: FileProperties?.ActiveRevision?.Size,
-            MIMEType,
-            ParentLinkID,
-            Trashed,
-            Disabled: isDisabled(LinkID),
-            SharedUrl: ShareUrls[0], // Currently only one share URL is possible
-            ShareUrlShareID: ShareIDs[0],
-            UrlsExpired,
-            HasThumbnail: FileProperties?.ActiveRevision?.Thumbnail === 1,
-            CachedThumbnailURL,
-        })
-    );
+// TODO: Deprecated!
+// This helper is just to make less changes in components with cache refactor.
+// Remove it once all is converted to DecryptedLink instead of FileBrowserItem.
+export const mapDecryptedLinksToChildren = (decryptedLinks: DecryptedLink[]): FileBrowserItem[] => {
+    return decryptedLinks.map((link) => ({
+        Name: link.name,
+        LinkID: link.linkId,
+        Type: link.type,
+        ModifyTime: link.metaDataModifyTime,
+        RealModifyTime: link.fileModifyTime,
+        Size: link.size,
+        ActiveRevisionSize: link.activeRevision?.size,
+        MIMEType: link.mimeType,
+        ParentLinkID: link.parentLinkId,
+        Trashed: link.trashed,
+        Disabled: link.isLocked || false,
+        SharedUrl: link.shareUrl
+            ? {
+                  CreateTime: link.shareUrl.createTime,
+                  ExpireTime: link.shareUrl.expireTime,
+                  ShareUrlID: link.shareUrl.id,
+                  Token: link.shareUrl.token,
+                  NumAccesses: link.shareUrl.numAccesses,
+              }
+            : undefined,
+        ShareUrlShareID: link.shareId,
+        UrlsExpired: link.shareUrl?.isExpired || false,
+        HasThumbnail: link.hasThumbnail,
+        CachedThumbnailURL: link.cachedThumbnailUrl,
+    }));
 };
 
 export const toLinkURLType = (type: LinkType) => {

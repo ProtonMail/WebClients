@@ -1,14 +1,20 @@
 import { c } from 'ttag';
 
+import useActiveShare from '../../../../hooks/drive/useActiveShare';
+import { useFileUploadInput } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
-import useFileUploadInput from '../../../uploads/useUploadInput';
 
 interface Props {
     close: () => void;
 }
 
 const UploadFileButton = ({ close }: Props) => {
-    const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput();
+    const { activeFolder } = useActiveShare();
+    const {
+        inputRef: fileInput,
+        handleClick,
+        handleChange,
+    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
 
     return (
         <>

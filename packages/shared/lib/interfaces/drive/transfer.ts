@@ -85,14 +85,24 @@ export interface ThumbnailMeta {
 
 export type API = (query: any) => any;
 
-export interface TransferStats {
+export interface TransferHistoryStats {
     active: boolean;
     progress: number;
     speed: number;
 }
-export interface TransfersStats {
+
+export interface TransfersHistoryStats {
     timestamp: Date;
-    stats: { [id: string]: TransferStats };
+    stats: { [id: string]: TransferHistoryStats };
+}
+
+export interface TransferStats {
+    progress: number;
+    averageSpeed: number;
+}
+
+export interface TransfersStats {
+    [id: string]: TransferStats;
 }
 
 export enum TransferType {
