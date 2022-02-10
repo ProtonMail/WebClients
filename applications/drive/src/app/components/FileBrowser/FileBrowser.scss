@@ -10,6 +10,14 @@
 	}
 }
 
+// in this case, we can remove focus, that is visible via selected row
+.file-browser-list-item {
+	&:focus,
+	&:focus-visible {
+		outline: 0;
+	}
+}
+
 .file-browser--options-focus {
 	background-color: var(--button-hover-background-color);
 	color: var(--button-hover-text-color);
