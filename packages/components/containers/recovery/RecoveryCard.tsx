@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { Card, Loader } from '../../components';
+import { Card, LearnMore, Loader } from '../../components';
 import {
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,
@@ -186,6 +186,8 @@ const RecoveryCard = ({ ids }: Props) => {
                     : // translator: Full sentence is 'If you lose your login details and need to reset your account, it’s imperative that you have an account recovery method in place.'
                       c('Info')
                           .jt`If you lose your login details and need to reset your account, ${boldImperative} that you have an ${boldAccountRecovery} in place.`}
+                <br />
+                <LearnMore url="https://protonmail.com/support/knowledge-base/set-account-recovery-methods" />
             </p>
 
             <h3 className="text-bold text-rg mb1">{c('Title').t`Your recovery status`}</h3>
