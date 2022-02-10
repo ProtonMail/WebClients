@@ -21,7 +21,7 @@ import FeaturesProvider from '@proton/components/containers/features/FeaturesPro
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { Provider as ReduxProvider } from 'react-redux';
 import { minimalCache, cache } from './cache';
-import { api, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
+import { api, registerFeatureFlagsApiMock, registerMinimalFlags, mockDomApi } from './api';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { ComposeProvider } from '../../containers/ComposeProvider';
@@ -54,19 +54,6 @@ export const config = {
     APP_VERSION_DISPLAY: 'test-version-display',
     DATE_VERSION: 'test-date-version',
 } as ProtonConfig;
-
-const mockDomApi = () => {
-    window.HTMLElement.prototype.scrollIntoView = jest.fn();
-    window.URL.createObjectURL = jest.fn();
-    // https://github.com/nickcolley/jest-axe/issues/147#issuecomment-758804533
-    const { getComputedStyle } = window;
-    window.getComputedStyle = (elt) => getComputedStyle(elt);
-    window.ResizeObserver = jest.fn(() => ({
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn(),
-    }));
-};
 
 export const onCompose = jest.fn();
 

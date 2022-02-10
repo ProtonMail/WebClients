@@ -30,6 +30,7 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
                 }}
                 as={PasswordInputTwo}
                 rootClassName="mt0-5"
+                data-testid="unlock:input"
             />
             <Button size="large" color="norm" type="button" fullWidth onClick={handleSubmit}>{c('Action')
                 .t`Decrypt`}</Button>
