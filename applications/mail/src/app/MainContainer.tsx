@@ -28,7 +28,6 @@ const MainContainer = () => {
         FeatureCode.EnabledEncryptedSearch,
         FeatureCode.SpotlightEncryptedSearch,
         FeatureCode.UsedMailMobileApp,
-        FeatureCode.Mnemonic,
         FeatureCode.CalendarEmailNotification,
         FeatureCode.SpyTrackerProtection,
     ]);
