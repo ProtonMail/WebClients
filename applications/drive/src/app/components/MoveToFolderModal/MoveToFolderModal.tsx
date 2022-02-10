@@ -18,7 +18,6 @@ import {
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import FolderTree from '../FolderTree/FolderTree';
-import { DriveFolder } from '../../hooks/drive/useActiveShare';
 import HasNoFolders from './HasNoFolders';
 import { selectMessageForItemList } from '../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';
@@ -26,15 +25,15 @@ import ModalContentLoader from '../ModalContentLoader';
 import { DecryptedLink, TreeItem, useFolderTree, useActions } from '../../store';
 
 interface Props {
-    activeFolder: DriveFolder;
+    shareId: string;
     selectedItems: FileBrowserItem[];
     onClose?: () => void;
 }
 
-const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Props) => {
+const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...rest }: Props) => {
     const { createModal } = useModals();
     const { moveLinks } = useActions();
-    const { rootFolder, expand, toggleExpand } = useFolderTree(activeFolder.shareId, { rootExpanded: true });
+    const { rootFolder, expand, toggleExpand } = useFolderTree(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
@@ -43,10 +42,14 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     const moveLinksToFolder = async (parentFolderId: string) => {
         await moveLinks(
             new AbortController().signal,
-            activeFolder.shareId,
-            selectedItems.map(({ LinkID, Name, Type }) => ({ linkId: LinkID, name: Name, type: Type })),
-            parentFolderId,
-            selectedItems[0]?.ParentLinkID
+            shareId,
+            selectedItems.map(({ ParentLinkID, LinkID, Name, Type }) => ({
+                parentLinkId: ParentLinkID,
+                linkId: LinkID,
+                name: Name,
+                type: Type,
+            })),
+            parentFolderId
         );
     };
 
@@ -66,7 +69,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     const handleCreateNewFolderClick = (parentFolderId: string) => {
         createModal(
             <CreateFolderModal
-                folder={{ shareId: activeFolder.shareId, linkId: parentFolderId }}
+                folder={{ shareId: shareId, linkId: parentFolderId }}
                 onCreateDone={async (newFolderId) => {
                     expand(parentFolderId);
                     setSelectedFolder(newFolderId);
@@ -95,8 +98,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
             itemsToMoveCount
         ),
     };
-    const moveIsDisabled =
-        !selectedFolder || itemsToMove.includes(selectedFolder) || activeFolder.linkId === selectedFolder;
+    const moveIsDisabled = !selectedFolder || itemsToMove.includes(selectedFolder);
 
     let modalContents = {
         title: selectMessageForItemList(

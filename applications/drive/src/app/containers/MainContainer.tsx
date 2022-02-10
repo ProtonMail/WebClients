@@ -11,9 +11,9 @@ import {
     ReferralModalContainer,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { ENCRYPTED_SEARCH_ENABLED, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
-import { DriveProvider, useDriveEventManager, useDefaultShare } from '../store';
+import { DriveProvider, useDriveEventManager, useDefaultShare, useSearchControl } from '../store';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import TransferManager from '../components/TransferManager/TransferManager';
 import ConflictModal from '../components/uploads/ConflictModal';
@@ -23,9 +23,7 @@ import NoAccessContainer from './NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
-import { SearchIndexingProvider } from '../components/search';
 import { SearchContainer } from './SearchContainer';
-import { SearchResultsStorageProvider } from '../components/search/SearchResultsStorage';
 
 enum ERROR_TYPES {
     STANDARD,
@@ -47,6 +45,7 @@ const InitContainer = () => {
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const earlyAccess = useEarlyAccess();
     const driveEventManager = useDriveEventManager();
+    const { searchEnabled } = useSearchControl();
 
     useEffect(() => {
         const initPromise = getDefaultShare()
@@ -120,19 +119,15 @@ const InitContainer = () => {
             <ReferralModalContainer />
             <ModalsChildren />
             <TransferManager />
-            <SearchIndexingProvider>
-                <SearchResultsStorageProvider>
-                    <DriveWindow>
-                        <Switch>
-                            <Route path="/trash" component={TrashContainer} />
-                            <Route path="/shared-urls" component={SharedURLsContainer} />
-                            {ENCRYPTED_SEARCH_ENABLED && <Route path="/search" component={SearchContainer} />}
-                            <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
-                            <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
-                        </Switch>
-                    </DriveWindow>
-                </SearchResultsStorageProvider>
-            </SearchIndexingProvider>
+            <DriveWindow>
+                <Switch>
+                    <Route path="/trash" component={TrashContainer} />
+                    <Route path="/shared-urls" component={SharedURLsContainer} />
+                    {searchEnabled && <Route path="/search" component={SearchContainer} />}
+                    <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
+                    <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
+                </Switch>
+            </DriveWindow>
         </ActiveShareProvider>
     );
 };

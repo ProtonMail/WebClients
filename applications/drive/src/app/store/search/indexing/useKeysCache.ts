@@ -1,12 +1,11 @@
 import { OpenPGPKey, decryptPrivateKey } from 'pmcrypto';
 
 import { LinkType, ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
-import { NodeKeys } from '@proton/shared/lib/interfaces/drive/node';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
 export type DecryptAndCacheLink = (linkMeta: ShareMapLink, parentPrivateKey: OpenPGPKey) => Promise<{ name: string }>;
-export type GetCachedParentPrivateKey = (linkId: string | null) => OpenPGPKey | null;
+export type GetCachedParentPrivateKey = (linkId: string | null) => OpenPGPKey | undefined;
 
 export const LINK_KEYS_NOT_FOUND_MESSAGE = "ES Indexing: parent link key wasn't not found.";
 
@@ -15,17 +14,12 @@ export interface KeyCache {
     decryptAndCacheLink: DecryptAndCacheLink;
 }
 
-export const createKeysCache = (rootKey: NodeKeys): KeyCache => {
-    const keyCache = new Map<string | null, NodeKeys>();
+export const createKeysCache = (rootKey: OpenPGPKey): KeyCache => {
+    const keyCache = new Map<string | null, OpenPGPKey>();
     keyCache.set(null, rootKey);
 
     const getCachedPrivateKey: GetCachedParentPrivateKey = (linkId) => {
-        const parentKeys = keyCache.get(linkId);
-        if (!parentKeys) {
-            return null;
-        }
-
-        return parentKeys.privateKey;
+        return keyCache.get(linkId);
     };
 
     // XXX: move to a worker some time in the future
@@ -43,10 +37,8 @@ export const createKeysCache = (rootKey: NodeKeys): KeyCache => {
                 validateSignature: false,
             });
 
-            const linkPrivateKey = await decryptPrivateKey(linkMeta!.NodeKey!, decryptedPassphrase);
-            keyCache.set(linkMeta.LinkID, {
-                privateKey: linkPrivateKey,
-            });
+            const linkPrivateKey = await decryptPrivateKey(linkMeta.NodeKey!, decryptedPassphrase);
+            keyCache.set(linkMeta.LinkID, linkPrivateKey);
         }
 
         const name = await decryptUnsigned({ armoredMessage: linkMeta.Name, privateKey: parentPrivateKey });

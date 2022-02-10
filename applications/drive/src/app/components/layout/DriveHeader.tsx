@@ -9,7 +9,8 @@ import {
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { SearchField } from './SearchField';
+import { SearchField } from './search/SearchField';
+import ClearSearchDataButton from './search/ClearSearchDataButton';
 
 interface Props {
     isHeaderExpanded: boolean;
@@ -35,7 +36,11 @@ export const DriveHeader = ({
             logo={logo}
             title={title}
             contactsButton={<TopNavbarListItemContactsDropdown />}
-            settingsButton={<TopNavbarListItemSettingsDropdown to="/drive" toApp={APPS.PROTONACCOUNT} />}
+            settingsButton={
+                <TopNavbarListItemSettingsDropdown to="/drive" toApp={APPS.PROTONACCOUNT}>
+                    <ClearSearchDataButton />
+                </TopNavbarListItemSettingsDropdown>
+            }
             expanded={isHeaderExpanded}
             onToggleExpand={toggleHeaderExpanded}
             isNarrow={isNarrow}

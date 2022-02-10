@@ -1,6 +1,7 @@
 import { DriveEventManagerProvider } from './events';
 import { DownloadsProvider } from './downloads';
 import { LinksProvider } from './links';
+import { SearchProvider } from './search';
 import { SharesProvider } from './shares';
 import { UploadProvider } from './uploads';
 import { UploadConflictModal } from './uploads/interface';
@@ -16,7 +17,9 @@ export default function DriveProvider({ UploadConflictModal, children }: Props) 
             <SharesProvider>
                 <LinksProvider>
                     <DownloadsProvider>
-                        <UploadProvider UploadConflictModal={UploadConflictModal}>{children}</UploadProvider>
+                        <UploadProvider UploadConflictModal={UploadConflictModal}>
+                            <SearchProvider>{children}</SearchProvider>
+                        </UploadProvider>
                     </DownloadsProvider>
                 </LinksProvider>
             </SharesProvider>

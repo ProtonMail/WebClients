@@ -1,13 +1,13 @@
-import { NodeKeys } from '@proton/shared/lib/interfaces/drive/node';
+import { OpenPGPKey } from 'pmcrypto';
 
+import { FetchShareMap } from './useFetchShareMap';
 import { LinkMapDecryptionBuffer } from './LinkDecryptionBuffer';
 import { LinkMapLoader } from './LinkMapLoader';
 import { createKeysCache } from './useKeysCache';
-import { FetchShareMap } from '../useSearchAPI';
 
 export const createLinkGenerator = (
     shareId: string,
-    rootLinkKeys: NodeKeys,
+    rootLinkKeys: OpenPGPKey,
     callbacks: {
         fetchShareMap: FetchShareMap;
     }

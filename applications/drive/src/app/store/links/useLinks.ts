@@ -38,7 +38,6 @@ export default function useLinks() {
     };
 
     const getLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]): Promise<DecryptedLink[]> => {
-        // TODO: Check first cache and fetch links from API in batch using new endpoint.
         const queue = linkIds.map((linkId) => async () => getLink(abortSignal, shareId, linkId));
         return runInQueue(queue, MAX_THREADS_PER_REQUEST);
     };

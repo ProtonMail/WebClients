@@ -4,14 +4,13 @@ import { Icon, ToolbarButton, useLoading } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useActions } from '../../../../store';
-import { DriveFolder } from '../../../../hooks/drive/useActiveShare';
 
 interface Props {
-    sourceFolder: DriveFolder;
+    shareId: string;
     selectedItems: FileBrowserItem[];
 }
 
-const MoveToTrashButton = ({ sourceFolder, selectedItems }: Props) => {
+const MoveToTrashButton = ({ shareId, selectedItems }: Props) => {
     const [isLoading, withLoading] = useLoading();
     const { trashLinks } = useActions();
 
@@ -24,9 +23,13 @@ const MoveToTrashButton = ({ sourceFolder, selectedItems }: Props) => {
                 withLoading(
                     trashLinks(
                         new AbortController().signal,
-                        sourceFolder.shareId,
-                        sourceFolder.linkId,
-                        selectedItems.map((item) => ({ linkId: item.LinkID, name: item.Name, type: item.Type }))
+                        shareId,
+                        selectedItems.map((item) => ({
+                            parentLinkId: item.ParentLinkID,
+                            linkId: item.LinkID,
+                            name: item.Name,
+                            type: item.Type,
+                        }))
                     )
                 )
             }

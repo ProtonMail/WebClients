@@ -4,30 +4,27 @@ import { c } from 'ttag';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
+import { useSearchView } from '../../../store';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { FileBrowser } from '../../FileBrowser';
-import { useSearchContent } from './SearchContentProvider';
+import { mapDecryptedLinksToChildren } from '../helpers';
+import SearchItemContextMenu from './SearchItemContextMenu';
 import { NoSearchResultsView } from './NoSearchResultsView';
-import { SearchItemContextMenu } from './SearchItemContextMenu';
 
 interface Props {
     shareId: string;
+    searchView: ReturnType<typeof useSearchView>;
 }
 
-export const Search = ({ shareId }: Props) => {
+export const Search = ({ shareId, searchView }: Props) => {
     const { navigateToLink } = useNavigate();
 
-    const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useSearchContent();
-
+    const { layout, items, sortParams, setSorting, selectionControls, isLoading } = searchView;
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
-        fileBrowserControls;
+        selectionControls;
 
-    const handleScrollEnd = useCallback(() => {
-        // Only load on scroll after initial load from backend
-        if (initialized && !complete) {
-            loadNextPage();
-        }
-    }, [initialized, complete, loadNextPage]);
+    const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
+    const contents = mapDecryptedLinksToChildren(items);
 
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
@@ -40,18 +37,21 @@ export const Search = ({ shareId }: Props) => {
         [navigateToLink, shareId]
     );
 
-    return /* complete && */ !contents.length && !loading ? (
+    return !contents.length && !isLoading ? (
         <NoSearchResultsView />
     ) : (
         <FileBrowser
             type="search"
-            caption={c('Title').t`Trash`}
+            layout={layout}
+            caption={c('Title').t`Search results`}
             shareId={shareId}
-            loading={loading}
+            loading={isLoading}
             contents={contents}
-            selectedItems={selectedItems}
+            selectedItems={selectedItems2}
+            sortFields={['name', 'fileModifyTime', 'size']}
+            sortParams={sortParams}
+            setSorting={setSorting}
             onItemClick={handleClick}
-            onScrollEnd={handleScrollEnd}
             onToggleItemSelected={toggleSelectItem}
             clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}

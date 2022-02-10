@@ -161,14 +161,24 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
      * Report the status of IndexedDB
      */
     const getESDBStatus = () => {
-        const { dbExists, isBuilding, isDBLimited, esEnabled, isRefreshing, isSearchPartial, isSearching, isCaching } =
-            esStatus;
+        const {
+            dbExists,
+            isBuilding,
+            isDBLimited,
+            esEnabled,
+            esSupported,
+            isRefreshing,
+            isSearchPartial,
+            isSearching,
+            isCaching,
+        } = esStatus;
         const { isCacheLimited } = esCacheRef.current;
         const esDBStatus: ESDBStatus<ESItem, ESSearchParameters> = {
             dbExists,
             isBuilding,
             isDBLimited,
             esEnabled,
+            esSupported,
             isCacheLimited,
             isRefreshing,
             isSearchPartial,
@@ -487,7 +497,7 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
                     type: 'error',
                 });
             }
-            setESStatus(() => defaultESStatus);
+            setESStatus({ ...defaultESStatus, esSupported: !notSupported });
         };
 
         removeES.Pause(userID);
