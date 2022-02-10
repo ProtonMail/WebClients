@@ -81,6 +81,22 @@ code {
 /*---------------------------------
       CUSTOM STYLES AND HELPERS
 -----------------------------------*/
+a {
+	color: var(--interaction-norm);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a:hover,
+a:focus {
+	color: var(--interaction-norm-hover);
+	text-decoration: none;
+}
+
+a:active {
+	color: var(--interaction-norm-active);
+	text-decoration: none;
+}
 
 /**
  * Avoid overflow management on #proton-root.
@@ -148,22 +164,6 @@ code {
 	white-space: pre-wrap;
 	text-rendering: geometricPrecision;
 	-webkit-font-smoothing: antialiased;
-	& a {
-		color: var(--interaction-norm);
-		text-decoration: underline;
-		cursor: pointer;
-	}
-
-	& a:hover,
-	& a:focus {
-		color: var(--interaction-norm-hover);
-		text-decoration: none;
-	}
-
-	& a:active {
-		color: var(--interaction-norm-active);
-		text-decoration: none;
-	}
 }
 
 /*---------------------------------
