@@ -7,6 +7,9 @@ export interface LearnMoreProps {
     className?: string;
 }
 
+/**
+ * @deprecated please use Href
+ */
 const LearnMore = ({ url, className }: LearnMoreProps) => (
     <Href url={url} className={className}>{c('Link').t`Learn more`}</Href>
 );
