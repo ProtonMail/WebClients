@@ -13,6 +13,7 @@ import {
     useLocalState,
     useMyLocation,
     useNotifications,
+    useSearchParamsEffect,
 } from '@proton/components';
 import {
     handleNewPassword,
@@ -45,6 +46,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
     const history = useHistory();
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
+    const [automaticVerification, setAutomaticVerification] = useState({ loading: false, username: '' });
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
@@ -96,6 +98,32 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
         }
     };
 
+    useSearchParamsEffect((params) => {
+        const username = params.get('username');
+        const token = params.get('token');
+        if (username && token) {
+            setAutomaticVerification({ username, loading: true });
+
+            handleValidateResetToken({
+                cache: {
+                    username,
+                    Methods: [],
+                    persistent,
+                    hasGenerateKeys: true,
+                },
+                api: silentApi,
+                token,
+            })
+                .then(handleResult)
+                .catch(handleError)
+                .finally(() => {
+                    setAutomaticVerification({ username, loading: false });
+                });
+
+            return new URLSearchParams();
+        }
+    }, []);
+
     const cache = cacheRef.current;
 
     return (
@@ -106,8 +134,11 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                     <Content>
                         <div className="mb1-75">{c('Info')
                             .t`Enter your Proton account email address or username.`}</div>
+                        {/* key to trigger a refresh so that it renders a default username */}
                         <RequestRecoveryForm
-                            defaultUsername={cache?.username}
+                            key={automaticVerification.username}
+                            loading={automaticVerification.loading}
+                            defaultUsername={cache?.username || automaticVerification.username}
                             onSubmit={(username) => {
                                 return handleRequestRecoveryMethods({
                                     hasGenerateKeys: true,
