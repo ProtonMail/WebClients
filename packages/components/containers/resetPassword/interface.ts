@@ -37,6 +37,7 @@ export interface ResetCacheResult {
     token?: string;
     resetResponse?: ValidateResetTokenResponse;
     mnemonicData?: MnemonicData;
+    hasGenerateKeys: boolean;
 }
 
 export type ResetActionResponse =

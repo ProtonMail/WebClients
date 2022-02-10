@@ -2,7 +2,7 @@ import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { Api, User as tsUser } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getResetAddressesKeys } from '@proton/shared/lib/keys';
+import { generateKeySaltAndPassphrase, getResetAddressesKeys, handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
 import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
@@ -65,10 +65,24 @@ export const handleNewPassword = async ({
         credentials: { username, password },
         config: auth({ Username: username }),
     });
-    const User = await api<{ User: tsUser }>(
-        withAuthHeaders(authResponse.UID, authResponse.AccessToken, getUser())
-    ).then(({ User }) => User);
-    await persistSession({ ...authResponse, persistent, User, keyPassword: passphrase, api });
+    const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
+    let User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+
+    let keyPassword = passphrase;
+    // This is intended to deal with setting up an address & generating keys for username-only (VPN) accounts if
+    // resetting the password through the account application.
+    if (cache.hasGenerateKeys && !User.Keys.length) {
+        keyPassword = await handleSetupAddressKeys({
+            api: authApi,
+            username,
+            password,
+            hasAddressKeyMigrationGeneration: User.ToMigrate === 1,
+        });
+        // Refetch the user to update the keys that got generated
+        User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    }
+
+    await persistSession({ ...authResponse, persistent, User, keyPassword, api });
 
     return {
         to: STEPS.DONE,
@@ -76,7 +90,7 @@ export const handleNewPassword = async ({
             ...authResponse,
             persistent,
             User,
-            keyPassword: passphrase,
+            keyPassword,
             flow: 'reset',
         },
     };
@@ -261,10 +275,12 @@ export const handleRequestRecoveryMethods = async ({
     username,
     persistent,
     api,
+    hasGenerateKeys,
 }: {
     username: string;
     persistent: boolean;
     api: Api;
+    hasGenerateKeys: boolean;
 }): Promise<ResetActionResponse> => {
     try {
         const { Type, Methods }: { Type: AccountType; Methods: RecoveryMethod[] } = await api(
@@ -279,6 +295,7 @@ export const handleRequestRecoveryMethods = async ({
                     value: username,
                     method: 'email',
                     Methods,
+                    hasGenerateKeys,
                 },
                 to: STEPS.VALIDATE_RESET_TOKEN,
             };
@@ -296,6 +313,7 @@ export const handleRequestRecoveryMethods = async ({
                 username,
                 persistent,
                 Methods,
+                hasGenerateKeys,
             },
             to: STEPS.REQUEST_RESET_TOKEN,
         };
