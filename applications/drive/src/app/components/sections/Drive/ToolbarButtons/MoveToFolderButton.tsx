@@ -4,21 +4,20 @@ import { Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useOpenModal from '../../../useOpenModal';
-import { DriveFolder } from '../../../../hooks/drive/useActiveShare';
 
 interface Props {
-    sourceFolder: DriveFolder;
+    shareId: string;
     selectedItems: FileBrowserItem[];
 }
 
-const MoveToFolderButton = ({ sourceFolder, selectedItems }: Props) => {
+const MoveToFolderButton = ({ shareId, selectedItems }: Props) => {
     const { openMoveToFolder } = useOpenModal();
 
     return (
         <ToolbarButton
             title={c('Action').t`Move to folder`}
             icon={<Icon name="arrows-up-down-left-right" />}
-            onClick={() => openMoveToFolder(sourceFolder, selectedItems)}
+            onClick={() => openMoveToFolder(shareId, selectedItems)}
             data-testid="toolbar-move"
         />
     );

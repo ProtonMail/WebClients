@@ -95,6 +95,7 @@ export default function useLinksActions() {
             })
         );
         return {
+            parentLinkId: link.parentLinkId,
             linkId: link.linkId,
             type: link.type,
             name: link.name,
@@ -103,7 +104,7 @@ export default function useLinksActions() {
 
     const moveLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[], newParentLinkId: string) => {
         return withLinkLock(shareId, linkIds, async () => {
-            const moved: { linkId: string; name: string; type: LinkType }[] = [];
+            const moved: { parentLinkId: string; linkId: string; name: string; type: LinkType }[] = [];
             const failed: string[] = [];
 
             const moveQueue = linkIds.map((linkId) => () => {

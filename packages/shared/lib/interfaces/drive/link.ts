@@ -157,6 +157,5 @@ export interface ShareMapPayload {
 
 export interface LinkMetaBatchPayload {
     Links: LinkMeta[];
-    // TODO: Remove ?
-    Parents?: LinkMeta[];
+    Parents: LinkMeta[];
 }

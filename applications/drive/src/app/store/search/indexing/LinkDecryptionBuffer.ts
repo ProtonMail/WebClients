@@ -4,10 +4,10 @@ import { HARDWARE_CONCURRENCY } from '@proton/shared/lib/drive/constants';
 import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { ESLink } from '../types';
-import { KeyCache } from './useKeysCache';
-import { convertLinkToESItem } from '../utils';
 import { runInQueueAbortable } from '../../../utils/parallelRunners';
+import { ESLink } from '../types';
+import { convertLinkToESItem } from '../utils';
+import { KeyCache } from './useKeysCache';
 
 export class LinkMapDecryptionBuffer {
     keyCache;
@@ -57,8 +57,6 @@ export class LinkMapDecryptionBuffer {
                 break;
             }
 
-            // TODO: remove later
-            // const startTime = performance.now();
             await runInQueueAbortable(
                 readyToDecryptLinks.map((linkMeta) => () => {
                     const privateKey = this.keyCache.getCachedPrivateKey(linkMeta.ParentLinkID);
@@ -66,8 +64,6 @@ export class LinkMapDecryptionBuffer {
                 }),
                 HARDWARE_CONCURRENCY
             );
-            // const endTime = performance.now()
-            // console.log(`Decryption took ${Math.round(endTime - startTime) / 1000} seconds for ${readyToDecryptLinks.length} items`);
         }
     }
 
@@ -83,11 +79,12 @@ export class LinkMapDecryptionBuffer {
         while (!this.isDone || this.decryptedLinks.length > 0) {
             const { length } = this.decryptedLinks;
 
-            // TODO: these numbers should be tuned later
+            // These numbers were picked more or less randomly.
+            // Feel free to change them if any tweak is needed.
             if (this.isDone || length > 200) {
                 yield this.decryptedLinks.splice(0, length);
             } else {
-                await wait(2000);
+                await wait(1000);
             }
         }
     }

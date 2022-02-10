@@ -1,12 +1,20 @@
 import { c, msgid } from 'ttag';
 import { createContext, useContext, useCallback, useRef } from 'react';
 
+import { chunk } from '@proton/shared/lib/helpers/array';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
 import { queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
+import { queryLinkMetaBatch } from '@proton/shared/lib/api/drive/link';
 import { queryTrashList } from '@proton/shared/lib/api/drive/share';
 import { querySharedLinks } from '@proton/shared/lib/api/drive/sharing';
-import { LinkChildrenResult, LinkMeta, FolderLinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+import {
+    LinkChildrenResult,
+    LinkMeta,
+    FolderLinkMeta,
+    LinkMetaBatchPayload,
+} from '@proton/shared/lib/interfaces/drive/link';
 import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { waitFor, useErrorHandler } from '../utils';
@@ -20,7 +28,7 @@ type FetchState = {
 };
 
 type FetchShareState = {
-    links: {
+    folders: {
         [linkId: string]: {
             // all represents version for all files in the folder, whereas
             // foldersOnly is state of requesting only folders for the given
@@ -32,6 +40,9 @@ type FetchShareState = {
     };
     trash: FetchMeta;
     sharedByLink: FetchMeta;
+    links: {
+        [key: string]: FetchMeta;
+    };
 };
 
 type FetchMeta = {
@@ -111,9 +122,10 @@ export function useLinksListingProvider() {
             return state.current[shareId];
         }
         state.current[shareId] = {
-            links: {},
+            folders: {},
             trash: {},
             sharedByLink: {},
+            links: {},
         };
         return state.current[shareId];
     };
@@ -271,13 +283,13 @@ export function useLinksListingProvider() {
         foldersOnly?: boolean
     ): Promise<boolean> => {
         const shareState = getShareFetchState(shareId);
-        let linkFetchMeta = shareState.links[parentLinkId];
+        let linkFetchMeta = shareState.folders[parentLinkId];
         if (!linkFetchMeta) {
             linkFetchMeta = {
                 all: {},
                 foldersOnly: {},
             };
-            shareState.links[parentLinkId] = linkFetchMeta;
+            shareState.folders[parentLinkId] = linkFetchMeta;
         }
         if (foldersOnly) {
             // If request to query all items is in progress, lets wait
@@ -383,6 +395,23 @@ export function useLinksListingProvider() {
         );
     };
 
+    const fetchLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]): Promise<FetchResponse> => {
+        const { Links, Parents } = await debouncedRequest<LinkMetaBatchPayload>(
+            queryLinkMetaBatch(shareId, linkIds),
+            abortSignal
+        );
+
+        return {
+            links: Links.map(linkMetaToEncryptedLink),
+            parents: Parents ? Object.values(Parents).map(linkMetaToEncryptedLink) : [],
+        };
+    };
+
+    const fetchLinksPage = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]) => {
+        const { links, parents } = await fetchLinks(abortSignal, shareId, linkIds);
+        await cacheLoadedLinks(abortSignal, shareId, links, parents);
+    };
+
     /**
      * loadHelper just calls `callback` (any version of next page returnig
      * whether there is next page) until all pages are loaded.
@@ -411,6 +440,35 @@ export function useLinksListingProvider() {
 
     const loadLinksSharedByLink = async (abortSignal: AbortSignal, shareId: string): Promise<void> => {
         return loadHelper(() => fetchLinksSharedByLinkNextPage(abortSignal, shareId));
+    };
+
+    const loadLinks = async (
+        abortSignal: AbortSignal,
+        fetchKey: string,
+        shareId: string,
+        linkIds: string[]
+    ): Promise<void> => {
+        const shareState = getShareFetchState(shareId);
+        let fetchMeta = shareState.links[fetchKey];
+        if (!fetchMeta) {
+            fetchMeta = {};
+            state.current[shareId].links[fetchKey] = fetchMeta;
+        }
+        await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
+        fetchMeta.isInProgress = true;
+
+        const load = async () => {
+            const missingLinkIds = linkIds.filter((linkId) => !linksState.getLink(shareId, linkId));
+            for (const pageLinkIds of chunk(missingLinkIds, BATCH_REQUEST_SIZE)) {
+                await fetchLinksPage(abortSignal, shareId, pageLinkIds);
+                if (abortSignal.aborted) {
+                    break;
+                }
+            }
+        };
+        await load().finally(() => {
+            fetchMeta.isInProgress = false;
+        });
     };
 
     /**
@@ -450,7 +508,7 @@ export function useLinksListingProvider() {
                 abortSignal,
                 shareId,
                 linksState.getChildren(shareId, parentLinkId),
-                getShareFetchState(shareId).links[parentLinkId]?.all
+                getShareFetchState(shareId).folders[parentLinkId]?.all
             );
         },
         [linksState.getChildren]
@@ -480,14 +538,29 @@ export function useLinksListingProvider() {
         [linksState.getSharedByLink]
     );
 
+    const getCachedLinks = useCallback(
+        (
+            abortSignal: AbortSignal,
+            fetchKey: string,
+            shareId: string,
+            linkIds: string[]
+        ): [DecryptedLink[], boolean] => {
+            const links = linkIds.map((linkId) => linksState.getLink(shareId, linkId)).filter(isTruthy);
+            return getCachedLinksHelper(abortSignal, shareId, links, getShareFetchState(shareId).links[fetchKey]);
+        },
+        [linksState.getLink]
+    );
+
     return {
         fetchChildrenNextPage,
         loadChildren,
         loadTrashedLinks,
         loadLinksSharedByLink,
+        loadLinks,
         getCachedChildren,
         getCachedTrashed,
         getCachedSharedByLink,
+        getCachedLinks,
     };
 }
 

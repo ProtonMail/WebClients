@@ -9,7 +9,6 @@ import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 
 import { useActions } from '../../store';
-import useActiveShare from './useActiveShare';
 
 export default function useDriveDragMove(
     shareId: string,
@@ -18,7 +17,6 @@ export default function useDriveDragMove(
 ) {
     const { moveLinks } = useActions();
     const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Moving files` });
-    const { activeFolder } = useActiveShare();
     const [allDragging, setAllDragging] = useState<FileBrowserItem[]>([]);
     const [activeDropTarget, setActiveDropTarget] = useState<FileBrowserItem>();
     const dragEnterCounter = useRef(0);
@@ -37,20 +35,18 @@ export default function useDriveDragMove(
                 console.warn('Could not finish move operation due to', err);
                 return;
             }
-            const toMoveInfo = toMove.map(({ LinkID, Name, Type }) => ({
+            const toMoveInfo = toMove.map(({ ParentLinkID, LinkID, Name, Type }) => ({
+                parentLinkId: ParentLinkID,
                 linkId: LinkID,
                 name: Name,
                 type: Type,
             }));
-            const originalParentFolderId = activeFolder?.linkId;
             dragEnterCounter.current = 0;
 
             clearSelections();
             setActiveDropTarget(undefined);
 
-            await withGlobalLoader(
-                moveLinks(new AbortController().signal, shareId, toMoveInfo, newParentLinkId, originalParentFolderId)
-            );
+            await withGlobalLoader(moveLinks(new AbortController().signal, shareId, toMoveInfo, newParentLinkId));
         };
 
     const getDragMoveControls = (item: FileBrowserItem): DragMoveControls => {

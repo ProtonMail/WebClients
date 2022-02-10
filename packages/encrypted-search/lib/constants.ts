@@ -19,6 +19,7 @@ export const defaultESStatus = {
     isBuilding: false,
     isDBLimited: false,
     esEnabled: false,
+    esSupported: true,
     isRefreshing: false,
     isSearchPartial: false,
     isSearching: false,

@@ -11,7 +11,9 @@ import useNavigate from '../hooks/drive/useNavigate';
 import { mapDecryptedLinksToChildren } from '../components/sections/helpers';
 import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
-import { useSearchResultsStorage } from '../components/search/SearchResultsStorage';
+
+// TODO: ideally not use here
+import useSearchResults from '../store/search/useSearchResults';
 
 const getSharedStatus = (link?: DecryptedLink) => {
     if (!link?.isShared) {
@@ -29,7 +31,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const { setFolder } = useActiveShare();
     const [, setError] = useState();
     const { createModal } = useModals();
-    const esStorage = useSearchResultsStorage();
+    const { query: lastQuery } = useSearchResults();
 
     const referer = new URLSearchParams(useLocation().search).get('r');
     const useNavigation =
@@ -65,7 +67,6 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             return;
         }
         if (referer?.startsWith('/search')) {
-            const lastQuery = esStorage.getLastQuery();
             if (lastQuery) {
                 navigateToSearch(lastQuery);
                 return;
