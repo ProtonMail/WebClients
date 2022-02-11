@@ -3,16 +3,8 @@ import { c } from 'ttag';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { orderFolders } from '@proton/shared/lib/api/labels';
 
-import { Loader, Button, Info } from '../../components';
-import {
-    useFolders,
-    useMailSettings,
-    useModals,
-    useLoading,
-    useApi,
-    useEventManager,
-    useNotifications,
-} from '../../hooks';
+import { Loader, Button, Info, useModalState } from '../../components';
+import { useFolders, useMailSettings, useLoading, useApi, useEventManager, useNotifications } from '../../hooks';
 
 import { SettingsSection } from '../account';
 
@@ -27,11 +19,12 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 function LabelsSection() {
     const [folders = [], loadingFolders] = useFolders();
     const [mailSettings] = useMailSettings();
-    const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
+
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const handleSortFolders = async () => {
         const rootFolders = folders.filter(({ ParentID = ROOT_FOLDER }) => ParentID === ROOT_FOLDER);
@@ -80,7 +73,7 @@ function LabelsSection() {
                     ) : null}
 
                     <div className="mt2 mb2">
-                        <Button color="norm" onClick={() => createModal(<EditLabelModal type="folder" />)}>
+                        <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                             {c('Action').t`Add folder`}
                         </Button>
                         {folders.length ? (
@@ -97,6 +90,8 @@ function LabelsSection() {
                     </div>
 
                     {folders.length ? <FolderTreeViewList items={folders} /> : null}
+
+                    <EditLabelModal {...editLabelProps} type="folder" />
                 </>
             )}
         </SettingsSection>
