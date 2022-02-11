@@ -43,7 +43,15 @@ const mergeCallbacks = (a: any, b: any) => {
     );
 };
 
-const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', anchorOffset, ...rest }: Props) => {
+const Tooltip = ({
+    children,
+    title,
+    originalPlacement = 'top',
+    type = 'info',
+    anchorOffset,
+    isOpen: isExternalOpen,
+    ...rest
+}: Props) => {
     const uid = useInstance(() => generateUID('tooltip'));
     const [isRTL] = useRightToLeft();
 
@@ -53,7 +61,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', an
 
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
     const { anchorRef, open, close, isOpen } = usePopperAnchor<HTMLSpanElement>();
-    const combinedIsOpen = rest?.isOpen || isOpen;
+    const combinedIsOpen = isExternalOpen || isOpen;
     const { position, placement } = usePopper({
         popperEl,
         anchorEl: anchorRef.current,
@@ -77,7 +85,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', an
         } else {
             exclusive.remove?.(uid);
         }
-    }, [isOpen, rest?.isOpen]);
+    }, [isOpen, isExternalOpen]);
 
     if (!title) {
         return cloneElement(child, {
