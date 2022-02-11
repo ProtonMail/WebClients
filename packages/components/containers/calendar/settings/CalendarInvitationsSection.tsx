@@ -76,7 +76,7 @@ const CalendarInvitationsSection = ({
                         <label className="text-semibold inline-block" htmlFor="auto-import-invitations">
                             <span>
                                 {c('Auto import invitations setting')
-                                    .jt`Add invitations to calendar automatically and mark as pending`}
+                                    .jt`Add invitations to calendar and mark as pending`}
                             </span>
                             <Info
                                 buttonClass="ml0-5 inline-flex"
