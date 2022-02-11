@@ -154,6 +154,28 @@ export const Sizes = () => {
             <div className="mt1">
                 <InputFieldTwo label="Bigger" bigger {...sharedInputProps} />
             </div>
+            <div className="mt1">
+                <InputFieldTwo
+                    icon={<Icon name="credit-card" />}
+                    label="Bigger with icon"
+                    bigger
+                    {...sharedInputProps}
+                />
+            </div>
+            <div className="mt1">
+                <InputFieldTwo label="Bigger input with suffix" bigger suffix="@protonmail.com" {...sharedInputProps} />
+            </div>
+            <div className="mt1">
+                <InputFieldTwo as={PasswordInputTwo} label="Bigger password input" bigger {...sharedInputProps} />
+            </div>
+            <div className="mt1">
+                <InputFieldTwo
+                    bigger
+                    label="Bigger warning"
+                    warning="This value might be wrong"
+                    {...sharedInputProps}
+                />
+            </div>
         </div>
     );
 };

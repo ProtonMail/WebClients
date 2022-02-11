@@ -50,9 +50,9 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
     return (
         <div
             className={classnames([
-                'inputform-icon-container',
+                'inputform-icon-container flex flex-nowrap flex-align-items-center',
                 Boolean(icon) && 'text-left relative',
-                (prefix || suffix) && 'flex flex-nowrap flex-align-items-center flex-item-fluid relative',
+                (prefix || suffix) && 'flex-item-fluid relative',
             ])}
             ref={containerRef}
         >
