@@ -158,10 +158,10 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         link: {
             showModal: () => {
                 const selectedText = editorInstance.getSelectionRange().toString();
-                const cursorEl = editorInstance.getElementAtCursor('a[href]') as HTMLElement | null;
+                const cursorEl = editorInstance.getElementAtCursor('a[href]') as HTMLAnchorElement | null;
 
-                const title = selectedText || cursorEl?.innerText || undefined;
-                const href = selectedText ? undefined : cursorEl?.getAttribute('href') || undefined;
+                const title = cursorEl?.innerText || selectedText;
+                const href = cursorEl?.href;
 
                 options.showModalLink({
                     linkLabel: title,
