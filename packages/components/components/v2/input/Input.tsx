@@ -47,42 +47,28 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
         />
     );
 
-    if (prefix) {
-        return (
-            <div
-                className="inputform-icon-container flex flex-nowrap flex-align-items-center flex-item-fluid relative"
-                ref={containerRef}
-            >
-                <div className="inputform-prefix pr0-5 flex">{prefix}</div>
-                <div className="flex-item-fluid">{inputElement}</div>
-            </div>
-        );
-    }
+    return (
+        <div
+            className={classnames([
+                'inputform-icon-container',
+                Boolean(icon) && 'text-left relative',
+                (prefix || suffix) && 'flex flex-nowrap flex-align-items-center flex-item-fluid relative',
+            ])}
+            ref={containerRef}
+        >
+            {prefix && <div className="inputform-prefix pr0-5 flex">{prefix}</div>}
 
-    if (icon) {
-        return (
-            <div className="inputform-icon-container text-left relative" ref={containerRef}>
-                {inputElement}
-                <span className="right-icon absolute flex">{icon}</span>
-            </div>
-        );
-    }
+            <div className={prefix || suffix ? 'flex-item-fluid' : undefined}>{inputElement}</div>
 
-    if (suffix) {
-        return (
-            <div
-                className="inputform-icon-container flex flex-nowrap flex-align-items-center flex-item-fluid relative"
-                ref={containerRef}
-            >
-                <div className="flex-item-fluid">{inputElement}</div>
+            {icon && <span className="right-icon absolute flex">{icon}</span>}
+
+            {suffix && (
                 <div className="inputform-suffix right-icon pr0-5 flex">
                     <span className="mauto">{suffix}</span>
                 </div>
-            </div>
-        );
-    }
-
-    return inputElement;
+            )}
+        </div>
+    );
 };
 
 export default forwardRef<HTMLInputElement, InputTwoProps>(InputTwo);
