@@ -496,7 +496,7 @@ export const getHasUpdatedInviteData = ({
     hasModifiedDateTimes?: boolean;
 }) => {
     if (!oldVevent) {
-        return;
+        return false;
     }
     const hasUpdatedDateTimes =
         hasModifiedDateTimes !== undefined ? hasModifiedDateTimes : getHasModifiedDateTimes(newVevent, oldVevent);
