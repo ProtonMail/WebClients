@@ -1,7 +1,9 @@
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getResetPartstatActions, getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
+import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { unary } from '@proton/shared/lib/helpers/function';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
@@ -25,7 +27,6 @@ import createSingleRecurrence from '../recurrence/createSingleRecurrence';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import updateAllRecurrence from '../recurrence/updateAllRecurrence';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
-import { withUpdatedDtstamp } from './dtstamp';
 import getChangePartstatActions from './getChangePartstatActions';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
@@ -45,9 +46,7 @@ interface SaveRecurringArguments {
     updateAllPossibilities: UpdateAllPossibilities;
     isInvitation: boolean;
     inviteActions: InviteActions;
-    sendIcs: (
-        data: SendIcsActionData
-    ) => Promise<{
+    sendIcs: (data: SendIcsActionData) => Promise<{
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
@@ -189,11 +188,18 @@ const getSaveRecurringEventActions = async ({
     }
 
     if (type === RECURRING_TYPES.FUTURE) {
-        const newVeventWithSequence = withUpdatedDtstamp({
-            ...newVeventComponent,
-            sequence: { value: 0 },
-        });
-        const originalVeventWithSequence = withUpdatedDtstamp(withIncrementedSequence(originalVeventComponent));
+        const newVeventWithSequence = withDtstamp(
+            omit(
+                {
+                    ...newVeventComponent,
+                    sequence: { value: 0 },
+                },
+                ['dtstamp']
+            )
+        );
+        const originalVeventWithSequence = withDtstamp(
+            omit(withIncrementedSequence(originalVeventComponent), ['dtstamp'])
+        );
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
 
