@@ -69,6 +69,8 @@ const PageContainer = (
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const onceRef = useRef(false);
 
+    const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
+
     useEffect(() => {
         if (onceRef.current) {
             return;
@@ -96,11 +98,7 @@ const PageContainer = (
     useConversationsEvent();
     useMessagesEvents();
 
-    const handleOpenShortcutsModal = () => {
-        createModal(<MailShortcutsModal />, 'shortcuts-modal');
-    };
-
-    usePageHotkeys({ onOpenShortcutsModal: handleOpenShortcutsModal });
+    usePageHotkeys({ onOpenShortcutsModal: () => setMailShortcutsModalOpen(true) });
 
     if (!labelID) {
         return <Redirect to="/inbox" />;
@@ -126,6 +124,7 @@ const PageContainer = (
                     messageID={messageID}
                     isComposerOpened={isComposerOpened}
                 />
+                <MailShortcutsModal {...mailShortcutsProps} />
             </LocationErrorBoundary>
         </PrivateLayout>
     );
