@@ -8,6 +8,7 @@ import EditorEventListener from '../plugins/EditorEventListener';
 import UndoSnapshots from '../plugins/UndoSnapshots';
 import getRoosterEditorActions from './getRoosterEditorActions';
 import { ModalLinkProps } from '../../hooks/useModalLink';
+import EditorCustomPastePlugin from '../plugins/EditorCustomPastePlugin';
 
 interface Options {
     onEditorEvent: OnEditorEventListened;
@@ -43,6 +44,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         new Paste(),
         new HyperLink(),
         new EditorEventListener(options.onEditorEvent),
+        new EditorCustomPastePlugin(),
     ];
 
     const fontSize = options.mailSettings?.FontSize ? `${options.mailSettings.FontSize}px` : `${DEFAULT_FONT_SIZE}px`;
