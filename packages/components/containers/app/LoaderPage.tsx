@@ -18,7 +18,7 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
 
     return (
         <ProminentContainer>
-            <div className="centered-absolute text-center">
+            <div className="absolute-center text-center">
                 <FullLoader className={loaderClassName} size={200} />
                 <TextLoader>{textToDisplay}</TextLoader>
             </div>

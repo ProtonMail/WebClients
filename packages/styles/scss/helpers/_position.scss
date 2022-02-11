@@ -1,100 +1,35 @@
-/* to relativize */
 .relative {
 	position: relative;
 }
 
-/* to absolute */
-.absolute,
-.absolute-only {
-	position: absolute;
-}
 .absolute {
+	position: absolute;
 	z-index: 1;
 }
 
-/* to centered absolute */
-.centered-absolute {
+.absolute-center {
 	position: absolute;
 	inset-block-start: 50%;
 	inset-inline-start: 50%;
 	transform: translate(-50%, -50%);
+
 	[dir='rtl'] & {
 		transform: translate(50%, -50%);
 	}
 }
 
-.centered-absolute-horizontal {
+.absolute-center-x {
 	inset-inline-start: 50%;
 	transform: translate(-50%, 0%);
+
 	[dir='rtl'] & {
 		transform: translate(50%, 0%);
 	}
 }
 
-.covered-absolute {
+.absolute-cover {
 	position: absolute;
 	inset: 0;
-}
-
-/* to top right */
-.top-right {
-	inset-block-start: 0;
-	inset-inline-end: 0;
-}
-.top-left {
-	inset-block-start: 0;
-	inset-inline-start: 0;
-}
-
-.bottom {
-	inset-block-end: 0;
-}
-
-// set up to use inline style with custom props
-// to avoid having logical props in JS, postCSS can't process them
-// Specificity issue with composer and others -_-v
-.top-custom {
-	&#{&} {
-		inset-block-start: var(--top-custom);
-	}
-}
-.bottom-custom {
-	&#{&} {
-		inset-block-end: var(--bottom-custom);
-	}
-}
-.left-custom {
-	&#{&} {
-		inset-inline-start: var(--left-custom);
-	}
-}
-.right-custom {
-	&#{&} {
-		inset-inline-end: var(--right-custom);
-	}
-}
-
-.right-icon,
-.right-text,
-.left-icon {
-	inset-block-start: 0;
-	block-size: #{rem($default-height-fields)}; // height of field
-	align-content: center;
-}
-
-.right-icon {
-	inset-inline-end: 0.5em;
-}
-.right-text {
-	inset-inline-end: 1em;
-
-	&-inner {
-		padding-block-end: rem(2);
-	}
-}
-
-.left-icon {
-	inset-inline-start: 0.5em;
 }
 
 .fixed {
@@ -119,4 +54,82 @@
 
 .upper-layer {
 	z-index: $layer-upper;
+}
+
+/*
+ * Placements
+ */
+.top {
+	inset-block-start: 0;
+}
+
+.right {
+	inset-inline-end: 0;
+}
+
+.bottom {
+	inset-block-end: 0;
+}
+
+.left {
+	inset-inline-start: 0;
+}
+
+.inset {
+	inset: 0;
+}
+
+/*
+ * set up to use inline style with custom props
+ * to avoid having logical props in JS, postCSS can't process them
+ * Specificity issue with composer and others -_-v
+*/
+.top-custom {
+	&#{&} {
+		inset-block-start: var(--top-custom);
+	}
+}
+
+.right-custom {
+	&#{&} {
+		inset-inline-end: var(--right-custom);
+	}
+}
+
+.bottom-custom {
+	&#{&} {
+		inset-block-end: var(--bottom-custom);
+	}
+}
+
+.left-custom {
+	&#{&} {
+		inset-inline-start: var(--left-custom);
+	}
+}
+
+/*
+ * Specific for input fields
+ */
+.right-icon,
+.right-text,
+.left-icon {
+	inset-block-start: 0;
+	block-size: #{rem($default-height-fields)}; // height of field
+	align-content: center;
+}
+
+.right-icon {
+	inset-inline-end: 0.5em;
+}
+.right-text {
+	inset-inline-end: 1em;
+
+	&-inner {
+		padding-block-end: rem(2);
+	}
+}
+
+.left-icon {
+	inset-inline-start: 0.5em;
 }

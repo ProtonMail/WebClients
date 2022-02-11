@@ -44,7 +44,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
                 <span className="mtauto mbauto center">{initials}</span>
             </span>
             {notification && (
-                <NotificationDot color={notification} className="absolute top-right notification-dot--top-right" />
+                <NotificationDot color={notification} className="absolute top right notification-dot--top right" />
             )}
         </button>
     );
