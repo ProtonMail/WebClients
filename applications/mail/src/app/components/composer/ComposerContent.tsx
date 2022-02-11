@@ -90,8 +90,8 @@ const ComposerContent = ({
         >
             {disabled && (
                 <>
-                    <div className="absolute covered-absolute placeholder opacity-50" />
-                    <div className="absolute covered-absolute color-weak flex flex-justify-center flex-align-items-center">
+                    <div className="absolute absolute-cover placeholder opacity-50" />
+                    <div className="absolute absolute-cover color-weak flex flex-justify-center flex-align-items-center">
                         {c('Info').t`Loading message`}
                         <EllipsisLoader />
                     </div>
@@ -122,7 +122,7 @@ const ComposerContent = ({
                         onDragLeave={handleDragLeave}
                         onDropCapture={handleDrop}
                         className={classnames([
-                            'composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center rounded-xl',
+                            'composer-editor-dropzone absolute-cover flex flex-justify-center flex-align-items-center rounded-xl',
                             !isOutside && 'mr1-75 ml1-75',
                         ])}
                     >

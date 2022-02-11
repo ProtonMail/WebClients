@@ -1,0 +1,84 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import {
+    Table,
+    TableHeader,
+    TableRow,
+    TableCell,
+    TableBody,
+} from '@proton/components';
+import { getTitle } from '../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Position
+
+## Applying a position
+
+Utilities for controlling the position of an element.
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header">
+                Class
+            </TableCell>
+            <TableCell type="header">
+                Explanation
+            </TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>relative</code>
+            </TableCell>
+            <TableCell>
+                Position an element according to the normal flow of the document.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>absolute</code>
+            </TableCell>
+            <TableCell>
+                Position an element outside of the normal flow of the document. <code>z-index</code> value is <code>1</code>.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>absolute-center-x</code>
+            </TableCell>
+            <TableCell>
+                Position an element outside of the normal flow of the document, and center it horizontaly inside the nearest parent that has a <code>relative</code> position.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>absolute-center</code>
+            </TableCell>
+            <TableCell>
+                Position an element outside of the normal flow of the document, and center it horizontaly and verticaly inside the nearest parent that has a <code>relative</code> position.
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>absolute-cover</code>
+            </TableCell>
+            <TableCell>
+                Position an element outside of the normal flow of the document, and cover the nearest parent that has a <code>relative</code> position.
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+## Example
+
+Applies the common border radius on this element.
+
+<Source
+    language='html'
+    format
+    code={`
+<div className="rounded">Lorem ipsum dolor sit amet</div>
+`}
+/>

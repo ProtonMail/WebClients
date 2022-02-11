@@ -39,7 +39,7 @@ const ValidateRecoveryEmailContainer = () => {
     return (
         <main className="main-area">
             {loading ? (
-                <div className="centered-absolute text-center">
+                <div className="absolute-center text-center">
                     <FullLoader size={200} />
                 </div>
             ) : (
