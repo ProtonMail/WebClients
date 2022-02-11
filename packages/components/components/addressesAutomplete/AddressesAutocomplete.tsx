@@ -6,7 +6,8 @@ import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { noop } from '@proton/shared/lib/helpers/function';
 
-import Input, { Props as InputProps } from '../input/Input';
+import InputField, { InputFieldProps } from '../v2/field/InputField';
+import Input from '../v2/input/Input';
 import { Option } from '../option';
 import { Marks } from '../text';
 import { useAutocomplete, useAutocompleteFilter, AutocompleteList } from '../autocomplete';
@@ -21,7 +22,7 @@ import {
 import Icon from '../icon/Icon';
 import { useCombinedRefs } from '../../hooks';
 
-interface Props extends Omit<InputProps, 'value'> {
+interface Props extends Omit<InputFieldProps<typeof Input>, 'value' | 'onChange'> {
     id: string;
     onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
     onAddRecipients: (recipients: Recipient[]) => void;
@@ -36,6 +37,7 @@ interface Props extends Omit<InputProps, 'value'> {
     limit?: number;
     onAddInvalidEmail?: () => void;
     validate?: (email: string) => string | void;
+    onChange?: (value: string) => void;
 }
 
 const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
@@ -181,16 +183,17 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
 
         return (
             <>
-                <Input
+                <InputField
                     {...rest}
                     {...inputProps}
+                    dense
                     ref={useCombinedRefs(ref, inputRef)}
                     value={input}
-                    onChange={(event) => {
-                        handleInputChange(event.currentTarget.value.trimStart());
-                        onChange?.(event);
+                    onValue={(value: string) => {
+                        handleInputChange(value.trimStart());
+                        onChange?.(value);
                     }}
-                    onKeyDown={(event) => {
+                    onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
                         setEmailError('');
                         // If the default key down handler did not take care of this, add another layer
                         if (!inputProps.onKeyDown(event)) {
