@@ -8,29 +8,29 @@ import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { FormModal } from '../../../components';
+import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useEventManager, useLoading, useApi, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 
-interface ModalModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Type'> {
+export interface LabelModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Type'> {
     ID?: string;
     ParentID?: string | number;
     Notify?: number;
     Expanded?: number;
     Order?: number;
+    Path?: string;
 }
 
-interface Props {
+interface Props extends ModalProps {
     type?: 'label' | 'folder';
-    label?: ModalModel;
+    label?: LabelModel;
     mode?: 'create' | 'edition' | 'checkAvailable';
-    onAdd?: (label: ModalModel) => void;
-    onEdit?: (label: ModalModel) => void;
-    onCheckAvailable?: (label: ModalModel) => void;
-    onClose?: () => void;
+    onAdd?: (label: LabelModel) => void;
+    onEdit?: (label: LabelModel) => void;
+    onCheckAvailable?: (label: LabelModel) => void;
 }
 
-const prepareLabel = (label: ModalModel) => {
+const prepareLabel = (label: LabelModel) => {
     if (label.ParentID === ROOT_FOLDER) {
         return omit(label, ['ParentID']);
     }
@@ -43,16 +43,17 @@ const EditLabelModal = ({
     onAdd = noop,
     onEdit = noop,
     onCheckAvailable = noop,
-    onClose = noop,
     type = 'label',
-    ...props
+    ...rest
 }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
     const [loading, withLoading] = useLoading();
 
-    const [model, setModel] = useState<ModalModel>(
+    const { onClose } = rest;
+
+    const [model, setModel] = useState<LabelModel>(
         label || {
             Name: '',
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
@@ -62,17 +63,17 @@ const EditLabelModal = ({
         }
     );
 
-    const create = async (label: ModalModel) => {
+    const create = async (label: LabelModel) => {
         const { Label } = await api(createLabel(prepareLabel(label)));
         await call();
         createNotification({
             text: c('label/folder notification').t`${Label.Name} created`,
         });
         onAdd(Label);
-        onClose();
+        onClose?.();
     };
 
-    const update = async (label: ModalModel) => {
+    const update = async (label: LabelModel) => {
         if (label.ID) {
             const { Label } = await api(updateLabel(label.ID, prepareLabel(label)));
             await call();
@@ -81,13 +82,13 @@ const EditLabelModal = ({
             });
             onEdit(Label);
         }
-        onClose();
+        onClose?.();
     };
 
-    const checkIsAvailable = async (label: ModalModel) => {
+    const checkIsAvailable = async (label: LabelModel) => {
         await api(checkLabelAvailability(label));
         onCheckAvailable(model);
-        onClose();
+        onClose?.();
     };
 
     const handleSubmit = async () => {
@@ -143,22 +144,22 @@ const EditLabelModal = ({
     };
 
     return (
-        <FormModal
-            submit={c('Action').t`Save`}
-            onSubmit={handleSubmit}
-            loading={loading}
-            title={getTitle()}
-            onClose={onClose}
-            {...props}
-        >
-            <NewLabelForm
-                label={model}
-                onChangeName={handleChangeName}
-                onChangeColor={handleChangeColor}
-                onChangeParentID={handleChangeParentID}
-                onChangeNotify={handleChangeNotify}
-            />
-        </FormModal>
+        <ModalTwo {...rest}>
+            <ModalTwoHeader title={getTitle()} />
+            <ModalTwoContent>
+                <NewLabelForm
+                    label={model}
+                    onChangeName={handleChangeName}
+                    onChangeColor={handleChangeColor}
+                    onChangeParentID={handleChangeParentID}
+                    onChangeNotify={handleChangeNotify}
+                />
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" loading={loading} onClick={handleSubmit}>{c('Action').t`Save`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

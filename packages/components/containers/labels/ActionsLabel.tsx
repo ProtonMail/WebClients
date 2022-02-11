@@ -4,7 +4,7 @@ import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { deleteLabel } from '@proton/shared/lib/api/labels';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { Alert, DropdownActions, ConfirmModal, ErrorButton } from '../../components';
+import { Alert, DropdownActions, ConfirmModal, ErrorButton, useModalState } from '../../components';
 import { useApi, useModals, useEventManager, useNotifications } from '../../hooks';
 import EditLabelModal from './modals/EditLabelModal';
 
@@ -17,6 +17,8 @@ function ActionsLabel({ label }: Props) {
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const I18N: { [key: number]: any } = {
         [LABEL_TYPE.MESSAGE_LABEL]: {
@@ -65,14 +67,10 @@ function ActionsLabel({ label }: Props) {
         });
     };
 
-    const handleEdit = () => {
-        createModal(<EditLabelModal label={label} mode="edition" />);
-    };
-
     const list = [
         {
             text: c('Action').t`Edit`,
-            onClick: handleEdit,
+            onClick: () => setEditLabelModalOpen(true),
             'data-test-id': 'folders/labels:item-edit',
         },
         {
@@ -83,7 +81,12 @@ function ActionsLabel({ label }: Props) {
         },
     ];
 
-    return <DropdownActions size="small" list={list} />;
+    return (
+        <>
+            <DropdownActions size="small" list={list} />
+            <EditLabelModal {...editLabelProps} label={label} mode="edition" />
+        </>
+    );
 }
 
 export default ActionsLabel;

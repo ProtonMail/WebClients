@@ -6,8 +6,8 @@ import { orderLabels } from '@proton/shared/lib/api/labels';
 import { Label } from '@proton/shared/lib/interfaces';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
-import { Loader, Button, useDebounceInput } from '../../components';
-import { useLabels, useEventManager, useModals, useApi, useNotifications, useLoading } from '../../hooks';
+import { Loader, Button, useDebounceInput, useModalState } from '../../components';
+import { useLabels, useEventManager, useApi, useNotifications, useLoading } from '../../hooks';
 
 import { SettingsSection } from '../account';
 
@@ -22,7 +22,6 @@ function LabelsSection() {
     const [labels = [], loadingLabels] = useLabels();
     const { call } = useEventManager();
     const api = useApi();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
@@ -31,6 +30,8 @@ function LabelsSection() {
 
     const labelsOrder = toLabelIDs(labels);
     const debouncedLabelOrder = toLabelIDs(debouncedLabels);
+
+    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     /**
      * Refresh the list + update API and call event, it can be slow.
@@ -76,7 +77,7 @@ function LabelsSection() {
             ) : (
                 <>
                     <div className="mb2">
-                        <Button color="norm" onClick={() => createModal(<EditLabelModal type="label" />)}>
+                        <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                             {c('Action').t`Add label`}
                         </Button>
                         {localLabels.length ? (
@@ -92,6 +93,8 @@ function LabelsSection() {
                         ) : null}
                     </div>
                     {localLabels.length ? <LabelSortableList items={localLabels} onSortEnd={onSortEnd} /> : null}
+
+                    <EditLabelModal {...editLabelProps} type="label" />
                 </>
             )}
         </SettingsSection>

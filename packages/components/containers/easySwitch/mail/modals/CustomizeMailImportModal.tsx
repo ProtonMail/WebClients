@@ -13,7 +13,7 @@ import {
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
-import EditLabelModal from '../../../labels/modals/EditLabelModal';
+import EditLabelModal, { LabelModel } from '../../../labels/modals/EditLabelModal';
 
 import { useModals } from '../../../../hooks';
 import {
@@ -28,6 +28,7 @@ import {
     FormModal,
     Button,
     Label as FormLabel,
+    useModalState,
 } from '../../../../components';
 
 import { getTimeUnitLabels } from '../../constants';
@@ -74,6 +75,8 @@ const CustomizeMailImportModal = ({
     const [organizeFolderVisible, setOrganizeFolderVisible] = useState(customizeFoldersOpen);
     const { createModal } = useModals();
     const [isEditing, setIsEditing] = useState(false);
+
+    const [{ open: isEditLabelOpen, ...editLabelProps }, setEditLabelModalOpen] = useModalState();
 
     const { getMailMappingErrors } = useIAMailPayload({
         email: importedEmail,
@@ -132,19 +135,7 @@ const CustomizeMailImportModal = ({
         setOrganizeFolderVisible(!organizeFolderVisible);
     };
 
-    const handleEditLabel = async () => {
-        const ImportLabel: Label = await new Promise((resolve, reject) => {
-            createModal(
-                <EditLabelModal
-                    label={customizedPayload.ImportLabel}
-                    type="label"
-                    onCheckAvailable={resolve as () => undefined}
-                    onClose={reject}
-                    mode="checkAvailable"
-                />
-            );
-        });
-
+    const handleEditLabel = (ImportLabel: LabelModel) => {
         setCustomizedPayload({ ...customizedPayload, ImportLabel });
     };
 
@@ -250,10 +241,22 @@ const CustomizeMailImportModal = ({
                                 className="max-w100"
                             />
                         )}
-                        <Button shape="outline" className="flex-item-noshrink ml1" onClick={handleEditLabel}>
+                        <Button
+                            shape="outline"
+                            className="flex-item-noshrink ml1"
+                            onClick={() => setEditLabelModalOpen(true)}
+                        >
                             {c('Action').t`Edit label`}
                         </Button>
                     </Field>
+                    <EditLabelModal
+                        {...editLabelProps}
+                        label={customizedPayload.ImportLabel}
+                        type="label"
+                        onCheckAvailable={handleEditLabel}
+                        isOpen={isEditLabelOpen}
+                        mode="checkAvailable"
+                    />
                 </Row>
             </div>
 
