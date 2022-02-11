@@ -106,7 +106,6 @@ const MessageBody = ({
             ref={bodyRef}
             className={classnames([
                 'message-content relative bg-norm color-norm',
-                !isIframeContentSet && 'message-content-not-set',
                 plain && 'plain',
                 isPrint || !isIframeContentSet ? '' : 'p1',
                 !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
@@ -115,7 +114,7 @@ const MessageBody = ({
         >
             {encryptedMode && <pre className="m0">{message.data?.Body}</pre>}
             {sourceMode && <pre className="m0">{message.decryption?.decryptedBody}</pre>}
-            {(loadingMode || decryptingMode) && (
+            {(loadingMode || decryptingMode || !isIframeContentSet) && (
                 <>
                     <div className="message-content-loading-placeholder mb0-25 max-w8e" />
                     <div className="message-content-loading-placeholder mb0-25 max-w50e" />
@@ -126,22 +125,24 @@ const MessageBody = ({
                 </>
             )}
             {contentMode && (
-                <MessageBodyIframe
-                    content={highlightedContent}
-                    blockquoteContent={highlightedBlockquote}
-                    showBlockquoteToggle={showButton}
-                    showBlockquote={showBlockquote}
-                    onBlockquoteToggle={toggleOriginalMessage}
-                    onContentLoaded={onContentLoadedCallback}
-                    isPlainText={plain}
-                    hasDarkStyles={hasDarkStyles}
-                    isPrint={isPrint}
-                    message={message}
-                    labelID={labelID}
-                    onReady={onIframeReady}
-                    onMailTo={onMailTo}
-                    mailSettings={mailSettings}
-                />
+                <div className={classnames(['message-iframe', !isIframeContentSet && 'message-iframe--hidden'])}>
+                    <MessageBodyIframe
+                        content={highlightedContent}
+                        blockquoteContent={highlightedBlockquote}
+                        showBlockquoteToggle={showButton}
+                        showBlockquote={showBlockquote}
+                        onBlockquoteToggle={toggleOriginalMessage}
+                        onContentLoaded={onContentLoadedCallback}
+                        isPlainText={plain}
+                        hasDarkStyles={hasDarkStyles}
+                        isPrint={isPrint}
+                        message={message}
+                        labelID={labelID}
+                        onReady={onIframeReady}
+                        onMailTo={onMailTo}
+                        mailSettings={mailSettings}
+                    />
+                </div>
             )}
         </div>
     );

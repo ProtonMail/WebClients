@@ -227,13 +227,10 @@
 }
 
 .message-content {
-	opacity: 1;
 	border-start-start-radius: 0;
 	border-start-end-radius: 0;
 	border-end-start-radius: var(--border-radius-md);
 	border-end-end-radius: var(--border-radius-md);
-	transition: 0.1s easing(easeOutSine);
-	transition-property: opacity;
 	// force color until real dark mode
 	// as mail content is forced on white bg, button has to be forced as well
 	.toggle-original-message-button {
@@ -257,12 +254,6 @@
 
 	&.dark-style {
 		background: white;
-	}
-
-	&.message-content-not-set {
-		opacity: 0;
-		height: 0;
-		overflow: hidden;
 	}
 }
 
@@ -291,5 +282,17 @@
 				display: block;
 			}
 		}
+	}
+}
+
+.message-iframe {
+	opacity: 1;
+	transition: 0.1s easing(easeOutSine);
+	transition-property: opacity;
+
+	&.message-iframe--hidden {
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
 	}
 }
