@@ -5,6 +5,7 @@ import { generateMnemonicPayload, generateMnemonicWithSalt, MnemonicData } from 
 import userPromptSvg from '@proton/styles/assets/img/mnemonic/user-prompt.svg';
 import {
     Button,
+    Href,
     ModalProps,
     ModalTwo as Modal,
     ModalTwoHeader as ModalHeader,
@@ -94,8 +95,17 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
                         <img src={userPromptSvg} alt="" />
                     </div>
                     <h1 className="mb0-5 text-2xl text-bold text-center">{c('Info').t`Set a recovery phrase`}</h1>
-                    <p className="mt0 mb0 text-center">{c('Info')
-                        .t`A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.`}</p>
+                    <p className="mt0 mb0 text-center">
+                        {c('Info')
+                            .t`A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.`}
+                        <br />
+                        <Href
+                            className="text-center"
+                            url="https://protonmail.com/support/knowledge-base/set-account-recovery-methods"
+                        >
+                            {c('Link').t`More about recovery`}
+                        </Href>
+                    </p>
                 </ModalContent>
                 <ModalFooter className="mnemonic-prompt-footer">
                     <Button
