@@ -145,6 +145,10 @@ export const getShortcuts = () => {
                     keys: `${metaKey} + ${shiftKey} + E`,
                 },
                 {
+                    name: c('Keyboard shortcut name').t`Insert link`,
+                    keys: `${metaKey} + K`,
+                },
+                {
                     name: c('Keyboard shortcut name').t`Discard draft`,
                     keys: `${metaKey} + ${altKey} + Backspace`,
                 },

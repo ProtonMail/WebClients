@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as React from 'react';
 import { c } from 'ttag';
-import { Href, MailShortcutsModal, Price, SettingsLink, useModals } from '@proton/components';
+import { Href, MailShortcutsModal, Price, SettingsLink, useModals, useModalState } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
@@ -27,6 +27,8 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
     const { createModal } = useModals();
     const [option, setOption] = useState<MessageOption>();
     const [{ Currency } = { Currency: undefined }] = plans;
+
+    const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
 
     const getPrice = () => {
         const plusPlan = plans.find((plan) => plan.Name === 'plus');
@@ -199,7 +201,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
             text: c('Info').t`Use keyboard shortcuts to manage your email faster.`,
             cta: (
                 <span
-                    onClick={() => createModal(<MailShortcutsModal />, 'shortcuts-modal')}
+                    onClick={() => setMailShortcutsModalOpen(true)}
                     className="text-bold link align-baseline color-inherit"
                 >
                     {callToActionTexts.learnMore}
@@ -365,6 +367,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                     {option.cta}
                 </div>
             ) : null}
+            <MailShortcutsModal {...mailShortcutsProps} />
         </>
     );
 };
