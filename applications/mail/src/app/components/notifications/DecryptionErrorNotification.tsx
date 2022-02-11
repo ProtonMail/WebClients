@@ -54,7 +54,7 @@ const DecryptionErrorNotification = ({ onDiscard, keyFound = false }: Props) => 
                 icon
                 size="small"
                 shape="ghost"
-                className=" top-right absolute"
+                className=" top right absolute"
                 onClick={onDiscard}
                 title={c('Action').t`Close this banner`}
             >

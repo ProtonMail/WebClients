@@ -14,7 +14,7 @@ const UnsupportedPreview = ({ onSave, type = 'file' }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     return (
-        <div className="centered-absolute text-center w100 pl1 pr1">
+        <div className="absolute-center text-center w100 pl1 pr1">
             <img
                 className={classnames(['mb1', isNarrow ? 'w150p' : 'w200p'])}
                 src={type === 'file' ? unsupportedPreviewSvg : corruptedPreviewSvg}
