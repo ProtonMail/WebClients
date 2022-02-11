@@ -42,7 +42,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
                 title={c('Video control').t`Click to replay the video`}
                 type="button"
                 className={classnames([
-                    'covered-absolute rounded w100 flex flex-align-items-center flex-justify-center',
+                    'absolute-cover rounded w100 flex flex-align-items-center flex-justify-center',
                     'video-player-replay-button',
                     videoEnded && 'video-ended',
                 ])}
