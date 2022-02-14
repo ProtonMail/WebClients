@@ -1,4 +1,4 @@
-import { useState, FormEvent, useMemo } from 'react';
+import React, { useState, FormEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { checkSieveFilter, addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
@@ -8,7 +8,17 @@ import { FILTER_VERSION } from '../../constants';
 import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
 import { sieveTemplates, convertModel } from '../../utils';
 
-import { FormModal, ConfirmModal, Alert, useDebounceInput, Button } from '../../../../components';
+import {
+    ConfirmModal,
+    Alert,
+    useDebounceInput,
+    Button,
+    ModalTwo,
+    Form,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+} from '../../../../components';
 
 import {
     useModals,
@@ -29,6 +39,7 @@ import SieveForm from './SieveForm';
 
 interface Props {
     filter?: Filter;
+    isOpen?: boolean;
     onClose?: () => void;
 }
 
@@ -53,7 +64,7 @@ const checkSieveErrors = (sieve: string, issuesLength: number): string => {
     return '';
 };
 
-const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
+const AdvancedFilterModal = ({ filter, isOpen, onClose = noop }: Props) => {
     const api = useApi();
     const { isNarrow } = useActiveBreakpoint();
     const [loading, withLoading] = useLoading();
@@ -161,12 +172,31 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     };
 
     return (
-        <FormModal
-            title={title}
-            loading={loading}
+        <ModalTwo
             onClose={handleClose}
+            open={isOpen}
+            size="large"
+            as={Form}
             onSubmit={(event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
-            footer={
+        >
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                <HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />
+                {model.step === StepSieve.NAME && (
+                    <FilterNameForm
+                        model={model}
+                        onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
+                        isNarrow={isNarrow}
+                        errors={errors}
+                        loading={loading}
+                        isSieveFilter
+                    />
+                )}
+                {model.step === StepSieve.SIEVE && (
+                    <SieveForm model={model} onChange={setModel} userSettings={userSettings} />
+                )}
+            </ModalTwoContent>
+            <ModalTwoFooter>
                 <FooterAdvancedFilterModal
                     model={model}
                     errors={errors}
@@ -174,24 +204,8 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                     onClose={handleClose}
                     loading={loading}
                 />
-            }
-            {...rest}
-        >
-            <HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />
-            {model.step === StepSieve.NAME && (
-                <FilterNameForm
-                    model={model}
-                    onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
-                    isNarrow={isNarrow}
-                    errors={errors}
-                    loading={loading}
-                    isSieveFilter
-                />
-            )}
-            {model.step === StepSieve.SIEVE && (
-                <SieveForm model={model} onChange={setModel} userSettings={userSettings} />
-            )}
-        </FormModal>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

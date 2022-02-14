@@ -4,22 +4,15 @@ import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { toggleEnable, deleteFilter } from '@proton/shared/lib/api/filters';
 
-import {
-    Alert,
-    Toggle,
-    DropdownActions,
-    ConfirmModal,
-    OrderableTableRow,
-    Button,
-    useModalState,
-} from '../../components';
-import { useApi, useModals, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { Toggle, DropdownActions, OrderableTableRow, useModalState } from '../../components';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 
 import { Filter } from './interfaces';
 import { isSieve } from './utils';
+import DeleteFilterModal from './modal/DeleteFilterModal';
 
 interface Props {
     filter: Filter;
@@ -30,30 +23,14 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
 
     const [{ open: isFilterModalOpen, ...filterModalProps }, setFilterModalOpen] = useModalState();
+    const [{ open: isAdvancedFilterModalOpen, ...advancedFilterModalProps }, setAdvancedFilterModalOpen] =
+        useModalState();
+    const [{ open: isDeleteFilterModalOpen, ...deleteFilterModalProps }, setDeleteFilterModalOpen] = useModalState();
 
     const { ID, Name, Status } = filter;
-
-    const confirmDelete = async () => {
-        return new Promise<void>((resolve, reject) => {
-            createModal(
-                <ConfirmModal
-                    title={c('Title').t`Delete ${filter.Name}`}
-                    onConfirm={resolve}
-                    confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
-                    onClose={reject}
-                >
-                    <Alert className="mb1" type="info">{c('Info')
-                        .t`Please note that if you delete this filter, we will stop processing all the automated actions it triggers.`}</Alert>
-                    <Alert className="mb1" type="error">{c('Info')
-                        .t`Are you sure you want to delete this filter?`}</Alert>
-                </ConfirmModal>
-            );
-        });
-    };
 
     const handleChangeStatus = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         await api(toggleEnable(ID, target.checked));
@@ -64,7 +41,6 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
     };
 
     const handleRemove = async () => {
-        await confirmDelete();
         await api(deleteFilter(filter.ID));
         await call();
         createNotification({ text: c('Success notification').t`Filter removed` });
@@ -72,7 +48,7 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
 
     const handleEdit = (type?: 'sieve') => () => {
         if (type === 'sieve') {
-            createModal(<AdvancedFilterModal filter={filter} />);
+            setAdvancedFilterModalOpen(true);
         } else {
             setFilterModalOpen(true);
         }
@@ -90,7 +66,7 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
         {
             text: c('Action').t`Delete`,
             actionType: 'delete',
-            onClick: handleRemove,
+            onClick: () => setDeleteFilterModalOpen(true),
         } as const,
     ].filter(isTruthy);
 
@@ -116,6 +92,13 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
                 className="on-mobile-hide-td3"
             />
             <FilterModal {...filterModalProps} filter={filter} isOpen={isFilterModalOpen} />
+            <AdvancedFilterModal {...advancedFilterModalProps} filter={filter} isOpen={isAdvancedFilterModalOpen} />
+            <DeleteFilterModal
+                {...deleteFilterModalProps}
+                filterName={filter.Name}
+                handleDelete={handleRemove}
+                isOpen={isDeleteFilterModalOpen}
+            />
         </>
     );
 }
