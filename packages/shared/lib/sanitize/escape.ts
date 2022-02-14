@@ -74,6 +74,21 @@ export const unescapeCSSEncoding = (str: string) => {
 };
 
 /**
+ * Input can be escaped multiple times to escape replacement while still works
+ * Best solution I found is to escape recursively until nothing change anymore
+ * @argument str style to unescape
+ * @augments stop extra security to prevent infinite loop
+ */
+export const recurringUnescapeCSSEncoding = (str: string, stop = 100): string => {
+    const escaped = unescapeCSSEncoding(str);
+    if (escaped === str || stop === 0) {
+        return escaped;
+    } else {
+        return recurringUnescapeCSSEncoding(escaped, stop - 1);
+    }
+};
+
+/**
  * Escape some WTF from the CSSParser, cf spec files
  * @param  {String} style
  * @return {String}
@@ -82,7 +97,7 @@ export const escapeURLinStyle = (style: string) => {
     // handle the case where the value is html encoded, e.g.:
     // background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)
 
-    const unescapedEncoding = unescapeCSSEncoding(style);
+    const unescapedEncoding = recurringUnescapeCSSEncoding(style);
     const escapeFlag = unescapedEncoding !== style;
 
     const escapedStyle = unescapedEncoding.replace(/\\r/g, 'r').replace(REGEXP_URL_ATTR, 'proton-$2(');
