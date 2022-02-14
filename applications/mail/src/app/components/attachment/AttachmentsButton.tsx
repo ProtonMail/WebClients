@@ -1,5 +1,6 @@
 import { ChangeEvent, useRef, useEffect, forwardRef, Ref } from 'react';
 import * as React from 'react';
+import { c } from 'ttag';
 import { ButtonLike, ButtonLikeProps, classnames, Icon } from '@proton/components';
 
 interface Props extends ButtonLikeProps<'label'> {
@@ -43,7 +44,7 @@ const AttachmentsButton = (
                 {...rest}
                 data-testid="composer:attachment-button"
             >
-                <Icon name="paperclip" />
+                <Icon name="paperclip" alt={c('Title').t`Attachments`} />
                 <input
                     ref={inputRef}
                     type="file"
