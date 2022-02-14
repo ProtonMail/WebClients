@@ -1,7 +1,7 @@
 import { build } from '@jackfranklin/test-data-bot';
 import * as faker from 'faker';
 
-import { Address, Key } from '@proton/shared/lib/interfaces';
+import { Address, Key, RequireSome } from '@proton/shared/lib/interfaces';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { VisualCalendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
@@ -82,7 +82,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
     },
 });
 
-export const addressKeyBuilder = build<Key>('AddressKey', {
+export const addressKeyBuilder = build<RequireSome<Key, 'Flags'>>('AddressKey', {
     fields: {
         ID: 'oAwF7m8z5CksIPpX9fzAGp6hvyy0zPV0XnDWkdq-OcPyBmVygc7cyK-JFgr_HVkOc4B48BM-RSNILvPDZyfOGA==',
         Flags: 3,
