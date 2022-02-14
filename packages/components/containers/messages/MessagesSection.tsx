@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
-import { SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { APPS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 
-import { Info, Button } from '../../components';
-import { useFeature, useMailSettings, useModals } from '../../hooks';
+import { Info, Button, SettingsLink } from '../../components';
+import { useFeature, useMailSettings, useModals, useUser } from '../../hooks';
 import EmbeddedToggle from './EmbeddedToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
@@ -16,6 +16,10 @@ import { FeatureCode } from '../features';
 import { RemoteToggle } from '../emailPrivacy';
 import MailShortCutsModal from '../mail/MailShortcutsModal';
 import ShortcutsToggle from '../general/ShortcutsToggle';
+import {
+    DailyEmailNotificationToggleInput,
+    DailyEmailNotificationToggleLabel,
+} from '../recovery/DailyEmailNotificationToggle';
 
 const { EMBEDDED } = SHOW_IMAGES;
 
@@ -23,6 +27,7 @@ const MessagesSection = () => {
     const { createModal } = useModals();
     const [{ ShowImages = EMBEDDED, ConfirmLink = 1, DelaySendSeconds = 10, Shortcuts = 0 } = {}] = useMailSettings();
     const [, setShortcuts] = useState(Shortcuts);
+    const [user, userLoading] = useUser();
     const [showImages, setShowImages] = useState(ShowImages);
     const handleChange = (newValue: number) => setShowImages(newValue);
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
@@ -37,6 +42,8 @@ const MessagesSection = () => {
     useEffect(() => {
         setShortcuts(Shortcuts);
     }, [Shortcuts]);
+
+    const showDailyEmailNotificationSection = !userLoading && !user.isSubUser && user.isPrivate;
 
     return (
         <>
@@ -131,6 +138,18 @@ const MessagesSection = () => {
                     </Button>
                 </SettingsLayoutRight>
             </SettingsLayout>
+            {showDailyEmailNotificationSection && (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <DailyEmailNotificationToggleLabel />
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="pt0-5">
+                        <DailyEmailNotificationToggleInput />
+                        <SettingsLink className="ml0-5" path="/recovery" app={APPS.PROTONMAIL}>{c('Link')
+                            .t`Set email address`}</SettingsLink>
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
         </>
     );
 };
