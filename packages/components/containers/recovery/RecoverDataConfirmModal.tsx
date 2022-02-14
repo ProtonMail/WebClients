@@ -1,15 +1,10 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { AlertModal, Button, SettingsLink } from '../../components';
+import { AlertModal, AlertModalProps, Button, SettingsLink } from '../../components';
 import { useFeature } from '../../hooks';
 import { FeatureCode } from '../features/FeaturesContext';
 
-interface Props {
-    open: boolean;
-    onClose: () => void;
-}
-
-const RecoverDataConfirmModal = ({ open, onClose }: Props) => {
+const RecoverDataConfirmModal = (props: Omit<AlertModalProps, 'open' | 'title' | 'buttons' | 'children'>) => {
     const [dismissing, setDismissing] = useState(false);
     const { update: setDismissedRecoverDataCard } = useFeature(FeatureCode.DismissedRecoverDataCard);
 
@@ -21,7 +16,7 @@ const RecoverDataConfirmModal = ({ open, onClose }: Props) => {
     );
 
     const encryptionAndKeysLink = (
-        <SettingsLink path="/encryption-keys">{
+        <SettingsLink path="/encryption-keys" key="link">{
             // translator: Full sentence is 'The Data locked message will no longer be shown, but you can still unlock your data under Encryption and keys.'
             c('Link').t`Encryption and keys`
         }</SettingsLink>
@@ -29,7 +24,7 @@ const RecoverDataConfirmModal = ({ open, onClose }: Props) => {
 
     return (
         <AlertModal
-            open={open}
+            {...props}
             title={c('Title').t`Don't show again?`}
             buttons={[
                 <Button
@@ -38,13 +33,13 @@ const RecoverDataConfirmModal = ({ open, onClose }: Props) => {
                         setDismissing(true);
                         await setDismissedRecoverDataCard(true);
                         setDismissing(false);
-                        onClose();
+                        props.onClose?.();
                     }}
                     loading={dismissing}
                 >
                     {c('Action').t`Don't show again`}
                 </Button>,
-                <Button onClick={() => onClose()}>{c('Action').t`Cancel`}</Button>,
+                <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
             <p>
