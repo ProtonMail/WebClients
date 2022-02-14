@@ -4,7 +4,15 @@ import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { toggleEnable, deleteFilter } from '@proton/shared/lib/api/filters';
 
-import { Alert, Toggle, DropdownActions, ConfirmModal, OrderableTableRow, Button } from '../../components';
+import {
+    Alert,
+    Toggle,
+    DropdownActions,
+    ConfirmModal,
+    OrderableTableRow,
+    Button,
+    useModalState,
+} from '../../components';
 import { useApi, useModals, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 import FilterModal from './modal/FilterModal';
@@ -24,6 +32,8 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+
+    const [{ open: isFilterModalOpen, ...filterModalProps }, setFilterModalOpen] = useModalState();
 
     const { ID, Name, Status } = filter;
 
@@ -64,7 +74,7 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
         if (type === 'sieve') {
             createModal(<AdvancedFilterModal filter={filter} />);
         } else {
-            createModal(<FilterModal filter={filter} />);
+            setFilterModalOpen(true);
         }
     };
 
@@ -85,25 +95,28 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
     ].filter(isTruthy);
 
     return (
-        <OrderableTableRow
-            index={index}
-            cells={[
-                <div key="name" className="text-ellipsis max-w100" title={Name}>
-                    {Name}
-                </div>,
-                <div key="toggle" className="w10">
-                    <Toggle
-                        id={`item-${ID}`}
-                        loading={loading}
-                        checked={Status === FILTER_STATUS.ENABLED}
-                        onChange={(e) => withLoading(handleChangeStatus(e))}
-                    />
-                </div>,
-                <DropdownActions key="dropdown" size="small" list={list} />,
-            ]}
-            {...rest}
-            className="on-mobile-hide-td3"
-        />
+        <>
+            <OrderableTableRow
+                index={index}
+                cells={[
+                    <div key="name" className="text-ellipsis max-w100" title={Name}>
+                        {Name}
+                    </div>,
+                    <div key="toggle" className="w10">
+                        <Toggle
+                            id={`item-${ID}`}
+                            loading={loading}
+                            checked={Status === FILTER_STATUS.ENABLED}
+                            onChange={(e) => withLoading(handleChangeStatus(e))}
+                        />
+                    </div>,
+                    <DropdownActions key="dropdown" size="small" list={list} />,
+                ]}
+                {...rest}
+                className="on-mobile-hide-td3"
+            />
+            <FilterModal {...filterModalProps} filter={filter} isOpen={isFilterModalOpen} />
+        </>
     );
 }
 
