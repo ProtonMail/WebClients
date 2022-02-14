@@ -10,7 +10,20 @@ import { getMnemonicUserKeys, MnemonicKeyResponse } from '@proton/shared/lib/api
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { computeKeyPassword } from '@proton/srp';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
-import { FormModal, InputFieldTwo, Loader, PasswordInputTwo, Tabs, useFormErrors } from '../../../components';
+import {
+    Button,
+    Form,
+    InputFieldTwo,
+    Loader,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    PasswordInputTwo,
+    Tabs,
+    useFormErrors,
+} from '../../../components';
 import { KeyReactivationRequest, KeyReactivationRequestState, KeyReactivationRequestStateData } from './interface';
 import {
     useApi,
@@ -32,8 +45,7 @@ interface ReactivatedKeysState {
     numberOfFailedReactivatedKeys: number;
 }
 
-interface Props {
-    onClose?: () => void;
+interface Props extends ModalProps {
     userKeys: DecryptedKey[];
     keyReactivationRequests: KeyReactivationRequest[];
     onProcess: (keysToReactivate: KeyReactivationRecord[], onReactivation: OnKeyReactivationCallback) => Promise<void>;
@@ -41,7 +53,7 @@ interface Props {
 
 type TabId = 'phrase' | 'password' | 'file';
 
-const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onClose, ...rest }: Props) => {
+const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...rest }: Props) => {
     const api = useApi();
     const [user] = useUser();
 
@@ -271,119 +283,121 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
         createKeyReactivationNotification(reactivatedKeysState);
     };
 
+    const onSubmit = async () => {
+        if (!onFormSubmit()) {
+            return;
+        }
+
+        const submit = async () => {
+            if (tab === tabs.indexOf('phrase')) {
+                await onRecoveryPhraseSubmit();
+            } else if (tab === tabs.indexOf('password')) {
+                await onPasswordSubmit();
+            } else if (tab === tabs.indexOf('file')) {
+                await onFileSubmit();
+            }
+        };
+
+        await withIsSubmitting(submit());
+        rest.onClose?.();
+    };
+
     return (
-        <FormModal
-            title={c('Title').t`Recover data`}
-            close={c('Action').t`Cancel`}
-            submit={c('Action').t`Recover data`}
-            onClose={onClose}
-            onSubmit={async () => {
-                if (!onFormSubmit()) {
-                    return;
-                }
-
-                const submit = async () => {
-                    if (tab === tabs.indexOf('phrase')) {
-                        await onRecoveryPhraseSubmit();
-                    } else if (tab === tabs.indexOf('password')) {
-                        await onPasswordSubmit();
-                    } else if (tab === tabs.indexOf('file')) {
-                        await onFileSubmit();
-                    }
-                };
-
-                await withIsSubmitting(submit());
-                onClose?.();
-            }}
-            submitProps={{
-                loading: isSubmitting,
-                disabled: loading,
-            }}
-            intermediate
-            {...rest}
-        >
-            <p className="mt0">{c('Info')
-                .t`To decrypt and view your locked data after a password reset, select a recovery method.`}</p>
-            {loading ? (
-                <Loader />
-            ) : (
-                <>
-                    <Tabs
-                        value={tab}
-                        tabs={[
-                            showMnemonicTab
-                                ? {
-                                      // translator: 'Phrase' here refers to the 'Recovery phrase'
-                                      title: c('Label').t`Phrase`,
-                                      content: (
-                                          <>
-                                              <div className="mb1">{c('Info')
-                                                  .t`This is a 12-word phrase that you were prompted to set.`}</div>
-                                              <MnemonicInputField
-                                                  disableChange={isSubmitting}
-                                                  value={mnemonic}
-                                                  onValue={setMnemonic}
-                                                  autoFocus
-                                                  error={validator(
-                                                      tab === tabs.indexOf('phrase')
-                                                          ? [requiredValidator(mnemonic), ...mnemonicValidation]
-                                                          : []
-                                                  )}
-                                              />
-                                          </>
-                                      ),
-                                  }
-                                : undefined,
-                            {
-                                title: c('Label').t`Password`,
-                                content: (
-                                    <>
-                                        <div className="mb1">{c('Info')
-                                            .t`This is the password you used before the password reset.`}</div>
-                                        <InputFieldTwo
-                                            id="password"
-                                            label={c('Label').t`Previous password`}
-                                            as={PasswordInputTwo}
-                                            error={validator(
-                                                tab === tabs.indexOf('password') ? [requiredValidator(password)] : []
-                                            )}
-                                            value={password}
-                                            onValue={setPassword}
-                                            autoFocus
-                                            disabled={isSubmitting}
-                                        />
-                                    </>
-                                ),
-                            },
-                            {
-                                title: c('Label').t`File`,
-                                content: (
-                                    <>
-                                        <div className="mb1">{fileDescription}</div>
-                                        <RecoveryFileTabContent
-                                            recoverySecrets={recoverySecrets}
-                                            uploadedKeys={uploadedFileKeys}
-                                            setUploadedKeys={setUploadedFileKeys}
-                                            disabled={isSubmitting}
-                                            error={validator(
-                                                tab === tabs.indexOf('file')
-                                                    ? [
-                                                          requiredValidator(
-                                                              uploadedFileKeys.map((key) => key.getFingerprint()).join()
-                                                          ),
-                                                      ]
-                                                    : []
-                                            )}
-                                        />
-                                    </>
-                                ),
-                            },
-                        ].filter(isTruthy)}
-                        onChange={setTab}
-                    />
-                </>
-            )}
-        </FormModal>
+        <ModalTwo as={Form} onSubmit={onSubmit} size="medium" {...rest}>
+            <ModalTwoHeader title={c('Title').t`Recover data`} />
+            <ModalTwoContent>
+                <p className="mt0">{c('Info')
+                    .t`To decrypt and view your locked data after a password reset, select a recovery method.`}</p>
+                {loading ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <Tabs
+                            value={tab}
+                            tabs={[
+                                showMnemonicTab
+                                    ? {
+                                          // translator: 'Phrase' here refers to the 'Recovery phrase'
+                                          title: c('Label').t`Phrase`,
+                                          content: (
+                                              <>
+                                                  <div className="mb1">{c('Info')
+                                                      .t`This is a 12-word phrase that you were prompted to set.`}</div>
+                                                  <MnemonicInputField
+                                                      disableChange={isSubmitting}
+                                                      value={mnemonic}
+                                                      onValue={setMnemonic}
+                                                      autoFocus
+                                                      error={validator(
+                                                          tab === tabs.indexOf('phrase')
+                                                              ? [requiredValidator(mnemonic), ...mnemonicValidation]
+                                                              : []
+                                                      )}
+                                                  />
+                                              </>
+                                          ),
+                                      }
+                                    : undefined,
+                                {
+                                    title: c('Label').t`Password`,
+                                    content: (
+                                        <>
+                                            <div className="mb1">{c('Info')
+                                                .t`This is the password you used before the password reset.`}</div>
+                                            <InputFieldTwo
+                                                id="password"
+                                                label={c('Label').t`Previous password`}
+                                                as={PasswordInputTwo}
+                                                error={validator(
+                                                    tab === tabs.indexOf('password')
+                                                        ? [requiredValidator(password)]
+                                                        : []
+                                                )}
+                                                value={password}
+                                                onValue={setPassword}
+                                                autoFocus
+                                                disabled={isSubmitting}
+                                            />
+                                        </>
+                                    ),
+                                },
+                                {
+                                    title: c('Label').t`File`,
+                                    content: (
+                                        <>
+                                            <div className="mb1">{fileDescription}</div>
+                                            <RecoveryFileTabContent
+                                                recoverySecrets={recoverySecrets}
+                                                uploadedKeys={uploadedFileKeys}
+                                                setUploadedKeys={setUploadedFileKeys}
+                                                disabled={isSubmitting}
+                                                error={validator(
+                                                    tab === tabs.indexOf('file')
+                                                        ? [
+                                                              requiredValidator(
+                                                                  uploadedFileKeys
+                                                                      .map((key) => key.getFingerprint())
+                                                                      .join()
+                                                              ),
+                                                          ]
+                                                        : []
+                                                )}
+                                            />
+                                        </>
+                                    ),
+                                },
+                            ].filter(isTruthy)}
+                            onChange={setTab}
+                        />
+                    </>
+                )}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose} disabled={isSubmitting}>{c('Action').t`Cancel`}</Button>
+                <Button type="submit" color="norm" loading={isSubmitting} disabled={loading}>{c('Action')
+                    .t`Recover data`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
