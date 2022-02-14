@@ -1,7 +1,8 @@
-import { getKeys, OpenPGPKey } from 'pmcrypto';
+import { getKeys } from 'pmcrypto';
+import { KEY_FLAG, MIME_TYPES, RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { noop } from '../../helpers/function';
-import { Api, ApiKeysConfig } from '../../interfaces';
+import { Api, ApiKeysConfig, ProcessedApiKey, SignedKeyListEpochs } from '../../interfaces';
 
 import { getPublicKeys } from '../keys';
 
@@ -23,23 +24,36 @@ const getPublicKeysEmailHelper = async (
         if (noCache) {
             config.cache = 'no-cache';
         }
-        const { Keys = [], ...rest } = await api(config);
-        const publicKeys = (await Promise.all(
-            Keys.map(({ PublicKey }) => {
-                return getKeys(PublicKey)
-                    .then(([publicKey]) => publicKey)
-                    .catch(noop);
+        const { Keys = [], ...rest } = await api<{
+            RecipientType: RECIPIENT_TYPES;
+            MIMEType: MIME_TYPES;
+            Keys: { PublicKey: string; Flags: KEY_FLAG }[];
+            SignedKeyList: SignedKeyListEpochs[];
+            Warnings: string[];
+        }>(config);
+        const publicKeys: ProcessedApiKey[] = Keys.map(({ Flags, PublicKey }) => ({
+            armoredKey: PublicKey,
+            flags: Flags,
+        }));
+        await Promise.all(
+            publicKeys.map(async ({ armoredKey }, index) => {
+                try {
+                    const [key] = await getKeys(armoredKey);
+                    publicKeys[index].publicKey = key;
+                } catch {
+                    noop();
+                }
             })
-        )) as (OpenPGPKey | undefined)[];
+        );
+
         return {
             ...rest,
-            Keys,
             publicKeys,
         };
     } catch (error: any) {
         const { data = {} } = error;
         if (EMAIL_ERRORS.includes(data.Code)) {
-            return { Keys: [], publicKeys: [], Errors: [data.Error] };
+            return { publicKeys: [], Errors: [data.Error] };
         }
         throw error;
     }

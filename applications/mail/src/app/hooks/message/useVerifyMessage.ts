@@ -51,7 +51,7 @@ export const useVerifyMessage = (localID: string) => {
                     decryptedRawContent,
                     signature,
                     getData(),
-                    encryptionPreferences.pinnedKeys
+                    encryptionPreferences.verifyingPinnedKeys
                 );
 
                 attachedPublicKeys = await extractKeysFromAttachments(

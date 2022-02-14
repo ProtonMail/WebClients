@@ -14,7 +14,7 @@ import ContactKeysTable from './ContactKeysTable';
 
 interface Props {
     model: ContactPublicKeyModel;
-    setModel: Dispatch<SetStateAction<ContactPublicKeyModel>>;
+    setModel: Dispatch<SetStateAction<ContactPublicKeyModel | undefined>>;
     mailSettings?: MailSettings;
 }
 
