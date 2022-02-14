@@ -58,7 +58,6 @@ const ComposerMoreOptionsDropdown = ({
                         'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
                         className,
                     ])}
-                    tabIndex={-1}
                     title={title}
                     {...rest}
                 >
