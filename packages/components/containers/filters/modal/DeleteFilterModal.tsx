@@ -1,17 +1,26 @@
 import { c } from 'ttag';
 
-import { Alert, Button, Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import {
+    Alert,
+    Button,
+    Form,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '../../../components';
 
-interface Props {
+interface Props extends ModalProps {
     filterName: string;
     handleDelete: () => void;
-    isOpen?: boolean;
-    onClose?: () => void;
 }
 
-const DeleteFilterModal = ({ filterName, handleDelete, isOpen, onClose }: Props) => {
+const DeleteFilterModal = ({ filterName, handleDelete, ...rest }: Props) => {
+    const { onClose } = rest;
+
     return (
-        <ModalTwo onClose={onClose} open={isOpen} as={Form} onSubmit={handleDelete}>
+        <ModalTwo as={Form} onSubmit={handleDelete} {...rest}>
             <ModalTwoHeader title={c('Title').t`Delete ${filterName}`} />
             <ModalTwoContent>
                 <Alert className="mb1" type="info">{c('Info')

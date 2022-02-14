@@ -5,9 +5,8 @@ import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 
 function ActionsFilterToolbar() {
-    const [{ open: isFilterModalOpen, ...filterModalProps }, setFilterModalOpen] = useModalState();
-    const [{ open: isAdvancedFilterModalOpen, ...advancedFilterModalProps }, setAdvancedFilterModalOpen] =
-        useModalState();
+    const [filterModalProps, setFilterModalOpen] = useModalState();
+    const [advancedFilterModalProps, setAdvancedFilterModalOpen] = useModalState();
 
     return (
         <>
@@ -19,8 +18,8 @@ function ActionsFilterToolbar() {
                     {c('Action').t`Add sieve filter`}
                 </Button>
             </div>
-            <FilterModal {...filterModalProps} isOpen={isFilterModalOpen} />
-            <AdvancedFilterModal {...advancedFilterModalProps} isOpen={isAdvancedFilterModalOpen} />
+            <FilterModal {...filterModalProps} />
+            <AdvancedFilterModal {...advancedFilterModalProps} />
         </>
     );
 }
