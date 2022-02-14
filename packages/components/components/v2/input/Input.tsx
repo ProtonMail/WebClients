@@ -58,7 +58,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
         >
             {prefix && <div className="inputform-prefix pr0-5 flex">{prefix}</div>}
 
-            <div className={prefix || suffix ? 'flex-item-fluid' : undefined}>{inputElement}</div>
+            <div className="flex-item-fluid">{inputElement}</div>
 
             {icon && <span className="right-icon absolute flex">{icon}</span>}
 
