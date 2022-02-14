@@ -31,13 +31,6 @@ if ('chrome' in window) {
     registerMailToProtocolHandler();
 }
 
-if ('serviceWorker' in navigator) {
-    // Use the window load event to keep the page load performant
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').catch(() => console.log('no service worker found'));
-    });
-}
-
 const App = () => {
     const [hasInitialAuth] = useState(() => {
         return !window.location.pathname.startsWith(G_OAUTH_REDIRECT_PATH);
