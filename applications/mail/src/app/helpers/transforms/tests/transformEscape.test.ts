@@ -115,7 +115,6 @@ describe('transformEscape', () => {
         <div style="background: \\75r&#x6c;('https://TRACKING13/')">test13</div>
         <div style="background: \\75r&#x6c;('https://TRACKING14/')">test14</div>
     `;
-    // <div style="background: ur\\5C 6C(https://TRACKING15/); /* url( */">test15</div>
 
     const BACKGROUND_URL_SAFE = `
         <span>url('dewd')</span>
@@ -134,7 +133,12 @@ describe('transformEscape', () => {
     // Firefox support image-set :/
     // https://jira.protontech.ch/browse/MAILWEB-2993
     const BACKGROUND_IMAGE_SET = `
-        <div style='background: image-set("https://example.com/test-image-set-2.jpg");'>
+        <div style='background: image-set("https://TRACKING/");'>
+    `;
+
+    // That's a nasty one!
+    const BACKGROUND_DOUBLE_ESCAPING = `
+        <div style="background: ur\\\\5C\\\\6C(https://TRACKING/); /* url( */"></div>
     `;
 
     const setup = (content = DOM) => {
@@ -407,6 +411,13 @@ describe('transformEscape', () => {
         it('should escape image-set', () => {
             const { document } = setup(BACKGROUND_IMAGE_SET);
             expect(document.innerHTML).toMatch(/proton-/);
+        });
+    });
+
+    describe('Escape BACKGROUND_DOUBLE_ESCAPING', () => {
+        it('should escape double escaping', () => {
+            const { document } = setup(BACKGROUND_DOUBLE_ESCAPING);
+            expect(document.innerHTML).toMatch(/proton-url\(https/);
         });
     });
 });
