@@ -1,4 +1,4 @@
-import { useState, useMemo, FormEvent, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -6,7 +6,17 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
-import { FormModal, ConfirmModal, Alert, Loader, Button } from '../../../components';
+import {
+    ConfirmModal,
+    Alert,
+    Loader,
+    Button,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Form,
+} from '../../../components';
 import {
     useLoading,
     useLabels,
@@ -45,6 +55,7 @@ import { getDefaultFolders } from '../constants';
 
 interface Props {
     filter?: Filter;
+    isOpen?: boolean;
     onClose?: () => void;
 }
 
@@ -100,7 +111,7 @@ const modelHasChanged = (a: SimpleFilterModalModel, b: SimpleFilterModalModel): 
     return false;
 };
 
-const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
+const FilterModal = ({ filter, isOpen, onClose = noop }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [filters = []] = useFilters();
     const [labels = [], loadingLabels] = useLabels();
@@ -217,7 +228,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         onClose();
     };
 
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         let newModel = model;
 
         // Remove images from the composer in autoreply
@@ -300,14 +311,25 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     }, [loadingFolders, loadingLabels]);
 
     return (
-        <FormModal
-            title={title}
+        <ModalTwo
             onClose={handleClose}
-            loading={loading || loadingLabels || loadingFolders}
-            onSubmit={(event: FormEvent<HTMLFormElement>) => {
+            open={isOpen}
+            as={Form}
+            size="large"
+            onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
                 withLoading(handleSubmit(event));
             }}
-            footer={
+        >
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                <HeaderFilterModal
+                    model={model}
+                    errors={errors}
+                    onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
+                />
+                {loadingLabels || loadingFolders ? <Loader /> : renderStep()}
+            </ModalTwoContent>
+            <ModalTwoFooter>
                 <FooterFilterModal
                     model={model}
                     errors={errors}
@@ -315,16 +337,8 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                     onClose={handleClose}
                     loading={loading}
                 />
-            }
-            {...rest}
-        >
-            <HeaderFilterModal
-                model={model}
-                errors={errors}
-                onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
-            />
-            {loadingLabels || loadingFolders ? <Loader /> : renderStep()}
-        </FormModal>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
