@@ -37,7 +37,7 @@ enum PROMPT_KEY_PINNING_TYPE {
 }
 
 interface Params {
-    messageVerification: MessageVerification | undefined;
+    messageVerification: MessageVerification;
     mailSettings?: Partial<MailSettings>;
     addresses: Address[];
     senderAddress: string;
@@ -54,31 +54,35 @@ const getPromptKeyPinningType = ({
         return undefined;
     }
     const { PromptPin } = mailSettings;
-    const senderHasPinnedKeys = !!messageVerification?.senderPinnedKeys?.length;
-    const firstAttachedPublicKey = messageVerification?.attachedPublicKeys?.length
-        ? messageVerification.attachedPublicKeys[0]
-        : undefined;
+    const {
+        senderPinnedKeys = [],
+        senderPinnableKeys = [],
+        attachedPublicKeys = [],
+        signingPublicKey,
+        verificationStatus,
+    } = messageVerification;
+    const senderHasPinnedKeys = !!senderPinnedKeys.length;
+    const firstAttachedPublicKey = attachedPublicKeys.length ? attachedPublicKeys[0] : undefined;
     const isSignedByAttachedKey =
-        !!messageVerification?.signingPublicKey &&
-        messageVerification?.attachedPublicKeys
-            ?.map((key) => key.armor())
-            .includes(messageVerification.signingPublicKey?.armor());
+        !!signingPublicKey && attachedPublicKeys?.map((key) => key.armor()).includes(signingPublicKey?.armor());
     const isAttachedKeyPinned =
-        firstAttachedPublicKey &&
-        messageVerification?.senderPinnedKeys?.map((key) => key.armor()).includes(firstAttachedPublicKey.armor());
+        firstAttachedPublicKey && senderPinnedKeys.map((key) => key.armor()).includes(firstAttachedPublicKey.armor());
 
-    if (
-        messageVerification?.verificationStatus === SIGNED_AND_INVALID ||
-        messageVerification?.verificationStatus === NOT_VERIFIED
-    ) {
-        if (!messageVerification.signingPublicKey) {
+    if (verificationStatus === SIGNED_AND_INVALID || verificationStatus === NOT_VERIFIED) {
+        if (!signingPublicKey) {
             if (firstAttachedPublicKey) {
                 return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
             }
             return;
         }
+        const signingFingerprint = signingPublicKey.getFingerprint();
         if (senderHasPinnedKeys) {
-            return PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
+            if (senderPinnableKeys.find((key) => key.getFingerprint() === signingFingerprint)) {
+                // TODO: Exclude case where signature is invalid due to message modification (cf. OpenPGP.js v5)
+                return PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
+            } else {
+                return;
+            }
         }
         if (isSignedByAttachedKey) {
             return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED_SIGNING;
@@ -87,7 +91,7 @@ const getPromptKeyPinningType = ({
             return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
         }
     }
-    if (messageVerification?.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
+    if (verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
         if (!firstAttachedPublicKey || isAttachedKeyPinned) {
             return;
         }
@@ -111,8 +115,8 @@ const getBannerMessage = (promptKeyPinningType: PROMPT_KEY_PINNING_TYPE) => {
 };
 
 interface Props {
-    message: Message | undefined;
-    messageVerification: MessageVerification | undefined;
+    message: Message;
+    messageVerification: MessageVerification;
 }
 
 const ExtraPinKey = ({ message, messageVerification }: Props) => {
@@ -126,8 +130,8 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
 
     const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen] = useModalState();
 
-    const senderAddress = message?.Sender.Address;
-    const name = message?.Sender.Name;
+    const senderAddress = message.Sender.Address;
+    const name = message.Sender.Name;
     const isSenderInternal = isInternal(message);
     const messageContactID = message?.Sender.ContactID;
     const contactID = useMemo<string | undefined>(() => {

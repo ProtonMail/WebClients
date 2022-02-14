@@ -9,7 +9,7 @@ export enum ENCRYPTION_PREFERENCES_ERROR_TYPES {
     EMAIL_ADDRESS_ERROR,
     INTERNAL_USER_DISABLED,
     INTERNAL_USER_NO_API_KEY,
-    INTERNAL_USER_NO_VALID_API_KEY,
+    PRIMARY_CANNOT_SEND,
     PRIMARY_NOT_PINNED,
     WKD_USER_NO_VALID_WKD_KEY,
     EXTERNAL_USER_NO_VALID_PINNED_KEY,
@@ -35,6 +35,7 @@ export interface EncryptionPreferences {
     isSendKeyPinned?: boolean;
     apiKeys: OpenPGPKey[];
     pinnedKeys: OpenPGPKey[];
+    verifyingPinnedKeys: OpenPGPKey[];
     isInternal: boolean;
     hasApiKeys: boolean;
     hasPinnedKeys: boolean;
@@ -61,7 +62,7 @@ const extractEncryptionPreferencesOwnAddress = (
         emailAddressWarnings,
         emailAddressErrors,
     } = publicKeyModel;
-    const { address, publicKey } = selfSend;
+    const { address, publicKey, canSend } = selfSend;
     const hasApiKeys = !!address.HasKeys;
     const canAddressReceive = !!address.Receive;
     const result = {
@@ -72,6 +73,7 @@ const extractEncryptionPreferencesOwnAddress = (
         isInternal: true,
         apiKeys,
         pinnedKeys: [],
+        verifyingPinnedKeys: [],
         hasApiKeys,
         hasPinnedKeys: false,
         isContact,
@@ -104,12 +106,12 @@ const extractEncryptionPreferencesOwnAddress = (
             ),
         };
     }
-    if (!publicKey) {
+    if (!publicKey || !canSend) {
         return {
             ...result,
             error: new EncryptionPreferencesError(
-                ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_VALID_API_KEY,
-                c('Error').t`No valid keys retrieved for internal user`
+                ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_CANNOT_SEND,
+                c('Error').t`Primary key is not valid for sending`
             ),
         };
     }
@@ -121,7 +123,7 @@ const extractEncryptionPreferencesOwnAddress = (
 const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): EncryptionPreferences => {
     const {
         emailAddress,
-        publicKeys: { apiKeys, pinnedKeys },
+        publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
         scheme,
         mimeType,
         trustedFingerprints,
@@ -140,6 +142,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         mimeType,
         apiKeys,
         pinnedKeys,
+        verifyingPinnedKeys,
         isInternal: true,
         hasApiKeys,
         hasPinnedKeys,
@@ -176,13 +179,12 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
     // API keys are ordered in terms of user preference. The primary key (first in the list) will be used for sending
     const [primaryKey] = apiKeys;
     const primaryKeyFingerprint = primaryKey.getFingerprint();
-    const validApiSendKey = apiKeys.find((key) => getIsValidForSending(key.getFingerprint(), publicKeyModel));
-    if (!validApiSendKey) {
+    if (!getIsValidForSending(primaryKeyFingerprint, publicKeyModel)) {
         return {
             ...result,
             error: new EncryptionPreferencesError(
-                ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_VALID_API_KEY,
-                c('Error').t`No key retrieved for internal user is valid for sending`
+                ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_CANNOT_SEND,
+                c('Error').t`Primary key retrieved for internal user is valid for sending`
             ),
         };
     }
@@ -197,7 +199,6 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
     if (!isPrimaryTrustedAndValid || !sendKey) {
         return {
             ...result,
-            sendKey: validApiSendKey,
             error: new EncryptionPreferencesError(
                 ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED,
                 c('Error').t`Trusted keys are not valid for sending`
@@ -213,7 +214,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
 const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicKeyModel): EncryptionPreferences => {
     const {
         emailAddress,
-        publicKeys: { apiKeys, pinnedKeys },
+        publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
         scheme,
         mimeType,
         trustedFingerprints,
@@ -232,6 +233,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         mimeType,
         apiKeys,
         pinnedKeys,
+        verifyingPinnedKeys,
         isInternal: false,
         hasApiKeys,
         hasPinnedKeys,
@@ -296,7 +298,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
 const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: PublicKeyModel): EncryptionPreferences => {
     const {
         emailAddress,
-        publicKeys: { apiKeys, pinnedKeys },
+        publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
         encrypt,
         sign,
         scheme,
@@ -315,6 +317,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         scheme,
         apiKeys,
         pinnedKeys,
+        verifyingPinnedKeys,
         isInternal: false,
         hasApiKeys: false,
         hasPinnedKeys,

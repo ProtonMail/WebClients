@@ -1,3 +1,4 @@
+import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 import { Fragment, useState, useEffect, Dispatch, SetStateAction } from 'react';
 import { algorithmInfo, OpenPGPKey, isExpiredKey, isRevokedKey } from 'pmcrypto';
 import { isValid, format } from 'date-fns';
@@ -15,10 +16,10 @@ import { classnames } from '../../helpers';
 
 interface Props {
     model: ContactPublicKeyModel;
-    setModel: Dispatch<SetStateAction<ContactPublicKeyModel>>;
+    setModel: Dispatch<SetStateAction<ContactPublicKeyModel | undefined>>;
 }
 
-type LocaKeyModel = {
+type LocalKeyModel = {
     publicKey: OpenPGPKey;
     fingerprint: string;
     algo: string;
@@ -29,7 +30,8 @@ type LocaKeyModel = {
     isExpired: boolean;
     isRevoked: boolean;
     isTrusted: boolean;
-    isVerificationOnly: boolean;
+    isObsolete: boolean;
+    isCompromised: boolean;
     supportsEncryption: boolean;
     isUploaded: boolean;
     canBePrimary?: boolean;
@@ -38,9 +40,10 @@ type LocaKeyModel = {
 };
 
 const ContactKeysTable = ({ model, setModel }: Props) => {
-    const [keys, setKeys] = useState<LocaKeyModel[]>([]);
+    const [keys, setKeys] = useState<LocalKeyModel[]>([]);
     const { isNarrow, isTinyMobile } = useActiveBreakpoint();
 
+    const { emailAddress } = model;
     const totalApiKeys = model.publicKeys.apiKeys.length;
 
     /**
@@ -62,17 +65,23 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                 const isRevoked = await isRevokedKey(publicKey);
                 const isTrusted = model.trustedFingerprints.has(fingerprint);
                 const supportsEncryption = model.encryptionCapableFingerprints.has(fingerprint);
-                const isVerificationOnly = model.verifyOnlyFingerprints.has(fingerprint);
+                const isObsolete = model.obsoleteFingerprints.has(fingerprint);
+                const isCompromised = model.compromisedFingerprints.has(fingerprint);
                 const isPrimary =
-                    !index && supportsEncryption && !isVerificationOnly && (totalApiKeys ? true : model.encrypt);
+                    !index &&
+                    supportsEncryption &&
+                    !isObsolete &&
+                    !isCompromised &&
+                    (totalApiKeys ? true : model.encrypt);
                 const isWKD = model.isPGPExternal && index < totalApiKeys;
                 const isUploaded = index >= totalApiKeys;
                 const canBePrimary =
                     !!index &&
                     supportsEncryption &&
-                    !isVerificationOnly &&
+                    !isObsolete &&
+                    !isCompromised &&
                     (index < totalApiKeys ? isTrusted : !totalApiKeys && model.encrypt);
-                const canBeTrusted = !isTrusted && !isUploaded;
+                const canBeTrusted = !isTrusted && !isUploaded && !isCompromised;
                 const canBeUntrusted = isTrusted && !isUploaded;
                 return {
                     publicKey,
@@ -86,7 +95,8 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     isRevoked,
                     isTrusted,
                     supportsEncryption,
-                    isVerificationOnly,
+                    isObsolete,
+                    isCompromised,
                     isUploaded,
                     canBePrimary,
                     canBeTrusted,
@@ -145,7 +155,8 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         isRevoked,
                         isTrusted,
                         supportsEncryption,
-                        isVerificationOnly,
+                        isObsolete,
+                        isCompromised,
                         isUploaded,
                         canBePrimary,
                         canBeTrusted,
@@ -188,7 +199,14 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                             : model.publicKeys.pinnedKeys;
                                     setModel({
                                         ...model,
-                                        publicKeys: { apiKeys: reOrderedApiKeys, pinnedKeys: reOrderedPinnedKeys },
+                                        publicKeys: {
+                                            apiKeys: reOrderedApiKeys,
+                                            pinnedKeys: reOrderedPinnedKeys,
+                                            verifyingPinnedKeys: getVerifyingKeys(
+                                                reOrderedApiKeys,
+                                                model.compromisedFingerprints
+                                            ),
+                                        },
                                     });
                                 },
                             });
@@ -208,6 +226,10 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                             publicKeys: {
                                                 ...model.publicKeys,
                                                 pinnedKeys: [...model.publicKeys.pinnedKeys, trustedKey],
+                                                verifyingPinnedKeys: [
+                                                    ...model.publicKeys.verifyingPinnedKeys,
+                                                    trustedKey,
+                                                ],
                                             },
                                             trustedFingerprints,
                                         });
@@ -225,11 +247,15 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                     const pinnedKeys = model.publicKeys.pinnedKeys.filter(
                                         (key) => key.getFingerprint() !== fingerprint
                                     );
+                                    const verifyingPinnedKeys = model.publicKeys.verifyingPinnedKeys.filter(
+                                        (key) => key.getFingerprint() !== fingerprint
+                                    );
                                     setModel({
                                         ...model,
                                         publicKeys: {
                                             ...model.publicKeys,
                                             pinnedKeys,
+                                            verifyingPinnedKeys,
                                         },
                                         trustedFingerprints,
                                     });
@@ -251,6 +277,9 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                         publicKeys: {
                                             ...model.publicKeys,
                                             pinnedKeys: model.publicKeys.pinnedKeys.filter(
+                                                (publicKey) => publicKey.getFingerprint() !== fingerprint
+                                            ),
+                                            verifyingPinnedKeys: model.publicKeys.verifyingPinnedKeys.filter(
                                                 (publicKey) => publicKey.getFingerprint() !== fingerprint
                                             ),
                                         },
@@ -276,8 +305,25 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                             !isNarrow && algo,
                             <Fragment key={fingerprint}>
                                 {isPrimary ? <Badge type="primary">{c('Key badge').t`Primary`}</Badge> : null}
-                                {isVerificationOnly ? (
-                                    <Badge type="warning">{c('Key badge').t`Verification only`}</Badge>
+                                {isObsolete && !isCompromised ? (
+                                    <Badge
+                                        type="warning"
+                                        url="https://protonmail.com/support/knowledge-base/download-public-private-key/"
+                                        tooltip={c('PGP Key info')
+                                            .t`${emailAddress} has marked this key as obsolete. This key can only be used for signature verification`}
+                                    >
+                                        {c('Key badge').t`Obsolete`}
+                                    </Badge>
+                                ) : null}
+                                {isCompromised ? (
+                                    <Badge
+                                        type="error"
+                                        url="https://protonmail.com/support/knowledge-base/download-public-private-key/"
+                                        tooltip={c('PGP Key info')
+                                            .t`${emailAddress} has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification`}
+                                    >
+                                        {c('Key badge').t`Compromised`}
+                                    </Badge>
                                 ) : null}
                                 {isWKD ? <Badge type="origin">{c('Key badge').t`WKD`}</Badge> : null}
                                 {isTrusted ? <Badge type="success">{c('Key badge').t`Trusted`}</Badge> : null}
