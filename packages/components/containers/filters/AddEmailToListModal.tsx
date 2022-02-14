@@ -5,7 +5,19 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 import { BLACKLIST_LOCATION, WHITELIST_LOCATION } from '@proton/shared/lib/constants';
 
-import { FormModal, Radio, Row, Label, Field } from '../../components';
+import {
+    Radio,
+    Row,
+    Label,
+    Field,
+    ModalProps,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Form,
+    Button,
+} from '../../components';
 import { useNotifications, useApi, useLoading } from '../../hooks';
 
 import AddEmailToList from './spamlist/AddEmailToList';
@@ -14,14 +26,13 @@ import AddDomainToList from './spamlist/AddDomainToList';
 import { WHITE_OR_BLACK_LOCATION } from './interfaces';
 import { DOMAIN_MODE, EMAIL_MODE } from './constants';
 
-interface Props {
+interface Props extends ModalProps {
     type: WHITE_OR_BLACK_LOCATION;
     incomingDefault?: IncomingDefault;
-    onClose?: () => void;
     onAdd: (incomingDefault: IncomingDefault) => void;
 }
 
-function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose = noop, ...rest }: Props) {
+const AddEmailToListModal = ({ type, incomingDefault, onAdd = noop, ...rest }: Props) => {
     const I18N = {
         ADD: {
             [BLACKLIST_LOCATION]: c('Title').t`Add to Block List`,
@@ -41,6 +52,8 @@ function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose = no
     const [email, setEmail] = useState(Email || '');
     const [domain, setDomain] = useState(Domain || '');
 
+    const { onClose } = rest;
+
     const handleSubmit = async () => {
         const parameters = {
             Location: type,
@@ -55,44 +68,44 @@ function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose = no
             text: mode === EMAIL_MODE ? emailTxt : domainTxt,
         });
         onAdd(data);
-        onClose();
+        onClose?.();
     };
 
     return (
-        <FormModal
-            onSubmit={() => withLoading(handleSubmit())}
-            loading={loading}
-            title={ID ? I18N.EDIT[type] : I18N.ADD[type]}
-            submit={c('Action').t`Save`}
-            onClose={onClose}
-            {...rest}
-        >
-            <Row>
-                <Label>{c('Label').t`Want to add`}</Label>
-                <Field>
-                    <Radio
-                        id="email-mode"
-                        checked={mode === EMAIL_MODE}
-                        onChange={() => setMode(EMAIL_MODE)}
-                        className="mr1"
-                        name="filterMode"
-                    >
-                        {c('Label').t`Email`}
-                    </Radio>
-                    <Radio
-                        id="domain-mode"
-                        checked={mode === DOMAIN_MODE}
-                        onChange={() => setMode(DOMAIN_MODE)}
-                        name="filterMode"
-                    >
-                        {c('Label').t`Domain`}
-                    </Radio>
-                </Field>
-            </Row>
-            {mode === EMAIL_MODE ? <AddEmailToList email={email} onChange={setEmail} /> : null}
-            {mode === DOMAIN_MODE ? <AddDomainToList domain={domain} onChange={setDomain} /> : null}
-        </FormModal>
+        <ModalTwo size="large" as={Form} onSubmit={() => withLoading(handleSubmit())} {...rest}>
+            <ModalTwoHeader title={ID ? I18N.EDIT[type] : I18N.ADD[type]} />
+            <ModalTwoContent>
+                <Row>
+                    <Label>{c('Label').t`Want to add`}</Label>
+                    <Field>
+                        <Radio
+                            id="email-mode"
+                            checked={mode === EMAIL_MODE}
+                            onChange={() => setMode(EMAIL_MODE)}
+                            className="mr1"
+                            name="filterMode"
+                        >
+                            {c('Label').t`Email`}
+                        </Radio>
+                        <Radio
+                            id="domain-mode"
+                            checked={mode === DOMAIN_MODE}
+                            onChange={() => setMode(DOMAIN_MODE)}
+                            name="filterMode"
+                        >
+                            {c('Label').t`Domain`}
+                        </Radio>
+                    </Field>
+                </Row>
+                {mode === EMAIL_MODE ? <AddEmailToList email={email} onChange={setEmail} /> : null}
+                {mode === DOMAIN_MODE ? <AddDomainToList domain={domain} onChange={setDomain} /> : null}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" type="submit" loading={loading}>{c('Action').t`Save`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
-}
+};
 
 export default AddEmailToListModal;
