@@ -4,7 +4,16 @@ import { algorithmInfo } from 'pmcrypto';
 import { getAlgorithmExists } from '@proton/shared/lib/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
-import { Alert, FormModal } from '../../../components';
+import {
+    Alert,
+    Button,
+    Form,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '../../../components';
 
 import SelectEncryption from './SelectEncryption';
 
@@ -15,14 +24,13 @@ enum STEPS {
     SUCCESS = 4,
 }
 
-interface Props {
+interface Props extends ModalProps {
     type: 'user' | 'address';
-    onClose?: () => void;
     existingAlgorithms: algorithmInfo[];
     onAdd: (config: EncryptionConfig) => Promise<string>;
 }
 
-const AddKeyModal = ({ onClose, existingAlgorithms, type, onAdd, ...rest }: Props) => {
+const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
     const [step, setStep] = useState(STEPS.SELECT_ENCRYPTION);
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
     const [newKeyFingerprint, setNewKeyFingerprint] = useState<string>();
@@ -34,11 +42,11 @@ const AddKeyModal = ({ onClose, existingAlgorithms, type, onAdd, ...rest }: Prop
                 setStep(STEPS.SUCCESS);
             })
             .catch(() => {
-                onClose?.();
+                rest.onClose?.();
             });
     };
 
-    const { children, ...stepProps } = (() => {
+    const { children, onSubmit, submit, close, loading } = (() => {
         if (step === STEPS.SELECT_ENCRYPTION) {
             return {
                 onSubmit: () => {
@@ -51,6 +59,9 @@ const AddKeyModal = ({ onClose, existingAlgorithms, type, onAdd, ...rest }: Prop
                         handleProcess();
                     }
                 },
+                submit: c('Action').t`Continue`,
+                close: undefined,
+                loading: false,
                 children: (
                     <>
                         <Alert className="mb1">
@@ -71,6 +82,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, type, onAdd, ...rest }: Prop
                 },
                 close: c('Action').t`No`,
                 submit: c('Action').t`Continue`,
+                loading: false,
                 children: (
                     <Alert className="mb1" type="warning">
                         {type === 'user'
@@ -85,8 +97,10 @@ const AddKeyModal = ({ onClose, existingAlgorithms, type, onAdd, ...rest }: Prop
 
         if (step === STEPS.GENERATE_KEY) {
             return {
+                onSubmit: undefined,
                 loading: true,
                 submit: c('Action').t`Continue`,
+                close: undefined,
                 children: (
                     <Alert className="mb1">
                         {type === 'user'
@@ -103,7 +117,10 @@ const AddKeyModal = ({ onClose, existingAlgorithms, type, onAdd, ...rest }: Prop
         if (step === STEPS.SUCCESS) {
             const fp = <code key="0">{newKeyFingerprint}</code>;
             return {
+                onSubmit: undefined,
+                close: c('Action').t`Close`,
                 submit: null,
+                loading: false,
                 children: (
                     <Alert className="mb1">{c('Key generation')
                         .jt`Key with fingerprint ${fp} successfully created.`}</Alert>
@@ -115,16 +132,20 @@ const AddKeyModal = ({ onClose, existingAlgorithms, type, onAdd, ...rest }: Prop
     })();
 
     return (
-        <FormModal
-            title={c('Key generation').t`Generate key`}
-            close={c('Action').t`Close`}
-            onClose={onClose}
-            onSubmit={onClose}
-            {...stepProps}
-            {...rest}
-        >
-            {children}
-        </FormModal>
+        <ModalTwo as={Form} onSubmit={onSubmit} size="large" {...rest}>
+            <ModalTwoHeader title={c('Key generation').t`Generate key`} />
+            <ModalTwoContent>{children}</ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose} className={submit === null ? 'mlauto' : undefined}>
+                    {close || c('Action').t`Cancel`}
+                </Button>
+                {submit !== null && (
+                    <Button color="norm" type="submit" loading={loading}>
+                        {submit || c('Action').t`Save`}
+                    </Button>
+                )}
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

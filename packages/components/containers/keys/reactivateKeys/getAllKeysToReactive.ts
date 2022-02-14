@@ -14,11 +14,11 @@ export const getKeysToReactivateCount = (inactiveKeys: KeyReactivationRequest[])
 };
 
 export const getAllKeysReactivationRequests = (
-    addressesKeys: { address: Address; keys: DecryptedKey[] }[],
-    User: UserModel,
-    userKeys: DecryptedKey[]
+    addressesKeys: { address: Address; keys: DecryptedKey[] }[] | undefined,
+    User: UserModel | undefined,
+    userKeys: DecryptedKey[] | undefined
 ): KeyReactivationRequest[] => {
-    const allAddressesKeys = addressesKeys.map(({ address, keys }) => {
+    const allAddressesKeys = (addressesKeys || []).map(({ address, keys }) => {
         const inactiveAddressKeys = getKeysToReactivate(address.Keys, keys);
         if (!inactiveAddressKeys.length) {
             return;
@@ -30,14 +30,15 @@ export const getAllKeysReactivationRequests = (
         };
     });
 
-    const inactiveUserKeys = getKeysToReactivate(User.Keys, userKeys);
-    const userKeysReactivation = inactiveUserKeys.length
-        ? {
-              user: User,
-              keys: userKeys,
-              keysToReactivate: inactiveUserKeys,
-          }
-        : undefined;
+    const inactiveUserKeys = getKeysToReactivate(User?.Keys, userKeys);
+    const userKeysReactivation =
+        User && userKeys && inactiveUserKeys.length
+            ? {
+                  user: User,
+                  keys: userKeys,
+                  keysToReactivate: inactiveUserKeys,
+              }
+            : undefined;
 
     return [userKeysReactivation, ...allAddressesKeys].filter(isTruthy);
 };
