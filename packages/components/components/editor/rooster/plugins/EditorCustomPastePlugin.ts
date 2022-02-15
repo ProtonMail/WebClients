@@ -28,6 +28,15 @@ class EditorCustomPastePlugin implements EditorPlugin {
             return;
         }
 
+        event.sanitizingOption.additionalTagReplacements = {
+            // @ts-expect-error
+            INPUT: null,
+            // @ts-expect-error
+            TEXTAREA: null,
+            // @ts-expect-error
+            FORM: null,
+        };
+
         const isPlainTextContent =
             event.clipboardData.types.length === 1 && event.clipboardData.types[0] === 'text/plain';
         if (isPlainTextContent) {
@@ -48,7 +57,7 @@ class EditorCustomPastePlugin implements EditorPlugin {
         const fragment = event.fragment;
 
         // Paste text
-        event.clipboardData.text.split('\n').forEach((line, index, lines) => {
+        text.split('\n').forEach((line, index, lines) => {
             line = line
                 .replace(/^ /g, NBSP_HTML)
                 .replace(/\r/g, '')
