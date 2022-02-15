@@ -58,7 +58,12 @@ const GiftCodeSection = () => {
                     placeholder={c('Placeholder').t`Add gift code`}
                     onChange={handleChange}
                 />
-                <Button className="on-mobile-flex-align-self-start" color="norm" type="submit" loading={loading}>
+                <Button
+                    className="on-mobile-flex-align-self-start flex-item-noshrink"
+                    color="norm"
+                    type="submit"
+                    loading={loading}
+                >
                     {c('Action').t`Submit`}
                 </Button>
             </form>
