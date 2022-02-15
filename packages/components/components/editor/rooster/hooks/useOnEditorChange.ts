@@ -15,6 +15,7 @@ const TOOLBAR_EDITOR_EVENTS = [
     PluginEventType.MouseUp,
     PluginEventType.ContentChanged,
     PluginEventType.KeyUp,
+    PluginEventType.PendingFormatStateChanged,
 ];
 
 interface Props {
