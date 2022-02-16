@@ -347,7 +347,7 @@ export interface ESStatus<ESItem, ESSearchParameters> {
     isBuilding: boolean;
     isDBLimited: boolean;
     esEnabled: boolean;
-    esSupported: boolean; // Whether browser supports our search engine. By default true until we get error from browser.
+    esSupported: boolean;
     isRefreshing: boolean;
     isSearchPartial: boolean;
     isSearching: boolean;
@@ -361,6 +361,7 @@ export interface ESStatus<ESItem, ESSearchParameters> {
  * @var isBuilding whether indexing is ongoing
  * @var isDBLimited whether IndexedDB has fewer than the total amount of items
  * @var esEnabled whether ES is enabled (in case a fallback to server-side search exists)
+ * @var esSupported whether the browser supports our search engine. It's true by default until indexing fails to initialise IndexedDB
  * @var isRefreshing whether a refresh of IndexedDB (when correcting decryption errors) is ongoing
  * @var isSearchPartial whether the current search only has partial results. It happens when IndexedDB does not fit in cache
  * @var isSearching whether a search is ongoing
