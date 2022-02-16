@@ -1,7 +1,7 @@
 import { MailSettings, Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getMaxDepth } from '@proton/shared/lib/helpers/dom';
+import { checkContrast } from '@proton/shared/lib/helpers/dom';
 
 import { RefObject } from 'react';
 import { toText } from '../parserHtml';
@@ -108,10 +108,10 @@ export const querySelectorAll = (message: Partial<MessageState> | undefined, sel
 ];
 
 export const canSupportDarkStyle = (iframeRef: RefObject<HTMLIFrameElement>) => {
-    // const container = message.messageDocument?.document;
     const container = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_ROOT_ID);
+    const window = iframeRef.current?.contentWindow;
 
-    if (!container) {
+    if (!container || !window) {
         return false;
     }
 
@@ -137,24 +137,5 @@ export const canSupportDarkStyle = (iframeRef: RefObject<HTMLIFrameElement>) => 
         return true;
     }
 
-    const tableTag = container.querySelector('table');
-
-    // If the message contains a table, we assume that the message content is complex and not supporting dark mode
-    if (tableTag) {
-        return false;
-    }
-
-    const maxDepth = getMaxDepth(container);
-
-    // If the HTML content is deep, we assume that the message content is complex and not supporting dark mode
-    if (maxDepth > 15) {
-        return false;
-    }
-
-    // If the message is a newsletter, message content needs to be display as it has been decided by the sender, so no dark style injection
-    // if (isNewsLetter(message.data)) {
-    //     return false;
-    // }
-
-    return true;
+    return checkContrast(container, window);
 };

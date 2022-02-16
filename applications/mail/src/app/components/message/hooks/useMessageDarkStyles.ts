@@ -17,6 +17,11 @@ const useMessageDarkStyles = (
     const dispatch = useDispatch();
     const isDarkTheme = DARK_THEMES.includes(theme);
 
+    // HACK
+    if (!darkStylesFeature.loading && darkStylesFeature.feature) {
+        darkStylesFeature.feature.Value = true;
+    }
+
     const needCompute =
         darkStylesFeature.feature?.Value &&
         !message.messageDocument?.noDarkStyle &&
@@ -34,23 +39,6 @@ const useMessageDarkStyles = (
         }
         return { support: canSupportDarkStyle(iframeRef), loading: false };
     }, [needCompute, isIframeContentSet]);
-
-    // canSupportDarkStyle is costly, so we only call it when needed
-    // const injectDarkStyle = useMemo(() => {
-    //     return (
-    //         darkStylesFeature.feature?.Value &&
-    //         !message.messageDocument?.noDarkStyle &&
-    //         isDarkTheme &&
-    //         !isPlainText(message.data) &&
-    //         canSupportDarkStyle(iframeRef)
-    //     );
-    // }, [
-    //     darkStylesFeature.feature?.Value,
-    //     message.messageDocument?.noDarkStyle,
-    //     isDarkTheme,
-    //     message.data,
-    //     message.messageDocument?.document,
-    // ]);
 
     useEffect(() => {
         if (support) {

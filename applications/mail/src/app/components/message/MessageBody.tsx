@@ -102,19 +102,13 @@ const MessageBody = ({
         }
     }, [contentModeShow, content, highlightBody]);
 
-    console.log('MessageBody', {
-        placeholderMode,
-        contentMode,
-        contentModeShow,
-    });
-
     return (
         <div
             ref={bodyRef}
             className={classnames([
                 'message-content relative bg-norm color-norm',
                 plain && 'plain',
-                !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
+                !placeholderMode && !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
             ])}
             data-testid="message-content:body"
         >
