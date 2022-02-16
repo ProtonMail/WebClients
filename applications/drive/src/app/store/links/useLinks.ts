@@ -25,7 +25,7 @@ export default function useLinks() {
             return decryptLink(abortSignal, shareId, encrypted)
                 .then((decrypted) => ({ encrypted, decrypted }))
                 .catch((err) => {
-                    if (isIgnoredError(err)) {
+                    if (!isIgnoredError(err)) {
                         errors.push(err);
                     }
                 });

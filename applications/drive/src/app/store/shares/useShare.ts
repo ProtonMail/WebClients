@@ -3,6 +3,7 @@ import { OpenPGPKey, SessionKey, decryptPrivateKey } from 'pmcrypto';
 import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 
+import { useDebouncedFunction } from '../utils';
 import { useDebouncedRequest, shareMetaToShareWithKey } from '../api';
 import { useDriveCrypto } from '../crypto';
 import { Share, ShareWithKey } from './interface';
@@ -10,6 +11,7 @@ import useSharesKeys, { ShareKeys } from './useSharesKeys';
 import useSharesState from './useSharesState';
 
 export default function useShare() {
+    const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
     const driveCrypto = useDriveCrypto();
     const sharesKeys = useSharesKeys();
@@ -28,14 +30,20 @@ export default function useShare() {
      * listing user's shares and thus needs extra API call. Use wisely.
      */
     const getShareWithKey = async (abortSignal: AbortSignal, shareId: string): Promise<ShareWithKey> => {
-        const cachedShare = sharesState.getShare(shareId);
-        if (cachedShare && 'key' in cachedShare) {
-            return cachedShare;
-        }
+        return debouncedFunction(
+            async (abortSignal: AbortSignal) => {
+                const cachedShare = sharesState.getShare(shareId);
+                if (cachedShare && 'key' in cachedShare) {
+                    return cachedShare;
+                }
 
-        const share = await fetchShare(abortSignal, shareId);
-        sharesState.setShares([share]);
-        return share;
+                const share = await fetchShare(abortSignal, shareId);
+                sharesState.setShares([share]);
+                return share;
+            },
+            ['getShareWithKey', shareId],
+            abortSignal
+        );
     };
 
     /**
