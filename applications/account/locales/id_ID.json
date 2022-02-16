@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
@@ -325,9 +325,6 @@
       "Export": [
         "Ekspor"
       ],
-      "Export contacts": [
-        "Ekspor kontak"
-      ],
       "Export ICS": [
         "Ekspor ICS"
       ],
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "Buat frasa pemulihan baru"
-      ],
-      "Generate new recovery phrase?": [
-        "Buat frasa pemulihan baru?"
       ],
       "Generate recovery phrase": [
         "Buat frasa pemulihan"
@@ -661,9 +655,6 @@
       "Sign in": [
         "Masuk"
       ],
-      "Sign in again to continue": [
-        "Harap masuk kembali untuk melanjutkan"
-      ],
       "Sign out": [
         "Keluar"
       ],
@@ -744,9 +735,6 @@
       ],
       "Upgrade": [
         "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
       ],
       "Upgrade to Plus": [
         "Tingkatkan ke Plus"
@@ -1214,6 +1202,17 @@
         "Anda mencapai batas langganan maksimal ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalender."
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Label ditambahkan"
+      ],
+      "Label deleted": [
+        "Label diperbarui"
+      ],
+      "Label edited": [
+        "Label disunting"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Aktif"
@@ -1425,6 +1424,773 @@
         "${ monthsWithYears } bulan"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abkhazia"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Aljazair"
+      ],
+      "American Samoa": [
+        "Samoa Amerika"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antartika"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua dan Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Pulau Ascension"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaijan"
+      ],
+      "Bahamas": [
+        "Bahama"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belgia"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius dan Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia dan Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Pulau Bouvet"
+      ],
+      "Brazil": [
+        "Brazil"
+      ],
+      "British Indian Ocean Territory": [
+        "Teritori Samudera Hindia Inggris"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Myanmar"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kamboja"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Tanjung Verde"
+      ],
+      "Cayman Islands": [
+        "Kepulauan Cayman"
+      ],
+      "Central African Republic": [
+        "Republik Afrika Tengah"
+      ],
+      "Chad": [
+        "Chad"
+      ],
+      "Chile": [
+        "Cili"
+      ],
+      "China": [
+        "Tiongkok"
+      ],
+      "Christmas Island": [
+        "Pulau Christmas"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Kepulauan Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Kolombia"
+      ],
+      "Comoros": [
+        "Komoro"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Republik Demokratik Kongo"
+      ],
+      "Cook Islands": [
+        "Kepulauan Cook"
+      ],
+      "Costa Rica": [
+        "Kosta Rika"
+      ],
+      "Cote d'Ivoire\"": [
+        "Pantai Gading"
+      ],
+      "Croatia": [
+        "Kroasia"
+      ],
+      "Cuba": [
+        "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Siprus"
+      ],
+      "Czech Republic": [
+        "Republik Ceko"
+      ],
+      "Denmark": [
+        "Denmark"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Republik Dominika"
+      ],
+      "Ecuador": [
+        "Ekuador"
+      ],
+      "Egypt": [
+        "Mesir"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guinea Ekuatorial"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Ethiopia": [
+        "Ethiopia"
+      ],
+      "Falkland Islands": [
+        "Kepulauan Falkland"
+      ],
+      "Faroe Islands": [
+        "Kepulauan Faroe"
+      ],
+      "Federated States of Micronesia": [
+        "Federasi Mikronesia"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlandia"
+      ],
+      "France": [
+        "Perancis"
+      ],
+      "French Guiana": [
+        "Guyana Perancis"
+      ],
+      "French Polynesia": [
+        "Polinesia Perancis"
+      ],
+      "French Southern Territories": [
+        "Teritori Selatan Perancis"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Jerman"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Yunani"
+      ],
+      "Greenland": [
+        "Greenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Pulau Heard dan Kepulauan McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Takhta Suci (Negara-Kota Vatikan)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hungaria"
+      ],
+      "Iceland": [
+        "Islandia"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
+      "International": [
+        "Internasional"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irlandia"
+      ],
+      "Isle of Man": [
+        "Pulau Mann"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Jamaika"
+      ],
+      "Japan": [
+        "Jepang"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Yordania"
+      ],
+      "Kazakhstan": [
+        "Kazakhstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirgizstan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Latvia"
+      ],
+      "Lebanon": [
+        "Lebanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lithuania"
+      ],
+      "Luxembourg": [
+        "Luxembourg"
+      ],
+      "Macao": [
+        "Makau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Maladewa"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Kepulauan Marshall"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Meksiko"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Maroko"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Belanda"
+      ],
+      "New Caledonia": [
+        "Kaledonia Baru"
+      ],
+      "New Zealand": [
+        "Selandia Baru"
+      ],
+      "Nicaragua": [
+        "Nikaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Pulau Norfolk"
+      ],
+      "North Korea": [
+        "Korea Utara"
+      ],
+      "North Macedonia": [
+        "Makedonia Utara"
+      ],
+      "Northern Mariana Islands": [
+        "Kepulauan Mariana Utara"
+      ],
+      "Norway": [
+        "Norwegia"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Nugini"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipina"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polandia"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Riko"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Rusia"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts dan Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (Wilayah Perancis)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre dan Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent dan Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome dan Principe"
+      ],
+      "Saudi Arabia": [
+        "Arab Saudi"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapura"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Kepulauan Solomon"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Afrika Selatan"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia Selatan dan Kepulauan Sandwich Selatan"
+      ],
+      "South Korea": [
+        "Korea Selatan"
+      ],
+      "South Ossetia": [
+        "Ossetia Selatan"
+      ],
+      "South Sudan": [
+        "Sudan Selatan"
+      ],
+      "Spain": [
+        "Spanyol"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard dan Jan Mayen"
+      ],
+      "Swaziland": [
+        "Swaziland"
+      ],
+      "Sweden": [
+        "Swedia"
+      ],
+      "Switzerland": [
+        "Swiss"
+      ],
+      "Syria": [
+        "Suriah"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tajikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad dan Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turki"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Kepulauan Turks dan Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraina"
+      ],
+      "United Arab Emirates": [
+        "Uni Emirat Arab"
+      ],
+      "United Kingdom": [
+        "Britania Raya"
+      ],
+      "United States": [
+        "Amerika Serikat"
+      ],
+      "United States Minor Outlying Islands": [
+        "Pulau-Pulau Terluar Amerika Serikat"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Kepulauan Virgin, Britania"
+      ],
+      "Virgin Islands, U.S.": [
+        "Kepulauan Virgin, A.S."
+      ],
+      "Wallis and Futuna": [
+        "Wallis dan Futuna"
+      ],
+      "Western Sahara": [
+        "Sahara Barat"
+      ],
+      "Yemen": [
+        "Yaman"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Kepulauan Åland"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
@@ -1495,9 +2261,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dekripsi kontak memakan beberapa menit. Anda dapat mengunduh kontak yang diekspor setelah proses ini selesai."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mengenkripsi dan mengimpor kontak... Ini perlu beberapa menit. Jika proses sudah selesai, Anda dapat menutup jendela ini."
       ],
@@ -1718,9 +2481,6 @@
       "Condition incomplete": [
         "Kondisi tidak lengkap"
       ],
-      "Contact signature not verified": [
-        "Tanda tangan kontak tidak terverifikasi"
-      ],
       "Could not find address ${ email }.": [
         "Tidak dapat menemukan alamat ${ email }."
       ],
@@ -1823,9 +2583,6 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
       ],
-      "Missing signature": [
-        "Tanda tangan hilang"
-      ],
       "Name on card required": [
         "Wajib isi nama di kartu"
       ],
@@ -1921,9 +2678,6 @@
       ],
       "Require at least one condition": [
         "Perlu minimal satu kondisi"
-      ],
-      "Signature not verified": [
-        "Tanda tangan tidak terverifikasi"
       ],
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
@@ -2584,6 +3338,14 @@
       ],
       "Value / Data / Points to": [
         "Nilai / Data / Poin ke"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } saran ditemukan, silakan gunakan keyboard untuk menelaah saran-saran yang muncul."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Gunakan anak panah Atas dan Bawah untuk mengakses dan menjelajah saran-saran yang muncul dari hasil ketikan Anda. Tekan Enter untuk menentukan pilihan Anda, atau Escape untuk menutup kotak saran."
       ]
     },
     "Human verification method": {
@@ -3372,9 +4134,6 @@
       "Creating your Proton account": [
         "Membuat akun Proton Anda"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Anda dapat mengimpor berkas-berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas-berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Saat ini semua ruang penyimpanan yang tersedia dialokasikan ke akun administrator. Harap kurangi alokasi untuk memberi jatah ruang kosong kepada pengguna tambahan. Anda dapat meningkatkan total ruang penyimpanan Anda kapan saja dengan meningkatkan akun Anda."
       ],
@@ -3834,9 +4593,6 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
-      "No subscription yet": [
-        "Belum berlangganan"
-      ],
       "Normal": [
         "Normal"
       ],
@@ -4062,6 +4818,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Dikirim melalui layanan email aman <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "Server is currently down": [
         "Server sedang tidak aktif"
       ],
@@ -4116,9 +4875,6 @@
       "Thank you for supporting our mission.": [
         "Terima kasih telah mendukung misi kami."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
-      ],
       "The calendar will be removed from your account.": [
         "Kalender ini akan dihapus dari akun Anda."
       ],
@@ -4130,9 +4886,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "Nama akan terlihat pada pengguna Anda ketika mereka masuk."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Rincian tagihan tidak tersedia untuk paket yang Anda langgan saat ini."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda memilih server ProtonVPN mana yang ingin Anda sambungkan saat menggunakan aplikasi VPN pihak ketiga atau menyiapkan koneksi VPN di router."
@@ -4287,9 +5040,6 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Tingkatkan akun Anda ke ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] }, atau ${ PLAN_NAMES[PLANS.PLUS] } agar Anda dapat membalas email-email yang masuk secara otomatis di kala Anda sedang tidak berada di kantor."
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Tingkatkan ke paket berbayar untuk mengakses fitur-fitur premium dan meningkatkan ruang penyimpanan Anda."
-      ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat memanfaatkan dukungan IMAP/SMTP melalui ProtonMail Bridge."
       ],
@@ -4310,9 +5060,6 @@
       ],
       "Users": [
         "Pengguna"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Pengguna tidak bisa mengubah pengaturan organisasi. Jika Anda butuh akses admin, hubungi administrator sistem Anda."
       ],
       "Verification can take a few minutes.": [
         "Verifikasi berlangsung beberapa menit."
@@ -5045,9 +5792,6 @@
       ],
       "Auto-load embedded images": [
         "Muat gambar-gambar yang tersemat secara otomatis"
-      ],
-      "Automatically save contacts": [
-        "Simpan kontak secara otomatis"
       ],
       "Block email tracking": [
         "Blokir program pelacak email"
@@ -5872,6 +6616,9 @@
       "Go to subscription plans": [
         "Pergi ke paket langganan"
       ],
+      "How to unlock data": [
+        "Bagaimana cara membuka kunci data"
+      ],
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
@@ -5910,14 +6657,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Apa bedanya protokol UDP dan TCP?"
+      ],
+      "Why set recovery methods?": [
+        "Mengapa mengatur metode pemulihan?"
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } dari ${ calendarsToBeCreated } telah terbuat"
-      ],
       "Almost there": [
         "Hampir selesai"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Jumlah kalender yang terbuat: ${ createdCalendars } dari ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
@@ -6277,9 +7027,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Kembali ke Kalender"
-      ],
-      "Back to Contacts": [
-        "Kembali ke Kontak"
       ],
       "Back to Drive": [
         "Kembali ke Drive"
@@ -6746,6 +7493,9 @@
       "Proton username": [
         "Nama pengguna Proton"
       ],
+      "Search settings": [
+        "Pengaturan pencarian"
+      ],
       "Search users": [
         "Cari pengguna"
       ],
@@ -6900,14 +7650,6 @@
         "pribadi"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } dari ${ countContacts } kontak telah diekspor."
-      ],
-      "No contacts exported.": [
-        "Tidak ada kontak yang diekspor."
-      ]
-    },
     "Property type": {
       "Address": [
         "Alamat"
@@ -6938,6 +7680,47 @@
       ],
       "Work": [
         "Kantor"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "Kembali ke ${ signIn }."
+      ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Email address has been verified.": [
+        "Alamat email telah diverifikasi."
+      ],
+      "Email address not yet verified.": [
+        "Alamat email belum diverifikasi."
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Mohon ${ signIn } untuk dapat mengirimkan ulang email verifikasi."
+      ],
+      "Send verification email": [
+        "Kirim email verifikasi"
+      ],
+      "There was a problem verifying your email address.": [
+        "Terdapat masalah dalam memverifikasi alamat email Anda."
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Email verifikasi telah dikirim ke ${ email.Value }"
+      ],
+      "Verify now": [
+        "Verifikasi"
+      ],
+      "Verify recovery email?": [
+        "Verifikasi alamat email pemulihan?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Memverifikasi alamat email akan memungkinkan Anda untuk meningkatkan keamanan akun dan menambah metode pemulihan akun."
+      ],
+      "You can safely close this tab.": [
+        "Anda kini dapat menutup tab ini."
+      ],
+      "Your recovery email has been successfully verified.": [
+        "Alamat email pemulihan Anda telah berhasil diverifikasi."
       ]
     },
     "Recovery method": {
@@ -7004,59 +7787,8 @@
       "Account": [
         "Akun"
       ],
-      "Appearance": [
-        "Tampilan"
-      ],
-      "Auto reply": [
-        "Balasan otomatis"
-      ],
-      "Backup and export": [
-        "Backup dan ekspor"
-      ],
-      "Calendars": [
-        "Kalender"
-      ],
-      "Domain names": [
-        "Nama domain"
-      ],
-      "Email privacy": [
-        "Privasi email"
-      ],
-      "Encryption and keys": [
-        "Enkripsi dan kunci"
-      ],
-      "Filters": [
-        "Filter"
-      ],
-      "Folders and labels": [
-        "Folder dan label"
-      ],
-      "General": [
-        "Umum"
-      ],
-      "Identity and addresses": [
-        "Identitas dan alamat"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "Impor & ekspor"
-      ],
-      "Multi-user support": [
-        "Dukungan multi-pengguna"
-      ],
       "Organization": [
         "Organisasi"
-      ],
-      "Organization and keys": [
-        "Organisasi dan kunci"
-      ],
-      "Users and addresses": [
-        "Pengguna dan alamat"
-      ],
-      "VPN apps": [
-        "Aplikasi VPN"
       ]
     },
     "Settings update growler warning": {
@@ -7658,9 +8390,6 @@
       "Contact encryption keys": [
         "Kunci-kunci enkripsi kontak"
       ],
-      "Contacts": [
-        "Kontak"
-      ],
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
       ],
@@ -7817,9 +8546,6 @@
       "Error": [
         "Kesalahan"
       ],
-      "Export": [
-        "Ekspor"
-      ],
       "Export calendar": [
         "Ekspor kalender"
       ],
@@ -7828,9 +8554,6 @@
       ],
       "Export public key": [
         "Ekspor kunci publik"
-      ],
-      "Exporting contacts": [
-        "Mengekspor kontak"
       ],
       "External PGP settings": [
         "Pengaturan PGP eksternal"
@@ -7853,6 +8576,9 @@
       "Generate missing keys": [
         "Buat kunci yang hilang"
       ],
+      "Generate new recovery phrase?": [
+        "Buat frasa pemulihan baru?"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Dapatkan ProtonVPN Plus untuk mengakses semua server"
       ],
@@ -7870,9 +8596,6 @@
       ],
       "Import": [
         "Impor"
-      ],
-      "Import & export": [
-        "Impor & ekspor"
       ],
       "Import as simple event?": [
         "Impor sebagai acara sederhana?"
@@ -8123,9 +8846,6 @@
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
       ],
-      "Sorry, you can't access this page": [
-        "Maaf, Anda tidak dapat mengakses halaman ini"
-      ],
       "Sort folders alphabetically": [
         "Urut folder sesuai abjad"
       ],
@@ -8134,9 +8854,6 @@
       ],
       "Spam filters": [
         "Filter spam"
-      ],
-      "Spy Tracker Protection": [
-        "Perlindungan Pelacak"
       ],
       "Start a new import": [
         "Mulai impor baru"
@@ -8191,9 +8908,6 @@
       ],
       "Unsupported browser": [
         "Peramban tidak didukung"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
       ],
       "Username": [
         "Nama pengguna"
@@ -8387,6 +9101,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Tentukan bagaimana daftar pesan Anda akan tertata secara bawaan."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Atur ukuran popup composer standar sebagai layar kecil atau layar penuh."
       ],
@@ -8440,9 +9157,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Ketika Anda mengklik sebuah tautan, fitur anti-phishing ini akan meminta Anda untuk mengkonfirmasi alamat URL dari halaman web yang bersangkutan."
-      ],
-      "You do not have any contacts to export": [
-        "Anda tidak memiliki kontak untuk diekspor"
       ],
       "You have locally decrypted this key": [
         "Anda mendekripsi kunci ini secara lokal"
