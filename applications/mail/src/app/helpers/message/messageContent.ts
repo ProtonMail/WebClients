@@ -1,13 +1,15 @@
 import { MailSettings, Address, UserSettings } from '@proton/shared/lib/interfaces';
-import { isPlainText, isNewsLetter } from '@proton/shared/lib/mail/messages';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getMaxDepth } from '@proton/shared/lib/helpers/dom';
 
+import { RefObject } from 'react';
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';
 import { textToHtml } from '../textToHtml';
 import { parseInDiv } from '../dom';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
 
 export const getPlainTextContent = (message: PartialMessageState) => {
     return message.messageDocument?.plainText || '';
@@ -105,8 +107,9 @@ export const querySelectorAll = (message: Partial<MessageState> | undefined, sel
     ...((message?.messageDocument?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
 ];
 
-export const canSupportDarkStyle = (message: MessageState) => {
-    const container = message.messageDocument?.document;
+export const canSupportDarkStyle = (iframeRef: RefObject<HTMLIFrameElement>) => {
+    // const container = message.messageDocument?.document;
+    const container = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_ROOT_ID);
 
     if (!container) {
         return false;
@@ -149,9 +152,9 @@ export const canSupportDarkStyle = (message: MessageState) => {
     }
 
     // If the message is a newsletter, message content needs to be display as it has been decided by the sender, so no dark style injection
-    if (isNewsLetter(message.data)) {
-        return false;
-    }
+    // if (isNewsLetter(message.data)) {
+    //     return false;
+    // }
 
     return true;
 };

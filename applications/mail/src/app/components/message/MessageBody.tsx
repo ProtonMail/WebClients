@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
@@ -47,6 +47,7 @@ const MessageBody = ({
 }: Props) => {
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const bodyRef = useRef<HTMLDivElement>(null);
+    const iframeRef = useRef<HTMLIFrameElement>(null);
     const [theme] = useTheme();
     const isDarkTheme = DARK_THEMES.includes(theme);
     const { highlightString, getESDBStatus } = useEncryptedSearchContext();
@@ -55,7 +56,11 @@ const MessageBody = ({
     const { dbExists, esEnabled } = getESDBStatus();
     const highlightBody = highlightKeywords && dbExists && esEnabled;
     const plain = isPlainText(message.data);
-    const hasDarkStyles = useMessageDarkStyles(message);
+    const { support: hasDarkStyles, loading: hasDarkStylesLoading } = useMessageDarkStyles(
+        message,
+        isIframeContentSet,
+        iframeRef
+    );
     const [content, blockquote] = useMemo(
         () =>
             plain
@@ -69,6 +74,8 @@ const MessageBody = ({
     const decryptingMode = !encryptedMode && !sourceMode && !bodyLoaded && messageLoaded;
     const loadingMode = !messageLoaded;
     const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
+    const contentModeShow = contentMode && isIframeContentSet && !hasDarkStylesLoading;
+    const placeholderMode = loadingMode || decryptingMode || !contentModeShow;
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
     const showBlockquote = forceBlockquote || originalMessageMode;
@@ -84,22 +91,22 @@ const MessageBody = ({
         }
     }, [loadingMode, decryptingMode, message.data?.ID]);
 
-    const onContentLoadedCallback = useCallback(
-        (iframeRootElement) => {
-            setIsIframeContentSet(true);
-            if (!!content && highlightBody) {
-                const el = iframeRootElement.querySelector('[data-auto-scroll]') as HTMLElement;
-                scrollIntoView(el, { block: 'center', behavior: 'smooth' });
-            }
-        },
-        [content, highlightBody]
-    );
+    const handleContentLoaded = () => {
+        setIsIframeContentSet(true);
+    };
 
     useEffect(() => {
-        if (encryptedMode) {
-            setIsIframeContentSet(true);
+        if (contentModeShow && !!content && highlightBody) {
+            const el = iframeRef.current?.querySelector('[data-auto-scroll]') as HTMLElement;
+            scrollIntoView(el, { block: 'center', behavior: 'smooth' });
         }
-    }, [encryptedMode]);
+    }, [contentModeShow, content, highlightBody]);
+
+    console.log('MessageBody', {
+        placeholderMode,
+        contentMode,
+        contentModeShow,
+    });
 
     return (
         <div
@@ -113,7 +120,7 @@ const MessageBody = ({
         >
             {encryptedMode && <pre className="m0 p1">{message.data?.Body}</pre>}
             {sourceMode && <pre className="m0 p1">{message.decryption?.decryptedBody}</pre>}
-            {(loadingMode || decryptingMode || !isIframeContentSet) && (
+            {placeholderMode && (
                 <div className="bg-norm color-norm p1">
                     <div className="message-content-loading-placeholder mb0-25 max-w8e" />
                     <div className="message-content-loading-placeholder mb0-25 max-w50e" />
@@ -127,17 +134,18 @@ const MessageBody = ({
                 <div
                     className={classnames([
                         'message-iframe',
-                        !isIframeContentSet && 'message-iframe--hidden',
+                        !contentModeShow && 'message-iframe--hidden',
                         !isPrint && isIframeContentSet && 'p1',
                     ])}
                 >
                     <MessageBodyIframe
+                        iframeRef={iframeRef}
                         content={highlightedContent}
                         blockquoteContent={highlightedBlockquote}
                         showBlockquoteToggle={showButton}
                         showBlockquote={showBlockquote}
                         onBlockquoteToggle={toggleOriginalMessage}
-                        onContentLoaded={onContentLoadedCallback}
+                        onContentLoaded={handleContentLoaded}
                         isPlainText={plain}
                         hasDarkStyles={hasDarkStyles}
                         isPrint={isPrint}
