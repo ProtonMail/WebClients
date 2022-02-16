@@ -31,10 +31,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ Name }@pm.me": [
@@ -293,7 +293,7 @@
         "下載所有組態設定"
       ],
       "Download recovery file": [
-        "下載還原檔案"
+        "下載帳戶救援檔案"
       ],
       "Download the Import-Export app": [
         "下載 Import-Export 應用程式"
@@ -325,9 +325,6 @@
       "Export": [
         "匯出"
       ],
-      "Export contacts": [
-        "匯出聯絡人"
-      ],
       "Export ICS": [
         "匯出 ICS"
       ],
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "生成新的還原短語"
-      ],
-      "Generate new recovery phrase?": [
-        "生成新的還原短語?"
       ],
       "Generate recovery phrase": [
         "生成還原短語"
@@ -661,9 +655,6 @@
       "Sign in": [
         "登入"
       ],
-      "Sign in again to continue": [
-        "請重新登入以繼續"
-      ],
       "Sign out": [
         "登出"
       ],
@@ -745,9 +736,6 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade now": [
-        "立即升級"
-      ],
       "Upgrade to Plus": [
         "升級至 Plus"
       ],
@@ -797,13 +785,13 @@
         "查看帳單"
       ],
       "Void all recovery files": [
-        "捨棄所有復原的檔案"
+        "廢止所有帳戶救援檔案"
       ],
       "Void all recovery files?": [
-        "捨棄所有還原的檔案嗎？"
+        "要廢止所有帳戶救援檔案嗎？"
       ],
       "Void anyway": [
-        "全部捨棄"
+        "仍然廢止"
       ],
       "Warning": [
         "警告"
@@ -1214,6 +1202,17 @@
         "您已達到 ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } 個訂閱行事曆的最大數量。"
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "已新增標籤"
+      ],
+      "Label deleted": [
+        "已刪除標籤"
+      ],
+      "Label edited": [
+        "已編輯標籤"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "啟用"
@@ -1425,6 +1424,773 @@
         "${ monthsWithYears } 個月"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "阿布哈茲"
+      ],
+      "Afghanistan": [
+        "阿富汗"
+      ],
+      "Albania": [
+        "阿爾巴尼亞"
+      ],
+      "Algeria": [
+        "阿爾及利亞"
+      ],
+      "American Samoa": [
+        "美屬薩摩亞"
+      ],
+      "Andorra": [
+        "安道爾"
+      ],
+      "Angola": [
+        "安哥拉"
+      ],
+      "Anguilla": [
+        "安圭拉"
+      ],
+      "Antarctica": [
+        "南極洲"
+      ],
+      "Antigua and Barbuda": [
+        "安提瓜和巴布達"
+      ],
+      "Argentina": [
+        "阿根廷"
+      ],
+      "Armenia": [
+        "亞美尼亞"
+      ],
+      "Aruba": [
+        "阿路巴"
+      ],
+      "Ascension Island": [
+        "亞森欣島"
+      ],
+      "Australia": [
+        "澳大利亞"
+      ],
+      "Austria": [
+        "奧地利"
+      ],
+      "Azerbaijan": [
+        "亞塞拜然"
+      ],
+      "Bahamas": [
+        "巴哈馬"
+      ],
+      "Bahrain": [
+        "巴林"
+      ],
+      "Bangladesh": [
+        "孟加拉"
+      ],
+      "Barbados": [
+        "巴貝多"
+      ],
+      "Belarus": [
+        "白俄羅斯"
+      ],
+      "Belgium": [
+        "比利時"
+      ],
+      "Belize": [
+        "貝里斯"
+      ],
+      "Benin": [
+        "貝南"
+      ],
+      "Bermuda": [
+        "百慕達"
+      ],
+      "Bhutan": [
+        "不丹"
+      ],
+      "Bolivia": [
+        "玻利維亞"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "博內爾島、聖尤斯特歇斯島和薩巴島"
+      ],
+      "Bosnia and Herzegovina": [
+        "波希尼亞及赫塞哥維那"
+      ],
+      "Botswana": [
+        "布維島"
+      ],
+      "Bouvet Island": [
+        "布維島"
+      ],
+      "Brazil": [
+        "巴西"
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        "汶萊"
+      ],
+      "Bulgaria": [
+        "保加利亞"
+      ],
+      "Burkina Faso": [
+        "有吉納法索"
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        "蒲隆地"
+      ],
+      "Cambodia": [
+        "柬埔寨"
+      ],
+      "Cameroon": [
+        "喀麥隆"
+      ],
+      "Canada": [
+        "加拿大"
+      ],
+      "Cape Verde": [
+        "維德角島"
+      ],
+      "Cayman Islands": [
+        "開曼群島"
+      ],
+      "Central African Republic": [
+        "中非共和國"
+      ],
+      "Chad": [
+        "查德"
+      ],
+      "Chile": [
+        "智利"
+      ],
+      "China": [
+        "中國大陸"
+      ],
+      "Christmas Island": [
+        "聖誕島"
+      ],
+      "Cocos (Keeling) Islands": [
+        "科科斯(基林)群島"
+      ],
+      "Colombia": [
+        "哥倫比亞"
+      ],
+      "Comoros": [
+        "科摩羅"
+      ],
+      "Congo": [
+        "剛果"
+      ],
+      "Congo, Democratic Republic of the": [
+        "剛果民主共和國"
+      ],
+      "Cook Islands": [
+        "科克群島"
+      ],
+      "Costa Rica": [
+        "哥斯大黎加"
+      ],
+      "Cote d'Ivoire\"": [
+        "象牙海岸"
+      ],
+      "Croatia": [
+        "克羅埃西亞"
+      ],
+      "Cuba": [
+        "古巴"
+      ],
+      "Curaçao": [
+        "庫拉索"
+      ],
+      "Cyprus": [
+        "塞浦路斯"
+      ],
+      "Czech Republic": [
+        "捷克"
+      ],
+      "Denmark": [
+        "丹麥"
+      ],
+      "Djibouti": [
+        "吉布提"
+      ],
+      "Dominica": [
+        "多米尼克"
+      ],
+      "Dominican Republic": [
+        "多明尼加"
+      ],
+      "Ecuador": [
+        "厄瓜多爾"
+      ],
+      "Egypt": [
+        "埃及"
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        "幾內亞"
+      ],
+      "Eritrea": [
+        "厄利垂亞"
+      ],
+      "Estonia": [
+        "愛沙尼亞"
+      ],
+      "Ethiopia": [
+        "衣索匹亞"
+      ],
+      "Falkland Islands": [
+        "福克蘭群島"
+      ],
+      "Faroe Islands": [
+        "法羅群島"
+      ],
+      "Federated States of Micronesia": [
+        "密克羅尼西亞聯邦"
+      ],
+      "Fiji": [
+        "斐濟"
+      ],
+      "Finland": [
+        "芬蘭"
+      ],
+      "France": [
+        "法國"
+      ],
+      "French Guiana": [
+        "法屬圭亞那"
+      ],
+      "French Polynesia": [
+        "法屬玻里尼西亞"
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        "加彭"
+      ],
+      "Gambia": [
+        "岡比亞"
+      ],
+      "Georgia": [
+        "喬治亞"
+      ],
+      "Germany": [
+        "德國"
+      ],
+      "Ghana": [
+        "迦納"
+      ],
+      "Gibraltar": [
+        "直布羅陀"
+      ],
+      "Greece": [
+        "希臘"
+      ],
+      "Greenland": [
+        "格陵蘭"
+      ],
+      "Grenada": [
+        "格瑞那達"
+      ],
+      "Guadeloupe": [
+        "瓜德羅普"
+      ],
+      "Guam": [
+        ""
+      ],
+      "Guatemala": [
+        "瓜地馬拉"
+      ],
+      "Guernsey": [
+        "根西島"
+      ],
+      "Guinea": [
+        "幾內亞"
+      ],
+      "Guinea-Bissau": [
+        "幾內亞、幾內亞比紹"
+      ],
+      "Guyana": [
+        "蓋亞那"
+      ],
+      "Haiti": [
+        "海地"
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        "宏都拉斯"
+      ],
+      "Hong Kong": [
+        "香港"
+      ],
+      "Hungary": [
+        "匈牙利"
+      ],
+      "Iceland": [
+        "冰島"
+      ],
+      "India": [
+        "印度"
+      ],
+      "Indonesia": [
+        "印尼"
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        "依朗"
+      ],
+      "Iraq": [
+        "伊拉克"
+      ],
+      "Ireland": [
+        "愛爾蘭"
+      ],
+      "Isle of Man": [
+        ""
+      ],
+      "Israel": [
+        "以色列"
+      ],
+      "Italy": [
+        "義大利"
+      ],
+      "Jamaica": [
+        "牙買加"
+      ],
+      "Japan": [
+        "日本"
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        ""
+      ],
+      "Kazakhstan": [
+        "哈薩克"
+      ],
+      "Kenya": [
+        "肯亞"
+      ],
+      "Kiribati": [
+        "基里巴斯共和國"
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        "科威特"
+      ],
+      "Kyrgyzstan": [
+        "吉爾吉斯斯坦"
+      ],
+      "Laos": [
+        "寮國"
+      ],
+      "Latvia": [
+        "拉脫維亞"
+      ],
+      "Lebanon": [
+        "黎巴嫩"
+      ],
+      "Lesotho": [
+        "賴索托"
+      ],
+      "Liberia": [
+        "賴比瑞亞"
+      ],
+      "Libya": [
+        "利比亞"
+      ],
+      "Liechtenstein": [
+        "列支敦士登"
+      ],
+      "Lithuania": [
+        "立陶宛語"
+      ],
+      "Luxembourg": [
+        "盧森堡"
+      ],
+      "Macao": [
+        "澳門"
+      ],
+      "Madagascar": [
+        "馬達加斯加"
+      ],
+      "Malawi": [
+        "馬拉威"
+      ],
+      "Malaysia": [
+        "馬來西亞"
+      ],
+      "Maldives": [
+        "馬爾地夫"
+      ],
+      "Mali": [
+        "馬利"
+      ],
+      "Malta": [
+        "馬爾他"
+      ],
+      "Marshall Islands": [
+        "馬紹爾群島"
+      ],
+      "Martinique": [
+        ""
+      ],
+      "Mauritania": [
+        "茅利塔尼亞"
+      ],
+      "Mauritius": [
+        "模里西斯"
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        "墨西哥"
+      ],
+      "Moldova": [
+        "摩爾多瓦"
+      ],
+      "Monaco": [
+        "摩納哥"
+      ],
+      "Mongolia": [
+        "蒙古"
+      ],
+      "Montenegro": [
+        ""
+      ],
+      "Montserrat": [
+        ""
+      ],
+      "Morocco": [
+        "摩洛哥"
+      ],
+      "Mozambique": [
+        "莫三鼻克"
+      ],
+      "Namibia": [
+        "納米比亞"
+      ],
+      "Nauru": [
+        "諾魯"
+      ],
+      "Nepal": [
+        "尼泊爾"
+      ],
+      "Netherlands": [
+        "荷蘭"
+      ],
+      "New Caledonia": [
+        "新喀里多尼亞"
+      ],
+      "New Zealand": [
+        "紐西蘭"
+      ],
+      "Nicaragua": [
+        "尼加拉瓜"
+      ],
+      "Niger": [
+        "尼日"
+      ],
+      "Nigeria": [
+        "奈及利亞"
+      ],
+      "Niue": [
+        ""
+      ],
+      "Norfolk Island": [
+        ""
+      ],
+      "North Korea": [
+        "北韓"
+      ],
+      "North Macedonia": [
+        ""
+      ],
+      "Northern Mariana Islands": [
+        ""
+      ],
+      "Norway": [
+        "挪威"
+      ],
+      "Oman": [
+        "阿曼"
+      ],
+      "Pakistan": [
+        "巴基斯坦"
+      ],
+      "Palau": [
+        "帕勞"
+      ],
+      "Palestine": [
+        ""
+      ],
+      "Panama": [
+        "巴拿馬"
+      ],
+      "Papua New Guinea": [
+        "巴布亞紐幾內亞"
+      ],
+      "Paraguay": [
+        "巴拉圭"
+      ],
+      "Peru": [
+        "秘魯"
+      ],
+      "Philippines": [
+        "菲律賓"
+      ],
+      "Pitcairn": [
+        ""
+      ],
+      "Poland": [
+        "波蘭"
+      ],
+      "Portugal": [
+        "葡萄牙"
+      ],
+      "Puerto Rico": [
+        ""
+      ],
+      "Qatar": [
+        "卡達"
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        "羅馬尼亞"
+      ],
+      "Russia": [
+        ""
+      ],
+      "Rwanda": [
+        ""
+      ],
+      "Saint Barthélemy": [
+        "聖巴泰勒米"
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        ""
+      ],
+      "Saint Lucia": [
+        "聖露西亞"
+      ],
+      "Saint Martin (French Part)": [
+        ""
+      ],
+      "Saint Pierre and Miquelon": [
+        ""
+      ],
+      "Saint Vincent and the Grenadines": [
+        "聖文森及格瑞那丁"
+      ],
+      "Samoa": [
+        "薩摩亞"
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        ""
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        ""
+      ],
+      "Seychelles": [
+        ""
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        ""
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        "南非"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        "南韓"
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        "西班牙"
+      ],
+      "Sri Lanka": [
+        ""
+      ],
+      "Sudan": [
+        ""
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        ""
+      ],
+      "Switzerland": [
+        "瑞士"
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        "台灣"
+      ],
+      "Tajikistan": [
+        "塔吉克斯坦"
+      ],
+      "Tanzania": [
+        "坦尚尼亞"
+      ],
+      "Thailand": [
+        "泰國"
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        "多哥"
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        "東加王國"
+      ],
+      "Trinidad and Tobago": [
+        "特立尼達和多巴哥"
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        "突尼西亞"
+      ],
+      "Turkey": [
+        "土耳其"
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        "吐瓦魯"
+      ],
+      "Uganda": [
+        "烏干達"
+      ],
+      "Ukraine": [
+        "烏克蘭"
+      ],
+      "United Arab Emirates": [
+        "阿拉伯聯合酋長國"
+      ],
+      "United Kingdom": [
+        "英國"
+      ],
+      "United States": [
+        "美國"
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        "烏拉圭"
+      ],
+      "Uzbekistan": [
+        "烏茲別克斯坦"
+      ],
+      "Vanuatu": [
+        "瓦努阿圖"
+      ],
+      "Venezuela": [
+        "委內瑞拉"
+      ],
+      "Vietnam": [
+        "越南"
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        "西薩摩亞"
+      ],
+      "Yemen": [
+        "葉門"
+      ],
+      "Zambia": [
+        "尚比亞"
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        "奧蘭群島"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(中轉 ${ entryCountryName })"
@@ -1495,9 +2261,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "正在解密聯絡人... 這可能需時數分鐘。當過程完成時，您就能下載一個包含所有您匯出聯絡人的檔案。"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 這可能需時數分鐘。當過程完成時，您可以關閉此方塊。"
       ],
@@ -1718,9 +2481,6 @@
       "Condition incomplete": [
         "條件不完整"
       ],
-      "Contact signature not verified": [
-        "聯絡人簽章未驗證"
-      ],
       "Could not find address ${ email }.": [
         "找不到地址 ${ email } 。"
       ],
@@ -1823,9 +2583,6 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "請至少將 ${ calendarToFixCount } 個行事曆與現存的 Proton calendar 合併"
       ],
-      "Missing signature": [
-        "簽章遺失"
-      ],
       "Name on card required": [
         "持卡人姓名必須填寫"
       ],
@@ -1922,9 +2679,6 @@
       "Require at least one condition": [
         "必須有至少一個條件"
       ],
-      "Signature not verified": [
-        "簽章未驗證"
-      ],
       "Signature verification failed": [
         "簽章驗證失敗"
       ],
@@ -1953,10 +2707,10 @@
         "資料夾名稱太長。請換另一個名稱。"
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "在您恢復檔案內的金鑰無法通過驗證。請聯繫我們。"
+        "在您帳戶救援檔案內的金鑰無法通過驗證。請聯繫我們。"
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "在您恢復檔案內的金鑰無法通過驗證。請上傳更多個人資料。"
+        "在您帳戶救援檔案內的金鑰無法通過驗證。請逐一上傳更多資訊。"
       ],
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請換另一個名稱。"
@@ -2586,6 +3340,14 @@
         "數值 / 資料 / 指向"
       ]
     },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        ""
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        ""
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA 驗證碼"
@@ -3121,7 +3883,7 @@
         "每一個人都該可使用免費而不受審查的網際網路。"
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        "復原檔案讓你夠在重設帳戶後解密你的資料。 "
+        "帳戶救援檔案讓你夠在重設帳戶後解密你的資料。 "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "如果您忘記密碼，復原短語將讓您可以存取您的帳號並復原您的加密訊息。"
@@ -3136,7 +3898,7 @@
         "由於有帳單未付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
       "account recovery and data recovery method": [
-        "帳戶復原與資料復原方法"
+        "復原帳戶與資料的手段"
       ],
       "account recovery method": [
         "帳戶復原方法"
@@ -3372,9 +4134,6 @@
       "Creating your Proton account": [
         "正在建立您的 Proton 帳號"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora或其他軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 (UTF-8 編碼) 都可以支援。"
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "目前所有可用的儲存空間已分配給系統管理員帳號。請減少系統管理員帳號的分配，以釋出空間給額外的使用者。您可隨時升級您的帳號，以增加總儲存空間。"
       ],
@@ -3439,7 +4198,7 @@
         "降級將中斷任何與付費 ProtonVPN 伺服器的連線。"
       ],
       "Download recovery file": [
-        "下載還原檔案"
+        "下載帳戶救援檔案"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
@@ -3601,7 +4360,7 @@
         "若你遺失您的登入資訊且需要重設您的帳戶， ${ boldImperative } 擁有一個 ${ boldAccountRecovery } 可供使用。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "若你遺失登入帳戶所需的資訊且需要重設你的帳戶， ${ boldImperative } 後你將會有 ${ boldAccountAndRecovery } 可用，不然你將可能會無法存取你的任何郵件、聯絡人或檔案。"
+        "若你遺失登入帳戶所需的資訊且需要重設你的帳戶。 ${ boldImperative } ：你需要準備 ${ boldAccountAndRecovery } ，不然你將可能會無法存取你的任何郵件、聯絡人或檔案。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "如果您遺失了您的兩步驟驗證裝置，這些代碼可以用來代替 6 位數的兩步驟驗證代碼來登入您的帳號。每個代碼都只能使用一次。"
@@ -3700,7 +4459,7 @@
         "您的部份資料似乎已被加密並鎖定。這可能是因為最近或先前的密碼重設。我們建議您使用資料還原方法來解鎖您的資料。"
       ],
       "it’s imperative": [
-        "您需要"
+        "有件至關重要的事"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選取，我們就會處理餘下一切。"
@@ -3834,9 +4593,6 @@
       "No results found": [
         "查無結果"
       ],
-      "No subscription yet": [
-        "未有任何訂閱"
-      ],
       "Normal": [
         "內文"
       ],
@@ -3880,7 +4636,7 @@
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "救援檔案已過時，更新以確保您可以存取您的資料"
+        "帳戶救援檔案已過時，更新以確保您可以存取您的資料"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
         "救援手段已過時，更新以確保您可以存取您的資料"
@@ -4009,10 +4765,10 @@
         "先閱讀我們的兩步驟驗證指南"
       ],
       "Recovery file downloaded": [
-        "已下載還原檔案"
+        "已下載帳戶救援金鑰"
       ],
       "Recovery files have been voided": [
-        "復原檔案已被作廢"
+        "帳戶救援金鑰已被作廢"
       ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
@@ -4061,6 +4817,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
+      ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "使用 <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 寄發安全電郵。"
       ],
       "Server is currently down": [
         "伺服器目前離線中"
@@ -4116,9 +4875,6 @@
       "Thank you for supporting our mission.": [
         "感謝您支持我們的使命。"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
-      ],
       "The calendar will be removed from your account.": [
         "該日曆將會從您的帳號中移除。"
       ],
@@ -4130,9 +4886,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "您的使用者登入後，將可看到此名稱。"
-      ],
-      "There are no billing details available for your current subscription.": [
-        "您目前的方案沒有可用的帳單詳情。"
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "這些組態設定檔讓您選擇在使用第三方 VPN 應用程式或在路由器上設立 VPN 連線時，您要連線到哪一個 ProtonVPN 伺服器。"
@@ -4156,7 +4909,7 @@
         "此一 12字短語是你過去被要求設定的。"
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        "這是您先前可能儲存的還原檔案或加密金鑰。"
+        "這是您先前可能儲存的帳戶救援檔案或加密金鑰。"
       ],
       "This is an encryption key you may have previously saved.": [
         "這是您先前可能儲存的加密金鑰。"
@@ -4213,10 +4966,10 @@
         "繼續使用 ${ toAppName }"
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        "為解密您的郵件與其他資料，需要救援檔案"
+        "為解密您的郵件與其他資料，需要帳戶救援檔案"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "為解密您的郵件與其他資料，需要救援短語或是檔案"
+        "為解密您的郵件與其他資料，需要救援短語或是帳戶救援檔案"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "為解密您的郵件與其他資料，需要救援短語"
@@ -4276,7 +5029,7 @@
         "不支援的檔案"
       ],
       "Update recovery file": [
-        "更新還原檔案"
+        "更新帳戶救援檔案"
       ],
       "Update recovery phrase": [
         "更新還原短語"
@@ -4286,9 +5039,6 @@
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "請升級至 ${ PLAN_NAMES[PLANS.VISIONARY] }，${ PLAN_NAMES[PLANS.PROFESSIONAL] }或${ PLAN_NAMES[PLANS.PLUS] }方案，以啟用[不在辦公室]自動回覆。"
-      ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "升級至付費方案以使用 Premium 功能並增加儲存空間。"
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "升級至付費方案以透過 ProtonMail Bridge 解鎖 IMAP/SMTP 支援。"
@@ -4310,9 +5060,6 @@
       ],
       "Users": [
         "使用者"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "使用者無法變更組織設定。如需系統管理員權限，請聯絡您的系統管理員。"
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -4492,7 +5239,7 @@
         "即將重新導向到 PayPal 驗證您的付款。"
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "在你使用下載的復原檔案重設你的帳戶後，將會無法還原已加密的檔案。"
+        "在你重設帳戶後，你將無法使用先前下載的帳戶救援金鑰復原你的帳戶。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
@@ -5046,9 +5793,6 @@
       "Auto-load embedded images": [
         "自動載入嵌入圖片"
       ],
-      "Automatically save contacts": [
-        "自動儲存聯絡人"
-      ],
       "Block email tracking": [
         "封鎖郵件追蹤"
       ],
@@ -5512,7 +6256,7 @@
         "備援電子郵件地址"
       ],
       "Recovery file": [
-        "復原檔案"
+        "帳戶救援檔案"
       ],
       "Recovery phone number": [
         "備援電話號碼"
@@ -5626,10 +6370,10 @@
         "取消傳送"
       ],
       "Upload 1 or more encryption keys": [
-        "上傳一個以上的加密金鑰"
+        "上傳一個或以上的加密金鑰"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "上傳一個以上的復原檔案或是加密金鑰"
+        "上傳一個或更多的帳戶救援檔案或是加密金鑰"
       ],
       "URL": [
         "網址"
@@ -5872,6 +6616,9 @@
       "Go to subscription plans": [
         "前往訂閱方案"
       ],
+      "How to unlock data": [
+        "如何解鎖資料"
+      ],
       "Learn more": [
         "瞭解更多"
       ],
@@ -5910,14 +6657,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP 與 TCP 通訊協定有何分別？"
+      ],
+      "Why set recovery methods?": [
+        ""
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } / ${ calendarsToBeCreated } 已建立"
-      ],
       "Almost there": [
         "全在這裡了"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "連結到您的電子郵件提供者"
@@ -6277,9 +7027,6 @@
     "Navigation": {
       "Back to Calendar": [
         "返回行事曆"
-      ],
-      "Back to Contacts": [
-        "返回通訊錄"
       ],
       "Back to Drive": [
         "返回 Drive"
@@ -6746,6 +7493,9 @@
       "Proton username": [
         "Proton 使用者名稱"
       ],
+      "Search settings": [
+        "搜尋設定"
+      ],
       "Search users": [
         "搜尋使用者"
       ],
@@ -6900,14 +7650,6 @@
         "私密"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts } 個聯絡人之中，有 ${ contactsExported.length } 個已成功匯出。"
-      ],
-      "No contacts exported.": [
-        "沒有匯出任何聯絡人。"
-      ]
-    },
     "Property type": {
       "Address": [
         "地址"
@@ -6938,6 +7680,47 @@
       ],
       "Work": [
         "工作"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "回到 ${ signIn }。"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Email address has been verified.": [
+        "電子郵件地址已驗證。"
+      ],
+      "Email address not yet verified.": [
+        "電子郵件地址尚未驗證。"
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "請 ${ signIn } 以重新傳送還原電子郵件驗證請求。"
+      ],
+      "Send verification email": [
+        "傳送驗證電子郵件"
+      ],
+      "There was a problem verifying your email address.": [
+        "驗證您的電子郵件地址時發生問題。"
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "驗證電子郵件已傳送至 ${ email.Value }"
+      ],
+      "Verify now": [
+        "立刻驗證"
+      ],
+      "Verify recovery email?": [
+        "驗證還原電子郵件？"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "驗證您的電子郵件地址可以增加您帳號的安全性，並提供了額外的還原選項。"
+      ],
+      "You can safely close this tab.": [
+        "您可以安全地關閉此分頁。"
+      ],
+      "Your recovery email has been successfully verified.": [
+        "您的還原電子郵件已成功驗證。"
       ]
     },
     "Recovery method": {
@@ -6981,7 +7764,7 @@
         "瀏覽"
       ],
       "Upload": [
-        "上載"
+        "上傳"
       ],
       "Upload additional files": [
         "上傳額外的檔案"
@@ -7004,59 +7787,8 @@
       "Account": [
         "帳號"
       ],
-      "Appearance": [
-        "外觀"
-      ],
-      "Auto reply": [
-        "自動回覆"
-      ],
-      "Backup and export": [
-        "備份與匯出"
-      ],
-      "Calendars": [
-        "行事曆"
-      ],
-      "Domain names": [
-        "網域名稱"
-      ],
-      "Email privacy": [
-        "電子郵件隱私"
-      ],
-      "Encryption and keys": [
-        "加密與金鑰"
-      ],
-      "Filters": [
-        "篩選器"
-      ],
-      "Folders and labels": [
-        "資料夾與標籤"
-      ],
-      "General": [
-        "一般"
-      ],
-      "Identity and addresses": [
-        "身份與電子郵件地址"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "匯入與匯出"
-      ],
-      "Multi-user support": [
-        "支援多使用者"
-      ],
       "Organization": [
         "組織"
-      ],
-      "Organization and keys": [
-        "組織和金鑰"
-      ],
-      "Users and addresses": [
-        "使用者及電子郵件地址"
-      ],
-      "VPN apps": [
-        "VPN 應用程式"
       ]
     },
     "Settings update growler warning": {
@@ -7658,9 +8390,6 @@
       "Contact encryption keys": [
         "聯絡人加密金鑰"
       ],
-      "Contacts": [
-        "聯絡人"
-      ],
       "Continue with partial import?": [
         "繼續部分匯入？"
       ],
@@ -7797,7 +8526,7 @@
         "電子郵件"
       ],
       "Email composer": [
-        ""
+        "電子郵件編輯器"
       ],
       "Email encryption keys": [
         "電子郵件金鑰"
@@ -7817,9 +8546,6 @@
       "Error": [
         "錯誤"
       ],
-      "Export": [
-        "匯出"
-      ],
       "Export calendar": [
         "匯出行事曆"
       ],
@@ -7828,9 +8554,6 @@
       ],
       "Export public key": [
         "匯出公鑰"
-      ],
-      "Exporting contacts": [
-        "匯出聯絡人"
       ],
       "External PGP settings": [
         "外部 PGP 設定"
@@ -7853,6 +8576,9 @@
       "Generate missing keys": [
         "產生遺漏的金鑰"
       ],
+      "Generate new recovery phrase?": [
+        "產生新的還原短語？"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "取得 ProtonVPN Plus 以存取所有伺服器"
       ],
@@ -7870,9 +8596,6 @@
       ],
       "Import": [
         "匯入"
-      ],
-      "Import & export": [
-        "匯入與匯出"
       ],
       "Import as simple event?": [
         "匯入為基本活動？"
@@ -8034,7 +8757,7 @@
         "復原"
       ],
       "Recovery file": [
-        "復原檔案"
+        "帳戶救援檔案"
       ],
       "Remove calendar": [
         "移除日曆"
@@ -8123,9 +8846,6 @@
       "Sign in again to continue": [
         "請再次登入以繼續"
       ],
-      "Sorry, you can't access this page": [
-        "抱歉，您無法存取此頁面"
-      ],
       "Sort folders alphabetically": [
         "按英文字母排序資料夾"
       ],
@@ -8134,9 +8854,6 @@
       ],
       "Spam filters": [
         "垃圾郵件篩選器"
-      ],
-      "Spy Tracker Protection": [
-        "間諜追蹤程式保護"
       ],
       "Start a new import": [
         "開始新匯入"
@@ -8191,9 +8908,6 @@
       ],
       "Unsupported browser": [
         "不支援此瀏覽器"
-      ],
-      "Upgrade": [
-        "升級"
       ],
       "Username": [
         "使用者名稱"
@@ -8387,6 +9101,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "一按即可把您的網際網路流量繞經 Tor 網路。"
       ],
+      "Set how your list of messages looks like by default.": [
+        "設定電郵清單的預設外觀。"
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "設定預設撰寫器彈出大小為小還是全螢幕。"
       ],
@@ -8440,9 +9157,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "當您按下一則連結時，此防釣魚功能將詢問您以確認網頁的 URL。"
-      ],
-      "You do not have any contacts to export": [
-        "您未有任何聯絡人可以匯出"
       ],
       "You have locally decrypted this key": [
         "您已在本機解密此金鑰"
@@ -8757,7 +9471,7 @@
         "您在清單中將再也看不見此匯入記錄。"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "您的復原檔案已過時，若您再次重置您的帳戶，該復原檔案將無法還原新的資料。"
+        "您的帳戶救援檔案已過時，若您再次重置您的帳戶，該復原檔案將無法還原新的資料。"
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         "您的復原短語已過時，若您再次重置您的帳戶，該短語將無法還原新的資料。"

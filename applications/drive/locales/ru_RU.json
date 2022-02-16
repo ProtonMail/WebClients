@@ -449,6 +449,9 @@
       "Share file": [
         "Поделиться файлом"
       ],
+      "Share item": [
+        "Поделиться файлом"
+      ],
       "Share options": [
         "Параметры совместного доступа"
       ],
@@ -568,9 +571,6 @@
       ],
       "View invoice": [
         "Просмотр счета"
-      ],
-      "View more": [
-        "Показать больше"
       ],
       "Zoom in": [
         "Увеличить масштаб"
@@ -998,6 +998,773 @@
         "${ monthsWithYears } месяцев(а)"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Абхазия"
+      ],
+      "Afghanistan": [
+        "Афганистан"
+      ],
+      "Albania": [
+        "Албания"
+      ],
+      "Algeria": [
+        "Алжир"
+      ],
+      "American Samoa": [
+        "Американское Самоа"
+      ],
+      "Andorra": [
+        "Андорра"
+      ],
+      "Angola": [
+        "Ангола"
+      ],
+      "Anguilla": [
+        "Ангилья"
+      ],
+      "Antarctica": [
+        "Антарктида"
+      ],
+      "Antigua and Barbuda": [
+        "Антигуа и Барбуда"
+      ],
+      "Argentina": [
+        "Аргентина"
+      ],
+      "Armenia": [
+        "Армения"
+      ],
+      "Aruba": [
+        "Аруба"
+      ],
+      "Ascension Island": [
+        "Остров Вознесения"
+      ],
+      "Australia": [
+        "Австралия"
+      ],
+      "Austria": [
+        "Австрия"
+      ],
+      "Azerbaijan": [
+        "Азербайджан"
+      ],
+      "Bahamas": [
+        "Багамские острова"
+      ],
+      "Bahrain": [
+        "Бахрейн"
+      ],
+      "Bangladesh": [
+        "Бангладеш"
+      ],
+      "Barbados": [
+        "Барбадос"
+      ],
+      "Belarus": [
+        "Беларусь"
+      ],
+      "Belgium": [
+        "Бельгия"
+      ],
+      "Belize": [
+        "Белиз"
+      ],
+      "Benin": [
+        "Бенин"
+      ],
+      "Bermuda": [
+        "Бермуды"
+      ],
+      "Bhutan": [
+        "Бутан"
+      ],
+      "Bolivia": [
+        "Боливия"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Бонайре, Синт-Эстатиус и Саба"
+      ],
+      "Bosnia and Herzegovina": [
+        "Босния и Герцеговина"
+      ],
+      "Botswana": [
+        "Ботсвана"
+      ],
+      "Bouvet Island": [
+        "Остров Буве"
+      ],
+      "Brazil": [
+        "Бразилия"
+      ],
+      "British Indian Ocean Territory": [
+        "Британская территория в Индийском океане"
+      ],
+      "Brunei Darussalam": [
+        "Бруней-Даруссалам"
+      ],
+      "Bulgaria": [
+        "Болгария"
+      ],
+      "Burkina Faso": [
+        "Буркина-Фасо"
+      ],
+      "Burma": [
+        "Бирма"
+      ],
+      "Burundi": [
+        "Бурунди"
+      ],
+      "Cambodia": [
+        "Камбоджа"
+      ],
+      "Cameroon": [
+        "Камерун"
+      ],
+      "Canada": [
+        "Канада"
+      ],
+      "Cape Verde": [
+        "Острова Зеленого Мыса"
+      ],
+      "Cayman Islands": [
+        "Каймановы острова"
+      ],
+      "Central African Republic": [
+        "Центральноафриканская Республика"
+      ],
+      "Chad": [
+        "Чад"
+      ],
+      "Chile": [
+        "Чили"
+      ],
+      "China": [
+        "Китай"
+      ],
+      "Christmas Island": [
+        "Остров Рождества"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Кокосовые (Килинговые) острова"
+      ],
+      "Colombia": [
+        "Колумбия"
+      ],
+      "Comoros": [
+        "Коморские острова"
+      ],
+      "Congo": [
+        "Конго"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Демократическая Республика Конго"
+      ],
+      "Cook Islands": [
+        "Острова Кука"
+      ],
+      "Costa Rica": [
+        "Коста-Рика"
+      ],
+      "Cote d'Ivoire\"": [
+        "Берег Слоновой Кости"
+      ],
+      "Croatia": [
+        "Хорватия"
+      ],
+      "Cuba": [
+        "Куба"
+      ],
+      "Curaçao": [
+        "Кюрасао"
+      ],
+      "Cyprus": [
+        "Кипр"
+      ],
+      "Czech Republic": [
+        "Чешская Республика"
+      ],
+      "Denmark": [
+        "Дания"
+      ],
+      "Djibouti": [
+        "Джибути"
+      ],
+      "Dominica": [
+        "Доминика"
+      ],
+      "Dominican Republic": [
+        "Доминиканская Республика"
+      ],
+      "Ecuador": [
+        "Эквадор"
+      ],
+      "Egypt": [
+        "Египет"
+      ],
+      "El Salvador": [
+        "Сальвадор"
+      ],
+      "Equatorial Guinea": [
+        "Экваториальная Гвинея"
+      ],
+      "Eritrea": [
+        "Эритрея"
+      ],
+      "Estonia": [
+        "Эстония"
+      ],
+      "Ethiopia": [
+        "Эфиопия"
+      ],
+      "Falkland Islands": [
+        "Фолклендские острова"
+      ],
+      "Faroe Islands": [
+        "Фарерские острова"
+      ],
+      "Federated States of Micronesia": [
+        "Федеративные Штаты Микронезии"
+      ],
+      "Fiji": [
+        "Фиджи"
+      ],
+      "Finland": [
+        "Финляндия"
+      ],
+      "France": [
+        "Франция"
+      ],
+      "French Guiana": [
+        "Французская Гвиана"
+      ],
+      "French Polynesia": [
+        "Французская Полинезия"
+      ],
+      "French Southern Territories": [
+        "Французские Южные территории"
+      ],
+      "Gabon": [
+        "Габон"
+      ],
+      "Gambia": [
+        "Гамбия"
+      ],
+      "Georgia": [
+        "Грузия"
+      ],
+      "Germany": [
+        "Германия"
+      ],
+      "Ghana": [
+        "Гана"
+      ],
+      "Gibraltar": [
+        "Гибралтар"
+      ],
+      "Greece": [
+        "Греция"
+      ],
+      "Greenland": [
+        "Гренландия"
+      ],
+      "Grenada": [
+        "Гренада"
+      ],
+      "Guadeloupe": [
+        "Гваделупа"
+      ],
+      "Guam": [
+        "Гуам"
+      ],
+      "Guatemala": [
+        "Гватемала"
+      ],
+      "Guernsey": [
+        "Гернси"
+      ],
+      "Guinea": [
+        "Гвинея"
+      ],
+      "Guinea-Bissau": [
+        "Гвинея-Бисау"
+      ],
+      "Guyana": [
+        "Гайана"
+      ],
+      "Haiti": [
+        "Гаити"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Остров Херд и острова Макдональд"
+      ],
+      "Holy See (Vatican City State)": [
+        "Святой Престол (Государство-Город Ватикан)"
+      ],
+      "Honduras": [
+        "Гондурас"
+      ],
+      "Hong Kong": [
+        "Гонконг"
+      ],
+      "Hungary": [
+        "Венгрия"
+      ],
+      "Iceland": [
+        "Исландия"
+      ],
+      "India": [
+        "Индия"
+      ],
+      "Indonesia": [
+        "Индонезия"
+      ],
+      "International": [
+        "Международный"
+      ],
+      "Iran": [
+        "Иран"
+      ],
+      "Iraq": [
+        "Ирак"
+      ],
+      "Ireland": [
+        "Ирландия"
+      ],
+      "Isle of Man": [
+        "Остров Мэн"
+      ],
+      "Israel": [
+        "Израиль"
+      ],
+      "Italy": [
+        "Италия"
+      ],
+      "Jamaica": [
+        "Ямайка"
+      ],
+      "Japan": [
+        "Япония"
+      ],
+      "Jersey": [
+        "Джерси"
+      ],
+      "Jordan": [
+        "Иордания"
+      ],
+      "Kazakhstan": [
+        "Казахстан"
+      ],
+      "Kenya": [
+        "Кения"
+      ],
+      "Kiribati": [
+        "Кирибати"
+      ],
+      "Kosovo": [
+        "Косово"
+      ],
+      "Kuwait": [
+        "Кувейт"
+      ],
+      "Kyrgyzstan": [
+        "Кыргызстан"
+      ],
+      "Laos": [
+        "Лаос"
+      ],
+      "Latvia": [
+        "Латвия"
+      ],
+      "Lebanon": [
+        "Ливан"
+      ],
+      "Lesotho": [
+        "Лесото"
+      ],
+      "Liberia": [
+        "Либерия"
+      ],
+      "Libya": [
+        "Ливия"
+      ],
+      "Liechtenstein": [
+        "Лихтенштейн"
+      ],
+      "Lithuania": [
+        "Литва"
+      ],
+      "Luxembourg": [
+        "Люксембург"
+      ],
+      "Macao": [
+        "Макао"
+      ],
+      "Madagascar": [
+        "Мадагаскар"
+      ],
+      "Malawi": [
+        "Малави"
+      ],
+      "Malaysia": [
+        "Малайзия"
+      ],
+      "Maldives": [
+        "Мальдивы"
+      ],
+      "Mali": [
+        "Мали"
+      ],
+      "Malta": [
+        "Мальта"
+      ],
+      "Marshall Islands": [
+        "Маршалловы Острова"
+      ],
+      "Martinique": [
+        "Мартиника"
+      ],
+      "Mauritania": [
+        "Мавритания"
+      ],
+      "Mauritius": [
+        "Маврикий"
+      ],
+      "Mayotte": [
+        "Майотта"
+      ],
+      "Mexico": [
+        "Мексика"
+      ],
+      "Moldova": [
+        "Молдова"
+      ],
+      "Monaco": [
+        "Монако"
+      ],
+      "Mongolia": [
+        "Монголия"
+      ],
+      "Montenegro": [
+        "Черногория"
+      ],
+      "Montserrat": [
+        "Монтсеррат"
+      ],
+      "Morocco": [
+        "Марокко"
+      ],
+      "Mozambique": [
+        "Мозамбик"
+      ],
+      "Namibia": [
+        "Намибия"
+      ],
+      "Nauru": [
+        "Науру"
+      ],
+      "Nepal": [
+        "Непал"
+      ],
+      "Netherlands": [
+        "Нидерланды"
+      ],
+      "New Caledonia": [
+        "Новая Каледония"
+      ],
+      "New Zealand": [
+        "Новая Зеландия"
+      ],
+      "Nicaragua": [
+        "Никарагуа"
+      ],
+      "Niger": [
+        "Нигер"
+      ],
+      "Nigeria": [
+        "Нигерия"
+      ],
+      "Niue": [
+        "Ниуэ"
+      ],
+      "Norfolk Island": [
+        "Остров Норфолк"
+      ],
+      "North Korea": [
+        "Северная Корея"
+      ],
+      "North Macedonia": [
+        "Северная Македония"
+      ],
+      "Northern Mariana Islands": [
+        "Северные Марианские Острова"
+      ],
+      "Norway": [
+        "Норвегия"
+      ],
+      "Oman": [
+        "Оман"
+      ],
+      "Pakistan": [
+        "Пакистан"
+      ],
+      "Palau": [
+        "Палау"
+      ],
+      "Palestine": [
+        "Палестина"
+      ],
+      "Panama": [
+        "Панама"
+      ],
+      "Papua New Guinea": [
+        "Папуа-Новая Гвинея"
+      ],
+      "Paraguay": [
+        "Парагвай"
+      ],
+      "Peru": [
+        "Перу"
+      ],
+      "Philippines": [
+        "Филиппины"
+      ],
+      "Pitcairn": [
+        "Питкэрн"
+      ],
+      "Poland": [
+        "Польша"
+      ],
+      "Portugal": [
+        "Португалия"
+      ],
+      "Puerto Rico": [
+        "Пуэрто-Рико"
+      ],
+      "Qatar": [
+        "Катар"
+      ],
+      "Reunion": [
+        "Реюньон"
+      ],
+      "Romania": [
+        "Румыния"
+      ],
+      "Russia": [
+        "Россия"
+      ],
+      "Rwanda": [
+        "Руанда"
+      ],
+      "Saint Barthélemy": [
+        "Сен-Бартелеми"
+      ],
+      "Saint Helena": [
+        "Остров Святой Елены"
+      ],
+      "Saint Kitts and Nevis": [
+        "Сент-Китс и Невис"
+      ],
+      "Saint Lucia": [
+        "Сент-Люсия"
+      ],
+      "Saint Martin (French Part)": [
+        "Сен-Мартен (французская часть)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Сен-Пьер и Микелон"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Сент-Винсент и Гренадины"
+      ],
+      "Samoa": [
+        "Самоа"
+      ],
+      "San Marino": [
+        "Сан-Марино"
+      ],
+      "Sao Tome and Principe": [
+        "Сан-Томе и Принсипи"
+      ],
+      "Saudi Arabia": [
+        "Саудовская Аравия"
+      ],
+      "Senegal": [
+        "Сенегал"
+      ],
+      "Serbia": [
+        "Сербия"
+      ],
+      "Seychelles": [
+        "Сейшелы"
+      ],
+      "Sierra Leone": [
+        "Сьерра-Леоне"
+      ],
+      "Singapore": [
+        "Сингапур"
+      ],
+      "Sint Maarten": [
+        "Сен-Мартен"
+      ],
+      "Slovakia": [
+        "Словакия"
+      ],
+      "Slovenia": [
+        "Словения"
+      ],
+      "Solomon Islands": [
+        "Соломоновы Острова"
+      ],
+      "Somalia": [
+        "Сомали"
+      ],
+      "South Africa": [
+        "Южная Африка"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Южная Георгия и Южные Сандвичевы острова"
+      ],
+      "South Korea": [
+        "Южная Корея"
+      ],
+      "South Ossetia": [
+        "Южная Осетия"
+      ],
+      "South Sudan": [
+        "Южный Судан"
+      ],
+      "Spain": [
+        "Испания"
+      ],
+      "Sri Lanka": [
+        "Шри-Ланка"
+      ],
+      "Sudan": [
+        "Судан"
+      ],
+      "Suriname": [
+        "Суринам"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Шпицберген и Ян-Майен"
+      ],
+      "Swaziland": [
+        "Свазиленд"
+      ],
+      "Sweden": [
+        "Швеция"
+      ],
+      "Switzerland": [
+        "Швейцария"
+      ],
+      "Syria": [
+        "Сирия"
+      ],
+      "Taiwan": [
+        "Тайвань"
+      ],
+      "Tajikistan": [
+        "Таджикистан"
+      ],
+      "Tanzania": [
+        "Танзания"
+      ],
+      "Thailand": [
+        "Таиланд"
+      ],
+      "Timor-Leste": [
+        "Восточный Тимор"
+      ],
+      "Togo": [
+        "Того"
+      ],
+      "Tokelau": [
+        "Токелау"
+      ],
+      "Tonga": [
+        "Тонга"
+      ],
+      "Trinidad and Tobago": [
+        "Тринидад и Тобаго"
+      ],
+      "Tristan da Cunha": [
+        "Тристан да Кунья"
+      ],
+      "Tunisia": [
+        "Тунис"
+      ],
+      "Turkey": [
+        "Турция"
+      ],
+      "Turkmenistan": [
+        "Туркменистан"
+      ],
+      "Turks and Caicos Islands": [
+        "Острова Теркс и Кайкос"
+      ],
+      "Tuvalu": [
+        "Тувалу"
+      ],
+      "Uganda": [
+        "Уганда"
+      ],
+      "Ukraine": [
+        "Украина"
+      ],
+      "United Arab Emirates": [
+        "Объединенные Арабские Эмираты"
+      ],
+      "United Kingdom": [
+        "Великобритания"
+      ],
+      "United States": [
+        "Соединенные Штаты Америки"
+      ],
+      "United States Minor Outlying Islands": [
+        "Внешние малые острова США"
+      ],
+      "Uruguay": [
+        "Уругвай"
+      ],
+      "Uzbekistan": [
+        "Узбекистан"
+      ],
+      "Vanuatu": [
+        "Вануату"
+      ],
+      "Venezuela": [
+        "Венесуэла"
+      ],
+      "Vietnam": [
+        "Вьетнам"
+      ],
+      "Virgin Islands, British": [
+        "Британские Виргинские острова"
+      ],
+      "Virgin Islands, U.S.": [
+        "Американские Виргинские острова"
+      ],
+      "Wallis and Futuna": [
+        "Уоллис и Футуна"
+      ],
+      "Western Sahara": [
+        "Западная Сахара"
+      ],
+      "Yemen": [
+        "Йемен"
+      ],
+      "Zambia": [
+        "Замбия"
+      ],
+      "Zimbabwe": [
+        "Зимбабве"
+      ],
+      "Åland Islands": [
+        "Аландские острова"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Неизвестно"
@@ -1143,9 +1910,6 @@
       "Failed to download a folder": [
         "Не удалось скачать папку"
       ],
-      "Failed to load the link": [
-        "Не удалось загрузить ссылку"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" не может быть загружен из-за \"${ error }\" ошибки"
       ],
@@ -1170,11 +1934,11 @@
       "Image upload failed": [
         "Сбой загрузки изображения"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Неверные учетные данные. Повторите попытку"
+      "Incorrect login credentials. Please try again.": [
+        "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Неверный пароль. Пожалуйста, попробуйте еще раз"
+      "Incorrect mailbox password. Please try again.": [
+        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова."
       ],
       "Incorrect password. Please try again.": [
         "Неверный пароль. Пожалуйста, попробуйте еще раз."
@@ -2148,9 +2912,6 @@
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
       ],
-      "Loading folder contents": [
-        "Загрузка содержимого папки"
-      ],
       "Loading preview": [
         "Загрузка предпросмотра"
       ],
@@ -2322,8 +3083,8 @@
       "Screenshot(s) attached": [
         "Снимки экрана прикреплены"
       ],
-      "Select an uploaded file and create a link to it.": [
-        "Выберите загруженный файл и создайте ссылку на него."
+      "Select an uploaded file or folder and create a link to it.": [
+        "Выберите загруженный файл или папку и создайте ссылку на них."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
@@ -2668,6 +3429,9 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        "Количество обращений"
+      ],
       "(Expired)": [
         "(Истек)"
       ],
@@ -2763,6 +3527,9 @@
         "Удалить хранилища?",
         "Удалить хранилища?",
         "Удалить хранилища?"
+      ],
+      "Deleted": [
+        "Удаленные"
       ],
       "Display name": [
         "Отображаемое имя"
@@ -2868,6 +3635,9 @@
       ],
       "Merge a folder": [
         "Объединить папку"
+      ],
+      "Modified": [
+        "Изменено"
       ],
       "Name": [
         "Имя"
@@ -3001,9 +3771,6 @@
       "Upload picture": [
         "Загрузить картинку"
       ],
-      "Uploaded": [
-        "Выгружено"
-      ],
       "Username or ProtonMail address": [
         "Имя пользователя или адрес ProtonMail"
       ],
@@ -3093,20 +3860,11 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } из ${ calendarsToBeCreated } создан",
-        "${ createdCalendars } из ${ calendarsToBeCreated } создано",
-        "${ createdCalendars } из ${ calendarsToBeCreated } создано",
-        "${ createdCalendars } из ${ calendarsToBeCreated } создан(о)"
-      ],
-      "${ createdCalendars } of 1 created": [
-        "",
-        "",
-        "",
-        ""
-      ],
       "Almost there": [
         "Почти там"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Количество созданных календарей: ${ createdCalendars } из ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Создание новых календарей"
@@ -3271,6 +4029,12 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" восстановлено из корзины"
       ],
+      "${ count } item failed to be decrypted": [
+        "${ count } элемент не удалось расшифровать",
+        "${ count } элемента не удалось расшифровать",
+        "${ count } элементов не удалось расшифровать",
+        "${ count } элементов не удалось расшифровать"
+      ],
       "${ deletedCount } link to your file was deleted": [
         "${ deletedCount } ссылка на ваш файл удалена",
         "${ deletedCount } ссылок на ваш файл удалено",
@@ -3406,6 +4170,9 @@
       "File or folder is missing a name": [
         "У папки или файла отсутствует имя"
       ],
+      "Link failed to be loaded": [
+        "Не удалось загрузить ссылку"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Переместить ${ itemsToMoveCount } файл",
         "Переместить ${ itemsToMoveCount } файла",
@@ -3442,14 +4209,26 @@
         "Переместить ${ movingCount } элементов",
         "Переместить ${ movingCount } элементов"
       ],
+      "Next page failed to be loaded": [
+        "Не удалось загрузить следующую страницу"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
+      ],
+      "Root folder failed to be loaded": [
+        "Не удалось загрузить корневую папку"
+      ],
+      "Subfolder failed to be loaded": [
+        "Не удалось загрузить подпапку"
       ],
       "The link to your file failed to be deleted": [
         "Не удалось удалить ссылку на ваш файл"
       ],
       "The link to your file was deleted": [
         "Ссылка на ваш файл удалена"
+      ],
+      "Trash failed to be emptied": [
+        "Не удалось очистить корзину"
       ],
       "Your old files will be deleted in 72 hours": [
         "Ваши старые файлы будут удалены в течение 72 часов"
@@ -3819,8 +4598,8 @@
       ]
     },
     "Success": {
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\" успешно создана"
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" успешно создана"
       ],
       "${ nameElement } renamed successfully": [
         "${ nameElement } успешно переименовано"
@@ -3878,9 +4657,6 @@
       ],
       "You have successfully unsubscribed": [
         "Вы успешно отписались"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Файлы успешно восстановлены в «Мои файлы»."
       ]
     },
     "Suffix for price": {
@@ -4223,6 +4999,9 @@
       "Folder details": [
         "Информация о папке"
       ],
+      "Folders details": [
+        "Информация о папке"
+      ],
       "Gift code": [
         "Подарочный код"
       ],
@@ -4240,6 +5019,9 @@
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
+      ],
+      "Items details": [
+        "Информация о папке"
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
@@ -4278,6 +5060,12 @@
         "Ошибка сети"
       ],
       "Number of files": [
+        "Количество файлов"
+      ],
+      "Number of folders": [
+        "Количество папок"
+      ],
+      "Number of items": [
         "Количество файлов"
       ],
       "Open actions dropdown": [

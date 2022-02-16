@@ -53,7 +53,7 @@
         "PayPal ekle"
       ],
       "Add PayPal payment method": [
-        "PayPal ödeme yöntemi ekleyin"
+        "PayPal ödeme yöntemi ekle"
       ],
       "Add screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -137,7 +137,7 @@
         "Ayrıntılar"
       ],
       "Did not receive the code?": [
-        "Kod almadınız mı?"
+        "Kodu almadınız mı?"
       ],
       "Didn't receive the code?": [
         "Doğrulama kodunu almadınız mı?"
@@ -173,7 +173,7 @@
         "Oturum açma bilgilerini düzenle"
       ],
       "Email me my username(s)": [
-        "Kullanıcı adlarımı bana e-postala"
+        "Kullanıcı adlarımı bana e-posta ile gönder"
       ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
@@ -191,7 +191,7 @@
         "Doğrulama kodu al"
       ],
       "Go to login": [
-        "Oturum açmaya gidin"
+        "Oturum açmaya git"
       ],
       "Go to panel ${ index }": [
         "${ index } panosuna git"
@@ -203,7 +203,7 @@
         "Ek özellikleri gizle"
       ],
       "Hide info": [
-        "Bilgiyi gizle"
+        "Bilgileri gizle"
       ],
       "Homepage": [
         "Ana sayfa"
@@ -308,7 +308,7 @@
         "Seçin"
       ],
       "Select plan": [
-        "Tarife seçin"
+        "Tarifeyi seçin"
       ],
       "Send": [
         "Gönder"
@@ -326,7 +326,7 @@
         "Göster"
       ],
       "Show info": [
-        "Bilgiyi göster"
+        "Bilgileri göster"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -413,7 +413,7 @@
         "Görüntüle"
       ],
       "View full plan comparison": [
-        "Tam plan karşılaştırmasını görüntüle"
+        "Tam tarife karşılaştırmasını görüntüle"
       ],
       "View invoice": [
         "Faturayı görüntüle"
@@ -447,7 +447,7 @@
         "+ ${ members } kullanıcı"
       ],
       "+ ${ storage } storage": [
-        "+ ${ storage } depolama"
+        "+ ${ storage } depolama alanı"
       ],
       "+ ${ vpn } connection": [
         "+ ${ vpn } bağlantısı",
@@ -619,22 +619,22 @@
         "Uygulama sorunu"
       ],
       "Bridge problem": [
-        "Köprü sorunu"
+        "Bridge sorunu"
       ],
       "Calendar problem": [
-        "Takvim sorunu"
+        "Calendar sorunu"
       ],
       "Connection problem": [
         "Bağlantı sorunu"
       ],
       "Contacts problem": [
-        "İletişim sorunu"
+        "Contacts sorunu"
       ],
       "Custom domain problem": [
         "Özel etki alanı sorunu"
       ],
       "Drive problem": [
-        "Sürücü sorunu"
+        "Drive sorunu"
       ],
       "Feature request": [
         "Özellik isteği"
@@ -646,7 +646,7 @@
         "Kurulum sorunu"
       ],
       "Mail problem": [
-        "Posta sorunu"
+        "Mail sorunu"
       ],
       "Manual setup problem": [
         "El ile kurulum sorunu"
@@ -764,6 +764,773 @@
         "${ monthsWithYears } ay"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abhazya"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Arnavutluk"
+      ],
+      "Algeria": [
+        "Cezayir"
+      ],
+      "American Samoa": [
+        "Amerikan Samoası"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktika"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua ve Barbuda"
+      ],
+      "Argentina": [
+        "Arjantin"
+      ],
+      "Armenia": [
+        "Ermenistan"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension Adası"
+      ],
+      "Australia": [
+        "Avustralya"
+      ],
+      "Austria": [
+        "Avusturya"
+      ],
+      "Azerbaijan": [
+        "Azerbaycan"
+      ],
+      "Bahamas": [
+        "Bahamalar"
+      ],
+      "Bahrain": [
+        "Bahreyn"
+      ],
+      "Bangladesh": [
+        "Bangladeş"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belçika"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butan"
+      ],
+      "Bolivia": [
+        "Bolivya"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Karayip Hollandası"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosna Hersek"
+      ],
+      "Botswana": [
+        "Botsvana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Adası"
+      ],
+      "Brazil": [
+        "Brezilya"
+      ],
+      "British Indian Ocean Territory": [
+        "Britanya Hint Okyanusu Toprakları"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaristan"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Burma"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kamboçya"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Yeşil Burun Adaları"
+      ],
+      "Cayman Islands": [
+        "Cayman Adaları"
+      ],
+      "Central African Republic": [
+        "Orta Afrika Cumhuriyeti"
+      ],
+      "Chad": [
+        "Çad"
+      ],
+      "Chile": [
+        "Şili"
+      ],
+      "China": [
+        "Çin"
+      ],
+      "Christmas Island": [
+        "Christmas Adası"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocos (Keeling) Adaları"
+      ],
+      "Colombia": [
+        "Kolombiya"
+      ],
+      "Comoros": [
+        "Komorlar"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Kongo, Demokratik Cumhuriyeti"
+      ],
+      "Cook Islands": [
+        "Cook Adaları"
+      ],
+      "Costa Rica": [
+        "Kosta Rika"
+      ],
+      "Cote d'Ivoire\"": [
+        "Fildişi Sahili"
+      ],
+      "Croatia": [
+        "Hırvatistan"
+      ],
+      "Cuba": [
+        "Küba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Kıbrıs"
+      ],
+      "Czech Republic": [
+        "Çekya"
+      ],
+      "Denmark": [
+        "Danimarka"
+      ],
+      "Djibouti": [
+        "Cibuti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Dominik Cumhuriyeti"
+      ],
+      "Ecuador": [
+        "Ekvador"
+      ],
+      "Egypt": [
+        "Mısır"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ekvator Ginesi"
+      ],
+      "Eritrea": [
+        "Eritre"
+      ],
+      "Estonia": [
+        "Estonya"
+      ],
+      "Ethiopia": [
+        "Etiyopya"
+      ],
+      "Falkland Islands": [
+        "Falkland Adaları"
+      ],
+      "Faroe Islands": [
+        "Faroe Adaları"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronezya Federal Devletleri"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlandiya"
+      ],
+      "France": [
+        "Fransa"
+      ],
+      "French Guiana": [
+        "Fransız Guyanası"
+      ],
+      "French Polynesia": [
+        "Fransız Polinezyası"
+      ],
+      "French Southern Territories": [
+        "Fransız Güney Toprakları"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambiya"
+      ],
+      "Georgia": [
+        "Gürcistan"
+      ],
+      "Germany": [
+        "Almanya"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Cebelitarık"
+      ],
+      "Greece": [
+        "Yunanistan"
+      ],
+      "Greenland": [
+        "Grönland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Gine"
+      ],
+      "Guinea-Bissau": [
+        "Gine-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard Adası ve McDonald Adaları"
+      ],
+      "Holy See (Vatican City State)": [
+        "Vatikan"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Macaristan"
+      ],
+      "Iceland": [
+        "İzlanda"
+      ],
+      "India": [
+        "Hindistan"
+      ],
+      "Indonesia": [
+        "Endonezya"
+      ],
+      "International": [
+        "Uluslararası"
+      ],
+      "Iran": [
+        "İran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "İrlanda"
+      ],
+      "Isle of Man": [
+        "Man Adası"
+      ],
+      "Israel": [
+        "İsrail"
+      ],
+      "Italy": [
+        "İtalya"
+      ],
+      "Jamaica": [
+        "Jamaika"
+      ],
+      "Japan": [
+        "Japonya"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Ürdün"
+      ],
+      "Kazakhstan": [
+        "Kazakistan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosova"
+      ],
+      "Kuwait": [
+        "Kuveyt"
+      ],
+      "Kyrgyzstan": [
+        "Kırgızistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letonya"
+      ],
+      "Lebanon": [
+        "Lübnan"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberya"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Lihtenştayn"
+      ],
+      "Lithuania": [
+        "Litvanya"
+      ],
+      "Luxembourg": [
+        "Lüksemburg"
+      ],
+      "Macao": [
+        "Makao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malavi"
+      ],
+      "Malaysia": [
+        "Malezya"
+      ],
+      "Maldives": [
+        "Maldivler"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Adaları"
+      ],
+      "Martinique": [
+        "Martinik"
+      ],
+      "Mauritania": [
+        "Moritanya"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Meksika"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Moğolistan"
+      ],
+      "Montenegro": [
+        "Karadağ"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Fas"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Namibia": [
+        "Namibya"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Hollanda"
+      ],
+      "New Caledonia": [
+        "Yeni Kaledonya"
+      ],
+      "New Zealand": [
+        "Yeni Zelanda"
+      ],
+      "Nicaragua": [
+        "Nikaragua"
+      ],
+      "Niger": [
+        "Nijer"
+      ],
+      "Nigeria": [
+        "Nijerya"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk Adası"
+      ],
+      "North Korea": [
+        "Kuzey Kore"
+      ],
+      "North Macedonia": [
+        "Kuzey Makedonya"
+      ],
+      "Northern Mariana Islands": [
+        "Kuzey Mariana Adaları"
+      ],
+      "Norway": [
+        "Norveç"
+      ],
+      "Oman": [
+        "Umman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Filistin"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Yeni Gine"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipinler"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polonya"
+      ],
+      "Portugal": [
+        "Portekiz"
+      ],
+      "Puerto Rico": [
+        "Porto Riko"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Romanya"
+      ],
+      "Russia": [
+        "Rusya"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts ve Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (Fransız bölümü)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre ve Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent ve Grenadinler"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome ve Principe"
+      ],
+      "Saudi Arabia": [
+        "Suudi Arabistan"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Sırbistan"
+      ],
+      "Seychelles": [
+        "Seyşeller"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakya"
+      ],
+      "Slovenia": [
+        "Slovenya"
+      ],
+      "Solomon Islands": [
+        "Solomon Adaları"
+      ],
+      "Somalia": [
+        "Somali"
+      ],
+      "South Africa": [
+        "Güney Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Güney Georgia ve Güney Sandwich Adaları"
+      ],
+      "South Korea": [
+        "Güney Kore"
+      ],
+      "South Ossetia": [
+        "Güney Osetya"
+      ],
+      "South Sudan": [
+        "Güney Sudan"
+      ],
+      "Spain": [
+        "İspanya"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard ve Jan Mayen"
+      ],
+      "Swaziland": [
+        "Svaziland"
+      ],
+      "Sweden": [
+        "İsveç"
+      ],
+      "Switzerland": [
+        "İsviçre"
+      ],
+      "Syria": [
+        "Suriye"
+      ],
+      "Taiwan": [
+        "Tayvan"
+      ],
+      "Tajikistan": [
+        "Tacikistan"
+      ],
+      "Tanzania": [
+        "Tanzanya"
+      ],
+      "Thailand": [
+        "Tayland"
+      ],
+      "Timor-Leste": [
+        "Doğu Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad ve Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunus"
+      ],
+      "Turkey": [
+        "Türkiye"
+      ],
+      "Turkmenistan": [
+        "Türkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks ve Caicos Adaları"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukrayna"
+      ],
+      "United Arab Emirates": [
+        "Birleşik Arap Emirlikleri"
+      ],
+      "United Kingdom": [
+        "Birleşik Krallık"
+      ],
+      "United States": [
+        "Birleşik Devletler"
+      ],
+      "United States Minor Outlying Islands": [
+        "Birleşik Devletler Küçük Dış Adaları"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Özbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Britanya Virjin Adaları"
+      ],
+      "Virgin Islands, U.S.": [
+        "Birleşik Devletler Virjin Adaları"
+      ],
+      "Wallis and Futuna": [
+        "Wallis ve Futuna"
+      ],
+      "Western Sahara": [
+        "Batı Sahra"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambiya"
+      ],
+      "Zimbabwe": [
+        "Zimbabve"
+      ],
+      "Åland Islands": [
+        "Aland Adaları"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(${ entryCountryName } üzerinden)"
@@ -865,11 +1632,11 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Televizyonunuzda süre dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
       ],
-      "Incorrect login credentials. Please try again": [
-        "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin"
+      "Incorrect login credentials. Please try again.": [
+        "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Posta kutusu parolası yanlış. Lütfen yeniden deneyin"
+      "Incorrect mailbox password. Please try again.": [
+        "Posta kutusu parolası yanlış. Lütfen yeniden deneyin."
       ],
       "Invalid ${ name } code": [
         "${ name } kodu geçersiz"
@@ -929,10 +1696,10 @@
         "Lütfen önce bir kurtarma e-posta adresi ayarlayın"
       ],
       "Please set a recovery phone number first": [
-        "Lütfen önce bir kurtarma telefon numarası ayarlayın"
+        "Lütfen önce bir kurtarma telefonu numarası ayarlayın"
       ],
       "Please set a recovery/notification email first": [
-        "Lütfen önce bir kurtarma/bildirim e-postası ayarlayın"
+        "Lütfen önce bir kurtarma/bildirim e-postası adresi ayarlayın"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -1104,7 +1871,7 @@
         "Bağlantı kesici / Her zaman açık"
       ],
       "No data limits": [
-        "Veri sınırı yok"
+        "Veri sınırlaması yok"
       ],
       "No logs policy": [
         "Kayıt tutmama ilkesi"
@@ -1179,7 +1946,7 @@
         "${ mailAppName } Professional bir kullanıcıyla başlar ve her kullanıcı kuruluşun havuzuna 5 GB ve 5 e-posta adresi ekler."
       ],
       "${ number } city": [
-        "${ number } şehir",
+        "${ number } il",
         "${ number } il"
       ],
       "${ number } server": [
@@ -1190,16 +1957,16 @@
         "${ annualBilling } tarifesine geçerek aboneliğinizde ${ save20 } indirim alın"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "E-posta aboneliği ekleyerek, hem e-posta hem de VPN için ${ saveExtra20 } indirim alın."
+        "E-posta aboneliği ekleyerek, hem e-posta hem de VPN için ${ saveExtra20 }."
       ],
       "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "VPN aboneliği ekleyerek, hem VPN hem de e-posta için ${ saveExtra20 } indirim alın."
+        "VPN aboneliği ekleyerek, hem VPN hem de e-posta için ${ saveExtra20 }."
       ],
       "${ vpnAppName } Free": [
         "${ vpnAppName } ücretsiz"
       ],
       "(Mail + VPN)": [
-        "(Posta + VPN)"
+        "(Mail + VPN)"
       ],
       "* Customizable features": [
         "* Değiştirilebilecek özellikler"
@@ -1496,9 +2263,6 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
-      "No subscription yet": [
-        "Henüz bir aboneliğiniz yok"
-      ],
       "Not customizable": [
         "Özelleştirilemez"
       ],
@@ -1585,7 +2349,7 @@
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin."
       ],
       "Save 20%": [
-        "%20 tasarruf edin"
+        "%20 indirim"
       ],
       "Save extra 20%": [
         "Ek %20 indirim alın"
@@ -1621,7 +2385,7 @@
         "GB olarak depolama"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent gibi dosya paylaşım iletişim kurallarına destek."
+        "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek."
       ],
       "support team": [
         "destek ekibi"
@@ -1634,9 +2398,6 @@
       ],
       "Thank you for supporting our mission.": [
         "Misyonumuza destek olduğunuz için teşekkür ederiz."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Geçerli aboneliğiniz için herhangi bir fatura bilgisi yok."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ProtonVPN sunucusunu seçmenizi sağlar."
@@ -1704,9 +2465,6 @@
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Ücretli özelliklere erişmek ve depolama alanınızı artırmak için ücretli bir tarifeye geçin."
-      ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "ProtonVPN sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: MacOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
       ],
@@ -1753,7 +2511,7 @@
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Yeni bir doğrulama kodu almak veya alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+        "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
       ],
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
@@ -2059,7 +2817,7 @@
         "CVV kodu"
       ],
       "Daily email notifications": [
-        "Günlük e-posta bildirimleri"
+        "E-psotalar günlük olarak bildirilsin"
       ],
       "Danger": [
         "Tehlike"
@@ -2209,13 +2967,13 @@
         "Toplam (${ countdown })"
       ],
       "Total price": [
-        "Toplam fiyat"
+        "Toplam ücret"
       ],
       "Total price (annually)": [
-        "Toplam fiyat (yıllık)"
+        "Toplam ücret (yıllık)"
       ],
       "Total price (two-year)": [
-        "Toplam fiyat (iki yıllık)"
+        "Toplam ücret (iki yıllık)"
       ],
       "Two-factor authentication": [
         "İki aşamalı kimlik doğrulama"
@@ -2315,7 +3073,7 @@
         "Oturum açma sayfasına geri dön"
       ],
       "clearing your browser cache": [
-        "web tarayıcınızın ön belleğini temizleme"
+        "web tarayıcınızın ön belleğini temizlemek"
       ],
       "click here": [
         "buraya tıklayın"
@@ -2376,9 +3134,6 @@
       ],
       "Upgrade account": [
         "Hesabınızı yükseltin"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
       ],
       "View guide": [
         "Rehberi görüntüle"
@@ -2732,7 +3487,7 @@
         "${ mailAppName } Free"
       ],
       "Free": [
-        "Ücretsiz"
+        "Free"
       ]
     },
     "Plan Action": {
@@ -2883,7 +3638,7 @@
         "Yüksek hız"
       ],
       "Highest speed (10 Gbps)": [
-        "En yüksek hız (10 Gbps)"
+        "En yüksek hız (10 Gb/sn)"
       ],
       "Highest speed (up to 10 Gbps)": [
         "En yüksek hız (10 Gb/sn hıza kadar)"
@@ -2948,6 +3703,32 @@
     "Prime Video": {
       "Prime Video": [
         "Prime Video"
+      ]
+    },
+    "Recovery Email": {
+      "Cancel": [
+        "İptal"
+      ],
+      "Email address has been verified.": [
+        "E-posta adresi doğrulanmış."
+      ],
+      "Email address not yet verified.": [
+        "E-posta adresi henüz doğrulanmamış."
+      ],
+      "Send verification email": [
+        "Doğrulama e-postası gönder"
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Doğrulama e-postası ${ email.Value } alıcısına gönderildi"
+      ],
+      "Verify now": [
+        "Şimdi doğrula"
+      ],
+      "Verify recovery email?": [
+        "Kurtarma e-postası doğrulansın mı?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "E-posta adresinizi doğrulamak hesabınızın güvenliğini artırır ve yeni bir kurtarma seçeneği ekler."
       ]
     },
     "State": {
@@ -3242,9 +4023,6 @@
       "Gift code": [
         "Hediye kodu"
       ],
-      "Gift Code": [
-        "Hediye kodu"
-      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -3422,9 +4200,6 @@
       "Unsupported browser": [
         "Web tarayıcı desteklenmiyor"
       ],
-      "Upgrade": [
-        "Yükselt"
-      ],
       "Upgrade and get more": [
         "Yükseltin ve daha fazlasını alın"
       ],
@@ -3519,7 +4294,7 @@
         "Yıllık faturalama ile %20 indirim alın"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent gibi dosya paylaşım iletişim kurallarına destek."
+        "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek."
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Hesabınıza bağlı birden fazla adres / takma ad kullanın. Örnek: kullaniciadi2@protonmail.com"

@@ -183,7 +183,7 @@
         "Sentem"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Sentem alday n useɣwen ${ linkToShow }"
       ],
       "Contact group": [
         "Agraw n unermes"
@@ -228,7 +228,7 @@
         "Senqes"
       ],
       "Decrypt": [
-        ""
+        "Kkes awgelhen"
       ],
       "Default email application": [
         "Asnas amezwer n imayl"
@@ -272,7 +272,7 @@
         "Ifatusen"
       ],
       "Didn't receive the code?": [
-        ""
+        "Ur d-teṭṭifeḍ ara tangalt?"
       ],
       "Discard": [
         "Sefsex"
@@ -335,7 +335,7 @@
         "Sifeḍ"
       ],
       "Export contact group": [
-        ""
+        "Sifeḍ agraw n urmas"
       ],
       "Export contacts": [
         "Kter inermisen"
@@ -419,7 +419,7 @@
         "Kter"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Kter si .csv neɣ vCard"
       ],
       "Import messages": [
         "Kter iznan"
@@ -561,7 +561,7 @@
         "Senkez ɣer..."
       ],
       "Need help?": [
-        ""
+        "Tesriḍ tallelt?"
       ],
       "Never show": [
         "Ur d-skan ara akk"
@@ -693,7 +693,7 @@
         "Beddel isem"
       ],
       "Reply securely": [
-        ""
+        "Err s wudem aɣelsan"
       ],
       "Report a problem": [
         "Azen aneqqis n wugur"
@@ -735,7 +735,7 @@
         "Anadi"
       ],
       "Search in ${ option.text }": [
-        ""
+        "Nadi di ${ option.text }"
       ],
       "Search message content": [
         "Agbur n yizen n unadi"
@@ -877,7 +877,7 @@
         "Ɛreḍ tarrayt nniḍen"
       ],
       "Turn on tracker protection": [
-        ""
+        "Sermed amesten n uḍfar"
       ],
       "Underline": [
         "Derrer"
@@ -886,7 +886,7 @@
         "Sefsex"
       ],
       "Unlock data": [
-        ""
+        "Kkes asekkeṛ i yisefka"
       ],
       "Unmark for deletion": [
         "Kkes acraḍ i tukksa"
@@ -943,10 +943,10 @@
         "Senqed"
       ],
       "Verify account": [
-        ""
+        "Selken amiḍan"
       ],
       "Verify email": [
-        ""
+        "Selken imayl"
       ],
       "View": [
         "Sken"
@@ -1652,10 +1652,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Mdel"
       ],
       "Open": [
-        ""
+        "Ldi"
       ]
     },
     "Composer email icon": {
@@ -1825,6 +1825,773 @@
       "${ monthsWithYears } month": [
         "${ monthsWithYears } n wayyur",
         "${ monthsWithYears } n wayyuren"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        ""
+      ],
+      "Afghanistan": [
+        ""
+      ],
+      "Albania": [
+        ""
+      ],
+      "Algeria": [
+        ""
+      ],
+      "American Samoa": [
+        ""
+      ],
+      "Andorra": [
+        ""
+      ],
+      "Angola": [
+        ""
+      ],
+      "Anguilla": [
+        ""
+      ],
+      "Antarctica": [
+        ""
+      ],
+      "Antigua and Barbuda": [
+        ""
+      ],
+      "Argentina": [
+        ""
+      ],
+      "Armenia": [
+        ""
+      ],
+      "Aruba": [
+        ""
+      ],
+      "Ascension Island": [
+        ""
+      ],
+      "Australia": [
+        ""
+      ],
+      "Austria": [
+        ""
+      ],
+      "Azerbaijan": [
+        ""
+      ],
+      "Bahamas": [
+        ""
+      ],
+      "Bahrain": [
+        ""
+      ],
+      "Bangladesh": [
+        ""
+      ],
+      "Barbados": [
+        ""
+      ],
+      "Belarus": [
+        ""
+      ],
+      "Belgium": [
+        ""
+      ],
+      "Belize": [
+        ""
+      ],
+      "Benin": [
+        ""
+      ],
+      "Bermuda": [
+        ""
+      ],
+      "Bhutan": [
+        ""
+      ],
+      "Bolivia": [
+        ""
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        ""
+      ],
+      "Botswana": [
+        ""
+      ],
+      "Bouvet Island": [
+        ""
+      ],
+      "Brazil": [
+        ""
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        ""
+      ],
+      "Bulgaria": [
+        ""
+      ],
+      "Burkina Faso": [
+        ""
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        ""
+      ],
+      "Cambodia": [
+        ""
+      ],
+      "Cameroon": [
+        ""
+      ],
+      "Canada": [
+        ""
+      ],
+      "Cape Verde": [
+        ""
+      ],
+      "Cayman Islands": [
+        ""
+      ],
+      "Central African Republic": [
+        ""
+      ],
+      "Chad": [
+        ""
+      ],
+      "Chile": [
+        ""
+      ],
+      "China": [
+        ""
+      ],
+      "Christmas Island": [
+        ""
+      ],
+      "Cocos (Keeling) Islands": [
+        ""
+      ],
+      "Colombia": [
+        ""
+      ],
+      "Comoros": [
+        ""
+      ],
+      "Congo": [
+        ""
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        ""
+      ],
+      "Costa Rica": [
+        ""
+      ],
+      "Cote d'Ivoire\"": [
+        ""
+      ],
+      "Croatia": [
+        ""
+      ],
+      "Cuba": [
+        ""
+      ],
+      "Curaçao": [
+        ""
+      ],
+      "Cyprus": [
+        ""
+      ],
+      "Czech Republic": [
+        ""
+      ],
+      "Denmark": [
+        ""
+      ],
+      "Djibouti": [
+        ""
+      ],
+      "Dominica": [
+        ""
+      ],
+      "Dominican Republic": [
+        ""
+      ],
+      "Ecuador": [
+        ""
+      ],
+      "Egypt": [
+        ""
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        ""
+      ],
+      "Eritrea": [
+        ""
+      ],
+      "Estonia": [
+        ""
+      ],
+      "Ethiopia": [
+        ""
+      ],
+      "Falkland Islands": [
+        ""
+      ],
+      "Faroe Islands": [
+        ""
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        ""
+      ],
+      "Finland": [
+        ""
+      ],
+      "France": [
+        ""
+      ],
+      "French Guiana": [
+        ""
+      ],
+      "French Polynesia": [
+        ""
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        ""
+      ],
+      "Gambia": [
+        ""
+      ],
+      "Georgia": [
+        ""
+      ],
+      "Germany": [
+        ""
+      ],
+      "Ghana": [
+        ""
+      ],
+      "Gibraltar": [
+        ""
+      ],
+      "Greece": [
+        ""
+      ],
+      "Greenland": [
+        ""
+      ],
+      "Grenada": [
+        ""
+      ],
+      "Guadeloupe": [
+        ""
+      ],
+      "Guam": [
+        ""
+      ],
+      "Guatemala": [
+        ""
+      ],
+      "Guernsey": [
+        ""
+      ],
+      "Guinea": [
+        ""
+      ],
+      "Guinea-Bissau": [
+        ""
+      ],
+      "Guyana": [
+        ""
+      ],
+      "Haiti": [
+        ""
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        ""
+      ],
+      "Hong Kong": [
+        ""
+      ],
+      "Hungary": [
+        ""
+      ],
+      "Iceland": [
+        ""
+      ],
+      "India": [
+        ""
+      ],
+      "Indonesia": [
+        ""
+      ],
+      "International": [
+        "Agraɣlan"
+      ],
+      "Iran": [
+        ""
+      ],
+      "Iraq": [
+        ""
+      ],
+      "Ireland": [
+        ""
+      ],
+      "Isle of Man": [
+        ""
+      ],
+      "Israel": [
+        ""
+      ],
+      "Italy": [
+        ""
+      ],
+      "Jamaica": [
+        ""
+      ],
+      "Japan": [
+        ""
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        ""
+      ],
+      "Kazakhstan": [
+        ""
+      ],
+      "Kenya": [
+        ""
+      ],
+      "Kiribati": [
+        ""
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        ""
+      ],
+      "Kyrgyzstan": [
+        ""
+      ],
+      "Laos": [
+        ""
+      ],
+      "Latvia": [
+        ""
+      ],
+      "Lebanon": [
+        ""
+      ],
+      "Lesotho": [
+        ""
+      ],
+      "Liberia": [
+        ""
+      ],
+      "Libya": [
+        ""
+      ],
+      "Liechtenstein": [
+        ""
+      ],
+      "Lithuania": [
+        ""
+      ],
+      "Luxembourg": [
+        ""
+      ],
+      "Macao": [
+        ""
+      ],
+      "Madagascar": [
+        ""
+      ],
+      "Malawi": [
+        ""
+      ],
+      "Malaysia": [
+        ""
+      ],
+      "Maldives": [
+        ""
+      ],
+      "Mali": [
+        ""
+      ],
+      "Malta": [
+        ""
+      ],
+      "Marshall Islands": [
+        ""
+      ],
+      "Martinique": [
+        ""
+      ],
+      "Mauritania": [
+        ""
+      ],
+      "Mauritius": [
+        ""
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        ""
+      ],
+      "Moldova": [
+        ""
+      ],
+      "Monaco": [
+        ""
+      ],
+      "Mongolia": [
+        ""
+      ],
+      "Montenegro": [
+        ""
+      ],
+      "Montserrat": [
+        ""
+      ],
+      "Morocco": [
+        ""
+      ],
+      "Mozambique": [
+        ""
+      ],
+      "Namibia": [
+        ""
+      ],
+      "Nauru": [
+        ""
+      ],
+      "Nepal": [
+        ""
+      ],
+      "Netherlands": [
+        ""
+      ],
+      "New Caledonia": [
+        ""
+      ],
+      "New Zealand": [
+        ""
+      ],
+      "Nicaragua": [
+        ""
+      ],
+      "Niger": [
+        ""
+      ],
+      "Nigeria": [
+        ""
+      ],
+      "Niue": [
+        ""
+      ],
+      "Norfolk Island": [
+        ""
+      ],
+      "North Korea": [
+        ""
+      ],
+      "North Macedonia": [
+        ""
+      ],
+      "Northern Mariana Islands": [
+        ""
+      ],
+      "Norway": [
+        ""
+      ],
+      "Oman": [
+        ""
+      ],
+      "Pakistan": [
+        ""
+      ],
+      "Palau": [
+        ""
+      ],
+      "Palestine": [
+        ""
+      ],
+      "Panama": [
+        ""
+      ],
+      "Papua New Guinea": [
+        ""
+      ],
+      "Paraguay": [
+        ""
+      ],
+      "Peru": [
+        ""
+      ],
+      "Philippines": [
+        ""
+      ],
+      "Pitcairn": [
+        ""
+      ],
+      "Poland": [
+        ""
+      ],
+      "Portugal": [
+        ""
+      ],
+      "Puerto Rico": [
+        ""
+      ],
+      "Qatar": [
+        ""
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        ""
+      ],
+      "Russia": [
+        ""
+      ],
+      "Rwanda": [
+        ""
+      ],
+      "Saint Barthélemy": [
+        ""
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        ""
+      ],
+      "Saint Lucia": [
+        ""
+      ],
+      "Saint Martin (French Part)": [
+        ""
+      ],
+      "Saint Pierre and Miquelon": [
+        ""
+      ],
+      "Saint Vincent and the Grenadines": [
+        ""
+      ],
+      "Samoa": [
+        ""
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        ""
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        ""
+      ],
+      "Seychelles": [
+        ""
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        ""
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        ""
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        ""
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        ""
+      ],
+      "Sri Lanka": [
+        ""
+      ],
+      "Sudan": [
+        ""
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        ""
+      ],
+      "Tajikistan": [
+        ""
+      ],
+      "Tanzania": [
+        ""
+      ],
+      "Thailand": [
+        ""
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        ""
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        ""
+      ],
+      "Trinidad and Tobago": [
+        ""
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        ""
+      ],
+      "Turkey": [
+        ""
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        ""
+      ],
+      "Uganda": [
+        ""
+      ],
+      "Ukraine": [
+        ""
+      ],
+      "United Arab Emirates": [
+        ""
+      ],
+      "United Kingdom": [
+        ""
+      ],
+      "United States": [
+        ""
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        ""
+      ],
+      "Uzbekistan": [
+        ""
+      ],
+      "Vanuatu": [
+        ""
+      ],
+      "Venezuela": [
+        ""
+      ],
+      "Vietnam": [
+        ""
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        ""
+      ],
+      "Yemen": [
+        ""
+      ],
+      "Zambia": [
+        ""
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        ""
       ]
     },
     "CustomFilter": {
@@ -2186,7 +2953,7 @@
         "Sekcem 6 n izwilen"
       ],
       "Enter a password": [
-        ""
+        "Sekcem awal uffir"
       ],
       "Error connecting to the Bitcoin API.": [
         "Tuccḍa di tuqqna ar API Bitcoin."
@@ -2218,11 +2985,11 @@
       "Image upload failed": [
         "Asali n tugna yecceḍ"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Talɣut n usesteb mačči d tameɣtut. Ɛreḍ tikelt-nniḍen"
+      "Incorrect login credentials. Please try again.": [
+        ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Awal uffir n tirawt d arameɣtu. Ttxil ɛreḍ tikkelt-nniḍen"
+      "Incorrect mailbox password. Please try again.": [
+        ""
       ],
       "Invalid ${ name } code": [
         "Tangalt n ${ name } ur d tameɣtut"
@@ -2474,7 +3241,7 @@
         "Addad n ujiṭun n uxelleṣ d arussin"
       ],
       "Wrong mailbox password": [
-        ""
+        "Yir awal uffir n tnaka n yimayl"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Ur tezmireḍ ara ad tazneḍ tabrat i wugar n 100 n yinermasen"
@@ -2839,12 +3606,12 @@
     },
     "Font Face Default": {
       "Default": [
-        ""
+        "Amezwar"
       ]
     },
     "Font Size Default": {
       "Default": [
-        ""
+        "Amezwar"
       ]
     },
     "Free price": {
@@ -3080,8 +3847,8 @@
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } n uwitay amaynut",
+        "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "",
@@ -3359,7 +4126,7 @@
         "Tebɣiḍ s tidet ad tekkseḍ s wudem imezgi izen-a?"
       ],
       "Attach public key": [
-        ""
+        "Seddu tasarut tazayezt"
       ],
       "Background color": [
         "Ini n ugilal"
@@ -3437,8 +4204,8 @@
         "Nɣel ɣer tecfawt"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Snulfu-d ${ calendarsToBeCreated } n uwitay amaynut",
+        "Snulfu-d ${ calendarsToBeCreated } n yiwitayen imaynuten"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
@@ -3478,10 +4245,10 @@
         "Ussan"
       ],
       "Decrypt message": [
-        ""
+        "Kkes awgelhen i yizen"
       ],
       "Default email application": [
-        ""
+        "Asnas amezwer n imayl"
       ],
       "Disable message content search": [
         ""
@@ -3665,8 +4432,8 @@
         ""
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n uwitay",
+        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n yiwitayen"
       ],
       "Import from": [
         "Kter si"
@@ -3675,7 +4442,7 @@
         ""
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
       ],
       "Included": [
         "Yedda"
@@ -3741,7 +4508,7 @@
         "Sefrek tibzimin-inek/m"
       ],
       "members": [
-        ""
+        "imttekkiyen"
       ],
       "Members": [
         "Imedrawen"
@@ -3762,13 +4529,13 @@
         "Izen yettwazen."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Izen ad yettwazen deg ${ dateString } ɣef ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        ""
+        "Izen ad yettwazen ass-a ɣef ${ formattedTime }"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Izen ad yettwazen azekka ɣef ${ formattedTime }"
       ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
@@ -4012,7 +4779,7 @@
         ""
       ],
       "Set a recovery phrase": [
-        ""
+        "Sbadu tafyirt n tririt"
       ],
       "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
@@ -4027,7 +4794,7 @@
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
       ],
       "Sorry, this message does not exist or has already expired": [
-        ""
+        "Suref-aɣ, izen-agi ur yelli ara neɣ ahat yemmut"
       ],
       "Starter VPN service with P2P support.": [
         "Aqeddac VPN n uskar s tallalt n P2P akked umsewḥel n udellel."
@@ -4157,16 +4924,16 @@
         "Izen-a ad yettwasenkez ɣer yirewwayen iwakken ad tzemreḍ ad t-tẓergeḍ. Ad tuḥwaǧeḍ ad talseḍ asɣiwes mi ara yettwazen."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Izen-agi ad yettwazen deg ${ dateString } ɣef ${ formattedTime }"
       ],
       "This message will be sent shortly": [
         "Izen-a ad yettwazen deg kra n wakud"
       ],
       "This message will be sent today at ${ formattedTime }": [
-        ""
+        "Izen-agi ad yettwazen ass-a ɣef ${ formattedTime }"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Izen-agi ad yettwazen azekka ɣef ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
         "Izen-agi ad yemmet deg ${ formattedDate }"
@@ -4217,7 +4984,7 @@
         "Sens anadi n ugbur. Akala n usermed ur yettṛuḥu ara."
       ],
       "Turn on to search the content of your messages": [
-        ""
+        "Sermed akked ad tnadiḍ deg ugbur n yiznan-inek•inem"
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
@@ -4286,7 +5053,7 @@
         "Asenqed ad yeldi iccer amaynut, ttxil-k·m sens isewḥalen n yisfuyla udhimen. Ur tseɛɛuḍ ara tafakturt. Tadrimt akk ara yettusqedcen i usenqed n tkarḍa ad d-tuɣal din din."
       ],
       "Version ${ appVersion }": [
-        ""
+        "Lqem ${ appVersion }"
       ],
       "Visit our shop to get Proton merchandise.": [
         "Rzu ɣer taḥanut-nneɣ akken ad tawiḍ alzazen n Proton."
@@ -4310,7 +5077,7 @@
         ""
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Ad nazen tangalt tamaynutt n uselken ɣer ${ strong }"
       ],
       "Web URL": [
         "URL web"
@@ -4331,7 +5098,7 @@
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Tebɣiḍ ad teṭṭfeḍ tangalt tamaynutt n uselken ?"
       ],
       "Yearly": [
         "S useggas"
@@ -4840,7 +5607,7 @@
         "Aɣrem"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "Tangalt tesɛa 6 n yizwilen war tallunt"
       ],
       "Conditions": [
         "Tiwtilin"
@@ -5340,7 +6107,7 @@
         "Xelleṣ tafaturt"
       ],
       "Previous version": [
-        ""
+        "Lqem uzwir"
       ],
       "Privacy policy": [
         ""
@@ -5361,7 +6128,7 @@
         "Yettwazen"
       ],
       "Sign up for free": [
-        ""
+        "Jerred baṭel"
       ],
       "Spam": [
         "Aspam"
@@ -5415,15 +6182,10 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
-      ],
-      "${ createdCalendars } of 1 created": [
-        "",
-        ""
-      ],
       "Almost there": [
+        ""
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         ""
       ],
       "Creating new calendars": [
@@ -5769,7 +6531,7 @@
         "Agraw n unermes yettwasnifel"
       ],
       "Password has been set successfully": [
-        ""
+        "Awal uffir yettusbadu akken iwata"
       ]
     },
     "Oauth instructions": {
@@ -5850,7 +6612,7 @@
         "Rnu ɣer ugraw yellan"
       ],
       "All": [
-        ""
+        "Akk"
       ],
       "Create new group": [
         "Snulfu-d agraw amaynut"
@@ -5875,7 +6637,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Snulfu-d awitay amaynut"
       ],
       "Merge with calendar": [
         ""
@@ -6375,7 +7137,7 @@
     },
     "Spotlight": {
       "Discover all Proton services": [
-        ""
+        "Issin imeẓluyen meṛṛa n Proton"
       ],
       "Message Content Search": [
         ""
@@ -6417,7 +7179,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "Awi-d tallunt n uḥraz n zzyada baṭel"
       ],
       "Release notes": [
         "Tizmilin n llqem"
@@ -6479,8 +7241,8 @@
         "${ elementsCount } n yiznan ttwarnan ɣer ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
-        "",
-        ""
+        "${ elementsCount } n yizen yettwacerḍen yettwaɣera.",
+        "${ elementsCount } n yiznan yettwacerḍen ttwaɣeran."
       ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } n yizen yettwacerḍen s yitran.",
@@ -6533,7 +7295,7 @@
         "Inermisen ttwakksen"
       ],
       "Conversation added to ${ labelName }.": [
-        ""
+        "Adiwenni yettwarna ɣer ${ labelName }."
       ],
       "Conversation deleted": [
         "Adiwenni yettwakkes"
@@ -6557,7 +7319,7 @@
         "Ameslay imutti ɣer yispamen yerna amazan yettwarna ɣer tebdart taberkant."
       ],
       "Conversation removed from ${ labelName }.": [
-        ""
+        "Adiwenni yettwakkes seg ${ labelName }."
       ],
       "Draft deleted": [
         "Arewway yettwakkes"
@@ -6584,7 +7346,7 @@
         "Teffɣeḍ seg ujerred n tebdart n tirawt"
       ],
       "Message added to ${ labelName }.": [
-        ""
+        "Izen yettwarna ɣer ${ labelName }."
       ],
       "Message content search activated": [
         "Anadi n ugbur n yizen yettwarmad"
@@ -6602,7 +7364,7 @@
         ""
       ],
       "Message marked as unread.": [
-        ""
+        "Izen yettwacreḍ ur yettwaɣer ara."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
         "Izen imutti ɣer ${ folderName } yerna amazan yettwarna ɣer tebdart n tsiregt."
@@ -6614,7 +7376,7 @@
         "Izen imutti ɣer yispamen yerna amazan yettwarna ɣer tebdart taberkant."
       ],
       "Message removed from ${ labelName }.": [
-        ""
+        "Izen yettwakkes seg ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Senkez adiwenni n ${ selectionCount }",
@@ -6969,7 +7731,7 @@
         "Tansiwin imayl"
       ],
       "Email composer": [
-        ""
+        "Amsuddes n imayl"
       ],
       "Email content": [
         "Agbur n yimayl"
@@ -7149,7 +7911,7 @@
         "Asesfer..."
       ],
       "ProtonMail": [
-        ""
+        "ProtonMail"
       ],
       "Re-sign all contacts": [
         "Tulsa n uzmel n yinermisen meṛṛa"
@@ -7194,7 +7956,7 @@
         "Fren agraw n urmas"
       ],
       "Select permissions": [
-        ""
+        "Fren tisirag"
       ],
       "Select what to import": [
         "Fren acu ara tketreḍ"
@@ -7209,7 +7971,7 @@
         "Azen war azemz n taggara?"
       ],
       "Sender changed": [
-        ""
+        "Amazan yettwabeddel"
       ],
       "Sending error": [
         "Tuccḍa di tuzzna"
@@ -7290,7 +8052,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Ass-a"
       ]
     },
     "Tooltip": {
@@ -7384,18 +8146,18 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "lqem urkid"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Lqem-agi n yiminig Tor ur yettwadhel ara. Ma ulac uɣilif leqqem ɣer ${ stableRelease } aneggaru"
       ]
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "Ass-a d ass ilhan akken ad taruḍ imayl"
       ],
       "Update default font and size": [
-        ""
+        "Leqqem tiddi akked tsefsit tamezwert"
       ],
       "Your default font will look like following:": [
         ""
@@ -7409,10 +8171,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Ssit akken ad turareḍ tikkelt-nniḍen tabidyut"
       ],
       "Replay video": [
-        ""
+        "Urar tikkelt-nniḍen tavidyut"
       ]
     },
     "VPN feature": {
