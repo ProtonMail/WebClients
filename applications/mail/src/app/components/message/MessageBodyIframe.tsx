@@ -1,4 +1,4 @@
-import { RefObject, useRef, useEffect } from 'react';
+import { RefObject, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
@@ -18,6 +18,7 @@ import useObserveIframeHeight from './hooks/useObserveIframeHeight';
 import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
 
 interface Props {
+    iframeRef: RefObject<HTMLIFrameElement>;
     content: string;
     showBlockquote: boolean;
     showBlockquoteToggle: boolean;
@@ -36,6 +37,7 @@ interface Props {
 }
 
 const MessageBodyIframe = ({
+    iframeRef,
     content,
     blockquoteContent,
     showBlockquote: showBlockquoteProp,
@@ -52,7 +54,7 @@ const MessageBodyIframe = ({
     isOutside,
     mailSettings,
 }: Props) => {
-    const iframeRef = useRef<HTMLIFrameElement>(null);
+    // const iframeRef = useRef<HTMLIFrameElement>(null);
     const messageHead = locateHead(message.messageDocument?.document);
 
     const { isResizing } = useMailboxContainerContext();
