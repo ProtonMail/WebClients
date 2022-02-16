@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
@@ -263,7 +263,7 @@
         "Ikke modtaget koden?"
       ],
       "Didn't receive the code?": [
-        ""
+        "Ikke modtaget koden?"
       ],
       "Disable recovery phrase": [
         "Deaktiver gendannelsessætning"
@@ -314,7 +314,7 @@
         "Redigér Sieve"
       ],
       "Edit sign-in details": [
-        ""
+        "Rediger login-detaljer"
       ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
@@ -324,9 +324,6 @@
       ],
       "Export": [
         "Exportér"
-      ],
-      "Export contacts": [
-        "Eksportér kontakter"
       ],
       "Export ICS": [
         "Eksportér ICS"
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "Opret ny gendannelsessætning"
-      ],
-      "Generate new recovery phrase?": [
-        "Opret ny gendannelsessætning?"
       ],
       "Generate recovery phrase": [
         "Opret gendannelsessætning"
@@ -661,9 +655,6 @@
       "Sign in": [
         "Log ind"
       ],
-      "Sign in again to continue": [
-        "Log ind igen for at fortsætte"
-      ],
       "Sign out": [
         "Log ud"
       ],
@@ -745,9 +736,6 @@
       "Upgrade": [
         "Opgradér"
       ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
       "Upgrade to Plus": [
         "Opgradér til Plus"
       ],
@@ -785,10 +773,10 @@
         "Verificer"
       ],
       "Verify account": [
-        ""
+        "Verificer konto"
       ],
       "Verify email": [
-        ""
+        "Verificer e-mail"
       ],
       "View": [
         "Vis"
@@ -1224,6 +1212,17 @@
         "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalendere."
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Etiket tilføjet"
+      ],
+      "Label deleted": [
+        "Etiket slettet"
+      ],
+      "Label edited": [
+        "Etiket rettet"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Aktiv"
@@ -1437,6 +1436,773 @@
         "${ monthsWithYears } måneder"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abkhasien"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albanien"
+      ],
+      "Algeria": [
+        "Algeriet"
+      ],
+      "American Samoa": [
+        "Amerikansk Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktis"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua og Barbudas"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenien"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australien"
+      ],
+      "Austria": [
+        "Østrig"
+      ],
+      "Azerbaijan": [
+        "Aserbajdsjan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Hviderusland"
+      ],
+      "Belgium": [
+        "Belgien"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius og Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnien-Hercegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvetøen"
+      ],
+      "Brazil": [
+        "Brasilien"
+      ],
+      "British Indian Ocean Territory": [
+        "Britiske territorium i Det Indiske Ocean"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgarien"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Burma"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Cameroon"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Kap Verde"
+      ],
+      "Cayman Islands": [
+        "Caymanøerne"
+      ],
+      "Central African Republic": [
+        "Den Centralafrikanske Republik"
+      ],
+      "Chad": [
+        "Tchad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "Kina"
+      ],
+      "Christmas Island": [
+        "Christmas Island"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocosøerne"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comorerne"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Demokratiske Republik"
+      ],
+      "Cook Islands": [
+        "Cookøerne"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        "Elfenbenskysten"
+      ],
+      "Croatia": [
+        "Kroatien"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cypern"
+      ],
+      "Czech Republic": [
+        "Tjekkiet"
+      ],
+      "Denmark": [
+        "Danmark"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominikanske Republik"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypten"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ækvatorialguinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Ethiopia": [
+        "Etiopien"
+      ],
+      "Falkland Islands": [
+        "Falklandsøerne"
+      ],
+      "Faroe Islands": [
+        "Færøerne"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronesien"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Frankrig"
+      ],
+      "French Guiana": [
+        "Fransk Guyana"
+      ],
+      "French Polynesia": [
+        "Fransk Polynesien"
+      ],
+      "French Southern Territories": [
+        "Franske sydlige territorier"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgien"
+      ],
+      "Germany": [
+        "Tyskland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grækenland"
+      ],
+      "Greenland": [
+        "Grønland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard Island og McDonald Islands"
+      ],
+      "Holy See (Vatican City State)": [
+        "Den Hellige Stol (Vatikanstaten)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Ungarn"
+      ],
+      "Iceland": [
+        "Island"
+      ],
+      "India": [
+        "Indien"
+      ],
+      "Indonesia": [
+        "Indonesien"
+      ],
+      "International": [
+        "International"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italien"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordan"
+      ],
+      "Kazakhstan": [
+        "Kasakhstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirgisistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letland"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libyen"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litauen"
+      ],
+      "Luxembourg": [
+        "Luxembourg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Maldiverne"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshalløerne"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauretanien"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongoliet"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nederlandene"
+      ],
+      "New Caledonia": [
+        "Ny Kaledonien"
+      ],
+      "New Zealand": [
+        "New Zealand"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk Island"
+      ],
+      "North Korea": [
+        "Nordkorea"
+      ],
+      "North Macedonia": [
+        "Nordmakedonien"
+      ],
+      "Northern Mariana Islands": [
+        "Nordmarianerne"
+      ],
+      "Norway": [
+        "Norge"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palæstina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Ny Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filippinerne"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "Rumænien"
+      ],
+      "Russia": [
+        "Rusland"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Skt. Barthélemy"
+      ],
+      "Saint Helena": [
+        "Sankt Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts og Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (franske del)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre og Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent og Grenadinerne"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome og Principe"
+      ],
+      "Saudi Arabia": [
+        "Saudi-Arabien"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbien"
+      ],
+      "Seychelles": [
+        "Seychellerne"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakiet"
+      ],
+      "Slovenia": [
+        "Slovenien"
+      ],
+      "Solomon Islands": [
+        "Salomon-øerne"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Sydafrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Sydgeorgien og de sydlige Sandwichøer"
+      ],
+      "South Korea": [
+        "Sydkorea"
+      ],
+      "South Ossetia": [
+        "Sydossetien"
+      ],
+      "South Sudan": [
+        "Sydsudan"
+      ],
+      "Spain": [
+        "Spanien"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard og Jan Mayen"
+      ],
+      "Swaziland": [
+        "Swaziland"
+      ],
+      "Sweden": [
+        "Sverige"
+      ],
+      "Switzerland": [
+        "Schweiz"
+      ],
+      "Syria": [
+        "Syrien"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadsjikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad og Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunesien"
+      ],
+      "Turkey": [
+        "Tyrkiet"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks- og Caicosøerne"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraine"
+      ],
+      "United Arab Emirates": [
+        "Forenede Arabiske Emirater"
+      ],
+      "United Kingdom": [
+        "Storbritannien"
+      ],
+      "United States": [
+        "USA"
+      ],
+      "United States Minor Outlying Islands": [
+        "USA's ydre småøer"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Jomfruøerne, britiske"
+      ],
+      "Virgin Islands, U.S.": [
+        "Jomfruøerne, USA"
+      ],
+      "Wallis and Futuna": [
+        "Wallis og Futuna"
+      ],
+      "Western Sahara": [
+        "Vestsahara"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Ålandsøerne"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
@@ -1511,9 +2277,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dekrypterer af kontakter... Behandling kan tage et par minutter. Når den er afsluttet, kan du downloade filen indeholdende dine dekrypterede kontakter."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -1735,9 +2498,6 @@
       "Condition incomplete": [
         "Betingelse mangelfuld"
       ],
-      "Contact signature not verified": [
-        "Kontaktsignatur ikke bekræftet"
-      ],
       "Could not find address ${ email }.": [
         "Kunne ikke finde adresse ${ email }."
       ],
@@ -1774,7 +2534,7 @@
         "Fejl i en af betingelserne"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        ""
+        "Kunne ikke hente aktive sessioner. ${ refresh } eller prøv igen senere."
       ],
       "File has no contents to preview": [
         "Filen har intet indhold at forhåndsvise"
@@ -1842,9 +2602,6 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
         "Flet mindst ${ calendarToFixCount } kalendere med eksisterende Proton-kalendere"
-      ],
-      "Missing signature": [
-        "Mangler signatur"
       ],
       "Name on card required": [
         "Navn på kort kræves"
@@ -1935,16 +2692,13 @@
         "Proces afbrudt"
       ],
       "Request timed out": [
-        ""
+        "Forespørgsel fik timeout"
       ],
       "Require at least one action": [
         "Kræver mindst en handling"
       ],
       "Require at least one condition": [
         "Kræver mindst en betingelse"
-      ],
-      "Signature not verified": [
-        "Signatur ikke bekræftet"
       ],
       "Signature verification failed": [
         "Signaturbekræftelse mislykkedes"
@@ -2307,7 +3061,7 @@
         ""
       ],
       "Unexpected error": [
-        ""
+        "Uventet fejl"
       ],
       "Unsupported invitation": [
         "Ikke-understøttet invitation"
@@ -2609,6 +3363,15 @@
         "Værdi / Data / Point til"
       ]
     },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "",
+        ""
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        ""
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -2851,13 +3614,13 @@
         "Gå til ${ boldAccountSecurity }"
       ],
       "Go to Outlook.com ${ securitySettingsLink }": [
-        ""
+        "Gå til Outlook.com ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "Hvis totrinsbekræftelse er deaktiveret, slå det til"
       ],
       "Open your ${ yahooMailLink } contacts": [
-        ""
+        "Åbn dine ${ yahooMailLink } kontakter"
       ],
       "Open your Outlook ${ outlookContactsLink }": [
         ""
@@ -2881,13 +3644,13 @@
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
+        "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
         ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        ""
+        "For at importere e-mails til Proton, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "For at importere til Proton skal du bruge et ${ appPasswordLink } fra Yahoo. Få det ved at følge disse trin:"
@@ -3427,9 +4190,6 @@
       "Creating your Proton account": [
         "Opretter din Proton-konto"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Aktuelt allokeres al ledig lagerplads til administratorkontoen. Reducér administratorkontoallokeringen for at frigive lagerplads til yderligere brugere. Du kan altid forøge den samlede mængde lagerplads ved at opgradere din konto."
       ],
@@ -3745,7 +4505,7 @@
         "Installer en server-konfigurationsfil for at oprette forbindelse til en bestemt server i et land af eget valg."
       ],
       "Internet connection lost": [
-        ""
+        "Internetforbindelse mistet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
@@ -3890,9 +4650,6 @@
       ],
       "No results found": [
         "Ingen resultater fundet"
-      ],
-      "No subscription yet": [
-        "Intet abonnement endnu"
       ],
       "Normal": [
         "Normal"
@@ -4120,6 +4877,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Sendt med <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
+      ],
       "Server is currently down": [
         "Serveren er i øjeblikket nede"
       ],
@@ -4130,7 +4890,7 @@
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
       "Session timed out": [
-        ""
+        "Session er udløbet"
       ],
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
@@ -4174,9 +4934,6 @@
       "Thank you for supporting our mission.": [
         "Tak for din støtte til vores mission."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
-      ],
       "The calendar will be removed from your account.": [
         "Kalenderen vil blive fjernet fra din konto."
       ],
@@ -4188,9 +4945,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "Navnet vil være synligt for dine brugere, mens de er logget ind."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Der er ingen tilgængelige faktureringsoplysninger for dit nuværende abonnement."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Disse konfigurationsfiler lader dig vælge, hvilken ProtonVPN-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller opsætter en VPN-forbindelse på en router."
@@ -4274,7 +5028,7 @@
         "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsesfil."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        ""
+        "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsessætning eller en gendannelsesfil."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsessætning."
@@ -4283,7 +5037,7 @@
         "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        ""
+        "Hvis du vil sikre kontinuerlig adgang til din konto, skal du indstille en metode til gendannelse af kontoen"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -4298,7 +5052,7 @@
         "For at sikre din internetforbindelse, skal du downloade og installere ProtonVPN-applikationen til din enhed og oprette forbindelse til en ProtonVPN-server."
       ],
       "To use ${ toAppName }, please create an address.": [
-        ""
+        "Opret en adresse for at bruge ${ toAppName }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Genopfyld din konto med kredit, som du kan benytte på et nyt abonnement eller fornyelse af dit nuværende. Du får én kredit pr. brugte ${ i18nCurrency }."
@@ -4345,9 +5099,6 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } eller ${ PLAN_NAMES[PLANS.PLUS] } abonnement for at aktivere automatiske svar, når du er væk fra kontoret."
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Opgrader til et betalt abonnement for at få adgang til premium-funktioner og øge din lagerplads."
-      ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Opgrader til et betalt abonnement for at låse op for IMAP/SMTP-understøttelse via ProtonMail Bridge."
       ],
@@ -4368,9 +5119,6 @@
       ],
       "Users": [
         "Brugere"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Brugere kan ikke foretage ændringer i organisationsindstillinger. Hvis du har brug for administratorrettigheder, så tag kontakt til din systemadministrator."
       ],
       "Verification can take a few minutes.": [
         "Bekærftelsen kan tage et par minutter."
@@ -4415,7 +5163,7 @@
         "Vi giver dig besked, når importen er færdig."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
       "Web URL": [
         "Webadresse"
@@ -4451,7 +5199,7 @@
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Ønsker du at modtage en ny verifikationskode?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo læser dine personlige oplysninger for at give adgang til annoncører, amerikanske efterretningstjenester og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
@@ -5043,7 +5791,7 @@
         "${ UsedMembers } af ${ MaxMembers } brugere"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
       "Account storage": [
         "Kontolagerplads"
@@ -5108,9 +5856,6 @@
       "Auto-load embedded images": [
         "Auto-indlæs indlejrede billeder"
       ],
-      "Automatically save contacts": [
-        "Gem automatisk kontakter"
-      ],
       "Block email tracking": [
         "Bloker sporing af e-mail"
       ],
@@ -5151,7 +5896,7 @@
         "Kode"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "Kode er på 6 cifre uden mellemrum"
       ],
       "Color": [
         "Farve"
@@ -5934,6 +6679,9 @@
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
+      "How to unlock data": [
+        "Sådan oplåses data"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -5972,15 +6720,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Hvad er forskellen mellem UDP og TCP-protokoller?"
+      ],
+      "Why set recovery methods?": [
+        "Hvorfor indstille gendannelsesmetoder?"
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } af ${ calendarsToBeCreated } oprettet",
-        "${ createdCalendars } af ${ calendarsToBeCreated } oprettet"
-      ],
       "Almost there": [
         "Næsten færdig"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Antal oprettede kalendere: ${ createdCalendars } ud af ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Forbinder til din e-mailudbyder"
@@ -6346,9 +7096,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Tilbage til kalender"
-      ],
-      "Back to Contacts": [
-        "Tilbage til kontakter"
       ],
       "Back to Drive": [
         "Tilbage til drev"
@@ -6819,6 +7566,9 @@
       "Proton username": [
         "Proton-brugernavn"
       ],
+      "Search settings": [
+        "Søg indstillinger"
+      ],
       "Search users": [
         "Søg brugere"
       ],
@@ -6974,14 +7724,6 @@
         "privat"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } af i alt ${ countContacts } kontakter blev eksporteret."
-      ],
-      "No contacts exported.": [
-        "Ingen kontakter eksporteret."
-      ]
-    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -7012,6 +7754,47 @@
       ],
       "Work": [
         "Arbejde"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "Tilbage til ${ signIn }."
+      ],
+      "Cancel": [
+        "Annuller"
+      ],
+      "Email address has been verified.": [
+        "E-mailadressen er bekræftet."
+      ],
+      "Email address not yet verified.": [
+        "E-mailadressen er endnu ikke bekræftet."
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "${ signIn } for at sende en ny anmodning om bekræftelse af e-mail til gendannelse."
+      ],
+      "Send verification email": [
+        "Send bekræftelsesmail"
+      ],
+      "There was a problem verifying your email address.": [
+        "Der opstod et problem med at bekræfte din e-mailadresse."
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Bekræftelsesmail sendt til ${ email.Value }"
+      ],
+      "Verify now": [
+        "Bekræft nu"
+      ],
+      "Verify recovery email?": [
+        "Bekræft e-mail til gendannelse?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Ved at bekræfte din e-mailadresse øger du din kontosikkerhed og giver dig flere muligheder for at genoprette din konto."
+      ],
+      "You can safely close this tab.": [
+        "Du kan godt lukke denne fane."
+      ],
+      "Your recovery email has been successfully verified.": [
+        "Din e-mail til gendannelse er blevet bekræftet."
       ]
     },
     "Recovery method": {
@@ -7078,59 +7861,8 @@
       "Account": [
         "Konto"
       ],
-      "Appearance": [
-        "Udseende"
-      ],
-      "Auto reply": [
-        "Autosvar"
-      ],
-      "Backup and export": [
-        "Backup og eksport"
-      ],
-      "Calendars": [
-        "Kalendere"
-      ],
-      "Domain names": [
-        "Domænenavne"
-      ],
-      "Email privacy": [
-        "E-mail-privatliv"
-      ],
-      "Encryption and keys": [
-        "Kryptering og nøgler"
-      ],
-      "Filters": [
-        "Filtre"
-      ],
-      "Folders and labels": [
-        "Mapper og etiketter"
-      ],
-      "General": [
-        "Generelt"
-      ],
-      "Identity and addresses": [
-        "Identitet og adresser"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "Import & eksport"
-      ],
-      "Multi-user support": [
-        "Flerbrugerunderstøttelse"
-      ],
       "Organization": [
         "Organisation"
-      ],
-      "Organization and keys": [
-        "Organisation og nøgler"
-      ],
-      "Users and addresses": [
-        "Brugere og adresser"
-      ],
-      "VPN apps": [
-        "VPN-apps"
       ]
     },
     "Settings update growler warning": {
@@ -7734,9 +8466,6 @@
       "Contact encryption keys": [
         "Kontakt-krypteringsnøgler"
       ],
-      "Contacts": [
-        "Kontakter"
-      ],
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
       ],
@@ -7873,7 +8602,7 @@
         "E-mail"
       ],
       "Email composer": [
-        ""
+        "E-mail skrivevindue"
       ],
       "Email encryption keys": [
         "E-mailkrypteringsnøgler"
@@ -7893,9 +8622,6 @@
       "Error": [
         "Fejl"
       ],
-      "Export": [
-        "Exportér"
-      ],
       "Export calendar": [
         "Eksportér kalender"
       ],
@@ -7904,9 +8630,6 @@
       ],
       "Export public key": [
         "Eksportér offentlig nøgle"
-      ],
-      "Exporting contacts": [
-        "Eksporterer kontakter"
       ],
       "External PGP settings": [
         "Eksterne PGP-indstillinger"
@@ -7929,6 +8652,9 @@
       "Generate missing keys": [
         "Generér manglende nøgler"
       ],
+      "Generate new recovery phrase?": [
+        "Opret ny gendannelsessætning?"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Få ProtonVPN Plus for at få adgang til alle servere"
       ],
@@ -7946,9 +8672,6 @@
       ],
       "Import": [
         "Importér"
-      ],
-      "Import & export": [
-        "Import & eksport"
       ],
       "Import as simple event?": [
         "Importer som simpel begivenhed?",
@@ -8200,9 +8923,6 @@
       "Sign in again to continue": [
         "Log ind igen for at fortsætte"
       ],
-      "Sorry, you can't access this page": [
-        "Desværre, du kan ikke tilgå denne side"
-      ],
       "Sort folders alphabetically": [
         "Sortér mapper alfabetisk"
       ],
@@ -8211,9 +8931,6 @@
       ],
       "Spam filters": [
         "Spamfiltre"
-      ],
-      "Spy Tracker Protection": [
-        "Beskyttelse mod spionsporing"
       ],
       "Start a new import": [
         "Start en ny import"
@@ -8268,9 +8985,6 @@
       ],
       "Unsupported browser": [
         "Ikke understøttet browser"
-      ],
-      "Upgrade": [
-        "Opgradér"
       ],
       "Username": [
         "Brugernavn"
@@ -8464,6 +9178,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Send din internettrafik gennem Tor-netværket med ét enkelt tryk."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Vælg hvordan din liste over beskeder ser ud som standard."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Indstil standard-editorens popup-størrelse som lille eller fuld skærm."
       ],
@@ -8517,9 +9234,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Når du klikker på et link, vil denne anti-phishing-funktion bede dig om at bekræfte webadressen (URL) på websiden."
-      ],
-      "You do not have any contacts to export": [
-        "Du har ingen kontakter at eksportere"
       ],
       "You have locally decrypted this key": [
         "Du har dekrypteres denne nøgle lokalt"

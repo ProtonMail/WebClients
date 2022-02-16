@@ -41,7 +41,7 @@
         "Activar mi cupón"
       ],
       "Activate recovery": [
-        ""
+        "Activar recuperación"
       ],
       "Add credit / debit card": [
         "Añadir tarjeta de crédito / débito"
@@ -152,7 +152,7 @@
         ""
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "Degradar a ${ BRAND_NAME } ${ downgradedPlanName }"
       ],
       "Download": [
         "Descargar"
@@ -314,7 +314,7 @@
         "Enviar"
       ],
       "Set recovery phrase": [
-        ""
+        "Establecer frase de recuperación"
       ],
       "Share via link": [
         "Compartir con un enlace"
@@ -359,16 +359,16 @@
         "Probar otro método"
       ],
       "Unlock data": [
-        ""
+        "Desbloquear datos"
       ],
       "Update": [
         "Actualizar"
       ],
       "Update recovery file": [
-        ""
+        "Actualizar archivo de recuperación"
       ],
       "Update recovery phrase": [
-        ""
+        "Actualizar frase de recuperación"
       ],
       "Upgrade": [
         "Mejorar"
@@ -712,7 +712,7 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "No sincronizado"
       ],
       "Syncing": [
         "Sincronizando"
@@ -738,7 +738,7 @@
         ""
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Han pasado más de 12 horas desde la última actualización"
       ],
       "Unsupported calendar format": [
         ""
@@ -762,6 +762,773 @@
       "${ monthsWithYears } month": [
         "${ monthsWithYears } mes",
         "${ monthsWithYears } meses"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        ""
+      ],
+      "Afghanistan": [
+        "Afganistán"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Argelia"
+      ],
+      "American Samoa": [
+        "Samoa Americana"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguila"
+      ],
+      "Antarctica": [
+        "Antártida"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua y Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        ""
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaiyán"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahréin"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Bielorrusia"
+      ],
+      "Belgium": [
+        "Bélgica"
+      ],
+      "Belize": [
+        "Belice"
+      ],
+      "Benin": [
+        "Benín"
+      ],
+      "Bermuda": [
+        "Bermudas"
+      ],
+      "Bhutan": [
+        "Bután"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Caribe Neerlandés"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia Herzegovina"
+      ],
+      "Botswana": [
+        "Bostwana"
+      ],
+      "Bouvet Island": [
+        "Isla Bouvet"
+      ],
+      "Brazil": [
+        "Brasil"
+      ],
+      "British Indian Ocean Territory": [
+        "Territorio Británico del Océano Índico"
+      ],
+      "Brunei Darussalam": [
+        "Brunéi"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Camboya"
+      ],
+      "Cameroon": [
+        "Camerún"
+      ],
+      "Canada": [
+        "Canadá"
+      ],
+      "Cape Verde": [
+        "Cabo Verde"
+      ],
+      "Cayman Islands": [
+        "Islas Caimán"
+      ],
+      "Central African Republic": [
+        "República Centroafricana"
+      ],
+      "Chad": [
+        "Chad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Isla de Navidad"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Islas Cocos"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comores"
+      ],
+      "Congo": [
+        "República del Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        "Islas Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        ""
+      ],
+      "Croatia": [
+        "Croacia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curazao"
+      ],
+      "Cyprus": [
+        "Chipre"
+      ],
+      "Czech Republic": [
+        "República Checa"
+      ],
+      "Denmark": [
+        "Dinamarca"
+      ],
+      "Djibouti": [
+        "Yibuti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "República Dominicana"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egipto"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guinea Ecuatorial"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Ethiopia": [
+        "Etiopía"
+      ],
+      "Falkland Islands": [
+        ""
+      ],
+      "Faroe Islands": [
+        "Islas Faroe"
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        "Fiyi"
+      ],
+      "Finland": [
+        "Finlandia"
+      ],
+      "France": [
+        "Francia"
+      ],
+      "French Guiana": [
+        "Guyana Francesa"
+      ],
+      "French Polynesia": [
+        "Polinesia Francesa"
+      ],
+      "French Southern Territories": [
+        "Territorios Australes Franceses"
+      ],
+      "Gabon": [
+        "Gabón"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Alemania"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grecia"
+      ],
+      "Greenland": [
+        "Groenlandia"
+      ],
+      "Grenada": [
+        "Granada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bisáu"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haití"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Islas Heard y McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hungria"
+      ],
+      "Iceland": [
+        "Islandia"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
+      "International": [
+        "Internacional"
+      ],
+      "Iran": [
+        "Irán"
+      ],
+      "Iraq": [
+        "Iraq"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Isla de Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japón"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordania"
+      ],
+      "Kazakhstan": [
+        "Kazajistán"
+      ],
+      "Kenya": [
+        "Kenia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirguistán"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letonia"
+      ],
+      "Lebanon": [
+        "Líbano"
+      ],
+      "Lesotho": [
+        "Lesoto"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Líbia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituania"
+      ],
+      "Luxembourg": [
+        "Luxemburgo"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malasia"
+      ],
+      "Maldives": [
+        "Maldivas"
+      ],
+      "Mali": [
+        "Malí"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Islas Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauricio, islas"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "México"
+      ],
+      "Moldova": [
+        "Moldavia"
+      ],
+      "Monaco": [
+        "Mónaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marruecos"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru, República de"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Países Bajos"
+      ],
+      "New Caledonia": [
+        "Nueva Caledonia"
+      ],
+      "New Zealand": [
+        "Nueva Zelanda"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "República del Níger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Isla Norfolk"
+      ],
+      "North Korea": [
+        "Corea del Norte"
+      ],
+      "North Macedonia": [
+        "Macedonia del Norte"
+      ],
+      "Northern Mariana Islands": [
+        "Islas Marianas del Norte"
+      ],
+      "Norway": [
+        "Noruega"
+      ],
+      "Oman": [
+        "Omán"
+      ],
+      "Pakistan": [
+        "Pakistán"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panamá"
+      ],
+      "Papua New Guinea": [
+        "Papua Nueva Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Perú"
+      ],
+      "Philippines": [
+        "Filipinas"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polonia"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        "Rumanía"
+      ],
+      "Russia": [
+        "Rusia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "San Bartolomé"
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        "San Cristóbal y Nieves"
+      ],
+      "Saint Lucia": [
+        "Santa Lucía"
+      ],
+      "Saint Martin (French Part)": [
+        ""
+      ],
+      "Saint Pierre and Miquelon": [
+        "San Pedro y Miquelón"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "San Vicente y las Granadinas"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Santo Tomé y Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Arabia Saudita"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leona"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        "Eslovaquia"
+      ],
+      "Slovenia": [
+        "Eslovenia"
+      ],
+      "Solomon Islands": [
+        "Islas Solomon"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Sudáfrica"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia del sur y las Islas Sandwich del sur"
+      ],
+      "South Korea": [
+        "Corea del Sur"
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        "Sudán del sur"
+      ],
+      "Spain": [
+        "España"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudán"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard y Jan Mayen"
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        "Suecia"
+      ],
+      "Switzerland": [
+        "Suiza"
+      ],
+      "Syria": [
+        "Siria"
+      ],
+      "Taiwan": [
+        "Taiwán"
+      ],
+      "Tajikistan": [
+        "Tayikistán"
+      ],
+      "Tanzania": [
+        "Tanzanía"
+      ],
+      "Thailand": [
+        "Tailandia"
+      ],
+      "Timor-Leste": [
+        "Timor Oriental"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelauano"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad y Tobago"
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        "Túnez"
+      ],
+      "Turkey": [
+        "Turquía"
+      ],
+      "Turkmenistan": [
+        "Turkmenistán"
+      ],
+      "Turks and Caicos Islands": [
+        "Islas Turcas y Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucrania"
+      ],
+      "United Arab Emirates": [
+        "Emiratos Árabes Unidos"
+      ],
+      "United Kingdom": [
+        "Reino Unido"
+      ],
+      "United States": [
+        "Estados Unidos"
+      ],
+      "United States Minor Outlying Islands": [
+        "Islas Ultramarinas Menores de Estados Unidos"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistán"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Islas Vírgenes Británicas"
+      ],
+      "Virgin Islands, U.S.": [
+        "Islas Vírgenes de los Estados Unidos."
+      ],
+      "Wallis and Futuna": [
+        "Wallis y Futuna"
+      ],
+      "Western Sahara": [
+        "Sáhara Occidental"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabue"
+      ],
+      "Åland Islands": [
+        ""
       ]
     },
     "CountryInfo": {
@@ -842,7 +1609,7 @@
         "No se puede comprobar el nombre de usuario, inténtelo de nuevo más tarde"
       ],
       "Checkout expired, please try again": [
-        ""
+        "La compra ha expirado, inténtalo de nuevo"
       ],
       "Code wrong or not valid anymore": [
         "Código incorrecto o no válido"
@@ -865,11 +1632,11 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si el tiempo se ha acabado en su televisor, haga clic en Actualizar en su televisor e introduzca su código de nuevo."
       ],
-      "Incorrect login credentials. Please try again": [
-        "Credenciales de acceso incorrectas. Por favor, inténtalo de nuevo"
+      "Incorrect login credentials. Please try again.": [
+        ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Correo electrónico o contraseña incorrecto. Por favor, inténtalo de nuevo"
+      "Incorrect mailbox password. Please try again.": [
+        ""
       ],
       "Invalid ${ name } code": [
         "Código de ${ name } no válido"
@@ -938,7 +1705,7 @@
         "Proceso abortado"
       ],
       "Request timed out": [
-        ""
+        "Tiempo de espera agotado"
       ],
       "Signature verification failed": [
         "Falló la verificación de la firma"
@@ -1290,7 +2057,7 @@
         "Al degradar a un plan Free, perderá permanentemente estos beneficios, incluso si mejora de nuevo en el futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Al degradar la cuenta perderás los siguientes beneficios. ¿Estás seguro de que quieres continuar?"
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, es posible que los cambios no se guarden"
@@ -1431,10 +2198,10 @@
         "Importante: Por favor, asegúrate de que has guardado los códigos de recuperación. De lo contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de doble factor."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "En caso de que pierdas tus datos de acceso, te enviaremos instrucciones de recuperación por correo o SMS."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "En caso de que pierdas tus datos de acceso, te enviaremos instrucciones de recuperación por correo electrónico."
       ],
       "Included": [
         "Incluido"
@@ -1452,7 +2219,7 @@
         "Instale un archivo de configuración del servidor para conectarse a un servidor específico en el país de su elección."
       ],
       "Internet connection lost": [
-        ""
+        "Sin conexión a Internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Conexión a Internet perdida. Compruebe la conección de su dispositivo."
@@ -1495,9 +2262,6 @@
       ],
       "No results found": [
         "No se han encontrado resultados"
-      ],
-      "No subscription yet": [
-        "Aún no hay suscripción"
       ],
       "Not customizable": [
         "No personalizable"
@@ -1635,9 +2399,6 @@
       "Thank you for supporting our mission.": [
         "Gracias por apoyar nuestro propósito."
       ],
-      "There are no billing details available for your current subscription.": [
-        "No hay detalles de facturación disponibles para su suscripción actual."
-      ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estos archivos de configuración te permiten elegir a qué servidor de ProtonVPN te conectas cuando utilizas una aplicación VPN de terceros o al configurar una conexión VPN en un enrutador."
       ],
@@ -1703,9 +2464,6 @@
       ],
       "Unsupported file": [
         "Archivo no soportado"
-      ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Mejora a un plan de pago para acceder a las funciones premium y aumenta tu espacio de almacenamiento."
       ],
       "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utiliza las siguientes credenciales al conectarte a servidores ProtonVPN sin aplicación. Ejemplos de casos incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
@@ -1795,7 +2553,7 @@
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta de PayPal. Si tu cuenta de PayPal no lo tiene, haz clic en el botón de abajo."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Debes eliminar cualquier calendario adicional y cualquier enlace al calendario compartido antes de poder cancelar tu suscripción. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Has alcanzado el ${ spaceDisplayed }% de tu capacidad de almacenamiento. Libera algo de espacio o añade más espacio de almacenamiento.${ freeUpMessage } ${ upgradeLink }"
@@ -2017,7 +2775,7 @@
         "Categoría"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "El código es de 6 dígitos sin espacios"
       ],
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
@@ -2050,7 +2808,7 @@
         "Créditos usados"
       ],
       "Current login password": [
-        ""
+        "Contraseña de inicio de sesión actual"
       ],
       "Customize invoices": [
         "Personalizar facturas"
@@ -2377,9 +3135,6 @@
       "Upgrade account": [
         "Mejorar cuenta"
       ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
       "View guide": [
         "Ver guía"
       ],
@@ -2704,7 +3459,7 @@
         "Nombre de usuario de Proton"
       ],
       "Recovery email address": [
-        ""
+        "Dirección de correo de recuperación"
       ],
       "Reset code": [
         "Restablecer código"
@@ -2948,6 +3703,32 @@
     "Prime Video": {
       "Prime Video": [
         "Prime Video"
+      ]
+    },
+    "Recovery Email": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Email address has been verified.": [
+        ""
+      ],
+      "Email address not yet verified.": [
+        ""
+      ],
+      "Send verification email": [
+        ""
+      ],
+      "Verification email sent to ${ email.Value }": [
+        ""
+      ],
+      "Verify now": [
+        "Verificar ahora"
+      ],
+      "Verify recovery email?": [
+        ""
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        ""
       ]
     },
     "State": {
@@ -3195,7 +3976,7 @@
         "Eliminar cuenta"
       ],
       "Delete organization?": [
-        ""
+        "¿Eliminar la organización?"
       ],
       "Device connected!": [
         "¡Dispositivo conectado!"
@@ -3207,7 +3988,7 @@
         "Protección contra filtraciones del DNS"
       ],
       "Downgrade account": [
-        ""
+        "Degradar cuenta"
       ],
       "Downloads": [
         "Descargas"
@@ -3240,9 +4021,6 @@
         "Obtén ProtonVPN Plus para acceder a todos los servidores"
       ],
       "Gift code": [
-        "Código de regalo"
-      ],
-      "Gift Code": [
         "Código de regalo"
       ],
       "Human verification": [
@@ -3345,7 +4123,7 @@
         "Proporcionar detalles de pago"
       ],
       "Recovery": [
-        ""
+        "Recuperación"
       ],
       "Redeem coupon": [
         "Canjear cupón"
@@ -3366,7 +4144,7 @@
         "Restablecer contraseña"
       ],
       "Reset password?": [
-        ""
+        "¿Restablecer contraseña?"
       ],
       "Secure Core Servers": [
         "Servidores Secure Core"
@@ -3421,9 +4199,6 @@
       ],
       "Unsupported browser": [
         "Navegador no compatible"
-      ],
-      "Upgrade": [
-        "Mejorar"
       ],
       "Upgrade and get more": [
         "Mejora y obtén más"

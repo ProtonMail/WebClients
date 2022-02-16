@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Etkinleştir"
-      ],
       "activate": [
         "etkinleştir"
+      ],
+      "Activate": [
+        "Etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
@@ -269,7 +269,7 @@
         "Kurtarma ifadesini devre dışı bırak"
       ],
       "Disable recovery phrase?": [
-        "Kurtarma ifadesini devre dışı bırakılsın mı?"
+        "Kurtarma ifadesi devre dışı bırakılsın mı?"
       ],
       "Discard": [
         "Vazgeç"
@@ -325,9 +325,6 @@
       "Export": [
         "Dışa aktar"
       ],
-      "Export contacts": [
-        "Kişiler dışa aktar"
-      ],
       "Export ICS": [
         "ICS olarak dışa aktar"
       ],
@@ -343,11 +340,8 @@
       "Generate new recovery phrase": [
         "Yeni kurtarma ifadesi oluştur"
       ],
-      "Generate new recovery phrase?": [
-        "Yeni kurtarma ifadesi oluşturulsun mu?"
-      ],
       "Generate recovery phrase": [
-        "Yeni kurtarma ifadesi oluştur"
+        "Kurtarma ifadesi oluştur"
       ],
       "Get ProtonVPN Plus": [
         "ProtonVPN Plus edinin"
@@ -512,7 +506,7 @@
         "Sayfayı yenile"
       ],
       "Reload": [
-        "Yeniden yükle"
+        "Yenile"
       ],
       "Remove": [
         "Sil"
@@ -584,7 +578,7 @@
         "İncele"
       ],
       "Revoke all other sessions": [
-        "Diğer tüm oturumları geçersiz kıl"
+        "Diğer tüm oturumları kapat"
       ],
       "Save": [
         "Kaydet"
@@ -605,7 +599,7 @@
         "Davet e-postalarının dilini seçin"
       ],
       "Select plan": [
-        "Tarife seçin"
+        "Tarifeyi seçin"
       ],
       "Select timezone": [
         "Saat dilimini seçin"
@@ -660,9 +654,6 @@
       ],
       "Sign in": [
         "Oturum aç"
-      ],
-      "Sign in again to continue": [
-        "Devam etmek için yeniden oturum açın"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -745,9 +736,6 @@
       "Upgrade": [
         "Yükselt"
       ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
       "Upgrade to Plus": [
         "Plus tarifesine yükselt"
       ],
@@ -823,7 +811,7 @@
     },
     "Action for user session": {
       "Revoke": [
-        "Geçersiz kıl"
+        "Oturumu kapat"
       ]
     },
     "Action to select a title for the bug report modal": {
@@ -1119,7 +1107,7 @@
         "Uygulama sorunu"
       ],
       "Bridge problem": [
-        "Köprü sorunu"
+        "Bridge sorunu"
       ],
       "Calendar problem": [
         "Takvim sorunu"
@@ -1222,6 +1210,17 @@
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Abone olunabilecek en fazla ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } takvim sayısına ulaştınız.",
         "Abone olunabilecek en fazla ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } takvim sayısına ulaştınız."
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Etiket eklendi"
+      ],
+      "Label deleted": [
+        "Etiket silindi"
+      ],
+      "Label edited": [
+        "Etiket düzenlendi"
       ]
     },
     "Calendar status": {
@@ -1437,6 +1436,773 @@
         "${ monthsWithYears } ay"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abhazya"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Arnavutluk"
+      ],
+      "Algeria": [
+        "Cezayir"
+      ],
+      "American Samoa": [
+        "Amerikan Samoası"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktika"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua ve Barbuda"
+      ],
+      "Argentina": [
+        "Arjantin"
+      ],
+      "Armenia": [
+        "Ermenistan"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension Adası"
+      ],
+      "Australia": [
+        "Avustralya"
+      ],
+      "Austria": [
+        "Avusturya"
+      ],
+      "Azerbaijan": [
+        "Azerbaycan"
+      ],
+      "Bahamas": [
+        "Bahamalar"
+      ],
+      "Bahrain": [
+        "Bahreyn"
+      ],
+      "Bangladesh": [
+        "Bangladeş"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belçika"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butan"
+      ],
+      "Bolivia": [
+        "Bolivya"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Karayip Hollandası"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosna Hersek"
+      ],
+      "Botswana": [
+        "Botsvana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Adası"
+      ],
+      "Brazil": [
+        "Brezilya"
+      ],
+      "British Indian Ocean Territory": [
+        "Britanya Hint Okyanusu Toprakları"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaristan"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Burma"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kamboçya"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Yeşil Burun Adaları"
+      ],
+      "Cayman Islands": [
+        "Cayman Adaları"
+      ],
+      "Central African Republic": [
+        "Orta Afrika Cumhuriyeti"
+      ],
+      "Chad": [
+        "Çad"
+      ],
+      "Chile": [
+        "Şili"
+      ],
+      "China": [
+        "Çin"
+      ],
+      "Christmas Island": [
+        "Christmas Adası"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocos (Keeling) Adaları"
+      ],
+      "Colombia": [
+        "Kolombiya"
+      ],
+      "Comoros": [
+        "Komorlar"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Kongo Demokratik Cumhuriyeti"
+      ],
+      "Cook Islands": [
+        "Cook Adaları"
+      ],
+      "Costa Rica": [
+        "Kosta Rika"
+      ],
+      "Cote d'Ivoire\"": [
+        "Fildişi Sahili"
+      ],
+      "Croatia": [
+        "Hırvatistan"
+      ],
+      "Cuba": [
+        "Küba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Kıbrıs"
+      ],
+      "Czech Republic": [
+        "Çekya"
+      ],
+      "Denmark": [
+        "Danimarka"
+      ],
+      "Djibouti": [
+        "Cibuti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Dominik Cumhuriyeti"
+      ],
+      "Ecuador": [
+        "Ekvador"
+      ],
+      "Egypt": [
+        "Mısır"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ekvator Ginesi"
+      ],
+      "Eritrea": [
+        "Eritre"
+      ],
+      "Estonia": [
+        "Estonya"
+      ],
+      "Ethiopia": [
+        "Etiyopya"
+      ],
+      "Falkland Islands": [
+        "Falkland Adaları"
+      ],
+      "Faroe Islands": [
+        "Faroe Adaları"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronezya Federal Devletleri"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlandiya"
+      ],
+      "France": [
+        "Fransa"
+      ],
+      "French Guiana": [
+        "Fransız Guyanası"
+      ],
+      "French Polynesia": [
+        "Fransız Polinezyası"
+      ],
+      "French Southern Territories": [
+        "Fransız Güney Toprakları"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambiya"
+      ],
+      "Georgia": [
+        "Gürcistan"
+      ],
+      "Germany": [
+        "Almanya"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Cebelitarık"
+      ],
+      "Greece": [
+        "Yunanistan"
+      ],
+      "Greenland": [
+        "Grönland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Gine"
+      ],
+      "Guinea-Bissau": [
+        "Gine-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard Adası ve McDonald Adaları"
+      ],
+      "Holy See (Vatican City State)": [
+        "Vatikan"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Macaristan"
+      ],
+      "Iceland": [
+        "İzlanda"
+      ],
+      "India": [
+        "Hindistan"
+      ],
+      "Indonesia": [
+        "Endonezya"
+      ],
+      "International": [
+        "Uluslararası"
+      ],
+      "Iran": [
+        "İran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "İrlanda"
+      ],
+      "Isle of Man": [
+        "Man Adası"
+      ],
+      "Israel": [
+        "İsrail"
+      ],
+      "Italy": [
+        "İtalya"
+      ],
+      "Jamaica": [
+        "Jamaika"
+      ],
+      "Japan": [
+        "Japonya"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Ürdün"
+      ],
+      "Kazakhstan": [
+        "Kazakistan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosova"
+      ],
+      "Kuwait": [
+        "Kuveyt"
+      ],
+      "Kyrgyzstan": [
+        "Kırgızistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letonya"
+      ],
+      "Lebanon": [
+        "Lübnan"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberya"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Lihtenştayn"
+      ],
+      "Lithuania": [
+        "Litvanya"
+      ],
+      "Luxembourg": [
+        "Lüksemburg"
+      ],
+      "Macao": [
+        "Makao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malavi"
+      ],
+      "Malaysia": [
+        "Malezya"
+      ],
+      "Maldives": [
+        "Maldivler"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Adaları"
+      ],
+      "Martinique": [
+        "Martinik"
+      ],
+      "Mauritania": [
+        "Moritanya"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Meksika"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Moğolistan"
+      ],
+      "Montenegro": [
+        "Karadağ"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Fas"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Namibia": [
+        "Namibya"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Hollanda"
+      ],
+      "New Caledonia": [
+        "Yeni Kaledonya"
+      ],
+      "New Zealand": [
+        "Yeni Zelanda"
+      ],
+      "Nicaragua": [
+        "Nikaragua"
+      ],
+      "Niger": [
+        "Nijer"
+      ],
+      "Nigeria": [
+        "Nijerya"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk Adası"
+      ],
+      "North Korea": [
+        "Kuzey Kore"
+      ],
+      "North Macedonia": [
+        "Kuzey Makedonya"
+      ],
+      "Northern Mariana Islands": [
+        "Kuzey Mariana Adaları"
+      ],
+      "Norway": [
+        "Norveç"
+      ],
+      "Oman": [
+        "Umman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Filistin"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Yeni Gine"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipinler"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polonya"
+      ],
+      "Portugal": [
+        "Portekiz"
+      ],
+      "Puerto Rico": [
+        "Porto Riko"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Romanya"
+      ],
+      "Russia": [
+        "Rusya"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts ve Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (Fransız bölümü)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre ve Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent ve Grenadinler"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome ve Principe"
+      ],
+      "Saudi Arabia": [
+        "Suudi Arabistan"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Sırbistan"
+      ],
+      "Seychelles": [
+        "Seyşeller"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakya"
+      ],
+      "Slovenia": [
+        "Slovenya"
+      ],
+      "Solomon Islands": [
+        "Solomon Adaları"
+      ],
+      "Somalia": [
+        "Somali"
+      ],
+      "South Africa": [
+        "Güney Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Güney Georgia ve Güney Sandwich Adaları"
+      ],
+      "South Korea": [
+        "Güney Kore"
+      ],
+      "South Ossetia": [
+        "Güney Osetya"
+      ],
+      "South Sudan": [
+        "Güney Sudan"
+      ],
+      "Spain": [
+        "İspanya"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard ve Jan Mayen"
+      ],
+      "Swaziland": [
+        "Svaziland"
+      ],
+      "Sweden": [
+        "İsveç"
+      ],
+      "Switzerland": [
+        "İsviçre"
+      ],
+      "Syria": [
+        "Suriye"
+      ],
+      "Taiwan": [
+        "Tayvan"
+      ],
+      "Tajikistan": [
+        "Tacikistan"
+      ],
+      "Tanzania": [
+        "Tanzanya"
+      ],
+      "Thailand": [
+        "Tayland"
+      ],
+      "Timor-Leste": [
+        "Doğu Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad ve Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunus"
+      ],
+      "Turkey": [
+        "Türkiye"
+      ],
+      "Turkmenistan": [
+        "Türkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks ve Caicos Adaları"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukrayna"
+      ],
+      "United Arab Emirates": [
+        "Birleşik Arap Emirlikleri"
+      ],
+      "United Kingdom": [
+        "Birleşik Krallık"
+      ],
+      "United States": [
+        "Birleşik Devletler"
+      ],
+      "United States Minor Outlying Islands": [
+        "Birleşik Devletler Küçük Dış Adaları"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Özbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Britanya Virjin Adaları"
+      ],
+      "Virgin Islands, U.S.": [
+        "Birleşik Devletler Virjin Adaları"
+      ],
+      "Wallis and Futuna": [
+        "Wallis ve Futuna"
+      ],
+      "Western Sahara": [
+        "Batı Sahra"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambiya"
+      ],
+      "Zimbabwe": [
+        "Zimbabve"
+      ],
+      "Åland Islands": [
+        "Aland Adaları"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(${ entryCountryName } üzerinden)"
@@ -1511,9 +2277,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Kişilerin şifresi çözülüyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
@@ -1735,9 +2498,6 @@
       "Condition incomplete": [
         "Koşul eksik"
       ],
-      "Contact signature not verified": [
-        "Kişi imzası doğrulanmamış"
-      ],
       "Could not find address ${ email }.": [
         "${ email } adresi bulunamadı."
       ],
@@ -1843,9 +2603,6 @@
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
       ],
-      "Missing signature": [
-        "İmza eksik"
-      ],
       "Name on card required": [
         "Kartın üzerindeki ad yazılmalı"
       ],
@@ -1908,13 +2665,13 @@
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
       "Please set a recovery email first": [
-        "Lütfen önce bir kurtarma e-posta adresi ayarlayın"
+        "Lütfen önce bir kurtarma e-postası adresi ayarlayın"
       ],
       "Please set a recovery phone number first": [
-        "Lütfen önce bir kurtarma telefon numarası ayarlayın"
+        "Lütfen önce bir kurtarma telefonu numarası ayarlayın"
       ],
       "Please set a recovery/notification email first": [
-        "Lütfen önce bir kurtarma/bildirim e-posta adresi ayarlayın"
+        "Lütfen önce bir kurtarma/bildirim e-postası adresi ayarlayın"
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Lütfen yeniden kimlik doğrulaması yapmayı deneyin ve izinlerin doğru ayarlanmış olduğundan emin olun."
@@ -1943,9 +2700,6 @@
       "Require at least one condition": [
         "En az bir koşul olmalıdır"
       ],
-      "Signature not verified": [
-        "İmza doğrulanmamış"
-      ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
@@ -1968,7 +2722,7 @@
         "Sekme kapatıldı"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da başka bir bilgisayarla oturum açın."
+        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
@@ -2458,7 +3212,7 @@
         "Alıcı"
       ],
       "The sender": [
-        "Gönderen"
+        "Gönderici"
       ],
       "The subject": [
         "Konu"
@@ -2485,7 +3239,7 @@
         "İletileri etiketleme veya arşivleme gibi belirli işlemlerin otomatik olarak yapılması için özel bir süzgeç ekleyin."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Gönderene özel istenmeyen e-posta kuralları uygulayın. İzin verilenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman gelen kutunuza giderken, engellenenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman istenmeyenler kutusuna gider. Bir ileti istenmeyen olarak işaretlendiğinde, adresini de engellenenler listesine eklenir. Bir ileti istenmeyen değil olarak işaretlendiğinde, ileti İzin verilenler listesine eklenir."
+        "Göndericiye özel istenmeyen e-posta kuralları uygulayın. İzin verilenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman gelen kutunuza giderken, engellenenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman istenmeyenler klasörüne gider. Bir ileti istenmeyen olarak işaretlendiğinde, adresi de engellenenler listesine eklenir. Bir ileti istenmeyen değil olarak işaretlendiğinde, adresi izin verilenler listesine eklenir."
       ],
       "Search in Allow List and Block List": [
         "İzin verilenler ve engellenenler listesinde arama"
@@ -2607,6 +3361,15 @@
       ],
       "Value / Data / Points to": [
         "Değer / Veri / Hedef"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } öneri bulundu. Gezinmek için tuş takımını kullanın.",
+        "${ items.length } öneri bulundu. Gezinmek için tuş takımını kullanın."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Oturum açtıktan sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
       ]
     },
     "Human verification method": {
@@ -2825,7 +3588,7 @@
     },
     "Import error link": {
       "bandwidth limit": [
-        "bant genişliği sınırı"
+        "bant genişliği sınırlaması"
       ]
     },
     "Import instructions": {
@@ -3112,10 +3875,10 @@
         "${ annualBilling } tarifesine geçerek aboneliğinizde ${ save20 } indirim alın"
       ],
       "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "E-posta aboneliği ekleyerek, hem e-posta hem de VPN için ${ saveExtra20 } indirim alın."
+        "E-posta aboneliği ekleyerek, hem e-posta hem de VPN için ${ saveExtra20 }."
       ],
       "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "VPN aboneliği ekleyerek, hem VPN hem de e-posta için ${ saveExtra20 } indirim alın."
+        "VPN aboneliği ekleyerek, hem VPN hem de e-posta için ${ saveExtra20 }."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
@@ -3172,7 +3935,7 @@
         "Herkes interneti özgürce ve sansürsüz olarak kullanabilmelidir."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        "Bir kurtarma dosyası, bir hesap sıfırlandıktan sonra verilerinizin kilidini açmanızı ve görüntülemenizi sağlar. "
+        "Bir kurtarma dosyası, bir hesabı sıfırladığınızda verilerinizin kilidini açmanızı ve görüntülemenizi sağlar. "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Kurtarma ifadesi, parolanızı unutursanız hesabınıza erişmenizi sağlar ve şifrelenmiş iletilerinizi kurtarır."
@@ -3187,7 +3950,7 @@
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
       "account recovery and data recovery method": [
-        "hesap ve veri kurtarma yöntemi"
+        "hesap ve verileri kurtarma yöntemi"
       ],
       "account recovery method": [
         "hesap kurtarma yöntemi"
@@ -3199,10 +3962,10 @@
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ProtonMail gönder\" veya \"Bana özel ileti gönder\" şeklinde anlamlandırılabilir"
       ],
       "Add a recovery email address": [
-        "Kurtarma e-postası adresi"
+        "Bir kurtarma e-postası adresi ekle"
       ],
       "Add a recovery phone number": [
-        "Kurtarma telefon numarası"
+        "Bir kurtarma telefonu numarası ekle"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Hesabınıza kullanıcı2@protonmail.com gibi ek adresler ekleyin"
@@ -3250,10 +4013,10 @@
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
       "Allow recovery by email": [
-        "E-posta ile kurtarma yapılabilsin"
+        "E-posta ile hesap kurtarılabilsin"
       ],
       "Allow recovery by phone": [
-        "Telefon ile kurtarma yapılabilsin"
+        "Telefon ile hesap kurtarılabilsin"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "${ mailAppName } üzerinde kendi etki alanınızı kullanarak e-posta barındırmanızı sağlar, Örnek ali.kaya@ornek.com"
@@ -3364,7 +4127,7 @@
         "2020 Kara Cuma yeni gelen indirimi uygulandı"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        "Gönderenlerin bir iletiyi açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
+        "Göndericilerin bir iletiyi açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu avantajları kalıcı olarak kaybedersiniz."
@@ -3427,9 +4190,6 @@
       "Creating your Proton account": [
         "Proton hesabınız oluşturuluyor"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla vCard 3.1 ve 4.0 biçimindeki (UTF-8) dosyalar desteklenir."
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Şu anda kullanılabilecek tüm depolama alanı yönetici hesabına ayrılmış. Lütfen ek kullanıcılara yer açmak için yönetici hesabına ayrılan alanı azaltın. İstediğiniz zaman toplam depolama alanını artırmak için hesabınızı yükseltebilirsiniz."
       ],
@@ -3476,7 +4236,7 @@
         "ProtonVPN uygulamalarında veya ProtonVPN kontrol panosunda OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanmayın. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "Geçerli oturum dışındaki diğer oturumları geçersiz kılmak istiyor musunuz?"
+        "Geçerli oturum dışındaki diğer tüm oturumları kapatmak istiyor musunuz?"
       ],
       "domain used": [
         "etki alanı kullanıldı",
@@ -3609,7 +4369,7 @@
         "10 Gb/sn hıza ulaşan tam özellikli VPN."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "Yeni bir kurtarma ifadesi oluşturmak eski ifadeyi devre dışı bırakır."
+        "Yeni bir kurtarma ifadesi oluşturmak önceki ifadeyi devre dışı bırakır."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Herkese açık anahtarınızı arkadaşlarınıza verin ya da çevrimiçi olarak yayınlayın. Böylece isteyen herkes size uçtan uca şifrelenmiş e-posta gönderebilir!"
@@ -3651,13 +4411,13 @@
         "Daha önce hiç iki aşamalı kimlik doğrulama kullanmadıysanız, kesinlikle ${ guideButton } kullanmanızı öneririz."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Hem SPF hem de DKIM ayarlarını yaptıysanız ve iki denetim de başarısız olursa, DMARC kullanarak diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirtebilirsiniz. Böylece istenmeyen e-posta gönderenlerin sizin gibi davranmasını zorlaştırabilirsiniz. Ancak bu işlem doğru şekilde yapılmazsa teslim sorunlarına da neden olabilir."
+        "Hem SPF hem de DKIM ayarlarını yaptıysanız ve iki denetim de başarısız olursa, DMARC kullanarak diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirtebilirsiniz. Böylece istenmeyen e-posta göndericilerinin sizmiş gibi davranmasını zorlaştırabilirsiniz. Ancak bu işlem doğru şekilde yapılmazsa teslim sorunlarına da neden olabilir."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Oturum açma bilgilerinizi kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, bir ${ boldAccountRecovery } olması gerekir."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Oturum açma bilgilerinizi kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, ${ boldAccountAndRecovery } olması gerekir. Yoksa e-postalarınıza, kişilerinize ve dosyalarınıza erişemeyebilirsiniz."
+        "Oturum açma bilgilerinizi kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, bir ${ boldAccountAndRecovery } olması gerekir. Yoksa e-postalarınıza, kişilerinize ve dosyalarınıza erişemeyebilirsiniz."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "İki aşamalı kimlik doğrulaması aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki aşamalı kimlik doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
@@ -3706,7 +4466,7 @@
         "ÖNEMLİ: Kişisel anahtarlarınızı indirmek, bir yere göndermek ya da güvenli olmayan bir ortamda saklamak, hesabınızın güvenliğini tehlikeye atabilir!"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Yoksa, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesap erişiminizi kalıcı olarak kaybedebilirsiniz."
+        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "ÖNEMLİ: Bazı kayıt kuruluşları, sonunda nokta bulunan CNAME değerlerini kabul etmez (bazıları ise bulunmasını ister). Kayıt şirketiniz CNAME kayıtlarınızı kabul etmiyorsa, her CNAME değerinin sonundaki noktayı silerek yeniden deneyin."
@@ -3715,10 +4475,10 @@
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Oturum açma bilgilerinizi kaybederseniz, size e-posta ya da SMS ile kurtarma yönergelerini göndereceğiz."
+        "Oturum açma bilgilerinizi kaybederseniz, size e-posta ya da SMS ile kurtarma yönergeleri göndereceğiz."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        "Oturum açma bilgilerinizi kaybederseniz, size e-posta ile kurtarma yönergelerini göndereceğiz."
+        "Oturum açma bilgilerinizi kaybederseniz, size e-posta ile kurtarma yönergeleri göndereceğiz."
       ],
       "Included": [
         "İçerdikleri"
@@ -3754,10 +4514,10 @@
         "İnternet bağlantısı yeniden kuruldu."
       ],
       "It appears some of your data is encrypted and locked. This is probably due to a recent or previous password reset. We suggest you use a data recovery method to unlock your data.": [
-        "Bazı verileriniz şifrelenmiş ve kilitlenmiş görünüyor. Bu durum büyük olasılıkla yakın zamanda veya daha önceki bir parola sıfırlamasından kaynaklanıyor. Verilerinizin kilidini açmak için bir veri kurtarma yöntemi kullanmanızı öneririz."
+        "Bazı verileriniz şifrelenmiş ve kilitlenmiş görünüyor. Bu durum büyük olasılıkla yakın zamanda veya daha önce yapılmış bir parola sıfırlamasından kaynaklanıyor. Verilerinizin kilidini açmak için bir veri kurtarma yöntemi kullanmanızı öneririz."
       ],
       "it’s imperative": [
-        "bu zorunludur"
+        "zorunlu olarak"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -3823,7 +4583,7 @@
         "Mail.ru, reklamcılara, Rus devlet kurumlarına ve diğer üçüncü taraflara bilgi sağlamak için kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı hatırlayacağınızdan emin olun. ${ boldAlert }. Öncelikle bir kurtarma e-postası eklemenizi öneririz."
+        "Gerektiğinde oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı bulabileceğinizden emin olun. ${ boldAlert }. Öncelikle bir kurtarma e-postası eklemenizi öneririz."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ _switchButton }."
@@ -3856,7 +4616,7 @@
         "Ardından, Google hesabınızda oturum açmanız ve verilerinize erişmemize izin vermeniz gerekmektedir."
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Bir hesap kurtarma yöntemi ayarlanmamış. Hesabınıza erişiminizi kaybetme riskiniz var"
+        "Bir hesap kurtarma yöntemi ayarlanmamış. Hesabınıza erişimi kaybetme riskiniz var"
       ],
       "No action selected": [
         "Herhangi bir işlem seçilmemiş"
@@ -3868,7 +4628,7 @@
         "Herhangi bir kişi şifreleme anahtarı yok"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "Herhangi bir veri kurtarma yöntemi ayarlanmamış. Verilerinize erişiminizi kaybetme riskiniz var"
+        "Herhangi bir veri kurtarma yöntemi ayarlanmamış. Verilerinize erişimi kaybetme riskiniz var"
       ],
       "No folder selected": [
         "Herhangi bir klasör seçilmemiş"
@@ -3890,9 +4650,6 @@
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
-      ],
-      "No subscription yet": [
-        "Henüz bir aboneliğiniz yok"
       ],
       "Normal": [
         "Normal"
@@ -4003,7 +4760,7 @@
         "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Lütfen açılan yeni sekmeden ödemeyi doğrulayın."
+        "Lütfen açılan yeni sekmede ödemeyi doğrulayın."
       ],
       "Please verify the card in the new tab which was opened.": [
         "Lütfen açılan yeni sekmede kartı doğrulayın."
@@ -4018,7 +4775,7 @@
         "Plus veya Visionary aboneliği gerekli"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        "Gönderenin sunucusundaki içeriğin izniniz olmadan yüklenmesini engeller."
+        "Göndericinin sunucusundaki içeriğin izniniz olmadan yüklenmesini engeller."
       ],
       "Preview": [
         "Ön izle"
@@ -4120,6 +4877,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Bu ileti <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
+      ],
       "Server is currently down": [
         "Sunucu şu anda çalışmıyor"
       ],
@@ -4174,9 +4934,6 @@
       "Thank you for supporting our mission.": [
         "Misyonumuza destek olduğunuz için teşekkür ederiz."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
-      ],
       "The calendar will be removed from your account.": [
         "Takvim hesabınızdan kaldırılacak."
       ],
@@ -4188,9 +4945,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Geçerli aboneliğiniz için herhangi bir fatura bilgisi yok."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ProtonVPN sunucusunu seçmenizi sağlar."
@@ -4208,7 +4962,7 @@
         "Bu e-posta adresi yalnızca kurtarma amacıyla kullanılır."
       ],
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Bu özellik yalnızca uzman kullanıcılar içindir! Bu anahtarı sildikten sonra, bu anahtarla şifrelenmiş herhangi bir iletinin şifresini çözemezsiniz. Bu işlem veri kaybına neden olabilir. Devam etmek istediğinize emin misiniz?"
+        "Bu özellik yalnızca uzman kullanıcılar içindir! Bu anahtarı sildikten sonra, bu anahtarla şifrelenmiş herhangi bir iletinin şifresini çözemezsiniz. Bu işlem veri kaybına neden olabilir."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Ayarlanmanız istenen bu ifade 12 sözcükten oluşur."
@@ -4226,7 +4980,7 @@
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Internet Explorer ya da Edge tarayıcıları ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Bu bağlantı aslına benzer görünen bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
+        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
       ],
       "This phone number will only be used for recovery purposes.": [
         "Bu telefon numarası yalnızca kurtarma amacıyla kullanılır."
@@ -4325,7 +5079,7 @@
         "Kurtarma dosyası imzası doğrulanamadı. Lütfen destek ekibi ile görüşün."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "Ne yazı ki bu hesap için kaydedilmiş bir kurtarma yöntemi yok."
+        "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Hesap oturumunuzu kapatmadığınız ya da parolanızı değiştirmediğiniz sürece oturumunuz etkin kalır. Oturumlar 60 günlük hareketsizlikten sonra kapanır."
@@ -4345,11 +5099,8 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Ücretli ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } ya da ${ PLAN_NAMES[PLANS.PLUS] } tarifesine geçerek, ofis dışında olduğunuzda otomatik yanıtları kullanabilirsiniz."
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Ücretli özelliklere erişmek ve depolama alanınızı artırmak için ücretli bir tarifeye yükseltin."
-      ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "ProtonMail Bridge kullanarak IMAP/SMTP desteğinin kilidini açmak için ücretli bir tarifeye geçmelisiniz."
+        "ProtonMail Bridge üzerinden IMAP/SMTP desteği özelliğini kullanabilmek için ücretli bir tarifeye geçmelisiniz."
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -4368,9 +5119,6 @@
       ],
       "Users": [
         "Kullanıcı sayısı"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Kullanıcılar, kuruluş ayarlarında değişiklik yapamaz. Yönetici yetkilerine gerek duyuyorsanız sistem yöneticinizle görüşün."
       ],
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
@@ -4430,7 +5178,7 @@
         "Hesap kurtarma için ayarladığınız e-posta adresine bir sıfırlama kodu göndereceğiz."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Hesap kurtarma için verdiğiniz telefon numarasına bir sıfırlama kodu göndereceğiz."
+        "Hesap kurtarma için ayarladığınız telefon numarasına bir sıfırlama kodu göndereceğiz."
       ],
       "What do you want to import from your Google account?": [
         "Google hesabınızdan içe aktarılmasını istedikleriniz nelerdir?"
@@ -4532,7 +5280,7 @@
         "Etkinliklerinizi .ics dosyasından içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
       ],
       "You need to have an active personal calendar to import your events.": [
-        "Etkinliklerinizi .ics dosyasından içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
+        "Etkinliklerinizi içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
@@ -4601,7 +5349,7 @@
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Kuruluş parolanızı, yönetici yetkileri vermek istediğiniz diğer kullanıcılarla paylaşabilirsiniz. Kuruluş parolanız ayrıca hesabınıza erişimi kaybetmeniz durumunda kuruluşunuza erişim sağlamak için bir acil durum kurtarma kodudur. Lütfen bu parolayı kaydedip güvenli bir yerde saklayın."
+        "Kuruluş parolanızı, yönetici yetkileri vermek istediğiniz diğer kullanıcılarla paylaşabilirsiniz. Ayrıca kuruluş parolanız, hesabınıza erişimi kaybetmeniz durumunda kuruluşunuza erişim sağlamak için kullanacağınız acil durum kurtarma kodudur. Lütfen bu parolayı kaydedip güvenli bir yerde saklayın."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Kuruluşunuzun e-posta adresleri, kuruluş anahtarı ile uçtan uca şifreleme ile korunur. Bu parmak izi, hesabınızdaki tüm yöneticilerin aynı anahtara sahip olduğunu doğrulamak için kullanılabilir."
@@ -4662,7 +5410,7 @@
     },
     "Info for domain modal": {
       "Add a new address for any user of your organization.": [
-        "Kuruluşunuzdaki her kullanıcıya bir e-posta adresi verin."
+        "Kuruluşunuzdaki kullanıcılara ayrı e-posta adresleri verin."
       ],
       "Add a new user to your organization and create an address for it.": [
         "Kuruluşunuza yeni bir kullanıcı ve e-posta adresi ekleyin."
@@ -5064,13 +5812,13 @@
         "TÜMÜ"
       ],
       "Allow recovery by email": [
-        "E-posta ile kurtarma yapılabilsin"
+        "E-posta ile hesap kurtarılabilsin"
       ],
       "Allow recovery by phone": [
-        "Telefon ile kurtarma yapılabilsin"
+        "Telefon ile hesap kurtarılabilsin"
       ],
       "Allow recovery by recovery phrase": [
-        "Kurtarma ifadesiyle kurtarma yapılabilsin"
+        "Kurtarma ifadesi ile kurtarma yapılabilsin"
       ],
       "Amount": [
         "Tutar"
@@ -5108,11 +5856,8 @@
       "Auto-load embedded images": [
         "Gömülü görseller otomatik yüklensin"
       ],
-      "Automatically save contacts": [
-        "Kişiler otomatik olarak kaydedilsin"
-      ],
       "Block email tracking": [
-        "E-postanın izlenmesini engelle"
+        "E-postanın izlenmesi engellensin"
       ],
       "bonus storage": [
         "ödül depolama alanı"
@@ -5220,7 +5965,7 @@
         "CVV kodu"
       ],
       "Daily email notifications": [
-        "Günlük e-posta bildirimleri"
+        "E-psotalar günlük olarak bildirilsin"
       ],
       "Date format": [
         "Tarih biçimi"
@@ -5289,7 +6034,7 @@
         "Süre"
       ],
       "Email": [
-        "E-posta"
+        "E-posta adresi"
       ],
       "Email address": [
         "E-posta adresi"
@@ -5340,7 +6085,7 @@
         "Klasör konumu"
       ],
       "From: ${ emailFrom }": [
-        "Kimden: ${ emailFrom }"
+        "Nereden: ${ emailFrom }"
       ],
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
@@ -5598,7 +6343,7 @@
         "Otomatik yanıt gönder"
       ],
       "Send invites in": [
-        "Davetiyeleri şu sürede gönder"
+        "Davetler şu dilde gönderilsin"
       ],
       "Show secondary time zone": [
         "İkinci saat dilimi görüntülensin"
@@ -5911,7 +6656,7 @@
         "Takvimler"
       ],
       "clearing your browser cache": [
-        "tarayıcınızın ön belleği temizleniyor"
+        "web tarayıcınızın ön belleğini temizlemek"
       ],
       "click here": [
         "buraya tıklayın"
@@ -5934,6 +6679,9 @@
       "Go to subscription plans": [
         "Abonelik tarifelerine git"
       ],
+      "How to unlock data": [
+        "Verilerin kilidi nasıl açılır"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -5941,7 +6689,7 @@
         "Etkinleştirilmemiş"
       ],
       "Pay invoice": [
-        "Faturayı ödeyin"
+        "Faturayı öde"
       ],
       "Previous version": [
         "Önceki sürüm"
@@ -5972,15 +6720,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP ve TCP iletişim kuralları arasındaki fark nedir?"
+      ],
+      "Why set recovery methods?": [
+        "Neden kurtarma yöntemleri ayarlanmalı?"
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars }/${ calendarsToBeCreated } oluşturuldu",
-        "${ createdCalendars }/${ calendarsToBeCreated } oluşturuldu"
-      ],
       "Almost there": [
         "Neredeyse tamam"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Oluşturulan takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
@@ -6099,7 +6849,7 @@
     },
     "Mail upsell feature": {
       "Create separate logins for each user": [
-        "Her kullanıcıya ayrı oturum açma bilgileri verin"
+        "Kullanıcılara ayrı hesaplar açın"
       ],
       "Get Multi-user support": [
         "Çoklu kullanıcı desteği alın"
@@ -6127,7 +6877,7 @@
         "Düzenle"
       ],
       "Revoke sessions": [
-        "Oturumları geçersiz kıl"
+        "Oturumları kapat"
       ],
       "Sign in": [
         "Oturum aç"
@@ -6347,9 +7097,6 @@
       "Back to Calendar": [
         "Takvim uygulamasına dön"
       ],
-      "Back to Contacts": [
-        "Contacts uygulamasına dön"
-      ],
       "Back to Drive": [
         "Drive uygulamasına dön"
       ],
@@ -6381,7 +7128,7 @@
         "Devre dışı bırakılmış bir adres birincil olamaz"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 kimlik doğrulama bilgileri güncellendi"
+        "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
       ]
     },
     "Notification time input": {
@@ -6819,6 +7566,9 @@
       "Proton username": [
         "Proton kullanıcı adı"
       ],
+      "Search settings": [
+        "Arama ayarları"
+      ],
       "Search users": [
         "Kullanıcı arama"
       ],
@@ -6958,10 +7708,10 @@
     },
     "Primary timezone": {
       "Primary time zone": [
-        "Birinci saat dilimi"
+        "Birincil saat dilimi"
       ],
       "Secondary time zone": [
-        "İkinci saat dilimi"
+        "İkincil saat dilimi"
       ]
     },
     "Prime Video": {
@@ -6972,14 +7722,6 @@
     "Private Member": {
       "private": [
         "kişisel"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length }/${ countContacts } kişi dışa aktarıldı."
-      ],
-      "No contacts exported.": [
-        "Dışa herhangi bir kişi aktarılmadı."
       ]
     },
     "Property type": {
@@ -7014,9 +7756,50 @@
         "İş"
       ]
     },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "${ signIn }maya dön."
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Email address has been verified.": [
+        "E-posta adresi doğrulanmış."
+      ],
+      "Email address not yet verified.": [
+        "E-posta adresi henüz doğrulanmamış."
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Lütfen yeni bir kurtarma e-postası doğrulama isteği göndermek için ${ signIn }ın."
+      ],
+      "Send verification email": [
+        "Doğrulama e-postası gönder"
+      ],
+      "There was a problem verifying your email address.": [
+        "E-posta adresiniz doğrulanırken bir sorun çıktı."
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Doğrulama e-postası ${ email.Value } alıcısına gönderildi"
+      ],
+      "Verify now": [
+        "Şimdi doğrula"
+      ],
+      "Verify recovery email?": [
+        "Kurtarma e-postası doğrulansın mı?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "E-posta adresinizi doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
+      ],
+      "You can safely close this tab.": [
+        "Bu sekmeyi kapatabilirsiniz."
+      ],
+      "Your recovery email has been successfully verified.": [
+        "Kurtarma e-postası adresiniz doğrulandı."
+      ]
+    },
     "Recovery method": {
       "Email": [
-        "E-posta"
+        "E-posta adresi"
       ],
       "Phone number": [
         "Telefon numarası"
@@ -7027,7 +7810,7 @@
     },
     "Remark about a key type option": {
       "Compatibility": [
-        "Uyumlu"
+        "Uyumluluk"
       ],
       "State of the art": [
         "Son teknoloji"
@@ -7078,59 +7861,8 @@
       "Account": [
         "Hesap"
       ],
-      "Appearance": [
-        "Görünüm"
-      ],
-      "Auto reply": [
-        "Otomatik yanıt"
-      ],
-      "Backup and export": [
-        "Yedekleme ve dışa aktarma"
-      ],
-      "Calendars": [
-        "Takvimler"
-      ],
-      "Domain names": [
-        "Etki alanı adları"
-      ],
-      "Email privacy": [
-        "E-posta gizliliği"
-      ],
-      "Encryption and keys": [
-        "Şifreleme ve anahtarlar"
-      ],
-      "Filters": [
-        "Süzgeçler"
-      ],
-      "Folders and labels": [
-        "Klasörler ve etiketler"
-      ],
-      "General": [
-        "Genel"
-      ],
-      "Identity and addresses": [
-        "Kimlik ve adresler"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "İçe/dışa aktarma"
-      ],
-      "Multi-user support": [
-        "Çoklu kullanıcı desteği"
-      ],
       "Organization": [
         "Kuruluş"
-      ],
-      "Organization and keys": [
-        "Kuruluş ve anahtarlar"
-      ],
-      "Users and addresses": [
-        "Kullanıcılar ve adresler"
-      ],
-      "VPN apps": [
-        "VPN uygulamaları"
       ]
     },
     "Settings update growler warning": {
@@ -7383,10 +8115,10 @@
         "İçeri aktarmaya devam ediliyor"
       ],
       "Session revoked": [
-        "Oturum geçersiz kılındı"
+        "Oturum kapatıldı"
       ],
       "Sessions revoked": [
-        "Oturumlar geçersiz kılındı"
+        "Oturumlar kapatıldı"
       ],
       "SPF value copied to clipboard": [
         "SPF değeri panoya kopyalandı"
@@ -7415,7 +8147,7 @@
         "Etki alanı silindi"
       ],
       "Sessions revoked": [
-        "Oturumlar geçersiz kılındı"
+        "Oturumlar kapatıldı"
       ],
       "User deleted": [
         "Kullanıcı silindi"
@@ -7570,7 +8302,7 @@
         "Kuruluş anahtarını etkinleştir"
       ],
       "Add a recovery method": [
-        "Kurtarma yöntemi ekleyin"
+        "Bir kurtarma yöntemi ekle"
       ],
       "Add address": [
         "Adres ekle"
@@ -7720,7 +8452,7 @@
         "Temizle"
       ],
       "Confirm address": [
-        "Adresi onaylayın"
+        "E-posta adresini onaylayın"
       ],
       "Confirm downgrade": [
         "Düşürmeyi onayla"
@@ -7733,9 +8465,6 @@
       ],
       "Contact encryption keys": [
         "Kişi şifreleme anahtarları"
-      ],
-      "Contacts": [
-        "Kişiler"
       ],
       "Continue with partial import?": [
         "Kısmi içe aktarmayla devam edilsin mi?"
@@ -7837,7 +8566,7 @@
         "İki aşamalı kimlik doğrulamayı devre dışı bırak"
       ],
       "Display name and signature": [
-        "Görünen ad ve imza"
+        "Görüntülenecek ad ve imza"
       ],
       "Domain names": [
         "Etki alanı adları"
@@ -7893,9 +8622,6 @@
       "Error": [
         "Hata"
       ],
-      "Export": [
-        "Dışa aktar"
-      ],
       "Export calendar": [
         "Takvimi dışa aktar"
       ],
@@ -7904,9 +8630,6 @@
       ],
       "Export public key": [
         "Herkese açık anahtarı dışa aktar"
-      ],
-      "Exporting contacts": [
-        "Kişiler dışa aktarılıyor"
       ],
       "External PGP settings": [
         "Dış PGP ayarları"
@@ -7929,6 +8652,9 @@
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
       ],
+      "Generate new recovery phrase?": [
+        "Yeni kurtarma ifadesi oluşturulsun mu?"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Tüm sunuculara erişmek için ProtonVPN Plus tarifesine geçin"
       ],
@@ -7946,9 +8672,6 @@
       ],
       "Import": [
         "İçe aktar"
-      ],
-      "Import & export": [
-        "İçe/dışa aktarma"
       ],
       "Import as simple event?": [
         "İçe basit etkinlik olarak aktarılsın mı?",
@@ -7970,7 +8693,7 @@
         "Anahtarı içe aktar"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "${ PRODUCT_NAMES.EASY_SWITCH } üzerinden içe aktar"
+        "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktar"
       ],
       "Import-Export app": [
         "İçe-dışa aktarma uygulaması"
@@ -8200,9 +8923,6 @@
       "Sign in again to continue": [
         "Devam etmek için yeniden oturum açın"
       ],
-      "Sorry, you can't access this page": [
-        "Ne yazık ki, bu sayfaya erişemezsiniz"
-      ],
       "Sort folders alphabetically": [
         "Klasörler alfabetik olarak sıralansın"
       ],
@@ -8211,9 +8931,6 @@
       ],
       "Spam filters": [
         "İstenmeyen süzgeçleri"
-      ],
-      "Spy Tracker Protection": [
-        "Casus izleyici koruması"
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
@@ -8268,9 +8985,6 @@
       ],
       "Unsupported browser": [
         "Tarayıcı desteklenmiyor"
-      ],
-      "Upgrade": [
-        "Yükselt"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -8464,6 +9178,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Tek tıklama ile internet trafiğinizi Tor ağı üzerinden yöneltin."
       ],
+      "Set how your list of messages looks like by default.": [
+        "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Varsayılan oluşturucu açılır pencere boyutunu küçük veya tam ekran olarak ayarlayın."
       ],
@@ -8474,7 +9191,7 @@
         "Bu anahtar tarafından üretilen imzalar geçersiz olarak kabul edilir ve bu anahtar şifreleme için kullanılamaz"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent gibi dosya paylaşım iletişim kurallarına destek."
+        "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
         "Sistem alt klasörleri ProtonMail üzerinde ayrı klasörler olarak görünecek"
@@ -8517,9 +9234,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Bir bağlantıya tıkladığınızda, bu kimlik avını önleme özelliği web sayfasının adresini onaylamanızı ister."
-      ],
-      "You do not have any contacts to export": [
-        "Dışa aktarılacak bir kişi kaydınız yok"
       ],
       "You have locally decrypted this key": [
         "Bu anahtarın şifresini yerel olarak çözdünüz"
@@ -8771,7 +9485,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Adresi silmek istediğinize emin misiniz?"
+        "E-posta adresini silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Telefon numarasını silmek istediğinize emin misiniz?"
@@ -8780,16 +9494,16 @@
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Bu adresi sildikten sonra günlük e-posta bildirimlerini alamazsınız."
+        "Bu adresi sildikten sonra günlük gönderilen e-posta bildirimlerini alamazsınız."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Bu adresi sildikten sonra, hesabınızı kurtaramaz ya da günlük e-posta bildirimlerini alamazsınız."
+        "Bu adresi sildikten sonra, hesabınızı kurtaramaz ya da günlük gönderilen e-posta bildirimlerini alamazsınız."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "Bu adresi sildikten sonra hesabınızı kurtaramazsınız."
+        "Bu adresi silerseniz, hesabınızı kurtaramazsınız."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Bu telefon numarasını sildikten sonra hesabınızı kurtaramazsınız."
+        "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Günlük kayıtlarını devre dışı bıraktığınızda, bütün günlük geçmişinizi de temizlemiş olursunuz. Günlük kaydını devre dışı bırakmak istediğinize emin misiniz?"

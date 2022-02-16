@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "アクティベート"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
@@ -266,10 +266,10 @@
         ""
       ],
       "Disable recovery phrase": [
-        "リカバリーフレーズを無効化"
+        "回復フレーズを無効化"
       ],
       "Disable recovery phrase?": [
-        "リカバリーフレーズを無効化しますか？"
+        "回復フレーズを無効化しますか?"
       ],
       "Discard": [
         "破棄"
@@ -325,9 +325,6 @@
       "Export": [
         "エクスポート"
       ],
-      "Export contacts": [
-        "連絡先のエクスポート"
-      ],
       "Export ICS": [
         "ICS をエクスポート"
       ],
@@ -341,13 +338,10 @@
         "キーを生成"
       ],
       "Generate new recovery phrase": [
-        "新しいリカバリーフレーズを生成"
-      ],
-      "Generate new recovery phrase?": [
-        "新しいリカバリーフレーズを生成しますか?"
+        "新しい回復フレーズを生成"
       ],
       "Generate recovery phrase": [
-        "リカバリーフレーズを生成"
+        "回復フレーズを生成"
       ],
       "Get ProtonVPN Plus": [
         "ProtonVPN Plus を入手"
@@ -626,7 +620,7 @@
         "Catch-All の設定"
       ],
       "Set recovery phrase": [
-        "リカバリーフレーズを設定"
+        "回復フレーズを設定"
       ],
       "Share via link": [
         "リンクで共有"
@@ -660,9 +654,6 @@
       ],
       "Sign in": [
         "サインイン"
-      ],
-      "Sign in again to continue": [
-        ""
       ],
       "Sign out": [
         "サインアウト"
@@ -740,13 +731,10 @@
         "リカバリーファイルを更新"
       ],
       "Update recovery phrase": [
-        "リカバリーフレーズを更新"
+        "回復フレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ],
       "Upgrade to Plus": [
         "Plus にアップグレード"
@@ -1214,6 +1202,17 @@
         ""
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        ""
+      ],
+      "Label deleted": [
+        ""
+      ],
+      "Label edited": [
+        ""
+      ]
+    },
     "Calendar status": {
       "Active": [
         "有効"
@@ -1425,6 +1424,773 @@
         "${ monthsWithYears } か月"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        ""
+      ],
+      "Afghanistan": [
+        ""
+      ],
+      "Albania": [
+        ""
+      ],
+      "Algeria": [
+        ""
+      ],
+      "American Samoa": [
+        ""
+      ],
+      "Andorra": [
+        ""
+      ],
+      "Angola": [
+        ""
+      ],
+      "Anguilla": [
+        ""
+      ],
+      "Antarctica": [
+        ""
+      ],
+      "Antigua and Barbuda": [
+        ""
+      ],
+      "Argentina": [
+        ""
+      ],
+      "Armenia": [
+        ""
+      ],
+      "Aruba": [
+        ""
+      ],
+      "Ascension Island": [
+        ""
+      ],
+      "Australia": [
+        ""
+      ],
+      "Austria": [
+        ""
+      ],
+      "Azerbaijan": [
+        ""
+      ],
+      "Bahamas": [
+        ""
+      ],
+      "Bahrain": [
+        ""
+      ],
+      "Bangladesh": [
+        ""
+      ],
+      "Barbados": [
+        ""
+      ],
+      "Belarus": [
+        ""
+      ],
+      "Belgium": [
+        ""
+      ],
+      "Belize": [
+        ""
+      ],
+      "Benin": [
+        ""
+      ],
+      "Bermuda": [
+        ""
+      ],
+      "Bhutan": [
+        ""
+      ],
+      "Bolivia": [
+        ""
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        ""
+      ],
+      "Botswana": [
+        ""
+      ],
+      "Bouvet Island": [
+        ""
+      ],
+      "Brazil": [
+        ""
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        ""
+      ],
+      "Bulgaria": [
+        ""
+      ],
+      "Burkina Faso": [
+        ""
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        ""
+      ],
+      "Cambodia": [
+        ""
+      ],
+      "Cameroon": [
+        ""
+      ],
+      "Canada": [
+        ""
+      ],
+      "Cape Verde": [
+        ""
+      ],
+      "Cayman Islands": [
+        ""
+      ],
+      "Central African Republic": [
+        ""
+      ],
+      "Chad": [
+        ""
+      ],
+      "Chile": [
+        ""
+      ],
+      "China": [
+        ""
+      ],
+      "Christmas Island": [
+        ""
+      ],
+      "Cocos (Keeling) Islands": [
+        ""
+      ],
+      "Colombia": [
+        ""
+      ],
+      "Comoros": [
+        ""
+      ],
+      "Congo": [
+        ""
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        ""
+      ],
+      "Costa Rica": [
+        ""
+      ],
+      "Cote d'Ivoire\"": [
+        ""
+      ],
+      "Croatia": [
+        ""
+      ],
+      "Cuba": [
+        ""
+      ],
+      "Curaçao": [
+        ""
+      ],
+      "Cyprus": [
+        ""
+      ],
+      "Czech Republic": [
+        ""
+      ],
+      "Denmark": [
+        ""
+      ],
+      "Djibouti": [
+        ""
+      ],
+      "Dominica": [
+        ""
+      ],
+      "Dominican Republic": [
+        ""
+      ],
+      "Ecuador": [
+        ""
+      ],
+      "Egypt": [
+        ""
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        ""
+      ],
+      "Eritrea": [
+        ""
+      ],
+      "Estonia": [
+        ""
+      ],
+      "Ethiopia": [
+        ""
+      ],
+      "Falkland Islands": [
+        ""
+      ],
+      "Faroe Islands": [
+        ""
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        ""
+      ],
+      "Finland": [
+        ""
+      ],
+      "France": [
+        ""
+      ],
+      "French Guiana": [
+        ""
+      ],
+      "French Polynesia": [
+        ""
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        ""
+      ],
+      "Gambia": [
+        ""
+      ],
+      "Georgia": [
+        ""
+      ],
+      "Germany": [
+        ""
+      ],
+      "Ghana": [
+        ""
+      ],
+      "Gibraltar": [
+        ""
+      ],
+      "Greece": [
+        ""
+      ],
+      "Greenland": [
+        ""
+      ],
+      "Grenada": [
+        ""
+      ],
+      "Guadeloupe": [
+        ""
+      ],
+      "Guam": [
+        ""
+      ],
+      "Guatemala": [
+        ""
+      ],
+      "Guernsey": [
+        ""
+      ],
+      "Guinea": [
+        ""
+      ],
+      "Guinea-Bissau": [
+        ""
+      ],
+      "Guyana": [
+        ""
+      ],
+      "Haiti": [
+        ""
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        ""
+      ],
+      "Hong Kong": [
+        ""
+      ],
+      "Hungary": [
+        ""
+      ],
+      "Iceland": [
+        ""
+      ],
+      "India": [
+        ""
+      ],
+      "Indonesia": [
+        ""
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        ""
+      ],
+      "Iraq": [
+        ""
+      ],
+      "Ireland": [
+        ""
+      ],
+      "Isle of Man": [
+        ""
+      ],
+      "Israel": [
+        ""
+      ],
+      "Italy": [
+        ""
+      ],
+      "Jamaica": [
+        ""
+      ],
+      "Japan": [
+        ""
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        ""
+      ],
+      "Kazakhstan": [
+        ""
+      ],
+      "Kenya": [
+        ""
+      ],
+      "Kiribati": [
+        ""
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        ""
+      ],
+      "Kyrgyzstan": [
+        ""
+      ],
+      "Laos": [
+        ""
+      ],
+      "Latvia": [
+        ""
+      ],
+      "Lebanon": [
+        ""
+      ],
+      "Lesotho": [
+        ""
+      ],
+      "Liberia": [
+        ""
+      ],
+      "Libya": [
+        ""
+      ],
+      "Liechtenstein": [
+        ""
+      ],
+      "Lithuania": [
+        ""
+      ],
+      "Luxembourg": [
+        ""
+      ],
+      "Macao": [
+        ""
+      ],
+      "Madagascar": [
+        ""
+      ],
+      "Malawi": [
+        ""
+      ],
+      "Malaysia": [
+        ""
+      ],
+      "Maldives": [
+        ""
+      ],
+      "Mali": [
+        ""
+      ],
+      "Malta": [
+        ""
+      ],
+      "Marshall Islands": [
+        ""
+      ],
+      "Martinique": [
+        ""
+      ],
+      "Mauritania": [
+        ""
+      ],
+      "Mauritius": [
+        ""
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        ""
+      ],
+      "Moldova": [
+        ""
+      ],
+      "Monaco": [
+        ""
+      ],
+      "Mongolia": [
+        ""
+      ],
+      "Montenegro": [
+        ""
+      ],
+      "Montserrat": [
+        ""
+      ],
+      "Morocco": [
+        ""
+      ],
+      "Mozambique": [
+        ""
+      ],
+      "Namibia": [
+        ""
+      ],
+      "Nauru": [
+        ""
+      ],
+      "Nepal": [
+        ""
+      ],
+      "Netherlands": [
+        ""
+      ],
+      "New Caledonia": [
+        ""
+      ],
+      "New Zealand": [
+        ""
+      ],
+      "Nicaragua": [
+        ""
+      ],
+      "Niger": [
+        ""
+      ],
+      "Nigeria": [
+        ""
+      ],
+      "Niue": [
+        ""
+      ],
+      "Norfolk Island": [
+        ""
+      ],
+      "North Korea": [
+        ""
+      ],
+      "North Macedonia": [
+        ""
+      ],
+      "Northern Mariana Islands": [
+        ""
+      ],
+      "Norway": [
+        ""
+      ],
+      "Oman": [
+        ""
+      ],
+      "Pakistan": [
+        ""
+      ],
+      "Palau": [
+        ""
+      ],
+      "Palestine": [
+        ""
+      ],
+      "Panama": [
+        ""
+      ],
+      "Papua New Guinea": [
+        ""
+      ],
+      "Paraguay": [
+        ""
+      ],
+      "Peru": [
+        ""
+      ],
+      "Philippines": [
+        ""
+      ],
+      "Pitcairn": [
+        ""
+      ],
+      "Poland": [
+        ""
+      ],
+      "Portugal": [
+        ""
+      ],
+      "Puerto Rico": [
+        ""
+      ],
+      "Qatar": [
+        ""
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        ""
+      ],
+      "Russia": [
+        ""
+      ],
+      "Rwanda": [
+        ""
+      ],
+      "Saint Barthélemy": [
+        ""
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        ""
+      ],
+      "Saint Lucia": [
+        ""
+      ],
+      "Saint Martin (French Part)": [
+        ""
+      ],
+      "Saint Pierre and Miquelon": [
+        ""
+      ],
+      "Saint Vincent and the Grenadines": [
+        ""
+      ],
+      "Samoa": [
+        ""
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        ""
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        ""
+      ],
+      "Seychelles": [
+        ""
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        ""
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        ""
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        ""
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        ""
+      ],
+      "Sri Lanka": [
+        ""
+      ],
+      "Sudan": [
+        ""
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        ""
+      ],
+      "Tajikistan": [
+        ""
+      ],
+      "Tanzania": [
+        ""
+      ],
+      "Thailand": [
+        ""
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        ""
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        ""
+      ],
+      "Trinidad and Tobago": [
+        ""
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        ""
+      ],
+      "Turkey": [
+        ""
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        ""
+      ],
+      "Uganda": [
+        ""
+      ],
+      "Ukraine": [
+        ""
+      ],
+      "United Arab Emirates": [
+        ""
+      ],
+      "United Kingdom": [
+        ""
+      ],
+      "United States": [
+        ""
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        ""
+      ],
+      "Uzbekistan": [
+        ""
+      ],
+      "Vanuatu": [
+        ""
+      ],
+      "Venezuela": [
+        ""
+      ],
+      "Vietnam": [
+        ""
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        ""
+      ],
+      "Yemen": [
+        ""
+      ],
+      "Zambia": [
+        ""
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        ""
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(${ entryCountryName } 経由)"
@@ -1495,9 +2261,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "連絡先を復号化しています。この処理には数分かかる場合があります。処理が完了すると、すべての連絡先をエクスポートしてファイルとしてダウンロードできます。"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
@@ -1718,9 +2481,6 @@
       "Condition incomplete": [
         "条件が不完全です"
       ],
-      "Contact signature not verified": [
-        "連絡先の署名が確認されていません"
-      ],
       "Could not find address ${ email }.": [
         "${ email } というメールアドレスが見つかりませんでした。"
       ],
@@ -1823,9 +2583,6 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         ""
       ],
-      "Missing signature": [
-        "署名がありません"
-      ],
       "Name on card required": [
         "カード名義が必要です"
       ],
@@ -1922,9 +2679,6 @@
       "Require at least one condition": [
         "少なくとも 1 つの条件が必要です"
       ],
-      "Signature not verified": [
-        "署名が確認されていません"
-      ],
       "Signature verification failed": [
         "署名の検証に失敗しました"
       ],
@@ -2019,7 +2773,7 @@
         "サービスプロバイダーに接続できませんでした。"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "間違ったリカバリーフレーズです。再度試すか他のリカバリー手段を使用してください。"
+        "間違った回復フレーズです。再度試すか他の回復手段を使用してください。"
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "間違った検証コードです。 検証コードが正しくコピーされているか確認し、もう一度試してください。 変更が有効になるまでに最大24時間を要する場合があります。"
@@ -2586,6 +3340,14 @@
         "値"
       ]
     },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        ""
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        ""
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -2921,7 +3683,7 @@
         "共有されたカレンダー"
       ],
       "Yahoo Mail": [
-        "Yahoo Mail"
+        "Yahoo Mail (アメリカ)"
       ]
     },
     "Import instructions step": {
@@ -3172,7 +3934,7 @@
         "アドレス"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
-        ""
+        "パスワードリセット後、安全のためデータは暗号化により保護されます。"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "ビットコインでのお支払い後は、以下の指示に従ってアップグレードしてください。"
@@ -3372,9 +4134,6 @@
       "Creating your Proton account": [
         "Proton アカウントを作成中"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora の CSV ファイルや vCard 3.1 および 4.0 フォーマット (UTF-8 エンコーディング) 形式をサポートしています。"
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "現在利用可能なストレージは、全て管理者アカウントに割り当てられています。追加ユーザーに割り当てたい場合は、管理者アカウントへの割り当てを減らしてください。アカウントをアップグレードすることでいつでもストレージ全体の容量を増やすこともできます。"
       ],
@@ -3553,7 +4312,7 @@
         "最大 10 Gbps を備えたフル機能の VPN。"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "新たなリカバリーフレーズを生成すると古いものは無効化されます。"
+        "新たな回復フレーズを生成すると古いものは無効化されます。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "あなたの公開鍵を友達に渡すか、誰もがあなたにエンドツーエンドの暗号化メールを送れるようにオンラインで公開しましょう！"
@@ -3658,10 +4417,10 @@
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "ログイン手段を失った場合、メールまたは SMS で回復手段を送信します。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "ログイン手段を失った場合、メールで回復手段を送信します。"
       ],
       "Included": [
         "プランに含む"
@@ -3833,9 +4592,6 @@
       ],
       "No results found": [
         "該当する項目がありません"
-      ],
-      "No subscription yet": [
-        "サブスクリプションはありません"
       ],
       "Normal": [
         "標準"
@@ -4009,19 +4765,19 @@
         "はじめに2要素認証ガイドをお読みください"
       ],
       "Recovery file downloaded": [
-        ""
+        "回復ファイルをダウンロードしました"
       ],
       "Recovery files have been voided": [
-        ""
+        "回復ファイルは無効化されました"
       ],
       "Recovery phrase copied to clipboard": [
-        "リカバリーフレーズはクリップボードへコピーされました"
+        "回復フレーズはクリップボードへコピーされました"
       ],
       "Recovery phrase downloaded": [
         ""
       ],
       "Recovery phrase has been disabled": [
-        "リカバリーフレーズは無効化されました"
+        "回復フレーズは無効化されました"
       ],
       "Recovery phrase is not associated with any keys.": [
         ""
@@ -4062,6 +4818,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Server is currently down": [
         "このサーバーは現在オフラインです"
       ],
@@ -4075,7 +4834,7 @@
         ""
       ],
       "Set recovery phrase": [
-        "リカバリーフレーズを設定"
+        "回復フレーズを設定"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -4116,9 +4875,6 @@
       "Thank you for supporting our mission.": [
         "サポートしていただきありがとうございます！"
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "アプリケーションは、エクスポートする前に連絡先をローカルで復号化する必要があります。 プロセスの終了時に、VCFファイルが生成され、ダウンロードすることができます。"
-      ],
       "The calendar will be removed from your account.": [
         "このカレンダーはアカウントから削除されます。"
       ],
@@ -4130,9 +4886,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "あなたのユーザがログインしている間は、この名前が表示されます。"
-      ],
-      "There are no billing details available for your current subscription.": [
-        "現在のサブスクリプションに関する請求の詳細情報がありません。"
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "これらの設定ファイルは、サードパーティ製のVPNアプリを使用する際や、ルーターでVPN接続を設定する際に、どのProtonVPNサーバーに接続するかを選択するためのものです。"
@@ -4216,7 +4969,7 @@
         ""
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        ""
+        "メールなどのデータを復号するには、回復フレーズや回復ファイルが必要です。"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         ""
@@ -4279,16 +5032,13 @@
         "リカバリーファイルを更新"
       ],
       "Update recovery phrase": [
-        "リカバリーフレーズを更新"
+        "回復フレーズを更新"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "この機能を利用するには ${ PLAN_NAMES[PLANS.VISIONARY] } または ${ PLAN_NAMES[PLANS.PROFESSIONAL] } プランにアップグレードしてください。"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         ""
-      ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "有料プランにアップグレードすると、プレミアム機能にアクセスでき、ストレージ容量を増やせます。"
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "有料プランにアップグレードすることで ProtonMail Bridge を使った IMAP/SMTP サポートを利用することができます。"
@@ -4310,9 +5060,6 @@
       ],
       "Users": [
         "ユーザー"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        ""
       ],
       "Verification can take a few minutes.": [
         "検証に数分かかることがあります。"
@@ -4564,7 +5311,7 @@
         "回復用メールアドレス:"
       ],
       "Your recovery phrase": [
-        "あなたのリカバリーフレーズ"
+        "あなたの回復フレーズ"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "回復フレーズは 12 語の単語を順番に並べて構成されたものです。"
@@ -5008,7 +5755,7 @@
         "電話番号での回復を許可"
       ],
       "Allow recovery by recovery phrase": [
-        "リカバリーフレーズによる回復を許可"
+        "回復フレーズによる回復を許可"
       ],
       "Amount": [
         "金額"
@@ -5045,9 +5792,6 @@
       ],
       "Auto-load embedded images": [
         "埋め込み画像を自動で読み込む"
-      ],
-      "Automatically save contacts": [
-        "宛先を連絡先に自動追加"
       ],
       "Block email tracking": [
         "メールのトラッキングをブロック"
@@ -5518,7 +6262,7 @@
         ""
       ],
       "Recovery phrase": [
-        "リカバリーフレーズ"
+        "回復フレーズ"
       ],
       "Repeat password": [
         "パスワードを再度入力"
@@ -5715,7 +6459,7 @@
         "回復用の電話番号"
       ],
       "Recovery phrase": [
-        "リカバリーフレーズ"
+        "回復フレーズ"
       ]
     },
     "Label for adding a new custom domain": {
@@ -5872,6 +6616,9 @@
       "Go to subscription plans": [
         "サブスクリプション プランへ移動"
       ],
+      "How to unlock data": [
+        ""
+      ],
       "Learn more": [
         "より詳しく"
       ],
@@ -5910,14 +6657,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP と TCP という 2 つのプロトコルの違いは何ですか？"
+      ],
+      "Why set recovery methods?": [
+        ""
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        ""
-      ],
       "Almost there": [
         "もう少しです"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        ""
       ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
@@ -6277,9 +7027,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Calendar に戻る"
-      ],
-      "Back to Contacts": [
-        "Contacts に戻る"
       ],
       "Back to Drive": [
         "Drive に戻る"
@@ -6746,6 +7493,9 @@
       "Proton username": [
         "Proton ユーザー名"
       ],
+      "Search settings": [
+        ""
+      ],
       "Search users": [
         "ユーザーを検索"
       ],
@@ -6900,14 +7650,6 @@
         "プライベート"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts } 件のうち ${ contactsExported.length } 件の連絡先が正常にエクスポートされました。"
-      ],
-      "No contacts exported.": [
-        "連絡先はエクスポートされていません。"
-      ]
-    },
     "Property type": {
       "Address": [
         "住所"
@@ -6938,6 +7680,47 @@
       ],
       "Work": [
         "勤務先"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "${ signIn } に戻る。"
+      ],
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Email address has been verified.": [
+        ""
+      ],
+      "Email address not yet verified.": [
+        ""
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        ""
+      ],
+      "Send verification email": [
+        "確認メールを送信"
+      ],
+      "There was a problem verifying your email address.": [
+        ""
+      ],
+      "Verification email sent to ${ email.Value }": [
+        ""
+      ],
+      "Verify now": [
+        ""
+      ],
+      "Verify recovery email?": [
+        ""
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        ""
+      ],
+      "You can safely close this tab.": [
+        ""
+      ],
+      "Your recovery email has been successfully verified.": [
+        ""
       ]
     },
     "Recovery method": {
@@ -7004,59 +7787,8 @@
       "Account": [
         "アカウント"
       ],
-      "Appearance": [
-        "外観"
-      ],
-      "Auto reply": [
-        "自動返信"
-      ],
-      "Backup and export": [
-        "バックアップとエクスポート"
-      ],
-      "Calendars": [
-        "カレンダー"
-      ],
-      "Domain names": [
-        "ドメイン名"
-      ],
-      "Email privacy": [
-        "メールのプライバシー"
-      ],
-      "Encryption and keys": [
-        "暗号化と鍵"
-      ],
-      "Filters": [
-        "フィルター"
-      ],
-      "Folders and labels": [
-        "フォルダーとラベル"
-      ],
-      "General": [
-        "一般"
-      ],
-      "Identity and addresses": [
-        ""
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "インポートとエクスポート"
-      ],
-      "Multi-user support": [
-        "複数ユーザー対応"
-      ],
       "Organization": [
         "組織"
-      ],
-      "Organization and keys": [
-        ""
-      ],
-      "Users and addresses": [
-        "ユーザーとアドレス"
-      ],
-      "VPN apps": [
-        "VPN アプリ"
       ]
     },
     "Settings update growler warning": {
@@ -7476,10 +8208,10 @@
         "3. 設定ファイルを選択してダウンロード"
       ],
       "Account and password": [
-        ""
+        "アカウントとパスワード"
       ],
       "Account recovery": [
-        "アカウントの復元"
+        "アカウントの回復"
       ],
       "Account suspended": [
         "アカウントが停止されました"
@@ -7658,9 +8390,6 @@
       "Contact encryption keys": [
         "連絡先の暗号鍵"
       ],
-      "Contacts": [
-        "連絡先"
-      ],
       "Continue with partial import?": [
         ""
       ],
@@ -7716,7 +8445,7 @@
         "データはロックされています"
       ],
       "Data recovery": [
-        ""
+        "データの回復"
       ],
       "Date": [
         "日付"
@@ -7817,9 +8546,6 @@
       "Error": [
         "エラー"
       ],
-      "Export": [
-        "エクスポート"
-      ],
       "Export calendar": [
         "カレンダーをエクスポート"
       ],
@@ -7828,9 +8554,6 @@
       ],
       "Export public key": [
         "公開鍵のエクスポート"
-      ],
-      "Exporting contacts": [
-        "連絡先のエクスポート中"
       ],
       "External PGP settings": [
         "外部 PGP 設定"
@@ -7853,6 +8576,9 @@
       "Generate missing keys": [
         "紛失した鍵の生成"
       ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "すべてのサーバーに接続するために ProtonVPN Plus を入手"
       ],
@@ -7870,9 +8596,6 @@
       ],
       "Import": [
         "インポート"
-      ],
-      "Import & export": [
-        "インポートとエクスポート"
       ],
       "Import as simple event?": [
         ""
@@ -8034,7 +8757,7 @@
         "回復"
       ],
       "Recovery file": [
-        ""
+        "リカバリーファイル"
       ],
       "Remove calendar": [
         "カレンダーを削除"
@@ -8123,9 +8846,6 @@
       "Sign in again to continue": [
         "再度サインインして続行"
       ],
-      "Sorry, you can't access this page": [
-        "申し訳ありませんが、このページにアクセスできません"
-      ],
       "Sort folders alphabetically": [
         "フォルダーをアルファベット順に並べ替え"
       ],
@@ -8134,9 +8854,6 @@
       ],
       "Spam filters": [
         "迷惑メールフィルター"
-      ],
-      "Spy Tracker Protection": [
-        "スパイ追跡者からの保護"
       ],
       "Start a new import": [
         "新しいインポートを開始"
@@ -8192,11 +8909,8 @@
       "Unsupported browser": [
         "未対応のブラウザー"
       ],
-      "Upgrade": [
-        "アップグレード"
-      ],
       "Username": [
-        ""
+        "ユーザー名"
       ],
       "Users and addresses": [
         "ユーザーとアドレス"
@@ -8226,7 +8940,7 @@
         "現在のプラン"
       ],
       "Your recovery status": [
-        "リカバリーの状態"
+        "回復状態"
       ],
       "ZIP / postal code": [
         "郵便番号"
@@ -8387,6 +9101,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "あなたのインターネットトラフィックを、簡単な操作で Tor 経由でのルーティングに切り替えることができます。"
       ],
+      "Set how your list of messages looks like by default.": [
+        ""
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "デフォルトの作成画面ポップアップサイズを小さくするか最大にするか設定します。"
       ],
@@ -8440,9 +9157,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         ""
-      ],
-      "You do not have any contacts to export": [
-        "エクスポートする連絡先がありません"
       ],
       "You have locally decrypted this key": [
         "復号された鍵をローカルに所持します。"
