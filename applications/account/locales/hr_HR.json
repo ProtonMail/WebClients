@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiviraj ${ Name }@pm.me"
@@ -325,9 +325,6 @@
       "Export": [
         "Izvoz"
       ],
-      "Export contacts": [
-        "Izvezi kontakte"
-      ],
       "Export ICS": [
         "Izvezi ICS"
       ],
@@ -341,9 +338,6 @@
         ""
       ],
       "Generate new recovery phrase": [
-        ""
-      ],
-      "Generate new recovery phrase?": [
         ""
       ],
       "Generate recovery phrase": [
@@ -661,9 +655,6 @@
       "Sign in": [
         "Prijavite se"
       ],
-      "Sign in again to continue": [
-        ""
-      ],
       "Sign out": [
         "Odjava"
       ],
@@ -744,9 +735,6 @@
       ],
       "Upgrade": [
         "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ],
       "Upgrade to Plus": [
         "Nadogradite na Plus plan"
@@ -1234,6 +1222,17 @@
         ""
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        ""
+      ],
+      "Label deleted": [
+        ""
+      ],
+      "Label edited": [
+        ""
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Aktivno"
@@ -1449,6 +1448,773 @@
         "${ monthsWithYears } mjeseci"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        ""
+      ],
+      "Afghanistan": [
+        ""
+      ],
+      "Albania": [
+        ""
+      ],
+      "Algeria": [
+        ""
+      ],
+      "American Samoa": [
+        ""
+      ],
+      "Andorra": [
+        ""
+      ],
+      "Angola": [
+        ""
+      ],
+      "Anguilla": [
+        ""
+      ],
+      "Antarctica": [
+        ""
+      ],
+      "Antigua and Barbuda": [
+        ""
+      ],
+      "Argentina": [
+        ""
+      ],
+      "Armenia": [
+        ""
+      ],
+      "Aruba": [
+        ""
+      ],
+      "Ascension Island": [
+        ""
+      ],
+      "Australia": [
+        ""
+      ],
+      "Austria": [
+        ""
+      ],
+      "Azerbaijan": [
+        ""
+      ],
+      "Bahamas": [
+        ""
+      ],
+      "Bahrain": [
+        ""
+      ],
+      "Bangladesh": [
+        ""
+      ],
+      "Barbados": [
+        ""
+      ],
+      "Belarus": [
+        ""
+      ],
+      "Belgium": [
+        ""
+      ],
+      "Belize": [
+        ""
+      ],
+      "Benin": [
+        ""
+      ],
+      "Bermuda": [
+        ""
+      ],
+      "Bhutan": [
+        ""
+      ],
+      "Bolivia": [
+        ""
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        ""
+      ],
+      "Botswana": [
+        ""
+      ],
+      "Bouvet Island": [
+        ""
+      ],
+      "Brazil": [
+        ""
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        ""
+      ],
+      "Bulgaria": [
+        ""
+      ],
+      "Burkina Faso": [
+        ""
+      ],
+      "Burma": [
+        ""
+      ],
+      "Burundi": [
+        ""
+      ],
+      "Cambodia": [
+        ""
+      ],
+      "Cameroon": [
+        ""
+      ],
+      "Canada": [
+        ""
+      ],
+      "Cape Verde": [
+        ""
+      ],
+      "Cayman Islands": [
+        ""
+      ],
+      "Central African Republic": [
+        ""
+      ],
+      "Chad": [
+        ""
+      ],
+      "Chile": [
+        ""
+      ],
+      "China": [
+        ""
+      ],
+      "Christmas Island": [
+        ""
+      ],
+      "Cocos (Keeling) Islands": [
+        ""
+      ],
+      "Colombia": [
+        ""
+      ],
+      "Comoros": [
+        ""
+      ],
+      "Congo": [
+        ""
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        ""
+      ],
+      "Costa Rica": [
+        ""
+      ],
+      "Cote d'Ivoire\"": [
+        ""
+      ],
+      "Croatia": [
+        ""
+      ],
+      "Cuba": [
+        ""
+      ],
+      "Curaçao": [
+        ""
+      ],
+      "Cyprus": [
+        ""
+      ],
+      "Czech Republic": [
+        ""
+      ],
+      "Denmark": [
+        ""
+      ],
+      "Djibouti": [
+        ""
+      ],
+      "Dominica": [
+        ""
+      ],
+      "Dominican Republic": [
+        ""
+      ],
+      "Ecuador": [
+        ""
+      ],
+      "Egypt": [
+        ""
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        ""
+      ],
+      "Eritrea": [
+        ""
+      ],
+      "Estonia": [
+        ""
+      ],
+      "Ethiopia": [
+        ""
+      ],
+      "Falkland Islands": [
+        ""
+      ],
+      "Faroe Islands": [
+        ""
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        ""
+      ],
+      "Finland": [
+        ""
+      ],
+      "France": [
+        ""
+      ],
+      "French Guiana": [
+        ""
+      ],
+      "French Polynesia": [
+        ""
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        ""
+      ],
+      "Gambia": [
+        ""
+      ],
+      "Georgia": [
+        ""
+      ],
+      "Germany": [
+        ""
+      ],
+      "Ghana": [
+        ""
+      ],
+      "Gibraltar": [
+        ""
+      ],
+      "Greece": [
+        ""
+      ],
+      "Greenland": [
+        ""
+      ],
+      "Grenada": [
+        ""
+      ],
+      "Guadeloupe": [
+        ""
+      ],
+      "Guam": [
+        ""
+      ],
+      "Guatemala": [
+        ""
+      ],
+      "Guernsey": [
+        ""
+      ],
+      "Guinea": [
+        ""
+      ],
+      "Guinea-Bissau": [
+        ""
+      ],
+      "Guyana": [
+        ""
+      ],
+      "Haiti": [
+        ""
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        ""
+      ],
+      "Hong Kong": [
+        ""
+      ],
+      "Hungary": [
+        ""
+      ],
+      "Iceland": [
+        ""
+      ],
+      "India": [
+        ""
+      ],
+      "Indonesia": [
+        ""
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        ""
+      ],
+      "Iraq": [
+        ""
+      ],
+      "Ireland": [
+        ""
+      ],
+      "Isle of Man": [
+        ""
+      ],
+      "Israel": [
+        ""
+      ],
+      "Italy": [
+        ""
+      ],
+      "Jamaica": [
+        ""
+      ],
+      "Japan": [
+        ""
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        ""
+      ],
+      "Kazakhstan": [
+        ""
+      ],
+      "Kenya": [
+        ""
+      ],
+      "Kiribati": [
+        ""
+      ],
+      "Kosovo": [
+        ""
+      ],
+      "Kuwait": [
+        ""
+      ],
+      "Kyrgyzstan": [
+        ""
+      ],
+      "Laos": [
+        ""
+      ],
+      "Latvia": [
+        ""
+      ],
+      "Lebanon": [
+        ""
+      ],
+      "Lesotho": [
+        ""
+      ],
+      "Liberia": [
+        ""
+      ],
+      "Libya": [
+        ""
+      ],
+      "Liechtenstein": [
+        ""
+      ],
+      "Lithuania": [
+        ""
+      ],
+      "Luxembourg": [
+        ""
+      ],
+      "Macao": [
+        ""
+      ],
+      "Madagascar": [
+        ""
+      ],
+      "Malawi": [
+        ""
+      ],
+      "Malaysia": [
+        ""
+      ],
+      "Maldives": [
+        ""
+      ],
+      "Mali": [
+        ""
+      ],
+      "Malta": [
+        ""
+      ],
+      "Marshall Islands": [
+        ""
+      ],
+      "Martinique": [
+        ""
+      ],
+      "Mauritania": [
+        ""
+      ],
+      "Mauritius": [
+        ""
+      ],
+      "Mayotte": [
+        ""
+      ],
+      "Mexico": [
+        ""
+      ],
+      "Moldova": [
+        ""
+      ],
+      "Monaco": [
+        ""
+      ],
+      "Mongolia": [
+        ""
+      ],
+      "Montenegro": [
+        ""
+      ],
+      "Montserrat": [
+        ""
+      ],
+      "Morocco": [
+        ""
+      ],
+      "Mozambique": [
+        ""
+      ],
+      "Namibia": [
+        ""
+      ],
+      "Nauru": [
+        ""
+      ],
+      "Nepal": [
+        ""
+      ],
+      "Netherlands": [
+        ""
+      ],
+      "New Caledonia": [
+        ""
+      ],
+      "New Zealand": [
+        ""
+      ],
+      "Nicaragua": [
+        ""
+      ],
+      "Niger": [
+        ""
+      ],
+      "Nigeria": [
+        ""
+      ],
+      "Niue": [
+        ""
+      ],
+      "Norfolk Island": [
+        ""
+      ],
+      "North Korea": [
+        ""
+      ],
+      "North Macedonia": [
+        ""
+      ],
+      "Northern Mariana Islands": [
+        ""
+      ],
+      "Norway": [
+        ""
+      ],
+      "Oman": [
+        ""
+      ],
+      "Pakistan": [
+        ""
+      ],
+      "Palau": [
+        ""
+      ],
+      "Palestine": [
+        ""
+      ],
+      "Panama": [
+        ""
+      ],
+      "Papua New Guinea": [
+        ""
+      ],
+      "Paraguay": [
+        ""
+      ],
+      "Peru": [
+        ""
+      ],
+      "Philippines": [
+        ""
+      ],
+      "Pitcairn": [
+        ""
+      ],
+      "Poland": [
+        ""
+      ],
+      "Portugal": [
+        ""
+      ],
+      "Puerto Rico": [
+        ""
+      ],
+      "Qatar": [
+        ""
+      ],
+      "Reunion": [
+        ""
+      ],
+      "Romania": [
+        ""
+      ],
+      "Russia": [
+        ""
+      ],
+      "Rwanda": [
+        ""
+      ],
+      "Saint Barthélemy": [
+        ""
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        ""
+      ],
+      "Saint Lucia": [
+        ""
+      ],
+      "Saint Martin (French Part)": [
+        ""
+      ],
+      "Saint Pierre and Miquelon": [
+        ""
+      ],
+      "Saint Vincent and the Grenadines": [
+        ""
+      ],
+      "Samoa": [
+        ""
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        ""
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        ""
+      ],
+      "Seychelles": [
+        ""
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        ""
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        ""
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        ""
+      ],
+      "South Ossetia": [
+        ""
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        ""
+      ],
+      "Sri Lanka": [
+        ""
+      ],
+      "Sudan": [
+        ""
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        ""
+      ],
+      "Tajikistan": [
+        ""
+      ],
+      "Tanzania": [
+        ""
+      ],
+      "Thailand": [
+        ""
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        ""
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        ""
+      ],
+      "Trinidad and Tobago": [
+        ""
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        ""
+      ],
+      "Turkey": [
+        ""
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        ""
+      ],
+      "Uganda": [
+        ""
+      ],
+      "Ukraine": [
+        ""
+      ],
+      "United Arab Emirates": [
+        ""
+      ],
+      "United Kingdom": [
+        ""
+      ],
+      "United States": [
+        ""
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        ""
+      ],
+      "Uzbekistan": [
+        ""
+      ],
+      "Vanuatu": [
+        ""
+      ],
+      "Venezuela": [
+        ""
+      ],
+      "Vietnam": [
+        ""
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        ""
+      ],
+      "Yemen": [
+        ""
+      ],
+      "Zambia": [
+        ""
+      ],
+      "Zimbabwe": [
+        ""
+      ],
+      "Åland Islands": [
+        ""
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(putem ${ entryCountryName })"
@@ -1527,9 +2293,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dešifriranje kontakata... Ovo može potrajati nekoliko minuta. Nakon dovršetka možete preuzeti datoteku koja sadrži vaše sve kontakte."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
       ],
@@ -1752,9 +2515,6 @@
       "Condition incomplete": [
         "Uvjet je nepotpun"
       ],
-      "Contact signature not verified": [
-        "Potpis kontakta nije potvrđen"
-      ],
       "Could not find address ${ email }.": [
         "Ne mogu pronaći adresu ${ email }."
       ],
@@ -1863,9 +2623,6 @@
         "",
         ""
       ],
-      "Missing signature": [
-        "Nedostaje potpis"
-      ],
       "Name on card required": [
         "Ime s kartice je nužno"
       ],
@@ -1963,9 +2720,6 @@
       ],
       "Require at least one condition": [
         "Zahtijeva najmanje jedan uvjet"
-      ],
-      "Signature not verified": [
-        "Potpis nije ovjeren"
       ],
       "Signature verification failed": [
         "Potvrda potpisa je neuspješna"
@@ -2630,6 +3384,16 @@
       ],
       "Value / Data / Points to": [
         "Vrijednost / Podaci / Ukazuje na"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "",
+        "",
+        ""
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        ""
       ]
     },
     "Human verification method": {
@@ -3482,9 +4246,6 @@
       "Creating your Proton account": [
         "Stvaranje vašeg Proton računa"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Trenutno je sav raspoloživi prostor za pohranu dodijeljen administratorskom računu. Smanjite prostor administratorskog računa da biste oslobodili prostor za dodatne korisnike. U bilo kojem trenutku možete povećati ukupni prostor za pohranu, nadogradnjom svog računa."
       ],
@@ -3948,9 +4709,6 @@
       "No results found": [
         "Nema rezultata"
       ],
-      "No subscription yet": [
-        "Bez pretplate"
-      ],
       "Normal": [
         "Normalno"
       ],
@@ -4178,6 +4936,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        ""
+      ],
       "Server is currently down": [
         "Poslužitelj je trenutno nedostupan"
       ],
@@ -4232,9 +4993,6 @@
       "Thank you for supporting our mission.": [
         "Hvala vam što podupirete našu misiju."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
-      ],
       "The calendar will be removed from your account.": [
         ""
       ],
@@ -4246,9 +5004,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "Naziv će biti vidljiv vašim korisnicima dok su prijavljeni."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Nema dostupnih pojedinosti o naplati za vašu trenutačnu pretplatu."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ove konfiguracijske datoteke omogućuju vam odabir s kojim će te se ProtonVPN poslužiteljem povezati kada upotrebljavate VPN aplikacije trećih strana ili postavljate VPN vezu na routeru."
@@ -4403,9 +5158,6 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         ""
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Nadogradite na plaćeni plan kako biste pristupili premium značajkama i povećali vaš prostor za pohranu."
-      ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Nadogradite na plaćeni plan za otključavanje podrške za IMAP/SMTP putem ProtonMail Bridgea."
       ],
@@ -4426,9 +5178,6 @@
       ],
       "Users": [
         "Korisnici"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Korisnici ne mogu mijenjati postavke organizacije. Ako vam trebaju administratorske povlastice, obratite se administratoru sustava."
       ],
       "Verification can take a few minutes.": [
         "Potvrda može potrajati nekoliko minuta."
@@ -5169,9 +5918,6 @@
       ],
       "Auto-load embedded images": [
         "Automatsko prikazivanje ugrađenih slika"
-      ],
-      "Automatically save contacts": [
-        "Automatsko spremanje kontakata"
       ],
       "Block email tracking": [
         ""
@@ -5996,6 +6742,9 @@
       "Go to subscription plans": [
         "Idi na planove pretplate"
       ],
+      "How to unlock data": [
+        ""
+      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -6034,15 +6783,16 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Koja je razlika između UDP i TCP protokola?"
+      ],
+      "Why set recovery methods?": [
+        ""
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
+      "Almost there": [
         ""
       ],
-      "Almost there": [
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         ""
       ],
       "Connecting to your email provider": [
@@ -6415,9 +7165,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Natrag na Kalendar"
-      ],
-      "Back to Contacts": [
-        "Natrag na Kontakti"
       ],
       "Back to Drive": [
         "Natrag na Drive"
@@ -6892,6 +7639,9 @@
       "Proton username": [
         "Proton korisničko ime"
       ],
+      "Search settings": [
+        ""
+      ],
       "Search users": [
         "Pretraživanje korisnika"
       ],
@@ -7048,14 +7798,6 @@
         "privatno"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } od ${ countContacts } kontakata uspješno uveženo."
-      ],
-      "No contacts exported.": [
-        "Nema izvezenih kontakata."
-      ]
-    },
     "Property type": {
       "Address": [
         "Adresa"
@@ -7086,6 +7828,47 @@
       ],
       "Work": [
         "Posao"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        ""
+      ],
+      "Cancel": [
+        ""
+      ],
+      "Email address has been verified.": [
+        ""
+      ],
+      "Email address not yet verified.": [
+        ""
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        ""
+      ],
+      "Send verification email": [
+        ""
+      ],
+      "There was a problem verifying your email address.": [
+        ""
+      ],
+      "Verification email sent to ${ email.Value }": [
+        ""
+      ],
+      "Verify now": [
+        ""
+      ],
+      "Verify recovery email?": [
+        ""
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        ""
+      ],
+      "You can safely close this tab.": [
+        ""
+      ],
+      "Your recovery email has been successfully verified.": [
+        ""
       ]
     },
     "Recovery method": {
@@ -7152,59 +7935,8 @@
       "Account": [
         "Korisnički račun"
       ],
-      "Appearance": [
-        "Izgled"
-      ],
-      "Auto reply": [
-        "Automatski odgovori"
-      ],
-      "Backup and export": [
-        ""
-      ],
-      "Calendars": [
-        "Kalendari"
-      ],
-      "Domain names": [
-        "Nazivi domena"
-      ],
-      "Email privacy": [
-        ""
-      ],
-      "Encryption and keys": [
-        ""
-      ],
-      "Filters": [
-        "Filtri"
-      ],
-      "Folders and labels": [
-        ""
-      ],
-      "General": [
-        "Općenito"
-      ],
-      "Identity and addresses": [
-        ""
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "Uvoz i izvoz"
-      ],
-      "Multi-user support": [
-        "Višekorisnička podrška"
-      ],
       "Organization": [
         "Organizacija"
-      ],
-      "Organization and keys": [
-        ""
-      ],
-      "Users and addresses": [
-        ""
-      ],
-      "VPN apps": [
-        "VPN aplikacije"
       ]
     },
     "Settings update growler warning": {
@@ -7810,9 +8542,6 @@
       "Contact encryption keys": [
         "Šifrirani ključevi kontataka"
       ],
-      "Contacts": [
-        "Kontakti"
-      ],
       "Continue with partial import?": [
         ""
       ],
@@ -7969,9 +8698,6 @@
       "Error": [
         "Pogreška"
       ],
-      "Export": [
-        "Izvoz"
-      ],
       "Export calendar": [
         "Izvezi kalendar"
       ],
@@ -7980,9 +8706,6 @@
       ],
       "Export public key": [
         "Izvoz javnog ključa"
-      ],
-      "Exporting contacts": [
-        "Izvoz kontakata"
       ],
       "External PGP settings": [
         "Postavke vanjskog PGP-a"
@@ -8005,6 +8728,9 @@
       "Generate missing keys": [
         "Generirajte ključeve koji nedostaju"
       ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Nabavite ProtonVPN Plus za pristup svim poslužiteljima"
       ],
@@ -8022,9 +8748,6 @@
       ],
       "Import": [
         "Uvoz"
-      ],
-      "Import & export": [
-        "Uvoz i izvoz"
       ],
       "Import as simple event?": [
         "",
@@ -8277,9 +9000,6 @@
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
       ],
-      "Sorry, you can't access this page": [
-        "Nažalost, ne možete pristupiti ovoj stranici"
-      ],
       "Sort folders alphabetically": [
         "Sortiraj mape abecedno"
       ],
@@ -8288,9 +9008,6 @@
       ],
       "Spam filters": [
         "Filtri neželjene pošte"
-      ],
-      "Spy Tracker Protection": [
-        ""
       ],
       "Start a new import": [
         "Započni novi uvoz"
@@ -8345,9 +9062,6 @@
       ],
       "Unsupported browser": [
         "Preglednik nije podržan"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
       ],
       "Username": [
         ""
@@ -8541,6 +9255,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Preusmjerite sav svoj internetski promet kroz Tor mrežu jednim klikom."
       ],
+      "Set how your list of messages looks like by default.": [
+        ""
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Postavite zadanu veličinu prozora za nove poruke kao malo ili preko cijelog zaslona."
       ],
@@ -8594,9 +9311,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Kada kliknete na poveznicu, ova značajka za zaštitu od krađe identiteta će tražiti da potvrdite točnost URL-a web stranice."
-      ],
-      "You do not have any contacts to export": [
-        "Nemate kontakata za izvoz"
       ],
       "You have locally decrypted this key": [
         "Lokalno ste dešifrirali ovaj ključ"

@@ -445,6 +445,9 @@
       "Share file": [
         "Deel Bestand"
       ],
+      "Share item": [
+        "Deel item"
+      ],
       "Share options": [
         "Deelopties"
       ],
@@ -564,9 +567,6 @@
       ],
       "View invoice": [
         "Factuur bekijken"
-      ],
-      "View more": [
-        "Bekijk meer"
       ],
       "Zoom in": [
         "Inzoomen"
@@ -982,6 +982,773 @@
         "${ monthsWithYears } maanden"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abchazië"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albanië"
+      ],
+      "Algeria": [
+        "Algerije"
+      ],
+      "American Samoa": [
+        "Amerikaans Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua en Barbuda"
+      ],
+      "Argentina": [
+        "Argentinië"
+      ],
+      "Armenia": [
+        "Armenië"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australië"
+      ],
+      "Austria": [
+        "Oostenrijk"
+      ],
+      "Azerbaijan": [
+        "Azerbeidzjan"
+      ],
+      "Bahamas": [
+        "Bahama's"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Wit-Rusland"
+      ],
+      "Belgium": [
+        "België"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius en Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnië en Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Eiland"
+      ],
+      "Brazil": [
+        "Brazilië"
+      ],
+      "British Indian Ocean Territory": [
+        "Brits Indische Oceaan Territorium"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgarije"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Myanmar"
+      ],
+      "Burundi": [
+        "Boeroendi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Kameroen"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Kaapverdië"
+      ],
+      "Cayman Islands": [
+        "Kaaiman Eilanden"
+      ],
+      "Central African Republic": [
+        "Centraal Afrikaanse Republiek"
+      ],
+      "Chad": [
+        ""
+      ],
+      "Chile": [
+        "Chili"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Kersteiland"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocoseilanden"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comoren"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Democratische Republiek"
+      ],
+      "Cook Islands": [
+        "Cook Eilanden"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        "Ivoorkust"
+      ],
+      "Croatia": [
+        "Kroatië"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cyprus"
+      ],
+      "Czech Republic": [
+        "Tsjechië"
+      ],
+      "Denmark": [
+        "Denemarken"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominicaanse Republiek"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypte"
+      ],
+      "El Salvador": [
+        ""
+      ],
+      "Equatorial Guinea": [
+        "Equatoriaal Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Ethiopia": [
+        "Ethiopië"
+      ],
+      "Falkland Islands": [
+        "Falklandeilanden"
+      ],
+      "Faroe Islands": [
+        "Faeröer Eilanden"
+      ],
+      "Federated States of Micronesia": [
+        "Federale Staten van Micronesië"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Frankrijk"
+      ],
+      "French Guiana": [
+        "Franse Guinee"
+      ],
+      "French Polynesia": [
+        "Frans-Polynesië"
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgië"
+      ],
+      "Germany": [
+        "Duitsland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Griekenland"
+      ],
+      "Greenland": [
+        "Groenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinee"
+      ],
+      "Guinea-Bissau": [
+        "Guinee-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haïti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard- en MacDonaldeilanden"
+      ],
+      "Holy See (Vatican City State)": [
+        ""
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hongarije"
+      ],
+      "Iceland": [
+        "IJsland"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesië"
+      ],
+      "International": [
+        "Internationaal"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Ierland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israël"
+      ],
+      "Italy": [
+        "Italië"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordanië"
+      ],
+      "Kazakhstan": [
+        "Kazachstan"
+      ],
+      "Kenya": [
+        "Kenia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Koeweit"
+      ],
+      "Kyrgyzstan": [
+        "Kirgizië"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letland"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libië"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litouwen"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Maleisië"
+      ],
+      "Maldives": [
+        "Malediven"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Eilanden"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauritanië"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldavië"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolië"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Namibia": [
+        "Namibië"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nederland"
+      ],
+      "New Caledonia": [
+        "Nieuw-Caledonië"
+      ],
+      "New Zealand": [
+        "Nieuw-Zeeland"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk eiland"
+      ],
+      "North Korea": [
+        "Noord-Korea"
+      ],
+      "North Macedonia": [
+        "Noord-Macedonië"
+      ],
+      "Northern Mariana Islands": [
+        "Noordelijke Marianen"
+      ],
+      "Norway": [
+        "Noorwegen"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papoea-Nieuw-Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipijnen"
+      ],
+      "Pitcairn": [
+        "Pitcairneilanden"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Roemenië"
+      ],
+      "Russia": [
+        "Rusland"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Sint-Bartholomeus"
+      ],
+      "Saint Helena": [
+        ""
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts en Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Sint Maarten (Frans deel)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint-Pierre en Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        ""
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        ""
+      ],
+      "Sao Tome and Principe": [
+        ""
+      ],
+      "Saudi Arabia": [
+        "Saudi-Arabië"
+      ],
+      "Senegal": [
+        ""
+      ],
+      "Serbia": [
+        "Servië"
+      ],
+      "Seychelles": [
+        "Seychellen"
+      ],
+      "Sierra Leone": [
+        ""
+      ],
+      "Singapore": [
+        ""
+      ],
+      "Sint Maarten": [
+        ""
+      ],
+      "Slovakia": [
+        ""
+      ],
+      "Slovenia": [
+        ""
+      ],
+      "Solomon Islands": [
+        "Salomonseilanden"
+      ],
+      "Somalia": [
+        ""
+      ],
+      "South Africa": [
+        "Zuid-Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Zuid-Georgië en de Zuidelijke Sandwicheilanden"
+      ],
+      "South Korea": [
+        "Zuid-Korea"
+      ],
+      "South Ossetia": [
+        "Zuid-Ossetië"
+      ],
+      "South Sudan": [
+        ""
+      ],
+      "Spain": [
+        "Spanje"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Soedan"
+      ],
+      "Suriname": [
+        ""
+      ],
+      "Svalbard and Jan Mayen": [
+        ""
+      ],
+      "Swaziland": [
+        ""
+      ],
+      "Sweden": [
+        "Zweden"
+      ],
+      "Switzerland": [
+        "Zwitserland"
+      ],
+      "Syria": [
+        ""
+      ],
+      "Taiwan": [
+        ""
+      ],
+      "Tajikistan": [
+        ""
+      ],
+      "Tanzania": [
+        ""
+      ],
+      "Thailand": [
+        ""
+      ],
+      "Timor-Leste": [
+        ""
+      ],
+      "Togo": [
+        ""
+      ],
+      "Tokelau": [
+        ""
+      ],
+      "Tonga": [
+        ""
+      ],
+      "Trinidad and Tobago": [
+        ""
+      ],
+      "Tristan da Cunha": [
+        ""
+      ],
+      "Tunisia": [
+        ""
+      ],
+      "Turkey": [
+        ""
+      ],
+      "Turkmenistan": [
+        ""
+      ],
+      "Turks and Caicos Islands": [
+        ""
+      ],
+      "Tuvalu": [
+        ""
+      ],
+      "Uganda": [
+        ""
+      ],
+      "Ukraine": [
+        ""
+      ],
+      "United Arab Emirates": [
+        "Verenigde Arabische Emiraten"
+      ],
+      "United Kingdom": [
+        "Verenigd Koninkrijk"
+      ],
+      "United States": [
+        ""
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        ""
+      ],
+      "Uzbekistan": [
+        ""
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        ""
+      ],
+      "Vietnam": [
+        ""
+      ],
+      "Virgin Islands, British": [
+        ""
+      ],
+      "Virgin Islands, U.S.": [
+        ""
+      ],
+      "Wallis and Futuna": [
+        "Wallis en Futuna"
+      ],
+      "Western Sahara": [
+        "Westelijke Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Aland Eilanden"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Onbekend"
@@ -1121,9 +1888,6 @@
       "Failed to download a folder": [
         "Downloaden van een map mislukt"
       ],
-      "Failed to load the link": [
-        "Kan de link niet laden"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
       ],
@@ -1148,11 +1912,11 @@
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Onjuiste inloggegevens. Gelieve opnieuw te proberen"
+      "Incorrect login credentials. Please try again.": [
+        "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
+      "Incorrect mailbox password. Please try again.": [
+        "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
       ],
       "Incorrect password. Please try again.": [
         "Onjuist wachtwoord. Probeer het opnieuw."
@@ -2048,9 +2812,6 @@
       "Loading ${ appName }": [
         "${ appName } aan het laden"
       ],
-      "Loading folder contents": [
-        "Laden van mapinhoud"
-      ],
       "Loading preview": [
         "Voorbeeld laden"
       ],
@@ -2220,8 +2981,8 @@
       "Screenshot(s) attached": [
         "Toegevoegde screenshot(s)"
       ],
-      "Select an uploaded file and create a link to it.": [
-        "Selecteer een geüpload bestand en maak er een link naartoe."
+      "Select an uploaded file or folder and create a link to it.": [
+        "Selecteer een geüpload bestand of map en maak er een link naartoe."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
@@ -2564,6 +3325,9 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        "Aantal weergaven"
+      ],
       "(Expired)": [
         "(Verlopen)"
       ],
@@ -2657,6 +3421,9 @@
       "Delete drive?": [
         "Drive verwijderen?",
         "Drives verwijderen?"
+      ],
+      "Deleted": [
+        "Verwijderd"
       ],
       "Display name": [
         "Weergavenaam"
@@ -2762,6 +3529,9 @@
       ],
       "Merge a folder": [
         "Map samenvoegen"
+      ],
+      "Modified": [
+        "Gewijzigd"
       ],
       "Name": [
         "Naam"
@@ -2895,9 +3665,6 @@
       "Upload picture": [
         "Afbeelding uploaden"
       ],
-      "Uploaded": [
-        "Geüpload"
-      ],
       "Username or ProtonMail address": [
         "Gebruikersnaam of ProtonMail e-mailadres"
       ],
@@ -2987,16 +3754,11 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt",
-        "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt"
-      ],
-      "${ createdCalendars } of 1 created": [
-        "",
-        ""
-      ],
       "Almost there": [
         "Bijna daar"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Nieuwe agenda's maken"
@@ -3157,6 +3919,10 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" uit de prullenbak hersteld"
       ],
+      "${ count } item failed to be decrypted": [
+        "${ count } item kon niet worden ontsleuteld",
+        "${ count } items konden niet worden ontsleuteld"
+      ],
       "${ deletedCount } link to your file was deleted": [
         "${ deletedCount } link naar uw bestand is verwijderd",
         "${ deletedCount } linken naar uw bestanden zijn verwijderd"
@@ -3256,6 +4022,9 @@
       "File or folder is missing a name": [
         "Bestand of map heeft geen naam"
       ],
+      "Link failed to be loaded": [
+        "Link kon niet geladen worden"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Verplaats ${ itemsToMoveCount } bestand",
         "Verplaats ${ itemsToMoveCount } bestanden"
@@ -3280,14 +4049,26 @@
         "Verplaats ${ movingCount } item",
         "Verplaats ${ movingCount } items"
       ],
+      "Next page failed to be loaded": [
+        "Volgende pagina kon niet geladen worden"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
+      ],
+      "Root folder failed to be loaded": [
+        "Hoofdmap kon niet geladen worden"
+      ],
+      "Subfolder failed to be loaded": [
+        "Submap kon niet geladen worden"
       ],
       "The link to your file failed to be deleted": [
         "De link naar uw bestand kon niet worden verwijderd"
       ],
       "The link to your file was deleted": [
         "De link naar uw bestand is verwijderd"
+      ],
+      "Trash failed to be emptied": [
+        "Prullenbak legen mislukt"
       ],
       "Your old files will be deleted in 72 hours": [
         "Uw oude bestanden worden binnen 72 uur verwijderd"
@@ -3653,8 +4434,8 @@
       ]
     },
     "Success": {
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\" succesvol aangemaakt"
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" succesvol aangemaakt"
       ],
       "${ nameElement } renamed successfully": [
         "${ nameElement } succesvol hernoemd"
@@ -3708,9 +4489,6 @@
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Uw bestanden zijn hersteld naar \"Mijn bestanden\"."
       ]
     },
     "Suffix for price": {
@@ -4041,6 +4819,9 @@
       "Folder details": [
         "Map details"
       ],
+      "Folders details": [
+        "Details mappen"
+      ],
       "Gift code": [
         "Geschenkcode"
       ],
@@ -4058,6 +4839,9 @@
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Items details": [
+        "Details items"
       ],
       "Link confirmation": [
         "Link bevestigen"
@@ -4097,6 +4881,12 @@
       ],
       "Number of files": [
         "Aantal bestanden"
+      ],
+      "Number of folders": [
+        "Aantal mappen"
+      ],
+      "Number of items": [
+        "Aantal items"
       ],
       "Open actions dropdown": [
         "Open acties dropdownmenu"

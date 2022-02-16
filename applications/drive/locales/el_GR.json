@@ -445,6 +445,9 @@
       "Share file": [
         "Κοινοποίηση αρχείου"
       ],
+      "Share item": [
+        "Κοινοποίηση αντικειμένου"
+      ],
       "Share options": [
         "Κοινοποίηση επιλογών"
       ],
@@ -564,9 +567,6 @@
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
-      ],
-      "View more": [
-        "Προβολή περισσότερων"
       ],
       "Zoom in": [
         "Μεγέθυνση"
@@ -982,6 +982,773 @@
         "${ monthsWithYears } μήνες"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Αμπχαζία"
+      ],
+      "Afghanistan": [
+        "Αφγανιστάν"
+      ],
+      "Albania": [
+        "Αλβανία"
+      ],
+      "Algeria": [
+        "Αλγερία"
+      ],
+      "American Samoa": [
+        "Αμερικανική Σαμόα"
+      ],
+      "Andorra": [
+        "Ανδόρα"
+      ],
+      "Angola": [
+        "Αγκόλα"
+      ],
+      "Anguilla": [
+        "Ανγκουίλα"
+      ],
+      "Antarctica": [
+        "Ανταρκτική"
+      ],
+      "Antigua and Barbuda": [
+        "Αντίγκουα και Μπαρμπούντα"
+      ],
+      "Argentina": [
+        "Αργεντινή"
+      ],
+      "Armenia": [
+        "Αρμενία"
+      ],
+      "Aruba": [
+        "Αρούμπα"
+      ],
+      "Ascension Island": [
+        "Νήσος Αναλήψεως"
+      ],
+      "Australia": [
+        "Αυστραλία"
+      ],
+      "Austria": [
+        "Αυστρία"
+      ],
+      "Azerbaijan": [
+        "Αζερμπαϊτζάν"
+      ],
+      "Bahamas": [
+        "Μπαχάμες"
+      ],
+      "Bahrain": [
+        "Μπαχρέιν"
+      ],
+      "Bangladesh": [
+        "Μπαγκλαντές"
+      ],
+      "Barbados": [
+        "Μπαρμπάντος"
+      ],
+      "Belarus": [
+        "Λευκορωσία"
+      ],
+      "Belgium": [
+        "Βέλγιο"
+      ],
+      "Belize": [
+        "Μπελίζ"
+      ],
+      "Benin": [
+        "Μπενίν"
+      ],
+      "Bermuda": [
+        "Βερμούδες"
+      ],
+      "Bhutan": [
+        "Μπουτάν"
+      ],
+      "Bolivia": [
+        "Βολιβία"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        ""
+      ],
+      "Bosnia and Herzegovina": [
+        "Βοσνία Ερζεγοβίνη"
+      ],
+      "Botswana": [
+        "Μποτσουάνα"
+      ],
+      "Bouvet Island": [
+        "Μπουβέ"
+      ],
+      "Brazil": [
+        "Βραζιλία"
+      ],
+      "British Indian Ocean Territory": [
+        ""
+      ],
+      "Brunei Darussalam": [
+        "Μπρουνέι"
+      ],
+      "Bulgaria": [
+        "Βουλγαρία"
+      ],
+      "Burkina Faso": [
+        "Μπουρκίνα Φάσο"
+      ],
+      "Burma": [
+        "Βιρμανία"
+      ],
+      "Burundi": [
+        "Μπουρούντι"
+      ],
+      "Cambodia": [
+        "Καμπότζη"
+      ],
+      "Cameroon": [
+        "Καμερούν"
+      ],
+      "Canada": [
+        "Καναδάς"
+      ],
+      "Cape Verde": [
+        "Πράσινο Ακρωτήριo"
+      ],
+      "Cayman Islands": [
+        "Νήσοι Κέιμαν"
+      ],
+      "Central African Republic": [
+        "Κεντροαφρικανική Δημοκρατία"
+      ],
+      "Chad": [
+        "Τσαντ"
+      ],
+      "Chile": [
+        "Χιλή"
+      ],
+      "China": [
+        "Κίνα"
+      ],
+      "Christmas Island": [
+        "Νήσος Χριστουγέννων"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Νήσοι Κόκος"
+      ],
+      "Colombia": [
+        "Κολομβία"
+      ],
+      "Comoros": [
+        "Κομόρες"
+      ],
+      "Congo": [
+        "Κογκό"
+      ],
+      "Congo, Democratic Republic of the": [
+        ""
+      ],
+      "Cook Islands": [
+        "Νήσοι Κουκ"
+      ],
+      "Costa Rica": [
+        "Κόστα Ρίκα"
+      ],
+      "Cote d'Ivoire\"": [
+        "Ακτή Ελεφαντοστού"
+      ],
+      "Croatia": [
+        "Κροατία"
+      ],
+      "Cuba": [
+        "Κούβα"
+      ],
+      "Curaçao": [
+        "Κουρασάο"
+      ],
+      "Cyprus": [
+        "Κύπρος"
+      ],
+      "Czech Republic": [
+        "Τσεχία"
+      ],
+      "Denmark": [
+        "Δανία"
+      ],
+      "Djibouti": [
+        "Τζιμπουτί"
+      ],
+      "Dominica": [
+        "Δομινίκα"
+      ],
+      "Dominican Republic": [
+        "Δομινικανή Δημοκρατία"
+      ],
+      "Ecuador": [
+        "Ισημερινός"
+      ],
+      "Egypt": [
+        "Αίγυπτος"
+      ],
+      "El Salvador": [
+        "Ελ Σαλβαδόρ"
+      ],
+      "Equatorial Guinea": [
+        "Ισημερινή Γουινέα"
+      ],
+      "Eritrea": [
+        "Ερυθραία"
+      ],
+      "Estonia": [
+        "Εσθονία"
+      ],
+      "Ethiopia": [
+        "Αιθιοπία"
+      ],
+      "Falkland Islands": [
+        "Νήσοι Φόκλαντ"
+      ],
+      "Faroe Islands": [
+        "Φερόες"
+      ],
+      "Federated States of Micronesia": [
+        ""
+      ],
+      "Fiji": [
+        "Φίτζι"
+      ],
+      "Finland": [
+        "Φινλανδία"
+      ],
+      "France": [
+        "Γαλλία"
+      ],
+      "French Guiana": [
+        "Γαλλική Γουιάνα"
+      ],
+      "French Polynesia": [
+        "Γαλλική Πολυνησία"
+      ],
+      "French Southern Territories": [
+        ""
+      ],
+      "Gabon": [
+        "Γκαμπόν"
+      ],
+      "Gambia": [
+        "Γκάμπια"
+      ],
+      "Georgia": [
+        "Γεωργία"
+      ],
+      "Germany": [
+        "Γερμανία"
+      ],
+      "Ghana": [
+        "Γκάνα"
+      ],
+      "Gibraltar": [
+        "Γιβραλτάρ"
+      ],
+      "Greece": [
+        "Ελλάδα"
+      ],
+      "Greenland": [
+        "Γροιλανδία"
+      ],
+      "Grenada": [
+        "Γρενάδα"
+      ],
+      "Guadeloupe": [
+        "Γουαδελούπη"
+      ],
+      "Guam": [
+        "Γκουάμ"
+      ],
+      "Guatemala": [
+        "Γουατεμάλα"
+      ],
+      "Guernsey": [
+        ""
+      ],
+      "Guinea": [
+        "Γουινέα"
+      ],
+      "Guinea-Bissau": [
+        "Γουινέα-Μπισάου"
+      ],
+      "Guyana": [
+        "Γουιάνα"
+      ],
+      "Haiti": [
+        "Αϊτή"
+      ],
+      "Heard Island and McDonald Islands": [
+        ""
+      ],
+      "Holy See (Vatican City State)": [
+        "Βατικανό"
+      ],
+      "Honduras": [
+        "Ονδούρα"
+      ],
+      "Hong Kong": [
+        "Χονγκ Κονγκ"
+      ],
+      "Hungary": [
+        "Ουγγαρία"
+      ],
+      "Iceland": [
+        "Ισλανδία"
+      ],
+      "India": [
+        "Ινδία"
+      ],
+      "Indonesia": [
+        "Ινδονησία"
+      ],
+      "International": [
+        ""
+      ],
+      "Iran": [
+        "Ιράν"
+      ],
+      "Iraq": [
+        "Ιράκ"
+      ],
+      "Ireland": [
+        "Ιρλανδία"
+      ],
+      "Isle of Man": [
+        "Νήσος Μαν"
+      ],
+      "Israel": [
+        "Ισραήλ"
+      ],
+      "Italy": [
+        "Ιταλία"
+      ],
+      "Jamaica": [
+        "Τζαμάικα"
+      ],
+      "Japan": [
+        "Ιαπωνία"
+      ],
+      "Jersey": [
+        ""
+      ],
+      "Jordan": [
+        "Ιορδανία"
+      ],
+      "Kazakhstan": [
+        "Καζακστάν"
+      ],
+      "Kenya": [
+        "Κένυα"
+      ],
+      "Kiribati": [
+        "Κιριμπάτι"
+      ],
+      "Kosovo": [
+        "Κόσοβο"
+      ],
+      "Kuwait": [
+        "Κουβέιτ"
+      ],
+      "Kyrgyzstan": [
+        "Κιργιστάν"
+      ],
+      "Laos": [
+        "Λάος"
+      ],
+      "Latvia": [
+        "Λετονία"
+      ],
+      "Lebanon": [
+        "Λίβανος"
+      ],
+      "Lesotho": [
+        "Λεσότο"
+      ],
+      "Liberia": [
+        "Λιβερία"
+      ],
+      "Libya": [
+        "Λιβύη"
+      ],
+      "Liechtenstein": [
+        "Λιχτενστάιν"
+      ],
+      "Lithuania": [
+        "Λιθουανία"
+      ],
+      "Luxembourg": [
+        "Λουξεμβούργο"
+      ],
+      "Macao": [
+        "Μακάο"
+      ],
+      "Madagascar": [
+        "Μαδαγασκάρη"
+      ],
+      "Malawi": [
+        "Μαλάουι"
+      ],
+      "Malaysia": [
+        "Μαλαισία"
+      ],
+      "Maldives": [
+        "Μαλδίβες"
+      ],
+      "Mali": [
+        "Μάλι"
+      ],
+      "Malta": [
+        "Μάλτα"
+      ],
+      "Marshall Islands": [
+        "Νήσοι Μάρσαλ"
+      ],
+      "Martinique": [
+        "Μαρτινίκα"
+      ],
+      "Mauritania": [
+        "Μαυριτανία"
+      ],
+      "Mauritius": [
+        "Μαυρίκιος"
+      ],
+      "Mayotte": [
+        "Μαγιότ"
+      ],
+      "Mexico": [
+        "Μεξικό"
+      ],
+      "Moldova": [
+        "Μολδαβία"
+      ],
+      "Monaco": [
+        "Μονακό"
+      ],
+      "Mongolia": [
+        "Μογγολία"
+      ],
+      "Montenegro": [
+        "Μαυροβούνιο"
+      ],
+      "Montserrat": [
+        "Μονσεράτ"
+      ],
+      "Morocco": [
+        "Μαρόκο"
+      ],
+      "Mozambique": [
+        "Μοζαμβίκη"
+      ],
+      "Namibia": [
+        "Ναμίμπια"
+      ],
+      "Nauru": [
+        "Ναούρου"
+      ],
+      "Nepal": [
+        "Νεπάλ"
+      ],
+      "Netherlands": [
+        "Ολλανδία"
+      ],
+      "New Caledonia": [
+        "Νέα Καληδονία"
+      ],
+      "New Zealand": [
+        "Νέα Ζηλανδία"
+      ],
+      "Nicaragua": [
+        "Νικαράγουα"
+      ],
+      "Niger": [
+        "Νίγηρας"
+      ],
+      "Nigeria": [
+        "Νιγηρία"
+      ],
+      "Niue": [
+        "Νιούε"
+      ],
+      "Norfolk Island": [
+        "Νήσος Νόρφολκ"
+      ],
+      "North Korea": [
+        "Βόρεια Κορέα"
+      ],
+      "North Macedonia": [
+        "Σκόπια"
+      ],
+      "Northern Mariana Islands": [
+        "Βόρειες Μαριάνες"
+      ],
+      "Norway": [
+        "Νορβηγία"
+      ],
+      "Oman": [
+        "Ομάν"
+      ],
+      "Pakistan": [
+        "Πακιστάν"
+      ],
+      "Palau": [
+        "Παλάου"
+      ],
+      "Palestine": [
+        "Παλαιστίνη"
+      ],
+      "Panama": [
+        "Παναμάς"
+      ],
+      "Papua New Guinea": [
+        "Παπούα Νέα Γουινέα"
+      ],
+      "Paraguay": [
+        "Παραγουάη"
+      ],
+      "Peru": [
+        "Περού"
+      ],
+      "Philippines": [
+        "Φιλιππίνες"
+      ],
+      "Pitcairn": [
+        "Πίτκαιρν"
+      ],
+      "Poland": [
+        "Πολωνία"
+      ],
+      "Portugal": [
+        "Πορτογαλία"
+      ],
+      "Puerto Rico": [
+        "Πουέρτο Ρίκο"
+      ],
+      "Qatar": [
+        "Κατάρ"
+      ],
+      "Reunion": [
+        "Ρεϋνιόν"
+      ],
+      "Romania": [
+        "Ρουμανία"
+      ],
+      "Russia": [
+        "Ρωσία"
+      ],
+      "Rwanda": [
+        "Ρουάντα"
+      ],
+      "Saint Barthélemy": [
+        "Άγιος Βαρθολομαίος"
+      ],
+      "Saint Helena": [
+        "Αγία Ελένη"
+      ],
+      "Saint Kitts and Nevis": [
+        "Άγιος Χριστόφορος"
+      ],
+      "Saint Lucia": [
+        "Αγία Λουκία"
+      ],
+      "Saint Martin (French Part)": [
+        "Άγιος Μαρτίνος (Γαλλικό τμήμα)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Άγιος Πέτρος Μικελόν"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Άγιος Βικέντιος"
+      ],
+      "Samoa": [
+        "Σαμόα"
+      ],
+      "San Marino": [
+        "Άγιος Μαρίνος"
+      ],
+      "Sao Tome and Principe": [
+        "Άγιος Θωμάς"
+      ],
+      "Saudi Arabia": [
+        "Σαουδική Αραβία"
+      ],
+      "Senegal": [
+        "Σενεγάλη"
+      ],
+      "Serbia": [
+        "Σερβία"
+      ],
+      "Seychelles": [
+        "Σεϊχέλες"
+      ],
+      "Sierra Leone": [
+        "Σιέρα Λεόνε"
+      ],
+      "Singapore": [
+        "Σιγκαπούρη"
+      ],
+      "Sint Maarten": [
+        "Άγιος Μαρτίνος"
+      ],
+      "Slovakia": [
+        "Σλοβακία"
+      ],
+      "Slovenia": [
+        "Σλοβενία"
+      ],
+      "Solomon Islands": [
+        "Νήσοι Σολομώντος"
+      ],
+      "Somalia": [
+        "Σομαλία"
+      ],
+      "South Africa": [
+        "Νότια Αφρική"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        ""
+      ],
+      "South Korea": [
+        "Νότια Κορέα"
+      ],
+      "South Ossetia": [
+        "Νότια Οσετία"
+      ],
+      "South Sudan": [
+        "Νότιο Σουδάν"
+      ],
+      "Spain": [
+        "Ισπανία"
+      ],
+      "Sri Lanka": [
+        "Σρι Λάνκα"
+      ],
+      "Sudan": [
+        "Σουδάν"
+      ],
+      "Suriname": [
+        "Σουρινάμ"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Σβάλμπαρντ"
+      ],
+      "Swaziland": [
+        "Σουαζιλάνδη"
+      ],
+      "Sweden": [
+        "Σουηδία"
+      ],
+      "Switzerland": [
+        "Ελβετία"
+      ],
+      "Syria": [
+        "Συρία"
+      ],
+      "Taiwan": [
+        "Ταϊβάν"
+      ],
+      "Tajikistan": [
+        "Τατζικιστάν"
+      ],
+      "Tanzania": [
+        "Τανζανία"
+      ],
+      "Thailand": [
+        "Ταϊλάνδη"
+      ],
+      "Timor-Leste": [
+        "Ανατολικό Τιμόρ"
+      ],
+      "Togo": [
+        "Τόγκο"
+      ],
+      "Tokelau": [
+        "Τοκελάου"
+      ],
+      "Tonga": [
+        "Τόνγκα"
+      ],
+      "Trinidad and Tobago": [
+        "Τρινιντάντ"
+      ],
+      "Tristan da Cunha": [
+        "Τριστάν ντα Κούνια"
+      ],
+      "Tunisia": [
+        "Τυνησία"
+      ],
+      "Turkey": [
+        "Τουρκία"
+      ],
+      "Turkmenistan": [
+        "Τουρκμενιστάν"
+      ],
+      "Turks and Caicos Islands": [
+        "Νήσοι Τερκς και Κάικος"
+      ],
+      "Tuvalu": [
+        "Τουβαλού"
+      ],
+      "Uganda": [
+        "Ουγκάντα"
+      ],
+      "Ukraine": [
+        "Ουκρανία"
+      ],
+      "United Arab Emirates": [
+        "Ηνωμένα Αραβικά Εμιράτα"
+      ],
+      "United Kingdom": [
+        "Ηνωμένο Βασίλειο"
+      ],
+      "United States": [
+        "Ηνωμένες Πολιτείες"
+      ],
+      "United States Minor Outlying Islands": [
+        ""
+      ],
+      "Uruguay": [
+        "Ουρουγουάη"
+      ],
+      "Uzbekistan": [
+        "Ουζμπεκιστάν"
+      ],
+      "Vanuatu": [
+        "Βανουάτου"
+      ],
+      "Venezuela": [
+        "Βενεζουέλα"
+      ],
+      "Vietnam": [
+        "Βιετνάμ"
+      ],
+      "Virgin Islands, British": [
+        "Βρετανικές Παρθένες Νήσοι"
+      ],
+      "Virgin Islands, U.S.": [
+        "Αμερικανικές Παρθένες Νήσοι"
+      ],
+      "Wallis and Futuna": [
+        ""
+      ],
+      "Western Sahara": [
+        "Δυτική Σαχάρα"
+      ],
+      "Yemen": [
+        "Υεμένη"
+      ],
+      "Zambia": [
+        "Ζάμπια"
+      ],
+      "Zimbabwe": [
+        "Ζιμπάμπουε"
+      ],
+      "Åland Islands": [
+        "Νήσοι Άλαντ"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Άγνωστο"
@@ -1121,14 +1888,11 @@
       "Failed to download a folder": [
         "Αποτυχία λήψης ενός φακέλου"
       ],
-      "Failed to load the link": [
-        "Αποτυχία φόρτωσης συνδέσμου"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
       ],
       "File \"${ name }\" is already downloading": [
-        ""
+        "Το αρχείο \"${ name }\" κατεβαίνει ήδη"
       ],
       "File cannot be merged with folder": [
         "Ένα αρχείο δεν γίνεται να συγχωνευθεί με φάκελο"
@@ -1137,10 +1901,10 @@
         "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
       ],
       "File selection is already downloading": [
-        ""
+        "Τα επιλεγμένα αρχεία κατεβαίνουν ήδη"
       ],
       "Folder \"${ name }\" is already downloading": [
-        ""
+        "Ο φάκελος \"${ name }\" κατεβαίνει ήδη"
       ],
       "Folder name cannot be empty": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό"
@@ -1148,11 +1912,11 @@
       "Image upload failed": [
         "Αποτυχία ανεβάσματος εικόνας"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Λανθασμένες πιστοποιήσεις σύνδεσης. Παρακαλώ προσπαθήστε ξανά"
+      "Incorrect login credentials. Please try again.": [
+        ""
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Εσφαλμένος κωδικός πρόσβασης γραμματοκιβωτίου. Παρακαλούμε ξαναπροσπαθήστε"
+      "Incorrect mailbox password. Please try again.": [
+        ""
       ],
       "Incorrect password. Please try again.": [
         "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
@@ -1565,7 +2329,7 @@
     },
     "Import instructions emphasis": {
       "in the next step you need to select all the permissions": [
-        ""
+        "στο επόμενο βήμα χρειάζεται να επιλέξετε όλες τις άδειες"
       ]
     },
     "Import warning": {
@@ -2048,9 +2812,6 @@
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
       ],
-      "Loading folder contents": [
-        "Φόρτωση περιεχομένων φακέλου"
-      ],
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
       ],
@@ -2220,8 +2981,8 @@
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
       ],
-      "Select an uploaded file and create a link to it.": [
-        "Επιλέξτε ένα ανεβασμένο αρχείο και δημιουργήστε έναν σύνδεσμο προς αυτό."
+      "Select an uploaded file or folder and create a link to it.": [
+        "Επιλέξτε ένα ανεβασμένο αρχείο ή φάκελο και δημιουργήστε έναν σύνδεσμο προς αυτό."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Ορίστε την προεπιλεγμένη μορφή των μηνυμάτων που αποστέλλονται προς αυτήν την ηλ. διεύθυνση."
@@ -2564,6 +3325,9 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        "# των προσβάσεων"
+      ],
       "(Expired)": [
         "(Ληγμένο)"
       ],
@@ -2657,6 +3421,9 @@
       "Delete drive?": [
         "Διαγραφή αρχειοθήκης;",
         "Διαγραφή αρχειοθηκών;"
+      ],
+      "Deleted": [
+        "Διαγράφηκαν"
       ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
@@ -2762,6 +3529,9 @@
       ],
       "Merge a folder": [
         "Συγχώνευση φακέλου"
+      ],
+      "Modified": [
+        "Τροποποιήθηκε"
       ],
       "Name": [
         "Όνομα"
@@ -2895,9 +3665,6 @@
       "Upload picture": [
         "Ανέβασμα εικόνας"
       ],
-      "Uploaded": [
-        "Ανέβηκε"
-      ],
       "Username or ProtonMail address": [
         "Όνομα χρήστη ή διεύθυνση ProtonMail"
       ],
@@ -2987,16 +3754,11 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "Δημιουργήθηκε ${ createdCalendars } από ${ calendarsToBeCreated }",
-        "Δημιουργήθηκαν ${ createdCalendars } από ${ calendarsToBeCreated }"
-      ],
-      "${ createdCalendars } of 1 created": [
-        "",
-        ""
-      ],
       "Almost there": [
         "Σχεδόν εκεί"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendars } από ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Δημιουργία νέων ημερολόγιων"
@@ -3157,6 +3919,10 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" επαναφέρθηκε από τον κάδο απορριμμάτων"
       ],
+      "${ count } item failed to be decrypted": [
+        "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
+        "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
+      ],
       "${ deletedCount } link to your file was deleted": [
         "διαγράφηκε ${ deletedCount } σύνδεσμος προς το αρχείο σας",
         "διαγράφηκαν ${ deletedCount } σύνδεσμοι προς τα αρχεία σας"
@@ -3256,6 +4022,9 @@
       "File or folder is missing a name": [
         "Το αρχείο ή ο φάκελος στερείται ονόματος"
       ],
+      "Link failed to be loaded": [
+        "Ο σύνδεσμος απέτυχε να φορτώσει"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Μετακίνηση ${ itemsToMoveCount } αρχείου",
         "Μετακίνηση ${ itemsToMoveCount} αρχείων"
@@ -3280,14 +4049,26 @@
         "Μετακίνηση ${ movingCount } στοιχείου",
         "Μετακίνηση ${ movingCount } στοιχείων"
       ],
+      "Next page failed to be loaded": [
+        "Η επόμενη σελίδα απέτυχε να φορτώσει"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
+      ],
+      "Root folder failed to be loaded": [
+        "Ο πρωταρχικός φάκελος απέτυχε να φορτώσει"
+      ],
+      "Subfolder failed to be loaded": [
+        "Ο υποφάκελος απέτυχε να φορτώσει"
       ],
       "The link to your file failed to be deleted": [
         "Ο σύνδεσμος προς το αρχείο σας απέτυχε να διαγραφεί"
       ],
       "The link to your file was deleted": [
         "Ο σύνδεσμος προς το αρχείο σας διαγράφηκε"
+      ],
+      "Trash failed to be emptied": [
+        "Αποτυχία αδειάσματος διαγραμμένων"
       ],
       "Your old files will be deleted in 72 hours": [
         "Τα παλιά αρχεία σας θα διαγραφούν εντός 72 ωρών"
@@ -3298,7 +4079,7 @@
     },
     "Oauth instructions": {
       "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+        "Παρακαλώ σημειώστε ότι ${ boldNextStep } που ζητά η εφαρμογή για να ξεκινήσετε την εισαγωγή."
       ]
     },
     "Onboarding Proton": {
@@ -3653,8 +4434,8 @@
       ]
     },
     "Success": {
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\" δημιουργήθηκε με επιτυχία"
+      "\"${ name }\" created successfully": [
+        "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
       ],
       "${ nameElement } renamed successfully": [
         "${ nameElement } μετονομάστηκε με επιτυχία"
@@ -3708,9 +4489,6 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Τα αρχεία σας ανακτήθηκαν επιτυχώς στα \"Αρχεία μου\"."
       ]
     },
     "Suffix for price": {
@@ -4041,6 +4819,9 @@
       "Folder details": [
         "Λεπτομέρειες φακέλου"
       ],
+      "Folders details": [
+        "Λεπτομέρειες φακέλου"
+      ],
       "Gift code": [
         "Κωδικός δώρου"
       ],
@@ -4058,6 +4839,9 @@
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Items details": [
+        "Λεπτομέρειες αντικειμένου"
       ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
@@ -4087,7 +4871,7 @@
         "Τα αρχεία μου"
       ],
       "My files ${ date }.zip": [
-        ""
+        "Αρχεία μου ${ date }.zip"
       ],
       "Name": [
         "Όνομα"
@@ -4097,6 +4881,12 @@
       ],
       "Number of files": [
         "Αριθμός αρχείων"
+      ],
+      "Number of folders": [
+        "Πλήθος φακέλων"
+      ],
+      "Number of items": [
+        "Πλήθος αντικειμένων"
       ],
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
@@ -4180,7 +4970,7 @@
         "Επιλέξτε το χρόνο λήξης του συνδέσμου"
       ],
       "Select permissions": [
-        ""
+        "Επιλογή αδειών"
       ],
       "Select what to import": [
         "Επιλογή στοιχείων προς εισαγωγή"

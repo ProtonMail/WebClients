@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
@@ -325,9 +325,6 @@
       "Export": [
         "Exporteren"
       ],
-      "Export contacts": [
-        "Exporteer Contactgegevens"
-      ],
       "Export ICS": [
         "Exporteer ICS"
       ],
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "Genereer nieuwe herstelzin"
-      ],
-      "Generate new recovery phrase?": [
-        "Nieuwe herstelzin genereren?"
       ],
       "Generate recovery phrase": [
         "Genereer herstelzin"
@@ -661,9 +655,6 @@
       "Sign in": [
         "Inloggen"
       ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
-      ],
       "Sign out": [
         "Uitloggen"
       ],
@@ -744,9 +735,6 @@
       ],
       "Upgrade": [
         "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
       ],
       "Upgrade to Plus": [
         "Upgraden naar Plus"
@@ -1224,6 +1212,17 @@
         "U hebt het maximum van ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } geabonneerde agenda's bereikt."
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Label toegevoegd"
+      ],
+      "Label deleted": [
+        "Label verwijderd"
+      ],
+      "Label edited": [
+        "Label bewerkt"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Actief"
@@ -1437,6 +1436,773 @@
         "${ monthsWithYears } maanden"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abchazië"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albanië"
+      ],
+      "Algeria": [
+        "Algerije"
+      ],
+      "American Samoa": [
+        "Amerikaans Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua en Barbuda"
+      ],
+      "Argentina": [
+        "Argentinië"
+      ],
+      "Armenia": [
+        "Armenië"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australië"
+      ],
+      "Austria": [
+        "Oostenrijk"
+      ],
+      "Azerbaijan": [
+        "Azerbeidzjan"
+      ],
+      "Bahamas": [
+        "Bahama's"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Wit-Rusland"
+      ],
+      "Belgium": [
+        "België"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius en Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnië en Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Eiland"
+      ],
+      "Brazil": [
+        "Brazilië"
+      ],
+      "British Indian Ocean Territory": [
+        "Brits Indische Oceaan Territorium"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgarije"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Myanmar"
+      ],
+      "Burundi": [
+        "Boeroendi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Kameroen"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Kaapverdië"
+      ],
+      "Cayman Islands": [
+        "Kaaiman Eilanden"
+      ],
+      "Central African Republic": [
+        "Centraal Afrikaanse Republiek"
+      ],
+      "Chad": [
+        "Tsjaad"
+      ],
+      "Chile": [
+        "Chili"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Kersteiland"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocoseilanden"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comoren"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Democratische Republiek"
+      ],
+      "Cook Islands": [
+        "Cook Eilanden"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        "Ivoorkust"
+      ],
+      "Croatia": [
+        "Kroatië"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cyprus"
+      ],
+      "Czech Republic": [
+        "Tsjechië"
+      ],
+      "Denmark": [
+        "Denemarken"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominicaanse Republiek"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypte"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Equatoriaal Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Ethiopia": [
+        "Ethiopië"
+      ],
+      "Falkland Islands": [
+        "Falklandeilanden"
+      ],
+      "Faroe Islands": [
+        "Faeröer Eilanden"
+      ],
+      "Federated States of Micronesia": [
+        "Federale Staten van Micronesië"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Frankrijk"
+      ],
+      "French Guiana": [
+        "Franse Guinee"
+      ],
+      "French Polynesia": [
+        "Frans-Polynesië"
+      ],
+      "French Southern Territories": [
+        "Franse Zuidelijke en Antarctische Gebieden"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgië"
+      ],
+      "Germany": [
+        "Duitsland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Griekenland"
+      ],
+      "Greenland": [
+        "Groenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinee"
+      ],
+      "Guinea-Bissau": [
+        "Guinee-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haïti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard- en MacDonaldeilanden"
+      ],
+      "Holy See (Vatican City State)": [
+        "Heilige Stoel (Vaticaanstad)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hongarije"
+      ],
+      "Iceland": [
+        "IJsland"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesië"
+      ],
+      "International": [
+        "Internationaal"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Ierland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israël"
+      ],
+      "Italy": [
+        "Italië"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordanië"
+      ],
+      "Kazakhstan": [
+        "Kazachstan"
+      ],
+      "Kenya": [
+        "Kenia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Koeweit"
+      ],
+      "Kyrgyzstan": [
+        "Kirgizië"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letland"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libië"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litouwen"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Maleisië"
+      ],
+      "Maldives": [
+        "Malediven"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Eilanden"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauritanië"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldavië"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolië"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Namibia": [
+        "Namibië"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nederland"
+      ],
+      "New Caledonia": [
+        "Nieuw-Caledonië"
+      ],
+      "New Zealand": [
+        "Nieuw-Zeeland"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk eiland"
+      ],
+      "North Korea": [
+        "Noord-Korea"
+      ],
+      "North Macedonia": [
+        "Noord-Macedonië"
+      ],
+      "Northern Mariana Islands": [
+        "Noordelijke Marianen"
+      ],
+      "Norway": [
+        "Noorwegen"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papoea-Nieuw-Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipijnen"
+      ],
+      "Pitcairn": [
+        "Pitcairneilanden"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Roemenië"
+      ],
+      "Russia": [
+        "Rusland"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Sint-Bartholomeus"
+      ],
+      "Saint Helena": [
+        "Sint-Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts en Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Sint Maarten (Frans deel)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint-Pierre en Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent en de Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tomé en Principe"
+      ],
+      "Saudi Arabia": [
+        "Saudi-Arabië"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Servië"
+      ],
+      "Seychelles": [
+        "Seychellen"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slowakije"
+      ],
+      "Slovenia": [
+        "Slovenië"
+      ],
+      "Solomon Islands": [
+        "Salomonseilanden"
+      ],
+      "Somalia": [
+        "Somalië"
+      ],
+      "South Africa": [
+        "Zuid-Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Zuid-Georgië en de Zuidelijke Sandwicheilanden"
+      ],
+      "South Korea": [
+        "Zuid-Korea"
+      ],
+      "South Ossetia": [
+        "Zuid-Ossetië"
+      ],
+      "South Sudan": [
+        "Zuid-Soedan"
+      ],
+      "Spain": [
+        "Spanje"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Soedan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Spitsbergen en Jan Mayen"
+      ],
+      "Swaziland": [
+        "Swaziland"
+      ],
+      "Sweden": [
+        "Zweden"
+      ],
+      "Switzerland": [
+        "Zwitserland"
+      ],
+      "Syria": [
+        "Syrië"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadjikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Oost-Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad en Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunesië"
+      ],
+      "Turkey": [
+        "Turkije"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "De Turks- en Caicoseilanden"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Oeganda"
+      ],
+      "Ukraine": [
+        "Oekraïne"
+      ],
+      "United Arab Emirates": [
+        "Verenigde Arabische Emiraten"
+      ],
+      "United Kingdom": [
+        "Verenigd Koninkrijk"
+      ],
+      "United States": [
+        "Verenigde Staten"
+      ],
+      "United States Minor Outlying Islands": [
+        "Amerikaanse ondergeschikte afgelegen eilanden"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Oezbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Maagdeneilanden, Verenigd Koninkrijk"
+      ],
+      "Virgin Islands, U.S.": [
+        "Maagdeneilanden, Verenigde Staten."
+      ],
+      "Wallis and Futuna": [
+        "Wallis en Futuna"
+      ],
+      "Western Sahara": [
+        "Westelijke Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Aland Eilanden"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
@@ -1511,9 +2277,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw contacten geëxporteerd."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
@@ -1735,9 +2498,6 @@
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
       ],
-      "Contact signature not verified": [
-        "Handtekening van contact niet geverifieerd"
-      ],
       "Could not find address ${ email }.": [
         "Kon adres ${ email } niet vinden."
       ],
@@ -1843,9 +2603,6 @@
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
         "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
       ],
-      "Missing signature": [
-        "Handtekening ontbreekt"
-      ],
       "Name on card required": [
         "Naam op kaart verplicht"
       ],
@@ -1942,9 +2699,6 @@
       ],
       "Require at least one condition": [
         "Vereist minstens één voorwaarde"
-      ],
-      "Signature not verified": [
-        "Handtekening niet geverifieerd"
       ],
       "Signature verification failed": [
         "Handtekening controle mislukt"
@@ -2609,6 +3363,15 @@
         "Waarde / Data / Verwijst naar"
       ]
     },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ items.length } suggesties gevonden, gebruik het toetsenbord om te navigeren."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -3056,16 +3819,16 @@
         "${ calendarName } zal worden ingesteld als standaardagenda."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } nieuwe kalender",
-        "${ calendarsToBeCreatedCount } nieuwe kalenders"
+        "${ calendarsToBeCreatedCount } nieuwe agenda",
+        "${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "Éen samengevoegde agenda",
         "${ calendarsToBeMerged } samengevoegde agenda's"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } samengevoegde kalender",
-        "${ calendarsToBeMergedCount } samengevoegde kalenders"
+        "${ calendarsToBeMergedCount } samengevoegde agenda",
+        "${ calendarsToBeMergedCount } samengevoegde agenda's"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratis"
@@ -3118,8 +3881,8 @@
         "${ saveExtra20 } op zowel VPN als Mail door een VPN-abonnement toe te voegen."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } van ${ providerCalendars.length } kalender",
-        "${ selectedCalendarsTotal } van ${ providerCalendars.length } kalenders"
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } map geselecteerd",
@@ -3426,9 +4189,6 @@
       ],
       "Creating your Proton account": [
         "Uw Proton account aanmaken"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Alle beschikbare opslagruimte is momenteel toegewezen aan het beheerdersaccount. Beperk de toewijzingshoeveelheid om ruimte te creëren voor extra gebruikers. Door uw account te upgraden kunt u op elk gewenst moment de totale opslagcapaciteit verhogen."
@@ -3891,9 +4651,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "No subscription yet": [
-        "Nog geen abonnement"
-      ],
       "Normal": [
         "Normaal"
       ],
@@ -4120,6 +4877,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Verzonden met <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
+      ],
       "Server is currently down": [
         "Server is momenteel offline"
       ],
@@ -4174,9 +4934,6 @@
       "Thank you for supporting our mission.": [
         "Bedankt voor uw steun aan onze missie."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
-      ],
       "The calendar will be removed from your account.": [
         "De agenda zal verwijderd worden van uw account."
       ],
@@ -4188,9 +4945,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Er zijn geen facturatiegegevens beschikbaar voor uw huidige abonnement."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ProtonVPN-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
@@ -4345,9 +5099,6 @@
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
         "Upgrade naar een ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } of ${ PLAN_NAMES[PLANS.PLUS] } abonnement om automatisch antwoord in te schakelen wanneer je niet op kantoor bent."
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Upgrade naar een betaald abonnement om toegang te krijgen tot premium functies en uw opslagruimte te vergroten."
-      ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Upgrade naar een betaald abonnement om IMAP/SMTP ondersteuning te ontgrendelen via ProtonMail Bridge."
       ],
@@ -4368,9 +5119,6 @@
       ],
       "Users": [
         "Gebruikers"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Gebruikers kunnen geen wijzigingen aanbrengen in de organisatie-instellingen. Neem contact op met uw systeembeheerder."
       ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
@@ -5107,9 +5855,6 @@
       ],
       "Auto-load embedded images": [
         "Ingesloten afbeeldingen automatisch laden"
-      ],
-      "Automatically save contacts": [
-        "Contacten automatisch opslaan"
       ],
       "Block email tracking": [
         "Blokkeer e-mailtracking"
@@ -5934,6 +6679,9 @@
       "Go to subscription plans": [
         "Ga naar abonnementen"
       ],
+      "How to unlock data": [
+        "Hoe gegevens ontgrendelen"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -5972,15 +6720,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Wat is het verschil tussen UDP en TCP-protocollen?"
+      ],
+      "Why set recovery methods?": [
+        "Waarom herstelmethode instellen?"
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt",
-        "${ createdCalendars } van de ${ calendarsToBeCreated } aangemaakt"
-      ],
       "Almost there": [
         "Bijna daar"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
@@ -6346,9 +7096,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Terug naar agenda"
-      ],
-      "Back to Contacts": [
-        "Terug naar Contacten"
       ],
       "Back to Drive": [
         "Terug naar Drive"
@@ -6819,6 +7566,9 @@
       "Proton username": [
         "Proton-gebruikersnaam"
       ],
+      "Search settings": [
+        "Zoekinstellingen"
+      ],
       "Search users": [
         "Zoek gebruikers"
       ],
@@ -6974,14 +7724,6 @@
         "privé"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } van de ${ countContacts } contacten succesvol geëxporteerd."
-      ],
-      "No contacts exported.": [
-        "Geen contacten geëxporteerd."
-      ]
-    },
     "Property type": {
       "Address": [
         "Adres"
@@ -7012,6 +7754,47 @@
       ],
       "Work": [
         "Werk"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "Terug naar ${ signIn }."
+      ],
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Email address has been verified.": [
+        "E-mailadres werd geverifieerd."
+      ],
+      "Email address not yet verified.": [
+        "E-mailadres nog niet geverifieerd."
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "${ signIn } om herstele-mailadres verificatie opnieuw te verzenden."
+      ],
+      "Send verification email": [
+        "Verzend verificatiemail"
+      ],
+      "There was a problem verifying your email address.": [
+        "Er was een probleem bij het verifiëren van uw e-mailadres."
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Verificatiemail verzonden naar ${ email.Value }"
+      ],
+      "Verify now": [
+        "Verifieer nu"
+      ],
+      "Verify recovery email?": [
+        "Herstel-e-mailadres verifiëren?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Uw e-mailadres verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
+      ],
+      "You can safely close this tab.": [
+        "U kan dit tabblad veilig sluiten."
+      ],
+      "Your recovery email has been successfully verified.": [
+        "Uw herstel-e-mailadres werd succesvol geverifieerd."
       ]
     },
     "Recovery method": {
@@ -7078,59 +7861,8 @@
       "Account": [
         "Account"
       ],
-      "Appearance": [
-        "Uiterlijk"
-      ],
-      "Auto reply": [
-        "Automatisch antwoorden"
-      ],
-      "Backup and export": [
-        "Back-up en exporteren"
-      ],
-      "Calendars": [
-        "Agenda's"
-      ],
-      "Domain names": [
-        "Domeinnamen"
-      ],
-      "Email privacy": [
-        "E-mail privacy"
-      ],
-      "Encryption and keys": [
-        "Versleuteling en sleutels"
-      ],
-      "Filters": [
-        "Filters"
-      ],
-      "Folders and labels": [
-        "Mappen en labels"
-      ],
-      "General": [
-        "Algemeen"
-      ],
-      "Identity and addresses": [
-        "Identiteit en adressen"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Import & export": [
-        "Importeren & exporteren"
-      ],
-      "Multi-user support": [
-        "Ondersteuning voor meerdere gebruikers"
-      ],
       "Organization": [
         "Bedrijf"
-      ],
-      "Organization and keys": [
-        "Organisatie en sleutels"
-      ],
-      "Users and addresses": [
-        "Gebruikers en adressen"
-      ],
-      "VPN apps": [
-        "VPN-apps"
       ]
     },
     "Settings update growler warning": {
@@ -7734,9 +8466,6 @@
       "Contact encryption keys": [
         "Contact encryptiesleutels"
       ],
-      "Contacts": [
-        "Contacten"
-      ],
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
       ],
@@ -7893,9 +8622,6 @@
       "Error": [
         "Fout"
       ],
-      "Export": [
-        "Exporteren"
-      ],
       "Export calendar": [
         "Agenda exporteren"
       ],
@@ -7904,9 +8630,6 @@
       ],
       "Export public key": [
         "Exporteer publieke sleutel"
-      ],
-      "Exporting contacts": [
-        "Contactpersonen exporteren"
       ],
       "External PGP settings": [
         "Externe PGP-instellingen"
@@ -7929,6 +8652,9 @@
       "Generate missing keys": [
         "Ontbrekende sleutels genereren"
       ],
+      "Generate new recovery phrase?": [
+        "Nieuwe herstelzin genereren?"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Neem ProtonVPN Plus om toegang te krijgen tot alle servers"
       ],
@@ -7946,9 +8672,6 @@
       ],
       "Import": [
         "Importeren"
-      ],
-      "Import & export": [
-        "Importeren & exporteren"
       ],
       "Import as simple event?": [
         "Importeren als eenvoudige gebeurtenis?",
@@ -8200,9 +8923,6 @@
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
       ],
-      "Sorry, you can't access this page": [
-        "Sorry, u heeft geen toegang tot deze pagina"
-      ],
       "Sort folders alphabetically": [
         "Sorteer mappen alfabetisch"
       ],
@@ -8211,9 +8931,6 @@
       ],
       "Spam filters": [
         "Spamfilters"
-      ],
-      "Spy Tracker Protection": [
-        "Spy Tracker Bescherming"
       ],
       "Start a new import": [
         "Start een nieuwe import"
@@ -8268,9 +8985,6 @@
       ],
       "Unsupported browser": [
         "Niet-ondersteunde browser"
-      ],
-      "Upgrade": [
-        "Upgrade"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -8464,6 +9178,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Stuur uw internetverkeer met één klik door via het Tor-netwerk."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Stel in hoe uw lijst met berichten er standaard uitziet."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Stel de standaard composer pop-up grootte in als klein of volledig scherm."
       ],
@@ -8517,9 +9234,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Wanneer u op een link klikt, zal deze anti-phishing-functie u vragen om de URL van de webpagina te bevestigen."
-      ],
-      "You do not have any contacts to export": [
-        "U heeft geen contactpersonen om te exporteren"
       ],
       "You have locally decrypted this key": [
         "U heeft deze sleutel lokaal ontsleuteld"

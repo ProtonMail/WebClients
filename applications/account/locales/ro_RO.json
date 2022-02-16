@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
@@ -197,7 +197,7 @@
         "Continuare importare"
       ],
       "Continue with": [
-        "Continuați cu"
+        "Continuare cu"
       ],
       "Continue with Google": [
         "Continuare cu Google"
@@ -314,7 +314,7 @@
         "Editare script Sieve"
       ],
       "Edit sign-in details": [
-        "Editați detaliile de conectare"
+        "Editare detalii de conectare"
       ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
@@ -324,9 +324,6 @@
       ],
       "Export": [
         "Exportare"
-      ],
-      "Export contacts": [
-        "Exportare contacte"
       ],
       "Export ICS": [
         "Exportare ICS"
@@ -342,9 +339,6 @@
       ],
       "Generate new recovery phrase": [
         "Generare frază de recuperare"
-      ],
-      "Generate new recovery phrase?": [
-        "Generare frază nouă de recuperare?"
       ],
       "Generate recovery phrase": [
         "Generare frază de recuperare"
@@ -661,9 +655,6 @@
       "Sign in": [
         "Autentificare"
       ],
-      "Sign in again to continue": [
-        "Reconectați-vă pentru a continua"
-      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -671,7 +662,7 @@
         "Deconectare toate conturile"
       ],
       "Sign out from": [
-        "Ieșiți din"
+        "Deconectare din"
       ],
       "Signing in": [
         "Conectare"
@@ -745,9 +736,6 @@
       "Upgrade": [
         "Migrare"
       ],
-      "Upgrade now": [
-        "Migrare acum"
-      ],
       "Upgrade to Plus": [
         "Migrare la Plus"
       ],
@@ -785,10 +773,10 @@
         "Verificare"
       ],
       "Verify account": [
-        "Verifică contul"
+        "Verificare cont"
       ],
       "Verify email": [
-        "Verificarea contului"
+        "Verificare e-mail"
       ],
       "View": [
         "Afișare"
@@ -1234,6 +1222,17 @@
         "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } de calendare abonate."
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Etichetă adăugată"
+      ],
+      "Label deleted": [
+        "Etichetă ștearsă"
+      ],
+      "Label edited": [
+        "Etichetă editată"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Activat"
@@ -1449,6 +1448,773 @@
         "${ monthsWithYears } de luni"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abhazia"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algeria"
+      ],
+      "American Samoa": [
+        "Samoa Americană"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua și Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Insula Ascension"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaijan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladeș"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belgia"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sfântul Eustasie și Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia și Herțegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Insula Bouvet"
+      ],
+      "Brazil": [
+        "Brazilia"
+      ],
+      "British Indian Ocean Territory": [
+        "Teritoriul Britanic al Oceanului Indian"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Burma"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambogia"
+      ],
+      "Cameroon": [
+        "Camerun"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Capul Verde"
+      ],
+      "Cayman Islands": [
+        "Insulele Caiman"
+      ],
+      "Central African Republic": [
+        "Republica Central Africană"
+      ],
+      "Chad": [
+        "Ciad"
+      ],
+      "Chile": [
+        "Cile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Insula Crăciunului"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Insulele Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Columbia"
+      ],
+      "Comoros": [
+        "Comoros"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Republica Democrată"
+      ],
+      "Cook Islands": [
+        "Insulele Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        "Coasta de Fildeș"
+      ],
+      "Croatia": [
+        "Croația"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cipru"
+      ],
+      "Czech Republic": [
+        "Republica Cehă"
+      ],
+      "Denmark": [
+        "Danemarca"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Republica Dominicană"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egipt"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guineea Ecuatorială"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Ethiopia": [
+        "Etiopia"
+      ],
+      "Falkland Islands": [
+        "Insulele Falkland"
+      ],
+      "Faroe Islands": [
+        "Insulele Feroe"
+      ],
+      "Federated States of Micronesia": [
+        "Statele federative ale Microneziei"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlanda"
+      ],
+      "France": [
+        "Franța"
+      ],
+      "French Guiana": [
+        "Guiana Franceză"
+      ],
+      "French Polynesia": [
+        "Polinezia Franceză"
+      ],
+      "French Southern Territories": [
+        "Teritoriile Franceze de Sud"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Germania"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grecia"
+      ],
+      "Greenland": [
+        "Groenlanda"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guiana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Insula Heard și Insulele McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Sfântul Scaun (Statul Orașului Vatican)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Ungaria"
+      ],
+      "Iceland": [
+        "Islanda"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonezia"
+      ],
+      "International": [
+        "Internațional"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Insula Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japonia"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Iordan"
+      ],
+      "Kazakhstan": [
+        "Kazahstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuweit"
+      ],
+      "Kyrgyzstan": [
+        "Kyrgyzstan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letonia"
+      ],
+      "Lebanon": [
+        "Liban"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituania"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaezia"
+      ],
+      "Maldives": [
+        "Maldive"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Insulele Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexic"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Muntenegru"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Maroc"
+      ],
+      "Mozambique": [
+        "Mozambic"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Olanda"
+      ],
+      "New Caledonia": [
+        "Noua Caledonie"
+      ],
+      "New Zealand": [
+        "Noua Zeelandă"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Nigeria"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Insula Norfolk"
+      ],
+      "North Korea": [
+        "Coreea de Nord"
+      ],
+      "North Macedonia": [
+        "Macedonia de Nord"
+      ],
+      "Northern Mariana Islands": [
+        "Insulele Mariane de Nord"
+      ],
+      "Norway": [
+        "Norvegia"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestine"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Noua Guinee"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipine"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polonia"
+      ],
+      "Portugal": [
+        "Portugalia"
+      ],
+      "Puerto Rico": [
+        "Porto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "România"
+      ],
+      "Russia": [
+        "Rusia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Sfântul Bartolomeu"
+      ],
+      "Saint Helena": [
+        "Sfânta Elena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Sfântul Cristofor și Nevis"
+      ],
+      "Saint Lucia": [
+        "Sfânta Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Sfântul Martin (Franța)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Sfântul Pierre și Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Sfântul Vincențiu și Grenadinele"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome și Principe"
+      ],
+      "Saudi Arabia": [
+        "Arabia Saudită"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovacia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Insula Solomon"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Africa de Sud"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia de Sud și Insulele Sandwich de Sud"
+      ],
+      "South Korea": [
+        "Coreea de Sud"
+      ],
+      "South Ossetia": [
+        "Oseția de Sud"
+      ],
+      "South Sudan": [
+        "Sudanul de Sud"
+      ],
+      "Spain": [
+        "Spania"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard și Jan Mayen"
+      ],
+      "Swaziland": [
+        "Eswatini"
+      ],
+      "Sweden": [
+        "Suedia"
+      ],
+      "Switzerland": [
+        "Elveția"
+      ],
+      "Syria": [
+        "Siria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tajikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Tailanda"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad și Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turcia"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Insulele Turks și Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraina"
+      ],
+      "United Arab Emirates": [
+        "Emiratele Arabe Unite"
+      ],
+      "United Kingdom": [
+        "Regatul Unit"
+      ],
+      "United States": [
+        "Statele Unite"
+      ],
+      "United States Minor Outlying Islands": [
+        "Insulele Minore Îndepărtate ale Statelor Unite"
+      ],
+      "Uruguay": [
+        "Uruguai"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Insulele Virgine, Britania"
+      ],
+      "Virgin Islands, U.S.": [
+        "Insulele Virgine, S.U.A."
+      ],
+      "Wallis and Futuna": [
+        "Wallis și Futuna"
+      ],
+      "Western Sahara": [
+        "Sahara de Vest"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Insulele Åland"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(prin ${ entryCountryName })"
@@ -1527,9 +2293,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Se decriptează contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
@@ -1752,9 +2515,6 @@
       "Condition incomplete": [
         "Condiție incompletă"
       ],
-      "Contact signature not verified": [
-        "Semnătura contactului nu a fost verificată."
-      ],
       "Could not find address ${ email }.": [
         "Nu s-a putut găsi adresa ${ email }."
       ],
@@ -1793,7 +2553,7 @@
         "Eroare în una dintre condiții"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Nu a reușit să obțină sesiuni active. Vă rugăm ${ refresh } sau încercați din nou mai târziu."
+        "Nu s-a reușit obțininerea unei sesiuni active. Vă rugăm să ${ refresh } sau reîncercați mai târziu."
       ],
       "File has no contents to preview": [
         "Fișierul nu are conținut de afișat"
@@ -1862,9 +2622,6 @@
         "Îmbinați cel puțin un calendar cu un calendar Proton existent",
         "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele Proton existente",
         "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele Proton existente"
-      ],
-      "Missing signature": [
-        "Semnătură lipsă"
       ],
       "Name on card required": [
         "Numele de pe card este obligatoriu."
@@ -1963,9 +2720,6 @@
       ],
       "Require at least one condition": [
         "Necesită cel puțin o condiție"
-      ],
-      "Signature not verified": [
-        "Semnătură neverificată."
       ],
       "Signature verification failed": [
         "Eșuare verificare semnătură"
@@ -2322,10 +3076,10 @@
         "Răspuns nevalid"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Evenimentul nu a putut fi adăugat în calendarul dumneavoastră. Nu a fost trimis niciun răspuns"
+        "Evenimentul nu a putut fi adăugat în calendar. Nu a fost trimis niciun răspuns."
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Evenimentul nu a putut fi actualizat în calendarul dumneavoastră. Nu a fost trimis niciun răspuns"
+        "Evenimentul nu a putut fi actualizat în calendar. Nu a fost trimis niciun răspuns."
       ],
       "Unexpected error": [
         "Eroare neașteptată"
@@ -2349,7 +3103,7 @@
         "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar"
+        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar."
       ]
     },
     "Event title": {
@@ -2630,6 +3384,16 @@
       ],
       "Value / Data / Points to": [
         "Valoare / Date / Direcționat spre"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "S-a găsit o sugestie, folosiți tastatura pentru a naviga.",
+        "S-au găsit ${ items.length } sugestii, folosiți tastatura pentru a naviga.",
+        "S-au găsit ${ items.length } de sugestii, folosiți tastatura pentru a naviga."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilizați tastele «Săgeată sus» și «Săgeată jos» pentru a accesa și răsfoi sugestiile după introducere. Apăsați tasta «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
       ]
     },
     "Human verification method": {
@@ -3482,9 +4246,6 @@
       "Creating your Proton account": [
         "Crearea contului tău Proton"
       ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
-      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "În prezent tot spațiul disponibil este alocat contului administratorului. Reduceți alocarea către acest cont pentru a elibera spațiu pentru utilizatorii suplimentari. Puteți mări spațiul total oricând trecând la un cont cu plată."
       ],
@@ -3948,9 +4709,6 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "No subscription yet": [
-        "Fără abonament"
-      ],
       "Normal": [
         "Normal"
       ],
@@ -4178,6 +4936,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarul dorit pentru importare. Va fi creat un calendar nou pentru fiecare calendar importat până la limita de 20 de calendare."
       ],
+      "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Trimis cu <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
+      ],
       "Server is currently down": [
         "Serverul este în prezent inactiv"
       ],
@@ -4188,7 +4949,7 @@
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
       "Session timed out": [
-        "Sesiune expirată"
+        "Sesiunea a expirat"
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
@@ -4232,9 +4993,6 @@
       "Thank you for supporting our mission.": [
         "Vă mulţumim pentru că ne sprijiniți misiunea."
       ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
-      ],
       "The calendar will be removed from your account.": [
         "Calendarul va fi eliminat din cont."
       ],
@@ -4246,9 +5004,6 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
-      ],
-      "There are no billing details available for your current subscription.": [
-        "Nu sunt disponibile detalii de facturare pentru abonamentul actual."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Aceste fișiere de configurare vă permit să alegeți la care server ProtonVPN vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
@@ -4332,7 +5087,7 @@
         "Pentru a decripta și vedea mesajele și alte date aveți nevoie de un fișier de recuperare."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Pentru a decripta și vizualiza e-mailurile și alte date, aveți nevoie de o frază de recuperare sau de un fișier de recuperare."
+        "Pentru a decripta și vizualiza e-mailurile și alte date, aveți nevoie de o frază sau de un fișier de recuperare."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Pentru a decripta și vedea mesajele și alte date aveți nevoie de o frază de recuperare."
@@ -4341,7 +5096,7 @@
         "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "Pentru a asigura accesul continuu la contul dumneavoastră, setați o metodă de recuperare a contului"
+        "Pentru a vă asigura accesul continuu la cont, setați o metodă de recuperare a contului."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
@@ -4401,10 +5156,7 @@
         "Migraţi la planul ${ PLAN_NAMES[PLANS.PROFESSIONAL] } sau ${ PLAN_NAMES[PLANS.VISIONARY] } sau pentru a începe."
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
-        "Treceți la un plan ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } sau ${ PLAN_NAMES[PLANS.PLUS] } pentru a activa răspunsurile automate atunci când sunteți plecat de la birou."
-      ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Treceți la un plan cu plată pentru a accesa funcțiile premium și a crește spațiul de stocare."
+        "Treceți la ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } sau ${ PLAN_NAMES[PLANS.PLUS] } pentru a activa răspunsurile automate atunci când nu puteți răspunde la mesaje."
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         "Treceți la un plan cu plată pentru a debloca suportul IMAP/SMTP cu ajutorul „ProtonMail Bridge”."
@@ -4426,9 +5178,6 @@
       ],
       "Users": [
         "Utilizatori"
-      ],
-      "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
-        "Utilizatorii nu pot face modificări în setările organizației. Dacă doriți drepturi administrative, contactați-vă administratorul de sistem."
       ],
       "Verification can take a few minutes.": [
         "Verificarea poate dura câteva minute."
@@ -4473,7 +5222,7 @@
         "Veți primi o notificare la finalizarea importării."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Vom trimite un nou cod de verificare la ${ strong }"
+        "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -4611,7 +5360,7 @@
         "Nu veți putea recupera datele criptate după o resetare a contului folosind fișierele de recuperare descărcate."
       ],
       "You'll stay signed in even after you close the browser.": [
-        "Veți rămâne conectat chiar și după ce închideți browserul."
+        "Conexiunea va rămâne activă chiar și după ce închideți navigatorul."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Acest cont ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }. Pentru a utiliza ${ toAppName }, trebuie să creați o adresă."
@@ -5169,9 +5918,6 @@
       ],
       "Auto-load embedded images": [
         "Autoîncărcare imagini încorporate"
-      ],
-      "Automatically save contacts": [
-        "Salvare automată contacte"
       ],
       "Block email tracking": [
         "Blocare urmărire e-mailuri"
@@ -5996,6 +6742,9 @@
       "Go to subscription plans": [
         "Accesare planuri abonamente"
       ],
+      "How to unlock data": [
+        "Cum se deblochează datele"
+      ],
       "Learn more": [
         "Detalii"
       ],
@@ -6034,16 +6783,17 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Care este diferenţa dintre protocoalele UDP şi TCP?"
+      ],
+      "Why set recovery methods?": [
+        "De ce să setați metode de recuperare?"
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "S-a creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
-        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
-        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }"
-      ],
       "Almost there": [
         "Aproape terminat"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Număr de calendare create: ${ createdCalendars } din ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Se conectează la furnizorul de e-mail"
@@ -6415,9 +7165,6 @@
     "Navigation": {
       "Back to Calendar": [
         "Înapoi la calendar"
-      ],
-      "Back to Contacts": [
-        "Înapoi la contacte"
       ],
       "Back to Drive": [
         "Înapoi la Drive"
@@ -6892,6 +7639,9 @@
       "Proton username": [
         "Utilizator Proton"
       ],
+      "Search settings": [
+        "Setări căutare"
+      ],
       "Search users": [
         "Căutare utilizatori"
       ],
@@ -7048,14 +7798,6 @@
         "privat"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } din ${ countContacts } contacte exportate cu succes."
-      ],
-      "No contacts exported.": [
-        "Nu s-au exportat contacte."
-      ]
-    },
     "Property type": {
       "Address": [
         "Adresa"
@@ -7086,6 +7828,47 @@
       ],
       "Work": [
         "Serviciu"
+      ]
+    },
+    "Recovery Email": {
+      "Back to ${ signIn }.": [
+        "Înapoi la ${ signIn }."
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Email address has been verified.": [
+        "Adresa de e-mail a fost verificată."
+      ],
+      "Email address not yet verified.": [
+        "Adresa de e-mail nu este verificată."
+      ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Accesaţi funcţia de ${ signIn } pentru a retrimite o cerere de verificare a e-mailului de recuperare."
+      ],
+      "Send verification email": [
+        "Trimitere e-mail de verificare"
+      ],
+      "There was a problem verifying your email address.": [
+        "A existat o problemă la verificarea adresei de e-mail."
+      ],
+      "Verification email sent to ${ email.Value }": [
+        "Mesajul de verificare a fost trimis la ${ email.Value }"
+      ],
+      "Verify now": [
+        "Verificare acum"
+      ],
+      "Verify recovery email?": [
+        "Verificare e-mail de recuperare?"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verificarea adresei de e-mail vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
+      ],
+      "You can safely close this tab.": [
+        "Puteți închide această filă în siguranță."
+      ],
+      "Your recovery email has been successfully verified.": [
+        "E-mailul de recuperare a fost verificat cu succes."
       ]
     },
     "Recovery method": {
@@ -7152,59 +7935,8 @@
       "Account": [
         "Cont"
       ],
-      "Appearance": [
-        "Aspect"
-      ],
-      "Auto reply": [
-        "Auto răspuns"
-      ],
-      "Backup and export": [
-        "Conservare şi exportare"
-      ],
-      "Calendars": [
-        "Calendare"
-      ],
-      "Domain names": [
-        "Nume de domenii"
-      ],
-      "Email privacy": [
-        "Confidențialitate mesaje"
-      ],
-      "Encryption and keys": [
-        "Criptare și chei"
-      ],
-      "Filters": [
-        "Filtre"
-      ],
-      "Folders and labels": [
-        "Foldere și etichete"
-      ],
-      "General": [
-        "Generale"
-      ],
-      "Identity and addresses": [
-        "Identitate și adrese"
-      ],
-      "IMAP/SMTP": [
-        "IMAP / SMTP"
-      ],
-      "Import & export": [
-        "Importare și exportare"
-      ],
-      "Multi-user support": [
-        "Suport utilizatori multipli"
-      ],
       "Organization": [
         "Organizația"
-      ],
-      "Organization and keys": [
-        "Organizare și chei"
-      ],
-      "Users and addresses": [
-        "Utilizatori și adrese"
-      ],
-      "VPN apps": [
-        "Aplicații VPN"
       ]
     },
     "Settings update growler warning": {
@@ -7810,9 +8542,6 @@
       "Contact encryption keys": [
         "Chei de criptare contacte"
       ],
-      "Contacts": [
-        "Contacte"
-      ],
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
@@ -7949,7 +8678,7 @@
         "E-mail"
       ],
       "Email composer": [
-        "Compozitor de e-mail"
+        "Editor mesaj e-mail"
       ],
       "Email encryption keys": [
         "Chei de criptare e-mail"
@@ -7969,9 +8698,6 @@
       "Error": [
         "Eroare"
       ],
-      "Export": [
-        "Exportare"
-      ],
       "Export calendar": [
         "Exportare calendar"
       ],
@@ -7980,9 +8706,6 @@
       ],
       "Export public key": [
         "Exportare cheie publică"
-      ],
-      "Exporting contacts": [
-        "Exportare contacte"
       ],
       "External PGP settings": [
         "Setări externe PGP"
@@ -8005,6 +8728,9 @@
       "Generate missing keys": [
         "Generare chei lipsă"
       ],
+      "Generate new recovery phrase?": [
+        "Generare frază nouă de recuperare?"
+      ],
       "Get ProtonVPN Plus to access all servers": [
         "Luați „ProtonVPN Plus” pentru a accesa toate serverele"
       ],
@@ -8022,9 +8748,6 @@
       ],
       "Import": [
         "Importare"
-      ],
-      "Import & export": [
-        "Importare și exportare"
       ],
       "Import as simple event?": [
         "Importați ca eveniment simplu?",
@@ -8277,9 +9000,6 @@
       "Sign in again to continue": [
         "Reconectați-vă pentru a continua"
       ],
-      "Sorry, you can't access this page": [
-        "Ne pare rău, nu puteți accesa această pagină."
-      ],
       "Sort folders alphabetically": [
         "Sortare alfabetică foldere"
       ],
@@ -8288,9 +9008,6 @@
       ],
       "Spam filters": [
         "Filtre mesaje nedorite"
-      ],
-      "Spy Tracker Protection": [
-        "Protejare împotriva spionării"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -8345,9 +9062,6 @@
       ],
       "Unsupported browser": [
         "Navigator nesuportat"
-      ],
-      "Upgrade": [
-        "Migrare"
       ],
       "Username": [
         "Nume utilizator"
@@ -8541,6 +9255,9 @@
       "Route your Internet traffic through the Tor network with a single click.": [
         "Redirecționați traficul de internet prin rețeaua Tor cu un singur clic."
       ],
+      "Set how your list of messages looks like by default.": [
+        "Stabiliți modul în care arată lista de mesaje în mod implicit."
+      ],
       "Set the default Composer popup size as small or full screen.": [
         "Setare dimensiune implicită a panoului de compunere mesaje ca micșorat sau complet."
       ],
@@ -8594,9 +9311,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Când faceți clic pe o legătură, această funcție antiînșelăciune vă va cere să confirmați adresa URL a paginii web."
-      ],
-      "You do not have any contacts to export": [
-        "Nu aveți persoane de contact pentru exportare"
       ],
       "You have locally decrypted this key": [
         "Ați decriptat local această cheie."

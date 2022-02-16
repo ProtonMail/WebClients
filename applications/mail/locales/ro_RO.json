@@ -310,7 +310,7 @@
         "Editare număr de telefon"
       ],
       "Edit sign-in details": [
-        "Editați detaliile de conectare"
+        "Editare detalii de conectare"
       ],
       "Email settings": [
         "Setări e-mail"
@@ -337,7 +337,7 @@
         "Exportare"
       ],
       "Export contact group": [
-        "Exportați grupul de contacte"
+        "Exportare grup de contacte"
       ],
       "Export contacts": [
         "Exportare contacte"
@@ -564,7 +564,7 @@
         "Mutare în..."
       ],
       "Need help?": [
-        "Aveţi nevoie de ajutor?"
+        "Doriți ajutor?"
       ],
       "Never show": [
         "Nu mai arăta"
@@ -696,7 +696,7 @@
         "Redenumire"
       ],
       "Reply securely": [
-        "Răspunde în siguranţă"
+        "Răspuns în siguranță"
       ],
       "Report a problem": [
         "Raportare problemă"
@@ -738,7 +738,7 @@
         "Căutare"
       ],
       "Search in ${ option.text }": [
-        "Căutați în ${ option.text }"
+        "Căutare în ${ option.text }"
       ],
       "Search message content": [
         "Căutare în conținut mesaj"
@@ -947,10 +947,10 @@
         "Verifică"
       ],
       "Verify account": [
-        "Verifică contul"
+        "Verificare cont"
       ],
       "Verify email": [
-        "Verificarea contului"
+        "Verificare e-mail"
       ],
       "View": [
         "Afișare"
@@ -1838,9 +1838,776 @@
         "${ monthsWithYears } de luni"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abhazia"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algeria"
+      ],
+      "American Samoa": [
+        "Samoa Americană"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua și Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Insula Ascension"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaijan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladeș"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belgia"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sfântul Eustasie și Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia și Herțegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Insula Bouvet"
+      ],
+      "Brazil": [
+        "Brazilia"
+      ],
+      "British Indian Ocean Territory": [
+        "Teritoriul Britanic al Oceanului Indian"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burma": [
+        "Burma"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambogia"
+      ],
+      "Cameroon": [
+        "Camerun"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Capul Verde"
+      ],
+      "Cayman Islands": [
+        "Insulele Caiman"
+      ],
+      "Central African Republic": [
+        "Republica Central Africană"
+      ],
+      "Chad": [
+        "Ciad"
+      ],
+      "Chile": [
+        "Cile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Insula Crăciunului"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Insulele Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Columbia"
+      ],
+      "Comoros": [
+        "Comoros"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Republica Democrată"
+      ],
+      "Cook Islands": [
+        "Insulele Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Cote d'Ivoire\"": [
+        "Coasta de Fildeș"
+      ],
+      "Croatia": [
+        "Croația"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cipru"
+      ],
+      "Czech Republic": [
+        "Republica Cehă"
+      ],
+      "Denmark": [
+        "Danemarca"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Republica Dominicană"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egipt"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guineea Ecuatorială"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Ethiopia": [
+        "Etiopia"
+      ],
+      "Falkland Islands": [
+        "Insulele Falkland"
+      ],
+      "Faroe Islands": [
+        "Insulele Feroe"
+      ],
+      "Federated States of Micronesia": [
+        "Statele federative ale Microneziei"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlanda"
+      ],
+      "France": [
+        "Franța"
+      ],
+      "French Guiana": [
+        "Guiana Franceză"
+      ],
+      "French Polynesia": [
+        "Polinezia Franceză"
+      ],
+      "French Southern Territories": [
+        "Teritoriile Franceze de Sud"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Germania"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grecia"
+      ],
+      "Greenland": [
+        "Groenlanda"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guiana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Insula Heard și Insulele McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Sfântul Scaun (Statul Orașului Vatican)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Ungaria"
+      ],
+      "Iceland": [
+        "Islanda"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonezia"
+      ],
+      "International": [
+        "Internațional"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Insula Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japonia"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Iordan"
+      ],
+      "Kazakhstan": [
+        "Kazahstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuweit"
+      ],
+      "Kyrgyzstan": [
+        "Kyrgyzstan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letonia"
+      ],
+      "Lebanon": [
+        "Liban"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituania"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaezia"
+      ],
+      "Maldives": [
+        "Maldive"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Insulele Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexic"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Muntenegru"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Maroc"
+      ],
+      "Mozambique": [
+        "Mozambic"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Olanda"
+      ],
+      "New Caledonia": [
+        "Noua Caledonie"
+      ],
+      "New Zealand": [
+        "Noua Zeelandă"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Nigeria"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Insula Norfolk"
+      ],
+      "North Korea": [
+        "Coreea de Nord"
+      ],
+      "North Macedonia": [
+        "Macedonia de Nord"
+      ],
+      "Northern Mariana Islands": [
+        "Insulele Mariane de Nord"
+      ],
+      "Norway": [
+        "Norvegia"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Noua Guinee"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipine"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polonia"
+      ],
+      "Portugal": [
+        "Portugalia"
+      ],
+      "Puerto Rico": [
+        "Porto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "România"
+      ],
+      "Russia": [
+        "Rusia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Sfântul Bartolomeu"
+      ],
+      "Saint Helena": [
+        "Sfânta Elena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Sfântul Cristofor și Nevis"
+      ],
+      "Saint Lucia": [
+        "Sfânta Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Sfântul Martin (Franța)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Sfântul Pierre și Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Sfântul Vincențiu și Grenadinele"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome și Principe"
+      ],
+      "Saudi Arabia": [
+        "Arabia Saudită"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovacia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Insula Solomon"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Africa de Sud"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia de Sud și Insulele Sandwich de Sud"
+      ],
+      "South Korea": [
+        "Coreea de Sud"
+      ],
+      "South Ossetia": [
+        "Oseția de Sud"
+      ],
+      "South Sudan": [
+        "Sudanul de Sud"
+      ],
+      "Spain": [
+        "Spania"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard și Jan Mayen"
+      ],
+      "Swaziland": [
+        "Eswatini"
+      ],
+      "Sweden": [
+        "Suedia"
+      ],
+      "Switzerland": [
+        "Elveția"
+      ],
+      "Syria": [
+        "Siria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tajikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Tailanda"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad și Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turcia"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Insulele Turks și Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraina"
+      ],
+      "United Arab Emirates": [
+        "Emiratele Arabe Unite"
+      ],
+      "United Kingdom": [
+        "Regatul Unit"
+      ],
+      "United States": [
+        "Statele Unite"
+      ],
+      "United States Minor Outlying Islands": [
+        "Insulele Minore Îndepărtate ale Statelor Unite"
+      ],
+      "Uruguay": [
+        "Uruguai"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Insulele Virgine, Britania"
+      ],
+      "Virgin Islands, U.S.": [
+        "Insulele Virgine, S.U.A."
+      ],
+      "Wallis and Futuna": [
+        "Wallis și Futuna"
+      ],
+      "Western Sahara": [
+        "Sahara de Vest"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Insulele Åland"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
-        "Atasament"
+        "Atașament"
       ],
       "Filter on": [
         "Filtrare după"
@@ -2206,7 +2973,7 @@
         "Introduceți 6 cifre"
       ],
       "Enter a password": [
-        "Introduceți o parolă"
+        "Introduceți o parolă."
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
@@ -2238,11 +3005,11 @@
       "Image upload failed": [
         "Eșuare încărcare imagine"
       ],
-      "Incorrect login credentials. Please try again": [
-        "Date de autentificare incorecte. Mai reîncercați."
+      "Incorrect login credentials. Please try again.": [
+        "Date de conectare incorecte. Reîncercați."
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Parolă căsuță mesaje incorectă. Mai reîncercaţi."
+      "Incorrect mailbox password. Please try again.": [
+        "Parolă mesaje incorectă. Reîncercați."
       ],
       "Invalid ${ name } code": [
         "Cod ${ name } nevalid."
@@ -2500,7 +3267,7 @@
         "Stare necunoscută cod plată generat."
       ],
       "Wrong mailbox password": [
-        "Parolă greșită mesaje"
+        "Parolă mesaje greșită."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
@@ -2728,10 +3495,10 @@
         "Răspuns nevalid"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Evenimentul nu a putut fi adăugat în calendarul dumneavoastră. Nu a fost trimis niciun răspuns"
+        "Evenimentul nu a putut fi adăugat în calendar. Nu a fost trimis niciun răspuns."
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Evenimentul nu a putut fi actualizat în calendarul dumneavoastră. Nu a fost trimis niciun răspuns"
+        "Evenimentul nu a putut fi actualizat în calendar. Nu a fost trimis niciun răspuns."
       ],
       "Unexpected error": [
         "Eroare neașteptată"
@@ -3433,7 +4200,7 @@
         "Culoare fundal"
       ],
       "Based in Switzerland, available globally": [
-        "Cu sediul în Elveția, disponibil la nivel global"
+        "Cu sediul în Elveția, disponibil la nivel global."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
@@ -4082,13 +4849,13 @@
         "Trimiterea mesajelor de la o adresă @pm.me este o funcție cu plată. Mesajul va fi trimis de la adresa implicită ${ email }."
       ],
       "Sent with <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "Trimis cu <a href=\"https://protonmail.com/\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
       "Session timed out": [
-        "Sesiune expirată"
+        "Sesiunea a expirat"
       ],
       "Set a recovery phrase": [
         "Setați o frază de recuperare"
@@ -4106,7 +4873,7 @@
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
       "Sorry, this message does not exist or has already expired": [
-        "Ne pare rău, acest mesaj nu există sau a expirat deja"
+        "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
       "Starter VPN service with P2P support.": [
         "Serviciu VPN de bază cu suport P2P."
@@ -4163,7 +4930,7 @@
         "Mesajul original pe care încercați să-l redirecționați / să-i răspundeți este în curs de a fi trimis. Dacă continuați, nu veți mai putea anula trimiterea mesajului original."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Expeditorul original al acestui mesaj nu mai este valabil. Mesajul dvs. va fi trimis de la adresa implicită ${ defaultAddress.Email }."
+        "Expeditorul original al acestui mesaj nu mai este valid. Mesajul va fi trimis de la adresa implicită ${ defaultAddress.Email }."
       ],
       "The sender has requested a read receipt.": [
         "Expeditorul a solicitat o confirmare de primire a citirii."
@@ -4390,7 +5157,7 @@
         "Veți primi o notificare la finalizarea importării."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Vom trimite un nou cod de verificare la ${ strong }"
+        "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -5505,18 +6272,11 @@
       ]
     },
     "Loading info": {
-      "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
-        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
-        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }"
-      ],
-      "${ createdCalendars } of 1 created": [
-        "",
-        "",
-        ""
-      ],
       "Almost there": [
         "Aproape terminat"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Număr de calendare create: ${ createdCalendars } din ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Se crează calendare noi"
@@ -5692,7 +6452,7 @@
         "Trimitere anulată"
       ],
       "Undoing send...": [
-        "Anularea trimiterii..."
+        "Se anulează trimiterea..."
       ]
     },
     "MIME type": {
@@ -7110,7 +7870,7 @@
         "Adrese de e-mail"
       ],
       "Email composer": [
-        ""
+        "Editor mesaj e-mail"
       ],
       "Email content": [
         "Conținut e-mail"
@@ -7350,7 +8110,7 @@
         "Trimitere fără expirare?"
       ],
       "Sender changed": [
-        "Transmițător schimbat"
+        "Expeditor schimbat"
       ],
       "Sending error": [
         "Eroare trimitere"
@@ -7526,10 +8286,10 @@
     },
     "Tor out of date": {
       "stable release": [
-        "versiunea stabilă"
+        "versiune stabilă"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Această versiune a Tor Browser nu este suportată. Vă rugăm să actualizați la cea mai recentă ${ stableRelease }"
+        "Această versiune a Tor Browser nu este suportată. Actualizați la cea mai recentă ${ stableRelease }."
       ]
     },
     "Update font modal": {
