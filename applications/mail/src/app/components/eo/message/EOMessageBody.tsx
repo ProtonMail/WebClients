@@ -16,6 +16,7 @@ interface Props {
 
 const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSourceMode }: Props) => {
     const bodyRef = useRef<HTMLDivElement>(null);
+    const iframeRef = useRef<HTMLIFrameElement>(null);
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
@@ -57,6 +58,7 @@ const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSo
             {contentMode && (
                 <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
                     <MessageBodyIframe
+                        iframeRef={iframeRef}
                         content={content}
                         blockquoteContent={blockquote}
                         showBlockquote={false}
