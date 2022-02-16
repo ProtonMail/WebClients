@@ -18,6 +18,7 @@ export interface ShareWithKey extends Share {
 }
 
 export interface LockedVolumeForRestore {
+    shareId: string;
     lockedVolumeId: string;
     decryptedPassphrase: string;
 }
