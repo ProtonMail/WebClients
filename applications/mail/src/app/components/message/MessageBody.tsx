@@ -107,25 +107,30 @@ const MessageBody = ({
             className={classnames([
                 'message-content relative bg-norm color-norm',
                 plain && 'plain',
-                isPrint ? '' : 'p1',
                 !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
             ])}
             data-testid="message-content:body"
         >
-            {encryptedMode && <pre className="m0">{message.data?.Body}</pre>}
-            {sourceMode && <pre className="m0">{message.decryption?.decryptedBody}</pre>}
+            {encryptedMode && <pre className="m0 p1">{message.data?.Body}</pre>}
+            {sourceMode && <pre className="m0 p1">{message.decryption?.decryptedBody}</pre>}
             {(loadingMode || decryptingMode || !isIframeContentSet) && (
-                <>
+                <div className="bg-norm color-norm p1">
                     <div className="message-content-loading-placeholder mb0-25 max-w8e" />
                     <div className="message-content-loading-placeholder mb0-25 max-w50e" />
                     <div className="message-content-loading-placeholder mb0-25 max-w40e" />
                     <div className="message-content-loading-placeholder mb0-25 max-w50e" />
                     <div className="message-content-loading-placeholder mb0-25 max-w15e" />
                     <div className="message-content-loading-placeholder max-w8e" />
-                </>
+                </div>
             )}
             {contentMode && (
-                <div className={classnames(['message-iframe', !isIframeContentSet && 'message-iframe--hidden'])}>
+                <div
+                    className={classnames([
+                        'message-iframe',
+                        !isIframeContentSet && 'message-iframe--hidden',
+                        !isPrint && isIframeContentSet && 'p1',
+                    ])}
+                >
                     <MessageBodyIframe
                         content={highlightedContent}
                         blockquoteContent={highlightedBlockquote}
