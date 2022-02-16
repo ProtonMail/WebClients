@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { c } from 'ttag';
 
-import { InlineLinkButton, TopBanner, useModals, useUser, useLoading } from '@proton/components';
+import { InlineLinkButton, TopBanner, useModals, useLoading } from '@proton/components';
 
 import { useLockedVolume } from '../../store';
 import FilesRecoveryModal from './FileRecovery/FilesRecoveryModal';
@@ -13,9 +13,9 @@ interface Props {
 
 const LockedVolumesBanner = ({ onClose }: Props) => {
     const { createModal } = useModals();
-    const [User] = useUser();
     const [loading, withLoading] = useLoading(true);
-    const { prepareVolumesForRestore, hasLockedVolumes, hasVolumesForRestore } = useLockedVolume();
+    const { isReadyForPreparation, prepareVolumesForRestore, hasLockedVolumes, hasVolumesForRestore } =
+        useLockedVolume();
 
     const { openKeyReactivationModal } = useResolveLockedSharesFlow({
         onSuccess: () => {
@@ -25,8 +25,14 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     });
 
     useEffect(() => {
-        withLoading(prepareVolumesForRestore(new AbortController().signal)).catch(console.error);
-    }, [User.Email, prepareVolumesForRestore]);
+        // Prepare volumes only if there are locked volumes already loaded
+        // so we dont set loading to false too soon in which case we would
+        // show banner about locked volumes for a brief moment before we
+        // display the final banner about option to recover files.
+        if (isReadyForPreparation) {
+            withLoading(prepareVolumesForRestore(new AbortController().signal)).catch(console.error);
+        }
+    }, [isReadyForPreparation, prepareVolumesForRestore]);
 
     const StartRecoveryButton = (
         <InlineLinkButton
