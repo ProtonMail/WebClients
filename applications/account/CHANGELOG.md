@@ -1,3 +1,14 @@
+## Release: 4.0.12 - March 2nd, 2022
+
+### New Features
+
+-   New search bar within settings for ease of access across all products
+-   Implemented functionality to verify your recovery email address to increase security
+
+### Improvements
+
+-   General design & UI/UX improvements
+
 ## Release: 4.0.11 - January 26, 2022
 
 ### New Features
